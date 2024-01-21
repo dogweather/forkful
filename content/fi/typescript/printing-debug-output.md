@@ -1,7 +1,8 @@
 ---
-title:                "Debug-tulosteen tulostaminen"
-html_title:           "Bash: Debug-tulosteen tulostaminen"
-simple_title:         "Debug-tulosteen tulostaminen"
+title:                "Virheenjäljitystulosteiden tulostaminen"
+date:                  2024-01-20T17:53:39.278370-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Virheenjäljitystulosteiden tulostaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,24 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Tulostaminen debug-ulostulo (tai debug-lokitus) on kehittäjän työkalu, jolla voidaan seurata ja analysoida ohjelmakoodin toimintaa sen ajon aikana. Kehittäjät käyttävät sitä järjestelmän tilan selvittämiseen, erityisesti kun kohtaavat odottamattomia ongelmia tai virheitä.
+## What & Why? (Mitä & Miksi?)
+Kehittäessä pääsee joskus pälkähästä tulostamalla debug-tietoa, joka valottaa ohjelman tilaa reaaliajassa. Se auttaa bongaamaan virheet ja ymmärtämään koodin käytöstä.
 
-## Näin teet:
-TypeScriptissä yleisin tapa tulostaa debug-ulostulo on käyttää `console.log()` -funktiota. Katsotaan esimerkki:
+## How to: (Kuinka tehdä:)
+TypeScriptissa voit tulostaa debug-tietoja käyttäen `console.log()`, `console.error()` ja muita `console`-objektin metodeja. Tässä pari esimerkkiä:
 
 ```TypeScript
-let x: number = 5;
-console.log("Value of x: " + x);
+function calculateSum(a: number, b: number): number {
+  console.log('calculateSum called with:', a, b);
+  return a + b;
+}
+
+const result = calculateSum(3, 4);
+console.log('The result is:', result);
 ```
-Tämä tulostaa konsoliin viestin: "Value of x: 5"
 
-## Syvällisemmin
-Debug-lokitus on ollut osa ohjelmointia sen alusta lähtien. Aikaisin looginen virheenkorjaus perustui valot merkkien tulostamiseen, jotka symboloivat koneen tilaa. Nykyaikana ohjelmat voidaan suunnitella lokitukseen erityisillä kirjastoilla, kuten `winston` ja `morgan` Node.js:ssä.
+Tämä tuottaa:
+```
+calculateSum called with: 3 4
+The result is: 7
+```
 
-Tulostus on debug-toiminnon yksinkertaisin muoto, mutta muita vaihtoehtoja, kuten `console.debug()`, `console.info()`, `console.warn()`, ja `console.error()`, tarjoavat erilaisia tapoja tiedon esittämiseen.
+Käytä `console.error()` virhetilanteisiin:
+```TypeScript
+function handleError(error: Error): void {
+  console.error('An error occurred:', error.message);
+}
 
-TypeScriptin `console.log()` on alun perin JavaScriptistä, ja se on useimmin käytetty debug-lokitusmenetelmä. Se toimii kirjoittamalla annetut argumentit alla olevaan standardiin ulostuloon.
+try {
+  // Something that might throw an error
+} catch (error) {
+  handleError(error);
+}
+```
 
-## Katso myös
-Seuraavaa resurssit auttavat sinua ymmärtämään debug-ulostuloa paremmin:
+## Deep Dive (Sukellus syvemmälle)
+Debug-tulostukset ovat vanha ja luotettava työkalu. Alkuaan tulostimille suunniteltu, nykyään käytetään lähinnä kehitystyökalujen konsolissa. Vaihtoehtoina ovat monimutkaisemmat debuggaustyökalut ja IDE-integroidut ratkaisut, jotka tarjoavat täyden hallinnan ja seurannan. Käytäntö yksinkertaa: debug-tulosteiden tulisi olla informatiivisia, mutta niiden ei tulisi pullollaan tuotantokoodia. Hiljaa hyvä tulee.
+
+## See Also (Katso myös)
+Lisätietoa ja resurssit TypeScriptin ja debug-tulostuksen syvimpään ymmärrykseen:
+
+- [TypeScript Handbook - Console](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#the-any-type): Opas TypeScriptin perustyypeistä ja `console`-objektin käytöstä.
+- [MDN Web Docs - Console](https://developer.mozilla.org/en-US/docs/Web/API/Console): Tietoa `console`-objektista ja sen metodeista.
+- [Visual Studio Code - Debugging](https://code.visualstudio.com/docs/editor/debugging): Ohjeet Visual Studio Code -editorin debug-ominaisuuksien käyttöön.

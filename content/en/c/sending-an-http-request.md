@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request"
-html_title:           "Bash recipe: Sending an http request"
+date:                  2024-01-20T17:59:09.673014-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request"
 programming_language: "C"
 category:             "C"
@@ -12,60 +13,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Sending an HTTP request is a method used to interact with resources at a specified HTTP endpoint, typically a web server. Programmers do it as a means to fetch, send or update data over the internet.
+Sending an HTTP request is how your program asks for data or sends data to a web server. Programmers use it to interact with APIs, grab web content, or communicate with other services.
 
 ## How to:
 
-Here's a simple implementation in C of sending an HTTP GET request using the popular networking library libcurl:
+In C, we'll leverage `libcurl` for this task. It's a powerful library for transferring data with URLs. First, get `libcurl` installed. On Debian-based systems, you could use `sudo apt-get install libcurl4-openssl-dev`.
+
+Here's a snippet for making a simple GET request:
 
 ```C
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
+int main(void) {
+    CURL *curl;
+    CURLcode res;
 
-  curl_global_init(CURL_GLOBAL_DEFAULT);
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-    res = curl_easy_perform(curl);
-
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
-
-    curl_easy_cleanup(curl);
-  }
-  curl_global_cleanup();
-
-  return 0;
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        
+        /* Perform the request, res will get the return code */ 
+        res = curl_easy_perform(curl);
+        
+        /* Check for errors */ 
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                    curl_easy_strerror(res));
+        
+        /* always cleanup */ 
+        curl_easy_cleanup(curl);
+    }
+    return 0;
 }
 ```
 
-This will simply initiate an HTTP GET request to example.com. To build and run this C program, make sure you have libcurl installed, then you can use gcc (or your preferred C compiler):
-
-```bash
-gcc main.c -lcurl -o main 
-./main
-```
+Running this, you won't get a visible output as we haven't handled the response, but it'll fetch the content from `http://example.com`.
 
 ## Deep Dive
 
-The historical basis for HTTP requests goes back to the initiation of the HTTP protocol itself, around 1989 by Tim Berners-Lee at CERN. The fundamental structure of HTTP requests have remained largely unchanged since, with more functionality added via headers and other HTTP methods.
+`libcurl` started in 1997 and has become a go-to library for C programmers. It supports a vast number of protocols, not just HTTP. Alternatives for HTTP in C might include writing your own implementation, but that’s a bumpy ride through socket programming and complex RFCs.
 
-Alternatives to directly sending HTTP requests (like we did in the above C code) can be to use higher-level libraries like the RestClient-C library (which still uses libcurl under the hood), or to use other languages that might have more comprehensive standard libraries for HTTP communication (like Python with its 'requests' library).
+`libcurl` is convenient because it handles all the nitty-gritty details for you, like protocol negotiation, error handling, and data transfer. Plus, it's cross-platform—use the same code on Linux, Windows, Mac, you name it.
 
-Implementation specifics of sending HTTP requests can greatly vary, and it's largely dependent on the requirements of your task. For instance, sending an HTTP POST request will require you to set additional CURL options (like `CURLOPT_POSTFIELDS`) compared to a simple GET request. If you're dealing with HTTPS requests, you'll want to look into how to properly set up SSL/TLS with libcurl.
+Remember, `libcurl` uses a synchronous API by default, which might block your main thread. If you're building something where that matters, you might have to dive into multi-threading or the `curl_multi_*` set of asynchronous functions.
 
 ## See Also
 
-For a detailed overview of the HTTP protocol: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
-
-For libcurl programming: https://curl.se/libcurl/c/
-
-For RestClient-C: https://github.com/mrtazz/restclient-c
-
-You can also check out the 'requests' library if you plan on using Python: https://docs.python-requests.org/en/master/.
+- Official libcurl website for documentation and examples: [https://curl.se/libcurl/](https://curl.se/libcurl/)
+- HTTP protocol details for background knowledge: [https://www.ietf.org/rfc/rfc2616.txt](https://www.ietf.org/rfc/rfc2616.txt)
+- For broader perspectives on C network programming: [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/)

@@ -1,7 +1,8 @@
 ---
-title:                "Läsa kommandoradsargument"
-html_title:           "Bash: Läsa kommandoradsargument"
-simple_title:         "Läsa kommandoradsargument"
+title:                "Läsa in kommandoradsargument"
+date:                  2024-01-20T17:55:44.247682-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Läsa in kommandoradsargument"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,44 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hantera kommandoradsargument i C++
-
 ## Vad & Varför?
+Att läsa in kommandoradsargument innebär att ditt C++-program kan ta emot och använda data direkt från terminalen när det startar. Det är användbart för att göra programmet flexibelt och för att kunna köra det med olika konfigurationer utan att ändra koden.
 
-Kommandoradsargument är parametrar som skickas in när programmet körs från kommandoraden. De tillhandahåller input till programmet vid nystart, vilket ger flexibilitet och möjlighet till dynamisk ändring av programmets beteende.
-
-## Hur gör man:
-
-C++ tillhandahåller en enkel mekanism för att hantera kommandoradsargument. `main()` funktionen kan definieras med två argument: `int argc, char *argv[]`.
-
+## How to:
 ```C++
-#include<iostream>
-int main(int argc, char *argv[]) {
-    // Skriv ut alla inkommande argument
-    for(int i = 0; i < argc; i++) {
-        std::cout << argv[i] << std::endl;
+#include <iostream>
+
+int main(int argc, char* argv[]) {
+    std::cout << "Programmet har " << argc << " argument:" << std::endl;
+    for (int i = 0; i < argc; ++i) {
+        std::cout << "Argument " << i << ": " << argv[i] << std::endl;
     }
     return 0;
 }
 ```
-
-Om du kör detta program med `./myProgram Hello C++`, kommer utdata vara:
+Kör programmet så här:
 ```
-./myProgram
-Hello
-C++
+$ ./ditt_program Hej Världen
+Programmet har 3 argument:
+Argument 0: ./ditt_program
+Argument 1: Hej
+Argument 2: Världen
 ```
 
-## Fördjupning:
+## Djupdykning
+I historiens gryning fanns ingen standard för inmatning av argument, men C-standardbiblioteket etablerade `argc` och `argv` som huvudsättet att få tillgång till kommandoradsargument. Alternativa metoder inkluderar användning av olika parsing-bibliotek som `getopt` eller modernare läsningar med `boost::program_options`. `argc` står för "argument count" medan `argv` är "argument vector" som är en array av strängpekare som pekar på varje argument. Det är viktigt att notera att `argv[0]` är programmets namn, så räkningen av 'riktiga' argument börjar från `argv[1]`.
 
-1. Historisk bakgrund: Konceptet med kommandolinjeargument härstammar från Unix:s tidiga dagar. Syftet var att låta användaren påverka programmets beteende vid start istället för interaktion vid runtime.
-
-2. Alternativ: Library som Boost.Program_options erbjuder mer sofistikerade sätt att hantera kommandoradsargument, inklusive automatisk typkonvertering och standardvärden.
-
-3. Implementeringsdetaljer: `char *argv[]` är en array av pointerson till tecken. Första elementet (`argv[0]`) är alltid namnet på programmet självt och ändpunkten är alltid en nullpeker.
-
-## Se också:
-
-2. [Boost.Program_options documentation](https://www.boost.org/doc/libs/1_75_0/doc/html/program_options.html)
-
-Glöm inte, förståelse kring kommandoradsargument kan vara nyckeln till att skapa mer dynamiska och användarvänliga program.
+## Se även:
+- C++ dokumentationen över <a href="http://www.cplusplus.com/reference/cstdlib/getenv/">`getenv`</a> för att läsa in miljövariabler.
+- <a href="http://www.boost.org/doc/libs/1_75_0/doc/html/program_options.html">Boost.Program_options</a> för ett mer avancerat argument parsingsbibliotek.
+- <a href="https://en.cppreference.com/w/cpp/utility/program/getenv">cppreference om `std::getenv`</a> för standard-kompatibla alternativ.

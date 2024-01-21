@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
+date:                  2024-01-20T18:02:27.566128-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,33 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Von Python aus HTTP-Anfragen mit Basic Authentication senden
-
 ## Was & Warum?
-Eine HTTP-Anfrage mit Basic Authentication ist eine einfache Methode, um Benutzerdaten an einen Server zu senden. Programmierer nutzen sie oft, um sich mit Web-APIs zu verbinden, die eine Authentifizierung benötigen.
+HTTP-Anfragen mit Basisauthentifizierung senden bedeutet, Benutzername und Passwort sicher mitzuschicken, um Zugang zu geschützten Ressourcen zu bekommen. Programmierer nutzen dies, um APIs oder Web-Dienste zu authentifizieren, die einfache Anmeldeinformationen erfordern.
 
-## Wie man:
-Python stellt das `requests` Modul zur Verfügung, das unkompliziert für HTTP-Anfragen mit Basic Authentication verwendet werden kann. Hier ist ein einfaches Beispiel:
+## So geht's:
+Hier ist ein Beispiel, wie man eine HTTP-Anfrage mit Basisauthentifizierung in Python verschickt:
 
-```Python
+```python
 import requests
 from requests.auth import HTTPBasicAuth
 
-response = requests.get('http://example.com', auth=HTTPBasicAuth('username', 'password'))
+# Setze deine Anmeldeinformationen
+benutzername = 'DeinBenutzer'
+passwort = 'DeinPasswort'
 
-print(response.status_code)
-print(response.content)
+# Die URL der geschützten Ressource
+url = 'https://deinegeschützte.seite/ressource'
+
+# Schicke die GET-Anfrage mit Basisauthentifizierung
+antwort = requests.get(url, auth=HTTPBasicAuth(benutzername, passwort))
+
+# Ich hab's! Schau dir den Inhalt an
+print(antwort.status_code)
+print(antwort.text)
 ```
-Dieses Skript sendet eine HTTP GET-Anfrage an 'http://example.com' mit einem Basic Authentication Header. Die Antwort wird anschließend gedruckt.
 
-## Vertiefung
-Ein Stück Geschichte: Basic Authentication ist seit den Anfängen des HTTP-Protokolls Teil dieses Standards, da sie eine einfache Art der Authentifizierung darstellt.
+Das könnte so aussehen:
 
-Alternativen: Abhängig vom Sicherheitsbedarf gibt es sicherere Authentifizierungsmethoden, wie OAuth oder JWT.
+```
+200
+{"nachricht": "Hallo, Du hast es geschafft!"}
+```
 
-Implementierungsdetails: Python `requests` Bibliothek kodiert den Benutzernamen und das Passwort mit Base64 und fügt diesen String in den Header der HTTP-Anfrage ein.
+## Tiefgang:
+Ursprünglich entworfen für die Frühzeit des Internets, ist Basisauthentifizierung ein direkter, wenn auch nicht der sicherste Weg, Zugangskontrolle zu implementieren. Alternativen heute umfassen OAuth, API-Schlüssel oder JWTs (JSON Web Tokens), die in vielen Fällen mehr Sicherheit bieten. Bei der Nutzung von Basisauthentifizierung wird das Passwort in Base64 kodiert, jedoch nicht verschlüsselt, was es anfällig für Man-in-the-Middle-Angriffe macht. HTTPS sollte immer zusammen mit Basisauthentifizierung verwendet werden, um die Anmeldeinformationen zu schützen.
 
-## Siehe auch
-Weitere Informationen über HTTP Basic Authentication und das Python `requests` Modul finden Sie unter den folgenden Links:
-- [Python `requests` Documentation](https://requests.readthedocs.io/en/master/)
-- [HTTP Basic Authentication on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+## Siehe auch:
+- Requests Dokumentation: https://docs.python-requests.org/en/latest/
+- HTTP-Authentifizierungsstandards: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- Sicherheit von Authentifizierungsmethoden: https://owasp.org/www-project-cheat-sheets/cheatsheets/Authentication_Cheat_Sheet.html

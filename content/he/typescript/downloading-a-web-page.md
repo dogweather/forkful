@@ -1,6 +1,7 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "C++: הורדת דף אינטרנט"
+date:                  2024-01-20T17:45:28.226024-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,38 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+## What & Why?
+מה זה להוריד דף אינטרנט, ולמה זה נחוץ? הורדת דף אינטרנט היא פעולה שבה אנחנו משיגים את תוכן האינטרנט משרת למחשב או לאפליקציה שלנו. תכניתנים עושים את זה כדי לעבד נתונים, לאסוף מידע או לאחסן גיבוי של התוכן.
 
-הורדת דף אינטרנט, זו הפעולה של שליפת קוד HTML של דף אינטרנט ושמירתו על המחשב של ך. מתכנתים עשויים לבצע זאת כדי לנתח, לבדוק או לשמור על נתונים מסוימים לשימוש במועד מאוחר יותר.
-
-## איך:
-
-מדריך קצר על כיצד להוריד דף אינטרנט באמצעות Node.js וביבליות 'axios' ו'cheerio'.
-
+## How to:
 ```TypeScript
 import axios from 'axios';
-import cheerio from 'cheerio';
 
-async function downloadHTML(url: string):Promise<void>{
-  const response = await axios.get(url);
-  const $ = cheerio.load(response.data);
-  const content = $('body').html(); 
-  console.log(content); 
-}
-
-downloadHTML('http://google.com');
+(async () => {
+  try {
+    const response = await axios.get('https://www.example.com');
+    console.log(response.data);
+  } catch (error) {
+    console.error('Error fetching page: ', error);
+  }
+})();
 ```
-בכול פעם שאתה מריץ את הקוד הזה, הוא יוריד את קוד ה־HTML של גוף הדף של Google וידפיס אותו במסוף.
+תוצאה (Sample output):
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example Domain</title>
+  ...
+</head>
+<body>
+  <h1>Example Domain</h1>
+  ...
+</body>
+</html>
+```
 
-## הצצה עמוקה
+## Deep Dive
+היסטוריה - פעם, נדרשו תוכניות בשורת הפקודה כמו `curl` בלינוקס או `Invoke-WebRequest` ב-Windows PowerShell להורדת דפי אינטרנט. כיום, קיימות ספריות כמו `axios` שמקלות על המשימה.
 
-הורדת דף אינטרנט כרגע הייתה חלק מתכנות הפקה מאז ימי האינטרנט הראשונים. למרות שלמרבה המקרים בניית API העשירה המאפשרת גישה ישירה לנתונים הדרושים היא הפתרון המועדף, לא תמיד מידע זה זמין או נגיש.
+אלטרנטיבות - מעבר ל־`axios`, ניתן להשתמש גם ב־`fetch-API` שנתמך ב־Node.js או ספריות כמו `request-promise` (שים לב ש`request` אינה נתמכת יותר).
 
-חלפה מגוון של טכנולוגיות כמו `XMLHttpRequest` ו`fetch` בצד לקוח ב־JavaScript או אפילו ביבליות `cURL` בצד שרת ב־PHP, אך בסביבות Node.js החשובות 'axios' ו'cheerio'  נהיו נפוצות בזכות הפשטות שלהם והכוח שהם מאפשרים.
+פרטי יישום - כאשר מורידים דף אינטרנט, חשוב לטפל ב־HTTP errors ו timeouts. בדוגמה שלמעלה, השימוש ב־try/catch מאפשר לכידת וטיפול בשגיאות באופן נאות.
 
-## ראה גם
-
-- [עוד על 'axios'](https://axios-http.com/docs/intro)
-- [עוד על 'cheerio'](https://cheerio.js.org/)
-- [הדרך המודרנית לאתחל את Node: TypeScript, VS Code, Typings](https://medium.com/javascript-scene/the-modern-way-to-run-jest-tests-in-typescript-36e07ee6fb3d)
-- [הכל על TypeScript (המדריך המלא)](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+## See Also
+- [Axios GitHub repository](https://github.com/axios/axios)
+- [MDN Web Docs - Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [Node.js Documentation - HTTP GET requests](https://nodejs.org/api/http.html#http_http_get_options_callback)

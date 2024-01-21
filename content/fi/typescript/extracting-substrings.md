@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:46:47.381956-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,40 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mikä ja Miksi?)
+Substringit ovat string-tyypin osajonoja. Ne auttavat meitä pilkkomaan ja analysoimaan tekstiä esim. tietojen kaivamiseksi tai formaatin muuttamiseksi.
 
-Alakielten erottaminen on ohjelmoinnin tekniikka, jossa tietyt osat merkkijonosta valitaan ja kopioidaan uuden merkkijonon muodostamiseksi. Ohjelmoijat tekevät tämän tiedon käsittelyyn, kuten tekstianalyysiin tai syötteen jäsentämiseen.
-
-## Miten:
-
-Voit poimia alamerkkijonoja TypeScriptissä käyttämällä `substring()`, `substr()`, tai `slice()` metodeja. Tässä on esimerkkejä siitä, miten näitä metodeja voidaan käyttää:
-
+## How to: (Kuinka tehdä:)
 ```TypeScript
-let str = "Hei, TypeScript!"
+// Otetaan esimerkki TypeScriptillä
+let lause: string = "Hello, maailma!";
 
-// Käyttämällä substring-menetelmää
-let substring = str.substring(4, 14);
-console.log(substring); // Tulostaa: TypeScript
+// substring-metodi (alkuindeksi, loppuindeksi):
+let osajono1 = lause.substring(7, 14);
+console.log(osajono1); // tulostuu "maailma"
 
-// Käyttämällä substr-menetelmää
-let substr = str.substr(4, 10);
-console.log(substr); // Tulostaa: TypeScript
+// slice-metodi (alkuindeksi, loppuindeksi):
+let osajono2 = lause.slice(7, -1);
+console.log(osajono2); // tulostuu "maailma!"
 
-// Käyttämällä slice-menetelmää
-let sliced = str.slice(4, 14);
-console.log(sliced); // Tulostaa: TypeScript
+// substr-metodi (alkuindeksi, pituus):
+// Huom: vanhentunut, mutta esimerkin vuoksi tässä
+let osajono3 = lause.substr(7, 7);
+console.log(osajono3); // tulostuu "maailma"
 ```
 
-## Syvä sukellus:
+## Deep Dive (Sukellus syvyyksiin)
+Alun perin substring-toimintoja tarvittiin tiedon käsittelyyn: tiedostopoluista nimen erottaminen, käyttäjänimistä domain-erottelu jne. Historiallisesti näitä on hyödynnetty monissa ohjelmointikielissä, kuten JavaScriptissä, josta TypeScript on ponnistanut.
 
-Historiallisesti `substr()` funktio oli ensimmäinen tarjolla oleva merkkijonojen käsittelymetodi ja se on peräisin JavaScriptestä. Myöhemmin lisättiin `substring()` ja `slice()`, jotka tarjoavat enemmän joustavuutta ja ovat selkeämmät käyttää pituuden ja indeksin kanssa.
+JavaScriptissä substringit ovat olleet pitkään käytössä, ja TypeScript on luontevasti tuonut mukanaan tämän perinnön. `substring`, `slice` ja `substr` ovat kaikki eri tapoja saada aikaan sama lopputulos, mutta on hyvä huomata, että `substr`-metodi on vanhentunut ja sitä tulisi välttää uudessa koodissa.
 
-Mitä tulee vaihtoehtoihin, voit käyttää säännöllisiä lausekkeita tai luoda oman toimintosi, jos nämä menetelmät eivät täytä tarpeitasi.
+`substring` ja `slice`-metodeilla on pieniä eroavaisuuksia käytössä: esim. `substring` ei salli negatiivisia indeksejä, kun taas `slice` käsittelee ne älykkäästi osoittamaan merkkijonon lopusta. Valinta riippuu tilanteesta ja tarpeista, mutta `slice` on monipuolisempi.
 
-Mitä tulee toiminnan yksityiskohtiin, sekä `substring()` että `slice()` toimivat samalla tavalla, ellei niille anneta negatiivista arvoa indeksiksi. Tässä tapauksessa `slice()` ottaa jäljellä olevat merkit merkkijonosta, kun taas `substring()` kohtelee negatiivisen arvon nollana.
-
-## Katso myös:
-
-1. MDN Web Docs, merkki¬jono¬metodit: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-2. TypeScript käsikirja, merkkijonot: https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#strings
-3. StackOverflow, merkkijonojen käsittely TypeScriptissä: https://stackoverflow.com/questions/tagged/typescript+strings
+## See Also (Katso myös)
+- [MDN Web Docs - String.prototype.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [MDN Web Docs - String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)

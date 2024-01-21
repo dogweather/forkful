@@ -1,7 +1,8 @@
 ---
-title:                "Skriva ut felsökningsresultat"
-html_title:           "Fish Shell: Skriva ut felsökningsresultat"
-simple_title:         "Skriva ut felsökningsresultat"
+title:                "Skriva ut felsökningsdata"
+date:                  2024-01-20T17:52:09.417331-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skriva ut felsökningsdata"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -11,41 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Utskrift av felsökningsdata är att få programmet att skriva ut vad det tänker på. Programmerare använder detta för att förstå vad som händer under huven och snabbt hitta kryphål.
 
-Att skriva ut debug-utdata innebär att programmerare skapar meddelanden under körning av programmet för att hjälpa till att felsöka det. Vi gör det för att förstå hur vårt program fungerar i realtid och för att upptäcka eventuella fel.
-
-## Så här gör du:
-
-Det är enkelt att skriva ut debug-information i Clojure. Lösningen är standardfunktionen `println`. Kolla här:
-
+## Hur gör man:
 ```Clojure
-(defn hello-world []
-  (let [message "Hello, World!"]
-    (println "Debug: " message)
-    (println message)))
+; Skriv ut en enkel sträng
+(println "Hej, jag felsöker!")
 
-(hello-world)
-```
+; Utskriva variabler och strängar
+(defn debug-var [var]
+  (println "Debug: " var))
 
-Utdata kommer att vara:
+(debug-var "något viktigt")
 
-```
-Debug: Hello, World!
-Hello, World!
+; Format output with str
+(println (str "Resultat: " (+ 2 2)))
+
+; Resultat i REPL
+; Hej, jag felsöker!
+; Debug: något viktigt
+; Resultat: 4
 ```
 
 ## Djupdykning:
+I förhistorisk tid av programmering sträckte sig felsökning till att gräva igenom pappersutskrifter. Idag är `println` i Clojure enkelt och rakt på sak, men det är en dålig vana att lämna utskrifter i släppt kod. Alternativ inkluderar loggningsbibliotek som `timbre`, vilka erbjuder kontroll över loggningsnivåer. Clojure’s `println` släpper ut till standard output och kan omdirigeras eller tystas.
 
-Skriva ut debug-utdata är en grundläggande men viktig del av att vara en programmerare. Detta koncept återfinns i nästan alla programmeringsspråk, inte bara Clojure.
-
-Att ha alternativ ger oss mer kraft. I Clojure kan du även använda verktyget `clojure.tools.logging` för mer sofistikerad loggning. Med `clojure.tools.logging` kan du till exempel välja att bara skriva ut meddelanden med en viss nivå av allvar.
-
-Den typ av utskrift vi har pratat om skriver till standard output. Men vanligtvis skriver verktyg som `clojure.tools.logging` också till en loggfil.
-
-## Se också:
-
-För mer information om att skriva ut debug-utdata i Clojure, se följande resurser:
-
-1. [Official Clojure Documentation](https://clojure.org/guides/getting_started)
-2. [Clojure Tools Logging](https://github.com/clojure/tools.logging)
-3. [Debugging in Clojure](https://clojuredocs.org/clojure.repl/pst)
+## Se även:
+- Clojure's officiella dokumentation för `println`: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println
+- Timbre, ett populärt loggningsbibliotek för Clojure: https://github.com/ptaoussanis/timbre
+- Guide till effektiv felsökning i Clojure: https://clojure.org/guides/repl/debugging

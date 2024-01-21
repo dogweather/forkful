@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anforderung senden"
-html_title:           "Bash: Eine HTTP-Anforderung senden"
-simple_title:         "Eine HTTP-Anforderung senden"
+title:                "Einen HTTP-Request senden"
+date:                  2024-01-20T18:00:10.141822-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Einen HTTP-Request senden"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -11,46 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+HTTP-Anfragen sind essentiell, um mit Webdiensten zu kommunizieren, indem Daten gesendet und empfangen werden. Programmierer nutzen sie, um Informationen von APIs abzurufen, Daten zu übermitteln oder Webinhalte für Apps und Skripte verfügbar zu machen.
 
-Ein HTTP-Anfrage senden bedeutet, eine Datenanforderung an einen Webserver zu senden. Programmierer tun dies, um Informationen von Servern abzurufen, bestimmte Aktionen auf dem Server auszuführen oder Server zu überwachen.
-
-## So geht's:
-
-Um eine HTTP-Anfrage in PowerShell zu senden, verwendet man Invoke-WebRequest oder Invoke-RestMethod. Die einfachste Anfrage wäre ein GET-Anforderung:
+## How to:
+Hier ein einfaches Beispiel, wie man eine GET-Anfrage in PowerShell sendet und die Antwort erhält:
 
 ```PowerShell
-$antwort = Invoke-WebRequest -Uri 'http://example.com'
+$response = Invoke-RestMethod -Uri 'http://example.com/api/data' -Method 'GET'
+Write-Host $response
 ```
-Ausgabe wäre:
+Ausgabe könnte so aussehen:
+```
+{ "id": 123, "name": "Beispiel Daten" }
+```
+
+Zum Senden einer POST-Anfrage mit JSON-Inhalt:
 
 ```PowerShell
-StatusCode        : 200
-StatusDescription : OK
-Content           : {...}
-RawContent        : HTTP/1.1 200 OK
-                    Content-Length: 606
-Headers           : {[Content-Length, 606], [Content-Type, text/html; charset=UTF-8], ...}
-Images            : {}
-InputFields       : {}
-Links             : {...}
-...
+$body = @{
+    id = 123
+    name = 'Neuer Eintrag'
+}
+$headers = @{
+    "Content-Type" = "application/json"
+}
+$json = $body | ConvertTo-Json
+$response = Invoke-RestMethod -Uri 'http://example.com/api/data' -Method 'POST' -Body $json -Headers $headers
+Write-Host $response
 ```
-## Tieftauchen
-
-Die Verwendung von HTTP-Anfragen in Skriptsprachen stammt aus der Anfangszeit des Internets, als Daten hauptsächlich über HTML-Formulare ausgetauscht wurden. Ein Invoke-Befehl in PowerShell ist eine moderne Möglichkeit, HTTP-Anfragen zu senden.
-
-Alternativen zu Invoke-WebRequest oder Invoke-RestMethod in PowerShell sind .NET Klassen wie System.Net.WebRequest oder System.Net.Http.HttpClient.
-
-Beachten Sie, dass wenn Sie mit API-Endpunkten arbeiten, der Server manchmal Header oder Cookies benötigt. Hier ist ein Beispiel, wie man einen benutzerdefinierten Header sendet:
-
-```PowerShell
-$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
-$headers.Add("Authorization", "Bearer dein_token")
-
-$antwort = Invoke-RestMethod -Uri 'http://example.com' -Headers $headers
+Ausgabe:
 ```
-## Siehe auch
+{ "success": true, "message": "Eintrag angelegt." }
+```
 
-- Mehr zu Invoke-WebRequest: https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1
-- Mehr zu Invoke-RestMethod: https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1
-- Mehr zu .NET HttpClient: https://docs.microsoft.com/de-de/dotnet/api/system.net.http.httpclient?view=net-5.0
+## Deep Dive:
+HTTP-Anfragen sind seit den frühen Tagen des Web die Grundlage der Client-Server-Kommunikation. PowerShell machte dies zunächst mit `Invoke-WebRequest` möglich, später dann mit `Invoke-RestMethod`, welches einfachere JSON- und XML-Manipulation bietet.
+
+Alternativen zu PowerShell's eingebauten Cmdlets schließen das .NET Framework ein, mit `System.Net.Http.HttpClient` für komplexere Szenarien und feingranuläre Kontrolle. Dies kann nützlich sein, wenn man Einstellungen wie Timeouts, Cookies oder fortgeschrittene Authentifizierungsmethoden benötigt.
+
+Das Senden von HTTP-Anfragen mittels `Invoke-RestMethod` hat einige Besonderheiten. Zum Beispiel analysiert es die Antwort und versucht, sie in das am besten passende PowerShell-Objekt zu konvertieren, was das Arbeiten mit den Daten erleichtert. Außerdem kann man mit Parameter `-Credential` einfache Authentifizierung und mit `-Headers` spezifische Header setzen.
+
+## See Also:
+- [Invoke-RestMethod Dokumentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod)
+- [.NET HttpClient Klasse](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)

@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-html_title:           "Kotlin: एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-simple_title:         "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
+title:                "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
+date:                  2024-01-20T17:38:18.490965-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,52 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-(What & Why?)
+स्ट्रिंग को लोअर केस में बदलना मतलब हर अक्षर को छोटा (lowercase) अक्षर में परिवर्तित करना है। प्रोग्रामर्स इसका इस्तेमाल डाटा संग्रहण, तुलना और प्रोसेसिंग में करते हैं ताकि इसमें स्थिरता आए और अक्षरों की परवाह किए बिना स्ट्रिंग्स का मिलान हो सके।
 
-एक स्ट्रिंग को लोअर केस में बदलना मतलब होता है कि हम सभी अक्षरों को छोटे (लोअर केस) में बदल देते हैं। यह उन समयों में उपयोगी होता है जब हम उपयोगकर्ता की इनपुट के सापेक्ष डाटा का मेल खाते हैं और यह सुनिश्चित करना चाहते हैं कि बड़े /छोटे अक्षर आपके डाटा के मेल खाने में खलल नहीं डाल रहे हैं। 
+## How to: (कैसे करें:)
 
-## कैसे:
+नीचे C कोड का उदाहरण दिया गया है, जो स्ट्रिंग को लोअर केस में बदलता है:
 
-(How to:)
-
-आप `tolower()` फ़ंक्शन का उपयोग करके स्ट्रिंग को लोअर केस में कन्वर्ट कर सकते हैं।
-
-```C
-#include <ctype.h>
+```c
 #include <stdio.h>
+#include <ctype.h>
+
+void toLowerCase(char *str) {
+    while (*str) {
+        *str = tolower(*str);
+        str++;
+    }
+}
 
 int main() {
-    char s[] = "HELLO, WORLD!";
-    for(int i = 0; s[i]; i++){
-        s[i] = tolower(s[i]);
-    }
-    printf("%s\n", s);
+    char myString[] = "Hello, World!";
+    toLowerCase(myString);
+    printf("Lowercase String: %s\n", myString);
     return 0;
 }
 ```
 
-उपरोक्त कोड का आउटपुट होगा:
+उदाहरण आउटपुट:
 
 ```
-hello, world!
+Lowercase String: hello, world!
 ```
 
-## गहराई में:
+## Deep Dive (गहराई से जानकारी)
 
-(Deep Dive)
+स्ट्रिंग्स को लोअर केस में बदलने का अभ्यास काफी पुराना है, प्रोग्रामिंग की शुरुआती दौर से ही यह उपयोग में आ रहा है। `tolower` फंक्शन ANSI C स्टैण्डर्ड (C89) का हिस्सा है और `ctype.h` हेडर फाइल में घोषित होता है। विकल्प के तौर पर, कुछ प्रोग्रामर्स ASCII मानों के उपयोग से स्वयं इसे लागू करते हैं, लेकिन इससे पोर्टेबिलिटी में समस्या हो सकती है। `tolower` का उपयोग इसके लिए अधिक सुरक्षित और पोर्टेबल तरीका है।
 
-1. *ऐतिहासिक संदर्भ (Historical Context):* `tolower` और `toupper` फ़ंक्शन्स C के `ctype.h` लाइब्रेरी में उपलब्ध हैं, जो C89 से मौजूद हैं।
+## See Also (और देखें)
 
-2. *विकल्प (Alternatives):* आप ASCII का उपयोग करके मैन्युअली यह कार्रवाई कर सकते हैं। लेकिन, `tolower()` फ़ंक्शन का उपयोग करना अधिक पसंदीदा और कुशल तरीका है।
-
-3. *अंदरूनी विवरण (Implementation Details):* `tolower()`  फ़ंक्शन ASCII पर मूल रूप से निर्भर करता है जहां लोअर केस और अपर केस अक्षरों के बीच 32 का अंतर होता है।
-
-## भी देखें:
-
-(See Also:)
-
-1. [C++ String to Lower Case](https://www.geeksforgeeks.org/conversion-whole-string-uppercase-lowercase-using-stl-c/)
-2. [C String Functions](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
-3. [C Programming](https://www.w3schools.com/C/)
+- C Standard Library Reference: [`tolower`](https://en.cppreference.com/w/c/string/byte/tolower)
+- C String Handling (गाइड): [String Handling in C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)

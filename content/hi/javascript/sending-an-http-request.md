@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:00:25.229883-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,43 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# स्वागत है, Java कोडर्स!
+## क्या और क्यों? (What & Why?)
+HTTP अनुरोध (request) भेजना इंटरनेट पर सर्वर से डेटा मांगने का तरीका है। प्रोग्रामर इसे वेबसाइट्स का डेटा प्राप्त करने, API से बात करने या फॉर्म डेटा भेजने के लिए करते हैं।
 
-## क्या और क्यों?
-
-HTTP अनुरोध भेजना का मतलब होता है किसी सर्वर पर जानकारी मांगना या भेजना। यहां हम सर्वर को डेटा भेज सकते हैं या डेटा प्राप्त कर सकते हैं, जैसे ज्ञान पत्रिका या मासिका में नई घटनाएँ या खबरें।
-
-## कैसे:
-
-एक example:
+## कैसे करें? (How to:)
+जावास्क्रिप्ट में HTTP अनुरोध भेजने के लिए `fetch` API एक आम तरीका है। यहां एक साधारण उदाहरण है:
 
 ```Javascript
-var http = require('http');
-
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end('Hello, World!');
-}).listen(8080);
+fetch('https://jsonplaceholder.typicode.com/posts')
+  .then(response => {
+    // सफलता की स्थिति में
+    if (response.ok) {
+      return response.json(); // JSON में परिवर्तित करें
+    }
+    throw new Error('Network response was not ok.');
+  })
+  .then(data => console.log(data)) // डेटा दिखाएं
+  .catch(error => console.error('Fetch error:', error)); // त्रुटि संभालें
 ```
 
-यह उदाहरण एक HTTP सर्वर बनाता है, जो 8080 पोर्ट पर सुनता है और "Hello, World!" उत्तर देता है।
-
-## गहराई में:
-पहले के вер्सन में XMLHTTPRequest API का उपयोग किया जाता था HTTP संवाद के लिए, लेकिन यह जटिल हो सकता था। आजकल हम वादा-आधारित Fetch API का उपयोग कर सकते हैं।
-
-Fetch API में प्रतिस्पर्धा:
+सैंपल आउटपुट:
 
 ```Javascript
-fetch('http://example.com/movies.json')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.log('गलती:', error));
+// यह सर्वर से प्राप्त डेटा का एक हिस्सा है
+[
+  {
+    userId: 1,
+    id: 1,
+    title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    body: "quia et suscipit suscipit recusandae..."
+  },
+  // ...और भी ऑब्जेक्ट्स
+]
 ```
 
-Fetch API का उपयोग करना ध्यान देने योग्य एक विकल्प है।
+## गहराई से जानकारी (Deep Dive):
+HTTP अनुरोध भेजने के लिए पुराने जमाने में `XMLHttpRequest` का इस्तेमाल होता था, पर `fetch` अधिक आसान और वादा (promise) आधारित है, जो मॉडर्न ऐप्स के लिए उपयुक्त है। `axios` जैसे लाइब्रेरीज भी अल्टरनेटिव हैं जो `fetch` के समान करते हैं लेकिन कुछ एडिशनल फीचर्स के साथ। `fetch` का उपयोग जावास्क्रिप्ट प्रोमिसेज को पूरा करता है और आपको आसानी से एसिंक्रोनस कोड लिखने में मदद करता है। यह JSON डेटा को हैंडल करने में भी एकदम सुविधाजनक है।
 
-## आगे देखें:
-जावा के Fetch और HTTP अनुरोध के बारे में अधिक जानने के लिए, यहां कुछ उपयोगी स्रोत हैं.
-
-- MDN Web Docs [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)।
-- HTTP के बारे में विस्तृत जानकारी के लिए [HTTP guide](https://developer.mozilla.org/en-US/docs/Web/HTTP)।
+## और जानकारी के लिए (See Also):
+- MDN Web Docs `fetch`: [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- `axios` GitHub पेज: [https://github.com/axios/axios](https://github.com/axios/axios)
+- जावास्क्रिप्ट प्रोमिसेज समझना: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)

@@ -1,7 +1,8 @@
 ---
-title:                "Interpolation d'une chaîne de caractères"
-html_title:           "Ruby: Interpolation d'une chaîne de caractères"
-simple_title:         "Interpolation d'une chaîne de caractères"
+title:                "Interpolation de chaînes de caractères"
+date:                  2024-01-20T17:51:17.807415-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolation de chaînes de caractères"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,40 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ?
+## What & Why?
+Interpoler une chaîne, c'est insérer des valeurs de variables directement dedans. C'est utilisé pour composer des messages ou des commandes de façon fluide et dynamique, sans recoller des bouts de chaîne à la mano.
 
-L'interpolation de chaînes est une méthode où on insère des valeurs dans une chaîne littérale, d'où son autre appellation "chaîne formatée". Les programmeurs l'utilisent pour combiner des valeurs variables avec du texte de manière plus lisible et propre. 
-
-## Comment faire :
-
-Créons une chaîne interpolée simple dans PowerShell : 
+## How to:
+En PowerShell, utilisez `"${ma_variable}"` pour interpoler. Voilà un exemple:
 
 ```PowerShell
-$nom = "Dupont"
-$salutation = "Bonjour, $nom"
-$salutation  # Résultats en "Bonjour, Dupont"
+$planete = 'Terre'
+$message = "Salut, habitants de la ${planete}!"
+Write-Host $message
 ```
-La variable `$nom` est insérée dans la chaîne littérale `$salutation`. 
+Sortie: `Salut, habitants de la Terre!`
 
-Une utilisation plus compliquée pourrait ressembler à ceci :
+Plus complexe? Essayez ça:
 
 ```PowerShell
-$age = 25
-$message = "$nom a $age ans"
-$message  # Résultats en "Dupont a 25 ans"
+$utilisateur = 'Alex'
+$nombreDeConnexions = 42
+$message = "L'utilisateur ${utilisateur} s'est connecté ${nombreDeConnexions} fois."
+Write-Host $message
 ```
-Ici, `$nom` et `$age` sont tous deux insérés dans la chaîne `$message`.
+Sortie: `L'utilisateur Alex s'est connecté 42 fois.`
 
-## Plongeon Profond
+## Deep Dive
+Avant PowerShell, les gens utilisaient d'autres méthodes, comme la concaténation en C# avec `+`, ou encore des formats de chaînes. Dans PowerShell, `${nom_variable}` est la syntaxe d'interpolation introduite en version 3.0, simplifiant la composition des chaînes.
 
-Historique : Avant Powershell 5, les programmeurs utilisaient la méthode de format pour interpoler les chaînes. Mais l'interpolation de chaîne est devenue plus courante en raison de son accessibilité et de sa lisibilité. 
+Il y a aussi `-f`, l'opérateur de mise en forme, plus verbeux mais toujours utile pour des situations complexes:
 
-Alternatives : On peut toujours utiliser la méthode de format, comme `$message = "{0} a {1} ans" -f $nom, $age`. 
+```PowerShell
+$produit = 'livre'
+$prix = 30
+Write-Host ('Le {0} coûte {1:C}' -f $produit, $prix)
+```
+Sortie: `Le livre coûte 30,00 €`
 
-Détails d'implémentation : L'opératrice d'interpolation est `$`. Les doubles guillemets (`"`) indiquent à PowerShell d'inspecter la chaîne à des fins d'interpolation, tandis que les guillemets simples (`'`) retourneraient la chaîne littérale.
+N'oubliez pas, l'interpolation nécessite des doubles guillemets `"`. Avec des simples `'`, ça ne marche pas, les variables ne seront pas remplacées.
 
-## Voir Aussi 
-
-- [Documentation de Microsoft sur les opérations de chaîne](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1#string)
-
-N'oubliez pas que l'interpolation des chaînes est un outil puissant pour rendre votre code plus lisible et facile à comprendre. Amusez-vous à coder !
+## See Also
+- [about_Quoting_Rules](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules) - Règles de citation dans PowerShell.
+- [about Automatic Variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables) - Pour en apprendre plus sur les variables automatiques de PowerShell.
+- [String Formatting in PowerShell](https://ss64.com/ps/syntax-f-operator.html) - Plus d'infos sur la mise en forme de chaînes dans PowerShell.

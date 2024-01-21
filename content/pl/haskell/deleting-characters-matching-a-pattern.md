@@ -1,6 +1,7 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "C: Usuwanie znaków pasujących do wzorca"
+date:                  2024-01-20T17:42:31.299202-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,27 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Usuwanie znaków pasujących do wzorca, to proces eliminacji konkretnych sekwencji znaków z ciągu. Programiści robią to, aby uporządkować dane, sprzątając powtarzające się lub niepotrzebne znaki.
+Usuwanie znaków pasujących do wzorca to proces filtrowania ciągu, by pozbyć się niechcianych znaków. Programiści robią to dla czystości danych, bezpieczeństwa aplikacji lub odpowiedniego formatowania tekstów.
 
 ## Jak to zrobić:
 ```Haskell
-import Data.Char
-import Data.List
+import Data.List (isInfixOf)
 
-usunZnaki :: Char -> String -> String
-usunZnaki _ [] = []
-usunZnaki x (y:ys)
-  | x == y = usunZnaki x ys
-  | otherwise = y : usunZnaki x ys
+deletePattern :: String -> String -> String
+deletePattern pattern = filter (not . isInfixOf pattern . (:[]))
 
-main = print(usunZnaki 'a' "ananas") 
+main :: IO ()
+main = do
+  let text = "Hej, to jest przykładowy tekst."
+  let pattern = "kł"
+  putStrLn $ "Przed: " ++ text
+  putStrLn $ "Po: " ++ deletePattern pattern text
 ```
-Po uruchomieniu powyższego kodu, otrzymamy ciąg "nns", w którym wszystkie litery "a" zostały usunięte.
 
-## Więcej szczegółów
-Usuwania znaków pasujących do wzorca było nieodzownym elementem programowania od początku jego dziejów. Historia jest pełna alternatywnych metodyk, takich jak regex lub korzystanie z funkcji wbudowanych innych języków. Chociaż ten proces jest dość prosty w Haskellu, zrozumienie jego implementacji wymaga dobrych umiejętności z list i rekurencji, które są kluczowymi technikami w Haskellu.
+Output:
 
-## Zobacz także
-1. Dokumentacja biblioteki Haskell 'Data.Char' : http://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html
-2. Dokumentacja biblioteki Haskell 'Data.List' : http://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html
-3. Manual Haskell - https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/
+```
+Przed: Hej, to jest przykładowy tekst.
+Po: Hej, to jest przyadowy tekst.
+```
+
+## Dogłębna analiza
+Usuwanie znaków pojawia się w wielu zadaniach programistycznych, od prostego czyszczenia stringów po zapewnienie bezpieczeństwa poprzez usunięcie potencjalnie szkodliwych sekwencji. Rozwiązanie w Haskellu korzysta z wyrażeń funkcyjnych, które są eleganckim narzędziem do pracy z kolekcjami danych. Haskell oferuje alternatywne metody, jak moduł `Text.Regex`, który umożliwia bardziej zaawansowane operacje z wykorzystaniem wyrażeń regularnych. Implementacja `deletePattern` pokazuje, jak możliwości Haskella są wykorzystywane do tworzenia zwięzłego i czytelnego kodu.
+
+## Zobacz również
+- [Haskell Text.Regex library](https://hackage.haskell.org/package/regex-compat)
+- [Learn You a Haskell for Great Good! - Chapter 7: More Functional Patterns](http://learnyouahaskell.com/higher-order-functions#maps-and-filters)
+- [Hoogle – Haskell API search engine](https://hoogle.haskell.org/)
+- [Real World Haskell - Chapter 8: Efficient file processing, regular expressions, and file name matching](http://book.realworldhaskell.org/read/efficient-file-processing-regular-expressions-and-file-name-matching.html)

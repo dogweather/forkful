@@ -1,7 +1,8 @@
 ---
-title:                "Wydobywanie podciągów"
-html_title:           "Python: Wydobywanie podciągów"
-simple_title:         "Wydobywanie podciągów"
+title:                "Wycinanie podłańcuchów"
+date:                  2024-01-20T17:46:55.869688-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wycinanie podłańcuchów"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,33 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Wyodrębnianie podsłowo (substringów) to metoda rozdzielania dłuższych ciągów znaków na mniejsze segmenty, zgodnie z określonymi kryteriami. Robimy to, aby przetworzyć, przeanalizować lub manipulować pojedynczymi częściami większych zestawów danych.
+## What & Why?
+(Ekstrakcja podciągów - o co chodzi i dlaczego to robimy?)
+Szukasz fragmentu tekstu w szerszym ciągu znaków? To ekstrakcja podciągów. Programiści wydzielają podciągi, by manipulować małymi porcjami tekstu bez potrzeby obchodzenia się z całością.
 
-## Jak to zrobić?
-W Swift zazwyczaj wykorzystujemy metody `prefix()`, `suffix()`, `dropFirst()`, `dropLast()`, i zakresy indeksów do manipulowania podsłowami. Zobaczmy to w praktyce:
+## How to:
+(Jak to zrobić: przykłady kodu)
+Swift jest jak kuchnia pełna narzędzi. Oto jak wyciągnąć coś smakowitego ze Stringa:
 
 ```Swift
-let zdanie = "To jest przykładowe zdanie"
+let wholeString = "Witaj, programisto!"
+let indexStartOfText = wholeString.index(wholeString.startIndex, offsetBy: 7)
+let indexEndOfText = wholeString.index(wholeString.startIndex, offsetBy: 19)
 
-let prefix = zdanie.prefix(5) // "To je"
-let suffix = zdanie.suffix(6) // " zdanie"
-let przerwaneZdanie = zdanie.dropFirst(3) // "jest przykładowe zdanie"
-let przycieteZdanie = zdanie.dropLast(7) // "To jest przykładowe"
+// Wyciąganie podciągu
+let substring = wholeString[indexStartOfText..<indexEndOfText] // "programisto"
 
-let indexStart = zdanie.index(zdanie.startIndex, offsetBy: 3)
-let indexEnd = zdanie.index(zdanie.endIndex, offsetBy: -7)
-let podsłowo = zdanie[indexStart..<indexEnd] //"jest przykładowe"
+// Konwersja podciągu na String
+let newString = String(substring)
+
+print(newString) // Wypisze "programisto"
 ```
 
-## Dogłębna Analiza
-Podsłowa w Swift zyskały na znaczeniu w Swift 4, gdy Apple wprowadził nowy typ `Substring`. Do tej pory programiści musieli radzić sobie z indeksacją String przez używanie pozycji Unicode, co było skomplikowane i niewygodne.
+Proste, prawda?
 
-Co do alternatyw, programiści mogą również korzystać z metody `split(separator:)` lub `components(separatedBy:)` do wyodrębniania podsłów na podstawie zdefiniowanego separatora.
+## Deep Dive:
+(Bliskie spojrzenie: głębsze informacje)
+Kiedyś, w Swift 3, łatwiej było wyciągnąć podciągi, ale też łatwiej było stracić wydajność. W Swift 4 pojawili się `Substring` i `Range`, aby zadbać o wydajność i bezpieczeństwo typów. Jeżeli chodzi o alternatywy, to mamy `NSString` z Objective-C, ale to już raczej relikty. Swift jest zbudowany w taki sposób, że manipulacja Stringami ma być jak najprostsza z możliwych. Jednakże, zawsze pamiętaj o zarządzaniu pamięcią – tworzenie nowych Stringów z podciągów może być kosztowne!
 
-Kiedy używasz metody getType do uzyskania typu podciągu, zauważysz, że zwraca typ Substring, a nie String. To dlatego, że Substring w Swift jest odniesieniem do części ciągu znaków, nie jest to osobny obiekt.
-
-## Zobacz Również
- - [Apple's String and Characters Guide](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
- - [Paul Hudson's Hacking with Swift: How to manipulate strings in Swift](https://www.hackingwithswift.com/articles/115/how-to-manipulate-strings-in-swift)
- - [Substring Documentation on Swift](https://developer.apple.com/documentation/swift/substring)
+## See Also:
+(Zobacz także)
+- [Swift Documentation: String and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Swift Standard Library: Substring](https://developer.apple.com/documentation/swift/substring)

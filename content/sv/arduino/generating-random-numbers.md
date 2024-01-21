@@ -1,7 +1,8 @@
 ---
-title:                "Generera slumpmässiga nummer"
-html_title:           "Arduino: Generera slumpmässiga nummer"
-simple_title:         "Generera slumpmässiga nummer"
+title:                "Generera slumpmässiga tal"
+date:                  2024-01-20T17:48:43.206364-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generera slumpmässiga tal"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Numbers"
@@ -10,55 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Slumpmässiga Nummer med Arduino
-
 ## Vad & Varför?
 
-Att generera slumpmässiga nummer innebär att skapa tal som inte kan förutsägas före dess generering. Programmerare använder detta för att skapa osäkerhet i sina program, vilket är särskilt viktigt i spel, simuleringar och tester.
+Att generera slumptal innebär att skapa nummer som inte kan förutses logiskt. Programmerare använder slumptal för spel, simuleringsprogram och för att ge sina projekt en känsla av oförutsägbarhet.
 
-## Såhär Uppnår du detta:
-
-Arduino gör att generera slumpmässiga nummer väldigt enkelt. Använd bara `random()` funktionen.
+## Så här gör du:
 
 ```Arduino
+// Initiera en slumpmässig sekvens
 void setup() {
   Serial.begin(9600);
+  randomSeed(analogRead(0)); // Använd en oanvänd analog pin för att få en slumpmässig startpunkt
 }
 
+// Generator för ett slumpmässigt tal och skriv ut det
 void loop() {
-  int randomNumber = random(1, 101); // generera ett slumpmässigt heltal mellan 1 och 100
-  Serial.println(randomNumber);
-  delay(1000); // vänta en sekund
+  int randomValue = random(0, 100); // Genererar ett tal mellan 0 och 99
+  Serial.println(randomValue);
+  delay(1000); // Vänta 1 sekund mellan varje generering
 }
 ```
-
-Liksom med andra funktioner kan du anpassa spannet av möjliga utfall. Värdet 101 är inte inkluderat, så detta kommer att returnera ett takl på 1 till 100.
-
-## Djupdykning
-
-Det är dock inte alla slumpmässiga nummer som är skapade lika. I själva verket använder Arduino pseudoslumpmässiga nummergenerering. Dessa "slumpmässiga" nummer följer en förutbestämd sekvens, men för de flesta ändamål är detta tillräckligt bra. 
-
-Alternativt, kan du använda `randomSeed()`-funktionen för att skapa en mer verkligt slumpmässig serie av nummer. Denna funktion använder tidbas indata för att sätta upp en startpunkt för den pseudoslumpmässiga sekvensen.
-
-```Arduino
-void setup() {
-  Serial.begin(9600);
-  randomSeed(analogRead(0)); // använde en ospecificerad analog ingång för att generera ett slumpmässigt frö
-}
-
-void loop() {
-  int randomNumber = random(1, 101);
-  Serial.println(randomNumber);
-  delay(1000); 
-}
+Sample output:
+```
+45
+23
+77
+...
 ```
 
-## Se Även
+## Djupdykning:
 
-För ytterligare inblick i att generera slumpmässiga nummer kan du besöka följande länkar:
+I tidiga datorer var slumptalsgenerering inte lika sofistikerad; de använde ofta enkla matematiska formelbaserade algoritmer. Arduino använder en pseudoslumptalsgenerator (PRNG), vilket innebär att sekvensen av tal är förutbestämd och upprepas efter ett visst intervall. Funktionen `randomSeed()` är kritisk då den initierar PRNG med ett startvärde, vilket gör slumptalssekvensen mer oförutsägbar. Alternativt kan hårdvarubaserade generatorer användas för äkta slumptal, men de är mer komplexa och dyra. Implementationen i Arduino är tillräcklig för de flesta hobbyprojekt.
 
-1. [Arduino Random Number Tutorial](https://www.makerguides.com/arduino-random-numbers/)
-2. [Arduino Random()](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-3. [Historical Perspectives on Random Numbers](https://arxiv.org/pdf/0801.4842.pdf)
+## Se även:
 
-Lycka till med dina Arduino-projekt!
+- Arduino `random` referens: https://www.arduino.cc/reference/en/language/functions/random-numbers/random/
+- Tutorial på användning av random numbers i Arduino: https://create.arduino.cc/projecthub/harshmangukiya/random-number-generator-using-arduino-9a9b28
+- Diskussion om pseudoslumptal vs äkta slumptal: http://www.arduino.cc/en/Tutorial/RandomSeed

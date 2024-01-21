@@ -1,7 +1,8 @@
 ---
-title:                "חיבור מחרוזות"
-html_title:           "C++: חיבור מחרוזות"
-simple_title:         "חיבור מחרוזות"
+title:                "שרשור מחרוזות"
+date:                  2024-01-20T17:34:08.352217-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרשור מחרוזות"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,38 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-צירוף מחרוזות הוא פעולה שבה אנחנו מצרפים שתי מחרוזות או יותר ליחידה אחת. תכנתים מחברים מחרוזות כדי לארגן ולמעגל מידע בצורה ממוחשבת יותר.
+## What & Why? (מה ולמה?)
+Concatenating strings in C involves combining two or more strings into one. We do this to construct messages, paths, or to process text dynamically.
 
-## איך ל:
-הנה דוגמה של כיצד לחבר שני מחרוזות ב-C:
-
+## How to: (איך לעשות את זה)
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-   char s1[10] = "שלום ";
-   char s2[] = "לך";
-
-   strcat(s1, s2);
-   printf("%s\n", s1);
-
-   return 0;
+    char str1[20] = "Hello, ";
+    char str2[] = "World!";
+    
+    strcat(str1, str2); // Concatenates str2 to str1
+    printf("%s\n", str1); // Outputs the concatenated string
+    
+    return 0;
 }
 ```
-
-שיעור הפלט יהיה:
+Sample Output:
 ```
-שלום לך
+Hello, World!
 ```
 
-## צלילה מעמיקה
-הוסף גרסת C הראשונה פונקציית `strcat`, פונקציה שמאפשרת לנו לחבר מחרוזות. אבל חשוב לזכור שהפונקציה לא מבצעת בדיקות גודל - כלומר, היא יכולה להוביל לגירסה אם המערך של המחרוזת המקורית שלא ברווח בצורה מספקת למחרוזת הדביקה.
+## Deep Dive (צלילה עמוקה)
+In the early days, string concatenation in C was manual - tricky and error-prone. `strcat` saves us from that. Always allocate enough space for the combined strings plus the null terminator, to avoid buffer overflows. Alternatives to `strcat` include `strncat`, which limits the number of concatenated characters, and more robust functions like `snprintf` for complex string operations.
 
-בהינתן הפונקציות `strcat` ו `strncat`, האחרונה מקבלת ארגומנט נוסף המגביל את כמות התווים שנוספים מהמחרוזת שנשלחה. זה מסייע למנוע בעיות עם כתיבת מחוץ לגבולות המערך.
-
-## ראה גם
-1. מדריך C מלא: https://he.wikipedia.org/wiki/C_(שפת_תכנות)
-2. תיעוד C: https://devdocs.io/c/
-3. מדריך למחרוזות ב-C: https://www.learn-c.org/en/Strings
+## See Also (ראה גם)
+- The C Standard Library manual for `strcat` and `strncat`: https://en.cppreference.com/w/c/string/byte/strcat
+- A guide to safer string concatenation in C: https://www.owasp.org/index.php/C-Based_Toolchain_Hardening_Cheat_Sheet
+- Information on buffer overflows and how to prevent them: https://owasp.org/www-community/vulnerabilities/Buffer_Overflow

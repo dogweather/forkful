@@ -1,6 +1,7 @@
 ---
 title:                "Suchen und Ersetzen von Text"
-html_title:           "Bash: Suchen und Ersetzen von Text"
+date:                  2024-01-20T17:57:11.779339-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "C"
 category:             "C"
@@ -11,51 +12,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Im Kern geht es beim Suchen und Ersetzen von Text darum, eine Zeichenkette in einem größeren Textblock zu finden und sie durch eine andere zu ersetzen. Programmierer nutzen das, um Daten zu aktualisieren, Fehler zu korrigieren oder Massenbearbeitungen durchzuführen.
 
-Suchen und Ersetzen von Text ist eine Operation, bei der ein bestimmter Text (das "Suchmuster") gefunden und durch einen anderen (den "Ersatz") ersetzt wird. Programmierer tun dies häufig, um redundante Aufgaben zu automatisieren oder definierte Muster im Code zu manipulieren.
+## How To / Wie geht's?
+Hier ist ein einfacher C-Code, der illustriert, wie man eine Funktion schreibt, um ein Wort in einem String zu suchen und zu ersetzen:
 
-## So geht's:
+```C
+#include <stdio.h>
+#include <string.h>
 
-Die C-Standardbibliothek bietet `strstr` und `sprintf` Funktionen zum Suchen und Ersetzen von Texten. Hier ist ein kurzes Beispiel:
+void searchAndReplace(char *source, const char *search, const char *replace) {
+    char buffer[1024];
+    char *insert_point = &buffer[0];
+    const char *tmp = source;
+    size_t len_search = strlen(search);
+    size_t len_replace = strlen(replace);
 
-```C 
-#include<stdio.h>
-#include<string.h>
+    while (1) {
+        const char *p = strstr(tmp, search);
 
-char* suchen_und_ersetzen(char* str, char* alt_text, char* neu_text) {
-    static char buffer[4096];
-    char *p;
- 
-    if(!(p = strstr(str, alt_text)))
-        return str;
+        // Kein weiteres Vorkommen gefunden
+        if (p == NULL) {
+            strcpy(insert_point, tmp);
+            break;
+        }
 
-    strncpy(buffer, str, p-str);
-    buffer[p-str] = '\0';
+        // Kopiere den Teil vor dem Vorkommen
+        memcpy(insert_point, tmp, p - tmp);
+        insert_point += p - tmp;
 
-    sprintf(buffer+(p-str), "%s%s", neu_text, p+strlen(alt_text));
+        // Kopiere die Ersetzung
+        memcpy(insert_point, replace, len_replace);
+        insert_point += len_replace;
 
-    return buffer;
+        // Fortfahren nach dem Vorkommen
+        tmp = p + len_search;
+    }
+
+    // Resultat kopieren
+    strcpy(source, buffer);
 }
 
 int main() {
-    char str[] = "Hallo Welt!";
-    char alt_text[] = "Welt";
-    char neu_text[] = "Zuhause";
-   
-    printf("%s\n", suchen_und_ersetzen(str, alt_text, neu_text));
+    char data[] = "Das ist ein Text mit einigen Worten. Diese Worten sind simpel.";
+    searchAndReplace(data, "Worten", "Wörtern");
 
+    printf("Ersetzter Text: %s\n", data);
     return 0;
 }
 ```
 
-Der Output wird `"Hallo Zuhause!"` sein.
+Sample Output:
 
-## Vertiefende Infos 
+```
+Ersetzter Text: Das ist ein Text mit einigen Wörtern. Diese Wörtern sind simpel.
+```
 
-Historisch gesehen war die Textsuch- und Ersetztechnik bereits in frühen Texteditoren wie `ed` und `vi` implementiert. Alternative Methoden zum Suchen und Ersetzen von Text können mit fortschrittlicheren Regex oder KMP-Algorithmen erreicht werden. Da C keine eingebaute Unterstützung für String-Manipulation bietet, verwenden wir hier ein manuelles Verfahren zum Finden und Ersetzen von Text, was einige Einschränkungen aufweist, wie z.B. die Begrenzung der Größe des Buffers.
+## Deep Dive / Tieftauchen
+Suchen und Ersetzen von Text in C ohne Standardbibliotheken war eine Herausforderung. Frühe C-Versionen boten nicht viel Unterstützung dafür. Heute nutzen wir `strstr` zum Suchen und `strcpy`, sowie `memcpy` zum Manipulieren von Strings.
 
-## Siehe auch
+Alternativen? Bibliotheken wie `regex.h` bieten reguläre Ausdrücke für komplexe Suchmuster. Andere Sprachen bieten hier oft mehr, zum Beispiel Python mit `str.replace`.
 
-1. [GNU C Library Documentation: String and Array Utilities](https://www.gnu.org/software/libc/manual/html_node/String-and-Array-Utilities.html)
-2. [C Programming/stdlib.h/strstr](https://en.wikibooks.org/wiki/C_Programming/string.h/strstr)
-3. [Tutorialspoint - C Programming - strstr](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
+Die Implementierung oben arbeitet in-place, um den Speicherbedarf zu minimieren. Größere Texte oder komplexere Muster erfordern jedoch oft robustere Lösungen mit dynamischem Speicher.
+
+## See Also / Siehe Auch
+Weiterführende Links für neugierige Leser:
+
+- [C Standard Library](https://en.cppreference.com/w/c/header)
+- [C Dynamic Memory Allocation](https://en.cppreference.com/w/c/memory)
+- [POSIX regex.h](https://pubs.opengroup.org/onlinepubs/7908799/xsh/regex.h.html)

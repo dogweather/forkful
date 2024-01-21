@@ -1,7 +1,8 @@
 ---
-title:                "Laste ned en nettside"
-html_title:           "Elixir: Laste ned en nettside"
-simple_title:         "Laste ned en nettside"
+title:                "Nedlasting av en nettside"
+date:                  2024-01-20T17:43:47.162005-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Nedlasting av en nettside"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,13 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
-
-Å laste ned en nettside innebærer å hente dens data slik at det kan vises på en brukers enhet. Programmerere gjør dette for å behandle nettsideinnholdet på klientsiden, eksempelvis for webskraping eller offline visning.
+## Hva & Hvorfor?
+Nedlasting av en nettside betyr at du henter ned HTML innholdet fra en nettadresse. Programmerere gjør dette for å bearbeide data, skrape informasjon, eller sjekke nettsidens tilgjengelighet.
 
 ## Hvordan:
-
-Vi skal bruke HttpClient-klassen i .NET. Her er grunnkode for dette:
+For å laste ned en nettside i C#, kan du bruke `HttpClient`. Her er en kjapp og skitten måte å gjøre det på:
 
 ```C#
 using System;
@@ -25,37 +24,33 @@ using System.Threading.Tasks;
 
 class Program
 {
-    static readonly HttpClient client = new HttpClient();
-
-    static async Task Main()
+    static async Task Main(string[] args)
     {
-        try
+        using (HttpClient client = new HttpClient())
         {
-            HttpResponseMessage response = await client.GetAsync("http://example.com");
-            response.EnsureSuccessStatusCode();
-            string responseBody = await response.Content.ReadAsStringAsync();
-
-            Console.WriteLine(responseBody);
-        }
-        catch(HttpRequestException e)
-        {
-            Console.WriteLine("\nException caught.");
-            Console.WriteLine("Message : {0} ",e.Message);
+            HttpResponseMessage response = await client.GetAsync("https://www.example.com");
+            if (response.IsSuccessStatusCode)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(content.Substring(0, 200)); // Skriver ut de første 200 tegnene for brevhet
+            }
+            else
+            {
+                Console.WriteLine("Kunne ikke laste ned siden: " + response.StatusCode);
+            }
         }
     }
 }
 ```
-Kjører du denne koden, vil innholdet på "http://example.com" skrives ut i konsollen. 
 
-## Dypdykk: 
+Kjører du koden, får du første delen av HTML innholdet til 'example.com' skrevet ut i konsollen.
 
-Før HttpClient, brukte programmerere WebClient eller HttpWebRequest for å laste ned nettsider. HttpClient er mer moderne og tilbyr mer funksjonalitet.
+## Dypdykk:
+Nedlasting av nettsider i C# har utviklet seg. Før `HttpClient`, brukte vi `WebClient` og før det `HttpWebRequest`. `HttpClient` er nå anbefalt for sin ytelse og brukervennlighet. Alternativer eksisterer, som `RestSharp` for REST API-er eller `HtmlAgilityPack` for HTML parsing.
 
-Et alternativ til HttpClient er RestSharp, en tredjeparts bibliotek som har noen funksjoner HttpClient mangler, som innebygget JSON-serialisering.
+I tillegg til metoden vist ovenfor, har `HttpClient` flere innstillinger for timeout, headers, og til og med hendelser for å overvåke progressjonen på store nedlastinger. For skalerbarhet og responsivitet, bruk `async` og `await` nøkkelordene for ikke å blokkere UI tråden eller skape unødvendig ventetid.
 
-`client.GetAsync()` brukes til å sende en GET-forespørsel til den angitte Uri og returnerer en HttpResponseMessage som inneholder HTTP-responsmeldingen. Hvis du vil lese innholdet på siden, kall `response.Content.ReadAsStringAsync()`.  
-
-## Se også
-
-
-Husk at beste praksis anbefaler å gjenbruke HttpClient-objekter i stedet for å opprette nye for hver forespørsel.
+## Se Også:
+- [HttpClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-6.0)
+- [Making HTTP Requests in .NET](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/console-webapiclient)
+- [Async and Await](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)

@@ -1,6 +1,7 @@
 ---
 title:                "웹 페이지 다운로드하기"
-html_title:           "Bash: 웹 페이지 다운로드하기"
+date:                  2024-01-20T17:43:54.220881-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "웹 페이지 다운로드하기"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,28 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며, 왜?
+## What & Why? (무엇과 왜?)
+웹 페이지를 다운로드한다는 것은 인터넷 상의 페이지 내용을 로컬 컴퓨터에 저장하는 것을 말합니다. 프로그래머들은 데이터 분석, 웹 크롤링 또는 백업용으로 웹 페이지를 다운로드합니다.
 
-웹페이지를 다운로드하려면 웹서버로부터 임의의 웹 문서 데이터를 받아야 합니다. 이것이 필요한 이유는 개발자가 웹 페이지의 콘텐츠를 분석하거나, 저장하거나, 재사용할 수 있게 해줍니다.
+## How to: (방법)
+Clojure에서 웹 페이지를 다운로드하려면 `clj-http` 라이브러리를 사용합니다. 먼저, 라이브러리를 프로젝트에 추가하세요:
 
-## 어떻게:
+```clj
+; project.clj에 의존성 추가
+:dependencies [[clj-http "3.12.3"]]
+```
 
-아래는 Clojure를 사용해 웹 페이지를 다운로드하는 예시입니다. 
-```Clojure
-(require '[clojure.java.io :as io])
+다음, 웹 페이지를 다운로드하고 내용을 출력하는 간단한 함수를 작성합니다:
+
+```clj
+(require '[clj-http.client :as client])
 
 (defn download-page [url]
-  (with-open [outstream (io/output-stream "myfile.html")]
-    (.write outstream (.getBytes (slurp url)))))
+  (let [response (client/get url)]
+    (:body response)))
+
+;; 사용 예:
+(println (download-page "http://example.com"))
 ```
-이 코드는 웹 페이지의 내용을 가져와 "myfile.html"라는 파일에 저장합니다.
 
-## 디프 다이브:
+출력 예:
 
-웹 페이지 다운로드는 HTTP 통신의 기본이며, 초기 웹 브라우징의 핵심 요소였습니다. Clojure와 같은 다양한 언어를 이용하여 이를 구현 가능합니다. 다양한 대안으로는 requests 라이브러리나 wget, curl 같은 커맨드 라인 툴이 있습니다. Clojure에서는 `slurp` 함수를 사용하여 서버로부터 데이터를 읽어 들이고, 읽어온 데이터는 `with-open`과 `write`를 이용하여 파일에 저장합니다.
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+```
 
-## 또한 참조하세요:
+## Deep Dive (심층 분석)
+`clj-http` 라이브러리는 Java의 Apache HttpComponents에 기반한 Clojure 래퍼입니다. 2009년에 개발되어 널리 사용되고 있습니다.
 
-웹 크롤링과 관련된 더 복잡한 예제는 다음 링크들을 참조하세요:
-- [Web Scraping with Clojure](https://kimh.github.io/clojure-by-example/#web-scraping)
-- [Introduction to Web Scraping with Clojure](https://realpython.com/tutorials/web-scraping/)
+대안으로는 `http-kit`이나 Java 자체의 `java.net.HttpURLConnection`을 사용할 수 있습니다. `clj-http`는 동기식으로 수행되며, 내부적으로 connection pooling, 자동 리다이렉트 처리 등을 지원합니다.
+
+## See Also (참고 자료)
+- `clj-http` GitHub 페이지: [https://github.com/dakrone/clj-http](https://github.com/dakrone/clj-http)
+- HttpComponents 공식 웹사이트: [https://hc.apache.org/](https://hc.apache.org/)

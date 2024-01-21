@@ -1,6 +1,7 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "C++: הורדת דף אינטרנט"
+date:                  2024-01-20T17:44:04.081486-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,32 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-הורדת דף אינטרנט היא פעולה שבה מחשב מתקשר עם שרת רשת כדי לקבל מידע או דף אינטרנט מסוים. מתכנתים עשויים להוריד דפים מקוונים כדי לעבוד על נתונים, לתת שירותים דינמיים או לנתח תוכן מקוון.
+להוריד דף אינטרנט זה פשוט לקבל את התוכן שלו דרך הרשת. תכנתים עושים את זה כדי לנתח נתונים, לבדוק את זמינות האתר, או לאסוף מידע אוטומטית.
 
-## איך להשתמש:
-שימוש בשפת Gleam להורדת דף אינטרנט יכול להיראות כך:
-```Gleam
-import gleam/httpc
+## איך לעשות:
+בואו נעבור על קטע קוד פשוט שמראה איך להוריד דף אינטרנט ב-Gleam:
 
-pub fn main(args: List(String)) {
-  let url = "http://example.com"
-  case httpc.get(url) {
+```gleam
+import gleam/http
+import gleam/expected.{Ok, Error}
+
+pub fn download_page(url: String) -> Result(String, String) {
+  let response = httpc.send(httpc.build_request(url, "GET"))
+  case response {
     Ok(response) -> 
-      io.println(response.body)
-    Error(err) -> 
-      io.println("Oops! Something went wrong.")
+      response.body |> Ok
+    Error(error) ->
+      error |> Error
+  }
+}
+
+pub fn main() {
+  let url = "http://example.com"
+  case download_page(url) {
+    Ok(body) -> 
+      io.println(body)
+    Error(reason) ->
+      io.println("Failed to download the page: " ++ reason)
   }
 }
 ```
-פלט דוגמה עבור הקוד לעיל:
-```
-"<html>...content of website...</html>"
-```
 
-## צלילה עמוקה
-בעבר, הורדת דף אינטרנט הייתה תהליך מורכב המשנה תקנים בין שרתים ודפדפנים. אך ביום וימינו, שפות programing מודרניות כמו Gleam מפשטות את התהליך. אפשרויות חלופיות משלימות יכולות לעבור דרך API המיועד לכך, כמו GraphQL או REST. פרטי המימוש של httpc.get הם פרטים חשופים ומדובר תלוי בקוד של השרת שאליו אנחנו מתקשרים.
+אם כל הכל עובד כמו שצריך, תראה בקונסול את התוכן של הדף.
 
-## ראו גם
-תיעוד Gleam HTTP: https://hexdocs.pm/gleam_http/readme.html
-למידת Gleam: https://gleam.run/tour/
-חבילת httpc של Gleam: https://hexdocs.pm/gleam_httpc/readme.html
+## עיון מעמיק
+בעבר, להוריד דף אינטרנט היה יותר מסובך. עם התפתחות מכלולי כלים כמו הספרייה `httpc` של Gleam, התהליך הפך להיות יותר אינטואיטיבי. ישנם חלופות אחרות כמו `reqwest` ב-Rust ו-'HTTPClient' ב-Java, אבל `httpc` ב-Gleam הוא בחירה טבעית לתכנתי Erlang ו-Elixir מכיוון שהוא מבוסס על אותם עקרונות ותוכנות.
+
+דפי אינטרנט יכולים להיות מורידים באמצעות פרוטוקולים שונים, אבל הקוד שניתן למעלה משתמש ב-HTTP כי הוא הנפוץ ביותר. HTTPS מספק שכבת אבטחה נוספת והיא חשובה לשימושים אינטראקטיביים.
+
+## ראה גם
+- [MDN Web Docs on HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+- [Erlang httpc documentation](http://erlang.org/doc/man/httpc.html)

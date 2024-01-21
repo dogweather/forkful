@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:50:52.523618-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,35 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Interpolacja stringów to proces podstawiania zmiennych bezpośrednio do stringów. Programiści korzystają z tego, aby dynamicznie manipulować tekstem i zwiększyć czytelność kodu.
+Interpolacja ciągu znaków polega na wstawianiu wartości zmiennych bezpośrednio w stringu. Programiści robią to, aby generować dynamiczne teksty z danych, łatwiej formatować wyjścia i ogólnie uprościć pisanie kodu.
 
 ## Jak to zrobić:
-
-W Haskellu, do interpolacji stringów możemy użyć pakietu `Text.Printf`:
+W Haskellu, interpolacja nie jest wbudowana jak w innych językach. Musimy użyć biblioteki, takiej jak `text` i jej quasi-quoterów. Oto jak:
 
 ```Haskell
-import Text.Printf
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE QuasiQuotes       #-}
 
-main = do
-    let name = "Jan"
-    let age = 25
-    printf "Cześć %s, masz %d lat.\n" name age
+import Data.Text
+import Data.Text.IO as T
+import Text.Shakespeare.Text (lt)
+
+name = "świat"
+age = 30
+
+main = T.putStrLn [lt|Cześć, #{name}! Masz już #{age} lat.|]
 ```
-Wynikowy output to:
+
+Po uruchomieniu otrzymasz:
 
 ```
-Cześć Jan, masz 25 lat.
+Cześć, świat! Masz już 30 lat.
 ```
 
-## Deep Dive
+## Głębsze spojrzenie
+Haskell początkowo nie miał wbudowanej interpolacji ciągów znaków. Musieliśmy używać konkatenacji i funkcji `show`. Doprowadziło to do powstania różnych bibliotek, które to upraszczały, jak `text` i `interpolate`.
 
-Interpolacja stringów jest podstawowym rozwiązaniem w wielu językach programowania, nie tylko w Haskellu. Powstała z chęci ułatwienia tworzenia skomplikowanych stringów.
+Alternatywą dla Shakespeare'a jest `fmt`, który używa type-safe formatowania, również wart uwagi. Jego użycie wygląda tak:
 
-Alternatywnie, w Haskellu możemy użyć operatora `(++)` do łączenia stringów, ale to nie jest tak czytelne jak interpolacja.
+```Haskell
+import Fmt
 
-Co do realizacji, `Text.Printf` wykorzystuje technikę o nazwie "typy formatu", która pozwala na zrozumienie, jakie argumenty są oczekiwane i jaki typ jest zwracany na podstawie formatu stringu.
+main = putStrLn (format "Cześć, {}! Masz już {} lat." name age)
+```
 
-## Zobacz również:
+Co do implementacji, `text` używa quasi-quoterów (`[lt|...|]`) do analizowania tekstów i zastępowania wyrażeń zawartych w `#{}`. `fmt` korzysta z type-safe DSL, który sprawdzi poprawność typów podczas kompilacji.
 
-- [Printf w Haskellu](https://hackage.haskell.org/package/base-4.15.0.0/docs/Text-Printf.html)
+## Zobacz także
+- `text` na Hackage: https://hackage.haskell.org/package/text
+- `fmt` na Hackage: https://hackage.haskell.org/package/fmt
+- Tutorial interpolacji w Haskellu: https://wiki.haskell.org/Quasiquotation
+- Dokumentacja TemplateHaskell: https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/template-haskell.html

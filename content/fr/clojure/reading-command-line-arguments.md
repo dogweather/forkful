@@ -1,6 +1,7 @@
 ---
 title:                "Lecture des arguments de ligne de commande"
-html_title:           "Ruby: Lecture des arguments de ligne de commande"
+date:                  2024-01-20T17:55:33.732185-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,36 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Lire les Arguments de la Ligne de Commande en Clojure
+## What & Why?
+Lire les arguments de la ligne de commande, c'est récupérer des infos directement de l'utilisateur quand il exécute votre script. On fait ça pour rendre nos programmes flexibles et interactifs.
 
-## Pourquoi et Quoi ?
+## How to:
+En Clojure, on utilise la variable globale `*command-line-args*` pour accéder aux arguments. Regardez comment on fait :
 
-Lire les arguments de la ligne de commande en Clojure, c'est obtenir les options et paramètres fournis à votre programme lors de son lancement via le terminal. C'est une tâche commune en programmation pour personnaliser le comportement du programme selon les besoins de l'utilisateur.
+```clojure
+;; Lancer le programme : `clojure monscript.clj arg1 arg2`
 
-## Comment faire :
+(defn main []
+  (println "Arguments de la ligne de commande:" *command-line-args*))
 
-Voici un exemple basique d'un programme qui lit et imprime les arguments de la ligne de commande.
-
-```Clojure
-(defn -main
-  [& args]
-  (println "Arguments: " args))
+(main)
 ```
 
-Si vous lancez le programme avec des arguments tels que "foo" et "bar", voici la sortie.
+Sortie typique :
 
-```Clojure
-Arguments : [foo bar]
+```
+Arguments de la ligne de commande: (arg1 arg2)
 ```
 
-## Plongée en profondeur: 
+On peut aussi parcourir les arguments :
 
-Historiquement, les arguments de ligne de commande étaient le moyen principal pour les utilisateurs d'interagir avec les programmes. Bien que les interfaces utilisateur graphiques soient plus populaires aujourd'hui, les arguments de ligne de commande restent essentiels pour les applications sans interface graphique, les scripts et l'automatisation.
+```clojure
+;; Lancer le programme : `clojure monscript.clj pomme orange banane`
 
-En alternative, on peut lire les entrées utilisateur avec les fonctions `read-line` ou `read`, ou lire des fichiers de configuration. Chacune a ses propres avantages et inconvénients.
+(defn main []
+  (doseq [arg *command-line-args*]
+    (println "Fruit:" arg)))
 
-Le système ‘parse-opts’ de Clojure vous permet de décortiquer facilement les arguments en options attendues et arguments positionnels, rendant la gestion des arguments de ligne de commande plus conviviale et moins sujette à erreurs.
+(main)
+```
 
-## Voir Aussi:
+Sortie :
 
-- Documentation officielle Clojure sur les espaces de noms, qui explique comment les arguments de la ligne de commande sont passés à la fonction `-main`: [https://clojure.org/reference/namespaces#_the_namespace](https://clojure.org/reference/namespaces#_the_namespace)
+```
+Fruit: pomme
+Fruit: orange
+Fruit: banane
+```
+
+## Deep Dive
+Avant, en Clojure, on utilisait `*command-line-args*` directement, mais c'est un peu brut. Aujourd'hui, on préfère souvent des bibliothèques comme `tools.cli` pour une analyse plus fine. 
+
+`*command-line-args*` est un vestige des premiers jours de Clojure, mais c’est toujours là, simple et pur. Si besoin est, on utilise des packages spécialisés qui s'occupent des drapeaux et des options (comme `tools.cli`, qui est un choix solide).
+
+Pourquoi pas utiliser `*command-line-args*` pour tout ? Parce que dès que les choses se corsent (options complexes, besoin de validation, etc.), tu vas vouloir quelque chose de plus costaud. 
+
+## See Also
+Pour approfondir, voici quelques liens :
+
+- [Clojure.org sur les scripts](https://clojure.org/guides/deps_and_cli)
+- [Documentation de tools.cli](https://github.com/clojure/tools.cli)

@@ -1,6 +1,7 @@
 ---
 title:                "Interpolazione di una stringa"
-html_title:           "Clojure: Interpolazione di una stringa"
+date:                  2024-01-20T17:51:10.944210-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolazione di una stringa"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,41 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why?
+L'interpolazione di stringhe permette di incorporare variabili direttamente all'interno di una stringa, per una concatenazione elegante e leggibile. I programmatori la utilizzano perché rende il codice più pulito e facile da mantenere.
 
-## Che Cos'è e Perché?
-
-L'interpolazione delle stringhe in Lua ti consente di inserire variabili direttamente all'interno di una stringa. Favorisce la leggibilità del codice e rende più semplice il formato delle stringhe.
-
-## Come Fare:
-
-Ecco un esempio di come puoi fare l'interpolazione delle stringhe in Lua:
+## How to:
+In Lua non esiste un operatore di interpolazione di stringa nativo, ma si può utilizzare la funzione `string.format`.
 
 ```Lua
-nome = "Mario"
-print(("Ciao, %s!"):format(nome))
+local nome = "Luca"
+local eta = 30
+local stringa_interpolata = string.format("Ciao, mi chiamo %s e ho %d anni.", nome, eta)
+print(stringa_interpolata) -- Ciao, mi chiamo Luca e ho 30 anni.
 ```
 
-Output:
+Per stringhe multilinea o con formattazione complessa, potete usare i cosiddetti "literals" (stringhe letterali):
 
 ```Lua
-Ciao, Mario!
+local prezzo = 19.99
+local prodotto = "tastiera"
+local messaggio = [=[
+Gentile cliente,
+Il prezzo della tua %s è di €%.2f.
+]=]
+
+print(messaggio:format(prodotto, prezzo))
+-- Gentile cliente,
+-- Il prezzo della tua tastiera è di €19.99.
 ```
 
-In questo esempio, `%s` è un segnaposto che viene sostituito dal valore della variabile `nome`.
+## Deep Dive
+La funzione di `string.format` in Lua è simile alla funzione sprintf in C e alle sue varianti in altri linguaggi, offrendo un modo familiare per i programmatori per lavorare con le stringhe.
 
-## Approfondimenti 
+In Lua 5.1, l'interpolazione di stringa non è un'operazione integrata, il che può sembrare una limitazione. Ogni volta che chiamate `string.format`, esplicitamente dichiarate il tipo di formato per ogni valore (ad esempio, `%s` per le stringhe e `%d` per i numeri interi).
 
-L'interpolazione delle stringhe ha una lunga storia in programmazione. Python, Ruby e altri linguaggi hanno anche supporto per l'interpolazione delle stringhe, sebbene la sintassi possa variare. In Lua, l'interpolazione delle stringhe si basa su una versione modificata del comando di formato `printf` del linguaggio C.
+Gli alternative, come le template strings in JavaScript o le f-strings in Python, non sono supportate nativamente in Lua, quindi `string.format` rimane la soluzione preferita.
 
-Esiste anche una libreria chiamata `stringy` che offre un approccio simile a Ruby o Python per l'interpolazione delle stringhe, ma non fa parte del core di Lua.
+A livello di implementazione, l'uso delle funzioni di stringa può rallentare leggermente il vostro programma se usate l'interpolazione in grandi cicli o in funzioni chiamate frequentemente. È importante considerare l'overhead di prestazione per le applicazioni che richiedono alta performance.
 
-Dettagli di implementazione: la funzione `format` di Lua prende come input una stringa con segnaposti (`%s`, `%d`, ecc.) e un elenco di variabili. Ogni segnaposto viene sostituito con il valore corrispondente della variabile.
-
-## Vedere Anche:
-
-Per ulteriori informazioni sull'interpolazione delle stringhe in Lua, consulta le seguenti risorse:
-
-- [The Programming in Lua book](https://www.lua.org/pil/20.2.html)
-- [The Lua Users Wiki](http://lua-users.org/wiki/StringInterpolation)
-- [The Lua 5.3 Reference Manual](https://www.lua.org/manual/5.3/manual.html#pdf-string.format)
+## See Also
+- [Programming in Lua (official book)](https://www.lua.org/pil/contents.html)
+- [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/)
+- [Lua-users wiki: String Interpolation](http://lua-users.org/wiki/StringInterpolation)

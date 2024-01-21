@@ -1,7 +1,8 @@
 ---
-title:                "Søking og erstatning av tekst"
-html_title:           "Lua: Søking og erstatning av tekst"
-simple_title:         "Søking og erstatning av tekst"
+title:                "Søking og erstatting av tekst"
+date:                  2024-01-20T17:58:50.456573-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Søking og erstatting av tekst"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,48 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# "## Hva & Hvorfor?"
+## Hva & Hvorfor?
+Søk og erstatt i tekstbehandling lar deg finne strenger og bytte dem ut med noe annet. Vi programmerere gjør det for å effektivisere kodeendringer, rette feil, eller oppdatere data.
 
-Søking og erstatning av tekst betyr å finne en bestemt streng av tegn i et større skript og erstatte den med en annen streng. Programmører gjør dette for å automatisere feilretting, oppdatere data eller manipulere tekst.
-
-# "## Hvordan:"
-
-Å søke og erstatte tekst i TypeScript kan oppnås med bruk av `.replace()` funksjonen. Her er et eksempel:
-
+## Hvordan gjøre det:
 ```TypeScript
-let tekst = "Hei, verden!";
-tekst = tekst.replace("verden", "Norge");
-console.log(tekst);
+const replaceText = (input: string, search: string, replaceWith: string): string => {
+  return input.replace(new RegExp(search, 'g'), replaceWith);
+};
+
+// Eksempelbruk:
+const originalText = 'Bananer er gule, bananer er sunne.';
+const newText = replaceText(originalText, 'bananer', 'epler');
+
+console.log(newText); // Epler er gule, epler er sunne.
 ```
 
-Utskriften vil være: "Hei, Norge!".
+## Dypdykk
+Søk og erstatt-funksjonaliteten har røtter i tidlig tekstbehandling, som `sed` i Unix. I JavaScript og TypeScript bruker vi `String.prototype.replace`. Regex (regular expressions) brukes for å finne mønstre i teksten.
 
-Du kan også bruke et RegExp objekt til å matche mønstre. For eksempel, for å erstatte alle tilfeller av "verden":
+Alternativer til `replace` inkluderer tredjepartsbiblioteker som `lodash` for å håndtere mer avanserte erstatninger og manipulasjoner. Implementeringsdetaljer involverer ofte flagg, som 'g' for globalt søk, eller 'i' for case-insensitive matching.
 
-```TypeScript
-let tekst = "Hei, verden! verden er vakker.";
-tekst = tekst.replace(/verden/g, "Norge");
-console.log(tekst);
-```
-
-Utskrift: "Hei, Norge! Norge er vakker."
-
-# "## Dyp Dykking:"
-
-Søk og erstatning av tekst har vært i bruk så lenge vi har datahåndteringssystemer. I TypeScript er `.replace()` en del av String API, arvet fra JavaScript.
-
-Det finnes alternative måter å søke og erstatte tekst på i TypeScript, som split og join, men `.replace()` er ofte mer lesbar og effektiv.
-
-```TypeScript
-let tekst = "Hei, verden! verden er vakker.";
-tekst = tekst.split("verden").join("Norge");
-console.log(tekst);
-```
-
-Utskrift: "Hei, Norge! Norge er vakker."
-
-Under metoden `.replace()`, søkemekanismen går gjennom hvert tegn i strengen en etter en til den finner et match. Denne lineære søkeprosessen gjør at `.replace()` har en tidskompleksitet på O(n).
-
-# "## Se Også:"
-
-- [Mozilla Developer Network - String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+## Se også
+- MDN Web Docs om `String.prototype.replace`: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+- RegExp-guiden: https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions
+- Lodash bibliotek: https://lodash.com/docs/4.17.15#replace

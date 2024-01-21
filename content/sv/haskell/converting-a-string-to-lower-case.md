@@ -1,7 +1,8 @@
 ---
-title:                "Omvandla en sträng till gemener"
-html_title:           "Arduino: Omvandla en sträng till gemener"
-simple_title:         "Omvandla en sträng till gemener"
+title:                "Konvertera en sträng till gemener"
+date:                  2024-01-20T17:38:29.226472-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Konvertera en sträng till gemener"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,35 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
+## Vad & Varför?
+Att konvertera en sträng till gemener innebär att alla versaler (stora bokstäver) i en text omvandlas till gemener (små bokstäver). Programmerare gör detta för att standardisera textdata, exempelvis för att göra sökningar oberoende av bokstävsstorlek.
 
-Att konvertera en sträng till gemener innebär att ändra alla stor bokstäver i strängen till små bokstäver. Detta utförs ofta av programmerare för att jämföra strängar på ett sätt som är oberoende av versalisering.
-
-## Hur Fungerar Det:
-
-I Haskell konvertera vi en sträng till gemener med hjälp av funktionen `map toLower`. Vi måste dock importera `Data.Char` paketet först.
-Här är ett exempel:
+## Hur gör man:
+I Haskell, använder du `Data.Text` för att jobba med textsträngar på ett effektivt sätt. I `Data.Text` finns en funktion `toLower` som konverterar varje tecken i en sträng till gemener. Här är ett enkelt exempel:
 
 ```Haskell
-import Data.Char
+import Data.Text (toLower, pack, unpack)
 
-toLowerString :: String -> String
-toLowerString = map toLower
+lowercaseStr :: String -> String
+lowercaseStr = unpack . toLower . pack
 
 main :: IO ()
-main = do
-    let test = "GODT NYTT ÅR"
-    putStrLn $ toLowerString test
+main = putStrLn $ lowercaseStr "Hej Världen!"
 ```
-När vi kör detta program kommer utdatan att vara `godt nytt år`.
 
-## Fördjupning
+Kör du programmet får du följande resultat:
 
-- Historisk kontext: Funktionen `toLower`, definierad i paketet `Data.Char`, tillhandahålls som en del av biblioteket Preludium i Haskell. Preludium är det bibliotek som importerar allt man behöver för grundläggande programmering i Haskell.
-- Alternativ: Det finns andra sätt att konvertera en sträng till små bokstäver i Haskell, t.ex. använda komposition istället för mappning: `toLowerString = foldr ((:) . toLower) []`.
-- Implementation detaljer: Funktionen `toLower` arbetar på enskilda `Char` värden. I Haskell är en `String` verkligen bara en lista av `Char`, så en `map` operation fördelar `toLower` funktion till varje `Char` i listan.
+```
+hej världen!
+```
 
-## Se Även
+## Djupdykning
+Att hantera text i programmering har varit relevant så länge som människor har interagerat med datorer. Innan `Data.Text`, använde många `Data.Char` och dess funktion `toLower` för att konvertera enskilda tecken, kombinerat med `map` för att tillämpa konverteringen på varje tecken i en sträng. `Data.Text` blev senare valet för många på grund av bättre prestanda med större textvolym.
 
-- [Haskell Prelude Dokumentation | Hackage](http://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html): För mer information om grundläggande Haskell-funktioner.
-- [Data.Char Dokumentation | Hackage](http://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html): För detaljer om `toLower` och andra `Char` relaterade funktioner.
+Alternativ? Du kan fortfarande använda den äldre metoden:
+
+```Haskell
+import Data.Char (toLower)
+
+lowercaseStrOld :: String -> String
+lowercaseStrOld = map toLower
+
+-- Och använda den på samma sätt som ovan:
+-- main = putStrLn $ lowercaseStrOld "Hej Världen!"
+```
+
+Detaljer? `Data.Text` hanterar text som en sekvens av Unicode-tecken, vilket innebär att den kan hantera nästan alla skrivsystem, inte bara ASCII. Vilket är värdefullt för en global värld.
+
+## Se även
+* [Data.Text modulen på Hackage](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)
+* [Data.Char modulen på Hackage](https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html)
+* [Haskell.org för vidare läsning](https://www.haskell.org/)
+* [Unicode standarden](https://unicode.org/standard/standard.html)

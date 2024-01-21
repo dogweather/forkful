@@ -1,7 +1,8 @@
 ---
-title:                "插值字符串"
-html_title:           "Arduino: 插值字符串"
-simple_title:         "插值字符串"
+title:                "字符串插值"
+date:                  2024-01-20T17:51:11.914702-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "字符串插值"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,27 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# INTERPOLATING A STRING IN LUA
+## What & Why? (是什么？为什么？)
+String interpolation is replacing placeholders within a string with actual values, a common practice for crafting messages or assembling texts dynamically. Programmers do it for readability and efficiency in their code.
 
-## 什么是什么？它为何重要？
-字符串插值是一种编程术语，指将变量值插入字符串的过程，从而创建新的字符串。在编程中完成这个过程可以提高代码的可读性和维护性。
+## How to: (如何操作：)
+Lua doesn't have built-in string interpolation, but we can get the job done nicely with some creativity. Here's how:
 
-## 怎样操作：
-Lua 并没有内建字符串插值的功能。我们可以通过格式化字符串 (`string.format` 函数) 来达到类似的效果。
 ```Lua
-name = "世界"
-msg = string.format("你好, %s", name)
-print(msg)
+-- Using string.format
+local name = "Xiao Ming"
+local age = 25
+local greeting = string.format("Hello, %s! You are %d years old.", name, age)
+print(greeting)  -- Output: Hello, Xiao Ming! You are 25 years old.
 ```
-以上代码输出：
-```Lua
-你好, 世界
-```
-## 深入探讨
-1) **历史背景**：Lua 之所以没有内建的字符串插值功能，主要是瞄准了其本身作为一种嵌入脚本语言的定位。
-2) **其他选择**：如果你需要一个可以进行字符串插值的 Lua 库，可以尝试 "interpolate"。
-3) **实现细节**：`string.format` 函数与 C 语言中的 `printf` 函数行为类似。
 
-## 参阅资料
-1) Lua 5.3 中的 [string.format 函数](https://www.lua.org/manual/5.3/manual.html#pdf-string.format)
-2) ["interpolate" Lua 库](https://luarocks.org/modules/bt/interpolate)
+You can also concatenate strings directly:
+
+```Lua
+-- Direct concatenation
+local greeting = "Hello, " .. name .. "! You are " .. age .. " years old."
+print(greeting)  -- Same output as above
+```
+
+## Deep Dive (深入了解)
+Historically, Lua never aimed for string interpolation within the language itself, and that's partly why `string.format` is the go-to option—it supports a variety of formats, following the C `printf` style.
+
+However, there are some makeshift alternatives:
+
+1. **Using the gsub function**:
+```Lua
+local template = "Hello, ${name}! You are ${age} years old."
+local interpolated = template:gsub('%${(%w+)}', {name="Xiao Ming", age=25})
+print(interpolated)  -- Output mirrors the above
+```
+2. **Custom interpolation function**:
+```Lua
+function interpolate(s, tab)
+  return (s:gsub('($%b{})', function(w) return tab[w:sub(3, -2)] or w end))
+end
+
+local message = interpolate("Hello, ${name}! You are ${age} years old.", {name="Xiao Ming", age=25})
+print(message)  -- Identical to previous results
+```
+
+Each method has its pros and cons, including readability and performance implications. Choose based on your need for speed or clarity.
+
+## See Also (另请参阅)
+Here are some resources that might help you deepen your understanding and efficiency with strings in Lua:
+
+- [Lua 5.4 Reference Manual - Strings](https://www.lua.org/manual/5.4/manual.html#6.4)
+- [Programming in Lua (4th edition) - Section 20.1, String Library](https://www.lua.org/pil/20.1.html)
+- [Lua-Users Wiki - Strings Tutorial](http://lua-users.org/wiki/StringsTutorial)
+
+Using these sources, you'll solidify the concepts and get inventive with your solutions. Happy coding!

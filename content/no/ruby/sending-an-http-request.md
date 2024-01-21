@@ -1,7 +1,8 @@
 ---
-title:                "Å sende en http-forespørsel"
-html_title:           "C++: Å sende en http-forespørsel"
-simple_title:         "Å sende en http-forespørsel"
+title:                "Å sende en HTTP-forespørsel"
+date:                  2024-01-20T18:00:31.977564-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,57 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why?
+Å sende en HTTP-forespørsel er å be en webserver om data eller om å utføre en handling. Programmerere gjør dette for å integrere med webtjenester, laste ned innhold eller sende data til en server.
 
-## Hva & Hvorfor?
-
-Å sende en HTTP-forespørsel er handlingen med å spørre en server om en bestemt ressurs, som en nettside eller en fil. Programmerere gjør dette for å hente data, sende data, eller interagere med eksterne tjenester og APIer.
-
-## Hvordan:
-
-Her er et enkelt eksempel på hvordan sende en GET HTTP-forespørsel til en server ved hjelp av 'net/http' biblioteket i Ruby:
+## How to:
+Ruby har flere måter å sende HTTP-forespørsler på. Her er et enkelt eksempel med `net/http` biblioteket:
 
 ```Ruby
+require 'uri'
 require 'net/http'
 
-url = URI("http://example.com")
-response = Net::HTTP.get(url)
+uri = URI('http://www.example.com/index.html')
+response = Net::HTTP.get_response(uri)
 
-puts response
+puts response.body if response.is_a?(Net::HTTPSuccess)
 ```
 
-Koden ovenfor vil skrive ut innholdet på siden 'http://example.com'. 
-
-Hvis du vil sende data til serveren, bruker du en POST-forespørsel. Her er et eksempel:
+Output:
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
+Eller med `httparty` gem:
 
 ```Ruby
-require 'net/http'
+require 'httparty'
 
-url = URI("http://example.com")
-http = Net::HTTP.new(url.host, url.port)
+response = HTTParty.get('http://www.example.com/index.html')
 
-request = Net::HTTP::Post.new(url)
-request["Content-Type"] = "application/json"
-request.body = '{"data": "test"}'
-
-response = http.request(request)
-puts response.read_body
+puts response.body if response.success?
 ```
 
-## Dypdykk
+## Deep Dive
+Før Ruby hadde innebygde biblioteker for nettverksforespørsler, måtte programmere bruke socket-programmering for hånd. `net/http` kom og forenklet prosessen. Alternativer som `httparty` og `faraday` tilbyr mer funksjonalitet og syntaktisk sukker. Disse gemmene pakker `net/http`'s funksjonalitet og gir ekstra features som middleware-støtte og enklere testing.
 
-Det historiske konteksten for sending av HTTP-forespørsler går tilbake til opprettelsen av World Wide Web. HTTP, eller Hypertext Transfer Protocol, var det primære verktøyet for kommunikasjon mellom klienter og servere.
+Når du sender HTTP-forespørsler, er det viktig å håndtere nettverksfeil og dårlige serverresponser. Noen detaljer, som tid ut (timeout) eller lesing av store svar, kan kreve ytterligere konfigurasjon.
 
-Det finnes mange alternative metoder for å sende HTTP-forespørsler i Ruby, inkludert andre biblioteker som 'httparty' og 'rest-client'. Valget av metode avhenger ofte av spesifikke behov i prosjektet.
-
-Når det gjelder implementeringsdetaljer, er en viktig ting å huske at forskjellige typer HTTP-forespørsler (GET, POST, DELETE, etc.) brukes for forskjellige formål. GET brukes til å hente informasjon, mens POST sender info og DELETE ser vekk med data.
-
-## Se Også
-
-Her er noen flere ressurser du kan sjekke ut for å lære mer om dette emnet:
-
-- [Ruby Dokumentasjon om Net::HTTP](https://ruby-doc.org/stdlib-2.5.1/libdoc/net/http/rdoc/Net/HTTP.html)
-
-- [RESTful APIer med Ruby: Frameworks and Tools](https://medium.com/swlh/restful-apis-with-ruby-gems-and-tools-962d81c6591d)
-
-- [How HTTP Works](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+## See Also
+- Ruby’s Net::HTTP documentation: https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html
+- HTTParty GitHub repository: https://github.com/jnunemaker/httparty
+- Faraday GitHub repository: https://github.com/lostisland/faraday
+- Forståelse av HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview

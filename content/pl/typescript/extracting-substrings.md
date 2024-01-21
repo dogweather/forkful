@@ -1,7 +1,8 @@
 ---
-title:                "Wydobywanie podciągów"
-html_title:           "Python: Wydobywanie podciągów"
-simple_title:         "Wydobywanie podciągów"
+title:                "Wycinanie podłańcuchów"
+date:                  2024-01-20T17:46:52.862533-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wycinanie podłańcuchów"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,30 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why?
+Wyciąganie podłańcuchów to proces pozyskiwania krótszych ciągów znaków z większego tekstu. Programiści używają tej techniki, by manipulować danymi tekstowymi, uzyskiwać wartościowe informacje lub przygotowywać tekst do wyświetlenia użytkownikowi.
 
-Wyciąganie podciągów to proces wydzielania mniejszych segmentów, zwanych podciągami, z większego ciągu znaków. Programiści robią to, gdy potrzebują manipulować lub analizować mniejsze części danej strony.
+## How to:
+TypeScript daje kilka metod do łatwego wydobywania podłańcuchów. Przyjrzyjmy się przykładom:
 
-## Jak to zrobić:
+```typescript
+let text: string = "Witajcie w wesołym świecie TypeScript!";
 
-Używamy wbudowanej metody `substring()` w TypeScript do wyciągania podciągów. Poniżej znajduje się przykład:
+// Użycie metody .substring(startIndex, endIndex)
+let substring1: string = text.substring(8, 15);
+console.log(substring1); // "w wesoł"
 
-```TypeScript
-let str = "Cześć, jestem programistą!";
-let subStr = str.substring(7, 13);
-console.log(subStr);  // "jestem"
+// Użycie metody .slice(startIndex, endIndex)
+let substring2: string = text.slice(8, -14);
+console.log(substring2); // "w wesoł"
+
+// Użycie metody .substr(startIndex, length)
+let substring3: string = text.substr(8, 7);
+console.log(substring3); // "w wesoł"
 ```
 
-W tym przykładzie `substring(7, 13)` wyciąga podciąg zaczynający się od 7. miejsca (licząc od 0), a kończący na 13. miejscu. 
+Wynik w konsoli:
+```
+"w wesoł"
+"w wesoł"
+"w wesoł"
+```
+Jak widać, efekty są podobne, ale metody się różnią. Wybór należy do programisty.
 
-Użytkowanie `substring()` jest proste. Pamiętaj jednak, że TypeScript (podobnie jak JavaScript) liczy miejsca od 0, co oznacza, że pierwszy znak w ciągu to miejsce 0, a nie 1.
+## Deep Dive:
+Branie podściągów informacji z tekstu nie jest niczym nowym. Na przykład w JavaScript używa się `substring`, `slice` i `substr` od lat. W TypeScript, który jest nadzbiorem JavaScript, funkcje te również działają.
 
-## Deep Dive
+Alternatywą jest użycie wyrażeń regularnych z metodą `.match()`, co daje większą kontrolę i elastyczność. Jednakże, wyrażenia regularne mogą być overkill'em dla prostych zadań i są trudniejsze w debugowaniu.
 
-Metoda `substring()` jest długoletnią częścią JavaScript, na którym TypeScript jest oparty. Jest często używana ze względu na swoją prostotę i efektywność, choć nie jest jedyną metodą do manipulacji ciągami w TypeScript. Alternatywą jest `slice()`, który działa podobnie, ale ma nieco większą elastyczność, np. umożliwia użycie wartości ujemnych.
+`substring` różni się od `slice` tym, że nie akceptuje ujemnych indeksów i ma mniej elastyczną obsługę przypadków skrajnych, takich jak przekazanie większego `startIndex` przed `endIndex`. `substr` jest już uznawana za przestarzałą i nie jest zalecana do nowych projektów.
 
-Pod względem implementacji, `substring()` działa przez przeiterowanie przez ciąg znaków i zwracanie nowego ciągu zawierającego znaki między określonymi indeksami.
-
-## Zobacz też:
-
-- Porównanie `substring()` i `slice()`: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+## See Also:
+- MDN Web Docs na temat `String.prototype.substring()`: https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/substring
+- MDN Web Docs na temat `String.prototype.slice()`: https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+- MDN Web Docs na temat `String.prototype.substr()`: https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/substr
+- Artykuł o wyrażeniach regularnych w TypeScript: [Link do artykułu]

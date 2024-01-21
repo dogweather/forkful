@@ -1,7 +1,9 @@
 ---
-title:                "Обчислення дати в майбутньому або минулому"
-html_title:           "Bash: Обчислення дати в майбутньому або минулому"
-simple_title:         "Обчислення дати в майбутньому або минулому"
+title:                "Обчислення дати у майбутньому чи минулому"
+date:                  2024-01-20T17:28:31.922931-07:00
+model:                 gpt-4-1106-preview
+html_title:           "C#: Обчислення дати у майбутньому чи минулому"
+simple_title:         "Обчислення дати у майбутньому чи минулому"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,34 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і Навіщо?
+## What & Why? (Що та Чому?)
+Розрахунки дат у майбутньому чи минулому — це визначення нових дат, додавши чи віднявши час до відомої дати. Програмісти роблять це для напланування подій, термінів завдань та архівації.
 
-Обчислення дати у майбутньому або минулому - це процес встановлення конкретної дати, відхиленої від дати, яку ми вже знаємо. Це часто використовується програмістами для сценаріїв планування, слідкування або логування.
-
-## Як це зробити:
-
-Обчислення дати можна виконати в Bash за допомогою вбудованої утиліти `date`. Погляньмо на приклад коду.
-
+## How to: (Як це зробити:)
 ```Bash
-# Для обчислення дати в майбутньому, наприклад на тиждень пізніше:
-date -d "+7 days"
-
-# Для обчислення дати у минулому, наприклад тиждень тому:
-date -d "-7 days"
+# Add days to the current date
+date -d "+5 days" '+%Y-%m-%d'
 ```
 
-Виконання цих команд виведе майбутню і минулу дати відповідно.
+```Bash
+# Subtract days from the current date
+date -d "-5 days" '+%Y-%m-%d'
+```
 
-## Поглиблений Розбір:
+```Bash
+# Use a specific date as a starting point
+date -d "2023-03-15 +10 days" '+%Y-%m-%d'
+```
 
-1. **Історичний контекст**: В Unix-системах, нащадках системи Unix (Linux, macOS тощо) та шелах (таких як Bash), уже давно використовується утиліта `date` для роботи з датами.
+```Bash
+# Output examples
+2023-03-20 # Five days added to the current date
+2023-03-10 # Five days subtracted from the current date
+2023-03-25 # Ten days added to March 15, 2023
+```
 
-2. **Альтернативи**: Незважаючи на використання `date`, є інші способи обчислення дати, як-от за допомогою утиліт `at` або `cron`. Однак, вони менш гнучкі та складніші у використанні.
+## Deep Dive (Поглиблений Аналіз):
+Праця з датами — це стандартний кусок роботи для баш. Від днів Unix, `date` був основним інструментом. Альтернативи включають `GNU date`, `datetime` модулі в Python, або використання `dateutils` в Linux.
 
-3. **Деталі реалізації**: Утиліта `date` використовує системний час для обчислення дати у майбутньому або минулому. Вона враховує параметри, такі як часовий пояс системи, для отримання точної дати.
+Налаштування баш скриптів для роботи з датами важливе для автоматизації та логування. Більшість систем підтримують цю команду без додаткових інсталяцій.
 
-## Дивіться Також:
-
-1. [GNU Date Manual](http://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html) - Повний мануал на `date` утиліту з GNU.
-
-2. [StackOverflow: How to subtract n days from today's date using bash?](https://stackoverflow.com/questions/28391142/how-to-subtract-n-days-from-todays-date-using-bash) - Доглибний обговорення роботи з датой у Bash на StackOverflow.
+## See Also (Дивись також):
+- GNU Coreutils Manual: https://www.gnu.org/software/coreutils/manual/coreutils.html#date-invocation
+- `dateutils` documentation: http://www.fresse.org/dateutils/
+- Bash script examples for date manipulation: https://mywiki.wooledge.org/BashFAQ/081

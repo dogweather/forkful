@@ -1,7 +1,8 @@
 ---
-title:                "Générer des nombres aléatoires"
-html_title:           "Elixir: Générer des nombres aléatoires"
-simple_title:         "Générer des nombres aléatoires"
+title:                "Génération de nombres aléatoires"
+date:                  2024-01-20T17:48:43.918897-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Génération de nombres aléatoires"
 programming_language: "C"
 category:             "C"
 tag:                  "Numbers"
@@ -10,13 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce et Pourquoi ?
+## What & Why? (Quoi et pourquoi ?)
+Générer des nombres aléatoires, c'est simuler le hasard en informatique. Les programmeurs utilisent ces nombres pour tout, des jeux aux simulations, en passant par la sécurité informatique.
 
-La génération de nombres aléatoires en C est une technique qui permet de produire des séquences de nombres sans aucun ordre apparent. Les programmeurs l'utilisent pour diverses raisons : test des logiciels, cryptographie, simulations, jeux vidéo et beaucoup plus.
-
-## Comment faire :
-
-Utilisation de la fonction rand() dans la bibliothèque standard C.
+## How to: (Comment faire :)
+Pour générer un nombre aléatoire en C, il faut inclure les headers `stdlib.h` et `time.h`, et utiliser les fonctions `rand()` et `srand()`.
 
 ```C
 #include <stdio.h>
@@ -24,32 +23,22 @@ Utilisation de la fonction rand() dans la bibliothèque standard C.
 #include <time.h>
 
 int main() {
-  // initialiser le générateur de nombres aléatoires
-  srand(time(0));
-
-  // générer un nombre aléatoire et l'affecter à la variable num
-  int num = rand();
-
-  // imprimer le résultat
-  printf("Le nombre aléatoire est : %d\n", num);
-
-  return 0;
+    srand(time(NULL)); // Initialisation du générateur.
+    int nombre_aleatoire = rand() % 100; // Un nombre aléatoire entre 0 et 99.
+    printf("Nombre aléatoire : %d\n", nombre_aleatoire);
+    return 0;
 }
 ```
-Output : 
+
+Sample output:
 ```
-Le nombre aléatoire est : (un nombre aléatoire)
+Nombre aléatoire : 42
 ```
-## Deep Dive:
 
-Historiquement, la génération de nombres aléatoires était une procédure complexe. Aujourd'hui, avec l'évolution des ordinateurs, c'est une tâche simple et parfois transparente. 
+## Deep Dive (Plongée en profondeur)
+Historiquement, le C utilise la fonction `rand()` pour générer des nombres aléatoires. Mais `rand()` n'est pas vraiment aléatoire ; c'est pseudo-aléatoire, basé sur une séquence prévisible si on connaît le "seed". Pour une séquence différente à chaque exécution, on utilise `srand()` avec le temps actuel comme seed. Des alternatives, comme `/dev/random` et `/dev/urandom` sous Unix, peuvent fournir de meilleures propriétés aléatoires pour la cryptographie. Enfin, C11 a introduit `<stdatomic.h>` pour la génération sûre en contexte multi-thread.
 
-En termes d'alternatives, d'autres fonctions comme `random()`, `drand48()`, etc. peuvent être utilisées mais elles sont souvent spécifiques à certaines plates-formes. 
-
-En ce qui concerne les détails de mise en œuvre, `rand()` produit une séquence pseudo-aléatoire. Il est important de noter que sans un bon "seed", comme `time(0)`, la fonction `rand()` produira toujours la même séquence de nombres aléatoires.
-
-## Voir aussi :
-
-- Documentation du C99 Standard Library : https://www.iso.org/standard/29237.html
-- Introduction to Randomness and Random Number Generation : https://www.random.org/randomness/
-- Génération de nombres aléatoires : https://en.wikipedia.org/wiki/Random_number_generation
+## See Also (Voir aussi)
+- Documentation GNU sur `rand` et `srand`: https://www.gnu.org/software/libc/manual/html_node/ISO-Random.html
+- Guide sur la génération de nombres aléatoires sécurisés: https://www.2uo.de/myths-about-urandom/
+- La librairie C11 Standard: http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf

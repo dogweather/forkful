@@ -1,7 +1,8 @@
 ---
-title:                "Інтерполяція рядка"
-html_title:           "Java: Інтерполяція рядка"
-simple_title:         "Інтерполяція рядка"
+title:                "Інтерполяція рядків"
+date:                  2024-01-20T17:50:21.617948-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Інтерполяція рядків"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,48 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та Чому?
+## What & Why?
+Що та навіщо?
 
-Інтерполяція рядків - це процес вставки значення змінних прямо в текстовий рядок. Програмісти регулярно використовують її для кращого форматування виводу і більшої читабельності коду.
+Interpolating a string means inserting values into a predefined text format. Programmers do it to build dynamic strings without the cumbersome concatenation.
 
-## Як це зробити:
+## How to:
+Як це зробити:
 
-Використання інтерполяції рядків в С++ вимагає використання спеціальних функцій. Один зі способів - застосування `printf` або альтернативних методів форматування.
+In C++, you can use `std::format` from C++20 to interpolate strings easily.
 
 ```C++
-#include <cstdio>
+#include <iostream>
+#include <format>
 
 int main() {
-    int age = 25;
-    printf("Мені %d років", age);
+    int age = 30;
+    std::string name = "Oleksiy";
+    std::string greeting = std::format("Hello, {0}! You are {1} years old.", name, age);
+    
+    std::cout << greeting << std::endl;
+    
     return 0;
 }
 ```
 
-Вивод:
+Output:
 ```
-Мені 25 років
-```
-
-## Пірнемо глибше:
-
-Історично в C++ інтерполяцію рядків виконували з допомогою функцій форматування таких як `printf`. Однак такі функції досі можуть мати проблеми з типами даних і безпекою. 
-
-З якогось часу бібліотека {fmt} стає новим стандартом для форматування рядків в C++, забезпечуючи типобезпечний та зручний для читання синтаксис. 
-
-```C++
-#include <fmt/core.h>
-
-int main() {
-    int age = 25;
-    fmt::print("Мені {} років", age);
-}
+Hello, Oleksiy! You are 30 years old.
 ```
 
-Але варто зазначити, що для використання {fmt} потрібна її попередня встановлення і підключення.
+## Deep Dive:
+Поглиблений огляд:
 
-## Див. також:
+Before C++20, you'd typically use stream insertion operators (`<<`) or `sprintf`. These methods can be error-prone and less readable. `std::format` was introduced to simplify string formatting, inspired by Python's `str.format()` and C#'s string interpolation.
 
-[fmtlib.net](https://fmt.dev/latest/index.html) - офіційний сайт бібліотеки {fmt}, який містить детальну документацію і приклади коду.
+Alternatives to `std::format` include the Boost Format library or using third-party libraries like {fmt}. Internally, `std::format` uses a format string that contains replacement fields surrounded by curly braces which match the arguments by order or name.
 
-[cppreference.com](https://en.cppreference.com/w/cpp/io/c/fprintf) - детальний огляд інтерполяції рядків за допомогою `printf` в C++.
+## See Also:
+Дивіться також:
+
+- C++ `std::format` documentation: [cppreference.com](https://en.cppreference.com/w/cpp/utility/format)
+- {fmt} library: [fmt.dev](https://fmt.dev/latest/index.html)
+- Boost Format library: [boost.org](https://www.boost.org/doc/libs/1_75_0/libs/format/)

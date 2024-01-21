@@ -1,6 +1,7 @@
 ---
 title:                "テキストの検索と置換"
-html_title:           "Java: テキストの検索と置換"
+date:                  2024-01-20T17:57:54.806315-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "テキストの検索と置換"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,34 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+プログラマーがテキストの検索と置換を行うのは、特定の文字列を見つけ出して別の文字列に変更するためです。コードのリファクタリング、エラーメッセージの更新、データ整形など、さまざまな理由で必要とされます。
 
-テキストの検索と置換は、一連の文字を別の文字列に置き換える開発者の一般的なタスクです。プログラマーはこれを行うのは、特定のパターンを修正、更新、または削除するためです。
+## How to (やり方)
+```gleam
+import gleam/string
 
-## 使い方：
-
-以下にGleamでテキスト検索と置換を行う方法の 例を示します：
-
-```Gleam
-import gleam/regex
-
-fn main() {
-  let re = regex.from_string("foo").unwrap()
-  let new_string = regex.replace(&re, "foobar", "bar")
-  assert new_string == Ok("barbar")
+pub fn main() {
+  let text = "The quick brown fox jumps over the lazy dog"
+  let new_text = string.replace(text, "fox", "squirrel")
+  new_text
 }
 ```
-この例では、"foo"という文字列を"bar"に置換しています。
+出力:
+```
+"The quick brown squirrel jumps over the lazy dog"
+```
 
-## ディープダイブ：
+## Deep Dive (深掘り)
+テキストの検索と置換はプログラミングの昔からある概念です。正規表現を使った高度なパターンマッチングやUnixの`sed`コマンドなど、多くのツールがこの機能を提供しています。Gleamでは`string`モジュールを使って簡単に行うことができます。置換の実装は、内部的には文字列を走査してパターンに一致する部分を新しい文字列で置き換えることになります。Gleamは型安全な言語なので、置換操作が型システムによって手助けされ、エラーを生じにくくなっています。
 
-テキストの検索と置換は、機能のないプログラミング言語から、最も現代的なプログラミング言語まで組み込まれています。正規表現はこれらのタスクを行うためのパワフルなツールで、Gleamでは `gleam/regex` モジュールを通じて利用できます。
-
-なお、Gleamの検索と置換はErlang VM上で実行されます。これは開発者により大きなパフォーマンスと安全性を提供します。
-
-またErlang VMでは、compile time（コンパイルタイム）とruntime（ランタイム）のエラーを分離して取り扱います。
-
-## 参考情報:
-
-* 更に詳しい情報として、Gleamのドキュメンテーションをご覧ください：https://gleam.run/book/tour/regex.html 
-* 置換操作についての詳細な情報はこちら：https://gleam.run/documentation-guides/gleam-for-elixir-people/#find-and-replace
+## See Also (関連情報)
+- Gleamの公式文書: [https://gleam.run/](https://gleam.run/)
+- 正規表現についての詳細: [https://en.wikipedia.org/wiki/Regular_expression](https://en.wikipedia.org/wiki/Regular_expression)
+- Unixの`sed`について: [https://www.gnu.org/software/sed/manual/sed.html](https://www.gnu.org/software/sed/manual/sed.html)

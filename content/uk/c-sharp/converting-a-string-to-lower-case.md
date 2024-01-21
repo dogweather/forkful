@@ -1,7 +1,8 @@
 ---
-title:                "Перетворення рядка в нижній регістр"
-html_title:           "Javascript: Перетворення рядка в нижній регістр"
-simple_title:         "Перетворення рядка в нижній регістр"
+title:                "Перетворення рядка у нижній регістр"
+date:                  2024-01-20T17:38:11.397890-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Перетворення рядка у нижній регістр"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,27 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це та навіщо це потрібно?
-Перетворення рядка в нижній регістр у C# - це процес переміщення всіх символів рядка в їхні еквівалентні символи нижнього регістру. Це корисно, коли вам потрібно зробити порівняння рядків нечутливими до регістру або коли потрібно унормоване відображення даних.
+## What & Why? | Що і Чому?
+Приведення рядків до нижнього регістру - це процес, коли всі великі літери у рядку замінюються на малі. Роблять це для уніфікації даних, наприклад, при порівнянні тексту без врахування регістру.
 
-## Як це працює:
+## How to: | Як це зробити:
 ```C#
-string str = "Hello, World!";
-string lowerStr = str.ToLower();
-Console.WriteLine(lowerStr);
-```
-Вивід:
-```
-hello, world!
-```
-В цій маленькій програмі `ToLower()` метод класу `System.String` перетворює рядок `"Hello, World!"` в рядок `"hello, world!"`.
+using System;
 
-## Поглиблений огляд
-- **Історичний контекст**: Метод `ToLower()` був наявний в .NET Framework 1.0, що було видано у 2002 році, і продовжує залишатися в поточних версіях C#.
-- **Альтернативи**: В класі `System.String` C# має є альтернативний метод `ToLowerInvariant()`, який використовується для культуронезалежних операцій.
-- **Деталі реалізації**: Метод `ToLower()` в C# працює з використанням культурних налаштувань поточної системи. Це означає, якщо ваша система встановлена наприклад українською мовою, то `ToLower` буде працювати відповідно до для правил регістру української мови.
+class Program
+{
+    static void Main()
+    {
+        string original = "Привіт, Світе!";
+        string lowercased = original.ToLower();
 
-## Дивіться також
-1. [Документація Microsoft про ToLower()](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=net-5.0)
-2. [Стаття про різницю між ToLower та ToLowerInvariant](https://stackoverflow.com/questions/6225808/tolowerinvariant-vs-tolower)
-3. [Стаття на MSDN про строкові операції в .NET](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/modify-string-contents)
+        Console.WriteLine(lowercased);  // Output: привіт, світе!
+    }
+}
+```
+
+## Deep Dive | Поглиблений Розгляд:
+У минулому, перетворення тексту в один регістр могло бути не таким тривіальним завданням, адже стандарти кодування символів були різними. Зараз, з Unicode, C# використовує метод `ToLower()`, який враховує локальні стандарти при перетворенні.
+
+Альтернативою `ToLower()` є `ToLowerInvariant()`. Цей метод ігнорує локалізацію і використовується, коли потрібна єдина форма для всіх користувачів, незалежно від їх мови та культури.
+
+Зауважте, що ці методи можуть вести себе неочікувано з деякими символами, на кшталт лігатур. Розробники повинні знати особливості своєї аудиторії та дані, з якими вони працюють, щоб обрати відповідний метод.
+
+## See Also | Дивись Також:
+- [
+System.String.ToLower Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower)
+- [
+System.String.ToLowerInvariant Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolowerinvariant)
+- [Unicode Standard](http://www.unicode.org/standard/standard.html)

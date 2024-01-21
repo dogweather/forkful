@@ -1,6 +1,7 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
+date:                  2024-01-20T17:57:37.364703-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "C"
 category:             "C"
@@ -10,49 +11,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Hakeminen ja korvaaminen on tekstinpätkien löytämistä ja niiden muuttamista. Koodarit käyttävät tätä automatisoidakseen tylsiä tehtäviä ja välttääkseen inhimillisiä virheitä.
 
-Tekstin etsiminen ja korvaaminen on prosessi, jossa voit paikallistaa määritetyn merkkijonon tai mallin ja korvata sen toisella merkkijonolla. Ohjelmoijat tekevät sen tehdäkseen koodistaan helpommin ylläpidettävän ja enhän tietokoneen suorituskykyä.
-
-## Miten tehdä:
-
-Alla on esimerkki merkkijonon etsimisestä ja korvaamisesta C-ohjelmoinnissa.
-
+## How to: (Kuinka tehdä:)
 ```C
 #include <stdio.h>
+#include <string.h>
 
-void replaceChar(char* s, char oldChar, char newChar) {
-   for (int i = 0; s[i] != '\0'; ++i) {
-      if (s[i] == oldChar) {
-         s[i] = newChar;
-      }
-   }
+void searchAndReplace(char *source, const char *search, const char *replace) {
+    char buffer[1024];
+    char *insert_point = &buffer[0];
+    const char *tmp = source;
+    size_t search_len = strlen(search);
+    size_t replace_len = strlen(replace);
+
+    while (1) {
+        const char *p = strstr(tmp, search);
+
+        if (p == NULL) {
+            strcpy(insert_point, tmp);
+            break;
+        }
+
+        memcpy(insert_point, tmp, p - tmp);
+        insert_point += p - tmp;
+
+        memcpy(insert_point, replace, replace_len);
+        insert_point += replace_len;
+
+        tmp = p + search_len;
+    }
+
+    strcpy(source, buffer);
 }
 
 int main() {
-   char str[] = "Hei maailma";
-   printf("Ennen: %s\n", str);
+    char text[] = "Hyvää päivää, maailma!";
+    const char *oldWord = "maailma";
+    const char *newWord = "kaikki";
 
-   replaceChar(str, 'a', 'e');
-   printf("Jälkeen: %s\n", str);
+    printf("Alkuperäinen: %s\n", text);
+    searchAndReplace(text, oldWord, newWord);
+    printf("Korvattu: %s\n", text);
 
-   return 0;
+    return 0;
 }
 ```
 
-Tulostus:
-
-```C
-Ennen: Hei maailma
-Jälkeen: Hei meeilme
+Sample Output:
+```
+Alkuperäinen: Hyvää päivää, maailma!
+Korvattu: Hyvää päivää, kaikki!
 ```
 
-## Sukellus syvälle
+## Deep Dive (Syväsukellus)
+Historiallisesti, tekstinhakua ja -korvausta varten oli käytetty yksinkertaisia komentosarjoja tai editorien sisäänrakennettuja toimintoja. Modernissa ohjelmoinnissa on monia kirjastoja, jotka tarjoavat näitä toimintoja. `strstr` on C standardikirjaston funktio tekstinhakuun, ja `strcpy` sekä `memcpy` ovat tietojen kopiointiin. Tekstinkäsittely vaatii huolellisuutta puskurin ylivuotojen ja muiden muistiongelmien välttämiseksi.
 
-Tekstinhaku- ja korvaustoiminnot ovat olleet tietojenkäsittelyn peruselementtejä yli puoli vuosisataa ja niitä käytetään monissa yhteyksissä, kuten tietokoneen ohjeistoissa, tietojenkäsittelytehtävissä ja verkkohauissa. Vaihtoehtoisia menetelmiä tämän toiminnallisuuden toteuttamiseksi ovat muun muassa säännöllisten lausekkeiden käyttö tai tehokkaammat datastruktuurit, kuten trie tai aho-corasick automaatti. Tekstin etsinnän ja korvaamisen toteutus riippuu suuresti ohjelmoijan tarpeista, valituista työvälineistä ja käytettävissä olevista resursseista.
+Vaihtoehtoisesti voidaan käyttää regular expressions -kirjastoa (regex) monimutkaisempiin hakuihin. C-standardikirjastossa ei ole valmista regex-tukea, joten usein käytetään ulkoisia kirjastoja, kuten PCRE.
 
-## Katso myös
+Hakemista ja korvaamista toteutettaessa on tärkeää huomioita suorituskyky, erityisesti suurilla tekstimäärillä. Muistinkäyttö, algoritmin tehokkuus ja monimutkaisuus vaikuttavat kaikki.
 
-- "Mastering Algorithms with C" by Kyle Loudon 
-- ["Working with Strings in C"](https://developer.ibm.com/technologies/systems/tutorials/au-cstring/) by IBM Developer
-- [The GNU C Library](https://www.gnu.org/software/libc/manual/html_node/String-and-Array-Utilities.html) for more on string manipulation.
+## See Also (Katso Myös)
+- C Standard Library documentation: https://en.cppreference.com/w/c/string/byte
+- PCRE - Perl Compatible Regular Expressions: https://www.pcre.org/
+- Mastering Regular Expressions - Jeffrey E.F. Friedl: https://shop.oreilly.com/product/9780596528126.do

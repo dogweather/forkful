@@ -1,6 +1,7 @@
 ---
 title:                "Extraindo substrings"
-html_title:           "Bash: Extraindo substrings"
+date:                  2024-01-20T17:46:06.879237-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extraindo substrings"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,39 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## O Que e Por Quê?
+Extrair substrings é pegar partes específicas de uma string, tipo cortar só um pedaço do texto. Programadores fazem isso para manipular e usar informações de formas bem específicas, como validar dados ou formatar saídas.
 
-## O Quê & Por quê?
-Extrair substrings é uma técnica essencial para manipular strings em JavaScript. Em resumo, extraímos substrings para separar um pedaço de texto de uma string maior, o que pode ser útil para a implementação de funcionalidades como pesquisas de texto e formatação de dados.
+## Como Fazer:
+```javascript
+let texto = "Olá, programadores!";
+let saudacao = texto.substring(0, 3);
+let foco = texto.slice(5, 19);
 
-## Como fazer:
-
-JavaScript oferece várias maneiras de extrair substrings. As mais comuns são `.substring()`, `.slice()` e `.substr()`. Aqui estão alguns exemplos:
-
-```Javascript
-let textoCompleto = "Olá, Mundo da Programação!";
-
-let subTexto1 = textoCompleto.substring(0,3); 
-console.log(subTexto1);   // Saída: "Olá"
-
-let subTexto2 = textoCompleto.slice(5, 10);
-console.log(subTexto2);   // Saída: ", Mun"
-
-let subTexto3 = textoCompleto.substr(11, 12);
-console.log(subTexto3);   // Saída: "Programação!"
+console.log(saudacao); // Saída: Olá
+console.log(foco); // Saída: programadores
 ```
 
-## Mergulho profundo
+Em detalhe:
+- `substring(start, end)` pega desde a posição `start` até `end - 1`.
+- `slice(start, end)` é similar, mas aceita índices negativos para contar do fim da string.
 
-Extrair substrings tem raízes na programação desde os primeiros dias, e não apenas em JavaScript. Cada um dos métodos citados acima tem pequenas nuances em sua implementação e uso.
+```javascript
+let cumprimento = "Boa tarde, mundo!";
+let tarde = cumprimento.slice(-13, -7);
 
-- `.substring(startIndex, endIndex)`: Este método retorna parte da string entre os índices inicial e final. Os índices são baseados em zero. Se omitir o segundo argumento, ele extrairá até o final da string. Se os índices for invertidos, ele os ajustará automaticamente.
-- `.slice(startIndex, endIndex)`: Este método é bastante similar ao `.substring()`. A principal diferença é que `.slice()` pode aceitar índices negativos, indicando uma posição começando do final da string.
-- `.substr(startIndex, length)`: Este método extrai uma substring do índice inicial por um número especificado de caracteres. Ele também aceita um índice inicial negativo.
+console.log(tarde); // Saída: tarde
+```
 
-É importante ter em mente que todas essas funções não modificam a string original, elas retornam uma nova string.
+## Mergulho Profundo
+No início do JavaScript, só tínhamos `substring`. Depois veio o `slice`, com a capacidade de aceitar índices negativos. Temos também o `substr`, que é considerado obsoleto, então melhor não se apegar. Esses métodos diferem no trato de argumentos negativos e no caso de serem passados valores fora dos limites da string.
 
-## Veja também
+Há alternativas modernas como o método `split`, que fragmenta a string usando um separador, retornando um array de substrings. Ou até mesmo uso de expressões regulares para alcançar resultados mais complexos.
 
-- Documentação oficial JavaScript MDN para [substring](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substring), [slice](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/slice), e [substr](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substr).
-- Tutorial em vídeo: [JavaScript String Functions](https://www.youtube.com/watch?v=09Bw3_ODGLs)
+A performance de extração de substrings depende do tamanho da string e da implementação específica do JavaScript no navegador ou ambiente que você está rodando o código. Mas para a maioria dos casos cotidianos, você nem vai notar diferença.
+
+## Veja Também
+- MDN Web Docs para `substring`: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substring
+- MDN Web Docs para `slice`: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+- Tutorial sobre `split`: https://www.w3schools.com/jsref/jsref_split.asp
+- Guia sobre expressões regulares em JS: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions

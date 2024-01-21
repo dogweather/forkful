@@ -1,7 +1,8 @@
 ---
-title:                "Konwersja daty na ciąg znaków"
-html_title:           "Clojure: Konwersja daty na ciąg znaków"
-simple_title:         "Konwersja daty na ciąg znaków"
+title:                "Konwersja daty na łańcuch znaków"
+date:                  2024-01-20T17:37:13.971326-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Konwersja daty na łańcuch znaków"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -11,14 +12,12 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Konwersja danych w postaci daty do ciągu znaków pozwala na łatwiejszą manipulację i prezentację danych dla użytkowników. Programiści wykonują to przede wszystkim w celu wyświetlania daty w czytelnym formacie.
+Konwersja daty do stringa to proces zamiany obiektu reprezentującego datę na tekst. Programiści robią to, by ułatwić wyświetlanie i zapisywanie dat w zrozumiałej formie dla użytkownika i innych systemów.
 
 ## Jak to zrobić:
+Go używa pakietu `time` do obsługi dat i czasu. Oto prosty sposób na konwersję daty na string:
 
-W Go, możemy skonwertować datę do ciągu znaków, stosując wbudowany pakiet `time` oraz metodę `Format`.
-
-```Go
+```go
 package main
 
 import (
@@ -27,23 +26,22 @@ import (
 )
 
 func main() {
-	t := time.Now()
-	fmt.Println(t.Format("2006-01-02"))
+	now := time.Now()
+	fmt.Println("Data w formacie RFC3339:", now.Format(time.RFC3339))
+	fmt.Println("Data w polskim formacie:", now.Format("02-01-2006 15:04:05"))
 }
 ```
 
-Za wywołanie powyższego kodu dostaniemy bieżącą datę wyświetloną w formacie: `RRRR-MM-DD`.
+Przykładowe wyjście:
+```
+Data w formacie RFC3339: 2023-03-17T14:57:36+01:00
+Data w polskim formacie: 17-03-2023 14:57:36
+```
 
-## Głębsze spojrzenie
+## Deep Dive
+Konwersja daty do stringa w Go ma korzenie w pakiecie time, wprowadzonym w pierwszej wersji Go. Pakiet time pozwala na wiele formatów, włącznie z predefiniowanymi jak `time.RFC3339`, lub własnymi, dzięki metodzie `Format`. Alternatywą dla `time.Format` może być np. `time.String`, ale zwraca on mniej elastyczne reprezentacje. Implementacje konwersji mogą różnić się zależnie od użytych bibliotek; jednak `time` oferuje jednolity i sprawdzony interfejs.
 
-Konwersja daty do ciągu znaków jest czynnością powszechną w programowaniu. W historii, różne języki oferowały różne metody do osiągnięcia tego, na przykład `strftime` w języku C.
-
-Jeśli chodzi o Go, użyliśmy metody `Format`, która jest dość unikalna ze względu na niekonwencjonalne formatowanie oparte na "magicznej" dacie `2006-01-02 15:04:05`.
-
-Inne metody, takie jak `Unix`, mogą być używane do konwersji daty do ciągu znaków w formacie unix timestamp. Z kolei `RFC3339` pozwoli na uzyskanie daty w formacie określonym przez standard RFC3339.
-
-## Zobacz również
-
-* Dokumentacja Go na temat pakietu `time`: https://golang.org/pkg/time/
-* Więcej o standardzie `RFC3339`: https://www.ietf.org/rfc/rfc3339.txt
-* Porównanie różnych języków programowania w zakresie formatowania dat: https://programming.guide/worlds-most-copied-so-called-piece-of-code.html
+## Zobacz także
+- Dokumentacja pakietu `time`: [golang.org/pkg/time/](https://golang.org/pkg/time/)
+- Go by Example: Time Formatting/Parsing: [gobyexample.com/time-formatting-parsing](https://gobyexample.com/time-formatting-parsing)
+- Pakiet `time` na Go Playground: [play.golang.org/](https://play.golang.org/) (wystarczy wyszukać przykłady związane z czasem)

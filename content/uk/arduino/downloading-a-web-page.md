@@ -1,6 +1,7 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "Gleam: Завантаження веб-сторінки"
+date:                  2024-01-20T17:43:32.606114-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,52 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це & Навіщо? 
+## What & Why? (Що і Чому?)
+Завантаження веб-сторінки — це процес отримання даних з Інтернету на ваш пристрій. Програмісти роблять це для збору даних, віддаленого керування або моніторингу контенту.
 
-Завантаження веб-сторінки - це процес отримання її даних через мережу. Програмісти роблять це, щоб отримати необхідну інформацію або взаємодіяти з веб-сервісами.
-
-## Як це зробити:
-
-Arduino дозволяє виконувати GET-запити для отримання веб-сторінок. Давайте згенеруємо код:
-
+## How to: (Як зробити:)
 ```Arduino
-#include <Ethernet.h>
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
 
-// Задайте MAC-адресу та IP-адресу для вашого контролера
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-IPAddress ip(192,168,1, 177);
-EthernetClient client;
+const char* ssid = "yourSSID";
+const char* password = "yourPASSWORD";
 
-void setup() 
-{
-  Ethernet.begin(mac, ip);
-  Serial.begin(9600);
-}
-
-void loop() 
-{
-  if (client.connected()) 
-  {
-    client.println("GET / HTTP/1.1");
-    client.println("Host: www.example.com");
-    client.println("Connection: close");
-    client.println();
-  } 
-  else 
-  {
-    client.stop();
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+  
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting to WiFi...");
   }
 
-  delay(5000);
+  Serial.println("Connected to the WiFi network");
+  
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    http.begin("http://example.com"); //Replace with your URL
+    int httpCode = http.GET();
+    
+    if (httpCode > 0) {
+        Serial.printf("HTTP Code: %d\n", httpCode);
+        String payload = http.getString();
+        Serial.println("Received webpage:");
+        Serial.println(payload);
+    } else {
+        Serial.printf("Error in HTTP request. HTTP Code: %d\n", httpCode);
+    }
+    http.end();
+  }
+}
+
+void loop() {
 }
 ```
+Output:
+```
+Connecting to WiFi...
+Connected to the WiFi network
+HTTP Code: 200
+Received webpage:
+<!DOCTYPE html><html><head><title>Example Domain</title>...
+```
 
-## Поглиблений розбір:
+## Deep Dive (Поглиблений Аналіз)
+Back in the early 2000s, when microcontrollers started gaining internet access, downloading a webpage was a complex task. Now, with modules like the ESP8266, it's simpler. ESP8266 is a Wi-Fi-capable microchip allowing Arduino boards to access the internet. While the provided code uses ESP8266, alternatives like Ethernet Shield for wired connections or ESP32 for faster Wi-Fi exist. Implementation details include initiating Wi-Fi connection, creating an HTTP client, making a GET request, and processing the response. Remember, managing large strings and ensuring secure connections can be tricky on constrained devices like Arduinos.
 
-Завантаження веб-сторінок - це універсальний інструмент, який може використовувати програміст. Історично, перше завантаження веб-сторінки відбулось у 1991 році. Можна використовувати POST або PUT методи, замість GET для відправки даних. Що стосується деталей реалізації, на Arduino ви опираєтесь на Ethernet або WiFi бібліотеки.
-
-## Дивіться також:
-
-- [Arduino Ethernet Library](https://www.arduino.cc/en/Reference/Ethernet)
-- [HTTP протокол](https://www.w3.org/Protocols/rfc2616/rfc2616.html)
-- [Arduino WiFi Library](http://arduino.cc/en/Reference/WiFi)
+## See Also (Дивіться Також)
+For further reading and related references, check out:
+- Arduino JSON library for parsing JSON data: [ArduinoJson](https://arduinojson.org/)
+- Examples of web server implementation on Arduino: [Arduino Web Server](https://www.arduino.cc/en/Tutorial/LibraryExamples/WebServer)

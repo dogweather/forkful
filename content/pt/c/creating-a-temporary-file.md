@@ -1,6 +1,7 @@
 ---
 title:                "Criando um arquivo temporário"
-html_title:           "Bash: Criando um arquivo temporário"
+date:                  2024-01-20T17:39:32.870833-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Criando um arquivo temporário"
 programming_language: "C"
 category:             "C"
@@ -10,46 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
-
-A criação de um arquivo temporário consiste em gerar um arquivo que guarda dados temporariamente durante a execução de um programa. Programadores o fazem quando precisam manipular grandes quantidades de dados que não podem, ou não devem, ser armazenados na memória.
+## O Que & Porquê?
+Criar um arquivo temporário permite manipular dados sem afetar o sistema de arquivos permanente. Programadores fazem isso para testes, armazenamento temporário de informações e para garantir que dados não fiquem em disco após o uso.
 
 ## Como Fazer:
-
-Aqui está um código simples para criar um arquivo temporário usando a biblioteca padrão do C:
+Vejamos um código em C que cria um arquivo temporário:
 
 ```C
 #include <stdio.h>
+#include <stdlib.h>
 
-int main()
-{
-   FILE *tmpfp;
-   tmpfp = tmpfile();
+int main() {
+    FILE *temp = tmpfile();
+    
+    if(temp) {
+        fputs("Exemplo de texto temporário.\n", temp);
+        
+        // Volte para o início do arquivo para ler.
+        rewind(temp);
+        
+        char buffer[255];
+        while(fgets(buffer, 255, temp) != NULL) {
+            printf("%s", buffer);
+        }
+        
+        // O arquivo temporário é removido automaticamente ao fechar.
+        fclose(temp);
+    } else {
+        printf("Não foi possível criar o arquivo temporário.\n");
+    }
 
-   if (tmpfp == NULL) {
-      printf("Erro ao abrir o arquivo!\n");
-   } else {
-      printf("Arquivo temporário criado com sucesso.\n");
-   }
-
-   return 0;
+    return EXIT_SUCCESS;
 }
 ```
 
-Ao executar este código, o resultado seria:
-
-```C
-Arquivo temporário criado com sucesso.
+Resultado esperado (Se tudo der certo, claro):
+```
+Exemplo de texto temporário.
 ```
 
 ## Aprofundando
 
-Derivado das primeiras implementações unix, o uso de arquivos temporários em C tem sido uma prática comum, e necessária, para gerenciamento de recursos. Temos outras alternatuvas disponíveis, tais como o uso de memória virtual, porém, arquivos temporários permitem maior flexibilidade e reduzem o risco de esgotar a memória.
+Arquivos temporários não são uma ideia nova. Surgiram como uma forma de gerenciar dados que só precisam existir durante a execução de um programa. Existem várias maneiras de criar um:
 
-Quanto à implementação, ao chamar a função tmpfile(), um arquivo temporário exclusivo é criado na pasta de arquivos temporários do seu sistema. Este arquivo é então aberto no modo "wb+" sem nenhuma intervenção do usuário. O arquivo temporário é automaticamente apagado quando é fechado (usando fclose()) ou quando o programa termina.
+1. `tmpfile()`: abre um arquivo temporário binário que é removido automaticamente ao fechar ou ao terminar o programa.
+2. `mkstemp()`: cria e abre um arquivo temporário com um nome exclusivo. Deve ser removido manualmente pelo programador.
+3. Arquivos em `/tmp` (em sistemas Unix-like): ao criar arquivos aqui, eles geralmente são apagados ao reiniciar o sistema.
+
+`tmpfile()` é fácil de usar, mas tem limitações de segurança em ambientes multiusuário. `mkstemp()`, por outro lado, é mais seguro contra ataques de link simbólico, pois garante um nome de arquivo exclusivo quando criado corretamente.
 
 ## Veja Também
+- Documentação do GNU sobre arquivos temporários: https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html
+- `mkstemp()` man page: https://linux.die.net/man/3/mkstemp
+- C Standard Library Reference: https://en.cppreference.com/w/c/io/tmpfile
 
-1. Para aprender mais sobre a função tmpfile() e manipulação de arquivos em C, recomendo o livro "The C Programming Language" de Brian W. Kernighan e Dennis M. Ritchie (https://pt.wikipedia.org/wiki/The_C_Programming_Language)
-2. Documentação oficial de C standard library (https://en.cppreference.com/w/cpp/header/cstdio)
-3. Tutorial sobre manipulação de arquivos em C (https://www.learn-c.org/en/File_Input_and_Output)
+Lembre-se que detalhes extras e questões específicas sobre seu ambiente de desenvolvimento ou necessidades do projeto podem requerer um pouquinho mais de pesquisa. Só não complica mais do que precisa, combinado?

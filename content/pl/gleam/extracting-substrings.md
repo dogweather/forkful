@@ -1,7 +1,8 @@
 ---
-title:                "Wydobywanie podciągów"
-html_title:           "Python: Wydobywanie podciągów"
-simple_title:         "Wydobywanie podciągów"
+title:                "Wycinanie podłańcuchów"
+date:                  2024-01-20T17:45:49.134303-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wycinanie podłańcuchów"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,28 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why?
+Wyciąganie podłańcuchów to proces selekcji określonych fragmentów z łańcucha znaków. Programiści robią to, by analizować i manipulować danymi tekstowymi, wydobywając z nich użyteczne informacje.
 
-Ekstrakcja podciągów to proces wydobywania mniejszych nitek znaków, z większych ciągów tekstowych. Programiści często korzystają z niej, aby przekształcić, filtrować lub analizować dane.
+## How to:
+Gleam pozwala na łatwe operowanie na łańcuchach znaków. Oto przykład:
 
-## Jak to zrobić:
+```gleam
+import gleam/string
 
-Rozważmy przykład w języku Gleam:
-```Gleam 
-  let tekst = "Cześć, Świecie"
-  let podciąg = string.slice(tekst, 7, 13)
-  // Wynikiem będzie "Świecie"
+fn main() {
+  let text = "Witaj, świecie"
+  let world = string.slice(text, 7, 14)
+  world
+}
 ```
-Tutaj, za pomocą funkcji `string.slice()`, pobieramy podciąg z `tekst` zaczynając od 7. pozycji i kończąc na 13.
 
-## Wgląd Głębszy:
+Wynik:
+```
+"świecie"
+```
 
-Możliwość ekstrakcji podciągów pojawiła się w większości języków programowania historycznie rano, ułatwiając manipulację danymi tekstowymi. Alternatywą dla `string.slice()` w Gleam jest `string.split()`, ale ta funkcja dzieli tekst na względem określonego separatora, a nie indeksów.
+## Deep Dive
+Przed pojawieniem się wysokopoziomowych języków takich jak Gleam, wyciąganie podłańcuchów było procesem żmudnym, często wymagającym pracy z wskaźnikami. Gleam, jako nowoczesny język funkcyjny, upraszcza te zadania. Alternatywami dla 'string.slice' mogą być funkcje jak 'string.split' czy wyrażenia regularne, choć każda z tych metod ma swoje idealne zastosowanie. Implementacja 'slice' w Gleamie jest optymalizowana pod kątem efektywności i bezpieczeństwa w użyciu.
 
-Szczegóły implementacji Gleam są jasne i proste. Faktycznie `string.slice()` wywołuje tylko natywną funkcję `slice()` Erlanga na tyłach.
-
-## Zobacz także:
-
-Polecamy zapoznanie się z oficjalnymi źródłami dokumentacji:
-- Gleam String API docs: [https://hexdocs.pm/gleam_stdlib/gleam/string.html](https://hexdocs.pm/gleam_stdlib/gleam/string.html)
-- Erlang string module: [https://erlang.org/doc/man/string.html](https://erlang.org/doc/man/string.html)
+## See Also
+- [Elixir's String module](https://hexdocs.pm/elixir/String.html) - Gleam został stworzony dla wirtualnej maszyny Erlanga, więc dobrze jest porównać podejścia.
+- [Rust's substring slicing](https://doc.rust-lang.org/std/primitive.str.html#method.get) - inny funkcjonalny język z bezpiecznym zarządzaniem pamięcią.

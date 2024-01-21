@@ -1,6 +1,7 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
+date:                  2024-01-20T17:58:57.089494-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,34 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Tekstin hakeminen ja korvaaminen tarkoittaa tekstijonon etsimistä luotussa ohjelmassa ja tämän jonon korvaamista toisella. Koodaajat tekevät näin, kun he haluavat muuttaa muuttujien, funktioiden tai muiden ohjelmointielementtien nimeä tai arvoa koko ohjelmassa.
+## What & Why?
+Tekstin hakeminen ja korvaaminen tarkoittaa merkkijonojen etsimistä ja niiden muuttamista toisiksi merkkijonoiksi. Ohjelmoijat käyttävät sitä datan puhdistukseen, muodon muuttamiseen ja automatisoituun tiedon korjaukseen.
 
-## Näin se tehdään:
-Löydä ja korvaa teksti TypeScriptissä `String.prototype.replace()` -metodilla. Metodi palauttaa uuden merkkijonon, jossa korvaus on suoritettu.
+## How to:
+```TypeScript
+function replaceString(original: string, searchValue: string, replaceValue: string): string {
+  return original.replace(new RegExp(searchValue, 'g'), replaceValue);
+}
+
+// Esimerkki käytöstä:
+const story: string = "Old MacDonald had a farm, E-I-E-I-O.";
+const updatedStory: string = replaceString(story, "Old", "Young");
+
+console.log(updatedStory); // Tulostaa: Young MacDonald had a farm, E-I-E-I-O.
+```
+
+## Deep Dive
+Tekstin hakeminen ja korvaaminen juontaa juurensa tekstinkäsittelyn alkuhämäriin, kun yksinkertaiset komentorivityökalut, kuten `sed` Unix-järjestelmissä, mahdollistivat sen. TypeScriptissä, kuten monissa moderneissa kielissä, `replace`-funktio käyttää säännöllisiä lausekkeita tekstinhakuun ja korjaukseen, mikä tekee siitä voimakkaan. Vaihtoehtoisesti voit käyttää kirjastoja, kuten `lodash` tai `replace-in-file`, jotka tarjoavat lisäominaisuuksia ja yksinkertaistettua APIa.
+
+Hakuarvon ja korvattavan arvon kehittyneempää käsittelyä varten voit käyttää lamda-lausekkeita (arrow functions):
 
 ```TypeScript
-let teksti = 'Tervetuloa TypeScriptiin!';
-let uusiTeksti = teksti.replace('TypeScriptiin', 'JavaScriptiin');
-console.log(uusiTeksti);
-```
-Output:
-```
-Tervetuloa JavaScriptiin!
+const result: string = story.replace(/(Old|Young) MacDonald/, (match) => {
+  return match === "Old MacDonald" ? "Young MacDonald" : "Old MacDonald";
+});
 ```
 
-## Syvempi sukellus
-Tekstin hakeminen ja korvaaminen ei ole uusi konsepti, se on ollut olemassa alusta asti, kun ohjelmointikielet kehitettiin. TypeScriptissä tämä toteutetaan `String.prototype.replace()` -metodilla, mutta vanhemmissa ohjelmointikielissä, kuten C ja Perl, prosessi on monimutkaisempi.
+Tässä otetaan käyttöön dynaamisesti muuttuva logiikka korvaukselle, riippuen vastaavuudesta. Tällainen joustavuus on hyödyllinen kompleksisissa korjaustarpeissa.
 
-Vaihtoehtoinen tapa tehdä samaa JavaScriptissä on käyttää regular expressions -lausekkeita. Ne tarjoavat paljon enemmän joustonvaraa ja tehokkuutta, mutta ovat myös monimutkaisempia.
-
-```TypeScript
-let teksti = 'Tervetuloa TypeScriptiin!';
-let uusiTeksti = teksti.replace(/TypeScriptiin/i, 'JavaScriptiin');
-console.log(uusiTeksti);
-```
-
-## Katso myös
-- [Mozilla Developer Network: String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [Regular expressions in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [JavaScript replace method](https://www.w3schools.com/jsref/jsref_replace.asp)
+## See Also
+- MDN RegExp - [developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- TypeScript Handbook - [typescriptlang.org/docs/handbook/intro.html](https://www.typescriptlang.org/docs/handbook/intro.html)
+- `lodash` replace - [lodash.com/docs/#replace](https://lodash.com/docs/#replace)
+- `replace-in-file` npm package - [npmjs.com/package/replace-in-file](https://www.npmjs.com/package/replace-in-file)

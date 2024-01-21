@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-html_title:           "Arduino: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+date:                  2024-01-20T17:38:07.352035-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,44 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Muunnetaan merkkijono pieniksi kirjaimiksi tarkoittaa, että kaikki merkkijonon isot kirjaimet korvataan pienillä kirjaimilla. Tämä on hyödyllistä, kun haluat esimerkiksi vertailla merkkijonoja riippumatta kirjoituskoosta.
+## What & Why?
+"Mitä & Miksi?"
+Muuttaa merkkijonon pieniksi kirjaimiksi. Käytetään yhdenmukaistamaan dataa, esimerkiksi vertailuun tai syötteen käsittelyyn.
 
-## Näin se tehdään:
-Elm tarjoaa valmiin funktion muuttamaan merkkijonon pieniksi kirjaimiksi. Kas näin:
-
-```
+## How to:
+"Kuinka:"
+```Elm
 import String
 
-lowercaseString : String -> String
-lowercaseString string = 
-    String.toLower string
-
-main =
-    print (lowercaseString "HELLO, WORLD!")
+lowercaseString = String.toLower "HeI MAaILmA"
+-- Tulos: "hei maailma"
 ```
 
-Tämän ohjelman tulostus olisi:
+## Deep Dive
+"Sukellus syvyyksiin"
+Historiallisesti merkkijonon pienentäminen on peräisin ajoilta, jolloin ohjelmistojen piti vertailla tekstiä ilman kirjainkokoon liittyvää herkkyyttä. Elm käyttää UTF-16 -koodauksen piirteitä muuttaakseen kirjaimet pieniksi. Vaihtoehtoina voisi käyttää esimerkiksi regex-muunnoksia, mutta `String.toLower` on useimmiten tehokkain ja suositeltavin tapa Elm:ssä.
 
-```
-"hello, world!"
-```
+Stringin pienentämisessä Elm tekee yhteistyötä selaimen kanssa, käyttäen sen natiivia string-funktionaliteettia, mikä takaa suorituskyvyn ja yksinkertaisuuden.
 
-## Syvempi sukellus:
-Alkuperäisessä ASCII-standardissa erot isoilla ja pienillä kirjaimilla eivät olleet merkittäviä ja ne vertailtiin usein sivuuttamalla koko. Tämä vanha perinne jatkuu edelleen ohjelmointikielissä.
-Vaihtoehtona yllä mainitulle funktiolle on käyttää seuraavaa koodinpätkää, jos haluat hallita prosessia tarkemmin.
-
-```
-import Char
-
-lowercaseCustom : String -> String
-lowercaseCustom string = 
-    String.fromList <| List.map Char.toLower <| String.toList string
-```
-
-Tämä funktio käy läpi jokaisen kirjaimen merkkijonossa yksitellen ja muuttaa sen pieneksi kirjaimeksi. Sillä voi olla parempi suorituskyky, jos merkkijonot ovat erittäin pitkiä.
-
-## Katso myös:
-* Elm String moduuli dokumentaatio: https://package.elm-lang.org/packages/elm/core/latest/String
-* Elm Char moduuli dokumentaatio: https://package.elm-lang.org/packages/elm/core/latest/Char
-* Sivu merkkijonojen vertailusta: https://en.wikipedia.org/wiki/String_(computer_science)#:~:text=In%20computer%20programming%2C%20a%20string,such%20as%20semantic%20version%20numbers.
+## See Also
+"Katso myös"
+- Elm String -kirjaston dokumentaatio: [Elm String toLower](http://package.elm-lang.org/packages/elm/core/latest/String#toLower)
+- Unicode standardin selitys kirjainkoosta: [The Unicode Standard Case Folding](http://unicode.org/reports/tr21/tr21-5.html)

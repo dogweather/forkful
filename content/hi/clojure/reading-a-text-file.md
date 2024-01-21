@@ -1,7 +1,8 @@
 ---
-title:                "एक पाठ फ़ाइल पढ़ना"
-html_title:           "Bash: एक पाठ फ़ाइल पढ़ना"
-simple_title:         "एक पाठ फ़ाइल पढ़ना"
+title:                "टेक्स्ट फ़ाइल पढ़ना"
+date:                  2024-01-20T17:54:13.115277-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "टेक्स्ट फ़ाइल पढ़ना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,38 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+टेक्स्ट फाइल पढ़ना फाइल से डेटा एक्सेस करने की प्रक्रिया है। प्रोग्रामर यह इसलिए करते हैं ताकि वे उस डेटा को प्रोसेस, एनालाइज़, और उससे जरूरी जानकारी निकाल सकें।
 
-टेक्स्ट फ़ाइल पढ़ना मतलब होता है किसी फ़ाइल से डाटा खींचना। प्रोग्रामर्स इसे क्यों करते हैं? त्वरित डेटा प्रक्रिया, निर्दिष्ट फ़ाइल में संग्रहीत डेटा संग्रहित करने के लिए।
-
-## कैसे:
-
-Clojure में टेक्स्ट फ़ाइल पढ़ने का तरीका:
-
+## How to: (कैसे करें:)
 ```Clojure
-(with-open [reader (clojure.java.io/reader "फ़ाइल.txt")]
-  (doseq [line (line-seq reader)]
+;; एक टेक्स्ट फाइल पढ़ने के लिए बेसिक उदाहरण
+(with-open [rdr (clojure.java.io/reader "example.txt")]
+  (doseq [line (line-seq rdr)]
     (println line)))
 ```
-
-इस कोड का परिणाम होगा:
-```Clojure
-लाइन1
-लाइन2
+सैंपल आउटपुट:
 ```
-
-## गहरा डाइव
-
-अगर हम यह कहें की Clojure में टेक्स्ट फ़ाइल पढ़ना एक ऐतिहासिक परिप्रेक्ष्य में बहुत महत्वपूर्ण रहा है, तो यह गलत नहीं होगा। क्योंकि, डाटा जो आपके पास होता है, वह अक्सर दस्तावेज़ों, डेटाबेस, या JSON फ़ाइलों में संग्रहित हो सकता है, लेकिन इनमें से सभी चीज़ों को आपको Clojure में परिवर्तित करना होता है। 
-
-हालांकि, एक और विकल्प भी है, जिसे `slurp` कहा जाता है, जो फ़ाइल की सभी लाइन्स को एक समझने लायक तरीके से एकत्रित करता है जैसे - 
-
-```Clojure
-(println (slurp "फ़ाइल.txt"))
+पहली पंक्ति
+दूसरी पंक्ति
+तीसरी पंक्ति
 ```
+इस कोड से "`example.txt`" नामक फाइल की हर लाइन को पढ़ा जाता है और प्रिंट किया जाता है।
 
-लेकिन, `slurp` का उपयोग तब करना उचित होता है, जब फ़ाइल छोटी हो, क्योंकि यह पूरी फ़ाइल को मेमोरी में लोड करता है।
+## Deep Dive (गहराई से जानकारी)
+तारीखिक परिप्रेक्ष्य में, टेक्स्ट फाइल पढ़ने की प्रक्रिया उतनी ही पुरानी है जितनी कंप्यूटर प्रोग्रामिंग। विकल्पों में `slurp` संक्षिप्त फंक्शन है जो पूरी फाइल की सामग्री को एक स्ट्रिंग की तरह पढ़ता है। लेकिन `with-open` और `line-seq` का उपयोग करना बेहतर है हम आम तौर पर बड़ी फाइलों के साथ काम करते हैं क्योंकि यह मेमोरी उपयोगिता में कुशल होता है। `with-open` सुनिश्चित करता है कि रीडर सही ढंग से बंद हो, जबकि `line-seq` लेजी सीक्वेंस के रूप में लाइनों को एक-एक करके प्रोसेस करता है।
 
-## देखने के लिए भी
-
-[Clojure Docs](https://clojure.org/api/cheatsheet) और [Clojure Cookbook](https://books.google.co.in/books?id=_FqtBAAAQBAJ&printsec=frontcover#v=onepage&q&f=false) में और एडवांस्ड विषयों पर और अतिरिक्त जानकारी है। इन्हें जरूर देखें।
+## See Also (और भी जानकारी)
+- Clojure डॉक्स पर `line-seq`: [https://clojuredocs.org/clojure.core/line-seq](https://clojuredocs.org/clojure.core/line-seq)
+- `slurp` के बारे में और जानकारी: [https://clojuredocs.org/clojure.core/slurp](https://clojuredocs.org/clojure.core/slurp)
+- जावा आई/ओ का उपयोग कैसे करें (Clojure में): [https://clojure.github.io/clojure/clojure.java.io-api.html](https://clojure.github.io/clojure/clojure.java.io-api.html)

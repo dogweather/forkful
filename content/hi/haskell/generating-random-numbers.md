@@ -1,7 +1,8 @@
 ---
-title:                "यादृच्छिक संख्याओं का निर्माण"
-html_title:           "Clojure: यादृच्छिक संख्याओं का निर्माण"
-simple_title:         "यादृच्छिक संख्याओं का निर्माण"
+title:                "यादृच्छिक संख्याएँ उत्पन्न करना"
+date:                  2024-01-20T17:49:47.285915-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Numbers"
@@ -10,32 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## व्हाट एंड वाय?
+## क्या और क्यों?
+रैंडम नंबर जनरेशन यानि अनियमित संख्याओं का निर्माण एक ऐसी प्रक्रिया है जिससे हम अप्रत्याशित संख्याएँ प्राप्त कर सकते हैं। प्रोग्रामर्स इसका इस्तेमाल खेलों, एन्क्रिप्शन और सिमुलेशन जैसे कार्यों में करते हैं ताकि वास्तविकता की अनुभूति हो।
 
-यादृच्छिक संख्या उत्पन्न करना एक प्रक्रिया है जिसमें कंप्यूटर कोई अनुपम संख्या उत्पन्न करता है, जो पहले से योजना बनाकर नहीं जानी जा सकती है। यह प्रोग्रामर्स के लिए महत्वपूर्ण होता है जब किसी गणना में या कोई ऐप्लिकेशन टेस्टिंग में एक रैंडम प्रविष्टि की आवश्यकता हो‌ती है।
-
-## हाउ टू:
-
+## कैसे करें:
 ```Haskell
-import System.Random
+import System.Random (randomRIO)
+
+-- रैंडम नंबर जनरेट करना
+randomNumber :: IO Int
+randomNumber = randomRIO (1, 10) -- 1 से 10 के बीच एक रैंडम नंबर
+
 main :: IO ()
 main = do
-    number <- randomIO :: IO Int
-    print(number)
+    num <- randomNumber
+    putStrLn ("आपका रैंडम नंबर: " ++ show num)
 ```
-जब आप इस कोड को चलाते हैं, तो यह हर बार एक अलग यादृच्छिक पूर्णांक उत्पन्न करता है।
+उदाहरण आउटपुट:
+```
+आपका रैंडम नंबर: 7
+```
 
-## डीप डाइव:
+## गहराई से समझ:
+रैंडम नंबर्स को जेनेरेट करने का इतिहास उतना ही पुराना है जितना कि कंप्यूटर विज्ञान का। अधिकतर रैंडम नंबर जेनेरेटर्स (आरएनजी) प्रकृति में प्स्यूडोरैंडम होते हैं, जिसका अर्थ है कि वे पूर्णतः अनियमित नहीं होते हैं बल्कि एक निश्चित एल्गोरिथम का अनुसरण करते हैं। हस्केल में `System.Random` मॉड्यूल इस्तेमाल करके हम आसानी से रैंडम संख्याएँ जेनेरेट कर सकते हैं और उसे पूरी तरह से 'अनियमित' माना जाता है इस्तेमालकर्ताओं के परिपेक्ष्य में। वैकल्पिक लाइब्रेरीज में `random-fu`, `mwc-random` आदि शामिल हैं, जो विभिन्न तरह के एल्गोरिथम्स और उन्नत सुविधाओं को प्रदान करती हैं।
 
-1. इतिहासिक संदर्भ: यादृच्छिक संख्याओं के उत्पादन का विचार पहले परंपरागत कंप्यूटर साइंस में आया था, जिसका उद्देश्य क्रिप्टोग्राफी और सिमुलेशन में अविश्वसनीयता जोड़ना था।
-
-2. विकल्प: Haskell में System.Random बाहरी पैकेज है जो यादृच्छिकता का समर्थन करता है। एक और विकल्प है `mwc-random` पैकेज जो हाई परफॉर्मेंस प्रदान करता है।
-
-3. कार्यान्वयन विवरण: Haskell का `randomIO` फ़ंक्शन एक यादृच्छिक संख्या उत्पन्न करता है जिसे IO Monad में उठाया जाता है, यानी कि इसे कार्यान्वित करने के लिए आउटपुट निर्भर करना होता है।
-
-## देखें भी:
-
-2. [Haskell Docs: System.Random](https://hackage.haskell.org/package/random-1.1/docs/System-Random.html)
-3. [Introduction to Randomness and Random Numbers by Dr Mads Haahr](https://www.random.org/randomness/)
-4. [Haskell Stack Overflow: How do you generate a random int value in Haskell?](https://stackoverflow.com/questions/30740366/list-with-random-numbers-in-haskell)
-5. [mwc-random package](http://hackage.haskell.org/package/mwc-random)
+## यह भी देखें:
+- Haskell `System.Random` मॉड्यूल: [Hackage System.Random](https://hackage.haskell.org/package/random-1.2.0/docs/System-Random.html)
+- प्स्यूडोरैंडम नंबर जनरेटर्स के बारे में जानकारी: [Wikipedia PRNG](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+- `random-fu` लाइब्रेरी: [Hackage random-fu](https://hackage.haskell.org/package/random-fu)
+- `mwc-random` लाइब्रेरी: [Hackage mwc-random](https://hackage.haskell.org/package/mwc-random)

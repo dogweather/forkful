@@ -1,7 +1,8 @@
 ---
-title:                "连接字符串"
-html_title:           "C: 连接字符串"
-simple_title:         "连接字符串"
+title:                "字符串拼接"
+date:                  2024-01-20T17:35:41.313978-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "字符串拼接"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,50 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 1. 它是什么，为什么？
+## What & Why? (什么和为什么?)
+合并字符串就是把多个字符串拼接成一个。程序员这么做是因为要创建一个包含所有信息的单一字符串，往往用于显示消息、构建输出格式或是生成代码。
 
-字符串拼接是将两个或多个字符串连接在一起的过程。程序员那么做是因为我们需要创建或修改字符串，来输出更加复杂的语句。
+## How to: (如何做：)
+Kotlin 中，有几种方式可以合并字符串：
 
-## 2. 如何操作：
+```kotlin
+fun main() {
+    val greeting = "你好"
+    val subject = "世界"
 
-在 Kotlin 中，你有多种方式来拼接字符串。这里有几个例子：
+    // 使用加号 (+)
+    val message1 = greeting + "，" + subject + "！"
+    println(message1) // 输出：你好，世界！
 
-1. 使用 `+` 运算符
+    // 使用字符串模板
+    val message2 = "$greeting，$subject！"
+    println(message2) // 输出：你好，世界！
 
-```Kotlin
-val str1 = "Hello, "
-val str2 = "World!"
-val str3 = str1 + str2
-println(str3)  // 输出：“Hello, World!”
+    // 使用 joinToString 函数
+    val words = listOf(greeting, subject+"！")
+    val message3 = words.joinToString("，")
+    println(message3) // 输出：你好，世界！
+}
 ```
 
-2. 使用 `plus()` 函数
+## Deep Dive (深入探究)
+早期的编程语言中，字符串合并可能不那么直接。比如，在C语言中，你得用函数比如 `strcat()` 来实现。在 Java 中，字符串是不可变的，合并时实际上是创建了一个新的字符串对象。
 
-```Kotlin
-val str1 = "Ni"
-val str2 = "hao"
-val str3 = str1.plus(str2)
-println(str3)  // 输出：“Nihao”
+在 Kotlin，我们更常用字符串模板，这是 Kotlin 于 2016 年首次引入率先使用的特性之一。模板会在运行时计算并插入变量的值，这样可读性和效率都很好。若担心性能（如大量拼接操作），你可以考虑使用 `StringBuilder`。
+
+Alternatives, like `StringBuilder`, are available and recommended when dealing with a large number of concatenations, as they can significantly improve performance by reducing the number of temporary objects created.
+
+```kotlin
+fun main() {
+    // 使用 StringBuilder 来合成字符串
+    val builder = StringBuilder()
+    builder.append("你好")
+           .append("，")
+           .append("世界")
+           .append("！")
+    
+    val message = builder.toString()
+    println(message) // 输出：你好，世界！
+}
 ```
 
-3. 使用字符串模板
+另外，`+` 运算符虽然简单，但在合并多个字符串时会创建很多临时对象，对性能有负面影响。
 
-```Kotlin
-val name = "World"
-val greeting = "Hello, $name!"
-println(greeting)  // 输出：“Hello, World!”
-```
-
-## 3. 深入探索：
-
-序列拼接颇具历史，C语言使用`strcat`函数而Java则提供了`StringBuilder`。Kotlin 提供的方法既简洁又高效，更适合现代编程。
-
-替代方案包括使用 `StringBuilder` 或 `StringBuffer` 类，这两个类提供了 `append()` 方法，可以高效地处理大量的字符串拼接。
-
-注意到，如果你在一次操作中拼接大量的字符串，使用 `+` 运算符或 `plus()` 函数可能会影响你的程序效率。这是因为创建新的字符串实例是一项开销较大的操作。
-
-## 4. 参考资料：
-
-请参阅 Kotlin 的官方文档，以了解更多关于字符串拼接的信息：
-
-- [Kotlin官方StringBuilder文档](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/)
+## See Also (延伸阅读)
+- Kotlin 官方文档：[字符串模板和表达式](https://kotlinlang.org/docs/basic-syntax.html#using-string-templates)
+- 性能对比：[StringBuilder vs String concatenation](https://medium.com/@appmattus/effectively-using-kotlin-ranges-15f5ab0473b1)

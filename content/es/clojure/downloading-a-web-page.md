@@ -1,6 +1,7 @@
 ---
 title:                "Descargando una página web"
-html_title:           "Arduino: Descargando una página web"
+date:                  2024-01-20T17:43:41.312182-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Descargando una página web"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,39 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+## Qué y Por Qué?
 
-Descargar una página web es el proceso de obtener y guardar localmente el contenido de un sitio web. Los programadores lo hacen para analizar o manipular sus datos, para monitorear cambios, entre otros usos.
+Descargar una página web significa obtener su contenido, usualmente en formato HTML, a través de Internet. Los programadores lo hacen para analizar datos, monitorear cambios o incorporar información en aplicaciones.
 
-## Cómo hacerlo:
+## Cómo Hacerlo:
 
-La biblioteca `clj-http` en Clojure ofrece la función `get` para enviar solicitudes HTTP GET. Aquí hay un ejemplo:
+Para descargar una página web en Clojure, te muestro cómo usar la librería `clj-http`, que es fácil de usar y muy potente.
 
-```Clojure
-(ns web-download.core
-  (:require [clj-http.client :as client]))
+Primero, añade la dependencia en tu archivo `project.clj`:
 
-(defn download-page [url]
-  (client/get url {:as :string}))
+```clojure
+[clj-http "3.12.3"] ;; Asegúrate de revisar la versión más reciente.
 ```
 
-Cuando ejecutes este código, te devolverá la respuesta HTTP del URL que has ingresado.
+Luego, aquí tienes un ejemplo básico para descargar el contenido de una página web:
 
-```Clojure
-(download-page "https://www.some-web-page.com")
+```clojure
+(require '[clj-http.client :as client])
+
+(defn descargar-pagina [url]
+  (let [respuesta (client/get url)]
+    (:body respuesta)))
+
+;; Usando la función
+(println (descargar-pagina "https://www.ejemplo.com"))
 ```
 
-## Inmersión Profunda:
+Probablemente veas mucho HTML en tu pantalla, que es el contenido de la página `https://www.ejemplo.com`.
 
-Clojure, un lenguaje de programación moderno basado en Lisp, ya incluye las opciones `slurp` o `clj-http` para descargar páginas web. Aunque `slurp` es más simple, `clj-http` ofrece mucha más flexibilidad y opciones (como agregar encabezados HTTP).
+## Profundizando:
 
-Hay otras alternativas para descargarse páginas web, como las funciones `wget` y `curl` en Linux o incluso las extensiones de navegador. La opción más adecuada depende de tu caso de uso.
+El concepto de descargar páginas web data desde el principio de la web. Originalmente se hacía con herramientas de línea de comandos como `wget` o `curl`.
 
-Los detalles de implementación para descargar una página web en Clojure son simples: se envía un solicitud HTTP GET a la URL objetivo y luego se maneja la respuesta. Se puede almacenar la respuesta en una variable para su posterior análisis o manipulación.
+En el mundo de Clojure, `clj-http` es apenas una opción. Alternativas como `http-kit` o `aleph` también existen, y algunas ofrecen funcionalidades asincrónicas.
+
+Cuando usas `clj-http`, realmente envuelves a `Apache HttpComponents` – una librería Java potente. Esto significa que puedes acceder a funciones avanzadas si las necesitas, como manejo de cookies, autenticación, y conexiones seguras.
 
 ## Ver También:
 
-Aquí tienes algunas fuentes relacionadas para ampliar tus conocimientos:
-
-- [Documentación oficial de clj-http](https://github.com/dakrone/clj-http)
-- [Guía de HTTP en Clojure](https://www.clojure-toolbox.com/)
+- `clj-http` en GitHub: https://github.com/dakrone/clj-http
+- Documentación sobre `Apache HttpComponents`: https://hc.apache.org/
+- Para tareas asíncronas o websockets en Clojure, revisa `http-kit`: http://www.http-kit.org
+- Si quieres un ejemplo completo con análisis de HTML, la librería `Enlive` puede ser útil: https://github.com/cgrand/enlive

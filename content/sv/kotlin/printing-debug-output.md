@@ -1,7 +1,8 @@
 ---
-title:                "Skriva ut felsökningsresultat"
-html_title:           "Fish Shell: Skriva ut felsökningsresultat"
-simple_title:         "Skriva ut felsökningsresultat"
+title:                "Skriva ut felsökningsdata"
+date:                  2024-01-20T17:52:52.021948-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skriva ut felsökningsdata"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -11,42 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Debug-utskrifter används för att spåra vad som händer i din kod på ett enkelt sätt. Programmerare använder det för att snabbt felsöka och följa programmets flöde utan att behöva en full debugger.
 
-Att skriva ut debugginformation är en process där programmerare skriver ut data från koden för felsökning. Det används för att få insikt i din kods beteende och för att hjälpa till med att identifiera och lösa problem.
-
-## Hur gör man:
-
-Här är några exempel hur du skriver ut debuginformation i Kotlin med kommentarer.
+## Så här gör du:
+Kotlin erbjuder flera sätt att skriva ut debug-information. Här är det vanligaste:
 
 ```kotlin
-// Skriv ut text med println
-println("Hello, World")
+fun main() {
+    val myDebugMessage = "Detta är en debug-meddelande!"
+    println(myDebugMessage)
+    // Enklare utskrift kan se ut så här:
+    println("Här sker något intressant.")
 
-// Skriv ut värden av variabler
-val name = "Kotlin"
-println("Hej, $name")
-
-// Skriv ut resultaten av en funktion
-fun addition(a: Int, b: Int) = a + b
-println("Summan av 1 + 2 är ${addition(1, 2)}")
+    // För mer strukturerad logging kan du använda:
+    val importantValue = 42
+    println("Viktigt värde är just nu: $importantValue")
+}
+```
+Sample Output:
+```
+Detta är en debug-meddelande!
+Här sker något intressant.
+Viktigt värde är just nu: 42
 ```
 
-När du kompilerar och kör ovanstående exempel, får du följande output:
-
-```
-Hello, World
-Hej, Kotlin
-Summan av 1 + 2 är 3
-```
-
-## Djupdykning
-
-Historiskt sett, före tillgången till avancerade debuggers och IDE:er, har utskrift av debugginformation varit ett viktigt verktyg för att förstå vad som hände i en applikation. De kallades ofta "printf-debugging", efter printf-funktionen i C.
-
-Ett alternativ till utskrift av debugginformation är att använda en debugger. En debugger ger mer sofistikerade möjligheter att inspektera din kod, men i enklare fall kan det vara snabbare och enklare att bara skriva ut informationen.
-
-I Kotlin, metoden `println()` är en inbyggd standardkod för att skriva ut information till terminalen. Den kan hantera alla former av variabler och funktioner genom att konvertera dem till teckensträngar före utskrift.
+## Fördjupning
+Print-debugging är gammalt som gatan, det förlitar sig på det mänskliga ögat för att upptäcka avvikelser i konsolloggar. Det är inte det mest effektiva sättet att debugga, men det är enkelt och direkt. Alternativ inkluderar logger-bibliotek som `log4j` eller `SLF4J` som erbjuder olika loggnivåer (ERROR, WARN, INFO, DEBUG, TRACE) för mer nyanserad kontroll. När det gäller implementation så är `println` en funktion som skriver ut text till standard output (oftast terminalen) och kan användas var som helst i din Kotlin-kod.
 
 ## Se också
-
-- Kotlin Dokumentationen om [println()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/println.html)
+- Kotlin officiella dokumentation: [kotlinlang.org](https://kotlinlang.org/docs/home.html)
+- Introduktion till SLF4J för Kotlin: [http://www.slf4j.org/manual.html](http://www.slf4j.org/manual.html)
+- Log4j Kotlin API dokumentation: [https://logging.apache.org/log4j/kotlin/](https://logging.apache.org/log4j/kotlin/)

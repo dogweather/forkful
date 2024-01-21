@@ -1,6 +1,7 @@
 ---
 title:                "Enviando una solicitud http con autenticación básica"
-html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
+date:                  2024-01-20T18:02:37.637918-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,48 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Enviando una solicitud HTTP con autenticación básica en Ruby
+## Qué y Por Qué?
+Enviar una solicitud HTTP con autenticación básica es el proceso de acceso a recursos web que requieren verificación de usuario y contraseña. Los programadores lo hacen para interactuar con APIs o servicios web que necesitan una capa extra de seguridad.
 
-## ¿Qué y Por Qué?
-
-Una solicitud HTTP con autenticación básica es una forma de verificar la identidad del usuario antes de permitirle el acceso a ciertos recursos del servidor. Los programadores la usan para proteger la información sensible en sus aplicaciones web.
-
-## ¿Cómo hacerlo?
-
-Aquí hay un ejemplo de cómo enviar una solicitud HTTP con autenticación básica utilizando la gema `net/http` en Ruby:
+## Cómo hacerlo:
+Para enviar una solicitud HTTP con autenticación básica en Ruby, puedes usar la librería `net/http`. Aquí te muestro cómo.
 
 ```Ruby
 require 'net/http'
 require 'uri'
+require 'base64'
 
-uri = URI.parse("http://miweb.com")
-request = Net::HTTP::Get.new(uri)
-request.basic_auth("usuario", "contraseña")
+# Tu URL y credenciales
+url = URI.parse("http://tu-servidor.com/recurso")
+username = "tu_usuario"
+password = "tu_contraseña"
 
-response = Net::HTTP.start(uri.hostname, uri.port) do |http|
-  http.request(request)
-end
+# Codifica las credenciales
+credentials = Base64.encode64("#{username}:#{password}").chomp
+
+# Crea el objeto HTTP
+http = Net::HTTP.new(url.host, url.port)
+
+# Si es HTTPS
+# http.use_ssl = true
+
+# Crea la solicitud
+request = Net::HTTP::Get.new(url.request_uri)
+request["Authorization"] = "Basic #{credentials}"
+
+# Envía la solicitud
+response = http.request(request)
 
 puts response.body
 ```
 
-Salida de la muestra:
+Muestra de resultado:
 
-```Ruby
-"Contenido de la página web"
 ```
-Este script realizará una solicitud GET a `miweb.com` utilizando los credenciales proporcionados (`usuario` y `contraseña`). Luego imprime el contenido del cuerpo de la respuesta al terminal.
+¡Aquí va el contenido solicitado!
+```
 
-## Profundicemos
+## Análisis Profundo:
+La autenticación básica HTTP ha existido desde los primeros días del web. No es la más segura porque las credenciales se envían codificadas en Base64, que puede descifrarse fácilmente. Sin embargo, es simple y suficiente para algunos contextos, especialmente durante el desarrollo o cuando se accede a APIs en una red protegida. Como alternativa más segura, considera usar tokens de autenticación, como OAuth. En cuanto a la implementación, la clave está en incluir el encabezado de `Authorization` correctamente formateado en la solicitud HTTP.
 
-El uso del método 'basic_auth' se remonta a los principios del protocolo HTTP, por lo que es un método ampliamente admitido para la autenticación.
+## Ver También:
+Para ampliar tu conocimiento sobre autenticación y seguridad en Ruby revisa:
 
-Una alternativa a la autenticación básica podría ser algo como la autenticación de portador de token, que se utiliza comúnmente para las APIs de REST.
-
-En cuanto a la implementación, `basic_auth` codifica las credenciales en base64 y las añade en el encabezado 'Authorization' de la petición HTTP. Sin embargo, es importante conocer que la autenticación básica no es segura por sí misma, ya que las credenciales no están encriptadas y pueden ser interceptadas si no se usa junto con HTTPS.
-
-## Ver También
-
-* [Gema de Ruby 'net/http'](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
-* [Documentación de la RFC de Autenticación HTTP](https://datatracker.ietf.org/doc/html/rfc7617)
-* [Codificación base64 en Ruby](https://apidock.com/ruby/Base64/encode64)
+- [Documentación de la clase Net::HTTP](https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html)
+- [RFC 7617 - 'The 'Basic' HTTP Authentication Scheme'](https://tools.ietf.org/html/rfc7617)

@@ -1,6 +1,7 @@
 ---
 title:                "문자열 연결하기"
-html_title:           "Arduino: 문자열 연결하기"
+date:                  2024-01-20T17:35:38.515720-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "문자열 연결하기"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,44 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜합니까?
+## What & Why? (무엇 & 왜?)
+문자열 연결은 두 개 이상의 문자열을 붙여서 하나의 긴 문자열을 만드는 것입니다. 이것은 데이터 포맷을 조정하거나, 출력 메시지를 구성할 때 필요합니다.
 
-문자열 연결은 여러 개의 문자열을 하나로 합치는 과정입니다. 프로그래머들은 이를 사용하여 프로그램 출력을 맞추거나 깔끔하게 조직하는 등 다양한 목적으로 사용합니다.
-
-## 어떻게 하는가:
-
-Lua에서 문자열을 연결하는 방법을 다음 코딩 예시를 통해 보도록 하겠습니다.
-
+## How to: (방법:)
 ```Lua
-str1 = "Hello, "
-str2 = "World!"
-result = str1 .. str2
-print(result)
+-- 문자열 연결 예시
+local greeting = "안녕"
+local name = "세상"
+local message = greeting .. ", " .. name .. "!"
+
+print(message)  -- '안녕, 세상!'
 ```
 
-이 코드는 "Hello, "와 "World!"를 연결하여 "Hello, World!"를 출력합니다.
-
-## 깊은 내용:
-
-### 역사적 배경
-
-Lua에서의 문자열 연결은 C 계열 언어와 다르게 `..` 기호를 사용합니다. 이는 초기 Lua 설계자들이 라틴 문자열 연산에서 영감을 받아, 프로그램에서 사용되는 일반적인 '+' 연산자와 구분하기 위해 도입된 방법입니다.
-
-### 대안
-
-문자열 형식 함수인 `string.format` 또한 문자열 연결에 사용될 수 있습니다. 이는 특히 복잡한 문자열 서식 지정이 필요한 경우 유용합니다.
-
 ```Lua
-str1 = "Hello, "
-str2 = "World!"
-result = string.format("%s%s", str1, str2)
-print(result)
+-- 문자열과 숫자 연결
+local temperature = 25
+local unit = "도씨"
+local weatherReport = "오늘 기온은 " .. temperature .. unit .. "입니다."
+
+print(weatherReport)  -- '오늘 기온은 25도씨입니다.'
 ```
 
-### 구현 세부사항
+```Lua
+-- table.concat 함수를 이용한 배열 문자열 연결
+local colors = {"빨강", "노랑", "파랑"}
+local list = table.concat(colors, ", ")
 
-Lua에서 문자열 연결을 사용할 때 주의해야 할 기억해야 할 점은, 문자열 자체는 불변(immutable)하다는 것입니다. 즉, 두 문자열을 연결하면 새 문자열이 생성되며, 원본 문자열은 변경되지 않습니다.
+print(list)  -- '빨강, 노랑, 파랑'
+```
 
-## 연관 참고자료:
+## Deep Dive (심화 학습)
+문자열 연결은 Lua가 처음 만들어졌을 때부터 있었던 기능입니다. `..` 오퍼레이터로 간단히 쓸 수 있는 반면, 많은 양의 데이터를 연결할 때는 `table.concat` 함수를 사용하는 것이 효율적입니다. 내부적으로, Lua는 문자열을 변하지 않는 값(immutable)으로 다루기 때문에 새로운 문자열이 만들어질 때마다 메모리상에 새로운 공간을 할당받습니다. 따라서 큰 데이터를 다룰 때는 성능에 주의해야 합니다.
 
-- Lua 공식 설명서의 문자열 연산 부분: [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/manual.html#3.4.5)
+`..` 오퍼레이터 대신 `..=` 연산자를 사용하여 문자열에 연속적으로 덧붙이는 것도 가능하지만, 이는 새로운 문법이 들어오면서 사용할 수 있게 된 기능입니다. 기존 코드베이스와의 호환성을 고려해야 합니다.
+
+## See Also (참고자료)
+- Lua 5.4 Reference Manual: https://www.lua.org/manual/5.4/
+- Programming in Lua (first edition): https://www.lua.org/pil/contents.html
+- Lua-users wiki: Concatenation: http://lua-users.org/wiki/StringConcatenation

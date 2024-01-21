@@ -1,7 +1,8 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:01:51.536840-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,43 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या & क्यों?
-
-HTTP अनुरोध आधारित प्रमाणन के साथ भेजना एक प्रकार का तकनीक है जिससे सर्वर को यात्री डेटा की सुरक्षा और प्रामाणिकता की जांच हो सकती है। प्रोग्रामर्स इसे डेटा सुरक्षा सुनिश्चित करने और अनधिकृत पहुंच से बचने के लिए इस्तेमाल करते हैं।
+## क्या और क्यों?
+HTTP request के साथ basic authentication एक सरल तरीका है जिसमें username और password को encode करके request headers में भेजा जाता है। यह तकनीक वेब services और APIs तक सुरक्षित एक्सेस पाने के लिए प्रयोग की जाती है।
 
 ## कैसे करें:
-
-```JavaScript
-// Node.js में 'axios' पैकेज का उपयोग करते हुए
-
+```javascript
 const axios = require('axios');
+const base64 = require('base-64');
 
-axios({
-  method: 'get',
-  url: 'http://api_url',
-  auth: {
-    username: 'यूजरनेम',
-    password: 'पासवर्ड'
-  }
-})
-.then((response) => {
-    console.log(response.data);
+let username = 'yourUsername';
+let password = 'yourPassword';
+let basicAuth = 'Basic ' + base64.encode(username + ':' + password);
+
+axios.get('http://your-api-url.com/data', { headers: { 'Authorization': basicAuth } })
+  .then(response => {
+    console.log('Data fetched successfully:', response.data);
   })
-.catch((error) => {
-    console.error(error);
-});
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+```
+Sample Output:
+```
+Data fetched successfully: { id: 1, title: 'Example Data', description: 'This is a JSON object.' }
 ```
 
-ऊपर दिए गए कोड स्निपेट का उपयोग करते हुए, HTTP अनुरोध के साथ बुनियादी प्रमाणीकरण डेटा भेज सकते हैं। 
+## गहराई से समझिए:
+Basic authentication का concept '90s के शुरुआती दिनों से HTTP protocol का हिस्सा है। यह Base64 encoding का इस्तेमाल करता है, जो कि बहुत सुरक्षित नहीं है, और इसलिए HTTPS का उपयोग जरूरी है। इसके अलावा, प्रोग्रामर OAuth जैसे अधिक सुरक्षित तरीकों का भी उपयोग कर सकते हैं। Basic authentication साधारण और जल्दी स्थापित होने के कारण छोटे applications या उन परियोजनाओं में पसंद किया जाता है जहां high-level security की दरकार नहीं होती है। 
 
-## गहराई में:
-
-1. ऐतिहासिक प्रसंग: HTTP बुनियादी प्रमाणन, 1996 में HTTP/1.0 मानक के हिस्सा के रूप में पेश किया गया था। इसे डाटा की एकल दिशाओं में सुरक्षा के लिए डिजाइन किया गया था।
-2. विकल्प: HTTP Digest Authentication, OAuth, और SSL/TLS जैसी अन्य प्रामाणिकरण तकनीकें उपलब्ध हैं। ये सभी आपके व्यवस्थापक और आवश्यकताओं पर निर्भर करते हैं।
-3. कार्यान्वयन विवरण: यदि आप अनुरोध पाठ के अंत में `Authorization` हेडर के साथ `Basic base64_encode(username:password)` जोड़ते हैं, तो HTTP बुनियादी प्रमाणीकरण लागू होता है।
-
-## देखिए भी:
-
-1. [MDN Web Docs: HTTP authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-2. [NPM: axios](https://www.npmjs.com/package/axios)
-3. [Wikipedia: Basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+## सम्बंधित सूत्र:
+- MDN Web Docs on Authorization: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization
+- Axios Library: https://github.com/axios/axios
+- Base-64 npm package: https://www.npmjs.com/package/base-64

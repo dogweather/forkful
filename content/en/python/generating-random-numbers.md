@@ -1,6 +1,7 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Arduino recipe: Generating random numbers"
+date:                  2024-01-20T17:49:48.456913-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generating random numbers"
 programming_language: "Python"
 category:             "Python"
@@ -11,47 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-In computer programming, generating random numbers is about producing a sequence of numbers that lack any pattern. As programmers, we use such randomness to create things like unique session identifiers, in games, simulations and cryptography.
+Random numbers are unpredictable values. Programmers use them for simulations, testing, games, and anytime they need a dose of unpredictability in their code.
 
 ## How to:
+Python makes it easy to generate random numbers with the `random` module. Here's a quick look at how you can roll the dice:
 
-In Python, you can use the random module to generate random numbers. Here's how:
-
-```python
+```Python
 import random
-print(random.randint(1, 100))  # Prints a random integer between 1 and 100.
+
+# Random float: 0.0 <= number < 1.0
+print(random.random())
+
+# Random float: 5 <= number < 10
+print(random.uniform(5, 10))
+
+# Random integer: 1 to 6, inclusive
+print(random.randint(1, 6))
+
+# Random element from a list
+print(random.choice(['apple', 'banana', 'cherry', 'date']))
+
+# Random multiple elements from a list without replacement
+print(random.sample(['apple', 'banana', 'cherry', 'date'], 2))
 ```
 
-Here's another handy function to generate a random float:
-
-```python
-print(random.random())  # Prints a random float between 0 and 1.
+Output might look like:
 ```
-
-And you might get outputs like this:
-
-```python
-52
-0.345834234
+0.435667762349
+7.28295613718
+4
+'cherry'
+['banana', 'date']
 ```
-
-You can also generate a list of unique random numbers:
-
-```python
-print(random.sample(range(100), 10))    # Prints 10 unique random numbers from 0 to 99
-```
+Remember: Running it yourself will give different results, because, well, they're random.
 
 ## Deep Dive
+The first thing to know is that random numbers in programming are not truly random. They're "pseudo-random", which means a mathematical algorithm generates them. The `random` module in Python uses the Mersenne Twister, a popular algorithm known for its high-quality randomness.
 
-The concept of generating random numbers dates back to ancient times, with dice games being one of the earliest examples. But in the world of computers, "random" is a bit trickier. 
+Historically, generating random numbers mechanically was a challenge. People used dice, shuffled cards, or complex machines. When computers entered the picture, they needed a reliable way to simulate randomness. That's where the algorithms come in.
 
-Here's why: Computers are deterministic machines, made to consistently repeat processes. Asking for randomness from a system built on predictability seems paradoxical. That's why we have pseudorandom numbers in computing. Generated using algorithms with deterministic behavior, they're not truly random but "random enough" for most purposes.
+There are alternatives to `random`, like the `secrets` module in Python for cryptographic purposes. Why? Because `random` isn't safe for encryption and the like—predictability isn't great for security.
 
-The main alternative to Python's random module is the numpy module, which provides the function `numpy.random()`. It's much faster for large arrays but requires an extra installation step.
-
-Underneath the hood, Python's random number generator uses the Mersenne Twister algorithm, a widely-used, well-vetted pseudorandom generator.
+As for implementation, when using `random`, you can set a 'seed' to produce the same sequence of numbers every time. Useful for debugging, not so much when you need different results each run.
 
 ## See Also
-
-For more details and functionalities, check out Python's [official documentation](https://docs.python.org/3/library/random.html) for the random module, and [numpy's random sampling](https://numpy.org/doc/stable/reference/random/index.html) for large arrays.
+- Python `random` module docs: https://docs.python.org/3/library/random.html
+- An explanation of pseudo-randomness: https://www.random.org/randomness/
+- Python `secrets` module docs for secure random numbers: https://docs.python.org/3/library/secrets.html

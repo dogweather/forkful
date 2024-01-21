@@ -1,6 +1,7 @@
 ---
 title:                "חיפוש והחלפת טקסט"
-html_title:           "Elm: חיפוש והחלפת טקסט"
+date:                  2024-01-20T17:58:08.631458-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חיפוש והחלפת טקסט"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,33 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-‏חיפוש והחלפה של טקסט הם פעולות שבהן המחשב מצא את כל תכני המחרוזת המסוימת במחרוזת אחרת והחליף אותם במחרוזת שלישית. מתכנתים מבצעים את זה בעיקר ללמד את המחשב לדעת מתי לשנות קוד כדי להשיג תנאים מסוימים.
+חיפוש והחלפה של טקסט הם פעולות שבהן אנו מאתרים תבנית מסוימת של טקסט ומחליפים אותה באחרת. תכניתנים עושים זאת כדי לעדכן באופן מהיר מידע, לתקן שגיאות, או לבצע ריפקטורינג לקוד.
 
 ## איך לעשות:
-ב- Elixir, אתה יכול להשתמש בפונקציה `String.replace/3` לחיפוש והחלפת טקסט. דוגמא:
+```Elixir
+# יצירת טקסט לדוגמא
+original_text = "אהבה זה הכל, אהבה זה פה ושם."
 
-```Elixir 
-original_text = "שלום, עולם"
-IO.puts String.replace(original_text, "עולם", "Elixir")
+# חיפוש והחלפה
+new_text = String.replace(original_text, "אהבה", "שלום")
+
+IO.puts new_text
+# פלט: שלום זה הכל, שלום זה פה ושם.
+
+# חיפוש והחלפה עם רגקס
+regex = ~r/אהבה/
+replacement_text = "חיים"
+updated_text = Regex.replace(regex, original_text, replacement_text)
+
+IO.puts updated_text
+# פלט: חיים זה הכל, חיים זה פה ושם.
 ```
 
-הפלט של הקוד הזה יהיה:
-
-```Elixir 
-"שלום, Elixir"
-```
-אפשר גם להשתמש בקטע ציור RegEx:
-
-```Elixir 
-IO.puts String.replace("גרשם in the יער", ~r/\b(גרשם|יער)\b/, "\\0דן")
-```
-
-## צלילה עמוקה:
-חיפוש והחלפה של טקסט הוא אבן פינה בתכנות מאז ימי עודד התכנות המוקדמים. במרבית השפות, קיימים אלטרנטיבות לפונקציה `replace` של Elixir, כמו `replacen` ב- JavaScript או `replace_all` ב- Python. אין להימנע מהשימוש בהם רק אם אתה מעוניין לבצע החלפה מרובה. 
-
-אפשר גם להשתמש ב- RegEx אם אתה רוצה לעבוד עם מחרוזות של תנאים משונים, אך תשקול להיות מנומס עם השימוש בו כיוון שהוסףת יותר עומס על המערכת.
+## עיון מעמיק:
+חיפוש והחלפה הם כלים עתיקים יומין בתכנות. הפונקציות של חיפוש והחלפה ב-Elixir מושפעות מהביטויים הרגולריים של Perl, ששינו את המשחק בשנות ה-80. קיימות אלטרנטיבות כמו פעולות חיפוש והחלפה במערכות עיבוד טקסט או בסביבות עריכת קוד, אבל התכונה שב-Elixir מאפשרת יותר גמישות ושליטה מושלמת מתוך הקוד עצמו. הפונקציה `String.replace/3` היא פשוטה לשימוש עבור החלפות ישירות. עבור תבניות מורכבות יותר, `Regex.replace/4` מאפשרת לנו להפעיל ביטויים רגולריים ולבצע החלפות מורכבות יותר.
 
 ## ראה גם:
-1. [מדריך המתחילים של Elixir](https://elixir-lang.org/getting-started/basic-types.html)
-2. [מידע נוסף על String.replace](https://hexdocs.pm/elixir/String.html#replace/3)
-3. [מידע נוסף על RegEx ב- Elixir](https://elixir-lang.org/getting-started/sigils.html#regular-expressions)
+- [Elixir's String module](https://hexdocs.pm/elixir/String.html)
+- [Regex module in Elixir](https://hexdocs.pm/elixir/Regex.html)
+- [Programming Elixir by Dave Thomas](https://pragprog.com/titles/elixir16/programming-elixir-1-6/)

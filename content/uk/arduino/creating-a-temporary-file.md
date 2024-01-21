@@ -1,6 +1,7 @@
 ---
 title:                "Створення тимчасового файлу"
-html_title:           "C: Створення тимчасового файлу"
+date:                  2024-01-20T17:40:34.308064-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Створення тимчасового файлу"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,54 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
-Створення тимчасового файлу - це процес, в якому програма створює файл з даними, які вона може використовувати і видаляти, коли вони вже не потрібні. Програмісти роблять це, щоб зберегти проміжний результат або використовувати багато даних без засмічення пам'яті.
+## Що і чому?
 
-## Як це зробити:
-Arduino не підтримує безпосереднього створення тимчасових файлів, але ви можете використовувати SD карту або EEPROM для зберігання тимчасових даних. Ось приклад:
+Тимчасові файли - це файли, створені для тимчасового зберігання інформації, як правило, під час виконання програми. Програмісти використовують їх для збереження проміжних даних, уникнення зайвих записів у головний файл та зменшення використання оперативної пам’яті.
+
+## Як робити:
+
+Arduino не працює із тимчасовими файлами так, як це робить традиційна операційна система. Замість цього, ми можемо емулювати тимчасове зберігання, використовуючи EEPROM або SD карту для запису тимчасових даних.
 
 ```Arduino
-#include <SPI.h>
 #include <SD.h>
 
-File myFile;
+File myTempFile;
 
 void setup() {
   Serial.begin(9600);
-  Serial.print("Initializing SD card...");
-
-  if (!SD.begin(4)) {
-    Serial.println("initialization failed!");
+  
+  if (!SD.begin()) {
+    Serial.println("SD card initialization failed!");
     return;
   }
-  Serial.println("initialization done.");
 
-  myFile = SD.open("test.txt", FILE_WRITE);
-  
-  if (myFile) {
-    Serial.print("Writing to test.txt...");
-    myFile.println("Testing data storage");
-    myFile.close();
-    Serial.println("done.");
-  } else {
-    Serial.println("error opening test.txt");
+  myTempFile = SD.open("temp.txt", FILE_WRITE);
+
+  if (myTempFile) {
+    myTempFile.println("This is a temporary line of text.");
+    
+    // Always make sure to close the file, so that the data gets written to the SD card.
+    myTempFile.close();
   }
 }
 
 void loop() {
-  
+ // Code would go here to handle the temporary file as needed.
 }
- ```
-Вивід в моніторі порту:
-```
-Initializing SD card...initialization done.
-Writing to test.txt...done.
 ```
 
-## Занурення в деталі
-Arduino - це відкрита платформа, яка вийшла в 2005 році, для створення одноплатових комп'ютерів та мікроконтролерів. Проте Arduino не була розроблена з метою обробки великого обсягу даних або розробки складних алгоритмів. Тому вона не має вбудованої підтримки роботи з файлами як у більш потужних системах. 
+## Глибше занурення:
 
-Альтернатива на Arduino - використання EEPROM або використання зовнішніх пристроїв зберігання, таких як SD карти. EEPROM має обмежений цикл запису, тому використання SD-карт може бути кращим вибором для деяких прикладів.
+Традиційно, тимчасові файли використовують у ОС з файловою системою. Arduino не володіє такою системою за замовчуванням. Але за допомогою SD-картки та спеціального щита SD можна створювати, читати та писати файли. Історично SD-картка надає простий спосіб для розширення можливостей зберігання даних для мікроконтролерів. Альтернативою тимчасовому зберіганню на SD-картці може бути EEPROM — внутрішня пам'ять Arduino, придатна для зберігання невеликих обсягів даних.
 
-## Додатково
-Зверніться до офіційної документації Arduino, щоб дізнатися більше про [зберігання даних на SD карті](https://www.arduino.cc/en/Reference/SD), а також про [роботу з EEPROM](https://www.arduino.cc/en/Reference/EEPROM).
+## Дивіться також:
+
+- Офіційна документація по роботі з SD-картами Arduino: https://www.arduino.cc/en/Reference/SD
+- Робота з EEPROM в Arduino: https://www.arduino.cc/en/Reference/EEPROM
+- Додаткові відомості про файлові системи: https://en.wikipedia.org/wiki/File_system

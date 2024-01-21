@@ -1,7 +1,8 @@
 ---
-title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
-html_title:           "Gleam: Merkkijonon muuttaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+date:                  2024-01-20T17:38:52.837415-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,22 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Muunnetaan merkkijono pieniksi kirjaimiksi - toisin sanoen, muutetaan kaikki merkkijonon sisältämät iso kirjaimet pieniksi kirjaimiksi. Ohjelmoijat tekevät tämän tekstin normalisoimiseksi, esimerkiksi kun vertaillaan merkkijonoja tai etsitään avainsanoja jne.
+## What & Why?
+"Mitä & Miksi?"
+Stringin muuttaminen pieniksi kirjaimiksi tarkoittaa alkuperäisen merkkijonon muuntamista versioksi, jossa kaikki isot kirjaimet ovat pieniä. Ohjelmoijat käyttävät tätä yhdenmukaistaessaan tekstiä, esimerkiksi vertailuja tai tietojen syötön validointia varten.
 
-## Miten:
-```Kotlin
-val isoMerkkijono = "Suomi"
-val pieniMerkkijono = isoMerkkijono.toLowerCase()
-
-println(isoMerkkijono) // Tulostaa: Suomi
-println(pieniMerkkijono) // Tulostaa: suomi
+## How to:
+"Kuinka:"
+```kotlin
+fun main() {
+    val originalString = "Hei Maailma!"
+    val lowercaseString = originalString.lowercase()
+    println(lowercaseString)
+}
+```
+Tulostuu:
+```
+hei maailma!
 ```
 
-## Syvempi tutkiskelu
-Historiallisesti ottaen pienaakkosten käyttöön on johtanut useita tekijöitä, kuten yksinkertaistaminen ja yhdenmukaistaminen. Kotlinissa "toLowerCase()" -funktiota voi käyttää vaihtoehtoiseen tapaan muuntaa merkkijono pieniksi kirjaimiksi. Tämä funktio soveltaa Unicode Case Folding -sääntöä, joka on vakiomuoto sen mukaan, kuinka isot ja pienet kirjaimet korreloivat. Tämä on tärkeää, koska se sallii merkkijonon välinpitämättömän vertailun eri kielialueilla ja merkistöissä.
+## Deep Dive
+"Sukellus syvälle"
 
-## Katso lisäksi
-Viralliset Kotlin-dokumentit ovat mahtava resurssi syventyvä tutkimus: [Kotlin Dokumentaatio](https://kotlinlang.org/docs/)
+Historiallisesti, merkkijonot ovat voineet koostua erilaisista kirjainkokoista ja alustat eivät aina ole tulkinneet niitä samalla tavalla. Muunnos pieniksi kirjaimiksi varmistaa tasaisuuden.
 
-Tarkista myös tämä artikkeli, joka sisältää monia esimerkkejä ja neuvoja Kotlinin kanssa: [Kotlinin perusteet](https://www.programiz.com/kotlin-programming)
+Vaihtoehtoisesti käytettävissä on myös `lowercase(Locale)`, jos tarvitaan tiettyyn asetukseen perustuvaa muunnosta.
+
+Merkkijonojen muuttamiseen liittyvät funktiot käyttävät `Char`-tyypin metodeja, kuten `toLowercase()`, mutta Kotlinin standardikirjaston `lowercase()`-funktio hoitaa koko merkkijonon kerrallaan.
+
+## See Also
+"Näytä lisäksi"
+
+- Java-kirjallisuus Unicode-merkkien käsittelystä, joka voi valaista Kotlininkin taustoja: [Unicode Standard](http://unicode.org/standard/standard.html)
+- Stack Overflow -keskustelut aiheesta, kuten [How to convert a Kotlin String to Lowercase](https://stackoverflow.com/questions/51451853/how-to-convert-a-kotlin-string-to-lowercase)

@@ -1,7 +1,8 @@
 ---
-title:                "Leyendo argumentos de la línea de comandos"
-html_title:           "Bash: Leyendo argumentos de la línea de comandos"
-simple_title:         "Leyendo argumentos de la línea de comandos"
+title:                "Lectura de argumentos de línea de comandos"
+date:                  2024-01-20T17:56:27.439377-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lectura de argumentos de línea de comandos"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,40 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## Qué y Por Qué?
+Leer argumentos de la línea de comandos permite que tu programa en JavaScript reciba información desde el exterior cuando se inicia. Esto es útil, por ejemplo, para configurar cómo se ejecuta tu script o para pasarle datos sin hardcodear valores.
 
-Leer argumentos desde la línea de comandos es leer los datos que el usuario introduce después del nombre del programa. Los programadores lo hacen para permitir a los usuarios influir en cómo se ejecuta el programa.
-
-## Cómo se hace:
-
-Aquí tiene un ejemplo simple. Usaremos el objeto process de Node.js y su propiedad argv, que es un array. Los primeros dos elementos del array son 'node' y el nombre del archivo. Los argumentos de la línea de comandos comienzan desde el tercer elemento.
+## Cómo:
+Node.js te da acceso a los argumentos de la línea de comandos a través de `process.argv`. Vamos directo al código:
 
 ```Javascript
-process.argv.forEach((value, index) => {
-  console.log(`${index}: ${value}`);
+// myscript.js
+
+// Imprimimos todos los argumentos de la línea de comandos
+process.argv.forEach((val, index) => {
+  console.log(`${index}: ${val}`);
 });
 ```
 
-Si ejecutamos el programa con `node programa.js uno dos tres`, la salida será:
+Si corres este script con:
 
-```Javascript
-0: node
-1: /ruta/al/archivo/programa.js
-2: uno
-3: dos
-4: tres
+```bash
+node myscript.js hola mundo
 ```
 
-## Análisis Profundo:
+obtendrías:
 
-Históricamente, en C y otros lenguajes similares, los argumentos de línea de comandos eran pasados al programa a través de los argumentos de la funcion main. Node.js mantuvo este patrón con process.argv.
+```
+0: path/to/node.exe
+1: /path/to/myscript.js
+2: hola
+3: mundo
+```
 
-Existen alternativas para leer argumentos de la línea de comandos más complejos. Libraries como 'yargs' o 'commander' pueden manejar argumentos con banderas y subcomandos, por ejemplo,`myprogram -d --force file.txt`.
+Para ignorar los dos primeros argumentos (que son el propio Node y el script), haz esto:
 
-Por defecto, process.argv devuelve todo como strings. Si necesita tipos distintos, tendrá que convertir los datos manualmente.
+```Javascript
+// Solo argumentos de usuario
+const userArgs = process.argv.slice(2);
+console.log(userArgs);
+```
 
-## Vea También:
+Con el mismo comando de antes, ahora verías:
 
-- Documentación de Node.js process.argv: https://nodejs.org/docs/latest/api/process.html#process_process_argv
-- Comparativa de libraries para argumentos de línea de comandos: https://www.npmtrends.com/commander-vs-minimist-vs-yargs
-- Tutorial de argumentos de línea de comandos en Node.js: https://flaviocopes.com/node-command-line-args/
+```
+[ 'hola', 'mundo' ]
+```
+
+## Análisis Profundo
+Antes de Node.js, leíamos parámetros en la web con query strings o en otros entornos, con APIs específicas del lenguaje; pero Node.js simplificó todo con `process.argv`.
+
+Si necesitas algo más robusto, hay bibliotecas como `yargs` o `commander` que te ayudan a parsear los argumentos de manera más sofisticada y con menos código propio.
+
+Para acceder a variables de entorno, usarías `process.env`. Ambos, `process.argv` y `process.env`, son parte de la API global de Node.js, por lo que no requieren `require`.
+
+## Ver También
+- Documentación de Node.js para `process.argv`: https://nodejs.org/docs/latest/api/process.html#process_process_argv
+- `yargs` GitHub repo: https://github.com/yargs/yargs
+- `commander` GitHub repo: https://github.com/tj/commander.js

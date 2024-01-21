@@ -1,7 +1,8 @@
 ---
-title:                "אינטרפולציה של מחרוזת"
-html_title:           "Arduino: אינטרפולציה של מחרוזת"
-simple_title:         "אינטרפולציה של מחרוזת"
+title:                "שרבוב מחרוזת"
+date:                  2024-01-20T17:51:14.654867-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרבוב מחרוזת"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,36 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה זה ולמה? 
+## מה ולמה?
+מילוי מחרוזת ב-JavaScript הוא כאשר אנו מזריקים ערכים דינמיים לתוך מחרוזת טקסט. זה מאפשר כתיבה יעילה וקריאה יותר של קוד על ידי שילוב נתונים עם טקסט בצורה נקייה ואלגנטית.
 
-אינטרפולציה של מחרוזות היא הטמעת ביטויים או משתנים בתוך מחרוזת מהודרת. מתכנתים משתמשים בטכניקה זו להצגת משתנים בצורה נוחה וקלה לקריאה במחרוזות.
-
-# איך לעשות זאת:
-
-ב-Javascript, אנחנו משתמשים במחרוזות מהודרות (template strings) לאינטרפולציה של מחרוזות. ניתן ליצור מחרוזת מהודרת על ידי שימוש בסוגריים מרובעים (` `) במקום מרכאות רגילות (' 
-
-לדוגמא:
+## איך לעשות:
+ב-JavaScript, אנחנו משתמשים בתבניות מחרוזת (string templates) כדי לבצע מילוי. הנה דוגמה:
 
 ```Javascript
-let name = "דני";
-let message = `שלום, ${name}!`;
-console.log(message); // שלום, דני!
+let firstName = 'ישראל';
+let lastName = 'ישראלי';
+let greeting = `שלום, ${firstName} ${lastName}!`;
+
+console.log(greeting); // פלט: שלום, ישראל ישראלי!
 ```
-
-# צלילה עמוקה:
-
-1. הקונטקסט ההיסטורי: בעבר, מתכנתים של Javascript היו נאלצים להשתמש בשיטות מורכבות כמו חיבור של מחרוזות באמצעות + או שימוש במתודות כמו `string.concat()` כדי ליצור מחרוזות משולבות. אבל מאז ES6, האינטרפולציה של מחרוזות הופכת להבנה ולשימוש קלים.
-
-2. אלטרנטיבות: כיצד לאמצעים אחרים כדי לבצע את אותה הפונקציונליות? מחרוזות ממולאות יכולות לבצע את אותה המשימה תחליף. לדוגמא:
+וכך זה נראה עם פונקציות:
 
 ```Javascript
-let name = "דני";
-let message = 'שלום, ' + name + '!';
-console.log(message); // שלום, דני!
+function getWelcomeMessage(name) {
+  return `ברוך הבא, ${name}!`;
+}
+
+console.log(getWelcomeMessage('דני')); // פלט: ברוך הבא, דני!
 ```
 
-3. פרטי הרצה: JavaScript מחליף ביטויים במחרוזת מהודרת בערכם של הביטוי, ממירה את התוצאה למחרוזת אם זו לא מחרוזת, ואז מתחברת לשאר המחרוזת.
+## צלילה לעומק:
+מילוי מחרוזות שייך לעולם התיכנות מדורות ראשונים. ב-JavaScript, עד ES5, למתכנתים הוצעו אפשרויות כמו שילוב עם אופרטור החיבור (`+`). ES6 הביא את הסינטקס עם סימני גרש הנקראים Template Literals, ושינה את המשחק. זה לא רק פשט את הקוד, אלא גם הפחית את הטעויות והבלבול.
 
-# ראה גם: 
+דוגמאות לחלופות: בעבר, פונקציות כמו `sprintf()` או פתרונות של תוספות שלדים (frameworks) עשו את העבודה. כיום, פונקציות כמו `replace()` או ספריות כמו Lodash יכולות להציע גמישות רבה יותר. 
 
-1. [Template literals (Template strings) - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+פרטים טכניים כוללים הבנת התחביר כולל השימוש ב`${}` והיכולת לשלב ביטויים ישירות לתוך המחרוזת, לחשב אותם במהלך הריצה, במיוחד עם ביטויים מסובכים או קריאות לפונקציות.
+
+## ראו גם:
+- [MDN Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) - מדריך רשמי בנושא תבניות מחרוזת.
+- [MDN String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) - כל המידע על אובייקט String ב-JavaScript.

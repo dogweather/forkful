@@ -1,7 +1,8 @@
 ---
-title:                "Eine Zeichenkette interpolieren"
-html_title:           "Arduino: Eine Zeichenkette interpolieren"
-simple_title:         "Eine Zeichenkette interpolieren"
+title:                "Zeichenketten interpolieren"
+date:                  2024-01-20T17:50:49.970956-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Zeichenketten interpolieren"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,49 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why?
+Interpolieren, also das Einfügen von Variablen in Strings, spart dir viel Tipparbeit und vereinfacht die Code-Wartung. Es ermöglicht dynamische Textausgaben, was essentiell ist für Skripte, die auf Nutzereingaben oder ändernden Daten operieren.
 
-Die Zeichenketten-Interpolation ist eine Technik, bei der wir Werte innerhalb von Zeichenketten einfügen. Warum? Es erleichtert das Kodieren und macht Code deutlicher und verständlicher.
-
-## Wie geht das? 
-
-Im Fish Shell kannst du den Namen einer Variablen direkt in deinem String platzieren, um Interpolation zu erreichen. Hier ist ein einfaches Beispiel:
+## How to:
+Fish Shell macht's leicht:
 
 ```Fish Shell
-set name "Freddy"
-echo "Hallo $name"
+set name "Welt"
+echo "Hallo, $name!"  # Variable wird direkt im String eingefügt
+```
+Ausgabe:
+```
+Hallo, Welt!
 ```
 
-Der Ausgabe wäre dann:
+Mit einer kleinen Twist - braced syntax für Mehrdeutigkeiten:
 
 ```Fish Shell
-Hallo Freddy
+set mood "glücklich"
+echo "Ich bin {$mood}lich."  # Klammern klären, wo die Variable endet
+```
+Ausgabe:
+```
+Ich bin glücklichlich.
 ```
 
-Der Wert der Variablen `name` wurde in die Zeichenkette eingefügt.
+## Deep Dive
+In den frühen Unix-Tagen: `sh` und `bash` benutzten die Syntax `"$variable"`. Fish ist moderner und eliminiert oft den Bedarf für Anführungsstriche.
 
-## Tiefere Einblicke
-
-Die Zeichenketteninterpolation hat eine lange Programmierhistorie und existiert in viele verschiedene Sprachen. Fish Shell macht es besonders einfach: keine Notwendigkeit für Konkatenation oder spezielle Formatierungszeichenketten!
-
-Alternativen in Fish Shell? Du kannst mehrere Argumente an `echo` übergeben und sie werden zusammen mit Leerzeichen verbunden.
+Alternativen? Sicher, manche benutzen `printf` für komplexere Aufgaben:
 
 ```Fish Shell
-set nachname "Krüger"
-echo "Hallo" $name $nachname
+set tier "Fische"
+printf "Ich mag %s.\n" $tier  # %s steht für eine String-Variable
 ```
 
-Der Ausgabe:
+Bei der Umsetzung: Fish evaluiert den String und ersetzt Variablen durch deren Werte. Achte auf Sonderzeichen - manchmal willst du sie wörtlich nehmen (dann verwende Single Quotes).
 
-```Fish Shell
-Hallo Freddy Krüger
-```
+## See Also
+Fish Dokumentation: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
 
-Tiefgreifende implementierungsdetails? Nun, es ist verankert in den Grundlagen der Fish Shell und von vielen anderen Shells übernommen.
+Einen allgemeinen Guide zu String Interpolation: [https://en.wikipedia.org/wiki/String_interpolation](https://en.wikipedia.org/wiki/String_interpolation)
 
-## Siehe Auch
-
-- Die Fish Shell Dokumentation für [Zeichenketteninterpolation](https://fishshell.com/docs/current/index.html#expand)
-- [Tutorial zu Fish Shell Variablen](https://fishshell.com/docs/current/tutorial.html#tut_variables)
-
-Nutze sie und verschönere deinen Fish Code mit Zeichenketteninterpolation. Alles ist Fisch!
+Ein direkter Vergleich verschiedener Shells: [https://wiki.ubuntuusers.de/Shell/Stringverarbeitung/](https://wiki.ubuntuusers.de/Shell/Stringverarbeitung/)

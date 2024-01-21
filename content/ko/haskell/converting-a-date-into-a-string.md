@@ -1,6 +1,7 @@
 ---
 title:                "날짜를 문자열로 변환하기"
-html_title:           "Arduino: 날짜를 문자열로 변환하기"
+date:                  2024-01-20T17:36:45.322593-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,35 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇과 왜? 
-날짜를 문자열로 변환하는 것은 특정 형식의 날짜 데이터를 문자열로 바꾸는 과정입니다. 이것은 웹개발, 로깅, 사용자 상호작용 등에서 날짜 정보를 표시하고, 처리하기 쉬운 형태로 변환하기 위해 프로그래머들이 사용합니다.
+## What & Why? (무엇과 왜?)
+날짜를 문자열로 변환하는 것은, 날짜를 읽기 편한 텍스트 형태로 바꾸는 과정입니다. 프로그래머들은 로깅, 사용자 인터페이스, 데이터 저장 등을 위해 이 작업을 수행합니다.
 
-## 어떻게 하는가: 
-아래에는 Haskell에서 날짜를 문자열로 변환하는 간단한 방법을 보여주는 코드 예제입니다:
+## How to: (실행 방법:)
+```haskell
+import Data.Time
 
-```Haskell
-import Data.Time.Clock
-import Data.Time.Format
-import System.Locale
-
-getCurrentDateString :: IO String
-getCurrentDateString = do
-  currentTime <- getCurrentTime
-  return (formatTime defaultTimeLocale "%Y-%m-%d" currentTime)
+-- 날짜를 문자열로 변환하기
+main :: IO ()
+main = do
+    currentTime <- getCurrentTime
+    let dateString = formatTime defaultTimeLocale "%Y-%m-%d %H:%M:%S" currentTime
+    putStrLn dateString
 ```
 
-위의 코드를 실행하면, 현재 날짜(예: "2022-03-15")를 반환하는 문자열을 얻을 수 있습니다.
+예상 출력:
+```
+2023-03-15 14:55:01
+```
 
-## 깊은 탐구: 
-(1) 날짜를 문자열로 변환하는 것은 오래전부터 컴퓨터 프로그래밍에서 주요 과제 중 하나였습니다. 이렇게 변환하면 날짜 데이터를 사람들이 이해하기 쉬운 형식으로 제공할 수 있습니다.
+## Deep Dive (심층 탐구)
+날짜와 시간은 컴퓨터 과학에서 오래된 주제입니다. `Data.Time` 라이브러리는 Haskell에서 날짜와 시간을 다룰 때 기본적으로 사용하는 것으로, `formatTime` 함수는 기존의 C 언어에서의 `strftime` 함수에서 아이디어를 가져왔습니다.
 
-(2) 그러나 Haskell 외에도 Python, JavaScript 등 다른 언어들은 내장 함수나 외부 라이브러리를 통해 이 작업을 수행할 수 있습니다.
+`formatTime` 함수의 첫 번째 인자는 `TimeLocale`로, 이는 여러 지역과 언어에 맞게 날짜를 표현하는 방법을 정의합니다. 기본적으로 `defaultTimeLocale`을 사용하지만, 필요한 경우 사용자 정의도 가능합니다.
 
-(3) Haskell에서는 'Data.Time.Format'와 'System.Locale' 라이브러리를 사용해 날짜를 문자열로 변환합니다. `formatTime` 함수는 날짜 형식을 지정하는 문자열과 날짜를 인자로 받아 문자열로 변환합니다.
+형식 문자열, 예를 들어 `"%Y-%m-%d %H:%M:%S"`는 각각 연도, 월, 일, 시간, 분, 초를 나타내는 방법을 지정합니다. 이는 매우 유연해 원하는 출력 포맷을 정의할 수 있습니다.
 
-## 참고 자료: 
-날짜와 시간에 대한 Haskell의 더 깊은 이해를 위해 아래 링크들을 확인해보세요.
+대안으로, `Data.Time.Format` 모듈을 사용하여 다른 포맷터를 사용할 수도 있습니다. 또한, 한국어와 같은 다른 언어에 대한 날짜 형식도 지원합니다.
 
-1. Official Haskell Libraries: [Data.Time](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html) 
-2. [Haskell Wiki](https://wiki.haskell.org/)
-3. [Learn You a Haskell for Great Good](http://learnyouahaskell.com/) is an excellent free and online book to learn Haskell.
+## See Also (관련 자료)
+- [Haskell Data.Time documentation](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html) - 공식 `Data.Time` 라이브러리 문서
+- [Haskell Time Locale documentation](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html#v:defaultTimeLocale) - `TimeLocale`와 관련된 문서

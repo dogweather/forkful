@@ -1,6 +1,7 @@
 ---
 title:                "Vergleich von zwei Daten"
-html_title:           "C#: Vergleich von zwei Daten"
+date:                  2024-01-20T17:33:17.972760-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Vergleich von zwei Daten"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,43 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Vergleichen von zwei Daten bedeutet, zu prüfen, ob ein Datum vor, gleich oder nach einem anderen liegt. Programmierer benötigen das, um zeitliche Abläufe zu organisieren, Fristen zu überwachen oder historische Daten auszuwerten.
 
-Das Vergleichen von zwei Daten besteht darin, zu entscheiden, ob ein Datum vor, nach oder gleich einem anderen ist. Programmierer machen das, um zeitbasierte Logiken wie Terminplaner oder Historiker in ihren Anwendungen zu implementieren.
+## Anleitung:
+In Haskell vergleichen wir Daten mit den üblichen Vergleichsoperatoren, nachdem wir sie mit `parseTimeM` geparst haben. Hier ein kurzes Beispiel:
 
-## So geht's:
+```haskell
+import Data.Time
+import Data.Time.Format
 
-Im Folgenden finden Sie ein Beispiel, wie Sie two Dates in Haskell mithilfe des `Data.Time.Calendar`-Pakets vergleichen können. 
+-- Zuerst beide Daten als Strings
+dateStr1 = "2023-03-25"
+dateStr2 = "2023-03-26"
 
-```Haskell
-import Data.Time.Calendar
+-- Parse-Funktion, um String in ein Datum umzuwandeln
+parseDate :: String -> IO Day
+parseDate = parseTimeM True defaultTimeLocale "%Y-%m-%d"
 
-compareDates :: Day -> Day -> Ordering
-compareDates d1 d2 = compare d1 d2
-```
-
-Nutzen Sie das obere Beispiel wie folgt:
-
-```Haskell
+-- Vergleich von zwei Daten
+main :: IO ()
 main = do
-   let date1 = fromGregorian 2020 02 08
-   let date2 = fromGregorian 2020 12 31
-   print(compareDates date1 date2)  
+    date1 <- parseDate dateStr1
+    date2 <- parseDate dateStr2
+    putStrLn $ "Datum 1 ist vor Datum 2: " ++ show (date1 < date2)
+    putStrLn $ "Datum 1 ist gleich Datum 2: " ++ show (date1 == date2)
+    putStrLn $ "Datum 1 ist nach Datum 2: " ++ show (date1 > date2)
 ```
 
-Es zeigt `LT` auf der Konsole, da das erste Datum, `date1`, weniger (früher) ist als das zweite Datum, `date2`.
+Für das Beispiel lautet die Ausgabe:
 
-## Tiefgehende Informationen
+```
+Datum 1 ist vor Datum 2: True
+Datum 1 ist gleich Datum 2: False
+Datum 1 ist nach Datum 2: False
+```
 
-1. Historischer Kontext: Der `Data.Time.Calendar` ist ein essentieller Teil der `time` Bibliothek in Haskell, die ursprünglich im Jahr 2006 eingeführt wurde. Diese Bibliothek bietet umfangreiche Funktionen zur Datums- und Zeitmanipulation.
+## Deep Dive:
+Haskell verwendet das `Data.Time`-Modul zur Datum- und Zeitbehandlung, das mit dem Paket `time` kommt. Vor diesem Paket gab es verschiedene Alternativen und Zusatzbibliotheken, doch `time` ist inzwischen Standard.
 
-2. Alternativen: Falls Sie mehr Funktionalitäten benötigen, wie die Arbeit mit Zeitzonen, können Sie das `Data.Time`-Paket verwenden, das ergänzende Funktionen zur Verfügung stellt.
+Ein Datum in Haskell ist ein Wert des Typs `Day`, der intern als eine Anzahl von Tagen seit einer festgelegten Ära (the Modified Julian Date) gespeichert wird. Der Vergleich erfolgt daher einfach als Vergleich dieser ganzzahligen Werte.
 
-3. Implementierungsdetail: Die `compare`-Funktion in Haskell ist eine polyforme Funktion, die Teil der `Ord` Klasse ist. Bei der Anwendung auf zwei Argumente gibt sie eine von drei möglichen Antworten zurück: `LT` (Less Than, d.h. kleiner), `EQ` (Equal, d.h. gleich) oder `GT` (Greater Than, d.h. größer).
+Neben `parseTimeM` gibt es verschiedene Funktionen, um mit Datums- und Zeitwerten zu arbeiten, wie `diffDays`, um die Differenz zwischen zwei Daten zu berechnen, oder `addDays`, um eine Anzahl von Tagen zu einem Datum hinzu zuzählen.
 
-## Siehe auch
+In der Praxis könnten noch Zeitzonen und Sommerzeit eine Rolle spielen, was das comparieren komplizierter gestalten kann, hier könnte `utcToLocalTime` oder `zonedTimeToUTC` nützlich sein.
 
-- Die offizielle Dokumentation für das `Data.Time.Calendar`-Paket bietet umfassende Informationen: [Hier klicken](https://hackage.haskell.org/package/time-1.10/docs/Data-Time-Calendar.html)
-
-- Ein lehrreicher Blog-Artikel über Datum und Zeit in Haskell: [Hier klicken](https://two-wrongs.com/haskell-time-library-tutorial)
-
-- Für tiefgründigere Diskussionen und Fragen können Sie die Haskell Community auf Stack Overflow besuchen: [Hier klicken](https://stackoverflow.com/questions/tagged/haskell)
+## Siehe Auch:
+- [`Data.Time`-Modul](https://hackage.haskell.org/package/time-1.11.1/docs/Data-Time.html)
+- [Haskell-Paket: time](https://hackage.haskell.org/package/time)

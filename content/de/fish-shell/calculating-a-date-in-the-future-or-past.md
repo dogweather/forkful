@@ -1,6 +1,7 @@
 ---
 title:                "Berechnung eines zukünftigen oder vergangenen Datums"
-html_title:           "Fish Shell: Berechnung eines zukünftigen oder vergangenen Datums"
+date:                  2024-01-20T17:30:40.412013-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,41 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Kalenderdaten in der Zukunft oder Vergangenheit zu berechnen bedeutet, ausgehend vom aktuellen Datum ein bestimmtes Datum vor- oder zurückzurechnen. Programmiere nutzen das, um Fristen, Jubiläen oder zeitbasierte Aufgaben zu handhaben.
 
-Die Berechnung eines zukünftigen oder vergangenen Datums ist das Ermitteln eines Datums, das bestimmte Zeiteinheiten (z.B. Tage, Wochen, Monate, Jahre) von einem bestimmten Ausgangsdatum entfernt ist. Programmierer machen das, weil es alltägliche Funktionen wie Erinnerungen, Planung von Projekten und vieles mehr ermöglicht.
-
-## So geht's:
-
-Mit Fish Shell ist das Berechnen eines Datums in der Zukunft oder Vergangenheit einfach möglich. Hier sind einige Beispiele:
+## How to:
+Berechne ein Datum in der Zukunft:
 
 ```Fish Shell
-# Einen Tag in der Zukunft berechnen
-set datum (date -v+1d "+%Y-%m-%d") 
-echo $datum
+set -l zukunft (date -d '+1 week' "+%Y-%m-%d")
+echo $zukunft
 ```
-Ergebnis könnte so aussehen:
 
-```
-2022-11-30
-```
+Ausgabe könnte sein: `2023-04-17` (abhängig vom heutigen Datum)
+
+Ein Datum in der Vergangenheit ermitteln:
 
 ```Fish Shell
-# Eine Woche in der Vergangenheit berechnen
-set datum (date -v-1w "+%Y-%m-%d") 
-echo $datum
-```
-Ergebnis könnte so aussehen:
-
-```
-2022-11-16
+set -l vergangenheit (date -d '-1 month' "+%Y-%m-%d")
+echo $vergangenheit
 ```
 
-## Deep Dive:
+Ausgabe könnte sein: `2023-03-10` (abhängig vom heutigen Datum)
 
-Die Fähigkeit, Datumsberechnungen durchzuführen, ist seit den frühesten Tagen der Programmierung ein wichtiges Werkzeug. Bei komplexeren Aufgaben kann es sinnvoll sein, Bibliotheken oder Tools wie GNU `date` zu nutzen, die neben einfacher Datumsaddition und -subtraktion auch erweiterte Funktionen wie die Berücksichtigung von Schaltjahren bieten. Obwohl Fish Shell nicht die umfangreichen Datumsoperatoren anderer Shells wie Bash hat, bietet sie dennoch einfachen Zugriff auf Datumsmanipulationsfunktionen durch die Integration von UNIX-Utilities wie `date`.
+## Deep Dive
+Früher benutzten Leute physische Kalender und mussten manuell nachzählen. Programmiersprachen bieten heute Funktionen, um diese Berechnungen automatisch durchzuführen. Neben `date` in Shell-Skripten gibt es spezialisierte Bibliotheken in Sprachen wie Python (`datetime`) oder JavaScript (`Date`), die flexiblere und mächtigere Möglichkeiten zur Datumshandhabung bieten. In Fish Shell verlassen wir uns auf externe Tools wie `date`, da es keine eingebaute Datum-Funktionalität gibt. Beachten sollte man auch die Systemabhängigkeit von `date` – GNU `date` auf Linux unterscheidet sich von BSD `date` auf MacOS.
 
-## Siehe auch:
-
-- `date` Man Page (https://linux.die.net/man/1/date)
-- Fish Shell Documentation (https://fishshell.com/docs/current/)
-- Fish Shell GitHub (https://github.com/fish-shell/fish-shell)
+## See Also
+- [GNU Coreutils Documentation](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html) für `date`
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html) für allgemeine Fish Shell Verwendung
+- [Python datetime Documentation](https://docs.python.org/3/library/datetime.html) für ein Beispiel in einer anderen Programmiersprache

@@ -1,6 +1,7 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "C: Usuwanie znaków pasujących do wzorca"
+date:                  2024-01-20T17:42:46.626436-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,38 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i Dlaczego?
-Usuwanie znaków pasujących do wzorca to operacja, która pozwala programistom usunąć konkretne sekwencje znaków z tekstu. Robimy to, aby oczyścić dane wejściowe, usunąć niepożądane znaki lub uprościć przetwarzanie tekstu.
+Usuwanie znaków pasujących do wzorca to zabieg, gdzie wybierasz i eliminujesz określone sekwencje tekstu z większej całości. Programiści to robią, aby oczyścić dane, uproszczyć tekst lub przygotować go do dalszej obróbki.
 
 ## Jak to zrobić:
-Poniżej przykładowe kodowanie i efekty ich działania. 
 ```PowerShell
-# Przykład 1:
-$tekst = "Hello, World!"
-$wzorzec = "[oie]"
-$tekst -replace $wzorzec, '' 
-# Wynik: "Hll, Wrld!"
-
-# Przykład 2:
-$tekst = "Poniedziałek, środa, piątek"
-$wzorzec = "[aeio]"
-$tekst -replace $wzorzec, '' 
-# Wynik: "Pndłk, śrd, pątk"
+# Usuwanie cyfr z ciągu znaków
+$string = "P0w3r5hell r0ck5!"
+$cleanString = $string -replace '[0-9]', ''
+$cleanString
 ```
-Powyższe skrypty demonstrują, jak w PowerShell można usuwać znaki pasujące do wzorca.
-
-
-## Głębsze spojrzenie:
-Usuwanie znaków pasujących do wzorca ma swoje korzenie w wyrażeniach regularnych, narzędziu wykorzystywanym do manipulacji tekstem od lat 60-tych XX wieku. Alternatywnie do `-replace`, możemy również użyć metody `.Remove()` dla obiektów string w PowerShell. Jej wadą jest to, że nie obsługuje wzorców, co oznacza, że możemy usunąć tylko konkretne znaki lub sekwencje, a nie wzorce.
+Wyjście:
+```
+Pwrhell rcks!
+```
 
 ```PowerShell
-# Przykład 3:
-$tekst = "Hello, World!"
-$tekst.Remove(5) 
-# Wynik: "Hello"
+# Usuwanie wszystkich form znaków interpunkcyjnych
+$string = "PowerShell, jak zwykle: niesamowity!"
+$cleanString = $string -replace '[\p{P}]', ''
+$cleanString
 ```
-Powyższy skrypt usuwa wszystko po piątym znaku.
+Wyjście:
+```
+PowerShell jak zwykle niesamowity
+```
 
-## Zobacz także:
-1. [PowerShell - Poradnik Microsoft](https://docs.microsoft.com/pl-pl/powershell/)
-2. [Wyrażenia regularne - Wikipedia](https://pl.wikipedia.org/wiki/Wyra%C5%BCenie_regularne)
-3. [PowerShell remove characters in string - Stackoverflow](https://stackoverflow.com/questions/19487800/how-to-remove-characters-in-a-string-using-powershell)
+## Wnikliwe spojrzenie:
+Historia PowerShell rozpoczyna się w 2006 roku, kiedy to został on uwolniony jako bardziej rozbudowany zastępca dla starszych interpreterów wiersza poleceń. Usuwanie znaków według wzorca jest możliwe dzięki silnikowi wyrażeń regularnych, który jest wbudowany w PowerShell. Alternatywy? Możesz użyć funkcji `.Trim()`, `.Replace()` albo zewnętrznych narzędzi jak `sed` w systemie UNIX. Użycie `-replace` w PowerShell jest jednak szybsze i proste dzięki wbudowanemu wsparciu dla wyrażeń regularnych. Wyrażenia regularne używają specjalnej składni do definiowania wzorców tekstowych, co daje programistom potężne narzędzie do obróbki tekstów.
+
+## Zobacz również:
+- [about_Regular_Expressions](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)
+- [Regular Expression Quick Start](https://www.regular-expressions.info/quickstart.html)

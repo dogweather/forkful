@@ -1,7 +1,8 @@
 ---
-title:                "Strings verketten"
-html_title:           "Bash: Strings verketten"
-simple_title:         "Strings verketten"
+title:                "Zeichenketten verknüpfen"
+date:                  2024-01-20T17:34:59.074995-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Zeichenketten verknüpfen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,37 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und Warum?
+## Was & Warum?
+String-Konkatenation verklebt einfach zwei Textstücke zu einem längeren. Programmierer*innen nutzen das, um Nutzerdaten zu verarbeiten, Nachrichten zu generieren oder einfach alles dort, wo zusammengesetzte Texte gebraucht werden.
 
-Das Verketten von Strings ist das Aneinanderreihen von zwei oder mehr Zeichenketten, um eine neue zu bilden. Programmierer machen dies, um Worte, Sätze oder Datenstrukturen in ausgebbarer Textform zu erstellen.
-
-## So geht's:
-
-Lassen Sie uns in der Praxis sehen, wie man Zeichenketten in Haskell verkettet. Betrachten Sie folgenden Code:
-
+## So geht’s:
+In Haskell nutzen wir den Operator `(++)`, um Strings zu verketten.
 ```Haskell
-main = do   
-    let str1 = "Hallo!"   
-    let str2 = " Wie geht's?"   
-    putStrLn (str1 ++ str2)   
+main :: IO ()
+main = do
+    let begruessung = "Hallo, "
+        name = "Welt!"
+    putStrLn (begruessung ++ name)  -- Ausgabe: Hallo, Welt!
 ```
+`putStrLn` schreibt den resultierenden String auf die Konsole.
 
-Dieser Code gibt folgenden String aus:
+## Deep Dive
+Struktur und Effizienz sind wichtig bei der Verkettung. Historisch gesehen kamen Listen zum Einsatz – Strings in Haskell sind Listen von Char. Listenverkettung `(++)` ist einfach, aber nicht immer effizient, besonders bei langen Strings. Alternativen? `Data.Text` für große Textmengen und `Builder` aus dem `Data.Text.Lazy.Builder` für eine effizientere Verkettung durch Nutzung eines Zwischenpuffers.
 
-```Haskell
-"Hallo! Wie geht's?"
-```
+Haskell’s Garbage Collector räumt auf, dennoch können viele Verkettungen zu viel unnötigen Speicherplatz verbrauchen. Beachte also den Kontext: 'Kurz und oft' oder 'lang und selten' machen einen großen Unterschied!
 
-In Haskell wird '++' benutzt, um zwei Strings zu verketten.
-
-## Tiefereinblick:
-
-Die '++' Funktion für die Verkettung von Zeichenketten wurde bereits in Haskell 1.0 eingeführt und hat sich seitdem nicht verändert.
-
-Alternativ könnten Sie `concat` verwenden, um eine Liste von Strings zu einem einzigen String zu verbinden.
-
-Haskell implementiert das Verketten von Strings durch das Zusammenfügen der internen Listenrepräsentationen der Strings. Deshalb ist das Verketten sehr effizient.
-
-## Siehe auch:
-
-- [Haskell/Lists and tuples](http://en.wikibooks.org/wiki/Haskell/Lists_and_tuples)
+## See Also
+- [Haskell Documentation for `Data.Text`](https://hackage.haskell.org/package/text)
+- [Performance considerations with Strings](https://wiki.haskell.org/Performance/Strings)
+- [Learn You a Haskell for Great Good! on Strings](http://learnyouahaskell.com/starting-out#strings)

@@ -1,7 +1,8 @@
 ---
-title:                "Utdrag av understrenger"
-html_title:           "Bash: Utdrag av understrenger"
-simple_title:         "Utdrag av understrenger"
+title:                "Uthenting av delstrenger"
+date:                  2024-01-20T17:46:26.574168-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uthenting av delstrenger"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -12,34 +13,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Å ekstrahere delstrenger er å isolere en spesifikk del av en tekststreng i programmering for videre bruk. Programmerere gjør dette for å manipulere og analysere data mer effektivt.
+Utdrag av substringer er når du henter en del av en streng. Programmerere gjør dette for å manipulere og analysere tekst, som å hente ut et brukernavn fra en e-postadresse.
 
-## Hvordan gjøre det:
+## Hvordan:
 
-For å ekstrahere delstrenger, bruker vi i PHP ofte `substr() `-funksjonen. Men det er også andre funksjoner tilgjengelig, som `strpos()`. Her er noen eksempler: 
+La oss ta en titt. PHP har flere innebygde funksjoner for dette:
 
 ```PHP
-<?php
-    $streng = "Hei, Verden!";
-    echo substr($streng, 4, 6); // Output: ", Ver"
-?>
+$tekst = "Hei, dette er en eksempeltekst!";
+// Bruk substr
+$deltekst = substr($tekst, 0, 3); // "Hei"
+echo $deltekst;
 
-<?php
-    $streng = "Jeg elsker PHP!";
-    echo substr($streng, -4); // Output: "PHP!"
-?>
+// Bruk mb_substr for flerbyte-tegnstøtte
+$deltekst = mb_substr($tekst, 0, 3); // "Hei"
+echo $deltekst;
+
+// Hente ut brukernavn fra e-post
+$epost = "ola.nordmann@example.com";
+$brukernavn = strstr($epost, '@', true); // "ola.nordmann"
+echo $brukernavn;
 ```
+
+Eksempel utdata:
+
+```
+Hei
+Hei
+ola.nordmann
+```
+
 ## Dypdykk
 
-1. Historisk kontekst: Delstrengfunksjoner har vært en del av PHP siden versjon 4. Ettersom PHP har utviklet seg, har også funksjonen `substr()` blitt forbedret og optimalisert.
+Før i tiden, når minne var dyrt, var substrings viktige for å spare plass. I PHP har `substr()` vært en støttespiller i lang tid. Med internasjonalisering ble `mb_substr()` viktig for støtte av multibyte-tegnsett, som UTF-8.
 
-2. Alternativer: Hvis du for eksempel trenger å håndtere multibyte-tegn (som i Unicode), bør du vurdere å bruke `mb_substr() `, som er spesielt designet for dette formålet.
+Alternativer til substrings inkluderer strengfunksjoner som `explode()`, `strtok()`, eller regulære uttrykk med `preg_match()` for mer komplekse mønstre.
 
-3. Implementasjonsdetaljer: `substr()` tar tre argumenter: (1) opprinnelig streng, (2) startposisjon, og (3) (valgfritt) lengden på den delen du ønsker å utvinne. Hvis det tredje argumentet utelates, returnerer funksjonen resten av strengen fra startposisjonen.
+`strstr()` kan også brukes for å finne en subtekst fra starten av en streng til første forekomst av et spesifisert tegn.
 
-## Se også:
+## Se Også
 
-Gå til PHP manuelle sider for mer inngående informasjon og flere eksempler på `substr()` og `mb_substr()`:
-
-- [`substr()` dokumentasjon](https://php.net/substr)
-- [`mb_substr()` dokumentasjon](https://php.net/mb_substr)
+- PHP.net on `substr()`: https://www.php.net/manual/en/function.substr.php
+- PHP.net on `mb_substr()`: https://www.php.net/manual/en/function.mb-substr.php
+- PHP.net on `strstr()`: https://www.php.net/manual/en/function.strstr.php
+- Interactive PHP Tutorial: https://www.learn-php.org/
+- PHP The Right Way (for beste praksiser): https://phptherightway.com/

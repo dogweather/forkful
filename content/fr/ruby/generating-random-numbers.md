@@ -1,7 +1,8 @@
 ---
-title:                "Générer des nombres aléatoires"
-html_title:           "Elixir: Générer des nombres aléatoires"
-simple_title:         "Générer des nombres aléatoires"
+title:                "Génération de nombres aléatoires"
+date:                  2024-01-20T17:50:00.649111-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Génération de nombres aléatoires"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Numbers"
@@ -10,46 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-La génération de nombres aléatoires est un processus par lequel on produit une série de nombres sans aucun motif apparent. Les programmeurs utilisent cela pour entre autres, programmer des simulations, des jeux, et des résultats imprévisibles.
+## What & Why?
+La génération de nombres aléatoires, c'est produire une séquence de nombres qui n'ont pas de motif prévisible. Les programmeurs en ont besoin pour tout, depuis la sécurité informatique jusqu'aux jeux et simulations.
 
-## Comment faire:
-Ruby simplifie la génération de nombres aléatoires. Jetez un œil à l'exemple ci-dessous:
-
+## How to:
 ```Ruby
-rnd = Random.new
-puts rnd.rand(1..100)  # Produit un nombre aléatoire entre 1 et 100
+# Générer un nombre aléatoire entre 0 et 1
+random_float = rand
+puts random_float # => ex: 0.43702236510325
+
+# Générer un nombre aléatoire entre 0 et 99
+random_int = rand(100)
+puts random_int # => ex: 42
+
+# Générer un nombre dans une plage de valeurs (10 à 20 inclus)
+random_range = rand(10..20)
+puts random_range # => ex: 15
 ```
 
-Résultat possible:
+## Deep Dive
+Avant le Ruby moderne, les gens utilisaient des méthodes plus primitives pour obtenir des nombres aléatoires, comme le jet de dés ou la rotation de roulettes. Désormais, Ruby utilise des algorithmes complexes pour simuler l'aléatoire - bien sûr ce n’est jamais totalement aléatoire, c'est ce qu'on appelle du pseudo-aléatoire. Un point intéressant: `rand` utilise une graine (ou seed) pour initier sa séquence. Si vous voulez reproduire une séquence précise, vous pouvez initialiser cette graine avec `srand`. Alternativement, Ruby offre aussi la classe `Random` pour plus de contrôle et de fonctionnalités.
 
-```Ruby
-45
-```
-
-Vous pouvez aussi avoir un nombre aléatoire entre 0 et 1 uniquement.
-
-```Ruby
-puts rnd.rand  # Produit un nombre aléatoire entre 0 et 1
-```
-
-Résultat Possible:
-
-```Ruby
-0.3423437892749144
-```
-
-## Plongée profonde
-Historiquement, la génération de nombres aléatoires est un sujet qui a été exploré largement en raison de ses multiples utilisations, des calculs de probabilités à la cryptographie. Ruby utilise une forme de l'algorithme Mersenne Twister pour générer des nombres aléatoires.
-
-Alternativement, en Ruby, on peut aussi utiliser la méthode `Kernel#rand` ou `Array#sample` pour générer des nombres aléatoires. Cependant, `Random#rand` offre plus de flexibilité, permettant de spécifier un range d'où générer le nombre aléatoire.
-
-En termes de détails d'implémentation, chaque instance de `Random` a sa propre graine et séquence de nombres aléatoires, indépendante des autres instances.
-
-## Voir aussi:
-Voici quelques liens utiles pour en savoir plus :
-
-- [Documentation officielle de Ruby sur les nombres aléatoires] (https://ruby-doc.org/core-2.7.0/Random.html)
-- [Mersenne Twister] (https://fr.wikipedia.org/wiki/Mersenne_twister) 
-- [Kernel#rand en Ruby] (https://ruby-doc.org/core-2.7.0/Kernel.html#method-i-rand)
-- [Array#sample en Ruby] (https://ruby-doc.org/core-2.7.0/Array.html#method-i-sample)
+## See Also
+- [Random numbers in Ruby](https://ruby-doc.org/core-2.7.0/Random.html) : documentation officielle de Ruby sur les nombres aléatoires.
+- [Secure Random](https://ruby-doc.org/stdlib-2.5.1/libdoc/securerandom/rdoc/SecureRandom.html) : pour quand vous avez besoin de nombres aléatoires pour la cryptographie.
+- [Stack Overflow: "How to generate a random number in Ruby"](https://stackoverflow.com/questions/198460/how-to-get-a-random-number-in-ruby) : une discussion sur la génération de nombres aléatoires en Ruby.

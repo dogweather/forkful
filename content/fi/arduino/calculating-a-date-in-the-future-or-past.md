@@ -1,7 +1,8 @@
 ---
-title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-html_title:           "Arduino: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+title:                "Tulevan tai menneen päivämäärän laskeminen"
+date:                  2024-01-20T17:31:03.329616-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,61 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä: Miksi?
+## What & Why?
+Mitä on päivämäärän laskeminen tulevaisuuteen tai menneisyyteen? Käytännössä säädämme kelloja ja kalentereita ohjelmallisesti. Miksi? Kalenteritoiminnot ovat kriittisiä muistutuksille, aikatauluille ja tapahtumien seurannalle.
 
-Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä tarkoittaa aikaleimajon notaation muuttamista vastaamaan haluttua aikapistettä. Ohjelmoijat tekevät niin sovellusten logiikan tarpeiden, kuten tapahtumien ajastuksen tai ajanhallinnan vuoksi.
-
-# Näin se tehdään:
-
-Aloita asettamalla RTC-moduuli (Real Time Clock) ja DD-MM-YYYY muodossa oleva päivämäärä. Lasketaan sitten päiviä tulevaisuudessa tai menneisyydessä.
+## How to:
+Arduino ei suoraan tue päivämääräkäsittelyä, mutta voimme käyttää kirjastoja kuten `TimeLib.h`. Tässä esimerkki tulevan päivämäärän laskennasta:
 
 ```Arduino
-#include <Wire.h>
-#include "RTClib.h"
+#include <TimeLib.h>
 
-RTC_DS1307 rtc;
-
-void setup () {
- Wire.begin();
- rtc.begin();
- 
- if (! rtc.isrunning()) {
-   rtc.adjust(DateTime(__DATE__, __TIME__));
- }
-
- DateTime aika_nyt = rtc.now();
- DateTime tulevaisuuden_paiva = aika_nyt + TimeSpan(7,0,0,0); // lasketaan viikko (7 päivää) eteenpäin
+void setup() {
+  Serial.begin(9600);
+  setTime(17, 30, 0, 8, 3, 2023); // Asetetaan nykyhetki (hh, mm, ss, pp, kk, vvvv)
 }
 
-void loop () {
- DateTime aika_nyt = rtc.now();
-       
- Serial.print("Aika nyt: ");
- Serial.println(aika_nyt);
- delay(1000);
- 
- if (aika_nyt >= tulevaisuuden_paiva) {
-   Serial.println("Viikko on kulunut!");
- }
+void loop() {
+  time_t nykyhetki = now();
+  time_t tulevaisuus = nykyhetki + SECS_PER_DAY * 7; // Lisätään 7 päivää
+
+  Serial.print(day(tulevaisuus));
+  Serial.print(".");
+  Serial.print(month(tulevaisuus));
+  Serial.print(".");
+  Serial.println(year(tulevaisuus));
+
+  delay(30000); // Odotetaan 30 sekuntia ennen seuraavaa laskentaa
 }
 ```
-Output:
-```
-Aika nyt: 2022-02-14 12:01:25
-...
-Viikko on kulunut!
-```
 
-# Syvempi sukellus:
+## Deep Dive
+Arduinon maailmassa ajankäsittely perustuu `millis()`-funktioon, joka laskee millisekunteja laitteen käynnistyksestä. Historiallisesti mikrokontrollerit eivät ole kelloneet päivämääriä mutta lisäkirjastot, kuten `TimeLib`, ovat tulleet avuksi.
 
-Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä on olennainen osa monia ohjelmasovelluksia. Muinaiset ohjelmoijat joutuivat tekemään tämän käsin, mutta Arduino-RTC-moduulit kuten DS1307 helpottavat nyt tätä prosessia huomattavasti.
+Vaihtoehtoisesti RTC (Real-Time Clock) moduuleja voidaan käyttää tarkempiin aikaleimoihin ja ne säilyttävät ajan jopa virrankatkaisun aikana.
 
-Vaihtoehtoisesti voit käyttää aikakirjastoa, joka tarjoaa useita funktioita päivämäärän ja ajan käsittelyyn. Mutta RTC-moduulien käyttö on parempi, sillä se on tarkempi ja se ei nollaudu, kun Arduino käynnistetään uudelleen.
+Päivämäärälaskennassa kannattaa huomioida karkausvuodet ja kuukausien eri pituudet. `TimeLib`-kirjasto hoitaa nämä yksityiskohdat puolestasi.
 
-Kun lasket päiviä tulevaisuudessa tai menneisyydessä, muista, että kuukausien päivien määrä vaihtelee ja ottaa huomioon myös karkausvuodet.
-
-# Katso myös:
-
-[Arduino Time Library](https://playground.arduino.cc/Code/Time)  
-[RTC Library](https://github.com/adafruit/RTClib)  
-[Arduino’s official website](https://www.arduino.cc/)
+## See Also
+- [Arduino Time Library](https://www.pjrc.com/teensy/td_libs_Time.html)
+- [Arduino TimeAlarms Library](https://www.pjrc.com/teensy/td_libs_TimeAlarms.html)
+- [Adafruit RTClib](https://github.com/adafruit/RTClib)

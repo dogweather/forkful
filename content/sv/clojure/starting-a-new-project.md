@@ -1,7 +1,8 @@
 ---
-title:                "Att starta ett nytt projekt"
-html_title:           "Arduino: Att starta ett nytt projekt"
-simple_title:         "Att starta ett nytt projekt"
+title:                "Att påbörja ett nytt projekt"
+date:                  2024-01-20T18:03:12.540343-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
@@ -10,37 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-**## Vad och varför?**
+## Vad & Varför?
+Starta ett nytt projekt innebär att skapa en ny bas där din kod kan växa och utvecklas. Programmerare gör det för att omvandla idéer till körbar kod som löser problem eller skapar värde.
 
-Att starta ett nytt projekt handlar om att börja på en ny kodningsresans från början, med ett specifikt mål i åtanke. Programmers skapar nya projekt när de behöver konstruera en unik lösning från grunden, eller när de vill lära sig ny teknik på djupet.
+## Hur man gör:
+För att kickstarta ett Clojure-projekt använder vi Leiningen, en populär byggautomatisering och projektledningsverktyg för Clojure.
 
-**## Så här gör du:**
+1. Installera Leiningen:
+Besök [Leiningen's hemsida](https://leiningen.org/) och följ installationsinstruktionerna.
 
-Att starta ett nytt Clojure-projekt är enkelt med "Leiningen" verktyget. 
+2. Skapa ett nytt projekt:
+Öppna en terminal och kör:
+```Clojure
+lein new app mitt-kloj-projekt
+```
+Ersätt `mitt-kloj-projekt` med ditt projektnamn.
 
-```clojure
-;; Installation av Leiningen
-wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
-chmod a+x lein
-mv lein /usr/local/bin/lein
+3. Projektets struktur:
+Kontrollera den nya projektstrukturen:
+```Clojure
+tree mitt-kloj-projekt
+```
+Output ser ut ungefär så här:
+```Clojure
+mitt-kloj-projekt
+├── project.clj
+├── README.md
+├── resources
+├── src
+│   └── mitt_kloj_projekt
+│       └── core.clj
+└── test
+    └── mitt_kloj_projekt
+        └── core_test.clj
 ```
 
-När du har installerat Leiningen kan du skapa ett nytt projekt:
-
-```clojure
-lein new app mitt-projekt
+4. Kör projektet:
+Gå till projektets katalog och starta REPL:
+```Clojure
+cd mitt-kloj-projekt
+lein repl
 ```
-"mitt-projekt" är här namnet på ditt nya projekt.
+I REPL, kör:
+```Clojure
+(-main)
+```
+Du ser ett hälsningsmeddelande eller liknande från din `core.clj` fil.
 
-**## Djupdykning**
+## Fördjupning
+Leiningen lanserades 2010 och är baserat på en tidigare verktyg som heter Cake. Det löser samma problemställningar som Maven och Gradle gör i Java-ekosystemet. Alternativ till Leiningen inkluderar Boot och den nyare verktyget tools.deps som är en del av Clojure CLI-verktyg. Leiningen hanterar beroenden, körnings- och testcykler samt paketering och distribution av applikationen. Den `project.clj` fil är hjärtat i ett Leiningen-projekt, som behåller alla konfigurationer.
 
-Att starta ett nytt projekt har sina rötter i de dagar då programmering var en långsam process, med behov av stora planerings- och övervakningssystem. Nu, dock, med moderna verktyg som Clojure och Leiningen, kan programmerare logiskt portionera deras arbete i mindre, hanterbara projekt.
-
-Ett alternativ till att starta ett nytt projekt från grunden är att bifoga till ett befintligt projekt. Detta är ofta snabbare men kan skapa komplexitet om den ursprungliga koden inte är väl skriven eller underhållen.
-
-Implementation av ett nytt projekt i Clojure är kraftfullt, eftersom språket ger uttrycksfull syntax och datastrukturer, parallell programmering stöd och ett starkt ekosystem av bibliotek.
-
-**## Se också:**
-
-[Leiningen Guide](https://leiningen.org/#install)
-[Clojure Documentation](https://clojure.org/guides/getting_started)
+## Se även
+- Clojure's officiella hemsida: [https://clojure.org/](https://clojure.org/)
+- Leiningen's användarmanual: [https://leiningen.org/](https://leiningen.org/)
+- ClojureDocs, en gemenskapsdriven klargörande: [https://clojuredocs.org/](https://clojuredocs.org/)
+- En guide till Boot: [http://boot-clj.com/](http://boot-clj.com/)
+- Getting started with Clojure CLI tools: [https://clojure.org/guides/getting_started](https://clojure.org/guides/getting_started)

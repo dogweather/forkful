@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:50:45.349516-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,28 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Interpolacja pozwala nam łączyć zmienne z literałami, tworząc tako dynamiczne ciągi znaków - przydatne, gdy chcemy wyświetlić różne dane w jednym miejscu. Jest to wygodne i oszczędza czas.
+## What & Why? (Co i Dlaczego?)
+Interpolacja łańcuchów pozwala wpleść wartości zmiennych w tekst. Programiści robią to, by dynamicznie generować treść – dzięki temu kod jest bardziej elastyczny i czytelny.
 
-## Jak to zrobić?
-W Clojure, można używać funkcji `format` do interpolowania stringów. Poniżej znajduje się przykładowy kod.
+## How to (Jak to zrobić):
+Clojure używa funkcji `str` do łączenia stringów, ale nie ma wbudowanej interpolacji. Możesz to osiągnąć za pomocą `format` albo biblioteki jak `clojure.string`:
 
-```clojure
-(defn greet [name]
-  (format "Hej %s, jak się masz?" name))
+```Clojure
+;; Z użyciem format
+(def name "Alicja")
+(println (format "Cześć, %s!" name)) ; Wypisze: Cześć, Alicja!
 
-(println (greet "John"))
+;; Z użyciem clojure.string/interpose, by wpleść separat
+(require '[clojure.string :as str])
+(println (str/join ", " ["witaj" "świecie"])) ; Wypisze: witaj, świecie
 ```
-Po wykonaniu tego kodu, zostanie wyświetlony ciąg znaków: `"Hej John, jak się masz?"`.
 
-## Dogłębniejsze spojrzenie
-Historia: Interpolacja stringów istnieje praktycznie od początków języka programowania.  
+## Deep Dive (Dogłębna analiza)
+Interpolacja łańcuchów nie jest natywnie obsługiwana w Clojure, w przeciwieństwie do języków jak Ruby czy Python. To dlatego trzeba używać `format` albo bibliotek zewnętrznych. `format` jest swego rodzaju mostem między Clojure a Javą – wykorzystuje Java's `String.format`. 
 
-Alternatywy: Istnieje wiele innych sposobów, np. konkatenacja (łączenie stringów) za pomocą operatora `+`. 
+Alternatywy:
+- `str` łączy stringi, ale bez formatowania.
+- macro z `clojure.core/for` czy inne sztuczki makr mogą symulować interpolację.
 
-Informacje o implementacji: Clojure wykorzystuje Java String Formatter do implementacji funkcji `format`. Jest to dość wydajne, ale warto zauważyć, że użycie go może dodać dodatkową złożoność kodu, szczególnie gdy łączy się wiele zmiennych.
+Szczegóły implementacyjne:
+- `format` obsługuje różne specyfikatory formatowania, więc masz kontrolę nad wyjściem.
+- `clojure.string` jest częścią standardowej biblioteki Clojure i oferuje dodatkowe operacje na stringach.
 
-## Zobacz także
-
-1. [Java String Formatter](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Formatter.html)
-2. [Clojure String documentation](https://clojuredocs.org/clojure.core/format)
+## See Also (Zobacz również)
+- Dokumentacja `clojure.string`: https://clojuredocs.org/clojure.string
+- Przykłady użycia `format`: https://clojuredocs.org/clojure.core/format
+- Porównanie stringów w Clojure: https://www.braveclojure.com/do-things/#3_5

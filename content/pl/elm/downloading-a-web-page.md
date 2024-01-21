@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C#: Pobieranie strony internetowej"
+date:                  2024-01-20T17:43:48.546941-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,42 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Pobranie strony internetowej to proces ściągania treści ze zdalnego serwera. Programiści robią to, aby przetwarzać dane, pobierać aktualizacje lub wypełniać aplikacje treścią.
 
-Pobieranie strony internetowej to proces, w którym twoja aplikacja pobiera dane HTML z konkretnej strony internetowej. Programiści robią to by zdobyć dane z różnych stron, które można potem wykorzystać w aplikacji.
-
-## Jak to zrobić:
-
-Podstawowym sposobem na pobranie strony internetowej w Elm jest użycie funkcji `Http.get`.
+## How to: (Jak to zrobić:)
+W Elm downloadowanie strony może być wykonane za pomocą modułu `Http`. Oto przykład prostego żądania GET:
 
 ```Elm
 import Http
-import Json.Decode as Decode
+import Json.Decode exposing (string)
 
-getPage : String -> Cmd Msg
-getPage url =
+type Msg
+    = GotText (Result Http.Error String)
+
+getText : Cmd Msg
+getText =
     Http.get
-        { url = url
-        , expect = Http.expectString GotPage
+        { url = "http://example.com"
+        , expect = Http.expectString GotText
         }
 
-type Msg =
-    GotPage (Result Http.Error String)
+-- To jest wywołane, gdy odpowiedź przychodzi
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        GotText (Ok text) ->
+            -- zrób coś z pobranym tekstem
+            (model, Cmd.none)
+
+        GotText (Err httpError) ->
+            -- obsłuż błąd
+            (model, Cmd.none)
 ```
 
-Aplikacja będzie wywoływać funkcję `getPage` z adresem URL strony, którą chcesz pobrać. Oczekiwany wynik to otrzymane dane strony.
+Sample output może wyglądać tak:
+```Elm
+-- W przypadku sukcesu:
+GotText (Ok "Tutaj treść strony...")
 
-## Głębsze Zagadnienia:
+-- W przypadku błędu:
+GotText (Err Http.NetworkError)
+```
 
-- Kontekst historyczny: Elm to funkcyjny język programowania do tworzenia webowych aplikacji interaktywnych. Został zaprojektowany tak, aby unikać błędów wykonania na produkcji, co czyni go idealnym dla rozwoju złożonych aplikacji internetowych.
+## Deep Dive (Dogłębna analiza)
+W przeszłości Elm wykorzystywał `elm-lang/http`, ale obecnie używa się `elm/http` jako standardowego modułu do żądań HTTP. Alternatywą dla wbudowanych funkcji HTTP jest korzystanie z JavaScript'u poprzez porty.
 
-- Alternatywy: istnieją inne biblioteki do pobierania stron internetowych w Elm, na przykład `elm-http-builder`, które oferują większą elastyczność.
+Szczegóły implementacji to:
+- Użycie `Http.expectString`, by zinterpretować odpowiedź jako tekst.
+- Dekodowanie JSON za pomocą `Json.Decode` dla uzyskania bardziej złożonych typów danych.
+- Bezpieczne obsługiwanie błędów poprzez typ `Result`.
 
-- Szczegóły implementacji: Elm wykorzystuje monadę `Cmd` do obsługi efektów ubocznych takich jak żądania HTTP. Ta implementacja różni się od większości języków JavaScript, które używają obietnic (promises) lub callbacków do obsługi asynchroniczności.
+Programowanie w Elm skupia się na czystości funkcji i niezmienności, co sprzyja tworzeniu przewidywalnych aplikacji webowych.
 
-## Zobacz także:
-
-- Elm: http://elm-lang.org
-- Http.get: http://package.elm-lang.org/packages/elm/http/latest/Http#get
-- JSON decoding: http://guide.elm-lang.org/interop/ports.html
-- Http Builder: http://package.elm-lang.org/packages/lukewestby/elm-http-builder/latest/
+## See Also (Zobacz również)
+- [Elm HTTP package documentation](https://package.elm-lang.org/packages/elm/http/latest/)
+- [Elm Guide on HTTP](https://guide.elm-lang.org/effects/http.html)
+- [Json.Decode API Documentation](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode)

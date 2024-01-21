@@ -1,6 +1,7 @@
 ---
 title:                "Enviando una solicitud http"
-html_title:           "Bash: Enviando una solicitud http"
+date:                  2024-01-20T18:00:33.811078-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Enviando una solicitud http"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,39 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué?
+## Qué & Por Qué?
+Mandar una solicitud HTTP es el proceso de pedir o enviar datos a un servidor web. Lo hacemos para interactuar con APIs, obtener recursos, enviar formularios y más - es la base de la comunicación en la red.
 
-Enviar una solicitud HTTP es un proceso que permite a los programas interactuar con los recursos disponibles en Internet. Los programadores lo hacen para recuperar o enviar datos a servidores remotos y API, permitiendo a las aplicaciones ser más dinámicas e interactivas.
-
-## ¿Cómo se hace?
-
-Aquí hay un sencillo ejemplo de cómo puedes hacer una solicitud HTTP usando `axios`, una biblioteca comúnmente utilizada para este propósito.
+## How to:
+Para mandar una solicitud HTTP, vamos a usar `fetch`, que está ya incluido en JavaScript y es accesible en TypeScript.
 
 ```TypeScript
-import axios from 'axios';
+// GET Request
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(response => response.json())
+  .then(data => console.log(data));
 
-async function getRequest() {
-    const response = await axios.get('https://ejemplo.com');
-    console.log(response.data);
-}
+// POST Request
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'foo',
+    body: 'bar',
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then(response => response.json())
+  .then(json => console.log(json));
 
-getRequest();
 ```
+Esto imprimiría en consola la respuesta del servidor en formato JSON.
 
-Este código realizaría una solicitud GET al URL proporcionado y mostraría la respuesta en la consola.
+## Deep Dive
+La función `fetch` se introdujo en la web para reemplazar `XMLHttpRequest`, que era más compleja y menos intuitiva. Si necesitas compatibilidad con navegadores antiguos, podrías considerar herramientas como `axios` o `jQuery.ajax`. Además, con TypeScript, es buena idea definir interfaces para las respuestas que esperas, lo que te ayuda a manejar los datos de forma predecible y segura.
 
-## Para entender más a fondo
-
-Enviar una solicitud HTTP no es algo nuevo en el mundo de la programación. Desde los días tempranos de Internet, ha sido una parte fundamental de cómo transmitimos datos a través de la web.
-
-Una alternativa a `axios` podría ser usar el método fetch incorporado que viene con JavaScript. Sin embargo, `axios` ofrece algunas ventajas, como la capacidad de cancelar solicitudes y un mejor manejo del error.
-
-En cuanto a los detalles de implementación, una solicitud HTTP generalmente comprende una línea de solicitud (con el método y el URL), seguidas por las cabeceras y finalmente el cuerpo de la solicitud, este último es opcional para métodos como GET. 
-
-## Para saber más
-
-Revisa estos enlaces:
-
-- Documentación de Axios: [https://axios-http.com/docs/intro](https://axios-http.com/docs/intro)
-- Guía sobre la API Fetch de JavaScript: [https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch](https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch)
-- Información general sobre HTTP: [https://developer.mozilla.org/es/docs/Web/HTTP](https://developer.mozilla.org/es/docs/Web/HTTP)
+## See Also
+- [MDN Web Docs - Fetch API](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
+- [TypeScript Handbook - Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html)
+- [JSONPlaceholder - Fake Online REST API](https://jsonplaceholder.typicode.com/)

@@ -1,7 +1,8 @@
 ---
-title:                "Interpolation d'une chaîne de caractères"
-html_title:           "Ruby: Interpolation d'une chaîne de caractères"
-simple_title:         "Interpolation d'une chaîne de caractères"
+title:                "Interpolation de chaînes de caractères"
+date:                  2024-01-20T17:51:12.090083-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolation de chaînes de caractères"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,34 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-L'interpolation de chaînes en PHP permet d'insérer des variables directement dans une chaîne de caractères. Cela permet une écriture plus simple et plus lisible du code.
+## What & Why?
+Interpoler une chaîne de caractères, c'est y insérer des variables directement. On le fait pour simplifier la concaténation et rendre le code plus lisible.
 
-## Comment faire:
-Voyons un exemple simple d'interpolation de chaîne en PHP:
-
+## How to:
 ```PHP
-$nom = 'Jean';
-echo "Bonjour, $nom!";
+$planete = "Terre";
+$message = "Bonjour, la $planete!";
+echo $message; // Affiche : Bonjour, la Terre!
+
+// Avec des accolades pour plus de clarté
+$pommeCount = 3;
+echo "J'ai {$pommeCount} pommes."; // Affiche : J'ai 3 pommes.
 ```
-Dans ce cas, le message 'Bonjour, Jean!' sera affiché.
 
-Vous pouvez également utiliser des fonctions dans votre chaîne interpolée:
+## Deep Dive
+L'interpolation de chaînes a toujours fait partie de PHP. C'est rapide et facile, mais attention à ne pas l'utiliser avec des données non fiables pour éviter les injections. Alternative : `sprintf()` ou la concaténation avec `.`. Techniquement, l'interpolation ne se fait que dans les guillemets doubles et les heredocs.
 
-```PHP
-$heure = date('H');
-echo "Il est actuellement ${heure}h.";
-```
-Ici, la fonction `date('H')` est utilisée pour afficher l'heure actuelle.
-
-## Plongée en profondeur
-L'interpolation de chaînes a été incorporée à PHP depuis sa première version. C'est une caractéristique empruntée à Perl, qui simplifie l'écriture du code.
-
-Des alternatives à l'interpolation de chaînes incluent l'utilisation de la fonction `printf()` ou la concaténation avec le symbole `.`. Cependant, ces techniques peuvent rendre le code plus complexe à lire.
-
-La mise en œuvre interne de l'interpolation des chaînes est assez simple en PHP. Le compilateur remplace simplement les expressions entre `{}` ou les variables précédées d'un `$` par leurs valeurs respectives, avant l'exécution du code.
-
-## Voir aussi
-
-- [Documentation PHP sur l'interpolation de chaînes](https://www.php.net/manual/fr/language.types.string.php#language.types.string.parsing)
-- [Article W3Schools sur l'Interpolation de chaînes en PHP](https://www.w3schools.com/php/php_string.asp)
+## See Also
+- [Documentation PHP sur les chaînes de caractères](https://www.php.net/manual/fr/language.types.string.php)
+- [PHP: sprintf - Manual](https://www.php.net/manual/fr/function.sprintf.php)

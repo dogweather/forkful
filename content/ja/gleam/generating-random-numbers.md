@@ -1,7 +1,8 @@
 ---
-title:                "ランダムな数字の生成"
-html_title:           "C#: ランダムな数字の生成"
-simple_title:         "ランダムな数字の生成"
+title:                "ランダム数の生成"
+date:                  2024-01-20T17:49:21.330570-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "ランダム数の生成"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Numbers"
@@ -10,39 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-ランダム数の生成とは、偶然性に基づき不確かな数値を生み出す行為です。プログラマーがこれを行う理由は、テストデータの作成、一意のIDの生成、またはシミュレーションにおける予測不能性の導入など、多岐にわたります。
+## What & Why?
+ランダム数の生成とは、予測不可能な数を作り出す過程です。プログラマーはこれを利用してシミュレーション、ゲーム、セキュリティなど多岐に渡る用途に応じて使います。
 
-## どうやって：
-以下にGleamでのランダム数の生成例を示します。
+## How to:
+Gleamでは簡単にランダム数を生成できます。以下にコード例と出力サンプルを示します。
 
-```Gleam
-import gleam/otp/process.{spawn}
-import gleam/atom.{Atom}
-import gleam/otp/erlang
+```gleam
+import gleam/erlang
+import gleam/bit_builder
+import gleam/io
 
-fn start() {
-  let pid = spawn(fn() {
-    process()
-  })
-}
-
-fn process() {
-  let num = erlang.random.uniform(1, 100)
-  io.println(num)
+pub fn main() {
+  let seed = erlang.system_time() |> bit_builder.from_int32 |> bit_builder.to_bit_string
+  let random_num = erlang.rand_uniform(1, 100, seed)
+  
+  io.debug(random_num)
 }
 ```
 
-このコードは、新規プロセスを生成してそのプロセス内で1から100までの間のランダムな数値をコンソールに出力します。
+実行すると、1から100までの間でランダムな整数が出力されます。
 
-## ディープダイブ
-ランダム数の生成は、コンピュータサイエンスの初期から存在し、その必要性は今日もなお変わりません。Gleamや他のErlang VMベースの言語では、`erlang.random.uniform`関数などのBIFs(組み込み関数)を通じて実装されます。また、`gleam/otp/erlang`ライブラリをインポートすることで利用可能となります。
+## Deep Dive
+ランダム数生成は古くからコンピュータサイエンスにおいて重要な役割を担っています。多くのアルゴリズムと異なるアプローチが存在し、パフォーマンスや予測不可能性のバランスを取ります。Gleamでのランダム数生成はErlang VMを背景に持っており、そのセキュリティと効率を享受できます。代替手段としては、疑似ランダム数生成器(PRNG)やハードウェアによるランダム数生成器などがあります。実装においては、ランダムなビットストリームを生成してから所望の形式の数値に変換するのが一般的です。
 
-代替手段としては、あらかじめ決められた長さのランダム値を生成する、より製作者が管理しやすい関数を自己定義することもできます。ただし、そのような場合でも、内部ではクリプトグラフィックに安全なRNG(ランダム数生成器)からの出力を使用するのが一般的です。
-
-## 参考リンク
-ランダム数の生成をさらに深く理解するためには以下のリンクが役立ちます。
-
-1. Erlangのランダム数生成： https://erlang.org/doc/man/rand.html
-2. Gleam言語の公式サイト： https://gleam.run/
-3. Gleamのソースコード： https://github.com/gleam-lang/gleam
+## See Also
+- Gleamの公式ドキュメント: [https://gleam.run/](https://gleam.run/)
+- Erlangのrandモジュール: [http://erlang.org/doc/man/rand.html](http://erlang.org/doc/man/rand.html)
+- ランダム数に関するより広範な話題: [https://en.wikipedia.org/wiki/Random_number_generation](https://en.wikipedia.org/wiki/Random_number_generation)

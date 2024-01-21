@@ -1,7 +1,8 @@
 ---
-title:                "ランダムな数字の生成"
-html_title:           "C#: ランダムな数字の生成"
-simple_title:         "ランダムな数字の生成"
+title:                "ランダム数の生成"
+date:                  2024-01-20T17:48:38.305663-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "ランダム数の生成"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
@@ -10,43 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何であり、なぜか？
-ランダムな数値を生成するとは、毎回異なる結果を出すプロセスのことです。プログラマはこれを利用して結果の多様性を保つためや、テストデータを生成するために行います。
+## What & Why? (何となぜ？)
+ランダムな数字を生成するってのは、予測不可能な数を生み出すことだ。プログラムに予期せぬ行動やテスト、シミュレーションに真剣みを加えるために使うね。
 
-## 手順
-ランダム数値を生成するためのC++のコード例とその出力結果を以下に示します。
+## How to: (方法)
 ```C++
-#include <random>
 #include <iostream>
+#include <random>
 
 int main() {
-    // ランダムなエンジンを生成
+    // ランダムエンジンと分布を初期化
     std::random_device rd;
-
-    // 0から99までの数を生成する分布を生成
-    std::uniform_int_distribution<int> dist(0, 99);
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distrib(1, 100);
 
     // ランダムな数を生成
-    int random_num = dist(rd);
+    int random_number = distrib(gen);
     
-    std::cout << "Generated Random Number: " << random_num << std::endl;
-
+    // 出力
+    std::cout << "生成されたランダムな数: " << random_number << std::endl;
+    
     return 0;
 }
 ```
-実行すると、以下のように表示されます。「Generated Random Number: ～」の部分は毎回異なります。
-```
-Generated Random Number: 53
-```
 
-## より深く知るために
-以前に使われていたrand()関数は、今日ではstd::random_deviceやstd::uniform_int_distributionの組み合わせが推奨されています。どちらもC++11以降で導入され、前者はより高度なランダム性を提供し、後者は特定の範囲内でのランダムな数を提供します。
+このコードを実行すると、例えば「生成されたランダムな数: 42」と出力されるかもしれない。毎回異なる結果が得られる。
 
-代替手段として、nexttowardやfmodなどの関数を用いて自己実装する方法もあります。ただし、これらの関数を使用する場合は、生成される数値のランダム性が十分であるかを確認する必要があります。
+## Deep Dive (深掘り)
+昔は乱数生成に`srand`と`rand`関数をよく使ったけど、予測しにくく高品質な乱数が必要な現代では、`<random>`ヘッダ内のメルセンヌ・ツイスター（`std::mt19937`）のようなアルゴリズムが好まれる。他のアルゴリズムには`std::linear_congruential_engine`や`std::subtract_with_carry_engine`がある。各アルゴリズムの数学的背景や性能についてはドキュメントを参照してほしい。また、`std::random_device`を使うことで、ハードウェアレベルのエントロピーを取り込んでより予測不可能な乱数シードを確保できる。
 
-ライブラリの実装詳細については、各ライブラリの公式ドキュメンテーションを直接参照するか、出典を確認してください。
-
-## 関連情報
-- C++公式ドキュメンテーション（random）: http://en.cppreference.com/w/cpp/numeric/random
-- Effective Modern C++（日本語版）: https://www.amazon.co.jp/dp/4774194244/
-- ランダム数生成の数学的背景（英語）: https://www.johndcook.com/blog/2016/01/29/random-number-generator-testing/
+## See Also (関連情報)
+- C++公式ドキュメント内`<random>`: https://en.cppreference.com/w/cpp/header/random
+- C++メルセンヌ・ツイスターについて: https://en.cppreference.com/w/cpp/numeric/random/mersenne_twister_engine
+- 乱数生成アルゴリズムのパフォーマンスに関する研究: https://www.jstatsoft.org/article/view/v008i14

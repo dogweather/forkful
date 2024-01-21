@@ -1,7 +1,8 @@
 ---
-title:                "Télécharger une page web"
-html_title:           "Bash: Télécharger une page web"
-simple_title:         "Télécharger une page web"
+title:                "Téléchargement d'une page web"
+date:                  2024-01-20T17:43:35.393256-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Téléchargement d'une page web"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,54 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Télécharger une page web, c'est essentiellement copier son contenu depuis le serveur web vers un ordinateur local. Les programmeurs font cela pour extraires des données, tester la disponibilité des serveurs, ou sauvegarder du contenu pour une utilisation hors ligne.
+## Quoi & Pourquoi ?
+Télécharger une page web, c'est récupérer son contenu via Internet pour le manipuler ou le stocker localement. Les programmeurs le font pour analyser des données, tester la disponibilité ou pour l'archivage.
 
-## Comment faire:
-L'exemple de code suivant en C illustre comment utiliser la librairie `curl` pour télécharger une page web.
+## Comment faire :
+Pour télécharger une page web en C, on utilise souvent `libcurl`. Voici un exemple simple :
 
 ```C
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
+static size_t write_data(void *ptr, size_t size, size_t nmemb, void *stream) {
+    size_t written = fwrite(ptr, size, nmemb, (FILE *)stream);
+    return written;
+}
 
-  curl_global_init(CURL_GLOBAL_DEFAULT);
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-
-    res = curl_easy_perform(curl);
+int main(void) {
+    CURL *curl;
+    FILE *fp;
+    CURLcode res;
+    char *url = "http://exemple.com";
+    char outfilename[FILENAME_MAX] = "./exemple.html";
     
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() a échoué: %s\n",
-              curl_easy_strerror(res));
-
-    curl_easy_cleanup(curl);
-  }
-
-  curl_global_cleanup();
-  return 0;
+    curl = curl_easy_init();
+    if (curl) {
+        fp = fopen(outfilename,"wb");
+        curl_easy_setopt(curl, CURLOPT_URL, url);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+        res = curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+        fclose(fp);
+    }
+    return 0;
 }
 ```
-Sortie d'échantillon :
 
-```
-<!doctype html>
-<html>
-<head>
-    <title>Example Domain</title>
-    ...
-</html>
-```
+Résultat : La page web est sauvegardée en tant que `exemple.html`.
 
-## Approfondissement
-Télécharger une page web est une pratique qui existe depuis les débuts du web. Pendant longtemps, `wget` et `curl` ont été les outils privilégiés pour cette tâche. Il existe d'autres méthodes, comme l'utilisation de librairies spécifiques à certains langages de programmation. L'implémentation varie avec le langage, mais la philosophie reste la même : envoyer une requête HTTP au serveur et enregistrer la réponse.
+## Plongée en profondeur
+`Libcurl`, créé en 1998, est un client de requêtes URLs performant. Des alternatives incluraient `libwww` ou des appels système à `wget`. L’implémentation varie selon la complexité, `libcurl` étant idéal pour les opérations simples à complexes grâce à sa flexibilité et sa portabilité.
 
-## Voir Aussi
-- Documentation officielle libcurl : https://curl.haxx.se/libcurl/
-- UNIX man page pour curl : https://man7.org/linux/man-pages/man1/curl.1.html
-- Guide de programmation avec libcurl : https://curl.se/libcurl/c/libcurl-tutorial.html
+## Voir également
+- Documentation `libcurl` : https://curl.se/libcurl/
+- Tutoriel `libcurl` pour débutants : https://curl.se/libcurl/c/libcurl-tutorial.html
+- Comparaison des bibliothèques client HTTP : https://en.wikipedia.org/wiki/Comparison_of_HTTP_library
+
+Souvenez-vous que télécharger des pages sans permission peut enfreindre des conditions d'utilisation. Utilisez ces outils de façon responsable.

@@ -1,7 +1,8 @@
 ---
-title:                "Leyendo argumentos de la línea de comandos"
-html_title:           "Bash: Leyendo argumentos de la línea de comandos"
-simple_title:         "Leyendo argumentos de la línea de comandos"
+title:                "Lectura de argumentos de línea de comandos"
+date:                  2024-01-20T17:55:31.103045-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lectura de argumentos de línea de comandos"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,45 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por Qué?
-Leer argumentos de línea de comandos significa procesar la información que el usuario proporciona al programa al ejecutarlo. Facilita el uso interactivo de programas y scripts, permitiendo al usuario modificar el comportamiento del programa sin cambiar su código.
+## Qué y Por Qué?
+Leer argumentos de la línea de comando permite que tus programas de Arduino reactiven a la entrada del usuario cuando arrancan. Los programadores usan esto para personalizar comportamientos sin tener que cambiar el código.
 
-## Cómo hacerlo:
-Importante mencionar que Arduino no trabaja con líneas de comando, ya que es un microcontrolador y no un sistema operativo. Aún así, podemos simular esta acción mediante la lectura de datos desde el puerto serial. Aquí hay un breve ejemplo de cómo emular este comportamiento:
+## Cómo:
+Arduino no maneja argumentos de línea de comandos como lo haría un programa común de terminal ya que se comunica principalmente a través de su puerto serial después de haber sido programado. Pero puedes simular esta funcionalidad a través de la comunicación serial. Aquí hay un ejemplo:
 
-```Arduino
-String comando;
-
+```cpp
 void setup() {
+  // Inicia la comunicación serial
   Serial.begin(9600);
 }
 
 void loop() {
-  if (Serial.available() > 0)
-  {
-    comando = Serial.readString();
-    if (comando == "encender_led")
-    {
-      digitalWrite(LED_BUILTIN, HIGH);
-      Serial.println("LED encendido");
-    }
-    else if (comando == "apagar_led")
-    {
-      digitalWrite(LED_BUILTIN, LOW);
-      Serial.println("LED apagado");
+  // Revisa si hay datos para leer
+  if (Serial.available() > 0) {
+    // Lee la línea de comando entrante
+    String command = Serial.readStringUntil('\n');
+
+    // Ejecuta alguna acción basada en el comando
+    if (command == "LED_ON") {
+      digitalWrite(LED_BUILTIN, HIGH); // Enciende LED
+      Serial.println("LED encendido!");
+    } 
+    else if (command == "LED_OFF") {
+      digitalWrite(LED_BUILTIN, LOW); // Apaga LED
+      Serial.println("LED apagado!");
     }
   }
 }
 ```
-En este caso, si escribimos "encender_led" o "apagar_led" en el monitor serial, controlaremos el estado del LED incorporado.
+Envías comandos al Arduino usando un monitor serial, el cual encontrarás en tu IDE de Arduino, no desde un terminal de línea de comando.
 
-## Hurgando más Fondo
-Históricamente, la lectura de argumentos de línea de comandos se remonta a los primeros días del desarrollo de software, donde los usuarios interactuaban con programas a través de terminales de texto.
+## Inmersión Profunda
+Historia: Los argumentos de la línea de comando vienen de los días de los primeros sistemas operativos, donde la interacción con un programa era textual. Arduino hereda este principio básico a través del puerto serial para la interactividad en tiempo de ejecución.
 
-Aunque Arduino no soporta directamente los argumentos de línea de comandos, hay alternativas como el uso del puerto serie, o, en arquitecturas más avanzadas como el ESP32, mediante la construcción de una interfaz de línea de comandos personalizada.
+Alternativas: Algunos dispositivos permiten leer argumentos de configuración almacenados en EEPROM o en ficheros en tarjetas SD al arrancar.
 
-El método anterior es bastante rudimentario y no es equivalente a una verdadera lectura de argumentos de línea de comandos, como tendría lugar en un entorno de sistema operativo. Entender esto es crucial para manejar de la mejor manera posible la interacción con el usuario.
+Detalles de Implementación: `Serial.available()` y `Serial.readStringUntil()` son funciones clave. La primera verifica si hay datos disponibles para leer, mientras que la segunda lee los datos hasta que encuentra un carácter de nueva línea.
 
 ## Ver También
-1. Universo Arduino - Introducción a la programación de Arduino: [link](https://www.universoarduino.com)
-2. Arduino - Referencia de la función Serial.readString(): [link](https://www.arduino.cc/reference/en/language/functions/communication/serial/readstring/)
+- Documentación oficial del Serial de Arduino: [Arduino Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- Tutorial sobre cómo usar el almacenamiento EEPROM en Arduino: [Arduino EEPROM](https://www.arduino.cc/en/Tutorial/LibraryExamples/EEPROMWrite)
+- Guía para leer archivos de una tarjeta SD con Arduino: [Arduino SD Card](https://www.arduino.cc/en/reference/SD)

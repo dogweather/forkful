@@ -1,6 +1,7 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "C: Usuwanie znaków pasujących do wzorca"
+date:                  2024-01-20T17:41:47.344450-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,29 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Usuwanie znaków pasujących do wzorca w Bashu to oczyszczanie ciągu znaków z niepotrzebnych elementów. Programiści używają tej metody dla uproszczenia danych wejściowych, wydobywania użytecznych informacji, czy też przygotowywania tekstu do dalszej obróbki.
 
-Usuwanie znaków pasujących do wzorca to proces usuwania określonych ciągów znaków z danych wejściowych za pomocą wzorca. Programiści robią to, żeby uporządkować, oczyścić i optymalizować swoje dane.
-
-## Jak to zrobić:
-
+## How to: (Jak to zrobić?)
 ```Bash
-# Używamy polecenia tr do usunięcia wszystkich liter 'a' z pliku input.txt
-tr -d 'a' < input.txt
+# Przykład 1: Usuń wszystkie wystąpienia litery 'a'
+tekst="banana"
+echo "${tekst//a/}"
+
+# Wynik: bnn
+
+# Przykład 2: Usuń cyfry z ciągu znaków
+tekst="abc123"
+echo "${tekst//[0-9]/}"
+
+# Wynik: abc
+
+# Przykład 3: Usuń wszystkie znaki oprócz cyfr
+tekst="abc123"
+echo "${tekst//[^0-9]/}"
+
+# Wynik: 123
 ```
-Owynik może być na przykład taki:
-```Bash
-# Przykładowe wyjście; wszystkie litery 'a' zostały usunięte
-lorem lpsum is simply dummy text of the printing nd typesetting industry.
-```
-## Dogłębna wiedza
 
-Kiedyś, w erze przed komputerową, usuwanie znaków pasujących do wzorca odbywało się ręcznie lub za pomocą mechanicznych maszyn. Do cyfrowego procesu zobacz: wyrażenia regularne i sed. Z tych narzędzi, `tr` jest najprostsze i najbardziej wydajne do tych zastosowań. 
+## Deep Dive (Wnikliwa analiza)
+Bash wykorzystuje wyrażenia regularne (regex), potężne narzędzie, które zapoczątkowano już w latach 50-tych. Za pomocą regex można z łatwością wyszukać, zamienić lub usunąć konkretne znaki czy wzorce.
 
-Prowadzi to do szybkiego przetwarzania, ale dość ograniczonego, bo nie obsługuje wzorców wieloznakowych. Proces ten działa w czasie liniowym, co oznacza, że czas potrzebny do przetworzenia wzorca rośnie wraz ze wzrostem jego długości.
+Alternatywami dla wbudowanych funkcji Bash są zewnętrzne programy jak `sed` czy `awk`, które oferują jeszcze więcej opcji manipulowania tekstem.
 
-## Zobacz także
+Szczegółowość implementacji zależy od potrzeb. W Bashu można operować na zmiennych tekstowych bezpośrednio w skrypcie, a `//` oznacza usunięcie wszystkich wystąpień wzorca, podczas gdy `/` usunie tylko pierwsze jego wystąpienie.
 
-1. Detailed guide on `sed` and `awk`: https://likegeeks.com/sed-linux/
-2. Full tutorial on regular expressions: https://www.regular-expressions.info/tutorial.html
-3. More on `tr`: https://www.geeksforgeeks.org/tr-command
+## See Also (Zobacz także)
+- `man bash` - manual do Bash, sekcja o wyrażeniach regularnych i pattern matching.
+- `man sed` - manual do sed, edytor strumieniowy do manipulacji tekstem.
+- `man awk` - manual do awk, język programowania przeznaczony do przetwarzania i analizowania danych tekstowych.
+
+Dodatkowo poczytać można na temat wyrażeń regularnych, aby lepiej zrozumieć, jak tworzyć bardziej złożone wzorce:
+- [RegExr](https://regexr.com/) - strona do nauki i testowania wyrażeń regularnych.
+- [GNU Bash manual](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html) - online manual do Bash zawierający informacje o pattern matching.

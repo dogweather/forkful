@@ -1,6 +1,7 @@
 ---
 title:                "下载网页"
-html_title:           "Arduino: 下载网页"
+date:                  2024-01-20T17:44:22.329829-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "下载网页"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,33 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么(What) & 为什么(Why)?
-下载网页是一种获取网页源代码的过程，程序员主要用来进行数据提取、网站爬取和自动测试。
+## 什么 & 为什么？
+下载网页就是从互联网上获取网页内容的过程。程序员下载网页来分析数据、测试网站或是个性化内容抓取。
 
-## 如何实现(How to):
-In Haskell, 我们可以通过 `http-conduit` 库来下载网页。以下是一个简单的例子:
-
+## 怎么做：
 ```Haskell
-import Network.HTTP.Conduit (simpleHttp)
+-- 安装HTTP套件：http-conduit
+import Network.HTTP.Simple
 
+-- 定义下载函数
+downloadWebPage :: String -> IO L.ByteString
+downloadWebPage url = do
+    request <- parseRequest url
+    response <- httpLBS request
+    return $ getResponseBody response
+
+-- 使用下载函数
+main :: IO ()
 main = do
-    putStrLn "请输入需要下载的网页链接:"
-    url <- getLine
-    pageSource <- simpleHttp url
-    putStrLn $ show pageSource
+    content <- downloadWebPage "http://example.com"
+    L.putStr content
 ```
-当你运行这段代码，程序会要求你输入一个网页链接，然后程序会返回网页的源代码。
 
-## 深入探索 (Deep Dive):
+示例输出：
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+    ...
+</head>
+...
+</html>
+```
 
-1. 历史背景: Haskell 在1990年就提出`IO Monad`的概念，一直沿用至今。用于处理所有形式的输入/输出(IO)，包括网络请求。
-   
-2. 可选方案：如果考虑实现更复杂的爬虫，可能会考虑使用`http-client`库，它允许更灵活的配置，并提供了许多额外的特性，如 Cookie Support 和代理设置。
+## 深入探究
+下载网页是个老早就有的需求，`curl`和`wget`是早期常用工具。Haskell 社区为此开发了很多库，像是`http-conduit`，还有`wreq`，`req`等。`http-conduit`使用了管道模式，适合处理流数据。执行效率高，但学习曲线可能陡峭些。
 
-3. 实现细节: `simpleHttp`函数使用底层的`http-client`库，发送`GET`请求并将结果作为一个`ByteString`返回。需要注意的是，这种方法会直接读入整个response到内存，如果你预计返回的数据量十分大，你可能需要使用更底层的`http-client`接口。
-
-## 参看 (See Also):
-
-1. `http-conduit`库的Hackage页面: [http://hackage.haskell.org/package/http-conduit](http://hackage.haskell.org/package/http-conduit)
-2. `Wreq`库的Github页面: [https://github.com/bos/wreq](https://github.com/bos/wreq)
-3. Haskell 官方文档关于`IO Monad`的部分: [https://www.haskell.org/tutorial/io.html](https://www.haskell.org/tutorial/io.html)
+## 参考链接
+- HTTP 协议：[https://developer.mozilla.org/en-US/docs/Web/HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+- http-conduit 套件：[https://www.stackage.org/package/http-conduit](https://www.stackage.org/package/http-conduit)

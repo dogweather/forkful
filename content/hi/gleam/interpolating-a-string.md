@@ -1,7 +1,8 @@
 ---
-title:                "स्ट्रिंग का अंतर्कलन"
-html_title:           "Arduino: स्ट्रिंग का अंतर्कलन"
-simple_title:         "स्ट्रिंग का अंतर्कलन"
+title:                "स्ट्रिंग इंटरपोलेशन"
+date:                  2024-01-20T17:51:14.670848-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग इंटरपोलेशन"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,25 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-एक स्ट्रिंग इंटरपोलेट करना का मतलब होता है दूसरे स्ट्रिंग या वैरिएबल को एक स्ट्रिंग के बीच में जोड़ना। यह तब किया जाता है जब प्रोग्रामर को गणना की सामग्री को स्ट्रिंग के साथ संयोजित करना होता है।
+## What & Why? (क्या और क्यों?)
 
-## कैसे करें:
-Gleam में, हम `string.concat` फ़ंक्शन का उपयोग करते हैं स्ट्रिंग इंटरपोलेशन के लिए।
-```Gleam
-let name = "Rahul"
-let welcome_message = string.concat(["नमस्ते ", name, "!"])
+स्ट्रिंग इंटरपोलेशन एक विधि है जहां हम वेरिएबल्स और एक्सप्रेशन्स को सीधे स्ट्रिंग्स के अंदर डालते हैं। इससे कोड पढ़ने में आसान होता है, और स्ट्रिंग में डायनामिक डेटा जोड़ने के लिए यह ज्यादा सहज तरीका है।
+
+## How to: (कैसे करें:)
+
+```gleam
+fn main() {
+  let name = "विशाल"
+  let age = 25
+  let greeting = "नमस्ते, मेरा नाम \(name) है और मेरी उम्र \(age) साल है."
+  io.print(greeting)
+}
 ```
-इसका आउटपुट होगा `नमस्ते Rahul!`.
 
-## गहरी जाँच:
-1. ऐतिहासिक संदर्भ: पहले, प्रोग्रामर्स को कठिनाई होती थी स्ट्रिंग में डायनैमिक मूल्य डालने में और वे `+` ऑपरेटर का उपयोग करते थे। यह Gleam का बेहतर तरीका है।
-2. विकल्प: विकल्प रूप में, `++` ऑपरेटर का भी उपयोग किया जा सकता है।
-```Gleam
-let welcome_message = "नमस्ते " ++ name ++ "!"
+उपरोक्त कोड स्निपेट की आउटपुट होगी:
+
 ```
-3. आंतरिक विवरण: `string.concat` फंकशन अन्य स्ट्रिंगों के साथ एक स्ट्रिंग को जोड़ने के लिए एक स्ट्रिंग सूची लेता है। यह स्ट्रिंग संचालन का प्रभावी तरीका है क्योंकि वह हीप अल्लोकेशन को कम करता है।
+नमस्ते, मेरा नाम विशाल है और मेरी उम्र 25 साल है.
+```
 
-## यह भी देखें:
-- Gleam String मैनुअल: [https://gleam.run/book/tour/strings.html](https://gleam.run/book/tour/strings.html)
-- Gleam और स्ट्रिंग इंटरपोलेशन पर अधिक जानकारी: [https://gleam.run/news/gleam-v0.14-released/](https://gleam.run/news/gleam-v0.14-released/)
+## Deep Dive (गहराई से जानकारी)
+
+स्ट्रिंग इंटरपोलेशन की अवधारणा 1960 के दशक से है, जब प्रोग्रामिंग भाषाएं और टेम्पलेटिंग सिस्टम इसे इम्प्लीमेंट कर रहे थे। इसके विकल्प में फॉर्मैटिंग फंक्शन्स और स्ट्रिंग कॉन्सट्रक्शन शामिल हैं जैसे कि `String.concat` और `printf`. Gleam में स्ट्रिंग इंटरपोलेशन यूजर-फ्रेंडली और त्वरित तरीके से डायनामिक स्ट्रिंग्स बनाता है, जहां एस्केप सीक्वेंस `\()` के अंदर एक्सप्रेशन या वेरिएबल्स को रखकर उन्हे स्ट्रिंग के अंदर इवाल्यूएट किया जाता है।
+
+## See Also (और भी देखें)
+
+- Gleam's official documentation on strings: [Gleam Strings](https://gleam.run/book/tour/strings.html)
+- Rust language's take on string interpolation for comparison: [Rust String Formatting](https://doc.rust-lang.org/std/fmt/)
+- A comprehensive look at string interpolation in various programming languages on Wikipedia: [String Interpolation on Wikipedia](https://en.wikipedia.org/wiki/String_interpolation)

@@ -1,6 +1,7 @@
 ---
 title:                "문자열 연결하기"
-html_title:           "Arduino: 문자열 연결하기"
+date:                  2024-01-20T17:35:05.179735-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "문자열 연결하기"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,33 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인가? 왜 사용하는가?
+## What & Why? (무엇과 왜?)
+문자열 연결(concatenation)은 두 개 이상의 문자열을 하나로 붙이는 것입니다. 프로그래머들은 데이터를 합치거나, 사용자화된 메시지를 만들거나, 파일 경로를 조합할 때 사용합니다.
 
-문자열 연결(concatenating strings)은 다양한 문자열을 하나로 결합하는 일을 말합니다. 이를 통해 우리는 동적으로 생성된 내용을 표현하거나, 복잡한 메시지를 구성할 수 있습니다.
+## How to (어떻게 하나요?)
+Elixir에서 문자열을 연결하려면 `<>` 연산자를 사용합니다. 간단하죠. 직접 해볼까요?
 
-## 어떻게 사용하는가?
-
-```Elixir
+```elixir
 # 두 문자열 연결하기
-name = "John"
-greeting = "Hello, " <> name
-IO.puts(greeting)  # "Hello, John" 출력
+name = "세계"
+greeting = "안녕, " <> name <> "!"
+IO.puts greeting
 ```
 
-```Elixir
-# 여러 문자열 합치기
-parts = ["This", "is", "a", "sentence."]
-sentence = Enum.join(parts, " ")
-IO.puts(sentence)  # "This is a sentence." 출력
+실행 결과는 이렇습니다:
+
+```
+안녕, 세계!
 ```
 
-## 깊게 알아보기
+변수 없이도 하실 수 있고요:
 
-Elixir의 문자열 연결 방식은 언어의 불변성(Immutable) 성질에 기반하고 있습니다. 문자열이 불변하기 때문에 새 문자열을 생성해내는 방식으로 연결이 이루어집니다.
+```elixir
+# 바로 문자열 연결하기
+IO.puts "커피" <> "와 " <> "코드"
+```
 
-역사적으로, Elixir에서는 `<>` 연산자를 통해 문자열을 직접적으로 연결하였습니다. 이 방법 외에도, `Enum.join/2` 함수를 활용하여 많은 문자열들을 결합하는 방법도 존재합니다.
+실행 결과:
 
-## 참고 자료
+```
+커피와 코드
+```
 
-- [Elixir 공식 문서: 문자열 연결](https://hexdocs.pm/elixir/String.html#concat/2)
-- [Elixir 학습자료: 문자열 핸들링](https://elixirschool.com/en/lessons/basics/strings/)
+## Deep Dive (더 깊이 파기)
+연결은 Elixir에서 효율적입니다. 문자열은 바이너리로 표현되기 때문이죠. 이 방식은 BEAM 머신과 어우러져 효율을 높입니다.
+
+역사적으로, 다른 언어에서 '+'나 ' . ' 같은 연산자들이 문자열을 합치는 데 사용됐어요. 하지만 Elixir에서는 `<>` 가 그 일을 합니다.
+
+밑줄 치며, Elixir에는 문자열 템플릿(Interpolation)이라는 것도 있습니다. `"#{변수}"` 식으로 사용하죠. 큰 따옴표 안에서 `#{}`를 사용하여 변수나 표현식 결과를 문자열에 집어넣을 수 있습니다.
+
+예시:
+
+```elixir
+name = "세계"
+greeting = "안녕, #{name}!"
+IO.puts greeting
+```
+
+실행 결과는 위와 같겠죠.
+
+## See Also (더 알아보기)
+- Elixir 공식 문서의 [String module](https://hexdocs.pm/elixir/String.html)
+- [Programming Elixir](https://pragprog.com/titles/elixir16/programming-elixir-1-6/) - Dave Thomas의 책
+- [Elixir School](https://elixirschool.com/en/) - 문자열과 더 들어갈 수 있는 좋은 자료입니다.

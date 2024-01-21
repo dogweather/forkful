@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:46:46.561603-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,39 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Alakielet Swift-ohjelmassa: Mikä se on ja miksi se on tärkeää
+## What & Why? (Mitä & Miksi?)
+Substringin poimiminen on perusoperaatio, joka irrottaa osan merkkijonosta. Käytämme sitä, kun haluamme käsitellä tai näyttää vain tietyn osan merkkijonosta.
 
-## Mitä & Miksi?
-
-Alakielten (substring) erottaminen tarkoittaa suuremmasta merkkijonosta tietyn osan poimimista. Se on avain rooli ohjelmoinnissa, sillä sen avulla voidaan käsitellä ja manipuloida tekstiä tarkasti ja tehokkaasti.
-
-## Toteutus:
-
-Swift ohjelmistossa alakielien erottaminen voidaan suorittaa nopeasti ja helposti. Tässä on yksinkertainen esimerkki:
-
+## How to: (Kuinka tehdään:)
 ```Swift
-let tervehdys = "Hei, maailma!"
-let tervehdysAlaosa = String(tervehdys[tervehdys.index(tervehdys.startIndex, offsetBy: 4)..<tervehdys.endIndex])
+let fullString = "Hello, World!"
+let startIndex = fullString.index(fullString.startIndex, offsetBy: 7)
+let endIndex = fullString.index(fullString.endIndex, offsetBy: -1)
+let substring = fullString[startIndex..<endIndex] // "World"
 
-print(tervehdysAlaosa)
+// Tai käytä avustavia metodeja
+let range = fullString.range(of: "World")!
+let world = fullString[range] // "World"
+
+print(substring) // Output: World
+print(world)     // Output: World
 ```
 
-Tämä tuottaa seuraavan tulosteen:
+## Deep Dive (Syväsukellus):
+Substringien poiminta on vanha konsepti, mikä lyö juurensa aikojen alkuun, kun ohjelmointia alettiin kehittämään. Swiftissä substringit ovat kevyitä, koska ne jakavat alkuperäisen merkkijonon tallennustilan viitaten samaan muistialueeseen. Aikaisemmin käytettiin `NSString`-metodeita, mutta nyt Swift tarjoaa omia optimoituja metodeita paremman suorituskyvyn ja turvallisuuden saavuttamiseksi. Varmista käyttäessäsi, että indeksit ovat merkkijonon rajoissa, ettei tule `Index out of range` -virhettä.
 
-```Swift
-", maailma!"
-```
-
-## Syvä sukellus:
-
-Historiallisessa kontekstissa substringeille on ollut rajallisesti tukea monissa ohjelmointikielissä, mutta Swift on tehnyt sen erittäin helppokäyttöiseksi.
-
-Vaihtoehtoja alaosioiden erottamiseen Swiftistä ovat esimerkiksi `prefix(_:)` ja `suffix(_:)` merkkijonomerkin funktiot, jotka ovat tehokkaampia tietyn pituisten alaosioiden poimimiseen.
-
-Implementoinnin suhteen alakielen erottaminen Swiftissä on joustavaa. Käytämme `index(_:offsetBy:)` -metodia löytämään alueen, jonka haluamme poimia, ja asetamme sen uudeksi merkkijonoksi.
-
-## Lisätietoja:
-
-Lisää tietoa ja koodiesimerkkejä alakielten erottamisesta Swiftissä voit löytää alla olevista linkeistä:
-
-- Swiftin virallinen dokumentointi: [Merkkijonot ja merkit](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+## See Also (Katso myös):
+- Swiftin virallinen merkkijono-opas: [Strings and Characters in Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- Apple Developer Documentation: [Substring](https://developer.apple.com/documentation/swift/substring)
+- Tutorial "Working with Strings in Swift": [Ray Wenderlich Tutorials](https://www.raywenderlich.com/library?q=strings&sort_order=relevance)

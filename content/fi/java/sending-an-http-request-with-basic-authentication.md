@@ -1,7 +1,8 @@
 ---
-title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+date:                  2024-01-20T18:01:46.944705-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,62 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä & Miksi?)
+HTTP-pyyntö perusautentikaatiolla tarkoittaa verkkoresurssiin pääsyä käyttäjätunnuksen ja salasanan avulla. Ohjelmoijat käyttävät sitä turvatakseen yksinkertainen pääsyt tietyille verkkoresursseille.
 
-HTTP-pyynnön lähettäminen perusautentikoinnilla tarkoittaa sitä, että ohjelmistokehittäjä voi toteuttaa turvallisen viestin siirron järjestelmäkomponenttien välillä webissä. Tätä menetelmää käytetään laajasti, koska se suojaa arkaluontoiset tiedot verkkorikollisilta.
-
-## Miten:
-
-Java tarjoaa HttpUrlConnection -luokan, jolla voit lähettää HTTP-pyynnön perusautentikoinnilla. Tässä on esimerkkikoodi:
-
-```Java
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
+## How to: (Kuinka tehdä:)
+```java
+import java.io.IOException;
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
 import java.net.URL;
+import javax.net.ssl.HttpsURLConnection;
+import java.util.Base64;
 
-public class Main {
+public class BasicAuthRequest {
     public static void main(String[] args) {
         try {
-            URL url = new URL("http://www.example.com");
-            String userCredentials = "username:password";
-            String basicAuth = "Basic " + javax.xml.bind.DatatypeConverter.printBase64Binary(userCredentials.getBytes());
+            URL url = new URL("https://example.com/api/data");
+            String encoding = Base64.getEncoder().encodeToString(("user:password").getBytes());
 
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod("POST");
-            connection.setRequestProperty("Authorization", basicAuth);
+            HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
             connection.setDoOutput(true);
+            connection.setRequestProperty("Authorization", "Basic " + encoding);
 
-            OutputStream output = connection.getOutputStream();
-            output.write("message content".getBytes());
-            output.flush();
-            output.close();
-            
             int responseCode = connection.getResponseCode();
-            System.out.println("Response Code : " + responseCode);
+            System.out.println("Response Code: " + responseCode);
 
-            connection.disconnect();
+            // Handle input stream (response) as necessary...
 
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 }
 ```
-Koodi luo URL-olion osoitteella "http://www.example.com". Käyttäjätunnukset ja salasana koodataan Base64-muotoon, joka asetetaan pyynnön otsikkoon. Tämän jälkeen on mahdollista lähettää viesti, tässä tapauksessa "message content".
+Sample output:
+```
+Response Code: 200
+```
 
-Tulostaa: Response Code : 200
+## Deep Dive (Syväsukellus):
+Perusautentikaatio on internetin varhainen turvallisuusmekanismi, joka edelleen suojelee resursseja. Muita menetelmiä ovat OAuth ja JWT (JSON Web Tokens). Tämä koodi luo `Authorization` otsikon Base64-koodatusta merkkijonosta, joka on muotoiltu "käyttäjätunnus:salasana". Ohjelma avaa yhteyden resurssiin ja välittää koodatun tunnistetiedon palvelimelle.
 
-## Deep Dive:
-
-Perusautentikointi on ollut olemassa HTTP-protokollasta lähtien ja se on yksi yksinkertaisimmista tavoista suojata web-resurssit. Se ei salaa tietoja, vaan koodaa ne Base64-muotoon, joten salasanan voi paljastaa, jos joku sieppaa verkkoliikenteen. Siksi käytä HTTPS:tä aina kun mahdollista.
-
-Vaihtoehtoja on lukuisia. OAuth ja JWT (JSON Web Token) ovat kaksi yleisintä menetelmää, jotka tarjoavat paremman turvallisuuden ja joustavamman käytön.
-
-Lopuksi, Java tarvitsee selkeän Base64-koodatun merkkijonon, joka sisältää käyttäjänimen ja salasanan muodossa "username:password". Tämä merkkijono asetetaan HTTP-otsikkoon käytettäessä "Basic" ennen koodattua merkkijonoa.
-
-## Katso Myös:
-
-- [HttpURLConnection Documentation](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
-- [Basic Authentication on Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication)
-- [OAuth Homepage](https://oauth.net/)
-- [JWT.io Introduction](https://jwt.io/introduction/)
+## See Also (Katso Myös):
+- [Java HttpURLConnection Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/HttpURLConnection.html)
+- [Base64 Encoding in Java](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html)
+- [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+- [MDN Web Docs - Authorization](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)

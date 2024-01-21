@@ -1,6 +1,7 @@
 ---
 title:                "HTTPリクエストの送信"
-html_title:           "Bash: HTTPリクエストの送信"
+date:                  2024-01-20T18:00:45.729167-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTPリクエストの送信"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,65 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+HTTPリクエストを送るとは、サーバにデータを要求することです。プログラマーはこのプロセスを通じて、ウェブAPIから情報を取得したり、ウェブサービスと通信したりします。
 
-HTTPリクエストを送信する事は、情報をWebサーバーに要求・送信するためのプロセスであり、プログラマーがデータを取得、更新、削除するためにご利用します。
+## How to: (やり方)
+RustでHTTPリクエストを送る基本的なコードを見てみましょう。`reqwest`クレートを使うと簡単です。Cargo.tomlに依存を追加してください。
 
-## 使い方:
-
-`reqwest` クレートを使ってRustでHTTPリクエストを送る基本的な例を以下に示します。
-
-まず、Cargo.tomlファイルに`reqwest` クレートを追加します。
-
-```Rust
+```toml
 [dependencies]
-reqwest = "0.10"
+reqwest = "0.11"
+tokio = { version = "1", features = ["full"] }
 ```
 
-そして以下のコードでHTTPリクエストを送ります。
+さあ、コードを書きましょう。
 
-```Rust
-use reqwest;
-
+```rust
 #[tokio::main]
 async fn main() -> Result<(), reqwest::Error> {
-    let response = reqwest::get("https://httpbin.org/get").await?;
-
-    println!("{}", response.text().await?);
-
+    let res = reqwest::get("https://httpbin.org/ip").await?.text().await?;
+    println!("Response: {}", res);
     Ok(())
 }
 ```
 
-出力例：
+実行すると、こんな出力が見られます。
 
-```Rust
-{
-  "args": {}, 
-  "headers": {
-    "x-sent-from": "Rust reqwest"
-  }, 
-  "origin": "111.111.1.11", 
-  "url": "https://httpbin.org/get"
+```
+Response: {
+  "origin": "Your IP address"
 }
 ```
 
-## 深堀り:
+## Deep Dive (深掘り)
+HTTPリクエストの送信は、インターネットの基盤です。最初はcURLなどのツールで行われていましたが、今ではほとんどのプログラミング言語でサポートされています。
 
-RustでHTTPリクエストを送るためのライブラリはいくつかあります。`reqwest`は非同期プログラミングをサポートし、使いやすさを重視した選択肢です。
+`reqwest`はRustで一番人気のあるHTTPクライアントライブラリですが、代わりに`hyper`を低レベルで使うこともできますし、`curl`バインディングを使うこともできます。
 
-また、情報交換のための基本的なHTTP以外にも、WebSocketやgRPCなどの選択肢もあります。 
+実装の詳細については、`reqwest`は非同期I/O（`async/await`）をサポートし、TLSを扱うための`rustls`を使っています。これにより、安全で効率的なHTTPリクエストが可能となります。
 
-HTTPリクエストの過程をより深く理解するには、HTTPプロトコルの歴史とその作業の詳細について学ぶとよいです。リクエストが何を行い、サーバーがそれにどのように応答するかを理解すると、あなたのコードがどのように動作するのかをよりよく理解することができます。
+## See Also (関連情報)
+- 公式`reqwest`ドキュメント: https://docs.rs/reqwest/
+- `async/await`の説明: https://rust-lang.github.io/async-book/
+- `tokio`ランタイムの案内: https://tokio.rs/
 
-## 参考リンク：
-
-Reqwestのドキュメンテーション：https://docs.rs/reqwest/
-
-HTTPとRESTについての詳細：https://developer.mozilla.org/ja/docs/Web/HTTP
-
-Rustによる非同期プログラミング：https://rust-lang.github.io/async-book/01_getting_started/01_chapter.html
-
-HTTPプロトコルのヒストリー：https://developer.mozilla.org/ja/docs/Web/HTTP/Overview
-
-以上がRustでHTTPリクエストを送信する方法についての基本的なガイドです。この情報があなたのプログラミングに役立つことを願っています。
+コードを書く時にこれらのリソースを参考にしてみてください。

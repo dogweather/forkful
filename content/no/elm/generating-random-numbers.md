@@ -1,7 +1,8 @@
 ---
-title:                "Generere tilfeldige tall"
-html_title:           "Arduino: Generere tilfeldige tall"
-simple_title:         "Generere tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+date:                  2024-01-20T17:49:12.259947-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generering av tilfeldige tall"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Numbers"
@@ -10,32 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Generering av tilfeldige tall med Elm 
+## What & Why?
+Å generere tilfeldige tall betyr å lage et tall som ikke kan forutses logisk. Programmerere bruker dette for spill, simuleringer og sikkerhet, for å bringe inn elementet av tilfeldighet.
 
-### Hva & Hvorfor?
-Generering av tilfeldige tall er prosessen med å produsere en sekvens som ikke har noe mønster eller forutsigelse. Programmere bruker dette til spill, simuleringer, kryptografi, og for å skape unike ID-er.
+## How to:
+Random-modulen i Elm lar deg generere tilfeldige tall. Her er et enkelt eksempel på hvordan du bruker den:
 
-### Hvordan:
-Her er den grunnleggende måten å generere et tilfeldig tall i Elm.
+```elm
+import Random
 
-```Elm
-import Random exposing (Generator, int, random)
+-- Initialiser en generator
+randomGenerator : Random.Generator Int
+randomGenerator = Random.int 1 100
 
-randomInt : Int -> Int -> Generator Int
-randomInt min max = int min max
+-- For å faktisk generere et tall, bruker vi en kommando
+generateRandomNumber : Cmd msg
+generateRandomNumber = Random.generate MyRandomMsg randomGenerator
 
-main = 
-  random generate (randomInt 1 100)
+-- MyRandomMsg vil være en del av din msg-typen som håndterer det nye tallet
+type Msg = MyRandomMsg Int
+
+-- Når nummeret er generert, håndter det i din update-funksjon
+update : Msg -> Model -> (Model, Cmd Msg)
+update (MyRandomMsg number) model =
+    ({ model | randomNumber = Just number }, Cmd.none)
 ```
-Koden ovenfor vil gi en vilkårlig verdi mellom 1 og 100.
 
-### Dyp Dykk 
-Elm bruker pseudotilfeldige tallgeneratorer for å generere tilfeldige tall. Historisk sett er dette en vanlig praksis i programmering, og den sikrer en høy grad av tilfeldighet og uforutsigbarhet.
+Eksempelutdata vil være et tilfeldig heltall mellom 1 og 100.
 
-Alternativ til elm sin innebygde random-modul er elms egen random-extra-pakke. Den gir mer funksjonalitet, for eksempel generering av tilfeldige flerpunktsnummere.
+## Deep Dive
+Random-nummergenerering i Elm er funksjonell og rein, noe som betyr at det ikke kan gi forskjellige verdier hver gang det kalles. Istedenfor, bruker den en `Seed` som blir oppdatert hver gang en ny verdi genereres. Dette startet med Random-modulen i Elm 0.17 og har utviklet seg for å bli mer uttrykksfullt og kraftfullt i dagens versjoner.
 
-På implementasjonsnivå bruker elm en funksjonellt programmeringsparadigm for å generere tilfeldige tall. Dette betyr at genereringen er ren, hvilket betyr at for de samme inngangverdiene vil du alltid få samme tilfeldige tall. 
+Mens `Random.int` gir et tilfeldig heltall, finnes det flere funksjoner som `Random.float` eller `Random.list` for andre typer av tilfeldighet. Alternativer til Elm sin innebyggede tilfeldighetsgenerator inkluderer å bruke JavaScript gjennom ports eller å implementere dine egne tilfeldighetsalgoritmer.
 
-### Se Også: 
-Random modul dokumentasjon: https://package.elm-lang.org/packages/elm/random/latest/
-Extra-random pakken: https://package.elm-lang.org/packages/elm/random-extra/latest/
+I detalj, når du bruker `Random.generate`, sender du en kommando til Elm's runtime som håndterer den faktiske tallgenereringen og sender resultatet tilbake til din applikasjon som en melding (`Msg`), noe som lar deg holde applikasjonen din funksjonell og predikerbar.
+
+## See Also
+Elm's Random-modul dokumentasjon: https://package.elm-lang.org/packages/elm/random/latest/
+
+En god artikkel om bruk av Random-modulen: https://medium.com/@_rchaves_/random-numbers-in-elm-64ae4d25734
+
+Elm-discourse tråd om tilfeldighetsgenerering: https://discourse.elm-lang.org/t/randomness-in-elm/207

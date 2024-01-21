@@ -1,6 +1,7 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+date:                  2024-01-20T17:37:48.703655-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,32 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Konwersja łańcucha znaków na małe litery oznacza zmianę wszystkich wielkich liter w tekście na ich małe odpowiedniki. Robimy to, by ujednolicić dane przed ich porównaniem lub przetworzeniem, zwłaszcza gdy wielkość liter nie ma znaczenia.
 
-Konwersja łańcucha na małe litery oznacza zmianę wszystkich dużych liter na ich odpowiedniki w niższej kapsie. Programiści robią to często, aby normalizować dane wejściowe, ułatwiając porównywanie ciągów.
+## How to: (Jak to zrobić:)
+```Arduino
+void setup() {
+  Serial.begin(9600);
+  
+  String tekst = "Arduino Jest Fajne!";
+  String tekstMalymiLiterami = tekst.toLowerCase();
 
-## Jak to zrobić:
+  Serial.println(tekstMalymiLiterami); // arduino jest fajne!
+}
 
-Podajmy przykład użycia funkcji `toLowerCase()`, która działa z dowolnym ciągiem znaków na Arduino.
-
-```arduino
-String mojTekst = "Czesc, Arduino!";
-mojTekst.toLowerCase();
-Serial.begin(9600);
-Serial.println(mojTekst); // wydrukuje: "czesc, arduino!"
+void loop() {
+  // Tutaj nic nie umieszczamy, wszystko dzieje się w setup.
+}
 ```
 
-Wywołanie `toLowerCase()` konwertuje wszystkie litery w stringu na małe litery. 
+## Deep Dive (Dogłębna analiza)
+Historia funkcji zmiany na małe litery sięga początków programowania, gdy zauważono potrzebę normalizacji tekstów do porównań czy wyszukiwań. Na Arduino, używamy metody `toLowerCase()`, dostępnej w klasie `String`, która to przekształca każdą wielką literę na małą. Alternatywą jest ręczne przejście przez każdy znak i wykorzystanie funkcji `tolower()` z biblioteki `ctype.h` dla języka C, ale nie ma to sensu w przypadku prostych zastosowań Arduino.
 
-## W głąb tematu:
-
-Funkcja `tolower ()` pochodzi z języka C, w którym była używana do konwersji pojedynczych znaków, a nie ciągów. 
-
-Alternatywnie, można przekształcić jakiś ciąg na małe litery "ręcznie", przechodząc przez każdy znak ciągu i używając funkcji `tolower()`, z biblioteki ctype.h.
-
-Szczególnie ważne jest zrozumienie, że `toLowerCase()` działa na oryginalnym ciągu (mutuje go), zamiast tworzyć nową kopię z wynikiem.
-
-## Zobacz także:
-
-- Dokumentacja Arduino na temat String toLowerCase(): https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/
-- Świetne wprowadzenie do manipulacji ciągamia: http://www.cplusplus.com/reference/cctype/tolower/
+## See Also (Zobacz również)
+- Dokumentacja Arduino na temat String: [https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- Informacje o bibliotece `ctype.h` w C: [https://en.cppreference.com/w/c/string/byte/tolower](https://en.cppreference.com/w/c/string/byte/tolower)

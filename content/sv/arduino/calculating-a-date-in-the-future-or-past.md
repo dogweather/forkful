@@ -1,7 +1,9 @@
 ---
-title:                "Beräkna ett datum i framtiden eller förflutna"
-html_title:           "Arduino: Beräkna ett datum i framtiden eller förflutna"
-simple_title:         "Beräkna ett datum i framtiden eller förflutna"
+title:                "Beräkna ett datum i framtiden eller förflutet"
+date:                  2024-01-20T17:28:40.163650-07:00
+model:                 gpt-4-1106-preview
+html_title:           "Bash: Beräkna ett datum i framtiden eller förflutet"
+simple_title:         "Beräkna ett datum i framtiden eller förflutet"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -11,42 +13,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-
-Beräkning av ett datum i framtiden eller förflutna är processen att hitta en specifik tidpunkt utifrån en annan genom att lägga till eller subtrahera dagar, veckor, månader eller år. Programmers gör detta för att följa händelselogger, beräkna dödsdatum eller för att navigera sekvenser av händelser i applikationer.
+Beräkning av ett framtida eller förflutet datum innebär att man räknar ut ett datum utifrån ett givet startdatum och en tidsspann. Programmerare gör detta för att hantera tidsbaserade händelser, som utgångsdatum eller påminnelser.
 
 ## Hur man gör:
-
-Med Arduino kan du använder inbyggd `delay()` funktion för att skapa en arterföljd av händelser. Här är ett grundläggande kodexempel och dess utmatning:
+Med Arduino kan du inte direkt hantera datum utan hjälp från externa bibliotek. RTC (real-time clock) moduler och bibliotek som `RTClib` är användbara. Här är ett exempel med en RTC-modul:
 
 ```Arduino
+#include <Wire.h>
+#include <RTClib.h>
+
+RTC_DS3231 rtc;
+
 void setup() {
-  // börja serial kommunikation
-  Serial.begin(9600);
+  if (!rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    while (1);
+  }
+
+  if (rtc.lostPower()) {
+    Serial.println("RTC lost power, let's set the time!");
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  }
+}
+
+void adjustDate(DateTime& current, int daysToAdd) {
+  current = current + TimeSpan(daysToAdd);
 }
 
 void loop() {
-  // skriv ut det aktuella datumet
-  Serial.print("Nuvarande datum: ");
-  Serial.println(millis()/86400000);
-  // vänta i en vecka
-  delay(604800000);
-  // skriv ut det framtida datumet
-  Serial.print("Datum om en vecka: ");
-  Serial.println(millis()/86400000);
+  DateTime now = rtc.now();
+  
+  // Adjusting date by 7 days
+  adjustDate(now, 7);
+  
+  // Print new date
+  Serial.print("New date: ");
+  Serial.print(now.year(), DEC);
+  Serial.print('/');
+  Serial.print(now.month(), DEC);
+  Serial.print('/');
+  Serial.println(now.day(), DEC);
+
+  delay(10000); //Adjusting only every 10 seconds for this example
 }
 ```
 
-Utomatningen för denna kod kommer att skriva ut nuvarande datum, vänta i en vecka och sedan skriva ut framtida datum.
+## Djupdykning:
+Förr hanterades datum och tid ofta av operativsystemet eller inbyggda funktioner i programmeringsspråken. Men inom inbyggda system, som Arduino, krävs ytterligare komponenter eftersom basenheten inte håller koll på tid. RTC-moduler som DS3231 använder batterier för att behålla tiden även när strömmen är av. Alternativ som `TimeLib.h` finns, men de kan behöva manuell synkronisering. Vid implementation får man väga precision mot resurser – RTC-moduler är noggranna men tar fysiskt utrymme och energi.
 
-## Djup dykning:
-
-Historiskt sett beräknades framtida och förflutet datum manuellt vilket var komplext och felbenäget. Med modern programmering kan detta bli mycket exakt och automatiserad. Alternativen till Arduino för datumberäkning inkluderer andra programmeringsspråk som Python, Java och C++ som har mer sofistikerade bibliotek för datum- och tidshantering. Detaljerna i datumberäkning med Arduino innefattar att använda millis() funktionen som returnerar antalet millisekunder sedan Arduino-styrenheten började, och sedan konvertera dessa millisekunder till dagar.
-
-## Se också:
-
-- Arduino Referens Dokumentation: [millis()](https://www.arduino.cc/reference/en/language/functions/time/millis/)
-- Förklaring av tids- och datumhantering i programmering: [Time and Date Handling in Programming](https://www.hanselman.com/blog/DateTimeProgrammingPitfalls.aspx)
-- Python, Java och C++ datum- och tidshanteringsbibliotek:
-   - Python: [Python datetime module](https://docs.python.org/3/library/datetime.html)
-   - Java: [Java Time Package Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-   - C++: [C++ Chrono Library](https://en.cppreference.com/w/cpp/chrono)
+## Se även:
+- [Arduino Time Library](https://www.arduino.cc/reference/en/libraries/time/)
+- [RTClib GitHub Repository](https://github.com/adafruit/RTClib)
+- [DS3231 RTC Module Datasheet](https://datasheets.maximintegrated.com/en/ds/DS3231.pdf)

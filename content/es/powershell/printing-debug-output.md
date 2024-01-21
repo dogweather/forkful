@@ -1,6 +1,7 @@
 ---
 title:                "Imprimiendo salida de depuración"
-html_title:           "Arduino: Imprimiendo salida de depuración"
+date:                  2024-01-20T17:53:13.935415-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Imprimiendo salida de depuración"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,48 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué y Por Qué?
+Imprimir mensajes de depuración es mostrar info temporal en la consola para entender qué está pasando en el código. Los programadores lo hacen para rastrear errores fácilmente y ver el flujo de su programa.
 
-La impresión de salida de debug es un proceso que los programadores utilizan para identificar y corregir errores o problemas en su código. Es la luz interna que nos ayuda a comprender lo que sucede detrás del escenario del código.
-
-## ¿Cómo hacerlo?
-
-Aquí te presento un ejemplo de cómo imprimir la salida de depuración en PowerShell.
+## How to:
+Para imprimir mensajes de depuración en PowerShell, se usa el cmdlet `Write-Debug`. Por defecto, estos mensajes no se muestran. Para activarlos, usa `$DebugPreference`.
 
 ```PowerShell
-# Escribir algo a la consola
-Write-Host '¡Hola, mundo!'
+# Activa la impresión de mensajes de depuración
+$DebugPreference = "Continue"
 
-# Para añadir un objeto a la salida de depuración
-$DebugObjeto = @{ nombre = 'Juan'; edad = 21 }
-Write-Debug "La información de debug del objeto es: $DebugObjeto"
+# Mensaje de depuración simple
+Write-Debug "Este es un mensaje de depuración"
 
-# Para imprimir un mensaje de debug condicionalmente
-$Debug_Condicion = $true
-if($Debug_Condicion){
-    Write-Debug '¡Esto se imprimirá si la condición es verdadera!'
+# Mensaje de depuración en una función
+function Test-Debug {
+    [CmdletBinding()]
+    Param()
+    Process {
+        Write-Debug "Dentro de la función Test-Debug"
+    }
 }
+
+# Llamada a la función con mensaje de depuración
+Test-Debug
 ```
 
-Como puedes apreciar en el último ejemplo, la línea de debug se imprime si `$Debug_Condicion = $true`.
+Al ejecutar el script anterior, verás:
 
-## Inmersión Profunda
-
-Imprimir una salida de depuración ha sido un concepto primordial para los programadores desde que se inició la programación. En las etapas iniciales, se hacía escribiendo mensajes en tarjetas perforadas.
-
-Today, with advanced IDEs, we have better alternatives like "Print Debugging" or "Console Logging" where the developer can watch the variables, thread states, memory allocation, etc.
-
-Un alternativa a `Write-Debug` en PowerShell es `Write-Verbose`. Este te permite obtener más detalles, en lugar de solo mensajes de depuración.
-
-```PowerShell
-# Encendiendo Verbose
-$VerbosePreference = 'Continue'
-
-# Imprimiendo una salida verbose
-Write-Verbose '¡Esto es un mensaje detallado!'
 ```
-## Ver También
+DEBUG: Este es un mensaje de depuración
+DEBUG: Dentro de la función Test-Debug
+```
 
-Para seguir aprendiendo, te recomiendo estos enlaces:
-- [Documentación oficial de PowerShell](https://docs.microsoft.com/es-es/powershell/)
-- [Uso de Write-Debug en PowerShell](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.utility/write-debug?view=powershell-7&viewFallbackFrom=powershell-7.1)
+## Deep Dive:
+Antes del `Write-Debug`, el output de depuración era más rudimentario. Se usaban técnicas como `Write-Host` o `Write-Verbose`, pero no eran tan manejables como `Write-Debug`. Los mensajes de depuración en `Write-Debug` son especiales porque puedes activarlos o desactivarlos sin cambiar el script. Alternativamente, puedes usar `Write-Verbose` para mensajes detallados o `Write-Information` para información general. En entornos de producción, se recomienda usar un sistema de logs que registre eventos importantes de forma más permanente.
+
+## See Also:
+Para más información sobre la depuración en PowerShell y las prácticas recomendadas, visita:
+
+- [about_Debuggers](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Debuggers)
+- [about_Logging](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Logging)
+- [Write-Debug documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-debug)

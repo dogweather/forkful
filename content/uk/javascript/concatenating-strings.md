@@ -1,7 +1,8 @@
 ---
-title:                "Конкатенація рядків"
-html_title:           "PHP: Конкатенація рядків"
-simple_title:         "Конкатенація рядків"
+title:                "Об'єднання рядків"
+date:                  2024-01-20T17:35:23.126318-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Об'єднання рядків"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,36 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Об'єднання рядків - це процес злиття двох або більше рядків у один. Програмісти роблять це для гнучкого створення складних рядків без потреби в перезаписуванні чи дублюванні коду.
+## What & Why? / Що таке конкатенація рядків і навіщо вона потрібна?
 
-## Як це робити:
-Нижче наведено приклади коду на JavaScript і вихідних даних.
-```Javascript
-// Method 1: Using '+' operator
-let string1 = "Привіт, ";
-let string2 = "Світ!";
-let greeting = string1 + string2;
-console.log(greeting); // "Привіт, Світ!"
+Конкатенація рядків — це спосіб з'єднати два або більше рядків в один. Програмісти роблять це, щоб створювати динамічні тексти, змінні повідомлення, або просто об'єднувати слова та фрази.
 
-// Method 2: Using concat() method
-let string3 = "Насолоджуйся, ";
-let string4 = "програмування!";
-let message2 = string3.concat(string4);
-console.log(message2); // "Насолоджуйся, програмування!"
+## How to / Як це зробити:
+
+```javascript
+// Із застосуванням оператора +
+let greeting = "Привіт, " + "світ!";
+console.log(greeting); // Вивід: Привіт, світ!
+
+// Із застосуванням шаблонних літералів (template literals)
+let userName = "Олексій";
+let personalizedGreeting = `Вітаю, ${userName}!`;
+console.log(personalizedGreeting); // Вивід: Вітаю, Олексій!
 ```
 
-## Поглиблений матеріал
-Метод об'єднання рядків існує в JavaScript з його задуму, оскільки він є фундаментальною функцією в більшості мов програмування. Альтернативою безпосередньому чи методу `concat()` є метод `join()`, який може бути корисним для об'єднання великої кількості рядків. Об'єднання рядків в JavaScript відбувається за допомогою бінарного `+` оператора або за допомогою методу об'єкта `String.concat()`, що бере два рядки і повертає новий, що є їхнім поєднанням.
+## Deep Dive / Поглиблений огляд:
 
-```Javascript
-// Using join() method
-let stringsArray = ["Привіт, ", "Світ!", " Насолоджуйся, ", "програмування!"];
-let message3 = stringsArray.join("");
-console.log(message3); // "Привіт, Світ! Насолоджуйся, програмування!"
-```
+Довгий час в JavaScript для конкатенації рядків використовували лише оператор `+`. Після ES6 (ECMAScript 2015) з'явилися шаблонні літерали, які спростили вставку змінних в рядки за допомогою позначення `${}`. Щодо виконання, процесори JS оптимізують конкатенацію, але шаблонні літерали можуть бути швидшими за складніші операції завдяки меншій кількості тимчасових рядків.
 
-## Дивіться також:
-1. [Mozilla Developer Network (MDN) - String.prototype.concat()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-2. [Mozilla Developer Network (MDN) - Array.prototype.join()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
-3. [JavaScript Info - Basic string operations](https://javascript.info/string#concatenation-assignment-operator)
+Альтернативи: метод `concat()` рядків (який рідко використовується через його громіздкість), архаїчний метод `join()` масивів (добре налагоджений, але дещо вдалий від теми). Програмісти часто обирають шаблонні літерали для читабельності та легкості внесення змін.
+
+## See Also / Дивіться також:
+
+- MDN про конкатенацію рядків: [Concatenating strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- Шаблонні літерали на MDN: [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+- [ECMAScript 2015 (ES6) specification](https://www.ecma-international.org/ecma-262/6.0/)

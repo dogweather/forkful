@@ -1,7 +1,8 @@
 ---
-title:                "Інтерполяція рядка"
-html_title:           "Java: Інтерполяція рядка"
-simple_title:         "Інтерполяція рядка"
+title:                "Інтерполяція рядків"
+date:                  2024-01-20T17:51:21.953687-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Інтерполяція рядків"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,26 +11,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Інтерполяція рядків - це процес внесення змінних або виразів безпосередньо в рядок. Програмісти це роблять для створення динамічних рядків, що зручно під час форматування або виводу даних.
+## What & Why? (Що і Чому?)
+Interpolating a string is inserting values into a string template. Programmers do it to dynamically build strings and make code more readable.
 
-## Як це зробити:
-Отже, як це працює в PowerShell? Дуже просто. Ось приклад коду і виводу даних:
-
+## How to: (Як це зробити:)
 ```PowerShell
-$planet = "Земля"
-$text = "Ми живемо на планеті $planet."
-Write-Host $text
+$name = "Влад"
+$greeting = "Привіт, $name! Як твій день?"
+
+# Output: Зверніть увагу, що значення змінної $name підставлене в рядок.
+Write-Host $greeting 
 ```
 
-Цей код виведе: "Ми живемо на планеті Земля."
+## Deep Dive (Поглиблений Аналіз)
+String interpolation allows for embedded variable expressions. It's been around since Windows PowerShell 4.0 and is basic yet powerful. Alternatives like `-f` format operator exist but lack simplicity. Interpolation is done at runtime, parsing the string and replacing variables with values.
 
-## Глибше занурення
-Інтерполяція рядків є дуже важливою властивістю мов програмування, яка була внесена відразу в багатьох мовах як Perl і PHP. В PowerShell інтерполяція рядків використовується з початкової версії. Хоча є альтернативи, такі як з'єднання рядків або форматування рядків, інтерполяція рядків є найбільш простим і безшовним способом включення змінних в рядки.
-
-## Дивіться також
-Подальше читання і навчальні матеріали:
-
-- Офіційна документація PowerShell з примерами інтерполяції рядків: [Тут](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules)
-
-- Чудова стаття по інтерполяції рядків в PowerShell: [Тут](https://ss64.com/ps/syntax-f-operator.html)
+## See Also (Дивіться також)
+- [About_Quoting_Rules](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules)
+- [Powershell's -f Format Operator](https://ss64.com/ps/syntax-f-operator.html)

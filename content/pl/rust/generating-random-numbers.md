@@ -1,6 +1,7 @@
 ---
 title:                "Generowanie liczb losowych"
-html_title:           "Gleam: Generowanie liczb losowych"
+date:                  2024-01-20T17:49:55.932493-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generowanie liczb losowych"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,32 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego? 
-Generowanie losowych liczb to proces tworzenia ciągu liczb, które są nieprzewidywalne i nie powtarzają się. Programiści robią to, aby zapewnić różnorodność danych, symulacje, gry, testy i więcej.
+## Co i Dlaczego?
+Generowanie losowych liczb to podstawa wielu aplikacji, od gier po symulacje. Programiści używają tego, aby dodać nieprzewidywalność lub symulować zdarzenia przypadkowe.
 
 ## Jak to zrobić:
-Aby wygenerować losową liczbę w Rust, musisz najpierw dodać zależność 'rand' do pliku Cargo.toml:
-```Rust 
-[dependencies]
-rand = "0.8.3"
-```
-Następnie możesz użyć funkcji `thread_rng().gen_range()` do wygenerowania losowej liczby:
-```Rust 
-use rand::Rng;
+Użyjemy `rand` crate, żeby zarządzać generowaniem liczb losowych w Rust. Pamiętaj, żeby dodać `rand` do pliku `Cargo.toml`.
+
+```Rust
+use rand::{Rng, thread_rng};
 
 fn main() {
-    let num = rand::thread_rng().gen_range(1..101);
-    println!("Wylosowana liczba to: {}", num);
+    let mut rng = thread_rng();
+    let liczba: u8 = rng.gen(); // Generuje liczbę losową typu u8
+    println!("Wylosowana liczba to: {}", liczba);
 }
 ```
-## Głębsze spojrzenie
-Początki generowania losowych liczb sięgają starożytności, kiedy ludzie rzucają kostkami do gier. W komputerach używamy algorytmów, takich jak Mersenne Twister albo algorytmu Xorshift, do generowania tych liczb.
 
-W Rust jest wiele alternatyw do 'rand', takich jak 'fastrand' czy 'oorandom'. Każdy z nich ma swoje atuty i wady, które należy rozważyć, zależnie od wymagań projektu. 
+###### Przykładowe Wyjście:
+```
+Wylosowana liczba to: 157
+```
 
-Szczegóły implementacyjne 'rand' można znaleźć [tutaj](https://rust-random.github.io/book/guide-rngs.html). 
+## Głębsze Zanurzenie
+Generowanie liczby losowych jest tak stare jak komputery. W latach 40. i 50. używano maszyn ze źródłami szumu do generowania liczb losowych. Alternatywą dla `rand` crate jest używanie API systemu operacyjnego lub własnych algorytmów.
+
+W Rust `rand` crate jest szeroko stosowany z racji jego prostoty i bezpieczeństwa. Używa generatorów typu CSPRNG (Cryptographically Secure Pseudo-Random Number Generator), które są wystarczająco bezpieczne dla kryptografii.
 
 ## Zobacz również
-- Dokumentacja 'rand': [https://docs.rs/rand](https://docs.rs/rand)
-- Artykuł o generowaniu losowych liczb: [https://en.wikipedia.org/wiki/Random_number_generation](https://en.wikipedia.org/wiki/Random_number_generation)
-- Porównanie różnych bibliotek do generowania losowych liczb: [https://www.reddit.com/r/rust/comments/j5bthu/rand_vs_fastrand](https://www.reddit.com/r/rust/comments/j5bthu/rand_vs_fastrand)
+- Oficjalna dokumentacja `rand` crate: https://docs.rs/rand
+- Rust Cookbook o generowaniu losowych liczb: https://rust-lang-nursery.github.io/rust-cookbook/algorithms/randomness.html
+- Dokumentacja Standard Library dla typu `Rng`: https://doc.rust-lang.org/rand/rand/trait.Rng.html

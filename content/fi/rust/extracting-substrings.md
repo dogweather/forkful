@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:46:31.935215-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,58 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? 
+Mikä ja miksi? Substringien eli alimerkkijonojen poimiminen on prosessi, jossa otetaan osia kiinteistä merkkijonoista. Ohjelmoijat tekevät tätä tietojen eristämiseen, tietojen muotoiluun tai tekstin pohjalta tehtävään päätöksentekoon.
 
-Alimerkkijonojen erottaminen tarkoittaa merkkijonon osan poimimista tiettyjen ohjelmien toiminnan kannalta olennaiseksi. Se auttaa käsittelyssä ja analysoinnissa koodin suorituskyvyn optimoinnissa.
-
-## Näin teet:
-
-Rustin `slice`-toiminto on yksi yleisimmästi käytetyistä alimerkkijonojen erottamiseen:
+## How to: 
+Kuinka tehdään:
 
 ```Rust
 fn main() {
-    let s = "Tervetuloa Rustiin!";
-    let tervetuloa = &s[0..11];
-    println!("{}", tervetuloa);
+    let text = "Moi, Rust-ohjelmoija!";
+    let start = 5;
+    let end = 9;
+    
+    // Käytä indeksejä substringin saamiseksi
+    let substring = &text[start..end];
+    
+    println!("Substring on: '{}'", substring); // "Substring on: 'Rust'"
+    
+    // Toisenlainen tapa käyttämällä `.get(..)` - metodia
+    match text.get(start..end) {
+        Some(sub) => println!("Toinen tapa: '{}'", sub), // "Toinen tapa: 'Rust'"
+        None => println!("Virheelliset indeksit"),
+    }
 }
 ```
 
-Tämän koodin ajo tuottaa:
-```
-Tervetuloa
-```
-On myös mahdollista jättää indeksit pois tietyissä tapauksissa, kuten:
+## Deep Dive 
+Syväsukellus: Rust ei oikeastaan puhu "substringeista" vaan viipaleista, "slices". Historiallisesti viipaleet ovat Rustin yritys tarjota turvallista pääsyä merkkijonoihin paniikkien ja väärien muistiviitteiden välttämiseksi. Erona esim. Pythoniin, Rust vaatii, että viipaleet ovat voimassaolevia UTF-8 sekvenssejä, joten suora indeksointi ei aina ole mahdollista. Tämän takia `.get(..)` metodi on kätevä, sillä se palauttaa `Option`-tyypin, joka kertoo, onnistuiko leikkaus. `.chars().collect()` ja muut metodit auttavat iterointiin, jos tarvitaan enemmän kontrollia Unicode-merkkien yli.
 
-```Rust
-fn main() {
-    let s = "Tervetuloa Rustiin!";
-    let alku = &s[..11];
-    let loppu = &s[11..];
-    println!("{}{}", alku, loppu);
-}
-```
-Tämä tulostaa alkuperäisen merkkijonon kokonaisuudessaan:
-```
-Tervetuloa Rustiin!
-```
+## See Also 
+Katso myös:
 
-## Syvempi katsaus:
-
-Rustin `slice`-operaatiot ovat peräisin alkuperäisen C-ohjelmointikielen ojelmointikielen osajonojen käsitteestä. Rustissa osajonojen erottamiseksi on myös muita keinoja, kuten `str::split_at`-funktio, joka voi olla hyödyllinen, kun työskentelet suurempien merkkijonodatan kanssa.
-
-```Rust
-fn main() {
-    let s = "Tervetuloa Rustiin!";
-    let (tervetuloa, loppu) = s.split_at(11);
-    println!("{}", tervetuloa);
-}
-```
-Tämä esimerkki tulostaa `Tervetuloa`.
-
-## Katso myös:
-
-Rustilla on runsaasti dokumentaatioita ja lähdemateriaalia, joka tarjoaa syvempää tietoa ja esimerkkejä alimerkkijonojen erottamisesta. Tässä muutama linkki, jotka kannattaa tutkia:
-
-- Rustin virallinen dokumentaatio: [String Slices](https://doc.rust-lang.org/book/ch04-03-slices.html)
-- Stackoverflow: [How do I create a substring in Rust?](https://stackoverflow.com/questions/25428920/how-do-i-create-a-substring-in-rust) 
-- Rust-lang GitHub: [The Rust Programming Language](https://github.com/rust-lang/rust)
+- Rust's official string slices documentation: [https://doc.rust-lang.org/std/primitive.str.html](https://doc.rust-lang.org/std/primitive.str.html)
+- 'The Rust Programming Language' book substring section: [https://doc.rust-lang.org/book/ch04-03-slices.html#string-slices](https://doc.rust-lang.org/book/ch04-03-slices.html#string-slices)
+- Rust by Example's take on strings: [https://doc.rust-lang.org/rust-by-example/std/str.html](https://doc.rust-lang.org/rust-by-example/std/str.html)

@@ -1,7 +1,8 @@
 ---
-title:                "Interpolation d'une chaîne de caractères"
-html_title:           "Ruby: Interpolation d'une chaîne de caractères"
-simple_title:         "Interpolation d'une chaîne de caractères"
+title:                "Interpolation de chaînes de caractères"
+date:                  2024-01-20T17:50:28.295690-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolation de chaînes de caractères"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,36 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why?
+("Quoi et Pourquoi ?")
 
-La chaîne d'interpolation en C # permet d'insérer les valeurs des variables directement dans du texte en les entourant de crochets {} à l'intérieur d'une chaîne de texte préfixée par un signe dollar $. Les développeurs l'utilisent pour un affichage plus lisible et une meilleure maintenance du code.
+Interpoler une chaîne, c'est insérer des valeurs de variables ou d'expressions dans une chaîne de caractères. On fait ça pour construire des textes dynamiques, facilement, sans concaténation compliquée.
 
-## Comment faire :
-
-Voici un exemple simple d'interpolation de chaîne
-```C#
-string nom = "John";
-Console.WriteLine($"Bonjour, {nom} !"); // Sortie : Bonjour, John !
-```
-Il est également possible d'afficher le résultat de l'expression dans une chaîne interpolée.
+## How to:
+("Comment faire :")
 
 ```C#
-int age = 25;
-Console.WriteLine($"Dans cinq ans, vous aurez {age + 5} ans."); // Sortie : Dans cinq ans, vous aurez 30 ans.
+// Exemple d'interpolation de chaîne en C#
+string prenom = "Claire";
+string message = $"Bonjour, {prenom}! Comment ça va?";
+Console.WriteLine(message);
+// Sortie: Bonjour, Claire! Comment ça va?
 ```
-## Plongée en Profondeur:
 
-Historiquement, l'interpolation de chaîne est l'évolution des méthodes String.Format et des concaténations de chaînes pour rendre le code plus lisible et facile à entretenir.
 ```C#
-// Ancienne méthode avec String.Format
-Console.WriteLine(String.Format("Bonjour, {0} !", nom));
+// Interpolation avec des expressions
+int heures = 18;
+string salutation = $"Bon{(heures < 12 ? "jour" : "soir")}, le monde!";
+Console.WriteLine(salutation);
+// Sortie: Bonsoir, le monde!
 ```
-C# offre d'autres alternatives comme l'utilisation des concaténations de strings ou les fonctions `String.Format` ou `String.Concat` mais l'interpolation de chaîne est plus concise.
 
-Les chaînes interpolées traitées par le compilateur C# comme un `String.Format` sous le capot pour donner un style plus modulaire et lisible.
+## Deep Dive
+("Plongée en Profondeur")
 
-## Voir Aussi:
+Historiquement, en C#, on concaténait des chaînes avec l'opérateur `+`. Puis, `String.Format` est arrivé, plus lisible mais encore verbeux. L'interpolation de chaîne, introduite en C# 6, a rendu ce processus nettement plus propre et moins sujet aux erreurs.
 
-- Documentation Microsoft sur l'interpolation de chaîne en C# : [String interpolation-C# Guide](https://docs.microsoft.com/fr-fr/dotnet/csharp/tutorials/string-interpolation)
-- Introduction à l'interpolation de chaîne : [Raccourcis avec l'interpolation de chaîne en C#](https://www.infoworld.com/article/2989972/string-interpolation-in-c-6-0-a-beginners-guide.html) 
-- Discussion de Stack Overflow sur l'interpolation de chaîne vs `String.Format`: [Is string interpolation in C# faster than string.format?](https://stackoverflow.com/questions/34737116/is-string-interpolation-in-c-sharp-faster-than-string-format)
+Autres méthodes ? Oui, `StringBuilder` pour les situations exigeant de meilleures performances avec de nombreuses opérations. Mais pour la clarté ? L'interpolation gagne.
+
+Côté implémentation, une chaîne interpolée est transformée en une chaîne formatée à l'exécution. Utilisez `FormattableString` si vous devez accéder au format et aux arguments séparément.
+
+## See Also
+("Voir Aussi")
+
+- Documentation Microsoft sur l'interpolation: [docs.microsoft.com](https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/tokens/interpolated)
+- Comparaison des performances, StringBuilder vs. Interpolation: [BenchmarkDotNet](https://benchmarkdotnet.org)

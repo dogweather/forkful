@@ -1,6 +1,7 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "C#: Verkkosivun lataaminen"
+date:                  2024-01-20T17:44:22.156762-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Java"
 category:             "Java"
@@ -10,49 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mitä & Miksi?
+Lataamme verkkosivun sisältöä tutkiaksemme sen rakennetta tai hyödyntääksemme tietoja. Ohjelmoijat tekevät tätä esimerkiksi datankeruuseen, palveluiden integraatioon tai sisällön seurantaan.
 
-Lataamalla verkkosivu on tapa tuoda verkkosivun tiedot tietokoneellesi koodin avulla. Tekijät tekevät tämän, jotta he voivat käsitellä sivun tietoja automaattisesti, esimerkiksi web-skraping- tai datanlouhintahankkeissa.
+## How to: - Kuinka:
+```java
+import java.io.*;
+import java.net.*;
 
-## Miten tehdään?
-
-Tässä on yksinkertainen Java-koodi, joka lataa verkkosivun:
-
-```Java
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.URL;
-
-public class Downloader {
-    public static void main(String[] args) throws Exception {
-        URL url = new URL("http://www.example.com"); 
-        BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
-        String line;
-        
-        while ((line = br.readLine()) != null) {
-            System.out.println(line);
+public class WebPageDownloader {
+    public static void main(String[] args) {
+        String webPageUrl = "http://example.com";
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(new URL(webPageUrl).openStream()))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
 ```
-Kun suoritat tämän koodin, se näyttäisi jotakin alla olevaa vastaavaa:
-
-```Java
+Tuloste olisi verkkosivun HTML-koodi, esimerkiksi:
+```html
 <!doctype html>
 <html>
 <head>
-    <title>Example Domain</title>
-...
+    <title>Esimerkki</title>
+</head>
+<body>
+    <p>Tämä on esimerkki verkkosivu.</p>
+</body>
+</html>
 ```
-##Erittäin yksityiskohtaisesti
 
-Aikoinaan, kun WWW (World Wide Web) oli vasta syntymässä, web-sivuja ei voitu ladata automaattisesti koodilla. Nykypäivänä meillä on paljon erilaisia keinoja ja työkaluja, kuten yllä mainittu Java-esimerkki.
+## Deep Dive - Syväsukellus:
+Web-sivujen lataaminen on yleinen tarve jo 90-luvulta lähtien. Aluksi käytettiin perinteisiä soketteja, mutta Java 1.0 esitteli `URL` ja `URLConnection` luokat tuon tarpeen helpottamiseksi. Nykyään on olemassa useita kirjastoja, kuten Jsoup ja Apache HttpClient, jotka tarjoavat lisäominaisuuksia ja helpottavat virheenkäsittelyä.
 
-Java-tiedoston streaming-luokkien avulla pystymme lataamaan web-sivuja, mutta on myös olemassa muita vaihtoehtoja, kuten HttpClient ja Jsoup-kirjasto. Nämä mahdollistavat entistä monimutkaisempien tehtävien tekemisen, kuten evästeiden hallinnan ja Javascriptin manipuloinnin.
+Java 11 toi mukanaan uuden HTTP Clientin, joka tukee HTTP/2 ja modernia asynkronista ohjelmointia. Se on tärkeää muistaa, kun puhutaan suorituskyvystä ja suuremmista järjestelmistä.
 
-Merkittävä yksityiskohta verkkosivujen lataamisessa on URL-yhteyden avaaminen ja sen lukeminen strategisesti puskuroivan lukijan avulla. Tämän avulla voimme käsitellä suurempia tietomääriä ilman muistin ylikuormittumista.
+Sivun lataamisen oikeellisuus ja sen käyttäytymisen hallinta - kuten käyttäjä-agentin määrittäminen, evästeiden käsittely, ja redirectien seuranta - ovat tärkeitä tekijöitä implementaatiossa.
 
-## Katso myös
-
-- Oracle Java-dokumentaatio: [Lue verkkoresurssista](https://docs.oracle.com/javase/tutorial/networking/urls/readingURL.html)
-- Jsoup: [Java HTML Parserin dokumentaatio](https://jsoup.org/)
+## See Also - Katso Myös:
+- Jsoup (https://jsoup.org/) - HTML:n parsiintiin ja käsittelyyn.
+- Apache HttpClient (https://hc.apache.org/httpcomponents-client-5.1.x/index.html) - Monipuolinen HTTP-asiakaskirjasto.
+- OpenJDK:n HTTP Client (https://openjdk.java.net/groups/net/httpclient/intro.html) - Moderni HTTP-asiakas tiedon lataamiseen.

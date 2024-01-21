@@ -1,7 +1,8 @@
 ---
-title:                "Télécharger une page web"
-html_title:           "Bash: Télécharger une page web"
-simple_title:         "Télécharger une page web"
+title:                "Téléchargement d'une page web"
+date:                  2024-01-20T17:44:18.791304-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Téléchargement d'une page web"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,44 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why?
+Télécharger une page web, c'est récupérer son contenu via HTTP. Les programmeurs font ça pour analyser des données, surveiller des changements ou alimenter des applications.
 
-Télécharger une page web signifie récupérer et stocker son contenu pour une utilisation ultérieure. Les programmeurs le font souvent pour analyser le contenu, récupérer des données ou tester le site web.
+## How to:
+En Java, `java.net.http.HttpClient` est notre ami pour télécharger une page. Voici un exemple simple :
 
-## Comment faire :
+```java
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
-Nous utiliserons `java.net.URL` et `java.nio.file` pour simplifier le téléchargement. Voici un exemple de base.
+public class DownloadPage {
 
-```Java
-import java.io.InputStream;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
+    public static void main(String[] args) {
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://example.com"))
+                .build();
 
-public class Downloader {
-    public static void main(String[] args) throws Exception {
-        URL website = new URL("http://example.com");
-        try (InputStream in = website.openStream()) {
-            Files.copy(in, Path.of("output.html"), StandardCopyOption.REPLACE_EXISTING);
-        }
+        client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+                .thenApply(HttpResponse::body)
+                .thenAccept(System.out::println)
+                .join();
     }
 }
 ```
 
-Cette opération téléchargera la page d'exemple et la sauvegardera dans un fichier "output.html". 
+Si tout est bon, vous aurez le contenu de `http://example.com` dans la console.
 
-## Plongée en profondeur :
+## Deep Dive
+Avant `HttpClient`, on avait `HttpURLConnection`, moins flexible et plus verbeux. Pourquoi utiliser `HttpClient`? Il supporte HTTP/2, gère mieux les connexions et le code est plus clair.
 
-Java a une riche histoire de gestion des URL et du réseau. `java.net.URL` date de Java 1.0, mais pour une analyse plus poussée, vous pourriez vouloir examiner HttpClient, introduit dans Java 11. 
+Pour les gros sites, attention aux politiques de robots (fichier `robots.txt`) : certaines parties ne doivent pas être téléchargées automatiquement.
 
-En termes d'alternatives, vous pourriez regarder Jsoup qui facilite encore plus le traitement des documents HTML, ou des bibliothèques comme OkHttp pour des options plus robustes.
+Si vous devez télécharger régulièrement ou massivement, pensez à respecter le serveur – attendez entre les requêtes, gérez les erreurs sans spammer le serveur.
 
-Notez que le code ci-dessus est simple, mais n'implémente pas de contrôle d'erreur, vous voudriez certainement ajouter une gestion des exceptions en cas de problème réseau. 
+## See Also
+Pour aller plus loin :
 
-## Voir aussi :
-
-- Java Networking Tutorial : https://docs.oracle.com/javase/tutorial/networking/urls/index.html
-- HttpClient Documentation : https://openjdk.java.net/groups/net/httpclient/intro.html
-- Jsoup Documentation : https://jsoup.org/
-- OkHttp Documentation : https://square.github.io/okhttp/
+- Documentation officielle de `HttpClient`: [https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
+- Guide sur les expressions régulières en Java pour analyser votre contenu: [https://docs.oracle.com/javase/tutorial/essential/regex/](https://docs.oracle.com/javase/tutorial/essential/regex/)
+- Détails sur le fichier `robots.txt`: [https://developers.google.com/search/docs/advanced/robots/intro](https://developers.google.com/search/docs/advanced/robots/intro)
+- Une introduction à JSoup pour parser du HTML en Java: [https://jsoup.org/](https://jsoup.org/)

@@ -1,7 +1,8 @@
 ---
-title:                "Extrayendo subcadenas"
-html_title:           "C: Extrayendo subcadenas"
-simple_title:         "Extrayendo subcadenas"
+title:                "Extracción de subcadenas"
+date:                  2024-01-20T17:45:19.003405-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Extracción de subcadenas"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -11,38 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
-La extracción de subcadenas es el proceso de obtener una porción de una cadena existente. Los programadores lo hacen para manipular y operar en segmentos específicos de cadenas en lugar de la cadena completa.
+Extraer subcadenas implica tomar trozos de texto desde una cadena mayor. Los programadores lo hacen para analizar datos, validar entradas o simplemente para trabajar con partes específicas de texto de forma más cómoda.
 
-## ¿Cómo hacerlo?
-Aquí se muestra cómo extraer subcadenas en C#. Usaremos el método `Substring(int startIndex, int length)`.
+## Cómo hacerlo:
+Vamos a ver cómo extraer subcadenas en C# usando el método `Substring`. Aquí hay un ejemplo:
 
 ```C#
-string s = "El aprendizaje nunca se termina";
-string substr = s.Substring(3, 11);
-Console.WriteLine(substr);
-```
-Salida:
-```
-aprendizaje
+string fraseCompleta = "Hola, programadores!";
+string saludo = fraseCompleta.Substring(0, 4); // Extrae "Hola"
+string audiencia = fraseCompleta.Substring(7); // Extrae "programadores!"
+
+Console.WriteLine(saludo);    // Output: Hola
+Console.WriteLine(audiencia); // Output: programadores!
 ```
 
-## Inmersión Profunda
-La funcionalidad de extracción de subcadenas ha estado presente en la mayoría de los lenguajes de programación desde los primeros días, y C# no es la excepción. Una alternativa al enfoque 'Substring' es usar `Split` para dividir la cadena en un arreglo y luego operar en elementos individuales. Sin embargo, este método puede tener un rendimiento más bajo especialmente en cadenas muy largas. En términos de detalles de implementación, el método `Substring` en C# realmente crea una nueva cadena y no modifica la cadena original, por lo tanto, es seguro usarlo sin preocuparse por los efectos secundarios.
+El primer número indica el inicio, y el segundo la longitud de la subcadena. Si omites el segundo, obtienes todo hasta el final.
 
-`Split` ejemplo:
-```C#
-string s = "Hola:Mundo:!";
-string[] palabras = s.Split(':');
-Console.WriteLine(palabras[1]); 
-```
-Salida: 
-```
-Mundo
-```
+## Profundizando:
+Historialmente, extraer subcadenas ha sido esencial en la manipulación de textos. En versiones antiguas de C#, íbamos carácter por carácter. Ahora, con métodos como `Substring`, es pan comido.
 
-## Ver También
-Para más detalles y usos de extraer subcadenas en C#, visita los siguientes enlaces:
+Alternativamente podrías usar `Span<T>` o `Memory<T>` en situaciones donde el rendimiento es crítico – estos evitan crear copias de las subcadenas y son más eficientes.
 
-1. [Tutorial de Microsoft - String.Substring Method in C#](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0)
-2. [StackOverflow - C# substring](https://stackoverflow.com/questions/7845675/how-to-use-the-substring-method-in-c-sharp)
-3. [Información detallada sobre la cadena de C# en TutorialsPoint](https://www.tutorialspoint.com/csharp/csharp_strings.htm)
+En cuanto a los detalles de implementación, `Substring` puede lanzar `ArgumentOutOfRangeException` si los índices están mal. Por eso, siempre verifica los límites antes de extraer.
+
+## Vea también:
+- Documentación de Microsoft sobre [`String.Substring`](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-6.0)
+- [`Span<T>` y `Memory<T>`](https://docs.microsoft.com/en-us/dotnet/standard/memory-and-spans/memory-t-usage-guidelines)
+- Un tutorial sobre manipulación de cadenas en C#: [Manipulación de Cadenas en C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)

@@ -1,7 +1,8 @@
 ---
-title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
-simple_title:         "Envoyer une requête http avec une authentification de base"
+title:                "Envoi d'une requête HTTP avec authentification de base"
+date:                  2024-01-20T18:01:29.417273-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Envoi d'une requête HTTP avec authentification de base"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,49 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi ?
+## Quoi & Pourquoi?
+L'envoi d'une requête HTTP avec une authentification de base consiste à fournir un identifiant et un mot de passe pour accéder à une ressource protégée sur le web. Les programmeurs utilisent cette méthode pour sécuriser l'accès aux API et aux services en ligne.
 
-Envoie d'une requête HTTP avec authentification de base, ceci signifie coder votre identifiant et mot de passe en base64 et l'envoyer en tant que partie de votre requête HTTP. Les développeurs le font souvent pour interagir avec des API qui exigent cette forme d'authentification.
-
-## Comment Faire :
-
-Utiliser HTTPoison pour envoyer une requête GET. HTTPoison est une bibliothèque Elixir simple et rapide pour envoyer des requêtes HTTP.
-
+## Comment faire :
 ```elixir
-defmodule BasicAuth do
-  @moduledoc """
-  Module for handling Basic Auth in HTTP requests.
-  """
+# Ajout de la dépendance HTTPotion dans mix.exs
+defp deps do
+  [
+    {:httpotion, "~> 3.1.0"}
+  ]
+end
 
-  def send_request(url, username, password) do
-    headers = basic_auth_header(username, password)
-    HTTPoison.get(url, headers)
-  end
+# Exemple simple de requête avec authentification de base
+def send_request_with_basic_auth do
+  # Encode the credentials
+  basic_auth = Base.encode64("user:password")
 
-  defp basic_auth_header(username, password) do
-    auth = "#{username}:#{password}"
-    basic_auth = Base.encode64(auth)
-    [{"Authorization", "Basic #{basic_auth}"}]
-  end
+  # Set the headers
+  headers = ["Authorization": "Basic #{basic_auth}"]
+
+  # Make the request
+  response = HTTPotion.get("https://your-api-endpoint.com/resource", headers: headers)
+
+  # Output the response (sample output placeholder)
+  IO.inspect(response.body)
 end
 ```
 
-Exemple de sortie:
+## Exploration approfondie
+L'authentification de base HTTP existe depuis les débuts du web, comme moyen simple mais moins sécurisé d'accéder aux services en ligne, car les identifiants sont encodés mais non chiffrés. En alternative, on utilise souvent l'authentification par jetons (tokens) comme bearer tokens dans les headers de requêtes, ou mieux encore, OAuth2 pour des schémas d'authentification plus complexes et sécurisés. Techniquement, lorsqu'on envoie une requête avec authentification de base en Elixir, le package choisi (ici HTTPotion) s'occupe des basses œuvres : il encode les identifiants et prépare les headers HTTP appropriés.
 
-```elixir
-{:ok, %HTTPoison.Response{status_code: 200, body: response_body}}
-```
-
-## Plongée Profonde :
-
-Historiquement, l'authentification de base a été utilisée pour la première fois en 1994 dans le protocole HTTP. C'est une méthode couramment utilisée, mais pas la plus sécurisée en raison de son manque de chiffrement. 
-
-En alternative à l'authentification de base, on peut utiliser l'authentification par le porte-jeton ou `Bearer Token Authentication`. Elle est généralement utilisée pour les API REST car elle est plus simple et plus sécurisée.
-
-Le détail de mise en œuvre dans Elixir inclut l'utilisation de `HTTPoison`, qui est basé sur la bibliothèque Erlang `hackney`. Il vous suffit d'encoder l'identifiant et le mot de passe en utilisant `Base.encode64` et les inclure dans le header de la requête HTTP.
-
-## Voir Aussi :
-
-1. La documentation officielle de HTTPoison : [https://hexdocs.pm/httpoison/readme.html](https://hexdocs.pm/httpoison/readme.html)
-2. Plus de détails sur l'authentification de base : [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication)
-3. Guide de l'authentification Référentiel : [https://jwt.io/introduction/](https://jwt.io/introduction/)
+## Voir également
+- [HTTPotion GitHub repository](https://github.com/myfreeweb/httpotion)
+- [Elixir Base Module Documentation](https://hexdocs.pm/elixir/Base.html)
+- [HTTP basic access authentication on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [Introduction to HTTP Authentication Schemes](https://developer.okta.com/blog/2019/06/04/what-the-heck-is-sign-in-with-apple)

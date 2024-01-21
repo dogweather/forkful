@@ -1,7 +1,8 @@
 ---
-title:                "पैटर्न से मिलते जुलते वर्णों को हटाना"
-html_title:           "Elixir: पैटर्न से मिलते जुलते वर्णों को हटाना"
-simple_title:         "पैटर्न से मिलते जुलते वर्णों को हटाना"
+title:                "पैटर्न से मेल खाते अक्षरों को हटाना"
+date:                  2024-01-20T17:42:09.425354-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पैटर्न से मेल खाते अक्षरों को हटाना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,35 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# सी प्लस प्लस में पैटर्न मिलाने वाले वर्णों को हटाना
-#### व्हाट और व्हाई?
-पैटर्न मिलाने वाले वर्णों को हटाना का अर्थ होता है वचनों को मुक्त करना जो किसी निर्दिष्ट पैटर्न से मेल खाते हैं। प्रोग्रामर इसे तब करते हैं जब वे कोड को साफ और सटीक बनाने का प्रयास कर रहे होते हैं, या जब उन्हें उन्नत स्थर की त्रुटि खोजने की आवश्यकता होती है।
+## What & Why? (क्या और क्यों?)
+कैरेक्टर्स को डिलीट करना जो एक पैटर्न से मेल खाते हैं, मतलब एक स्ट्रिंग से कुछ खास कैरेक्टर्स को हटाना है। प्रोग्रामर्स इसे डेटा को साफ करने, जरूरी इनपुट्स को वैलिडेट और सिम्प्लिफाई करने के लिए करते हैं। 
 
-#### हाउ टू:
+## How to: (कैसे करें:)
 ```C++
+#include <iostream>
 #include <algorithm>
 #include <string>
 
-int main()
-{
-	std::string str = "हेलो वर्ल्ड";
-	str.erase(std::remove(str.begin(), str.end(), 'ल'), str.end());
+int main() {
+    std::string data = "H3llo W@rld!";
+    const std::string pattern = "1234567890@!";
 
-	std::cout << str << std::endl;
-	return 0;
+    data.erase(std::remove_if(data.begin(), data.end(),
+                              [&](char ch) { return pattern.find(ch) != std::string::npos; }),
+               data.end());
+
+    std::cout << data << std::endl; // Output: Hello Wrld
+    return 0;
 }
 ```
-उपरोक्त कोड का आउटपुट होगा:
-```
-"हेो वर्ड"
-```
-यहां हमने 'ल' वर्ण को हटाया है।
 
-#### डीप डाइव:
-सी प्लस प्लस में वर्णों को हटाना एसटीएल (स्टैंडर्द टेम्पलेट लाइब्रेरी) के कार्य का उपयोग करके किया जाता है। 'remove()' और 'erase()' कार्यों की मदद से हम वर्णों को हटा सकते हैं। 
+## Deep Dive (गहराई से समझिए):
+स्ट्रिंग्स से कैरेक्टर्स हटाने की शुरुआत तब हुई जब पहली बार स्ट्रिंग्स का इस्तेमाल हुआ। C++ स्टैण्डर्ड लाइब्रेरी में `remove_if` और `erase` जैसे फंक्शंस यह काम आसान बनाते हैं। इसी तरह के काम के लिए अन्य भाषाओं में भी बिल्ट-इन फंक्शंस मौजूद होते हैं। C++ में लैम्ब्डा फंक्शंस का इस्तेमाल करके हम पैटर्न-मैच करके कैरेक्टर्स को जल्दी से हटा सकते हैं, जैसा ऊपर कोड में दिखाया गया है।
 
-'boost' एक और विकल्प है जिसका उपयोग आप वर्ण हटाने के लिए कर सकते हैं, लेकिन उससे कोड जटिल हो सकता है और न्याय समय में वृद्धि हो सकती है।
-
-#### देखें भी:
-1. सी प्लस प्लस रेफरेंस: http://www.cplusplus.com/reference/string/string/erase/
-2. बूस्ट लाइब्रेरी: https://www.boost.org/doc/libs/1_73_0/libs/algorithm/doc/html/the_boost_algorithm_library.html
+## See Also (और देखें):
+- C++ Standard Template Library: [http://www.cplusplus.com/reference/](http://www.cplusplus.com/reference/)
+- C++ Lambda Expressions: [https://en.cppreference.com/w/cpp/language/lambda](https://en.cppreference.com/w/cpp/language/lambda)
+- Regular Expressions in C++ (for complex patterns): [https://en.cppreference.com/w/cpp/regex](https://en.cppreference.com/w/cpp/regex)

@@ -1,7 +1,8 @@
 ---
-title:                "Teilzeichenketten extrahieren"
-html_title:           "PowerShell: Teilzeichenketten extrahieren"
-simple_title:         "Teilzeichenketten extrahieren"
+title:                "Teilstrings extrahieren"
+date:                  2024-01-20T17:45:35.858143-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Teilstrings extrahieren"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,36 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why?
+(## Was & Warum?)
+Extrahieren von Teilzeichenketten bedeutet, spezifische Teile aus einem längeren String herauszunehmen. Programmierer machen das, um mit Daten zu jonglieren, Nutzereingaben zu verarbeiten oder einfach spezifische Informationen aus einem Text zu filtern.
 
-Das Extrahieren von Teilketten ist der Prozess, bestimmte Teile einer Zeichenkette zu isolieren. Programmierer tun dies, um relevante Daten aus einer größeren Textmasse zu extrahieren.
-
-## So geht's:
-
-Mit Elm kann man einen bestimmten Teil einer Zeichenkette extrahieren, indem man die eingebaute `String.slice`-Funktion verwendet. Hierfür musst du nur den Anfangs- und den Endindex des gewünschten Teilstrings angeben:
+## How to:
+(## Anleitung:)
+Elm bietet verschiedene Funktionen, um mit Strings zu arbeiten. Hier ein paar Beispiele, wie man Teilzeichenketten extrahiert:
 
 ```Elm
-import Html exposing (text)
-import String 
+import String
 
-extractSubstring start end str = 
-    String.slice start end str
+-- Extrahiere einen Teil eines Strings von einer Startposition bis zum Ende
+substringStartToEnd : String -> String
+substringStartToEnd text =
+    String.slice 5 (String.length text) text
+  
+-- Extrahiere einen Teil eines Strings von einer Startposition bis zu einer Endposition
+substringStartToEndPos : String -> String
+substringStartToEndPos text =
+    String.slice 0 5 text
 
-main = 
-    text (extractSubstring 0 5 "Hallo Welt")
+-- Nutzen der Funktionen
+main =
+    let
+        originalText = "Elm ist großartig!"
+        part1 = substringStartToEnd originalText       -- "ist großartig!"
+        part2 = substringStartToEndPos originalText    -- "Elm i"
+    in
+    -- Hier könnte die Logik zum Anzeigen von `part1` und `part2` folgen, z.B. in einer HTML-View
 ```
 
-Die Ausgabe wäre in diesem Fall `"Hallo"`.
+## Deep Dive:
+(## Hintergründe:)
+Die Funktion `String.slice` in Elm ist ähnlich zu JavaScript's `substring` und hat ihre Wurzeln in den Anfängen der stringverarbeitenden Vorgängerprogrammiersprachen. Es ist zuverlässig, aber Achtung: Elm ist 0-basiert, d.h. der Startindex fürs Extrahieren ist 0, nicht 1. Alternativen wie `String.left` und `String.right` bieten noch andere Wege, um an Anfang oder Ende eines Strings zu schneiden, ohne die genauen Indizes zu benötigen.
 
-## Vertiefung
+Ein wichtiger Punkt ist auch die Performance – bei großen Strings kann das Extrahieren von Teilstrings aufgrund der internen Repräsentation von Strings in Elm und anderen Sprachen aufwändiger werden. Immer daran denken, das nur bei Bedarf zu machen.
 
-Historisch gesehen wurde das Konzept des Teilketten-Extrahierens schon früh in der Computerwissenschaft eingeführt und es hat sich seitdem in praktisch jeder Programmiersprache etabliert. In Elm ist die Implementierung sehr einfach und direkt, da das Extrahieren von Teilketten in der Sprache eingebaut ist und man keine Bibliotheken hinzufügen muss.
-
-Diese Lösung ist für die meisten Anwendungen ausreichend. Es gibt jedoch alternative Methoden, wie die Verwendung der `String.left` oder `String.right` Funktion, die den Anfang oder das Ende einer Zeichenkette abhängig von der Anzahl der angegebenen Zeichen extrahieren.
-
-## Siehe auch 
-
-Für weitere Details zur Verwendung von `String.slice` und anderen String-Funktionen in Elm, schau dir die offizielle Dokumentation an: 
-- [Elm String Dokumentation](https://package.elm-lang.org/packages/elm/core/latest/String)
-
-Um mehr über die Geschichte von Zeichenketten und ihre Handhabung in der Informatik zu lernen, könnten diese Quellen interessant sein:
+## See Also:
+(## Siehe auch:)
+- Elm's `String` Modul Dokumentation: https://package.elm-lang.org/packages/elm/core/latest/String
+- Elm Programmierleitfäden: https://guide.elm-lang.org/
+- Weiterführende Artikel zur Stringmanipulation in funktionalen Sprachen.

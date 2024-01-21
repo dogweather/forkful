@@ -1,6 +1,7 @@
 ---
 title:                "חילוץ תת-מחרוזות"
-html_title:           "Bash: חילוץ תת-מחרוזות"
+date:                  2024-01-20T17:46:16.212230-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חילוץ תת-מחרוזות"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,30 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-חילוץ תת-מחרוזות הוא הבנת מחרוזת קטנה מתוך מחרוזת גדולה יותר. מתכנתים מנצלים את זה למניעת כפילות ולניתוח מידע.
+## What & Why?
+מה זה "חילוץ תת-מחרוזות" ולמה זה חשוב? חילוץ תת-מחרוזות זה לקחת חתיכה מתוך מחרוזת. תכנותים עושים את זה כדי לעבד או לבדוק נתונים ספציפיים בתוך מחרוזת גדולה יותר.
 
-## איך:
+## How to:
 ```PHP
 <?php
-  $str = 'אני מתכנת PHP';
-  $substring = substr($str, 4, 9);
-  echo $substring;
+// דוגמה לחילוץ תת-מחרוזת ב-PHP
+
+$str = "שלום עולם, PHP כאן לשרת אתכם!";
+echo substr($str, 6, 5); // Outputs: עולם
+
+// חילוץ מתחילת המחרוזת עד תו מסוים
+echo substr($str, 0, 5); // Outputs: שלום 
+
+// חילוץ תת-מחרוזת מסוף המחרוזת
+echo substr($str, -3); // Outputs: אתכם
 ?>
 ```
-פלט:
-```PHP
-'מתכנת PHP'
-```
+רק תזכרו, בעברית יש עניין של תווים מיוחדים בצורת RTL (Right-To-Left).
 
-## צלילה עמוקה:
-1) הקשר ההיסטורי: PHP הוא שפת תכנות שנוצרה בשנת 1994 ותמיד המשיכה להתפתח. פונקציית הsubstr הייתה חלק מהשפה מההתחלה.
+## Deep Dive
+חילוץ תת-מחרוזת היא פעולה שנעשית מאז ומתמיד בתכנות. ב-PHP, הפונקציה `substr` היחידה איתה אנחנו מתעסקים פה, קיימת מאז PHP 3. אלטרנטיבות כוללות את הפונקציות `mb_substr` לתמיכה במבנה רב-ביתי (למשל, UTF-8) שחשוב במיוחד כשמתעסקים עם תווים בעברית או שפות אחרות שאינן לטיניות. יש גם אפשרות להשתמש בביטויים רגולריים עם `preg_match` אם צריך לחילוץ תת-מחרוזות מורכב יותר.
 
-2) חלופות: ניתן לגשת לאותה התוצאה באמצעות PHP על ידי שימוש בפונקציית mb_substr, אשר מאפשרת לך לחתוך מחרוזת מראשית המחרוזת עד סוף מסוים.
-
-3) התממשות: substr מתרחשת על ידי חיפוש אחר האינדקס של התו הראשון שרוצים לחתוך מהמחרוזת, ואז קריאה של מספר כלשהו של תווים מאותו הנקודה. 
-
-## ראה גם:
-1) [PHP: substr - Manual](https://www.php.net/manual/en/function.substr.php)
-2) [PHP: mb_substr - Manual](https://www.php.net/manual/en/function.mb-substr.php)
-3) [How do I cut a string in PHP? - Stack Overflow](https://stackoverflow.com/questions/3558433/how-do-i-cut-a-string-in-php)
+## See Also
+- התיעוד הרשמי של PHP לפונקציית `substr`: https://www.php.net/manual/en/function.substr.php
+- התיעוד הרשמי של PHP לפונקציית `mb_substr`: https://www.php.net/manual/en/function.mb-substr.php
+- חילוץ תת-מחרוזות באמצעות ביטויים רגולריים עם `preg_match`: https://www.php.net/manual/en/function.preg-match.php

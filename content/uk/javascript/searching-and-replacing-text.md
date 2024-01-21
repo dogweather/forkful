@@ -1,6 +1,7 @@
 ---
 title:                "Пошук та заміна тексту"
-html_title:           "C++: Пошук та заміна тексту"
+date:                  2024-01-20T17:58:25.147824-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Пошук та заміна тексту"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,31 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Навіщо?
+## What & Why?
+(## Що і Чому?)
+Searching and replacing text in JavaScript is about finding strings and swapping them out. Programmers do it to change data, clean it up, or manipulate content dynamically.
 
-Пошук та заміна тексту - це процес виявлення певних символів або рядків у тексті та зміни їх на інший текст. Програмісти роблять це, щоб прискорити і оптимізувати обробку даних.
+## How to:
+(## Як робити:)
+Here's a basic example. We've got a string and we want to replace "cat" with "dog".
 
-## Як зробити:
-
-У JavaScript пошук та заміна тексту виконуються за допомогою методу `replace()`. Ось приклад:
-
-```Javascript
-let text = "Привіт, світе!";
-let newText = text.replace("світе", "Україно");
-console.log(newText); // "Привіт, Україно!"
+```javascript
+let text = "The quick brown cat jumps over the lazy dog.";
+let newText = text.replace("cat", "dog");
+console.log(newText); // Output: The quick brown dog jumps over the lazy dog.
 ```
-У коді вище ми замінили в тексті слово 'світе' на слово 'Україно'.
 
-## Поглиблений аналіз:
+Now, let's say we want to replace all occurrences, not just the first one:
 
-В історичному контексті, пошук та заміна тексту були основними для обробки тексту на початкових стадіях розвитку програмування.
+```javascript
+let text = "Cat: An animal. Cat: Also a pet.";
+let newText = text.replaceAll("Cat", "Dog");
+console.log(newText); // Output: Dog: An animal. Dog: Also a pet.
+```
 
-Хоча метод `replace()` найчастіше використовується для цих цілей в JavaScript, є й інші альтернативи, наприклад, регулярні вирази, які використовуються для більш складних випадків пошуку та заміни.
+RegEx time! What if our search is complex? RegEx to the rescue:
 
-JavaScript реалізує пошук та заміну тексту за допомогою ефективних алгоритмів пошуку рядків для швидкого виявлення шаблонів.
+```javascript
+let text = "I have 2 apples and 5 oranges.";
+let newText = text.replace(/\d+/g, (match) => match * 2);
+console.log(newText); // Output: I have 4 apples and 10 oranges.
+```
 
-## Дивіться також:
+## Deep Dive
+(## Поглиблений Розділ)
+Searching and replacing text has been around since the earliest days of computing. JavaScript handles this using the `.replace()` and `.replaceAll()` methods, with the latter being added in ES2021 for convenience in replacing all occurrences without a RegEx.
 
-* [JavaScript String replace() Method - W3Schools](https://www.w3schools.com/jsref/jsref_replace.asp)
-* [JavaScript Regular Expressions - W3Schools](https://www.w3schools.com/js/js_regexp.asp)
-* [String.prototype.replace() - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+There are alternatives to `.replace()` and `.replaceAll()`, like splitting a string into an array, modifying the elements, and then joining them back together. But these methods are more verbose and can be less efficient.
+
+From an implementation perspective, regex-based searching in JavaScript is powerful but can cost performance if overused or misused. So, understanding RegEx is crucial for complex string operations.
+
+## See Also
+(## Дивіться також)
+Check out these resources to learn more:
+
+- MDN Web Docs on String replace(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+- MDN Web Docs on String replaceAll(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll
+- RegExp Patterns: https://www.regular-expressions.info/javascript.html
+- JavaScript String Manipulation Guide: https://www.digitalocean.com/community/tutorials/how-to-work-with-strings-in-javascript

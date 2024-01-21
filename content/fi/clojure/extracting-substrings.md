@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:45:32.720898-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,34 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+Merkkijonojen poimiminen tarkoittaa osan ottamista isommasta merkkijonosta. Ohjelmoijat tekevät näin datan muokkaamiseksi tai hyödyllisen informaation irrottamiseksi.
 
-Alimerkkijonojen erottaminen on prosessi, jossa merkkijonosta otetaan osa sen juoksevista merkkeistä. Ohjelmoijat käyttävät tätä hyödyntääkseen joko osaa merkkijonon tiedoista tai jakamaan merkkijonon pienempiin osiin.
-
-## Miten:
-
-Clojurella voit käyttää `subs`:ia erottaaksesi merkkijonoja.
+## How to:
+Clojuren `subs` funktio tekee tämän homman mutkattomasti.
 
 ```Clojure
-(defn näyte []
-  (println (subs "Moi Clojure-ohjelmoijat!" 4 13)))
+(defn demo-substrings []
+  (let [text "Hello from Finland!"]
+    (println (subs text 6 10))    ; Tulostaa "from"
+    (println (subs text 11))      ; Tulostaa "Finland!"
+    ))
+
+(demo-substrings)
 ```
 
-Kun ajat tämän funktion, se tulostaa:
+Tuloste:
 
-```Clojure
-Clojure
+```
+from
+Finland!
 ```
 
-Tämä ottaa alimerkkijonon indeksistä 4 indeksiin 13.
+## Deep Dive
+Substringien poiminta ei ole uusi juttu; se on peräisin ajoista, jolloin ihmiset alkoivat käsitellä tietokoneilla tekstejä. Clojure käyttää Javan `substring` funktiota tämän toiminnallisuuden toteuttamisessa, koska se on Javan virtuaalikoneella toteutettu kieli.
 
-## Syvällisemmin:
+Vaihtoehtoisesti, voi käyttää myös `take` ja `drop` funktioita yhdessä `apply str` kanssa osajonon ottamiseen. Tämä on kätevä, jos halutaan käyttää merkkijonoja kokoelmien tavoin.
 
-Vaikka alimerkkijonot ovat olennainen osa monia ohjelmointikieliä, Clojuren `subs`-funktio on peräisin Javan String-luokan `substring`-metodista. Lisäksi sen sijaan, että käyttäisit `subs`:ia, voit käyttää `take`, `drop`, `split-at` -funktioita joitain skenaarioita varten. Niiden käyttäminen saattaa tarjota paremman suorituskyvyn, sillä ne ovat laiska evaluointeja.
+Toteutusyksityiskohtina, `subs` toimii indekseillä, jotka kertovat mistä kohtaa poimia merkkijono. Hyvä tietää: Indeksit alkavat aina nollasta.
 
-Clojuren `subs`-implementointi käyttää Javan `substring`-metodia. Yksi tärkeä pointti muistaa on, että start- ja end-indeksi on 0-pohjainen ja end-indeksi on eksklusiivinen. Clojuren koodissa, `subs` ottaa kaksi parametria: start- ja end-indeksit.
-
-## Katso Myös:
-
-1. [Clojuren Dokumentaatio](https://clojuredocs.org/clojure.core/subs): Syvä sukellus `subs`-funktion käyttöön Clojuressa.
-3. [Clojuren Sydän](https://www.youtube.com/watch?v=xguCXp0P1zE): Hyvä video, joka kattaa Clojuren Collection APIn, mukaan lukien merkkijonot.
+## See Also
+Lisää tietoa ja esimerkkejä:
+- Clojure-dokumentaatio `subs`: [https://clojuredocs.org/clojure.core/subs](https://clojuredocs.org/clojure.core/subs)
+- Clojuren `take` ja `drop` funktiot: [https://clojuredocs.org/clojure.core/take](https://clojuredocs.org/clojure.core/take), [https://clojuredocs.org/clojure.core/drop](https://clojuredocs.org/clojure.core/drop)

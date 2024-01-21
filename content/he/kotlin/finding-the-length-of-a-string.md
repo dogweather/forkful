@@ -1,7 +1,8 @@
 ---
-title:                "מציאת אורך המחרוזת"
-html_title:           "Elm: מציאת אורך המחרוזת"
-simple_title:         "מציאת אורך המחרוזת"
+title:                "מציאת אורך מחרוזת"
+date:                  2024-01-20T17:47:54.583540-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "מציאת אורך מחרוזת"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,28 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מציאת אורך שלמיטה ב-Kotlin
+## What & Why? (מה ולמה?)
+כשאמרים "אורך של מחרוזת", מתכוונים למספר התווים בה. מתכנתים צריכים לדעת את זה לבדיקות, תיקוני מחרוזות, ועוד.
 
-## מה ולמה?
-מציאת אורך של מחרוזת היא התוצאה המספרית של מספר התווים בתוך המחרוזת. מתכנתים עשויים לזקוק לכך בשביל לבצע גילוף מחרוזת, לבדוק תקינות קלט או לבצע ריכוז שפתים.
+## How to: (איך לעשות:)
+שאילתת האורך של מחרוזת בקוטלין היא צ'יק צ'ק:
 
-## איך לעשות:
-הקוד הפשוט הבא ממומש ב-Kotlin:
 ```Kotlin
-fun main(args: Array<String>) {
-    val str = "אני אוהב לתכנת ב-Kotlin"
-    val length = str.length
-    println("אורך המחרוזת: $length")
+fun main() {
+    val greeting = "שלום לכולם!"
+    println("אורך המחרוזת: ${greeting.length}")
 }
 ```
-מוצא את אורך המחרוזת ומדפיס את התוצאה.
 
-## ביצוע עמוק יותר:
-בהיסטוריה, הוגים מגוונים של שפת תכנות בצ’אלט קדימה להספק למתכנתים דרכים שונות למצוא את אורך של מחרוזת. Kotlin עצמה מרה ושלה על התוסף `.length`, שמספק את אורך המחרוזת בצורה ישירה ואינטואיטיבית. חלופות אחרות כוללות שימוש בלולאה לספירת התווים או שימוש בפונקציות מובנות בשפות אחרות. 
+תוצאת הדוגמה:
+```
+אורך המחרוזת: 12
+```
 
-מבחינת עלות המילואה, `.length` אינו יעיל יותר בהכרח מאשר חלופות אחרות בעבודה עם מחרוזות הקיימות ברשימות נתונים חסרות סמנים או בעבודה עם מחרוזות גדולות במיוחד.
+## Deep Dive (צלילה עמוקה)
+הפונקציה `.length` בקוטלין יורשת מ-Java, הידועה ביציבות ונסיון. אופציות אלטרנטיביות? יש את `.count()`, אבל `.length` יותר ישיר ומהיר כאשר רק אורך המחרוזת נדרש. 
+בפנים, `.length` היא פרופרטי שמחזירה את גודל המערך שמייצג את המחרוזת.
 
-## לקריאה נוספת:
-1. [דוקס הרשמי של Kotlin על מחרוזות](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/length.html)
-2. [רשימת שיעורים מסודרת על מחרוזות ב-Kotlin](https://www.programiz.com/kotlin-programming/string)
-3. [StackOverflow: איך למצוא את אורך מחרוזת בקוטלין](https://stackoverflow.com/questions/36894315/how-to-find-a-string-length-in-kotlin)
+## See Also (ראה גם)
+- [אורך מחרוזת ב- Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/length.html)
+- [המבנה הפנימי של מחרוזות ב-Java/Kotlin](https://www.baeldung.com/java-string-pool)

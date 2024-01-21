@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:46:22.798337-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,27 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Alastringin erottaminen on prosessi, jossa otamme osan tekstistä - eli stringistä - erilliseksi stringiksi. Tätä tehdään, kun haluamme käsitellä vain kyseistä osaa stringistä tai kun haluamme verrata tiettyjä stringin osia muihin arvoihin.
+## What & Why? / Mikä & Miksi?
+Substringit ovat osia isommista tekstijonoista. Käytämme substringien irrottamista, kun haluamme prosessoida tai analysoida pienempiä tietoja, kuten käyttäjänimen sähköpostiosoitteesta.
 
-## Kuinka:
-Lua:n versiossa 5.3, stringin osan erottaminen on yksinkertaista. Lua:ssa on valmiina funktio `string.sub()`. Laitetaanpa koodiin esimerkkitapaus.
-
+## How to: / Kuinka tehdä:
 ```Lua
-teksti = "Ohjelmointi on hauskaa"
-print(string.sub(teksti, 1, 12)) -- tulostaa: Ohjelmointi
-print(string.sub(teksti, 14)) -- tulostaa: hauskaa
+local teksti = "tervetuloa_programmointiin!"
+-- Alkuindeksi ja loppuindeksi
+local substring = teksti:sub(1, 11)
+print(substring) -- tulos: "tervetuloa_"
+
+-- Negaatiiviset indeksit (lopusta alkaen)
+local loppuosa = teksti:sub(-14)
+print(loppuosa) -- tulos: "programmointiin!"
+
+-- Pattern-matching leikkaus
+local kayttajanimi = string.match("esimerkki@esimerkki.fi", "([^@]+)")
+print(kayttajanimi) -- tulos: "esimerkki"
 ```
 
-Tässä koodissa `string.sub()` -funktio ottaa kolme argumenttia: alkuperäinen stringi, aloituspositio ja lopetuspositio. Jos lopetuspositiota ei ole määritelty, funktio palauttaa alistringin aloituspositiosta alkaen loppuun asti.
+## Deep Dive / Syväsukellus:
+Lua-kielen string-handling-nojaa voimakkaasti yhteenrakennettuihin funktioihin, kuten `sub` ja `match`. Historiallisesti Lua kasvoi embeddattujen systeemien tarpeista: pieni footprintti, mutta tehokkaat string-työkalut ovat aina olleet korostettuja.
 
-## Syväsukellus
-Lua:ssa substringin erottaminen on tehty helppoa `string.sub` -funktiolla, mutta se ei tarkoita ettei muita vaihtoehtoja olisi. Voit esimerkiksi käyttää `string.match` -funktiota, joka sallii monimutkaisemmat hakuoperaatiot regular expressionsin avulla. 
+Pattern-matching perustuu säännöllisiin lausekkeisiin (regex), mutta on rajoitettumpi. `match` funktio sallii monimutkaisten patternien tunnistamista stringeistä ilman että tarvitsee vetää sisään kokonaisia regex-kirjastoja.
 
-Aikaisemmin, ennen `string.sub` -funktion olemassaoloa, ohjelmoijat käyttivät looppeja ja muita ohjelmanrakenteita saavuttaakseen sama tavoitteen. 
+Substring-funktioita käytettäessä indeksit alkavat ykkösestä, ei nollasta, kuten monissa muissa kielissä. Negatiiviset indeksit laskevat lopusta alkaen, mistä on usein hyötyä.
 
-## Katso Myös
-Lisätietoa ja syvempää ymmärrystä koodin eri osista:
-- Lua ohjekirja – String Library: https://www.lua.org/manual/5.3/manual.html#6.4
-- String-viite – Lua-ohjelmointi: https://www.tutorialspoint.com/lua/lua_strings.htm
-- Lua:ssa regular expressions: https://www.lua.org/pil/20.2.html
+## See Also / Katso Myös:
+- [Programming in Lua (Fourth Edition)](https://www.lua.org/pil/contents.html) – Luotettava kirja perusteista syvällisiin tekniikoihin.
+- [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/) – Virallinen dokumentaatio ja käyttöopas.
+- [Lua Users Wiki: Strings Tutorial](http://lua-users.org/wiki/StringsTutorial) – Käytännön esimerkkejä ja ohjeita stringien käsittelyyn.

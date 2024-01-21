@@ -1,7 +1,8 @@
 ---
-title:                "Sende en http-forespørsel med grunnleggende autentisering"
-html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
+title:                "Å sende en HTTP-forespørsel med grunnleggende autentisering"
+date:                  2024-01-20T18:02:52.083730-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -11,63 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-
-Å sende en HTTP-forespørsel med grunnleggende autentisering er en metode for å oppnå kommunikasjon mellom klientsidig programvare og en server ved å dele legitimasjon. Utviklere gjør dette for å sikre at bare autoriserte brukere har tilgang til visse serverressurser.  
+HTTP-forespørsler med grunnleggende autentisering lar klienter bevise sin identitet til serveren ved hjelp av brukernavn og passord. Programmerere bruker dette for å sikre trygg kommunikasjon når de aksesserer beskyttede ressurser.
 
 ## Hvordan:
-
-Her er et Swift eksempel på hvordan man sender en HTTP-forespørsel med grunnleggende autentisering:
-
-``` Swift
+```Swift
 import Foundation
 
-let url = URL(string: "https://example.com")!
-let username = "your-username"
-let password = "your-password"
-let loginString = String(format: "%@:%@", username, password)
+// Opprett din URL
+if let url = URL(string: "https://eksempel.no/api/data") {
 
-let loginData = loginString.data(using: String.Encoding.utf8)!
-let base64LoginString = loginData.base64EncodedString()
+    // Forbered en URLRequest
+    var request = URLRequest(url: url)
+    request.httpMethod = "GET"
 
-var request = URLRequest(url: url)
-request.httpMethod = "GET"
-request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
-
-let task = URLSession.shared.dataTask(with: request) { data, response, error in
-    if let error = error {
-        print("Error: \(error)")
-    } else if let data = data {
-        let str = String(data: data, encoding: .utf8)
-        print("Received data:\n\(str ?? "")")
+    // Legg til grunnleggende autentiseringsinformasjon
+    let brukernavn = "dittBrukernavn"
+    let passord = "dittPassord"
+    let loginString = "\(brukernavn):\(passord)"
+    if let loginData = loginString.data(using: .utf8) {
+        let base64LoginString = loginData.base64EncodedString()
+        request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
     }
+
+    // Send forespørselen
+    let session = URLSession.shared
+    let task = session.dataTask(with: request) { data, response, error in
+        guard let data = data, error == nil else {
+            print("Feil ved forespørsel: \(error?.localizedDescription ?? "Ukjent feil")")
+            return
+        }
+        if let responseString = String(data: data, encoding: .utf8) {
+            print("Respons:\n\(responseString)")
+        }
+    }
+    task.resume()
 }
-task.resume()
 ```
-
-Når du kjører denne koden i en Playground, vil du se utdata som ser noe ut som dette:
-
-``` Swift
-Received data:
-{
-    "active": true,
-    "locked": false,
-    "name": "Your name",
-    "roles": [
-        "User"
-    ]
-}
+Sample output:
+```
+Respons:
+{"eksempelData": "Verdi"}
 ```
 
 ## Dypdykk
-
-Historisk sett innførte RFC 7617 grunnleggende autentiseringsregimet for HTTP som vi kjenner i dag. Til tross for sin enkelhet, er det viktig å merke seg at grunnleggende autentisering overfører legitimasjon i klartekst (bare base64-kodet) over nettverket, så det brukes best sammen med HTTPS for å beskytte integriteten til brukerens opplysninger.
-
-Alternativt kan du bruke mer sikre metoder for autentisering mens du arbeider med HTTP-forespørsler, som OAuth 2.0 og JSON Web Tokens (JWT), avhengig av spesifikke krav og bruksscenarier.
-
-Når det gjelder implementeringsdetaljer i Swift, bruker vi `URLSession`-biblioteket for å lage forespørsler. Du oppretter en `URLRequest` for å sette opp detaljene i HTTP-forespørselen, inkludert metoden (GET, POST, etc.), URL-en til serveren vil du koble til og `Authorization` headeren med base64-enkodede opplysninger.
+Før HTTPS og mer komplekse autentiseringsmetoder ble standard, ble grunnleggende autentisering mye brukt for å verifisere brukere over internett ved hjelp av Base64-koding for å sende brukernavn og passord. Riktignok er det ikke så sikkert som moderne metoder fordi Base64 er enkelt å dekode, så i dag brukes det oftere på interne nettverk eller over HTTPS. Alternative autentiseringsmetoder inkluderer OAuth og API-nøkler, som er sikrere valg for eksponerte APIer. Implementasjonsdetaljer for grunnleggende autentisering inkluderer koding av brukernavn og passord, konstruksjon av en passende HTTP-header, og håndtering av responsen.
 
 ## Se Også
-
-- Om grunnleggende autentisering: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme
-- Swift-nettverkspraksis: https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started
-- Alternativer til grunnleggende autentisering: https://auth0.com/blog/cookies-vs-tokens-definitive-guide/
+- [URLRequest - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/urlrequest)
+- [URLSession - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/urlsession)
+- [HTTP authentication - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [Basic access authentication - Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication)

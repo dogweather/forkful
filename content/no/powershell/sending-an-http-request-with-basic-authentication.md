@@ -1,7 +1,8 @@
 ---
-title:                "Sende en http-forespørsel med grunnleggende autentisering"
-html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
+title:                "Å sende en HTTP-forespørsel med grunnleggende autentisering"
+date:                  2024-01-20T18:02:33.143450-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -11,48 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-
-Å sende en HTTP-forespørsel med grunnleggende godkjenning er prosessen hvor programmene dine, ved hjelp av brukernavn og passord, får tilgang til beskyttede serverressurser. Dette er nyttig slik at programmene dine kan interagere trygt og effektivt med andre systemer.
+En HTTP-forespørsel med grunnleggende autentisering innebærer å sende brukernavn og passord over nett for å verifisere en brukers identitet. Programmerere gjør det for å sikre tilgang til API-er eller webressurser som krever identifikasjon.
 
 ## Hvordan:
-
-La oss ta en titt på et grunnleggende eksempel på en PowerShell-skript for dette. For å sende en HTTP-forespørsel med grunnleggende godkjenning i PowerShell, bruk følgende kode:
+For å gjøre en HTTP-forespørsel med grunnleggende autentisering i PowerShell, bruker du `Invoke-RestMethod` eller `Invoke-WebRequest`. Her er et enkelt eksempel:
 
 ```PowerShell
-# Opprett en ny variabel med URL til serveren du vil hente data fra
-$url = 'https://min.server.com'
+# Opprett autentiseringsinformasjonen
+$brukernavn = 'mittBrukernavn'
+$passord = 'mittPassord'
 
-# Definer brukernavn og passord
-$username = 'brukernavn'
-$password = 'passord'
+# Konverter til Base64-streng
+$Base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("$($brukernavn):$($passord)"))
 
-# Konverter brukernavn og passord til base64
-$base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("${username}:${password}")))
+# Lag en HTTP-headers med autorisasjonsfeltet
+$headers = @{
+    Authorization = "Basic $Base64AuthInfo"
+}
 
-# Send forespørsel til serveren
-$response = Invoke-WebRequest -Headers @{Authorization=("Basic {0}" -f $base64AuthInfo)} -Uri $url
+# Send GET-forespørselen
+$url = 'https://mittapi.no/endepunkt'
+$response = Invoke-RestMethod -Uri $url -Method Get -Headers $headers
 
-# Utskrift av respons
+# Skriv ut svaret
 $response
 ```
-Denne koden vil gi deg en respons fra serveren.
 
-## Dypdykk:
+Du vil få et responsobjekt som inneholder dataene som API-et returnerte.
 
-La oss nå dykke dypere inn i dette.
+## Dykk dypere:
+I 1996, da HTTP 1.0-spesifikasjonen (RFC 1945) ble utviklet, var Basic Authentication allerede en del av det foreløpige utkastet. Til tross for at det ikke er den sikreste autentiseringsmetoden, siden det sender legitimasjon i klartekst (bare base64-kodet), er det fortsatt i bruk på grunn av dens enkelhet. Flere alternativer som OAuth, tokens, eller API-nøkler er ofte bedre for sikkerhet, men grunnleggende autentisering kan være nyttig for interne eller lavrisikotjenester hvor enkel tilgang er prioritert.
 
-(1) Historisk kontekst: Grunnleggende godkjenning er en del av HTTP/1.0-standarden, som ble introdusert tilbake i 1996. Det tillater klienter å bevise deres identitet til serveren ved å dele en brukernavn-passord-kombinasjon.
-
-(2) Alternativer: Selv om grunnleggende godkjenning er enkel å implementere, er det ikke den sikreste metoden for godkjenning. Alternativer inkluderer Digest Authentication og OAuth.
-
-(3) Implementasjonsinformasjon: Grunnleggende godkjenning er enkel å bruke, men er ikke sikker fordi den bruker base64-koding, som lett kan dekodes. For å øke sikkerheten, bør det brukes sammen med HTTPS for å kryptere dataene som sendes over nettverket.
+Når du implemeneterer dette i PowerShell, er det viktig å kryptere trafikken ved hjelp av HTTPS for å forhindre at legitimasjonen blir avlyttet. PowerShell forenkler prosessen ved å tillate at du legger til `Authorization`-headeren direkte i forespørselen.
 
 ## Se også:
-
-For mer detaljert informasjon kan du sjekke ut følgende ressurser:
-
-- [Microsoft - Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest)
-
-- [Wikipedia - Basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
-
-- [Microsoft - Connect to Exchange servers using remote PowerShell](https://docs.microsoft.com/en-us/powershell/exchange/connect-to-exchange-servers-using-remote-powershell)
+- [PowerShell dokumentasjon for `Invoke-RestMethod`](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod)
+- [RFC 7617 'The 'Basic' HTTP Authentication Scheme'](https://tools.ietf.org/html/rfc7617)
+- [Guide til sikrere autentiseringsmetoder (`OAuth 2.0`)](https://oauth.net/2/)

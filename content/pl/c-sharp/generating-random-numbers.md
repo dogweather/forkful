@@ -1,6 +1,7 @@
 ---
 title:                "Generowanie liczb losowych"
-html_title:           "Gleam: Generowanie liczb losowych"
+date:                  2024-01-20T17:49:12.612766-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generowanie liczb losowych"
 programming_language: "C#"
 category:             "C#"
@@ -10,16 +11,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Tituł: Generowanie liczb losowych w języku C#
+## What & Why? (Co i Dlaczego?)
+Tworzenie liczb losowych to serce wielu aplikacji - od gier po bezpieczeństwo. Daje nieprzewidywalność potrzebną do symulacji, testów, czy kryptografii.
 
-## Co i Dlaczego? (What & Why?)
-
-Generowanie liczb losowych to proces tworzenia ciągu liczb, których wystąpienie jest nieprzewidywalne. Programiści to robią, aby dodawać element losowości do swoich aplikacji, czy to w grach, symulacjach czy bezpieczeństwie danych.
-
-## Jak to zrobić: (How to:)
-
-W C# generowanie liczb losowych jest proste, dzięki wbudowanej klasie `Random`. Poniżej znajduje się prosty przykład.
-
+## How to: (Jak to zrobić:)
 ```C#
 using System;
 
@@ -27,25 +22,24 @@ class Program
 {
     static void Main()
     {
-        Random randNumberGenerator = new Random();
-        int randomNum = randNumberGenerator.Next(1, 100);  // Generuje liczbę losową między 1 a 100
-        Console.WriteLine(randomNum);
+        Random random = new Random();
+        int randomInt = random.Next(1, 100); // Losowa liczba od 1 do 99
+        Console.WriteLine(randomInt); // Przykład wyjścia: 42
+
+        double randomDouble = random.NextDouble(); // Losowa liczba double od 0.0 do 1.0
+        Console.WriteLine(randomDouble); // Przykład wyjścia: 0.843103
     }
 }
 ```
-Kiedy uruchomisz ten kod, dostaniesz na wyjściu losową liczbę między 1 a 100. Wypróbuj sam!
 
-## Dogłębna analiza (Deep Dive)
+## Deep Dive (Głębsze zanurzenie)
+Generowanie liczb losowych sięga dalej niż C#. W starożytnej historii kostki do gry były używane do przepowiadania losu. W informatyce, to algorytmy losujące robią robotę. C# używa generatora Mersenne Twistera za kulisami, ale możesz też użyć `System.Security.Cryptography` dla większego bezpieczeństwa.
 
-**Kontekst historyczny:** Wcześniej generowanie liczb losowych było trudniejsze i wymagało skomplikowanych algorytmów, ale z czasem języki programowania ułatwiły ten proces.
+Alternatywy? `GUID` może być losowy, ale nie nadaje się do celów matematycznych. Jest też `System.Random`, który jest wystarczający dla nie-krytycznych zastosowań.
 
-**Alternatywy:** Możesz użyć różnych metod do generowania liczb losowych w C#, na przykład:
-`RNGCryptoServiceProvider` daje bardziej losowe liczby, ale jest wolniejszy od klasy `Random`.
+Szczegóły implementacji? `Random` korzysta z ziarna (ang. seed), które determinuje serię. Bez wskazania ziarna, używany jest czas systemowy. Ale uwaga: tworzenie nowych instancji `Random` w krótkich odstępach czasu może powodować powtarzające się wzorce.
 
-**Szczegóły implementacji:** Klasa `Random` w C# korzysta z algorytmu pseudolosowego, co oznacza, że liczby wydają się losowe, ale powtarzając program z tym samym ziarnem losowości (`seed`), wygenerowane liczby będą takie same.
-
-## Zobacz też (See Also):
-
-- https://docs.microsoft.com/pl-pl/dotnet/api/system.random?view=net-5.0: dokładne informacje na temat klasy `Random` w .NET 5.0 
-- https://en.wikipedia.org/wiki/Pseudorandom_number_generator: Więcej informacji na temat generatorów liczb pseudolosowych
-- https://docs.microsoft.com/pl-pl/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0: Dokumentacja `RNGCryptoServiceProvider` w .NET 5.0
+## See Also (Zobacz też)
+- Microsoft Documentation: [System.Random](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-6.0)
+- Stack Overflow: Wątek o [generowaniu bezpiecznych liczb losowych w C#](https://stackoverflow.com/questions/4242648/secure-random-number-generation-in-c-sharp)
+- Blog: [Zrozumienie Random w C#](https://devblogs.microsoft.com/pfxteam/getting-random-numbers-in-a-thread-safe-way/)

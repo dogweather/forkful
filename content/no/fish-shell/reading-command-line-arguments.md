@@ -1,6 +1,7 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Arduino: Lese kommandolinjeargumenter"
+date:                  2024-01-20T17:55:56.957456-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,27 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor? 
-Å lese kommandolinje-argumenter innebærer å motta data direkte fra terminalen der programmet kjører. Programmerere gjør dette for å manipulere programmets oppførsel ved kjøring.
+## Hva & Hvorfor?
+Å lese kommandolinjeargumenter betyr å hente og bruke data som brukeren skriver inn når de kjører et skript. Programmerere bruker dette for å gjøre skript fleksible og for å kunne kjøre diverse oppgaver basert på brukerinndata.
 
-## Hvordan få det til:
-La oss se på hvordan vi kan lese kommandolinje-argumenter i Fish Shell.
-
+## Hvordan:
 ```Fish Shell
-function greet
-    echo "Hei $argv[1]"
+# eksempel_skript.fish
+for arg in $argv
+    echo "Argument: $arg"
 end
 ```
-Kjør denne funksjonen gir oss følgende:
-
-```Fish Shell
-> greet Verden
-Hei Verden
+Kjør skriptet: `fish eksempel_skript.fish ett to tre`
+Forventet utskrift:
 ```
-Her benyttet $argv[1] for å representere første kommandolinje-argument.
+Argument: ett
+Argument: to
+Argument: tre
+```
 
 ## Dypdykk:
-Fish Shell standardiserte det til $argv, en liste av argumenter. Dette skiller seg fra tidligere shells som brukte $1, $2, osv. for å representere argumenter enkeltvis. Det finnes alternativer til å lese kommandolinje-argumenter, som å bruke getopts for å lese flagger og parametre. Men for lesing av generelle argumenter, er $argv brukervennlig og enkel å forstå.
+Fish Shell, altså "Friendly Interactive SHell", er et moderne, brukervennlig skallet alternativ til andre shells som bash og zsh. Historisk sett var det mindre fokus på brukervennlighet, men Fish har endret dette med script som er lettere å forstå. Det støtter å lese kommandolinjeargumenter rett ut av esken, uten behov for komplekse syntakser. 
+
+I motsetning til andre shells, der du kanskje må ty til `$@` eller `shift`, gir Fish deg `$argv`, som er en liste over argumentene. Det gjør looping gjennom argumentene intuitiv og enkel. Du kan til og med bruke indekser for å hente spesifikke argumenter, som `$argv[1]` for det første argumentet.
 
 ## Se Også:
-For mer informasjon om $argv, se Fish Shell dokumentasjonen: [Fish $argv](https://fishshell.com/docs/current/cmds/set.html). For historisk sammenligning og mer detaljer om alternativer, se [Command-line argument (Wikipedia)](https://en.wikipedia.org/wiki/Command-line_argument).
+- Fish Shell dokumentasjon for argumenter: https://fishshell.com/docs/current/#variables-command-line-arguments
+- Tutorial for å skrive scripts i Fish: https://fishshell.com/docs/current/tutorial.html
+- Stack Overflow for praksisspørsmål: https://stackoverflow.com/questions/tagged/fish

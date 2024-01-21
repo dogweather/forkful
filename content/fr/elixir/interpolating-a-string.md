@@ -1,7 +1,8 @@
 ---
-title:                "Interpolation d'une chaîne de caractères"
-html_title:           "Ruby: Interpolation d'une chaîne de caractères"
-simple_title:         "Interpolation d'une chaîne de caractères"
+title:                "Interpolation de chaînes de caractères"
+date:                  2024-01-20T17:50:28.974919-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolation de chaînes de caractères"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,51 +11,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ?
+## What & Why? | Quoi et Pourquoi ?
+On insère des données dans une chaîne de caractères. On fait ça pour dynamiser les messages sans concaténer à l'ancienne.
 
-L'interpolation de chaînes en Elixir est une façon d'insérer et d'évaluer du code au sein d'une chaîne de caractères. Les programmeurs le font pour manipuler et formater dynamiquement les chaînes.
-
-## Comment faire :
-
-Dans Elixir, on utilise `#{}` pour interpoler une chaîne. Regardez ces exemples :
-
-```Elixir
-nom = "Jean"
-IO.puts "Bonjour, #{nom}!"
+## How to: | Comment faire :
+```elixir
+name = "World"
+# Interpolation simple
+message = "Hello, #{name}!"
+IO.puts message
 ```
-Cela donnera en sortie :
+Sortie: `Hello, World!`
 
-```Elixir
-Bonjour, Jean!
-```
-Par ailleurs, vous pouvez exécuter n'importe quelle expression Elixir à l'intérieur de l'interpolation. Par exemple :
+## Deep Dive | Plongée en Profondeur
+Interpoler, c'est intégrer des variables directement dans des chaînes depuis Elixir 1.0. Avant, on concaténait, mettant bout à bout les strings et les variables, ou en utilisant des fonctions plus lourdes. Interpoler, ça fait propre et c'est rapide ; Elixir utilise l'opérateur `#{...}`. Le bytecode Erlang final est optimisé, comme pour une concaténation classique.
 
-```Elixir
-IO.puts "Cinq plus cinq est #{5+5}."
-```
-Cela donnera en sortie :
-
-```Elixir
-Cinq plus cinq est 10.
-```
-
-## Un regard plus attentif 
-
-1. Contexte historique : Elixir n'est pas le seul langage à avoir adopté l'interpolation de chaînes. De nombreux autres langages, notamment Ruby et Javascript, permettent également d'utiliser cette technique.
-
-2. Alternatives : Si vous ne souhaitez pas utiliser l'interpolation, vous pouvez utiliser la concaténation, comme dans l'exemple ci-dessous :
-
-    ```Elixir
-    nom = "Jean"
-    IO.puts("Bonjour, " <> nom <> "!")
-    ```
-   
-3. Détails d'implémentation: Elixir effectue l'interpolation de chaîne en évaluant d'abord les expressions contenues dans `#{}`, avant de convertir le résultat en chaîne et de l'insérer dans la chaîne finale.
-
-## À voir également 
-
-Pour plus d'informations, vous pouvez consulter :
-
-- La [documentation officielle Elixir](https://hexdocs.pm/elixir/String.html) sur les chaînes.
-- [Elixir School: Interpolation](https://elixirschool.com/fr/lessons/basics/strings/), une explication simplifiée mais complète concernant l'interpolation de chaînes.
-- [Elixir Forum](https://elixirforum.com/), un endroit pour discuter de toutes sortes de questions sur Elixir, y compris l'interpolation de chaînes.
+## See Also | Voir Aussi
+- [Documentation Elixir sur les chaînes de caractères](https://hexdocs.pm/elixir/String.html)
+- [Guide d'introduction aux chaînes binaires, les strings et leurs fonctions (en anglais)](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
+- [Forum Elixir pour poser des questions](https://elixirforum.com/)

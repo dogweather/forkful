@@ -1,6 +1,7 @@
 ---
 title:                "テキストの検索と置換"
-html_title:           "Java: テキストの検索と置換"
+date:                  2024-01-20T17:57:37.419206-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "テキストの検索と置換"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,40 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-テキストの検索と置換は、特定の文字列を見つけて新しい文字列に置き換えるプログラミング作業の一部です。コードの修正、データクリーニングなど、多くのタスクを効率化するためにプログラマーによく使用されます。
+## What & Why? (何とその理由？)
+コードにおけるテキストの検索と置換は、特定の文字列を見つけて、それを別の文字列に変えることです。これは、コードのバグ修正、リファクタリング、あるいは一貫性を保つために頻繁に行われます。
 
-## 方法：
+## How to: (方法)
+```clojure
+; 文字列置換の基本例
+(replace-first "cat" "bat" "the cat sat on the mat")
+; 出力: "the bat sat on the mat"
 
-Clojureを使用してテキストを検索および置換する基本的な方法は、 `clojure.string/replace` 関数を使用することです。以下に基本的な例を示します：
+; 正規表現を使った文字列置換
+(replace-first #"cat" "bat" "the cat sat on the cat mat")
+; 出力: "the bat sat on the cat mat"
 
-```Clojure
-(require '[clojure.string :as str])
-
-(defn search-and-replace
-  [s old new]
-  (str/replace s old new))
-
-(defn -main []
-  (println (search-and-replace "今日は晴れです" "晴れ" "雨")))
+; 全部の該当箇所を置換する
+(clojure.string/replace "the cat sat on the cat mat" #"cat" "bat")
+; 出力: "the bat sat on the bat mat"
 ```
 
-このコードを実行すると次のような出力が得られます：
+## Deep Dive (深いダイビング)
+テキストの検索と置換はエディタやワードプロセッサが最初に導入した機能の一つです。Clojureでは`clojure.string/replace` 関数などを使ってシンプルな置換ができます。正規表現の利用が可能で、複雑なパターンの検索や置換も対応しています。初期のプログラム言語ではテキスト処理が面倒だったが、Clojureのような現代言語はパワフルで柔軟な文字列操作機能を備えています。他にもテキストを処理する方法はありますが、`clojure.string`ライブラリは簡潔に書くことができるため最も普及しています。
 
-```Clojure
-今日は雨です
-```
-
-## 深潜り：
-
-テキストの検索と置換は、最初のコンピュータシステムが開発されたときから存在しています。これらの操作は、特に大量のデータを処理する必要がある場合に便利です。
-
-Clojureには `clojure.string/replace` の他にも、 `clojure.string/replace-first` など、テキスト検索と置換用の他の関数がいくつかあります。また、正規表現を使用することで、より複雑な検索と置換パターンを作成することも可能です。
-
-検索と置換の処理は、内部的には一般的にハッシュマップと配列を使用して最適化されています。一般的に、これらのアルゴリズムは時間とスペースの観点から効率的です。
-
-## また見てみましょう：
-
-Clojureに関するより詳しい情報は、以下のリンクを参照してください：
-
-1. Clojure公式ドキュメンテーション：[https://clojure.org/guides/getting_started](https://clojure.org/guides/getting_started)
+## See Also (参照)
+- [Clojure Documentation for clojure.string](https://clojure.github.io/clojure/clojure.string-api.html)
+- [ClojureDocs - A community-powered documentation site](https://clojuredocs.org/)

@@ -1,7 +1,8 @@
 ---
-title:                "Convertir une chaîne en minuscules"
-html_title:           "Arduino: Convertir une chaîne en minuscules"
-simple_title:         "Convertir une chaîne en minuscules"
+title:                "Conversion d'une chaîne de caractères en minuscules"
+date:                  2024-01-20T17:38:05.449760-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Conversion d'une chaîne de caractères en minuscules"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,31 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce & Pourquoi ?
+## What & Why?
+Convertir une chaîne en minuscules, c'est transformer tous les caractères alphabétiques en leur équivalent minuscule. Pourquoi ? Pour uniformiser les données avant comparaison ou traitement, éliminant ainsi les problèmes de casse.
 
-La conversion d'une chaîne en minuscules est une opération consistant à transformer toutes les lettres majuscules en lettres minuscules. Les programmeurs le font souvent pour normaliser les données et éviter les problèmes de correspondance de casse.
+## How to:
+Clojure rend la conversion super facile avec la fonction `clojure.string/lower-case`. Jetons un œil :
 
-## Comment faire :
+```Clojure
+(require '[clojure.string :as str])
 
-En Clojure, la fonction `lower-case` fera le travail pour vous. Voyez par vous-même:
+; Convertir une chaîne simple
+(str/lower-case "Bonjour MONDE")
+; => "bonjour monde"
 
-```clojure
-(defn lower-case-string [s]
-  (.toLowerCase s))
-
-(lower-case-string "BONJOUR, MON AMI !")
+; L'appliquer à une collection de chaînes
+(map str/lower-case ["ABC" "Déjà Vu" "123"])
+; => ("abc" "déjà vu" "123")
 ```
-Cela donnera en sortie : `"bonjour, mon ami !"`. Comme vous pouvez le voir, toutes les lettres majuscules sont devenues des minuscules.
 
-## Plongée profonde
+## Deep Dive
+Avant `clojure.string/lower-case`, des approches plus manuelles étaient nécessaires. Historiquement, la manipulation de texte est un problème classique, où chaque langue l'a réinventé à sa manière. L'avantage de Clojure est sa simplicité, et l'utilisation de Java interne pour la gestion des chaînes offre la performance.
 
-Historiquement, la conversion en minuscules est une pratique issue de l'époque où les systèmes de fichiers et les bases de données étaient sensibles à la casse. Aujourd'hui, même si ce n'est plus souvent le cas, normaliser en minuscule est une bonne habitude pour éviter des problèmes inattendus.
+Les alternatives incluent l'utilisation de regex pour remplacer manuellement ou utiliser des fonctions personnalisées pour parcourir et convertir les chaînes. Pour la coulisse, `clojure.string/lower-case` se base sur la méthode Java `toLowerCase()`, qui prend en compte les règles de localité (Locale) pour la conversion des caractères.
 
-Il existe des alternatives à `lower-case`, par exemple, vous pouvez utiliser une combinaison de `map` et `char-downcase` dans Clojure. Mais généralement, `lower-case` est plus simple et claire.
+## See Also
+Pour plus d'informations, consultez :
 
-En interne, `lower-case` fonctionne en appelant la méthode `toLowerCase()` de Java sur la chaîne. Cette méthode utilise les règles de casse du Locale par défaut de la machine virtuelle Java.
-
-## Voir aussi
-
-1. La documentation Clojure sur `lower-case`: [https://clojuredocs.org/clojure.string/lower-case](https://clojuredocs.org/clojure.string/lower-case)
-2. Java `toLowerCase()` : [https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
+- La documentation officielle de Clojure sur les chaînes : [clojure.string API](https://clojuredocs.org/clojure.string)
+- Informations sur les locales et la manipulation de texte en Java: [Oracle Java Locale](https://docs.oracle.com/javase/tutorial/i18n/locale/)

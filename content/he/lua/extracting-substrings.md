@@ -1,6 +1,7 @@
 ---
 title:                "חילוץ תת-מחרוזות"
-html_title:           "Bash: חילוץ תת-מחרוזות"
+date:                  2024-01-20T17:46:05.731657-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חילוץ תת-מחרוזות"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,33 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##מה זה ולמה? 
-חילוץ substring הוא הפרדת חלק ממחרוזת עיקרית. מתכנתים משתמשים בזה כדי לנפות או לשנות מידע מתוך מחרוזות באופן יעיל.
+## What & Why?
+מה זה חלקי מחרוזות (substrings) ולמה אנחנו צריכים להשיג אותם? ההוצאה של חלקי מחרוזת זה כאשר אנו בוחרים חלק מסוים של מחרוזת ומבודדים אותו. תוכנתנים עושים זאת כדי לנתח נתונים, לולאות (validate) קלטים ולעבד מידע בצורה יעילה.
 
-##איך עושים זאת:
-שיעור מהיר בחילוף substring בשפת Lua. התרגיל הפעם: חלץ את "Lua" מתחת למחרוזת "אני אוהב Lua!"
+## How to:
+הנה איך מוציאים חלקי מחרוזת ב-Lua:
+```lua
+-- דוגמא 1: קבלת חלק מהתחלה עם רשימת פרמטרים
+local text = "שלום עולם"
+local subtext = text:sub(1, 5)
+print(subtext)  -- יוצא "שלום"
 
-```Lua
-str = "אני אוהב Lua!"
-startPos, endPos = string.find(str, "Lua")
-Substring = string.sub(str, startPos, endPos)
-print(Substring)
-``` 
+-- דוגמא 2: קבלת חלק מסוף ללא פרמטר שני
+local subtext_end = text:sub(-5)
+print(subtext_end)  -- יוצא "עולם"
 
-הדפסה:
-
+-- דוגמא 3: קבלת תת-מחרוזת באמצעות תבנית (pattern)
+local pattern_subtext = string.match(text, "עול(.*)")
+print(pattern_subtext)  -- יוצא "ם"
 ```
-Lua
-```
 
-##מעמיקים:
-הפונקציה `string.sub` של Lua היא כלי חזק לחילוץ תת-מחרוזות, אך היא לא הייתה תמיד חלק מהפנים האפשריים של השפה. בשלבים מוקדמים של Lua, ניתן היה לביצוע פעולות דומות באמצעות מישורים ותווים.
+## Deep Dive
+הוצאת חלקי מחרוזת היא פונקציה בסיסית שניתן למצוא ברוב שפות התכנות. ב-Lua, הפונקציה `sub` מופיעה בגרסה 5 ומעלה. יש גם שיטות אלטרנטיביות כמו שימוש בביטויים רגולריים באמצעות המודול 'string'. היעילות של ההוצאה תלויה בגודל המחרוזת ובפונקציה שבחרת להשתמש.
 
-ניתן אף לחלץ את התת-מחרוזת בלי שימוש ב-`string.sub` , כמו למשל במימוש של משקף-אמצעי Regex, אך טכניקה זו היא בדרך כלל מורכבת יותר.
-
-זכור שב-Lua (כמו בכל מערכת שפועלת בעידן zero-based), הספרה הראשונה היא 1, ולא 0.
-
-##קראו גם:
-1. ["Programming in Lua" - מדריך המתחיל](https://www.lua.org/pil/1.html)
-2. [חילוץ תת-מחרוזות של Lua - Wiki](https://www.lua.org/pil/20.2.html)
-3. ["String Manipulation in Lua" מאת Roberto Ierusalimschy](https://www.lua.org/pil/20.html)
+## See Also
+- התיעוד הרשמי של Lua לעבודה עם מחרוזות: http://www.lua.org/manual/5.4/manual.html#6.4
+- מדריך לשימוש בביטויים רגולריים ב-Lua: https://www.lua.org/pil/20.2.html
+- פורום Stack Overflow של Lua לשאלות נפוצות: https://stackoverflow.com/questions/tagged/lua

@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie pliku tekstowego"
-html_title:           "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+date:                  2024-01-20T17:53:41.607760-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,55 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Czytanie pliku tekstowego to proces wczytywania danych z pliku do pamięci komputera. Programiści robią to po to, aby manipulować danymi, np. analizować je lub używać do sterowania zachowaniem programu.
+## What & Why? (Co i dlaczego?)
+Czytanie pliku tekstowego to proces pobierania danych z pliku zapisanego na karcie SD lub pamięci systemu. Programiści robią to, by załadować konfiguracje, dane wejściowe lub po prostu wyświetlić informacje na ekran.
 
-## Jak zrobić:
-Ścieżka do pliku, którego chcesz przeczytać, jest niezbędna. W Arduino, najpierw musisz umieścić plik na karcie SD i podłączyć kartę do płytki Arduino.
-
-Podstawowy kod do zadeklarowania modułu SD wygląda tak:
-
+## How to: (Jak to zrobić:)
 ```Arduino
+#include <SPI.h>
 #include <SD.h>
 
 File myFile;
 
-void setup()
-{
+void setup() {
   Serial.begin(9600);
+  
+  // Sprawdź, czy karta SD jest dostępna
   if (!SD.begin(4)) {
-    Serial.println("Initialization Failed!");
+    Serial.println("Blad karty SD");
     return;
   }
+  
+  // Otwórz plik w trybie czytania
   myFile = SD.open("test.txt");
   if (myFile) {
-    Serial.println("test.txt:");
     while (myFile.available()) {
       Serial.write(myFile.read());
     }
-    myFile.close();
+    myFile.close(); // Zawsze pamiętaj, by zamknąć plik po skończeniu.
   } else {
-    Serial.println("Error opening test.txt");
+    Serial.println("Błąd otwarcia pliku");
   }
 }
 
-void loop()
-{
-  // nothing happens after setup
+void loop() {
+  // Nic nie rób.
 }
+
 ```
-Jeśli wszystko pójdzie dobrze, twoje dane z pliku tekstowego zostaną wyświetlone w Monitorze Szeregów.
+Sample output:
+```
+Witaj, Arduino!
+Dane konfiguracyjne: 123
+```
 
-## W Głębi:
+## Deep Dive (Dogłębna analiza)
+Czytanie plików tekstowych z karty SD w Arduino zaczęło się, gdy moduły SD stały się dostępne. Biblioteka SD używa protokołu SPI i pozwala zarówno na odczyt, jak i zapis plików. Istnieje kilka alternatyw, jak używanie pamięci EEPROM w Arduino, ale karty SD oferują więcej miejsca i są wygodniejsze w użyciu. W implementacji ważne jest prawidłowe zamontowanie karty SD i obsługa błędów, by zapewnić stabilność wykonywanego programu.
 
-1. Historyczne Kontekst: Arduino zaczął obsługiwać odczyt i zapis danych od wersji 1.0, kiedy to wprowadzono bibliotekę SD.
-
-2. Alternatywy: Inne metody obsługi danych w formie tekstowej obejmują użycie pamięci EEPROM, jednak ma ona ograniczoną przestrzeń i jej wielekrótne nadpisywanie skróci żywotność chipa.
-
-3. Szczegóły Implementacji: W Arduino, dane są buforowane podczas odczytu i zapisu na karcie SD. To oznacza, że dane nie są wczytywane ani zapisywane do karty SD "po jednym bajcie", ale jednym blokiem na raz. To zwiększa prędkość odczytu i zapisu.
-
-## Zobacz też:
-
-- [Oficjalna dokumentacja biblioteki SD Arduino](https://www.arduino.cc/en/Reference/SD)
-- [Jak używać modułu karty SD z Arduino](https://www.makerguides.com/sd-card-arduino-tutorial/)
-- [Czytanie i Zapis plików tekstowych za pomocą Arduino](https://startingelectronics.org/tutorials/arduino/ethernet-shield-web-server-tutorial/SD-card-IO/)
+## See Also (Zobacz również)
+- [Arduino - File Read](https://www.arduino.cc/en/Reference/FileRead)
+- [Arduino - SD Library](https://www.arduino.cc/en/reference/SD)
+- [SPI Communication in Arduino](https://www.arduino.cc/en/reference/SPI)

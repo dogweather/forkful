@@ -1,6 +1,7 @@
 ---
 title:                "명령줄 인수 읽기"
-html_title:           "Arduino: 명령줄 인수 읽기"
+date:                  2024-01-20T17:55:42.179585-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "명령줄 인수 읽기"
 programming_language: "C++"
 category:             "C++"
@@ -10,32 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜하고 무엇인가?
-C++는 커맨드 라인 인수를 읽는 데 사용하며, 이를 통해 사용자는 프로그램에 입력을 제공할 수 있습니다. 이것은 사용자와 프로그램 간의 동적 상호작용을 가능하게 만듭니다.
+## What & Why? (무엇이며 왜?)
+명령줄 인수를 읽는 것은 프로그램 실행 시 사용자가 제공한 옵션을 가져오는 방법입니다. 프로그래머는 일반적으로 프로그램의 동작을 사용자가 원하는 대로 조정하기 위해 이를 수행합니다.
 
-## 이렇게 해보세요: 
-C++에서 커맨드 라인 인수를 읽는 기본 문법에는 두 가지 주요 구성 요소가 있습니다: 메인 함수의 매개 변수 `argc`와 `argv`.
-
+## How to: (어떻게 하나요?)
 ```C++
-#include<iostream>
-int main(int argc, char* argv[]) {
-    for(int i = 0; i < argc; i++) {
-        std::cout << "인수: " << argv[i] << '\n';
+#include <iostream>
+
+int main(int argc, char* argv[]){
+    std::cout << "Program Name: " << argv[0] << std::endl;
+    for(int i = 1; i < argc; ++i) {
+        std::cout << "Argument " << i << ": " << argv[i] << std::endl;
     }
     return 0;
 }
 ```
-만약 이 프로그램을 `food apple banana`라는 커맨드 라인 인수와 함께 실행한다면, 출력은 다음과 같을 것입니다:
-```C++
-인수: food
-인수: apple
-인수: banana
+**실행 예:**
+```
+$ ./myprogram option1 value1
+Program Name: ./myprogram
+Argument 1: option1
+Argument 2: value1
 ```
 
-## 더 알아보기: 
-이 능력은 Unix 시스템에서부터 시작된 것으로, 이제는 우리가 보는 대부분의 이기종 시스템에서 발견됩니다. 커맨드 라인 인수인 argv는 문자열의 배열입니다. argc는 이 배열에 들어 있는 요소의 수를 나타냅니다. 이 방법 외에도 프로그램에 데이터를 전달하는 다른 방법들도 있지만, 이는 C++에서 가장 일반적이고 기본적인 방법입니다.
+## Deep Dive (깊은 탐구)
+커맨드 라인 인수는 UNIX의 초창기부터 사용되었습니다. 사용자는 터미널을 통해 입력하고 프로그램은 `main` 함수의 인수를 통해 이를 받습니다: `argc`는 인수의 수를 나타내고, `argv`는 인수 내용을 담고 있는 문자열 배열입니다. 대안으로 `getopt` 라이브러리나 C++17의 `std::filesystem`이 있지만, 가볍고 간단한 요구 사항에는 전통적인 방식이 여전히 흔히 쓰입니다. 구현은 시스템마다 다를 수 있으니 portable code 작성 시 주의가 필요합니다.
 
-## 참고 자료: 
-- APUE (Advanced Programming in the UNIX Environment): 이 책은 Unix 프로그래밍에 대한 전반적인 내용을 다루고 있습니다.
-- [www.cplusplus.com](http://www.cplusplus.com/): 여기에 모든 C++ 주제에 대한 상세한 설명과 예제가 있습니다.
-- [stackoverflow.com](https://stackoverflow.com/): 질문이나 문제가 있다면, 이곳이 가장 좋은 자료입니다.
+## See Also (더 보기)
+- [cppreference.com: Main function](https://en.cppreference.com/w/cpp/language/main_function)
+- [GNU: Using the getopt library](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
+- [cplusplus.com: Argc and argv](http://www.cplusplus.com/articles/DEN36Up4/)

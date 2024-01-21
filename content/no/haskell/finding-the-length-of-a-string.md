@@ -1,7 +1,8 @@
 ---
-title:                "Finne lengden på en streng"
-html_title:           "Arduino: Finne lengden på en streng"
-simple_title:         "Finne lengden på en streng"
+title:                "Finn lengden på en streng"
+date:                  2024-01-20T17:47:38.968317-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Finn lengden på en streng"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,27 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å finne lengden på en streng betyr ganske enkelt å telle antall tegn i den. Vi gjør dette for å validere input, begrense tekst, og jobbe effektivt med data.
 
-Å finne lengden på en streng (tekst) betyr å telle antall tegn. Dette er særlig nyttig for feltvalidering, tekstbehandling og programmering av brukergrensesnitt.
+## Slik gjør du:
+Haskell gjør det enkelt å finne en strengs lengde med `length`-funksjonen. Her er et eksempel:
 
-## Hvordan gjøre det:
-
-I Haskell finnes det en innebygget funksjon kalt `length` for å finne lengden på en streng. Her er et eksempel:
-
-```Haskell
-lengdenAvStrengen = length "Hallo, verden"
+```haskell
+main :: IO ()
+main = do
+    let myString = "Hallo, Norge!"
+    print $ length myString
 ```
 
-Når du kjører koden over, vil `lengdenAvStrengen` lagre verdien 13, som er antall tegn i strengen "Hallo, verden".
+Forventet output:
 
-## Dype detaljer
+```
+12
+```
 
-Opprinnelsen til funksjonen `length` i Haskell går tilbake til det funksjonelle programmeringsprinsippet om å behandle data i det høyeste abstraksjonsnivået. Hvis vi hadde behov for å finne lengden på en streng på en lavere abstraksjon, kunne vi ha brukt en rekursiv funksjon eller en teller i en iterasjon. Men Haskell gir oss denne innebygde funksjonen for å øke kodelesbarheten og effektiviteten.
+## Dypdykk
+Historisk sett har streng-operasjoner vært grunnleggende i programmering, og funksjonen `length` har vært med siden de første versjonene av Haskell. `length` teller antall elementer i en liste, og siden en streng i Haskell er en liste av tegn, teller `length` antall tegn. Alternativt kan man bruke `Data.Text`-pakken for bedre ytelse med store strenger. Implementasjonsdetaljer å tenke på inkluderer effektivitet—`length` opererer i O(n) tid, så for svært lange lister kan dette påvirke ytelse.
 
-Alternative metoder for å finne en strenglengde kan inkludere å bruke en teller i en iterativ prosess, men `length`-funksjonen er vanligvis mer tids- og ressurseffektiv. I koden er 'length' implementert ved hjelp av en 'fold' operasjon, som effektivt itererer over listen (eller strengen) en gang, akkumulerer et resultat (lengden, i dette tilfellet).
-
-## Se også
-
-For mer informasjon om Haskell og strengbehandling, besøk følgende lenker:
-
-3. Stack Overflow thread: [How to count number of characters in a string in Haskell?](https://stackoverflow.com/questions/3963269/split-a-string-in-haskell)
+## Se Også
+- [Haskell Documentation on `length`](https://hackage.haskell.org/package/base-4.16.0.0/docs/Prelude.html#v:length)
+- [Performance impact with `Data.Text`](https://hackage.haskell.org/package/text-1.2.5.0/docs/Data-Text.html)

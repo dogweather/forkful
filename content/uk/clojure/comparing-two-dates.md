@@ -1,6 +1,7 @@
 ---
 title:                "Порівняння двох дат"
-html_title:           "Clojure: Порівняння двох дат"
+date:                  2024-01-20T17:33:47.893774-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Порівняння двох дат"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,32 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & чому?
-Порівняння двох дат дозволяє нам визначити, яка дата раніша, пізніша або чи вони однакові. Це корисно для обробки подій, що відбулися в період часу або для виконання операцій, що залежать від дат.
+## Що і чому?
+Порівняння двох дат — це процес визначення їх відносного порядку в часі. Програмісти роблять це, щоб організовувати події, валідувати періоди часу та управляти потоками даних, що залежать від часу.
 
 ## Як це зробити:
-Як наступний приклад, давайте порівняємо дві дати за допомогою Clojure.
+Clojure має вбудовані функції для роботи з датами, використовуючи java.util.Date, але працювати з java.time.LocalDate буде краще через імутабельність.
 
 ```Clojure
-(require '[clj-time.core :as t]
-         '[clj-time.coerce :as c])
+(require '[clj-time.core :as t])
+(require '[clj-time.format :as f])
 
-(def date1 (t/date-time 2020 12 25)) ; Christmas 2020
-(def date2 (t/date-time 2021 1 1)) ; New Year 2021
+;; Припустимо, маємо дві дати в рядках, перетворимо їх в LocalDate:
+(def date-str-1 "2023-03-15")
+(def date-str-2 "2023-03-20")
 
-(t/after? date2 date1) ; true
-(t/before? date1 date2) ; true
-(t/equal? date1 date2) ; false
+(def fmt (f/formatters :basic-date))
+(def date-1 (t/local-date (f/parse fmt date-str-1)))
+(def date-2 (t/local-date (f/parse fmt date-str-2)))
+
+;; Порівнюємо дати:
+(t/before? date-1 date-2) ;; -> true, оскільки date-1 є до date-2
+(t/after? date-1 date-2) ;; -> false, оскільки date-1 не є після date-2
+(t/equal? date-1 date-2) ;; -> false, оскільки date-1 не дорівнює date-2
 ```
 
-## Поглиблений вступ:
-В історичному контексті, порівняння дат було проблемою, з якою програмісти стикалися від початку комп'ютерної ери. В Clojure ця задача вирішується за допомогою бібліотеки `clj-time`, що базується на Joda-Time для Java.
+## В глибину:
+У Clojure для порівняння дат більш звично використовувати clj-time, який є обгорткою для Joda-Time до виходу Java 8. Після Java 8 рекомендується використовувати java.time.* API, через його імутабельність та краще API.
 
-Але ви також можете використовувати інші методи або бібліотеки, такі як `java.time` від Java 8, якщо ви бажаєте роботу з вбудованими типами Java.
+Існують альтернативи, наприклад, `cljc.java-time` бібліотека, яка намагається забезпечити однаковий досвід у Clojure і ClojureScript, опираючись на java.time and JS-Joda відповідно.
 
-Три функції, що ми використали (`after?`, `before?`, `equal?`) внутрішньо перетворюють дати в мілісекунди (за допомогою `getMillis`), що дозволяє порівняти їх в числовій формі.
+Робота із часовими зонами та літнім часом може спричинити непередбачувані результати, тому важливо правильно використовувати часові зони при порівнянні дат.
 
-## Дивіться також:
-1. Бібліотека clj-time: https://github.com/clj-time/clj-time
-2. Joda-Time: http://www.joda.org/joda-time/
-3. java.time: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+## Посилання:
+- CLJ-Time GitHub репозиторій: [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
+- Бібліотека cljc.java-time: [https://github.com/henryw374/cljc.java-time](https://github.com/henryw374/cljc.java-time)

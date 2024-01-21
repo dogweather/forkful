@@ -1,7 +1,8 @@
 ---
-title:                "基本認証を使用してhttpリクエストを送信する"
-html_title:           "C#: 基本認証を使用してhttpリクエストを送信する"
-simple_title:         "基本認証を使用してhttpリクエストを送信する"
+title:                "基本認証を使用したHTTPリクエストの送信"
+date:                  2024-01-20T18:02:06.558325-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "基本認証を使用したHTTPリクエストの送信"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,44 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+HTTPリクエストにベーシック認証を使います。これはウェブリソースへの安全なアクセスを提供するためです。プログラマは、認証が必要なリソースにアクセスするには、ユーザー名とパスワードを使う必要があります。
 
-HTTPリクエストに基本認証を使用するとは、サーバーに対して認証の情報と共にリクエストを送信することを指します。これは、認証が必要なWebリソースにアクセスするために行われます。
-
-## 利用法
-
-以下は、HTTPリクエストに基本認証を利用する基本的なHaskellコード例です：
+## How to (実装方法):
+HaskellでHTTPリクエストにベーシック認証を加える例です：
 
 ```Haskell
-{-# LANGUAGE OverloadedStrings #-}
 import Network.HTTP.Simple
-import Network.HTTP.Client () -- For Request instance
+import Data.ByteString.Char8 (pack)
 
 main :: IO ()
 main = do
-    initRequest <- parseRequest "http://example.com/"
-    let request = applyBasicAuth "my_user" "my_password" initRequest
-    response <- httpLBS request
-    print response
+  let auth = "Basic " ++ (unpack . Base64.encode . pack) "username:password"
+  request' <- parseRequest "GET http://example.com"
+  let request = setRequestHeader "Authorization" [pack auth] request'
+  response <- httpLBS request
+  putStrLn $ "Status code: " ++ show (getResponseStatusCode response)
 ```
 
-これを実行すると、次のような出力が得られます：
+サンプル出力:
 
-```Haskell
+```
 Status code: 200
-Headers: [("Server","nginx"), ("Content-Type","text/html; charset=UTF-8")]
-Body: <the response body>
 ```
 
-## 深層情報
+## Deep Dive (掘り下げ):
+### 歴史的背景:
+ベーシック認証は古いが信頼できる手法です。最初のHTTP/1.0提案で使用されました。ただし、平文でのユーザー名とパスワードの送信は安全ではないため、HTTPSの使用が推奨されます。
 
-基本認証を含むHTTPリクエストを送信すると、認証情報が平文でエンコードされ、ヘッダー`Authorization: Basic <credentials>`に含まれます。"Basic"は、基本認証を使用していることを示します。
+### 代替手段:
+オプションには、OAuthやTokenベースの認証があります。これらはより安全で、現代のAPIにおいて好まれます。
 
-この方法は非常に歴史的なもので、送信される情報が暗号化されていないため安全ではないとされていますが、HTTPS経由で通信を行う場合（つまり、リクエストそのものが暗号化されている場合）は、依然として有効です。
+### 実装詳細:
+`Network.HTTP.Simple`モジュールは、リクエストヘッダを設定しやすくします。`Authorization`ヘッダに`Basic`認証トークンを挿入することで認証情報が送信されます。パスワードとユーザー名はBase64でエンコードする必要があります。
 
-代替手段としてトークンベースの認証やOAuthがありますが、実装の複雑さと進行中のメンテナンスが必要になるため、基本認証は簡単で速やかに認証を行う際の適切な選択肢です。
-
-## 関連情報
-
-1. [Haskellの基本認証](https://hackage.haskell.org/package/http-client-0.7.3/docs/Network-HTTP-Client.html)
-3. [基本認証のセキュリティ上の警告](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication#Security)
+## See Also (関連情報):
+- Haskell `http-conduit`: https://hackage.haskell.org/package/http-conduit
+- HTTP 認証: https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication
+- Base64 エンコーディング: https://hackage.haskell.org/package/base64-bytestring

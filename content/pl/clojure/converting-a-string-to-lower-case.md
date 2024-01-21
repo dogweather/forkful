@@ -1,6 +1,7 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+date:                  2024-01-20T17:38:17.463377-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,27 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Konwertowanie ciągu znaków na małe litery oznacza zmianę wszystkich liter w tekście na ich małe odpowiedniki. W programowaniu robimy to dla jednolitości danych, łatwiejszego porównywania stringów i spełniania wymagań specyficznych interfejsów użytkownika.
 
-Zmiana ciągu znaków na małe litery to operacja, która przekształca wszystkie duże litery na małe. Programiści robią to, aby ułatwić porównania i wyszukiwanie, czyli znormalizować dane tekstowe.
+## How to:
+W Clojure, użyj `clojure.string/lower-case` do konwertowania stringów na małe litery. Proste jak paszczaka ciastko:
 
-## Jak to zrobić:
+```clojure
+(require '[clojure.string :as str])
 
-Ze stringami w Clojure można pracować jak z sekwencjami znaków. Sprawdźmy to na przykładzie:
-```Clojure
-(apply str (map clojure.string/lower-case "Witaj, Świecie!"))
-;; Output: "witaj, świecie!"
+;; Przykład konwersji
+(str/lower-case "Jestem Programistą w Clojure, a Ty?")
+;; Wynik: "jestem programistą w clojure, a ty?"
 ```
-Ten kod bierze string "Witaj, Świecie!", mapuje przez wszystkie znaki funkcję `clojure.string/lower-case`, a następnie łączy wszystko z powrotem w string za pomocą `apply str`.
 
-## Pogłębione informacje:
+## Deep Dive
+W Clojure, konwersja na małe litery nie różni się zbytnio od innych języków programowania. Używamy integrowanej funkcji `lower-case` z namespace `clojure.string`.
 
-Funkcja zmieniająca duże litery na małe istnieje w wielu językach programowania, takich jak C, Java i Python, długo przed tym, jak pojawiła się w Clojure's. Alternatywą dla korzystania z `clojure.string/lower-case` jest napisanie własnej funkcji, która wykonuje tę samą operację. Jednak jest to zdecydowanie mniej efektywne.
+Historia: Koncepcja ta pochodzi z czasów, kiedy standardy kodowania i systemy porównań tekstowych były w fazie młodości. By uniknąć błędów spowodowanych różnicami w wielkości liter, programiści zaczęli konwertować teksty na małe litery.
 
-Od strony implementacyjnej `lower-case` używa standardowych funkcji Javy do transformacji liter - tworzy obiekt `java.lang.String`, a następnie wywołuje na nim metodę `toLowerCase`.
+Alternatywy: Możesz także rozbudować standardową funkcję by np. obsługiwać teksty z alfabetów innych niż łaciński. Lub użyć `clojure.string/lower-case` w połączeniu z innymi funkcjami, aby usunąć białe znaki czy znormalizować tekst.
 
-## Zobacz także:
+Szczegóły implementacji: Funkcja `lower-case` wykorzystuje klasę `java.lang.String` i jej metodę `toLowerCase`, która z kolei korzysta z reguł `Locale` domyślnego dla JVM.
 
-"Clojure przez przykład" - zestaw interaktywnych tutoriali prezentujących podstawowe koncepty języka Clojure: https://www.braveclojure.com/
-
-"Dokumentacja API Clojure String" - dokładne wyjaśnienia i przykłady użycia funkcji przeprowadzających operacje na stringach: https://clojuredocs.org/clojure.string
+## See Also
+- Oficjalna dokumentacja Clojure [clojure.string](https://clojuredocs.org/clojure.string/lower-case)
+- JavaDoc dla klasy [String](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toLowerCase())

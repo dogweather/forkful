@@ -1,7 +1,8 @@
 ---
-title:                "Wydobywanie podciągów"
-html_title:           "Python: Wydobywanie podciągów"
-simple_title:         "Wydobywanie podciągów"
+title:                "Wycinanie podłańcuchów"
+date:                  2024-01-20T17:46:44.636267-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wycinanie podłańcuchów"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,49 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
 
-Aby wyodrębnić podłańcuch, rozdzielamy ciąg znaków na mniejsze części. Programiści robią to, aby wyłuskać określone dane z większych bloków tekstu.
+Wyodrębnianie podciągów to działanie polegające na przywłaszczeniu sobie części stringu. Programiści robią to, aby pracować tylko z tymi złotymi kawałkami danych, które są dla nich w danej chwili potrzebne.
 
-## Jak to zrobić:
-
-```Rust
-fn main() {
-    let slowo = "Programowanie";
-    let podlancuch = &slowo[3..6];
-    println!("{}", podlancuch);
-}
-```
-
-Gdy uruchomimy ten kod, wydrukowany zostanie podłańcuch "gram", który jest z przedziału od 3 do 6.
+## How to (Jak to zrobić):
 
 ```Rust
 fn main() {
-    let slowo = "Komputer";
-    let poczatek = &slowo[..4];
-    println!("{}", poczatek);
+    let text = "Jak to zrobić w Rust?";
+    let start = 8;
+    let end = 15;
+    
+    // Podejście 1: Używając metody `get`
+    match text.get(start..end) {
+        Some(substring) => println!("Podejście 1: {}", substring),
+        None => println!("Podejście 1: Wybrano nieprawidłowy zakres!"),
+    }
+
+    // Podejście 2: Slices and the `chars()` iterator
+    let substring: String = text.chars().skip(start).take(end - start).collect();
+    println!("Podejście 2: {}", substring);
 }
+
+// Sample output:
+// Podejście 1: zrobić
+// Podejście 2: zrobić
 ```
 
-Po uruchomieniu tego kodu, wydrukowane zostanie słowo "Komp", które znajduje się na początku ciągu.
+Wskazówka: Uważaj na Unicode! `chars()` iteruje po wartościach znaków, a nie po bajtach.
 
-## Głębsze zanurzenie:
+## Deep Dive (Głębsze nurkowanie):
 
-Przy wyodrębnianiu podłańucha w Rust, odnosimy się do bajtów, nie indeksów znaków. To dlatego niektóre operacje mogą być trudne do przewidzenia. Jest to konsekwencja wykorzystania przez Rust kodowania UTF-8.
+Historia czasami wpływa na to, jak kodujemy. Rust został stworzony, by zarządzać pamięcią bezpiecznie i efektywnie. Znane są metody `.slice()`, które omijały te cechy Rusta, ale z czasem metody te zostały zamienione na bardziej bezpieczne `get()` i iteratory.
 
-Elegancką alternatywą dla wyżej przedstawionych metod jest użycie funkcji `char_indices()` która zwraca indeksy znaków, nie bajtów.
+Jeśli chodzi o alternatywy, istnieje także crate `regex` dla przypadków wymagających bardziej skomplikowanego wyszukiwania. Implementacja jest ważna z powodu sposobu, w jaki Rust obsługuje stringi jak ciągi bajtów, a nie ciągi znaków, co ma znaczenie dla Unicode. Slices pozwalają na łatwe wyodrębnianie, ale należy pamiętać o granicach kodowania znaków.
 
-```Rust
-fn main() {
-    let kawalek = "Komputer".char_indices().nth(2..4);
-    println!("{:?}", kawalek); 
-}
-```
+## See Also (Zobacz także):
 
-Jednak ta metoda ma swoje ograniczenia, na przykład nie poradzi sobie z wyodrębnianiem pojedynczych znaków z ciągu.
-
-## Zobacz także:
-
-1. Dokumentacja Rust na temat ciągów znaków: https://doc.rust-lang.org/std/string/index.html
-2. Szczegółowy artykuł o kodowaniu UTF-8 w Rust: https://www.ameyalokare.com/rust/2017/10/12/rust-str-vs-String.html
-3. Poradnik o manipulacji ciągami znaków w Rust: https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html#strings
+- Oficjalna dokumentacja String i str w Rust: [std::string](https://doc.rust-lang.org/std/string/index.html), [std::str](https://doc.rust-lang.org/std/str/)
+- Unicode i Rust: [Understanding Strings in Rust](https://fasterthanli.me/articles/understanding-strings-in-rust)

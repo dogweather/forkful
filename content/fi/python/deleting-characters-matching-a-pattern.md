@@ -1,7 +1,8 @@
 ---
-title:                "Merkkien poistaminen vastaavalla mallilla"
-html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
-simple_title:         "Merkkien poistaminen vastaavalla mallilla"
+title:                "Merkkien poistaminen hakemalla osumia kaavaan"
+date:                  2024-01-20T17:43:08.648776-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,41 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kuvioita vastaavien merkkien poistaminen Pythonilla: Mikä, Miksi ja Miten?
+## What & Why? (Mikä & Miksi?)
+Kun puhumme merkkien poistamisesta kuvion mukaan, tarkoitamme tiettyjä merkkejä sisältävien osien paikantamista ja poistamista merkkijonosta. Tämä toiminto on hyödyllinen, koska se auttaa siistimään ja muokkaamaan tekstidataa - esimerkiksi käyttäjäsyötteiden puhdistamisessa tai ennalta määrättyjen mallien, kuten puhelinnumeroiden, poistamisessa.
 
-## Mikä & Miksi?
-
-Kuvionsopivien merkkien poistaminen on tapa poistaa kaikki merkit, jotka täyttävät tietyn mallin. Ohjelmoijat tekevät tämän yksinkertaistamaan tai jalostamaan dataa, tai ehkä panemaan sen formaattiin, jonka muu koodi voi käsitellä.
-
-## Näin tehdään:
-
-Pythonissa `str.replace()` funktio tai `re.sub()` funktio ovat hyviä työkaluja tähän tarkoitukseen. Tässä on joitain esimerkkejä:
-```python
-# str.replace() -esimerkki
-s = 'Hei, minun nimeni on Python!'
-s = s.replace('!', '.')
-print(s)  # Tulostaa: 'Hei, minun nimeni on Python.'
-
-# re.sub() -esimerkki
+## How to (Kuinka tehdä):
+```Python
 import re
-s = 'Hei, minun nimeni on Python!'
-s = re.sub('[!,]', '.', s)
-print(s)  # Tulostaa: 'Hei. minun nimeni on Python.'
+
+# Esimerkki: Poistetaan kaikki numeroita vastaavat merkit merkkijonosta.
+teksti = "Hei! Olen 30-vuotias ja asun postinumeroalueella 00100."
+puhdas_teksti = re.sub(r'\d', '', teksti)
+print(puhdas_teksti)
+```
+Tulostus:
+```
+Hei! Olen -vuotias ja asun postinumeroalueella .
 ```
 
-## Syvällisempi tieto:
+```Python
+# Esimerkki: Poistetaan välimerkit käyttämällä.
+teksti = "Onko sinulla kysymyksiä? Vastaa, kiitos!"
+puhdas_teksti = re.sub(r'[?!,.]', '', teksti)
+print(puhdas_teksti)
+```
+Tulostus:
+```
+Onko sinulla kysymyksiä Vastaa kiitos
+```
 
-Kuvionsopivien merkkien poistaminen tunnetaan myös regex-sanalla ja se on ollut ohjelmoinnin kulmakivi vuodesta 1951, kun se otettiin käyttöön ensimmäistä kertaa.
+## Deep Dive (Sukellus syvemmälle):
+Merkkien poistaminen kuvion mukaan on ollut osa ohjelmointia jo vuosikymmeniä. Se liittyy vahvasti säännöllisiin lausekkeisiin, jotka tulivat käyttöön 1950-luvulla Stephen Kleenen töiden kautta. Pythonissa `re`-kirjasto tarjoaa rikkaat mahdollisuudet säännöllisten lausekkeiden käsittelyyn.
 
-Vaihtoehtoisia metodeja ovat `str.translate()` ja `str.maketrans()`, mutta ne ovat hieman monimutkaisempia ja hitaampia, koska ne luovat aluksi taulukon.
+Vaihtoehtoisia tapoja poistaa merkkejä ovat muun muassa Pythonin perusmetodit, kuten `replace()` tai `translate()`, mutta ne eivät ole yhtä monipuolisia kuin säännölliset lausekkeet.
 
-Kun koodi poistaa merkkejä, se käy läpi jokaisen merkin merkkijonossa ja tarkistaa, täyttääkö se annetun mallin. Jos se on täyttänyt, merkki poistetaan.
+Yksityiskohtia toteutuksesta: `re.sub()`-funktio ottaa kolme pääargumenttia, jotka ovat kuvio, korvaava merkkijono ja kohde merkkijono. `re.sub(r'\d', '', teksti)` esimerkiksi etsii kaikki numerot (kuvio `r'\d'`) ja korvaa ne tyhjällä merkkijonolla ('') kohde merkkijonossa (`teksti`).
 
-## Lisää tietoa:
-
-Suosittelen lukemaan seuraavat artikkelit lisätietojen saamiseksi asiasta:
-
-1. [Pythonin virallinen dokumentaatio str.replace() -funktiosta](https://docs.python.org/3/library/stdtypes.html#str.replace)
-2. [Pythonin virallinen dokumentaatio re.sub() -funktiosta](https://docs.python.org/3/library/re.html#re.sub)
-3. [Pythonin virallinen dokumentaatio str.translate() ja str.maketrans() -funktioista](https://docs.python.org/3/library/stdtypes.html#str.translate)
-4. [Lisätietoja regex-patternista](https://en.wikipedia.org/wiki/Regular_expression)
+## See Also (Katso myös):
+- Pythonin säännölliset lausekkeet: https://docs.python.org/3/library/re.html
+- Säännöllisten lausekkeiden opas: https://www.regular-expressions.info/
+- Stephen Kleenen tutkimukset: https://www.cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html

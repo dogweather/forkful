@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie pliku tekstowego"
-html_title:           "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+date:                  2024-01-20T17:53:50.873895-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,40 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i dlaczego?)
+Odczytywanie pliku tekstowego to proces wydobycia informacji zapisanych w pliku na dysku. Programiści robią to, by umożliwić aplikacjom korzystanie z danych, takich jak ustawienia, dane wejściowe użytkownika czy zawartość do przetworzenia.
 
-Czytanie pliku tekstowego to proces, w którym program komputerowy odczytuje dane z pliku zapisanego w formacie tekstowym. Programiści robią to, aby obsłużyć informacje zapisane w plikach, takie jak konfiguracje, dane wejściowe lub zapisy dzienników.
-
-## Jak to zrobić:
-
-Zacznijmy od podstaw. Oto proste czytanie pliku w języku C++.
-
-```c++
+## How to: (Jak to zrobić?)
+```C++
 #include <iostream>
 #include <fstream>
 #include <string>
 
 int main() {
-   std::ifstream plik("plik.txt");
-   std::string linia;
-   while (getline(plik, linia)) {
-      std::cout << linia << '\n';
-   }
-   return 0;
+    std::ifstream infile("przykladowy_plik.txt");
+
+    if (infile.is_open()) {
+        std::string line;
+        while (getline(infile, line)) {
+            std::cout << line << '\n';
+        }
+        infile.close();
+    } else {
+        std::cerr << "Nie można otworzyć pliku!" << std::endl;
+    }
+
+    return 0;
 }
 ```
-Wyjście programu to zawartość pliku `plik.txt`, wydrukowana linia po linii.
 
-## Deep Dive
+Jeśli plik `przykladowy_plik.txt` zawiera:
+```
+Witaj, świecie!
+To jest tekst z pliku.
+```
 
-Czytanie plików tekstowych to podstawa operacji I/O w wielu językach programowania, a C++ nie jest wyjątkiem. Pioneerskie języki, takie jak FORTRAN i COBOL, już miały wsparcie na poziomie języka dla operacji I/O na plikach.
+Wynik na ekranie będzie:
+```
+Witaj, świecie!
+To jest tekst z pliku.
+```
 
-Alternatywą dla metody pokazanej powyżej jest użycie bibliotek zewnętrznych, które mogą oferować funkcje odczytu plików zaawansowane lub lepiej dostosowane do Twojego przypadku użytkowania.
+## Deep Dive (Głębsze spojrzenie)
+Odczytywanie plików tekstowych w C++ ma długą historię. W pierwszych wersjach języka używano funkcji z biblioteki C, takich jak `fopen`, `fgets`, czy `fclose`. Nowoczesny C++ oferuje klasy jak `ifstream` do eleganckiego i efektywnego odczytu plików.
 
-Pod kątem implementacji, kiedy otwierasz plik w C++, tworzony jest strumień, który jest abstrakcją umożliwiającą operacje wejścia/wyjścia. Możliwe jest również otwarcie pliku w trybie binarnym, co jest bardziej wydajne, ale nie jest to odpowiednie dla ludzko-czytelnych plików tekstowych.
+Alternatywy? Możemy używać bibliotek takich jak Boost, które oferują rozszerzone możliwości pracy z plikami. Jest też `std::filesystem` w C++17 pozwalający na proste zarządzanie plikami i katalogami.
 
-## Zobacz też
+Ważne szczegóły? Pamiętaj o kontrolowaniu otwarcia pliku (`if (infile.is_open())`) i zamykaj go po zakończeniu (`infile.close()`). Obsługa błędów jest kluczowa, by uniknąć awarii programu.
 
-1. [I/O Stream Library](https://en.cppreference.com/w/cpp/io): Więcej informacji o bibliotece strumieniowej C++.
-2. [File I/O in C++](http://www.cplusplus.com/doc/tutorial/files/): Tutorial do pierwszych kroków w I/O plików w C++.
-3. [Boost Filesystem Library](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm): Zaawansowana biblioteka do operacji na plikach.
+## See Also (Zobacz również)
+- Dokumentacja C++ `ifstream`: http://www.cplusplus.com/reference/fstream/ifstream/
+- Dokumentacja C++ `std::getline`: http://www.cplusplus.com/reference/string/string/getline/
+- Poradnik C++ File I/O: https://cplusplus.com/doc/tutorial/files/ 
+- Tutorial Boost Filesystem: https://www.boost.org/doc/libs/release/libs/filesystem/doc/index.htm
+- Tutorial `std::filesystem` w C++17: https://en.cppreference.com/w/cpp/filesystem

@@ -1,6 +1,7 @@
 ---
 title:                "コマンドライン引数の読み取り"
-html_title:           "Bash: コマンドライン引数の読み取り"
+date:                  2024-01-20T17:55:24.796844-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "コマンドライン引数の読み取り"
 programming_language: "C"
 category:             "C"
@@ -10,56 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
 
-コマンドライン引数の読み取りは、プログラムの起動時に渡されるオプションやデータを取得する方法です。これにより、ユーザーがプログラムの動作を動的に制御できるようになります。
+コマンドライン引数を読むことは、プログラムに外部から追加の情報を与えて動作を変える方法です。プログラマはこの機能を使って、柔軟性とユーザーのコントロールを高めます。
 
-## 実際の方法：
+## How to: (やり方)
 
-以下に簡単なコード例を示します。この例では、引数の数と引数自体を表示します。
 ```C
-#include<stdio.h>
+#include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    int counter;
-
-    printf("Program Name Is: %s",argv[0]);
-
-    if(argc==1)
-        printf("\nNo Extra Command Line Argument Passed Other Than Program Name");
-    if(argc>=2)
-    {
-        printf("\nNumber Of Arguments Passed: %d",argc);
-        printf("\n----Following Are The Command Line Arguments Passed----");
-
-        for(counter=0; counter<argc; counter++)
-            printf("\nargv[%d]: %s", counter, argv[counter]);
+    printf("Program Name: %s\n", argv[0]);
+    if(argc > 1) {
+        for(int i = 1; i < argc; i++) {
+            printf("Argument %d: %s\n", i, argv[i]);
+        }
+    } else {
+        printf("No additional arguments were provided.\n");
     }
 
     return 0;
 }
 ```
-仮に上記プログラムを `arg_reader.exe` として、次のように引数を渡して起動します: `arg_reader.exe One Two Three`
 
-出力は次のようになります:
+実行例:
+
 ```
-Program Name Is: arg_reader.exe
-Number Of Arguments Passed: 4
-----Following Are The Command Line Arguments Passed----
-argv[0]: arg_reader.exe
-argv[1]: One
-argv[2]: Two
-argv[3]: Three
+$ ./your_program foo bar baz
+Program Name: ./your_program
+Argument 1: foo
+Argument 2: bar
+Argument 3: baz
 ```
 
-## 掘り下げ：
+## Deep Dive (詳細な解説)
 
-コマンドライン引数の使用は、プログラミングが始まった当初から存在し、こうした引数なしには多くのユーティリティが存在できないと言えます。より進んだ方法として `getopt()` や `getopt_long()` 関数があることにも触れておきます。これらの関数を利用すると、コマンドラインオプションのパースが容易になります。
+コマンドライン引数はUNIX時代から存在します。`main`関数は`argc`（引数の数）、`argv`（引数の値の配列）を受け取ります。`argv[0]`はプログラム名。`argc`は常に1以上です。他の方法として、ライブラリやフレームワークが提供する引数解析のための機能もあります。例えば、`getopt`関数や`argp`ライブラリーなど。これらはコマンドライン引数を扱う際に追加の便利機能を提供します。
 
-基本的に `argc` と `argv` を通じてコマンドライン引数を読み取る際、`main()` 関数が OS からこれらの情報を受け取ると考えてよいです。`argc` は引数の数を示し、`argv` の各要素が個々の引数を指しています。
+## See Also (関連情報)
 
-## 参考資料：
-
-1. コマンドライン引数について詳しく説明している英語の記事: https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm
-2. `getopt()` 関数の使い方: https://www.gnu.org/software/libc/manual/html_node/Using-Getopt.html
-3. `getopt_long()` 関数の使い方: https://www.gnu.org/software/libc/manual/html_node/Getopt-Long-Options.html
+- C Standard Library Reference: https://en.cppreference.com/w/c
+- GNU C Library (glibc): https://www.gnu.org/software/libc/manual/
+- C FAQs on Command Line Arguments: https://c-faq.com/aryptr/index.html

@@ -1,6 +1,7 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "C: Usuwanie znaków pasujących do wzorca"
+date:                  2024-01-20T17:43:26.048214-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,38 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Usuwanie znaków zgodnych z wzorcem to filtracja ciągu tekstowego przez usunięcie określonych znaków. Programiści robią to, aby oczyścić dane wejściowe, przygotować tekst do analizy, czy też usunąć niechciane lub niebezpieczne treści.
 
-Usuwanie znaków zgodnych z określonym wzorcem to proces wykorzystywany do czyszczenia danych wejściowych, tego typu operacje są często stosowane podczas przetwarzania literałów łańcuchowych. Programiści stosują to narzędzie, aby kontrolować i ulepszać jakość danych.
-
-## Jak to zrobić:
-
-Oto kilka przykładów pokazujących, jak możemy usunąć wzorzec znaków w TypeScript. Wykorzystajmy wbudowaną metodę `replace()`, która pozwala nam zastąpić określony fragment ciągu innym.
-
+## How to: (Jak to zrobić?)
 ```TypeScript
-let str = "Cześć, jestem programistą TypeScript!";
-  
-// Usuńmy wszystkie wystąpienia litery 'a'
-let newStr = str.replace(/a/g, '');
-console.log(newStr);  // "Cześć, jestem progrmistą TypeScript!"
+function deleteMatchingCharacters(str: string, pattern: RegExp): string {
+  return str.replace(pattern, '');
+}
+
+// Przykład użycia:
+const originalString = 'Hello, World! 1234';
+const cleanedString = deleteMatchingCharacters(originalString, /[0-9,!]/g);
+
+console.log(cleanedString); // Wypisze: "Hello World"
 ```
+Zauważ, że używamy `RegExp` (klasa wyrażeń regularnych w JavaScript) do definiowania wzorca znaków do usunięcia oraz globalnego flagi `g` do znalezienia wszystkich wystąpień. Metoda `replace` przeszukuje i zastępuje znalezione pasujące fragmenty.
 
-## Deep Dive
+## Deep Dive (Dogłębna analiza)
+Usuwanie znaków pasujących do wzorca nie jest nowym pomysłem – wywodzi się z koncepcji wyrażeń regularnych, które narodziły się w teorii automatów i języków formalnych. Koncept ten znalazł swoje zastosowanie na początku lat 70. w edytorach tekstu i narzędziach Unix.
 
-(1) Historyczny kontekst: Metoda 'replace' jest częścią oryginalnego zestawu narzędzi JavaScript, który został wprowadzony w ES5. Odkąd TypeScript jest nadzbiorem JavaScript, ta metoda jest również dostępna.
-  
-(2) Alternatywy: Możemy również użyć metody `split().join()` aby usunąć określone znaki ze stringów.  
+Dzisiaj alternatywą do `replace` z wyrażeniami regularnymi może być na przykład użycie metod `split` i `filter` na łańcuchach znaków. Jednakże, zazwyczaj jest to mniej wydajne.
 
-```TypeScript
-let str = "Cześć, jestem programistą TypeScript!";
-let newStr = str.split('a').join('');
-console.log(newStr); // "Cześć, jestem progrmistą TypeScript!"
-```
+Implementacja w TypeScript jest prosta, ale pamiętaj o bezpieczeństwie. Niebezpieczne wzorce mogą prowadzić do ataków, takich jak ReDoS (Regular Expression Denial of Service). Uważaj na specjalne znaki w wyrażeniach regularnych i zawsze testuj performance.
 
-(3) Szczegóły implementacji: Metoda `replace()` używa wyrażeń regularnych do identyfikacji wzorca, który ma zostać zastąpiony. Warunkiem koniecznym jest dodanie flagi 'g' do wyrażenia, aby zastąpić wszystkie wystąpienia, a nie tylko pierwsze.
-  
-## Zobacz także
-
-- Dokumentacja MDN na temat metody `replace()`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
-- Dokumentacja MDN na temat wyrażeń regularnych: https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions
-- Wprowadzenie do TypeScript (Oficjalna strona TypeScript): https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
+## See Also (Zobacz również)
+- MDN Web Docs on Regular Expressions: [Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- RegExp Pattern Syntax: [RegExp Patterns](https://www.regular-expressions.info/javascript.html)
+- TypeScript Handbook: [TypeScript Handbook](https://www.typescriptlang.org/docs/)
+- Performance considerations: [ReDoS](https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS)

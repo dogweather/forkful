@@ -1,7 +1,8 @@
 ---
-title:                "Tworzenie tymczasowego pliku"
-html_title:           "C#: Tworzenie tymczasowego pliku"
-simple_title:         "Tworzenie tymczasowego pliku"
+title:                "Tworzenie pliku tymczasowego"
+date:                  2024-01-20T17:40:00.515995-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,36 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Tworzymy tymczasowy plik, by obrabiać dane, które nie muszą trwać długo. Programiści robią to, by testować kod, przechowywać dane sekwencyjnie, lub ograniczyć zużycie pamięci.
 
-Tworzenie tymczasowego pliku to proces generowania pliku, który jest potrzebny tylko przez krótki okres czasu. Programiści robią to, aby magazynować dane, których nie potrzebują na stałe, ale które są niezbędne dla jakiejś tymczasowej operacji.
-
-## Jak to zrobić:
-
-Używając Elixira, możemy łatwo utworzyć tymczasowy plik za pomocą modułu `File` . Poniżej znajduje się kod potrzebny do utworzenia tymczasowego pliku.
+## How to:
+W Elixirze nie ma wbudowanej obsługi dla tworzenia tymczasowych plików, ale możemy użyć `System.cmd/3` z `mktemp` dostępnym na większości systemów UNIX.
 
 ```elixir
-File.write!("/tmp/temp.txt", "Oto jakiś tymczasowy tekst")
+{temp_path, 0} = System.cmd("mktemp", [])
+File.write!(temp_path, "Hej, to przykładowa zawartość!")
+IO.puts File.read!(temp_path)
+File.rm(temp_path)
+```
+Po uruchomieniu kodu powinniśmy zobaczyć następujące:
+
+```
+Hej, to przykładowa zawartość!
 ```
 
-A oto, jak możemy zobaczyć zawartość pliku:
+## Deep Dive
+Historia tymczasowych plików zaczyna się od systemów UNIX, które używały ich dla operacji wymagających krótkotrwałego magazynowania danych. Alternatywą w Elixirze może być użycie in-memory storage takiego jak ETS lub wykorzystanie własnej implementacji z użyciem unikalnych nazw. Ważne jest, by pamiętać o odpowiednim usuwaniu tymczasowych plików po użyciu, by nie zostawić "śmieci" na dysku.
 
-```elixir
-IO.puts File.read!("/tmp/temp.txt")
-```
-
-Wynik powinien wyglądać mniej więcej tak:
-
-```elixir
-"Oto jakiś tymczasowy tekst"
-```
-
-## Głębsze rozeznanie
-
-Tworzenie tymczasowych plików to praktyka, która sięga początków informatyki, kiedy dostęp do pamięci operacyjnej był ograniczony, a programiści musieli opracować sposoby na tymczasowe przechowywanie danych. Alternatywą jest użycie bazy danych do przechowywania tymczasowych danych, ale tworzenie tymczasowego pliku jest zazwyczaj prostszym i szybszym rozwiązaniem. Co do szczegółów implementacji, Elixir korzysta z funkcji systemu operacyjnego do utworzenia tymczasowych plików, a nazwa pliku jest generowana automatycznie, aby zapewnić unikalność.
-
-## Zobacz także 
-
-1. Dokumentacja Elixira na temat modułu `File`: https://hexdocs.pm/elixir/File.html
-2. Artykuł na temat korzystania z tymczasowych plików w Elixer: https://www.elixir.school/basics/collections/ 
-3. Przegląd technik zarządzania plikami w Elixer: https://elixirschool.com/en/lessons/specifics/file_io/
+## See Also
+- [Elixir File module](https://hexdocs.pm/elixir/File.html)
+- [ETS - Erlang Term Storage](https://elixir-lang.org/getting-started/mix-otp/ets.html)
+- UNIX `mktemp`: man7.org/linux/man-pages/man1/mktemp.1.html

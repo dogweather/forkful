@@ -1,6 +1,7 @@
 ---
 title:                "Generowanie liczb losowych"
-html_title:           "Gleam: Generowanie liczb losowych"
+date:                  2024-01-20T17:48:46.776951-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generowanie liczb losowych"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,25 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Generowanie liczb losowych polega na tworzeniu ciągu liczb, które nie mają przewidywalnego wzorca. Programiści wykonują to zadanie, aby symulować zjawiska naturalne, generować unikalne identyfikatory lub tworzyć trudne do odgadnięcia dane szyfrowane. 
+## What & Why?
+Generowanie liczb losowych to proces wytwarzania nieliniowych, trudno przewidywalnych liczb. Programiści używają go do testowania, symulacji, gier i w zabezpieczeniach.
 
-## Jak to zrobić:
-W Elixir generowanie liczb losowych jest proste. Załóżmy, że chcemy wygenerować liczbę losową między 0 a 10.
+## How to:
+W Elixirze losowe wartości generujemy wygodnie z modułu `:rand`.
 
 ```Elixir
-IO.inspect(Enum.random(0..10))
+# Początkowe ziarno
+:rand.seed(:exsplus, {1234, 123456, 7890123})
+
+# Losowa liczba
+random_number = :rand.uniform()
+IO.puts(random_number)
 ```
 
-Przykładowe wyjście po uruchomieniu powyższego kodu to:
+Wyjście:
+```
+0.44358461759416275
+```
+
+A także dla liczby całkowitej z zakresu:
+
 ```Elixir
+# Losowa liczba z zakresu 1-10
+random_integer = :rand.uniform(10)
+IO.puts(random_integer)
+```
+
+Wyjście:
+```
 7
 ```
-Przy każdym uruchomieniu kodu, wartość może się różnić, ponieważ jest to liczba losowa!
 
-## Podróż w głąb tematu
-Generowanie liczb losowych to stary koncept w dziedzinie informatyki. W dawniejszych algorytmach, na przykład w języku C, liczbę losową generowano na podstawie czasu systemowego. Jednak Elixir, język programowania funkcjonalnego, korzysta z wbudowanej funkcji Enum.random, co ułatwia pracę.
+## Deep Dive
+Moduł `:rand` z Elixira bazuje na algorytmach z Erlanga, jak `exsplus`. Historia pokazuje, że pierwotne metody (jak np. liniowe kongruencje) były mniej skuteczne w tworzeniu prawdziwie losowych sekwencji. 
 
-Alternatywą dla Enum.random może być korzystanie z :rand.uniform w Elixirze. Na przykład, :rand.uniform(10) wygeneruje losową liczbę od 1 do 10.
+Alternatywą dla `:rand` jest korzystanie z zewnętrznych bibliotek, jak `:exrop` (kryptograficznie bezpieczny generator liczb losowych). 
 
-Ważne jest jednak, że "losowe" liczby generowane przez komputery są de facto pseudolosowe, co oznacza, że są one wygenerowane na podstawie określonego (choć skomplikowanego) algorytmu.
+Kluczowym elementem w generowaniu liczb losowych jest ziarno (`seed`). Jego zastosowanie pozwala na odtworzenie tej samej sekwencji liczb losowych - przydatne np. w testach.
+
+## See Also
+- Oficjalna dokumentacja Elixira na temat modułu `:rand`: https://hexdocs.pm/elixir/1.13.4/Random.html
+- Erlang `:rand` module documentation: http://erlang.org/doc/man/rand.html
+- Repozytorium `:exrop` na GitHubie: https://github.com/antipax/exrop

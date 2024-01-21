@@ -1,7 +1,8 @@
 ---
-title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
-simple_title:         "Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma requisição HTTP com autenticação básica"
+date:                  2024-01-20T18:02:20.979987-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Enviando uma requisição HTTP com autenticação básica"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,38 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê? 
-Enviar uma solicitação HTTP com autenticação básica é um processo de enviar uma solicitação a um servidor da web com um nome de usuário e senha incorporados. Os programadores fazem isso para acessar APIs protegidas por senha e recuperar dados de forma segura.
+## O Que & Por Que?
+Enviar uma requisição HTTP com autenticação básica consiste em incluir credenciais de usuário e senha codificadas em Base64 no cabeçalho da requisição. Programadores fazem isso para acessar recursos na web que exigem identificação do usuário de forma simples, mas não totalmente segura.
 
 ## Como Fazer:
-Para enviar uma solicitação HTTP com autenticação básica em Ruby, você pode usar a biblioteca `net/http`. Aqui está um exemplo simples:
-
 ```Ruby
 require 'net/http'
 require 'uri'
 
-uri = URI.parse("http://exemplo.com")
-http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Get.new(uri.request_uri)
-request.basic_auth("username", "password")
-response = http.request(request)
+uri = URI('http://exemplo.com/recurso_protetido')
+req = Net::HTTP::Get.new(uri)
+req.basic_auth 'usuario', 'senha'
 
-puts response.body
+resposta = Net::HTTP.start(uri.hostname, uri.port) {|http|
+  http.request(req)
+}
+
+puts resposta.body
+```
+Saída esperada:
+```
+Conteúdo do recurso protegido.
 ```
 
-Isso irá imprimir o corpo da resposta recebida.
+## Aprofundamento
+A autenticação básica HTTP existe desde os primórdios da web. É uma forma direta de controle de acesso, mas não é segura por padrão pois as credenciais podem ser facilmente decodificadas. Alternativas mais seguras como OAuth e tokens JWT surgiram para melhorar este aspecto.
 
-## Mergulhando Mais Fundo
-No contexto histórico, a autenticação básica foi introduzida nos primeiros dias da web. É simples e fácil de implementar, mas não é muito segura, pois nome de usuário e senha são enviados como texto simples.
-
-Existem alternativas à autenticação básica, como a bearer token authentication e a OAuth, que são formas mais seguras de autenticação.
-
-Ao enviar uma solicitação HTTP com autenticação básica, internamente, a biblioteca `net/http` codifica o nome de usuário e a senha em Base64 e adiciona esse token de autenticação ao cabeçalho da solicitação.
+Detalhes de implementação:
+- As credenciais são codificadas em Base64 e passadas no cabeçalho 'Authorization' da seguinte forma: `Authorization: Basic <token>`.
+- O método 'basic_auth' do Ruby simplifica esse processo.
+- Não esqueça de usar HTTPS sempre que possível para proteger as credenciais durante a transmissão.
 
 ## Veja Também
-Para informações mais aprofundadas, você pode consultar as seguintes fontes:
-
-- [Documentação Oficial Ruby Net::HTTP](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
-- [RFC7617: Autenticação básica HTTP](https://tools.ietf.org/html/rfc7617)
-- [Autenticação Token Bearer](https://oauth.net/2/bearer-tokens/)
-- [Guia de Autenticação OAuth](https://oauth.net/code/ruby/)
+- Documentação da classe Net::HTTP do Ruby: https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/Net/HTTP.html
+- Guia sobre autenticação HTTP básica da MDN: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication
+- Informações sobre o método de codificação Base64: https://ruby-doc.org/stdlib/libdoc/base64/rdoc/Base64.html
+- Descrição do protocolo OAuth: https://oauth.net/

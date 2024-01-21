@@ -1,6 +1,7 @@
 ---
 title:                "文字列の連結"
-html_title:           "Bash: 文字列の連結"
+date:                  2024-01-20T17:35:20.131561-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "文字列の連結"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,43 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+文字列の結合とは、複数の文字列を一つにすることです。プログラマーはコードの情報を組み合わせたり、ユーザーへのメッセージを整形するためにこれを行います。
 
-文字列の連結とは、2つ以上の文字列を1つに結合することです。プログラムにおいて、これは情報を整形したり、ユーザーに提示するためによく行われます。
-
-## 使い方：
-
-Kotlinでは、「+」演算子を使って文字列を連結できます。または、 `String.concat` メソッドを使うことも可能です。
-
-```Kotlin
-val str1 = "Hello, "
-val str2 = "World"
-val str3 = str1 + str2
-println(str3)
-```
-実行すると、出力は次のようになります：
-
-``` 
-Hello, World
-```
-また、`String.concat`メソッドを使う例：
-```Kotlin
-val str1 = "Hello, "
-val str2 = "World"
-val str3 = str1.concat(str2)
-println(str3)
-```
-出力は以下の通り：
-
-```
-Hello, World
+## How to: (方法)
+```kotlin
+fun main() {
+    val greeting = "こんにちは、"
+    val subject = "世界！"
+    val message = greeting + subject  // 文字列をプラス記号で結合
+    println(message)  // "こんにちは、世界！" を出力
+}
 ```
 
-## ディープダイブ：
+```kotlin
+fun main() {
+    val name = "太郎"
+    val age = 25
+    val introduction = "$name さん、年齢は $age 歳です。"  // 文字列テンプレートで結合
+    println(introduction)  // "太郎 さん、年齢は 25 歳です。" を出力
+}
+```
 
-文字列の連結は非常に古い概念で、プログラミング言語が誕生した当初から存在しています。Kotlinにおいては、`x + y`や`x.concat(y)`以外に、sprintf関数やStringBuilderクラスを使って文字列連結を実現することもできます。しかし、通常、 `+` 演算子または `concat` メソッドが使用されます。
+## Deep Dive (掘り下げ)
+文字列の結合には歴史があります。初期のプログラミング言語では操作がより手間でしたが、現代の言語は簡単に結合を可能にしています。Kotlinではプラス演算子(`+`)や文字列テンプレートを使えるため直感的です。実装の面では、短い文字列の結合は効率が良いですが、多くの文字列や大きなデータを扱う場合は`StringBuilder`を使ったほうが性能が良くなります。Javaの`String`クラスは不変なので、Kotlinも同じバックエンドを利用するため、新しい文字列オブジェクトが結合のたびに生成されることに注意が必要です。
 
-## 参考資料：
-
-[公式ドキュメンテーション：String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)  
-[公式ドキュメンテーション：StringBuilderクラス](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/)
+## See Also (参照)
+- Kotlin公式ドキュメント: [Basic Types](https://kotlinlang.org/docs/basic-types.html)

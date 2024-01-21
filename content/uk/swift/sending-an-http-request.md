@@ -1,7 +1,8 @@
 ---
-title:                "Відправлення HTTP-запиту"
-html_title:           "Bash: Відправлення HTTP-запиту"
-simple_title:         "Відправлення HTTP-запиту"
+title:                "Надсилання HTTP-запиту"
+date:                  2024-01-20T18:00:45.550818-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,41 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це & для чого це потрібно?
+## What & Why? (Що і Чому?)
+Sending an HTTP request lets your app talk to a web server—like asking for data or sending it. Programmers use this to interact with web APIs, grabbing fresh info or pushing changes.
 
-Відправка HTTP-запиту - це процес, коли ваш код (або додаток) запитує інформацію від сервера через Інтернет. Програмісти це роблять, щоб отримувати, відправляти, оновлювати або видаляти дані з віддалених веб-серверів.
-
-## Як зробити:
-
+## How to: (Як це зробити:)
 ```Swift
 import Foundation
 
-let url = URL(string: "https://example.com")!
-let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-    if let data = data {
-        let str = String(data: data, encoding: .utf8)
-        print(str ?? "")
+let url = URL(string: "https://api.example.com/data")!
+var request = URLRequest(url: url)
+request.httpMethod = "GET"
+
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
+    if let error = error {
+        print("Error: \(error)")
+    } else if let data = data, 
+              let string = String(data: data, encoding: .utf8) {
+        print(string)
     }
 }
+
 task.resume()
 ```
-
-вихід:
-
-```Swift
-{
-    "exampleKey": "exampleValue"
-}
+Output:
+```
+{"data": "some value"}
 ```
 
-## Детальніше:
+## Deep Dive (Поглиблене занурення)
+Sending HTTP requests is a basic yet powerful way to interact with the web. It began with simple web pages, evolved with the internet, and now it's essential for modern apps. Compared to other methods like WebSocket, HTTP requests are stateless and good for standalone operations. Underneath, they work by establishing a TCP connection, sending plain-text commands (GET, POST, etc.), and listening for a response.
 
-1. **Історичний контекст**. HTTP-запити використовуються з моменту створення Інтернету. Swift вводить простоту відправки цих запитів через URLSession.
-2. **Альтернативи**. Можна також використовувати бібліотеки третіх сторін, такі як Alamofire, для спрощення процесу.
-3. **Застосування**. HTTP-запити - це основа мережевих операцій у вашому додатку. URLSession використовує сессію, що має налаштування, які обмежують життєвий цикл мережевого запиту.
-
-## Див. також:
-
-1. "URLSession" - Офіційна документація Apple: [посилання](https://developer.apple.com/documentation/foundation/urlsession)
-2. "Alamofire" - Бібліотека HTTP Networking для Swift: [посилання](https://github.com/Alamofire/Alamofire)
-4. "How to send HTTP requests using URLSession" - стаття від Hacking with Swift: [посилання](https://www.hackingwithswift.com/example-code/networking/how-to-send-http-requests-using-urlsession)
+## See Also (Дивіться також)
+- Apple's URLSession documentation: [URLSession | Apple Developer Documentation](https://developer.apple.com/documentation/foundation/urlsession)
+- Swift's official HTTP networking guide: [Networking Overview | Swift.org](https://www.swift.org/documentation/api-design-guidelines#networking)
+- An article on RESTful APIs: [Understanding RESTful APIs](https://restfulapi.net/)

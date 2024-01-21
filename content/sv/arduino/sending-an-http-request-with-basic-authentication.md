@@ -1,7 +1,8 @@
 ---
-title:                "Skicka en http-begäran med grundläggande autentisering"
-html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
-simple_title:         "Skicka en http-begäran med grundläggande autentisering"
+title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
+date:                  2024-01-20T18:00:51.982616-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,62 +12,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skicka en HTTP-begäran med grundläggande autentisering innebär att lägga till autentiseringsinformation i begäran för att säkerställa att den kan känna igen avsändaren. Programmerare gör detta för att tillhandahålla en säkerhetsnivå mellan klient och server.
+
+Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att överföra användarnamn och lösenord i kodad form till en server för att bekräfta din identitet. Detta gör programmerare för att säkerställa att endast behöriga användare har tillgång till specifika resurser på en webbserver.
 
 ## Hur man gör:
-Här är koden för att skicka HTTP-begäran med användarnamn och lösenord för autentisering i Arduino.
 
 ```Arduino
 #include <ESP8266WiFi.h>
-#include <ESP8266HTTPClient.h>
+#include <Base64.h>
 
-const char* ssid = "your_SSID";
-const char* password = "your_PASSWORD";
+const char* ssid = "dittSSID";
+const char* password = "dittLösenord";
+const char* host = "www.dinserver.com";
+const int httpPort = 80;
 
 void setup() {
   Serial.begin(115200);
   WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Connecting to WiFi..");
+    delay(500);
+    Serial.print(".");
   }
+  
+  Serial.println("");
+  Serial.println("WiFi connected");
+  
+  String authValue = "Basic " + base64::encode(String("användare:lösenord"));
+
+  WiFiClient client;
+  
+  if (!client.connect(host, httpPort)) {
+    Serial.println("Connection failed");
+    return;
+  }
+  
+  String url = "/min_resurs";
+  
+  client.print(String("GET ") + url + " HTTP/1.1\r\n" +
+               "Host: " + host + "\r\n" +
+               "Authorization: " + authValue + "\r\n" +
+               "Connection: close\r\n\r\n");
+  
+  while (client.connected()) {
+    String line = client.readStringUntil('\n');
+    if (line == "\r") {
+      break;
+    }
+  }
+  
+  String response = client.readStringUntil('\n');
+  Serial.println("Server response: ");
+  Serial.println(response);
 }
 
 void loop() {
-  if (WiFi.status() == WL_CONNECTED) {
-    HTTPClient http;
-
-    http.begin("http://your_server.com"); //Specify destination
-    http.addHeader("Content-Type", "text/plain");  
-    http.setAuthorization("username", "password"); //Specify username and password
-
-    int httpResponseCode = http.GET();  
-                                             
-    if (httpResponseCode>0) {
-      String response = http.getString();   
-      Serial.println(httpResponseCode);
-      Serial.println(response);
-    }  
-    else {
-      Serial.print("Error on sending request: ");
-      Serial.println(httpResponseCode);
-    }
-
-    http.end(); 
-  }
-
-  delay(30000);  
+  // Gör ingenting här
 }
 ```
 
-## Djup dykning
-Grundläggande autentisering har varit en funktionalitet sedan HTTP/1.0, och det är en enkel metod för autentisering mellan klient och server. 
+## Djupdykning
 
-En alternativ metod är att använda token-baserad autentisering, till exempel JWT (JSON Web Tokens). Denna metod används ofta för att ge säker åtkomst till RESTful APIs. 
-
-Beträffande implementeringsdetaljer, konstruerar vi HTTP-begäran, inkluderar autentiseringsinformationen (användarnamn och lösenord) i headers, och skicka begäran till den angivna servern.
+HTTP Basic Authentication introducerades tidigt i webbens historia, som en del av HTTP/1.0-specifikationen. Det är inte det säkraste sättet att skicka känslig information, eftersom inloggningsuppgifterna enkelt kan avkodas om de inte skickas över HTTPS. Men i ett slutet eller säkert nätverk kan det vara tillräckligt för vissa ändamål. Alternativen inkluderar OAuth, API-nycklar eller JWT-tokens, som erbjuder starkare säkerhet. När det implementeras på en Arduino som använder ESP8266-chipet, som i exemplet ovan, används `Base64`-biblioteket för att koda användarnamn och lösenord. `WiFiClient` används för att upprätta en nätverksanslutning och skicka förfrågan.
 
 ## Se även
-2. [RFC 7617](https://tools.ietf.org/html/rfc7617) för mer information om grundläggande autentisering.
-3. En bra artikel på svenska om [Token-baserad autentisering](https://www.minhembio.com/forum/index.php?showtopic=337993).
+
+- ESP8266WiFi biblioteket: https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html
+- Base64 kodning i Arduino: https://www.arduino.cc/reference/en/libraries/base64/
+- Mer om HTTP-autentisering: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication

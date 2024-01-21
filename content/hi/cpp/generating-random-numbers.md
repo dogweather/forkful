@@ -1,7 +1,8 @@
 ---
-title:                "यादृच्छिक संख्याओं का निर्माण"
-html_title:           "Clojure: यादृच्छिक संख्याओं का निर्माण"
-simple_title:         "यादृच्छिक संख्याओं का निर्माण"
+title:                "यादृच्छिक संख्याएँ उत्पन्न करना"
+date:                  2024-01-20T17:48:41.446097-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
@@ -10,39 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-रैंडम नंबर उत्पादन से मतलब है एक ऐसा नंबर उत्पन्न करना, जिसका अगले नंबर से कोई संबंध नहीं होता। प्रोग्रामर इसे गेम्स, डाटा परीक्षण, और एन्क्रिप्शन में उपयोग करते हैं क्योंकि यह अनपेक्षित परिणाम प्रस्तुत करता है।
+## What & Why? (क्या और क्यों?)
+रैंडम नंबर जनरेशन यानी अनियमित संख्याएँ उत्पन्न करना। प्रोग्रामर्स गेम्स, सिमुलेशन्स, और सिक्योरिटी में अप्रत्याशितता लाने के लिए इसका इस्तेमाल करते हैं।
 
-## कैसे करें:
-C++ में आपको लाइब्रेरी  ```<random>``` का उपयोग करके रैंडम नंबर उत्पन्न करना होता है।
-
+## How to: (कैसे करें:)
 ```C++
 #include <iostream>
 #include <random>
 
 int main() {
-    // रैंडम इंजन सेट करें
-    std::default_random_engine eng;
-    
-    // यूनिफ़ॉर्म डिस्ट्रिब्यूशन टाइप सेट करें
-    std::uniform_int_distribution<> distr(1, 100);
-    
-    // रैंडम नंबर प्रिंट करें
-    std::cout << distr(eng) << "\n";
+    // रैंडम नंबर जेनरेटर इनिशियलाइज करें
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(1, 100);
+
+    // एक रैंडम नंबर उत्पन्न करें और प्रिंट करें
+    int random_number = dis(gen);
+    std::cout << "Random Number: " << random_number << std::endl;
 
     return 0;
 }
 ```
+सैम्पल आउटपुट: `Random Number: 42`
 
-आउटपुट:
-```C++
-58
-```
+## Deep Dive (गहराई में जानकारी):
+रैंडम नंबर जनरेटर्स (RNGs) के कई प्रकार होते हैं। पुराने दिनों में, `<cstdlib>` की `rand()` मुख्य विकल्प था। आजकल, `<random>` लाइब्रेरी अधिक सटीक और विविधतापूर्ण RNGs प्रदान करती है, जिसमें `mt19937` एक मौजूदा पसंद है। `mt19937` एक मर्सेन ट्विस्टर जेनरेटर है जो कि एक गैर-अनुक्रमिक, उच्च-गुणवत्ता के रैंडम नंबर्स पैदा करता है। क्रिप्टोग्राफिकली सिक्योर रैंडम नंबर्स के लिए `std::random_device` का उपयोग एक और विकल्प है।
 
-## गहराई से जानिए
-रैंडम नंबर उत्पादन के लिए हमें पहले pseudorandom number generator (PRNGs) का उपयोग करना पड़ता था, जो वास्तव में पूरी तरह से यादृच्छिक नहीं थे। C++11 से, नई `<random>` लाइब्रेरी का पेशकश किया गया, जिसने यादृच्छिकता को बेहतर किया।
-
-हालांकि, अगर आप को हरद्वेयर आधारित रैंडम नंबर की आवश्यकता होती है, तब आप लाइब्रेरी `<random>` के आधार पर std::random_device का उपयोग कर सकते हैं।
-
-## विशेष जानकारी
-- [C++ विकी: random प्रलेखन](http://en.cppreference.com/w/cpp/numeric/random)
+## See Also (और जानकारी के लिए):
+- C++ `<random>` library documentation: https://en.cppreference.com/w/cpp/header/random
+- `std::mt19937` information: https://en.cppreference.com/w/cpp/numeric/random/mersenne_twister_engine
+- `std::random_device` information: https://en.cppreference.com/w/cpp/numeric/random/random_device
+- Random number generation in modern C++: https://www.moderncpp.com/random/

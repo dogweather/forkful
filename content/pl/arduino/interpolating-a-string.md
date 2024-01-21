@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:50:08.130580-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,31 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Interpolowanie ciągów w Arduino: Co, Dlaczego i Jak?
+## What & Why? (Co i dlaczego?)
+Interpolacja ciągu znaków umożliwia wstawianie zmiennych bezpośrednio w tekst. Używamy jej, by ułatwić tworzenie dynamicznych wiadomości i formatować je czytelnie.
 
-## Czym jest i dlaczego?
-Interpolowanie ciągów to proces, który pozwala programistom na umieszczanie dynamicznej zawartości wewnątrz stałych tekstowych. Dzięki temu, kody programów stają się bardziej czytelne i łatwiejsze do utrzymania.
-
-## Jak to zrobić:
-Poniżej znajduje się prosty przykład, jak to dokonać:
+## How to: (Jak to zrobić:)
+Arduino nie ma natywnej funkcji interpolacji ciągów, ale możemy osiągnąć podobny efekt używając `sprintf` lub łącząc ciągi przy użyciu operatora `+`.
 
 ```Arduino
-int temperatura = 22;
-String wiadomosc = "Aktualna temperatura: " + String(temperatura) + " stopni Celsjusza.";
-Serial.println(wiadomosc);
+char buffer[50];
+int temperature = 23;
+
+void setup() {
+  Serial.begin(9600);
+  
+  // Użycie sprintf do wstawienia zmiennej do ciągu
+  sprintf(buffer, "Temperatura to: %d stopni Celsjusza.", temperature);
+  Serial.println(buffer);
+
+  // Alternatywne łączenie ciągów
+  String message = "Temperatura to: " + String(temperature) + " stopni Celsjusza.";
+  Serial.println(message);
+}
+
+void loop() {
+  // Nic nie robimy w pętli.
+}
 ```
-Tutaj, wynik będzie wyglądał tak:
+Wyjście jest takie samo dla obu metod:
 ```
-Aktualna temperatura: 22 stopni Celsjusza.
+Temperatura to: 23 stopni Celsjusza.
 ```
 
-## Zagłębiając się:
-Choć Arduino nie obsługuje interpolacji ciągów bezpośrednio jak niektóre inne języki programowania, istnieje wiele technik, które można zastosować do osiągnięcia podobnego celu. Nvidia CUDA wprowadziła interpolację ciągów na początku XXI wieku. Zamiast interpolacji, Arduino często używa operatora konkatynacji (+), aby połączyć wiele części ciągu i utworzyć końcowy wynik. Ważne jest, aby pamiętać, że korzystanie z operatora "+" w ciągu może prowadzić do nadmiernego użycia pamięci, dlatego w niektórych przypadkach lepszym rozwiązaniem może być użycie funkcji sprintf().
+## Deep Dive (Dogłębna analiza)
+Choć Arduino nie posiada wbudowanej funkcji interpolacji ciągów jak w językach wyższego poziomu (np. Python), 'sprintf' jest wszechstronnym narzędziem służącym do formatowania ciągów. Po raz pierwszy pojawiło się w języku C i jest często używane w systemach wbudowanych dla zarządzania pamięcią. Alternatywnie, możemy łączyć ciągi za pomocą `+`, ale jest to mniej wydajne pamięciowo. Implementacja `sprintf` na platformach Arduino nie obsługuje zmiennych typu `float` domyślnie, więc dla wartości zmiennoprzecinkowych trzeba korzystać z `dtostrf`.
 
-## Do poczytania:
-Jeżeli chcesz się dowiedzieć więcej na ten temat, polecam te strony:
-- Szczegółowa dyskusja na StackOverflow: https://stackoverflow.com/questions/4479076/string-concatenation-in-c-whats-the-alternative
-- Arduino String Reference: https://www.arduino.cc/reference/pl/language/variables/data-types/string-functions/
-- Wydajność ciągów Arduino: https://hackingmajenkoblog.wordpress.com/2016/02/04/the-evils-of-arduino-strings/ 
-
-Pamiętaj, że wartości w Twoim kodzie będą się zmieniać, dlatego dobrze jest zrozumieć, jak interpolować ciągi i co się dzieje "pod maską"!
+## See Also (Zobacz również)
+- [Dokumentacja Arduino - String Object](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Tutorial: Managing Memory](https://learn.adafruit.com/memories-of-an-arduino)

@@ -1,6 +1,7 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Arduino recipe: Generating random numbers"
+date:                  2024-01-20T17:49:57.474894-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generating random numbers"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,52 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Random Numbers in Swift: A Concise Guide
-
 ## What & Why?
-
-Generating random numbers is about producing unpredictable values. Programmers often use random values to build dynamic effects, run simulations, test systems with diverse data, or create elements of chance in games.
+Generating random numbers is a way to produce unpredictable values which is essential in gaming, simulations, and tests. Programmers do it for tasks like shuffling a playlist or simulating dice rolls.
 
 ## How to:
 
-In Swift, it's straightforward to generate random numbers. Below are few examples:
+Swift makes generating random numbers a breeze. Here's how you do it:
 
-1. Random Integers:
+```Swift
+// Generate a random number between 0 and 10
+let randomNum = Int.random(in: 0...10)
+print(randomNum)
 
-```swift
-let randomNumber = Int.random(in: 1..<10)
-print(randomNumber)
-// Output: An unpredictable integer between 1 and 9.
+// Generate a random Double between 0 and 1
+let randomDouble = Double.random(in: 0..<1)
+print(randomDouble)
 ```
-2. Random Floating-Point Number:
 
-```swift
-let randomFloat = Float.random(in: 1..<2)
-print(randomFloat)
-// Output: An unpredictable float between 1 and less than 2.
+Sample output:
 ```
-3. Random Boolean:
+5
+0.874523190457
+```
 
-```swift
-let randomBool = Bool.random()
-print(randomBool)
-// Output: Either true or false.
-```
 ## Deep Dive
 
-Historically, generating random numbers in programming languages was less standardized and often required external libraries. However, Swift makes it easy without any add-ons.
+Way back when, random number generation was a math puzzle. Today, it's built right into programming languages like Swift. Under the hood, `random(in:)` uses a pseudo-random number generator (PRNG). It's "pseudo" because if you know the algorithm and the seed, you can predict the output — not something you'd want for security-related tasks.
 
-There are alternatives to `random(in:)`. For example, using `arc4random_uniform(_:)` can specify an upper limit.
+For true randomness, you'd look into cryptographically secure random numbers, something beyond Swift's basic `random(in:)`. On Apple platforms, `SecRandomCopyBytes` provides this level of randomness.
 
-```swift
-let randomArc = Int(arc4random_uniform(10))
-print(randomArc)
-// Output: An unpredictable integer between 0 and 9.
-```
-Note that `arc4random_uniform(_:)` creates a bias when the upper limit isn't a power of two. For balanced randomness, use Swift's native `random(in:)`.
+It's worth mentioning that older languages or systems might use functions like `rand()` or `random()`, which have their own quirks and usage patterns.
 
-About implementation, Swift's randomness is cryptographically secure, using a source that's hard to predict and reproduce.
+Alternatives in Swift include using GameplayKit for more control over randomization, with classes like `GKRandomDistribution` and `GKShuffledDistribution`.
 
 ## See Also
 
-- Understanding random number generation and Swift’s new random API, [hackingwithswift.com](https://www.hackingwithswift.com/articles/73/understanding-random-numbers-in-swift)
+- The Swift Programming Language guide to random numbers: 
+  https://docs.swift.org/swift-book/LanguageGuide/Numbers.html
+  
+- Apple's documentation on GameplayKit randomization: 
+  https://developer.apple.com/documentation/gameplaykit/randomization
+
+- A deeper dive into `SecRandomCopyBytes` for cryptographic randomness: 
+  https://developer.apple.com/documentation/security/1399291-secrandomcopybytes

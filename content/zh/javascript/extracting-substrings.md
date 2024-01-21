@@ -1,6 +1,7 @@
 ---
 title:                "提取子字符串"
-html_title:           "Arduino: 提取子字符串"
+date:                  2024-01-20T17:46:13.180319-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "提取子字符串"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,37 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
+## What & Why? 什么和为什么？
+提取子字符串就是从一个字符串中获取一部分内容。程序员这样做是为了处理文本数据，比如从用户输入中获取关键信息，或者为字符串分析做准备。
 
-字符串子集提取是从字符串中取出某些字符的过程。程序员之所以需要这么做，主要是因为在处理用户输入或解析复杂字符串等情况时，他们可能需要处理字符串的某一部分。
+## How to: 如何操作
+```javascript
+// 使用 substring 方法
+let text = "Hello, World!";
+let subtext = text.substring(7, 12);
+console.log(subtext); // 输出 "World"
 
-## 如何：
+// 使用 slice 方法
+let slicedText = text.slice(7, 13);
+console.log(slicedText); // 输出 "World!"
 
-以下是一些提取字符串子集的JavaScript代码示例以及它们的输出：
-```Javascript
-let str = "欢迎来到Javascript世界！";
-let subStr1 = str.substring(4, 14);
-console.log(subStr1);  //输出: 来到JavaScript
-
-let subStr2 = str.slice(4, 14);
-console.log(subStr2);  //输出: 来到JavaScript
-
-let subStr3 = str.substr(4,10);
-console.log(subStr3);  //输出: 来到JavaScript
+// 使用 substr 方法 (已废弃，请慎用)
+let subTextDeprecated = text.substr(7, 5);
+console.log(subTextDeprecated); // 输出 "World"
 ```
-每种方法都会按照指定的开始（和结束）索引来提取字符串。
 
-## 深入了解：
+## Deep Dive 深入探究
+提取子字符串的方法有很多年历史了，它们在JavaScript的早期版本就已经存在。`substring` 和 `slice` 是最常用的方法。`substr` 方法也可以用，但已经被弃用，未来的JavaScript版本中可能会移除。
 
-1. 历史背景：早期的Javascript版本只提供了`substring()`和`substr()`方法来提取子串。然而，为了与Array的 slice 方法保持一致性，后来引入了`slice()`方法。
+`substring` 和 `slice` 的区别在于，`substring` 对负参数不敏感（它会将负数参数视为 `0`），而 `slice` 会将负数参数解释为字符串末尾的偏移量。它们在处理起止参数时也有差异。
 
-2. 其他方法：你也可以用`split()`方法将字符串分拆成数组，然后用`join()`方法将需要的部分连起来。
+要注意的是 `substring` 和 `slice` 方法不会改变原字符串，而是返回一个新的字符串。
 
-3. 实现细节：`substring()`和`slice()`在处理负值输入时的表现不同。如果给`slice()`传递负值，它会将其解释为从字符串末尾开始计算的索引，而`substring()`则会将负值转换为0。
-
-## 参见：
-
-1. [MDN: String.prototype.substring()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-2. [MDN: String.prototype.slice()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-3. [MDN: String.prototype.substr()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
-4. [Javascript Info: Extracting a substring](https://javascript.info/string#extracting-a-substring)
+## See Also 相关资源
+- [MDN 文档 - String.prototype.substring()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [MDN 文档 - String.prototype.slice()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [ECMAScript 规范](https://www.ecma-international.org/ecma-262/)

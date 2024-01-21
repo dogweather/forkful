@@ -1,6 +1,7 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "C++: Porównywanie dwóch dat"
+date:                  2024-01-20T17:32:59.236205-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,28 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why?
+Porównywanie dat pozwala określić, która z nich jest wcześniejsza, późniejsza, czy może identyczna. Programiści robią to, żeby obsługiwać wydarzenia chronologicznie, zarządzać terminami i sprawdzać okresy ważności.
 
-## Co & Dlaczego?
-Porównanie dwóch dat to zasadniczo sprawdzenie, która data jest wcześniejsza, a która późniejsza. Programiści często wykonują to porównanie, aby sortować wydarzenia chronologicznie, analizować trendy czasowe czy kontrolować ważność certyfikatów.
+## How to:
+Do porównania dat w Haskellu możemy użyć modułu `Data.Time`. Oto przykład:
 
-## Jak to zrobić:
-Aby porównać dwie daty w Haskellu, używamy funkcji `diffUTCTime`, która zwraca różnicę między dwiema datami w sekundach. Poniżej znajduje się przykład porównania dwóch dat:
+```haskell
+import Data.Time
 
-```Haskell
-import Data.Time.Clock
+compareDates :: IO ()
+compareDates = do
+    let date1 = fromGregorian 2023 3 15 -- 15 marzec 2023
+    let date2 = fromGregorian 2023 4 1 -- 1 kwiecień 2023
+    print $ compare date1 date2 -- LT
+    print $ date1 < date2 -- True
+    print $ date1 == date2 -- False
+    print $ date1 > date2 -- False
 
-dateComparison :: UTCTime -> UTCTime -> NominalDiffTime
-dateComparison date1 date2 = diffUTCTime date1 date2
+main :: IO ()
+main = compareDates
 ```
 
-Ważne jest, aby pamiętać, że `diffUTCTime` zwraca wartość dodatnią, jeśli pierwsza data jest późniejsza, a wartość ujemną, jeśli druga data jest późniejsza.
+## Deep Dive
+Porównywanie dat to klasyczne zadanie. W Haskellu, `Data.Time` jest standardowym modułem do zarządzania czasem, który dostarcza m.in. typ `Day` dla dat bez czasu. Alternatywnie, możemy użyć `Data.Calendar` lub zewnętrzne biblioteki jak `time` czy `chronos`. Ważne jest, że `Day` ma instancję klasy `Ord`, co umożliwia używanie `<`, `>` czy `==` do porównywania.
 
-## Na głębszą wodę:
-Porównywanie dat ma swoje korzenie w zarządzaniu bazami danych i bywa często używane w analizie danych. W Haskellu, alternatywą dla `diffUTCTime` jest `diffDays` z `Data.Time.Calendar`, która zwraca różnicę w dniach (ale jest mniej precyzyjna). W implementednym kodzie najważniejszą rzeczą jest poprawne użycie typów czasu - `UTCTime` i `NominalDiffTime` - oraz funkcji z `Data.Time.Clock`.
-
-## Zobacz też:
-- [Dokumentacja biblioteki Data.Time](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- [Poradnik Haskell](https://haskellbook.com/) dla dogłębnej nauki języka.
-
----
+## See Also
+- [Haskell Data.Time library](https://hackage.haskell.org/package/time-1.11.1.1/docs/Data-Time.html)
+- [Haskell Hierarchical Libraries](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/)
+- [SO - Comparing Dates in Haskell](https://stackoverflow.com/questions/36068284/comparing-dates-in-haskell)

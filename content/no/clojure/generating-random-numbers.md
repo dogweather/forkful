@@ -1,7 +1,8 @@
 ---
-title:                "Generere tilfeldige tall"
-html_title:           "Arduino: Generere tilfeldige tall"
-simple_title:         "Generere tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+date:                  2024-01-20T17:49:02.213898-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generering av tilfeldige tall"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Numbers"
@@ -10,50 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Generere tilfeldige tall i Clojure
+## What & Why?
+Generering av tilfeldige tall er prosessen å lage nummer som ikke kan forutsies. Programmerere trenger dette for spill, simuleringer og sikkerhet.
 
-## Hva & Hvorfor?
-
-Generere tilfeldige tall er å opprette numeriske verdier på en uforutsigbar måte. Programmerere gjør dette for å simulere forskjellige scenarioer, lage testdata, eller la spill ha uforutsigbare utfall.
-
-## Hvordan:
-
-Her er et enkelt eksempel på hvordan du genererer alle slags tilfeldige tall i Clojure:
+## How to:
+For å generere tilfeldige tall i Clojure bruker vi `rand`, `rand-int` eller `rand-nth`.
 
 ```Clojure
-(defn tilfeldig-tall []
- (rand-int 100))
+; En tilfeldig flyttall mellom 0.0 (inklusiv) og 1.0 (eksklusiv)
+(rand)
+
+; En tilfeldig heltall mindre enn 10
+(rand-int 10)
+
+; En tilfeldig verdi fra en samling
+(rand-nth [1 2 3 4 5])
 ```
 
-Eksempel output:
+Kjøre eksemplene gir nye tall hver gang, som dette:
 
 ```Clojure
-(tilfeldig-tall) ;; Kjører denne funksjonen kan gi forskjellige resultater hver gang, for eksempel 37, 72, osv.
+(rand) ; => 0.7090722079867595
+(rand-int 10) ; => 7
+(rand-nth [1 2 3 4 5]) ; => 3
 ```
 
-En annen måte:
+## Deep Dive
+Randomisering har vært en del av programmering siden starten. I Clojure styres randomisering av Java's `java.util.Random` klasse bak kulissene. Alternativer til innebygde funksjoner inkluderer å bruke `java.security.SecureRandom` for kryptografisk sikker randomisering eller eksterne biblioteker for mer komplekse behov.
 
-```Clojure
-(defn tilfeldig-tall-innen-område [min max]
-  (+ min (rand-int (- max min))))
-```
+Implementasjonsdetaljer om `rand` og vennene er viktig: de er ikke egnet for sikkerhetskritiske formål. Denne standard randomiseringen kan forutsies hvis angriper vet eller kan gjette tilstanden. For sikkerhet, gå mot `SecureRandom`.
 
-Eksempel output:
-
-```Clojure
-(tilfeldig-tall-innen-område 50 60) ;; gir tall mellom 50 og 60 som 52, 57, osv.
-```
-
-## Dyp Dykk
-
-Clojure's `rand` og `rand-int` funksjoner er basert på Java's `java.util.Random` klasse. Dette betyr at uforutsigbarheten og ytelsen til disse funksjonene er i stor grad avhengig av Java's tilsvarende funksjoner.
-
-I historisk kontekst, den første algoritmen for generering av pseudo-tilfeldige tall ble foreslått av en britisk matematiker, John von Neumann, i 1946. Commits til Clojure's kodebase antyder at dens innebygde funksjoner for generering av tilfeldige tall har vært tilstede siden den aller første utgivelsen.
-
-Alternativer til `rand` og `rand-int` kan være algoritmer som Mersenne Twister, Xoshiro256**, eller PCG. Disse gir bedre statiske egenskaper eller ytelse, men kan være vanskeligere å implementere. 
-
-## Se Også
-
-Du kan sjekke ut de følgende koblingene for mer informasjon:
-- Clojure's offisielle dokumentasjon for `rand` og `rand-int`: [Clojure Doc](https://clojure.org/reference/data_structures#Numbers)
-- Java's `Random` klasse dokumentasjon: [Java Doc](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+## See Also
+- Clojure's random number generation functions: https://clojuredocs.org/clojure.core/rand
+- Understanding Java's Random class: https://docs.oracle.com/javase/8/docs/api/java/util/Random.html
+- Crypto-strong randomness in Java: https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html
+- More on random number generators (RNGs) by Clojure's creator, Rich Hickey: https://www.youtube.com/watch?v=oytL881p-nQ

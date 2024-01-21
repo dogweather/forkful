@@ -1,7 +1,8 @@
 ---
-title:                "Enviando uma solicitação http"
-html_title:           "Bash: Enviando uma solicitação http"
-simple_title:         "Enviando uma solicitação http"
+title:                "Enviando uma requisição HTTP"
+date:                  2024-01-20T17:59:33.979086-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Enviando uma requisição HTTP"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,51 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why?
+Enviar uma requisição HTTP é basicamente pedir pra um servidor web mandar alguma coisa de volta, pode ser uma página, dado ou um serviço. Programadores fazem isso para interagir com APIs, serviços web e automatizar tarefas na internet.
 
-## O Que & Porquê?
-
-A realização de um pedido HTTP é a principal maneira de os browsers e aplicações client-side recuperem dados de um servidor. Como programadores, nós fazemos isso para buscar dados e interagir com APIs ou serviços baseados na web.
-
-## Como fazer:
-
-Vamos entrar no mundo do Go:
-
+## How to:
 ```Go
 package main
 
 import (
+	"io/ioutil"
 	"log"
 	"net/http"
-	"io/ioutil"
 )
 
 func main() {
-	res, err := http.Get("http://example.com")
+	resp, err := http.Get("https://api.github.com/users/github")
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer res.Body.Close()
-	body, err := ioutil.ReadAll(res.Body)
+	defer resp.Body.Close()
+
+	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	log.Println(string(body))
 }
 ```
-Na execução deste código, enviaremos um GET request para "http://example.com" e obteremos a resposta. É simples e direto.
+Saída:
+```
+{"login":"github","id":1,"node_id":"MDQ6VXNlcjE=" ...}
+```
 
-## Mergulhando fundo:
+## Deep Dive
+Enviar requisições HTTP é essencial desde o início da web. O Go usa um pacote `net/http` padrão que simplifica este processo. Alternativas incluem usar bibliotecas de terceiros como `gorequest` ou `resty`, mas `net/http` é mais do que suficiente pro básico. Ele lida com métodos GET, POST, e outros, além de permitir configuração de cabeçalhos e timeouts. A implementação do Go é conhecida por ser eficiente e escalável, adequada para serviços concorrentes.
 
-Para enviar um pedido HTTP em Go, utilizamos o pacote net/http, que fornece funcionalidades HTTP cliente e servidor. A função http.Get é muito utilizada e é uma chamada de alto nível que nos ajuda a fazer um pedido HTTP muito rapidamente.
-
-Historicamente, Go tornou-se popular para o desenvolvimento backend devido ao seu forte suporte para concorrência e sua rica biblioteca padrão. Existem alternativas para a solicitação de rede em Go, como o uso de pacotes de terceiros (por exemplo, o pacote `goreq`), mas o pacote `net/http` é mais comumente utilizado devido à sua simplicidade e eficácia.
-
-Quanto aos detalhes de implementação, quando você emite uma solicitação GET, o Go abrirá uma conexão TCP com o servidor e enviará o pedido HTTP. O servidor responderá com um texto, que é então lido, decodificado e retornado para você como uma resposta.
-
-## Veja também:
-
-- [Documentação Go net/http](https://golang.org/pkg/net/http/)
-- [Um tutorial mais detalhado sobre requisições HTTP em Go](https://medium.com/rungo/making-external-http-requests-in-go-eb4c015f8839)
-
----
+## See Also
+- Documentação oficial do `net/http`: https://golang.org/pkg/net/http/
+- Go by Example - HTTP Clients: https://gobyexample.com/http-clients
+- Writing Web Applications (tutorial do Go): https://golang.org/doc/articles/wiki/

@@ -1,6 +1,7 @@
 ---
 title:                "Beregning av en dato i fremtiden eller fortiden"
-html_title:           "C: Beregning av en dato i fremtiden eller fortiden"
+date:                  2024-01-20T17:30:58.330241-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "C"
 category:             "C"
@@ -10,50 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Beregne en dato i fremtiden eller fortiden med C
----
-
 ## Hva & Hvorfor?
-Beregning av en dato i fremtiden eller fortiden er en måte å manipulere kalenderdatoer på i programmering. Det er en hendig teknikk for situasjoner som planlegging av arrangementer og tidsfristkontroll.
+Å beregne en dato i fremtiden eller fortiden betyr å finne en dato før eller etter en gitt startdato. Programmere bruker dette for å håndtere hendelser, frister, påminnelser og tidsstyring generelt.
 
-## Hvordan:
+## Hvordan til:
+Lagring av tid og dato i C gjøres vanligvis med `time.h` biblioteket, som lar oss jobbe med `time_t` strukturen for å utføre tidberegninger. Her er et eksempel på hvordan man legger til en uke til gjeldende dato:
 
-Her har vi et enkelt eksempel på hvordan beregne en dato i fremtiden.
-
-```C
+```c
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    struct tm time_structure;
+    time_t now;
+    struct tm new_date;
+    double seconds = 60 * 60 * 24 * 7; // En uke
 
-    time_t now = time(NULL);
+    // Få nåværende tid og dato
+    time(&now);
 
-    time_structure = *localtime(&now);
+    // Konverter time_t til tm struktur for enkel manipulasjon
+    new_date = *localtime(&now);
 
-    time_structure.tm_mday += 7; //legger til 7 dager i dato
-    mktime(&time_structure);
+    // Legg til en uke
+    new_date.tm_sec += seconds; 
 
-    char future_date[80];
-    strftime(future_date, sizeof(future_date), "%d-%m-%Y", &time_structure);
-  
-    printf("Fremtidig dato: %s", future_date);
-  
-    return 0; 
+    // Normaliser tm strukturen og konverter tilbake til time_t
+    time_t one_week_from_now = mktime(&new_date);
+
+    // Konverter til lesbar format
+    printf("En uke fra nå: %s", asctime(&new_date));
+
+    return 0;
 }
 ```
-Når dette programmet kjøres, vil utfallet være noe slik som:
+
+Sample output:
 ```
-Fremtidig dato: 28-09-2023
+En uke fra nå: Mon Mar 15 14:22:36 2021
 ```
-Det viser datoen 7 dager fra dags dato (antatt at dagens dato er 21-09-2023).
 
-## Dyp Dykk:
-Beregning av en dato i fremtiden eller fortiden har vært en nødvendig funksjon for datamaskinbruk siden de første operativsystemene. De første kodene som gjorde dette var ganske komplekse, men moderne programmeringsspråk som C har innebygde funksjoner for å gjøre denne prosessen mye enklere.
+## Deep Dive
+Tid og dato i programmering har variert over tid, fra enkle tidtakere til komplekse bibliotek med tidssoner og skuddårstøtte. C har støttet tidberegninger med `time.h` siden C89/C90 standarden. Alternativer til standard C-biblioteket inkluderer POSIX `time.h` og moderne biblioteker som `date.h`.
 
-Et alternativ til dette er å bruke biblioteker som kan håndtere dato- og tidsberegning mer nøyaktig og enkelt.
+Når vi legger til sekunder til `tm_sec`, tar `mktime` hånd om overflyt og oppdaterer de andre feltene (minutter, timer, dager, osv.) tilsvarende. Men vær forsiktig med tidsskjell og skuddsekunder; disse blir ofte håndtert av operativsystemet eller spesifikke biblioteker.
 
-Den `mktime()` funksjonen brukes til å konvertere en lokal tid, gitt som en `tm` struktur, til en `time_t` verdi med samme innhold. `mktime()` funksjonen ignorerer de opprinnelige verdiene av tm_wday og tm_yday men oppdaterer verdiene før den returnerer. 
+En annen ting å være klar over er håndtering av tidssoner. `localtime` bruker systemets lokale tidssone, mens `gmtime` gir Coordinated Universal Time (UTC). Valget avhenger av applikasjonens behov.
 
-## Se Også:
-- For ytterligere læring, les [C library to handle dates](http://www.cplusplus.com/reference/ctime/)
+## Se Også
+- `man 3 time` og `man 3 localtime` for Linux man-sider.
+- C Standard Library - https://en.cppreference.com/w/c/chrono
+- POSIX Programmer's Manual - https://pubs.opengroup.org/onlinepubs/9699919799/
+- Howard Hinnant's Date library (for mer moderne C++ støtte) - https://github.com/HowardHinnant/date

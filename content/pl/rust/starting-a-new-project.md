@@ -1,6 +1,7 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Bash: Rozpoczynanie nowego projektu"
+date:                  2024-01-20T18:04:22.817555-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,56 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i dlaczego?)
+Zaczynamy nowy projekt Rust, by stworzyć świeże oprogramowanie od podstaw. Programiści robią to dla realizacji unikalnych pomysłów lub eksperymentowania z nowymi technologiami.
 
-Rozpoczynanie nowego projektu to proces, gdzie programiści tworzą nowy plik lub zestaw plików z kodem programu. Robimy to, aby zbudować nowy produkt lub doświadczenie.
-
-## Jak To Zrobić?
-
-W Rust, nowy projekt tworzymy korzystając z Cargo, wbudowanego systemu zarządzania pakietami. Poniżej znajdziesz kroki i przykładowy kod.
+## How to: (Jak to zrobić:)
+Zacznij od Cargo, narzędzia Rust do zarządzania projektami.
 
 ```Rust
-cargo new mój_projekt
-cd mój_projekt
-```
+// Zainstaluj Rust i Cargo (ten drugi jest dostarczany z Rustem)
+// Na otwórz terminal i wykonaj:
 
-Po uruchomieniu tych poleceń, Cargo utworzy nowy katalog z nazwą `mój_projekt` i kilka plików w środku.
-
-Twój nowy projekt Rust wygląda mniej więcej tak:
-
-```Rust
-mój_projekt
-├── Cargo.toml
-└── src
-    └── main.rs
-```
-
-W `main.rs` znajdziesz prosty "Hello, world!" program:
-
-```Rust
-fn main() {
-    println!("Hello, world!");
-}
-```
-
-Uruchom swoją aplikację za pomocą Cargo:
-
-```Rust
+cargo new moj_projekt
+cd moj_projekt
 cargo run
+
+// Spodziewany wynik:
+//   Compiling moj_projekt v0.1.0 (/ścieżka/do/moj_projekt)
+//    Finished dev [unoptimized + debuginfo] target(s) in 0.0 secs
+//     Running `target/debug/moj_projekt`
+// Hello, world!
 ```
 
-Twoja aplikacja powinna wydrukować "Hello, world!".
+## Deep Dive (Dogłębna analiza)
+Cargo, menedżer projektów i system buildowania Rusta, został wprowadzony w 2014 roku. Alternatywą jest ręczne tworzenie plików i używanie `rustc` do kompilacji, ale to mniej wydajne. Proces uruchamiania nowego projektu Cargo obejmuje stworzenie struktury z `Cargo.toml` i katalogiem `src`. Dzięki temu, Rabo przy zarządzaniu zależnościami i budową skomplikowanych aplikacji.
 
-## Pogłębione Spostrzeżenia 
-
-Historia: Rust został stworzony przez Mozilla Research w 2010 roku z myślą o bezpieczeństwie, prędkości i równoległości.
-
-Alternatywy: Możesz rozpocząć projekt w Rust inaczej, używając innych narzędzi niż Cargo, takich jak `rustc` bezpośrednio, ale Cargo jest zalecane dla większości przypadków.
-
-Szczegóły implementacji: Gdy tworzysz nowy projekt rust, `cargo new` tworzy dla ciebie szkielet aplikacji. Plik `Cargo.toml` jest konfiguracją twojego projektu, a `src/main.rs` to główny plik źródłowy.
-
-## Zobacz Również
-
-- [Dokumentacja Rust] (https://www.rust-lang.org/pl/learn)
-- [Książka o Rust] (https://doc.rust-lang.org/book/)
-- [Podręcznik Cargo] (https://doc.rust-lang.org/cargo/)
+## See Also (Zobacz też)
+- [The Cargo Book](https://doc.rust-lang.org/cargo/) - oficjalna dokumentacja Cargo.
+- [Rustaceans.org](https://www.rustaceans.org/) - społeczność Rust, gdzie można zadawać pytania.
+- [Rust by Example](https://doc.rust-lang.org/stable/rust-by-example/) - nauka Rusta na praktycznych przykładach.

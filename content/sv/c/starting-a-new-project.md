@@ -1,7 +1,8 @@
 ---
-title:                "Att starta ett nytt projekt"
-html_title:           "Arduino: Att starta ett nytt projekt"
-simple_title:         "Att starta ett nytt projekt"
+title:                "Att påbörja ett nytt projekt"
+date:                  2024-01-20T18:03:04.967804-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "C"
 category:             "C"
 tag:                  "Getting Started"
@@ -10,41 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Starta ett nytt projekt i C
-
 ## Vad & Varför?
+Att starta ett nytt projekt innebär att skapa en grund för din kod, ofta med hjälp av en mall eller från scratch. Programmerare gör det för att lösa specifika problem, för att testa nya idéer eller för att skapa något unikt.
 
-Att starta ett nytt projekt innebär att skapa en grund för programkod och infrastruktur. Programmerare initierar nya projekt för att lösa specifika problem, exploatera möjligheter eller förbättra befintliga system.
+## Hur gör man:
+Koden nedan är ett exempel på hur man skapar en enkel "Hello World" i C. Kopiera koden till en fil med namnet `hello.c`, kompilera och kör.
 
-## Hur man:
-
-Ett nytt C-projekt kan inledas med att skapa en enkel .c fil. Vi tar HelloWorld-programmet som ett exempel.
-
-```C
+```c
 #include <stdio.h>
 
 int main() {
-   // printf() displays the string inside quotation
-   printf("Hello, World!");
-   return 0;
+    printf("Hej Världen!\n");
+    return 0;
 }
+
+/* Output:
+Hej Världen!
+*/
+```
+För att kompilera, öppna en terminal och skriv:
+```bash
+gcc hello.c -o hello
+```
+Kör sedan programmet med:
+```bash
+./hello
 ```
 
-När vi kör detta program kommer det att visa:
+## Djupdykning
+När du startar ett nytt projekt är det bra att känna till lite historia. C har använts sedan 1970-talet och utvecklades ursprungligen av Dennis Ritchie. 
 
-```
-Hello, World!
-```
+Det finns alternativ för att starta C-projekt, såsom att använda integrerade utvecklingsmiljöer (IDEs) eller byggverktyg som `make`. De kan snabba upp processen och hantera kompliceringar.
 
-## Fördjupning
+När du implementerar ett nytt projekt, tänk på kodstruktur och filorganisation. Projekt blir mer hanterbara när de växer om du följer goda kodpraxis från början.
 
-Historiskt sett, blev C utvecklat 1972 av Dennis M. Ritchie på Bell Laboratories. Det används fortfarande flitigt, och är grunden för andra programmeringsspråk som C++, C#, och Objective-C.
-
-Alternativen till C inkluderar språk som Python, Java, och Ruby. Dessa språk kan vara mer lämpliga för vissa projekt, beroende på kraven.
-
-När du startar ett nytt projekt i C, finns det tre huvudkomponenter att tänka på: kodbasen, buildsystemet och dokumentationen. Kodbasen inkluderar alla .c och .h filer. Buildsystemet, till exempel Makefile, bestämmer hur ditt projekt kompileras till ett körbart program. Slutligen, dokumentationen hjälper andra utvecklare att förstå och bidra till ditt projekt.
-
-## Se också:
-
-1. För mer om C programmering: [C Tutorial](https://www.learn-c.org/)
-2. En guide för att skapa en Makefile: [Makefile Tutorial](https://makefiletutorial.com/)
+## Se Även:
+- C Programming Language, 2nd Edition by Brian W. Kernighan and Dennis M. Ritchie: Den definitiva guiden för C.
+- [GCC, the GNU Compiler Collection](https://gcc.gnu.org/): Informationen om kompilatorn som används i exemplet.
+- [Make - GNU Project](https://www.gnu.org/software/make/): Dokumentation och guider för `make`, ett klassiskt byggverktyg för C.
+- [C Programming på Reddit](https://www.reddit.com/r/C_Programming/): En community där du kan diskutera C-relaterade ämnen.

@@ -1,7 +1,8 @@
 ---
-title:                "Befehlszeilenargumente lesen"
-html_title:           "Arduino: Befehlszeilenargumente lesen"
-simple_title:         "Befehlszeilenargumente lesen"
+title:                "Lesen von Kommandozeilenargumenten"
+date:                  2024-01-20T17:57:09.140786-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lesen von Kommandozeilenargumenten"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -11,42 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-
-Beim Lesen von Kommandozeilenargumenten kann ein Programm Eingaben direkt von der Konsole oder dem Terminal empfangen. Dies wird von Programmierern oft genutzt um Programme flexibler und interaktiver zu gestalten.
+Kommandozeilenargumente sind die Parameter, die einem Programm übergeben werden, wenn es gestartet wird. Programmierer nutzen sie, um das Verhalten ihrer Anwendung dynamisch zu steuern, ohne den Code ändern zu müssen.
 
 ## So geht's:
+In TypeScript könnt ihr Kommandozeilenargumente mit `process.argv` auslesen, das ein Array der übergebenen Argumente ist.
 
-Das Lesen von Befehlszeilenargumenten ist unkompliziert. Let's do it!
+```typescript
+// Beispiel: process_argv.ts
+const args = process.argv.slice(2); // Die ersten zwei Elemente ignorieren (node und script path)
 
-```TypeScript
-let myArgs = process.argv.slice(2);
-console.log('meine Argumente: ', myArgs);
+console.log(args); // Gibt die Argumente als Array aus
+
+// Nutzungsbeispiel:
+// $ node process_argv.ts arg1 arg2 arg3
+// Ausgabe: [ 'arg1', 'arg2', 'arg3' ]
 ```
 
-Wenn Sie den obigen Code mit einigen Argumenten ausführen, gibt er diese Argumente aus. 
+Die `slice(2)`-Methode wird verwendet, um die ersten beiden Standardargumente zu entfernen: den Pfad zu Node.js und den zum Skript.
 
-Führen Sie beispielsweise den folgenden Befehl aus:
+```typescript
+// Argumente mit bestimmter Option verarbeiten
+const args = process.argv.slice(2);
+const options = args.filter(arg => arg.startsWith("--"));
+const optionValues = options.map(option => {
+  const [key, value] = option.split("=");
+  return { key: key.replace("--", ""), value };
+});
 
-```bash
-node myScript.ts argument1 argument2
+console.log(optionValues);
+
+// Nutzungsbeispiel:
+// $ node process_argv.ts --name=Max --age=28
+// Ausgabe: [ { key: 'name', value: 'Max' }, { key: 'age', value: '28' } ]
 ```
 
-Dann ist die Ausgabe:
+## Tiefgang:
+Historisch gesehen stammt das Konzept der Kommandozeilenargumente aus den Anfangstagen der Computer, als interaktive Shells die Hauptmethode zur Interaktion mit Betriebssystemen waren. In JavaScript und TypeScript hat die `process`-Globale, ein Überbleibsel von Node.js, die Fähigkeit, auf die Systemumgebung zuzugreifen, was beinhaltet, Kommandozeilenargumente zu lesen.
 
-```bash
-meine Argumente:  [ 'argument1', 'argument2' ]
-```
+Alternativen zu `process.argv` umfassen Bibliotheken wie `yargs` oder `commander`, die komplexere Parsing-Funktionalitäten bieten, wie z.B. Flags, Aliase und Standardwerte für Argumente.
 
-## Deep Dive
+Die Implementation ist straightforward: `process.argv` ist ein einfaches Array, weshalb keine zusätzliche Initialisierung oder Konfiguration erforderlich ist, um Argumente zu lesen.
 
-Das Konzept der Kommandozeilenargumente ist nichts Neues und hat seinen Ursprung in den frühen Tagen der textbasierten Benutzeroberflächen. Es bleibt eine beliebte Praxis aufgrund seiner Direktheit und Einfachheit.
-
-Alternativen zum Lesen von Kommandozeilenargumenten sind: Dateieingabe/ausgabe (IO), Benutzereingabe während der Laufzeit und Netzwerkanfragen, je nach Anwendungsfall.
-
-Im Detail verwendet Node.js (und damit TypeScript) das `process.argv` Array für Zugriff auf die Befehlszeilenargumente. Das erste Element ist der Pfad zur Node.js ausführbaren Datei, das zweite Element ist der Pfad zur ausführbaren .ts Datei und der Rest des Arrays beinhaltet die eigentlichen Argumente.
-
-## Siehe Auch
-
-- [Node.js Dokumentation zu 'process.argv'](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
-- [TypeScript Handbuch](https://www.typescriptlang.org/docs/)
-- [Wertvoller Artikel über Kommandozeilenargumente](https://stackabuse.com/command-line-arguments-in-node-js/)
+## Siehe auch:
+- [Node.js process.argv Dokumentation](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- [`yargs` GitHub Repository](https://github.com/yargs/yargs)
+- [`commander` GitHub Repository](https://github.com/tj/commander.js)

@@ -1,6 +1,7 @@
 ---
 title:                "Excluindo caracteres que correspondem a um padrão"
-html_title:           "Arduino: Excluindo caracteres que correspondem a um padrão"
+date:                  2024-01-20T17:42:18.683509-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,36 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Removendo caracteres correspondentes a um padrão em Gleam
+## What & Why? (O Quê & Por Quê?)
+Deletar caracteres que correspondem a um padrão é sobre filtrar o que não queremos em strings. Programadores fazem isso para limpar dados, validar entradas ou simplesmente formatar informações da forma que precisam.
 
-## O que & Por quê?
+## How to (Como fazer):
+Aqui está como você pode remover caracteres de uma string em Gleam baseado em um padrão, usando regex:
 
-Deletar caracteres correspondentes a um padrão é o processo de localizar e remover partes específicas em uma string. Programadores fazem isso para limpar ou formatar dados, tornando-os mais úteis ou legíveis.
+```gleam
+import gleam/regex.{Regex, replace}
 
-## Como fazer:
-
-Aqui está um exemplo de como você pode deletar caracteres correspondentes a um padrão em Gleam.
-
-```Gleam
-import gleam/string
-
-let minha_string = "Olá, mundo!"
-let novo = string.replace(minha_string, ",", "")
-println(novo) // output: Olá mundo!
+pub fn main() {
+  let pattern = Regex("(\\d)", regex::None).unwrap()
+  let result = replace(pattern, "Contato: 1234-5678", "", replace::All)
+  io.println(result) // Imprime "Contato: -"
+}
 ```
 
-Nesse exemplo, todas as ocorrências de `,` na string são removidas com a função `string.replace`. 
+E a saída seria:
 
-## Deep Dive
+```
+"Contato: -"
+```
 
-A remoção de caracteres seguindo um padrão tem sido uma prática comum desde os primeiros dias da programação. Nomes de espaços reservados e expressões regulares desempenham um papel importante neste processo.
+## Deep Dive (Mergulho Profundo):
+Historicamente, a manipulação de strings é uma área fundamental da programação, e regex (expressões regulares) têm sido uma ferramenta poderosa desde os anos 1950 para esse propósito. Em Gleam, a biblioteca `gleam/regex` é um recurso que você tem à disposição, mas há alternativas, como trabalhar com funções de alto nível para substituir ou fatiar strings sem regex.
 
-Existem várias alternativas para remover caracteres. Para padrões simples, `string.replace` é suficiente. Para padrões complexos, `regex.replace` vem a calhar.
+Quanto aos detalhes de implementação, Gleam costuma compilar para Erlang, que por sua vez é conhecido pela sua robusta manipulação de strings e binários. Ao deletar caracteres usando padrões, na verdade você está utilizando parte desse poder sob o capô.
 
-Em termos de implementação, Gleam baseia-se na biblioteca Erlang's string, fornecendo uma camada de abstração puramente funcional. Isso garante uma coerência na manipulação de strings em toda a linguagem, independentemente da complexidade do padrão.
-
-## Veja também
-
-Para mais informações sobre programação em Gleam e manipulação de strings, visite esses links:
-
-3. Biblioteca de strings do Erlang: [Erlang String](http://erlang.org/doc/man/string.html)
+## See Also (Veja Também):
+- Regex tutorial: [https://www.regular-expressions.info/tutorial.html](https://www.regular-expressions.info/tutorial.html)
+- Erlang's string processing capabilities: [https://erlang.org/doc/apps/stdlib/unicode_usage.html](https://erlang.org/doc/apps/stdlib/unicode_usage.html)

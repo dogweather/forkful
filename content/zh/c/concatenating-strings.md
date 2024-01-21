@@ -1,7 +1,8 @@
 ---
-title:                "连接字符串"
-html_title:           "C: 连接字符串"
-simple_title:         "连接字符串"
+title:                "字符串拼接"
+date:                  2024-01-20T17:34:05.009872-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "字符串拼接"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,36 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-在C语言编程中，字符串连接是把两个或更多的字符串连接到一起形成一个新的字符串。程序员之所以要进行字符串连接，主要是为了方便对字符串的处理和操作，比如向用户显示信息、构造SQL查询或者构造文件路径等。
+## What & Why? (什么与为什么？)
+字符串拼接是将两个或多个字符串连接成一个新的字符串。程序员这么做是为了创建动态的输出信息，或者构建具有变动部分的字符串数据。
 
-## 如何操作：
-为了展示如何在C语言中进行字符串连接，让我们来看看下面的例子：
-
+## How to: (如何做？)
+在C语言中，用标准库函数`strcat()`实现字符串拼接。例如：
 ```C
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
-int main()
-{
-    char str1[100] = "Hello, ";
-    char str2[] = "World!";
-    strcat(str1, str2);
-    printf("%s\n", str1);
+int main() {
+    char source[20] = "世界";
+    char destination[50] = "你好，";
+
+    strcat(destination, source); // 拼接字符串
+    printf("%s\n", destination); // 输出拼接后的结果
+
     return 0;
 }
 ```
-
-运行这段代码，输出结果会是：
-
-```C
-Hello, World!
+输出:
+```
+你好，世界
 ```
 
-## 深度剖析:
-字符串连接在C语言的历史中始终有着重要的地位。它的存在让字符串的处理变得简单明了。虽然有许多其它的方法可以完成字符串的连接，但C语言中使用strcat函数是最常用的一种。strcat函数将会把源字符串添加到目标字符串的结尾，因此，必须确保目标字符串有足够的空间以避免溢出。
+## Deep Dive (深入探讨)
+在C的历史中，字符串自始至终都是以字符数组的形式存在的，原因是C标准并没有内建的字符串类型。`strcat()`函数自C标准库出现以来就是拼接字符串的标准方法。此外，还有`strncat()`，它允许限制添加到目标字符串的最大字符数，这是有效避免缓冲区溢出的一种方式。
 
-当然，也有其它的方法来连接字符串，比如snprintf函数，这个函数可以设置目标字符串的最大长度，避免了字符串溢出的可能。
+实现细节包括确保目标字符串足够大以容纳结果，及`strcat()`在拼接前不会检查溢出。因此，`strncat()`更安全一些。
 
-## 另请参见：
-3. 维基百科上关于字符串连接的更多信息：[String concatenation](https://en.wikipedia.org/wiki/String_concatenation)
+另一种选择是使用`sprintf()`或`snprintf()`进行拼接，它们可以处理不同类型的数据，并将其格式化为字符串。
+
+## See Also (另请参阅)
+- C标准库参考：[http://www.cplusplus.com/reference/cstring/](http://www.cplusplus.com/reference/cstring/)
+- 关于`sprintf`和`snprintf`的使用：[http://www.cplusplus.com/reference/cstdio/sprintf/](http://www.cplusplus.com/reference/cstdio/sprintf/)

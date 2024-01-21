@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:00:51.977089-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,32 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+HTTP अनुरोध भेजना यानी वेब सर्वर से जानकारी मांगना। प्रोग्रामर्स ऐसा डेटा हासिल करने, फॉर्म भरने, या APIs के साथ बातचीत करने के लिए करते हैं।
 
-HTTP अनुरोध भेजने का मतलब सर्वर से जानकारी मांगना होता है। प्रोग्रामर्स इसे APIs से जानकारी ताजगी के लिए, या सर्वर से डाटा प्राप्त करने के लिए करते हैं।
-
-## कैसे करें:
-
-यहां Ruby में HTTP अनुरोध कैसे भेजें, उसका कोड है:
-
-```Ruby
+## How to: (कैसे करें)
+Ruby में HTTP अनुरोध भेजने के लिए `net/http` स्टैंडर्ड लाइब्रेरी का उपयोग करें:
+```ruby
 require 'net/http'
 require 'uri'
 
-uri = URI.parse("http://example.com/search")
+uri = URI('http://example.com/index.html')
 response = Net::HTTP.get_response(uri)
 
-puts response.body
+puts response.code # सर्वर से प्रतिक्रिया कोड
+puts response.body # सर्वर से आई सामग्री
+```
+सैंपल आउटपुट:
+```
+200
+<!doctype html>...
 ```
 
-आपको उत्तर में सर्वर से मिलने वाला डाटा मिलेगा।
+## Deep Dive (गहराई से जानकारी)
+आरंभ में, HTTP अनुरोध केवल सरल टेक्स्ट डेटा के आदान-प्रदान के लिए थे। अब, जटिल JSON या XML जैसे फॉर्मेट में भी डेटा भेजा और प्राप्त किया जाता है। Ruby में `net/http` के अलावा, `httparty` और `rest-client` जैसे जेम्स भी हैं जो HTTP अनुरोध को और सरल बनाते हैं। इम्प्लीमेंटेशन में एसिंक्रोनस ऑपरेशन, थ्रेडिंग और सेशन मैनेजमेंट जैसी जटिलताएँ भी शामिल हो सकती हैं।
 
-## गहराई से जानें:
-
-HTTP अनुरोध भेजने का तरीका 90 के दशक से मौजूद है और यह एक महत्वपूर्ण हिस्सा है कंप्यूटर संवाद का। Net::HTTP Ruby का एक स्टैंडर्ड लाइब्रेरी है जो इसका काम करता है, लेकिन अन्य libraries जैसे कि 'httparty' या 'rest-client' भी मौजूद हैं जो इसे और आसान बना सकते हैं।
-
-## देखें भी:
-
-* [Net::HTTP प्रलेखन](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
-* [Rest-Client प्रलेखन](https://www.rubydoc.info/gems/rest-client/frames)
-* [एचटीटीपीपार्टी प्रलेखन](https://www.rubydoc.info/github/jnunemaker/httparty)
+## See Also (और भी देखें)
+- Ruby's `net/http` documentation: [Ruby-Doc.org - Net::HTTP](https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html)
+- `httparty` gem: [GitHub - httparty/httparty](https://github.com/jnunemaker/httparty)
+- `rest-client` gem: [GitHub - rest-client/rest-client](https://github.com/rest-client/rest-client)
+- More on HTTP requests in Ruby: [RubyGuides - HTTP Requests](https://www.rubyguides.com/2018/08/ruby-http-request/)

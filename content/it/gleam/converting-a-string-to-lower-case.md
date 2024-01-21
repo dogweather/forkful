@@ -1,7 +1,8 @@
 ---
-title:                "Convertire una stringa in minuscolo"
-html_title:           "Arduino: Convertire una stringa in minuscolo"
-simple_title:         "Convertire una stringa in minuscolo"
+title:                "Conversione di una stringa in minuscolo"
+date:                  2024-01-20T17:38:26.742450-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Conversione di una stringa in minuscolo"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,36 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è & Perché?
+## What & Why?
+Convertire una stringa in minuscolo significa semplicemente trasformare tutti i caratteri di una stringa in lettere minuscole. I programmatori fanno ciò per uniformare i dati, specialmente quando confrontano stringhe dove la capitalizzazione potrebbe variare.
 
-Convertire una stringa in minuscolo significa cambiare tutti i suoi caratteri in lettere minuscole. I programmatori lo fanno per facilitare le operazioni di confronto tra stringhe, eliminando le variazioni dovute ai casi.
+## How to:
+Gleam non ha una standard library propria per il trattamento delle stringhe, quindi, dobbiamo affidarci alle funzioni di Erlang. Ecco un esempio di come trasformare una stringa in minuscolo:
 
-## Come fare:
+```gleam
+import gleam/erlang
 
-In Gleam possiamo usare la funzione `string.lower` per convertire una stringa in minuscolo. Ecco un esempio:
+pub fn to_lower_case(string: String) -> String {
+  erlang.string:to_lower(string)
+}
 
-```Gleam
-import gleam/string
-
-pub fn main(args: List(String)) {
-  let s = "CIAO MONDO"
-  let s_lower = string.lower(s) 
-  io.println(s_lower) // stampa "ciao mondo"
+pub fn main() {
+  let my_string = "CiAO Gleam!"
+  to_lower_case(my_string) |> io.debug
 }
 ```
 
-## Approfondiamo
+Output:
 
-Le stringhe in informatica sono davvero antiche, risalgono ai primi tempi dell'informatica. Il concetto di convertire una stringa in maiuscolo o minuscolo esiste da quando l'ASCII è diventata la codifica standard per il testo nel 1963. 
+```
+"ciao gleam!"
+```
 
-Una alternativa alla funzione `string.lower` di Gleam potrebbe essere scrivere una propria funzione che percorre la stringa carattere per carattere, ma in genere è meno efficiente e più difficile da gestire rispetto all'uso di una funzione già presente nella libreria standard.
+## Deep Dive
+Storicamente, la conversione in minuscolo è stata una necessità per garantire che il confronto tra stringhe fosse case-insensitive, ovvero indipendente dalle maiuscole. 
 
-Dettagli sul come `string.lower` funzioni: si basa sulla funzione `unicode:downcase_list` di Erlang, e quindi opera carattere per carattero eseguendo la conversione in base alle regole Unicode.
+Le alternative includono l'uso di espressioni regolari o la creazione di mappature personalizzate dei caratteri, ma ciò può essere più oneroso da implementare.
 
-## Continua a leggere
+In termini di dettagli dell'implementazione, Gleam permette di attingere alle funzioni degli string di Erlang, che lavorano in maniera efficiente con la codifica UTF-8, assicurando che anche caratteri speciali e accentati vengano convertiti correttamente.
 
-Per ulteriori informazioni e per consultare la documentazione completa su `string.lower`, visita il sito [https://gleam.run/stdlib/string/#lower](https://gleam.run/stdlib/string/#lower).
+## See Also
+Per ulteriori informazioni e per approfondire il trattamento delle stringhe in Erlang e Gleam, ecco alcune risorse utili:
 
-Si consiglia anche di leggere gli articoli correlati:
-- [Una breve storia delle codifiche dei caratteri](http://www.diveintopython3.net/strings.html)
-- [Documentazione di Erlang su unicode:downcase_list](https://erlang.org/doc/man/unicode.html#downcase_list-1)
+- Documentazione di Erlang sulle stringhe:
+  [Erlang -- String](http://erlang.org/doc/man/string.html)
+  
+- Documentazione ufficiale di Gleam:
+  [Gleam Documentation](https://gleam.run/)
+
+- Una discussione sulla mailing list di Erlang riguardante la manipolazione delle stringhe:
+  [Erlang Questions -- String to Lowercase](http://erlang.org/pipermail/erlang-questions/)

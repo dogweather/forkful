@@ -1,7 +1,8 @@
 ---
-title:                "Läsa kommandoradsargument"
-html_title:           "Bash: Läsa kommandoradsargument"
-simple_title:         "Läsa kommandoradsargument"
+title:                "Läsa in kommandoradsargument"
+date:                  2024-01-20T17:55:44.604382-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Läsa in kommandoradsargument"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,34 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Elixir och Kommandoradsargument: En enkel guide
-
-## Vad och varför?
-
-Kommandoradsargument är data som du ger till ditt program när du kör det. Programmerare använder detta för att anpassa programmets beteende utan att behöva ändra koden.
+## Vad & Varför?
+Läsa kommandoradsargument innebär att fånga de värden som användaren matar in när de kör ditt program. Programmerare gör detta för att tillåta dynamisk input och anpassa programmets beteende vid körning.
 
 ## Så här gör du:
+Elixir gör det enkelt att hantera kommandoradsargument med `System.argv/0`. Här är ett exempel:
 
-Elixir använder `System.argv/0` för att läsa argumenten. Det returnerar en lista med strängar. Varje argument är ett element.
+```elixir
+defmodule Greeter do
+  def main(args) do
+    args |> Enum.join(" ") |> IO.puts()
+  end
+end
 
-``` Elixir
-IO.inspect System.argv()
-``` 
+Greeter.main(System.argv())
+```
+Om du sparar detta som `greeter.exs` och kör `elixir greeter.exs Hej Värld`, blir output:
+```
+Hej Värld
+```
 
-Om du kör programmet med `elixir myfile.exs arg1 arg2`, kommer det att skriva ut `["arg1", "arg2"]`.
+## Fördjupning
+Elixir, som är byggt på Erlang's VM, ärande för skriptspråk med lätt skalbarhet och felhantering. Att läsa in kommandoradsargument är vanligt i många språk och verktyg för kommando rader som `optparse` finns också i Elixir för mer komplexa ändamål.
 
-## Djupdykning
+Din kod kör i Elixir's interpreter, där `System.argv/0` är ett inbyggt anrop som ger tillgång till användardefinierade argument. För mer control, använd `OptionParser.parse/2` som hanterar flaggor och nyckelord etc.
 
-`System.argv/0` är en del av Elixir sedan dess tidiga versioner, liksom i många andra språk. 
+Ett exempel med `OptionParser`:
 
-Alternativa sätt att ta emot data inkluderar filinmatning, trådade meddelanden eller nätverkskommunikation. Men användning av kommandoradsargument är ofta det mest praktiska för snabba uppgifter och engångsskript.
+```elixir
+defmodule Greeter do
+  def main do
+    {opts, args, _} = OptionParser.parse(System.argv())
+  
+    welcome = if opts[:capitalize], do: String.upcase(Enum.join(args, " ")), else: Enum.join(args, " ")
+  
+    IO.puts welcome
+  end
+end
 
-Detaljer: `System.argv/0` är ett samtal till Erlangs `:init.get_plain_arguments/0` - Elixir bygger ju på Erlang VM. 
+Greeter.main()
+```
+Om du kör `elixir greeter.exs --capitalize hej värld`, blir output `HEJ VÄRLD`.
 
-## Se även
-
-För mer om `System.argv/0`, besök [Elixir officiella dokumentation](https://hexdocs.pm/elixir/System.html#argv/0). 
-
-Mer om hur Elixir hanterar kommandoradsargument kan du läsa på [Elixir skoll's tutorial](http://elixirschool.com/en/lessons/basics/command-line/). 
-
-Lycka till med din kodning!
+## Se även:
+- [Elixir's System module dokumentation](https://hexdocs.pm/elixir/System.html)
+- [Elixir's OptionParser module dokumentation](https://hexdocs.pm/elixir/OptionParser.html)
+- [Creational Patterns for Erlang/Elixir: Using Command Line Arguments](https://medium.com/erlang-central/creational-patterns-for-erlang-elixir-using-command-line-arguments-8404fecd4a79)

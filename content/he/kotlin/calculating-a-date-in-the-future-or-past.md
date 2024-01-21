@@ -1,6 +1,7 @@
 ---
 title:                "חישוב תאריך בעתיד או בעבר"
-html_title:           "Kotlin: חישוב תאריך בעתיד או בעבר"
+date:                  2024-01-20T17:31:55.807400-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חישוב תאריך בעתיד או בעבר"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,34 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ״מה ולמה?“
-חישוב תאריך בעתיד או בעבר הוא בסיסית, הפעלת פעולות אריתמטיות על תאריכים. פרוגרמרים עושים את זה לדעת את הזמן שחלף מאז אירוע מסויים או לתכנות לאירועים שיחרופו בעתיד.
+## מה ולמה?
+חישוב תאריך בעתיד או בעבר הוא פעולה שבה אנחנו מוסיפים או מחסירים ימים, חודשים, או שנים מתאריך מסוים. תכנותים עושים את זה לתכנון משימות, גביית תשלומים, הערכת מועדי אספקה, ועוד.
 
-## ״איך לעשות:“
-הנה דוגמה פשוטה של איך לחשב תאריך בעתיד:
-```Kotlin
+## איך לעשות:
+עבור חישובי תאריכים בקוטלין, אפשר להיעזר בספריית java.time (מ-Java 8 ואילך). להלן דוגמה:
+
+```kotlin
 import java.time.LocalDate
-import java.time.Period
+import java.time.temporal.ChronoUnit
 
 fun main() {
-    val now = LocalDate.now()
-    val nextWeek = now.plus(Period.ofWeeks(1))
-    println("Today is: $now")
-    println("One week from today is: $nextWeek")
+    val today = LocalDate.now()
+    val nextWeek = today.plus(1, ChronoUnit.WEEKS)
+    val threeMonthsAgo = today.minus(3, ChronoUnit.MONTHS)
+
+    println("Today: $today")
+    println("Next Week: $nextWeek")
+    println("Three Months Ago: $threeMonthsAgo")
 }
 ```
-הפלט של קטע הקוד יהיה משהו כמו:
 
-"Today is: 2022-05-01"
-"One week from today is: 2022-05-08"
+פלט לדוגמה:
+```
+Today: 2023-03-15
+Next Week: 2023-03-22
+Three Months Ago: 2022-12-15
+```
 
-## ״עומק להבנה:“
-(1) במהלך ההיסטוריה, פרוגרמרים חישבו תאריכים בעבר ובעתיד באמצעות כלים קלאסיים של אריתמטיקה. היום, ספריות שפות תכנות מספקות כלים קלים לשימוש.
-(2) חלופות ל-Kotlin כוללות Java, Python, JavaScript, שהן שפות אחרות שיש להם פונקציונליות נרחבת לטיפול בתאריכים וזמנים.
-(3) המחלקה LocalDate בספריית Kotlin נותנת דרך פשוטה להתמודד עם תאריכים ללא שיקול השעה ביום.
+## עיון מעמיק:
+בעבר, הספריה הפופולרית ביותר עבור תאריכים הייתה `java.util.Date` ו-`Calendar`, אך הם נחשבו למבולגנים ולא נוחים. עם פיתוח Java 8, הספרייה `java.time` הוצגה, והפכה לסטנדרט הנכון לעבודה עם זמנים ותאריכים. בכל הקשור לקוטלין, ספריית java.time משתלבת נהדרת בקוד ומספקת פונקציונליות חזקה ומדויקת. לחלופין, ניתן גם להשתמש בספריות חיצוניות כגון Joda-Time עד שהממשק של java.time נכנס לשימוש נרחב. עם זאת, לרוב בנית האפליקציות המודרניות יש יתרון להיצמד לספריית java.time בשל התמיכה הרשמית והעדכניות.
 
-## ״ראה גם:“
-\n
-1 [Java's Date and Time Classes](https://docs.oracle.com/javase/tutorial/datetime/index.html)
-2 [Python's Datetime Module](https://docs.python.org/3/library/datetime.html)
-3 [JavaScript Date Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+## ראה גם:
+- [Java 8 Date Time API Guide](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html) – מדריך לספריית java.time של Java 8.
+- [Kotlin Documentation - Using Java 8 Date and Time API](https://kotlinlang.org/docs/java-interop.html#java-8-date-and-time-api) – התיעוד הרשמי של קוטלין לשימוש ב-Java 8 Date and Time API.
+- [Threeten Backport Project](https://www.threeten.org/threetenbp/) – פורט עבור Java 6 ו-7 של ספריית java.time, לשימוש עד שהאפליקציה שלך תוכל להיעזר ב-Java 8.

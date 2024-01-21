@@ -1,6 +1,7 @@
 ---
 title:                "Berechnung eines zukünftigen oder vergangenen Datums"
-html_title:           "C++: Berechnung eines zukünftigen oder vergangenen Datums"
+date:                  2024-01-20T17:30:47.808419-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
 programming_language: "C++"
 category:             "C++"
@@ -11,54 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Beim Berechnen eines zukünftigen oder vergangenen Datums manipulieren wir Daten, um eine bestimmte Anzahl von Tagen, Monaten oder Jahren hinzuzufügen oder abzuziehen. Programmierer tun dies oft, um Ablaufdaten, geplante Ereignisse oder Fristen zu berechnen.
+Die Berechnung eines Datums in der Zukunft oder Vergangenheit bezieht sich darauf, von einem gegebenen Datum ausgehend ein neues Datum zu ermitteln. Programmierer nutzen dies für Features wie Erinnerungen, Buchungen und Prognosen.
 
-## Wie zu:
-Werfen wir einen Blick auf ein praktisches Codebeispiel:
-
+## So geht's:
 ```C++
 #include <iostream>
-#include <ctime>
 #include <chrono>
+#include <iomanip>
 
-int main() 
-{
-    std::time_t now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-    struct tm newdate = *std::localtime(&now);
-    newdate.tm_mday += 30; // Berechne das Datum 30 Tage in der Zukunft
-    std::time_t future = std::mktime(&newdate);
+int main() {
+    using std::chrono::system_clock;
+    using std::chrono::duration_cast;
+    using std::chrono::hours;
+    using std::chrono::time_point_cast;
 
-    // Ausgabe: Das aktuelle Datum und 30 Tage zukünftiges Datum
-    char str_now[20];
-    strftime(str_now, 20, "%d.%m.%Y", std::localtime(&now));
-    std::cout << "Heutiges Datum: " << str_now << '\n';
+    // Heutiges Datum erhalten
+    auto jetzt = system_clock::now();
 
-    char str_future[20];
-    strftime(str_future, 20, "%d.%m.%Y", std::localtime(&future));
-    std::cout << "Zukünftiges Datum: " << str_future << '\n';
+    // Datum in 30 Tagen
+    auto inDreißigTagen = jetzt + std::chrono::hours(24 * 30);
+
+    // Datum vor 30 Tagen
+    auto vorDreißigTagen = jetzt - std::chrono::hours(24 * 30);
+
+    // Zeitpunkte in tm umwandeln
+    time_t zeitInDreißig = system_clock::to_time_t(inDreißigTagen);
+    time_t zeitVorDreißig = system_clock::to_time_t(vorDreißigTagen);
+
+    // Ausgeben
+    std::cout << "Heute: " << std::put_time(localtime(&zeit), "%F") << '\n';
+    std::cout << "In 30 Tagen: " << std::put_time(localtime(&zeitInDreißig), "%F") << '\n';
+    std::cout << "Vor 30 Tagen: " << std::put_time(localtime(&zeitVorDreißig), "%F") << '\n';
 
     return 0;
 }
 ```
-Beispiel-Ausgabe:
-
-```C++
-Heutiges Datum: 01.05.2022
-Zukünftiges Datum: 31.05.2022
+Output:
+```
+Heute: 2023-04-01
+In 30 Tagen: 2023-05-01
+Vor 30 Tagen: 2023-03-02
 ```
 
-## Tief Tauchen
-**Historischer Hintergrund**: Historisch gesehen wurde diese Methode entwickelt, um mit dem Bedarf von Geschäfts- und Unternehmensanwendungen umzugehen. Diese Anwendungen müssen oft vergangene, gegenwärtige und zukünftige Daten verwalten.
+## Deep Dive
+Die `<chrono>`-Bibliothek kam mit C++11 und revolutionierte die Zeit- und Datumsverwaltung. Zuvor musste man oft auf plattformspezifische API oder externe Bibliotheken wie Boost zurückgreifen. Alternativen sind auch heute noch die C Time-API oder Libraries wie date.h. Bei der Zeitberechnung sollte man auch auf Zeitumstellungen (Sommerzeit) und Schaltjahre achten, was mit `<chrono>` automatisch passiert.
 
-**Alternativen**: Es gibt mehrere Wege, um dieses Ziel zu erreichen. Andere Optionen umfassen die Verwendung von Bibliotheken wie Boost.Date_Time oder datetime in Python, die Berechnungen wie diese transparenter machen können.
-
-**Implementierungsdetails**: Beachten Sie, dass in unserem Codebeispiel das mktime-Funktion rollt über, wenn wir über den aktuellen Monat hinaus Tage hinzufügen. Wenn wir beispielsweise am 30. April 30 Tage hinzufügen, gibt mktime uns den 30. Mai zurück.
-
-## Siehe auch
-**C++ Referenz - `mktime`:** https://en.cppreference.com/w/cpp/chrono/c/mktime
-
-**C++ Referenz - `strftime`:** https://en.cppreference.com/w/cpp/chrono/c/strftime
-
-**Boost.Date_Time-Dokumentation:** https://www.boost.org/doc/libs/1_77_0/doc/html/date_time.html
-
-Erforschen Sie diese Ressourcen, um Ihre Kenntnisse zu vertiefen und mehr über die verschiedenen Optionen zur Berechnung von zukünftigen und vergangenen Daten in C++ zu erfahren.
+## See Also
+- C++ Reference for `<chrono>`: https://en.cppreference.com/w/cpp/chrono
+- GitHub repo for Howard Hinnant's date library, a timezone-aware extension: https://github.com/HowardHinnant/date
+- C++20 Calendar and Time-Zone Support (new features): https://en.cppreference.com/w/cpp/chrono/calendar

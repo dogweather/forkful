@@ -1,6 +1,7 @@
 ---
 title:                "Starting a new project"
-html_title:           "Bash recipe: Starting a new project"
+date:                  2024-01-20T18:02:51.315083-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Starting a new project"
 programming_language: "C++"
 category:             "C++"
@@ -11,29 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-At its core, starting a new project is about embarking on a creative journey to build a program from scratch or enhance existing ones. Programmers initiate new projects to bring innovative ideas to life, solve various industry-specific problems, or even to learn and acquire new skills.
+Starting a new project means setting up the foundation for your codebase. Programmers do this to kickstart the development process, guide the project's structure, and lay down the groundwork for future code.
 
 ## How to:
-Here is an example of a simple "Hello, World!" program in C++:
+When starting, choose your build system or IDE. For simplicity, we’ll use a basic text editor and g++. Create two files: `main.cpp` and a `Makefile`.
 
+`main.cpp`:
 ```C++
-// Your First C++ Program
-
 #include <iostream>
 
 int main() {
-    std::cout << "Hello, World!";
+    std::cout << "Hello, new project!" << std::endl;
     return 0;
 }
 ```
 
-When this code is compiled and run, it displays "Hello, World!" on the terminal.
+`Makefile`:
+```make
+all:
+    g++ main.cpp -o my_project
+
+clean:
+    rm my_project
+```
+
+To compile, run `make` in the terminal. To clean up, run `make clean`. 
+
+Sample output after running `./my_project`:
+```
+Hello, new project!
+```
 
 ## Deep Dive
-1. **Historical Context**: The structure of C++ projects traces its origins back to the 70s. C++ was developed as an enhancement to the C programming language, with the initial motivation being to add object-oriented programming into the C language.
-2. **Alternatives**: Languages like Python, Java, and Rust are alternatives to C++, each with its own strengths and ideal use-cases. For instance, Python is great for beginners due to its readability while Java is platform-independent, and Rust provides memory safety guarantees.
-3. **Implementation details**: If you're using an Integrated Development Environment (IDE) like Visual Studio, starting a new C++ project involves creating a new project, configuring settings as per your requirements, and writing the code. It can vary based on the tools and platforms you're using.
+Historically, setting up a new C++ project was a more manual process. Today, IDEs can generate templates. Choices like CMake or Meson help manage builds. Before these tools, developers wrote Makefiles by hand, compiling every `.cpp` file into an object file before linking them.
+
+Considering alternatives: newer build systems simplify the process. For example, CMake autogenerates your Makefiles, making it platform-independent.
+
+Implementation-wise, the setup depends on factors like project size and dependencies. Larger projects demand a more complex structure with separate folders for source files, headers, and tests.
 
 ## See Also
-- For a complete guide on C++, check out [The C++ Programming Language](https://www.stroustrup.com/C++.html) by the creator of C++, Bjarne Stroustrup.
-- You might also find [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines) helpful for recommendations about best practices in C++.
+- [CMake Documentation](https://cmake.org/documentation/)
+- [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
+- [GCC, the GNU Compiler Collection](https://gcc.gnu.org/)

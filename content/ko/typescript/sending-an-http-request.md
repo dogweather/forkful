@@ -1,6 +1,7 @@
 ---
 title:                "HTTP 요청 보내기"
-html_title:           "Clojure: HTTP 요청 보내기"
+date:                  2024-01-20T18:01:03.151348-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP 요청 보내기"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,37 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 사용할까?
-HTTP 요청을 보내는 것은 웹 서버에 정보를 요청하거나 전송하는 방법입니다. 프로그래머들이 이를 사용하는 주된 이유는 서버에서 데이터를 가져와 작업하거나, 서버에 데이터를 저장하는 것입니다. 
+## What & Why? (무엇이며, 왜?)
+HTTP 요청을 보내는 것은 웹 서버에 정보를 요청하거나 전송하는 방법입니다. 프로그래머들은 데이터를 가져오거나 원격 서비스와 상호 작용하기 위해 이를 사용합니다.
 
-## 어떻게 사용할까:
-TypeScript를 사용하여 HTTP 요청을 보내는 방법을 알아보겠습니다. 먼저, `http` 모듈을 임포트하고, URL을 선택하고 요청(GET, POST 등)을 보냅니다.
+## How to: (방법)
+`fetch` API와 `axios` 라이브러리를 사용한 예제입니다. 먼저 기본적인 `fetch` 사용법을 보여 드리겠습니다.
 
 ```TypeScript
-import http from 'http';
+// fetch 사용하기
+async function fetchData(url: string): Promise<void> {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('요청 중 오류가 발생했습니다:', error);
+  }
+}
 
-const options = {
-  hostname: 'www.example.com',
-  port: 80,
-  path: '/foo.json',
-  method: 'GET',
-};
-
-const req = http.request(options, res => {
-  res.on('data', (d) => {
-    process.stdout.write(d);
-  });
-});
+fetchData('https://api.example.com/data');
 ```
-이 코드는 `www.example.com/foo.json` 위치에서 JSON 데이터를 요청합니다. 응답이 도착하면, 데이터 `d`가 콘솔에 출력됩니다.
 
-## 깊게 알아보기
-HTTP 요청은 프로그래밍의 핵심 요소로, 웹의 기초적인 통신 메커니즘입니다. 이는 1990년대 초 웹의 탄생과 함께 개발되었습니다. 
+`axios`를 사용하면 다음과 같습니다:
 
-대체 방안으로는 WebSocket, GraphQL 등 다양한 기술들이 존재하나, 간단한 정보 요청 또는 전송에는 HTTP가 가장 흔히 사용됩니다. 
+```TypeScript
+// axios 설치 필요: npm install axios
+import axios from 'axios';
 
-TypeScript에서 HTTP 요청을 보내기 위해, Node.js의 `http` 모듈을 사용합니다. 이 모듈은 내부적으로 TCP/IP 소켓을 이용해 통신하며, 요청 헤더와 본문을 조작할 수 있는 API를 제공합니다.
+async function fetchData(url: string): Promise<void> {
+  try {
+    const response = await axios.get(url);
+    console.log(response.data);
+  } catch (error) {
+    console.error('요청 중 오류가 발생했습니다:', error);
+  }
+}
 
-## 참고 자료
-1. [MDN - HTTP 가이드](https://developer.mozilla.org/ko/docs/Web/HTTP)
-3. [GraphQL 공식 홈페이지](https://graphql.org/)
+fetchData('https://api.example.com/data');
+```
+
+## Deep Dive (심층 분석)
+HTTP 요청을 보내는 것은 웹의 기본입니다. `XMLHttpRequest`는 과거엔 많이 사용되었지만, 복잡하고 사용하기 불편했습니다. `fetch`는 더 간결하고 modern한 대안이며, 프로미스를 반환합니다. `axios`는 `fetch`보다 기능이 다양하며 인터셉터, 요청 취소 등 추가 기능을 제공합니다.
+
+## See Also (더 보기)
+- MDN Web Docs의 `fetch`: [MDN fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- `axios` GitHub 리포지토리: [axios GitHub](https://github.com/axios/axios)
+- TypeScript 핸드북: [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)

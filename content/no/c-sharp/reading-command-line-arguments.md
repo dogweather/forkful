@@ -1,6 +1,7 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Arduino: Lese kommandolinjeargumenter"
+date:                  2024-01-20T17:55:42.021560-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "C#"
 category:             "C#"
@@ -10,40 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-
-Kommandolinjeargumenter er parametere som sendes til programmet ved oppstart. Disse lar en bruker påvirke hvordan programmet fungerer uten å endre koden, noe som er spesielt hensiktsmessig for programmer med varierte funksjoner og innstillinger.
+## Hva & Hvorfor?
+Kommandolinjeargumenter lar oss sende informasjon til et program når vi starter det. Vi gjør dette for å gi fleksibel kontroll over programmets oppførsel uten å hardkode verdier.
 
 ## Hvordan:
+```C#
+using System;
 
-Reglene er enkle. I C# mottas kommandolinjeargumenter gjennom et argument til Main()-funksjonen, vanligvis kalt 'args'. La oss gjøre et eksempel:
-
-```C# 
-static void Main(string[] args)
+class CommandLineDemo
 {
-    for (int i = 0; i < args.Length; i++)
+    static void Main(string[] args)
     {
-        Console.WriteLine($"Argument {i}: {args[i]}");
+        Console.WriteLine("Antall argumenter: " + args.Length);
+        for (int i = 0; i < args.Length; i++)
+        {
+            Console.WriteLine($"Argument {i + 1}: {args[i]}");
+        }
     }
 }
+
+```
+Kjør programmet slik:
+```
+dotnet run -- arg1 arg2 arg3
+```
+Forventet utskrift:
+```
+Antall argumenter: 3
+Argument 1: arg1
+Argument 2: arg2
+Argument 3: arg3
 ```
 
-I dette eksempelet vil programmet skrive ut hvert kommandolinjeargument på en ny linje. Hvis du kjører programmet med argumentene 'Hello', 'World', vil du se:
+## Dypdykk
+Før i tiden, da GUIer var sjeldne, var kommandolinjeinteraksjon essensiell. Det er fortsatt kritisk for skripting, automatisering og bruken i utviklingsverktøy. Alternativer til kommandolinjeargumenter inkluderer konfigurasjonsfiler og interaktive prompts, men de er mindre effektive for rutineoppgaver. Implementeringsdetaljer varierer mellom operativsystemer; i Windows brukes for eksempel `Main(string[] args)` mens i UNIX-baserte systemer bruker man `int main(int argc, char* argv[])`.
 
-``` 
-Argument 0: Hello
-Argument 1: World
-```
-
-## Dypere dykk:
-
-Historien til kommandolinjeargumenter strekker seg tilbake til de eldste dagene for programmering. Selv om moderne grafiske grensesnitt nå dominerer, er kommandolinjeparametere fortsatt et kraftig verktøy.
-
-Alternativt, hvis du trenger en mer avansert behandling av kommandolinjeargumenter som flagg eller nøkkel/verdi-par, kan du vurdere å bruke et bibliotek som `CommandLineParser`.
-
-Implementeringsdetaljer er ganske rett frem. Kommandolinjeargumenter sendes som en serie strenger, der hvert argument er adskilt av et mellomrom. Hvis et argument skal inneholde et mellomrom, må det omsluttes med anførselstegn.
-
-## Se også:
-
-* Microsoft C# Programmering Guide: https://docs.microsoft.com/en-us/dotnet/csharp/
-* CommandLineParser bibliotek: https://github.com/commandlineparser/commandline
+## Se Også
+- [Microsoft Docs: Command-line parameters](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/)
+- [Stack Overflow: How to parse command line arguments](https://stackoverflow.com/questions/491595/best-way-to-parse-command-line-arguments-in-c)
+- [Wikipedia: Command-line interface](https://en.wikipedia.org/wiki/Command-line_interface)

@@ -1,7 +1,8 @@
 ---
-title:                "插值字符串"
-html_title:           "Arduino: 插值字符串"
-simple_title:         "插值字符串"
+title:                "字符串插值"
+date:                  2024-01-20T17:50:47.582103-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "字符串插值"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,30 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么以及为什么？
-字符串插值是用来在字符串中嵌入表达式的结果的方法。程序员之所以使用它，是因为它能让我们更方便地组装字符串。
+## What & Why? 什么 & 为什么？
+字符串插值是在字符串中嵌入变量或表达式的过程。程序员这么做是为了构造动态内容，提高代码的灵活性和可读性。
 
-## 如何做？
+## How to: 如何操作：
 ```Clojure
-(def name "Lucy")
-(def greeting (str "Hello, " name "!"))
+;; 使用 str 连接字符串和变量值
+(let [name "World"]
+  (str "Hello, " name "!"))
+;; 输出: "Hello, World!"
+
+;; 使用 format 进行更复杂的插值
+(let [user "Jane" age 28]
+  (format "Hi, my name is %s and I am %d years old." user age))
+;; 输出: "Hi, my name is Jane and I am 28 years old."
 ```
-输出：
-```Clojure
-"Hello, Lucy!"
-```
-在上面的代码中，我们可以看到怎么在字符串中插入变量。用`str`函数来组合字符串和变量。
 
-## 深入探讨
-字符串插值的历史可以追溯到 60 年代的编程语言。Clojure 选择了 `str` 函数的方式来实现字符串插值。这是一种简单而清晰的方式。除此之外，有些语言如 Python，JavaScript 等，会使用特殊的字符串插值语法。
+## Deep Dive 深入探索
+Clojure 并没有内置字符串插值，需要通过其它方式如 `str` 或 `format` 函数来拼接。这种做法来源于 Lisp 的传统，在这个传统中，简单和直接常常胜于语法糖。你还可以用 `clojure.pprint/cl-format` 来获得更多类似 `printf` 的功能，这从 Common Lisp 继承过来。对于更多现代和方便的操作，可以看看 `clojure.string` 库，或者使用诸如 `hiccup` 或 `selmer` 这样的第三方模板库。
 
-然而，`str` 函数并不只用于字符串插值。它可以接收任意数量的参数，将它们转化为字符串后拼接在一起。它的工作方式如下：
-1. 如果参数是 `nil`，那么转化为空字符串。
-2. 如果参数是一个可打印的字符，那么转化为对应的字符串。
-3. 其他的情况，转化为字符串。
-
-## 扩展阅读
-你可以阅读以下链接来进一步理解字符串插值：
-[Clojure str 函数的文档](https://clojuredocs.org/clojure.core/str)
-[Clojure 字符串和字符的文档](https://clojure.org/guides/weird_characters)
-[字符串插值的 Wikipedia 词条](https://en.wikipedia.org/wiki/String_interpolation)
+## See Also 另请参阅
+- Clojure 官方文档：[Clojure API Docs](https://clojure.github.io/clojure/)
+- `clojure.string` 文档：[Clojure Strings](https://clojure.github.io/clojure/clojure.string-api.html)
+- 第三方库如 Selmer：[Selmer Template Library](https://github.com/yogthos/Selmer)

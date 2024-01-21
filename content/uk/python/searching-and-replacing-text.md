@@ -1,6 +1,7 @@
 ---
 title:                "Пошук та заміна тексту"
-html_title:           "C++: Пошук та заміна тексту"
+date:                  2024-01-20T17:58:33.175894-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Пошук та заміна тексту"
 programming_language: "Python"
 category:             "Python"
@@ -10,38 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що та Чому?)
+Searching and replacing text means finding specific strings in data and swapping them out for something else. Programmers do it to update data, correct errors, or process text dynamically.
 
-Пошук та заміна тексту - це процес знаходження певних фрагментів у тексті та заміни їх на інші. Програмісти керують цим, щоб керувати та змінювати дані, автоматизовуючи трудомісткі задачі.
+## How to: (Як це зробити:)
+```python
+# Let's dive into code
+text = "Hello, dear friend! Are you learning Python today?"
 
-## Як це робити:
+# Searching and replacing
+new_text = text.replace("friend", "reader")
+print(new_text)  # Output: Hello, dear reader! Are you learning Python today?
 
-Python пропонує простий спосіб здійснення пошуку та заміни за допомогою метода `replace()`. 
-
-```Python
-text = "Я люблю Python. Python - моя улюблена мова програмування."
-new_text = text.replace("Python", "Java")
-print(new_text)
+# Case-insensitive replacing using re module
+import re
+case_insensitive_text = re.sub("python", "Java", text, flags=re.IGNORECASE)
+print(case_insensitive_text)  # Output: Hello, dear friend! Are you learning Java today?
 ```
 
-При виконанні цього коду виводом буде:
+## Deep Dive (Поглиблене вивчення)
+The concept of searching and replacing text is as old as computing itself. Think punch cards where text was 'replaced' by physically changing the cards. Now, Python offers the `replace()` method — simple and efficient. For patterns and advanced manipulations, we turn to the `re` module. It's your go-to tool for complex scenarios: case-insensitive, regex patterns, etc. Alternatives? Sure, modules like `string` in older Python versions, or just iterating over strings with loops. Yet, `re.replace()` and `str.replace()` are go-tos for performance and convenience.
 
-```
-Я люблю Java. Java - моя улюблена мова програмування.
-```
-
-## Глибше занурення
-
-У минулому, перед появою високорівневих мов програмування, процес пошуку та заміни тексту був значно складнішим. Дані потрібно було розбивати на фрагменти, щоб здійснити пошук, а потім вручну замінювати текст.
-
-Щодо альтернатив, в Python також є бібліотека `re` для регулярних виразів, яка дає більше можливостей для пошуку та заміни тексту.
-
-Використання методу `replace()` просте у виконанні, оскільки Пайтон передбачає початкову та кінцеву точку і робить весь "грубий роботу", звільняючи програміста від складностей обробки тексту.
-
-## Див. також
-
-Документація Python по методу `replace()`:
-https://docs.python.org/3/library/stdtypes.html#str.replace
-
-Документація Python по бібліотеці регулярних виразів:
-https://docs.python.org/3/library/re.html
+## See Also (Дивіться також)
+- Python's official documentation for the `re` module: https://docs.python.org/3/library/re.html
+- Detailed tutorial on regular expressions in Python: https://realpython.com/regex-python/
+- For old-schoolers, the 'string' module documentation (though often obsolete): https://docs.python.org/3/library/string.html

@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:45:49.829968-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,38 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+Substringien irrottaminen tarkoittaa merkkijonon osien poimimista. Ohjelmoijat tekevät tätä tietojen jäsentelyyn, tietokantojen käsittelyyn ja tekstitiedon kohdentamiseen.
 
-Substringien erottaminen tarkoittaa suurempien merkkijonojen pilkkomista pienempiin osiin. Ohjelmoijat tekevät tätä usein datan analysoinnin, käsittelyn, ja rakenteen muokkaamisen tarpeiden vuoksi.
+## How to:
+Elixirissä substringien käsittely voi tapahtua useilla tavoilla. Tässä muutama esimerkki:
 
-## Kuinka se tehdään: 
+1. `String.slice/3` käyttö leikkaukseen:
+   ```elixir
+   original = "Hei maailma"
+   sub = String.slice(original, 0, 3)
+   IO.puts sub
+   ```
+   Tulostuu: `Hei`
 
-```Elixir
-alue = 1..3
-iso_merkkijono = "Tämä on esimerkki"
-pieni_merkkijono = String.slice(iso_merkkijono, alue)
-IO.puts pieni_merkkijono
-```
+2. `String.split/2` ja listan käsittely:
+   ```elixir
+   original = "Elixir on hauska"
+   parts = String.split(original, " ")
+   IO.puts Enum.at(parts, 1)
+   ```
+   Tulostuu: `on`
 
-Edellä oleva koodinpätkä erottaa merkkijonosta 'iso_merkkijono' alimerkkijono 'mä', käyttäen 'String.slice'-funktiota ja aluetta 1..3. Koodi tulostaa 'mä'.
+3. Käytön Regex ja `Regex.run/3`:
+   ```elixir
+   original = "Tervetuloa Elixirin maailmaan"
+   {:ok, Regex} = Regex.compile("Elixirin (\\w+)")
+   [match | _] = Regex.run(Regex, original)
+   IO.puts match
+   ```
+   Tulostuu: `Elixirin maailmaan` 
 
-## Sukellus syvemmälle
+## Deep Dive
+Substring-toiminnot ovat olleet ohjelmointikielissä jo kauan. Elixirissä, joka pohjautuu Erlangiin ja hyödyntää BEAM-virtuaalikonetta, tekstinkäsittely on tehty tehokkaaksi. String-moduuli tarjoaa laajan valikoiman funktioita tekstinkäsittelyyn, jotka perustuvat UTF-8-merkkien käsittelyyn. Toisin kuin jotkin kielet, joissa merkkijono on vain merkkien taulukko, Elixirissä merkkijono on binaari, mikä tekee käsittelystä tehokasta.
 
-Substringien erottaminen on vanha ohjelmointikonsepti, joka on ollut olemassa ohjelmointikielissä alkaen ensimmäisistä kielistä, kuten Fortranista ja COBOL:sta. Elixiriä varten tämä omaksutaan String.slice-funktion kautta.
+Vaihtoehtoja ovat myös kolmannen osapuolen kirjastot, kuten `Stringex`, tarjoten lisätoiminnallisuuksia. Kuitenkin, Elixirin vakiokirjastot yleensä riittävät useimmiten.
 
-Vaihtoehtoisesti, voit käyttää myös funktiota 'binary_part/3'. Se on alhaisemman tason API ja sillä voi olla suorituskykyetuja tietyissä tilanteissa.
+Substringien käsittely ja tekstinkäsittely yleisesti voivat olla haastavia eri kielten ja merkistöjen vuoksi. Elixir käsittelee nämä hienosti, tarjoten kehittäjille maailmanlaajuisesti helppokäyttöisiä ja luotettavia työkaluja.
 
-```Elixir
-iso_merkkijono = "Enemmän esimerkkejä"
-pieni_merkkijono =
-  :erlang.binary_part(iso_merkkijono, {1, byte_size(iso_merkkijono) - 1})
-IO.puts pieni_merkkijono
-```
-
-Edellä mainitussa koodissa "Enemmän esimerkkejä" -merkkijonosta on poistettu ensimmäinen merkki 'E', jolloin lopputuloksena on "nemmän esimerkkejä".
-
-## Katso myös:
-
-1. [Elixir String.slice](https://hexdocs.pm/elixir/String.html#slice/2) dokumentaatio Elixirin virallisella sivustolla.
-2. [Erlang binary_part](https://erlang.org/doc/man/erlang.html#binary_part-3) dokumentaatio Erlangin virallisella sivustolla (Elixir on kirjoitettu Erlangissa).
-3. Opas [Elixirin merkkijonokäsittelyyn](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html) Elixir lang -sivustolla.
+## See Also
+- Elixirin virallinen dokumentaatio: [String](https://hexdocs.pm/elixir/String.html)
+- Regular expressions in Elixir: [Regex](https://hexdocs.pm/elixir/Regex.html)
+- Tutustumiseksi Elixirin perusasioihin: [Elixir School](https://elixirschool.com/en/) 
+- Elixir-foorumi, jossa keskustelua ja apua: [Elixir Forum](https://elixirforum.com/)

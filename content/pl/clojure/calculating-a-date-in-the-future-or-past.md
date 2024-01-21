@@ -1,5 +1,7 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
+date:                  2024-01-20T17:28:28.982112-07:00
+model:                 gpt-4-1106-preview
 html_title:           "Clojure: Obliczanie daty w przyszłości lub przeszłości"
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Clojure"
@@ -10,34 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Obliczanie daty w przyszłości lub przeszłości to sposób na ustalenie wartości daty przed lub po określonym czasie. Programiści robią to m.in. do śledzenia terminów, harmonogramowania zadań, czy wyznaczania dat ważności.
 
-Policzmy datę przyszłą lub przeszłą. Programiści robią to, aby zrozumieć sekwencje wydarzeń i czas, który mają na ich wykonanie.
+## How to:
+W Clojure do obliczania dat można wykorzystać bibliotekę `clj-time`, bazującą na Joda-Time. Poniżej przykłady użycia.
 
-## Jak to zrobić:
-
-Clojure oferuje funkcje do manipulowania danymi w pakiecie java.util.Date. Oto prosty przykład:
 ```Clojure
 (require '[clj-time.core :as t])
 (require '[clj-time.coerce :as c])
 (require '[clj-time.periodic :as p])
 
-(defn add-days [date days]
-  (-> date
-      c/to-local-date
-      (t/plus (t/days days))
-      c/from-local-date))
-(add-days (new java.util.Date) 10)
+;; Dodaj tydzień do aktualnego czasu
+(-> (t/now)
+    (t/plus (t/weeks 1))
+    (c/to-string))
+;; => "2023-02-23T14:40:25.000Z"
+
+;; Odejmij 30 dni od wybranej daty
+(-> (t/date-time 2023 1 24)
+    (t/minus (t/days 30))
+    (c/to-string))
+;; => "2022-12-25T00:00:00.000Z"
 ```
-Ten kod doda 10 dni do dzisiejszej daty. 
 
-## Dogłębne zgłębianie tematu
+## Deep Dive:
+Clojure używa Javy wewnętrznie, więc `clj-time` jest nakładką na Joda-Time, znany i wytrzymały silnik obsługi czasu w Javie. Alternatywy to `java.time` (biblioteka czasu w Java 8+) lub wewnętrzny moduł Clojure `java.util.Calendar`. W obliczeniach dat ważne jest uwzględnienie stref czasowych i przestępnych sekund. Rozwiązania typu Joda-Time czy `java.time` radzą sobie z tym za nas.
 
-Historia jest pełna przykładów kiedy obliczanie daty przyszłej lub przeszłej było kluczowe. I choć możemy to robić bezpośrednio w Java, Clojure oferuje wygodniejsze narzędzia. Alternatywnie, moglibyśmy użyć biblioteki Java 8 java.time, ale clj-time jest bardziej 'clojurystyczny' i łatwiejszy do użycia. Głównym pytaniem jest, jak wiele dni chcemy dodać lub odjąć i do jakiego typu daty chcemy to zastosować.
-
-## Zobacz także
-
-1. Dokumentacja clj-time: https://github.com/clj-time/clj-time
-2. Dokumentacja Clojure: https://clojure.org/guides/getting_started
-3. Dokumentacja java.util.Date: https://docs.oracle.com/javase/8/docs/api/java/util/Date.html
-4. Dokumentacja java.time: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+## See Also:
+- [clj-time GitHub repository](https://github.com/clj-time/clj-time)
+- [Joda-Time](https://www.joda.org/joda-time/)
+- [Clojure's java-time library](https://github.com/dm3/clojure.java-time)

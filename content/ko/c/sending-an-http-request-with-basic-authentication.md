@@ -1,7 +1,8 @@
 ---
-title:                "기본 인증을 이용한 HTTP 요청 보내기"
-html_title:           "Arduino: 기본 인증을 이용한 HTTP 요청 보내기"
-simple_title:         "기본 인증을 이용한 HTTP 요청 보내기"
+title:                "기본 인증을 사용한 HTTP 요청 보내기"
+date:                  2024-01-20T18:01:06.436633-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "기본 인증을 사용한 HTTP 요청 보내기"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,42 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 사용하는가?
-기본 인증이 있는 HTTP 요청을 보내는 것은, 웹 서버에 정보를 요청하거나 전달하는 방법입니다. 프로그래머들은 이것을 데이터 교환을 안전하게 수행하려고 사용합니다.
+## What & Why? (무엇과 왜?)
+HTTP 요청을 보내면 서버와 데이터를 주고받는다. 기본 인증이란, 사용자 이름과 비밀번호를 Base64로 인코딩해서 요청에 추가하는 거다. 이렇게 하면 안전하게 서버에 로그인해서 권한이 필요한 데이터에 접근할 수 있다.
 
-## 어떻게 사용하는가:
-C 언어로 기본 인증을 가진 HTTP 요청을 보내는 간단한 코드는 아래와 같습니다:
-
+## How to (방법)
 ```C
+#include <stdio.h>
 #include <curl/curl.h>
 
-int main(void) {
-  CURL *curl;
-  CURLcode res;
+int main() {
+    CURL *curl;
+    CURLcode res;
 
-  curl_global_init(CURL_GLOBAL_DEFAULT);
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-    curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    curl_easy_setopt(curl, CURLOPT_USERPWD, "user:password");
+    curl_global_init(CURL_GLOBAL_ALL);
+    curl = curl_easy_init();
+    if(curl) {
+        // 서버 URL 설정
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com/resource");
+        // 기본 인증 설정: "username:password"
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
+        curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
+        
+        // 요청 실행 및 결과 처리
+        res = curl_easy_perform(curl);
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
 
-    res = curl_easy_perform(curl);
-    if(res != CURLE_OK)
-       fprintf(stderr, "curl_easy_perform() failed: %s\n",
-               curl_easy_strerror(res));
-
-    curl_easy_cleanup(curl);
-  }
-  curl_global_cleanup();
-  return 0;
+        // 마무리
+        curl_easy_cleanup(curl);
+    }
+    curl_global_cleanup();
+    return 0;
 }
 ```
-해당 코드를 실행하면, 당신은 http://example.com에 기본 인증 (사용자 이름: user, 비밀번호: password)로 HTTP 요청을 보낼 수 있습니다.
+Sample Output:
+```
+<html>
+<body>
+    <p>Authorized resource access granted.</p>
+</body>
+</html>
+```
 
-## Deep Dive
-기본 인증이 있는 HTTP 요청은 1990년대 초반에 고안되었고 HTTP/1.0 이후로 널리 사용되었습니다. **libcurl** 라이브러리는 네트워크 전송을 처리하기 위해 널리 사용되는 라이브러리 중 하나이며, 기본 인증을 제공합니다. 비록 더 안전한 대안들이 개발되었음에도 불구하고, 기본 인증은 허용된 경우 매우 간단하게 구현할 수 있다는 점에서 장점을 가지고 있습니다.
+## Deep Dive (심층 분석)
+HTTP 기본 인증은 단순하지만 오래된 방법이다. RFC 7617 문서에서 정의되었다. 현대에는 더 안전한 대체 방법들이 있어, 토큰 기반 인증 같은 OAuth를 많이 사용한다. 그럼에도 불구하고, API가 간단하고 트래픽이 암호화된 경우에는 기본 인증이 여전히 유용하다. 구현할 때는 `libcurl` 전송 라이브러리처럼 안전하고 유지보수가 쉬운 라이브러리를 사용하는 것이 좋다.
 
-## See Also
-- libcurl 공식 문서: https://curl.haxx.se/libcurl/
-- 기본 인증에 대해 더 자세히 알아보기: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication
+## See Also (관련 자료)
+- cURL 바로가기: [cURL](https://curl.se/)
+- RFC 7617, HTTP Basic Authentication: [RFC 7617](https://datatracker.ietf.org/doc/html/rfc7617)
+- OAuth 2.0: [OAuth 2.0](https://oauth.net/2/)

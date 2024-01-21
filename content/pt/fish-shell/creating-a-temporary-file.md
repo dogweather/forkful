@@ -1,6 +1,7 @@
 ---
 title:                "Criando um arquivo temporário"
-html_title:           "Bash: Criando um arquivo temporário"
+date:                  2024-01-20T17:40:00.934827-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Criando um arquivo temporário"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,42 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por quê?
+## What & Why?
 
-Criar um arquivo temporário implica em criar um arquivo de armazenamento curto que desaparece após a sessão do usuário acabar. Os programadores o usam para armazenar dados transacionalmente durante a execução de um programa, por exemplo, ao manipular grandes volumes de dados cuja persistência não é necessária.
+Criar um arquivo temporário serve para ter um espaço de armazenamento seguro e efêmero, ótimo para processamento intermédio de dados. Programadores fazem isso para não bagunçar com dados persistentes e para ganhar em desempenho durante debugs e testes.
 
-## Como usar:
+## How to:
 
-No Shell do Fish, a criação de um arquivo temporário é simples. Aqui está um exemplo de código:
+No Fish Shell, você pode criar facilmente um arquivo temporário usando a função `mktemp`:
 
-```fish
-set tmpfile (mktemp)
-echo "Isto é um arquivo temporário!" > $tmpfile
-cat $tmpfile
-rm $tmpfile
+```Fish Shell
+set -l tmp_file (mktemp)
+echo 'Dados temporários aqui' > $tmp_file
+cat $tmp_file
+# Deve exibir: Dados temporários aqui
 ```
 
-E aqui está a saída do código acima, assumindo que `mktemp` retorna `/tmp/tmp.1F2G3H`.
+Depois de usar o arquivo, não esqueça de apagá-lo:
 
-```fish
-Isto é um arquivo temporário!
+```Fish Shell
+rm $tmp_file
+# Confirmação de exclusão não é necessária
 ```
 
-## Mergulho profundo:
+## Deep Dive
 
-O conceito de arquivos temporários surgiu como uma maneira de permitir que os programas manipulassem grandes volumes de dados que não precisariam ser mantidos de forma contínua.
+Antes do `mktemp` se tornar um padrão, criávamos arquivos temporários manualmente, correndo o risco de conflito de nomes e problemas de segurança. O uso do `mktemp` no UNIX é histórico e essencial, pois garante um arquivo único e seguro. No Fish Shell, a geração segue o mesmo princípio, inserindo-se de forma nativa no ecossistema UNIX-like.
 
-Existem alternativas ao uso de arquivos temporários. Por exemplo, alguns programadores podem preferir usar Bancos de Dados em Memória, como o Redis. No entanto, para conjuntos de dados particularmente grandes onde a memória pode ser uma preocupação, os arquivos temporários geralmente são a melhor solução.
+Alternativas incluem gerenciar arquivos temporários dentro dos próprios scripts, mas isso aumenta a complexidade e o risco. Outros shells têm métodos similares, mas a simplicidade do Fish é difícil de superar.
 
-A implementação dos arquivos temporários no Fish Shell de fato utiliza a ferramenta padrão UNIX `mktemp`, que cria um arquivo único em /tmp. A supressão do arquivo é responsabilidade do programador.
+Internamente, o `mktemp` cria um arquivo num diretório designado para temporários, como `/tmp` no Linux, com direitos que impedem outros usuários de lerem ou escreverem no seu arquivo. Isto é crucial para manter a integridade e confidencialidade dos seus dados de trabalho.
 
-## Veja também:
+## See Also
 
-Por favor, revise as seguintes fontes para mais informações:
-
-1. Documentação oficial do Fish Shell: [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-3. Alternativas de Banco de Dados em Memória: [Redis](https://redis.io/)
-
-## Conclusão:
-
-Usem arquivos temporários com sabedoria!
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [mktemp man page](https://linux.die.net/man/1/mktemp)
+- [UNIX Filesystem Hierarchy](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard)

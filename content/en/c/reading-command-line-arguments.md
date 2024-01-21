@@ -1,6 +1,7 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "C++ recipe: Reading command line arguments"
+date:                  2024-01-20T17:55:21.511217-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Reading command line arguments"
 programming_language: "C"
 category:             "C"
@@ -12,42 +13,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Reading command line arguments in C yields access to parameters directly from the terminal at program runtime. It's useful for manipulating how your program operates without editing your source code.
+Arguably, every coder has bumped into command line arguments. They let users feed data to your program. Dialing them in can drastically change how your program behaves without altering the code—think of cheat codes for gamers, but for programmers.
 
-## How to
-
-In C, command line arguments are read using the main function. Let's see this in action.
+## How to:
 
 ```C
 #include <stdio.h>
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[]) {
+    printf("You have entered %d arguments:\n", argc);
     for(int i = 0; i < argc; i++) {
-        printf("Arg %d: %s\n", i, argv[i]);
+        printf("arg%d: %s\n", i, argv[i]);
     }
     return 0;
 }
 ```
 
-Suppose you compile and run with `./program Hello World`, it'd output:
+Sample output when invoking `./yourprogram Hello World!`:
 
 ```
-Arg 0: ./program
-Arg 1: Hello
-Arg 2: World
+You have entered 3 arguments:
+arg0: ./yourprogram
+arg1: Hello
+arg2: World!
 ```
-
-Here `argc` is the count of command line arguments, `argv` an array storing them, and `argv[0]` the program's name itself.
 
 ## Deep Dive
 
-This command line argument reading strategy originated in early Unix systems. It means "argument vector", depicting the linear structure used to store arguments.
+Once upon a time in the Unix era, terminal command lines were the go-to. Nowadays, GUIs are king, but command line arguments are far from extinct—think scripts, automated tasks, or complex applications parameters.
 
-A reasonable alternative to `argv` is using `getopt()`. It neatly deals with more complex command line parameters but remember, it's heavier and POSIX-specific.
+Arguments in C land through two parameters in `main()`: `argc` (argument count) and `argv` (argument vector). `argc` tells you how many arguments there are, while `argv` is an array of strings holding the actual arguments, `argv[0]` being the program's name.
 
-Also note: `argv[argc]` is always null, and `argv` is not modifiable: any changes to it outlast the function scope.
+There are alternatives like `getopt()` for Unix-like systems, which can parse options and their arguments nicely. Also, libraries like `argp` give you a helping hand for more complex parsing scenarios.
+
+The nitty-gritty involves knowing about pointers and arrays, as `argv` is an array of character pointers—essentially a series of strings. When chomping through the command line, your program treats spaces as argument separators, unless quotes are your friends enclosing a single argument.
 
 ## See Also
 
-- [Official ISO C Standard](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1124.pdf)
-- [Using argc and argv in C programming](https://www.cprogramming.com/tutorial/c/lesson14.html)
+- GNU C Library Manual's section on [Program Arguments](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html)
+- [Wikipedia's entry on Command-line interface](https://en.wikipedia.org/wiki/Command-line_interface#Arguments)
+- ["C Command Line Arguments" on tutorialspoint](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)

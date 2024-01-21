@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
+date:                  2024-01-20T18:00:56.412555-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "C++"
 category:             "C++"
@@ -12,50 +13,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Sending an HTTP request with basic authentication involves transmitting credentials (username and password) as part of the header in HTTP requests. Programmers do this to access protected resources or perform tasks on behalf of a user in a secure manner.
+Sending an HTTP request with basic authentication involves attaching a username and password to a request for access control. Programmers do it for simple auth schemes to protect resources on the server.
 
 ## How to:
 
-First, let's get started with the C++ 'cpp-httplib' library. Make sure to acquire the library at 'https://github.com/yhirose/cpp-httplib'. Here's a simple code example:
+Here's a basic example using the `CURL` library in C++. Before diving in, make sure you've got `libcurl` installed.
 
-``` C++
-#include <httplib.h>
+```C++
+#include <iostream>
+#include <curl/curl.h>
+
+// Simple callback function to handle data received by curl
+static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp) {
+    ((std::string*)userp)->append((char*)contents, size * nmemb);
+    return size * nmemb;
+}
 
 int main() {
-  httplib::Client cli("localhost", 1234);
-  
-  httplib::Headers headers = {
-    {"Authorization", "Basic " + httplib::base64_encode("user:pass")}
-  };
+    CURL *curl;
+    CURLcode res;
+    std::string readBuffer;
 
-  auto res = cli.Get("/resource/path", headers);
-  
-  if (res && res->status == 200) {
-    std::cout << res->body << std::endl;
-  } else {
-    std::cout << "HTTP request failed." << std::endl;
-  }
-
-  return 0;
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://yourapi.com/data");
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+        curl_easy_setopt(curl, CURLOPT_USERNAME, "user");
+        curl_easy_setopt(curl, CURLOPT_PASSWORD, "pass");
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+        
+        // Perform the request, and check for errors
+        res = curl_easy_perform(curl);
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+        } else {
+            std::cout << readBuffer << std::endl;
+        }
+        
+        // Cleanup
+        curl_easy_cleanup(curl);
+    }
+    return 0;
 }
 ```
-This code establishes a connection to a local server using basic authentication. If the request is successful, the server response's body will be printed to the console.
 
-## Deep Dive 
+You'll see a response from the server printed to the console, assuming no errors occurred.
 
-Basic authentication was introduced as part of the HTTP/1.0 protocol in the early days of the World Wide Web. Since then, it has been widely adopted due to its simplicity and ease of implementation.
+## Deep Dive
 
-However, it has a significant security flaw: it sends credentials in plaintext, base64 encoded. As such, it's susceptible to man-in-the-middle attacks and must never be used over unencrypted connections.
+Basic authentication is old-school, dating back to the early days of HTTP. Now, industry preference leans towards more secure methods like OAuth and tokens. Despite this, basic auth remains in use, often for internal or simple systems where heavy security layers are bulky overkill.
 
-For better security, many modern APIs and server-side applications prefer token-based mechanisms such as OAuth or opt for stronger digest authentication methods. In C++, libraries such as 'libcurl' and 'Boost Beast' can be used to implement these alternative strategies.
+Under the hood, your username and password are base64-encoded and tucked into the HTTP header. It's simple yet insecure if not over HTTPS because base64 is easily reversible—making HTTPS a must.
 
-The 'cpp-httplib' library used in our example is a C++11 single-header HTTP/HTTPS library. It's built on top of BSD-sockets, making it portable across systems and making the implementation lean. 
+If `libcurl` isn't to your taste, consider alternatives like the `cpp-httplib` library, or you can run with `Boost.Beast` for a more hands-on approach.
 
-## See Also 
+## See Also
 
-To delve deeper into the world of secure HTTP requests and C++ networking, check out these resources:
-
-- cpp-httplib Library GitHub: https://github.com/yhirose/cpp-httplib
-- C++ Networking: https://en.cppreference.com/w/cpp/io/network
-- Boost Beast Library: https://www.boost.org/doc/libs/1_75_0/libs/beast/doc/html/index.html
-- libcurl Library: https://curl.se/libcurl/c/libcurl.html
+- [libcurl](https://curl.se/libcurl/)
+- [cpp-httplib GitHub repository](https://github.com/yhirose/cpp-httplib)
+- [Boost.Beast documentation](https://www.boost.org/doc/libs/master/libs/beast/doc/html/index.html)

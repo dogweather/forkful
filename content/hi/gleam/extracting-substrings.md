@@ -1,6 +1,7 @@
 ---
 title:                "सबस्ट्रिंग्स निकालना"
-html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+date:                  2024-01-20T17:45:50.581344-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,31 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+Substring निकालना मतलब किसी भी स्ट्रिंग का कोई छोटा हिस्सा चुनना। प्रोग्रामर्स ऐसा तब करते हैं जब उन्हें बड़ी स्ट्रिंग में से विशिष्ट जानकारी निकालनी होती है - जैसे यूजरनेम या डोमेन नेम ईमेल से।
 
-उपस्ट्रिंग निष्कसित करना का अर्थ है एक बड़ी स्ट्रिंग से छोटी स्ट्रिंग्स निकालना। प्रोग्रामर इसे उपयोगी डेटा को एकसाथ ग्रुप करने, खोज करने और मिलान करने के लिए करते हैं।
+## How to: (कैसे करें:)
+```gleam
+import gleam/substring.{from_to, from, to}
 
-## कैसे करें:
-
-``` Gleam
-कोड:
-खाप फ़ंक्शन substring(s: तार, start: इंट, end: इंट) -> तार {
-  स्ट्रिंग.स्लाइस(s, स्टार्ट..एंड)
-} 
-
-आउटपुट:
-रचनांतरण की दिशा: "हेलो वर्ल्ड" 
-"हेलो"
+fn main() {
+  let text = "नमस्ते दुनिया"
+  
+  // शुरुआत से स्थिति तक
+  let hello = from_to(text, 0, 5)
+  assert from_to(text, 0, 5) == Ok("नमस्ते") 
+  
+  // शुरुआत से निकालें
+  let greeting = from(text, 0)
+  assert from(text, 0) == Ok("नमस्ते दुनिया")
+  
+  // स्थिति से अंत तक
+  let world = to(text, 7)
+  assert to(text, 6) == Ok("दुनिया")
+  
+  // उदाहरण के आउटपुट्स
+  case hello {
+    Ok(substring) -> io.println(substring)
+    Error(_) -> io.println("Error in extracting substring")
+  }
+  
+  case world {
+    Ok(substring) -> io.println(substring)
+    Error(_) -> io.println("Error in extracting substring")
+  }
+}
+```
+सैंपल आउटपुट:
+```
+नमस्ते
+दुनिया
 ```
 
-## गहरी डाइव:
+## Deep Dive (गहराई से जांच)
+Substring निकालने की जरूरत पुराने जमाने से चली आ रही है, जब पहली बार टेक्स्ट प्रोसेसिंग शुरू हुई थी। विभिन्न भाषाओं में अलग-अलग तरीके से सबस्ट्रिंग निकाली जाती है - कुछ index-based हैं, कुछ pattern-based हैं। Gleam में, `from_to`, `from`, और `to` फंक्शन्स substring को सही और सीधे तरीके से निकालने में मदद करते हैं। Error handling भी इन-बिल्ट होती है जो इंडेक्स-संबंधित गलतियों को संभालती है।
 
-1. हिस्टोरिकल कॉन्टेक्स्ट: स्ट्रिंग मैनिपुलेशन फ़ंक्शन्स को ओरिजनली असेम्बली लैंग्वेज और सी लैंग्वेज में इंप्लिमेंट किया गया था।
-2. विकल्प: एरेज़, लिस्ट्स और स्ट्रिंग्स के साथ काम करने के लिए कई तरीके होते हैं, लेकिन सबसे सीधा तरीका substrings एक्सट्रैक्ट करने का है।
-3. इंप्लिमेंटेशन डिटेल्स: Gleam में, यह एक लाइब्रेरी फ़ंक्शन की तरह इसे इंप्लिमेंट किया गया है जिसे `स्ट्रिंग.स्लाइस` कहते हैं।
-
-## देखने के लिए:
-
-[Gleam स्ट्रिंग्स की डॉक्यूमेंटेशन](https://gleam.run/documentation/आवश्यक-स्थानिक-किड़किटाश)
-[रेगेक्स के साथ काम करना](https://gleam.run/documentation/मल्टीफंট-전인的な)
-[टेक्स्ट माइनिंग](https://gleam.run/documentation/分担者를-필요로-स्त्रोतोणि)
+## See Also (और जानकारी के लिए)
+- प्रोग्रामिंग में स्ट्रिंग्स से जुड़े कॉन्सेप्ट्स: [String Concept in Programming](https://www.geeksforgeeks.org/string-data-structure/)

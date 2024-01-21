@@ -1,6 +1,7 @@
 ---
 title:                "부분 문자열 추출"
-html_title:           "Arduino: 부분 문자열 추출"
+date:                  2024-01-20T17:45:46.795797-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "부분 문자열 추출"
 programming_language: "Java"
 category:             "Java"
@@ -10,38 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 사용하나요?
-서브스트링 추출은 문자열의 일부분을 분리하는 프로그래밍 기술입니다. 이를 사용하여 전체 문자열에서 필요한 정보만을 추출하거나 분리하는 경우에 유용합니다.
+## What & Why? (무엇이며 왜?)
+문자열에서 특정 부분을 추출하는 것을 우리는 서브스트링(substring)이라고 합니다. 프로그래머들은 데이터를 분석하거나 특정 패턴을 찾아낼 때 이 기능을 자주 사용합니다.
 
-## 어떻게 사용하나요?
-
-```Java
+## How to: (방법)
+```java
 public class SubstringExample {
- public static void main(String[] args) {
-   String str = "해당하는 프로그래밍 언어 찾기";
-   String substring = str.substring(4);
-   System.out.println(substring);
-   // Output: "하는 프로그래밍 언어 찾기"
-
-   String rangeSubstring = str.substring(4, 10);
-   System.out.println(rangeSubstring);
-   // Output: "하는 프로그"
-  }
+    public static void main(String[] args) {
+        String message = "안녕하세요, 자바 프로그래밍!";
+        String greeting = message.substring(0, 5); // "안녕하세요"
+        String hobby = message.substring(10);      // "자바 프로그래밍!"
+        
+        System.out.println(greeting);  // 출력: 안녕하세요
+        System.out.println(hobby);     // 출력: 자바 프로그래밍!
+    }
 }
 ```
 
-## 깊게 알아보기
+## Deep Dive (심층 분석)
+자바에서 substring을 추출하는 기능은 초기 버전부터 있었습니다. `String.substring(int beginIndex, int endIndex)`와 `String.substring(int beginIndex)` 오버로드 메소드를 이용해 사용합니다. 두 메서드 모두 내부적으로 원본 문자열의 일부를 가리키는 새로운 문자열을 반환합니다. 이전에는 substring 작업이 문자열의 복사본을 생성했지만, 자바 7부터는 문자열을 공유하도록 최적화되었습니다. 그런데, 메모리 누수 문제 때문에 자바 7 이후에 이러한 공유 메커니즘이 제거되고, 항상 새로운 문자열을 생성하도록 변경되었습니다.
 
-(1) **역사적 배경**  
-서브스트링 추출은 문자열 처리의 기본적인 부분으로 오래 전부터 다양한 프로그래밍 언어에 내장되어 있었습니다.
+대안으로는 Apache Commons Lang과 같은 서드파티 라이브러리를 사용할 수 있으며, 다양한 문자열 처리 유틸리티를 제공합니다.
 
-(2) **대체 방법**  
-문자열을 쪼개는 다른 방식으로는 `split()` 함수가 있습니다. 이는 지정한 구분자를 기반으로 문자열을 분리합니다.
-
-(3) **구현 세부정보**  
-`substring()` 함수는 원본 문자열을 변경하지 않습니다. 대신 새로운 문자열을 생성하여 반환합니다. start 인덱스는 포함되고, end 인덱스는 포함되지 않는다는 점을 명심하세요.
-
-## 참고자료
-- [공식 자바 문서의 substring()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int))
-- [split() 함수에 대한 정보](https://www.geeksforgeeks.org/split-string-java-examples/)
-- [다양한 문자열 처리 방법](https://www.programiz.com/java-programming/library/string)
+## See Also (참조)
+- [Oracle Java Documentation – String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)
+- [Apache Commons Lang – StringUtils](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html)

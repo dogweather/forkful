@@ -1,7 +1,8 @@
 ---
-title:                "Satunnaisten numeroiden luominen"
-html_title:           "Bash: Satunnaisten numeroiden luominen"
-simple_title:         "Satunnaisten numeroiden luominen"
+title:                "Satunnaislukujen generointi"
+date:                  2024-01-20T17:50:07.450103-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Satunnaislukujen generointi"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Numbers"
@@ -10,53 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Satunnaisten Numeroiden Generointi Rubyssa
+## What & Why?
+Mitä ja miksi? Satunnaislukujen generointi tarkoittaa ennustamattomien numeroiden tuottamista. Tätä tapahtuu kun tarvitaan elementtiä sattumanvaraisuudesta – peleissä, simulaatioissa ja tietoturvan alueilla.
 
-GENEROI RANDOM NUMEROITA RUBY-KIELELLÄ HELPOSTI!
-
-## Mitä & Miksi?
-
-Satunnaisten numeroiden generointi tarkoittaa numeroiden luomista, joilla ei ole mitään ennustettavaa järjestystä. Ohjelmoijat tarvitsevat niitä peleissä, salauksessa, algoritmien testauksessa ja monissa muissa käyttötapauksissa.
-
-## Kuinka:
-
-Satunnaisten numeroiden generointi Rubyssa on todella helppoa. Ruby tarjoaa `rand`-metodin juuri tätä varten.
+## How to:
+Koodiesimerkit ja tulosteet:
 
 ```Ruby
-puts rand(10) # Tulostaa satunnaisen numeron väliltä 0...10
+# Perussatunnaisluku väliltä 0 - 10
+puts rand(11)
 ```
-
-Jos haluat generoida satunnaisia kokonaislukuja tietyltä väliltä, käytä `Random.new` yhdessä `rand`-metodin kanssa.
 
 ```Ruby
-random_generator = Random.new
-puts random_generator.rand(1..10) # Tulostaa satunnaisen numeron väliltä 1 – 10
+# Satunnainen desimaalinumero
+puts rand
 ```
-
-## Syvällinen Tutkimus:
-
-### Historiallinen Konteksti: 
-
-Random numeroiden generointi on ollut tärkeä osa tietojenkäsittelytieteen historiaa. Alan pioneerit, kuten John von Neumann huomasi sen merkityksen algoritmin testauksissa.
-
-### Vaihtoehdot: 
-
-Erilaisia menetelmiä satunnaisten numeroiden generointiin on monia. Esimerkiksi Mersenne Twister tai Linear congruential generator (LCG) ovat populaarisia menetelmiä.
-
-### Toteutuksen Yksityiskohdat: 
-
-Ruby kääntää `rand`-funktion suoraan C-kielelle, joka tekee sen tehokkaaksi ja nopeaksi. Tarkemmin ottaen, se käyttää pseudorandom-numerogeneraattoria, nimeltään Mersenne Twister.
-
-Rubyssa on myös SecureRandom-moduuli, joka tuottaa salatun satunnaislukujoukon. Tätä käytetään yleisemmin turvallisuuskriittisissä tapauksissa, kuten salauksessa.
 
 ```Ruby
-require 'securerandom'
-puts SecureRandom.hex(10) # Tulostaa 10 merkkiä pitkän satunnaisen heksadesimaalin.
+# Satunnaisluku väliltä 1 - 50
+puts rand(1..50)
 ```
 
-## Katso Myös:
+```Ruby
+# Satunnaislukujen sarja (tässä: viisi numeroa väliltä 1-100)
+Array.new(5) { rand(1..100) }
+```
 
-1. [Ruby-Dokumentaatio: Kernel.rand](https://ruby-doc.org/core-3.0.0/Random.html)
-2. [Ruby-Dokumentaatio: SecureRandom](https://ruby-doc.org/stdlib-3.0.0/libdoc/securerandom/rdoc/SecureRandom.html)
-3. [Wikipedia: Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)
-4. [Wikipedia: Linear congruential generator](https://en.wikipedia.org/wiki/Linear_congruential_generator)
+Esimerkkituloste sarjalle viisi satunnaista numeroa:
+```
+[23, 67, 35, 89, 2]
+```
+
+## Deep Dive:
+Syväsukellus: 
+Ruby käyttää pseudosatunnaislukugeneraattoria (PRNG), joka saa aikaan numeroiden sarjan, joka näyttää satunnaiselta, mutta on toistettavissa. Historiallisesti tietokoneet ovat käyttäneet erilaisia algoritmeja, kuten Mersenne Twisteria, satunnaislukujen luontiin. Vaihtoehtoisia tapoja saada satunnaislukuja on esimerkiksi ottamalla huomioon ulkoisia tekijöitä kuten hiiren liikettä tai näppäimistön napautuksia. Pelialoilla ja salausteoriassa käytetään usein oikeita satunnaislukugeneraattoreita, jotka hyödyntävät fyysistä ilmiötä, kuten kvanttimekaniikan satunnaisuutta.
+
+## See Also:
+Lisätietoa ja lähteitä:
+- Ruby-dokumentaatio satunnaisluokkaan: [Ruby Random Class](https://ruby-doc.org/core-3.1.0/Random.html)
+- Satunnaisuuden filosofia ja sovellukset ohjelmistokehityksessä: [Randomness in Computing](https://en.wikipedia.org/wiki/Randomness)
+- Tarkempaa tietoa Mersenne Twister -algoritmista ja sen käytöstä: [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)

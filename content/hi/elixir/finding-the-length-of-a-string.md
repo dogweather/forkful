@@ -1,7 +1,8 @@
 ---
-title:                "स्ट्रिंग की लंबाई पता करना"
-html_title:           "C++: स्ट्रिंग की लंबाई पता करना"
-simple_title:         "स्ट्रिंग की लंबाई पता करना"
+title:                "स्ट्रिंग की लंबाई ज्ञात करना"
+date:                  2024-01-20T17:47:52.502347-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग की लंबाई ज्ञात करना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,29 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+String की लंबाई (length) पता लगाना मतलब है जानना कि string में कितने characters हैं। Programmers इसलिए लंबाई नापते हैं, ताकि वे data validation, UI display या फिर text processing को सही से कर सकें।
 
-स्ट्रिंग की लंबाई का पता लगाना मतलब उसमें जो करैक्टर्स हैं उनकी संख्या का पता करना। यह जानना महत्वपूर्ण हो सकता है - उदाहरण स्वरूप, जब हमें टेक्स्ट को सामग्री को एक विषेष आकर में ठीक करने की आवश्यकता हो।
+## How to: (कैसे करें:)
+Elixir में String की लंबाई जानने के लिए `String.length/1` फंक्शन का इस्तेमाल करें।
 
-## कैसे करे:
-
-Elixir में, हम `String.length/1` का उपयोग करके एक स्ट्रिंग की लंबाई पा सकते हैं। यहां एक उदाहरण है:
-
-```Elixir
-str = "नमस्ते, दुनिया"
-IO.puts String.length(str)
+```elixir
+# String की लंबाई पता करना
+length = String.length("नमस्ते")
+IO.puts(length)  # यह 6 प्रिंट करेगा क्योंकि "नमस्ते" में 6 characters हैं।
 ```
 
-इस मामले में, यह आउटपुट `13` होगा, क्योंकि उस स्ट्रिंग में 13 करैक्टर हैं।
+यदि आप UTF-8 में स्टोर किए गए binary फॉर्मैट में strings के बारे में सोच रहे हैं, तो यह ध्यान में रखें कि Elixir में इसकी लंबाई के लिए बाइट्स की संख्या अलग हो सकती है।
 
-## गहरा अध्ययन:
+```elixir
+# Binary की लंबाई पता करना
+byte_size = byte_size("नमस्ते")
+IO.puts(byte_size)  # यह 18 प्रिंट करेगा क्योंकि "नमस्ते" UTF-8 में 18 bytes का है।
+```
 
-ऐलिक्सर में `String.length/1` फ़ंक्शन काम करने के लिए यूनिकोड और बाइनरी एन्कोडिंग का उपयोग करता है। इसके विपरीत, कुछ अन्य भाषाओं में स्ट्रिंग की लंबाई के लिए जीवन में घटित होने वाले किरदारों की संख्या पर आधारित होती है।
+## Deep Dive (गहन जानकारी)
+String की लंबाई जानना एक सरल कार्य लगता है, पर UTF-8 एनकोडेड strings के साथ, हर character एक से अधिक byte का हो सकता है। इस कारण `String.length/1` और `byte_size/1` के परिणाम अलग होते हैं। पुराने प्रोग्रामिंग भाषाओं में, जहां हर character ठीक एक byte का होता था, यह काम आसान था।
 
-ऐलिक्सर में, हम एर्नियान फ़ंक्शन `byte_size/1` का भी उपयोग कर सकते हैं, लेकिन यह यूनिकोड करैक्टर्स को सही रूप से हैंडल नहीं करता है, इसलिए हमेशा `String.length/1` का उपयोग करना बेहतर होगा।
+Elixir इसे इफिशिएंट बनाती है और यूजर के लिए बहुत सारे विकल्प प्रदान करती है, जैसे कि pattern matching और recursive functions के जरिए string पर काम करना। इसका `String` मॉड्यूल robust है और बहुत सारे functions ऑफर करता है जो string manipulation को आसान बनाते हैं।
 
-## भी देखें:
-
-1. [Elixir documentation for `String.length/1`](https://hexdocs.pm/elixir/String.html#length/1)
-2. [Erlang `byte_size/1` documentation](http://erlang.org/doc/man/erlang.html#byte_size-1)
-3. [Elixir School String Lesson](https://elixirschool.com/en/lessons/basics/strings/)
+## See Also (और भी जानकारी)
+- Elixir के आधिकारिक डॉक्युमेंटेशन में `String` मॉड्यूल: [Elixir String](https://hexdocs.pm/elixir/String.html)
+- यूनिकोड और UTF-8 के बीच अंतर को समझने के लिए: [Unicode Strings and UTF-8](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html#unicode-and-utf-8)
+- String manipulation के लिए Elixir पर प्रैक्टिकल एक्साम्पल्स देखने के लिए: [Elixir School: Strings](https://elixirschool.com/en/lessons/basics/strings/)

@@ -1,7 +1,8 @@
 ---
-title:                "Enviando uma solicitação http"
-html_title:           "Bash: Enviando uma solicitação http"
-simple_title:         "Enviando uma solicitação http"
+title:                "Enviando uma requisição HTTP"
+date:                  2024-01-20T17:59:05.751068-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Enviando uma requisição HTTP"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,59 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## O Que & Porquê?
-
-Enviar um pedido HTTP é o ato de solicitar dados a um servidor web. Programadores fazem isso para recuperar informações úteis, como temperaturas do tempo, dados de status de sistemas, entre outros.
+Fazer um pedido HTTP significa pedir ou enviar dados para a web. Programadores fazem isso para que Arduinos interajam com o mundo online, como obter dados de sensores remotos ou controlar algo à distância.
 
 ## Como Fazer:
-
-Aqui está um exemplo básico de como você pode enviar um pedido GET HTTP no Arduino:
+Para enviar um pedido HTTP, vamos usar uma biblioteca Ethernet para um Arduino com shield Ethernet ou uma biblioteca WiFi para um Arduino com capacidades WiFi.
 
 ```Arduino
-#include <WiFi.h>
+#include <SPI.h>
+#include <Ethernet.h>
 
-const char* ssid = "nome da sua rede";
-const char* password = "sua senha";
+// substitua por seus dados de rede
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+IPAddress server(192, 168, 1, 1); // endereco IP do servidor
+
+EthernetClient client;
 
 void setup() {
-  Serial.begin(115200);
-  WiFi.begin(ssid, password);
-
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Conectando-se WiFi...");
-  }
+  Ethernet.begin(mac);
+  Serial.begin(9600);
   
-  Serial.println("Conectado WiFi!");
-  HTTPClient http;
-
-  http.begin("http://exemplodeapi.com");
-  int httpCode = http.GET();
+  delay(1000);
   
-  if (httpCode > 0) {
-    String payload = http.getString();
-    Serial.println(payload);
+  if (client.connect(server, 80)) {
+    client.println("GET / HTTP/1.1");
+    client.println("Host: 192.168.1.1");
+    client.println("Connection: close");
+    client.println();
   }
-  else {
-    Serial.println("Erro na requisição GET");
-  }
-  
-  http.end();
 }
 
-void loop() {}
+void loop() {
+  if (client.available()) {
+    char c = client.read();
+    Serial.write(c);
+  }
+  
+  if (!client.connected()) {
+    client.stop();
+  }
+}
 ```
+Espera-se um monte de HTML ou o que o servidor enviar como resposta.
 
-## Plongée Profunda
+## Aprofundando o Assunto
+Enviar pedidos HTTP não é novidade e é fundamental para a web. Antigamente, só computadores faziam isso, mas hoje até um Arduino pequenino consegue. Alternativas incluem MQTT para IoT ou pedidos HTTPS para segurança adicional. Na implementação, cuidado com o tamanho dos dados, tempo de resposta do servidor e possíveis erros de conexão.
 
-O protocolo HTTP (HyperText Transfer Protocol, em português Protocolo de Transferência de Hipertexto) foi desenvolvido no CERN, na Suíça, em 1989, para permitir a troca de informações na internet. Hoje, governa a maioria das interações entre servidores e clientes na web.
-
-Uma alternativa ao uso de pedidos HTTP
-no Arduino seria o MQTT (Message Queue Telemetry Transport), que é um protocolo de mensagens leve ideal para a IoT (Internet das coisas).
-
-Ao enviar um pedido HTTP a partir de um Arduino, estamos na verdade enviando um pedido através da Ethernet ou do WiFi para o roteador, que então encaminha o nosso pedido para o servidor.
-
-## Veja Também
-
-Para mais exemplos e detalhes sobre pedidos HTTP em Arduino, você pode consultar os seguintes recursos:
-
-2. [Biblioteca HTTP do Arduino no GitHub](https://github.com/espressif/arduino-esp32/tree/master/libraries/HTTPClient)
+## Veja Também:
+- Documentação oficial do Arduino Ethernet Library: https://www.arduino.cc/en/Reference/Ethernet
+- Documentação oficial do Arduino WiFi Library: https://www.arduino.cc/en/Reference/WiFi
+- Guia sobre protocolo HTTP: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview
+- Tutorial sobre MQTT: https://www.hivemq.com/mqtt-essentials/

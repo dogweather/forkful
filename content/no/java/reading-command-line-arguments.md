@@ -1,6 +1,7 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Arduino: Lese kommandolinjeargumenter"
+date:                  2024-01-20T17:56:22.556454-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Java"
 category:             "Java"
@@ -11,41 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Lesing av kommandolinjeargumenter lar deg ta imot data når du starter et Java-program. Programmererne gjør dette for å gjøre programmene fleksible og tilpasse kjøringen uten å endre koden.
 
-Kommandolinjeargumenter lar oss gi parametere ved oppstart av et Java-program. Dette er nyttig for fleksibilitet, som å bestemme filstier eller justere programoppførsel.
-
-## Hvordan gjøre det:
-
-For å lese kommandolinjeargumenter i Java, brukes `main()`-metoden. Denne tar en parameter som er en array av strenger (`String[] args`), hvor hver streng representerer et argument.
-
-```Java
-public class HelloWorld {
+## Hvordan:
+```java
+public class CommandLineExample {
     public static void main(String[] args) {
-        for(String arg : args) {
-            System.out.println("Argument: " + arg);
+        if (args.length > 0) {
+            System.out.println("Hei, " + args[0] + "!");
+        } else {
+            System.out.println("Hei, ukjente bruker!");
         }
     }
 }
 ```
+Kjør programmet:
+```
+$ java CommandLineExample Verden
+Hei, Verden!
+```
 
-Hvis du kjører dette programmet med `java HelloWorld Hei Verden`, vil utdataene være:
-
-```Java
-Argument: Hei
-Argument: Verden
+Uten argumenter:
+```
+$ java CommandLineExample
+Hei, ukjente bruker!
 ```
 
 ## Dypdykk
-
-Kommandolinjeargumenter har vært en del av mange programmeringsspråk i årevis, inkludert C og Perl, langt før Java.
-
-Alternativer til å bruke disse argumentene inkluderer å lese data fra en fil, brukerinput eller hardkoding av verdier, men ingen av disse tilbyr samme fleksibilitet og enkelhet.
-
-Et viktig detalj er at `main()`-metoden ikke vet antallet argumenter på forhånd. Du bruker `args.length` for å finne antall argumenter.
+Kommandolinjeargumenter er like gamle som kommandolinjen selv – tenk 60-tallet. Alternativene inkluderer bruk av miljøvariabler, konfigurasjonsfiler eller interaktiv input. Når Java-programmer starter, lagres argumenter i `String`-arrayet `args` i `main`-metoden. `args[0]` er det første argumentet, `args[1]` det andre, og så videre. Fordi `args` er et array, kan du bruke standard `length`-egenskapen for å finne ut hvor mange argumenter som er passert.
 
 ## Se Også
-
-For mer informasjon om kommandolinje-argumenter:
-
-- Oracle Docs: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html
-- Java Tutorials: https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html
+- Oracles offisielle dokumentasjon på kommandolinjeargumenter: https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html
+- `java.util.Scanner` for å lese brukerinput: https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html
+- Apache Commons CLI for avansert argumenthåndtering: https://commons.apache.org/proper/commons-cli/

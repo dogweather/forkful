@@ -1,6 +1,7 @@
 ---
 title:                "문자열을 소문자로 변환하기"
-html_title:           "Bash: 문자열을 소문자로 변환하기"
+date:                  2024-01-20T17:38:25.699449-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Go"
 category:             "Go"
@@ -10,11 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-문자열을 소문자로 변환하는 것은 문자의 대소문자를 일관성있게 관리하기 위한 프로그래밍 기술입니다. 이것은 대소문자 구분 없이 데이터 검색 및 정렬 등을 진행할 때 유용합니다.
+## What & Why? (무엇이며 왜?)
+문자열을 소문자로 변환하는 것은, 문자의 대소문자를 구분하지 않을 때 유용하다. 검색, 정렬, 데이터 일관성을 위해 종종 필요하다.
 
-## 어떻게 하나요?
-밑의 Go 코드는 string을 소문자로 변환하는 방법을 보여줍니다:
+## How to: (방법)
+Go에서 문자열을 소문자로 바꾸는 방법은 strings 패키지의 ToLower 함수를 사용하는 것입니다.
 
 ```Go
 package main
@@ -25,20 +26,16 @@ import (
 )
 
 func main() {
-	str := "Hello, Gopher!"
-	result := strings.ToLower(str)
-	fmt.Println(result)
+	original := "Hello, World!"
+	lowercased := strings.ToLower(original)
+	fmt.Println(lowercased) // "hello, world!"
 }
 ```
-이 프로그램을 실행하면, 출력으로 "hello, gopher!"를 볼 수 있습니다.
 
-## 깊은 곳으로: 
-1. **역사적 맥락**: Go 언어의 `strings` 패키지는 문자열을 소문자로 변환하는 `ToLower` 함수를 제공합니다. 이 함수는 문자열의 각 문자를 해당하는 소문자로 바꾸는 역할을 합니다.
+## Deep Dive (심도 있는 정보)
+문자열을 소문자로 변환하는 것은 문자 인코딩과 closely related다. Go는 UTF-8 인코딩을 사용하며, 이는 국제화를 위한 표준이다. ToLower 함수는 Unicode 표준을 따르고 있다. 대안으로, bytes 패키지는 비슷한 기능을 제공하지만 byte slice에 대해서 작동한다. 구현 면에서, ToLower 함수는 각 문자를 확인하고 대응하는 소문자가 있으면 그것으로 변환한다.
 
-2. **대체 방법**: `ToLower` 함수 대신 Unicode point를 사용하여 소문자로 변환할 수도 있습니다. 하지만 일반적으로 `ToLower` 함수를 사용하는 것이 더 효율적입니다.
-
-3. **구현 세부사항**: `ToLower` 함수는 Go 언어의 `unicode` 패키지를 사용하여 소문자로 변환을 수행합니다. 각 문자는 유니코드로 매핑되고, 해당 유니코드 값의 소문자가 출력됩니다.
-
-## 참고 자료:
-1. [Go 언어 공식 문서 – strings 패키지](https://golang.org/pkg/strings/)
-2. [Go 프로그래밍에서 소문자 변환에 대한 토론](https://stackoverflow.com/questions/47341278/how-to-convert-a-string-to-lower-case-in-golang)
+## See Also (추가 자료)
+- Go strings 패키지 문서: https://pkg.go.dev/strings
+- Unicode 표준: https://www.unicode.org/standard/standard.html
+- Go bytes 패키지 문서: https://pkg.go.dev/bytes

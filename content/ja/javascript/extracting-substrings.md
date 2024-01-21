@@ -1,6 +1,7 @@
 ---
 title:                "部分文字列の抽出"
-html_title:           "Lua: 部分文字列の抽出"
+date:                  2024-01-20T17:46:25.671922-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "部分文字列の抽出"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,39 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？ (What & Why?)
+## What & Why? (何となぜ？)
+JavaScriptでは、文字列から特定の部分を取り出す操作を「サブストリング（部分文字列）の抽出」と呼びます。この技術は、ユーザー入力の処理やデータの形式を変更する際に頻繁に使われます。
 
-文字列の抽出は、長い文字列から小さな文字列を取り出すことを意味します。これを行う理由はさまざまですが、主にデータを分析しやすくするため、またはコードの可読性と再利用性を高めるためです。
+## How to: (方法)
+JavaScriptでサブストリングを抽出する主な方法は、`substring()`, `slice()`, そして `substr()` の3つです。以下のサンプルコードを見てみましょう。
 
-## どうやるの？ (How to?)
+```javascript
+let text = "こんにちは、JavaScript!";
 
-JavaScriptでは、文字列から部分文字列を抽出するためのいくつかの方法があります。
+// substring()を使用
+let sub1 = text.substring(6, 16);
+console.log(sub1); // 出力: JavaScript
 
-```Javascript
-var str = "Hello, JavaScript world!";
+// slice()を使用
+let sub2 = text.slice(6, 16);
+console.log(sub2); // 出力: JavaScript
 
-// substringメソッドを使用
-console.log(str.substring(7, 17)); // "JavaScript"
-
-// substrメソッドを使用（7は開始索引、10は長さ）
-console.log(str.substr(7, 10)); // "JavaScript"
-
-// sliceメソッドを使用
-console.log(str.slice(7, 17)); // "JavaScript"
+// substr()を使用（非推奨）
+let sub3 = text.substr(6, 10);
+console.log(sub3); // 出力: JavaScript
 ```
 
-これらの各メソッドは、「JavaScript」という文字列を抽出します。
+## Deep Dive (掘り下げ)
+`substring()` と `slice()` は似ていますが、負のインデックスを扱う場合が異なります。`slice()` は負のインデックスをサポートし、文字列の末尾からの位置を参照します。一方、`substring()` は負の値を0として扱います。`substr()` は現在、非推奨とされ、将来的には削除される可能性があります。これらのメソッドはECMAScript規格の進化に伴い追加され、より柔軟に文字列処理を行えるようになりました。しかし、可読性や未来のコード互換性を考えると、`slice()` がより優れた選択肢と言えます。
 
-## ディープダイブ (Deep Dive)
-
-文字列の抽出はプログラミングの中心的な概念です。伝統的な`substring`メソッドは、JavaScriptが初めてリリースされた1995年から存在します。それ以来、最も一般的に使用される抽出メソッドでした。しかし、`substr`と`slice`メソッドが追加され、より大きな柔軟性を提供するようになりました。
-
-`substring`と`slice`は似ていますが、負のインデックスを受け入れる方法が異なります。`slice`は負のインデックスを受け入れ、末尾からのインデックスを表します。一方、`substring`は負のインデックスを0として扱います。
-
-このような違いを理解することで、あなたの要求に最適な方法を選ぶことができます。
-
-## 関連するもの (See Also)
-
-- [Mozilla Developer Network (MDN) - substring](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [Mozilla Developer Network (MDN) - substr](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
-- [Mozilla Developer Network (MDN) - slice](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+## See Also (関連情報)
+- MDN Web Docsによる`String.prototype.substring()`の解説: [MDN substring](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- MDN Web Docsによる`String.prototype.slice()`の解説: [MDN slice](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- MDN Web Docsでの`String.prototype.substr()`の非推奨についての議論: [MDN substr](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/substr)

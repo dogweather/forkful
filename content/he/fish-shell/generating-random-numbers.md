@@ -1,7 +1,8 @@
 ---
-title:                "גירוד מספרים אקראיים"
-html_title:           "Haskell: גירוד מספרים אקראיים"
-simple_title:         "גירוד מספרים אקראיים"
+title:                "גילוי מספרים אקראיים"
+date:                  2024-01-20T17:49:07.781619-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "גילוי מספרים אקראיים"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -10,31 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-הפקת מספרים אקראיים היא התהליך שבו מחשב מייצר מספר לא צפוי. תכנתים משתמשים בזה למגוון מטרות, כמו קביעת אלמנטים אקראיים במשחק או הגנה על ביטחון מידע.
+## What & Why?
+מה זה מספרים אקראיים ולמה צריך אותם? פשוט, זה מספרים שלא תוכל לנחש את הערך שלהם מראש, ואנחנו משתמשים בהם בכל מיני תרחישים, כמו ביטחון מחשבים, משחקים וסימולציות. 
 
-## איך לעשות:
-הנה דרך ליצור מספר רנדומלי בשפת Fish Shell:
+## How to:
+ב-Fish Shell, זה סופר פשוט ליצור מספר אקראי. איך עושים את זה? תבדוק את הדוגמאות הבאות:
 
-```fish
-$ set -l random_num (random 1 100)
-$ echo $random_num
+```Fish Shell
+# לקבל מספר אקראי בין 1 ל-10
+set -l random_number (random 1 10)
+echo $random_number
 ```
 
-הפקה יכולה להיראות כך:
-
+דוגמא לפלט:
 ```
-45
+5
 ```
 
-## שיעור מעמיק:
-1. היסטוריה: ההיסטוריה של יצירת מספרים אקראיים במחשבים מתחילה בשנות ה-40, כאשר מחשבים התחילו להביא קבועים מתמטיים לחיי היום-יום.
-2. אלטרנטיבות: Fish Shell מספק גם דרכי אלתרנטיביות אחרות ליצירת מספרים אקראיים, כמו פונקציה `math` שמאפשרת פעולות מתמטיות מורכבות יותר.
-3. פרטי יישום: פונקציית `random` ב-Fish Shell מייצרת מספרים אקראיים באמצעות מחולל מספרים אקראיים מטופל מראש (PRNG). 
+```Fish Shell
+# לקבל מספר אקראי בטווח רחב יותר, נניח 1 עד 100
+set -l random_number (random 1 100)
+echo $random_number
+```
 
-## ראה גם:
-עיין במקורות המקושרים הבאים למידע נוסף ועמוק יותר על יצירת מספרים אקראיים ושימושיהם בתכנות:
+דוגמא לפלט:
+```
+73
+```
 
-1. [Fish Shell Documentation - random](https://fishshell.com/docs/current/commands.html#random)
-2. [Wikipedia - Pseudorandom number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
-3. [Stack Overflow - Fish Shell random number](https://stackoverflow.com/questions/32683784/how-do-i-get-a-random-number-in-fish-shell)
+## Deep Dive
+בעבר, יצירת מספרים אקראיים הייתה אתגר גדול. מערכות מחשבים משתמשות באלגוריתמים מתוחכמים ליצירת מספרים שנראים אקראיים. ב-Fish Shell, הפונקציה `random` מספקת דרך נוחה לגרום לזה. תחת הכובע, היא עשויה להשתמש במקורות מהגרעין של המערכת ליצירת אנטרופיה.
+
+יש גם אלטרנטיבות ל-Fish Shell כמו Bash או Zsh שבהן תהליך היצירה של מספרים אקראיים עשוי להיות שונה מעט.
+
+שים לב שלמרות שהפונקציה נקראת `random`, המספרים שהיא מייצרת הם פסבדו-אקראיים - דהיינו, הם נראים אקראיים אבל נקבעים לפי אלגוריתם שאם ידועות ההנחות שלו אז ניתן לחזות את התוצאות.
+
+## See Also
+הנה כמה קישורים שיכולים לעזור לך להרחיב את הידע שלך בנושא מספרים אקראיים והשימוש בהם בקוד:
+
+- [fish shell documentation on random](https://fishshell.com/docs/current/cmds/random.html)
+- [Wikipedia on Pseudorandom number generators](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+- [StackOverflow discussion on random numbers in shell scripting](https://stackoverflow.com/questions/tagged/random+shell)

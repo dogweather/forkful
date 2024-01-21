@@ -1,7 +1,8 @@
 ---
-title:                "Utskrift av feilsøkingsresultat"
-html_title:           "Arduino: Utskrift av feilsøkingsresultat"
-simple_title:         "Utskrift av feilsøkingsresultat"
+title:                "Skrive ut feilsøkingsdata"
+date:                  2024-01-20T17:52:10.489820-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skrive ut feilsøkingsdata"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,46 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Utskrift av feilsøkingsdata handler om å vise hva som foregår under panseret av koden din. Programmerere gjør dette for å forstå flyten og oppdage bugs raskt.
 
-Utskrift av debug-informasjon er en måte å inspisere data på kjøretid i programmeringskoden. Løse feil og forstå betydningen av komplekse datastrukturer blir mer håndterbart med det.
-
-## Hvordan gjøre det:
-
-Vi bruker `IO.inspect` funksjonen i Elixir for å skrive ut debug-informasjon på standard output:
-
+## How to:
 ```Elixir
-defmodule Debug do
-  def print_data do
-    data = [1, 2, 3]
-    
-    IO.inspect(data)
-  end
-end
+# Enkel utskrift av en melding
+IO.puts "Dette er en debug-melding"
 
-Debug.print_data()
+# Debug med inspeksjon av en datastruktur
+liste = [1, 2, 3]
+IO.inspect liste, label: "Innholdet i listen"
+
+# Bruk av Logger for mer avanserte behov
+require Logger
+Logger.debug "En mer detaljert debug-melding"
+```
+Output vil se slik ut:
+```
+Dette er en debug-melding
+Innholdet i listen: [1, 2, 3]
+08:45:00.123 [debug] En mer detaljert debug-melding
 ```
 
-Output ville være:
-```Elixir
-[1, 2, 3]
-```
+## Deep Dive
+I Elixirs tidlige dager var `IO.puts` og `IO.inspect` standardmåter for å skrive ut debug-informasjon. Etter hvert som språket vokste, kom `Logger` modulen, som gir flere nivåer av logging og er integrert med Erlangs :logger-modul. Logger er flott fordi den lar deg kontrollere loggnivået og filtrere ut mindre viktige meldinger i produksjon. `IO.inspect` er fortsatt nyttig for en hurtig titt på variabler, men `Logger` er der du vil gå for et robust loggsystem.
 
-## Dypdykk
-
-**Historisk sammenheng**: I eldre tid, innen sofistikert debugging-verktøy kom på plass, var utskrift av debug-informasjon den eneste måten å forstå hva som skjedde inni et kjørende program.
-
-**Alternativer**: `IO.inspect` er ikke det eneste alternativet i Elixir. `IO.puts` og `IO.write` kan også benyttes til debugging formål, men de gir mindre detaljer.
-
-**Implementeringsdetaljer**: `IO.inspect` kan også ta opsjoner som argumenter for å kontrollere detaljnivået av output. For eksempel,
-
-```Elixir
-IO.inspect(data, limit: :infinity)
-```
-
-vil skrive ut alle elementene i en stor liste eller tuple, i stedet for å bare skrive ut forhåndsinnstilte antall første elementer.
-
-## Se også 
-
-- Elixir offisiell dokumentasjon på IO-modulen: https://hexdocs.pm/elixir/IO.html
-- Elixir skole tutorial på IO og skrive ut: https://elixirschool.com/en/lessons/basics/io/
+## See Also
+- [Elixir's IO module documentation](https://hexdocs.pm/elixir/IO.html)
+- [Programming Elixir ≥ 1.6](https://pragprog.com/book/elixir16/programming-elixir-1-6) - En bok for å dykke dypere inn i Elixir.

@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-html_title:           "Kotlin: एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-simple_title:         "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
+title:                "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
+date:                  2024-01-20T17:39:44.022596-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,37 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या व क्यों?
+## What & Why? (क्या और क्यों?)
+स्ट्रिंग को लोअर केस में बदलने का मतलब सभी अक्षरों को छोटे (lowercase) रूप में परिवर्तित करना है। प्रोग्रामर यह इसलिए करते हैं क्योंकि अक्सर डेटा को सामान्य करने और संवेदनशीलता को हटाने (case-insensitive comparisons) के लिए यह जरूरी होता है।
 
-(What & Why?)
-
-स्ट्रिंग को लोअर केस में परिवर्तित करना ऐसा कार्य है जिसमें आपको यथासंभव सभी अक्षरों को छोटे होने का यकीन करना होता है। प्रोग्रामर्स इसे सामान्यतः टेक्स्ट तुलना जैसे कामों के लिए करते हैं, जहां मामूली केपिटलाइजेशन अंतर महत्वपूर्ण नहीं होता है।
-
-## कैसे करें
-
-(How to:)
-
-ीश शेल का उपयोग करके, string को lowercase में कन्वर्ट करने के लिए आप 'string lower' कमांड का उपयोग कर सकते हैं।
-
-उदाहरण:
-```fish
-string lower -a 'तुम्हारा नाम क्या है'
-```
-
-और इसका आउटपुट होगा:
+## How to: (कैसे करें:)
+Fish Shell में एक स्ट्रिंग को लोअर केस में बदलने के लिए आप `string lower` फंक्शन का उपयोग कर सकते हैं। नीचे कुछ कोड उदाहरण और उनके आउटपुट दिए गए हैं।
 
 ```fish
-'तुम्हारा नाम क्या है'
+# एक वेरिएबल में स्ट्रिंग को लोअर केस में बदलना
+set myString "Namaste Duniya!"
+echo $myString | string lower  # आउटपुट: namaste duniya!
 ```
 
-## गहरी बातचीत
+```fish
+# डायरेक्ट स्ट्रिंग इनपुट को लोअर केस में बदलना
+string lower "HELLO, How Are You?"  # आउटपुट: hello, how are you?
+```
 
-(Deep Dive)
+## Deep Dive (गहराई में जानकारी)
+String को लोअरकेस में बदलना यूनिक्स-जैसे शेल्स में बहुत सालों से एक मानक कार्य है। `tr`, `awk`, और `sed` जैसे पुराने कमांड-लाइन टूल्स का इस्तेमाल करके इसे किया जाता था, लेकिन Fish में `string` बिल्ट-इन फंक्शन इसे सरल बनाता है।
 
-"string lower" आदेश आधिकारिक रूप से Fish 3.1.0 में जोड़ा गया था। अल्पसंख्यक अक्षरों को बड़े करने के विकल्प रूप में, आप `string lower -u` का उपयोग कर सकते हैं। Fish का उपयोग करने वाले डेवलपर्स इसे सुविधाजनक ढंग से स्ट्रिंग्स को मानकीकृत/समान बनाने के पब्लिक एपीआईस के रूप में पसंद करते हैं।
+Fish Shell का `string` फंक्शन, जो Fish 2.3.0 से आया, यह सीधा और व्यवहारिक है। यह यूनिकोड अक्षरों को भी सही से लोअरकेस में बदल देता है, जो कि कुछ पुराने टूल्स में समस्या हो सकती थी। Fish Shell के `string` फंक्शन में और भी कई ऑपरेशन जैसे कि replace, trim, और match शामिल हैं, जो इसे और भी शक्तिशाली बनाते हैं।
 
-## देखें भी
-
-(See Also)
-
-अधिक जानकारी के लिए, आप Fish Shell के आधिकारिक दस्तावेज़ [यहां](https://fishshell.com/docs/current/cmds/string_lower.html) देख सकते हैं। अधिक अद्वितीय केसहेडलिंग से जुड़े कमांडों के लिए, [String Operations in Fish](https://fishshell.com/docs/current/commands.html#string) को देखें।
+## See Also (संबंधित सूत्रों को देखें)
+- Fish Shell डॉक्यूमेंटेशन: `string lower` के बारे में और जानकारी के लिए यहाँ जाएँ: [Fish Shell String Documentation](https://fishshell.com/docs/current/cmds/string.html)
+- यूनिक्स `tr` कमांड: यदि आप Fish के बजाय पारंपरिक शेल्स में काम कर रहे हैं, तो `tr` कमांड के बारे में यहाँ सीखें: [Unix tr Command](https://man7.org/linux/man-pages/man1/tr.1.html)
+- टेक्स्ट प्रोसेसिंग: अधिक जटिल टेक्स्ट मैनीपुलेशन के लिए `awk` और `sed` कमांड्स पर गाइड: [GNU Awk Documentation](https://www.gnu.org/software/gawk/manual/), [Sed Documentation](https://www.gnu.org/software/sed/manual/sed.html)

@@ -1,7 +1,8 @@
 ---
-title:                "Skicka en http-begäran med grundläggande autentisering"
-html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
-simple_title:         "Skicka en http-begäran med grundläggande autentisering"
+title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
+date:                  2024-01-20T18:01:53.530665-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,40 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför? 
-Att skicka en HTTP-begäran med grundläggande autentisering är att göra en förfrågan till en webbserver från din kod, samtidigt som du förser den med autentiseringsuppgifter. Programmerare gör detta för att få åtkomst till skyddade resurser på servern.
+## Vad & Varför?
+Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att addera användarnamn och lösenord till förfrågan för tillträde till resurser som kräver verifiering. Programmerare gör detta för att säkerställa att endast behöriga användare får tillgång till vissa data eller funktioner.
 
-## Hur Man Gör: 
-Här är ett litet exempel på hur du kan skicka en HTTP-begäran med grundläggande autentisering i Gleam:
+## Hur man gör:
+I Gleam kan HTTP-förfrågningar med grundläggande autentisering skickas genom att använda ett bibliotek som `gleam_http` och lägga till en `Authorization`-header. Här är ett exempel:
 
-```Gleam
-import gleam/http.{get, header, request}
-import gleam/codecs.base64.{encode}
+```gleam
+import gleam/http.{Request, BasicAuth}
+import gleam/httpc
 
-let credentials = "username:password"
-let encoded = tuple(Ok: encode(credentials))
-
-let authentication_header = case encoded {
-  Ok(encoded) -> header.custom("Authorization", "Basic " ++ string.from_result(encoded))
-  Error(_) -> … // hantera fel här
+fn send_authenticated_request() {
+  let auth = BasicAuth(
+    username: "användarnamn",
+    password: "lösen",
+  )
+  let request = Request(
+    method: Get,
+    url: "https://exempel.se/skyddad",
+    body: None,
+    headers: [auth.header()],
+  )
+  let response = httpc.send(request)
+  response
 }
-
-let request = request.new("http://www.example.com")
-  |> request.prepend_header(authentication_header)
-
-http.send(request)
 ```
 
-Märk: Testkör din kod och ersätt "username:password" med dina riktiga autentiseringsuppgifter.
+Anropet returnerar ett `Response`-objekt som innehåller svaret från servern.
 
-## Fördjupning
-Historiskt sett, HTTP Basic Authentication skapades som en del av HTTP/1.0 specifikationen. Även om det är snabbt och enkelt att använda, så är det inte det mest säkra sättet att autentisera begäranden eftersom lösenord skickas som klartext. 
+## Djupdykning
+Grundläggande autentisering är en enkel autentiseringsmekanism som har använts sedan HTTP-protokollets tidiga dagar. Den är inte den säkraste metoden eftersom användarnamn och lösenord skickas i klartext, kodade med Base64, öppet för potentiell avlyssning. Därför bör HTTPS alltid användas när grundläggande autentisering implementeras.
 
-För säkrare alternativ, överväg att använda OAuth, tokenbaserad autentisering eller JWT. Dock, HTTP Basic Authentication kan fortfarande vara tillräckligt för interna applikationer eller för testning och utveckling.
+Alternativt kan programmerare använda modernare metoder som OAuth eller JWT (JSON Web Token) för autentisering. Dessa metoder erbjuder förbättrad säkerhet och flexibilitet.
 
-I din Gleam-kod hanteras autentiseringen genom att skapa ett "Authorization"-huvud med base64-kodade autentiseringsuppgifter och lägga till det i HTTP-begäran.
+Implementationen i Gleam kräver att man specificerar autentiseringsuppgifter som headers i HTTP-förfrågan. `BasicAuth` funktionen hjälper till att skapa rätt format av 'Authorization'-headern.
 
-## Se Även 
-För mer information, kolla in följande resurser:
-- [MDN: HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [RFC 7617: 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+## Se även
+- Gleam HTTP documentation: https://hexdocs.pm/gleam_http/
+- MDN Web Docs, Grundläggande autentisering: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- En introduktion till OAuth 2.0: https://oauth.net/2/
+- JWT.io, mer om JSON Web Tokens: https://jwt.io/introduction/

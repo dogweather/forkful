@@ -1,7 +1,8 @@
 ---
-title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+date:                  2024-01-20T18:01:16.153281-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,41 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mikä & Miksi?)
+Lähetät HTTP-pyynnön perusautentikoinnilla liittääksesi käyttäjätunnuksen ja salasanan verkkoresurssin pyyntöön. Koodarit tekevät tämän päästäkseen käsiksi suojattuun sisältöön.
 
-HTTP-pyynnön lähettäminen perusautentikoinnilla on tekniikka, jolla lähetetään dataa tai pyydetään tietoja verkossa. Ohjelmoijat tekevät sen, kun heidän on mentävä pääsynhallintalistojen tai salasanojen läpi palvelimella.
-
-## Kuinka:
-
+## How to: (Kuinka tehdä:)
 ```Bash
-# Esimerkki perusautentikoinnilla varustetun HTTP-pyynnön lähettämisestä Bashilla.
-# Käytämme CURL-komentoa.
+# Pyydä resurssia curl-komennolla ja Basic-autentikoinnilla
+curl -u 'kayttajatunnus:salasana' http://esimerkki.com/salainen/sivu
 
-USERNAME='käyttäjätunnus'
-PASSWORD='salasana'
-URL='https://esimerkki.com'
-
-# Lähetämme GET-pyynnön salasanalla.
-curl -u ${USERNAME}:${PASSWORD} ${URL}
+# Koodin tuloste: serverin vastaus, esim. HTML-tiedot.
 ```
 
-Kirjoitustulos näyttää tältä:
-
+Voit myös koodata salasanan Base64-koodauksella:
 ```Bash
-{
-  "vastauksen arvo": "esimerkki"
-}
+# Koodaa käyttäjätunnus ja salasana Base64-muotoon
+base64_koodaus=$(echo -n 'kayttajatunnus:salasana' | base64)
+
+# Lähetä pyyntö koodatulla merkkijonolla
+curl -H "Authorization: Basic $base64_koodaus" http://esimerkki.com/salainen/sivu
+
+# Koodin tuloste: serverin vastaus.
 ```
 
-## Sukellus syvemmälle:
+## Deep Dive (Sukellus syvemmälle)
+Perusautentikointi on HTTP-protokollan varhainen menetelmä käyttäjän tunnistamiseen. Se sisältää käyttäjätunnuksen ja salasanan, jotka lähetetään Base64-koodattuna. Vuonna 2023 tämä ei ole turvallisin tapa, sillä HTTP ei suojaa tietoja. HTTPS:n käyttö on suositeltavaa, se salaa liikenteen. Vaihtoehtoina ovat esimerkiksi OAuth tai API-avaimet, jotka ovat turvallisempia tapoja autentikointiin.
 
-Perusautentikointi on vanhin ja yksinkertaisin HTTP-autentikointimekanismi, joka on luotu 1990-luvun alkupuolella. Tästä huolimatta se on edelleen hyödyllinen, kun tarvitaan yksinkertaista tunnistautumismenettelyä.
+Perusautentikointi on yksinkertainen implementoida; tarvitset vain käyttäjätunnuksen ja salasanan yhdistetyn merkkijonon, jonka sitten koodaat Base64-muotoon. Tyypillisesti käytetään `curl`-työkalua, mutta vastaavia toiminnallisuuksia tarjoavat myös muut HTTP-asiakasohjelmat, kuten `wget` tai ohjelmointikielten omat kirjastot.
 
-Alternatiiveiksi voi tutkia OAuth, token-pohjainen autentikointi tai jopa SSL-sertifikaatin autentikointi. Valinta riippuu kuitenkin järjestelmän yksittäisistä tarpeista ja monimutkaisuudesta.
-
-Perusautentikointi toimii lähettämällä HTTP-otsakkeina base64-koodattu käyttäjänimi ja salasana. Tämä tarkoittaa, ettei tietoa ole suojattu, joten HTTPS-protokollan käyttö on suositeltavaa tällaisten pyyntöjen suojaamiseksi.
-
-## Katso myös:
-
-1. [HTTP-autentikointi: Perus- ja Digest -autentikointi](https://developer.mozilla.org/fi/docs/Web/HTTP/Authentication)
-2. [Curl-komennon virallinen dokumentaatio](https://curl.se/docs/manpage.html)
+## See Also (Katso myös)
+- cURL viralliset dokumentit: [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
+- Base64-koodaus: [https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/Base64_encoding_and_decoding](https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/Base64_encoding_and_decoding)

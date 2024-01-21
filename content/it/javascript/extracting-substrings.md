@@ -1,7 +1,8 @@
 ---
-title:                "Estrazione di sottosequenze"
-html_title:           "Arduino: Estrazione di sottosequenze"
-simple_title:         "Estrazione di sottosequenze"
+title:                "Estrazione di sottostringhe"
+date:                  2024-01-20T17:46:13.912591-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,51 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Oltre alle Stringhe in JavaScript: L'estrazione delle Sottostringhe
+## What & Why?
+Estrarre sottostringhe significa prendere parti specifiche di una stringa. I programmatori lo fanno per analizzare, manipolare o trasformare i dati secondo le necessità.
 
-## Cos'è e Perché?
-L'estrazione di sottostringhe si riferisce al ritirare spezzi specifici da una stringa di testo. I programmatori la usano per manipolare, analizzare e ristrutturare dati testuali.
+## How to:
+Ecco alcuni modi per estrarre sottostringhe in JavaScript:
 
-## Come fare:
-Ecco come estraiamo le sottostringhe in JavaScript:
+```javascript
+let stringa = "Ciao, mondo!";
 
-```Javascript
-let stringa = 'Ciao, mi chiamo Mario';
-let sottostringa = stringa.substring(0, 4);
+// Metodo slice()
+let sliceStr = stringa.slice(0, 5);
+console.log(sliceStr); // Output: Ciao,
 
-console.log(sottostringa); // Output: 'Ciao'
+// Metodo substring()
+let substrStr = stringa.substring(0, 5);
+console.log(substrStr); // Output: Ciao,
+
+// Metodo substr() (deprecato in ECMAScript 2020)
+let substrDeprecatedStr = stringa.substr(0, 5);
+console.log(substrDeprecatedStr); // Output: Ciao,
 ```
 
-Simple, vero? La funzione `substring()` prende due argomenti: il punto di inizio e il punto di fine dell'estrazione.
+## Deep Dive
+L'estrazione di sottostringhe in JavaScript si è evoluta. In passato, `substr()` era comunemente usato ma è stato deprecato a favore di `slice()` e `substring()`, entrambi con leggere differenze nella gestione degli indici negativi e di altri casi limite. Per esempio, `slice()` può accettare indici negativi, tornando elementi dalla fine della stringa, mentre `substring()` interpreta valori negativi come 0.
 
-```Javascript 
-let stringa = 'Ciao, mi chiamo Mario';
-let sottostringa = stringa.substr(5, 18); 
+La scelta tra `slice()` e `substring()` dipenderà dal comportamento specifico che cerchi. Entrambi sono efficienti e facili da capire, ma `slice()` offre più flessibilità con gli indici negativi. A proposito di implementazione, queste funzioni lavorano con l'UTF-16 interno di JavaScript. Questo può generare problemi rari ma evidenti con caratteri fuori dal Basic Multilingual Plane (BMP).
 
-console.log(sottostringa); // Output: ', mi chiamo Mario'
-```
-In `substr()`, il primo argomento è l'indice di inizio, e il secondo è la lunghezza della sottostringa che vuoi.
-
-## Approfondimenti
-
-1) Storicamente, queste funzioni esistono da quando JavaScript è stato creato, contribuendo alla manipolazione delle stringhe dal 1995. 
-
-2) Oltre a `substring()` e `substr()`, abbiamo anche `slice()`, che funziona in modo simile ma può accettare valori negativi per estrarre dal fondo.
-
-```Javascript
-let stringa = 'Ciao, mi chiamo Mario';
-let sottostringa = stringa.slice(-5); 
-
-console.log(sottostringa); // Output: 'Mario'
-```
-
-3) Si noti che queste funzioni non modificano la stringa originale, ma ritornano una nuova sottostringa.
-
-## Vedi Anche
-Per ulteriori informazioni e approfondimenti sulla manipolazione delle stringhe in JavaScript, visita:
-
-1) [MDN: String.prototype.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-2) [MDN: String.prototype.substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
-3) [MDN: String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-
-Ricorda, la pratica porta alla perfezione. Buona programmazione!
+## See Also
+- MDN Web Docs su `slice()`: [String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- MDN Web Docs su `substring()`: [String.prototype.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- Approfondimento sulla deprecazione di `substr()`: [String.prototype.substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)

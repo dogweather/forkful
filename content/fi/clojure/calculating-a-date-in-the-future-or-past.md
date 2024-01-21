@@ -1,7 +1,8 @@
 ---
-title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-html_title:           "Clojure: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+title:                "Tulevan tai menneen päivämäärän laskeminen"
+date:                  2024-01-20T17:31:15.736891-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,41 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Clojure ja päivämäärän laskeminen tulevaisuudessa tai menneisyydessä
+## What & Why?
+Menneisyyden tai tulevaisuuden päivämäärän laskeminen tarkoittaa tietyn ajanjakson lisäämistä tai vähentämistä nykyisestä päivästä. Ohjelmoijat käyttävät tätä esimerkiksi vanhentumispäivien, määräaikojen ja aikavälien hallintaan.
 
-## Mitä & Miksi?
-Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä tarkoittaa tietyn ajanjakson laskemista nykyisestä hetkestä eteenpäin tai taaksepäin. Ohjelmoijat tekevät tämmöistä usein esimerkiksi aikarajojen, eräpäivien ja vanhenemisajankohtien laskemiseksi.
+## How to:
+Clojure käyttää Javan `java.time` kirjastoa päivämäärien käsittelyyn. Tässä yksinkertainen esimerkki:
 
-## Miten se tehdään:
 ```Clojure
-;; Tuodaan java.util.Date ja java.util.concurrent.TimeUnit kirjastot
-(import [java.util Date]
-        [java.util.concurrent TimeUnit])
+(require '[java-time :as jt])
 
-(defn muunna-paivaiksi [paivat]
-  ;; Muunnetaan päivät millisekunneiksi
-  (TimeUnit/DAYS.toMillis paivat))
+;; Lisätään päiviä nykyhetkeen
+(defn add-days [days]
+  (-> (jt/local-date-now)
+      (jt/plus-days days)))
 
-(defn laske-paivamaara [suunta]
-  ;; Luo uusi Date olio nykyisestä ajasta
-  (let [nykyhetki (Date.)
-        aikavali (muunna-paivaiksi suunta)]
-    (Date. (+ (.getTime nykyhetki) aikavali))))
+;; Vähennetään päiviä nykyhetkestä
+(defn subtract-days [days]
+  (-> (jt/local-date-now)
+      (jt/minus-days days)))
+
+;; Esimerkkituloste
+(println (add-days 10))     ;; 10 päivää tulevaisuuteen nykyhetkestä
+(println (subtract-days 5))  ;; 5 päivää menneisyyteen nykyhetkestä
 ```
-Esimerkki output:
-```Clojure
-user> (laske-paivamaara 7)
-#inst "2023-04-29T16:06:38.334-00:00"
-```
-Tämä Clojure funktio luo uuden päivämäärän, joka tulee olemaan 7 päivää nykyhetken jälkeen.
 
-## Syvennys
-Historiallisesti päivämäärän laskeminen tulevaisuudessa tai menneisyydessä voi olla monimutkaista, koska eri kalenterijärjestelmät määrittävät "päivän" eri tavoin. Clojure, kuten useimmat modernit ohjelmointikielet, hyödyntää Java's Date and Time API:ta, joka antaa joustavuuden ja tarkan kontrollin ajan laskemiseen.
+## Deep Dive:
+Menetelmät päivämäärän laskemisesta ovat kehittyneet vuosien saatossa. Aiemmin, UTC-aikaa ja epätarkkoja menetelmiä käytettiin laajasti, mutta ajan myötä, `java.time` kirjasto on tuonut tarkkoja ja helppokäyttöisiä työkaluja päivämäärien käsittelyyn. Clojure, hyödyntämällä Javan tarjoamia kirjastoja, mahdollistaa puhtaat ja funktionaaliset ratkaisut ajankäsittelyyn.
 
-Clojurella on myös erinomaisia kirjastoja, kuten clj-time, jotka tarjoavat hyödyllisiä abstrakteja ajan ja päivämäärän käsittelyyn.
+On olemassa myös muita tapoja käsitellä päivämääriä Clojuressa, kuten `clj-time` kirjasto, mutta `java.time` on nykyään suosittu ja suositeltu vaihtoehto sen suorituskyvyn ja uudenaikaisuuden vuoksi.
 
-Parasta Clojuressa on sen joustavuus ja yksinkertaisuus. Voit luoda oman funktion päivämäärän laskemiseen tai käyttää valmiita kirjastoja.
+Tarkkaa ajanhallintaa varten, on tärkeää ottaa huomioon aikavyöhykkeet ja kesäaika, mikä `java.time` tekee hyvin. Kun tehdään laskelmia menneisyyden tai tulevaisuuden päiville, ohjelmoijan tulee myös olla tietoinen näistä seikoista, jotta vältetään virheet.
 
-## Katso myös
-1. Clojure for the Brave and True: [Ajan ja päivämäärän käsittely](https://www.braveclojure.com/core-functions-in-depth/)
-3. Clj-time GitHub: [clj-time:n dokumentaatio](https://github.com/clj-time/clj-time)
+## See Also:
+- Java Platform, Standard Edition 8 Date and Time Guide: https://docs.oracle.com/javase/8/docs/technotes/guides/datetime/index.html
+- Clojure java.time library documentation: https://clj-time.github.io/clj-time/doc/index.html
+- Clojure for the Brave and True - Working with Time: https://www.braveclojure.com/do-things/#3-4-2-Working_with_Time

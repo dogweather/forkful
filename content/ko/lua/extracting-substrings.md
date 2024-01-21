@@ -1,6 +1,7 @@
 ---
 title:                "부분 문자열 추출"
-html_title:           "Arduino: 부분 문자열 추출"
+date:                  2024-01-20T17:46:04.775553-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "부분 문자열 추출"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,32 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-문자열 추출은 문자열에서 특정 부분을 가져오는 것입니다. 이는 데이터를 처리하고 분석할 때 중요한 작업 중 하나로, 효율적인 프로그래밍을 가능케 합니다.
+## What & Why? (무엇과 왜?)
+문자열에서 부분 문자열 추출하기는 필요한 정보를 얻기 위해 문자열의 특정 부분을 뽑아내는 것입니다. 데이터 처리나 텍스트 분석에서 중요한 부분이죠.
 
-## 사용법:
-Lua에서 문자열 추출은 `string.sub()` 함수를 사용합니다. 여기 예시 코드와 결과입니다:
+## How to: (어떻게 하나요?)
+Lua에서 부분 문자열을 추출하는 기본 함수는 `string.sub`입니다. 사용법을 보여주는 간단한 예시들을 봅시다.
 
-```Lua
-str = "안녕하세요, Lua 프로그래밍"
-print(string.sub(str, 1, 5))
+```lua
+local text = "Hello, Lua!"
+
+-- 인덱스 8부터 끝까지 추출하기
+print(string.sub(text, 8))  -- Lua!
+
+-- 인덱스 1부터 5까지 추출하기
+print(string.sub(text, 1, 5))  -- Hello
+
+-- 마지막 4글자 추출하기
+print(string.sub(text, -4))  -- Lua!
 ```
-결과:
-```Lua
-안녕하세요
+
+출력 결과:
 ```
-위의 예제에서는 문자열 `str`에서 첫 번째 문자로부터 다섯 번째 문자까지의 부분 문자열을 추출하였습니다.
+Lua!
+Hello
+Lua!
+```
 
-## 깊게 알아보기
-문자열 추출은 프로그래밍의 역사와 함께한 기능 중 하나로, 메모리 관리와 데이터 처리에 있어서 중요한 역할을 합니다. Lua에서는 `string.sub()` 외에도 `string.find()` 등 특정 문자열을 찾는 함수도 제공하고 있습니다.
+## Deep Dive (심층 분석)
+`string.sub` 함수는 Lua 5부터 사용 가능합니다. 이 함수 외에도 `string.match`를 정규 표현식과 함께 쓰면 더 세밀한 추출이 가능해져요. 예를 들어:
 
-구현 면에서 보면, `string.sub()` 함수는 Lua에서 제공하는 문자열 라이브러리의 일부로 작동합니다. 이 함수는 시작 인덱스와 종료 인덱스를 받아 대상 문자열에서 선택된 범위의 부분 문자열을 반환합니다.
+```lua
+local date = "2023-04-01"
+local year, month, day = string.match(date, "(%d+)-(%d+)-(%d+)")
+print(year, month, day)  -- 2023 04 01
+```
 
-## 참고자료
-다음은 문자열 처리와 관련된 일부 외부 자료의 링크입니다:
+성능 면에서 보면, `string.sub`은 C 레벨에서 구현되어 있어서 빠릅니다. 문자열 길이가 길어질수록, 그 차이는 더욱 명확해져요.
 
-[1] 공식 Lua 문자열 라이브러리 문서: (https://www.lua.org/manual/5.3/manual.html#6.4)
-
-[2] Lua 프로그래밍 가이드의 문자열 처리 섹션: (https://www.lua.org/pil/20.html)
-
-[3] Lua 문자열 함수에 대한 튜토리얼 (englisch): (https://www.tutorialspoint.com/lua/lua_strings.htm)
+## See Also (관련 자료)
+- Lua 5.4 참조 매뉴얼: [string.sub](https://www.lua.org/manual/5.4/manual.html#pdf-string.sub)
+- 복잡한 패턴 매칭 예제: [string.match](https://www.lua.org/manual/5.4/manual.html#pdf-string.match)
+- Lua-users wiki 문자열 튜토리얼: [Lua-Users String Tutorial](http://lua-users.org/wiki/StringLibraryTutorial)

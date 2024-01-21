@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-html_title:           "Kotlin: एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-simple_title:         "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
+title:                "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
+date:                  2024-01-20T17:39:17.560863-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,32 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+स्ट्रिंग को लोअर केस में कन्वर्ट करने का मतलब है कि हर अक्षर को छोटे अक्षर में बदल देना। प्रोग्रामर्स ऐसा इसलिए करते हैं ताकि वो केस सेंसिटिविटी को नेविगेट कर सकें और डेटा को साफ-सुथरा और स्टैंडर्डाइज़ कर सकें।
 
-स्ट्रिंग को लोअर केस में कन्वर्ट करना इसका अर्थ है कि हम सभी अक्षरों को छोटे अक्षरों में परिवर्तित कर रहे हैं। कई बार, डाटा संघटन और तुलना के दृष्टिकोण से, प्रोग्रामर्स इसे करने की आवश्यकता महसूस करते हैं। 
+## How to (कैसे करें):
+PHP में स्ट्रिंग को लोअर केस में कैसे बदलें, यहाँ उदाहरण दिया गया है:
 
-## कैसे करें:
-PHP में, हम `strtolower()` फ़ंक्शन का उपयोग करके ऐसा कर सकते हैं। नीचे एक उदाहरण है:
-
-```PHP
-<?php 
-$string = "Hello, World!";
-$lowercaseString = strtolower($string);
-echo $lowercaseString;
+```php
+<?php
+$originalString = "Namaste Duniya!";
+$lowerCaseString = strtolower($originalString);
+echo $lowerCaseString; // "namaste duniya!"
 ?>
 ```
-आउटपुट:
-```PHP
-hello, world!
-```
-## गहराई में जाने:
-समय के साथ, PHP कन्वर्शन की क्षमता को अग्रसर करने के लिए कई फ़ंक्शन्स को जोड़ा गया है। `strtolower()` PHP 4 और PHP 5 में उपलब्ध था, और इसकी कार्यक्षमता PHP 7 और PHP 8 में बना रही है। 
 
-स्ट्रिंग को लोअर केस में कन्वर्ट करने के वैकल्पिक तरीके हैं, जैसे `mb_strtolower()` जो मल्टीबाइट स्ट्रिंग को लोअरकेस में करता है। 
+## Deep Dive (गहराई से जानकारी):
+इतिहास के संदर्भ में, `strtolower()` फंक्शन PHP के शुरुवाती वर्जन से ही मौजूद है। यह UTF-8 एन्कोडेड स्ट्रिंग्स के लिए `mb_strtolower()` जैसे फंक्शन के साथ आया, जो बहुभाषी आवश्यकताओं के लिए जरूरी है। इसका प्रयोग आपस में तुलना करने, सर्च और सॉर्टिंग के दौरान डेटा की एकरूपता बनाने के लिए होता है। `mb_strtolower` फंक्शन अधिक व्यापक चरित्र सेट सपोर्ट के साथ आता है और यह सिफारिश की जाती है जब आप अंतरराष्ट्रीय करैक्टर सेट्स के साथ काम कर रहे हों।
 
-`strtolower()` फ़ंक्शन PHP के C भाषा एक्सटेंशन के आधार पर बनाया गया है जिसमें स्ट्रिंग ट्रांसफ़ॉर्मेशन के लिए नीचे की ओर कोड जोड़ा गया है।
-
-## अधिक जानकारी के लिए:
-1. PHP `strtolower()` फ़ंक्शन: https://www.php.net/manual/en/function.strtolower.php
-2. PHP `mb_strtolower()` फ़ंक्शन: https://www.php.net/manual/en/function.mb-strtolower.php
-3. विपरीत, स्ट्रिंग को कैसे अपरकेस में बदलें: https://www.php.net/manual/en/function.strtoupper.php
+## See Also (और भी जानकारी):
+- PHP ऑफिशियल डॉक्युमेंटेशन (strtolower): https://www.php.net/manual/en/function.strtolower.php
+- PHP ऑफिशियल डॉक्युमेंटेशन (mb_strtolower): https://www.php.net/manual/en/function.mb-strtolower.php
+- PHP मल्टीबाईट स्ट्रिंग फंक्शन के बारे में अधिक जानकारी: https://www.php.net/manual/en/ref.mbstring.php

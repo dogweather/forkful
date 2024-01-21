@@ -1,7 +1,8 @@
 ---
-title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+date:                  2024-01-20T18:02:10.900202-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,48 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mitä & Miksi?
+Lähetämme HTTP-pyynnön perusautentikaatiolla lisäämään käyttäjätunnus ja salasana pyyntöön. Tätä tehdään päästäksemme käsiksi suojattuihin resursseihin.
 
-HTTP-pyynnön lähettäminen perusautentikoinnilla on prosessi, jossa lähetetään pyyntö verkkoserverille kiinnittäen mukanaan käyttäjänimen ja salasanan tiedot. Ohjelmoijat käyttävät tätä tekniikkaa, kun heidän täytyy kommunikoida suojattujen web-resurssien kuten API-palveluiden kanssa.
-
-## Miten se toimii:
-
+## How to: - Miten:
 ```Go
 package main
 
 import (
-	"net/http"
-	"fmt"
+    "encoding/base64"
+    "fmt"
+    "net/http"
+    "io/ioutil"
 )
 
 func main() {
-	req, err := http.NewRequest("GET", "https://api-url", nil)
-	if err != nil {
-		log.Fatalln(err)
-	}
-	req.SetBasicAuth("username", "password")
+    client := &http.Client{}
+    req, err := http.NewRequest("GET", "https://some-protected-resource.com", nil)
+    if err != nil {
+        panic(err)
+    }
 
-	resp, err := http.DefaultClient.Do(req)
-	if err != nil {
-		log.Fatalln(err)
-	}
+    // Lisää perusautentikaatio-header
+    auth := base64.StdEncoding.EncodeToString([]byte("käyttäjänimi:salasana"))
+    req.Header.Add("Authorization", "Basic "+auth)
 
-	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
-	fmt.Println(string(body))
+    resp, err := client.Do(req)
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
+
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(string(body))
 }
 ```
+Jos kirjaudut sisään onnistuneesti, vastaukseksi saat palvelimen resurssin sisällön.
 
-Tämä koodi luo uuden HTTP-pyynnön (GET), asettaa sille perusautentikointitiedot ja lähettää sen. Vaste tulostetaan.
+## Deep Dive - Syväsukellus:
+HTTP-perusautentikaatio on yksinkertainen autentikaatioprotokolla, joka vaatii käyttäjätunnusta ja salasanaa. Se ei ole turvallisin menetelmä, sillä tunnukset lähetetään Base64-koodattuna, mikä ei ole turvallista salaamatonta yhteyttä käytettäessä. Parempi vaihtoehto on käyttää OAuth, kerrosturvaprotokollia tai HTTPS-yhteyttä, joka suojaa tietoja salauksella.
 
-## Syvällisempi tieto:
+Perusautentikaatio oli yksi ensimmäisistä webbikäytön autentikointimenetelmistä, ja se on edelleen osa HTTP-standardia (RFC 7617). Sen käyttö on nopeaa, jos tarvitaan yksinkertaista suojaa ja kehitysresurssit ovat rajalliset.
 
-Perusautentikointi on ollut mukana HTTP-prokollan alkuvuosista saakka, mutta sen käyttö on vähentynyt sen yksinkertaisuuden ja turvatarkastusten puutteen vuoksi. Vaihtoehtoja ovat muun muassa kehittyneemmät autentikointimalleja, kuten OAuth ja JWT.
+Koodiesimerkissämme käytämme standardi `http` kirjastoa. Autentikaatioheader luodaan Base64-koodaamalla käyttäjänimi ja salasana. Muista aina käyttää `https`, kun lähetät arkaluonteisia tietoja.
 
-Perusautentikoinnin toteutuksessa Go:ssa, `SetBasicAuth` funktio asettaa `Authorization` otsikon arvoksi käyttäjänimen ja salasanan, jotka on koodattu base64:ään.
-
-## Lisätietoja:
-
-- [HTTP-autentikointi](https://developer.mozilla.org/fi/docs/Web/HTTP/Authentication)
-- [Golangin http package dok](https://golang.org/pkg/net/http/)
-- [Korvaavat autentikoinnit, kuten OAuth ja JWT](https://jwt.io/introduction/)
+## See Also - Katso Myös:
+- Go’s http package documentation: https://pkg.go.dev/net/http
+- HTTP Basic Authentication Standard (RFC 7617): https://tools.ietf.org/html/rfc7617
+- Go-mallit turvallisempiin HTTP-pyyntöihin: https://github.com/golang/go/wiki/Authentication
+- HTTPS ja Go: https://blog.golang.org/http-tracing

@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
-html_title:           "Gleam: Merkkijonojen yhdistäminen"
+date:                  2024-01-20T17:34:44.990911-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,44 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why? - Mikä & Miksi?
+Yhdistää tekstejä (stringejä) tarkoittaa niiden liittämistä peräkkäin. Koodarit yhdistävät tekstejä, koska tarvitsevat luoda dynaamisia viestejä, rakentaa URL-osoitteita tai yksinkertaisesti yhdistellä käyttäjän syötteitä.
 
-## Mikä & Miksi?
-Yksinkertaisesti sanottuna merkkijonojen yhdistäminen tarkoittaa kahden tai useamman merkkijonon liittämistä yhteen, jolloin muodostuu uusi, pidempi merkkijono. Se on olennainen toiminto kaikille ohjelmoijille, jotta he voivat muodostaa dynaamisia lauseita tai viestejä.
-
-## Näin se tehdään:
-
-Elm-ohjelmointikielen merkkijonojen yhdistämisessä ```(++)``` operaattoria käytetään merkkijonojen yhdistämiseen. Tässä on koodiesimerkki:
-
+## How to: - Kuinka:
 ```Elm
-module Main exposing (..)
+module ConcatExample exposing (..)
 
 import Html exposing (text)
 
+-- Yhdista kaksi merkkijonoa
+concatStrings : String -> String -> String
+concatStrings a b =
+    a ++ b
+
+-- Kayttö
 main =
-    text ( "Hei" ++ " maailma" )
+    text (concatStrings "Hei, " "maailma!")
 ```
 
-Tämän ohjelman suorittaminen tuottaa seuraavan tulosteen:
-
-```Elm
-"Hei maailma"
+Sample output:
+```
+"Hei, maailma!"
 ```
 
-## Syvällinen sukellus
+## Deep Dive - Syväsukellus
+Elm:ssä merkkijonojen yhdistäminen tapahtuu `++` operaattorilla. Historiallisesti eri kielessä on eri tapoja yhdistää merkkijonoja, kuten JavaScriptissä `+` operaattori tai PHP:ssä `.` operaattori. Elm pitää yksinkertaisuudesta ja selkeydestä, siksi käyttää `++` operaattoria.
 
-Kuten useimmissa ohjelmointikielissä, myös Elm:ssä pitkä merkkijono voidaan muodostaa liittämällä yhteen useita pienempiä merkkijonoja. Tätä ominaisuutta on käytetty ohjelmoinnissa vuosikymmenien ajan, aina ensimmäisistä korkeamman tason ohjelmointikielistä alkaen.
+Merkkijonojen yhdistäminen on yksinkertainen, mutta voit törmätä suorituskykyongelmiin suurilla datamäärillä. Tätä varten Elm optimoi yhdistämisen sisäisesti käyttäen tehokkaita algoritmeja, kuten köysialgoritmi (rope algorithm), mikä auttaa suorituskyvyssä.
 
-Useimmissa ohjelmointikielissä on muitakin tapoja liittää merkkijonoja yhteen. Esimerkiksi JavaScriptissa on olemassa sekä perinteinen ```+``` operaattori että ```String.concat()``` funktio. Elm:ssä paras tapa merkkijonojen liittämiseen on ```(++)``` operaattori, joka on yksinkertainen ja tehokas.
+Vaihtoehtoina suorille merkkijonoyhdistelmille ovat template stringit tai merkkijonoliteraalit (jotka eivät ole Elm:ssä käytössä), tai merkkijonolistojen kokoaminen, joka voi olla tehokkaampi isoilla merkkijonoilla. Elm:ssä voit myös käyttää `String.join` funktiota yhdistämään merkkijonojen listoja.
 
-Kun suoritat merkkijonojen yhdistämisen Elm:ssä, se tapahtuu tehokkaasti ja turvallisesti. Elm-kielen run-time ympäristö hoitaa kaiken tarvittavan muistinhallinnan, jolloin ohjelmoijan ei tarvitse huolehtia siitä.
-
-## Katso myös
-
-Lisätietoja merkkijonojen yhdistämisestä Elm-ohjelmointikielessä löydät seuraavista lähteistä:
-
-- Elm-kielen virallinen dokumentaatio: [https://elm-lang.org/docs](https://elm-lang.org/docs)
-
----
-
-Muista, että merkkijonojen yhdistämisen sujuva hallinta on tärkeä taito, joka auttaa sinua kirjoittamaan tehokkaampia ja joustavampia ohjelmia.
+## See Also - Katso Myös
+- Elm:n virallinen dokumentaatio merkkijonoista: https://package.elm-lang.org/packages/elm/core/latest/String
+- Elm kielen optimointikeskustelu: https://elm-lang.org/news/small-assets-without-the-headache
+- Rope-algoritmi, Wikipedia: https://en.wikipedia.org/wiki/Rope_(data_structure)

@@ -1,7 +1,8 @@
 ---
-title:                "Aloittaminen uuden projektin"
-html_title:           "C: Aloittaminen uuden projektin"
-simple_title:         "Aloittaminen uuden projektin"
+title:                "Uuden projektin aloittaminen"
+date:                  2024-01-20T18:03:21.500746-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Getting Started"
@@ -10,46 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mikä ja Miksi?
+Uuden projektin aloittaminen Elm:ssä tarkoittaa perustan luontia, josta projektisi kasvaa. Koodaajat aloittavat uusia projekteja vaaliakseen uusia ideoita ja ratkaisuja ongelmiin.
 
-Uuden projektin aloittaminen tarkoittaa uuden sovelluksen tai ohjelman kehittämisen aloittamista tyhjästä. Ohjelmoijat tekevät tämän, koska se on tapa luoda räätälöityjä ratkaisuja, jotka vastaavat tiettyihin tarpeisiin.
-
-## Kuinka:
-
-Aloitetaan asentamalla Elm: 
-```Bash
-npm install -g elm
-```
-Sitten luodaan uusi projekti komennolla:
+## How to: - Kuinka tehdään:
 ```Elm
+-- Uuden Elm-projektin pystyttäminen:
 elm init
+
 ```
-Tämä luo `elm.json` tiedoston sekä `src` hakemiston. Sovelluksen pääfunktio sijoitetaan esimerkiksi `src/Main.elm` tiedostoon:
+Tämä komento luo uuden Elm-projektin hakemistoon, jossa komentoa ajettiin, ja käynnistää `elm.json` tiedostonluonnin, joka määrittää projektin riippuvuudet.
+
 ```Elm
+-- Uuden moduulin lisääminen:
 module Main exposing (..)
-
-import Html exposing (h1, text)
-
+import Html exposing (text)
 
 main =
-    h1 [] [ text "Hello, Elm!" ]
+    text "Tervetuloa uuteen Elm-projektiisi!"
+
 ```
-Sovelluksen voi nyt ajaa selaimessa:
-```Bash
-elm reactor
-```
-Ja avata selaimessa osoitteella: [http://localhost:8000/src/Main.elm](http://localhost:8000/src/Main.elm)
+Lähdekoodiin lisätään uusi tiedosto, yleensä `Main.elm`, joka on projektin pääsyntymisen paikka.
 
-## Syväsukellus
+## Deep Dive - Syväsukellus:
+Elm perustuu funktionaalisen ohjelmoinnin periaatteisiin. Versiosta 0.19 lähtien, joka julkaistiin elokuussa 2018, Elm on keskittynyt tehokkuuteen ja 'dead code elimination' ominaisuuteen. 
 
-Elm lanseerattiin vuonna 2012 tuomaan parempaa luotettavuutta ja ylläpidettävyyttä web-sovelluskehitykseen. Elm tarjoaa vahvan tyypityksen ja ajonaikaisen virheiden poiston, jonka avulla ohjelmoijat voivat kehittää turvallisempia ja luotettavampia sovelluksia.
+Vaihtoehtoisesti Elm-projekteja voidaan luoda myös käyttäen erilaisia bootstrap-työkaluja kuten `create-elm-app` joka tarjoaa valmiita konfiguraatioita, mutta näiden käyttöön liittyy lisäkompleksisuutta.
 
-Vaihtoehtoisia tapoja uuden projektin aloittamiselle ovat esimerkiksi kehitettyjen projektimallien, kuten 'elm-spa-example' tai 'elm-architecture-tutorial' käyttö.
+Projektin aloituksessa on tärkeää määritellä `elm.json` tiedostossa, millaisia paketteja ja versioita projektisi tulee käyttämään. Elm:n pakettihallinta on tiukasti versioitu, jotta yhteensopivuusongelmia olisi mahdollisimman vähän.
 
-Hankkeen luomisessa, `elm init` komento luo konfiguraatiotiedoston `elm.json`, joka määrittää projektin riippuvuudet. Tämän lisäksi luodaan `src` hakemisto, johon Elm-lähdekooditiedostot, kuten `Main.elm`, sijoitetaan.
-
-## Katso Myös
-
-1. Elm-kielen kotisivu: https://elm-lang.org/
-2. 'Building Web Apps with Elm' -kirja, jonka kirjoittanut James A. Garfield: https://pragprog.com/titles/jgelm/
-3. Elm-ohjelmointiopas: https://elmprogramming.com/
+## See Also - Katso Myös:
+- [Elm:n viralliset dokumentaatiot](https://guide.elm-lang.org/)
+- [create-elm-app](https://github.com/halfzebra/create-elm-app)
+- [Elm paketti galleria](https://package.elm-lang.org/)

@@ -1,6 +1,7 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
-html_title:           "PowerShell: Obliczanie daty w przyszłości lub przeszłości"
+date:                  2024-01-20T17:31:55.983163-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,29 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Obliczanie daty w przyszłości lub przeszłości polega na dodawaniu lub odejmowaniu dni, tygodni, miesięcy czy lat od podanej daty. Programiści korzystają z tego, gdy potrzebują harmonogramów, ustalania terminów wygaśnięcia licencji, przypomnień itp.
+## Co i Dlaczego?
+Obliczanie daty w przyszłości lub przeszłości to sposób na ustalenie daty, która jest określoną liczbę dni, miesięcy, czy lat od daty wyjściowej. Programiści robią to, aby zarządzać terminami, wydarzeniami, czy też okresami ważności w aplikacjach.
 
 ## Jak to zrobić:
-Podstawowe obliczanie daty w przyszłości lub przeszłości za pomocą PowerShell’a można osiągnąć, korzystając z metody ‘AddDays’. Przykład poniżej pokazuje dodawanie 7 dni do obecnej daty:
 ```PowerShell
-$Date = Get-Date
-$NewDate = $Date.AddDays(7)
-$NewDate
+# Obliczanie daty 10 dni w przyszłości
+$dzis = Get-Date
+$przyszlosc = $dzis.AddDays(10)
+"Data za 10 dni to: $przyszlosc"
+
+# Obliczanie daty 5 dni w przeszłości
+$przeszlosc = $dzis.AddDays(-5)
+"Data sprzed 5 dni to: $przeszlosc"
+
+# Przykładowe wyjście
+Data za 10 dni to: czwartek, 10 lutego 2023 23:05:49
+Data sprzed 5 dni to: sobota, 26 stycznia 2023 23:05:49
 ```
-Wynikiem będzie data o 7 dni późniejsza od obecnej. Podobnie, możemy odejmować dni:
 
-```PowerShell
-$Date = Get-Date
-$NewDate = $Date.AddDays(-7)
-$NewDate
-```
-Tu wynikiem będzie data o 7 dni wcześniejsza niż obecna.
+## Deep Dive
+W przeszłości do obliczania dat używano różnych systemów i narzędzi – od kalendarzy papierowych po proste programy komputerowe. W PowerShellu obliczanie dat jest proste dzięki wbudowanym funkcjom, jak np. `AddDays()`, ale można też użyć `AddHours()`, `AddMonths()` i inne. Alternatywą jest także manualne dodawanie sekund, minut czy godzin do timestampów. Ważne jest zrozumienie stref czasowych i lokalnych ustawień czasu, by operacje na datach były poprawne w różnych środowiskach.
 
-## W głąb tematu:
-Technika obliczania daty w przyszłości lub przeszłości ma swoje korzenie w tradycyjnymi operacjach matematycznych, ale jest ona znacznie bardziej rozbudowana, biorąc pod uwagę złożoność kalendarzy. PowerShell posiada podstawowe metody takie jak ‘AddDays’, ‘AddHours’, ‘AddMinutes’, ‘AddSeconds’, ‘AddMilliseconds’, ‘AddTicks’, ‘AddYears’, ‘AddMonths’. Alternatywą dla PowerShell jest korzystanie z języków jak C# lub Python, które oferują podobne funkcje.
-
-## Zobacz też:
-- Dokumentacja PowerShell AddDays: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1
-- Cheatsheet daty i czasu w PowerShell: https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-add-days-hours-minutes-to-date/
-- Obsługa daty i czasu w .NET: https://docs.microsoft.com/dotnet/api/system.datetime?view=net-5.0
+## Zobacz także
+- [Dokumentacja PowerShell dla DateTime](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
+- [O strefach czasowych w .NET](https://docs.microsoft.com/en-us/dotnet/standard/datetime/choosing-between-datetime)

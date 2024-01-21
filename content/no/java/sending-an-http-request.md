@@ -1,7 +1,8 @@
 ---
-title:                "Å sende en http-forespørsel"
-html_title:           "C++: Å sende en http-forespørsel"
-simple_title:         "Å sende en http-forespørsel"
+title:                "Å sende en HTTP-forespørsel"
+date:                  2024-01-20T17:59:51.506210-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,45 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+I Java sender vi HTTP-forespørsler for å snakke med websider og tjenester. Det er essensielt for å hente data, sende informasjon og integrere med et utall av APIer på nett.
 
-Å sende en HTTP-forespørsel er prosessen hvor datamaskinen din ber en server om informasjon eller utfører en handling, som å laste opp en fil. Dette er essensielt for samhandlingen mellom klienter (for eksempel webleseren din) og servere.
+## Hvordan gjøre det:
+Her er en kjapp kodesnutt for å sende en GET-forespørsel og skrive ut responsen med Java 11 `HttpClient`:
 
-## Hvordan:
-
-Her er et eksempel på hvordan du kan sende en GET-forespørsel og skrive ut responsen i Java:
-
-```Java
+```java
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class Main {
-    public static void main(String[] args) throws Exception {
+public class HttpExample {
+    public static void main(String[] args) {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://example.com"))
+                .uri(URI.create("https://httpbin.org/get"))
                 .build();
 
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-        System.out.println(response.body());
+        client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+                .thenApply(HttpResponse::body)
+                .thenAccept(System.out::println)
+                .join();
     }
 }
 ```
 
-Når du kjører dette programmet, vil det sende en HTTP GET-forespørsel til `http://example.com` og så skrive ut responsen den mottar.
+Kjører du dette, vil du se utdata som:
 
-## Dypdykke:
+```
+{
+  "args": {}, 
+  "headers": {
+    "Accept-Encoding": "gzip,deflate",
+    ...
+  }, 
+  "origin": "xxx.xxx.xxx.xxx", 
+  "url": "https://httpbin.org/get"
+}
+```
 
-1. Historisk kontekst: HTTP-forespørsler har vært en del av internettpraksis siden utgivelsen av HTTP/1.0 rundt 1996. De har blitt raffinert og utvidet med senere versjoner av protokollen, spesielt HTTP/2 og HTTP/3.  
+## Dypdykk
+Før Java 11, var det `HttpURLConnection` som gjaldt. Det var greit nok, men Java 11 introduserte `HttpClient`, som er lettere å bruke og mer moderne. 
 
-2. Alternativer: Det finnes mange biblioteker der ute for å sende HTTP-forespørsler i Java, inkludert OkHttp og Apache HttpClient, men i denne artikkelen fokuserer vi på HttpClient som er innebygd i Java.
+Alternativer til Java-standardbiblioteket inkluderer biblioteker som Apache HttpClient, OkHttp, og Retrofit, alle som tilbyr mer funksjonalitet og fleksibilitet. 
 
-3. Gjennomføringsdetaljer: `HttpClient.newHttpClient()` brukes til å opprette en ny HttpClient. `HttpRequest.newBuilder()` starter konstruksjonen av en HttpRequest, og `.build()` fullfører det. Da sender vi forespørselen med `client.send()` og printer ut responsen.
+Når du sender en HTTP-forespørsel, bygger `HttpClient` en request som kan være av type GET, POST, og andre HTTP-metoder. Dette går over nettverket til en server, som behandler forespørselen og sender tilbake et svar.
 
-## Se Også:
+## Se Også
+For mer om Java `HttpClient`:
 
-2. [Mozilla HTTP Forespørsler Guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
-3. [OkHttp Bibliotek](https://square.github.io/okhttp/)
-4. [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.0.x/)
+- [Offisiell Java 11 HttpClient dokumentasjon](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
+- For biblioteker med ekstra kraft, sjekk ut:
+  - [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.1.x/index.html)
+  - [OkHttp](https://square.github.io/okhttp/)
+  - [Retrofit](https://square.github.io/retrofit/)

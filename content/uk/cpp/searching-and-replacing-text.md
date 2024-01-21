@@ -1,6 +1,7 @@
 ---
 title:                "Пошук та заміна тексту"
-html_title:           "C++: Пошук та заміна тексту"
+date:                  2024-01-20T17:57:27.989815-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Пошук та заміна тексту"
 programming_language: "C++"
 category:             "C++"
@@ -10,43 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це та навішо?
-Пошук та заміна тексту - це процес виявлення окремих фрагментів коду та змінення їх на задані значення. Програмісти роблять це, щоб модифікувати значення змінних, виправити помилки або оновити частини коду.
+## What & Why? (Що і чому?)
+Searching and replacing text is about finding specific sequences of characters in a string and swapping them out for something else. Programmers do it to manipulate data, automate editing tasks, or preprocess text for other operations. It’s a bread-and-butter skill because text processing happens in almost every app.
 
-## Як це зробити:
+## How to: (Як робити:)
 ```C++
 #include <iostream>
-#include<string>
-#include<algorithm>
-
-void replaceSubstring(std::string &s, const std::string &search, const std::string &replace) {
-    for(size_t pos = 0; (pos = s.find(search, pos)) != std::string::npos; pos += replace.length()){
-        s.replace(pos, search.length(), replace);
-    }
-}
+#include <string>
+#include <algorithm>
 
 int main() {
-    std::string s = "Hello, World!";
-    std::cout << "Before replace: "<< s << std::endl;
-    replaceSubstring(s, "World", "Ukraine");
-    std::cout << "After replace: "<< s << std::endl;
+    std::string text = "Hello, World! Let's replace 'World' with 'Ukraine'.";
+    std::string from = "World";
+    std::string to = "Ukraine";
+
+    // Find starting point of the sequence you want to replace
+    size_t start_pos = text.find(from);
+    if(start_pos != std::string::npos) {
+        // Replace it
+        text.replace(start_pos, from.length(), to);
+    }
+
+    std::cout << text << std::endl; // Output: Hello, Ukraine! Let's replace 'Ukraine' with 'Ukraine'.
     return 0;
 }
 ```
-**Вихід:**
-```
-Before replace: Hello, World!
-After replace: Hello, Ukraine!
-```
 
-## Детальніше
-Історично, пошук та заміна тексту були необхідною частиною редагування текстового коду. З появою ООП, концепція простої зміни значень змінних перетворилася в більш складну ідей з заміни тексту. 
+## Deep Dive (Поглиблений аналіз):
+Long before C++ got its <algorithm> library, devs would manually loop through strings for search-and-replace. Now, we have `std::string::find` and `std::string::replace` for a cleaner approach.
 
-Є кілька альтернатив методу пошуку та заміни тексту в C++. Наприклад, ви можете використати метод `std::regex_replace` з бібліотеки `regex`.
+Alternatives like regular expressions (`std::regex`) exist but are heavier and slower for simple tasks. Still, they're king for complex patterns.
 
-Згаданий у прикладі метод витягує субстроку тексту, знаходить її вхождення та замінює на нову. Це процес проходить ітеративно, поки усе знаходження не буде замінено.
+On implementation: searching typically runs O(n) complexity, where n is string length. For replacing, another O(m) is added, with m being the replacement's length. Efficient for short texts or infrequent changes but can bog down with large-scale edits. Libraries like Boost can offer performance enhancements.
 
-## Дивись також
-1. [std::regex_replace](http://www.cplusplus.com/reference/regex/regex_replace/)
-2. [std::string::replace](http://www.cplusplus.com/reference/string/string/replace/)
-3. [std::string::find](http://www.cplusplus.com/reference/string/string/find/)
+## See Also (Дивіться також):
+- [cplusplus.com reference for std::string](http://www.cplusplus.com/reference/string/string/)
+- [Regular expressions in C++](https://en.cppreference.com/w/cpp/regex)
+- [Boost String Algorithms Library](https://www.boost.org/doc/libs/release/libs/algorithm/string/)

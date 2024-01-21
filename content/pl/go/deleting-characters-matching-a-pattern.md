@@ -1,6 +1,7 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "C: Usuwanie znaków pasujących do wzorca"
+date:                  2024-01-20T17:42:08.106279-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Go"
 category:             "Go"
@@ -10,44 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego i po co?
+## What & Why? (Co i dlaczego?)
+Usuwanie znaków pasujących do wzorca to żonglerka tekstem: wyłapujemy i wyrzucamy to, co nie gra z resztą. Robimy to, by oczyścić dane, uprościć przetwarzanie lub poprawić estetykę wyjścia.
 
-Usunięcie znaków pasujących do wzorca ma na celu manipulację tekstami w celu uzyskania pozbycia się niepotrzebnych znaków w ciągu danych. Programiści robią to, gdy pragną oczyszczenia swojego tekstu z niechcianych lub zbędnych znaków.
-
-## Jak to zrobić:
-
-Go zapewnia wbudowaną funkcję `strings.ReplaceAll(s, old, new)`, która jest używana do zastępowania wszystkich wystąpień podciągu `old` w ciągu `s` na ciąg `new`. 
-
-Sprawdźmy to na przykładzie:
-
+## How to: (Jak to zrobić:)
 ```Go
 package main
 
 import (
 	"fmt"
-	"strings"
+	"regexp"
 )
 
 func main() {
-	str := "Witaj, Witaj, świecie!"
-	
-	// Usunięcie wszystkich liter 'W' ze ciągu
-	newStr := strings.ReplaceAll(str, "W", "")
-	
-	fmt.Println(newStr) // "itaj, itaj, świecie!"
+	// Przykład: usunięcie wszystkich cyfr z tekstu
+	re := regexp.MustCompile(`\d`)
+	originalText := "Razem mamy 1024 jabłka i 2048 gruszek."
+	cleanedText := re.ReplaceAllString(originalText, "")
+	fmt.Println(cleanedText) // Wyjście: "Razem mamy  jabłka i  gruszek."
 }
 ```
 
-## Pogłębione informacje:
+## Deep Dive (W głębi tematu)
+Usuwanie znaków z tekstu nie jest niczym nowym – narzędzia takie jak `sed` w Unix robiły to od dziesięcioleci. W Go, robi się to często przy użyciu pakietu `regexp`, który pozwala na skomplikowane wzorce, ale pamiętaj – regularne wyrażenia mogą obniżać wydajność. Alternatywnie, dla prostszych operacji, `strings.Replace` czy `strings.ReplaceAll` mogą wystarczyć i są szybsze. Na poziomie implementacyjnym, `regexp` kompiluje wzorzec do formy, którą maszyna może wykonywać efektywnie, a operacje na stringach korzystają z mechanizmów języka, który jest zoptymalizowany pod kątem szybkich operacji na ciągach znaków.
 
-Usunięcie znaków pasujących do wzorca jest częstą praktyką programistyczną od czasów, gdy zaczęto manipulować danymi tekstowymi. 
-
-Co do alternatyw, możemy używać funkcji `regexp.ReplaceAllString(src, repl)`, która pozwala na bardziej skomplikowane operacje usuwania znaków.
-
-Oto szczegóły implementacji dla funkcji `strings.ReplaceAll(s, old, new)`. Ta funkcja najpierw wyszukuje indeksy wszystkich wystąpień `old` w ciągu `s` za pomocą algorytmu wyszukiwania tekstu Boyer-Moore'a. Następnie, tworzy nowy ciąg, kopiując fragmenty ciągu `s` między tymi indeksami, a następnie wstawia `new` zamiast `old`.
-
-## Zobacz też:
-
-1. Dokumentacja Go dla pakietu "strings": https://golang.org/pkg/strings/
-2. Dokumentacja Go dla pakietu "regexp": https://golang.org/pkg/regexp/
-3. Algorytm Boyer-Moore’a: https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm
+## See Also (Zobacz również)
+- [`regexp` package](https://pkg.go.dev/regexp)
+- [Go by Example: Regular Expressions](https://gobyexample.com/regular-expressions)
+- [The Go Blog: Strings, bytes, runes and characters in Go](https://blog.golang.org/strings)

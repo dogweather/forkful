@@ -1,7 +1,8 @@
 ---
-title:                "Extrayendo subcadenas"
-html_title:           "C: Extrayendo subcadenas"
-simple_title:         "Extrayendo subcadenas"
+title:                "Extracción de subcadenas"
+date:                  2024-01-20T17:45:43.271637-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Extracción de subcadenas"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,39 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## What & Why?
+Extraer subcadenas es el acto de seleccionar partes específicas de un texto. Lo hacemos cuando queremos analizar, transformar o validar datos de manera eficiente.
 
-La extracción de subcadenas en programación es el proceso de obtener un grupo específico de caracteres de una cadena existente. Los programadores lo hacen para manipular y trabajar con partes específicas de cadenas de texto, eliminando la necesidad de manejar la cadena completa.
+## How to:
+En Go, usamos principalmente `slice` para extraer subcadenas, así:
 
-## Cómo hacerlo:
-
-Aquí verás cómo hacerlo en Go. Asumiremos que ya tienes conocimientos básicos del lenguaje.
-
-```Go
+```go
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-    str := "¡Hola Mundo!"
-    sub := str[1:4]
-
-    fmt.Println(sub)
+	texto := "Hola mundo!"
+	subcadena := texto[1:5]  // toma los caracteres del índice 1 al 4
+	fmt.Println(subcadena)   // Imprime "ola "
 }
 ```
-La salida de este programa será "ola", que es la subcadena de los índices 1 al 4 en la cadena original "¡Hola Mundo!".
+Output:
+´´´
+ola
+´´´
 
-## Inmersión Profunda
+Aquí, el índice `1` es el inicio (incluido) y el `5` es el final (excluido).
+Si quieres desde el comienzo hasta un punto usa `[:indice]`, y para ir desde un punto hasta el final usa `[indice:]`.
 
-Históricamente, la extracción de subcadenas ha sido utilizada en variedad de contextos de programación, desde la manipulación de cadenas para presentación visual hasta el procesamiento de texto para el análisis de datos.
+## Deep Dive
+La historia de las subcadenas en Go es sencilla: desde sus comienzos, el lenguaje ofreció esta funcionalidad. En términos de alternativas, en Go, aparte de `slicing`, puedes usar el paquete `strings` para más funciones relacionadas con texto. Internamente, extraer subcadenas es ligero en Go, ya que la subcadena usa la misma memoria que la cadena original y solo cambia los índices de inicio y fin.
 
-En Go, existen varias formas para extraer subcadenas. La más directa y eficiente es la que se mostró anteriormente, usando el operador de rebanada `[:]`. Sin embargo, para operaciones más complejas, puedes utilizar funciones de la biblioteca estándar, como `strings.Split` y `strings.Trim`.
-
-Recuerda que las cadenas en Go son inmutables: cuando extraes una subcadena, básicamente estás creando una nueva cadena. Go maneja este proceso de manera eficiente, pero es un detalle que debes tener en cuenta cuando trabajas con largas cadenas o realizas extracciones de subcadenas intensivas.
-
-## Ver También
-
-Para más detalles y ejemplos avanzados, puede consultar las siguientes fuentes:
-
-- Documentación oficial de Go: [Paquete Strings](https://pkg.go.dev/strings)
-- Específico para subcadenas, chequea [Go by Example: String functions](https://gobyexample.com/string-functions).
+## See Also
+- Documentación oficial de Go sobre `string`: https://golang.org/pkg/strings/
+- Una guía sobre el paquete `strings`: https://www.calhoun.io/6-tips-for-using-strings-in-go/
+- Tutorial sobre manejo de cadenas en Go: https://tour.golang.org/moretypes/15

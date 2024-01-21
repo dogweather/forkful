@@ -1,6 +1,7 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Bash: Rozpoczynanie nowego projektu"
+date:                  2024-01-20T18:03:24.361365-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,34 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Rozpoczęcie nowego projektu to jak budowla od podstaw - jest to start punkt do kreowania nowego oprogramowania. Programiści robią to, aby rozwiązać nowe problemy lub by poprawić istniejący proces.
+## What & Why? (Co i dlaczego?)
+Zaczynanie nowego projektu oznacza stworzenie bazowej struktury katalogów i plików potrzebnych do pracy. Programiści robią to, by szybko i efektywnie rozpocząć nowe zadanie, zachowując organizację i czystość kodu.
 
-## Jak to zrobić:
-Zaczynamy od instalacji Fish Shella, jeśli jeszcze go nie masz. Najprostszy sposób to:
+## How to: (Jak to zrobić:)
 ```Fish Shell
-brew install fish
-```
-Załóżmy, że chcemy stworzyć nowy projekt o nazwie "MyProject". Tworzymy nowy katalog i przechodzimy do niego:
-```Fish Shell
-mkdir MyProject
-cd MyProject
-```
-Zgodnie z dobrą praktyką, powinieneś zainicjować git w swoim projekcie:
-```Fish Shell
+# Utworzenie nowego katalogu dla projektu
+mkdir my_new_project
+cd my_new_project
+
+# Inicjalizacja repozytorium git i pierwszy commit
 git init
+touch README.md
+git add README.md
+git commit -m "Initial commit"
+
+# Utworzenie katalogów i plików dla projektu
+mkdir src tests
+touch src/main.fish
+echo "#!/usr/bin/env fish" > src/main.fish
+chmod +x src/main.fish
+
+# Szybki test
+echo 'echo "Hello, World!"' >> src/main.fish
+src/main.fish
 ```
-I to wszystko! Rozpoczęliśmy nowy projekt.
 
-## Głębsza wiedza
-Historiczenie, programiści używali różnych shelli do pisania skryptów takich jak Bash czy zsh. Fish jest jednak nowocześniejszy, łatwiejszy w użyciu, i posiada wiele przydatnych funkcji które przyspieszają proces programowania.
+Sample Output:
+```
+Hello, World!
+```
 
-Co do alternatyw, mamy wiele innych opcji jak PowerShell, C Shell, Korn Shell i wiele innych. Każdy ma swoje unikalne funkcje i możesz wybrać ten, który najlepiej odpowiada Twoim potrzebom.
+## Deep Dive (Wnikliwa analiza)
+Zaczynając nowy projekt w Fish Shell, warto znać jego historię. Powstał jako alternatywa dla tradycyjnych shellowych, jak Bash, oferując bardziej przyjazną składnię i funkcje. Alternatywą mogą być skrypty w Bash czy Zsh, lecz Fish wybija się lepszą autokorektą i podpowiedziami. Ważne jest też, aby dostosować pliki konfiguracyjne i skrypty do standardów projektu i potrzeb zespołu.
 
-Gdy tworzysz nowy projekt, duże znaczenie ma struktura katalogów i nazwy plików. Ważne jest, aby były one odpowiednie dla Twojego projektu i zgodne z ogólnie przyjętymi standardami.
+Przykład pokazuje prosty flow inicjalizacji projektu, gdzie `mkdir` tworzy katalog, `git init` rozpoczyna śledzenie wersji, a `touch` i `echo` tworzą i wypełniają plik startowy. Używając Fish, warto pamiętać o nadaniu skryptom atrybutu wykonywalności (`chmod +x`), co pozwala na ich bezpośrednie uruchamianie.
 
-## Zobacz też
-1. Dokumentacja Fish Shell - https://fishshell.com/docs/current/index.html
-2. Porównanie różnych shelli - https://www.slant.co/topics/514/~best-unix-shells
-3. Instrukcja jak używać git - https://git-scm.com/doc
-4. Poradnik organizacji projektów - https://docs.python-guide.org/writing/structure/
+## See Also (Zobacz także)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html) - Oficjalna dokumentacja Fish.
+- [Git Basics](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics) - Podstawy Git, niezbędne przy projektach.

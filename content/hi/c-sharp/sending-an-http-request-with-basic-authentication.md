@@ -1,7 +1,8 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:02:00.492969-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,44 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-HTTP से बुनियादी प्रमाणीकरण के साथ अनुरोध भेजना आपके कोड को सर्वर से डेटा प्राप्त करने में सहायता करता है जिसे आपका कोड प्रक्रिया कर सकता है। इसका इस्तेमाल कांगोया (Confidentiality) और पहचान के सत्ता (Identity Assertion) के लिए किया जाता है।
+## क्या और क्यों? (What & Why?)
+HTTP अनुरोधों को बेसिक ऑथेंटिकेशन के साथ भेजना का मतलब है, यूज़र नेम और पासवर्ड के ज़रिए सुरक्षित तरीके से सर्वर से डेटा एक्सेस करना। प्रोग्रामर इसका उपयोग तब करते हैं जब उन्हें किसी एपीआई या वेब सेवा से विशेष डेटा प्राप्त करना होता है जो सीमित पहुँच वाला हो।
 
-## कैसे करें:
-यहाँ एक साधारण सी# कोड है जो HTTP अनुरोध के साथ बुनियादी प्रमाणीकरण भेजता है:
-
+## कैसे करें: (How to:)
 ```C#
 using System;
-using System.Net;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
-class Program
+class BasicAuthExample
 {
-    static void Main()
+    static async Task Main()
     {
-        string url = "http://example.com";
-        string username = "user";
-        string password = "password";
+        using var client = new HttpClient();
+        
+        // बेसिक ऑथेंटिकेशन क्रेडेंशियल्स को बेस64 में एनकोड करें
+        var credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes("username:password"));
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", credentials);
 
-        WebClient wc = new WebClient();
-
-        string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(username + ":" + password));
-        wc.Headers[HttpRequestHeader.Authorization] = string.Format("Basic {0}", credentials);
-
-        string result = wc.DownloadString(url);
-        Console.WriteLine(result);
+        // HTTP GET अनुरोध भेजें
+        var result = await client.GetAsync("https://api.example.com/data");
+        var content = await result.Content.ReadAsStringAsync();
+        Console.WriteLine(content);
     }
 }
 ```
-इस कोड का आउटपुट सर्वर से प्राप्त डेटा होगा जैसे उसे एक वेब ब्राउज़र में दर्ज किया जाता है । 
+उपरोक्त कोड सरल HTTP GET अनुरोध भेजता है जिसमें बेसिक ऑथेंटिकेशन है। यानी, जब आप इसे चलाते हैं, आपको सर्वर से प्रतिक्रिया में डेटा मिलेगा, जैसे कि जेसन या एचटीएमएल।
 
-## गहरा डाइव:
-(1) ऐतिहासिक संदर्भ: बुनियादी प्रमाणीकरण का उदाहरण इंटरनेट सुरक्षा की शुरुआती मानकों में से एक है । 
-(2) वैकल्पिक: आज के समय में, OAuth और Bearer Token जैसे अधिक सुरक्षित विधियों का इस्तेमाल भी किया जा सकता है। 
-(3) क्रियान्वयन विवरण: हमारे कोड में, हम उपयोगकर्ता नाम और पासवर्ड को एक संयुक्त स्ट्रिंग में बदलते हैं , फिर उसे Base64 में कोड करते हैं, और अंत में हम इसे `Authorization` हैडर के रूप में जोड़ते हैं।
+## गहराई से समझ (Deep Dive)
+बेसिक ऑथेंटिकेशन HTTP प्रोटोकॉल में सबसे पुराने तरीकों में से एक है, लेकिन इसमें सुरक्षा जोखिम हो सकते हैं क्योंकि क्रेडेंशियल्स को बेस64 एनकोडिंग के ज़रिए सादे पाठ में भेजा जाता है। इसलिए, हमेशा HTTPS का उपयोग करें।
 
-## और देखें:
-HTTP प्रमाणीकरण के बारे में और जानने के लिए, निम्नलिखित लिंक पर क्लिक करें:
-1. [HTTP Authentication (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-2. [The HTTP Authorization request header (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
-3. [Basic access authentication(Basic access authentication - Wikipedia)](https://en.wikipedia.org/wiki/Basic_access_authentication)
+विकल्प में, OAuth या JWT (JSON Web Tokens) जैसी अधिक सुरक्षित पद्धतियां हैं, जो बेहतर सुरक्षा प्रदान करते हैं।
+
+बेसिक ऑथेंटिकेशन कार्यान्वित करते समय, `HttpClient` के डिफॉल्ट रिक्वेस्ट हेडर का उपयोग करें ताकि सभी अनुरोधों में ऑथेंटिकेशन हेडर शामिल हो। `Convert.ToBase64String` और `Encoding.ASCII.GetBytes` का उपयोग करके यूजर नेम और पासवर्ड को एनकोड किया जा सकता है।
+
+## यह भी देखें (See Also)
+- [HttpClient Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
+- [Basic Authentication on MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme)
+- [Understanding Basic Authentication](https://www.ietf.org/rfc/rfc2617.txt)

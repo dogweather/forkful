@@ -1,7 +1,8 @@
 ---
-title:                "भविष्य या अतीत में एक तारीख की गणना"
-html_title:           "Haskell: भविष्य या अतीत में एक तारीख की गणना"
-simple_title:         "भविष्य या अतीत में एक तारीख की गणना"
+title:                "भविष्य या अतीत में तारीख की गणना"
+date:                  2024-01-20T17:31:42.290069-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "भविष्य या अतीत में तारीख की गणना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,38 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## क्या और क्यों? (What & Why?)
+भविष्य या अतीत की तारीख की गणना का मतलब है किसी तिथि से आगे या पीछे की तिथि निकालना। प्रोग्रामर इसे इवेंट प्लानिंग, डेडलाइन ट्रैकिंग और डाटा आर्काइविंग में इस्तेमाल करते हैं।
 
-तारिख की गणना भविष्य या अतीत में होने के विशेष स्थिति का पता लगाने की क्रिया होती है। प्रोग्रामर इसे उत्कृष्ट योजना बनाने के लिए करते हैं, खासकर जब कार्यक्रमों, म्यूअलेटर्स या विष्लेषिकाओं को समयावधि के साथ काम करना होता है।
-
-## कैसे:
-
+## कैसे करें? (How to:)
 ```Haskell
-import Data.Time.Calendar
-import Data.Time.Calendar.OrdinalDate
+import Data.Time
 
--- तारीख की गणना करने के फ़ंक्शन
-futureDate :: Day -> Integer -> Day
-futureDate date days = addDays days date
-
--- उदाहरण
-let date = fromGregorian 2019 2 12 
-let future = futureDate date 365
-```
-आउटपुट:
-```Haskell
-2020-02-11
+-- आज की तारीख और भविष्य/अतीत की तारीख निकालें
+main = do
+    today <- getCurrentTime
+    let thirtyDaysLater = addDays 30 today
+    let thirtyDaysBefore = addDays (-30) today
+    putStrLn $ "आज की तारीख: " ++ show today
+    putStrLn $ "30 दिन बाद की तारीख: " ++ show thirtyDaysLater
+    putStrLn $ "30 दिन पहले की तारीख: " ++ show thirtyDaysBefore
 ```
 
-## गहरी डाइव
+सैंपल आउटपुट:
+```
+आज की तारीख: 2023-04-01 12:00:00 UTC
+30 दिन बाद की तारीख: 2023-05-01 12:00:00 UTC
+30 दिन पहले की तारीख: 2023-03-02 12:00:00 UTC
+```
 
-1. ऐतिहासिक संदर्भ: तारीखों की गणना की आवश्यकता संगणकों के जन्म से पहले थी, और यह एक महत्वपूर्ण अनुप्रयोग है जिसे अब कंप्यूटर प्रोग्रामिंग में संगणित किया जा सकता है। 
+## गहन जानकारी (Deep Dive)
+'डेटा.टाइम' लाइब्रेरी में 'addDays' फंक्शन हास्केल का एक पावरफुल टूल है जो डेट कैलकुलेशन को आसान बनाता है। इससे पहले, डेवलपर्स को मैनुअली साल, महीने, और दिन की गणना करनी पड़ती थी, जिससे भूलचूक की संभावनाएं बढ़ जाती थीं। 'डेटा.टाइम' के अलावा, दूसरे पैकेज जैसे 'time' और 'chronos' भी हैं, लेकिन 'डेटा.टाइम' सबसे ज्यादा इस्तेमाल किया जाता है। 
 
-2. विकल्प: Haskell के अलावा भी अन्य कंप्यूटर भाषाएं जैसे की Java, Python, Javascript और बहुत सारी और, तारीखों की गणना करने का समर्थन करती हैं। 
+'addDays' में सिर्फ दिनों के लिए फंक्शन होता है, अगर हमें महीनों या सालों को जोड़ना होता है तो 'addGregorianMonthsClip' या 'addGregorianYearsClip' जैसे फंक्शन्स का उपयोग होता है।
 
-3. कार्यान्वयन विवरण: `addDays` फ़ंक्शन `Data.Time.Calendar` मॉड्यूल में पाया जाता है, जिसे Haskell में दिनांक संगणना और मनिपुलेशन के लिए विशेष रूप से बनाया गया है। 
-
-## यदि आप और जानना चाहते हैं: 
-
-1. [Haskell डेट और टाइम का आधिकारिक डॉक्यूमेंटेशन](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html)
-2. ["समय" लाइब्रेरी के लिए Haskell प्रलेखन](https://hackage.haskell.org/package/time-1.9.3)
+## और भी जानकारी (See Also)
+- Haskell Documentation for `Data.Time` library: [Data.Time](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- Haskell Library 'time': [time on hackage](https://hackage.haskell.org/package/time)

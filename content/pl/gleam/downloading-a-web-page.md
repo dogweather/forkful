@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C#: Pobieranie strony internetowej"
+date:                  2024-01-20T17:44:12.798518-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,35 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? / Czym i Dlaczego?
+Pobieranie strony internetowej to proces wyciągania zawartości HTML bezpośrednio z sieci. Programiści robią to dla analizy danych, testowania aplikacji lub automatyzacji zadań.
 
-Pobieranie strony internetowej to proces, w którym twój program odzyskuje dane HTML ze strony internetowej. Programiści robią to, aby manipulować tymi danymi i uzyskać potrzebne informacje.
+## How to / Jak to zrobić:
+```gleam
+import gleam/http
+import gleam/httpc
 
-## Jak to zrobić:
+pub fn download_web_page(url: String) -> httpc.Result {
+  httpc.get(url)
+}
 
-Możemy użyć biblioteki `Gleam/httpc` do pobierania stron internetowych. Przykładowy kod i wynik wyglądają tak:
-
-```Gleam
-pub fn download(url: String) {
-  case httpc.get(url) {
-    Error(_) -> "Błąd przy pobieraniu strony."
-    Ok(response) -> response.body
+// Usage
+fn main() { 
+  let result = download_web_page("https://example.com".to_string())
+  case result {
+    Ok(response) -> io.println(response.body) 
+    Error(error) -> io.println(error)
   }
 }
 ```
 
-Po uruchomieniu tego kodu z prawidłowym URL, otrzymamy treść strony jako wynik.
+Sample output:
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
 
-## Dogłębnie
+## Deep Dive / W Głąb Tematu
+Downloading web pages is as old as the internet. It began with simple HTTP GET requests. Now, it's often part of web scraping, automation, or RESTful API interactions.
 
-1. **Kontekst historyczny**: Pobieranie stron internetowych jest popularne od początków internetu. Jest to podstawowy sposób, w jaki przeglądarki działają - pobierają strony i renderują je dla użytkowników.
+Gleam, although a newer player in the ecosystem, makes this task simple with the `httpc` module. Alternatives in other languages include Python's `requests` or JavaScript's `fetch`. In Gleam, use matching on `Result` to handle HTTP errors neatly.
 
-2. **Alternatywy**: Istnieją różne metody i biblioteki do pobierania stron internetowych. W zależności od języka programowania, możemy używać `wget` lub `curl` w Shell, `urllib` lub `requests` w Pythonie itp.
+The `httpc.get` function initiates a GET request which fetches the HTML content. Implementation involves sending an HTTP request and parsing the response.
 
-3. **Szczegóły implementacji**: Biblioteka `httpc` z Gleam to prosty klient HTTP, który wykonuje podstawowe operacje HTTP takie jak GET, POST itp. Podczas pobierania strony, zapytanie GET jest wysyłane do serwera, a serwer zwraca odpowiedź, która jest zapisywana jako wynik.
-
-## Zobacz także
-
-1. Dokumentacja Gleam HTTPc: [https://hexdocs.pm/gleam_httpc/gleam/httpc.html](https://hexdocs.pm/gleam_httpc/gleam/httpc.html)
-
-2. Krótki wprowadzenie do HTTP: [https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html](https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html)
+## See Also / Zobacz Również
+- Gleam HTTP documentation: [https://hexdocs.pm/gleam_http/](https://hexdocs.pm/gleam_http/)
+- HTTP protocol: [https://developer.mozilla.org/en-US/docs/Web/HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)

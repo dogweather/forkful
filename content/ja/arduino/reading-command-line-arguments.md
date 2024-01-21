@@ -1,6 +1,7 @@
 ---
 title:                "コマンドライン引数の読み取り"
-html_title:           "Bash: コマンドライン引数の読み取り"
+date:                  2024-01-20T17:55:52.851001-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,40 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Arduinoプログラミング: コマンドライン引数の読み取り
+## What & Why? (何となぜ？)
+コマンドライン引数って何？ プログラム起動時に外部から与える追加情報だよ。何で使うの？ 自動化とかカスタマイズのためにね。
 
-## 何と何のため？
-コマンドライン引数はプログラムが起動時に受け取るパラメータの一つです。これにより、プログラマーはプログラムの挙動を柔軟に制御できます。
-
-## 実践方法
-以下はArduinoでコマンドライン引数を読み取るソースコードの例です。
+## How to: (方法)
+Arduino環境ではコマンドライン引数は直接扱えないけど、シリアル通信を使って似たことができるよ。下はその例。
 
 ```Arduino
-int argCount;
-char **args;
 void setup() {
-  Serial.begin(9600);
-  args = CommandLineArgs.get(&argCount);
+  Serial.begin(9600);  // シリアル通信の開始
 }
 
 void loop() {
-  for (int i = 0; i < argCount; i++) {
-    Serial.println(args[i]);
+  if (Serial.available() > 0) {
+    String command = Serial.readStringUntil('\n');  // 改行までの文字列を読み取り
+    if (command == "LED_ON") {
+      digitalWrite(LED_BUILTIN, HIGH);  // LEDを点灯
+      Serial.println("LED is ON");
+    } else if (command == "LED_OFF") {
+      digitalWrite(LED_BUILTIN, LOW);  // LEDを消灯
+      Serial.println("LED is OFF");
+    } else {
+      Serial.println("Unknown Command");  // 不明なコマンド
+    }
   }
 }
 ```
 
-このプログラムを実行すると、シリアルモニターにコマンドライン引数が表示されます。
+サンプル出力：
+```
+LED is ON
+LED is OFF
+Unknown Command
+```
 
-## ディープダイブ
-コマンドライン引数はUNIXのシェルスクリプトに由来し、プログラムの初期セットアップを制御するために使われます。Arduinoではエミュレータやシミュレータで引数の授受が可能です。一方、ハードウェアで直接コマンドライン引数を読み込む機能はありません。
+## Deep Dive (詳細情報)
+Arduinoはマイクロコントローラーで基本的にコマンドライン引数を取り扱わない。でも、シリアル通信をつかってPCや別のデバイスから指示を受け取れる。歴史的背景？ UNIXやDOS時代からコマンドライン引数はあるよ。代替方法？ もちろん、BluetoothやWiFiを使ってデータを受け取る事も可能。実装の詳細？ Serial.readStringUntil()はタイムアウトも設定できるし、細かい挙動を調整できるよ。
 
-代替手段としてArduinoでは、インタラクティブなパラメータ設定のためにシリアル入力を使用することが一般的です。また、SDカードからの設定ファイルの読み込みも可能です。
-
-コマンドライン引数の受け取りはArduinoの`main`関数で発生します。それらは配列に格納され、プログラム全体で使用できます。
-
-## 参照情報
-以下リンクで関連する情報をさらに詳しく学べます。
-
-- [Arduino.cc: Serial Input Basics](https://forum.arduino.cc/index.php?topic=396450)
-- [Arduino Stack Exchange: How to read command line arguments](https://arduino.stackexchange.com/questions/333/how-to-read-command-line-arguments-in-arduino)
+## See Also (参考資料)
+- Arduino公式サイトシリアル通信チュートリアル: [Arduino - Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- シリアル通信の基礎知識: [Serial communication basics](https://www.arduino.cc/en/Tutorial/BuiltInExamples/SerialEvent)
+- Arduino Forum: [Arduino Forum](https://forum.arduino.cc/)

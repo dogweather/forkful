@@ -1,6 +1,7 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Lua: Tekstitiedoston lukeminen"
+date:                  2024-01-20T17:55:13.622010-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,48 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
+Rustissa tekstitiedoston lukeminen tarkoittaa tiedoston sisällön saattamista ohjelman käyttöön. Ohjelmoijat lukevat tiedostoja, koska niistä saadaan tärkeää dataa, kuten asetuksia, käyttäjätietoja tai resursseja.
 
-Tekstitiedoston lukeminen on prosessi, jossa ohjelma ottaa syötteenä tekstitiedoston ja tulkitsee sen sisällön. Ohjelmoijat tekevät tämän tiedon hallinnan, datan analysoinnin ja tiedostojen käsittelyn mahdollistamiseksi.
-
-## Kuinka:
-
-Seuraavassa on yksinkertainen Rust-koodinäyte tekstitiedoston lukemiseen.
-
+## Miten:
 ```Rust
 use std::fs::File;
-use std::io::{self, prelude::*, BufReader};
+use std::io::{self, Read};
 
-fn lue_tiedosto(tiedoston_nimi: &str) -> io::Result<()> {
-    let tiedosto = File::open(tiedoston_nimi)?;
-    let lukija = BufReader::new(tiedosto);
-
-    for rivi in lukija.lines() {
-        println!("{}", rivi?);
-    }
-
+fn main() -> io::Result<()> {
+    let mut file = File::open("tervehdys.txt")?; // Avaa tiedoston
+    let mut content = String::new();
+    file.read_to_string(&mut content)?; // Lukee tiedoston sisällön
+    println!("Tiedoston sisältö:\n{}", content); // Tulostaa sisällön
     Ok(())
 }
 ```
-
-Tämä koodi palauttaa seuraavanlaisen tulosteen:
-
-```Rust
-Hello, world!
-This is a text file.
+Tuloste:
+```
+Tiedoston sisältö:
+Hei, Rust-ohjelmoijat!
 ```
 
-## Syväsukellus:
+## Syväsukellus
+Aiemmin ohjelmoijat käyttivät alhaisemman tason kielissä monimutkaista koodia tiedostojen lukuun. Rust tekee tästä helpompaa tarjoamalla vahvoja abstraktioita, jotka piilottavat monimutkaisuuden ja hallitsevat virheet turvallisesti. Alternatiivisia tapoja tiedoston lukemiseen ovat mm. `std::io::BufRead`-traitin käyttö suorituskyvyn parantamiseksi suurilla tiedostoilla ja `std::fs::read_to_string` funktion käyttö tiedoston lukemiseen yhdellä rivillä. Toteutustiedoissa on hyvä muistaa käsitellä `Result` huolellisesti, ettei virhekäsittely jää huomiotta.
 
-1. Historiallinen konteksti: Tekstitiedostojen lukeminen on perusta useissa ohjelmointikielissä. Rust on otettu käyttöön tarjoamaan turvallisempi ja tehokkaampi tapa tehdä samat tehtävät.
-
-2. Vaihtoehdot: On olemassa useita muita metodeja tekstitiedostojen lukemiseen Rustissa, kuten "fs::read_to_string":n ja "fs::read":n käyttäminen.
-
-3. Toteutus yksityiskohdat: Rustin "File::open" avaa tiedoston ja "BufReader::new" luo uuden puskuroivan lukijan. "for" silmukka käy läpi lukijan rivit ja tulostaa ne.
-
-## Katso myös:
-
-- Rust by Example, luku [File I/O](https://doc.rust-lang.org/rust-by-example/std_misc/file/open.html): On erinomaisia rust-esimerkkejä ja oppaita käytettävissäsi.
-
-- Rust's [Read Trait documentation](https://doc.rust-lang.org/std/io/trait.Read.html): Tämän linkin takaa löydät Rustin virallisen lukuominaisuuden dokumentaation.
-
-- [The Rust Programming Language Book, Chapter 9.5](https://doc.rust-lang.org/stable/book/ch09-02-recoverable-errors-with-result.html#shortcuts-for-panic-on-error-the-unwrap-and-expect-calls): Tämä luku käsittelee yksityiskohtaisemmin virheiden käsittelyä Rustissa.
+## Näe Myös
+- Rust-lang: [std::fs](https://doc.rust-lang.org/std/fs/index.html)
+- Rust-lang: [std::io](https://doc.rust-lang.org/std/io/index.html)
+- Rust By Example: [File I/O](https://doc.rust-lang.org/rust-by-example/std_misc/file.html)

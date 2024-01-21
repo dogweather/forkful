@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
-html_title:           "Gleam: Merkkijonojen yhdistäminen"
+date:                  2024-01-20T17:34:57.429032-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,40 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? - Mitä ja Miksi?
+Stringien yhdistäminen tarkoittaa kahden tai useamman tekstinpätkän liittämistä yhteen. Koodarit tekevät tätä muodostaakseen käyttäjälle näytettäviä viestejä, tehdäkseen tiedon käsittelystä dynaamista ja järjestelläkseen tietoja järkevästi.
 
-Merkkijonon yhdistäminen tarkoittaa kahden tai useamman merkkijonon yhdistämistä yhdeksi merkkijonoksi. Ohjelmoijat tekevät tämän tietojen muodostamiseksi tai tietojen käsittelyn yksinkertaistamiseksi.
+## How to - Kuinka Tehdä:
+```javascript
+let tervehdys = "Hei";
+let nimi = "Maija";
+let lause = tervehdys + ", " + nimi + "!"; // Vanha tapa
+console.log(lause); // "Hei, Maija!"
 
-## Kuinka:
-
-Tässä on kaksi tapaa yhdistää merkkijonoja Javascriptin uusimmissa versioissa:
-
-```Javascript
-let tervehdys = "Hei, ";
-let nimi = "Matti!";
-let viesti = tervehdys.concat(nimi);
-console.log(viesti); // Tulostaa: "Hei, Matti!"
+// ES6 Template literals
+let lause_uusi = `${tervehdys}, ${nimi}!`; // Uudempi tapa
+console.log(lause_uusi); // "Hei, Maija!"
 ```
 
-Tai ES6:ssa template literaalien avulla:
+## Deep Dive - Syväsukellus:
+Stringien yhdistämisen juuret ovat ohjelmointikielten alkuajoissa. Ennen moderneja ohjelmointikieliä, kuten JavaScript, oli useampia rajoittuneita keinoja muodostaa dynaamisia tekstejä. JavaScriptissä, yksinkertainen operaattori `+` oli alun perin suunniteltu stringien yhdistämiseen. Myöhemmin, ECMAScript 6 (ES6) toi mukanaan Template literalsin (template-litteraalit), joka tekee stringien yhdistämisestä vähemmän sekavaa ja monipuolisempaa.
 
-```Javascript
-let tervehdys = "Hei, ";
-let nimi = "Matti!";
-let viesti = `${tervehdys}${nimi}`;
-console.log(viesti); // Tulostaa: "Hei, Matti!"
-```
+- Historia: Yksinkertainen `+` operaattori on ollut käytössä vuosikymmeniä.
+- Vaihtoehdot: Ennen ES6:ta, `concat()` metodia käytettiin, mutta se oli vähemmän suosittu sen kömpelön syntaksin vuoksi.
+- Toteutuksen yksityiskohdat: Template literals mahdollistavat monirivisen tekstinsyötön ja ilmaisujen upottamisen suoraan merkkijonoihin, mikä tekee koodista selkeämpää.
 
-## Sukellus syvemmälle:
-
-Historiallinen konteksti: Alkuperäinen `concat`-metodi on ollut mukana Javascriptissä alusta alkaen.
-
-Vaihtoehdot: `+` -operaattoria, `concat`-metodia ja  ES6:n Template literaaleja voidaan käyttää merkkijonojen yhdistämiseen.
-
-Toteutusyksityiskohdat: Silloin kun käytetään useita `+` -operaattoreita, suorituskyky voi heikentyä, koska jokainen `+` luo uuden merkkijonon. Tämä voi johtaa lisääntyneeseen muistin kulutukseen ja hitaampaan suoritukseen. Toisaalta, template literaalit ja `concat`-metodi eivät luo uutta merkkijonoa jokaisella yhdistämisellä.
-
-## Katso Myös:
-
-1. [MDN: String.prototype.concat()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-2. [MDN: Template literaalit](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Template_literals)
-3. [JavaScript Concatenation Performance](https://jsperf.com/js-string-concatenation/3)
+## See Also - Katso Myös:
+- MDN Web Docs String concatenation: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- Template literals (Template strings) MDN: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)

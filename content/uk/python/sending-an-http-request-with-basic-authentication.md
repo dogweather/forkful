@@ -1,7 +1,8 @@
 ---
-title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
-html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
-simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+date:                  2024-01-20T18:02:33.773894-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,34 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що та Чому?)
+Sending an HTTP request with basic authentication means adding login credentials to your web request for access. We do this to securely communicate with web services that require user verification.
 
-Відправлення HTTP запиту з базовою аутентифікацією - це процес, коли ваша програма надсилає серверу запит HTTP, використовуючи основні облікові дані для аутентифікації. Це потрібно для безпечної взаємодії з веб-серверами, що вимагають авторизації.
-
-## Як це зробити:
-
-Ми використовуватимемо модуль requests у Python. Ось приклад коду:
-
-```Python
+## How to: (Як це зробити:)
+```python
 import requests
 from requests.auth import HTTPBasicAuth
 
-response = requests.get('https://api.github.com/user', auth=HTTPBasicAuth('user', 'pass'))
-print(response.status_code)
+# Replace 'your_username' and 'your_password' with your actual credentials
+username = 'your_username'
+password = 'your_password'
+
+# The URL you're sending the request to
+url = 'https://api.example.com/data'
+
+# Make the request with Basic Authentication
+response = requests.get(url, auth=HTTPBasicAuth(username, password))
+
+# Check the response
+if response.ok:
+    print('Success:', response.status_code)
+    data = response.json()
+    print(data)
+else:
+    print('Failed:', response.status_code)
 ```
 
-Якщо ви виконаєте цей код з вірними обліковими даними, відповідь буде 200, що свідчить про успішну аутентифікацію.
+Sample Output:
+```
+Success: 200
+{'key': 'value', ...}
+```
 
-## Поглиблено:
+## Deep Dive (Поглиблений Аналіз):
+Basic authentication isn't new; it's been around since the early days of the web. It's simple: encode your username and password in base64 and attach it to your request header. It’s not the safest, though, as credentials can be easily decoded if the connection isn't secure (use HTTPS!).
 
-**Історичний контекст**: Базова аутентифікація HTTP була однією з перших методів аутентифікації, використаних в HTTP. Вона передбачає відправлення імені користувача та пароля в незашифрованому вигляді в заголовках запитів.
+Alternatives like OAuth add more security but are also more complex. For APIs, tokens are often used instead of basic credentials.
 
-**Альтернативи**: Хоча базова аутентифікація проста в використанні, вона не надає достатнього захисту для більшості сучасних застосунків. Альтернативи, такі як OAuth або Digest Authentication, є безпечнішими варіантами.
+In basic authentication, Python's `requests` library simplifies the process a lot. It handles the encoding and header setup. You don't touch the nitty-gritty – the library does it for you.
 
-**Подробиці реалізації**: Модуль requests у Python автоматично кодує ваші облікові дані в Base64 і вставляє їх у заголовок `Authorization` вашого HTTP запиту.
-
-## Див. також:
-
-Модуль requests Python: https://docs.python-requests.org/en/latest/
-Аутентифікація HTTP в MDN web docs: https://developer.mozilla.org/uk/docs/Web/HTTP/Authentication 
-Безпечність HTTP: https://owasp.org/www-community/OWASP_Inssecure_Configuration_Guide
+## See Also (Дивись також):
+- [requests Documentation](https://requests.readthedocs.io/en/latest/)
+- [The HTTP Authentication spec RFC 7617](https://tools.ietf.org/html/rfc7617)
+- [Basic Authentication on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)

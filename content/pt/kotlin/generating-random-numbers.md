@@ -1,6 +1,7 @@
 ---
 title:                "Gerando números aleatórios"
-html_title:           "C: Gerando números aleatórios"
+date:                  2024-01-20T17:49:35.110207-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Gerando números aleatórios"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,37 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
+## What & Why?
+Gerar números aleatórios é como lançar dados virtuais – você obtém um valor que não consegue prever. Programadores fazem isso para funções que precisam de um bocado de imprevisibilidade, como jogos ou simulações.
 
-Gerar números aleatórios é o ato de produzir valores sem um padrão previsível. Os programadores fazem isso para tarefas que exigem sortear um resultado, como jogos, testes de software e simulações.
+## How to:
+Kotlin torna fácil brincar com a sorte. Vamos a alguns exemplos.
 
-## Como Fazer:
+Gerar um número aleatório entre 0 e 100:
 
-No Kotlin, a geração de números aleatórios é feita de forma bastante simples e direta. Veja como você pode gerar um número aleatório:
-
-```Kotlin
-import kotlin.random.Random
-
-fun main() {
-    val numeroAleatorio = Random.nextInt(1, 100) // gera um número aleatório entre 1 e 100
-    println(numeroAleatorio)
-}
+```kotlin
+val randomNumber = (0..100).random()
+println(randomNumber)
 ```
 
-Quando você executa este código, a saída será algum número entre 1 e 100.
+Quer um ponto flutuante? Sem problemas:
 
-## Mergulho Profundo
+```kotlin
+val randomDouble = Math.random()
+println(randomDouble)
+```
 
-Os números aleatórios têm uma longa história na computação, desde o sorteio de números para jogos até a criação de chave de segurança em criptografia.
+Se você precisa de mais controle, a biblioteca `java.util.Random` é sua amiga:
 
-Historicamente, a geração de números aleatórios era realizada externamente e carregada na máquina. Hoje, os números aleatórios são gerados através de uma série de algoritmos.
+```kotlin
+import java.util.Random
 
-As alternativas ao Kotlin para gerar números aleatórios estão em quase todas as linguagens de programação, incluindo Java e Python. No entanto, o Kotlin simplifica muito a tarefa.
+val random = Random()
+val randomNumber = random.nextInt(100) // Até 100
+println(randomNumber)
+```
 
-A implementação do Kotlin para números aleatórios usa `java.util.Random` sob o capô, mas o Kotlin torna a API mais fácil de usar e mais segura, evitando alguns dos erros comuns encontrados ao usar a classe Random do Java diretamente.
+## Deep Dive
+Números "aleatórios" em programação são na verdade pseudoaleatórios – são previsíveis se você conhece o algoritmo e a semente ("seed"). Kotlin usa `java.util.Random` por baixo dos panos, que é decente para a maioria das aplicações mas não use para criptografia!
 
-## Veja Também:
+Há alternativas. Precisa de algo mais forte? Dê uma olhada em `SecureRandom` para valores mais imprevisíveis. Kotlin também suporta o uso de geradores de números aleatórios diferentes com seu módulo `kotlin.random.Random`, permitindo plataformas específicas como JavaScript ou Native.
 
-1. Documentação oficial do Kotlin sobre random: [Aqui](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
-2. Random no Python: [Aqui](https://docs.python.org/3/library/random.html)
-3. Random no Java: [Aqui](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+No passado, a escolha do algoritmo era crítica e, dependendo da semente e do algoritmo, você poderia ter um resultado menos aleatório do que o esperado. Hoje em dia, os algoritmos são bem sofisticados.
+
+## See Also
+- Kotlin Standard Library: [Random](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
+- Java Platform, Standard Edition: [Random](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- SecureRandom for cryptography: [SecureRandom](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html)

@@ -1,6 +1,7 @@
 ---
 title:                "读取命令行参数"
-html_title:           "C: 读取命令行参数"
+date:                  2024-01-20T17:55:36.580500-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "读取命令行参数"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,55 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
-命令行参数读取是读取并解析在命令行运行程序时传递的参数的过程。程序员经常这样做以向程序提供灵活性，使其可以在不同的场景和条件下运行。
+## What & Why? 什么及为什么？
+读取命令行参数允许程序根据用户输入实时修改行为。程序员这样做，旨在提高灵活性，让同一程序适应多种情况。
 
-## 怎样操作：
-Arduino 并不直接支持命令行参数读取，因为它主要设计用于硬件控制。那么以串口通信为参考，我们可以创建类似的交互。
+## How to: 如何操作
+Arduino平台通常不涉及传统意义上的命令行参数。但是，我们可以通过序列监视器处理输入作为参数。以下是一个简单的示例：
 
-```Arduino
-String inputString = "";  // 储存串口读入
-bool stringComplete = false;  // 标记串口读入完成
-
+```cpp
 void setup() {
+  // 开启串口通信
   Serial.begin(9600);
-  inputString.reserve(200);
 }
 
 void loop() {
-  if (stringComplete) {
-    Serial.println(inputString);
-    inputString = "";
-    stringComplete = false;
-  }
-}
-
-void serialEvent() {
-  while (Serial.available()) {
-    char inChar = (char)Serial.read();
-    inputString += inChar;
-    if (inChar == '\n') {
-      stringComplete = true;
+  if (Serial.available() > 0) {
+    // 读取序列监视器的输入
+    String command = Serial.readStringUntil('\n');
+    
+    // 判断并执行命令
+    if (command == "LED_ON") {
+      digitalWrite(LED_BUILTIN, HIGH);
+      Serial.println("LED is on");
+    } else if (command == "LED_OFF") {
+      digitalWrite(LED_BUILTIN, LOW);
+      Serial.println("LED is off");
+    } else {
+      Serial.println("Unknown command: " + command);
     }
   }
 }
 ```
-输出结果如下:
 
+示例输出：
 ```
-hello world
-hello world
+LED is on
+LED is off
+Unknown command: LIGHT_UP
 ```
 
-## 深入解读
-命令行参数在早期的命令行系统中帮助人们更精细地控制程序。然而，在 Arduino 中，这个概念并没有直接的实现，因为 Arduino 主要用于 与硬件设备交互。尽管如此，程序员可以使用串口通信来模拟该过程。
+## Deep Dive 深入探索
+在Arduino中，"命令行参数"通常指的是通过串行通信发送给Arduino的输入。虽然这与传统的命令行参数不同，但它具有相似之处，尤其是它改变程序行为的方式。
 
-在实现中，我们在程序中创建一个串口事件，通过它读取字符并添加到字符串中，直到我们看到一个换行符，该符号表示输入已经完成。
+历史上，电脑程序通过命令行接收参数，以便在运行时改变其行为，无需重新编译代码。虽然Arduino不是传统的计算设备，且通常不通过命令行运行，但我们可以模仿这种行为。
 
-作为替代方案, 你可以使用 WiFi 或者蓝牙模块来实现类似的效果，但是这些设备在处理数据上没有串口通信来得那么简单。
+除了串行通信，还可以使用网络模块（如ESP8266或ESP32）接收HTTP请求作为参数，或者使用其他类型的通讯协议（如I2C或SPI）来达到类似目的。
 
-## 查看更多
-为了更深入地了解这一主题，以下是一些资源：
-1. 命令行参数在其他编程环境中的处理方法: [阅读更多](http://www.example.com)
-2. Arduino 上的串口通信和事件处理: [阅读更多](http://www.example.com)
-3. 使用 WiFi 或蓝牙模块作为输入参数的来源: [阅读更多](http://www.example.com)
+实施细节包括如何有效解析和处理参数，同时避免在Arduino微控制器上很常见的内存不足问题。
+
+## See Also 查看更多
+- [Arduino官方串口通信教程](https://www.arduino.cc/reference/en/language/functions/communication/serial/) - 了解更多关于Arduino串口通信的信息。
+- [Arduino String类参考](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/) - 深入了解Arduino String类和相关操作。
+- [Digital Pins](https://www.arduino.cc/en/Tutorial/Foundations/DigitalPins) - 如何使用Arduino的数字引脚。
+- [ESP8266 WiFi 模块](https://www.arduino.cc/en/Guide/ArduinoWiFiShield) - 如何将WiFi功能添加到Arduino项目。

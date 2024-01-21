@@ -1,6 +1,7 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Bash: Rozpoczynanie nowego projektu"
+date:                  2024-01-20T18:03:18.761321-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,37 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? | Co i dlaczego?
+Rozpoczynanie nowego projektu to stworzenie podstawy pod przyszłą aplikację. Programiści tworzą nowe projekty, aby rozwiązywać problemy, eksplorować nowe pomysły lub uczyć się nowych technik.
 
-Zaczynając nowy projekt programistyczny, tworzysz podstawy dla swojej aplikacji. Robimy to, aby skonfigurować narzędzia, biblioteki i strukturę naszego kodu, co ułatwia późniejsze tworzenie.
+## How to: | Jak to zrobić:
+Tworzenie nowego projektu w Clojure może być szybkie i proste przy użyciu Leiningen lub Boot. Tutaj skupimy się na Leiningen, najpopularniejszym narzędziu.
 
-## Jak to zrobić:
+1. Zainstaluj Leiningen:
+```shell
+brew install leiningen # na macOS
+```
+na Linuxie użyj menedżera pakietów lub skryptu z oficjalnej strony Leiningen.
 
-Tworzenie nowego projektu w Clojure jest proste dzięki narzędziu Leiningen. Oto przykładowy kod oraz output:
-
-```Clojure
-;; Aby zainstalować Leiningen
-;; korzystając z konsoli Unix, wpisz:
-wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
-chmod +x lein
-mv lein /usr/local/bin
-
-;; Następnie, aby założyć nowy projekt, wpisz:
-lein new moj-projekt 
-
-;; Potwierdzenie nowego projektu
-;; po wykonaniu powyższych komend daje takie dane:
-Project created at /home/uzytkownik/moj-projekt
+2. Utwórz nowy projekt:
+```shell
+lein new app moj-projekt
 ```
 
-## Głębsze spojrzenie
+3. Zobacz strukturę projektu:
+```shell
+tree moj-projekt
+```
 
-Histotycznie, Clojure zostało stworzone w 2007 roku przez Richa Hickey'a jako język na platformę Java. Jeżeli chodzi o przygotowywanie nowych projektów, oprócz `Leiningen`, istnieje również narzędzie `Boot`, które jest alternatywą. Niemniej jednak, `Leiningen` jest zdecydowanie najbardziej popularne i posiada wiele pluginów, które ułatwiają proces tworzenia i zarządzania projektem. Szczegółowości implementacji skoncentrowane są na tworzeniu plików konfiguracyjnych, integracji z narzędziami zewnętrznymi (np. systemami CI/CD) oraz ustawieniu struktury katalogów.
+Output powinien wyglądać mniej więcej tak:
+```
+moj-projekt
+├── project.clj
+├── README.md
+├── resources
+├── src
+│   └── moj_projekt
+│       └── core.clj
+└── test
+    └── moj_projekt
+        └── core_test.clj
+```
 
-## Zobacz też
+4. Uruchom repl i eksperymentuj:
+```shell
+cd moj-projekt
+lein repl
+```
 
-1. [Oficjalna strona Clojure](https://clojure.org/)
-2. [Dokumentacja Leiningen](https://leiningen.org/)
-3. [Strona projektu Boot](https://github.com/boot-clj/boot)
-4. [Przegląd narzędzi Clojure](https://clojure.org/guides/getting_started)
-5. [Poradnik jak zacząć z Clojure](https://www.braveclojure.com/getting-started/)
+W REPLu, możesz teraz załadować swój kod:
+```clojure
+(require '[moj-projekt.core :as core])
+(core/-main) ; Jeśli jest zdefiniowane w core.clj
+```
+
+## Deep Dive | W głębi tematu:
+Leiningen pojawił się w 2009 roku i szybko stał się standardem w ekosystemie Clojure. Alternatywy jak Boot czy nowsze tools.deps pozwolą na większą elastyczność, ale Leiningen nadal jest dobrym wyborem dla większości projektów dzięki swojemu ekosystemowi pluginów i przyjazności dla początkujących.
+
+Gdy tworzysz projekt, `project.clj` odgrywa kluczową rolę, definiując zależności, pluginy i taski. Clojure, jako język działający na JVM, korzysta z Maven Central i Clojars do zarządzania bibliotekami.
+
+Każdy plik źródłowy w katalogu `src` to nowy namespace, zazwyczaj mapowany 1:1 do struktury katalogów. Dzięki temu zarządzanie i organizacja kodu stają się przejrzyste.
+
+## See Also | Zobacz również:
+- Oficjalna strona [Leiningen](https://leiningen.org/)
+- Dokumentacja [Clojure](https://clojure.org/guides/getting_started)
+- Tutorial [Clojure for the Brave and True](https://www.braveclojure.com/)
+- Repozytorium z bibliotekami [Clojars](https://clojars.org/)
+- Alternatywny system budowania projektów [Boot](https://boot-clj.com/)
+- Guide do nowego narzędzia [tools.deps](https://clojure.org/guides/deps_and_cli)

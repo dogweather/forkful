@@ -1,7 +1,8 @@
 ---
-title:                "पाठ की खोज और प्रतिस्थापन"
-html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
-simple_title:         "पाठ की खोज और प्रतिस्थापन"
+title:                "पाठ खोजना और बदलना"
+date:                  2024-01-20T17:59:18.177714-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पाठ खोजना और बदलना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,32 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-नये भाषाभाषी डेवलपर्स के लिए, ध्यान दीजिए कि टेक्स्ट खोजना और बदलना मतलब है एक विशिष्ट टेक्स्ट खोजना और उसे दूसरे टेक्स्ट से बदलना। प्रोग्रामर्स इसे उन समस्याओं को हल करने में करते हैं जहां उन्हें एक विशेष स्ट्रिंग को एक डॉक्यूमेंट में अन्य स्ट्रिंग से बदलना हो।  
+## What & Why? (क्या और क्यों?)
+सर्च और रिप्लेस टेक्स्ट का मतलब है किसी स्ट्रिंग में खास शब्दों या वाक्यों को ढूँढकर उन्हें बदलना। प्रोग्रामर्स ये करते हैं डेटा साफ़ करने, बग फिक्स करने, और यूजर इनपुट को मैनेज करने के लिए।
 
-## कैसे करें:
-चलिए कोडिंग के माध्यम से खोजने और बदलने की प्रक्रिया को समझते हैं।  
-
-```Swift
-var str = "नमस्ते, दुनिया!"
-str = str.replacingOccurrences(of: "नमस्ते", with: "अलविदा")
-print(str)
-```
-संकलित आउटपुट:
+## How to: (कैसे करें:)
+Swift में टेक्स्ट सर्च और रिप्लेस सिंपल है। `String` के मेथड्स `replacingOccurrences(of:with:)` और `range(of:)` इस्तेमाल कर सकते हैं। यहाँ एक उदाहरण है:
 
 ```Swift
-"अलविदा, दुनिया!"
+let originalString = "Swift मजेदार है। Swift सीखना आसान है।"
+let searchString = "Swift"
+let replacementString = "Programming"
+
+// सर्च और रिप्लेस करने का तरीका
+if originalString.contains(searchString) {
+    let replacedString = originalString.replacingOccurrences(of: searchString, with: replacementString)
+    print(replacedString) // "Programming मजेदार है। Programming सीखना आसान है।"
+} else {
+    print("सर्च स्ट्रिंग नहीं मिली।")
+}
 ```
-यहां हमने "नमस्ते" को "अलविदा" से बदल दिया।
 
-## गहराई में:
-Swift में 'replacingOccurrences' method हमें टेक्स्ट में खोजने और बदलने में मदद करता है। यह Foundation फ्रेमवर्क का हिस्सा है जिसने कोकोआ और कोकोआ टच साथ दिया। Swift में आप इसे 4.0 संस्करण से उपयोग कर सकते हैं।
-  
-## अन्य विकल्पों के बारे में:
-Swift में लगभग सभी टेक्स्ट (String) operations के लिए बहुत सारे विधियों (methods) हैं। जैसे 'contains', 'split', 'starts(with:)' और 'ends(with:)' आदि। ये विधियाँ टेक्स्ट संरचना के उत्कृष्ट प्रबंधन की आवश्यकताओं को समझते हुए बनाई गईं हैं। 
+## Deep Dive (गहराई में जानकारी):
+स्ट्रिंग में सर्च और रिप्लेस बहुत पहले से कंप्यूटर विज्ञान में है। इसके अलग-अलग तरीके और अलगोरिदम हैं, जैसे कि रेगुलर एक्सप्रेशन। Swift में `replacingOccurrences(of:with:)` डायरेक्ट और सिम्पल है, पर जटिल patterns के लिए, `NSRegularExpression` का इस्तेमाल कर सकते हैं। इम्प्लीमेंटेशन में, सर्च की एफिशिएंसी और रिप्लेस करते समय मेमोरी मैनेजमेंट ज़रूरी होता है। 
 
-## अन्य संसाधन:
-Swift में विशेष टेक्स्ट ऑपरेशन्स के बारे में और गहराई से समझने के लिए, निम्नलिखित लिंक पर क्लिक करें -
-
-- [Working With Strings in Swift](https://developer.apple.com/documentation/swift/string)
-- [How To Replace Occurrences in a Swift String](https://www.hackingwithswift.com/example-code/strings/how-to-replace-occurrences-of-a-string-within-a-string)
+## See Also (और भी जानें):
+- Swift डॉक्युमेंटेशन `String` क्लास के लिए: [Swift String Documentation](https://developer.apple.com/documentation/swift/string)
+- `NSRegularExpression` का उपयोग कैसे करें: [NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- रेगुलर एक्सप्रेशन्स की जानकारी के लिए: [Regular Expressions](https://www.regular-expressions.info/)
+- एफिशिएंट स्ट्रिंग सर्चिंग अल्गोरिदम्स: [String Searching Algorithms](https://en.wikipedia.org/wiki/String-searching_algorithm)

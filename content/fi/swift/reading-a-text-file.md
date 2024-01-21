@@ -1,6 +1,7 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Lua: Tekstitiedoston lukeminen"
+date:                  2024-01-20T17:55:15.650173-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,37 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Tekstifilin lukeminen on tiedoston sisältämien datojen lukemista. Ohjelmoijat tekevät niin, koska tiedot säilytetään usein tekstifileissä tiedonvälitys- ja säilytystarkoituksiin.
+## Mikä & Miksi?
+Luemme tekstifailia, kun haluamme ohjelmassamme käsitellä failissa olevaa dataa. Se on arkipäiväinen tapa saada sisältöä ohjelmaan; olkoon kyse konfiguraatiosta, input-datasetistä tai vaikkapa logien purkamisesta.
 
-## Kuinka se tehdään:
-Seuraavassa esimerkkikoodissa näytämme, kuinka käyttää Swiftiä (versio 5.3) lukeaksesi tekstitiedoston.
-
+## How to:
 ```Swift
 import Foundation
 
-let fileUrl = URL(fileURLWithPath: "polku/tekstitiedostoosi.txt")
+// Oletus: "example.txt" sijaitsee samassa kansiossa kuin ohjelma
+let filename = "example.txt"
 
-do {
-    let tiedostosisalto = try String(contentsOf: fileUrl, encoding: .utf8)
-    print(tiedostosisalto)
-} catch {
-    print("Virhe tiedoston lukemisessa: \(error)")
+// File URL:n luominen
+if let fileURL = Bundle.main.url(forResource: filename, withExtension: nil) {
+    do {
+        // Tekstin lukeminen failista ja tulostaminen
+        let contents = try String(contentsOf: fileURL, encoding: .utf8)
+        print(contents)
+    } catch {
+        print("Failin lukemisessa tapahtui virhe: \(error)")
+    }
+} else {
+    print("Failia ei löytynyt.")
 }
 ```
-
-Tämä koodi tulostaa tekstitiedoston sisällön tai tuottaa virheilmoituksen, jos tiedostoa ei voida lukea.
+Sample output:
+```
+Hei, tässä lukee esimerkki!
+```
 
 ## Deep Dive
-Historiallisesti tiedostojen lukemisen käyttämiä metodeja on päivitetty ajan myötä paremman suorituskyvyn ja tulosten tarkkuuden saavuttamiseksi. Swift 5.3 on tuonut mukanaan parannuksia, kuten esimerkiksi `contentsOf`-metodin, joka helpottaa tiedostojen lukemista.
+Aiemmin Swiftissä `NSString` oli tarpeen failien käsittelyssä, mutta uudemmat Swift-versiot tarjoavat vahvan tyypitettyjä ratkaisuja, kuten `String`. Yksinkertainen tiedostonlukeminen heijastaa Swiftin kehitystä kohti selkeämpiä, natiiveja ratkaisuja. Vaihtoehtoja lukemiselle on monia, kuten `FileHandle` tai raakaa `Data`-käsittelyä. Implementaatiodetaljina, virheenkäsittely on keskeistä. Jos tiedosto puuttuu, formaatti on väärä tai IO-oikeudet estävät lukemisen, koodin on käsiteltävä tämä sulavasti.
 
-Vaihtoehtoisesti, voit lukea tiedostoja tavu tavulta tai käyttää `FileHandle`-objektia, jos tarvitset enemmän kontrollia.
-
-Kuitenkin, lukiessasi tekstitiedostoja, ymmärrä, että tiedostonkäsittely voi johtaa virheisiin. Kuten edellisessä esimerkissämme, käytämme Do-Catch -looppia virheenkäsittelyyn.
-
-## Katso myös
-Tässä muutamia resursseja, jotka auttavat sinua oppimaan enemmän Swiftin tiedostonlukemisesta:
-
-1. Swift Dokumentaatio: [https://developer.apple.com/documentation/swift](https://developer.apple.com/documentation/swift)
-2. Tiedostonkäsittely Swiftissä: [https://www.hackingwithswift.com/read/0/17/reading-and-writing-strings](https://www.hackingwithswift.com/read/0/17/reading-and-writing-strings)
-3. Virhekäsittely Swiftissä: [https://www.hackingwithswift.com/sixty/7/4/throwing-functions](https://www.hackingwithswift.com/sixty/7/4/throwing-functions)
+## See Also
+- Swiftin dokumentaatio tiedoston luvusta: [Swift Documentation](https://developer.apple.com/documentation)
+- `Bundle`-luokan hyödyntäminen resurssien hallintaan: [Bundle](https://developer.apple.com/documentation/foundation/bundle)
+- NSError ja virheenhallinta Swiftissä: [Error Handling in Swift](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html)

@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anforderung senden"
-html_title:           "Bash: Eine HTTP-Anforderung senden"
-simple_title:         "Eine HTTP-Anforderung senden"
+title:                "Einen HTTP-Request senden"
+date:                  2024-01-20T17:59:02.407574-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Einen HTTP-Request senden"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -11,45 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+HTTP-Anfragen (Hypertext Transfer Protocol) sind die Basis des Webs. Programmierer nutzen sie, um mit Webservern zu kommunizieren – Daten abfragen oder senden.
 
-Beim Senden einer HTTP-Anforderung kommuniziert man mit Web-Servern. Dies ist nützlich, um Daten zu übertragen, APIs anzusprechen oder Webseiten-Inhalte zu laden.
-
-## So geht's:
-
-Wirsenden ein HTTP GET Request mit `curl`. Das ist der Code:
+## How to:
+### Curl-Befehl
 ```Bash
-#!/bin/bash
-url='http://example.com'
-curl $url
+curl https://api.example.com/data
+```
+Output:
+```
+{"name":"Beispiel","type":"JSON data"}
 ```
 
-Der Output kann so aussehen:
+### Mit HTTP-Methoden
 ```Bash
-<!doctype html>
-<html>
-<head>
-    <title>Example Domain</title>
-...
-</html>
+# GET-Anfrage
+curl -X GET https://api.example.com/data
+
+# POST-Anfrage mit Payload
+curl -X POST -d '{"key":"value"}' https://api.example.com/data
 ```
 
-Ein POST Request mit Daten könnte so ausssehen:
+### Antwort-Header anzeigen
 ```Bash
-#!/bin/bash
-url='http://example.com'
-data='{"name":"John", "age":30}'
-
-curl -X POST -d "$data" $url -H "Content-Type: application/json"
+curl -I https://api.example.com/data
 ```
 
-## Vertiefung
+### HTTP-Statuscode auswerten
+```Bash
+response=$(curl --write-out %{http_code} --silent --output /dev/null https://api.example.com/data)
+echo $response
+```
+Output:
+```
+200
+```
 
-Erste HTTP Anfragen waren in den 90er Jahren möglich. `curl` und `wget` sind dafür beliebte, weil einfache Tools. Ein alternativer Weg ist die Verwendung von Bibliotheken in Programmiersprachen wie Python's `requests` oder Node.js `http`.
+## Deep Dive
+### Historischer Kontext
+HTTP-Anfragen existieren seit Anfang der 1990er, als Tim Berners-Lee das HTTP initiierte. Curl kam 1997, ermöglicht einfache Befehlszeilenanfragen.
 
-Der `curl` Befehl sendet standardmäßig GET Requests. Mit `-X POST` ändern wir den HTTP Verbs zu POST. Der `-d` Parameter gibt die zu sendenden Daten an. `-H` setzt den Content-Type Header auf `application/json`.
+### Alternativen
+- wget: ähnlich wie Curl, aber schlechter für Skripte.
+- HTTPie: menschfreundlichere HTTP-Cli, aber weniger verbreitet.
+- Powershell (Invoke-RestMethod): auf Windows.
 
-## Siehe Auch
+### Implementierungsdetails
+- `-X`: definiert die HTTP-Methode.
+- `-d`: sendet Daten als POST-Body.
+- `-I`: zeigt nur HTTP-Header an.
+- `--write-out %{http_code}`: gibt HTTP-Statuscode zurück.
+- `--silent --output /dev/null`: unterdrückt normalen Output.
 
-Weiterführende Infos:
-- `curl` Manpage: https://curl.se/docs/manpage.html
-- HTTP Spezifikation: https://tools.ietf.org/html/rfc2616
+## See Also
+- [Curl Dokumentation](https://curl.haxx.se/docs/manual.html)
+- [HTTPie GitHub Repository](https://github.com/httpie/httpie)
+- [GNU Wget Dokumentation](https://www.gnu.org/software/wget/manual/wget.html)

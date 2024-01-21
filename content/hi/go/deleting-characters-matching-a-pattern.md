@@ -1,7 +1,8 @@
 ---
-title:                "पैटर्न से मिलते जुलते वर्णों को हटाना"
-html_title:           "Elixir: पैटर्न से मिलते जुलते वर्णों को हटाना"
-simple_title:         "पैटर्न से मिलते जुलते वर्णों को हटाना"
+title:                "पैटर्न से मेल खाते अक्षरों को हटाना"
+date:                  2024-01-20T17:42:50.983582-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पैटर्न से मेल खाते अक्षरों को हटाना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,38 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? (What & Why?)
+## What & Why? (क्या और क्यों?)
+Pattern से मिलने वाले characters को हटाना एक common programming task है जिसके द्वारा हम strings से unnecessary या unwanted characters को remove करते हैं। यह data sanitization, user input validation, और फाइल प्रोसेसिंग जैसे कामों के लिए बहुत ज़रुरी है।
 
-पैटर्न से मेल खाने वाले कैरैक्टर्स को हटाना, स्ट्रिंग से उन कैरैक्टर्स को हटाने का काम होता है जो सोचिए जाते पैटर्न के साथ मेल खाते हैं। प्रोग्रामर्स इसे डेटा संसाधन और प्राप्त करने के लिए कार्यान्वित करते हैं जो उनके विशेष आवश्यकताओं के अनुरूप होते हैं।
-
-## कैसे (How to)
-
-यहाँ गो लैंग्वेज में एक साधारण कोड स्निपेट दिया गया है जिसमें एक पैटर्न से मेल खाने वाले कैरैक्टर्स को स्ट्रिंग से हटाया जा रहा है।
+## How to: (कैसे करें:)
+Go में characters को pattern के अनुसार हटाने के लिए `strings` package में `Replace` और `ReplaceAll` functions का प्रयोग किया जा सकता है।
 
 ```Go
 package main
+
 import (
 	"fmt"
 	"strings"
 )
+
 func main() {
-	myString := "नमस्ते, दुनिया!"
-	myString = strings.Replace(myString, "न", "", -1)
-	fmt.Println(myString)
+	originalString := "Hello, 123 World! This is a test 456."
+
+	// Pattern से मिलने वाले numbers को हटायें
+	cleanedString := strings.Map(func(r rune) rune {
+		if '0' <= r && r <= '9' {
+			return -1 // इस character को हटाएं
+		}
+		return r
+	}, originalString)
+
+	fmt.Println(cleanedString)
 }
 ```
 
-इसमें, "न" हर "नमस्ते, दुनिया!" स्ट्रिंग से निकाल दिया गया है। आउटपुट इस प्रकार होगा:
+Sample Output:
 
-```Go
-मस्ते, दुिया!
 ```
- 
-## गहराई में (Deep Dive)
+Hello, World! This is a test .
+```
 
-निगरानी करना और डाटा के साथ काम करना दो बहुत महत्वपूर्ण प्रक्रियाएं हैं जो किंवदंती में हमेशा से कम्प्यूटर प्रोग्रामिंग का हिस्सा रही हैं। "strings" पैकेज, जो गो में निर्माण किया गया है, यह कार्य सरल और सीधे है और पैटर्न से मिलन वाले किरदारों को हटाने का काम करता है।
-हालांकि, इसे भागीदारी में देखने का एक रास्ता हो सकता है रेगुलर एक्सप्रेशन्स का उपयोग करके, जो एक बहुत ही शक्तिशाली और लचीला उपकरण हो सकता है पैटर्न मैचिंग और मनिपुलेशन के लिए।
+## Deep Dive (गहराई में जानकारी):
+किसी समय में, ऐसे कामों के लिए regular expressions (RegEx) का प्रचार था, लेकिन उनका performance cost अधिक हो सकता है। `strings.Map` function Go में इस्तेमाल किया जाता है क्योंकि यह efficient है; इससे हम एक ही pass में पूरे string के प्रत्येक character पर फंक्शन अप्लाई कर सकते हैं। इस approach को चुनते वक़्त, प्रोग्रामर को उस pattern की पहचान खुद करनी होती है जिसे हटाना है। यदि जटिल patterns को हटाना है, तब RegEx का उपयोग अधिक उपयोगी हो सकता है।
 
-## इसके अलावा देखें (See Also)
+## See Also (और भी जानकारी):
+- Go by Example: Strings: https://gobyexample.com/strings
+- Go Doc: strings package: https://pkg.go.dev/strings
+- Regular Expressions in Go: https://pkg.go.dev/regexp
 
-गो के और ट्युटोरियल के लिए, आप [A Tour of Go](https://tour.golang.org/welcome/1) को देख सकते हैं। यदि आप रेगुलर एक्सप्रेशन के साथ काम करना चाहते हैं, तो गो का इसका ट्यूटोरियल "[Regular Expressions](https://golang.org/pkg/regexp/)" एक अच्छी जगह हो सकती है शुरू करने के लिए।
+इन resources के माध्यम से आप Go में strings के साथ काम करना और ज्यादा अच्छे से समझ सकते हैं और अपने कोड को और भी optimized बना सकते हैं। Regular expressions के उपयोग और उनकी complexities के बारे में भी जानकारी मिलेगी।

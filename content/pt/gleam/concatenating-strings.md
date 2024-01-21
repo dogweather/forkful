@@ -1,6 +1,7 @@
 ---
 title:                "Concatenando strings"
-html_title:           "Elixir: Concatenando strings"
+date:                  2024-01-20T17:34:36.461792-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Concatenando strings"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,35 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
-
-Concatenar "strings" é o processo de combinar duas ou mais cadeias de caracteres em uma única string. Programadores fazem isso para manipular ou formatar texto de maneira eficiente e clara.
+## O Que é & Porquê?
+Concatenar strings é basicamente juntar duas ou mais sequências de caracteres para formar uma única string. Programadores fazem isso para construir mensagens, combinar dados ou para formatar outputs de uma maneira desejada.
 
 ## Como Fazer:
-
-No Gleam, a concatenação de strings é realizada utilizando a função `++`. Aqui estão alguns exemplos:
-
-```Gleam
-
-let bem_vindo = "Olá, " ++ "mundo!"
-Io.println(bem_vindo) // Imprime: Olá, mundo!
-
-let nome = "João"
-let saudacao = "Bom dia, " ++ nome
-Io.println(saudacao)  // Imprime: Bom dia, João
-
+```gleam
+fn main() {
+  let saudacao = "Olá, "
+  let nome = "Mundo!"
+  let mensagem = saudacao ++ nome
+  io.println(mensagem)
+}
+```
+Output:
+```
+Olá, Mundo!
 ```
 
-Nesse código, as strings "Olá, " e "mundo!" são combinadas para formar "Olá, mundo!". Da mesma forma, combinamos "Bom dia, " e a variável `nome` para cumprimentar o usuário.
-
-## Mergulho Profundo:
-
-Historicamente, algumas linguagens de programação, como C, implementavam a concatenação de strings manualmente com loops e ponteiros, o que requeria tempo e podia gerar erros. Felizmente, a maioria das linguagens modernas, como Gleam, fazem isso automaticamente com operadores ou funções dedicados.
-
-Como uma alternativa à concatenação, Gleam também suporta "string interpolation", que pode ser uma solução mais prática para strings complexas. 
-
-O Gleam implementa a concatenação de strings utilizando uma abordagem otimizada, ligando as strings ao invés de copiá-las. Isso significa que a operação é bastante rápida e eficiente.
+## Aprofundando:
+Historicamente, a possibilidade de concatenar strings tem sido um recurso básico na maioria das linguagens de programação, pois é essencial na manipulação e no display de texto. No Gleam, como em muitas linguagens funcionais modernas, concatenar é feito usando operadores simples como `++`, que torna o código limpo e legível. Alternativas à concatenação incluem a interpolação de strings ou a construção de strings com funções específicas ou módulos, que podem ser mais eficientes dependendo do contexto. Detalhes de implementação no Gleam são otimizados para garantir que a concatenação seja tão eficiente quanto possível, mas como em qualquer operação, abusar da concatenação em loops extensos pode levar a problemas de desempenho.
 
 ## Veja Também:
-
-Para mais exemplos e detalhes sobre manipulação de strings em Gleam, confira a documentação oficial ([Gleam Strings Documentation](https://hexdocs.pm/gleam_stdlib/gleam/string.html)) e o fórum de discussão da comunidade ([Gleam Forum](https://gleam.run/community/)).
+- Tutorial sobre interpolação e formatação de strings em Gleam: [gleam.run](https://gleam.run/book/tour/functions.html#string-interpolation)
+- GitHub do projeto Gleam para quem quiser contribuir ou entender mais sobre o funcionamento interno: [github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)

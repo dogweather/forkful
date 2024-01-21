@@ -1,7 +1,8 @@
 ---
-title:                "Laste ned en nettside"
-html_title:           "Elixir: Laste ned en nettside"
-simple_title:         "Laste ned en nettside"
+title:                "Nedlasting av en nettside"
+date:                  2024-01-20T17:44:06.246817-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Nedlasting av en nettside"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,58 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why? (Hva & Hvorfor?)
+Last ned en nettside innebærer å hente HTML-innholdet fra URL-en og lagre det lokalt. Programmerere gjør dette for datainnhenting, web scraping, eller offline-lesing.
 
-Å laste ned en nettside betyr å hente data (som HTML, CSS, bilder) fra en server til din egen datamaskin. Programmerere gjør dette for å analysere data, utføre webskraperi, eller skape en offline versjon for senere bruk.
-
-## Hvordan
-
-I Java kan vi bruke `java.net.HttpURLConnection` for å laste ned en nettside. La oss se på en grunnleggende kodeblokk:
-
+## How to: (Hvordan:)
 ```Java
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
+import java.io.*;
 import java.net.URL;
 
-public class Main {
-    public static void main(String[] args) throws Exception {
-        String urlStr = "http://www.example.com";
-        URL url = new URL(urlStr);
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+public class WebPageDownloader {
+    public static void main(String[] args) {
+        String webPageUrl = "http://example.com";
+        String outputPath = "downloaded_page.html";
 
-        // Request setup
-        conn.setRequestMethod("GET");
-        conn.setConnectTimeout(5000);
-        
-        BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-        String line;
-		
-        // Reading lines of the page
-        while ((line = reader.readLine()) != null) {
-            System.out.println(line);
+        try (InputStream in = new URL(webPageUrl).openStream();
+             FileOutputStream fos = new FileOutputStream(outputPath)) {
+
+            byte[] buffer = new byte[1024];
+            int length;
+
+            while ((length = in.read(buffer)) != -1) {
+                fos.write(buffer, 0, length);
+            }
+
+            System.out.println("Webpage downloaded successfully!");
+        } catch (IOException e) {
+            System.err.println("Error during downloading the webpage: " + e.getMessage());
         }
-        reader.close();
     }
 }
 ```
+Utdata:
+```
+Webpage downloaded successfully!
+```
 
-Når du kjører dette, bør du se HTML-koden til "www.example.com" i konsollen.
+## Deep Dive (Dypdykk)
+Før internett ble allemannseie, ville å laste ned nettsider sjelden skje utenfor akademiske eller militære nettverk. Etter hvert som internett vokste, oppstod behovet for å lage sikkerhetskopier eller bearbeide informasjon eksternt. Varierte biblioteker og rammeverk tilbyr egne metoder for nedlasting – `Jsoup` og `HttpClient` for eksempel. Detaljer spiller også en rolle: å håndtere ulike tegnsett, koble til via proxy, eller håndtere omdirigeringer.
 
-## Deep Dive
-
-Da Internett var i sin spede begynnelse, var nedlasting av en nettside like enkelt som å hente en fil fra en server. Med økende kompleksitet av nettsteder og bruken av dynamisk innhold, er prosessen mer kompleks. 
-
-Alternativene til `HttpURLConnection` inkluderer `java.net.URL`, `org.apache.http.client.methods.HttpGet` (fra Apache HttpClient library), og Jsoup (en tredjepartsbibliotek spesialisert for webscraping).
-
-Valget av hvilken tilnærming å bruke avhenger av behovene dine. Hvis du skal skrape store mengder data fra en nettside, kan det være verdt å vurdere den mer spesialiserte Jsoup.
-
-Implmenteringsdetaljer involverer hvordan du behandler forskjellige typer media på nettsiden (ikke bare tekst), og hvordan håndtere error codes (som 404 Not Found eller 500 Internal Server Error).
-
-## Se også
-
-- [Java HttpURLConnection documentation](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/net/HttpURLConnection.html)
-- [Apache HttpClient library](https://hc.apache.org/httpcomponents-client-4.5.x/quickstart.html)
-- [Jsoup documentation](https://jsoup.org/)
-  
-Undersøk for mer eksplisitt informasjon og flere kjøre eksempler.
+## See Also (Se også)
+- [Jsoup Library](https://jsoup.org/) - for parsing og håndtering av HTML.
+- [HttpClient documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html) - for mer moderne, asynkron nettverkskode.
+- [Java NIO](https://docs.oracle.com/javase/8/docs/api/java/nio/package-summary.html) - for ikke-blokkerende I/O operasjoner.

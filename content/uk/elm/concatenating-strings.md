@@ -1,7 +1,8 @@
 ---
-title:                "Конкатенація рядків"
-html_title:           "PHP: Конкатенація рядків"
-simple_title:         "Конкатенація рядків"
+title:                "Об'єднання рядків"
+date:                  2024-01-20T17:34:34.976016-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Об'єднання рядків"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,36 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та чому?
-Конкатенація рядків - це процес з'єднання двох або більше рядків в один. Це ключова техніка у програмуванні, що використовується для об'єднання даних, створення складних рядків або просто робить код більш читабельним.
+## What & Why?
+(## Що і Чому?)
 
-## Як це зробити:
-В Elm, ви можете виконати цю дію, використовуючи оператор `(++)`, як показано нижче:
+Concatenating strings is about sticking two or more pieces of text together. We do it to build new strings from existing ones, like names or messages.
 
-```Elm
-name = "Іван"
-greeting = "Привіт, " ++ name ++ "!"
-```
+(З'єднання рядків полягає в склеюванні двох або більше шматків тексту. Ми робимо це, щоб створити нові рядки з існуючих, як от імена чи повідомлення.)
 
-Після виконання вищенаведеного коду виведення буде таким:
+## How to:
+(## Як це зробити:)
 
 ```Elm
-"Привіт, Іван!"
+greeting : String
+greeting = "Привіт, "
+
+name : String
+name = "Андрію!"
+
+fullGreeting : String
+fullGreeting = greeting ++ name
+
+-- Output: "Привіт, Андрію!"
 ```
 
-## Поглиблений огляд
-Конкатенація рядків існує в більшості мов програмування, оскільки це один з основних способів роботи з текстовими даними. В Elm, використовується оператор `(++)` замість більш загального `+` чи `.concat()` у інших мовах. Це історична особливість Elm, що спрощує розрізнення між числовими та рядковими діями.
+(Сповнене привітання: "Привіт, Андрію!")
 
-Як альтернатива, Elm також дозволяє використовувати функцію `String.concat`, що приймає список рядків для об'єднання:
+## Deep Dive
+(## Поглиблений Розгляд)
 
-```Elm
-greeting = String.concat [ "Привіт, ", "Іван", "!" ]
-```
+Long ago, concatenating strings could be costly because of memory manipulations. In Elm, `++` is used for concatenation, and it's handled efficiently under the hood. Alternatives like StringBuilder in other languages are not necessary in Elm because of its functional nature and immutable strings. Those features guarantee that string manipulations don't cause side-effects or unnecessary performance hits.
 
-Механіка цієї мови є дуже ефективною, оскільки з'єднання рядків в Elm виконується без переробки змісту оригінальних рядків, що зменшує використання пам'яті та підвищує продуктивність.
+(Давно, з'єднування рядків могло бути вартісним через маніпуляції з пам'яттю. В Elm, для з'єднання використовують `++`, і це ефективно обробляється під капотом. Альтернативи на зразок StringBuilder у інших мовах не потрібні в Elm через його функціональну сутність та незмінні рядки. Ці особливості гарантують, що маніпуляції з рядками не призводять до побічних ефектів чи непотрібних ударів по продуктивності.)
 
-## Дивіться також
-Для більш глибокого розуміння рядків і їх конкатенації в Elm, ознайомтеся з офіційною документацією Elm та різними ресурсами в інтернеті:
+## See Also
+(## Дивіться Також)
 
-1. [Elm Documentation: String](https://package.elm-lang.org/packages/elm/core/latest/String)
-3. [GitHub: Elm - String operations](https://github.com/dwyl/learn-elm/issues/6)
+- Elm Official Documentation on String: https://package.elm-lang.org/packages/elm/core/latest/String
+- Elm Strings Guide: https://elmprogramming.com/strings.html
+- Elm Discourse for Community Support: https://discourse.elm-lang.org/
+
+(Офіційна Документація Elm по Рядках: https://package.elm-lang.org/packages/elm/core/latest/String
+Посібник Elm по Рядкам: https://elmprogramming.com/strings.html
+Elm Discourse для підтримки спільноти: https://discourse.elm-lang.org/)

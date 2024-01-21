@@ -1,6 +1,7 @@
 ---
 title:                "Skicka en http-förfrågan"
-html_title:           "Javascript: Skicka en http-förfrågan"
+date:                  2024-01-20T17:59:20.183840-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Skicka en http-förfrågan"
 programming_language: "C"
 category:             "C"
@@ -10,61 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & varför?
-
-Att skicka en HTTP-förfrågan handlar om att be en server om särskild data, typiskt genom att använda webben. Det är ett grundläggande verktyg för utvecklare att skrapa webbdata, interagera med API:er, eller ändra webbstatus för HTTP-baserade tjänster.
+## Vad & Varför?
+Att skicka en HTTP-förfrågan innebär att be en server om data eller att utföra en åtgärd. Programmerare gör detta för att interagera med webbtjänster, hämta information eller skicka data.
 
 ## Hur man gör:
-
-Vi kommer att använda biblioteket libcurl för exempel på HTTP förfrågningar i C. Installera först det här, var noga med att din version har SSL-stöd.
-
-```C 
+```C
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
-
-  curl_global_init(CURL_GLOBAL_DEFAULT);
-
-  curl = curl_easy_init();
+int main(void) {
+  CURL *curl = curl_easy_init();
   if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
-
-    
-    #ifdef SKIP_PEER_VERIFICATION
-    curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
-    #endif
-
+    CURLcode res;
+    curl_easy_setopt(curl, CURLOPT_URL, "http://httpbin.org/get");
     res = curl_easy_perform(curl);
-
-    
     if(res != CURLE_OK)
       fprintf(stderr, "curl_easy_perform() failed: %s\n",
               curl_easy_strerror(res));
-    
-    
     curl_easy_cleanup(curl);
   }
-
-  curl_global_cleanup();
-
   return 0;
 }
 ```
-Om allt går som det ska kommer programmet att skicka en HTTP GET-förfrågan till "https://example.com" och skriva ut svarskroppen.
+Exempelutdata:
+```
+{
+  "args": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Host": "httpbin.org", 
+    "User-Agent": "curl/7.64.1"
+  }, 
+  "origin": "xxx.xxx.xxx.xxx", 
+  "url": "https://httpbin.org/get"
+}
+```
 
-## Djupdykning
+## Djupdykning:
+Att skicka HTTP-förfrågningar i C är inte inbyggt. Bibliotek som libcurl skapades för att förenkla uppgiften. Libcurl har stöd för flera protokoll utöver HTTP och HTTPS, från FTP till SMTP. Alternativ till libcurl inkluderar programmering på lägre nivå med socket-API:er, men det är mer krävande. Implementeringen ovan använder libcurl's enkla API för att göra en GET-förfrågan, som är grundläggande men tillräcklig för många ändamål.
 
-HTTP-förfrågan är en grundläggande del av arkitekturen i dagens webb, och går tillbaka till de första dagarna av webben på 90-talet. 
-
-Det finns många alternativ till C och libcurl för att skicka HTTP-förfrågan, inklusive Python's requests library, Node.js http library, eller till och med command linje verktyg som curl och wget.
-
-När du jobbar med libcurl, kom ihåg att det under ytan tillåter mer än bara HTTP - det är ett verktyg för många olika protokoll inklusive FTP, SMTP och mer. 
-
-## Se även:
-- [libcurl C API dokumentation](https://curl.se/libcurl/c/)
-- [HTTP på Wikipedia (engelska)](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
-- [Python's requests library](https://docs.python-requests.org/en/master/)
+## Se Också:
+- [libcurl C API Documentation](https://curl.haxx.se/libcurl/c/)
+- [HTTPbin](http://httpbin.org/) för att testa HTTP-förfrågningar.
+- [RFC 7230](https://tools.ietf.org/html/rfc7230), HTTP/1.1: Message Syntax and Routing, för att förstå HTTP på en djupare nivå.

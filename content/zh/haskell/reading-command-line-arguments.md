@@ -1,6 +1,7 @@
 ---
 title:                "读取命令行参数"
-html_title:           "C: 读取命令行参数"
+date:                  2024-01-20T17:56:17.532286-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "读取命令行参数"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,34 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么?
-命令行参数用于传递信息给程序。程序员使用它来从用户那里获取程序应如何工作的信息，大大增加了程序的灵活性。
+## What & Why? 什麼和為什麼？
+讀取命令列參數讓程序獲得從外部傳入的信息。程式設計師這麼做來自訂程式行為，讓同一個程序能更靈活地應對不同的任務。
 
-## 怎么做:
-在Haskell中，你可以使用System.Environment库来操作命令行参数：
+## How to: 怎麼做
+在Haskell中，`System.Environment`模塊提供讀取命令列參數的功能。看一下怎麼用：
 
 ```Haskell
-import System.Environment
+import System.Environment (getArgs)
 
 main :: IO ()
 main = do
-  args <- getArgs
-  print args
+    args <- getArgs
+    putStrLn ("你傳入了以下參數: " ++ show args)
+
+-- 假想的終端機輸入:
+-- > myprog param1 param2 param3
+
+-- 輸出:
+-- 你傳入了以下參數: ["param1", "param2", "param3"]
 ```
-在命令行运行这个程序，如下所示：
 
-```shell
-$ ghc main.hs
-$ ./main arg1 arg2 arg3
-["arg1","arg2","arg3"]
-```
-这个程序会接收任何您传递的命令行参数（"arg1", "arg2", "arg3"），然后打印它们。
+`getArgs`函數傳回一個字串列表，其中包含了所有的命令列參數。
 
-## 深度解析：
-(1) 历史背景: Haskell语言是在1987年设计的，这种利用命令行参数的方法是从早期的编程语言如C和FORTRAN中借鉴过来的。
-(2) 替代方式: `getProgName` 函数可以获得正在运行的程序的名字，而不是它的参数。
-(3) 实现细节: 在Haskell中，命令行参数通过列表的形式展示，列表中每个元素都是一个字符串。
+## Deep Dive 深入瞭解
+命令列參數的讀取可以讓程序接受用戶或其他程序的輸入。Haskell語言從早期就支持這一功能，這是大多數作業系統終端機的標準做法。
 
-## 另请参见：
-* 更深入的操作命令行参数的例子和讨论：[http://book.realworldhaskell.org/read/io.html](http://book.realworldhaskell.org/read/io.html)
-* Haskell的`System.Environment`库详细文档：[https://hackage.haskell.org/package/base-4.14.0.0/docs/System-Environment.html](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-Environment.html)
+其他的替代方法，例如讀取環境變量或是配置文件，但這些並不適用於臨時參數或一次性任務。對於複雜的命令列參數解析，Haskell社群也發展出了一些更強大的庫，比如`optparse-applicative`，提供了類似GNU的參數設置。
+
+在實作時，命令列參數從操作系統的進程管理中得到，通常在程式啟動時由操作系統提供。在Haskell中，這些參數被作為字串列表呈現，可以透過`getArgs`很容易讀取。
+
+## See Also 參閱資料
+- [Haskell System.Environment Documentation](https://hackage.haskell.org/package/base-4.16.1.0/docs/System-Environment.html)
+- [optparse-applicative on Hackage](https://hackage.haskell.org/package/optparse-applicative)
+- [Real World Haskell, Chapter 8: Command line and file I/O](http://book.realworldhaskell.org/read/io.html)
+
+閱讀官方文檔了解更多庫的用法，而optparse-applicative可以為需要更複雜命令列處理的應用提供更多功能。透過真實世界Haskell書籍學習更多命令列和檔案I/O的實際操作。

@@ -1,7 +1,8 @@
 ---
-title:                "Zeichen löschen, die einem Muster entsprechen"
-html_title:           "C#: Zeichen löschen, die einem Muster entsprechen"
-simple_title:         "Zeichen löschen, die einem Muster entsprechen"
+title:                "Löschen von Zeichen, die einem Muster entsprechen"
+date:                  2024-01-20T17:42:00.967776-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,46 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Clojure-Programmierung: Zeichen Mithilfe eines Musters Löschen
-
 ## Was & Warum?
-Beim Löschen von Zeichen, die einem Muster entsprechen, geht es darum, bestimmte Teile eines Strings zu entfernen. Programmierer machen das oft, um irrelevante oder störende Daten loszuwerden.
+Das Löschen von Zeichen, die einem Muster entsprechen, bezeichnet man, wenn man bestimmte Zeichen aus Strings entfernt, die auf ein gegebenes Muster passen. Programmierer nutzen dies, um Daten zu bereinigen, Eingaben zu validieren oder Informationen zu formatieren.
 
-## So geht's:
+## How to:
+```Clojure
+(defn delete-matching-chars [pattern string]
+  (clojure.string/replace string (re-pattern pattern) ""))
 
-Clojure bietet dafür die Funktion `clojure.string/replace`. Sie nimmt 3 Argumente: den ursprünglichen String, das Muster und den Ersetzungstext. Um Zeichen zu löschen, geben Sie einfach "" als Ersetzungstext an:
+;; Beispiel: Entferne alle Ziffern aus dem String
+(println (delete-matching-chars "\\d+" "Heute ist der 4. April 2023"))
+;; Ausgabe: Heute ist der . April 
 
-```clojure
-(require '[clojure.string :as str])
-
-(let [original "abc123" pattern "\\d" replacement ""]
-  (str/replace original pattern replacement))
+;; Beispiel: Entferne alle nicht-alphanumerischen Zeichen
+(println (delete-matching-chars "[^\\w]" "Clojure 1.10! Fantastisch, oder?"))
+;; Ausgabe: Clojure 110 Fantastisch oder
 ```
 
-Ausgabe:
+## Deep Dive
+Das Löschen von Zeichen nach einem Muster hat in der Programmierung eine lange Geschichte. Ursprünglich in den 1950ern in Zusammenhang mit dem Text-Editor ed komputiert, ist es jetzt ein Grundbaustein in den meisten modernen Programmiersprachen. In Clojure, einer modernen Lisp-Dialekt, nutzt man `clojure.string/replace` zusammen mit regulären Ausdrücken, um diese Funktionalität umzusetzen. Die Java-Virtual-Maschine (JVM), auf der Clojure läuft, bietet robuste Unterstützung für reguläre Ausdrücke, was Clojure-Entwickler stark von profitieren können. Alternativ könnte man auch `filter`-Funktionen verwenden, aber für einfache Zeichenersetzungen sind reguläre Ausdrücke oft effizienter und lesbarer.
 
-```clojure
-"abc"
-```
-
-Mit diesem Code lösen Sie alle Ziffern aus dem Originalstring.
-
-## Tiefere Instanz:
-
-Obwohl `clojure.string/replace` weit verbreitet und sehr leistungsfähig ist, gibt es Alternativen zum Löschen von Zeichen:
-
-1. `clojure.string/replace-first`: Ähnlich wie `replace`, aber es ersetzt nur das erste Auftreten des Musters.
-
-2. Mit der Java interop: Clojure läuft auf der JVM, daher können Sie Java-Methoden nutzen, wie z.B. `String.replaceAll`.
-
-```clojure
-(let [original "abc123" pattern "\\d" replacement ""]
-  (.replaceAll original pattern replacement))
-```
-
-Es ist auch nützlich zu wissen, dass `clojure.string/replace` das Muster als regulären Ausdruck behandelt. Daher müssen spezielle Zeichen durch Doppelschwenkstriche (`\\`) maskiert werden.
-
-## Siehe Auch:
-
-- Clojure API: `clojure.string/replace`. Siehe [Clojurescript API-Dokumentation](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/replace)
-- Wann und Wie Java interop benutzt werden sollte: [Clojure for the Brave and True](https://www.braveclojure.com/java/)
+## See Also
+- [ClojureDocs: clojure.string/replace](https://clojuredocs.org/clojure.string/replace)
+- [Clojure from the ground up: regular expressions](https://aphyr.com/posts/305-clojure-from-the-ground-up-regular-expressions)
+- [Java Platform SE 8 - Pattern](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)

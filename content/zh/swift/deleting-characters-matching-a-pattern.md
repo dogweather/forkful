@@ -1,7 +1,8 @@
 ---
-title:                "删除匹配模式的字符"
-html_title:           "Java: 删除匹配模式的字符"
-simple_title:         "删除匹配模式的字符"
+title:                "匹配模式删除字符"
+date:                  2024-01-20T17:43:00.965007-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "匹配模式删除字符"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,28 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-删除匹配模式的字符是通过特定的模式去删除字符串中匹配的指定字符。程序员通常这样做是因为需要清洗或者格式化数据，以便于后续处理。
+## What & Why? (是什么？为什么要这么做？)
+删除匹配模式的字符是指在字符串中找到并移除符合特定规则的字符。编程时这么做可以帮助清洗数据、移除无关内容，使字符串更加干净、便于处理。
 
-## 怎么做：
+## How to: (怎么做：)
+在Swift中，你可以使用`removeAll(where:)`来删除字符：
+
 ```Swift
-// 定义一个包含数字和字母的字符串
-let originalString = "Swift123Programming45"
-// 匹配模式为数字
-let pattern = "[0-9]"
-
-let replacedString = originalString.replacingOccurrences(of: pattern, with: "", options: .regularExpression)
-print(replacedString)  // 输出：SwiftProgramming
+var greeting = "Hello, World! Where are the cookies?"
+greeting.removeAll(where: { "aeiou".contains($0) })
+print(greeting)
+// 输出: Hll, Wrld! Whr r th ckks?
 ```
-在这个例子中，我们删除了所有的数字，只保留了字母。
 
-## 深度挖掘
-删除匹配模式的字符在Swift中非常直观，因为Swift内建了强大的正则表达式处理能力。在历史上，处理字符串需要复杂的操作和计算，但Swift简化了这个过程。
+或者使用正则表达式来删除符合模式的字符串：
 
-一种替代方案是对字符串进行遍历然后删除匹配字符，但使用正则表达式比这个方法更加简洁而且效率更高。
+```Swift
+var stringWithNumbers = "My phone number is 123-456-7890."
+if let range = stringWithNumbers.range(of: "\\d{3}-\\d{3}-\\d{4}", options: .regularExpression) {
+    stringWithNumbers.removeSubrange(range)
+}
+print(stringWithNumbers)
+// 输出: My phone number is .
+```
 
-这个实现主要基于Swift的`replacingOccurrences`函数，配合正则表达式，可以高效地处理字符串并且删除匹配的字符模式。
+## Deep Dive (深入探究)
+删除匹配模式的字符在编程中并不新鲜。在早期计算机科学中，正则表达式便广泛用于模式匹配。Swift简化了某些常见的任务比如`removeAll(where:)`，但对于复杂模式，正则表达式依然是强大工具。除了`removeAll`和正则表达式，你也可以通过循环遍历字符串并使用`StringBuilder`或者数组拼接的方式来删除字符，但这在Swift中并不常见。考虑到执行效率和代码清晰度，推荐优先使用上面展示的方法。
 
-## 参考链接
-1. Swift文档 [replacingOccurrences函数](https://developer.apple.com/documentation/foundation/nsstring/1412937-replacingoccurrences)
-2. Swift正则表达式[使用指南](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift).
+## See Also (另请参阅)
+- Swift标准库文档中的[String](https://developer.apple.com/documentation/swift/string)；
+- [正则表达式快速参考](https://www.raywenderlich.com/800-swift-regular-expressions-cheatsheet)；
+- 核心字符串处理相关的[NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)类。

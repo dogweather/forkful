@@ -1,7 +1,8 @@
 ---
-title:                "Démarrer un nouveau projet"
-html_title:           "Elm: Démarrer un nouveau projet"
-simple_title:         "Démarrer un nouveau projet"
+title:                "Lancement d'un nouveau projet"
+date:                  2024-01-20T18:03:22.413063-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lancement d'un nouveau projet"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
@@ -10,45 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## Quoi & Pourquoi ?
+Commencer un nouveau projet, c'est créer une structure de base pour développer une application. Les programmeurs font ça pour organiser le code, gérer les dépendances et faciliter le démarrage rapide.
 
-Démarrer un nouveau projet de programmation en Clojure c'est comme peindre une toile vierge: c'est l'opportunité de créer quelque chose de unique à partir de zéro. Les programmeurs le font pour résoudre des problèmes, explorer de nouvelles idées, ou simplement pratiquer leurs compétences.
+## Comment faire :
+Pour initialiser un nouveau projet Clojure, on utilise Leiningen ou Clojure CLI-tools. Voici la marche à suivre avec Leiningen :
 
-## Comment faire:
-Commençons par installer [Leiningen](https://leiningen.org/#install) - un outil populaire pour gérer les projets Clojure. Ensuite, vous pouvez créer un nouveau projet Clojure avec la commande:
+```Clojure
+;; Installation de Leiningen :
+;; Téléchargez le script `lein` à partir de https://leiningen.org/ et suivez les instructions d'installation.
 
-```clojure
-lein new mon-projet
+;; Création d'un nouveau projet Clojure :
+lein new app mon-projet
+
+;; Structure du projet généré :
+;; mon-projet/
+;; ├── project.clj
+;; ├── src/
+;; │   └── mon_projet/
+;; │       └── core.clj
+;; ├── test/
+;; │   └── mon_projet/
+;; │       └── core_test.clj
+;; ├── resources/
+;; ├── target/
+;; └── .gitignore
 ```
 
-Ce qui génère un répertoire de projet avec une structure de fichiers de base. Vous pouvez compiler et exécuter le projet avec:
+Avec Clojure CLI-tools, on fait comme ceci :
 
-```clojure
-lein run
+```Clojure
+;; Installation de Clojure CLI-tools :
+;; Suivez les instructions sur https://clojure.org/guides/getting_started#_clojure_installer_and_cli_tools.
+
+;; Création d'un nouveau projet Clojure :
+clj -X:new create :template app :name mon-projet
+
+;; Structure du projet généré :
+;; mon-projet/
+;; ├── deps.edn
+;; ├── src/
+;; │   └── mon_projet/
+;; │       └── core.clj
+;; ├── test/
+;; │   └── mon_projet/
+;; │       └── core_test.clj
+;; ├── resources/
+;; ├── .gitignore
 ```
 
-Dans un fichier de source, vous pouvez écrire une fonction comme celle-ci:
+## Plongée profonde
+Historiquement, Leiningen est l'outil de build de choix pour Clojure. Il automatise les tâches grâce à `project.clj`. Par contre, depuis Clojure 1.9, Clojure CLI-tools offre une approche plus minimaliste avec `deps.edn`, qui s'occupe uniquement des dépendances et de l'exécution des programmes. Les deux outils peuvent générer des gabarits de projet, gérer les dépendances et exécuter des tests. Le choix dépend de vos préférences et besoins : Leiningen pour une solution tout-en-un, Clojure CLI-tools pour un contrôle plus fin.
 
-```clojure
-(defn saluer [nom]
-  (str "Bonjour, " nom "!"))
-```
-
-Et l'appeler en utilisant:
-
-```clojure
-(saluer "Pierre") => "Bonjour, Pierre!"
-```
-
-## Deep Dive:
-Clojure a été créé en 2007 par Rich Hickey comme une version moderne de Lisp pour la JVM. C'est une solution efficace pour ceux qui aiment le style de programmation fonctionnel et qui ont besoin de la puissance de la JVM.
-
-Alternativement, vous pouvez utiliser des outils comme `boot` ou `depstar` pour gérer vos projets Clojure mais Leiningen reste l'outil le plus largement utilisé.
-
-Lorsqu'on commence un nouveau projet, Leiningen génère une structure de fichiers de base qui as un fichier `project.clj`. Ce fichier contient des informations sur votre projet, y compris les dépendances requises.
-
-## Voir Aussi:
-Pour plus d'informations, consultez ces ressources:
-
-- [Documentation officielle de Clojure](https://clojure.org/guides/getting_started)
-- [Clojure for the Brave and True (livre en ligne gratuit)](https://www.braveclojure.com/)
+## À voir également
+- Leiningen: [https://leiningen.org/](https://leiningen.org/)
+- Clojure CLI-tools: [https://clojure.org/guides/deps_and_cli](https://clojure.org/guides/deps_and_cli)
+- Guide de démarrage de Clojure: [https://clojure.org/guides/getting_started](https://clojure.org/guides/getting_started)
+- Liste des templates Leiningen: [https://github.com/technomancy/leiningen/wiki/Templates](https://github.com/technomancy/leiningen/wiki/Templates)

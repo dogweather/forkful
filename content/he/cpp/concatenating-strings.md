@@ -1,7 +1,8 @@
 ---
-title:                "חיבור מחרוזות"
-html_title:           "C++: חיבור מחרוזות"
-simple_title:         "חיבור מחרוזות"
+title:                "שרשור מחרוזות"
+date:                  2024-01-20T17:34:22.914444-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרשור מחרוזות"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,46 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה & למה?
+## מה ולמה?
+הצמדת מחרוזות (Concatenating Strings) היא תהליך שבו מחברים שתי מחרוזות או יותר למחרוזת אחת. מתכנתים מבצעים הצמדה כדי ליצור משפטים, הודעות ותצורות טקסט מורכבות.
 
-הדבקת מחרוזות היא פעולה שבה מילים או קטעי מלל משויכים ביניהם כדי ליצור מחרוזת אחת ארוכה יותר. מתכנתים עושים את זה כדי לעבוד ביעילות עם מלל, בין אם זו פלט הדפסה או סדרה של נתונים לעיבוד.
+## איך לעשות:
+ב-C++ יש מספר דרכים לבצע הצמדת מחרוזות. הנה כמה דוגמאות:
 
-## כיצד לשלב:
+```cpp
+#include <iostream>
+#include <string>
 
-הדוגמה הבאה מדגימה כיצד להדביק מחרוזות ב־C++:
+int main() {
+    // הצמדה באמצעות אופרטור ה+
+    std::string firstName = "אליהו";
+    std::string lastName = "גולדראט";
+    std::string fullName = firstName + " " + lastName;
+    std::cout << fullName << std::endl; // אליהו גולדראט
 
-```C++
-#include <iostream> 
-#include <string> 
+    // הצמדה באמצעות .append()
+    std::string greeting = "שלום ";
+    greeting.append(firstName);
+    std::cout << greeting << std::endl; // שלום אליהו
 
-int main() 
-{ 
-    std::string str1 = "Hello, "; 
-    std::string str2 = "World!"; 
+    // הצמדה עם משתנים של סוגים שונים
+    int day = 15;
+    std::string date = "אפריל " + std::to_string(day);
+    std::cout << date << std::endl; // אפריל 15
 
-    //Concatenating strings
-    std::string str3 = str1 + str2; 
-
-    std::cout << str3; 
-
-    return 0; 
-} 
+    return 0;
+}
 ```
-פלט מבחן של התוכנית:
 
-```
-Hello, World!
-```
+## עיון מעמיק:
+מחרוזות היו תמיד חלק מרכזי בתכנות, והצמדתן - טכניקה יסודית. בהיסטוריה, שפות כמו C דרשו פונקציות כמו `strcat()` להצמדת מחרוזות. ב-C++, `std::string` מספקת פתרונות רבים ויעילים יותר.
 
-## צלילה עמוקה:
+חלופות נפוצות להצמדה כוללות שימוש ב-string streams או בפונקציות של טיפול בעיבוד מחרוזות מסודרות, כמו גרסאות של `sprintf()`.
 
-(1) במסגרת ההיסטורית, בשפות תכנות ראשונות לא היה אפשר להדביק מחרוזות. עם הזמן, התפתחו שפות תכנות מודרניות כמו C++ שמאפשרות הדבקה קלה ויעילה של מחרוזות.
+הביצועים של הצמדת מחרוזות עלולים להיות גרועים אם לא נעשים בצורה אופטימלית, במיוחד בלולאות ארוכות או עבור מחרוזות גדולות מאוד, כיוון שכל הצמדה יוצרת עותק חדש של המחרוזת.
 
-(2) קיימות גם דרכים אחרות להדביק מחרוזות בC++, כמו שימוש בפונקציה `strcat()` או `append()`.
-
-(3) כאשר אתה מבצע הדבקה, המחלקה `std::string` יוצרת מחרוזת חדשה כתוצאה מהיחד של שתי המחרוזות. זו היא פעולה שתלויה בגודל המחרוזות כדי לכמה זמן העומס ידרוש.
-
-## ראה גם:
-
--   עוד קטע קוד של הדבקה של מחרוזות בעזרת מתודת `append()`: https://www.cplusplus.com/reference/string/string/append/
--   פונקציה `strcat()` בC++: https://www.cplusplus.com/reference/cstring/strcat/
+## קרא גם:
+- [אתר cplusplus על std::string](http://www.cplusplus.com/reference/string/string/)
+- [תיעוד של C++ על הצמדת מחרוזות](https://en.cppreference.com/w/cpp/string/basic_string/operator%2B)
+- [רפרנס של טכניקות השפה](http://cppreference.com/)

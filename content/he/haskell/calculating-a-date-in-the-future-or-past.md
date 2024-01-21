@@ -1,6 +1,7 @@
 ---
 title:                "חישוב תאריך בעתיד או בעבר"
-html_title:           "Haskell: חישוב תאריך בעתיד או בעבר"
+date:                  2024-01-20T17:31:40.902439-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חישוב תאריך בעתיד או בעבר"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,28 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-חישוב תאריך בעתיד או בעבר מתייחס לתהליך של עריכת מספר בימים לתאריך מעובד. מתכנתים מנהלים את התהליך הזה לשלל סיבות, החל מחיררון אירועים לניהול של לוחות זמן.
+קביעת תאריך בעתיד או העבר זה לחשב מועד שאחרי או לפני נקודת זמן מסוימת. תכנותים עושים את זה לתזמון אירועים, להזכיר תקופות אחריות, ועוד.
 
-## כיצד ל:
+## איך לעשות:
 ```Haskell
-import Data.Time.Calendar
+import Data.Time
 
-addDaysToCurrentDate :: Integer -> IO Day
-addDaysToCurrentDate n = do
-  currentDate <- utctDay <$> getCurrentTime
-  return $ addDays n currentDate
+-- הוספת ימים לתאריך נתון
+addDaysToCurrentDate :: Integer -> IO ()
+addDaysToCurrentDate days = do
+  today <- getCurrentTime
+  let futureDate = addDays days (utctDay today)
+  putStrLn $ "התאריך בעוד " ++ show days ++ " ימים יהיה: " ++ show futureDate
+
+-- ניצול הפונקציה
+main :: IO ()
+main = addDaysToCurrentDate 10
 ```
-בהנחה שתרצה להוסיף שלושה ימים לתאריך הנוכחי, פלט דוגמה ייראה משהו כזה:
 
-```Haskell
-addDaysToCurrentDate 3 
--- "2022-03-22"
+פלט דוגמא:
+```
+התאריך בעוד 10 ימים יהיה: 2023-04-23
 ```
 
-## בילועלי
-החשיבות של חישוב תאריכים בעבר ובעתיד התבררה בהיסטוריה של מדעי המחשב. לעיתים קרובות, נושאים אחרים כמו חריגת זמנים מאתגרים מאוד, אבל Haskell מספק ספרייה יעילה בשם `Data.Time`. 
+## צלילה לעומק:
+ב-Haskell, חישוב תאריך בעתיד או העבר מתבצע בעזרת ה-library `Data.Time`, שמספקת פונקציות לטיפול בתאריכים ובזמנים. לפני מציאת ספריות כאלו, תכנותים נאלצו לטפל בעצמם בסיבוכיות של לוחות שנה וליקויים. חלופות כוללות שימוש בפונקציות של המערכת הפעלה או ספריות צד-שלישי. חשוב לזכור שתאריכים ושעות הם רגישים לאזור זמן ולשינויים של שעון קיץ/חורף.
 
-כלפיים, ישנן ספריות של שלדי זמן, אך `Data.Time` היא ברירת המחדל של Haskell. ישנם שיקולים לבחור באפשרות זו, החל מהתמיכה שלה בכל סוגי הזמן הדרושים, דרך קלות השימוש שלה, ועד ליכולת להתמודד עם שארית סוגי האירועים.
-
-## ראה גם
-* [האנשי העיון של Haskell ל- `Data.Time`](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+## ראו גם:
+- המדריך הרשמי לספרית [`Data.Time`](https://hackage.haskell.org/package/time-1.12/docs/Data-Time.html)
+- תיעוד Haskell על עבודה עם Time Zones: [https://hackage.haskell.org/package/time-1.12/docs/Data-Time-LocalTime.html](https://hackage.haskell.org/package/time-1.12/docs/Data-Time-LocalTime.html)

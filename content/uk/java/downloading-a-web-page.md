@@ -1,6 +1,7 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "Gleam: Завантаження веб-сторінки"
+date:                  2024-01-20T17:44:20.295670-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "Java"
 category:             "Java"
@@ -10,47 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що і Чому?)
 
-Завантаження веб-сторінки - це процес отримання вмісту сторінки з інтернету. Програмісти роблять це, щоб обробляти та аналізувати ці дані у своїх додатках.
+Downloading a web page means grabbing the data from a website's server and making it available on your local machine. Programmers do it for things like data scraping, offline access, or automated testing.
 
-## Як це робити:
+## How to: (Як зробити:)
 
-Використаємо бібліотеку Jsoup для завантаження веб-сторінки. Код зазначено нижче:
+To download a web page in Java, use `java.net.HttpURLConnection`. Here’s a concise example:
 
-```Java
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
+```java
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
-public class WebDownload {
-    public static void main(String[] args) {
-        try {
-            Document doc = Jsoup.connect("http://example.com").get();
-            String title = doc.title();
-            System.out.println("Title: " + title);
-        } catch (IOException e) {
-            e.printStackTrace();
+public class WebPageDownloader {
+    
+    public static void main(String[] args) throws IOException {
+        URL url = new URL("http://www.example.com");
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } finally {
+            connection.disconnect();
         }
     }
 }
 ```
 
-При виконанні цього коду, ми отримаємо такий вивід:
+Sample output:
 
-```Java
-Title: Example Domain
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+    ...
+</html>
 ```
 
-## Поглиблено:
+## Deep Dive (Поглиблений аналіз):
 
-Jsoup - це відносно нова бібліотека Java, випущена в 2010 році, яку часто використовують для роботи з HTML в Java. Основні альтернативи - це використання бібліотеки `java.net.URL` для низькорівневого завантаження сторінки або бібліотеки HtmlUnit для більш функціонального, але складнішого варіанту.
+Downloading web pages has come a long way from the days of raw socket connections. Now, `HttpURLConnection` is the basic Java class for it, but it’s not the only tool. Libraries like Apache HttpClient or Jsoup provide more functionality and are more user-friendly.
 
-Використовуючи Jsoup, ми встановлюємо з'єднання до URL-адреси за допомогою методу `connect()`, потім отримуємо вміст за допомогою методу `get()` і витягуємо заголовок за допомогою методу `title()`. Це всього лише перший крок, адже Jsoup набагато потужніший та надає можливості для парсинга HTML та вибірки елементів за їхніми селекторами CSS.
+There’s a trade-off: `HttpURLConnection` is built-in and doesn’t need extra jars, while third-party libraries require managing dependencies but can simplify tasks like handling cookies, or managing sessions.
 
-## Дивіться також:
+Historically, Java’s `HttpURLConnection` has been criticized for being clunky and less intuitive compared to what modern libraries offer. Yet it remains a go-to option for many, especially when sticking to the standard library is appealing or for simpler tasks where an external library might be overkill.
 
-Для більш детальної інформації про завантаження веб-сторінок та роботу з Jsoup, рекомендуємо ознайомитись із наступними джерелами:
+## See Also (Дивіться також):
 
-1. [Офіційна документація Jsoup](https://jsoup.org/) 
-2. [Проект Jsoup на GitHub](https://github.com/jhy/jsoup)
-3. [Як завантажити веб-сторінку з Java - Baeldung](https://www.baeldung.com/java-download-webpage)
+For more info, check out:
+
+- Jsoup: https://jsoup.org/ (great for HTML parsing and web scraping)
+- Apache HttpClient: http://hc.apache.org/httpcomponents-client-ga/ (feature-rich HTTP client)
+- The java.net package documentation: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/package-summary.html (for insights into Java’s networking capabilities)

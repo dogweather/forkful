@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-html_title:           "Kotlin: एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-simple_title:         "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
+title:                "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
+date:                  2024-01-20T17:38:56.724686-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,23 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
-एक String को Lower Case में बदलना ऐसा नियंत्रण है जिसमें सभी अक्षरों को उनके छोटे (लोअरकेस) संस्करण में बदला जाता है। यह इसलिए किया जाता है ताकि हम पाठ की तुलना कर सकें, उद्घाटन कर सकें एवं अन्य सामान्य कार्रवाई रूप में उपयोग कर सकें, बिना बड़े-छोटे अक्षरों की चिंता किए।
+## क्या और क्यों?
 
-## कैसे:
-```Kotlin
-val str = "Hello World!"
-val lowercaseStr = str.lowercase()
+String को lower case में convert करना मतलब उसके हर character को छोटे अक्षरों में बदलना है। यह काम अक्सर इसलिए किया जाता है ताकि text की comparison uniform तरीके से हो सके, जैसे कि user input और database values के बीच।
 
-println(lowercaseStr) // prints "hello world!"
+## कैसे करें:
+
+Kotlin में, String को lower case में convert करने के लिए `.toLowerCase()` या `.lowercase()` function का इस्तेमाल करें।
+
+```kotlin
+fun main() {
+    val originalString = "नमस्ते, कोटलिन!"
+    val lowerCaseString = originalString.lowercase()
+    
+    println(lowerCaseString) // आउटपुट: "नमस्ते, कोटलिन!"
+}
 ```
+## गहराई से जानकारी:
 
-यहाँ, `lowercase()` फ़ंक्शन सभी अक्षरों को निचले मामले में बदल देती है। उसके बाद हम उसे print करते हैं।
+पहले, `.toLowerCase()` का इस्तेमाल होता था, पर Kotlin 1.5 से `.lowercase()` अधिक पसंद किया जाने लगा है क्योंकि यह locale-sensitive है। Locale मतलब प्रोग्राम जो भी भाषा या क्षेत्रीय सेटिंग्स को मानता है। `.lowercase(Locale)` संस्करण का इस्तेमाल करके हम विशिष्ट भाषा के नियमों के अनुसार अक्षरों को छोटा कर सकते हैं।
 
-## गहराई में: 
-String को lowercase में कन्वर्ट करने के विचारण का इतिहास समय समय पर बदलता रहा है। पहले `toLowerCase()` फ़ंक्शन का उपयोग किया जाता था, लेकिन अब `lowercase()` Kotlin 1.5.0 के साथ आया है। वैकल्पिक तंत्र डिफ़ॉल्ट के रूप में `Locale` आधारित कार्य कर सकते हैं, जैसे `str.lowercase(Locale.getDefault())`। आंतरिक रूप में, यह फ़ंक्शन अक्षरों के यूनिकोड मान को मोडिफ़ाई करके काम करता है।
+इसके alternatives में regular expressions और manual iterations शामिल हैं, पर वे अधिक कोड और जटिलता लाते हैं। Kotlin के `.lowercase()` function का इस्तेमाल करने से यह काम आसान और प्रभावी रहता है।
 
-## अतिरिक्त जानकारी:
-- [Kotlin Documentation : String functions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/lowercase.html)
-- [GeeksforGeeks : Kotlin String Methods](https://www.geeksforgeeks.org/kotlin-string/)
-- [Stackoverflow Thread on toLowerCase()](https://stackoverflow.com/questions/11520244/kotlin-string-tolowercase-locale-is-mailformed)
+इसके आंतरिक implementation में, Kotlin JVM (Java Virtual Machine) पर चलते हुए Java के `String.toLowerCase()` method का उपयोग करता है। लेकिन Kotlin/Native या Kotlin/JS जैसे पर्यावरणों में, यह अपने निजी implementation पर निर्भर करता है।
+
+## और जानकारी के लिए:
+
+- Kotlin डॉक्यूमेंटेशन: [Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- Oracle Java डॉक्यूमेंटेशन: [toLowerCase()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toLowerCase())

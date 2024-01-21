@@ -1,7 +1,8 @@
 ---
-title:                "기본 인증을 이용한 HTTP 요청 보내기"
-html_title:           "Arduino: 기본 인증을 이용한 HTTP 요청 보내기"
-simple_title:         "기본 인증을 이용한 HTTP 요청 보내기"
+title:                "기본 인증을 사용한 HTTP 요청 보내기"
+date:                  2024-01-20T18:01:20.579854-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "기본 인증을 사용한 HTTP 요청 보내기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,29 +11,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 사용하나요? (What & Why?)
+## What & Why? (무엇과 왜?)
+HTTP 기본 인증으로 요청을 보내는 것은, 클라이언트가 서버에 사용자 이름과 비밀번호를 전송하여 자신을 인증하는 방식입니다. 이는 보안이 필요한 데이터에 접근할 때 사용됩니다.
 
-HTTP 요청에서 기본 인증을 사용하면, 웹서버가 사용자신원 확인하는 방법입니다. 프로그래머는 이것을 사용하여 보안이 필요한 페이지에 액세스합니다. 
-
-## 어떻게 사용하나요? (How to:)
-
-다음의 C++ 코드의 예제는 libcurl을 사용해 기본 인증을 사용한 HTTP 요청을 보내는 방법을 보여줍니다.
-
+## How to: (어떻게:)
 ```C++
 #include <iostream>
-#include <string>
 #include <curl/curl.h>
+#include <string>
 
-// 데이터 콜백 함수
-size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* userp){
-    size_t totalSize = size * nmemb;
-    userp->append((char*)contents, totalSize);
-    return totalSize;
+static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp) {
+    ((std::string*)userp)->append((char*)contents, size * nmemb);
+    return size * nmemb;
 }
 
-// HTTP 요청 함수
-void SendHttpRequest(const char* username, const char* password) {
-    CURL* curl;
+int main() {
+    CURL *curl;
     CURLcode res;
     std::string readBuffer;
 
@@ -40,39 +34,41 @@ void SendHttpRequest(const char* username, const char* password) {
 
     curl = curl_easy_init();
     if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "http://www.example.com");
+        const std::string username = "user";
+        const std::string password = "pass";
+        std::string credentials = username + ":" + password;
 
-        std::string userpwd = std::string(username) + ":" + std::string(password);
-        curl_easy_setopt(curl, CURLOPT_USERPWD, userpwd.c_str());
-
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com/data");
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
+        curl_easy_setopt(curl, CURLOPT_USERPWD, credentials.c_str());
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
 
         res = curl_easy_perform(curl);
 
         if(res != CURLE_OK) {
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+            std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res) << std::endl;
         } else {
-            std::cout << readBuffer << std::endl;
+            std::cout << "Output: " << readBuffer << std::endl;
         }
 
         curl_easy_cleanup(curl);
     }
 
     curl_global_cleanup();
+
+    return 0;
 }
 ```
-이 코드를 실행하면, "http://www.example.com" 웹 페이지의 내용이 표시됩니다.
+Sample Output:
+```
+Output: {"status":"success","data":"Authenticated Data Here."}
+```
 
-## 깊게 알아봅시다 (Deep Dive)
+## Deep Dive (심층 분석)
+HTTP 기본 인증은 HTTP/1.0 부터 있었으며, 가장 단순하고 구현하기 쉬운 인증 방식입니다. 하지만, 보안이 중요한 애플리케이션에서는 기본 인증을 지양하고 SSL/TLS 같은 프로토콜과 결합하여 사용하면 좋습니다. OAuth 같은 토큰 기반 인증은 더 안전한 대안으로 자리잡고 있습니다. C++에서는 libcurl이라는 라이브러리를 사용하여 HTTP 요청을 보내고, 인증을 처리할 수 있습니다. 이 코드 예제는 libcurl을 사용하여 기본 인증이 포함된 HTTP GET 요청을 보낸 방법을 보여줍니다.
 
-기본 인증(Basic Authentication)은 가장 오래된 HTTP 인증 방식 중 하나로, 현재 많이 사용되지는 않지만, 간단한 인증 요구 사항에 여전히 사용됩니다. 하지만 기본 인증은 ID와 비밀번호를 Base64 인코딩하여 전송하는 방식이므로, 보안에 취약합니다. 그래서 현재는 보안 강화를 위한 대안 방식으로 OAuth, JWT(Json Web Token) 등이 사용되곤 합니다.
-
-르브컬은 C/C++에서 HTTP 통신을 위해 널리 사용되는 라이브러리 중 하나입니다. 멀티플랫폼을 지원하며, HTTPS를 비롯한 다양한 프로토콜을 지원하고, 다양한 HTTP 인증 방법을 사용할 수 있습니다.
-
-## 더 알아봅시다 (See Also)
-
-- libcurl 공식 사이트 : https://curl.haxx.se/libcurl/c/
-- HTTP Basic Authentication 설명 : https://en.wikipedia.org/wiki/Basic_access_authentication
-- OAuth 공식 사이트 : https://oauth.net/
-- JWT(Json Web Token) 공식 사이트 : https://jwt.io/
+## See Also (더보기)
+- cURL 공식 문서: [https://curl.se/libcurl/](https://curl.se/libcurl/)
+- cURL에 대한 기본 인증 가이드: [https://curl.se/docs/httpscripting.html#Basic_authentication](https://curl.se/docs/httpscripting.html#Basic_authentication)
+- HTTP 인증에 대한 더 깊은 정보: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

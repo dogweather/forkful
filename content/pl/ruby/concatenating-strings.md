@@ -1,7 +1,8 @@
 ---
-title:                "Łączenie ciągów znaków"
-html_title:           "Arduino: Łączenie ciągów znaków"
-simple_title:         "Łączenie ciągów znaków"
+title:                "Łączenie łańcuchów znaków"
+date:                  2024-01-20T17:35:25.859561-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Łączenie łańcuchów znaków"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,36 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Łączenie łańcuchów znaków w Ruby: Przewodnik krok po kroku
-
-## Co to jest i dlaczego?
-
-Łączenie łańcuchów znaków, znane również jako konkatenacja, polega na łączeniu dwóch lub więcej ciągów znaków w jeden. Programiści robią to do manipulacji danymi tekstowymi i tworzą efektywne interfejsy użytkownika.
+## Co i dlaczego?
+Konkatenacja stringów to po prostu łączenie tekstów w jeden ciąg. Programiści robią to, by składać wiadomości, generować unikatowe identyfikatory, czy też po prostu łączyć wartości z różnych źródeł.
 
 ## Jak to zrobić:
+```Ruby
+# Operator plus (+) do łączenia stringów
+powitanie = "Cześć, " + "jak " + "się masz?"
+puts powitanie
+#=> Cześć, jak się masz?
 
-Jest wiele sposobów łączenia łańcuchów znaków w Ruby. Pokażę kilka przykładów.
+# Interpolacja stringów z użyciem #{}
+imie = "Ania"
+powitanie = "Hej, #{imie}!"
+puts powitanie
+#=> Hej, Ania!
 
-``` Ruby
-# Metoda 1: Użycie operatora '+'
-imie = 'Adam'
-powitanie = 'Cześć, ' + imie
-puts powitanie # Wydrukuj 'Cześć, Adam'
+# Metoda concat
+tekst = "Warszawa"
+tekst.concat(" to", " moje", " miasto")
+puts tekst
+#=> Warszawa to moje miasto
 
-# Metoda 2: Użycie operatora '<<'
-powitanie = 'Cześć, '
-powitanie << 'Adam'
-puts powitanie # Wydrukuj 'Cześć, Adam'
+# Operator shovel (<<), nazywany też operatorem łopatki
+powitanie = "Witaj"
+powitanie << " w " << "świecie Ruby!"
+puts powitanie
+#=> Witaj w świecie Ruby!
 ```
 
-## Głębsze zrozumienie
+## Wgłębiamy się
+Konkatenacja stringów nie zawsze była tak wydajna jak obecnie. Historycznie, każde użycie `+` tworzyło nowy obiekt w pamięci, co zużywało zasoby przy dużych lub wielokrotnych konkatenacjach. Ruby 1.9 wprowadziło zmiany w tym zakresie, optymalizując działanie. Alternatywą do `+` jest używanie metod `concat` lub `<<`, które zmieniają obiekt bezpośrednio, nie tworząc niepotrzebnie nowych. W wypadku dużych ilości danych może to znacząco wpłynąć na wydajność. Interpolacja jest zwykle najszybsza i najbardziej polecana, zwłaszcza gdy pracujemy z symbolami oraz zmiennymi.
 
-Kiedy łączymy łańcuchy znaków, Ruby tworzy nowy obiekt. Z punktu widzenia wydajności, operator `<<` jest lepszy, ponieważ zmienia oryginalny łańcuch bez tworzenia nowego obiektu. 
-
-Historycznie, konkatenacja była w niektórych językach programowania trudna do osiągnięcia. Ruby jednak od początku swojego istnienia ułatwia to zadanie.
-
-Istnieją również metody alternatywne, takie jak `concat()` lub `join()`. Wymagają one jednak większej wiedzy i umiejętności.
-
-## Zobacz także:
-
-1. Dokumentacja Ruby dla łańcuchów znaków: [https://ruby-doc.org/core/String.html](https://ruby-doc.org/core/String.html)
+## Zobacz również
+- Ruby Documentation on String: https://ruby-doc.org/core/String.html
+- "Effective Ruby" by Peter J. Jones – zawiera rozdział o przetwarzaniu stringów.
+- Ruby Style Guide: https://rubystyle.guide/#string-interpolation - omawia konwencje związane z stylami łączenia stringów.

@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie argumentów linii poleceń"
-html_title:           "Bash: Czytanie argumentów linii poleceń"
-simple_title:         "Czytanie argumentów linii poleceń"
+title:                "Odczytywanie argumentów linii poleceń"
+date:                  2024-01-20T17:55:28.350388-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie argumentów linii poleceń"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,38 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-
-Czytanie argumentów z linii poleceń to proces pobierania danych wprowadzonych przy uruchomieniu skryptu. Programiści robią to, aby umożliwić użytkownikom dostosowywanie działania programu zamiast tworzyć stałe skrypty.
+## Co i Dlaczego?
+Czytanie argumentów z linii poleceń pozwala skryptom Bash przyjmować dane wejściowe podczas uruchamiania. Używamy tego, bo to elastyczny sposób na dostosowywanie zachowania skryptów na podstawie użytkownika lub kontekstu uruchomienia.
 
 ## Jak to zrobić:
-
-Here's how you read command line arguments in a bash script:
-
 ```Bash
 #!/bin/bash
 echo "Pierwszy argument: $1"
 echo "Drugi argument: $2"
 echo "Wszystkie argumenty: $@"
+echo "Ilość argumentów: $#"
 ```
-Przykładowe wyjście dla `./myscript.sh argument1 argument2`:
-
+Uruchomienie skryptu:
 ```Bash
-Pierwszy argument: argument1
-Drugi argument: argument2
-Wszystkie argumenty: argument1 argument2
+$ ./skrypt.sh Arg1 Arg2 Arg3
+Pierwszy argument: Arg1
+Drugi argument: Arg2
+Wszystkie argumenty: Arg1 Arg2 Arg3
+Ilość argumentów: 3
 ```
 
-## Pogłębione informacje
+## Pogłębienie:
+Kiedyś pisaliśmy skrypty bez możliwości łatwego przekazywania opcji. Teraz, z argumentami, możemy tworzyć bardziej elastyczne i interaktywne skrypty. Alternatywy jak `getopts` czy `optarg` pozwalają na bardziej zaawansowane przetwarzanie opcji, np. flag (`-h`) czy długa opcja (`--help`). W Bashu, argumenty są dostępne poprzez specjalne zmienne `$1`, `$2`, itd., aż do `$9` – dla pierwszych dziewięciu argumentów, `$0` jest nazwą skryptu, `$@` zawiera wszystkie argumenty, a `$#` mówi, ile ich jest.
 
-1) Kontekst historyczny: Bash (Bourne Again Shell) pojawił się w 1989 roku jako ulepszona wersja Bourne Shell (sh). Zasady przekazywania argumentów z linii poleceń zostały z niego zaczerpnięte.
-
-2) Alternatywy: Inne shelle jak zsh czy fish mają podobne mechanizmy obsługi argumentów, ale mogą zawierać dodatkowe funkcje.
-
-3) Szczegóły implementacji: Argumenty z linii poleceń są dostępne jako specjalne zmienne: $1, $2, ..., $n, gdzie n to numer argumentu. $@ to specjalna zmienna zawierająca wszystkie argumenty.
-
-## Zobacz również
-
-- Przewodnik Bash dla początkujących: https://www.gnu.org/software/bash/manual/bash.html
-- Porównanie różnych shelli: https://www.tecmint.com/different-linux-shells/
-- Wyjaśnienie o zmiennej $@: https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html
+## Zobacz też:
+- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
+- [Advanced Bash-Scripting Guide](http://tldp.org/LDP/abs/html/)

@@ -1,6 +1,7 @@
 ---
 title:                "Generowanie liczb losowych"
-html_title:           "Gleam: Generowanie liczb losowych"
+date:                  2024-01-20T17:49:38.135362-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generowanie liczb losowych"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,40 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to i dlaczego?
-
-Generowanie liczb losowych to technika, która tworzy ciąg liczb, które nie mają z góry zdefiniowanej kolejności lub wzoru. Programiści robią to, aby dodać element niewiadomej do swoich programów, co jest szczególnie użyteczne w grach, symulacjach i testach.
+## Co i dlaczego?
+Generowanie losowych liczb to proces tworzenia nieprzewidywalnych wartości. Programiści wykorzystują to do symulacji, testów, gier, i gdziekolwiek niezbędna jest element losowości.
 
 ## Jak to zrobić:
-
-Możemy wygenerować liczbę losową w PHP (wersjat 8.0.2) używając funkcji rand(). Oto przykład:
-
 ```PHP
 <?php
-echo rand() . "\n";
-echo rand(5, 15);
+// Proste losowanie liczby:
+echo rand() . "\n"; // Wyświetla losową liczbę
+
+// Losowanie liczby z zakresu:
+echo rand(1, 100) . "\n"; // Losowa liczba od 1 do 100
+
+// Dla lepszej jakości losowania (PHP 7+):
+echo random_int(1, 100) . "\n"; // Bezpieczniejsza losowa liczba od 1 do 100
 ?>
 ```
-Wynik:
-
-```PHP
-12345
-7
+Przykładowe wyjście:
 ```
-Pierwsza linia kodu generuje dowolną liczbę losową, a druga linia generuje liczbę losową pomiędzy 5 a 15.
+2123456789
+57
+23
+```
 
-## Głębsze spojrzenie:
+## Deep Dive
+Generowanie liczb losowych w PHP zaczęło się od funkcji `rand()`, która jednak nie zawsze była idealna pod względem jakości generowanych liczb. Z czasem, w wersji PHP 7, wprowadzono `random_int()`, zapewniającą lepszą jakość i bezpieczeństwo (kryptograficznie silne generowanie liczb losowych). Warto też wspomnieć o alternatywie `mt_rand()`, która jest szybsza i często ma lepsze właściwości statystyczne niż `rand()` ale nie jest tak bezpieczna jak `random_int()`.
 
-Historia generowania liczb pseudolosowych sięga roku 1946, kiedy John Von Neumann zaproponował metodę środkowego kwadratu. Do dzisiaj rozwijane są nowe metody, takie jak LFSR czy Twister Mersenne'a.
-
-Alternatywą dla rand() w PHP jest funkcja mt_rand(), która używa generatora liczb pseudolosowych Twister Mersenne'a. Co więcej, PHP 7.0 wprowadził funkcję random_int(), która jest bezpieczna kryptograficznie.
-
-Co do szczegółów implementacji, rand() generuje liczby na podstawie wzoru (a*X + c) mod m. W PHP, 'm' to RAND_MAX, domyślnie ustawiony na wartość 32767.
-
-## Zobacz też:
-
-Do pogłębienia wiedzy na temat generowania liczb losowych, polecam następujące źródła:
-- PHP Manual, funkcja rand(): https://www.php.net/manual/en/function.rand.php
-- Wikipedia, Generowanie liczb pseudolosowych: https://pl.wikipedia.org/wiki/Generowanie_liczb_pseudolosowych
-- PHP Manual, funkcja mt_rand(): https://www.php.net/manual/en/function.mt-rand.php
-- PHP Manual, funkcja random_int(): https://www.php.net/manual/en/function.random-int.php
+## Zobacz również:
+- [PHP Manual on random_int](https://www.php.net/manual/en/function.random-int.php)
+- [PHP Manual on mt_rand](https://www.php.net/manual/en/function.mt-rand.php)
+- Secure PHP random numbers guide: [Paragon Initiative Enterprises blog](https://paragonie.com/blog/2016/05/how-generate-secure-random-numbers-in-various-programming-languages)

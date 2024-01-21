@@ -1,6 +1,7 @@
 ---
 title:                "Interpolera en sträng"
-html_title:           "C++: Interpolera en sträng"
+date:                  2024-01-20T17:51:14.346851-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolera en sträng"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,26 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Interpolering av en sträng i JavaScript är processen att införa variabler direkt in i en strängtext. Programmerare gör detta för att göra sin kod renare och lättare att läsa, vilket sparar tid och energi.
+Interpolering av strängar låter dig infoga variabler eller uttryck direkt i en sträng. Det förenklar och gör koden mer läsbar när du behöver bygga strängar dynamiskt.
 
-## Så här gör du:
-Här är en grundläggande kodsnutt för interpolering av strängar i JavaScript:
-```Javascript 
-let namn = 'Karl';
-let hälsning = `Hej, ${namn}!`;
-console.log(hälsning); //"Hej, Karl!"
+## Hur gör man:
+```javascript
+// Exempel med template literals (ES6 och framåt)
+let namn = 'Erik';
+let meddelande = `Hej ${namn}, välkommen tillbaka!`;
+console.log(meddelande); // Output: Hej Erik, välkommen tillbaka!
 ```
-I det här exemplet skapar vi en sträng, "hälsning", där variabeln "namn" är infogad direkt i strängen med hjälp av '${...}' syntaxen.
 
-## Djupt Dyk
-Historiskt sett hade JavaScript inte inbyggd stränginterpolering förrän ES6 (ES2015). Innan det var konkatenation med plus-tecken (+) standardmetoden för att infoga variabler i strängar, vilket kan vara rörigt och svårläst med stora strängar och många variabler.
+Äldre sätt, innan ES6:
+```javascript
+let namn = 'Erik';
+let meddelande = 'Hej ' + namn + ', välkommen tillbaka!';
+console.log(meddelande); // Output: Hej Erik, välkommen tillbaka!
+```
 
-Alternativt kan du använda den äldre metoden för konkatenation om du arbetar i en äldre kodbas eller har kompatibilitetsproblem. Men för den bästa användarupplevelsen och korrekt kodstruktur bör du använda stränginterpolering. 
+## Fördjupning
+Interpolering av strängar har funnits i programmeringsspråk länge, men JavaScript fick det först med ES6 (EcmaScript 2015) och användningen av *template literals*. Tidigare sätt att bygga strängar inkluderade konkatenering med `+` eller arraymetoder som `join()`.
 
-När det gäller implementering fungerar stränginterpolering i JavaScript genom tokenisering. JavaScript-motorn hittar '${...}' i en sträng och byter ut det med värdet av variabeln eller uttrycket inom parenteserna.
+Alternativ till interpolering:
+- Konkatenering: `let fullständigtMeddelande = 'Hej ' + förnamn + ' ' + efternamn;`
+- `join()`: `let delar = ['Hej', förnamn, efternamn]; let fullständigtMeddelande = delar.join(' ');`
 
-## Se Även 
-För mer information och djupgående exempel, kolla in dessa källor:
+Implementeringsdetaljer:
+- Interpolering kan använda uttryck, inte bara variabler: ``let meddelande = `Resultatet är ${1 + 2}`; // "Resultatet är 3"``
+- Template literals tillåter flerradiga strängar utan `\n`: ``let lista = `Första raden andra raden tredje raden`;``
+- Template strings kan innehålla "tagged template literals", vilket är avancerat och låter en funktion bearbeta strängen och interpoleringar.
 
-- [MDN Web Docs: Template literals (Template literals (Template Strings))](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-- [W3schools: JavaScript String Interpolation (JavaScript stränginterpolering)](https://www.w3schools.com/js/js_string_templates.asp)
+## Se även
+- MDN Web Docs: Template literals (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+- ECMAScript 2015 Language Specification: Template Literals (https://www.ecma-international.org/ecma-262/6.0/#sec-template-literals)

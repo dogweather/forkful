@@ -1,7 +1,8 @@
 ---
-title:                "एक तारीख को स्ट्रिंग में परिवर्तित करना"
-html_title:           "Java: एक तारीख को स्ट्रिंग में परिवर्तित करना"
-simple_title:         "एक तारीख को स्ट्रिंग में परिवर्तित करना"
+title:                "तारीख को स्ट्रिंग में बदलना"
+date:                  2024-01-20T17:36:43.142494-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "तारीख को स्ट्रिंग में बदलना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,43 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+डेट को स्ट्रिंग में कन्वर्ट करना मतलब है कैलेंडर डेट को टेक्स्ट फॉर्मेट में बदलना। प्रोग्रामर्स यह इसलिए करते हैं ताकि डेट्स को आसानी से पढ़ा और स्टोर किया जा सके।
 
-तारीख को स्ट्रिंग में बदलना, यानी डेटा प्रक्रियाकरण के दौरान दिनांक का प्रतिनिधित्व करना, एक महत्वपूर्ण कक्षा है। यह तारीखों को एक साधारण स्वरूप में परिवर्तित करना संभव करता है, जिससे वेब पेजेस, डाटाबेस और अन्य आउटपुट में उपयोग किया जा सकता है।
-
-## कैसे करें:
-
-```C++
+## How to: (कैसे करें:)
+```c++
 #include <iostream>
-#include <string>
-#include <sstream>
 #include <iomanip>
+#include <sstream>
 #include <ctime>
 
-int main() {
-    std::tm t = {};
-    std::istringstream ss("2022-10-02 18:37:00");
-    
-    ss >> std::get_time(&t, "%Y-%m-%d %H:%M:%S");
-    std::string date = std::put_time(&t, "%Y-%m-%d %H:%M:%S");
-    
-    std::cout << date << std::endl;
+std::string convertDateToString(const tm &date) {
+    std::ostringstream stream;
+    stream << std::put_time(&date, "%d-%m-%Y");
+    return stream.str();
+}
 
+int main() {
+    std::time_t t = std::time(nullptr);
+    std::tm *datePtr = std::localtime(&t);
+    
+    std::string dateString = convertDateToString(*datePtr);
+    std::cout << "आज की तारीख (स्ट्रिंग में): " << dateString << std::endl;
+    
     return 0;
 }
 ```
-आउटपुट:
 
-```C++
-2022-10-02 18:37:00
+सैंपल आउटपुट:
+```
+आज की तारीख (स्ट्रिंग में): 31-12-2023
 ```
 
-## गहराई में:
+## Deep Dive (गहराई से जानकारी):
+पहले कंप्यूटर सिस्टम्स में डेट और टाइम हैंडलिंग बहुत बेसिक थी। C++ में `<ctime>` हेडर फ़ाइल से डेट और टाइम का प्रबंधन किया जाता है, वहीं `<iomanip>` डेटा को फॉर्मेट करने के काम आती है। `std::put_time` एक मॉडर्न C++ फ़ंक्शन है जो `std::ostringstream` के साथ मिलकर डेट को चुनिंदा फॉर्मेट में स्ट्रिंग बनाने में सक्षम बनाता है। विकल्प के रूप में, बूस्ट लाइब्रेरी और C++20 से `std::format` जैसे अधिक आधुनिक समाधान भी मौजूद हैं, पर ये सभी कंपाइलर पर उपलब्ध नहीं हो सकते।
 
-तारीखों को स्ट्रिंग में परिवर्तित करने की अवधारणा स्वीकार्य डेटा प्रसंस्करण के इतिहास में गहरी जड़ें है। C++ ``(the current version)`` में ``std::get_time`` और ``std::put_time`` इस्तेमाल करके आप अपनी तारीख को किसी भी स्वरूप में परिवर्तित कर सकते हैं। वैकल्पिक रूप से, आप strftime का उपयोग कर सकते हैं जो POSIX C library का हिस्सा है।
+`std::put_time` और `strftime` फ़ंक्शन दशकों पुराने C फ़ंक्शन्स के मॉडर्न विकल्प हैं। सही फॉर्मेट स्पेसिफ़ायर ("`%d`", "`%m`", "`%Y`", इत्यादि) चुनना महत्वपूर्ण है, क्योंकि वे तारीख, महीने, साल को विभिन्न तरीकों में प्रस्तुत करने का काम करते हैं।
 
-## और देखें:
-
-1. [C++ दस्तावेज़ी: स्ट्रिंग:](https://en.cppreference.com/w/cpp/string)
-2. [C++ दस्तावेज़ी: टाईम:](https://en.cppreference.com/w/cpp/chrono)
-3. [डेटा और समय के स्वरूपन के बारे में और जानें](https://www.cplusplus.com/reference/ctime/strftime/)
+## See Also (और भी जानकारी):
+- C++ `<ctime>` लाइब्रेरी डॉक्युमेंटेशन: https://en.cppreference.com/w/cpp/header/ctime
+- C++ `<iomanip>` लाइब्रेरी डॉक्युमेंटेशन: https://en.cppreference.com/w/cpp/header/iomanip
+- `std::put_time` के बारे में जानकारी: https://en.cppreference.com/w/cpp/io/manip/put_time
+- C++20 `std::format`: https://en.cppreference.com/w/cpp/utility/format

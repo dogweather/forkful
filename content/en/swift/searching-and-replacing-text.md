@@ -1,6 +1,7 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "Arduino recipe: Searching and replacing text"
+date:                  2024-01-20T17:58:44.178581-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Searching and replacing text"
 programming_language: "Swift"
 category:             "Swift"
@@ -12,27 +13,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Searching and replacing text is a common operation programmers use to change or manipulate strings in various formats. It is crucial for handling data amendment, format correction, and enhancing readability in programming scripts.
+Searching and replacing text in programming is exactly what it sounds like: scanning strings for certain patterns and swapping those out for something else. Programmers do this a lot - for data cleanup, user interface updates, or prepping strings for processing.
 
 ## How to:
 
-Here's how you can search and replace a text in Swift:
 ```Swift
-var str = "Hello, World!"
-str = str.replacingOccurrences(of: "World", with: "Swift")
-print(str) 
-//Output will be: "Hello, Swift!"
+var greetings = "Hello, old friend!"
+
+// Simple replace
+greetings = greetings.replacingOccurrences(of: "old", with: "new")
+print(greetings) // "Hello, new friend!"
+
+// Using options for case-insensitive replace
+let caseInsensitiveResult = greetings.replacingOccurrences(
+    of: "hello",
+    with: "Hi",
+    options: .caseInsensitive
+)
+print(caseInsensitiveResult) // "Hi, new friend!"
+
+// Replacing with regular expressions
+let regexResult = greetings.replacingOccurrences(
+    of: "\\bnew\\b",
+    with: "best",
+    options: .regularExpression
+)
+print(regexResult) // "Hello, best friend!"
 ```
 
-This code searches for the word "World" in the variable `str` and replaces it with "Swift". The `replacingOccurrences()` method does the job here.
- 
-## Deep Dive 
-- **Historical context:** Searching and replacing text has been a key tool in programming since the early days of computing. It originated from text editing software and has been made more straightforward in modern programming languages, including Swift.
+## Deep Dive
 
-- **Alternatives:** There are several ways to search and replace text in Swift. Besides `replacingOccurrences()`, a `range(of: )` method can be used in combination with a `replaceSubrange(:with: )` method.
+We've been swapping text in strings since the early days of computing. Initially, it was with simple command-line tools like `sed`. In Swift, `replacingOccurrences(of:with:)` does the heavy lifting, and you get more control with options like `.caseInsensitive` or `.regularExpression`.
 
-- **Implementation details:** `replacingOccurrences()` is a method in Swift that replaces all occurrences of the target string with the replacement string within the original string. It is case-sensitive and its execution speed depends on the length of the original string and the number of replacements. 
+Alternatives in Swift include using `NSRegularExpression` for complex patterns and `NSMutableString` for mutable string operations. Under the hood, Swift's string replacement methods bridge to powerful Objective-C counterparts, providing speed and versatility.
 
-## See Also 
-1. Swift Documentation on strings: [Strings and Characters - Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-3. Guides on Swift String Manipulation: [Hacking with Swift](https://www.hackingwithswift.com)
+## See Also
+
+- [Swift String Documentation](https://developer.apple.com/documentation/swift/string/)
+- [Regular Expressions in Swift](https://nshipster.com/swift-regular-expressions/)
+- [Swift.org - Working with Strings](https://swift.org/documentation/api-design-guidelines/#strive-for-fluent-usage)

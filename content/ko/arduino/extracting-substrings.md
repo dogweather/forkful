@@ -1,6 +1,7 @@
 ---
 title:                "부분 문자열 추출"
-html_title:           "Arduino: 부분 문자열 추출"
+date:                  2024-01-20T17:45:29.708465-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "부분 문자열 추출"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,32 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+문자열에서 부분 문자열을 추출하는 것은 특정 데이터 조각을 얻기 위해 문자열을 자르는 과정입니다. 프로그래머들은 정보를 분석하고, 가공하며, 특정 조건에 맞는 내용을 찾기 위해 이 작업을 수행합니다.
 
-문자열에서 서브스트링(Substring) 추출은 특정 부분 문자열을 얻기 위한 행위입니다. 프로그래머들이 이 작업을 수행하는 이유는 데이터 처리를 위해서나 더 의미있는 정보를 얻기 위함입니다.
+## How to: (방법)
+```arduino
+String fullText = "Hello from Arduino land!";
+String subText = fullText.substring(6, 10);
 
-## 어떻게 하는가:
+void setup() {
+  Serial.begin(9600);
+  Serial.println(subText); // "from"
+}
 
-```Arduino 
-String str = "Arduino 프로그래밍!";
-String result = str.substring(0, 7);
-
-// 결과 출력
-Serial.println(result); 
+void loop() {
+  // Nothing to loop over here.
+}
 ```
-이 코드는 "Arduino 프로그래밍!" 문자열에서 "Arduino "를 추출합니다.
 
-## 심층 탐구
+## Deep Dive (심층 탐구)
+아두이노에서 문자열 조작은 임베디드 시스템에서 중요한 능력 중 하나입니다. 과거에는 메모리 제약 때문에 복잡한 문자열 작업을 피했지만, 현대적 아두이노는 더 많은 메모리와 처리 능력을 가지고 있어 문자열 작업이 더 쉬워졌습니다. 대안으로는 C 스타일의 char 배열과 함수가 있습니다만, String 클래스는 사용하기 편하며, 높은 수준의 문자열 조작을 제공합니다. 부분 문자열 추출시 주의할 점은 메모리 관리입니다; String 객체는 동적으로 메모리 할당을 관리하기에 메모리 누수가 발생할 수 있습니다.
 
-(1) 잠깐 역사를 들여다보면, 서브스트링 추출은 오래 전부터 컴퓨터 프로그래밍의 핵심 요소 중 하나였습니다. 텍스트 처리, 파싱 등 많은 영역에서 사용되었습니다. 
-
-(2) 이 외에도, 서브스트링의 추출을 위한 다른 방법들이 있습니다. 예를 들어, 정규 표현식을 이용할 수 있습니다. 
-
-(3) 서브스트링을 추출하는 알고리즘은 매우 간단합니다. 주요 작업은 기본 문자열에서 원하는 위치의 문자를 복사하는 것입니다. 간단히 말해, 필요한 부분을 '자르는' 작업입니다.
-
-## 참고 자료
-
-다른 관련 정보를 찾아 보려면 아래의 링크를 참조하세요.
-
-* [아두이노 공식 페이지](https://www.arduino.cc)
-* [아두이노 공식 문서: substring()](https://www.arduino.cc/en/Tutorial/StringSubstring)
+## See Also (참고 자료)
+- 아두이노 공식 레퍼런스, 문자열 관련: [https://www.arduino.cc/reference/en/language/variables/data-types/string/](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- `substring()` 메소드 사용 방법 상세: [https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)

@@ -1,7 +1,8 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:01:01.941259-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,63 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
+## क्या और क्यों?
 
-HTTP अनुरोध के साथ Basic Authentication (मूल प्रमाणीकरण) एक संवाददाता के रूप में किसी सर्वर को पहचानने का तरीका है। प्रोग्रामर्स यह सुरक्षित और विश्वसनीय डेटा के अदल-बदल के लिए करते हैं।
+HTTP request भेजना वेब सर्वर पर data मांगना या भेजना है। Basic authentication वह process है जिसमें username और password से हम अपनी पहचान साबित करते हैं। यह जानकारी को सुरक्षित रखते हुए सर्वर से संवाद करने के लिए की जाती है।
 
-## How to: (कैसे करें)
+## कैसे करें:
 
-```C 
+```C
+#include <stdio.h>
+#include <stdlib.h>
 #include <curl/curl.h>
 
-int main(void){
+int main() {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
 
-  CURL *curl;
-  CURLcode res;
+        // Username and password for basic authentication
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+        curl_easy_setopt(curl, CURLOPT_USERNAME, "your-username");
+        curl_easy_setopt(curl, CURLOPT_PASSWORD, "your-password");
 
-  curl_global_init(CURL_GLOBAL_DEFAULT);
+        // Setting the URL for the request
+        curl_easy_setopt(curl, CURLOPT_URL, "https://api.example.com/data");
+        
+        // Execute the HTTP request
+        CURLcode res = curl_easy_perform(curl);
 
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
-    curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
-    curl_easy_setopt(curl, CURLOPT_USERNAME, "user");
-    curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
+        if(res != CURLE_OK) {
+            fprintf(stderr, "Curl request failed: %s\n", curl_easy_strerror(res));
+        }
 
-    res = curl_easy_perform(curl);
-
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
-
-    curl_easy_cleanup(curl);
-  }
-
-  curl_global_cleanup();
-
-  return 0;
+        // Cleanup
+        curl_slist_free_all(headers);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
 }
 ```
-इस कोड का आउटपुट कुछ ऐसा होगा:
-```
-curl_easy_perform() failed: Failed to connect to example.com port 443: Connection refused
-```
 
-## Deep Dive (गहरी जांच)
+Sample output के लिए यहाँ नहीं कुछ दिखाया जा सकता है क्योंकि यह program काम करने पर कोई विशिष्ट output terminal पर नहीं दिखाता। CURL library का use करके हम HTTP request भेजते हैं और यदि कोई error हो तो उसे terminal पर print करते हैं। 
 
-### Historical Context (ऐतिहासिक संदर्भ)
-Basic Authentication HTTP प्रमाणीकरण की सबसे सरल प्रकार है और यह HTTP 1.0 ज़माने से है। 
+## गहराई से जानकारी:
 
-### Alternatives (विकल्प)
-OAuth और Digest Access Authentication, Basic Authentication के मुकाबले अधिक सुरक्षित विकल्प हो सकते हैं। 
+HTTP Basic Authentication इंटरनेट के शुरुआती दिनों से है। यह Base64 encoding का उपयोग करता है लेकिन एन्क्रिप्टेड नहीं होता, इसलिए HTTPS के साथ use करना ज्यादा सुरक्षित है।
 
-### Implementation Details (कार्यान्वयन विवरण)
-CURL लाइब्रेरी, जो HTTP अनुरोधों को करने के लिए बहुत लोकप्रिय है। यह प्रमाणन और सत्यापन को संभालता है।
+Alternatives में OAuth, Digest Authentication और API keys शामिल हैं, जो ज्यादा सुरक्षा और features देते हैं।
 
-## See Also (यह भी देखें):
+इम्प्लीमेंटेशन के लिए, C language में अकसर libcurl library का इस्तेमाल होता है, जो एक मजबूत और versatile tool है। यह multiple protocols support करता है और platform-independent है। इसका मतलब है कि एक बार सीखने पर आप इसे विभिन्न प्रकार की projects में use कर सकते हैं।
 
-1. **libcurl**: (https://curl.haxx.se/libcurl/c/) libcurl का API डॉक्यूमेंटेशन। 
-2. **HTTP प्रमाणीकरण**: (https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication) MDN Web Docs में HTTP प्रमाणीकरण। 
-3. **CURL प्रलेखन**: (https://curl.haxx.se/docs/) CURL स्थापना और उपयोग के निर्देश।
+## और देखें:
 
-ध्यान दें कि दी गई URL अस्थायी हो सकती हैं।
+- libcurl का official documentation: [curl.haxx.se/libcurl](https://curl.haxx.se/libcurl/)
+- HTTP Basic Authentication के बारे में MDN Web Docs: [developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- Basic Authentication के alternatives के लिए OAuth 2.0: [oauth.net/2/](https://oauth.net/2/)

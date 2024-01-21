@@ -1,7 +1,8 @@
 ---
-title:                "发送http请求"
-html_title:           "C#: 发送http请求"
-simple_title:         "发送http请求"
+title:                "发出 HTTP 请求"
+date:                  2024-01-20T17:59:19.205694-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "发出 HTTP 请求"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,41 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
-发送HTTP请求是一个过程，我们可以通过它从Web服务器获取数据或发送数据到Web服务器；程序员需要这样做以实现数据交互和网络通信。
+## What & Why?（是什么？为什么？）
+HTTP请求用来与网络上的服务通信。这是因为编程时经常需要从网络上获取数据或触发远程服务。
 
-## 如何实现：
-C#通过HttpClient类提供了发送HTTP请求的功能。在以下示例中，我们将发送一个GET请求到指定的url，并打印出响应的数据。
+## How to:（如何做：）
+C#里发HTTP请求简单直接。先看看`HttpClient`的用法：
 
-```C#
+```c#
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-public class Program
+class Program
 {
-    public static async Task Main()
+    static async Task Main()
     {
-        HttpClient client = new HttpClient();
-        
-        HttpResponseMessage response = await client.GetAsync("http://example.com");
-
+        using var client = new HttpClient();
+        HttpResponseMessage response = await client.GetAsync("https://api.example.com/data");
         string responseBody = await response.Content.ReadAsStringAsync();
-
         Console.WriteLine(responseBody);
     }
 }
-
 ```
-运行这段代码，你会在控制台上看到从网址"http://example.com" 返回的HTML内容。
 
-## 深度掘进：
-发送HTTP请求的方法在历史上经历了很多变化。早期版本的.NET使用`WebClient`和`HttpWebRequest`进行通信。后来，`HttpClient`在.NET 4.5中引入，并持续在.NET Core和.NET 5中得到改进和优化。
+运行后输出（假设响应是JSON）：
 
-虽然`HttpClient`是主流的选择，但你还可以使用`RestSharp`、`Flurl.Http`等其他网络库。每个库都有其特定的优缺点，选择哪个库会根据你的项目需求。
+```c#
+{"name": "Example", "value": "123"}
+```
 
-由于`HttpClient`实例可以共享并重用，并且可以有效地管理网络资源，现在推荐使用`HttpClientFactory`来创建`HttpClient`实例。
+## Deep Dive（深入了解）
+在.NET框架出现之前，发起HTTP请求可能涉及更底层的操作，例如直接使用sockets。`HttpClient`是.NET 4.5中引入的，提供了一组易于使用的方法来发送HTTP请求。
 
-## 参考链接：
-1. [HttpClient类文档](https://docs.microsoft.com/zh-cn/dotnet/api/system.net.http.httpclient?view=net-5.0)
-2. [HttpClientFactory使用指南](https://docs.microsoft.com/zh-cn/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests)
+除了`HttpClient`，还有别的选择，如`WebRequest`，以及第三方库，如`RestSharp`。但`HttpClient`是现代、异步编程的首选。
+
+`HttpClient`用起来方便，但需要注意资源管理。一般推荐作为单例使用，不要为每个请求创建新实例。
+
+## See Also（另请参阅）
+- [HttpClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-6.0) - 官方文档，详细介绍`HttpClient`的使用。
+- [Implementing HTTP call retries with exponential backoff with Polly](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/implement-http-call-retries-exponential-backoff-polly) - 如何使用Polly实现 HTTP 调用重试与退避策略。

@@ -1,6 +1,7 @@
 ---
 title:                "Excluindo caracteres que correspondem a um padrão"
-html_title:           "Arduino: Excluindo caracteres que correspondem a um padrão"
+date:                  2024-01-20T17:41:59.623503-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "C++"
 category:             "C++"
@@ -10,41 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## O Que e Por Quê?
+Deletar caracteres que correspondem a um padrão é uma operação de filtragem onde escolhemos caracteres específicos de uma string para remover, baseando-nos em critérios definidos. Programadores fazem isso para limpeza de dados, formatação de texto ou para preparar strings para processamento adicional.
 
-O processo de excluir caracteres correspondentes a um padrão é uma operação frequente na manipulação de strings em programação. Programadores fazem isso para fazer limpeza de dados, otimizar strings, e implementar funcionalidades de busca.
+## Como Fazer:
 
-## Como fazer:
-
-Aqui está um exemplo de como remover todos os caracteres 'a' de uma string usando a biblioteca padrão C++.
-
-```C++
+```c++
+#include <iostream>
+#include <regex>
 #include <string>
-#include <algorithm>
 
 int main() {
-    std::string str = "banana";
-    str.erase(std::remove(str.begin(), str.end(), 'a'), str.end());
-    std::cout << str;
+    std::string texto = "Exemplo123 com números e !@# símbolos.";
+    std::regex padrao("[0-9!@#]"); // Define o padrão para dígitos e símbolos específicos.
+
+    // Remove caracteres que correspondem ao padrão.
+    std::string resultado = std::regex_replace(texto, padrao, "");
+
+    std::cout << resultado << std::endl; // Saída: Exemplo com números e  símbolos.
 
     return 0;
 }
 ```
 
-Saída:
-
-```C++
-bnn
-```
-
 ## Mergulho Profundo
+Antigamente, a manipulação de strings em C++ era feita principalmente utilizando funções da biblioteca `<cstring>`, como `strtok()` e `strcspn()`, com operações manuais de iteração e substituição de caracteres. Com a evolução da linguagem, a biblioteca padrão de C++ introduziu a classe `std::string` e, posteriormente, as expressões regulares chegaram com o C++11 na biblioteca `<regex>`. 
 
-O método mostrado acima utiliza a biblioteca STL (Standard Template Library) que vem sendo parte do C++ desde a sua implementação inicial, e é altamente otimizado para eficiência. Além do STL, há várias bibliotecas de terceiros que podem ser usadas para manipular strings, cada qual com suas próprias vantagens e desvantagens.
-
-A maneira como o código acima funciona é, primeiro, usando a função `std::remove`. Essa função apenas move os elementos que não são iguais a 'a' para a frente na string e retorna um iterador para a nova 'fim' da string. Em seguida, a função `std::string::erase` é usada para remover fisicamente o restante da string.
+Usar `std::regex` é uma forma boa e moderna de se trabalhar com padrões de texto, mas não é a única. Se performance é primordial, é possível que métodos manuais, bibliotecas externas otimizadas como RE2 ou até funcionalidades do C++20, como `std::ranges`, sejam mais adequadas. A compreensão da implementação de expressões regulares também é útil, pois elas podem ter custos computacionais significativos, especialmente em padrões complexos ou strings muito grandes.
 
 ## Veja Também
-
-1. Documentação da função erase: http://www.cplusplus.com/reference/string/string/erase/
-2. Documentação da função remove: http://www.cplusplus.com/reference/algorithm/remove/
-3. Informação adicional sobre manipulação de strings: https://pt.wikibooks.org/wiki/Programar_em_C%2B%2B/As_strings
+- Documentação oficial do C++ sobre `std::regex`: https://en.cppreference.com/w/cpp/regex
+- Tutorial C++ sobre expressões regulares: https://www.learncpp.com/cpp-tutorial/regular-expressions/
+- Uma discussão sobre performance de expressões regulares em C++: https://stackoverflow.com/questions/896654/regex-performance

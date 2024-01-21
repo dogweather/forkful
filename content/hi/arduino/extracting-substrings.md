@@ -1,6 +1,7 @@
 ---
 title:                "सबस्ट्रिंग्स निकालना"
-html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+date:                  2024-01-20T17:45:21.176227-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,25 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-Substring उत्तरण का मतलब होता है एक मूल वाक्यांश से एक छोटा वाक्यांश प्राप्त करना। यह एक महत्वपूर्ण कार्य है जब किसी विचरित डेटा के एक विशेष भाग की आवश्यकता होती है।
+## What & Why? (क्या और क्यों?)
+Substring का मतलब है किसी string का एक छोटा हिस्सा निकालना। Programmers इसे use करते हैं डेटा को analyze करने, manipulate करने या किसी specific text को extract करने के लिए।
 
-## कैसे करें:
+## How to: (कैसे करें:)
 ```Arduino
-String myString = "हेलो, दुनिया!";
-String mySubstring = myString.substring(6, 12);
-Serial.println(mySubstring);
+String sentence = "Hello, Arduino World!";
+String sub = sentence.substring(7, 14);
+
+Serial.begin(9600);
+Serial.println(sub);  // Output: "Arduino"
 ```
-ऊपरी कोड चलाने पर output दुनिया! होगा।
+यहां, `"Arduino"` वह substring है जो हमने `sentence` से index 7 से 14 तक निकाली है।
 
-## गहराई में:
-1) **ऐतिहासिक संदर्भ:** Arduino एक open-source प्लेटफॉर्म है, जो 2005 के करीब बनाई गई थी। प्रारंभ में, उप-वाक्यांश उत्तरण की क्षमता नहीं थी, लेकिन इसकी ओर महत्वपूर्ण मांग ने इसे जल्द ही जोड़ दिया।
+```Arduino
+String anotherExample = "Extract this part!";
+String extracted = anotherExample.substring(8);
 
-2) **विकल्प:** आप split function का भी उपयोग कर सकते हैं, लेकिन यह एक तार हिट के बीच के characters बंद करता है। अगर आपको केवल string का एक विशेष भाग चाहिए, तब substring सबसे playing and simple विधियां है।
+Serial.begin(9600);
+Serial.println(extracted);  // Output: "this part!"
+```
+इसमें, केवल starting index देने से, end तक का पूरा text extract हो जाता है।
 
-3) **आवेदन विवरण:** `substring()` function दो arguments लेता है: प्रारंभ और अंत का zero-based इंडेक्स, और यह इंडेक्स के बीच का वाक्यांश वापस देता है।
+## Deep Dive (गहराई में जानकारी)
+Substring निकालने की ability बहुत early programming languages जैसे की C में भी थी। Arduino अपने `String` class में `substring()` function प्रदान करता है।
 
-## आगे देखो:
-Arduino के अन्य functions के बारे में जानने के लिए, नीचे दी गई links देखें:
-- Arduino `indexOf()` Function: [Link](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/indexof/)
-- Arduino `charAt()` Function: [Link](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/charat/)
+Alternatives में `strtok()`, `strstr()`, or custom functions जैसे की `char arrays` पर loops चलाना शामिल हैं। पर, `String` class का `substring()` function easy और error-free होता है।
+
+Implementation के लिए, `substring()` function start index और end index (optional) लेता है। अगर end index provide नहीं किया जाये तो यह string के end तक extract कर लेता है। Memory management और large strings के efficient handling को ध्यान में रखना ज़रूरी है।
+
+## See Also (और देखें)
+- Arduino String Reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- Arduino String Manipulation Tips: https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringAdditionOperator
+- The Evolution of String functions in C: https://en.wikipedia.org/wiki/C_string_handling

@@ -1,6 +1,7 @@
 ---
 title:                "दो तारीखों की तुलना"
-html_title:           "Elixir: दो तारीखों की तुलना"
+date:                  2024-01-20T17:33:17.190221-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "दो तारीखों की तुलना"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,36 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-तारिक़ों की तुलना नामक संकल्पना कंप्यूटर शास्त्र में दो विशिष्ट दिनांकों की तुलना वाली क्रमागत सन्दर्भ का निर्देशन करती है। प्रोग्रामर इसे अक्सर टश्टों को मैच करने, अद्यतितावस्थाओं को नियंत्रित करने या समय-आधारित कार्रवाई के लिए उपयोग करते हैं।
+दो तारीखों की तुलना करना मतलब है यह पहचानना कि कौन सी तारीख पहले है, बाद में है या दोनों बराबर हैं। प्रोग्रामर इसे इवेंट्स, बुकिंग सिस्टम और समय-संबंधित गणनाओं को संभालने के लिए करते हैं।
 
-## कैसे करें:
+## How to: (कैसे करें:)
 
-किसी Elm प्राथमिकता को उत्तरार्ध, मानते हुए, आप ```elm``` कोड ब्लॉक के द्वारा दिनांकों की तुलना कर सकते हैं:
-
-```elm
+```Elm
 import Time
+import Date exposing (Date)
 
-date1 : Time.Posix
-date1 = Time.millisToPosix 1580515200000
+compareDates : Date -> Date -> Basics.Order
+compareDates date1 date2 =
+    Date.compare date1 date2
 
-date2 : Time.Posix
-date2 = Time.millisToPosix 1596230400000
+-- उदाहरण प्रयोग
+date1 : Date
+date1 =
+    Date.fromIsoString "2023-02-20" |> Result.withDefault Date.zero
 
-compareDates : Order
-compareDates = compare date1 date2
+date2 : Date
+date2 =
+    Date.fromIsoString "2023-02-21" |> Result.withDefault Date.zero
+
+-- compareDates का इस्तेमाल करके तुलना करना
+result : String
+result =
+    case compareDates date1 date2 of
+        LT -> "Date1 पहले है"
+        GT -> "Date1 बाद में है"
+        EQ -> "दोनों तारीखें बराबर हैं"
+
+-- आउटपुट: "Date1 पहले है"
 ```
 
-इस कोड में `compareDates` का परिणाम LT (Less Than) होगा, इसका मतलब है कि `date1` `date2`से पहले है।
+## Deep Dive (गहराई से जानकारी)
 
-## गहरी गोताखोरी:
+Elm में तारीखें की तुलना `Date` मॉड्यूल के `compare` फंक्शन के जरिए की जाती है, जो `Basics.Order` टाइप (LT, GT, EQ) वापस करता है। इतिहास में, Elm 0.19 से पहले तारीखों की तुलना के लिए अलग फंक्शन्स थे, पर अब `Date` मॉड्यूल मानक उपकरणों के साथ आता है। वैकल्पिक रूप से, आप `Time.posix` का उपयोग कर time stamps की सीधी तुलना भी कर सकते हैं। इसका कार्यान्वयन `time` पैकेज में होता है, जिसे `core` लाइब्रेरी में आपको आयात करना होता है।
 
-यद्यपि Elm की पीढ़ी 0.19 से, यहां ध्यान दिया गया है कि दिनांक तुलना कैसे की जाए। इसके विकल्प में JavaScript कोड शामिल हो सकते थे, लेकिन Elm में इसे विस्तार से कवर किया गया है। ऐसा करने का एक विकल्प Elm में तारीखों को `Time.Time`से `Int`में परिवर्तित करने का उपयोग करना होता है, जिससे संभवतः यथास्थान दृष्टांत निर्दिष्ट होता है।
+## See Also (देखने योग्य अन्य स्रोत)
 
-## यह भी देखें:
-
-खुद को और अधिक गहराता ले, पेनिक्स मिला संवादाता पैकेज के बारे में और जानने के लिए निम्नलिखित स्रोत हैं:
-
-1. [Elm प्रशिक्षण सामग्री](https://github.com/dwyl/learn-elm)
-2. [Elm दस्तावेज़ीकरण](https://package.elm-lang.org/packages/elm/time/latest/)
+- Elm `Date` के डॉक्युमेंटेशन: [packages.elm-lang.org/packages/justinmimbs/date/latest/](https://package.elm-lang.org/packages/justinmimbs/date/latest/)
+- Elm `Time` के डॉक्युमेंटेशन: [package.elm-lang.org/packages/elm/time/latest/](https://package.elm-lang.org/packages/elm/time/latest/)
+- Elm Guide on Time and Dates: [guide.elm-lang.org/effects/time.html](https://guide.elm-lang.org/effects/time.html)

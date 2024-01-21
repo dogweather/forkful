@@ -1,7 +1,8 @@
 ---
-title:                "גירוד מספרים אקראיים"
-html_title:           "Haskell: גירוד מספרים אקראיים"
-simple_title:         "גירוד מספרים אקראיים"
+title:                "גילוי מספרים אקראיים"
+date:                  2024-01-20T17:49:05.091760-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "גילוי מספרים אקראיים"
 programming_language: "C"
 category:             "C"
 tag:                  "Numbers"
@@ -10,31 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה & למה?
-הפקת מספרים אקראיים בתכנות היא דרך ליצור מספרים אשר לא ניתן לחזות את הערך שלהם מראש. מפתחים משתמשים בה במגוון מקרים, כמו משחקים, בדיקות, אבטחה ותצוגת מידע אקראי.
+## What & Why? (מה ולמה?)
+גילוי מספרים אקראיים ב-C זה ליצור ערכים שלא ניתן לחזות מראש. מתכנתים משתמשים בזה לצורכי בדיקות, משחקים, אבטחה, ועוד.
 
-## איך לכתוב:
-הנה דוגמה של קוד בשפת C שמייצר מספר אקראי:
+## How to (איך לעשות)
+בראש ובראשונה, תכליתלי להוסיף הכותרת `#include <stdlib.h>` כדי להשתמש בפונקציה `rand()`, ואת `#include <time.h>` כדי להשתמש ב `time()` בתור זרע עבור הגנרטור האקראי.
+
 ```C
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-int main(){
-    srand(time(0)); // Initialization
-    int randNum = rand(); // Generates a random number
-
-    printf("%d\n", randNum); // Prints the random number
-
+int main() {
+    srand(time(NULL)); // זריעה אקראית בהתבסס על הזמן
+    for (int i = 0; i < 5; i++) {
+        printf("%d\n", rand()); // מדפיס חמישה מספרים אקראיים
+    }
     return 0;
 }
 ```
-בעת ריצה, הקוד ידפיס מספר אקראי שונה בכל פעם.
 
-## Deep Dive
-הפקת מספרים אקראיים הייתה חשובה מאז הימים הראשונים של התכנות. למדנו שאין משהו כזה "אקראיות אמת" במחשב, אך ניתן להשיג "אקראיות תוך כדי" באמצעות שימוש בפונקציות מתאימות כמו `rand()`. ישנם חלופות להפקת מספרים אקראיים, כמו `random()` או `drand48()`, אך הבחירה נותרת למפתח. 
+הרצת הקוד תיצור פלט של חמישה מספרים אקראיים שונים בכל פעם.
 
-## See Also
-לקבלת מידע נוסף והגדרות מורחבות, הקישורים הבאים יכולים להיות שימושיים:
-- [דוקומנטציה של הפונקציה rand()](https://www.cplusplus.com/reference/cstdlib/rand/)
-- [רעיון מאחורי אקראיות במחשב](https://medium.com/dev-genius/there-is-no-such-thing-as-a-random-number-d284759f4dae)
+## Deep Dive (צלילה עמוקה)
+הפונקציה `rand()` מגיעה איתנו מימי ה-C הקדומים, והיא נותנת גישה ישירה למספרים אקראיים. חשוב לזכור שהיא לא נותנת אקראיות "אמיתית", אלא פסוודו-אקראיות. עבור גילוי אקראיות אמיתית יש להשתמש במקורות ייעודיים.
+
+השתמשו בפונקציה `srand()` כדי לזרוע את הגנרטור כל פעם בתחילה; ללא זריעה, הסדרה של המספרים תשאר זהה בכל הרצה. בדרך כלל אנחנו אומרים שופשר להשתמש ב`time(NULL)` בתור זרע אבל זה לא ייתן אבטחה גבוהה.
+
+לחלופין, במערכת הפעלה ישנים API ייעודיים לאקראיות גבוהה יותר, כמו `/dev/random` ו`/dev/urandom` בלינוקס או `CryptGenRandom` בווינדוס.
+
+## See Also (ראה גם)
+- [cplusplus.com: rand](https://www.cplusplus.com/reference/cstdlib/rand/)
+- [cplusplus.com: srand](https://www.cplusplus.com/reference/cstdlib/srand/)
+- [GNU C Library: ISO Random](https://www.gnu.org/software/libc/manual/html_node/ISO-Random.html)
+- [Linux man page: random(4)](https://man7.org/linux/man-pages/man4/random.4.html)

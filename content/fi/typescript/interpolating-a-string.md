@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Bash: Merkkijonon interpolointi"
+date:                  2024-01-20T17:51:42.701699-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,29 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miten merkkijonojen interpolointia käytetään TypeScriptin avulla?
-Tervetuloa oppimaan yhdessä merkkijonon interpoloinnista TypeScriptin (nykyversio) avulla yksinkertaisin, suoraviivaisin sanankääntein. Vältämme turhaa jaarittelua ja keskitymme asiaan. 
+## What & Why? (Mitä & Miksi?)
+String-interpolointi on tapa sisällyttää muuttujien arvoja suoraan merkkijonoihin. Ohjelmoijat käyttävät tätä ominaisuutta, koska se tekee koodista selvempää ja tiiviimpää.
 
-## Mikä & Miksi?
-Merkkijonon interpolointi on tapa yhdistää muuttujia ja laskentaa suoraan merkkijonojen sisään. Tämä tekee koodin selkeämmäksi ja helpommin luettavaksi.
+## How to: (Kuinka tehdä:)
+```typescript
+// Alustetaan muuttuja
+let username: string = "Tuomas";
 
-## Näin se toimii:
-```TypeScript
-let nimi = "Pekka";
-let tervehdys = `Hei, ${nimi}!`;
+// Interpoloidaan string literalin sisällä
+let greeting: string = `Hei, ${username}! Tervetuloa!`;
 
-console.log(tervehdys); // tulostaa: "Hei, Pekka!"
+console.log(greeting); // Tulostaa: Hei, Tuomas! Tervetuloa!
 ```
 
-## Sukellus syvemmälle: 
-Merkkijonon interpolointi on ollut käytössä vuosikymmenten ajan eri kielissä, mutta se lisättiin JavaScriptiin (ja siten TypeScriptiin) vasta ES6-versiossa. 
+Toinen esimerkki, jossa käytetään laskentaa:
 
-Vaihtoehtoja interpoloinnille ovat muun muassa perinteinen merkkijonojen yhdistäminen sekä + -operaattori. Niiden käyttö voi kuitenkin olla monimutkaista ja altis virheille.
+```typescript
+let itemPrice: number = 19.95;
+let taxRate: number = 0.24;
+let finalPrice: string = `Tuotteen loppuhinta on: ${itemPrice * (1 + taxRate)} euroa.`;
 
-Interpoloinnin taustalla TypeScript luo uuden merkkijonon, johon se liittää välittömästi muuttujat ja lausekkeet. Sen ansiosta koodista tulee siistimpää.
+console.log(finalPrice); // Tulostaa: Tuotteen loppuhinta on: 24.734 euroa.
+```
 
-## Katso myös:
-- [Merkkijonojen interpolointi MDN Web Docsissa](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Template_literals)
-- [TypeScriptin viralliset dokumentit](https://www.typescriptlang.org/docs/)
+## Deep Dive (Syväsukellus)
+Ennen kuin ECMAScript 2015 (ES6) toi template literals -ominaisuuden JavaScriptiin, kehittäjät käyttivät `+` operaattoria tai vanhempia menetelmiä stringien yhdistämiseen. Interpolointi vie kuitenkin vähemmän tilaa ja on helpommin ymmärrettävää.
 
-Muista yhtenäinen ja siisti koodaus!
+Vaihtoehtoina interpoloinnille on yhä vanhan koulukunnan yhdistely plussa-operaattorilla tai `String.concat`-metodilla, tosin nämä tekevät koodista helposti sekavamman.
+
+Implementaatiotasolla TypeScript kääntää interpoloidut stringit tavalliseen JavaScriptiin käyttäen template literals -syntaksia tai vanhempaa syntaksia, riippuen kohde-ympäristön tukemista ominaisuuksista.
+
+## See Also (Katso myös)
+- [Template literals (Template strings) MDN Web Docsissa](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+- [TypeScript Handbook: Template Strings](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)

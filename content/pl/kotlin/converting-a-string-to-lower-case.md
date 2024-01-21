@@ -1,6 +1,7 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+date:                  2024-01-20T17:38:56.746032-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,35 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Zamiana łańcucha znaków na małe litery to proces, gdzie wszystkie wielkie litery w tekście stają się małymi. Programiści używają tej zmiany dla unifikacji danych, porównywania łańcuchów bez uwzględnienia wielkości liter lub przygotowania tekstu do wyświetlenia w jednolitym formacie.
 
-Konwertowanie tekstu na małe litery to proces zmiany wszelkich dużych liter w łańcuchu na ich małe odpowiedniki. Robimy tak, kiedy chcemy porównać dwa ciągi bez uwzględniania ich wielkości liter.
-
-## Jak tego dokonać:
-
-Żeby to zrobić, wykorzystamy wbudowaną funkcję Kotlin `toLowerCase()`. Przyjmuje ona stringa i zwraca kopię stringa z wszystkimi literami zamienionymi na małe.
-
-```Kotlin
+## How to: (Jak to zrobić:)
+```kotlin
 fun main() {
-    val text = "KOTLin ProGrAmming"
-    val lowerCaseText = text.toLowerCase()
-    println(lowerCaseText)
+    val originalString = "Witaj Świecie!"
+    val lowerCaseString = originalString.lowercase()
+
+    println("Original: $originalString")
+    println("Lowercase: $lowerCaseString")
 }
 ```
-Wyjście:
-
-```Kotlin
-kotlin programming
+Output:
+```
+Original: Witaj Świecie!
+Lowercase: witaj świecie!
 ```
 
-## Szeroki kontekst:
+## Deep Dive (Dogłębna Analiza)
+Historia zmiany wielkości liter sięga czasów przed informatyką, gdzie ręczne przepisywanie tekstów wymuszało ujednolicenie wyglądu dokumentów. W Kotlinie metoda `lowercase()` zastąpiła starszą `toLowerCase()`, wprowadzając poprawną obsługę wszystkich znaków Unicode, w tym specyficznych dla języka polskiego. Alternatywą może być samodzielne mapowanie każdej litery z użyciem własnej funkcji, ale nie jest to zalecane ze względu na złożoność i wydajność. Implementacja `lowercase()` korzysta z pewnych trików Unicode i algorytmów normalizujących, by obsłużyć różne przypadki, takie jak ligatury, czy specjalne znaki alfabetów niełacińskich.
 
-1. **Kontekst historyczny**: funkcja `toLowerCase()` istnieje od pierwszych wersji języków programowania, takich jak Java, co pokazuje jej trwałe znaczenie.
-2. **Alternatywy**: w Kotlinie jest także `toLowerCase(Locale)`, który pozwala przekształcić string na  małe litery zgodnie z lokalnymi ustawieniami np. dla różnych języków.
-3. **Szczegóły implementacji**: `toLowerCase()` działa na zasadzie przeglądania każdego znaku ciągu i sprawdzania, czy jest literą dużą - jeśli tak, jest zamieniany na małą literę.
-
-## Zobacz także:
-
-1. Oficjalna dokumentacja Kotlin (toLowerCase()): https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html
-2. StackOverflow (discussing toLowerCase()): https://stackoverflow.com/questions/5054995/how-to-convert-lower-case-to-upper-case-while-ignore-non-alphabetic-characters
-3. Kotlin String API: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html
+## See Also (Zobacz również)
+- Dokumentacja Kotlin na temat `lowercase()`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/lowercase.html
+- Historia Unicode: https://home.unicode.org/
+- Porównanie metod `lowercase()` i `toLowerCase()`: https://kotlinlang.org/docs/whatsnew14.html#better-charsequence-handling

@@ -1,6 +1,7 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "Arduino recipe: Searching and replacing text"
+date:                  2024-01-20T17:58:42.437495-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Searching and replacing text"
 programming_language: "Python"
 category:             "Python"
@@ -11,48 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Searching and replacing text is all about finding a specific sequence of characters in a string, and then modifying it. Programmers often need this for tasks like data scrubbing, file renaming, pattern replacing, and refactoring code.
+Searching and replacing text is about finding strings in a block of text and changing them to something else. Programmers do it for editing code, processing data, or automating refactoring tasks.
 
 ## How to:
-
-Here's a classic Python 'replace' method:
-
 ```Python
-text = "Hello, World!"
-print(text.replace("World", "Python"))
-```
+# Using str.replace() for simple replacement
+text = "I like Python. Python is awesome!"
+text = text.replace("Python", "programming")
+print(text)  # Output: I like programming. programming is awesome!
 
-The output will be:
-
-```Python
-Hello, Python!
-```
-
-In Python's regex (re) module, we find more advanced search and replace:
-
-```Python
+# Using re.sub() for pattern-based replacement with regex
 import re
-text = "Hello, World!"
-print(re.replace("World", "Python", text))
-```
-
-Again, our output:
-
-```Python
-Hello, Python!
+text = "Contact us at support@example.com"
+new_text = re.sub(r'\b[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b', 'support@newdomain.com', text)
+print(new_text)  # Output: Contact us at support@newdomain.com
 ```
 
 ## Deep Dive
-
-Historically, the Unix 'sed' tool was the gold standard for text search and replace. Python has borrowed from its functionality, implementing it with simplicity and elegance.
-
-Python's `replace` method is easy and fast for basic needs. When you need advanced functionality (e.g., case insensitive replace, limit the number of replacements), Python's `re` module comes into play. Under the hood, it uses complex algorithms to handle even multi-line strings efficiently.
+In the early days of programming, text editing was a manual slog. Enter regex (regular expressions), built-in the 1950s, making searching a less headache-inducing affair. For simple replaces, `str.replace()` is your go-to. It's straightforward and great for one-off replacements. When you've got patterns, like phone numbers, emails, or dates, regex with `re.sub()` is the magic wand. It finds patterns with a special syntax and swaps them out. Keep in mind, regex can be as quirky as it's powerful; it’s a tool where you get better the more puzzles you solve.
 
 ## See Also
-
-Python's str().replace() method: https://docs.python.org/3/library/stdtypes.html#str.replace
-
-Python's re.sub() method: https://docs.python.org/3/library/re.html#re.sub
-
-Comparison between Python's string methods and regex: https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285
+- [Python `str.replace()` documentation](https://docs.python.org/3/library/stdtypes.html#str.replace)
+- [Python `re` module documentation](https://docs.python.org/3/library/re.html)
+- [Regex101](https://regex101.com/): To test regex patterns online
+- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/): A book where you can learn more about practical text processing tasks.

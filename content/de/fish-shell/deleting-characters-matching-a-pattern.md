@@ -1,7 +1,8 @@
 ---
-title:                "Zeichen löschen, die einem Muster entsprechen"
-html_title:           "C#: Zeichen löschen, die einem Muster entsprechen"
-simple_title:         "Zeichen löschen, die einem Muster entsprechen"
+title:                "Löschen von Zeichen, die einem Muster entsprechen"
+date:                  2024-01-20T17:41:58.604658-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -11,33 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Löschen von Zeichen, die einem Muster entsprechen, ermöglicht es uns, spezifische Daten aus einer größeren Datengruppe zu entfernen. Wir tun dies, um die Datenbereinigung und -manipulation zu erleichtern und zu verbessern, insbesondere wenn wir nur bestimmte Daten aus einer Gruppe benötigen.
+Das Löschen von Zeichen, die einem Muster entsprechen, ist ein Prozess, bei dem bestimmte Zeichensequenzen aus einer Zeichenkette entfernt werden. Diese Technik wird von Programmierern verwendet, um Daten zu säubern, Eingaben zu validieren oder einfach Strings zu bearbeiten.
 
-## So geht's:
-Lasst uns ein Beispiel im Fish Shell Codeblock betrachten:
+## Wie geht das:
+Der `string` Befehl in Fish bietet mehrere Optionen, um Zeichen, die einem Muster entsprechen, zu löschen. Hier ein paar Beispiele:
 
 ```Fish Shell
-# Angenommen, Sie haben die folgende Zeichenkette:
-set string 'Hallo, fish shell!'
+# Einfaches Löschen eines Musters aus einer Zeichenkette
+echo "FischSchwimmtSchnell" | string replace "Schnell" ""
+# Ausgabe: FischSchwimmt
 
-# Sie können Zeichen löschen, die einem Muster entsprechen, zum Beispiel:
-echo $string | string replace -ra '[,!]' ''
+# Glob-Muster (*) verwenden, um alle Zeichen nach "Fisch" zu entfernen
+echo "FischSchwimmtSchnell" | string replace -r "Fisch.*" "Fisch"
+# Ausgabe: Fisch
 
-# Ausgabe:
-Hallo fish shell
+# Mit regulären Ausdrücken (Regex) – hier entfernen wir alle Großbuchstaben
+echo "FischSchwimmtSchnell" | string replace -r "[A-Z]" ""
+# Ausgabe: ischchwimmtchnell
 ```
-In diesem Beispiel haben wir alle Kommata und Ausrufezeichen aus der Zeichenkette entfernt.
 
-## Vertiefung:
-Das Löschen von Zeichen, die einem Muster entsprechen, hat seine Wurzeln in den Regular Expressions (RegEx). RegEx unterstützt komplexe Mustererkennungs- und Manipulationsfähigkeiten. Andere Shell-Skriptsprachen wie Bash haben ihre eigene Syntax und Methoden zum Löschen von Zeichen.
+## Deep Dive
+Früher mussten Shell-Nutzer oft auf externe Programme wie `sed` oder `awk` zurückgreifen, um Textmanipulationen durchzuführen. In Fish kann nun vieles direkt über eingebaute Funktionen wie `string` erfolgen – das sorgt für eine klarere Syntax und Befehlsstruktur. Alternativ kann man immer noch `sed` oder `awk` nutzen, wenn komplexere Textmanipulationen gefordert sind. Die `string` Funktion in Fish wurde mit der Intention entwickelt, die geläufigsten Textoperationen zu vereinfachen und schneller zugänglich zu machen.
 
-Es gibt auch andere Methoden im Fish Shell zum Löschen von Zeichen. Eine davon ist die `string match` Funktion, die wir mit der `-v` Option (invert) verwenden können, um die nicht übereinstimmenden Zeichen beizubehalten.
-
-Implementation Details: Fish Shell verwendet Internally Regular Expressions, um Muster zu erkennen und dann die `string replace` Funktion, um die entsprechenden Zeichen zu entfernen.
-
-## Siehe auch:
-Für zusätzliche Informationen, schaut euch die Dokumentation und Wikis an:
-
-- Fish Shell Dokumentation zur `string replace` Funktion: https://fishshell.com/docs/3.1/cmds/string-replace.html
-- Ein tieferer Einblick in RegEx: https://www.regular-expressions.info/
-- Fish Shell Wiki und Gemeinschaft: https://github.com/fish-shell/fish-shell/wiki
+## Siehe auch
+- Die offizielle Dokumentation zur `string` Funktion: [fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
+- Eine Einführung in reguläre Ausdrücke in Fish: [fishshell.com/docs/current/tutorial.html#tut_regexes](https://fishshell.com/docs/current/tutorial.html#tut_regexes)
+- Informationen über reguläre Ausdrücke mit `sed`: [gnu.org/software/sed/manual/sed.html](https://www.gnu.org/software/sed/manual/sed.html)

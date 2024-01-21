@@ -1,7 +1,8 @@
 ---
-title:                "기본 인증을 이용한 HTTP 요청 보내기"
-html_title:           "Arduino: 기본 인증을 이용한 HTTP 요청 보내기"
-simple_title:         "기본 인증을 이용한 HTTP 요청 보내기"
+title:                "기본 인증을 사용한 HTTP 요청 보내기"
+date:                  2024-01-20T18:02:05.435471-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "기본 인증을 사용한 HTTP 요청 보내기"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,36 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 필요한가?
+## What & Why? (무엇이며 왜 사용하나요?)
+HTTP 요청 시 기본 인증을 사용하면 서버에 사용자 자격 증명을 전달합니다. 이 방법은 API 사이의 간단한 인증을 위해 프로그래머들이 사용합니다.
 
-HTTP 요청은 웹 서버와 정보를 주고받기 위한 방법입니다. 기본 인증(Basic Authentication)을 사용하여 HTTP 요청을 보내면, 요청하는 사람이 누구인지 확인하는 절차를 추가하여 보안을 강화할 수 있습니다. 이는 웹 자원에 대한 무분별한 접근을 방지하는 데 도움이 됩니다.
-
-## 실행 방법:
-
-PHP를 사용하여 기본 인증이 있는 HTTP 요청을 보내는 방법은 다음과 같습니다.
+## How to: (어떻게 하나요?)
+PHP로 기본 인증을 포함한 HTTP 요청을 보내는 예제입니다.
 
 ```PHP
 <?php
+$url = 'https://api.example.com/data';
+$username = 'user1';
+$password = 'pass123';
+
 $context = stream_context_create([
     'http' => [
-        'header' => "Authorization: Basic " . base64_encode("username:password")
+        'header' => "Authorization: Basic " . base64_encode("$username:$password")
     ]
 ]);
-$response = file_get_contents('http://example.com', false, $context);
+
+$result = file_get_contents($url, false, $context);
+
+if ($result !== false) {
+    echo '성공적으로 데이터를 받았습니다:';
+    var_dump($result);
+} else {
+    echo '요청이 실패했습니다.';
+}
 ?>
 ```
-이 코드를 실행하면, 웹서버는 인증 정보(여기서는 'username'과 'password')를 갖고 있는 HTTP 요청을 받게 됩니다.
 
-## 특별히 알아두기:
+Sample Output:
+```
+성공적으로 데이터를 받았습니다:
+string(23) "{"data": "sample data"}"
+```
 
-사실상, 기본 인증은 저수준 보안 메커니즘으로, 아주 오래 전부터 사용해 왔습니다. 그러나 여전히 통신을 암호화하지 않으므로 사용자 이름과 비밀번호가 인터넷을 통해 노출될 수 있습니다.
+## Deep Dive (깊이 알아보기)
+기본 인증(Basic Authentication)은 HTTP 1.0 때부터 사용되었습니다. 'Authorization' 헤더에 사용자 이름과 비밀번호를 `base64`로 인코딩하여 보냅니다. 보안 강화를 위해서는 HTTPS를 사용하세요. 대안으로 OAuth 같은 토큰 기반 인증이 있습니다. 실제 구현할 때 `cURL`이나 `Guzzle` 같은 HTTP 클라이언트 라이브러리를 사용하는 것이 더 나을 수 있습니다.
 
-더 나은 대안은 베어러 토큰 또는 OAuth 같은 보다 진보된 인증 방식입니다. 그 외에도, Guzzle이나 cURL과 같은 PHP 라이브러리를 사용하면 복잡성을 줄이고 보다 안전한 요청을 할 수 있습니다.
-
-기본 인증의 구현은 매우 간단하게 이루어질 수 있습니다. 인증 정보를 base64 인코딩한 후 "Authorization: Basic" 헤더에 추가하기만 하면 됩니다.
-
-## 참고자료:
-
-2. [PHP cURL 공식 문서](https://www.php.net/manual/en/book.curl.php)
-3. [Basic Authentication에 대한 모질라(Mozilla) 문서](https://developer.mozilla.org/ko/docs/Web/HTTP/Authentication)
-4. [OAuth에 대한 RFC 문서](https://tools.ietf.org/html/rfc6749)
+## See Also (관련 자료)
+- [PHP: HTTP context options](https://www.php.net/manual/en/context.http.php)
+- [PHP: Basic Authentication](https://www.php.net/manual/en/features.http-auth.php)
+- [Guzzle, PHP HTTP client](http://docs.guzzlephp.org/en/stable/)
+- [cURL in PHP](https://www.php.net/manual/en/book.curl.php)

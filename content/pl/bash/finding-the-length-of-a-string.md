@@ -1,7 +1,8 @@
 ---
-title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Arduino: Znajdowanie długości ciągu znaków"
-simple_title:         "Znajdowanie długości ciągu znaków"
+title:                "Znalezienie długości ciągu znaków"
+date:                  2024-01-20T17:47:00.288176-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Znalezienie długości ciągu znaków"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,32 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-
-Długość ciągu to ilość znaków, które go tworzą. Programiści często muszą znać tę długość, na przykład przy sortowaniu wymienności, walidacji danych wejściowych lub tworzeniu dynamicznych tablic.
+## Co i Dlaczego?
+Znalezienie długości łańcucha polega na ustaleniu, ile znaków zawiera dany tekst. Programiści robią to, by zarządzać danymi tekstowymi – sprawdzać poprawność inputu, porównywać wartości czy manipulować ciągami.
 
 ## Jak to zrobić:
-
-Możemy użyć wbudowanej funkcji Bash `${#string}` do znalezienia długości ciągu. Przykład:
-
 ```Bash
-string="Witaj, Świecie!"
-echo "Długość ciągu to: ${#string}"
+# Użycie wbudowanego wyrażenia ${#string}
+tekst="Witaj, świecie!"
+echo "Długość tekstu: ${#tekst}"    # Wyświetla: Długość tekstu: 15
+
+# Alternatywna metoda przy użyciu 'expr'
+echo "Długość tekstu: $(expr length "$tekst")"    # Wyświetla: Długość tekstu: 15
 ```
 
-Gdy uruchomisz powyższy skrypt, output będzie wyglądał tak:
+## Dogłębny wgląd:
+W przeszłości, rozwiązania typu `expr` były bardziej powszechne, lecz ${#string} oferuje większą wydajność i czytelność, stając się standardem w nowszych skryptach. Opcje takie jak `awk` czy `wc -m` nadal istnieją, ale są rzadziej używane do tej konkretnej operacji.
 
-```Bash
-Długość ciągu to: 16
-```
+Implementacja zależy od kolejności bajtów w pamięci i lokalizacji systemu. Ważne, gdy pracujemy z wielobajtowymi zestawami znaków, jak UTF-8 – tu pojedynczy znak może być reprezentowany przez więcej niż jeden bajt.
 
-## Deep Dive:
-
-Funkcja `${#string}` została wprowadzona w Bash 2.0 w 1997 roku jako jedna z kilku nowych funkcji operujących na ciągach znaków. Alternatywnie, możemy użyć polecenia `wc -m` do obliczenia długości ciągu, ale to zazwyczaj daje wynik o 1 większy, ponieważ liczy ono również nową linię. Technicznie rzecz biorąc, `${#string}` jest ekspansją parametru, a nie funkcją. Bash sprawdza literał po znaku '#', a jeśli jest to nazwa zmiennej, zwraca długość wartości zmiennej.
-
-## Zobacz też:
-
-1. [Advanced Bash-Scripting Guide: Manipulating Strings](http://tldp.org/LDP/abs/html/string-manipulation.html)
-2. [GNU Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
-3. [Stack Overflow: They're discussing the length of a string in Bash](https://stackoverflow.com/questions/17368067/length-of-string-in-bash)
-4. [Unix & Linux Stack Exchange: Here, you can find more alternatives for finding the length of a string](https://unix.stackexchange.com/questions/19057/what-is-the-best-way-to-get-the-length-of-a-string-in-bash)
+## Zobacz również:
+- [Bash String Manipulation Guide](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion)
+- [Advanced Bash-Scripting Guide: String Operations](https://tldp.org/LDP/abs/html/string-manipulation.html)
+- Oficjalna dokumentacja GNU Bash: https://www.gnu.org/software/bash/
+- [Bash FAQ – How do I determine the length of a string?](http://mywiki.wooledge.org/BashFAQ/071)

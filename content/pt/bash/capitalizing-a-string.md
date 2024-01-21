@@ -61,5 +61,4 @@ Alternativamente, em scripts Bash modernos, você pode usar expansões de parâm
 Detalhes de implementação a serem observados são que o comando `tr` funciona por substituição de caracteres e é muito rápido para strings longas, enquanto o `awk` é uma ferramenta de manipulação de texto mais poderosa e flexível, capaz de executar uma grande variedade de tarefas.
 
 ## Veja também
-- [GNU Bash Documentation](https://www.gnu.org/software/bash/manual/bash.html)
 - [AWK Command in Unix/Linux with Examples](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)

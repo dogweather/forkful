@@ -1,7 +1,8 @@
 ---
-title:                "Concaténation de chaînes"
-html_title:           "C: Concaténation de chaînes"
-simple_title:         "Concaténation de chaînes"
+title:                "Concaténation de chaînes de caractères"
+date:                  2024-01-20T17:34:39.846452-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Concaténation de chaînes de caractères"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,45 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## Quoi et Pourquoi ?
+Concaténer des chaînes, c'est les assembler bout à bout, pour former une seule chaîne. Les programmeurs le font pour afficher des messages complexes, stocker des données ou pour construire dynamiquement des requêtes.
 
-La concaténation de chaînes en C est l'union de deux ou plus de chaînes en une seule. Les programmeurs la font pour manipuler des données de texte, organiser du code et répondre à des besoins spécifiques du programme.
-
-## Comment faire:
-
-Voici comment concaténer des chaînes en C:
-
+## Comment faire :
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char s1[100] = "Programmer en ", s2[] = "C'est fun!";
-  
-    strcat(s1, s2); // Concaténer s1 et s2
+    char debut[] = "C'est ";
+    char fin[] = "genial!";
+    char resultat[50];
 
-    printf("%s\n", s1); // Afficher le résultat
+    strcpy(resultat, debut); // On initialise resultat avec le début
+    strcat(resultat, fin); // On ajoute la fin à la suite
 
+    printf("La chaîne concaténée est : %s\n", resultat);
     return 0;
 }
 ```
-
-La sortie du programme sera:
-"Programmer en C'est fun!"
-
-## Plongeons un peu plus loin:
-
-1. Contexte historique: La fonction strcat() a toujours été au cœur de l'API des chaînes en C depuis K&R C (avant ANSI/ISO C).  
-
-2. Alternatives: On pourrait utiliser strncat() pour une concaténation sûre qui evite le dépassement de mémoire tampon.
-
-```C
-strncat(s1, s2, sizeof(s1)-strlen(s1)-1);
+Sortie :
+```
+La chaîne concaténée est : C'est genial!
 ```
 
-3. Détails de mise en œuvre: strcat() parcourt la première chaîne jusqu'à '\0 ', puis commence à y copier la seconde chaîne. Cela nécessite un espace suffisant à la fin de la première chaîne.
+## Plongée Profonde
+Historiquement, le C n'avait pas de fonctions dédiées à la concaténation de chaînes. Les développeurs devaient manipuler les chaînes manuellement avec des boucles et des pointeurs. Aujourd'hui, la bibliothèque standard propose `strcpy` et `strcat`, mais attention aux débordements ('buffer overflows') ! Alternativement, on utilise `strncat` pour plus de sécurité. Les chaînes en C sont des tableaux de caractères terminés par '\0' (le caractère nul), ce qui signifie que toute fonction de manipulation doit respecter cette convention.
 
-## Pour aller plus loin:
-
-- Documentation C: [http://tigcc.ticalc.org/doc/stdlib.html#string_h](http://tigcc.ticalc.org/doc/stdlib.html#string_h)
-- Discussion du dépassement de mémoire tampon: [https://fr.wikipedia.org/wiki/Dépassement_de_tampon](https://fr.wikipedia.org/wiki/Dépassement_de_tampon)
+## Voir Aussi
+- [Documentation of strcpy](https://www.cplusplus.com/reference/cstring/strcpy/)
+- [Documentation of strcat](https://www.cplusplus.com/reference/cstring/strcat/)
+- [Secure coding in C](https://www.cert.org/secure-coding/)

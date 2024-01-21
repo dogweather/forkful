@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request"
-html_title:           "Bash recipe: Sending an http request"
+date:                  2024-01-20T17:59:42.892380-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request"
 programming_language: "Java"
 category:             "Java"
@@ -11,44 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Sending an HTTP request is a way of asking a server to send back data. Developers use this to access APIs, fetch data, or interact with other web services.
+
+Sending an HTTP request means asking a server for data or action, like pulling up a webpage or sending a form. Programmers do it to interact with web services, APIs, and to make their apps play nice with others on the internet.
 
 ## How to:
-Here's how to send a GET request to a server, using Java's `HttpClient`.
 
-```Java
+Let's roll with Java 11's `HttpClient`, `HttpRequest`, and `HttpResponse` to shoot a GET request and snag some data:
+
+```java
+import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.net.URI;
 
-public class Main {
-    public static void main(String[] args) throws Exception {
+public class HttpRequestExample {
+    public static void main(String[] args) {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                    .uri(new URI("https://example.com"))
-                    .GET()
-                    .build();
+                              .uri(URI.create("http://example.com"))
+                              .build();
 
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-        System.out.println(response.body());
+        client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+              .thenApply(HttpResponse::body)
+              .thenAccept(System.out::println)
+              .join();
     }
 }
 ```
-In this code:
-1. We create a `HttpClient`.
-2. Next, we build an `HttpRequest` specifying the URL and the request method (GET).
-3. Then, we send our request with `HttpResponse.BodyHandlers.ofString()` to get the body as a `String`.
-4. At last, we print out the response body.
+
+You run it, and voilà—server response, right in your console.
 
 ## Deep Dive
-*Historical context*: Before Java 11, sending HTTP requests involved more hands-on work, dealing with `HttpURLConnection`. Java 11's `HttpClient` offers a more convenient API.
 
-*Alternatives*: Apache HttpClient and OkHttp are alternatives to Java's built-in HttpClient, offering more customization options.
+Before Java 11, sending an HTTP request was a more complex dance that often involved third-party libraries like Apache HttpClient. `HttpURLConnection` was also an option but felt like a dinosaur—cumbersome and less intuitive.
 
-*Implementation details*: The `newHttpClient()` uses a builder pattern, so you can customize more if needed. The built HttpRequest and HttpResponse allow for different handling of request/response bodies - for file download, for example, you can specify it to be stored in a file directly with `HttpResponse.BodyHandlers.ofFile(Paths.get("file.txt"))`.
+With Java 11, `HttpClient` steps in, streamlining the process with both synchronous `.send` and asynchronous `.sendAsync` methods. It's reactive and non-blocking—meaning you're not waiting around tapping your foot while it does its thing. This aligns with modern app efficiency needs where waiting equals wasted time.
+
+Alternatives to Java's standard libraries? Libraries like OkHttp and Retrofit are still favorites when robust features and custom configurations are desired. And why not? They come with their own perks, like connection pooling and call conversion out of the box.
 
 ## See Also
-1. [Oracle's `Java.net.http` package documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/package-summary.html)
-2. [Baeldung's guide to HttpClient](https://www.baeldung.com/httpclient-guide)
+
+Dive deeper into the Java HttpClient with the official Java docs:
+- [HttpClient](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
+- [HttpRequest](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpRequest.html)
+- [HttpResponse](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpResponse.html)
+
+Feeling adventurous? Explore OkHttp and Retrofit:
+- [OkHttp](https://square.github.io/okhttp/)
+- [Retrofit](https://square.github.io/retrofit/)

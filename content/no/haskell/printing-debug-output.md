@@ -1,7 +1,8 @@
 ---
-title:                "Utskrift av feilsøkingsresultat"
-html_title:           "Arduino: Utskrift av feilsøkingsresultat"
-simple_title:         "Utskrift av feilsøkingsresultat"
+title:                "Skrive ut feilsøkingsdata"
+date:                  2024-01-20T17:52:39.063029-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skrive ut feilsøkingsdata"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -11,41 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+"Printing debug output" betyr å vise mellomliggende data fra et program for å forstå hva som skjer under kjøring. Programmerere gjør dette for å feilsøke og finjustere kode.
 
-Skrive ut debug-utdata er en teknikk hvor programmerere henter informasjon fra programmet under kjøring. Dette gjøres for å identifisere og løse feil, samt forstå tilstanden til programmet i et gitt tidspunkt.
-
-## Hvordan gjør man det:
-
-Vi kan bruke "Debug.Trace" biblioteket for dette formålet. La oss vise det med et kodestykke:
-
+## Hvordan:
 ```Haskell
-import Debug.Trace
-
+main :: IO ()
 main = do
-    let lista = [1..5]
-    print $ traceShowId lista
+    putStrLn "Debug: Starter programmet"
+    let x = 42
+    print x -- Skriver ut verdien av x
+    putStrLn "Debug: Programmet avsluttes"
 ```
 
-Når du kjører dette, vil du se:
-
+Eksempel på output:
 ```
-[1,2,3,4,5]
-[1,2,3,4,5]
+Debug: Starter programmet
+42
+Debug: Programmet avsluttes
 ```
-
-Her, `traceShowId lista` skriver ut verdien av `lista`, og returnerer den samme verdien.
 
 ## Dypdykk:
-
-1. Historisk Kontekst: Bruken av "Debug.Trace" i Haskell ble ikke bredt akseptert før i senere versjoner av språket, til tross for dets brukervennlighet og effektivitet.
-2. Alternativer: Noen programmerere foretrekker å benytte mer omfattende debuggingverktøy, slik som Haskell Debugger (Hoed) eller lokkende biblioteker som io-spy.
-3. Implementeringsdetaljer: `traceShowId` fungerer ved å legge til en "utskriftseffekt" i programmet ditt, men endrer ikke selve oppførselen til koden din.
+Historisk sett har utskrift til konsoll vært en enkel måte å spore programflyt og variabeltilstander. I Haskell, der renhet og fraværet av sideeffekter verdsettes, brukes `IO` monaden for å håndtere utskrifter. Det finnes alternativer til standard utskrift, som `Debug.Trace`, men disse går på akkord med renhet og bør brukes med forsiktighet.
 
 ## Se Også:
-
-For mer informasjon om debugging i Haskell, ta en titt på disse ressursene:
-
-- "Real World Haskell" Kapittel 25: Debugging – https://book.realworldhaskell.org/read/debugging-and-profiling.html
-- HaskellWiki: Debugging - https://wiki.haskell.org/Debugging
-- Introduksjon til Hoed Debugger – https://wiki.haskell.org/Hoed
-- io-spy biblioteket - https://hackage.haskell.org/package/io-spy
+- Haskell dokumentasjon om IO: https://hackage.haskell.org/package/base-4.16.1.0/docs/Prelude.html#g:28
+- `Debug.Trace` modulen: https://hackage.haskell.org/package/base-4.16.1.0/docs/Debug-Trace.html
+- Blogg om feilsøking i Haskell: https://www.fpcomplete.com/haskell/tutorial/debugging/

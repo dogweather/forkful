@@ -1,7 +1,8 @@
 ---
-title:                "Å sende en http-forespørsel"
-html_title:           "C++: Å sende en http-forespørsel"
-simple_title:         "Å sende en http-forespørsel"
+title:                "Å sende en HTTP-forespørsel"
+date:                  2024-01-20T17:59:44.554518-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -11,44 +12,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å sende en HTTP-request er en måte for et program å hente eller sende data til en server. Dette gjør at programmerere kan utveksle data mellij plattformer, servere og klienter.
+Å sende en HTTP-forespørsel betyr å be en webserver om data eller handlinger. Utviklere gjør dette for å hente, oppdatere eller slette data på nettet.
 
-## Hvordan gjør man det:
-Her er et enkelt eksempel på en GET-request i Elm:
+## Hvordan:
+Elm-koden under viser hvordan du sender en HTTP GET-forespørsel og håndterer svaret:
 
 ```Elm
+module Main exposing (..)
+import Browser
 import Http
 import Json.Decode as Decode
 
-fetchData : Cmd Msg
-fetchData =
-  Http.get
-    { url = "https://example.com/api/data"
-    , expect = Http.expectJson GotData (Decode.list decodeDataItem)
-    }
+type alias Model =
+    { responseText : String }
+
+initialModel : Model
+initialModel =
+    { responseText = "" }
 
 type Msg
-  = GotData (Result Http.Error (List DataItem))
+    = GotText (Result Http.Error String)
 
-type alias DataItem =
-  { id : Int
-  , name : String
-  }
+update : Msg -> Model -> Model
+update message model =
+    case message of
+        GotText (Ok text) ->
+            { model | responseText = text }
 
-decodeDataItem : Decode.Decoder DataItem
-decodeDataItem =
-  Decode.map2 DataItem
-    (Decode.field "id" Decode.int)
-    (Decode.field "name" Decode.string)
+        GotText (Err _) ->
+            model
+
+view : Model -> Html.Html Msg
+view model =
+    Html.text model.responseText
+
+-- Sender en HTTP GET-forespørsel
+sendGetRequest : Cmd Msg
+sendGetRequest =
+    Http.get
+        { url = "https://api.example.com/data"
+        , expect = Http.expectString GotText
+        }
+
+-- Starter applikasjonen og sender forespørselen
+main : Program () Model Msg
+main =
+    Browser.element
+        { init = \_ -> ( initialModel, sendGetRequest )
+        , update = update
+        , view = view
+        , subscriptions = \_ -> Sub.none
+        }
+
 ```
-Når du kjører `fetchData`, vil Elm sende en GET-request til "https://example.com/api/data", og forventer et JSON-svar som kan dekodes til en liste av `DataItem`.
+
+Kjører du dette, vil programmet ditt be om data fra `https://api.example.com/data` og vise det som tekst.
 
 ## Dypdykk
-Å sende en HTTP-request er fundamental del for å bygge nettapplikasjoner, og har vært brukt siden de tidlige dagene av nettet. Alternativt til Elm's http-pakke, finnes det også andre biblioteker som serverless-http og elm-http-extra med flere funksjoner.
+HTTP-forespørsler i Elm handler om renhet og sikkerhet. Forespørsler er sideeffektfrie, og Elm tvinger håndtering av både suksess og feil. Historisk sett er Elm's HTTP-funksjoner inspirert av funksjonelle programmeringsidealer. Alternativer til Elm for HTTP-kommunikasjon inkluderer bruk av JavaScript gjennom "ports".
 
-Elm bruker en "pure function" tilnærming til å sende HTTP-requests, noe som i stor grad forbedrer testbarheten og forutsigbarheten til nettapplikasjoner. Det er også viktig å merke seg at Elm har innebygget støtte for JSON-dekoding, noe som gjør det lettere å jobbe med API-responser.
+HTTP-forespørsler er håndterbare ved å sette opp `Http.expectWhatever` for å dekode svarene. Elm 0.19 introduserte `Http.expectString` som en enkel måte å få rå tekst. For kompleks data er det `Http.expectJson` med en `Decoder`. 
 
-## Se også
-- Elm’s offisielle dokumentasjon på Http - https://package.elm-lang.org/packages/elm/http/latest/
-- En tutorial for HTTP-requests i Elm - https://guide.elm-lang.org/effects/http.html
-- Elm’s Json.Decode dokumentasjon - https://package.elm-lang.org/packages/elm/json/latest/Json-Decode
+Tilstandene oppdateres rent. Alle svar går gjennom `update`-funksjonen, hvor du bestemmer hva som skal skje med den mottatte informasjonen. Elm er streng på typene som flyter gjennom systemet, og enhver feil ved utføring av en HTTP-forespørsel må håndteres.
+
+## Se Også
+- [Elm Guide on HTTP requests](https://guide.elm-lang.org/effects/http.html)
+- [Elm Http package documentation](https://package.elm-lang.org/packages/elm/http/latest/)
+- [JSON decoding in Elm](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode)

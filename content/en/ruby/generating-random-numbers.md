@@ -1,6 +1,7 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Arduino recipe: Generating random numbers"
+date:                  2024-01-20T17:49:41.340808-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generating random numbers"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,45 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Generating random numbers refers to producing a sequence of numbers that lacks any pattern. Developers often use random numbers in cryptography, algorithms, testing, or to add unpredictability to their programs.
+Random numbers are unpredictable values. Programmers use them for tasks like simulating events, creating test data, and building games.
 
 ## How to:
-
-In Ruby, the simplest way to generate a random number is using the `rand` method. 
-
+### Generate a Random Number Within a Range
 ```Ruby
-puts rand(100) # Random number between 0 and 99
+rand(1..10) # Generates a number between 1 and 10
 ```
+Sample output: `5`
 
-For a range of numbers:
-
+### Generate a Random Float Between 0 and 1
 ```Ruby
-puts rand(1..10) # Random number between 1 and 10
+rand # Implicitly between 0 and 1
 ```
+Sample output: `0.4372022471910112`
 
-To generate the same sequence of random numbers for debugging purposes, we use a seed value like so:
-
+### Generate a Random Number Without a Set Upper Bound
 ```Ruby
-srand 12345 # Setting the seed
-puts rand(100) # Returns 69 due to the seed
+rand(100) # Generates a number between 0 and 99
 ```
+Sample output: `42`
 
 ## Deep Dive
+Random number generation in Ruby uses objects of class `Random` under the hood, which implements Mersenne Twister—known for its speed and randomness quality. Before this, older algorithms like Linear Congruential Generators were common, offering speed but imperfect randomness. While `rand` is fine for casual use, for cryptography, you'll want Ruby's `SecureRandom` which is designed to be more secure and less predictable.
 
-1. **Historical context**: Random number generation has a long history, with mechanical devices like dice and roulette wheels historically implementing randomness. In the computer age, random numbers are generated through algorithms, which are deterministic in nature. Thus, we refer to them as pseudorandom.
+There's a quirk in Ruby (and many other languages)—"random" numbers are pseudo-random unless the generator is seeded with some external entropy, like system timing or mouse movements. This means that if you set the same seed, you get the same sequence.
 
-2. **Alternatives**: Apart from the `rand` method, the `Random` class in Ruby provides more options. We can create a random number object and call methods on it.
+Alternatives to `rand` include libraries like `faker` for more specific or complex needs, like generating names, addresses, or even random but valid data structures.
 
-    ```Ruby
-    rng = Random.new
-    puts rng.rand(100) # Random number between 0 and 99
-    ```
-
-3. **Implementation details**: In Ruby, the default `rand` method without any argument returns a random floating-point number between 0.0 and 1.0. The generated numbers are less than 1 and vary based on the argument passed. If the argument is an integer, it returns an integer. If the argument is a range, it returns a number within that range.
-
-
-## See Also 
-
-1. [Random numbers in Ruby (Ruby-Doc official documentation)](https://ruby-doc.org/core-2.7.1/Random.html)
-3. [Wikipedia page on pseudorandom number generators](https://en.wikipedia.org/wiki/Pseudorandom_number_generator).
+## See Also
+- Ruby's own documentation on the Random class: [Random - Ruby-Doc.org](https://ruby-doc.org/core-3.1.2/Random.html)
+- The `SecureRandom` library for security-sensitive randomness: [SecureRandom - Ruby-Doc.org](https://ruby-doc.org/stdlib-3.1.2/libdoc/securerandom/rdoc/SecureRandom.html)
+- The `faker` gem for generating a wide variety of random test data: [Faker - RubyGems.org](https://rubygems.org/gems/faker)

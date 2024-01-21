@@ -1,7 +1,8 @@
 ---
-title:                "Видобування підрядків"
-html_title:           "C++: Видобування підрядків"
-simple_title:         "Видобування підрядків"
+title:                "Виділення підрядків"
+date:                  2024-01-20T17:45:34.468743-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Виділення підрядків"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,31 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-```Ukrainian```
-## Що це і навіщо?
-Витягування підрядків - це процес отримання частини рядка від початкового до кінцевого індексу. Програмісти використовують це для обробки даних і маніпуляцій з текстом.
+## What & Why? (Що та Чому?)
+Витягування підстрок - це процес отримання частини тексту з рядка. Програмісти роблять це, щоб працювати тільки з важливими даними, очищаючи або аналізуючи їх.
 
-## Як це зробити:
+## How to: (Як робити:)
 ```C#
-string sampleStr = "Вітаємо в C#";
-string substring = sampleStr.Substring(8);
-Console.WriteLine(substring);  // Виводимо: C#
-```
-Тут ми витягли підрядок, починаючи з 8-го символу у рядку.
+string fullText = "Привіт, я програміст із України!";
+string extracted = fullText.Substring(8, 12); // Витягуємо "я програміст"
 
-```C#
-string substringWithLength = sampleStr.Substring(0, 7);
-Console.WriteLine(substringWithLength);  // Виводимо: Вітаємо
+Console.WriteLine(extracted); // Виводить: я програміст
 ```
-В цьому прикладі ми витягли підрядок довжиною в 7 символів, починаючи з першого символу.
 
-## Поглиблене вивчення:
-Витягування підрядків існує з перших версій С. Метод `Substring` був покращений в C# для обробки негативних індексів і невдовзі символів. З C# 8.0 ви можете безпечно використовувати "slicing" навіть для нульових рядків. 
+За допомогою методу `Substring` можна витягути підстроку, вказавши початковий індекс і довжину. Якщо потрібно витягти все до кінця, довжину можна опустити:
 
 ```C#
-string safeSubstring = sampleStr[8..];  // Ту ж саму дію можна зробити за допомогою "slicing"
-```
-Проте, якщо ви все ж таки потребуєте використовувати більш старі методи витягування підрядків, обидва зазначені раніше підходи будуть працювати і в нинішній версії C#.
+string endPart = fullText.Substring(24); // Витягуємо "України!"
 
-## Дивіться також:
-[Документація Microsoft про String.Substring](https://docs.microsoft.com/uk-ua/dotnet/api/system.string.substring)
+Console.WriteLine(endPart); // Виводить: України!
+```
+
+## Deep Dive (Поглиблене занурення)
+В C# витягування підстрок почалося з перших версій мови, метод `Substring` існує давно і часто оновлюється. Альтернативи включають методи `Split`, регулярні вирази і LINQ-операції. Проте `Substring` залишається простим і швидким варіантом.
+
+Працюючи з `Substring`, пам'ятайте, що він створює новий рядок. Це може впливати на продуктивність при великій кількості операцій. Якщо це критично, маніпулюйте символами через `Span<T>` або використовуйте `StringSegment` з бібліотеки Microsoft.Extensions.Primitives для маніпуляцій без створення нових рядків.
+
+## See Also (Дивіться також)
+- Метод `Split`: https://docs.microsoft.com/dotnet/api/system.string.split
+- Регулярні вирази: https://docs.microsoft.com/dotnet/standard/base-types/regular-expressions
+- Офіційна документація `Substring`: https://docs.microsoft.com/dotnet/api/system.string.substring
+- LINQ в C#: https://docs.microsoft.com/dotnet/standard/linq/

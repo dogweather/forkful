@@ -1,6 +1,7 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "C: Usuwanie znaków pasujących do wzorca"
+date:                  2024-01-20T17:43:19.379717-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,35 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Usuwanie znaków pasujących do wzorca w Swift: Jak? Dlaczego? I inne szczegóły
+## What & Why? (Co i dlaczego?)
+Usuwanie znaków pasujących do wzorca to filtracja stringów w celu ich uproszczenia lub wyczyszczenia z niepotrzebnych danych. Programiści robią to, by łatwiej obrabiać tekst, np. przy walidacji danych lub przygotowania tekstów do wyświetlenia.
 
-## Co i dlaczego?
-
-Usuwanie znaków pasujących do wzorca to metoda usunięcia pewnego zbioru znaków z ciągu znaków, bazując na zdefiniowanym wzorcu. Programiści robią to, aby manipulować danymi tekstowymi, na przykład, aby oczyścić dane wejściowe lub usunąć niepotrzebne informacje.
-
-## Jak to zrobić:
-
-Swift oferuje wiele metod, które pozwalają usunąć znaki dopasowane do wzorca. Oto przykład:
-
+## How to: (Jak to zrobić:)
 ```Swift
-var str = "Witaj, Swift!"
-let disallowedChars = CharacterSet(charactersIn: ",!")
-str = str.components(separatedBy: disallowedChars).joined()
-print(str) // "Witaj Swift"
-```
-W tym kodzie, używamy metody 'components(separatedBy:)' żeby rozdzielić nasz ciąg 'str' na podciągi, które są potem połączone bez separatorów, co daje nam nasz oczyszczony ciąg.
+import Foundation
 
-## Deep Dive:
-
-* **Kontekst historyczny**: Swift, od momentu swojego powstania w 2014 roku przez Apple, zadbał o dostarczenie programistom wydajnych i elastycznych narzędzi do pracy z ciągami znaków.
-
-* **Alternatywy**: Swift oferuje również inne metody manipulacji ciągami znaków, takie jak zamiana znaków pasujących do wzorca na inne. Na przykład, można użyć metody 'replacingOccurrences(of:with:)':
-
-```Swift
-var str = "Witaj, Swift!"
-str = str.replacingOccurrences(of: ",", with: "")
-str = str.replacingOccurrences(of: "!", with: "")
-print(str) // "Witaj Swift"
+var email = "example+filter@domain.com"
+let filteredEmail = email.replacingOccurrences(of: "\\+.*@", with: "@", options: .regularExpression)
+print(filteredEmail) // Wypisze "example@domain.com"
 ```
 
-* **Szczegóły implementacji**: Gdy manipulujemy ciągami znaków w Swift, ważne jest, aby zwrócić uwagę na kwestie wydajności. Operacje na ciągach mogą być kosztowne pod względem zużycia pamięci i czasu procesora, szczególnie dla dużych ciągów danych.
+```Swift
+import Foundation
+
+var filePath = "/User/Downloads/Some_file(backup).txt"
+let cleanPath = filePath.replacingOccurrences(of: "\\(.*\\)", with: "", options: .regularExpression)
+print(cleanPath) // Wypisze "/User/Downloads/Some_file.txt"
+```
+
+## Deep Dive (Dogłębna analiza)
+Usunięcie znaków pasujących do określonego wzorca jest techniką regulowaną przez wyrażenia regularne (regex), które narodziły się w latach 50. Teoria automatów i języków formalnych była inspiracją. Teraz, używając Swifta, możemy przefiltrować stringi szybko i skutecznie.
+
+Alternatywą jest własna funkcja skanująca znaki i budująca nowy string. Ale po co to robić, skoro mamy regex? Złożoność implementacyjna jest tam duża i łatwo o błąd.
+
+Użycie `replacingOccurrences` z `options: .regularExpression` w Swift pozwala wykorzystywać moce regex bez komplikacji. String staje się elastyczny i łatwiejszy do ujarzmienia.
+
+## See Also (Zobacz również)
+- Apple's Swift documentation on String: [Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- Regular Expression Syntax Reference: [NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)

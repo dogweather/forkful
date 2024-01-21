@@ -1,7 +1,8 @@
 ---
-title:                "Видалення символів, що відповідають патерну"
-html_title:           "C: Видалення символів, що відповідають патерну"
-simple_title:         "Видалення символів, що відповідають патерну"
+title:                "Видалення символів за візерунком"
+date:                  2024-01-20T17:43:15.336494-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Видалення символів за візерунком"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,27 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та Навіщо?
+## What & Why? / Що таке та навіщо?
+Deleting characters matching a pattern means finding specific sets of characters in a string and removing them. Programmers do this for data cleaning, formatting, or preparing input for further processing.
 
-Видалення символів, що відповідають певному шаблону - це процес відфільтрування рядків, залишаючи лише ті символи, які не відповідають заданому шаблону. Програмісти це роблять для очищення даних, форматування тексту та забезпечення коректної обробки вводу.
-
-## Як це виконати:
-
-Щоб виділити символи, що відповідають певному шаблону в TypeScript, ви можете використати метод `replace()` із регулярними виразами. Давайте попрацюємо над прикладом:
-
+## How to: / Як це зробити:
 ```TypeScript
-let text: string = "Цей приклад видалить усi цифри 123 і символи #$@";
-let result: string = text.replace(/[0-9A-Za-z#$@]/g, "");
-console.log(result);
+function deleteMatchingChars(input: string, pattern: RegExp): string {
+  return input.replace(pattern, '');
+}
+
+// Example usage:
+const originalText = 'Hello, world! Це текст з деякими рядками...123';
+const patternToRemove = /[!-9]/g;  // This will match any character from '!' to '9'
+const cleanedText = deleteMatchingChars(originalText, patternToRemove);
+
+console.log(cleanedText); // Outputs: 'Hello, world Це текст з деякими рядками'
 ```
-Цей код виведе: "Цей приклад видалить усі цифри і символи ".
 
-## Занурення в деталі
+## Deep Dive / Поглиблене вивчення:
+Deleting characters matching a pattern isn't new. It dates back to the usage of regular expressions in early programming. Regular expressions offer a powerful way to identify and process text patterns.
 
-Видалення символів, що відповідають певному шаблону, було неодмінною частиною мови програмування ще від часів Perl. У сучасному TypeScript використовуються регулярні вирази для вирішення цієї задачі, але є й інші альтернативи. Наприклад, можна використовувати метод `split()`, щоб розділити рядок на масив символів, потім застосувати метод `filter()` для відфільтрування непотрібних символів і нарешті конвертувати результат у рядок за допомогою методу `join()`. Цей підхід, хоч і більш об'ємний, може бути більш зрозумілим для новачків.
+Alternatives to using a regular expression include manually iterating over each character (inefficient), or using string-specific API methods (like 'split' or 'indexOf') for simpler cases. But for complex pattern-matching, regex is king.
 
-## Дивись також
+Implementation details to note:
+- The `g` flag in `/[!-9]/g` makes the pattern global, so all matches are replaced, not just the first.
+- TypeScript's strong typing helps ensure your functions work predictably.
+- Take care with special regex characters - they need to be escaped if you want to match them literally.
 
-1. [Регулярні вирази в JavaScript і TypeScript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Guide/Regular_Expressions)
-2. [Метод replace() в JavaScript і TypeScript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-3. [Методи масиву в JavaScript і TypeScript: split(), filter(), join()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Array)
+## See Also / Дивись також:
+- [MDN Web Docs on Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- [Regular Expressions Tester](https://regexr.com/) - helps to test and refine your regex patterns before putting them into code.

@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie argumentów linii poleceń"
-html_title:           "Bash: Czytanie argumentów linii poleceń"
-simple_title:         "Czytanie argumentów linii poleceń"
+title:                "Odczytywanie argumentów linii poleceń"
+date:                  2024-01-20T17:55:39.237148-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie argumentów linii poleceń"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,35 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Czytanie argumentów linii poleceń to metoda przyjmowania inputu od użytkownika. Programiści korzystają z tego do dostosowywania programów na podstawie desygnacji użytkownika.
+## What & Why?
+"Co i Dlaczego?"
 
-## Jak to zrobić:
-Arduino nie obsługuje bezpośrednio argumentów linii poleceń, ale może komunikować się z komputerem za pomocą portu szeregowego. Poniżej znajduje się przykład, który pokazuje, jak odczytać dane wysyłane do Arduino przez Serial.
+Czytanie argumentów linii poleceń to sposób na wprowadzanie danych do programu, gdy jest on uruchamiany. Programiści używają tego, by elastycznie manipulować zachowaniem programu bez zmiany kodu.
+
+## How to:
+"Jak to zrobić:"
+
+Arduino nie obsługuje standardowych argumentów linii poleceń jak tradycyjne środowiska programistyczne. Dostarczanie danych zewnętrznych realizowane jest przez komunikację szeregową. Oto przykład:
 
 ```Arduino
-String incomingData;
-
 void setup() {
   Serial.begin(9600);
+  while (!Serial) {
+    ; // czekaj na połączenie szeregowe
+  }
+  Serial.println("Wpisz komende:");
 }
 
 void loop() {
-  if (Serial.available())  {
-    incomingData = Serial.readStringUntil('\n');
-    Serial.println("Odebrane dane: " + incomingData);
+  if (Serial.available() > 0) {
+    String command = Serial.readStringUntil('\n');
+    Serial.println("Otrzymana komenda: " + command);
+    // Tutaj możesz dodać obsługę komendy
   }
 }
 ```
 
-Jeżeli wpiszemy "Hello World" do Serial Monitor, Arduino zwróci "Odebrane dane: Hello World".
+Po uruchomieniu, wprowadź komendę w monitorze portu szeregowego i sprawdź otrzymany wynik.
 
-## W głąb tematu
-Argumenty linii poleceń są powszechnie używane w programowaniu komputerów od lat. Arduino nie obsługuje ich bezpośrednio, ale poprzez interakcje szeregowe z komputerem, możemy odczytać dane wysłane do urządzenia. W przeciwnym razie, moglibyśmy użyć alternatywnych platform programowania mikrokontrolerów, które natywnie obsługują argumenty linii poleceń.
+## Deep Dive
+"Dogłębna analiza"
 
-Gdy chodzi o szczegóły implementacji, komenda `Serial.available()` sprawdza, czy są dostępne jakiekolwiek dane do odczytania. `Serial.readStringUntil('\n')` odczytuje dane aż do napotkania znaku końca linii ('\n'). Razem ułatwiają one odczyt danych wysyłanych do Arduino przez Serial.
+W świecie mikrokontrolerów Arduino, brak jest typowej "linii poleceń". Historia argumentów linii poleceń sięga wczesnych systemów operacyjnych. Na platformie Arduino, komunikacja z komputerem i innymi urządzeniami odbywa się przez Serial, Bluetooth lub inne moduły komunikacji. Alternatywami dla Serial mogą być odczyt z karty SD lub z internetu przez moduły sieciowe. Głębsze zrozumienie implementacji polega na pojęciu, że dane z zewnątrz są przetwarzane przez mikrokontroler w czasie rzeczywistym, często jako reakcja na zdarzenia lub sygnały.
 
-## Zobacz także
-Oto kilka linków do pokrewnych źródeł:
-- [Dokumentacja Arduino](https://www.arduino.cc/reference/pl/)
-- [Serial - komunikacja UART](https://www.arduino.cc/en/Tutorial/BuiltInExamples/SerialEvent)
+## See Also
+"Zobacz również"
+
+- Dokumentacja Arduino Serial: https://www.arduino.cc/reference/en/language/functions/communication/serial/
+- Tutorial "Arduino - Serial Communication": https://www.arduino.cc/en/Tutorial/BuiltInExamples/SerialEvent
+- Przykłady wykorzystania komunikacji szeregowej w projektach Arduino: https://create.arduino.cc/projecthub?q=serial%20communication

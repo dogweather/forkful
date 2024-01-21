@@ -1,6 +1,7 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "C#: Verkkosivun lataaminen"
+date:                  2024-01-20T17:44:10.868244-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Go"
 category:             "Go"
@@ -10,55 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
+## What & Why? (Mitä & Miksi?)
+Lataat web-sivun saadaksesi sen sisällön ohjelmallisesti. Se on hyödyllistä tietojen kaapimiseen, automaatioon tai varmuuskopiointiin.
 
-Web-sivun lataaminen tarkoittaa datan siirtoa palvelimelta paikalliseen järjestelmään. Ohjelmoijat tekevät tämän tiedon keräämisen tai jakamisen vuoksi.
-
-## Kuinka tehdään:
-
+## How to: (Kuinka tehdä:)
 ```Go
 package main
 
 import (
-	"io"
+	"fmt"
+	"io/ioutil"
 	"net/http"
-	"os"
 )
 
 func main() {
-	res, err := http.Get("http://example.com")
+	url := "https://example.com"
+	resp, err := http.Get(url)
 	if err != nil {
 		panic(err)
 	}
-	defer res.Body.Close()
-	
-	file, err := os.Create("example.html")
+	defer resp.Body.Close()
+
+	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		panic(err)
 	}
-	defer file.Close()
-	
-	_, err = io.Copy(file, res.Body)
-	if err != nil {
-		panic(err)
-	}
+
+	fmt.Println(string(body))
 }
 ```
-
-Tässä on esimerkki koodin tulosteesta:
-
-```Go
-"Tiedosto 'example.html' tallennettu onnistuneesti."
+Sample Output:
+```
+<!doctype html>
+<html>
+...
+</html>
 ```
 
-## Syvä sukellus:
+## Deep Dive (Syväsukellus)
+Web-sivujen lataaminen on oleellinen osa modernia ohjelmistokehitystä ja on ollut siitä lähtien, kun verkko-ohjelmointi yleistyi 1990-luvulla. Vaihtoehtoisia keinoja sivujen lataamiseen ovat esimerkiksi cURL tai erilaiset HTTP-kirjastot kielissä, kuten Pythonin Requests tai JavaScriptin Axios. Go:n standardikirjastossa http-paketti tarjoaa helpon tavan toteuttaa web-pyynnöt ilman ulkopuolisia kirjastoja. Huomaa, että yllä käytetty `ioutil.ReadAll` on yksinkertainen, mutta suurten vastausten käsittelyssä kannattaa käyttää suoratoistoa tai osittaista lukemista, etenkin jos muistinkäyttö on huolenaihe.
 
-Ladataan web-sivuja alkuun responsiivisen web-suunnittelun aikakaudella. Go-ohjelmointikieli tekee tästä yksinkertaisen standardikirjastonsa ansiosta. Vaihtoehtoina on käyttää selaimen automatisoituja työkaluja, kuten Puppeteer, tai pilvipohjaisia ratkaisuja, kuten import.io. Mutta Go tarjoaa tehokkaan, vähäisen koodin ja monikäyttöisen ratkaisun.
-
-Gon http.Get() -funktio hakee URL:än ja palauttaa vastauksen. io.Copy()-toiminto kopioidaan sivun sisältö paikalliseen tiedostoon.
-
-## Katso myös:
-
-* Tutustu Go: n viralliseen http-pakettiin: https://golang.org/pkg/net/http/
-* Go-kielen dokumentaatio: https://golang.org/doc/
-* Deep Dive into Go's net/http package: https://medium.com/rungo/understanding-the-net-http-package-in-go-30e4ba6d83e9
+## See Also (Katso myös)
+- Go:n virallinen dokumentaatio: [http](https://pkg.go.dev/net/http)
+- Go by Example: HTTP Clients - [https://gobyexample.com/http-clients](https://gobyexample.com/http-clients)

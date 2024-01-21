@@ -1,6 +1,7 @@
 ---
 title:                "부분 문자열 추출"
-html_title:           "Arduino: 부분 문자열 추출"
+date:                  2024-01-20T17:45:11.315845-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "부분 문자열 추출"
 programming_language: "C++"
 category:             "C++"
@@ -10,44 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜합니까?
+## What & Why? (무엇 & 왜?)
+문자열에서 부분 문자열을 추출하는 것은 특정 조각을 선택해 새 문자열을 만드는 과정입니다. 프로그래머들은 데이터를 파싱하거나 필요한 정보만을 분리할 때 이 방법을 자주 사용합니다.
 
-문자열에서 부분 문자열을 추출하는 것은 문자열의 특정 부분을 조작하고자 할 때 수행하는 작업입니다. 프로그래머가 이를 수행하는 이유는 데이터 처리 및 분석을 위해 문자열을 다양한 조각으로 분할하는 것입니다.
-
-## 어떻게 하나요:
-
-C++에서는 `substr` 함수를 이용하여 문자열에서 부분 문자열을 추출할 수 있습니다.
+## How to (방법)
 ```C++
-#include <string>
 #include <iostream>
+#include <string>
 
-int main()
-{
-    std::string s = "C++ Programming Language";
-    std::string part = s.substr(0, 3);
+int main() {
+    std::string fullText = "Hello, C++ World!";
+    std::string subText = fullText.substr(7, 3); // "C++" 추출
 
-    std::cout << part;
+    std::cout << "Original string: " << fullText << std::endl;
+    std::cout << "Extracted substring: " << subText << std::endl;
+
     return 0;
 }
 ```
 출력:
-```C++
-C++
 ```
-위의 예에서 `0`은 시작 인덱스를 나타내며 `3`은 추출할 문자 수입니다.
+Original string: Hello, C++ World!
+Extracted substring: C++
+```
 
-## 깊게 들어가기:
+## Deep Dive (깊이 탐구)
+`std::string` 안에 있는 `substr` 함수는 C++98부터 사용되어 왔습니다. 문자열을 다룰 때 기본적으로 제공하는 강력한 기능 중 하나죠. `substr` 함수는 두 개의 매개변수를 받아 첫 번째 매개변수는 시작 인덱스를, 두 번째 매개변수는 추출할 문자의 길이를 지정합니다. 
 
-`substr` 메서드는 C++ Standard Library의 일부로 1998년에 첫 C++ 표준인 C++98에서 소개되었습니다. 이전에는 C 스타일 문자열과 같은 더 원시적인 방식으로 문자열을 조작해야 했습니다.
+다른 방법도 있습니다. C++17부터는 `std::string_view`, 한정된 메모리 사용으로 문자열을 보다 효율적으로 다루게 도와주죠. 이것을 사용해도 문자열의 부분을 취급할 수 있습니다.
 
-대신에 `find`와 `erase`와 같은 다른 문자열 메소드를 사용하여 부분 문자열을 추출 할 수도 있습니다. 하지만 이는 좀더 복잡합니다.
+구현 세부사항을 살펴보면, `substr`은 새로운 문자열을 만들기 때문에 메모리를 할당하고 이전 문자열로부터 데이터를 복사합니다. 이것은 큰 문자열이나 빈번한 작업에 대해 성능 저하를 일으킬 수 있습니다.
 
-성능 측면에서, `substr` 메서드는 문자열의 길이(즉, 추출할 문자열의 길이)에 비례하는 시간 복잡도를 갖습니다.
-
-## 참고 자료:
-
-아래 링크들은 이 주제와 관련된 추가 정보를 제공합니다.
-
-1. [C++ string substr](http://www.cplusplus.com/reference/string/string/substr/)
-2. [C++ string find](http://www.cplusplus.com/reference/string/string/find/)
-3. [C++ string erase](http://www.cplusplus.com/reference/string/string/erase/)
+## See Also (참고 자료)
+- C++ Reference for `std::string::substr`: https://en.cppreference.com/w/cpp/string/basic_string/substr
+- C++ `std::string_view`: https://en.cppreference.com/w/cpp/string/basic_string_view
+- C++ Standard Library Reference: https://cplusplus.com/reference/

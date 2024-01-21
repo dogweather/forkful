@@ -1,7 +1,8 @@
 ---
-title:                "Ein neues Projekt starten"
-html_title:           "C#: Ein neues Projekt starten"
-simple_title:         "Ein neues Projekt starten"
+title:                "Einen neuen Projekt starten"
+date:                  2024-01-20T18:03:58.127154-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Einen neuen Projekt starten"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Getting Started"
@@ -10,43 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# In Angriff Nehmen mit Gleam
-
 ## Was & Warum?
+Ein neues Projekt zu starten bedeutet, dass du von Grund auf beginnst, etwas Eigenes aufzubauen. Programmierer tun dies, um maßgeschneiderte Lösungen für einzigartige Probleme zu entwickeln oder um neue Ideen zu verwirklichen.
 
-Ein neues Projekt zu starten bedeutet, von Grund auf mit einem sauberen Schief zu beginnen. Dies gibt Programmierern die Möglichkeit, eine Anwendung oder ein Softwareprodukt nach ihren spezifischen Bedürfnissen und Visionen zu gestalten.
+## How to:
+Erstelle ein neues Projekt mit dem `gleam new` Befehl:
 
-## Anleitung:
-
-Zum Starten eines neuen Gleam-Projekts folgen Sie den folgenden Schritten im Terminal. 
-
-```
+```gleam
 gleam new mein_projekt
+```
+
+Das Ergebnis ist ein neues Verzeichnis namens `mein_projekt` mit einer grundlegenden Projektstruktur:
+
+```
+mein_projekt/
+├── gleam.toml
+├── README.md
+├── src
+│   └── mein_projekt.gleam
+└── test
+```
+
+Starte den Code mit dem `gleam run` Befehl:
+
+```gleam
 cd mein_projekt
-rebar3 eunit
+gleam run
 ```
 
-Nach Ausführung des obigen Codes erhalten Sie eine Ausgabe, die so ähnlich aussieht:
+## Deep Dive
+Gleam, die streng typisierte Sprache, die auf der Erlang VM läuft, bietet eine solide Basis für fehlertolerante Systeme. Seit seiner Einführung im Jahr 2018 hat Gleam sich als moderne Alternative zu Erlang und Elixir positioniert. Es kombiniert die robusten Eigenschaften der Erlang VM mit einer Typisierung, die der von Haskell und Rust ähnelt, um die Sicherheit und Zuverlässigkeit von gleichzeitig ablaufenden Systemen zu verbessern.
 
-```
-===> Verifying dependencies...
-===> Compiling mein_projekt
-===> Performing EUnit tests...
-```
+Alternativ könntest du ein Projekt auch in anderen Sprachen wie Rust, Go oder Elixir anfangen, aber Gleam bietet dir typisierte Interoperabilität mit Erlang und das Potenzial für eine sehr leistungsstarke Parallelverarbeitung, was gerade bei der Verarbeitung vieler gleichzeitiger Anfragen vorteilhaft ist.
 
-## Vertiefung:
+Der wichtigste Schritt bei Beginn eines neuen Gleam-Projekts ist das Setup der grundlegenden Struktur mit `gleam new`, welches die `gleam.toml` für das Projektmanagement, ein `README.md` für Dokumentation und basale Verzeichnisse für Quellcode und Tests voreinstellt. 
 
-Historisch gesehen stammen Gleam und Erlang, auf dem Gleam aufbaut, von Ericsson ab, wo die Bedürfnis an stabiler und weitrechender Konnektivität groß ist. Alternativ gibt es andere statisch typisierte Sprachen wie Rust und Haskell, die sich jedoch in ihrer Syntax und in den zur Verfügung stehenden Bibliotheken unterscheiden können.
-
-Bevor Sie ein Projekt in Gleam starten, ist es wichtig, die Erlang/OTP-Infrastruktur zu verstehen, da sie den Grundstein für Projekte bildet. Insbesondere sollten Sie mit `rebar3` vertraut sein, dem in Erlang geschriebenen Build-Tool, das beim Starten von Gleam-Projekten verwendet wird.
-
-## Siehe Auch:
-
-Für eine ausführlichere Anleitung zum Starten eines Gleam-Projekts:  
-[https://gleam.run/getting-started/](https://gleam.run/getting-started/)
-
-Für Details zur Erlang-Plattform:  
-[https://www.erlang.org/](https://www.erlang.org/)
-
-Für weitere Informationen zum `rebar3` Build-Tool:  
-[https://www.rebar3.org/](https://www.rebar3.org/)
+## See Also
+- Offizielle Gleam-Dokumentation: [https://gleam.run/book](https://gleam.run/book)
+- GitHub-Seite von Gleam: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)
+- Erlang/OTP: [https://www.erlang.org/](https://www.erlang.org/)

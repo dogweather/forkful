@@ -1,6 +1,7 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Bash: Rozpoczynanie nowego projektu"
+date:                  2024-01-20T18:04:36.633085-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,32 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Zacząć Nowy Projekt w Lua: Rzut Oka i Jak To Zrobić
+## What & Why? (Co i Dlaczego?)
+Rozpoczęcie nowego projektu oznacza stworzenie podstawy kodu, od którego zaczniemy budować nasze aplikacje. Programiści robią to, aby dopracować pomysł od zera i zbudować rozwiązania dopasowane do konkretnych potrzeb użytkowników.
 
-## Co i Dlaczego?
-
-Podjęcie nowego projektu oznacza rozpoczęcie pisania kodu od podstaw w celu stworzenia określonego programu lub aplikacji. Programiści robią to, aby rozwiązać specyficzne problemy, uzupełnić brakujące funkcje, albo po prostu dla nauki i zabawy.
-
-## Jak To Zrobić
-
-Jasne i proste. Zacznijmy od utworzenia najprostszego programu "Hello World" w Lua.
+## How to (Jak to zrobić):
+Tworzenie nowego projektu w Lua jest proste. Załóżmy, że nasz projekt to gra "Zgadnij Liczbę". Zacznij od podstawowego pliku `main.lua`.
 
 ```Lua
-print("Witaj, świecie!")
+-- main.lua
+math.randomseed(os.time()) -- inicjalizacja generatora liczb losowych
+
+local secretNumber = math.random(1, 100) -- losowa liczba do zgadnięcia
+print("Zgadnij liczbę od 1 do 100.")
+
+while true do
+    print("Wpisz swoją liczbę:")
+    local guess = tonumber(io.read())
+    
+    if guess == secretNumber then
+        print("Zgadłeś! Tajemnicza liczba to " .. secretNumber .. ".")
+        break
+    elseif guess < secretNumber then
+        print("Za mało!")
+    else
+        print("Za dużo!")
+    end
+end
 ```
 
-Gdy uruchomisz powyższy program, na ekranie zobaczyć powinieneś: `Witaj, świecie!`.
+Przykładowy wynik działania programu:
+```
+Zgadnij liczbę od 1 do 100.
+Wpisz swoją liczbę:
+> 50
+Za mało!
+Wpisz swoją liczbę:
+> 75
+Za dużo!
+Wpisz swoją liczbę:
+> 62
+Zgadłeś! Tajemnicza liczba to 62.
+```
 
-## Głębsze Zrozumienie 
+## Deep Dive (Głębsze Zanurzenie):
+Lua powstała w 1993 roku w Brazylii. Ceniona za prostotę, wydajność i elastyczność, Lua używana jest często w skryptowaniu, grach i systemach wbudowanych. Alternatywami dla Lua może być Python dla prostych skryptów lub C++ dla wydajnościowych systemów wbudowanych. Ważne przy rozpoczęciu projektu w Lua jest zrozumienie jak działa zarządzanie pamięcią i tabele, które są podstawowym typem danych w tym języku.
 
-Lua, stworzona w 1993 roku, to potężny, efektywny i łatwy w użyciu język skryptowy. W jego przypadku, nowe projekty tworzy się, pisząc kod w plikach tekstowych z rozszerzeniem `.lua`.
-
-Są różne alternatywy dla języka Lua, takie jak Python czy JavaScript, lecz Lua oferuje doskonałe wsparcie dla mechanizmów sterowania procedurami i wyjątkową prostotę składni.
-
-Co do zakładania nowych projektów, szczegół implementacji zależy od tego, co chcesz osiągnąć. Tworzenie prostego programu, jak wyżej, wymaga jedynie uruchomienia jednego pliku. Skomplikowane projekty mogą wymagać organizacji kodu w różne pliki i katalogi, zależności od zewnętrznych bibliotek i tak dalej.
-
-## Zobacz Również 
-
-- Oficjalna strona Lua: [https://www.lua.org/](https://www.lua.org/)
-- Dokumentacja Lua 5.4: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
-- Książka "Programming in Lua": [https://www.lua.org/pil/](https://www.lua.org/pil/)
+## See Also (Zobacz Również):
+- Oficjalna strona Lua: [https://www.lua.org](https://www.lua.org)
+- Dokumentacja Lua 5.4 (aktualna wersja): [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
+- Poradniki Lua: [http://lua-users.org/wiki/TutorialDirectory](http://lua-users.org/wiki/TutorialDirectory)
+- Grupy dyskusyjne o Lua: [http://lua-users.org/lists/lua-l/](http://lua-users.org/lists/lua-l/)

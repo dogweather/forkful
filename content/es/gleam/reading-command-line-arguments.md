@@ -1,7 +1,8 @@
 ---
-title:                "Leyendo argumentos de la línea de comandos"
-html_title:           "Bash: Leyendo argumentos de la línea de comandos"
-simple_title:         "Leyendo argumentos de la línea de comandos"
+title:                "Lectura de argumentos de línea de comandos"
+date:                  2024-01-20T17:55:59.415630-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lectura de argumentos de línea de comandos"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,49 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## Qué & Por Qué?
+Leer argumentos de la línea de comandos permite a tu programa recibir datos o instrucciones al ejecutarse. Los programadores lo usan para hacer que los programas sean flexibles y adaptables a diferentes situaciones y necesidades del usuario.
 
-Leer argumentos de línea de comandos es el proceso por el cual los programas obtienen datos de entrada directamente desde la línea de comandos del usuario. Los programadores hacen esto para permitir que sus programas se ejecuten de manera personalizada al proporcionar una interfaz flexible para introducir los datos.
-
-## Cómo Hacerlo:
-
-En Gleam, leemos argumentos de línea de comandos utilizando el módulo `os.args`. Aquí hay un código de muestra:
-
+## Cómo:
 ```Gleam
-import gleam/os
+import gleam/io
+import gleam/list.{map, Intersperse}
 
-/// Una función que imprime los argumentos de línea de comandos del usuario.
-pub fn main(args: List(String)) {
-  let user_args = os.args
-  case user_args {
-    [] -> "No se proporcionaron argumentos!".println()
-    [first | rest] -> {
-      "El primer argumento es:".println()
-      first.println()
-      "Los argumentos restantes son:".println()
-      rest.println()
-    }
-  }
+fn main(args: List(String)) {
+  let args_with_indexes = list.map(args, fn(arg) { 
+    arg 
+  })
+  .intersperse(" ")
+  .to_string()
+  
+  io.println("Argumentos recibidos: " ++ args_with_indexes)
 }
+
+// Supongamos que tu programa se llama 'mi_app'.
+// Ejecuta en la terminal: ./mi_app estos son los argumentos
+// Salida esperada: Argumentos recibidos: estos son los argumentos
 ```
 
-Si ejecuta este programa con `gleam run main arg1 arg2 arg3` , obtendrá un resultado similar a esto:
-
-```Gleam
-El primer argumento es:
-arg1
-Los argumentos restantes son:
-[arg2, arg3]
-```
-
-## Análisis Más Profundo:
-
-Los argumentos de línea de comandos han sido una interfaz estándar para interactuar con los programas desde los primeros días de los sistemas operativos de texto. Son fundamentales para permitir que los usuarios pasen parámetros a un programa al momento de su ejecución.
-
-Como alternativa a los argumentos de línea de comandos, algunos programas pueden optar por leer archivos de entrada, pedir entrada del usuario durante la ejecución o incluso capturar señales del sistema.
-
-En cuanto a la implementación, Gleam usa la interfaz de línea de comandos del sistema operativo. Cuando el comando se ejecuta, los argumentos de la línea de comandos se pasan al programa como una lista de cadenas.
-
-## Ver También:
-
-1. [Documentación oficial de Gleam](https://gleam.run/): Para obtener más información sobre Gleam y cómo funciona.
+## Profundización
+Históricamente, leer argumentos de la línea de comandos es una práctica que proviene de los primeros días de UNIX donde la interacción con la terminal era esencial. Alternativamente, puedes usar archivos de configuración o variables de entorno, pero para acciones directas y rápidas, los argumentos son insuperables. En Gleam, utilizamos las funciones del módulo `gleam/io` para interactuar con la entrada/salida y el manejo de listas para procesar los argumentos recibidos.

@@ -1,7 +1,8 @@
 ---
-title:                "Interpolation d'une chaîne de caractères"
-html_title:           "Ruby: Interpolation d'une chaîne de caractères"
-simple_title:         "Interpolation d'une chaîne de caractères"
+title:                "Interpolation de chaînes de caractères"
+date:                  2024-01-20T17:51:43.291698-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolation de chaînes de caractères"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,34 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et Pourquoi? (What & Why?)
+## What & Why?
+L'interpolation de chaîne permet d'insérer des variables dans des textes. Les programmeurs l'utilisent pour créer des messages dynamiques et personnaliser l'affichage.
 
-1) L'interpolation de chaînes en programmation est le processus d'évaluation de variables contenues au sein d'une chaîne de caractères.
-2) Les programmeurs l'utilisent pour rendre le code plus lisible et pour améliorer la concaténation des chaînes.
-
-## Comment faire? (How to?)
-
+## How to:
 ```Rust
-let nom = "Pierre";
-let age = 30;
- 
-// On utilise `{}` pour interpoler
-println!("Je m'appelle {} et j'ai {} ans.", nom, age);
+fn main() {
+    let planete = "Terre";
+    let population = 7_800_000_000;
+    
+    // Utilisation de la macro `format!` pour l'interpolation
+    let message = format!("Bonjour, habitants de la planète {}! Population: {}", planete, population);
+    println!("{}", message);
+}
 ```
-*Sortie* :
+Sortie:
 ```
-Je m'appelle Pierre et j'ai 30 ans.
+Bonjour, habitants de la planète Terre! Population: 7800000000
 ```
-Utilisez `{}` pour l'interpolation dans `println!`.
 
-## Plongeon Profond (Deep Dive)
+## Deep Dive
+Historiquement, l'interpolation de chaînes en Rust est réalisée à travers des macros comme `format!`, `print!` ou `println!`, empruntant une syntaxe similaire à celle du langage C pour le formatage (e.g., `%s`, `%d`). Rust n'a pas d'interpolation de chaîne intégrée comme dans d'autres langages (par exemple `"Hello, ${name}!"` en JavaScript). 
 
-1) **Contexte historique** : Rust, lancé en 2010, emprunte l'interpolation de chaînes à d'autres langages comme Ruby ou Python.
-2) **Alternatives** : Plutôt que d'utiliser `println!`, on peut utiliser `format!` pour stocker le résultat dans une variable.
-3) **Détails d'implémentation** : L'interpolation de chaînes en Rust n'est pas réalisée à l'exécution, mais à la compilation. C'est pourquoi elle est plus rapide et évite de nombreux bugs potentiels.
+Les alternatives incluent l'utilisation de la concaténation ou de bibliothèques tierces. L'implémentation de l'interpolation repose sur le trait `Display` pour convertir les types en chaînes, permettant un affichage convivial. De plus, Rust garantit la sécurité de type lors de l'interpolation, éliminant un grand nombre d'erreurs possibles à l'exécution.
 
-## Voir Aussi (See Also)
-
-- [Documentation officielle Rust sur `println!`](https://doc.rust-lang.org/stable/std/macro.println.html)
-- [Documentation officielle Rust sur `format!`](https://doc.rust-lang.org/std/fmt/index.html)
-- [Discussion StackOverflow sur l'interpolation de chaînes](https://stackoverflow.com/questions/52494664/how-do-i-do-formatting-or-string-interpolation-in-rust)
+## See Also
+- La documentation officielle de Rust sur les macros de formatage: https://doc.rust-lang.org/std/fmt/
+- Le trait `Display`: https://doc.rust-lang.org/std/fmt/trait.Display.html
+- Un guide pour utiliser `format!`: https://doc.rust-lang.org/stable/rust-by-example/hello/print/fmt.html

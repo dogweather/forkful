@@ -1,6 +1,7 @@
 ---
 title:                "Finding the length of a string"
-html_title:           "Arduino recipe: Finding the length of a string"
+date:                  2024-01-20T17:47:09.017824-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Finding the length of a string"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,50 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Finding the length of a string refers to counting the number of characters (including spaces) present in a text string. Programmers do it quite often because it helps in many operations like validation, manipulation, and comparison of the string data.
+Finding the length of a string means determining the number of characters it contains. Programmers do it to validate input, enforce limits, or align output.
 
 ## How to:
-
-Finding the length of a string in Elixir is straightforward. You can do it by using the `String.length()` function. Here's an example:
-
-```elixir
-IO.puts String.length("Hello, world!")
-```
-
-This will output:
+In Elixir, you get a string's length with the `String.length/1` function. Here's how:
 
 ```elixir
-12
+my_string = "Hello, World!"
+length = String.length(my_string)
+IO.puts(length)
 ```
 
-Remember, it counts spaces too. Hence, the length of `"Hello, world!"` is shown as 12.
+Sample output:
 
-## Deep Dive:
-
-Historically, Elixir treats strings as binaries. In particular, Elixir uses UTF-8 to encode its strings, which supports a wide range of characters including emojis. This is why in Elixir, the `String.length/1` function might not always behave the way you'd expect with multi-byte characters.
-
-Consider:
-
-```elixir
-IO.puts String.length("é")
+```
+13
 ```
 
-It returns `1`, because "é" is a single character, even though it's composed of two bytes in UTF-8.
+## Deep Dive
+Internally, Elixir strings are UTF-8 encoded binaries. Each character can be one to four bytes. So, when we call `String.length/1`, we're not merely counting bytes; we're counting Unicode graphemes, which are what we perceive as characters.
 
-As an alternative, you could count bytes instead:
+Historically, string length operations in many languages were byte-centric and did not account well for multi-byte characters. Elixir's approach is modern and Unicode-friendly from the get-go.
 
-```elixir
-IO.puts byte_size("é")
-```
+As for alternatives, you could manually count graphemes using recursion or with a loop, but that's unnecessary and inefficient. `String.length/1` is optimized and idiomatic.
 
-This returns `2`, as "é" takes up two bytes in UTF-8.
+Elixir's implementation uses an Erlang NIF (Native Implemented Function) for `String.length/1`, making it lightning fast. Counting bytes instead of graphemes is done with `byte_size/1`, which counts the raw bytes of a string's binary representation—useful in low-level operations where encoding doesn't matter.
 
-The `String.length/1` in Elixir does not always correspond to the underlying bytes. That's because Elixir counts graphemes, not bytes, when calculating string length.
-
-## See Also:
-
-For more information, refer to the following resources:
-
-- Elixir official doc: [String](https://hexdocs.pm/elixir/String.html)
-- Unicode Standard: [UTF-8, UTF-16, UTF-32 & BOM](http://www.unicode.org/faq/utf_bom.html)
+## See Also
+- [Elixir's String module documentation](https://hexdocs.pm/elixir/String.html)
+- [Unicode Standard](http://www.unicode.org/standard/standard.html)

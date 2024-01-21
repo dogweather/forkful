@@ -1,6 +1,7 @@
 ---
 title:                "读取命令行参数"
-html_title:           "C: 读取命令行参数"
+date:                  2024-01-20T17:56:38.557198-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "读取命令行参数"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,34 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是命令行参数以及为什么我们要读取？ (What & Why?)
+## What & Why? (是什么？为什么？)
+读取命令行参数可以让程序根据用户输入做出反应。程序员这么做是为了让程序更灵活，可以处理不同的情况和任务。
 
-命令行参数是传递给脚本的信息，它帮助我们定制程序功能以适应不同的需求。从命令行读取参数能够使程序更加灵活且能够处理不同的使用情况。
-
-## 这是如何做到的？ (How To:)
-
-首先，让我们来看一个简单的实例。在你的脚本中，你可以使用全局`ARGV`数组来访问这些参数。
+## How to: (怎么做：)
+在Ruby中，我们利用`ARGV`数组来接收命令行参数。这是个简单的范例：
 
 ```Ruby
-# greeting.rb
-name = ARGV.first  
-puts "Hello, #{name}!"
+# hello.rb
+name = ARGV.first || "世界"
+puts "你好，#{name}!"
 ```
 
-当你在命令行中运行这个程序时，如`ruby greeting.rb Alice`，结果将会是`Hello, Alice!`。
+运行它：
 
-## 对此进行深度研究 (Deep Dive)
+```
+$ ruby hello.rb
+你好，世界!
 
-在深入学习如何从Ruby命令行读取参数之前，有三个主要的领域值得关注：历史背景，不同的方法，以及读取命令行参数的实际内部工作方式。
+$ ruby hello.rb 格雷
+你好，格雷!
+```
 
-1. 历史背景: 早在计算机诞生的初期，命令行就被用作用户与计算机的交互接口。理解如何读取和使用命令行参数可以帮助我们编写更具适应性和灵活性的脚本。
+## Deep Dive (深入探索)
+命令行参数是一种老派但强大的技术，它从早期的Unix时代就开始用了。它让脚本和程序在执行时能够接收参数，没有图形界面时，这是必不可少的交互方式。在Ruby中，除了`ARGV`，还有其他解析命令行参数的库，比如`OptionParser`和`Thor`，它们可以管理更复杂的命令行选项。实际上，`ARGV`是一个全局数组，Ruby解释器在开始前就已经填充了它。
 
-2. 不同的方法: 尽管全局`ARGV`数组是读取命令行参数的最常见方法，也有一些标准库，如 `OptionParser`或`optparse`，它们提供了更详细的功能，可以处理选项以及选项后面的参数。
-
-3. 实现细节: 当调用`ruby`命令并传入一个脚本时，脚本名后面的所有参数都会被视为命令行参数加入`ARGV`数组。脚本名存储在全局变量`$0`中。
-
-## 参见 (See Also)
-
-- Ruby 官方文档，ARGV: https://ruby-doc.org/core-2.7.0/ARGV.html
-- OptionParser类的详细指南: https://ruby-doc.org/stdlib-2.7.0/libdoc/optparse/rdoc/OptionParser.html
-- Stack Overflow, 关于Ruby命令行参数的讨论: https://stackoverflow.com/questions/1334555/ruby-command-line-arguments
+## See Also (另请参阅)
+- Ruby官方文档关于`ARGV`: [https://ruby-doc.org/core-2.5.1/ARGF.html#method-c-argv](https://ruby-doc.org/core-2.5.1/ARGF.html#method-c-argv)
+- `OptionParser`官方文档: [https://ruby-doc.org/stdlib-2.5.1/libdoc/optparse/rdoc/OptionParser.html](https://ruby-doc.org/stdlib-2.5.1/libdoc/optparse/rdoc/OptionParser.html)
+- 关于`Thor`的介绍和教程: [https://github.com/rails/thor](https://github.com/rails/thor)

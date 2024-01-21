@@ -1,6 +1,7 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+date:                  2024-01-20T17:38:43.646081-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,24 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Konwersja łańcucha znaków na małe litery to operacja programistyczna, która przekształca wszystkie duże litery łańcucha w małe litery. Programiści robią to, aby ułatwić porównywanie łańcuchów, ignorując wielkość liter.
+## What & Why? (Co i dlaczego?)
+Zamiana łańcucha na małe litery oznacza, że każda duża litera w tekście zostaje przekształcona na swoją małą wersję. Programiści robią to, aby ułatwić porównywanie tekstu, gdzie wielkość liter nie ma znaczenia, jak podczas logowania czy wyszukiwania.
 
-## Jak to zrobić:
-Prosty przykład pokazujący, jak w Lua przekształcić łańcuch na małe litery:
-
+## How to: (Jak to zrobić:)
 ```Lua
-lowercaseString = string.lower("TWOJEJ TEKST DO KONWERSJI")
-print(lowercaseString)
-```
-Wyjście z powyższego kodu:
+local tekst = "Witaj Świecie!"
+local tekstMaleLitery = tekst:lower()
 
-```Lua
-"twojej tekst do konwersji"
+print(tekstMaleLitery)  -- wyświetli "witaj świecie!"
 ```
-## Głębsza Analiza
-Różne języki programowania mają różne sposoby konwersji łańcuchów na małe litery. Historia funkcji `string.lower` w Lua sięga wczesnych dni tego języka. W praktyce `string.lower` korzysta z mapowania ASCII. Alternatywą może być napisanie własnej funkcji, która przemierza łańcuch i konwertuje każdy znak indywidualnie. Jednak, dla większości przypadków, `string.lower` jest najprostszym i najbardziej efektywnym rozwiązaniem. 
 
-## Zobacz tez
-1. Dokumentacja Lua: [String Manipulation](https://www.lua.org/pil/20.html)
-2. Stack Overflow: [Lowercase a String in Lua](https://stackoverflow.com/questions/20284515/lowercase-a-string-in-lua)
+## Deep Dive (Dogłębna analiza)
+Zamiana tekstu na małe litery jest prostą ale ważną operacją w programowaniu. Historia tej funkcjonalności sięga wczesnych lat programowania, gdzie porównywano kody ASCII dużych i małych liter dla unifikacji danych. W Lua, funkcja `lower()` jest częścią standardowej biblioteki string i wykorzystuje lokalizację systemu do wykonywania operacji, co może mieć wpływ na teksty zawierające np. polskie znaki. Alternatywą jest manualne mapowanie znaków czy korzystanie z zewnętrznych bibliotek, które mogą oferować zaawansowane możliwości przy manipulacji tekstami. Implementacja w Lua jest prosta i wydajna, ale ważne jest świadome stosowanie jej z uwagi na lokalizację.
+
+## See Also (Zobacz również)
+- Lua 5.4 Reference Manual: https://www.lua.org/manual/5.4/manual.html#6.4
+- Lua Users Wiki – Strings Tutorial: http://lua-users.org/wiki/StringsTutorial
+- Unicode in Lua: https://www.unicode.org/notes/tn14/LuaMappings.html
+
+*Uwaga: Linki mogą prowadzić do stron w języku angielskim.

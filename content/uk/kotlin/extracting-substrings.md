@@ -1,7 +1,8 @@
 ---
-title:                "Видобування підрядків"
-html_title:           "C++: Видобування підрядків"
-simple_title:         "Видобування підрядків"
+title:                "Виділення підрядків"
+date:                  2024-01-20T17:46:04.031025-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Виділення підрядків"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,28 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Видобування підрядків у Kotlin: Що, чому і як?
-## Що і чому?
-Видобування підрядків полягає в отриманні частини рядка. Ми робимо це, коли нам потрібно працювати тільки з деякими частинами рядка, а не з цілим рядком.
+## What & Why?
+Що таке отримання підрядків та навіщо це програмістам?
 
-## Як це виконати:
-У Kotlin для видобування підрядків ми використовуємо метод `substring()`. Ось як це працює:
+Отримання підрядків - це метод виділення частини тексту з рядка. Програмісти це роблять для аналізу, обробки даних або, наприклад, для валідації вводу в програмі.
+
+## How to:
+Ось як це робиться в Kotlin:
 
 ```Kotlin
 fun main() {
-    val str = "Привіт, світ Kotlin!"
-    val subStr = str.substring(7, 11)
-    println(subStr)  // Виведе: світ
+    val text = "Привіт, як твої справи?"
+
+    // Витягти підрядок від 7 до 19 символа
+    val substring = text.substring(7, 20) // "як твої справи"
+    println(substring)
+
+    // Витягти підрядок з використанням діапазону
+    val rangeSubstring = text.slice(7..19) // "як твої справи"
+    println(rangeSubstring)
 }
 ```
-## Поглиблений огляд:
-Метод `substring()` був уведений у Kotlin від початку, тому він став основним способом видобування підрядків в цій мові. 
 
-Альтернативами можуть бути методи такі як `slice()`, але вони зазвичай використовуються, коли потрібно видобути декілька підрядків одночасно. 
+Вихідний результат обох методів однаковий:
+```
+як твої справи
+як твої справи
+```
 
-Усередині, Kotlin використовує Java-реалізацію підрядків, що дозволяє ефективно працювати з пам'яттю.
+## Deep Dive:
+В повсякденному кодингу, отримання підрядків - фундаментальний інструмент. В Kotlin, метод `substring` з’явився з Java, оскільки Kotlin побудований так, щоб бути сумісним з Java бібліотеками. Альтернативно, можна використовувати `slice`, який приймає діапазони і забезпечує більш гнучкий спосіб виділення тексту.
 
-## Дивись також:
-1. Документація по `substring()`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/substring.html
-2. Огляд рядків у Kotlin: https://kotlinlang.org/docs/basic-types.html#strings
-3. Способи роботи з рядками у Kotlin: https://www.programiz.com/kotlin-programming/string
+Під капотом, ці методи оптимізовані для ефективної роботи з рядками, але варто пам’ятати про можливі `StringIndexOutOfBoundsException`, які можуть виникати при спробі доступу до неіснуючих індексів.
+
+## See Also:
+Для подальшого читання та навчання:
+- [Kotlin documentation on substring](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
+- [Oracle Java String documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html) - адже розуміння Java допоможе з Kotlin
+- [Kotlin Range Expressions](https://kotlinlang.org/docs/ranges.html)

@@ -1,7 +1,8 @@
 ---
-title:                "Eliminazione dei caratteri corrispondenti a un modello"
-html_title:           "PowerShell: Eliminazione dei caratteri corrispondenti a un modello"
-simple_title:         "Eliminazione dei caratteri corrispondenti a un modello"
+title:                "Eliminazione di caratteri che corrispondono a un pattern"
+date:                  2024-01-20T17:41:51.982600-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,39 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cosa & Perché?
-Eliminare i caratteri che corrispondono a un modello riguarda la rimozione di stringhe specifiche da un testo. I programmatori lo fanno per rendere il loro codice più pulito, più efficiente e più facile da leggere.
+## What & Why?
+Tagliare via i caratteri seguendo una certa regola è come fare pulizia nel testo, togliendo ciò che non serve. I programmatori lo fanno per semplificare stringhe, per l'analisi dati, o per normalizzare e validare input.
 
-## Come fare:
-Per proporre un esempio di codice che elimina i caratteri corrispondenti a un modello in Clojure, useremo le funzioni `re-seq` e `join`. Supponiamo che vogliamo rimuovere tutti i numeri da una stringa.
-
-```Clojure
-(defn remove-numbers [s]
-  (clojure.string/join (re-seq #"[^\d]" s)))
-
-(println (remove-numbers "c1od2ic3e4")) 
-;; Output: "codice"
-```
-
-Questo codice rimuove tutti i numeri dalla stringa "c1od2ic3e4" e stampa "codice".
-
-## Approfondimento
-Similmente ad altre varianti di Lisp, Clojure fornisce una serie di operatori per manipolare le stringhe. L'approccio del modello regolare è comune in molti linguaggi di programmazione. Puoi anche utilizzare `filter` e `not` in combinazione con `Character/isDigit`.
-
-La scelta del metodo è principalmente una questione di gusto e di contesto. L'importante è mantenere il codice comprensibile e mantenibile.
+## How to:
+In Clojure, usiamo `clojure.string/replace` per sostituire i caratteri indesiderati. Ecco come:
 
 ```Clojure
-(defn remove-numbers [s]
-  (let [not-digit? #(not (Character/isDigit %))]
-    (apply str (filter not-digit? s))))
-   
-(println (remove-numbers "c1od2ic3e4"))
-;; Output: "codice"
+(require '[clojure.string :as str])
+
+; Elimina tutti i numeri da una stringa
+(defn delete-digits [s]
+  (str/replace s #"\d+" ""))
+
+; Uso della funzione
+(println (delete-digits "Terza1Class3"))
 ```
 
-## Vedi Anche
-Puoi ampliare le tue conoscenze sulla manipolazione delle stringhe in Clojure consultando le seguenti risorse:
+Output:
+```
+TerzaClass
+```
 
-1. Clojure - Stringhe: https://clojuredocs.org/clojure.string
-2. Le espressioni regolari in Clojure: https://clojuredocs.org/clojure.core/re-seq
-3. Filtro in Clojure: https://clojuredocs.org/clojure.core/filter
+Un altro esempio per rimuovere le vocali:
+
+```Clojure
+; Elimina tutte le vocali da una stringa
+(defn delete-vowels [s]
+  (str/replace s #"[aeiouAEIOU]" ""))
+
+; Uso della funzione
+(println (delete-vowels "Ciao Mondo"))
+```
+
+Output:
+```
+C Mnd
+```
+
+## Deep Dive
+La funzione `clojure.string/replace` esiste da molte versioni. È basata su Java `String.replaceAll`, che usa espressioni regolari. In alternativa, puoi usare `reduce` con una sequenza di caratteri o altre funzioni core di Clojure.
+
+Per esempio, con `reduce`:
+
+```Clojure
+(defn delete-chars [s chars-pattern]
+  (reduce (fn [acc char]
+            (str/replace acc (str char) ""))
+          s
+          chars-pattern))
+
+(println (delete-chars "Hello World" "lo"))
+```
+
+Output:
+```
+He Wrd
+```
+
+Dettagli di implementazione: `str/replace` è veloce e potente grazie alle regex. C'è da fare attenzione con pattern complessi per evitare un uso eccessivo di risorse.
+
+## See Also
+- ClojureDocs su `clojure.string/replace`: https://clojuredocs.org/clojure.string/replace
+- Guida alle regex in Java (usate anche in Clojure): https://www.vogella.com/tutorials/JavaRegularExpressions/article.html
+- Clojure from the ground up: strings: https://aphyr.com/posts/305-clojure-from-the-ground-up-strings

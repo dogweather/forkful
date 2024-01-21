@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie argumentów linii poleceń"
-html_title:           "Bash: Czytanie argumentów linii poleceń"
-simple_title:         "Czytanie argumentów linii poleceń"
+title:                "Odczytywanie argumentów linii poleceń"
+date:                  2024-01-20T17:56:15.590997-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie argumentów linii poleceń"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,35 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-
-Czytanie argumentów z wiersza poleceń to proces, w którym program interpretuje dane wprowadzone przez użytkownika przy uruchomieniu. Programiści używają go, aby zwiększyć elastyczność i interaktywność swoich aplikacji.
+## Co i dlaczego?
+Czytanie argumentów z linii poleceń to proces pobierania danych od użytkownika, kiedy uruchamia program. Programiści robią to, aby ich aplikacje mogły być bardziej elastyczne i dostosowywać się do potrzeb użytkownika bez konieczności modyfikowania kodu.
 
 ## Jak to zrobić:
-
-Aby odczytać argumenty z linii poleceć w Haskellu, użyjemy funkcji `getArgs` z modułu `System.Environment`. Oto prosty przykład:
+W Haskellu, argumenty linii poleceń odczytujemy przy pomocy funkcji `getArgs` z modułu `System.Environment`. Oto jak to wygląda w praktyce:
 
 ```Haskell
-import System.Environment  
-  
-main = do  
-    args <- getArgs  
-    putStrLn ("Cześć, " ++ args !! 0)
+import System.Environment (getArgs)
+
+main :: IO ()
+main = do
+    args <- getArgs
+    print args
 ```
 
-Uruchomiony z argumentem, np. `ghc app.hs Adam`, wyprodukuje wyjście:
+A teraz przykładowe wywołanie i wynik:
 ```
-Cześć, Adam
+$ runhaskell args.hs jeden dwa trzy
+["jeden","dwa","trzy"]
 ```
 
-## Dogłębne zrozumienie:
+Możesz też użyć funkcji `getProgName`, aby pobrać nazwę programu:
 
-Odczytywanie argumentów z linii poleceń to technika, która istnieje od początków informatyki. Kiedy używamy `getArgs`, Haskell wykorzystuje typy danych i model IO do bezpiecznego odczytania i manipulowania tymi argumentami. Inne języki, jak Python czy Ruby, mają podobne mechanizmy, ale rzadko są one tak eleganckie jak w Haskellu.
+```Haskell
+import System.Environment (getProgName, getArgs)
 
-Alternatywnie, dla bardziej zaawansowanego i rozbudowanego parsowania argumentów z linii poleceń, można użyć biblioteki jak `optparse-applicative` lub `cmdargs`. Ta druga jest znacznie bardziej popularna, choć obie są godne uwagi. `cmdargs` pozwala definiować ramy i reguły dla oczekiwanych argumentów, co jest bardzo przydatne dla dużych projektów.
+main :: IO ()
+main = do
+    progName <- getProgName
+    args <- getArgs
+    putStrLn $ "Program: " ++ progName
+    putStrLn "Argumenty:"
+    mapM_ putStrLn args
+```
 
-## Zobacz też:
+Przykładowy wynik:
+```
+$ runhaskell args.hs jeden dwa trzy
+Program: args.hs
+Argumenty:
+jeden
+dwa
+trzy
+```
 
-- Moduł `System.Environment` [dokumentacja](http://hackage.haskell.org/package/base-4.14.0.0/docs/System-Environment.html)
-- Biblioteka `optparse-applicative` [dokumentacja](https://hackage.haskell.org/package/optparse-applicative-0.15.1.0/docs/Options-Applicative.html)
-- Biblioteka `cmdargs` [dokumentacja](http://hackage.haskell.org/package/cmdargs-0.10.20/docs/System-Console-CmdArgs.html)
+## Głębsze spojrzenie:
+Historia: Argumenty z linii poleceń są używane od początków informatyki. To podstawowa metoda interakcji z programami działającymi w terminalu.
+
+Alternatywy: Oprócz `getArgs`, możesz używać bibliotek takich jak `optparse-applicative` do bardziej zaawansowanego parsowania argumentów i flag.
+
+Szczegóły implementacyjne: `getArgs` zwraca listę argumentów jako `[String]`. Nie martw się o typy danych — Haskell zajmie się tym. Warto jednak przetwarzać te argumenty dalej, aby sprawnie obsłużyć różne opcje programu.
+
+## Zobacz również:
+- Dokumentację Haskella dla `System.Environment`: http://hackage.haskell.org/package/base-4.16.0.0/docs/System-Environment.html
+- Tutorial dotyczący `optparse-applicative`: https://haskell-servant.readthedocs.io/en/stable/cookbook/using-optparse-generic/UsingOptparseGeneric.html
+- Artykuł o obsłudze argumentów linii poleceń w Haskellu: https://wiki.haskell.org/Command_line_option_parsers

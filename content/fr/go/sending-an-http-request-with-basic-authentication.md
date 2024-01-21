@@ -1,7 +1,8 @@
 ---
-title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
-simple_title:         "Envoyer une requête http avec une authentification de base"
+title:                "Envoi d'une requête HTTP avec authentification de base"
+date:                  2024-01-20T18:01:34.036200-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Envoi d'une requête HTTP avec authentification de base"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,56 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi ?
-
-Envoyer une requête HTTP avec une authentification de base est une méthode pour accéder à des données sécurisées sur un serveur. Les développeurs l'utilisent pour garantir la sécurité et l'intégrité des données tout en permettant une connectivité fluide entre client et serveur.
+## Quoi & Pourquoi ?
+Envoyer une requête HTTP avec une authentification de base signifie joindre vos identifiants (nom d'utilisateur et mot de passe) pour accéder à une ressource protégée. Les programmeurs font cela pour interagir avec des APIs sécurisées ou des services web qui exigent une identification.
 
 ## Comment faire :
-
-Voici comment on peut implémenter cela avec Go :
-
 ```Go
 package main
 
 import (
-    "net/http"
-    "net/url"
+	"fmt"
+	"net/http"
+	"encoding/base64"
 )
 
 func main() {
+	client := &http.Client{}
+	req, err := http.NewRequest("GET", "https://exemple.com/ressource", nil)
+	if err != nil {
+		panic(err)
+	}
 
-    client := &http.Client{}
-    data := url.Values{}
+	req.Header.Add("Authorization", "Basic " + base64.StdEncoding.EncodeToString([]byte("user:password")))
+	resp, err := client.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
 
-    req, err := http.NewRequest("POST", "http://website.com", strings.NewReader(data.Encode()))
-    if err != nil {
-        log.Fatal(err)
-    }
-
-    req.SetBasicAuth("username", "password")
-    req.Header.Add("Content-Type", "xyz; charset=utf-8")
-    resp, err := client.Do(req)
-
-    if err != nil {
-        log.Fatal(err)
-    }
-
-    defer resp.Body.Close()
+	fmt.Println("Status Code:", resp.StatusCode)
 }
 ```
+Sortie (exemple) :
+```
+Status Code: 200
+```
 
-Dans cet exemple, nous créons d'abord un nouveau client HTTP. Ensuite, nous préparons notre requête POST et ajoutons l'authentification de base avec `req.SetBasicAuth`.
+## Plongée profonde
+Historiquement, l'authentification de base HTTP a été conçue pour permettre une méthode simple d'identification. Bien qu'elle soit moins sécurisée que d'autres méthodes comme l'authentification Digest ou OAuth, elle reste largement utilisée pour sa simplicité. En pratique, les données d'identification sont encodées avec Base64, qui n'est pas un chiffrement mais juste un encodage. Les alternatives contemporaines incluent les tokens JWT ou l'utilisation d'API keys. Ces méthodes sont à privilégier pour une meilleure sécurité.
 
-## Plongée profonde :
+En Go, l'exécution d'une telle authentification nécessite l'utilisation du package `net/http` et souvent `encoding/base64`. Il est crucial d'utiliser HTTPS pour protéger les identifiants lors de l'envoi. Bien que l'exemple ci-dessus utilise la méthode GET, la même logique d'authentification s'applique à d'autres méthodes HTTP comme POST, PUT, etc.
 
-Historiquement, l'authentification de base est une part intégrante des spécifications HTTP, permettant aux applications clientes d'envoyer un nom d'utilisateur et un mot de passe avec chaque requête. Cette méthode a résisté à l'épreuve du temps en raison de sa simplicité.
-
-Il existe plusieurs alternatives à l'authentification basique, comme l'authentification par jeton et l'authentification OAuth. Ces méthodes offrent un niveau de sécurité plus élevé et sont plus adaptées aux applications modernes complexes.
-
-L'implémentation détaillée réside principalement dans la méthode `SetBasicAuth`. Cette fonction ajoute simplement l'en-tête `Authorization` avec la valeur `Basic {credentials}`, où `{credentials}` est la chaîne 'username:password' encodée en base64.
-
-## Voir aussi :
-
-- Documentation Go sur l'authentification de base : https://golang.org/pkg/net/http/#Request.SetBasicAuth
-- Un guide sur HTTP Basic Access Authentication : https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
-- Tutoriel plus approfondi sur l'authentification avec Go : https://gowebexamples.com/http-authentication/
+## Voir également
+- Documentation Go pour `net/http`: [https://pkg.go.dev/net/http](https://pkg.go.dev/net/http)
+- Spécifications HTTP Basic Authentication: [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)
+- JWT (JSON Web Tokens): [https://jwt.io/](https://jwt.io/)

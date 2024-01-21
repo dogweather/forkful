@@ -1,7 +1,8 @@
 ---
-title:                "Interpolando una cadena de texto"
-html_title:           "Haskell: Interpolando una cadena de texto"
-simple_title:         "Interpolando una cadena de texto"
+title:                "Interpolación de cadenas de texto"
+date:                  2024-01-20T17:51:53.424787-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolación de cadenas de texto"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,55 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+## Qué y Por Qué?
 
-La interpolación de cadenas en Ruby es un proceso por el cual se incrustan variables o expresiones dentro de una cadena. Los programadores lo hacen para insertar dinámicamente valores dentro de una cadena, lo que puede mejorar la legibilidad y eficiencia del código.
+La interpolación de cadenas en Ruby permite incrustar el valor de cualquier expresión dentro de una cadena de texto. Los programadores lo hacen para construir cadenas dinámicamente, facilitando la inserción de variables y expresiones dentro de ellas sin romper el flujo.
 
-## Cómo se hace:
+## Cómo hacerlo:
 
-Aquí es cómo puedes hacer la interpolación de cadenas en Ruby:
-
-```Ruby
-nombre = "Juan"
-puts "Hola, #{nombre}!"
-```
-
-La salida sería:
+Aquí tienes algunos ejemplos de cómo interpolamos cadenas en Ruby. Recuerda, todo lo que está dentro de `#{}` se evalúa y se convierte a una cadena.
 
 ```Ruby
-"Hola, Juan!"
+nombre = "Mundo"
+saludo = "Hola, #{nombre}!"
+puts saludo  # => Hola, Mundo!
+
+edad = 28
+mensaje = "En 10 años tendrás #{edad + 10} años."
+puts mensaje  # => En 10 años tendrás 38 años.
+
+precio = 5.99
+producto = "café"
+informe = "El precio del #{producto} es $#{'%.2f' % precio}."
+puts informe  # => El precio del café es $5.99.
 ```
 
-También puedes insertar expresiones:
+## Conocimiento Detallado:
 
-```Ruby
-edad = 15
-puts "En cinco años, tendrás #{edad + 5} años."
-```
+Interpolar una cadena es una función que Ruby maneja elegantemente. Surgió como una mejor alternativa a la concatenación, que era más verbosa y propensa a errores.
 
-La salida sería:
+Alternativas:
+- Concatenación: `saludo = 'Hola, ' + nombre + '!'`
+- `sprintf` o el método `format`: `mensaje = sprintf('En %d años tendrás %d años.', 10, edad + 10)`
+- La función `concatenate`: `puts 'Hola, ' << nombre << '!'`
 
-```Ruby
-"En cinco años, tendrás 20 años."
-```
+Detalles de implementación: Ruby convierte lo que esté dentro de `#{}` a una cadena llamando al método `.to_s` sobre la expresión resultante. Si la cadena original está entre comillas simples, la interpolación no funcionará; debe estar entre comillas dobles o usar sintaxis de literales de cadena como `%Q{}`.
 
-## Profundizando:
+## Ver También:
 
-Historicamente, la interpolación de cadenas en Ruby ha sido un componente clave desde sus primeras versiones. Proporciona una forma elegante y limpia para insertar variables y expresiones en cadenas.
-
-En cuanto a alternativas, también puedes usar la concatenación de cadenas. Pero, esto puede resultar en código más verboso y menos legible:
-
-```Ruby
-nombre = "Juan"
-puts "Hola, " + nombre + "!"
-```
-La salida sería la misma que antes. Sin embargo, la interpolación de cadenas es, generalmente, la opción preferida debido a su simplicidad y legibilidad.
-
-En términos de cómo funciona internamente, cuando se encuentra con #{}, Ruby evalúa lo que está entre las llaves como Ruby puro y luego convierte el resultado en una cadena.
-
-## También podrías ver:
-
-Para más información sobre la interpolación de cadenas en Ruby, consulta las siguientes fuentes:
-
-- [Interpolación de cadena en el libro de Ruby](http://rubylearning.com/satishtalim/ruby_string_interpolation.html)
-- [Documento oficial de Ruby](https://ruby-doc.org/core-2.7.0/String.html#method-i-25-3C)
+- La documentación oficial de Ruby sobre [literales de cadena](https://docs.ruby-lang.org/en/2.6.0/syntax/literals_rdoc.html#label-Strings)
+- Ejemplo de libro: ["The Well-Grounded Rubyist" de David A. Black](https://www.manning.com/books/the-well-grounded-rubyist), que aborda el tratamiento de cadenas en Ruby y prácticas recomendadas.

@@ -43,6 +43,5 @@ Si vous lancez ce code avec "2023-04-10", `result` sera un `Ok <posix value>` qu
 Historiquement, Elm a toujours cherché à simplifier la gestion des temps et des dates via des abstractions haut niveau. Comparé à JavaScript où `Date.parse()` existe, Elm nécessite d'installer des packages pour cette fonctionnalité. Cela garantit que le parsing des dates est traité explicitement par le développeur. En dehors du package `elm/time`, on peut utiliser `justinmimbs/date` pour des fonctionnalités de parsing plus avancées. Dans l'implémentation, Elm oblige au traitement des erreurs, conduisant à un code plus sûr.
 
 ## See Also
-- Documentation [`elm/time`](https://package.elm-lang.org/packages/elm/time/latest/)
 - Package [`justinmimbs/date`](https://package.elm-lang.org/packages/justinmimbs/date/latest/)
 - Elm Guide sur les [Time Zones](https://guide.elm-lang.org/effects/time.html)

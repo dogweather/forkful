@@ -1,7 +1,8 @@
 ---
-title:                "Конкатенація рядків"
-html_title:           "PHP: Конкатенація рядків"
-simple_title:         "Конкатенація рядків"
+title:                "Об'єднання рядків"
+date:                  2024-01-20T17:34:29.528232-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Об'єднання рядків"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,34 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що та Чому?)
 
-Конкатенація рядків - це спосіб об'єднання двох або більше рядків. Програмісти роблять це, щоб створити повніші рядки чи динамічно змінювати вміст рядка.
+Concatenating strings is about sticking them together end-to-end. Programmers concatenate to build up texts dynamically, like creating messages or generating complex SQL queries.
 
-## Як зробити:
+## How to: (Як це зробити:)
 
-Нижче наведений приклад коду, який демонструє роботу з конкатенацією рядків у C#.
+Here's how to concatenate strings in C#. Check out these examples:
 
 ```C#
-string firstName = "Олександр";
-string lastName = "Іванов";
-string fullName = firstName + " " + lastName;
-
-Console.WriteLine(fullName);
+string hello = "Привіт";
+string world = "Світ";
+string exclamation = "!";
+string greeting = hello + ", " + world + exclamation;
+Console.WriteLine(greeting); // Output: Привіт, Світ!
 ```
 
-В результаті ви отримаєте виведення:
+Or, use `StringBuilder` for better performance with lots of strings:
 
+```C#
+StringBuilder sb = new StringBuilder();
+sb.Append("Привіт");
+sb.Append(", ");
+sb.Append("Світ");
+sb.Append("!");
+Console.WriteLine(sb.ToString()); // Output: Привіт, Світ!
 ```
-Олександр Іванов
+
+## Deep Dive (Поглиблений Розбір):
+
+Historically, C# developers used operators like `+` for simple concatenation. But this gets inefficient with numerous strings – every `+` creates a new string! That's where `StringBuilder` comes in; it's designed for heavy-duty string assembly, efficiently managing memory and processing.
+
+Alternatives? Absolutely. You've got `String.Concat()`, `String.Format()`, or even string interpolation since C# 6:
+
+```C#
+string greeting = $"Привіт, {world}{exclamation}";
+// Nice and clean.
 ```
 
-## Пірнемо глибше:
+Under the hood, concatenation with `+` or `$""` is compiled into `String.Concat()`. That's fine for a few strings, but with more, use `StringBuilder`.
 
-Історично багато мов програмування включають функцію конкатенації рядків. З часом розробники почали використовувати більш ефективні способи об'єднання рядків, такі як StringBuilder в C#, який забезпечує кращу продуктивність при об'єднанні великої кількості рядків.
+## See Also (Дивіться також):
 
-## Дивіться також:
-
-1. [Документація Microsoft з конкатенації рядків](https://docs.microsoft.com/uk-ua/dotnet/csharp/programming-guide/strings/how-to-concatenate-multiple-strings)
-2. [StringBuilder в C#](https://docs.microsoft.com/uk-ua/dotnet/api/system.text.stringbuilder?view=net-5.0)
-3. [Метод Join() в C#](https://docs.microsoft.com/uk-ua/dotnet/api/system.string.join?view=net-5.0)
+- Microsoft's official docs on string concatenation: [C# string concatenation](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/concatenate-multiple-strings)
+- Stack Overflow discussions about when to use `StringBuilder`: [Stack Overflow: StringBuilder vs. String Concat](https://stackoverflow.com/questions/73883/stringbuilder-vs-string-concatenation)

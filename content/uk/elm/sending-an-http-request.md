@@ -1,7 +1,8 @@
 ---
-title:                "Надсилання http-запиту"
-html_title:           "Arduino: Надсилання http-запиту"
-simple_title:         "Надсилання http-запиту"
+title:                "Надсилання HTTP-запиту"
+date:                  2024-01-20T18:00:05.261278-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,33 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Відправка HTTP-запиту - це процес, коли ми, як програмісти, запитуємо інформацію з сервера або відправляємо на нього дані. Нам це потрібно, щоб отримати дані для своїх веб-додатків чи обновити існуючі дані на сервері.
+## What & Why?
+## Що й Навіщо?
 
+В Elm, відправлення HTTP запиту дозволяє твоїй програмі комунікувати з веб-серверами. Це критично для завантаження даних, авторизації користувачів, відправлення форм.
+
+## How to:
 ## Як це зробити:
-Давайте поглянемо, як в Elm відправляється HTTP-запит:
 
 ```Elm
-import Http exposing (..)
+import Http
 import Json.Decode as Decode
 
-getPosts : Cmd Msg
-getPosts =
+type alias User =
+    { id : Int
+    , name : String
+    }
+
+userDecoder : Decode.Decoder User
+userDecoder =
+    Decode.map2 User
+        (Decode.field "id" Decode.int)
+        (Decode.field "name" Decode.string)
+
+getUser : Cmd Msg
+getUser =
     Http.get
-        { url = "https://jsonplaceholder.typicode.com/posts"
-        , expect = Http.expectJson GotPosts (Decode.list postDecoder)
+        { url = "https://example.com/user"
+        , expect = Http.expectJson GotUser userDecoder
         }
+
+type Msg
+    = GotUser (Result Http.Error User)
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        GotUser (Ok user) ->
+            ({ model | user = Just user }, Cmd.none)
+
+        GotUser (Err _) ->
+            (model, Cmd.none)
 ```
-Цей приклад показує, як відправити GET-запит до сервера і очікувати JSON відповідь.
 
-## Поглиблений огляд:
-Відправка HTTP-запиту має довгу історію і була ключовим аспектом розвитку вебу. Elm використовує концепцію команд (Cmd) для відправки HTTP-запитів - це надає нашим додаткам впевненість в отриманні відповідей, незалежно від стану мережі.
+Запит `getUser` видасть повідомлення `GotUser` з результатом.
 
-Зауважте, що Elm має альтернативи для відправки HTTP запитів, що можуть бути корисними в залежності від контексту вашого додатку. Наприклад, `Http.post`.
+## Deep Dive
+## Поглиблений Занурення
 
-Щодо деталей виконання, Elm відправляє HTTP-запит у несинхронний спосіб, що дозволяє вашому додатку продовжувати роботу, незалежно від результату запиту. 
+Elm's HTTP бібліотека є надійним та тип-безпечним способом взаємодії з API. У 2016 році, Elm переосмислив обробку побічних ефектів з "Elm Architecture", де HTTP виклики стали командами (`Cmd`). Альтернативою Elm є JavaScript з axios чи fetch, але без гарантій безпеки типів. В Elm, ти описуєш очікуваний вигляд даних за допомогою декодерів, забезпечуючи додаткову впевненість в правильності даних.
 
-## Дивіться також:
-* Документація Elm про HTTP-запити: https://package.elm-lang.org/packages/elm/http/latest/
-* Введення в HTTP: https://developer.mozilla.org/uk/docs/Web/HTTP/Overview
-* Довідка Elm Json.Decode: https://package.elm-lang.org/packages/elm/json/latest/Json-Decode
+## See Also
+## Дивіться Також
+
+- Офіційна документація по HTTP в Elm: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)
+- Роз'яснення "Elm Architecture": [https://guide.elm-lang.org/architecture/](https://guide.elm-lang.org/architecture/)
+- Про JSON декодування: [https://package.elm-lang.org/packages/elm/json/latest/](https://package.elm-lang.org/packages/elm/json/latest/)

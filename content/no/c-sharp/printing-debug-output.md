@@ -1,7 +1,8 @@
 ---
-title:                "Utskrift av feilsøkingsresultat"
-html_title:           "Arduino: Utskrift av feilsøkingsresultat"
-simple_title:         "Utskrift av feilsøkingsresultat"
+title:                "Skrive ut feilsøkingsdata"
+date:                  2024-01-20T17:52:04.615061-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skrive ut feilsøkingsdata"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,35 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why? (Hva & Hvorfor?)
+Skrive ut feilsøkingsdata hjelper utviklere å se hva som foregår under panseret av programmene sine. Vi gjør det for å fakke bugs og forstå flyten, uten å granske tusenvis av kodelinjer.
 
-Utskrift av feilsøkingsdata er en teknikk for å spore flyten av en programkode. Dette gjør programmerere fordi det lar dem se tydelig hva som skjer på hvert trinn av programmet, noe som gjør det lettere å feilsøke.
-
-## Slik gjør du:
-
-Her er en enkel C# eksempelkode som viser hvordan man kan skrive ut debugging.
-
+## How to: (Hvordan:)
 ```C#
-using System.Diagnostics;
+using System;
 
 class Program
 {
     static void Main()
     {
-        Debug.WriteLine("Dette er en debug melding");
+        Console.WriteLine("Start debugging...");
+        
+        int value = DebugValue();
+        Console.WriteLine($"Debug Value: {value}");
+        
+        // More code here
+        
+        Console.WriteLine("End debugging.");
+    }
+    
+    static int DebugValue()
+    {
+        int temp = 42; // La oss anta dette er en interessant verdi
+        Console.WriteLine($"In DebugValue, temp is {temp}");
+        return temp;
     }
 }
+
+// Sample output:
+// Start debugging...
+// In DebugValue, temp is 42
+// Debug Value: 42
+// End debugging.
 ```
+Bruk Console.WriteLine for å skrive ut verdier under kjøring. Ganske greit.
 
-Når du kjører dette koden, vil den skrive ut "Dette er en debug melding" i feilsøkingskonsollen.
+## Deep Dive (Dypdykk)
+Før, da alt var tekstbasert, var utskrift til konsoll standard for feilsøking. Alternativer inkluderer bruk av debuggere eller logger med nivåer som info, warn og error. Beskrivelser i koden (som `// La oss anta dette er en interessant verdi`) er også nyttig. Ulempen er at `Console.WriteLine` kan gjøre koden rotete og langsom i produksjon, så husk å fjerne dem før lansering eller bruk betingelser for å kontrollere utskrift i produksjonsmiljø.
 
-## Dyp Dykk
-
-Historisk sett har utskrift av feilsøkingsdata vært en grunnleggende del av programmering siden de første datamaskinene. Alternativer til utskrift inkluderer bruk av debuggere, men disse er ofte mer komplekse og tidkrevende å sette opp.
-
-I C# bruker vi `System.Diagnostics.Debug`-klassen for å skrive ut debugmeldinger. Denne klassen har forskjellige metoder, men `WriteLine` er kanskje den mest brukte. Vær oppmerksom på at du må kjøre koden din i debug-modus for å se disse meldingene. De vises ikke når koden kjøres i release-modus.
-
-## Se også:
-
-1. [System.Diagnostics.Debug Class Dokumentasjon](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug?view=net-5.0)
-2. [Debugging i Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/?view=vs-2019)
+## See Also (Se Også)
+- Microsoft C# dokumentasjon: [Console.WriteLine Method](https://docs.microsoft.com/en-us/dotnet/api/system.console.writeline)
+- Blogginnlegg om logging i .NET: [Logging and tracing in .NET](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/)

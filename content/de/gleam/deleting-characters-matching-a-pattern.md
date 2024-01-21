@@ -1,7 +1,8 @@
 ---
-title:                "Zeichen löschen, die einem Muster entsprechen"
-html_title:           "C#: Zeichen löschen, die einem Muster entsprechen"
-simple_title:         "Zeichen löschen, die einem Muster entsprechen"
+title:                "Löschen von Zeichen, die einem Muster entsprechen"
+date:                  2024-01-20T17:42:16.694990-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,29 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Gleam Programmieren: Zeichen löschen, die einem Muster entsprechen
+## What & Why? (Was & Warum?)
+Das Löschen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte Zeichen aus einem String zu entfernen. Programmierer tun dies, um Daten zu bereinigen, Nutzereingaben zu verarbeiten oder Strings für bestimmte Zwecke zuzuschneiden.
 
-## Was & Warum?
-Durch das Löschen von Zeichen, die einem Muster entsprechen, entfernen wir spezifische Zeichen aus einer Zeichenkette. Programmierer nutzen das, um Daten zu bereinigen oder zu formatieren.
+## How to: (Wie geht das:)
+```gleam
+import gleam/regex.{replace}
 
-## So geht's:
-Mit Gleam können wir das mit dem Modul `gleam/string` und der Funktion `contains` erreichen.
+pub fn remove_pattern(text: String) -> String {
+  replace(text, regex.from_string("[aeiou]").unwrap(), "")
+}
 
-```Gleam
-import gleam/string
-let my_string = "Gleam Programmierung ist super! ##"
-let pattern = "#"
-let cleared_string = string.replace(my_string, pattern, "")
+fn main() {
+  let clean_text = remove_pattern("Hier steht ein Beispieltext.")
+  io.println(clean_text) // Output: "Hr stht n Bspltxt."
+}
 ```
 
-Der ausgegebene Wert von `cleared_string` wäre: "Gleam Programmierung ist super! ".
+## Deep Dive (Tieftauchgang)
+Historisch gesehen stammt die Manipulation von Zeichenketten aus der Notwendigkeit, Texte für verschiedene Computeranwendungen zu formatieren. Gleam nutzt reguläre Ausdrücke ähnlich wie viele andere Programmiersprachen, um mit Mustern in textbasierten Daten zu arbeiten. Alternativen zu regulären Ausdrücken können String-Methoden wie `slice`, `split` oder `trim` sein, die schneller, aber weniger flexibel sind. Bei der Verwendung von `regex.from_string`, ist es wichtig `.unwrap()` verantwortungsvoll einzusetzen, da es bei Fehlerhaften Patterns zu Laufzeitfehlern führen kann.
 
-## Tieferer Einblick
-Historisch gesehen haben Programmierer immer wieder Wege gebraucht, um Muster in Zeichenketten zu identifizieren und zu löschen. Gleam hat das einfach gemacht, mit dem `string.replace`-Funktion.
-
-Alternativen dazu in Gleam könnten Reguläre Ausdrücke `regex` oder der `slice`-Befehl sein. Doch sie können komplexer sein und stark von der genauen Anwendung abhängen. 
-
-Bei der Implementierung von `string.replace` wird durch die Zeichenkette iteriert und jede Instanz des Musters durch einen alternativen String (in diesem Fall ein leerer String) ersetzt. 
-
-## Siehe auch
-Für weitere Informationen, besuchen Sie die offizielle Gleam-Dokumentation [hier](https://gleam.run/docs/). Besonders das Modul `gleam/string` kann dabei helfen, mehr über die Möglichkeiten in Gleam zur Manipulation von Zeichenketten zu erfahren. Ein weiterer hilfreicher Link ist [Regular Expressions in Gleam](https://gleam.run/tour/pattern-matching), der weitere Techniken zur Zeichenkettenmanipulation erklärt.
+## See Also (Siehe auch)
+- Regular expressions in programming: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- String manipulation techniques: [https://docs.python.org/3/library/stdtypes.html#string-methods](https://docs.python.org/3/library/stdtypes.html#string-methods)

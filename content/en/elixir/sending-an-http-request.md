@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request"
-html_title:           "Bash recipe: Sending an http request"
+date:                  2024-01-20T17:59:30.340295-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,34 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Sending an HTTP request is the act of asking a server for specific data. Programmers do this to interact with APIs or retrieve web content programmatically.
+Sending an HTTP request is how your program asks for data from the web, sorta like how you'd ask a librarian for a book. Programmers do this to fetch, send, or manipulate remote data, from getting the weather to posting tweets.
 
 ## How to:
+Use Elixir's `HTTPoison` library. It's neat, simple, and gets the job done.
 
-Elixir uses the HTTPoison library for making HTTP requests. Here's a small example:
+1. Add HTTPoison to your project's `mix.exs`:
 
-```Elixir
-HTTPoison.start()
-
-{:ok, response} = HTTPoison.get("http://httpbin.org/get")
-
-IO.puts response.body
+```elixir
+defp deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
+end
 ```
 
-The output will be the HTTP response body from httpbin.org.
+2. Run `mix deps.get` in your terminal to fetch the dependency.
+
+3. Now you're set to send a GET request:
+
+```elixir
+case HTTPoison.get("https://jsonplaceholder.typicode.com/posts/1") do
+  {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
+    IO.inspect(body) # you've got your data!
+  {:error, %HTTPoison.Error{reason: reason}} ->
+    IO.inspect(reason) # handle error
+end
+```
+
+Sample output: a JSON string of post data from the placeholder API.
 
 ## Deep Dive
+Historically, you'd use `:httpc` that comes with Erlang/OTP or Elixir's `HTTPotion`. HTTPoison is more popular now, with cleaner syntax and built upon Hackney, a robust HTTP client for Erlang.
 
-Elixir didn't always have HTTPoison. Elixir's http support evolved from Erlang's http modules. There are other libraries available like Tesla or Mint if HTTPoison doesn't float your boat.
+Alternatives to HTTPoison include Tesla – a flexible HTTP client with middleware support, and Mint – a shiny, low-level HTTP client.
 
-HTTPoison is built on Hackney, a versatile HTTP library for Erlang. This shows how Elixir taps into the rich ecosystem of its parent language.
-
-Under the hood, when you make a request with HTTPoison, it creates a process for handling that request. This leverages Erlang’s lightweight processes, allowing for many concurrent HTTP requests if your application requires it.
+Implementation wise, these libraries handle connection pooling, SSL, and keep-alive, tricky stuff that's essential for efficient HTTP requests. They act like friendly librarians who handle the nitty-gritty, so you don't have to crawl through the stacks yourself.
 
 ## See Also
-
-- [HTTPoison Documentation](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [Another useful article on using HTTPoison](https://medium.com/@n2oh/using-httpoison-to-make-http-requests-in-elixir-171a833e9508)
-- [Hackney on GitHub](https://github.com/benoitc/hackney)
-- [Comparison of HTTP clients in Elixir (Tesla vs HTTPoison)](https://pdgonzalez872.medium.com/comparing-http-clients-in-elixir-9e8a8b1f2f8f)
+- [HTTPoison GitHub](https://github.com/edgurgel/httpoison) – for all the details and updates.
+- [HexDocs for HTTPoison](https://hexdocs.pm/httpoison) – the place for comprehensive documentation.
+- [Elixir Forum](https://elixirforum.com) – to chat with the community.

@@ -1,7 +1,8 @@
 ---
-title:                "Перетворення рядка в нижній регістр"
-html_title:           "Javascript: Перетворення рядка в нижній регістр"
-simple_title:         "Перетворення рядка в нижній регістр"
+title:                "Перетворення рядка у нижній регістр"
+date:                  2024-01-20T17:37:55.249155-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Перетворення рядка у нижній регістр"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,33 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## Що & Чому?
+Перетворення рядків у нижній регістр - це зміна всіх великих літер на маленькі. Програмісти це роблять для уніфікації даних, пошуку та порівняння рядків без звернення уваги на регістр.
 
-Перетворення рядка на нижній регістр - це процес заміни всіх великих літер у рядку на маленькі. Програмісти це роблять, щоб нормалізувати дані, уникнувши розрізнення регістру.
-
-## Як це зробити:
-
-Мова Bash має вбудовану функціональність для цього. Використовуйте нижченаведений код:
-
+## Як?
 ```Bash
-str="HELLO WORLD"
-echo "${str,,}"
+# Використовуємо 'tr' для перетворення рядків у нижній регістр
+echo "HELLO World!" | tr '[:upper:]' '[:lower:]'
+# Вивід: hello world!
+
+# Ще один спосіб - команда 'awk'
+echo "HELLO World!" | awk '{print tolower($0)}'
+# Вивід: hello world!
+
+# Використання 'sed'
+echo "HELLO World!" | sed 's/.*/\L&/'
+# Вивід: hello world!
+
+# Перетворення за допомогою Bash вбудованих функцій
+my_string="HELLO World!"
+echo "${my_string,,}"
+# Вивід: hello world!
 ```
 
-Вихідний код:
+## Поглиблено
+У Bash було декілька способів робити перетворення рядка у нижній регістр. Історично, команди як `tr`, `awk`, і `sed` використовувалися, оскільки ранні версії Bash не мали вбудованої підтримки цього. 
 
-```Bash
-hello world
-```
+`tr` - одна з найдавніших утиліт для роботи з текстом, вона змінює або видаляє символи. `awk` є скриптовою мовою для обробки даних, і вона може викликати функції обробки рядків. `sed` - потоковий редактор для фільтрації та перетворення тексту.
 
-## Поглиблений підхід
+З Bash 4.0, введено нову функціональність, `${variable,,}` та `${variable^^}` для вбудованої підтримки перетворення регістру рядка.
 
-Сучасні версії Bash (версії 4.0 і вище) включають вбудовану опцію для переведення символів у нижній регістр. В історичному контексті, в інших мовах можуть бути альтернативні методи, наприклад використання `tr 'A-Z' 'a-z'`. Однак, в вбудованому методу менше потребує коду та він більш ефективний.
+Кожен інструмент має свої особливості. `tr` не працює з змінними напряму і не приймає файл як аргумент. `awk` і `sed` потужніші, але вимагають більш складної синтаксис та розуміння. Вбудовані функції Bash найкращі для простих скриптів, бо вони швидкі і не вимагають зовнішніх програм.
 
-## Див. також
-
-Для більш детальної інформації, ви можете звернутися до наступних джерел:
-
-- [GNU Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
-- [Lowercase in Bash](https://www.cyberciti.biz/faq/linux-unix-shell-programming-converting-lowercase-uppercase/)
-- [StackOverflow: convert string to lower case](https://stackoverflow.com/questions/2264428/how-to-convert-a-string-to-lower-case-in-bash)
+## Також подивіться
+- [Bash Reference Manual](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion)
+- [GNU 'tr' manual](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html#tr-invocation)
+- [AWK Language Programming](https://www.gnu.org/software/gawk/manual/gawk.html)
+- [Sed - An Introduction and Tutorial](https://www.gnu.org/software/sed/manual/sed.html)

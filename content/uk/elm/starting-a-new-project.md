@@ -1,7 +1,8 @@
 ---
-title:                "Початок нового проєкту"
-html_title:           "Elm: Початок нового проєкту"
-simple_title:         "Початок нового проєкту"
+title:                "Починаємо новий проект"
+date:                  2024-01-20T18:03:21.486767-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Починаємо новий проект"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Getting Started"
@@ -10,48 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та чому?
+## What & Why?
+## Що та Чому?
 
-Створення нового проєкту - це процес первинного налаштування місця для коду та інструментів. Програмісти роблять це для організації своєї роботи та чіткого представлення про структуру проєкту.
+Starting a new project in Elm is about laying the foundation. Developers do this to transform ideas into working software that's reliable and maintainable.
 
-## Як це робити:
+## How to:
+## Як це зробити:
 
-`Elm` надає вам простий спосіб створення нового проєкту за допомогою командної строки.
+First things first, you'll need Elm installed. Then, kick things off with:
 
-```Elm 
-elm init 
+```Elm
+elm init
 ```
-Ця команда створить нову директорію з ім'ям `elm-stuff`, файл `elm.json` з основними залежностями elm і пусту директорію `src` для вашого коду.
 
-```Elm 
-{
-    "type": "application",
-    "source-directories": [
-        "src"
-    ],
-    "elm-version": "0.19.1",
-    "dependencies": {
-        "direct": {},
-        "indirect": {}
-    },
-    "test-dependencies": {
-        "direct": {},
-        "indirect": {}
-    }
-}
+This creates an `elm.json` file and `src` directory. Simple enough, right?
+
+Now, let's write a classic "Hello, World!" in `src/Main.elm`:
+
+```Elm
+module Main exposing (..)
+
+import Html exposing (text)
+
+main =
+    text "Привіт, світе!"
 ```
-## Поглиблений огляд
 
-1. **Історичний контекст**: Elm розроблено Еваном Чапліким-Сліпичкім у 2012 році як спрощений мова програмування для веб-розробки.
+Compile and view:
 
-2. **Альтернативи**: Існують інші мови та фреймворки, які можна використати для створення веб-проєктів, наприклад JavaScript, TypeScript, React або Angular. Elm відрізняється своєю простотою і надійністю.
+```bash
+elm make src/Main.elm --output=main.html
+```
 
-3. **Деталі реалізації**: `elm init` працює, перевіряючи та створюючи потрібні файли та директорії, якщо вони ще не існують. Він також додає основні пакети Elm до файлу `elm.json`.
+Open `main.html` in a browser. Voilà, "Привіт, світе!" on your screen.
 
-## Див. також
+## Deep Dive:
+## Занурення в глибину:
 
-[Офіційна документація Elm](https://elm-lang.org/docs)
+Elm came around in 2012, dealing a fresh hand to web development. It's a functional language that compiles to JavaScript, aiming for no runtime exceptions. 
 
-[Ресурси для вивчення Elm](https://github.com/evancz/guide.elm-lang.org)
+Alternatives? Sure - you've got React with JavaScript or TypeScript, or even PureScript. But Elm's strong typing and simplicity win many hearts.
 
-[Спільнота Elm](https://elmlang.slack.com/)
+Implementation details? Elm's architecture enforces a model-view-update pattern. This structure keeps things predictable and debuggable—an ally for large-scale apps.
+
+## See Also:
+## Дивись також:
+
+- Official Elm Guide: [guide.elm-lang.org](https://guide.elm-lang.org/)
+- Elm Packages: [package.elm-lang.org](https://package.elm-lang.org/)
+
+Dive in, and happy coding!

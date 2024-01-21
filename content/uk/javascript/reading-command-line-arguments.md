@@ -1,6 +1,7 @@
 ---
 title:                "Читання аргументів командного рядка"
-html_title:           "Arduino: Читання аргументів командного рядка"
+date:                  2024-01-20T17:56:33.615488-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Читання аргументів командного рядка"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,34 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо?
+## What & Why? (Що і Чому?)
+JavaScript scripts often need input—the kind you pass along when you run them. Reading command line arguments lets a program act on that input, tailoring behavior without changing the code.
 
-Командні аргументи рядків - це параметри, які передаються до програми під час її запуску в консолі. Програмісти часто використовують їх для керування поведінкою програми, роблячи її більш гнучкою і кастомізованою.
+## How to: (Як це зробити:)
+Here's how you snag those command line arguments in Node.js.
 
-## Як це зробити:
+```javascript
+// Grab the Node.js process object
+const process = require('process');
 
-Можна отримати доступ до командних аргументів рядків в Node.js, використовуючи вбудований модуль `process.argv`. Ось простий приклад:
+// Skip the first two elements in the array
+const args = process.argv.slice(2);
 
-```Javascript
-console.log(process.argv);
+// Log'em to see what you've got
+console.log(args);
+
+// Run this with: node script.js arg1 arg2
 ```
 
-При запуску цієї програми з аргументами `node app.js one two`, виведеться:
-
-```Javascript 
-[ '/usr/local/bin/node', '/path/to/your/script.js', 'one', 'two' ]
+Sample Output:
+```
+[ 'arg1', 'arg2' ]
 ```
 
-## Поглиблений огляд:
+Take it up a notch - use a library like `yargs` for convenient parsing:
 
-Цей спосіб отримання аргументів рядка команд в сучасних версіях JavaScript виник ще з початкових версій Node.js.
+```javascript
+const yargs = require('yargs/yargs');
+const { hideBin } = require('yargs/helpers');
+const argv = yargs(hideBin(process.argv)).argv;
 
-Альтернативи включають використання бібліотек, таких як commander.js або yargs, які дають більше можливостей для аналізу та використання аргументів.
+console.log(argv);
 
-Реалізація `process.argv` в Node.js бере аргументи командного рядка, додає перші два значення (шлях до поточного виконавця Node.js і файлу скрипту), а потім додає всі додаткові аргументи як масив рядків.
+// Run this with: node script.js --name=yourname --age=30
+```
 
-## Додаткова Інформація:
+Sample Output:
+```
+{ name: 'yourname', age: 30 }
+```
 
-- Документація Node.js по process.argv: https://nodejs.org/docs/latest/api/process.html#process_process_argv 
-- Пакет commander.js на npm: https://www.npmjs.com/package/commander 
-- Пакет yargs на npm: https://www.npmjs.com/package/yargs
+## Deep Dive (Глибоке Занурення):
+Back in the day, command line args were key, even before fancy GUIs. Now, in the JavaScript Node.js world, `process.argv` is still a solid go-to. Alternatives like `yargs` or `commander` simplify things with parsing and validation.
+
+Node.js packs all command-line arguments in `process.argv` as an array; first two elements are path to the node executable and the script file, hence the `.slice(2)`.
+
+Why use libraries?
+
+- They parse options (like `--name=yourname` into `{ name: 'yourname' }`).
+- They handle defaults, required arguments, and help messages.
+- Cleaner, more readable code.
+
+One thing – these tools are for Node.js, not browser JavaScript. For web apps, you'd typically use URL parameters, not command line.
+
+## See Also (Дивись Також):
+Node.js docs for `process.argv`: https://nodejs.org/docs/latest/api/process.html#process_process_argv
+
+Yargs Docs: https://yargs.js.org/
+
+Commander GitHub: https://github.com/tj/commander.js
+
+For web app URL parameters, Mozilla has a solid guide: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams

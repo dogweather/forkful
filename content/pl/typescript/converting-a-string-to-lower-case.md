@@ -1,6 +1,7 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+date:                  2024-01-20T17:39:30.330469-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,35 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego? 
-Konwersja łańcucha (stringa) na małe litery to proces zamiany wszystkich liter w danym łańcuchu na małe litery. Programiści robią to za każdym razem, gdy potrzebują upewnić się, że dane są spójne i niezależne, np. przy porównaniu łańcuchów.
+## What & Why? (Co i dlaczego?)
+Zmiana ciągu znaków na małe litery to przekształcenie wszystkich liter w ciągu na ich odpowiedniki w dolnym rejestrze. Robimy to, by ujednolicić dane przed ich przetworzeniem, co ułatwia porównywanie i wyszukiwanie.
 
-## Jak to zrobić: 
-Aby skonwertować łańcuch na małe litery w TypeScript, używamy metody `toLowerCase()`. Przyjmuje ona nie ma parametrów i zwraca nowy łańcuch, w którym wszystkie litery zostały zastąpione małymi literami.
+## How to (Jak to zrobić):
+Użyj metody `.toLowerCase()` na ciągu znaków w TypeScript, jak w przykładzie poniżej.
 
-```TypeScript
-let tekst: string = "Hello, World!";
-let tekstNaMaleLitery: string = tekst.toLowerCase();
+```typescript
+let greeting: string = "Witaj Świecie!";
+let lowerCaseGreeting: string = greeting.toLowerCase();
 
-console.log(tekstNaMaleLitery);  // "hello, world!"
+console.log(lowerCaseGreeting); // "witaj świecie!"
 ```
-Jak widać, metoda `toLowerCase()` zmieniła wszystkie litery na małe.
 
-## Głębsze zanurzenie
-Pierwsze wdrożenia konwersji znaków na małe litery datują się na lata 70. XX wieku z pojawieniem się pierwszych języków programowania wysokiego poziomu.
-Alternatywnie można również użyć metody `toLocaleLowerCase()`, ktróra działa podobnie do `toLowerCase()`, ale jest bardziej przyjazna dla międzynarodowych znaków.
-
-Jednakże, zarówno `toLowerCase()` jak i `toLocaleLowerCase()` nie zmieniają oryginalnego łańcucha. Tworzą one nowy łańcuch z literami przekształconymi na małe litery. Jest to spowodowane tym, że w JavaScript i TypeScript, łańcuchy są niezmienne.
-
-```TypeScript
-let tekst: string = "Hello, World!";
-tekst.toLowerCase();
-
-console.log(tekst);  // "Hello, World!"
+Sample output (Przykładowe wyjście):
 ```
-Jak widać, mimo użycia metody `toLowerCase()`, oryginalny łańcuch pozostał niezmieniony.
+witaj świecie!
+```
 
-## Zobacz również
-[Agnostic functions - To Lower Case](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) 
-[MDN Web Docs - toLocaleLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase) 
-[Mozilla Hacks - A crash course in just-in-time (JIT) compilers](https://hacks.mozilla.org/2017/02/a-crash-course-in-just-in-time-jit-compilers/)
+## Deep Dive (Dogłębna analiza):
+JavaScript (a tym samym TypeScript) dostarcza metodę `.toLowerCase()` od wczesnych wersji, będącą częścią standardu ECMAScript. Ta metoda zwraca nowy łańcuch znaków ze wszystkimi literami zamienionymi na małe litery, nie zmieniając oryginalnego ciągu.
+
+Alternatywą jest użycie wyrażeń regularnych i metody `.replace()` do własnoręcznego zamieniania liter, choć w praktyce jest to rzadziej używane:
+
+```typescript
+let headline: string = "TypeScript jest SUPER!";
+let customLowerCaseHeadline: string = headline.replace(/[A-Z]/g, char => char.toLowerCase());
+
+console.log(customLowerCaseHeadline); // "typescript jest super!"
+```
+
+Co do implementacji, `.toLowerCase()` bierze pod uwagę lokalne ustawienia, np. dla liter w języku tureckim, gdzie zamiana `I` na `i` jest inna niż w większości języków.
+
+## See Also (Zobacz także):
+- MDN Web Docs: [.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- TypeScript Official Handbook: [Basic Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+- ECMAScript Language Specification: [String.prototype.toLowerCase()](https://tc39.es/ecma262/#sec-string.prototype.tolowercase)

@@ -1,7 +1,8 @@
 ---
-title:                "Leyendo argumentos de la línea de comandos"
-html_title:           "Bash: Leyendo argumentos de la línea de comandos"
-simple_title:         "Leyendo argumentos de la línea de comandos"
+title:                "Lectura de argumentos de línea de comandos"
+date:                  2024-01-20T17:56:33.727719-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lectura de argumentos de línea de comandos"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,29 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por Qué?
-Los argumentos de línea de comandos en PHP son valores que se pasan al script PHP cuando se ejecuta el programa. Permiten que los scripts sean dinámicos y adaptables, teniendo en cuenta diferentes situaciones de entrada.
+## Qué y Por Qué?
+Leer argumentos de la línea de comandos en PHP permite que tus scripts entiendan e interpreten datos de entrada proporcionados al ejecutarse. ¿Por qué? Es simple: personalización al momento. Dependiendo de los argumentos, el comportamiento del script puede variar sin tener que modificar el código fuente.
 
-## Cómo Se Hace:
-En PHP, los argumentos de línea de comandos se leen utilizando la variable predefinida `$argv`. Vamos a crear un script simple que toma un argumento y lo imprime.
-
+## Cómo Hacerlo:
 ```PHP
-<?php 
-if ($argc > 1) { 
-    echo "Hola, " . $argv[1];
-} 
+<?php
+// Comprobar que existen argumentos
+if ($argc > 1) {
+    // Recorre todos los argumentos (excepto $argv[0] que es el nombre del script)
+    for ($i = 1; $i < $argc; $i++) {
+        echo "Argumento $i: " . $argv[$i] . "\n";
+    }
+} else {
+    echo "No se proporcionaron argumentos.\n";
+}
 ?>
 ```
+Ejecuta tu script así:
+```
+php tu_script.php primerArgumento segundoArgumento
+```
+Salida esperada:
+```
+Argumento 1: primerArgumento
+Argumento 2: segundoArgumento
+```
 
-En el ejemplo anterior, `$argc` es el número total de argumentos pasados, y `$argv` es una matriz que contiene los argumentos. Si lo ejecutas con un argumento, como `php script.php Juan`, obtendrás `Hola, Juan`.
+## Análisis Profundo:
+Desde las primeras versiones de PHP, la línea de comandos ha sido un amigo leal. Aunque muchos lo usan para desarrollo web, PHP también es poderoso para scripts de consola. `$argc` y `$argv` son variables automáticas: `$argc` te dice cuántos argumentos se pasaron, y `$argv` es un array que los contiene. Hay alternativas modernas, como la extensión `getopt()`, que es más sofisticada, o `Symfony Console` para aplicaciones de consola más robustas. Pero para la esencia pura de PHP de línea de comandos, `$argv` y `$argc` son los caballos de batalla.
 
-## Profundizando
-Los argumentos de la línea de comandos se introdujeron en las primeras versiones de PHP, en consonancia con muchos otros lenguajes de programación que incluyen esta funcionalidad. 
-
-En cuanto a las alternativas, podrías usar la función `getopt()` para interpretar opciones y argumentos de línea de comandos de una forma más sofisticada.
-
-A nivel de implementación, PHP almacena los argumentos de línea de comandos como una matriz global. El primer elemento es siempre el propio script, seguido de los argumentos en el orden en que fueron pasados.
-
-## Ver también
-- [Documentación Oficial de Argumentos de Línea de Comandos en PHP](https://www.php.net/manual/es/reserved.variables.argv.php)
-- [Función getopt()](https://www.php.net/manual/es/function.getopt.php)
+## Ver También:
+- [Documentación oficial de PHP en Argumentos de línea de comandos](https://www.php.net/manual/es/features.commandline.php)
+- [Symfony Console Component](https://symfony.com/doc/current/components/console.html)
+- [Composer](https://getcomposer.org/) - Gestor de dependencias en PHP, útil para instalar herramientas como Symfony Console

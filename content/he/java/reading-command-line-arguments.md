@@ -1,7 +1,8 @@
 ---
-title:                "קריאה של ארגומנטים משורת הפקודה"
-html_title:           "C#: קריאה של ארגומנטים משורת הפקודה"
-simple_title:         "קריאה של ארגומנטים משורת הפקודה"
+title:                "קריאת פרמטרים משורת הפקודה"
+date:                  2024-01-20T17:56:55.117872-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "קריאת פרמטרים משורת הפקודה"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -11,36 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+קריאת ארגומנטים משורת הפקודה היא דרך להעניק קלט לתוכנה שלך דרך הטרמינל. תכניתי JAVA משתמשים בזה כדי להוסיף גמישות ולאפשר למשתמשים להשפיע על הרצת התוכנית מבלי לשנות את הקוד.
 
-הקריאה של ארגומנטים משורת הפקודה היא התהליך שבו מבצעים את הקוד בזמן שמעבירים פרמטרים אליו. זה מאפשר למתכנתים להתאים את התוכנית לגמרי, מאפשרת גמישות בזמן הריצה.
-
-## כיצד לעשות:
-
-הנה דוגמא לקוד שבו התוכנית מקבלת ארגומנטים משורת הפקודה:
-
-```Java
-public class Main {
+## איך לעשות:
+```java
+public class CommandLineExample {
     public static void main(String[] args) {
-        for (String arg : args) {
-            System.out.println("ארגומנט משורת הפקודה : " + arg);
+        // טיפול בארגומנטים הנשלחים
+        if (args.length > 0) {
+            System.out.println("הארגומנטים שהתקבלו:");
+            for (String arg : args) {
+                System.out.println(arg);
+            }
+        } else {
+            System.out.println("לא התקבלו ארגומנטים.");
         }
     }
 }
 ```
-**דוגמה לפלט של התוכנית:**
+כדי להריץ:
+```shell
+java CommandLineExample פריט1 פריט2 פריט3
+```
 
-ארגומנט משורת הפקודה: תורמלינים
-ארגומנט משורת הפקודה: הם
-ארגומנט משורת הפקודה: אבנים
-ארגומנט משורת הפקודה: מדהימות
+פלט דוגמא:
+```
+הארגומנטים שהתקבלו:
+פריט1
+פריט2
+פריט3
+```
 
-## צלילה עמוקה:
-
-אמנם לקרוא לארגומנטים משורת הפקודה הוא נושא מוכר למרבית מתכנתי Java, המכניזם הזה הוא מרכזי לכמה שפות תכנות אחרות כגון C, Python, ו-Shell script. גם ב-Java, יש גרסאות נוספות לקריאה של ארגומנטים, כמו באמצעות המחלקה `Scanner` או `Console`.
+## עומק הנושא
+המנגנון של ארגומנטים משורת הפקודה הוא חלק מתכנות מחשבים מימי הדינוזאורים - זה פשוט וישיר. יש אלטרנטיבות כמו קריאת קובץ תצורה או שימוש בממשק משתמש גרפי, אבל לפעמים זה מוגזם. כשאתה משתמש ב-args[] ב-Java, אתה פשוט מקבל מערך של מחרוזות. תוכנה מתחילה לקרוא ארגומנטים מהאינדקס 0; אין גודל מרבי מוגדר, אבל תלוי במערכת ההפעלה והזיכרון.
 
 ## ראה גם:
-
-- דוקומנטציה של Oracle: 
-[Command-Line Arguments](https://docs.oracle.com/en/java/javase/14/docs/specs/sealed-classes-jls.html#jls-13.1)
-- חומרי למידה מתוך GeeksforGeeks: 
-[Command line Arguments in Java](https://www.geeksforgeeks.org/command-line-arguments-in-java/)
+- [Oracle Java Documentation](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- [Apache Commons CLI](https://commons.apache.org/proper/commons-cli/) - ספרייה לניתוח ארגומנטים משורת פקודה
+- [JArgs](http://jargs.sourceforge.net/) - מנתח ארגומנטים משורת פקודה ב-Java

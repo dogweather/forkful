@@ -1,6 +1,7 @@
 ---
 title:                "सबस्ट्रिंग्स निकालना"
-html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+date:                  2024-01-20T17:46:40.453098-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,34 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+Substring का मतलब होता है एक बड़ी स्ट्रिंग से छोटे टुकड़े निकालना। Programmers इसका इस्तेमाल खास जानकारी प्रोसेस करने, डेटा वैलिडेट और पैटर्न मैच करने के लिए करते हैं।
 
-सबस्ट्रिंग निकालना (substring extraction) एक स्ट्रिंग के भीतर से एक छोटी स्ट्रिंग का चयन होता है। प्रोग्रामर्स इसे करते हैं ताकि वे विशिष्ट डेटा, जैसे की यूजर नाम या ईमेल डोमेन, को स्पष्ट रूप में प्रस्तुत कर सकें।
-
-## कैसे करें (How to:)
-
+## How to: (कैसे करें:)
 ```Lua
-s = "Hello, World!"
-print(s:sub(1, 5))   -- "Hello"
-print(s:sub(8, 12))  -- "World"
+-- एक बेसिक स्ट्रिंग
+local originalString = "नमस्ते, Lua का दुनिया में स्वागत है!"
+
+-- Substring निकालना: string.sub function
+local substring = string.sub(originalString, 9, 11)
+print(substring) -- Output: Lua
+
+-- शुरू से कुछ characters निकालना
+local startString = string.sub(originalString, 1, 7)
+print(startString) -- Output: नमस्ते,
+
+-- आखिर से कुछ characters छोड़ देना
+local endIndex = string.len(originalString)
+local endString = string.sub(originalString, endIndex - 12, endIndex)
+print(endString) -- Output: स्वागत है!
 ```
 
-यहां, हमने `sub` मेथड का उपयोग किया है स्ट्रिंग `s` में से दो सबस्ट्रिंग्स निकालने के लिए।
+## Deep Dive (गहराई से जानकारी):
+Lua में substrings निकालने का अपना एक महत्व है। पहले के समय में जब मेमोरी और प्रोसेसिंग पावर सीमित थी, तब डेटा को सूक्ष्मता से हैंडल करना महत्वपूर्ण था। Lua में `string.sub` यही काम करता है और यह Lua 5.1 से मौजूद है।
 
-## गहरी डुबकी (Deep Dive)
+विकल्प के तौर पर, कभी-कभार pattern matching (`string.match`, `string.gmatch`) या regex-लाइब्रेरी जैसे `lrexlib` का इस्तेमाल होता है।
 
-Lua में सबस्ट्रिंग निकालना बहुत सरल है, लेकिन उनके पिछे की टेक्नोलॉजी और व्यावसायिक है। Lua पहली बार 1993 में विकसित हुई थी और यह आपको विशेष आवश्यकताओं के विशेष कोड ब्लॉक को निकालने में मदद करने का एक शक्तिशाली तरीका प्रदान करती है।
+Implementation details में, यह जानना जरूरी है कि `string.sub` zero-based इंडेक्सिंग नहीं अपनाता, यानी counting 1 से शुरू होती है। और Lua UTF-8 को default में पूरा support नहीं करता, इसलिए Unicode strings के साथ काम करते वक्त एक्स्ट्रा केयर लेनी पड़ती है।
 
-वैकल्पिक रूप से, चरित्रों की संख्या का ज्ञान होने पर आप `string.char` फ़ंक्शन का उपयोग कर सकते हैं।
-
-```Lua
-print(string.char(72, 101, 108, 108, 111))  -- "Hello"
-```
-
-अपने कोड में सबस्ट्रिंग निकालने के तरीके से संबंधित जरूरी विवरण यथास्थान जाहिर होते हैं। Lua इसे स्थानीय बली निर्धारण (locality of reference) के माध्यम से सहयोग देता है, जो यह सुनिश्चित करता है कि उपयोग में आने वाला मेमोरी क्षेत्र कम से कम प्रचारित हो।
-
-## अधिक देखें (See Also)
-
-विस्तार से जानने के लिए, आप निम्नलिखित लिंक्स देख सकते हैं:
-
-- [Lua 5.4 Reference Manual: string.sub](https://www.lua.org/manual/5.4/manual.html#6.4.1)
+## See Also (और देखें):
+- Lua 5.4 Reference Manual: [string.sub]: https://www.lua.org/manual/5.4/manual.html#pdf-string.sub
+- Programming in Lua (ऑफिशियल बुक): https://www.lua.org/pil/contents.html
+- Lua Users Wiki (pattern matching): http://lua-users.org/wiki/PatternsTutorial
+- Unicode Considerations in Lua: http://lua-users.org/wiki/LuaUnicode

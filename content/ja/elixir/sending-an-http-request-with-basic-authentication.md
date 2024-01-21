@@ -1,7 +1,8 @@
 ---
-title:                "基本認証を使用してhttpリクエストを送信する"
-html_title:           "C#: 基本認証を使用してhttpリクエストを送信する"
-simple_title:         "基本認証を使用してhttpリクエストを送信する"
+title:                "基本認証を使用したHTTPリクエストの送信"
+date:                  2024-01-20T18:01:33.326186-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "基本認証を使用したHTTPリクエストの送信"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,32 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# HTTPリクエストと基本認証をElixirで送信する
+## What & Why? (何となぜ？)
+HTTPリクエストを送信し、基本認証を使うことで、セキュリティを必要とするサービスにアクセスします。プログラマーはこれを行うことで、セキュリティが保たれた状態でデータを交換できます。
 
-## それは何？そしてなぜ？
-基本認証付きのHTTPリクエスト送信は、ユーザー名とパスワードを利用してウェブサービスに安全にアクセスするための一般的な方法です。プログラマーがこれを行う主な理由は、ユーザーのデータ保護とウェブサービスへのセキュアなアクセスを確保するためです。
-
-## 使い方
-以下に、ElixirでHTTPリクエストを送信し、基本認証を行うコードの例を示します。
-
+## How to: (やり方)
 ```Elixir
-{:ok, response} = :httpc.request(
-  :get,
-  {'http://example.com', [{'Authorization', 'Basic bXl1c2VybmFtZTpteXBhc3N3b3Jk'}]},
-  [],
-  []
-)
+# HTTPoisonを使った基本認証付きHTTPリクエストの例
+defmodule SimpleHTTPClient do
+  def send_request do
+    # ベーシック認証の情報をエンコード
+    auth = :base64.encode("user:password")
+    
+    # HTTPoisonを用いてGETリクエスト
+    HTTPoison.get("https://example.com", [{"Authorization", "Basic " <> auth}])
+  end
+end
+
+# サンプルの出力表示
+case SimpleHTTPClient.send_request() do
+  {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
+    IO.puts("Success: #{body}")
+  {:ok, %HTTPoison.Response{status_code: 401}} ->
+    IO.puts("Unauthorized: Check your credentials.")
+  {:error, %HTTPoison.Error{reason: reason}} ->
+    IO.puts("Error: #{reason}")
+end
 ```
-ここで、「bXl1c2VybmFtZTpteXBhc3N3b3Jk」はユーザー名とパスワードをBase64エンコードしたもので、「myusername:mypassword」に相当します。
+このコードは基本認証で保護されたリソースへのHTTP GETリクエストを送信する方法を示しています。
 
-## Deep Dive
-基本認証は、HTTP/1.0が1996年に導入された当初から存在しています。この方法の代替案としては、digest認証やOAuthがあります。
+## Deep Dive (深掘り)
+基本認証は、HTTPプロトコルで定義された最も古い認証形式の一つです。ユーザー名とパスワードをBase64でエンコードし、`Authorization`ヘッダに含めます。セキュリティが厳格な状況では、代わりにOAuthやTokenベースの認証が用いられることがあります。ElixirでHTTPリクエストを送るライブラリとしては、HTTPoisonの他にもTeslaやHackneyなどがあります。基本認証はHTTPS経由でのみ使用するべきで、HTTP上ではセキュリティが確保できません。Elixirでは、`:base64`モジュールを使うと容易にエンコード処理が可能です。
 
-Elixirで基本認証付きHTTPリクエストを送信するためには、Erlangの`:httpc`関数が利用されます。しかし、大規模なプロジェクトでは**HTTPoison**や**Tesla**のようなライブラリがよく利用されます。
-
-## 参考情報
-以下は、基本認証とHTTPリクエストについてより深く学べるリソースへのリンクです。
-
-- Elixirの公式ドキュメンテーション: [https://elixir-lang.org/docs.html](https://elixir-lang.org/docs.html)
-- HTTPoisonライブラリ: [https://hexdocs.pm/httpoison/readme.html](https://hexdocs.pm/httpoison/readme.html)
-- Teslaライブラリ: [https://hexdocs.pm/tesla/readme.html](https://hexdocs.pm/tesla/readme.html)
+## See Also (関連情報)
+- [Elixir HTTPoison GitHub repository](https://github.com/edgurgel/httpoison)
+- [Erlang :base64 module documentation](http://erlang.org/doc/man/base64.html)
+- [MDN Web Docs HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [HTTPoison Hex Docs](https://hexdocs.pm/httpoison/HTTPoison.html)

@@ -1,6 +1,7 @@
 ---
 title:                "Starting a new project"
-html_title:           "Bash recipe: Starting a new project"
+date:                  2024-01-20T18:03:14.094776-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Starting a new project"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,52 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Start a New Project Using Fish Shell
-
 ## What & Why?
-
-Starting a new project means creating a distinct workspace and files for a specific software or app development. It helps keep your work organized and separate from other tasks.
+Starting a new project means initializing a fresh directory with everything you need to get coding. Programmers do this to kick-off development in a clean, organized way.
 
 ## How to:
-Open up your terminal and let's roll:
-
-Check the current installed version
 ```fish
-fish --version
-```
-You will get output similar to this
-```fish
-fish, version 3.2.2
-```
-
-Now, set up a new project:
-```fish
+# Create a new directory and enter it
 mkdir my_fish_project
 cd my_fish_project
-touch Main.fish
-```
 
-Set up Fish as your default shell:
-```fish
-chsh -s /usr/local/bin/fish
+# Initialize a git repository
+git init
+
+# Create an initial commit with a .gitignore file
+echo "*.log" > .gitignore
+git add .gitignore
+git commit -m "Initial commit with .gitignore"
+
+# Bonus: Set up a virtual environment if applicable (not native to Fish or git)
+# Make sure to have a virtual environment tool installed.
 ```
-Restart your terminal and check your default shell using the command:
-```fish
-echo $SHELL
+Sample output:
 ```
-It should show `/usr/local/bin/fish`.
+Initialized empty Git repository in /path/to/my_fish_project/.git/
+[master (root-commit) abc1234] Initial commit with .gitignore
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+```
 
 ## Deep Dive
+The practice of setting up a new project has a long lineage, becoming more standardized with the rise of modern version control like Git. While some may use more graphical approaches, command-line lovers prefer the fine control and speed of terminal commands. Fish Shell, known for its user-friendly design, makes it simpler with helpful features like syntax highlighting and autocompletions.
 
-Fish Shell or "friendly interactive shell" is an intuitive and user-friendly shell. Released in 2005, it's not installed by default in UNIX-based systems, but it can be installed alongside other shells. It differed from Bash, the default shell in many UNIX systems, by focusing on interactive user experiences and plain English commands.
-
-If you prefer, alternatives to Fish exist. These include Zsh, which also emphasizes improved user experience, and Bash, the omnipresent and proven option. 
-
-While starting a new project isn't technical, certain things run in the background when you do so in Fish Shell. When you set Fish as your default shell, the system changes your default shell pointer in `/etc/passwd` file. 
-
-Fish doesn't support POSIX, the compliance standard for shells, fully. However, it does so enough to be reliable in a productive system. When a new project is initiated, it's placed as a working directory in Fish's stack, providing structure and continuity. 
+Alternatives include using IDEs with built-in project initialization or scripts in other shells like Bash or Zsh — but Fish shines in its simplicity and interactivity. When it comes to implementation, the init process is inherently customizable; you adapt it to fit the stack and toolchain of your choice. Whether it's adding build tools, setting up linters, or creating a directory structure, it's all about making your future development smoother.
 
 ## See Also
-[Official Fish Documentation](https://fishshell.com/docs/current/index.html)
-
-[A comparison of Bash, Zsh, and Fish](https://www.slant.co/versus/167/169/~bash_vs_zsh_vs_fish)
+- Fish Shell Documentation: https://fishshell.com/docs/current/index.html
+- Git Basics: https://git-scm.com/book/en/v2/Getting-Started-Git-Basics
+- Setting up Virtual Environments: https://virtualfish.readthedocs.io/en/latest/index.html

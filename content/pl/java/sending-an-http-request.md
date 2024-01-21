@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http"
-html_title:           "Arduino: Wysyłanie żądania http"
-simple_title:         "Wysyłanie żądania http"
+title:                "Wysyłanie żądania HTTP"
+date:                  2024-01-20T17:59:58.453227-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie żądania HTTP"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,12 +12,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Wysłanie żądania HTTP to proces, w którym program komunikuje się z serwerem za pomocą protokołu HTTP. Programiści robią to, aby pobierać dane, wysyłać dane, usuwać dane itp. na serwerach.
+Wysyłanie żądania HTTP to komunikacja z serwerem w sieci; można prosić o dane lub wysyłać je. Programiści to robią, by pobierać informacje, autoryzować użytkowników, czy integrować usługi.
 
 ## Jak to zrobić:
-
-```Java
+Wysyłanie prostej żądania GET w Javie:
+```java
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -26,32 +26,25 @@ public class Main {
     public static void main(String[] args) throws Exception {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-              .uri(new URI("http://example.com"))
-              .GET()
-              .build();
+                .uri(URI.create("http://example.com"))
+                .build();
+
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.statusCode());
         System.out.println(response.body());
     }
 }
 ```
-Przykładowe dane wyjściowe:
-
-```Java
-<!doctype html>
-<html>
-...
-</html>
+Wynik:
 ```
-## Deep Dive
+200
+<!doctype html>...
+```
 
-Historia: Protokół HTTP został początkowo wprowadzony w 1991 roku jako standard komunikacji internetowej.
+## Dogłębna analiza
+HTTP to protokół sieciowy od 1991 roku. Java oferuje kilka metod do żądań: `HttpURLConnection`, starsze biblioteki jak `Apache HttpClient`, `OkHttp`, a od Javy 11 - nowe API `java.net.http`. Nowe API to bardziej czytelny kod i lepsza obsługa asynchroniczności.
 
-Alternatywy: Istnieją inne protokoły, takie jak FTP, HTTPS, itp.
-
-Szczegóły implementacji: Możemy wysyłać rozmaite typy żądań HTTP, takie jak GET, POST, DELETE, PUT, itp. HttpClient dostarcza funkcję 'send', która wysyła żądanie do serwera i zwraca odpowiedź.
-
-## Zobacz także
-
-1. [Dokumentacja Oracle o HttpClient](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
-2. [Wyjaśnienie protokołu HTTP](https://developer.mozilla.org/pl/docs/Web/HTTP/Overview)
-3. [Jak wysłać żądanie HTTP POST w Javie - Poradnik](https://www.baeldung.com/java-http-request)
+## Zobacz też:
+- Specyfikacja HTTP: https://www.ietf.org/rfc/rfc2616.txt
+- Dokumentacja Oracle dla `java.net.http`: https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/package-summary.html
+- Porównanie klientów HTTP w Javie: https://www.baeldung.com/java-9-http-client vs-httpurlconnection

@@ -1,6 +1,7 @@
 ---
 title:                "Concatenating strings"
-html_title:           "PHP recipe: Concatenating strings"
+date:                  2024-01-20T17:35:42.391730-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Concatenating strings"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,64 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
+Combining strings, or concatenation, is like making a train of words. We do it to stitch together text values, creating phrases, sentences, or anything where separate strings need to buddy up and become one.
 
-Concatenating strings means joining two or more strings together to form a single string. Programmers do this to manage and manipulate data in a flexible way, build dynamic statements, and output readable information to users.
-
-## How To
-
-PowerShell provides numerous ways to concatenate strings. 
-
-### Using "+" Operator
+## How to:
+Let's get straight to it:
 
 ```PowerShell
-$firstName = "John"
-$lastName = "Doe"
-$message = "Hello, " + $firstName + " " + $lastName
-Write-Output $message
-```
-Output:
-```PowerShell
-Hello, John Doe
-```
+# Using the '+' operator
+$greeting = 'Hello, ' + 'World!'
+$greeting # Outputs: Hello, World!
 
-### Using "-f" Operator
+# Via string interpolation
+$name = 'Jane'
+$welcomeMessage = "Hi, $name, nice to meet you!"
+$welcomeMessage # Outputs: Hi, Jane, nice to meet you!
 
-```PowerShell
-$firstName = "John"
-$lastName = "Doe"
-$message = "Hello, {0} {1}" -f $firstName, $lastName
-Write-Output $message
-```
-Output:
-```PowerShell
-Hello, John Doe
-```
+# With the -f operator (format operator)
+$city = 'New York'
+$visitMessage = 'Welcome to {0}!' -f $city
+$visitMessage # Outputs: Welcome to New York!
 
-### Using string concatenation with $()
-
-```PowerShell
-$firstName = "John"
-$lastName = "Doe"
-$message = "Hello, $($firstName) $($lastName)"
-Write-Output $message
-```
-Output:
-```PowerShell
-Hello, John Doe
+# StringBuilder for complex scenarios (a bit overkill for simple stuff)
+$textBuilder = New-Object System.Text.StringBuilder
+[void]$textBuilder.Append('PowerShell ')
+[void]$textBuilder.Append('is ')
+[void]$textBuilder.Append('awesome.')
+$textBuilder.ToString() # Outputs: PowerShell is awesome.
 ```
 
 ## Deep Dive
+Historically, concatenating strings was a bit rough around the edges in earlier programming languages - think of it like using tape to stick sentences together. In PowerShell, it’s a walk in the park.
 
-The concatenation of strings in PowerShell has its roots in other older programming languages like C and C++. Over time, the "+", "-f" operators and the $() shorthand were introduced to make this process cake walk.
+There are different ways to get the job done. The '+' operator is straightforward but can be slow with lots of strings. String interpolation with "$variable" is cleaner, and great for inserting variables into strings. The format operator '-f' shines in templating scenarios.
 
-There are alternatives to string concatenation. For instance, you can use join, format and interpolate strings. Join is useful when dealing with arrays of strings, format and interpolate are handy when inserting variables into strings.
-
-As for implementation details, in PowerShell "+", "-f" and "$()" perform string concatenation in their unique ways. The "+" operator simply combines strings, "-f" formats strings similar to sprintf in C, while "$()" allows you to put variables right inside a string.
+About performance - if you're combining an essay's worth of strings, you'll want something more heavy-duty. Enter `StringBuilder`. It doesn't concatenate immediately; instead, it weaves your strings together when summoned, saving time and memory for big concatenation tasks.
 
 ## See Also
-
-Here are some of the useful links for more information.
-
-1. String concatenation in PowerShell: https://ss64.com/ps/syntax-concat.html
-2. Alternative approaches: https://devblogs.microsoft.com/scripting/combining-strings-in-powershell/
-3. Deep Dive into Concatenating Strings in PowerShell: https://adamtheautomator.com/powershell-string-concatenation/
+- [About Join](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_join?view=powershell-7.3)
+- [About Automatic Variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.3) (see `$OFS`)
+- For more on string formatting, check out [Composite Formatting](https://docs.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting).
+- And, if you've got the stomach for it, here's the nitty-gritty on [StringBuilder](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0).

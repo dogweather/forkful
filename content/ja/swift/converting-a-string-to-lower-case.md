@@ -1,7 +1,8 @@
 ---
-title:                "文字列を小文字に変換する"
-html_title:           "Arduino: 文字列を小文字に変換する"
-simple_title:         "文字列を小文字に変換する"
+title:                "文字列を小文字に変換"
+date:                  2024-01-20T17:39:18.661902-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "文字列を小文字に変換"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,34 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何故 & 何のために?
-文字列を小文字に変換するとは、すべての大文字をその対応する小文字に置き換えることを意味します。プログラマは、文字列の比較を行う際などに、大文字と小文字を区別しない「ケースインセンシティブ」な検索を実行するためにこれを行います。
+## What & Why? (何となぜ？)
+文字列を小文字に変換することは、テキストを一貫したフォーマットにする行為です。これは大文字小文字を区別しない検索やソート、ユーザー入力の正規化のためによく行われます。
 
-## どうやって:
-Swiftには文字列を小文字に変換するための内蔵メソッド `lowercased()` があります。以下はその使用例です:
+## How to: (やり方)
+Swiftでは文字列を小文字にするのは簡単です。以下にコード例を示します。
 
 ```Swift
-let originalString = "HELLO, SWIFT!"
+let originalString = "Hello, Swift Programmer!"
 let lowercasedString = originalString.lowercased()
 
 print(lowercasedString)
 ```
 
-実行結果は以下の通りです:
+このコードは以下の結果を出力します。
 
-```Swift
-"hello, swift!"
+```
+hello, swift programmer!
 ```
 
-## ディープダイブ:
-文字列を小文字に変換するという操作は、大昔の時代から存在しています。様々なプログラミング言語で採用されており、存在する文字セットやその言語の文字列操作の仕組みに基づいて異なった実装がなされています。
+## Deep Dive (深堀り)
+Swiftでは、`lowercased()` メソッドが文字列の全ての文字を小文字に変換します。これはSwiftの初期バージョンから利用可能で、他の多くのプログラミング言語にも似た機能があります。
 
-例えばJavaScriptなど、他の言語では、同様の操作を行うための別のメソッドや関数が存在します。
+選択肢として、特定のロケール（言語や国）に基づいて小文字化を行うこともできます。例えば、トルコ語での"i"と"İ"の小文字化は英語とは異なります。デフォルトでは、`lowercased()`は現在のロケールを使用します。
 
-Swiftでは、`lowercased()`は文字列から新たな小文字の文字列を返す非変異メソッドです。文字列自体は変更されません。これにより、未意図的なサイドエフェクトを避けることができます。
+実装の面では、Swiftの`lowercased()`はUnicodeをサポートしていて、世界中の様々なスクリプトの大文字小文字の変換に対応しています。
 
-## 参考資料:
-以下では、Stringクラス、`lowercased()`メソッド、およびSwiftの文字列操作に更について学ぶことができます:
-
-- [Apple Developer Documentation: String](https://developer.apple.com/documentation/swift/string)
-- [Swift Programming Guide: Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+## See Also (関連情報)
+- [Swift Documentation: Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Unicode Standard: Case Folding](https://unicode.org/reports/tr21/)

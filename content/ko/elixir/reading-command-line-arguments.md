@@ -1,6 +1,7 @@
 ---
 title:                "명령줄 인수 읽기"
-html_title:           "Arduino: 명령줄 인수 읽기"
+date:                  2024-01-20T17:55:59.138032-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "명령줄 인수 읽기"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,41 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇과 왜?
+## What & Why?
+명령 줄 인수 읽기는 프로그램이 시작할 때 사용자로부터 입력 데이터를 받는 방법입니다. 이 기능을 사용해서 사용자가 프로그램에게 동작을 지시하거나 설정을 전달할 수 있어요.
 
-커맨드 라인 인수 읽기는 프로그램이 사용자 입력을 명령 줄 -즉, 프로그램 시작 시마다 -로부터 받는 방법입니다. 프로그래머는 이것을 통해 프로그램의 동작을 사용자 정의할 수 있습니다.
+## How to:
+Elixir에서 명령 줄 인수를 다뤄보겠습니다. 간단하게 System.argv를 사용하세요.
 
-## 어떻게 사용하나요?
-
-Elixir는 커맨드 라인 인수에 접근하기 위해 System.argv을 사용합니다. 이를 사용하여 사용자가 제공하는 옵션에 따라 프로그램을 세부 조정할 수 있습니다. 
-
-```Elixir
-defmodule Hello do
-  def greet do
-    [name | _] = System.argv()
-    IO.puts "Hello, #{name}!"
+```elixir
+defmodule CliDemo do
+  def main(args) do
+    IO.inspect(args)
   end
 end
 
-Hello.greet()
+# 커맨드 라인에서 이렇게 호출합니다:
+# elixir cli_demo.exs arg1 arg2 arg3
+
+# 출력 결과:
+# ["arg1", "arg2", "arg3"]
 ```
-실행 시 이름을 인수로서 제공합니다:
+main 함수는 시작점으로, 명령 줄 인수를 리스트로 받습니다. 이 리스트를 이용하여 필요한 작업을 수행하면 됩니다.
 
+## Deep Dive
+Elixir는 Erlang VM 위에서 구동되므로, 명령 줄 인수를 다루는 방법은 Erlang과 유사합니다. 시스템 명령어와 함께 시작하는 데 사용하는 스크립트 형태인 Elixir 스크립트(.exs 파일)에서도 명령 줄 인수를 읽을 수 있습니다. 
+
+커맨드 라인 인수를 파싱할 때, OptionParser 모듈을 사용하는 것도 하나의 방법입니다. 이 모듈은 인수를 키워드 리스트나 맵으로 변환할 수 있게 도와줍니다.
+```elixir
+parsed_args = OptionParser.parse(args, switches: [option: :string])
 ```
-$ elixir hello.exs World
-Hello, World!
-```
+이는 사용자가 내부 옵션을 보다 명확하게 구분할 수 있게 해줍니다.
 
-## 깊게 알아보기
+## See Also
+- [Elixir 공식 문서의 OptionParser](https://hexdocs.pm/elixir/OptionParser.html)
+- [Erlang 문서에 나와 있는 저수준 시스템 인터페이스](http://erlang.org/doc/man/init.html)
 
-커맨드 라인 인수는 early Unix shell 프로그래밍부터 오랜 역사를 가지고 있습니다. 이는 사용자에게 프로그램을 확장하고 세부 코드를 작성할 수 있게 하여 초기 대화형 프로그래밍 환경과 비교하여 더 많은 유연성을 제공했습니다.
-
-Elixir의 `System.argv/0` 함수 외에도 Erlang/Elixir 생태계에서는 `:init.get_plain_arguments/0`와 같은 함수를 사용하여 매개변수를 처리하는 방법도 있습니다. 후자 함수는 OTP 애플리케이션에 더욱 일반적입니다.
-
-내부적으로, Elixir는 Erlang의 `:init` 모듈을 wrapper하여 이 기능을 제공합니다. `:init.get_plain_arguments/0` 함수 역시 이 모듈에 정의되어 있습니다.
-
-## 참고 자료
-
-생태계 내 다른 Erlang/Elixir 라이브러리도 명령 줄 인수 처리를 지원합니다:
-1. [Elixir OptionParser](https://hexdocs.pm/elixir/OptionParser.html)
-2. [Erlang getopt](https://github.com/jcomellas/getopt)
+Elixir의 세계에 오신 것을 환영합니다. 창의력을 발휘하며 자유롭게 코드를 작성해보세요!

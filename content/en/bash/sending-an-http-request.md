@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request"
-html_title:           "Bash recipe: Sending an http request"
+date:                  2024-01-20T17:58:50.569489-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,42 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Sending an HTTP request is a key method of transferring data over the web - it's like sending a letter via the "postal service" of the internet. Programmers do it to interact with web services, APIs, or webpages, be it for retrieving info, sending data, or other operations.
+
+Sending an HTTP request is a way to communicate with web servers to retrieve data or submit forms. Programmers do it to interact with web services, APIs or to automate tasks involving web content.
 
 ## How to:
-In Bash, you can use `curl` to send HTTP requests. To send a GET request:
+
+Bash can use tools like `curl` or `wget` for HTTP requests. Here’s a quick example with `curl`.
+
 ```Bash
-curl -X GET http://jsonplaceholder.typicode.com/posts/1
+# Get the content of a webpage
+curl https://example.com
+
+# Post data to a server
+curl -d "param1=value1&param2=value2" -X POST https://example.com/post-endpoint
+
+# Include headers in a GET request
+curl -H "Content-Type: application/json" https://example.com
 ```
-This fetches the post with ID 1. You will see output like:
-```Bash
-{
-  "userId": 1,
-  "id": 1,
-  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-  "body": "quia et suscipit\nsuscipit ..."
-}
+
+Sample `curl` response:
+
 ```
-To send a POST request:
-```Bash
-curl -X POST -H "Content-Type: application/json" -d '{"title":"foo","body":"bar","userId":1}' http://jsonplaceholder.typicode.com/posts
-```
-This creates a new post. Output might be:
-```Bash
-{
-  "title": "foo",
-  "body": "bar",
-  "userId": 1,
-  "id": 101
-}
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
 ```
 
 ## Deep Dive
-HTTP requests date back to HTTP v1 (1991) when surfing webpages was the main intent. Now, they support web services, RESTful APIs, and more. Besides `curl`, you have alternatives like `wget` or using programming languages with HTTP support (Python requests, Node.js http).
 
-`curl` is open-source, supports many protocols (not just HTTP) and provides advanced features like proxy support. When you run a `curl` command, your Bash shell fires up a curl process which handles the HTTP request, and outputs the response back to your shell.
+HTTP requests have been around since the early '90s and are the foundation of web communication. `curl` and `wget` are Unix command-line tools introduced in 1996 and 1996, respectively, for network requests.
+
+`wget` is typically used for downloading files, while `curl` can handle a wide variety of protocols and offers more features, making it a go-to for sending HTTP requests from the command line.
+
+Implementing an HTTP request using these tools involves crafting the proper request headers, method (GET, POST, PUT, DELETE, etc.), and sometimes data payloads. Doing this from Bash scripts enables automation of interaction with web-based services.
+
+Alternative ways of sending HTTP requests in scripting include using scripting languages like Python with libraries such as `requests`, or using tools like `httpie` for a more human-friendly interface.
 
 ## See Also
-- `curl` command docs: https://curl.se/docs/manpage.html
-- HTTP spec (very technical): https://tools.ietf.org/html/rfc2616
-- "HTTP Made Really Easy": http://www.jmarshall.com/easy/http/ - simpler explanation of HTTP.
+
+- curl official site: https://curl.se/
+- wget manual: https://www.gnu.org/software/wget/manual/wget.html
+- HTTPie: https://httpie.io/
+- The Bash Academy: https://www.bash.academy/
+- W3C HTTP Specifications: https://www.w3.org/Protocols/

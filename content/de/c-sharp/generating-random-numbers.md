@@ -1,7 +1,8 @@
 ---
-title:                "Zufallszahlen generieren"
-html_title:           "Arduino: Zufallszahlen generieren"
-simple_title:         "Zufallszahlen generieren"
+title:                "Generierung von Zufallszahlen"
+date:                  2024-01-20T17:48:50.459256-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generierung von Zufallszahlen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
@@ -11,28 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Generieren von Zufallszahlen ist das Erzeugen von Zahlen, die keine erkennbare Muster oder Beziehung aufweisen. Entwickler nutzen sie oft für verschiedene Zwecke wie Algorithmen für Computerspiele.
+Zufallszahlen sind Zahlen, die durch einen Prozess erzeugt werden, bei dem das Ergebnis nicht vorhersagbar ist. In der Programmierung nutzen wir sie für alles Mögliche, von Spieleentwicklung bis Sicherheitsfeatures.
 
 ## So geht's:
-Das Erzeugen einer Zufallszahl in C# ist einfach und direkt. Man benötigt die `Random` Klasse. Ein einmaliges Codebeispiel ist unten dargestellt:
-```C#
+In C# verwenden wir die Klasse `Random` für einfache Zufallszahlen. Hier ein kurzes Beispiel:
+
+```csharp
 using System;
 
-class Program
+public class RandomNumbers
 {
-    static void Main()
+    public static void Main()
     {
-        Random zufallszahl = new Random();
-        Console.WriteLine(zufallszahl.Next());  // Gibt eine zufällige Zahl aus.
+        Random rand = new Random();
+
+        Console.WriteLine(rand.Next()); // Gibt eine Zufallszahl aus
+        Console.WriteLine(rand.Next(10, 50)); // Gibt eine Zufallszahl zwischen 10 und 50 aus
     }
 }
 ```
 
-## Vertiefung:
-Historisch gesehen verwendet die `Random` Klasse in .NET einen modifizierten Park-Miller Algorithmus für das Generieren seiner Pseudozufallszahlen. Es gibt alternative Möglichkeiten, wie die Verwendung des `RNGCryptoServiceProvider` für stärkere und sicherere Zufallszahlen, obwohl er langsamer als `Random` ist. Beachten Sie auch, dass die `Random` Klasse in C# nicht threadsicher ist und daher eine entsprechende Implementierung benötigt, wenn in mehreren Threads verwendet werden soll.
+Ausgabe könnte sein:
+```
+123456789
+23
+```
 
-## Siehe auch:
-Weitere Informationen finden Sie auf den unten genannten Seiten:
-- [Microsoft Docs - Random Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.random?view=net-5.0)
-- [Microsoft Docs - RNGCryptoServiceProvider Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.security.cryptography.rngcryptoserviceprovider)
-- [Microsoft Docs - Parallele Programmierung in .NET](https://docs.microsoft.com/de-de/dotnet/standard/parallel-programming/)
+## Deep Dive:
+Die Klasse `Random` in C# nutzt einen Pseudozufallszahlengenerator. Das bedeutet, dass die Zahlen nicht wirklich zufällig sind, sondern durch einen Algorithmus generiert werden, der vorhersagbar wird, wenn man den Startwert (den sogenannten Seed) kennt. Üblicherweise wird die aktuelle Zeit als Seed verwendet.
+
+Für sicherheitskritische Anwendungen sollte `Random` vermieden werden. Stattdessen bietet .NET die `RNGCryptoServiceProvider` Klasse aus dem `System.Security.Cryptography` Namespace, die stärkere Zufälligkeit bietet.
+
+Historisch gesehen entstanden die ersten Zufallszahlengeneratoren als Tabellen von Zahlen, die manuell zusammengestellt wurden, iterierten später über mechanische und dann über elektronische Geräte, bis hin zu modernen computergestützten Methoden.
+
+Alternativen zu `Random` könnten die Nutzung von Drittanbieter-Bibliotheken sein, die auf verschiedenen Algorithmen basieren (z.B. Mersenne Twister), um unterschiedliche Bedürfnisse zu erfüllen.
+
+## Siehe Auch:
+- Microsoft-Dokumentation zur `Random` Klasse: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-7.0)
+- Microsoft-Dokumentation für `RNGCryptoServiceProvider`: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-7.0)
+- Einen ausführlicheren Leitfaden zum Thema "Zufälligkeit" in der Informatik: [Wikipedia - Pseudorandom number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)

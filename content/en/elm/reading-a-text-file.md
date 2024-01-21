@@ -1,6 +1,7 @@
 ---
 title:                "Reading a text file"
-html_title:           "Go recipe: Reading a text file"
+date:                  2024-01-20T17:54:03.419339-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Reading a text file"
 programming_language: "Elm"
 category:             "Elm"
@@ -12,47 +13,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Reading a text file means accessing the string content of a file. These might be used for machine learning purposes, or to grab live data for a website — anything where you need to utilize off code data. 
+Reading a text file is pulling content from a file that's structured as readable text, rather than binary data. Programmers read text files to access data, configurations, or to import large amounts of text into their applications.
 
 ## How to:
 
-In Elm, we don't use your general purpose I/O methods you'd find in other languages. Instead, we leverage ports for communication. Here's an example of how we receive a string from JavaScript:
+Elm is mainly focused on front-end web development, wherein direct file system access is a no-go due to security reasons. Instead, you handle file uploads by users. Here’s how you can read a text file that a user selects:
 
 ```Elm
-port module Main exposing (..)
+module Main exposing (..)
 
-port receiveFileContents : (String -> msg) -> Sub msg
+import Browser
+import File exposing (File)
+import File.Selector as Selector
+import Html exposing (Html, button, div, text)
+import Html.Events exposing (onClick)
 
-type Msg = Contents String
+type alias Model =
+    { fileContent : String }
 
-subscriptions : Model -> Sub Msg
-subscriptions _ = receiveFileContents Contents
+type Msg
+    = SelectFile
+    | ReceiveFileContent (Result () String)
 
-port sendOpenFileRequest : () -> Cmd msg
+init : Model
+init =
+    { fileContent = "" }
 
-openFile : Cmd Msg
-openFile = sendOpenFileRequest ()
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        SelectFile ->
+            (model, fileSelectCmd)
 
+        ReceiveFileContent (Ok content) ->
+            ({ model | fileContent = content }, Cmd.none)
+
+        ReceiveFileContent (Err _) ->
+            (model, Cmd.none)
+
+fileSelectCmd : Cmd Msg
+fileSelectCmd =
+    File.select [ Selector.accept "text/*" ] { onDone = ReceiveFileContent }
+
+view : Model -> Html Msg
+view model =
+    div []
+        [ button [ onClick SelectFile ] [ text "Select a text file" ]
+        , div [] [ text model.fileContent ]
+        ]
+
+main : Program () Model Msg
 main =
-    Html.program
-        { init = ( "Awaiting file...", Cmd.none )
-        , view = \_ -> text "Awaiting file..."
-        , update = \_ _ -> ( "File content received!", Cmd.none )
-        , subscriptions = subscriptions
-        }
+    Browser.sandbox { init = init, update = update, view = view }
 ```
-You simply request an Elm port to read the file from JS, then send back the file contents. 
+
+Run the code in your browser, click the button, and select a text file. It displays the content in your Elm app.
 
 ## Deep Dive
 
-Elm's approach to I/O operations maintains its strong emphasis on pure functions. Traditional file I/O operations usually rely on side effects and can create unpredictability. Elm addresses these issues by using its "port" system for communicating with the outside world, like JavaScript. The process is more verbose but guarantees safety and predictability.
+Elm doesn’t read files from the server's file system directly - it wasn't designed for server-side operations. Instead, Elm manages file input through the File API in the browser, typically triggered by a user action, such as a file selection or a drag-and-drop action. It’s a security measure.
 
-There are also alternatives to this in Elm, such as using Http to fetch text files over a network or even using WebSockets.
+In the past, you might have used JavaScript and Node.js to read files server-side, or XMLHttpRequest (XHR) for client-side reading without user interaction. These have different security models and capabilities.
 
-The implementation details of the "port" system in Elm works seamlessly. JavaScript initiates the process of reading a file, and then it sends the content back to Elm through signals, keeping the entire process free of side effects.
+The `File` and `File.Selector` modules in Elm make it fairly smooth to handle file reading in the browser, but remember the "no side effects" philosophy of Elm. That means file reading is tightly controlled, with explicit user actions required. Also, parsing and decoding file content need care to match Elm’s strong typing.
 
 ## See Also
 
-1. Official Elm guide on interop with JavaScript: https://guide.elm-lang.org/interop/
-2. Article on ports and subscriptions in Elm: https://elmprogramming.com/ports.html
-3. Elm's Http module for network requests: https://package.elm-lang.org/packages/elm/http/latest/
+- Official Elm File API documentation: https://package.elm-lang.org/packages/elm/file/latest/
+- A guide to Elm’s commands and subscriptions (for understanding async operations): https://guide.elm-lang.org/effects/
+- Elm Discuss for questions and community interaction: https://discourse.elm-lang.org/

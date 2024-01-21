@@ -1,6 +1,7 @@
 ---
 title:                "सबस्ट्रिंग्स निकालना"
-html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+date:                  2024-01-20T17:46:32.158676-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,27 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+उप-स्ट्रिंग निकालना, यानी किसी स्ट्रिंग के एक भाग को अलग करना। यह तब जरूरी है जब किसी विशेष जानकारी की जरूरत हो - जैसे यूजर नेम, सर्च टर्म्स, या कोई विशिष्ट पैटर्न।
 
-सबस्ट्रिंग्स निकालना एक विस्तारक वाक्यांश को छोटे हिस्सों में बाँटने की कला है। इसका उपयोग प्रोग्रामर्स डेटा को चुनिंदा हिस्सों में पृथक्करण, विश्लेषण और प्रसंस्करण के लिए करते हैं।
+## How to: (कैसे करें:)
 
-### कैसे करें:
-
-PHP में `substr` और `strpos` फ़ंक्शन का उपयोग करके आप सबस्ट्रिंग्स निकाल सकते हैं। 
+PHP में स्ट्रिंग्स से उप-स्ट्रिंग निकालने के लिए `substr` फंक्शन एक सरल और प्रचलित तरीका है। 
 
 ```PHP
 <?php
-$str = "Hello, World!";
-echo substr($str, 7);  // Output: World!
+$originalString = "नमस्ते दुनिया!";
+$substring = substr($originalString, 7, 12);
+echo $substring; // दुनिया!
 ?>
 ```
-इसमें शुरुआती इंडेक्स 7 है, जिसका परिणाम स्वरूप `World!` प्रदर्शित होता है।
 
-### गहराई की जाँच:
+इस उदाहरण में, `$originalString` से `नमस्ते` के बाद का भाग, `दुनिया!`, निकाला गया है।
 
-सबस्ट्रिंग की खोज PHP में एक बहुत पुरानी कला है जिसका इतिहास भाषा की शुरुआती दशाओं से जुड़ा हुआ है। अल्टरनेटिवली, आप `strchr`, `strrchr`, `strstr`, `stristr` जैसे अन्य फ़ंक्शन्स का भी उपयोग कर सकते हैं। `substr` आपका आदान-प्रदान सबसे अच्छा शासन करने में मदद करता है, क्योंकि आपको खोजने और वापस लौटाने के लिए अद्वितीय इकाईयों पर पूरी तरह से नियंत्रण होता है। 
+## Deep Dive (गहन अध्ययन):
 
-### अन्य संदर्भ सामग्री:
+'70 के दशक से, C प्रोग्रामिंग भाषा में `substr` जैसे फंक्शंस उपयोग में थे, और PHP ने भी इसको अपनाया। Alternatives में `mb_substr` है जो multibyte characters, जैसे हिंदी अक्षरों, के लिए उपयोगी है। `str_split` और `preg_split` जैसे फंक्शन्स भी हैं, लेकिन वे अलग काम के लिए होते हैं - पूरी स्ट्रिंग को टुकड़ों में बांटने के लिए। उप-स्ट्रिंग निकालने के लिए `substr` सबसे अधिक लचीला है: आप शुरुआत और लंबाई निर्दिष्ट कर सकते हैं।
 
-1. [PHP String Functions Manual](https://www.php.net/manual/en/ref.strings.php)
-2. [Introduction to Substring in PHP](https://www.geeksforgeeks.org/php-substr-function/)
+## See Also (और भी देखें):
+
+- PHP Manual on `substr`: [php.net/manual/en/function.substr.php](https://php.net/manual/en/function.substr.php)
+- PHP Manual on `mb_substr` for multibyte strings: [php.net/manual/en/function.mb-substr.php](https://php.net/manual/en/function.mb-substr.php)
+- String Functions in PHP: [php.net/manual/en/ref.strings.php](https://php.net/manual/en/ref.strings.php)

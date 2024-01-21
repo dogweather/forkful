@@ -1,6 +1,7 @@
 ---
 title:                "Generowanie liczb losowych"
-html_title:           "Gleam: Generowanie liczb losowych"
+date:                  2024-01-20T17:48:45.117276-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generowanie liczb losowych"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,38 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Co to i po co? Generowanie losowych liczb to podstawa wielu skryptów oraz aplikacji. Potrzebujemy tego do testowania, bezpieczeństwa i wszędzie tam, gdzie wyniki nie mogą być przewidywalne.
 
-Generowanie losowych liczb to proces tworzenia liczb, które nie mają żadnego przewidywalnego wzorca. Programiści robią to, aby dodać element nieprzewidywalności do swoich aplikacji, co jest niezbędne w grach, symulacjach czy testach bezpieczeństwa.
-
-## Jak to zrobić:
-
-W Bashu możemy wygenerować losową liczbę korzystając z predefiniowanej zmiennej `$RANDOM`. Poniżej znajduje się przykładowy skrypt:
-
+## How to:
 ```Bash
+# Basic random number between 0 and 32767
 echo $RANDOM
+
+# Random number in a given range (for example: 1-100)
+echo $(( 1 + $RANDOM % 100 ))
+
+# Random number for a dice roll (1-6)
+echo $(( 1 + $RANDOM % 6 ))
+
+# Save to a variable
+myNumber=$(( 1 + $RANDOM % 100 ))
+echo $myNumber
+```
+Przykładowe wyjście:
+```
+17325
+23
+4
+57
 ```
 
-Wywołanie tego skryptu da nam losową liczbę pomiędzy 0 a 32767. 
+## Deep Dive
+Historia i alternatywy: `$RANDOM` jest wbudowaną zmienną Bash, istniejącą od wersji 2. RANDOM generuje pseudolosowe liczby, co oznacza, że potrzebują one deterministycznego źródła (jak ziarno, czyli "seed") do startu. 
 
-Jeśli chcemy losową liczbę w określonym przedziale, np. od 1 do 100, możemy to zrobić następująco:
+Dla prawdziwiej losowości, można wykorzystać `/dev/urandom` lub `/dev/random` w Linuksie, które zbierają entropię z różnych źródeł w systemie. 
 
-```Bash
-echo $((RANDOM%100+1))
-```
+Implementacja:
+- `$RANDOM` korzysta z liniowego generatora kongruentnego, a jego ziarno zmienia się za każdym wywołaniem. Nie jest to wystarczające dla zastosowań kryptograficznych.
+- Użycie `$RANDOM` jest szybkie i proste, ale dla większych zakresów czy wymagających zadań lepiej szukać innych narzędzi, jak `shuf` lub `openssl rand`.
 
-## Głębsze spojrzenie:
-
-Zmienna `$RANDOM` w Bashu istnieje od czasów, gdy losowość była rzadkością. Choć jest prosta w użyciu, ma kilka ograniczeń. Najważniejsze to fakt, że generuje tylko liczby z przedziału 0-32767.
-
-Istnieją alternatywne metody generowania losowych liczb w Bashu. Jedną z nich jest korzystanie z `/dev/urandom` lub `/dev/random`.
-
-Implementacje `$RANDOM` różnią się w zależności od systemu i bashowej wersji. `$RANDOM` generuje pseudolosowe liczby zgodnie z liniowym kongruentnym generatorem liczb losowych.
-
-## Zobacz też:
-
-Szczegółowy artykuł na temat generowania liczb losowych w Bashu: https://www.linuxjournal.com/content/generate-random-numbers-bash 
-
-Informacje o `$RANDOM` na stronie Bash Shell Scripting Wiki: https://bash.cyberciti.biz/guide/$RANDOM 
-
-Bashowa dokumentacja dla `$RANDOM`: https://www.gnu.org/software/bash/manual/bash.html#Shell-Variables.
+## See Also
+- Man Bash: [https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Bash-Variables](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Bash-Variables)
+- Advanced Bash-Scripting Guide: [https://tldp.org/LDP/abs/html/randomvar.html](https://tldp.org/LDP/abs/html/randomvar.html)
+- `shuf` manual: [https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html)
+- `openssl rand` documentation: [https://www.openssl.org/docs/manmaster/man1/openssl-rand.html](https://www.openssl.org/docs/manmaster/man1/openssl-rand.html)

@@ -1,6 +1,7 @@
 ---
 title:                "Lecture des arguments de ligne de commande"
-html_title:           "Ruby: Lecture des arguments de ligne de commande"
+date:                  2024-01-20T17:56:00.036931-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,41 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
-Lire les arguments de la ligne de commande d'un programme, c'est pouvoir passer des informations au programme lors de son exécution. Les programmeurs le font pour manipuler le comportement du programme et lui faire effectuer des actions spécifiques.
+## What & Why?
+Lire les arguments de la ligne de commande, c'est récupérer les infos fournies par l'utilisateur au lancement d'un programme. Les développeurs l'utilisent pour personnaliser l'exécution sans modifier le code.
 
-## Comment faire :
-Prenons un exemple avec du code Gleam pour lire les arguments de la ligne de commande:
-
+## How to:
 ```Gleam
-import gleam/list
-import gleam/io
-
-fn main(args: List(String)) {
-  args
-  |> list.reverse
-  |> list.map(|arg| io.println(arg))
-  |> result.unwrap
+pub fn main(args: List(String)) {
+  let arg1 = args.nth(1) // On récupère le deuxième élément car le premier est toujours le chemin du programme
+  let message = case arg1 {
+    Some(value) -> value
+    None -> "Hey, tu as oublié de passer un argument!"
+  }
+  io.println(message)
 }
 ```
-
-Si vous exécutez cette commande : `gleam run my_program arg1 arg2 arg3`, cela donnera l'affichage suivant :
-
+**Sortie si argument fourni :**
 ```
-arg3
-arg2
-arg1
+$ gleam run votre_programme "Salut le monde!"
+Salut le monde!
 ```
-## Plongée en profondeur :
-Historiquement, la lecture des arguments de la ligne de commande a été un moyen pour les systèmes UNIX de faire passer des informations aux programmes. Aujourd'hui, même les systèmes d'exploitation modernes comme Windows prennent en charge cette fonctionnalité.
+**Sortie si aucun argument :**
+```
+$ gleam run votre_programme
+Hey, tu as oublié de passer un argument!
+```
 
-Les alternatives à la lecture des arguments de la ligne de commande comprennent le passage des données via des fichiers de configuration ou des variables d'environnement. Cependant, ces méthodes peuvent être plus lourdes à gérer.
+## Deep Dive
+Historiquement, l'accès aux arguments de la ligne de commande est essentiel, permettant aux programmes d'être flexibles. Alternativement, on peut utiliser des fichiers de configuration ou des variables d'environnement, mais les arguments sont idéals pour des instructions ponctuelles et rapides. En Gleam, on accède aux arguments par la fonction `main` qui les reçoit sous forme de `List(String)`, pratique pour les traiter avec les puissantes fonctions de liste de Gleam.
 
-Au niveau de l'implémentation dans Gleam, la fonction main reçoit une liste de chaînes de caractères. Chaque élément de la liste est un argument de la ligne de commande. 
-
-## Voir aussi :
-Pour aller plus loin, voici quelques ressources sur la gestion des arguments de ligne de commande dans différents contextes :
-
-- Documentation de Gleam sur `list` et `io` : https://hexdocs.pm/gleam/gleam/list.html , https://hexdocs.pm/gleam/gleam/io.html
-- Pour en savoir plus sur les arguments de ligne de commande en général : https://fr.wikipedia.org/wiki/Argument_(informatique)
-- Un cours sur l'utilisation des arguments de ligne de commande en Python pour comparaison : https://docs.python.org/fr/3/tutorial/stdlib.html#command-line-arguments
+## See Also
+- Documentation officielle sur les Strings de Gleam : [Gleam Strings](https://gleam.run/book/tour/strings.html)
+- Un tour de Gleam : [A Tour of Gleam](https://gleam.run/book/tour/index.html)

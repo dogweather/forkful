@@ -1,7 +1,8 @@
 ---
-title:                "एक वेब पेज डाउनलोड करना"
-html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
-simple_title:         "एक वेब पेज डाउनलोड करना"
+title:                "वेब पेज डाउनलोड करना"
+date:                  2024-01-20T17:44:39.578512-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "वेब पेज डाउनलोड करना"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,37 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-एक वेब पेज को डाउनलोड करना का अर्थ होता है उसे इंटरनेट से अपने कंप्यूटर पर लाना। प्रोग्रामर्स इसे डाटा खोजने, उसे विश्लेषित करने और अन्य वेबसाइटों के साथ अपने एप्लीकेशन को इंटरैक्ट करने के लिए करते हैं। 
+वेब पेज डाउनलोड करना मतलब इंटरनेट से सूचना लेकर उसे अपने कंप्यूटर पर सेव करना। प्रोग्रामर्स इसे डाटा एनालिसिस, टेस्टिंग और वेब साइट की कंटेंट मॉनिटरिंग के लिए करते हैं।
 
-## कैसे करें:
+## How to: (कैसे करें:)
 
-Lua में आपको वेब पेज डाउनलोड करने के लिए `luasocket` और `luasec` लाइब्रेरियां की आवश्यकता होगी। यहां एक उदाहरण है:
+Lua में वेब पेज डाउनलोड करने के लिए सबसे सीधा तरीका `socket.http` मॉड्यूल का इस्तेमाल करना है। इसे `luasocket` लाइब्रेरी के तौर पर इंस्टॉल करना पड़ता है।
 
 ```Lua
-http = require("socket.http")
-https = require("ssl.https")
+-- सबसे पहले luasocket लाइब्रेरी को इंस्टॉल करें
+-- यह कमांड इस्तेमाल कर सकते हैं: luasocket install luarocks
 
--- HTTP
-local page = http.request("http://example.com")
--- HTTPS
-local page = https.request("https://example.com")
+local http = require("socket.http")
+local body, statusCode, headers, statusText = http.request("http://www.example.com")
 
-print(page)
+if statusCode == 200 then
+    print("Web page downloaded successfully!")
+    print(body) -- वेब पेज का HTML कोड
+else
+    print("Error downloading web page:", statusText)
+end
 ```
-यहां `http.request` और `https.request` वेब पेज को डाउनलोड करते हैं और उसकी सामग्री को लौटा देते हैं। 'print(page)' सारी सामग्री को प्रिंट करेगा।
 
-## गहराई में:
+Sample Output (नमूना आउटपुट):
 
-Lua में वेब पेज को डाउनलोड करना बहुत साधारण है, लेकिन इसके पीछे कुछ इतिहास है। Lua  भाषा को 1993 में ब्राजील में लैब्रेटरी के लिए निर्माण किया गया था, जिसमें इंटरैक्टिव टेलीविजन के लिए एप्लिकेशन बनाने का आवश्यकता थी। बाद में इसे वेब डेवलपमेंट, एम्बेडेड सिस्टम, और गेम डेवलपमेंट के लिए भी इस्तेमाल किया गया। 
+```
+Web page downloaded successfully!
+<!DOCTYPE html>...
+```
 
-कई अन्य भाषाओं में भी सही URL से डाटा को प्राप्त करने का समर्थन होता है, जैसे की Python (जिसमें `requests` लाइब्रेरी है), JavaScript (जिसमें `fetch` API है), और अन्य।
+## Deep Dive (गहराई से समझें):
 
-## अन्य संसाधन:
+पहले जमाने में, वेब पेज डाउनलोड करना बहोत जटिल था। लेकिन आज, `luasocket` जैसे लाइब्रेरीज ने इसे बहोत सरल बना दिया है। हालांकि `socket.http` बहुत ही बुनियादी है, और यह सिर्फ HTTP GET रिक्वेस्ट को हैंडल कर सकता है। अगर आपको POST रिक्वेस्ट या कुकीज़ को मैनेज करना है, तो आपको `luasec` जो कि `luasocket` पर आधारित है, या किसी और अधिक एडवांस लाइब्रेरी की जरुरत होगी।
 
-1. [Lua विकि बुक](https://en.wikibooks.org/wiki/Lua_Programming)
-2. [LuaSocket डॉक्स](https://github.com/Lua-cURL/Lua-cURLv3)
-3. [LuaSec डॉक्स](https://github.com/brunoos/luasec) 
+आप वेब स्क्रेपिंग के लिए `Lua` के साथ-साथ दूसरे ऑप्शन्स भी तलाश सकते हैं, जैसे कि `Python` के `BeautifulSoup` या `Scrapy`। लेकिन Lua का सादगी और परफॉरमेंस में उत्कृष्टता इसे कुछ अनुप्रयोगों के लिए एक बेहतर पसंद बनाते हैं।
 
-इन स्रोतों से आप कोडेक्स, एपीआई, और अन्य कार्यों जैसे कि कैसे हेडर्स सेट करें, कैसे GET और POST अनुरोध भेजें, और बहुत कुछ सीख सकते हैं।
+## See Also (देखें भी):
+
+- LuaSocket reference: [http://w3.impa.br/~diego/software/luasocket/http.html](http://w3.impa.br/~diego/software/luasocket/http.html)
+- LuaSec for HTTPS support: [https://github.com/brunoos/luasec](https://github.com/brunoos/luasec)
+- Lua programming homepage: [https://www.lua.org/](https://www.lua.org/)
+- More on web scraping with Lua: [https://www.scraperwiki.com/](https://www.scraperwiki.com/)

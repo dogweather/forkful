@@ -1,7 +1,8 @@
 ---
-title:                "Видалення символів, що відповідають патерну"
-html_title:           "C: Видалення символів, що відповідають патерну"
-simple_title:         "Видалення символів, що відповідають патерну"
+title:                "Видалення символів за візерунком"
+date:                  2024-01-20T17:43:47.229610-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Видалення символів за візерунком"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,29 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо?
-Щодо видалення символів, які відповідають шаблону - це процес фільтрації рядка, в умовах якого ми видаляємо певні символи на основі заданих критеріїв. Програмісти роблять це для очищення, модифікації та керування даними - важливі аспекти багатьох програмних задач.
+## Що і Чому?
+У Swift, видалення символів за шаблоном – це процес прибирання зі стрічки окремих букв або груп символів, які відповідають певному критерію. Програмісти це роблять для очищення даних, оптимізації інформації, чи подготовки тексту до обробки.
 
 ## Як це зробити:
-За допомогою Swift, ми можемо легко видалити певний набір символів із рядка за допомогою методу `filter()`. Ось простий приклад:
+В Swift, щоб видалити символи за шаблоном, використовуйте `NSRegularExpression` і метод `stringByReplacingMatches`. Ось простий приклад:
 
-``` Swift
-let oldString = "Hello, World!"
-let charactersToRemove: [Character] = [",", "!", " "]
-let newString = oldString.filter { !charactersToRemove.contains($0) }
-print(newString)
+```Swift
+import Foundation
+
+func deleteCharacters(matching pattern: String, from input: String) -> String {
+    let regex = try! NSRegularExpression(pattern: pattern)
+    let range = NSRange(input.startIndex..<input.endIndex, in: input)
+    return regex.stringByReplacingMatches(in: input, options: [], range: range, withTemplate: "")
+}
+
+let originalString = "Hello, World! 123."
+let pattern = "[^A-Za-z ]" // Видалення усіх символів, крім літер алфавіту і пробілів
+
+let cleanedString = deleteCharacters(matching: pattern, from: originalString)
+print(cleanedString) // Виведе: "Hello World"
 ```
-Виходить:
 
-``` Swift
-"HelloWorld"
+Sample output:
 ```
-У цьому сценарію ми видаляємо коми, знак оклику та пробіли.
+Hello World
+```
 
-## Поглиблений занурення
-Історично, можливість видалити символи з рядка, які відповідають певному шаблону, була важливою частиною багатьох мов програмування, але Swift робить це набагато простіше з допомогою методу `filter()`. Альтернативно, ви могли б використовувати регулярні вирази для більш складних шаблонів, але для простих випадків це зазвичай не потрібно. Щодо деталей впровадження, Swift `filter()` працює шляхом ітерації кожного символу в рядку та перевірки, чи відповідає він зазначеному критерію.
+## Детальніше:
+Історично, регулярні вирази, як і `NSRegularExpression`, використовуються для таких операцій з текстами. Альтернатива – `String` методи в Swift, але регулярні вирази кращі для складних шаблонів. Важливо контролювати виключення `try!` при створенні `NSRegularExpression` – помилки можуть з'явитись, якщо шаблон неправильний.
 
-## Дивіться також
-1. Apple Swift Documentation: [https://developer.apple.com/documentation/swift/string](https://developer.apple.com/documentation/swift/string)
-2. Swift String and Characters: [https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-3. Swift Standard Library: [https://developer.apple.com/documentation/swift/swift_standard_library](https://developer.apple.com/documentation/swift/swift_standard_library)
+## Також подивіться:
+Для більш детального розуміння регулярних виразів:
+- [NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)
+
+Ознайомтеся з документацією Swift щодо рядків і символів:
+- [Swift String and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+
+Поглибити знання з роботою з текстовими даними в Swift допоможе:

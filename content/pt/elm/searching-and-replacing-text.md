@@ -1,6 +1,7 @@
 ---
 title:                "Pesquisando e substituindo texto"
-html_title:           "Bash: Pesquisando e substituindo texto"
+date:                  2024-01-20T17:57:29.981247-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pesquisando e substituindo texto"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,42 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Artigo sobre a programação Elm: Pesquisar e substituir texto
+## O Que & Porquê?
+Procurar e substituir texto é trocar uma sequência específica por outra em uma string. Programadores fazem isso para corrigir dados, atualizar informações ou manipular texto de maneira eficiente.
 
-## O quê & Por quê?
-Pesquisar e substituir texto significa localizar uma cadeia de caracteres específica em uma quantidade significativa de texto e alterá-la por outra. Os programadores fazem isso para manipular dados de texto, corrigir erros ou modificar funcionalidades sem reinventar a roda.
-
-## Como fazer:
-
-Aqui está um exemplo básico de como procurar e substituir texto em Elm. Para isso, vamos usar a função built-in `String.replace`.
-
+## Como Fazer:
 ```Elm
 import String
 
+-- Função simples para procurar e substituir texto
+substituirTexto : String -> String -> String -> String
+substituirTexto de para texto =
+    String.split de texto |> String.join para
+
+-- Exemplo de uso
 main =
-    let
-        originalText = "Amo programar em Elm"
-        searchText = "Elm"
-        replaceWithText = "JavaScript"
-        newText = String.replace searchText replaceWithText originalText
-    in
-    Html.text newText
+    "Olá, mundo!" |> substituirTexto "mundo" "todos"
+
+-- Saída esperada: "Olá, todos!"
 ```
 
-No exemplo acima, "Elm" será substituído por "JavaScript". Portanto, a saída da função será "Amo programar em JavaScript".
+## Aprofundamento
+Substituir texto é uma operação comum desde os primórdios da programação. Opções incluem expressões regulares, mas no Elm atual, usamos `String.split` seguido de `String.join` para um método mais direto e seguro. Alternativas como bibliotecas de terceiros existem, mas muitas vezes a solução padrão da linguagem é suficiente e recomendada para evitar complexidade e dependências extras.
 
-## Deep Dive
-
-Pesquisar e substituir texto é uma funcionalidade básica que tem sido parte das linguagens de programação desde os seus primórdios. Normalmente, essas operações seriam complexas, mas as linguagens modernas, como Elm, tornaram essa tarefa simples.
-
-Como alternativa, a manipulação direta de Strings pode ser usada para pesquisar e substituir texto, embora seja mais complexa e propensa a erros. Além disso, as vezes, pode ser mais adequado o uso de expressões regulares para pesquisas mais complexas.
-
-A implementação da função `String.replace` em Elm passa por analisar o texto original e reconstruí-la com a substituição, quando a sequência de pesquisa é encontrada.
-
-## Ver também
-
-Para mais detalhes, pode referir ao seguinte:
-
-1. Documentação Elm sobre manipulação de texto - [Elm String Documentation](https://package.elm-lang.org/packages/elm/core/latest/String)
-2. Um artigo detalhado sobre expressões regulares em Elm - [Elm Regular Expressions](https://elmprogramming.com/regular-expression.html)
-3. Uma explicação clara e concisa do conceito de busca e troca em [Wikipedia](https://en.wikipedia.org/wiki/Find_and_replace)
+## Veja Também
+- Documentação oficial do Elm para strings: https://package.elm-lang.org/packages/elm/core/latest/String
+- Elm Guide sobre a manipulação de strings: https://guide.elm-lang.org/strings/
+- Tutorial sobre expressões regulares (não específico para Elm, mas útil para entender o conceito): https://regexr.com/

@@ -1,6 +1,7 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "C++: Porównywanie dwóch dat"
+date:                  2024-01-20T17:33:53.911764-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,42 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Porównywanie dwóch dat to proces ustalania, która data następuje po innej. Programiści robią to aby przetwarzać i manipulować danymi datami w swoich aplikacjach.
+## What & Why?
+(Po co i dlaczego?)
 
-## Jak to zrobić:
-Tu jest łatwy przykład na porównanie dwóch dat w Swift:
+Porównywanie dat pozwala określić, która z nich jest wcześniejsza, a która późniejsza. Programiści robią to, by zarządzać czasem i wydarzeniami, obsługiwać harmonogramy, upływ czasu, czy ważność tokenów.
+
+## How to:
+(Jak to zrobić?)
+
+Porównajmy dwie daty w Swift:
 
 ```Swift
+import Foundation
+
 let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd/MM/yyyy"
-let firstDate = dateFormatter.date(from: "24/12/2022")!
-let secondDate = dateFormatter.date(from: "01/01/2023")!
+dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
 
-if firstDate < secondDate {
-    print("Pierwsza data jest wcześniejsza")
-} else if firstDate > secondDate {
-    print("Druga data jest wcześniejsza")
+let date1 = dateFormatter.date(from: "2023/04/15 08:30")!
+let date2 = dateFormatter.date(from: "2023/04/16 21:45")!
+
+// Porównanie dat
+if date1 == date2 {
+    print("Daty są identyczne.")
+} else if date1 < date2 {
+    print("Data pierwsza jest wcześniejsza.")
 } else {
-    print("Daty są takie same")
+    print("Data druga jest wcześniejsza.")
 }
-```
-Kod powyżej generuje następujący rezultat:
 
-```
-Pierwsza data jest wcześniejsza
+// Wynik:
+// Data pierwsza jest wcześniejsza.
 ```
 
-## Dogłębne spojrzenie
-Mit porównania dat ma długą historię, zwłaszcza w zakresie zarządzania czasem i planowania zdarzeń. W przeszłości wykonanie takiego zadania było nieco trudne i wymagało zrozumienia tajników zarządzania czasem. 
+## Deep Dive:
+(Głębsze zagłębienie)
 
-Alternatywą dla porównania dat jest użycie specjalnych bibliotek, jak SwiftDate, które oferują wiele przydatnych funkcji dla dat i czasu. 
+Wczesne systemy programowania nie miały wbudowanego wsparcia dla zarządzania datą i czasem. Pokutujące jeszcze dziś systemy, jak UNIX Time, wprowadzały standardy. Obecnie Swift oferuje typy `Date` i `Calendar`, które ułatwiają pracę z czasem. Alternatywy? Można też użyć timestampów lub `TimeInterval`. Zaawansowane opcje to np. `Calendar.current.compare()` do porównywania komponentów daty, co daje większą elastyczność.
 
-Co więcej, porządek, w jakim używamy operatorów porównania jest kluczowy. Zawsze używamy dwóch dat, które chcemy porównać koło siebie, używając operatora `<` albo `>` pomiędzy nimi.
+## See Also:
+(Zobacz też)
 
-## Zobacz też
-Sprawdź te dodatkowe źródła, aby dowiedzieć się więcej:
-
-1. Dokumentacja Apple na temat `Dates and Times` https://developer.apple.com/documentation/foundation/dates_and_times
-2. Oficjalne tutoriale Apple's Swift https://docs.swift.org/swift-book/LanguageGuide/DatesAndTimes.html
-3. Używanie SwiftDate do łatwego zarządzania datami: https://malcommac.github.io/SwiftDate/
+- [Apple Developer Documentation: Date](https://developer.apple.com/documentation/foundation/date)
+- [Apple Developer Documentation: Calendar](https://developer.apple.com/documentation/foundation/calendar)

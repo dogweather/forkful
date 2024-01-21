@@ -1,7 +1,8 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:01:52.349398-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,38 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यूँ?
+## क्या और क्यों?
 
-HTTP अनुरोध के साथ मूल प्रमाणीकरण संचारण का प्रयोग नेटवर्क प्रोटोकॉल में किसी भी केंद्र के साथ सुरक्षित संचार करने के लिए किया जाता है। प्रोग्रामर्स इसका उपयोग करते हैं क्योंकि यह किसी भी डेटा को सुरक्षित रूप से ट्रांसफर करने का अच्छा तरीका है।
+बुनियादी प्रमाणीकरण के साथ HTTP अनुरोध भेजना यानी कि वेब सर्वर को यूज़रनेम और पासवर्ड संलग्न करके डेटा मांगना। प्रोग्रामर्स इसे तब उपयोग करते हैं जब सिक्योर एक्सेस की जरूरत होती है।
 
 ## कैसे करें:
 
-आप निम्नलिखित कोड की सहायता से HTTP अनुरोध के साथ मूल प्रमाणीकरण कर सकते हैं:
-
 ```Fish Shell
-function http_request
-  curl -u username:password http://example.com
+function send_http_request_with_auth
+    set username 'yourUsername'
+    set password 'yourPassword'
+    set auth_string (echo -n "$username:$password" | base64)
+
+    # अनुरोध भेजें
+    curl -H "Authorization: Basic $auth_string" https://your.api/endpoint
 end
+
+send_http_request_with_auth
 ```
 
-आपका उत्तर कुछ इस तरह दिखाई देगा:
-
-```Fish Shell
-< HTTP/1.1 200 OK
-< Date: Mon, 01 Jan 2021 00:00:01 GMT
-< Content-Type: application/json
-< Content-Length: 140
-...
+सैंपल आउटपुट:
 ```
-## गहरी जाँच:
+{
+  "status": "success",
+  "data": ...
+}
+```
 
-HTTP प्रमाणीकरण का इतिहास 1990 के ही दशक में शुरू हुआ था, जब WWW का विकास हुआ। अल्टरनेटिव्स में OAuth, JWT, Digest Access Authentication और अन्य तकनीकें शामिल हैं। HTTP प्रमाणीकरण की कार्रवाई जैसे कि डाटा को base64 एन्कोडिंग के साथ एन्कोड करना और 'Authorization' हेडर में एम्बेड करना शामिल है।
+## गहराई से:
 
-## विभिन्न स्रोत यात्रा करें:
+बेसिक प्रमाणीकरण HTTP के शुरुआती दिनों से ही है और यह एक सिंपल तरीके से यूज़रनेम और पासवर्ड को बेस-64 कोडिंग के द्वारा एनकोड करके भेजता है। यद्यपि यह न कि एकदम सिक्योर होता है, लेकिन डेवलपमेंट और सिंपल एप्लीकेशन्स के लिए अक्सर पर्याप्त होता है। आजकल एडवांस प्राइवेसी टूल्स जैसे OAuth और API कीज़ का भी उपयोग होता है। फिश शैल में `base64` और `curl` जैसे टूल्स के संयोजन से यह काम सरल हो जाता है।
 
-1. [HTTP प्रमाणीकरण](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-2. [Fish के बारे में अधिक जानकारी](https://fishshell.com/docs/current/index.html)
-3. [HTTP प्रोटोकॉल](https://www.w3.org/Protocols/)
-4. [Basic Access Authentication](https://tools.ietf.org/html/rfc7617)
-5. [CURL प्रमाणीकरण](https://curl.haxx.se/)
-6. [फिश शेल कॉडिंग प्रक्रिया](https://www.youtube.com/watch?v=1leaYBZttK4)
+## देखें भी:
+
+- cURL की आधिकारिक वेबसाइट: [https://curl.haxx.se/](https://curl.haxx.se/)
+- Fish Shell का डॉक्युमेंटेशन: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- HTTP बेसिक प्रमाणीकरण विवरण: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- एडवांस प्रमाणीकरण विधियां: OAuth और API कीज: [https://oauth.net/](https://oauth.net/)

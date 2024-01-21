@@ -1,7 +1,8 @@
 ---
-title:                "Die Länge eines Strings ermitteln"
-html_title:           "Java: Die Länge eines Strings ermitteln"
-simple_title:         "Die Länge eines Strings ermitteln"
+title:                "Ermittlung der Zeichenkettenlänge"
+date:                  2024-01-20T17:47:16.838925-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Ermittlung der Zeichenkettenlänge"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,32 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Die Länge eines Strings zu finden bedeutet, die Anzahl der Zeichen darin zu zählen. Programmierer tun dies in Fällen, in denen sie die Texteingabe kontrollieren oder Daten validieren müssen.
+## What & Why?
+"Was & Warum?" - Die Länge eines Strings festzustellen bedeutet, die Anzahl der Zeichen zu ermitteln. Programmierer machen das oft, um die Eingabe zu validieren, Daten zu verarbeiten oder das Layout zu steuern.
 
-## Wie geht's:
-In Elm ist es einfach, die Länge eines Strings zu finden. Alles was Sie brauchen ist die eingebaute Funktion `String.length`.
+## How to:
+"So geht's" - Hier ein paar Elm-Beispiele, wie du die Länge eines Strings herausfindest:
 
 ```Elm
-import String
+module Main exposing (..)
+import Html exposing (text)
 
 main =
-    String.length "Hallo Welt!" --> Ausgabe ist 12
+    text (String.fromInt (String.length "Hallo Welt!"))
+
+-- Ausgabe: "11"
 ```
-In diesem Code ist "Hallo Welt!" unser String und das Ergebnis ist 12 (da es 12 Zeichen enthält, einschließlich Leerzeichen und Ausrufezeichen).
+Ganz einfach. Verwende `String.length`, um die Zeichenanzahl zu bekommen und `String.fromInt` um das Ergebnis in einen String zu konvertieren.
 
-## Tiefere Tauchgänge
-Schon seit den Anfängen der Programmierung sind Strings und ihre Manipulationen wie das Finden der Länge ein grundlegender Aspekt. In früheren Versionen von Programmiersprachen war das Zählen der Zeichen nicht immer so einfach, oft mussten wir durch jeden Buchstaben des Strings iterieren.
+## Deep Dive
+"Tiefer eintauchen" - Elm's `String.length` Funktion gibt dir die Länge eines Strings in konstanter Zeit – das ist effizient. Historisch gesehen, waren Operationen mit Strings oft langsamer. In einigen Sprachen, insbesondere in früheren Versionen, kann es unterschiedliche Herangehensweisen geben, abhängig von der String-Implementierung.
 
-In Bezug auf Alternativen könnten Sie eine benutzerdefinierte Funktion schreiben, die die Zeichen einzeln zählt. Allerdings ist die Verwendung der eingebauten `String.length` Funktion effizienter und macht Ihren Code sauberer.
+In Elm wird ein String intern als UTF-16 codiert, also können Zeichen, die außerhalb des Basis-Mehrsprachigen Plans (BMP) liegen, als zwei "code units" gezählt werden. Für die meisten Anwendungen ist dies jedoch irrelevant.
 
-Bezüglich der Implementierung verwendet Elm interne Algorithmen zur Optimierung der String-Längenbestimmung. Im Grunde wird jedes Zeichen im String gezählt, aber aufgrund von Optimierungen geschieht dies schnell und effizient.
+Es gibt Alternativen, wie `List.length (String.toList "DeinString")`, aber das ist nicht nötig und weniger performant, da `String.length` optimiert ist.
 
-## Siehe auch
-Für weitergehende Studien empfehle ich diese Quellen:
+## See Also
+"Siehe auch" - Schau dir diese Ressourcen für weitere Informationen an:
 
-* Elm Dokumentation: String - https://package.elm-lang.org/packages/elm/core/latest/String
-* Elm Diskussionsforum: Verwendung von String Funktionen - https://discourse.elm-lang.org/
-* Buch: Programmieren in Elm - https://pragprog.com/titles/jfelm/programming-elm/
-
-Bitte seien Sie sich bewusst, dass diese Artikel jeweils auf Englisch sind.
+- Elm String Docs: [https://package.elm-lang.org/packages/elm/core/latest/String#length](https://package.elm-lang.org/packages/elm/core/latest/String#length)

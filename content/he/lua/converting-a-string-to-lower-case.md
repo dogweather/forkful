@@ -1,6 +1,7 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
-html_title:           "Go: המרת מחרוזת לאותיות קטנות"
+date:                  2024-01-20T17:38:46.563344-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,29 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-המרת מחרוזת לאותיות קטנות היא התהליך שבו אנו משנים את כל האותיות הגדולות במחרוזת לאותיות קטנות. מתכנתים עושים זאת בעיקר כדי לדמות מידע, לשם טיפול פשוט ואחיד בנתונים.
+## What & Why?
+מה זה המרת מחרוזת לאותיות קטנות? זה פשוט פעולה שבה תווים גדולים בתוך מחרוזת מומרים לקטנים. למה זה נעשה? כדי לאחד פורמטים, לשפר תאימות ולהשוות מחרוזות בלי לדאוג לרישיות.
 
-## איך לעשות:
-ראשית, ניצור את המחרוזת המקורית:
-
+## How to:
 ```Lua
-local originalString = "HELLO WORLD!"
+-- מהמרים מחרוזת לאותיות קטנות בלואה
+
+local myString = "Shalom, OLAM!"
+local lowerString = myString:lower()
+
+print(lowerString)  -- תוצאה: shalom, olam!
 ```
 
-כעת, נשתמש בפונקציה string.lower() להמרת המחרודת לאותיות קטנות:
+הפונקציה `lower()` זמינה על כל עצם מסוג `string`. זה ממיר את כל התווים במחרוזת לאותיות קטנות.
 
-```Lua
-local lowerCaseString = string.lower(originalString)
-```
+## Deep Dive
+מהמרה לאותיות קטנות היא פונקציה סטנדרטית ברוב שפות התכנות. בלואה, `string.lower()` היא הדרך המובנית לעשות זאת. הפונקציה מתבססת על כללי ה-UniCode למה שחשוב להדגיש במיוחד כשעובדים עם שפות כמו עברית שבהן יש תווים מיוחדים. יש כמובן אלטרנטיבות כמו כתיבת פונקציה מותאמת אישית, אבל ברוב המקרים, הפונקציה המובנית תספיק.
 
-חלוף זה יפקיד את המחרוזת "hello world!".
-
-## צלילה עמוקה:
-המרת מחרוזות לאותיות קטנות הייתה תמיד חלק משפות תכנות. בשפת Lua, string.lower() מבצעת את המשימה הזו, ומשתמשת בטבלת ASCII למעבר בין אותיות גדולות לאותיות קטנות.
-
-הרבה שפות תכנות אחרות, כמו JavaScript או Python, מוכרות שיטות מערך לביצוע פונקציות, כולל המרה לאותיות קטנות. Lua אינה עושה זאת, היא ממקמת פונקציה נפרדת לכל מחרוזת שאנו רוצים לעבד.
-
-## ראה גם:
-[Lua 5.4 תיעוד מרכזי](https://www.lua.org/manual/5.4/) - מקור מדהים של מידע על Lua.
-[A Lua tutorial](https://www.tutorialspoint.com/lua/index.htm) - מדריך מקיף ללומדי Lua החדשים.
+## See Also
+- Lua 5.4 Reference Manual: [www.lua.org/manual/5.4/manual.html#pdf-string.lower](https://www.lua.org/manual/5.4/manual.html#pdf-string.lower)
+- UniCode Standard: [www.unicode.org](https://www.unicode.org/)
+- Lua Users Wiki on Strings: [lua-users.org/wiki/StringLibraryTutorial](http://lua-users.org/wiki/StringLibraryTutorial)

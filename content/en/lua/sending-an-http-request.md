@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request"
-html_title:           "Bash recipe: Sending an http request"
+date:                  2024-01-20T18:00:16.334061-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request"
 programming_language: "Lua"
 category:             "Lua"
@@ -12,34 +13,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Sending an HTTP request involves asking a server for a specific resource, often a web page or file, using the HyperText Transfer Protocol (HTTP). Programmers do this to interact with web services, retrieve data from a server, or send user data following actions like form submission.
+Sending an HTTP request means asking a remote server for data or action. Programmers do this to interact with web services, fetch resources, or communicate with APIs.
 
 ## How to:
 
-In Lua, we can use the `lua-http` library to send HTTP requests. Here's an example on how to send a simple GET request.
+Lua doesn't have built-in HTTP support, so we use libraries. One common choice is `lua-requests`. Here's a quick example:
 
-```Lua
-local http_request = require "http.request"
-local headers, stream = assert(http_request.new_from_uri("http://example.com"):go())
-local body = assert(stream:get_body_as_string())
-if headers:get ":status" ~= "200" then
-    error(body)
-end
-print(body)
+```lua
+local requests = require('requests')
+
+-- GET request
+local response = requests.get('https://api.example.com/data')
+print(response.status_code)
+print(response.text)
+
+-- POST request with some data
+local post_response = requests.post('https://api.example.com/post', {data = {key1 = 'value1', key2 = 'value2'}})
+print(post_response.status_code)
+print(post_response.text)
 ```
-This code sends a GET request to http://example.com and prints the response body.
+
+Sample output can look like this:
+
+```lua
+200
+"{\"data\":\"Here's the data you requested!\"}"
+
+201
+"{\"success\":true,\"message\":\"Data received!\"}"
+```
 
 ## Deep Dive
 
-Sending HTTP requests is a cornerstone of web programming. Historically, HTTP started as a simple request-response protocol in the early days of the web. Now, in its current iteration (HTTP/2), it is far more complex and permits concurrent requests, significantly improving performance.
+Lua's simplicity doesn't natively cover HTTP, which is where libraries step in. `lua-requests` mirrors the Python Requests library's functionality, making it a breeze for those familiar with Python.
 
-While `lua-http` is a great tool to directly control your HTTP requests and responses, other libraries such as `luasocket's http module` or `luajit-request` also provide similar functionality. Depending on your needs, especially in terms of compatibility and flexibility, your mileage may vary.
+Other alternatives include `LuaSocket` for lower-level HTTP work and `luasocket.http` for more control. Lua also has bindings for `libcurl` (via `Lua-cURL`) for complex HTTP operations.
 
-Lua doesn't have built-in HTTP support like Node.js or Python, so you'll need to include external libraries to work with HTTP. Knowing the right tool for your project and how it works under the hood provides better control and customization, ultimately helping you write better Lua code.
+Historically, lacking built-in HTTP support reflects Lua's embedded-system roots where network programming wasn't a priority. Its evolution through external libraries exemplifies the community's adaptability and the language's extensibility.
+
+Implementation wise, when you send an HTTP request, it travels over the network to the specified server. The server processes it and replies. Lua libraries abstract the socket programming needed, handling all the nitty-gritty of network communication so you focus on the actual request and response.
 
 ## See Also
 
-- HTTP/2: https://en.wikipedia.org/wiki/HTTP/2
-- lua-http: https://github.com/daurnimator/lua-http
-- luasocket:http: http://w3.impa.br/~diego/software/luasocket/http.html
-- luajit-request: https://github.com/LPGhatguy/luajit-request
+- [lua-requests GitHub repository](https://github.com/JakobGreen/lua-requests)
+- [LuaSocket Reference Manual](http://w3.impa.br/~diego/software/luasocket/http.html)

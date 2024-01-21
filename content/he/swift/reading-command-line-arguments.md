@@ -1,7 +1,8 @@
 ---
-title:                "קריאה של ארגומנטים משורת הפקודה"
-html_title:           "C#: קריאה של ארגומנטים משורת הפקודה"
-simple_title:         "קריאה של ארגומנטים משורת הפקודה"
+title:                "קריאת פרמטרים משורת הפקודה"
+date:                  2024-01-20T17:57:21.027041-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "קריאת פרמטרים משורת הפקודה"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -11,22 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-קריאה של ארגומנטים משורת הפקודה היא התהליך של שליפת מידע מקלט המוזן על ידי המשתמש בגרמנט של הישום. מתכנתים מרבים להשתמש בכך כדי להקל על עיבוד ובקרה במהלך שליטה של יישום.
+קריאת ארגומנטים משורת פקודה מאפשרת לתוכניות לקבל קלט דינמי מהמשתמש. תכנתים עושים זאת כדי להתאים את פעולת התוכנית לדרישות המשתמש בזמן ריצה.
 
-## איך ל:
-אנחנו יכולים לראות את הארגומנטים של Swift לשורת הפקודה באמצעות הפרופרטי CommandLine.arguments:
+## איך לעשות:
+ב-Swift, אתה יכול לקרוא ארגומנטים משורת פקודה על ידי גישה ל-`CommandLine.arguments`. ניתן להניח שארגומנט הראשון הוא הנתיב לביצועי התוכנית.
 
 ```Swift
+// הדפס את כל הארגומנטים משורת הפקודה
 for argument in CommandLine.arguments {
     print(argument)
 }
+
+// במקרה של קלט ספציפי, כמו קובץ לקריאה, מומלץ לוודא שהארגומנט קיים
+if CommandLine.arguments.count > 1 {
+    let fileName = CommandLine.arguments[1]
+    print("שם הקובץ לעיבוד:", fileName)
+} else {
+    print("אנא הזן שם קובץ לעיבוד")
+}
 ```
-כאשר מריצים את הקוד מעלה, נקבל את התוצאות בהתאם לארגומנטים שמוזנים משורת הפקודה.
 
-## השקיעה לתוך:
-הארגומנטים לשורת הפקודה הם דרך קלסית כבר מימי שפות התכנות הראשונות. חלופות להם כוללות קבצי תצורה ומשתנים סביבתיים. המקרה הספציפי של Swift משוייך עם רענון בסדר הארגומנטים מפעם לפעם ותמיכה בניתוח ארגומנטים המוזנים משורת הפקודה.
+על ידי הרצת התוכנית מהטרמינל עם ארגומנטים, לדוגמה `swift myProgram.swift קובץ.txt`, תוכל לראות:
 
-## ראו עוד:
-הקישורים הבאים מציעים מידע נוסף:
-- [Apple Swift Documentation - Command Line Arguments](https://developer.apple.com/documentation/swift/commandline)
-- [Stack Overflow - How to access command line arguments](https://stackoverflow.com/questions/24001943/how-to-access-command-line-arguments-in-swift)
+```
+/Users/youruser/path/to/myProgram.swift
+קובץ.txt
+```
+
+## צלילה לעומק
+בעבר, לפני Swift, שפות כמו C פנו למערך ארגומנטים באופן ישיר דרך פרמטרים של `main()`. Swift תיקנה את זה לגישה נעימה יותר עם `CommandLine.arguments`. מעבר לזה, קיימים פריימוורקים וספריות כמו Swift Argument Parser שמספקים רמה גבוהה ועשירה של פרסור ארגומנטים. 
+אגב, זכור שלא כל הארגומנטים בטוחים – הם יכולים להיות מניפולציה. הקפד לוודא ולאמת את הנתונים שהמשתמש מזין.
+
+## ראה גם
+- [Swift Argument Parser](https://github.com/apple/swift-argument-parser) – ספריה מבית Apple לניתוח משורת פקודה ב-Swift.
+- [Swift Documentation](https://docs.swift.org/swift-book/ReferenceManual/AboutTheLanguageReference.html) – מדריך רשמי של שפת Swift.
+- [Ray Wenderlich Command Line Tutorial](https://www.raywenderlich.com/511-command-line-programs-on-macos-tutorial) – הדרכה ליצירת תוכניות משורת פקודה ב-macOS.

@@ -1,7 +1,8 @@
 ---
-title:                "स्ट्रिंग की लंबाई पता करना"
-html_title:           "C++: स्ट्रिंग की लंबाई पता करना"
-simple_title:         "स्ट्रिंग की लंबाई पता करना"
+title:                "स्ट्रिंग की लंबाई ज्ञात करना"
+date:                  2024-01-20T17:47:17.556350-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग की लंबाई ज्ञात करना"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,35 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+स्ट्रिंग की लंबाई जानना स्ट्रिंग के अक्षरों की संख्या को मापता है। प्रोग्रामर्स इनपुट वैलिडेशन, डेटा संसाधन, और यूआई डिस्प्ले के लिए ऐसा करते हैं।
 
-माइक्रोकंप्यूटर प्रोग्रामिंग में 'स्ट्रिंग की लंबाई निकालना' से उद्देश्य होता है एक विशेष स्ट्रिंग में कितने अक्षर होते हैं, उनकी गणना करना। यह पहचानने के लिए महत्वपूर्ण होता है कि कोई स्ट्रिंग सही आकार में है या नहीं, क्या इसमें सही डाटा है, और यह कहां समाप्त होता है।
-
-## कैसे:
-
+## How to: (कैसे करें:)
 ```C
 #include <stdio.h>
 #include <string.h>
 
-void main() {
-    char str[] = "Hello, World!";
+int main() {
+    char str[] = "नमस्ते दुनिया";
     int length = strlen(str);
-
-    printf("The length of the string is %d\n", length);
+    
+    printf("स्ट्रिंग की लंबाई है: %d\n", length);
+    return 0;
 }
 ```
+सैंपल आउटपुट: `स्ट्रिंग की लंबाई है: 21`
 
-आउटपुट: 
-```
-The length of the string is 13
-```
+## Deep Dive (गहराई में जानकारी)
+पहले, C में स्ट्रिंग को null-terminated अर्रे के रूप में संग्रहित किया जाता था। `strlen` फंक्शन, जो `<string.h>` हेडर फाइल में अवस्थित है, परंपरागत रूप से इस्तेमाल होता आया है स्ट्रिंग की लंबाई नापने के लिए।
 
-## गहरी डाइव
+विकल्प में, `strlen` के बजाय लूप का इस्तेमाल करके भी लंबाई नापी जा सकती है। इसके अलावा, वाइड कैरेक्टर स्ट्रिंग्स के लिए, `wcslen` फ़ंक्शन का प्रयोग होता है।
 
-जब सी प्रोग्रामिंग लैंग्वेज की खोज हुई, तब 'स्ट्रिंग' में किसी विशेष अक्षर की तलाश करने या उसकी लंबाई जानने के लिए 'strlen' फ़ंक्शन का विकास हो गया। यद्यपि इसके विकल्प जैसे `strnlen()` भी हैं, जिसे बाद में जोड़ा गया। फंक्शन strlen() हर character को गिनता है जब तक कि यह null character ('\0') नहीं मिलता। यही कारण है कि ध्यान देना महत्वपूर्ण होता है, स्ट्रिंग को सही ढंग से निर्धारित करने को, सही null character के साथ।
+यह ज्ञान रखना महत्वपूर्ण है कि `strlen` ASCII और सादे UTF-8 एन्कोडेड स्ट्रिंग्स की सही लंबाई देता है, लेकिन बहुबाइट कैरेक्टर सेट्स के साथ यह सही नहीं हो सकता। मल्टीबाईट कैरेक्टर्स के लिए, `mbstowcs` जैसे फंक्शन उपयोगी होते हैं।
 
-## देखिए भी
-
-1. अधिक विवरण के लिए, चेक करें [सी लैंग्वेज स्ट्रिंग फंक्शन्स](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-2. [सी प्रोग्रामिंग स्ट्रिंग्स ट्यूटोरियल](https://www.learn-c.org/en/Strings)
-3. [स्ट्रिंग लेंग्थ फंक्शन जानकारी - Cplusplus.com](https://www.cplusplus.com/reference/cstring/strlen/)
+## See Also (और जानें)
+1. C Standard Library Documentation: https://en.cppreference.com/w/c/string/byte/strlen
+2. Multibyte strings in C: https://en.cppreference.com/w/c/string/multibyte
+3. Unicode handling in C: https://unicode.org

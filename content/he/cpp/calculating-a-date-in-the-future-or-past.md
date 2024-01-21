@@ -1,6 +1,7 @@
 ---
 title:                "חישוב תאריך בעתיד או בעבר"
-html_title:           "C++: חישוב תאריך בעתיד או בעבר"
+date:                  2024-01-20T17:31:30.899547-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חישוב תאריך בעתיד או בעבר"
 programming_language: "C++"
 category:             "C++"
@@ -11,39 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-חישוב תאריך בעתיד או בעבר הוא פרוצדורה שבה מותאמת התאריך באמצעות הוספה או החסרה של מספר ימים. מתכנתים נוטים לחשב זאת כדי לנהל צורך זמני, כמו חישוב החזרה או הוספת זמן חסום למערכת.
+חישוב תאריך בעתיד או בעבר הוא פונקציונליות לדעת מה יהיה התאריך לאחר מספר מסוים של ימים או לפניו. מתכנתים עושים זאת לתכנון אירועים, פונקציות זמן, ולקבלת נתונים היסטוריים.
 
-## איך לבצע:
-הנה דוגמא של קוד ב-C++.
+## איך עושים את זה:
+השתמש ב-C++20 ובספרייה `<chrono>` לחישובי תאריכים:
 
 ```C++
 #include <iostream>
-#include <ctime>
 #include <chrono>
+#include <date/date.h>  // אם יש צורך בתוספת של Howard Hinnant's date library
 
 int main() {
-    std::time_t now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+    using namespace std::chrono;
+    using namespace date;
 
-    struct tm then = *std::localtime(&now); 
+    // היום
+    auto today = floor<days>(system_clock::now());
+    
+    // הוסף 30 ימים להיום
+    auto future_date = today + days{30};
+    
+    // הורד 30 ימים מהיום
+    auto past_date = today - days{30};
 
-    then.tm_mday += 5;   // add 5 days to the current date. 
-
-    std::mktime(&then);  // normalize the date/time
-
-    char buf[80];
-    std::strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", &then);
-
-    std::cout << "Future Date & Time: " << buf << std::endl;
-
+    // הדפסה למען ידע
+    std::cout << "היום: " << today << "\n";
+    std::cout << "תאריך עתידי: " << future_date << "\n";
+    std::cout << "תאריך עברי: " << past_date << "\n";
+    
     return 0;
 }
 ```
-יציאת הקוד תהיה כמו למשל: "Future Date & Time: 2023-11-17 15:03:26"
 
-## חקירה מעמיקה:
-חישוב תאריך בעתיד או בעבר הוא משימה קיומית בתכנות. אף על פי שמדובר במשימה די פשוטה בקומפסט C++, ישנם שיטות אלטרנטיביות כמו השימוש בספריה `Boost.Date_Time` שממומשת גם בשפות אחרות. `std::mktime` משמש לנרמול התאריך / זמן למידע סטנדרטי.
+פלט לדוגמא:
+```
+היום: 2023-03-29
+תאריך עתידי: 2023-04-28
+תאריך עברי: 2023-02-27
+```
 
-## ראו גם:
-1. [C++ להוסיף ימים לתאריך](https://en.cppreference.com/w/cpp/chrono)
-2. [Boost Date_Time](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
-3. [תיעוד הסטנדרט ל- std::mktime](http://www.cplusplus.com/reference/ctime/mktime/)
+## צלילה לעומק:
+עד ל-C++20, התקנים לא סיפקו תמיכה רחבה לניהול תאריכים וזמנים. מערכת ה-`<chrono>` הורחבה ב־C++20 כדי לכלול יותר פונקציות נוחות לעבודה עם תאריכים ושעות. לפני כן, היינו צריכים להשתמש בספריות חיצוניות כמו `boost` או `date` של Howard Hinnant. אפשרויות נוספות כוללות ספריית `tm` של C, אבל היא קטנה יותר וייתכן שפחות בטוחה. דיקוי תאריכים מתבצע גם בדרך של חישוב ימים עסקיים (לדוגמה, לא סופרים סופ"ש).
+
+## לקרוא גם:
+- [הספריית `<chrono>`](https://en.cppreference.com/w/cpp/header/chrono)
+- [מסמכים לספריית `date` של Howard Hinnant](https://github.com/HowardHinnant/date)
+- [מדריך למערכת הזמנים של C++20](https://cplusplus.com/reference/chrono/)

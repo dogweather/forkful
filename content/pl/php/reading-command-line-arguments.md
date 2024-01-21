@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie argumentów linii poleceń"
-html_title:           "Bash: Czytanie argumentów linii poleceń"
-simple_title:         "Czytanie argumentów linii poleceń"
+title:                "Odczytywanie argumentów linii poleceń"
+date:                  2024-01-20T17:56:28.647491-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie argumentów linii poleceń"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,46 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-
-Odczytywanie argumentów wiersza poleceń to proces, w którym skrypt PHP interpretuje dane wejściowe z konsoli. Programiści wykonują ten proces, aby móc sterować zachowaniem skryptu przy różnych parametrach wejściowych.
+## Co i Dlaczego?
+Czytanie argumentów linii poleceń to pobieranie danych wejściowych od użytkownika podczas wykonywania skryptu PHP w terminalu. Programiści wykorzystują tę technikę, gdy chcą, aby ich skrypt był elastyczny i mógł być łatwo uruchamiany z różnymi parametrami.
 
 ## Jak to zrobić:
+Aby odczytać argumenty linii poleceń w PHP, korzystamy ze zmiennej globalnej `$argv`, która zawiera tablicę argumentów przekazanych do skryptu. Oto prosty przykład:
 
-Odczyt argumentów z wiersza poleceń w PHP jest bardzo prosty. PHP dostarcza specjalną zmienną globalną ```$argv```, która jest tablicą i zawiera wszelkie argumenty przekazane do skryptu.
-
-```PHP
+```php
 <?php
-print_r($argv);
+// Sprawdzenie, czy istnieją jakieś argumenty
+if ($argc > 1) {
+    echo "Witaj, " . $argv[1] . "!\n";
+} else {
+    echo "Hej! Nie podałeś imienia.\n";
+}
 ?>
 ```
 
-Możesz uruchomić powyższy skrypt z dowolną ilością argumentów:
-
-```shell
-$ php script.php arg1 arg2 arg3
+Jeśli uruchomisz ten skrypt komendą `php skrypt.php Jan`, otrzymasz wynik:
+```
+Witaj, Jan!
 ```
 
-Wynik powinien wyglądać tak:
+## Zagłębiamy się:
+Argumenty linii poleceń to stara sztuczka. UNIX i jego terminale używały tego dawno przed pojawieniem się PHP. W PHP, `$argc` reprezentuje liczbę argumentów, a `$argv` jest tablicą zawierającą same argumenty. Pierwszy element, `$argv[0]`, to zawsze nazwa bieżącego skryptu.
 
-```shell
-Array
-(
-    [0] => script.php
-    [1] => arg1
-    [2] => arg2
-    [3] => arg3
-)
-```
+Alternatywami dla argumentów linii poleceń mogą być interaktywne dane wejściowe (np. `readline`), pliki konfiguracyjne lub zmienne środowiskowe. Kiedy jednak chcesz szybko przekazać wartości bez dodatkowych kombinacji, CLI (Command Line Interface) jest twoim najlepszym przyjacielem.
 
-## Głębsze spojrzenie 
-
-Mimo, że ```$argv``` jest dość prosty w użyciu, ważne jest zrozumienie, że jest to dość stary sposób interakcji z argumentami wiersza poleceń. Został on wprowadzony do PHP 4.0.0 w 2000 roku. Istnieją inne, bardziej zaawansowane metody manipulowania argumentami wiersza poleceń, takie jak biblioteka `getopt` czy symfony/console, które oferują bardziej elastyczne i wydajne narzędzia.
-
-Kiedy używasz ```$argv```, warto pamiętać, że ```$argv[0]``` zawsze będzie nazwą skryptu, który jest uruchamiany. Rzeczywiste argumenty zaczynają się od ```$argv[1]```.
-
-## Zobacz też 
-
-- [PHP.net: Predefined Variables - $argc & $argv](https://www.php.net/manual/en/reserved.variables.argv.php)
-- [The PHP `getopt` function](https://www.php.net/manual/en/function.getopt.php)
-- [Symfony's Console Component](https://symfony.com/doc/current/components/console.html)
+Na poziomie implementacji, warto pamiętać o `getopt()`, funkcji PHP, która pozwala na zaawansowane parsowanie argumentów linii poleceń, w tym opcji skróconych i długich. Jest przydatna, gdy masz do czynienia z bardziej skomplikowanymi skryptami CLI.

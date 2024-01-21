@@ -1,7 +1,8 @@
 ---
-title:                "नया प्रोजेक्ट शुरू करना"
-html_title:           "C: नया प्रोजेक्ट शुरू करना"
-simple_title:         "नया प्रोजेक्ट शुरू करना"
+title:                "नई परियोजना शुरू करना"
+date:                  2024-01-20T18:04:08.482738-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "नई परियोजना शुरू करना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Getting Started"
@@ -10,39 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? (What & Why?)
+## What & Why? (क्या और क्यों?)
+नया प्रोजेक्ट शुरू करना मतलब है कुछ नई समस्या का समाधान खोजना। प्रोग्रामर इसे इसलिए करते हैं ताकि वे सॉफ़्टवेयर को बेहतर बना सकें, नए फीचर्स जोड़ सकें या नए आईडियाज को टेस्ट कर सकें।
 
-नई प्रोजेक्ट शुरू करना मतलब - एक नये किसी एप्लीकेशन, वेबसाइट, या टूल की डिजाइन और डेवलपमेंट शुरू करना। प्रोग्रामर्स इसे क्यों करते हैं? क्योंकि ये नई समस्याओं को हल करने, या पहले से मौजूद समाधानों को बेहतर बनाने का एक शानदार तरीका है।
-
-## कैसे करें: (How to:)
-
-नई PHP प्रोजेक्ट शुरू करने के लिए। 
+## How to: (कैसे करें:)
+PHP में नया प्रोजेक्ट शुरू करते समय आप कुछ बेसिक स्टेप्स का पालन करेंगे। यहाँ एक सिंपल स्क्रिप्ट का उदाहरण है:
 
 ```PHP
 <?php
-// नया 'MyProject' नाम के प्रोजेक्ट का निर्माण
-mkdir('MyProject');
-echo "नया प्रोजेक्ट निर्मित!";
+// एक सिंपल 'Hello World' स्क्रिप्ट
+echo "Hello, World!";
 ?>
 ```
 
-Output:
+जब आप यह स्क्रिप्ट चलाएंगे, आपको निम्नलिखित आउटपुट मिलेगा:
 
-```PHP
-नया प्रोजेक्ट निर्मित!
+```
+Hello, World!
 ```
 
-## गहराई में: (Deep Dive)
+## Deep Dive (गहराई से जानकारी)
+नया प्रोजेक्ट शुरू करने से पहले, पीएचपी की इतिहास में झांकना दिलचस्प हो सकता है। PHP की शुरुआत 1995 में Rasmus Lerdorf ने की थी। तब से, PHP ने कई सारे वर्जन्स और अपडेट देखे हैं जो वेब डेवेलपमेंट को आसान बनाते हैं।
 
-1) ऐतिहासिक सन्दर्भ: PHP (Hypertext Preprocessor) स्वतंत्र और खुला स्रोत स्क्रिप्टिंग भाषा है जिसे वेब डेवलपमेंट के लिए विशेष रूप से निर्मित किया गया है।
+नई प्रोजेक्ट्स को PHP में शुरू करते समय आप Composer जैसे dependency manager का उपयोग कर सकते हैं या frameworks जैसे कि Laravel या Symfony का सहारा ले सकते हैं। इससे कोड का मेनेजमेंट और मॉड्यूलरिटी बेहतर होती है और प्रोजेक्ट्स पर काम करना अधिक सुविधाजनक हो जाता है।
 
-2) विकल्प: Python, Java, और Ruby जैसी अन्य भाषाओं का उपयोग भी किया जा सकता है, लेकिन PHP अपनी सरलता और वेबसाइट निर्माण क्षमता के लिए प्रशंसित है।
-
-3) कार्यान्वयन विवरण: एक PHP प्रोजेक्ट शुरू करने से पहले, आपको LAMP (Linux, Apache, MySQL, PHP), WAMP (Windows, Apache, MySQL, PHP) या MAMP (Mac, Apache, MySQL, PHP) जैसे स्टैक की आवश्यकता होती है।
-
-## देखें भी: (See Also:)
-
-1) [PHP मैनुअल](https://www.php.net/manual/en/)
-2) [W3Schools PHP ट्यूटोरियल](https://www.w3schools.com/php/)
-3) [PHP नेटबींस ट्यूटोरियल](https://netbeans.org/kb/docs/php/)
-4) [म्यूज़ियम ऑफ फिलिपाईन PHP](https://talesofphp.com/)
+## See Also (और भी देखें)
+- PHP के आधिकारिक डॉक्यूमेंटेशन: [php.net](https://www.php.net/docs.php)
+- Composer, PHP के लिए एक Dependency Manager: [getcomposer.org](https://getcomposer.org/)
+- Laravel Framework: [laravel.com](https://laravel.com/)
+- Symfony Framework: [symfony.com](https://symfony.com/)

@@ -1,6 +1,7 @@
 ---
 title:                "コマンドライン引数の読み取り"
-html_title:           "Bash: コマンドライン引数の読み取り"
+date:                  2024-01-20T17:55:42.741846-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,34 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
 
-コマンドライン引数の読み取りは、ユーザーからの入力情報を受け取るプログラムの方法の一つです。プログラマがこれを行う主な理由は、実行時にプログラムの動作を制御するためです。
+コマンドライン引数を読むことは、プログラム実行時に追加情報を渡す方法だ。プログラマは状況に応じてカスタマイズした振る舞いをプログラムにさせるためにこれを利用する。
 
-## 使い方：
+## How to (方法)
 
-Elixirでコマンドライン引数を読み取るには、`System.argv/0`関数を使用します。以下に簡単な例を示します。
+```elixir
+# コマンドライン引数を取得するには
+args = System.argv()
+# 例を見てみよう
+IO.inspect(args)
 
-```Elixir
-defmodule Test do
+# 実行時はこのようにする:
+# elixir my_script.exs arg1 arg2 arg3
+```
+
+```elixir
+# 引数に応じて異なるアクションを取る
+defmodule CLIExample do
   def main(args) do
-    IO.inspect(args)
+    case args do
+      ["hello"] -> IO.puts "Hello, World!"
+      [name] when is_binary(name) -> IO.puts "Hello, #{name}!"
+      _ -> IO.puts "Usage: command [name]"
+    end
   end
 end
 
-System.argv |> Test.main
+CLIExample.main(System.argv())
+
+# 実行例:
+# elixir my_script.exs hello
+# Hello, World!
+# elixir my_script.exs Taro
+# Hello, Taro!
+# elixir my_script.exs
+# Usage: command [name]
 ```
 
-このコードを`test.exs`として保存し、`elixir test.exs arg1 arg2 arg3`というコマンドを使って実行すると、 `["arg1", "arg2", "arg3"]`という出力が得られます。
+## Deep Dive (深掘り)
 
-## ディープダイブ
+Elixirでコマンドライン引数を読むのは簡単だ。Erlang VM上で動くElixirは、古くから進化してきたErlangの豊富な機能を活用できる。他の言語では引数解析のために外部ライブラリが必要かもしれないが、Elixirは`System.argv()`がそのまま使える。
 
-1. 歴史的文脈：コマンドライン引数はUNIXおよびその他のオペレーティングシステムで一般的に使用され、ツールの柔軟性を提供します。
+しかし、より複雑な引数解析が必要な時は、`OptionParser`モジュールが使える。これにより、フラグやキー/値オプションなどを扱えるようになる。どちらの方法も、コマンドラインツールを作成するために実装がシンプルで信頼性が高い。
 
-2. 代替手段：入力を受け取る他の方法としては、標準入力、設定ファイル、環境変数などがあります。それぞれが異なるユースケースに適しています。
+## See Also (関連情報)
 
-3. 実装の詳細：Elixirでは、`System.argv/0`関数はコマンドライン引数をリストとして返します。このリストは文字列のリストであり、各引数がそのままの形でリストに格納されます。
-
-## 関連情報
-
-1. [Elixir公式ドキュメンテーション - System.argv/0](https://hexdocs.pm/elixir/System.html#argv/0)
+- [Elixirの公式ドキュメント](https://elixir-lang.org/docs.html)
+- [OptionParserモジュールのドキュメント](https://hexdocs.pm/elixir/OptionParser.html)

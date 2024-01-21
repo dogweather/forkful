@@ -1,7 +1,8 @@
 ---
-title:                "Skriva ut felsökningsresultat"
-html_title:           "Fish Shell: Skriva ut felsökningsresultat"
-simple_title:         "Skriva ut felsökningsresultat"
+title:                "Skriva ut felsökningsdata"
+date:                  2024-01-20T17:53:03.951997-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skriva ut felsökningsdata"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
@@ -10,35 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# PowerShell: Skriva ut Debug Output
-
 ## Vad & Varför?
+Att skriva ut felsökningsdata innebär att visa temporär information för att förstå vad koden gör. Programmerare gör detta för att snabbt hitta och åtgärda bugger eller för att övervaka programmets flöde.
 
-Skriva ut debug output är processen att visa kodutförande data till utvecklaren. Det används av programmerare för att hitta och lösa problem i koden.
-
-## Hur man gör:
-
-Använd `Write-Debug` cmdlet för att skriva ut debug information. Kontrollera att du har aktiverat debug-preferenserna genom `Set-PSDebug` -Verbose.
+## Så här gör du:
+Använd `Write-Host` för enkel utskrift. För mer kontroll, använd `Write-Debug` eller `Write-Verbose` samt deras motsvarande inställningar.
 
 ```PowerShell
-# Aktivera debug output
-Set-PSDebug -Trace 2
+# Enkel utskrift med Write-Host
+Write-Host "Här är något att titta på!"
 
-# Skriv ut debug output
-Write-Debug "Det här är en debug-meddelande"
+# Aktiverar och använder Write-Debug
+$DebugPreference = 'Continue'
+Write-Debug "Det här är en debug-meddelande."
+
+# Aktiverar och använder Write-Verbose
+$VerbosePreference = 'Continue'
+Write-Verbose "Det här är en verbose-meddelande."
 ```
-Du borde se:
-```PowerShell
-DEBUG: Det här är en debug-meddelande
+
+Sample output:
 ```
+Här är något att titta på!
+DEBUG: Det här är en debug-meddelande.
+VERBOSE: Det här är en verbose-meddelande.
+```
+
 ## Fördjupning
+I tidigare PowerShell-versioner användes `Write-Host` flitigt men det skapade problem då utskrifterna inte kunde fångas eller vidarebefordras. `Write-Debug` och `Write-Verbose` skapades för att ge kontroll och kunna sätta olika nivåer av loggning. Dessa kommandon är användbara när skripten blir mer komplexa. `Write-Debug` är bra för detaljer som endast är viktiga under utveckling medan `Write-Verbose` är till för att ge användbara körtidsinformation.
 
-PowerShell förbättrade debuggingmöjligheter med introduktionen av `Set-PSDebug` cmdlet i version 5.0 som ett alternativ till traditionell `Write-Host` eller `Write-Output`.
-
-`Write-Debug` erbjuder en mer kontrollerad utgång bygger på debug preferensvärde jämfört med `Write-Host` eller `Write-Output` som skriver ut output direkt till konsolen.
-
-Implementationdetaljer av debugutskrift i PowerShell är att den är kopplad till debug-strömmen och inte till standardoutputströmmen, vilket möjliggör att filtrera och omdirigera output för bättre hantering.
-
-## Se också
-
-För mer information om debugging i PowerShell, se följande länkar:
+## Se även
+- Microsofts dokumentation över Write-Host: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-host
+- Officiell hjälp om about_Preference_Variables: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables

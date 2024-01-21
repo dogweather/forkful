@@ -1,6 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-html_title:           "Haskell: Drukowanie komunikatów debugowania"
+date:                  2024-01-20T17:52:38.605262-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Go"
 category:             "Go"
@@ -10,46 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym i dlaczego?
-
-Drukuje się debug output, aby sprawdzić, co działa wewnątrz programu, i jest to niezbędne dla programistów dla lepszego zrozumienia i rozwiązywania problemów z ich kodem.
+## Co i Dlaczego?
+Drukowanie informacji diagnostycznych (debug output) to wyświetlanie danych pomocnych przy łapaniu błędów i zrozumieniu, co się dzieje w programie. Robimy to, by szybko znaleźć źródło problemu i naprawić kod bez strzelania w ciemno.
 
 ## Jak to zrobić:
-
-Goroutine to istotna część drukowania debug output. Poniżej znajduje się prosty kod źródłowy, który pokazuje, jak to zrobić.
-
 ```Go
 package main
 
 import (
-    "fmt"
-    "runtime/debug"
+	"fmt"
+	"log"
 )
 
 func main() {
-    debug.SetTraceback("system")
-    panic("A problem occurred")
+	// Proste wyświetlanie komunikatu
+	fmt.Println("Hello, debug!")
 
-    fmt.Println("End of main function")
+	// Formatowanie stringów
+	name := "Go Programmer"
+	fmt.Printf("Good to see you, %s!\n", name)
+
+	// Użycie standardowego loggera do debugowania
+	debug := false
+	if debug {
+		log.Printf("Debug info: Memory address of 'name' variable: %p", &name)
+	}
 }
 ```
 
-Podczas uruchamiania powyższego programu otrzymasz pełny zapis stosu dla danego panic, co jest bardzo użyteczne w debuggingu.
+Wynik:
+```
+Hello, debug!
+Good to see you, Go Programmer!
+```
 
-## Dogłębne omówienie
+## Pogłębione informacje:
+Kiedyś, przed logerami i zintegrowanymi środowiskami programistycznymi (IDE), debugowanie było dużo trudniejsze – często bazowało na prostym wydruku na ekran lub do pliku. W Go, poza standardowym pakietem `fmt`, warto znać pakiet `log`, który oferuje więcej możliwości, jak logowanie z poziomem ważności czy zapis do pliku. Implementacja logera w Go zapewnia też mechanizmy do uniknięcia wypisywania debugu na produkcji dzięki flagom i poziomom logowania.
 
-1) Historyczne konteksty: Drukowanie debug output pozwoliło programistom zrozumieć, jak ich kod działa od wewnątrz od czasów języka Assembly. To podstawowe narzędzie debuggingu, które przetrwało nawet w nowoczesnym, zaawansowanym języku programowania jak Go.
-
-2) Alternatives: W Go debug można drukować na wiele sposobów. Pakiet "log" dostarcza funkcje do drukowania do standardowego błędu. Narzędzia, takie jak Delve, zapewniają zaawansowane możliwości debugowania.
-
-3) Szczegóły implementacji: Wydruk debugowania w Go oznacza użycie predefiniowanych funkcji, takich jak `fmt.Print*` or `log.Print*`. Można również korzystać z pakietu `runtime/debug` dla bardziej zaawansowanych szczegółów, jak w powyższym przykładzie.
-
-## Zobacz także
-
-1) Oficjalne Dokumenty Go - https://golang.org/doc/
-
-2) Blog Golang - https://blog.golang.org/
-
-3) Pakiet `runtime/debug` - https://golang.org/pkg/runtime/debug/
-
-Nie zawahaj się zgłębić tych zasobów, aby zrozumieć więcej na temat debugowania w Go.
+## Zobacz także:
+- Dokumentacja fmt: https://pkg.go.dev/fmt
+- Dokumentacja log: https://pkg.go.dev/log
+- Artykuł o efektywnym debugowaniu w Go: https://blog.golang.org/debugging-what-you-deploy

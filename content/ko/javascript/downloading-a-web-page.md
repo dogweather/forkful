@@ -1,6 +1,7 @@
 ---
 title:                "웹 페이지 다운로드하기"
-html_title:           "Bash: 웹 페이지 다운로드하기"
+date:                  2024-01-20T17:44:42.242692-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "웹 페이지 다운로드하기"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,38 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇이며 왜?)
+웹 페이지를 다운로드한다는 것은 인터넷에서 데이터를 가져와 로컬 환경에 저장하는 것입니다. 프로그래머들은 자동화, 데이터 분석, 백업 혹은 오프라인 접근을 위해 이 작업을 실행합니다.
 
-웹 페이지 다운로드는 웹 서버로부터 웹 페이지의 내용을 사용자의 컴퓨터로 가져오는 작업을 뜻합니다. 이는 프로그래머가 웹 페이지의 정보를 분석하거나, 사이트의 데이터를 백업하거나, 오프라인에서 내용을 확인하기 위해 필요합니다.
+## How to: (방법)
+```Javascript
+const https = require('https');
+const fs = require('fs');
 
-## 실습방법:
+const downloadPage = (url, filename) => {
+  https.get(url, response => {
+    const data = [];
+    response.on('data', chunk => {
+      data.push(chunk);
+    });
+    response.on('end', () => {
+      const completePage = Buffer.concat(data).toString();
+      fs.writeFileSync(filename, completePage);
+      console.log(`Downloaded and saved to ${filename}`);
+    });
+  }).on('error', err => {
+    console.error('Error fetching page:', err);
+  });
+};
 
-다음은 `node-fetch` 패키지를 이용해 웹 페이지의 HTML을 다운로드하는 JavaScript 코드입니다. 
-
-```javascript
-const fetch = require('node-fetch');
-
-async function downloadWebPage(url) {
-    const response = await fetch(url);
-    const text = await response.text();
-    console.log(text);
-}
-
-downloadWebPage('https://example.com');
+// 사용 예
+downloadPage('https://example.com', 'examplePage.html');
+```
+Sample Output:
+```
+Downloaded and saved to examplePage.html
 ```
 
-위 코드를 실행하면 `https://example.com`의 HTML 코드가 콘솔에 출력됩니다.
+## Deep Dive (심층 분석)
+과거에는 웹 페이지를 다운로드하기 위해 FTP와 같은 프로토콜이 사용되었습니다. 지금은 HTTPS를 통해 보안이 강화된 데이터 전송이 이루어집니다. 위 예제는 Node.js의 'https' 모듈을 사용하여 웹 페이지의 데이터를 버퍼에 담은 후, 합쳐서 문자열로 변환합니다. 마지막으로 'fs' (파일 시스템) 모듈로 파일에 저장합니다. 대안으로는 `request`나 `axios` 같은 서드 파티 라이브러리가 있습니다. 이러한 라이브러리들은 추가 기능과 사용의 용이함을 제공합니다.
 
-## 깊게 알아보기:
-
-해당 기술은 인터넷이 상용화되면서 더욱 중요해졌습니다. 그러나 웹 페이지를 다운로드 받을 때에는 여러 가지 사항들을 고려해야 합니다. 예를 들어, 웹 사이트의 트래픽을 과도하게 점유하지 않도록 `request`를 적절하게 관리하는 것, `robots.txt` 정책을 준수하는 것 등입니다. 
-
-다운로드 방식은 여러가지입니다. 위의 예는 `node-fetch`를 이용한 방식이지만, `axios`, `request` 등 다른 라이브러리를 이용할 수도 있습니다. 프로그래머는 사용 목적, 특성에 따라 적절한 도구를 선택하여 사용합니다.
-
-## 참고자료:
-
-- [MDN Web Docs: Fetch API](https://developer.mozilla.org/ko/docs/Web/API/Fetch_API)
-- [npm: node-fetch](https://www.npmjs.com/package/node-fetch)
-- [npm: axios](https://www.npmjs.com/package/axios)
-- [작업 관리: setTimeout과 setInterval](https://ko.javascript.info/settimeout-setinterval)
-- [robots.txt 관련 정보](https://developers.google.com/search/docs/advanced/robots/intro)
+## See Also (추가 정보)
+- MDN Web Docs (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)에서 Fetch API 사용법 배우기
+- Axios GitHub repository (https://github.com/axios/axios)에서 Axios 라이브러리 살펴보기
+- Node.js File System Documentation (https://nodejs.org/api/fs.html)에서 더 많은 파일 시스템 메소드 확인하기

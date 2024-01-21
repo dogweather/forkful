@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http"
-html_title:           "Arduino: Wysyłanie żądania http"
-simple_title:         "Wysyłanie żądania http"
+title:                "Wysyłanie żądania HTTP"
+date:                  2024-01-20T17:59:33.250170-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie żądania HTTP"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,35 +11,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+"Wysyłanie żądania HTTP to proces komunikowania się z serwerem w celu pobrania lub wysłania danych. Programiści robią to, aby wymieniać dane z aplikacjami i usługami internetowymi."
 
-Wysyłanie żądań HTTP to proces komunikacji z serwerem, pozwalający na przesyłanie danych. Programiści robią to, aby interaktywnie komunikować się z aplikacjami internetowymi i manipulować ich danymi.
-
-## Jak to zrobić:
-
-Możemy wysłać żądanie HTTP w Clojure za pomocą biblioteki `clj-http`. Oto prosty przykład:
-
+## How to:
+W Clojure wysyłanie żądania HTTP jest łatwe. Użyjemy popularnej biblioteki `clj-http`. Zainstaluj ją, dodając do twojego `project.clj`:
 ```Clojure
-(ns moja-aplikacja.core
-  (:require [clj-http.client :as client]))
-
-(defn wyslij-zadanie []
-  (let [odpowiedz (client/get "http://example.com")]
-    (println "Status: " (:status odpowiedz))
-    (println "Ciało odpowiedzi: " (:body odpowiedz))))
+[clj-http "3.12.3"]
 ```
 
-Po uruchomieniu tego kodu otrzymasz odpowiedź od `http://example.com`, a status i ciało odpowiedzi zostaną wydrukowane.
+Oto przykład żądania GET:
+```Clojure
+(require '[clj-http.client :as client])
 
-## Dogłębna analiza:
+(let [response (client/get "https://httpbin.org/get")]
+  (println (:status response))
+  (println (:headers response))
+  (println (:body response)))
+```
 
-Historia HTTP zaczyna się od powstania internetu. Był to protokół wykorzystywany do komunikacji między klientem a serwerem. W Clojure, zazwyczaj korzystamy z biblioteki `clj-http` do wysyłania żądań HTTP, ale istnieją również inne alternatywy, takie jak `http-kit` czy `aleph`. Różnią się one szczegółami implementacji i oferowanymi funkcjami.
+Odpowiedź:
+```
+200
+{...headers...}
+{
+  "args": {}, 
+  "headers": {
+    "Host": "httpbin.org",
+    ...
+  }, 
+  "origin": "...", 
+  "url": "https://httpbin.org/get"
+}
+```
 
-Co więcej, operacje HTTP w Clojure, tak jak w powyższym przykładzie, są blokujące. Oznacza to, że cały wątek zostaje zatrzymany, dopóki odpowiedź nie zostanie otrzymana. W praktyce, lepiej jest używać odpowiednich mechanizmów do obsługi operacji asynchronicznych.
+A tu przykład POST z danymi:
+```Clojure
+(let [response (client/post "https://httpbin.org/post"
+                            {:form-params {:foo "bar" :baz "qux"}})]
+  (println (:status response))
+  (println (:body response)))
+```
 
-## Zobacz też:
+Odpowiedź:
+```
+200
+{
+  "args": {}, 
+  "data": "", 
+  "files": {}, 
+  "form": {
+    "foo": "bar",
+    "baz": "qux"
+  }, 
+  "headers": {
+    ...
+  }, 
+  "json": null, 
+  "origin": "...", 
+  "url": "https://httpbin.org/post"
+}
+```
 
-Więcej na temat żądań HTTP i używanych do tego bibliotek w Clojure można znaleźć na następujących stronach:
-- Dokumentacja clj-http: https://github.com/dakrone/clj-http
-- Przewodnik po http-kit: http://www.http-kit.org/
-- Dokumentacja Aleph: https://github.com/ztellman/aleph
+## Deep Dive
+Wysyłanie żądań HTTP nie jest nowością. Powstało wraz z HTTP w 1991 roku. Alternatywą dla `clj-http` może być `http-kit` lub niskopoziomowe `java.net.HttpURLConnection`. Wybór narzędzia zależy od potrzeb projektu: `clj-http` jest łatwy w obsłudze, `http-kit` jest szybki, a `HttpURLConnection` daje pełną kontrolę nad żądaniem.
+
+### Implementacja w `clj-http` opiera się na bibliotece `Apache HttpComponents`. Dzięki temu obsługuje funkcje takie jak:
+
+- Automatyczne przekierowania.
+- Obsługa ciasteczek.
+- Zarządzanie sesjami.
+
+Zrozumienie, jak w Clojure obsługuje się asynchroniczność i strumienie danych, może być kluczowe przy obsługiwaniu większych odpowiedzi serwera lub wysyłaniu dużych żądań.
+
+## See Also
+- Biblioteka `clj-http`: [https://github.com/dakrone/clj-http](https://github.com/dakrone/clj-http)
+- Dokumentacja `http-kit`: [http://www.http-kit.org](http://www.http-kit.org)
+- Poradnik `java.net.HttpURLConnection`: [https://docs.oracle.com/javase/tutorial/networking/urls/readingWriting.html](https://docs.oracle.com/javase/tutorial/networking/urls/readingWriting.html)

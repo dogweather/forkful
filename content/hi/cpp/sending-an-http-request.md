@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T17:59:23.219920-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,44 +11,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्या और क्यों? (What & Why?)
-HTTP अनुरोध भेजना मतलब किसी वेबसर्वर से डाटा मांगना। प्रोग्रामर्स इसे वेबसर्वर से विभिन्न प्रकार की जानकारी हासिल करने के लिए करते हैं। 
+## What & Why? (क्या और क्यों?)
 
-# कैसे करें: (How to:) 
-C++ में, आप एक अनुरोध भेजने के लिए 'cURL' लाइब्रेरी का उपयोग कर सकते हैं। 
+HTTP अनुरोध (HTTP Request) भेजना इंटरनेट पर सर्वर से डाटा मांगने की प्रक्रिया है। प्रोग्रामर्स इसे वेबसाइट्स से जानकारी प्राप्त करने, API से डाटा मैनेज करने और दूरस्थ सेवाओं के संग इंटरैक्ट करने के लिए करते हैं।
+
+## How to (कैसे करें):
 
 ```C++
-#include <curl/curl.h>
+#include <iostream>
+#include <curl/curl.h> // libcurl का उपयोग
+
+// Response data को संग्रहित करने के लिए callback function
+size_t callbackFunction(char* ptr, size_t size, size_t nmemb, std::string* data) {
+    data->append(ptr, size * nmemb);
+    return size * nmemb;
+}
 
 int main() {
-  CURL *curl;
-  CURLcode res;
+    CURL* curl; // CURL object को परिभाषित करना
+    CURLcode res;
+    std::string response_data; // Response को संग्रहित करने के लिए
 
-  curl_global_init(CURL_GLOBAL_DEFAULT);
-  curl = curl_easy_init();
+    curl_global_init(CURL_GLOBAL_DEFAULT);
+    curl = curl_easy_init(); // CURL easy session को इनिशिएट करना
 
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-    res = curl_easy_perform(curl);
-    if(res != CURLE_OK) {
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
+    if (curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com"); // URL सेट करना
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, callbackFunction); // Write callback सेट करना
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response_data); // Response data के लिए वेरिएबल सेट करना
+
+        res = curl_easy_perform(curl); // Request को प्रदर्शित करना
+
+        if (res != CURLE_OK) { // Error checking
+            std::cerr << "CURL failed: " << curl_easy_strerror(res) << std::endl;
+        } else {
+            std::cout << "Response Data: " << response_data << std::endl; // Output
+        }
+
+        curl_easy_cleanup(curl); // Cleanup
     }
-    curl_easy_cleanup(curl);
-  }
 
-  curl_global_cleanup();
-
-  return 0;
+    curl_global_cleanup();
+    return 0;
 }
 ```
-इस कोड में, आप "http://example.com" पर HTTP अनुरोध भेज रहे हैं। अगर कुछ भी गलत हुआ है, तो आपको उसकी जानकारी मिलेगी। 
 
-# गहरी जानकारी: (Deep Dive)
-HTTP अनुरोधों का इस्तेमाल वेब की विकास प्रक्रिया में महत्वपूर्ण भूमिका निभा रहा है। cURL के विकल्प के रूप में, आप `WinINet`, `libwww`, `Poco` आदि का उपयोग कर सकते हैं। cURL बहु भाषीय लाइब्रेरी है जिसे C, C++, Python आदि में उपयोग किया जा सकता है। 
+Sample Output:
+```
+Response Data: <html>...
+...
+</html>
+```
 
-# एक्स्ट्रा जानकारी: (See Also)
-अधिक जानकारी के लिए, आप निम्नलिखित लिंक पर जा सकते हैं:
-- cURL कार्यान्वयन: [curl tutorial](https://ec.haxx.se/)
-- HTTP अनुरोध के विविध प्रकार: [types of HTTP requests](https://www.restapitutorial.com/)
-- अन्य C++ लाइब्रेरी: [other C++ libraries](https://www.slant.co/topics/7890/~best-http-clients-for-c-plus-plus)
+## Deep Dive (गहराई से जानकारी):
+
+सन 1990 में HTTP प्रोटोकॉल को मूल रूप से विकसित किया गया था, जिससे वेबसाइट्स के बीच संचार सरल हो गया। समय के साथ, यह ऑनलाइन संसार की रीढ़ बन गया। विकल्पों में gRPC, WebSocket आदि शामिल हैं, जो विशेष प्रयोजनों के लिए हैं।
+
+HTTP अनुरोध भेजने के लिए C++ में सबसे लोकप्रिय लाइब्रेरी libcurl है। यह व्यापक, सुरक्षित है और मल्टीपल प्लेटफार्म्स पर काम करती है। इसमें सिंक्रोनस और असिंक्रोनस दोनों तरह के अनुरोधों को संधारित करने की क्षमता होती है।
+
+## See Also (सम्बंधित सूत्र):
+
+- [libcurl](https://curl.se/libcurl/)
+- [HTTP ऑफिशियल डॉक्युमेंटेशन](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+- [Curl कमांड लाइन टूल का उपयोग](https://curl.se/docs/manpage.html)

@@ -1,6 +1,7 @@
 ---
 title:                "生成随机数"
-html_title:           "Go: 生成随机数"
+date:                  2024-01-20T17:49:55.914614-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "生成随机数"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,43 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么与为什么？
+## What & Why? (是什么 & 为什么?)
+产生随机数是让程序能自动创建出不可预测值的过程。程序员这么做通常是为了增加娱乐性、测试可能的情景，或实现某些安全特性。
 
-随机数的生成是指在预定义的范围内获取不规律的数。这对于开发游戏、数据加密，甚至是测试代码来说都是必须的。
+## How to: (如何操作)
+Swift 为我们提供了几种生成随机数的方法。以下是一些快速直接的例子：
 
-## 如何做？
-
-在Swift里生成随机数很直接。一般的，我们都会用`Int.random`方法来获取一个范围内的随机整数。
-
+生成一个随机整数：
 ```Swift
-let randomInt = Int.random(in: 1..<10)
+let randomInt = Int.random(in: 1...10)
 print(randomInt)
 ```
-输出可能是：
-```
-3
-```
-如果我们要一个随机的布尔值，就会用`Bool.random()`。
+输出样本： `7` （每一次运行结果可能不同）
 
+生成一个随机浮点数：
+```Swift
+let randomDouble = Double.random(in: 0..<1)
+print(randomDouble)
+```
+输出样本： `0.87431` （每一次运行结果可能不同）
+
+生成一个随机布尔值：
 ```Swift
 let randomBool = Bool.random()
 print(randomBool)
 ```
-输出可能是：
-```
-false
-```
+输出样本： `true` 或 `false` （每一次运行结果可能不同）
 
-## 深入探讨
+## Deep Dive (深入探究)
+随机数生成有着很长的历史，从简单的物理设备（比如投色子）到复杂的算法。在计算机初期，生成可靠的随机数是一个挑战。早期方法，如线性同余生成器（LCG），易于实现但有已知缺陷。
 
-历史上，我们生成随机数的方法有很多种。例如，"中间平方法"就是最早的一种方法。而现在，我们所使用的大部分算法都会基于硬件，因此速度更快，生成的数字更加随机。
+Swift 使用的是一个更高级的伪随机数生成器（PRNG），这种生成器设计用来通过算法模仿随机性，并在绝大多数应用场景下足够好用。然而，如果你需要更高安全性的随机数（例如加密），应该使用 `Security.framework` 中的 `SecRandomCopyBytes` 函数。
 
-除了Swift的内建方法，我们还可以使用像GameplayKit中的随机数生成器。而对于复杂项目，我们还可以使用更强大的库，比如NumPy。
+有其他随机数生成方法，例如蒙特卡罗方法，它通常用于更复杂的数学模拟和计算中。
 
-在Swift中，随机数生成器的实现基于Cryptographic Module Level-1，在没有外部输入的情况下能够生成足够的随机数。
+在Swift实现中，各种 `random` 方法通常使用了内置的随机数发生器，它为统一的API背后提供了满足大多数需要的随机性。
 
-## 查看更多
-
-1. [Apple的Swift文档](https://developer.apple.com/documentation/swift/)
-2. [GameplayKit指南](https://developer.apple.com/documentation/gameplaykit/)
-3. [NumPy用户指南](https://numpy.org/doc/stable/index.html)
+## See Also (参考链接)
+- [Swift Standard Library Documentation](https://developer.apple.com/documentation/swift/swift_standard_library)
+- [RandomNumberGenerator Protocol](https://developer.apple.com/documentation/swift/randomnumbergenerator)
+- [Using Cryptographically Secure Random Numbers](https://developer.apple.com/documentation/security/1399291-secrandomcopybytes)

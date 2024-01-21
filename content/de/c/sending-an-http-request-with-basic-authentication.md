@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
+date:                  2024-01-20T18:01:04.163020-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -11,14 +12,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+HTTP-Anfragen mit Basisauthentifizierung senden heißt, einen sicheren Weg zu nutzen, um Benutzername und Passwort an einem Server zu übermitteln. Programmierer nutzen dies, um Zugang zu Webressourcen zu gewährleisten, die eine Authentifizierung erfordern.
 
-Das Versenden einer HTTP-Anforderung mit Basisauthentifizierung ist der Prozess, ein `GET` oder `POST` Request an einen Server zu senden, der ein `username:password` Paar im `Authorization` Header erfordert. Dies wird oft benutzt, um sensible Daten aus einem sicheren Server zu lesen oder dorthin zu schreiben.
+## How to (Anleitung):
+Die Bibliothek `libcurl` ist ein guter Startpunkt in C. Hier ein einfaches Beispiel:
 
-## Wie geht das:
-
-Wir verwenden die Bibliothek `libcurl` in C für dieses Beispiel. 
-
-```C 
+```c
+#include <stdio.h>
 #include <curl/curl.h>
 
 int main(void) {
@@ -26,42 +26,33 @@ int main(void) {
     CURLcode res;
 
     curl_global_init(CURL_GLOBAL_DEFAULT);
-
     curl = curl_easy_init();
+    
     if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Authorization: Basic bXl1c2VyOm15cGFzc3dvcmQ=");
-
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-        curl_easy_setopt(curl, CURLOPT_URL, "http://meinserver.de/seite");
-
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com/data");
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
+        curl_easy_setopt(curl, CURLOPT_USERNAME, "user");
+        curl_easy_setopt(curl, CURLOPT_PASSWORD, "pass");
+        
         res = curl_easy_perform(curl);
-
+        
         if(res != CURLE_OK)
-            fprintf(stderr, "curl_easy_perform() fehlgeschlagen: %s\n",
-                curl_easy_strerror(res));
-
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                    curl_easy_strerror(res));
         curl_easy_cleanup(curl);
-        curl_slist_free_all(headers);
     }
-
+    
     curl_global_cleanup();
-
     return 0;
 }
 ```
-Diese Code sendet eine GET-Anforderung an `http://meinserver.de/seite` mit der Basisauthentifizierung `myuser:mypass`.
 
-## Tiefere Einblicke:
+Erwartete Ausgabe: Die auf der Konsole dargestellten Daten von `http://example.com/data`, sofern Benutzername und Passwort korrekt sind.
 
-Historisch gesehen, ist die Basisauthentifizierung der ursprüngliche und einfachste Standard für die HTTP-Authentifizierung. Es gibt jedoch alternative Methoden wie Digest Access Authentication oder Bearer Tokens. 
+## Deep Dive (Tiefergehende Informationen):
+Basisauthentifizierung ist Teil von HTTP, schon lange vorhanden, und wird über den `Authorization`-Header realisiert. Alternativen wie OAuth bieten stärkere Sicherheit. Trotzdem ist Basisauthentifizierung wegen ihrer Einfachheit beliebt. Beachte: Die credibilities sollten über HTTPS gesendet werden, um die Sicherheit zu gewährleisten. Die `libcurl`-Bibliothek kümmert sich fast um alles, was du brauchst, aber der Netzwerk-Übertragungsteil (z.B. SSL/TLS) hängt vom Setup deiner `libcurl`-Installation ab.
 
-Während die Basisauthentifizierung immer noch weit verbreitet ist, hat sie einige Nachteile. Beispielsweise werden die Anmeldeinformationen unverschlüsselt (obwohl basis64-kodiert) übertragen, was bei ungesicherten Verbindungen zu Sicherheitsproblemen führen kann. Deshalb wird dringend empfohlen, sie zusammen mit HTTPS zu verwenden.
-
-In der `libcurl` Bibliothek könnten Sie anstelle der `curl_easy_setopt()` Funktion die `curl_easy_setopt()` mit dem CURLAUTH_DIGEST-Flag verwenden, um die Digest Access Authentication zu implementieren, oder das `CURLOPT_XOAUTH2_BEARER`-Flag setzen, um einen OAuth 2.0 Bearer Token für die Authentifizierung zu verwenden.
-
-## Weiterführende Informationen:
-
-- [libcurl Dokumentation](https://curl.se/libcurl/)
-- [RFC 2617 - HTTP Authentication: Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)
-- [OAuth 2.0 Bearer Token Usage](https://tools.ietf.org/html/rfc6750)
+## See Also (Siehe auch):
+- cURL Dokumentation: https://curl.haxx.se/libcurl/c/
+- RFC 7617, 'The 'Basic' HTTP Authentication Scheme': https://tools.ietf.org/html/rfc7617
+- HTTPS und Sicherheitsempfehlungen: https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet

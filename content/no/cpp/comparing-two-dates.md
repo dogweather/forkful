@@ -1,7 +1,8 @@
 ---
-title:                "Sammenligner to datoer"
-html_title:           "Clojure: Sammenligner to datoer"
-simple_title:         "Sammenligner to datoer"
+title:                "Sammenlikning av to datoer"
+date:                  2024-01-20T17:32:34.049332-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Sammenlikning av to datoer"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,51 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-## Hva & Hvorfor?
-Sammenligne to datoer handler om å bestemme hvilken dato som kommer før eller etter. Dette er nyttig for å sortere hendelser, beregne tidsintervaller, og ved å bestemme utløpsdatoer.
+## What & Why?
+Å sammenligne to datoer dreier seg om å finne ut om de er like, eller hvis ikke, hvilken som kommer før eller etter den andre. Programmerere gjør dette for å organisere data, validere input, eller håndtere hendelser som er avhengig av tid.
 
----
-## Hvordan gjør man det:
-Her er et enkelt eksempel på hvordan sammenligne to datoer i C++ ved hjelp av ```std::chrono``` biblioteket og ```std::time_point```:
-
+## How to:
 ```C++
 #include <iostream>
-#include <chrono>
-
-void sammenligneDatoer(std::chrono::system_clock::time_point dato1, std::chrono::system_clock::time_point dato2) {
-    if (dato1 == dato2) {
-        std::cout << "Datoene er like." << std::endl;
-    } else if (dato1 < dato2) {
-        std::cout << "Dato 1 er tidligere enn Dato 2." << std::endl;
-    } else {
-        std::cout << "Dato 2 er tidligere enn Dato 1." << std::endl;
-    }
-}
+#include <ctime>
 
 int main() {
-    auto dato1 = std::chrono::system_clock::now();
-    auto dato2 = std::chrono::system_clock::now() + std::chrono::hours(24);
+    std::time_t now = std::time(nullptr);
+    std::tm* now_tm = std::localtime(&now);
 
-    sammenligneDatoer(dato1, dato2);
+    std::tm other_date = *now_tm;
+    other_date.tm_mday += 7; // La oss si vi legger til 7 dager
+
+    // Sammenlign datoer
+    double seconds_diff = std::difftime(std::mktime(&other_date), now);
+    if (seconds_diff == 0) {
+        std::cout << "Datoene er identiske.\n";
+    } else if (seconds_diff > 0) {
+        std::cout << "Andre dato kommer etter den første.\n";
+    } else {
+        std::cout << "Andre dato er før den første.\n";
+    }
 
     return 0;
 }
 ```
-__
-Kjører denne programmet vil resultere i:
-"Dato 1 er tidligere enn Dato 2."
+Sample output:
+```
+Andre dato kommer etter den første.
+```
 
----
-## Dypdykk:
-Historisk sett, ble dato sammenligning ofte gjort manuelt ved bruk av lammende, feilutsatte algoritmer. C++ standardbiblioteket inklusjoner som ```std::chrono``` modulerer kompleksiteten, eliminerer feilmarginen, og gjør dato-sammenligning langt mer intuitivt og mindre utsatt for feil.
+## Deep Dive
+Før `<chrono>` biblioteket ble introdusert med C++11, brukte C++ programmører `<ctime>`. I dag tilbyr `<chrono>` en moderne og type-sikker tilnærming til dato- og tidshåndtering.
 
-Alternativt, kan du bruke biblioteker som Boost for mer komplekse datatidsoperasjoner. Men for enkel dato sammenligning, anbefales ```std::chrono```.
+Alternativer inkluderer tredjeparts biblioteker som Boost.DateTime, men C++ sitt standardbibliotek blir stadig bedre og skal dekke de fleste behov.
 
-En dypere detalj om ```std::time_point```: Det er en klasse mal i C++ som representer et tidspunkt. En ```std::time_point``` instans har en nulltidsperiode, som er systemklokkes startpunkt (vanligvis er dette Unix Epoch: 01.01.1970).
+Å implementere dato-sammenligning manuelt kan være risikabelt grunnet komplikasjonene med skuddår, tidssoner og historiske dato-forskjeller. Det er best å bruke etablerte biblioteker som ordner disse detaljene for deg.
 
----
-## Se Også:
-1. [cppreference :: std::chrono](https://en.cppreference.com/w/cpp/chrono)
-2. [cppreference :: std::time_point](https://en.cppreference.com/w/cpp/chrono/time_point)
-3. [Boost Library](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html)
+## See Also
+- [cppreference.com on <chrono>](https://en.cppreference.com/w/cpp/chrono)
+- [The Boost.DateTime documentation](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
+- [ISO 8601 Date and time format](https://www.iso.org/iso-8601-date-and-time-format.html)

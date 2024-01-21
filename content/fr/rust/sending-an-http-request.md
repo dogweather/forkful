@@ -1,7 +1,8 @@
 ---
-title:                "Envoyer une requête http"
-html_title:           "Bash: Envoyer une requête http"
-simple_title:         "Envoyer une requête http"
+title:                "Envoi d'une requête HTTP"
+date:                  2024-01-20T18:00:46.112683-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Envoi d'une requête HTTP"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,43 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why? (Quoi et Pourquoi ?)
 
-Envoyer une requête HTTP consiste à demander des informations à un serveur Web. Les programmeurs le font généralement pour obtenir ou manipuler des données depuis/vers un serveur distant.
+Envoyer une requête HTTP, c'est demander des données à un serveur web. Les programmeurs font ça pour intéragir avec des APIs, récupérer des fichiers, ou soumettre des informations.
 
-## Comment faire:
+## How to: (Comment faire :)
 
-Voici comment on peut faire cela en Rust:
+On va utiliser `reqwest`, une bibliothèque Rust populaire. Ajoutez d'abord `reqwest` à votre `Cargo.toml`:
 
-```Rust
-// Importer le crate
-extern crate reqwest;
+```toml
+[dependencies]
+reqwest = "0.11"
+tokio = { version = "1", features = ["full"] }
+```
 
-// Fonction asynchrone pour envoyer une requête GET
+Puis, envoyez une requête GET simple :
+
+```rust
+use reqwest;
+use tokio;
+
 #[tokio::main]
 async fn main() -> Result<(), reqwest::Error> {
-    let response = reqwest::get("https://www.google.com").await?;
+    let response = reqwest::get("http://www.example.com").await?;
+    
+    println!("Status: {}", response.status());
+    println!("Headers:\n{:#?}", response.headers());
 
-    println!("{}", response.status());
+    let body = response.text().await?;
+    println!("Body:\n{}", body);
 
     Ok(())
 }
 ```
 
-L'exécution de ce code donnera une sortie similaire à :
+Sortie attendue (en fonction du contenu actuel de example.com) :
 
-```Rust
-200 OK
+```
+Status: 200 OK
+Headers:
+{
+    "content-type": "text/html; charset=UTF-8",
+    // ...
+}
+Body:
+<!doctype html>
+...
 ```
 
-## Plus d'informations:
+## Deep Dive (Plongée en profondeur)
 
-L'envoi de requêtes HTTP est une pratique courante depuis l'avènement du Web dans les années 90. Bien qu'il existe plusieurs alternatives pour envoyer une requête HTTP, comme Curl ou Python Requests, Rust offre toutefois des avantages en termes de sécurité et de rapidité.
+L'envoi de requêtes HTTP est un concept vieux comme le web lui-même. Avant `reqwest`, Rust utilisait `hyper`, toujours utilisé en sous-main par `reqwest` pour le traitement HTTP bas-niveau. Des alternatives à `reqwest` incluent `hyper` pour plus de contrôle et `surf` pour un environnement async runtime-agnostique. L'implémentation consiste à établir une connexion TCP avec le serveur, envoyer une requête formatée selon la spécification HTTP et interpréter la réponse.
 
-Une implémentation en Rust pourrait utiliser le crate `reqwest`, qui se charge de la majorité du travail en coulisses. Le crate gère les requêtes HTTP de manière asynchrone, ce qui signifie que votre programme n'a pas à rester inactif pendant que le serveur répond à la requête.
+## See Also (Voir aussi)
 
-## Voir aussi:
-
-Pour plus d'information sur l'envoi de requêtes HTTP en Rust, vous pouvez consulter ces ressources :
-
-- [Documentation sur le crate `reqwest`](https://docs.rs/reqwest/0.11.0/reqwest/index.html)
+- Documentation Reqwest : https://docs.rs/reqwest/
+- Asynchronous Programming in Rust : https://rust-lang.github.io/async-book/
+- Hyper, un client HTTP bas niveau : https://hyper.rs/
+- Surf, un autre client HTTP en Rust : https://github.com/http-rs/surf

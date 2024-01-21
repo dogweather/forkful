@@ -1,7 +1,8 @@
 ---
-title:                "Supprimer les caractères correspondant à un modèle"
-html_title:           "Ruby: Supprimer les caractères correspondant à un modèle"
-simple_title:         "Supprimer les caractères correspondant à un modèle"
+title:                "Suppression de caractères correspondant à un motif"
+date:                  2024-01-20T17:43:02.555874-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Suppression de caractères correspondant à un motif"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,52 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why?
+La suppression de caractères correspondant à un motif, c’est l’acte d’enlever des caractères d’une chaîne de caractères (string) qui matchent un certain pattern. On fait ça pour nettoyer des données, valider des entrées ou simplifier le traitement de textes.
 
-Supprimer les caractères correspondant à un motif est une opération qui consiste à éliminer de façon sélective certains caractères dans une chaîne de texte. C'est une tâche courante en programmation pour éliminer les données inutiles ou pour formater les données en vue de leur analyse.
-
-## Comment faire:
-
-Voici comment vous pouvez supprimer certains caractères dans Rust. Disons que vous voulez supprimer tous les 'a' de la chaîne "banana". Vous pouvez le faire avec la méthode `replace()`:
+## How to:
+Utilisons `regex` pour matcher et supprimer des patterns spécifiques. 
 
 ```Rust
-let chaine = "banana";
-let nouveau = chaine.replace("a", "");
-println!("{}", nouveau);
+extern crate regex;
+use regex::Regex;
+
+fn main() {
+    let text = "Les dates: 2023-03-17, 2023-04-01";
+    let date_re = Regex::new(r"\d{4}-\d{2}-\d{2}").unwrap();
+    let result = date_re.replace_all(text, "");
+    println!("Texte après suppression: '{}'", result);
+}
 ```
 
 Output:
-
-```bash
-bnn
+```
+Texte après suppression: 'Les dates: , '
 ```
 
-Comme vous pouvez le voir, tous les 'a' de "banana" ont été supprimés.
+## Deep Dive
+Historiquement, les expressions régulières viennent de la théorie des automates et des langages formels. En Rust, pour manipuler des regex, on utilise souvent la crate `regex`, qui est performante et bien intégrée.
 
-## Un plongeon plus profond:
+Dans nos alternatives, on a `str::replace`, pratique pour des cas simples, ou en utilisant `Vec<char>` pour de l'itération plus contrôlée. Les détails d'implémentation chez `regex` incluent des compilations de patterns en automates finis pour une recherche efficace.
 
-Historiquement, la suppression de caractères en fonction d'un motif est un concept qui provient du langage de programmation Perl. Rust possède sa propre implémentation efficace basée sur ses mécanismes de gestion de la mémoire et de la chaîne.
+## See Also
 
-Alternativement, on peut utiliser la méthode `chars().filter()`, qui donne plus de flexibilité en termes de modèles que vous pouvez supprimer, mais qui est généralement plus lente.
-
-```Rust
-let chaine = "banana";
-let nouveau: String = chaine.chars().filter(|&c| c != 'a').collect();
-println!("{}", nouveau);
-```
-
-Output:
-
-```bash
-bnn
-```
-
-En interne, la fonction `replace()` repose sur le concept de recherche et remplacement. Elle recherche le motif spécifié et le remplace par une chaîne vide. La performance de cette opération dépend du nombre d'occurrences du motif.
-
-## Voir aussi:
-
-Pour en savoir plus sur la programmation Rust et les chaînes en particulier, consultez les ressources suivantes:
-
-- La documentation officielle de Rust sur les chaînes <https://doc.rust-lang.org/std/string/>
-- Le livre de Rust, un guide complet de toute la programmation en Rust <https://doc.rust-lang.org/book/>
-- Le forum des utilisateurs de Rust, où vous pouvez poser des questions et discuter des sujets liés à Rust <https://users.rust-lang.org/>
+- [Rust documentation on Strings](https://doc.rust-lang.org/book/ch08-02-strings.html): Pour une meilleure compréhension des strings en Rust.
+- [Automata Theory](https://en.wikipedia.org/wiki/Automata_theory): Pour comprendre les bases théoriques derrière les regex.

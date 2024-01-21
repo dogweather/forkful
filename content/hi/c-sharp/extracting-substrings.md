@@ -1,6 +1,7 @@
 ---
 title:                "सबस्ट्रिंग्स निकालना"
-html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+date:                  2024-01-20T17:45:21.877638-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "C#"
 category:             "C#"
@@ -10,31 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# C# में सबस्ट्रिंग्स निकालना (Extracting Substrings in C#)
+## What & Why? (क्या और क्यों?)
+उपवाक्यांश (substring) निकालना यानी किसी स्ट्रिंग का एक छोटा भाग अलग करना। प्रोग्रामर्स डेटा को प्रोसेस करने, खोजने, या मान्य करने के लिए इसका इस्तेमाल करते हैं।
 
-## क्या और क्यों? (What & Why?)
-सबस्ट्रिंग्स निकालना मतलब होता है, किसी बड़े स्ट्रिंग के कुछ हिस्सों का उपयोग करना। इसे प्रोग्रामर्स डाटा संसाधन और मुख्य रूप से विश्लेषण के लिए करते हैं।
-
-## कैसे: (How to:)
-चलिए देखते हैं कि कैसे हम C# में सबस्ट्रिंग निकाल सकते हैं:
-
+## How to: (कैसे करें)
 ```C#
-string source = "नमस्ते, दुनिया!";
-string sub = source.Substring(0, 6);
-Console.WriteLine(sub);
+string fullString = "नमस्ते, सीखना सुखद है!";
+int startIndex = 8;
+int length = 12;
+
+// Substring निकालने का तरीका 1: 'Substring' मेथड का इस्तेमाल
+string substring1 = fullString.Substring(startIndex, length);
+Console.WriteLine(substring1);  // Output: सीखना सुखद
+
+// तरीका 2: 'Span<T>' और 'Slice' का इस्तेमाल (C# 8.0 से उपलब्ध)
+ReadOnlySpan<char> span = fullString.AsSpan();
+ReadOnlySpan<char> substring2 = span.Slice(startIndex, length);
+Console.WriteLine(substring2.ToString()); // Output: सीखना सुखद
 ```
 
-ऊपरी कोड स्निपेट का परिणाम आपको "नमस्ते," मिलेगा।
+## Deep Dive (गहराई से जानकारी)
+सबसे पहले उपवाक्यांश 'Substring' विधि के रूप में .NET Framework के आरम्भ में आया था। जब C# 8.0 आया, 'Span<T>' न्यूनतम मेमोरी आवंटन (allocation) के साथ उपवाक्यांश निकालने का एक कुशल तरीका बन गया। 'Substring' विधि स्ट्रिंग की एक प्रति बना लेती है, जबकि 'Span<T>' मूल स्ट्रिंग के मेमोरी भाग का सीधा संदर्भ देता है। इसलिए, बड़े डेटा या परफॉरमेंस-संवेदनशील एप्लिकेशंस के लिए 'Span<T>' ज्यादा बेहतर हो सकता है।
 
-## गहरी जानकारी (Deep Dive)
-1. Historical Context: Substring फ़ंक्शन की उत्पत्ति C++ से होती है, जहां यह std::string के एक सदस्य फ़ंक्शन के रूप में पाया जाता है।
-2. Alternatives: C# में, Substring का विकल्प है Split() ज ाएगा। विभाजन टोकन के साथ Split का उपयोग करके, हम एक बड़े string को छोटे हिस्सों में विभाजित कर सकते हैं।
-3. Implementation Details: Substring मेथड दो वेरिएंट्स में आता है, दोनों खरगोश और गोलू से:
-   
-   ```source.Substring(int start)``` और ```source.Substring(int start, int length)```
-
-## और भी देखें: (See Also)
-
-- Microsoft Official Documentation for Substring: [यहां क्लिक करें](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
-- Understanding Split(): [यहां क्लिक करें](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/parse-strings-using-split)
-- Guide to C# Strings: [यहां क्लिक करें](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
+## See Also (और देखें)
+- Microsoft's documentation on String.Substring Method: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
+- Microsoft's documentation on Span<T>: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.span-1) 
+- A tutorial on string manipulation in C#: [csharp-tutorials](https://www.csharp-tutorials.com/Data-Types/string-manipulation/)

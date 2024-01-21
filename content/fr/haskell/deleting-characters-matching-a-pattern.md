@@ -1,6 +1,7 @@
 ---
 title:                "Suppression de caractères correspondant à un motif"
-html_title:           "C: Suppression de caractères correspondant à un motif"
+date:                  2024-01-20T17:42:15.235094-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Suppression de caractères correspondant à un motif"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,36 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why? (Quoi et Pourquoi ?)
 
-Supprimer des caractères correspondant à un motif ("pattern matching") en programmation sert à filtrer les informations inutiles. C'est généralement fait pour simplifier les données ou pour extraire des informations spécifiques.
+Supprimer des caractères correspondant à un motif consiste à enlever de notre texte des séquences spécifiques de caractères. On le fait souvent pour nettoyer des données ou simplifier une chaîne de traitement.
 
-## Comment Faire :
+## How to: (Comment faire :)
 
-On utilise la fonction ‘filter’ de Haskell pour supprimer les caractères correspondant à un motif. La fonction 'filter' prend une fonction Boolean et une liste comme arguments et renvoie une liste de tous les éléments pour lesquels la fonction Boolean renvoie True.
+```haskell
+import Data.List (delete)
 
-```Haskell
-import Data.Char(isDigit)
-effacer = filter (not . isDigit)
+-- Suppression simple
+deleteChar :: Char -> String -> String
+deleteChar _ "" = ""
+deleteChar x xs = filter (/= x) xs
+
+-- Utilisation de fonction 'deleteChar'
 main :: IO ()
-main = putStrLn $ effacer "abc123"
+main = do
+    let originalString = "Haskell est sympa!"
+    let result = deleteChar 's' originalString
+    putStrLn result  -- "Hakell et ympa!"
 ```
 
-Le programme ci-dessus supprime tous les chiffres de la chaîne de caractères. Il affiche :
+Un autre exemple en utilisant les expressions régulières pour plus de complexité :
 
-```Haskell
-abc
+```haskell
+import Text.Regex.Posix ((=~))
+
+-- Suppression avec motifs (expressions régulières)
+deletePattern :: String -> String -> String
+deletePattern _ "" = ""
+deletePattern pattern text = text =~ ("[^" ++ pattern ++ "]+")
+
+-- Utilisation de 'deletePattern'
+main :: IO ()
+main = do
+    let originalString = "Offrez 0102 fleurs à 301"
+    let cleanedString = deletePattern "0-9" originalString
+    putStrLn cleanedString  -- "Offrez  fleurs à "
 ```
 
-## Plongée Profonde :
+## Deep Dive (Plongée en Profondeur)
 
-Historiquement, le filtrage par motif est une technique centrale en programmation fonctionnelle et a été originellement utilisé dans le langage de programmation ML. En Haskell, les alternatives pour supprimer les caractères correspondent à un motif impliquent l'utilisation de listes comprehension ou de folds.
+Historiquement, le traitement de chaînes de caractères a toujours été une part importante de la programmation. Dans Haskell, les chaînes sont des listes de caractères, donc la manipulation de chaîne s'appuie sur des fonctions puissantes pour les listes. En dehors de l'approche manuelle avec des fonctions comme `filter`, Haskell peut utiliser des bibliothèques comme `Text.Regex.Posix` pour les expressions régulières, ce qui offre un outil plus robuste pour des motifs complexes.
 
-Du point de vue de l'implémentation, Haskell utilise des arbres de décision pour le filtrage par motif. Ces arbres sont optimisés pour effectuer le minimum de tests et d'accès aux données.
+Alternativement, pour des buts plus spécifiques, on pourrait se tourner vers les parsers combinator library comme `Parsec` ou `Attoparsec`, qui fournissent une analyse approfondie et un contrôle des chaînes de caractères.
 
-## À Voir Également :
+En termes de performance, Haskell est paresseux (lazy evaluation), ce qui signifie que les transformations de chaînes ne sont calculées que lorsque c'est absolument nécessaire. C'est utile pour les grandes données ou les streams.
 
-- Documentation du Haskell : https://www.haskell.org/documentation/
-- Projet Haskell: https://www.haskell.org/onlinereport/haskell2010/
-- Conseils sur le filtrage de motifs en Haskell : https://kowainik.github.io/posts/haskell-mini-patterns
-- Fonctionnement interne du filtrage de motifs : https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/p29-sulzmann.pdf
+## See Also (Voir Aussi)
+
+- [Hackage: regex-posix](https://hackage.haskell.org/package/regex-posix)
+- [Hackage: Parsec](https://hackage.haskell.org/package/parsec)
+- [Hackage: Attoparsec](https://hackage.haskell.org/package/attoparsec)

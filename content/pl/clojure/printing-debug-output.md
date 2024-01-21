@@ -1,6 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-html_title:           "Haskell: Drukowanie komunikatów debugowania"
+date:                  2024-01-20T17:52:10.962410-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,33 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i po co? 
+## What & Why? | Co i dlaczego?
+W debugowaniu wypisywanie komunikatów to jak zostawianie sobie notatek po drodze - żeby wiedzieć, co się dzieje. Programiści używają tego, aby zobaczyć wewnętrzne działanie programu i znaleźć błędy.
 
-Wydruk debugowania to prosta ale potężna technika pomagająca programistom zrozumieć, jak ich kod działa od środka. Poprzez wykorzystanie wydruku debugowania, można obserwować przepływ danych w kolejnych etapach działania programu.
+## How to: | Jak to zrobić:
 
-## Jak To Zrobić:
+Clojure używa funkcji `println` do wypisania na standardowe wyjście. Możesz też użyć `prn` dla danych w formacie czytelnym dla Clojure, czy `printf` dla formatowania stringów.
 
-Pierwszym krokiem jest importowanie namespace `clojure.tools.logging`, które umożliwia drukowanie na konsolę. Poniżej znajduje się przykład.
+```Clojure
+;; Proste wypisywanie wiadomości
+(println "Co się dzieje w programie")
+;; => Co się dzieje w programie
 
-```clojure
-(require '[clojure.tools.logging :as log])
+;; Wypisanie zmiennej i jej wartości
+(def x 42)
+(println "Wartość x to:" x)
+;; => Wartość x to: 42
 
-(defn funckja-przykladowa [x]
-  (log/debug "Wartość x: " x)
-  (* x x))
+;; Wypisanie danych w formacie Clojure
+(prn {:a 1 :b 2 :c 3})
+;; => {:a 1, :b 2, :c 3}
+
+;; Użycie printf dla formatowania
+(printf "Jest %d rodzajów ludzi: %s i %s.\n" 2 "ci, co rozumieją binarnie" "ci, co nie")
+;; => Jest 2 rodzajów ludzi: ci, co rozumieją binarnie i ci, co nie.
 ```
-Powyżej, funkcja `funckja-przykladowa` drukuje wartość `x` przed wykonaniem obliczeń. Wydruk pojawia się w konsoli podczas uruchamiania programu.
 
-## Powiedzmy Więcej:
+## Deep Dive | W głębię tematu
 
-Kiedy mówimy o wydrukach debugowania, warto przypomnieć sobie o historii. Pomimo że istnieje wiele zaawansowanych narzędzi do debugowania, wydruki debugowania nadal są chętnie stosowane ze względu na swoj simplicytet.
+W latach 90. w Lispie, jednym z przodków Clojure, wypisywanie debugowe było już praktyką. Clojure, funkcjonalny dialekt Lispa, idzie w jego ślady. Zamiast `println`, możesz używać narzędzi jak `tap>` i `add-tap` wprowadzone w Clojure 1.10, które oferują bardziej elastyczne podejście do debugowania.
 
-Alternatywą do `clojure.tools.logging` mogą być inne biblioteki z dostępnością podobnej funkcjonalności, takie jak `Timbre` lub `tools.trace`.
+Logowanie jest alternatywą do wypisywania debugowego. Zapisuje informacje do pliku, nie zaśmiecając terminala. Można używać np. biblioteki `timbre`.
 
-Ważne jest jednak wspomnieć, że wydruki debugowania nie zastąpią dokładnego testowania! Powinniśmy traktować je jako dodatkowe narzędzie w naszym arsenale programistycznym.
+W Clojure, w przeciwieństwie do niektórych innych języków, nie ma wbudowanego systemu do zarządzania poziomami logowania. Zamiast tego, zazwyczaj wybiera się zewnętrzne biblioteki jak wspomniane `timbre`.
 
-## Zobacz Także:
+## See Also | Zobacz też
 
-- Clojure - podręcznik testowania: https://clojure.org/guides/testing
-- Biblioteka Timbre: https://github.com/ptaoussanis/timbre
-- Biblioteka tools.trace: https://github.com/clojure/tools.trace
+- Oficjalna dokumentacja `println`: https://clojuredocs.org/clojure.core/println
+- `tap>` i `add-tap` wprowadzenie: https://clojure.org/news/2018/12/21/tap
+- Biblioteka `timbre` dla logowania: https://github.com/ptaoussanis/timbre

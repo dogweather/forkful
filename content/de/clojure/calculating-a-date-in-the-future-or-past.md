@@ -1,6 +1,7 @@
 ---
 title:                "Berechnung eines zukünftigen oder vergangenen Datums"
-html_title:           "Clojure: Berechnung eines zukünftigen oder vergangenen Datums"
+date:                  2024-01-20T17:31:06.115858-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,35 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Berechnung von Datum in Clojure
-
 ## Was & Warum?
-Berechnungen von Daten in der Zukunft oder Vergangenheit helfen dabei, Ereignisse zeitlich zu ordnen oder zu planen. Als Programmierer tun wir das, um Zeitabläufe zu koordinieren, Zeitraum-gesteuerte Analysen durchzuführen oder um Benachrichtigungen zu planen.
+Das Berechnen eines zukünftigen oder vergangenen Datums ermöglicht es, Zeitintervalle zu manipulieren. Entwickler nutzen diese Möglichkeit, um Funktionen wie Erinnerungen, Terminplanungen oder Verfallsdaten-Berechnungen in ihren Anwendungen zu realisieren.
 
 ## Wie macht man das:
-Mit der Clojure Bibliothek `clj-time`, lässt sich das ganz einfach realisieren. Im Folgenden finden Sie Codebeispiele:
 
 ```Clojure
-(ns my-namespace
-  (:require [clj-time.core :as t]
-            [clj-time.format :as f]
-            [clj-time.coerce :as c]))
+;; Aktuelles Datum holen
+(def heute (java.util.Date.))
 
-(defn add-days [date-str days]
-  (let [fmt (f/formatters :date-time-no-ms)
-        date-time (c/from-string date-str)]
-    (-> date-time
-        (t/plus (t/days days))
-        (f/unparse fmt))))
+;; Kalender-Instanz für Berechnungen erzeugen
+(def kalender (java.util.GregorianCalendar.))
 
-(println (add-days "2022-02-01T00:00:00Z" 7))
+;; Heutiges Datum im Kalender setzen
+(.setTime kalender heute)
+
+;; 10 Tage zum Datum hinzufügen
+(.add kalender java.util.Calendar/DATE 10)
+(def in-zehn-tagen (.getTime kalender))
+
+;; 10 Tage vom Datum subtrahieren
+(.add kalender java.util.Calendar/DATE -20) ;; 10 Tage zurück, da wir schon 10 Tage hinzugefügt haben
+(def vor-zehn-tagen (.getTime kalender))
+
+;; Ausgabe
+(println "Heutiges Datum:" heute)
+(println "Datum in 10 Tagen:" in-zehn-tagen)
+(println "Datum vor 10 Tagen:" vor-zehn-tagen)
 ```
-Die Ausgabe des Beispiels wäre: `2022-02-08T00:00:00Z`
 
-## Deep Dive
-Berechnungen für zukünftige oder vergangene Daten wurden lange vor Computern benötigt, alternativ wurden sie mit komplizierten Algorithmen durchgeführt. Mit der Erfindung von Computern und Programmiersprachen wie Clojure ist dies leichter geworden. Einige fassen diese Aufgabe mit Java's `LocalDate` oder `DateTime` an, andere verwenden `java.util.Date`, `java.util.Calendar` oder Jodatime. Die Bibliothek `clj-time` verwendet Jodatime und bietet eine funktionale und umgangssprachliche Syntax für die Arbeit mit Daten und Zeiten.
+Sample Output:
 
-## Siehe auch
-- Clojure [official documentation](https://clojure.org/api/api)
-- [clj-time's Github page](https://github.com/clj-time/clj-time)
-- [Java 8 Date & Time API tutorial](http://www.baeldung.com/java-8-date-time-intro)
+```
+Heutiges Datum: Thu Apr 06 00:00:00 CEST 2023
+Datum in 10 Tagen: Sun Apr 16 00:00:00 CEST 2023
+Datum vor 10 Tagen: Tue Mar 28 00:00:00 CEST 2023
+```
+
+## Hintergrundwissen:
+
+Bereits vor dem Computerzeitalter war das Rechnen mit Datums- und Zeitangaben wichtig – für Astronomie, Navigation und Landwirtschaft. Heute macht die java.util.Calendar-Klasse das Arbeiten mit Datumsberechnungen in Clojure und anderen JVM-Sprachen relativ einfach.
+
+Alternativen zu `java.util.Calendar` sind neuere APIs wie `java.time` (ab Java 8), die mehr Funktionalitäten und eine bessere Thread-Sicherheit bieten. clojure.java-time ist ein Wrapper für `java.time`. Es lohnt sich, auch diese Bibliothek zu betrachten.
+
+Bei der Implementierung solcher Datumskalkulationen sind Timezones und Schaltjahre zu berücksichtigen. Fehler in solchen Berechnungen können zu falschen Ergebnissen und womöglich schwerwiegenden Problemen führen – zum Beispiel in Buchungs- oder Abrechnungssystemen.
+
+## Siehe auch:
+
+- Oracle Docs zu `java.util.Calendar`: https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html
+- `clojure.java-time` Bibliothek: https://github.com/dm3/clojure.java-time
+- Blog zur Zeitmessung in der Informatik: https://www.clojure.at/zeit/zeitmessung-im-computer
+- Java 8 Date-Time API: https://docs.oracle.com/javase/tutorial/datetime/

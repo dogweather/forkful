@@ -1,6 +1,7 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Arduino: Lese kommandolinjeargumenter"
+date:                  2024-01-20T17:56:36.195217-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,47 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Kommandolinjeargumenter lar deg kjøre PHP-skript med spesifikke parametere for ulike oppgaver. Å bruke disse er nødvendig for å lage fleksible skript som kan håndtere ulike inngangsdata dynamisk.
 
-Kommandolinjeargumenter er data input som brukes i terminalen når et program kjøres. Programmere bruker denne metoden for å spesifisere og kontrollere hvordan et program skal utføre en oppgave.
+## How to:
+PHP skript mottar kommandolinjeargumenter i `$argv` array og `$argc` variable. Her er et enkelt eksempel:
 
-## Hvordan 
-
-For å lese kommandolinjeargumenter i PHP, bruker vi ofte `$argv` og `$argc` globale variabler, som er innebygd i PHP. La oss se hvordan det fungerer:
-
-```PHP
+```php
 <?php
-  // $argc gir oss antallet argumenter
-  echo "Antall Argumenter: " . $argc . "\n"; 
-  
-  // $argv er en array som holder argumentene
-  for ($i=0; $i<$argc; $i++) {
-      echo "Argument #" . $i . " er " . $argv[$i]. "\n";
-  }
-?>
+// Sjekker om det er nok argumenter
+if ($argc < 2) {
+    echo "Bruk: php script.php [navn]\n";
+    exit;
+}
+
+// Skriver ut det første argumentet
+echo "Hei, " . $argv[1] . "!\n";
+
+// Kjør: php script.php Verden
+// Output: Hei, Verden!
 ```
 
-Når du kjører koden ovenfor fra kommandolinjen og passerer argumenter, vil output se slik ut:
+## Deep Dive
+Kommandolinjeargumenter har blitt brukt siden tidlige databehandlingsdager og er vanlige i mange programmeringsspråk. I PHP er `$argv` en array som inneholder argumentene og `$argc` er et tall som representerer antall argumenter. Bruk av disse er direkte og ubyråkratisk.
 
-```PHP
-> php yourfile.php arg1 arg2 arg3
-Antall Argumenter: 4
-Argument #0 er yourfile.php
-Argument #1 er arg1
-Argument #2 er arg2
-Argument #3 er arg3
-```
+Alternativer for mer komplekse behov inkluderer `getopt()` funksjonen for flagg og verdier, eller tredjeparts biblioteker som Symfony's Console komponent.
 
-## Dypdykk
+Kjernedetaljer:
+- `$argv[0]` er skriptnavnet.
+- Argumentene starter fra `$argv[1]`.
+- `getopt()` kan hente spesifikke options og verdier.
 
-Å kunne lese kommandolinjeargumenter er viktig for enhver programmerer som jobber med skript som er ment å kjøre på serveren eller fra terminalen. Denne funksjonaliteten er ikke unik for PHP, og finnes i de fleste høyere programmeringsspråk. 
-
-Alternativt kan du bruke `getopt()` funksjonen i PHP til å parse kommandolinjeargumenter. Denne funksjonen gir mer fleksibilitet og tillater brukere å spesifisere kort- og langformat for parametere.
-
-Implementasjonsdetaljer, `$argv` returnerer en array der det første elementet (index 0) alltid er navnet på scriptet som kjøres. Resten av elementene i arrayen er argumentene som er gitt på kommandolinjen.
-
-## Se også
-
-1. PHP Manual - CommandLine usage : [Link](https://www.php.net/manual/en/features.commandline.usage.php)
-2. StackOverflow - How to get command line arguments for php script : [Link](https://stackoverflow.com/questions/1921421/get-the-shell-argc-argv-construct-in-php)
-3. PHP `getopt()` Function : [Link](https://www.php.net/manual/en/function.getopt.php)
+## See Also
+- [PHP.net $argv](https://www.php.net/manual/en/reserved.variables.argv.php)
+- [PHP.net $argc](https://www.php.net/manual/en/reserved.variables.argc.php)
+- [PHP.net getopt](https://www.php.net/manual/en/function.getopt.php)
+- [Symfony Console Component](https://symfony.com/doc/current/components/console.html)

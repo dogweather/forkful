@@ -1,6 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-html_title:           "Haskell: Drukowanie komunikatów debugowania"
+date:                  2024-01-20T17:53:28.788973-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,42 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Wypisywanie informacji debugujących to wyświetlanie danych, które pomagają programiście zrozumieć, co się dzieje w kodzie. Programiści robią to, by szybko znaleźć i naprawić błędy.
 
-Drukowanie debug outputu to jedna z najprostszych metod śledzenia działania naszego kodu. Umożliwia nam to obserwację zmiennych, sprawdzanie wywołania funkcji i identyfikację miejsc, w których coś idzie nie tak.
-
-## Jak to zrobić:
-
-W TypeScript komunikaty służące do debugowania są najczęściej wyświetlane za pomocą `console.log()`. Możemy je wywołać z dowolnej części naszego kodu, aby sprawdzić stan konkretnej zmiennej lub działanie funkcji.
+## How to: (Jak to zrobić?)
+W TypeScript możesz wykorzystać `console.log` do pokazywania debug info. Spójrz jak to działa:
 
 ```TypeScript
-let zmienna: number = 5;
-console.log(zmienna);
-function test() {
-    console.log("Funkcja testowa została wywołana");
+function addNumbers(a: number, b: number): number {
+    console.log(`Adding ${a} + ${b}`);
+    return a + b;
 }
-test();
+
+const sum = addNumbers(2, 3);
+console.log(`Sum: ${sum}`);
 ```
 
-Dla powyższego kodu otrzymamy w konsoli poniższy output:
-
-```Output
-5
-Funkcja testowa została wywołana
+Output będzie wyglądać tak:
+```
+Adding 2 + 3
+Sum: 5
 ```
 
-## Głębsze spojrzenie:
+Możesz też użyć `console.error` dla błędów i `console.warn` dla ostrzeżeń.
 
-Historically, debugging could sometimes be a complex process, especially in lower level languages that didn't offer built-in debugging tools. However, modern languages like TypeScript have made it much easier, integrating debugging tools directly into the language's standard library.
+```TypeScript
+function subtractNumbers(a: number, b: number): number {
+    if (b > a) {
+        console.warn('Subtracting larger number from smaller number.');
+    }
+    return a - b;
+}
 
-Historically, debugging sometimes could be a complex process, especially in lower level languages that didn't offer built-in debugging tools. However, modern languages like TypeScript have made it much easier, integrating debugging tools directly into the language's standard library.
+const result = subtractNumbers(5, 10);
+console.error(`Result: ${result}`);
+```
 
-Niektóre alternatywy dla `console.log` to `console.info()`, `console.warn()` i `console.error()`, które pozwalają na bardziej specyficzne adnotacje dotyczące naszych komunikatów debugujących.
+W ten sposób otrzymujemy:
+```
+Warning: Subtracting larger number from smaller number.
+Error: Result: -5
+```
 
-Co ciekawe, `console.log` w rzeczywistości nie jest funkcją TypeScriptu, ale jest udostępnione przez środowisko wykonawcze JavaScript. TypeScript jedynie typuje tę funkcję jako `Console.log`.
+## Deep Dive (Dogłębna analiza)
+Debugowanie kodu przez wypisywanie ma swoje korzenie w początkach informatyki, gdzie logi były sprawdzane na papierze. Dziś mamy wiele narzędzi, ale `console.log` wciąż jest używany przez swe prostotę i uniwersalność.
 
-## Zobacz również:
+Alternatywy dla `console.log` w TypeScript/JavaScript to: debugger oraz zaawansowane systemy logowania jak Winston czy Bunyan, które oferują filtrowanie i lepsze zarządzanie logami.
 
-Dla bardziej zaawansowanych funkcji debugowania, warto zaznajomić się z narzędziami debuggera wbudowanymi do TypeScriptu: [Debugging TypeScript](https://www.typescriptlang.org/docs/handbook/debugging.html)
+Szczegółowo, `console` w Node.js i przeglądarkach może mieć różne implementacje, choć API jest standardowe. Dlatego czasami logi mogą różnić się między środowiskami.
 
-Można również zapoznać się z dokumentacją `console`: [Console API reference](https://developer.mozilla.org/en-US/docs/Web/API/Console)
+## See Also (Zobacz również)
+- MDN Web Docs na temat `Console`: https://developer.mozilla.org/en-US/docs/Web/API/Console
+- Node.js dokumentacje dla `console`: https://nodejs.org/api/console.html
+- Porównanie bibliotek do logowania: https://stackify.com/best-javascript-logging-libraries/

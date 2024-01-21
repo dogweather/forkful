@@ -1,6 +1,7 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "C++: Porównywanie dwóch dat"
+date:                  2024-01-20T17:33:48.437328-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,29 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Porównywanie dwóch dat to proces ustalania, która data jest wcześniejsza, późniejsza lub czy obie są takie same. Programiści często potrzebują tego do sortowania, filtracji danych lub kontroli poprawności dat wprowadzonych przez użytkowników.
 
-## Jak to zrobić:
-Podstawowe porównanie dwóch dat w Kotlinie to pestka. Używamy do tego wbudowanej funkcji `isBefore`, `isAfter` lub `isEqual`.
-```Kotlin
-val data1 = LocalDate.parse("2020-01-01")
-val data2 = LocalDate.parse("2020-01-02")
+Porównywanie dwóch dat polega na ocenie, która z nich jest wcześniejsza, późniejsza lub czy są identyczne. Programiści robią to, aby zarządzać terminami, ustalać priorytety i analizować okresy czasu w aplikacjach.
 
-println(data1.isBefore(data2))  // wydrukuje: true
-println(data1.isAfter(data2))   // wydrukuje: false
-println(data1.isEqual(data2))   // wydrukuje: false
+## Jak to zrobić?
+
+```kotlin
+import java.time.LocalDate
+
+fun main() {
+    val date1 = LocalDate.of(2023, 4, 1)
+    val date2 = LocalDate.of(2023, 5, 1)
+
+    println(date1.isBefore(date2))  // Wynik: true
+    println(date1.isAfter(date2))   // Wynik: false
+    println(date1.isEqual(date2))   // Wynik: false
+}
 ```
+Kod wykorzystuje `LocalDate` z pakietu `java.time` i trzy metody: `isBefore()`, `isAfter()` oraz `isEqual()`, by określić stosunek dat do siebie.
 
-## Wgłębne spojrzenie
-Porównywanie dat w programowaniu to nie nowość – jest niezbędne od początków informatyki. W Kotlinie mamy kilka alternatywnych metod. Możemy na przykład użyć metody `compareTo`:
+## Głębsze spojrzenie
 
-```Kotlin
-println(data1.compareTo(data2)) // Jeżeli data1 < data2, zwraca wartość ujemną; jeżeli data1 > data2, zwraca wartość dodatnią; jeżeli są równe, zwraca 0.
-```
-   
-Zwróć uwagę, że te metody porównują tylko datę, a nie czas. Jeżeli chcesz porównać również godziny, minuty itd., musisz użyć klasy `LocalDateTime` albo `ZonedDateTime`.
+Porównywanie dat nie zawsze było takie proste. W przeszłości programiści musieli polegać na bibliotekach zewnętrznych lub własnych algorytmach. Java 8 wprowadziła pakiet `java.time`, oferując uproszczenia, w tym `LocalDate`. Alternatywy jak Joda-Time są nadal popularne, lecz nie zawsze potrzebne z nowym API.
 
-Możemy zdecydować się na takie podejście, jeżeli operacje na datach są złożone i wymagają uwzględnienia stref czasowych.
+Zaimplementowanie porównywania dat obejmuje wiele przypadków — strefy czasowe, lata przestępne itp. `LocalDate` porównuje wyłącznie daty, nie czas i strefę, co może być zaletą lub ograniczeniem, w zależności od kontekstu.
 
 ## Zobacz też
-Więcej szczegółów na temat porównywania dat w Kotlinie możesz znaleźć w tych źródłach:
+
+- Oficjalna dokumentacja `LocalDate`: [LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- Blog na temat nowego API daty i czasu w Javie: [Modern Java - A Guide to Java 8](https://www.baeldung.com/java-8-date-time-intro)
+- Porównanie Joda-Time i `java.time`: [Joda-Time vs. java.time](https://www.baeldung.com/joda-time)

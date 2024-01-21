@@ -1,7 +1,8 @@
 ---
-title:                "पाठ की खोज और प्रतिस्थापन"
-html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
-simple_title:         "पाठ की खोज और प्रतिस्थापन"
+title:                "पाठ खोजना और बदलना"
+date:                  2024-01-20T17:57:59.034720-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पाठ खोजना और बदलना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,26 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-टेक्स्ट को खोजना और बदलना मतलब है कि हम एक टेक्स्ट इनपुट को पर्स करके स्पेसिफिक पैटर्न की खोज करते हैं, और उसे नई वैल्यू के साथ बदलते हैं। यह यादा काम में आता है जब हमारे पास बड़े डेटा से काम करना होता है, जैसे कि फ़ाइलें, वेब पेज, या डेटाबेस के रिकॉर्ड।
+## What & Why? - क्या और क्यों?
 
-## कैसे करें:
-न्यायाधिकारी (Regular Expression) हमें इसमें मदद करता है। यहां एक basic उदाहरण है:
+किसी टेक्स्ट में विशेष शब्द खोजना और उसे बदलना एक अक्सरीयत वाली क्रिया है जिसे हम प्रोग्रामिंग में भी करते हैं। प्रोग्रामर्स इसे डेटा को अपडेट करने, गलतियों को सही करने, या डेटा को नए फॉर्मेट में बदलने के लिए करते हैं।
+
+## How to: - कैसे करें:
 
 ```Elm
-module Main exposing (..)
-import Regex
-text = "नमस्ते Elm, आपका स्वागत है Elm!"
-re = Regex.fromString "Elm" |> Result.withDefault Regex.never
-newText = Regex.replace re (always "Hindi") text
+import Html exposing (text)
+import String
+
+main =
+  let
+    originalText = "गलत टेक्स्ट गलत टेक्स्ट"
+    newText = String.replace "गलत" "सही" originalText
+  in
+    text newText
 ```
 
-इस उदाहरण में, हमने `"Elm"` खोजकर उसे `"Hindi"` के साथ बदल देने का प्रयास किया। Output होगा: `"नमस्ते Hindi, आपका स्वागत है Hindi!"`
+इस कोड को चलाने पर आपको संकल्पनात्मक आउटपुट मिलेगा: "सही टेक्स्ट सही टेक्स्ट"
 
-## गहराई की ओर:
-Elm एक वेबफ्रंट एंड लैंग्वेज है जिसने 2012 में एवन चापलीक्य द्वारा डेवलप होना शुरू किया था। Java, Python में भी ऐसे ही फंक्शन्स उपलब्ध हैं लेकिन Elm इसे प्रभावी तरीके से ट्रीट करता है। Elm यह ऑपरेशन परफॉर्म करने के लिए Regex पैकेज का उपयोग करता है जो कि एक छोटी और संक्षिप्त library है।
+## Deep Dive - गहराई से जानकारी:
 
-## अधिक जानकारी के लिए:
-- [Elm का tutorial](https://elm-lang.org/docs)
-- [Elm का official guide](https://guide.elm-lang.org/)
-- [Regular Expressions in Elm](https://package.elm-lang.org/packages/elm/regex/latest/)
+टेक्स्ट खोजना और बदलना हमेशा से एक महत्वपूर्ण क्रिया रही है, फिर चाहे वह पुराने समय की बैच स्क्रिप्ट में हो या आधुनिक वेब ऐप्लिकेशन्स में। Elm, जो कि एक फंक्शनल प्रोग्रामिंग भाषा है, में `String.replace` फंक्शन का इस्तेमाल करके यह कार्य आसानी से किया जा सकता है। यह फंक्शन तीन पैरामीटर्स लेता है: खोजने वाला शब्द, बदलने वाला शब्द, और मूल टेक्स्ट।
+
+विकल्पों के रूप में, अन्य प्रोग्रामिंग भाषाओं में भी इसी तरीके के फंक्शन होते हैं, जैसे कि JavaScript में `.replace()`, Python में `.replace()` आदि। हलांकि, Elm इसे प्योर फंक्शन द्वारा करता है जिसमें आप सीधे आर्ग्युमेंट्स में परिवर्तन की जानकारी देकर क्रिया को पूरा कर सकते हैं।
+
+## See Also - देखें अन्य:
+
+- Elm भाषा के आधिकारिक `String` मॉड्यूल डॉक्युमेंटेशन: [Elm String Module](http://package.elm-lang.org/packages/elm/core/latest/String#replace)
+- टेक्स्ट प्रोसेसिंग के लिए `String` फंक्शन्स की एक श्रृंखला: [Elm String Functions](http://package.elm-lang.org/packages/elm/core/latest/String)
+- Elm के साथ अधिक कॉम्प्लेक्स पैटर्न्स के लिए `Regex` पैकेज: [Elm Regex Package](http://package.elm-lang.org/packages/elm/regex/latest)

@@ -1,7 +1,8 @@
 ---
-title:                "नया प्रोजेक्ट शुरू करना"
-html_title:           "C: नया प्रोजेक्ट शुरू करना"
-simple_title:         "नया प्रोजेक्ट शुरू करना"
+title:                "नई परियोजना शुरू करना"
+date:                  2024-01-20T18:03:40.334862-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "नई परियोजना शुरू करना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Getting Started"
@@ -10,49 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Bash Programming: एक हिंदी गाइड
+## What & Why? (क्या और क्यों?)
+प्रोजेक्ट की शुरुआत क्या होती है? यह नई सॉफ्टवेयर योजना का प्रारंभिक बिंदु होता है। कोडर्स नई प्रोजेक्ट्स क्यों बनाते हैं? सरल है: नए आइडियाज को साकार करने, समस्याओं का हल निकालने और तकनीकी क्षेत्र में नवाचार के लिए।
 
-## 1. क्या और क्यों?
-
-Nया प्रोजेक्ट शरू करना मतलब हमें नई कोडिंग योजना शुरू करनी होती है। इसका मुख्य कारण होता है कि प्रोग्रामर्स नई आवश्यकताओं को पूरा करने या एक नए सोच को अंजाम देने के लिए यह करते हैं।
-
-## 2. कैसे करें:
-
-एक नया बैश स्क्रिप्ट बनाने के लिए, आपको एक साधारण फ़ाइल बनाने की आवश्यकता है। 
+## How to: (कैसे करें:)
+मान लें कि हम एक नया प्रोजेक्ट बना रहे हैं जिसका नाम `my_project` है। बश में, हमें कुछ फोल्डर्स और फाइल्स बनाने होंगे। सरल कमांड्स से शुरुआत करते हैं:
 
 ```Bash
-touch myscript.sh
+mkdir my_project          # नया फोल्डर बनाएं
+cd my_project             # उस फोल्डर में जाएँ
+touch README.md           # डॉक्यूमेंटेशन के लिए README फाइल
+mkdir src                 # सोर्स कोड के लिए एक फोल्डर
+touch src/main.sh         # मुख्य प्रोग्राम फाइल
 ```
 
-और इसे शुरू करें `#!/bin/bash` से, यह दर्शाता है कि शेल स्क्रिप्ट बैश में चलाई जा रही है।
+आउटपुट नहीं होता, लेकिन फोल्डर और फाइलें बन जाएंगी।
 
-```Bash
-#!/bin/bash
-echo "Hello, World!"
-```
+## Deep Dive (गहन डाइव)
+पुराने दिनों में, प्रोग्रामर्स कोड लिखने से पहले बहुत तैयारी करते थे। वे डायग्राम्स, डॉक्यूमेंटेशन बनाते और सम्पूर्ण डिज़ाइन सोचते थे। आजकल, कमांड लाइन टूल्स और विकास फ्रेमवर्क, जैसे कि Git, Docker, और अन्य शॉर्टकट्स, ने प्रोजेक्ट की शुरुआत को काफी आसान बना दिया है। वैकल्पिक विधियों में आधुनिक IDEs जैसे कि Visual Studio Code या JetBrains की प्रोडक्ट्स का इस्तेमाल शामिल है जो प्रोजेक्ट टेम्प्लेट्स को सपोर्ट करते हैं। विस्तृत उपयोग और प्रोजेक्ट की रचना की बारीकियां इसके जटिलता को दर्शाती हैं।
 
-फिर आप चला सकते हैं:
-
-```Bash
-chmod +x myscript.sh
-./myscript.sh
-```
-
-आपको "Hello, World!" का उत्तर मिलेगा।
-
-## 3. गहराई से:
-
-### ऐतिहासिक प्रसंग
-Bash 1989 में Brian Fox द्वारा GNU project के लिए विकसित किया गया था, और अब यह UNIX/Linux पर सर्वाधिक लोकप्रिय शेल है। 
-
-### विकल्प
-अन्य शेल्स जैसे कि Zsh, Fish, Csh, tcsh, Ksh, etc भी होते हैं। प्रत्येक का अपना अद्वितीय उपयोग और लाभ होते हैं।
-
-### क्रियान्वयन विवरण
-Bash, सी भाषा में लिखी गई है, और सी प्रिप्रोसेसर का उपयोग करके विभिन्न प्लेटफॉर्मों (Linux, Unix, Windows आदि) पर चलने के लिए अनुकूलित होती है।
-
-## 4. अधिक जानकारी के लिए:
-
-- [GNU Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash Scripting Tutorial for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [An in-depth exploration of the art of shell scripting](https://www.tldp.org/LDP/abs/html/)
+## See Also (यह भी देखें)
+- [Bash Scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial)
+- [Learn Shell Programming](https://www.learnshell.org/)
+- [Git Basics for Version Control](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
+- [Docker for Beginners](https://docker-curriculum.com/)

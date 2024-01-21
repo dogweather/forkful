@@ -1,7 +1,8 @@
 ---
-title:                "एक वेब पेज डाउनलोड करना"
-html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
-simple_title:         "एक वेब पेज डाउनलोड करना"
+title:                "वेब पेज डाउनलोड करना"
+date:                  2024-01-20T17:44:43.979478-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "वेब पेज डाउनलोड करना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,25 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-वेब पेज डाउनलोड करना मतलब है कि आप एक वेबसाइट से डाटा प्राप्त करते हैं और उसे अपने स्थानीय सिस्टम में स्टोर करते हैं। प्रोग्रामर्स इसका उपयोग API कॉल्स करने, वेबसाइट्स का डाटा एकत्र करने, या वेब पेजों की निगरानी करने के लिए करते हैं।
+## What & Why? (क्या और क्यों?)
 
-## कैसे:
-यहां PHP का एक साधारण कोड है जो एक वेब पेज डाउनलोड करता है:
-```PHP
+वेब पेज डाउनलोडिंग मतलब वेब साइट की सामग्री को उसके सर्वर से आपके कंप्यूटर पर लाना। प्रोग्रामर्स इसे करते हैं ताकि डेटा का विश्लेषण कर सकें या उसे अपने ऐप्लिकेशन में उपयोग कर सकें।
+
+## How to: (कैसे करें:)
+
+PHP में वेब पेज को डाउनलोड करने के लिए `file_get_contents()` फंक्शन एक सरल तरीका है।
+
+```php
 <?php
-$websiteContent = file_get_contents('http://example.com');
+// वेब पेज का URL
+$url = 'http://example.com';
 
-echo $websiteContent;
+// URL से HTML कंटेंट प्राप्त करना
+$html = file_get_contents($url);
+
+// अगर आवश्यक हो, तो आप HTML कंटेंट की प्रोसेसिंग कर सकते हैं
+// ...
+
+// HTML कंटेंट दिखाना
+echo $html;
 ?>
 ```
-आपको 'http://example.com' की जगह आपके टारगेट वेबसाइट का URL डालना होगा।
 
-## डीप डाइव
-वेब पेज डाउनलोड करने की क्षमता के पुन: स्थापना का इतिहास PHP 4 में शुरू होता है, जहां `file_get_contents()` फंक्शन पहली बार पेश किया गया था। आंतरिक रूप से यह बीमा सोकेट आधारित आवेदन प्रोटोकॉल पर काम करता है। इसका विकल्प `cURL` हो सकता है, जो अधिक विस्तृत है और अधिक सेटिंग्स का समर्थन करता है। 
+आउटपुट में `http://example.com` का HTML कोड दिखेगा।
 
-## देखिए भी
-अधिक अध्ययन के लिए, ये उपयोगी संसाधन हो सकते हैं:
-1. PHP Manual's page on file_get_contents(): https://www.php.net/manual/en/function.file-get-contents.php
-2. PHP Manual's cURL section: https://www.php.net/manual/en/book.curl.php
-3. Stackoverflow discussion on file_get_contents() vs cURL: https://stackoverflow.com/questions/555523/file-get-contents-vs-curl-what-has-better-performance
+## Deep Dive (गहन जानकारी):
+
+इंटरनेट की शुरुआत से ही वेब पेजेज का डेटा प्राप्त करने का कांसेप्ट रहा है। `file_get_contents()` साधारण और सीधा होने के बावजूद, जटिल जरूरतों के लिए cURL लाइब्रेरी का उपयोग होता है, जैसे कि HTTP headers को सेट करना, POST डेटा भेजना, या एरर हैंडलिंग करना। पीएचपी की cURL लाइब्रेरी पूर्ण-प्रचालक HTTP क्लाइंट है।
+
+पिछले संस्करणों में जहां `fopen()` के साथ रिमोट URL को हैंडल करने के लिए `allow_url_fopen` इनी सेटिंग की आवश्यकता होती थी, वर्तमान में। इसे अधिक सुरक्षित तरीके से करने के लिए cURL का उपयोग पसंद किया जाता है।
+
+## See Also (और देखें):
+
+- PHP Manual on file_get_contents(): https://www.php.net/manual/en/function.file-get-contents.php
+- PHP Manual on cURL: https://www.php.net/manual/en/book.curl.php
+- HTTP client Guzzle (जो cURL का उपयोग करता है): https://github.com/guzzle/guzzle

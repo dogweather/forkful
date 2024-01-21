@@ -1,6 +1,7 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
-html_title:           "Go: המרת מחרוזת לאותיות קטנות"
+date:                  2024-01-20T17:39:26.054863-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,30 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-
-המרת מחרוזת לאותיות קטנות היא פעולה שבה כל האותיות הגדולות במחרוזת ממירות לאותיות קטנות. מתכנתים בוחרים לעשות זאת כדי להבטיח עקביות בהשוואות מחרוזות, או לניתוח נתונים.
+המרת מחרוזת לאותיות קטנות זה פשוט להחליף את כל התווים במחרוזת לגרסתם הקטנה. תכניתנים עושים את זה כדי להבטיח עקביות, להשוות בצורה רגישה לרישיות או לטפל בקלט משתמש.
 
 ## איך לעשות:
+```typescript
+let greeting: string = 'שלום עולם!';
+let lowerCaseGreeting: string = greeting.toLowerCase();
 
-הנה דוגמא לקוד TypeScript שממיר מחרודת לאותיות קטנות:
-```TypeScript
-let str = "Hello, TypeScript!";
-let lowerCaseStr = str.toLowerCase();
-console.log(lowerCaseStr); // יוצא "hello, typescript!"
+console.log(lowerCaseGreeting); // 'שלום עולם!' stays the same because it's already in lower case.
 ```
 
-בקוד הזה, אנחנו מפעילים את המתודה `.toLowerCase()` על המחרוזת `str` ושומרים את התוצאה במשתנה `lowerCaseStr`.
+פלט לדוגמא:
+```
+שלום עולם!
+```
 
-## צלילה מעמיקה:
+כדי להשוות בין שתי מחרוזות בלי לדאוג לרישיות:
+```typescript
+let userInput: string = 'Email@Example.com';
+let storedEmail: string = 'email@example.com';
 
-המרת מחרוזת לאותיות קטנות היא טכניקה ותיקה בתכנות, שמוכרחת בשל גמישות ההקלדה. בחלק מהשפות יש דרכים אחרות לבצע זאת, אבל ב-TypeScript `.toLowerCase()` היא הפופולרית ביותר.
+if (userInput.toLowerCase() === storedEmail.toLowerCase()) {
+  console.log('מיילים תואמים!');
+} else {
+  console.log('מיילים לא תואמים.');
+}
+```
 
-אם אתם רוצים לממש את זה בעצמכם, תצטרכו לדעת את קודיות ASCII של האותיות ולהשתמש במתודה של TypeScript `.charCodeAt`.
+פלט לדוגמא:
+```
+מיילים תואמים!
+```
 
-## ראה גם:
+## צלילה עמוקה
+בימים הראשונים, תכנות היה עם מעט מאוד שפות, וכל עבודה עם מחרוזות הייתה ידנית. ככל שתכנות התפתח, שפות כוללות טיפול במחרוזות בנותינות יותר כמו JavaScript ו-TypeScript. 
 
-לפרטים נוספים, בקרו באתרי האינטרנט הבאים:
+אלטרנטיבות? ניתן גם להשתמש בפונקציות סטנדרטיות כמו `String.prototype.toUpperCase` להפך, או ב-RegExp להחלפות מורכבות יותר.
 
-- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
-- [JavaScript Info](https://javascript.info/)
+לגבי פרטי יישום, `toLowerCase` מנוהלת על ידי כללי ה-UniCode והספריית הסטנדרט של JavaScript כדי להבטיח שתווים מקבצים לא לטיניים יופחתו כראוי ללא בעיות.
+
+## ראה גם
+- מסמך MDN Web Docs על `toLowerCase()`: [MDN toLowerCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- Unicode Case Mapping: [Unicode Case Mapping](https://www.unicode.org/reports/tr21/tr21-5.html)
+- תיעוד על מחרוזות ב-TypeScript: [TypeScript Handbook Strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)

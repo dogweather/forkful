@@ -1,7 +1,8 @@
 ---
-title:                "पाठ की खोज और प्रतिस्थापन"
-html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
-simple_title:         "पाठ की खोज और प्रतिस्थापन"
+title:                "पाठ खोजना और बदलना"
+date:                  2024-01-20T17:58:37.450433-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पाठ खोजना और बदलना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,39 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+टेक्स्ट सर्च और रिप्लेस का मतलब है मौजूदा टेक्स्ट में कुछ शब्दों को ढूंढना और फिर उन्हें दूसरे शब्दों से बदल देना। प्रोग्रामर्स इसे डेटा को संशोधित करने, बग्स ठीक करने या कोड को अपडेट करने के लिए करते हैं।
 
-खोजना और प्रतिस्थापना, यानी searching और replacing, सामग्री के विशिष्ट हिस्सों को खोजने और उन्हें नई सामग्री से प्रतिस्थापित करने की प्रक्रिया है। प्रोग्रामर्स इसे कोड पर वर्क फ्लो को अधिक कुशल बनाने के लिए करते हैं। 
+## How to? (कैसे करें?)
+```java
+public class TextSearchReplace {
+    public static void main(String[] args) {
+        String originalText = "फूल बहुत सुंदर होते हैं।";
+        String searchText = "फूल";
+        String replaceText = "तारे";
 
-## कैसे?
+        String replacedText = originalText.replace(searchText, replaceText);
 
-आइए देखते हैं कि Java में मूल स्ट्रिंग में किसी विशेष शब्द को खोजकर उसे अन्य शब्द से कैसे बदला जा सकता है।
-
-```Java
-public class Main {
-  public static void main(String[] args) {
-    String s = "नमस्ते दुनिया!";
-    String r = s.replace("नमस्ते", "अलविदा");
-    System.out.println(r);
-  }
+        System.out.println("पहले: " + originalText);
+        System.out.println("बाद में: " + replacedText);
+    }
 }
 ```
-आउटपुट:
-
-```Java
-अलविदा दुनिया!
+सैंपल आउटपुट:
+```
+पहले: फूल बहुत सुंदर होते हैं।
+बाद में: तारे बहुत सुंदर होते हैं।
 ```
 
-## गहराई का अध्ययन
+## Deep Dive (गहराई से जानकारी)
+जावा में टेक्स्ट सर्च और रिप्लेस फंक्शन्स की शुरुआत J2SE 1.4 में `replaceAll` और `replaceFirst` मेथड्स के जरिए हुई थी, जो `java.lang.String` क्लास का हिस्सा हैं। आज भी, ये फंक्शन्स `Pattern` और `Matcher` जैसे रेगुलर एक्सप्रेशन क्लासेज के साथ काम करते हैं। यह न केवल बेसिक स्ट्रिंग्स के लिए बल्कि जटिल टेक्स्ट पैटर्न्स के लिए भी उपयोगी हैं।
 
-1. ऐतिहासिक सन्दर्भ: Java 1.0 से ही, `replace` मेथड Java की String क्लास में मौजूद है। इसकी मुख्य वजह यह है कि यह एक आम कार्य है जो बार-बार उपयोग किया जाता है। 
+```java
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-2. विकल्प: `replace` का उपयोग करने के अलावा, `replaceAll` और `replaceFirst` मेथड्स भी मौजूद हैं जो अधिक विशेष cases के लिए उपयोगी हो सकते हैं।
+public class RegexExample {
+    public static void main(String[] args) {
+        String originalText = "बगीचे में 2 फूल और 5 फूल!";
+        Pattern pattern = Pattern.compile("\\bफूल\\b");
+        Matcher matcher = pattern.matcher(originalText);
 
-3. कार्यान्वयन विवरण: इन मेथड्स का कार्यान्वयन आमतौर पर regex या regex पैटर्न्स का उपयोग करके किया जाता है। 
+        String replacedText = matcher.replaceAll("तारे");
+        System.out.println(replacedText);
+    }
+}
+```
 
-## अधिक जानकारी के लिए
+ध्यान दें, रेगुलर एक्सप्रेशन में `\\b` का मतलब है 'word boundary' जिससे सिर्फ अकेला शब्द 'फूल' ही बदलेगा।
 
-* Java 8 Documentation: String (https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-* Stack Overflow: How to replace a character in a string in Java? (https://stackoverflow.com/questions/16027229/how-to-replace-a-character-in-a-string-in-java)
-* Geeks for Geeks: Replace a character in a String in Java (https://www.geeksforgeeks.org/replace-a-character-in-a-string-in-java)
+## See Also (और भी जानकारी)
+- Java Documentation on String Class: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
+- Java Documentation on Pattern Class: https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html
+- Java Documentation on Matcher Class: https://docs.oracle.com/javase/7/docs/api/java/util/regex/Matcher.html
+- Online regex tester and debugger: https://regex101.com/

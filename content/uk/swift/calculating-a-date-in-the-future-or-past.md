@@ -1,7 +1,8 @@
 ---
-title:                "Розрахунок дати в майбутньому або минулому"
-html_title:           "Swift: Розрахунок дати в майбутньому або минулому"
-simple_title:         "Розрахунок дати в майбутньому або минулому"
+title:                "Обчислення дати у майбутньому або минулому"
+date:                  2024-01-20T17:32:35.280184-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Обчислення дати у майбутньому або минулому"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,37 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Обчислення дати в майбутньому або минулому є дією випередження або відкату календарного часу. Програмісти виконують це для планування подій, відслідковування термінів і управління даними.
+## Що і для чого?
+Обчислення дати у майбутньому чи минулому — це процес знаходження дати, яка відбудеться через певний час або вже була. Програмісти роблять це для функцій планування, відстеження часу та задач, що залежать від дати.
 
-## Як це робиться:
-Розглянемо, як можна зробити це в Swift за допомогою `Calendar` і `DateComponents`. 
-
+## Як робити:
 ```Swift
 import Foundation
 
-let calendar = Calendar.current
-let currentDate = Date()
+let now = Date()
+var dateComponents = DateComponents()
+dateComponents.day = 10  // Для прикладу виберемо 10 днів
 
-// Обчислення дати на 7 днів вперед
-let dateInFuture = calendar.date(byAdding: .day, value: 7, to: currentDate)
+// Обчислюємо дату в майбутньому
+if let tenDaysLater = Calendar.current.date(byAdding: dateComponents, to: now) {
+    print("Десять днів після сьогодні: \(tenDaysLater)")
+} else {
+    print("Не вдалося обчислити дату")
+}
 
-// Обчислення дати на 7 днів назад
-let dateInPast = calendar.date(byAdding: .day, value: -7, to: currentDate)
+dateComponents.day = -5  // Вибираємо 5 днів у минуле
 
-print("Зараз: \(currentDate)")
-print("Через 7 днів: \(dateInFuture ?? currentDate)")
-print("7 днів тому: \(dateInPast ?? currentDate)")
+// Обчислюємо дату в минулому
+if let fiveDaysAgo = Calendar.current.date(byAdding: dateComponents, to: now) {
+    print("П'ять днів до сьогодні: \(fiveDaysAgo)")
+} else {
+    print("Не вдалося обчислити дату")
+}
 ```
 
-## Поглиблений розбір:
-Система управління датою і часом в Swift розвивалась із версії 1980 року, починаючи з ANSI C. Swift впровадив сучаснішу систему `Date`, `Time` і `Calendar` для точних календарних обчислень.
+Прикладний вивід:
+```
+Десять днів після сьогодні: ... // відповідна дата та час
+П'ять днів до сьогодні: ... // відповідна дата та час
+```
 
-Альтернативою може бути використання типу `TimeInterval` для обчислення дати в майбутньому або минулому. Однак, це може бути менш точним, особливо для довгих проміжків часу.
+## Поглиблений аналіз:
+В минулому для обчислень з датами часто використовували неефективні алгоритми. Сучасні мови програмування, як Swift, включають потужні календарі та часові API, що дозволяють точні та гнучкі обчислення. 
 
-Важливо знати, що Swift використовує систему часових поясів. Метод `date(byAdding:value:to:)` враховує поточний часовий пояс.
+Інші методи включають:
+- У бібліотеці DateComponents можна використовувати різні компоненти, не лише дні.
+- DateFormatter дозволяє форматувати вивід дат для кращої читабельності.
 
-## Дивись також:
-- [Date & Time Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DatesAndTimes/DatesAndTimes.html)
-- [Swift Date Documentation](https://developer.apple.com/documentation/foundation/date)
-- [Swift Calendar Documentation](https://developer.apple.com/documentation/foundation/calendar)
+При обчисленні дати в майбутньому або минулому маємо пам'ятати про часові пояси та особливості календаря, який ми обираємо. 
+
+## Дивіться також:
+- [NSCalendar and NSDateComponents](https://developer.apple.com/documentation/foundation/nscalendar) — документація по класах Apple.

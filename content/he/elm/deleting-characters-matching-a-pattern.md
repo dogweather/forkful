@@ -1,6 +1,7 @@
 ---
 title:                "מחיקת תווים התואמים לתבנית"
-html_title:           "Elixir: מחיקת תווים התואמים לתבנית"
+date:                  2024-01-20T17:43:16.629611-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "מחיקת תווים התואמים לתבנית"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,32 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-מחיקת תווים שמתאימים לדפוס מתיחסת לתהליך של מינימיזציה של מחרוזת על ידי הסרה של תווים מסוימים. תכנתים משתמשים בו במקרה ומחרוזת מכילה מידע מיותר או במקומות בהם מחרוזת חייבת לסבל את מספר תווים מסוים.
+## What & Why? (מה ולמה?)
+מחיקת תווים התואמים לתבנית היא כאשר אתה סורק מחרוזת ומסיר תווים כדי לעצב את הטקסט לפורמט ספציפי. תכנתים עושים זאת לטהר, לאמת, או לפשט נתונים.
 
-## איך לעשות:
-להלן דוגמאות לקוד בחיפוש ומחיקת תווים בElm:
+## How to (איך לעשות):
+ב-Elm, נשתמש במודול `String` ובפונקציית `Regex` לדוגמא.
 
-```Elm
-removeChar : Char -> String -> String
-removeChar c string =
-    String.filter ((/=) c) string
+```elm
+import String
+import Regex exposing (regex, find, replace, All)
 
-main : Html.Html msg
-main =
+cleanString : String -> String
+cleanString str =
     let
-        str = "נתונים מיותרים"
-        removedStr = removeChar 'י' str
+        pattern = regex "[^a-zA-Z0-9 ]"
     in
-    Html.text removedStr
+    replace All pattern (\_ -> "") str
+
+-- דוגמה לשימוש:
+main =
+    String.fromList [cleanString "Hello! Elm? It's awesome, isn't it?"]
+    -- פלט: "Hello Elm Its awesome isnt it"
 ```
-לאחר יישום הקוד שלמעלה התוצאה תהיה: "נתונים מותרים" 
 
-## צלילה עמוקה
-בשפות תכנות אחרות, ניתן למנוע הסרת תווים שמתאימים לדפוס באופן ישיר על כבל חוטים. ב-Elm, צרוי לבנות את הפונקציה שלך בעזרת String.filter. זה מאפשר ל-Elm להיות קריא יותר ומונע מקרים בהם מחרוזת יכולה להיות מעובדת באופן בלתי חקיר.
+## Deep Dive (צלילה עמוקה):
+Elm משתמשת ברגקס (regex) לתאימות תבניות ולמחיקת תווים בלתי רצויים. בעבר, שפות כמו Perl היו פופולריות עם מנועים חזקים לעיבוד ביטויי רגולריים. היום, Elm מספקת יכולות רגקס דרך מודול `Regex`. ישנם גם אלטרנטיבות למחיקה כמו שימוש בפונקציות מובנות של `String` לסינון תווים. פרטים טכניים והקשר היסטורי יכולים לתת הבנה טובה יותר על מתי ואיך להשתמש בהם.
 
-כמו כן, Elm מעדיף שימוש בפונקציות כמו String.filter במקום לשלוט על מחרוזת באמצעות מדריך, מה שעשוי להוות מקור לטעויות ריצה.
+## See Also (ראה גם):
+- [Elm Regex Documentation](https://package.elm-lang.org/packages/elm/regex/latest/Regex)
+- [String Processing in Elm](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm Patterns Tutorial](https://elmprogramming.com/pattern-matching.html)
 
-## ראה גם
-[Elm documentation String.filter](https://package.elm-lang.org/packages/elm/core/latest/String#filter)
-[Elm guide: Strings](https://guide.elm-lang.org/interop/strings.html)
+במדריכים אלה תמצא מידע נוסף אודות עיבוד מחרוזות ושימוש בביטויים רגולריים ב-Elm.

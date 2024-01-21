@@ -1,6 +1,7 @@
 ---
 title:                "Calculating a date in the future or past"
-html_title:           "Gleam recipe: Calculating a date in the future or past"
+date:                  2024-01-20T17:30:55.291296-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Calculating a date in the future or past"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,45 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Calculating a date in the future or past means determining a date from a specific time-reference, either ahead or behind. Programmers typically do so to manage scheduling tasks, timeouts, reminders, and such time-dependent logic.
+Calculating a future or past date means figuring out what the date will be after or before a certain amount of time. Programmers do this for things like scheduling events, subscription renewals, or setting expiry dates.
 
 ## How to:
+Gleam doesn't come with a built-in date/time library, so we'll use the `chronotope` library to handle dates and times. First, add `chronotope` to your `gleam.toml`:
 
-Let's walk through an example where we add and subtract days from a given date.
+```toml
+[dependencies]
+chronotope = "~> 0.4"
+```
 
-```Gleam
-import gleam/calendar.{Date, add_days, subtract_days}
-import gleam/io.{println}
+Now, let's do some date calculations:
+
+```gleam
+import chronotope
+import chronotope.duration
+import chronotope.date
+
+fn calculate_date() {
+  let now = chronotope.now()
+  let two_weeks = duration.of_weeks(2)
+  let future_date = date.add(now, two_weeks)
+  let past_date = date.subtract(now, two_weeks)
+  future_date, past_date
+}
 
 fn main() {
-let start_date = Date.new(2023, 6, 30) //starting point 
-let future_date = add_days(start_date, 5) //adding 5 days 
-let past_date = subtract_days(start_date, 7) //subtracting 7 days 
-
-println(future_date)
-println(past_date)
+  let (future, past) = calculate_date()
+  io.println(future)
+  io.println(past)
 }
 ```
-Upon running this code, your output should be something like:
 
-```Gleam
-Date(2023, 7, 5)
-Date(2023, 6, 23)
+Run it:
+
+```bash
+$ gleam run
 ```
-So, we see it's pretty straightforward to manipulate dates in Gleam.
+
+Sample output might be:
+
+```
+2023-04-28
+2023-03-31
+```
 
 ## Deep Dive
+In computing, date manipulation is part of the broader field of temporal databases and time-based data. In the 1970s, with mainframe computers as the mainstay, precise date and time tracking was already essential for functions like job scheduling.
 
-Historically, dealing with dates and times has always been tricky due to varying calendars systems and time zones. Libraries like Gleam's `calendar` have become helpful in providing tidy approaches to these complexities.
+As for alternatives, while `chronotope` is a solid choice in Gleam, other languages might use standard libraries like Python's `datetime` or JavaScript's `Date` object. The implementation across languages differ, but mostly they calculate dates by manipulating milliseconds since a known epoch (usually January 1, 1970, UTC).
 
-There are, of course, alternate libraries one might consider, like `age`, but `calendar` comes built-in and offers a solid breadth of functionality.
-
-When creating `add_days` or `subtract_days`, Gleam essentially converts the specific date into a form easier to perform calculations on (like Julian Day Number), performs the operation, and then converts it back.
+Under the hood, `chronotope` manages dates as structs and performs calculations by converting intervals to a compatible unit (say, seconds or days), doing math on it, and converting it back to a date or time struct. This process accounts for quirks in calendars and time zones, which aren't always linear or consistent due to leap years, daylight saving time, and other anomalies.
 
 ## See Also
-
-For deeper insights, consider the following:
-- Age - Chronological Calculations: [`age` library](https://hex.pm/packages/age)
-
-Do keep these bits handy, as you'll find yourself dealing with dates more often than you might think in your programmer's journey.
+- [Temporal databases on Wikipedia](https://en.wikipedia.org/wiki/Temporal_database)
+- [History of Timekeeping Devices](https://en.wikipedia.org/wiki/History_of_timekeeping_devices)

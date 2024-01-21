@@ -1,7 +1,8 @@
 ---
-title:                "文字列を小文字に変換する"
-html_title:           "Arduino: 文字列を小文字に変換する"
-simple_title:         "文字列を小文字に変換する"
+title:                "文字列を小文字に変換"
+date:                  2024-01-20T17:38:17.903069-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "文字列を小文字に変換"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,35 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+文字列を小文字に変換するとは、プログラム上で全ての大文字を小文字に一括して変えることです。これは、大文字・小文字を区別しない検索や、データの整形・標準化の際に役立ちます。
 
-文字列を小文字に変換するとは、基本的に大文字を小文字にする操作です。これは、一致テスト、ソート、または他の比較操作を実行する前の文字列の正準化が必要な際にプログラマーが行います。
+## How to: (方法)
+Clojureでは`clojure.string/lower-case`関数を使って文字列を小文字に変えます。
 
-## 使い方：
+```clojure
+(require '[clojure.string :as str])
 
-以下のようなコード例とその結果を参考にしてください：
-
-```Clojure
-(defn to-lower-case [str]
-  (.toLowerCase str))
+;; 文字列を小文字に変換
+(str/lower-case "Hello, World!")
+;; => "hello, world!"
 ```
 
-この関数は、指定された文字列をすべて小文字に変換します。以下に例を示します。
+シンプルですね。試してみてください。
 
-```Clojure
-(println (to-lower-case "HELLO WORLD")) ;; => hello world
+## Deep Dive (掘り下げ)
+Clojureでの小文字変換はJavaの`toLowerCase`を裏側で使います。これはUnicode標準に従っているため、多言語に対応しています。
+
+以前のバージョンでは独自の実装だったこともありますが、標準化と効率のためJavaのメソッドが利用されています。
+
+他の方法？`map`関数と`Character/toLowerCase`で一文字ずつ変換することもできますが、遅く不便です。
+
+```clojure
+(apply str (map #(Character/toLowerCase %) "Hello, World!"))
+;; => "hello, world!"
 ```
 
-## 深堀り：
+普通は`clojure.string/lower-case`を使いましょう。
 
-文字列の小文字化はコンピューティングの歴史の初期から存在していました。最初は機械語やアセンブリ言語レベルで操作が行われていましたが、現在ではほぼすべての高級プログラミング言語で組み込み関数として使用できます。
-
-代替手段としては、特定の状況（例えば、特定のキャラクタセットでの使用）で自分で関数を書くか、または異なる方法で大文字と小文字を無視することなどがあります。
-
-`toLowerCase`メソッドの内部実装により、無視してよい詳細な差異が存在します。在り方としては、特定の状況下での特別な文字の変換（例えば、トルコ語の"ı"のような）をうまく処理します。
-
-## 参考資料：
-
-- Clojure String API - https://clojuredocs.org/clojure.string/lower-case
-- UnicodeとCase Mapping - http://www.unicode.org/versions/Unicode7.0.0/ch03.pdf#G33902
-- 他のプログラミング言語での文字列の小文字化 - https://rosettacode.org/wiki/String_case
+## See Also (関連情報)
+- Clojureの公式ドキュメントの`clojure.string/lower-case`: https://clojuredocs.org/clojure.string/lower-case
+- Unicodeの標準について: https://unicode.org/
+- Javaの`toLowerCase`について: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toLowerCase()

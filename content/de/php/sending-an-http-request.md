@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anforderung senden"
-html_title:           "Bash: Eine HTTP-Anforderung senden"
-simple_title:         "Eine HTTP-Anforderung senden"
+title:                "Einen HTTP-Request senden"
+date:                  2024-01-20T18:00:06.622860-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Einen HTTP-Request senden"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -11,49 +12,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+HTTP-Anfragen sind der Weg, wie deine Webseite oder Anwendung mit anderen Servern und APIs spricht. Wir nutzen sie, um Daten zu holen, zu senden oder Dienste von externen Quellen zu nutzen.
 
-Ein HTTP-Request ist ein Anforderungsprotokolldetail, das ein Client an einen Server sendet, um spezifische Informationen zu erhalten. Programmierer senden HTTP-Requests, um datengetriebene Operationen wie das Abrufen, Senden oder Aktualisieren von Daten auf einem Server durchzuführen.
-
-## So geht's:
-
-Mit PHP können Sie mithilfe der Funktion `file_get_contents` einen einfachen HTTP-GET-Request senden. Hier ist ein Beispiel:
+## How to:
+In PHP nutzen wir cURL oder Streams, um HTTP-Anfragen zu senden. Hier ist ein PHP-Snippet, das zeigt, wie man eine GET-Anfrage mit cURL macht:
 
 ```PHP
 <?php
-$response = file_get_contents('http://example.com');
-echo $response;
+$curl = curl_init();
+
+curl_setopt($curl, CURLOPT_URL, "http://example.com");
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+$response = curl_exec($curl);
+if ($response === false) {
+    echo 'cURL Error: ' . curl_error($curl);
+} else {
+    echo 'Antwort erhalten: ' . $response;
+}
+
+curl_close($curl);
 ?>
 ```
-In diesem Code sendet `file_get_contents` einen HTTP-GET-Request an `http://example.com` und gibt die Antwort zurück. 
 
-Für komplexere Anfragen können Sie die cURL-Bibliothek verwenden:
+Output:
+```
+Antwort erhalten: [Hier kommt die Antwort des Servers]
+```
+
+Und so sieht's mit Streams aus:
 
 ```PHP
 <?php
-$ch = curl_init();
+$options = [
+    'http' => [
+        'method'  => 'GET',
+        'header'  => 'Accept: application/json'
+    ]
+];
+$context = stream_context_create($options);
+$response = file_get_contents('http://example.com', false, $context);
 
-curl_setopt($ch, CURLOPT_URL, 'http://example.com');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-$response = curl_exec($ch);
-
-curl_close ($ch);
-
-echo $response;
+if ($response) {
+    echo 'Antwort erhalten: ' . $response;
+} else {
+    echo 'Fehler beim Holen der Daten.';
+}
 ?>
 ```
-Dieser Code sendet ebenfalls einen HTTP-GET-Request an `http://example.com`, ermöglicht aber eine größere Kontrolle und Anpassungsmöglichkeiten.
 
-## Vertiefung:
+Output:
+```
+Antwort erhalten: [Hier kommt die Antwort des Servers]
+```
 
-HTTP-Requests sind der Kern der Kommunikation im Web und wurden erstmals im HTTP/1.0-Standard von 1996 definiert. Neben GET gibt es noch eine Reihe anderer HTTP-Request-Methoden, darunter POST, PUT und DELETE, die verschiedene Arten von Interaktionen mit einem Server ermöglichen.
+## Deep Dive
+Vor langer Zeit war’s komplizierter, HTTP-Anfragen zu senden. Man musste per Hand Sockets öffnen und das HTTP-Protokoll zeilenweise schreiben. Mit der Zeit hat PHP das vereinfacht. cURL ist seit PHP v4.0.2 verfügbar, aber erst seit v5.0.0 ist das Arbeiten mit HTTP-Streams einfacher geworden.
 
-Es gibt viele Alternativen zu `file_get_contents` und cURL in PHP, einschließlich fsockopen, fopen und das Http-Paket von PECL. Welche Sie verwenden, hängt von Ihren spezifischen Bedürfnissen und Präferenzen ab. 
+Alternativen zu cURL und Streams sind fertige Bibliotheken wie Guzzle, die noch komfortablere Schnittstellen bieten, aber zusätzliche Abhängigkeiten bedeuten.
 
-Die Implementierung von HTTP-Requests in PHP ist recht einfach, da die meisten Funktionen intern abstrahiert sind. Die Funktion `file_get_contents` beispielsweise verbirgt den tatsächlichen Prozess der Erstellung einer Socket-Verbindung, des Sendens eines HTTP-Requests und des Wartens auf die Antwort.
+Wenn du cURL benutzt, musst du dich mit verschiedenen Optionen auseinandersetzen wie Timeouts, User Agents und Header. Streams sind einfacher, aber nicht so mächtig. Denk an die Sicherheit bei beiden Ansätzen – zum Beispiel solltest du niemals SSL-Zertifikate ohne Überprüfung akzeptieren.
 
-## Siehe auch:
-
-1. PHP-Dokumentation: [file_get_contents](https://www.php.net/manual/de/function.file-get-contents.php) und [cURL](https://www.php.net/manual/de/book.curl.php)
-2. W3Schools: [PHP Ajax Request](https://www.w3schools.com/php/php_ajax_php.asp)
-3. [HTTP/1.0-Spezifikation](https://www.w3.org/Protocols/HTTP/1.0/spec.html)
+## See Also
+- [PHP Manual on HTTP Contexts](https://www.php.net/manual/en/context.http.php)
+- [PHP cURL Manual](https://www.php.net/manual/en/book.curl.php)
+- [Guzzle, PHP HTTP Client](http://docs.guzzlephp.org/en/stable/)
+- [Requests for PHP](https://requests.ryanmccue.info/)

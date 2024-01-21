@@ -1,7 +1,8 @@
 ---
-title:                "Laste ned en nettside"
-html_title:           "Elixir: Laste ned en nettside"
-simple_title:         "Laste ned en nettside"
+title:                "Nedlasting av en nettside"
+date:                  2024-01-20T17:45:00.781641-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Nedlasting av en nettside"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,42 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why? (Hva & Hvorfor?)
+Det å laste ned en nettside betyr å hente HTML og andre data fra en webserver. Vi programmerere gjør dette for å bruke eller bearbeide innholdet, som data scraping, offline visning, eller automatisering av oppgaver.
 
-Å laste ned en nettside handler om å hente data fra internett så vi kan jobbe med det lokalt. Dette er nyttig når programmerere bygger funksjoner som skraper data fra websider, eller når det er nødvendig å lagre nettinnhold for offline tilgang.
+## How to: (Slik gjør du:)
+Swift gir deg URLSession for nettverkskall. Her er en kjapp måte å laste ned innhold fra en nettside:
 
-## Hvordan gjøre det:
-
-Her er en enkel måte å laste ned nettsider med Swift ved hjelp av klassen `URLSession`.
-
-```Swift
+```swift
 import Foundation
 
-let url = URL(string: "http://...") // sett inn din egen URL her
-let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+let url = URL(string: "https://example.com")!
+let task = URLSession.shared.dataTask(with: url) { data, response, error in
     if let error = error {
-        print("Error: \(error)")
-    } else if let data = data {
-        let str = String(data: data, encoding: .utf8)
-        print("Data received:\n\(str ?? "")")
+        print("Client error: \(error.localizedDescription)")
+    } else if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+        if let mimeType = httpResponse.mimeType, mimeType == "text/html",
+           let data = data,
+           let string = String(data: data, encoding: .utf8) {
+            print("Downloaded web page: \(string)")
+        } else {
+            print("Invalid data or MIME type.")
+        }
+    } else {
+        print("Server error or status code not OK.")
     }
 }
+
 task.resume()
 ```
 
-Når du kjører denne koden, vil output være innholdet fra den oppgitte nettsiden.
+Eksempel på output:
+```
+Downloaded web page: <!doctype html>...
+```
 
-## Dypdykk 
+## Deep Dive (Dypdykk)
+Før `URLSession` var vi stuck med `NSURLConnection`, men `URLSession` er mer fleksibel og kraftfull. Du kan bruke `URLSessionConfiguration` for å tweake oppførselen, som datahåndtering og timeout-grenser. Det gir også mulighet for å håndtere oppgaver asynkront i bakgrunnen og støtter nedlastinger med pauser og gjenopptak. Et alternativ til `URLSession` er tredjepartsrammeverk som Alamofire, som legger til ekstra funksjoner og ofte har et enklere API.
 
-Historisk sett, hadde man tidligere påkrevde tredjeparts biblioteker for å laste ned nettsider, men nåværende versjoner av Swift har innebygd support for dette, som vist i eksempelet over. 
-
-For alternativer, kan du se på Alamofire, som er en populær tredjeparts nettverksbibliotek for Swift. Det tilbyr mer omfattende funksjonalitet, inkludert bedre feilhåndtering og mer.
-
-Når det gjelder implementeringsdetaljer, er det viktig å merke seg at koden ovenfor kjører asynkront. Det betyr at programmet vil fortsette å kjøre andre oppgaver på samme tid, og det vil ikke vente på at nettverksinnkallingen skal fullføres før det fortsetter.
-
-## Se Også 
-
-Hvis du ønsker å lære mer, her er noen ekstra ressurser:
-
-1. Apple Developer Documentation om URLSession: [Her](https://developer.apple.com/documentation/foundation/urlsession)
-2. Alamofire Home Page: [Her](https://github.com/Alamofire/Alamofire)
+## See Also (Se også)
+- Apple's URLSession documentation: https://developer.apple.com/documentation/foundation/urlsession
+- A guide to networking in Swift with URLSession: https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started
+- Alamofire GitHub page for an alternative networking approach: https://github.com/Alamofire/Alamofire

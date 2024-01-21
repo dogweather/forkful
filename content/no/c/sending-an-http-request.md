@@ -1,7 +1,8 @@
 ---
-title:                "Å sende en http-forespørsel"
-html_title:           "C++: Å sende en http-forespørsel"
-simple_title:         "Å sende en http-forespørsel"
+title:                "Å sende en HTTP-forespørsel"
+date:                  2024-01-20T17:59:04.057114-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,65 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Sender en HTTP-forespørsel med C
+## What & Why? (Hva & Hvorfor?)
+Å sende en HTTP-forespørsel innebærer å be en webserver om data eller utføre en handling. Programmerere gjør dette for å integrere nettjenester, hente informasjon, eller interagere med APIer.
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel er når en klient ber en server om data eller instrukser. Programmere gjør dette for å hente eller sende informasjon over Internett.
+## How to: (Slik gjør du:)
+For å sende en HTTP-forespørsel i C, kan du bruke `libcurl`, et kraftig bibliotek for overføringer av URLer. Følgende er et enkelt eksempel på hvordan du bruker `libcurl` til å gjøre en GET-forespørsel:
 
-## Hvordan:
-Her kommer noen raske eksempler på hvordan man kan sende en HTTP GET forespørsel ved å bruke C og libcurl biblioteket.
-
-Installer først libcurl hvis du ikke allerede har det.
-
-Linux:
-```C
-sudo apt-get install libcurl4-openssl-dev
-```
-
-macOS:
-```C
-brew install curl
-```
-
-Her er koden:
 ```C
 #include <stdio.h>
 #include <curl/curl.h>
- 
-int main(void) {
-  CURL *curl;
-  CURLcode res;
- 
-  curl_global_init(CURL_GLOBAL_DEFAULT);
- 
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
- 
-    res = curl_easy_perform(curl);
 
-    if(res != CURLE_OK) 
-      fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
- 
-    curl_easy_cleanup(curl);
-  }
- 
-  curl_global_cleanup();
- 
-  return 0;
+int main(void) {
+    CURL *curl;
+    CURLcode res;
+
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+
+        res = curl_easy_perform(curl);
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                    curl_easy_strerror(res));
+
+        curl_easy_cleanup(curl);
+    }
+    return 0;
 }
 ```
+Når du kjører koden, vil du se innholdet av `http://example.com` i konsollen din.
 
-## Dypdykk
-Bruken av HTTP-forespørsler strekker seg tilbake til tidlig utvikling av internett selv. Tidligere ble lignende interaksjoner oppnådd gjennom telnet økter eller lignende protokoller.
+## Deep Dive (Dypdykk)
+HTTP-forespørsler har vært en sentral del av webprogrammering siden 90-tallet. `libcurl` tilbyr ikke bare GET-forespørsler, men også POST, PUT og mange andre HTTP-metoder. Alternativer til `libcurl` inkluderer `libhttp` eller lavnivå sockets, men `libcurl` er bredt akseptert for sin enkelhet og robusthet.
 
-Som alternativer til HTTP-forespørsler, kan utviklere bruke WebSockets for en konstant åpen forbindelse mellom klient og server, eller nyere teknologi som HTTP/2 eller HTTP/3, som gir forbedret ytelse.
+Å bygge en HTTP-forespørsel krever en viss struktur: en startlinje, hoder (headers), og noen ganger en meldingskropp. `libcurl` håndterer disse detaljene for deg, men det er nyttig å forstå HTTP-protokollen for å skreddersy forespørsler effektivt.
 
-Det er mange detaljer bak implementering av en HTTP-forespørsel. Det er forskjellige metoder som GET, POST, DELETE etc., samt bruk av forskjellige header felt for å styre hvordan innholdet blir behandlet av serveren og klienten.
-
-## Se Også
-
-- [libcurl Dokumentasjon](https://curl.haxx.se/libcurl/c/)
-- [HTTP/2 Explained](https://http2.github.io/)
-- [HTTP/3 Explained](https://http3-explained.haxx.se/)
-- [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
+## See Also (Se også)
+- curl website: [https://curl.se/](https://curl.se/)
+- Wikipedia on HTTP: [https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+- 'libcurl' dokumentasjon: [https://curl.se/libcurl/](https://curl.se/libcurl/)

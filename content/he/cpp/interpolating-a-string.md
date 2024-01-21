@@ -1,7 +1,8 @@
 ---
-title:                "אינטרפולציה של מחרוזת"
-html_title:           "Arduino: אינטרפולציה של מחרוזת"
-simple_title:         "אינטרפולציה של מחרוזת"
+title:                "שרבוב מחרוזת"
+date:                  2024-01-20T17:50:55.893590-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרבוב מחרוזת"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,46 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+## What & Why? (מה ולמה?)
+פולמוס רצפים הוא התהליך שבו אנחנו מוסיפים משתנים או ביטויים לתוך מחרוזת. זה נעשה כדי ליצור הודעות מותאמות אישית או פלט דינמי.
 
-אינטרפולציה של מחרוזת היא הכנסת משתנים ישירות לתוך מחרוזת. מתכנתים עושים זאת כדי לחסוך בדיכאון גבוה של מחרוזות ולהפוך את הקוד ליותר קריא ונוח לכתיבה.
-
-## איך לעשות:
-
-נשתמש בשפת C++20 בו הוצגה תכונה חדשה שמאפשרת אינטרפולציה של מחרוזת באמצעות מחרוזות מעוצבות. נניח, לדוגמה, בשם דוגמאית ובמספר של כדורים.
+## How to: (איך לעשות:)
+ב-C++ עדיין אין תמיכה רשמית בפולמוס רצפים כמו בשפות אחרות (למשל, Python או JavaScript). אבל אנחנו יכולים עדיין להשיג תוצאות דומות. הנה דוגמה:
 
 ```C++
+#include <iostream>
 #include <string>
-#include <format>
 
 int main() {
-    std::string name = "Yosi";
-    int balls = 5;
+    std::string name = "יוסי";
+    int age = 30;
 
-    std::string message = std::format("Hello {}, you have {} balls.", name, balls);
-    std::cout << message << std::endl;
+    // שימוש ב-operator+ לשילוב מחרוזות ומשתנים
+    std::string greeting = "שלום, " + name + "! אתה בן " + std::to_string(age) + " שנים.";
+    std::cout << greeting << std::endl;
+
     return 0;
 }
 ```
-הפלט של הקוד הוא: `Hello Yosi, you have 5 balls.`
-
-## הסבר מעמיק
-
-אינטרפולציה של מחרוזת התחילה להינות מודעות רחבה בשנת 1980 עם שפת Perl, ומאז נפוצה בשפות כמו Python, Ruby ו- JavaScript. לפני שהוצעה התכונה החדשה ב- C++20, אפשר היה להשתמש בספריות צד שלישי כמו fmt או boost. 
-
-אם אתה לא משתמש ב-C++20 עליך שרשרת `to_string` ו- `+` למרכיבים שונים של המחרוזת או להשתמש בספריות צד שלישי.
-
-```C++
-std::string name = "Yosi";
-int balls = 5;
-std::string message = "Hello " + name + ", you have " + std::to_string(balls) + " balls.";
-std::cout << message << std::endl;
+תוצאת דוגמה:
 ```
-הפלט של הקוד הוא: `Hello Yosi, you have 5 balls.`
+שלום, יוסי! אתה בן 30 שנים.
+```
 
-## לקריאה נוספת:
+## Deep Dive (עיון מעמיק)
+למרות שב-C++ אין פונקציה קסומה לפולמוס רצפים, ניתן להשתמש במתודות כמו `std::stringstream` או פונקציות סידור מחרוזות כמו `sprintf` (אבל עם זהירות גדולה כדי למנוע באגים או נקודות תקלה באבטחה). כן הייתה ניסיון להוסיף את fmtlib, ספריה שפותחת דרך מודרנית יותר לעשות פולמוס רצפים, לתקן ה-C++20 אבל היא לא הספיקה להתקבל בזמן.
 
-זה רק סקיצה של תכונה כה רחבה וחדשה בשפת התכנות שלנו ואני ממליץ לך לשקול להעמיק:
-- שפת מסמך C++20 עצמה: https://isocpp.org/std/the-standard
-- ספרייה FMT: https://fmt.dev/latest/index.html
-- ספריית Boost Format: https://www.boost.org/doc/libs/1_76_0/libs/format/doc/format.html
+## See Also (ראה גם)
+- [fmtlib](https://github.com/fmtlib/fmt): ספריה חיצונית המספקת יכולת פולמוס רצפים מודרנית.
+- [C++ reference for std::stringstream](https://en.cppreference.com/w/cpp/io/basic_stringstream): מידע על `std::stringstream` במדריך ה-C++ הרשמי.
+- [C++ reference for std::to_string](https://en.cppreference.com/w/cpp/string/basic_string/to_string): מידע נוסף על המרת מספרים למחרוזות ב-C++.

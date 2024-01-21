@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon pituuden selvittäminen"
-html_title:           "Go: Merkkijonon pituuden selvittäminen"
+date:                  2024-01-20T17:46:48.078724-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "C"
 category:             "C"
@@ -10,47 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Artikkeli: Miten löytää merkkijonon pituus C-ohjelmoinnissa: Mikä, miksi ja miten?
+## What & Why (Mitä & Miksi)?
+Merkkijonon pituuden löytäminen kertoo meille merkkien määrän. Käytämme tätä tietoa muun muassa muistin varaukseen, merkkijonojen vertailuun ja käsittelyyn.
 
-## Mitä & Miksi?
-Merkkijonon pituuden löytäminen tarkoittaa sen määrittämistä, kuinka monta merkkiä merkkijonossa on. Ohjelmoijat tekevät tämän tietojen manipuloinnin ja valvonnan helpottamiseksi.
+## How to (Kuinka):
+C:ssä `strlen` funktio laskee merkkijonon pituuden. Tässä esimerkki:
 
-## Miten tehdä:
-C:n standardikirjaston `strlen`-funktio auttaa löytämään merkkijonon pituuden. Katso demokoodi:
-
-```C
-#include <string.h>
+```c
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-    char str[] = "Tervetuloa";
-    printf("Merkkijonon pituus on: %zu\n", strlen(str));
+    char text[] = "Hei Suomi!";
+    size_t len = strlen(text);
+    printf("Merkkijonon pituus on: %zu\n", len);
     return 0;
 }
 ```
-Tämän koodin suorittaminen näyttäisi tulostuksen:
+
+Tulosteena näytölle tulisi:
 
 ```
 Merkkijonon pituus on: 10
 ```
-## Syvempi syöksy
-`strlen` on osa C:n standardikirjastoa ja sitä on käytetty laajasti merkkijonotyyppisen datan käsittelyyn ohjelmissa.
 
-Vaihtoehtoisesti voit laskea merkkijonon pituuden itse käyttämällä loop-menetelmää, joka käy läpi merkkijonon, kunnes terminaattorimerkki `\0` löytyy.
+## Deep Dive (Syväsukellus):
+Historiallisesti `strlen` on ollut osa C-kirjastoa alusta alkaen, liittyen aikoihin ennen ANSI C-standardia. Funktion toteutus kulkee merkkijonon läpi, etsien lopettavaa 'null' terminaattoria (0). Vaihtoehtoisia keinoja pituuden laskemiseen voisivat olla itse kehitetty silmukka tai muut kirjastofunktiot, kuten `strnlen`, joka ottaa maksimipituuden argumenttina.
 
-Implementoinnissa `strlen` käy läpi merkkijonon merkki kerrallaan, kunnes se saavuttaa terminaattorimerkin, jolloin se palauttaa pituuden merkkeinä ja sulkee pois terminaattorin.
+Tarkempi ymmärrys `strlen`-funktion toiminnasta voi olla hyödyllinen suorituskyvyn optimointitilanteissa. Jotkut itse tehdyt toteutukset saattavat käyttää SIMD-ohjeita (Single Instruction, Multiple Data) tai muita optimointitekniikoita nopeuttaakseen laskemista.
 
-```C
-size_t my_strlen(char *str) {
-    char *s = str;
-    while(*s)
-        ++s;
-    return s - str;
-}
-```
-## Katso myös
-Lisätietoja ja aiheeseen liittyvää materiaalia löytyy seuraavista lähteistä:
-
-1. Man-sivu `strlen`: https://man7.org/linux/man-pages/man3/strlen.3.html
-2. StackOverflow keskustelu merkkijonon pituuden määrittämisestä: https://stackoverflow.com/questions/4289405/efficiently-finding-the-length-of-a-string-in-c
-3. C-kielen standardikirjastosta: https://en.wikipedia.org/wiki/C_standard_library
+## See Also (Katso Myös):
+- C Standard Library Reference: https://en.cppreference.com/w/c/string/byte/strlen
+- C Optimointitekniikat: https://www.agner.org/optimize/
+- GNU C Kirjaston Dokumentaatio: https://www.gnu.org/software/libc/manual/html_node/String-Length.html

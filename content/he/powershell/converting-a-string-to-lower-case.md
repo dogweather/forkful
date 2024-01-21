@@ -1,6 +1,7 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
-html_title:           "Go: המרת מחרוזת לאותיות קטנות"
+date:                  2024-01-20T17:39:11.300843-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,29 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-המרת מחרוזת לאותיות קטנות היא פונקציה שמשנה את כל האותיות הגדולות במחרוזת לקטנות. מתכנתים עושים זאת לצורך תיאום, או כאשר השוואת מחרוזות חייבת להיות רגישה או לא רגישה לאותיות גדולות. 
+## What & Why? - מה ולמה?
+להמיר מחרוזת לאותיות קטנות זה פשוט לשנות את כל האותיות הגדולות בתוך מחרוזת לגרסתן הקטנה. תוכניתנים עושים את זה לשם אחידות, למנוע בעיות בהשוואות רגישות לרישיות, ולעיבוד נתונים.
 
-## איך ל:
-אפשר להמיר מחרודת לאותיות קטנות ב-PowerShell עם הפקודה `ToLower()`. דוגמה:
-
-```PowerShell
-# הגדרת מחרוזת
-$s = "Hello, PowerShell!"
-# המרה לאותיות קטנות
-$t = $s.ToLower()
-write-output $t
-```
-הפלט יהיה:
+## How to - איך לעשות:
+קוד PowerShell פשוט לשינוי לאותיות קטנות:
 
 ```PowerShell
-hello, powershell!
+$string = "Shalom, Olam!"
+$lowerCaseString = $string.ToLower()
+$lowerCaseString
 ```
 
-## עיון מעמיק
-1) בהקשר ההיסטורי, הפונקציה `ToLower()` הייתה קיימת כבר ב.NET Framework והועברה ל-PowerShell.
-2) אלטרנטיבות: אפשר גם להשתמש בפונקציה `ToLowerInvariant()`.
-3) פרטים על המימוש: `ToLower()` משנה את התווים במחרוזת משפה משנה ממחרוזת למחרוזת באותו האורך.
+פלט לדוגמא:
 
-## ראו גם:
-- [מסמכי Microsoft על ToLower()](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=netframework-4.8)
+```
+shalom, olam!
+```
+
+## Deep Dive - צלילה לעומק:
+להמיר מחרוזת לאותיות קטנות היא פעולה שנעשית כבר שנים רבות בתחום התכנות, המטרה שלה למנוע בעיות רגישות רישיות. ב-PowerShell, השימוש ב`.ToLower()` מבוסס על מתודה מ-.NET Framework. ישנן גישות חלופיות, כמו הוספת `[cultureinfo]::InvariantCulture.TextInfo` לעבוד עם תרבויות שונות או שימוש ב`.ToLowerInvariant()` לאחידות תרבותית. Implementing a custom lowercasing function is an overkill when the built-in methods are generally very efficient and account for edge cases and locale-specific rules.
+
+## See Also - ראה גם:
+- [.NET Globalization and Localization](https://docs.microsoft.com/en-us/dotnet/standard/globalization-localization/)
+- [PowerShell Scripting](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2)
+- [String manipulation best practices in PowerShell](https://devblogs.microsoft.com/scripting/)`

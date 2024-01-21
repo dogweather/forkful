@@ -1,6 +1,7 @@
 ---
 title:                "Pesquisando e substituindo texto"
-html_title:           "Bash: Pesquisando e substituindo texto"
+date:                  2024-01-20T17:58:46.043728-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pesquisando e substituindo texto"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,39 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Procurar e Substituir Texto em Swift
+## O Que & Porquê?
 
-## O Que e Por Que?
+Procurar e substituir texto é basicamente mudar uma string por outra em um bloco de texto. Programadores fazem isso para atualizar dados, corrigir erros, ou até manipular a forma que o conteúdo é apresentado.
 
-Procurar e substituir texto é uma operação comum em programação que lida com a modificação de strings. Programadores fazem isso para realizar operações como correção de erros de digitação, reformatar dados de texto e outros cenários que exigem a alteração de partes específicas de uma string.
+## Como fazer:
 
-## Como Fazer:
+Segue um exemplo simples de como procurar e substituir texto em Swift:
 
-Aqui está um exemplo simples de como procurar e substituir texto em Swift usando o método `replacingOccurrences`.
+```swift
+let textoOriginal = "Olá, mundo! Programar é top!"
+let textoProcurado = "mundo"
+let substituicao = "universo"
 
-```Swift
-let texto = "Olá, mundo!"
-let novoTexto = texto.replacingOccurrences(of: "mundo", with: "Swift")
-print(novoTexto)
+let textoAtualizado = textoOriginal.replacingOccurrences(of: textoProcurado, with: substituicao)
+
+print(textoAtualizado)
 ```
 
-Saída:
+Output:
 
-```Swift
-Olá, Swift!
 ```
-Nesse caso, substituímos a palavra "mundo" por "Swift".
+Olá, universo! Programar é top!
+```
 
 ## Mergulho Profundo
 
-Historicamente, a necessidade de substituir texto levou à invenção de expressões regulares, que são uma maneira poderosa e flexível de procurar e editar texto. Em Swift, você também pode usar expressões regulares para procurar e substituir texto, embora possa ser mais complexo.
+Historicamente, a habilidade de procurar e substituir texto remonta às primeiras interfaces de editores de texto, como o VI e o Emacs. Em Swift e outras linguagens modernas, há diversas formas de realizar essa operação - você pode usar simples métodos como `replacingOccurrences`, ou até expressões regulares (Regex) para padrões mais complexos. A implementação em Swift é eficiente, mas vale sempre ficar de olho em casos de uso com grandes quantidades de texto, onde o desempenho pode ser um fator crítico.
 
-Há outras maneiras de realizar a tarefa de substituição de texto. Por exemplo, você pode dividir a string em um array de substrings, fazer a substituição nas partes desejadas e, em seguida, juntar tudo novamente. No entanto, o método `replacingOccurrences` é provavelmente o mais direto.
-
-Na implementação real, o método `replacingOccurrences` de Swift realiza uma pesquisa completa do texto alvo, coletando todas as posições de início dos textos de busca antes de fazer qualquer substituição. Isso significa que é segura para substituições que alteram o número de caracteres na string.
+Alternativas de implementação incluem o uso da classe `NSMutableString` ou frameworks como o `NSRegularExpression` para casos mais avançados onde mais controle é necessário. A escolha entre essas opções depende do seu caso específico e dos requisitos de desempenho.
 
 ## Veja Também
 
-- Documentação da Apple sobre Strings e Textos em Swift: [Apple Docs](https://developer.apple.com/documentation/swift/string)
-- Artigo: [Working with Strings in Swift](https://www.hackingwithswift.com/articles/141/8-powerful-swift-features-that-were-stolen-from-other-languages)
-- Guia: [Swift Standard Library String Reference](https://developer.apple.com/documentation/swift/string)
+- Apple Swift Documentation: [Text and Strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- Tutorial em vídeo sobre expressões regulares em Swift: [Swift Regex Tutorial](https://www.raywenderlich.com/2292-regular-expressions-tutorial-getting-started)
+- Documentação da Apple sobre `NSRegularExpression`: [NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)

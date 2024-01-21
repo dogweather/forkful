@@ -1,7 +1,8 @@
 ---
-title:                "Інтерполяція рядка"
-html_title:           "Java: Інтерполяція рядка"
-simple_title:         "Інтерполяція рядка"
+title:                "Інтерполяція рядків"
+date:                  2024-01-20T17:50:06.046178-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Інтерполяція рядків"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,25 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це і навіщо?
-Інтерполяція рядків полягає в вставці змінних або виразів всередину рядка. Програмісти використовують це для динамічного форматування інформації, що робить код більш зрозумілим і охайним.
+## What & Why? | Що і Чому?
 
-## Як це робиться:
-Простий приклад використання інтерполяції рядків в Arduino коді:
+String interpolation is plugging variables into strings. Programmers do it to create messages dynamically, merging text with data.
+Інтерполяція рядків - це вставлення змінних у рядки. Програмісти використовують це для динамічного створення повідомлень, поєднуючи текст з даними.
+
+## How to: | Як це зробити:
 
 ```Arduino
-String name = "Володимир";
-String greeting = String("Привіт, ") + name + String("!");
-Serial.println(greeting); // Виводимо: Привіт, Володимир!
+String name = "Andriy";
+int age = 25;
+
+// Concatenation
+String greeting = "Hello, " + name + "! You are " + age + " years old.";
+Serial.println(greeting);
+
+// With sprintf (C style)
+char buf[50];
+sprintf(buf, "Hello, %s! You are %d years old.", name.c_str(), age);
+Serial.println(buf);
+```
+Output:
+```
+Hello, Andriy! You are 25 years old.
+Hello, Andriy! You are 25 years old.
 ```
 
-## Занурюємося глибше
-Історичний контекст: Інтерполяція рядків використовувалася в програмуванні ще з часів мов Perl і Python, де ця ідея була широко прийнята.
+## Deep Dive | Поглиблений Аналіз:
 
-Альтернативи: Ви також можете використовувати `snprintf` або `sprintf` для форматування рядків, але це може бути менш інтуїтивно.
+Historically, C programmers used sprintf - Arduino inherited this. `+` is easier for simple strings, but sprintf offers formatting. Arduino doesn't support some advanced interpolation features like `printf` found in languages like Python. Interpolating strings efficiently is important to manage memory on low-power devices.
 
-Інформація про реалізацію: Зауважте, що в Arduino інтерполяція рядків реалізована через перевантаження оператора '+'. Це означає, що ви можете використовувати '+' для додавання рядків, але це використовує більше ресурсів, ніж `snprintf`.
+Історично програмісти на мові C використовували sprintf — Arduino успадкувало це. `+` простіше для легких рядків, але sprintf пропонує форматування. Arduino не підтримує деякі розширені можливості інтерполяції рядків, такі як `printf`, що доступні в мовах програмування типу Python. Ефективна інтерполяція рядків важлива для управління пам’яттю на пристроях з обмеженими ресурсами.
 
-## Дивіться також:
-- [Arduino - String Object](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [Arduino - Serial.print](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+## See Also | Дивіться Також:
+
+- Arduino `String` class reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- `sprintf()` documentation: https://www.cplusplus.com/reference/cstdio/sprintf/
+- Arduino memory management: https://www.arduino.cc/en/Tutorial/Foundations/Memory

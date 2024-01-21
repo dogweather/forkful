@@ -1,6 +1,7 @@
 ---
 title:                "Extrahera delsträngar"
-html_title:           "Arduino: Extrahera delsträngar"
+date:                  2024-01-20T17:45:12.247581-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extrahera delsträngar"
 programming_language: "C++"
 category:             "C++"
@@ -10,40 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Substrängar i C++: Hur och Varför Man Extraherar 
+## What & Why? (Vad & Varför?)
+Att extrahera delsträngar är processen att plocka ut specificerade delar från en sträng. Programmerare gör detta för att bearbeta, analysera eller modifiera textdata på ett flexibelt sätt.
 
-## Vad & Varför? 
-Extrahering av substrängar innebär att avskilja en liten del av en större sträng. Programmerare gör detta för att manipulera, söka i eller jämföra specifika delar av strängar.
+## How to (Hur man gör)
+Exempel på C++ med standardbiblioteket `<string>`:
 
-## Hur man gör:
-Funktionen `substr()` i C++ används för att extrahera substrängar. Låt oss ta en titt på ett exempel:
-
-```C++
+```cpp
 #include <iostream>
 #include <string>
 
 int main() {
-    std::string str = "Hej programmerare!";
+    std::string fullText = "Hallå världen! Välkommen till C++ programmering.";
+    std::string substring = fullText.substr(6, 7); // Start vid index 6, ta 7 tecken.
 
-    std::string substr = str.substr(4, 14);
+    std::cout << substring << std::endl; // Skriver ut "världen"
 
-    std::cout << substr;  // Skriver ut "programmerare!"
-    
     return 0;
 }
 ```
-Ovanstående kod extraherar substrängen "programmerare!". Funktionen `substr()` tar två argument: startpositionen och antalet tecken att extrahera.
-  
-## Fördjupning 
-Extrahering av substrängar i programmering har en lång historia. Det används frekvent för att lösa ett flertal problem, från textredigering till dataanalys.
+Output:
+```
+världen
+```
 
-I tidigare versioner av C++, innan `std::string` introducerades, använde man C-stilsträngar och teckenpekare för att arbeta med strängar. Men det ökade komplexiteten och skapade minneshanteringsproblem.
+Använd `find` för att hitta den startpunkt där delsträngen ska extraheras:
 
-Det finns även alternativa sätt att extrahera substrängar i C++, särskilt med regex (reguljära uttryck) vilket ger dig mer möjlighet att anpassa din sökning.
+```cpp
+#include <iostream>
+#include <string>
 
-Djupare in i kodningen, `substr()` funktionen skapar och returnerar en ny sträng. Det kan ha en prestandapåverkan om du arbetar med mycket stora strängar eller om din kod kör `substr()` ofta.
+int main() {
+    std::string fullText = "Hej! Jag heter Erik och jag lär ut C++.";
+    std::size_t startPos = fullText.find("Erik"); // Hittar startindex för "Erik".
+    std::string name = (startPos != std::string::npos) ? fullText.substr(startPos, 4) : "";
 
-## Se också
-För att ytterligare förstå konceptet extrahera substrängar rekommenderas följande källor:
-- CPlusPlus.com: [std::string::substr](http://www.cplusplus.com/reference/string/string/substr/)
-- Stack Overflow: [Understanding the use of 'std::string::substr'](https://stackoverflow.com/questions/4643512/when-we-use-substr-in-c)
+    std::cout << name << std::endl; // Skriver ut "Erik"
+
+    return 0;
+}
+```
+Output:
+```
+Erik
+```
+
+## Deep Dive (Djupdykning)
+Extrahering av delsträngar är inte nytt; det har varit en del av programmeringsspråk så länge som strängar har funnits. I C++ använder vi `substr` funktionen från `<string>` biblioteket.
+
+Det finns alternativ till `substr`, som att använda iterators eller `copy` funktionen tillsammans med `back_inserter` för att skapa delsträngar. Valet mellan metoderna beror på situationen.
+
+När det gäller implementationen utför `substr` en kopia av data från ursprungssträngen, vilket kan vara en kostsam operation för mycket långa strängar.
+
+## See Also (Se Även)
+- [cplusplus.com/reference/string/string/substr/](http://www.cplusplus.com/reference/string/string/substr/)
+- [en.cppreference.com/w/cpp/string/basic_string/substr](https://en.cppreference.com/w/cpp/string/basic_string/substr)
+- [cplusplus.com/reference/string/string/find/](http://www.cplusplus.com/reference/string/string/find/)

@@ -1,7 +1,8 @@
 ---
-title:                "Lendo argumentos de linha de comando"
-html_title:           "Arduino: Lendo argumentos de linha de comando"
-simple_title:         "Lendo argumentos de linha de comando"
+title:                "Lendo argumentos da linha de comando"
+date:                  2024-01-20T17:56:13.429214-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,38 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
-
-A leitura de argumentos da linha de comando é uma prática que permite que os programadores passem informações ao programa durante a inicialização. Isso fornece mais controle e flexibilidade ao comportamento do seu software.
+## O Que & Porquê?
+Argumentos de linha de comando são informações que você passa para o seu programa Java ao iniciá-lo. Programadores usam isso para customizar a execução de um aplicativo sem mudar o código.
 
 ## Como Fazer:
-Segue o exemplo:
+Aquela linha de comando clássica `public static void main(String[] args)`? Ela está te dizendo "Ei, me passa alguns argumentos!" Vamos ver isso em ação:
 
-```Java
-public class ArgumentosCommandLine {
+```java
+public class LeitorDeArgumentos {
     public static void main(String[] args) {
-        for(String arg: args){
-            System.out.println("Argumento fornecido = " + arg);
+        if (args.length > 0) {
+            System.out.println("Argumentos recebidos:");
+            for (String arg : args) {
+                System.out.println(arg);
+            }
+        } else {
+            System.out.println("Nenhum argumento foi passado.");
         }
     }
 }
-```
-Correndo o programa com `java ArgumentosCommandLine Oi programador`, o output será:
 
 ```
-Argumento fornecido = Oi
-Argumento fornecido = programador
+Executando `java LeitorDeArgumentos esses são argumentos` gera:
+```
+Argumentos recebidos:
+esses
+são
+argumentos
 ```
 
-## Mergulho Profundo
+## Aprofundando:
+Historicamente, argumentos de linha de comando são tão antigos quanto os próprios computadores pessoais. Eles são o ponto de partida para a interação do usuário com muitos programas em modo texto, desde os tempos do DOS.
 
-Tradicionalmente, ler argumentos da linha de comando em Java é fácil devido ao array de Strings (`String[] args`) passado para a função `main()`. Esta prática é herdada da linguagem C.
+Alternativas? Em Java, você pode pedir inputs durante a execução com `Scanner` ou interfaces gráficas. Mas isso é outra conversa.
 
-Alternativamente, pode-se usar uma biblioteca como a Apache Commons CLI para ter mais opções e controle ao lidar com argumentos complexos.
+Quanto à implementação, `args` é um array de `String`. Cada espaço na linha de comando separa os argumentos, e eles são passados para o `args` pela ordem que aparecem.
 
-Os detalhes da implementação são importantes. Embora comandos em lote e scripts de shell geralmente aceitem argumentos sem a necessidade de manipulação adicional significativa, a aplicação de argumentos no caso de programas Java precisa de um cuidado extra. Em Java, argumentos são acessados através do array `args[]` mencionado anteriormente, que é carregado com dados na inicialização do programa.
-
-## Veja Também
-
-1. [Oracle Java Documentation on the Main Method](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-2. [Apache Commons CLI Library](https://commons.apache.org/proper/commons-cli/)
+## Veja Também:
+- A documentação oficial da Oracle sobre linhas de comando em Java: [Oracle docs](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- Tutorial para inicialização de JavaFX que também usa argumentos de linha de comando: [JavaFX](https://docs.oracle.com/javafx/2/get_started/jfxpub-get_started.htm)
+- Para uma abordagem mais robusta, olhe para o Apache Commons CLI, que ajuda a parsear argumentos de linha de comandos mais complexos: [Commons CLI](https://commons.apache.org/proper/commons-cli/)

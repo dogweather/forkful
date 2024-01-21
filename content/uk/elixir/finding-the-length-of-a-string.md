@@ -1,7 +1,8 @@
 ---
-title:                "Знаходження довжини рядка"
-html_title:           "Arduino: Знаходження довжини рядка"
-simple_title:         "Знаходження довжини рядка"
+title:                "Визначення довжини рядка"
+date:                  2024-01-20T17:47:03.420251-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Визначення довжини рядка"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,40 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Визначення довжини рядка в Elixir
+## What & Why?
+(Що і чому?)
 
-## Що і Навіщо?
+Finding the length of a string means counting the number of characters it contains. Programmers do this to validate input, control loops, or work with data structures.
 
-Визначення довжини рядка - це процес з'ясування кількості символів у даному рядку. Програмісти роблять це, щоб контролювати та керувати обробкою текстових даних у ваших програмах.
+## How to:
+(Як зробити:)
 
-## Як це зробити:
+In Elixir, we use the `String.length/1` function. Here's how:
 
-У Elixir, функція `String.length/1` використовується для визначення довжини рядка. Подивімося на декілька прикладів:
-
-```Elixir
-name = "Володимир"
-IO.puts(String.length(name))
-# Виведе: 9
-
-sentence = "Це приклад речення в Elixir"
-IO.puts(String.length(sentence))
-# Виведе: 27
+```elixir
+my_string = "Привіт, світ!"
+length = String.length(my_string)
+IO.puts(length)
 ```
 
-## Занурення в деталі
+Output:
 
-1. Історичний контекст: Elixir виник на основі Erlang VM, який був створений в 1986 році для розробки надійних систем. Функція визначення довжини рядка була включена з самого початку, щоб обробляти текстові дані.
-
-2. Альтернативи: Можна також обчислити довжину рядка за допомогою функції `byte_size/1`. Але вона повертає довжину в байтах, а не в символах.
-
-```Elixir
-IO.puts(byte_size("Привіт"))
-# Виведе: 12, а не 6
+```
+13
 ```
 
-3. Деталі реалізації: В Elixir, рядки - це бінарні дані UTF-8. Функція `String.length/1` сканує рядок і рахує кількість символів UTF-8.
-   
-## Дивіться також
+## Deep Dive
+(Поглиблене занурення:)
 
-1. [Elixir Getting Started Guide](https://elixir-lang.org/getting-started/introduction.html)
-3. [How Does the Length Function work?](https://stackoverflow.com/questions/4859217/how-does-the-length-function-work-in-erlang)
+Finding the length of a string is straightforward but it's worth noting that Elixir handles Unicode correctly, counting graphemes, not bytes. Historically, not all programming languages did this, which led to inaccurate lengths with non-ASCII characters.
+
+For alternatives, we might consider `byte_size/1`, but this measures raw bytes, not characters, so it's different.
+
+Understanding the implementation, Elixir's usage of the BEAM VM means it's built with Unicode awareness from the ground up, ensuring accurate string length measurements regardless of the language used.
+
+## See Also
+(Див. також:)
+
+- Elixir's official docs on strings: https://hexdocs.pm/elixir/String.html
+- Unicode in Elixir: https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html
+- Graphemes vs. bytes discussion: http://jozefg.bitbucket.io/posts/2015-01-29-unicode.html

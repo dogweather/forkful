@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-html_title:           "Arduino: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+date:                  2024-01-20T17:38:08.381675-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,38 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mikä ja Miksi?)
+Muuttaa merkkijonon kaikki kirjaimet pieniksi. Teemme sen datan yhdenmukaistamiseen, vertailuihin ja haun yksinkertaistamiseen.
 
-Merkkijonon muuttaminen pieniksi kirjaimiksi tarkoittaa, että kaikki merkkijonon kirjaimet vaihdetaan pieniksi kirjaimiksi. Tätä käytetään usein, kun halutaan käsitellä merkkijonoja tapausriippumattomasti, kuten haku- ja vertailutoiminnoissa.
-
-## Näin teet:
-
-Clojure-langossa String-objektien muuttaminen pieniksi kirjaimiksi tapahtuu `clojure.string/lower-case` -funktion avulla. Tässä on esimerkkikoodi:
+## How to: (Kuinka tehdään:)
+Clojure käyttää `clojure.string/lower-case` funktiota.
 
 ```Clojure
 (require '[clojure.string :as str])
-(defn to-lower-case [s]
-  (str/lower-case s))
 
-;; Testaa funktiota 
-(print (to-lower-case "Hei Maailma"))
-;; Tulostaa: "hei maailma"
+(str/lower-case "Moi MAAILMA!") ;=> "moi maailma!"
+(str/lower-case "Hyvää Päivää!") ;=> "hyvää päivää!"
+(str/lower-case "123 ABC def!")  ;=> "123 abc def!"
 ```
 
-## Syvällisemmin:
+Saat saman tuloksen jokaiselle esimerkille.
 
-(1) Historiallinen konteksti: Merkkijonon pieniksi kirjaimiksi muuttaminen on perusominaisuus, joka on ollut käytettävissä monissa ohjelmointikielissä.
+## Deep Dive (Sukellus Syvyyksiin)
+Alkulähteissä, merkkijonot oli vain isoja kirjaimia. Pienet kirjaimet luotiin selkeyden vuoksi. Clojuren `lower-case` toimii Unicode-tietojen kanssa, mikä tarkoittaa että se toimii eri kielillä, ei pelkästään englannissa.
 
-(2) Vaihtoehdot: Voimme käyttää Clojuren `map` ja `Character/toLowerCase` toimintojen yhdistelmää, jos haluamme:
+Vaihtoehtona, voit itse käydä merkkijonon läpi ja muuttaa kirjaimet käyttäen Java metodeja, koska Clojure on JVM-pohjainen.
 
 ```Clojure
-(defn to-lower-case-v2 [s]
-  (apply str (map Character/toLowerCase s)))
+(.toLowerCase "Tämä on Testi!") ;=> "tämä on testi!"
 ```
 
-(3) Toteutusdetailit: `clojure.string/lower-case`-funktio kutsuu Javan String alustan `toLowerCase`-funktiota, joka muuttaa kaikki isot kirjaimet pieniksi kirjaimiksi.
+Mutta Clojuren standardikirjasto on usein puhdas ja lyhyempi tapa toteuttaa tämä.
 
-## Katso myös:
+Koodi toimii kutsuen Java String `toLowerCase` metodia sisäisesti, mikä takaa nopeuden ja varmuuden.
 
-- API-dokumentaatio: https://clojuredocs.org/clojure.string/lower-case
-- StackOverflow-keskusteluista: https://stackoverflow.com/questions/3395294/transforming-string-casing-in-clojure
+## See Also (Katso Myös)
+- Clojure Docs: [clojure.string/lower-case](https://clojuredocs.org/clojure.string/lower-case)
+- Oracle Java Docs: [`String.toLowerCase`](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toLowerCase())

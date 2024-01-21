@@ -1,7 +1,8 @@
 ---
-title:                "भविष्य या अतीत में एक तारीख की गणना"
-html_title:           "Javascript: भविष्य या अतीत में एक तारीख की गणना"
-simple_title:         "भविष्य या अतीत में एक तारीख की गणना"
+title:                "भविष्य या अतीत में तारीख की गणना"
+date:                  2024-01-20T17:31:41.664690-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "भविष्य या अतीत में तारीख की गणना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -12,28 +13,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्या और क्यों?
 
-भविष्य या अतीत की तारीख की गणना क्या होती है, आप जैसे शायद समझ रहे होंगे, यह संगणकीय शब्द है जिसका मतलब होता है कि आप एक तारीख के विचारना कर रहे हैं और इसे आगे या पिछे बढ़ा रहे हैं। प्रोग्रामर्स इसे इसलिए करते हैं क्योंकि यह एक आम क्रिया है जो किसी भी प्रोग्राम में उत्प्रेरणात्मकता को बढ़ाता है।
+JavaScript में भविष्य या अतीत की तारीख की गणना करना सरल है। इसकी जरूरत छुट्टियों की योजना, समय-सीमा तय करने, या पुरानी फाइलों के रिकार्ड्‌स को संभालने में पड़ सकती है। 
 
 ## कैसे करें:
 
 ```Javascript
-// भविष्य की तारीख की गणना
-let futureDate = new Date();
-futureDate.setDate(futureDate.getDate() + 10); // 10 दिन बाद की तारीख
-console.log(futureDate);
+// आज की तिथि
+const today = new Date();
 
-// अतीत की तारीख की गणना
-let pastDate = new Date();
-pastDate.setDate(pastDate.getDate() - 20); // 20 दिन पहले की तारीख
-console.log(pastDate);
+// 10 दिन बाद की तिथि
+const tenDaysLater = new Date(today);
+tenDaysLater.setDate(tenDaysLater.getDate() + 10);
+console.log(tenDaysLater.toString()); // "Sun Apr 10 2023 12:00:00 GMT+0530 (India Standard Time)"
+
+// 30 दिन पहले की तिथि
+const thirtyDaysAgo = new Date(today);
+thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+console.log(thirtyDaysAgo.toString()); // "Thu Mar 02 2023 12:00:00 GMT+0530 (India Standard Time)"
 ```
 
-## गहरी दीक्षा:
+## गहराई से जानकारी:
 
-तारीखों की गणना का इतिहास काफी पुराना है, जब भी कंप्यूटरों को किसी घटना के आधार पर कार्य करना पड़ता है। JavaScript में `Date` वस्तु तारीखों की गणना को आसान बनाती है, लेकिन यह अधिक सुविधाजनक हो सकता है তਥਾ-third-party libraries, like Moment.js or date-fns का उपयोग करके। उन्होंने विभिन्न समय क्षेत्र, प्रारूप और मानकों के साथ काम करने के लिए API बनाई है । यदि आपको दिनांक में सटीकता की ज़रूरत है, तो `setDate` के बजाय `setUTCHours` का उपयोग करना शायद ठीक रहेगा।
+तिथियों की गणना के लिए JavaScript में `Date` ऑब्जेक्ट शुरू से ही रहा है, लेकिन समय के साथ इसमें सुधार होते रहे हैं। अन्य तरीकों में, Moment.js और Date-fns जैसे लाइब्रेरीज शामिल हैं, लेकिन ज्यादा सरल गणना के लिए आमतौर पर इनकी जरूरत नहीं पड़ती। जब आप `setDate()` मेथड का उपयोग करते हैं, तो JavaScript खुद ही महीने और वर्ष को संभाल लेता है, अगर तारीखें उनकी सीमा को पार कर जाती हैं। यह समझने के लिए कि JavaScript किस तरह तारीखों को संभालता है, MDN Web Docs का उपयोग कर सकते हैं। 
 
-## देखें भी:
+## संबंधित स्रोत:
 
-- [MDN Web Docs: JavaScript Dates](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Numbers_and_dates#Date_object)
-- [Moment.js](http://momentjs.com/)
-- [date-fns](https://date-fns.org/)
+- MDN Web Docs on JavaScript Dates: [Mozilla MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- JavaScript Info on Date and Time: [JavaScript.info](https://javascript.info/date)
+- Moment.js Library: [Moment.js](https://momentjs.com/)
+- Date-fns Library: [Date-fns](https://date-fns.org/)

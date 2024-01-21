@@ -1,7 +1,8 @@
 ---
-title:                "भविष्य या अतीत में एक तारीख की गणना"
-html_title:           "Ruby: भविष्य या अतीत में एक तारीख की गणना"
-simple_title:         "भविष्य या अतीत में एक तारीख की गणना"
+title:                "भविष्य या अतीत में तारीख की गणना"
+date:                  2024-01-20T17:32:31.828383-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "भविष्य या अतीत में तारीख की गणना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -11,10 +12,12 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-भविष्य या अतीत की तारीख की गणना करना मतलब किसी विशेष तारीख से अगले या पिछले कुछ समय की तारीख को ज्ञात करना। कार्यक्रमकर्ताओं को इसे इसलिए करना पड़ता है क्योंकि यह तारीख पर आधारित ऍप्लिकेशन्स निर्माण करने में मदद करता है। 
+
+तारीख की गणना करना मतलब भविष्य या अतीत की कोई निश्चित तारीख तक पहुँचना। प्रोग्रामर्स इसलिए करते हैं क्योंकि कभी-कभी अनुप्रयोग को प्रोजेक्ट डेडलाइन, बिल की अवधियाँ, या उपयोगकर्ता की गतिविधियों का हिसाब रखना पड़ता है।
 
 ## कैसे करें:
-Ruby में `Date` क्लास का उपयोग करके आप तारीखों की गणना कर सकते हैं। 
+
+Ruby में तारीखें गणना करना सरल है। आइये, देखें:
 
 ```Ruby
 require 'date'
@@ -23,20 +26,25 @@ require 'date'
 today = Date.today
 puts "आज की तारीख: #{today}"
 
-# 5 दिन बाद की तारीख
-future_date = today + 5
-puts "5 दिन बाद की तारीख: #{future_date}"
+# 10 दिन बाद की तारीख
+future_date = today + 10
+puts "10 दिन बाद की तारीख: #{future_date}"
 
-# 7 दिन पहले की तारीख
-past_date = today - 7
-puts "7 दिन पहले की तारीख: #{past_date}"
+# 20 दिन पहले की तारीख
+past_date = today - 20
+puts "20 दिन पहले की तारीख: #{past_date}"
 ```
-तारीख की गणना करने के लिए '+' और '-' ऑपरेटर का उपयोग किया जा रहा है। 
 
-## गहरा आवेशन
-Ruby में `Date` क्लास का परिचय रूबी 1.9.2 के साथ हुआ जिसने तारीख की संगणना करने की प्रक्रिया को बहुत सरल बना दिया। इसके विकल्प में `Time` क्लास और गहरा 'DateTime' क्लास मिलते हैं, लेकिन `Date` क्लास की सरलता और स्पष्टता को मानते हुए यह सबसे अधिक प्रेरित करने वाला है।
+यह कोड तीन तारीखें दिखाएगा: आज, आज से 10 दिन बाद और आज से 20 दिन पहले।
 
-## अधिक देखें
-1. [Ruby Docs - Date Class](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html) - रूबी Date क्लास की विस्तृत जानकारी के लिए। 
-2. [Ruby Guides - Date & Time in Ruby](https://www.rubyguides.com/2015/12/ruby-time/) - Ruby में तारीख और समय के बारे में अधिक जानकारी के लिए।
-3. [StackOverflow - Calculating Future/Past Dates](https://stackoverflow.com/questions/2737949/ruby-see-if-a-date-is-in-the-past-or-future) - Ruby में भविष्य/अतीत की तारीख की गणना के उदाहरण के लिए।
+## गहराई से जानकारी
+
+तारीख की गणना अक्सर `Date` और `Time` क्लासेज़ के साथ की जाती है। Ruby 1.9 के बाद से, हमारे पास improved `Date` और `DateTime` क्लासेज़ हैं। फिर भी, जटिल समय संबंधी गणना के लिए हम `time` स्टैंडर्ड लाइब्रेरी या gems जैसे की `active_support` का उपयोग कर सकते हैं। यह गणना टाइमज़ोन्स और लीप ईयर्स को भी ध्यान में रखती है। 
+
+वैकल्पिक रूप से, प्रोग्रामर्स `chronic` गेम का भी उपयोग कर सकते हैं जो तारीखों की और अधिक स्वाभाविक गणना देता है। 
+
+## अन्य संबंधित सूत्र
+
+- Ruby की अधिकृत डॉक्युमेंटेशन: [Date](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html) और [Time](https://ruby-doc.org/core-3.0.0/Time.html)
+- RubyGems पर `active_support` gem: [Active Support](https://rubygems.org/gems/activesupport)
+- RubyGems पर `chronic` gem: [Chronic](https://rubygems.org/gems/chronic)

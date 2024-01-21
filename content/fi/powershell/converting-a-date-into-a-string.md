@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän muuttaminen merkkijonoksi"
-html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+date:                  2024-01-20T17:37:26.096736-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,33 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Muunnetaan päivämäärä merkkijonoksi. Se puree tiedot ihmisen luettavaan muotoon tai valmistelee ne tallennusta varten. Tiedon esittäminen tietyssä muodossa on tärkeää raporteissa, lokitiedostoissa ja käyttöliittymissä.
 
-Päivämäärän muuntaminen merkkijonoksi PowerShellissa tarkoittaa päivämääräobjektin esittämistä luettavassa muodossa. Tätä tehdään, jotta päivämäärät olisi helpompi tallentaa ja käyttää eri sovelluksissa.
-
-## Miten näin:
-
-Tässä on yksinkertainen esimerkki miten se tehdään:
+## How to: (Kuinka Tehdä:)
+PowerShellissa päivämäärää merkkijonoksi muuttaminen käyttää `Get-Date` cmdletiä ja sen `-Format` parametria.
 
 ```PowerShell
+# Perusmuoto
 $pvm = Get-Date
-$pvmmerkkijonona = $pvm.ToString("dd.MM.yyyy")
+$pvm.ToString()
 
-#Tulostaa esimerkiksi: 12.07.2022
-Write-Host $pvmmerkkijonona
+# Formaatti mukautetulla tavalla
+$pvm_string = $pvm.ToString("yyyy-MM-dd")
+Write-Output $pvm_string
+
+# Tai käytä -Format parametria
+$formatted = Get-Date -Format "dd.MM.yyyy HH:mm"
+Write-Output $formatted
 ```
-Joten seuraavassa esimerkissä käytämme `Get-Date` komentoa saadaksemme nykyisen päivämäärän ja `.ToString()` funktiota muuntaaksemme sen merkkijonoksi.
 
-## Syvempi sukellus:
+Tulosteesimerkit:
+```
+04.04.2023 19:45:17
+2023-04-04
+04.04.2023 19:45
+```
 
-Historiallisesti päivämäärän muuntamista merkkijonoiksi on käytetty monissa sovelluksissa, kuten tietokannoissa ja tiedostojen nimissä, jotta tiedot saadaan järjestettyä ja löydettäväksi. 
+## Deep Dive (Syväsukellus):
+Päivämäärän muuntaminen merkkijonoksi on ollut osa skriptikieliä iät ja ajat, koska päivämäärät ovat olleet tietokoneohjelmoinnin alkuajoista lähtien tärkeitä. PowerShell versiosta 1.0 lähtien, `Get-Date` cmdlet on antanut helpon tavan käsitellä päivämääriä.
 
-Vaihtoehtoisesti voit määrittää DateTime-objekteja yksilöllisillä muotoiluilla käyttämällä `.ToString("muoto")` -metodia. Esimerkiksi, `.ToString("dd-MM-yyyy HH:mm:ss")` palauttaa merkkijonon muodossa "12-07-2022 14:30:00".
+Via laajennetun `ToString()` metodin tai `-Format` parametrin, voit määrittää päivämääräformaatteja käyttäen .NET formaatin merkkijonoja. Erilaiset kulttuuriasetukset (esim. `fi-FI`) vaikuttavat oletusformaattiin.
 
-Muunnoksen toteuttamisessa käytetään .NET Frameworkin ja .NET Coren DateTime-tyypin ToString-metodia, joka muuntaa päivämäärän ja ajan arvot erilaisiksi merkkijonoformaateiksi.
+Kiinnitä huomiota aluekohtaisten asetusten ja UTC-aikojen hallintaan. PowerShellissa voi kääntää päivämäärän UTC:ksi käyttäen `ToUniversalTime()` metodia.
 
-## Katso myös:
-
-[Microsoftin virallinen PowerShell-dokumentaatio](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1)
-
-[Microsoft .NETin DateTime-kirjaston dokumentaatio](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
+## See Also (Katso Myös):
+- Microsoftin dokumentaatio `Get-Date`: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date
+- .NET Päivämäärä ja Aika formaatit: https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings
+- PowerShell aikavyöhykkeiden hallinta: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-timezone

@@ -1,6 +1,7 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
+date:                  2024-01-20T17:58:22.777526-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,32 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kotlinilla Tekstin Etsintä ja Korvaus: Opas 
+## What & Why? (Mitä & Miksi?)
+Tekstin etsiminen ja korvaaminen on yksinkertaisesti tekstijonon vaihtamista toiseen. Koodareille tämä on tärkeää, koska koodin muokkaaminen, virheiden korjaaminen ja datan muokkaus vaativat usein nopeita tekstioperaatioita.
 
-## Mikä & Miksi?
-
-Tekstin etsiminen ja korvaaminen on tapa muuttaa pyydettyä jonoa, korvaamalla se toisella. Ohjelmoijat tekevät tämän yleisesti kun heidän tulee muokata tai käsittellä jonoja tarkoituksenmukaisimmaksi - esimerkiksi, poistamaan alusta tai päästä sanoja tai korvata spesifiset sanat toisilla.
-
-## Näin teet:
+## How to: (Kuinka tehdä:)
+Kotlinissa tekstiä voi etsiä ja korvata `replace`-funktiolla. Alla on esimerkkejä käytännössä:
 
 ```Kotlin
-val lause = "Tervetuloa Kotlinin maailmaan!"
-val korvattuLause = lause.replace("Kotlinin", "Ohjelmoinnin")
-println(korvattuLause)
+fun main() {
+    val originalText = "Kotlin on huippukieli!"
+    val newText = originalText.replace("huippukieli", "mahtava kieli")
+    println(newText) // Tulostaa: Kotlin on mahtava kieli!
+}
 ```
 
-Tämän koodin tuloste on: "Tervetuloa Ohjelmoinnin maailmaan!".
+Jos tarvitset tarkempaa haku- ja korvauskriteeriä, käytä regexiä:
 
-## Syvä sukellus:
+```Kotlin
+fun main() {
+    val regexPattern = "[0-9]+".toRegex()
+    val address = "Osoite: Puistokatu 1234"
+    val sanitizedAddress = address.replace(regexPattern, "****")
+    println(sanitizedAddress) // Tulostaa: Osoite: Puistokatu ****
+}
+```
 
-Tekstin etsiminen ja korvaaminen on ollut olemassa melkein yhtä kauan kuin ohjelmointi itsessään. Kotlin tarjoaa helpon tavan sen toteuttamiseksi, mutta on hyvä pitää mielessä, että tämä ei ole ainoa tapa. Myös regex-funktiota (säännöllisiä lausekkeita) voidaan käyttää monimutkaisempiin tekstinkäsittelytehtäviin.
+## Deep Dive (Sukellus syvemmälle)
+Tekstin etsiminen ja korvaaminen juontaa juurensa varhaisiin tekstieditoreihin ja prosessointityökaluihin, kuten `sed` UNIX-järjestelmissä. Kotlinissa `replace` käsittää kaksi varianttia: yksi yksinkertaisille merkkijonoille ja toinen säännönmukaisille lausekkeille (regex). Ole tarkkana regexin kanssa, ne voivat olla tehokkaita mutta myös kalliita suorituskyvylle jos niitä käytetään väärin.
 
-Tämä toiminto toimii etsimällä tietoa jokaisesta jonon osasta, kunnes se löytää vastaavuuden, ja sitten se korvaa sen. Kaikkien toimintojen tarkkuus ja nopeus riippuvat siitä, miten hyvin ohjelma on rakennettu ja kuinka hyvin ohjelmointikieli tukee näitä toimintoja.
+Vaihtoehtona `replace`-funktiolle, voit käyttää `StringBuilder`-luokkaa muokataksesi merkkijonoja suorituspaikan päällä, mikä voi olla tehokkaampaa isommissa teksteissä.
 
-## Katso myös:
-
-3. Tietoa Kotlinin `replace`-funktiosta: [Linkki](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
-
----
-
-Muista, että hyvät ohjelmat ovat aina niitä, jotka ovat hyvin suunniteltuja ja jotka ottavat huomioon yksityiskohdat. Kotlin tarjoaa paljon työkaluja, jotka auttavat tekemään tekstinkäsittelystä tehokkaampaa ja tuottavampaa. Aina on hyvä aika oppia jotain uutta!
+## See Also (Katso myös)
+- Kotlin-dokumentaatio `replace`-funktiosta: [Kotlin replace](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
+- Kotlin regex-oppaat: [Kotlin Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+- Wikipedian artikkeli säännönmukaisista lausekkeista: [Regular Expressions](https://en.wikipedia.org/wiki/Regular_expression)

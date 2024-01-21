@@ -1,6 +1,7 @@
 ---
 title:                "Buscando y reemplazando texto"
-html_title:           "C: Buscando y reemplazando texto"
+date:                  2024-01-20T17:58:47.472191-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Buscando y reemplazando texto"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,50 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Búsqueda y Reemplazo de Texto en TypeScript
+## ¿Qué & Por Qué?
+Buscar y reemplazar texto es una operación común que modifica una cadena para sustituir partes específicas por otras. Los programadores lo usan para actualizar datos, corregir errores o cambiar formatos de manera eficiente, sin tener que revisar todo manualmente.
 
-## ¿Qué y Por Qué?
-
-La búsqueda y el reemplazo de texto son operaciones comunes para manipular cadenas de texto en la programación. Los programadores realizan estas tareas para modificar, refactorizar código, limpiar datos y más. 
-
-## ¿Cómo hacer?
-
-En TypeScript, puedes buscar y reemplazar texto utilizando el método `replace()` siguiendo los siguientes pasos:
-
+## Cómo:
 ```TypeScript
-let texto = '¡Hola, mundo!';
+function reemplazarTexto(texto: string, buscar: string, reemplazo: string): string {
+  return texto.replace(new RegExp(buscar, 'g'), reemplazo);
+}
 
-texto = texto.replace('mundo', 'todos');
+// Ejemplo de uso:
+const textoOriginal = "Hola mundo, mundo cruel.";
+const textoModificado = reemplazarTexto(textoOriginal, "mundo", "TypeScript");
 
-console.log(texto); // Salida: '¡Hola, todos!'
-```
-Este ejemplo busca la palabra "mundo" en la cadena de texto y la reemplaza por "todos". Los métodos de cadena de texto son sensitivos a mayúsculas y minúsculas, si buscas "Mundo" en lugar de "mundo", no habrá coincidencias.
-
-## Más Profundo
-
-**Contexto Histórico**: El método `replace()` ha existido en JavaScript desde su primera versión, ECMAScript 1. TypeScript, siendo un superconjunto de JavaScript, lo heredó naturalmente.
-
-**Alternativas**: Además de `replace()`, también puedes usar `split()` y `join()` para reemplazar texto. Este enfoque puede ser útil cuando necesitas reemplazar todas ocurrencias de una subcadena.
-
-```TypeScript
-let texto = '¡Adiós, mundo! ¡Adiós, mundo!';
-
-texto = texto.split('mundo').join('todos');
-
-console.log(texto); // Salida: '¡Adiós, todos! ¡Adiós, todos!'
-```
-**Detalles de Implementación**: Notarás que para `replace()`, sólo la primera coincidencia es reemplazada. Si quieres reemplazar todas las coincidencias, puedes usar una expresión regular con la bandera 'g' (global).
-
-```TypeScript
-let texto = '¡Adiós, mundo! ¡Adiós, mundo!';
-
-texto = texto.replace(/mundo/g, 'todos');
-
-console.log(texto); // Salida: '¡Adiós, todos! ¡Adiós, todos!'
+console.log(textoModificado);
+// Salida esperada: "Hola TypeScript, TypeScript cruel."
 ```
 
-## Ver También
+## Inmersión Profunda
+En los 60, buscar y reemplazar era una tarea manual con papel y lápiz. Ahora, con lenguajes como TypeScript, usar expresiones regulares hace el trabajo rápido y potente. Alternativas a `replace` incluyen bibliotecas como Lodash, que ofrecen funciones con manejo de casos excepcionales más refinado. La implementación en TypeScript es generalmente directa, pero ten cuidado con las "peculiaridades" de las expresiones regulares, como escapar caracteres especiales y manejar casos globales con la bandera `'g'`.
 
-1. [Documentación Oficial de TypeScript](https://www.typescriptlang.org/docs/)
-2. [Guía de JavaScript para manipulación de cadenas](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions)
-3. [Explicación detallada de replace()](https://www.w3schools.com/jsref/jsref_replace.asp)
+## Véase También
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- [MDN Web Docs on Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Lodash Library](https://lodash.com/)

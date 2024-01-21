@@ -1,6 +1,7 @@
 ---
 title:                "Створення тимчасового файлу"
-html_title:           "C: Створення тимчасового файлу"
+date:                  2024-01-20T17:41:11.103703-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Створення тимчасового файлу"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,38 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? / Що і Чому?
 
-Створення тимчасових файлів - це процес записування тимчасових даних на ваш хард-драйв. Програмісти роблять це для збереження проміжних даних або працюють з великими файлами, які не можуть бути збереженні в пам'яті.
+Temporary files are files created to hold data temporarily while a program is running. Programmers use them for tasks like managing large data that won't fit into memory, inter-process communication, and storing data that doesn't need to persist after the program ends.
 
-## Як це зробити: 
+## How to: / Як це зробити:
 
-Ось приклад коду в Ruby що створює тимчасовий файл:
+Ruby provides a simple way to work with temporary files using the `Tempfile` class. Here's an example:
 
 ```Ruby
 require 'tempfile'
 
-temp_file = Tempfile.new('test')
-puts temp_file.path   # Виведе шлях файла
-temp_file.write('Доброго дня, Україно!') # Запишемо деякі дані
-temp_file.rewind   # Повернемо курсор до початку файла
-puts temp_file.read   # Прочитає та виведе 'Доброго дня, Україно!'
+Tempfile.create('tempfile_example') do |tempfile|
+  # Write something to the temporary file
+  tempfile.write("Hello, this is a temporary message!")
 
-temp_file.close
-temp_file.unlink   # Видалить тимчасовий файл
+  # Rewind the file before you read it, just like a cassette tape
+  tempfile.rewind
+
+  # Read from the file
+  puts tempfile.read  # Output: Hello, this is a temporary message!
+
+  # No need to delete, it's handled automatically
+end
 ```
-## Поглиблення
 
-**Історичний контекст:** 
-Методи роботи з тимчасовими файлами у Ruby були впроваджені в стандартну бібліотеку рубіну з першої версії мови.
+## Deep Dive / Поглиблене вивчення:
 
-**Альтернативи:** 
-У оперативній системі Linux можна використовувати `/dev/shm`, для тимчасового зберігання даних в RAM, що є швидше, ніж зберігання на диску.
+The `Tempfile` class has been a part of Ruby's Standard Library for ages, helping developers manage temporary files easily. An alternative is to manage files manually, creating and deleting them, which is riskier due to potential file leaks. Under the hood, `Tempfile` creates files in a special temp directory, which on most UNIX-like systems is '/tmp'. The files are usually named with a random sequence to avoid clashes, and get deleted automatically when the object is garbage collected or when the program exits.
 
-**Деталі виконання:** 
-Ruby створює тимчасовий файл в директорії, що визначена ваших системних налаштувань. Якщо ця директорія не визначена, Ruby вибирає системну тимчасову папку.
+## See Also / Дивіться також:
 
-## Дивитися також:
-
-* [Документація Ruby про клас Tempfile](https://ruby-doc.org/stdlib-2.5.1/libdoc/tempfile/rdoc/Tempfile.html)
-* [Уроки по Ruby від Codecademy](https://www.codecademy.com/learn/learn-ruby)
+- Ruby's Standard Library documentation: [https://ruby-doc.org/stdlib/](https://ruby-doc.org/stdlib/)
+- For an in-depth look at file I/O: [https://www.tutorialspoint.com/ruby/ruby_input_output.htm](https://www.tutorialspoint.com/ruby/ruby_input_output.htm)

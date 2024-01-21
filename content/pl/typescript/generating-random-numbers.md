@@ -1,6 +1,7 @@
 ---
 title:                "Generowanie liczb losowych"
-html_title:           "Gleam: Generowanie liczb losowych"
+date:                  2024-01-20T17:50:18.551434-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generowanie liczb losowych"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,36 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Generowanie liczb losowych to tworzenie pozornie nieprzewidywalnych numerów. Programiści używają tego, by wspomóc symulacje, testy czy gry - wszędzie tam, gdzie potrzebna jest nieprzewidywalność.
 
-Generowanie losowych liczb to process, w którym tworzy się unikatowe liczby w sposób nieprzewidywalny. Programiści robią to między innymi do symulowania przypadkowego zachowania, tworzenia danych testowych lub wprowadzania elementu zaskoczenia.
+## How to (Jak to zrobić):
+```TypeScript
+// Proste generowanie liczby losowej od 0 do 1
+console.log(Math.random());
 
-## Jak to zrobić:
-
-Tu jest jak możemy wygenerować losową liczbę przy użyciu TypeScript:
-
-``` typescript
-function get_random_int(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
+// Losowa liczba całkowita między min a max
+function getRandomInt(min: number, max: number): number {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-console.log(get_random_int(1, 6));
+// Przykład użycia
+console.log(getRandomInt(1, 10));
+```
+Sample output (Przykładowe wyjście):
+```
+0.4356941481639862
+7
 ```
 
-Wynik powyższego kodu będzie losową liczbą z zakresu od 1 do 6.
+## Deep Dive (Dogłębna analiza):
+Historia generatorów liczb losowych (RNG) sięga starożytnych czasów, ale komputery zmieniły zasady gry. W informatyce na ogół używa się generatorów pseudo-losowych (PRNG), bo rzeczywista losowość jest bardzo trudna do osiągnięcia.
 
-## Głębsze zanurzenie
+Algorytm `Math.random()` w JavaScript (używany również w TypeScript) jest PRNG. Nie jest odpowiedni dla aplikacji kryptograficznych, bo jego wyniki można przewidzieć. Do takich celów lepiej użyć `crypto.getRandomValues()`. 
 
-Generowanie losowych liczb ma długą historię w informatyce. Zarówno zastosowania, jak i metody generowania tych liczb ewoluowały na przestrzeni lat. W TypeScript korzystamy z wbudowanej funkcji Math.random(), ale jest wiele alternatywnych sposobów generowania losowych liczb w różnych językach programowania.
+Każdy PRNG ma tzw. "ziarno" (seed), będące punktem startowym dla generowania liczb. Dwa identyczne ziarna wygenerują ten sam ciąg liczb. Praktyczność tego mechanizmu jest różna - od prostych gier po zaawansowane symulacje.
 
-Jednym z nich jest użycie generatora liczb pseudolosowych (PRNG). PRNG jest algorytmem, który generuje sekwencję liczb, które wydają się losowe, ale są w rzeczywistości określone przez początkowy "ziarno" (seed). Valuable w grach dla powtarzalności.
-
-Jeszcze innym podejściem jest użycie prawdziwego generatora liczb losowych (TRNG). TRNG są zazwyczaj oparte na fizycznych zjawiskach i są bardziej nieprzewidywalne niż PRNG, ale mogą być trudniejsze do zaimplementowania.
-
-## Zobacz również
-
-[Generowanie liczb losowych - Wikipedia](https://en.wikipedia.org/wiki/Random_number_generation)
-
-[Random number generation - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-
-[Dokumentacja TypeScript](https://www.typescriptlang.org/docs/)
+## See Also (Zobacz również):
+- MDN Web Docs on `Math.random()`: [MDN Math.random](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- The TypeScript Handbook: [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- "Randomness in crypto with TypeScript": [Crypto randomness](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues)

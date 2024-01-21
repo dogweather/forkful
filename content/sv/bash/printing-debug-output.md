@@ -1,7 +1,8 @@
 ---
-title:                "Skriva ut felsökningsresultat"
-html_title:           "Fish Shell: Skriva ut felsökningsresultat"
-simple_title:         "Skriva ut felsökningsresultat"
+title:                "Skriva ut felsökningsdata"
+date:                  2024-01-20T17:52:02.749103-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skriva ut felsökningsdata"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,40 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
+## Vad & Varför?
+Att skriva ut felsökningsdata ("debug output") är som att lägga små post-it-lappar i din kod för att se vad som faktiskt händer. Programmerare gör det för att spåra buggar och kontrollera programmets flöde snabbt och enkelt.
 
-Att skriva ut debug-utdata ("debug output") inom programmering innebär att spåra och visa data under programmets exekvering. Programmers gör detta för att hitta och lösa fel snabbt.
-
-## Så här gör du:
-
-Här är några enkla exempel med utdata.
+## How to:
+För att visa felsökningsinformation i Bash använder du `echo` eller `printf`. Här är exempel:
 
 ```Bash
-#!/bin/bash
+# Använd echo för att skriva ut enkel text
+echo "Det här är en debug-meddelande"
 
-# Använda 'echo' för att skriva ut debug information
-echo "Det här är en debug information"
+# Skriv ut variabelvärden
+debug_variable="ett värde"
+echo "Debug: variabeln har värdet '$debug_variable'"
 
-# Använda '-x' flaggan vid Bash körning för att skriva ut varje kommando
-bash -x script.sh
-
-# Använda 'set -x' och 'set +x' för att börja och sluta debug utskrift
-set -x
-echo "Now you can see this"
-set +x
+# Avancerad: Använd printf för formatering
+printf "Filen %s har %d rader\n" $filnamn $radantal
 ```
-## Djupdykning
 
-Historisk sett har Bash alltid tillhandahållit debugningsverktyg. Alternativ till `echo`, `printf`-funktionen tillhandahåller mer formatkontroll. Om du vill ha ännu mer kontroll kan du använda `logger`-kommandot för att skicka meddelanden till systemets loggningssystem.
+Exempel på output:
 
-## Se också
+```
+Det här är en debug-meddelande
+Debug: variabeln har värdet 'ett värde'
+Filen script.sh har 42 rader
+```
 
-För mer detaljerad information, se följande länkar:
+## Deep Dive
+Debugging uppstod ur behovet att förstå vad som hände inuti datorer. På 1940-talet tog operatörer bort faktiska insekter ur hålkortsläsare för att "debugga" problem, därav termen. 
 
-1. [Advanced Bash-Scripting Guide](http://tldp.org/LDP/abs/html/debugging.html): En fullständig guide om Bash-skriptning, inklusive debug.
+I Bash-scripting kommer `echo` och `printf` ofta till användning för att skriva ut felsökningsmeddelanden. `echo` är enklare men mindre flexibel. `printf` erbjuder formatering, vilket är användbart om du behöver mer kontroll över hur output ser ut. 
 
-2. [Bash Debugging](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html): Det officiella dokumentet om hur man använder `set -x` och `set +x`.
-   
-3. [Bash logger command](https://linux.die.net/man/1/logger): Manualen för `logger` kommandot.
-   
-Lycka till med din kodning!
+Bash-version 4 introducerade `printf -v` som tillåter dig att tilldela formatsträngars resultat direkt till variabler, utan subshell.
+
+För att undvika att felsökningsmeddelanden blandas med vanlig output kan du använda skilda filströmmar. Standard är filström 1 för normal output och filström 2 för error-meddelanden. Lägg till `1>&2` för att skicka en debug-meddelande till felströmmen.
+
+Exempel:
+
+```Bash
+echo "Detta kommer att synas i terminalen" 1>&2
+```
+
+Du kan även omdirigera dessa meddelanden till en fil eller en annan kommand för vidare analys. 
+
+## Se Även
+- [Bash man-page](https://linux.die.net/man/1/bash) för en djupdykning i Bash.
+- [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/) för mer avancerade tekniker och exempel.
+- [ShellCheck](https://www.shellcheck.net/) för att hitta och förbättra skript.

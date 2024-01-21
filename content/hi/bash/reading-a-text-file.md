@@ -1,7 +1,8 @@
 ---
-title:                "एक पाठ फ़ाइल पढ़ना"
-html_title:           "Bash: एक पाठ फ़ाइल पढ़ना"
-simple_title:         "एक पाठ फ़ाइल पढ़ना"
+title:                "टेक्स्ट फ़ाइल पढ़ना"
+date:                  2024-01-20T17:54:04.693553-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "टेक्स्ट फ़ाइल पढ़ना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,36 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+पाठ फ़ाइल को पढ़ना कोड के माध्यम से फाइल की सामग्री को एक्सेस करना है। प्रोग्रामर इसका उपयोग कॉन्फ़िगरेशन, डेटा इनपुट, लॉग्स, इत्यादि के लिए करते हैं।
 
-टेक्स्ट फाइल पढ़ना मतलब किसी फाइल से डाटा पढ़ना होता है। प्रोग्रामर्स इसे करने के लिए Bash इस्तेमाल करते है। इसका मुख्य कारण है कि यह सरल और सुगम है।
-
-## कैसे करें:
-Bash में टेक्स्ट फाइल कैसे पढ़ें:
-
+## How to: (कैसे करें:)
 ```Bash
-while read line
-do
+# टेक्स्ट फाइल पढ़ने के लिए cat कमांड
+
+cat myfile.txt
+
+# लाइन-बाय-लाइन पढ़ने के लिए while-loop और read कमांड
+
+while IFS= read -r line; do
     echo "$line"
-done < input.txt
-```
-ऊपरी कोड की आउटपुट: हर लाइन आलग आलग दिखेगी।
-
-## गहरी जानकारी
-Bash जो UNIX और Linux ऑपरेटिंग सिस्टम्स पर चलने वाली एक shell है, बहुत समय से फाइल मैनेजमेंट में उपयोग होती आ रही है। 
-
-हालांकि इसे विभिन्न तरीकों से किया जा सकता है, जैसे `cat`, `more` या `less` कमांड का उपयोग करके, `read` कमांड बहुत ही सरल और लचीला होता है। 
-
-इस कमांड का उपयोग करने में यदि आपको कोई समस्या आती है, तो आपको `-r` विकल्प का उपयोग करने की आवश्यकता पड़ सकती है। यह `\` को escape करने के लिए होता है।
-
-```Bash
-while IFS= read -r line
-do
-    echo "$line"
-done < input.txt
+done < myfile.txt
 ```
 
-## अन्य सूत्र
-1. Bash Scripting Guide: https://tldp.org/LDP/abs/html/
-2. Bash Manual: https://www.gnu.org/software/bash/manual/bash.html
-3. Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/abs-guide.html
+सैंपल आउटपुट:
+```
+हैलो, यह मेरी फाइल की पहली लाइन है।
+दूसरी लाइन यहाँ है।
+और यह तीसरी लाइन है।
+```
+
+## Deep Dive (गहराई में जानकारी)
+पाठ फ़ाइल पढ़ना यूनिक्स-जैसे सिस्टम्स पर बैश के माध्यम से बहुत सरल है, जिसका इतिहास 1970 के दशक तक जाता है। `cat` कमांड सीधा और आसान है, पर बड़ी फाइलों के लिए अव्यावहारिक हो सकता है। `while`-loop मेमोरी प्रभावी होता है जबकि `awk`, `sed` जैसे टूल्स और अधिक जटिल प्रोसेसिंग की अनुमति देते हैं। स्क्रिप्ट में, IFS (Internal Field Separator) का उपयोग field splitting को नियंत्रित करने के लिए होता है। `-r` फ्लैग `read` कमांड में backslash इस्केपिंग को अवरुद्ध करता है।
+
+## See Also (और देखें)
+- [GNU Bash manual](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html) - Bash के औपचारिक दस्तावेज़।
+- [Advanced Bash-Scripting Guide](https://www.tldp.org/LDP/abs/html/) - जटिल Bash स्क्रिप्टिंग के लिए गाइड।
+- [ShellCheck](https://www.shellcheck.net/) - शेल स्क्रिप्ट्स को ऑनलाइन जाँचने के लिए उपकरण।

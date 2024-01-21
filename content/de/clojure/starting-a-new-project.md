@@ -1,7 +1,8 @@
 ---
-title:                "Ein neues Projekt starten"
-html_title:           "C#: Ein neues Projekt starten"
-simple_title:         "Ein neues Projekt starten"
+title:                "Einen neuen Projekt starten"
+date:                  2024-01-20T18:03:20.162891-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Einen neuen Projekt starten"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
@@ -11,36 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Ein neues Projekt zu starten bedeutet, eine frische Programmierarbeit zu beginnen, oft mit Ziel, ein bestimmtes Problem zu lösen. Programmierer tun dies, um effizientere oder innovativere Lösungen zu entwickeln oder um ihre Fähigkeiten zu erweitern.
+Das Starten eines neuen Projekts bedeutet, Grundsteine für etwas Großartiges zu legen. Entwickler tun dies, um ihre Ideen in die Realität umzusetzen oder um neue Techniken zu lernen.
 
-## So geht's:
-In dieser Sektion sehen wir uns ein minimales Beispiel an, wie ein neues Projekt in Clojure mittels Leiningen aufgesetzt wird.
+## How to:
+```Clojure
+;; Installiere Leiningen, das Build-Tool für Clojure:
+;; https://leiningen.org/
 
-```clojure
-;; Erstelle ein neues Projekt
-lein new mein-projekt
-```
-Als Ausgabe sehen wir dann:
+;; Erstellen eines neuen Clojure-Projekts:
+lein new app mein-tolles-projekt
 
-```
-Generating a project called mein-projekt based on the 'default' template.
-```
-Jetzt können wir ins Verzeichnis wechseln und den Befehl `lein run` ausführen:
+;; Wechsle in das Projektverzeichnis:
+cd mein-tolles-projekt
 
-```clojure
-cd mein-projekt
+;; Starte eine interaktive Repl-Sitzung im Projekt:
+lein repl
+
+;; Der REPL startet, zeige die Projektstruktur:
+ls
+; Beispiel-Output:
+; doc/  project.clj  README.md  resources/  src/  test/
+
+;; Führe die Anwendung aus:
 lein run
 ```
-Das Ergebnis sagt uns, dass das Projekt erfolgreich erstellt wurde:
 
-```
-Hello, World!
-```
+## Deep Dive
+Leiningen ist das de-facto Standard-Tool, um Clojure-Projekte zu verwalten. Es ist seit 2010 verfügbar und wurde von Phil Hagelberg entwickelt. Alternativen sind Boot und neuerdings auch tools.deps - direkt von Clojure bereitgestellt. Leiningen hilft bei Dependency Management, Automatisierung von Tasks und Packaging. Es nutzt `project.clj` für die Konfiguration und unterstützt sowohl einfache Skripte als auch komplexe Anwendungen. Beim Start eines neuen Projekts erstellt es ein Grundgerüst, was den Einstieg erleichtert.
 
-## Vertiefung:
-Im Jahr 2007 wurde Clojure erschaffen, um eine bessere Allzweck-Alternative zu Java zu bieten. Es gibt auch andere Alternativen wie Boot für Projektmanagement. Allerdings schätzen Nutzer an Leiningen die eher einfache Struktur der `project.clj`-Datei. Wenn man ein neues Projekt startet, legt Leiningen die nötige Verzeichnisstruktur an und erstellt eine anfangs minimale `project.clj`.
-
-## Siehe auch:
-- [Leiningen Tutorial](https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md) 
-- [Weitere Clojure Resourcen](https://clojure.org/community/resources)
-- [Das Clojure Kochbuch](http://clojure-cookbook.com/)
+## See Also
+- Leiningen Homepage: [https://leiningen.org/](https://leiningen.org/)
+- Clojure Official Getting Started Guide: [https://clojure.org/guides/getting_started](https://clojure.org/guides/getting_started)
+- Ein alternatives Build-Tool, Boot: [https://boot-clj.com/](https://boot-clj.com/)
+- Clojure's neue Tools für die Dependency-Verwaltung: [https://clojure.org/reference/deps_and_cli](https://clojure.org/reference/deps_and_cli)

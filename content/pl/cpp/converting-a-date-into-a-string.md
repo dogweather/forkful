@@ -1,7 +1,8 @@
 ---
-title:                "Konwersja daty na ciąg znaków"
-html_title:           "Clojure: Konwersja daty na ciąg znaków"
-simple_title:         "Konwersja daty na ciąg znaków"
+title:                "Konwersja daty na łańcuch znaków"
+date:                  2024-01-20T17:36:02.997106-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Konwersja daty na łańcuch znaków"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,40 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-
-Konwersja daty na string (lancuch znaków) w C++ to proces zamiany daty z formatu liczbowego na czytelny dla człowieka tekst. Programiści robią to, aby ułatwić odczytywanie dat i uatrakcyjnić interfejs użytkownika.
+## Co & Dlaczego?
+Konwersja daty na ciąg znaków (string) to proces przekształcenia formatu daty na tekst, który łatwo przeczytamy lub wyświetlimy. Programiści robią to, by data była zrozumiała dla użytkowników i mogła być zapisana w logach lub dokumentach.
 
 ## Jak to zrobić:
-
-Oto przykład w C++, jak można przekształcić datę na string:
+W C++ mamy kilka sposobów na przekształcenie daty w string - najprościej użyć biblioteki `<chrono>` i `<iomanip>`:
 
 ```C++
 #include <iostream>
-#include <chrono>
 #include <iomanip>
+#include <chrono>
+#include <sstream>
 
 int main() {
+    // Pobranie aktualnego czasu
     auto teraz = std::chrono::system_clock::now();
-    std::time_t czas = std::chrono::system_clock::to_time_t(teraz);
     
-    std::cout << "Teraz: " << std::put_time(std::localtime(&czas), "%Y-%m-%d %X") << std::endl;
+    // Konwersja czasu na format tm
+    std::time_t czasC = std::chrono::system_clock::to_time_t(teraz);
+    std::tm* czasTM = std::localtime(&czasC);
+
+    // Utworzenie stringa z datą
+    std::stringstream ss;
+    ss << std::put_time(czasTM, "%Y-%m-%d %H:%M:%S");
+
+    // Wyświetlenie przekonwertowanej daty
+    std::string dataJakoString = ss.str();
+    std::cout << "Aktualna data i czas jako string: " << dataJakoString << std::endl;
     
     return 0;
 }
 ```
-Przykładowe wyjście:
 
+Sample output:
 ```
-Teraz: 2022-03-15 16:22:33
+Aktualna data i czas jako string: 2023-04-05 15:30:21
 ```
-## Głębsze spojrzenie
 
-(1) Kontekst historyczny: Przekształcanie dat na stringi jest praktyką starą jak samo programowanie. Format daty jest wyjątkowo istotny przy zapisie danych, aby były one spójne i zrozumiałe zarówno dla ludzi, jak i dla maszyn. (2) Alternatywy: Istnieje wiele bibliotek języka C++, takich jak Boost.Date_Time, które udostępniają narzędzia umożliwiające konwersję dat. (3) Szczegóły implementacji: W tym przypadku używamy biblioteki `<chrono>`, aby pobierać aktualny czas, a następnie konwertować go na format `std::time_t`, który następnie jest przekształcany na czytelny dla człowieka format za pomocą funkcji `std::put_time`.
+## W głąb tematu:
+Data i czas w C++ ewoluowały. Początkowo korzystano z funkcji C jak `ctime()` czy `strftime()`. Pojawił się nawet `boost::date_time`, ale od C++11 mamy `<chrono>` i to stało się standardem.
 
-## Zobacz także
+Alternatywy:
+- Biblioteki zewnętrzne jak `boost::date_time`
+- Staromodne funkcje C
 
-1. Dokumentacja C++ - `<chrono>`: https://en.cppreference.com/w/cpp/chrono
-2. Dokumentacja C++ - `put_time`: https://en.cppreference.com/w/cpp/io/manip/put_time
-3. Boost.Date_Time: https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html
-4. Przydatne narzędzia do konwersji dat: https://www.fluentcpp.com/2018/05/15/std-chronos-little-secret/
+Szczegóły implementacyjne:
+W `<chrono>`, `system_clock::now()` zapewnia czas bazujący na zegarze systemowym. `.to_time_t()` konwertuje czas na tradycyjny format C, który można następnie użyć z funkcjami formatującymi czas sprzed C++11, takimi jak `std::put_time()`.
+
+`std::stringstream` i `std::put_time` pozwalają na elastyczne formatowanie daty i czasu jako string.
+
+## Zobacz też:
+- Dokumentacja C++ std::chrono: https://en.cppreference.com/w/cpp/chrono
+- Biblioteka Boost.Date_Time: https://www.boost.org/doc/libs/release/libs/date_time/
+- Dokumentacja C strftime: https://en.cppreference.com/w/cpp/chrono/c/strftime

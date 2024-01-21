@@ -1,7 +1,8 @@
 ---
-title:                "连接字符串"
-html_title:           "C: 连接字符串"
-simple_title:         "连接字符串"
+title:                "字符串拼接"
+date:                  2024-01-20T17:34:35.178711-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "字符串拼接"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,61 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
-字符串拼接是将两个或多个字符串组合在一起的过程。程序员通常这样做以创建用户要看到的特定文本或将数据组合以获取新的，更有用的字符串。
+## What & Why? 什么和为什么?
+字符串连接就是把几个字符串拼接成一个。程序员这么做主要是为了格式化输出或者构造数据。
 
-## 如何做：
-Clojure 提供 `str` 函数来拼接字符串。请看以下简单示例：
-
-```Clojure
-(str "Hello" ", " "world!")
-```
-
-这将输出：
+## How to: 怎么做
+在Clojure中，可以使用 `str` 函数来连接字符串。下面是几个例子。
 
 ```Clojure
-"Hello, world!"
+(str "Hello, " "world!") ; 结果: "Hello, world!"
+
+(let [name "Mandarin"]
+  (str "Hello, " name " readers!")) ; 结果: "Hello, Mandarin readers!"
 ```
 
-你也可以拼接变量：
+是不是挺简单的？
+
+## Deep Dive 深入了解
+早期编程语言如C用`strcat`来连接字符串，但那要处理指针和内存。Clojure作为现代Lisp方言, 设计得更高级，直接用`str`就行，简单多了，内部会替你处理好一切。
+
+除了`str`，还有`clojure.string/join`，当你要把字符串集合拼接成一个字符串时，尤其有用。比如：
 
 ```Clojure
-(def name "Alice")
-(str "Hello, " name)
+(clojure.string/join ", " ["apple" "banana" "cherry"]) ; 结果: "apple, banana, cherry"
 ```
 
-输出：
+实现上，`str`和`join`都要考虑性能因素。在背后，Clojure尽量利用Java字符串的不变性和StringBuffer/StringBuilder效率，让操作高效。
 
-```Clojure
-"Hello, Alice"
-```
-
-它甚至处理非字符串类型：
-
-```Clojure
-(str "The answer is: " 42)
-```
-
-输出：
-
-```Clojure
-"The answer is: 42"
-```
-
-## 深入探讨
-Clojure 在 2007 年由 Rich Hickey 开发，main focus 是功能编程和可变状态的思想。尽管 `str` 函数使字符串拼接变得简单，但其历史可以追溯到 Lisp，Clojure 的前身。
-
-另一种拼接字符串的方法是使用 `format` 函数，这稍微复杂一些，但提供更多格式化选项：
-
-```Clojure
-(format "Hello, %s" "world!")
-```
-
-此代码将输出 `"Hello, world!"`。`%s` 是占位符，它告诉 `format` 函数将字符串 `"world!"` 插入到该位置。
-
-关于给字符串拼接分配内存的详细信息，Clojure 运行时会处理大部分情况，你通常不需要关心。但是，当处理大量数据时，可能有必要了解一些性能注意事项。如果你在疑问这是一个问题，请查阅相关文档以获得更多详细信息。
-
-## 参考链接
-- [Clojure 字符串函数](https://clojuredocs.org/clojure.string)
-- [Clojure `format` 函数](https://clojuredocs.org/clojure.core/format)
-- [关于 Lisp 和字符串的历史](http://www.paulgraham.com/lisp.html)
+## See Also 查阅其他信息
+- Clojure官网上的[字符串API文档](https://clojure.github.io/clojure/clojure.string-api.html)。
+- 《Programming Clojure》一书中详细介绍了字符串操作。
+- [ClojureDocs](https://clojuredocs.org/)提供了很多示例和文档。

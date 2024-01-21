@@ -1,7 +1,8 @@
 ---
-title:                "Конкатенація рядків"
-html_title:           "PHP: Конкатенація рядків"
-simple_title:         "Конкатенація рядків"
+title:                "Об'єднання рядків"
+date:                  2024-01-20T17:34:26.660318-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Об'єднання рядків"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,43 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Конкатенація рядків - це процес з'єднання двох або більше рядків в один. Програмісти цим користуються для того, щоб створювати та маніпулювати рядками даних в коді.
+## What & Why? (Що і Чому?)
+Concatenation blends strings together. It's handy for constructing messages, paths, or any data that's text-driven.
 
-## Як це робити:
-Нижче надані приклади коду та результати їх виконання у блоках коду C ```C ... ```
-
+## How to: (Як це зробити:)
+### Using strcat():
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main() { 
-    char str1[50] = "Добрий ";
-    char str2[50] = "день!";
-
-    strcat(str1, str2);
-
-    printf("Результат: %s", str1);
-
+int main() {
+    char destination[50] = "Вітаємо, ";
+    char source[] = "Україна!";
+    
+    strcat(destination, source);
+    printf("%s\n", destination); // Вітаємо, Україна!
+    
     return 0;
 }
 ```
-Коли ви запускаєте цю програму, ви отримуєте:
+
+### Manual concatenation:
 ```C
-Результат: Добрий день!
+#include <stdio.h>
+
+int main() {
+    char str1[] = "Слава ";
+    char str2[] = "Україні!";
+    char combined[50];
+    
+    int i = 0, j = 0;
+    // Copy str1 to combined
+    while (str1[i] != '\0') {
+        combined[i] = str1[i];
+        i++;
+    }
+    
+    // Append str2 to combined
+    while (str2[j] != '\0') {
+        combined[i + j] = str2[j];
+        j++;
+    }
+    
+    combined[i + j] = '\0'; // Null-terminate the combined string
+    printf("%s\n", combined); // Слава Україні!
+    
+    return 0;
+}
 ```
 
-## Більш глибокий розбір
-Конкатенація рядків у програмуванні використовується вже довгий час. Вона використовується для створення динамічних рядків або для об'єднання інформації.
+## Deep Dive (Поглиблений аналіз):
+The current C standard (ISO/IEC 9899:2018) doesn't change much about string manipulation. Programmers have been concatenating strings since C's inception. Options vary:
 
-Як альтернатива strcat(), ви можете використати strncat(), яка дозволяє вказати максимальну кількість символів, які треба скопіювати:
+- `strcat()` and `strncat()` come from the standard library, `string.h`. They are simple but risky due to buffer overflow.
+- Manual concatenation is buffer overflow safe if done correctly, but it's verbose. It entails copying characters one by one, then appending a null terminator.
+- Modern alternatives? Consider using safer functions like `strncat()` or BSD's `strlcat()` if available.
+- Some languages abstract away the complexities, but in C, handling strings manually teaches important principles of memory management.
 
-```C
-strncat(char *dest, const char * src, size_t n)
-```
-Під час конкатенації рядків важливо знати, що у другий рядок додається символ кінця рядка ('\0'). Це є важливим, бо воно вказує на кінець рядка в мові C. Крім того, потрібно переконатися, що в кінцевому рядку достатньо місця для зберігання об'єднаних рядків.
-
-## Дивіться також
-
-1. [Стрічки в C - GeeksforGeeks](https://www.geeksforgeeks.org/strings-in-c-2/)
-2. [C Library Functions - Tutorialspoint](https://www.tutorialspoint.com/c_standard_library/index.htm)
+## See Also (Дивіться також):
+- C11 Standard Documentation (ISO/IEC 9899:2018): https://www.iso.org/standard/74528.html 
+- GNU C Library Reference Manual: https://www.gnu.org/software/libc/manual/
+- Learn C Programming - TutorialsPoint: https://www.tutorialspoint.com/cprogramming/index.htm 
+- Secure Coding in C and C++: https://www.cert.org/secure-coding/

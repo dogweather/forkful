@@ -1,7 +1,8 @@
 ---
-title:                "Søking og erstatning av tekst"
-html_title:           "Lua: Søking og erstatning av tekst"
-simple_title:         "Søking og erstatning av tekst"
+title:                "Søking og erstatting av tekst"
+date:                  2024-01-20T17:58:36.284973-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Søking og erstatting av tekst"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,35 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Søke og erstatte tekst lar deg finne og skifte ut ord eller fraser i en streng. Det sparer tid og minimerer feil når du jobber med store datamengder eller oppdaterer kode.
 
-Å søke og erstatte tekst er en funksjon som finner spesifikke strenger i en tekst og erstatter dem med en ny. Som programmerere gjør vi det for å endre data, oppdatere informasjon eller rette feil.
-
-## Hvordan Gjøre:
-
-Her er et enkelt eksempel på hvordan du kan søke og erstatte tekst i Swift.
-
+## Hvordan:
 ```Swift
-var tekst = "Hallo, Verden!"
-tekst = tekst.replacingOccurrences(of: "Verden", with: "Norge")
-print(tekst)
+let originalText = "Det var en gang en programmerer som kodet Swift."
+let searchText = "programmerer"
+let replacementText = "utvikler"
+
+if let range = originalText.range(of: searchText) {
+    let newText = originalText.replacingCharacters(in: range, with: replacementText)
+    print(newText)
+} else {
+    print("Teksten ble ikke funnet.")
+}
+
+// Output
+// Det var en gang en utvikler som kodet Swift.
 ```
-Output:
-```Swift
-"Hallo, Norge!"
-```
-I dette eksempelet erstatter vi ordet "Verden" med "Norge".
 
-## Dyp Dykk
+## Dypdykk
+Før i tiden krevde tekstbehandling tunge operasjoner. Nå, med Swift og dens String API, er søk og erstatting enkel. Alternativer inkluderer regulære uttrykk for komplekse mønster. Ved implementering, vær obs på Swift sin Unicode-representasjon av strenger, som påvirker hvordan de indekseres.
 
-Søk og erstatt-funksjonalitet har en lang historie som går tilbake til tidlig bruk av tekstbehandlingssystemer. I Swift er `replacingOccurrences(of:with:)` funksjonen en del av `Foundation` rammeverket, det gir en høy-nivå løsning for string manipulasjon.
-
-Alternativt kan du også bruke `range(of:)` funksjonen for å finne området til strengen du vil erstatte og deretter bruke `replaceSubrange(_:with:)` for å erstatte teksten.
-
-Detaljert, `replacingOccurrences(of:with:)` funksjonen fungerer ved å først opprette en kopie av originalstrengen. Deretter søker den gjennom kopien for hver forekomst av målstrengen. Når den finner en forekomst, erstatter den den med den nye strengen.
-
-## Se Også:
-
-Her er noen nyttige ressurser for å lære mer om søker og erstatter tekst i Swift:
-
-- Swift by Sundell: [Working with strings in Swift](https://www.swiftbysundell.com/basics/strings)
-- Hacking with Swift: [How to replace parts of a string](https://www.hackingwithswift.com/example-code/strings/how-to-replace-parts-of-a-string-using-replacingoccurrences-of)
+## Se også:
+- Swift dokumentasjon om String: https://developer.apple.com/documentation/swift/string
+- Tutorial om Swift regulære uttrykk: https://www.raywenderlich.com/5765-regular-expressions-tutorial-getting-started
+- Apple's String Programming Guide: https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/

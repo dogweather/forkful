@@ -1,7 +1,8 @@
 ---
-title:                "Estrazione di sottosequenze"
-html_title:           "Arduino: Estrazione di sottosequenze"
-simple_title:         "Estrazione di sottosequenze"
+title:                "Estrazione di sottostringhe"
+date:                  2024-01-20T17:45:46.357344-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,27 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cosa e Perché?
-L'estrazione di sottostringhe è l'atto di ottenere una stringa più piccola da una stringa più grande. I programmatori lo fanno per manipolare e lavorare con parti specifiche di stringhe, che è fondamentale in molte operazioni di programmazione.
+## Cosa & Perché?
+Estrarre sottostringhe significa selezionare parti specifiche di una stringa di testo. I programmatori lo fanno per manipolare e analizzare i dati più facilmente, come estrarre nomi utente da indirizzi email o valori chiave da query URL.
 
-## Come Fare:
-Ecco un esempio di come estrarre sottostringhe in Gleam:
-
-```Gleam
+## Come si fa:
+```gleam
 import gleam/string
 
-fn main() {
-let s = "Ciao, Mondo!"
-let parte = string.slice(s, 0, 4) 
-println(parte) // Stampa "Ciao"
-}
+let text = "Programmare in Gleam è fantastico!"
+
+// Estrarre una sottostringa dall'indice 0 a 14
+let greeting = string.slice(text, 0, 14)
+assert greeting == "Programmare in"
+
+// Estrarre una sottostringa fino alla fine della stringa
+let description = string.slice(text, 15, string.len(text))
+assert description == "Gleam è fantastico!"
+
+// Utilizzare `drop_left` per rimuovere i primi 15 caratteri
+let remaining = string.drop_left(text, 15)
+assert remaining == "Gleam è fantastico!"
 ```
-Nell'esempio, `string.slice(s, 0, 4)` estre la sottostringa di `s` da indizio 0 a 4.
 
-## Un Tuffo Più Profondo:
-Historicamente, l'estrazione di sottostringhe è una funzione fondamentale negli linguaggi di programmazione. In Gleam, usiamo `string.slice` per estrarre sottostringhe, ma ci sono alternative come `string.drop` e `string.take` che eliminano o prendono un certo numero di caratteri dalla stringa. Ricorda, gli indici in Gleam iniziano da 0, non da 1.
+## Approfondimento
+In passato, linguaggi come C richiedevano una gestione manuale della memoria per le sottostringhe, con una maggiore complessità. Oggi, linguaggi moderni come Gleam rendono l'estrazione di sottostringhe semplice e sicura, senza doversi preoccupare della gestione manuale della memoria.
 
-## Vedi Anche:
-2. [An introduction to Gleam](https://gleam.run/book/)
+Come alternative, in altri linguaggi potresti trovare funzioni come `substring()`, `substr()` o espressioni regolari. In Gleam, `slice`, `drop_left`, e `drop_right` sono tre funzioni chiave per lavorare con sottostringhe.
 
-Non esitate a sperimentare su [Gleam's Online Playground](https://play.gleam.run/) per capire meglio come si estraggono le sottostringhe!
+Dal punto di vista dell'implementazione, quando si estrae una sottostringa, spesso non si crea una nuova stringa, ma si fornisce un riferimento alla stringa originale con un offset e una lunghezza. Questo migliora le prestazioni ed è efficiente in termini di memoria.
+
+## Vedi anche
+- Playground di Gleam per esperimenti online: [https://gleam.run](https://gleam.run)

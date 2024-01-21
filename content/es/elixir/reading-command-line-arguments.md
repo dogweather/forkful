@@ -1,7 +1,8 @@
 ---
-title:                "Leyendo argumentos de la línea de comandos"
-html_title:           "Bash: Leyendo argumentos de la línea de comandos"
-simple_title:         "Leyendo argumentos de la línea de comandos"
+title:                "Lectura de argumentos de línea de comandos"
+date:                  2024-01-20T17:55:53.825957-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lectura de argumentos de línea de comandos"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,42 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Lea Argumentos de la Línea de Comandos en Elixir
+## Qué y Por Qué?
+Leer argumentos de la línea de comandos permite que tus programas de Elixir reciban información externa al ser ejecutados, habilitándote para construir aplicaciones dinámicas que se adapten según los insumos del usuario. Los programadores usan esto para personalizar la ejecución o configurar opciones sin tener que cambiar el código.
 
-## ¿Qué & Por Qué?
-
-Leer argumentos de la línea de comandos significa tomar aquí esos valores insertados cuando se ejecuta un programa desde la línea de comandos. Esta práctica es útil para personalizar la funcionalidad del programa.
-
-## Cómo Hacerlo
-
-Elixir facilita la lectura de argumentos de la línea de comandos con la función `System.argv/0`. Aquí hay un ejemplo de cómo utilizarlo:
+## Cómo Hacerlo:
+Elixir hace que leer argumentos de la línea de comandos sea sencillo con `System.argv/0`. Ejemplo simple:
 
 ```elixir
-IO.inspect(System.argv())
+defmodule CLIApp do
+  def main do
+    args = System.argv()
+    IO.inspect(args)
+  end
+end
+
+# Para ejecutarlo: elixir mi_app.exs arg1 arg2 arg3
+# Salida: ["arg1", "arg2", "arg3"]
 ```
 
-Si pasas los argumentos `foo` y `bar` al script:
+Si quieres algo más elaborado, usa la librería `OptionParser`:
 
-```shell
-$ elixir my_script.exs foo bar
+```elixir
+defmodule CLIApp do
+  def main do
+    {opts, args, _} = OptionParser.parse(System.argv())
+    
+    IO.inspect(opts) # Opciones con flag, como --name
+    IO.inspect(args) # Argumentos posicionales restantes
+  end
+end
+
+# Ejecuta: elixir mi_app.exs --name Pepito arg1
+# Salida: [name: "Pepito"]
+#         ["arg1"]
 ```
 
-El script imprimirá:
+## Más Información:
+Históricamente, leer argumentos de línea de comandos es algo que proviene de los primeros días de los sistemas UNIX, permitiendo a los programas comportarse de manera flexible. Elixir, al funcionar sobre la Erlang VM, hereda esta posibilidad y la simplifica.
 
-```shell
-["foo", "bar"]
-```
+Alternativas a `OptionParser` podrían ser libs externas como `Clam`, que ofrecen aún más funcionalidades, como validaciones y generación de ayuda.
 
-## Inmersión Profunda
+Detalles de implementación en Elixir incluyen la conversión automática de argumentos recibidos a listas de strings (string lists), y la capacidad de manejar opciones con múltiples valores usando `OptionParser`.
 
-Los argumentos de la línea de comandos han sido una característica estándar de las interfaces de programación desde las primeras computadoras modernas, permitiendo la entrada de datos de usuario desde el inicio de un programa.
-
-Por supuesto, existen alternativas para recoger los datos del usuario en Elixir. Por ejemplo, puedes usar `IO.gets/2` para leer la entrada del usuario en tiempo real.
-
-La implementación de la lectura de argumentos de línea de comandos en Elixir es bastante directa. `System.argv/0` devuelve una lista de cadenas de texto que representan cada argumento pasado a la línea de comandos.
-
-## Ver Además
-
-Para profundizar más en este tema, puedes consultar las siguientes fuentes:
-- Para familiarizarte más con Elixir y la línea de comandos, visita la [guía de inicio de Elixir](https://elixir-lang.org/getting-started/introduction.html).
-- Para obtener más detalles sobre `System.argv/0`, consulta la [documentación oficial de Elixir](https://hexdocs.pm/elixir/System.html#argv/0).
+## Ver También:
+- [Documentación de Elixir - System.argv](https://hexdocs.pm/elixir/System.html#argv/0)
+- [Documentación de Elixir - OptionParser](https://hexdocs.pm/elixir/OptionParser.html)

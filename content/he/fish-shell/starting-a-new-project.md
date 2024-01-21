@@ -1,6 +1,7 @@
 ---
 title:                "התחלת פרויקט חדש"
-html_title:           "Clojure: התחלת פרויקט חדש"
+date:                  2024-01-20T18:03:24.660915-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "התחלת פרויקט חדש"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,40 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-התחלה של פרויקט חדש היא הקמה של יישום, מודול או שרת מאפס. מתכנתים עושים זאת כדי לקדם פתרונות חכמים, לפתח יישומים מהפך ולטשטש קיסמי דעת.
+## What & Why? מה ולמה?
+כשאתה מתחיל פרויקט חדש, אתה בעצם יוצר סביבה לפיתוח קוד. תוכניתנים עושים את זה כדי לסדר את הרעיונות שלהם ולדאוג שכל המשאבים הנחוצים יהיו במקום הנכון.
 
-## איך עושים:
-הנה מספר דוגמאות של קוד והתוצאות שהן מופקות באמצעות shell של Fish.
+## How to: איך לעשות?
+דוגמאות קוד ב-Fish Shell:
 
 ```Fish Shell
-# מיצירים ספריה חדשה
+# יצירת תיקייה חדשה לפרויקט
 mkdir my_project
-
-# נכנסים לספריה
 cd my_project
 
-# מגדירים את המשתנה my_var ל 10
-set -lx my_var 10
+# הכנת סביבת פיתוח עם Git
+git init
 
-# הדפסת המשתנה
-echo $my_var
+# יצירת קובץ README ראשוני
+echo "# My New Project" > README.md
 ```
 
-בסיום מסך החפיפה שלך נראה כך:
+פלט דוגמה לקוד לעיל:
 ```Fish Shell
-10
+> mkdir my_project
+> cd my_project
+> git init
+Initialized empty Git repository in /path/to/my_project/.git/
+> echo "# My New Project" > README.md
 ```
 
-## שיעור מעמיק
-**ההיסטוריה:** נציג פשע על רקע אפשרויות אחרות ופרטים בנוגע להתחלת פרויקט חדש. ה Fish Shell הוחלף לראשונה בשנת 2005, והפך לחבילה פופולרית לשפת תכנות. 
+## Deep Dive עומק הידע
+התחלת פרויקט חדש היא לא רק יצירת תיקיות וקבצים; זה כולל הבנה של מסגרות עבודה וכלים שיעזרו לך להתקדם. פיש של - Fish Shell - הוא גרסה מתקדמת של מעטפת פקודה שנותנת דגש על ידידותיות למשתמש וחווית פיתוח נעימה. כלי תוכנה זה הוא אלטרנטיבה ל-Bash ו-Zsh. היסטורית, Fish הוא יותר חדש, הראשונה הופיעה ב-2005, והוא ממשיך לפתח פונקציונליות מתקדמת.
 
-**אפשרויות:** מרבית השפות הן כאלה שיש להן שיטה משלהם לאיתחול פרויקט, כולל Python, Ruby, וJavaScript. שפה מסוימת תלויה בנושא ובצורך האישי.
-
-**הרצה:** בסופו של דבר, התחלת פרויקט חדש היא תהליך מתוכנת המאפשר לבנות מבנה התוכנה מאפס.
-
-## אני ממליץ לעיין
-אתה יכול למצוא מידע נוסף בנושא Fish Shell ואיך להתחיל פרויקט חדש באמצעות המשאבים הבאים:
-
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Getting Started with Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+## See Also גם כדאי לראות
+- דוקומנטציה רשמית של Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- השוואה בין של Fish ל-Bash: [https://hyperpolyglot.org/unix-shells#fish](https://hyperpolyglot.org/unix-shells#fish)

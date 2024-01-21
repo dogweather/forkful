@@ -1,6 +1,7 @@
 ---
 title:                "部分文字列の抽出"
-html_title:           "Lua: 部分文字列の抽出"
+date:                  2024-01-20T17:46:13.238616-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "部分文字列の抽出"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,33 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ?
+## What & Why? (何となぜ？)
+文字列から部分文字列を取得することは、文字列内の特定のセクションを切り出す行為です。データの一部を表示したり解析したりする場合に行われます。
 
-文字列から部分文字列を抽出するとは、大きな文字列の具体的な一部を取り出すことです。プログラマーはこれを行う理由は多岐にわたりますが、主には特定のデータを分析したり、加工したりするためです。
-
-## どのように行うか:
-
-Kotlinでは、`substring()`関数を使って部分文字列を抽出できます。サンプルコードを見てみましょう。
-
+## How to: (方法)
 ```Kotlin
-val 字句 = "Kotlinプログラミング"
-val 部分字句 = 字句.substring(0,6)
-println(部分字句)
+fun main() {
+    val str = "こんにちは、世界！"
+    val sub1 = str.substring(0, 5) // 最初から5文字目まで
+    val sub2 = str.substring(5)    // 6文字目から最後まで
+
+    println(sub1) // 出力: こんにちは
+    println(sub2) // 出力: 、世界！
+}
 ```
-出力:
 
-```
-Kotlin
-```
+## Deep Dive (詳細情報)
+文字列操作は、プログラミングの黎明期からコンピュータサイエンスの基本的な要素です。Kotlinでは、`substring`関数はシンプルで直感的なAPIを提供し、Stringクラスの一部として実装されています。JavaのStringクラスから継承されたこのメソッドは、堅牢な文字列処理能力を受け継ぎながら、Kotlinらしい洗練された呼び出し方をします。`substring`には開始インデックスだけではなく、終了インデックスを指定するオーバーロードされたバージョンも存在し、柔軟な操作が可能です。代替方法として、`take`や`drop`のような拡張関数を利用することもできますが、明確な範囲を指定して切り出すときは`substring`がもっとも一般的です。
 
-上記の例では、"Kotlinプログラミング"から"Kotlin"を抽出しています。
-
-## より深く
-
-- **歴史**: 部分文字列の抽出は、文字列処理における基本的な操作です。これが可能になったのは、プログラミング言語が文字列を操作する能力を開発するために、ASCIIやUnicodeといった文字エンコーディングが進化してきたからです。
-- **代替案**: Kotlinでは、他にも`substringAfter()`, `substringBefore()`, `substringAfterLast()`, `substringBeforeLast()`なといった方法も提供しています。使い方はシチュエーションによります。
-- **実装詳細**: Kotlinの`substring()`関数は、コンピュータ上のメモリ内で文字列を扱うための効率的な方法を使用します。部分文字列は新しい文字列を作成せず、元の文字列の参照を保持します。
-
-## 参照資料
-
-- [Kotlin Official Documentation on Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+## See Also (関連情報)
+- Kotlinの公式ドキュメンテーションでの`String`クラス: [Kotlin Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)

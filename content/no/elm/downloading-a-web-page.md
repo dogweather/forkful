@@ -1,7 +1,8 @@
 ---
-title:                "Laste ned en nettside"
-html_title:           "Elixir: Laste ned en nettside"
-simple_title:         "Laste ned en nettside"
+title:                "Nedlasting av en nettside"
+date:                  2024-01-20T17:43:52.578068-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Nedlasting av en nettside"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,48 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# La oss lære Elm!
-
 ## Hva & Hvorfor?
+Å laste ned en nettside er prosessen med å hente innholdet til en nettside via internett, slik at du kan se eller bearbeide det i et program. Programmerere gjør dette for å samle data, integrere funksjoner fra andre nettsteder, og automatisere oppgaver som ellers ville vært manuelle.
 
-Å laste ned en webside er å hente data fra en bestemt URL, slik at den kan brukes eller vises i applikasjonen din. Programmerere gjør dette for å innhente nyttig informasjon fra eksterne kilder.
-
-## Hvordan:
-
-La oss dykke ned i hvordan du gjør dette i Elm. Her er det grunnleggende kodeskjelettet:
+## Hvordan gjør man det:
+Elm gjør bruk av `Http` for å laste ned nettsider. Her er et grunnleggende eksempel:
 
 ```Elm
 import Http
-import Json.Decode as Decode
+import Html exposing (Html, div, text)
+import Json.Decode exposing (string)
 
--- Definisjon av et HTTP-forespørsel som vil laste ned en webside
-loadWebPage : String -> Http.Request String
-loadWebPage url =
-    Http.request
-        { method = "GET"
-        , headers = []
-        , url = url
-        , body = Http.emptyBody
-        , expect = Http.expectStringResponse (\_ result -> result)
-        , timeout = Nothing
-        , tracker = Nothing
-        }
+type Msg = GotText String | FetchFail Http.Error
 
--- Bruker forespørselen for å laste opp websiden
-main =
-    Http.send handleDownloadResult (loadWebPage "https://www.example.com")
+fetch : Cmd Msg
+fetch =
+    Http.get { url = "https://example.com", expect = Http.expectString GotText FetchFail }
+
+view : String -> Html Msg
+view content =
+    div [] [ text content ]
+
+-- Husk å håndtere Msg i update-funksjonen for å oppdatere view
 ```
 
-Output vil være innholdet på websiden du ba om, eller en feilmelding.
+Eksempel på output:
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+```
 
-## Dyp Dykk
+## Dypdykk
+Elm's `Http`-bibliotek gjør det brukervennlig å laste ned webinnhold på en typesikker måte. Tidligere brukte man kanskje JavaScript med XMLHttpRequest eller fetch API, men Elm gir et renere og sikrere alternativ. Man må håndtere JSON-dekoding selv inspirert av Elm's tanke om at man skal jobbe eksplisitt med typesikkerhet. Alternativt kan man også se på tredjeparts biblioteker som tillater mer kompleks interaksjon med HTTP-klienter i Elm.
 
-Elm sitt HTTP-bibliotek ble introdusert i versjon 0.18 og har blitt stabilt og pålitelig verktøy for å laste ned websider. Alternativene innebærer bruk av JavaScript via Elm's porter, noe som ikke alltid er ideelt.
-
-Når det gjelder nedlasting av websider i Elm, det er effektivt fordi Elm håndterer asynkronitet for deg. Du trenger ikke å bekymre deg for callbacks, promises eller async / await som i JavaScript. Elm bruker en arkitektur basert på meldinger, der du sender en forespørsel og får et svar i den togformede Elm-arkitekturen.
-
-## Se Også
-
-For mer informasjon, sjekk ut disse ressursene: 
-- Elm's offisielle dokumenter: [Elm HTTP](https://package.elm-lang.org/packages/elm/http/latest/)
-- Elm's guide til å håndtere effekter: [Effects](https://guide.elm-lang.org/effects/)
+## Se Også:
+- Elm Http-pakken: https://package.elm-lang.org/packages/elm/http/latest/
+- Elm JSON guide: https://guide.elm-lang.org/effects/json.html
+- Elm offisiell guide for å sende HTTP-forespørsler: https://guide.elm-lang.org/effects/http.html

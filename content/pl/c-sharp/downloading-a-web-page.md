@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C#: Pobieranie strony internetowej"
+date:                  2024-01-20T17:43:31.177875-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "C#"
 category:             "C#"
@@ -11,12 +12,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i Dlaczego?
-
-"Ściąganie" strony internetowej oznacza pobieranie danych z serwera na swój lokalny komputer. Programiści robią to, aby analizować te dane, przetwarzać je i wykorzystywać w różnych celach.
+Pobieranie strony internetowej to proces zapisywania jej zawartości na dysku twardym. Programiści robią to, aby przetworzyć dane, przeprowadzić analizę treści lub utworzyć kopię zapasową.
 
 ## Jak to zrobić:
-
-Operację pobierania strony internetowej w C# można zrealizować za pomocą klasy `HttpClient` zawartej w bibliotece `System.Net.Http`.
+W C# pobranie strony webowej jest proste. Używamy `HttpClient`, a oto przykład:
 
 ```C#
 using System;
@@ -25,30 +24,25 @@ using System.Threading.Tasks;
 
 class Program
 {
-    public static async Task Main()
+    static async Task Main(string[] args)
     {
-        var httpClient = new HttpClient();
-        string responseBody = await httpClient.GetStringAsync("https://example.com");
-        
-        Console.WriteLine(responseBody);
+        using (HttpClient client = new HttpClient())
+        {
+            HttpResponseMessage response = await client.GetAsync("http://example.com");
+            response.EnsureSuccessStatusCode();
+            string responseBody = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(responseBody);
+        }
     }
 }
 ```
 
-Oczekuje się, że wynikiem powyższego kodu będzie wyświetlenie źródłowego kodu HTML strony internetowej "https://example.com".
+Wykonanie powyższego programu wyświetli HTML pobranej strony.
 
-## Głębsze Zagadnienia:
+## Głębsze spojrzenie:
+W przeszłości używano `WebClient` lub `HttpWebRequest`, ale `HttpClient` jest nowocześniejszy, wydajniejszy i lepiej przystosowany do asynchronicznego programowania. Istnieje kilka alternatyw, takich jak używanie bibliotek zewnętrznych (np. HtmlAgilityPack) do konkretnych zastosowań, jak web scraping. Implementacja `HttpClient` wspiera asynchroniczność od samego początku, co jest kluczowe przy operacjach sieciowych, pozwalając na lepsze zarządzanie zasobami, szczególnie przy dużym obciążeniu.
 
-1. **Historyczny Kontekst:** Klasa `HttpClient` zastąpiła starsze metody sieciowe, takie jak `WebClient` i `HttpWebRequest`.
-
-2. **Alternatywy:** Istnieje wiele alternatyw dla `HttpClient`, w tym biblioteki zewnętrzne takie jak `RestSharp` i `Flurl`.
-
-3. **Szczegóły Implementacji:** Gdy używasz `HttpClient` do pobierania strony, dane te są pobierane do pamięci, zanim zostaną przekazane do naszego kodu. To znaczy, że pobieranie bardzo dużych stron internetowych może być żmudne dla pamięci systemu.
-
-## Zobacz Również:
-
-1. [Dokumentacja HttpClient (.NET)](https://docs.microsoft.com/pl-pl/dotnet/api/system.net.http.httpclient?view=net-5.0)
-
-2. [RestSharp](http://restsharp.org/)
-   
-3. [Flurl](https://flurl.dev/)
+## Zobacz również:
+- Oficjalna dokumentacja `HttpClient`: https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient
+- Porównanie `HttpClient` z `WebClient`: https://www.c-sharpcorner.com/article/httpclient-vs-webclient-vs-httpwebrequest/
+- HTML Agility Pack, biblioteka do web scrapingu: https://html-agility-pack.net/

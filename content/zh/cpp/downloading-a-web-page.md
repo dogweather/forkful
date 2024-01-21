@@ -1,6 +1,7 @@
 ---
 title:                "下载网页"
-html_title:           "Arduino: 下载网页"
+date:                  2024-01-20T17:43:56.852156-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "下载网页"
 programming_language: "C++"
 category:             "C++"
@@ -10,36 +11,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
+## What & Why? 什么以及为什么？
+下载网页，就是从网上把网页内容拿到本地。程序员这么做是为了分析数据，监控网站状态，或是自动化测试。
 
-下载网页是获取网页源代码的过程，并以文件的形式存储在您的设备上。程序员这样做是因为他们可以离线检查源代码，分析其结构和内容，或将其用于数据挖掘和网络爬行等。
-
-## 怎么样：
-
-我们将使用C++中的库CPR(即Curl for People)来下载网页。这里有一个基本的代码例子：
-
+## How to: 如何操作
 ```C++
-#include <cpr/cpr.h>
-int main(){
-    cpr::Response r = cpr::Get(cpr::Url{"http://www.example.com"});
-    std::ofstream fout("example.html");
-    fout << r.text;
+#include <iostream>
+#include <curl/curl.h>
+
+size_t callback(void *contents, size_t size, size_t nmemb, std::string *s) {
+  size_t newLength = size * nmemb;
+  try {
+    s->append((char*)contents, newLength);
+  } catch(std::bad_alloc &e) {
+    // Handle memory problem
+    return 0;
+  }
+  return newLength;
+}
+
+int main() {
+  CURL *curl;
+  CURLcode res;
+  std::string response;
+
+  curl = curl_easy_init();
+  if(curl) {
+    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, callback);
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
+
+    res = curl_easy_perform(curl);
+    if(CURLE_OK == res) {
+      std::cout << response << '\n';
+    } else {
+      std::cerr << "CURL Error: " << curl_easy_strerror(res) << std::endl;
+    }
+    
+    curl_easy_cleanup(curl);
+  }
+  return 0;
 }
 ```
+### 输出样例：
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
 
-运行此代码后，您将在同一目录中找到一个名为"example.html"的文件，该文件包含从web页面"www.example.com"下载的源代码。
+## Deep Dive 深入挖掘
+下载网页不是什么新鲜事，在90年代早期web出现之初就已经有了。这个功能最初是通过命令行工具实现的，比如`wget`或`curl`。后来，随着编程语言的发展，库如`libcurl`允许我们在代码中直接实施这些操作。
 
-## 深度学习：
+这里示范的`libcurl`，是一个非常流行的跨平台的库支持多种协议，比如HTTP、HTTPS和FTP等。它也提供了易于使用的API以及良好的文档支持。
 
-(1) 历史背景：在许多年前的早期互联网时代，Web浏览器的主要任务就是下载和显示网页。从那时起，我们已经看到了各种工具和库的发展，比如curl和wget，它们可以帮助编程语言（包括C++）下载网页。
+其他选择包括 `Poco` 和 `Boost.Asio` （两者支持HTTP客户端功能）。截止到2023年，`Boost.Beast` 这个库也是受欢迎的选择，它依赖于 `Boost.Asio`，且专注于网络。
 
-(2) 选择替代方案：虽然本文提到的CPR库非常容易使用，但是还有其他一些库也可以达到同样的目的，比如Poco和Boost.Asio。
+实现时，注意一定要处理好内存和异常。示例中的错误处理非常基础，实际项目中可能需要更复杂的逻辑来处理网络异常和数据解析问题。
 
-(3) 实现细节：当我们谈到下载网页时，实际上我们是在发送HTTP GET请求到服务器，然后接收返回的数据。这是web浏览器如何获取和显示网页的方式。
+## See Also 参考链接
+- cURL 官方网站: [https://curl.se/](https://curl.se/)
+- libcurl 文档: [https://curl.se/libcurl/](https://curl.se/libcurl/)
+- Boost.Asio 库文档: [https://www.boost.org/doc/libs/release/libs/asio/](https://www.boost.org/doc/libs/release/libs/asio/)
+- Poco Libraries: [https://pocoproject.org/](https://pocoproject.org/)
 
-## 另请参阅：
-
-1. CPR库的GitHub页面：https://github.com/whoshuu/cpr
-2. 详细的HTTP GET和POST请求解释：https://www.w3schools.com/tags/ref_httpmethods.asp
-3. C++中的其他库Poco：https://pocoproject.org/ 和 Boost.Asio：https://www.boost.org/doc/libs/1_63_0/doc/html/boost_asio.html
-4. 用于同样目的的其他编程语言如Python中用于下载网页的库有urllib和requests等。
+记得，在真正使用这些库的时候，要去看看具体的文档和教程，确保用得地道。

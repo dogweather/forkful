@@ -1,7 +1,8 @@
 ---
-title:                "Slette tegn som samsvarer med et mønster"
-html_title:           "Arduino: Slette tegn som samsvarer med et mønster"
-simple_title:         "Slette tegn som samsvarer med et mønster"
+title:                "Slette tegn som matcher et mønster"
+date:                  2024-01-20T17:42:22.629361-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Slette tegn som matcher et mønster"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,51 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why?
+I Haskell handler sletting av tegn som matcher et mønster om å fjerne spesifikke tegn fra en tekststreng basert på gitte kriterier. Programmerere gjør dette for å rense data, forenkle tekstbehandling eller fjerne unødvendig eller sensitiv informasjon.
 
-# Sletting av tegn som samsvarer med et mønster i Haskell
-*Av Contract Author*
+## How to:
+I Haskell kan vi bruke `Data.Text` biblioteket til å arbeide med tekst og `Data.Text` sin funksjon `filter` for å slette tegn. Her er et eksempel:
 
----
+```haskell
+import Data.Text (Text, filter)
 
-## Hva & Hvorfor?
+deletePattern :: Char -> Text -> Text
+deletePattern pattern text = filter (/= pattern) text
 
-Sletting av tegn som samsvarer med et mønster er en prosess for å fjerne sekvenser av tegn basert på et spesifikt mønster eller regler. Programmerere bruker dette til å håndtere og behandle data mer effektivt.
-
----
-
-## Hvordan:
-
-Her er et eksempel på hvordan vi kan fjerne tegn som samsvarer med et mønster i Haskell.
-
-```Haskell
-import Data.Char (isSpace)
-import Data.List (dropWhileEnd)
-
-trim :: String -> String
-trim = dropWhileEnd isSpace . dropWhile isSpace
+main :: IO ()
+main = do
+    let text = "Heisann! Dette er en test."
+    let result = deletePattern 'e' text
+    print result
 ```
 
-Dette eksemplet viser hvordan vi kan bruke `dropWhileEnd` funksjonen til å fjerne mellomrom på begge ender av en streng.
+Kjøring av dette gir følgende resultat:
 
-```Haskell
-main = print (trim "   Hei, Universe   ")  -- Output: "Hei, Universe"
+```
+"Hisan! Dtt r n tst."
 ```
 
----
+## Deep Dive
+Sletting av mønstrende tegn er ikke nytt i Haskell, men `filter` funksjonen har eksistert i funksjonell programmering siden Lisp. Alternativer inkluderer bruk av regulære uttrykk med `Text.Regex` biblioteket, som kan være kraftigere, men også mer kompleks.
 
-## Dypdykk
+Implementasjonsdetaljer for `filter` er enkle: funksjonen traverserer gjennom tekststrengen, beholder tegn som ikke samsvarer med mønsteret og forkaster de som gjør det. Det er effektivt og lett å forstå.
 
-Historisk sett har sletting av tegn som samsvarer med et mønster lenge vært en viktig del av tekstbehandling i programmering. Selv om det finnes mange metoder for å oppnå dette, demonstrerer Haskell's funksjonelle programmeringsevner hvor kraftig og enkelt det kan være. Alternativer inkluderer bruk av regulære uttrykk og skrivemåter som er mer detaljerte, men det vil avhenge av den spesifikke applikasjonen og avanserte krav.
+## See Also
+- Haskell `Text` pakken: https://hackage.haskell.org/package/text
+- Regulære uttrykk i Haskell: https://hackage.haskell.org/package/regex-base
 
-Ved implementering i Haskell, er sletting av tegn typisk oppnådd ved hjelp av innebygde funksjoner som `dropWhile` og `dropWhileEnd`. Disse funksjonene opererer på lister, og i tilfelle av strenger, behandler Haskell strenger som lister av tegn.
-
----
-
-## Se også
-
-* [Haskell offisielle dokumentasjon om List processing functions](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:dropWhile)
-
-* [Lær deg Haskell, kapittel om lister](http://learnyouahaskell.com/starting-out#ready-set-go) 
-
-* [Stack Overflow Haskell spørsmål om character pattern deletion](https://stackoverflow.com/questions/9263651/how-do-i-delete-all-characters-in-string-that-match-a-pattern)
+Her er også et godt eksempel på bruk av `Data.Text` for tekstmanipulering i Haskell: https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation

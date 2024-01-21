@@ -1,6 +1,7 @@
 ---
 title:                "Lettura degli argomenti della riga di comando"
-html_title:           "Java: Lettura degli argomenti della riga di comando"
+date:                  2024-01-20T17:55:40.375716-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "C#"
 category:             "C#"
@@ -10,46 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Argomenti da riga di comando in C#
+## What & Why?
+Leggere gli argomenti della linea di comando significa prendere input dall'utente quando eseguono il tuo programma da un terminale. I programmatori lo fanno per personalizzare l'esecuzione di un'applicazione senza cambiare il codice.
 
-**## Che Cos'è & Perché?**
-
-La lettura degli argomenti da riga di comando è l'azione di estrarre parametri passati durante l'esecuzione di un programma. Fare ciò offre agli sviluppatori la possibilità di personalizzare comportamenti a runtime senza modificare il codice.
-
-**## Come Fare:**
-
-Di seguito, un esempio di come leggere gli argomenti della riga di comando in un'applicazione console C#:
+## How to:
+In C#, gli argomenti della linea di comando sono accessibili come array di stringhe nel metodo `Main`. Ecco un esempio:
 
 ```C#
 class Program
 {
     static void Main(string[] args)
     {
-        foreach (string arg in args)
+        foreach (var arg in args)
         {
-            Console.WriteLine(arg);
+            Console.WriteLine($"Argomento: {arg}");
         }
     }
 }
 ```
 
-Se eseguito con il comando `dotnet run arg1 arg2 arg3`, l'output sarà:
-
-```C#
-arg1
-arg2
-arg3
+Output di esempio se inserisci `dotnet run -- arg1 arg2 arg3`:
+```
+Argomento: arg1
+Argomento: arg2
+Argomento: arg3
 ```
 
-**## Approfondimento:**
+## Deep Dive
+Negli anni '80, le interfacce a riga di comando (CLI) dominavano l'interazione con i computer. L'uso degli argomenti della riga di comando è uno standard fin da allora. In C#, `Main` può usare `string[] args` o aggiornamenti recenti permettono `Main(string[] args)` anche come `async` o con parametri di tipo `Span<string>`. 
 
-1. **Contesto storico:** La possibilità di passare argomenti da riga di comando esiste sin dai primi tempi dei sistemi operativi Unix. Divenne un meccanismo standard utilizzato dai programmi per ricevere input quando avviati da un terminale.
+Alternative? Può usare `Environment.GetCommandLineArgs()`, che include anche il nome dell'eseguibile come primo argomento. Dettagli implementativi? Presta attenzione alla sicurezza: l'input può essere manipolato. Pulisci e valida gli argomenti prima di usarli.
 
-2. **Alternative:** Un'alternativa alla lettura diretta degli argomenti da riga di comando è l'uso delle opzioni di configurazione, che possono essere caricate da file di configurazione o variabili d'ambiente.
-
-3. **Dettagli di implementazione:** Quando un'applicazione .NET Core viene avviata da riga di comando, l'array di stringhe `args` all'interno del metodo `Main` viene popolato automaticamente con gli argomenti passati. Gli elementi di `args` corrispondono direttamente agli argomenti passati nel comando.
-
-**## Vedi anche:**
-
-- "Command-Line Arguments" (Argomenti da riga di comando) - Documentazione Microsoft: [link](https://docs.microsoft.com/it-it/dotnet/csharp/programming-guide/main-and-command-args/#:~:text=in%20C%23-,Main()%20Return%20Values,Application%20object%20in%20WPF%20applications.)
-- "How to read command line arguments" (Come leggere gli argomenti della riga di comando) – Tutorial di C# Station: [link](https://csharp-station.com/Tutorial/CSharp)
+## See Also
+- [Microsoft Docs on Command-Line Arguments](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
+- [Overview of .NET Core CLI](https://docs.microsoft.com/en-us/dotnet/core/tools/)

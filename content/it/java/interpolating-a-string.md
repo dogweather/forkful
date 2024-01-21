@@ -1,6 +1,7 @@
 ---
 title:                "Interpolazione di una stringa"
-html_title:           "Clojure: Interpolazione di una stringa"
+date:                  2024-01-20T17:51:03.376959-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolazione di una stringa"
 programming_language: "Java"
 category:             "Java"
@@ -10,35 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è & Perché?
+## Che Cos'è e Perché?
+L'interpolazione di stringhe è un modo per inserire valori di variabili direttamente all'interno di una stringa di testo. I programmatori la usano per rendere il codice più pulito e per evitare operazioni di concatenazione manuale, che possono essere fonte di errori e difficilmente leggibili.
 
-L'interpolazione delle stringhe è un processo che sostituisce segnaposti all'interno di una stringa con i loro valori corrispondenti. Lo facciamo per creare stringhe dinamiche, migliorare la leggibilità del codice e ridurre il rischio di errori.
+## Come Farlo:
+```java
+public class InterpolationDemo {
+    public static void main(String[] args) {
+        // Esempio con Java 15 e superiori
+        String name = "Marco";
+        int age = 25;
+        
+        // Template string con text blocks
+        String greeting = """
+                          Ciao, %s!
+                          Hai %d anni.
+                          """.formatted(name, age);
+        
+        System.out.println(greeting);
+    }
+}
 
-## Come fare:
-
-La versione corrente di Java non supporta nativamente l'interpolazione delle stringhe, ma possiamo usare `String.format()`, come mostrato:
-
-```Java
-int eta = 26;
-String nome = "Luca";
-String messaggio = String.format("Ciao, il mio nome è %s e ho %d anni", nome, eta);
-System.out.println(messaggio);
+/*
+Output:
+Ciao, Marco!
+Hai 25 anni.
+*/
 ```
 
-L'output sarà:
+## Approfondimento
+Prima di Java 15, l'interpolazione non era così semplice. Si usava la concatenazione (`+`) o `String.format()`. Con Java 15, le stringhe multiriga (text blocks) e il metodo `formatted()` hanno semplificato molto le cose.
 
-```Java
-Ciao, il mio nome è Luca e ho 26 anni
-```
+Esistono alternative: oltre a `String.format()` e la concatenazione, si può usare `MessageFormat` o librerie esterne come Apache Commons Lang `StrSubstitutor`.
 
-## Approfondimento:
+Dal punto di vista dell'implementazione, `String.format()` utilizza un pattern `Formatter` che può incidere sulle prestazioni se usato impropriamente. Invece, l'uso di text blocks con `formatted()` tende a essere più leggibile e performante per le stringhe statiche.
 
-L'interpolazione delle stringhe è un concetto comune in molti linguaggi di programmazione come JavaScript e Python. Prima di Java 5, si ricorreva alla concatenazione di stringhe o a `StringBuffer` o `StringBuilder`.
-
-Un'alternativa all'uso di `String.format()` è utilizzare una libreria esterna, come `MessageFormat` di Apache Commons.
-
-Dettagli implementativi: `String.format()` utilizza internamente `Formatter` che interpreta il formato della stringa. Ogni volta che si chiama `String.format()`, viene creato un nuovo oggetto `Formatter`, il che può portare a un overhead importante nell'utilizzo della memoria se la chiamata avviene in un ciclo pesante.
-
-## Vedi anche:
-
-- Documentazione ufficiale di Java su [String.format()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-)
+## Vedi Anche
+- [Documentazione ufficiale Oracle sulle Stringhe](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
+- [Java Enhancement Proposal 355: Text Blocks (Second Preview)](https://openjdk.java.net/jeps/355)
+- [Java Enhancement Proposal 378: Text Blocks](https://openjdk.java.net/jeps/378)
+- [Apache Commons Lang StrSubstitutor](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/text/StrSubstitutor.html)

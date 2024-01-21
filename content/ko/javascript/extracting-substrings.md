@@ -1,6 +1,7 @@
 ---
 title:                "부분 문자열 추출"
-html_title:           "Arduino: 부분 문자열 추출"
+date:                  2024-01-20T17:45:59.706072-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "부분 문자열 추출"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,43 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 필요한가요?
+## What & Why? (무엇과 왜?)
+JavaScript에서 문자열의 일부를 추출하는 것은 특정 부분의 데이터를 얻기 위함입니다. 검색, 데이터 정제 또는 UI 표시와 같은 많은 작업에 필수적입니다.
 
-문자열의 부분 문자열을 추출하는 것은, 그 이름에서 알 수 있듯이 문자열에서 원하는 부분을 얻어내는 작업을 가리킵니다. 이는 데이터를 빠르게 분석하고 조작하려는 프로그래머들에게 매우 필요한 기능입니다.
-
-## 어떻게 하는가:
-
-부분 문자열을 추출하는 데는 몇 가지 방법이 있습니다. 아래에 몇 가지 예제를 제공합니다.
-
+## How to (방법):
 ```Javascript
-let str = "안녕하세요, 자바스크립트!";
-console.log(str.substring(0, 5));  // 결과: "안녕하세요"
+// substring() 사용
+let text = "Hello, JavaScript!";
+let part = text.substring(7, 19); // "JavaScript!"
+console.log(part);
+
+// slice() 사용
+part = text.slice(7, 19); // "JavaScript!"
+console.log(part);
+
+// substr() 사용 (비권장)
+part = text.substr(7, 12); // "JavaScript!"
+console.log(part);
+```
+출력:
+```
+JavaScript!
+JavaScript!
+JavaScript!
 ```
 
-```Javascript
-let str = "안녕하세요, 자바스크립트!";
-console.log(str.slice(0, 5));  // 결과: "안녕하세요"
-```
+## Deep Dive (심층 분석):
+substring, slice, 그리고 substr은 모두 JavaScript에서 문자열을 추출하는 방법입니다. substring과 slice는 매우 유사하지만 매개 변수에 음수가 들어갈 경우의 행동이 다릅니다. substr은 현재는 권장되지 않으며 추후 표준에서 제거될 예정입니다. 이러한 함수는 문자열 작업을 쉽고 효율적으로 만드는 중요한 도구입니다.
 
-```Javascript
-let str = "안녕하세요, 자바스크립트!";
-console.log(str.substr(0, 5));  // 결과: "안녕하세요"
-```
-
-## 깊게 알아보기:
-
-**역사적 맥락**: JavaScript가 처음 등장했을 때에는 문자열 추출 기능이 제한적이었습니다. 그러나 ECMAScript 2015(ES6)이 등장하면서 `substring`, `slice`, `substr`과 같은 여러 메서드가 도입되었습니다.
-
-**대안**: `substring`, `slice`, `substr` 외에도 `split` 기법을 사용하여 부분 문자열을 추출할 수도 있습니다.
-
-```Javascript
-let str = "안녕하세요, 자바스크립트!";
-console.log(str.split(",")[0]);  // 결과: "안녕하세요"
-```
-
-**구현 세부 사항**: `substring`, `slice`, `substr`은 각각 약간 다른 방식으로 작동합니다. `substring`과 `slice`는 시작 인덱스와 종료 인덱스를 기준으로 작동하며, `substr`는 시작 인덱스와 추출할 길이를 기준으로 작동합니다.
-
-## 관련 자료:
-
-1. [MDN: 문자열 메서드와 속성](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String)
-2. [w3schools: JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
+## See Also (참조):
+- MDN Web Docs substring(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
+- MDN Web Docs slice(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+- MDN Web Docs substr(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr (단, 이 링크는 이 함수가 더 이상 권장되지 않음을 알립니다)

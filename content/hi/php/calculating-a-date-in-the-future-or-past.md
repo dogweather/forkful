@@ -1,7 +1,8 @@
 ---
-title:                "भविष्य या अतीत में एक तारीख की गणना"
-html_title:           "PHP: भविष्य या अतीत में एक तारीख की गणना"
-simple_title:         "भविष्य या अतीत में एक तारीख की गणना"
+title:                "भविष्य या अतीत में तारीख की गणना"
+date:                  2024-01-20T17:32:13.344120-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "भविष्य या अतीत में तारीख की गणना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,34 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-भविष्य या अतीत में तारीख की गणना "डेट मेनिपुलेशन" है, जो किसी विशिष्ट समय अवधि के बाद या पहले की तारीख का पता लगाने की प्रक्रिया है। प्रोग्रामर्स को इसकी जरुरत पड़ सकती है क्‍यूंकि वे कस्टम आरेखों, समयधारित पाबंदियां ऐडवान्स प्लानिंग के लिए जांच सकते हैं।
+## What & Why? (क्या और क्यों?)
+तारीख की गणना करना मतलब भूतकाल या भविष्यकाल में तारीखों का पता लगाना है। प्रोग्रामर्स इसे डेटा के विश्लेषण, एक्सपायरी तारीखों की जाँच और समय से जुड़ी गणनाएं करने के लिए करते हैं।
 
-## कैसे करें:
-आपके आधार पर, PHP में दिनांक की गणना की उदाहरण::
+## How to: (कैसे करें:)
 
 ```PHP
 <?php
-$date = new DateTime('2022-01-01');
-$date->add(new DateInterval('P10D'));
-echo $date->format('Y-m-d') . "\n";
+// आज की तारीख
+$today = new DateTime();
+
+// भविष्य में 10 दिनों के लिए
+$interval = new DateInterval('P10D');
+$futureDate = (clone $today)->add($interval);
+echo $futureDate->format('Y-m-d') . "\n"; // उदाहरण आउटपुट: 2023-04-21
+
+// भूतकाल में 10 दिनों के लिए
+$pastDate = (clone $today)->sub($interval);
+echo $pastDate->format('Y-m-d') . "\n"; // उदाहरण आउटपुट: 2023-04-01
 ?>
 ```
 
-उत्पादन::
+## Deep Dive (गहन जानकारी):
 
-```PHP
-2022-01-11
-```
+तारीखों की गणना करने के लिए PHP में 'DateTime' क्लास और 'DateInterval' क्लास का इस्तेमाल होता है। `DateTime` 5.2.0 संस्करण में जोड़ा गया, और इससे तारीखों का प्रबंधन आसान हो गया। इससे पहले 'strtotime()' फंक्शन का उपयोग होता था, जो अब भी उपयोगी है लेकिन 'DateTime' अधिक लचीलापन और विश्वसनीयता प्रदान करता है।
 
-उपरोक्त कोड उदाहरण में, हमने सिर्फ 10 दिनों की वृद्धि की है।
+`DateInterval` का उपयोग करके हम विशिष्ट समयावधियों को जोड़ने या घटाने के लिए कर सकते हैं। इसका 'P' प्रारूप ISO 8601 तिथि अंतर मानक का हिस्सा है, जिसमें 'P' का अर्थ है "period"। हम 'Y', 'M', 'D', 'H', 'M', और 'S' का इस्तेमाल करके साल, महीने, दिन, घंटे, मिनट और सेकंड को निर्देशित कर सकते हैं।
 
-## गहरी डाइव
-दिनांक मेनिपुलेशन को PHP में काफी पुराने समय से समर्थित किया जा रहा है। कई वैकल्पिक तरीके मौजूद हैं, जैसे कि `strtotime()` और `DateTime::modify()`, परांतु `DateTime` और `DateInterval` आधिकारिक तौर पर सबसे ठोस और विश्वसनीय माने जाते हैं। 
+## See Also (और भी देखें):
 
-डेट मेनिपुलेशन की कार्रवाई का परिणाम कांप्यूटर सिस्टम और समय क्षेत्र के चरित्र पर निर्भर कर सकता है, इसलिए इसे विचारना बहुत महत्वपूर्ण है।
-
-## ये भी देखें
-- [PHP अधिकारिक डॉक्यूमेंटेशन](https://www.php.net/manual/en/book.datetime.php)
-- [PHP Datetime क्लास](https://www.php.net/manual/en/class.datetime.php)
-- [PHP DateInterval क्लास](https://www.php.net/manual/en/class.dateinterval.php)
+- PHP Manual on DateTime: [php.net/manual/en/class.datetime.php](https://www.php.net/manual/en/class.datetime.php)
+- PHP Manual on DateInterval: [php.net/manual/en/class.dateinterval.php](https://www.php.net/manual/en/class.dateinterval.php)
+- Date and time related functions in PHP: [php.net/manual/en/ref.datetime.php](https://www.php.net/manual/en/ref.datetime.php)

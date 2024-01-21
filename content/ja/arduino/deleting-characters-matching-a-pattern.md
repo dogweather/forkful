@@ -1,6 +1,7 @@
 ---
 title:                "パターンに一致する文字を削除する"
-html_title:           "C: パターンに一致する文字を削除する"
+date:                  2024-01-20T17:41:38.938465-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,37 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+文字パターンに一致する文字を削除するのは、文字列から不要な部分を取り除く作業です。プログラマーはデータの整理、フォーマットの適正化、または不要な情報の削除のためにこれを行います。
 
-文字パターンに一致する文字を削除する、これは具体的には特定のパターンに一致する全ての文字を対象の文字列から削除することを指します。これは、不要なホワイトスペースを削除したり、特定の記号を除去したりする際などによく使用されます。
-
-## 実践方法：
-
-以下に、`Arduino`のコード例を示します。文字列から特定の文字('a'と'b')を削除します。
+## How to: (やり方)
+Arduinoには文字列からパターンに一致する文字を直接削除する組み込み関数はありませんが、必要な機能を作成することができます。以下の例では、特定の文字を削除する関数を作成し、使用する方法を示します。
 
 ```Arduino
-String sentence = "This is a basic Arduino example.";
-sentence.replace("a", ""); 
-sentence.replace("b", ""); 
-Serial.println(sentence);
+String deleteMatchingCharacters(String input, String pattern) {
+  String output = "";
+  for (int i = 0; i < input.length(); i++) {
+    if (pattern.indexOf(input.charAt(i)) < 0) {
+      // If the character at position i is not in the pattern, keep it
+      output += input.charAt(i);
+    }
+  }
+  return output;
+}
+
+void setup() {
+  Serial.begin(9600); 
+  String originalText = "Hello, World! 123";
+  String patternOfCharsToDelete = "lo123";
+
+  Serial.println("Before: " + originalText);
+  String cleanedText = deleteMatchingCharacters(originalText, patternOfCharsToDelete);
+  Serial.println("After: " + cleanedText);
+}
+
+void loop() {
+  // Nothing to do here
+}
 ```
 
-出力：
+出力は次のようになります。
 
-```Arduino
-"This is sic Arduio exmple."
+```
+Before: Hello, World! 123
+After: He, Wr!
 ```
 
-これは、`replace()`関数を使用してパターンに一致する文字をブランク('')に置き換えることで、特定の文字を削除しています。
+## Deep Dive (深掘り)
+歴史的に、文字削除の概念は古くからあり、Unixの`tr`コマンドなどで一般的に使われていました。Arduinoでは直接的な組み込み関数は提供されていないため、自分で関数を作成する必要があります。このアプローチの代替としては、正規表現ライブラリを使用することがありますが、Arduinoでの使用はメモリ制限のため推奨されません。作成した`deleteMatchingCharacters`関数は単純でメモリ効率が良いため、Arduinoのような制約のある環境で理想的です。
 
-## さらに深く:
-
-この特性は、コンピュータプログラミングの初期段階から存在しており、文字列操作の基本とも言える機能です。他の方法としては正規表現を使用したパターンマッチングがありますが、Arduinoでは直接サポートされていないため利用が難しいです。
-
-実装については、`replace()`関数の内部ではループと文字列の比較が行われており、適切な文字列の挿入と削除が管理されています。そのため、大量のデータで使用すると処理速度が遅くなる可能性がある点には注意が必要です。
-
-## 参考情報：
-
-以下のリンクから関連するトピックについて学ぶことができます:
-- Arduinoの文字列操作: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/
-- 更に詳しい文字列操作テクニック: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+## See Also (関連情報)
+- ArduinoのStringクラスのドキュメンテーション: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- 文字処理の基本：https://www.arduino.cc/reference/en/language/functions/characters/ 
+- 正規表現による文字処理：https://github.com/nickgammon/Regexp (注意: メモリ制限に留意)

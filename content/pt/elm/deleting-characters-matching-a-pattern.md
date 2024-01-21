@@ -1,6 +1,7 @@
 ---
 title:                "Excluindo caracteres que correspondem a um padrão"
-html_title:           "Arduino: Excluindo caracteres que correspondem a um padrão"
+date:                  2024-01-20T17:42:02.952252-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,46 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-
-# A deletar caracteres de acordo com um padrão no Elm
-
-## O Que é & Por Que?
-
-Deletar caracteres de acordo com um padrão é o ato de remover certos caracteres de uma string baseando-se numa condição. Programadores fazem isso quando querem limpar ou formatar dados.
+## O Quê & Porquê?
+Deletar caracteres que seguem um padrão específico é basicamente filtrar texto. Programadores fazem isso para limpar dados, validar input ou simplificar strings antes de processá-las.
 
 ## Como fazer:
-
-Vamos ver um exemplo simples de como deletar caracteres de uma string no Elm.
-
 ```Elm
-import String exposing (left, dropLeft)
+import String exposing (filter)
+import Regex exposing (fromString, contains)
 
-removeChar : Char -> String -> String
-removeChar x input =
-    let
-        split = String.split (String.fromChar x) input
-    in
-        String.join "" split
+removePattern : String -> String -> String
+removePattern pattern text =
+    case fromString pattern of
+        Nothing ->
+            text
+
+        Just regex ->
+            filter (\char -> not (contains regex (String.fromChar char))) text
+
+-- Usando a função:
+removePattern "[0-9]" "Elm2023 é top!"          --> "Elm é top!"
+removePattern "[^A-Za-z\\s]" "Olá, Mundo!123."  --> "Olá Mundo"
 ```
 
-Você pode chamar a função `removeChar` passando o caractere a ser removido e a string de onde ele será apagado, como exemplificado a seguir:
+## Aprofundando
+Historicamente, manipulação de strings é crítica em programação e cada linguagem tem sua abordagem. Em Elm, Regex e a função `filter` da biblioteca `String` são usadas para essa tarefa. Alternativas incluem escrever a própria função de filtragem ou usar funções de alto nível da biblioteca `String.Extra`. A implementação em Elm favorece clareza e segurança de tipos ao invés da performance pura; cada caractere é verificado individualmente contra o padrão regex, efetivamente deixando de fora aqueles que correspondem.
 
-```Elm
-removeChar 'a' "banana" 
--- A saída será "bnn"
-```
-
-## Deep Dive:
-
-Uma função muito utilizada para remover caracteres baseando-se em um padrão é a função `String.split`. Neste caso, o padrão é determinado pelo primeiro argumento da função, e os caracteres correspondentes ao padrão são removidos da string no segundo argumento. 
-
-Em versões anteriores do Elm, essa funcionalidade não estava embutida na biblioteca padrão, fazendo com que os programadores tivessem que criar suas próprias funções personalizadas. 
-
-Em relação às alternativas, outras linguagens de programação têm funções similares, como  `replaceAll()` em JavaScript e  `gsub()` em Ruby.
-
-## Veja Também:
-
-Você pode encontrar mais informações e utilizações da função `String.split` em:
-
-- Documentação oficial do Elm: [https://package.elm-lang.org/packages/elm/core/latest/String#split](https://package.elm-lang.org/packages/elm/core/latest/String#split)
+## Veja Também
+- Elm String Documentation: https://package.elm-lang.org/packages/elm/core/latest/String
+- Elm Regex Documentation: https://package.elm-lang.org/packages/elm/regex/latest/Regex
+- Artigo "Working with Strings in Elm": https://medium.com/@_rchaves_/working-with-strings-in-elm-803c9dd521c7
+- Elm String.Extra Library: https://package.elm-lang.org/packages/elm-community/string-extra/latest/

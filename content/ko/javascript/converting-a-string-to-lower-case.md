@@ -1,6 +1,7 @@
 ---
 title:                "문자열을 소문자로 변환하기"
-html_title:           "Bash: 문자열을 소문자로 변환하기"
+date:                  2024-01-20T17:38:52.142210-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,32 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜합니까? (What & Why?)
+## What & Why? (무엇과 왜?)
+문자열을 소문자로 바꾼다는 것은, 모든 대문자를 그에 해당하는 소문자로 변경하는 것입니다. 대소문자를 구분하지 않는 문자열 비교나 검색을 할 때 주로 사용됩니다.
 
-문자열을 소문자로 변환하는 것은 정확히 그대로의 의미입니다: 대문자가 있는 문자열을 받아 모든 문자를 소문자로 바꾸는 것입니다. 이는 대소문자 구분 없이 문자열을 비교하거나 정렬할 때 매우 유용합니다. 
+## How to: (방법)
+```javascript
+let greeting = 'Hello, World!';
+let lowerCaseGreeting = greeting.toLowerCase();
 
-## 어떻게 할까? (How to)
+console.log(lowerCaseGreeting); // "hello, world!"
 
-JavaScript에서는 이를 위한 기본 메서드 `toLowerCase()`를 제공합니다. 
-
-```Javascript
-var myString = "Hello, World!";
-console.log(myString.toLowerCase());
+let mixedCase = 'AnNyEoNg HaSeYo';
+console.log(mixedCase.toLowerCase()); // "annyeong haseyo"
 ```
 
-위 코드의 출력값
+## Deep Dive (심층 분석)
+문자열을 소문자로 변환하는 것은 웹 초기부터 필요했던 기능입니다. 데이터가 일관되게 저장되고 검색되어야 했기 때문이죠. `toLowerCase`는 JavaScript에서 이를 위한 표준적인 방법입니다.
 
-```Javascript
-"hello, world!"
-```
+대안으로 `toLocaleLowerCase` 메소드도 있습니다. 이 메소드는 특정 언어의 규칙에 따라 소문자로 변환합니다 (예: 터키어에서 I를 i로 변환할 때의 특수한 경우를 처리합니다).
 
-## 깊이 파보기 (Deep Dive)
+JavaScript 내부에서 `toLowerCase`는 유니코드 캐릭터를 소문자 매핑으로 대체하면서 동작합니다. 하지만 성능이나 동작 방식은 브라우저나 자바스크립트 엔진에 따라 다를 수 있습니다.
 
-1. **역사적 맥락** : JavaScript의 `toLowerCase()` 메서드는 처음 JavaScript가 나타났을 때부터 있었던 기능 중 하나입니다. 이 메서드는 문자열에 대소문자 구분 없이 조작을 하는 경우에 큰 힘이 됩니다.
-2. **대체 방법** : 이외에도 대소문자 구분없이 비교를 해야하는 경우 `localeCompare()` 함수를 사용할 수 있습니다. 그러나 `toLowerCase()`를 사용하면 더 간결하게 코드를 작성할 수 있습니다.
-3. **구현 세부 사항** : `toLowerCase()` 메서드는 문자열의 모든 대문자를 해당하는 소문자로 변환합니다. 이 변환은 호환 가능한 표준 유니코드로 수행됩니다.
-
-## 참고 자료 (See Also)
-
-- MDN Web Docs의 `toLowerCase()` 설명서는 여기서 확인하실 수 있습니다. [MDN toLowerCase](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- 대소문자 변환에 대한 모든 상세한 유니코드 매핑 정보는 [여기](https://www.unicode.org/Public/UNIDATA/UnicodeData.txt)서 찾아볼 수 있습니다.
+## See Also (추가 자료)
+- [`String.prototype.toLowerCase`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) documentation on MDN Web Docs
+- [`String.prototype.toLocaleLowerCase`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase) documentation on MDN Web Docs
+- [Unicode character case mapping](https://unicode.org/faq/casemap_charprop.html) for understanding how characters are mapped to their lower case equivalents in different languages

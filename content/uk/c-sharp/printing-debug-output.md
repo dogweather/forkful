@@ -1,7 +1,8 @@
 ---
-title:                "Друк відлагоджувального виводу"
-html_title:           "Arduino: Друк відлагоджувального виводу"
-simple_title:         "Друк відлагоджувального виводу"
+title:                "Виведення налагоджувальної інформації"
+date:                  2024-01-20T17:52:18.834576-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Виведення налагоджувальної інформації"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,39 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо?
+## What & Why? (Що та Чому?)
+Printing debug output – це як брати нотатки в процесі письма коду, щоб бачити, що відбувається в середині програми. Програмісти роблять це, щоб легше виявляти та вирішувати помилки.
 
-Друк діагностичного виводу - це процес, за якого програма виводить спеціальні повідомлення в консоль для слідкування за її роботою та виявлення помилок. Програмісти використовують його для легкого тестування й розшифрування коду.
-
-## Як це виконати:
-Отже, ось як ви можете друкувати діагностичний вивід у C#:
-
+## How to: (Як це зробити:)
 ```C#
-using System.Diagnostics;
+using System;
 
-public class Program
+class DebugExample
 {
-    public static void Main()
+    static void Main()
     {
-        Debug.WriteLine("Це діагностичне повідомлення");
+        int a = 5;
+        int b = 10;
+        int sum = a + b;
+        
+        // Print to console
+        Console.WriteLine("Debug Output: The sum is " + sum);
     }
 }
 ```
+Sample output:
+```
+Debug Output: The sum is 15
+```
 
-При виконанні цього коду в консолі з'явиться повідомлення: `Це діагностичне повідомлення`. Саме так, ви повинні бачити свій діагностичний вивід.
+## Deep Dive (Поглиблений Розбір)
+In the early days, debugging was often done using print statements. These statements let you peek inside the flow of your program at specific checkpoints. C# provides `Console.WriteLine()` for printing output to the console, which makes it a basic but powerful tool when debugging.
 
-## Поглиблений огляд
+Alternatives to `Console.WriteLine()` include using advanced debugging tools like Visual Studio Debugger, which allows setting breakpoints, watching variables, inspecting the call stack, etc. Also, there's `Debug.WriteLine()` for output that only appears during debugging and `Trace.WriteLine()` for when you need detailed execution traces in production. These write to listeners and can be configured in the `app.config` file.
 
-**Історичний контекст**: З початку розвитку комп'ютерних систем, діагностичний вивід був важливим інструментом для тестування програм і виявлення помилок.
+Implementation wise, writing debug output can also be managed by various logging frameworks like NLog or log4net. These frameworks offer more control and can direct your logs to different destinations like files, databases, or external monitoring services.
 
-**Альтернативи**: Інший популярний інструмент для видачі діагностичних даних - це `Trace.WriteLine()`. Він має відмінності у тому, коли і як він виводить вивід. Використовуйте його, коли вам потрібно виводити діагностичні дані як у режимі налагодження, так і у релізі.
-
-**Деталі імплементації**: `Debug.WriteLine()` працює лише у режимі налагодження і не буде видавати жодного повідомлення, коли програма скомпільована в режимі Release.
-
-## Дивіться також 
-
-1. Офіційна документація Microsoft про `Debug.WriteLine()`: [посилання](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug.writeline?view=net-5.0)
-
-2. Порівняння `Debug.WriteLine()` та `Trace.WriteLine()`: [посилання](https://stackoverflow.com/questions/29620290/what-is-the-difference-between-debug-write-and-trace-write)
-
-3. Путівник по налагодженню C# програм: [посилання](https://docs.microsoft.com/en-us/visualstudio/debugger/debugging-absolute-beginners?view=vs-2019)
+## See Also (Дивіться Також)
+- [Microsoft Docs: Debugging in Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/)
+- [Microsoft Docs: Trace Listeners](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/trace-listeners)
+- [NLog](https://nlog-project.org/)
+- [log4net](http://logging.apache.org/log4net/)

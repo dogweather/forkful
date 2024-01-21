@@ -1,7 +1,8 @@
 ---
-title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
-simple_title:         "Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma requisição HTTP com autenticação básica"
+date:                  2024-01-20T18:01:36.745430-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Enviando uma requisição HTTP com autenticação básica"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,46 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Enviando uma Solicitação HTTP com Autenticação Básica em Go
+## What & Why?
+Fazer uma requisição HTTP com autenticação básica significa enviar um pedido a um servidor que exige usuário e senha. Programadores fazem isso para acessar recursos protegidos em APIs ou outros serviços web.
 
-## O Que & Por Quê?
-
-Enviar uma solicitação HTTP com autenticação básica é o processo de envio de dados para um servidor web com credenciais de login. Isso é feito para garantir que o remetente é autorizado e proteger os dados sendo enviados.
-
-## Como Fazer:
-
-Vamos começar enviando uma solicitação HTTP básica. Aqui está o código em Go:
-
+## How to:
 ```Go
 package main
 
 import (
-	"net/http"
-	"fmt"
+    "encoding/base64"
+    "fmt"
+    "net/http"
+    "io/ioutil"
 )
 
 func main() {
-	req, _ := http.NewRequest("GET", "http://exemplo.com", nil)
-	req.SetBasicAuth("usuario", "senha")
+    client := &http.Client{}
+    req, err := http.NewRequest("GET", "http://exemplo.com/recurso", nil)
+    if err != nil {
+        panic(err)
+    }
+    
+    // Codificação do usuário e senha
+    auth := base64.StdEncoding.EncodeToString([]byte("usuario:senha"))
 
-	res, _ := http.DefaultClient.Do(req)
-	fmt.Println(res.Status)
+    // Adicionar o cabeçalho de autenticação
+    req.Header.Add("Authorization", "Basic " + auth)
+
+    // Fazer a requisição
+    resp, err := client.Do(req)
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
+
+    // Ler e imprimir a resposta
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(string(body))
 }
 ```
 
-Quando você executa esse código, você verá a resposta do status HTTP do seu servidor na linha de comando.
-
 ## Deep Dive
+A autenticação básica HTTP é um método antigo, mas direto, parte do protocolo HTTP 1.0 desde 1996. Funciona codificando 'username:password' em Base64 e inserindo na cabeça do pedido. Apesar de simples, não é a mais segura; por isso, sempre use HTTPS, que criptografa a comunicação. Existem métodos mais modernos como OAuth, JWT e outras formas de autenticação de tokens, mas a autenticação básica ainda é comum devido à sua simplicidade. Quando implementar, certifique-se de lidar com a codificação e decodificação corretamente e de manejar os cabeçalhos HTTP.
 
-A autenticação básica HTTP é um método antigo, mas simples, para segurança na web. Historicamente é usado quando uma proteção simples para dados sensíveis é necessária e SSL/TLS não é necessário. Hoje em dia, é melhor utilizar a autenticação básica apenas em conjunto com SSL/TLS, já que as credenciais são transmitidas como texto simples.
-
-Existem várias alternativas à autenticação básica, como OAuth e JWT, que oferecem uma variedade de recursos de segurança avançados. Implementá-los pode ser um pouco mais complexo, então a preferência realmente depende das necessidades do seu projeto.
-
-Internamente, a autenticação básica em Go ocorre pela adição de um cabeçalho 'Authorization' à solicitação HTTP. O valor deste cabeçalho é composto pela palavra 'Basic' seguida de um espaço e da combinação base64 da string "usuario:senha".
-
-## Veja Também
-
-* Documentação oficial do Go para [autenticação básica](https://golang.org/pkg/net/http/#Request.SetBasicAuth)
-* Leia mais sobre [OAuth](https://oauth.net/)
-* Leia mais sobre [JWT](https://jwt.io/introduction/)
-* Uma discussão detalhada sobre [autenticação HTTP básica vs. token](https://security.stackexchange.com/questions/108662/basic-http-auth-vs-token-based-auth)
+## See Also
+- [Go net/http package](https://pkg.go.dev/net/http)
+- [Go base64 encoding](https://pkg.go.dev/encoding/base64)
+- [HTTP Basic Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+- [All About HTTP Authentication and Security (em inglês)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

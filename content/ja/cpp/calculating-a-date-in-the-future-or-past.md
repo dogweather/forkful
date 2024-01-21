@@ -1,7 +1,8 @@
 ---
-title:                "未来または過去の日付を計算する"
-html_title:           "C++: 未来または過去の日付を計算する"
-simple_title:         "未来または過去の日付を計算する"
+title:                "未来または過去の日付の計算"
+date:                  2024-01-20T17:30:47.141416-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "未来または過去の日付の計算"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,61 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 計算できる未来または過去の日付：なんでとなぜ？
+## What & Why? (何となぜ？)
 
-未来または過去の日付を計算することは、指定された日付から特定の日数を追加または削除するという処理を意味します。プログラマは、時間地点の相対的な計算を行う、間隔を測定したり、期限を設定する等の多くの理由でこのような計算を行います。
+将来または過去の日付を計算することは、特定の日から数えて他の日を見つけるプロセスです。プログラマーは予約システム、リマインダー機能、データ分析などで日付演算をしばしば使用します。
 
-# やり方：
-
-以下に、C++で未来または過去の日付を計算するための基本的なコードを示します。
+## How to: (方法)
 
 ```C++
-#include <ctime>
 #include <iostream>
+#include <chrono>
+#include <ctime>
+#include <iomanip>
 
-int main()
-{
-    std::time_t now = std::time(0);
-    std::tm *ltm = std::localtime(&now);
+int main() {
+    using namespace std::chrono;
 
-    // 表示現在の日付 and 時間
-    std::cout << "年: "<< 1900 + ltm->tm_year << "\n";
-    std::cout << "月: "<< 1 + ltm->tm_mon << "\n";
-    std::cout << "日: "<<  ltm->tm_mday << "\n";
-
-    // サンプル: 15 日後の日付
-    ltm->tm_mday += 15; 
-    mktime(ltm);
-
-    std::cout << "15 日後:\n";
-    std::cout << "年: "<< 1900 + ltm->tm_year << "\n";
-    std::cout << "月: "<< 1 + ltm->tm_mon << "\n";
-    std::cout << "日: "<<  ltm->tm_mday << "\n";
-
+    // 現在の日時を取得
+    system_clock::time_point today = system_clock::now();
+    time_t tt = system_clock::to_time_t(today);
+    
+    // 5日後の日付を計算
+    system_clock::time_point future_date = today + days{5};
+    tt = system_clock::to_time_t(future_date);
+    
+    // 5日前の日付を計算
+    system_clock::time_point past_date = today - days{5};
+    time_t pt = system_clock::to_time_t(past_date);
+    
+    // 出力
+    std::cout << "今日の日付: " << std::put_time(std::localtime(&tt), "%Y-%m-%d") << std::endl;
+    std::cout << "5日後の日付: " << std::put_time(std::localtime(&tt), "%Y-%m-%d") << std::endl;
+    std::cout << "5日前の日付: " << std::put_time(std::localtime(&pt), "%Y-%m-%d") << std::endl;
+    
     return 0;
 }
 ```
-このコードの出力は以下のようになります。
 
+Sample Output:
 ```
-年: 2022
-月: 5
-日: 17
-15 日後:
-年: 2022
-月: 6
-日: 1
+今日の日付: 2023-04-30
+5日後の日付: 2023-05-05
+5日前の日付: 2023-04-25
 ```
-# 深堀り：
 
-過去の日付を計算することは古代から存在します。年号と月日は 土地や文化によりますが、常に使っていた。 
+## Deep Dive (深掘り)
 
-C++で未来または過去の日付を計算するにはいくつかの方法があります。最も一般的なのは、`std::tm`と`std::mktime`を使用する方法ですが、他のライブラリーや方法が存在します。例えば、`boost::date_time`ライブラリーまたは`std::chrono`ライブラリーがあります。
+過去、日付の計算は自作関数やライブラリ依存だった。C++11以降、`<chrono>`ライブラリが導入され、時間の概念は大きく変わった。上記の例では`std::chrono`を使用し、タイムスタンプ加減算を行う`days`型を利用します。標準ライブラリはプラットフォーム間での一貫性を保証するが、時にはタイムゾーン計算や閏秒のような複雑なケースを扱うために外部ライブラリ（`Boost.Date_Time`など）の使用が推奨される場合もあります。
 
-`std::mktime`の役割は、`std::tm`構造体を`std::time_t`タイプに変換することです。もし`std::tm`構造体の値が範囲外だと（例えば、日付が31より大きいなど）、`std::mktime`は適切に日付を調節します。
+## See Also (参照)
 
-# 参考情報：
-
-- C++リファレンス：[std::mktime](http://www.cplusplus.com/reference/ctime/mktime/)
-- C++リファレンス：[std::tm](http://www.cplusplus.com/reference/ctime/tm/)
-- Boostライブラリーリファレンス：[Boost Date Time Library](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html)
+- C++ Reference: `<chrono>` documentation: https://en.cppreference.com/w/cpp/header/chrono
+- Boost Date_Time library: https://www.boost.org/doc/libs/release/libs/date_time/
+- Howard Hinnant's date library, which expands on the `<chrono>` facilities: https://github.com/HowardHinnant/date

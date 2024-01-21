@@ -1,6 +1,8 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
-html_title:           "C++: Obliczanie daty w przyszłości lub przeszłości"
+date:                  2024-01-20T17:28:33.161906-07:00
+model:                 gpt-4-1106-preview
+html_title:           "Clojure: Obliczanie daty w przyszłości lub przeszłości"
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "C++"
 category:             "C++"
@@ -10,40 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co & Dlaczego?
+Obliczanie daty w przeszłości lub przyszłości to określenie nowego momentu w czasie względem znanego punktu odniesienia. Programiści wykorzystują tę umiejętność do planowania zdarzeń, przewidywania terminów i zarządzania cachowaniem danych.
 
-Obliczanie daty w przyszłości lub przeszłości polega na dodawaniu lub odejmowaniu pewnej liczby dni do określonej daty. Programiści robią to, aby śledzić terminy, generować harmonogramy, zarządzać danymi historycznymi i wiele więcej.
-
-## Jak to zrobić:
-
-Rozważmy prosty przykład, w którym dodajemy siedem dni do dzisiejszej daty za pomocą standardowej biblioteki C++. 
-
-```C++
+## Jak to zrobić?
+```c++
 #include <iostream>
 #include <chrono>
+#include <iomanip>
 
 int main() {
-    std::chrono::system_clock::time_point today = std::chrono::system_clock::now();
-    std::chrono::system_clock::time_point week_later = today + std::chrono::hours(24*7);
+    using namespace std::chrono;
+    
+    // Pobieramy aktualny czas systemowy i przekształcamy na czas lokalny
+    system_clock::time_point today = system_clock::now();
+    time_t tt = system_clock::to_time_t(today);
+    tm local_tm = *localtime(&tt);
 
-    std::time_t tt = std::chrono::system_clock::to_time_t( week_later );
-    std::tm * ptm = std::localtime(&tt);
-    std::cout<<"Date one week later: "<<std::put_time(ptm,"%c")<<std::endl;
+    // Dodajemy 30 dni do aktualnej daty
+    system_clock::time_point future_date = today + days(30);
+    tt = system_clock::to_time_t(future_date);
+    tm future_tm = *localtime(&tt);
+
+    // Formatujemy i wyświetlamy datę
+    std::cout << "Dzisiejsza data to: " << std::put_time(&local_tm, "%d-%m-%Y") << '\n';
+    std::cout << "Data za 30 dni to: " << std::put_time(&future_tm, "%d-%m-%Y") << '\n';
+
+    return 0;
 }
 ```
-Wyjście wynikowe będzie datą jednego tygodnia od dzisiaj.
+Sample Output:
+```
+Dzisiejsza data to: 15-04-2023
+Data za 30 dni to: 15-05-2023
+```
 
-## Głębsze spojrzenie:
+## Warto Wiedzieć
+W C++, obliczanie daty w przeszłości lub przyszłości jest łatwiejsze z biblioteką `<chrono>`, wprowadzoną w C++11. Wcześniej, programiści musieli polegać na skomplikowanej matematyce i funkcjach z rodziny C `time.h`. Biblioteka `<chrono>` oferuje nowocześniejsze i bezpieczniejsze podejście.
 
-Historia obliczeń dat przypomina historię prognozowania pogody - rozpoczęła się dużo wcześniej, niż możemy myśleć, i stała się coraz bardziej zaawansowana z technologicznym czasem. Przed maszynami, ludzie liczyli daty przyszłe i przeszłe za pomocą kalendarzy, księżycowych cykli i obserwacji sezonowych. 
+Alternatywy? Możesz użyć bibliotek zewnętrznych jak Boost lub Qt, które mają własne mechanizmy dat i czasu. Jednak `<chrono>` jest częścią standardowej biblioteki, co oznacza mniej zależności i (zazwyczaj) łatwiejsze utrzymanie.
 
-Z alternatyw obliczania dat w przyszłości lub przeszłości w C++, poza std::chrono, istnieje wiele innych bibliotek trzecich, takich jak date, Boost.Date_Time, ICU (International Components for Unicode) i wiele innych. Każda z nich ma swoje zalety i wady, dlatego ważne jest, aby wybrać tę najbardziej odpowiednią do Twojego konkretnego zastosowania. 
+Szczegóły implementacyjne? Gdy pracujesz z datami, pamiętaj o strefach czasowych i przestępnych sekundach. Złożoność czasu jest potężna, ale C++ pomaga w jej uproszczeniu przy pomocy typów takich jak `system_clock::time_point` czy `duration`.
 
-W przypadku korzystania z biblioteki `std::chrono`, wszystko opiera się na punktach czasowych (`time_point`), które są określone jako liczba "kroków" od określonego punktu czasu zwanej "erą". 
-
-## Zobacz również:
-
-1. [Chrono w C++](https://en.cppreference.com/w/cpp/chrono)
-2. [Biblioteka date dla C++](https://github.com/HowardHinnant/date)
-3. [Biblioteka Boost.DateTime](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html)
-4. [ICU - International Components for Unicode](https://unicode-org.github.io/icu/userguide/datetime/calendar/)
+## Zobacz Również
+- Dokumentacja C++ `<chrono>`: https://en.cppreference.com/w/cpp/chrono
+- Tutorial Boost DateTime: https://www.boost.org/doc/libs/1_74_0/doc/html/date_time.html
+- Tutorial Qt QDateTime: https://doc.qt.io/qt-5/qdatetime.html

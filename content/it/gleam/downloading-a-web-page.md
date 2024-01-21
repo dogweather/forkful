@@ -1,6 +1,7 @@
 ---
 title:                "Scaricare una pagina web"
-html_title:           "C++: Scaricare una pagina web"
+date:                  2024-01-20T17:44:03.507449-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Scaricare una pagina web"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,35 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Scarica una pagina web con Gleam
+## What & Why?
+Scaricare una pagina web significa prelevare i dati da un sito e salvarli localmente. I programmatori lo fanno per analizzare il contenuto, testare la disponibilità o integrare informazioni in app diverse.
 
-## Che cosa e perché?
-Scaricare una pagina web significa recuperarlo dal server web su cui è ospitata. I programmatori fanno questo per vari motivi, tra cui l'analisi dei dati, il controllo delle modifiche e l'automazione dei compiti sulla web.
-
-## Come fare:
-Ecco un esempio di come scaricare una pagina web usando la libreria `gleam/httpc` in Gleam. 
-Assicurati di aver aggiunto "gleam/httpc" al tuo file `rebar.config`.
+## How to:
+Gleam non ha una libreria standard per il networking, ma puoi usare librerie esterne come `reqwest` per Rust. Ecco un esempio di come fare:
 
 ```gleam
-import gleam/httpc
-import gleam/http.{Request}
+extern crate reqwest
 
-fn scarica_pagina() {
-  let req = Request(url: "https://example.com") 
-  let _ = httpc.send(req)
+fn main() {
+  let body = reqwest::get("https://www.esempio.com")
+               .await?
+               .text()
+               .await?;
+
+  println!("Il contenuto della pagina: {:?}", body);
 }
 ```
 
-Quando esegui questo codice, invierai una richiesta GET a "https://example.com" e riceverai una risposta dal server.
+Ovviamente, questo è un esempio base. Nella realtà, dovrai gestire gli errori e l'asincronia correttamente.
 
-## Approfondimento
-Il download di pagine web è una pratica che risale alla nascita del web stesso. Inizialmente, il download di una pagina web era un'operazione semplice: si inviava una richiesta GET a un server e si riceveva il codice HTML della pagina. Oggi, molte pagine web sono dinamiche e richiedono un numero più complesso di passaggi per essere scaricate completamente.
+## Deep Dive
+Nel passato, scaricare una pagina web era più semplice. Oggi, con sito web dinamici e protezioni anti-bot, può essere più complicato. Librerie come `reqwest` sono evolute per gestire complessi scenari HTTP, come richieste asincrone, autenticazione e molto altro.
 
-Ci sono molte librerie e strumenti alternativi per scaricare pagine web in diverse lingue e piattaforme. Alcuni popolari includono `requests` in Python, `axios` in Javascript, e `HttpClient` in .NET. 
+Alternative a `reqwest` in Gleam possono essere `hyper` per Rust o usare bindings per libcurl. Tieni presente anche che molti siti moderni offrono API RESTful per l'accesso ai loro dati, che possono essere un'opzione più semplice per alcune applicazioni.
 
-`gleam/httpc` è una libreria di Gleam che rende semplice inviare richieste HTTP. La sua implementazione è un wrapper intorno all'implementazione Erlang di httpc, che è molto affidabile e ben supportata.
+Per il parsing del HTML scaricato, librerie come `BeautifulSoup` in Python sono popolari. In Gleam, ti potresti affidare a librerie esterne precise per Rust o Erlang per fare questo.
 
-## Vedi anche
-Per saperne di più su come utilizzare la libreria `gleam/httpc`, consulta la [documentazione ufficiale](https://hexdocs.pm/httpc/readme.html).
+## See Also
 
-Per un'introduzione più dettagliata al Gleam, potrebbe essere utile la [Guida di introduzione a Gleam](https://gleam.run/getting-started/).
+- [reqwest documentation](https://docs.rs/reqwest/)
+- [hyper documentation](https://hyper.rs/)
+- [libcurl bindings for Rust](https://github.com/alexcrichton/curl-rust)
+- [RESTful API guidelines](https://restfulapi.net/)

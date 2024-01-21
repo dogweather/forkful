@@ -1,6 +1,7 @@
 ---
 title:                "Extrahera delsträngar"
-html_title:           "Arduino: Extrahera delsträngar"
+date:                  2024-01-20T17:45:43.674143-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extrahera delsträngar"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,35 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## What & Why?
+Att extrahera delsträngar innebär att man plockar ut specifika delar av en textsträng. Programmerare gör detta för att manipulera och analysera data, eller för att enkelt kunna skapa specifika textbaserade format.
 
-Visar du hur man extraherar understrängar med Haskell? Understrängar är delar av en sträng, och extrahering av dessa är nyckeln till textmanipulering. Detta behövs framförallt när man skapar sökfunktioner och skript som analyserar textdata.
-
-## Såhär:
-
-Här är några grundläggande sätt att extrahera understrängar i Haskell:
-
-Använda `take`, `drop` och `slice`:
+## How to:
+I Haskell använder du ofta standardbibliotekets funktioner för att hantera strängar. Här är några exempel på hur man extraherar delsträngar:
 
 ```Haskell
-let str = "Hejsan, Världen!"
-take 3 str -- "Hej"
-drop 7 str -- ", Världen!"
-slice 0 10 str -- "Hejsan, Vä"
+import Data.Text (Text)
+import qualified Data.Text as T
+
+-- Exempel: Extrahera en delsträng med `take` och `drop`
+extractSubstr :: Text -> Int -> Int -> Text
+extractSubstr str start len = T.take len . T.drop start $ str
+
+-- Användning:
+main :: IO ()
+main = do
+    let text = T.pack "Hej, världen!"
+    putStrLn . T.unpack $ extractSubstr text 5 7  -- Output: "världen"
 ```
 
-Viktigt att notera är att indexeringen börjar från 0.
+## Deep Dive
+I Haskell använder man ofta `Data.Text` för strängmanipulation, eftersom det är mer effektivt än `String`. Historiskt sett användes `String` (en lista av tecken), men det var långsamt för större textmängder.
 
-## Fördjupning
+Det finns andra sätt att hantera sub-strings också. Modulen `Data.Text` tillhandahåller `take`, `drop`, och `splitAt` bland andra, som låter dig skära och sätta ihop strängar som du vill.
 
-Innan substrängsextraktion blev standard i Haskell, var vanliga sätt att lösa detta att använda bibliotek som `Text.Regex` och `split`. 
+Implementationsmässigt använder `Data.Text` en array av Unicode-tecken (UTF-16 kodade) vilket gör det snabbare än `String` (som är en länkad lista av tecken).
 
-Ett alternativ till de inbyggda funktionerna är att använda listfunktioner som `filter` och `map` med hjälp av list comprehension.
+## See Also
+Mer om `Data.Text`: https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html
 
-En annan detalj är att `take`, `drop` och `slice` intern realiserar substrängsextraktion genom kopiering av teckensekvenser. Detta kan leda till viss prestandadebitering vid stora datamängder.
-
-## Se även
-
-Herald programming blog: [Extracting substrings in Haskell](https://heraldprogramming.com/2021/12/extracting-substrings-in-haskell)
-
-School of Haskell: [Substrings in Haskell - How to Do it Efficiently](https://www.schoolofhaskell.com/user/peter/efficient-substrings)
+För grundläggande Haskell-strängmanipulation, se LYAH: http://learnyouahaskell.com/starting-out#strings

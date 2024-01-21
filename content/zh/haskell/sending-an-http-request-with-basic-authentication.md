@@ -1,7 +1,8 @@
 ---
-title:                "使用基本认证发送http请求"
-html_title:           "Bash: 使用基本认证发送http请求"
-simple_title:         "使用基本认证发送http请求"
+title:                "使用基本认证发送 HTTP 请求"
+date:                  2024-01-20T18:01:42.730703-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "使用基本认证发送 HTTP 请求"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,45 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Haskell中的HTTP请求与基本认证
-
 ## 什么 & 为什么？
+发送带有基本认证的HTTP请求是一种网上通信方法，用于在客户端和服务器间安全传输用户名和密码。程序员这样做是为了访问需要验证的资源，比如APIs。
 
-在网络编程中，HTTP请求与基本认证是使用用户名和密码访问受保护的网络资源的一种常见方式。程序员通过它来保护用户的数据，并控制对特定资源的访问。
-
-## 如何实现？
-
-在Haskell中，我们可以使用http-conduit库来发送带有基本认证的HTTP请求。这是一个使用的简单例子。
-
+## 如何做：
 ```Haskell
 import Network.HTTP.Simple
-import Network.HTTP.Client
 
-main :: IO ()
-main = do
-    let settings = applyBasicAuth "username" "password"
-    request' <- parseRequest "http://example.com"
-    let request = setRequestManager (settings defaultManagerSettings) request'
-    response <- httpLBS request
+-- 设置请求URL和认证信息
+let url = "http://example.com/data"
+let auth = basicAuth "username" "password"
 
-    putStrLn $ "The status code is: " ++ show (getResponseStatusCode response)
-    print $ getResponseHeader "Content-Type" response
-    L8.putStrLn $ getResponseBody response
+-- 创建请求并添加认证
+let request = setRequestURL url $ setRequestBasicAuth auth defaultRequest
+
+-- 发送请求并获取响应
+response <- httpLBS request
+
+-- 打印响应的状态码和正文
+putStrLn $ "Status code: " ++ show (getResponseStatusCode response)
+putStrLn $ "Body: " ++ show (getResponseBody response)
+```
+样例输出：
+```
+Status code: 200
+Body: <response body>
 ```
 
-在这个例子中，我们引入`Network.HTTP.Simple`和`Network.HTTP.Client`库，创建了一个基本的认证设置，然后设置了一个HTTP请求。展示结果时，我们获取了响应的状态码和头信息，并打印了响应的主体。
+## 深入了解
+HTTP基本认证的方法由内置于HTTP框架的验证机制组成，历史悠久，可以追述至HTTP/1.0。尽管基本认证明文发送经过Base64编码的凭据，容易受到中间人攻击，但因其简单性，在内部或者低安全需求的系统中仍然广泛使用。除此之外，还有更安全的认证方式，如OAuth。
 
-## 深入探讨
+Haskell中发送HTTP请求，通常使用如`Network.HTTP.Simple`这样的库来简化流程。这些库封装了底层网络协议，使开发者可以更容易地发送请求，并处理如编码、超时和错误之类的点。
 
-在Web的早期，基本认证是一种常见的身份验证方式。尽管现在已经有了更安全、更灵活的认证方式，例如OAuth和JWT，但基本认证在许多情况下仍然是一个有效的选择，比如在内部网络或不需要用户交互的服务器到服务器的通信中。
-
-http-conduit库提供了一种非常高效的方法来处理HTTP请求。它提供了大量的配置选项，比如代理设置、超时设置等。在处理基本认证时，也提供了很好的支持。除此之外，Haskell社区还有其他一些库可用于处理HTTP请求，如http-client、Wreq等。
-
-## 另请参阅
-
-相关资料和进一步阅读：
-
-1. http-conduit库在线文档：https://hackage.haskell.org/package/http-conduit
-2. Haskell中的网络编程教程：http://book.realworldhaskell.org/read/using-parsec.html
-3. Haskell中HTTP请求的深入介绍：https://www.schoolofhaskell.com/user/adinapoli/the-pragmatic-haskeller
-4. 关于HTTP的基本认证的RFC文档：https://tools.ietf.org/html/rfc7617
+## 参考链接
+- Haskell `http-conduit` [官方文档](https://www.stackage.org/package/http-conduit)
+- HTTP认证概述 [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- Base64编码解码 [Wiki](https://en.wikipedia.org/wiki/Base64)

@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie zapytania http z podstawową autoryzacją"
+date:                  2024-01-20T18:01:09.381171-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,58 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to i Dlaczego?
-
-Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem to technika używana do autentykacji użytkownika w protokole HTTP za pomocą loginu i hasła. Programiści korzystają z tego, aby zapewnić bezpieczną komunikację i dostęp do chronionych zasobów.
+## Co i Dlaczego?
+Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem to sposób na autoryzację użytkownika poprzez przesyłanie loginu i hasła w nagłówku HTTP. Programiści używają tego mechanizmu, by dostęp do zasobów sieciowych był ograniczony i bezpieczny.
 
 ## Jak to zrobić:
-
-Przykładowy kod do wysłania żądania HTTP z podstawowym uwierzytelnieniem w języku C#:
-
 ```C#
 using System;
 using System.Net;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
-public class Example
+class Program
 {
-    static void Main()
+    static async Task Main(string[] args)
     {
+        var client = new HttpClient();
+
+        // Tworzenie danych uwierzytelniania
+        var credentials = Encoding.ASCII.GetBytes("username:password");
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(credentials));
+
         try
         {
-            WebClient client = new WebClient();
-            string authInfo = "username:password";
-            authInfo = Convert.ToBase64String(Encoding.Default.GetBytes(authInfo));
-            client.Headers["Authorization"] = "Basic " + authInfo;
-
-            string result = client.DownloadString("http://example.com");
-            Console.WriteLine(result);
+            // Wysłanie żądania GET z podstawowym uwierzytelnieniem
+            HttpResponseMessage response = await client.GetAsync("http://example.com/protected-resource");
+            response.EnsureSuccessStatusCode();
+            string responseBody = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(responseBody);
         }
-        catch (Exception e)
+        catch (HttpRequestException e)
         {
-            Console.WriteLine(e.Message);
+            Console.WriteLine("\nWyjątek!");
+            Console.WriteLine("Wiadomość :{0} ", e.Message);
         }
     }
 }
 ```
+### Przykładowy wynik:
+```
+<treść chronionego zasobu>
+```
 
-## Więcej informacji:
+## Deep Dive
+Podstawowe uwierzytelnienie HTTP zalicza się do najprostszych technik kontroli dostępu - jest wbudowane w protokół HTTP od wczesnych jego wersji. Niestety, przez przesyłanie danych w nieszyfrowanej postaci jest uważane za niewystarczająco bezpieczne, zwłaszcza w publicznym internecie. Alternatywy jak OAuth lub JWT (JSON Web Tokens) oferują większe bezpieczeństwo poprzez bardziej skomplikowane mechanizmy sprawdzania tożsamości.
 
-Historia:
-Podstawowe uwierzytelnienie HTTP jest jednym z najstarszych standardów uwierzytelniania w protokole HTTP i pochodzi z wczesnych dni Internetu.
+Warto również pamiętać o tym, że dołączanie danych logowania do każdego żądania może wpłynąć na wydajność aplikacji. HTTP/2 i HTTP/3 przynoszą poprawy w zarządzaniu połączeniami, co może częściowo ten problem rozwiązać.
 
-Alternatywy:
-Nowsze formy uwierzytelniania webowej, takie jak uwierzytelnianie typu bearer (Bearer Authentication) lub uwierzytelnianie Digest, są uważane za bezpieczniejsze i bardziej niezawodne.
+W C# dobrą praktyką jest wykorzystywanie klasy `HttpClient` do asynchronicznego wysyłania żądań. Użycie `AuthenticationHeaderValue` pozwala na łatwą manipulację nagłówkami żądania dla uwierzytelnienia.
 
-Szczegóły implementacji:
-Podstawowe uwierzytelnienie HTTP polega na przesyłaniu nieszyfrowanych danych (użytkownik/hasło) w nagłówku HTTP. Z tego powodu, stosowane jest wyłącznie na pewnych, bezpiecznych połączeniach (np. połączeniach TLS).
-
-## Zobacz też:
-
-Wysyłanie żądań HTTP w C# - https://docs.microsoft.com/pl-pl/dotnet/api/system.net.http.httpclient?view=net-5.0
-
-Uwierzytelnianie typu bearer - https://tools.ietf.org/html/rfc6750
-
-Uwierzytelnianie Digest - https://tools.ietf.org/html/rfc7616
-
-Bezpieczeństwo protokołu HTTP - https://tools.ietf.org/html/rfc7540#section-10.2
+## Zobacz także:
+- [Dokumentacja `HttpClient` w MSDN](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
+- [Podstawy podstawowego uwierzytelnienia HTTP](https://tools.ietf.org/html/rfc7617)
+- [OAuth 2.0](https://oauth.net/2/)
+- [JSON Web Tokens](https://jwt.io/introduction/)

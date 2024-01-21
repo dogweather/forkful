@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
+date:                  2024-01-20T18:02:54.663141-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,40 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Sending HTTP Request with Basic Authentication in TypeScript 
-
 ## What & Why?
-Sending an HTTP request with basic authentication is a simple way of managing access to a network resource. It essentially involves providing a username and password with our requests. It’s widely used because of its simplicity and – even if imperfect– adequate security for standard applications.
 
-## How To:
-When using the Fetch API to send HTTP requests in TypeScript, we can include basic auth data in headers.
+In TypeScript, sending an HTTP request with basic authentication means shooting data across the web with a simple username:password combo for access. It's widespread for quick-and-dirty auth because it's simple to use for protecting your API endpoints from unwelcome visitors.
 
-```TypeScript
-import fetch from 'node-fetch';
+## How to:
 
-const url = 'https://example.com';
-const username = 'username';
-const password = 'password';
+```typescript
+import axios from 'axios';
 
-fetch(url, {
+// encode your username and password
+const token = Buffer.from('yourUsername:yourPassword').toString('base64');
+const url = 'https://your.api/endpoint';
+
+// setup the HTTP request with Axios
+axios.get(url, {
   headers: {
-    'Authorization': 'Basic ' + Buffer.from(username + ':' + password).toString('base64')
+    'Authorization': `Basic ${token}`
   }
-}).then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));
+})
+.then(response => {
+  console.log(response.data); // this is your expected output
+})
+.catch(error => {
+  console.error("Oops, something went wrong!", error);
+});
 ```
-In the output, you'll see the data yielded by your request, or an error message.
+
+Sample output:
+
+```
+{ "message": "You're in! Welcome to secret API land." }
+```
 
 ## Deep Dive
-HTTP Basic Authentication dates back to the early stages of the web. It isn’t the most secure measure due to lack of encryption of the communicated credentials, hence it's recommended to use it over HTTPS.
 
-In terms of alternatives, we've things like Digest, NTLM, or OAuth. Each with different trade-offs. With OAuth, for instance, you use tokens instead of sending credentials, offering superior security but with increased complexity.
+Once upon a time, before OAuth and JWTs swarmed the scene, basic auth was the go-to. It's still nifty for internal tools or Proof of Concepts (PoCs). The idea is straightforward: tack on a header with 'Authorization', use 'Basic ' + a base64 encoded 'username:password'. Voilà, you're through the gates.
 
-In Basic auth, client sends Base64 encoded credentials in `Authorization` header field as `Authorization: Basic base64credentials`. Browsers typically provide a pop-up dialog for the username and password and will remember them for the duration of the session.
+But it's not all rainbows. There're risks - if you're not using HTTPS, you're practically yelling your creds out loud. Alternatives? OAuth2 tokens, JWTs, API keys - they're like stronger, silent types. They serve similar purposes but with more complexity and security.
+
+When implementing basic auth in TypeScript, the common choice is `axios` or `fetch`. In our case, `axios` makes setting custom headers a breeze. Plus, it returns promises, making it a dream with `async/await`.
+
+Keep in mind: 'Basic' will soon reveal its age in the modern web where HTTPS is a must and security standards are higher. Yet, for internal networks or where higher security isn't crucial, it's a cinch.
 
 ## See Also
-Take a look at these related resources:
 
-1. Learn more about Fetch API via [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
-3. Understand the [in-depth details of Basic access authentication on Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication).
+For more authentication methods and security best practices:
+
+- [MDN Web Docs: Authorization](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
+- [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
+- Official `axios` documentation for custom HTTP headers: [Axios Docs](https://axios-http.com/docs/req_config)

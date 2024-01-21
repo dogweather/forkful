@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:50:17.479268-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,37 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Interpolacją napisów nazywamy proces wprowadzania zmiennych do napisów. Programiści robią to, aby dynamicznie manipulować danymi tekstowymi, zmieniając ich wartość na podstawie określonych zmiennych.
+## What & Why? (Co i Dlaczego?)
+Interpolacja stringów pozwala na wstawienie wartości zmiennych bezpośrednio w ciąg tekstowy. Programiści używają jej, aby łatwiej formatować wiadomości i skuteczniej budować dynamiczne ciągi znaków.
 
-## Jak to zrobić:
-Możemy to zrobić, używając funkcji `fmt::format` z biblioteki `fmtlib`. Oto przykład:
+## How to (Jak to zrobić):
+Od C++20 mamy dostępne formatowanie stylu `{fmt}`. Sprawdź:
 
 ```C++
-#include <fmt/core.h>
+#include <iostream>
+#include <format>
 
 int main() {
-  int age = 25;
-  std::string name = "John";
-  std::string s = fmt::format("Moje imię to {} i mam {} lat", name, age);
-  std::cout << s << std::endl;
-  return 0;
+    std::string name = "Marek";
+    int age = 30;
+    
+    std::string greeting = std::format("Cześć, {}! Masz {} lat.", name, age);
+    std::cout << greeting << std::endl;
+    
+    return 0;
 }
 ```
-Wyjście z powyższego kodu będzie wyglądać tak:
-``` 
-Moje imię to John i mam 25 lat
+
+Wynik:
+```
+Cześć, Marek! Masz 30 lat.
 ```
 
-## W głąb tematu
-Interpolacja napisów pojawiła się początkowo w językach takich jak Perl i Python, które próbowały uprościć manipulację napisami. W C++ najpierw używaliśmy operacji konkatenacji kanonicznej, tipszącej, trunkacji, dopóki `fmtlib` nie wprowadził łatwiejszego sposobu na interpolację napisów w C++20.
+## Deep Dive (Dogłębna analiza)
+Interpolacja stringów znana jest z wielu języków, takich jak Python czy JavaScript. W C++ analogiczną funkcjonalność powszechnie osiągano przez `printf` lub strumienie (np. `std::ostringstream`). Formatowanie stylu `{fmt}` (od C++20) jest inspirowane biblioteką fmt i Pythonem, oferuje typowane bezpieczeństwo i jest wygodniejsze w użyciu niż starsze metody.
 
-Alternatywą dla `fmtlib` jest używanie klasy `std::stringstream` z biblioteki STL, jednak jest ona mniej wydajna i mniej przyjazna dla użytkownika.
+Alternatywy:
+- `sprintf` / `snprintf`: starsze funkcje C-style, które mogą prowadzić do błędów i wycieków pamięci.
+- Strumienie I/O (`std::stringstream`): szerokie możliwości ale skomplikowane i często mniej wydajne.
+- Biblioteka `fmt` przed C++20: zewnętrzna biblioteka, która wprowadziła wygodne formatowanie.
 
-Implementacja `fmt::format` korzysta z metaprogramowania szablonów, co pozwala na generację optymalnego kodu dla różnych typów argumentów. Jest to elastyczny i wydajny sposób na formatowanie napisów.
+Implementacja detale `std::format` to bezpieczna i elastyczna opcja formatowania stringów, która pozwala na precyzyjne sterowanie formatem wyjściowym, włączając w to szerokość pola, precyzję i wiele innych.
 
-## Zobacz również
-* Biblioteka [fmtlib](https://fmt.dev/latest/index.html)
-* Interpolacja napisów w [Pythonie](https://docs.python.org/3/tutorial/inputoutput.html)
-* Alternatywne techniki formatowania napisów w [C++](https://en.cppreference.com/w/cpp/io/manip)
-* [Metaprogramowanie szablonów](https://en.cppreference.com/w/cpp/language/templates)
+## See Also (Zobacz też)
+- Oficjalna dokumentacja `std::format`: https://en.cppreference.com/w/cpp/utility/format/format
+- Historia i wprowadzenie do biblioteki `{fmt}`: https://fmt.dev/latest/index.html
+- Strona projektu C++20: https://isocpp.org/std/status

@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http עם אימות בסיסי"
-html_title:           "C: שליחת בקשת http עם אימות בסיסי"
-simple_title:         "שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת HTTP עם אימות בסיסי"
+date:                  2024-01-20T18:02:35.360632-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP עם אימות בסיסי"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,42 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-הסבר ברוסט: שליחת בקשת HTTP עם אימות בסיסי
-===================================================
-
-## מה זה ולמה? 
-
-שליחת בקשת HTTP עם אימות בסיסי היא דרך לתקשר עם שרת ה-HTTP תוך מתן פרטי משתמש (שם משתמש וסיסמה) לאמת את הבקשה. זה מצריך כאשר גישה למשאב מסוים מסבירה זיהוי משתמש.
+## מה ולמה?
+שליחת בקשת HTTP עם אימות בסיסי היא תהליך שבו אנחנו מצרפים שם משתמש וסיסמא לבקשה כדי לאמת את הזהות שלנו מול שרת. תכניתנים משתמשים בזה כדי לקבל גישה למשאבים מוגנים באינטרנט.
 
 ## איך לעשות:
-```Rust
-use reqwest::{Client, header};
+ראשית, התקנת חבילת ה-`reqwest` לניהול בקשות HTTP. ב-Cargo.toml שלך:
+
+```toml
+[dependencies]
+reqwest = "0.11"
+base64 = "0.13"
+```
+
+אז, קטע קוד לשליחת בקשה עם אימות בסיסי:
+
+```rust
+use reqwest;
 use base64::{encode};
 
-async fn http_request() -> Result<(), Box<dyn std::error::Error>> {
-    let client = Client::new();
-    let user = "user";
-    let pass = "pass";
+#[tokio::main]
+async fn main() -> Result<(), reqwest::Error> {
+    let username = "user";
+    let password = "pass";
+    let auth = encode(format!("{}:{}", username, password));
 
-    let request_auth = format!("{}:{}", user, pass);
-    let basic_auth = format!("Basic {}", encode(&request_auth));
-
-    let resp = client.get("https://example.com")
-        .header(header::AUTHORIZATION, basic_auth)
+    let client = reqwest::Client::new();
+    let res = client.get("http://example.com/secret-page")
+        .header("Authorization", format!("Basic {}", auth))
         .send()
         .await?;
 
-    println!("{:#?}", resp.text().await?);
-
+    println!("Status: {}", res.status());
+    println!("Headers:\n{:?}", res.headers());
+  
     Ok(())
 }
 ```
-## צלילה מעמיקה
-נוצר בהקשר של מקורות רשת שהיו מנוהלים באופן אנושי, אימות ה-HTTP הבסיסי הוא תהליך פשוט שמבטיח שמשתמש מסוים הוא באמת מי שהוא אומר שהוא. החיסרון הוותיק הוא שזה לא מאוד בטוח - הסיסמאות משדרות בצורה מוצפנת פשוטה, כי מופיעות במחרוזת עם אימות בסיסי.
-קיימות חלופות אחרות לאימות, כגון אימות טוקן, OAuth, ו- JWT.
-הגרסה הנוכחית של Rust (כמו כל שפות התכנות החדשות) מאפשרת תמיכה בסטנדרטים הללו באמצעות חבילות החיצוניות, כגון 'reqwest' ו-'base64'.
 
-## ראה גם
-* [מסמך ה-HTTP של מוזילה ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-* [מאמרי עזרה נוספים על Rust](https://www.rust-lang.org/community)
-* [מאמרים בנושא אימות HTTP](https://www.digitalocean.com/community/tags/http-authentication)
+פלט לדוגמא:
+
+```
+Status: 200 OK
+Headers:
+{
+    "content-type": "text/html",
+    "content-length": "1549",
+    ...
+}
+```
+
+## הבעיה מקרוב:
+אימות בסיסי ב-HTTP הוא יחסית עתיק, דרך פשוטה לסנן גישה למשאבים ברשת. השימוש בו הוא נפוץ במקרים שאין דרישה לרמת אבטחה גבוהה מאוד, כי הוא שולח את השם והסיסמא בתיקוש מאוד פשוט (base64) ולא כבטוח כמו הצפנת TLS/SSL. ישנן אלטרנטיבות כמו אימות מורכב יותר, טוקנים ומערכות OAuth, אבל לאימות בטוח יותר.
+
+## ראו גם:
+- [reqwest crate documentation](https://docs.rs/reqwest/)
+- [מידע על אימות בסיסי ב-HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme)
+- [מידע על אימות מאובטח יותר OAuth](https://oauth.net/)

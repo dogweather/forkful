@@ -1,7 +1,8 @@
 ---
-title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
-simple_title:         "Envoyer une requête http avec une authentification de base"
+title:                "Envoi d'une requête HTTP avec authentification de base"
+date:                  2024-01-20T18:02:31.480111-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Envoi d'une requête HTTP avec authentification de base"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,42 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Envoi d'une requête HTTP avec une authentification de base en Ruby
-
-## Quoi & Pourquoi ?
-
-L'envoi d'une requête HTTP avec une authentification de base est une façon de se connecter à des APIs sécurisées. Les programmeurs le font pour interagir avec des services en ligne, souvent pour récupérer des données.
+## Quoi & Pourquoi?
+Envoyer une requête HTTP avec une authentification basique c’est insérer vos identifiants dans une requête pour accéder à des ressources protégées. Les développeurs utilisent cela pour interagir avec des API qui exigent une preuve d'identité simple pour l'entrée.
 
 ## Comment faire :
-
-La bibliothèque net/http intégrée à Ruby permet d'envoyer facilement des requêtes HTTP. Voici comment envoyer une requête GET avec une authentification de base :
-
 ```Ruby
 require 'net/http'
 require 'uri'
 
-uri = URI('https://api.exemple.com/data')
+uri = URI('https://exemple.com/api')
 
-req = Net::HTTP::Get.new(uri)
-req.basic_auth 'nom_utilisateur', 'mot_de_passe'
+# Create a request object
+request = Net::HTTP::Get.new(uri)
+request.basic_auth('user', 'password')
 
-res = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => uri.scheme == 'https') {|http|
-  http.request(req)
-}
+# Send the request
+response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') do |http|
+  http.request(request)
+end
 
-puts res.body
+puts response.body
+```
+Sortie :
+```
+{"status":"Success","message":"Vous êtes authentifié!"}
 ```
 
-## Plongée profonde :
+## Exploration approfondie
+Historiquement, l'authentification basique a été conçue pour être simple mais pas particulièrement sécurisée, car les identifiants ne sont encodés qu'en Base64, facilement décodable. Aujourd'hui, il est recommandé de l'utiliser avec HTTPS pour éviter une exposition claire des identifiants. 
 
-Historiquement, l'authentification HTTP de base est l'une des premières façons de sécuriser les connexions à des services en ligne. Cependant, elle n'est pas très sécurisée par elle-même et doit être utilisée en conjonction avec HTTPS.
+Alternativement, des méthodes plus robustes comme l'authentification Digest ou OAuth ajoutent des couches de sécurité. En Ruby, on peut aussi utiliser des gems comme `HTTParty` ou `RestClient` pour simplifier la gestion des requêtes HTTP.
 
-L'authentification de base consiste à envoyer un nom d'utilisateur et un mot de passe non chiffrés avec chaque requête, donc si quelqu'un pouvait intercepter la requête, il pourrait voir vos identifiants. C'est pour cette raison que vous devez toujours utiliser HTTPS quand vous utilisez l'authentification de base.
+La mise en œuvre implique de créer un object HTTP::Request, d'ajouter les identifiants avec la méthode `basic_auth` et d'expédier la requête via une instance HTTP::Response. Il est essentiel de gérer les possibles erreurs de connexion et les réponses erronées.
 
-Une alternative est l'authentification par jeton, qui est un peu plus sécurisée car elle ne nécessite pas l'envoi de vos identifiants à chaque fois.
-
-## Voir aussi :
-
-Pour plus d'informations sur l'utilisation de net/http dans Ruby, consultez la documentation officielle ici : [Ruby Doc](https://ruby-doc.org/stdlib-2.6.3/libdoc/net/http/rdoc/Net/HTTP.html)
-
-Et pour une discussion sur la sécurité de l'authentification de base, voir cet article sur StackOverflow : [Basic Auth Security](https://stackoverflow.com/questions/1240518/is-basic-auth-secure-if-done-over-https)
+## Voir aussi
+- Ruby Documentation for Net::HTTP: https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html
+- RFC 7617, The 'Basic' HTTP Authentication Scheme: https://tools.ietf.org/html/rfc7617
+- An article on HTTP authentication schemes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication

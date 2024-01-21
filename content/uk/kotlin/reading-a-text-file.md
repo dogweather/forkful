@@ -1,6 +1,7 @@
 ---
 title:                "Читання текстового файлу"
-html_title:           "Arduino: Читання текстового файлу"
+date:                  2024-01-20T17:55:05.256135-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Читання текстового файлу"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,37 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що таке і навіщо?
-
-Считування текстового файлу - це процес вилучення інформації з такого файлу. Це робить програміст, коли потрібно доступитися до збережених даних або обробляти їх.
+## Що це таке та навіщо?
+Читання текстового файла в Kotlin - це процес отримання даних з файла, збереженого на диску. Програмісти роблять це, щоб працювати з інформацією, збереженою в текстовій формі, - налаштування, дані, журнали чи просто текст для обробки.
 
 ## Як це зробити:
-
-Ось як прочитати текстовий файл в Kotlin. Створимо файл `example.txt` і запишемо в нього деякі довідкові дані.
-
 ```Kotlin
 import java.io.File
 
 fun main() {
-    val fileName = "example.txt"
-    val lines: List<String> = File(fileName).readLines()
-    lines.forEach { line -> println(line) }
+    val filePath = "path/to/your/file.txt"
+    
+    val text = File(filePath).readText(Charsets.UTF_8)
+    println(text)
 }
 ```
-При виконанні цієї програми, виведення буде таким:
+*Sample output:*
 ```
-line1
-line2
-line3
+Hello, file reader in Ukraine!
+Гарного дня!
 ```
-## Пірнемо глибше:
 
-1. **Історичний контекст**: Стандартні бібліотеки Kotlin основано на Java, тому методи зчитування файлів також були запозичені відтуди.
-2. **Альтернативи**: Можна використовувати `BufferedReader` або `InputStreamReader`, якщо вам потрібно більше контролю над процесом зчитування.
-3. **Деталі реалізації**: Метод `readLines()` зчитує всі рядки з файлу одразу. Якщо файл великий, це може стати проблемою. В таких випадках використовуйте метод `File(fileName).forEachLine`.
+Використання `readLines` для ітерації по строках:
+```Kotlin
+import java.io.File
 
-## Див ще:
+fun main() {
+    val filePath = "path/to/your/file.txt"
+    
+    File(filePath).useLines { lines ->
+        lines.forEach { println(it) }
+    }
+}
+```
 
-1. Офіційну документацію (https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/read-lines.html)
-2. Kotlin File Reading Tuorial (https://www.baeldung.com/kotlin-read-file)
-3. Java Input/Output: Reading a Text File tutorial (https://www.codejava.net/java-se/file-io/java-file-tutorial-and-reference)
+## Поглиблений огляд
+У світі програмування, читання файлів – це основа. В Kotlin це робиться легко, завдяки своїй стандартній бібліотеці. Історично, Java потребувала багато коду для цієї задачі, але Kotlin спростив процес. 
+
+Альтернативи:
+- `BufferedReader`: добре для великих файлів.
+- `Scanner`: коли потрібно більше контролю над парсингом.
+
+Деталі реалізації:
+- `readText` і `useLines` викидають виняток `IOException` при помилках з файлом. Використовуйте `try-catch`, аби уникнути збоїв програми.
+- `Charsets.UTF_8` важливо вказати для правильної роботи із символами української мови.
+
+## Дивіться також:
+- [Kotlin Documentation on Reading Files](https://kotlinlang.org/docs/idioms.html#read-file) – офіційна документація Kotlin.

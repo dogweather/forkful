@@ -1,7 +1,8 @@
 ---
-title:                "Die Länge eines Strings ermitteln"
-html_title:           "Java: Die Länge eines Strings ermitteln"
-simple_title:         "Die Länge eines Strings ermitteln"
+title:                "Ermittlung der Zeichenkettenlänge"
+date:                  2024-01-20T17:47:35.832577-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Ermittlung der Zeichenkettenlänge"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -11,28 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Die Länge eines Strings zu finden, heißt, zu bestimmen, wie viele Zeichen er enthält. Wir brauchen das, um Textdaten zu validieren, zu schneiden oder einfach um zu wissen, wie viel Inhalt vorhanden ist.
 
-In der Programmierung ist die Länge eines Strings die Anzahl der Zeichen in diesem String. Es ist wichtig, diese zu kennen, um Dinge wie Zeichenmanipulationen, Textvalidierung und vieles mehr zu ermöglichen.
-  
-## Anleitung:
+## How to:
+Hier ein schnelles Beispiel, wie man die Länge eines Strings in Kotlin findet:
 
-Hier ist ein einfaches Beispiel dafür, wie Du die Länge eines Strings in Kotlin findest:
-
-```Kotlin
+```kotlin
 fun main() {
-  val str = "Hallo Welt"
-  println(str.length)
+    val begruessung = "Hallo Welt!"
+    println("Die Länge des Strings ist: ${begruessung.length}")
 }
+
+// Ausgabe:
+// Die Länge des Strings ist: 11
 ```
 
-In diesem Beispiel wird die Ausgabe `11` sein, was der Gesamtzahl der Zeichen im String "Hallo Welt" entspricht.
+## Deep Dive
+In Kotlin läuft es unter der Haube so ab, dass die `.length`-Eigenschaft eines Strings dessen `length`-Feld aus der Java-Stringklasse abruft. Historisch stammt diese Eigenschaft aus Java, da Kotlin darauf aufbaut und problemlos mit Java-Code interoperiert.
 
-##Vertiefung:
+Alternativen? Man kann auch manuell durch den String iterieren und zählen – aber warum das Rad neu erfinden? Kotlin bringt bereits alles Nötige mit.
 
-Die Methode `.length` ist seit Beginn der Sprache in Kotlin integriert, sie wurde von Java übernommen. Sie zählt das Unicode-Zeichen im String, nicht die tatsächlichen Bytes, die den String darstellen. Alternativ könntest Du eine Schleife verwenden, um jedes Zeichen im String manuell zu zählen, aber das wäre ineffizient und nicht empfehlenswert. Die Implementierung von `.length` ist hoch optimiert und bietet die beste Leistung.
+Einen wichtigen Punkt gibt es allerdings: Unicode. Bei Zeichen, die als Surrogate Pairs repräsentiert werden, kann `.length` irreführend sein, da es die Anzahl der `Char`-Einheiten zurückgibt und nicht die tatsächliche Anzahl der Codepunkte. Für die meisten Anwendungsfälle ist dies aber ein Randthema.
 
-## Siehe Auch:
-
-Mehr über String Manipulation in Kotlin, siehe [Kotlin Dokumentation: Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings). 
-
-Für weitere Informationen und Beispiele zur Zeichenkette und ihren Methoden, siehe [Kotlin String API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/).
+## See Also
+- Kotlin-Standardbibliothek zur String-Behandlung: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- Unicode in Kotlin verstehen: [https://kotlinlang.org/docs/characters.html](https://kotlinlang.org/docs/characters.html)

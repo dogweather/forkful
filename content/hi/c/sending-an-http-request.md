@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T17:59:21.710260-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,49 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## व्हाट एंड वाई (What & Why)?
+## What & Why? (क्या और क्यों?)
+HTTP अनुरोध भेजना एक वेब सर्वर से डेटा मांगने की प्रक्रिया है। प्रोग्रामर यह कार्य वेब सेवाओं का उपयोग करके जानकारी प्राप्त करने या डेटा भेजने के लिए करते हैं।
 
-HTTP अनुरोध (निवेदन) भेजना वेब सर्वर को किसी विचरण के लिए निर्देश प्रदान करने का एक तरीका है। प्रोग्रामर्स इसे वेब सर्विसेज, APIस और वेबसाइट्स से डेटा इंटरेक्ट करने के लिए करते हैं। 
-
-## कैसे करें (How to):
-
-HTTP अनुरोध को `libcurl` बिल्ज़ोर्डी (library) के साथ निम्न प्रोग्राम में उदाहरण देखें:
+## How to: (कैसे करें?)
+सी में HTTP अनुरोध भेजने के लिए, आप libcurl का उपयोग कर सकते हैं। इसे पहले स्थापित करना पड़ सकता है। नीचे साधारण GET अनुरोध का कोड है:
 
 ```C
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
+int main(void) {
+    CURL *curl;
+    CURLcode res;
 
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-    res = curl_easy_perform(curl);
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        
+        // अनुरोध पूरा होने पर उत्तर दिखाने के लिए
+        curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+        
+        // HTTP GET करने के लिए
+        res = curl_easy_perform(curl);
+        
+        // सफलता या त्रुटि की जांच
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
 
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
-  
-    curl_easy_cleanup(curl);
-  }
-  return 0;
+        // समाप्ति
+        curl_easy_cleanup(curl);
+    }
+    return 0;
 }
 ```
 
-## डीप डाइव (Deep Dive):
+संभावित आउटपुट:
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
 
-HTTP अनुरोध को 90 के दशक में HTTP प्रोटोकॉल के साथ डिज़ाइन किया गया था। इसे नामांकन (naming), निर्देशन (directing) और उत्पादकता (productivity) के लिए बनाया गया था। 
+## Deep Dive (गहराई से जानकारी)
+प्रारंभिक इंटरनेट दिनों में, सी से HTTP अनुरोध भेजना जटिल था। लेकिन लाइब्रेरियां जैसे कि libcurl ने इसे सरल बना दिया है। libcurl बहुत सारे प्रोटोकॉल जैसे HTTP, HTTPS, FTP, आदि का समर्थन करती है। 
 
-विकल्पों में, आप जवास्क्रिप्ट के `fetch` फ़ंक्शन या पायथन के 'requests' मॉड्यूल का उपयोग कर सकते हैं। 
+विकल्प के रूप में, आप sockets का उपयोग करके निचले स्तर पर HTTP अनुरोध भेज सकते हैं। लेकिन libcurl जैसे उच्च स्तरीय एब्स्ट्रैक्शन प्रदान करने वाली लाइब्रेरियां इस काम को आसान बनाती हैं।
 
-C में HTTP अनुरोध को परिष्कृत करने में लाइब्रेरी जैसे कि `libcurl` आमतौर पर उपयोग की जाती हैं, क्योंकि निवेदन बनाने और प्राप्त करने का लोजिक संभावित रूप से जटिल हो सकता है। 
+एक HTTP अनुरोध में आमतौर पर एक रिक्वेस्ट लाइन, हेडर्स और वैकल्पिक बॉडी होती है। GET, POST, PUT, DELETE आदि विभिन्न प्रकार के HTTP मेथड्स हैं जिन्हें आप भेज सकते हैं।
 
-## अधिक देखें (See Also):
-
-1. [libcurl documentation](https://curl.se/libcurl/c/)
-2. [HTTP protocol RFC](https://tools.ietf.org/html/rfc2616)
-3. [Python requests library for HTTP requests](https://docs.python-requests.org/en/master/)
-4. [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+## See Also (यह भी देखें)
+- cURL Official Documentation: https://curl.haxx.se/libcurl/c/
+- HTTP on Wikipedia: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+- RFC 7230 (HTTP/1.1): https://tools.ietf.org/html/rfc7230

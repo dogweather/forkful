@@ -1,6 +1,7 @@
 ---
 title:                "Suppression de caractères correspondant à un motif"
-html_title:           "C: Suppression de caractères correspondant à un motif"
+date:                  2024-01-20T17:41:38.623870-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Suppression de caractères correspondant à un motif"
 programming_language: "C"
 category:             "C"
@@ -10,40 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ?
+## What & Why? (Quoi et pourquoi ?)
+Supprimer des caractères selon un motif, c'est filtrer du texte. Les programmeurs le font pour nettoyer des données, valider des entrées ou manipuler des chaînes pour des besoins spécifiques.
 
-La suppression de caractères correspondant à un modèle (ou 'pattern' en anglais) consiste à enlever de l'information spécifique d'une chaîne de caractères. C'est une opération assez courante en programmation car cela permet de nettoyer les données et de les rendre plus compréhensibles et exploitable par le code.
-
-## Comment Faire :
-
-Voici un exemple simple en C pour supprimer tous les caractères 'a' d'une chaîne de caractères :
-
+## How to: (Comment faire :)
 ```C
+#include <stdio.h>
 #include <string.h>
 
+void delete_matching_chars(char *str, const char *pattern) {
+    char *pr = str, *pw = str; // pointeurs de lecture et d'écriture
+    while (*pr) {
+        const char *temp = pattern;
+        int match = 0;
+        while (*temp) {
+            if (*pr == *temp++) {
+                match = 1;
+                break;
+            }
+        }
+        if (!match) {
+            *pw++ = *pr;
+        }
+        pr++;
+    }
+    *pw = '\0';
+}
+
 int main() {
-   char str[] = "example";
-   int i, j;
-    
-   for(i = 0; str[i] != '\0'; ++i) {
-      while(!( (str[i]>='a'&&str[i]<='z') || str[i]=='\0')) {
-         for(j = i; str[j] != '\0'; ++j) {
-            str[j] = str[j+1];
-         }
-         str[j]='\0';
-      }
-   }
-   printf("Result: %s", str);
-   return 0;
+    char str[] = "Bonjour, c'est un exemple!";
+    delete_matching_chars(str, "aeiou");
+    printf("Après suppression: %s\n", str); // Affiche: Bnjr, c'st n xmpl!
+    return 0;
 }
 ```
 
-L'output sera `Result: exmple`
+## Deep Dive (Plongée profonde)
+Historiquement, supprimer des caractères selon un motif est fondamental en programmation car cela aide à traiter le texte de manière précise. Des alternatives incluent des fonctions standard comme `strtok`, `strspn`, `strcspn`, et des expressions régulières (regex), disponibles dans des bibliothèques comme `regex.h`. Pour performance et personnalisation, une implémentation manuelle, comme celle ci-dessus, est souvent préférable, surtout si les fonctions standard ne répondent pas aux besoins spécifiques.
 
-## Plongée en Profondeur :
-
-Historiquement, la suppression de caractères en utilisant un modèle a été introduite avec la programmation en C, et elle est encore largement utilisée aujourd'hui. Les alternatives à cette méthode incluent l'utilisation de pointeurs pour parcourir la chaîne de caractères et supprimer les caractères correspondant à un modèle spécifique. Vous pouvez également utiliser des bibliothèques tierces qui offrent des fonctions plus sophistiquées pour la manipulation des chaînes de caractères. 
-
-## Voir Aussi :
-
-Pour plus d'information sur la manipulation des chaînes de caractères en C, consultez la documentation officielle de la bibliothèque string.h [ici](https://www.gnu.org/software/libc/manual/html_node/String-Functions.html) et le tutoriel sur la gestion de mémoire [ici](https://www.learn-c.org/en/Memory_management).
+## See Also (À voir aussi)
+- Documentation de la bibliothèque standard C : https://en.cppreference.com/w/c/string/byte
+- Guide des expressions régulières C : https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html
+- Tutoriels sur la manipulation de chaînes en C : https://www.tutorialspoint.com/cprogramming/c_strings.htm

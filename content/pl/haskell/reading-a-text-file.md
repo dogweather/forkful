@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie pliku tekstowego"
-html_title:           "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+date:                  2024-01-20T17:54:28.202213-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,46 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Czytanie pliku tekstowego to proces pobierania danych z pliku przechowywanego na dysku. Programiści robią to, by załadować i przetworzyć informacje, często konieczne do działania ich aplikacji.
 
-Czytanie pliku tekstowego polega na odczytaniu danych zapisanych w formie tekstu ze zwykłego pliku. Programiści robią to, aby manipulować danymi, przetwarzać je, a czasem po prostu wyświetlać użytkownikom.
-
-## Jak to zrobić:
-
-Wystarczy kilka linii kodu do odczytu pliku w Haskellu. Sprawdź nasze przykłady poniżej:
+## How to:
+Czytanie pliku tekstowego w Haskellu jest proste. Użyjemy funkcji `readFile`, którą dostarcza standardowa biblioteka.
 
 ```Haskell
-import System.IO  
-
-main = do  
-    handle <- openFile "plik.txt" ReadMode  
-    contents <- hGetContents handle  
-    putStr contents  
-    hClose handle
+main :: IO ()
+main = do
+    content <- readFile "example.txt"
+    putStrLn content
 ```
 
-Efekt końcowy powinien wyglądać tak:
+Jeśli plik "example.txt" zawiera tekst "Cześć, Haskell!", wyjście będzie wyglądać tak:
+```
+Cześć, Haskell!
+```
+
+A co jeśli chcesz pracować z każdą linijką osobno? Użyj `lines`:
 
 ```Haskell
-Hello, Haskell!
+main :: IO ()
+main = do
+    content <- readFile "example.txt"
+    let linesOfContent = lines content
+    mapM_ putStrLn linesOfContent
 ```
 
-## Głębsze spojrzenie:
+Jeżeli "example.txt" ma wiele linii, każda z nich zostanie wypisana osobno.
 
-- Kontekst historyczny: Haskell jest językiem programowania o wysokim poziomie abstrakcji, który istnieje od lat 90-tych. Jego zdolność do obsługi plików rozwinęła się w miarę ewolucji języka i potrzeb współczesnego programowania.
-   
-- Alternatywy: Można również użyc funkcji 'readFile' do odczytywania danych z pliku tekstowego:
+## Deep Dive
+Funkcja `readFile` pojawiła się w Haskellu 98 i od tamtej pory jest standardowym sposobem na odczytywanie plików tekstowych. Jest prosta, ale ma swoje ograniczenia, na przykład nie radzi sobie z dużymi plikami – lepiej wtedy użyć `hGetContents` i obsługi strumieni.
+
+`readFile` korzysta z leniwej ewaluacji, co oznacza że zawartość pliku jest wczytywana tylko wtedy, gdy jest potrzebna. Dzięki temu małe pliki są szybko przetwarzane, ale przy dużych plikach to może prowadzić do problemów z wydajnością.
+
+Alternatywą dla `readFile` jest `readFile'` z biblioteki `strict`, która wczytuje cały plik naraz – dobre rozwiązanie dla dużych plików.
+
+A kwestia bezpieczeństwa? Funkcje takie jak `withFile` automatycznie zamykają plik po zakończeniu pracy, której zakres określamy. Przykład:
 
 ```Haskell
-main = do  
-    contents <- readFile "plik.txt"  
-    putStr contents
+import System.IO
+
+main :: IO ()
+main = withFile "example.txt" ReadMode (\handle -> do
+    content <- hGetContents handle
+    putStr content)
 ```
 
-- Szczegóły implementacji: Kiedy otwierasz plik za pomocą funkcji 'openFile' w Haskellu, zdobywasz uchwyt na plik. Używasz tego uchwytu, aby później odczytywać zawartość pliku. Ważne jest, aby pamiętać o zamknięciu uchwytu na koniec.
+Bezpieczniej, bo nie musimy pamiętać o zamykaniu pliku.
 
-## Zobacz też:
-
-- Dokumentacja Haskell: https://www.haskell.org
-- Obsługa plików w Haskellu: http://learnyouahaskell.com/input-and-output  
-- 'System.IO' w Haskell: https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html
+## See Also
+- Haskell 2010 Language Report: https://www.haskell.org/onlinereport/haskell2010/
+- Hackage, biblioteka pakietów Haskell: https://hackage.haskell.org/
+- Learn You a Haskell for Great Good!, przystępny tutorial dla Haskell: http://learnyouahaskell.com/chapters
+- Real World Haskell, książka do praktycznej nauki Haskell: http://book.realworldhaskell.org/
+- "Haskell Programming from first principles" – kompleksowe wprowadzenie do języka: http://haskellbook.com/

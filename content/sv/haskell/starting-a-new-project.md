@@ -1,7 +1,8 @@
 ---
-title:                "Att starta ett nytt projekt"
-html_title:           "Arduino: Att starta ett nytt projekt"
-simple_title:         "Att starta ett nytt projekt"
+title:                "Att påbörja ett nytt projekt"
+date:                  2024-01-20T18:03:36.765293-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -11,37 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att starta ett nytt projekt innebär att sätta upp en ny kodbas från grunden. Programmerare gör det för att skapa unika lösningar eller utforska nya idéer.
 
-Att starta ett nytt projekt innebär att inleda skapandet av en ny programvara för att lösa specifika problem eller erbjuda en viss tjänst. Programmerare gör detta för att utveckla unik mjukvara som uppfyller specifika behov, vilket kan inkludera allt från att automatisera uppgifter till att tillhandahålla mer komplexa applikationer.
-
-## Hur man gör:
-
-För att starta ett nytt Haskell-projekt, behöver du ett grundläggande projekt skelett. Här har vi 'Hello, World!' exempel:
+## Så här gör du:
+För att skapa nytt Haskell-projekt rekommenderar vi att använda Stack, ett kraftfullt verktyg som hanterar projektets bygge och beroenden.
 
 ```Haskell
-main :: IO ()
-main = putStrLn "Hello, World!"
+-- Installera Stack
+$ curl -sSL https://get.haskellstack.org/ | sh
+
+-- Skapa ett nytt projekt
+$ stack new myproject
+
+-- Bygga projektet, detta skapar en exekverbar fil
+$ cd myproject
+$ stack build
+
+-- Kör projektet
+$ stack exec myproject-exe
 ```
-Kör din kod och du kommer att se följande utdata:
-```Haskell
-Hello, World!
+
+Output när projektet skapas:
+
+```
+Downloading template "new-template" to create project "myproject" in myproject/ ...
+The project 'myproject' has been created and is located at /path/to/myproject
 ```
 
-För att skapa en mer komplex applikation, kan du använda 'Stack' som är ett verktyg som hjälper dig att skapa, testa och publicera ditt Haskell-program.
+## Djupdykning
+Stack är utvecklat med syftet att göra det smidigt att arbeta med Haskell-projekt. Det kom som ett alternativ till det äldre systemet Cabal, som fortfarande används men anses av många som mer komplicerat. Stack använder sig av Stackage, en stor samling av Haskell-paket som är testade tillsammans för att säkerställa kompatibilitet. Detta betyder mindre beroendeproblem för utvecklaren. 
 
-## Djupdykning: 
+Att starta ett projekt i Haskell var förr en mer manuell process. Alternativ inkluderar att direkt använda GHC (Glasgow Haskell Compiler), men detta kräver mer konfiguration. Med Stack kan du skapa projekt som bygger på olika förkonfigurerade mallar, vilket hjälper dig att komma igång snabbt och med god ordning från början.
 
-Haskell skapades 1990 och var en banbrytande programmeringsspråk med stark statisk typning, lat evaluering och ren funktionsprogrammering. 
-
-Alternativ till Haskell inkluderar funktionella programmeringsspråk som Erlang, Elixir och Scala. Dessa tillhandahåller liknande funktionsprogrammeringskoncept, men har olika syntax och miljöegenskaper. 
-
-För ytterligare implementation, överväg att använda byggverktyg och ramverk, såsom Stack och Cabal, för systematisk kodhantering, test och distribution.
-
-## Se också:
-
-1. Learn You A Haskell: (http://learnyouahaskell.com/)
-2. Real World Haskell: (http://book.realworldhaskell.org/)
-3. Haskell Wiki: (https://wiki.haskell.org/)
-4. Stack: (https://docs.haskellstack.org/en/stable/README/) 
-
-Lycka till med ditt nästa Haskell-projekt!
+## Se även
+- [Haskell Stack Documentation](https://docs.haskellstack.org/en/stable/README/)
+- [Stackage Server](https://www.stackage.org/)

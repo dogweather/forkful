@@ -1,7 +1,8 @@
 ---
-title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
-simple_title:         "Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma requisição HTTP com autenticação básica"
+date:                  2024-01-20T18:02:26.935957-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Enviando uma requisição HTTP com autenticação básica"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,34 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-
-Enviar um pedido HTTP com autenticação básica é o processo de enviar uma solicitação HTTP com cabeçalhos de autenticação. Programadores precisam disso para se comunicar com APIs que exigem nome de usuário e senha para acesso.
+## O que é & Por que?
+Enviar uma solicitação HTTP com autenticação básica é essencialmente fornecer nome de usuário e senha para acessar recursos protegidos em um servidor. Programadores fazem isso para interagir com APIs ou serviços web que requerem autenticação para uso.
 
 ## Como Fazer:
-
-Aqui está o código PowerShell básico para enviar um pedido HTTP com autenticação básica:
-
 ```PowerShell
-$credenciais = New-Object System.Net.NetworkCredential("username", "senha")
+# Defina as credenciais de usuário e senha
+$credenciais = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("usuario:senha"))
 
-$webRequest = [System.Net.WebRequest]::Create("http://api.url")
-$webRequest.Credentials = $credenciais
+# Crie o cabeçalho de autenticação
+$headers = @{
+    Authorization = "Basic $credenciais"
+}
 
-$resposta = $webRequest.GetResponse()
+# Envie a solicitação GET com as credenciais
+$resposta = Invoke-RestMethod -Uri "http://servidor.com/recurso" -Method Get -Headers $headers
+
+# Exiba a resposta
+$resposta
 ```
 
-A resposta do servidor será armazenada na variável `$resposta`.
+Saída de amostra (exemplo):
+```PowerShell
+Id     : 123
+Nome   : Exemplo
+Status : Ativo
+```
 
-## Aprofundamento:
+## Mergulho Profundo
+Enviar solicitações HTTP com autenticação básica remonta aos primeiros dias da web, uma forma simples, mas não a mais segura, de controle de acesso. Hoje, alternativas como OAuth 2.0 e tokens JWT são frequentemente recomendadas por oferecerem mais segurança. Na implementação, é crucial usar HTTPS para proteger as credenciais em trânsito. Além disso, a função `Invoke-RestMethod` do PowerShell abstrai a complexidade da formação da solicitação e manipulação da resposta, permitindo foco maior na lógica da aplicação.
 
-Historicamente, a autenticação básica tem sido uma forma comum de autorizar o acesso a web APIs, embora outras opções estejam agora disponíveis.
-
-Alternativas incluem a autenticação OAuth e tokens de acesso, que oferecem maior segurança.
-
-Quando enviamos um pedido HTTP com autenticação básica, as credenciais são incluídas em um cabeçalho HTTP de "Autorização". O nome de usuário e senha são unidos por um dois-pontos e codificados em Base64.
-
-## Veja Também:
-
-2. [Documentação do System.Net.NetworkCredential](https://docs.microsoft.com/pt-br/dotnet/api/system.net.networkcredential?view=net-5.0)
-3. [Autenticação OAuth na Wikipédia](https://pt.wikipedia.org/wiki/OAuth).
+## Veja Também
+- Documentação oficial do PowerShell para [`Invoke-RestMethod`](https://docs.microsoft.com/pt-br/powershell/module/microsoft.powershell.utility/invoke-restmethod)
+- Tutorial sobre autenticação HTTP básica na [MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication)
+- Visão geral sobre segurança em APIs com [OAuth 2.0](https://oauth.net/2/) e [JWT (Json Web Tokens)](https://jwt.io/introduction/)

@@ -1,6 +1,7 @@
 ---
 title:                "ウェブページのダウンロード"
-html_title:           "Bash: ウェブページのダウンロード"
+date:                  2024-01-20T17:43:47.614029-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "ウェブページのダウンロード"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,28 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? / 何となぜ？
 
-ウェブページをダウンロードするとは、ウェブサーバーから自分のコンピュータにHTMLファイルを転送することです。プログラマはこれを行うことで、ウェブページのコンテンツをバックアップしたり、ウェブスクレイピングを行ったりします。
+Webページのダウンロードは、ページの内容をローカルマシンに保存するプロセスです。プログラマーは自動化、データ収集、またはオフラインでの閲覧のためにこれを行います。
 
-## どうやって：
+## How to / 方法
 
-以下にBashを使用してウェブページをダウンロードする方法を示します。
+Bashでwebページをダウンロードする簡単な方法は`curl`や`wget`を使うことです。以下は具体的な例です。
 
-```Bash 
-curl -O https://example.com
+```Bash
+# curlを使ってwebページをダウンロードし、ファイルに保存する
+curl http://example.com -o example_page.html
+
+# wgetを使ってwebページをダウンロードする
+wget http://example.com
 ```
-これにより、特定のURLからHTMLファイルがダウンロードされます。 `-O` フラグはダウンロードしたファイルをそのままの名前で保存します。
 
-## ディープダイブ：
+実行結果のサンプル:
 
-ウェブページのダウンロードは世界中のプログラマにとって一般的な作業であり、初期のインターネットから存在しています。このようなタスクを実行するための他の方法としては、`wget` コマンドがあります。これは `curl` と同様の機能を提供しますが、少し違うオプションがあります。 
+```Bash
+$ curl http://example.com -o example_page.html
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1256  100  1256    0     0   6562      0 --:--:-- --:--:-- --:--:--  6579
 
-ウェブページのダウンロードは基本的にはHTTP GETリクエストの送信とそのレスポンスの受信にすぎません。 `curl` や `wget` などのツールはこのプロセスを自動化し、HTMLコメントなどの一部の特定のデータをフィルタリングするオプションを提供してくれるので、開発者には貴重なツールとなっています。
+$ wget http://example.com
+--2023-04-02 12:00:00--  http://example.com/
+Resolving example.com (example.com)... 93.184.216.34
+Connecting to example.com (example.com)|93.184.216.34|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘index.html’
 
-## 参考：
+    [ <=>                                   ] 1,256       --.-K/s   in 0s      
 
-リンクを探してBashプログラミングの記事をさらに探りましょう：
- 
-- [GNU Bashマニュアル](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bashコマンドラインとシェルスクリプト](https://linuxconfig.org/bash-scripting-tutorial)
+2023-04-02 12:00:01 (30.7 MB/s) - ‘index.html’ saved [1256]
+```
+
+## Deep Dive / 徹底解析
+
+最初、UNIX環境でウェブコンテンツをダウンロードするためにはFTPや独自のプロトコルを使ってファイルを手動で取り込む必要がありました。しかし、90年代半ばになると`curl`と`wget`が登場し、HTTPプロトコル経由でのダウンロードが一般化しました。
+
+`curl`は多くのプロトコルをサポートし、データ送信にも使えるなどより複雑な操作が可能です。一方、`wget`は再帰的ダウンロードやオフライン閲覧のためのウェブサイトのミラーリングに特化しています。
+
+また、プログラミング言語固有のライブラリやツールも存在します。たとえば、Pythonの`requests`ライブラリや、Node.jsの`axios`などがあります。これらは一般的にはアプリケーション内で組み込んで使用します。
+
+## See Also / 関連情報
+
+- `curl`の公式ドキュメント: https://curl.se/docs/
+- `wget`のマニュアル: https://www.gnu.org/software/wget/manual/wget.html
+- `requests`ライブラリ（Python): https://docs.python-requests.org/
+- `axios`ライブラリ（Node.js): https://axios-http.com/docs/intro

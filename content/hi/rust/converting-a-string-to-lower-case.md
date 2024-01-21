@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-html_title:           "Kotlin: एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-simple_title:         "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
+title:                "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
+date:                  2024-01-20T17:40:16.008692-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,31 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-स्ट्रिंग को लोअर केस में परिवर्तित करना का अर्थ है कि हम उसे छोटे अक्षरों में बदल रहे हैं। यह तब किया जाता है जब हमे स्ट्रिंग का comparison या searching के दौरान case-sensitivity से बचना होता है। 
+## What & Why? (क्या और क्यों?)
+String को lower case में बदलना यानी पूरे टेक्स्ट को छोटे अक्षरों में लिखना। Programmers तब ऐसा करते हैं जब case sensitivity महत्वपूर्ण न हो और डेटा को सामान्य रूप से संभालने की जरूरत हो।
 
-## कैसे:
-Rust में, हम इंस्टेंस method `to_lowercase` का उपयोग करके यह आसानी से कर सकते हैं।
+## How to: (कैसे करें:)
+```Rust
+fn main() {
+    let greeting = "नमस्ते, दुनिया!";
+    let lower_greeting = greeting.to_lowercase();
+    println!("Original: {}", greeting);
+    println!("Lowercase: {}", lower_greeting);
+}
+```
+Output:
+```
+Original: नमस्ते, दुनिया!
+Lowercase: नमस्ते, दुनिया!
+```
+ध्यान दें कि हिंदी चरित्र पहले से ही एक निचले-केस फॉर्म में हैं, तो परिवर्तन अदृश्य होगा। अंग्रेजी उदाहरण के लिए:
 
 ```Rust
 fn main() {
-    let s = "HELLO WORLD";
-    println!("{}", s.to_lowercase());
+    let english_greeting = "Hello, World!";
+    let lower_english_greeting = english_greeting.to_lowercase();
+    println!("Original: {}", english_greeting);
+    println!("Lowercase: {}", lower_english_greeting);
 }
 ```
-
-यह code निम्नलिखित output उत्पन्न करेगा:
+Output:
 ```
-hello world
+Original: Hello, World!
+Lowercase: hello, world!
 ```
 
-## गहराई से अध्ययन:
-`to_lowercase` इंस्टेंस method हमें Unicode scalar values के साथ काम करने का समर्थन प्रदान करता है। इसका उपयोग करके, हम गैर-Latin scripts जैसे ग्रीक और सिरिलिक (मैंगीलियन भाषाओं) के characters को भी लोअरकेस में परिवर्तित कर सकते हैं।
+## Deep Dive (गहराई से जानकारी)
+Rust की `String` type में `.to_lowercase()` मेथड UTF-8 टेक्स्ट के साथ अच्छे से काम करता है। ये Unicode के case mappings का उपयोग करता है, जिसे इंटरनेशनल कम्युनिटी ने मान्यता दी है।
 
-स्ट्रिंग को लोअर केस में बदलने का वास्तविक implementation, Rust के लाइब्रेरी `std::char` में होता है। यह लाइब्रेरी `to_lowercase` method को उपयोग करती है। 
+`.to_lowercase()` दुनियाभर की भाषाओं में विस्तार से लागू होता है, जिसमें कई special case conditions शामिल हैं। 
 
-इसका एक वैकल्पिक तरीका हो सकता है - character by character iteration και lower casing of each character, लेकिन यह अधिक जटिल और time-consuming हो सकता है।
+इसके alternatives में `to_ascii_lowercase()` भी है, जो केवल ASCII चरित्र के लिए काम करता है। यदि आपके text में केवल ASCII चरित्र हों, तो यह तेज़ और सरल समाधान हो सकता है।
 
-## नजर डालें:
-अधिक जानकारी के लिए इन लिंकों को देखें:
-- [Rust std::char Documentation](https://doc.rust-lang.org/std/char/index.html)
+Rust का `.to_lowercase()` उच्च performance और safety के साथ डिजाइन किया गया है। यह हमेशा एक नई `String` object बनाता है क्योंकि Rust में strings immutable होते हैं।
+
+## See Also (और जानकारी के लिए)
+- Rust के official documentation में `.to_lowercase()` पर [डिटेल जानकारी](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase)।
+- [Unicode case mappings](http://www.unicode.org/Public/UCD/latest/ucd/CaseFolding.txt) के बारे में और जानें।
+- Rust by Example पर एक [tutorial](https://doc.rust-lang.org/stable/rust-by-example/std/str.html) है जो strings के अन्य operations को समझाती है।
+- [`Ownership`](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html) और [`Borrowing`](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html) के सिद्धांत Rust में memory safety की चाबी हैं, जो `.to_lowercase()` जैसे operations को संभव बनाते हैं।

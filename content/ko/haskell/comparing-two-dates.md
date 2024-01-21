@@ -1,6 +1,7 @@
 ---
 title:                "두 날짜 비교하기"
-html_title:           "C#: 두 날짜 비교하기"
+date:                  2024-01-20T17:33:21.783135-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "두 날짜 비교하기"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,37 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 사용하는가?
+## What & Why?
+(무엇과 왜?)
+두 날짜를 비교한다는 건, 그것들이 얼마나 떨어져 있는지, 어느 것이 앞선지 뒤쳐지는지 판단하는 것입니다. 프로그래머들이 이런 비교를 진행하는 건, 시간 기반의 로직을 결정하거나, 기간을 계산하기 위해서죠.
 
-두 날짜를 비교한다는 것은 날짜 간의 전후 관계를 파악하거나 사이에 경과한 날짜 수를 계산하는 것입니다. 이를 통해 응용프로그램에서 예약, 스케쥴링, 경과 시간 추적 등에 사용됩니다.
-
-##이렇게 해보세요:
-
-Haskell에서 `Data.Time.Calendar` 모듈을 이용하여 두 날짜를 비교할 수 있습니다. 두 날짜를 비교해보는 코드를 보겠습니다.
+## How to:
+(어떻게 하나:)
+다음은 두 날짜를 비교하는 Haskell 예제와 출력 결과입니다.
 
 ```Haskell
-import Data.Time.Calendar
+import Data.Time
 
-date1 = fromGregorian 2022 8 11
-date2 = fromGregorian 2022 10 14
+-- 두 날짜를 비교하는 함수
+compareDates :: Day -> Day -> Ordering
+compareDates date1 date2 = compare date1 date2
 
 main :: IO ()
-main = do 
-  print $ diffDays date2 date1
+main = do
+  let date1 = fromGregorian 2023 3 14  -- 2023년 3월 14일
+      date2 = fromGregorian 2024 3 14  -- 2024년 3월 14일
+  print $ compareDates date1 date2
 ```
 
-예를 들어 위 프로그램은 2022년 8월 11일과 2022년 10월 14일 사이의 날짜 차이를 계산하고 출력합니다.
+위 코드를 실행하면 다음과 같은 출력을 얻을 수 있습니다:
 
-## 디테일하게 살펴보기
+```
+LT  -- date1이 date2보다 앞선 날짜임
+```
 
-두 날짜를 비교하는 것은 프로그래밍의 초창기부터 있었고, 이는 예약 시스템, 타임라인 추적 등 많은 분야에서 필수적인 작업입니다. Haskell에서는 `Data.Time.Calendar` 모듈을 사용해 이것을 수행합니다. 다양한 연산등을 제공하며, 표준 라이브러리로 제공되므로 별도의 설치가 필요하지 않습니다.
+## Deep Dive:
+(깊은 탐색:)
+Haskell에서 날짜를 비교하는 일은 `Data.Time` 모듈 덕분에 간단합니다. 이 모듈은 Haskell에서 시간을 처리하는 표준 방식을 제공하는데, 국제 표준 시간과 역사적으로 사용되어온 그레고리력을 지원합니다.
 
-Haskell 대신 다른 언어를 사용해야 하는 경우, 대부분의 현대 프로그래밍 언어는 날짜를 비교하는 기능을 제공합니다. 예를 들어 Java에는 `LocalDate` 클래스가 있고, Python에서는 `datetime` 라이브러리를 사용할 수 있습니다.
+`Day` 타입은 그레고리력의 날짜를 나타내고, `compare` 함수로 쉽게 비교할 수 있습니다. 두 날짜가 같은지, 이전인지, 이후인지를 판단하는 세 가지 결과(`EQ`, `LT`, `GT`)가 있죠.
 
-Haskell의 `diffDays` 함수는 두 날짜를 비교하여 그 차이를 일 단위로 반환합니다. 이 함수는 간단하게 `Day -> Day -> Integer` 타입으로 구현되어 있습니다.
+대안으로, `diffDays` 함수를 사용하여 두 날짜 간의 차이를 일 단위로 계산하는 것도 가능합니다. 또한 더 복잡한 날짜와 시간의 비교를 위해서는 `UTCTime` 타입을 사용할 수 있습니다.
 
-## 참고하면 좋은 링크들
+구현에 있어서, 일반적으로 시간대(timezone) 처리는 복잡할 수 있지만, Haskell은 `TimeZone` 타입과 관련 함수들을 제공해 이 문제를 해결하도록 도와줍니다.
 
-* [Haskell Data.Time 패키지](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-* [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)
-* [Haskell Data.Time.Calendar 디테일 정보(GitHub)](https://github.com/haskell/time)
+## See Also:
+(더 보기:)
+- Haskell `Data.Time` 문서: http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html
+- Haskell 시간 처리에 대한 안내서: https://wiki.haskell.org/Working_with_time
+- 그레고리력에 대한 정보: https://en.wikipedia.org/wiki/Gregorian_calendar

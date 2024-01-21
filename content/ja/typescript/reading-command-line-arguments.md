@@ -1,6 +1,7 @@
 ---
 title:                "コマンドライン引数の読み取り"
-html_title:           "Bash: コマンドライン引数の読み取り"
+date:                  2024-01-20T17:57:08.107590-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "コマンドライン引数の読み取り"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,30 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なんで手に入れる？ どうして読む？
+## What & Why? (何となぜ？)
+コマンドライン引数を読むとは、プログラムが実行時に追加情報を受け取ることです。これにより、ユーザーが動的に挙動を変更できるようになります。
 
-コマンドライン引数は、コードの実行時にプログラムに渡される情報です。プログラマは、この方法で外部からパラメーターを取得することで、一般的にコードの柔軟性と再利用性を向上させます。
-
-## こうやって読む:
-
-TypeScriptでコマンドライン引数を読むためには、組み込みの`process`オブジェクトを使います。以下に示すように`argv`プロパティを利用するだけです。
+## How to: (やり方：)
+TypeScriptでは、`process.argv`を使って引数を取ります。簡単な例を見てみましょう。
 
 ```TypeScript
-let myArgs = process.argv.slice(2);
-console.log(myArgs);
+// hello.ts
+
+// コマンドライン引数を取得
+const args = process.argv.slice(2);
+
+// 引数があれば、それを使って挨拶
+console.log(`こんにちは、${args[0] ? args[0] : 'みなさん'}！`);
 ```
-この例では、`myArgs`はコマンドライン引数の配列になります。ただし、最初の２つの引数はノードの実行経路とスクリプトファイルの経路のためには使わず、`slice(2)`で取り除きます。
 
-## 深掘り
+これを実行するには、以下をターミナルに打ち込みます:
 
-コマンドライン引数は、コンピュータが主流になる前から使われてきました。UNIXやLinuxのようなシステムでは、これらの引数はしばしばユーティリティの設定や振る舞いを制御するために使われてきました。
+```bash
+tsc hello.ts && node hello.js 太郎
+```
 
-他に引数を処理する方法としては、ライブラリを使うこともあります。例えばノードパッケージ `yargs`や`commander`は、コマンドライン引数の解析と処理を助ける多くの強力な機能を提供します。
+出力:
 
-先述の例では、`process.argv`は全ての引数を文字列として返します。数値や真偽値を想定している場合、適切にキャストする必要があります。
+```
+こんにちは、太郎！
+```
 
-## これも読んでみよう:
+## Deep Dive (深掘り：)
+コマンドライン引数の読み込みはUNIX時代からあります。`process.argv`はNode.js環境で提供されるため、ブラウザ上のTypeScriptでは使えません。より複雑な引数やオプションの管理には、`commander`や`yargs`などのサードパーティライブラリを利用すると便利です。
 
-1. Node.jsのドキュメンテーション (`process.argv`について): https://nodejs.org/docs/latest/api/process.html#process_process_argv 
-2. yargsパッケージ: https://www.npmjs.com/package/yargs
-3. commanderパッケージ: https://www.npmjs.com/package/commander
+`process.argv`は全ての引数を文字列として取得するため、数値などに変換する必要があります。また、Node.jsでは`process.argv[0]`はnodeのパス、`process.argv[1]`は実行しているスクリプトのパスが格納されており、実際の引数はインデックス2から始まります。
+
+## See Also (関連情報：)
+- Node.js documentation on process.argv: https://nodejs.org/docs/latest/api/process.html#process_process_argv
+- npm package `commander`: https://www.npmjs.com/package/commander
+- npm package `yargs`: https://www.npmjs.com/package/yargs

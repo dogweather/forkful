@@ -1,7 +1,8 @@
 ---
-title:                "Skriva ut felsökningsresultat"
-html_title:           "Fish Shell: Skriva ut felsökningsresultat"
-simple_title:         "Skriva ut felsökningsresultat"
+title:                "Skriva ut felsökningsdata"
+date:                  2024-01-20T17:53:18.311526-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skriva ut felsökningsdata"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -10,43 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Rust-programmering: Så här skriver du ut felsökningsresultat ("Debug Output")
-
 ## Vad & Varför?
-Att skriva ut felsökningsresultat är processen att visa interna datakällor i koden för felsökning. Programmerare gör detta för att spåra och lösa buggar effektivt.
+Utskrift för felsökning hjälper programmerare att förstå vad deras kod gör under körning. Det gör att vi kan spåra värden och programflöde för att hitta och fixa buggar.
 
 ## Hur man gör:
-
-Använd `println!` och `{:?}` eller `{:#?}` för att skriva ut felsökningsresultat i Rust. Exempel:
+För att skriva ut debugginfo i Rust, använd `println!` med debug-flaggan `{:?}`:
 
 ```Rust
 fn main() {
-    let v = vec![1, 2, 3];
-    println!("Debug: {:?}", v);
-    println!("Pretty Debug: {:#?}", v);
+    let my_data = vec![1, 2, 3];
+    println!("Debug-info: {:?}", my_data);
 }
 ```
 
-Detta kommer att skriva ut:
+Utskrift skulle se ut så här:
+
+```
+Debug-info: [1, 2, 3]
+```
+
+Om du vill ha en mer detaljerad och formaterad utskrift, kan du använda `#` tillsammans med debug-flaggan:
 
 ```Rust
-Debug: [1, 2, 3]
-Pretty Debug: [
+fn main() {
+    let my_data = vec![1, 2, 3];
+    println!("Detaljerad debug-info: {:#?}", my_data);
+}
+```
+
+Det skulle ge denna detaljerade utskrift:
+
+```
+Detaljerad debug-info: [
     1,
     2,
     3,
 ]
 ```
 
-## Djupdykning
+Kom ihåg att din typ måste implementera `Debug` trait för att använda `{:?}` eller `{:#?}`.
 
-1. Historisk context: Rust introducerade `{:?}` för att skriva ut Debug-trait i stället för `fmt` gränssnittet, vilket ger en mer detaljerad utförlig utskrift.
-2. Alternativ: Utöver `println!` kan du också använda `debug!` från loggbiblioteket för att kontrollsystemets loggnivåer.
-3. Implementeringsdetaljer: Var medveten om att inte alla typer kan skrivas ut med `{:?}`. Din typ behöver implementera Debug-traiten.
+## Deep Dive
+I Rusts barndom insåg man att att skriva ut debug-information var kritiskt, så `Debug` trait implementerades tidigt i språkets utveckling. Det finns alternativ till `println!`, såsom att logga med bibliotek som `log` eller `env_logger` för mer kontroll och förmågan att hantera olika loggnivåer.
 
-## Se också
+`Display` är en annan trait som liknar `Debug`, men den är avsedd för användarvänlig utskrift snarare än debug-utskrift. `Display` behöver en mer manuell implementering där du bestämmer formatet, medan `Debug` oftast kan använda en derivat-deklaration för automatisk implementering.
 
-- [Rusts dokumentation för `fmt` ](https://doc.rust-lang.org/std/fmt/)
-- [Loggbiblioteket `log`](https://docs.rs/log/0.4.14/log/) 
+`std::fmt` modulen i Rust standardbiblioteket hanterar formattering. Det finns många andra traits i denna modul som kan användas för att anpassa utskrift utöver `Debug` och `Display`.
 
-Kom ihåg, skriv ut felsökningsresultat hjälper dig att lättare hitta och lösa problem i din kod. Använd denna teknik klokt och effektivt för din Rust-programmering.
+## Se även
+- Rusts officiella dokumentation för `std::fmt`: https://doc.rust-lang.org/std/fmt/
+- Rust By Example om Custom Types och Debug: https://doc.rust-lang.org/stable/rust-by-example/hello/print/print_debug.html
+- `log` crate: https://crates.io/crates/log
+- `env_logger` crate: https://crates.io/crates/env_logger

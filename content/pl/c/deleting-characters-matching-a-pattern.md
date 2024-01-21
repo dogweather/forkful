@@ -1,6 +1,7 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "C: Usuwanie znaków pasujących do wzorca"
+date:                  2024-01-20T17:41:44.512969-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "C"
 category:             "C"
@@ -10,54 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Usuwanie znaków według wzorca to filtracja danych, pozbywamy się tym niepotrzebnych elementów. Programiści często to robią, by oczyścić dane wejściowe, przyspieszyć przetwarzanie lub usunąć zbędne informacje.
 
-Czasami w programowaniu, trzeba usunąć znaki pasujące do określonego wzorca z ciągu znaków. Programiści robią to, aby optymalizować dane wejściowe, np. usuwając niepotrzebne spacje, tabulacje lub znaki nowego wiersza.
-
-## Jak to Zrobić:
-
-Poniżej jest kod w C, pokazujący jak usunąć określone znaki z ciągu:
-
-```C
+## How to: (Jak to zrobić:)
+```c
 #include <stdio.h>
 #include <string.h>
 
-void usun_znaki(char *zrodlo, char *do_usuniecia) {
-    int strIndex = 0;
-    int resIndex = 0;
-    int i;
-    while (zrodlo[strIndex]) {
-        for (i = 0; i<strlen(do_usuniecia); i++) {
-            if (zrodlo[strIndex] == do_usuniecia[i]) break;
-        }
-        if (i == strlen(do_usuniecia)) zrodlo[resIndex++] = zrodlo[strIndex];
-        strIndex++;
+void delete_chars(char *str, const char *pattern) {
+    char *src = str, *dst = str;
+    while(*src) {
+        const char *p = pattern;
+        while (*p && *p != *src) p++;
+        if (!*p) *dst++ = *src;
+        src++;
     }
-    zrodlo[resIndex] = '\0';
+    *dst = '\0';
 }
 
 int main() {
-    char str[] = "Cześć, świat!";
-    char znaki[] = ",";
-    usun_znaki(str, znaki);
-    printf("%s\n", str);
+    char text[] = "Hello, World! 123";
+    delete_chars(text, " !123");
+    printf("Result: %s\n", text); // Wypisuje "Hello,World"
     return 0;
 }
 ```
+Sample output (Przykładowe wyjście):
+```
+Result: Hello,World
+```
 
-Powyższy kod usunie przecinki z ciągu "Cześć, świat!" i wyświetli "Cześć świat!".
+## Deep Dive (Dogłębna analiza):
+Usuwanie znaków według wzorca to stara sztuczka. Zanim pojawiły się wyrażenia regularne, programiści musieli radzić sobie z tym sami – używając własnych funkcji. 
 
-## Deeper Dive
+Alternatywa do zaprezentowanego podejścia to wyrażenia regularne, ale potrzebują one dodatkowych bibliotek jak `<regex.h>` w standardzie POSIX. Ta funkcja (`delete_chars`) jest przykładem prostego podejścia, gdzie iterujemy po każdym znaku i sprawdzamy, czy należy go zachować.
 
-Powyższy kod jest skutecznym sposobem na usunięcie określonych znaków, ale jest kilka rzeczy, które są ważne do zapamiętania.
+Szczegółowo, porównujemy każdy znak ze wzorcem. Jeśli się nie zgadza, przenosimy go do nowej pozycji. Na końcu donosimy o zakresie przetworzonego stringa dodając znak końca stringa (`\0`).
 
-Po pierwsze, trzeba pamiętać, że kod działa na oryginalnym ciągu znaków. To znaczy, że oryginalny ciąg zostanie zmieniony, co może być problematyczne, gdy jest to niepożądane. 
-
-Alternatywna strategia to utworzenie nowego ciągu, który nie zawiera niechcianych znaków. Wybór pomiędzy tymi dwiema strategiami zależy od specyficznych wymagań programu.
-
-Dodatkowo, warto zauważyć, że ten kod używa funkcji `strlen()` w pętli, co sprawia, że jest mniej wydajny. W bardziej złożonych programach, optymalizacje takie jak przechowywanie długości ciągu znaków w zmiennej byłyby korzystne.
-
-## Zobacz Też
-
-- Dokumentacja GNU C Library: [String and Array Utilities](https://www.gnu.org/software/libc/manual/html_node/String-and-Array-Utilities.html)
-- StackOverflow: [How to delete certain character from a string using C](https://stackoverflow.com/questions/5457608/how-to-remove-the-character-at-a-given-index-from-a-string-in-c)
+## See Also (Zobacz też):
+- [C String Library Functions](http://www.cplusplus.com/reference/cstring/)
+- [POSIX Regular Expressions](https://pubs.opengroup.org/onlinepubs/7908799/xsh/regex.h.html)
+- [String Manipulation in C](https://en.wikibooks.org/wiki/C_Programming/String_manipulation)

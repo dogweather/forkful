@@ -1,7 +1,8 @@
 ---
-title:                "插值字符串"
-html_title:           "Arduino: 插值字符串"
-simple_title:         "插值字符串"
+title:                "字符串插值"
+date:                  2024-01-20T17:50:13.431859-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "字符串插值"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,35 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么以及为什么？
-字符串插值是把变量值放入字符串的过程。程序员使用它以便构建和操作可读性高且内容动态改变的字符串。
+## What & Why? 什么与为什么
+字符串插值是将变量值拼接进固定格式的字符串过程。程序员这么做是为了创造动态消息和易于维护代码。
 
-## 如何去做：
-以下是一个进行字符串插值的C编程示例和输出。
+## How to: 如何操作
+在C语言中，你使用 `printf` 函数来插值字符串。以下是示例代码和输出结果。
 
-```C 
+```C
 #include <stdio.h>
 
 int main() {
-    char name[] = "Tom";
-    int age = 25;
+    int age = 28;
+    const char *name = "张三";
 
-    printf("Hello, my name is %s. I am %d years old.\n", name, age);
+    printf("姓名：%s，年龄：%d。\n", name, age);
 
     return 0;
 }
 ```
-执行这段代码的输出将是：
-``` 
-Hello, my name is Tom. I am 25 years old.
-``` 
 
-## 深度研究
-1. 历史背景: 字符串插值在古老的编程语言PRINT语句中已经存在。C语言中使用printf函数和格式说明符实现它。
-2. 可选方案：C++11之后增加了std::to_string方法去转换数值为字符串形式。然后你可以用+运算符连接它们。
-3. 实现细节：C语言中的printf函数把格式说明符（比如%s或%d）替换为提供的变量值。 它做这个是通过“stdarg”库和特定的参数类型。
+输出结果：
 
-## 参阅：
-1. C语言Printf函数详解: https://goo.gl/mY2Jv8
-2. C语言字符和字符串: https://goo.gl/W4VSy8
-3. C语言资料库：https://www.runoob.com/cprogramming/c-tutorial.html
+```
+姓名：张三，年龄：28。
+```
+
+## Deep Dive 深度潜入
+字符串插值在早期编程语言中不常见。C语言使用格式化打印，这比现代语言的内置插值简陋。替代方案有拼接字符串，但维护麻烦。了解底层，`printf` 把格式化字符串和后续参数结合产生最终结果。详细了解，要查阅C语言标准库文档。
+
+## See Also 相关资源
+- [C 标准库 - printf](http://www.cplusplus.com/reference/cstdio/printf/)

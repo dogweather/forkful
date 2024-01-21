@@ -1,7 +1,8 @@
 ---
-title:                "Teilzeichenketten extrahieren"
-html_title:           "PowerShell: Teilzeichenketten extrahieren"
-simple_title:         "Teilzeichenketten extrahieren"
+title:                "Teilstrings extrahieren"
+date:                  2024-01-20T17:45:04.577701-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Teilstrings extrahieren"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,38 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why?
+### Was & Warum?
+Substring-Extraktion ist das Herausgraben von Teilsequenzen aus einem String. Programmierer nutzen sie, um bestimmte Daten zu isolieren oder Formatierungsprobleme zu lösen.
 
-Das Extrahieren von Teilzeichenketten (Substrings) ist der Prozess, einen Teil einer Zeichenkette zu entfernen und separat zu verwenden. Programmierer tun dies, um Text und Daten effizient zu manipulieren und zu analysieren.
-
-## Wie geht das:
-
-Ein grundlegender Weg, um Substrings in C++ zu extrahieren, ist die Verwendung der `substr` Funktion, die in der `std::string` Klasse definiert ist. 
-
+## How to:
+### Wie geht das:
 ```C++
 #include <iostream>
 #include <string>
 
 int main() {
-    std::string s = "Hallo, Welt!";
-    std::string sub = s.substr(0, 5);
-
-    std::cout << sub << std::endl;  // Gibt "Hallo" aus
-
+    std::string text = "Grüße aus Berlin";
+    
+    // Erster Substring: Gibt "Grüße" aus
+    std::string teil1 = text.substr(0, 5);
+    std::cout << teil1 << std::endl; // "Grüße"
+    
+    // Zweiter Substring: Gibt "Berlin" aus
+    std::string teil2 = text.substr(10);
+    std::cout << teil2 << std::endl; // "Berlin"
+    
     return 0;
 }
 ```
-## Tiefer Einblick
+**Ausgabe:**
+```
+Grüße
+Berlin
+```
 
-Historisch gesehen wurde das Extrahieren von Substrings in C++ mittels Zeiger und Dynamischen Speichers durchgeführt. Doch mit der Einführung der `std::string` Klasse in der Standardbibliothek wurde die Aufgabe viel einfacher.
+## Deep Dive:
+### Tiefergehend:
+Der `.substr()` Befehl ist seit C++98 Standard. Alternativ kann man `std::string::find` mit `std::string::substr` kombinieren, um dynamische Positionen zu nutzen. Beispielsweise, um genau ab dem ersten Leerzeichen zu teilen. Hinsichtlich Performance? `std::string_view` (seit C++17 verfügbar) ist für Leseoperationen effizienter, da es den Originalstring nicht kopiert.
 
-Zu den Alternativen gehört der Gebrauch von Regular Expressions oder `std::stringstream`, die jedoch komplizierter und overheadlastig sein können. Die `substr` Funktion hingegen bietet eine direkte und effiziente Methode zur Extraktion von Substrings.
-
-Was die Implementierungsdetails betrifft, so gibt `substr` eine Kopie des Substrings zurück, nicht einen Zeiger oder eine Referenz, was bedeutet, dass die ursprüngliche Zeichenkette unverändert bleibt.
-
-## Siehe Auch
-
-Für weitere Details und verwandte Themen, siehe:
-
-- [Cplusplus.com - string::substr](http://www.cplusplus.com/reference/string/string/substr/)
-- [Stackoverflow - Wie Substrings in C++ extrahieren](https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-a-delimiter)
+## See Also:
+### Siehe auch:
+- C++ Standardbibliotheksdokumentation zu `std::string`: https://en.cppreference.com/w/cpp/string/basic_string
+- Stack Overflow Diskussionen zu Substrings in C++: https://stackoverflow.com/questions/tagged/c%2b%2b+substring
+- C++17 `std::string_view` Tutorial: https://www.cppstories.com/2017/07/string-view-perf-followup/

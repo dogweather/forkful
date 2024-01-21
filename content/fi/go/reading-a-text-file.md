@@ -1,6 +1,7 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Lua: Tekstitiedoston lukeminen"
+date:                  2024-01-20T17:54:28.779813-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Go"
 category:             "Go"
@@ -10,60 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Lukemalla tekstitiedostoja saat dataa ohjelmaasi. Se on perusjuttu; tehdään, koska meidän pitää käsitellä ja analysoida informaatiota.
 
-Tekstitiedoston lukeminen tarkoittaa tietojen hankkimista tekstipohjaisesta tiedostosta. Ohjelmoijat tekevät tämän, koska se on kätevä tapa säilyttää ja hakea tietoa.
-
-## Miten:
-
-Tässä on yksinkertainen koodiesimerkki, joka näyttää miten tekstitiedosto luetaan Go-ohjelmointikielellä:
-
+## How to: (Kuinka tehdä:)
 ```Go
 package main
 
 import (
-	"bufio"
-	"fmt"
-	"log"
-	"os"
+    "bufio"
+    "fmt"
+    "log"
+    "os"
 )
 
 func main() {
-	file, err := os.Open("test.txt")
+    file, err := os.Open("esimerkki.txt")
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer file.Close()
 
-	if err != nil {
-		log.Fatalf("virhe avattaessa tiedostoa: %v", err)
-	}
+    scanner := bufio.NewScanner(file)
+    for scanner.Scan() {
+        fmt.Println(scanner.Text())
+    }
 
-	scanner := bufio.NewScanner(file)
-	
-	for scanner.Scan() {
-		fmt.Println(scanner.Text())
-	}
-	
-	file.Close()
+    if err := scanner.Err(); err != nil {
+        log.Fatal(err)
+    }
 }
 ```
-
-Tulostus voisi näyttää tältä, jos test.txt sisältää rivit "Hei" ja "maailma":
-
-```Go
-Hei
-maailma
+Output:
+```
+Tässä on esimerkin ensimmäinen rivi.
+Ja toinen.
 ```
 
-## Sukellus:
+## Deep Dive (Syvä sukellus)
+Tiedostonlukuun liittyy historiaa. UNIX-aikakaudella kaikki oli tiedostoa, myös teksti. Tämän vuoksi Go:n tiedostonkäsittely on uniikki erityisesti io ja os pakettien välillä. Vaihtoehtoja lukemiseen on monia: ioutil.ReadAll (vanha tapa), os paketti (uusi tapa), tai bufio lukijat. bufio on hyvä isommille tiedostoille, kosä se ei lataa koko tiedostoa muistiin kerralla. Implementation-wise, `defer` käskyä käytetään tiedoston varmaan sulkemiseen sen jälkeen, kun kaikki toiminnot on suoritettu.
 
-Go:n lukufunktiot ovat osa laajempaa UNIX-filosofiaa: tee yksi asia ja tee se hyvin. Historiallisesti UNIX-järjestelmissä tiedostoja on käytetty tiedonvälitysmekanismina. Go on ottanut tämän mallin ja tuonut sen moderniin ohjelmointimaailmaan.
-
-Kun luet tiedostoa, on olemassa muitakin vaihtoehtoja, kuten `ioutil.ReadFile` tai `ioutil.ReadAll`. Kuitenkin, `bufio.Scanner` on yleensä parempi vaihtoehto, koska se käsittelee muistin tehokkaammin etenkin suurien tiedostojen kanssa.
-
-Itse tekstitiedoston lukemisessa ei ole mitään erikoista. Toki, sinun täytyy olla tietoinen esimerkiksi käytetystä merkistökoodauksesta (esim. UTF-8), mutta Go hoitaa useimmat näistä yksityiskohdista sinulle taustalla. Jos tarvitset enemmän kontrollia, niin Go tarjoaa `Reader` ja `Writer` -rajapinnat, joiden avulla voit tehdä tarkempia toimintoja tiedostojen kanssa.
-
-## Katso myös:
-
-Hyviä resursseja Go-ohjelmointikielen tekstitiedostojen käsittelystä:
-
-1. Go:n virallinen dokumentaatio: [https://golang.org/pkg/bufio/](https://golang.org/pkg/bufio/)
-2. Go-by-example -sivuston opetusohjelma: [https://gobyexample.com/reading-files](https://gobyexample.com/reading-files)
-3. Hyvä katsaus Go:n tiedostonkäsittelyfunktioista: [https://www.devdungeon.com/content/working-files-go](https://www.devdungeon.com/content/working-files-go)
+## See Also (Katso myös)
+- Go by Example: Reading Files: https://gobyexample.com/reading-files
+- The Go Programming Language Specification: https://golang.org/ref/spec#Package_os
+- Go Blog – Defer, Panic, and Recover: https://blog.golang.org/defer-panic-and-recover

@@ -1,6 +1,7 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "C++ recipe: Reading command line arguments"
+date:                  2024-01-20T17:56:05.403364-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Reading command line arguments"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,39 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Reading command line arguments means accessing values directly passed to your Javascript script via the command line. This gives your code the ability to interact with inputs in a dynamic way, further enhancing its functionality.
+Reading command line arguments means grabbing the extras users tack onto commands when they run your script. Programmers do it to let users customize behavior without changing code.
 
 ## How to:
+Here's the straight-up way to do it in Node.js:
 
-In NodeJS, command line arguments can be accessed via the `process.argv` array. Here's a basic example of how to get your command line arguments:
+```javascript
+// process.argv contains command line arguments
+const args = process.argv.slice(2);
 
-```Javascript
-// Command
-// $ node myScript.js arg1 arg2
+console.log(args);
 
-process.argv.forEach((val, index) => {
-    console.log(`${index}: ${val}`);
-});
-
-// Output
-// 0: /…/.nvm/versions/node/v14.15.0/bin/node
-// 1: /Users/username/myScript.js
-// 2: arg1
-// 3: arg2
+// Run this script with: node yourscript.js firstArg secondArg
 ```
 
-The first two elements of `process.argv` are path to `node` and `your-script.js` file respectively. The following elements are your command line arguments. Note that they're all strings!
+Sample output if you run `node yourscript.js pineapple 42`:
+
+```javascript
+['pineapple', '42']
+```
+
+Using a package like `yargs` makes life easier, letting you define and access arguments by name.
+
+```javascript
+// Install with npm install yargs
+const yargs = require('yargs/yargs');
+const { hideBin } = require('yargs/helpers');
+const argv = yargs(hideBin(process.argv)).argv;
+
+console.log(argv);
+
+// Run this with: node yourscript.js --fruit pineapple --number 42
+```
+
+And you'd get:
+
+```javascript
+{ fruit: 'pineapple', number: '42' }
+```
+
+Clean and clear, with named parameters.
 
 ## Deep Dive
+Way back, arguments were read in C using `argc` and `argv` in the `main` function. In Node.js, `process.argv` is the go-to. It's an array where the first element is the path to the node executable, the second is the script file name, and the rest are your actual arguments.
 
-Historically, command line arguments have been a useful way of passing parameters to programs back when Graphical User Interfaces (GUIs) were not popular. They still hold their grounds for their simplicity and effectiveness.
+`yargs` is nifty for complex apps: it parses arguments into a handy object, manages defaults, and even auto-generates help messages. 
 
-An alternate to `process.argv` is the `minimist` library. It parses command line arguments and options with more ease and provides them in a convenient format, such as providing an object instead of an array.
+There's also the `minimist` package, a lighter alternative to `yargs`, if you're into minimalism.
 
-In NodeJS underlying architecture, the `process.argv` array is supplied by the C `main(argc, argv, env)` function. It becomes global as NodeJS wraps it into the global `process` object.
+Deep down, Node.js uses V8's `process.binding('options')` for parsing which isn't exposed to the average user. This internal method packs tons of utility under the hood, managing the parsing and retrieval of command line options.
 
 ## See Also
-
-- More about the process.argv: [NodeJS Process Docs](https://nodejs.org/api/process.html#process_process_argv)
-- Minimist NPM Package: [Minimist NPM](https://www.npmjs.com/package/minimist)
+- Node.js process.argv documentation: https://nodejs.org/docs/latest/api/process.html#process_process_argv
+- Yargs GitHub repo: https://github.com/yargs/yargs
+- Minimist on npm: https://www.npmjs.com/package/minimist

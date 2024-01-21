@@ -1,6 +1,7 @@
 ---
 title:                "Printing debug output"
-html_title:           "Arduino recipe: Printing debug output"
+date:                  2024-01-20T17:52:27.522287-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Printing debug output"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,50 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Printing Debug Output in Gleam
-
 ## What & Why?
+Printing debug output lets you spit out values to check if your program behaves as expected. It's your bread and butter for quick-and-dirty troubleshooting when things go awry.
 
-Debug output is a convenient way to inspect data within your Gleam program, serving like a window into your code's inner workings. Programmers use it to check data at a specific point in code, helping identify and debug issues.
-
-## How To:
-
-In Gleam, we use the built-in `debug` function to print debug output.
-
-```Gleam
+## How to:
+```gleam
 import gleam/io
 
-fn main() {
-  let mystery_number = 42
-  io.debug(mystery_number)
+pub fn main() {
+  let my_variable = "Debugging in Gleam is straightforward!";
+  io.debug(my_variable)
 }
 ```
-Executing the above will output:
-```Bash
-42
-```
+Run it, and you'll see `Debugging in Gleam is straightforward!` in your terminal. It shows you what's up with your code at that moment.
 
 ## Deep Dive
+Historically, printing debug output harks back to days when logging tools were luxury and rubber ducks weren’t on desks. It's the first tool a dev thinks of even now, despite advanced debugging tools.
 
-Debugging, a practice as old as programming itself, is the process of identifying and fixing errors in the code. Built-in debug functions, like `io.debug` in Gleam, are a leap from primitive methods of manual code tracing. 
-
-An alternative to `io.debug` in Gleam is `io.display` which, unlike `debug`, evaluates the string version of an expression and also neatly formats the display of complex datatypes.
-
-```Gleam
-import gleam/io
-
-fn main() {
-  let complex_data = tuple("Hello", 42, Nil)
-  io.display(complex_data)
-}
-```
-Gives you:
-```Bash
-#("Hello", 42, [])
-```
-The implementation of these functions in the Gleam core library revolves around evaluating code at runtime, converting values to strings, and printing the strings to stdout.
+In Gleam, `io.debug` is the go-to. Alternatives include more structured logging libraries when you outgrow simple print statements. Under the hood, `io.debug` writes to standard error, making it distinguishable from standard output.
 
 ## See Also
-
-- Great overview of debugging: [https://en.wikipedia.org/wiki/Debugging](https://en.wikipedia.org/wiki/Debugging)
-- XML for Erlang (to use with Gleam): [https://github.com/willemdj/erlsom](https://github.com/willemdj/erlsom)
+- The Gleam `io` module documentation: https://hexdocs.pm/gleam_stdlib/gleam/io/
+- Structured logging in Gleam: [Module Placeholder, based on version updates]
+- A guide on debugging in functional programming: [Link Placeholder, subject to available resources]

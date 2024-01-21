@@ -1,7 +1,8 @@
 ---
-title:                "Utdrag av understrenger"
-html_title:           "Bash: Utdrag av understrenger"
-simple_title:         "Utdrag av understrenger"
+title:                "Uthenting av delstrenger"
+date:                  2024-01-20T17:46:04.790649-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uthenting av delstrenger"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -12,39 +13,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Å trekke ut delstrenger er å selektere spesifikke deler av en streng. Dette brukes når programmerere bare trenger en del av dataen i en større streng.
+Å hente ut delstrenger betyr å plukke ut spesifikke deler av en tekststreng. Programmerere gjør dette for å manipulere, analysere eller transformere data på en mer finjustert måte.
 
-## Hvordan:
+## Slik gjør du:
 
-Her er noen grunnleggende eksempler på hvordan man kan trekke ut delstrenger i Haskell:
-
-```Haskell
-hoved :: IO ()
-hoved = do 
-    let streng = "Haskell er gøy"
-    putStrLn (take 7 streng) -- "Haskell"
-    putStrLn (drop 9 streng) -- "gøy"
-    putStrLn (take 3 (drop 9 streng)) -- "gø"
-```
-Når du kjører koden, vil outputtene være som følger:
+I Haskell, brukes ofte `take`, `drop`, og `substring` funksjoner fra `Data.Text` biblioteket for å håndtere strenger.
 
 ```Haskell
-Haskell
-gøy
-gø
+import Data.Text as T
+
+main :: IO ()
+main = do
+  let tekst = T.pack "Hei, Haskell!"
+  let delstreng = T.take 3 tekst
+  putStrLn $ T.unpack delstreng -- Output: "Hei"
+
+  let hoppOver = T.drop 5 tekst
+  putStrLn $ T.unpack hoppOver -- Output: "Haskell!"
+
+  let substr = T.take 7 (T.drop 5 tekst)
+  putStrLn $ T.unpack substr -- Output: "Haskell"
 ```
 
-## Dypdykk:
+## Dypdykk
 
-Historisk sett, bruk av funksjonene 'take' og 'drop' for å trekke ut delstrenger går tilbake til LISP i 1958. Som et funksjonelt språk, legger Haskell vekt på enkelhet og klartekst.
+Før `Data.Text`, Haskell brukte `String` (som egentlig er en liste av `Char`s) for tekstbehandling. Men, å jobbe med `String` var tregt og ineffektivt for store tekster. Derfor ble `Data.Text` introdusert for å gi en mer effektiv strengbehandling.
 
-Alternativt kan man bruke en annen tilnærming som for eksempel 'splitAt' funksjonen som returnerer et par av delstrenger.
+Det finnes også biblioteket `text` som tilbyr funksjonen `takeEnd` og `dropEnd`, for å hente ut eller fjerne tegn fra slutten av tekststrenger.
 
-Hvis du dykker ned i implementeringsdetaljer, vil du se at 'take' og 'drop' opererer på O(n) tid, der n er lengden på strengen.
+Implementasjonsmessig, `Data.Text` bruker utf-16 koding intern, som er en balanse mellom effektivitet (sammenlignet med utf-32) og kompakthet (sammenlignet med utf-8 for visse språk).
 
-## Se Også:
+## Se Også
 
-For mer informasjon, sjekk ut disse kildene:
-
-- "Learn You a Haskell for Great Good!" av Miran Lipovača, et nyttig innføring i funksjonell programmering med Haskell: http://learnyouahaskell.com/
-- Haskell 98 Report, mer teknisk beskrivelse av strengoperasjoner: https://web.archive.org/web/20181224041142/https://www.haskell.org/onlinereport/standard-prelude.html
+- `Data.Text` dokumentasjon: https://hackage.haskell.org/package/text-1.2.3.1/docs/Data-Text.html
+- Et Haskell-kurs for de som vil lære mer: http://learnyouahaskell.com/chapters
+- Haskell offisielle side: https://www.haskell.org/

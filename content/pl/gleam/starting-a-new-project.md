@@ -1,6 +1,7 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Bash: Rozpoczynanie nowego projektu"
+date:                  2024-01-20T18:03:41.609874-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,32 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Zaczynamy nowy projekt po to, by zorganizować nasze pliki kodu i ułatwić współpracę. Faktem jest, że programiści zaczynają nowe projekty, aby skutecznie rozwiązywać problemy, uzyskać czysty kod i zorganizować proces twórczy.
+## What & Why? (Co i Dlaczego?)
+Zaczynając nowy projekt, tworzysz podwaliny dla swojej aplikacji lub biblioteki. Programiści robią to, aby zorganizować kod od początku i ustalić kierunek rozwoju.
 
-## Jak to zrobić:
-Tworzenie nowego projektu w Gleam (aktualna wersja) jest proste. Używamy wiersza polecenia i wprowadzamy odpowiednie polecenia.
+## How to: (Jak to zrobić?)
+Aby rozpocząć nowy projekt w Gleam, zainstaluj narzędzie Gleam CLI, a następnie uruchom komendę:
 
-```Gleam
-$ rebar3 new gleam_lib my_project
-$ cd my_project
+```gleam
+gleam new my_cool_project
 ```
 
-Wynikiem jest nowy projekt Gleam o nazwie "my_project". Zawiera również podstawową strukturę biblioteki.
+Wynikowe działanie powyższej komendy to stworzenie nowej struktury projektu:
 
-## Głębsze spojrzenie
-Tworzenie nowych projektów to nie nowy koncept. Stworzony wiele lat temu, ma na celu pomóc programistom w lepszym zarządzaniu ich kodem. W Gleam, mamy alternatywe dla `rebar3 new`, które to jest `gleam new`. `gleam new` tworzy nowy projekt Gleam o podanej nazwie, wykorzystując domyślny szablon.
-
-```Gleam
-$ gleam new my_project
-$ cd my_project
+```
+my_cool_project/
+├── gleam.toml
+├── README.md
+├── src
+│   └── my_cool_project.gleam
+└── test
+    └── my_cool_project_test.gleam
 ```
 
-W przypadku implementacji, nowy projekt składa się z katalogów src, test i gen, a także plików rebar.config i .gitignore. W rzeczywistości, struktura projektu oraz pliki mogą się różnić w zależności od konkretnych potrzeb projektu.
+## Deep Dive (Dogłębna analiza)
+Gleam, język do tworzenia bezpiecznych, równoległych aplikacji backendowych, zaczął się formować w 2018 roku. Wzorowany na Elixirze i Erlangu, przynosi typowanie statyczne do ekosystemu Erlang VM. Aby zacząć projekt, Gleam oferuje CLI, które ułatwia zarządzanie zależnościami i kompilację.
 
-## Zobacz także
-Aby uzyskać więcej informacji na temat Gleam, odwiedź:
-- Oficjalna strona Gleam: https://gleam.run/
-- Dokumentacja Gleam: https://gleam.run/book/
-- Źródło Gleam na GitHubie: https://github.com/gleam-lang/gleam
-- Lista narzędzi do Gleam: https://gleam.run/tools/
+Alternatywy dla Gleam to Elixir, Erlang czy Elm, ale Gleam wyróżnia się dzięki systemowi typów podobnemu do języków takich jak Rust lub Haskell. Rozpoczęcie projektu z Gleam zapewnia szybkie ustawienie środowiska, śledzenie typów i wydajne wykorzystanie BEAM (Erlang VM).
+
+Szczegółową implementację nowego projektu można znaleźć w dokumentacji Gleam CLI, która tłumaczy, jak zarządzać modułami i pakietami.
+
+## See Also (Zobacz także)
+- The Gleam Book: [https://gleam.run/book](https://gleam.run/book)
+- GitHub repo: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)

@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-html_title:           "Arduino: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+date:                  2024-01-20T17:38:31.722334-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,22 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Muuttujan muuttaminen pieniksi kirjaimiksi (eng. converting a string to lower case) tarkoittaa ohjelmointia, jossa muutetaan merkkijonon kaikki kirjaimet pieniksi kirjaimiksi. Ohjelmoijat tekevät tämän usein normalisoidakseen tietoja, kuten käyttäjätunnuksia tai sähköpostiosoitteita.
+## What & Why?
+Mitä ja Miksi? Kääntäminen merkkijono pieniksi kirjaimiksi tarkoittaa kaikkien kirjainten muuttamista niiden pienikokoisiksi vastineiksi. Ohjelmoijat käyttävät tätä esimerkiksi syötteiden yhdenmukaistamiseen, helpottamaan vertailua ja vähentämään isot ja pienet kirjaimet huomioivat virheet.
 
-## Näin se tehdään:
-Fish Shellissä voit yksinkertaisesti käyttää `string` komentoa muuttaaksesi merkkijonon pieniksi kirjaimiksi. 
+## How to:
+Kuinka? Fish Shellillä saat merkkijonon pieniksi kirjaimiksi `string lower`-komennolla. Helppoa ja suoraviivaista. Kokeile itse:
 
 ```Fish Shell
-set muuttuja "Moi Maailma"
-echo $muuttuja | string lower
+echo "Tässä On Isolla Alkavia" | string lower
 ```
 
-Tämä tulostaa: `moi maailma`
+Tulostus:
 
-## Syvempi sukellus
-Fish Shell, vuonna 2005 julkaistu komentotulkki, lisäsi 'string' toiminnon version 2.3.0 myötä, mikä helpottaa merkkijonoihin liittyviä operaatioita. Vaihtoehtona voitaisiin käyttää `tr` komentoa `tr '[:upper:]' '[:lower:]'`, mutta se saattaa tuottaa odottamattomia tuloksia joillakin Unicode merkkijonoilla. Fishin 'string lower' käyttää kansainvälistä komponenttia, mikä takaa laajemman merkkijonon tuen.
+```Fish Shell
+tässä on isolla alkavia
+```
 
-## Katso myös
-- Fishin virallinen dokumentaatio: [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- Yksityiskohtaisempi artikkeli merkkijonojen muuntamisesta: [Converting Strings in Fish](https://riptutorial.com/fish-shell/example/20341/converting-strings)
+## Deep Dive
+Syväsukellus: Alun perin UNIX-komentotulkit, kuten Bourne shell, eivät tukeneet merkkijonojen käsittelyä suoraan. Fish Shell toi kehittyneet merkkijono-ominaisuudet shellien käyttöön. Vaihtoehtoisia keinoja merkkijonojen pienentämiseen ovat `awk`, `tr`, `sed`, mutta Fishissä `string`-työkalu hoitaa tämän tyylikkäästi. Fish Shell käyttää Unicode-määritelmiä isot-pienet kirjainmuunnoksille, joten esimerkiksi diakriittiset merkit käännetään oikein.
+
+## See Also
+Lisätietoja: Tutustu Fish Shell:n dokumentaatioon ja muiden työkalujen käyttöohjeisiin syvällisemmän ymmärryksen saavuttamiseksi.
+
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html#string)
+- [AWK Manual](https://www.gnu.org/software/gawk/manual/gawk.html)
+- [GNU `tr` Manual](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+- [SED Manual](https://www.gnu.org/software/sed/manual/sed.html)

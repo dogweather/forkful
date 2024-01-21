@@ -1,7 +1,8 @@
 ---
-title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
-simple_title:         "Wyszukiwanie i zastępowanie tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+date:                  2024-01-20T17:57:59.636146-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,43 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+"Co i Dlaczego?"
 
-Wyszukiwanie i zamiana tekstu to podstawowe operacje, które programiści wykonują na ciągach znaków. Znajdują one zastosowanie w wielu kontekstach, np. podczas manipulowania danymi, czyszczenia i normalizacji informacji.
+Wyszukiwanie i zamiana tekstu to szybka edycja, zmieniająca fragmenty kodu czy tekstu. Programiści robią to, by poprawiać błędy, aktualizować dane czy czyszczenie kodu.
 
-## Jak to zrobić:
+## How to:
+"Jak to zrobić?"
 
-```Elixir 
-original_text = "Witam wszystkich w Elixir!"
-new_text = String.replace(original_text, "wszystkich", "Was")
-
-IO.puts new_text
-# Outputs: "Witam Was w Elixir!"
-```
-
-Kod powyżej pokazuje, jak użyć funkcji `replace` z modułu `String` do wyszukania i zamiany słowa 'wszystkich' na 'Was' w tekście "Witam wszystkich w Elixir!".
-
-```Elixir 
-pattern = ~r/wszystkich/i
-replacement = "Was"
-new_text = Regex.replace(pattern, original_text, replacement)
+```elixir
+# Podstawowa zamiana w ciągu znaków
+original_text = "Witaj świecie, Elixir jest niesamowity!"
+new_text = String.replace(original_text, "świecie", "Elixira")
 
 IO.puts new_text
-# Outputs: "Witam Was w Elixir!"
+# Wynik: "Witaj Elixira, Elixir jest niesamowity!"
+
+# Wyszukiwanie za pomocą wyrażeń regularnych
+regex = ~r/jest (\w+)/
+replacement = "to \\1 i wiele więcej"
+
+IO.puts String.replace(original_text, regex, replacement)
+# Wynik: "Witaj świecie, Elixir to niesamowity i wiele więcej"
+
+# Zamiana wielu wzorców na raz
+patterns = [{"Elixir", "Phoenix"}, {"jest", "to"}, {"niesamowity", "fantastyczny"}]
+
+IO.puts Enum.reduce(patterns, original_text, fn {from, to}, acc -> 
+  String.replace(acc, from, to) 
+end)
+# Wynik: "Witaj świecie, Phoenix to fantastyczny!"
 ```
 
-Drugi kod prezentuje alternatywny sposób używania eksperymentalnej składy `~r` do tworzenia wyrażeń regularnych.
+## Deep Dive
+"Głębsze spojrzenie"
 
-## W głąb tematu:
+Historia funkcji stringowych w Elixirze nawiązuje do systemu pattern matching w Erlangu. Wyszukiwanie i zamiana opierają się na potężnej składni wyrażeń regularnych, zapożyczonej z Perl'a. Alternatywą może być wykorzystanie funkcji związanych ze strumieniami (Streams), do przetwarzania dużych plików bez potrzeby ich wczytywania do pamięci. Sprawność implementacji tych funkcji w Elixirze pozwala na wydajne zarządzanie łańcuchami znaków, co jest kluczowe przy obsłudze protokołów sieciowych czy przetwarzaniu dużych zbiorów danych.
 
-W poprzednich wersjach Elixir metoda 'replace' nie była dostępna. Programiści musieli korzystać z niskopoziomowych funkcji na ciągach znaków lub korzystać z bibliotek firm trzecich.
+## See Also
+"Zobacz też"
 
-Metoda 'replace' z modułu 'String' jest prostsza do zrozumienia i stosowania, ale metoda z wyrażeniem regularnym jest bardziej wszechstronna. Może obsłużyć bardziej złożone przypadki, takie jak ignorowanie wielkości liter.
-
-Rozważając, które podejście wybrać, należy wziąć pod uwagę specyfikacje projektu. Na przykład, jeśli robisz dużo złożonych manipulacji na tekstach, warto znać i używać wyrażeń regularnych.
-
-## Zobacz też:
-
-1. [Oficjalna dokumentacja Elixir na temat modułu String](https://elixir-lang.org/getting-started/basic-types.html#strings)
-2. [Poradnik dotyczący składni wyrażeń regularnych w Elixir](https://elixir-lang.org/getting-started/pattern-matching.html#the-pin-operator)
-3. [Dokumentacja dla `~r` składni](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#%7Er/2)
+- Elixir Documentation on Strings: https://hexdocs.pm/elixir/String.html
+- RegEx in Elixir (using `Regex` module): https://hexdocs.pm/elixir/Regex.html
+- Chris McCord's "Metaprogramming Elixir" for patterns and matching: https://pragprog.com/titles/cmelixir/metaprogramming-elixir/
+- Elixir School on Strings and Pattern Matching: https://elixirschool.com/en/lessons/basics/strings/

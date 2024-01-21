@@ -1,7 +1,8 @@
 ---
-title:                "Komentorivin argumenttien lukeminen"
-html_title:           "Bash: Komentorivin argumenttien lukeminen"
-simple_title:         "Komentorivin argumenttien lukeminen"
+title:                "Komennoriviparametrien lukeminen"
+date:                  2024-01-20T17:56:03.573152-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Komennoriviparametrien lukeminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,40 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Komennon rivin argumenttien lukeminen merkitsee tietojen saamista käyttäjältä ohjelman suorituksen aikana. Ohjelmoijat tekevät tätä voidakseen saada joustavat ja mukautettavat ohjelmat, joita voidaan muuttaa käyttäjän syötteen perusteella.
+## What & Why? (Mitä & Miksi?)
+Lukemalla komentoriviargumentteja, ohjelmasi ottaa syötteen suoraan käynnistyksen yhteydessä. Se automatisoi tehtäviä ja mukauttaa ohjelman käyttäytymistä ilman koodin muokkaamista.
 
-## Miten tehdä:
-Gleam-luettelossa ohjelman argumentit on saatavissa stand-alone `main` -funktion kautta. Tässä on esimerkki koodista ja sen tuottamasta tulosteesta:
-
-```Gleam
-import gleam/list 
+## How to: (Kuinka tehdä:)
+```gleam
 import gleam/io
+import gleam/os
 
-fn main(args: list.List(unicode.String)) {
-    let args_string = list.join(args, ", ")
-    io.println(args_string)
+pub fn main() {
+  let args = os.args()
+  match args {
+    [] -> io.print("No arguments given.")
+    [first, ..] -> io.print("First argument: " ++ first)
+    _ -> io.print("Something went wrong.")
+  }
 }
 ```
-
-Suorita tämä ohjelma komentoriviltä ja anna sille muutamia argumentteja. 
-Esimerkiksi, jos annat argumentit "eka", "toka"
-
+Kun ajat tämän ohjelman, saat nähdä jotain tällaista:
 ```
-$ gleam run my_app eka toka
-```
+$ my_program
+No arguments given.
 
-Ohjelma tulostaa:
-
-```
-eka, toka
+$ my_program hello
+First argument: hello
 ```
 
-## Syvempi tarkastelu
-Komennon rivin argumenttien lukeminen on ollut ohjelmoinnin perusta 1970-luvulta lähtien, jolloin UNIX-käyttöjärjestelmät olivat suosittuja. Vaihtoehtoisesti, interaktiivisessa ohjelmassa voit kysyä syötettä käyttäjältä ohjelmasuorituksen aikana. Lue Gleam-ohjelman argumentit, jotka luodaan `main`-funktion kutsussa, joka on ohjelmasi ensimmäinen kutsuttu funktio.
+## Deep Dive (Syväsukellus)
+Komentoriviargumenttien lukemisen juuret ovat vanhoissa Unix-järjestelmissä. Vaihtoehtoisesti, voit käyttää ympäristömuuttujia tai konfiguraatiotiedostoja, mutta ne eivät ole yhtä suoraviivaisia käynnistyksen yhteydessä. Gleamissa os.args()-funktio palauttaa listan merkkijonoja, jotka sisältävät kaikki komentoriviargumentit. Ohjelmoinnissa on tärkeää käsitellä erilaiset skenaariot, kuten edellä mainittiin: ei argumentteja, ensimmäinen argumentti ja virhetilanteet.
 
-## Katso myös
-Lisätietoja ja esimerkkejä Gleam-koodista voi löytää Gleam-dokumentaatiosta ja sen oppaista.
-
-- Gleam-dokumentaatio: https://gleam.run/book/
-- Gleam-opas: https://gleam.run/getting-started/
+## See Also (Katso myös)
+- Command-line arguments in the Unix Programming FAQ: [Unix Programming FAQ](http://www.faqs.org/faqs/unix-faq/programmer/faq/)
+- Best practices for CLI design: [CLI guidelines](https://clig.dev/)

@@ -1,7 +1,8 @@
 ---
-title:                "Att skicka en http-begäran"
-html_title:           "Go: Att skicka en http-begäran"
-simple_title:         "Att skicka en http-begäran"
+title:                "Skicka en http-förfrågan"
+date:                  2024-01-20T18:00:25.961742-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skicka en http-förfrågan"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -11,34 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skicka en HTTP-begäran innebär att sätta igång en handling på en webbserver. Det är ett sätt för programmerare att interagera med webbplatser, appar eller API:er på distans, ofta för att få information eller utföra funktioner.
+Att skicka en HTTP-begäran är hur din kod pratar med andra servrar över internet. Programmerare gör detta för att hämta data, skicka information eller interagera med webbtjänster.
 
-## Hur Man Gör:
-Här är ett exempel på hur man skickar en GET HTTP-begäran i Lua med hjälp av biblioteket `socket.http`:
+## Så här gör du:
+Lua har inte inbyggt stöd för HTTP, så vi använder `socket.http` från LuaSocket biblioteket. Först, installera LuaSocket:
 
-```Lua
--- Importera socket.http-biblioteket
-local http = require('socket.http')
-
--- URL för vår HTTP-begäran
-local url = 'http://httpbin.org/get'
-
--- Skicka en GET-begäran
-local response, status, headers = http.request(url)
-
--- Skriv ut svarsdata
-print(response)
+```shell
+luarocks install luasocket
 ```
-Denna kod kommer att skicka en HTTP GET-begäran till "http://httpbin.org/get" och skriv sedan ut svaret från servern.
 
-## Djupdykning
-Historiskt sett, skickande av HTTP-begäran var en vital del i utvecklingen av World Wide Web. Det låter appar och webbplatser att "prata" med varandra genom att skicka och ta emot data. 
+Sedan en enkel GET-begäran:
 
-Alternativt, förutom `socket.http`, finns det andra bibliotek i Lua för att skicka HTTP-begäran, som `luasocket` eller `lua-http`.
+```lua
+local http = require("socket.http")
+local body, code = http.request("http://httpbin.org/get")
 
-Förståelse på lägre nivå för hur HTTP-begäran behandlas i Lua kräver kunskap om hur nätverksprotokoll, URL-syntax och HTTP-metadata fungerar. Bibliotek, som `socket.http`, hanterar dessa detaljer för oss.
+if code == 200 then
+    print("Hämtat innehåll:")
+    print(body)
+else
+    print("HTTP-begäran misslyckades med kod: " .. code)
+end
+```
+
+Och för en POST-begäran med data:
+
+```lua
+local http = require("socket.http")
+local ltn12 = require("ltn12")
+
+local response = {}
+local body, code = http.request{
+    url = "http://httpbin.org/post",
+    method = "POST",
+    headers = {
+        ["Content-Type"] = "application/x-www-form-urlencoded"
+    },
+    source = ltn12.source.string("nyckel1=värde1&nyckel2=värde2"),
+    sink = ltn12.sink.table(response)
+}
+
+if code == 200 then
+    print("Serverns svar:")
+    print(table.concat(response))
+else
+    print("HTTP-begäran misslyckades med kod: " .. code)
+end
+```
+
+## Fördjupning
+Före LuaSocket var alternativet att implementera en socketkommunikation från grunden via Lua:s inbyggda filhanteringsfunktioner, vilket var både svårare och mindre säkert. LuaSocket gör det enkelt att hantera HTTP-begäran genom att abstrahera bort alla komplexiteter som att hantera TCP/IP-protokoll.
+
+Utöver HTTP erbjuder LuaSocket även SMTP, FTP och andra nätverksprotokoll. För HTTPS-stöd behöver man oftast en tilläggsmodul - LuaSec. Det finns också modernare alternativ som luajit-request, som är baserat på LuaJIT.
+
+När det kommer till implementationen av en HTTP-begäran är det viktigt att hantera timeouts och fel korrekt för att undvika att tillämpningen hänger sig eller kraschar.
 
 ## Se även
-1. Lua Socket Programmeringsguide: http://w3.impa.br/~diego/software/luasocket/
-2. HTTP-begäran med Lua: http://lua-users.org/wiki/HttpLuaModule
-3. Officiell Lua-programmeringsdokumentation: https://www.lua.org/manual/5.4/
+- LuaSocket dokumentation: http://w3.impa.br/~diego/software/luasocket/
+- LuaSec för HTTPS: https://github.com/brunoos/luasec/wiki
+- `luajit-request` för ett alternativ: https://github.com/hishamhm/luajit-request

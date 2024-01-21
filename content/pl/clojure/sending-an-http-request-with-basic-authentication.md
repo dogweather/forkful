@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie zapytania http z podstawową autoryzacją"
+date:                  2024-01-20T18:01:28.277583-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,34 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem to proces, w którym wysyłamy żądanie do serwera HTTP, które zawiera uwierzytelnienie. Programiści robią to w celu zabezpieczenia dostępu do zasobów serwera.
+## What & Why? (Co i Dlaczego?)
+Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem to sposób na dostęp do zabezpieczonych zasobów sieciowych. Programiści używają tego, by komunikować się z serwerami wymagającymi prostej autoryzacji - wpisujesz login i hasło, masz dostęp.
 
-## Jak to zrobić:
-Wyślijmy prosty żądanie HTTP z podstawowym uwierzytelnieniem za pomocą biblioteki clj-http, której używamy w Clojure. 
-
+## How to: (Jak to zrobić:)
 ```Clojure
 (require '[clj-http.client :as client])
 
-(let [username "user"
-      password "pass"]
-  (client/get "http://example.com" {:basic-auth [username password]}))
+(defn fetch-secure-resource [url username password]
+  (let [credentials (str username ":" password)
+        encoded-credentials (.toString (java.util.Base64/getEncoder (java.nio.charset.StandardCharsets/UTF_8) (.getBytes credentials)))]
+    {:status (:status (client/get url {:basic-auth [username password]}))
+     :body   (:body (client/get url {:headers {"Authorization" (str "Basic " encoded-credentials)}}))}))
+
+(println (fetch-secure-resource "http://secured-website.com/resource" "myUser" "myPass"))
+```
+Sample output:
+```
+{:status 200, :body "Here is your secure content."}
 ```
 
-Twój output powinien wyglądać mniej więcej tak:
+## Deep Dive (Dogłębny wgląd):
+Zarządzanie accessem jest stare jak Internet. W początkowych dniach, pojawiała się Basic Authentication - prosta lecz najsłabsza zabezpieczeń. Mimo to, ciągle jest używana, zwykle gdy trzeba coś prototypować. Alternatywy obejmują OAuth, JWT i inne bardziej złożone systemy. W Clojure, wysyłanie żądania HTTP z autoryzacją Basic wymaga kodowania 'login:hasło' w Base64 i dołączenia tego do nagłówków żądania - to garść linijek, które robią robotę. Oczywiście, jeśli potrzebujesz więcej, biblioteki jak `clj-http` oferują wbudowane opcje, by to uprościć.
 
-```Clojure
-{:status 200
- :headers {"date" "Wed, 13 Jul 2016 11:06:38 GMT"
-              [...] }
- :body "/html/body\" [...]"}
-```
-
-Gdy zapytanie jest prawidłowe, kod stanu HTTP powinien wynosić 200.
-
-## Pogłębiona analiza
-Historia uwierzytelnienia HTTP sięga roku 1996, kiedy to został ono oficjalnie wprowadzone w specyfikacji HTTP 1.0. Alternatywą dla podstawowego uwierzytelnienia jest uwierzytelnienie Digest i uwierzytelnienie typu Bearer, które są bezpieczniejsze, ale też bardziej skomplikowane w implementacji. Głównym detalem implementacji w uwierzytelnieniu podstawowym jest to, że dane uwierzytelniane są wysyłane niezaszyfrowane (w formie Base64), co oznacza, że są narażone na przechwytywanie.
-
-## Zobacz też
-- Spójrz na [dokumentację clj-http](https://github.com/dakrone/clj-http) do dogłębnego zrozumienia, jak korzystać z tej biblioteki w Clojure.
-- Przeczytaj [dokumenty uwierzytelnienia HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication) na MDN dla pełniejszego obrazu uwierzytelnienia HTTP.
+## See Also (Zobacz także):
+- [clj-http: A Clojure HTTP library](https://github.com/dakrone/clj-http)
+- [Clojure - Getting Started](https://clojure.org/guides/getting_started)
+- [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [ClojureDocs - A community-powered documentation and examples repository for Clojure](https://clojuredocs.org/)

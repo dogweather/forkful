@@ -1,7 +1,8 @@
 ---
-title:                "Leyendo argumentos de la línea de comandos"
-html_title:           "Bash: Leyendo argumentos de la línea de comandos"
-simple_title:         "Leyendo argumentos de la línea de comandos"
+title:                "Lectura de argumentos de línea de comandos"
+date:                  2024-01-20T17:56:08.686519-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lectura de argumentos de línea de comandos"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,44 +11,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## Qué y Por Qué?
+Leer argumentos de la línea de comandos permite a los scripts recibir datos externos al ser ejecutados. Los programadores hacen esto para personalizar la ejecución según necesidades diferentes sin cambiar el código.
 
-Leer argumentos de línea de comandos es obtener los valores que se especifican en una línea de comandos cuando se ejecuta un programa. Los programadores los utilizan para personalizar la ejecución de los programas.
-
-## ¿Cómo Hacerlo?
-
-Aquí te muestro cómo capturamos argumentos en el shell de fish.
+## Cómo:
+Ejemplo sencillo:
 
 ```Fish Shell
-function saludo
-  echo Hola $argv[1]
+for arg in $argv
+    echo "Argumento: $arg"
 end
 ```
-Ejecutamos la función y obtenemos lo siguiente:
 
-```Fish Shell
-> saludo Mundo
-Hola Mundo
+Si corres este script con `fish mi_script.fish uno dos tres`, obtendrás:
+
 ```
-Se pasa "Mundo" como argumento y se imprime "Hola Mundo".
+Argumento: uno
+Argumento: dos
+Argumento: tres
+```
 
-## Profundizando
+Ejemplo con argumentos nombrados:
 
-El concepto de lectura de argumentos se remonta a los primeros días de UNIX. En el pasado, muchos shells no permitían acceso directo a argumentos individuales como `argv[1]`. En su lugar, se usaban desplazamientos de argumentos.
-
-Hay soluciones alternativas como usar `for` para iterar a travéz de todos los argumentos:
 ```Fish Shell
-function saludo_alternativo
-  for x in $argv
-    echo Hola $x
-  end
+set -l usuario ""
+set -l contraseña ""
+
+for arg in $argv
+    switch $arg
+        case -u --usuario
+            set usuario $argv[(math (status current-command-index) + 1)]
+        case -p --contraseña
+            set contraseña $argv[(math (status current-command-index) + 1)]
+        case '*'
+            echo "Opción desconocida: $arg"
+            exit 1
+    end
 end
+
+echo "Usuario: $usuario"
+echo "Contraseña: $contraseña"
 ```
-En fish, $argv es una lista que contiene todos los argumentos. Puedes operar en ella como en cualquier otra lista en fish.
 
-## Ver También 
+Si corres este script con `fish mi_script2.fish --usuario Ana --contraseña secreto`, obtendrás:
 
-Para obtener más detalles y algunas recetas geniales, consulta los siguientes enlaces:
+```
+Usuario: Ana
+Contraseña: secreto
+```
 
-- Documentación oficial | [Parámetros y Variables de Estado](https://fishshell.com/docs/current/commands.html#variables)
-- Fish Scripting | [Tutorial](https://fishshell.com/docs/3.1/tutorial.html)
+## Profundización:
+Originalmente, leer argumentos de la línea de comandos era esencial para scripts en sistemas Unix, lo que permitía mayor versatilidad y reutilización. 
+
+En Fish, `$argv` es una variable que contiene los argumentos de línea de comandos como una lista. Es distinto de Bash, donde los argumentos son `$1`, `$2`, etc. 
+
+Fish facilita iterar argumentos con un bucle `for` simple. También tiene un `switch` para manejar opciones complejas, algo parecido a `getopts` en otros shells, pero más legible.
+
+Otras alternativas para organizar argumentos incluyen `argparse`, disponible en Fish, que es incluso más potente para scripts complicados.
+
+## Ver También:
+- [Documentación oficial de Fish](https://fishshell.com/docs/current/index.html)
+- [Fish Shell Tutorial](https://fishshell.com/docs/current/tutorial.html)

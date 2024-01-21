@@ -1,7 +1,8 @@
 ---
-title:                "यादृच्छिक संख्याओं का निर्माण"
-html_title:           "Clojure: यादृच्छिक संख्याओं का निर्माण"
-simple_title:         "यादृच्छिक संख्याओं का निर्माण"
+title:                "यादृच्छिक संख्याएँ उत्पन्न करना"
+date:                  2024-01-20T17:50:11.438147-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Numbers"
@@ -10,33 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या & क्यों?
+## What & Why? (क्या और क्यों?)
+रैंडम नंबर्स वे होते हैं जो कोई पैटर्न नहीं दिखाते। प्रोग्रामर्स इन्हें टेस्टिंग, सिमुलेशन, और सिक्योरिटी में इस्तेमाल करते हैं।
 
-"रैंडम नंबर गेनरेट" का मतलब ये है की आप अनुमानातीत तरीके से कुछ नंबर प्राप्त करते हैं, जिसमें कोई पैटर्न नहीं पाया जाता है। प्रोग्रामर इसे इसलिए करते हैं ताकि उन्हें डाटा के अनुमान को टेस्ट करने और सिमुलेशन करने के लिए अनियामित नमूने मिल सकें।
-
-## कैसे करें:
-
-Python में रैंडम नंबर उत्पन्न करने के लिए `random` मॉड्यूल का उपयोग किया जाता है। 
+## How to (कैसे करें):
+Python में रैंडम नंबर्स जेनरेट करना सीधा है:
 
 ```Python
 import random
 
-# Random float:  0.0 <= number < 1.0
-print("Random float:", random.random()) 
+# रैंडम इंटीजर 1 से 10
+random_integer = random.randint(1, 10)
+print(random_integer)
 
-# Random float:  2.5 <= number < 10.0
-print("Random float within a range:", random.uniform(2.5, 10.0))
-
-# Random integer: 100 <= number <= 999
-print("Random integer within a range:", random.randint(100, 999))
+# रैंडम फ्लोट 0 से 1 के बीच
+random_float = random.random()
+print(random_float)
 ```
 
-## गहरा पलुंगन
+Sample Output:
+```
+4
+0.935559507173
+```
 
-पाइथन के `random` मॉडूल का निर्माण 1991 में ग्वीडो वैन रोस्सम ने किया था, जो पाइथन की भाषा के निर्माणकर्ता हैं। इस मॉडूल के विकल्प में `numpy.random` और `random` मॉडूल में `randrange()`, `randomint()`, `choice()`, `shuffle()` आदि फंक्शन शामिल हैं। इन फंक्शन्स का चयन आवश्यकतानुसार निर्दिष्ट संख्याओं के "रैंडम" समूह की उत्पादन के लिए होता है।
+ऐसे कोड से आपको हर बार एक नया आंकड़ा मिलेगा।
 
-## रिलेटेड सोर्स देखें:
+## Deep Dive (गहराई में जानकारी):
+रैंडम नंबर्स को पहले से ही कंप्यूटर साइंस में अहम माना जाता था। पहले हार्डवेयर बेस्ड तरीके इस्तेमाल होते थे, पर अब सॉफ्टवेयर एल्गोरिथ्म्स यह काम करते हैं। `random` मॉड्यूल एक प्स्यूडो-रैंडम नंबर जेनरेटर (PRNG) है, मतलब ये पूरी तरह से अनप्रेडिक्टेबल नहीं हैं। सिक्योरिटी-सेंसिटिव एप्लीकेशन्स के लिए, `secrets` मॉड्यूल बेहतर है क्योंकि वह क्रिप्टोग्राफिकली स्ट्रांग रैंडम नंबर्स देता है।
 
-1. Python के ऑफिसियल डॉक्यूमेंट को देखें: [https://docs.python.org/3/library/random.html](https://docs.python.org/3/library/random.html)
-2. `random` मॉडूल के बारे में अधिक जानकारी के लिए: [https://www.w3schools.com/python/ref_random_randrange.asp](https://www.w3schools.com/python/ref_random_randrange.asp)
-3. 'Numpy' के बारे में भी पढ़ें: [https://numpy.org/doc/stable/reference/random/index.html](https://numpy.org/doc/stable/reference/random/index.html)
+## See Also (और जानकारी के लिए):
+- Python documentation on `random`: https://docs.python.org/3/library/random.html
+- More about pseudorandomness: https://en.wikipedia.org/wiki/Pseudorandom_number_generator
+- Secrets module for cryptographic use: https://docs.python.org/3/library/secrets.html

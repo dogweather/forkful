@@ -1,6 +1,7 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
-html_title:           "Go: המרת מחרוזת לאותיות קטנות"
+date:                  2024-01-20T17:39:13.652217-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,24 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-המרת מחרוזת לאותיות קטנות היא תהליך שבו אנו משנים את כל האותיות הגדולות במחרוזת לאותיות קטנות. מתכנתים מבצעים זאת כדי לאפשר השוואת מחרוזות לא משנה את הגודל של האותיות.
+## מה ולמה?
+המרת מחרוזת לאותיות קטנות היא פעולה שמשנה את כל התווים במחרוזת לגרסתם הקטנה. תוכניתנים עושים זאת לעיתים כדי להבטיח השוואות תווים אחידות, למשל בעת עיבוד קלט משתמש או עבודה עם נתוני טקסט.
 
-## כיצד
-התרגיל הבא מדגים כיצד להמיר את האותיות הגדולות במחרוזת של "Hello World" לאותיות קטנות:
+## איך לעשות:
+ברובי, תוכל להמיר מחרוזת לאותיות קטנות בעזרת המתודה `.downcase`. קח לדוגמא:
 
-```Ruby 
-string = "Hello World"
-puts string.downcase
-``` 
+```ruby
+original_string = "HeLLo WOrLD!"
+lowercase_string = original_string.downcase
 
-הפלט של התרגיל הוא:
-``` "hello world"```
+puts lowercase_string  # יציג "hello world!"
+```
 
-## הצולעת
-רובי מאפשרת המרה של מחרוזות לאותיות קטנות מאז הגירסה הראשונה שלה. ניתן לבצע את המרה ישירות באמצעות מתודה integrative שנקראת `downcase`. כמו כן, ניתן להריץ משלוח של מחרוזת באמצעות `map`, אך זו התמודה פחות מועדפת, שכן היא מספקת ביצועים פחותים. 
+חלופה היא שימוש במתודה `.downcase!`, שמשנה את המחרוזת המקורית ישירות:
 
-## ראה גם
-* [מדריך Ruby על מחרוזות](https://ruby-doc.org/core-2.7.0/String.html)
-* [מבוא למחרוזת של Ruby](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
-* [מטודות מחרוזת ברובי](https://www.rubyguides.com/2018/01/ruby-string-methods/)
+```ruby
+mutable_string = "HeLLo WOrLD!"
+mutable_string.downcase!
+
+puts mutable_string  # יציג גם "hello world!"
+```
+
+## עיון נוסף:
+לפעולה של המרה לאותיות קטנות יש היסטוריה עשירה בתחום התוכנה. זה נעשה כדי להקל על השוואות תווים וחיפושים קייס-אינסנסיטיב. בשפות תכנות אחרות, יש פונקציות דומות, כמו `.toLowerCase()` ב-JavaScript.
+
+ב-Ruby, שימוש ב-`.downcase` מעניק יתרון במיוחד עם יוניקוד (Unicode), כי הוא טופל באופן חכם להשוות אותיות בלי להתחשב בגודלן. אבל תיזהר: שימוש ב-`.downcase!` יכול להיות מסוכן כי הוא ישנה את המחרוזת המקורית שאתה עובד איתה. רק תשתמש בזה אם אתה בטוח שזו התנהלות הרצויה.
+
+## לקרוא גם:
+- [Ruby-Doc המידע הרשמי על downcase](https://ruby-doc.org/core-3.1.2/String.html#method-i-downcase)
+- [עמוד ויקיפדיה על Case Sensitivity](https://en.wikipedia.org/wiki/Case_sensitivity)
+- [עוד על Unicode Case Mapping ברובי](https://ruby-doc.org/core-3.1.2/String.html#method-i-unicode_normalize)

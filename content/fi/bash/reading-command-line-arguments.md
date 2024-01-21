@@ -1,7 +1,8 @@
 ---
-title:                "Komentorivin argumenttien lukeminen"
-html_title:           "Bash: Komentorivin argumenttien lukeminen"
-simple_title:         "Komentorivin argumenttien lukeminen"
+title:                "Komennoriviparametrien lukeminen"
+date:                  2024-01-20T17:55:32.343899-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Komennoriviparametrien lukeminen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,42 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Komentorivin argumenttien lukemisella tarkoitetaan ohjelman syötteiden vastaanottamista komentoriviparametrien, kuten tiedostojen nimien tai muiden arvojen kautta. Ohjelmoijat käyttävät tätä antaakseen komentoriviltä ohjelmalle tiedot, jotka ohjaavat sen toimintaa.
+## What & Why?
+Komennon rivin argumentit ovat syötteitä, joita ohjelmat saavat käynnistyessään komentoriviltä. Ne mahdollistavat ohjelmalle eri tilanteisiin mukautumisen ilman koodimuutoksia.
 
-## Näin se toimii:
-Bash-skriptissä komentorivin argumentit on tallennettu erityisiin sijainneihin, jotka on merkitty dollarimerkillä ja numerolla (`$0`, `$1`, `$2`, jne.). `$0` sisältää skriptin nimen ja muut (`$1`, `$2`, jne.) sisältävät komentorivin argumentit.
-
+## How to:
 ```Bash
 #!/bin/bash
-# Tämä on esimerkkiskripti.
-echo "Skriptin nimi: $0"
-echo "Ensimmäinen argumentti: $1"
-echo "Toinen argumentti: $2"
+# Tämä skripti tulostaa kaikki annetut komentorivin argumentit.
+
+echo "Skriptiä kutsuttiin: $0"
+echo "Annettujen argumenttien määrä: $#"
+
+echo "Annetut argumentit:"
+
+for arg in "$@"
+do
+    echo "$arg"
+done
 ```
 
-Käyttäjä voi suorittaa skriptin komentoriviltä syöttämällä sen nimen ja argumentit. Esimerkki:
-
+Käytä skriptiä näin:
 ```Bash
-./esimerkkiskripti.sh parametri1 parametri2
+$ bash skripti.sh arg1 arg2 arg3
+Skriptiä kutsuttiin: skripti.sh
+Annettujen argumenttien määrä: 3
+Annetut argumentit:
+arg1
+arg2
+arg3
 ```
 
-Tulostus olisi seuraavanlainen:
+## Deep Dive
+Käyttöjärjestelmät ovat hyväksyneet komentorivin argumentit jo vuosikymmenten ajan ohjelmien tuunaamiseen. Komentotulkin sisäiset muuttujat `$0`, `$1`, `$2`, ..., `$9` vastaavat argumentteja. `$0` on skriptin nimi, `$1` ensimmäinen argumentti, ja niin edelleen. `$#` kertoo argumenttien määrän ja `$@` tai `$*` listaa kaikki argumentit. Bash ei tue yli yhdeksän positionaalista parametria suoraan, mutta `{10}`, `{11}`, jne. avulla voit käsitellä niitä.
 
-```Bash
-Skriptin nimi: ./esimerkkiskripti.sh
-Ensimmäinen argumentti: parametri1
-Toinen argumentti: parametri2
-```
+`getopts` ja `getopt` ovat komentoja, jotka auttavat monimutkaisempien komentorivin argumenttien hallinnassa, tarjoten vaihtoehtoja ja kytkimiä.
 
-## Syvempi sukellus
-Bash-skriptit saivat alkunsa Unix-käyttöjärjestelmässä 1970-luvulla. Niiden tarkoituksena oli helpottaa järjestelmänhallintaa automatisoimalla toistuvia tehtäviä.
-Vaihtoehtoisina menetelminä voit käyttää getopts-funktiota monimutkaisten komennojen käsittelyyn tai voit käydä läpi argumentit silmukassa.
-
-Unix-lähtöisissä järjestelmissä luettaessa komentorivin argumentteja ne kulkevat ensin käyttöjärjestelmän kutsupinon läpi ennen skriptiin saapumista. Tämä mahdollistaa viime hetken muutokset, kuten paikan korvaamisen dynaamisilla arvoilla.
-
-## Katso myös
-Bash-skriptauksen aloittamiseen voi tutustua seuraavien linkkien kautta:
-- GNU:n virallinen Bash-referenssi: https://www.gnu.org/software/bash/manual/bash.html
-- Komentorivin argumenttien käsittely Bashissa: https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_01.html
-- Getopts-komennon käyttö: https://www.tldp.org/LDP/abs/html/internalgetopts.html
+## See Also
+Bash-hakkeroinnin syventäminen:
+- [GNU Bash documentation](https://www.gnu.org/software/bash/manual/)
+- [Advanced Bash-Scripting Guide](https://www.tldp.org/LDP/abs/html/)
+- `man bash` – Linux manuaalisivu Bashille, `man getopts` – opas getopts-komennolle.

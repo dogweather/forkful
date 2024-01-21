@@ -1,6 +1,7 @@
 ---
 title:                "Pesquisando e substituindo texto"
-html_title:           "Bash: Pesquisando e substituindo texto"
+date:                  2024-01-20T17:58:29.489867-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pesquisando e substituindo texto"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,45 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Substituindo Textos na Lua: Guia Prático e Aprofundado
-
-## O Que & Por Quê?
-
-Substituição de texto é o processo de busca e alteração de uma sequência específica em um bloco de texto. Programadores utilizam isso frequentemente para manipulação de strings e alteração de dados em textos.
+## O Que é & Por Que?
+Buscar e substituir texto é o processo de localizar sequências de caracteres dentro de uma string e alterá-las por outras. Programadores fazem isso para atualizar dados, corrigir erros, ou formatar informações de forma consistente.
 
 ## Como Fazer:
-
-Utilizamos a função `gsub` em Lua para substituir texto, aqui está um exemplo:
 ```Lua
-s = "Olá, Mundo!"
-s = string.gsub(s, "Mundo", "Lua")
-print(s)
+local texto_original = "Lua é uma linguagem incrível!"
+local texto_substituido = texto_original:gsub("incrível", "poderosa")
+
+print(texto_substituido)  -- Saída: Lua é uma linguagem poderosa!
 ```
-Na execução, tal código resultará em:
+
+Além disso, podemos usar padrões mais complexos:
+```Lua
+local dados = "Nome: João, Idade: 30, Nome: Maria, Idade: 25"
+local idade_atualizada = dados:gsub("Idade: (%d+)", function(idade)
+  return "Idade: " .. (tonumber(idade) + 1)
+end)
+
+print(idade_atualizada)
+-- Saída: Nome: João, Idade: 31, Nome: Maria, Idade: 26
 ```
-Olá, Lua!
-```
-No código acima, a string "Mundo" é substituída por "Lua".
 
 ## Mergulho Profundo
+Buscar e substituir texto é uma função comum na maioria das linguagens de programação, e Lua não é exceção. Com a função `string.gsub`, Lua permite realizar substituições simples e também usar padrões complexos com expressões regulares, oferecendo grande flexibilidade.
 
-### Contexto Histórico
+Historicamente, tal funcionalidade é herança dos editores de texto e linguagens mais antigas, como SED em Unix, que lidavam fortemente com processamento de texto. Ao lidar com Lua, porém, é importante notar que usa-se um sistema de padrões (patterns) próprio, diferente das expressões regulares clássicas encontradas em outras linguagens.
 
-Lua, do português "Lua", é uma linguagem de script de alto nível criada em 1993 por um grupo brasileiro. Lua não foi originalmente projetada para manipulação de texto, mas essa funcionalidade foi adicionada posteriormente como parte de suas bibliotecas padrão.
+Para tarefas mais complexas, pode-se recorrer a bibliotecas externas como o LPEG, que oferece um sistema de parsing de texto muito poderoso e flexível.
 
-### Alternativas
-
-Existem outras funções em Lua que também podem buscar e substituir texto, como `string.find` e `string.match`. Cada função tem seus próprios usos dependendo dos requisitos do usuário.
-
-### Detalhes da Implementação
-
-A função `gsub` usa expressões regulares para encontrar e substituir texto. Ela varre a string de entrada e, para cada correspondência da sequência de busca, substitui-a pela sequência de substituição.
+Detalhes de implementação:
+- `gsub` retorna o novo texto e o número de substituições feitas.
+- Padrões em Lua são mais simples que expressões regulares, mas suficientes para muitas tarefas.
 
 ## Veja Também
-
-Para mais informações sobre programação com Lua, confira estes links úteis:
-* [Site Oficial da Lua](http://www.lua.org/)
-* [Documentação da Lua 5.4](http://www.lua.org/manual/5.4/)
-* [Guia de Programação em Lua](https://www.lua.org/pil/)
-
-Terminamos nosso tour pela substituição de textos em Lua. Você está agora pronto para começar a manipular strings como um pro!
+- [Referência da linguagem Lua 5.4 (em inglês)](https://www.lua.org/manual/5.4/)
+- [Tutorial de padrões Lua (em inglês)](https://www.lua.org/pil/20.2.html)
+- [LPEG - Biblioteca de Parsing de Lua (em inglês)](http://www.inf.puc-rio.br/~roberto/lpeg/lpeg.html)

@@ -1,7 +1,8 @@
 ---
-title:                "Ladda ner en webbsida"
-html_title:           "Bash: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Hämta en webbsida"
+date:                  2024-01-20T17:45:19.404103-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Hämta en webbsida"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,38 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Ladda ner en Webbplats sida med Swift
+# Hämta en webbsida med Swift
 
 ## Vad & Varför?
-Att ladda ner en webbplats sida innebär ganska enkelt att hämta dess kod och innehåll för att sedan använda eller bearbeta lokalt. Programmerare gör det ofta för att skrapa data, testa webbplatser, eller skapa offline-versioner av sidor.
+Hämtning av en webbsida innebär att ladda ner dess HTML-innehåll. Programmörer gör detta för att läsa eller bearbeta information från webben.
 
-## Så här gör du:
-Med URLSession, URLSessionTask och URLRequest kan du ladda ner en webbplats sida i Swift. Här är ett exempel:
+## Hur gör man:
+Swift-kod för att hämta en webbsida ser ungefär så här ut:
 
-```Swift
+```swift
 import Foundation
 
-let url = URL(string: "https://www.dittwebbplats.se")!
-let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-    if let data = data {
-        let str = String(data: data, encoding: .utf8)
-        print("Fått data:\n\(str ?? "")")
+let url = URL(string: "https://example.com")!
+let task = URLSession.shared.dataTask(with: url) { data, response, error in
+    if let error = error {
+        print("Client error: \(error.localizedDescription)")
+        return
     }
-} 
+    
+    guard let httpResponse = response as? HTTPURLResponse,
+        (200...299).contains(httpResponse.statusCode) else {
+        print("Server error")
+        return
+    }
+    
+    if let mimeType = httpResponse.mimeType, mimeType == "text/html",
+       let data = data,
+       let string = String(data: data, encoding: .utf8) {
+        print(string)
+    }
+}
 
 task.resume()
 ```
+Exempelutdata:
 
-När du kör det här, bör du se sidans HTML-kod skrivs ut i konsolen.
+```html
+<!doctype html>
+<html>
+  <head>
+    <title>Exempelsida</title>
+  </head>
+  <body>
+    <p>Hej från example.com!</p>
+  </body>
+</html>
+```
 
-## Djupdykning
-Historiskt sett har vi gått från långsamma nedladdningar via modem, till snabbare bredbandsanslutningar, vilket möjliggör mer komplexa och innehållsrika webbsidor. 
+## Fördjupning
+Att hämta en sida är inte nytt. Sedan internets begynnelse har vi laddat ner webbsidor, och metoder har förbättrats över tid. Från enkla HTTP GET-anrop i tidiga dagar till asynkrona bibliotek och ramverk idag.
 
-Alternativ till Swift för att ladda ner en webbplats sida inkluderar språk som Python, Java och JavaScript, alla med sina egna bibliotek för webbkommunikation.
+Alternativ till `URLSession` inkluderar tredjepartsbibliotek som `Alamofire` eller `AFNetworking` (för äldre iOS-appar). Valet beror på behovet av avancerade funktioner eller enklare kodstruktur.
 
-När det gäller implementeringsdetaljer har Swift URLSession, URLSessionTask och URLRequest objekt för lättanvänd webbkommunikation. URLSession hanterar en grupp relaterade nätverksåtgärder. URLRequest kapslar in detaljerna i den åtgärd du vill genomföra.
+Implementationen ovan är grundläggande. Den hanterar inte omfattande felhantering, autentisering eller komplexa hjälptjänster (cookies, sessioner, headers). Även hantering av olika textkodningar och innehållstyper utöver `text/html` är en del av en fullständig lösning.
 
-## Se även 
-- Apple Docs URLSession: https://developer.apple.com/documentation/foundation/urlsession
-- Apple Dev Networking: https://developer.apple.com/network/
-- Stanford Swift Course on iTuneU: https://itunes.apple.com/us/course/developing-ios-10-apps-with-swift/id1198467120
+## Se även
+- Apples dokumentation för [URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+- [Alamofire](https://github.com/Alamofire/Alamofire) – En Swift-baserad HTTP-nätverksbibliotek.
+- [Swift URLSession tutorial](https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started) på raywenderlich.com.
+- För designmönster och arkitektur, kolla [iOS Design Patterns](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/).

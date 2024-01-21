@@ -1,7 +1,8 @@
 ---
-title:                "Видалення символів, що відповідають патерну"
-html_title:           "C: Видалення символів, що відповідають патерну"
-simple_title:         "Видалення символів, що відповідають патерну"
+title:                "Видалення символів за візерунком"
+date:                  2024-01-20T17:42:50.690267-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Видалення символів за візерунком"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,30 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і для чого?
+## What & Why? (Що та Чому?)
+Видалення символів, що відповідають певному шаблону, — це процес фільтрації тексту. Програмісти роблять це для очищення даних чи приведення тексту до потрібного формату.
 
-Видалення символів, що відповідають певному шаблону, це процес заміни цих символів у рядку на інші символи або їх видалення. Програмісти роблять це, щоб маніпулювати рядками і покращувати читабельність даних.
+## How to: (Як це зробити:)
+```java
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-## Як це зробити:
-
-```Java
-public class Main {
+public class PatternMatching {
     public static void main(String[] args) {
-        String str = "Hello, Java!";
-        String pattern = "[,!]"; 
-        String replaced = str.replaceAll(pattern , "");
-        System.out.println(replaced);  
+        String text = "Hello, це #Java 2023! Код: UA2023.";
+        String patternString = "[^\\w\\s]";
+        
+        Pattern pattern = Pattern.compile(patternString);
+        Matcher matcher = pattern.matcher(text);
+        
+        String sanitized = matcher.replaceAll("");
+        System.out.println(sanitized);  // Output: Hello це Java 2023 Код UA2023
     }
 }
 ```
-У вихідних даних, при запуску цього прикладу, буде "Hello Java".
+## Deep Dive (Поглиблений Розгляд)
+У далекому 1990-му році з'явилася мова Java, і з нею — бібліотека `java.util.regex` для роботи з регулярними виразами. Регулярні вирази — потужний інструмент для текстових операцій, який дозволяє знаходити, замінювати чи видаляти певні шаблони символів.
 
-## Поглиблений аналіз:
+Альтернативою регулярним виразам є методи класу `String`, такі як `replace()` чи `replaceAll()`, які дозволяють заміняти певні послідовності символів без використання паттернів.
 
-1. Історичний контекст: Метод заміни в Java був введений ще в JDK 1.2, що було випущено в 1998 році.
-2. Альтернативи: Ви також можете використовувати StringBuilder або StringBuffer для видалення символів, що відповідають шаблону, але цей метод менш ефективний по часу виконання.
-3. Деталі реалізації: Метод replaceAll використовує регулярні вирази для знаходження шаблонів у рядку. Це може бути некорисним у випадках, коли ваш шаблон складний або видалення його триває довго.
+Однак, для складніших шаблонів, `Pattern` та `Matcher` з регулярними виразами справді неперевершені. Ефективність може варіюватись в залежності від складності шаблону, тому завжди важливо виміряти продуктивність застосування регулярних виразів у критичних додатках.
 
-## додаткова інформація:
-* [Документація Java для replaceAll](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#replaceAll(java.lang.String,%20java.lang.String))
-* [Java String replaceAll метод](https://www.javatpoint.com/java-string-replaceall)
+## See Also (Дивіться також)
+- Java API Documentation for `Pattern` class: [Java Pattern](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html)
+- Java API Documentation for `Matcher` class: [Java Matcher](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Matcher.html)
+- Tutorial on Java Regex: [Regex Tutorial](https://www.regular-expressions.info/java.html)
+- Performance Implications of Java Regex: [Regex Performance](https://www.baeldung.com/java-regex-performance)

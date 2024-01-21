@@ -1,7 +1,8 @@
 ---
-title:                "Befehlszeilenargumente lesen"
-html_title:           "Arduino: Befehlszeilenargumente lesen"
-simple_title:         "Befehlszeilenargumente lesen"
+title:                "Lesen von Kommandozeilenargumenten"
+date:                  2024-01-20T17:56:01.313692-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lesen von Kommandozeilenargumenten"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,39 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why?
+Kommandozeilenargumente ermöglichen es Benutzern, Werte oder Verhaltensweisen einer Java-Anwendung beim Start zu steuern. Programmierer nutzen sie, um flexible und interaktive Anwendungen zu schaffen.
 
-Das Lesen von Befehlszeilenargumenten in Java bezieht sich auf die Möglichkeit, Daten von der Kommandozeile an Ihr Programm zu übergeben. Diese Technik ist entscheidend, um die Funktionalität von Programmen bei sich ändernden Anforderungen oder Bedingungen flexibel zu handhaben.
-
-## Anleitung:
-
-Einige nützliche Java-Codebeispiele, wie man Befehlszeilenargumente liest, sind unten beigefügt:
-
-```Java
-// Prog.java
-public class Prog {
+## How to:
+```java
+public class CommandLineReader {
     public static void main(String[] args) {
-        for(String str: args) {
-            System.out.println(str);
+        if (args.length > 0) {
+            System.out.println("Erhaltene Argumente:");
+            for (String arg : args) {
+                System.out.println(arg);
+            }
+        } else {
+            System.out.println("Keine Argumente übergeben.");
         }
     }
 }
 ```
-Führen Sie das obige Programm von der Befehlszeile mit einigen Argumenten aus:
-
-```Shell
-java Prog.java Hallo Welt
+Befehlszeile zum Ausführen: `java CommandLineReader Hallo Welt`
+Ausgabe:
 ```
-Die Ausgabe wäre:
-
-```Shell
+Erhaltene Argumente:
 Hallo
 Welt
 ```
-## Vertiefung:
 
-Befehlszeilenargumente wurden von Anfang an in der Programmierung verwendet, als Benutzerschnittstellen noch auf der Befehlszeile basierten. Heute ermöglichen sie es unseren Programmen, anpassungsfähig zu sein. Alternativen zum Lesen von Befehlszeilenargumenten könnten die Verwendung von Konfigurationsdateien oder Umgebungsvariablen sein. Beim Lesen der Befehlszeilenargumente in Java fängt der Index sobald das Programm aufgerufen wird bei Null an, `args[0]` ist also das erste Argument nach dem Programmnamen.
+## Deep Dive
+Kommandozeilenargumente sind so alt wie die Kommandozeile selbst. In Java sind sie direkt über das `String[] args` des `main`-Verfahrens verfügbar. Alternativen zum Basis-`String[] args`-Mechanismus beinhalten die Verwendung von Bibliotheken wie Apache Commons CLI und JCommander, die das Parsen und Verwalten der Argumente vereinfachen. Wichtig beim Implementieren ist, dass diese Argumente als unveränderbare `String`-Werte vorliegen und dass die Validierung und das Parsing der Eingaben essentiell sind, um Fehlern zu vermeiden.
 
-## Weiterführende Literatur:
-- [Oracle Docs - Command-Line Arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html) 
-- [StackOverflow - How does the JVM handle command line arguments?](https://stackoverflow.com/questions/890966/what-is-string-args-parameter-in-main-method-java)
+## See Also
+- [Oracle's Java Documentation on Command-Line Arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- [Apache Commons CLI](https://commons.apache.org/proper/commons-cli/)
+- [JCommander Official Site](http://jcommander.org/)

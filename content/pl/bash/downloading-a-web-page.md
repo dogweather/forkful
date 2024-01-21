@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C#: Pobieranie strony internetowej"
+date:                  2024-01-20T17:43:14.771222-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,34 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-
-Pobieranie strony internetowej to proces zapisywania jej zawartości na dysku twardym. Programiści robią to, aby analizować kod HTML strony, testować interakcje z API lub gromadzić dane do późniejszej analizy.
+## Co & Dlaczego?
+Pobieranie stron internetowych to proces zapisywania zawartości strony na swoim komputerze. Programiści robią to, by analizować strukturę strony, scraować dane lub testować aplikacje.
 
 ## Jak to zrobić:
+```
+# Pobranie strony i zapisanie do pliku przy użyciu cURL
+curl http://example.com -o example_page.html
 
-Aby pobierać strony internetowe za pomocą Bash, można wykorzystać popularne narzędzia takie jak `curl` lub `wget`. Poniżej znajduje się przykład użycia `curl`.
-
-```Bash
-curl "https://www.example.com" -o example.html
+# Wyświetlenie wyników
+cat example_page.html
 ```
 
-Po uruchomieniu, ta komenda pobierze stronę internetową `https://www.example.com` i zapisze jej zawartość do pliku `example.html`.
+```
+# Pobieranie strony z wykorzystaniem wget
+wget http://example.com
 
-## Zaawansowane Informacje:
+# Wynik będzie zapisany jako 'index.html' w bieżącym katalogu
+ls
+```
 
-Bash jest luźno typowanym językiem powłoki Unix stworzonym przez Briana Foxa w 1989 roku jako ulepszona wersja sh.
+## Deep Dive
+Pobieranie stron ma bogatą historię, wystartowało wraz z pojawieniem się przeglądarek. Alternatywami dla `curl` i `wget` są narzędzia graficzne i biblioteki programistyczne jak `httrack` czy `BeautifulSoup` (Python). `curl` jest świetny do szybkich operacji w terminalu, natomiast `wget` radzi sobie lepiej z pobieraniem w trybie rekursywnym i obsługą dużych pobierań.
 
-
-
-Alternatywami dla `curl` i `wget` są narzędzia takie jak `lynx`, `links`, czy `elinks`, które są również dostępne na wielu systemach Unix.
-
-Podczas pobierania stron internetowych, najważniejszym aspektem jest przemiana URL na odpowiednią lokalizację na naszym dysku twardym. Oba narzędzia, `curl` i `wget`, obsługują przekierowania, ciasteczka i inne funkcje HTTP, które mogą być potrzebne przy pobieraniu skomplikowanych stron.
-
-## Zobacz Również:
-
-[Bash Programming](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html): Wprowadzenie do programowania w Bash.
-
-[Curl Users Guide](https://curl.haxx.se/docs/manpage.html): Przewodnik dla użytkowników narzędzia Curl.
-
-[Wget Manual](https://www.gnu.org/software/wget/manual/wget.html): Dokumentacja narzędzia Wget.
+## Zobacz także:
+- [cURL man page](https://curl.haxx.se/docs/manpage.html)
+- [Wget manual](https://www.gnu.org/software/wget/manual/wget.html)
+- [Introduction to Web Scraping using Python](https://realpython.com/python-web-scraping-practical-introduction/)

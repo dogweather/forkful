@@ -1,7 +1,8 @@
 ---
-title:                "אינטרפולציה של מחרוזת"
-html_title:           "Arduino: אינטרפולציה של מחרוזת"
-simple_title:         "אינטרפולציה של מחרוזת"
+title:                "שרבוב מחרוזת"
+date:                  2024-01-20T17:50:46.693754-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרבוב מחרוזת"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -11,40 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-
-באינטרפולציה של מחרוזות הוא תהליך בו אנחנו משניסים ביטויים בתוך מחרוזת ממש, במקום להשתמש ב-
-concatenation. מתכנתים משתמשים בזה לחסכון בקוי קוד, קריאות יותר, וקלות בתחזוקה. 
+אינטרפולציה של מחרוזות היא טכניקה ב-C# לצירוף משתנים וביטויים בתוך מחרוזת. מתכנתים משתמשים בה כדי לפשט קוד ולשפר קריאות בעת יצירת טקסטים דינמיים.
 
 ## איך לעשות:
-
-נפריט שני דוגמאות של C# עם פלט, שמשתמשות באינטרפולציה של מחרוזות:
+ב-C#, באמצעות אינטרפולציה של מחרוזות אפשר לכלול ביטויים בתוך מחרוזות באופן ישיר. תראו כאן דוגמה פשוטה:
 
 ```C#
-string name = "Yoni";
+string name = "דורון";
 int age = 30;
-Console.WriteLine($"שלום, השם שלי הוא {name} ואני בן {age}.");
+string greeting = $"שלום, שמי הוא {name} ואני בן {age}.";
+Console.WriteLine(greeting);
 ```
-פלט: ``שלום, השם שלי הוא Yoni ואני בן 30.``
 
-או כאן שימוש בביטויים מורכבים יותר:
-
-```C#
-int x = 5;
-int y = 10;
-Console.WriteLine($"הסכום של {x} פלוס {y} שווה: {x+y}");
+תוצאה:
 ```
-פלט: ``הסכום של 5 פלוס 10 שווה: 15``
+שלום, שמי הוא דורון ואני בן 30.
+```
 
-## צלילה עמוקה
+## עיון מעמיק
+טכניקת אינטרפולציה נתמכת מגרסת C# 6.0 והיא מחליפה את שיטת `String.Format`. היתרון על פני גישות קודמות הוא שהקוד הרבה יותר קריא ופחות פרונה לשגיאות – אין צורך בספירת פלייסהולדרים ומיפויים ידני. מאחורי הקלעים, המהדר של C# מפרק את הביטוי לעצמים של `String.Format`.
 
-מבחינה היסטורית, האינטרפולציה נוספה רק ב-C# 6.0. לפני זה, הייתה הצורך בשילוב מורכב של רצפים ופורמטים. אלטרנטיבה לאינטרפולציה היא באמצעות שיטת Format של הקלאס String, אך האינטרפולציה התפרצה כדרך העדיפה בשל קריאות ונוחות גבוהה יותר.
+האלטרנטיבות לאינטרפולציה כוללות שימוש ב- `+` לשרשור מחרוזות (לא מומלץ בקוד אמיתי מסיבות ביצועים) ו`StringBuilder` למקרים שבהם יש הרבה שינויים דינמיים.
 
-באופן תחתון, ה-C# מחדיר את המחרוזת המשולבת כשימוש ב-String.Format(), כך שלא נגרמים פגמים קצויים מעבר לביצועים נמוכים.
-
-
-## ראה גם:
-
-1. [C# String Interpolation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
-2. [The evolution of C#](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history)
-
-תודה על קריאת המאמר!
+## ראה גם
+- [Microsoft's official documentation on string interpolation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
+- [C# 6.0 in a Nutshell - כל העניין של C# 6.0](http://www.albahari.com/nutshell/)
+- [String.Format vs. String Interpolation](https://stackoverflow.com/questions/33140154/string-format-vs-string-interpolation-performance) - דיון ב-StackOverflow על ביצועים של String.Format לעומת אינטרפולציה

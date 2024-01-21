@@ -1,7 +1,8 @@
 ---
-title:                "Imprimer la sortie de débogage"
-html_title:           "Arduino: Imprimer la sortie de débogage"
-simple_title:         "Imprimer la sortie de débogage"
+title:                "Affichage des sorties de débogage"
+date:                  2024-01-20T17:52:04.685758-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Affichage des sorties de débogage"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,26 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Imprimer la sortie de débogage c'est écrire des infos de contrôle pendant l'exécution de votre programme. On le fait pour visualiser ce qui se passe "dans la tête" de notre script.
+## What & Why? (Quoi et Pourquoi?)
+Imprimer un débogage, c'est afficher des infos dans la console pour suivre ce que fait le code. Les développeurs le font pour repérer les bugs et comprendre le flot du programme.
 
-## Comment faire:
-Repérer un bug est plus facile si on peut suivre le flux de données. Voici comment afficher un message debug en Bash:
-
+## How to: (Comment faire:)
 ```Bash
-#!/bin/bash
+# Affichage simple
+echo "Ici, quelque chose a lieu."
 
-for i in {1..5}
-do
-   echo "Le compteur est maintenant: $i" >&2
-done
+# Affichage avec une variable
+numero=10
+echo "Le numéro est: $numero"
+
+# Utilisation de printf pour un meilleur formatage
+printf "Valeur avec deux décimales: %.2f\n" 123.456
 ```
-Exécutez ce script. Vous verrez apparaître chaque valeur du compteur comme message débogage dans la console.
+Sortie :
+```
+Ici, quelque chose a lieu.
+Le numéro est: 10
+Valeur avec deux décimales: 123.46
+```
 
-## Plongée Profonde
-Historiquement, Bash a toujours eu la faculté d'imprimer les sorties de débogage. Cela dit, il existe d'autres méthodes pour le débogage, par exemple, utiliser un IDE avec un débogueur intégré. Quant à l'implémentation, Bash redirige le flux de sortie standard vers stdout (le plus souvent votre console), mais vous pouvez aussi le rediriger vers un fichier.
+## Deep Dive (Plongée en profondeur)
+Dans les premiers jours de l'informatique, l'impression de débogage était surtout dirigée vers des imprimantes. Maintenant, on affiche dans une console ou un fichier journal. Il existe d'autres outils comme `sed` et `awk` pour manipuler le texte, mais `echo` et `printf` restent populaires pour leur simplicité. En Bash, `printf` offre plus de contrôle sur le formatage que `echo`.
 
-## Voir Aussi 
-Pour plus d'informations, consultez:
-- [Redirections de flux en bash](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-3.fr.html): une introduction aux redirections de flux en bash.
-- [Bash Scripting Cheatsheet](https://devhints.io/bash): une feuille de triche avec les commandes de script Bash les plus courantes.
+## See Also (Voir aussi)
+- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
+- [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/)
+- [Stack Overflow Bash Tag](https://stackoverflow.com/questions/tagged/bash)

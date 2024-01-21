@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
+date:                  2024-01-20T18:01:05.490156-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,59 +12,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+HTTP-Requests mit Basic Authentication senden Daten an einen Server, geschützt durch Benutzername und Passwort. Programmierer nutzen das für sichere Datenübertragungen zu APIs oder Webdiensten.
 
-Das Senden einer HTTP-Anfrage mit Basisauthentifizierung ist eine Methode, bei der vor dem Zugriff auf bestimmte Web-Server Informationen validiert werden. Programmierer greifen darauf zurück, um eine zusätzliche Sicherheitsebene zu implementieren und unautorisierten Zugriff zu verhindern.
-
-## So Geht's:
-
-Die folgenden Codebeispiele im ```Arduino ... ``` Stil zeigen, wie man eine HTTP-Anfrage mit Basisauthentifizierung sendet.
+## Anleitung:
+Hier ist ein einfacher Codeabschnitt für das Senden einer HTTP-Anfrage mit Basic Authentication auf einem Arduino.
 
 ```Arduino
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
- 
-const char* ssid = "your_SSID";
-const char* password =  "your_PASSWORD";
- 
+#include <Base64.h>
+
+const char* ssid = "DEIN_WIFI_NAME";
+const char* password = "DEIN_WIFI_PASSWORT";
+
+const char* user = "DEIN_USERNAME";
+const char* pass = "DEIN_PASSWORT";
+
 void setup() {
+  Serial.begin(115200);
   WiFi.begin(ssid, password);
- 
+
   while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Connecting...");
+    delay(500);
+    Serial.print(".");
   }
-}
- 
-void loop() {
+  Serial.println("Verbunden mit WiFi");
+  
   if (WiFi.status() == WL_CONNECTED) {
     HTTPClient http;
-    
-    http.begin("http://yourserver.com");
-    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-    http.setAuthorization("username", "password");
-    
-    int httpCode = http.POST("key=value");
-    
-    String payload = http.getString();
-    
-    Serial.println(httpCode);
-    Serial.println(payload);
-    
+    http.begin("http://deineurl.de/daten"); // URL für die Anfrage
+    http.setAuthorization(user, pass);
+    int httpCode = http.GET();
+
+    if (httpCode > 0) {
+      String payload = http.getString();
+      Serial.println(httpCode);
+      Serial.println(payload);
+    } else {
+      Serial.println("Error bei der Anfrage");
+    }
     http.end();
   }
-  delay(30000);
+}
+
+void loop() {
+  // Hier könnte deine Logik stehen
 }
 ```
 
-Es verbindet sich zuerst mit dem WLAN. Danach sendet es eine HTTP POST Anfrage an "http://yourserver.com". Die Anfrage enthält die Basisauthentifizierung in der Form "username" und "password". Schließlich gibt sie den HTTP-Statuscode aus und liest die Antwort vom Server.
+Die Ausgabe sieht wie folgt aus:
+
+```
+Verbunden mit WiFi
+200
+{"response":"Daten erfolgreich empfangen"}
+```
 
 ## Tiefere Einblicke:
+Historisch basiert die Basic Authentication auf einem einfachen Schema, das im HTTP/1.0 zugefügt wurde. Es kodiert Benutzername und Passwort in Base64, was nicht sicher ist ohne HTTPS, da es leicht entschlüsselt werden kann.
 
-Historisch gesehen wurde die Basisauthentifizierung für den Webserver-Betrieb eingeführt und bis heute beibehalten. Es ist allerdings anzumerken, dass diese Methode heutzutage als unsicher betrachtet wird. Alternativ bietet sich für sicherheitskritische Anwendungen die Verwendung des OAuth-Verfahrens an. Beim Senden einer HTTP-Anfrage mit Basisauthentifizierung `(http.setAuthorization("username", "password");)` verschlüsselt das Arduino ESP8266-Board die Anmeldedaten und sendet sie im HTTP-Header.
+Es gibt sicherere Alternativen wie OAuth oder API-Schlüssel. Basic Authentication wird jedoch wegen ihrer Einfachheit und Unterstützung durch viele Webdienste noch häufig verwendet.
 
-## Siehe Auch:
+Beim Implementieren auf einem Arduino muss man die entsprechende Bibliothek einsetzen, hier am Beispiel des ESP8266 mit der ESP8266WiFi-Bibliothek. Die Anmeldeinformationen sollten nie im Code hartkodiert sein, besonders in produktiven Umgebungen. Besser wäre die Verwendung von gesicherten Speicheroptionen wie dem EEPROM des Mikrocontrollers.
 
-Weitere Informationen zum Senden einer HTTP-Anfrage mit Basisauthentifizierung finden Sie hier:
-
-- [RFC 7617 (Basisauthentifizierung)](https://tools.ietf.org/html/rfc7617)
-- [OAuth](https://de.wikipedia.org/wiki/OAuth)
+## Siehe auch:
+- HTTP Authentication: Basic and Digest Access Authentication: https://tools.ietf.org/html/rfc2617
+- ESP8266 Arduino Core Documentation: https://arduino-esp8266.readthedocs.io/en/latest/
+- Base64 Encoding and Decoding: https://en.wikipedia.org/wiki/Base64
+- Sichere Speicherung von Anmeldeinformationen auf dem Arduino: http://www.esp8266.com/viewtopic.php?f=32&t=10457

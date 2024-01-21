@@ -1,6 +1,7 @@
 ---
 title:                "Interpolating a string"
-html_title:           "Arduino recipe: Interpolating a string"
+date:                  2024-01-20T17:50:29.119372-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolating a string"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,46 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-String interpolation lets you inject data directly into a string. Want quick, clean variable substitutions in your strings? This is how you do it.
+String interpolation lets us toss variables into strings without a fuss. Why? To dynamically construct text—way handier than old-school string concatenation.
 
 ## How to:
-
-Do string interpolation in Clojure like the example below. We're using the `str` function here to plug some variables (`name` and `age`) into our string.
-
 ```Clojure
-(def name "Alice")
-(def age 32)
+;; Basics with `str` and `format`
+(def name "World")
+(str "Hello, " name "!")  ; => "Hello, World!"
 
-; Print a statement
-(println (str "Hi, I'm " name ", age " age "."))
+;; Using `format`, akin to printf-style formatting
+(format "Goodbye, %s!" name)  ; => "Goodbye, World!"
+
+;; Clojure doesn't have built-in string interpolation like other languages,
+;; but we can get creative with `str` and `format`.
 ```
-Running this, you'll see:
 
-```
-Hi, I'm Alice, age 32.
-```
+## Deep Dive:
+Clojure's a bit of an ascetic: no built-in string interpolation. However, `str` and `format` are the go-to for dynamic strings. Origin story? Clojure’s simplicity ethos. It trusts we can handle string construction ourselves. 
 
-Pretty straightforward, right? One function, and voilà, you have a neatly interpolated string.
+For alternatives, enter the templating world: `clostache` (a Clojure implementation of Mustache) or `hiccup` for HTML contexts. They come handy when `str` and `format` feel too primitive.
 
-## Deep Dive
+Under the hood, `format` delegates to Java’s `String.format`, a fact that illustrates Clojure’s Java interoperability superpower. So, while you don't get the sugar, you’ve got the muscle of Java when you need it.
 
-Clojure, drawing from its Lisp roots, uses string concatenation instead of native string interpolation found in other languages like Python or Ruby.
-
-**Historical context**: Back in Lisp's days, computation was more precious, so it was often more efficient to concatenate strings, opposed to interpolation.
-
-**Alternatives**: Apart from `str`, you can do similar jobs using `format`. Just plug `%s` wherever you want a string and `%d` for integers. Then list your variables after the string.
-
-```Clojure
-(def name "Alice")
-(def age 32)
-
-(println (format "Hi, I'm %s, age %d." name age))
-```
-Gives you the same output, just via a slicker route.
-
-**Implementation details**: String concatenation with `str` works across different data types without conversion. `format`, while more typist-friendly for long strings, needs explicit type handling – hence the `%s` and `%d`.
-
-## See Also
-
-For deeper understanding, swing by the official Clojure docs ([str](https://clojuredocs.org/clojure.core/str) and [format](https://clojuredocs.org/clojure.core/format)). And to appreciate Clojure's Lisp lineage, check out Paul Graham's essay, ["Beating the Averages"](http://www.paulgraham.com/avg.html). Happy coding!
+## See Also:
+- Clojure Docs on `str`: https://clojuredocs.org/clojure.core/str
+- Clojure Docs on `format`: https://clojuredocs.org/clojure.core/format
+- clostache GitHub repo: https://github.com/fhd/clostache
+- hiccup GitHub repo: https://github.com/weavejester/hiccup

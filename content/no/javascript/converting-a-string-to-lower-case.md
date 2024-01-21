@@ -1,6 +1,7 @@
 ---
 title:                "Konvertere en streng til små bokstaver"
-html_title:           "Arduino: Konvertere en streng til små bokstaver"
+date:                  2024-01-20T17:38:46.173798-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,46 +12,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å konvertere en streng til små bokstaver betyr å endre alle store bokstaver i teksten til deres små bokstav-ekvivalenter. Programmerere gjør dette for å forenkle sammenligning og behandling av tekst, for eksempel søk eller sortering.
 
-Å konvertere en streng til små bokstaver er når vi endrer alle tegn i en tekststreng til små bokstaver. Programmerere gjør dette for å normalisere data og forbedre søkets nøyaktighet.
+## Hvordan:
+```javascript
+let hilsen = "Hei, Verden!";
+let litenHilsen = hilsen.toLowerCase();
 
-## Hvordan gjør man det:
-
-Enkelt! Bruk `toLowerCase()` metode på strengen. Her er et eksempel:
-
-```Javascript 
-var tekst = "Hei Verden!";
-var lav = tekst.toLowerCase();
-console.log(lav);  // Resultat: "hei verden!"
+console.log(litenHilsen);  // Output: "hei, verden!"
 ```
+## Dypdykk:
+Tidligere måtte programmerere kanskje håndtere omregning av tekst manuelt, men JavaScript har lenge hatt innebygde metoder for å gjøre dette enkelt. Metoden `toLowerCase()` er ikke den eneste—det finnes også `toUpperCase()`, for å gjøre om til store bokstaver, og med ECMAScript 2015 (ES6) kan vi bruke `localeCompare()` for å sammenligne strenger på en lokalisert måte.
 
-Mer kompleks? Bruk en løkke for å gjøre det på hele array:
+Når det gjelder implementering, bruker `toLowerCase()` Unicode-verdier for å finne småbokstav-ekvivalenter. Ikke alle språk er like enkle—noen skriftsystemer har ikke klart skille mellom store og små bokstaver. Likevel for de fleste skriptene og språkene vi bruker på weben, gjør `toLowerCase()` jobben fint.
 
-```Javascript 
-var tekstArray = ["Hei", "Verden", "!"];
-var lavArray = tekstArray.map(function(tekst) { 
-  return tekst.toLowerCase();
-});
-console.log(lavArray);  // Resultat: ["hei", "verden", "!"]
-```
-
-## Dyp Dykk
-
-1. Historisk kontekst: `toLowerCase()` metoden har vært en del av ECMAScript (offisiell navn på JavaScript) standarden siden versjon 1 i 1997.
-
-2. Alternativer: Hvis du trenger å håndtere internasjonale tegnsett, kan du vurdere å bruke `toLocaleLowerCase()`. Det tar systemets lokalinnstillinger i betraktning når den konverterer bokstavene.
-
-```Javascript 
-var tekst = "Γεια σου Κόσμε"; // gresk
-console.log(tekst.toLocaleLowerCase()); // resultat: "γεια σου κόσμε"
-```
-
-3. Implementeringsdetaljer: Metoder `toLowerCase()` og `toLocaleLowerCase()` påvirker ikke den opprinnelige strengen. De returnerer en ny streng.
-
-## Se Også
-
-- MDN Web Docs, [String.prototype.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-
-- MDN Web Docs, [String.prototype.toLocaleLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)
-
-- ECMAScript 2015 [spesifikasjon](https://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.tolowercase)
+## Se Også:
+- MDN Web Docs om `String.prototype.toLowerCase()`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+- En introduksjon til Unicode i JavaScript: https://javascript.info/string#unicode
+- ECMAScript 2015 (ES6) and nyere versjoner: https://www.ecma-international.org/ecma-262/6.0/

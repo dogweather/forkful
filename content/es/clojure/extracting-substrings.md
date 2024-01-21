@@ -1,7 +1,8 @@
 ---
-title:                "Extrayendo subcadenas"
-html_title:           "C: Extrayendo subcadenas"
-simple_title:         "Extrayendo subcadenas"
+title:                "Extracción de subcadenas"
+date:                  2024-01-20T17:45:25.032817-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Extracción de subcadenas"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,46 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+## Qué y Por Qué?
+Extraer subcadenas significa sacar partes específicas de una cadena de texto. Los programadores lo hacen para manipular y procesar información, como obtener nombres de usuario de correos electrónicos o generar resúmenes.
 
-Extraer subcadenas significa seleccionar una parte de un texto en una cadena. Los programadores lo hacen para analizar y procesar información específica en una cadena más grande.
+## Cómo Hacerlo:
+```clojure
+; Usamos "subs" para extraer una subcadena por índices
+(def texto "Clojure mola mucho")
+(subs texto 8 13) ; => "mola"
 
-## Cómo hacerlo:
+; Si queremos partir una cadena usamos "split"
+(require '[clojure.string :as str])
+(str/split texto #"\s") ; => ["Clojure" "mola" "mucho"]
 
-En Clojure, extraer una subcadena es pan comido. Usamos la función `subs`.
-
-```Clojure
-(defn extraer-subcadena [cadena inicio fin]
-  (subs cadena inicio fin))
+; Para obtener un prefijo o sufijo sin conocer los índices exactos
+(str/starts-with? texto "Clojure") ; => true
+(str/ends-with? texto "mucho") ; => true
 ```
 
-Vamos a probarlo:
+## Inmersión Profunda:
+En Clojure, como en otros lenguajes de la familia Lisp, operar con textos es directo gracias a funciones bien definidas. Antes, en lenguajes como C, extraer subcadenas era más complicado y propenso a errores por la gestión manual de la memoria.
 
-```Clojure
-(extraer-subcadena "Hola Mundo!" 0 4)
-```
+Las alternativas para extraer partes de una cadena no se limitan a `subs` y `split`. Librerías como `clojure.string` ofrecen funciones como `replace`, `upper-case`, `lower-case` que pueden usarse en conjunto para preparar los datos antes de extraerles partes significativas.
 
-El resultado será:
+La implementación de estas funciones está diseñada para ser inmutable, es decir, cada vez que extraes una subcadena, se crea una nueva cadena en lugar de modificar la original. Esto es parte del diseño general de Clojure para promover un código seguro y fácil de entender.
 
-```Clojure
-"Hola"
-```
-
-## Inmersión Profunda 
-
-La función `subs` se ha usado en Lisp y sus dialectos, incluido Clojure, desde la antigüedad. Es simple y se usa comúnmente para dividir cadenas en partes más pequeñas.
-
-Para extraer una subcadena en Clojure, puedes usar alternativamente las funciones incorporadas en java interop. Por ejemplo: `.substring`
-
-```Clojure
-(.substring "Clojure Programming" 0 7)
-```
-
-La implementación detrás de escena de `subs` es bastante eficiente. No crea una nueva cadena. En cambio, reutiliza el arreglo de caracteres de la cadena original.
-
-## Consultar También
-
-Para más detalles, consulta:
-1. [Documentación oficial de Clojure sobre subs](https://clojuredocs.org/clojure.core/subs)
-2. [Guía de programación de Clojure](https://www.braveclojure.com/clojure-for-the-brave-and-true/)
-3. [Usando Java interop en Clojure](https://clojure.org/reference/java_interop)
+## Ver También:
+- Una guía más detallada en el manejo de cadenas en Clojure: [Clojure - Strings](https://www.tutorialspoint.com/clojure/clojure_strings.htm)

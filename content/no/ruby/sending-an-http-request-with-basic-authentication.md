@@ -1,7 +1,8 @@
 ---
-title:                "Sende en http-forespørsel med grunnleggende autentisering"
-html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
+title:                "Å sende en HTTP-forespørsel med grunnleggende autentisering"
+date:                  2024-01-20T18:02:35.517985-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,39 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-
 ## Hva & Hvorfor?
-Å sende en HTTP-forespørsel med grunnleggende autentisering er å sende en nettforespørsel som inneholder brukernavn og passord for å få tilgang til beskyttet informasjon. Programmerere gjør dette for å samhandle sikkert med webtjenester som krever innlogging.
+Å sende en HTTP-forespørsel med grunnleggende autentisering betyr å tilføye brukernavn og passord i en forespørsel for å få tilgang til beskyttede ressurser. Programmerere gjør dette for å sikre at kun autoriserte brukere har tilgang.
 
-## Hvordan gjør man det?
-Her er et eksempel på hvordan du kan sende HTTP-forespørsel med grunnleggende autentisering ved bruk av Ruby's `net/http`-bibliotek.
+## Hvordan gjøre det:
 
-```Ruby
+```ruby
 require 'net/http'
 require 'uri'
 
-uri = URI.parse("https://eksempel.com/side")
-request = Net::HTTP::Get.new(uri)
-request.basic_auth("brukernavn", "passord")
+uri = URI('http://eksempel.no/minhemmeligside')
+nett_http = Net::HTTP.new(uri.host, uri.port)
 
-response = Net::HTTP.start(uri.hostname, uri.port) do |http|
-  http.request(request)
-end
+foresporsel = Net::HTTP::Get.new(uri)
+foresporsel.basic_auth 'brukernavn', 'passord'
 
-puts response.body
+svar = nett_http.request foresporsel
+
+puts svar.body
 ```
-Dette eksemplet gjør en GET-forespørsel til "https://eksempel.com/side" ved bruk av brukernavn og passord for autentisering. Responsen er deretter skrevet ut på konsollen.
+
+Sample Output:
+
+```
+Velkommen til den hemmelige siden!
+```
 
 ## Dypdykk
-Grunnleggende autentisering er faktisk en av de eldste metodene for sikring av nettjenester, og den er fortsatt utbredt på grunn av dens enkelhet. Hver forespørsel du sender må inkludere brukernavn og passord, kodet i Base64.
 
-Alternativer til grunnleggende autentisering inkluderer OAuth og JWT, som er mer komplekse, men gir større sikkerhet og fleksibilitet.
+Før i tiden var grunnleggende autentisering mye brukt for enkel brukeridentifikasjon. I dag, på grunn av sikkerhetsbegrensninger (det er ikke kryptert), brukes det mindre, ofte i interne systemer eller der dataene ikke er sensitive. 
 
-Når det gjelder implementeringsdetaljer i Ruby, konverterer `basic_auth`-metoden brukernavn og passord til en Base64-streng, og setter det i `Authorization`-feltet i HTTP-overskriften.
+Alternativer inkluderer OAuth2 og JWT (JSON Web Tokens), begge tilbyr større sikkerhet og er bedre egnet for moderne applikasjoner.
+
+Teknisk sett koder grunnleggende autentisering brukernavn og passord med base64 og legger det til HTTP-forespørselens `Authorization` header. Imidlertid er dette ikke særlig sikkert over HTTP, så det anbefales å bruke HTTPS.
 
 ## Se også
-- [Mer om net/http-biblioteket](https://ruby-doc.org/stdlib-3.0.1/libdoc/net/http/rdoc/Net/HTTP.html)
-- [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
 
----
+- RFC 7617, 'The 'Basic' HTTP Authentication Scheme': [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)
+- Bedre sikkerhetspraksis med OAuth: [https://oauth.net/2/](https://oauth.net/2/) 
+- JWT for autentisering: [https://jwt.io/](https://jwt.io/)

@@ -1,6 +1,7 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
-html_title:           "Go: המרת מחרוזת לאותיות קטנות"
+date:                  2024-01-20T17:38:34.010010-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "C++"
 category:             "C++"
@@ -10,34 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-המרת מחרוזת לאותיות קטנות היא תהליך שבו אנו ממירים את כל האותיות גדולות במחרוזת לאותיות קטנות. התכנתים עושים זאת כדי להימנע מבעיות שלא מצריכות את ההבנה, כמו תנאים שלא מצריכים רגישות לאותיות גדולות וקטנות.
+## מה ולמה?
+המרת מחרוזת לאותיות קטנות היא תהליך שבו כל האותיות הגדולות במחרוזת משתנות לאותיות קטנות. זה נעשה לעיתים קרובות כדי להבטיח אחידות בטיפול בטקסט ולערוך השוואות מחרוזות ללא תלות ברישיות.
 
-## איך לעשות את זה:
-המרת מחרוזת לאותיות קטנות ב- C++ נעשה באמצעות פונקציה שנקראת `std::transform`. הנה כיצד נראה זה בקוד:
+## איך לעשות:
+בדוגמה הבאה נשתמש בפונקציה `std::transform` כדי להמיר כל אות במחרוזת לאות קטנה.
 
 ```C++
+#include <iostream>
 #include <algorithm>
 #include <string>
-#include <iostream>
+#include <cctype> // לשימוש בפונקציה tolower
 
 int main() {
-    std::string s = "Hello, World!";
-    std::transform(s.begin(), s.end(), s.begin(),
-                   [](unsigned char c){ return std::tolower(c); }
-                  );
-    std::cout << s << std::endl;
+    std::string text = "HeLLo WoRLD!";
+    std::transform(text.begin(), text.end(), text.begin(), 
+                   [](unsigned char c) -> unsigned char { return std::tolower(c); });
+
+    std::cout << text; // פלט: hello world!
     return 0;
 }
 ```
 
-בפלט תקבל "hello, world!".
+## מבט עמוק:
+היסטורית, המרה לאותיות קטנות התבצעה גם בעזרת לולאות שרצו על כל תו במחרוזת וביצעו השוואות והמרות ידניות. כלי הסטנדרטי `std::transform` הגיע לפשט את התהליך הזה. חלופות נוספות כוללות שימוש בפונקציות כמו `tolower` בצורה ישירה בתוך לולאה או שימוש בספריות שלישיות שמוסיפות יכולות מניפולציה על מחרוזות.
 
-## מעמיקים יותר
-הגישה של `std::transform` אל מחרוזות התפתחה ממשפחת הפונקציות של STL ב- C++ שנוצרו מדי STL - הספריה התקנית של תבניות. אף על פי שיש גם אפשרויות אחרות כמו `boost::to_lower`, `std::transform` אל תלמדית יותר ודי מסתדרת בצורה יעילה עם מחרוזות ASCII.
+גם כאשר משתמשים ב`std::tolower`, חשוב להעביר את הפרמטר כ-`unsigned char` כדי למנוע בעיות עם תווים שאינם חלק מ-ASCII. עם זאת, כשעובדים עם UTF-8 או מערכת תווים אחרת, עלולות להיות דרישות מיוחדות שצריך לתת להן את הדעת.
 
-## ראו גם
-ניתן למצוא מידע נוסף בנושאים קשורים בקישורים הבאים:
-- [תיעוד std::transform](https://en.cppreference.com/w/cpp/algorithm/transform)
-- [תיעוד std::tolower](https://en.cppreference.com/w/cpp/string/byte/tolower)
-- [תיעוד Boost](https://www.boost.org/)
+## ראה גם:
+- Documentation on `std::transform`: https://en.cppreference.com/w/cpp/algorithm/transform
+- Documentation on `std::tolower`: https://en.cppreference.com/w/cpp/string/byte/tolower
+- C++ reference for `std::string`: https://en.cppreference.com/w/cpp/string/basic_string
+- Unicode handling in C++: https://unicode-org.github.io/icu/userguide/cpp/

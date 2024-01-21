@@ -1,6 +1,7 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
-html_title:           "Go: המרת מחרוזת לאותיות קטנות"
+date:                  2024-01-20T17:38:29.167373-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,42 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-המרת מחרוזת לאותיות קטנות היא פשוט להפוך את כל האותיות הגדולות לאותיות קטנות. תוכנתים מממשים את זה כדי להימנע מבעיות רגישות לרישיות בתוך הקוד שלהם.
+המרת מחרוזת לאותיות קטנות היא פעולה בה אתה משנה את האותיות הגדולות במחרוזת לאותיות קטנות. תכנותים עושים את זה ליצירת אחידות, להשוואת טקסטים, ולטפל בקלט שמשתנה ברגישיות לרישיות.
 
-## איך לעשות:
-בהנחה שיש לנו מחרוזת שלך שנקראת `myStr`, כאן נראה איך להמיר את זה לאותיות קטנות:
-
-```Bash
-myStr="Hello World"
-echo "${myStr,,}"
-```
-
-תוצאה תהיה:
+## איך לעשות זאת:
+ב-Bash, המרת מחרוזת לאותיות קטנות פשוטה. נתחיל בדוגמה פשוטה עם `tr`:
 
 ```Bash
-hello world
+echo "Hello World!" | tr '[:upper:]' '[:lower:]'
+```
+פלט:
+```
+hello world!
 ```
 
-## הצצה לעומק:
-מתחילים הרבה פעמים מניחים שהמרת מחרוזת לאותיות קטנות היא פשוט תהליך של איפוס של bit אחד. אך בעצם, המרה של אות לקטנה היא פעולה מורכבת אם מדובר בעולמות שפות מרובות.
-
-ישנם שיטות אחרות להמיר מחרוזת לאותיות קטנות, כמו שימוש ב-`tr`:
+עוד דרך היא להשתמש ב-`${parameter,,}` syntax של Bash מגרסה 4 ומעלה:
 
 ```Bash
-myStr="Hello World"
-echo $myStr | tr '[:upper:]' '[:lower:]'
+str="Hello Again!"
+echo "${str,,}"
+```
+פלט:
+```
+hello again!
 ```
 
-או אפילו מהלך מסובך יותר במקרה שאין זמינות למשתנים של Bash 4.0:
+דוגמה ל-loop הממיר את כל המחרוזות במערך:
 
 ```Bash
-myStr="Hello World"
-echo $myStr | awk '{print tolower($0)}'
+declare -a arr=("One" "Two" "Three")
+for i in "${arr[@]}"; do
+  echo "${i,,}"
+done
 ```
+פלט:
+```
+one
+two
+three
+```
+
+## צלילה עמוקה:
+ב-Bash, מנגנוני המרה לאותיות קטנות מתפתחים במהלך הזמן. במקור, עשו את זה בעיקר עם `tr` או `awk`. מאז גרסה 4 של באש, הוכנסה תחביר של expansion למחרוזת שמאפשר מניפולציות גודל. הדרך הזו נחשבת יותר יעילה ביחס לפעולות קלות ונוחה יותר לקריאה. 
+
+גם על פי ביצועים, לכל פקודה יתרונות וחסרונות במקרים שונים. כשמעבדים טקסט גדול מאוד, שיקולים של מהירות ושימוש בזיכרון יכולים להיות חשובים, ולעתים עשויים לדרוש בחינה והשוואה בין שיטות שונות.
 
 ## ראה גם:
-כדאי לבדוק את האתרים הבאים, שמכילים מידע נוסף ושימושי:
-
-1. [Bash String Manipulation Guide](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
-2. [Unix tr command](https://www.geeksforgeeks.org/tr-command-unixlinux-examples/)
-3. [Awk Command in Unix](http://www.grymoire.com/Unix/Awk.html)
+- [מדריך כתיבת סקריפטים ב-Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [תיעוד GNU לפקודת tr](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+- [דיסקוסיה על שיטות המרה בפורום Stack Overflow](https://stackoverflow.com/questions/2264428/how-to-convert-a-string-to-lower-case-in-bash)

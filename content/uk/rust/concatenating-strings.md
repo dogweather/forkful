@@ -1,7 +1,8 @@
 ---
-title:                "Конкатенація рядків"
-html_title:           "PHP: Конкатенація рядків"
-simple_title:         "Конкатенація рядків"
+title:                "Об'єднання рядків"
+date:                  2024-01-20T17:35:49.684161-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Об'єднання рядків"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,37 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Стаття про Раст: Конкатенація рядків
+## What & Why? (Що і Чому?)
+String concatenation is sticking one string to another. We do this to build up messages, create paths, combine user-generated content, or to simply put pieces of text together.
 
-## Що це і навіщо?
-
-Конкатенація рядків - це процес з'єднання двох або більше рядків в один. Програмісти роблять це для об'єднання рядків даних, форматування виводу, або створення більш складних рядків.
-
-## Як це робиться:
+## How to (Як це робити)
+Here's how you glue strings together in Rust:
 
 ```Rust
-let рядок1 = String::from("Привіт,");
-let рядок2 = " світ!".to_string();
-let рядок = рядок1 + &рядок2;
-println!("{}", рядок);
+fn main() {
+    let hello = "Вітаю".to_string();
+    let world = "Світ";
+    let exclamation = "!";
+    
+    // Using the + operator
+    let greeting = hello + " " + world + exclamation;
+    println!("{}", greeting);  // Вітаю Світ!
+    
+    // Using format! macro
+    let formatted_greeting = format!("{} {}{}", "Вітаю", "Світ", "!");
+    println!("{}", formatted_greeting);  // Вітаю Світ!
+}
 ```
+Common ways to combine strings in Rust include using the `+` operator or the `format!` macro. Note the difference in borrow-checker requirements: with `+`, `hello` needs to be a `String` (not a `&str`) because the operator takes ownership of `hello`.
 
-У виводі ви отримаєте:
+## Deep Dive (Поглиблений огляд)
+Concatenating strings is as old as programming itself; it's been in use since the early days to allow programs to communicate complex messages. In Rust, string concatenation respects ownership and borrowing rules, which is why `String` and `&str` (string slices) have different behaviors. Alternatives to concatenation also exist, like joining strings in a vector with `join()` method or building up a string with a `StringWriter`.
 
 ```Rust
-"Привіт, світ!"
+// Using join() method on a vector of strings
+let words = vec!["Вітаю", "Світ", "!"];
+let joined = words.join(" ");
+println!("{}", joined); // Вітаю Світ!
+
+// Using push_str to build up a string
+let mut message = String::from("Вітаю");
+message.push_str(" Світ");
+message.push_str("!");
+println!("{}", message); // Вітаю Світ!
 ```
 
-##Занурення глибше
+## See Also (Дивіться також)
+To dig deeper into Rust strings:
 
-1. Історичний контекст: Конкатенація рядків використовується в багатьох мовах програмування, включаючи С, Java та Python. Раст надає декілька методів для цього завдання.
+- The Rust Book on strings: https://doc.rust-lang.org/book/ch08-02-strings.html
+- Rust String API Docs: https://doc.rust-lang.org/std/string/struct.String.html
+- Rust By Example for strings: https://doc.rust-lang.org/rust-by-example/std/str.html
 
-2. Альтернативи: Можна використати `format!()` або `push_str()` замість оператора `+`. `format!()` дозволяє форматувати рядки, а `push_str()` додає рядок до існуючого.
-
-3. Деталі реалізації: В Раст, оператор `+` використовує метод `add()`, що виключно приймає &str в якості другого аргумента. Коли ми використовуємо цей оператор, Раст явно викликає метод `to_string()` на другому рядку.
-
-## Дивіться також:
-
-1. [Офіційна документація мови Rust](https://doc.rust-lang.org/book/)
-2. [StackOverflow: Конкатенація рядків в Rust](https://stackoverflow.com/questions/30154541/how-do-i-concatenate-strings-in-rust)
-3. [Rust String vs str](https://www.ameyalokare.com/rust/2017/10/12/rust-str-vs-String.html)
+This should get you started. Щасливого кодування! (Happy coding!)

@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie pliku tekstowego"
-html_title:           "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+date:                  2024-01-20T17:55:18.500741-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,54 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i dlaczego?)
+Czytanie pliku tekstowego to odczytywanie danych z pliku zapisanego w formacie tekstowym. Programiści robią to, by np. wczytać konfigurację, dane użytkownika lub materiały do dalszej obróbki.
 
-Czytanie pliku tekstowego to proces odczytywania danych zapisanych jako tekst. Programiści robią to, aby uzyskać dostęp do informacji zapisanych w plikach i manipulować nimi.
+## How to: (Jak to zrobić?)
+Oto jak w Rust wczytać plik tekstowy, linia po linii, oraz prosty przypadek użycia.
 
-## Jak to zrobić:
-
-Do otwarcia i odczytywania pliku tekstowego w Rust, skorzystamy z funkcji `read_to_string()`. Poniżej znajduje się przykładowy kod.
-
-```Rust
-use std::fs;
-
-fn main() {
-    let text = fs::read_to_string("plik.txt")
-        .expect("Nie można odczytać pliku");
-
-    println!("{}", text);
-}
-```
-Uruchomienie tego kodu spowoduje odczytanie pliku `plik.txt` i wydrukowanie jego zawartości na konsoli.
-
-## Pogłębione informacje:
-
-**Kontekst historyczny**: Rust jest stosunkowo młodym językiem programowania, premiera miała miejsce w 2010 roku. Do obsługi I/O plików, Rust zapewnia moduł `std::fs`, który zawiera różne funkcje pomocnicze, takie jak `read_to_string()`.
-
-**Alternatywy**: Rust oferuje również metody do odczytu pliku linii po linii, co jest bardziej wydajne dla dużych plików. Możemy to zrobić za pomocą metody `lines()`.
-
-```Rust
+```rust
 use std::fs::File;
 use std::io::{self, BufRead};
 use std::path::Path;
 
 fn main() -> io::Result<()> {
-    let path = Path::new("plik.txt");
+    let path = Path::new("przyklad.txt");
     let file = File::open(&path)?;
     let reader = io::BufReader::new(file);
 
     for line in reader.lines() {
         println!("{}", line?);
     }
-    
     Ok(())
 }
 ```
-**Szczegóły implementacyjne**: `read_to_string()` jest wygodny, ale blokuje wątek, co oznacza, że inne operacje nie mogą być przeprowadzane równocześnie. W przypadku dużych plików mogłoby to prowadzić do problemów wydajności.
 
-## Zobacz też:
+Gdy masz plik `przyklad.txt` z treścią:
+```
+Witaj w Rust!
+To jest przykład.
+```
 
-1. [Dokumentacja Rust::fs](https://doc.rust-lang.org/std/fs/index.html)
-2. [Przewodnik Rust do obsługi błędów](https://doc.rust-lang.org/book/ch09-00-error-handling.html)
-3. [Rust by Example: I/O z plikami](https://doc.rust-lang.org/rust-by-example/std_misc/file/open.html)
-4. [Rust Async Programming](https://rust-lang.github.io/async-book/) - jak odczytywać pliki tekstowe asynchronicznie.
+Po uruchomieniu, otrzymasz:
+```
+Witaj w Rust!
+To jest przykład.
+```
+
+## Deep Dive (Dogłębna analiza)
+Czytanie plików tekstowych w Rust opiera się na prymitywach wejścia/wyjścia z modułu `std::io`. Historia tego mechanizmu sięga języków C i Unix, gdzie operacje na plikach są fundamentalne dla systemu.
+
+Poza podstawowym `File::open`, można używać `std::io::BufReader` dla efektywności - buforuje on dane, co zmniejsza ilość operacji I/O. Inne metody jak `read_to_string` pozwalają na wczytanie całego pliku od razu do `String`.
+
+Masz też alternatywy: `std::fs::read_to_string` dla krótszego kodu, czy biblioteki zewnętrzne jak `serde` do deserializacji danych w formatach JSON, YAML itp.
+
+## See Also (Zobacz też)
+Następujące źródła mogą być przydatne dla lepszego zrozumienia tematu:
+
+- [The Rust Programming Language - Ch 12.2, "Reading a File"](https://doc.rust-lang.org/book/ch12-02-reading-a-file.html)
+- [Rust by Example - "File I/O"](https://doc.rust-lang.org/rust-by-example/std_misc/file.html)
+- [Rust `std::io` documentation](https://doc.rust-lang.org/std/io/)

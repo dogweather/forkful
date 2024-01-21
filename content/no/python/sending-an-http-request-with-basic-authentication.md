@@ -1,7 +1,8 @@
 ---
-title:                "Sende en http-forespørsel med grunnleggende autentisering"
-html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
+title:                "Å sende en HTTP-forespørsel med grunnleggende autentisering"
+date:                  2024-01-20T18:02:29.512857-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,33 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Å Send HTTP forespørsel med grunnleggende autentisering i Python
-
 ## Hva & Hvorfor?
-Å sende en HTTP forespørsel med grunnleggende autentisering innebærer å sende en forespørsel til en server sammen med brukernavn og passord. Dette brukes ofte av programmerere for å få tilgang til webressurser som krever bekreftelse av en brukers identitet.
+Å sende en HTTP-forespørsel med grunnleggende autentisering betyr at vi tilføyer brukernavn og passord for å få tilgang til en ressurs. Vi gjør dette for sikkerhetskontroll, slik at bare autoriserte brukere får tilgang.
 
-## Hvordan?
-Her er hvordan du gjør det i Python ved hjelp av `requests` biblioteket. Hvis du ikke har det installert, kjør `pip install requests`.
-
+## Hvordan å:
 ```Python
 import requests
 from requests.auth import HTTPBasicAuth
 
-response = requests.get('http://yoururl.com', auth=HTTPBasicAuth('brukernavn', 'passord'))
+# Erstatt 'brukernavn' og 'passord' med dine egne legitimasjoner.
+response = requests.get('https://ditt-eksempel-url.com', auth=HTTPBasicAuth('brukernavn', 'passord'))
 
+# Utskrift av responsen
 print(response.status_code)
+print(response.content)
 ```
 
-Dette vil gi ut statuskoden for din HTTP forespørsel. For eksempel, `200` viser at forespørselen var vellykket.
+Hvis alt går bra, bør du se noe slik:
+```
+200
+b'Innholdet i den beskyttede ressursen'
+```
 
-## Dyp Dykk
-Den grunnleggende autentiseringen protokollen oppstod tidlig i historien til webutvikling, da sikkerhet og skalering var mindre av en bekymring enn de er nå. Det er ganske enkelt, men det gir ikke en høy grad av sikkerhet, siden brukernavn og passord er kodet med base64 og kan enkelt dekodes.
-
-Noen alternativer til grunnleggende autentisering inkluderer OAuth, som er mer komplisert å implementere men tilbyr bedre sikkerhet, og token-basert autentisering.
-
-Når det gjelder å sende en HTTP forespørsel med grunnleggende autentisering i Python, bruker "requests" biblioteket 'HTTPBasicAuth' klassen til å håndtere autentiseringsdetaljene.
+## Dypdykk
+Grunnleggende autentisering er en del av HTTP-protokollen, anvendt siden det tidlige internettet, og er bra for enkle autentiseringsscenarioer. Moderne alternativer som OAuth gir bedre sikkerhet. Basic auth sender base64-kodet brukernavn og passord i hver forespørsel, noe som gjør HTTPS nødvendig for å unngå avlytting.
 
 ## Se Også
-- Python "requests" Dokumentasjon: [https://requests.readthedocs.io](https://requests.readthedocs.io)
-- "HTTP Authentication" på MDN web docs: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- OAuth Homepage: [https://oauth.net](https://oauth.net)
+- Requests dokumentasjon om autentisering: https://requests.readthedocs.io/en/master/user/authentication/
+- RFC 7617, 'The 'Basic' HTTP Authentication Scheme': https://tools.ietf.org/html/rfc7617
+- MDN Web Docs om grunnleggende autentisering: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication

@@ -1,7 +1,8 @@
 ---
-title:                "Att starta ett nytt projekt"
-html_title:           "Arduino: Att starta ett nytt projekt"
-simple_title:         "Att starta ett nytt projekt"
+title:                "Att påbörja ett nytt projekt"
+date:                  2024-01-20T18:03:25.691789-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -11,42 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Starta ett nytt projekt innebär att skapa en ren arbetsyta för att utveckla dina idéer. Programmerare gör detta för att organisera, förenkla och effektivisera sitt arbete.
 
-Att starta ett nytt projekt är att ge sig i kast med en ny idé eller applikation från grunden. Programmerare gör detta för att skapa, lära, lösa problem eller bidra till öppen källkodsgemenskapen.
-
-## Hur man gör:
-
-Nu ska vi skapa en ny katalog med Fish Shell. Så här kan det se ut:
+## Hur gör man:
+Här är ett grundläggande exempel för att starta ett nytt projekt i Fish Shell:
 
 ```Fish Shell
-cd ~/
-mkdir nytt_projekt
-cd nytt_projekt
-```
+# Skapa en ny katalog för ditt projekt
+mkdir mitt_nya_projekt
 
-Därefter initialiserar vi en git tro med `git init`. Vi lägger till alla filer och commitar sedan med ett initialtaggande.
+# Gå in i den nya katalogen
+cd mitt_nya_projekt
 
-```Fish Shell
+# Initiere ett Git-repositorium om du använder versionskontroll
 git init
+
+# Skapa en grundläggande filstruktur
+mkdir bin src doc
 touch README.md
-git add .
-git commit -m "Initial commit"
 ```
 
-Vårt nya projekt är nu klart att utvecklas! Vad du lägger till kommer att vara beroende av projektet du skapar.
+När kommandona körs ska det se ut så här:
 
-## Djupdykning
+```Shell
+/Way/to/folder> mkdir mitt_nya_projekt
+/Way/to/folder> cd mitt_nya_projekt
+/mitt_nya_projekt> git init
+Initialized empty Git repository in /Way/to/folder/mitt_nya_projekt/.git/
+/mitt_nya_projekt> mkdir bin src doc
+/mitt_nya_projekt> touch README.md
+```
 
-Historiskt sett är Shell-tolkar en grundläggande del av Unix-liknande system. Fish Shell skapades för att tillhandahålla en användarvänlig och effektiv kommandotolk.
+## Fördjupning
+Fish Shell, eller "friendly interactive shell", är en relativt ny shell jämfört med bash och zsh. Den släpptes första gången 2005 med fokus på användarvänlighet och smarta funktioner såsom tydlig syntax, autoförslag och script som är lätta att läsa. Alternativ till Fish är Bash, Zsh, och PowerShell, bland andra. När du startar ett nytt projekt i Fish kan du dra nytta av dess unika funktioner, t.ex. dess universella variabler som stannar kvar över sessioner utan behov av att exporteras.
 
-Det finns alternativ till Fish Shell som Bash och Zsh. Men Fish Shell är känt för dess avancerade funktioner som syntax highlighting och auto-suggereringar.
-
-Att starta ett nytt projekt kan variera beroende på dess tänkta användning. Implementationen kan inkludera att koppla till en databas, skapa en webbserver eller kanske både och.
-
-## Se Även:
-
-[Vad är Fish Shell?](https://fishshell.com)
-
-[Grundläggande Git-kommandon](https://git-scm.com/book/sv/v2)
-
-[Att starta ett öppet källkodsprojekt](https://opensource.guide/starting-a-project/)
+## Se även
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html) - Officiell dokumentation.
+- [Fish Shell GitHub Repository](https://github.com/fish-shell/fish-shell) - Fish Shell kodbas och bidrag.
+- [Git SCM](https://git-scm.com/) - Hemsida för Git, versionskontrollsystemet.

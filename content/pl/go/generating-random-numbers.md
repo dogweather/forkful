@@ -1,6 +1,7 @@
 ---
 title:                "Generowanie liczb losowych"
-html_title:           "Gleam: Generowanie liczb losowych"
+date:                  2024-01-20T17:49:02.300116-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generowanie liczb losowych"
 programming_language: "Go"
 category:             "Go"
@@ -10,42 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego
+## What & Why? (Co i Dlaczego?)
+Losowe liczby to podstawa symulacji, gier i bezpieczeństwa. Programiści je generują, aby dodać nieprzewidywalność i fałszywą entropię do swoich aplikacji.
 
-Generowanie liczb losowych to sposób tworzenia ciągów numerów, które nie mają zaplanowanego wzoru. Programiści robią to, aby dodać element niespodzianki do swoich aplikacji, imitować złożoność rzeczywistości lub testować złożone sytuacje.
-
-## Jak to zrobić
-
-Tworzenie losowych liczb w Go jest dość prostym procesem:
-
-```go
+## How to: (Jak to zrobić:)
+```Go
 package main
 
 import (
-   "fmt"
-   "math/rand"
-   "time"
+	"fmt"
+	"math/rand"
+	"time"
 )
 
 func main() {
-   rand.Seed(time.Now().UnixNano())
-   num := rand.Intn(100) // Generuje liczbę losową między 0 a 99
-   fmt.Println(num)
+	// Zainicjalizuj generator liczb losowych
+	rand.Seed(time.Now().UnixNano())
+
+	// Generuj losową liczbę z zakresu od 0 do 99
+	randomNumber := rand.Intn(100)
+	fmt.Println(randomNumber)
+
+	// Generuj losowy float z zakresu od 0 do 1
+	randomFloat := rand.Float64()
+	fmt.Println(randomFloat)
 }
 ```
+**Wyjście przykładowe:**
+```
+42
+0.8125720833213298
+```
 
-Po uruchomieniu powyższego kodu, zobaczysz na wyjściu losową liczbę między 0 a 99.
+## Deep Dive (W Glebi Tematu)
+Generowanie liczb losowych w informatyce sięga lat 40. XX wieku. W Go używamy pakietu `math/rand` do pseudo-losowości, ale dla bardziej krytycznych zastosowań, jak kryptografia, sięgamy po `crypto/rand`, który jest bezpieczniejszy. Losowość w `math/rand` opiera się na nasionie (seed), determinującym szereg generowanych wartości; zmieniaj nasiono, żeby otrzymać różne sekwencje.
 
-## Głębsze zrozumienie
-
-Generowanie liczb losowych ma długą historię, nawet w kontekście informatyki. Istnieją różne sposoby generowania liczb losowych, takie jak użycie ziarna czasu, jak pokazano powyżej, lub użycie bardziej skomplikowanych algorytmów, które mają na celu zwiększenie "randomowości" generowanych liczb.
-
-Alternatywnymi metodami generowania liczb losowych w Go jest użycie pakietu `crypto/rand`, który jest bardziej bezpieczny, ale także wolniejszy. Również pakiet `math/rand` zapewnia różne typy generatorów liczb losowych, które można wykorzystać do różnych zastosowań.
-
-Co do szczegółów implementacji, Go korzysta z generatora liczb pseudolosowych bazującego na algorytmie PCG. To modernizuje tradycyjne metody generowania liczb losowych, zapewniając lepszą jakość i szybkość.
-
-## Zobacz też
-
-1. [Dokumentacja Go na temat pakietu math/rand](https://golang.org/pkg/math/rand/)
-2. [Dokumentacja Go na temat pakietu crypto/rand](https://golang.org/pkg/crypto/rand/)
-4. [Opis algorytmu PCG](https://www.pcg-random.org/)
+## See Also (Zobacz Także)
+- [math/rand - Pakiet Go](https://pkg.go.dev/math/rand)
+- [crypto/rand - Pakiet Go](https://pkg.go.dev/crypto/rand)
+- [Nasiona i generator pseudolosowy - Wikipedia](https://pl.wikipedia.org/wiki/Generator_liczb_pseudolosowych)

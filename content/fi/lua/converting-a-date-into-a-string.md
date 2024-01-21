@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän muuttaminen merkkijonoksi"
-html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+date:                  2024-01-20T17:37:02.532785-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,38 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+Muuntaminen päivämäärästä merkkijonoksi tarkoittaa päivämäärä-arvon esittämistä tekstimuodossa. Ohjelmoijat tekevät tämän esittääkseen päivämäärän ymmärrettävästi ihmisille tai siirtääkseen dataa formaateissa, jotka vaativat tekstiesitystä.
 
-Muuntaminen päivämäärästä merkkijonoksi on prosessi, jossa päivämääräobjekti muunnetaan merkkijonoksi miellyttävässä tai tietyn standardin mukaisessa muodossa. Käytännössä tämä auttaa kehittäjiä esittämään päivämäärän käyttäjälle helposti ymmärrettävässä muodossa tai tallettamaan sen tietokantaan.
-
-## Kuinka tehdä:
-
-Alla on esimerkki siitä, kuinka muunnos tehdään Lua-ohjelmointikielessä. 
-
+## How to:
 ```Lua
-os.setlocale("fi_FI") -- Set the locale to Finnish
+-- Oletusmuoto
+local date = os.date("*t")      -- hanki tämänhetkinen paikallinen aika
+local dateString = os.date()    -- muuntaa sen merkkijonoksi
+print(dateString)               -- "Tue Mar 01 14:10:02 2023"
 
-t = os.date('*t')  -- get the date as a table
-s = os.date('%c',os.time(t))  -- format the time
-print(s)
+-- Määritelty muoto
+dateString = os.date("%Y-%m-%d %H:%M:%S", os.time(date))
+print(dateString)               -- "2023-03-01 14:10:02"
 ```
 
-Lähdekoodin suorittamisen tulos voi olla jotakin alla olevan kaltaista:
+## Deep Dive
+Lua-kielellä päivämäärän muunto merkkijonoksi on yleistä, kun tallennetaan logitiedostoja tai käsitellään aikaleimoja. Os.date()-funktio on ollut osana standardikirjastoa jo pitkään, esitellen joustavuutta muotoiluun. Vaihtoehtoina, voit käyttää muita kirjastoja kuten luadate, jos tarvitsen enemmän ominaisuuksia. Tarkat muotoilukoodit löydät Lua-dokumentaatiosta – ne vastaavat usein C-kielen strftime-funktion koodeja.
 
-```Lua
-"ke 19 tammi 2022 14:58:10"
-```
-
-## Syvällisemmin:
-
-Useissa ohjelmointikielissä, mukaan lukien Lua, päivämäärien käsittelyllä on pitkä historia. Päivämäärän muuttaminen merkkijonoksi on yleinen toiminta, joka voi vaihdella eri kielien ja alustojen välillä.
-
-On olemassa useita vaihtoehtoja päivämäärän käsittelyyn. Lua valitsee `os.date` -funktion, jonka avulla voit määrittää oman muotoilusi päivämäärän esittämiseen. Tämä tarkoittaa, että voit olla joustava päivämäärän esittämistavassa. 
-
-Muunnos toteutetaan käyttämällä C:n `strftime` -funktiota taustalla. Tämä toiminta ei ole pelkästään tehokas, vaan se myös hyödyntää alustan olemassa olevia ominaisuuksia, jolloin koodin suorituskyky on parempi.
-
-## Katso myös:
-
-1. Lua 'os.date' dokumentaatio: https://www.lua.org/pil/22.1.html
-2. strftime-funktion dokumentaatio: https://man7.org/linux/man-pages/man3/strftime.3.html
-3. Lisätietoja päivämäärän ja ajan esittämisestä: https://www.lua.org/pil/22.1.html
+## See Also
+- Lua 5.4 referenssidokumentaatio: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
+- LuaDate-kirjaston kotisivu: [https://github.com/Tieske/date](https://github.com/Tieske/date)

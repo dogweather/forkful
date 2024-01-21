@@ -1,6 +1,7 @@
 ---
 title:                "Inviare una richiesta http"
-html_title:           "C++: Inviare una richiesta http"
+date:                  2024-01-20T17:59:38.970846-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,35 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e Perché?
-Invio di una richiesta HTTP è un metodo per ottenere o inviare dati da/a un server. I programmatori lo fanno per interagire con servizi web, scaricare file, ottenere dati JSON, ecc.
+## What & Why?
+Mandare una richiesta HTTP significa ordinare al tuo programma di chiacchierare con un server web. Questo lo fanno i programmatori per scambiare dati - pensa a scaricare una pagina web o a inviare un form.
 
-## Come fare:
-Per inviare una richiesta HTTP in Haskell, usiamo il pacchetto `http-client`. Ecco un esempio semplice per eseguire una richiesta GET.
+## How to:
+In Haskell, usiamo librerie come `http-conduit` per mandare richieste HTTP. Ecco un esempio veloce:
 
-```Haskell
-import Network.HTTP.Client 
-import Network.HTTP.Types.Status (statusCode)
+```haskell
+import Network.HTTP.Simple
 
 main :: IO ()
 main = do
-    manager <- newManager defaultManagerSettings
-
-    request <- parseRequest "http://httpbin.org/get"
-    response <- httpLbs request manager
-
-    putStrLn $ "Il codice di stato HTTP era: " ++ 
-               (show . statusCode . responseStatus $ response)
+    response <- httpBS "http://httpbin.org/get"
+    putStrLn $ "The status code was: " ++ show (getResponseStatusCode response)
+    print $ getResponseHeader "Content-Type" response
+    putStrLn $ "The body is: " ++ show (getResponseBody response)
 ```
 
-Quando esegui questo codice, riceverai un output simile a `"Il codice di stato HTTP era: 200"`
+Se avvii questo codice, otterrai qualcosa del tipo:
 
-## Approfondimento:
-(1) Inviare richieste HTTP in Haskell non era sempre così semplice. Prima dell'introduzione del pacchetto `http-client`, era necessario utilizzare librerie di più basso livello che richiedevano molto più codice.
-(2) Ci sono molte altre librerie Haskell per l'invio di richieste HTTP, come `http-conduit` e `wreq`, che forniscono un'interfaccia di alto livello per operazioni HTTP.
-(3) Le richieste HTTP in Haskell vengono inviate in maniera asincrona utilizzando schede verdi o thread leggeri.
+```
+The status code was: 200
+["application/json"]
+The body is: "<qui ci sarà il corpo della risposta>"
+```
 
-## Vedi Anche:
-1. Documentazione di `http-client`: https://hackage.haskell.org/package/http-client
-2. Tutorial di `http-conduit`: https://haskell-lang.org/library/http-conduit
-3. Documentazione di `wreq`: https://hackage.haskell.org/package/wreq
+## Deep Dive
+Haskell, bello e funzionale, non è stato il primo a fare richieste HTTP. Questo esiste da quando internet ha avuto bisogno di comunicare a distanza. Le alternative includono librerie come `Network.HTTP` o `wget` via `System.Process`. Quando invii una richiesta, sotto il cofano, la libreria gestisce la connessione TCP/IP, costruendo l'header HTTP e interpretando la risposta.
+
+## See Also
+- La documentazione di [`http-conduit`](https://hackage.haskell.org/package/http-conduit)
+- Tutorial Haskell su richieste HTTP: [School of Haskell](https://www.schoolofhaskell.com)
+- Leggi sulla [`Network.HTTP`](https://hackage.haskell.org/package/HTTP) library per un'altra prospettiva

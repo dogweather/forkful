@@ -1,7 +1,8 @@
 ---
-title:                "Debug-tulosteen tulostaminen"
-html_title:           "Bash: Debug-tulosteen tulostaminen"
-simple_title:         "Debug-tulosteen tulostaminen"
+title:                "Virheenjäljitystulosteiden tulostaminen"
+date:                  2024-01-20T17:52:39.867277-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Virheenjäljitystulosteiden tulostaminen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -10,53 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Go (Golang) Ohjelmoinnin Debug Tulostus 
+## What & Why? / Mitä & Miksi?
+Tulostaminen on tapa nähdä ohjelman työstämää dataa livenä. Ohjelmoijat käyttävät tulostusta virheiden etsimiseen ja koodin toiminnan varmistamiseen.
 
-## Mikä & Miksi?
-
-"Debug-tulostus" on tiedon lähettämistä konsoliin virheenkorjausta (debugging) varten. Ohjelmoijat käyttävät sitä selvittääkseen ohjelmakoodissaan olevat virheet.
-
-## Miten Näin:
-
-Simple esimerkki Go-koodista, joka tulostaa debug-informaatiota.
-
+## How to / Kuinka tehdä:
 ```Go
 package main
 
 import (
 	"fmt"
-	"runtime"
-	"path/filepath"
+	"log"
 )
 
-func Log(format string, a ...interface{}) {
-	_, file, line, _ := runtime.Caller(1)
-	fmt.Printf("%s:%d: ", filepath.Base(file), line)
-	fmt.Printf(format, a...)
-	fmt.Println()
-}
-
 func main() {
-	Log("Hello, %s", "world")
+	fmt.Println("Hello, Finland!") // Perustulostus
+
+	debugMsg := "Debug-viesti näkyy tässä."
+	fmt.Println(debugMsg) // Muuttujan tulostus
+
+	log.Println("Tämä on logitulostus.") // Logitulostus, sisältää ajan
 }
 ```
-
-Tämä tuottaa tulosteen, kuten:
-
+Käynnistäessäsi ohjelman, tulostus näyttää seuraavalta:
 ```
-main.go:17: Hello, world
+Hello, Finland!
+Debug-viesti näkyy tässä.
+2009/11/10 23:00:00 Tämä on logitulostus.
 ```
 
-## Syvällisempi Sukellus:
+## Deep Dive / Syvä sukellus
+Vianjäljitys on vanha konsti; sen juuret ovat aikojen alussa. Debug-tulosteet ovat helppoja, nopeita ja toimivia, mutta raskas virheenjäljitys voi vaatia lisätyökaluja, kuten `gdb` Go:lle. Go:ssa `fmt` ja `log` pakkaukset tarjoavat helpon tavan tulostaa. `fmt` tulostaa suoraan, kun taas `log` lisää aikaleiman ja mahdollisesti tiedostotiedot, mikä on hyödyllistä suuremmissa projekteissa.
 
-Debug-tulostuksella on pitkä historia, ja se on yksi vanhimmista virheenkorjausmenetelmistä. Go-kielessä on useita tapoja tehdä debug-tulostus, kuten esim. `fmt.Print` ja `log.Print` funktiot.
-
-On muitakin mahdollisuuksia tuottaa debug-tulostus, esimerkiksi `logrus` tai `zap` -kirjastot. Ne tarjoavat monipuolisemmat ominaisuudet, kuten lokitason hallinnan ja rakenteelliset logit.
-
-Käyttämämme `Log`-funktio käyttää `runtime.Caller`-funktiota saamaan tiedon siitä, missä ja milloin funktio kutsuttiin. Tämä on erittäin hyödyllistä, kun haluat tietää, mistä koodin osasta viesti tuli.
-
-## Katso Myös:
-
-1. Go virallinen dokumentaatio: [fmt](https://golang.org/pkg/fmt/), [log](https://golang.org/pkg/log/)
-2. Debug-tulostus kirjastot: [logrus](https://github.com/sirupsen/logrus), [zap](https://github.com/uber-go/zap)
-3. Runtime paketti: [runtime](https://golang.org/pkg/runtime/)
+## See Also / Katso Myös:
+- Go:n dokumentaatio fmt-paketista: https://pkg.go.dev/fmt
+- Go:n dokumentaatio log-paketista: https://pkg.go.dev/log
+- Blogikirjoitus Go:n vianjäljityksestä: https://blog.golang.org/debugging
+- Go:n virallinen vianjäljitystyökalu: https://golang.org/doc/gdb

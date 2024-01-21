@@ -1,6 +1,7 @@
 ---
 title:                "Extracting substrings"
-html_title:           "Arduino recipe: Extracting substrings"
+date:                  2024-01-20T17:46:05.047707-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extracting substrings"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,46 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Extracting substrings simply refers to the selection of a part or parts from a string. This is done by programmers to ensure data is displayed/manipulated in usable and meaningful chunks.
+Extracting substrings means pulling specific portions from a string. Programmers do it to process or manipulate data, like fetching a username from an email address or a file extension from a filename.
 
 ## How to:
-
-We can use the `substr()` function in PHP to extract substrings. Two key parameters are required: the starting point and length of the substring.
-
-```PHP
-<?php
-$string = "Welcome to PHP programming!";
-
-// Extract "Welcome" from string
-$substring = substr($string, 0, 7);
-echo $substring;  // Displays: Welcome
-```
-
-If you need to extract from the end of the string, use a negative starting point:
+PHP offers several functions to extract substrings. Let's check out `substr`, `mb_substr`, and `strstr`.
 
 ```PHP
-// Extract "programming!" from string
-$substring = substr($string, -12);
-echo $substring;  // Displays: programming!
+$string = "Hello, World! Programming is fun.";
+
+// Extract 'World' using substr.
+echo substr($string, 7, 5); // Output: World
+
+// UTF-8 string example with mb_substr for multi-byte characters.
+$utf8String = "こんにちは世界";
+echo mb_substr($utf8String, 5, 2); // Output: 世
+
+// Get everything after the comma with strstr.
+echo strstr($string, ","); // Output: , World! Programming is fun.
 ```
 
 ## Deep Dive
+Back in PHP's early days, the main way to snatch a piece of a string was `substr()`. However, `substr()` had (and still has) a limit: it doesn't play well with non-English characters (like Japanese or Arabic).
 
-The `substr()` function, a mainstay since PHP 4, has remained relevant because of its simple, yet powerful approach to string manipulation. 
+Enter `mb_substr()`, the multibyte-safe counterpart that respects characters from various encodings. It ensures that when you yank a substring, you're not tearing through a character mid-byte, which is crucial for international applications.
 
-An alternative to `substr()` is `mb_substr()`. This function works similar but its use is recommended when dealing with multi-byte characters like Japanese or emojis. 
+`strstr()`, on the other hand, finds the first occurrence of a substring and gives you everything after it. There's also `strchr()` which is an alias of `strstr()`.
 
-While `substr()` operates on bytes, `mb_substr()` works with characters, ideal for internationalization (i18n).
-
-Execution wise, the `substr()` function has a slight performance advantage, but in real-world scenarios, the difference is often negligible. 
+While `substr()` and `mb_substr()` let you specify precisely where to start and how much to take, `strstr()` is more like a "find and give me the rest" tool.
 
 ## See Also
+Here's some extra reading if you're hungry for more:
 
-For further reading and resources regarding string manipulation, refer to the PHP documentation:
-
-1. [PHP: substr - Manual](https://www.php.net/manual/en/function.substr.php)
-2. [PHP: mb_substr - Manual](https://www.php.net/manual/en/function.mb-substr.php)
-3. [PHP: Strings - Manual](https://www.php.net/manual/en/language.types.string.php)
-
-Be sure to understand the options, features and limitations of each function to pick the best tool for your task. Happy coding!
+- PHP Official Documentation for string functions: https://www.php.net/manual/en/ref.strings.php
+- A deep dive into PHP's multibyte string functions: https://www.php.net/manual/en/book.mbstring.php
+- More about character encoding and why it matters: http://kunststube.net/encoding/

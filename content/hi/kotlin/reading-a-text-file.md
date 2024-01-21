@@ -1,7 +1,8 @@
 ---
-title:                "एक पाठ फ़ाइल पढ़ना"
-html_title:           "Bash: एक पाठ फ़ाइल पढ़ना"
-simple_title:         "एक पाठ फ़ाइल पढ़ना"
+title:                "टेक्स्ट फ़ाइल पढ़ना"
+date:                  2024-01-20T17:55:12.289934-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "टेक्स्ट फ़ाइल पढ़ना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,30 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-वाचन (Reading) का अर्थ होता है - फ़ाइल में संग्रहीत डेटा को पढ़ना। कई बार, प्रोग्रामर्स को उनके एप्लिकेशन्स में लोकल्य या सर्वर पर मौजूद फ़ाइलों को पढ़ने की आवश्यकता होती है।
+## What & Why? (क्या और क्यों?)
 
-## कैसे:
-आइए देखें कि कोटलिन में टेक्स्ट फ़ाइल को कैसे पढ़ा जा सकता है:
+पाठ फाइल को पढ़ना मतलब उसके अंदर का डेटा निकालना। प्रोग्रामर्स इसे इसलिए करते हैं क्योंकि कई बार कॉन्फ़िगरेशन, डेटा इनपुट या लॉग फाइलों में स्टोर किए जाते हैं।
+
+## How to (कैसे करें):
 
 ```Kotlin
 import java.io.File
 
 fun main() {
-    val txtFile = File("test.txt")
-    txtFile.forEachLine { println(it) }
+    val data = File("example.txt").readText()
+    println(data)
 }
 ```
 
-इस कोड का उद्देश्य "test.txt" नामक फाइल को पढ़ना है और हर लाइन को प्रिंट करना।
+सैंपल आउटपुट:
+```
+नमस्कार! यह मेरा पहला कोटलिन प्रोग्राम है।
+```
 
-## गहराई में जाने:
-1. ऐतिहासिक संदर्भ: पहले, फ़ाइलों को पढ़ने के लिए `FileInputStream` और `BufferedReader` का उपयोग किया जाता था। लेकिन, Kotlin ने इसे आसान और सुविधाजनक बना दिया है।
+## Deep Dive (गहराई से जानकारी):
 
-2. विकल्प: अगर आपको एक से अधिक फ़ाइलों को पढ़ने की आवश्यकता है, तो `FileTreeWalk` और `filter` functions का उपयोग कर सकते हैं।
+पाठ फाइलें पढ़ना जावा में `java.io` और `java.nio` पैकेज के जरिए पहले से ही आसान था। कोटलिन में भी, यह `java.io.File` क्लास के एक्सटेंशन फंक्शन का इस्तेमाल करके सरल बन गया है। अलग-अलग तरीके हैं फाइल पढ़ने के जैसे `readLines()`, `forEachLine` जो अलग-अलग सिचुएशन में उपयोगी हैं, जैसे हर लाइन को इंडिविजुअली प्रोसेस करना। `InputStream` और `BufferedReader` यह भी ऑप्शन हैं जब आपको बड़ी फाइल्स को इफिशिएंटली हैंडल करना हो।
 
-3. क्रियान्वयन विवरण: `forEachLine` क्रिया हर लाइन को एक बार में प्राप्त करती है, जिससे हीप मेमोरी का उपयोग कम होता है।
+## See Also (और भी देखें):
 
-## देखें भी:
-1. [कोटलिन डॉक्यूमेंटेशन](https://kotlinlang.org/docs/tutorials/kotlin-for-py/file-io.html)
-2. [कोटलिन के File Reading के उदाहरण](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/read-text.html)
+- कोटलिन डॉक्यूमेंटेशन: [https://kotlinlang.org/docs/home.html](https://kotlinlang.org/docs/home.html)
+- `java.io.File` क्लास रेफरेंस: [https://docs.oracle.com/javase/7/docs/api/java/io/File.html](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)

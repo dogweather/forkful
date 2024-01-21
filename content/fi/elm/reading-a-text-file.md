@@ -1,6 +1,7 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Lua: Tekstitiedoston lukeminen"
+date:                  2024-01-20T17:54:31.428466-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,57 +11,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Tekstitiedoston lukeminen tarkoittaa tiedoston sisältämän tekstimateriaalin tuomista ohjelman käyttöön. Ohjelmoijat tekevät tämän, koska tiedostojen kautta voidaan käsitellä ja hyödyntää ulkoista dataa.
 
-Tekstitiedoston lukeminen tarkoittaa prosessia, jossa ohjelma avaa ja tulkitsee tietyssä tiedostossa olevan tiedon. Tätä tehdään, jotta ladatut, ulkoiset tai käyttäjän toimittamat tiedot voidaan sisällyttää sovelluksen toimintaan.
-
-## Kuinka:
-
-Elm (kuten monien muidenkin selaimessa ajettavien kielten) ei tue suoraa tiedoston luvun toiminnallisuutta turvallisuussyistä. Kuitenkin seuraava esimerkkikoodi, esittää miten selaimeen ladattu tiedosto voidaan lukea käyttäen `File.Reader` APIa:
+## How to:
+Elmissä tiedoston lukeminen tapahtuu yleensä JavaScriptin interaktiivisen toiminnan, kuten `FileReader` API:n kautta, käyttäen portaaleja (Elm ports). Tässä esimerkki:
 
 ```Elm
-import File exposing (File)
-import File.Select as Select
-import File.Reader as Reader
+port module Main exposing (..)
+
+-- Määritä portti tiedoston sisällön vastaanottamiseen
+port fileContent : (String -> msg) -> Sub msg
 
 type Msg
-    = Selected (Maybe File)
-    | Loaded (Result String String)
+    = ReceiveContent String
 
-update : Msg -> Model -> ( Model, Cmd Msg )
+-- Aloita tiedoston luku kun portti vastaanottaa datan
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    fileContent ReceiveContent
+
+-- Käsittele vastaanotettu tiedoston sisältö
+update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
     case msg of
-        Selected maybeFile ->
-            case maybeFile of
-                Nothing ->
-                    ( model, Cmd.none )
+        ReceiveContent content ->
+            ({ model | fileData = Just content }, Cmd.none)
 
-                Just file ->
-                    ( model, Reader.string file |> Task.attempt Loaded )
-
-        Loaded result ->
-            case result of
-                Err error ->
-                    ( model, Cmd.none )
-
-                Ok contents ->
-                    ( { model | content = contents }
-                    , Cmd.none
-                    )
+-- Näytä tiedoston sisältö käyttöliittymässä
+view : Model -> Html Msg
+view model =
+    div []
+        [ case model.fileData of
+              Just content ->
+                  text content
+              Nothing ->
+                  text "Ei vielä luettua sisältöä." ]
 ```
 
-## Syvempi sukellus
+JavaScriptissä voitaisiin käyttää jotain tällaista synkronoidaksemme Elm-koodin kanssa:
 
-Vaikka Elm:ää ei ole tarkoitettu suoraan tiedostojen lukemiseen, on se hyvin yhdistettävissä muihin koodikirjastoihin, jotka tarjoavat tämän toiminnallisuuden. Historiallisessa kontekstissa tiedostojen lukeminen on keskeinen osa ohjelmointia; se mahdollistaa tiedon säilyttämisen ja hakemisen.
+```JavaScript
+// Liitä HTML-elementissä tapahtuva tiedoston valinta
+document.getElementById('file-input').addEventListener('change', function(event) {
+    var reader = new FileReader();
+    reader.onload = function(event) {
+        var contents = event.target.result;
+        app.ports.fileContent.send(contents);
+    };
+    reader.readAsText(event.target.files[0]);
+});
+```
 
-Vaihtoehtoisesti, tiedot voidaan hakea verkosta HTTP-pyynnöllä tai Käyttöliittymästä (UI) käyttäjän syötteestä. Elm tarjoaa tavan tehdä molemmat nämä toiminnot.
+## Deep Dive
+Elmissä ei ole sisäänrakennettua tapaa tiedostojen lukemiselle, koska se keskittyy puhtaiden funktionaalisten paradigmojen noudattamiseen ja sivuvaikutusten minimoimiseen. Historiallisesti tiedostojen käsittely on tapahtunut JavaScript-rajapinnan kautta, mitä kutsutaan portaaleiksi (ports). Vaihtoehtoisesti tiedoston lukemisen voisi hoitaa myös palvelimella, josta data siirretään HTTP:n avulla.
 
-Elm:n tiedostojen lukemisen toteutus perustuu JavaScriptin File API:in, mutta se käsittelee sen sisäisiä yksityiskohtia omassa funktionaalisessa paradigmassaan.
+Vaikka Elm tarjoaa hyvän perustan frontend-sovelluksille, tiedoston lukemista on käsiteltävä JS:n maailmassa, koska se on selaimelle ominaista toiminnallisuutta. Se tarkoittaa sitä, että tietyt toiminnallisuudet ovat sovelluskehyksen ulkopuolella.
 
-## Katso myös
-
-Lisätietoja varten, katso seuraavia linkkejä:
-
-- Elm:n dokumentaatio: https://package.elm-lang.org/packages/elm/file/latest/
-- JavaScriptin File API: https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications
-- File Reader API: https://developer.mozilla.org/en-US/docs/Web/API/FileReader
+## See Also
+- Elm Portaaleista: https://guide.elm-lang.org/interop/ports.html
+- FileReader API: https://developer.mozilla.org/en-US/docs/Web/API/FileReader
+- Elm ja HTTP: https://package.elm-lang.org/packages/elm/http/latest/

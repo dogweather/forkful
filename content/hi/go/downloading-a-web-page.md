@@ -1,7 +1,8 @@
 ---
-title:                "एक वेब पेज डाउनलोड करना"
-html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
-simple_title:         "एक वेब पेज डाउनलोड करना"
+title:                "वेब पेज डाउनलोड करना"
+date:                  2024-01-20T17:44:15.698233-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "वेब पेज डाउनलोड करना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,14 +11,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+वेब पेज डाउनलोड करना मतलब है इंटरनेट से HTML डेटा को आपके कंप्यूटर पर सेव करना। प्रोग्रामर्स इसे डेटा विश्लेषण, वेब स्क्रैपिंग, और ऑफलाइन ब्राउजिंग के लिए करते हैं।
 
-वेब पेज डाउनलोड करना मतलब इंटरनेट से सूचना एकत्र करना। यह डेवलपर्स टास्क ऑटोमेटेट करने, डाटा एनालायज़, और वेब स्क्रेपिंग के लिए होता हैं।
-
-## कैसे करें:
-
-यहां Go लैंग्वेज में एक कोड उदाहरण है कि कैसे वेब पेज डाउनलोड किया जाता है:
-
+## How to: (कैसे करें:)
 ```Go
 package main
 
@@ -28,38 +25,29 @@ import (
 )
 
 func main() {
-	resp, err := http.Get("http://example.com/")
+	url := "http://example.com"
+	resp, err := http.Get(url)
 	if err != nil {
-		panic(err)
+		fmt.Println("Error:", err)
+		return
 	}
 	defer resp.Body.Close()
 
-	body, err := ioutil.ReadAll(resp.Body)
+	html, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		panic(err)
+		fmt.Println("Error reading HTML:", err)
+		return
 	}
 
-	fmt.Println(string(body))
+	fmt.Println(string(html))
 }
 ```
+इस कोड के चलने पर, आपको `example.com` का HTML डेटा दिखेगा।
 
-यह साधारण आउटपुट देता है:
+## Deep Dive (गहराई में जानकारी)
+वेब पेज डाउनलोडिंग की शुरुआत इंटरनेट के साथ ही हो गई थी। `http.Get` फंक्शन गो का एक पार्ट है जिसे `net/http` पैकेज में define किया गया है, और ये HTTP प्रोटोकॉल का इस्तेमाल करके वेब से डेटा उठाता है। विकल्पों में आपको curl लाइब्रेरीज, Selenium जैसे ब्राउज़र ऑटोमेशन टूल्स, और अन्य भाषाओं के HTTP लाइब्रेरीज मिलेंगे। बेस्ट प्रैक्टिस में फंक्शन्स का सही तरीके से हैंडल करना, एरर चेकिंग, और `defer` का इस्तेमाल करना शामिल है, जैसा कि ऊपर के उदाहरण में दिखाया गया है।
 
-```
-<!doctype html>
-<html>
-<head>
-<title>Example Domain</title>
-...
-</html>
-```
-
-## गहराई से जानकारी:
-
-- **ऐतिहासिक सन्दर्भ:** वेब पेज डाउनलोडिंग का उपयोग १९९० के दशक से देवलपर्स कर रहे हैं।
-- **विकल्प:** साइट हिट करने के अन्य लैंग्वेज में कोड लिखने के विकल्प भी हैं, जैसे कि Python, Java और JavaScript।
-- **कैसे काम करता है:** Go कोड सीधे टीसीपी/आईपी प्रोटोकॉल पर रिक्वेस्ट भेजता है। ये रिक्वेस्ट वेबसर्वर तक पहुंचती हैं, जो उससे जुड़ी HTML सूचना को डेटा पैकेट में लौटाता है।
-
-## इसके साथ देखिए:
-
-- HTTP रिक्वेस्ट के बारे में और जानने के लिए [Go Docs](https://golang.org/pkg/net/http/) का उपयोग करें।
+## See Also (और जानकारी के लिए)
+- Go के ऑफिसियल डॉक्युमेंटेशन में `net/http` पैकेज: https://golang.org/pkg/net/http/
+- वेब स्क्रैपिंग के लिए Go ट्यूटोरियल: https://scrapinghub.com
+- HTTP प्रोटोकॉल के बारे में MDN डॉक्युमेंटेशन: https://developer.mozilla.org/en-US/docs/Web/HTTP

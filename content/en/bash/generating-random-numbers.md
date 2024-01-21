@@ -1,6 +1,7 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Arduino recipe: Generating random numbers"
+date:                  2024-01-20T17:48:22.313078-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generating random numbers"
 programming_language: "Bash"
 category:             "Bash"
@@ -12,38 +13,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Generating random numbers in programming involves creating a sequence that can't be predicted logically. We use random number generation for tasks like creating unique identifiers, implementing game logic, or introducing randomness in machine learning data sets.
+Generating random numbers in Bash is all about creating unpredictable values. Programmers use them for stuff like security, games, simulations, or anywhere else you need a good mix-up.
 
-## How to
+## How to:
 
-Creating a random number in Bash is a piece of cake! Bash provides a built-in `$RANDOM` variable. Check out the example below:
+Bash has a nifty little variable called `$RANDOM`. It spits out a random integer between 0 and 32767.
 
 ```Bash
 echo $RANDOM
 ```
 
-Running the above command will yield a random number between 0 and 32767. For bigger numbers or to specify a range, you can do simple math with `$RANDOM`. For a random number between 1 and 100, you can do:
+Sample output might be:
 
-```Bash
-echo $(($RANDOM % 100 + 1))
+```
+10438
 ```
 
-`$RANDOM % 100` results in a number between 0 and 99, adding 1 shifts the range to be 1 and 100.
+Need a number in a different range? Easy. To get a random number between 0 and 100, do this:
+
+```Bash
+echo $(( $RANDOM % 101 ))
+```
+
+For a range with a minimum other than 0, say 50 to 100, try this:
+
+```Bash
+echo $(( $RANDOM % 51 + 50 ))
+```
 
 ## Deep Dive
 
-Historically `$RANDOM` is a pseudo-random number generator introduced by Bash, which comes with a limitation. The generated numbers are not cryptographically strong due to predictability. 
+The `$RANDOM` variable dates back to early versions of Bash. It's pseudorandom, meaning it uses an algorithm, so it's not truly random—fine for scripts but not for serious crypto stuff.
 
-In those cases where strength matters, you could use `/dev/random` or `/dev/urandom`. Here's an example to get a random number using `/dev/urandom`:
+Alternatives? Sure. There's `shuf` for shuffling lines or numbers, `awk` for a bit more programming power, and if you're up for some extra security, go for `/dev/random` or `/dev/urandom`.
 
-```Bash
-od -An -N2 -i /dev/urandom
-```
-
-Lastly, since `bash 4.2-alpha`, the `$RANDOM` variable is no longer based on the current time, making it more unpredictable.
+As for the nitty-gritty, `$RANDOM` gets its seeds from the process ID or time, which is why it's not cryptographically secure. For most script tasks, though, it's a champ.
 
 ## See Also
 
-1. Bash Guide for Beginners: https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_02.html
-2. Advanced Bash-scripting Guide: https://tldp.org/LDP/abs/html/randomvar.html
-3. Generate Random Numbers in Linux: https://www.binarytides.com/linux-command-random-number/
+- For more about Bash's `$RANDOM`, check the manual: https://www.gnu.org/software/bash/manual/bash.html#index-RANDOM
+- Dive into `shuf`: `man shuf` or https://man7.org/linux/man-pages/man1/shuf.1.html
+- A look at `awk`: `man awk` or https://www.gnu.org/software/gawk/manual/
+- To get your head around random numbers in computing, see: https://en.wikipedia.org/wiki/Random_number_generation

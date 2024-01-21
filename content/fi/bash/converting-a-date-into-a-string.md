@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän muuttaminen merkkijonoksi"
-html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+date:                  2024-01-20T17:35:46.690789-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,31 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Muunnetaan päivämäärä merkkijonoksi, koska jäsennellyt formaatit on helpompi jakaa ja käsitellä. Joskus tarvitaan tarkkaa muotoilua, esimerkiksi lokitiedostoissa tai rajapintavastauksissa.
 
-Päivämäärän muuntaminen merkkijonoksi on operaatio, jossa päivämääräobjekti esitetään luettavassa muodossa. Tätä suoritetaan usein, jotta päivämäärät voidaan helposti tallentaa, lajitella ja vertailla.
-
-## Näin se tehdään:
-
-Bashissa päivämäärän muuntaminen merkkijonoksi on yksinkertaista. Käytämme `date`-komentoa ja formatoitua ulostuloa:
-
+## How to:
 ```Bash
-# Nykyinen päivämäärä ja aika
-date +"%Y-%m-%dT%H:%M:%S"
+# Tämänhetkinen päivä standardimuodossa
+date_iso=$(date --iso-8601)
+echo $date_iso
+# Output esimerkiksi: 2023-04-12
+
+# Mukautettu päivämäärän muotoilu
+date_custom=$(date '+%Y-%m-%d %H:%M:%S')
+echo $date_custom
+# Output esimerkiksi: 2023-04-12 15:30:45
 ```
-Esimerkiksi tuloste voisi olla `2023-03-28T12:13:14`.
 
-## Syvempi sukellus
+## Deep Dive
+Bash sisältää `date`-komennon päivämäärän käsittelyyn, mukaan lukien muunnokset merkkijonoiksi. Historiallisesti Unix-järjestelmissä päivämäärän käsittely on aina ollut keskeistä, ja `date` on säilynyt tärkeänä työkaluna. Vaihtoehtoina on muita työkaluja kuten `strftime` Pythonissa, joka tarjoaa samankaltaista joustavuutta. Tarkka muotoilu tapahtuu formatointimerkkijonojen avulla, joissa esimerkiksi `%Y` edustaa nelinumeroista vuotta ja `%H:%M:%S` edustaa kelloaikaa.
 
-Historiallisesti Unix-tyyliset järjestelmät ovat käyttäneet `date`-komentoa ja sen formaatteja. Vaihtoehtoisina menetelminä voidaan käyttää muita komentoja tai kielikirjastoja, kuten Pythonin `datetime`.
-
-Muunnos perustuu suoraan C-kielen `strftime`-funktioon. Sitä muutetaan kuvauksen mukaan, määrittämällä aikaleimat formatoiduissa merkkijonoissa.
-
-## Katso myös
-
-Seuraavat linkit ovat hyödyllisiä tutkittaessa lisää:
-
-1. Bash: https://www.gnu.org/software/bash/
-2. strftime: http://man7.org/linux/man-pages/man3/strftime.3.html
-3. Python datetime: https://docs.python.org/3/library/datetime.html
-4. GNU Core Utilities (`date` sivu): https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+## See Also
+- GNU coreutils `date` manuaalisivu: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+- Bash Datei-käsittelytyökalut: https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/
+- Advanced Bash-Scripting Guide – Päivämäärät ja Ajat: https://tldp.org/LDP/abs/html/dates.html

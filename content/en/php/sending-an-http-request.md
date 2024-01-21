@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request"
-html_title:           "Bash recipe: Sending an http request"
+date:                  2024-01-20T18:00:24.778839-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,45 +12,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-HTTP requests are the cornerstone of data exchange on the web, enabling your PHP script to communicate with a server. You send HTTP requests to post data to a server, fetch data for your app, or update existing data.
+
+Sending an HTTP request is the process by which a program asks for data from a server. Programmers do it to interact with web services, APIs, or to simply fetch web page content.
 
 ## How to:
-To send HTTP requests in PHP, we can use either cURL or file_get_contents. 
 
-Below is an example using cURL:
-```PHP
-$url = "http://example.com";
-$ch = curl_init(); 
-curl_setopt($ch, CURLOPT_URL, $url); 
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$result = curl_exec($ch); 
-curl_close($ch);
-echo $result;
-```
-The output will be the contents of the http://example.com page.
+PHP's got a neat way to handle HTTP requests with the `cURL` library. But the newer kid on the block is using `file_get_contents` for simpler GET requests, or the `stream_context_create` for POST requests. Here's a quick look at both.
 
-Here's an example using file_get_contents:
-```PHP
-$url = "http://example.com";
-$result = file_get_contents($url);
-echo $result;
+### GET Request with file_get_contents():
+```php
+// The URL you're hitting up
+$url = "http://example.com/api";
+
+// Use file_get_contents to perform a GET request
+$response = file_get_contents($url);
+
+// Dump output to see what you got
+var_dump($response);
 ```
-Just like the cURL example, the output is the contents of http://example.com.
+
+### POST Request with stream_context_create():
+```php
+// The URL you're posting to
+$url = "http://example.com/api";
+
+// The data you're sending
+$data = http_build_query([
+    'foo' => 'bar',
+    'baz' => 'qux',
+]);
+
+// Stream context options
+$options = [
+    'http' => [
+        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+        'method'  => 'POST',
+        'content' => $data,
+    ],
+];
+
+// Create a stream context
+$context  = stream_context_create($options);
+
+// Perform the POST request and put the response in a variable
+$result = file_get_contents($url, false, $context);
+
+// See what you've received
+var_dump($result);
+```
 
 ## Deep Dive
-Historically, PHP developers used cURL to send HTTP requests. But with the introduction of file_get_contents in PHP 4.3.0, we got a more straightforward way to get the file contents, including HTTP data. 
 
-If your request is simple, use file_get_contents. For advanced options like specifying headers for the request or sending POST data, cURL is the way to go. 
+Back in the day, `fsockopen()` was the go-to for PHP HTTP requests. It was clumsy, but it got the job done. Then along came `cURL`, still powerful and widely used, especially for complex operations. But sometimes, you don't need a chainsaw to cut a piece of string. That's where `file_get_contents()` and `stream_context_create()` shine. 
 
-Implementation-wise, the cURL method brings overhead, initializing and configuring a cURL session with curl_init() and curl_setopt(). On the other hand, file_get_contents is a simple function call.
- 
-There's also a fresh player in town: GuzzleHttp, a PHP HTTP client that makes HTTP requests much easier. Its best parts? Error handling and the ability to send asynchronous requests.
+One key thing about `file_get_contents()` is it’s simplicity. Perfect for simple GET requests. But what if you need to POST data? Enter `stream_context_create()`. This little gem lets you fine-tune your HTTP requests with headers, methods, and more.
+
+Under the hood, `file_get_contents()` and `stream_context_create()` use PHP’s stream wrappers. These replace the low-level socket operations handled by `fsockopen()`.
+
+One drawback? Error handling can be trickier. If something goes south, these functions are less forgiving than `cURL`. If you need detailed response info or have to deal with complex HTTP tasks, consider sticking with `cURL`.
 
 ## See Also
-*PHP.net cURL*: [https://www.php.net/manual/en/book.curl.php](https://www.php.net/manual/en/book.curl.php)
 
-*PHP.net file_get_contents*: [https://www.php.net/manual/en/function.file-get-contents.php](https://www.php.net/manual/en/function.file-get-contents.php)
-
-*Guzzle Documentation*: [http://docs.guzzlephp.org/en/stable/](http://docs.guzzlephp.org/en/stable/)
-
-Short but juicy, that's it for HTTP requests in PHP. Happy coding!
+- cURL's official PHP doc: [https://www.php.net/manual/en/book.curl.php](https://www.php.net/manual/en/book.curl.php)
+- PHP stream contexts: [https://www.php.net/manual/en/context.php](https://www.php.net/manual/en/context.php)
+- HTTP context options: [https://www.php.net/manual/en/context.http.php](https://www.php.net/manual/en/context.http.php)

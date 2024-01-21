@@ -1,6 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-html_title:           "Haskell: Drukowanie komunikatów debugowania"
+date:                  2024-01-20T17:51:48.082105-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,45 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Wypisywanie informacji diagnostycznych (debug) pomaga śledzić, co się dzieje w programie. Używamy tego, by szybko znaleźć i naprawić błędy.
 
-Drukowanie komunikatów diagnostycznych (debug output) to metoda, która pozwala programistom śledzić wartości zmiennych i stan programu podczas jego działania. Dzięki temu, mogą oni łatwo lokalizować i rozwiązywać problemy, które pojawiają się w trakcie działania programu.
-
-## Jak to zrobić:
-
-Aby wydrukować komunikat diagnostyczny w Arduino, używamy funkcji `Serial.print()`. Poniżej znajduje się przykładowy kod i jego wyjście:
-
+## How to: (Jak to zrobić:)
 ```Arduino
 void setup() {
-  Serial.begin(9600); // Inicjalizacja portu szeregowego
+  Serial.begin(9600); // Start Serial Communication
 }
 
 void loop() {
-  int sensorValue = analogRead(A0); // Odczyt wartości z pinu A0
-  Serial.print("Sensor Value: "); 
-  Serial.println(sensorValue); // Drukowanie wartości z sensora
-  delay(1000); // Czekaj sekundę 
+  Serial.println("Hello, Debug!");
+  delay(1000); // Wait for a second
 }
 ```
-
-Po uruchomieniu, otrzymasz poniższy wynik na podglądzie szeregowym:
-
+Wynik w monitorze portu szeregowego:
 ```
-Sensor Value: 455
-Sensor Value: 460
-Sensor Value: 465
+Hello, Debug!
+Hello, Debug!
 ...
 ```
 
-## Głębsze spojrzenie:
+## Deep Dive (Dogłębna analiza)
+Wypisywanie informacji diagnostycznych nie zawsze było takie łatwe jak dziś. W starych mikrokontrolerach wymagało to sprytnych rozwiązań, jak migające diody. Alternatywą dla Serial jest używanie zewnętrznych wyświetlaczy lub nawet wysłanie danych do sieci. W Arduino informacje diagnostyczne są wypisywane przez port szeregowy, który jest połączony z USB, pozwalając komunikację z komputerem.
 
-W swojej najprostszej formie, drukowanie komunikatów diagnostycznych zostało wprowadzone w czasach, kiedy pamięć była cenna, a debuggery nie istniały. Programiści używali go, aby śledzić jak ich kod obchodził się z pamięcią i znajdywał błędy. 
-
-Innym podejściem jest użycie narzędzi do debugowania (debuggers), które mogą dostarczyć o wiele więcej informacji na temat działania programu, ale są też bardziej skomplikowane do użycia.
-
-W Arduino, drukowanie komunikatów diagnostycznych jest realizowane za pomocą interfejsu szeregowego, co oznacza, że są one transmitowane z płytki Arduino do komputera za pomocą tego samego kanału, którym jest przesyłany program.
-
-## Zobacz także:
-
-1. Dokumentacja Arduino na temat drukowania na porcie szeregowym: [Serial.print()](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
-2. Poradnik na temat debugowania programów Arduino: [Debugging Arduino Code](https://www.arduino.cc/en/Tutorial/LibraryExamples/SoftwareSerialExample)
+## See Also (Zobacz także)
+- Dokumentacja Arduino `Serial`: https://www.arduino.cc/reference/en/language/functions/communication/serial/
+- Jak użyć monitora portu szeregowego: https://www.arduino.cc/en/Guide/Environment#serial-monitor
+- Wprowadzenie do debugowania w Arduino: https://learn.adafruit.com/introduction-to-the-arduino-ide/serial-monitor

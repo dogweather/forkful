@@ -1,7 +1,8 @@
 ---
-title:                "Interpolation d'une chaîne de caractères"
-html_title:           "Ruby: Interpolation d'une chaîne de caractères"
-simple_title:         "Interpolation d'une chaîne de caractères"
+title:                "Interpolation de chaînes de caractères"
+date:                  2024-01-20T17:51:11.019923-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolation de chaînes de caractères"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,41 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce et pourquoi?
+## What & Why?
+(L'interpolation de chaînes : Quoi et Pourquoi ?)
 
-L'interpolation de chaînes en Java permet d'insérer des variables directement dans une chaîne de caractères. C'est utile pour rendre le code plus lisible et pour générer des messages de log dynamiques.
+L'interpolation de chaînes permet d'insérer des valeurs variables dans des textes fixes. C'est pratique pour assembler des messages ou des formats personnalisés sans s'embrouiller avec la concaténation.
 
-## Comment faire:
+## How to:
+(Comment faire :)
 
-Voici un exemple simple utilisant `String.format()` :
-```Java
-String name = "John";
-String greeting = String.format("Bonjour, %s!", name);
-System.out.println(greeting);  // Affiche: Bonjour, John!
+En Java, depuis les versions précédentes, on utilisait `String.format`. Avec Java 13, l'interpolation de chaînes a été simplifiée grâce au Text Blocks. Voici comment :
+
+```java
+// Méthode classique avec String.format
+String nom = "Audrey";
+String message = String.format("Salut, %s ! Comment ça va ?", nom);
+System.out.println(message); // Output: Salut, Audrey ! Comment ça va ?
+
+// Avec l'aperçu de Text Blocks (Java 13 en mode preview)
+String nomUtilisateur = "Xavier";
+String texte = """
+               Bonjour, %s !
+               Bienvenue sur notre site.
+               """.formatted(nomUtilisateur);
+System.out.println(texte);
+// Output:
+// Bonjour, Xavier !
+// Bienvenue sur notre site.
 ```
-Notez l'utilisation de `%s` comme marqueur de place pour la variable `name`.
 
-On peut aussi utiliser `MessageFormat.format()` pour obtenir le même résultat :
+## Deep Dive:
+(Exploration détaillée :)
 
-```Java
-import java.text.MessageFormat;
+Historiquement, l'interpolation de chaînes n'était pas intégrée à Java ; on utilisait `+` ou `StringBuilder`. Ensuite, `String.format` et `MessageFormat` offraient plus de contrôle mais étaient plus verbeux.
 
-String name = "John";
-String greeting = MessageFormat.format("Bonjour, {0}!", name);
-System.out.println(greeting);  // Affiche: Bonjour, John!
-```
+Les langages modernes comme Kotlin ou Scala ont intégré l'interpolation, influençant Java. Avec Java 13, les Text Blocks sont une réponse partielle à ce besoin, bien que toujours en développement.
 
-Ici, {0} est un index basé sur zéro qui pointe vers le premier argument dans la liste de paramètres.
+En interne, lorsqu'on interpole avec `String.format`, Java utilise des regex pour remplacer les placeholders. C'est efficace, mais avec Text Blocks, on a une meilleure lisibilité et on peut espérer des optimisations futures au niveau du compilateur.
 
-## Plongée profonde
+## See Also:
+(Voir aussi :)
 
-Historiquement, l'interpolation de chaînes a été introduite en C avec `printf()`. Elle a été adoptée par de nombreux autres langages, chacun avec sa propre implémentation.
-
-En ce qui concerne les alternatives en Java, nous avons également la concaténation de chaînes avec `+`, mais elle peut être moins performante et moins lisible pour les chaînes longues ou complexes.
-
-Sous le capot, `String.format()` et `MessageFormat.format()` utilisent les classes `java.util.Formatter` et `java.text.MessageFormat` respectivement. Ces dernières utilisent un buffer pour construire la chaîne de caractères, ce qui est plus efficace que la concaténation simple.
-
-## Voir aussi
-
-- API Java Docs pour [String.format()](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)) et [MessageFormat.format()](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/text/MessageFormat.html#format(java.lang.Object))
-- Comparaison de performance entre `String.format()` et la concaténation de chaînes sur [Stack Overflow](https://stackoverflow.com/questions/513600/should-i-use-java-string-format-if-performance-is-important)
+- JEP 355: Text Blocks (https://openjdk.java.net/jeps/355) pour une explication détaillée des Text Blocks.
+- La documentation officielle de`String.format` (https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)) pour tout savoir sur le formatage de chaînes.
+- Kotlin documentation sur l'interpolation de chaînes (https://kotlinlang.org/docs/reference/basic-types.html#string-templates) offre un aperçu d'une approche alternative dans un langage JVM voisin.

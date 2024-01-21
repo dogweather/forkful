@@ -1,6 +1,7 @@
 ---
 title:                "Printing debug output"
-html_title:           "Arduino recipe: Printing debug output"
+date:                  2024-01-20T17:52:15.932187-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Printing debug output"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,49 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Printing debug output refers to generating messages to track code execution. Programmers use it to isolate and identify issues, trace code execution, and verify correctness. 
+Printing debug output is like leaving breadcrumbs in your code: it shows the trail of data and logic flow during execution. Programmers use it to track down pesky bugs and to understand whether their code is behaving as expected.
 
 ## How to:
-
-In Clojure, you have several options to print debug output. The most common one is using `println`. Let's demonstrate a simple example:
-
-```Clojure
-(defn add-numbers [a b]
-  (let [sum (+ a b)]
-    (println "Debug: " sum)
-    sum))
-```
-
-When you run `(add-numbers 1 2)`, you will see the following output:
+In Clojure, you often print debug output using `println`, `printf`, `pr`, or `prn`. Here's how you sprinkle in some debug prints:
 
 ```Clojure
-Debug: 3
+(defn add-and-print [a b]
+  (println "Adding:" a "and" b) ; Prints the operation
+  (let [result (+ a b)]
+    (println "Result:" result)  ; Prints the result
+    result))                    ; Returns the result
+
+(add-and-print 3 4)
+```
+Sample Output:
+```
+Adding: 3 and 4
+Result: 7
 ```
 
-## Deep Dive
-
-The concept of printing debug output has been around since the early days of programming. It's usually valuable during development but can clutter the output in production.
-
-While `println` is an easy way to print debug output, Clojure has alternatives too. One of the popular libraries used for this is `tools.logging`.
-
-Here is how you can do logging using `tools.logging`:
+Or, to debug values in the middle of a threading macro:
 
 ```Clojure
-(ns my-ns
-  (:require [clojure.tools.logging :as log]))
+(require '[clojure.pprint :refer [pprint]])
 
-(defn add-numbers [a b]
-  (let [sum (+ a b)]
-    (log/info "Debug: " sum)
-    sum))
+(-> 3
+    (+ 5)
+    (pprint)             ; Prints intermediate result
+    (* 2))
+```
+Sample Output:
+```
+8
 ```
 
-Remember, `println` directly outputs to the console, whereas `tools.logging` gives you more control as you can configure where you want to log (console, file, etc.). 
+## Deep Dive:
+Print debugging has a long history, probably as old as programming itself. It's straightforward: you insert print statements where you suspect problems might lie, run the code, and look at the output.
 
-## See Also
+Clojure's functions for debug printing are quite similar to those in other Lisp languages, but with the usual functional flavor. `println` and `prn` differ in that the latter writes data in a way that can be read by the Clojure reader. `pprint` (pretty print) from `clojure.pprint` can be used when you want a nicer format.
 
-Additional information and related topics can be found at:
+A Clojure-specific tool for debugging is `tap>`. Introduced in Clojure 1.10, it allows for non-blocking 'taps' into running code without having to litter your code with print statements.
 
-1. [Tools.Logging Clojure Documentation](https://clojure.github.io/tools.logging/)
-3. [Clojure - A Beginner’s Guide](https://www.braveclojure.com/getting-started/)
+For larger or more complex projects, consider a logging library like `clojure.tools.logging` or `timbre`.
+
+## See Also:
+- [`clojure.tools.logging`](https://github.com/clojure/tools.logging) GitHub repository
+- [Timbre logging library](https://github.com/ptaoussanis/timbre) GitHub repository
+- [`clojure.pprint`](https://clojuredocs.org/clojure.pprint/pprint) documentation on ClojureDocs

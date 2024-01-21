@@ -1,6 +1,7 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "Java: Interpolando uma string"
+date:                  2024-01-20T17:50:05.803938-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolando uma string"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,37 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Interpolação de Strings no Arduino (Versão Recente)
+## What & Why?
+Interpolar uma string é encaixar valores de variáveis dentro dela. Programadores usam isso para facilitar a montagem de mensagens dinâmicas ou para exibir dados variáveis de forma legível.
 
-## O Que & Por Quê?
-
-A interpolação de strings é uma maneira de inserir variáveis diretamente em uma string. Os programadores fazem isso para facilitar a manipulação de strings e melhorar a legibilidade do código.
-
-## Como Fazer:
-
-Aqui está um exemplo de como interpolar uma string no Arduino:
+## How to:
+Em Arduino, usamos a função `sprintf` para interpolar strings. Veja o código e sua saída:
 
 ```Arduino
-String nome = "João";
-String saudacao = "Olá, " + nome + "!";
-Serial.println(saudacao);
+char buffer[50];
+int temperatura = 23;
+sprintf(buffer, "A temperatura atual é %d°C", temperatura);
+Serial.begin(9600);
+Serial.println(buffer);
+```
+Saída:
+```
+A temperatura atual é 23°C
 ```
 
-O resultado da saída seria:
+## Deep Dive
+A função `sprintf` vem da linguagem C, usada para formatar strings há décadas. Alternativas incluem a concatenação manual de strings mas isso é menos prático. Na interpolação via `sprintf`, você define um template com "placeholders" como `%d` para inteiros. Cuidado com o tamanho do buffer para evitar overflow!
 
-```Arduino
-Olá, João!
-```
-
-## Mergulho Profundo
-
-Historicamente, A interpolação de strings não era suportada diretamente no C e C++ e os programadores tinham que usar a função `sprintf()`. O Arduino, que usa uma forma de C++, introduziu a classe `String` que tem muitas funções úteis, incluindo a sobrecarga do operador + para concatenação, permitindo a interpolação de strings.
-
-As alternativas são para usar a função `snprintf()` que é mais segura do que `sprintf()` porque verifica o comprimento da string, ou a função `concat()` da classe `String` do Arduino.
-
-Os detalhes da implementação são que o operador + para strings foi sobrecarregado para permitir a concatenação e, consequentemente, a interpolação de strings.
-
-## Ver Também
-
-- Visite a [Documentação Oficial do Arduino](https://www.arduino.cc/reference/en/) para aprender mais sobre a classe String e outras funcionalidades.
-- Leia sobre a [Função Sprintf em C++](https://www.cplusplus.com/reference/cstdio/sprintf/) para aprofundar no uso dessa alternativa de concatenação.
+## See Also
+- Documentação Arduino `sprintf`: https://www.arduino.cc/reference/en/language/functions/communication/serial/print/
+- Tutorial C `sprintf`: https://www.cplusplus.com/reference/cstdio/sprintf/

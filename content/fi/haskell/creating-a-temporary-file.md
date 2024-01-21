@@ -1,7 +1,8 @@
 ---
-title:                "Tilapäisen tiedoston luominen"
-html_title:           "Arduino: Tilapäisen tiedoston luominen"
-simple_title:         "Tilapäisen tiedoston luominen"
+title:                "Väliaikaistiedoston luominen"
+date:                  2024-01-20T17:40:30.297396-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Väliaikaistiedoston luominen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,48 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+Mitä & Miksi?
+Luodaan väliaikainen tiedosto vastaanottamaan dataa, joka ei tarvitse pysyväistä tallennusta. Käytetään testauksessa, väliaikaisessa datan säilytyksessä ja tilanteissa, missä data muuttuu nopeasti.
 
-Tilapäiset tiedostot ovat tiedostoja, jotka luodaan tallentamaan väliaikaista tietoa. Ohjelmoijat käyttävät niitä tallentamaan suuria määriä tietoa, jota ei tarvitse säilyttää pitkäaikaisesti.
-
-## Näin teet:
-
-Voimme luoda väliaikaiset tiedostot Haskellissa `System.IO.Temp` -kirjastoa käyttäen.
+## How to:
+Miten:
+Haskell antaa käteviä kirjastoja väliaikaisten tiedostojen käsittelyyn, kuten `temporary`. Tässä esimerkki sen käytöstä:
 
 ```Haskell
+import System.IO
 import System.IO.Temp
 
-esimerkki = withSystemTempFile "temp.txt" $ \tempPath tempHandle -> do
-  hPutStrLn tempHandle "Tämä on väliaikainen tiedosto Haskellissa"
-  hClose tempHandle
-  contents <- readFile tempPath
-  putStrLn contents
+main :: IO ()
+main = withSystemTempFile "tempfile.txt" $ \tempFilePath tempFileHandle -> do
+  -- Käytä temporary-tiedostoa tempFileHandle kautta
+  hPutStrLn tempFileHandle "Tämä on väliaikainen tiedosto"
+  -- Luet tiedoston sisältö
+  hSeek tempFileHandle AbsoluteSeek 0
+  content <- hGetContents tempFileHandle
+  putStrLn content
+  -- Tiedosto poistetaan automaattisesti 
 ```
 
-Kun suoritat tämän koodin, se luo väliaikaisen tiedoston, kirjoittaa sen sisältöön, sitten lukee ja tulostaa sen sisällön. Tiedosto poistetaan automaattisesti `withSystemTempFile`-funktion suorittamisen jälkeen.
-
-## Syvä sukellus:
-
-Väliaikaisten tiedostojen luomisen historiassa yksi suurimmista haasteista oli turvallisuus. Haskell tarjoaa ratkaisun tähän käyttämällä ainutlaatuista tiedostonimeä joka kerta `withSystemTempFile`-funktion avulla.
-
-Jos ei halua käyttää `System.IO.Temp`-kirjastoa, voit luoda tiedoston manuaalisesti ja hallita sen elinkaarta itse. 
-
-```Haskell 
-import System.IO 
-
-esimerkki2 = do 
-  let tempPath = "temp2.txt"
-  writeFile tempPath "Toinen esimerkki väliaikaisesta tiedostosta"
-  contents <- readFile tempPath
-  putStrLn contents 
-  removeFile tempPath
+Tuloste:
+```
+Tämä on väliaikainen tiedosto
 ```
 
-Tämä on hyvä vaihtoehto, jos haluat hallita itse tiedoston elinkaarta, mutta vaatii muistaa poistaa tiedosto, kun sitä ei enää tarvita.
+## Deep Dive:
+Syväsukellus:
+Haskellissa väliaikaisten tiedostojen käsittely juontaa juurensa UNIX-järjestelmien perinteisiin. `temporary`-kirjaston käyttö on suosittu lähestymistapa, mutta vaihtoehtojakin on. Voisit esim. käyttää alhaisen tason POSIX-kutsuja tai `base`-paketin `System.IO`-moduulia. `withSystemTempFile` siivoaa itse itsensä, jolloin sinun ei tarvitse huolehtia väliaikaisten tiedostojen poistamisesta.
 
-## Katso Myös:
+## See Also:
+Katso Myös:
+- `temporary` dokumentaatio: https://hackage.haskell.org/package/temporary
+- System.IO.Temp moduulin GTK-kirjaston dokumentaatio: https://hackage.haskell.org/package/base/docs/System-IO-Temp.html
+- Blogi väliaikaisten tiedostojen turvallisesta käytöstä Haskellissa: [linkki tarkkaan blogiin]
+- Haskellin IO-tutoriaali: http://learnyouahaskell.com/input-and-output
 
-- Haskellin virallisista dokumentaatioista löydät lisätietoa `System.IO.Temp` -kirjastosta:
-  - [System.IO.Temp](https://hackage.haskell.org/package/temporary-0.3.0.1/docs/System-IO-Temp.html)
-- Lisätietoja tiedostojen kanssakäymisestä Haskellissa:
-  - [Learn You a Haskell - Tiedostot ja virranhallinta](http://learnyouahaskell.com/input-and-output)
+Muista, että sivustot ja dokumentaatiot voivat muuttua, joten tarkista aina ajantasaisuus ennen käyttöä.

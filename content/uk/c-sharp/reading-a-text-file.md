@@ -1,6 +1,7 @@
 ---
 title:                "Читання текстового файлу"
-html_title:           "Arduino: Читання текстового файлу"
+date:                  2024-01-20T17:54:23.671014-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Читання текстового файлу"
 programming_language: "C#"
 category:             "C#"
@@ -10,14 +11,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## Що це таке & Навіщо?
+Читання текстового файлу — це процес здобування даних з файлу, який містить текст. Програмісти роблять це для отримання інформації, налаштувань, даних для обробки та іншого.
 
-Читання текстового файлу є процесом вилучення даних із текстового файлу, програмно реалізованим у коді. Програмісти це роблять, щоб маніпулювати даними, збереженими у форматі тексту, або щоб завантажити конфігураційні параметри для свого програмного забезпечення.
-
-## Як це зробити:
-
-Приклад читання текстового файлу в C#:
-
+## Як це робити:
 ```C#
 using System;
 using System.IO;
@@ -26,24 +23,41 @@ class Program
 {
     static void Main()
     {
-        string path = @"C:\YourDir\YourFile.txt";
-
-        string readText = File.ReadAllText(path);
-        Console.WriteLine(readText);
+        // Шлях до файлу.
+        string filePath = "example.txt";
+        
+        // Читаємо всі рядки (самий безпечний спосіб для коротких файлів).
+        try
+        {
+            string[] lines = File.ReadAllLines(filePath);
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
+        }
+        catch (IOException e)
+        {
+            Console.WriteLine("Не вдалося прочитати файл:");
+            Console.WriteLine(e.Message);
+        }
     }
 }
 ```
-Вищевказаний код відкриває файл `YourFile.txt`, читає його повністю, а потім видає його вміст у консоль. 
 
-## Поглиблений матеріал
+**Вихідні дані:**
+```
+// Це приклад тексту в файлі example.txt.
+Перший рядок тексту.
+Другий рядок тексту.
+...
 
-* Історичний контекст: Функція читання текстового файлу завжди була важливою частиною програмування, так як текстові файли є одним з найперших методів збереження і передачі даних.
-* Альтернативи: Існують інші методики читання тектового файлу, наприклад, використання `StreamReader`, який може бути більш ефективним для великих файлів. Також `File.ReadLines()` може бути використано для ітерації по рядках.
-* Подробиці реалізації: `File.ReadAllText()` читає текстовий файл повністю в пам'ять перед тим, як його повернути. Це спрощує читання файлів, але може створити проблеми з використанням пам'яті для дуже великих файлів.
+// Виведення в консоль буде аналогічним тексту у файлі.
+```
 
-## Додатково
+## Поглиблено:
+Читання файлів — давня практика. Раніше, коли оперативної пам'яті було мало, файлові системи мали іншу структуру. Сьогодні ми маємо багато способів читання текстових файлів у C#: `File.ReadAllLines()`, `File.ReadAllText()`, `StreamReader` тощо. `File.ReadAllLines()` є зручним для маленьких файлів, а `StreamReader` краще підходить для великих файлів, оскільки він читає дані порціями. Слід пам'ятати про обробку винятків, адже робота з файлами може бути непередбачуваною (файл може бути відсутнім, пошкодженим або заблокованим).
 
-Слідкуйте за цими посиланнями, щоб отримати додаткову інформацію:
-
-* [C# StreamReader Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-5.0)
-* [File.ReadLines Method in C#](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readlines?view=net-5.0)
+## Дивіться також:
+- Microsoft Docs zur "StreamReader" Klasse: [https://docs.microsoft.com/dotnet/api/system.io.streamreader](https://docs.microsoft.com/dotnet/api/system.io.streamreader)
+- Microsoft Docs zur "File" Klasse Methoden: [https://docs.microsoft.com/dotnet/api/system.io.file](https://docs.microsoft.com/dotnet/api/system.io.file)
+- Stack Overflow: Поширені проблеми при читанні файлів: [https://stackoverflow.com/questions/tagged/c%23+file-io](https://stackoverflow.com/questions/tagged/c%23+file-io)

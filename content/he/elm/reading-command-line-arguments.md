@@ -1,7 +1,8 @@
 ---
-title:                "קריאה של ארגומנטים משורת הפקודה"
-html_title:           "C#: קריאה של ארגומנטים משורת הפקודה"
-simple_title:         "קריאה של ארגומנטים משורת הפקודה"
+title:                "קריאת פרמטרים משורת הפקודה"
+date:                  2024-01-20T17:57:15.501564-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "קריאת פרמטרים משורת הפקודה"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,33 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-קריאת ארגומנטים משורת הפקודה זו בעצם אמצעי של התקשרות עם תוכנה בזמן הרצה. מתכנתים משתמשים בזה כדי לאפשר לקוד שלהם להתאים את עצמו למגוון מצבים ולקבל כניסות משתמש במהלך ההרצה.
+## מה ולמה?
+קריאת ארגומנטים משורת הפקודה זה התהליך שבו התוכנה שלך מקבלת נתונים משורת הפקודה. תכניתאים עושים את זה כדי לאפשר גמישות והתאמה עצמית של הפעלת התוכנית ללא צורך בשינוי קוד.
 
-## כיצד לכתוב:
-חשוב לציין שElm אינו תומך בקריאת ארגומנטים מהשורת הפקודה באופן ישיר. אבל, אפשר להיעזר בJavaScript באמצעות שימוש ב-Elm ports.
-אז נראה דוגמה:
+## איך לעשות:
+Elm לא תומך ישירות בקריאת ארגומנטים משורת הפקודה בדומה לשפות כמו Python או Node.js, מכיוון שהיא עוסקת בעיקר בפיתוח של Front-End לאינטרנט. עם זאת, אם אתה רוצה להשתמש ב-Elm עבור סקריפטינג על המחשב האישי שלך, תצטרך לעטוף אותו ב-JavaScript.
 
-```Elm
-port module Main exposing (..)
+נניח שיש לנו קובץ `Main.elm` ואנו רוצים לעבד ארגומנטים משורת הפקודה, נוכל להשתמש בקובץ עטיפה של Node.js כזה:
 
-port getInput : (String -> msg) -> Sub msg
-```
-ואתה יכול לשלוח בתוך קובץ JavaScript שמשתמש באפליקצית ה-Elm שלך:
+```javascript
+const { Elm } = require('./Main.elm'); // המרת המודול של Elm ל-Node.js
+let app = Elm.Main.init({
+  flags: process.argv // מעביר ארגומנטים משורת הפקודה
+});
 
-```JavaScript
-var app = Elm.Main.init();
-process.argv.forEach(function (val, index, array) {
-  app.ports.getInput.send(val);
+app.ports.output.subscribe(function(data) {
+  console.log(data);
 });
 ```
 
-## Deep Dive
-עובדה אינטרסנטית היא שהיכולת לקרוא ארגומנטים משורת הפקודה התפתחה מאוד מוקדם בתולדות התכנות, עוד מימי Unix הראשונים. בחלק מהשפות החדשות יותר, כמו Elm, לא תמצא את הראשית הזו. זו אחת הנחישות של מעצבי השפה, שמגבילים את כמות היכולות שמזמינות חשיפה ישירה למערכת ההפעלה.
+הנה קוד ה-Elm שמתאים לדוגמה שלעיל:
+```elm
+port module Main exposing (..)
 
-איזון מעניין להתמודד עליו הוא Node.js, שמאפשרת גישה פשוטה ויעילה לארגומנטים שנשלחו בשורת הפקודה.
+import Json.Decode as Decode
 
-## לצפייה נוספת
-- דוקומנטציה של Elm: [https://package.elm-lang.org/packages/elm/core/latest/](https://package.elm-lang.org/packages/elm/core/latest/)
-- Elm Ports ספר בתיעוד הרשמי [Ports](https://guide.elm-lang.org/interop/ports.html)
-- [Node.js Process.argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+port output : String -> Cmd msg
+
+main : Program () String msg
+main =
+    Platform.worker
+        { init = init
+        , update = \_ _ -> ( "", Cmd.none )
+        , subscriptions = \_ -> Sub.none
+        }
+
+init : flags -> ( String, Cmd msg )
+init flags =
+    ( processArgs flags, Cmd.none )
+
+processArgs : flags -> String
+processArgs flags =
+    case Decode.decodeValue Decode.string flags of
+        Ok args ->
+            args
+
+        Err _ ->
+            "No valid args found."
+```
+
+## עמק הדעת
+ב-Elm, המודל המקובל ליצירת קוד שפועל ביצירתיות עם המידע הנתון, הוא לשלוח את הנתונים מהסביבה החיצונית כגון Node.js או דפדפן כדגלים (flags) לפרוגרמה. זה מאפשר לנו להביא נתונים להפעלת התוכנית בצורה מבוקרת. אפשרות אחרת היא שימוש בסביבות שרת כמו `elm-server-side-renderer` שיכולות לקחת ארגומנטים משורת הפקודה.
+
+בעבר, שפות תכנות אחרות כמו C או Java הפעילו את הכוח לקריאה ישירה משורת הפקודה, אבל Elm לקחה גישה שונה עם דגש על Front-End ופיתוח אפליקציות אינטרנט. עם זאת, קהילת המפתחים יצרה דרכים עקיפות לאפשר שילובים מסוג זה.
+
+## כמו כן
+- [Elm Ports](https://guide.elm-lang.org/interop/ports.html) - מידע על כיצד להתקשר עם JavaScript.
+- [Node.js Documentation](https://nodejs.org/api/process.html#process_process_argv) - מידע על `process.argv` ב-Node.js.

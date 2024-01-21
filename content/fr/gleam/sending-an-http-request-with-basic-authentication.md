@@ -1,7 +1,8 @@
 ---
-title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
-simple_title:         "Envoyer une requête http avec une authentification de base"
+title:                "Envoi d'une requête HTTP avec authentification de base"
+date:                  2024-01-20T18:01:28.811377-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Envoi d'une requête HTTP avec authentification de base"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,38 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ?
-L'envoi d'une requête HTTP avec authentification de base consiste à utiliser un nom d'utilisateur et un mot de passe pour accéder à certaines ressources sur le Web. Les programmeurs le font pour sécuriser l'accès à des ressources et services spécifiques.
+## What & Why?
+Envoyer une requête HTTP avec une authentification de base, c'est utiliser une méthode standard pour accéder à des ressources sécurisées sur le web. Les programmeurs l'utilisent pour s'assurer que seul les utilisateurs autorisés peuvent interagir avec certains services web.
 
-## Comment faire :
-Envoyer une requête HTTP avec une authentification de base en Gleam ressemble à cela :
-
+## How to:
 ```gleam
-import gleam/httpc
-import gleam/http.{Uri}
+import gleam/http
+import gleam/http/elli
+import gleam/string
 
-let request = httpc.new("GET", Uri.from_string("http://example.fr/").unwrap(), [], nil)
-|> httpc.auth_basic("username", "password")
+pub fn basic_auth_header(username: String, password: String) -> http.Header {
+  let credentials = string.concat([username, ":", password])
+  let encoded_credentials = base64.encode(credentials)
+  http.header("Authorization", "Basic " ++ encoded_credentials)
+}
 
-httpc.send(request)
+pub fn send_request() {
+  let auth_header = basic_auth_header("user", "pass")
+  let request = http.Request(
+    method: http.Get,
+    url: "https://example.com/protected",
+    headers: [auth_header],
+    ..http.default_request()
+  )
+  let response = elli.send(request)
+  case response {
+    Ok(response) -> 
+      io.print(response.body) // Afficher le corps de la réponse
+    Error(error) -> 
+      io.print(error)         // Gestion des erreurs
+  }
+}
+
+// Exemple de sortie
+"The protected resource content."
 ```
 
-La réponse pourrait ressembler à cela :
+## Deep Dive
+L'authentification HTTP de base encode les identifiants `username:password` en Base64, puis les transmet via l'entête 'Authorization'. Historiquement, elle est simple mais peu sécurisée, car Base64 est facilement décodable. Aujourd'hui, on l'emploie moins souvent au profit de méthodes plus sûres comme l'authentification par jetons (token authentication) ou OAuth.
 
-```gleam
-Ok(#{
-  body: "Ok",
-  status: 200,
-})
-```
+Dans Gleam, qui est un langage fonctionnel typé statiquement s'exécutant sur la BEAM (la machine virtuelle d'Erlang), la gestion de ces requêtes est efficace et exprimée de manière concise. Gleam a emprunté des concepts à Erlang, qui est robuste et éprouvé pour les systèmes distribués. Les avantages de Gleam incluent la sûreté de type et une syntaxe plaisante qui élabore sur les fondations d'Erlang.
 
-## Approfondissement
-Historiquement, l'authentification de base est l'une des premières méthodes d'authentification adoptées dans les protocoles HTTP. Cependant, elle est souvent déconseillée dans les applications modernes en raison de problèmes de sécurité, sauf si elle est utilisée avec HTTPS.
-
-Par ailleurs, l'authentification de base n'est pas la seule option pour sécuriser les requêtes HTTP. D'autres alternatives incluent l'authentification par jeton, l'authentification par hachage, etc.
-
-En ce qui concerne Gleam, cette méthode effectue une requête en utilisant une interface haut niveau basée sur l'envoi d'une structure `Request`, qui est ensuite convertie en une requête HTTP bas niveau.
-
-## Voir de plus
-- Lisez la [RFC 7617](https://tools.ietf.org/html/rfc7617) pour comprendre les détails de l'authentification de base.
-- Voici une [alternative à l'authentification de base](https://auth0.com/docs/tokens) pour une approche plus sécurisée.
+## See Also
+- Documentation Gleam sur HTTP - https://gleam.run/stdlib/gleam/http/
+- Guide sur l'authentification HTTP - https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Authorization
+- Base64 encoding - https://en.wikipedia.org/wiki/Base64

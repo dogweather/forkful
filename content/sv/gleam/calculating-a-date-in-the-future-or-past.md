@@ -1,7 +1,8 @@
 ---
-title:                "Beräkna ett datum i framtiden eller förflutna"
-html_title:           "Gleam: Beräkna ett datum i framtiden eller förflutna"
-simple_title:         "Beräkna ett datum i framtiden eller förflutna"
+title:                "Beräkna ett datum i framtiden eller förflutenheten"
+date:                  2024-01-20T17:30:56.285688-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Beräkna ett datum i framtiden eller förflutenheten"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -11,31 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Räkna ut ett framtida eller tidigare datum handlar om att hitta en specifik tidpunkt före eller efter en given datum. Programmerare gör detta för att hantera bokningar, händelsepåminnelser, eller tidslinjer i olika applikationer.
 
-Datumberäkningar i framtiden eller det förflutna handlar om att hitta exakta datum baserat på specifika tidsintervall. Programmers behöver detta för att hantera och planera åtaganden och händelser i programvarulösningar.
+## Så här gör du:
+I Gleam kan du hantera datum och tid med hjälp av externa bibliotek, till exempel `chrono`. Här är ett exempel:
 
-## Såhär gör man:
+```gleam
+import gleam/calendar
+import gleam/chrono.{DateTime, Duration}
 
-I Gleam används `calendar`-modulen för att utföra datum- och tidsberäkningar. 
+pub fn main() {
+  let now = DateTime.now_utc()
+  let duration = Duration.from_days(5)
+  let future_date = DateTime.add_duration(now, duration)
 
-Gleamkodexempel för att lägga till dagar till ett datum:
-
-```Gleam
-import gleam/calendar.{from_iso8601, add_days, to_iso8601}
-
-fn main() {
-    let start_date = from_iso8601("2022-08-15").unwrap()
-    let future_date = add_days(start_date, 7)
-    let future_date_string = to_iso8601(future_date)
-
-  io.println(future_date_string) // Outputs: "2022-08-22"
+  future_date
 }
 ```
 
+Och om vi kör detta får vi en output som liknar följande med dagens datum plus fem dagar:
+
+```plaintext
+2023-04-05T14:30:00Z
+```
+
 ## Fördjupning
-
-Historiskt sett har datumberäkningar alltid varit en del av programmering, då de hjälper program att interagera med och förstå verkliga händelser. Många olika tillvägagångssätt och tekniker används, från enkla addition och subtraktionsoperationer till mer komplexa tid- och datumfunktioner.
-
-Ett alternativ till `gleam/calendar`-modulen är `gleam/date`-modulen, som också erbjuder funktioner för att hantera datum och tid.
-
-När det gäller genomförande av datum och tid i framtiden eller det förflutna, har alltid betydelsen av tidzoner och skottår beaktats, eftersom de spelar en stor roll i korrekta beräkningar.
+Historiskt sett hade programmerare inte bibliotek för datumhantering och var tvungna att hantera komplexiteten med tidszoner och skottår på egen hand. Nu för tiden är `chrono` och liknande bibliotek standard för datumoperationer. Det är viktigt att välja rätt bibliotek som hanterar komplexiteten med tid och datum på ett korrekt sätt, t.ex. tidszoner och skottsekunder. Alternativer till `chrono` kan till exempel vara `time` eller `date` biblioteket som också ger funktioner för att hantera tid och datum.

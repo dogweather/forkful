@@ -1,6 +1,7 @@
 ---
 title:                "Eliminando caracteres que coinciden con un patrón"
-html_title:           "Elixir: Eliminando caracteres que coinciden con un patrón"
+date:                  2024-01-20T17:42:02.027346-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,37 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué?
-Eliminar caracteres que coinciden con un patrón significa borrar todos los caracteres que se ajustan a cierto criterio en un fragmento de código. Los programadores lo hacen para modelar los datos, eliminar errores o simplificar el texto.
+## ¿Qué & Por Qué?
+Eliminar caracteres que coinciden con un patrón es filtrar texto específico en base a reglas. Los programadores lo hacen para limpiar datos, extraer información relevante o transformar formatos de texto.
 
-## Cómo hacerlo:
-Aquí te muestro cómo puedes hacerlo en Fish Shell:
-
-```Fish Shell
-set cadena "Hola, Mundo!"
-echo $cadena | string replace -r "," ""
-```
-
-La salida será:
+## Cómo Hacerlo:
 
 ```Fish Shell
-Hola Mundo!
+set frase "Hola, Mundo! 123"
+echo $frase | string match -r "[A-Za-záéíóúÁÉÍÓÚñÑ ]+" # Devuelve solo letras y espacios
 ```
 
-En este ejemplo, hemos eliminado todas las comas de la cadena.
-
-## Análisis Profundo:
-Eliminar caracteres que coinciden con un patrón en Fish Shell no tiene un linaje histórico especial, pero es un concepto común de procesamiento de texto en la mayoría de los lenguajes de programación. 
-
-Como alternativa, puedes usar el comando `tr` en shells que no son de Fish, así:
-
-```Bash
-echo "Hola, Mundo!" | tr -d ","
+Salida:
+```
+Hola, Mundo 
 ```
 
-Tanto Fish Shell como Bash implementan esta característica mediante una búsqueda lineal en la cadena para identificar y retirar los caracteres. No hay una complejidad significativa en este proceso ya que se lleva a cabo en tiempo lineal.
+Si quieres eliminar los números de la cadena:
+
+```Fish Shell
+echo $frase | string replace -r "[0-9]+" "" # Reemplaza dígitos por nada
+```
+
+Salida:
+```
+Hola, Mundo! 
+```
+
+## Inmersión Profunda:
+
+Eliminar caracteres según un patrón no es algo exclusivo de Fish Shell; es un concepto usado en muchísimas herramientas de programación y procesamiento de texto, con raíces en las expresiones regulares que surgieron en los años 50. Alternativas comunes incluyen `grep`, `awk` y `sed` en Unix, pero Fish propone una sintaxis más simple y una integración nativa en su shell.
+
+Fish usa la función `string` para manipular cadenas de texto, donde `string match` permite filtrar y `string replace` permite eliminar o reemplazar caracteres. La simplicidad de Fish le da la ventaja de ser más legible y fácil de usar en comparación con las herramientas más antiguas. Eso sí, la potencia y flexibilidad de, digamos, `sed`, sigue siendo impresionante y útil para los que saben cómo aprovecharla al máximo.
 
 ## Ver También:
-1. Documentación oficial de `string` en Fish Shell: [https://fishshell.com/docs/current/commands.html#string](https://fishshell.com/docs/current/commands.html#string)
-2. Tutorial sobre `tr` en Bash: [https://linuxhint.com/bash_tr_command/](https://linuxhint.com/bash_tr_command/)
-3. Un análisis interno detallado de cómo Fish Shell procesa las cadenas: [https://github.com/fish-shell/fish-shell/issues/563](https://github.com/fish-shell/fish-shell/issues/563)
+
+- [Documentación oficial de Fish sobre la función `string`](https://fishshell.com/docs/current/cmds/string.html)
+- [Tutorial de expresiones regulares](https://www.regular-expressions.info/tutorial.html)
+- [Comparación entre Fish y otros shells](https://fishshell.com/docs/current/tutorial.html#tut_comparisons)

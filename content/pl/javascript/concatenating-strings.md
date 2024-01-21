@@ -1,7 +1,8 @@
 ---
-title:                "Konkatenacja ciągów znaków"
-html_title:           "Bash: Konkatenacja ciągów znaków"
-simple_title:         "Konkatenacja ciągów znaków"
+title:                "Łączenie łańcuchów znaków"
+date:                  2024-01-20T17:35:01.305431-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Łączenie łańcuchów znaków"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -11,44 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
+Łączenie ciągów znaków, czyli "concatenating strings", pozwala skleić ze sobą dwie lub więcej różnych części tekstu. Programiści robią to, aby tworzyć zdania, wiadomości lub dynamicznie konstruować treść wyświetlaną użytkownikowi.
 
-Konkatenacja łańcuchów to proces łączenia dwóch lub więcej łańcuchów znaków w jeden. Programiści używają jej do łączenia różnych informacji, tworzenia wiadomości i udostępniania efektywnych wyjść do użytkownika.
+## Jak to zrobić?
+Oto kilka sposobów na łączenie ciągów znaków w JavaScript:
 
-## Jak to zrobić:
+```javascript
+// Użycie operatora +
+let greeting = "Cześć, " + "jak się masz?";
+console.log(greeting); // "Cześć, jak się masz?"
 
-W JavaScript można łatwo połączyć łańcuchy znaków za pomocą operatora `+`:
+// Użycie metod szablonu (template literals)
+let name = "Ania";
+let question = `Hej ${name}, kiedy idziemy na kawę?`;
+console.log(question); // "Hej Ania, kiedy idziemy na kawę?"
 
-```Javascript
-let powitanie = "Cześć, ";
-let imie = "Jan";
-let powitanieCale = powitanie + imie;
-console.log(powitanieCale); // Wypisuje: "Cześć, Jan"
+// Użycie metody concat()
+let part1 = "Do zobaczenia";
+let part2 = " jutro!";
+let farewell = part1.concat(part2);
+console.log(farewell); // "Do zobaczenia jutro!"
 ```
 
-Można również użyć metody `.concat()`:
+## Zagłębiamy się
+Początkowo, w pierwszych wersjach JavaScript, operator `+` był głównym sposobem na łączenie ciągów znaków. Wraz z ES6, wprowadzone zostały szablony literałów (template literals), które uprościły łączenie ciągów dodając możliwość interpolacji.
 
-```Javascript
-let powitanie = "Cześć, ";
-let imie = "Jan";
-let powitanieCale = powitanie.concat(imie);
-console.log(powitanieCale); // Wypisuje: "Cześć, Jan"
-```
+Inne języki programowania często posiadają dedykowane funkcje do łączenia ciągów, a JavaScript oferuje metodę `.concat()`, aczkolwiek jest ona rzadziej używana, gdyż operator `+` czy literały szablonowe są wygodniejsze w codziennym użyciu.
 
-## Głębsze zagadnienia:
+W keście wydajności, operator `+` i literały szablonowe mają podobną wydajność, która jest zazwyczaj wystarczająca dla typowych zastosowań. Metody `.concat()` można w niektórych przypadkach używać, kiedy łączy się bardzo dużą liczbę ciągów znaków, ale różnica ta jest zauważalna tylko w skrajnych przypadkach.
 
-Historia: Pierwotnie, konkatenacja była używana w wczesnych językach programowania takich jak COBOL czy Fortran. Zasada działania jest identyczna jak w JavaScript.
-
-Alternatywy: Jest kilka alternatywnych sposobów łączenia łańcuchów w JavaScript. Można użyć metody `.join()`, która łączy elementy tablicy w jeden łańcuch, lub „Template Literals”:
-
-```Javascript
-let powitanie = "Cześć, ";
-let imie = "Jan";
-let powitanieCale = `${powitanie}${imie}`;
-console.log(powitanieCale); // Wypisuje: "Cześć, Jan"
-```
-
-Szczegóły implementacji: Operator `+` lub metoda `.concat()` łączy łańcuchy w kolejności, w jakiej są podawane. Wszystko, co nie jest łańcuchem, jest konwertowane na łańcuch.
-
-## Zobacz również:
-
-4. [W3Schools: JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
+## Zobacz również
+- MDN Web Docs na temat łączenia ciągów: https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/concat
+- Szablony literałów (template literals) na MDN: https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Template_literals
+- Wydajność różnych metod łączenia ciągów znaków: https://jsperf.com/concat-vs-plus-vs-join

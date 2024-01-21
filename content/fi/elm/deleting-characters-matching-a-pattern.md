@@ -1,7 +1,8 @@
 ---
-title:                "Merkkien poistaminen vastaavalla mallilla"
-html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
-simple_title:         "Merkkien poistaminen vastaavalla mallilla"
+title:                "Merkkien poistaminen hakemalla osumia kaavaan"
+date:                  2024-01-20T17:41:51.858781-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,39 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
+## What & Why? - Mikä ja Miksi?
+Poistamme merkkijonoista merkkejä, jotka vastaavat tiettyä mallia, siivotaan data tai muokataan tekstiä. Tämä on hyödyllistä, kun halutaan puhdistaa syötteitä, kuten käyttäjän syöttämiä tietoja tai tiedostojen sisältöä.
 
-Hahmojen poistaminen mallin mukaan on ohjelmointitehtävä, jossa tiettyjä merkkejä tai merkkijonoja poistetaan suuremmasta merkkijonosta. Ohjelmoijat tekevät tämän datan jalostamiseksi, siivoamiseksi tai järjestämiseksi.
-
-# Kuinka tehdä
-
-Elm-ohjelmointikielessä merkkijonoja käsitellään usein `String`-moduulin avulla. Tässä on esimerkki siitä, miten voit poistaa kaikki tietyn mallin mukaiset merkit merkkijonosta.
-
+## How to: - Kuinka:
 ```Elm
-import String
+removePattern : String -> String -> String
+removePattern pattern text =
+    Regex.replace Regex.All (Regex.regex pattern) (\_ -> "") text
 
-removeChars : String -> String -> String
-removeChars pattern text =
+main =
     let
-        isNotPattern char = 
-            if String.fromChar char |> (\x -> String.contains pattern x) |> not then
-                Just char
-            else
-                Nothing
+        originalText = "Tässä 123 on esimerkki123 tekstistä, josta 123 poistetaan numerot."
+        pattern = "\\d+"  -- regex, joka vastaa yhtä tai useampaa numeroa
+        cleanedText = removePattern pattern originalText
     in
-    String.foldr isPattern "" text
+    Html.text cleanedText
 ```
-Kun ajat tämän koodin, esimerkiksi `removeChars "a" "banana"` palauttaa `"bnn"`.
 
-# Syvempi sukellus
+Esimerkkitulostus olisi "Tässä  on esimerkki tekstistä, josta  poistetaan numerot."
 
-Hahmojen poistaminen mallin mukaan on konsepti, joka ylittää ohjelmointikielten. Se on ollut osa ohjelmointia lähes sen alusta lähtien, kun ohjelmoijat huomasivat tarpeen käsitellä ja siivota tekstimassaa.
+## Deep Dive - Syväsukellus:
+Historiallisesti merkkijonon käsittely on ollut tärkeä osa ohjelmistokehitystä. Elm tarjoaa modernin lähestymistavan, joka hyödyntää funktionaalisen ohjelmoinnin etuja. Vaihtoehtoja merkkien poistamiseen ovat käsittely funktioiden ketjutuksella tai ulkoisten kirjastojen käyttö. Implementaatiossa kannattaa huomioida suorituskyky ja mahdollinen tarve ottaa huomioon erikoismerkit.
 
-Elmissä on monia muitakin tapoja hoitaa tämä. Aina ei tarvitse luoda omaa funktiota. Elm-yhteisö on kehittänyt useita paketteja, jotka tekevät tekstin käsittelystä helpompaa.
-
-Elm takaa puhtaat toiminnot ja tyypin turvallisuuden, joten tekstinkäsittely ja merkkien poistaminen on suoraviivaista ja turvallista. Se ei kuitenkaan tue säännöllisiä lausekkeita, koska ne ovat vaikeasti ymmärrettäviä ja niitä voidaan käyttää väärin.
-
-# Katso myös
-- [Elmin virallinen String-dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm-paketit tekstinkäsittelyyn](https://package.elm-lang.org/packages/elm-community/string-extra/latest/)
-- [Elmin keskustelupalsta pattern matchingista](https://discourse.elm-lang.org/t/pattern-matching-strings/2329)
+## See Also - Katso Myös:
+- Elm Regex-paketin dokumentaatio: https://package.elm-lang.org/packages/elm/regex/latest/
+- Funktionaalisen ohjelmoinnin perusteet: https://en.wikipedia.org/wiki/Functional_programming
+- Elm-lang viralliset oppaat: https://guide.elm-lang.org/

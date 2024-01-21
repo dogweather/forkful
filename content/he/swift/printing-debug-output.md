@@ -1,7 +1,8 @@
 ---
-title:                "הדפסת פלט ניפוי שגיאות"
-html_title:           "Arduino: הדפסת פלט ניפוי שגיאות"
-simple_title:         "הדפסת פלט ניפוי שגיאות"
+title:                "הדפסת פלט לניפוי באגים"
+date:                  2024-01-20T17:53:53.565328-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "הדפסת פלט לניפוי באגים"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,25 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-יציאת ניפוי שגיאות היא שיטה שמסייעת למתכנתים לזהות ולאתר בעיות או שגיאות בתוכנית שלהם. מתכנתים משתמשים בכך כדי להבין את ההתנהגות של קוד מסוים, לאטר בעיות על מנת לתקן שגיאות ולאופטים את התוכנית.
+## What & Why? / מה ולמה?
+הדפסת פלט לניפוי באגים היא כלי למעקב אחר אירועים בתוכנית בזמן הריצה. מתכנתים משתמשים בזה כדי לחשוף ערכים ומצבים, ולבדוק את התוכנה.
 
-## איך לעשות:
-בלשון התכנות Swift, ניתן להדפיס יציאה של ניפוי שגיאות על ידי שימוש בפונקציה `print()`.
-
+## How to: / איך לעשות:
+ב-Swift, שימוש ב-`print()` זה פשוט:
 ```Swift
-let name = "Swift"
-print("Hello, \(name)")
+let greeting = "שלום עולם"
+print(greeting)
+// הפלט: שלום עולם
 ```
 
-הקוד הנ"ל ייצא את המחרוזת "Hello, Swift" לחלון ה-Outputs.
+לדוגמא עם משתנים מרובים וריכוז:
+```Swift
+let name = "דני"
+let age = 30
+print("שם: \(name), גיל: \(age)")
+// הפלט: שם: דני, גיל: 30
+```
 
-## צלילה עמוקה:
-הדפסת יציאת ניפוי היא שיטה שהתפתחה מאז שהתחילו לכתוב קוד. זה היה דרך יעילה למתכנתים לבחון ולבדוק את הריצה של קוד התוכנית שלהם בזמן אמת. החלופות כוללות שימוש במנגנון Debug של Xcode או שימוש במנגנון הניפוי של המערכת המראה שגיאות בזמן ריצה.
+ניתן גם להשתמש ב-`debugPrint()` לפלט מפורט יותר:
+```Swift
+struct Person {
+    var name: String
+    var age: Int
+}
 
-## ראה גם:
-[SOSwift: Debug Utilities](https://www.sosoftware.io/swift/debugging/utilities): Guides, tips, and code examples for debugging Swift code.
+let meir = Person(name: "מאיר", age: 25)
+debugPrint(meir) 
+// הפלט: Person(name: "מאיר", age: 25)
+```
 
-[Xcode: Debugging tools](https://developer.apple.com/documentation/xcode/debugging_your_app): Documentation and getting-started guides for using Xcode's built-in debugging utilities. 
+## Deep Dive / נטילה עמוקה:
+הדפסת פלט ב-Swift אינה חדשנית - היא אבן יסוד בתכנות מאז ימי שפות תכנות מוקדמות כמו C. הפונקציה `print()` ב-Swift יכולה לטפל במספר רב של סוגי נתונים באופן דינאמי, שיפור על פונקציות תכנות C כמו `printf()`.
 
-[Swift.org: Debugging](https://swift.org/debugging): Official documentation and discussions about debugging in Swift.
+קיימות גם שיטות נוספות, כמו מערכת הלוגים המובנית של Apple `os_log`, או להשתמש בקונסולת המפתחים או בקובץ יומן.
+
+בצד היישום, השיטה `print()` כוללת כברירת מחדל סיומת שורה `\n`. ניתן לשלוט בזה על ידי העברת תיקונים לפונקציה, כגון `terminator` ו-`separator`.
+
+## See Also / ראה גם:
+1. תיעוד רשמי של Swift על `print()` - [דפים רשמיים](https://developer.apple.com/documentation/swift/1541053-print)
+2. מדריך ל-`os_log` מבית Apple - [דפים רשמיים](https://developer.apple.com/documentation/os/logging)
+3. רעיונות לניפוי באגים אפקטיביים ב-Swift - [Ray Wenderlich](https://www.raywenderlich.com/3030-ios-debugging-in-xcode)

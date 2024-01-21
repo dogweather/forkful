@@ -1,7 +1,8 @@
 ---
-title:                "Wydobywanie podciągów"
-html_title:           "Python: Wydobywanie podciągów"
-simple_title:         "Wydobywanie podciągów"
+title:                "Wycinanie podłańcuchów"
+date:                  2024-01-20T17:45:41.867122-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wycinanie podłańcuchów"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,37 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Ekstrakcja podciągów to operacja odseparowania określonej części ciągu znaków. Programiści to robią, aby uzyskać określone fragmenty danych lub manipulować tylko określonymi segmentami ciągu.
+## Co i Dlaczego?
+Wyciąganie podciągów (ang. "substring extraction") to sposób na wyjęcie specyficznej części z ciągu znaków. Programiści to robią, żeby pracować tylko z tym, co akurat potrzebują – może to być sprawdzanie formatu, pobieranie danych, czy jakakolwiek manipulacja tekstem.
 
 ## Jak to zrobić:
-Możemy używać wbudowanej funkcji `String.slice/2` w Elixir do ekstrakcji podciągow. Oto kilka przykładów: 
+W Elixirze, używamy głównie funkcji `String.slice/3`, żeby wyciągnąć podciąg.
 
-```elixir 
-string = "Witaj, Elixir!"
+```elixir
+# Wyciąganie podciągu zakresu znaków
+string = "Hello Elixir World"
+substring = String.slice(string, 6, 6) # Wyciągnięcie słowa "Elixir"
+IO.puts(substring)
 
-# Pobierz podciąg od 3 znaku do końca 
-IO.puts String.slice(string, 3) 
-# -> "taj, Elixir!"
+# Gdy zna się początkowy i końcowy indeks
+start_index = 6
+end_index = 11
+IO.puts(String.slice(string, start_index..end_index)) # Tak samo, "Elixir"
 
-# Pobierz podciąg od 2 do 5 znaku
-IO.puts String.slice(string, 2, 3)
-# -> "taj"
-
-# Użyj ujemnego indeksu, aby zacząć od końca 
-IO.puts String.slice(string, -7, 6) 
-# -> "Elixir"
+# Użycie negatywnych indeksów (liczone od końca)
+IO.puts(String.slice(string, -5, 5)) # Wydobędzie "World"
 ```
 
-## Głębsze spojrzenie
-Technika ekstrakcji podciągów istnieje od dawna, w wielu językach programowania. W późniejszych wersjach Elixir, funkcja `slice/2` jest zaimplementowana przy użyciu algorytmu charakteryzującego się efektywnością przez powtarzalne odczyty.
-
-Alternatywnie, możemy używać `binary_part/3`, choć jest zdecydowanie mniej czytelna dla nas. Warto wiedzieć, że `String.slice/2` i `binary_part/3` są identyczne pod względem wydajności.
-
-```elixir 
-IO.puts :erlang.binary_part("Witaj, Elixir!", 2, 3) 
-# -> "taj"
+Output:
+```
+Elixir
+Elixir
+World
 ```
 
-## Zobacz także
-Sprawdź [dokumentację Elixir String](https://hexdocs.pm/elixir/String.html) i [Erlang :binary module](http://erlang.org/doc/man/binary.html) do bardziej szczegółowego omówienia funkcji i możliwości manipulacji ciągami.
+## Głębsze spojrzenie:
+Historia Elixir to historia poszukiwania jak najlepszego rozwiązania w świecie Erlanga. Do wersji 1.0 w Elixirze dodane zostały wyrafinowane narzędzia do pracy ze stringami, w tym wyciąganie podciągów. Alternatywą jest użycie regexu (`Regex` moduł), ale to dobrze mieć dedykowaną, wydajną funkcję. 
+
+Pod względem implementacji `String.slice/3` jest wystarczająco inteligentna, by radzić sobie z różnymi rodzajami ciągów różnych długości oraz uwzględnia Unicode (co jest nie-trivialne!). Pamiętajmy, w Elixirze indeksowanie jest oparte na bajtach, nie znakach, co jest ważne przy pracy z Unicode.
+
+## Zobacz także:
+1. [Oficjalna dokumentacja modułu String w Elixirze](https://hexdocs.pm/elixir/String.html)
+2. [Obsługa Unicode w Elixirze](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
+3. [Dokumentacja modułu Regex w Elixirze](https://hexdocs.pm/elixir/Regex.html)

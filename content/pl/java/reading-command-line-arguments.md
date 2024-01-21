@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie argumentów linii poleceń"
-html_title:           "Bash: Czytanie argumentów linii poleceń"
-simple_title:         "Czytanie argumentów linii poleceń"
+title:                "Odczytywanie argumentów linii poleceń"
+date:                  2024-01-20T17:56:15.469529-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie argumentów linii poleceń"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,42 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Czytanie argumentów linii komend w Java
+## Co i dlaczego?
+Czytanie argumentów linii poleceń to sposób na przekazywanie danych do programu przy jego starcie. Robimy to, by elastycznie manipulować działaniem aplikacji bez potrzeby zmiany kodu źródłowego.
 
-## Co i Dlaczego?
-
-Czytanie argumentów linii komend to proces ekstrakcji danych wejściowych wprowadzanych przez użytkownika podczas uruchamiania programu. Programiści robią to, aby umożliwić personalizację funkcji programu.
-
-## Jak Zrobić:
-
-Do ekstrakcji argumentów linii komend używamy tablicy `args` w metodzie `main`.
-
-```Java
-public class CommandLine {
+## Jak to zrobić:
+```java
+public class CommandLineReader {
     public static void main(String[] args) {
-        for (String arg: args) {
-            System.out.println("Argument: "+ arg);
+        if (args.length > 0) {
+            System.out.println("Otrzymane argumenty linii poleceń:");
+            for(String arg : args) {
+                System.out.println(arg);
+            }
+        } else {
+            System.out.println("Brak argumentów linii poleceń.");
         }
     }
 }
 ```
-Podając argumenty `Hello World` podczas uruchamiania programu, otrzymać powinniśmy wynik:
-
-```Bash
-Argument: Hello
-Argument: World
+Uruchomienie programu z argumentami:
+```
+java CommandLineReader jeden dwa trzy
+```
+Wyjście:
+```
+Otrzymane argumenty linii poleceń:
+jeden
+dwa
+trzy
 ```
 
-## Pogłębione Informacje:
+## Wnikliwe spojrzenie:
+Argumenty linii poleceń są używane od zarania informatyki. W Javie dostępne są jako tablica `String`ów przekazywana do metody `main`. Alternatywą jest użycie narzędzi jak JCommander czy Apache Commons CLI, które oferują zaawansowane parsowanie i obsługę opcji. Implementacyjnie, argumenty są przekazywane przez maszynę wirtualną Javy i są dostępne jeszcze przed wykonaniem pierwszego instrukcji programu.
 
-(1) Historia: Czytanie argumentów linii komend jest fundamentem wielu programów, odmianjąc funkcje w zależności od wprowadzonych przez użytkownika danych.
-
-(2) Alternatywy: Biblioteki takie jak JCommander czy Apache Commons CLI oferują bardziej zaawansowane metody obsługi argumentów linii komend.
-
-(3) Szczegóły implementacji: `args` to tablica, z indeksem zaczynającym się od 0. Każdy element tablicy reprezentuje oddzielny argument.
-
-## Zobacz także:
-
-Poradnik Oracle 'Command-Line Arguments' dostarcza wyczerpujących informacji na temat tego, jak Java obsługuje argumenty linii poleceń: https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html
-
-Dokumentacje dla powyższych bibliotek dostępne są tutaj: JCommander (http://jcommander.org/) oraz Apache Commons CLI (https://commons.apache.org/proper/commons-cli/).
+## Zobacz również:
+- [Dokumentacja Oracle na temat argumentów linii poleceń](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- [JCommander](http://jcommander.org/)
+- [Apache Commons CLI](https://commons.apache.org/proper/commons-cli/)

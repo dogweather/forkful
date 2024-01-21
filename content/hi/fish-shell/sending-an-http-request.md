@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T17:59:37.222721-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,32 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# फिश शेल का उपयोग करके HTTP अनुरोध भेजना
+## What & Why? (क्या और क्यों?)
+HTTP अनुरोध भेजना, वेब सर्वर से जानकारी मांगने की प्रक्रिया है। प्रोग्रामर ऐसा अक्सर डाटा प्राप्त करने, API के साथ इंटरैक्ट करने, या सेवाओं को ऑटोमेट करने के लिए करते हैं।
 
-## क्या और क्यों?
-
-HTTP अनुरोध एक सिग्नल होता है जो हमें वेबसर्वर से जानकारी प्राप्त करने का अनुमति देता हैं इसका इस्तेमाल करने से प्रोग्रामर्स डाटा प्राप्त कर सकते हैं और वेबसर्वर की स्थिति जांच सकते हैं।
-
-## कैसे:
+## How to: (कैसे करें:)
+Fish Shell में एक HTTP GET अनुरोध करने के लिए हम `curl` कमांड का इस्तेमाल करेंगे। यहां एक उदाहरण है:
 
 ```Fish Shell
-# HTTP GET अनुरोध
-curl -X GET 'https://jsonplaceholder.typicode.com/posts'
+curl http://example.com/api/data
 ```
 
-कोड का निष्पादन करने पर, आपको वेबसर्वर से डेटा प्राप्त होगा। 
+इसे चलाने पर आपको कुछ इस तरह का आउटपुट दिखेगा:
 
-## गहराई में:
+```
+{"status": "success", "data": [...]}
+```
 
-HTTP GET अनुरोध, World Wide Web का एक महत्वपूर्ण हिस्सा है जो 1990 में डिज़ाइन हुवा था। यह अनुरोध वेबसर्वर से डेटा प्राप्त करने में हमारी सहायता करता है। 
+POST अनुरोध के लिए हम `-d` फ्लैग का इस्तेमाल कर सकते हैं:
 
-Alternatives जैसे कि HTTPie और Wget भी हैं, लेकिन फिश शेल बहुत सरल और कुशल है। HTTPie के साथ आप `-f` फ्लैग का उपयोग करके फॉर्म डाटा भेज सकते हैं। 
+```Fish Shell
+curl -d "param1=value1&param2=value2" http://example.com/api/submit
+```
 
-अनुरोध को send करने में, एक सॉकेट सिरीज बनाई जाती है, तभी TCP/IP प्रोटोकॉल स्टैक को नियंत्रित किया जाता है। 
+आउटपुट में आपको अनुरोध की स्थिति की जानकारी मिलेगी।
 
-## देखें भी:
+## Deep Dive (गहराई से जानकारी)
+HTTP अनुरोध भेजना, वेब की बुनियादी बातों में से एक है। 1990 के दशक से, HTTP प्रोटोकॉल वेब पर संचार का मुख्य ढांचा है। अनुरोध भेजने के विकल्पों में `wget`, `httpie` या फिश शेल के बिल्ट-इन फंक्शन शामिल हैं। `curl` अपने फ्लेक्सिबिलिटी और व्यापक प्लेटफॉर्म सपोर्ट के कारण अधिक प्रचलित है। इसे इस्तेमाल करते समय, -X फ्लैग के साथ हम HTTP की विभिन्न मेथड जैसे GET, POST, PUT, DELETE आदि का स्पेसिफिकेशन कर सकते हैं।
 
-1. Fish Shell डॉक्युमेंटेशन [लिंक](https://fishshell.com/docs/current/index.html)
-2. कर्ल डॉक्युमेंटेशन [लिंक](https://curl.haxx.se/docs/manpage.html)
-3. HTTPie डॉक्युमेंटेशन [लिंक](https://httpie.io/docs)
-4. Wget डॉक्युमेंटेशन [लिंक](https://www.gnu.org/software/wget/manual/wget.html)
+## See Also (और देखें)
+1. `curl` के बारे में और जानें: https://curl.haxx.se/
+2. फिश शेल डॉक्यूमेंटेशन: https://fishshell.com/docs/current/index.html
+3. `httpie` एक और सरल HTTP क्लाइंट: https://httpie.io/

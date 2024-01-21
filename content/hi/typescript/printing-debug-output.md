@@ -1,6 +1,7 @@
 ---
 title:                "डीबग आउटपुट प्रिंट करना"
-html_title:           "Gleam: डीबग आउटपुट प्रिंट करना"
+date:                  2024-01-20T17:53:37.176518-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "डीबग आउटपुट प्रिंट करना"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,30 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? (What & Why?)
+## What & Why? (क्या और क्यों?)
+Debug output प्रिंट करने का मतलब है कोड में जानकारी दिखाना ताकि समस्या का पता लगा सकें। प्रोग्रामर्स यह इसलिए करते हैं ताकि कोड की खोजबीन करते समय मुश्किलें आसानी से सुलझा सकें।
 
-डीबग आउटपुट प्रिंट करना मतलब किसी कोड का रन टाइम परिणाम देखना होता है। निर्माणकर्ता इसका उपयोग त्रुटियों को खोजने और अपने कोड के प्रदर्शन को समझने के लिए करते हैं।
-
-## कैसे (How to)
-
-निम्नलिखित कोड उदाहरण देखें:
-
+## How to: (कैसे करें:)
 ```TypeScript
-console.log('डीबग मैसेज');
+// साधारण console.log() का इस्तेमाल
+console.log('Hello, debugging world!');
+
+// वेरिएबल के मूल्य के साथ
+let debugVariable = 'Testing value';
+console.log('Debug Variable:', debugVariable);
+
+// एक complex object को प्रिंट करने के लिए
+let debugObject = { name: 'Test Object', id: 1 };
+console.log('Debug Object:', debugObject);
+
+// स्ट्रिंग इंटरपोलेशन या template literals का इस्तेमाल करके
+console.log(`Variable content: ${debugVariable}`);
 ```
-आउटपुट:
-
-``` 
-डीबग मैसेज 
+Sample Output:
+```
+Hello, debugging world!
+Debug Variable: Testing value
+Debug Object: { name: 'Test Object', id: 1 }
+Variable content: Testing value
 ```
 
-## गहराई में अध्ययन (Deep Dive)
+## Deep Dive (गहराई में जानकारी)
+प्रिंटिंग डीबग आउटपुट बहुत पुरानी प्रक्रिया है। `console.log()` जावास्क्रिप्ट में आम तौर पर इस्तेमाल होता आया है। अल्टरनेटिव तौर पर log levels जैसे की `console.error()`, `console.warn()` और `console.info()` का इस्तेमाल अलग-अलग प्रकार की जानकारी के लिए करते हैं। जावास्क्रिप्ट debugging tools जैसे कि Chrome DevTools भी बड़ी मदद करते हैं। TypeScript, जो एक typed सुपरसेट है JavaScript का, में भी हम इन्ही तरीकों का इस्तेमाल कर सकते हैं। कई बार, debugging के लिए बाहरी लाइब्रेरीज़ जैसे ki `debug` या `loglevel` भी उपयोग में लायी जाती हैं।
 
-1. **ऐतिहासिक संदर्भ**: `console.log` का उपयोग डीबगिंग के लिए कांसोल पर आउटपुट प्रिंट करने के लिए होता है। यह जावास्क्रिप्ट (और इसके स्थानापन्न TypeScript) में सामान्यतः उपयोग होने वाली तकनीक है।
-2. **विकल्प**: कुछ समय में `console.warn` या `console.error` का उपयोग विभिन्न स्तरों की सूचना के लिए किया जाता है।
-3. **कार्यान्वयन विवरण**: `console.log` वेब ब्राउज़र या Node.js के कंसोल में संदेश प्रिंट करता है। इसका उपयोग कार्यान्वित कोड का पाठक दृश्य प्रदान करने के लिए किया जाता है।
-
-## अन्य उपयोगी लिंक (See Also)
-
-- जावास्क्रिप्ट और TypeScript डीबगिंग में [console.log(), console.error() और console.warn()](https://developer.mozilla.org/en-US/docs/Web/API/Console) के और उपयोग के बारे में अधिक जानने के लिए।
-- डीबगिंग के अधिक उन्नत तरीकों, जैसे की ट्रेस आउटपुट या श्रंखला डंपिंग के बारे में [और अधिक पढ़ें](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/Stack)।
+## See Also (और भी जानकारी)
+- [Console API Reference (MDN)](https://developer.mozilla.org/en-US/docs/Web/API/console)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- [Node.js Debugging Guide](https://nodejs.org/en/docs/guides/debugging-getting-started/)
+- [Chrome DevTools Documentation](https://developers.google.com/web/tools/chrome-devtools)

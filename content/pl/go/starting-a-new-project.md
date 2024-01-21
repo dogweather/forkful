@@ -1,6 +1,7 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Bash: Rozpoczynanie nowego projektu"
+date:                  2024-01-20T18:03:35.553060-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Go"
 category:             "Go"
@@ -10,26 +11,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Zaczynając nowy projekt w Go, tworzysz kosztownicę dla swojego kodu. Programiści robią to, by nadać strukturę, zarządzanie zależnościami i łatwość późniejszej pracy.
 
-Rozpoczęcie nowego projektu to stworzenie zupełnie nowego kodu, który możemy kształtować do naszych własnych potrzeb. Robimy to, aby rozwiązać unikalne problemy, dla których nie ma gotowych rozwiązań lub potrzebny jest bardziej spersonalizowany podejście.
-
-## Jak to zrobić:
-
-Zaczynamy od stworzenia nowego katalogu dla naszego projektu:
+## How to: (Jak to zrobić:)
+Tworzymy katalog projektu i inicjujemy moduł Go:
 
 ```Go
+// W terminalu:
 mkdir myproject
 cd myproject
-```
-
-Następnie musimy zainicjować moduł, niech nazwa modułu będzie tak jak nazwa naszego projektu:
-
-```Go
 go mod init myproject
 ```
 
-Teraz możemy stworzyć nasz pierwszy plik go:
+Twój pierwszy program:
 
 ```Go
 package main
@@ -37,27 +32,20 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("Hello, world!")
+    fmt.Println("Witamy w nowym projekcie Go!")
 }
+
+// Uruchomienie programu:
+// go run main.go
+
+// Spodziewane wyjście:
+// Witamy w nowym projekcie Go!
 ```
 
-Uruchomienie tego kodu da nam następujący wynik:
+## Deep Dive (Głębsze zanurzenie)
+W Go projekt rozpoczyna się od utworzenia folderu i zainicjowania modułu za pomocą `go mod`. To zastąpiło starsze `GOPATH` i `go get` dla lepszego zarządzania zależnościami. Moduły pojawiające się w Go 1.11 (2018) stały się standardem. Alternatywą są inne systemy budowania i zarządzania zależnościami, takie jak `dep`, ale `go mod` dominuje i jest zalecaną metodą. Implementacja modułów w Go upraszcza wersjonowanie, dzielenie się kodem i automatyzację budowy binarnej.
 
-```Go
-Hello, world!
-```
-
-## Głębsze spojrzenie:
-
-Rozpoczynanie nowego projektu jest zawsze ekscytującym wydarzeniem, ale również od czasu do czasu może nas napotkać wiele wyzwań - historycznie rzecz biorąc, były to na ogół te same rodzaje problemów, które spotykamy dzisiaj. Na szczęście, współczesne narzędzia, takie jak Go, oferują wiele funkcji, które pomagają w zarządzaniu projektem.
-
-Alternatywą dla Go jest wiele, w tym popularne języki takie jak Python, Java i Rust. Każdy z nich ma swoje mocne strony, ale Go wyróżnia się prostotą i skutecznością, szczególnie dla większych systemów.
-
-Szczegółowa implementacja rozpoczęcia nowego projektu w Go obejmuje wiele kroków. Przeważnie zaczynamy od inicjacji modułu, co stwarza 'go.mod', a to jest istotnym elementem, który umożliwia narzędziu Go śledzenie zależności.
-
-## Zobacz również
-
-Można znaleźć więcej informacji i wskazówek na oficjalnej stronie Go: https://golang.org/doc/
-Jest tam cała sekcja poświęcona zarządzaniu projektem, która może być pomocna: https://golang.org/doc/code.html#Organization
-
-Gorąco polecam również przeczytać artykuł Boba Nystroma o wyzwaniach, które można spotkać podczas pisania nowego kodu: http://journal.stuffwithstuff.com/2014/12/08/the-challenges-of-starting-a-new-codebase/
+## See Also (Zobacz również)
+- Dokumentacja modułów Go: https://golang.org/ref/mod
+- Skuteczne Go: https://golang.org/doc/effective_go
+- Tutorial "Rozpocznijmy przygodę z Go": https://golang.org/doc/tutorial/getting-started

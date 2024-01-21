@@ -1,6 +1,7 @@
 ---
 title:                "Extraction de sous-chaînes"
-html_title:           "Arduino: Extraction de sous-chaînes"
+date:                  2024-01-20T17:45:56.302157-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,38 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-**## Qu'est-ce Que C'est & Pourquoi?**
+## Quoi et Pourquoi ?
+Extraire des sous-chaînes, c'est comme prendre un biscuit dans la boîte : vous choisissez une partie spécifique d'une chaîne de caractères. Les programmeurs font ça pour manipuler des données, valider des entrées, ou simplement afficher ce qu'ils veulent.
 
-L'extraction de sous-chaînes, c'est l'action de prendre une petite partie d'une chaîne de caractères plus large. Les développeurs font cela pour manipuler et analyser des portions spécifiques de données textuelles.
-
-**## Comment Faire:**
-
-En Haskell, nous utilisons la fonction `take` pour extraire des sous-chaînes. En voici un exemple : 
-
+## Comment faire :
 ```Haskell
-let chaine = "Salut tout le monde"
-print(take 5 chaine)
+import Data.Text (Text)
+import qualified Data.Text as T
+
+-- Pour commencer, installons `text` via Cabal ou Stack.
+-- cabal install text
+-- ou
+-- stack install text
+
+-- Voici comment extraire une sous-chaîne avec Data.Text :
+
+-- Disons que l'on a un Texte :
+let texteComplet = "Bonjour, je suis un exemple de texte."
+
+-- On veut extraire "je suis" du texteComplet.
+-- Utilisons la fonction `take` et `drop` :
+let debut = 9           -- le début de la sous-chaîne
+let longueur = 7        -- la longueur de la sous-chaîne
+let sousChaine = T.take longueur . T.drop debut $ texteComplet
+
+-- Affichons la sous-chaîne :
+sousChaine
+```
+Sortie attendue:
+```
+"je suis"
 ```
 
-Cela affichera `"Salut"` dans la console.
+## Plongeon Profond
+Historiquement, Haskell manipule des chaînes avec des listes, mais `Data.Text` est devenu standard, pour l'efficacité. L'alternative, `Data.ByteString`, est idéale pour les données binaires. Extraire des sous-chaînes est une opération fondamentale en programmation, faisant partie de l'analyse de texte, le parsing, et plus. Haskell gère l'unicode proprement avec `Text`, donc pas de soucis avec différentes langues.
 
-On utilise aussi `drop` pour supprimer le début d'une chaîne:
-
-```Haskell
-print(drop 6 chaine)
-```
-
-Cela affichera `"tout le monde"`.
-
-**## Aperçu Approfondi:**
-
-Historiquement parlant, l'extraction de sous-chaînes a toujours été un élément clé de la manipulation de texte. En Haskell, ces fonctions ont été inspirées par d'autres langages de programmation fonctionnels.
-
-Il existe des alternatives à `take` et `drop`. Par exemple, `splitAt` qui divise une chaîne en un tuple à un index donné.
-
-La mise en œuvre de ces fonctions est assez linéaire. `take` et `drop` parcourent simplement la liste de gauche à droite.
-
-**## Voir Aussi:**
-
-- Pour plus d'infos sur `take` et `drop` en Haskell, consultez la documentation officielle ici: http://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html
-- Pour une discussion plus générale sur la manipulation de chaînes en Haskell, visitez: http://learnyouahaskell.com/input-and-output.
+## Voir Aussi:
+- [Hackage - package text](https://hackage.haskell.org/package/text)
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)

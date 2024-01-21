@@ -1,6 +1,7 @@
 ---
 title:                "קריאת קובץ טקסט"
-html_title:           "Go: קריאת קובץ טקסט"
+date:                  2024-01-20T17:54:44.321015-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "קריאת קובץ טקסט"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,32 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה? 
+## What & Why?
+קריאת קובץ טקסט היא פעולה שבה מבצעים גישה לנתונים שמאוחסנים בקובץ טקסט. תכנתים עושים זאת כדי לטעון נתונים, לעבד אותם או להגדיר הגדרות לתכנתים אחרים.
 
-קריאת קובץ טקסט היא פעולה שבמה המחשב מקבל את הנתונים מתוך קובץ טקסט ומציג אותם למתכנת. תוכניתים מבצעות את הפעולה הזו כדי לטפל בנתונים ולבצע פעולות על פי התוצאות.
-
-## איך לעשות:
-
-במקסם שהקוד שבכלים קוטלין יכולה לבצע קריאה של קובץ טקסט וזה מאוד פשוט. מספר שורות של קוד צריך לעשות את העבודה.
-
-```Kotlin
-import java.io.File
+## How to:
+### קריאת תכנים מלאים עם readText()
+```kotlin
+import java.nio.file.Paths
 
 fun main() {
-    val content = File("example.txt").readText()
+    val path = Paths.get("example.txt")
+    val content = path.toFile().readText(Charsets.UTF_8)
     println(content)
 }
 ```
-במשתנה תוכן, יהיה מכיל את כל התוכן של קובץ אקסמפל.טקסט שאפשר להדפיסו או לבצע פעולות אחרות נוותות.
+תוצאה:
+```
+התוכן של הקובץ example.txt נקרא
+```
 
-## צלילה עמוקה 
+### קריאת שורה אחר שורה עם forEachLine()
+```kotlin
+import java.nio.file.Files
+import java.nio.file.Paths
 
-מאז השנים המוקדמות של התכנות, היה כמעט תמיד צורך לקרוא מקבצים טקסט. זה אחד הכלים הבסיסיים של מתכנת והוא משמש לשלל מטרות, משמירה על היסטוריה של הנתונים, בניהן מסדי נתונים. 
+fun main() {
+    Files.newBufferedReader(Paths.get("example.txt")).use { reader ->
+        reader.forEachLine { line ->
+            println(line)
+        }
+    }
+}
+```
+תוצאה:
+```
+שורה ראשונה
+שורה שנייה
+שורה שלישית
+```
 
-ייתכן שישנן חלופות לקריאת קבצי טקסט בלוקחין, כולל קריאה ממסדי נתונים או שימור מידע בזיכרון הרציה של התוכנית. אך כניסה אל קבצי טקסט עדיין נחשבת לדרך המקובלת והנפוצה.
+## Deep Dive
+קריאת קבצים היא חלק מהיסוד לכל שפת תכנות. בעבר, הגישה לקבצים הייתה כרוכה בפתיחה וסגירה ידנית של המשאבים. כיום בקוטלין, מתקיימת דגש על "safe closing" באמצעות use{}. ישנן גם אלטרנטיבות כמו ספריית Apache Commons IO בג'אווה אשר מאפשרות גישה נוחה ומרוכזת יותר לקריאת קבצים. בתוך קוטלין, אפשר להשתמש בstream כדי לקרוא קבצים גדולים באופן יעיל יותר, מבלי לטעון אותם כולם לזיכרון במכה אחת.
 
-## ראה גם 
-
-1. איך להשתמש בקורא תווים בקוטלין: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.nio.file.-path/read-text.html
-2. פונקציות File IO בקוטלין: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/index.html
-3. פונקציות InputStream בקוטלין: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.nio.file.-path/read-lines.html
+## See Also
+- [Baeldung Kotlin - Reading a File](https://www.baeldung.com/kotlin/read-file)
+- [Apache Commons IO Library](https://commons.apache.org/proper/commons-io/)

@@ -1,7 +1,8 @@
 ---
-title:                "Läsa kommandoradsargument"
-html_title:           "Bash: Läsa kommandoradsargument"
-simple_title:         "Läsa kommandoradsargument"
+title:                "Läsa in kommandoradsargument"
+date:                  2024-01-20T17:55:43.214102-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Läsa in kommandoradsargument"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -11,39 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att läsa kommandoradsargument innebär att man hämtar de värden som användaren har angett när de startar programmet. Programmerare använder det för att tillåta användarinteraktion och för att göra program flexibla genom att ta emot input som styr programmets beteende direkt från start.
 
-Kommandoradsargument läses in för att skicka data till ett program vid körning. Detta gör programmering flexibelt och anpassningsbart till olika användningssituationer.
-
-## Hur gör man:
+## Så här gör du:
+Använd `args` i din `Main` metod för att ta emot argument. Här är ett exempel på hur det kan se ut:
 
 ```C#
-static void Main(string[] args)
+using System;
+
+class Program
 {
-    foreach (string arg in args)
+    static void Main(string[] args)
     {
-        Console.WriteLine("Argument: " + arg);
+        if (args.Length > 0)
+        {
+            Console.WriteLine("Hej! Du angav följande argument:");
+            foreach (var arg in args)
+            {
+                Console.WriteLine(arg);
+            }
+        }
+        else
+        {
+            Console.WriteLine("Inga argument angivna.");
+        }
     }
 }
 ```
-
-Om du kör programmet med argumenten `hej värld`, kommer output att vara:
-
-```text
-Argument: hej
-Argument: värld
+Om du skulle köra programmets exe-fil från kommandotolken så här: `program.exe Hej Tjena Hallå`, skulle utskriften bli:
+```
+Hej! Du angav följande argument:
+Hej
+Tjena
+Hallå
 ```
 
-## Djupt Dyk
+## Fördjupning:
+Att läsa kommandoradsargument är grundläggande och har funnits sedan de tidiga dagarna av programmering. Alternativ till kommandoradsargument inkluderar interaktion genom grafiska användargränssnitt eller konfigurationsfiler.
 
-(1) Historiskt kontext: Kommandoradsargument har använts i decennier, återifrån tiden då datorns gränssnitt inte var grafiska utan textbaserade.
+Det som är viktigt att veta är att `args` i `Main` är en array av strängar. Argumenten delas upp baserat på blanksteg, så om ett argument innehåller ett blanksteg behöver det omslutas av citattecken när det skickas in.
 
-(2) Alternativ: Ett alternativ till kommandoradsargument är att använda filinmatning och -utdata, men detta kan vara långsammare och kräver mer kod.
+För komplexa behov finns bibliotek som `CommandLineParser` som hanterar mer avancerade scenarion, t.ex. flaggor och optioner.
 
-(3) Implementeringsdetaljer: I C# samlas kommandoradsargument i en array av strängar som skickas till `Main`-metoden. Arguments index bestämmer ordningen på kommandoradsargument.
-
-## Se Även
-
-För mer information om att använda kommandoradsargument i C#, se följande länkar: 
-
-- Microsoft's [Command-Line Arguments Tutorial](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
-- En StackOverflow-diskussion om [Command Line Arguments in C#](https://stackoverflow.com/questions/490570/command-line-arguments-in-c-sharp)
+## Se även:
+- Microsofts dokumentation om kommandoradsargument: https://docs.microsoft.com/dotnet/csharp/programming-guide/main-and-command-args/
+- CommandLineParser biblioteket på NuGet: https://www.nuget.org/packages/CommandLineParser/
+- Microsofts .NET Guide om hur man arbetar med kommandorad: https://docs.microsoft.com/dotnet/core/extensions/command-line-args

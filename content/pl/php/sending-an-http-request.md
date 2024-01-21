@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http"
-html_title:           "Arduino: Wysyłanie żądania http"
-simple_title:         "Wysyłanie żądania http"
+title:                "Wysyłanie żądania HTTP"
+date:                  2024-01-20T18:00:12.160471-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie żądania HTTP"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,40 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i dlaczego?)
+Wysyłanie żądania HTTP to sposób, by twoja aplikacja PHP porozumiewała się z innymi serwerami – to jak wysłanie listu w cyfrowym świecie. Programiści robią to, by pobierać dane, wysyłać formularze, łączyć się z API i w zasadzie do wszelkiej komunikacji sieciowej.
 
-Wysyłanie żądania HTTP to proste zapytanie do serwera, które można porównać do prośby o informacje. Programiści wykonują to, aby komunikować się z serwerami, pobierać dane, przesyłać dane itp.
+## How to (Jak to zrobić):
+W PHP do wysyłania żądań HTTP używamy głównie funkcji `file_get_contents` lub rozszerzenia `cURL`. Oto przykłady obu:
 
-## Jak To Zrobić:
-
-PHP udostępnia kilka wbudowanych funkcji do obsługi żądań HTTP. Oto przykład użycia `file_get_contents` do wykonania zapytania GET:
-
-```PHP
-<?php
-$response = file_get_contents('http://example.com');
+```php
+// Proste żądanie GET przy użyciu file_get_contents
+$response = file_get_contents('http://example.com/api/data');
 echo $response;
-?>
+
+// Wykorzystanie cURL do żądania GET
+$curl = curl_init('http://example.com/api/data');
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($curl);
+curl_close($curl);
+echo $response;
 ```
 
-Odpowiedź serwera zostanie wyświetlona przy użyciu funkcji `echo`. Możesz również wysłać zapytania POST, takie jak:
-
-```PHP
-<?php
-$options = array(
-    'http' => array(
-        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-        'method'  => 'POST',
-        'content' => http_build_query(array('key' => 'value')),
-    ),
-);
-$context = stream_context_create($options);
-$response = file_get_contents('http://example.com', false, $context);
-echo $response;
-?>
+Sample output (Przykładowe wyjście):
+```
+{"name": "Jan Kowalski", "email": "jan@example.com"}
 ```
 
-## Deep Dive:
+## Deep Dive (Dogłębna analiza):
+`file_get_contents` jest prostą funkcją do szybkiego przesłania prostej treści, ale ma ograniczone możliwości. `cURL`, czyli Client URL Library, pozwala na bardziej szczegółową konfigurację żądań HTTP i obsługuje niemal wszystkie protokoły sieciowe.
 
-Choć `file_get_contents` jest prosta i popularna, istnieje wiele innych sposobów wysyłania zapytań HTTP w PHP. Biblioteka cURL jest jednym z popularnych wyborów ze względu na jej wszechstronność.
+Historia: `cURL` pojawił się w 1997, a jego autor, Daniel Stenberg, do dziś wprowadza aktualizacje. `file_get_contents` funkcjonuje od PHP 4.3.0 i jest znane z łatwości użycia.
 
-Warto zauważyć, że pierwotna wersja PHP nie obsługiwała żądań HTTP. Funkcje te zostały dodane w późniejszych wersjach, gdy stało się jasne, że PHP jest doskonałym narzędziem do tworzenia dynamicznych stron internetowych opartych na danych serwera.
+Alternatywy: Nowoczesne alternatywy to Guzzle, Requests library czy Symfony's HttpClient, które oferują API oparte na obiektach i są bardziej elastyczne.
+
+Szczegóły implementacyjne: Warto użyć bibliotek trzecich, gdy trzeba zarządzać wieloma żądaniami, autentykacją, cache'owaniem odpowiedzi itp., `cURL` daje możliwości, ale to biblioteki poziom wyżej zdają egzamin przy bardziej skomplikowanych zastosowaniach.
+
+## See Also (Zobacz również):
+- Oficjalna dokumentacja PHP na temat `file_get_contents`:
+  https://www.php.net/manual/pl/function.file-get-contents.php
+- Dokumentacja `cURL` w PHP:
+  https://www.php.net/manual/pl/book.curl.php
+- Guzzle, a PHP HTTP client:
+  http://docs.guzzlephp.org/
+- Requests for PHP:
+  http://requests.ryanmccue.info/
+- Symfony HttpClient component:
+  https://symfony.com/doc/current/components/http_client.html

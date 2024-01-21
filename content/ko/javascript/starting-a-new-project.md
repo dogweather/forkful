@@ -1,6 +1,7 @@
 ---
 title:                "새 프로젝트 시작하기"
-html_title:           "Arduino: 새 프로젝트 시작하기"
+date:                  2024-01-20T18:04:04.553974-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "새 프로젝트 시작하기"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,39 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 시작은 뭘까? 왜 해야 할까?
+새 프로젝트를 시작한다는 건 깨끗한 캔버스에 그림을 그리는 것 같아요. 개발자들은 새로운 아이디어나 해결책을 현실로 만들기 위해서 프로젝트를 시작해요.
 
-새로운 프로젝트를 시작한다는 것은 새로운 아이디어 또는 문제해결을 위해 코드를 작성하는 과정을 말합니다. 프로그래머들은 새로운 도전을 위해 또는 기존의 방법보다 나은 솔루션을 만들기 위해 이를 수행합니다.
+## 실제로 해보기
+javascript 시작할 때 기본적인 틀을 짜봅시다. 가장 먼저 할 일은 새로운 디렉토리를 만들고 필요한 파일들을 초기화하는 거에요.
 
-## 어떻게:
+```javascript
+// 프로젝트 디렉토리 생성
+$ mkdir my-new-project
+$ cd my-new-project
 
-새로운 프로젝트를 시작하기 위한 가장 간단한 Javascript 코드를 보여드리겠습니다.
+// package.json 파일 초기화
+$ npm init -y
 
-```Javascript
-console.log('새 프로젝트 시작!');
+// 간단한 Hello World Javascript 파일 만들기
+const hello = 'Hello, World!';
+console.log(hello);
+
+// 결과 출력
+Hello, World!
 ```
 
-이 코드를 실행하면, 
+## 깊게 들어가 보기
+새로운 자바스크립트 프로젝트를 시작하기 전에 Node.js와 npm(노드 패키지 매니저)이 설치되어 있어야 해요. 이들은 자바스크립트가 브라우저 이외의 환경, 특히 서버 사이드에서 실행될 수 있게 만든 중요한 변화들이죠. `npm init`은 프로젝트 관리와 모듈 설치를 위한 `package.json` 파일을 만들어주는 명령어에요. 대안으로 `yarn` 이라는 도구도 있지만, npm이 더 널리 사용되고 있어요. 프로젝트 구조는 규모나 목적에 따라 다양하게 구성할 수 있지만, 일반적으로는 `src` 폴더에 소스 코드를, `public` 폴더에 정적 파일을 두는 방식이 흔해요.
 
-```
-새 프로젝트 시작!
-```
-
-위의 출력을 보게 됩니다.
-
-## 깊이 들여다 보기
-
-새로운 프로젝트를 시작하는 것에 대한 고찰하면, 이것은 프로그래밍의 핵심 임무 중 하나입니다. 프로그래밍의 역사를 거슬러 올라가 보면, '새로운 프로젝트'는 항상 새로운 아이디어의 체화 또는 기존 문제에 대한 새로운 접근 방식을 나타냈습니다. 
-
-마이크로소프트의 'Visual Studio Code' 또는 'Atom'과 같은 툴을 이용하면 훨씬 더 쉽게 새로운 프로젝트를 시작할 수 있습니다. Javascript를 이용하여 HTML과 CSS로 웹 페이지를 만드는 것도 일반적인 방법입니다.
-
-## 참고하십시오
-
-새 프로젝트를 시작하는 데 도움이 될 수 있는 다양한 자원을 아래에서 찾을 수 있습니다.
-
-- [Mozilla Developer Network(MDN)의 JavaScript 가이드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide)
-- [W3Schools의 JavaScript 튜토리얼](https://www.w3schools.com/js/)
-- [Visual Studio Code 시작 가이드](https://code.visualstudio.com/docs)
-- [Atom 시작 가이드](https://flight-manual.atom.io/getting-started/)
-
-항상 새로운 프로젝트를 시작하는 것은 새로운 도전과 기회를 의미합니다. 우리의 코드로 세상을 바꾸는 것이 프로그래머의 목표가 아닐까요? 그렇기 때문에 항상 새로운 프로젝트를 시작하는 용기와 열정을 갖춰 나가기를 바랍니다.
+## 관련 자료
+- Node.js 공식 문서: [https://nodejs.org](https://nodejs.org)
+- npm 공식 문서: [https://www.npmjs.com](https://www.npmjs.com)

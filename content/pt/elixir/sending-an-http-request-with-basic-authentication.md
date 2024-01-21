@@ -1,7 +1,8 @@
 ---
-title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
-simple_title:         "Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma requisição HTTP com autenticação básica"
+date:                  2024-01-20T18:01:32.296895-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Enviando uma requisição HTTP com autenticação básica"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,56 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Enviando uma solicitação HTTP com autenticação básica em Elixir
+## O Quê & Porquê?
+Enviar uma requisição HTTP com autenticação básica é passar credenciais de acesso (usuário e senha) para um servidor via HTTP. Programadores fazem isso para acessar recursos protegidos na web, onde é necessário provar a identidade.
 
-## O que & Por quê?
+## Como Fazer:
+Para enviar uma requisição HTTP com autenticação básica em Elixir, utilizamos a biblioteca `HTTPoison` para facilitar o processo. Aqui está um exemplo:
 
-Enviar uma solicitação HTTP com autenticação básica é uma maneira de interagir com APIs protegidas que requerem credenciais (nome de usuário e senha) no cabeçalho da solicitação HTTP. Programamos isso para acessar ou manipular dados em tais APIs de forma segura.
-
-## Como fazer:
-
-Elixir, com sua biblioteca `HTTPoison`, nos ajuda a fazer isso. Primeiro, adicione `HTTPoison` ao seu mix.exs:
-
-```Elixir
+```elixir
+# Adicione HTTPoison à sua lista de dependências no mix.exs
 defp deps do
   [
     {:httpoison, "~> 1.8"}
   ]
 end
-``` 
 
-Depois, faça a solicitação HTTP com autenticação básica da seguinte forma:
+# Execute mix deps.get para instalar a biblioteca
+# Após instalar, você pode fazer uma requisição com autenticação básica:
 
-```Elixir
-defmodule MyHttpClient do
-  def get(url, username, password) do
-    headers = ["Authorization": "Basic " <> :base64.encode_to_string("#{username}:#{password}")]
-    HTTPoison.get(url, headers)
+defmodule MyHTTPClient do
+  def send_request do
+    auth = {"meu_usuario", "minha_senha"}
+    HTTPoison.get!(
+      "https://minha.api/protegida",
+      [],
+      basic_auth: auth
+    )
   end
 end
+
+# Usar a função e mostrar a resposta
+IO.inspect(MyHTTPClient.send_request)
 ```
 
-O resultado poderia ser algo assim:
-
-```Elixir
-{:ok, %HTTPoison.Response{
-       body: "<html>...</html>",
-       headers: [{"Content-Type", "text/html"}],
-       status_code: 200
-}}
+Saída esperada (exemplo):
+```elixir
+%HTTPoison.Response{
+  body: "Conteúdo protegido",
+  status_code: 200,
+  ...
+}
 ```
 
-## Mergulho profundo
+## Mergulho Profundo
+Antes de `HTTPoison`, a comunidade de Elixir frequentemente recorria ao `hackney` diretamente (é a biblioteca que o `HTTPoison` abstrai). As autenticações via HTTP surgiram como um método simples para controlar o acesso a webpages, antes mesmo do advento de formas mais complexas e seguras como o OAuth.
 
-A autenticação básica é uma das formas mais antigas de autenticação na web, desde os primeiros dias do protocolo HTTP. Há outras alternativas para isso, como o OAuth e o token JWT, que são mais seguros, mas requerem mais complexidade para implementar.
+Enviar uma requisição com autenticação básica é simples, mas não muito seguro por si só, pois as credenciais são codificadas em Base64, não criptografadas. Por isso, é crucial usar HTTPS, que adiciona uma camada de segurança com a criptografia SSL/TLS.
 
-Em Elixir, estamos usando a biblioteca `HTTPoison`, que usa a biblioteca `hackney` Erlang por baixo dos panos. `hackney` é uma das bibliotecas HTTP mais populares em Erlang, e também oferece suporte a autenticação básica. Certifique-se de tratar os erros e as respostas de falha do servidor ao usar essas bibliotecas.
+Alternativas para a autenticação em APIs incluem tokens de acesso, autenticação Digest e JWT (Json Web Tokens), que oferecem medidas de segurança adicionais. Em Elixir, bibliotecas como `Guardian` são frequentemente usadas para trabalhar com JWT.
 
-## Veja também
-
-A documentação oficial de Elixir e HTTPoison são boas fontes para aprender mais sobre esse tópico:
-
-- Elixir: [https://elixir-lang.org/docs.html](https://elixir-lang.org/docs.html)
-- HTTPoison: [https://hexdocs.pm/httpoison/HTTPoison.html](https://hexdocs.pm/httpoison/HTTPoison.html) 
-
-Hackney também possui uma documentação abrangente:
+## Veja Também
+- Documentação oficial do HTTPoison: https://hexdocs.pm/httpoison
+- Guia sobre autenticação básica da MDN: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- `Guardian`, uma biblioteca de autenticação para Elixir: https://github.com/ueberauth/guardian
+- Mais sobre HTTPS e SSL/TLS: https://letsencrypt.org/pt-br/about/

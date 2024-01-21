@@ -1,6 +1,7 @@
 ---
 title:                "חיפוש והחלפת טקסט"
-html_title:           "Elm: חיפוש והחלפת טקסט"
+date:                  2024-01-20T17:58:28.280431-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חיפוש והחלפת טקסט"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,29 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה? 
+## מה ולמה?
 
-חיפוש והחלפה של טקסט הם פעולות שבהן מחרוזת מסוימת בטקסט מוחלפת במחרוזת אחרת. תכנתים מבצעים את הפעולות האלה כדי לשנות את התוכן של טקסט, להתאים אותו לצרכים מסוימים, או לשנות מחרוזות של קוד.
+חיפוש והחלפה של טקסט הם פעולות נפוצות שמאפשרות לנו למצוא מחרוזות טקסט ספציפיות ולהחליפן באחרות. פרוגרמרים נעזרים בהן כדי לעדכן קוד, לתקן שגיאות או לשנות נתונים באופן אוטומטי.
 
-## איך לעשות: 
+## איך לעשות:
 
-בלוע, ניתן לחפש ולהחליף טקסט באמצעות שימוש בפונקציה `string.gsub`. נסו את הדוגמה הבאה:
 ```Lua
-s = "ברוך הבא לעולם של Lua"
-new_s, n = string.gsub(s, "Lua", "Lua programming")
-print(new_s)  -- prints "ברוך הבא לעולם של Lua programming"
-print(n)  -- prints 1
+-- חיפוש והחלפה בסיסיים באמצעות gsub
+local original_text = "שוקולד מתוק מאוד מתוק"
+local text_to_find = "מתוק"
+local replacement = "מר"
+
+local replaced_text = string.gsub(original_text, text_to_find, replacement)
+print(replaced_text)  -- תוצאה: שוקולד מתוק מר מר
 ```
-הפונקציה מחזירה שני ערכים: המחרוזת החדשה ומספר ההחלפות שנערכו.
 
-## צלילה עמוקה: 
+```Lua
+-- חיפוש עם פטרנים (Patterns)
+local pattern_text = "ילד 1, ילדה 2, ילד 3"
+local pattern = "ילד(ה?) %d"
 
-על פי ההיסטוריה, צורת החיפוש וההחלפה של Lua מבוססת על המערכת המוכרת regex שנמצאת בשפות רבות נוספות. במקרה שאתה מחפש אלטרנטיבות, אתה יכול להתאמת את הפונקציות `string.match` או `string.find` ואז להחליף מדובר במנגנון בלעדי ל-Lua. 
+local matches = {string.gmatch(pattern_text, pattern)}
 
-מההיבט המימוש, החיפוש הראשוני הוא לפי המופע הראשון של הטקסט לחיפוש ואז מתבצעת ההחלפה. הפעולה מתרחשת לכל המופעים בטקסט. זה מעשה הסיבה שאנחנו מקבלים מספר של ההחלפות שנערכו כשהוא מחזיר את הערך.
+for i, match in ipairs(matches) do
+   print("מצאתי: " .. match)
+end
+-- תוצאה:
+-- מצאתי: ילד 1
+-- מצאתי: ילדה 2
+-- מצאתי: ילד 3
+```
+
+## עיון יותר עמוק:
+
+הפונקציה `gsub` בלואה נועדה לבצע החלפות של מחרוזות טקסט והיא מגיעה מהמילה "global substitution". מבנה הפונקציה הוא: `string.gsub(s, pattern, replace, [n])`. `s` היא המחרוזת המקורית, `pattern` הוא הטקסט או הביטוי שאנחנו מחפשים, `replace` הוא הטקסט להחלפה, ואופציונלית `n` מגביל את מספר ההחלפות.
+
+פטרנים בלואה מאפשרים חיפוש יותר מתקדם עם מנגנונים דומים לביטויים רגולריים. למשל, הסימן `%d` מייצג כל ספרה. 
+
+חשוב להבין את המגבלות: ביטויים רגולריים שלמים אינם נתמכים בלואה אלא רק פטרנים מסוימים. למשל, לא תמצאו בלואה `+` או `?` כפי שהם מופיעים בביטויים רגולריים.
 
 ## ראו גם:
 
-1. [Lua: string.gsub](https://www.lua.org/manual/5.3/manual.html#pdf-string.gsub) - הסבר מלא של הפונקציה `string.gsub`.
-2. [Lua: string.find](https://www.lua.org/manual/5.3/manual.html#pdf-string.find) - למידה נוספת על השילוב של `string.find` והחלפה.
-3. [Lua: string.match](https://www.lua.org/manual/5.3/manual.html#pdf-string.match) - השימוש ב`string.match` למציאת מחרוזות במחרוזת אחרת.
+- מדריך למחרוזות בלואה: [Programming in Lua: Strings](https://www.lua.org/pil/20.html)
+- תיעוד של הפונקציה `gsub`: [Lua 5.4 Reference Manual: gsub](https://www.lua.org/manual/5.4/manual.html#pdf-string.gsub)
+- תיעוד על פטרנים בלואה: [Lua 5.4 Pattern Matching](https://www.lua.org/manual/5.4/manual.html#6.4.1)

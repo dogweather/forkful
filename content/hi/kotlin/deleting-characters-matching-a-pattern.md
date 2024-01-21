@@ -1,7 +1,8 @@
 ---
-title:                "पैटर्न से मिलते जुलते वर्णों को हटाना"
-html_title:           "Elixir: पैटर्न से मिलते जुलते वर्णों को हटाना"
-simple_title:         "पैटर्न से मिलते जुलते वर्णों को हटाना"
+title:                "पैटर्न से मेल खाते अक्षरों को हटाना"
+date:                  2024-01-20T17:42:30.709007-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पैटर्न से मेल खाते अक्षरों को हटाना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,39 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या एवं क्यों?
+## What & Why? (क्या और क्यों?)
+Pattern matching se hum kisi string mein se khas characters ya shabdon ko dhundhkar unhe hata sakte hain. Programmers iska use karte hain data ko saf karne ya unwanted information ko nikalne ke liye, jaise ki log files se sensitive data hataana ya user input ko validate karna.
 
-पैटर्न मैच करने वाले वर्णों को डिलीट करना एक आम कार्य होता है जहां हम एक निश्चित पैटर्न मैच करने वाले वर्णों को एक String से हटा देते हैं। प्रोग्रामर्स इसे डाटा क्लीनिंग के उद्देश्य से करते हैं, जैसे की अनवांछित वर्णों को हटाना हो सकता है।
-
-## कैसे करें:
-
-आइए देखें कि Kotlin में यह कैसे किया जा सकता है:
-
-```Kotlin 
-fun main() { 
-    val str = "Hello, World!"
-    val pattern = "[, ]"   // हमें कौन से वर्ण हटाने हैं उन्हें यहाँ निर्दिष्ट करें
-    val removed = str.replace(Regex(pattern), "")
-    println(removed)
+## How to (कैसे करें):
+```kotlin
+fun main() {
+    val originalText = "Programming in Kot1in is fun2!"
+    val pattern = "\\d".toRegex() // Digits ko dhundhne ke liye pattern
+    val sanitizedText = originalText.replace(pattern, "")
+    println(sanitizedText) // Output: Programming in Kotlin is fun!
 }
 ```
+Is code mein, `\\d` ka matlab hota hai "koi bhi digit". `toRegex()` ko use karke hum is pattern ko regex mein convert karte hain. `replace()` function se hum original text mein se sabhi digits ko hata dete hain.
 
-ऊपरी कोड का आउटपुट निम्नलिखित होगा:
+## Deep Dive (गहराई से जानिये):
+Pattern matching ka istemaal bahut pehle se hota aaya hai. Unix-based systems mein `grep` jaisi command-line tools iska ek udaharan hain. Kotlin mein regex ka use karke character matching aur replacing bohot aasan ban gaya hai. Alternatives mein `filter` aur lambdas bhi hote hain, par regex zyada powerful hota hai khas kar jab complex patterns ki baat aati hai. Regex implementation details ke liye, Kotlin Java ki `Pattern` aur `Matcher` classes ka sahara leta hai.
 
-```
-HelloWorld!
-```
-
-"Hello, World!" String से हमने comma और space वर्णों को हटा दिया है।
-
-## गहराई में:
-
-इतिहासकारी में यह कार्य पाठ एडिटिंग सिस्टम्स, जैसे अक्स और सेड, का भाग था। Kotlin में, `replace()` फंक्शन Regex और replacement String का उपयोग करती है।
-
-विकल्प स्वरूप, आपके पास अन्य लाइब्रेरीज या फंक्शन्स का उपयोग करने का विकल्प हो सकता है, जैसे जावा का `replaceAll()` या कस्टम कोड। याद रखें, `replace()` केवल पहले से निर्दिष्ट पैटर्न को हटाता है, इसलिए इसका उपयोग करते वक्त सतर्क रहें।
-
-## अन्य स्रोतों के लिए:
-
-2. [Java String replaceAll()](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html#replaceAll(java.lang.String,java.lang.String))
-
-इन स्रोतों में आपको String के साथ काम करते समय नियमबद्धताओं और विस्तार की जानकारी मिलेगी।
+## See Also (और देखें):
+- Kotlin documentation on regex: [Kotlin Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+- Java Pattern class: [Java Pattern](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
+- Tutorial on regular expressions: [Regex Tutorial](https://www.regular-expressions.info/tutorial.html)

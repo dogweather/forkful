@@ -1,7 +1,8 @@
 ---
-title:                "Конкатенація рядків"
-html_title:           "PHP: Конкатенація рядків"
-simple_title:         "Конкатенація рядків"
+title:                "Об'єднання рядків"
+date:                  2024-01-20T17:35:25.325052-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Об'єднання рядків"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,46 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке і навіщо?
+## Що і чому?
 
-Складання рядків - це процес об'єднання двох або більше рядків в один. Це корисно коли програмісти потребують створити новий рядок з декількох існуючих.
+Конкатенація рядків – це процес з'єднання двох або більше рядків в один. Програмісти роблять це для створення повідомлень, динамічного формування коду і просто для того, щоб об'єднати інформацію.
 
-## Як це робити:
-
-Код на Haskell для складання рядків може бути таким:
+## Як це зробити:
 
 ```Haskell
+-- Спосіб 1: Використання оператора (++)
+hello :: String
+hello = "Привіт"
+
+world :: String
+world = "Світ"
+
 main :: IO ()
-main = do
-    let a = "Привіт, "
-    let b = "світ!"
-    putStrLn (a ++ b) 
+main = putStrLn (hello ++ ", " ++ world ++ "!")
+
+-- Вивід: Привіт, Світ!
 ```
 
-При виконанні цього коду ви отримаєте:
-
 ```Haskell
-Привіт, світ!
-```
+-- Спосіб 2: Використання функції concat
+parts :: [String]
+parts = ["Привіт", ", ", "Світ", "!"]
 
-## Занурення у деталі:
-
-1) **Історичний контекст**: Конкатенація рядків - це фундаментальний аспект більшості мов програмування і Haskell не є винятком. 
-
-2) **Альтернативи**: В Haskell есть також функція `concat`, яка об'єднує список рядків в один рядок.
-
-```Haskell
 main :: IO ()
-main = do
-    let listOfStrings = ["Привіт, ", "світ!"]
-    putStrLn (concat listOfStrings)
+main = putStrLn (concat parts)
+
+-- Вивід: Привіт, Світ!
 ```
 
-Виходом буде той самий `Привіт, світ!`
+## В глибину:
 
-3) **Деталі реалізації**: Операція складання рядків в Haskell реалізована через оператор `++`. Це непряма операция, оскільки для її виконання потрібно пройти по першому рядку, залишаючи вторий "незайнятим". 
+Історичний контекст: В Haskell конкатенація рядків вважається базовою операцією і її використання може бути простежено аж до його функціональних корінів в Lambda-рахунку.
 
-## Див. також:
+Альтернативи: В Haskell існують різні шляхи конкатенації. Оператор `(++)` простий, але при конкатенації великої кількості рядків він може бути неефективним. Функції як `concat`, `unwords`, або `intercalate` з модуля `Data.List` надають більшу гнучкість та ефективність.
 
-1) [Haskell documentation on Strings](https://www.haskell.org/tutorial/strings.html)
-2) [StackOverflow: How do I concatenate strings?](https://stackoverflow.com/questions/1146824/how-do-i-concatenate-strings)
+Деталі реалізації: У Haskell рядки внутрішньо представлені як списки символів (`[Char]`), тому конкатенація рядків часто відбувається так само, як і конкатенація списків.
+
+## Подивіться також:
+
+- [Learn You a Haskell for Great Good: Starting Out](http://learnyouahaskell.com/starting-out#im-a-list-comprehension)
+- [Real World Haskell: Chapter 4. Functional Programming](http://book.realworldhaskell.org/read/functional-programming.html)

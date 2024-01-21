@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:50:40.594514-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,45 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego?
+## What & Why? (Co i Dlaczego?)
 
-Interpolacja łańcuchów to technika formatowania tekstu w C#, która pozwala na wstawianie zmiennych bezpośrednio w łańcuch. Programiści używają jej, aby zwiększyć czytelność kodu i ułatwić formatowanie.
+Interpolacja stringów to sposób wkluczania zmiennych bezpośrednio w ciągi tekstowe. Programiści używają jej, by łatwo łączyć tekst z danymi, co czyni kod bardziej czytelnym i prostszym w utrzymaniu.
 
-## Jak to zrobić:
+## How to (Jak to zrobić):
 
-W C#, interpolację łańcuchów wykonuje się za pomocą wyrażeń „$”.
-
-```C#
-string imie = "Jan";
-string powitanie = $"Witaj, {imie}!";
-Console.WriteLine(powitanie); // Wyświetli: Witaj, Jan!
-```
-
-Tu, zmienna `imie` jest interpolowana do łańcucha `powitanie`. 
-
-Możemy również interpolować wyrażenia, takie jak:
+Używamy znaku `$` i nawiasów klamrowych `{}`. Prosto, szybko, wygodnie.
 
 ```C#
-int x = 5;
-int y = 10;
-Console.WriteLine($"Suma {x} i {y} wynosi {x + y}."); // Wyświetli: Suma 5 i 10 wynosi 15.
+string name = "Ania";
+int age = 25;
+string greeting = $"Cześć, nazywam się {name} i mam {age} lata.";
+Console.WriteLine(greeting);
 ```
 
-## Deep Dive:
+Output:
+```
+Cześć, nazywam się Ania i mam 25 lata.
+```
 
-Interpolacja łańcuchów została wprowadzona w C# 6.0 jako ulepszona alternatywa dla funkcji `string.Format`. Interpolacja łańcuchów ma lepszą wydajność od `string.Format` ponieważ stara się minimalizować liczbe alokacji.
+Możesz nawet wykonywać proste operacje:
+```C#
+int a = 10;
+int b = 5;
+string math = $"Dziesięć minus pięć to {a - b}.";
+Console.WriteLine(math);
+```
 
-Alternatywą dla interpolacji łańcuchów jest używanie konkatenacji łańcuchów, ale jest ona zazwyczaj mniej czytelna i powoduje wiele niepotrzebnych alokacji, które mogą obciążyć system.
+Output:
+```
+Dziesięć minus pięć to 5.
+```
 
-Interpolacja działa poprzez przekształcenie łańcucha tekstowego z interpolacją na łańcuch konkatynowany za pomocą operatora `+` albo na `string.Format`, w zależności od użycia.
+## Deep Dive (Głębsze spojrzenie)
 
-## Zobacz również:
+Interpolacja stringów w C# została wprowadzona w wersji 6.0. To ewolucja starego `String.Format()`, znacznie poprawiająca czytelność. Alternatywą są konkatenacja (+) i `StringBuilder`, ale one często sprawiają, że kod jest mniej zrozumiały.
 
-1. Opracowanie Microsoft na temat interpolacji łańcuchów: 
-https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated
+Implementacja w .NET używa `String.Format`, a za kulisami przekształca interpolowany string w odpowiedni kod wykorzystujący tę funkcję. Warto pamiętać, że interpolowane stringi są typami referencyjnymi i tworzą obiekty w trakcie wykonania programu.
 
-2. Wykład na YouTube o interpolacji łańcuchów w C#: 
-https://www.youtube.com/watch?v=hUzj3FG0IfY
+## See Also (Zobacz też)
 
-3. Artykuł dotyczący sprawności interpolacji stringów w C#:
-https://www.hanselman.com/blog/exploring-c-6s-stringinterpolationperf-improvements
+- [Dokumentacja Microsoft o interpolacji w C#](https://docs.microsoft.com/pl-pl/dotnet/csharp/language-reference/tokens/interpolated)
+- [String.Format w MSDN](https://docs.microsoft.com/pl-pl/dotnet/api/system.string.format?view=net-6.0)
+- [StringBuilder w MSDN](https://docs.microsoft.com/pl-pl/dotnet/api/system.text.stringbuilder?view=net-6.0)
+- [Tutorial o konkatenacji stringów](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/strings/)

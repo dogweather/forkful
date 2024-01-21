@@ -1,6 +1,7 @@
 ---
 title:                "文字列の連結"
-html_title:           "Bash: 文字列の連結"
+date:                  2024-01-20T17:34:35.767729-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "文字列の連結"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,28 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (なにとなぜ？)
 
-文字列の連結とは、複数の文字列を一つにまとめる操作を指す。文字列の組み合わせや改行追加など、データの整形を容易にするためにプログラマーは文字列を連結する。
+文字列を連結（concatenating strings）するとは、複数の文字列を一つに結合することです。プログラマーは、データ表示、メッセージ構築、動的コンテンツ生成のためにこれをよく使います。
 
-## 手順
-
-ここでは、Gleamでの文字列連結の例を示します。
+## How to: (やり方：)
 
 ```Gleam
-let str1 = "こんにちは"
-let str2 = "、"
-let str3 = "世界"
-let full_str = str1 ++ str2 ++ str3
-io.println(full_str) //--> "こんにちは、世界"
+import gleam/string
+
+// 文字列の連結
+fn main() {
+  let greeting = "こんにちは、"
+  let name = "太郎さん"
+  let message = string.append(greeting, name)
+  message
+}
+
+// 出力: "こんにちは、太郎さん"
 ```
 
-このプログラムでは、3つの文字列を `++` 演算子を使って結合し、結果を表示しています。
+## Deep Dive (深掘り)
 
-## 深掘り
+文字列連結は、Gleam言語の基本です。古い言語、たとえばCでは、文字列を連結するのが困難だった。しかし、Gleamでは`string`モジュールの`append`関数のようなツールを使って簡単にできます。選択肢として、`+`演算子を使わないのは、型安全とパフォーマンスを重視するGleamの設計思想に合っています。`append`は内部的に最適化された方法で文字列を結合し、エラーや型の問題を避けます。
 
-文字列を連結するというのは、プログラミングの歴史の中で常に使われてきた手法です。これには代替手段もあります、如何に例えば、`interp`関数を使うことでマークと値を組み合わせるなどがあります。しかし、Gleamでは基本的に文字列を連結する際には `++` 演算子を使います。これは、GleamがErlang VM上で動作し、Erlangではリスト（この場合、文字列）の連結が `++` 演算子で行われるためです。 
+## See Also (参照)
 
-## 参考リンク
-
-- [Gleamの文字列操作](https://gleam.run/book/tour/strings.html): Gleamでの他の文字列操作についての情報。
+- 文字列についてのより広いコンテキスト: [Unicode String](https://unicode.org/reports/tr15/)
+- 効率的な文字列操作に関する考察: ["String Concatenation Performance Tips"](https://www.informit.com/articles/article.aspx?p=175137)

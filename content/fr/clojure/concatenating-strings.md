@@ -1,7 +1,8 @@
 ---
-title:                "Concaténation de chaînes"
-html_title:           "C: Concaténation de chaînes"
-simple_title:         "Concaténation de chaînes"
+title:                "Concaténation de chaînes de caractères"
+date:                  2024-01-20T17:34:30.479902-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Concaténation de chaînes de caractères"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,39 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-La concaténation des chaînes fait référence à la liaison de deux ou plusieurs chaînes de caractères en une seule. Les programmeurs font cela pour manipuler et transformer des données textuelles, clefs en programmation.
+## Quoi & Pourquoi ?
+Concaténer des chaînes, c'est coller ensemble des bouts de texte pour en faire un seul morceau. En programmation, ça sert souvent à assembler des données pour les afficher ou les enregistrer.
 
-## Comment faire:
-La fonction `str` en Clojure peut être utilisée pour concaténer des chaînes. Voyons certains exemples:
-
+## Comment faire :
 ```Clojure
-(str "Bonjour, " "comment ça va?")
-; Résultat: "Bonjour, comment ça va?"
+;; Utilisons `str` pour concaténer des chaînes
+(defn salut-monde []
+  (str "Bonjour" ", " "monde!"))
 
-(str "J'aime " "la " "programmation " "en " "Clojure.")
-; Résultat: "J'aime la programmation en Clojure."
-```
-Note: `str` fonctionne même en combinant des chaînes avec d'autres types:
+(salut-monde) ; Résultat : "Bonjour, monde!"
 
-```Clojure
-(str "Le carré de " 5 " est " (* 5 5) ".")
-; Résultat: "Le carré de 5 est 25."
-```
+;; On peut aussi concaténer avec `clojure.string/join`
+(defn liste-en-chaine [liste]
+  (clojure.string/join ", " liste))
 
-## Plongée en profondeur
-Historiquement, en Clojure, nous avons toujours utilisé `str` pour concaténer des chaînes. C'est simple, propre et efficace.
-
-Une alternative pourrait être d'utiliser `clojure.string/join`, mais il est plus utilisé pour unir des chaînes de caractères avec un délimiteur spécifique. Par exemple:
-
-```Clojure 
-(clojure.string/join "-" ["J'aime" "la" "programmation" "en" "Clojure"])
-; Résultat: "J'aime-la-programmation-en-Clojure"
+(liste-en-chaine ["pommes" "bananes" "cerises"]) ; Résultat : "pommes, bananes, cerises"
 ```
 
-Quant aux détails de mise en œuvre, `str` transforme chaque argument en une représentation de chaîne avant de les concaténer, rendant le processus très polyvalent.
+## Exploration approfondie
+Historiquement, la concaténation de chaînes est aussi vieille que la programmation elle-même. Dans Clojure, `str` est notre outil de base — simple et efficace. Il convertit les arguments en chaînes et les joint. 
+
+Une alternative à `str` est `clojure.string/join`, qui est pas mal quand on a une collection d'éléments à raccorder avec un délimiteur spécifique.
+
+Pour ce qui est du détail implémentation, `str` utilise une StringBuilder Java en sous-main pour optimiser la construction de la nouvelle chaîne, tandis que `clojure.string/join` se sert du `StringJoiner` de Java 8 si disponible, ou alors itère la collection et utilise `str`.
 
 ## Voir aussi
-1. Guide officiel de Clojure : https://clojuredocs.org/clojure.core/str
-2. Pour des exemples plus détaillés : https://www.learn-clojure.com/concepts/string-concatenation
-3. Documentation clojure.string/join : https://clojuredocs.org/clojure.string/join
+- Plus sur `StringJoiner` de Java : [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/util/StringJoiner.html)

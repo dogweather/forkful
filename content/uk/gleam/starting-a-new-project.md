@@ -1,7 +1,8 @@
 ---
-title:                "Початок нового проєкту"
-html_title:           "Elm: Початок нового проєкту"
-simple_title:         "Початок нового проєкту"
+title:                "Починаємо новий проект"
+date:                  2024-01-20T18:03:36.971791-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Починаємо новий проект"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Getting Started"
@@ -10,34 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо?
-Започаткування нового проекту в програмуванні - це створення нового "блокноту", в якому ви розпочинаєте кодування з нуля. Програмісти роблять це, щоб реалізувати нові ідеї та вдосконалити свої навички.
+## What & Why?
+Що таке новий проект і навіщо програмісти його створюють?
 
-## Як це зробити:
-Це просте приклади, які показують, як започаткувати новий проект в Gleam. 
+Starting a project means setting up the workspace where your new code will live. Programmers start new projects to solve problems, explore ideas, or learn something new.
 
-```Gleam
-gleam new hello_world
-cd hello_world
-rebar3 eunit
+## How to:
+Як це зробити:
+
+```gleam
+// Assuming you have Gleam installed
+// Create a new project with `gleam new`
+gleam new my_cool_project
+
+// Navigate to your new project directory
+cd my_cool_project
+
+// Build your project
+gleam build
 ```
 
-Виведення:
-```Gleam
-===> Fetching rebar3_gleam 0.2.1
-===> Compiling gleam_stdlib
-===> 	Compiling test/hello_world_test.gleam
-All 1 tests passed.
+Output:
+
+```plaintext
+Your Gleam project my_cool_project has been successfully created.
+The `src` directory is where your .gleam files go.
+After writing some code, run `gleam build` to compile.
 ```
 
-Спершу, ми створюємо новий проект з назвою `hello_world`, потім переходимо в директорію проекту, і нарешті, запускаємо тести за допомогою `rebar3 eunit`.
+## Deep Dive
+Що потрібно знати детальніше:
 
-## Поглиблений погляд:
-1. _Історичний контекст_: Gleam - це статично написана мова, яка працює на BEAM, віртуальній машині Erlang. Gleam почав розвиватися в 2018 році.
+In the past, Gleam borrowed much from Erlang and aimed to provide a safer, more user-friendly alternative. Now, it's a standalone language with a growing ecosystem. Starting a new project in Gleam gives you a solid foundation with the reliability of the Erlang virtual machine (BEAM) and a modern type system.
 
-2. _Альтернативи_: Існують багато мов програмування, які ви можете використовувати для початку нового проекту, включаючи Java, Python, C++, і т.д. Вибір мови залежить від потреб вашого проекту.
+Alternatives like Elixir or Erlang offer different experiences but target the same VM. Gleam stands out with its strong type system and compile-time safety, while Elixir shines with great documentation and a more mature ecosystem.
 
-3. _Деталі реалізації_: Початок нового проекту в Gleam включає в себе кілька кроків: встановлення середовища, створення нового проекту, написання коду, тестування і нарешті, використання пакетного менеджера для розгортання коду. 
+When you initialize a project in Gleam, the tooling generates necessary files and directories, setting up a conventional structure. This usually means having `src`, `test`, and `gen` directories, a `gleam.toml` configuration file, and other boilerplates, giving you a predictable development environment.
 
-## Дивіться також: 
-* [Спільнота Gleam](https://gleam.run/community/)
+## See Also
+Що ще може бути корисним:
+
+- The official Gleam website for documentation: [https://gleam.run](https://gleam.run)
+- An introduction to the Gleam language for more context: [https://gleam.run/book](https://gleam.run/book)
+- The GitHub repository for Gleam for contributing or issues: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)
+- An awesome list of Gleam resources: [https://github.com/gleam-lang/awesome-gleam](https://github.com/gleam-lang/awesome-gleam)

@@ -1,6 +1,7 @@
 ---
 title:                "Baixando uma página da web"
-html_title:           "Bash: Baixando uma página da web"
+date:                  2024-01-20T17:43:37.213336-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Baixando uma página da web"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,44 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## What & Why?
+Baixar uma página da web significa copiar o seu conteúdo da internet para o seu computador. Programadores fazem isso para analisar dados, testar disponibilidade de websites ou automatizar tarefas.
 
-Descarregar uma página web é o acto de extrair informação a partir de uma localização online, geralmente em formato HTML. Programadores fazem isto para usar os dados numa variedade de aplicações, desde o rastreamento de informação até à criação de repositórios offline.
-
-## Como fazer:
-
-Utiliza o seguinte código do **Bash** para descarregar uma página web, substituindo o URL pelo que quiseres descarregar.
+## How to:
+Para baixar uma página da web com o Bash, podemos usar o `curl` ou `wget`. Aqui estão os exemplos:
 
 ```Bash
-#!/bin/bash
+# Usando curl
+curl http://example.com -o example.html
 
-URL="<o URL da tua escolha>"
-wget $URL
+# Saída esperada: Nenhuma, se tudo correr bem, o arquivo example.html será criado com o conteúdo da página.
+
+# Usando wget
+wget http://example.com
+
+# Saída esperada: O wget irá mostrar o progresso do download e salvará a página como index.html por padrão.
 ```
 
-Por exemplo, para descarregar a página inicial do Google:
+## Deep Dive
+Historicamente, o `wget` está por aí desde 1996, com a ideia de ser uma ferramenta para recuperar conteúdo da web via linha de comando. O `curl` veio logo depois, em 1997, oferecendo mais protocolos e uma biblioteca (libcurl) para os desenvolvedores.
 
-```Bash
-#!/bin/bash
+Existem alternativas. Por exemplo, você pode usar o `lynx -dump -nolist http://example.com > example.html` para baixar o texto de uma página web com o navegador de texto Lynx.
 
-URL="https://www.google.com"
-wget $URL
-```
+Implementar o download de uma página web também pode envolver cuidados com a etiqueta da internet, como respeitar o arquivo `robots.txt` de um site, e lidar com as questões de segurança, como a validação de certificado SSL.
 
-Isto irá criar um ficheiro chamado 'index.html' no teu diretório atual.
-
-## Mergulho Profundo
-
-O `wget`, usado acima, é, na verdade, parte de uma longa história de ferramentas criadas para interagir com a internet desde os primórdios. Criada em 1996, é uma das aplicações CLI (Command Line Interface) mais antigas e confiáveis para descarregar conteúdo da web.
-
-Existem alternativas ao `wget`. `curl` é outra ferramenta de linha de comando popular, enquanto que `httrack` fornece uma opção mais robusta para descarregar sites inteiros.
-
-Sobre detalhes de implementação, quando utilizas o `wget`, o que realmente acontece é que a ferramenta envia um pedido HTTP GET para o servidor que hospeda o site. O servidor, depois, envia os dados da página de volta ao `wget`, que, por sua vez, escreve esses dados num ficheiro.
-
-## Veja Também
-
-- [Página manual do`wget`](https://manpages.debian.org/wget)
-- [Tutorial do `curl` no Mozilla Developer Network](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/CORS)
-- [Site oficial `httrack`](https://www.httrack.com)
-  
-Não há necessidade de uma secção de "Conclusão". O importante é aprender e fazer!
+## See Also
+- `man curl`
+- `man wget`
+- [Project website for curl](https://curl.se/)
+- [Project website for wget](https://www.gnu.org/software/wget/)
+- [Lynx Browser](http://lynx.browser.org/)

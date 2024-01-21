@@ -1,7 +1,8 @@
 ---
-title:                "插值字符串"
-html_title:           "Arduino: 插值字符串"
-simple_title:         "插值字符串"
+title:                "字符串插值"
+date:                  2024-01-20T17:51:16.684518-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "字符串插值"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,40 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
+## What & Why? (是什么以及为什么？)
+字符串插值是将变量或表达式的值嵌入到字符串中的过程。程序员用它是为了动态构建字符串，提高代码的可读性和灵活性。
 
-字符串插值是将变量值印入字符串的过程。开发者这样做主要是为了创建具有动态内容的字符串，使其更易读，易管理。
-
-## 如何实现：
-
-在Haskell中，我们使用 `printf` 函数来执行字符串接。看看以下的代码示例：
+## How to: (如何操作：)
+Haskell 中可以用多种方式插值字符串，但让我们看一个简单例子：使用 `printf` 函数。
 
 ```Haskell
-import Text.Printf
+import Text.Printf (printf)
 
-name = "John Doe"
-age = 30
+name = "张三"
+age = 28
 
-printf "Hello, my name is %s and I am %d years old.\n" name age
+main = printf "Hello, %s! You are %d years old.\n" name age
 ```
 
-运行后的结果是：
+输出：
+
+```
+Hello, 张三! You are 28 years old.
+```
+
+## Deep Dive (深入探究)
+过去，Haskell 没有内建的字符串插值功能。`printf` 来自 C 语言家族，在 Haskell 中通过 `Text.Printf` 模块提供类似功能。还有其他库，比如 `interpolate` 和 `string-interpolate`，它们使得插值更加方便。
+
+例如，`string-interpolate` 库允许您这样写：
 
 ```Haskell
-Hello, my name is John Doe and I am 30 years old.
+{-# LANGUAGE QuasiQuotes #-}
+import Data.String.Interpolate (i)
+
+name = "李四"
+occupation = "程序员"
+
+main = putStrLn [i|你好，#{name}! 你是一名#{occupation}.|]
 ```
 
-在上面的代码中，`%s` 和 `%d` 是占位符，分别用于字符串和整数。
+`QuasiQuotes` 让 Haskell 支持自定义插值语法。上面的代码也需要添加包依赖和适当配置。
 
-## 深度解析：
+其他根本性的方法包括字符串连接或使用 `++` 运算符拼接较简单的情况。例如：
 
-1. 历史背景：Haskell的字符串插值受到了其他编程语言（如C和Python）的影响，并添加了类型安全的特性。
-2. 替代方案：除了`printf`，你还可以使用模板Haskell或者插值字符串（`interpolatedstring-perl6`包）进行字符串插值。
-3. 实现细节：在底层，Haskell的`printf`函数通过类型系统确保插值安全。
+```Haskell
+main = putStrLn ("你好，" ++ name ++ "! 你是一名" ++ occupation ++ ".")
+```
 
-## 扩展阅读：
+这种方式相比插值来说，对于复杂字符串会变得笨拙且不易读。
 
-以下是一些有关字符串插值和Haskell的相关资源：
-- Haskell的Wiki中关于`printf`的说明：https://wiki.haskell.org/Printf
-- 插值字符串（`interpolatedstring-perl6`）的包：http://hackage.haskell.org/package/interpolatedstring-perl6
-- Haskell文档中的`Text.Printf`模块：http://hackage.haskell.org/package/base-4.14.1.0/docs/Text-Printf.html
+实现细节上，使用插值函数通常涉及解析字符串并在运行时替换标记，这可能比纯粹的字符串连接稍微慢一点，但在正常使用情况下差别不大。
+
+## See Also (另请参阅)
+- Haskell `Text.Printf` 文档：https://hackage.haskell.org/package/base-4.16.1.0/docs/Text-Printf.html
+- `string-interpolate` 库：https://hackage.haskell.org/package/string-interpolate
+- 关于 `QuasiQuotes` 的更多信息：https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#quasi-quotation

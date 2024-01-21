@@ -1,6 +1,7 @@
 ---
 title:                "HTTP 요청 보내기"
-html_title:           "Clojure: HTTP 요청 보내기"
+date:                  2024-01-20T17:59:44.951806-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,32 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜합니까?
+## What & Why? (무엇과 왜?)
 
-HTTP 요청을 보내는 것은 인터넷에서 데이터를 요청하는 방법입니다. 프로그래머는 이를 사용해 웹 서버에 정보를 요청하거나 제출합니다.
+HTTP 요청을 보내는 것은 서버에 정보를 요청하거나 데이터를 전송하는 방법입니다. 프로그래머들은 웹 서비스와 상호작용하고, 필요한 데이터를 얻거나 원격 서비스에 정보를 제공하기 위해 이 작업을 수행합니다.
 
-## 방법:
-
-Haskell에는 HTTP 요청을 수행하는 데 사용할 수 있는 여러 라이브러리가 있습니다. 여기에는 'http-conduit'가 포함됩니다. 간단한 GET 요청을 보내는 코드 예제를 살펴보겠습니다.
+## How to: (방법)
 
 ```Haskell
+-- HTTP 요청을 위한 간단한 예제
 import Network.HTTP.Simple
 
 main :: IO ()
 main = do
-    response <- httpBS "http://example.com"
+    response <- httpBS "http://httpbin.org/get"
     print $ getResponseBody response
 ```
 
-이 코드는 "http://example.com" URL로 GET 요청을 보내고 응답 본문을 출력합니다.
+예상 출력:
+```
+"{\"args\":{},\"headers\":{...},\"origin\":\"123.45.67.89\",\"url\":\"http://httpbin.org/get\"}"
+```
 
-## 깊게 알아보기:
+## Deep Dive (심층 분석)
 
-HTTP 요청을 보내는 work은 1990년대 초 웹의 출현과 함께 시작되었습니다. 이는 웹 정보를 교환하기 위한 주된 방법입니다. Haskell에서의 다른 방법으로는 'http-client', 'wreq', 'req' 등이 있습니다. 이들은 모두 좀 더 복잡한 요구 사항에 대응할 수 있는 추가적인 기능을 제공합니다. 이러한 라이브러리들은 HTTP 프로토콜의 모든 부분을 직접 처리하는 대신, 그 작업을 대신 처리해주는 여러 내부 컴포넌트와 기능을 제공합니다.
+HTTP 요청 보내기는 웹의 근본입니다. 1990년대 초반 웹이 등장한 이후부터 존재했죠. Haskell에는 여러 라이브러리가 있는데 `http-simple`, `wreq`, `req` 등이 있습니다. `http-simple`은 코드를 쉽고 간단하게 작성할 수 있게 해줍니다. `http-conduit` 패키지의 일부이며, 바이트스트링, JSON 또는 다른 형태로 응답을 처리하는데 유용합니다. 'Network.HTTP.Simple.httpBS' 함수를 사용하면 바이트스트링으로 된 응답을 얻을 수 있습니다.
 
-## 참고하기:
+## See Also (더 보기)
 
-- Haskell 'http-conduit' 패키지: https://hackage.haskell.org/package/http-conduit
-- Haskell 'http-client' 패키지: https://hackage.haskell.org/package/http-client
-- Haskell 'wreq' 패키지: https://hackage.haskell.org/package/wreq
-- Haskell 'req' 패키지: https://hackage.haskell.org/package/req
+- HTTP 표준 및 메서드에 대한 내용: [MDN Web Docs(HTTP)](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+- `http-conduit` 패키지: [Hackage(http-conduit)](https://hackage.haskell.org/package/http-conduit)
+- 다른 Haskell HTTP 클라이언트 라이브러리: [Hackage(HTTP)](https://hackage.haskell.org/packages/search?terms=HTTP)

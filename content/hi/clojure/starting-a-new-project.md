@@ -1,7 +1,8 @@
 ---
-title:                "नया प्रोजेक्ट शुरू करना"
-html_title:           "C: नया प्रोजेक्ट शुरू करना"
-simple_title:         "नया प्रोजेक्ट शुरू करना"
+title:                "नई परियोजना शुरू करना"
+date:                  2024-01-20T18:03:52.492254-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "नई परियोजना शुरू करना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
@@ -10,35 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? (What & Why?)
-नयी प्रोजेक्ट शुरू करना मतलब एक नई सॉफ्टवेयर की बुनियाद रखना । प्रोग्रामर्स इसे करते हैं ताकि वे कीचड़ से बच सकें और अपने प्रोजेक्ट को धीमे करने से रोक सकें।
+## What & Why? (क्या और क्यों?)
+एक नई प्रोजेक्ट शुरू करना मतलब है नए आइडियाज पर कार्य करना, नई समस्याओं का समाधान खोजना। प्रोग्रामर्स इसके लिए उत्सुक रहते हैं क्योंकि नए प्रोजेक्ट क्रिएटिविटी को बढ़ाते हैं और कोडिंग स्किल्स को निखारते हैं।
 
-## कैसे करें: (How to:)
+## How to: (कैसे करें:)
+Clojure प्रोजेक्ट्स शुरू करने के लिए Leiningen या Clojure CLI का इस्तेमाल होता है। आइए, Leiningen का एक उदाहरण देखते हैं।
 
-यहाँ Clojure बंद में कैसे शुरुआत करें -
-```Clojure 
-; सबसे पहले लेटिंगंन को स्थापित करें 
-; Clojure प्रोजेक्ट को बनाने और चलाने के लिए 
-$ brew install leiningen
-
-; एक नया प्रोजेक्ट बनाएं 
-$ lein new my_first_project
+नया प्रोजेक्ट बनाने के लिए:
+```Clojure
+;; Leiningen स्थापित होना चाहिए
+lein new app मेरा-प्रोजेक्ट
 ```
-इसके बाद 
-```Clojure 
-$ cd my_first_project
-$ lein run 
+
+इस कमांड से `मेरा-प्रोजेक्ट` नामक एक नया प्रोजेक्ट बनेगा जिसमें आवश्यक फाइल्स और फोल्डर्स होंगे।
+
+प्रोजेक्ट की संरचना कुछ इस तरह होगी:
 ```
-## गहरी जानकारी (Deep Dive)
+मेरा-प्रोजेक्ट
+├── project.clj
+├── src
+│   └── मेरा_प्रोजेक्ट
+│       └── core.clj
+└── test
+    └── मेरा_प्रोजेक्ट
+        └── core_test.clj
+```
 
-Clojure, जीन्स्टील्स ने 1953 में स्थापित की थी, लिस्प प्रोग्रामिंग भाषा पर आधारित है और Java Virtual Machine (JVM) के लिए डिजाइन की गई है। Clojure का उपयोग वास्तविक समय के डेटा-ढंग संरेखण (data-oriented programming) और मल्टिथ्रेडिंग (multithreading) हेतु किया जाता है। 
+## Deep Dive (विस्तृत जानकारी)
+Leiningen एक ऑटोमेशन टूल है जो 2010 में Phil Hagelberg द्वारा बनाया गया था और इसे Clojure कम्युनिटी में जल्दी ही स्वीकार किया गया। इसका मुख्य कार्य है प्रोजेक्ट मैनेजमेंट और बिल्ड ऑटोमेशन।
 
-वैकल्पिक रूप से, आप `Maven` या `Gradle` जैसे उपकरणों का उपयोग कर सकते हैं लेकिन Clojure के लिए Leiningen एक बहुत ही मजबूत और शानदार साधन है। 
+विकल्प के तौर पर Clojure CLI भी है, जो अधिक लाइटवेट है और Clojure 1.9 के बाद से उपलब्ध है। 
 
-## अतिरिक्त जानकारी के लिए (See Also) 
+प्रोजेक्ट को शुरू करने से पहले `project.clj` या `deps.edn` फाइल में डिपेंडेंसीज और प्लगइन्स को कॉन्फिग करना होता है। ये प्लगइन्स डेवलपमेंट और डिप्लॉयमेंट को आसान बनाते हैं।
 
-Leiningen में प्रोजेक्ट बनाने का विस्तृत वर्णन: [यहाँ](https://leiningen.org/#:~:text=Leiningen%20is%20the%20easiest%20way,builds%20and%20dependency%20management%20out.)
-
-Clojure प्रोग्रामिंग के लिए गाइड: [यहाँ](https://clojure.org/guides/getting_started)
-
-Clojure में माल्टीथ्रेडिंग कैसे काम करता है: [यहाँ](https://clojuredocs.org/clojure.core/future)
+## See Also (और भी जानकारी)
+- [Leiningen's Official Website](https://leiningen.org/)
+- [Clojure's Official Reference](https://clojure.org/guides/getting_started)
+- [Clojure CLI Tools](https://clojure.org/reference/deps_and_cli)
+- [Clojure Build Tools](https://www.clojure-toolbox.com/)

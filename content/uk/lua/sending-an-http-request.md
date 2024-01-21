@@ -1,7 +1,8 @@
 ---
-title:                "Надсилання http-запиту"
-html_title:           "Arduino: Надсилання http-запиту"
-simple_title:         "Надсилання http-запиту"
+title:                "Надсилання HTTP-запиту"
+date:                  2024-01-20T18:00:26.962788-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,46 +11,88 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке і навіщо?
+## What & Why? / Що та Чому?
 
-HTTP-запит - це засіб, яким програми на вашому комп'ютері звертаються до серверів в Інтернеті, щоб отримати або відправити інформацію. Програмісти використовують їх, щоб інтерактивно працювати з веб-ресурсами.
+Sending an HTTP request is a way to communicate with web servers. Programmers do this to fetch data, submit forms, or interact with APIs.
 
-## Як це зробити:
+## How to: / Як це зробити:
 
-Lua допомагає нам виконувати HTTP-запити з допомогою модулів, таких як `luasocket` і `luasec`. 
+```Lua
+-- Ensure you have the 'lua-socket' library
+local http = require("socket.http")
+local ltn12 = require("ltn12")
 
-У випадку з GET-запитом:
-```lua
-http = require('socket.http')
-url = "http://example.com"
-response, status = http.request(url)
-print(response)
+-- Simple GET request
+local response_body = {}
+local res, code, response_headers = http.request{
+    url = "http://httpbin.org/get",
+    sink = ltn12.sink.table(response_body)
+}
+
+-- Check if the request succeeded
+if code == 200 then
+    print("Success:")
+    print(table.concat(response_body))
+else
+    print("Failed:", code)
+end
+
+-- POST request with data
+local response_body_post = {}
+res, code = http.request{
+    url = "http://httpbin.org/post",
+    method = "POST",
+    headers = {
+        ["Content-Type"] = "application/x-www-form-urlencoded"
+    },
+    source = ltn12.source.string("key1=value1&key2=value2"),
+    sink = ltn12.sink.table(response_body_post)
+}
+
+-- Check if the POST request succeeded
+if code == 200 then
+    print("POST Success:")
+    print(table.concat(response_body_post))
+else
+    print("POST Failed:", code)
+end
 ```
 
-Вивід:
+Sample output for GET request:
+
 ```
-<!doctype html>...
+Success:
+{
+  "args": {}, 
+  "headers": {
+    "Host": "httpbin.org",
+    ...
+  },
+  ...
+}
 ```
 
-Для POST-запиту:
-```lua
-http = require('socket.http')
-url = "http://example.com/form_submit"
-body = "name=John%20Doe&email=john%40example.com"
-response, status = http.request(url, body)
-print(response)
+Sample output for POST request:
+
 ```
-Зверніть увагу, що тіло повинно бути в форматі `application/x-www-form-urlencoded` для POST-запиту.
+POST Success:
+{
+  "form": {
+    "key1": "value1",
+    "key2": "value2"
+  },
+  ...
+}
+```
 
-## Поглиблений аналіз
+## Deep Dive / Глибоке Занурення:
 
-Lua не була заснована з можливістю відправляти HTTP-запити "з коробки". Ця функція була додана пізніше через зросле потреби програмістів. Альтернативи `luasocket` і `luasec` включають більш сучасні модулі, такі як `lua-http` або `lua-resty-http`.
+HTTP requests are the backbone of web communication, dating back to the 1990s. Choices for sending HTTP requests in Lua include libraries like `lua-socket` for simple interactions, and `lua-http` for more complex tasks. The `lua-socket` library's `http.request` function handles the basic request-and-response cycle. It uses sockets to send and receive data, which can be manipulated with Lua streams (implemented by the `ltn12` module). Both the request and the response can have headers to pass additional info (like content type). Error handling is essential; always check the status code (`code`) to make sure your request was successful.
 
-HTTP-запити - це ключовий компонент розробки веб-застосунків, але їх застосування далеко не обмежується цим. Вони використовуються для віддаленого керування, отримання даних в реальному часі, роботи з API та інше.
+## See Also / Дивіться також:
 
-## Додатково
-
-- Стандарт HTTP: https://www.ietf.org/standards/rfcs/
-- Модуль `luasocket`: https://github.com/diegonehab/luasocket
-- Модуль `lua-http`: https://github.com/daurnimator/lua-http/
-- Модуль `lua-resty-http`: https://github.com/ledgetech/lua-resty-http
+- LuaSocket HTTP Documentation: http://w3.impa.br/~diego/software/luasocket/http.html
+- LuaSocket GitHub Repository: https://github.com/diegonehab/luasocket
+- HTTPBin for HTTP Request & Response Service Testing: https://httpbin.org/
+- Lua 5.4 Reference Manual: https://www.lua.org/manual/5.4/
+- LuaSec for HTTPS requests: https://github.com/brunoos/luasec

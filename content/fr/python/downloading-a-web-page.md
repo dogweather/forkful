@@ -1,7 +1,8 @@
 ---
-title:                "Télécharger une page web"
-html_title:           "Bash: Télécharger une page web"
-simple_title:         "Télécharger une page web"
+title:                "Téléchargement d'une page web"
+date:                  2024-01-20T17:44:42.311365-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Téléchargement d'une page web"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,41 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Télécharger une Page Web avec Python
+## What & Why? (Quoi et Pourquoi ?)
+Télécharger une page Web, c'est récupérer son contenu via le réseau. Les programmeurs font ça pour analyser des données, tester des sites, ou automatiser des tâches Web.
 
-## Quoi & Pourquoi?
-
-Le téléchargement d'une page Web signifie la récupération du code HTML derrière une page Web à partir d'un serveur et son stockage dans votre appareil. Les programmeurs le font pour analyser ce contenu, extraire des données importantes (appelé scrapage de données) ou tester des performances de site Web.
-
-## Comment faire:
-
-Téléchargeons une page Web en utilisant la bibliothèque `requests`.
+## How to: (Comment faire : )
+Voici un exemple simple avec `requests` :
 
 ```Python
-    import requests
+import requests
 
-    url = 'https://www.example.com'
-    response = requests.get(url)
+# Demande de la page
+reponse = requests.get('https://www.example.com')
 
-    # afficher le code de status HTTP
-    print(response.status_code)
-
-    # afficher le contenu de la page
-    print(response.text)
+# Afficher le contenu de la page
+print(reponse.text)
 ```
 
-Lors de l'exécution de ce script, vous verrez d'abord un code de statut HTTP (par exemple, `200` pour une demande réussie), puis le contenu HTML de la page.
+Sortie attendue (partial sample output) :
 
-## Approfondissement
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+```
 
-Historiquement, le téléchargement d'une page Web était un processus plus manuel impliquant l'ouverture d'un socket à un serveur, l'envoi d'une requête GET et le décodage de la réponse qui était souvent en format binaire.
+## Deep Dive (Plongée en profondeur)
+Historiquement, télécharger une page web pouvait être complexe avec des sockets bas niveau et des protocoles HTTP manuels. Maintenant, `requests` facilite énormément la tâche. Alternativement, `urllib` est une option intégrée. Niveau profondeur, `requests` gère automatiquement la plupart des détails d'implémentation comme les cookies ou les en-têtes HTTP.
 
-Outre `requests`, il existe d'autres bibliothèques pour télécharger une page Web en Python, dont `urllib` et `httplib`. Cependant, `requests` est largement reconnue pour son API simple et conviviale.
-
-Lorsque vous téléchargez une page Web avec `requests`, les éléments sont automatiquement décodés en textes à partir des octets. Dans le cas des sites Web encodés différemment, `requests` utilise l'encodage spécifié dans les en-têtes HTTP pour décoder le contenu de la page.
-
-## Voir Aussi
-
-- Documentation requests: [https://docs.python-requests.org/en/latest/](https://docs.python-requests.org/en/latest/)
-- Tutoriel sur le scrapage de données avec Python: [https://realpython.com/beautiful-soup-web-scraper-python/](https://realpython.com/beautiful-soup-web-scraper-python/)
-- Un guide pour travailler avec des sockets en Python: [https://realpython.com/python-sockets/](https://realpython.com/python-sockets/)
+## See Also (Voir aussi)
+- Documentation de `requests` : https://docs.python-requests.org/en/latest/
+- `urllib` pour une approche sans dépendances tierces : https://docs.python.org/3/library/urllib.html
+- Tutoriel HTTP : https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview

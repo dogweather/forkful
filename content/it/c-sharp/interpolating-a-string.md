@@ -1,6 +1,7 @@
 ---
 title:                "Interpolazione di una stringa"
-html_title:           "Clojure: Interpolazione di una stringa"
+date:                  2024-01-20T17:50:39.061408-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolazione di una stringa"
 programming_language: "C#"
 category:             "C#"
@@ -10,46 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# L'interpolazione delle stringhe in C#
+## What & Why?
+L'interpolazione di stringhe in C# serve a inserire valori di variabili dentro a una stringa di testo. La usiamo perché rende il codice più chiaro e semplice da leggere rispetto alla concatenazione tradizionale.
 
-Il tuo strumento pratico per formattare le stringhe in modo pulito.
-
-## Cos'è e perché?
-
-L'interpolazione delle stringhe è un modo per inserire variabili direttamente nelle stringhe. Lo facciamo per ottenere un codice più pulito e leggibile.
-
-## Come fare:
+## How to:
+Qui sotto trovi due esempi di come interpolare una stringa. Il primo è semplice, il secondo un po' più tosto.
 
 ```C#
-string nome = "Mario";
-int eta = 30;
-string output = $"Ciao {nome}, hai {eta} anni.";
+// Esempio base
+string nome = "Luca";
+string saluto = $"Ciao {nome}, come stai?";
+Console.WriteLine(saluto); // Output: Ciao Luca, come stai?
 
-Console.WriteLine(output);  
-
-// Output: Ciao Mario, hai 30 anni.
+// Esempio con espressioni complesse
+int x = 5;
+double y = 2.5;
+string risultato = $"Il prodotto di {x} per {y} è {x * y}.";
+Console.WriteLine(risultato); // Output: Il prodotto di 5 per 2.5 è 12.5.
 ```
- 
-'${var}' sostituisce 'var' con il suo valore. Basta con String.Format() laborioso!
 
-## Approfondimento:
+## Deep Dive
+L'interpolazione di stringhe è arrivata in C# con la versione 6.0, come alternativa alla `String.Format()`. È più intuitiva e veloce da scrivere. Invece di inserire indici nel tuo testo, metti direttamente le variabili tra parentesi graffe, precedute da un segno di dollaro `$`.
 
-L'interpolazione delle stringhe esiste dal C# 6.0. Prima eravamo obbligati a usare la vecchia String.Format(), oppure concatenare con '+'. L'interpolazione richiede meno fatica ed è più intuitiva. Di solito, viene convertita in String.Format() dal compilatore.
+Precedentemente, avresti fatto così:
 
 ```C#
-//Old
-string output = string.Format("Ciao {0}, hai {1} anni.", nome, eta);
-
-//Older
-string output = "Ciao " + nome + ", hai " + eta + " anni.";
+string nome = "Marco";
+string saluto = String.Format("Ciao {0}, come stai?", nome);
 ```
 
-Osserva la differenza di chiarezza!
+Con l'interpolazione, il compilatore genera una chiamata a `String.Format()` dietro le quinte, quindi la performance è simile.
 
-## Approfondisci:
+Se ti serve una cultura/locale specifica, puoi usare `FormattableString` e `IFormattable`. Così formatti la stringa manualmente:
 
-[Microsoft - String Interpolation (C# Reference)](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated) 
+```C#
+FormattableString saluto = $"Ciao {nome}";
+string salutoLocalizzato = saluto.ToString(new CultureInfo("it-IT"));
+```
 
-[DotNetPearls - C# String Interpolation](https://www.dotnetperls.com/string-interpolation)  
+Attenzione se stai scrivendo codice per applicazioni con requisiti di sicurezza elevati. Non interpolare mai input non validati, come stringhe inserite dall'utente, perché potresti aprire la porta a vulnerabilità come injection attacks.
 
-C'è sempre spazio per apprendere qualcosa di nuovo. Buona codifica!
+## See Also
+- Documentazione ufficiale Microsoft sull'interpolazione di stringhe:
+  [Interpolazione di stringhe](https://docs.microsoft.com/it-it/dotnet/csharp/language-reference/tokens/interpolated)
+- Post sul blog di .NET riguardante le performance dell'interpolazione di stringhe:
+  [.NET Blog - String Interpolation](https://devblogs.microsoft.com/dotnet/string-interpolation-in-csharp-10-and-beyond/)
+- Articolo su come prevenire injection attacks:
+  [OWASP - Injection Prevention](https://owasp.org/www-community/attacks/Injection_Prevention)

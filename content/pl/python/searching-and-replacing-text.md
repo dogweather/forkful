@@ -1,7 +1,8 @@
 ---
-title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
-simple_title:         "Wyszukiwanie i zastępowanie tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+date:                  2024-01-20T17:58:32.212117-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,39 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Szukanie i zamiana tekstu to podstawa edycji - chodzi o zmianę jednego ciągu znaków na inny. Programiści robią to, by szybko poprawiać błędy, aktualizować dane lub zmieniać kod.
 
-Wyszukiwanie i zamienianie tekstu to powszechnie używane techniki programistyczne. Pozwalają na automatyczne modyfikowanie pewnych ciągów znaków w dowolnym tekście, co znacznie usprawnia proces edycji, analizy danych, czy ekstrakcji informacji.
+## How to (Jak to zrobić):
+Python makes text manipulation easy. Here are simple examples using the `replace()` method and regular expressions.
 
-## Jak to zrobić:
+```python
+# Using replace() method
+text = "I love programming in Python!"
+new_text = text.replace("love", "enjoy")
+print(new_text)
+# Output: I enjoy programming in Python!
 
-Python oferuje wiele praktycznych metod do manipulowania tekstem, takie jak `replace()`. Wypróbujmy to:
+# Using regular expressions
+import re
 
-```Python
-tekst = "Witam na Pythonie."
-nowy_tekst = tekst.replace("Pythonie", "programowaniu w Pythonie")
-print(nowy_tekst)
+text = "Contact us at support@example.com"
+new_text = re.sub(r"support@example.com", r"helpdesk@example.pl", text)
+print(new_text)
+# Output: Contact us at helpdesk@example.pl
 ```
+Remember, `replace()` is good for simple, direct substitutions, while regular expressions are more powerful for patterns.
 
-Wyjście:
+## Deep Dive (Głębsze spojrzenie):
+Searching and replacing text isn't new. It traces back to the earliest text editors in computing history, like `ed` and `sed` in Unix.
 
-```Python
-"Witam na programowaniu w Pythonie."
-```
+Alternatives to Python's `replace()` and `re` module include third-party libraries like `regex` for complex pattern matching. And for large-scale text processing, tools like AWK and Perl are often used for their powerful text-processing capabilities.
 
-`replace()` automatycznie zastępuje wszystkie wystąpienia słowa "Pythonie" słowem "programowaniu w Pythonie".
+As for implementation, `replace()` is straightforward but can't handle patterns. Regular expressions with `re.sub()` allow for pattern matching and complex replacements but can be slower and harder to read.
 
-## Głębsze spojrzenie:
-
-Wyszukiwanie i zamienianie tekstu to techniki służące do manipulowania tekstem, które mają swoje korzenie jeszcze w czasach, kiedy powstawało programowanie.
-
-Alternatywą dla metody `replace()` jest wykorzystanie wyrażeń regularnych z modułu `re`. Dzięki nim możemy wykonać bardziej skomplikowane operacje na tekście, jednak są one trudniejsze do opanowania.
-
-Szczegółem implementacyjnym metody `replace()` jest to, że tworzy ona nowy łańcuch znaków zamiast modyfikować istniejący, co wynika z niezmienności łańcuchów znaków w Pythonie.
-
-## Zobacz też:
-
-Dla pełniejszego zrozumienia tematu, możesz odwiedzić następujące źródła:
-1. Dokumentacja Pythona na temat manipulacji tekstami: https://docs.python.org/3/library/stdtypes.html#string-methods
-2. Tutorial na temat wyrażeń regularnych: https://docs.python.org/3/howto/regex.html
-3. Artykuł NTNU na temat wyszukiwania i zamiany tekstu: http://www.ntnu.no/python/text/text.html
+## See Also (Zobacz także):
+- Python `re` module documentation: https://docs.python.org/3/library/re.html
+- Regular Expressions tutorial: https://www.regular-expressions.info/
+- Automate the Boring Stuff with Python (text processing chapter): https://automatetheboringstuff.com/chapter8/

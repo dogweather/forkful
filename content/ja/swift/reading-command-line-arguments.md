@@ -1,6 +1,7 @@
 ---
 title:                "コマンドライン引数の読み取り"
-html_title:           "Bash: コマンドライン引数の読み取り"
+date:                  2024-01-20T17:56:58.745705-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,42 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+コマンドライン引数を読むのは、プログラム実行時にユーザーが提供する情報を受け取ることです。これにより、動的に振る舞いを変更でき、柔軟なツールやスクリプトが作成可能になります。
 
-コマンドライン引数を読むとは、ユーザーがコマンドラインに入力した情報をプログラムが読み取ることです。このことにより、プログラムの挙動をユーザーが実行時にカスタマイズできます。
-
-## 使い方：
-
-Swiftでコマンドライン引数を読むには、標準ライブラリの`CommandLine`クラスを使用します。
-
-```swift
-for argument in CommandLine.arguments {
-    print(argument)
+## How to: (方法)
+```Swift
+// main.swift
+for arg in CommandLine.arguments {
+    print(arg)
 }
+
+// 実行例: $ swift run MyProgram foo bar
+// 出力例:
+// /path/to/MyProgram
+// foo
+// bar
 ```
+このコードは、プログラムに渡されたすべての引数を出力します。`CommandLine.arguments`を使ってアクセスします。
 
-上記を例にすると、次のような出力が期待されます:
+## Deep Dive (深い潜水)
+コマンドライン引数の利用は歴史的に古く、C言語の`int main(int argc, char *argv[])`から始まりました。Swiftでは、`CommandLine`クラスがこれを簡単に提供します。文字列の配列でアクセスでき、最初の要素はプログラムのパスです。アプリケーションやツールを作る際には、フラグパーサーを使うのが一般的です（例: `Swift Argument Parser`ライブラリ）。これにより、エラーハンドリングも容易になり、ユーザーフレンドリーなインターフェースを提供できます。
 
-```bash
-$ swift main.swift apple orange banana
-main.swift
-apple
-orange
-banana
-```
-
-`CommandLine.arguments`はチューリング完全なプログラミング言語であるSwiftにおいて使います。
-
-## ディープダイブ
-
-コマンドライン引数は、UNIXエポック（1970年代初頭）から現在まで、ユーザーがプログラムの動きを制御するための一般的な方法であり続けています。
-
-一方、Swiftでは、コマンドライン引数を直接操作する代わりに、ライブラリを使用してデータをパースし、より構造化された方法でアクセスすることが一般的となりつつあります。例えば、Appleが提供しているSwift Argument Parser ライブラリがそれに当たります。
-
-また、Swiftではコマンドライン引数は`CommandLine.arguments`プロパティによって読み取られます。このプロパティはStringの配列を返し、0番目の要素は常にプログラム自体の名前です。
-
-## 参考情報
-
-* [Swift Argument Parser: A Swift package for parsing command-line arguments](https://github.com/apple/swift-argument-parser)
-* [Swift Standard Library: CommandLine](https://developer.apple.com/documentation/swift/commandline)
-* [Swift Tutorial: Command Line Programs](https://www.raywenderlich.com/385-command-line-programs-macos-tutorial)
+## See Also (関連情報)
+- Swift Argument Parser documentation: [https://github.com/apple/swift-argument-parser](https://github.com/apple/swift-argument-parser)
+- Swift Documentation for CommandLine: [https://developer.apple.com/documentation/swift/commandline](https://developer.apple.com/documentation/swift/commandline)
+- Building command-line tools with Swift: [https://www.swiftbysundell.com/articles/building-a-command-line-tool-using-the-swift-package-manager/](https://www.swiftbysundell.com/articles/building-a-command-line-tool-using-the-swift-package-manager/)

@@ -1,6 +1,7 @@
 ---
 title:                "Interpolera en sträng"
-html_title:           "C++: Interpolera en sträng"
+date:                  2024-01-20T17:50:57.947780-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolera en sträng"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,32 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Stringinterpolering låter dig spränga in variabler direkt i en sträng. Programmerare använder det för att skapa dynamisk text snabbt och smidigt.
 
-Stränginterpolation är en metod för att infoga variabler i strängar direkt. Detta gör kod lättare att läsa, skriva och underhålla.
+## Hur man gör:
+I Haskell hanterar vi inte stringinterpolation ur lådan. Men med biblioteket `Data.Text`, och Template Haskell-funktionen `printf` från `Text.Printf`, är det enkelt. Här är ett exempel:
 
-## Så här gör du:
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
 
-Haskell kräver `Text.Printf` modulen för stränginterpolation. Nedan visas några enkla exempel:
+import Text.Printf (printf)
+import Data.Text (pack, unpack, Text)
 
-```Haskell
-import Text.Printf
+main :: IO ()
+main = do
+  let name = "Elsa"
+  let age = 26
+  putStrLn $ unpack (interpolate name age)
 
-name = "Ada"
--- Skriver ut "Hej, Ada!"
-printf "Hej, %s!" name
+interpolate :: String -> Int -> Text
+interpolate name age = pack (printf "Hej, jag heter %s och jag är %d år gammal." name age)
+
+-- Output
+-- Hej, jag heter Elsa och jag är 26 år gammal.
 ```
 
-Här, `%s `är ett format especificator som berättar var och hur att sätta in vår variabel.
-
-
 ## Djupdykning
+Stringinterpolering som koncept har funnits länge i programmering, ofta inbyggt i språk som Python och JavaScript. Haskell, som är starkt typat och fokuserar på funktionell renhet, har inte inbyggd interpolering. Det beror på att funktioner som `printf` kan vara otydliga och potentiellt osäkra.
 
-Historiskt sett kommer stränginterpolation från Perl och Shell programmeringsspråk. I Haskell finns det några alternativ till `Text.Printf` för mer avancerade fall, till exempel `Data.Text` och `Text.InterpolatedString.Perl6`.
+Men med paket som `Data.Text` och Template Haskell kan vi lika enkelt interpolera strängar. `Text.Printf`-modulen är inspirerad av C's `printf` och tillhandahåller en typsäker variant av C's funktion.
 
-Under huven, funktioner som `printf` i Haskell genomförer stränginterpolation genom att parse format-strängen vid körtid, vilket skapar högre prestanda överbelastning jämfört till många andra språk.
+En annan metod för stringinterpolering i Haskell är genom `interpolate` biblioteket, som erbjuder en mer typsäker och uttrycksfull syntax. Till exempel kan du använda `[i|...|]` quasi-litteraler för att interpolera:
 
-## Se Även
+```haskell
+{-# LANGUAGE QuasiQuotes #-}
 
-För mer detaljerad diskussion om stränginterpolation i Haskell, besök följande länkar:
+import Data.String.Interpolate (i)
 
-- Haskell Café: [String Interpolation i Heterogen List](https://mail.haskell.org/pipermail/haskell-cafe/2010-February/073593.html)
+name = "Olle"
+age = 30
+
+main :: IO ()
+main = putStrLn [i|Hej, jag heter #{name} och jag är #{age} år gammal.|]
+
+-- Output
+-- Hej, jag heter Olle och jag är 30 år gammal.
+```
+
+Kom ihåg, när du använder interpolering, att hålla ett öga på prestanda, eftersom det kan vara mer kostsamt än att slå samman strängar (concatenation).
+
+## Se även
+- Haskells `Data.Text` dokumentation: https://hackage.haskell.org/package/text
+- `Text.Printf` dokumentation: https://hackage.haskell.org/package/base-4.14.0.0/docs/Text-Printf.html
+- `interpolate` bibliotek: https://hackage.haskell.org/package/interpolate
+- Haskell Wiki om Stringinterpolering: https://wiki.haskell.org/Interpolation

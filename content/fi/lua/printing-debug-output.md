@@ -1,7 +1,8 @@
 ---
-title:                "Debug-tulosteen tulostaminen"
-html_title:           "Bash: Debug-tulosteen tulostaminen"
-simple_title:         "Debug-tulosteen tulostaminen"
+title:                "Virheenjäljitystulosteiden tulostaminen"
+date:                  2024-01-20T17:53:13.586530-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Virheenjäljitystulosteiden tulostaminen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Testing and Debugging"
@@ -10,32 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Tulostus virheenjäljityksen: mitä, miksi, ja miten? Lua ohjelmoinnissa
+## What & Why?
+Mikä se on ja miksi ihmeessä?
 
-## Mitä ja Miksi?
-Virheenjäljityksen tulostus on keino nähdä ohjelman toiminta sen suorituksen aikana. Se on tärkeä, koska se tarjoaa yksityiskohtaisen kuvan siitä, mitä sovelluksesi tekee juuri nyt.
+Koodin debuggaus eli vianetsintä on prosessi, jossa etsitään ja korjataan ohjelmakoodin virheitä. Tulostamalla diagnostiikkaa konsoliin, ohjelmoijat näkevät nopeasti, mitä koodissa tapahtuu ja missä vika saattaa piileskellä.
 
-## Kuinka?
-Käytämme `print()` funktiota tulostamaan virheenjäljityksen tulostuksen. Katso alla olevat esimerkit:
+## How to:
+Koodinäytteet ja esimerkkitulosteet
 
 ```Lua
--- Luodaan muuttuja
-local muuttuja = "Tämä on testi!"
--- Tulostetaan muuttuja
-print(muuttuja)
+print("Hei maailma!")  -- Tavallinen tervehdys
 ```
-Lähtö:
+
+Tuloste: Hei maailma!
+
+```Lua
+local x = 10
+print("x:n arvo on:", x)  -- Muuttujan arvon tarkastus
 ```
-Tämä on testi!
+
+Tuloste: x:n arvo on: 10
+
+```Lua
+-- Funktion suorituksen seuranta
+local function kerro(a, b)
+    print("Kerro funktio: a =", a, "ja b =", b)
+    return a * b
+end
+print(kerro(3, 4))
 ```
+
+Tuloste:
+Kerro funktio: a = 3 ja b = 4
+12
+
 ## Deep Dive
-Historiallisesti, tulostus on aina ollut olennainen osa virheenjäljitystä. Se on nopea ja tehokas tapa nähdä, mitä ohjelmasi tekee reaaliajassa.
-Vaihtoehtoinen lähestymistapa olisi käyttää debuggaaja, joka antaa enemmän hallintaa ja tietoa, mutta se voi olla ylimitoitettu yksinkertaisiin tarpeisiin.
+Syvä sukellus
 
-`print()` on yksinkertainen ja tehokas työkalu. Mutta on olemassa kehittyneempiä työkaluja kuten `io.write()` jos haluat suuremman määrän kontrolia.
+Alkujaan, koodin suorituksen seuraaminen oli hyvin yksinkertaista: tulostuslauseita siroteltiin pitkin koodia siellä täällä. Vähitellen kehitettiin kehittyneempiä työkaluja, kuten interaktiivisia debuggereita, jotka antoivat ohjelmoijille tarkemmat välineet suorituksen seurantaan ja muuttujien tarkasteluun.
 
-## Katso myös
-Tutustu näihin linkkeihin saadaksesi lisätietoja:
-- Lua virallinen dokumentaatio: https://www.lua.org/docs.html
-- Debuggaus Lua -kirjastoissa: https://www.lua.org/pil/23.1.html
-- Kehittyneitä virheenjäljitystekniikoita: https://www.lua.org/pil/23.2.html
+Lua-tulostus on yksinkertaisimmillaan vain `print`-funktion käyttöä, mutta vaihtoehtoja löytyy. `io.write` on toinen tapa, joka tarjoaa hienovaraisemman kontrollin tulostuksen formaattiin - se ei lisää automaattisesti rivinvaihtoa loppuun.
+
+```Lua
+io.write("Tämä on ", "vierekkäin ", "ilman rivinvaihtoa.\n")
+```
+
+Tuloste: Tämä on vierekkäin ilman rivinvaihtoa.
+
+`tostring`-funktio on hyödyllinen, kun tarvitsee muuttaa ei-merkkijonotyypin arvoja merkkijonoesitykseksi tulostusta varten.
+
+## See Also
+Lisätietoja
+
+- Lua 5.4:n viralliset dokumentit: https://www.lua.org/manual/5.4/
+- Lua-käyttäjien wiki, jossa on käytännön vinkkejä ja esimerkkejä: http://lua-users.org/wiki/
+- Stack Overflow, keskusteluja aiheesta Lua ja debuggaus: https://stackoverflow.com/questions/tagged/lua+debugging

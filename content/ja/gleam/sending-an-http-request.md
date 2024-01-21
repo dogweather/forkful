@@ -1,6 +1,7 @@
 ---
 title:                "HTTPリクエストの送信"
-html_title:           "Bash: HTTPリクエストの送信"
+date:                  2024-01-20T17:59:38.419566-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTPリクエストの送信"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,32 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何＆なぜ？
-HTTPリクエストを送信するとは、サービーサイドに情報をリクエストするクライアントサイドの行動です。開発者はこれを使用して、APIからデータを取得したり、リモートサーバーとの間でデータを交換したりします。
+## What & Why? (何とその理由？)
+HTTPリクエストを送ることは、インターネット上で情報を取得したり、サーバにデータを送ったりする行為です。プログラマは、ウェブのリソースとやりとりするため、またAPIを使用してデータを操作するためにこれを行います。
 
-## 実行方法：
-以下に、GleamでHTTPリクエストを送信するパターンのコード例を示します。
-
-```Gleam
+## How to: (方法：)
+```gleam
+import gleam/http
 import gleam/httpc
+import gleam/should
 
-let response =
-  httpc.get("https://api.example.com")
-  |> httpc.send()
-
-case response {
-  Ok(response) ->
-    io.println(response.body)
-  Error(e) ->
-    io.println("HTTP request failed with", e)
+pub fn request_example() {
+  // HTTP GETリクエストを送る
+  case httpc.send(req: http.Request(to_url("https://example.com"))) {
+    Ok(response) -> 
+      // 成功した場合の処理
+      io.println("Got a response: ")
+      io.println(response)
+    Error(error) ->
+      // エラーが発生した場合の処理
+      io.println("Something went wrong: ")
+      io.println(error)
+  }
 }
 ```
-このコード実行結果は、リクエストに成功した場合はAPIからの応答を表示し、失敗した場合はエラーメッセージを表示します。
+サンプル出力：
+```
+Got a response: Response(200, "OK", [], "Hello, world!")
+```
 
-## 深掘り：
-1. **歴史的文脈**：HTTPリクエストの送信は、Webが成立した初期から存在しています。これはサーバとクライアント間の情報交換の基礎です。
-2. **代替手段**：他の代替手段としては、WebSocketsやServer-Sent Eventsなどがあります。これらはリアルタイムのデータフローを可能にしますが、HTTPリクエストに比べて複雑さが増します。
-3. **実装詳細**：GleamでのHTTPリクエストの送信は、`httpc`ライブラリを使用します。これは非同期性とエラーハンドリングを標準で提供します。
+## Deep Dive (深い潜水)
+HTTPリクエストの概念は1990年前後に誕生しました。プロトコル自体がインターネット通信の基礎となります。Gleamでは、標準的な`http`モジュールの他に、いくつかのHTTPクライアントライブラリーが利用可能です。直接`http`モジュールを使うか、あるいは`gleam_http`や`gleam_reqwest`のようなラッパーを使用して、HTTPリクエストの詳細を抽象化することができます。多様な要求に合致するため、同期的にも非同期的にもリクエストを送れます。さらに、Gleamは型安全なので、リクエストの作成と応答の処理におけるエラーをコンパイル時に捕捉することができます。
 
-## 参考リンク
-GleamでHTTPリクエストを深く探求したい方は以下のリンクをチェックしてください。
+## See Also (関連情報)
+- Gleamの公式文書: [https://gleam.run](https://gleam.run)
+- HTTPに関するRFC: [https://tools.ietf.org/html/rfc2616](https://tools.ietf.org/html/rfc2616)
+- Gleam http モジュール: [https://hexdocs.pm/gleam_http](https://hexdocs.pm/gleam_http)

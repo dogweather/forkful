@@ -1,7 +1,8 @@
 ---
-title:                "Sende en http-forespørsel med grunnleggende autentisering"
-html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
+title:                "Å sende en HTTP-forespørsel med grunnleggende autentisering"
+date:                  2024-01-20T18:01:33.100424-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,44 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel med grunnleggende autentisering er en prosess hvor en klient sender en forespørsel til en server og inkluderer autentiseringsdetaljer for å bevise sin identitet. Programmerere gjør dette for å sikre at sensitive data kun gis til validerte brukere.
+## What & Why? (Hva & Hvorfor?)
+Sending an HTTP request with basic authentication involves attaching a header with a username and a password to verify who's making the request. Programmers use this method to access resources that need identity confirmation.
 
-## Hvordan gjør vi det:
-Her er et enkelt eksempel på hvordan du sender en HTTP-forespørsel med grunnleggende autentisering i Go.
+## How to: (Slik gjør du:)
+First, let's install the necessary package:
+
+```Go
+go get -u "net/http"
+```
+
+Now, the code:
 
 ```Go
 package main
 
 import (
+	"encoding/base64"
 	"fmt"
 	"net/http"
-	"net/http/httputil"
 )
 
 func main() {
-	req, err := http.NewRequest("GET", "http://eksempel.no", nil)
-	req.SetBasicAuth("brukernavn", "passord")
+	client := &http.Client{}
+	req, _ := http.NewRequest("GET", "http://example.com", nil)
+	
+	username := "user"
+	password := "pass"
+	auth := username + ":" + password
+	encodedAuth := base64.StdEncoding.EncodeToString([]byte(auth))
+	req.Header.Add("Authorization", "Basic "+encodedAuth)
 
-	res, err := http.DefaultClient.Do(req)
+	resp, err := client.Do(req)
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
+		return
 	}
-	defer res.Body.Close()
+	defer resp.Body.Close()
 
-	dump, _ := httputil.DumpResponse(res, true)
-	fmt.Println(string(dump))
+	fmt.Println("Status Code:", resp.StatusCode)
 }
 ```
 
-Kjør programmet og du vil se en komplett HTTP-respons dump direkte i terminalen.
+And the expected output upon success:
 
-## Dykk etter mer kunnskap
-Historisk sett har grunnleggende autentisering vært brukt siden HTTP/1.0, en enkel måte å beskytte nettsider og data. Det viktigste alternative i dag er kanskje Bearer-token, oftest brukt med OAuth2. Ved implementering i Go, la merke til hvordan `SetBasicAuth`-metoden setter autentiseringsdetaljer i HTTP `Authorization` header.
+```Go
+Status Code: 200
+```
 
-## Se også
-For mer detaljer om HTTP-autentisering med Go, sjekk ut disse ressursene:
+## Deep Dive (Dypdykk)
+HTTP Basic Authentication has been around since the early days of the web. It's simple but not the most secure—credentials are not encrypted, just base64 encoded. Now, there's OAuth and JWT for more secure alternatives. For basic auth, the `Authorization` header holds the credentials. In Go, you use the `net/http` package to construct requests, and you manually add that header. The `base64` package encodes the username and password.
 
-1. Go Dokumentasjonen: [http pakken](https://golang.org/pkg/net/http/)
-2. Blogginnlegg: [Basic Authentication in Go](https://www.alexedwards.net/blog/basic-authentication-in-go)
-3. God praksis for autentisering: [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
+## See Also (Se Også)
+- Official Go `net/http` package documentation: [https://golang.org/pkg/net/http/](https://golang.org/pkg/net/http/)
+- Go `base64` encoding: [https://golang.org/pkg/encoding/base64/](https://golang.org/pkg/encoding/base64/)
+- OAuth: [https://oauth.net/](https://oauth.net/)
+- JSON Web Tokens (JWT): [https://jwt.io/](https://jwt.io/)

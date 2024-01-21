@@ -1,7 +1,8 @@
 ---
-title:                "Interpolation d'une chaîne de caractères"
-html_title:           "Ruby: Interpolation d'une chaîne de caractères"
-simple_title:         "Interpolation d'une chaîne de caractères"
+title:                "Interpolation de chaînes de caractères"
+date:                  2024-01-20T17:51:45.359252-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolation de chaînes de caractères"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,37 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why?
+L'interpolation de chaînes permet d'insérer des valeurs dans une chaîne de caractères. On l'utilise pour composer des messages dynamiques, lisibles et personnalisables.
 
-L'interpolation de chaînes en Swift consiste à incorporer des variables et des expressions dans une chaîne de caractères. C'est utile pour afficher des informations dynamiques dans une chaîne de manière lisible et efficace.
-
-## Comment faire:
-
-Voici un exemple d'interpolation de chaîne en Swift. En utilisant des contre-obliques (\\) et des parenthèses, vous pouvez insérer des variables et des expressions directement dans vos chaînes.
+## How to:
+```Swift
+let name = "Marie"
+let age = 28
+let greeting = "Bonjour \(name), tu as \(age) ans!"
+print(greeting)
+```
+Sortie: `Bonjour Marie, tu as 28 ans!`
 
 ```Swift
-var age = 25
-var nom = "Jean"
-print("Bonjour, \(nom). Vous avez \(age) ans.")
+let temperature = 21.5
+let weatherMessage = "Il fait \(temperature)°C aujourd'hui."
+print(weatherMessage)
 ```
+Sortie: `Il fait 21.5°C aujourd'hui.`
 
-Cela donnera en sortie:
+## Deep Dive
+Historiquement, Swift a bouleversé la manipulation de chaînes en simplifiant l'interpolation, une amélioration par rapport à Objective-C et ses méthodes verbeuses, comme `stringWithFormat:`. Contrairement à la concaténation classique, l'interpolation permet d'insérer directement des expressions et des variables dans une chaîne sans casser le flux du texte.
 
-```Swift
-Bonjour, Jean. Vous avez 25 ans.
-```
+En alternatives, on trouve `String(format:)`, similaire aux printf en C, et la concaténation, mais l'interpolation est plus concise et naturelle en Swift. Techniquement, Swift appelle la méthode `CustomStringConvertible` de chaque objet interpolé pour obtenir sa représentation en chaîne de caractères, permettant une personnalisation à travers le protocole.
 
-## Plongée en profondeur:
-
-L'interpolation de chaînes a été introduite en Swift pour remplacer les méthodes traditionnelles de construction de chaînes, comme la concaténation de chaînes, qui peuvent être difficiles à lire et moins efficaces. De plus, ce remplacement conduit à un code plus propre et plus sécurisé.
-
-Quand vous avez des alternatives plus complexes ou de plus grands besoins en formatage d'une chaîne, vous pouvez utiliser des formateurs de chaînes, mais l'interpolation de chaînes reste le moyen le plus utilisé par les Swiftites.
-
-La mise en œuvre de l'interpolation de chaînes est basée sur le protocole `StringInterpolation` qui définit comment les valeurs sont converties en chaînes.
-
-## Voir aussi:
-
-Pour une exploration plus profonde de l'interpolation de chaînes en Swift, consultez ces ressources:
-
-  
-- "L'interpolation de chaîne" dans le [Swift Programming Guide](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+## See Also
+- La documentation Apple sur l'interpolation de chaînes: [Swift String Interpolation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID292)
+- Un guide sur le protocole `CustomStringConvertible`: [Swift.org - CustomStringConvertible](https://developer.apple.com/documentation/swift/customstringconvertible)

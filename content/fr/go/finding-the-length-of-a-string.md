@@ -1,7 +1,8 @@
 ---
-title:                "Trouver la longueur d'une chaîne"
-html_title:           "Go: Trouver la longueur d'une chaîne"
-simple_title:         "Trouver la longueur d'une chaîne"
+title:                "Trouver la longueur d'une chaîne de caractères"
+date:                  2024-01-20T17:47:24.856201-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Trouver la longueur d'une chaîne de caractères"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,58 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
-La longueur d'une chaîne est le nombre de caractères qu'elle contient. Les programmeurs la trouvent souvent pour gérer les limites de saisie, découper les chaînes, valider le format, etc.
+## What & Why?
+Trouver la longueur d'une chaîne de caractères, c'est déterminer combien de caractères elle contient. C'est essentiel pour manipuler des textes – par exemple, pour valider des saisies ou découper des chaînes.
 
-## Comment faire :
-Voici comment trouver la longueur d'une chaîne en Go:
-
-```Go
-package main
-
-import "fmt"
-
-func main() {
-    str := "Bonjour, Go!"
-    fmt.Println(len(str))
-}
-```
-
-Aussi simple qu'il y paraît, ce code imprime `12`, qui est le nombre de caractères dans `"Bonjour, Go!"`.
-
-## Plongeon en profondeur
-Go utilise UTF-8 pour les chaînes, donc chaque "caractère" peut prendre 1 à 4 octets. La fonction `len()` donne le nombre d'octets, pas toujours le nombre de caractères. Par exemple :
-
-```Go
-package main
-
-import "fmt"
-
-func main() {
-    str := "Café"
-    fmt.Println(len(str)) // Affiche 5, pas 4!
-}
-```
-
-Ici, `"Café"` a 4 caractères, mais `len()` donne `5`. Pourquoi? Parce que `len()` compte les octets, et `é` est un caractère UTF-8 de 2 octets.
-
-Si vous voulez le nombre de caractères (rune en Go), utilisez `utf8.RuneCountInString()`. Par exemple :
-
+## How to:
 ```Go
 package main
 
 import (
-    "fmt"
-    "unicode/utf8"
+	"fmt"
+	"unicode/utf8"
 )
 
 func main() {
-    str := "Café"
-    fmt.Println(utf8.RuneCountInString(str)) // Affiche 4
+	str := "Salut 👋"
+	fmt.Println("Bytes count:", len(str))
+	fmt.Println("Runes count:", utf8.RuneCountInString(str))
 }
 ```
+Résultat:
+```
+Bytes count: 11
+Runes count: 6
+```
 
-## Voir aussi
-* Documentation officielle de Goodoc sur les chaînes: [Strings](https://golang.org/pkg/strings/)
-* UTF-8 et Go: [Strings, bytes, runes and characters in Go](https://blog.golang.org/strings)
-* Go par l'exemple: [String Functions](https://gobyexample.com/string-functions)
+## Deep Dive
+Autrefois en Go, `len(str)` aurait suffi pour obtenir la longueur. Mais avec l'internationalisation et l'UTF-8, ça se complique : chaque caractère ('rune' en Go) peut prendre plus d'un octet. D'où `utf8.RuneCountInString(str)` pour compter correctement les caractères. Certains langages ont des fonctions intégrées qui gèrent ça internement, mais en Go, c'est à nous de choisir la bonne approche.
+
+## See Also
+- Documentation Go sur les chaînes : https://golang.org/pkg/strings/
+- Unicode et UTF-8 en Go : https://blog.golang.org/strings
+- Package utf8 : https://golang.org/pkg/unicode/utf8/

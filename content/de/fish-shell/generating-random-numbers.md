@@ -1,7 +1,8 @@
 ---
-title:                "Zufallszahlen generieren"
-html_title:           "Arduino: Zufallszahlen generieren"
-simple_title:         "Zufallszahlen generieren"
+title:                "Generierung von Zufallszahlen"
+date:                  2024-01-20T17:49:01.208350-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generierung von Zufallszahlen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -11,51 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-
-Zufällige Zahlen zu erzeugen bedeutet, eine Reihe von Werten zu erstellen, die nicht vorhersehbar sind. Dies ist für Programmierer wichtig, um beispielsweise einzigartige Identifikationscodes zu erzeugen oder Testdaten zu simulieren.
+Generieren von Zufallszahlen bedeutet, eine Zahl aus einem bestimmten Bereich zu ziehen, die nicht vorhersagbar ist. Programmierer nutzen Zufallszahlen für alles Mögliche, von der Datenanalyse bis hin zu Spielen.
 
 ## So geht's:
-
-Mit Fish Shell können Sie mithilfe des Befehls 'random' zufällige Zahlen erstellen. Hier sind ein paar Beispiele dazu:
+Verwenden von `random` in Fish, um eine Zufallszahl zu erhalten:
 
 ```Fish Shell
-# Erzeugt eine Zufallszahl zwischen 1 und 100
-random 1 100
+set -l zufallszahl (random)
+echo $zufallszahl
 ```
 
-Ausgabe:
+Und so sieht's aus:
+
+```
+42145
+```
+
+Um eine Zufallszahl zwischen 1 und 100 zu generieren:
 
 ```Fish Shell
+set -l zufallszahl (random 1 100)
+echo $zufallszahl
+```
+
+Beispielhafte Ausgabe:
+
+```
 57
 ```
 
-oder
+## Deep Dive
+Früher nutzten viele die `$RANDOM` Variable, die in anderen Shells wie Bash verfügbar ist. Doch Fish macht es einfacher mit dem Befehl `random`, der direkt eingebaut ist. `random` stellt sicher, dass man gleichmäßig verteilte Werte bekommt. Es basiert auf Pseudozufallszahlen-Generatoren (PRNGs), die einen Seed verwenden, um Sequenzen zu erzeugen, die zufällig erscheinen.
 
-```Fish Shell
-# Erzeugt eine Liste von 5 Zufallszahlen zwischen 1 und 50
-for i in (seq 5)
-    random 1 50
-end
-```
-
-Ausgabe:
-
-```Fish Shell
-23
-2
-45
-19
-36
-```
-
-## Hintergrundwissen
-
-Zufallszahlen haben eine lange Geschichte in der Programmierung. Ihre Verwendung zur Erzeugung von einzigartiger Identifikation und Testdaten ist weit verbreitet. Es gibt unterschiedliche Ansätze, um Zufallszahlen zu generieren. Fish Shell bietet einen Ansatz, der auf dem /dev/random des Betriebssystems basiert. 
-
-Als Alternative können Sie auch das Bibliothekmodul 'random' in Python verwenden oder die Funktion 'rand' in C. Die Implementationsdetails können variieren, das Konzept bleibt jedoch das Gleiche. 
-
-## Weiterführende Links
-
-- Fish Shell Dokumentation: https://fishshell.com/docs/current/commands.html#random 
-- Python Random Modul: https://docs.python.org/3/library/random.html 
-- C rand Funktion: https://en.cppreference.com/w/c/numeric/random/rand
+## Siehe auch
+- Fish Shell Dokumentation zu `random`: https://fishshell.com/docs/current/cmds/random.html
+- Wikipedia-Artikel über Pseudozufallszahlen-Generatoren: https://de.wikipedia.org/wiki/Pseudozufallszahlengenerator

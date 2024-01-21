@@ -1,6 +1,7 @@
 ---
 title:                "קריאת קובץ טקסט"
-html_title:           "Go: קריאת קובץ טקסט"
+date:                  2024-01-20T17:54:28.693309-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "קריאת קובץ טקסט"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,28 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-קריאת קובץ טקסט היא פעולה שבה מידע מחולקת מקובץ טקסט למשתנים בתוכנית. מתכנתים עושים את זה כדי לנהל דינמית מידע שמשתנה, לדוגמה, הגדרות, רישומים ממנות יומית, או פרמטרים שנקלטים ממשתמשים.
+קריאת קובץ טקסט היא פשוט לגשת לנתונים מאוחסנים בקובץ. תוכניתנים עושים זאת כדי לטעון, לעבד או להציג מידע.
 
 ## איך לעשות:
-להלן דוגמה למנגנון קריאת קובץ טקסט ב-Gleam:
+```gleam
+import gleam/io
+import gleam/result.{Result, Ok, Error}
 
-```Gleam
-import gleam/iod.file.{read}
-import gleam/bit_builder.{append, to_string}
-import gleam/otp
+pub fn read_file(path: String) -> Result(String, String) {
+  try file = io.open(path)
+  let content = io.read(file)
+  io.close(file)
+  content
+}
 
-Case TestIod {
-  output("hello.txt") |> bit_builder.append("שלום עולם!") |> bit_builder.to_string
+pub fn main() {
+  case read_file("hello.txt") {
+    Ok(content) -> io.println(content)
+    Error(err) -> io.println("An error occurred: " ++ err)
+  }
 }
 ```
-הקובץ "hello.txt" מכיל עכשיו את המחרוזת "שלום עולם!".
+פלט לדוגמה:
+```
+Hello, Gleam!
+```
 
-## עומק השקיעה
-1. **הקשר ההיסטורי:** גישה זו לעיבוד קבצים מקורה בעבודה עם מערכות קבצים שמבוססות טקסט של שפות תכנות קלאסיות משנות ה-70 וה-80.
-2. **אלטרנטיבות:** ישנן שפות תכנות אחרות שמציעות שיטות שונות לקריאת קובצים. גם ב-Gleam ניתן להשתמש באפשרויות נוספות, כמו לדוגמה עיבוד בזרימה.
-3. **פרטי אמצעי קיום:** Gleam מימשת את הפונקציות על ידי שליחת בקשת I/O למערכת ההפעלה.
+## צלילה לעומק
+בעבר, קריאת קובץ היתה מסובכת יותר. עם הזמן, שפות תכנות פיתחו ספריות שמפשטות את התהליך. ב-Gleam, קריאת קבצים מבוססת על פונקציות מידע שמשמשות לגישה למערכת הקבצים של המערכת המובילה. קיימות שיטות אחרות, כמו זרימת קלט/פלט (streams), אבל ללמוד איך לעבוד עם קובץ בסיסי הוא נקודת פתיחה טובה.
 
-## ראו גם
-הקישורים הבאים מציגים מידע נוסף ובהם ניתן לבחון את נושא קריאת קובץ בעומק רב יותר:
-
-3. [Stream processing in Gleam](https://github.com/gleam-lang/stdlib)
+## ראה גם:
+- [Erlang's file module, for more advanced file operations](http://erlang.org/doc/man/file.html)
+- [Elixir's File module, for those also using Elixir in their stack](https://hexdocs.pm/elixir/File.html)

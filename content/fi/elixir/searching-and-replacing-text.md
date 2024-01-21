@@ -1,6 +1,7 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
+date:                  2024-01-20T17:57:31.203811-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,39 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+## What & Why? (Mitä & Miksi?)
+Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen vaihtamista toisiksi. Ohjelmoijat tekevät sitä, koska se on nopea keino muuttaa dataa, korjata virheitä tai parantaa koodin luettavuutta.
 
-Tekstin etsiminen ja korvaaminen on prosessi, jossa ohjelma tunnistaa jonkin tekstin ja korvaa sen toisella. Ohjelmoijat tekevät tätä monimutkaisten merkkijonojen käsittelyn, datan uudelleenmuotoilun tai virheiden korjaamisen yhteydessä.
-
-## Näin se tehdään:
-
-Käytännössä voimme käyttää Elixirin `String.replace/3` -funktiota tähän tarkoitukseen. Katsotaan esimerkkikoodi:
+## How to: (Kuinka tehdä:)
+Elixirissä tekstin etsiminen ja korvaaminen onnistuu `String`-moduulin avulla. Alapuolella pari esimerkkiä:
 
 ```elixir
-defmodule TextReplacer do
-  def replace(input, find, replace) do
-    String.replace(input, find, replace)
-  end
-end
+# Tekstin korvaaminen toisella
+original_text = "Hello World!"
+new_text = String.replace(original_text, "World", "Elixir")
+IO.puts(new_text)
+# Output: Hello Elixir!
 
-IO.puts TextReplacer.replace("Tervetuloa Elixir-maailmaan!", "maailmaan", "ohjelmointiin")
+# Regexin avulla voi tehdä monimutkaisempia korvauksia
+regex = ~r/world/i
+fixed_text = String.replace(original_text, regex, "Elixir")
+IO.puts(fixed_text)
+# Output: Hello Elixir!
 ```
+Huomaa, että regex-esimerkissä käytimme `i`-lipua, joka tekee hausta kirjainkoosta riippumattoman.
 
-Tämä ohjelma korvaa sanan "maailmaan" sanalla "ohjelmointiin", joten ohjelman tulostus olisi "Tervetuloa Elixir-ohjelmointiin!".
+## Deep Dive (Syväsukellus)
+Searching and replacing text in Elixir leverages the power of Erlang's pattern matching and binary processing capabilities. Pattern matching on binaries is efficient and fast, which is why such tasks are generally easy on the system resources.
 
-## Deep Dive
+Ennen Elixirin ja Erlangin aikaa, tekstien käsittelyyn käytettiin muita kieliä kuten Perl, joka oli tunnettu tehokkaasta tekstinkäsittelystään. Elixirin regex-ominaisuuksia voitetaan `:re`-moduulia Erlangista, mikä mahdollistaa monipuoliset tekstinkäsittelytoiminnot.
 
-Tekstin etsimisen ja korvaamisen käsite ei ole uusi ja se löytyy lähes kaikista ohjelmointikielistä. Elixiriä kehitettiin pitkälti suorituskykyisen ja tehokkaan rinnakkais- ja samanaikaisohjelmoinnin mahdolliseksi tekemiseen. Siksi sen merkkijonokäsittely on suunniteltu ottamaan huomioon monimutkaisemmat asiayhteydet.
+On olemassa myös muita kirjastoja, kuten `Stringex`, jotka tarjoavat lisätoimintoja tekstin käsittelyyn. Tämä saattaa olla hyödyllistä, kun etsit ja korvaat monimutkaisempia merkkijonomalleja.
 
-Vaihtoehtoisesti voit käyttää suoraa säännöllistä ilmausta `Regex.replace/3` -funktiolla, jos etsit jotakin monimutkaisempaa.
+Itse tekstinkorvauksen takana on erilaisia algoritmeja. Yksinkertaisimmissa tapauksissa voidaan käyttää suoria merkkijonohakuja, mutta monimutkaisemmissa, kuten regex-hauissa, käytetään koneellista tilaa hyväksikäyttäviä algoritmeja.
 
-`String.replace/3` ja `Regex.replace/3` eroavat toisistaan siten, että `String.replace/3` on yksinkertaisille muutoksille, kun taas `Regex.replace/3` tarjoaa joustavuutta säännöllisten lausekkeiden avulla.
-
-## Katso myös:
-
-Elixirin merkkijonokäsittelyyn liittyviä resursseja ja ohjeita voit löytää seuraavien linkkien kautta:
-
-- Elixirin String-moduuli: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
-- Elixirin Regex-moduuli: [https://hexdocs.pm/elixir/Regex.html](https://hexdocs.pm/elixir/Regex.html)
- 
-Muista, että paras tapa oppia on käytäntö, joten sovella tietojasi ja koodaa!
+## See Also (Katso Myös)
+- Elixirin virallinen dokumentaatio: [String.replace/4](https://hexdocs.pm/elixir/String.html#replace/4) ja [Regex-moduuli](https://hexdocs.pm/elixir/Regex.html)
+- [Learn Elixir](https://elixir-lang.org/learning.html) - lisämateriaalia Elixirin oppimiseen
+- [Erlangin :re-moduuli](http://erlang.org/doc/man/re.html) - syvemmälle regex-ominaisuuksiin Erlangissa
+- [Stringex-kirjaston GitHub-sivu](https://github.com/rsl/stringex) - laajennettujen tekstinkäsittelytoimintojen kirjasto

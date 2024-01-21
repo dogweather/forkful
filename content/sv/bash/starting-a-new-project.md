@@ -1,7 +1,8 @@
 ---
-title:                "Att starta ett nytt projekt"
-html_title:           "Arduino: Att starta ett nytt projekt"
-simple_title:         "Att starta ett nytt projekt"
+title:                "Att påbörja ett nytt projekt"
+date:                  2024-01-20T18:02:58.961671-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Getting Started"
@@ -10,54 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
-Att starta ett nytt projekt i programmering innebär att skapa en ny, unik kodrad för att bygga en applikation eller tjänst från grunden. Programmerare gör detta för att utveckla programvara som uppfyller specifika behov eller för att utforska nya idéer.
+## Vad & Varför?
+När du startar ett nytt projekt skapar du en grund för din kod. Programmerare gör detta för att organisera och strukturera sitt arbete från början.
 
-## Hur man gör:
-I Bash kan du skapa en ny katalog för ditt projekt och navigera till den med följande kommandon:
-
-```Bash
-mkdir mitt_projekt
-cd mitt_projekt
-```
-
-Skapa en ny fil vid namn `main.sh` och sätt tillräckliga rättigheter för att köra den:
+## Kom igång:
+Så här sätter du upp en grundläggande projektstruktur:
 
 ```Bash
-touch main.sh
-chmod +x main.sh
+mkdir MyNewProject
+cd MyNewProject
+mkdir {bin,src,doc,tests}
+echo "#!/bin/bash" > bin/run-my-project.sh
+chmod +x bin/run-my-project.sh
+echo "My New Project" > README.md
+git init .
 ```
 
-Öppna filen med en textredigerare, exempelvis `nano`, och skriv ditt första skript:
+Resultat:
 
-```Bash
-nano main.sh
 ```
-
-I `nano` kan vi till exempel skriva:
-
-```Bash
-#!/bin/bash
-echo "Hej Världen!"
+MyNewProject/
+├── bin
+│   └── run-my-project.sh
+├── src
+├── doc
+├── tests
+└── README.md
 ```
-
-Spara (`CTRL+O`) och avsluta (`CTRL+X`) `nano`. Kör nu ditt skript:
-
-```Bash
-./main.sh
-```
-
-Du bör se "Hej Världen!" skrivet till terminalen.
 
 ## Fördjupning
-Bash (Bourne Again Shell) skapades 1989 som ett fritt alternativ till de då existerande skal som UNIX-distributioner använde. Sedan dess har det blivit en standard för *nix baserade system.
+Att starta ett nytt projekt har sina rötter i de tidiga dagarnas programmering, när struktur och ordning var nödvändig för att hantera stora kodbaser manuellt. Alternativ till detta inkluderar olika verktyg såsom Yeoman eller att använda program som `create-react-app` för specifika behov. Detaljer som man bör tänka på är t.ex. vilka kataloger som kommer behövas och hur du kan använda `git` för versionshantering från början.
 
-Ett alternativ till Bash är `sh` (Bourne Shell), den ursprungliga shellen för UNIX. Men Bash erbjuder mer funktionalitet som te.x. arraystöd.
-
-När du startar ett nytt projekt i Bash lägger du grunden för koden. Det är här du organiserar filer och kataloger för att förbereda utvecklingsmiljön. Det här sättet att starta ett projekt stöds av många andra programmeringsspråk eller skriptspråk som Python, JavaScript, etc.
-
-## Se även:
-- Bash reference docs: https://www.gnu.org/software/bash/manual/bash.html
-- Learn Bash the hard way: https://learnbashthehardway.com/
-- Basics of Shell programming: https://opensource.com/article/19/10/programming-bash-basic-operational-tools
-- Linux Command tutorial: https://ryanstutorials.net/linuxtutorial/
+## Se även
+- [GitHub - How to start a new project](https://guides.github.com/activities/hello-world/)
+- [GNU Bash documentation](https://www.gnu.org/software/bash/)
+- [Atlassian - Set up a git repository](https://www.atlassian.com/git/tutorials/setting-up-a-repository)

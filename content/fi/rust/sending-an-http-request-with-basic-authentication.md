@@ -1,7 +1,8 @@
 ---
-title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+date:                  2024-01-20T18:02:34.966925-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,43 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# HTTP-pyyntöjen lähettäminen perusautentikoinnilla Rust-ohjelmointikielessä
----
+## What & Why?
+Mikä ja miksi? HTTP-pyyntö perusautentikaatiolla tarkoittaa palvelimelle lähetettävää pyyntöä, jossa käyttäjänimi ja salasana ovat mukana. Ohjelmoijat käyttävät tätä metodia päästäkseen käsiksi suojattuihin resursseihin ja API-palveluihin.
 
-## Mikä & Miksi?
-
-HTTP-pyyntöjen lähettäminen perusautentikoinnin avulla tarkoittaa palvelimelle lähetettäviä pyyntöjä, jotka sisältävät autentikointitietoja. Ohjelmoijat tekevät tämän yleensä, kun heidän on päästävä käsiksi suojattuihin resursseihin.
-
-## Kuinka näin:
-
-Käytämme `reqwest`-kirjastoa, jolla voimme lähettää HTTP-pyyntöjä Rust-ohjelmassa. 
+## How to:
+Miten toteutetaan:
 
 ```Rust
-use reqwest::{Client, Error};
+use reqwest::{blocking::Client, header};
 
-async fn send_request() -> Result<(), Error> {
+fn main() -> Result<(), reqwest::Error> {
     let client = Client::new();
-    let resp = client 
-        .get("https://website.com/authenticated-endpoint")
-        .basic_auth("your-username", Some("your-password"))
-        .send().await?;
-    
-    println!("{:?}", resp.text());
+    let creds = "username:password";
+    let base64_creds = base64::encode(creds);
+
+    let response = client
+        .get("http://example.com/protected")
+        .header(header::AUTHORIZATION, format!("Basic {}", base64_creds))
+        .send()?;
+
+    println!("Status: {}", response.status());
+    println!("Body:\n{}", response.text()?);
     Ok(())
 }
 ```
-Koodi luo uuden asiakkaan, lähettää GET-pyynnön autentikointitietojen avulla ja tulostaa vastauksen.
+Esimerkki tuloste:
+```
+Status: 200 OK
+Body:
+{ "some": "json", "with": "data" }
+```
 
-## Syvällisempi sukellus
+## Deep Dive
+Syväsukellus: Alun perin lisätty HTTP/1.0:een, perusautentikaatio on nopea ja yksinkertainen tapa suojata sisältö. Vaikka perusautentikaatio on helppo toteuttaa, se on turvallinen vain HTTPS:n kanssa. Alternatiiveina ovat kehittyneemmät autentikaatiomenetelmät kuten OAuth, joka mahdollistaa pääsyn ilman suoria kirjautumistietoja. Tietoturvasyistä käyttäjätunnus ja salasana koodataan Base64-muotoon, mutta huomaa, että ilman HTTPS:ää tämä ei ole turvassa välimiesten hyökkäyksiltä.
 
-Perusautentikointi on yksi yksinkertaisimmista tavoista suorittaa autentikointi HTTP-pyynnöissä, ja se on ollut käytössä jo varhaisista verkkopäivistä lähtien. Yksinkertaisuudestaan huolimatta se on edelleen suosittu, koska sitä on helppo toteuttaa ja se on riittävän turvallinen useimmissa tapauksissa.
-
-Vaihtoehtoisia menetelmiä ovat kehittyneemmät autentikointijärjestelmät, kuten OAuth tai JWT, joita voi käyttää monimutkaisemmissa ja turvallisemmissa järjestelmissä.
-
-Rust-ohjelman HTTP-pyynnön lähettämisen toteutus perusautentikoinnin kanssa tarkoittaa käytännössä `reqwest`-kirjaston `basic_auth`-metodin kutsumista, joka lisää asianmukaisen tiedon HTTP-pyynnön otsakkeisiin.
-
-## Katso myös
-
-- Rust-ohjelmointikieli: https://www.rust-lang.org/
-- reqwest-kirjasto: https://docs.rs/reqwest
-- HTTP-perusautentikointi: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+## See Also
+Katso myös:
+- [reqwest crate documentation](https://docs.rs/reqwest/)
+- [Rust standard library documentation on Base64](https://doc.rust-lang.org/stable/std/primitive.slice.html#method.from_utf8)
+- [Mozilla Developer Network (MDN) - Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme)

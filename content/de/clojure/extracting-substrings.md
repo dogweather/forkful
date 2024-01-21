@@ -1,7 +1,8 @@
 ---
-title:                "Teilzeichenketten extrahieren"
-html_title:           "PowerShell: Teilzeichenketten extrahieren"
-simple_title:         "Teilzeichenketten extrahieren"
+title:                "Teilstrings extrahieren"
+date:                  2024-01-20T17:45:30.285772-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Teilstrings extrahieren"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,31 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why?
+"Was & Warum?"
+Das Extrahieren von Teilstrings bedeutet, Teile eines Strings herauszuschneiden und zu verwenden. Programmierer machen dies, um spezifische Daten zu manipulieren oder zu analysieren.
 
-Das Extrahieren von Teilstrings (substrings) bezieht sich auf die Aufnahme kleinerer Zeichenketten aus einer größeren Zeichenkette. Programmierer tun dies, um relevante Informationen in umfangreichen Daten oder Text zu finden und zu verwenden.
+## How to:
+"So geht's:"
+```clojure
+;; Einfaches Extrahieren eines Substrings
+(defn extract-substring [s start end]
+  (subs s start end))
 
-## Wie mache ich das?
-
-Clojure bietet eine Vielzahl von Funktionen zur substraktion von Strings. Eine einfache besteht darin, die "subs"-Funktion zu verwenden. Hier ist ein Beispiel:
-
-```Clojure
-(def str "Hallo, Welt!") 
-(subs str 0 5)
+;; Beispiel:
+(println (extract-substring "Hallo, Welt!" 7 12)) ; Gibt "Welt" aus
 ```
 
-Die Ausgabe wird "Hallo" sein. Die Funktion "subs" erhält den Anfangs- und Endindex des Substrings, den Sie abschneiden möchten.
+```clojure
+;; Extrahieren mit negativen Indices (von hinten gezählt)
+(defn extract-substring-from-end [s end]
+  (subs s (- (count s) end) (count s)))
 
-## Vertiefung
+;; Beispiel:
+(println (extract-substring-from-end "Programmieren macht Spaß" 4)) ; Gibt "Spaß" aus
+```
 
-Geschichtlich betrachtet ist das Extrahieren von Teilstrings eine grundlegende Operation in vielen Programmiersprachen und hat seinen Ursprung in den frühesten Tagen der Informatik. In Clojure, das auf der Java Virtual Machine (JVM) basiert, profitiert es von den vorhandenen String-Manipulationsmethoden in Java. 
+## Deep Dive
+"Tiefergehendes"
+Das Extrahieren von Substrings findet seit den frühesten Tagen der Programmierung statt. Alternativen in anderen Sprachen sind Methoden wie `substring()`, `slice()` oder sogar reguläre Ausdrücke. Clojure verwendet `subs`, welche direkt auf Java-Strings operiert und daher sehr schnell ist. Beachte jedoch, dass `subs` eine IllegalArgumentException wirft, wenn die Indices ungültig sind.
 
-Auf der anderen Seite haben Sie alternative Methoden, um Substrings in Clojure zu extrahieren. Sie können reguläre Ausdrucke (Regex) oder Funktionen wie "split-at" und "join" verwenden, um ähnliche Ergebnisse zu erzielen.
-
-Was die Implementierung betrifft, verwendet Clojure bei der Verwendung der "subs"-Funktion den Java-Substring. Dies hat den Vorteil, dass keine neuen Zeichen erstellt werden, sondern nur Zeiger auf die bestehende Zeichenkette manipuliert werden, was die Operation sehr effizient macht.
-
-## Siehe auch
-
-Um Ihr Wissen und Ihre Fähigkeiten im Umgang mit Strings in Clojure weiter zu vertiefen, sehen Sie sich bitte die folgenden Ressourcen an:
-
-2. [Clojure: String Functions](https://clojuredocs.org/clojure.string)
+## See Also
+"Weiterführende Links"
+- ClojureDocs zu `subs`: https://clojuredocs.org/clojure.core/subs
+- Das Clojure Style Guide: https://guide.clojure.style/
+- Java String Dokumentation (wichtig für Clojure): https://docs.oracle.com/javase/7/docs/api/java/lang/String.html

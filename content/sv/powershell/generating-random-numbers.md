@@ -1,7 +1,8 @@
 ---
-title:                "Generera slumpmässiga nummer"
-html_title:           "Arduino: Generera slumpmässiga nummer"
-simple_title:         "Generera slumpmässiga nummer"
+title:                "Generera slumpmässiga tal"
+date:                  2024-01-20T17:49:49.136977-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generera slumpmässiga tal"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Numbers"
@@ -11,47 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att generera slumptal innebär att skapa nummer som inte följer något igenkännbart mönster. Programmerare behöver detta för tester, säkerhet och simuleringsuppgifter - tänk lösenord, spel och statistisk sampling.
 
-Slumpmässiga nummer används överallt i programmeringsvärlden. De används för att indikera slumpmässiga händelser, som matbitar som dyker upp i ett Pac-Man-spel, men de kan också välja en vinnande post bland miljontals, som i ett lotteri.
-
-## Hur gör man:
-
-Här är ett exempel på hur du genererar ett slumpmässigt tal i PowerShell.
-
+## Så här gör du:
+Skapa ett slumpmässigt tal mellan 1 och 100:
 ```PowerShell
-$random = New-Object System.Random
-$randomNumber = $random.Next(1, 100)
-Write-Host $randomNumber
+$randomNumber = Get-Random -Minimum 1 -Maximum 101
+Write-Output $randomNumber
 ```
-
-När du kör ovanstående kod kan output se ut så här:
-
+Sample output kan vara:
+```
+42
+```
+För en sekvens av slumptal:
 ```PowerShell
-45
+1..10 | ForEach-Object { Get-Random -Minimum 1 -Maximum 101 }
 ```
+Output blir en lista med 10 nummer.
 
+Skapa ett slumpmässigt tal med en mer kryptografiskt säker metod:
 ```PowerShell
-Get-Random -Minimum 1 -Maximum 100
+$randomBytes = New-Object byte[] 4
+[System.Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($randomBytes)
+$randomNumber = [BitConverter]::ToInt32($randomBytes, 0)
+Write-Output $randomNumber
 ```
-
-När du kör ovanstående kod kan output se ut så här:
-
-```PowerShell
-92
-```
- 
 ## Djupdykning
+I äldre PowerShell-versioner användes ofta `Random`-klassen i .NET. Men `Get-Random` är enklare och inbyggt i PowerShell. För kryptografiska ändamål är klassen `System.Security.Cryptography.RandomNumberGenerator` rekommenderad då den genererar oförutsägbara värden, vilket är viktigt för säkerhetsrelaterade uppgifter.
 
-Slumpmässiga tal har en lång historia inom datorvetenskap och programmering. När programmerare först började generera slumpmässiga tal i kod var det en ganska komplicerad process. Men med utvecklingen av moderna programmeringsspråk har processen blivit mycket enklare och mer intuitiv. 
+Alternativ till `Get-Random` inkluderar tredjepartspaket eller att direkt använda .NET-objekt i ditt script. Men var medveten om att "slumpmässighet" i datorer inte är riktigt slumpmässig - de är pseudoslumpmässiga, baserade på algoritmer. För de flesta icke-säkerhetskritiska ändamål fungerar dessa dock väl.
 
-När det gäller att generera slumpmässiga nummer i PowerShell speglar tekniken det som görs i .NET Framework. Det finns andra metoder, till exempel `Get-Random` cmdlet som vi tidigare såg, vilket är en inbyggd funktion i PowerShell.
-
-Det är viktigt att notera att dessa nummer inte är riktigt "slumpmässiga". De genereras av en algoritm med en uppsättning fast input, vilket betyder att de i själva verket är "pseudo-slumpmässiga" nummer. Även om de passar för de flesta ändamål, kan de vara olämpliga där verklig slumpmässighet krävs, som för vissa typer av krypteringar.
-
-## Se Även
-
-- För mer om skapandet av slumpmässiga nummer i andra programmeringsspråk, se [Random numbers in programming](https://en.wikipedia.org/wiki/Random_number_generation)
-
-- Grundläggande PowerShell-tutorial: Microsoft’s [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1)
-
-- För mer om pseudo-slumpmässiga nummer, se [Pseudorandom number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+## Se även
+- [Get-Random documentation](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-random)
+- [About Random Number Generation in .NET](https://docs.microsoft.com/dotnet/api/system.random)
+- [PowerShell GitHub repository](https://github.com/PowerShell/PowerShell) för insyn i utvecklingen av PowerShell.

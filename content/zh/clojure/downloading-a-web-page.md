@@ -1,6 +1,7 @@
 ---
 title:                "下载网页"
-html_title:           "Arduino: 下载网页"
+date:                  2024-01-20T17:43:56.695245-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "下载网页"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,37 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么?
+## 什么 & 为什么？
+下载网页，就是从互联网上获取网页内容到本地。程序员这么做，可能是为了数据分析，或者是想在本地保存网页备用。
 
-下载网页是从服务器获取网页内容的过程。程序员进行这个操作是为了抓取、分析网页数据，或者创建网页的备份。
-
-## 如何做:
-
-下载网页可以使用clojure的http-kit客户端。这是一个简单、强大的HTTP库。如下是下载Google主页的代码示例:
-
+## 如何：
 ```Clojure
-(require '[org.httpkit.client :as http])
+(require '[clj-http.client :as client])
 
-(defn download-webpage 
-  [url]
-  (let [response @(http/get url {:as :text})]
+(defn download-page [url]
+  (let [response (client/get url)]
     (:body response)))
 
-;; 使用方法
-(save-webpage "http://google.com")
+(println (download-page "https://example.com"))
+```
+样本输出：
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+    ...
+</html>
 ```
 
-基本上，`http/get`函数向给定URL发出GET请求。`@`操作会阻止该函数，直到请求返回结果，然后我们只取返回体中的内容。
+## 深度挖掘
+下载网页其实和早年用电话拨号上网类似，只是现在更快、更自动化。可用的库有很多，比如`clj-http`。这个库背后用的是Apache的`HttpClient`。`clj-http`相较于其他选项，比如Java内置的`HttpURLConnection`或者新的`java.net.http.HttpClient`，使用起来更简单，Clojure社区也普遍接受。
 
-## 深度探究：
-
-首先，下载网页的需求源自网页抓取，这是早期网络索引的基础。早在90年代，搜索引擎就通过这种方式收集网页。
-其次，Clojure的其他库如clj-http和http.async.client也能进行网页下载，选择哪种取决于你的具体需求。
-最后，为了解决网络延迟问题，http-kit使用了基于回调的异步设计，该设计能提高程序的性能。
-
-## 参考资料： 
-
-1. http-kit文档: http://http-kit.org/400.html
-2. clj-http文档: https://github.com/dakrone/clj-http
-3. http.async.client文档: https://github.com/neotyk/http.async.client
-4. Web抓取相关资料: https://en.wikipedia.org/wiki/Web_scraping
+## 参见
+- clj-http库：[https://github.com/dakrone/clj-http](https://github.com/dakrone/clj-http)
+- Clojure官方文档：[https://clojure.org](https://clojure.org)
+- Java HttpClient教程：[https://openjdk.java.net/groups/net/httpclient/intro.html](https://openjdk.java.net/groups/net/httpclient/intro.html)

@@ -1,6 +1,7 @@
 ---
 title:                "HTTPリクエストの送信"
-html_title:           "Bash: HTTPリクエストの送信"
+date:                  2024-01-20T17:59:23.777288-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTPリクエストの送信"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,32 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-HTTPリクエストを送信するとは、あるウェブサーバーに情報を送ったり、または取得したりすることを意味します。プログラマーがこれを行う主な理由は、ウェブベースのサービスやAPIと対話するためです。
+## What & Why? (何となぜ？)
 
-## どうやって：
-Elixirで使用できるライブラリの一つ、`httpoison`を用いてHTTPリクエストを作成します。
+HTTPリクエストを送るっていうのは、ウェブサーバーに情報を求めたり操作を指示したりする方法だ。プログラマーがこの作業を行うのは、データを取得したりウェブサービスと連携したりするためだ。
 
-以下はリクエストの基本的な形式です：
+## How to: (やり方)
+
 ```elixir
-HTTPoison.get!("http://example.com").body
+# HTTPoisonを使ってGETリクエストを送る
+HTTPoison.start()
+{:ok, response} = HTTPoison.get("https://api.example.com/data")
+
+# responseの内容を表示
+IO.inspect(response)
+
+# POSTリクエストを送る例
+headers = [{"Content-Type", "application/json"}]
+body = Jason.encode!(%{key: "value"})
+
+{:ok, response} = HTTPoison.post("https://api.example.com/data", body, headers)
+
+# responseの内容を表示
+IO.inspect(response)
 ```
 
-これにより、指定したURL(`http://example.com`という場合)から情報を取得できます。
+このコードはHTTPoisonライブラリを使っている。GETとPOSTの両リクエストの応答をターミナルに出力する。
 
-対応する出力は次のように表示されます：
-```elixir
-"<!doctype html><html itemscope=\"\" ..."
-```
+## Deep Dive (深掘り)
 
-## ディープダイブ：
-HTTPリクエストの歴史には、HTTPプロトコルの発展が含まれています。これは、インターネットという広範囲なネットワークの中で情報を交換するための方法を提供するために開発されました。
+HTTPリクエスト送信の基本は、常に変わらないわけではない。Elixirが生まれる前、Erlangや他の言語では異なるツールやライブラリを使っていた。今でもHTTPリクエストは標準ライブラリの`:httpc`を使ったり、TeslaやHTTPotionのような他のライブラリを使う選択肢がある。HTTPoisonはErlangの`:hackney`ライブラリを基に作られており、使いやすさと拡張性を兼ね備えているのが特徴だ。
 
-Elixirでは、他のHTTPリクエストライブラリもあります。例えば`hackney`や`tesla`などがあります。それぞれのライブラリは、HTTPリクエストを送信するための異なる方法と特徴を提供します。
+実装の詳細については、HTTPoisonを始める前に`:hackney`、それに`HTTPoison.start()`を呼ぶ必要がある。これは`:hackney`をElixirのアプリケーションとして起動するための準備だ。また、リクエスト時には`headers`と`body`を明示的に定義し、正確なHTTPリクエストを構築できる。
 
-`httpoison`ライブラリの実装は、底I層でErlangの`hackney`ライブラリを使用しています。これにより、高い性能と柔軟性が提供されます。
+## See Also (関連情報)
 
-## 関連リンク：
-1. httpoison ソースコード : [github](https://github.com/edgurgel/httpoison)
-2. Elixirでの HTTP リクエスト : [hexdocs](https://hexdocs.pm/httpoison/readme.html)
-3. 古代 Unix の HTTP : [httpwg](https://httpwg.org/http-core/)
+- [HTTPoison GitHub repository](https://github.com/edgurgel/httpoison)
+- [Hex.pm package for HTTPoison](https://hex.pm/packages/httpoison)
+- [Erlang :httpc documentation](http://erlang.org/doc/man/httpc.html)
+- [Jason Hex package for JSON handling in Elixir](https://hex.pm/packages/jason)

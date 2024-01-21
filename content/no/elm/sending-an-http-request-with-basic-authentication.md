@@ -1,7 +1,8 @@
 ---
-title:                "Sende en http-forespørsel med grunnleggende autentisering"
-html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
+title:                "Å sende en HTTP-forespørsel med grunnleggende autentisering"
+date:                  2024-01-20T18:01:47.287386-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,55 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-# Send HTTP-forespørsler med grunnleggende autentisering i Elm
+## What & Why?
+Å sende en HTTP-forespørsel med grunnleggende autentisering betyr at man legger til brukernavn og passord i forespørselen for tilgangskontroll. Programmerere gjør dette for å sikre at kun autoriserte brukere får tilgang til bestemt data.
 
-## Hva & Hvorfor?
-
-Å sende en HTTP-forespørsel med grunnleggende autentisering betyr å lage en nettforespørsel som inneholder brukerdetaljer (brukernavn og passord) i headeren. Programmerere gjør dette for å få tilgang til beskyttede nettressurser.
-
-## Hvordan?
-
+## How to:
 ```Elm
 import Http
-import Http.Headers as Headers
+import Base64
 
+type alias Model =
+    { response : String }
 
 basicAuth : String -> String -> Http.Header
 basicAuth username password =
     let
         credentials =
-            username ++ ":" ++ password
-
-        base64 =
-            credentials
-                |> Http.Base64.encode
-                |> Maybe.withDefault ""
+            Base64.encode (username ++ ":" ++ password)
     in
-    Headers.authorization ("Basic " ++ base64)
+    Http.header "Authorization" ("Basic " ++ credentials)
 
-main =
-    Http.get 
-        { url = "https://example.com/protected-data"
-        , headers = [ basicAuth "myUsername" "myPassword" ]
-        , expect = Http.expectString GotResponse
+sendRequestWithBasicAuth : Cmd Msg
+sendRequestWithBasicAuth =
+    Http.get
+        { url = "https://eksempel.com/data"
+        , headers = [ basicAuth "brukernavn" "passord" ]
         }
+        |> Http.expectWhatever ResponseHandler
 ```
 
-I dette eksempelet vises det hvordan du kan lage en 'basicAuth'-funksjon for å generere en autorisasjonsheader. Denne headeren legges deretter til i HTTP GET-forespørselen.
+Forventet output:
+```Elm
+type Msg
+    = ResponseHandler (Result Http.Error String)
 
-## Dypdykk
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        ResponseHandler (Ok data) ->
+            ( { model | response = data }, Cmd.none )
 
-- *Historisk kontekst:* Grunnleggende autentisering er en del av HTTP/1.0-spesifikasjonen, datert tilbake til 1996. 
+        ResponseHandler (Err _) ->
+            ( { model | response = "Feil under henting av data." }, Cmd.none )
+```
 
-- *Alternativer:* Selv om grunnleggende autentisering er enkel å implementere, sikrer den overførte data dårlig. Brukere sender passord i klartekst, base64-kodet. Sikrere alternativer inkluderer Digest- og Bearer-autentisering, samt autentiseringsløsninger med OAuth og OpenID.
+## Deep Dive
+Bakgrunnen for grunnleggende autentisering innen HTTP går tilbake til tidlig internett, hvor enkel tilgangssikring var nødvendig. Mens modernere metoder som OAuth 2.0 eller JWT (JSON Web Tokens) nå ofte er foretrukket for deres styrke og fleksibilitet, kan grunnleggende autentisering fortsatt være nyttig for enkel server-til-server kommunikasjon eller for små prosjekter som ikke krever avansert sikkerhet.
 
-- *Implementeringsdetaljer:* Elm bruker sin `Http`-pakke for å håndtere HTTP-forespørsler. For grunnleggende autentisering genereres en 'Authorization'-header ved å base64-kode brukernavn og passord.
+Når det gjelder implementering i Elm, bruker vi `Http`-pakken for å bygge og sende forespørsler, mens `Base64`-pakken hjelper oss med å kode brukernavn og passord. Husk at grunnleggende autentisering sender legitimasjonen i klartekst, bare kodet med Base64, så det bør alltid brukes over en sikker HTTPS-forbindelse.
 
-## Se også
-
-- [Elm Http Package](https://package.elm-lang.org/packages/elm/http/latest/)
-- [HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
-
----
+## See Also
+- Elm `Http`-pakken: https://package.elm-lang.org/packages/elm/http/latest/
+- Elm `Base64`-pakken: https://package.elm-lang.org/packages/truqu/elm-base64/latest/
+- Autentiseringsstandarder: https://developer.mozilla.org/docs/Web/HTTP/Authentication

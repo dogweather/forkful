@@ -1,6 +1,7 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
-html_title:           "Go: המרת מחרוזת לאותיות קטנות"
+date:                  2024-01-20T17:39:08.230036-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "Python"
 category:             "Python"
@@ -10,26 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-המרת מחרוזת לאותיות קטנות ב-Python הוא מטלה פשוטה שמבצעים בעזרת הפונקציה `lower()`. מתכנתים משתמשים בשיטה זו כדי לספר בין מחרוזות באופן שאינו תלוי ברישיות האותיות.
+## What & Why?
+מה זה המרת מחרוזת לאותיות קטנות? זה שינוי של כל האותיות במחרוזת לאותיות קטנות. למה עושים את זה? כדי לייחד את התווים להשוואות, חיפושים ועוד מבלי להתחשב ברישיות.
 
-## כיצד ל:
-כאן נראה את הדרך לשנות מחרוזת לאותיות קטנות ב-Python:
+## How to:
+בפייתון, משתמשים במתודת `lower()` כדי להמיר כל התווים במחרוזת לקטנות.
+
 ```Python
-original_string = "Hello, Python!"
+original_string = "Python is FUN!"
 lowercase_string = original_string.lower()
 print(lowercase_string)
 ```
 
-בקוד הזה, החזרה הפלט תהיה:
+תוצאת ההדפסה תהיה:
 ```
-hello, python!
+python is fun!
 ```
 
-## צלילה עמוקה
-שימוש בפונקציה `lower()` ב-Python אמנם פשוט, אך ישנם דברים מעניינים לדעת עליו. `'Python'` זכה תחילה לפונקציה זו בשביל לסייע בהשוואת מחרוזות שאינן תלויות ברישיות. קיימות גם חלופות ל-`lower()`, כמו `capitalize()` ו-`title()`, אך אלו לא מבצעות את אותו הפעולה.
+זהו, פשוט כך.
 
-## ראו גם
-חפשו מקורות נוספים על עבודה עם מחרוזות ב-Python:
-1. הפונקציה lower() בתיעוד הרשמי של Python [כאן](https://docs.python.org/3/library/stdtypes.html#str.lower).
-2. מדריך מקיף על מחרודת ב-Python באתר [w3schools](https://www.w3schools.com/python/python_strings.asp).
+## Deep Dive
+לפני ימי Unicode, המרת אותיות לקטנות היתה פשוטה יותר. היום, עם Unicode, יש להתמודד עם תווים משפות רבות ומערכות כתיב שיכולות להיות מורכבות יותר. ב-Python, `str.lower()` מתמודדת עם זה כבר בשבילך.
+
+אלטרנטיבות? יש כאלה. אם ברצונך להמיר לאותיות קטנות אך עם התחשבות במקרים מיוחדים של תווים (כמו בגרמנית), Python 3.3+ מציע את המתודה `casefold()`.
+
+```Python
+german_string = "Straße"
+print(german_string.lower())
+print(german_string.casefold())
+```
+
+תוצאה:
+```
+straße
+strasse
+```
+
+מעוניינים ליצור את הורדת רמת האותיות בעצמכם? תזדקקו למיפוי של התווים ב-Unicode.
+
+## See Also:
+- [Python 3 Documentation for str.lower()](https://docs.python.org/3/library/stdtypes.html#str.lower)
+- [Unicode Case Folding](https://www.unicode.org/reports/tr44/#CaseFolding)
+- [Stack Overflow: How does Python lower() method work internally?](https://stackoverflow.com/questions/319426/how-does-python-lower-method-work-internally)

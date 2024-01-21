@@ -1,6 +1,7 @@
 ---
 title:                "文字列の補間"
-html_title:           "Arduino: 文字列の補間"
+date:                  2024-01-20T17:51:19.504040-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "文字列の補間"
 programming_language: "Java"
 category:             "Java"
@@ -10,43 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ
+## What & Why? (何となぜ？)
+文字列補間とは、定義済みの変数を文字列の中に埋め込むことです。これにより、動的なコンテンツ生成やデータの整形が容易になるため、プログラマーはよく使用します。
 
-文字列の内挿は、文字列に変数を埋め込む方法です。プログラマーは、動的に変わる値を文字列内で表示したい場合に行います。
-
-## 実行方法
-
-Javaでは「String.format」メソッドか「MessageFormat」クラスを使用して内挿を行います。
-
-```Java
-// String.format method
-int apples = 5;
-String text = String.format("I have %d apples.", apples);
-System.out.println(text);
-
-// MessageFormat class
-import java.text.MessageFormat;
-
-int bananas = 7;
-String text2 = MessageFormat.format("I have {0} bananas.", bananas);
-System.out.println(text2);
+## How to: (方法)
+```java
+public class StringInterpolationExample {
+    public static void main(String[] args) {
+        String name = "山田";
+        int age = 30;
+        
+        // Java 15以降では、テキストブロックの利用が可能
+        String greeting = """
+                こんにちは、%sさん。
+                あなたの年齢は%d歳ですね。
+                """.formatted(name, age);
+        
+        System.out.println(greeting);
+    }
+}
+```
+サンプル出力：
+```
+こんにちは、山田さん。
+あなたの年齢は30歳ですね。
 ```
 
-出力結果:
+## Deep Dive (深掘り)
+歴史的にJavaでは文字列補間は直接的ではありませんでした。`String.format()`や`+`演算子を使った方法が主でした。しかし、Java 15からはテキストブロックと`formatted`メソッドによって、他の言語のような直感的な文字列補間が可能になりました。
 
-```
-I have 5 apples.
-I have 7 bananas.
-```
+代替としてStringBuilderや+演算子を使った結合はありますが、パフォーマンスや可読性の点から推奨されません。補間の実装は内部的には`String.format()`を使用するか、パターンマッチングといったより高度な手法を使うことがあります。
 
-## 深入り
-
-- 歴史的な背景：初期のプログラミング言語では、文字列内挿はサポートされていなかったため、プログラマーは文字列結合を利用しました。しかし、Java 1.5からこの機能が導入されました。
-- 代替方法：Java 8以降では、`java.util.Formatter` クラスや `printf` メソッドを利用することも可能です。
-- 実装の詳細：`StringTemplate` や `apache-commons-text` ようなライブラリを利用すると、より高度な内挿を行うことも可能です。
-
-## 参考情報
-
-- OracleのJavaドキュメンテーション（文字列操作）: https://docs.oracle.com/javase/tutorial/java/data/strings.html
-- Apache Commons Text（Javaの文字列操作ライブラリ）: https://commons.apache.org/proper/commons-text/
-- Stack Overflow（文字列内挿についての質問と回答）: https://stackoverflow.com/questions/3655424/string-interpolation-in-java
+## See Also (関連リンク)
+- [Oracle Java Documentation](https://docs.oracle.com/en/java/javase/)
+- [JEP 355: Text Blocks (Final)](https://openjdk.java.net/jeps/355)
+- [String Formatting in Java](https://docs.oracle.com/javase/tutorial/java/data/numberformat.html)

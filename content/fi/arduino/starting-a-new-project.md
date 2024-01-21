@@ -1,7 +1,8 @@
 ---
-title:                "Aloittaminen uuden projektin"
-html_title:           "C: Aloittaminen uuden projektin"
-simple_title:         "Aloittaminen uuden projektin"
+title:                "Uuden projektin aloittaminen"
+date:                  2024-01-20T18:02:37.978815-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Getting Started"
@@ -10,42 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## Mikä ja Miksi?
 
-Uuden projektin aloittaminen tarkoittaa uuden ohjelman tekemisen alkua tyhjästä. Ohjelmoijat tekevät sen, koska uusi projekti tarkoittaa uuden ongelman ratkaisemista tai uuden idean toteuttamista. 
+Aloittaa uusi projekti tarkoittaa nollasta alkamista, idean jalostamista toimivaksi koodiksi. Koodaajat tekevät sen oppiakseen, kokeillakseen uusia juttuja tai luodakseen jotain hyödyllistä.
 
-## Näin se tehdään:
-
-Aloitetaan yksinkertaisella LEDin vilkuttamisen ohjelmalla.
+## Kuinka:
 
 ```Arduino
-//Alustetaan LED pin
-int ledPin = 13;
-
 void setup() {
-//Määritetään LED pinin toiminnallisuus
-  pinMode(ledPin, OUTPUT); 
+  // Käynnistetään sarjaliikenne kommunikaatiota varten
+  Serial.begin(9600);
 }
 
 void loop() {
-  digitalWrite(ledPin, HIGH);   //LED syttyy
-  delay(1000);                  //Odotetaan sekunti
-  digitalWrite(ledPin, LOW);    //LED sammuu
-  delay(1000);                  //Odotetaan sekunti
+  // Tulosta "Hei maailma!" joka sekunti
+  Serial.println("Hei maailma!");
+  delay(1000);
 }
 ```
-Yllä olevan koodin abulla, LED vilkkuu syttymisen ja sammumisen välillä sekunnin välein.
 
-## Deep Dive
+Sample output:
+```
+Hei maailma!
+Hei maailma!
+Hei maailma!
+...
 
-Historiallisesti Arduino on avannut mahdollisuuden ohjelmoimiseen ja elektroniikkaprojektien kasaukseen kaikentasoisille innokkaille. Uuden projektin aloittaminen Arduinolla on yksinkertainen prosessi kiitos kätevän käyttöliittymän.
+```
 
-Vaihtoehdoista on hyvä mainita esimerkiksi Raspberry Pi, joka tarjoaa tehokkaamman alustan, mutta on samalla monimutkaisempi aloittelijoille.
+## Syväsukellus:
 
-Arduinossa uuden projektin aloittaminen liittyy yleensä LEDin vilkuttamiseen. Tämä johtuu siitä, että se on yksinkertainen tehtävä, joka auttaa käsittämään, kuinka koodi ohjaa laitteen käyttäytymistä.
+Arduino-projektin aloittaminen on olennainen taito, joka on periytynyt jo 2000-luvun alusta, jolloin Arduino lanseerattiin opetusvälineeksi opiskelijoille. Vaihtoehtoisia alustoja ovat Raspberry Pi tai ESP32, jotka sopivat paremmin IoT-projekteihin tai kehittyneempiin sovelluksiin. Kun aloitat uuden projektin, kiinnitä huomiota virrankulutukseen, muistin kokoon ja yhteensopivuuteen muiden laitteiden kanssa. Tämä on perusta, jolle rakennetaan monimutkaisempia projekteja.
 
-## Katso myös
+## Katso Myös:
 
-1. [Arduino viralliset oppaat](https://www.arduino.cc/en/Tutorial/HomePage)
-2. [Raspberry Pi aloittelijoille](https://projects.raspberrypi.org/en/pathways/getting-started-with-raspberry-pi)
-3. [31 DIY Arduino](https://www.instructables.com/DIY-Arduino-or-The-DIY-Duino/)
+- Arduino kotisivu ja tutoriaalit: [www.arduino.cc](https://www.arduino.cc)
+- "Getting Started with Arduino" by Massimo Banzi, co-founder of Arduino.
+- Loistava paikka komponenttien oppimiseen: [Adafruit Learning System](https://learn.adafruit.com/)
+- Arduino foorumi suomalaisille: [Arduino.fi](http://arduino.fi)

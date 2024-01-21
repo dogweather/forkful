@@ -1,7 +1,8 @@
 ---
-title:                "Starter et nytt prosjekt"
-html_title:           "Arduino: Starter et nytt prosjekt"
-simple_title:         "Starter et nytt prosjekt"
+title:                "Å starte et nytt prosjekt"
+date:                  2024-01-20T18:02:48.258209-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Getting Started"
@@ -10,41 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Å Starte et Nytt Prosjekt i Arduino: En Praktisk Guide
-
 ## Hva & Hvorfor?
+Å starte et nytt prosjekt betyr å lage et nytt skript eller program fra bunnen av. Programmerere gjør dette for å skape tilpassede løsninger, lære nye ferdigheter eller utforske teknologiens grenser.
 
-Å starte et nytt prosjekt er så enkelt som å åpne en ny, tom skisse i Arduino IDE. Programmerere gjør dette for å lage egendefinerte programmer.
-
-## Hvordan:
-
-La oss starte med en enkel "blinkende LED" kode. 
+## Slik går du frem:
+Her er et simpelt blinkende LED eksempel:
 
 ```Arduino
 void setup() {
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(13, OUTPUT); // Setter digital pin 13 som utgang
 }
 
 void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(1000);
+  digitalWrite(13, HIGH);   // Skru på LED'en
+  delay(1000);              // Vent i ett sekund
+  digitalWrite(13, LOW);    // Skru av LED'en
+  delay(1000);              // Vent i ett sekund
 }
 ```
-Dette programmet vil få den innebygde LEDen til å blinke hvert sekund.
 
-## Deep Dive
+Når du laster opp dette, vil du se at LED'en på Arduinoen din blinker hvert sekund.
 
-Arduino ble lansert i 2005 som et brukervennlig alternativ for microcontroller-bruk. Alternativene til Arduino inkluderer Raspberry Pi for mer komplekse prosjekter, og Micro:bit for utdanningsformål.
+## Dykk dypere:
+Arduino ble startet som et verktøy for studenter ved Interaction Design Institute Ivrea i Italia rundt 2005. Det er flust av alternativer til Arduino, som Raspberry Pi for mer komplekse prosjekter eller micro:bit for utdanning. Det som gjør Arduino unikt, er kombinasjonen av åpen kildekode-maskinvare og -programvare, som gjør det lett å dele og bygge videre på prosjekter. Ved å starte fra scratch på en Arduino, lærer du håndtering av mikrokontrollerens innganger og utganger, og programmeringsspråket C/C++.
 
-Når du starter et nytt prosjekt i Arduino IDE, lages det en tom skisse. En Arduino 'skisse' er rett og slett programmet du laster opp til Arduino-brettet. Den inneholder to primære deler:  'setup()' og 'loop()'.
-
-## Se Også
-
-Sjekk ut disse nyttige kildene for mer informasjon:
-
-1. Arduino's offisielle side: https://www.arduino.cc
-2. Online Arduino kurs: https://www.coursera.org/courses?query=arduino
-3. For mer komplekse prosjekter, se på: https://www.raspberrypi.org
-4. For utdanningsformål, sjekk ut: https://microbit.org
+## Se Også:
+- Arduino offisielle hjemmeside: [https://www.arduino.cc/](https://www.arduino.cc/)
+- Arduino nybegynnerguide: [https://www.arduino.cc/en/Guide](https://www.arduino.cc/en/Guide)
+- Prosjekter på Arduino Project Hub: [https://create.arduino.cc/projecthub](https://create.arduino.cc/projecthub)

@@ -1,7 +1,8 @@
 ---
-title:                "Calculer une date dans le futur ou le passé"
-html_title:           "Elm: Calculer une date dans le futur ou le passé"
-simple_title:         "Calculer une date dans le futur ou le passé"
+title:                "Calcul d'une date future ou passée"
+date:                  2024-01-20T17:30:44.790655-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Calcul d'une date future ou passée"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,47 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi?
+## What & Why?
+Calculer une date dans le futur ou le passé, c'est simplement ajouter ou soustraire du temps à une date donnée. Les devs s'en servent pour des tâches telles que des rappels, des échéanciers ou des historiques d'événements.
 
-Calculer une date dans le futur ou le passé est une tâche consistant à déterminer une date spécifique en se basant sur une autre date. Les programmeurs font cela pour gérer les événements déclenchés à des moments spécifiques, comme les rappels, les abonnements et les tâches planifiées.
-
-## Comment Faire:
-
-Voici comment vous pouvez le faire en Elm. Vous utiliserez le package `time`:
+## How to:
+Elm utilise le paquet `elm/time` pour gérer les dates. Voici comment on calcule une date dans une semaine:
 
 ```Elm
-import Time
+import Time exposing (Posix)
+import Time.Extra exposing (add)
 
-calculerDateFutur : Time.Posix -> Time.Zone -> Int -> Time.Posix
-calculerDateFutur dateActuelle zone jours =
-    let
-        durée = Time.inDays jours
-    in
-    Time.add durée dateActuelle
+calculateFutureDate : Posix -> Posix
+calculateFutureDate date =
+    add (7 * 24 * 60 * 60 * 1000) date  -- Ajoute 7 jours en millisecondes
+
+-- Usage
+currentDate : Posix
+currentDate = Time.millisToPosix 1615194000000  -- 8 mars 2021 à 00:00:00
+
+futureDate : Posix
+futureDate = calculateFutureDate currentDate
+-- futureDate est maintenant le 15 mars 2021 à 00:00:00
 ```
 
-Cette fonction ajoute simplement le nombre de jours spécifié à la date actuelle pour obtenir une date future.
-
-Et pour calculer une date dans le passé, vous pouvez simplement passer un nombre de jours négatif.
+Pour une date dans le passé, soustrayez le temps:
 
 ```Elm
-calculerDatePassé : Time.Posix -> Time.Zone -> Int -> Time.Posix
-calculerDatePassé dateActuelle zone jours =
-    calculerDateFutur dateActuelle zone -jours
+calculatePastDate : Posix -> Posix
+calculatePastDate date =
+    add (-7 * 24 * 60 * 60 * 1000) date  -- Soustrait 7 jours
+
+-- Usage
+pastDate : Posix
+pastDate = calculatePastDate currentDate
+-- pastDate est maintenant le 1 mars 2021 à 00:00:00
 ```
 
-## Deep Dive:
+## Deep Dive
+Historiquement, manipuler des dates en programmation est un challenge, cause des différents formats et fuseaux horaires. Elm simplifie ceci avec `elm/time` qui utilise `Posix`, représentant le temps en millisecondes depuis l'UTC 1970-01-01 00:00:00. Cela évite beaucoup de problèmes classiques de fuseaux horaires.
 
-L'idée de calculer une date spécifique dans le futur ou le passé est assez ancienne en programmation. Cependant, le faire de manière précise et fiable peut être délicat, en raison de facteurs tels que les horaires d'été, les secondes intercalaires et les différences de fuseau horaire.
+Niveau alternatives, y'a `elm-community/elm-time` mais `elm/time` est plus commun et robuste. On pourrait aussi tomber dans les calculs manuels, mais pourquoi se compliquer la vie ?
 
-Une alternative consiste à utiliser des bibliothèques ou des services externes qui traitent de ces détails pour vous. C'est aussi une option valable, surtout si vous avez besoin de gérer des choses comme les événements récurrents ou des calendriers complets.
+Pour l'implémentation, Elm traite les données de date et d'heure comme des données immuables. Donc, `add` crée une nouvelle instance `Posix` plutôt que de modifier l'original, c'est une nuance importante pour la programmation fonctionnelle.
 
-Dans Elm, vous devez travailler avec `Time.Posix` et `Time.Zone` pour effectuer ces calculs. Notez que `Time.Zone` est spécifique au lieu dans lequel vous allez effectuer les calculs. Dans la plupart des cas, vous pouvez simplement utiliser `Time.utc` pour cela.
-
-## Voir aussi:
-
-Pour plus d'informations, consultez les liens suivants:
-
-- Comment utiliser le package `time` en Elm (https://package.elm-lang.org/packages/elm/time/latest/)
-- Un bon article sur l'importance de la gestion correcte du temps en programmation (https://www.zachleat.com/elm/time-to-elm)
-- Une discussion détaillée sur les défis liés à la manipulation du temps en programmation (https://en.wikipedia.org/wiki/System_time)
+## See Also
+- Documentation officielle d'Elm sur le temps: [package.elm-lang.org/packages/elm/time/latest](https://package.elm-lang.org/packages/elm/time/latest)
+- FAQ sur `elm/time`: [discourse.elm-lang.org](https://discourse.elm-lang.org/)
+- Un super tutoriel sur les bases de Elm: [guide.elm-lang.org](https://guide.elm-lang.org/)

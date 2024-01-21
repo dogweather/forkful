@@ -1,7 +1,8 @@
 ---
-title:                "Видобування підрядків"
-html_title:           "C++: Видобування підрядків"
-simple_title:         "Видобування підрядків"
+title:                "Виділення підрядків"
+date:                  2024-01-20T17:45:59.607635-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Виділення підрядків"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,33 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Шо & Навіщо?
+## Що це таке та навіщо?
 
-Видобування підрядків (substrings) - це процес вибору певної частини стрічки за індексами. Програмісти це роблять, коли потрібно обробити частину даних в рамках більшої стрічки.
+Витягування підрядків у Java - це спосіб отримання частини з рядка. Програмісти роблять це, щоб обробити або використовувати конкретні дані з більшого тексту.
 
 ## Як це зробити:
 
-Метод `substring()` в Java використовується для видобування підрядків. Спробуйте подивитися на цей приклад:
-
-```Java
-public class Main {
-  public static void main(String[] args) {
-    String str = "Життя - це подорож, а не мета.";
-    String subStr = str.substring(8, 16);
-    System.out.println(subStr);
-  }
+```java
+public class SubstringExample {
+    public static void main(String[] args) {
+        String fullString = "Привіт, світе!";
+        String partOfString = fullString.substring(8, 13); // Витягує "світе"
+        
+        System.out.println("Повний рядок: " + fullString);
+        System.out.println("Підрядок: " + partOfString);
+    }
 }
+
+/*
+Вивід:
+Повний рядок: Привіт, світе!
+Підрядок: світе
+*/
 ```
+Використовуйте метод `.substring()` для отримання частини рядка. Передайте індекс початку і кінця, щоб обмежити витягування.
 
-Виведуться слова "це подорож". Оголошено стрічку `str`, потім вибрано підрядок з 8 по 16 індекси. Цей підрядок виведено на екран.
+## Поглиблений огляд:
 
-## Поглиблений матеріал
+В Java витягнення підрядків стало зазвичай завдяки `String` класу. З часів Java 1, ця можливість допомагає оптимізувати обробку текстів. Останні версії Java управляють рядками ефективніше, що зменшує пам'ять та прискорює доступ.
 
-Метод `substring()` був введений у Java 1.0, що робить його одним з найстаріших методів мови для роботи зі стрічками. Альтернативою може бути використання методу `split()`, який розбиває стрічку на масив підрядків за вказаним символом.
+Альтернативами є методи `split()` або регулярні вирази (`Pattern` і `Matcher` класи), кожен із своїм використанням. Застосування `substring()` краще для простого і точного витягування певних сегментів тексту.
 
-Часто на практиці програмісти використовують `substring()` разом з `indexOf()`, щоб визначити, звідки починати видобування підрядка.
+Реалізаційно, до Java 7, `substring()` створював новий рядок зі спільним масивом символів - економія пам'яті. Але з Java 7, `substring()` створює новий масив символів для кожного нового рядка, ліквідуючи залежність від оригінального рядка та потенційні витоки пам'яті.
 
-## Дивіться також
+## Дивіться також:
 
-2. [Extract a substring in Java - Stack Overflow](https://stackoverflow.com/questions/16027229/extracting-a-substring-in-java)
-3. [Java String substring() method with examples - TutorialsPoint](https://www.tutorialspoint.com/java/java_string_substring.htm)
+- [String (Java Platform SE 8)](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Class Pattern (Java Platform SE 8)](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
+- [Class Matcher (Java Platform SE 8)](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html)
+- [Effective Java (Third Edition) by Joshua Bloch](https://www.pearson.com/us/higher-education/program/Bloch-Effective-Java-3rd-Edition/PGM334830.html) - розділ про керування рядками для глибшого розуміння.

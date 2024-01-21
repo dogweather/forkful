@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http"
-html_title:           "Arduino: Wysyłanie żądania http"
-simple_title:         "Wysyłanie żądania http"
+title:                "Wysyłanie żądania HTTP"
+date:                  2024-01-20T18:00:55.288046-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie żądania HTTP"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,39 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Wysyłanie żądania HTTP jest techniką umożliwiającą komunikację między klientem internetowym a serwerem. Programiści używają tego dla zdobycia danych z różnych serwisów webowych i API.
+## What & Why? (Co i Dlaczego?)
 
-## Jak to zrobić:
-W Swift wykorzystaj `URLSession` do wykonania żądania HTTP. Poniżej znajduje się proste zapytanie GET.
+Wysyłanie żądania HTTP to sposób, aby twój program porozmawiał z serwerem: zapytał o dane, przesłał formularz albo pobił witrynę. Programiści robią to, żeby aplikacje mogły wchodzić w interakcje z internetem – wymieniać dane, synchronizować informacje, cokolwiek "online" znaczy dla twojego kodu.
+
+## How to (Jak to zrobić):
 
 ```Swift
 import Foundation
 
-let url = URL(string: "http://www.google.com")
-let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
+let url = URL(string: "https://api.example.com/data")!
+var request = URLRequest(url: url)
+request.httpMethod = "GET"
+
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
     if let error = error {
-         print("Error: \(error)")
-    } else if let data = data {
-        let str = String(data: data, encoding: .utf8)
-        print("Received data:\n\(str!)")
+        print("Client error: \(error.localizedDescription)")
+    }
+
+    guard let httpResponse = response as? HTTPURLResponse,
+          (200...299).contains(httpResponse.statusCode) else {
+        print("Server error")
+        return
+    }
+
+    if let mimeType = httpResponse.mimeType, mimeType == "application/json",
+       let data = data {
+        do {
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            print("Response: \(json)")
+        } catch {
+            print("JSON error: \(error.localizedDescription)")
+        }
     }
 }
+
 task.resume()
 ```
-Twój wynik będzie wyglądał tak:
 
+Sample output:
 ```
-Received data:
-<!doctype html><html itemscope="" itemtype="http://schema.org/WebPage" ...
+Response: {
+    id = 1;
+    name = "Example Data";
+}
 ```
 
-## Pogłębienie:
-Zapytania HTTP są fundamentem komunikacji internetowej, a ich historia sięga wczesnych lat rozwoju sieci. W Pythonie, popularną alternatywą dla `URLSession` jest `requests`, w Node.js możemy użyć `axios` lub modułu `http`.
+## Deep Dive (Dogłębna analiza):
 
-Kiedy wysyłamy żądanie HTTP, nawiązujemy połączenie TCP z serwerem i przesyłamy informacje w formacie tekstowym. Serwer odpowiada, również w formacie tekstowym. W Swift, `URLSession` zarządza tymi szczegółami dla nas, umożliwiając nam skupić się na obsłudze otrzymanych danych.
+W dawnych czasach, wysyłanie żądania HTTP wymagało linijków w terminalu z `curl` albo komplikacji z `sockets`. Teraz, Swift załatwia ci większość pracy – używasz `URLSession` do zarządzania sesjami sieciowymi.
 
-## Zobacz też:
-1. [Podstawy URLSession](https://developer.apple.com/documentation/foundation/urlsession) - Dokumentacja Apple o URLSession.
-2. [Wprowadzenie do HTTP](https://developer.mozilla.org/pl/docs/Web/HTTP/Overview) - Obszerna analiza protokołu HTTP na MDN.
-3. [Jak korzystać z HTTP w Swift](https://www.hackingwithswift.com/read/12/overview) - Przewodnik Hacking with Swift na temat wykonywania żądań HTTP w Swift.
+Alternatywy? Biblioteki jak `Alamofire` upiększają kod i dodają dodatkową funkcjonalność. Da się też używać niższego poziomu `CFNetwork` dla większej kontroli. Wybór zależy od potrzeb.
+
+Implementacja? `URLRequest` tworzy twoje żądanie, ustalając metodę, nagłówki, ciało. `URLSession` obsługuje wysyłkę i odbiór danych. Można synchronicznie (`dataTask`) czy asynchronicznie (`dataTask(with:completionHandler:)`) – prawdziwa moc Swifta.
+
+## See Also (Zobacz również):
+
+- [Swift’s URLSession Documentation](https://developer.apple.com/documentation/foundation/urlsession)
+- [Alamofire GitHub Repository](https://github.com/Alamofire/Alamofire)

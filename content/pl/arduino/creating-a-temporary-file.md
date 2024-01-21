@@ -1,7 +1,8 @@
 ---
-title:                "Tworzenie tymczasowego pliku"
-html_title:           "C#: Tworzenie tymczasowego pliku"
-simple_title:         "Tworzenie tymczasowego pliku"
+title:                "Tworzenie pliku tymczasowego"
+date:                  2024-01-20T17:39:35.514667-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,51 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Tworzenie tymczasowego pliku polega na stworzeniu pliku, który jest używany tymczasowo i zazwyczaj usuwany po zakończeniu jego użycia. Programiści robią to, by przechować dane, które są potrzebne tylko przez krótki czas i nie ma potrzeby zapisywać ich trwale.
+## What & Why?
+(Co i Dlaczego?)
+Tworzenie tymczasowego pliku to po prostu robienie miejsca na dane, które są potrzebne tylko na chwilę. Programiści robią to, by nie zaśmiecać pamięci trwałej i łatwo pozbyć się nieistotnych danych po użyciu.
 
-## Jak to zrobić:
-Środowisko Arduino nie obsługuje bezpośrednio tworzenia plików tymczasowych, ale możemy to osiągnąć za pomocą karty SD i biblioteki SD. 
-
-```Arduino
+## How to:
+(Jak to zrobić:)
+```
+// Przykładowy kod Arduino
+#include <SPI.h>
 #include <SD.h>
 
 File tempFile;
 
 void setup() {
+  // Początkowe ustawienia
   Serial.begin(9600);
   if (!SD.begin(4)) {
-    Serial.println("Nieudane inicjalizowanie karty SD");
+    Serial.println("Inicjalizacja karty SD nie powiodła się!");
     return;
   }
-  
+  // Tworzenie tymczasowego pliku
   tempFile = SD.open("temp.txt", FILE_WRITE);
-  
-  if (tempFile) {
-    tempFile.println("To jest plik tymczasowy");
+  if (tempFile) {  
+    Serial.println("Tymczasowy plik utworzony:");
+    // Zapisz coś do tymczasowego pliku
+    tempFile.println("Hello Arduino!");
+    // Zamykamy plik
     tempFile.close();
-    Serial.println("Plik tymczasowy został stworzony");
-  }
-  else {
-    Serial.println("Błąd przy tworzeniu pliku tymczasowego");
+  } else {
+    Serial.println("Błąd podczas tworzenia pliku!");
   }
 }
 
 void loop() {
-  // Nie robimy nic w pętli głównej
+  // Logika działania tu...
 }
 ```
 
-Po uruchomieniu kodu, powinieneś zobaczyć na monitorze szeregówkowym informację o utworzeniu pliku.
+## Deep Dive:
+(Zagłębiając się:)
+Tworzenie tymczasowych plików w Arduino zwykle wiąże się z użyciem kart SD jako magazynu tymczasowego. Historia zaczyna się, gdy potrzebujesz temp miejsca bez zaciemniania pamięci EEPROM. Alternatywy to wykorzystanie pamięci RAM lub EEPROM do przechowywania tymczasowych danych, ale pamięć RAM jest ograniczona, a EEPROM ma ograniczoną liczbę cykli zapisu. Przy używaniu SD do plików tymczasowych, pamiętaj, by plik usunąć po zakończeniu – to zarządza miejscem i chroni dane.
 
-## Dogłębne spojrzenie:
-Nie ma konkretnej instancji w historii, gdy pojawiło się tworzenie plików tymczasowych w Arduino. Jest to koncept, który pochodzi z bardziej zaawansowanych systemów operacyjnych, ale nadal może być użyteczny w Arduino ze względu na ograniczone zasoby. 
-
-Alternatywą dla tworzenia tymczasowego pliku na karcie SD mogłoby być użycie EEPROM do przechowywania tymczasowych danych, chociaż jest ona bardziej odpowiednia do przechowywania małej ilości danych, które muszą przetrwać reset.
-
-Kiedy tworzymy plik tymczasowy na karcie SD, dane są zapisywane na karcie jako bloki, co oznacza, że nawet małe zmiany mogą spowodować zapisanie całego bloku.
-
-## Zobacz też:
-- [Biblioteka SD w Arduino](https://www.arduino.cc/en/reference/SD)
-- [Przechowywanie danych na karcie SD](https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite)
-- [Arduino - EEPROM](https://www.arduino.cc/en/Reference/EEPROM)
+## See Also:
+(Zobacz również:)
+- Arduino SD Library Reference: https://www.arduino.cc/en/Reference/SD
+- EEPROM Write Limitations: https://www.arduino.cc/en/Tutorial/EEPROMWrite
+- Managing SD card files: https://www.arduino.cc/en/Tutorial/ReadWrite

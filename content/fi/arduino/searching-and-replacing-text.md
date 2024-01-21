@@ -1,6 +1,7 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
+date:                  2024-01-20T17:57:10.440034-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,27 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Tekstin etsiminen ja korvaaminen tarkoittaa tietyn merkkijonon löytämistä ja sen muuttamista toiseksi merkkijonoksi koodissasi. Tällä toiminnolla ohjelmoijat voivat tehdä massiivisia muutoksia koodissaan minuuteissa.
+## Mitä ja Miksi?
+Tekstin etsiminen ja korvaaminen tarkoittaa sopivan merkkijonon löytämistä tekstistä ja sen muuttamista toiseksi. Ohjelmoijat käyttävät tätä toimintoa automatisoidakseen ja yksinkertaistaakseen suuria datamääriä tai konfiguraatioiden muokkausta.
 
-## Näin se toimii:
-Seuraava esimerkki näyttää, kuinka Arduino-koodissa voidaan etsiä ja korvata tekstiä `replace()`-funktiolla.
-
+## Kuinka:
 ```Arduino
-String str = "Moi, maailma!";
-str.replace("maailma", "Arduino");
-Serial.println(str);  // Tulostaa: "Moi, Arduino!"
+String originalText = "Hello, this is an example.";
+String searchText = "example";
+String replaceText = "sample";
+String resultText;
+
+void setup() {
+  Serial.begin(9600);
+  
+  if (originalText.indexOf(searchText) >= 0) {
+    resultText = originalText.substring(0, originalText.indexOf(searchText));
+    resultText += replaceText;
+    resultText += originalText.substring(originalText.indexOf(searchText) + searchText.length());
+  } else {
+    resultText = originalText;
+  }
+
+  Serial.println("Original Text: " + originalText);
+  Serial.println("After Replace: " + resultText);
+}
+
+void loop() {
+  // Nothing to do here
+}
 ```
-Tässä esimerkissä me etsimme merkkijonoa "maailma" ja korvaamme sen merkkijonolla "Arduino".
+Tuloste:
+```
+Original Text: Hello, this is an example.
+After Replace: Hello, this is an sample.
+```
 
-## Syvällinen tieto
-Etsiminen ja korvaaminen on peräisin varhaisista tekstieditoreista, jotka kehitettiin 1970-luvulla. Arduino tarjoaa monia vaihtoehtoja tämän toiminnallisuuden toteuttamiseksi, mukaan lukien `find()`, `substring()`, ja `replace()`.
+## Syväsukellus:
+Tekstin korvaaminen oli keskeistä varhaisissa tietokoneissa tekstipohjaisten käyttöliittymien ja ohjelmoinnin aikana. `String`-objektin metodit `indexOf()` ja `substring()` ovat perusvälineitä tekstinkäsittelyyn Arduinossa. Vaikka nämä toiminnot ovat hyödyllisiä, ne kuluttavat myös muistia, mikä on tärkeää huomioida resurssirajoitteisissa järjestelmissä kuten Arduinossa. Eri kirjastot ja kielet tarjoavat erilaisia ja tehokkaampia ratkaisuja, mutta simplicitetti voittaa tietyissä tilanteissa.
 
-`replace()`-funktion käyttö on suoraviivaista: se etsii tiettyä merkkijonoa ja korvaa sen toisella. Jos haluat lisätietoja tämän funktion käyttämisestä, tutustu Arduino String Library -dokumentaatioon.
-
-## Katso myös
-- Arduino String Library: www.arduino.cc/reference/en/language/variables/data-types/stringobject/
-- Arduino Software: www.arduino.cc/en/main/software
-- Arduino Forum: forum.arduino.cc
-
-Muistakaa, että olette valmiita tutkimaan lisää ja oppimaan uusia asioita! Jos teillä on kysyttävää, älkää epäröikö osallistua keskusteluun Arduino-foorumilla.
+## Katso Myös:
+- Arduino String Reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- C++ std::string-kirjaston käyttö Arduinossa: https://www.arduino.cc/reference/en/language/variables/data-types/string/
+- RegEx-kirjastot tekstinkäsittelyyn monimutkaisempiin etsintä- ja korvaustarpeisiin.

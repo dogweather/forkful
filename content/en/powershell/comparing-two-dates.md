@@ -1,6 +1,7 @@
 ---
 title:                "Comparing two dates"
-html_title:           "Elm recipe: Comparing two dates"
+date:                  2024-01-20T17:33:40.084046-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Comparing two dates"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -12,39 +13,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Comparing two dates is about determining whether one date is earlier, equal, or later than another. Programmers do this to make decisions, execute relevant logic, or track time-sensitive data in their applications. 
+Comparing two dates in PowerShell means figuring out if one is earlier, the same, or later than the other. Programmers often do this to manage events, sort records, schedule tasks, or check data age.
 
 ## How to:
 
-Let's see how you can compare two dates in PowerShell. This code block compares two manually set dates:
-
 ```PowerShell
-$date1 = Get-Date -Year 2021 -Month 7 -Day 11
-$date2 = Get-Date -Year 2021 -Month 12 -Day 30
+# Let's grab today's date
+$today = Get-Date
 
-if ($date1 -gt $date2)
-{
-    Write-Output "$date1 is later than $date2"
-}
-elseif ($date1 -eq $date2)
-{
-    Write-Output "$date1 is the same as $date2"
-}
-else
-{
-    Write-Output "$date1 is earlier than $date2"
-}
+# And here's an arbitrary date
+$someOtherDate = Get-Date "2023-03-17"
+
+# Are they equal?
+$today -eq $someOtherDate
+
+# Is today greater (later) than the other date?
+$today -gt $someOtherDate
+
+# How about checking if it's earlier?
+$today -lt $someOtherDate
+
+# Let's see the results, shall we?
+
+False
+True
+False
 ```
-Sample output: `Sunday, July 11, 2021 12:00:00 AM is earlier than Thursday, December 30, 2021 12:00:00 AM.`
 
 ## Deep Dive
 
-PowerShell uses .NET’s DateTime object to manipulate dates and times, which has been around since the first .NET framework release in 2002. Thence, `Get-Date` command serves to return a DateTime object.
+Way back in the stone ages of computing—not really, but, you know, the early days—dates were messy. We've come a long way with standards and PowerShell simplifies it further.
 
-There exists alternatives to `-gt` (greater than) and `-lt` (less than) operators, such as `.CompareTo()` method. However, such alternatives prove less friendly in PowerShell scripts, and the aforementioned operators tend to be more idiomatic.
+Here are the bits worth chewing on:
+1. **History**: Computers used to handle dates in various formats, leading to possible confusion and Y2K-style bugs. PowerShell relies on .NET's `DateTime` structure, avoiding such chaos.
+   
+2. **Alternatives**: You could also use `Compare-Object`, or leverage methods from `[datetime]` objects like `.AddDays()` to perform calculations before comparison. Remember `Measure-Command` to test performance impacts.
+   
+3. **Implementation Details**: PowerShell dates are objects with their own properties and methods. Comparing dates is done with operators (`-eq`, `-lt`, `-gt`), and, thanks to operator overloading, PowerShell knows you're dealing with dates, not just strings or numbers.
 
-Remember, PowerShell relies on the system's timezone for date comparison unless otherwise specified. Always check your machine's timezone settings when working with date comparison involving user input or data fetched from different timezones.
+At the assembly level, date comparison translates to ticks (100-nanosecond intervals since 1/1/0001). So you’re essentially comparing large integers, which is efficient.
 
 ## See Also
 
-- [Microsoft's Official Documentation on Get-Date](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date)
+- [DateTime Structure (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
+- [Working with Dates and Times in PowerShell (SS64.com)](https://ss64.com/ps/syntax-dateformats.html)

@@ -1,6 +1,7 @@
 ---
 title:                "Extraindo substrings"
-html_title:           "Bash: Extraindo substrings"
+date:                  2024-01-20T17:46:07.683145-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extraindo substrings"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,33 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Que?
+## O Quê & Porquê?
+Extrair substrings significa pegar partes específicas de uma string. Programadores fazem isso para manipular, analisar ou transformar dados baseados em texto de maneira eficiente.
 
-Extrair substrings é a ação de obter partes específicas de uma string. Programadores fazem isso frequentemente para manipular dados de string complexos ou grandes.
-
-## Como:
-
-Aqui está um exemplo simples de como extrair substrings em Haskell.
-
+## Como Fazer:
 ```Haskell
-substring :: Int -> Int -> String -> String
-substring start end = take (end - start) . drop start
+import Data.List (isPrefixOf)
+
+-- Exemplo 1: Usar a função 'take'
+substringInicio :: String -> Int -> String
+substringInicio s n = take n s
+
+-- Exemplo 2: Usar a função 'drop'
+substringFinal :: String -> Int -> String
+substringFinal s n = drop n s
+
+-- Exemplo 3: Usando 'take' e 'drop' juntas para pegar uma substring no meio
+substringMeio :: String -> Int -> Int -> String
+substringMeio s inicio tamanho = take tamanho . drop inicio $ s 
+
+-- Resultados
+main :: IO ()
+main = do
+    putStrLn $ substringInicio "Olá mundo!" 4 -- "Olá "
+    putStrLn $ substringFinal "Haskell" 3     -- "ell"
+    putStrLn $ substringMeio "Fatiar strings" 7 6 -- "string"
 ```
 
-Uso e saída:
+## Mergulho Profundo
+Extrair substrings é uma operação básica, mas fundamental, das linguagens de programação desde o início, porque processar texto é incrivelmente comum. Em Haskell, a abordagem puramente funcional tem algumas implicações na forma como lidamos com strings. Em vez de métodos internos que alteram a string original (como algumas outras linguagens fazem), Haskell favorece o uso de funções que retornam novas strings.
 
-```Haskell
-substring 0 5 "Ola, mundo de Haskell!"  -- Resultado será "Ola, "
-```
+Alternativas para extrair substrings podem incluir expressões regulares (com o pacote `regex`), que são mais flexíveis mas também mais complexas. Uma outra característica a se considerar é quando trabalhamos com textos grandes. O tipo `String` em Haskell é representado como uma lista de caracteres, o que pode ser ineficiente para strings grandes. Nesses casos, pode ser melhor usar a biblioteca `Text` que é otimizada para lidar com texto de forma mais performática.
 
-## Aprofundando
-
-* Histórico: Em Haskell, o ato de extrair substrings tem sido feito usando as funções `drop` e `take` desde seus primórdios. As funções são combinadas para selar a substring dentro do intervalo desejado.
-* Alternativas: Outro método é usar a função `splitAt` que divide a string em duas no índice especificado. Mas, dificilmente é preferível em relação à abordagem `take` e `drop` por causa de sua complexidade.
-* Detalhes da implementação: Uma coisa importante a notar é que os índices estão baseados em zero e o último índice não está incluso na substring extraída.
-
-## Ver Também
-
-Aprenda mais sobre substrings e strings em Haskell aqui:
-* https://wiki.haskell.org/Substring
-* https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-String.html
+## Veja Também
+- [Haskell `take` function](https://hackage.haskell.org/package/base-4.16.1.0/docs/Prelude.html#v:take)
+- [Haskell `drop` function](https://hackage.haskell.org/package/base-4.16.1.0/docs/Prelude.html#v:drop)
+- Documentação do pacote Text: [Text Haskell package](https://hackage.haskell.org/package/text)
+- Expressões regulares em Haskell: [regex Haskell packages](https://hackage.haskell.org/package/regex-base)

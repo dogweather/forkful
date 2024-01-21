@@ -1,7 +1,8 @@
 ---
-title:                "Enviando uma solicitação http"
-html_title:           "Bash: Enviando uma solicitação http"
-simple_title:         "Enviando uma solicitação http"
+title:                "Enviando uma requisição HTTP"
+date:                  2024-01-20T17:59:20.927289-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Enviando uma requisição HTTP"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,45 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
+## O Que & Porquê?
+Enviar uma requisição HTTP é o processo de pedir dados ou recursos de um servidor usando o protocolo HTTP. Programadores fazem isso para interagir com APIs, acessar conteúdos web, ou comunicar entre diferentes sistemas.
 
-Enviar um pedido HTTP é um modo de um programa se comunicar com outros sistemas ou servidores na internet. Programadores fazem isso para trocar informações com APIs web, obter conteúdo de páginas da web e para diferentes formas de interação entre sistemas.
+## Como Fazer:
+Vamos usar a biblioteca `cpr` que é uma abstração da `libcurl` em C++ para facilitar o envio de requisições HTTP.
 
-## Como fazer:
+Primeiro, instale a biblioteca:
 
-Podemos usar a biblioteca cURL em C++ para enviar solicitações HTTP. Aqui está um exemplo de código que envia um GET request.
+```sh
+$ sudo apt-get install libcurl4-openssl-dev
+$ git clone https://github.com/libcpr/cpr.git
+$ cd cpr
+$ mkdir build && cd build
+$ cmake ..
+$ make
+$ sudo make install
+```
+
+Agora, escreva o código:
 
 ```C++
-#include <curl/curl.h>
+#include <cpr/cpr.h>
 #include <iostream>
 
 int main() {
-    CURL *curl = curl_easy_init();
-    if(curl) {
-        CURLcode res;
-        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-        res = curl_easy_perform(curl);
-        if(res != CURLE_OK)
-            std::cerr << curl_easy_strerror(res) << std::endl;
-        curl_easy_cleanup(curl);
-    }
+    cpr::Response r = cpr::Get(cpr::Url("http://httpbin.org/get"));
+
+    std::cout << "Status code: " << r.status_code << std::endl; // Exemplo: 200
+    std::cout << "Response: " << r.text << std::endl;           // Resposta do servidor em texto
+    
     return 0;
 }
 ```
 
-Neste código, primeiro inicializamos uma sessão cURL e especificamos a URL para a qual queremos enviar o request. Em seguida, chamamos `curl_easy_perform` para enviar o request, verificamos se ocorreu algum erro e, finalmente, limpamos para liberar recursos.
+Exemplo de saída:
 
-## Mergulho profundo 
+```
+Status code: 200
+Response: {
+  "args": {}, 
+  "headers": {
+    ...
+  }, 
+  "origin": "24.127.96.129", 
+  "url": "https://httpbin.org/get"
+}
+```
 
-Historicamente, enviar solicitações HTTP em C++ era bastante problemático, pois a linguagem não fornece recursos para isso por padrão. A biblioteca cURL, desenvolvida em 1997, simplificou muito esse processo.
+## Aprofundamento
+Enviar requisições HTTP é fundamental desde que a internet se tornou povoada por APIs e serviços baseados em web. Antes de bibliotecas como `cpr`, a `libcurl` era comumente usada em C++, mas ela é complexa e verbosa. Alternativas modernas como `cpr` abstraem esses detalhes, mantendo o código limpo e mais mantível.
 
-Como alternativa ao cURL, temos a biblioteca Boost.Asio que fornece capacidades de rede assíncrona e pode ser usada para enviar solicitações HTTP. Além disso, o C++20 (a versão mais recente) está planejando incluir suporte para as operações de rede no STL (Standard Template Library), que pode tornar o cURL e bibliotecas similares obsoletas.
+A `libcurl` é uma das mais poderosas e versáteis bibliotecas para transferências de URL disponíveis, suportando uma vasta gama de protocolos. Por outro lado, `cpr` fornece uma interface moderna e simplificada para tarefas comuns de HTTP(S). Vale notar que ao operar em nível tão baixo como o HTTP, detalhes como cabeçalhos (headers), métodos de requisição (GET, POST, etc), e estados de resposta (códigos de status) se tornam críticos para o bom funcionamento do aplicativo.
 
-Um pedido HTTP envolve a construção de um texto no formato específico, enviado para um servidor da web usando o protocolo TCP/IP. A resposta, fornecida pelo servidor, também é um texto que deve ser analisado para extrair as informações desejadas.
-
-## Veja também
-
-1. Documentação cURL: https://curl.haxx.se/libcurl/c/
-2. Tutorial Boost.Asio: https://think-async.com/Asio/asio-1.18.1/doc/asio/tutorial.html
-3. Proposta de rede para C++20: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p1100r0.pdf
-4. Tutorial de pedidos HTTP: https://www.w3schools.com/tags/ref_httpmethods.asp
+## Veja Também
+- Documentação da biblioteca `cpr`: https://whoshuu.github.io/cpr/
+- `libcurl` tutorial oficial: https://curl.se/libcurl/c/libcurl-tutorial.html
+- HTTPbin para testar requisições HTTP: http://httpbin.org/
+- Documentação da API HTTP do Mozilla Developer Network (MDN): https://developer.mozilla.org/en-US/docs/Web/HTTP

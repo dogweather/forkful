@@ -1,7 +1,8 @@
 ---
-title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
-html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
-simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+date:                  2024-01-20T18:01:51.274438-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,39 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що це таке і Навіщо?)
+HTTP-запит із базовою аутентифікацією включає в себе відправлення імені користувача та пароля для доступу до ресурсу. Програмісти використовують це для захисту чутливих даних і обмеження доступу до ресурсів.
 
-Отправка HTTP-запиту із базовою аутентифікацією - це процес передачі користувацьких облікових даних (логіну та пароля) на сервер для аутентифікації. Програмісти роблять це, щоб надіслати засекречену інформацію або отримати доступ до захищених даних.
-
-## Як це робити:
-
-Отправка HTTP-запиту в Gleam починається з імпортування потрібного пакету `httpc`. Ось базовий приклад:
-
-```gleam
+## How to: (Як це зробити:)
+```Gleam
+import gleam/http
 import gleam/httpc
-import gleam/bit_builder.{BitBuilder}
-import gleam/http.{Headers}
+import gleam/should
 
-fn basic_auth_header(username: String, password: String) -> Headers {
-  let login_data = BitBuilder.append(username)
-    |> BitBuilder.append(":")
-    |> BitBuilder.append(password)
-    |> BitBuilder.to_string
-    |> base64:encode
-    |> BitBuilder.from_string
-  let header = httpc:headers([{<<"authorization">>, <<"Basic " + login_data>>}])
-  header
+pub fn send_authenticated_request() {
+  let credentials = "username:password"
+  let headers = [httpc.header("Authorization", "Basic " ++ base64.encode(credentials))]
+  httpc.send(http.Request(base_url: "https://api.example.com", method: http.Get, headers: headers))
 }
+
+pub fn main() {
+  assert Ok(response) = send_authenticated_request()
+  response.status
+  |> should.equal(200)
+}
+
+// Припустимо, що відповідь сервера:
+// HTTP/1.1 200 OK
 ```
 
-У запиті використовується заголовок "İuthorization", до якого додається закодований в Base64 рядок "username:password".
+## Deep Dive (Занурення у Деталі)
+Історично, базова аутентифікація - це один із методів HTTP аутентифікації, введений ще у 1996 році з HTTP/1.0. Її легко реалізувати, але вона не є найбезпечнішою. Інформація передається у відкритому вигляді, закодована в base64, що робить її вразливою до підслуховування. Тому зараз частіше використовують токени аутентифікації, такі як OAuth. У Gleam для HTTP-запитів з базовою аутентифікацією використовується модуль `httpc`. Пам'ятайте, що разом з базовою аутентифікацією слід використовувати HTTPS, щоб забезпечити шифрування даних.
 
-## Поглиблений аналіз:
-
-1. **Історичний контекст**: Протокол базової аутентифікації HTTP вперше з’явився у 1996 році в рамках специфікації HTTP/1.0.
-2. **Альтернативи**: Існують різноманітні альтернативи базіковій аутентифікації, такі як оцифруваня паролів, OAuth, або ж JWT.
-3. **Деталі реалізації**: У HTTP-запитах базова аутентифікація передається через заголовки. Значення заголовку - пароль і ім'я користувача, закодовані в base64, після ключового слова "Basic".
-
-## Дивіться також:
-
-Прочитайте документацію по модулю `httpc` в Gleam [тут](https://hexdocs.pm/gleam_httpc/readme.html). Ви також можете знайти інформацію про аутентифікацію в HTTP на сайті [MDN Web Docs](https://developer.mozilla.org/uk/docs/Web/HTTP/Authentication). Для детальнішого ознайомлення з аутентифікацією в Gleam, перегляньте цей [довідник](https://gleam.run/book/tour/http-requests.html).
+## See Also (Дивіться також)
+- Gleam HTTP documentation: https://hexdocs.pm/gleam_http/
+- RFC 7617, 'The 'Basic' HTTP Authentication Scheme': https://tools.ietf.org/html/rfc7617
+- An article about HTTP authentication schemes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication

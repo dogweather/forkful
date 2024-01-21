@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http עם אימות בסיסי"
-html_title:           "C: שליחת בקשת http עם אימות בסיסי"
-simple_title:         "שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת HTTP עם אימות בסיסי"
+date:                  2024-01-20T18:02:10.472033-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP עם אימות בסיסי"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -11,40 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-שליחת בקשת HTTP עם אימות בסיסי היא תהליך שבו נשלחת בקשה למשאב על גבי הרשת תוך שימוש בזיהוי בסיסי. מתכנתים משתמשים בזה כדי לאמת את המשתמש ששולח את הבקשה.
+שליחת בקשת HTTP עם אימות בסיסי מאפשרת גישה מאובטחת למשאבים באינטרנט. תוכניתנים משתמשים בזה כדי להבטיח שרק משתמשים מורשים יכולים לקבל או לשלוח מידע.
 
 ## איך לעשות:
-הדוגמה הבאה משתמשת בספריית Lua `http` לשליחת בקשת `GET` מאומתת.
+בלואה, נשתמש בספריית `socket.http` לשליחת הבקשות. תחילה, נרשום פונקציה להצפנת שם המשתמש והסיסמה:
+
 ```Lua
 local http = require("socket.http")
 local ltn12 = require("ltn12")
+local mime = require("mime")
 
--- נתונים לאימות
-local user = "username"
-local password = "password"
-local auth = "Basic " .. (user .. ":" .. password):b64()
+function createBasicAuth(username, password)
+  local auth = mime.b64(username .. ":" .. password)
+  return "Basic " .. auth
+end
 
--- בקשה
 local response = {}
-http.request
-{
-  url = "http://example.com",
-  sink = ltn12.sink.table(response),
+local username = "your_username"
+local password = "your_password"
+local authHeader = createBasicAuth(username, password)
+local r, c, h = http.request {
+  url = "http://your_api_endpoint_here",
   headers = {
-    authorization = auth
-  }
+    ["Authorization"] = authHeader
+  },
+  sink = ltn12.sink.table(response)
 }
 
--- הדפסת תגובה
-for i, line in ipairs(response) do
-  print(line)
+if c == 200 then
+  print("Success:", table.concat(response))
+else
+  print("Error:", c)
 end
 ```
-הקוד שלנו משתמש בפרטים של אימות ושולח בקשה `GET` לאתר הדוגמה. התגובה מדפיסה למסך.
 
-## צלילה עמוקה:
-שליחת בקשת HTTP עם אימות בסיסי הייתה אחת מהשיטות הראשונות לאמת משתמשים באינטרנט. יש שיטות אמת רבות אחרות היום, למשל OAuth וJWT. ראשי לחוק הישראלי, עליך להקפיד על אבטחת המידע והזיהוי של המשתמשים.
+זה ידפיס `"Success:"` ואת תוכן התשובה או `"Error:"` ואת הקוד המצבית אם שליחת הבקשה לא הצליחה.
+
+## עיון מעמיק:
+שליחת בקשות עם אימות בסיסי היא טכניקה עתיקה. היא שימושית אך לא בטוחה כמו גישות אימות מודרניות יותר כמו OAuth. בסיסי אומר שהמידע מועבר בצורה מקודדת ב-Base64, אך לא מוצפן.
+
+בלואה, אנחנו לא מקבלים ספריית HTTP מובנית כמו בשפות אחרות, אז אנחנו משתמשים ב-`socket.http`. יש ספריות חיצוניות כמו `LuaSec` המוסיפות תמיכה בחיבורים מאובטחים (HTTPS), שהוא חשוב הרבה יותר לשימוש אינטרנטי מאובטח.
 
 ## ראה גם:
-- [מרכז עזרה של LuaSocket](http://w3.impa.br/~diego/software/luasocket/http.html)
-- [דוקומנטציה של HTTP Basic Authentication ב-MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [LuaSec](https://github.com/brunoos/luasec) - ספרייה לחיבורים מאובטחים בלואה.
+- [LuaSocket HTTP Documentation](http://w3.impa.br/~diego/software/luasocket/http.html) - מסמכים ל-soket.http.
+- [RFC 7617 'The 'Basic' HTTP Authentication Scheme'](https://tools.ietf.org/html/rfc7617) - מפרט טכני של אימות בסיסי.

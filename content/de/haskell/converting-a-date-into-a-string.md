@@ -1,7 +1,8 @@
 ---
-title:                "Ein Datum in einen String umwandeln"
-html_title:           "Java: Ein Datum in einen String umwandeln"
-simple_title:         "Ein Datum in einen String umwandeln"
+title:                "Datum in einen String umwandeln"
+date:                  2024-01-20T17:36:30.516509-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Datum in einen String umwandeln"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -11,50 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Umwandeln eines Datums in einen String ist die Darstellung eines Datumsobjekts als Text. Programmierer nutzen das, um Datumsangaben nutzerfreundlich anzuzeigen oder in einem bestimmten Format zu speichern.
 
-Das Umwandeln eines Datums in einen String in Haskell ist der Prozess, bei dem ein Datum zu einer menschenlesbaren Zeichenkette formatiert wird. Das ist nützlich, weil wir damit Daten besser darstellen und bearbeiten können.
-
-## Anleitung:
-
-Angenommen, Sie haben ein Datum im Format `UTCTime`. Sie können die `formatTime` Funktion aus dem `Data.Time.Format` Modul verwenden, um dieses Datum zu formatieren.
-
+## How to:
 ```Haskell
-import Data.Time.Clock
-import Data.Time.Format
-import System.Locale
+import Data.Time
 
+-- Beispiel: Aktuelles Datum in einen String umwandeln
+main :: IO ()
 main = do
-  currentTime <- getCurrentTime
-  let StringDate = formatTime defaultTimeLocale "%d.%m.%Y" currentTime
-  putStrLn StringDate
+    currentDay <- getCurrentTime
+    let dateString = formatTime defaultTimeLocale "%Y-%m-%d" currentDay
+    putStrLn dateString
+```
+Beispiel-Ausgabe:
+```plaintext
+2023-03-14
 ```
 
-Wenn Sie das Programm ausführen, sieht die Ausgabe je nach aktuellem Datum ungefähr so aus:
+## Deep Dive
+Umwandeln von Datum zu String, das klingt simpel, hat aber seine Tücken. In Haskell ist `Data.Time` die zentrale Bibliothek für Datum und Zeit. Historisch basierte das Formatieren auf der C-Bibliothek strftime, daher die ähnlichen Format-Spezifikatoren. Alternativen zur Standardbibliothek sind Pakete wie `time-fmt`, die eine einfachere API bieten können.
 
-```Haskell
-"28.02.2022"
-```
+Haskells Typensystem sorgt für klare Implementationen: `UTCTime` für Zeiten in UTC, `LocalTime` für lokale Zeiten, abhängig von einer Zeitzone. Beachten sollte man die TimeLocale, welche die lokalen Einstellungen bei der Formatierung nutzt – wichtig für die Internationalisierung.
 
-## Tiefe Tauchgang:
-
-### Historischer Kontext
-
-Die Funktion `formatTime` wird in Haskell seit der Version 6.8.2, die im Jahr 2007 veröffentlicht wurde, verwendet. Sie ist Teil des `Data.Time` Moduls, das umfangreiche Funktionen für den Umgang mit Zeit und Datum bietet.
-
-### Alternativen
-
-Eine Alternative zur `formatTime` Funktion wäre, eigene Funktionen zu schreiben, um ein Datum manuell zu formatieren. Das wäre jedoch wahrscheinlich fehleranfälliger und auch weniger praktisch.
-
-### Implementierungsdetails
-
-Die `formatTime` Funktion verwendet im Hintergrund eine monadische Berechnung zur Umwandlung des Datums in einen String. Sie benutzt eine spezielle Syntax, in der Variablen wie `%d`, `%m`, und `%Y` durch den Tag, Monat bzw. das Jahr des Datums ersetzt werden.
-
-## Siehe auch
-
-Weitere Informationen zur `formatTime` Funktion finden Sie in der Haskell Bibliotheksdokumentation: 
-
-[Data.Time.Format-Dokumentation](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)
-
-Eine vollständigere Anleitung zur Behandlung von Datum und Zeit in Haskell finden Sie in diesem Blog-Beitrag: 
-
-[Haskell für Anfänger: Datum und Zeit](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/dates-and-time)
+## Siehe Auch
+- Haskell `Data.Time` Modul: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html
+- `time-fmt` Paket: https://hackage.haskell.org/package/time-fmt
+- strftime Format-Spezifikatoren: http://strftime.org/

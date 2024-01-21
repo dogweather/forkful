@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän muuttaminen merkkijonoksi"
-html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+date:                  2024-01-20T17:36:41.177153-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,30 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi & Mitä?
-Muuntaa päivämäärä merkkijonoksi tarkoittaa päivämäärädatan esittämistä ihmisen luettavassa muodossa. Tätä tarvitaan usein, kun päivämäärätiedot esitetään käyttöliittymissä tai tallennetaan tekstitiedostoihin.
+## What & Why?
+Muuttaminen päivämäärästä merkkijonoksi tarkoittaa päivämäärätiedon esittämistä selkeässä tekstiformaatissa. Ohjelmoijat tekevät tämän, jotta päivämäärä on helposti luettavissa ja yhdenmukainen eri järjestelmien välillä.
 
-## Näin teet:
-Gleam-kielessä voit muuntaa päivämäärän merkkijonoksi käyttämällä `date.to_string` -funktiota. Tässä on esimerkkikoodi:
-
+## How to:
 ```gleam
-import gleam/date
+import gleam/calendar.{Date}
+import gleam/string
 
-fn main() {
-  let date = date.new(2022, 12, 24)
-  let date_string = date.to_string(date)
-  io.println(date_string)
+fn date_to_string(date: Date) -> String {
+  date
+  |> calendar.to_iso8601
+  |> string.from_result_with_default(default: "Invalid date")
+}
+
+pub fn main() {
+  let date = Date(year: 2023, month: 4, day: 5)
+  date_to_string(date)
+  |> io.println
 }
 ```
-Tämä tulostaa: "2022-12-24"
 
-## Suurennuslasi
-Päivämäärän muuntamistoiminto merkkijonoksi on ollut olemassa ohjelmointikielissä jo pitkään, koska se on välttämätön toiminto monissa sovelluksissa. Gleam tarjoaa tämän toiminnon `date.to_string`-funktion avulla ja se noudattaa ISO 8601 -standardin mukaista päivämäärän muotoa (YYYY-MM-DD).
+Sample output:
+```
+"2023-04-05"
+```
 
-Vaihtoehtoisesti voit käyttää muita kirjastoja tai manuaalisesti muotoilla päivämäärän haluamallasi tavalla, mutta se on usein monimutkaisempi ja virhealttiimpi tapa.
+## Deep Dive
+Muuntaminen päivämäärästä merkkijonoksi juontaa juurensa tarpeesta dokumentoida ja siirtää aikatietoja eri järjestelmissä. ISO 8601 -standardi on kansainvälisesti hyväksytty tapa esittää päivämäärät selkeästi ja se on usein käytössä ohjelmistoissa. Gleamissa moduuli `calendar` tarjoaa toimintoja tässä standardissa pysymiseen. Valinta merkkijonon esitysmuodon välillä voi riippua kontekstista ja tarpeesta ajan esittämiseen: esimerkiksi käyttöliittymissä voi olla syytä käyttää toista formaattia kuin tietokantatallennuksessa.
 
-Tämän toiminnon yksityiskohtaisempi toteutus jakautuu kahteen osaan: päivämääräluonti itsessään, joka tapahtuu `date.new` -funktion avulla, ja päivämäärän muuntaminen merkkijonoksi `date.to_string` -funktion avulla.
-
-## Katso myös:
-Voit lukea lisää Gleam's `date`-moduulista ja sen tarjoamista funktioista täältä: [Gleam Date Documentation](https://hexdocs.pm/gleam_stdlib/gleam/date.html)
-Samoin, lisätietoa päivämäärämuodosta (ISO 8601) löydät täältä: [ISO 8601 Wikipedia](https://fi.wikipedia.org/wiki/ISO_8601)
+## See Also
+- Gleam calendar module documentation: https://hexdocs.pm/gleam_stdlib/gleam/calendar/
+- ISO 8601 Date and Time Formats: https://www.iso.org/iso-8601-date-and-time-format.html
+- String formatting in Gleam: https://hexdocs.pm/gleam_stdlib/gleam/string/

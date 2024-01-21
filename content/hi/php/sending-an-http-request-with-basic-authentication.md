@@ -1,7 +1,8 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:02:55.491563-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -11,37 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों? (What & Why?)
+HTTP अनुरोध भेजना और बेसिक प्रमाणीकरण का उपयोग करना आपके एप्लिकेशन को सर्वर से संसाधनों की मांग करने देता है, जहाँ उपयोगकर्ता नाम और पासवर्ड आवश्यक होते हैं। प्रोग्रामर्स इसका उपयोग सुरक्षित API और सेवाओं तक पहुँचने के लिए करते हैं।
 
-HTTP अनुरोध के साथ मूल प्रमाणीकरण भेजना (sending an HTTP request with basic authentication) कोड के द्वारा सर्वर को डाटा भेजने की प्रक्रिया होती है, जिसमें प्रमाणीकरण भी शामिल होता है। ये क्रिया प्रोग्रामर्स तभी करते हैं जब उन्हें डाटा भेजते समय अपनी पहचान बतानी होती है।
-
-## कैसे: (How to:)
-
-PHP के माध्यम से इसे करना बहुत आसान है। इसका नमूना कोड और आउटपुट निचे दिए गए हैं:
-
-```PHP
+## कैसे करें? (How to:)
+```php
 <?php
-$username = 'user';
-$password = 'pass';
-$context = stream_context_create(array(
-    'http' => array(
-        'header'  => "Authorization: Basic " . base64_encode("$username:$password")
-    )
-));
-$result = file_get_contents($url, false, $context);
+$user = 'मेरा_उपयोगकर्ता_नाम';
+$password = 'मेरा_पासवर्ड';
+$url = 'https://example.com/प्रमाणित-संसाधन';
+
+$context = stream_context_create([
+    'http' => [
+        'header' => 'Authorization: Basic ' . base64_encode("$user:$password")
+    ]
+]);
+
+$response = file_get_contents($url, false, $context);
+if ($response === FALSE) {
+    die('प्रामाणिकता त्रुटि या अन्य त्रुटि');
+}
+
+echo $response; // सर्वर से प्राप्त सामग्री को प्रिंट करें
 ?>
 ```
-इस कोड का आउटपुट सर्वर पर्वापसीत डाटा होता है, यदि मान्य प्रमाणीकरण खुदाई की गई है।
+सैंपल आउटपुट:
+```
+सर्वर से प्राप्त प्रतिक्रिया।
+```
 
-## गहरी दृष्टि (Deep Dive):
+## गहन अवलोकन (Deep Dive)
+HTTP बेसिक प्रमाणीकरण 1990 के दशक से उपयोग में है, एक सिंपल लेकिन स्पष्ट प्रमाणन पद्धति प्रदान करता है जिसमें यूजरनेम और पासवर्ड बेस64 कोडिंग में शामिल होते हैं। हालांकि, यह HTTPS के साथ उपयोग नहीं किए जाते हुए असुरक्षित है क्योंकि क्रेडेंशियल्स सादे टेक्स्ट में इनक्रिप्ट नहीं होते। ऑल्टरनेटिव्स में OAuth और API कीस शामिल हैं जो अधिक सुरक्षित हैं। PHP में cURL और HTTP PECL एक्सटेंशन जैसे विकल्प भी हैं जो और भी उन्नत फीचर्स प्रदान करते हैं।
 
-HTTP Basic Authentication का विकास HTTP/1.0 के समय हुआ था और अब भी यह प्रकार का प्रमाणीकरण सर्वरों द्वारा बहुत उपयोग किया जाता है। इसके विकल्पों में OAuth, Digest Access Authentication, etc. शामिल हैं। PHP में, `file_get_contents` के साथ `stream_context_create` का उपयोग HTTP अनुरोध को बनाने के लिए किया जाता है जिसमे Basic Authentication header जोड़ा जाता है।
-
-## अन्य स्रोतों देखें (See Also):
-
-सम्बंधित मुद्दों के इन स्रोतों का अध्ययन करें:
-
-1. PHP `stream_context_create` विवरण: [https://www.php.net/manual/en/function.stream-context-create.php](https://www.php.net/manual/en/function.stream-context-create.php)
- 
-2. HTTP अनुरोध प्रकरण: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-
-3. Basic Authentication के विकल्पों को समझने के लिए OAuth: [https://oauth.net/](https://oauth.net/)
+## संबंधित सूत्र (See Also)
+- PHP मैन्युअल पर बेसिक प्रमाणीकरण के बारे में जानकारी: [PHP: HTTP context options](https://www.php.net/manual/en/context.http.php)
+- PHP cURL के बारे में अधिक जानकारी: [PHP: cURL](https://www.php.net/manual/en/book.curl.php)
+- सुरक्षित एपीआई ऑथेंटिकेशन के लिए OAuth का परिचय: [OAuth 2.0](https://oauth.net/2/)

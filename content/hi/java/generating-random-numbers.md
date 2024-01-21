@@ -1,7 +1,8 @@
 ---
-title:                "यादृच्छिक संख्याओं का निर्माण"
-html_title:           "Clojure: यादृच्छिक संख्याओं का निर्माण"
-simple_title:         "यादृच्छिक संख्याओं का निर्माण"
+title:                "यादृच्छिक संख्याएँ उत्पन्न करना"
+date:                  2024-01-20T17:49:45.691011-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Numbers"
@@ -10,35 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+रैंडम नंबर्स अप्रत्याशित संख्याएं होती हैं। प्रोग्रामर्स टेस्टिंग, गेमिंग, सुरक्षा, और साइंस सिमुलेशंस में इन्हें उपयोग करते हैं। 
 
-रैंडम नंबर उत्पन्न करना मतलब होता है अनपेक्षितापूर्वक नंबर प्राप्त करना। यह उन स्थितियों में उपयोगी होता है जब किसी अनपेक्षित परिणाम की जरुरत होती है, जैसे कि कसीनो गेम में, या किसी सिमुलेशन के दरम्यान पढ़ने के लिए डाटा चुनने के लिए। 
+## How to: (कैसे करें:)
+Java में `Random` क्लास की मदद से हम आसानी से रैंडम नंबर्स जनरेट कर सकते हैं:
 
-## कैसे:
+```java
+import java.util.Random;
 
-Java में रैंडम नंबर उत्पन्न करने के लिए, हम `java.util.Random` या `java.util.concurrent.ThreadLocalRandom` क्लास का उपयोग कर सकते हैं। 
+public class RandomNumbers {
+    public static void main(String[] args) {
+        // Random ऑब्जेक्ट क्रिएट करें
+        Random random = new Random();
 
- ```Java
-    import java.util.Random;
+        // 0 से 100 के बीच एक रैंडम नंबर जनरेट करें
+        int rndInt = random.nextInt(101); 
+        System.out.println("रैंडम इंटीजर: " + rndInt);
 
-    public class Main {
-        public static void main(String[] args) {
-            Random rand = new Random();
-            int randomNumber = rand.nextInt(100);
-            System.out.println("Generated Random Number is : " + randomNumber);
-        }
+        // एक रैंडम डबल जनरेट करें
+        double rndDouble = random.nextDouble();
+        System.out.println("रैंडम डबल: " + rndDouble);
     }
- ```
- आउटपुट अनपेक्षित रूप से बदलेगा, लेकिन यह 0 से 99 के बीच का कोई एक नंबर होगा।
+}
+```
+सैम्पल आउटपुट हर बार अलग होगा:
 
-## गहरा डाइव:
+```
+रैंडम इंटीजर: 43
+रैंडम डबल: 0.5392075399730739
+```
 
-रैंडम नंबर उत्पन्न करने की आवश्यकता लकड़ी से चलकर कॉम्प्युटर साइंस तक है। `java.util.Random` क्लास 1997 में जावा 1.1 के साथ जारी किया गया, जबकि `java.util.concurrent.ThreadLocalRandom` क्लास 2004 में जावा 1.5 के साथ जारी किया गया।
+## Deep Dive (गहराई से जानकारी):
+रैंडम नंबर जेनरेशन का इतिहास प्राचीन काल से है—चौसर से लेकर आधुनिक कंप्यूटर तक। Java में, `Random` क्लास के अलावा, `Math.random()`, `ThreadLocalRandom`, और Java 8 में आया `SecureRandom` जैसे विकल्प उपलब्ध हैं, जो क्रिप्टोग्राफिक रूप से सुरक्षित रैंडम नंबर प्रदान करते हैं। `Random` क्लास एक लीनियर कंजनर्टिव जेनरेटर (LCG) पर आधारित है, जो पूर्णतया रैंडम नहीं लेकिन प्रैक्टिकल पर्पज के लिए पर्याप्त है।
 
-`java.util.Random` का उपयोग एकल थ्रेडे एनवायरनमेंट में, और `java.util.concurrent.ThreadLocalRandom` का उपयोग बहु थ्रेडे एनवायरनमेंट में होता है। जबकी `java.util.concurrent.ThreadLocalRandom` क्लास `java.util.Random` क्लास की संवर्धित श्रेणी है।
-
-## देखने के लिए भी:
-
-1. आधिकारिक जावा डॉक्युमेंटेशन ([`java.util.Random`](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Random.html), [`java.util.concurrent.ThreadLocalRandom`](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/concurrent/ThreadLocalRandom.html))
-2. Stack Overflow : ["जावा में एक रैंडम नंबर कैसे जनरेट करें?"](https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java)
-3. Baeldung tutorial : ["रैंडम नंबर जनरेट करने के लिए जावा का गाइड"](https://www.baeldung.com/java-generate-random-long-float-integer-double)
+## See Also (अधिक जानकारी के लिए):
+- Java प्रलेखन की Random क्लास: https://docs.oracle.com/javase/8/docs/api/java/util/Random.html
+- `Math.random()` मेथड का उपयोग: https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#random()
+- SecureRandom क्लास के बारे में जानकारी: https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html
+- `ThreadLocalRandom` क्लास: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadLocalRandom.html

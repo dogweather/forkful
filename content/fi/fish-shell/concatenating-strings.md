@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
-html_title:           "Gleam: Merkkijonojen yhdistäminen"
+date:                  2024-01-20T17:34:45.631617-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,32 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Mikä & Miksi?  
+Yhdistelemme merkkijonoja - eli "concatenate" - kun haluamme liittää erilliset tekstipätkät yhteen. Ohjelmoijat tekevät tämän usein muodostaakseen käyttäjälle näytettäviä viestejä tai käsitelläkseen dynaamisia data-arvoja.
 
-Yhdistämme merkkijonoja, eli teemme merkkijonojen ketjutusta, kun liitämme useita merkkijonoja yhdeksi. Tämä on kätevä tapa luoda dynaamista sisältöä koodauksessa.
-
-## Näin teet:
-
-Fish Shellissa merkkijonon ketjutus on yksinkertaista. Voit yksinkertaisesti luetella merkkijonot peräkkäin ja Fish yhdistää ne. Katsotaan esimerkkiä:
-
-```fish
-set tervehdys "Hei"
-set nimi "Matti"
-echo $tervehdys $nimi
-# Tulostuu: Hei Matti
+## How to:
+Kuinka tehdä:
+```Fish Shell
+set etunimi "Linus"
+set sukunimi "Torvalds"
+set kokonimi "$etunimi $sukunimi"
+echo $kokonimi
 ```
-Fish Shell ei välitä erityisesti merkkijonon yhdistämisestä (`concatenation`). Se vain liittää merkkijonot yhteen.
+Tulostus:
+```
+Linus Torvalds
+```
 
-## Syvällisemmin:
+Voit myös yhdistää suoraan:
+```Fish Shell
+echo "Fish" "Shell" "on" "hauska!"
+```
+Tulostus:
+```
+Fish Shell on hauska!
+```
 
-Merkkijonojen yhdistäminen on ollut ohjelmointikielissä jo pitkään, ja Fish Shell on tehnyt siitä erittäin helppoa. 
+## Deep Dive
+Syväsukellus:
+Merkkijonojen yhdistäminen on peruskonsepti, joka on ollut käytössä ohjelmoinnissa lähes sen alusta asti. Fish Shellissä yhdistäminen on suoraviivaista: käytät spacea erottamaan yhdistettävät osat. Toisin kuin joissakin muissa kuorissa tai ohjelmointikielissä, Fishissä ei tarvitse käyttää erikoismerkkejä yhdistämiseen, mikä tekee koodista selkeää ja helppolukuista.
 
-Vaihtoehtoina voisi käyttää monia eri ohjelmointikieliä, mutta Fish Shelliä pidetään yksinkertaisena ja selkeänä ratkaisuna.
+Vaihtoehtoisia tapoja yhdistää merkkijonoja ovat muun muassa `string` -komennon käyttö tai kahdella merkkijonolla tehtävä konkatenointi, esimerkiksi "x" . "y", joka on tyypillisempää muissa kielissä.
 
-Merkkijonojen yhdistämisen toteutus Fish Shellissä on yksinkertainen - se vain liittää merkkijonot yhteen, ilman mitään erityistä logiikkaa.
+Se, että Fish käsittelee muuttujat ilman erityisiä syntaksimerkkejä kuten dollareita muuttujien nimissä komentojen ulkopuolella, tekee siitä ainutlaatuisen. Tämä vähentää syntaksipohjaista häiriötä ja parantaa luettavuutta.
 
-## Katso myös:
+## See Also
+Katso myös:
 
-Fish Shell Documentation: (https://fishshell.com/docs/current/index.html) Tämä on erinomainen resurssi Fish Shellin oppimiseen, mukaan lukien merkkijonon ketjutus.
-
-Learn The Hard Way: Fish Tutorial (https://learnxinyminutes.com/docs/fish/): Tämä Fish Shell-opas sisältää monia esimerkkejä ja harjoituksia, jotka auttavat oppimaan eri näkökohtia Fish Shellistä, mukaan lukien merkkijonojen yhdistämisen.
+- Fish Shell virallinen dokumentaatio: [String Manipulation](https://fishshell.com/docs/current/index.html#syntax-string)
+- Fish Shell esittely ja perusteet: [fishshell.com](https://fishshell.com)
+- Yhteisön kokoama Fish Shell vinkkejä ja oppaita: [Awesome Fish](https://github.com/jorgebucaran/awesome.fish)

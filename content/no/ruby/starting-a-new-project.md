@@ -1,7 +1,8 @@
 ---
-title:                "Starter et nytt prosjekt"
-html_title:           "Arduino: Starter et nytt prosjekt"
-simple_title:         "Starter et nytt prosjekt"
+title:                "Å starte et nytt prosjekt"
+date:                  2024-01-20T18:04:19.552143-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -11,63 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å starte et nytt prosjekt betyr å initialisere en ren arbeidsflate for koding. Programmerere gjør dette for å få en strukturert begynnelse og unngå rot fra tidligere arbeid.
 
-Å starte et nytt prosjekt handler om å initieres arbeid med en ny idé eller å løse et nytt problem. Programmerere gjør dette for å bygge nye applikasjoner, teste teorier eller lære nye ferdigheter. 
+## Slik gjør du:
+For å opprette et nytt Ruby-prosjekt, følg disse trinnene. Bruk terminalen for å opprette en ny mappe og initialiser et Git-repositorium for versjonskontroll:
 
-## Hvordan:
-
-Her starter vi et nytt Ruby-prosjekt:
-
-```Ruby
-# Installer Ruby hvis du ikke allerede har det
-$ sudo apt-get install ruby-full
-
-# Lag en ny katalog for prosjektet ditt
-$ mkdir mitt_nye_prosjekt
-
-# Gå inn i prosjektkatalogen
-$ cd mitt_nye_prosjekt
-
-# Lag en ny Ruby-fil
-$ touch hoved.rb
-
-# Åpne filen i tekstredigeringsprogrammet
-$ nano hoved.rb
+```ruby
+mkdir mitt_prosjekt
+cd mitt_prosjekt
+git init
 ```
 
-Skriv inn følgende i `hoved.rb`:
+Installer deretter nødvendige gems, som `bundler` for avhengighetsstyring:
 
-```Ruby
-puts "Hei, verden!"
+```ruby
+gem install bundler
+bundler init
 ```
 
-For å kjøre programmet:
+Dette vil opprette en `Gemfile` i prosjektet ditt. Du kan nå legge til gems som du trenger i `Gemfile` og installere dem:
 
-```Ruby
-$ ruby hoved.rb
+```ruby
+# Legg til i din Gemfile:
+# gem "rails"
+
+bundle install
 ```
 
-Resultatet skal være:
+Til slutt kan du opprette filer for koden din:
 
-`Hei, verden!`
+```ruby
+touch app.rb
+```
 
-## Dyp Dykk
+Skriver du nå i `app.rb`:
 
-### Historie
+```ruby
+puts "Hei, Norge!"
+```
 
-Ruby har vært i omløp siden 1995, med sikte på å gi programmereren en effektiv og underholdende opplevelse. Dens syntax ble påvirket av Perl, Smalltalk, Eiffel, Ada og Lisp.
+Kjøring av `ruby app.rb` i terminalen vil gi:
 
-### Alternativer
+```ruby
+Hei, Norge!
+```
 
-Det er mange andre programmeringsspråk du kan bruke til å starte et nytt prosjekt. Noen eksempler er Python, Java, JavaScript, C#, PHP, Swift eller Go. Valget avhenger av kravene til prosjektet, dine personlige preferanser og arbeidsplassen sin standard.
+## Dypdykk
+Før bundler ble vanlig brukte Ruby-programmerere `require` og `load` for å håndtere avhengigheter, men det var upraktisk med større applikasjoner. Bundler ble lansert rundt 2010 og løste mange av disse problemene ved å håndtere avhengigheter på en renere måte.
 
-### Implementeringsdetaljer
+Alternativer til Bundler inkluderer RVMs gemsets, men disse blir ikke så ofte brukt nå som Bundler er standard. 
 
-Ruby er et tolket, høy-nivå, generelt bruk programmeringsspråk. Det betyr at Ruby-koden din kjøres linje for linje, så du kan enkelt teste og justere koden din.
+Når du starter et prosjekt, er det også vanlig å sette opp et `README.md` for dokumentasjon og `.gitignore` for å unngå unødvendige filer i Git-repositoriet.
 
-## Se Også
+## Se også
 
-1. [Offisiell Ruby-Dokumentasjon](https://www.ruby-lang.org/en/documentation/)
-2. [Yehuda Katz's Guide to Building Gems](https://yehudakatz.com/2010/12/16/clarifying-the-roles-of-the-gemspec-and-gemfile/)
-
-Husk, øvelse gjør mester. Lykke til med Ruby-prosjektet ditt!
+- Ruby's offisielle nettside for dokumentasjon: [Ruby-Docs](https://ruby-doc.org/)
+- Bundler's offisielle nettside: [Bundler.io](https://bundler.io/)
+- GitHub's .gitignore-templates: [github/gitignore](https://github.com/github/gitignore)

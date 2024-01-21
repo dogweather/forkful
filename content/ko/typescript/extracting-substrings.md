@@ -1,6 +1,7 @@
 ---
 title:                "부분 문자열 추출"
-html_title:           "Arduino: 부분 문자열 추출"
+date:                  2024-01-20T17:46:31.157352-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "부분 문자열 추출"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,30 +11,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜?
+## What & Why? (무엇과 왜?)
+문자열에서 특정 부분을 추출하는 것입니다. 데이터 가공이나 특정 정보를 얻기 위해서 프로그래머들이 사용합니다.
 
-문자열 추출은 문자열의 일부를 선택하는 것을 의미합니다. 많은 프로그래밍 작업이 특정 문자열에서 일부 데이터를 가져와 데이터를 파싱하고 검사하는 것에 의존하기 때문에, 프로그래머들은 이 작업을 매우 자주 실행합니다.
-
-## 어떻게:
-
-TypeScript에서는 주로 두가지 방법으로 문자열을 추출할 수 있습니다. `substring()` 과 `slice()` 함수입니다.
-
+## How to: (어떻게 하나요?)
 ```TypeScript
-let str = "Hello World!";
-
-let substr = str.substring(1,4); //결과: "ell"
-let slic = str.slice(1,4);  // 결과: "ell"
+let fullString: string = "Hello, TypeScript users!";
+let substring: string = fullString.substring(7, 18);
+console.log(substring); // Outputs: TypeScript
 ```
-이 두 함수가 어떻게 동작하는지 변화된 결과값으로 확인해 볼 수 있습니다.
+`substring` 메서드로 시작 인덱스와 끝 인덱스를 정해 문자열 부분을 추출할 수 있습니다.
 
-## 깊게 알아보기:
+## Deep Dive (심층 분석)
+과거에는 `substr`이나 `slice`와 같은 메서드도 사용되었습니다. `substring`과 `slice`는 거의 비슷하지만, 음수 인덱스를 다루는 방법에서 차이가 있습니다. `substring`은 음수를 0으로 취급하고, `slice`는 음수를 문자열의 끝에서부터의 위치로 해석합니다. TypeScript는 JavaScript와 호환되므로 JavaScript의 문자열 메서드를 그대로 이용합니다. 성능 면에서는 이러한 메서드들의 차이는 미미하므로 상황에 맞게 선택해서 사용하면 됩니다.
 
-`substring()` 과 `slice()` 두 함수는 자바스크립트에서 최초로 도입되었고, TypeScript에도 포함되어 있습니다. 둘 다 비슷한 기능을 제공하지만, 음수 인자 처리 방식에서 차이가 있습니다. `substring()`은 음수 인자를 0으로 처리하며, `slice()`는 문자열의 끝에서부터 세어집니다.
-
-더 나아가, `substr()` 함수는 시작 인덱스와 알파벳 길이를 사용하는 또 다른 방법으로 문자열을 추출하는 데 사용될 수 있습니다. 하지만 ECMAScript 2015 이후로 이 함수는 비추천 상태(deprecated)이므로 가능한 `substring()`이나 `slice()`를 사용하는 것이 좋습니다.
-
-## 참조자료:
-
-- [Mozilla Developer Network의 `substring()` 가이드](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [Mozilla Developer Network의 `slice()` 가이드](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [W3Schools의 `substr()` 과 관련된 글](https://www.w3schools.com/jsref/jsref_substr.asp)
+## See Also (추가 정보)
+- MDN Web Docs - String.prototype.substring(): https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/substring
+- String.prototype.slice(): https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+- TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html

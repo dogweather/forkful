@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anforderung senden"
-html_title:           "Bash: Eine HTTP-Anforderung senden"
-simple_title:         "Eine HTTP-Anforderung senden"
+title:                "Einen HTTP-Request senden"
+date:                  2024-01-20T18:00:34.997069-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Einen HTTP-Request senden"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -11,33 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+HTTP-Anfragen sind das Werkzeug, um mit Servern zu kommunizieren – sie senden Daten und holen Antworten. Programmierer nutzen das, um Webinhalte dynamisch zu laden, APIs anzusprechen oder Daten zu synchronisieren.
 
-HTTP-Anfragen dienen dazu, Daten zwischen Client und Server auszutauschen. Programmierer nutzen sie, um Interaktionen mit Web-APIs zu ermöglichen und Daten von externen Quellen abzurufen.
+## How to:
+TypeScript mit Axios:
 
-## So Geht's
+```typescript
+import axios from 'axios';
 
-In TypeScript können wir die eingebaute `fetch` Funktionalität nutzen, um HTTP-Anfragen zu senden:
+async function fetchData() {
+  try {
+    const response = await axios.get('https://api.meineseite.de/daten');
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
 
-```TypeScript
-let url = "https://api.example.com/data"
-fetch(url)
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch((error) => console.error('Error:', error));
+fetchData();
 ```
 
-Die Anfrage ruft die URL auf und gibt die empfangenen Daten in der Konsole aus.
+Ausgabe:
 
-## Vertiefung
+```json
+{
+  "users": [
+    { "id": 1, "name": "Max Mustermann" },
+    { "id": 2, "name": "Erika Musterfrau" }
+  ]
+}
+```
 
-Im historischen Kontext ist `XMLHttpRequest` das erste native Browser-Objekt für HTTP-Anfragen. Mit der Einführung von `fetch` ist dieser Vorgang jedoch viel sauberer und einfacher geworden.
+Zum Einrichten von Axios:
 
-Alternativen zu `fetch` umfassen Bibliotheken wie `axios` oder `jquery`, welche ähnliche Funktionalität bereitstellen, aber einige zusätzliche Funktionen und Annehmlichkeiten bieten können.
+1. `npm install axios`
+2. Obigen Code in einer `.ts` Datei.
 
-Think also that the `fetch` function returns a Promise that resolves to the Response of the request, whether it is successful or not. It is also important to handle errors and exceptions.
+TypeScript mit fetch API:
 
-## Weiterführende Informationen
+```typescript
+async function fetchData() {
+  try {
+    const response = await fetch('https://api.meineseite.de/daten');
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
 
-- [MDN-Dokumentation zu Fetch](https://developer.mozilla.org/de/docs/Web/API/Fetch_API/Using_Fetch)
-- [Axios-Dokumentation](https://axios-http.com/docs/intro)
-- [jQuery-Dokumentation zu Ajax](https://api.jquery.com/jquery.ajax/)
+fetchData();
+```
+
+## Deep Dive
+Vor Jahrzehnten starteten HTTP-Anfragen meist nur beim Laden einer Seite. AJAX änderte das: dynamische Anfragen ohne Neuladen. Heute gibt's viele Optionen: `XMLHttpRequest`, `fetch`, diverse Bibliotheken wie `jQuery.ajax`, `axios` oder `superagent`. Bei TypeScript achte man auf Typsicherheit – `axios` und `fetch` können über Generics die Datenstruktur definieren.
+
+## See Also
+- MDN zu `fetch`: https://developer.mozilla.org/de/docs/Web/API/Fetch_API
+- Axios GitHub Repository: https://github.com/axios/axios
+- TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html

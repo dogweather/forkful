@@ -1,6 +1,7 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
-html_title:           "Go: המרת מחרוזת לאותיות קטנות"
+date:                  2024-01-20T17:38:52.781785-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "C#"
 category:             "C#"
@@ -10,34 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ?מה ולמה
+## מה ולמה?
+המרת מחרוזת לאותיות קטנות זה פשוט מעבר מאותיות גדולות לאותיות קטנות. מתכנתים עושים את זה לצורך עקביות, השוואות שלא תלויות רישיות, וניתוחי טקסט.
 
-המרת מחרוזת לאותיות קטנות היא כאשר אנחנו משנים את כל האותיות במחרוזת לגרסאות קטנות שלהן. זה זמן רב כאשר אנחנו מניחים שמופעוני מילא מעניקים משמעות שונה - "pwd" לעומת "PWD", למשל.
-
-## כיצד:
-
-הנה קוד פשוט שמראה איך להמיר מחרוזת לאותיות קטנות בשפת C#:
-
+## איך לעשות:
 ```C#
-string myString = "HELLO WORLD";
-string lowerCaseString = myString.ToLower();
-Console.WriteLine(lowerCaseString);  // Prints: hello world
+string original = "Shalom, World!";
+string lowercased = original.ToLower();
+Console.WriteLine(lowercased); 
+// פלט: shalom, world!
+```
+
+עוד דוגמה:
+```C#
+string greeting = "ברוך הבא!";
+string lower = greeting.ToLower();
+Console.WriteLine(lower);
+// פלט: ברוך הבא!
 ```
 
 ## צלילה עמוקה
+בתחילת התכנות, רגישות לרישיות במחרוזות הייתה נפוצה. עם הזמן, פונקציות כמו `ToLower()` הפכו לסטנדרט להמרה של טקסטים. החלופות כוללות שימוש בפונקציות כמו `ToLowerInvariant()` שמבטיחות תוצאה עקבית ללא תלות בלוקליזציה. בנושא ביצועים, שימוש במתודות אלו יעיל ולרוב לא יהווה עול על המערכת, אבל זהירות צריכה להתקיים כאשר עובדים עם מחרוזות גדולות מאוד או בפעולות אחזור מרובות.
 
-אף על פי שהפונקציה ToLower() הכי פשוטה ומסחרית, ישנם שיקולים נוספים שצריך לקחת בחשבון כאשר מדובר על המרת מחרוזות לאותיות קטנות.
-
-1. היסטורית - מההתחלה של תכנות מחשבים, הפעלה של תווים הייתה נמשכת בעמידה אוניברסלית זמן רב. זה הוביל לצורך בפונקציות, כמו ToLower(), שקלות להבנה והשתמשו בהן לעבר העקומת למידה.
-
-2. חלופות - דרך אחרת להתמודד עם אין התאמה בין אותיות גדולות וקטנות היא באמצעות אופציה של "case-insensitive" שלא מתמקדת באותיות קטנות או אותיות ראשית במחרוזות.
-
-3. פרטים של היישום - זכרו שהפונקציה ToLower() לא בהכרח עובדת עם תווים שאינם אותיות או אותיות שאינן באלפבית הלטיני. אם מחרוזת שלכם מכילה תווים כאלה, יתכן שתצטרכו להשתמש בפונקציה שמטפלת באופן специфי בתווים שלא ממומשים בפונקציה ToLower().
-
-## עיון נוסף
-
-את קוד הפונקציה ToLower() ניתן למצוא ב-:
-
-- דוקומנטציה של Microsoft C# תיעוד: https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower
-- "C# Station" מבטל את המרת גדולות עם פונקציות ושיטות נוספות: https://csharp-station.com/Tutorial/CSharp/lesson07
-- אתר האינטרנט של "Dot Net Perls", שהם שולחים למבט עמוק יותר לעבודה עם מחרוזות ב- C#: https://www.dotnetperls.com/string
+## ראה גם:
+- [Microsoft Docs - ToLower Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=net-6.0)
+- [Microsoft Docs - ToLowerInvariant Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolowerinvariant?view=net-6.0)
+- [Stack Overflow: When to use ToLowerInvariant over ToLower](https://stackoverflow.com/questions/6225808/string-tolower-and-string-tolowerinvariant)

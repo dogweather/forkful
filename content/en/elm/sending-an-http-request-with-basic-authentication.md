@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
+date:                  2024-01-20T18:01:30.602993-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Elm"
 category:             "Elm"
@@ -12,58 +13,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Sending an HTTP request with basic authentication is a method used to protect online resources. It requires a username and password for access—the premise is simple: keep unauthorized users out and let authorized users in.
+Sending an HTTP request with basic authentication involves attaching login credentials (username and password) to the request headers to access protected resources. Programmers use it for simple authentication on HTTP APIs where the overhead of more complex systems isn't needed.
 
 ## How to:
 
-Using Elm, basic auth-protected resources can be accessed via HTTP. Here's an example:
+Elm makes HTTP requests using the `Http` package. To add basic auth, you encode the credentials and include them in the request headers.
 
 ```Elm
-module Main exposing (..)
-
 import Http
-import Http.Headers as Headers
-import Json.Decode as Decode
+import Base64
 
-type alias User =
-    { username : String
-    , password : String
-    }
+type alias Model = { ... }
+type Msg = HttpRequestCompleted (Result Http.Error String)
 
-type Msg
-    = GotUser (Result Http.Error User)
+-- Encode username and password
+basicAuthHeader : String -> String -> Http.Header
+basicAuthHeader username password =
+    let
+        credentials = username ++ ":" ++ password
+        encodedCredentials = Base64.encode credentials
+    in
+    Http.header "Authorization" ("Basic " ++ encodedCredentials)
 
-fetchUser : Cmd Msg
-fetchUser =
-    Http.request
-        { method = "GET"
-        , headers = [ Headers.authorization "Basic dXNlcjpwYXNzd29yZA==" ]
-        , url = "https://api.example.com/user"
-        , body = Http.emptyBody
-        , expect = Http.expectJson GotUser userDecoder
-        , timeout = Nothing
-        , tracker = Nothing
-        }
-
-userDecoder : Decode.Decoder User
-userDecoder =
-    Decode.map2 User
-        (Decode.field "username" Decode.string)
-        (Decode.field "password" Decode.string)
+-- Make the HTTP request
+sendRequestWithBasicAuth : Cmd Msg
+sendRequestWithBasicAuth =
+    let
+        url = "https://example.com/protected/resource"
+        request =
+            Http.request
+                { method = "GET"
+                , headers = [ basicAuthHeader "myUsername" "myPassword" ]
+                , url = url
+                , body = Http.emptyBody
+                , expect = Http.expectString (HttpRequestCompleted)
+                , timeout = Nothing
+                , tracker = Nothing
+                }
+    in
+    Http.send HttpRequestCompleted request
 ```
 
-This will send an HTTP GET request to "https://api.example.com/user" with the appropriate basic authentication header.
+When the above function is called, Elm will perform a GET request to the specified URL with the Authorization header set to the encoded username and password.
 
 ## Deep Dive
 
-The concept of Basic Authentication in HTTP has been around since the early days of the web. Originally described in 1995's RFC 1945 (HTTP/1.0), it's one of the simplest methods for HTTP access control.
+Elm's approach to HTTP requests is a reflection of the language's overall philosophy: safe, easy to maintain, and understandable. The `Http` package encapsulates requests in a way that deals with the Elm architecture.
 
-Despite its age, Basic Authentication is practiced in modern development as an easy and straightforward solution. However, it’s not the most secure method because it involves sending a base64-encoded version of the username and password, which can be easily decoded. Options like OAuth 2.0 or JWT-based authentication can offer more security.
+Basic authentication is as old as the web itself, part of the original HTTP specification (RFC 7617). It's straightforward but not very secure since the credentials are only base64-encoded, not encrypted. Therefore, it's critical to use HTTPS to encode the transmission.
 
-The code above shows Basic Authentication in Elm—an HTTP request using Elm’s built-in `Http` library. `Headers.authorization` is used to set an Authorization header with Basic Authentication details. Note the base64 string "dXNlcjpwYXNzd29yZA=="—this is "username:password" in base64. In a real-life scenario, the `username:password` combination should be base64 encoded dynamically.
+Alternatives to basic auth include OAuth, tokens like JWT, or API keys, each coming with increased complexity and improved security. Elm supports these methods too but often requires additional packages or custom encoders and decoders.
 
 ## See Also
 
-- [Elm HTTP](https://package.elm-lang.org/packages/elm/http/latest/Http) documentation for more powerful HTTP request crafting.
-- [Http Authorization Header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) on MDN for detailed info on authentication headers.
-- [JWT Elm](https://package.elm-lang.org/packages/simonh1000/elm-jwt/latest/) and [OAuth 2.0](https://oauth.net/2/) for more secure authentication topics.
+- Elm's Official `Http` package documentation: [package.elm-lang.org/packages/elm/http/latest](https://package.elm-lang.org/packages/elm/http/latest)
+- Elm's `Base64` package source: [package.elm-lang.org/packages/truqu/elm-base64/latest](https://package.elm-lang.org/packages/truqu/elm-base64/latest)
+- RFC 7617, The 'Basic' HTTP Authentication Scheme: [tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)

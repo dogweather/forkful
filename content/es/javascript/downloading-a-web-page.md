@@ -1,6 +1,7 @@
 ---
 title:                "Descargando una página web"
-html_title:           "Arduino: Descargando una página web"
+date:                  2024-01-20T17:44:18.283149-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Descargando una página web"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,44 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Descargando una página web con JavaScript
+## What & Why?
+Descargar una página web significa obtener su HTML, datos y multimedia. Los programadores lo hacen para análisis de datos, pruebas o copias de seguridad.
 
-## ¿Qué y por qué?
+## How to:
+Usaremos `fetch` para descargar una página:
 
-Descargar una página web significa recuperar los datos de esa página desde un servidor y guardarlos localmente. Los programadores a menudo necesitan descargar páginas web para extraer, analizar y utilizar la información en ellas.
+```javascript
+async function descargarPagina(url) {
+  const respuesta = await fetch(url);
+  const contenido = await respuesta.text();
+  console.log(contenido);
+}
 
-## Cómo hacerlo:
-
-Podemos usar el módulo `axios` para descargar una página web en JavaScript. Primero, debes instalarlo. Abre la línea de comando de tu PC y escribe:
-
-```Javascript
-npm install axios
+descargarPagina('https://example.com');
 ```
-Ahora puedes descargar y registrar una página web en la consola con este código simple:
 
-```Javascript
-const axios = require('axios');
+Muestra de salida esperada (fragmento de HTML de example.com):
 
-axios.get('https://example.com')
-  .then(res => {
-    console.log(res.data);
-  })
-  .catch(err=>{
-      console.log(err);
-  });
+```html
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
 ```
-Este código descargará el cuerpo HTML de `https://example.com` y lo registrará en la consola.
 
-## Profundizando
+## Deep Dive
+Antes de `fetch`, el objeto `XMLHttpRequest` reinaba, pero era engorroso. Fetch ofrece una manera más simple y limpia con promesas. Hay alternativas como Axios, pero `fetch` es suficiente y nativo. Detrás de escena, `fetch` envía un HTTP GET al servidor, que responde con los contenidos de la página.
 
-La descarga de páginas web, también conocida como web scraping, tiene una larga historia. Antes de los módulos actuales como `axios`, `got`, etc., los programadores solían hacerlo manualmente con lenguajes de bajo nivel.
-
-Existen muchas alternativas para descargar una página web en JavaScript aparte de `axios`. `node-fetch` y `got` son dos de las más populares. Si deseas trabajar con un enfoque más bajo nivel, el módulo `http` de Node.js también puede ser una opción.
-
-Al realizar web scraping, recuerda respetar las directivas `robots.txt` del sitio web y siempre pedir permiso si es posible.
-
-## Ver también
-
-- Documentación oficial de Axios (https://axios-http.com/docs/intro)
-- Documentación oficial de Node-fetch (https://www.npmjs.com/package/node-fetch)
-- Para profundizar en web scraping: (https://realpython.com/tutorials/web-scraping/)
+## See Also
+- Documentación de MDN sobre `fetch`: [MDN fetch](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
+- Guía de Axios: [Axios on GitHub](https://github.com/axios/axios)
+- Tutorial sobre `XMLHttpRequest`: [MDN XMLHttpRequest](https://developer.mozilla.org/es/docs/Web/API/XMLHttpRequest)

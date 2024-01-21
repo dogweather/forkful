@@ -1,7 +1,8 @@
 ---
-title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
-simple_title:         "Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma requisição HTTP com autenticação básica"
+date:                  2024-01-20T18:01:31.866743-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Enviando uma requisição HTTP com autenticação básica"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,45 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Enviando uma Solicitação HTTP com Autenticação Básica em C++
+## What & Why? (O Quê & Por Quê?)
+Enviar uma requisição HTTP com autenticação básica é enviar um pedido a um servidor web que exige usuário e senha no cabeçalho. Programadores fazem isso para acessar recursos protegidos ou APIs que precisam de autenticação simples para fornecer dados.
 
-## O Que & Por Quê?
-Enviar uma solicitação HTTP com autenticação básica em C++ refere-se ao processo de solicitar recursos de um servidor web utilizando um nome de usuário e uma senha. Programadores geralmente fazem isso para acessar APIs ou dados protegidos por senha em servidores web.
+## How to: (Como Fazer:)
+Vamos ver como fazer isso em C++. Primeiro, você precisa de uma biblioteca de rede, como a cURL. Instale-a se necessário e aqui está um exemplo de código:
 
-## Como fazer:
-Aqui está um exemplo simples de como enviar uma solicitação HTTP GET com autenticação básica em C++ usando a biblioteca `cpp-httplib`.
-
-```C++
-#include "httplib.h"
+```c++
+#include <iostream>
+#include <string>
+#include <curl/curl.h>
 
 int main() {
-    httplib::Client cli("httpbin.org");
-    httplib::Headers headers = {
-        { "Authorization", "Basic " + httplib::detail::base64_encode("user:pass") }
-    };
+    CURL *curl;
+    CURLcode res;
+    std::string userPwd = "usuario:senha"; // Substitua com suas credenciais
 
-    if (auto res = cli.Get("/basic-auth/user/pass", headers)) {
-        if (res->status == 200) {
-            std::cout << res->body << std::endl;
-        } else {
-            std::cout << "Erro: " << res->status << std::endl;
-    }} else {
-        auto err = res.error();
-        std::cout << "Erro no Envio: " << err << std::endl;
+    curl_global_init(CURL_GLOBAL_DEFAULT);
+
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "https://seu-servidor.com/recurso"); // Substitua com a URL
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
+        curl_easy_setopt(curl, CURLOPT_USERPWD, userPwd.c_str());
+        
+        res = curl_easy_perform(curl);
+        
+        if(res != CURLE_OK)
+            std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res) << std::endl;
+
+        curl_easy_cleanup(curl);
     }
 
+    curl_global_cleanup();
     return 0;
 }
 ```
 
-Este script fará uma solicitação GET para `"https://httpbin.org/basic-auth/user/pass"` com um cabeçalho de autorização básica.
+Compilando e executando esse programa, a resposta do servidor será impressa diretamente no console.
 
-## Visão Mais Profunda
-1. **Contexto histórico**: A autenticação básica HTTP é um método de autenticação que foi proposto pela primeira vez em 1996 como parte do padrão HTTP/1.0. Apesar de sua idade, ainda é amplamente utilizada devido à sua simplicidade.
-2. **Alternativas**: Existem muitos outros métodos de autenticação HTTP, como Digest, Token, OAuth e JWT. Cada um tem seus próprios usos e benefícios, e sua escolha depende das necessidades do seu projeto.
-3. **Detalhes de implementação**: `cpp-httplib` é uma biblioteca de rede HTTP/HTTPS síncrona em C++. Esta biblioteca suporta a autenticação básica ao adicionar o cabeçalho de autorização.
+## Deep Dive (Mergulho Profundo)
+Historicamente, a autenticação básica via HTTP surgiu como um método simples para controlar acesso a recursos na web. Envolve codificar em base64 as credenciais do usuário e incluí-las no cabeçalho da requisição.
 
-## Veja Também
-- Documentação `cpp-httplib`: https://github.com/yhirose/cpp-httplib
-- RFC2617 (HTTP Authentication: Basic and Digest Access Authentication): https://tools.ietf.org/html/rfc2617
-- Solicitação HTTP GET em C++: https://stackoverflow.com/questions/1011339/how-do-you-make-a-http-request-with-c
+Existem alternativas mais seguras, como OAuth e autenticação de token JWT, que são recomendadas para produção devido a maiores garantias de segurança.
+
+Na implementação com a biblioteca cURL, `CURLOPT_HTTPAUTH` e `CURLOPT_USERPWD` são opções que definem o tipo de autenticação e as credenciais, respectivamente. Lembre-se de que a transmissão de credenciais sem uma camada de segurança, como HTTPS, expõe a riscos de interceptação.
+
+## See Also (Veja Também)
+- cURL library: https://curl.se/libcurl/
+- HTTP basic authentication standards: https://tools.ietf.org/html/rfc7617
+- Base64 encoding: https://en.wikipedia.org/wiki/Base64

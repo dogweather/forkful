@@ -1,6 +1,7 @@
 ---
 title:                "Eliminando caracteres que coinciden con un patrón"
-html_title:           "Elixir: Eliminando caracteres que coinciden con un patrón"
+date:                  2024-01-20T17:42:08.167177-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,41 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## Qué y Por Qué?
+Eliminar caracteres que coinciden con un patrón implica reconocer secuencias específicas y removerlas de un texto. Lo hacemos para limpiar datos, formatear entradas o simplificar información antes de procesarla.
 
-Eliminar caracteres que corresponden a un patrón es una técnica de programación utilizada para manejar y manipular datos de texto. Los programadores lo hacen para limpiar y normalizar datos, o para procesar cadenas de texto según necesidades específicas.
+## Cómo Hacerlo:
+Elm utiliza expresiones regulares a través del paquete `elm/regex`. Veamos cómo eliminar caracteres no deseados:
 
-## Cómo hacerlo:
-
-El lenguaje de programación Elm no proporciona una función incorporada para eliminar caracteres que coincidan con un patrón específico en una cadena. Sin embargo, puedes usar `String.replace` y `String.Extra.replaceRegex` para lograr esto.
-
-Por ejemplo, supongamos que quieres eliminar todas las "a" de una frase:
-
-```elm
+```Elm
+import Regex exposing (regex, find, replace)
 import String
 
-deleteChar : String -> String
-deleteChar text =
-    String.replace "a" "" text
+cleanText : String -> String
+cleanText text =
+    text
+        |> replace (regex "[0-9]") (\_ -> "")
 
-main =
-    deleteChar "Esta es una frase"
-    -- output: "Est es un frse"
+-- Uso de la función
+cleanText "Elm0 es g3nial!"
+-- Salida: "Elm es g!nial!"
 ```
 
-En este caso, `String.replace "a" "" text` reemplaza todas las "a" con un string vacío, efectivamente eliminándolos.
-
 ## Profundización
+Históricamente, Elm fue diseñado para crear interfaces de usuario web sin errores de forma más sencilla. La manipulación de cadenas de texto y patrones se hace mediante funciones contenidas en módulos como `String` y `Regex`. Aunque Elm no tiene una librería estándar tan amplia como la de otros lenguajes, como Python, para el trabajo con expresiones regulares y strings, es suficiente para la mayoría de tareas comunes.
 
-Eliminar caracteres que coinciden con un patrón es una técnica que ha estado presente desde los primeros lenguajes de programación. Regularmente, se utilizarían las expresiones regulares, pero Elm intencionalmente ha intentado mantener una base de código pequeña y cohesiva, evitando el soporte nativo de las mismas.
+Existen alternativas para eliminar caracteres que no implican expresiones regulares, como la función `String.filter`, que puede ser más intuitiva si el patrón es simple:
 
-Existen alternativas si necesitas una solución más robusta y flexibles. Una de estas es usar la biblioteca `elm/regex` que proporciona un mecanismo para construir expresiones regulares y buscarlas en cadenas.
+```Elm
+import String exposing (filter, isAlpha)
 
-Una cosa a tener en cuenta es que cualquier implementación que elijas debe tratar con cuidado temas como la eficiencia y la seguridad al procesar y manipular strings, especialmente, en el tema de operaciones de eliminación.
+cleanText : String -> String
+cleanText text =
+    filter isAlpha text
 
-## Vea También:
-Para obtener más información sobre `String.replace`, consulta la documentación oficial de Elm:
+-- Uso de la función
+cleanText "123 Elm Rocks!!!"
+-- Salida: "ElmRocks"
+```
 
-1. [String.replace](https://package.elm-lang.org/packages/elm/core/latest/String#replace)
-2. [elm/regex](https://package.elm-lang.org/packages/elm/regex/latest) para un manejo más avanzado de expresiones regulares.
-3. [String.Extra.replaceRegex](https://package.elm-lang.org/packages/elm-community/string-extra/latest/String-Extra#replaceRegex) para un ejemplo más completo y explicación de cómo reemplazar mediante un patrón regex.
+Respecto a la implementación, `String.replace` utiliza una función (`\_ -> ""`) que indica que cada coincidencia debe reemplazarse con una cadena vacía, mientras que `String.filter` utiliza un predicado que determina qué caracteres conservar.
+
+## Ver También
+- Documentación oficial de Elm sobre Regex: [https://package.elm-lang.org/packages/elm/regex/latest/](https://package.elm-lang.org/packages/elm/regex/latest/)
+- Documentación oficial de Elm sobre Strings: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- Tutorial interactivo de Elm: [https://guide.elm-lang.org/](https://guide.elm-lang.org/)

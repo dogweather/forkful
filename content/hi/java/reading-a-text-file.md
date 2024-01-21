@@ -1,7 +1,8 @@
 ---
-title:                "एक पाठ फ़ाइल पढ़ना"
-html_title:           "Bash: एक पाठ फ़ाइल पढ़ना"
-simple_title:         "एक पाठ फ़ाइल पढ़ना"
+title:                "टेक्स्ट फ़ाइल पढ़ना"
+date:                  2024-01-20T17:54:40.913763-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "टेक्स्ट फ़ाइल पढ़ना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,46 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों (What & Why?)
-एक टेक्स्ट फ़ाइल को पढ़ना मतलब उसकी सामग्री को कम्प्यूटर प्रोग्राम में लोड करना है। अक्सर, प्रोग्रामर्स इसे करते हैं ताकि वे इनपुट डाटा को प्राप्त कर सकें एवं इसे प्रसंस्करण कर सकें। 
+## क्या और क्यों? (What & Why?)
+टेक्स्ट फाइल पढ़ना मतलब फाइल से डाटा को अपने जावा प्रोग्राम में लाना होता है। प्रोग्रामर इसे ऐसे अनेकविध कारणों से करते हैं, जैसे कि यूजर के डाटा को प्रोसेस करना, कॉन्फ़िगरेशन पढ़ना, या फिर रिपोर्ट्स जनरेट करना।
 
-## कैसे (How to):
-जावा में, हम BufferedReader का उपयोग करके टेक्स्ट फ़ाइल पढ़ सकते हैं| निम्नलिखित उदाहरण में यह दिखाया गया है:
-
+## कैसे करें? (How to:)
 ```Java
-import java.io.*;
+import java.nio.file.*;
+import java.io.IOException;
 
-public class ReadFile {
+public class FileReaderExample {
+
     public static void main(String[] args) {
+        Path path = Paths.get("example.txt");
+
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("test.txt"));
-            String line = null;
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
-            reader.close();
+            String content = Files.readString(path);
+            System.out.println("फाइल से पढ़ा गया डाटा है:");
+            System.out.println(content);
         } catch (IOException e) {
+            System.err.println("फाइल पढ़ने में एरर आ गया है।");
             e.printStackTrace();
         }
     }
 }
 ```
-यदि test.txt में "नमस्ते दुनिया" होता, तो आउटपुट होता:
-
-```Shell
-नमस्ते दुनिया
+सेंपल आउटपुट:
+```
+फाइल से पढ़ा गया डाटा है:
+Hello, this is a text from the example file.
 ```
 
-## और अधिक जानकारी (Deep Dive)
-तो, फ़ाइल रीडिंग का इतिहास अपार है, क्योंकि यह सॉफ्टवेयर डेवलपमेंट का हिस्सा बनी हुई है |
-वैकल्पिक रूप से, आप Scanner क्लास का उपयोग करके भी फ़ाइल पढ़ सकते हैं, जो कि एक शक्तिशाली और विस्तृत विकल्प है। 
-"BufferedReader" आसानी से प्रबंधित करने वाली बड़ी फ़ाइलों के लिए प्रभावी तरीका है, क्योंकि यह एक पूरी लाइन को एक समय में पढ़ता है। 
+## गहराई से जानकारी (Deep Dive)
+जावा में फाइल सिस्टम से इंटरेक्शन हम कई तरह से कर सकते हैं। शुरुआती जावा वर्शन में `FileInputStream`, `BufferedReader` जैसे क्लासेज थे। जावा 1.7 (नाम से भी जाना जाता है NIO.2) में `Files` और `Paths` क्लासेज ऐड किए गए जो ज्यादा एफिसिएंट और आसान तरीके से फाइल्स को हैंडल करते हैं। `Files.readString` और `Files.readAllLines` जैसे मेथड फ़ाइल की सामग्री को एक बार में पढ़ लेते हैं। इस सुविधा से कोड कम और साफ बनता है। विकल्पों में `Scanner`, `FileReader`, `BufferedInputStream` आदि शामिल हैं, जो अलग-अलग परिस्थितियों में उपयोगी हो सकते हैं जैसे कि बड़ी फाइल्स को पढ़ने के लिए या खास पैटर्न पर डाटा प्रोसेस करने के लिए।
 
-## इससे भी देखें (See Also)
-जवा द्वारा फ़ाइल पढ़ने तथा लिखने के बारे में और विस्तृत जानकारी के लिए, नीचे दिए गए स्रोतों पर विचार करें:
-
-जवापोइंट (Javapoint): https://www.javapoint.com/java-file-io
-
-टुटोरिअल्स प्वाइंट (Tutorials Point): https://www.tutorialspoint.com/java/java_files_io.htm
-
-गीक्स फॉर गीक्स (Geeks for Geeks): https://www.geeksforgeeks.org/java-io-file-class-java/
+## और भी देखें (See Also)
+- जावा डॉक्युमेंटेशन पर `Files` क्लास: [Java SE Documentation](https://docs.oracle.com/en/java/javase/)
+- फाइल I/O ट्यूटोरियल जावा डॉक्स: [Oracle File I/O Tutorial](https://docs.oracle.com/javase/tutorial/essential/io/)
+- जावा I/O गाइड: [Baeldung Java I/O Guide](https://www.baeldung.com/java-io)

@@ -1,7 +1,8 @@
 ---
-title:                "הדפסת פלט ניפוי שגיאות"
-html_title:           "Arduino: הדפסת פלט ניפוי שגיאות"
-simple_title:         "הדפסת פלט ניפוי שגיאות"
+title:                "הדפסת פלט לניפוי באגים"
+date:                  2024-01-20T17:52:58.721337-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "הדפסת פלט לניפוי באגים"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -11,33 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-
-הדפסת פלט ניפוי שגיאות היא דרך שבה המתכנת יוצר "הדפסה" של מצב התוכנה בזמן ריצה. הכוונה לכך שזו דרך למצוא ולאתר שגיאות בקוד, מאחר וזה מאפשר להבחין במצב הפנימי של התוכנה בזמן שהיא מריצה.
+להדפיס פלט דיבאג זה כמו להשתמש במצפן במרחב; זה עוזר לנו לראות את מה שקורה בקוד בזמן אמת. תכנתים עושים את זה לבדוק שהקוד שלהם מתנהג כפי שהם מצפים לו ולאיתור באגים.
 
 ## איך לעשות:
-
 ```Haskell
-import Debug.Trace
-
-main = print (debug "Debugging" factorial 5)
-    where factorial 0 = 1
-          factorial n = n * factorial (n-1)
-          debug str val = trace (str ++ show val) val
+main :: IO ()
+main = do
+    let x = 5
+    putStrLn $ "The value of x is: " ++ show x
+    -- This will print: The value of x is: 5
 ```
-לדוגמה, הפלט של התוכנית הזאת יוצא להיות: "Debugging120"
+פלט דוגמה:
+```
+The value of x is: 5
+```
+עוד דוגמה:
+```Haskell
+import Debug.Trace (trace)
 
-## הטבלה בעומק:
+main :: IO ()
+main = do 
+    let list = [1..5]
+    let listWithDebug = traceShow list list
+    putStrLn $ "Processing list: " ++ show (incrementAll listWithDebug)
 
-(1) בהקשר היסטורי, במרבית השפות התכנותית המודרניות, ניתן להשתמש במפענחים כדי לגבש את המצב הנוכחי של התוכנה. אך ב-Haskell, שהיא שפה פונקציונלית נקיים, לא קיימים תמיכה טבעית לעוקבים. על כן, ביביאה לעולם של ה-Haskell הפלט של ניפוי שגיאות נתפש כאלגחס נצח.
+incrementAll :: [Int] -> [Int]
+incrementAll = map (+1)
+-- This will also print the list to the console as a side effect
+```
+פלט דוגמה:
+```
+[1,2,3,4,5]
+Processing list: [2,3,4,5,6]
+```
 
-(2) בנוגה לאלטרנטיבות, פעמים רבות משתמשים מתכנתים בפונקציות מוינפות כמו "traceShowId" או "traceShowM" שמתחבאות תחת ה-Debug.Trace., כדי להראות את הערכים או החישובים לניף שגיאה.
+## עיון נוסף 
+בעבר, הדפסה לשם דיבאג הייתה הדרך העיקרית לאיתור באגים. כעת, יש כלים מתקדמים יותר כמו מנתחים ומעקבי קריאה, אבל הדפסות עדיין נפוצות בגלל פשטותן ונוחיותן. ב-Haskell, תכניתנים יכולים להשתמש בפונקציית `print`, הפונקציות שבמודול `Debug.Trace`, או עם כלי דיבאג חיצוניים. זה בחירה של מטרה ועדיפות אישית.
 
-(3) מבחינת ביצועים, אולי לא תיהנו תמיכה טבעית לעקובים ו sculpters, אך אם אתה שמים בשיקול דעת את הרוויחים להשתמש בהם במהלך תהליך הפיתוח, הם יכולים להפוך ניפוי השגיאות להרבה יותר נוח ואפקטיבי.
-
-## ראה גם:
-
-[הפלט של ניפוי שגיאות במערכת ה-Haskell](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debug-info.html)
-
-[Trace Debugging in Haskell](https://wiki.haskell.org/Debugging)
-
-[Debugging Haskell Code](https://typeclasses.com/techniques/debugging)
+## ראו גם:
+- [Haskell Documentation on `Debug.Trace`](https://hackage.haskell.org/package/base-4.16.1.0/docs/Debug-Trace.html)
+- [Learn You a Haskell for Great Good - Debugging](http://learnyouahaskell.com/input-and-output#debugging)
+- [Real World Haskell - Debugging and Profiling](http://book.realworldhaskell.org/read/profiling-and-optimization.html)

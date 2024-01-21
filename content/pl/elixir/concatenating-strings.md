@@ -1,7 +1,8 @@
 ---
-title:                "Konkatenacja ciągów znaków"
-html_title:           "Bash: Konkatenacja ciągów znaków"
-simple_title:         "Konkatenacja ciągów znaków"
+title:                "Łączenie łańcuchów znaków"
+date:                  2024-01-20T17:34:34.616954-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Łączenie łańcuchów znaków"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,38 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Łączenie tekstów to klejenie ich razem. Robimy to, by tworzyć nowe zdania, wyświetlać dane czy budować wiadomości.
 
-Konkatenacja stringów to po prostu ich złączanie, co oznacza połączenie dwóch lub więcej łańcuchów znaków w jeden. Programiści robią to, aby utworzyć dłuższe i bardziej złożone wiadomości lub dane bez konieczności tworzenia wielu zmiennych.
+## How to: (Jak to zrobić:)
+Elixir używa operatora `<>` do łączenia tekstów.
 
-## Jak to zrobić:
-
-Na początek, zainstaluj Elixira za pomocą dowolnego menedżera pakietów lub ze strony domowej Elixira. Potem tworzymy nowy plik .exs i zaczynamy kodować:
-
-```Elixir
-string1 = "Witaj, "
-string2 = "świecie!"
-IO.puts string1 <> string2
+```elixir
+name = "Ania"
+greeting = "Cześć, " <> name <> "!"
+IO.puts greeting
 ```
 
-Po uruchomieniu powyższego kodu, otrzymamy na wyjściu:
-
-```Elixir
-"Witaj, świecie!"
+```
+Cześć, Ania!
 ```
 
-## Dogłębne informacje:
+Połącz zmienne i stałe teksty:
 
-Z racji tego, że Elixir to język, który powstał w 2011 roku, nie posiada on historycznej roli w kwestii operacji konkatenacji stringów. Niemniej jednak, warto pamiętać, że poza operatorem `<>`, możemy również skorzystać z funkcji `String.concat/2`:
-
-```Elixir
-IO.puts String.concat("Witaj, ", "świecie!")
+```elixir
+prefix = "Eliksir"
+version = "1.12.3"
+full_name = prefix <> " wersja " <> version
+IO.puts full_name
 ```
 
-Która produkuje ten sam efekt. Warte odnotowania jest również to, że stringi w Elixirze są przechowywane jako listy kodów Unicode, a nie jako proste ciągi znaków, co ma wpływ na wydajność operacji na stringach.
+```
+Eliksir wersja 1.12.3
+```
 
-## Zobacz również:
+## Deep Dive (Głębsze zanurzenie)
+Łączenie tekstów sięga czasów pierwszych komputerów. W Elixirze, który bazuje na Erlandzie, operacja ta jest wydajna dzięki immutable strings. Alternatywą jest używanie list i funkcji `Enum.join`, ale `<>` jest prostsze i szybsze.
 
-1. Oficjalna dokumentacja Elixira: https://elixir-lang.org/docs.html
-2. Elixir School, sekcja poświęcona operacjom na stringach: https://elixirschool.com/pl/lessons/basics/strings/
-3. Wprowadzenie do Elixira na stronie Hexdocs: https://hexdocs.pm/elixir/1.12/Kernel.html
+Detale implementacyjne: Teksty (strings) w Elixirze są UTF-8 i operacja `<>` odpowiednio obsługuje różne kody znaków.
+
+## See Also (Zobacz również):
+- [String — Elixir v1.12.3](https://hexdocs.pm/elixir/String.html)
+- [Programming Elixir ≥ 1.6](https://pragprog.com/titles/elixir16/programming-elixir-1-6/) - książka o programowaniu w Elixir.
+- [Elixir School](https://elixirschool.com/pl/) - lekcje programowania w Elixir.

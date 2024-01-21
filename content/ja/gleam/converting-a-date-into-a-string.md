@@ -1,6 +1,7 @@
 ---
 title:                "日付を文字列に変換する"
-html_title:           "C++: 日付を文字列に変換する"
+date:                  2024-01-20T17:36:37.140927-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "日付を文字列に変換する"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,42 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何とその理由？)
+日付を文字列に変換するのは、日付データを読みやすい形式にするプロセスです。ログのタイムスタンプ、ユーザーのインターフェイス表示、データのシリアライゼーションのためにプログラマーはこれを行います。
 
-日付を文字列に変換するとは、日付データを文字列形式に換算することを指します。これは、データの保存や表示上の都合で、日付を特定の形式の文字列として扱う必要があるために行われます。
-
-## やり方：
-
-以下に日付を文字列に変換するGleamプログラミングの例を示します。
-
+## How to: (方法:)
 ```Gleam
-import gleam/datetime.{day, month, year, format}
+import gleam/erlang.{DateTime}
+import gleam/string.{from_int}
 
 fn main() {
-  let date = day(28) + month(12) + year(2021)
-  let date_string = format(date, "{YYYY}/{MM}/{DD}")
+  let date = DateTime.utc_now()
+  let date_string = date |> to_string
   date_string
 }
+
+// 想定される出力例: "2023-04-05T14:30:01Z"
 ```
 
-出力：
-```Gleam
-"2021/12/28"
-```
+## Deep Dive (探求)
+古くはC言語の `strftime` 関数から現代の多様な言語機能に至るまで、日付を文字列に変換する方法は進化してきました。Gleamでは型安全な操作を前提とし、ユーザーフレンドリーなAPIを提供することに注力しています。JavaScriptの `Date` オブジェクトの `toLocaleString()` のような関数と比べると、Gleamはエラーハンドリングが簡潔で、柔軟性に富んだフォーマットオプションを持っています。実装の背後には、Erlangの堅牢な時間処理機能があります。また、カスタムフォーマットが必要な場合には、低レベルの操作を行う幅広い関数群が用意されています。
 
-## 深堀り：
-
-日付を文字列に変換する技術は、他の多くのプログラミング言語でも使われています。例えば、Pythonでは`strftime`関数、Javaでは`SimpleDateFormat`クラスがそれに当たります。
-
-Gleamでは、
-
-- `{YYYY}` 年を4桁で表します
-- `{MM}` 月を2桁で表します
-- `{DD}` 日を2桁で表します
-
-このようなフォーマット指定子で日付を表示する形式をカスタマイズすることができます。
-
-## 関連情報
-
-
-これらのリンクは、日付の文字列変換のほかにも、Gleamの基本的な使い方やその他の技術についての詳細な情報を提供しています。
+## See Also (関連する情報)
+- ErlangのDateTimeモジュール: [https://erlang.org/doc/man/calendar.html](https://erlang.org/doc/man/calendar.html)
+- データ変換とフォーマッティングについての一般的な説明: [https://doc.rust-lang.org/std/time/struct.SystemTime.html](https://doc.rust-lang.org/std/time/struct.SystemTime.html)

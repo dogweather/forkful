@@ -1,7 +1,8 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:02:24.659832-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -11,38 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-HTTP अनुरोध के साथ मूल प्रमाणीकरण एक तरीका है जिसका उपयोग सुरक्षित रूप से डेटा को सर्वर में भेजने के लिए किया जाता है। प्रोग्रामर इसे इसलिए करते हैं क्यूंकि यह एक व्यावहारिक और सुरक्षित तरीका है डेटा का संचार करने का।
+
+HTTP अनुरोध भेजना बेसिक प्रमाणीकरण के साथ सर्वर को निर्देश देना होता है ताकि आपको विशेष साइट सुविधाओं तक पहुंच मिल सके। प्रोग्रामर इसे उपयोगकर्ता डेटा की रक्षा और अनधिकृत पहुंच से बचने के लिए करते हैं।
 
 ## कैसे करें:
-Gleam में, आप `httpc` library का उपयोग करके Basic Auth के साथ HTTP अनुरोध भेज सकते हैं। यहाँ एक उदाहरण है:
 
-```Gleam
-import gleam/httpc.{get, Response}
-import gleam/string.concat
-import gleam/uri.{Uri, from_string}
+```gleam
+import gleam/http
+import gleam/httpc
+import gleam/string
 
-fn basic_auth_header(user: String, password: String) -> String {
-  "Basic " 
-  |> concat(base64.encode(concat(user, ":" |> concat(password))))
+fn send_auth_request() -> Result(http.Response, http.Error) {
+  httpc.send( http.Request(
+    method: http.Get,
+    url: "http://example.com",
+    headers: [http.Header("Authorization", "Basic " ++ string.from_bytes("username:password") |> string.base64)],
+  ))
 }
 
-fn main(uri: Uri) -> Result(Response, Nil) {
-  let headers = httpc.default_headers()
-    |> list.append([#("Authorization", basic_auth_header("user", "password"))])
-  
-  get(from_string("https://example.com") |> result.unwrap, headers)
+pub fn main() {
+  case send_auth_request() {
+    Ok(response) -> io.println("सफलता: " ++ response.status_code |> int.to_string())
+    Error(error) -> io.println("त्रुटि: " ++ error)
+  }
 }
 ```
 
-जब आप इस कोड को चलाते हैं, तो आपका HTTP अनुरोध Basic Auth के साथ `https://example.com` पर भेजा जाएगा। 
+सैंपल आउटपुट:
+```
+सफलता: 200
+```
 
-## गहन अध्ययन:
-HTTP Basic Authentication का इतिहास माइक बर्नर ली की HTTP/1.0 विनिर्देशन में जब शामिल किया गया था, यह आरंभ किया। यह सरल एपीआई है जिसमें उपयोगकर्ता नाम और पासवर्ड का एक single string base64 encoded होता है।
+## गहराई से जानकारी:
 
-विकल्प तकनीकें OAuth और Digest Access Authentication हैं - दोनों अधिक सुरक्षित हैं लेकिन उन्हें लागू करना अधिक कठिन है।
+बेसिक प्रमाणीकरण में, यूजरनेम और पासवर्ड को कॉलन (`:`) से जोड़ा जाता है, Base64 में एन्कोड किया जाता है, और "Authorization" हैडर में शामिल किया जाता है। यह प्रणाली HTTP/1.0 से है, लेकिन आज भी इस्तेमाल होती है।
 
-Basic Auth HTTP अनुरोध में Authentication header के रूप में एक प्रमाणीकरण string शामिल करके काम करता है। कोई भी सर्वर जो Basic Auth समर्थन करता है इस header को decode कर पासवर्ड की पुष्टि कर सकता है। 
+बेसिक प्रमाणीकरण सुरक्षित नहीं है क्योंकि Base64 एन्कोडिंग को डिकोड किया जा सकता है। इसके लिए, HTTPS का इस्तेमाल जरूरी है। अल्टरनेटिव्स में Bearer टोकंस, OAuth और Digest प्रमाणीकरण शामिल हैं।
 
-## देखें भी:
-1. RFC 2617, HTTP Authentication: [Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)
-2. Gleam प्रशासनिक [दस्तावेज़ीकरण](https://gleam.run/getting-started/)
+Gleam का `httpc` मॉड्यूल सरल HTTP क्लाइंट है जिसका उपयोग कस्टम HTTP अनुरोध भेजने के लिए किया जाता है।
+
+## संदर्भ के लिए:
+
+- Gleam HTTP documentation: https://gleam.run/book/tour/http-clients.html
+- HTTP Authentication: Basic and Digest Access Authentication (RFC 2617): https://tools.ietf.org/html/rfc2617
+- Base64 Encoding: https://en.wikipedia.org/wiki/Base64

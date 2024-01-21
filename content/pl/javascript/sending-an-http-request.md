@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http"
-html_title:           "Arduino: Wysyłanie żądania http"
-simple_title:         "Wysyłanie żądania http"
+title:                "Wysyłanie żądania HTTP"
+date:                  2024-01-20T18:00:17.160766-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie żądania HTTP"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -12,33 +13,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Wysyłanie żądania HTTP to proces komunikacji z serwisem lub aplikacją internetową, które zwraca potrzebne dane. Programiści wykonują to, aby pobierać, przesyłać, aktualizować i usuwać informacje z serwerów.
+Wysyłanie zapytania HTTP to sposób, w jaki nasz kod komunikuje się z serwerami internetowymi - pobiera dane, wysyła informacje, aktualizuje zawartość. Programiści robią to, by ich aplikacje mogły interakcyjnie współdziałać z zewnętrznymi systemami i usługami.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-W JavaScript można wysyłać żądania HTTP na różne sposoby, ale jednym z najpopularniejszych jest używanie funkcji `fetch()`. Zobaczmy przykład:
+Aby wysłać zapytanie HTTP w JavaScript, możemy użyć wbudowanego interfejsu `fetch` albo starszego `XMLHttpRequest`. Oto przykład użycia fetch:
 
-```Javascript
+```javascript
+// GET request używając fetch()
+fetch('https://api.example.com/data')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    return response.json();
+  })
+  .then(data => console.log(data))
+  .catch(error => console.error('There has been a problem with your fetch operation:', error));
+
+// POST request używając fetch()
 fetch('https://api.example.com/data', {
-    method: 'GET', 
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ key: 'value' }),
 })
-.then(response => response.json())
-.then(data => console.log(data))
-.catch((error) => console.log('Error:', error));
+  .then(response => response.json())
+  .then(data => console.log('Success:', data))
+  .catch((error) => console.error('Error:', error));
 ```
 
-Tutaj najpierw wywołujemy funkcję `fetch()` z URL endpointu, który chcemy wywołać, a następnie definiujemy metodę żądania jako 'GET'. Po otrzymaniu odpowiedzi, konwertujemy ją na JSON, a następnie wyświetlamy dane.
+Wynik:
+```
+Success: { ... odpowiedź serwera ... }
+Error: ... informacje o błędzie ...
+```
 
 ## Deep Dive
 
-Historycznie, do wysyłania żądań HTTP w JavaScript używano obiektu XMLHttpRequest. Ale obecnie `fetch()` jest preferowaną metodą ze względu na jej prostotę i łatwość użycia.
+Wczesne metody AJAX, jak `XMLHttpRequest`, były standardem przez lata, ale miały swoje wady - brak obietnic (promises), skomplikowany API. `fetch` pojawił się w języku JavaScript, by to ułatwić, oferuje prostszy sposób na asynchroniczne żądania HTTP i obsługuje obietnice.
 
-Alternatywą dla `fetch()` jest biblioteka o nazwie `axios`, która również oferuje prosty sposób na wykonywanie żądań HTTP.
+Alternatywnie, w Node.js i niektórych aplikacjach klienckich możemy użyć biblioteki `axios`. Jest ona oparta na `promises` i często uważana za bardziej czytelną:
 
-Jednym z ważnych aspektów wysyłania żądań HTTP jest obsługa błędów. W powyższym przykładzie użyliśmy `catch()`, aby obsługiwać wszelkie potencjalne błędy, które mogą wystąpić podczas wykonywania żądania.
+```javascript
+const axios = require('axios');
+
+// Przykład z axios
+axios.get('https://api.example.com/data')
+  .then(response => console.log(response.data))
+  .catch(error => console.log(error));
+```
+
+Warto wiedzieć, że każdy z tych sposobów radzi sobie z różnymi aspektami bezpieczeństwa, jak polityka CORS, różnią się także w obsłudze przerywania zapytań i streamingu.
 
 ## Zobacz także
 
-1. [Fetch API na MDN Web Docs](https://developer.mozilla.org/pl/docs/Web/API/Fetch_API/Using_Fetch)
-2. [Axios - Biblioteka do żądań HTTP](https://axios-http.com/docs/intro)
-3. [Obsługa błędów w JavaScript na MDN](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
+- Dokumentacja MDN dla `fetch`: [MDN - Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- Dokumentacja dla `axios`: [Axios on GitHub](https://github.com/axios/axios)
+- Przewodnik po CORS: [MDN - CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)

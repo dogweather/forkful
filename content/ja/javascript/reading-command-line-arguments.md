@@ -1,6 +1,7 @@
 ---
 title:                "コマンドライン引数の読み取り"
-html_title:           "Bash: コマンドライン引数の読み取り"
+date:                  2024-01-20T17:56:18.655594-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,28 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-コマンドライン引数の読み取りは、ユーザーがコマンドラインからスクリプトに情報を渡す一般的な方法です。これにより、プログラムをより汎用的かつ対話的にすることができます。
+## What & Why? / 何となぜ？
+コマンドライン引数を読むっていうのは、プログラムを開始するときに追加情報を与える方法です。なぜやるかというと、スクリプトの振る舞いを実行時に柔軟に変更したいからです。
 
-## 方法：
-Node.jsでコマンドライン引数を読み取るには、process.argvを使用します。以下にその例を示します。
-```Javascript
-// コード
-console.log(process.argv);
+## How to / 方法
+Node.jsでコマンドライン引数を読むのは`process.argv`を使います。これは引数を配列として保持します。例を見てみましょう。
 
-// 出力例. 'node app.js one two=three'を実行した場合
-['/usr/local/bin/node', '/Users/username/app.js', 'one', 'two=three']
+```javascript
+// process_argv_example.js
+// 引数をコンソールに出力します
+process.argv.forEach((val, index) => {
+  console.log(`${index}: ${val}`);
+});
+
+// 実行例: node process_argv_example.js one two=2 three=3
+// 出力:
+// 0: /path/to/node
+// 1: /path/to/process_argv_example.js
+// 2: one
+// 3: two=2
+// 4: three=3
 ```
-この例ではprocess.argvが配列を返し、その各要素が1つのコマンドライン引数に対応しています。
 
-## ディープダイブ：
-コマンドライン引数の読み取りは、UNIXの初期から存在しています。これは、ユーザーが実行時にスクリプトに追加の情報を提供できるようにするためのものです。
+引数はゼロから数えて、最初の二つはNodeのパスとスクリプトのパスです。自分たちの引数は二から始まります。
 
-代替としては、npmパッケージのminimistやcommanderなどがあります。これらは、コマンドライン引数のパーシング（解析）をより容易にし、柔軟性と高度な機能をもたらします。
+## Deep Dive / 深掘り
+コマンドライン引数はUNIX時代からあります。古くからプログラムの振る舞いをコントロールする手段です。Node.jsでは`process.argv`を使う以外に、より高度なパッケージもあります。例えば、`yargs`や`commander.js`など。「引数をパースする」っていう作業は、「フラグ」や「オプション」に変えることです。これらパッケージは、その作業を簡単にしてくれます。
 
-実装の詳細については、process.argvは始まりにノードの実行パスとスクリプトのパスを含んでいます。実際のコマンドライン引数はインデックス2から開始します。
+例: `commander.js`
+```javascript
+const { program } = require('commander');
 
-## 参考文献：
-1. Node.jsのドキュメンテーション - [process.argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
-2. npmパッケージ - [minimist](https://www.npmjs.com/package/minimist)
-3. npmパッケージ - [commander](https://www.npmjs.com/package/commander)
+program
+  .option('-d, --debug', 'output extra debugging')
+  .parse(process.argv);
+
+if (program.debug) {
+  console.log('Debugging is on.');
+}
+// 実行例: node script.js -d
+// 出力: Debugging is on.
+```
+
+Node.js以外にも、他のプログラミング言語には同様の概念が存在します。しかし、実装や使いやすさは言語によって異なります。
+
+## See Also / 関連リンク
+- Node.js Documentation for `process.argv`: [https://nodejs.org/docs/latest/api/process.html#process_process_argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- npm package `yargs`: [https://www.npmjs.com/package/yargs](https://www.npmjs.com/package/yargs)
+- npm package `commander`: [https://www.npmjs.com/package/commander](https://www.npmjs.com/package/commander)

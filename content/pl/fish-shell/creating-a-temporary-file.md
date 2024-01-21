@@ -1,7 +1,8 @@
 ---
-title:                "Tworzenie tymczasowego pliku"
-html_title:           "C#: Tworzenie tymczasowego pliku"
-simple_title:         "Tworzenie tymczasowego pliku"
+title:                "Tworzenie pliku tymczasowego"
+date:                  2024-01-20T17:40:12.918048-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,41 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why?
+Tworzenie pliku tymczasowego to sposób na chwilowe przechowanie danych bez zaśmiecania systemu. Programiści robią to, kiedy potrzebują szybkiego, bezpiecznego miejsca na małe ilości danych, które można łatwo usunąć.
 
-Tworzenie tymczasowego pliku to technika kreacji pliku, który jest używany do przechowywania informacji przez krótki okres czasu. Programiści robią to, aby zapisywać dane, które są potrzebne tylko chwilowo, jednocześnie unikając zapełniania dysku i tworzenia zamieszania w plikach.
-
-## Jak to zrobić:
-
-W Fish Shell tworzenie pliku tymczasowego jest banalnie proste. Oto krótki przykład:
+## How to:
+W Fish można łatwo stworzyć plik tymczasowy. Użyj `mktemp`, by zadziałać magię:
 
 ```Fish Shell
-# Definiowanie zmiennej `tmp_file`, która przechowuje ścieżkę do pliku tymczasowego
-set tmp_file (mktemp)
-
-# Teraz możemy zapisywać do pliku tymczasowego
-echo "Cześć, to jest plik tymczasowy!" > $tmp_file
-
-# Odczytanie zawartości pliku tymczasowego
-cat $tmp_file
+set temp_file (mktemp)
+echo "Temporary data" > $temp_file
+cat $temp_file
+# Output: Temporary data
 ```
 
-Po uruchomieniu tego skryptu, zobaczysz następujący wynik:
+Po zakończeniu, nie zapomnij posprzątać:
 
 ```Fish Shell
-Cześć, to jest plik tymczasowy!
+rm $temp_file
 ```
 
-## Dogłębnie:
+## Deep Dive
+Tworzenie plików tymczasowych ma długą historię w *nix-owych systemach operacyjnych. Tradycyjnie używa się `/tmp` jako katalogu tymczasowego. W Fish, `mktemp` to swoista fasada przed tradycyjną komendą systemową, zapewniając jednak łatwiejsze, bezpieczniejsze API. Inne obsługi plików tymczasowych to `tempfile` czy `tmpfile()` w różnych środowiskach programistycznych, ale ich dostępność może się różnić.
 
-Tworzenie plików tymczasowych to stara technika stosowana w programowaniu od lat. Historycznie, ułatwiało to zarządzanie dużymi ilościami danych generowanych przez aplikacje bez zapełniania stałego dysku. 
+Zaletą korzystania z `mktemp` jest to, że tworzy ono unikalne nazwy plików, zmniejszając ryzyko konfliktów i potencjalnych problemów z bezpieczeństwem.
 
-Również warto zwrócić uwagę, że `mktemp` to tylko jeden ze sposobów tworzenia plików tymczasowych. Istnieją też inne polecenia, takie jak `tempfile` lub `mkstemp`, które mogą być bardziej odpowiednie w zależności od konkretnych potrzeb.
-
-Jeśli chodzi o implementację, `mktemp` tworzy plik tymczasowy, a następnie zwraca jego ścieżkę do zmiennej, z której możemy korzystać do zapisywania i odczytywania danych.
-
-## Zobacz również:
-
-- Dokumentacja `mktemp`: https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html
-- Przewodnik po plikach tymczasowych w systemach Unix: https://www.tutorialspoint.com/unix_system_calls/mktemp.htm
-- Więcej na temat powłoki Fish: https://fishshell.com/docs/current/index.html
+## See Also
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html#syntax) - dla dogłębniej znajomości składni Fish.
+- [mktemp Man Page](https://linux.die.net/man/1/mktemp) - dla technicznych szczegółów polecenia `mktemp`.
+- [Wiki UNIX /tmp Directory](https://en.wikipedia.org/wiki//tmp) - więcej o roli katalogu `/tmp` w systemach podobnych do Unix.

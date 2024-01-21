@@ -1,7 +1,8 @@
 ---
-title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+date:                  2024-01-20T18:01:03.439862-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,53 +11,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-HTTP-pyynnön lähettäminen perusautentikoinnilla on prosessi, jossa lähetetään pyyntö verkkopalvelimelle käyttäjätunnusten avulla. Ohjelmistokehittäjät tekevät tämän yleensä käyttäjän varmentamiseksi tai API-rajapintojen käyttämiseksi.
+## What & Why?
 
-## Miten se tehdään:
-Lähetämme HTTP-pyynnön perusautentikoinnilla C++ -koodin avulla käyttämällä esimerkiksi `cURL` kirjastoa. Komennolla `cURL` voit lähettää pyyntöjä verkkopalvelimelle. `cURL` on kirjasto, jota voidaan käyttää erilaisten protokollien kuten HTTP, HTTPS, FTP ynnä muut kautta.
+Lähetämme HTTP-pyyntöjä perusautentikoinnilla liittääksemme käyttäjätunnus-salasanapari verkkopalveluihin. Tämä on vakiomenetelmä suojattujen resurssien käyttöoikeuden hallintaan.
+
+## How to:
 
 ```C++
-#include <string>
-#include <cstdlib>
+#include <iostream>
 #include <curl/curl.h>
+#include <string>
 
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
+static size_t data_write(void* buf, size_t size, size_t nmemb, void* userp) {
+    if(userp) {
+        std::ostream& os = *static_cast<std::ostream*>(userp);
+        std::streamsize len = size * nmemb;
+        if(os.write(static_cast<char*>(buf), len))
+            return len;
+    }
 
-  curl_global_init(CURL_GLOBAL_DEFAULT);
-  curl = curl_easy_init();
+    return 0;
+}
 
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+CURL* curl = curl_easy_init();
 
-    // basic authentication
-    curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
+if(curl) {
+    std::string response_string;
+    std::string header_string;
+    curl_easy_setopt(curl, CURLOPT_URL, "http://your-protected-resource.com");
 
-    res = curl_easy_perform(curl);
+    // Set the Authorization header with basic authentication credentials
+    curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
+    curl_easy_setopt(curl, CURLOPT_USERNAME, "username");
+    curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
 
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, data_write);
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response_string);
+    curl_easy_setopt(curl, CURLOPT_HEADERDATA, &header_string);
+
+    CURLcode res = curl_easy_perform(curl);
+    if(res != CURLE_OK) {
+        fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+    } else {
+        std::cout << "Response from server: " << response_string << std::endl;
+    }
+
     curl_easy_cleanup(curl);
-  }
-  curl_global_cleanup();
-  return 0;
 }
 ```
-Tuo koodilohko lähettää HTTP GET-pyynnön `example.com`-palvelimeen käyttäjänimen `username` ja salasanan `password` avulla.
 
-## Syventävä sukellus:
-HTTP-perusautentikointi on yksinkertainen mekanismi, joka välittää käyttäjätunnuksen ja salasanan Base64-koodattuna. Tämän mekanismin kehitti MIT ja se on osa HTTP/1.0 -standardia vuodelta 1996.
+Output:
 
-Vaihtoehtoiset menetelmät perusautentikoinnille ovat esimerkiksi kehittyneemmät ja turvallisemmat Digest Access Authentication, OAuth, ja Bearer token authentications. Niissä käytetään salauksia ja todennuskoodeja tietoturvan parantamiseksi.
+```
+Response from server: { "message": "Hello, world!" }
+```
 
-HTTP-perusautentikointi on kuitenkin yksinkertainen ja helppo implementoida, mutta huomaa, että salasana lähetetään suojattomasti, joten sitä ei pitäisi käyttää ilman SSL/TLS-salausta.
+## Deep Dive
 
-## Katso myös:
-Seuraavat linkit ovat hyödyllisiä oppimateriaaleja ja lisätietoja.
-1. cURL-kirjaston ohjeet: https://curl.haxx.se/libcurl/c/
-2. HTTP-autentikoinnin menetelmiä koskevat tiedot: https://tools.ietf.org/html/rfc2617
-3. OpenSSL-kirjaston ohjeet: https://www.openssl.org/docs/
+HTTP Basic Authentication on vanhin verkkotunnistusmenetelmä. Sen käyttö on yksinkertaista: käyttäjätunnus ja salasana yhdistetään, koodataan Base64-koodauksella ja lähetetään `Authorization`-otsakkeessa. Historiallisesti, tämä oli helppo tapa suojata resursseja, mutta nykyään se ei ole parhaita käytäntöjä, koska perustiedot lähetetään tekstimuodossa, joka on helposti dekoodattavissa.
+
+Vaihtoehtoja perusautentikoinnille ovat OAuth, API-avaimet ja JWT-tunnukset. Näistä kukin tarjoaa eri tason turvallisuutta ja mukautuvuutta. Käyttäessäsi cURL-kirjastoa C++:lla, voit mukauttaa otsakkeita tarpeen mukaan erilaisten autentikointimenetelmien tueksi.
+
+CURL on monipuolinen kirjasto HTTP-verkkopyyntöjen tekemiseen. Se käsittelee monia verkkosovellusten kehittämisen yksityiskohtia, kuten protokollatuki ja autentikointimekanismit, poistaen monimutkaisuutta suorasta ohjelmoinnista.
+
+## See Also
+
+- cURL documentation: https://curl.se/libcurl/
+- 'Base64' encoding explained: https://en.wikipedia.org/wiki/Base64
+- Understanding HTTP Basic Authentication: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication 
+- C++ Network Programming with Boost.Asio: https://www.boost.org/doc/libs/1_75_0/doc/html/boost_asio.html

@@ -1,6 +1,7 @@
 ---
 title:                "웹 페이지 다운로드하기"
-html_title:           "Bash: 웹 페이지 다운로드하기"
+date:                  2024-01-20T17:43:47.147827-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "웹 페이지 다운로드하기"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,43 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 사용하나요?
+## What & Why? (무엇과 왜?)
+웹 페이지 다운로드는 인터넷에서 HTML 문서를 로컬 장치에 가져오는 과정입니다. 프로그래머들은 데이터 수집, 웹 스크레이핑 또는 백업을 위해 이 작업을 할 때가 있습니다.
 
-웹 페이지 다운로드란 특정 웹사이트의 내용을 HTML 형식의 파일로 저장하는 것을 말합니다. 프로그래머들이 이를 사용하는 이유는 웹사이트의 데이터를 분석하거나, 웹 크롤링을 통해 다양한 정보를 수집하기 위해서입니다.
+## How to: (어떻게 하나요?)
+Elixir에서는 HTTPoison이나 HTTPotion 같은 라이브러리를 사용해 웹 페이지를 다운로드할 수 있습니다. 예제를 따라 해 봅시다.
 
-## 어떻게 사용할까요?
-
-다음은 Elixir를 사용한 웹 페이지 다운로드 예제입니다. 
-
-```Elixir
-#HTTPoison 라이브러리 추가
+```elixir
+# HTTPoison 라이브러리를 추가합니다:
 defp deps do
-  [{:httpoison, "~> 1.8"}]
+  [
+    {:httpoison, "~> 1.8"}
+  ]
 end
 
-#URL을 다운로드
-def download_url() do
-  case HTTPoison.get("http://example.com") do
-    {:ok, %HTTPoison.Response{body: body, status_code: 200}} ->
+# 페이지를 다운로드하는 함수:
+def download_page(url) do
+  case HTTPoison.get(url) do
+    {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
       {:ok, body}
-    {:ok, %HTTPoison.Response{status_code: code}} ->
-      {:error, "Unexpected status code: #{code}"}
+    {:ok, %HTTPoison.Response{status_code: status_code}} ->
+      {:error, "Error with status code: #{status_code}"}
     {:error, %HTTPoison.Error{reason: reason}} ->
       {:error, reason}
   end
 end
+
+# 함수 예제 사용:
+download_page("https://hex.pm")
 ```
 
-## 깊게 알아보기
+## Deep Dive: (깊이 있게 알아보기)
+웹 페이지 다운로드는 최초의 웹 상호작용 중 하나였습니다. Elixir에서 이 작업은 Erlang의 강력한 OTP 플랫폼 위에 구축된 컨커런시(concurrency)와 결합하여 효율적으로 수행됩니다. HTTPoison은 hackney 라이브러리 위에 구축된 HTTP 클라이언트입니다. HTTPotion이라는 대안도 있지만, 더 이상 활발하게 관리되지 않습니다.
 
-웹 페이지 다운로드의 역사는 웹이 처음 개발된 이후로 거슬러 올라갑니다. 웹 페이지 다운로드를 통해 데이터 분석, 웹 크롤링 등 많은 방면으로 활용될 수 있습니다. 
-다른 언어에서는 `wget`이나 `curl` 같은 툴을 사용해 웹 페이지를 다운로드 합니다. 
-Elixir에서는 `HTTPoison` 라이브러리를 사용하는 것이 일반적입니다.
+다운로드 프로세스에는 HTTP 프로토콜의 GET 요청을 사용하는 것이 포함됩니다. 이것은 서버에 웹 페이지의 사본을 요청하는 가장 간단한 방법입니다. 여러분의 요청은 HTTP 헤더, 쿠키, 사용자 에이전트 등 다양한 HTTP 요청 패러미터를 포함할 수 있습니다.
 
-## 참고 링크
-
-더 알아보기 위해 아래의 링크를 참고하시기 바랍니다:
-
-- Elixir 공식 문서: https://elixir-lang.org/docs.html 
-- HTTPoison GitHub: https://github.com/edgurgel/httpoison 
-- 웹 크롤링에 대해: https://en.wikipedia.org/wiki/Web_scraping
+## See Also: (관련 정보 보기)
+- [HTTPoison documentation](https://hexdocs.pm/httpoison/HTTPoison.html)
+- [hackney on GitHub](https://github.com/benoitc/hackney)
+- [Erlang OTP](https://www.erlang.org/doc/design_principles/users_guide.html)
+- [Hex.pm](https://hex.pm/) (Elixir 라이브러리를 찾아보기)

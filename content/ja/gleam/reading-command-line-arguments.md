@@ -1,6 +1,7 @@
 ---
 title:                "コマンドライン引数の読み取り"
-html_title:           "Bash: コマンドライン引数の読み取り"
+date:                  2024-01-20T17:56:17.149306-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,44 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+コマンドライン引数を読むとは、ユーザーまたは他のプログラムからの入力をプログラムに与える方法です。プログラマーは、動的にプログラムの振る舞いを変えたり、必要な情報を取得するためにこれを行います。
 
-コマンドライン引数を読み取るとは、プログラムが起動時に受け取る追加情報のことを指します。これは、プログラムの動作を制御したり、特定のタスクを実行したりするために行います。
+## How to: (やり方)
+```gleam
+import gleam/io
+import gleam/os
 
-## やり方:
-
-以下にGleamでのコマンドライン引数の読み取り方法を示します:
-
-```Gleam
-import gleam/option.{Some, None}
-
-pub external fn command_line_args() -> list(Option(String)) =
-  "erlang" "init:get_plain_arguments"
-  
-pub fn show_args() {
-  let args = command_line_args()
-  case args {
-    [] -> io.println("No arguments found")
-    _ -> io.println(args)
+pub fn main() {
+  let args = os.args() // コマンドライン引数を取得
+  match args {
+    [] -> io.println("引数がありません。")
+    [first | _rest] -> io.println("最初の引数: " ++ first)
   }
 }
 ```
-実行後の出力は次のようになります:
-
+実行例:
 ```shell
-$ gleam run my_program arg1 arg2
-[Some("arg1"), Some("arg2")]
+$ gleam run my_app arg1
+最初の引数: arg1
 ```
 
-## 深入り:
+## Deep Dive (深掘り)
+コマンドライン引数を読む概念はUNIXの初期から存在しています。Gleamでは、標準ライブラリ内の`gleam/os`モジュールがこの機能を提供します。他言語では`argv`や`argc`がこれらの引数を扱うために使われますが、Gleamでは単純に`os.args()`を呼び出すだけです。このリストを処理して、プログラムが必要とする情報を得ます。コマンドラインツールを作る場合には、引数を適切に解析するロジックが必要ですが、Gleamでは`gleam/string`やパターンマッチングを使うことで簡単にできます。
 
-歴史的な文脈としては、コマンドライン引数はUNIXシェルから派生し、初期のダイナミックなプログラミング操作に使用されました。今日ではほとんどの言語でサポートされています。
-
-代替手段としては、環境変数や設定ファイルを使用してプログラムに情報を伝えることがあります。これは永続的な設定や秘密の保存に特に役立ちます。
-
-Gleamでは、Erlangランタイムから直接コマンドライン引数を取得します。その結果、取得されたコマンドライン引数はGleamの強力なパターンマッチング機能と組み合わせて使用できます。
-
-## 参考にして:
-
-- [Gleamの公式ドキュメンテーション](https://gleam.run/documentation/)
-- [Erlangのコマンドライン引数の取り扱い](http://erlang.org/doc/man/init.html#id98707)
+## See Also (関連リンク)
+- Gleamの公式ドキュメント: [https://gleam.run/book/](https://gleam.run/book/)
+- コマンドライン引数の解析に関するブログ記事: 取り扱われることは少ないかもしれませんが、さらなる情報を希望する場合はこのトピックに関するブログ記事を探してみてください。

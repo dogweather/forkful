@@ -1,7 +1,8 @@
 ---
-title:                "发送http请求"
-html_title:           "C#: 发送http请求"
-simple_title:         "发送http请求"
+title:                "发出 HTTP 请求"
+date:                  2024-01-20T17:59:21.189884-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "发出 HTTP 请求"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,47 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是 HTTP 请求 & 为什么使用？
+## What & Why? (什么 & 为什么？)
+发送 HTTP 请求就是让你的程序向网站或Web服务请求数据或动作。程序员这么做为了交换数据、获取更新或操纵远程资源。
 
-在计算机编程里，发起 HTTP 请求表示您的程序正在尝试从服务器获取某些信息或进行某些操作。程序员之所以这样做，是因为许多应用程序的功能依赖于从网络获取数据，如天气应用，社交媒体应用等。
-
-## 怎么操作：
-
-以下是使用 C++ 发送 HTTP GET 请求的代码示例和输出结果。
-
+## How to: (如何操作：)
 ```C++
-// 编译需要包含这些库
-#include <curl/curl.h>
-#include <string>
+#include <iostream>
+#include <cpr/cpr.h>
 
-// CURL 的写回调函数
-size_t curl_write(void* buffer, size_t size, size_t nmemb, std::string* userp) {
-    userp->append((char*)buffer, size * nmemb);
-    return size * nmemb;
+int main() {
+    cpr::Response r = cpr::Get(cpr::Url{"http://httpbin.org/get"});
+    std::cout << "Status code: " << r.status_code << std::endl; // 200
+    std::cout << "Response body: " << r.text << std::endl; // JSON response
 }
-
-// 使用 CURL 发送 HTTP GET 请求
-void get_http(std::string url, std::string &response) {
-    CURL* curl = curl_easy_init();
-
-    curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, curl_write);
-    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
- 
-    curl_easy_perform(curl);
-    curl_easy_cleanup(curl);
+```
+输出示例：
+```
+Status code: 200
+Response body: {
+  "args": {},
+  "headers": {
+    "Accept": "*/*",
+    "Host": "httpbin.org",
+    ...
+  },
+  "url": "http://httpbin.org/get"
 }
 ```
 
-## 深度理解
+## Deep Dive (深入探索)
+发送 HTTP 请求在网络编程中非常常用。早期C++标准库中没有内建的HTTP支持, 需要依赖如libcurl这样的库。现代而言，C++有了更现代化的库，比如cpr，它是对libcurl的C++封装，使用起来更简单。除cpr外，还可以使用Boost.Beast、Poco等库。在实现上，正确地处理HTTP协议细节、编码、连接管理和超时至关重要。
 
-1. **历史背景**：HTTP 请求最初在 1990 年代随着互联网的诞生而产生，为了在网页浏览器和服务器之间传输信息。
-2. **可选方法**：除了使用 libcurl 库，还可以使用 POCO, Boost, C++ Request等其他 C++ 库来发送 HTTP 请求。
-3. **运行原理**：发送 HTTP 请求时，您的程序会与服务器建立一个网络连接，然后以特定格式发送信息，等待服务器的响应。
-
-## 参考资料
-
-- [libcurl C++ 文档](https://curl.se/libcurl/c/)
-- [POCO Network 章节](https://pocoproject.org/docs/)
-- [Boost 库](https://www.boost.org/)
-- [C++ Requests: Curl for People](https://github.com/whoshuu/cpr)
+## See Also (另请参阅)
+- cpr GitHub repository: [https://github.com/whoshuu/cpr](https://github.com/whoshuu/cpr)
+- libcurl: [https://curl.se/libcurl/](https://curl.se/libcurl/)
+- Boost.Beast: [https://www.boost.org/doc/libs/develop/libs/beast/](https://www.boost.org/doc/libs/develop/libs/beast/)
+- Poco Project: [https://pocoproject.org/](https://pocoproject.org/)

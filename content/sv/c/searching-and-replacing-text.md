@@ -1,6 +1,7 @@
 ---
 title:                "Sökning och ersättning av text"
-html_title:           "Arduino: Sökning och ersättning av text"
+date:                  2024-01-20T17:57:29.526472-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sökning och ersättning av text"
 programming_language: "C"
 category:             "C"
@@ -10,51 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Sök och ersätt text i programmering
-
 ## Vad & Varför?
-Sök och ersätt text är en handling där en sträng identifieras (söks) och byts ut mot en annan. Programmerare gör detta för data manipulation, att korrigera fel, automatisera uppgifter, och så vidare.
+Att söka och ersätta text innebär att hitta specifika ord eller fraser i en textsträng och byta ut dem mot andra ord eller fraser. Programmerare använder detta för att effektivisera kodändringar, hantera data och automatisera textredigering.
 
-## Hur man gör:
-Här är ett grundläggande exempel på hur man kan söka och ersätta text i C-miljö.
+## How to:
+Följande C-program visar hur man söker och ersätter en delsträng.
 
 ```C
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
-void search_replace(char* str, char* oldW, char* newW) {
-    char buffer[200];
-    char *pos;
+void searchReplace(char *str, const char *search, const char *replace) {
+    char buffer[1024];
+    char *insert_point = &buffer[0];
+    const char *temp = str;
+    size_t search_len = strlen(search);
+    size_t replace_len = strlen(replace);
 
-    while ((pos = strstr(str, oldW)) != NULL) {
-        strncpy(buffer, str, pos-str);
-        buffer[pos-str] = '\0';
-        strcat(buffer, newW);
-        strcat(buffer, pos + strlen(oldW));
-        strcpy(str, buffer);
+    while (1) {
+        const char *p = strstr(temp, search);
+
+        if (p == NULL) {
+            strcpy(insert_point, temp);
+            break;
+        }
+
+        memcpy(insert_point, temp, p - temp);
+        insert_point += p - temp;
+
+        memcpy(insert_point, replace, replace_len);
+        insert_point += replace_len;
+
+        temp = p + search_len;
     }
 
-    printf("%s\n", str);
+    strcpy(str, buffer);
 }
 
 int main() {
-    char str[] = "Hej världen!";
-    char oldW[] = "världen";
-    char newW[] = "Sverige";
-    search_replace(str, oldW, newW);
-
+    char text[] = "Hej världen! Hej alla!";
+    searchReplace(text, "Hej", "Tjena");
+    printf("%s\n", text); // Skriver ut: "Tjena världen! Tjena alla!"
     return 0;
 }
 ```
-Output av detta kodexempel skulle vara: "Hej Sverige!"
 
-## Djupdykning
-Sök och ersätt har länge varit ett verktyg inom textbehandling, och implementeringen av det i C var ett steg framåt för att erbjuda direkt kontroll till utvecklare. Det finns alternativa sätt att söka och ersätta text - en metod skulle vara att använda 'sed'-verktyget i UNIX.
+## Deep Dive
+Söka och ersätta text är en grundläggande operation som funnits sedan tidiga textredigerare, som ed och sed i UNIX. Implementeringar varierar från enkla strängmanipulationer till komplexa algoritmer med reguljära uttryck. C-programmet ovan använder `strstr` för att hitta förekomsten av strängar och `memcpy` för att bygga den nya strängen. Mer avancerade verktyg kan använda Boyer-Moore eller Knuth-Morris-Pratt-algoritmer för effektivare sökningar.
 
-Implementationen av denna funktion kan variera betydligt. I det ovanför angivna exemplet används inbyggda strängfunktioner som 'strstr', 'strncpy', 'strcat', och 'strcpy'. Dessa kan dock ändras beroende på den specifika sök- och ersättläsningsalgoritmen som efterfrågas.
-
-## Se även
-För mer information om sök och ersätt, se följande källor:
-1. [Sök och ersätt på Stack Overflow](https://stackoverflow.com/questions/779875/how-do-i-replace-a-string-in-place-in-c)
-2. [C Tutorial: strängmanipulation](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
-3. [GNU Sed](https://www.gnu.org/software/sed/manual/sed.html)
+## See Also
+- C Standard Library documentation: https://en.cppreference.com/w/c/string
+- Regular expressions in C with regex.h library: https://linux.die.net/man/3/regex
+- 'sed' command for stream editing: https://www.gnu.org/software/sed/manual/sed.html

@@ -1,6 +1,7 @@
 ---
 title:                "Sammanslagning av strängar"
-html_title:           "C++: Sammanslagning av strängar"
+date:                  2024-01-20T17:35:01.698118-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sammanslagning av strängar"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,51 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Konkatenering av strängar innebär att sätta ihop två eller flera textsträngar till en. Programmerare gör detta för att bygga dynamiska textmeddelanden, hantera användarinmatning eller kombinera statisk text med variabler.
 
-Att konkatenera strängar innebär att sammanfoga två eller flera strängar till en. Programmerare gör det för att manipulera data, bygga fram dynamiskt innehåll och formatera output.
-
-## Hur till:
-
-Här är några grunderna för hur du kan konkatenera strängar i Haskell med hjälp av '++' operatören.
+## Så gör du:
+I Haskell kan du konkatenera strängar med flera tekniker. Här är några exempel:
 
 ```Haskell
-let str1 = "Hej "
-let str2 = "världen"
-let ray = str1 ++ str2
-print(ray)
+-- Använda (++) operatorn
+main :: IO ()
+main = do
+    let hello = "Hej, "
+    let world = "världen!"
+    putStrLn (hello ++ world)
 ```
+Output: `Hej, världen!`
 
-Output:
+Eller för att sammanfoga en lista med strängar:
 
 ```Haskell
-"Hej världen"
+main :: IO ()
+main = do
+    let words = ["Haskell", " ", "är", " ", "kul!"]
+    putStrLn (concat words)
 ```
+Output: `Haskell är kul!`
 
-En annan metod skulle vara använder `concat`-funktionen.
+Och för mycket stora strängar eller när prestanda är viktig, använd `Data.Text`:
 
 ```Haskell
-let strList = ["Hej ", "världen"]
-let ray = concat strList
-print(ray)
+import qualified Data.Text as T
+
+main :: IO ()
+main = do
+    let hello = T.pack "Hej, "
+    let world = T.pack "världen!"
+    T.putStrLn (T.append hello world)
 ```
+Output: `Hej, världen!`
 
-Output:
+## Djupdykning
+Konkatenering härstammar från latinets "concatenare", vilket betyder att länka ihop. I tidiga programmeringsspråk var stringhantering en komplex process. Haskell, infört på 1990-talet, förenklade detta med sin rena syntaktiska stil.
 
-```Haskell
-"Hej världen"
-```
+Alternativ till konkatenering inkluderar `intercalate`, som sätter ihop element i en lista med ett givet skiljetecken, och `Data.Text` biblioteket som erbjuder en mer effektiv hantering för stora textmassor genom minnesbesparande strukturer och "lazy" utvärdering.
 
-## Djup dykning:
+I Haskell utförs konkatenering med hjälp av den lata utvärderingsmodellen, vilket betyder att beräkningar sker endast när det är nödvändigt, vilket kan vara mer effektivt än i strikta språk.
 
-Historiskt sett har Haskell alltid använt funktionell programmering för strängmanipulation. Att konkatenera strängar i Haskell är ingen undantag.
-
-Alternativ till '++' och `concat` inkluderar `mconcat`, som är en utökning av `concat`, och möjliggör mer komplex strängsammansättning.
-
-Under ytan använder Haskell "lata listor" för intern representation av strängar. Varje sträng är en lista av tecken, och konkatenering orsakar en ny lista att skapas, vilket kopierar de gamla listorna. Detta är inte det mest prestanda effektiva sättet att implementera strängar, men Haskell prioriterar renhet och enkelhet framför prestanda.
-
-## Se också:
-
-För ytterligare studier, se följande länkar:
-1. Haskells officiella dokumentation om listor: https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html
-2. En djupare titt på Haskell's 'Lazy Evaluation': http://www.haskellforall.com/2012/01/haskell-for-mainstream-programmers-lazy.html
-3. Utforska andra strängalternativ som Text och ByteSträng: https://wiki.haskell.org/Performance/Strings
+## Se även:
+- [Haskell `Data.Text` dokumentation](https://hackage.haskell.org/package/text)
+- [Haskell Wiki om strängar](https://wiki.haskell.org/Strings)
+- [Learn You a Haskell for Great Good! av Miran Lipovača](http://learnyouahaskell.com/starting-out#an-intro-to-lists)

@@ -1,7 +1,8 @@
 ---
-title:                "랜덤 숫자 생성하기"
-html_title:           "Rust: 랜덤 숫자 생성하기"
-simple_title:         "랜덤 숫자 생성하기"
+title:                "난수 생성하기"
+date:                  2024-01-20T17:48:44.965904-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "난수 생성하기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
@@ -10,36 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇 & 왜?)
+랜덤 숫자 생성은 예측할 수 없는 숫자를 만드는 거예요. 프로그래머들은 게임, 보안, 시뮬레이션 등에서 현실성을 주거나 테스트 데이터를 만들기 위해 사용해요.
 
-랜덤 숫자 생성은 예측 불가능한 숫자를 만드는 것입니다. 프로그래머들이 이를 사용하는 주된 이유는 시뮬레이션, 게임, 테스트, 보안 등의 다양한 상황에서 비결정적인 행동이 필요할 때입니다.
-
-## 어떻게 해야 할까?
-
+## How to: (방법)
 ```C++
 #include <iostream>
 #include <random>
 
 int main() {
+    // 난수 발생기 초기화
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<> distr(1, 100);
-    std::cout << "랜덤 숫자: " << distr(gen) << '\n';
+    
+    // 범위 정의
+    std::uniform_int_distribution<> distrib(1, 100);
+
+    // 랜덤 숫자 생성 및 출력
+    for(int n=0; n<10; ++n)
+        std::cout << distrib(gen) << ' ';
+    
     return 0;
 }
 ```
-이 코드를 실행하면 1부터 100 사이의 랜덤 숫자를 출력합니다.
 
-## 깊은 탐구
+**샘플 출력:**
+```
+42 76 13 28 92 35 79 11 67 53
+```
 
-랜덤 숫자 생성은 컴퓨터 과학이 발전하면서 매우 중요해졌습니다. 초기에는 순차적이거나 고정 패턴을 가진 수열을 "랜덤"으로 사용하였지만 이는 진정한 랜덤성이 결여되어 있었습니다. 이런 이유로 우리는 Mersenne Twister 같은 알고리즘 (여기서 사용된 `std::mt19937`)을 도입하게 되었고, 이는 사실적인 '랜덤' 수를 더 잘 생성합니다.
+## Deep Dive (심층 분석)
+과거에는 `rand()`와 `srand()` 함수로 랜덤 숫자를 생성했지만, 예측 가능할 수 있어 현대 표준에서는 `<random>` 헤더의 클래스들을 사용하는 것을 권장해요. 예를 들어, `std::mt19937`은 머신 트위스터 알고리즘을 사용하면서 좋은 품질의 난수를 제공해요. 배열, 벡터 등 다량의 데이터에 랜덤 요소를 적용할 때 효과적이죠.
 
-이외에도 C++에서는 `<random>` 라이브러리를 이용해 다양한 랜덤 숫자 생성기를 사용할 수 있습니다.
+`<random>` 헤더는 난수 생성 엔진(`std::random_device`, `std::mt19937` 등)과 분포(`std::uniform_int_distribution<>`, `std::normal_distribution<>` 등)를 제공해요. 분포를 사용하면 특정 범위 내에서 균등하게, 또는 정규분포와 같은 특정 방식으로 난수를 생성할 수 있어요.
 
-## 관련 자료
+난수 생성의 구현 세부사항을 살펴보면, `std::random_device`는 비결정적 난수를 생성할 수 있는 시스템의 엔트로피 소스에 기반해요. 그런데 모든 시스템이 비결정적 난수를 제공하지 않으니 `std::mt19937` 엔진으로 초기화를 한 다음 난수를 생성하는 것이 더 일반적이에요. 
 
-더 많은 정보를 얻기 위해 다음 링크를 참조하세요.
-
-- (C++ 레퍼런스) [`<random>`](http://www.cplusplus.com/reference/random/) 
-- (학술 논문) ["Mersenne Twister: A 623-dimensionally equidistributed uniform pseudo-random number generator"](https://dl.acm.org/doi/10.1145/272991.272995)
-- (튜토리얼) ["Random Numbers in C++"](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+## See Also (참고 자료)
+1. [cppreference.com - <random>](https://en.cppreference.com/w/cpp/header/random): C++의 난수 생성에 대한 표준 라이브러리 설명입니다.
+2. [cplusplus.com - Random number distribution](http://www.cplusplus.com/reference/random/): 다양한 난수 분포 유형에 대한 정보입니다.
+3. [Wikipedia - Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister): 머신 트위스터 알고리즘에 대한 자세한 정보입니다.

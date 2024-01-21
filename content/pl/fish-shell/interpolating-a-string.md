@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:50:42.385195-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,36 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+"Co i dlaczego?" Interpolacja napisów to proces wstawiania wartości zmiennych do ciągów znaków. Programiści używają tego, aby tworzyć dynamiczne teksty i komunikaty.
 
-Interpolacja ciągu to sposób na wbudowanie wartości zmiennej bezpośrednio wewnątrz ciągu znaków. Programiści to robią, aby zwiększyć czytelność i elastyczność kodu, eliminując konieczność ciągłego łączenia ciągów i zmiennych.
+## How to:
+"Jak to zrobić:"
 
-## Jak to zrobić:
-
-```fish
-set napis "Shell"
-echo "Lubię programować w Fish $napis"
+```Fish Shell
+set name "Świat"
+echo "Witaj, $name!"
 ```
 
-Dajmy output:
-
-```fish
-Lubię programować w Fish Shell
+Output:
+```
+Witaj, Świat!
 ```
 
-## Głębsze zanurzenie:
+Aby dodać zmienną do ciągu znaków bez spacji:
 
-1. Historyczny kontekst: Interpolacja stringów jest powszechna we wielu językach programowania, zaczynając od Perl w 1988 roku.
+```Fish Shell
+set item "śledź"
+echo "Nie zapomnij kupić ${item}a."
+```
 
-2. Alternatywy: W Fish Shell możemy także użyć konkatenacji, ale wygląda na nieco mniej czytelne:
+Output:
+```
+Nie zapomnij kupić śledzia.
+```
 
-   ```fish
-   set napis "Shell"
-   echo "Lubię programować w Fish " + $napis
-   ```
+Interpolacja z poleceń:
 
-3. Szczegóły implementacji: W Fish Shell, do interpolacji ciągu używamy "$" zmiennych. Pamiętaj, nie występuje on pomiędzy cudzysłowami.
+```Fish Shell
+echo "W katalogu domowym jest (count (ls ~)) plików."
+```
 
-## Zobacz także:
+Output przykładowy:
+```
+W katalogu domowym jest 42 plików.
+```
 
-1. [Oficjalny dokument Fish Shell](https://fishshell.com/docs/current/index.html)
+## Deep Dive
+"Zagłębienie się"
+
+Interpolacja napisów nie jest czymś nowym; obecna jest w większości języków skryptowych i programowania. W Fish Shell, rozpoczynając od wczesnych wersji, zaimplementowano ją by ułatwić tworzenie skryptów. Jej użycie jest proste i intuicyjne, zwiększając czytelność i elastyczność kodu.
+
+Alternatywy: niektóre inne shelle, jak Bash czy Zsh, używają różnych sposobów do interpolacji napisów, ale Fish ma to zaimplementowane w bardziej przejrzysty sposób.
+
+Szczegóły implementacji: w Fish, zmienne są interpolowane bezpośrednio w ciągu znaków przez umieszczenie ich w cudzysłowach z prefiksem "$". W przypadku bardziej złożonych wyrażeń, można użyć nawiasów ( ).
+
+## See Also
+"Zobacz również"
+
+- Dokumentacja Fish Shell na temat zmiennych: https://fishshell.com/docs/current/#variables
+- Porównanie składni w różnych shellach: https://en.wikipedia.org/wiki/Comparison_of_command_shells#Syntax
+- Tutorial Fish Shell dla początkujących: https://fishshell.com/docs/current/tutorial.html

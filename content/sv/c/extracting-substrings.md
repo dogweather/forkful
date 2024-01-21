@@ -1,6 +1,7 @@
 ---
 title:                "Extrahera delsträngar"
-html_title:           "Arduino: Extrahera delsträngar"
+date:                  2024-01-20T17:45:02.908055-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extrahera delsträngar"
 programming_language: "C"
 category:             "C"
@@ -10,43 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Artikel: Extrahera Understrängar i C Programmering
+## Vad & Varför?
+Att extrahera delsträngar innebär att plocka ut specifika delar av en sträng. Programmerare gör detta för att bearbeta eller analysera specifika data, som del av en större dataset eller för att validera input.
 
-## Vad & varför?
-Extraktion av understängar i C innebär att skapa nya strängar genom att ta ut en del från ursprungliga strängar. Detta används för att enkelt och effektivt manipulera och analysera data.
+## Så här gör du:
+I C kan du använda `strncpy` för att kopiera en del av en sträng. Se till att avsluta delsträngen korrekt:
 
-## Hur man gör:
-Här är hur man kodar för att extrahera understängar i C:
-
-```C
+```c
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char str[20] = "Hej Sverige";
-    char substr[10];
+    char text[] = "Hej alla glada";
+    char substr[5]; // Glöm inte plats för null-tecknet!
 
-    strncpy(substr, str, 5);
-    substr[5] = '\0';
+    strncpy(substr, text + 4, 4); // Starta på index 4, ta 4 tecken.
+    substr[4] = '\0'; // Lägg till null-tecken manuellt.
 
-    printf("%s\n", substr);
+    printf("Delsträngen är: '%s'\n", substr); // Visar 'alla'
 
     return 0;
 }
 ```
-
-Utskriften av koden ovan skulle vara:
-
+Exekveringen ovan ger output:
 ```
-Hej S
+Delsträngen är: 'alla'
 ```
 
 ## Djupdykning
-Historisk sett har extraktion av understängar i C hjälpt till att förfina och förbättra datainsamling och analys. Det finns flera sätt att göra detta på: vissa använder `strncpy`, andra kanske använder pekare.
-
-När det gäller att extrahera understängar, är det viktigt att notera att C språket inte direkt stöder strängtypen. Istället, representeras strängar som en array av tecken, som slutar med en NULL-tecken (`\0`), vilket markerar slutet på strängen. 
+Extraktion av delsträngar i C saknar de inbyggda funktioner som finns i högnivåspråk. Historiskt har C-programmerare behövt använda ett bibliotek såsom `string.h` eller skriva egna funktioner för att hantera strängar. Det är vanligt att använda pekare och manuella iterationer för att uppnå detta. Ett alternativ till `strncpy` är att manuellt kopiera tecken för tecken. Detta kan ge mer kontroll men också öka risken för fel som buffer overflow.
 
 ## Se även
-För mer information och relaterade ämnen, behandlade på djupet, besök följande länkar:
-
-1. [C programming Guide on Programiz](https://www.programiz.com/c-programming/c-strings)
+- C Standard Library documentation: https://en.cppreference.com/w/c/string/byte
+- String Manipulation in C: https://www.tutorialspoint.com/cprogramming/c_strings.htm
+- C Programming/String manipulation: https://en.wikibooks.org/wiki/C_Programming/String_manipulation

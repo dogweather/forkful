@@ -1,7 +1,8 @@
 ---
-title:                "Tworzenie tymczasowego pliku"
-html_title:           "C#: Tworzenie tymczasowego pliku"
-simple_title:         "Tworzenie tymczasowego pliku"
+title:                "Tworzenie pliku tymczasowego"
+date:                  2024-01-20T17:41:17.482508-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,41 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O co chodzi i dlaczego?
-
-Tworzenie tymczasowego pliku to proces, w którym program tworzy plik o krótkim czasie życia, służący do przechowywania danych na czas działania programu. Programiści robią to, aby efektywnie manipulować danymi i zminimalizować użycie pamięci.
+## Co i dlaczego?
+Tworzenie tymczasowego pliku pozwala na przechowywanie danych tymczasowo podczas działania aplikacji. Programiści robią to, aby na przykład uniknąć zaśmiecania dysku stałymi plikami czy przeprowadzić operacje na danych, które są potrzebne tylko przez chwilę.
 
 ## Jak to zrobić:
-
-Siegnijmy po domyślny menedżer plików w Swift:
-
 ```Swift
-let fileManager = FileManager.default
-```
+import Foundation
 
-Teraz, tworzymy ścieżkę dla naszego tymczasowego pliku:
+// Tworzenie unikalnej ścieżki do tymczasowego pliku
+let tempDirectoryURL = FileManager.default.temporaryDirectory
+let tempFileURL = tempDirectoryURL.appendingPathComponent("mojTymczasowyPlik.txt")
 
-```Swift
-let tempDirectory = NSTemporaryDirectory()
-let tempFile = tempDirectory.appending("temp.txt")
-```
-Możemy teraz zapisać jakiś tekst do naszego tymczasowego pliku:
-
-```Swift
+// Zapisywanie danych do tymczasowego pliku
+let sampleText = "Przykładowy tekst"
 do {
-    try "Cześć, Świecie!".write(toFile: tempFile, atomically: true, encoding: .utf8)
+    try sampleText.write(to: tempFileURL, atomically: true, encoding: .utf8)
+    print("Plik tymczasowy zapisany: \(tempFileURL.path)")
 } catch {
-    print("Nie udało się zapisać do pliku: \(error)")
+    print("Wystąpił błąd: \(error)")
+}
+
+// Odczytywanie danych z tymczasowego pliku
+do {
+    let readText = try String(contentsOf: tempFileURL, encoding: .utf8)
+    print("Zawartość pliku tymczasowego: \(readText)")
+} catch {
+    print("Wystąpił błąd podczas odczytu: \(error)")
 }
 ```
-## Pogłębione informacje
 
-Historia: Pliki tymczasowe są z nami od dawna, używane są w każdym rodzaju systemów operacyjnych. Idea stworzenia tymczasowego pliku pochodzi z konieczności minimalizowania użycia pamięci i zasobów systemu.
+Sample output:
+```
+Plik tymczasowy zapisany: /var/folders/.../T/mojTymczasowyPlik.txt
+Zawartość pliku tymczasowego: Przykładowy tekst
+```
 
-Alternatywy: Można również używać innych metod przechowywania danych, takich jak bazy danych czy pamięć Cache, jednak każda z nich ma swoje plusy i minusy.
+## Deep Dive
+Tymczasowe pliki były używane we wczesnych dniach informatyki, kiedy pamięć była ograniczona. Tworzenie takich plików odciąża pamięć RAM, przenosząc dane na dysk. W Swift, `FileManager` jest głównym narzędziem do zarządzania systemem plików, z metodą `temporaryDirectory` zwracającą URL do lokalizacji, w której można bezpiecznie zapisywać tymczasowe pliki. Alternatywą jest użycie `mkstemp()` z UNIX API dla większej kontroli, ale to zazwyczaj niepotrzebne w większości aplikacji Swift. Ważne jest, żeby pamiętać o usuwaniu tymczasowych plików, gdy nie są już potrzebne, choć system operacyjny często zrobi to za nas po zamknięciu aplikacji.
 
-Szczegóły implementacji: Waistliwe jest tworzenie pliku tymczasowego w Swift. Tworzymy tymczasowy katalog, a potem dodajemy do niego nasz plik. Zastosowanie metody `NSTemporaryDirectory` zapewnia nam ścieżkę do katalogu tymczasowego.
-
-## Zobacz też:
-
-1. [Podręcznik: Zarządzanie plikami w Swift](https://developer.apple.com/documentation/foundation/filemanager)
+## Zobacz również
+- [Apple Documentation on FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [Stack Overflow discussion on temporary files in Swift](https://stackoverflow.com/questions/38090923/how-to-create-a-temporary-file-in-swift)

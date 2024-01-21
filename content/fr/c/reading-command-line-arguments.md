@@ -1,6 +1,7 @@
 ---
 title:                "Lecture des arguments de ligne de commande"
-html_title:           "Ruby: Lecture des arguments de ligne de commande"
+date:                  2024-01-20T17:55:33.418867-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "C"
 category:             "C"
@@ -10,52 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi?
+## Quoi et Pourquoi ?
 
-La lecture des arguments de la ligne de commande est la méthode qui permet aux programmes C de recevoir des informations pendant l'exécution. Les programmeurs l'utilisent pour rendre les opérations plus dynamiques et interactives.
+Lire les arguments de la ligne de commande, ça veut dire récupérer des infos que l'utilisateur passe au programme quand il le démarre. Les programmeurs font ça pour permettre aux utilisateurs de personnaliser l'exécution du programme sans le modifier.
 
-## Comment Faire:
-
-Voici comment vous pouvez le faire en C. Vous utiliserez les paramètres `argc` et `argv` de la fonction `main()`.
+## Comment faire :
 
 ```C
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    int count;
-
-    printf("Nom du programme '%s'\n", argv[0]);
-
-    if(argc > 1) {
-        printf("Il y a %d arguments supplémentaires:\n", argc - 1);
-
-        for(count = 1; count < argc; count++) {
-            printf("argv[%d] = %s\n", count, argv[count]);
-        }
-    } else {
-        printf("Aucun argument n'a été fourni.\n");
+    printf("Nombre d'arguments: %d\n", argc);
+    for (int i = 0; i < argc; i++) {
+        printf("Argument %d: %s\n", i, argv[i]);
     }
-
     return 0;
 }
 ```
 
-Si vous exécutez ce programme avec `./prog arg1 arg2`, l'affichage sera:
+Si vous compilez et exécutez ce code avec `./a.out test1 test2`, vous aurez:
 
-```C
-Nom du programme './prog'
-Il y a 2 arguments supplémentaires:
-argv[1] = arg1
-argv[2] = arg2
+```
+Nombre d'arguments: 3
+Argument 0: ./a.out
+Argument 1: test1
+Argument 2: test2
 ```
 
-## Plongée en profondeur:
+## Exploration :
 
-Historiquement, le passage d'arguments via la ligne de commande existe depuis les premiers systèmes d'exploitation à interface utilisateur en ligne de commande. En C, des alternatives existent, notamment l'utilisation de fichiers de configuration ou d'entrées utilisateur pendant l'exécution. Toutefois, choisir l'une ou l'autre dépend des exigences spécifiques du programme.
+Historiquement, lire les arguments de la ligne de commande est aussi vieux que les systèmes d'exploitation Unix-like, où interagir via le terminal était la norme. Les alternatives incluent lire un fichier de configuration ou demander des inputs utilisateur pendant l'exécution. Techniquement, `argc` représente le nombre d'arguments, et `argv` est un tableau de chaînes de caractères (`strings`) qui contient les arguments proprement dit. Le premier argument, `argv[0]`, est toujours le nom du programme.
 
-En termes de détails d'implémentation, `argc` et `argv` sont automatiquement passés par le système d'exploitation à votre programme. `argc` est le compteur d'arguments et `argv` est un tableau de pointeurs de chaînes, avec chaque élément pointant vers un argument en ligne de commande.
+## Voir aussi :
 
-## Voir aussi:
+Pour plus de détails sur la manipulation des arguments de la ligne de commande en C, consultez ces sources :
 
-Pour plus d'informations sur les arguments de ligne de commande, consultez les ressources suivantes:
-- GNU C Library documentation: [Program Arguments](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html)
+- Le chapitre correspondant dans le livre "C Programming Language" de Brian W. Kernighan et Dennis M. Ritchie : https://www.ime.usp.br/~pf/Kernighan-Ritchie/C-Programming-Ebook.pdf
+- Documentation GNU sur les conventions pour les interfaces de ligne de commande : https://www.gnu.org/prep/standards/html_node/Command_002dLine-Interfaces.html
+- Tutorial interactif sur la gestion des arguments de ligne de commande avec `getopt` : https://www.gnu.org/software/libc/manual/html_node/Getopt.html

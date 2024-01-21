@@ -1,7 +1,8 @@
 ---
-title:                "Ladda ner en webbsida"
-html_title:           "Bash: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Hämta en webbsida"
+date:                  2024-01-20T17:44:05.765939-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Hämta en webbsida"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -11,31 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att ladda ner en webbsida innebär att hämta dess data för lokal användning. Detta görs av programmerare för att analysera, ändra eller lagra information från sidan.
+Att ladda ner en webbsida innebär att hämta dess innehåll över internet till din egen dator. Programmakare gör detta för att bearbeta sidans information, automatisera uppgifter, eller samla data.
 
 ## Hur gör man:
-Vi kommer att visa ett enkelt exempel på hur du laddar ner en webbsida med Gleam. Se följande kod:
+```gleam
+import gleam/http
+import gleam/httpc
+import gleam/should
 
-```Gleam
-import gleam/http.{client, Get}
-import gleam/string
+pub fn main() {
+  // Defining the URL we're going to hit
+  let url = "https://example.com"
 
-try response
-    = client.get(uri.from_string("https://www.example.com") |> unwrap)
-response.status_code
-response.body
-        |> string.from_utf8
-        |> result.unwrap_string
+  // Making a GET request
+  case httpc.send(http.Request(method: Get, url: url)) {
+    Ok(response) -> 
+      io.println("Successfully downloaded the page!")
+      response.body
+        |> should.to_string
+        |> result.unwrap
+        |> io.println
+
+    Error(error) ->
+      io.println("Failed to download the page: ")
+      error
+        |> should.to_string
+        |> result.unwrap
+        |> io.println
+  }
+}
 ```
-I det här exemplet hämtar vi en webbsida (`https://www.example.com`) och skriver ut statuskoden och sidans innehåll som en sträng.
+Output:
+```
+Successfully downloaded the page!
+<!doctype html>...
+```
 
-## Djupdykning
-Historiskt sett involverade nedladdning av webbsidor ofta att skicka HTTP-begäran och sedan tolka svaret. Med Gleam är processen betydligt enklare, tack vare inbyggda bibliotek som `gleam/http`. 
+## Fördjupning:
+Downloading web pages isn't a new concept—it's been fundamental since the early days of the internet. Before Gleam and its brethren, tools like `wget` and `curl` dominated the scene, and languages like Python and PHP incorporated ways to perform this task through standard libraries.
 
-Bland alternativen finns andra programmeringsspråk och bibliotek. Också asynkrona begäran kan vara en alternativ metod att hämta data från webben.
+In Gleam, downloading a web page is typically done using the `http` module, but there are alternatives like direct socket programming for more control. Under the hood, the operation involves making an HTTP GET request, which the server responds to with the contents. There's a lot going on with headers, response codes, and error handling that programmers must consider.
 
-När det gäller implementation, är grundläggande idén att skicka en GET-begäran till den önskade URL:en, och sedan bearbeta svaret, omvandla bytes till en förståelig sträng med `string.from_utf8`.
-
-## Se även:
-- Gleam's officiella webbplats: [här](https://gleam.run/)
-- Mer information om HTTP-begäran: [här](https://developer.mozilla.org/sv-SE/docs/Web/HTTP/Overview)
+## Se också:
+- Gleam's official HTTP documentation: https://hexdocs.pm/gleam_http/
+- An intro to HTTP for programmers: https://developer.mozilla.org/en-US/docs/Web/HTTP
+- `curl` for comparison with command line: https://curl.se/docs/
+- `wget` manual for historical significance: https://www.gnu.org/software/wget/manual/wget.html

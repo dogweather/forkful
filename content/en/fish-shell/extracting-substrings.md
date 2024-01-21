@@ -1,6 +1,7 @@
 ---
 title:                "Extracting substrings"
-html_title:           "Arduino recipe: Extracting substrings"
+date:                  2024-01-20T17:45:22.688050-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extracting substrings"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,33 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Extracting substrings means fetching specific parts of a string, based on start and end positions or patterns. We do it to manipulate and derive pertinent data from more extensive text information.
+Extracting substrings means pulling out specific parts of a string. Programmers do it to isolate data, clean inputs, or dissect info for further processing.
 
 ## How to:
-Let's dive into examples in Fish Shell. 
-Say we have a string `greet` with the value "Hello, welcome to Fish Shell tutorial!".
+In Fish, you use `string` command to manipulate strings. Here's how:
 
-Define the string:
+### Grab from start:
 ```Fish Shell
-set greet "Hello, welcome to Fish Shell tutorial!"
+set my_string "Fish Shell is fun!"
+echo $my_string | string sub -l 4 # Outputs 'Fish'
 ```
 
-Extract the substring "welcome to Fish Shell" using the classic `string sub`:
+### Snip from end:
 ```Fish Shell
-string sub -s 8 -l 23 -- $greet
+set my_string "Fish Shell is fun!"
+echo $my_string | string sub -s -4 # Outputs 'fun!'
 ```
-Output:
+
+### Specific range:
 ```Fish Shell
-welcome to Fish Shell
+set my_string "Fish Shell is fun!"
+echo $my_string | string sub -s 6 -l 5 # Outputs 'Shell'
 ```
 
 ## Deep Dive
-Historically, Fish Shell has borrowed techniques for string manipulations from legacy Unix tools, spawning a healthier and more modern alternative. 
+In the old days, we'd slice and dice strings in Fish using external tools like `cut`, `awk`, or `sed`. Now, `string` is our go-to built-in function introduced in Fish 2.3.0. It's faster, more readable, and integrates seamlessly with our scripts.
 
-Alternatives like native POSIX string manipulations in bash or zsh can often involve complex, convoluted syntax. In comparison, Fish strives for user-friendliness, providing a dedicated `string` built-in command with a range of sub-commands, including our focus `sub`.
+`string sub` isn't your only option. Other `string` functions can split strings, replace parts, or join them. This focuses on minimal resource use and ease of understanding.
 
-Under the hood, the `string sub` operates by considering strings as arrays of characters. It takes a start index `-s` and a length `-l` to extract the required substring. Bear in mind, Fish Shell's indices are 1-based, unlike 0-based as in many other languages.
+Regarding implementation, when you extract substrings, Fish reads the string and outputs just the part you've specified, all while respecting character encoding and avoiding common bugs in substring extraction, like splitting a character in half.
 
 ## See Also
-Get more grip on Fish Shell Strings:
-1. [Official Fish Documentation on Strings](https://fishshell.com/docs/current/cmds/string.html)
+- Official Fish documentation on `string`: https://fishshell.com/docs/current/cmds/string.html
+- Community tutorials on Fish scripting: https://fishshell.com/docs/current/tutorial.html
+- Stack Overflow discussions on Fish string manipulation: https://stackoverflow.com/questions/tagged/fish

@@ -1,6 +1,7 @@
 ---
 title:                "Descargando una página web"
-html_title:           "Arduino: Descargando una página web"
+date:                  2024-01-20T17:44:29.824908-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Descargando una página web"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,47 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Descargar una página web implica recuperar y almacenar su contenido para su procesamiento posterior. Los programadores normalmente lo hacen para extraer datos y aplicar técnicas de web scraping.
+## Qué es y por qué?
 
-## Cómo hacer:
-Para descargar una página web en Haskell, utilizaremos el paquete extra de Haskell `http-conduit`. Asegúrate de tenerlo instalado.
+Descargar una página web significa traer el contenido de dicha página a tu ordenador o servidor. Los programadores hacen esto para analizar datos, monitorear cambios o alimentar aplicaciones con información en vivo.
 
-```Haskell
-import Network.HTTP.Conduit (simpleHttp)
+## Cómo hacerlo:
 
-descargarPagina :: String -> IO (Maybe String)
-descargarPagina url = do
-    contenido <- simpleHttp url
-    return $ Just contenido
-```
-
-Prueba el código con una URL de prueba:
+Vamos a usar Haskell junto con algunas librerías prácticas. Asegúrate de tener instalados `stack` y `http-conduit`. Si no los tienes, instálalos usando `stack install http-conduit`. Aquí está el código:
 
 ```Haskell
+import Network.HTTP.Simple
+
 main :: IO ()
 main = do
-    let url = "http://www.example.com"
-    contenido <- descargarPagina url
-    print $ take 100 $ contenido
+    response <- httpLBS "http://example.com"
+    let statusCode = getResponseStatusCode response
+    if statusCode == 200
+        then putStrLn $ "Download successful! Status code: " ++ show statusCode
+        else print statusCode
+    print $ getResponseBody response
 ```
 
-Un ejemplo de salida podría ser:
+Si todo va bien, verás:
 
-```Haskell
-Just "<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n\n    <meta charset=\"utf-"
+```
+Download successful! Status code: 200
+"<html>...</html>" -- Aquí estará el contenido de la página
 ```
 
-## Análisis en Profundidad:
+## Análisis Profundo:
 
-1) Contexto histórico: La necesidad de descargar páginas web nació con la expansión de la World Wide Web y la creciente importancia del análisis e interpretación de los datos de la web.
+Descargar páginas web es un concepto tan antiguo como la web misma. Aunque el método básico no ha cambiado mucho, las herramientas sí. Antes se usaba `curl` o `wget` en línea de comandos, y en Haskell, librerías como `http-conduit` facilitan la tarea.
 
-2) Alternativas: En Haskell, puedes usar otros paquetes como `http-client`, `http`, `wreq`, etc. Que ofrecen funciones similares, pero pueden variar en términos de rendimiento y características adicionales.
+Otras opciones modernas incluyen `wreq` y `http-client`. Cada una tiene sus pros y contras. Por ejemplo, `http-conduit` es bueno para gestionar conexiones persistentes mientras que `wreq` tiene una interfaz más simple.
 
-3) Detalles de implementación: `simpleHttp` es una llamada de bloques http-conduit que intentará descargar la URL dada. Si se produce una excepción (como un error de red), fallará. Para una mayor flexibilidad, puedes usar `httpLbs`.
+Detalles de implementación: en el fondo, la descarga de una página es una simple petición HTTP. Sin embargo, el manejo de errores, redirecciones y sesiones puede complicarse. Es una buena idea familiarizarse con los códigos de estado HTTP y el manejo de excepciones en Haskell.
 
-## Ver también:
+## Ver También:
 
-1) `http-conduit` en Hackage: https://hackage.haskell.org/package/http-conduit
-2) Tutorial de web scraping en Haskell: https://pragprog.com/titles/lotdd/learn-you-a-haskell-for-great-good/
-3) Paquete `http` en Hackage: https://hackage.haskell.org/package/http
+- La documentación de `http-conduit`: [https://www.stackage.org/package/http-conduit](https://www.stackage.org/package/http-conduit)
+- La biblioteca `wreq` para comparar: [https://hackage.haskell.org/package/wreq](https://hackage.haskell.org/package/wreq)
+- Tutorial de `http-client`: [https://hackage.haskell.org/package/http-client-tls](https://hackage.haskell.org/package/http-client-tls)

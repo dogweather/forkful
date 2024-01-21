@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:00:55.316934-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,33 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+HTTP अनुरोध भेजना मतलब वेब सर्वर से जानकारी मांगना या भेजना। प्रोग्रामर्स इसे डाटा का आदान-प्रदान करने के लिए करते हैं।
 
-HTTP अनुरोध भेजना (HTTP Request Sending) एक प्रोग्रामिंग क्रिया है जिससे वेब सर्वर से डाटा का विनिमय होता है। प्रोग्रामर्स इसे वेबसाइटों से जानकारी प्राप्त करने, या उनपर परिवर्तन करने के लिए करते हैं।
+## How to: (कैसे करें:)
+Gleam में HTTP अनुरोध भेजने के लिए `gleam/http` का उपयोग करते हैं।
 
-## कैसे करें:
+```gleam
+import gleam/http
+import gleam/should
 
-आइए देखते हैं कि Gleam में HTTP अनुरोध कैसे संपन्न किया जाता है।
-
-```Gleam
-आयात gleam/httpc
-
-फ़ंक्शन send_request() {
-    httpc.get("https://api.github.com/users/octocat")
-        |> लिफ्ट(Result.map(तर्क |resp| resp.body))
+pub fn main() {
+  let response = http.get("https://jsonplaceholder.typicode.com/posts/1")
+  should.equal(response.status, 200)
+  should.equal(response.body, Some("{ ... JSON DATA ... }"))
 }
 ```
 
-ऊपर दिए गए कोड में, `httpc.get` फ़ंक्शन का उपयोग करके Github API से HTTP GET अनुरोध भेजा जाता है। इसका परिणाम HTTP प्रतिक्रिया के रूप में होगा, जिसके शरीर का प्राप्ति करने के लिए `resp.body` संबोधित किया जाएगा।
+ऊपर दिया गया कोड सामान्यतः एक HTTP GET अनुरोध भेजता है और स्टेटस कोड 200 (सफलता) के साथ जवाब की उम्मीद करता है।
 
-## गहरी जांच
+## Deep Dive (गहराई से जानकारी)
+HTTP अनुरोध इंटरनेट की नींव हैं, जो 1990 के दशक से वेब कम्युनिकेशन में प्रयोग किए जा रहे हैं। Gleam में, `gleam/http` एक बेहतरीन HTTP क्लाइंट प्रदान करता है, जो Erlang के `httpc` module के ऊपर बनाया गया है। ग्लीम में अन्य भाषाओं की तुलना में एक बहुत सरल और टाइप-सेफ तरीका होता है HTTP अनुरोध करने का।
 
-HTTP अनुरोध 1990 के शुरुआती दिनों से ही वेब प्रोग्रामिंग का मौलिक हिस्सा रहा है, जब WWW (World Wide Web) का निर्माण हुआ था।
+Gleam आपको कम्पाइल-टाइम पर ही कई त्रुटियों से बचाता है, फिर भी रनटाइम पर परफॉर्मेंस भी अच्छी देता है। वैकल्पिक रूप से, आप `gleam/http` के साथ `gleam/reqwest` या `gleam/surf` जैसे क्रेट्स का इस्तेमाल करके अधिक उन्नत कार्यक्षमता जोड़ सकते हैं।
 
-HTTP अनुरोध के विकल्प शामिल हैं WebSocket, EventSource, SCP, FTP, और बहुत कुछ, पर हर एक का अपना उद्देश्य एवं उपयोग है।
-
-Gleam में HTTP अनुरोध का कार्यान्वयन Erlang संगठनात्मक यूनिट, OTP (Open Telecom Protocol) के उपयोग से होता है। इसका मुख्य लक्ष्य अन्वेषण, श्रृंखलाबद्धता और समरुद्धिता को बढ़ाना है।
-
-## अन्य संदर्भ स्रोत
-
-- [HTTP: ये हाइपरटेक्स्ट ट्रांसफर प्रोटोकॉल क्या है](https://www.w3schools.com/whatis/whatis_http.asp)
+## See Also (और देखें)
+- Gleam हाउटू HTTP: [Gleam HTTP howto](https://hexdocs.pm/gleam_http)
+- Gleam की आधिकारिक वेबसाइट: [Gleam's Official Website](https://gleam.run)
+- HTTP स्पेसिफिकेशन: [HTTP specification](https://www.ietf.org/rfc/rfc2616.txt)

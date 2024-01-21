@@ -1,6 +1,7 @@
 ---
 title:                "Lettura degli argomenti della riga di comando"
-html_title:           "Java: Lettura degli argomenti della riga di comando"
+date:                  2024-01-20T17:56:31.647075-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,40 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che Cos'è e Perché?
+## What & Why?
+Leggere gli argomenti della riga di comando significa catturare le informazioni inserite quando un programma viene avviato. I programmatori lo fanno per personalizzare l'esecuzione del software senza cambiarne il codice.
 
-Leggere gli argomenti della riga di comando significa prelevare input specifici che l'utente inserisce quando esegue il tuo script PowerShell. Questo è utile per rendere lo script più flessibile ed efficace, adattandolo a diverse situazioni senza doverlo modificare. 
-
-## Come Fare:
-
-Supponiamo che tu abbia uno script PowerShell di nome `MyScript.ps1`. Puoi passargli argomenti come questo:
-
+## How to:
 ```PowerShell
-.\MyScript.ps1 -Arg1 valore1 -Arg2 valore2
-```
-
-All'interno del tuo script, puoi accedere a questi argomenti così:
-
-```PowerShell
+# Esempio script: TestArgs.ps1
 param (
-   [String]$Arg1,
-   [String]$Arg2
+    [string]$nome = "Mondo!",
+    [int]$numero = 1
 )
-Write-Output "Arg1 is $Arg1"
-Write-Output "Arg2 is $Arg2"
+
+for($i = 0; $i -lt $numero; $i++) {
+    Write-Host "Ciao $nome"
+}
+
+# Uso dello script dalla riga di comando:
+# .\TestArgs.ps1 -nome "Italia" -numero 3
+
+# Risultato:
+# Ciao Italia
+# Ciao Italia
+# Ciao Italia
 ```
 
-L'output sarebbe:
-
-```PowerShell
-Arg1 is valore1
-Arg2 is valore2
-```
-
-## Approfondimento:
-
-Historicamente, l'accesso agli argomenti della riga di comando era un compito standard nella programmazione con linguaggi come C e Java. PowerShell ha semplificato il compito attraverso l'uso della funzione `param`.
-
-Un'alternativa per leggere gli argomenti sarebbe l'uso dell'array automatico `$args`, ma il suo uso è sconsigliato perché offre meno flessibilità e sicurezza di tipo.
-
-L'interpretazione degli argomenti nella riga di comando avviene da sinistra a destra. Gli argomenti possono essere interpretati come nome del parametro, valore del parametro o argomento posizionale a seconda della loro posizione e del formato.
+## Deep Dive
+PowerShell ha introdotto il concetto di script parametrizzati dagli albori per offrire flessibilità e riutilizzo del codice. Altri linguaggi usano argomenti posizionali (`$args`) o variabili automatiche (`$PSBoundParameters`) ma PowerShell aggiunge il binding dichiarativo tramite `param()` per una lettura più intuitiva. È possibile anche implementare una logica avanzata che reagisce agli argomenti, come la convalida o i parametri dinamici.

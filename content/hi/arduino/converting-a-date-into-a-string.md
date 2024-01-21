@@ -1,7 +1,8 @@
 ---
-title:                "एक तारीख को स्ट्रिंग में परिवर्तित करना"
-html_title:           "Java: एक तारीख को स्ट्रिंग में परिवर्तित करना"
-simple_title:         "एक तारीख को स्ट्रिंग में परिवर्तित करना"
+title:                "तारीख को स्ट्रिंग में बदलना"
+date:                  2024-01-20T17:36:24.087594-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "तारीख को स्ट्रिंग में बदलना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,38 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-तारीख को स्ट्रिंग में बदलना का क्या मतलब है और क्यों प्रोग्रामर ऐसा करते हैं? जब हम टाइम-स्टैम्प या दिनांक को इंसान-पठनीय रूप में परिवर्तित करते हैं, इसे हम स्ट्रिंग में बदलना कहते हैं। यह आइडेंटिफिकेशन, लॉगेस और डाटा विश्लेषण के लिए अत्यंत महत्वापुर्ण हो सकता है।
+## What & Why? (क्या और क्यों?)
+डेट को स्ट्रिंग में बदलने का मतलब है तारीख की जानकारी को पाठ के रूप में बदलना। प्रोग्रामर्स इसे इसलिए करते हैं ताकि तारीख को आसानी से पढ़ा जा सके, लॉग किया जा सके या यूजर इंटरफेस में दिखाया जा सके।
 
-## कैसे करें:
-सैम्पल कोड और आउटपुट नीचे दिया गया है:
-```
-Arduino
-#include <TimeLib.h>
+## How to: (कैसे करें:)
+```Arduino
+#include <Wire.h>
+#include <RTClib.h>
+
+RTC_DS3231 rtc;
 
 void setup() {
   Serial.begin(9600);
-  setTime(10, 30, 40, 1, 1, 2020); // HH, MM, SS, DD, MM, YYYY
+
+  if (!rtc.begin()) {
+    Serial.println("RTC is NOT running!");
+    while (1);
+  }
+
+  if (rtc.lostPower()) {
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  }
 }
 
 void loop() {
-  time_t currentTime = now();
-  String dateTime = String(hour(currentTime)) + ":" +
-                    String(minute(currentTime)) + ":" +
-                    String(second(currentTime)) + " " +
-                    String(day(currentTime)) + "/" +
-                    String(month(currentTime)) + "/" +
-                    String(year(currentTime));
+  DateTime now = rtc.now();
 
-  Serial.println(dateTime);
+  char dateStr[20];
+  snprintf(dateStr, sizeof(dateStr), "%02d/%02d/%04d %02d:%02d:%02d", now.day(), now.month(), now.year(), now.hour(), now.minute(), now.second());
+  
+  Serial.println(dateStr);
+  
   delay(1000);
 }
 ```
-उपरोक्त कोड का आउटपुट इस प्रकार होगा:
-"10:30:40 1/1/2020"
+साउटपुट: `05/03/2023 15:20:56`
 
-## गहरा गोता
-तारीख को स्ट्रिंग में बदलने का विचार उन समयों से सम्बंधित है जब कंप्यूटर की दुनिया में सांख्यिकीय तथ्यों की खोज हुई थी। वास्तव में, आज भी इंसान-पठनीय फ़ॉर्मॅट का इस्तेमाल बहुत आवश्यक और महत्वपूर्ण है। वैकल्पिक तरीके शामिल कर सकते हैं snprintf नामक C++ फंक्शन का उपयोग करना, जो एक बहुत ही छूटीली और शक्तिशाली इंस्ट्रुमेंट है। बेशक, अर्दुइनो हर्डवेयर पर नियंत्रण प्रदान करने वाले बिल्ट-इन फंक्शन्स होते हैं।
+## Deep Dive (गहराई से जानकारी):
+डेट को स्ट्रिंग में बदलना बहुत पुराना और आम काम है, जो प्रोग्रामिंग की शुरुआत से होता आ रहा है। Arduino में RTC (Real Time Clock) मॉड्यूल का उपयोग करते हुए वास्तविक समय की जानकारी प्राप्त की जाती है, जैसे DS3231। `snprintf()` फ़ंक्शन इस्तेमाल करके हम तारीख और समय को एक ख़ास फ़ॉर्मेट में स्ट्रिंग द्वारा प्रिंट कर सकते हैं। विकल्प के रूप में, अन्य libraries भी मौजूद हैं जैसे `TimeLib.h` जो यह काम कर सकती हैं। अतिरिक्त implementation details में, हमें `DateTime` ऑब्जेक्ट का इस्तेमाल करने का ध्यान रखना होता है, जो कि RTC लाइब्रेरी से आता है और वास्तविक समय की जानकारी रखता है।
 
-## अन्य स्रोतों के लिए देखें
-आप [Arduino Time library documentation](https://www.arduino.cc/en/Reference.Time) और [snprintf function](http://www.cplusplus.com/reference/cstdio/snprintf/) के बारे में और जानने के लिये उनकी आधिकारिक वेबसाइट पर जा सकते हैं। हमेशा नए और अद्वितीय तरीके की खोज में रहें, जो आपकी कोडिंग को और अधिक उपयोगी और आसान बना सकते हैं। शुभकामनाएँ!
+## See Also (और देखें):
+- Arduino `RTClib` Library: https://github.com/adafruit/RTClib
+- Arduino Reference for `snprintf()`: https://www.arduino.cc/reference/en/language/functions/characters/snprintf/
+- `TimeLib.h` Library: https://www.pjrc.com/teensy/td_libs_Time.html

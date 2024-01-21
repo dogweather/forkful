@@ -1,6 +1,7 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+date:                  2024-01-20T17:39:10.267180-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,33 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## What & Why? (Co i dlaczego?)
+Zmiana stringa na małe litery to prosty proces, gdzie wszystkie litery w napisie są konwertowane na ich małe odpowiedniki. Programiści robią to, by ujednolicić dane - przydatne, gdy porównujesz napisy czy sortujesz dane.
 
-Konwersja łańcucha na małe litery oznacza przekształcenie wszystkich liter w łańcuchu na małe litery. Programiści robią to, aby ułatwić porównywanie i manipulację łańcuchami, ignorując różnice między literami dużymi i małymi.
-
-## Jak to zrobić:
-
-W Swift, chcąc przekształcić łańcuch na małe litery, używamy metody `.lowercased()`. 
+## How to: (Jak to zrobić:)
+Rozważmy przykładowy string i jego konwersję do małych liter w Swift:
 
 ```Swift
-let originalString = "Hello, World!"
-let lowercasedString = originalString.lowercased()
-
-print(lowercasedString)  // Wyprintuje: "hello, world!"
+let exampleString = "DzIeń DoBrY!"
+let lowercasedString = exampleString.lowercased()
+print(lowercasedString)
 ```
 
-Metoda ta zwraca kopię oryginalnego łańcucha, w której wszystkie litery są małe.
+Wynik działania kodu:
 
-## Głębsze zrozumienie
+```
+dzień dobry!
+```
 
-Konwersja do małych liter jest powszechną praktyką w szeregach języków programowania, mającą swoje korzenie w najwcześniejszych dniach komputerów, kiedy to różnice między literami dużymi i małymi były często ignorowane.
+Jest prosto, prawda?
 
-Alternatywą dla `.lowercased()` jest metoda `.uppercased()`, która przekształca łańcuch na duże litery, ułatwiając porównywanie łańcuchów pod kątem różnic wielkości liter.
+## Deep Dive (Dogłębna analiza)
+Po pierwsze, konwersja na małe litery ma długą historię w programowaniu – już pierwsze systemy informatyczne traktowały tekst, gdzie różnica między wielkimi a małymi literami mogła powodować błędy.
 
-Warto dodać, że `.lowercased()` w Swift jest metodą instancji `String`, co oznacza, że działa na konkretnej instancji typu `String`. Wykorzystuje unicodowe algorytmy, co czyni ją bardzo skuteczną w radzeniu sobie z szerokim zakresem znaków.
+Alternatywnie, możesz użyć innych metod jak `localizedLowercase` dla uwzględnienia specyficznych zasad danego języka:
 
-## Zobacz też
+```Swift
+let polishString = "Łódź"
+print(polishString.localizedLowercase)
+```
 
-Bardziej szczegółowe informacje odnośnie manipulacji łańcuchami w Swift można znaleźć w oficjalnej dokumentacji Swift w sekcji o typach łańcuchów i znaków: [String and Character Types in Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html).
+Warto zauważyć, że konwersja jest kwestią Unicode i działanie `lowercased()` może być inaczej zaimplementowane w zależności od języka.
 
-Jeżeli jesteś zainteresowany usprawnieniem manipulacji łańcuchami w swoim kodzie, przyjrzyj się również bibliotece [Swift StringCheese](https://github.com/Weebly/StringCheese), która oferuje wiele dodatkowych funkcji do pracy z łańcuchami.
+## See Also (Zobacz również)
+- Wikipedia o [Unicode Case Folding](https://en.wikipedia.org/wiki/Unicode_equivalence#Case_folding)
+- Porównanie `lowercased()` i `localizedLowercase` [String Transformation in Swift](https://www.hackingwithswift.com/articles/141/8-powerful-swift-string-functions)

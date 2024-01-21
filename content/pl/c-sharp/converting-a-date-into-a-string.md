@@ -1,7 +1,8 @@
 ---
-title:                "Konwersja daty na ciąg znaków"
-html_title:           "Clojure: Konwersja daty na ciąg znaków"
-simple_title:         "Konwersja daty na ciąg znaków"
+title:                "Konwersja daty na łańcuch znaków"
+date:                  2024-01-20T17:36:20.953632-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Konwersja daty na łańcuch znaków"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,42 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Konwersja daty na ciąg znaków to sposób na zmianę formatu `DateTime` na tekst. Programiści robią to, by łatwo wyświetlać i przechowywać informacje o dacie w czytelnej formie.
 
-Konwersja daty na ciąg znaków, zwany też stringiem, to proces zamieniania daty na tekst. Programiści często posługują się nią do wyświetlania czy zapisywania dat w sposób zrozumiały dla użytkownika.
-
-## Jak to zrobić:
-
-W C# do konwersji daty na ciąg znaków możemy użyć metody `ToString()`, która jest wbudowana w typ `DateTime`. 
+## How to: (Jak to zrobić:)
+Wykorzystaj `ToString` z formatowaniem lub bez. Przykłady poniżej:
 
 ```C#
-DateTime teraz = DateTime.Now;
-string dataJakoString = teraz.ToString();
+DateTime now = DateTime.Now;
 
-Console.WriteLine(dataJakoString);
+// Bez specyficznego formatowania - domyślne
+string defaultFormat = now.ToString();
+Console.WriteLine(defaultFormat); // "2023-04-05 14:30:52"
+
+// Z określonym formatowaniem - np. tylko data
+string customFormat = now.ToString("yyyy-MM-dd");
+Console.WriteLine(customFormat); // "2023-04-05"
+
+// Użycie standardów kulturowych
+string plFormat = now.ToString("d", new CultureInfo("pl-PL"));
+Console.WriteLine(plFormat); // "05.04.2023"
 ```
-Przykładowe wyjście dla powyższego kodu to `09/09/2022 11:45:22 AM`.
 
-Możemy także określić format tego ciągu danych, podając go jako argument metody `ToString()`.
+## Deep Dive (Dogłębna analiza):
+Konwersja dat na teksty jest obecna od początków programowania. W C# odbywa się głównie za pomocą metody `ToString()`. Metoda ta przyjmuje argumenty określające format wyjściowy - zarówno predefiniowane łańcuchy formatujące, jak `"G"`, `"D"`, `"yyyy-MM-dd"` czy też niestandardowe wzorce. 
 
-```C#
-DateTime teraz = DateTime.Now;
-string dataJakoString = teraz.ToString("dd-MM-yyyy");
+Istnieją także alternatywy, jak `String.Format()` czy interpolacja stringów w nowszych wersjach C#. Ważne są też ustawienia regionalne (`CultureInfo`), które wpływają na formatowanie daty (dla Polski będzie to pl-PL).
 
-Console.WriteLine(dataJakoString);
-```
-Teraz nasza data wygląda tak: `09-09-2022`.
+Implementacja konwersji zależy od dwóch rzeczy: jak dane są prezentowane użytkownikowi i w jakim formacie muszą być zapisane (np. w bazie danych czy plikach). Znajomość formatów i kultur pozwala na tworzenie aplikacji wielojęzycznych i dobrze lokalizowanych.
 
-## Głębsze spojrzenie:
-
-Początki konwersji dat na stringi sięgają momentu, gdy komputery zaczęły przechowywać daty jako liczby, a następnie potrzebowały je zamieniać na tekst dla czytelności użytkownika. 
-
-Jest wiele alternatyw dla metody `ToString()`. W C# możemy używać metod jak `ToShortDateString()` czy `ToLongDateString()` dla bardziej specyficznych formatów. 
-
-Ważne jest również zauważenie, że `ToString()` korzysta z kultury (ustawień regionalnych) systemu do formatowania danych. Możemy zdefiniować własną kulturę za pomocą klasy `CultureInfo`. 
-
-## Zobacz także:
-
-1. [Przekształcanie dat na ciągi — Microsoft Docs](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.tostring?view=net-5.0)
-2. [Kultura w C# — Microsoft Docs](https://docs.microsoft.com/pl-pl/dotnet/api/system.globalization.cultureinfo?view=net-5.0) 
-3. [Formatowanie dat i czasu — Microsoft Docs](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/formatting-types)
+## See Also (Zobacz również):
+- [Dokumentacja metody ToString()](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.tostring?view=net-6.0)
+- [Klasy CultureInfo](https://docs.microsoft.com/pl-pl/dotnet/api/system.globalization.cultureinfo?view=net-6.0)
+- [Standardowe i niestandardowe formaty daty i czasu](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/standard-date-and-time-format-strings)
+- [String.Format w C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.string.format?view=net-6.0)
+- [Interpolacja stringów](https://docs.microsoft.com/pl-pl/dotnet/csharp/language-reference/tokens/interpolated)

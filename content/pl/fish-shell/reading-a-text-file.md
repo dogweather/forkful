@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie pliku tekstowego"
-html_title:           "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+date:                  2024-01-20T17:54:16.978763-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,33 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why?
+Czytanie pliku tekstowego to proces wydobywania danych z pliku zapisanego w formacie tekstowym. Programiści to robią, aby obsługiwać konfiguracje, wczytywać dane wejściowe, przetwarzać logi czy też po prostu odczytywać treść.
 
-Czytanie pliku tekstowego to operacja, polegająca na odczytywaniu i interpretacji danych zapisanych w formacie tekstowym przez komputer. Programiści robią to, aby umożliwić komunikację między różnymi aplikacjami, analizować dane, a nawet debugować kod.
-
-## Jak to zrobić:
-
-Otwarcie i odczytanie pliku tekstowego w Fish Shell jest proste. Poniżej znajduje się przykładowy kod:
+## How to:
+W Fish, użyj `read` dla interakcji i `cat` do prostej lektury:
 
 ```Fish Shell
-set file content (cat myfile.txt)
-echo $file_content
+# Odczyt zawartości pliku
+cat moj_plik.txt
+
+# Przykładowe dane z pliku "witaj.txt" zawierającego "Witaj, świecie!"
+cat witaj.txt
+# Output: Witaj, świecie!
 ```
 
-Kod ten otwiera plik o nazwie `myfile.txt` i odczytuje jego zawartość, a następnie wyświetla na ekranie. Przykładowe wyjście może wyglądać tak:
+## Deep Dive
+W przeszłości używaliśmy różnych komend Unix, jak `cat`, `less`, `more`, `tail`, `head`, aby czytać pliki tekstowe. Fish, chociaż oferuje własne, bardziej zaawansowane narzędzia, często opiera się na tych standardowych komendach. Alternatywą jest użycie pętli `while`, która czyta plik linia po linii:
 
 ```Fish Shell
-To jest mój plik tekstowy.
+# Czytanie pliku linia po linii
+while read -la line
+    echo $line
+end < moj_plik.txt
 ```
 
-## Głębsze Zagadnienia:
+Ważnym aspektem jest kodowanie (np. UTF-8), odpowiada ono za prawidłowe wyświetlanie znaków.
 
-1. Kontekst historyczny: Fish Shell to skryptowy język powłoki, który pojawił się po raz pierwszy w 2005 roku. Jest znany ze swej przyjazności dla użytkownika i interaktywności.
-
-2. Alternatywy: Istnieje wiele innych powłok, które można używać do tego samego celu, takie jak Bash, Zsh czy PowerShell. Każda z nich ma swoje własne zalety i wady.
-
-3. Szczegóły implementacji: W Fish Shell, pliki tekstowe są odczytywane za pomocą komendy `cat`, która jest zapożyczona z Unix. Wynik jest następnie przekazywany do zmiennej za pomocą polecenia `set`.
-
-## Zobacz też:
-
-1. [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
+## See Also
+- [Fish Documentation](https://fishshell.com/docs/current/index.html)

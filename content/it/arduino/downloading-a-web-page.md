@@ -1,6 +1,7 @@
 ---
 title:                "Scaricare una pagina web"
-html_title:           "C++: Scaricare una pagina web"
+date:                  2024-01-20T17:43:23.364156-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Scaricare una pagina web"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,54 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cosa & Perché?
-
-Scaricare una pagina web significa prelevare il codice di programmazione di un sito web direttamente sul tuo dispositivo. I programmatori lo fanno per estrarre dati, eseguire analisi o salvare una copia locale del sito.
+## Cosa & Perché?
+Scaricare una pagina web significa far sì che il tuo Arduino la richieda e la riceva dalla rete. I programmatori lo fanno per acquisire dati da internet, come il meteo, o per controllare una pagina remotamente.
 
 ## Come fare:
-
-Per scaricare una pagina web con Arduino, usa la libreria Ethernet. Ecco un esempio di codice:
-
 ```Arduino
-#include <Ethernet.h>
+#include <WiFi.h>
+#include <HTTPClient.h>
 
-byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
-char server[] = "www.tuosito.it"; 
-
-EthernetClient client;
+const char* ssid = "il_tuo_SSID";
+const char* password = "la_tua_password";
 
 void setup() {
-  Ethernet.begin(mac);
-  delay(1000);
-  
-  if(client.connect(server, 80)) {
-    client.println("GET / HTTP/1.1");
-    client.println("Host: www.tuosito.it");
-    client.println("Connection: close");
-    client.println();
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connessione al WiFi...");
   }
+  
+  HTTPClient http;
+  http.begin("http://esempio.com/pagina.html");
+  int httpCode = http.GET();
+
+  if (httpCode > 0) {
+    String payload = http.getString();
+    Serial.println(payload);
+  } else {
+    Serial.println("Errore nella ricezione della pagina");
+  }
+  
+  http.end();
 }
 
 void loop() {
-  if(client.available()) {
-    char c = client.read();
-    Serial.print(c);
-  }
-
-  if(!client.connected()) {
-    client.stop();
-  }
+  // nulla qui
 }
 ```
 
-Dopo aver caricato questo sketch, l'output del monitor seriale dovrebbe mostrare il codice HTML della pagina web.
+Output di esempio:
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Esempio Pagina</title>
+  </head>
+  <body>
+    <p>Ciao dal web!</p>
+  </body>
+</html>
+```
 
 ## Approfondimento
+Collegare Arduino a Internet è una conquista relativamente recente. Prima si basava su shield Ethernet, ma ora, con moduli come ESP8266 e Wi-Fi integrato su ESP32, è più facile. Alternativamente, si può usare il modulo Ethernet o GSM. Per quanto riguarda l'implementazione, si usano le librerie come WiFi.h e HTTPClient.h per semplificare la connessione e la richiesta HTTP.
 
-Storicamente, avevamo bisogno di computer potenti per scaricare pagine web. Ma adesso, con i microcontrollori come Arduino, possiamo farlo facilmente. Un'altra libreria per fare la stessa cosa è WiFi101. In termini di implementazione, ricorda che non tutti i siti consentono web scraping, quindi verifica le politiche del sito prima di scaricare.
-
-## Vedi anche
-
-Per approfondire, dai un'occhiata a queste risorse:
-
-1. Documentazione ufficiale dell'Arduino su Ethernet - [https://www.arduino.cc/en/Reference/Ethernet](https://www.arduino.cc/en/Reference/Ethernet)
+## Vedi anche:
+- Documentazione su HTTPClient per ESP32: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/http_client.html
+- Il progetto ESP8266 Arduino core: https://github.com/esp8266/Arduino
+- Tutorial su come usare Arduino con Ethernet Shield: https://www.arduino.cc/en/Guide/ArduinoEthernetShield

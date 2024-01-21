@@ -1,6 +1,7 @@
 ---
 title:                "חילוץ תת-מחרוזות"
-html_title:           "Bash: חילוץ תת-מחרוזות"
+date:                  2024-01-20T17:46:33.697880-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חילוץ תת-מחרוזות"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,23 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-חיצוב תת-מחרוזות הינו המנוהל שבו מזיקים מחרוזת למחרוזות ממוזערות. מתכנתים משתמשים בכך למידע ביניים, לניתוח נתונים, ולטיפול בטקסט.
+חילוץ תת-מחרוזות הוא תהליך שבו אתם לוקחים חתיכה מתוך מחרוזת קיימת. תכנתים עושים את זה כדי לקרוא, לעבד, או לנתח נתונים מסוימים במחרוזת.
 
 ## איך לעשות:
-נפתח עם דוגמה פשוטה, חתיכת קוד Swift שמחלצת תת-מחרוזת:
+Swift מספקת כמה דרכים לחלץ תת-מחרוזות. הנה דוגמה:
+
 ```Swift
-let str = "Hello, Swift"
-let indexStart = str.index(str.startIndex, offsetBy: 7)
-let indexEnd = str.index(str.startIndex, offsetBy: 12)
-let substring = str[indexStart..<indexEnd]
-print(substring) //"Swift"
+let fullString = "שלום, עולם!"
+let startIndex = fullString.index(fullString.startIndex, offsetBy: 6)
+let endIndex = fullString.index(fullString.startIndex, offsetBy: 10)
+let substring = fullString[startIndex...endIndex]
+
+print(substring) // תדפיס "עולם"
 ```
-הפלט הוא "Swift". סרגלים למטה מגדירים טווח החיצוב. 
 
-## צלילה עמוקה:
-השיטה הזו סביב מערך כמו של Swift הושפעה מ- Objective-C. האלטרנטיבות הפשוטות היו לחתוך את המחרוזת או אפילו להשתמש בספליט. פירוט על מנגנון החיצוב מכיל את האינדקסים והטווחים בתוך המחרוזת.
+או באמצעות `Range`:
 
-## ראו גם:
-עיין במקורות אלו למידע נוסף:
-1. מדריך Apple למחרוזות Swift: https://developer.apple.com/documentation/swift/string
-2. מידע נוסף על טווחים במחרוזות Swift: https://www.hackingwithswift.com/example-code/strings/how-to-split-a-string-into-an-array
+```Swift
+let range = fullString.range(of: "עולם")!
+let substring = fullString[range]
+
+print(substring) // תדפיס "עולם"
+```
+
+## צלילה לעומק:
+בעבר, בגרסאות קודמות של Swift, אנשים נעזרו במתודות NSString מ-Objective-C לחילוץ מחרוזות. עם הזמן, Swift הפכה ליעילה ומאפשרת עבודה ישירה עם מחרוזות באמצעות סינטקס מובנה שלה. השימוש בתת-מחרוזות ב-Swift מחזיר `Substring`, שהוא טיפוס שמשתמש בחלק מזיכרון המחרוזת המקורית ולכן הוא יעיל יותר מאשר ליצור מחרוזת חדשה.
+
+## ראה גם:
+- [דוקומנטציה הרשמית של Swift למחרוזות ותת-מחרוזות](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [מדריך ל-Ranges ב-Swift](https://www.avanderlee.com/swift/ranges-explained/)

@@ -1,6 +1,7 @@
 ---
 title:                "डीबग आउटपुट प्रिंट करना"
-html_title:           "Gleam: डीबग आउटपुट प्रिंट करना"
+date:                  2024-01-20T17:52:30.461482-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "डीबग आउटपुट प्रिंट करना"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,33 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-डीबग आउटपुट मुद्रित करना यह सुनिश्चित करता है कि कोड संचालन के दौरान क्या हो रहा है, ताकि प्रोग्रामर को समझ में आ सके। यह प्रोग्रामरों को कोड में त्रुटियां ढूंढने और उन्हें सुधारने में मदद करता है।
+डीबग आउटपुट प्रिंट करने का मतलब है कोड में जानकारी लॉग करना, जिससे बग्स और समस्याएं ढूँढना आसान हो जाता है। प्रोग्रामर्स इसे अपने कोड की जांच-पड़ताल के दौरान करते हैं ताकि प्रोग्राम सही ढंग से चल रहा है या नहीं ये जान सकें।
 
-## कैसे करें:
+## How to: (कैसे करें:)
 
 ```Elm
-import Debug exposing (toString)
+import Browser
+import Html exposing (text)
+import Debug
 
 main =
     let
-        output = "Hello, World!"
+        valueToCheck = "Hello, Elm!"
+        -- डीबग लाइन जोड़ें
+        _ = Debug.log "DebugOutput" valueToCheck
     in
-    Debug.log "Output: " output
+    -- सिंपल HTML पेज
+    Browser.sandbox { init = valueToCheck, update = \_ model -> model, view = text }
+
 ```
-उपरोक्त कोड, आउटपुट को कन्सोल में प्रिंट करेगा: `Output: Hello, World!`.
+सैंपल आउटपुट:
+```
+DebugOutput: "Hello, Elm!"
+```
 
-## गहराई से जानें:
+## Deep Dive (गहराई में जानकारी):
 
-1. ऐतिहासिक प्रासंगिकता: डीबग लाइब्रेरी ने एल्म की घोषणात्मक प्रकृति को समर्थन करने के लिए `println` फ़ंक्शन का प्रयोग किया। इसने डीबगगिंग के प्रक्रिया को सरल और त्रुटियों को खोजने में मदद की। 
+डीबगिंग की जड़ें प्रोग्रामिंग के शुरुआती दिनों से हैं। Elm में `Debug.log` फ़ंक्शन पुराने प्रिंट स्टेटमेंट्स का एक सुधारित रूप है। इसका इस्तेमाल करके आप वैल्यूज़ और फ़ंक्शन कॉल्स को कंसोल में लॉग कर सकते हैं जो डीबगिंग में बहुत मददगार होता है। वैकल्पिक रूप से, Elm 0.19 में `Debug.todo` और `Debug.toString` जैसे कुछ और टूल्स भी हैं, लेकिन याद रखें कि `Debug` मॉड्यूल को प्रोडक्शन कोड में इस्तेमाल करने की अनुमति नहीं है। बेस्ट प्रैक्टिस ये है कि डीबगिंग के बाद सारे `Debug` स्टेटमेंट्स को निकाल दिया जाए।
 
-2. विकल्प: अन्य प्रोग्रामिंग भाषाओं में यूज़ किए जाने वाले डीबग्गिंग टूल्स हैं `console.log()` (JavaScript), `print()` (Python), और `System.out.println()` (Java)। 
+## See Also (और भी जानकारी):
 
-4. क्रियान्वयन विवरण: डीबग लॉग का प्रयोग "ट्रांसफॉर्म" करने वाला फ़ंक्शन है जो आपके डाटा को स्ट्रिंग में बदल देता है, ऐसा इसलिए क्योंकि Elm केवल स्ट्रिंग्स को कन्सोल में प्रिंट कर सकता है।
-
-## इन्हें भी देखें:
-
-1. [Elm गाइड: डीबग लॉग](https://guide.elm-lang.org/interop/ports.html)
-2. [Stack Overflow: Elm में कन्सोल लॉग्गिंग कैसे करें](https://stackoverflow.com/questions/31428200/how-to-console-log-in-elm)
-3. [Elm डॉक्यूमेंटेशन: Debug](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- ऑनलाइन Elm कम्पाइलर: [Elm Online Compiler](https://elm-lang.org/try)
+- Elm पैकेज: Debug: [Elm Package - Debug](https://package.elm-lang.org/packages/elm/core/latest/Debug)

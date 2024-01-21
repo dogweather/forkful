@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon pituuden selvittäminen"
-html_title:           "Go: Merkkijonon pituuden selvittäminen"
+date:                  2024-01-20T17:48:58.534358-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,42 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mikä ja Miksi?)
+Selvitetään merkkijonon pituuden Rust-kielessä: se tarkoittaa siis merkkijonossa olevien merkkien määrän laskemista. Ohjelmoija tarvitsee tätä tietoa esimerkiksi syötteiden validointiin, tekstin käsittelyyn tai muistinvarauksiin.
 
-Merkkijonojen pituuden selvittämisessä on kyse merkkien lukumäärän laskemisesta jokaiselle merkkijonolle. Tämä on oleellista esimerkiksi silloin, kun halut järjestää tai verrata merkkijonoja, tai varmistaa, että ne mahtuvat tiettyyn tilaan.
-
-## Miten:
-
-Rustissa voit hakea merkkijonon pituuden `.len()` -metodilla. Tässä on esimerkki sen käytöstä:
-
+## How to: (Kuinka tehdä:)
 ```Rust
-fn main() {
-    let s = "Tervetuloa";
-    println!("{}", s.len());
-}
+// Ensin luodaan merkkijono
+let greeting = "Hei maailma!";
+
+// Sitten lasketaan sen pituus
+let length = greeting.chars().count();
+
+println!("Merkkijonon pituus on: {}", length);
+```
+Sample Output:
+```
+Merkkijonon pituus on: 12
 ```
 
-Tämä tuottaa tulosteen `11`, koska `"Tervetuloa"` sisältää 11 merkkiä.
+Merkkijonon `chars().count()` metodi jakaa merkkijonon yksittäisiksi merkeiksi ja laskee ne.
 
-## Syvempää tietoa:
+## Deep Dive (Syväsukellus)
+Rustissa merkkijonon pituuden selvittäminen ei aina ole suoraviivaista. Merkkijonon `.len()` metodi palauttaa tavujen määrän, ei merkkien. Tämä johtuu siitä, että Rust käyttää UTF-8 -koodausta, ja merkit voivat olla eri pituisia tavuja.
 
-Historiallinen viite: Rust-ohjelmointikielessä merkkijonot ovat UTF-8-koodattuja, joten merkkijonon pituus voidaan laskea nopeasti ottamatta huomioon monitavuisia merkkejä.
+Historiallisesti tämä on tärkeä ero, sillä aikaisemmin monissa kielissä oletettiin merkkien olevan aina saman pituisia. Rustissa `.chars().count()` metodi on oikea tapa saada itse merkkien määrä. Merkkijonojen `.chars()` metodi tuottaa iteraattorin, joka käy läpi merkkijonon yksittäiset Unicode-skaalauspisteet eli "char":it.
 
-Vaihtoehtoja: Rustissa on olemassa myös `.chars().count()` -tekniikka, joka laskee todelliset Unicode-skalaarit, mutta se on suhteellisen hidas
-```Rust
-fn main() {
-    let s = "こんにちは";
-    println!("{}", s.chars().count());
-}
-```
-Tämän esimerkin tulostus olisi `5`, koska jokainen merkki koostuu useista biteistä.
+Vaihtoehtoja `.chars().count()` metodille ovat esimerkiksi `.bytes().len()`, joka antaa raakatavujen lukumäärän, ja `.graphemes(true).count()` crate-kirjaston `unicode-segmentation` avulla, joka laskee grafeemit, eli näkyvät merkkikokonaisuudet. Grafeemien laskeminen on monimutkaisempaa, mutta tarjoaa tarkemman pituudennäkymän tietyissä tilanteissa.
 
-Merkkijonojen pituuden määrittäminen perustuu sisäisesti kapasiteetin ja aloituspisteen eron laskemiseen.
-
-## Katso myös:
-
-[Rust-ohjelmointidokumentaatio, String](https://doc.rust-lang.org/std/string/)
-
-[Rust by Example, Strings](https://doc.rust-lang.org/rust-by-example/std/str.html)
-
-[Rust-turvatyypit, String](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)
+## See Also (Katso myös)
+- Rust standardikirjaston dokumentaatio merkkijonoista: [https://doc.rust-lang.org/std/string/](https://doc.rust-lang.org/std/string/)

@@ -1,6 +1,7 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "Gleam: Завантаження веб-сторінки"
+date:                  2024-01-20T17:43:26.004664-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "C"
 category:             "C"
@@ -10,53 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та Навіщо?
+## What & Why? (Що та Чому?)
+Downloading a web page means fetching its HTML content via the internet. Programmers do this to interact with the web programmatically, either to scrape data, test APIs, or serve as part of a backend process.
 
-Завантаження веб-сторінки - це процес отримання даних, що представляють сторінку, з сервера. Ми, програмісти, робимо це, щоб обробляти та аналізувати зміст веб-сторінок автоматично.
-
-## Як це зробити:
-
-Ось приклад коду на С, що завантажує веб-сторінку і виводить вміст у консоль:
-
+## How to: (Як це зробити:)
 ```C
 #include <stdio.h>
 #include <curl/curl.h>
 
-size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
-    size_t written = fwrite(ptr, size, nmemb, stream);
-    return written;
+static size_t write_callback(void *contents, size_t size, size_t nmemb, void *userp) {
+    ((std::string*)userp)->append((char*)contents, size * nmemb);
+    return size * nmemb;
 }
 
 int main(void) {
     CURL *curl;
-    FILE *fp;
     CURLcode res;
-    char *url = "http://www.example.com";
-    char outfilename[FILENAME_MAX] = "page.html";
-    curl_global_init(CURL_GLOBAL_DEFAULT);
+    std::string readBuffer;
+
     curl = curl_easy_init();
-    if (curl) {
-        fp = fopen(outfilename,"wb");
-        curl_easy_setopt(curl, CURLOPT_URL, url);
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
-        res = curl_easy_perform(curl); 
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+        
+        res = curl_easy_perform(curl);
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+        } else {
+            printf("%s\n", readBuffer.c_str());
+        }
         curl_easy_cleanup(curl);
-        fclose(fp);
     }
     return 0;
 }
 ```
+Make sure to include `libcurl` in your project. The code performs a simple HTTP GET request to download a web page and prints it out.
 
-## Поглиблено:
+Sample output:
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
 
-Завантаження веб-сторінок існує практично стільки, скільки і сам Інтернет. Із часом появились альтернативні методи, як HTTP/2, HTTPS, та інші. Вищенаведений код використовує бібліотеку libcurl для обробки HTTP запитів. Вона подолає багато нюансів, що виникають під час ручного написання HTTP клієнта.
+## Deep Dive (Поглиблений Аналіз):
+Historically, downloading web content in C wasn't as straightforward as using higher-level languages. The libcurl library made it much easier, providing functions for various protocols like HTTP, HTTPS, FTP, etc. Alternatives to libcurl are socket programming (more complex, low-level control) and using other libraries like POCO or Boost.Asio (not as commonly used as libcurl). When implementing a web page downloader, consider error handling, redirects, timeouts, and proper memory management to avoid leaks.
 
-## Дивіться також:
-
-Для більш детальної інформації про libcurl дивіться офіційну документацію: https://curl.haxx.se/libcurl/c/
-
-Можете прочитати і про інші бібліотеки для завантаження веб-сторінок:
-- POCO C++ Libraries: https://pocoproject.org/docs/Poco.Net.HTTPClientSession.html
-- Boost Asio (для C++): https://think-async.com/Asio/
-- WinINet (Windows API): https://docs.microsoft.com/en-us/windows/win32/wininet/about-wininet
+## See Also (Дивіться також):
+- [libcurl](https://curl.se/libcurl/)
+- [HTTP Made Really Easy](http://www.jmarshall.com/easy/http/)
+- [Curl tutorial for C/C++ programmers](http://www.cplusplus.com/reference/string/string/c_str/)
+- [Socket Programming in C/C++](https://www.geeksforgeeks.org/socket-programming-cc/)

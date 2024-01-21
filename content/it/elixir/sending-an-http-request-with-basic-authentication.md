@@ -1,6 +1,7 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "Bash: Inviare una richiesta http con autenticazione di base"
+date:                  2024-01-20T18:01:25.080218-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,62 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Invio di una richiesta HTTP con autenticazione di base in Elixir
-
 ## Cosa & Perché?
-
-L'invio di una richiesta HTTP con autenticazione di base è un'operazione che permette a un programma di comunicare su internet in modo sicuro. I programmatori lo fanno per interagire con le API protette e per gestire i dati web.
+Inviare una richiesta HTTP con autenticazione di base significa includere le credenziali di accesso (username e password) nell'header HTTP per accedere a risorse protette. I programmatori lo fanno quando devono interagire con API o servizi web che richiedono autenticazione per garantire protezione e controllo degli accessi.
 
 ## Come fare:
-
-In Elixir, usiamo la libreria HTTPoison. Aggiungi HTTPoison alla tua lista di dipendenze nel tuo `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:httpoison, "~> 1.8"}
-  ]
-end
-```
-
-Poi esegui `mix deps.get` nel terminale per scaricare HTTPoison. Una volta che ti sei assicurato di averlo, ecco come inviare una richiesta GET con l'autenticazione di base:
+Elixir usa la libreria `HTTPoison` per fare richieste HTTP con autenticazione di base in modo semplice. Installa prima la libreria aggiungendo `{:httpoison, "~> 1.8"}` al tuo `mix.exs` e poi esegui `mix deps.get`. Ecco un esempio di come usarla:
 
 ```elixir
-defmodule MyModule do
-  require HTTPoison
+defmodule HTTPExample do
+  def send_basic_auth_request do
+    url = "https://example.com/protected/resource"
+    username = "user"
+    password = "pass"
+    options = [basic_auth: {username, password}]
 
-  def get_my_data do
-    url = "http://example.com"
-    headers = ["Authorization": "Basic " <> :base64.encode_to_string("user:pass")]
-    HTTPoison.get(url, headers)
+    HTTPoison.get(url, [], options)
   end
 end
+
+# Uso della funzione
+{:ok, response} = HTTPExample.send_basic_auth_request()
+
+IO.inspect response.status_code  # Potrebbe stampare: 200
+IO.inspect response.body        # Il corpo della risposta (se l'autenticazione è andata a buon fine)
 ```
 
-La risposta sarà qualcosa del genere:
+## Approfondimento
+L'autenticazione di base HTTP ha origini negli albori del web (RFC 7617) per proteggere risorse web senza dover implementare sistemi complessi. Non è la scelta migliore per la sicurezza moderna dato che le credenziali viaggiano codificate in base64 e non criptate. Alternativamente, si può usare l'autenticazione Digest o OAuth per maggiore sicurezza. Riguardo all'implementazione in Elixir, HTTPoison è un comodo wrapper intorno a `hackney`, che gestisce la connessione e la codifica delle richieste HTTP.
 
-```elixir
-{:ok,
- %HTTPoison.Response{
-   body: "[...]",
-   headers: [...],
-   request: %HTTPoison.Request{...},
-   request_url: "http://example.com",
-   status_code: 200
- }}
-```
-
-## Approfondimento:
-
-L'autenticazione di base HTTP è stato introdotto per la prima volta nel RFC 761 nel 1980, ma poiché trasporta le credenziali come testo non cifrato (base64 non è una cifratura), non è consigliato per i protocolli HTTP non crittografati.
-
-Come alternativa, puoi usare l'autenticazione digest o il token JWT.
-
-In HTTPoison, l'header "Authorization" contiene la parola "Basic" seguita da una stringa codificata in base64 del formato "username:password". Keep-alive e l'uso di pool di connessioni vengono gestiti automaticamente da Hackney, la libreria sottostante.
-
-## Guarda Anche:
-
-- Documentazione di HTTPoison: https://hexdocs.pm/httpoison/readme.html
-- Ulteriori dettagli sull'autenticazione di base: https://tools.ietf.org/html/rfc7617
-- Una guida alla crittografia base64: https://www.base64encode.org/ 
-- Hackney: https://github.com/benoitc/hackney
+## Vedi anche
+- HTTPoison GitHub: https://github.com/edgurgel/httpoison
+- Hackney library GitHub: https://github.com/benoitc/hackney
+- Specifiche RFC 7617 per l'autenticazione di base HTTP: https://tools.ietf.org/html/rfc7617

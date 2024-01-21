@@ -1,6 +1,7 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "Bash: Inviare una richiesta http con autenticazione di base"
+date:                  2024-01-20T18:01:23.725371-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,40 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-L'invio di una richiesta HTTP con autenticazione di base prevede l’invio di username e password codificati in base64 contenuti nell’header della richiesta HTTP. Questo metodo è utilizzato da programmatori per proteggere l'accesso alle risorse web.
+## What & Why? - Cosa e Perché?
+Inviare una richiesta HTTP con autenticazione di base significa passare username e password per accedere a risorse protette. I programmatori lo fanno per interagire con API che richiedono queste credenziali per l'accesso.
 
-## Come Fare:
-Ecco un esempio di codice in Elm per inviare una richiesta HTTP con autenticazione di base:
-
+## How to - Come fare:
 ```Elm
 import Http
-import Http.Headers as Headers
+import Base64
 
-username = "username"
-password = "password"
-url = "http://example.com"
+type alias Model =
+    { response : String }
 
-auth = "Basic " ++ (Base64.encode (username ++ ":" ++ password))
+type Msg
+    = GotData (Result Http.Error String)
 
-request =
+basicAuth : String -> String -> List Http.Header
+basicAuth username password =
+    let
+        encodedCredentials =
+            Base64.encode (username ++ ":" ++ password)
+    in
+    [ Http.header "Authorization" ("Basic " ++ encodedCredentials) ]
+
+sendRequest : Cmd Msg
+sendRequest =
     Http.get
-        { url = url
-        , headers = [ Headers.authorization auth ]
+        { url = "https://your-api/endpoint"
+        , headers = basicAuth "yourUsername" "yourPassword"
+        , expect = Http.expectString GotData
         }
 
-Http.send HandleResponse request
+update : Msg -> Model -> ( Model, Cmd Msg )
+update message model =
+    case message of
+        GotData (Ok data) ->
+            ( { model | response = data }, Cmd.none )
+
+        GotData (Err _) ->
+            ( { model | response = "Failed to fetch data." }, Cmd.none )
+
+-- Include the rest of your Elm module implementation here.
+-- Remember to initialize the model and start the application.
 ```
 
-Dopo l'esecuzione del codice di cui sopra, la richiesta invierà un `authorization` header con valore `Basic <codice_base64>`.
+Output dopo una request riuscita:
+```
+{ response = "Dati Riservati Qui." }
+```
 
-## Approfondimenti
-L’autenticazione di base HTTP è un metodo standard di invio di credenziali utente. Tuttavia, è nato quando la sicurezza informatica non era una preoccupazione primaria come lo è oggi. Non codifica le credenziali, ma le codifica solo in codice base64, il che significa che qualcuno con accesso alla rete potrebbe decifrare facilmente username e password.
+Output dopo un errore:
+```
+{ response = "Failed to fetch data." }
+```
 
-Come alternativa, potrebbe essere utilizzata l’autenticazione a token, l'autenticazione digest o l'autenticazione OAuth, in particolare nelle applicazioni moderne, per aumentare la sicurezza.
+## Deep Dive - Immersione Profonda
+L'autenticazione di base HTTP è uno dei modi più semplici per controllare l'accesso alle risorse web. Inventata ben presto nella storia del web, è tuttora largamente usata nonostante sia meno sicura di altri metodi, poiché le credenziali sono codificate in Base64 ma non criptate. E' importante trasmettere queste richieste esclusivamente su HTTPS.
 
-Una cosa da notare su questo esempio è che stiamo utilizzando il modulo Http.Headers per impostare l'header della richiesta. Questo header "Authorization" è un header standard HTTP e il valore "Basic <codice_base64>" è solo uno dei pochi metodi di autenticazione che un server può scegliere di supportare.
+Alternative all'autenticazione di base includono OAuth, che fornisce token di accesso invece di username e password, e l'autenticazione tramite API key.
 
-## Guardate Anche
-- Documentazione sul modulo Http di Elm [qui](https://package.elm-lang.org/packages/elm/http/latest/)
-- La documentazione ufficiale sulle richieste HTTP con autenticazione di base [qui](https://tools.ietf.org/html/rfc7617).
+Nell'esempio di Elm sopra, `basicAuth` costruisce un'intestazione che incapsula le credenziali codificate in Base64. `Http.get` effettua la richiesta con l'intestazione e aspetta una stringa come risposta. La gestione dell’aggiornamento del modello in base al risultato della richiesta avviene nella funzione `update`.
+
+## See Also - Vedi Anche
+- Documentazione Elm su HTTP: [Elm HTTP](https://package.elm-lang.org/packages/elm/http/latest/)
+- Tutorial di Base64 in Elm: [Elm Base64](https://package.elm-lang.org/packages/truqu/elm-base64/latest/)
+- Introduzione all'autenticazione OAuth: [OAuth](https://oauth.net/2/)

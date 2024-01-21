@@ -1,5 +1,7 @@
 ---
 title:                "Berechnung eines zukünftigen oder vergangenen Datums"
+date:                  2024-01-20T17:28:32.420577-07:00
+model:                 gpt-4-1106-preview
 html_title:           "Elixir: Berechnung eines zukünftigen oder vergangenen Datums"
 simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
 programming_language: "Elixir"
@@ -12,46 +14,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Berechnung eines zukünftigen oder vergangenen Datums ist eine gängige Programmieroperation. Diese Operation ist nützlich, um Berechnungen wie Fristen, Verzögerungen oder Ereignisdaten durchzuführen.
+Datumskalkulation in der Zukunft oder Vergangenheit bedeutet, ein bestimmtes Date aus einem Startdatum zu berechnen, indem Tage, Wochen oder Jahre hinzugefügt oder abgezogen werden. Programmierer nutzen das häufig für Features wie Terminplaner, Ablauf-Erinnerungen oder Archivierungssysteme.
 
-## So Geht's:
+## How to:
 
-In Elixir gibt es eine wunderbare Bibliothek namens `Timex`, die Ihre Vorgaben erfüllen kann. 
+Elixir macht Datumskalkulation einfach mit dem `Date` Modul. Hier ist, wie du es machst:
 
-Zuerst müssen Sie es zu Ihrer App hinzufügen:
-```Elixir
-def deps do
-  [
-    {:timex, "~> 3.6"}
-  ]
-end
+```elixir
+# Aktuelles Datum
+aktuelles_datum = Date.utc_today()
+
+# Datum in 10 Tagen
+zukunft_datum = Date.add(aktuelles_datum, 10)
+IO.puts(zukunft_datum)
+
+# Datum vor 5 Tagen
+vergangenheit_datum = Date.add(aktuelles_datum, -5)
+IO.puts(vergangenheit_datum)
+```
+Beispiel Output:
+```
+2024-04-10
+2024-03-26
 ```
 
-Für die Berechnung eines zukünftigen Datums könnten Sie das folgende tun:
-```Elixir
-iex> duration = Timex.Duration.from_days(3)
-iex> future_date = Timex.shift(Timex.now(), days: duration)
-iex> Timex.to_date(future_date)
-~D[2021-12-19]
+Benutze `NaiveDateTime.add/4`, wenn du auch Zeit berücksichtigen möchtest:
+
+```elixir
+aktuelle_zeit = NaiveDateTime.utc_now()
+
+# 1000 Sekunden in die Zukunft
+zukunft_zeit = NaiveDateTime.add(aktuelle_zeit, 1_000)
+IO.puts(zukunft_zeit)
+
+# 3600 Sekunden (1 Stunde) in der Vergangenheit
+vergangenheit_zeit = NaiveDateTime.add(aktuelle_zeit, -3_600)
+IO.puts(vergangenheit_zeit)
 ```
 
-Und für ein Datum in der Vergangenheit:
-```Elixir
-iex> duration = Timex.Duration.from_days(3)
-iex> past_date = Timex.shift(Timex.now(), days: -duration)
-iex> Timex.to_date(past_date)
-~D[2021-12-13]
-```
+## Deep Dive:
 
-## Tief Tauchen:
+Die Datumsberechnung gab es schon in frühen Programmiersprachen. In Elixir macht es das eingebaute `Date` Modul leicht. Für komplexere Berechnungen gibt es Third-Party Libraries wie `Timex`, die zusätzliche Funktionalitäten bieten. Wichtig ist die Zeitzone – `Date` rechnet ohne Zeitzonen, während `DateTime` und `NaiveDateTime` UTC verwenden. Zeitberechnung ist wegen Schaltsekunden und Zeitumstellungen komplex. Deshalb sollten Operationen auf Daten und Zeiten vermieden werden, die ohne den Kontext der Zeitzone stattfinden.
 
-Historisch betrachtet, wurde dies schon immer anders in den verschiedenen Programmiersprachen gemacht. In Elixir haben Sie das Glück, dass mit `Erlang/OTP 21` und höher natives Zeit-Tracking eingeführt wurde, was den Umgang mit Datum und Zeit erheblich vereinfacht hat.
+## See Also:
 
-Alternativen zu `Timex` sind `Calendar` und `Ecto.DateTime`. `Timex` wird jedoch allgemein als die vollständigste und flexibelste Option angesehen. 
-
-Die Implementierungsdetails für das Berechnen von Daten in der Zukunft oder Vergangenheit sind eigentlich recht einfach, das schwierige Teil ist genau zu definieren, was "3 Tage später" bedeutet. Es könnte 3 * 24 Stunden später bedeuten, es könnte am selben Ort der nächsten Tage bedeuten, abhängig von den Anforderungen.
-
-## Siehe Auch:
-
-- ["NaiveDateTime" in Elixir-Dokumentation](https://hexdocs.pm/elixir/NaiveDateTime.html)
-- ["Calendar" in Elixir-Dokumentation](https://hexdocs.pm/calendar/readme.html)
+- [Elixir's Date module](https://hexdocs.pm/elixir/Date.html)
+- [Elixir's NaiveDateTime module](https://hexdocs.pm/elixir/NaiveDateTime.html)

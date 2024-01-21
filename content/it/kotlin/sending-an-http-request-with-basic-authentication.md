@@ -1,6 +1,7 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "Bash: Inviare una richiesta http con autenticazione di base"
+date:                  2024-01-20T18:02:14.407826-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,34 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e Perché? 
-Inviare una richiesta HTTP con autenticazione di base è un metodo che permette l'accesso ad un servizio web collezionando username e password del client. I programmatori lo fanno per garantire la sicurezza, prevenire accessi non autorizzati alle risorse web.
+## What & Why?
+Inviare una richiesta HTTP con autenticazione di base significa inserire username e password per accedere a risorse protette su un server. I programmatori usano questo metodo per interagire con API che richiedono un livello di sicurezza.
 
-## Come fare: 
+## How to:
+In Kotlin, possiamo utilizzare `HttpURLConnection` per inviare richieste HTTP con autenticazione di base.
 
-Utilizziamo la libreria Fuel di Kotlin per inviare una richiesta HTTP. 
+```kotlin
+import java.net.HttpURLConnection
+import java.net.URL
+import java.util.Base64
 
-```Kotlin
-import com.github.kittinunf.fuel.httpGet
+fun main() {
+    val url = URL("http://tuo.server.com/api")
+    val username = "tuonomeutente"
+    val password = "tuapassword"
 
-val username = "username"
-val password = "password"
+    with(url.openConnection() as HttpURLConnection) {
+        val creds = "$username:$password"
+        val auth = Base64.getEncoder().encodeToString(creds.toByteArray())
+        setRequestProperty("Authorization", "Basic $auth")
 
-val httpAsync = "$YOUR_URL"
-    .httpGet()
-    .authenticate(username, password)
-    .response() { request, response, result -> }
+        println("Response Code: $responseCode")
+        println("Response Message: $responseMessage")
+    }
+}
 ```
-Qui, `httpGet()` è il metodo che invia la richiesta HTTP. `authenticate(username, password)` consente l'autenticazione di base.
+Output potrebbe essere simile a:
 
-## Approfondimento:
+```
+Response Code: 200
+Response Message: OK
+```
 
-L'autenticazione di base HTTP è uno dei metodi più antichi utilizzato per fornire controllo di accesso ai servizi web. Tuttavia, poiché le credenziali non sono crittografate, non è l'opzione più sicura. Un'alternativa migliore potrebbe essere l'autenticazione 'Bearer', in cui un token di sicurezza viene inviato come parte dell'intestazione HTTP.
+## Deep Dive
+L'autenticazione di base HTTP è uno dei metodi più semplici: codifica username e password in Base64 e le inserisce nell'header della richiesta HTTP. Nato negli anni '90, non è il più sicuro perché può essere facilmente decodificato. Alternative moderne includono OAuth e JWT che forniscono maggiore sicurezza attraverso token.
 
-Sull'autenticazione di base, le credenziali dell'utente sono inoltrate con ogni richiesta HTTP, aumentando il rischio di intercettazione non sicura. Quindi, dovrebbe essere utilizzato solo su connessioni sicure come HTTPS.
+`HttpURLConnection` è parte del JDK standard, ma librerìe come OkHttp o Retrofit rendono la codifica meno verbosa e più gestibile. Ecco un esempio con OkHttp:
 
-## Vedi anche:
+```kotlin
+val client = OkHttpClient()
+val credentials = Credentials.basic("username", "password")
+val request = Request.Builder()
+    .url("http://your.server.com/api")
+    .header("Authorization", credentials)
+    .build()
 
-- Leggi di più sull'[autenticazione di base HTTP](https://developer.mozilla.org/it/docs/Web/HTTP/Authentication)
-- Per ulteriori dettagli sulla [libreria Fuel di Kotlin](https://fuel.gitbook.io/documentation/).
-Presta attenzione alla [sicurezza delle tue applicazioni web](https://www.owasp.org/index.php/Top_10-2017_Top_10).
+client.newCall(request).execute().use { response ->
+    println(response.code)
+    println(response.message)
+}
+```
+
+## See Also
+- [RFC 7617 'The 'Basic' HTTP Authentication Scheme'](https://tools.ietf.org/html/rfc7617)
+- [OkHttp Library](https://square.github.io/okhttp/)
+- [Retrofit Library by Square](https://square.github.io/retrofit/)

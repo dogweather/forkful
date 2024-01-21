@@ -1,6 +1,7 @@
 ---
 title:                "Concatenando strings"
-html_title:           "Elixir: Concatenando strings"
+date:                  2024-01-20T17:34:20.437638-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Concatenando strings"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,40 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-
-Concatenar strings significa unir duas ou mais strings em uma só. Programadores usam isso para criar mensagens personalizadas, formatar saídas de dados e para o processo de manipulação de strings.
+## O que é & Por quê?
+Concatenar strings significa juntar duas ou mais sequências de caracteres para formar uma nova. Programadores fazem isso para construir mensagens, combinar dados e manipular texto de maneira dinâmica.
 
 ## Como fazer:
-
-Em Clojure, a função `str` é principalmente usada para concatenar strings. Aqui está um exemplo:
-
-```Clojure
-(str "Olá, " "mundo!") ;; Reúne "Olá, " e "mundo!" em uma única string.
-```
-
-A saída será:
-
-`Olá, mundo!`
-
-Você pode concatenar quantas strings quiser.
+Concatenar strings no Clojure é direto, graças à função `str`. Veja só:
 
 ```Clojure
-(str "Eu " "estou " "programando " "em " "Clojure.") ;; Reúne todas as strings em uma única string.
+;; Concatenando duas strings simples
+(str "Olá, " "mundo!")
+;; => "Olá, mundo!"
+
+;; Concatenando múltiplas strings
+(str "Clojure " "é " "elegante!")
+;; => "Clojure é elegante!"
+
+;; Juntando strings com números (e qualquer outro tipo)
+(str "A resposta é: " 42)
+;; => "A resposta é: 42"
 ```
 
-A saída será:
+Se você tem uma coleção de strings, use a função `join` da biblioteca `clojure.string`:
 
-`Eu estou programando em Clojure.`
+```Clojure
+(require '[clojure.string :as str])
+
+;; Usando join para concatenar com um separador
+(str/join ", " ["Clojure" "Scala" "Haskell"])
+;; => "Clojure, Scala, Haskell"
+```
 
 ## Aprofundando
+Concatenar strings é algo tão básico quanto pode ser na computação; está por aí desde os primórdios das linguagens de programação. Em Clojure, essa operação é super eficiente, porque Clojure é construída em cima da JVM (Java Virtual Machine), que é otimizada para operações com strings.
 
-A função `str` foi incluída no Clojure desde a primeira versão, proporcionando uma forma simples e eficaz de concatenar strings. Há também alternativas como `format` ou `clojure.string/join`, que são usadas para formatos mais complexos ou quando há uma lista de strings que precisam ser unidas.
+Alternativamente, pode-se usar a função `format` quando você precisa de mais controle sobre a formatação:
 
-Os detalhes de implementação subjacentes da concatenação de strings diferem entre as linguagens de programação. Em linguagens como Java e Clojure, que são de tipo imutável, a concatenação resulta em novas strings alocadas, enquanto outras linguagens podem permitir a modificação no lugar.
+```Clojure
+(format "O nome é %s e a idade é %d" "João" 30)
+;; => "O nome é João e a idade é 30"
+```
 
-## Veja Também
+Outra coisa a saber é que, em Clojure, strings são imutáveis. Concatenar strings na verdade cria uma nova string a partir das existentes, sem modificar as originais.
 
-Confira a documentação oficial do Clojure sobre funções de string para um entendimento mais aprofundado: [Clojure String API](https://clojure.github.io/clojure/clojure.string-api.html)
-
-Este post do blog explica mais sobre a manipulação de strings em Clojure: [Manipulating Strings in Clojure](http://blog.jayfields.com/2010/07/clojure-text-manipulation.html)
+## Veja também
+- Documentação oficial do Clojure sobre strings: [Clojure Strings](https://clojuredocs.org/clojure.core/str)

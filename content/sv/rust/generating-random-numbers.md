@@ -1,7 +1,8 @@
 ---
-title:                "Generera slumpmässiga nummer"
-html_title:           "Arduino: Generera slumpmässiga nummer"
-simple_title:         "Generera slumpmässiga nummer"
+title:                "Generera slumpmässiga tal"
+date:                  2024-01-20T17:50:03.639568-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generera slumpmässiga tal"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Numbers"
@@ -11,35 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att generera slumptal innebär att skapa tal som inte visar något mönster i deras uppkomst, de är oförutsägbara. Programmerare använder slumptal för allt från spelutveckling till kryptografi.
 
-Generera slumpmässiga nummer handlar om att producera nummer som är oförutsägbara och icke-repetitiva. Programmerare genererar slumpmässiga tal för att simulera data, åstadkomma unika ID:er, eller för att skapa varierade resultat i spel och simuleringar.
+## Hur gör man:
+Rust använder `rand`-cratet för slumptalsgenerering. Installera först `rand` genom att lägga till det i ditt `Cargo.toml`:
 
-## Hur man gör:
+```toml
+[dependencies]
+rand = "0.8"
+```
 
-För att generera ett slumpmässigt heltal i Rust, kan vi använda `rand::Rng` trait och `rand::thread_rng()` funktionen. Se exemplet nedan.
+Sedan är det bara att börja. Här är hur du skapar ett enkelt program som genererar ett random hel- och flyttal:
 
-```Rust
-extern crate rand;
-use rand::Rng;
+```rust
+use rand::{Rng, thread_rng};
 
 fn main() {
-    let mut rng = rand::thread_rng();
-    let numb: i32 = rng.gen();
-    println!("Random number: {}", numb);
+    let mut rng = thread_rng();
+    
+    // Slumpmässigt heltal mellan 1 och 10
+    let random_int: i32 = rng.gen_range(1..=10);
+    println!("Slumpmässigt heltal: {}", random_int);
+
+    // Slumpmässigt flyttal mellan 0.0 och 1.0
+    let random_float: f64 = rng.gen();
+    println!("Slumpmässigt flyttal: {}", random_float);
 }
 ```
-Kör det här programmet och du kommer bot få ett slumpmässigt nummer.
 
-## Fördjupa sig:
+Kör programmet flera gånger för att se olika resultat.
 
-Historiskt sätt, att generera slumpmässiga tal i programmering var faktiskt svårt på grund av datorernas deterministiska natur. Metoder för att skapa dessa "slumpmässiga" nummer inkluderade användning av tidpunkter (som det nuvarande tid och datum), tangenttryckningar eller musrörelser.
+## Deep Dive
+Historiskt sett har datorer haft problem med att skapa verkligt slumptal eftersom de är deterministiska maskiner. För att lösa detta använder programmerare algoritmer för pseudoslumptalsgeneratorer (PRNGs) som `rand`-cratet förlitar sig på.
 
-Rust ger oss alternativen `rand::thread_rng()` och `rand::random()` för att generera slumpmässiga nummer. `rand::thread_rng()` är en trådsäker generator som är lokal till den nuvarande tråden. `rand::random()` är ett enkelt sätt att producera ett slumpmässigt tal, men det har inte trådsäkerhet.
+Andra alternativ inkluderar att använda `std::rand`-modulen i Rust, men den är markerad som föråldrad till förmån för `rand`-cratet. För kryptografiskt säkra slumptal, använd `rand::rngs::OsRng`.
 
-Implementationen av slumpmässig nummergenerering i Rust är baserat på en algoritmen Xorshift RNGs. Detta är en klass av pseudoslumpmässiga nummergeneratorer som har fördelen av att vara snabb och att använda liten mängd minne.
+Slumptalsgenererarna i Rust drar nytta av perioder - tider innan de upprepar serier av tal. Även om PRNGs inte är verkligt slumpmässiga, räcker de för de flesta användningsfall om deras period är tillräckligt lång.
 
-## Se även:
-
-För mer detaljer och guider om antalet generering och programmering i Rust, se följande resurser:
-
-- [Wikipedia: Slumpmässiga Nummer Generering](https://en.wikipedia.org/wiki/Random_number_generation)
+## Se även
+- `rand` crate documentation: https://docs.rs/rand/
+- Rust's bokkapitel om slumptal: https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html
+- Wikipedia om pseudoslumptalsgeneratorer: https://sv.wikipedia.org/wiki/Pseudoslumptalsgenerator

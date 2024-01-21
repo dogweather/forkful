@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie argumentów linii poleceń"
-html_title:           "Bash: Czytanie argumentów linii poleceń"
-simple_title:         "Czytanie argumentów linii poleceń"
+title:                "Odczytywanie argumentów linii poleceń"
+date:                  2024-01-20T17:56:23.750393-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie argumentów linii poleceń"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,43 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Czytanie argumentów z linii poleceń pozwala naszym skryptom Lua na interakcję z użytkownikiem lub innymi programami poprzez parametry uruchomieniowe. Programiści wykorzystują tę technikę, by skrypty były elastyczne i mogły dostosować swoje działanie w zależności od potrzeb.
 
-Czytanie argumentów linii poleceń to proces, w którym program interpretuje dane wprowadzane do niego za pomocą interfejsu wiersza poleceń. Programiści robią to, aby umożliwić użytkownikom modyfikowanie działania programu na podstawie podanych argumentów.
-
-## Jak to zrobić:
-
-Przykład czytania argumentów linii poleceń w języku Lua.
-
-Parametry przekazane do programu Lua są dostępne przez globalną tablicę o nazwie `arg`. 
-
-Skrypt Lua:
+## How to: (Jak to zrobić:)
+Oto jak łatwo przeczytać argumenty z linii poleceń w Lua:
 
 ```Lua
-for i = 0, #arg do
-  print("Argument", i, "=", arg[i])
+-- save as script.lua
+for index, value in ipairs(arg) do
+    print("Argument", index, ":", value)
 end
 ```
 
-Przykładowy wynik dla polecenia `lua script.lua test1 test2`:
-
-```Lua
-Argument 0 = script.lua
-Argument 1 = test1
-Argument 2 = test2
+Uruchom skrypt, przekazując argumenty:
+```
+$ lua script.lua hello world
 ```
 
-## Pogłębiona analiza
+Wynik:
+```
+Argument 1 : hello
+Argument 2 : world
+```
 
-Początkowo, w Lua 5.0, argumenty linii poleceń nie były dostępne bezpośrednio - można było je uzyskać tylko za pomocą `arg`. Dopiero w Lua 5.1 wprowadzono globalną tablicę `arg`.
+## Deep Dive (Dogłębna analiza)
+W przeszłości Lua używała globalnej tablicy `arg` do przechowywania argumentów linii poleceń, i nadal tak jest. W Lua 5.0 `arg` stał się oficjalny. Tablica zawiera indeksy od -n do n, gdzie 0 to ścieżka do skryptu, a pozostałe indekty odnoszą się do kolejnych argumentów. Alternatywą może być użycie `...` w skryptach i wtedy informacje o argumentach przekazywane są jako pojedyncze wartości, co jest użyteczne w funkcjach. Co do implementacji, ważne jest, aby pamiętać, że pierwszy argument (pod indeksem 1) to pierwszy argument po nazwie skryptu, a nie sama nazwa skryptu (ta jest pod indeksem 0).
 
-Jeżeli chodzi o alternatywy, są inne języki programowania, które obsługują argumenty linii poleceń, takie jak Python, C++ i Java. W tych językach stosuje się różne podejścia, od prostych tablic (jak w C++) do bardziej zaawansowanych narzędzi, takich jak parsowanie argumentów w Pythonie.
-
-Jeżeli chodzi o szczegóły implementacji, tablica `arg` zawiera nie tylko argumenty linii poleceń, ale także pewne dodatkowe wartości. `arg[-1]` to interpreter Lua, `arg[0]` to nazwa skryptu, a `arg[n]` to reszta argumentów.
-
-## Zobacz także
-
-Poniżej jest kilka linków do dodatkowych zasobów dotyczących czytania argumentów linii poleceń:
-
-1. [Dokumentacja Lua gdzie opisana jest tablica `arg`](http://www.lua.org/manual/5.4/manual.html#pdf-arg)
-3. [Poradnik jak przerabiać argumenty linii poleceń w Pythonie](https://docs.python.org/3/howto/argparse.html)
+## See Also (Zobacz także)
+- [Oficjalna dokumentacja Lua](http://www.lua.org/manual/5.4/manual.html#6.1)
+- [Stack Overflow: Przekazywanie argumentów do skryptu Lua](https://stackoverflow.com/questions/4537269/how-to-interpret-parameters-passed-to-lua-script)

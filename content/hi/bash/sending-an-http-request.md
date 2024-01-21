@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T17:59:05.381085-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,32 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-HTTP से अनुरोध भेजना एक तरीका है किसी वेबसर्वर से डाटा लेने का। यह उस स्थिति में उपयोगी होता है जब प्रोग्रामर्स को बाहरी API से डाटा चाहिए, जैसे हमारी वेबसाइट में किसी अन्य स्रोत से जानकारी प्रदर्शित करना।
+## What & Why? (क्या और क्यों?)
 
-## कैसे करें:
-Bash प्रोग्रामिंग में, `curl` आदेश हमें HTTP प्रार्थनाओं को भेजने में मदद करता है। उदाहरण के लिए:
+HTTP अनुरोध भेजना वेब सर्वर से सूचना मांगना है। प्रोग्रामर इसे डेटा पाने, वेब सर्विसेज के साथ बातचीत करने और APIs का उपयोग करने के लिए करते हैं।
 
-```Bash
-# GET अनुरोध
-curl https://api.github.com/users/octocat
-```
+## How to: (कैसे करें:)
 
-इसका परिणाम कुछ इस तरह का होगा: 
+आइए `curl` कमांड का इस्तेमाल करके एक HTTP GET अनुरोध भेजते हैं:
 
 ```Bash
-{
-  "login": "octocat",
-  "id": 583231,
-  ...
-}
+# HTTP GET अनुरोध
+curl https://api.example.com/data
+
+# उदाहरण आउटपुट
+{"name":"Example","description":"A sample response from the API."}
 ```
-## गहरा डाइव
-Bash का उपयोग प्राधिकरण, प्राप्ति, और डाटा प्रसंस्करण के लिए वेब समस्याओं का समाधान करने के लिए किया जाता है। `curl` १९९६ से उपलब्ध है और यह POSIX से सुसंगत शेल भाषा है। 
 
-Bash के विकल्प में Python, Node.js, और Ruby शामिल हैं, जो अधिक मोडर्न और फंक्शनलिटी की दृष्टि से शक्तिशाली होते हैं। आप `requests` (Python), `axios` (JavaScript), और `net::http` (Ruby) का उपयोग करके HTTP अनुरोध भेज सकते हैं।
+अब POST अनुरोध प्रयोग करते हैं:
 
-## अन्य स्रोत देखें
-1. [`curl` में HTTP अनुरोधों को भेजने के बारे में अधिक जानकारी के लिए](https://linuxize.com/post/curl-command-examples/)
-2. [HTTP प्रार्थनाओं के बारे में अधिक जानने के लिए](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
-3. [Python, Node.js, और Ruby में HTTP अनुरोधों को भेजने पर विस्तृत मार्गदर्शिका](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/)
+```Bash
+# HTTP POST अनुरोध
+curl -d "param1=value1&param2=value2" -X POST https://api.example.com/data
+
+# उदाहरण आउटपुट
+{"status":"success","message":"Data was posted successfully."}
+```
+
+## Deep Dive (गहराई में जानकारी)
+
+HTTP अनुरोध 1990 के दशक से वेब का आधार हैं। `curl` से पहले, Telnet या कस्टम स्क्रिप्ट्स का इस्तेमाल होता था। `wget`, `httpie` जैसे अल्टरनेटिव्स भी मौजूद हैं, लेकिन `curl` इसकी सादगी और व्यापकता के लिए प्रसिद्ध है। `curl` में अनुरोध मेथड, हेडर्स और डेटा को कस्टमाइज़ करने की क्षमता होती है, जो डेवलपर्स को परिष्कृत HTTP अनुरोध भेजने की अनुमति देती है।
+
+## See Also (और जानकारी के लिए)
+
+- `curl` मैनुअल: https://curl.se/docs/manpage.html
+- HTTPie (एक विकल्प): https://httpie.io/
+- `wget`: https://www.gnu.org/software/wget/manual/wget.html

@@ -1,6 +1,7 @@
 ---
 title:                "दो तारीखों की तुलना"
-html_title:           "Elixir: दो तारीखों की तुलना"
+date:                  2024-01-20T17:33:19.187659-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "दो तारीखों की तुलना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,43 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+तारीखों की तुलना का मतलब है दो डेट्स को आपस में मिलाना। प्रोग्रामर अक्सर इसका इस्तेमाल करते हैं टाइमलाइन्स मैनेज करने, सॉर्टिंग के लिए, या डेडलाइंस चेक करने में।
 
-तारीखों की तुलना करना उन दोनों के बीते समय का तुलनात्मक मूल्यांकन होता है। प्रोग्रामर्स ऐसा करते हैं ताकि वे ज्ञात कर सके कि किसी कार्य को पूरा करने में कितना समय लगा या फिर किसी घटना को कितना समय हो गया।
+## How to: (कैसे करें)
+Fish Shell में दो तारीखों की तुलना करने के लिए हमें उन्हें UNIX टाइमस्टैम्प में बदलना होगा। यहाँ एक सिंपल मेथड है:
 
-## कैसे करें:
+```Fish Shell
+# तारीख 1 और तारीख 2 सेकंड्स में बदलें
+set date1 (date -ud '2023-01-01' +%s)
+set date2 (date -ud '2023-03-01' +%s)
 
-तारीखों की तुलना की बेहतर समझ के लिए निम्नलिखित Fish Shell कोड देखें:
-
-```fish shell
-# तारीख को सेकेंड्स में कनवर्ट करें
-function date_to_seconds -a date_string
-  date -d $date_string +%s
-end
-
-# दो तारीखों की तुलना करें
-function compare_dates -a date1 date2 
-  set difference (math (date_to_seconds $date1) - (date_to_seconds $date2))
-  if test $difference -gt 0
-    echo "$date1 is later than $date2"
-  else if test $difference -eq 0
-    echo "$date1 is the same as $date2"
-  else
-    echo "$date1 is earlier than $date2"
-  end
+# तुलना करें
+if test $date1 -lt $date2
+    echo "तारीख 1 पहले है तारीख 2 से।"
+else if test $date1 -eq $date2
+    echo "दोनों तारीखें बराबर हैं।"
+else
+    echo "तारीख 2 पहले है तारीख 1 से।"
 end
 ```
+आउटपुट:
+```
+तारीख 1 पहले है तारीख 2 से।
+```
 
-## गहरी तलाश:
+## Deep Dive (गहराई में जानकारी)
+Fish Shell के पूर्ववर्ती वर्शन्स में भी तारीखों की तुलना कुछ इसी प्रकार से होती थी, लेकिन नए वर्शन्स में इसे और भी सरल कर दिया गया है। वैकल्पिक तरीके में `date` कमांड की बजाय `strftime` जैसे फंक्शंस का इस्तेमाल होता है। कमांड लाइन टूल्स के अलावा, दूसरे लैंग्वेजेज जैसे कि Python या JavaScript में इनबिल्ट फंक्शन्स होते हैं डेट कम्पेरिज़न के लिए। Fish Shell में प्राइमरिली यूनिक्स टाइमस्टैम्प्स पर आधारित मेथड्स उपयोग किए जाते हैं।
 
-(1) हिस्टोरिकल कंटेक्स्ट: तारीखों की तुलना ऑपरेटर्स का आविष्कार निर्दिष्ट समय दूरी की आपेक्षिकता को समझने के लिए हुआ था।
-
-(2) विकल्प: Unix परिवार की शेल्स अक्सर तारीखों की तुलना के लिए तरलीकरण का उपयोग करती हैं। फिर भी, कुछ मजबूत भाषाएं (जैसे कि Python और Perl) निर्दिष्ट तारीख और समय की तुलना के लिए विशिष्ट बिल्ट-इन फ़ंक्शन प्रदान करती हैं।
-
-(3) कार्यान्वयन विवरण: तारीखों की तुलना फ़ंक्शन मूल रूप से Unix 'date' उपकरण का उपयोग करता है, जो हमें तारीखों को उनके Unix टाइमस्टैंप के रूप में बदलने की अनुमति देता है।
-
-## देखे भी:
-
-1. Unix 'date' man page: http://man7.org/linux/man-pages/man1/date.1.html
-2. Fish shell documentation: https://fishshell.com/docs/current/index.html
-3. Comparative Operators in Programming Languages: https://en.wikipedia.org/wiki/Comparison_operator
+## See Also (और भी जानकारी)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [GNU Coreutils 'date'](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [UNIX Timestamp Converter](https://www.unixtimestamp.com/)

@@ -1,6 +1,7 @@
 ---
 title:                "명령줄 인수 읽기"
-html_title:           "Arduino: 명령줄 인수 읽기"
+date:                  2024-01-20T17:55:58.925527-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "명령줄 인수 읽기"
 programming_language: "C#"
 category:             "C#"
@@ -10,47 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 & 왜?
+## What & Why? (무엇인가요? 왜 사용하는 건가요?)
+커맨드 라인 인자 읽기는 사용자가 프로그램을 시작할 때 파라미터를 전달하는 방법입니다. 이를 통해 동적으로 프로그램의 행동을 조정할 수 있기 때문에 개발자들이 사용합니다.
 
-명령줄 인자 읽기는 프로그램이 실행될 때 받은 인자를 읽는 일련의 프로세스입니다. 이는 사용자가 프로그램의 행동을 조절하거나, 자동화하거나, 타스크를 실행하는 데 필요한 정보를 제공할 수 있게 합니다.
-
-## 해 보기:
-
-다음은 간단하게 C#에서 명령행 인자를 읽는 예시입니다:
-
+## How to: (어떻게 사용하나요?)
 ```C#
-public class Program
+using System;
+
+class Program
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
-        for(int i = 0; i<args.Length; i++)
+        Console.WriteLine("안녕하세요! 커맨드 라인 인자를 읽어봅시다.");
+
+        for (int i = 0; i < args.Length; i++)
         {
-            Console.WriteLine($"Argument {i} is {args[i]}.");
+            Console.WriteLine($"인자 {i}: {args[i]}");
         }
     }
 }
 ```
 
-이 코드가 실행되고 "apple", "banana", "cherry"라는 인자들을 받으면 다음과 같은 출력을 내놓음:
+콘솔에 실행할 때 인자를 다음과 같이 넣을 수 있습니다:
 
 ```
-Argument 0 is apple.
-Argument 1 is banana.
-Argument 2 is cherry.
+dotnet run -- 사과 바나나 체리
 ```
 
-## 깊이 있게 살펴보기:
+출력 예시:
+```
+안녕하세요! 커맨드 라인 인자를 읽어봅시다.
+인자 0: 사과
+인자 1: 바나나
+인자 2: 체리
+```
 
-### 역사적 맥락
-명령줄 인자는 리눅스 및 UNIX 쉘 스크립트에서 오래 전부터 널리 사용되어 왔습니다. 이 방법은 사용자가 명령어를 입력하면서 애플리케이션이 어떻게 동작해야 하는지 지정할 수 있게 해줍니다.
+## Deep Dive (심층 분석)
+커맨드 라인 인자를 읽는 것은 오래전부터 사용되었습니다. 유닉스 시스템에서 시작해 지금의 여러 운영 체제와 언어에서 널리 쓰입니다.
 
-### 대체 방법
-명령줄 인자 외에도 사용자가 프로그램에 데이터를 제공하는 방법은 여러가지 있습니다: 환경 변수, 파일 읽기, 표준 입력, GUI 입력 필드 등이 있습니다.
+대안으로는 환경 변수, 구성 파일, 대화형 입력 등이 있습니다만, 커맨드 라인 인자는 직접적이고 간단한 방법으로 남아 있습니다.
 
-### 구현 세부 사항
-C#에서 `args` 배열은 명령줄 인자들을 담아두는데 사용됩니다. 이 때, 처음 요소(즉, `args[0]`)은 프로그램의 이름이 아닌 첫 번째 인자를 가리킵니다. 이는 일부 다른 언어들(예: C, Python)과는 다른 점입니다.
+C#에서는 `string[] args`를 `Main` 메서드의 파라미터로 사용해 인자를 받습니다. `args.Length`로 개수를 확인하고, 인덱스로 각 인자를 사용할 수 있습니다.
 
-## 참고할 만한 링크:
-
-- [Microsoft Docs: Command-Line Arguments (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args)
-- [Stackoverflow: How do I use command line arguments in C#?](https://stackoverflow.com/questions/8141/how-do-i-use-command-line-arguments-in-csharp)
+## See Also (참고 자료)
+- [Microsoft Docs - Main() and command-line arguments](https://docs.microsoft.com/dotnet/csharp/programming-guide/main-and-command-args/)
+- [Microsoft Docs - Command-Line Arguments (C# Programming Guide)](https://docs.microsoft.com/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
+- [Stack Overflow - How can I read command line parameters from an application?](https://stackoverflow.com/questions/491595/best-way-to-parse-command-line-arguments-in-c)

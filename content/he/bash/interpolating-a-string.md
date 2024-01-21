@@ -1,7 +1,8 @@
 ---
-title:                "אינטרפולציה של מחרוזת"
-html_title:           "Arduino: אינטרפולציה של מחרוזת"
-simple_title:         "אינטרפולציה של מחרוזת"
+title:                "שרבוב מחרוזת"
+date:                  2024-01-20T17:50:24.948238-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרבוב מחרוזת"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,24 +12,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-החילוף של מחרוזות ב-Bash הוא שיטה להוספת משתנים או ביטויים לתוך מחרוזת. זה נותן למתכנתים גמישות ליצור מחרוזות דינמיות ולאוטמט את התהליכים.
+השרשור של מחרוזות זה לקבל טקסט ולשלב בתוכו משתנים כדי ליצור מחרוזת מותאמת אישית. תוכניתנים עושים זאת כדי לדינמיית התוכן שלהם ולהתאים אותו לקונטקסטים שונונים.
 
-## איך לעשות זאת:
-שימוש בחילוף מחרוזות פשוט וישיר ב-Bash:
-
+## איך לעשות:
 ```Bash
-name="Yossi"
-echo "שלום, $name"
-```
-ערכו של $name מתוך המחרוזת עצמה מתחלף עם הערך של המשתנה:
+# הגדרת משתנה
+name="דוד"
 
-```Bash
-שלום, Yossi
+# שרשור מחרוזת עם משתנה
+echo "שלום, $name! איך הולך?"
+
+# הדפסת תוצאה
+# שלום, דוד! איך הולך?
 ```
 
-## צלילה עמוקה
-חילוף מחרוזות מגיע מהימים הקדמוניים של עורך הטקסט של Unix. בהקשרים מסוימים, ייתכן שתרצה להשתמש במנגנונים מתקדמים יותר ממחרוזת הסטנדרטית, כמו `printf` או `sprintf`. על פי ברירת מחדל, Bash משתמש בערך "עגלויה" (`"\0"`), אבל ץמיה במריח םהתאם ערך של משתנה.
+## הבנה עמוקה יותר
+השרשור של מחרוזות ב-Bash התחיל בגרסאות הראשונות של שורת הפקודה והתפתח לאורך השנים. אלטרנטיבות כוללות שימוש ב-'printf' לפורמט מדוייק יותר, או תחביר מורכב יותר כמו הרחבת פרמטרים והשמת ביטויים. פרטי היישום של שרשור מחרוזות מאפשרים הכנסת ערכים דינמיים בקלות ויכולים לשפר את נתינת חווית המשתמש בתסריטים.
 
 ## ראה גם
-למידת Bash: [https://he.learnbash.co.il/](https://he.learnbash.co.il/)
-מדריך Bash: [https://www.tutorialspoint.com/he/unix/unix-string-manipulation.htm](https://www.tutorialspoint.com/he/unix/unix-string-manipulation.htm)
+- [Bash Parameter Expansion](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion)
+- [Bash String Manipulation](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
+- [Advanced Bash-Scripting Guide](https://www.tldp.org/LDP/abs/html/)

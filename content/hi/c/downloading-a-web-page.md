@@ -1,7 +1,8 @@
 ---
-title:                "एक वेब पेज डाउनलोड करना"
-html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
-simple_title:         "एक वेब पेज डाउनलोड करना"
+title:                "वेब पेज डाउनलोड करना"
+date:                  2024-01-20T17:43:37.203285-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "वेब पेज डाउनलोड करना"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,60 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## व्हाट एंड वाय? [What & Why?]
+## What & Why? (क्या और क्यों?)
+वेब पेज डाउनलोड करने का अर्थ है इंटरनेट से वेब पेज की सामग्री प्राप्त करना। प्रोग्रामर इसे डेटा एक्सट्रैक्शन, वेबसाइट्स के बैकअप या ऑफ़लाइन एनालिसिस के लिए करते हैं।
 
-वेब पेज डाउनलोड करना क्या होता है और क्यों प्रोग्रामर्स इसे करते हैं?
-वेब पेज को डाउनलोड करना मतलब उसे इंटरनेट से अपने कंप्यूटर पर कॉपी करना। प्रोग्रामर्स इसे करते हैं ताकि उन्हें वेबसाइट की जानकारी और डाटा को प्रोसेस करने के लिए लोकली उपलब्ध हो सके। 
-
-## कैसे [How to:]
-
-C लैंग्वेज में, आप libcurl का उपयोग करके वेब पेज को डाउनलोड कर सकते हैं। यहाँ एक सादा उदाहरण है:
-
+## How to: (कैसे करें:)
 ```C
 #include <stdio.h>
+#include <stdlib.h>
 #include <curl/curl.h>
 
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
+size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
+    size_t written = fwrite(ptr, size, nmemb, stream);
+    return written;
+}
 
-  curl_global_init(CURL_GLOBAL_DEFAULT);
-
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-
-    /* if redirect is needed */
-    curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
-
-    res = curl_easy_perform(curl);
-
-    /* error handling */
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
-
-    /* cleanup */
-    curl_easy_cleanup(curl);
-  }
-
-  curl_global_cleanup();
-
-  return 0;
+int main(void) {
+    CURL *curl;
+    FILE *fp;
+    CURLcode res;
+    char *url = "http://example.com";
+    char outfilename[FILENAME_MAX] = "downloaded_page.html";
+    
+    curl = curl_easy_init();
+    if (curl) {
+        fp = fopen(outfilename,"wb");
+        curl_easy_setopt(curl, CURLOPT_URL, url);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+        res = curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+        fclose(fp);
+    }
+    return 0;
 }
 ```
 
-जब आप इस कोड को चलाते हैं, तो example.com का होमपेज डाउनलोड होता है। 
+यह प्रोग्राम "http://example.com" वेब पेज को "downloaded_page.html" फाइल में डाउनलोड करेगा। आउटपुट फाइल में वेब पेज का HTML कोड होगा।
 
-## डीप डाइव [Deep Dive]
+## Deep Dive (गहराई से जानकारी):
+वेब पेज को डाउनलोड करना इंटरनेट के शुरुआती दिनों से हो रहा है। पहले लोग `telnet` या `ftp` का उपयोग करते थे, मगर अब ‘CURL’ लाइब्रेरी पसंदीदा उपकरण है। CURL का इस्तेमाल करके, हम आसानी से डेटा ट्रांसफर कर सकते हैं। 
 
-वेब पेज को डाउनलोड करने की सोच को HTTP (HyperText Transfer Protocol) के अविष्कार के साथ ही जन्म दिया गया था। इसके विकल्प में वेब स्क्रेपिंग और API (Application Programming Interface) कॉल्स शामिल हैं।
+अन्य विकल्प में 'wget' कमांड लाइन प्रोग्राम भी शामिल है जो यही काम करता है। 
 
-C प्रोग्रामिंग का उपयोग करके वेब पेज डाउनलोड करने का कार्य libcurl बिल्बोर्धीयन, नेटवर्क-अधारित कार्यों को आसान करने के लिए तैयार की गई एक खुली स्रोत पुस्तकालय के माध्यम से होता है। 
+इम्प्लीमेंटेशन में हमेशा `libcurl` लाइब्रेरी की ज़रूरत होती है। `write_data` फंक्शन डाउनलोडेड डेटा को फ़ाइल में लिखता है, और `curl_easy_init`, `curl_easy_setopt`, `curl_easy_perform` फंक्शन्स डाउनलोड करने के लिए cURL सेशन को शुरू और संचालित करते हैं।
 
-## देखने के लिए यह देखें [See Also]
-
-1. [CURL का डॉक्युमेंटेशन](https://curl.haxx.se/libcurl/c/) 
-2. [वेब स्क्रेपिंग ट्यूटोरियल](https://www.datacamp.com/community/tutorials/web-scraping-using-python)
-3. [HTTP प्रोटोकॉल का इतिहास](https://www.w3.org/History.html)
+## See Also (और जानें):
+- cURL प्रोजेक्ट की वेबसाइट: [Curl Official Website](https://curl.se/)
+- libcurl प्रोग्रामिंग का ट्यूटोरियल: [libcurl Tutorial](https://curl.se/libcurl/c/libcurl-tutorial.html)
+- 'wget' कमांड पर जानकारी: [GNU Wget](https://www.gnu.org/software/wget/)
+- HTTP प्रोटोकॉल पर विस्तार से जानकारी: [HTTP Protocol](https://developer.mozilla.org/en-US/docs/Web/HTTP)

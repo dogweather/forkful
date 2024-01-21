@@ -1,7 +1,8 @@
 ---
-title:                "Calculer une date dans le futur ou le passé"
-html_title:           "Haskell: Calculer une date dans le futur ou le passé"
-simple_title:         "Calculer une date dans le futur ou le passé"
+title:                "Calcul d'une date future ou passée"
+date:                  2024-01-20T17:31:04.597615-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Calcul d'une date future ou passée"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,41 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ?
-
-Calculer une date dans le futur ou le passé consiste à manipuler les dates pour obtenir une date spécifique. Nous, les programmeurs, faisons ça tout le temps pour de nombreuses raisons, comme pour planifier des événements ou pour suivre le temps écoulé.
+## Quoi & Pourquoi ?
+Calculer une date dans le futur ou le passé permet de déterminer un jour spécifique à partir d'une date donnée. Les programmeurs le font souvent pour des tâches de planification, d'archivage, ou quand les applications dépendent de la logique temporelle.
 
 ## Comment faire :
-
-En Haskell, nous pouvons utiliser la bibliothèque Time pour manipuler les dates. Voici comment vous pouvez le faire:
-
-```Haskell
+```haskell
 import Data.Time
 
-laDateDansNDays :: IO Day -> Int -> IO Day
-laDateDansNDays date n = do
-  date' <- date
-  return $ addDays n date'
+-- Ajouter ou soustraire des jours à une date donnée
+ajouterJours :: Integer -> IO Day
+ajouterJours nbJours = do
+  aujourd'hui <- utctDay <$> getCurrentTime
+  return $ addDays nbJours aujourd'hui
+
+-- Exemple d'utilisation
+main :: IO ()
+main = do
+  dansUneSemaine <- ajouterJours 7
+  ilYaUneSemaine <- ajouterJours (-7)
+  putStrLn $ "Dans une semaine, ce sera le " ++ show dansUneSemaine
+  putStrLn $ "Il y a une semaine, c'était le " ++ show ilYaUneSemaine
+
+-- Sortie d'exemple :
+-- Dans une semaine, ce sera le 2023-04-14
+-- Il y a une semaine, c'était le 2023-03-31
 ```
 
-Puis exécutez ceci dans GHCi :
+## Immersion :
+Historiquement, la manipulation des dates en programmation a été complexe à cause des formats variés et des fuseaux horaires. Haskell utilise le package `time` pour faciliter ces opérations. Il y a d'autres bibliothèques comme `old-time`, mais `time` est recommandé aujourd'hui. L'implémentation Haskell se distingue par sa robustesse et son approche fonctionnelle, gérant convenablement les abstractions de temps.
 
-```Haskell
-date <- getCurrentDay
-laDateDansNDays (return date) 3
-```
+Pour calculer une date dans le futur ou le passé, on utilise généralement `addDays`, qui prend un nombre de jours et une date. Cela retourne une nouvelle date. C'est simple et évite beaucoup d'erreurs communes comme oublier les années bissextiles ou les détails des mois variés. Haskell traite tout cela sous le capot.
 
-La fonction `laDateDansNDays` prend une date et un nombre de jours, puis renvoie la date après d'ajouter ce nombre de jours.
+## Voir Aussi :
 
-## Plus de connaissances :
-
-Historiquement, ce genre de manipulation de date se faisait à la main, avec beaucoup de heurts et de malheurs à cause des erreurs de calcul. En Haskell, le paquet `time` facilite grandement la tâche. Cependant, il existent des alternatives comme `thyme` ou `data-dates`.
-
-L'implémentation de ces bibliothèques est basée sur des calculs calendriques prenants en compte les complexités de notre système, y compris les années bissextiles et les fuseaux horaires. C'est un détail important à garder à l'esprit lors du choix d'une bibliothèque.
-
-## Aussi voir :
-
-1. [Paquet `time` sur Hackage](https://hackage.haskell.org/package/time)
-2. [Paquet `thyme` sur Hackage](https://hackage.haskell.org/package/thyme)
-
-Prenez le temps d'explorer ces liens pour avoir une meilleure compréhension de la manipulation des dates et horaires dans Haskell.
+- Documentation de `Data.Time` sur Hackage: [http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)

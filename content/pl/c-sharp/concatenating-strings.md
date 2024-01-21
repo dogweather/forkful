@@ -1,7 +1,8 @@
 ---
-title:                "Konkatenacja ciągów znaków"
-html_title:           "Bash: Konkatenacja ciągów znaków"
-simple_title:         "Konkatenacja ciągów znaków"
+title:                "Łączenie łańcuchów znaków"
+date:                  2024-01-20T17:34:15.756437-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Łączenie łańcuchów znaków"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,47 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Łączenie łańcuchów (string concatenation) to proces łączenia dwóch lub więcej łańcuchów string w jeden. Programiści robią to, aby manipulować danymi tekstowymi i stworzyć dynamiczne ciągi znaków.
+## What & Why?
+(## Co i dlaczego?)
+Konkatenacja łańcuchów to klejenie razem dwóch lub więcej tekstów. Robimy to, by budować komunikaty, tworzyć dynamiczne treści czy po prostu łączyć info.
 
-## Jak to zrobić:
-Kodując w języku C# masz kilka możliwości do łączenia stringów. Przykładowe kody:
-
-1. Korzystając z operatora + :
+## How to:
+(## Jak to zrobić:)
 ```C#
-string przyslowie = "Kto" + " rano" + " wstaje," +" temu" +" Pan Bóg" + " daje.";
-Console.WriteLine(przyslowie);
+string firstName = "Jan";
+string lastName = "Kowalski";
+string fullName = firstName + " " + lastName; // Konkatenacja za pomocą operatora +
+
+Console.WriteLine(fullName);
+// Wyjście: Jan Kowalski
+
+// Użycie StringBuilder dla efektywności przy wielokrotnym doklejaniu
+var builder = new StringBuilder();
+builder.Append("Cześć, ");
+builder.Append(firstName);
+builder.Append(" ");
+builder.Append(lastName);
+builder.Append("!");
+
+Console.WriteLine(builder.ToString());
+// Wyjście: Cześć, Jan Kowalski!
 ```
-**Output:**  *Kto rano wstaje, temu Pan Bóg daje.*
 
-2. Korzystając z funkcji String.Concat():
-```C#
-string przyslowie = String.Concat("Kto", " rano", " wstaje,", " temu", " Pan Bóg", " daje.");
-Console.WriteLine(przyslowie);
-```
-**Output:** *Kto rano wstaje, temu Pan Bóg daje.*
+## Deep Dive
+(## Wgłębiamy się)
+Konkatenację wykorzystujemy od samego początku C#. Alternatywy? `String.Concat()`, `String.Format()` czy interpolacja, wprowadzona w C# 6.0 z użyciem `$""`. Interpolacja jest czytelna i szybka. `StringBuilder` jest idealny przy dużych czy częstych operacjach na łańcuchach, bo nie tworzy nowego stringa za każdym razem.
 
-3. Z użyciem StringBuilder:
-```C# 
-StringBuilder sb = new StringBuilder();
-sb.Append("Kto");
-sb.Append(" rano");
-sb.Append(" wstaje,");
-sb.Append(" temu");
-sb.Append(" Pan Bóg");
-sb.Append(" daje.");
-Console.WriteLine(sb.ToString());
-```
-**Output:** *Kto rano wstaje, temu Pan Bóg daje.*
-
-## Dogłębne Studium od String Concatenation:
-
-1. Kontekst historyczny: W pierwszych wersjach C# operator + był jedynym sposobem na łączenie stringów. Lecz, był nieefektywny pod względem wydajności dla dużych łańcuchów. Dlatego wprowadzono nowe metody: String.Concat() i StringBuilder.
-
-2. Alternatywy: Oprocz wspomnianych metod, jest wiele innych, jak String.Join() czy String.Format(). Wybór zależy od konkretnej sytuacji i wymagań wydajności.
-
-3. Szczegóły implementacji: Operator + i String.Concat() działają szybko, ale mogą spowodować spadek wydajności dla większych ilości stringów. StringBuilder jest bardziej wydajny dla dużej liczby lub dużych stringów, ponieważ nie tworzy nowego stringu za każdym razem, tylko dodaje do istniejącego.
-
-## Zobacz Również:
-* Microsoft Docs o łączeniu stringów: [link](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/strings/how-to-concatenate-multiple-strings)
-* Wydajność String.Concat vs StringBuilder: [link](https://stackoverflow.com/questions/21078/string-concatenation-vs-string-builder-performance)
+## See Also
+(## Zobacz również)
+- Dokumentacja Microsoft o konkatenacji łańcuchów: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/concatenate-multiple-strings)
+- Interpolacja łańcuchów z C#: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
+- Klasa StringBuilder: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0)

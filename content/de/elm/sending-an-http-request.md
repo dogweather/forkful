@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anforderung senden"
-html_title:           "Bash: Eine HTTP-Anforderung senden"
-simple_title:         "Eine HTTP-Anforderung senden"
+title:                "Einen HTTP-Request senden"
+date:                  2024-01-20T17:59:39.752330-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Einen HTTP-Request senden"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,43 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# HTTP-Anfragen in Elm
-
 ## Was & Warum?
+HTTP-Anfragen werden genutzt, um mit Webservern zu kommunizieren – Daten zu holen und zu senden. Programmierer brauchen diese, um Webanwendungen zu erstellen, die mit Backend-Diensten interagieren.
 
-Beim Senden einer HTTP-Anfrage stellt ein Client eine Verbindung zu einem Webserver her und bittet um bestimmte Daten. Als Programmierer tun wir dies, um Inhalte und Daten von Servern oder APIs zu extrahieren.
-
-## Wie zu:
-
-In Elm können wir das `Http`-Paket verwenden, um HTTP-Anfragen zu senden. Hier ist ein einfacher Code-Ausschnitt, der eine GET-Anfrage an eine URL sendet:
+## How to:
+Elm macht HTTP-Anfragen übersichtlich. Hier ist ein einfaches Beispiel, wie man eine GET-Anfrage schickt:
 
 ```Elm
-import Json.Decode
-import Http
+module Main exposing (..)
 
-fetchData : String -> Cmd Msg
-fetchData url =
+import Http
+import Json.Decode as Decode
+
+type alias User =
+    { id : Int
+    , name : String
+    }
+
+userDecoder : Decode.Decoder User
+userDecoder =
+    Decode.map2 User
+        (Decode.field "id" Decode.int)
+        (Decode.field "name" Decode.string)
+
+getUser : Cmd Msg
+getUser =
     Http.get
-        { url = url
-        , expect = Http.expectJson GotResponse Json.Decode.string
+        { url = "https://jsonplaceholder.typicode.com/users/1"
+        , expect = Http.expectJson GotUser userDecoder
         }
 
 type Msg
-    = GotResponse (Result Http.Error String)
+    = GotUser (Result Http.Error User)
+
+-- Add relevant update and view functions here.
 ```
 
-In diesem Fall erwarten wir zurückgegebene Daten als Json.
+Ergebnis (abhängig von der Server-Antwort):
 
-## Vertiefter Einblick 
+```Elm
+GotUser (Ok { id = 1, name = "Leanne Graham" })
+```
 
-Historisch gesehen wurden HTTP-Anfragen in Elm über das `Http`-Modul der Elm-Architektur implementiert. Da Elm eine reine funktionale Sprache ist, gehen wir trotz Verwendung von Befehlen immer noch rein funktional vor.
+## Deep Dive
+Elm bietet eine starke, typensichere Art, HTTP-Anfragen zu machen. Ursprünglich bot Elm nur Low-Level-Funktionen, aber mit der Zeit und mehreren Releases, einschließlich des aktuellen Elm 0.19.1, entwickelte sich die HTTP-Library zu einem robusten Werkzeug mit hilfreichen Abstraktionen.
 
-An Alternativen zu `Http.get` gibt es `Http.post`, `Http.put`, `Http.delete` usw. für unterschiedliche Interaktionen mit dem Server.
+Alternativen zu Elm's eingebauter `Http` Bibliothek sind selten, da Elm eine begrenzte Interoperabilität mit JavaScript hat, um die Zuverlässigkeit zu maximieren. In der Praxis bedeutet das, dass Elm-Entwickler meist auf das offizielle `elm/http` Paket angewiesen sind.
 
-Was die Implementierungsdetails betrifft, so haben wir in unserem obigen Code den Befehl `Http.get` mit einem URL und einer erwarteten Antwort. Die Antwort wird dann vom Decoder analysiert, der die Json-Daten entsprechend verarbeiten kann.
+Das Senden einer HTTP-Anfrage erfolgt über eine `Cmd`, die eine asynchrone Aktion repräsentiert. Elm handhabt diese Aktionen im `update`-Teil der Anwendung, was den Side-Effects Management simplifiziert und zu einem vorhersehbaren Ablauf führt.
 
-## Siehe auch:
-
-Für weitere Details:
-- [Elm Guide](https://guide.elm-lang.org/): Offizielles Lehrbuch für Elm.
-- [Elm Http Package Dokumentation](https://package.elm-lang.org/packages/elm/http/latest/): Dokumentation zum `Http`-Paket in Elm.
+## See Also
+- Elm HTTP package documentation: [package.elm-lang.org/packages/elm/http/latest](https://package.elm-lang.org/packages/elm/http/latest)
+- Elm Lang official guide: [guide.elm-lang.org](https://guide.elm-lang.org)

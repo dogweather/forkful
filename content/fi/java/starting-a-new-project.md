@@ -1,7 +1,8 @@
 ---
-title:                "Aloittaminen uuden projektin"
-html_title:           "C: Aloittaminen uuden projektin"
-simple_title:         "Aloittaminen uuden projektin"
+title:                "Uuden projektin aloittaminen"
+date:                  2024-01-20T18:04:00.724342-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Getting Started"
@@ -10,30 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Uuden projektin aloittaminen on tyhjästä luomista, ohjelman tai sovelluksen rakentaminen alusta alkaen. Ohjelmoijat tekevät sen ratkaistakseen ongelman, vastatakseen tarpeeseen tai opetakseen uutta teknologiaa.
+## What & Why? (Mitä & Miksi?)
+Aloittaa uuden projektin Java-ohjelmoinnissa tarkoittaa tyhjästä aloittamista; uutta koodikantaa, uusia ideoita, uutta energiaa. Koodarit aloittavat uusia projekteja ratkaistakseen ongelmia, oppiakseen, tai vain kokeillakseen jotain uutta ja jännittävää.
 
-## Näin se tehdään:
-Luo uusi Java-projekti käyttämällä komentoa "javac":
+## How to: (Kuinka tehdä:)
+```java
+// Luo 'ExampleProject' hakemiston
+mkdir ExampleProject
 
-```Java
-$ javac HelloWorld.java
+// Siirry luotuun hakemistoon
+cd ExampleProject
+
+// Alusta uusi Git-repo
+git init
+
+// Luo uusi Java-projekti käyttäen Maven:
+mvn archetype:generate -DgroupId=com.example -DartifactId=example-project -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
-Tämä kompiloi Java-lähdekooditiedoston (HelloWorld.java) ja luo luokkatiedoston (HelloWorld.class). Ajetaan ohjelma komentoriviltä näin:
+Kun olet suorittanut yllä olevat komennot, sinulla on uusi Java-projekti 'example-project' kansiossa, joka sisältää standardin Maven-kansiokaavion ja yksinkertaisen `App.java` aloitusluokan.
 
-```Java
-$ java HelloWorld
-```
-Tuloste pitäisi olla:
+## Deep Dive (Syväsukellus)
+Historiallisesti Java-projektin aloittaminen saattoi olla monimutkaisempaa. Vaihtoehtoja oli vähemmän. Nykyään on useita työkaluja, kuten Maven ja Gradle, jotka automatisoivat projektiin liittyvät rutiinit. Ne tarjoavat projektikarttoja (archetypes), joista voit valita.
 
-```Java
-Hello, World!
-```
+Maven on ollut Java-maailman kivijalka pitkään. Se hallinnoi kirjastoriippuvuuksia, elinkaarta ja paljon muuta. Gradle tarjoaa vastaavan toiminnallisuuden, mutta joustavamman build-skriptauksen ja paremman suorituskyvyn.
 
-## Sukellus syvälle:
-Uuden projektin aloittaminen on ollut Java-ohjelmoijien perinteinen tehtävä alusta asti. Alternatiiveiksi voi esimerkiksi ottaa käyttöön Maven tai Gradle, ne ovat projektinhallintatyökaluja, jotka voivat helpottaa prosessia ja tarjota lisää toiminnallisuuksia. Uuden projektin aloittaminen sisältää tavallisesti uuden projektikansion luomisen, uuden lähdekooditiedoston luomisen, lähdekoodin kirjoittamisen ja kompileerimisen sekä ohjelman ajamisen.
+Implementation detail: Java-projektin aloittaminen Mavenilla tapahtuu `mvn archetype:generate` -komennolla, joka luo uuden projektin perustuen valittuun archetypeen. Mikä on archetype? Se on projektin runko, pohja. Kukin archetype sisältää valmiin tiedostorakenteen ja perustiedostot, kuten `pom.xml` Mavenin asetustiedoston.
 
-## Katso myös:
-- [Java SE -opas](https://docs.oracle.com/en/java/javase/index.html)
-- [Mavenin aloitusopas](https://maven.apache.org/guides/getting-started/)
-- [Gradlen dokumentaatio](https://docs.gradle.org/current/userguide/userguide.html)
+## See Also (Katso myös)
+- [Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/)
+- [Gradle Guides](https://gradle.org/guides/)

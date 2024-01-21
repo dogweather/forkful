@@ -1,7 +1,8 @@
 ---
-title:                "एक अस्थायी फ़ाइल बनाना"
-html_title:           "C++: एक अस्थायी फ़ाइल बनाना"
-simple_title:         "एक अस्थायी फ़ाइल बनाना"
+title:                "अस्थायी फाइल बनाना"
+date:                  2024-01-20T17:40:45.493948-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "अस्थायी फाइल बनाना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,44 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Temporary File बनाने का तरीका
+## What & Why? (क्या और क्यों?)
 
-## क्या है और क्यों?
+अस्थायी फ़ाइल बनाना मतलब डेटा को अस्थायी तौर पे स्टोर करना जिसे बाद में हटाया जा सके। प्रोग्रामर्स इसे इस्तेमाल करते हैं कैशिंग, बड़ी फाइल के हिस्सों को संभालने और अन्य टेम्पोररी डेटा-प्रोसेसिंग कार्यों के लिए।
 
-C++ में एक **temporary file** बनाना एक ऐसी क्रिया होती है जिसके द्वारा कोड चलाने के दौरान आस्थायिक डेटा संग्रहीत किया जा सकता है। इसे उपयोग करने की मुख्य वजह है डेटा को आवश्यकतानुसार तत्परता से सहेजना और पुन: प्राप्त करना।
+## How to: (कैसे करें:)
 
-## कैसे करें: 
-
-C++ की `fstream` library का उपयोग करके हम एक temporary file बना सकते हैं। आइए देखें:
-
-``` C++
-#include <fstream>
+```C++
 #include <iostream>
+#include <cstdio>
+#include <fstream>
 
 int main() {
-    std::fstream temp_file;
+    char temp_filename[] = "tempfileXXXXXX"; // XXXXXX को mkstemp यूनिक नाम में बदल देगा
+    int file_descriptor = mkstemp(temp_filename); // अस्थायी फ़ाइल बनाएँ
 
-    // Temporary file बना रहे हैं
-    temp_file.open("temp.txt", std::ios::out);
+    if(file_descriptor != -1) {
+        std::cout << "Temporary file created: " << temp_filename << std::endl;
 
-    // डेटा लिख रहे हैं
-    temp_file << "Hello, World!";
+        // डेटा लिखने के लिए फ़ाइल स्ट्रीम का प्रयोग
+        std::ofstream temp_file(temp_filename);
+        temp_file << "Hello, World!";
+        temp_file.close();
 
-    // File close कर रहे हैं
-    temp_file.close();
+        // ... यहाँ कोड के अन्य भाग
+
+        // फ़ाइल हटाना
+        remove(temp_filename);
+    } else {
+        std::cerr << "Cannot create temporary file!" << std::endl;
+    }
+
     return 0;
 }
 ```
-जब यह कोड चलता है, तो यह एक `temp.txt` नामक temporary file बनाएगा और `Hello, World!` के साथ इसमें डेटा लिखेगा।
 
-## Deep Dive
+सैंपल आउटपुट:
+```
+Temporary file created: tempfilec1V069
+```
 
-Temporary files को पहली बार Unix operating system में इंट्रोड्यूस किया गया था। इसका उपयोग मुख्य रूप से डेटा को क्राश, पावर लॉस या अन्य प्रॉब्लेम से बचाने के लिए किया जाता है।
+## Deep Dive (गहराई से जानकारी):
 
-Temporary files के alternatives के रूप में, आप memory-based data structures जैसे कि vectors और lists का उपयोग कर सकते हैं। हालांकि, वे बड़ी फाइलों और डेटा के साथ काम करने में कम असरदार होते हैं।
+हिस्टोरिकल पर्सपेक्टिव से, अस्थायी फ़ाइलों का इस्तेमाल लंबे समय से होता आ रहा है, खासकर जब ग्राहक-सर्वर आर्किटेक्चर और संबंधित तकनीकें पनप रही थीं। मॉडर्न सिस्टम में `tmpfile()` और `mkstemp()` जैसे सी स्टैंडर्ड लाइब्रेरी फंक्शनस् विश्वसनीयता और सुरक्षा में सुधार करते हैं। `mkstemp()` यूनिक फ़ाइल नाम बनाकर फ़ाइल के साथ एक फ़ाइल डिस्क्रिप्टर (file descriptor) लौटाता है, जबकि `tmpfile()` एक अनाम (anonymous) अस्थायी फ़ाइल बनाता है जो कार्यक्रम के समाप्त होते ही स्वतः हट जाती है।
 
-## See Also
+विकल्पों में, ऑपरेटिंग सिस्टम्स उपलब्ध `/tmp` या `C:\Temp` जैसे अस्थायी फ़ोल्डरों में मैन्युअल रूप से अस्थायी फ़ाइलें बनाना शामिल है। एडवांस्ड यूज के लिए, लाइब्रेरीज़ जैसे कि Boost.FileSystem प्रोग्रामर्स को अधिकाधिक कंट्रोल और प्रदर्शन प्रदान करती हैं। 
 
-कृपया Unit और C++ reference में और अधिक जानकारी के लिए देखें:
-- [C++ File I/O](https://www.w3schools.com/cpp/cpp_files.asp)
-- [C++ Standard Library: Input/Output with Files](http://www.cplusplus.com/doc/tutorial/files/)
+## See Also (यह भी देखें):
+
+- C++ लाइब्रेरी डॉक्यूमेंटेशन: https://en.cppreference.com/w/
+- Boost FileSystem लाइब्रेरी: https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm
+- सिक्योर टेम्प फ़ाइल्स (Secure Temp Files) के बारे में CERT गाइड: https://www.securecoding.cert.org/confluence/display/cs/Creating+Temporary+Files+Securely

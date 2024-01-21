@@ -1,7 +1,8 @@
 ---
-title:                "Ladda ner en webbsida"
-html_title:           "Bash: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Hämta en webbsida"
+date:                  2024-01-20T17:44:45.834180-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Hämta en webbsida"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,30 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## Vad & Varför?"
+## What & Why?
+Att ladda ner en webbsida innebär att hämta HTML-koden från en server. Programmerare gör detta för att analysera innehållet, skrapa data eller testa sidans tillgänglighet.
 
-Att ladda ner en webbsida innebär att du hämtar sidans data till din dator eller enhet. Programmerare gör detta för att analysera webbdata, scrappa information, testa kod och mycket mer.
+## How to:
+Vi använder `requests` för att ladda ner en webbsida enkelt. Så här:
 
-"## Så här fungerar det:"
-
-Det är enkelt att ladda ner en webbplats med Python. Vi använder `requests` biblioteket för att göra en HTTP-förfrågan. Här är hur du gör: 
-
-``` python
+```python
 import requests
-svar = requests.get('http://www.google.se')
-print(svar.text)
+
+url = 'https://www.exempelsida.se'
+response = requests.get(url)
+
+if response.status_code == 200:
+    html_content = response.text
+    print(html_content[:500])  # Skriver ut de första 500 tecknen
+else:
+    print("Webbsidan kunde inte laddas ned. Statuskod:", response.status_code)
 ```
 
-Kör ovanstående kod, och du lägger märke till att du har utskriften från http://www.google.se webbsidan på din terminal.
+Om allt går bra ser output ungefär ut så här:
 
-"## Fördjupning"
+```python
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Din Exempelsida</title>
+    ...
+</head>
+<body>
+    ...
+    (HTML-innehåll fortsätter)
+</body>
+</html>
+```
 
-- **Historiska sammanhang**: Tidigare användes tekniker som telnet för att ladda ner webbsidor. Python har förenklat denna process genom tillägg av bibliotek som `requests`.
-- **Alternativ**: Det finns flera andra sätt att ladda ner en webbsida. Du kan till exempel använda `urllib` i stället för `requests`. Du kan också använda verktyg som `curl` utanför Python världen.
-- **Implementeringsdetaljer om att ladda ner en webbsida**: När du gör en HTTP-förfrågan med `requests.get()`, gör Python en GET-begäran till den angivna webbplatsen, laddar ner dess innehåll och returnerar det som en sträng.
+## Deep Dive
+Långt innan `requests` fanns, använde vi `urllib`. `requests` är dock mer intuitivt och kraftfullt. Alternativt finns `Scrapy` för större, mer komplexa skrapningsprojekt.
 
-"## Se även"
+Laddning av en webbsida kan variera i komplexitet. Många moderna sidor laddar innehåll dynamiskt med JavaScript. I sådana fall krävs verktyg som `Selenium` eller `BeautifulSoup` med `requests_html` för att efterlikna en webbläsare.
 
-- [Requests: HTTP för människor](https://requests.readthedocs.io/en/master/)
-- [Python Öppna en URL](https://docs.python.org/3/howto/urllib2.html)
-- [Python webb skrapning tutorial](https://realpython.com/python-web-scraping-practical-introduction/)
+Att bara "hämta" en sida är inte alltid nog. Etik och juridik som robots.txt och copyright gäller. Använd alltid API:er om de finns tillgängliga och respektera webbsidornas användarvillkor.
+
+## See Also
+- [requests dokumentation](https://docs.python-requests.org/en/latest/)
+- [Scrapy officiell webbplats](https://scrapy.org/)
+- [BeautifulSoup dokumentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [Selenium dokumentation](https://selenium-python.readthedocs.io/)

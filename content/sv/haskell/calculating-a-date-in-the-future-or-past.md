@@ -1,7 +1,8 @@
 ---
-title:                "Beräkna ett datum i framtiden eller förflutna"
-html_title:           "Haskell: Beräkna ett datum i framtiden eller förflutna"
-simple_title:         "Beräkna ett datum i framtiden eller förflutna"
+title:                "Beräkna ett datum i framtiden eller förflutenheten"
+date:                  2024-01-20T17:31:22.662722-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Beräkna ett datum i framtiden eller förflutenheten"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -11,31 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att räkna ut ett datum i framtiden eller förflutet innebär att man lägger till eller subtraherar tid från ett specifikt datum. Programmerare gör detta för att hantera bokningar, påminnelser, uppgiftsplanering och för att spåra tidsberoende händelser.
 
-Att räkna ut ett datum i framtiden eller förflutet betyder att man beräknar exakt vilket datum det blir om x antal dagar från det angivna datumet. Detta är praktiskt för programmerare när de behöver hålla koll på tidspunkter i applikationer, som t.ex. utgångsdatum för lösenord eller påminnelser för evenemang.
-
-## Så här gör du:
-
-I Haskell kan vi enkelt beräkna ett datum i framtiden eller förflutet genom att använda `addDays` funktionen i `Data.Time` biblioteket:
+## Hur gör man:
+För att räkna ut datumen i Haskell, använd `Data.Time` biblioteket:
 
 ```Haskell
 import Data.Time
 
+main :: IO ()
 main = do
-    let datum = fromGregorian 2021 01 01
-    print (addDays 5 datum) -- 2021-01-06
-    print (addDays (-5) datum)-- 2020-12-27
+    -- Dagens datum
+    today <- getCurrentTime
+    let (year, month, day) = toGregorian . utctDay $ today
+    putStrLn $ "Idag är det: " ++ show year ++ "-" ++ show month ++ "-" ++ show day
+
+    -- Lägger till 10 dagar till dagens datum
+    let tenDaysLater = addDays 10 (utctDay today)
+    putStrLn $ "Om 10 dagar: " ++ show (toGregorian tenDaysLater)
+
+    -- Tar bort 7 dagar från dagens datum
+    let sevenDaysAgo = addDays (-7) (utctDay today)
+    putStrLn $ "För 7 dagar sedan var det: " ++ show (toGregorian sevenDaysAgo)
 ```
 
-## Djupdykning:
+Sample output:
 
-Historiskt sett har kalkylering av datum varit en komplex uppgift på grund av skottår, olika månadslängder och tidsskillnader. Haskell använder dock Gregorian-kalendern för att förenkla beräkningar och hålla reda på tidsramar.
+```
+Idag är det: 2023-4-5
+Om 10 dagar: (2023,4,15)
+För 7 dagar sedan var det: (2023,3,29)
+```
 
-Ett alternativ till Haskell's `addDays` funktionen är att direkt ändra fälten `year`, `month` och `day` i `fromGregorian` funktionen. Men detta kräver extra omsorg för att hantera överflöd och kan bli komplicerat mycket snabbt.
+## Fördjupning
+Att räkna ut datum har varit en del av programmering ända sedan de första kalenderapparna på datorerna. Historiskt sett använde man enkel aritmetik eller specialbyggda algoritmer. I Haskell förenklas uppgiften med `Data.Time` biblioteket, som hanterar komplexiteter som skottår och tidszoner. Alternativ inkluderar att skriva egen kod för beräkningar eller använda andra bibliotek som `time` och `old-time`. Viktiga implementeringsdetaljer att komma ihåg är att datum och tid är lokala för användarens tidszon och det behöver ofta omvandlas till UTC för att göra korrekta beräkningar.
 
-När det gäller genomförande, sköter Haskell det mesta av det tunga lyftandet bakom kulisserna. Den `addDays` funktionen hanterar alla detaljer som skottår och månadslängder, vilket gör det mycket enkelt att använda.
-
-## Se också:
-
-- [Haskell Time Library](http://hackage.haskell.org/package/time-1.11.1.1)
-- [Gregoriansk kalender](https://sv.wikipedia.org/wiki/Gregoriansk_kalender)
+## Se även
+- [Haskell Time library documentation](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- [ZonedTime in Haskell](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-LocalTime.html)
+- [Haskell Date and Time tutorial](http://learnyouahaskell.com/zippers#time-machine)

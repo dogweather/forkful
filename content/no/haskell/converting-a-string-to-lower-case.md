@@ -1,6 +1,7 @@
 ---
 title:                "Konvertere en streng til små bokstaver"
-html_title:           "Arduino: Konvertere en streng til små bokstaver"
+date:                  2024-01-20T17:38:33.253146-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,45 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Gjør strenger om til små bokstaver i Haskell
-
 ## Hva & Hvorfor?
-Konvertering av en streng til små bokstaver betyr å endre alle store bokstaver i strengen til tilsvarende små bokstaver. Programmerere gjør dette ofte for å unngå å forskjellsbehandle data basert på bokstavstørrelse.
+Å konvertere en tekststreng til små bokstaver betyr å gjøre alle bokstavene i strengen til miniatyrversjoner (små bokstaver). Programmerere gjør dette for å standardisere tekstdata, for eksempel når de sammenligner brukerinput eller sorterer data.
 
 ## Hvordan:
-Her bruker vi Haskell-funksjonen `toLower` fra  `Data.Char`-modulen til å konvertere en streng til små bokstaver.
-
 ```Haskell
 import Data.Char (toLower)
 
-toLowerString :: String -> String
-toLowerString = map toLower
+-- Eksempel funksjon for å konvertere en tekststreng til små bokstaver
+toLowercase :: String -> String
+toLowercase = map toLower
 
-main = print $ toLowerString "HELLO, WORLD!"
+-- Prøv det ut!
+main :: IO ()
+main = putStrLn (toLowercase "Hei, Verden!")
+
+-- Forventet output:
+-- "hei, verden!"
 ```
 
-Kjører du dette programmet, vil oppførselen bli som følger:
+## Dypdykk
+Konvertering til små bokstaver har vært en standard tekstbehandlingsoperasjon lenge siden før datoræraen, brukt i leksikografi og indeksering. I Haskell, som i andre programmeringsspråk, gjøres konvertering lett ved hjelp av standardbiblioteket. Alternativene inkluderer bruk av regex for å finne og erstatte store bokstaver manuelt, men `Data.Char` (spesielt `toLower`) er veien å gå for renhet og enkelhet. Når det gjelder implementering, bruker `toLower` Unicode data for å finne de riktige småbokstavsvarene for en gitt bokstav.
 
-```
-"hhello, world!"
-```
-
-## Dykker i Dybden
-Det å omforme store til små bokstaver i programmering har en lang historie. I tidlige ASCII-kode systemer var det separasjon mellom store og små bokstaver. Konvertering mellom de to ble ofte gjort ved å bruke litt-manipulasjon.
-
-I Haskell bruker vi `toLower`-funksjonen, som håndterer dette for oss. Men det er verdt å nevne at Haskell er en unicode-bevisst språk. Derfor vil `toLower` fungere korrekt selv for ikke-ASCII-tegn. For eksempel, til og med spesielle norske bokstaver som 'Å', 'Æ' og 'Ø' vil bli korrekt konvertert til 'å', 'æ' og 'ø' respektivt.
-
-Alternativt, om man ønsker å lage en egen funksjon for konvertering, så kan man benytte seg av Haskell's støtte for mønstermatching:
-
-```Haskell
-lowercase :: Char -> Char
-lowercase c
-  | 'A' <= c && c <= 'Z' = toEnum (fromEnum c + 32)
-  | otherwise = c
-```
-Men merk at denne funksjonen kun vil fungere korrekt for ASCII-tegn.
-
-## Se Også:
-1. Haskell.org's bibliotekside for `Data.Char`: <https://hackage.haskell.org/package/base/docs/Data-Char.html>
-2. Lærebok om generell strengmanipulasjon i Haskell: <http://learnyouahaskell.com/input-and-output>
-3. Haskell's stilguide for gode kodevaner: <https://github.com/tibbe/haskell-style-guide/blob/master/haskell-style.md>
+## Se Også
+- Haskell `Data.Char` dokumentasjon: https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html
+- En mer omfattende forståelse av tekstbehandling i Haskell: https://www.schoolofhaskell.com/school/starting-with-haskell/basics-of-haskell
+- Unicode standard for tekstbehandling: https://unicode.org/stds/unicode.html

@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:45:06.144602-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,40 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? - Mitä & Miksi?
+Haemme tekstin osia, eli substringejä, kun tarvitsemme erityistä tietoa merkkijonosta. Ohjelmoijat tekevät niin, jotta voivat käsitellä, verrata tai analysoida tekstin osia.
 
-Merkkijonojen alijonon poiminta on prosessi, jossa valitaan tietty osa merkkijonosta. Ohjelmoijat tekevät sen tarvittaessa tietoja tai redukoimaan datan määrää.
-
-## Miten tehdään:
-
-Hyödynnämme C++-ohjelmoinnissa `substr`-funktiota. Koodi näyttää tältä:
-
+## How to - Miten tehdään
 ```C++
 #include <iostream>
 #include <string>
-  
+
 int main() {
-    std::string str = "ohjelmointi";
-    std::string alijono = str.substr(0, 4);
-    std::cout << alijono;
+    std::string fullText = "C++ on kiva ohjelmointikieli!";
+    std::string subText = fullText.substr(5, 2); // ottaa "on"
+
+    std::cout << "Substring: " << subText << std::endl; // Tulostaa: Substring: on
+    
     return 0;
 }
 ```
-Tämä koodi tuottaa seuraavan tulosteen:
-```
-ohje
-```
+## Deep Dive - Syväsukellus
+Substringit ovat osa C++:n standardikirjastoa `std::string` luokan sisällä. Historiallisesti, C:n kielestä periytyvä C++ toi monia string-käsittelyn funktioita, mutta C++ ehdotti `std::string` ja metodeja, kuten `substr`, tarjoten objektiivisen otteen tekstinkäsittelyyn. Vaihtoehtoisesti voit käyttää C-tyylistä merkkijonojen käsittelyä funktioilla kuten `strncpy`, mutta siirtymät `std::string`-luokan käyttöön tuovat vähemmän virheriskejä ja käytön helppoutta. `substr`-metodi luo uuden string-olion alkuperäisen merkkijonon osasta, alkaen annetusta indeksistä ja annetun pituuden verran. Jos pituus jätetään antamatta, loppu merkkijono kopioidaan.
 
-## Syvempi sukellus:
-
-`substr`-funktion historia ulottuu C++98-versioon asti, ja sitä on hyödynnetty laajasti sen joustavuuden ja tehokkuuden vuoksi. 
-
-Vaihtoehtoinen tapa tehdä sama asia on käyttää `find`- ja `erase`-funktioita. Tämä menetelmä on kuitenkin monimutkaisempi ja hitaampi.
-
-Substring-funktion suorituskyky ja tehokkuus riippuvat sen implementoinnista. Erityisesti, STL:n (Standard Template Library) `substr`-funktio käyttää laiskaa leikkausstrategiaa, joka parantaa merkittävästi suorituskykyä.
-
-## Katso myös:
-
-Lisätietoa löytyy näistä lähteistä:
-
-1. [C++ String substr() - CPP Reference](https://en.cppreference.com/w/cpp/string/basic_string/substr)
+## See Also - Katso Myös
+- C++ Standard Library reference: https://en.cppreference.com/w/cpp/string/basic_string/substr
+- C++ strings tutorial: https://www.cplusplus.com/reference/string/string/

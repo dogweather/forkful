@@ -1,7 +1,8 @@
 ---
-title:                "Wydobywanie podciągów"
-html_title:           "Python: Wydobywanie podciągów"
-simple_title:         "Wydobywanie podciągów"
+title:                "Wycinanie podłańcuchów"
+date:                  2024-01-20T17:46:12.958077-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wycinanie podłańcuchów"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,33 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
 
-Wycinanie podciągów (substring) polega na pobieraniu specyficznej części ciągu znaków. Programiści robią to, aby manipulować danymi tekstowymi i tworzyć bardziej dynamiczne programy.
+Wycinanie podciągów to pobieranie fragmentów z większego ciągu znaków. Programiści robią to, by manipulować danymi, wyciągać informacje lub sprawdzać format.
 
-## Jak to zrobić:
+## How to: (Jak to zrobić?)
 
-W Javie, możemy wykorzystać metodę `substring()`. Oto przykład:
-```Java
-public class Main {
+Java używa metody `substring()` klasy `String` do wycinania podciągów. Przykłady:
+
+```java
+public class SubstringExample {
+
     public static void main(String[] args) {
-        String str = "Hello, World!";
-        String subStr = str.substring(7, 12);
-        System.out.println(subStr);
+        String fullString = "Witaj, programisto!";
+        String extracted = fullString.substring(7, 19);
+        
+        System.out.println(extracted); // Wypisze: programisto
     }
 }
 ```
-Powyższy kod wydrukuje: `World`.
 
-## Głębszy wgląd:
+Output:
+```
+programisto
+```
 
-Historia: Metoda `substring()` istnieje w Javie od początku, co czyni ją jednym ze standardowych narzędzi do manipulacji tekstem. 
+Możemy też wyciąć od konkretnej pozycji do końca:
 
-Alternatywy: Możemy także korzystać z biblioteki Apache Commons Lang's StringUtils, która posiada metody, takie jak `substringBetween()`.
+```java
+public class SubstringExampleEnd {
 
-Implementacja: `substring()` działa na zasadzie indeksowania znaków. Pierwszy indeks jest włączany, ale ostatni jest wyłączany, co oznacza, że `str.substring(7, 12)` dostarczy nam znaki z 7-11 indeksu.
+    public static void main(String[] args) {
+        String fullString = "Dobra praktyka programistyczna";
+        String extracted = fullString.substring(13);
+        
+        System.out.println(extracted); // Wypisze: programistyczna
+    }
+}
+```
 
-## Zobacz też:
+Output:
+```
+programistyczna
+```
 
-2. [Java String - Extracting More Than One Substring - stackoverflow](https://stackoverflow.com/questions/14536187/java-string-extracting-more-than-one-substring)
-3. [StringUtils - Apache Commons Lang](https://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/StringUtils.html)
+## Deep Dive (Głębsze spojrzenie)
+
+Metoda `substring()` istnieje w Javie od jej wczesnych wersji. W starszych wersjach Javy (przed Java 7 Update 6), używanie `substring()` w niektórych przypadkach mogło prowadzić do niespodziewanych problemów z wydajnością i pamięcią, bo wewnętrznie wyciągnięte podciągi wskazywały na te same tablice znaków co oryginalny ciąg.
+
+Alternatywne metody obejmują użycie `String.split()`, klas `StringBuilder` czy `StringTokenizer`. Każda ma swoje zastosowania w zależności od konkretnego scenariusza.
+
+Szczegół implementacyjny: od Java 7 Update 6, `substring()` tworzy nowy ciąg znaków, co oznacza, że nie dzieli już pamięci z oryginalnym ciągiem, co jest bezpieczniejsze dla zarządzania pamięcią.
+
+## See Also (Zobacz też)
+
+- Dokumentacja Oracle dla klasy [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)
+- Java API specyfikacja dla metody [substring](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#substring(int,int))
+- Przewodnik Oracle do dobrych praktyk [Java Performance](https://docs.oracle.com/javase/8/docs/technotes/guides/performance/index.html)

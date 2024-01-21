@@ -1,7 +1,8 @@
 ---
-title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+date:                  2024-01-20T18:02:33.782761-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,38 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? - Mitä ja Miksi?
+HTTP-pyyntöjä perusautentikaatiolla käytetään, kun halutaan päästä käsiksi suojattuun resurssiin verkossa. Koodaajat käyttävät tätä menetelmää, jotta voivat varmistaa, että käyttäjällä on oikeus nähdä tai muuttaa tietoa.
 
-Lähettämällä HTTP-pyynnön perusautentikaation kanssa, saamme kommunikoida turvallisesti tietojen kanssa verkkosivuilla tai palvelimella. Ohjelmoijat turvautuvat tähän autentikoinnilla varustettuun lähestymistapaan tietojen eheyden, luottamuksellisuuden ja saatavuuden varmistamiseksi.
-
-## Kuinka toimii:
-
-```Ruby
+## How to: - Kuinka tehdä:
+```ruby
 require 'net/http'
 require 'uri'
 
-uri = URI("https://your-website.com")
-http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Get.new(uri.request_uri)
-request.basic_auth("username", "password")
-response = http.request(request)
+uri = URI('http://example.com/secrets')
+req = Net::HTTP::Get.new(uri)
+req.basic_auth 'user', 'password'
 
-puts response.body
+res = Net::HTTP.start(uri.hostname, uri.port) {|http|
+  http.request(req)
+}
+
+puts res.body
 ```
 
-Esimerkissämme luomme uuden HTTP-pyynnön käyttäen Net:HTTP: olion ja URI: n. Lisäämme sitten perusautentikoinnin käyttäjänimen ja salasanan avulla. Lopuksi teemme pyynnön ja tulostamme vastauksen.
+Kun ajat tämän koodin, saat vastaukseksi HTTP-palvelimen vastauksen, joka sisältää pyydetyt tiedot tai virheilmoituksen.
 
-## Syvällisempi Tietämys
+## Deep Dive - Syväsukellus:
+Perusautentikaatio on HTTP-protokollan vanhin autentikaatiomuoto, joka esiteltiin jo HTTP/1.0:ssa. Vaikka turvallisempiakin tapoja on olemassa, kuten OAuth ja API-avaimet, perusautentikaatio on edelleen suosittu sen yksinkertaisuuden takia. Se muodostuu käyttäjänimestä ja salasanasta, jotka lähetetään Base64-koodattuna otsikoissa.
 
-Perusautentikoinnissa yksinkertainen, mutta vankka suojausprotokolla joka on ollut läsnä HTTP:n varhaisista päivistä lähtien. Se ei ole turvallisin vaihtoehto tiedonsiirtoon, mutta tarjoaa käyttäjille helpon tavan autentikoida itsensä.
+Rubyssa HTTP-pyyntöjä ohjataan usein `Net::HTTP`-kirjaston avulla, joka on osa Ruby Standard Libraryä. Vaihtoehtoisesti voi käyttää kolmannen osapuolen kirjastoja, kuten `HTTParty` tai `RestClient`, jotka voivat tarjota lisäominaisuuksia ja syntaksia helpottamaan HTTP-pyyntöjen tekemistä.
 
-Vaihtoehtona voimme käyttää monimutkaisempia autentikointimenetelmiä kuten Digest-autentikointi tai OAuth, jotka tarjoavat parannettua turvallisuutta.
-
-Itse toteutuksessa Ruby käyttää Net: HTTP: n ja URI: n yhdistelmää pyynnön luomiseen ja lähettämiseen. Perusautentikointitiedot lisätään pyynnön otsikkoon Base64-koodatun merkkijonon muodossa.
-
-## Katso myös:
-
-1. [Net::HTTP Ruby Doc](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
-2. [HTTP Autentikointi](https://developer.mozilla.org/fi/docs/Web/HTTP/Authentication)
-3. [Digest-autentikointi](https://en.wikipedia.org/wiki/Digest_access_authentication)
-4. [OAuth](https://oauth.net/)
+## See Also - Katso Myös:
+1. Ruby Standard Library: Net::HTTP dokumentaatio: [https://ruby-doc.org/stdlib-3.1.0/libdoc/net/http/rdoc/Net/HTTP.html](https://ruby-doc.org/stdlib-3.1.0/libdoc/net/http/rdoc/Net/HTTP.html)
+2. RestClient gem: [https://github.com/rest-client/rest-client](https://github.com/rest-client/rest-client)
+3. HTTParty gem: [https://github.com/jnunemaker/httparty](https://github.com/jnunemaker/httparty)
+4. RFC 7617, 'The 'Basic' HTTP Authentication Scheme': [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)

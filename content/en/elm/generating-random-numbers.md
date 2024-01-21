@@ -1,6 +1,7 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Arduino recipe: Generating random numbers"
+date:                  2024-01-20T17:48:53.629264-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generating random numbers"
 programming_language: "Elm"
 category:             "Elm"
@@ -12,57 +13,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Random numbers are unpredictable values produced by a generation process. Programmers use these for simulating unpredictable patterns, data encryption, or for games and simulations.
+Generating random numbers means creating unpredictable numerical values. Programmers use randomness for games, simulations, tests, and whenever they need an element of surprise or diversity in their code.
 
 ## How to:
 
-Elm provides the `Random` module for generating random numbers. Here's a simple example of generating a random integer in Elm:
+Elm handles randomness through 'Random' module functions. Here's how you produce a random integer between 1 and 100:
 
 ```Elm
-import Html exposing (Html, button, div, text)
-import Html.Events exposing (onClick)
 import Random
 
-type alias Model = Int
+randomInt : Cmd Msg
+randomInt =
+    Random.generate NewRandomNumber (Random.int 1 100)
 
-main =
-  Html.beginnerProgram { model = 0, view = view, update = update }
+type Msg = NewRandomNumber Int
 
-type Msg = Generate
-
-update msg model =
-  case msg of
-    Generate ->
-      ( model, Random.generate NewNumber (Random.int 1 100) )
-
-type Msg = Generate | NewNumber Int
-
-update msg model =
-  case msg of
-    Generate ->
-      ( model, Random.generate NewNumber (Random.int 1 100) )
-
-    NewNumber newNum ->
-      ( newNum, Cmd.none )
-
-view model =
-  div []
-    [ button [ onClick Generate ] [ text "Generate Random Number" ]
-    , div [] [ text (toString model) ]
-    ]
+-- In your update function handle the NewRandomNumber Msg
+-- update msg model =
+--     case msg of
+--         NewRandomNumber number ->
+--             ( { model | randomNumber = number }, Cmd.none )
 ```
-In the above code, when you click on the "Generate Random Number" button, Elm generates a random integer between 1 and 100.
+
+Add the appropriate message and update function logic to make use of the new random number as needed.
 
 ## Deep Dive
 
-Historically, the randomness of numbers has proven important in cryptography, simulations, and probability-based algorithms. Elm's random number generation architecture uses Elm's command (Cmd) to create side effects, assuring that functions remain pure.
+Historically, randomness in computer programs has always been pseudo-random; that's calculations based on algorithms, not truly random. Elm's approach to randomness is purely functional, ensuring reproducibility and testability. Alternative methods, like using JavaScript interop, exist but are not idiomatic Elm. The 'Random' module uses a seed-based generator which is predictable if you know the initial seed. This can be useful for debugging or games that need a replay feature with the same sequence of events.
 
-Elm's `Random` module provides a useful set of functions, including generating integers, floats, and even lists of random values. It's different from some other language standard libraries, which implement random functions impurely. If you need more complex distributions or random generators, you might explore third-party packages.
+## See Also:
 
-Elm's purity can make random number generation feel complex. It's crucial to understand that "Random.generate" is asynchronous; it lets you request a random value, but you don't directly get the number; it comes as a message via "NewNumber" function.
+To dive into Elm's randomness, check these out:
 
-## See Also
-
-- Elm's official Random module documentation: [Random (package.elm-lang.org)](https://package.elm-lang.org/packages/elm/core/latest/Random)
-- An in-depth guide on Elm's effects (Cmd): [Elm - Understanding Effects (youtu.be)](https://youtu.be/6EdXaWfoslc)
-- For more information on the basics of Elm: [Introduction to Elm (elm-lang.org)](https://guide.elm-lang.org/)
+- Elm's official documentation on randomness:
+  [Elm - Random](https://package.elm-lang.org/packages/elm/random/latest/)
+- A broader explanation of pseudo-randomness:
+  [Wikipedia - Pseudorandom number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+- To understand Elm's approach to effects like randomness:
+  [Elm - Commands and Subscriptions](https://guide.elm-lang.org/effects/)

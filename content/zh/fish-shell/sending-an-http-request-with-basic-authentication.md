@@ -1,7 +1,8 @@
 ---
-title:                "使用基本认证发送http请求"
-html_title:           "Bash: 使用基本认证发送http请求"
-simple_title:         "使用基本认证发送http请求"
+title:                "使用基本认证发送 HTTP 请求"
+date:                  2024-01-20T18:01:27.623147-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "使用基本认证发送 HTTP 请求"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,43 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么?
+## What & Why? (什么和为什么？)
+发送具有基本认证的HTTP请求就是在访问需要用户名和密码的网络资源时，将凭证包含在请求中。程序员这样做通常是为了与受保护的API或服务交互。
 
-发送带有基本身份验证的HTTP请求是一种使用用户名和密码在网络请求的头部(`Header`)中，提供身份认证信息的方法。程序员这样做是为了与需要身份验证的服务进行通信，例如API等。
+## How to: (如何做：)
+在Fish Shell中发送带有基本认证的HTTP请求相当直接。下面的例子展示了如何使用`curl`命令。
 
-## 如何做:
+```Fish Shell
+set user "your_username"
+set pass "your_password"
 
-Fish Shell 允许我们轻松地发送带基本身份验证的HTTP请求。以下是发送一个GET请求的示例，并在[https://httpbin.org/basic-auth/user/passwd](https://httpbin.org/basic-auth/user/passwd)上测试它的方法。
+echo -n "$user:$pass" | base64 | read -l encoded_credentials
 
-```fish
-set url https://httpbin.org/basic-auth/user/passwd
-set username user
-set password passwd
-set auth (echo -n $username:$password | base64)
-curl -H "Authorization: Basic $auth" $url
-```
-运行以上代码后，您将看到如下所示的输出：
-
-```shell
-{
-  "authenticated": true,
-  "user": "user"
-}
+curl -H "Authorization: Basic $encoded_credentials" "http://example.com/resource"
 ```
 
-解码后的用户名和密码能确认您的登录身份。
+假设请求成功，你可能会看到类似这样的输出:
 
-## 深入探究
+```Fish Shell
+HTTP/1.1 200 OK
+...
+```
 
-发送带有基本身份验证的HTTP请求是网络编程的一个重要部分。这种技术起源于1990年代早期，当时的互联网需要一种简单的方式来验证用户身份。但请注意，基本身份验证并不能提供充足的安全性，因为它以明文形式发送用户名和密码。因此，与基本身份验证相比，现代开发者更倾向于使用更安全的机制，如令牌基础的身份验证。
+如果认证失败，你会得到:
 
-此外，身份验证方法的选择也与服务的实现有关。例如, RESTful服务常使用Token-based身份验证，而GraphQL可能会使用JWTs。了解服务的需求是选择合适的认证方法的关键。
+```Fish Shell
+HTTP/1.1 401 Unauthorized
+...
+```
 
-## 参考资料
+## Deep Dive (深入了解)
+发送HTTP请求最早可追溯到早期互联网，当时用于简单的文件和消息传输。基础认证是HTTP/1.0的一部分，后来在1996年随HTTP/1.1标准一起发布。
 
-如果您希望进一步探索Fish Shell或HTTP基本身份验证，以下是一些可用的资源：
+尽管有安全性的问题，基本认证因其简易性而被广泛使用，特别是在内部或低安全风险的场合。它会以明文传递用户和密码（尽管经过Base64编码），所以建议只在HTTPS上使用。
 
-- [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
-- [HTTP Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
-- [Curl命令和使用](https://curl.se/docs/manpage.html) 
-- [HTTPBin用于测试HTTP请求](https://httpbin.org/)
+除了`curl`，还有多种工具和库可以发送基础认证请求，比如`wget`命令及编程语言中的HTTP客户端库，例如Python的`requests`。
+
+## See Also (另请参阅)
+- [Fish Shell 官网](https://fishshell.com/)
+- [cURL 官方文档](https://curl.se/docs/)
+- [HTTP/1.1 规范: 认证](https://tools.ietf.org/html/rfc7617)

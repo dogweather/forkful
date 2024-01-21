@@ -1,7 +1,8 @@
 ---
-title:                "Aloittaminen uuden projektin"
-html_title:           "C: Aloittaminen uuden projektin"
-simple_title:         "Aloittaminen uuden projektin"
+title:                "Uuden projektin aloittaminen"
+date:                  2024-01-20T18:04:37.576833-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Getting Started"
@@ -10,48 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Uuden Projektin Aloitus PowerShellilla
+## What & Why? - Mitä & Miksi?
+Uuden projektin aloittaminen on tyhjältä pöydältä alkavan koodiprojektin luomista. Koodarit tekevät sen aloittaakseen uuden idean kehittämisen tai vastatakseen johonkin tarpeeseen.
 
-## Mikä ja Miksi?
-Uuden projektin aloitus viittaa tyhjästä aloittamiseen uudella ohjelmointitehtävällä. Ohjelmoijat tekevät tämän joko ryhtyessään uusiin itsenäisiin projekteihin tai aloittaessaan uudet tehtävänsä palvelussa tai yrityksessä.
-
-## Miten se tehdään:
-PowerShellissa uuden projektin, esimerkiksi skriptiprojektin, voi aloittaa muutamalla peruskomennolla. Tässä on hyvä esimerkki:
+## How to: - Kuinka tehdään:
+Powershellillä uuden projektin pystytys alkaa usein hakemiston luomisella ja sinne siirtymisellä. Esimerkiksi - alla koodi uuden hakemiston tekemiseen ja siellä projektin aloitukseen:
 
 ```PowerShell
-# Luo uusi kansio projektille
-New-Item -Path 'c:\MinunProjektini' -ItemType Directory
-
-# Luo uusi PowerShell-skriptitiedosto
-New-Item -Path 'c:\MinunProjektini\MinunSkriptini.ps1' -ItemType File
+New-Item -Path 'C:\Projects\MyNewProject' -ItemType Directory
+Set-Location -Path 'C:\Projects\MyNewProject'
+# Initiate a new Git repository, if you use version control
+git init
+# Create a new README.md file to describe your project
+New-Item -Name 'README.md' -ItemType File
 ```
 
-Nyt, kun suoritat edellä mainitut komentosarjat, saat seuraavanlaisen tulosteen:
+Tässä simppeli kaiku siitä, mitä juuri tehtiin:
 
-```PowerShell
-Directory: C:\
+```
+Directory: C:\Projects\MyNewProject
 
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
-d-----        10.07.2022     12:02                MinunProjektini
-
-
-Directory: C:\MinunProjektini
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
--a----        10.07.2022     12:02              0 MinunSkriptini.ps1
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         1/1/2023   12:00 AM                .git
+-a----         1/1/2023   12:00 AM              0 README.md
 ```
 
-## Syväsukellus
-Uuden projektin aloitus PowerShellilla ei ole uusi käsite. Alun perin syntyneenä vuonna 2006 osana Windows Vista -käyttöjärjestelmää, PowerShell on tullut pitkän matkan, ja sen käyttäminen projektin aloittamiseen on tullut entistä yksinkertaisemmaksi.
+## Deep Dive - Syväsukellus:
+Projektin aloittamisessa on historiaa. Ennen vanhaan kaikki tehtiin käsin, folderista kooditiedostoon. Nyt meillä on kehitysympäristöjä, frameworkkeja ja paketinhallinnan työkaluja, esimerkkeinä Visual Studio ja NuGet PowerShellissa. Versiohallinta on käytännössä pakollinen ja suosituin työkalu on Git.
 
-Vaihtoehtoisia tapoja uuden projektin aloittamiseen ovat käyttöjärjestelmäkohtaiset komennot tai graafiset käyttöliittymät, kuten Microsoft Visual Studio. Huomaa, että käytettävissä olevat vaihtoehdot voivat riippua käyttämästäsi ohjelmointikielestä ja/tai kehitysympäristöstä.
+Kun aloitat projektin, PowerShell-scripteilläkin voi olla paketinhallinnan tarpeita. PowerShellGet-moduuli on siihen tarkoitukseen, ja `New-ModuleManifest` luodaan moduuleille.
 
-PowerShellissa uuden projektin aloitus keskittyy yleensä kansiorakenteen luomiseen ja tarvittavien tiedostojen määrittämiseen. Tämä kannattaa pitää mielessä, kun aloitat oman projektisi.
+Uusien projektien rakenne ja tarvittavat tiedostot vaihtelevat tyypin ja käyttötarkoituksen mukaan. Esimerkiksi, moduuli-projekteilla on omat standardinsa verrattuna skripti-kokoelmiin.
 
-## Katso myös
-Microsoftin viralliset PowerShell-dokumentit: https://docs.microsoft.com/en-us/powershell/
-Microsoft Learn PowerShell-kurssi: https://docs.microsoft.com/en-us/learn/paths/powershell/
-
-Hyvä alusta aloittaa uusia projekteja PowerShellilla!
+## See Also - Katso Myös:
+- [PowerShellGet](https://docs.microsoft.com/en-us/powershell/module/powershellget/?view=powershell-7.1)
+- [Käyttöohjeet versiohallintaan Gitin avulla](https://git-scm.com/book/fi/v2)
+- [Microsoftin PowerShell-dokumentaatio](https://docs.microsoft.com/fi-fi/powershell/)
+- [Visual Studio Code - erinomainen editori PowerShellille](https://code.visualstudio.com/docs/languages/powershell)

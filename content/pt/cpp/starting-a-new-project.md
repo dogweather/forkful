@@ -1,6 +1,7 @@
 ---
 title:                "Iniciando um novo projeto"
-html_title:           "Javascript: Iniciando um novo projeto"
+date:                  2024-01-20T18:03:11.979230-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Iniciando um novo projeto"
 programming_language: "C++"
 category:             "C++"
@@ -10,43 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
+## O Que é & Porquê?
+Iniciar um novo projeto em C++ é criar um espaço de trabalho limpo para desenvolver código desde o começo. Programadores fazem isso para organizar melhor suas ideias e garantir que todas as dependências estejam corretas desde o início.
 
-Iniciar um novo projeto é criar uma base para desenvolver uma aplicação em C++. Fazemos isso para estruturar nosso código de maneira apropriada, tornando ele mais fácil de manter e melhorar.
+## Como Fazer:
+Vamos iniciar um projeto simples. Usaremos o CMake, uma ferramenta popular para gerar arquivos de build.
 
-## Como fazer:
-
-Aqui está um pequeno exemplo de como você pode iniciar um novo projeto C++:
-
-```
-C++
-// Arquivo: main.cpp
+```C++
+// main.cpp
 #include <iostream>
 
 int main() {
-    std::cout << "Olá, mundo!" << std::endl;
+    std::cout << "Olá, mundo do projeto C++!" << std::endl;
     return 0;
 }
 ```
 
-Execute o código e você verá a saída:
+Arquivo CMakeLists.txt simples:
+```CMake
+cmake_minimum_required(VERSION 3.10)
 
+# Defina o nome e a versão do seu projeto
+project(MeuProjeto VERSION 1.0)
+
+# Especifica o padrão C++ a ser utilizado
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# Adicione um executável com o seu código
+add_executable(MeuProjeto main.cpp)
 ```
-Olá, mundo!
+
+Para gerar e construir o projeto a partir do terminal:
+```
+cmake -S . -B build 
+cmake --build build
+```
+
+Após construir, execute o programa:
+```
+./build/MeuProjeto
+```
+
+Saída esperada:
+```
+Olá, mundo do projeto C++!
 ```
 
 ## Mergulho Profundo:
+No passado, iniciar um projeto C++ muitas vezes envolvia compilar manualmente seus arquivos ou usar ferramentas complexas. Hoje, frameworks de build como CMake simplificam este processo.
 
-1. **Contexto Histórico:** C++ é uma linguagem de programação criada em 1985 por Bjarne Stroustrup. A linguagem foi desenvolvida como uma extensão do C, com a adição de classes e objetos, tornando mais fácil criar projetos significativos.
+Alternativas ao CMake incluem o Makefile manual, o sistema de build do QMake (parte do framework Qt) e sistemas modernos como o Meson. Cada um tem seus próprios pontos fortes; CMake é amplamente adotado devido à sua versatilidade e suporte multiplataforma.
 
-2. **Alternativas:** Existem várias outras maneiras de iniciar um projeto, dependendo das suas necessidades. Por exemplo, você pode usar estruturas de dados diferentes, outras bibliotecas ou até mesmo outras linguagens de programação.
+Os detalhes de implementação começam com a escolha da estrutura de diretórios, que pode seguir convenções como "src" para código fonte e "include" para arquivos de cabeçalho. Isso ajuda a separar diferentes aspectos do código e facilita manutenção e navegação.
 
-3. **Detalhes de Implementação:** Quando você inicia um novo projeto, você frequentemente começa definindo o ponto de entrada do seu programa (como o método `main()` em C++), em seguida, adiciona mais código à medida que desenvolve sua aplicação. A estrutura exata do seu projeto pode variar dependendo dos requisitos específicos de sua aplicação.
-
-## Veja também:
-
-Para mais informações sobre C++ e como iniciar um novo projeto, visite os seguintes links:
-
-1. [C++ Language Tutorial](http://www.cplusplus.com/doc/tutorial/)
-2. [Getting Started with C++](https://isocpp.org/get-started)
-3. [C++ Reference](http://en.cppreference.com/w/)
+## Ver Também:
+- [Documentação do CMake](https://cmake.org/documentation/)
+- [Tutorial de C++ Moderno](https://www.learncpp.com/)
+- [Sistema de build Meson](https://mesonbuild.com/)
+- [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)

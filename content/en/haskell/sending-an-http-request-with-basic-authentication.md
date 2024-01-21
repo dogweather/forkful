@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
+date:                  2024-01-20T18:01:36.556352-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,67 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-HTTP requests with basic authentication are a way for Haskell programs to interact with web servers requiring username/password combinations. Programmers use this to access protected data or APIs with these security measures in place.
+Sending an HTTP request with basic authentication means your program knocks on a web service's door, passing a username and password for entry. Programmers do it to access APIs that are off-limits to the general public or to perform actions on behalf of a user.
 
 ## How to:
-
-Let's use the `http-conduit` and `wreq` packages to send HTTP requests with basic authentication. Install them with:
-
-```Haskell
-cabal install http-conduit wreq
-```
-
-Import these packages:
+You’ll need the `http-conduit` package for HTTP actions and `base64-bytestring` for encoding credentials. Import them and use `applyBasicAuth` to add credentials to your request.
 
 ```Haskell
 import Network.HTTP.Simple
-import Network.HTTP.Client.Conduit (applyBasicAuth)
-import Control.Lens
-import Network.Wreq
+import Data.ByteString.Char8 (pack)
+import Data.ByteString.Base64 (encode)
+
+-- Construct basic auth header
+let username = "user"
+let password = "pass"
+let auth = encode $ pack (username ++ ":" ++ password)
+
+-- Create your request
+request' = parseRequest_ "GET http://example.com/secret"
+let request = setRequestHeader "Authorization" ["Basic " <> auth] request'
+
+-- Perform the request
+response <- httpLBS request
+
+-- Handle the response
+print $ getResponseBody response
 ```
 
-For `http-conduit`, create a `Request` with `applyBasicAuth`:
-
-```Haskell
-request <- parseRequest "http://httpbin.org/basic-auth/user/passwd"
-let request' = applyBasicAuth "user" "passwd" request
-response <- httpBS request'
-```
-
-To confirm, print status and the first 100 bytes of the response:
-
-```Haskell
-putStrLn $ "The status code was: " ++ show (getResponseStatusCode response)
-putStrLn $ B.unpack $ B.take 100 $ getResponseBody response
-```
-
-For `wreq`, use `basicAuth` in `options`:
-
-```Haskell
-let opts = defaults & auth ?~ basicAuth "user" "password"
-r <- getWith opts "http://httpbin.org/basic-auth/user/password"
-```
-
-Print response:
-
-```Haskell
-print r
-```
+This will output the API response, if your credentials check out.
 
 ## Deep Dive
+Basic auth is ancient in web years, designed in the early '90s, and it's as simple as it gets: base64 encoded `username:password` sent in a header. It lacks fancy features like token expiration and, being unencrypted, should always be used over HTTPS.
 
-Basic authentication existed since HTTP/1.0 as a convenient method for sending authenticated requests - but it's not secure without SSL/TLS due to credentials being sent in plain text. Newer standards like OAuth2 are recommended nowadays but basic authentication remains in use for its simplicity.
+Alternatives like OAuth provide more secure, granular control. For Haskell, libraries like `http-client` and `wreq` give you more options and flexibility.
 
-`http-conduit` has been around as a go-to for Haskell HTTP requests. It's powerful and flexible. `wreq`, however, focuses on making common tasks convenient like accessing authenticated endpoints.
-
-`applyBasicAuth` and `basicAuth` both encode the username/password pair into a header following the Basic Authentication Schema. The server decodes this from the header to authenticate the request.
+Implementation-wise, remember not to hardcode credentials! Use environment variables or a secure vault in production. And since `base64` encoding isn't encryption (anyone can decode it), HTTPS isn't just a good idea, it’s a must.
 
 ## See Also
-
-To further explore these concepts, check the following links:
-
-* Basic Authentication on Wikipedia: https://en.wikipedia.org/wiki/Basic_access_authentication
-* The http-conduit package: https://hackage.haskell.org/package/http-conduit
-* The wreq package: https://hackage.haskell.org/package/wreq.
-* OAuth2 for securing web APIs: https://oauth.net/2/
+- Haskell `http-conduit` docs: https://hackage.haskell.org/package/http-conduit
+- `base64-bytestring` for encoding: https://hackage.haskell.org/package/base64-bytestring
+- For tight security, read about OAuth2 in Haskell: https://hackage.haskell.org/package/hoauth2
+- Read on best practices for storing secrets: https://www.yesodweb.com/book/security-considerations

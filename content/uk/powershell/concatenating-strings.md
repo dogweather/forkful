@@ -1,7 +1,8 @@
 ---
-title:                "Конкатенація рядків"
-html_title:           "PHP: Конкатенація рядків"
-simple_title:         "Конкатенація рядків"
+title:                "Об'єднання рядків"
+date:                  2024-01-20T17:35:37.486752-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Об'єднання рядків"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,42 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що і Чому?)
+Concatenating strings means sticking them together end-to-end. Programmers do it to assemble text dynamically, like creating messages or generating paths.
 
-Об'єднання рядків - це процес з'єднання двох або більше рядків у єдиний рядок. Програмісти використовують це для організації та форматування виводу, створення динамічних запитів або команд тощо.
-
-## Як це робиться:
-
+## How to: (Як це зробити:)
 ```PowerShell
-$str1 = "Привіт, "
-$str2 = "світе!"
-$concatenatedStr = $str1 + $str2
-Write-Output $concatenatedStr
+# Using the + operator
+$firstName = "Taras"
+$lastName = "Shevchenko"
+$fullName = $firstName + " " + $lastName
+Write-Host $fullName # Output: Taras Shevchenko
+
+# With the -f format operator
+$greeting = "Hello, {0} {1}!"
+Write-Host ($greeting -f $firstName, $lastName) # Output: Hello, Taras Shevchenko!
+
+# Joining an array of strings with -join
+$paths = 'C:\', 'Program Files', 'PowerShell'
+$fullPath = $paths -join '\'
+Write-Host $fullPath # Output: C:\Program Files\PowerShell
 ```
-У виводі ви побачите: `Привіт, світе!`
 
-Ви також можете використовувати функцію `-f` для об'єднання рядків:
+## Deep Dive (Поглиблене занурення):
+Originally, computers just processed numerical data, but text processing became essential. String concatenation has been in programming languages since the early days, as a fundamental operation.
 
-```PowerShell
-$str1 = "Привіт, {0}!"
-$str2 = "світе"
-$concatenatedStr = $str1 -f $str2
-Write-Output $concatenatedStr
-```
-У виводі ви побачите: `Привіт, світе!`
+PowerShell has evolved from these concepts and adds its own spin. Using the `+` operator is straightforward but has performance considerations with large strings or in loops due to immutable string objects - each concatenation creates a new string.
 
-## Поглиблений погляд:
+The `-f` format operator and `-join` are alternatives to `+`. They can be cleaner and often faster. `-f` is perfect for templated strings while `-join` effortlessly brings arrays together.
 
-Об'єднання рядків існує з самого початку програмування. В PowerShell це реалізовано за допомогою оператора `+` і параметра формату `-f`. Є інші альтернативи в PowerShell, наприклад, інтерполяція рядків:
+Understanding the underlying .NET framework that PowerShell is based on is useful. String concatenation in .NET can involve multiple methods, such as StringBuilder class for heavy-duty operations, which PowerShell doesn't expose directly but is accessible through .NET interoperability.
 
-```PowerShell
-$str1 = "Привіт, "
-$str2 = "світе!"
-$concatenatedStr = "$str1$str2"
-Write-Output $concatenatedStr
-```
-У виводі ви побачите: `Привіт, світе!`
-
-## Більше інформації можна знайти тут:
-
-- [Microsoft Docs: Про об'єднання рядків в PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1#string-concatenation-operator-)
+## See Also (Дивіться також):
+- [About Join](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_join)
+- [About Operators](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators)

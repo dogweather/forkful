@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Bash: Merkkijonon interpolointi"
+date:                  2024-01-20T17:51:43.245769-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,36 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä ja Miksi?)
+Interpoloinnissa yhdistetään muuttujia ja kiinteää tekstiä yhdeksi merkkijonoksi. Koodarit käyttävät tätä menetelmää siksi, että se tekee koodista selkeämpää ja dynaamista sisällön yhdistämisen kautta.
 
-Interpoloiminen on tapa muotoilla merkkijonoja yhdistämällä staattisia merkkijonoja ja dynaamisia arvoja sujuvasti yhdeksi merkkijonoksi. Ohjelmoijat käyttävät sitä saadakseen selkeämmän koodin ja välttääksensä merkkijonojen yhdistämisen virheet.
-
-## Kuinka tehdä:
-
-Katsotaan esimerkkiä:
+## How to: (Kuinka tehdä:)
+```PowerShell
+# Perusesimerkki
+$name = 'Heikki'
+$age = 32
+$greeting = "Hei, nimeni on $name ja olen $age vuotta vanha."
+Write-Output $greeting
+```
+Tuloste: Hei, nimeni on Heikki ja olen 32 vuotta vanha.
 
 ```PowerShell
-$hahmo = "Kissa"
-$toiminta = "hypätä"
-Write-Output "Näen $hahmo:n, joka yrittää $toiminta:a."
+# Ilmaisuja käyttäen
+$items = 10
+$totalCost = 19.99
+$receipt = "Sinun {0} tuotetta maksaa yhteensä {1:C}." -f $items, $totalCost
+Write-Output $receipt
+```
+Tuloste: Sinun 10 tuotetta maksaa yhteensä 19,99 €.
+
+```PowerShell
+# Here-stringin sisällä
+$scriptBlock = {
+    param($userName)
+    @"
+Käyttäjän '$userName' prosessit:
+$(Get-Process -user $userName)
+"@
+}
+$report = & $scriptBlock -userName 'Mikko'
+Write-Output $report
 ```
 
-Tämän suorittaminen tulostaa tuloksen:
+## Deep Dive (Syväsukellus)
+Stringien interpolointi otettiin käyttöön PowerShellissä version 2.0 aikaan ja sitä on sen jälkeen käytetty laajalti. Vaihtoehtona on käyttää -f operaattoria tai yhdistellä stringejä plussa (+) merkillä, mutta nämä voivat olla sekavampia ja vähemmän tehokkaita. Interpoloitavat alueet merkitään $-merkillä tai laajennetussa merkkijonossa käyttäen "@-merkkijonoja". PowerShell laskee ja korvaa muuttujat ja lausekkeet automaattisesti merkkijonon sisällä.
 
-"Näen Kissa:n, joka yrittää hypätä:a."
-
-Stringin interpolointi PowerShellissä käyttää $-merkkiä muuttujien nimeämiseen merkkijonon sisällä.
-
-## Syventävä sukellus:
-
-Historiallisesti merkkijonojen yhdistämistä varten on ollut useita metodeja, kuten + -operaattorin tai `String.Format`-metodin käyttö. Nämä voivat kuitenkin olla kömpelöitä ja johtaa virheisiin. Stringin interpolointi PowerShellissä tarjoaa selkeämmän ja vähemmän virhealttiin tavan.
-
-Alternatiiveille, `StringBuilder` on varteenotettava vaihtoehto suurille merkkijonoille, ja `-f` -operaattorille, joka on samanlainen kuin `String.Format`.
-
-PowerShellissä merkkijonojen interpolointi käyttää kaksoislainauksia (""). Yksittäiset lainaukset ('') eivät toimi, koska ne käsittävät merkkijonon kirjaimellisesti.
-
-## Katso myös:
-
-[Microsoftin dokumentaatio stringin interpoloinnista](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1)
-
-[Keskustelu stringin interpoloinnista StackOverflow:issa](https://stackoverflow.com/questions/37320296/string-interpolation-vs-format-string-in-powershell)
+## See Also (Katso Myös)
+- [About Quoting Rules](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules)
+- [About Special Characters](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_special_characters)
+- [Format Operator -f](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators#format-operator--f)

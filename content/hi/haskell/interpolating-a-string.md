@@ -1,7 +1,8 @@
 ---
-title:                "स्ट्रिंग का अंतर्कलन"
-html_title:           "Arduino: स्ट्रिंग का अंतर्कलन"
-simple_title:         "स्ट्रिंग का अंतर्कलन"
+title:                "स्ट्रिंग इंटरपोलेशन"
+date:                  2024-01-20T17:51:20.621175-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग इंटरपोलेशन"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,50 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
+## What & Why? (क्या और क्यों?)
+String interpolation मतलब है एक string के अंदर variable की values को insert करना. Programmers इसे use करते हैं क्योंकि इससे dynamic strings बनाना आसान हो जाता है और अपने code को अधिक readable और maintainable बना सकते हैं.
 
-स्ट्रिंग इंटरपोलेशन के माध्यम से, हम एक स्ट्रिंग में डायरेक्टली हास्केल एक्सप्रेशन्स इनकॉर्पोरेट कर सकते हैं। यह एकदिवसीय और लचीला मार्ग होता है जो इनपुट परिवर्तनों को संचालित करने के लिए प्रोग्रामर्स का उपयोग करते हैं।
-
-## कैसे करें:
-
-यहाँ एक उदाहरण है:
+## How to: (कैसे करें:)
+Haskell में string interpolation करने के लिए हम `printf` या `interpolate` library का use कर सकते हैं. नीचे दो examples हैं:
 
 ```Haskell
-{-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE QuasiQuotes #-}
-import Text.RawString.QQ
-import Data.String.Interpolate
-
-printInterpolated :: String -> String -> IO ()
-printInterpolated name server = putStrLn [i|Hello, #{name}! Connecting to #{server}.|]
+-- Using printf from Text.Printf
+import Text.Printf (printf)
 
 main :: IO ()
 main = do
-  printInterpolated "Alice" "Server 1"
+  let name = "विशाल"
+  let year = 2023
+  printf "नमस्ते, मेरा नाम %s है और इस साल है %d.\n" name year
+
+-- Expected output:
+-- नमस्ते, मेरा नाम विशाल है और इस साल है 2023.
 ```
 
-यह उद्धरण निम्नलिखित आउटपुट पैदा करेगा:
+```Haskell
+-- Using interpolation library
+{-# LANGUAGE QuasiQuotes #-}
+import Data.String.Interpolate (i)
 
+main :: IO ()
+main = do
+  let name = "सीमा"
+  let age = 25
+  putStrLn [i|नमस्ते, मेरा नाम #{name} है और मेरी उम्र #{age} साल है.|]
+
+-- Expected output:
+-- नमस्ते, मेरा नाम सीमा है और मेरी उम्र 25 साल है.
 ```
-Hello, Alice! Connecting to Server 1.
-```
 
-## गहरी डाइव:
+## Deep Dive (गहराई से जानकारी)
+string interpolation एक मजबूत feature है जो बहुत सारे programming languages में मिलता है, Haskell में यह quasi-quotes के through possible है. `printf` function C language से inspired है, जो typed sprintf की Haskell version है. `interpolate` library Haskell प्रोग्रामर्स के लिए अधिक modern और convenient solution प्रदान करती है जिसमें quasi-quotes का use किया जाता है. Haskell में interpolation करना static type checking से compromise किए बिना होता है, जो safety को ensure करता है.
 
-**ऐतिहासिक संदर्भ:** 
-हास्केल की एक + + ऑपरेटर ने पहले स्ट्रिंग इंटरपोलेशन का समर्थन किया था। लेकिन, इस समय "Data.String.Interpolate" लाइब्रेरी सबसे अधिक विश्वसनीय और प्रयोग की गई है।
-
-**विकल्प:** 
-आप भी स्ट्रिंग इंटरपोलेशन को `"++"` ऑपरेटर के साथ फॉर्मेट कर सकते हैं। यह एक विचलन या एक्सप्रेशन का फॉर्मेट करने के लिए उपयोग किया जा सकता है।
-
-**कार्यान्वयन विवरण:**
-हास्केल में स्ट्रिंग इंटरपोलेशन "QuasiQuotes" और "Data.String.Interpolate" लाइब्रेरी का उपयोग करके किया जाता है। 
-QuasiQuotes (क़्वासीकोट्स) हास्केल कोड के एक हिस्से को आपके स्ट्रिंग में एंबेड करने का एक तरीका हैं। 
-
-## अधिक देखें:
-
-हास्केल स्ट्रिंग इंटरपोलेशन के बारे में अधिक जानकारी के लिए, आप निम्नलिखित संसाधनों की जांच कर सकते हैं:
-
-1. Hackage पर "Data.String.Interpolate" लाइब्रेरी: https://hackage.haskell.org/package/interpolate
-2. Haskell Wiki पर क्वासिकोटेशन:  https://wiki.haskell.org/Quasiquotation
-3. Haskell Wiki पर ओवरलोडेड स्ट्रिंग्स: https://wiki.haskell.org/Overloaded_strings
+## See Also (और जानकारी के लिए)
+- [Haskell `printf` documentation](https://hackage.haskell.org/package/base-4.16.1.0/docs/Text-Printf.html)
+- [Data.String.Interpolate library on Hackage](https://hackage.haskell.org/package/interpolate)
+- [Haskell Wiki on Quasiquotation](https://wiki.haskell.org/Quasiquotation)

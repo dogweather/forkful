@@ -1,6 +1,7 @@
 ---
 title:                "Gerando números aleatórios"
-html_title:           "C: Gerando números aleatórios"
+date:                  2024-01-20T17:48:53.775476-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Gerando números aleatórios"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,36 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Gerar números aleatórios é um processo de produção de números que não seguem um padrão perceptível ou previsível. Programadores fazem isso para uma variedade de propósitos, como criar dados de teste, simulações e jogos.
+## What & Why?
+Gerar números aleatórios é basicamente tirar uma carta do baralho de forma cega. Programadores fazem isso para tudo, desde simulações de física a sorteios de rifas.
 
-## Como Fazer:
-Aqui está um exemplo de como gerar um número aleatório em Clojure:
+## How to:
+Para gerar um número aleatório em Clojure, você vai brincar com a função `rand`. Quer um número entre 0 e 1? Use `rand` puro. Quer esticar essa faixa para entre 0 e 100? Multiplica por 100 e arredonda com `int`.
 
-```clojure
-(defn numero-aleatorio []
-    (rand))
+```Clojure
+;; Número aleatório entre 0 e 1
+(rand)
+
+;; Número aleatório entre 0 e 100
+(int (* 100 (rand)))
 ```
 
-Ao executar `(numero-aleatorio)`, você vai receber um número aleatório entre 0.0 (inclusivo) e 1.0 (exclusivo).
+Rode essas linhas, e cada vez a saída é uma surpresa.
 
-Se quiser gerar um número inteiro aleatório num intervalo, você pode usar a função `rand-int`. Aqui está um exemplo de como gerar um número inteiro aleatório até 10:
+## Deep Dive:
+Números "aleatórios" em programação são um truque; na verdade, são pseudoaleatórios, seguindo uma fórmula que parece aleatória. Claro, isso é suficiente para a maioria dos casos.
 
-```clojure
-(defn numero-aleatorio-ate-10 []
-    (rand-int 10))
-```
+Historicamente, o aleatório em programação é um tema cheio de charadas e caminhos tortuosos. Em Clojure, usamos o Java underneath para dar conta do recado, graças à Java Virtual Machine (JVM).
 
-Ao executar `(numero-aleatorio-ate-10)`, você vai receber um número inteiro aleatório de 0 (inclusivo) a 10 (exclusivo).
+Existem alternativas se você precisar de algo mais específico que `rand`. Bibliotecas de randomização especializadas, como `test.check`, são ótimas para testes mais sofisticados e simulações.
 
-## Aprofundamento
-A geração de números aleatórios tem uma longa história na computação. Muitos algoritmos foram criados para esse propósito, mas a abordagem de Clojure é simples e eficaz.
+A implementação por baixo do capô usa um algoritmo chamado Linear Congruential Generator (LCG). Não é o mais robusto do planeta, mas para aquela rifa de fim de semana, pode confiar.
 
-Existem outras maneiras de gerar números aleatórios em Clojure, como o uso do gerador de números aleatórios java.util.Random diretamente, mas `rand` e `rand-int` geralmente são suficientes para a maioria dos usos.
-
-Ao usar `rand` e `rand-int`, você está tecnicamente gerando números pseudoaleatórios. Eles são determinísticos e podem ser reproduzidos se você souber a "semente" inicial. Se você precisar de números verdadeiramente aleatórios para criptografia ou outros usos sensíveis, terá que usar uma fonte diferente.
-
-## Veja Também
-
-1. Clojure - Funções matemáticas : [https://clojuredocs.org/clojure.core/rand](https://clojuredocs.org/clojure.core/rand)
-3. Geradores de números pseudoaleatórios : [https://pt.wikipedia.org/wiki/Gerador_de_números_pseudoaleatórios](https://pt.wikipedia.org/wiki/Gerador_de_números_pseudoaleatórios).
+## See Also:
+- A boa e velha [Clojure Docs](https://clojure.github.io/clojure/) para um mergulho mais fundo em funções randômicas.
+- [test.check](https://github.com/clojure/test.check) para quando a festa de números aleatórios ficar séria.
+- A história dos números pseudoaleatórios na renomada [Random.org](https://www.random.org/history/), que também oferece serviços de aleatoriedade.

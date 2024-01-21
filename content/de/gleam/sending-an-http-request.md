@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anforderung senden"
-html_title:           "Bash: Eine HTTP-Anforderung senden"
-simple_title:         "Eine HTTP-Anforderung senden"
+title:                "Einen HTTP-Request senden"
+date:                  2024-01-20T17:59:28.249823-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Einen HTTP-Request senden"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,45 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-
 ## Was & Warum?
+HTTP-Anfragen sind Mechanismen, mit denen deine Programme im Netz Daten anfordern oder senden. Programmierer nutzen sie, um Web-APIs anzusprechen, Inhalte auszutauschen oder Dienste zu konsumieren.
 
-Das Senden einer HTTP-Anfrage ist eine Methode, bei der ein Server aufgefordert wird, Daten bereitzustellen oder zu empfangen. Programmierer verwenden es, um Daten von APIs abzurufen oder komplexe Webanwendungen zu erstellen.
+## How to:
+```gleam
+import gleam/http
+import gleam/httpc
 
----
+pub fn fetch_data() {
+  // Definiere deine URL
+  let url = "https://api.example.com/data"
+  
+  // Erstelle eine GET-Anfrage
+  case httpc.send(http.Request(method: Get, url: url)) {
+    Ok(response) -> 
+      // Zeige den Erfolg an, wenn alles passt
+      io.println("Daten empfangen: ")
+      io.println(response.body)
 
-## So geht’s:
-
-Erstellen wir zunächst einen einfachen HTTP-Get-Request mit Gleam:
-
-```Gleam
-import gleam/http.{HttpClient}
-
-fn main(_args: List(String)) {
-let client = HttpClient.start_link()
-let _response = client.get("http://example.com")
-response.body
+    Error(error) ->
+      // Fehlerbehandlung, falls etwas schief geht
+      io.println("Fehler bei der Anfrage: ")
+      io.println(error)
+  }
 }
 ```
+Ausgabe:
+```text
+Daten empfangen: {Json data here...}
+```
 
-In diesem Block startet Ihr HTTP-Client, sendet eine GET-Anfrage an "http://example.com" und gibt den Körper der Antwort aus.
+oder, im Fehlerfall:
 
----
+```text
+Fehler bei der Anfrage: {Error details...}
+```
 
-## Vertiefung
+## Deep Dive
+HTTP wurde Anfang der 90er entwickelt und ist das Fundament des Datenverkehrs im Web. Alternativen zu `httpc` in Gleam sind Libraries wie `opium`, die mehr Funktionen bieten könnten. Die Gleam-Implementierung achtet auf Typensicherheit und Kompaktheit, so dass Fehler möglichst schon zur Compilezeit ausgeschlossen werden können.
 
-HTTP (Hypertext Transfer Protocol) wurde in den 90er Jahren eingeführt, um die Webkommunikation zu erleichtern. Alternative Methoden zur Datenabfrage können Sockets oder direkte Datenbankzugriffe sein. 
-
-Der `HttpClient.start_link()` in Gleam erzeugt einen neuen, asynchronen HTTP-Client. Dies bedeutet, dass Sie gleichzeitig mehrere Anfragen senden und verarbeiten können, ohne auf die Antwort der vorherigen Anfrage warten zu müssen.
-
----
-
-## Siehe auch
-
-- Gleam-HTTP-Anforderungen dokumentieren: [Link]https://gleam.run/book/tour/http-requests.html)
-- Gleam HTTP-Anforderungen GitHub: [Link] (https://github.com/gleam-lang/gleam_http)
-
-Für weitere Informationen besuchen Sie bitte die oben genannten Links.
-
----
+## See Also
+- [Getting started with Gleam](https://gleam.run/book/)

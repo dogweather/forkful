@@ -54,6 +54,5 @@ Quando se trata de alternativas, o uso de `-e` ou `-f` pode verificar a existên
 
 ## Ver Também:
 
-- [Bash Conditional Expressions](https://www.gnu.org/software/bash/manual/bash.html#Bash-Conditional-Expressions)
 - [Advanced Bash-Scripting Guide](http://tldp.org/LDP/abs/html/)
 - [Stack Overflow: How to check if a directory exists in a Bash shell script?](https://stackoverflow.com/questions/59838/check-if-a-directory-exists-in-a-shell-script)

@@ -1,7 +1,8 @@
 ---
-title:                "Конкатенація рядків"
-html_title:           "PHP: Конкатенація рядків"
-simple_title:         "Конкатенація рядків"
+title:                "Об'єднання рядків"
+date:                  2024-01-20T17:35:10.200352-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Об'єднання рядків"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,41 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що таке & навіщо?
-Об'єднання рядків - це приєднання двох або більше рядків в один. Це робиться, щоб в багатьох випадках виконати більш складні маніпуляції з даними, динамічно змінюючи рядки.
+## What & Why? (Що та Навіщо?)
+Concatenating strings means sticking them together end-to-end. Programmers do this to combine words and variables to create sentences or messages in their code.
 
-## Як це зробити:
-```PHP
-<?php
-// PHP код для об'єднання рядків
-$str1 = "Привіт, ";
-$str2 = "світе!";
-$str3 = $str1 . $str2; // Використовуємо оператор "."
-echo $str3; // Виводимо "Привіт, світе!"
-?>
+## How to: (Як це зробити:)
+Here's the lowdown on joining strings together in PHP:
+
+```php
+$greeting = "Привіт";
+$name = "Василь";
+
+// Using the dot operator to concatenate
+$welcomeMessage = $greeting . ", " . $name . "!";
+echo $welcomeMessage; // Outputs: Привіт, Василь!
+```
+Wrap your eyes around another way with double quotes:
+```php
+$food = "борщ";
+$phrase = "Я люблю $food";
+echo $phrase;  // Outputs: Я люблю борщ
 ```
 
-## Занурення в деталі:
-**Історичний контекст:** Оператор об'єднання рядків у PHP, ". ", був запроваджений з самого початку мови і поводиться трохи інакше, ніж в деяких інших мовах програмування.
+## Deep Dive (Занурення у глибину)
+Back in PHP’s younger days, string concatenation could only be done with the dot operator. Now you’ve also got the possibility of sticking variables right into double-quoted strings, a bit like how we used "борщ" in our example above.
 
-**Альтернативи:** Існує багато способів об'єднати рядки. Зокрема, їх можна об'єднати за допомогою функції `sprintf()` або при використанні string interpolation.
+There's always more than one way to skin a cat, or in this case, to stitch strings together. You could use `sprintf()` or `implode()` functions, but for basic concatenation, stick to the dot.
 
-```PHP
-<?php
-// Використання sprintf()
-$str1 = "Привіт, ";
-$str2 = "світе!";
-$str3 = sprintf("%s%s", $str1, $str2);
-echo $str3; // Виведе: "Привіт, світе!"
+Some sharpen their performance by using braces around variables. Can make PHP parse a smidge faster.
 
-// Використання string interpolation
-$name = "Світ";
-echo "Привіт, {$name}!"; // Виведе: "Привіт, Світ!" 
-?>
+```php
+echo "Let's eat some {$food} together!";
 ```
 
-**Деталі виконання:** Всередині, PHP використовує конкатенацію рядків для динамічної побудови коду. Така можливість робить рядки в PHP дуже гнучкими та потужними.
-
-## Див. також:
-- [PHP: String concatenation - Manual](https://www.php.net/manual/en/language.operators.string.php)
-- [sprintf - PHP manual](https://www.php.net/manual/en/function.sprintf.php)
+## See Also (Дивись також)
+Hungry for more? Take a look at these:
+- PHP String Operators in the [PHP Manual](https://www.php.net/manual/en/language.operators.string.php)
+- A deeper dive into strings in the [PHP String Functions List](https://www.php.net/manual/en/ref.strings.php)

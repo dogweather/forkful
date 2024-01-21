@@ -1,6 +1,7 @@
 ---
 title:                "Downloading a web page"
-html_title:           "Bash recipe: Downloading a web page"
+date:                  2024-01-20T17:43:28.647391-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Downloading a web page"
 programming_language: "C++"
 category:             "C++"
@@ -10,89 +11,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Article Title: Downloading a Web Page in C++
-
 ## What & Why?
-
-Downloading a web page is the act of pulling down HTML content from a specific URL to work with it locally. Programmers often do this to parse data, automate actions or test functionality. 
+Downloading a web page simply means fetching its content, usually in HTML format, to either view or process locally. Programmers download web pages to scrape data, monitor changes, or integrate with web services.
 
 ## How to:
+In the current C++ version, you can use the `CURL` library to download web content. Here's a basic example:
 
-Modern C++ has a powerful library complement for network operations: `Boost.Beast` for HTTP(S) and `Boost.Asio` for lower level TCP/UDP. However, for now, we'll use libcurl because it's easy and widely adaptable. Make sure you've got libcurl installed. Here's a simple snippet to download a webpage's HTML.
-
-```C++
+```cpp
+#include <curl/curl.h>
 #include <iostream>
 #include <string>
-#include <curl/curl.h>
 
-std::size_t callback(
-    const char* in,
-    std::size_t size,
-    std::size_t num,
-    std::string* out)
-{
-    const std::size_t totalBytes(size * num);
-    out->append(in, totalBytes);
-    return totalBytes;
+static size_t writeCallback(void* contents, size_t size, size_t nmemb, void* userp){
+    ((std::string*)userp)->append((char*)contents, size * nmemb);
+    return size * nmemb;
 }
 
-int main()
-{
-    CURL* curl = curl_easy_init();
+int main() {
+    CURL* curl;
+    CURLcode res;
+    std::string readBuffer;
 
-    // Set remote URL.
-    curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+        res = curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
 
-    // Don't bother trying IPv6, which would increase DNS resolution time.
-    curl_easy_setopt(curl, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
-
-    // Don't wait forever, time out after 10 seconds.
-    curl_easy_setopt(curl, CURLOPT_TIMEOUT, 10);
-
-    // Follow HTTP redirects if necessary.
-    curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
-
-    // Response information.
-    int httpCode(0);
-    std::unique_ptr<std::string> httpData(new std::string());
-
-    // Hook up data handling function.
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, callback);
-
-    // Hook up data container (will be passed as the last parameter to the
-    // callback handling function).  Can be any pointer type, since it will
-    // internally be passed as a void pointer.
-    curl_easy_setopt(curl, CURLOPT_WRITEDATA, httpData.get());
-
-    // Run our HTTP GET command, capture the HTTP response code, and clean up.
-    curl_easy_perform(curl);
-    curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &httpCode);
-    curl_easy_cleanup(curl);
-
-    if(httpCode == 200)
-    {
-        std::cout << "\nGot successful response from " << url << " :\n";
-        std::cout << httpData->c_str() << "\n";
-    }
-    else
-    {
-        std::cout << "Couldn't GET from "<< url <<" - exiting\n";
+        if(res == CURLE_OK) {
+            std::cout << readBuffer << std::endl;
+        }
+        else {
+            std::cerr << "CURL Error: " << curl_easy_strerror(res) << std::endl;
+        }
     }
 
     return 0;
 }
 ```
 
+Sample output:
+
+```html
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+    ...
+</head>
+<body>
+    <div>
+        <h1>Example Domain</h1>
+        <p>This domain is for use in illustrative examples in documents. You may use this domain ...</p>
+    </div>
+</body>
+</html>
+```
+
 ## Deep Dive
+Originally, there was no standard way to download web pages with just C++. Programmers used platform-specific solutions or various third-party libraries. Now, `libcurl` is a widely supported and versatile library for transferring data with URLs. Compiled and linked with your C++ code, curl is a go-to tool.
 
-Downloading webpages has been around since the formative days of the internet. Early HTTP was simple and unencrypted, evolving over time to include secure transport (HTTPS), better status codes, and full-featured libraries.
+Alternatives to libcurl include Poco's HTTPClientSession and C++ Rest SDK (aka Casablanca). While libcurl is C-based and about as low-level as you can comfortably go in terms of HTTP requests, Poco and Casablanca offer more idiomatic C++ interfaces which some may prefer.
 
-Alternatives to libcurl include Boost.Beast and others. If you need low-level networking or websocket support, opt for Boost.Beast tied with Boost.Asio.
-
-The C++ code leverages HTTP's simple request-response cycle. We make a GET request to the server hosting our desired page. The server responds with the page's HTML, which our program processes, here just printing it to stdout.
+Under the hood, when you download a web page, the HTTP protocol kicks into action. A GET request is sent to the server, and assuming all goes well, the server responds with the content wrapped in an HTTP response.
 
 ## See Also
-
-1. libcurl - [https://curl.haxx.se/libcurl/c/](https://curl.haxx.se/libcurl/c/)
-2. HTTP - [https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
-3. Boost.Beast - [https://www.boost.org/doc/libs/develop/libs/beast/](https://www.boost.org/doc/libs/develop/libs/beast/)
+- [libcurl official site](https://curl.se/libcurl/)
+- [C++ Rest SDK GitHub Repo](https://github.com/microsoft/cpprestsdk)
+- [Poco Project](https://pocoproject.org/)
+- [HTTP on Wikipedia](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)

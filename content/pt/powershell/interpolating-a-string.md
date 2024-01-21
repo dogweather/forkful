@@ -1,6 +1,7 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "Java: Interpolando uma string"
+date:                  2024-01-20T17:51:37.234550-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolando uma string"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,48 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-
-A interpolação de strings é um processo de substituição de variables ou expressões embedidas dentro de strings por seus valores respectivos. Os programadores usam isso para tornar o código mais legível e também para melhor formatação e apresentação de mensagens de texto.
+## O Que é e Por Que?
+Interpolação de string permite injetar valores em uma cadeia de caracteres, tornando seu código mais limpo e legível. Programadores fazem isso para construir strings dinamicamente e evitar a concatenação manual de dados e texto.
 
 ## Como Fazer:
-
-Você pode começar a explorar a interpolação de strings no PowerShell com o código abaixo:
-
 ```PowerShell
-$nome = "Pedro"
-$idade = 23
-"$nome tem $idade anos."
+# Definindo uma variável
+$nome = 'Mundo'
+
+# Interpolando a variável dentro de uma string usando a sintaxe do Powershell
+$saudacao = "Olá, $nome!"
+
+# Exibindo o resultado
+$saudacao
+```
+Saída esperada:
+```
+Olá, Mundo!
 ```
 
-A saída seria:
-
+Mais um exemplo, com expressões:
 ```PowerShell
-Pedro tem 23 anos.
+$numero = 15
+$mensagem = "O dobro de $numero é $(2 * $numero)."
+$mensagem
+```
+Saída esperada:
+```
+O dobro de 15 é 30.
 ```
 
-Note que as variáveis `$nome` e `$idade` estão dentro das aspas duplas. Portanto, seus valores são interpolados na string.
+## Mergulho Profundo
+Antes de 2016, na versão 5 do PowerShell, a interpolação de strings era mais trabalhosa. A chegada do PowerShell 5 trouxe o uso de `$()` dentro de strings com aspas duplas para facilitar essa tarefa. Essa funcionalidade permite não somente incluir variáveis, mas também executar operações inline.
 
-## Imersão Profunda:
-
-Historicamente, a interpolação de strings já existe há bastante tempo em muitas linguagens de programação, incluindo Perl, Ruby e, é claro, PowerShell, uma vez que melhora significativamente a legibilidade do código.
-
-Existem alternativas à interpolação de strings. Por exemplo, a concatenação de strings:
+Como alternativa à interpolação, pode-se usar o operador `-f`, o que é útil quando se tem um template fixo de string e os valores são inseridos sequencialmente.
 
 ```PowerShell
-$nome = "Pedro"
-$idade = 23
-$nome + " tem " + $idade + " anos."
+$template = 'Olá, {0}! Hoje é {1}.'
+$template -f 'Mundo', (Get-Date -Format 'dddd')
 ```
 
-Contudo, a interpolação de strings tende a ser mais limpa e fácil de ler.
+É importante lembrar que interpolação só acontece em strings delimitadas por aspas duplas (`"`). Aspas simples (`'`) são usadas para strings literais e não interpretam as variáveis dentro delas.
 
-Informações importantes de implementação: no PowerShell, a interpolação de strings só ocorre com aspas duplas `" "`. As aspas simples `' '` tratam o conteúdo como string literal, nada é interpolado.
-
-## Veja Também:
-
-Para mais informações sobre a interpolação de strings no PowerShell, consulte os links abaixo:
-
-1. [String Interpolation in PowerShell](https://ss64.com/ps/syntax-operators.html)
-
-Lembre-se, a melhor maneira de aprender é praticando, então tente usar a interpolação de strings no seu próximo programa PowerShell.
+## Veja Também
+- [Sobre_Quoting_Rules](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules) — Documentação oficial sobre regras de aspas no PowerShell.
+- [Sobre_Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators) — Saiba mais sobre operadores, incluindo o operador `-f` para formatação de strings.
+- [Interpolação de String em C#](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated) — Para entender como a interpolação de strings funciona em outras linguagens da família .NET.

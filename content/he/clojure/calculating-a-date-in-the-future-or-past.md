@@ -1,6 +1,7 @@
 ---
 title:                "חישוב תאריך בעתיד או בעבר"
-html_title:           "Clojure: חישוב תאריך בעתיד או בעבר"
+date:                  2024-01-20T17:31:03.144863-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חישוב תאריך בעתיד או בעבר"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,32 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-חישוב תאריך בעתיד או בעבר הוא מעין פעולה שבה אנחנו מוסיפים או מחסירים ימים, שבועות, חודשים או שנים מדאת ספציפית. מתכנתים עושים זאת כשהם צריכים לעקוב אחרי מרקמים זמניים - לדוגמא, זמן שליחת דינאמי, ערך של תאריך פקיעה וכדומה.
+חישוב תאריך בעתיד או בעבר הוא פעולה של הוספה או הפחתה של ימים, שבועות, חודשים או שנים מתאריך נתון. תכנתים מבצעים את זה לעיתים קרובות לצרכי תכנון, גביית נתונים או פיצ'רים הקשורים בזמן.
 
-## איך ל:
-Clojure מספקת תמיכה מולדת במניפולציות תאריכים באמצעות ספריית java.time.
+## איך לעשות:
+```Clojure
+;; נשתמש בספריית clj-time
+(require '[clj-time.core :as t]
+         '[clj-time.format :as fmt]
+         '[clj-time.periodic :as p])
 
-```clojure
-(ns my.namespace
-  (:import [java.time LocalDate]))
+;; יצירת תאריך
+(def my-date (t/now))
 
-(defn add-days [date num-days]
-  (.plusDays date num-days))
+;; להוסיף 3 ימים לתאריך
+(def future-date (t/plus my-date (t/days 3)))
 
-(def today (LocalDate/now))
-(def ten-days-later (add-days today 10))
+;; להפחית 5 שנים מתאריך
+(def past-date (t/minus my-date (t/years 5)))
 
-(prn "Today is " today)
-(prn "In 10 days it will be " ten-days-later)
+;; דוגמה לפלט
+(println (fmt/unparse (fmt/formatters :basic-date-time) future-date))
+;; => "20230217T103000.000Z"
+
+(println (fmt/unparse (fmt/formatters :basic-date-time) past-date))
+;; => "20180217T103000.000Z"
 ```
-זה יגדיר שני תאריכים - היום ועוד 10 ימים - ואז ידפיס שני הם.
 
-## בהרחבה:
-- היסטוריה: נתמך בספריות הקודם של קלוז'ר.
-- אלטרנטיבות: Clojure מאפשרת שימוש בספריות חיצוניות כמו clj-time או clojure.java-time.
-- פרטי ביצוע: המניפולציה של תאריכים באמצעות plusDays מבוססת על מודל של unscaled addition, כלומר, היא תמיד מוסיפה מספר מסוים של ימים, ללא התחשבות בשינויים כמו מעבר לשנה הלועזית.
+## עיון נוסף
+הספריה `clj-time` מבוססת על Joda-Time, ספרייה פופולרית של ג'אווה לניהול זמנים ותאריכים. חלופות כוללות את ספריית java.time של Java 8 והלאה. בחירת הספריה תלויה בדרישות הפרויקט ובהעדפות האישיות. כשעובדים עם תאריכים, חשוב להבין את המושגים של אזורי זמן והתאמות עונתיות כדי להימנע מבאגים. 
 
-## ראו גם:
-- תיעוד ספריית [java.time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html) 
-- פרויקט [clj-time](https://github.com/clj-time/clj-time) ב-GitHub 
-- פרויקט [clojure.java-time](https://github.com/dm3/clojure.java-time) ב-GitHub
+## ראו גם
+- [clj-time GitHub repository](https://github.com/clj-time/clj-time)
+- [Joda-Time documentation](https://www.joda.org/joda-time/)
+- [java.time package summary](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

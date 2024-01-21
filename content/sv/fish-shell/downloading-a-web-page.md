@@ -1,7 +1,8 @@
 ---
-title:                "Ladda ner en webbsida"
-html_title:           "Bash: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Hämta en webbsida"
+date:                  2024-01-20T17:44:18.183033-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Hämta en webbsida"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -11,33 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att hämta en webbsida innebär att ladda ner webbsidans HTML till din enhet. Programmerare gör detta för att analysera, manipulera eller visa webbsidans data.
+Att ladda ner en webbsida innebär att hämta sidans innehåll från internet till din dator. Programmerare gör detta för att analysera sidinnehållet, automatisera datainsamling eller testa webbservrar.
 
-## Så här gör du:
-Med hjälp av curl i Fish Shell kan vi enkelt hämta en webbsida. Ditt skript kan se ut så här:
-
-```Fish Shell
-function hämta-webbsida
-  set url $argv[1]
-  curl $url -o "webbsida.html"
-end
-```
-
-Kör kommandot så här:
+## How to:
+För att ladda ner en webbsida i Fish Shell kan vi använda `curl` eller `wget`. Här är hur man gör det:
 
 ```Fish Shell
-hämta-webbsida https://google.com
+# Använd curl för att ladda ner innehållet i en webbsida till en fil
+curl https://example.com -o webpage.html
+
+# Använd wget för att ladda ner en hel webbsida
+wget https://example.com
 ```
 
-Output resultatet kommer att bli en fil kallad "webbsida.html" i din aktuella katalog.
+Exempel på utmatning efter körning:
 
-## Djupdykning
-Historiskt sett har HTML-läsning använts för webbskrapning och analys av webbdata. Alternativa metoder för att hämta en webbsida inkluderar bibliotek som Scrapy i Python, eller användning av HTTP/S-anrop i JavaScript.
+```
+# Med curl
+% curl https://example.com -o webpage.html
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1256  100  1256    0     0   6357      0 --:--:-- --:--:-- --:--:--  6376
 
-Implementationen i Fish är ganska enkel, curl-kommando är ett kraftfullt verktyg som hanterar ett komplett HTTP GET-request och sparar output till "webbsida.html". "argv[1]" i koden står för den första argumentet (i detta fall URL), vilket gör funktionen flexibel för olika URL:er.
+# Med wget
+% wget https://example.com
+--2023-04-01 12:00:00--  https://example.com/
+Resolving example.com (example.com)... 93.184.216.34
+Connecting to example.com (example.com)|93.184.216.34|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘index.html’
 
-## Se också
-- Fish Shell Dokumentation: https://fishshell.com/docs/current/index.html
-- Curl Manual: https://curl.se/docs/manpage.html
-- Scrapy Dokumentation: https://docs.scrapy.org/en/latest/
-- Fetch API i JavaScript: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+index.html                                      [ <=> ]   1.25K  --.-KB/s    in 0s      
+
+2023-04-01 12:00:01 (30.7 MB/s) - ‘index.html’ saved [1256]
+```
+
+## Deep Dive
+`curl` och `wget` är standardverktyg som används för att ladda ner data från internet. De har varit med en stund – `curl` släpptes första gången 1997 och `wget` 1996. De är robusta, stöder flera protokoll och har många alternativ för att anpassa nedladdningen.
+
+Med `curl` kan du exempelvis ladda ner en fil, men även skicka data med POST, PUT och andra HTTP-metoder. `wget` å andra sidan är mer inriktad på nedladdningar och kan till exempel rekursivt ladda ner webbsidor.
+
+Varför välja Fish Shell för detta? Fish är känd för att vara användarvänlig med en syntax som är lätt att förstå och skriva. Det inbyggda stödet för färgläggning och förslag hjälper till att undvika fel.
+
+## See Also
+- Fish Shell dokumentation: https://fishshell.com/docs/current/index.html
+- `curl` dokumentation: https://curl.se/docs/
+- `wget` manual: https://www.gnu.org/software/wget/manual/wget.html
+- Introduktion till webbskrapning med Fish Shell: [Relevant artikel/webbsida]
+- Utforska HTTP-protokollet: https://developer.mozilla.org/en-US/docs/Web/HTTP

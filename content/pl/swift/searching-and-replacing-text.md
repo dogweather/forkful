@@ -1,7 +1,8 @@
 ---
-title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
-simple_title:         "Wyszukiwanie i zastępowanie tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+date:                  2024-01-20T17:58:51.246618-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,36 +12,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
+Szukanie i zamiana tekstu to chleb powszedni w programowaniu: odnajdujemy określone frazy i zmieniamy je na inne. Robimy to, gdy potrzebujemy masowo poprawić dane, zaktualizować kod lub po prostu zautomatyzować nudne zadania edycyjne.
 
-Wyszukiwanie i zastępowanie tekstu to różnego rodzaju operacje na ciągach znaków. Programiści często korzystają z tych funkcji, aby zmienić dane w bardziej pożądany, użyteczny lub zrozumiały format.
-
-## Jak to zrobić?
-
-Swift umożliwia łatwe wyszukiwanie i zastępowanie tekstu. Skorzystajmy z przykładu. 
-
+## Jak to zrobić:
 ```Swift
-var powitanie = "Cześć, Karol."
-powitanie = powitanie.replacingOccurrences(of: "Karol", with: "Anna")
-print(powitanie)
+var text = "Witaj świecie! Swift jest fajny."
+if let range = text.range(of: "świecie") {
+   text.replaceSubrange(range, with: "Swift")
+}
+print(text) // "Witaj Swift! Swift jest fajny."
+
+text = "Jabłka, banany, wiśnie."
+text = text.replacingOccurrences(of: "wiśnie", with: "maliny")
+print(text) // "Jabłka, banany, maliny."
 ```
 
-Na wyjściu zobaczysz: 
+## Zagłębiając się:
+Historia poleceń wyszukiwania i zastępowania sięga wczesnych edytorów tekstu i systemów do przetwarzania tłumów, gdzie automatyzacja mogła zaoszczędzić godziny ręcznej pracy. W Swift, `String` oferuje metody jak `replacingOccurrences(of:with:)` czy `replaceSubrange(_:with:)`, które są intuicyjne w użyciu, ale bazują na potężnych mechanizmach porównywania tekstów, takich jak wyrażenia regularne. Alternatywne podejścia mogą obejmować użycie `NSRegularExpression` w swiftowych aplikacjach dla większej kontroli i elastyczności przy szukaniu wzorców.
 
-```Swift
-Cześć, Anna.
-```
-
-Tutaj klasa `String` posiada funkcję `replacingOccurrences()`, która zastępuje wszystkie wystąpienia danego ciągu znaków innym ciągiem.
-
-## Deep Dive
-
-Operacje na ciągach znaków mają długą historię w programowaniu, od prostych operacji wykonywanych ręcznie przez programistów aż po obecne, zaawansowane metody dostępne w nowoczesnych językach programowania jak Swift.
-
-Alternatywą dla `replacingOccurrences()` może być użycie wyrażeń regularnych (RegEx), które są bardziej elastycznymi, ale zarazem bardziej skomplikowanymi narzędziami do manipulowania tekstem.
-
-Swift implementuje wyszukiwanie i zastępowanie tekstu poprzez protokół `StringProtocol`. Ten protokół definiuje zestaw metod, które są wspólne dla wszystkich typów, które są operacyjne jako ciągi znaków.
-
-## Zobacz też
-
-1. [Swift String and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html) - Podstawowe informacje o pracy ze stringami w Swift.
-2. [NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression) - Jak używać wyrażeń regularnych w Swift.
+## Zobacz również:
+- Apple's Swift String Documentation: [Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- Regular Expressions in Swift: [NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)

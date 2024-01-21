@@ -1,6 +1,7 @@
 ---
 title:                "Pesquisando e substituindo texto"
-html_title:           "Bash: Pesquisando e substituindo texto"
+date:                  2024-01-20T17:57:32.096500-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pesquisando e substituindo texto"
 programming_language: "C++"
 category:             "C++"
@@ -10,37 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & por quê?
-Procurar e substituir texto é uma ação freqüente em programação usada para encontrar padrões específicos dentro de strings e substituí-los por um novo texto. Os programadores fazem isso para refatorar código, manipular dados e melhorar a eficiência.
+## O Quê & Por Quê?
+Procurar e substituir texto é a arte de achar certas palavras ou frases e trocá-las por outras. Programadores fazem isso para corrigir erros, atualizar código ou dados, e tornar o conteúdo consistente sem perder tempo.
 
-## Como fazer:
-Usaremos a função `std::replace` do C++ para substituir caracteres em uma string:
-
+## Como Fazer:
 ```C++
-#include <algorithm>
-#include <string>
 #include <iostream>
+#include <string>
+#include <algorithm>
 
 int main() {
-    std::string s = "Olá mundo!";
-    std::replace(s.begin(), s.end(), 'o', 'a');
-
-    std::cout << s << std::endl;
+    std::string texto = "O sol na minha terra natal é intenso e quente.";
+    
+    // Procura e substitui a palavra 'sol' pela palavra 'lua'
+    std::string palavraProcurada = "sol";
+    std::string novaPalavra = "lua";
+    size_t posicao = texto.find(palavraProcurada);
+    
+    if (posicao != std::string::npos) {
+        texto.replace(posicao, palavraProcurada.length(), novaPalavra);
+    }
+    
+    std::cout << texto << std::endl; // "O lua na minha terra natal é intenso e quente."
+    
     return 0;
 }
 ```
-A saída deverá ser: 
-```
-"Ola mund!"
-```
 
-## Mergulhando fundo:
-Historicamente, a busca e substituição de texto existe desde os primeiros editores de texto, fornecendo aos programadores a capacidade de fazer alterações em larga escala no código. No C++ moderno, podemos usar várias abordagens além do `std::replace`, como `std::regex_replace` para substituições baseadas em regex ou funções de biblioteca de terceiros que podem oferecer mais características.
+## Mergulho Profundo:
+Procurar e substituir textos é fundamental desde os primórdios da edição de texto, sendo essencial em editores como sed e vim. Alternativas modernas incluem expressões regulares para substituições complexas e funções como `std::regex_replace` em C++. A implementação manual pode usar `std::string::find` e `std::string::replace`, mas é importante lidar com a possibilidade da string procurada não ser encontrada, para evitar substituições incorretas.
 
-A implementação do `std::replace` faz um loop através do intervalo fornecido (aqui, do início ao fim da string) e substitui cada ocorrência do segundo argumento pelo terceiro. A eficiência dessa operação é O(n), onde n é o comprimento da string.
-
-## Veja também:
-Para mais informações sobre funções de manipulação de texto em C++:
-- std::replace [https://www.cplusplus.com/reference/algorithm/replace/](https://www.cplusplus.com/reference/algorithm/replace/)
-- std::regex_replace [https://www.cplusplus.com/reference/regex/regex_replace/](https://www.cplusplus.com/reference/regex/regex_replace/) 
-- Guia completo do C++ Moderno [https://www.learncpp.com/](https://www.learncpp.com/)
+## Veja Também:
+- [cppreference.com - std::string::find](https://en.cppreference.com/w/cpp/string/basic_string/find)
+- [cppreference.com - std::string::replace](https://en.cppreference.com/w/cpp/string/basic_string/replace)
+- [cplusplus.com - Regular Expressions in C++](http://www.cplusplus.com/reference/regex/)

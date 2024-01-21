@@ -1,6 +1,7 @@
 ---
 title:                "새 프로젝트 시작하기"
-html_title:           "Arduino: 새 프로젝트 시작하기"
+date:                  2024-01-20T18:03:05.465061-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "새 프로젝트 시작하기"
 programming_language: "C"
 category:             "C"
@@ -10,13 +11,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 & 왜? 
-새 프로젝트를 시작한다는 것은 새로운 아이디어나 문제를 해결하기 위한 소프트웨어를 처음부터 개발하는 것을 말합니다. 프로그래머들은 학습, 기술 향상, 비즈니스 문제 해결, 혹은 단순한 창조력 표현을 위해 이를 수행합니다.
+## What & Why? (무엇과 왜?)
+새 프로젝트 시작은 공백에서 새로운 코드 세계로 나아가는 것입니다. 프로그래머들은 새로운 문제를 해결하거나 아이디어를 실현하기 위해 이 과정을 반복합니다.
 
-## 어떻게:
-새로운 C 프로젝트를 시작하는 가장 기본적인 방법을 보겠습니다.
+## How to: (어떻게하다)
+새 C 프로그램을 시작하려면 기본적인 구조가 필요합니다. 아래는 간단한 "Hello, World!" 프로그램입니다.
 
-```C
+```c
 #include <stdio.h>
 
 int main() {
@@ -24,15 +25,19 @@ int main() {
     return 0;
 }
 ```
-이 코드를 실행하면 다음과 같은 출력을 확인할 수 있습니다:
-```C
+
+컴파일과 실행 결과:
+
+```bash
+$ gcc hello.c -o hello
+$ ./hello
 Hello, World!
 ```
 
-## 딥다이브
-1. 이스토리컬 콘텍스트: C언어는 1972년에 벨 연구소에서 개발되었습니다. 이후로 많은 애플리케이션 및 시스템 프로그래밍 언어의 기반으로 사용되었습니다.
-2. 대체제: C언어를 대신할 수 있는 다양한 프로그래밍 언어가 있습니다. Java, Python, C++, Rust 등이 있으며, 각 언어는 특정 문제를 해결하는 데 있어 유용성을 가지고 있습니다.
-3. 구현 세부사항: C언어 프로젝트는 보통 컴파일러를 통해 실행 가능한 바이너리를 생성합니다. 이 프로세스는 소스 코드, 컴파일, 링크 등 여러 단계로 구성됩니다.
+## Deep Dive (심층 분석)
+초기 C 프로그램은 1972년에 존재했습니다. C는 시스템과 응용 프로그래밍에서 널리 쓰입니다. 대안 언어로는 Python, Java, Rust 등이 있으나, C는 여전히 하드웨어에 가까운 프로그램이 필요할 때 많이 사용됩니다. 새 프로젝트를 시작할 때는 `main()` 함수가 진입점(entry point)입니다. 표준 라이브러리와 각종 라이브러리를 포함해 필요한 기능을 구현합니다.
 
-## 참고 자료
-2. 이집트의 프로그래머인 Joel Spolsky가 쓴 ["스택 오버플로우: 가이드"] (https://www.amazon.com/Joel-Software-Occasionally-Developers-Designers/dp/1430209879)도 유익한 참고자료가 될 수 있습니다.
+## See Also (더 보기)
+- [Learn C Programming](https://www.learn-c.org/)
+- [GCC, the GNU Compiler Collection](https://gcc.gnu.org/)
+- [C Standard Library Reference](https://en.cppreference.com/w/c/header)

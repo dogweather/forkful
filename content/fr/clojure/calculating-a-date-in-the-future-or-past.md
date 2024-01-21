@@ -1,7 +1,8 @@
 ---
-title:                "Calculer une date dans le futur ou le passé"
-html_title:           "Clojure: Calculer une date dans le futur ou le passé"
-simple_title:         "Calculer une date dans le futur ou le passé"
+title:                "Calcul d'une date future ou passée"
+date:                  2024-01-20T17:30:43.570334-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Calcul d'une date future ou passée"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,39 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Les calculs de date future ou passée correspondent à la détermination d'une date relative à une autre. Les développeurs font cela pour diverses raisons, surtout pour planifier des événements ou estimer des délais.
+## Quoi et Pourquoi ?
 
-## Comment Faire:
-En Clojure, nous utilisons les fonctions `plus` et `minus` du paquet `clj-time`. Voici un exemple de calcul des dates:
+Calculer une date dans le futur ou le passé, c'est trouver une date à partir d'une autre, avant ou après un certain temps. Les programmeurs font ça pour gérer des échéances, planifier des événements, ou suivre le temps qui passe.
 
-```Clojure
-(require '[clj-time.core :as t]
-         '[clj-time.coerce :as c]
-         '[clj-time.periodic :as p])
+## Comment faire :
 
-(def date-actuelle (t/now))
-(def date-future (t/plus date-actuelle (t/days 10))) ;; machine à temps, allons 10 jours en avant 
-(def date-passee (t/minus date-actuelle (t/days 5))) ;; et 5 jours en arrière
+```clojure
+;; Ajoutons 3 jours à aujourd'hui
+(require '[java-time :as jt])
 
-;;output
-(date-actuelle)
-"2022-08-24T06:20:12.684Z"
+(def today (jt/local-date))
+(def in-three-days (jt/plus-days today 3))
 
-(date-future)
-"2022-09-03T06:20:12.684Z"
-
-(date-passee)
-"2022-08-19T06:20:12.684Z"
+(println "Aujourd'hui, c'est :" today)
+(println "Dans trois jours, ce sera :" in-three-days)
 ```
 
-## Approfondissement
-Les dates futures et passées sont un concept qui remonte à la nuit des temps où les humains ont cherché à mesurer le temps pour pouvoir prédire et planifier. Alternativement, vous pouvez utiliser `java.util.Calendar` ou `java.time.ZonedDateTime`, mais clj-time reste la solution la plus élégante pour Clojure.
+```clojure
+;; Soustrayons 2 semaines de la date courante
+(require '[java-time :as jt])
 
-Il est important de noter que clj-time repose sur Joda-Time, une bibliothèque de gestion du temps pour Java, pour ses opérations de base. Mais il offre aussi des fonctionnalités supplémentaires telle que la manipulation facile des fuseaux horaires, les périodes, les durées, etc.
+(def two-weeks-ago (jt/minus-weeks (jt/local-date) 2))
+
+(println "Il y a deux semaines, c'était :" two-weeks-ago)
+```
+
+## Plongée en profondeur
+
+Calculer une date dans le futur ou le passé n'est pas un concept nouveau. L'homme a toujours eu besoin de mesurer et de prévoir le temps. En informatique, cette fonctionnalité est essentielle pour tout, de la simple planification d'un rappel à la programmation de transactions financières. 
+
+Historiquement, les programmeurs utilisaient des structures et des fonctions basiques de manipulation de temps, souvent avec des résultats imprévisibles à cause des complexités des calendriers et des fuseaux horaires. Ainsi, des bibliothèques robustes telles que `java.time` que Clojure utilise à présent, ont été développées.
+
+Alternativement, Clojure permet aussi l'utilisation de bibliothèques externes telles que 'clj-time', une écharpe autour de Joda-Time, mais 'java.time' est devenu la solution privilégiée car elle est plus moderne et intégrée à Java 8 et versions ultérieures.
+
+Concernant l'implémentation, il est impératif de gérer correctement les fuseaux horaires et les particularités du calendrier (comme les années bissextiles) pour éviter des erreurs. La bibliothèque `java-time` traite ces subtilités pour vous.
 
 ## Voir aussi
-Pour en savoir plus sur la programmation des dates en Clojure, consultez les lien suivants : 
 
-1. Documentation clj-time : https://github.com/clj-time/clj-time
-2. Joda-Time: http://www.joda.org/joda-time/
+- Documentation de 'java.time': https://clojure.github.io/clojure/changes/javadoc/10.1.822/java-time.html
+- Bibliothèque 'clj-time' sur GitHub: https://github.com/clj-time/clj-time
+- Guide Clojure sur les dates et heures: https://clojure.org/guides/deps_and_cli
+- Article sur la manipulation du temps dans divers langages de programmation: https://en.wikipedia.org/wiki/System_time

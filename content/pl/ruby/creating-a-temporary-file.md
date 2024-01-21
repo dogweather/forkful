@@ -1,7 +1,8 @@
 ---
-title:                "Tworzenie tymczasowego pliku"
-html_title:           "C#: Tworzenie tymczasowego pliku"
-simple_title:         "Tworzenie tymczasowego pliku"
+title:                "Tworzenie pliku tymczasowego"
+date:                  2024-01-20T17:41:32.401596-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,39 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+## Co i Dlaczego?
 
-Tworzenie plików tymczasowych, to praktyka znana niemal każdemu programiście. Pliki tymczasowe służą jako bufor dla danych, które są zbyt duże, aby przechowywać je w pamięci albo które muszą być zachowane przez krótki czas między operacjami.
+Tworzenie plików tymczasowych pozwala na bezpieczne przechowywanie danych tylko na czas trwania procesu. Programiści używają ich, gdy potrzebują miejsca na dysku, które zniknie bez śladu po zakończeniu pracy.
 
+## How to:
 ## Jak to zrobić:
 
-W Ruby tworzyć pliki tymczasowe jest bardzo proste dzięki wbudowanej bibliotece 'tempfile'. Oto proste przykładowe użycie:
+Ruby ma wbudowaną bibliotekę `Tempfile` do obsługi plików tymczasowych. Użyj jej tak:
 
-```Ruby
+```ruby
 require 'tempfile'
 
-tempfile = Tempfile.new('mojplik')
-puts tempfile.path      # Wypisuje ścieżkę do pliku na dysku
+Tempfile.create('moj_plik') do |plik|
+  plik.write('Witaj, świat!')
+  puts "Plik tymczasowy istnieje: #{plik.path}"
+end
 
-tempfile.puts("Witaj, świecie!")
-tempfile.rewind         # Przewija plik do początku
-
-puts tempfile.read      # Wypisuje: "Witaj, świecie!"
-tempfile.close
+# Po wyjściu z bloku, plik jest automatycznie usunięty.
+puts "Plik tymczasowy został usunięty? #{!File.exist?(plik.path)}"
 ```
 
-## Pogłębione spojrzenie
+Sample output:
+```
+Plik tymczasowy istnieje: /tmp/moj_plik20180319-4721-x3shzn
+Plik tymczasowy został usunięty? true
+```
 
-Tworzenie plików tymczasowych to technika wykorzystywana od początków informatyki. Ułatwia ona prace z dużymi ilościami danych oraz zapewnia bezpieczeństwo, dzięki izolacji procesów.
+## Deep Dive:
+## Wgłębiając się:
 
-Jako alternatywę dla 'tempfile', można bezpośrednio obsługiwać system plików, ale to jest bardziej skomplikowane i podatne na błędy. Tempfile automatycznie dba o czyszczenie i usuwanie plików po ich użyciu.
+W Ruby, pliki tymczasowe działają dzięki `Tempfile`, który z kolei korzysta z klas niższego poziomu jak `File` i `Dir`. W przeszłości, zanim `Tempfile` stała się częścią standardowej biblioteki, tworzenie plików tymczasowych było bardziej żmudne i podatne na błędy.
 
-Szczegół implementacyjny: Tempfile tworzy pliki w katalogu określonym przez zmienną środowiskową `TMPDIR` lub `/tmp` jeśli `TMPDIR` nie jest ustawione.
+Alternatywnie, możesz stworzyć własne zarządzanie plikami tymczasowymi, używając klas `File` i `Dir`, ale pamiętaj o manualnym usuwaniu pliku. `Tempfile` automatycznie usuwa plik po zamknięciu obiektu lub gdy proces kończy działanie.
 
-## Zobacz też
+Pod kątem implementacji, `Tempfile` tworzy unikalne nazwy dla plików, aby zapobiec konfliktom, gdy wielu użytkowników lub procesów tworzy pliki tymczasowe jednocześnie. Zawiera też mechanizmy zabezpieczające przed atakami typu race condition.
 
-Dokumentacja Tempfile: <https://ruby-doc.org/stdlib-2.5.1/libdoc/tempfile/rdoc/Tempfile.html>
+## See Also:
+## Zobacz również:
 
-Krótki tutorial na StackOverflow: <https://stackoverflow.com/questions/6959214/how-do-i-make-a-temporary-file-in-ruby>
-
-Dokumentacja Ruby File and I/O: <https://ruby-doc.org/core-2.2.0/File.html>
+- Ruby's File and Dir classes for manual file handling: [https://ruby-doc.org/core/File.html](https://ruby-doc.org/core/File.html), [https://ruby-doc.org/core/Dir.html](https://ruby-doc.org/core/Dir.html)
+- Official Ruby programming language site: [https://www.ruby-lang.org/pl/](https://www.ruby-lang.org/pl/)

@@ -1,6 +1,7 @@
 ---
 title:                "Читання текстового файлу"
-html_title:           "Arduino: Читання текстового файлу"
+date:                  2024-01-20T17:53:49.252123-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Читання текстового файлу"
 programming_language: "C"
 category:             "C"
@@ -10,38 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що й навіщо?
-Читання текстового файлу - це процес витягування даних з файлу, збереженого на вашому комп'ютері. Програмісти це роблять, щоб обробляти збережені дані, наприклад, конфігурації, дані користувача або просто заради обміну інформацією між різними частинами програми.
+## What & Why? (Що і Чому?)
 
-## Як це зробити:
-Ось приклад C коду, що демонструє, як читати текстовий файл.
+Читання текстового файла - це процес зчитування даних з файлу, який зберігає текст. Програмісти читають файли для обробки інформації, налаштувань, конфігурацій або даних, ввідних користувачем.
+
+## How to: (Як це зробити:)
 
 ```C
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
-   FILE *file;
-   char c;
+    FILE *filePointer;
+    char filename[] = "example.txt";
+    char ch;
 
-   file = fopen("file.txt", "r");
-   if (file) {
-      while ((c=getc(file)) != EOF) {
-         putchar(c);
-      }
-      fclose(file);
-   }
-   return 0;
+    filePointer = fopen(filename, "r");
+    if (filePointer == NULL) {
+        perror("Failed to open file");
+        return EXIT_FAILURE;
+    }
+
+    while ((ch = fgetc(filePointer)) != EOF) {
+        putchar(ch);
+    }
+
+    fclose(filePointer);
+    return 0;
 }
 ```
+Output sample (Приклад виводу):
+```
+This is a line of text.
+Here's another line.
+```
 
-Примітка: `EOF` - це спеціальний символ, що вказує на кінець файлу.
+## Deep Dive (Детальний огляд)
 
-## Поглиблений розділ
-Читання файлів було важливою частиною програмування від самого початку його існування, що дозволило побудувати багато алгоритмів і систем, на яких ми покладаємося сьогодні. Багато інших мов програмування, наприклад, Python або Java, пропонують власні засоби для роботи з файлами. Однак, C пропонує дуже простий і гнучкий підхід.
+Reading text files in C has a long history - since the language's inception. `fopen`, `fread`, and `fgets` are standard functions to open files and read from them. `fgetc` reads a single character at a time. Alternatives include reading chunks with `fread` or line-by-line with `fgets`, depending on your needs.
 
-Особливість файлової системи в C полягає у тому, що вона передає всі деталі роботи з файлом на користувача. Але саме завдяки цьому, програміст має повний контроль над файлом і може здійснювати з ним більш детальні операції.
+Memory management is important. Always close files with `fclose` to avoid leaks. Large files require attention to buffer sizes and error handling to maintain performance and prevent crashes.
 
-## Дивіться також
-1. Документація GNU C Library по fopen: https://www.gnu.org/software/libc/manual/html_node/Opening-Streams.html
-2. Стандарт ядра Linux по роботі з файлами: https://www.kernel.org/doc/html/latest/filesystems/vfs.html
-3. Курс Coursera "Programming for Everybody (Getting Started with Python)": https://www.coursera.org/learn/python.
+C stdio's buffered I/O can be bypassed with system-level functions like `read` found in `unistd.h` for POSIX systems. However, such direct methods often mean more complex error handling and are less portable.
+
+## See Also (Дивіться також)
+
+- C Standard Library documentation: https://en.cppreference.com/w/c/io
+- C Programming by K&R (book).
+- POSIX System Calls documentation: https://man7.org/linux/man-pages/man2/read.2.html

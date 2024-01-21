@@ -1,7 +1,8 @@
 ---
-title:                "Å sende en http-forespørsel"
-html_title:           "C++: Å sende en http-forespørsel"
-simple_title:         "Å sende en http-forespørsel"
+title:                "Å sende en HTTP-forespørsel"
+date:                  2024-01-20T17:59:42.427244-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,35 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-En HTTP-forespørsel er en måte for et program å spørre en server om data. Programmerere bruker det for å hente eller sende data over internett.
+Å sende en HTTP-forespørsel innebærer å kommunisere med en webserver for å hente eller sende data. Programmerere gjør dette for å integrere tjenester, konsumere APIer og drive dynamiske webapplikasjoner.
 
 ## Hvordan:
-Her er et enkelt eksempel på hvordan sende en GET HTTP-forespørsel ved hjelp av ```http-kit``` bibliotekk i Clojure:
+
+Her er et eksempel med `clj-http` biblioteket:
 
 ```Clojure
-(ns http-example.core
-  (:require [org.httpkit.client :as http]))
+(require '[clj-http.client :as client])
 
-(defn get-request []
-  (let [response @(http/get "https://httpbin.org/get")]
-    (println (:status response))
-    (println (:headers response))
-    (println (:body response))))
-```
-Når du kjører ```get-request``` funksjonen, vil du se noe slik:
-
-```Clojure
-200
-{"Date" "Tue, 14 Sep 2021 20:00:00 GMT", "Content-Type" "application/json"...}
-"{args: {}, headers: {host: "httpbin.org",.."
+(let [response (client/get "https://api.example.com/data")]
+  (println "Status:" (:status response))
+  (println "Body:" (:body response)))
 ```
 
-## Deep Dive
-HTTP-forespørsler startet med opprettelsen av Hypertext Transfer Protocol (HTTP) i 1991. I Clojure, er det flere bibliotekker du kan bruke for å sende HTTP forespørsler, for eksempel ```http-kit```, ```clj-http``` og ```aleph```. Sett bort i fra forskjellige funksjonaliteter, er implementeringsdetaljene ganske like - det handler om å lage en forbindelse med serveren, sende en forespørsel og deretter vente på svaret.
+Når du kjører koden, kan du forvente noe sånt som:
 
-## Se også
-[http-kit GitHub](https://github.com/http-kit/http-kit)
+```
+Status: 200
+Body: {"data": {...}}
+```
 
-[clj-http GitHub](https://github.com/dakrone/clj-http)
+## Dypdykk:
 
-[aleph GitHub](https://github.com/ztellman/aleph)
+Historisk har Clojure-utviklere brukt en rekke biblioteker for HTTP-forespørsler, med `clj-http` som en langvarig favoritt. Alternativer inkluderer `http-kit` og `aleph`, som også støtter asynkrone operasjoner. `clj-http` benytter seg av Apache HttpComponents, noe som gir rik detaljkontroll og er kjent for sin robusthet og fleksibilitet.
+
+Når du implementerer HTTP-forespørsler, tenk på: feilhåndtering, header-håndtering, timeouts, og kjøring av asynkrone kall. Husk at hver HTTP-bibliotek kan ha unike måter å håndtere disse på.
+
+## Se Også:
+
+- clj-http GitHub repo: [https://github.com/dakrone/clj-http](https://github.com/dakrone/clj-http)
+- ClojureDocs for mer om nettverksprogrammering: [https://clojuredocs.org/quickref/Clojure%20Core](https://clojuredocs.org/quickref/Clojure%20Core)

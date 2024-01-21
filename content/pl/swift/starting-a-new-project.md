@@ -1,6 +1,7 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Bash: Rozpoczynanie nowego projektu"
+date:                  2024-01-20T18:04:32.695449-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,29 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Rozpoczynanie Nowego Projektu w Swift 
-## Co i Dlaczego? 
-Rozpoczęcie nowego projektu w programowaniu jest jak rozpoczęcie nowego rozdziału w tworzeniu historii. Programiści robią to, aby zacząć od zera, zbudować nowe aplikacje, rozwinąć nowe pomysły lub rozwiązać nowe problemy.
+## What & Why?
+Co to jest i dlaczego?
 
-## Jak to zrobić:
-Zaczynamy od utworzenia nowego projektu w Xcode. Oto prosty przykład jak zacząć:
+Rozpoczynanie nowego projektu to stworzenie podstaw dla Twojego kodu Świft. Programiści robią to, aby zacząć czystą kartą, z wyraźnym celem i organizacją, która pozwala aplikacji rosnąć w zdrowy sposób.
+
+## How to:
+Jak to zrobić:
+
+Nowy projekt w Świfcie zaczynasz w Xcode. Wystartujmy!
 
 ```Swift
-// Otwieramy Xcode, klikamy w "Create a new Xcode project"
-// Wybieramy typ "App" po czym klikamy "Next"
-// Dajemy naszemu projektowi nazwę, np. "MojaPierwszaAplikacja" i klikamy "Next"
-// Wybieramy miejsce gdzie chcemy zapisać nasz projekt i klikamy "Create"
+// Otwórz Xcode, wybierz "Create a new Xcode project".
+// Wybierz template np. "iOS App" i kliknij "Next".
+// Wprowadź detal twojego projektu: nazwa, team, identyfikator.
+// Wybierz gdzie zapisać projekt i kliknij "Create".
 ```
-Po wykonaniu tych kroków, nasz projekt jest gotowy do działania!
 
-## Dokładniejsza Analiza:
-Jak wiele języków programowania, Swift ma swoje korzenie w obiektowym języku programowania Objective-C, który był podstawą rozwoju aplikacji na platformy Apple. Swift jednak jest bardziej nowoczesny, oferuje więcej funkcji i jest łatwiejszy do nauczenia, szczególnie dla początkujących.
+Oto podstawowa struktura, jaką zobaczysz:
 
-Rozpoczęcie nowego projektu to wiele więcej niż tylko kliknięcie kilku przycisków. Oznacza to także planowanie architektury aplikacji, zrozumienie przepływu danych, wybór wzorców projektowych i bibliotek, które pomogą osiągnąć zamierzony rezultat.
+```Swift
+import UIKit
 
-Alternatywą dla rozpoczęcia projektu od zera może być sklonowanie istniejącego projektu lub użycie startowego zestawu (boilerplate), który oferuje podstawową strukturę projektu i często dołącza niezbędne biblioteki. To może zaoszczędzić czas, ale warto zrozumieć, jak wszystko działa, zanim zdecydujesz się na taki krok.
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    // ...
+}
 
-## Zobacz Również:
-- [Swift: Rozpoczynanie](https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html)
-- [Jak zacząć z Xcode](https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/)
-- [Przewodnik po Swift dla początkujących](https://code.tutsplus.com/series/learn-swift-from-scratch--cms-1153)
+class ViewController: UIViewController {
+    // ...
+}
+```
+
+Gdy wszystko ustawisz, kliknij "Run" aby uruchomić aplikację. Jeśli wszystko pójdzie dobrze, zobaczysz pusty ekran – Twoje płótno do programowania!
+
+## Deep Dive:
+Pogłębiona wiedza:
+
+Projekty w Świfcie sięgają początków iOS w 2007 roku. Na start, deweloperzy używali Objective-C, ale w 2014 Apple wprowadziło Swifta - nowy, bezpieczniejszy i szybszy język.
+
+Alternatywy do Xcode? Możesz spróbować AppCode od JetBrains, ale Xcode to standard przy tworzeniu aplikacji na urządzenia Apple.
+
+Szczegóły implementacji? Dobrą praktyką jest zastosowanie architektury MVC (Model-View-Controller) na początek, która pomaga utrzymać kod zorganizowany.
+
+## See Also:
+Zobacz również:
+
+- [Opcje startowe Xcode](https://developer.apple.com/documentation/xcode/creating-an-xcode-project-for-an-app)
+- [Swift.org](https://www.swift.org/documentation/)
+- [Dokumentacja Apple do Swift](https://developer.apple.com/swift/resources/)

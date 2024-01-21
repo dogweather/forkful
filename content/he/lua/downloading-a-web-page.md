@@ -1,6 +1,7 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "C++: הורדת דף אינטרנט"
+date:                  2024-01-20T17:44:45.315362-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,31 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-
-הורדת דף אינטרנט באופן ישיר היא פעולה שמאפשרת לתכנית לאגוף ולטפל בתוכן של דף אינטרנט. מתכנתים עשויים לנצל פעולה זו על מנת לאסוף, לנתח או להשתמש בנתונים אוטומטית מאתרים שונים.
+להוריד דף אינטרנט זה לגשת לתוכן שלו באופן תוכניתי. תכנתים עושים זאת כדי לעבד מידע, לאסוף נתונים, או לבצע אוטומציה.
 
 ## איך לעשות:
-
-בעזרת שימוש בחבילת 'socket.http' ב-Lua, אפשר להוריד דף אינטרנט בקלות:
+בשביל להוריד דף אינטרנט ב-Lua, אתה יכול להשתמש בהרחבה כמו LuaSocket או LuaSec בשביל קישור מאובטח. הנה דוגמה קצרה:
 
 ```Lua
-http = require("socket.http")
-url = "http://example.com"
-body, code = http.request(url)
-print(body)
+local http = require("socket.http")
+
+local url = "http://example.com"
+local body, statusCode, headers, statusText = http.request(url)
+
+if statusCode == 200 then
+  print(body)
+else
+  print("Error: " .. statusText)
+end
 ```
 
-בקוד שלמעלה, אנחנו מחליטים להוריד דף מהאתר 'example.com' ולהדפיס את תוכן הדף.
+אם תריץ את הקוד הזה, התוצאה תהיה התוכן של דף האינטרנט http://example.com.
 
-## צלילה עמוקה:
-
-הורדת דפי אינטרנט הייתה פעולה נפוצה בלתי נמנעת כבר מימי האינטרנט הראשונים. היסטורית, הפעולה בוצעה באמצעות שימוש בספריית "socket" שבה השתמשו מתכנתים לפתוח חיבור בין החשבון שלהם לשרת הכתובת URL הרצויה.
-
-חלופות מודרניות יותר שנמצאות בשימוש כיום כוללות ספריות כמו cURL שמספקות אפשרויות שמחוברות לפרוטוקולים שונים.
-
-במהלך תהליך ההורדה, המתכנת יכול להשתמש בקוד כדי לבצע בהתאמה אישית מנגנונים שונים של שליטה, כולל איך לטפל בתגובות של שרת, שגיאות רשת, וכו'.
+## הצלילה לעומק:
+להורדת דף אינטרנט היסטוריה עשירה. מיטוב רשתות ופרוטוקולי HTTP גרמו לשינויים רבים. אלטרנטיבות כוללות לשקול את השימוש ב-cURL דרך os.execute או שילוב של ספריות כמו wget אם נדרשת תמיכה מתקדמת יותר. ברמת היישום, חשוב לטפל בניהול Cookies, Redirects, והטמעת SSL כאשר מורידים דף מאובטח. ספריות כמו LuaSec מסייעות בהצפנה ובמנועי SSL/TLS להבטחת התקשורת.
 
 ## ראה גם:
-
-- [הורדת קבצים ב-Lua באמצעות cURL](https://stackoverflow.com/questions/25467009/download-a-file-with-lua/25472279#25472279)
-- [היסטוריית הספרייה 'socket' ב-Lua](http://w3.impa.br/~diego/software/luasocket/home.html)
+- [LuaSec GitHub repository](https://github.com/brunoos/luasec)
+- [HTTP Made Really Easy](http://www.jmarshall.com/easy/http/)
+- [cURL man page](https://curl.se/docs/manpage.html)

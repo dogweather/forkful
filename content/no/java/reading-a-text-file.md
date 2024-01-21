@@ -1,6 +1,7 @@
 ---
 title:                "Lese en tekstfil"
-html_title:           "C#: Lese en tekstfil"
+date:                  2024-01-20T17:54:28.131315-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese en tekstfil"
 programming_language: "Java"
 category:             "Java"
@@ -10,48 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Lesing av en tekstfil i Java
+## What & Why?
+Å lese en tekstfil betyr at vi programmerere henter tekstdata fra en fil på disken. Vi gjør det for å manipulere data, hente innstillinger, eller prosessere informasjon som er lagret i en organisert form.
 
-## Hva & Hvorfor?
-Lesing av en tekstfil betyr å hente inn data fra filen for å bruke det i programmet ditt. Det hjelper til med å lagre dataene permanent og gir muligheten til å arbeide med større sett av data som kan ligge utenfor selve programmet.
+## How to:
+La oss lage et eksempel på hvordan man leser en fil i Java, ved hjelp av `Files.readAllLines`.
 
-## Hvordan
-Her er en grunnleggende kode for å lese en tekstfil i Java ved hjelp av `FileReader` og `BufferedReader`.
-
-```Java
-import java.io.BufferedReader;
-import java.io.FileReader;
+```java
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
 
-public class Main {
-
+public class FileLeseEksempel {
+    
     public static void main(String[] args) {
-  		
+        Path filePath = Path.of("eksempel.txt");
+        
         try {
-            FileReader reader = new FileReader("test.txt");
-            BufferedReader bufferedReader = new BufferedReader(reader);
- 
-            String line;
- 
-            while ((line = bufferedReader.readLine()) != null) {
+            List<String> lines = Files.readAllLines(filePath);
+            
+            for (String line : lines) {
                 System.out.println(line);
             }
-            reader.close();
- 
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 }
 ```
-Når du kjører denne koden, vil Java lese "test.txt" og skrive ut innholdet til konsollen.
 
-## Dypere dykk
-Historisk sett har Java alltid hatt funksjonaliteten til å lese tekstfiler, men i nyere versjoner har de gjort begrepet mer robust med innføringen av `java.nio.file` pakken. Alternativt kan du også bruke `Scanner` klassen for å lese en tekstfil i Java, noe som kan være mer bekvemt for enkelte brukere ettersom den har metoder for enklere parsing av primitive datatyper. Implementeringsdetaljene for å lese en tekstfil kan være forskjellige avhengig av bestemte krav, som størrelsen på filen og hvordan dataene skal brukes. 
+Eksempelutdata når 'eksempel.txt' inneholder noen linjer med tekst:
+```
+Hei, dette er en test.
+Andre linje her.
+Og den tredje linjen.
+```
 
-## Se også
-For mer informasjon om hvordan lese tekstfiler i Java, sjekk ut disse nyttige lenkene:
+## Deep Dive:
+Å lese filer i Java har utviklet seg. Vi begynte med `FileInputStream`, men den var tungvint og lavnivå. Så kom `BufferedReader` og `FileReader`, som var enklere. Nå for tiden bruker vi gjerne `Files`-klassen fra `java.nio` pakken fordi den er mer effektiv og gir enklere kode.
 
-- [Java FileReader Class](https://www.w3schools.com/java/java_files_read.asp)
-- [Reading and Writing Files in Java](https://www.baeldung.com/java-io)
-- [Java BufferedReader Class](https://www.javatpoint.com/java-bufferedreader-class)
+Alternativer til `Files.readAllLines` inkluderer å bruke `Scanner` for å lese filer linje for linje eller `BufferedReader` for bedre kontroll og ytelse ved store filer. Man kan også bruke `FileChannel` hvis man trenger høy ytelse ved å jobbe direkte mot filsystem-bufferne.
+
+Når vi leser filer, må vi håndtere `IOException` for å ta høyde for at filen kanskje ikke finnes eller det er skrivebeskyttelse som forhindrer lesing.
+
+## See Also:
+Her er noen nyttige lenker for videre lesning:
+- [Files.readAllLines Javadoc](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Files.html#readAllLines(java.nio.file.Path))
+- [BufferedReader Javadoc](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedReader.html)
+- [Oracle's guide to reading, writing, and creating files](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)

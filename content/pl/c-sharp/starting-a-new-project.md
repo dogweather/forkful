@@ -1,6 +1,7 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Bash: Rozpoczynanie nowego projektu"
+date:                  2024-01-20T18:03:05.413806-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "C#"
 category:             "C#"
@@ -10,43 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Zaczynamy nowy projekt, gdy mamy świeży pomysł lub potrzebę rozwiązania. Programiści robią to, aby przekształcić koncepcje w działające aplikacje, ucząc się po drodze nowych rzeczy i udoskonalając swoje umiejętności.
 
-Rozpoczęcie nowego projektu w programowaniu oznacza tworzenie od podstaw nowej aplikacji lub oprogramowania. Programiści to robią, aby rozwiązać unikalne problemy lub stworzyć nowe funkcjonalności, które jeszcze nie istnieją.
-
-## Jak to zrobić:
-
-Uruchomienie nowego projektu w C# jest proste i można to zrobić za pomocą poniższego kodu:
-
+## How to: (Jak to zrobić:)
 ```C#
-using System;
+// Tworzenie nowego projektu konsoli w C# z użyciem .NET CLI
+// Otwórz terminal i wpisz:
+dotnet new console -o MojaAplikacja
 
-namespace NowyProjekt
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Cześć, Świecie!");
-        }
-    }
-}
+// Przejdź do katalogu projektu:
+cd MojaAplikacja
+
+// Uruchom aplikację:
+dotnet run
+
+// Powinieneś zobaczyć:
+Hello, World!
 ```
 
-Po uruchomieniu tego kodu, utworzy on prosty program wypisujący "Cześć, Świecie!".
+## Deep Dive (Dogłębna Analiza)
+Historia narzędzi tworzenia projektów w C# sięga IDE Microsoft Visual Studio, które zrewolucjonizowało sposób, w jaki deweloperzy rozpoczynają prace. Alternatywą dla linii poleceń jest właśnie Visual Studio, gdzie nowy projekt tworzy się przez wizualne interfejsy.
 
-## Deep Dive 
+W CLI (.NET Core CLI, obecnie po prostu .NET CLI) używamy `dotnet new` z odpowiednimi szablonami. Dla konkretnych rodzajów projektów (np. aplikacje webowe, biblioteki klas) są inne szablony. Warto też wspomnieć o opcjach konfiguracyjnych dostępnych w pliku projektu (.csproj), które umożliwiają szczegółowe dostosowanie budowania i uruchamiania projektu.
 
-Historia tworzenia nowych projektów jest długa i złożona - zaczęło się to dawno temu, kiedy programowanie było jeszcze w powijakach. 
+Podczas tworzenia projektu ważne jest zrozumienie struktury folderów i plików oraz konwencji nazewnictwa. Jeśli dobrze zorganizujemy projekt na początku, łatwiej będzie go rozwijać.
 
-Alternatywą dla startu nowego projektu od zera jest sklonowanie istniejącego projektu i dopasowanie go do swoich potrzeb. To jest szybszy sposób, ale może prowadzić do problemów, jeśli źródłowy projekt nie jest dobrze zrozumiany.
-
-Głębsze informacje o implementacji dotyczą takich aspektów jak struktura projektu, wybór odpowiedniego IDE, i wybór bibliotek, które będą w projekcie wykorzystane. Jak zawsze, decyzje wyboru zależą od specyfiki projektu.
-
-## Zobacz Również 
-
-Jeśli chcesz dowiedzieć się więcej, oto kilka pomocnych linków:
-
-- Dokumentacja Microsoft C#: https://docs.microsoft.com/pl-pl/dotnet/csharp/
-- Kreatywna online nauka programowania C#: https://www.codecademy.com/learn/learn-c-sharp
-- Przewodnik programowania na platformie .NET: https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/
+## See Also (Zobacz Również)
+- [Dokumentacja .NET CLI](https://docs.microsoft.com/pl-pl/dotnet/core/tools/)
+- [C# Programming Guide (Przewodnik programowania w C#)](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/)

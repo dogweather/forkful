@@ -1,7 +1,8 @@
 ---
-title:                "Видобування підрядків"
-html_title:           "C++: Видобування підрядків"
-simple_title:         "Видобування підрядків"
+title:                "Виділення підрядків"
+date:                  2024-01-20T17:45:14.103242-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Виділення підрядків"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,46 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо?
+## What & Why? (Що та Навіщо?)
+Витягування підрядків у C – це процес отримання частини рядка. Це важливо для аналізу даних, валідації вводу та обробки тексту.
 
-Витягування підрядків у програмуванні - це процес отримання окремого рядка з більшого рядка. Ми це робимо для обробки та аналізу специфічних частин даних в більших рядках.
-
-## Як це зробити:
-
-Ось базовий приклад того, як ви можете витягнути підрядок в мові C за допомогою функції 'strncpy'.
-
-```C
-#include <string.h>
+## How to: (Як це зробити:)
+```c
 #include <stdio.h>
+#include <string.h>
+
+void extract_substring(char* string, int start, int length) {
+    char substr[length + 1]; // +1 for the terminating null byte
+    strncpy(substr, string + start, length);
+    substr[length] = '\0'; // Ensure the substring is null-terminated
+    printf("Extracted substring: '%s'\n", substr);
+}
 
 int main() {
-    char source[] = "Вітаю, друже!";
-    char destination[20];
-
-    strncpy(destination, source, 5);
-    destination[5] = '\0'; // закінчуємо рядок нульовим символом
-
-    printf("%s\n", destination); // Виводить: Вітаю
-
+    char my_string[] = "Привіт, світе!";
+    extract_substring(my_string, 0, 6); // Виведе "Привіт"
+    extract_substring(my_string, 8, 5); // Виведе "світе"
     return 0;
 }
 ```
+Sample Output:
+```
+Extracted substring: 'Привіт'
+Extracted substring: 'світе'
+```
 
-## Поглиблено:
+## Deep Dive (Поглиблений Розбір)
+The concept of strings didn't exist in early C; they were emulated using character arrays and pointers. The standard library added functions like `strncpy()` later. Alternatives to `strncpy()` include `sprintf()` for complex manipulations or manually copying characters with loops. Always watch out for buffer overflows and ensure every string is null-terminated. In modern C, bounds-check functions like `strncpy_s()` are preferred for safety.
 
-### Історичний контекст
-Функція 'strncpy' є частиною стандартної бібліотеки C, що була інтегрована ще з часів розробки мови. 
-
-### Альтернативи
-На відміну від інших мов програмування, в С немає вбудованої функції для вилучення підрядків. Однак, ви можете використовувати 'strchr' та 'strrchr' для пошуку місця підрядка в рядку і потім використовувати 'strncmp' або 'strcpy' для копіювання підрядка.
-
-### Деталі реалізації
-' strncpy ' працює, копіюючи символи з одного рядка в інший до тих пір, поки вона не досягне кінця вихідного рядка або не досягне максимальної довжини підрядка.
-
-## Дивіться також:
-
-1. Функція 'strncpy': [link](https://www.cplusplus.com/reference/cstring/strncpy/)
-2. Функції 'strchr' та 'strrchr': [link](http://www.cplusplus.com/reference/cstring/strrchr/)
-3. Функція 'strncmp': [link](https://www.cplusplus.com/reference/cstring/strncmp/)
-
-Програмування на мові C потребує розуміння як працювати з рядками та вилучати підрядки. Це важливий навик, який допоможе вам стати кращим програмістом.
+## See Also (Дивіться також)
+- C Standard Library reference for `strncpy`: https://en.cppreference.com/w/c/string/byte/strncpy
+- Secure coding practices in C: https://www.securecoding.cert.org
+- UTF-8 and Unicode in C programming: https://www.utf8everywhere.org/

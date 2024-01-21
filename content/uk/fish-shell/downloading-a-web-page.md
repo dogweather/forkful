@@ -1,6 +1,7 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "Gleam: Завантаження веб-сторінки"
+date:                  2024-01-20T17:44:08.930540-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,29 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Завантаження веб-сторінки - це процес отримання даних з сервера і їхнього збереження на локальному пристрої. Програмісти роблять це, щоб аналізувати, тестувати або зберігати вміст веб-сторінки.
+## What & Why? (Що та Чому?)
+Downloading a web page means grabbing its HTML content from the internet. Programmers do this to automate data collection, test websites, or analyze online content.
 
-## Як це зробити:
-```Fish Shell
-function download-webpage
-    set url $argv[1]
-    set output $argv[2]
-    
-    curl $url -o $output
-end
+## How to: (Як це зробити:)
+Let's use `curl` in Fish to download a webpage:
 
-# Використання
-download-webpage https://example.com output.html
+```fish
+curl -o mypage.html https://example.com
 ```
-При запуску цієї програми, вона завантажить веб-сторінку `https://example.com` і збереже її у файл `output.html`.
+Sample output:
 
-## Поглиблений розділ
-Завантаження веб-сторінок є основою інтернету і датується початками WWW в 1991 році. Ви також можете використовувати інструменти, такі як "wget" чи "httpie" для виконання схожих завдань. Програма вище використовує "curl", потужний інструмент для роботи з URL, як елементарну HTTP-клієнтську імплементацію.
+```plaintext
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                Dload  Upload   Total   Spent    Left  Speed
+100  1256  100  1256    0     0   6358      0 --:--:-- --:--:-- --:--:--  6358
+```
+Now `mypage.html` holds the HTML content of the example website.
 
-## Додаткова інформація
-Перегляньте наступні посилання, щоб дізнатися більше з цієї теми:
+## Deep Dive (Детальніше)
+In the early days of the internet, downloading web pages was mostly manual. Tools like `wget` and `curl` came along to streamline the process. `curl` is versatile, supporting different protocols and methods. While `curl` is the go-to in scripting, GUI-based apps like `Postman` also let you download web content, giving users interactive control.
 
-+ Основи HTTP: https://developer.mozilla.org/uk/docs/Web/HTTP/Overview
-+ Документація по `curl`: https://curl.se/docs/manpage.html
-+ Деталі HTTP-клієнтів на Fish Shell: https://fishshell.com/docs/current/commands.html#commands
+If you want to do more than just download, such as parsing HTML, you might combine `curl` with other tools. Fish makes it easy to pipe `curl` output to processors like `jq` or `grep`.
+
+Example with processing:
+```fish
+curl -s https://example.com | grep 'some-pattern'
+```
+
+## See Also (Додатково)
+- Fish documentation: [fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- `curl` tutorial: [curl.haxx.se/docs/manual.html](https://curl.haxx.se/docs/manual.html)
+- For parsing HTML, check out `pup`: [github.com/ericchiang/pup](https://github.com/ericchiang/pup)
+- `wget` documentation for alternative downloading: [www.gnu.org/software/wget/manual/wget.html](https://www.gnu.org/software/wget/manual/wget.html)

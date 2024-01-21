@@ -1,6 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-html_title:           "Haskell: Drukowanie komunikatów debugowania"
+date:                  2024-01-20T17:52:38.000325-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -12,31 +13,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Drukowanie informacji diagnostycznych to proces rejestrowania informacji na temat działania programu dla jego analizy. Programiści robią to, aby zrozumieć i rozwiązać problemy z programem.
+Debugowanie to proces szukania i usuwania błędów z kodu. Wypisywanie informacji diagnostycznych pomaga programistom monitorować i rozumieć, co się dzieje w trakcie działania programu.
 
-## Jak to zrobić:
+## Jak to zrobić?
 
-W języku Gleam drukowanie informacji diagnostycznych można wykonać za pomocą funkcji `debug`. Oto przykład:
+```gleam
+import gleam/io
 
-```Gleam
-import gleam/io.{println, stdout}
-
-fn main(args: List(String)) {
-  let _ = stdout()
-  |> println(args)
+pub fn main() {
+  let value = "Debugging in Gleam!"
+  io.debug(value) // Prints to the console: "Debugging in Gleam!"
 }
 ```
 
-Wynikowa informacja wyjściowa:
-
+Wynikowy output:
 ```
-["argument1", "argument2"]
+Debugging in Gleam!
 ```
 
-## Wgłąb tematu
+Użyj funkcji `io.debug` aby wypisać zmienne lub wiadomości podczas debugowania. Pamiętaj o ich usunięciu, gdy twój kod będzie gotowy do produkcji.
 
-(1) Historycznie, drukowanie informacji diagnostycznych zawsze było kluczową techniką w programowaniu. Działa na każdym systemie operacyjnym i nie wymaga żadnych dodatkowych narzędzi czy bibliotek. 
+## Wgłębiamy się
 
-(2) Alternatywy dla drukowania informacji diagnostycznych to tworzenie na dysku plików z dziennikami lub użycie debuggera. 
+Wypisywanie do konsoli to stara, ale skuteczna technika debugowania. Powstała wraz z pierwszymi komputerami i wciąż jest podstawowym narzędziem. Alternatywą dla print-debuggingu są debuggery, które oferują zaawansowane funkcje jak breakpointy czy analiza zmienności. Gleam naśladuje podejście Erlianga i Elixira, czerpiąc z ich ekosystemu i narzędzi do debugowania, pozwalając na lepsze zarządzanie dużymi systemami.
 
-(3) W Gleam, `println` wykorzystuje funkcję `display` do konwersji wartości na ciągi znaków. W rezultacie wartości są zapisywane w reprezentacji, która jest użyteczna dla debugowania, ale nie zawsze jest czytelna dla człowieka.
+## Zobacz również
+
+- [Erlang's guide to debugging](http://erlang.org/doc/apps/debugger/debugger_chapter.html)
+- [Elixir's `IO.inspect` for comparison](https://hexdocs.pm/elixir/IO.html#inspect/2)
+- [Effective debugging strategies](https://betterprogramming.pub/the-effective-guide-to-debugging-396451fbf36e?gi=624a0742dbd1)

@@ -1,7 +1,8 @@
 ---
-title:                "एक अस्थायी फ़ाइल बनाना"
-html_title:           "Arduino: एक अस्थायी फ़ाइल बनाना"
-simple_title:         "एक अस्थायी फ़ाइल बनाना"
+title:                "अस्थायी फाइल बनाना"
+date:                  2024-01-20T17:40:43.730002-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "अस्थायी फाइल बनाना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,46 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## क्या और क्यों? (What & Why?)
+टेम्पररी फाइल बनाना अस्थायी डेटा स्टोरेज है। प्रोग्रामर्स टेस्टिंग, डेटा प्रोसेसिंग, या अस्थायी बैकअप के लिए ऐसा करते हैं।
 
-अस्थायी फाइल बनाना एक क्रिया होती है जिससे आपके पास कुछ समय के लिए एक फाइल की उपलब्धता होती है, जिसको आप बाद में मिटा सकते हैं। प्रोग्रामर इसे डाटा क्षेत्रीयता और डिबगिंग के लिए करते हैं।
-
-## कैसे करें:
-
-आप निम्नलिखित कोड उदाहरण के माध्यम से गो में अस्थायी फ़ाइल बना सकते हैं:
-
+## कैसे करें? (How to:)
 ```Go
 package main
 
 import (
-   "io/ioutil"
-   "log"
+    "fmt"
+    "io/ioutil"
+    "os"
 )
 
 func main() {
-  tempFile, err := ioutil.TempFile("temp", "test")
-  if err != nil {
-    log.Fatal(err)
-  }
+    // टेम्पररी फाइल बनाएं
+    tmpfile, err := ioutil.TempFile("", "example")
+    if err != nil {
+        panic(err)
+    }
 
-  log.Printf("A temporary file has been created: %s", tempFile.Name())
+    // जरूरी होने पर डेटा लिखें
+    _, err = tmpfile.Write([]byte("यह टेस्ट कंटेंट है"))
+    if err != nil {
+        panic(err)
+    }
 
-  defer func() {
-    tempFile.Close()
-    os.Remove(tempFile.Name())
-  }()
+    // फाइल नाम दिखाएं
+    fmt.Println("टेम्पररी फाइल नाम:", tmpfile.Name())
+
+    // साफ़ करने से पहले फाइल बंद करें
+    defer os.Remove(tmpfile.Name()) // फाइल डिलीट
+    if err := tmpfile.Close(); err != nil {
+        panic(err)
+    }
 }
 ```
 
-जब यह कोड चलता है, तो आपको अपने लॉग में अस्थायी फ़ाइल नाम मिलता है।
+सैंपल आउटपुट:
+```
+टेम्पररी फाइल नाम: /tmp/example123456
+```
 
-## गहराई डाइव
+## गहराई से जानकारी (Deep Dive)
+इतिहास में, टेम्पररी फाइलें डिस्क स्पेस बचाने के लिए इस्तेमाल होती थीं। गो (Go) में `ioutil.TempFile` फंक्शन सुरक्षित, अनूठी टेम्पररी फाइल बनाता है। इसे OS-specific temporary directory में स्टोर करता है। विकल्पों में आप `os` पैकेज का `os.CreateTemp` भी उपयोग कर सकते हैं, या अपनी डायरेक्टरी मैनेज कर सकते हैं।
 
-गो में अस्थायी फ़ाइलें अवधारणा UNIX सिस्टम से ली गई हैं। ये इससे अलग हैं क्योंकि वे अत्यधिक क्षेत्रीय हैं और सिस्टम रिसोर्स का अच्छा उपयोग करते हैं।
+## सम्बंधित सोर्सेज (See Also)
+- Go by Example: Temporary Files and Directories: https://gobyexample.com/temporary-files-and-directories
+- गो डॉक्यूमेंटेशन (Go Documentation) `ioutil` पैकेज: https://pkg.go.dev/io/ioutil
+- गो डॉक्यूमेंटेशन (Go Documentation) `os` पैकेज: https://pkg.go.dev/os
 
-वैकल्पिक तरीके `os.CreateTemp()` जैसी कार्यवाही कर सकते हैं, लेकिन `ioutil.TempFile()` नाम और पथ निर्माण के साथ-साथ फ़ाइल को खोलने का काम भी करती है।
-
-## यह भी देखें:
-
-1. [ioutil गो डॉक्यूमेंटेशन](https://golang.org/pkg/io/ioutil/#TempFile)
-2. [os पैकेज गो डॉक्यूमेंटेशन](https://golang.org/pkg/os/#CreateTemp)
+ये स्रोत आपको ज्यादा उदहारण और टेम्पररी फाइल हैंडलिंग के बारे में विस्तृत जानकारी देंगे।

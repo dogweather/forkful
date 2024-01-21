@@ -1,7 +1,8 @@
 ---
-title:                "基本認証を使用してhttpリクエストを送信する"
-html_title:           "C#: 基本認証を使用してhttpリクエストを送信する"
-simple_title:         "基本認証を使用してhttpリクエストを送信する"
+title:                "基本認証を使用したHTTPリクエストの送信"
+date:                  2024-01-20T18:01:28.437893-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "基本認証を使用したHTTPリクエストの送信"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,43 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+HTTPリクエストでベーシック認証を送るとは、ユーザー名とパスワードをエンコードしてサーバーにアクセスすることです。これを行う理由は、リソースへの安全なアクセスを確保するためです。
 
-HTTPリクエストに基本認証を送信するとは、Webサーバーに対してユーザー名とパスワードを含む特定の形式の情報をリクエスト中に送信することです。プログラマーがこれを行う主な理由は、特定のリソースにアクセスするための認証を提供することです。
-
-## 使い方：
+## How to: (やり方)
+Elmでは、ベーシック認証を伴うHTTPリクエストを送るには、カスタムヘッダーを作成して、リクエストに付加します。次のコード例をご覧ください。
 
 ```Elm
 import Http
-import Http.BasicAuth as BasicAuth
+import Base64
 
+type alias Credentials =
+    { username : String
+    , password : String
+    }
 
-sendRequest : String -> String -> String -> Cmd msg
-sendRequest username password url =
+createBasicAuthHeader : Credentials -> Http.Header
+createBasicAuthHeader creds =
+    let
+        encodedCredentials =
+            Base64.encode (creds.username ++ ":" ++ creds.password)
+    in
+    Http.header "Authorization" ("Basic " ++ encodedCredentials)
+
+-- Send a request with basic authentication
+sendRequest : String -> Credentials -> Cmd msg
+sendRequest url creds =
+    let
+        headers = 
+            [ createBasicAuthHeader creds ]
+    in
     Http.request
         { method = "GET"
-        , headers = [ BasicAuth.basic username password ]
+        , headers = headers
         , url = url
         , body = Http.emptyBody
-        , expect = Http.expectWhatever
+        , expect = Http.expectWhatever msg
         , timeout = Nothing
-        , withCredentials = False
+        , tracker = Nothing
         }
 
--- 使用例
-
-main =
-    sendRequest "user" "password" "https://myserver.com"
-
+-- Example usage
+login : Cmd msg
+login =
+    sendRequest "https://your-api.com/protected" { username = "user1", password = "pass123" }
 ```
-このコードは`user`と`password`という基本認証の詳細を`https://myserver.com`にGETリクエストとして送信します。
 
-## 詳細：
+正常に認証されると、期待されるデータが得られるでしょう。それ以外の場合は、認証エラーのレスポンスが返されます。
 
-基本認証はHTTPプロトコルの一部として1996年に導入され、以来Webサーバーとクライアント間でのシンプルな認証方法として広く使用されています。しかし、状況によってはBearer認証やDigest認証のような他の方法が適していることもあります。一方、Elmでは`Http.request`メソッドを用いて基本認証付きのHTTPリクエストを送信します。該当のメソッドを用いることでユーザー名とパスワードの詳細を含んだヘッダーを含めることが可能となります。
+## Deep Dive (詳細情報)
+ベーシック認証の歴史は古く、初期のインターネットで使われ始めました。現在では、よりセキュアな方法（例えばOAuth 2.0）が好まれますが、単純なAPIや内部ツールでは依然として使われています。Elmでの実装では、Base64でエンコードする関数を使って認証情報をエンコードします。注意点として、HTTPS経由で送信することが重要です。これによって、中間者攻撃を防ぐことができます。Elmの`Http`モジュールのバージョン2.0.0には、リクエストを細かく制御するための機能が充実しています。
 
-## 参考になるもの：
-
-- ElmのHTTPリクエスト: https://package.elm-lang.org/packages/elm/http/latest/
-- BasicAuthモジュール: https://package.elm-lang.org/packages/elm/http/latest/Http-BasicAuth
-- ElmでのHTTP認証: https://guide.elm-lang.org/effects/http.html
+## See Also (関連情報)
+- Elm Http package documentation: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)
+- Base64 encoding in Elm: [https://package.elm-lang.org/packages/truqu/elm-base64/latest/](https://package.elm-lang.org/packages/truqu/elm-base64/latest/)
+- Elm language introduction: [https://elm-lang.org/](https://elm-lang.org/)
+- HTTP Basic Authentication specification: [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)

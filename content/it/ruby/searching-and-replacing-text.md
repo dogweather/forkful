@@ -1,6 +1,7 @@
 ---
 title:                "Ricerca e sostituzione del testo"
-html_title:           "Arduino: Ricerca e sostituzione del testo"
+date:                  2024-01-20T17:58:29.391221-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Ricerca e sostituzione del testo"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,35 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è & Perché?
+## What & Why?
+Ricercare e sostituire testo significa trovare specifiche stringhe in un testo e cambiarle con altre. I programmatori lo fanno per correggere errori, aggiornare codici o manipolare dati.
 
-Ricerca e sostituzione del testo è l'opzione che ci permette di trova un particolare pezzo di codice e sostituire con un altro. I programmatori lo fanno per risparmiare tempo e evitare errori manuali.
+## How to:
+La ricerca e sostituzione in Ruby può essere semplice grazie all'uso di `gsub` e `sub`. 
 
-## Come fare:
+Ecco un esempio:
 
-Il metodo `gsub` in Ruby ci permette di cercare e sostituire il testo. Vediamo come funziona.
+```ruby
+testo_originale = "Buongiorno, mondo! Programmiamo con Ruby."
 
-```Ruby
-testo = 'Ciao Mondo'
-testo.gsub!('Mondo', 'Ruby')
-puts testo
+# Sostituire 'mondo' con 'universo'
+testo_modificato = testo_originale.gsub('mondo', 'universo')
+puts testo_modificato
+# Output: Buongiorno, universo! Programmiamo con Ruby.
+
+# Sostituire solo la prima occorrenza di 'o' con '0'
+testo_limite = testo_originale.sub('o', '0')
+puts testo_limite
+# Output: Bu0ngiorno, mondo! Programmiamo con Ruby.
 ```
-L'uscita di questo codice sarà:
+
+## Deep Dive
+La funzione `gsub`, che viene da "global substitution", è stata nel toolbox di Ruby dal suo inizio. È globale nel senso che cambia tutte le occorrenze trovate. `sub` è più limitata; cambia solo la prima occorrenza.
+
+Inoltre, `gsub` e `sub` possono utilizzare espressioni regolari, per sostituzioni più potenti e flessibili:
+
+```ruby
+testo = "Ruby 2.6 Ruby 2.7 Ruby 3.0"
+testo.gsub(/\d\.\d/) { |match| '3.1' }
+# Output: Ruby 3.1 Ruby 3.1 Ruby 3.1
 ```
-Ciao Ruby
-```
-`gsub!` è la versione "in place" del metodo `gsub`, che modifica la stringa originale invece di restituire una copia modificata.
 
-## Approfondimenti:
+Per sostituzioni semplici, usiamo stringhe. Per complessità, meglio le regex.
 
-La funzionalità di ricerca e sostituzione del testo è fondamentale nella programmazione sin dalla sua nascita. L'alternativa a `gsub` è utilizzare un ciclo for insieme ai metodi `index` e `[]=` di String, ma è molto più laborioso.
-
-In termini di implementazione, `gsub` utilizza un automa a stati finiti per la ricerca del testo. In pratica, ciò significa che `gsub` è molto efficiente per le operazioni di ricerca e sostituzione su stringhe lunghe.
-
-## Riferimenti utili:
-
-Per approfondimenti su questo argomento, date un'occhiata a questi link:
-
-1. Documentazione Ruby - [String#gsub](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
-2. Tutorial Ruby- [Strings](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
-3. Stackoverflow - [How to replace a string in place in Ruby?](https://stackoverflow.com/questions/612189/how-do-i-automatically-replace-a-string-in-place-in-ruby)
+## See Also
+- [RubyDoc: String#sub](https://ruby-doc.org/core-2.7.0/String.html#method-i-sub)
+- [RubyDoc: String#gsub](https://ruby-doc.org/core-2.7.0/String.html#method-i-gsub)
+- [Ruby’s Regular Expressions](https://www.rubyguides.com/2015/06/ruby-regex/)

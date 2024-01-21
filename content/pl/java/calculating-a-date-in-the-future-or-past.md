@@ -1,6 +1,7 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
-html_title:           "Java: Obliczanie daty w przyszłości lub przeszłości"
+date:                  2024-01-20T17:31:56.071119-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Java"
 category:             "Java"
@@ -10,40 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-
-Obliczanie daty w przyszłości lub przeszłości polega na dodawaniu lub odejmowaniu dni od bieżącej daty. Programiści robią to, aby manipulować danymi daty, które są niezbędne w wielu rodzajach aplikacji, takich jak harmonogramy, przypomnienia, czy systemy rezerwacji.
+## Co i dlaczego?
+Manipulacja datami to ogólnie zmiana wartości daty na wcześniejszą lub późniejszą. Programiści robią to, by obsługiwać rezerwacje, terminy, przypomnienia czy okresy ważności.
 
 ## Jak to zrobić:
-
-Przykładowo, obliczymy datę dla dnia 10 dni od teraz:
+W Java korzystamy z `java.time`, zestawu klas wprowadzonych w Java 8.
 
 ```Java
-    import java.time.LocalDate;
+import java.time.LocalDate;
+import java.time.Period;
 
-    public class Main {
-        public static void main(String[] args) {
-            LocalDate today = LocalDate.now();
-            LocalDate futureDate = today.plusDays(10);
-            System.out.println("Data za 10 dni to: " + futureDate);
-        }
+public class FuturePastDateCalculation {
+
+    public static void main(String[] args) {
+        // Ustal dzisiejszą datę
+        LocalDate today = LocalDate.now();
+        System.out.println("Dzisiaj: " + today);
+
+        // Dodaj 10 dni do aktualnej daty
+        LocalDate tenDaysLater = today.plusDays(10);
+        System.out.println("Za 10 dni: " + tenDaysLater);
+
+        // Odejmij 1 miesiąc
+        LocalDate oneMonthBefore = today.minusMonths(1);
+        System.out.println("Miesiąc temu: " + oneMonthBefore);
     }
+}
+```
+Wyjście:
+```
+Dzisiaj: 2023-04-01
+Za 10 dni: 2023-04-11
+Miesiąc temu: 2023-03-01
 ```
 
-W wyniku otrzymamy coś takiego:
+## Głębsze spojrzenie:
+Przed Java 8, manipulacja datami była kłopotliwa i błędna. Używanie `java.util.Date` i `SimpleDateFormat` przeplatało się z problemami związanych z bezpieczeństwem wątków i niewygodnym API. `java.time` wprowadza ludzkie podejście do czasu: niezmienne obiekty (`Immutable`), klarowne metody, i unikanie pułapek stref czasowych.
 
-```
-Data za 10 dni to: 2023-05-10
-```
+Alternatywy zawierają biblioteki zewnętrzne jak Joda-Time, ale `java.time` jest zalecanym rozwiązaniem od Java 8. W razie potrzeby istnieje też obsługa konwersji pomiędzy starymi a nowymi rodzajami dat przez `.toInstant()` i `.from()`.
 
-## Głębsze zrozumienie
+W praktyce, wybór techniki zależy od wymagań. Do obsługi złożonych operacji na datach może być potrzebne użycie dodatkowych klas jak `LocalDateTime` czy `ZonedDateTime`.
 
-Metoda `plusDays()` (i jej odpowiednik `minusDays()`) jest częścią biblioteki Java Time dodanej w Java 8. Przed tą wersją, musieliśmy korzystać z `java.util.Calendar`, którego użycie było mniej intuicyjne i bardziej skomplikowane. Alternatywą dla tych metod jest użycie `java.util.GregorianCalendar`. Co do szczegółów implementacji `plusDays()`, to dodaje po prostu odpowiednią liczbę dni do wartości dnia w obiekcie LocalDate, kontrolując jednocześnie przekroczenie miesięcy i lat.
+## Zobacz również:
+- [Oracle's Java Date Time API Guide](https://docs.oracle.com/javase/tutorial/datetime/)
+- [Java 8 Date Time - Tutorial by Vogella](http://www.vogella.com/tutorials/JavaDateTimeAPI/article.html)
+- [Baeldung's Guide to Java 8 Date Time API](https://www.baeldung.com/java-8-date-time-intro)
 
-## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej, sprawdź te źródła:
-
-1. Dokumentacja Oracle na temat klasy [LocalDate](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/time/LocalDate.html).
-2. Wprowadzenie do nowego API czasu Java na [Baeldung](https://www.baeldung.com/java-8-date-time-intro).
-3. "Java SE 8: Nowe funkcje, aktualizacje i ulepszenia API" od [Oracle](https://www.oracle.com/java/technologies/javase/8-whats-new.html).
+Warto też zajrzeć do źródła samego JDK, by zobaczyć, jak metody są zaimplementowane – to dobre ćwiczenie na rozumienie kodu.

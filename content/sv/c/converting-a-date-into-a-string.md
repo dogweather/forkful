@@ -1,6 +1,7 @@
 ---
 title:                "Omvandla ett datum till en sträng"
-html_title:           "C#: Omvandla ett datum till en sträng"
+date:                  2024-01-20T17:35:53.909798-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "C"
 category:             "C"
@@ -10,43 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Omvandla ett datum till sträng i C
+## What & Why?
+Att konvertera ett datum till en sträng innebär att du omvandlar datumdata från ett format som datorn förstår till något lättläst för människor. Programmerare gör detta för att visa datum på skärmar, i rapporter eller för att spara i textbaserade format som CSV.
 
-## Vad och varför?
-Att omvandla ett datum till en sträng innebär att du ändrar datumets format så att det kan manipuleras som en textsträng. Detta behövs ofta för att göra datum lättare att arbeta med i olika programmeringssituationer, som att skriva ut datumet eller bearbeta det som en del av en filnamnstruktur.
-
-## Så här gör du:
-Att omvandla ett datum till en sträng kan vara rakt på sak. Här är ett exempel på hur du kan göra det med hjälp av `strftime` funktionen i C:
+## How to:
+Använd `strftime` för att formatera datum- och tidsdata som en sträng.
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    char buff[20];
-    time_t nu = time(0);
-    struct tm nu_time = *localtime(&nu);
+    char buffer[80];
+    time_t rawtime;
+    struct tm *timeinfo;
 
-    strftime(buff, sizeof(buff), "%Y-%m-%d", &nu_time);
-    printf("Datum som sträng: %s", buff);
+    // Hämta nuvarande tid och datum
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
+
+    // Formatera och konvertera till sträng
+    strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", timeinfo);
+    printf("Nuvarande datum och tid: %s\n", buffer);
 
     return 0;
 }
 ```
-
-När du kör den här koden, kommer du att få ett utdata som liknar följande:
-
-```C
-Datum som sträng: 2022-07-20
+### Exempelutdata:
+```
+Nuvarande datum och tid: 2023-04-01 17:45:31
 ```
 
-## Djupdykning
-Funktionen `strftime` används här för att formatera tid och datum. Denna funktion härstammar från Unix-världen och har blivit standard i C-språket. Det finns alternativ till `strftime`, som `asctime` eller `ctime`, men de är inte lika flexibla när det gäller formateringsalternativ.
+## Deep Dive:
+Innan `strftime` var standard, användes funktioner som `sprintf` och anpassad logik för att formatera datum. Alternativ finns även i form av externa bibliotek som `date.h` i C++20 eller olika tidsbibliotek i andra språk. Implementeringsdetaljer som tidszoner och lokaliseringsinställningar kan påverka hur `strftime` fungerar, så det är viktigt att definiera dessa korrekt för att få önskat utformat datum och tid.
 
-Omvandling av datum till textsträngar ger oss möjlighet att använda datumvärden på ett mer mångsidigt sätt. Utöver att skriva ut dem, tillåter det oss att enkelt infoga datum och tidstämplar i filnamn, loggmeldelser och mycket mer.
-
-## Se även:
-För mer information kolla in dessa länkar:
-- C Library - <ctime>: http://www.cplusplus.com/reference/ctime/
-- Funktionen strftime: https://en.cppreference.com/w/c/chrono/strftime
-- C programmeringstid och datum: https://www.learn-cocoa.org/en/dates-and-times-in-c/
+## See Also:
+- C Standard Library - `strftime` funktion: https://en.cppreference.com/w/c/chrono/strftime
+- GNU C Library Reference Manual: https://www.gnu.org/software/libc/manual/ 
+- C++ date.h bibliotek för modern tidsbehandling: https://en.cppreference.com/w/cpp/chrono

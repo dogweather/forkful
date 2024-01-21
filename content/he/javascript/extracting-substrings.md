@@ -1,6 +1,7 @@
 ---
 title:                "חילוץ תת-מחרוזות"
-html_title:           "Bash: חילוץ תת-מחרוזות"
+date:                  2024-01-20T17:46:15.934882-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חילוץ תת-מחרוזות"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,28 +11,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה? 
-משיכת הביטוי החלקי (Substring) הוא התהליך שבו אנו מאחזרים חלק ממחרוזת. מתכנתים עשויים לבצע את זה כאשר הם רוצים להבין, לנתח או לשנות במשתמשים מידע מסוים בתוך מחרוזת גדולה יותר.
+## מה ולמה?
+חילוץ תת-מחרוזות מאפשר לך לקחת חלק ממחרוזת גדולה יותר. זה נחוץ בשביל עיבוד נתונים, ולידציות, וכשאנחנו רוצים להציג רק חלק ממחרוזת כלשהי למשתמש.
 
 ## איך לעשות:
-ב-JavaScript, אנו משתמשים במתודות substring(), substr(), או slice() לחלצת ביטויים חלקיים. הנה דוגמאות:
-
 ```Javascript
-var str = 'Hello, World!';
-console.log(str.substring(0, 5)); // פלט: Hello
-console.log(str.substr(7, 5)); // פלט: World
-console.log(str.slice(-1)); // פלט: !
+let fullString = "שלום, עולם!";
+let partOfString = fullString.substring(0, 5); // חילוץ התווים מתחילת המחרוזת עד האינדקס 5
+console.log(partOfString); // תוצאה: שלום,
+
+let anotherPart = fullString.slice(-6); // חילוץ 6 התווים האחרונים
+console.log(anotherPart); // תוצאה: עולם!
 ```
 
-## צלילה עמוקה:
-הצורך לחלץ מחרוזות חלקיות התחיל מתחילת התכנות. בעבר, היינו משתמשים באופרטורים על מחרוזות, אך זה היה מסורבל ותלוי בשפה. JavaScript הקלה עלינו את החיים עם מתודות פשוטות.
+## טבילה עמוקה:
+בעבר, ב-JavaScript הישן, היינו משתמשים ב-`.substr()` כדי לחלץ תת-מחרוזות, אבל היום מומלץ להשתמש ב-`.substring()` או ב-`.slice()`. כשאתה משתמש ב-`.substring()`, אם האינדקס הראשון גבוה יותר מהשני, הם מתחלפים. אם ב-`.slice()` האינדקס הראשון יהיה גבוה יותר, תחזור מחרוזת ריקה. בנוסף, `.slice()` תומך באינדקסים שליליים עבור חילוץ סופי.
 
-slice(), substring(), ו- substr() יכולות להיות מבלבלות, אך ההבדל הוא באופן שבו הן מנהלות את האינדקסים. slice() ו- substring() רואות את המספר השלישי כסוף המחרוזת, בעוד ש- substr() רואה את המספר השני כאורך המחרוזת.
-
-אם אתה מעוניין לפרטים נוספים, בדוק את התיעוד הרשמי של MDN.
-
-## עיין גם:
-1. [MDN - String.prototype.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-2. [MDN - String.prototype.substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
-3. [MDN - String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-4. [W3Schools - JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
+## ראו גם:
+- [דוקומנטציה של String.prototype.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [דוקומנטציה של String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)

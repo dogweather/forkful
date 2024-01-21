@@ -1,7 +1,8 @@
 ---
-title:                "Lendo argumentos de linha de comando"
-html_title:           "Arduino: Lendo argumentos de linha de comando"
-simple_title:         "Lendo argumentos de linha de comando"
+title:                "Lendo argumentos da linha de comando"
+date:                  2024-01-20T17:56:09.963952-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -12,37 +13,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## O Que & Porquê?
 
-Ler argumentos da linha de comando é uma maneira de aceitar inputs do usuário quando ele executa seu programa. Fazemos isso para que nossos programas possam ser personalizados cada vez que são executados.
+Ler argumentos da linha de comando é pegar pedaços de dados que os usuários passam para o programa ao executá-lo no terminal. Programadores fazem isso para personalizar a execução de um programa com base nas preferências do usuário ou necessidades específicas da tarefa em questão.
 
 ## Como Fazer:
 
-No Gleam, você pode ler argumentos da linha de comando da seguinte maneira:
+Para ler argumentos de linha de comando em Gleam, podemos usar o módulo `gleam/io`. Vamos a um exemplo prático:
 
-```Gleam
-import gleam/io.{println, command_args}
+```gleam
+import gleam/io
 
-fn main(args: List(String)) {
-    let arg_list = command_args()
-    println(arg_list)
+pub fn main(args: List(String)) {
+  let arg_message = match args {
+    [] -> 
+      "Ops! Você esqueceu os argumentos."
+    [first_arg | _rest] -> 
+      first_arg
+  }
+  io.println(arg_message)
 }
 ```
-
-Por exemplo, se o programa é executado com `./program arg1 arg2 arg3`, o output será:
-
-```Gleam
-["arg1", "arg2", "arg3"]
+Se rodar o programa com `gleam run`, a saída será:
+```
+Ops! Você esqueceu os argumentos.
+```
+Agora, se passar argumentos na linha de comando, como `gleam run arg1`, a saída será:
+```
+arg1
 ```
 
-## Imersão Profunda:
+## Aprofundamento
 
-A prática de ler argumentos da linha de comando vem de quando a interação com computadores era feita principalmente por meio de terminais de texto. Ainda é uma boa prática, particularmente para scripting e automação.
+Historicamente, a leitura de argumentos da linha de comando remonta aos primórdios dos sistemas operacionais, quando a interface gráfica ainda nem existia. Existem várias bibliotecas e módulos em diferentes linguagens de programação que permitem essa funcionalidade. Em Gleam, a simplicidade do módulo `gleam/io` facilita essa operação.
 
-Como alternativa, você poderia usar entradas padrão ou ler de um arquivo, mas na maioria dos casos, o uso de argumentos de linha de comando é mais direto.
+Quanto à implementação, é comum que o primeiro elemento do array de argumentos seja o caminho do próprio programa. No Gleam, isso é abstraído, e `args` é só o que você passa para o programa, sem o caminho.
 
-A função `command_args` do Gleam precisa ser definida no arquivo principal do seu programa (conhecido como `main module`). Ela retorna uma lista de strings que são os argumentos passados ​​para o seu programa.
+Outras linguagens como Rust ou Go têm pacotes dedicados com funcionalidades avançadas para manipular argumentos da linha de comando, como parsing de flags e subcomandos, mas em Gleam a ideia é manter o core simples.
 
-## Veja Também:
+## Veja Também
 
-[Documentação Oficial do Gleam sobre Entrada/Saída(IO)](https://gleam.run/book/tour/io.html)
-
-[Documentação do Rust sobre Argumentos da Linha de Comando](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html)
+- Post no blog sobre parsing de argumentos de linha de comando em Rust: [https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html)

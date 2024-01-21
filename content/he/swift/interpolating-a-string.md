@@ -1,7 +1,8 @@
 ---
-title:                "אינטרפולציה של מחרוזת"
-html_title:           "Arduino: אינטרפולציה של מחרוזת"
-simple_title:         "אינטרפולציה של מחרוזת"
+title:                "שרבוב מחרוזת"
+date:                  2024-01-20T17:52:23.043758-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרבוב מחרוזת"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,19 +12,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-אינטרפולציה של מחרוזת היא הטמעת נתונים (כמו משתנים) בתוך מחרוזת. מתכנתים עושים זאת כדי להקליט או להציג מידע יחד עם הודעות טקסט.
+שילוב טקסט במחרוזת (String interpolation) ב-Swift זה כשמכניסים משתנים וביטויים לתוך מחרוזת טקסט ישירות. זה מועיל למתכנתים לכתוב טקסטים דינמיים בקלות ובאופן קריא יותר.
 
-## איך:
-הנה קטע קוד שמדגים כיצד לערבב מחרוזת:
-```Swift 
-let name = "Dan"
-print("Hello, \(name)!")
+## איך לעשות:
+```swift
+let name = "דני"
+let age = 25
+let greeting = "שלום, \(name)! אתה בן \(age) שנים."
+print(greeting)
 ```
-הפלט של הקטע הזה לדוגמא יהיה: `Hello, Dan!`
+פלט דוגמה:
+```
+שלום, דני! אתה בן 25 שנים.
+```
 
-## צלילה עמוקה:
-אינטרפולציה היא מאפיין מרכזי בשפות תכנות רבות. אלטרנטיבה לאינטרפולציה היא שימוש בפונקציה `concat` לשם התקנה של מחרוזות - אך זו אפשרות פחות קלה לקריאה ותרגול. ב-Swift, המערכת מנהלת זיכרון של נתוני המחרוזת שהוטמעו באינטרפולציה, כך שאין צורך לדאוג על ניהול זיכרון מיוחד.
+## עומק השקעה
+ב-Swift, שילוב מחרוזות התחיל מהגרסה הראשונה והיה חלק מהיתרונות לעומת שפות קודמות. בשפות אחרות כמו C, למשל, צריך היה להשתמש בפונקציות כמו `sprintf` או לרכיב טקסט באמצעות צירוף מחרוזות מסורבל. שילוב מחרוזות ב-Swift מאפשר הכנסת ערכים וביטויים בצורה ישירה וקריאה, וכך משפר את כתיבת הקוד. השילוב נעשה בזמן ריצה של התוכנית, מה שמאפשר גמישות רבה ותגובה לשינויים בזמן אמת.
 
-## ראו גם:
-* [מדריך Apple ל-A Swift](https://developer.apple.com/swift/resources/)
-* [מאמר עמוק יותר על אינטרפולציה של מחרוזת ב-Swift](https://www.hackingwithswift.com/articles/178/super-powered-string-interpolation-in-swift-5-0)
+## ראה גם:
+- [String Interpolation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID292) במדריך השפה של Swift.
+- [String](https://developer.apple.com/documentation/swift/string) documentation ב-Apple Developer.

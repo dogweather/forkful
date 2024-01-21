@@ -1,6 +1,7 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "C#: Verkkosivun lataaminen"
+date:                  2024-01-20T17:43:52.714286-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,52 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Elixirin käyttö verkkosivun lataamiseen
+## What & Why? (Mitä ja Miksi?)
+Web-sivun lataaminen tarkoittaa webbisivun sisällön hakemista internetistä. Ohjelmoijat tekevät tämän datan keräämiseksi, prosessointia varten ja automaatioita luodakseen.
 
-## Mikä & Miksi?
+## How to: (Miten tehdään:)
+Elixirin HTTP-kirjastot, kuten HTTPoison, helpottavat web-sivujen lataamista. Tässä yksinkertainen esimerkki:
 
-Verkkosivun lataaminen on prosessi, jossa tietokone hakee ja tallentaa web-sivun tiedot. Ohjelmoijat tekevät tämän, koska sen avulla he voivat käsitellä ja analysoida verkkosisältöä automaattisesti.
+```elixir
+# Lisää HTTPoison riippuvuus mix.exs-tiedostoon
+defp deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
+end
 
-## Miten:
+# Sitten haemme web-sivun sisällön
+def download_page(url) do
+  case HTTPoison.get(url) do
+    {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
+      body
+    {:error, %HTTPoison.Error{reason: reason}} ->
+      "Error: #{reason}"
+  end
+end
 
-Esimerkkilähdekoodimme käyttää `HTTPoison`-kirjastoa verkkosivun lataamiseen.
+# Käyttö
+IO.puts download_page("https://example.com")
+```
 
-1. Asentaa lähdepaketti:
+Tämä tulostaisi https://example.com web-sivun HTML-koodin.
 
-    ```elixir
-    mix deps.get httpoison
-    ```
+## Deep Dive (Syvä sukellus):
+Historiallisesti web-sivujen lataaminen on toteutettu monilla eri tavoilla, esimerkiksi CURL-komennolla tai eri ohjelmointikieleille tehdyillä kirjastoilla. Elixirissä HTTPoison on suosittu vaihtoehto sen yksinkertaisuuden ja tehokkuuden ansiosta. Muut vaihtoehdot voisivat olla Tesla tai HTTPotion. Web-sivun lataamisen yksityiskohtiin kuuluu HTTP-pyyntöjen hallinta ja vastauksena saadun datan käsittely.
 
-2. Lataa verkkosivua:
-
-    ```elixir
-    def download_page(url) do
-      case HTTPoison.get(url) do
-        {:ok, response} ->
-          {:ok, response.body}
-        {:error, reason} ->
-          {:error, reason}
-      end
-    end
-    ```
-
-Kokeillaan seuraavaa URL-osoitetta.
-
-    ```elixir
-    download_page("https://www.example.com")
-    ```
-
-Tulostuu sivun HTML-koodi tai virheilmoitus.
-
-## Syvä sukellus:
-
-Verkkosivun lataaminen on ollut osa verkosto-ohjelman ominaisuuksia alusta lähtien. Tämä on sen vuoksi, että verkkosivu tarjoaa valmiiksi muotoiltua tietoa, jota ohjelmat voivat käyttää.
-
-Vaihtoehtoisia tapoja verkkosivujen lataamiseen Elixirissä ovat `HTTPotion` ja `Tesla`, jotka tarjoavat erilaisia ominaisuuksia ja äänensävyjä.
-
-`HTTPoison` käyttää `hackney`-kirjastoa HTTP-pyyntöjen tekemiseen. Se tarjoaa suoraviivaisen tavan käsitellä HTTP-pyyntöjä ja vastauksia, ja sitä on helppo käyttää yhdessä Elixirin muiden ominaisuuksien kanssa.
-
-## Lisätietoja:
-
-- Elixirin virallinen dokumentaatio: [https://elixir-lang.org/docs.html](https://elixir-lang.org/docs.html)
-- HTTPoison-kirjaston Github-sivu: [https://github.com/edgurgel/httpoison](https://github.com/edgurgel/httpoison)
+## See Also (Katso myös):
+- HTTPoison GitHub-repositorio: https://github.com/edgurgel/httpoison
+- Elixirin virallinen dokumentaatio HTTP-asiakkaista: https://hexdocs.pm/elixir/1.13/HTTPClient.html
+- Tietoa CURLista ja esimerkkejä sen käytöstä: https://curl.se/docs/

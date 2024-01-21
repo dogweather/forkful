@@ -1,7 +1,8 @@
 ---
-title:                "Tworzenie tymczasowego pliku"
-html_title:           "C#: Tworzenie tymczasowego pliku"
-simple_title:         "Tworzenie tymczasowego pliku"
+title:                "Tworzenie pliku tymczasowego"
+date:                  2024-01-20T17:41:21.884177-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -11,37 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Tworzenie tymczasowego pliku to proces, który produkuje plik o unikalnej nazwie, stale utworzony, ale przeznaczony do usunięcia po zakończeniu sesji. Programiści robią to usuwając ryzyko konfliktu nazw plików i zapewniając bezpieczeństwo danych, ograniczając dostęp do plików tymczasowych.
+Tworzymy pliki tymczasowe, gdy musimy przechować dane tymczasowo, zanim ukończymy z nimi coś konkretnego. Programiści robią to, by zarządzać danymi tymczasowymi w sposób bezpieczny, izolując je od reszty systemu, co jest kluczowe przy operacjach, które są wrażliwe na zakłócenia, takie jak transakcje czy przetwarzanie danych w tle.
 
 ## Jak to zrobić:
+W PHP robienie plików tymczasowych jest proste. Użyj `tmpfile()` do stworzenia i otwarcia pliku, a on sam się usunie po zamknięciu, albo `tempnam()` do stworzenia pliku tymczasowego z unikalną nazwą.
 
-Tworzenie plików tymczasowych w PHP jest proste. Zaczynamy od funkcji `tempnam()`, która tworzy unikalną nazwę pliku.
-
-```PHP
+```php
 <?php
-$tmpfname = tempnam("/tmp", "FOO");
-$handle = fopen($tmpfname, "w");
-fwrite($handle, "test writing to a temporary file");
-fclose($handle);
+// Użycie tmpfile()
+$temp = tmpfile();
+fwrite($temp, "Tu jest coś tymczasowego.\n");
+rewind($temp); // Powrót na początek pliku
+echo fread($temp, 1024); // Wypisanie zawartości pliku
+fclose($temp); // Plik jest usunięty
+
+// Użycie tempnam()
+$tmpDir = sys_get_temp_dir(); // Pobieranie ścieżki do folderu tymczasowego
+$tempName = tempnam($tmpDir, 'moj_prefiks_');
+$file = fopen($tempName, "w");
+fwrite($file, "Przechowuje to na później.\n");
+fclose($file); // Pamietaj by ręcznie usunąć plik, gdy skończysz.
+unlink($tempName); // Usuwanie pliku
 ?>
 ```
-Aby przeczytać plik, użyjemy `fopen()` i `fread()`:
 
-```PHP
-<?php
-$handle = fopen($tmpfname, "r");
-$contents = fread($handle, filesize($tmpfname));
-fclose($handle);
-echo $contents; // Outputs: test writing to a temporary file
-```
+## Głębsze spojrzenie:
+Tworzenie plików tymczasowych w PHP ma swoje korzenie w dawnych sposobach zarządzania danymi. Historia uczy nas, że unikanie konfliktu nazw i zapisywania danych do bufora na dysku to fundamenty pracy z plikami tymczasowymi. Alternatywami dla `tmpfile()` i `tempnam()` są własne skrypty zarządzające plikami tymczasowymi, ale dbaj o unikalność nazw, bezpieczne wyczyszczenie i izolację danych. Co do implementacji, `tmpfile()` automatycznie usuwa plik po zamknięciu strumienia, a `tempnam()` wymaga od ciebie manulnego usunięcia pliku po zakończonej pracy. Wybór metody zależy od przypadku użycia i potrzeby kontroli nad plikiem.
 
-## Pod wodą
-
-Tworzenie tymczasowych plików to stary trik w programowaniu, mocno osadzony w PHP od jego pierwszych wersji. Do alternatywnych metod należy korzystanie z pamięci masowej `tmpfile()`, która jest mniej skomplikowana, ale oferuje mniej kontroli. Od strony implementacji, PHP generuje nazwę pliku tymczasowego poprzez sklejenie określonego prefiksu z unikalnym identyfikatorem.
-
-## Zobacz również
-
-* [Dokumentacja PHP dla tempnam()](https://www.php.net/manual/en/function.tempnam.php)
-* [Dokumentacja PHP dla tmpfile()](https://www.php.net/manual/en/function.tmpfile.php)
-* [Jak bezpiecznie korzystać z plików tymczasowych w PHP – na StackOverflow](https://stackoverflow.com/questions/377279/are-php-temporary-file-name-functions-secure)
+## Zobacz także:
+- Dokumentacja PHP dla `tmpfile()`: https://www.php.net/manual/en/function.tmpfile.php
+- Dokumentacja PHP dla `tempnam()`: https://www.php.net/manual/en/function.tempnam.php
+- Dyskusja na temat zarządzania plikami tymczasowymi w PHP: https://stackoverflow.com/questions/1707801/making-a-temporary-dir-for-unpacking-a-zipfile-into
+- `sys_get_temp_dir()`, by znaleźć domyślny folder tymczasowy: https://www.php.net/manual/en/function.sys-get-temp-dir.php

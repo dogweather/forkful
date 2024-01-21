@@ -1,7 +1,8 @@
 ---
-title:                "Befehlszeilenargumente lesen"
-html_title:           "Arduino: Befehlszeilenargumente lesen"
-simple_title:         "Befehlszeilenargumente lesen"
+title:                "Lesen von Kommandozeilenargumenten"
+date:                  2024-01-20T17:56:02.681646-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lesen von Kommandozeilenargumenten"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,37 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Haskell Programmierung: Kommandozeilen-Argumente lesen
+## Was & Warum?
+Beim Lesen von Kommandozeilenargumenten nimmt ein Programm Parameter von außen auf, um sein Verhalten zu steuern oder Daten zu verarbeiten. Programmierer nutzen dies, um ihre Programme flexibler und interaktiver zu gestalten.
 
-## Was und Warum?
-Kommandozeilenargumente sind Parameter, die einem Programm während seiner Initialisierung übergeben werden. Sie sind entscheidend, um flexiblere und wiederverwendbare Programme zu erstellen.
-
-## So geht's:
-In Haskell verwenden wir die `getArgs` Funktion im `System.Environment` Modul, um Kommandozeilenargumente zu lesen. Hier ein Beispiel:
-
+## How to:
 ```Haskell
-import System.Environment
+import System.Environment (getArgs)
 
 main :: IO ()
 main = do
     args <- getArgs
-    putStrLn ("Hallo, " ++ head args)
+    print args
+```
+Ausführen im Terminal:
+```bash
+runghc myprogram.hs arg1 arg2 arg3
+```
+Ausgabe:
+```Haskell
+["arg1", "arg2", "arg3"]
 ```
 
-Wenn wir das Programm mit `runghc Main.hs Haskell` starten, bekommen wir:
+## Deep Dive
+Haskell, seit den späten 80ern entwickelt, bietet über das Modul `System.Environment` eine elegante Art, Kommandozeilenargumente zu lesen. Alternativ gibt es Bibliotheken, etwa `optparse-applicative`, für komplexere Argumente und schönere Hilfe-Texte. Die einfache `getArgs`-Funktion legt eine Liste von Strings an, wo jedes der Argumente eins zu eins übergeben wird. Wer mehr Kontrolle braucht, kann auf `getOpt` zurückgreifen, wo Parameter genauer spezifiziert werden können.
 
-```Shell
-Hallo, Haskell
-```
-
-## Tiefgehenden Einblick
-Historisch gesehen stammen Kommandozeilenargumente aus der Zeit vor grafischen Interfaces, sie sind immer noch relevant für die Erstellung effizienter und wiederverwendbarer Programme.
-
-Alternativen zur Verwendung von `getArgs` könnten Umgebungsvariablen oder Ein-/Ausgabe für und von Dateien sein. Jede Methode hat ihre eigenen Anwendungsgebiete. Beispielsweise sind Umgebungsvariablen hilfreich, wenn mehrere Prozesse auf die gleichen Daten zugreifen müssen.
-
-Die Implementierung von `getArgs` ist recht geradlinig. `getArgs` gibt eine Liste von Strings zurück, die die Kommandozeilenargumente sind.
-
-## Siehe auch
-Weitere Informationen finden Sie auf den folgenden Seiten:
-
-- [Haskell Wiki: Command line argument handling](https://wiki.haskell.org/Tutorials/Programming_Haskell/Argument_handling)
+## See Also
+- [Haskell `getArgs` documentation](https://hackage.haskell.org/package/base/docs/System-Environment.html#v:getArgs)
+- [optparse-applicative auf Hackage](https://hackage.haskell.org/package/optparse-applicative)
+- [getOpt Tutorial](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Console-GetOpt.html)

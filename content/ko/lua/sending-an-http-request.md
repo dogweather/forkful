@@ -1,6 +1,7 @@
 ---
 title:                "HTTP 요청 보내기"
-html_title:           "Clojure: HTTP 요청 보내기"
+date:                  2024-01-20T18:00:12.464622-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,47 +11,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇이며 왜 사용하는가?)
+HTTP 요청을 보낸다는 건 웹 서버와 데이터를 주고받기 위해서입니다. 프로그래머가 이를 사용하는 이유는 웹 API 통신, 웹 페이지 내용 가져오기, 웹 기반 데이터 분석 등 다양한 작업을 자동화하기 위해서죠.
 
-HTTP 요청을 보내는 것은 웹 서버로 정보를 요청하거나 전송하는 프로세스입니다. 프로그래머들은 이것을 사용하여 API에서 데이터를 가져오거나 웹 서버에 데이터를 보내기 위해 사용합니다.
-
-## 방법:
-
-Lua에서 HTTP 요청을 보낼 수 있는 방법은 여럿이지만 이 예제에서는 LuaSocket과 HTTP 라이브러리를 사용하는 방법을 알아 보겠습니다. 이 라이브러리들을 설치하려면, 먼저 luarocks를 통해 설치해야 합니다:
+## How to: (어떻게 하나요?)
+Lua에서 HTTP 요청을 하려면, `socket.http` 라이브러리나 `luasocket` 모듈을 사용할 수 있습니다. 먼저 `luasocket`를 설치해야 합니다:
 
 ```lua
+-- Luasocket library 설치
 luarocks install luasocket
-luarocks install luasec
 ```
 
-HTTP 요청을 보내는 간단한 예제입니다:
+GET 요청 예시:
+
 ```lua
-http = require("socket.http")
-http.TIMEOUT = 5
+local http = require("socket.http")
 
-url = "http://httpbin.org/get"
-response_body, status_code, headers, status_text = http.request(url)
+-- HTTP GET 요청 보내기
+local response_body = {}
 
-if status_code == 200 then
-    print(response_body)
-else
-    print("HTTP request failed with status: " .. status_text)
-end
+http.request{
+    url = "http://httpbin.org/get",
+    sink = ltn12.sink.table(response_body)
+}
+
+-- 응답 출력하기
+print(table.concat(response_body))
 ```
 
-이 코드는 `http://httpbin.org/get` URL으로 GET 요청을 보내고, 받은 응답을 출력합니다.
+POST 요청 예시:
 
-## 깊은 이해:
+```lua
+local http = require("socket.http")
+local ltn12 = require("ltn12")
 
-HTTP 요청을 보내는 것은 웹 개발의 핵심 부분이며, 이것은 웹에서 정보를 주고 받는 주요 메커니즘이기 때문입니다. Lua는 임베디드 시스템, 클라이언트-서버 애플리케이션 등 다양한 경우에 사용되며, 이러한 환경들에서 HTTP 요청이 필수적일 수 있습니다.
+-- 데이터 정의
+local request_body = "name=Lua&programming=isFun"
+local response_body = {}
 
-다른 프로그래밍 언어처럼 Lua에도 HTTP 요청을 보내기 위한 다양한 라이브러리가 있습니다. LuaSocket과 HTTP 라이브러리는 아주 간단한 요청을 보내기에는 충분하지만, 더 복잡한 요청을 보내려면 LuaSec 라이브러리를 사용해야할 수도 있습니다.
+-- HTTP POST 요청 보내기
+http.request{
+    url = "http://httpbin.org/post",
+    method = "POST",
+    headers = {
+        ["Content-Type"] = "application/x-www-form-urlencoded",
+        ["Content-Length"] = tostring(#request_body)
+    },
+    source = ltn12.source.string(request_body),
+    sink = ltn12.sink.table(response_body)
+}
 
-HTTP 요청의 구현 세부 정보는 요청 유형(GET, POST 등)과 사용하는 라이브러리에 따라 다릅니다. 대부분의 경우, 요청은 URL, 헤더, 그리고 선택적으로 본문(Body)을 포함해야합니다.
+-- 응답 출력하기
+print(table.concat(response_body))
+```
 
-## 참고:
+## Deep Dive (심화 학습)
+과거엔 Lua에 표준 HTTP 라이브러리가 없어 대부분의 HTTP 작업이 외부 라이브러리에 의존했습니다. `luasocket`은 가장 인기 있는 선택지 중 하나입니다. Lua의 버전 5.1부터 사용됩니다. `socket.http`는 단순한 사용을 위해, `copas.http`나 `lua-http` 같은 라이브러리는 좀 더 고급 기능과 비동기 작업을 위해 존재합니다.
 
-- LuaSocket: http://w3.impa.br/~diego/software/luasocket/
-- LuaSec: https://github.com/brunoos/luasec/wiki
-- Lua에서 HTTP 요청하기: https://lua-users.org/wiki/HttpLuaModule
-- HTTP 개요: https://developer.mozilla.org/ko/docs/Web/HTTP/Overview
+## See Also (더 알아보기)
+- Luasocket GitHub 페이지: https://github.com/diegonehab/luasocket
+- LuaRocks: https://luarocks.org/
+- HTTPbin (HTTP 요청 실험): http://httpbin.org/

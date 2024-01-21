@@ -1,6 +1,7 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "C#: Verkkosivun lataaminen"
+date:                  2024-01-20T17:44:46.068460-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,40 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Verkkosivun lataaminen on prosessi, jossa pyydetään ja noudetaan sisältöä internetistä paikalliseen käyttöön. Ohjelmoijat tekevät tämän esimerkiksi hakukoneiden indeksointia tai web scraping -toimintoja varten.
+## What & Why? (Mitä & Miksi?)
+Webbisivun lataaminen tarkoittaa sivun sisällön noutamista internetistä. Ohjelmoijat lataavat sivuja datan keräämiseen, API-vasteiden tarkistamiseen ja automaation toteuttamiseen.
 
-## Miten tehdä:
-Seuraava koodi näyttää, kuinka ladata verkkosivu PHP:n avulla:
-```PHP
-<?php
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://www.example.com");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$output = curl_exec($ch);
-curl_close($ch);    
-print_r($output);
-?>
-```
-Tämä koodi lataa 'https://www.example.com' -sivun sisällön ja tulostaa sen.
-
-## Syvä sukellus
-### Historiallinen yhteys
-Verkkosivujen lataus alkoi, kun internetistä tuli hajautettu resurssien lähde. PHP, joka julkaistiin ensimmäisen kerran vuonna 1995, on jo pitkään ollut yksi tämän toiminnallisuuden toteuttavista kielistä.
-
-### Vaihtoehdot
-On olemassa erilaisia tapoja ladata verkkosivuja PHP:n kanssa. `file_get_contents` on yksinkertainen ja tehokas tapa, jos haluat ladata koko verkkosivun sisällön.
+## How to: (Kuinka tehdä:)
+PHP:llä webbisivun lataaminen onnistuu `file_get_contents`-funktiolla tai cURL-kirjastolla. Tässä on esimerkki molemmista.
 
 ```PHP
 <?php
-$homepage = file_get_contents('http://www.example.com/');
-echo $homepage;
+// Esimerkki file_get_contents käytöstä
+$sivunSisalto = file_get_contents('http://example.com');
+echo $sivunSisalto;
+
+// Esimerkki cURL:n käytöstä
+$curl = curl_init('http://example.com');
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+$sivunSisaltoCurl = curl_exec($curl);
+curl_close($curl);
+echo $sivunSisaltoCurl;
 ?>
 ```
-### Toteutuksen yksityiskohdat
-PHP:n `curl` -kirjasto mahdollistaa monimutkaisemmat verkkosivujen latausoperaatiot, kuten otsikoiden määrittämisen, evästeiden käsittelyn ja jopa SSL-sertifikaattien tarkistuksen.
 
-## Katso myös
-* PHP Manual: curl ([link](https://www.php.net/curl))
-* PHP Manual: file_get_contents ([link](https://www.php.net/manual/en/function.file-get-contents.php))
-* W3Schools PHP Tutorial: File Open/Read/Close ([link](https://www.w3schools.com/php/php_file_open.asp))
+Sample output näyttäisi esimerkiksi näin:
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+    ...
+</head>
+<body>
+    ...
+</body>
+</html>
+```
+
+## Deep Dive (Sukellus syvyyksiin):
+Historiallisesti PHP:ssä tiedon noutaminen etäpalvelimilta on kehittynyt yksinkertaisista funktioista monipuolisempiin kirjastoihin. `file_get_contents` on helppo tapa aloittaa, mutta sen ominaisuudet ovat rajoitetut: esimerkiksi HTTP-metodit tai headerit eivät ole konfiguroitavissa. cURL taas tarjoaa laajan valikoiman vaihtoehtoja pyyntöjen mukauttamiseen, mukaan lukien timeout-asetukset ja proxy-tuki.
+
+cURL on tehokas väline monimutkaisempiin tehtäviin, mutta sen monimutkaisempi käyttöliittymä saattaa tuntua ylimitoitetulta yksinkertaisiin skenaarioihin verrattuna `file_get_contents`-funktioon. Viimeisissä PHP-versioissa tietoturva ja suorituskyky ovat olleet päähuolenaiheita, ja kehittäjät käyttävät usein kehyksiä tai paketteja, kuten Guzzle, helpottamaan HTTP-pyyntöjen hallintaa.
+
+## See Also (Katso myös):
+- PHP Manual `file_get_contents`: https://www.php.net/manual/en/function.file-get-contents.php
+- PHP Manual cURL: https://www.php.net/manual/en/book.curl.php
+- GuzzleHTTP GitHub page: https://github.com/guzzle/guzzle

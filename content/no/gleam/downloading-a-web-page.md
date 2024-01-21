@@ -1,7 +1,8 @@
 ---
-title:                "Laste ned en nettside"
-html_title:           "Elixir: Laste ned en nettside"
-simple_title:         "Laste ned en nettside"
+title:                "Nedlasting av en nettside"
+date:                  2024-01-20T17:44:15.685569-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Nedlasting av en nettside"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,50 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+"## Hva & Hvorfor?"
 
-Å laste ned en webside er handlingen av å hente alle dataene fra en spesifikk nettadresse gjennom sikkert HTTP (Hypertext Transfer Protocol). Programmere gjør det for å analysere, manipulere eller lagre innholdet til senere bruk.
+Å laste ned en nettside betyr å hente ned innholdet for å lese eller behandle det. Programmerere gjør dette for å samle data, sjekke tilgjengelighet eller integrere med andre tjenester.
 
-## Hvordan:
+## How to:
+"## Hvordan gjøre det:"
 
-Vi bruker `gleam/httpc` biblioteket for å laste ned en nettside. 
-
-Installere biblioteket ved å legge dette til `rebar.config` filen:
-
-```Gleam
-{deps, [
-    {httpc, "0.1.0"}
-]}.
-```
-
-Deretter, bruk funksjonen `httpc.get` for å laste ned websiden:
-
-```Gleam
+```gleam
+import gleam/http
 import gleam/httpc
-import gleam/string
+import gleam/should
 
-pub fn hent_webside() {
-  let respons = httpc.get("https://eksempel.com").send()
-  case respons {
-    Ok(body) -> string.from_slice(body)
-    Error(err) -> io.println(err)
-  }
+pub fn main() {
+  let response = httpc.send(http.Request(
+    method: http.Get,
+    url: "https://eksempelside.no",
+    headers: [],
+    body: http.Body(None),
+  ))
+  
+  assert Ok(response) = response
+  should.equal(response.status, 200)
+  should.contain(response.body, "Velkommen til vår hjemmeside!")
 }
 ```
+Eksempel på output:
+```
+OK (status 200)
+"Innholdet på nettsiden her... Velkommen til vår hjemmeside!"
+```
 
-Denne koden vil skrive ut innholdet på "https://eksempel.com" eller feilmeldingen hvis den ikke klarer å laste ned sidene.
+## Deep Dive:
+"## Dypdykk:"
 
-## Dypdykk
+I tidligere dager var det å laste ned nettsider som regel gjort med verktøy som `curl` eller `wget` i terminalen, eller ved å bruke biblioteker som `libcurl` i programmeringsspråk. Alternativer for Gleam kan være direkte HTTP-klienter som `httpc` eller bruk av eksterne biblioteker som wrapper rundt disse verktøyene for tilleggsfunksjonalitet.
 
-Historisk sett, opprinnelig var nedlasting av nettsider begrenset til bruk i nettlesere. Men med fremgang av backend-teknologier, er det nå vanlig å last ned webside data for andre formål som webskraping, testing og mer.
+Selv om å laste ned en nettside kan virke rett frem, er det komplekse detaljer å vurdere, som håndtering av HTTP-headers for å lede om eller håndtere informasjonskapsler (cookies), og feilhåndtering for nettverksproblemer eller ugyldige svar.
 
-Alternativer til `gleam/httpc` inkluderer andre biblioteker som `httpc` eller `hackney`. Noen forskjeller kan inkludere ytelse, feilhåndtering, og funksjonalitet tilgjengelig, avhengig av biblioteket.
+## See Also:
+"## Se også:"
 
-Når det gjelder selve implementeringen, oppretter `httpc.get` en GET-forespørsel til den angitte nettadressen, sender forespørselen, og returnerer svaret som en `Result`(resultat).
-
-## Se Også 
-
-Her er noen nyttige lenker til relaterte emner:
-
-1. Gleam HTTP-klientdokumentasjon: [Gleam HTTP](https://hexdocs.pm/gleam_http/)
-2. HTTP-protokollen: [HTTP/1.1: Semantics and Content](https://tools.ietf.org/html/rfc7231)
+- HTTP klient verktøy som Curl: [Curl](https://curl.se/)
+- Nettverksprogrammeringsguide for nybegynnere: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)

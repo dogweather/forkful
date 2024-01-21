@@ -1,6 +1,7 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
+date:                  2024-01-20T17:57:59.228887-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "C#"
 category:             "C#"
@@ -10,35 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Ohjelmoinnissa tekstinhaku ja -korvaus tarkoittaa merkkijonon etsimistä ja sen korvaamista toisella. Sitä käytetään tiedon muokkaukseen ja automatisointiin, esimerkiksi korjattaessa bugeja tai päivitettäessä tietoja.
 
-Tekstin etsiminen ja korvaaminen on toiminto, joka mahdollistaa merkkijonon tai merkkijonojen etsimisen tekstistä ja niiden korvaamisen toisella merkkijonolla. Ohjelmoijat käyttävät tätä toimintoa tekstin muokkaamiseen, datan siivoamiseen tai tiedon keräämiseen.
-
-## Kuinka se toimii:
-
+## How to (Kuinka tehdä):
 ```C#
-// C#-koodi
-string alkuperainenTeksti = "Hei, olen koodari.";
-string korvattavaTeksti = "koodari";
-string uusiTeksti = "ohjelmoija";
+using System;
+using System.Text.RegularExpressions;
 
-// Tekstin korvaaminen
-string korvattuTeksti = alkuperainenTeksti.Replace(korvattavaTeksti, uusiTeksti);
+class Program {
+    static void Main() {
+        string sourceText = "Hello, World!";
+        string pattern = "World";
+        string replacement = "Finland";
 
-Console.WriteLine(korvattuTeksti);
+        // Perus string.Replace
+        string result = sourceText.Replace(pattern, replacement);
+        Console.WriteLine(result); // Output: Hello, Finland!
+
+        // Regex.Replace monimutkaisempia toimintoja varten
+        pattern = @"\bWorld\b";
+        result = Regex.Replace(sourceText, pattern, replacement);
+        Console.WriteLine(result); // Output: Hello, Finland!
+    }
+}
 ```
 
-Tästä tulee seuraava tuloste:
+## Deep Dive (Syväsukellus):
+Tekstinkorjailu on vanha juttu, alkaen paperilta kynällä tehdystä korjaamisesta aina tietokoneiden tekstinkäsittelyohjelmiin. C#:ssa `String.Replace()` on suoraviivainen tapa korvata tekstiä, kun taas `Regex.Replace()` antaa voimaa mallintaa monimutkaisempia kaavoja ja ehtoja.
 
-```
-Hei, olen ohjelmoija.
-```
+Vaihtoehtoisia metodeja ovat StringBuilder-luokka ja LINQ-operaatiot, jos suorituskyky on tärkeää tai data on kompleksisempaa. Toteutuksessa kannattaa huomioida myös merkistöjen (kuten UTF-8) ja kulttuurillisten erojen (kuten erilaiset aakkostot) vaikutus hakuun ja korvaukseen.
 
-## Syventävä tieto:
-
-Tekstin hakeminen ja korvaaminen on ollut tärkeä osa ohjelmointia sen varhaisista päivistä lähtien. Tämä johtuu datan dynaamisesta luonteesta: asioiden on oltava muokattavissa ja päivitettävissä. C#:ssa on useita tapoja tehdä tämä, kuten `String.Replace`, `Regex.Replace` tai edistyneemmissä tapauksissa custom-algoritmeja. Näiden valinta riippuu sovelluksen tarpeista.
-
-## Katso myös:
-
-1. Microsoftin C#-dokumentaatio `String.Replace` -metodista: [Linkki](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=netcore-3.1)
-2. Stack Overflow: "Miten korvata merkkijono toisella C#":ssa: [Linkki](https://stackoverflow.com/questions/1466000/how-to-replace-a-string-in-c)
+## See Also (Katso myös):
+- Microsoft Docs: [String.Replace Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-6.0)
+- Microsoft Docs: [Regex.Replace Method](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace?view=net-6.0)
+- Stack Overflow: [When to use StringBuilder?](https://stackoverflow.com/questions/3069416/whats-the-main-difference-between-string-and-stringbuilder)
+- CodeProject: [Manipulating Strings in C#](https://www.codeproject.com/Articles/1014073/Manipulating-strings-in-Csharp)

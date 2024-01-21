@@ -1,6 +1,7 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "C++: Porównywanie dwóch dat"
+date:                  2024-01-20T17:33:31.971848-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Python"
 category:             "Python"
@@ -11,34 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i Dlaczego?
-
-Porównywanie dwóch dat polega na sprawdzeniu, która z nich jest wcześniejsza, a która późniejsza lub czy są one takie same. Programiści robią to np. aby sortować wydarzenia w kolejności czasowej, weryfikować poprawność zakresów dat czy mierzyć czas pomiędzy dwoma punktami.
+Porównywanie dwóch dat to sprawdzanie, która z nich jest wcześniejsza, późniejsza lub czy są identyczne. Programiści to robią, by zarządzać wydarzeniami, wygasaniem certyfikatów czy datami ważności.
 
 ## Jak to zrobić:
-
-Python oferuje wbudowany moduł o nazwie `datetime`, który umożliwia prostą manipulację datami i czasem:
-
 ```Python
 from datetime import datetime
-# Ustalamy dwie daty
-data1 = datetime(2021, 1, 1)
-data2 = datetime(2021, 1, 2)
-# Porównujemy daty
-print("Czy data1 jest wcześniejsza od data2?", data1 < data2)
+
+# Przykład dat
+data_1 = datetime(2023, 4, 5)
+data_2 = datetime(2023, 5, 10)
+
+# Porównanie dat
+if data_1 < data_2:
+    print("Data 1 jest wcześniejsza niż Data 2")
+elif data_1 > data_2:
+    print("Data 1 jest późniejsza niż Data 2")
+else:
+    print("Data 1 i Data 2 są takie same")
+
+# Wynik
+# Data 1 jest wcześniejsza niż Data 2
 ```
 
-Na konsole zostanie wyświetlony tekst: `Czy data1 jest wcześniejsza od data2? True`
+## Zanurzenie:
+Porównywanie dat to stara praktyka, zaawansowana dzięki komputerom. W Pythonie, standardowa biblioteka `datetime` umożliwia operacje na datach. Alternatywy obejmują biblioteki zewnętrzne jak `dateutil`, która oferuje większą elastyczność. Implementacja porównywania dat opiera się na reprezentacji czasu UNIX - liczbie sekund od północy 1 stycznia 1970 r. Systemy mogą się różnić (np. Windows vs. UNIX), ale w Pythonie to abstrakcyjne dzięki `datetime`.
 
-## Deep Dive
-
-Porównywanie dat to podstawowy element obsługi czasu w wielu językach programowania, włączając w to Pythona. Historycznie ta funkcjonalność była wykorzystywana w różnych aplikacjach, takich jak systemy zarządzania finansami czy nauka maszynowa.
-
-Python oferuje kilka alternatywnych możliwości porównania dat, np. używając operatorów porównania (`==`, `!=`, `<`, `<=`, `>`, `>=`), lub metod takich jak `datetime.equals()` i `datetime.compare()`.
-
-Szczegóły implementacji porównywania dat w Pythonie są dość proste do zrozumienia - Python traktuje daty jako liczby, które są liczone od pewnego punktu startowego, tzw. epoch (1970-01-01 00:00:00).
-
-## Zobacz też:
-
-- Dokumentacja modułu `datetime`: https://docs.python.org/3/library/datetime.html
-- Przewodnik po modułach Pythona zw. z datą i czasem: https://realpython.com/python-datetime/
-- Moduł `dateutil` do zaawansowanych operacji na datach: https://dateutil.readthedocs.io/en/stable/
+## Zobacz również:
+- Oficjalną dokumentację modułu datetime: https://docs.python.org/3/library/datetime.html
+- Dokumentacja dateutil: https://dateutil.readthedocs.io/en/stable/
+- UNIX Time: https://en.wikipedia.org/wiki/Unix_time

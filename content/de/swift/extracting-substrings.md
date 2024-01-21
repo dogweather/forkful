@@ -1,7 +1,8 @@
 ---
-title:                "Teilzeichenketten extrahieren"
-html_title:           "PowerShell: Teilzeichenketten extrahieren"
-simple_title:         "Teilzeichenketten extrahieren"
+title:                "Teilstrings extrahieren"
+date:                  2024-01-20T17:46:39.785379-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Teilstrings extrahieren"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,45 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Extrahieren von Teilstrings in Swift: Ein nützliches Werkzeug für Programmierer
-
 ## Was & Warum?
-Das Extrahieren von Teilstrings in Swift ist ein Prozess, bei dem wir spezifische Teile eines Textes herausschneiden. Programmierer tun dies, um den Text zu analysieren, Daten zu manipulieren oder den Text auf verschiedene Weisen zu prüfen. 
+Das Extrahieren von Teilstrings ist der Vorgang, bei dem spezifische Teile eines Strings abgetrennt und verwendet werden. Programmierer nutzen dies häufig, um mit Benutzereingaben zu arbeiten, Daten zu validieren oder Formatierungen anzupassen.
 
-## Wie man:
-Hier sind einige Beispiele und deren Ausgabe:
-
-```Swift
-let text = "Hallo, ich bin ein Swift-Programmierer"
-let indexStart = text.index(text.startIndex, offsetBy: 7)
-let indexEnd = text.index(text.startIndex, offsetBy: 14)
-let teil = text[indexStart...indexEnd]
-print(teil) // Ausgabe: "ich bin"
-```
-
-In diesem Beispiel haben wir den Teilstring "ich bin" aus dem gegebenen Text extrahiert. 
+## So geht's:
 
 ```Swift
-let name = "Max Mustermann"
-let firstSpace = name.firstIndex(of: " ") ?? name.endIndex
-let firstName = name[..<firstSpace]
-print(firstName) // Ausgabe: "Max"
+let vollerText = "Hallo, ich bin ein Swift-Programmierer!"
+let bereich = vollerText.index(vollerText.startIndex, offsetBy: 7)..<vollerText.index(vollerText.endIndex, offsetBy: -23)
+let teilString = vollerText[bereich] // "ich bin"
+
+print(teilString) // Gibt "ich bin" aus
 ```
-In diesem Fall haben wir den Vornamen "Max" extrahiert, indem wir bis zum ersten Leerzeichen gesucht haben.
 
-## Vertiefung:
-(1) Historischer Kontext: Vor Swift 4.0 war das Extrahieren von Teilstrings in Swift ziemlich umständlich und kompliziert. Swift 4.0 hat eine neue ``Substring`` Struktur eingeführt, um den Prozess zu vereinfachen. 
-
-(2) Alternativen: Es gibt viele Möglichkeiten, Teilstrings in Swift zu extrahieren. Eine andere Alternative ist die Verwendung von Range:
+Beispiel zum Extrahieren eines Wortes an einer bestimmten Position:
 
 ```Swift
-let range = text.range(of: "ich bin")
-let teil2 = text[range!] 
-print(teil2) // Ausgabe: "ich bin"
+let satz = "Ein Apfel täglich hält den Doktor fern."
+if let wortBereich = satz.range(of: "Apfel") {
+    let wort = satz[wortBereich]
+    print(wort) // Gibt "Apfel" aus
+}
 ```
 
-(3) Implementierungsdetails: In Swift sind `String` und `Substring` eng verbunden. Ein `Substring` teilt sich den Speicher mit dem Originalstring und hält nur einen Zeiger auf den Anfang, das Ende und den Text.
+## Tiefere Einblicke
+Vor Swift 4 wurden Teilstrings nicht als `Substring` gehandhabt, sondern direkt als `String`, was zu unnötigem Kopieren und Speichernutzung führte. Der `Substring` Typ in Swift bietet eine performante Möglichkeit, mit Teilstrings zu arbeiten, ohne sofort neue String-Instanzen zu erzeugen. Alternativ kann man auch mit Regular Expressions oder Funktionen wie `components(separatedBy:)` arbeiten.
 
-## Siehe auch:
-1. Apple's officielle Dokumentation: ["Substring"](https://developer.apple.com/documentation/swift/substring)
-2. [Swift-String und deren Manipulation](https://www.hackingwithswift.com/articles/115/introduction-to-string-manipulation-in-swift)
+Die Implementierung nutzt Copy-On-Write (CoW), was bedeutet, dass Speicher erst dann kopiert wird, wenn Änderungen vorgenommen werden müssen. Das ist effizient, da es vermeidet, dass große Datenmengen unnötigerweise kopiert werden, wenn man nur auf Teile des Originalstrings verweisen möchte.
+
+## Siehe auch
+- Swift Standard Library: [Strings and Characters](https://developer.apple.com/documentation/swift/string) 
+- Swift Book von Apple: [String](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- Tutorial zu Regular Expressions in Swift: [NSRegularExpression](https://nshipster.com/nspredicate/)

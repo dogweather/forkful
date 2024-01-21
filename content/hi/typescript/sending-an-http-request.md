@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:01:11.598799-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,37 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-HTTP अनुरोध भेजना, कनेक्टेड सिस्टम्स में, एक विशेष वेब सर्वर से डाटा का आदान-प्रदान करने का तरीका होता है। कार्यक्रमकर्ताएं इसे वेब आधारित सर्विसेज इस्तेमाल करने, डेटा को मांगने या सर्वर पर कार्रवाई करने के लिए करते हैं।
+## What & Why? (क्या और क्यों?)
 
-## कैसे करें:
-यहां एक साधारण TypeScript की HTTP अनुरोध भेजने की कोड संग्रहीत है:
+HTTP request वेब सर्वर से जानकारी मांगने का एक तरीका है। Programmers इसे डेटा पाने, अपडेट करने, या सर्वर पर कार्रवाई करने के लिए भेजते हैं।
 
-```TypeScript
-import axios from 'axios';
+## How to: (कैसे करें:)
 
-async function getData(url: string) {
+TypeScript में HTTP request भेजने के लिए `fetch` API का उपयोग करें। नीचे इसका एक उदाहरण है:
+
+```typescript
+async function fetchData(url: string): Promise<void> {
   try {
-    const response = await axios.get(url);
-    console.log(response);
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
   } catch (error) {
-    console.error(error);
+    console.error('Fetch error:', error.message);
   }
 }
 
-getData('https://api.example.com/data');
+fetchData('https://jsonplaceholder.typicode.com/todos/1');
 ```
 
-इस साधारण कोड में, हमने `axios` library का उपयोग करके HTTP GET अनुरोध भेजा और प्राप्त उत्तर को कन्सोल पर प्रिंट किया है।
+जब आप ऊपर के कोड को चलाएंगे, तो आपको कंसोल में JSON डेटा नजर आएगा:
 
-## गहराई में जानना
-HTTP अनुरोध का उपयोग डाटा के आदान-प्रदान में व्यापक तौर पर किया जाता है। इसने वेब पृष्ठों, REST एपीआईस और डाटा की अन्य सेवाओं के साथ इंटरैक्ट करने का मानक निर्धारित किया है।
+```json
+{
+  "userId": 1,
+  "id": 1,
+  "title": "delectus aut autem",
+  "completed": false
+}
+```
 
-वैकल्पिक तरीके जैसे कि WebSockets और Server Sent Events भी डाटा प्रेषण के लिए उपयोग हो सकते हैं, लेकिन ये HTTP अनुरोधों की तरह रूट नहीं होते हैं।
+## Deep Dive (गहराई में जानकारी:)
 
-व्यावसायिक क्रम में, TypeScript के साथ HTTP अनुरोध का प्रबंधन अक्सर लाइब्रेरियों और फ्रेमवर्क्स जैसे कि `axios`, `fetch`, और `XHR` के माध्यम से किया जाता है।
+HTTP requests का इतिहास 1990s से शुरू होता है, जब World Wide Web नया था। AJAX (Asynchronous JavaScript and XML) तकनीक ने दिखाया कि requests को पेज को रिफ्रेश किए बिना भी भेजा जा सकता है। TypeScript `fetch` API इसी का एक आधुनिक रूप है।
 
-## भी देखें
-- [Axios निर्देशिका यहाँ](https://axios-http.com/)
-- [Fetch API पूरी जानकारी](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [XMLHttpRequest का प्रलेखन](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+Fetch API के अलावा, `XMLHttpRequest` भी एक विकल्प है, पर ये पुराना और कम सुविधाजनक है। `Axios` जैसे तृतीय-पक्ष लाइब्रेरीज भी हैं जो ज़्यादा सुविधाएँ और ब्राउज़र समर्थन देते हैं।
+
+जब आप `fetch` का उपयोग करते हैं, Promise पर आधारित `async` और `await` शेली कोड को ज्यादा पढ़ने योग्य और संभालने में आसान बनाती है।
+
+## See Also (और देखें:)
+
+- Mozilla MDN Web Docs पर Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+- हाई परफॉर्मेंस ब्राउज़र नेटवर्किंग (HTTP/2, Fetch, etc.): https://hpbn.co/
+- Axios GitHub repository: https://github.com/axios/axios

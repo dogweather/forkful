@@ -1,6 +1,7 @@
 ---
 title:                "Descargando una página web"
-html_title:           "Arduino: Descargando una página web"
+date:                  2024-01-20T17:43:16.533112-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Descargando una página web"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,55 +11,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por Qué?
+## Qué & Por Qué?
+Descargar una página web es básicamente pedirle a un servidor de internet que nos mande los datos de una página. Los programadores hacen esto para obtener información útil, actualizar datos en tiempo real o interactuar con servicios web.
 
-Descargar una página web es básicamente cómo guardamos una copia de todo el contenido de un sitio web en local. Los programadores lo hacen para analizar la página, scrappear información, testear funcionalidades, entre otros propósitos.
-
-## Cómo hacer:
-
-Aquí te muestro un pedazo de código en Arduino para descargar una página web utilizando un módulo ESP8266:
+## Cómo hacerlo:
+Para descargar una página web con Arduino, necesitas un módulo de red como el Ethernet Shield o un módulo WiFi. Acá un código de ejemplo usando WiFi:
 
 ```Arduino
-#include <ESP8266WiFi.h>
-#define SSID "nombre_de_tu_red"
-#define PASSWORD "contraseña_de_tu_red"
+#include <WiFi.h>
 
-WiFiClient client;
+const char* ssid     = "Tu_SSID";
+const char* password = "Tu_Contraseña";
+
+const char* host = "example.com";
 
 void setup() {
   Serial.begin(115200);
-  WiFi.begin(SSID, PASSWORD);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Conectando a la red WiFi...");
-  }
-  Serial.println("¡Conectado!");
-}
+  WiFi.begin(ssid, password);
 
-void loop() {
-  if (client.connect("www.pagina-ejemplo.com", 80)) {
-    client.println("GET / HTTP/1.1");
-    client.println("Host: www.pagina-ejemplo.com");
-    client.println("Connection: close");
-    client.println();
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
   }
+
+  Serial.println("WiFi conectado");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+
+  delay(1000);
+
+  Serial.print("Conectando a ");
+  Serial.println(host);
+
+  WiFiClient client;
+  const int httpPort = 80;
+  if (!client.connect(host, httpPort)) {
+    Serial.println("Conexión fallida");
+    return;
+  }
+
+  String url = "/pagina_que_quieres_descargar";
+  client.print(String("GET ") + url + " HTTP/1.1\r\n" +
+               "Host: " + host + "\r\n" + 
+               "Connection: close\r\n\r\n");
+
+  while (client.available() == 0) {
+    delay(1000);
+  }
+
   while (client.available()) {
     String line = client.readStringUntil('\r');
     Serial.print(line);
   }
 }
+
+void loop() {
+  // No necesitamos nada aquí.
+}
 ```
-Este código se conectará a la red WiFi que definas y descargará la página inicial de "www.pagina-ejemplo.com". El contenido de la página web se imprimirá en el monitor serial.
 
 ## Inmersión Profunda:
+El concepto de descargar páginas web no es nuevo, data de los inicios de la World Wide Web. Empezamos con conexiones telnet, pasamos por HTTP/1.0, luego al más eficiente HTTP/1.1, y ahora usamos protocolos aún más rápidos como HTTP/2. Alternativamente, en lugar de WiFi, podrías usar Ethernet o módulos celulares, dependiendo de tu proyecto. La implementación dependerá del módulo de hardware específico que utilices, así que asegúrate de consultar la documentación correspondiente.
 
-1. **Contexto histórico**: El primer intento de "crawler", un programa que descarga páginas para indexarlas, se cree que fue  el WebCrawler de 1994, que fue crucial en el desarrollo de Yahoo!. 
-2. **Alternativas**: En lugar de ESP8266, puedes usar otros módulos como ESP32, que incluyen más funcionalidades.
-3. **Detalles de implementación**: La descarga de una página web con Arduino se basa en realizar una petición GET a un servidor web. El servidor responde con el HTML de la página y lo lees con la función `client.readStringUntil('\r');`.
-
-## Fuentes Relacionadas:
-
-1. Documentación oficial de Arduino: https://www.arduino.cc/reference/en/
-2. Tutorial de connectar Arduino a internet: https://internetdelascosas.cl/2015/03/23/tutorial-esp8266-conexión-a-internet-con-arduino-uno/
-3. Información adicional sobre peticiones HTTP: https://desarrolloweb.com/articulos/2993.php
-4. Tutorial para web scrapping: https://www.acamica.com/clases/1479/tutoriales/webscraping-con-python-y-beautifulsoup
+## Ver También:
+- Documentación de la biblioteca WiFi de Arduino: https://www.arduino.cc/en/Reference/WiFi
+- Código de ejemplo para Ethernet Shield: https://www.arduino.cc/en/Tutorial/WebClient
+- Información sobre HTTP/2: https://developers.google.com/web/fundamentals/performance/http2

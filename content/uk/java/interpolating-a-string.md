@@ -1,7 +1,8 @@
 ---
-title:                "Інтерполяція рядка"
-html_title:           "Java: Інтерполяція рядка"
-simple_title:         "Інтерполяція рядка"
+title:                "Інтерполяція рядків"
+date:                  2024-01-20T17:51:18.282491-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Інтерполяція рядків"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,35 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це та навіщо це потрібно?
+## What & Why? (Що та Чому?)
+Interpolating a string means splicing variables into text. We do it to build dynamic strings – think personalized messages or live data displays in your app.
 
-Інтерполяція рядка - це простий метод, яким програміст формує рядок, вставляючи в нього змінні цінності. Це робить ваш код більш чистим і зрозумілим.
-
-## Як це зробити:
-
-У Java 15 було запроваджено новий API для інтерполяції рядків. Ви можете використовувати `String.format()` для цього.
-
+## How to: (Як це зробити:)
 ```Java
-public class Main {
+public class StringInterpolationExample {
     public static void main(String[] args) {
-        int age = 30;
-        String name = "Ivan";
-        String output = String.format("Привіт. Мене звати %s і мені %d років.", name, age);
-        System.out.println(output);
+        String user = "Василь";
+        int points = 1337;
+        
+        // Before Java 15, we used String.format()
+        String oldWay = String.format("Привіт, %s! Ти заробив %d балів.", user, points);
+        System.out.println(oldWay); // Output: Привіт, Василь! Ти заробив 1337 балів.
+        
+        // With Java 15, we can use formatted() directly on strings
+        String newWay = "Привіт, %s! Ти заробив %d балів.".formatted(user, points);
+        System.out.println(newWay); // Output: Привіт, Василь! Ти заробив 1337 балів.
+        
+        // And with Java 16+, we have String template literals
+        // String templateLiteral = `Hello, ${user}! You've earned ${points} points.`; // Not actual Java syntax as of the last knowledge update
     }
 }
 ```
 
-Цей код виведе: "Привіт. Мене звати Ivan і мені 30 років."
+## Deep Dive (Поглиблений Розбір)
+Historically, Java wasn't big on string interpolation. We used concatenation (`+`) or `String.format()` for dynamic strings. Java 15 introduced `formatted()` for a bit cleaner code. As of now, Java doesn't have the same template literals JavaScript does, but who knows what future versions will bring?
 
-## Поглиблений огляд:
+Alternatives? Besides `format()` and `formatted()`, you can concatenate with `+`, use `StringBuilder`, or go fancy with `MessageFormat` or even external libraries like Apache's `StrSubstitutor`.
 
-1. Історичний контекст: Інтерполяція рядків була запроваджена в багатьох мовах програмування ще до Java. Проте, Java додала цю опцію лише у версії 15.
-2. Альтернативи: Альтернативою `String.format()` є `MessageFormat.format()`, який також дозволяє інтерполювати рядки, але використовує різний синтаксис.
-3. Детальніше про реалізацію: У Java інтерполяція рядків досягається через використання класу `Formatter`, який є основою `String.format()`.
+Implementation-wise, remember that strings in Java are immutable. When we "interpolate," we're actually creating new strings. Keep it in mind for memory-sensitive situations.
 
-## Ще декілька ресурсів:
+## See Also (Додатково)
+- Oracle's official Java documentation: https://docs.oracle.com/en/java/
+- A deeper dive into `String.format()`: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format(java.lang.String,java.lang.Object...)
+- Why are strings immutable in Java? https://stackoverflow.com/questions/22397861/why-is-string-immutable-in-java
 
-Для додаткового вивчення щодо інтерполяції рядків в Java ви можете взяти до уваги наступні ресурси:
-- [Java String Format Examples](https://dzone.com/articles/java-string-format-examples)
-- [Oracle Java Documentation](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html)
+Remember, keep your code clean and your curiosity fresh. Happy coding!

@@ -1,6 +1,7 @@
 ---
 title:                "Criando um arquivo temporário"
-html_title:           "Bash: Criando um arquivo temporário"
+date:                  2024-01-20T17:40:12.390273-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Criando um arquivo temporário"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,47 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Lidando com Arquivos Temporários em Gleam: Um Guia Vegetativo
+## What & Why?
 
-## O Que & Por Quê?
-Criar um arquivo temporário significa estabelecer um local para armazenar dados de curta duração. Fazemos isso quando precisamos usar esses dados durante uma sessão de programa e depois descartá-los sem deixar qualquer pegada persistente.
+Criar um arquivo temporário é o processo de geração de um arquivo que é projetado para ser utilizado por um curto período e removido depois. Programadores fazem isso quando precisam de um espaço seguro para operar dados sem alterar o estado permanente ou para gerenciar dados que só são necessários durante a execução de um processo específico.
 
-## Como Fazer:
-Vamos dividir isso em duas seções. Primeiro, criação e escrita para um arquivo temporário. Segundo, leitura e exclusão deste arquivo.
+## How to:
 
-```gleam
-import gleam/otp/process
-import gleam/io
+Atualmente, Gleam não possui uma biblioteca padrão para manipulação de arquivos diretamente, então vamos pensar fora da caixa e usar uma chamada de sistema para lidar com arquivos temporários. Servindo-nos de uma função do sistema operacional como `mkstemp`, faríamos algo semelhante ao código em um shell script ou em outro idioma de sistema.
 
-fn main() {
-    let name = io.tmpfile().unwrap()
-    io.write_file(name, "Trabalhando com arquivos temporários em Gleam.")
-    io.println(name)
-}
-```
-Este código cria um arquivo temporário, escreve um string nele, e então imprime o nome do arquivo. Agora vamos ler e excluir o arquivo.
+Supondo que você esteja em um sistema Unix-like:
 
 ```gleam
-import gleam/otp/process
-import gleam/io
+external fn mkstemp(template: String) -> Int 
+  "system.mkstemp"
 
-fn read_and_delete(filename: String) {
-    let content = io.read_file(filename).unwrap()
-    io.println(content)
-    io.delete_file(filename)
+fn create_temp_file() {
+  let template = "tempXXXXXX" // As Xs são substituídas por caracteres aleatórios
+  mkstemp(template)
 }
 ```
-Deve ser bem direto - leia o arquivo, gratifique-se com a magia impressa na tela e limpe depois que terminar.
 
-## Mergulho Profundo
-Trabalhar com arquivos temporários tem sido uma parte fundamental da programação desde o início dos dias computacionais. Por que? Porque a memória não-volátil era (e ainda é) um recurso valioso e o espaço de armazenamento era (e algumas vezes, ainda é) limitado.
+Saída de exemplo (o número retornado é o descritor do arquivo):
 
-No Gleam, os arquivos temporários são manipulados em uma base por-sessão. Isso significa que eles são criados no início de uma sessão de programa e removidos automaticamente no final dela, a não ser que você o faça explicitamente (como fizemos no exemplo acima).
+```shell
+123456
+```
 
-Em termos de alternativas, poderíamos ter usado datastores em memória (como Redis) ou mesmo uma base de dados normal se nossos dados tivessem sido mais persistentes.
+## Deep Dive
 
-## Veja Também
-- Documentação oficial de Gleam IO: https://hexdocs.pm/gleam/io/
-- Aplicações práticas de arquivos temporários: https://betterprogramming.pub/why-and-how-to-use-temporary-files-in-your-programs-8207ec601d6e
+A função de sistema `mkstemp` vem desde os tempos do Unix, uma escolha robusta porque lida com as possíveis condições de corrida que podem acontecer ao criar arquivos temporários em um ambiente com múltiplas threads ou processos. Alternativamente, em outros idiomas de programação, pode-se encontrar bibliotecas específicas para gerenciar arquivos temporários, como `tempfile` no Python.
 
-Basta intercalar essas duas pequenas funções no seu código e você terá os arquivos temporários sob controle!
+Ao criar um arquivo temporário, o sistema se certifica de que o nome do arquivo é único, evitando sobrescritas e possíveis problemas de segurança. A remoção do arquivo após seu uso é uma boa prática, principalmente em aplicações que criam um volume alto de temporários, para não sobrecarregar o sistema de arquivos.
+
+## See Also
+
+Para mais detalhes sobre a funcionalidade `mkstemp`, confira a documentação da chamada de sistema do UNIX:
+- [Man page for mkstemp](https://linux.die.net/man/3/mkstemp)
+
+Para conceitos adicionais sobre manipulação de arquivos em Gleam e funções externas, veja:
+- [Gleam documentation on external functions](https://gleam.run/book/tour/external-functions.html)
+
+Note que, à medida que Gleam amadurece, é provável que surjam bibliotecas para simplificar estas tarefas, então fique de olho nos repositórios de pacotes do Gleam:
+- [Hex package manager for the Erlang ecosystem](https://hex.pm/)

@@ -1,7 +1,8 @@
 ---
-title:                "Debug-tulosteen tulostaminen"
-html_title:           "Bash: Debug-tulosteen tulostaminen"
-simple_title:         "Debug-tulosteen tulostaminen"
+title:                "Virheenjäljitystulosteiden tulostaminen"
+date:                  2024-01-20T17:52:20.220810-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Virheenjäljitystulosteiden tulostaminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,38 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+(Mitä & Miksi?)
 
-Tulostus debug-esitys on ohjelmointitekniikka, jossa ohjelmoija tulostaa sovelluksen tilaa kuvaavia tietoja konsoliin tai tiedostoon. Sitä käytetään ohjelman virheiden tunnistamiseen ja korjaamiseen.
+Debug-tulostus auttaa ymmärtämään, mitä ohjelmassasi tapahtuu. Ohjelmoijat käyttävät sitä virheiden paikallistamiseen ja oman koodin käytöksen selvittämiseen.
 
-## Kuinka Näin:
+## How to:
+(Kuinka tehdä:)
 
-Elixirissa debug-tietojen tulostaminen on suoraviivaista. Käytetään esimerkkinä `IO.inspect/2` funktiota:
+Käytetään `IO.puts` tai `IO.inspect` näyttämään tietoja konsolissa.
 
 ```elixir
-defmodule Hello do
-  def greet do
-    name = "Maailma"
-    IO.inspect(name, label: "Name") # Tulostaa: Name: "Maailma"
-    "Hei, #{name}"
-  end
-end
+# Yksinkertainen tekstiviesti
+IO.puts("Moikka maailma!")
 
-IO.puts Hello.greet # Tulostaa: Hei, Maailma
+# Muuttujan arvon tulostus
+moi = "Hei taas!"
+IO.inspect(moi)
+
+# Arvon tulostus, mutta arvo palautetaan myös
+IO.inspect(moi, label: "Arvon tarkastus")
 ```
-Funktion `IO.inspect/2` avulla voit tarkastella muuttujien arvoja ajon aikana. Se näyttää tiedot ja palauttaa alkuperäisen datan.
 
-## Tarkempi Katsaus:
+Output:
+```
+Moikka maailma!
+"Hei taas!"
+Arvon tarkastus: "Hei taas!"
+```
 
-Historiallisessa kontekstissa, ohjelmoijat käyttivät merkkijonotulostusta virheenkorjauksessa ennen kuin debuggertyökalut ja -tekniikat olivat laajasti saatavilla. Siitä huolimatta sen käyttö on yhä merkityksellistä, erityisesti koodin käyttäytymisen nopeaan tarkasteluun.
+## Deep Dive:
+(Sukellus syvemmälle:)
 
-Elixirissa on myös muita tapoja debug-tulostuksen tekemiseen. Esimerkiksi `:debugger` moduulin avulla, joka on osa Erlangin OTP-kirjastoa, voidaan ottaa käyttöön interaktiivinen debugger.
+Alun perin, kuten monissa ohjelmointikielissä, debug-tulostus oli yksinkertainen väline ohjelman tilan tarkasteluun. Elixirissä `IO.inspect` on mennyt askelen pidemmälle: se palauttaa arvon, joten sitä voi käyttää ketjutetusti.
 
-Mitä tulee toteutukseen, `IO.inspect/2` ei muuta ohjelman tilaa tai koodin suoritusjärjestystä. Se palauttaa syöttönä saamansa datan, minkä vuoksi sen voi vapaasti sijoittaa mihin tahansa koodilohkoon purkamisen vaarantamatta ohjelmalogiikkaa.
+Jos `IO.inspect` ei riitä, voi kääntyä Erlangin :observer-moduulin tai Elixirin `:debugger`-moduulin puoleen, jotka tarjoavat visuaalisempia työkaluja.
 
-## Katso Myös:
+Kehittyneempiin tarpeisiin Elixir tarjoaa `Logger`-moduulin, joka tukee eri lokitasoja ja on konfiguroitavissa.
 
-Elixirin virallinen dokumentaatio tarjoaa runsaasti tietoa `IO.inspect/2`:sta ja muista I/O -funktioista. Tutustu myös Erlangin OTP-`debugger` moduuliin osana omia debug-taitojasi.
+## See Also:
+(Lisätietoja:)
 
-* [Elixir's IO.inspect](https://hexdocs.pm/elixir/IO.html#inspect/2)
-* [Erlang's :debugger](http://erlang.org/doc/man/debugger.html)
+- Elixirin virallinen dokumentaatio `IO`: https://hexdocs.pm/elixir/IO.html
+- `Logger`-moduulin dokumentaatio: https://hexdocs.pm/logger/Logger.html
+- Erlangin :observer-moduuli: http://erlang.org/doc/apps/observer/observer_ug.html
+- Elixirin `:debugger`: https://hexdocs.pm/elixir/master/Debugging.html

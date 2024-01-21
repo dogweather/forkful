@@ -1,6 +1,7 @@
 ---
 title:                "Starting a new project"
-html_title:           "Bash recipe: Starting a new project"
+date:                  2024-01-20T18:02:56.464432-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Starting a new project"
 programming_language: "C#"
 category:             "C#"
@@ -11,44 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Starting a new project in C# means setting up a structured code environment for developing, testing, and maintaining a particular software solution. Programmers do this to organize code, track changes and collaborate efficiently.
+Starting a new C# project means setting up a fresh solution and project files that structure your code. Programmers kick off new projects to turn ideas into software, solve problems, or explore tech.
 
 ## How to:
+Let's roll up our sleeves and get our hands on some code. Assume you've got .NET 6 or later - that's the latest at the time of writing. You'll use the .NET CLI for this.
 
-Here's how to create a new console app in C#: 
-
+Create a new console app:
 ```C#
-// Call up the dotnet CLI
-$ dotnet new console -n HelloWorld
-// This creates a new console application named HelloWorld
+dotnet new console -o MyNewProject
 ```
-  
-Navigate into the new project folder `HelloWorld` with the command `cd HelloWorld` and launch the project by typing:
-
+Hop into your project directory:
 ```C#
-// Call up the dotnet CLI
-$ dotnet run
+cd MyNewProject
 ```
-
-You'll see an output like:
-
+Run your fresh, boilerplate Hello World:
 ```C#
+dotnet run
+```
+You should see:
+```
 Hello, World!
 ```
-
-This is a basic structure of a C# console application project. You'll find two files: `Program.cs` (the entry point for the application), and `.csproj` which holds metadata and instructions.
+Your new project is off the ground!
 
 ## Deep Dive
+Back in the day, you'd probably fire up Visual Studio and click through a wizard. Not anymore - now the .NET CLI is the go-to. It's quick and doesn't assume much about your dev environment.
 
-Historically, C# projects were created in Visual Studio which provided scaffolding via GUI; with the advent of .NET Core, cross-platform and command-line-interface was made possible for creating and managing projects.
+Alternatives? You bet. Visual Studio is still there for a GUI experience. Rider and Visual Studio Code are solid picks too. But the CLI? It's all about that lean, mean scripting vibe.
 
-Project templates, an alternative to manually creating files, offer common application types (Console, Web API, etc.), and provide all necessary boilerplates, saving time and effort.
-
-The .NET CLI command `dotnet new` creates a new project from a template. The `-n` (or `--name`) option specifies the name of the new project. The project file (`.csproj`) holds instructions for building the project, including target framework info and package references.
+Implementation details? Your `.csproj` file holds the keys to the kingdom. It's XML, but don't sweat - it pretty much takes care of itself. Here lies info your build process needs - target framework, dependencies, project references, all the good stuff.
 
 ## See Also
-
-To explore the wide range of C# project types and templates, check out the official .NET documentation: [Project templates for .NET CLI](https://docs.microsoft.com/dotnet/core/tutorials/cli-templates-create-projects-with-dotnet-new)
-
-For more in-depth information about .NET project structure and files, see: [.NET project structure overview](https://docs.microsoft.com/dotnet/core/tools/dotnet-new)
+- [Official .NET CLI Documentation](https://docs.microsoft.com/en-us/dotnet/core/tools/)
+- [Visual Studio Product Page](https://visualstudio.microsoft.com/)
+- [.NET Project SDK Overview](https://docs.microsoft.com/en-us/dotnet/core/project-sdk/overview)

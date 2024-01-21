@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:00:05.595183-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,22 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-HTTP (एचटीटीपी) अनुरोध भेजना एक तरह का दूसरे सर्वर तक संचार है। प्रोग्रामर्स इसे डाटा प्राप्त करने, बदलने या वेबसाइटों के साथ इंटरैक्ट करने के लिए करते हैं।
+## What & Why? (क्या और क्यों?)
 
-## कैसे करें
-यहां आपको Go का उपयोग करके HTTP अनुरोध कैसे भेजना चाहिए, उसका एक उदाहरण दिया गया है।
+HTTP अनुरोध भेजना यानी सर्वर से डेटा मंगाना या सर्वर को डेटा भेजना। प्रोग्रामर इसे वेब सेवाओं से जुड़ने, डेटा साझा करने, API कॉल करने के लिए करते हैं।
+
+## How to: (कैसे करें:)
+
 ```Go
 package main
 
 import (
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
 )
 
 func main() {
-	resp, err := http.Get("http://webcode.me")
+	// GET अनुरोध
+	resp, err := http.Get("https://jsonplaceholder.typicode.com/posts/1")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -35,21 +39,26 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	log.Println(string(body))
+	fmt.Println(string(body))
 }
 ```
-इस कोड ने http.Get का उपयोग करके "http://webcode.me" URL से HTTP अनुरोध भेजा। यदि कोई त्रुटि होती है, तो यह त्रुटि लॉग करेगा। अन्यथा, यह लॉग करेगा HTTP रिस्पॉन्स बॉडी।
 
-## गहरा डाइव
-जब इंटरनेट का निर्माण हुआ था, तब HTTP की आवश्यकता हुई थी क्योंकि यह वेबसाइटों और ब्राउज़रों के बीच जानकारी साझा करने का एक मानक तरीका है। Historic context के हिसाब से HTTP/1.1 से पहले HTTP/0.9 (1991) और HTTP/1.0 (1996) थे। HTTP/2 (2015) और HTTP/3 (2020) आधिकारिक रूप से HTTP/1.1 (1997) के बाद पेश किए गए। 
+सैंपल आउटपुट:
+```
+{
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita..."
+}
+```
 
-वैकल्पिक रूप से, प्रोग्रामर्स अन्य प्रोग्रामिंग भाषाओं, जैसे कि Python's `requests` लाइब्रेरी या JavaScript's `fetch` API, का उपयोग कर सकते हैं। 
+## Deep Dive (गहन जानकारी)
 
-Go में, `http.Get` फंक्शन सबसे सरल HTTP अनुरोध बनाने का तरीका है। यह `http.Response` और `error` लौटाता है। आप उत्तर में दिए गए डेटा को आसानी से पढ़ सकते हैं `ioutil.ReadAll` का उपयोग करके।
+HTTP अनुरोध भेजने की प्रक्रिया इंटरनेट के प्रारंभ से ही है। `net/http` पैकेज Go में इस काम के लिए आदर्श माना जाता है। इसमें GET, POST, PUT, DELETE जैसे विभिन्न प्रकार के अनुरोध भेजे जा सकते हैं। `net/http` के अलावा अन्य पुस्तकालय जैसे `gorilla/mux` या `gin-gonic/gin` भी मौजूद हैं जिनका विशेष परिस्थितियों में उपयोग होता है। Go में HTTP क्लाइंट का उपयोग करते समय `defer resp.Body.Close()` का प्रयोग करना महत्वपूर्ण है ताकि रिसोर्स लीक न हो।
 
-## देखें भी
-- [Go दस्तावेज़ीकरण](https://golang.org/pkg/net/http/)
-- [HTTP - Wikipedia](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
-- [MDN Web Docs - HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
-- [http.Get फ़ंक्शन का स्रोत कोड](https://golang.org/src/net/http/client.go)
+## See Also (और देखें)
+
+- Go के डॉक्युमेंटेशन पर `net/http` पैकेज: [Go net/http](https://pkg.go.dev/net/http)
+- Go में `http` क्लाइंट और सर्वर के उपयोग के लिए ट्यूटोरियल्स: [Go by Example](https://gobyexample.com/http-clients) और [Go by Example](https://gobyexample.com/http-servers)
+- गहराई से जानकारी के लिए ब्लॉग पोस्ट: [The Go Blog](https://blog.golang.org/http-tracing)

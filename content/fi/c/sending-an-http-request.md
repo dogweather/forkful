@@ -1,6 +1,7 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-html_title:           "Bash: HTTP-pyynnön lähettäminen"
+date:                  2024-01-20T17:59:06.996052-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "C"
 category:             "C"
@@ -10,53 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Artikkeli: HTTP-pyynnön lähettäminen C-ohjelmoinnissa
+## What & Why? (Mitä & Miksi?)
+HTTP-pyynnön lähettäminen on tapa kommunikoida verkossa palvelimen kanssa, jolloin voimme pyytää tietoja tai lähettää niitä. Ohjelmoijat tekevät tämän dataa noutaakseen, lähettääkseen tai API:iden kanssa vuorovaikutuksessa ollessaan.
 
-## Mikä & Miksi?
-HTTP-pyyntö on tapa hakea tai lähettää tietoa verkkopalvelimelta tai siihen. Ohjelmoijat lähettävät näitä pyyntöjä, jotta he voivat vuorovaikuttaa verkkopalvelimien kanssa - esimerkiksi hakea verkkosivua tai lähettää tietoja.
-
-## Miten tehdään:
-Käytetään "libcurl" kirjastoa HTTP -pyynnön lähettämiseksi. Asennetaan se ensin.
+## How to: (Kuinka tehdä:)
+Käytetään libcurl-kirjastoa, mikä on C-kirjasto HTTP-pyyntöjen tekemiseen.
 
 ```C
-sudo apt-get install libcurl4-openssl-dev
-```
-
-Tässä on yksinkertainen koodiesimerkki.
-
-```C
+#include <stdio.h>
 #include <curl/curl.h>
 
-int main(void)
-{
+int main(void) {
     CURL *curl;
     CURLcode res;
 
-    curl_global_init(CURL_GLOBAL_DEFAULT);
     curl = curl_easy_init();
     if(curl) {
         curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        /* Lähetetään HTTP GET -pyyntö */
         res = curl_easy_perform(curl);
+
+        /* Tarkistetaan, onnistuiko pyyntö */
         if(res != CURLE_OK)
-            fprintf(stderr, "curl_easy_perform() failed: %s\n",
-                curl_easy_strerror(res));
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+
+        /* Siivotaan */
         curl_easy_cleanup(curl);
     }
-    curl_global_cleanup();
     return 0;
 }
 ```
-Tämä koodi lataa etusivun osoitteesta http://example.com.
+Tämän pitäisi tulostaa palvelimen vastauksen terminaaliin tai antaa virheilmoitus, jos pyyntö ei onnistu.
 
-## Syvemmälle
-HTTP-pyyntö muodostettiin alun perin osana HTTP-protokollaa vuonna 1991. Vaihtoehtoisia tapoja HTTP-pyyntöjen tekemiseen ovat esimerkiksi Pythonin `requests` -kirjasto tai JavaScriptin Fetch API. Kuitenkin C-ohjelmointikielessä libcurl on yleisin valinta. Se on nopea, tehokas ja tukee monia protokollia.
+## Deep Dive (Sukellus syvyyksiin):
+HTTP-pyyntöjä on lähetetty ohjelmallisesti siitä lähtien, kun web syntyi 1990-luvun alussa. Alkujaan C-ohjelmointikielen avulla toteutettiin yksinkertaisia socket-ohjelmia, jotka kommunikoivat suoraan TCP/IP-protokollan päällä. Libcurl on yksi monipuolisimmista ja suosituimmista kirjastoista HTTP-pyyntöihin, ja se tukee monia eri protokollia, kuten FTP ja SMTP.
 
-Libcurlin yksityiskohdat: se käyttää 'CURL_GLOBAL_DEFAULT'-optiota alustaakseen globaalin ympäristön ja CURL-hallinnan. 'CURLOPT_URL' -asetus määrittää URL-osoitteen, johon pyyntö lähetetään. Käytetään 'curl_easy_perform' -funktiota suorittamaan varsinainen HTTP-pyyntö. Jos pyyntö epäonnistuu, tulostaa 'curl_easy_strerror' virheilmoituksen.
+Vaihtoehtoja libcurlille voisi olla esimerkiksi POCO C++ Libraries tai Qt Network -moduuli C++:ssa, mutta natiivi C:ssä valinnat ovat rajatumpia. Jotkut ohjelmoijat kirjoittavat matalan tason koodia käyttäen socketeja ja rakentavat HTTP-pyyntöjen käsittelyn itse, mikä antaa täyden kontrollin mutta on työläämpää ja alttiimpaa virheille.
 
-## Katso myös
-Lisätietoa löydät seuraavilta sivustoilta:
-
-1. [HTTP Protocol:](https://developer.mozilla.org/fi/docs/Web/HTTP)
-2. [C-libcurl:](https://curl.haxx.se/libcurl/c/)
-3. [Python requests:](https://docs.python-requests.org/en/latest/)
-4. [Fetch API:](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+## See Also (Katso myös):
+- cURL:n viralliset dokumentit: [https://curl.se/libcurl/c/](https://curl.se/libcurl/c/)
+- C socket-ohjelmointi: [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/)
+- HTTP-spesifikaatio: [RFC 2616](https://www.ietf.org/rfc/rfc2616.txt)
+- Alternative libraries for HTTP in C: [POCO C++ Libraries](https://pocoproject.org/docs/index.html), [Qt Network Documentation](https://doc.qt.io/qt-5/qtnetwork-index.html)

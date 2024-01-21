@@ -1,6 +1,7 @@
 ---
 title:                "文字列の補間"
-html_title:           "Arduino: 文字列の補間"
+date:                  2024-01-20T17:50:33.636795-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "文字列の補間"
 programming_language: "C"
 category:             "C"
@@ -10,33 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-文字列の補間とは、文字列中の特定の部分に変数の値を挿入するプログラミング技術です。プログラマーがこれを行うのは、出力の組み立てを簡単化し、コードの可読性を向上させるためです。
+## What & Why? (何となぜ？)
+文字列補間とは、文字列を生成する際に変数や式の値を埋め込むことです。プログラマーはこれを使って、動的に内容が変わる文字列を容易に作成し、コードの可読性を向上させます。
 
-## 方法：
-C言語には組み込みの文字列補間機能がありませんが、printf関数を使って同等の結果を得ることができます。以下にサンプルコードを示します：
+## How to (やり方)
+C言語の文字列補間は`printf`関数や`sprintf`関数を使って実施されます。以下に簡単な例を示します。
 
 ```C
 #include <stdio.h>
 
 int main() {
-   int age = 20;
-   printf("I am %d years old", age);
-   return 0;
+    int age = 25;
+    const char *name = "Taro";
+
+    // printfを使った例
+    printf("こんにちは、私の名前は%sです。年齢は%d歳です。\n", name, age);
+
+    // sprintfを使って文字列を生成し、後で使用する例
+    char greeting[50];
+    sprintf(greeting, "こんにちは、私の名前は%sです。", name);
+    printf("%s年齢は%d歳です。\n", greeting, age);
+
+    return 0;
 }
 ```
 
-このプログラムを実行すると「I am 20 years old」と表示されます。
+出力:
 
-## 深掘り：
-1. **歴史**: C言語には元々文字列補間の機能がない。しかし、多くの他の言語（例えばPythonやJavaScript）にはこの機能があり、非常に便利であるため、C言語でもprintf関数を使って同等の機能を実現することが一般的になっています。
+```
+こんにちは、私の名前はTaroです。年齢は25歳です。
+こんにちは、私の名前はTaroです。年齢は25歳です。
+```
 
-2. **代替手段**: sprintf関数を使っても文字列の補間を行うことができますが、バッファオーバーフローのリスクがあるため注意が必要です。
+## Deep Dive (深掘り)
+文字列補間はもともとは書式指定文字列を解釈し、組み込みの変換指定子（例: `%s`、`%d`）を使って変数の値を埋め込む機能から発展しました。C言語以前からあるコンセプトですが、言語によって実装は異なります。
 
-3. **実装詳細**: printf関数は可変長引数を取り、フォーマット文字列内の各プレースホルダー（%記号で始まる）を対応する引数で置き換えます。これにより、文字列中に動的な値を挿入することができます。
+代替手段として、連結することで同じ結果を出すことが可能ですが、これは冗長でエラーの原因になることがあります。一方、C言語では文字列補間が`printf`や`sprintf`の形で言語の一部になっており、`%s`が文字列、`%d`が整数、`%f`が浮動小数点数として埋め込まれます。
 
-## 参考資料：
-以下のリンクでは、文字列補間を更に深く理解するための情報を得ることができます:
-- C言語のprintf関数について: http://www.c-lang.org/printf/
-- ストリング補間についてより一般的な解説: https://en.wikipedia.org/wiki/String_interpolation
-- 安全な文字列操作のためのsnprintf関数について: https://www.c-lang.org/snprintf/
+実装の詳細については、`printf`関数は出力先として標準出力を使用し、`sprintf`関数は文字列バッファに書き出します。セキュリティを考慮して、バッファオーバーフローを防ぐ目的で`snprintf`がよく使用されます。
+
+## See Also (関連リンク)
+- [C Standard Library - printf](https://en.cppreference.com/w/c/io/fprintf)
+- [C Standard Library - sprintf](https://en.cppreference.com/w/c/io/fprintf)
+- [C Secure Coding Guidelines](https://wiki.sei.cmu.edu/confluence/display/c/SEI+CERT+C+Coding+Standard)

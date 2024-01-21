@@ -1,6 +1,7 @@
 ---
 title:                "חילוץ תת-מחרוזות"
-html_title:           "Bash: חילוץ תת-מחרוזות"
+date:                  2024-01-20T17:45:48.698045-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חילוץ תת-מחרוזות"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,24 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-אקסטרקציה של תת-מחרוזות היא הפעולה שבה אנו מקבלים מנגנון כלשהו בתוך מחרוזת. המתכנתים עושים את זה כי מדובר בשיטה מהירה ונוחה לשפצוף נתונים שהם כבר חשופים להם במחרוזת.
+חילוץ תת-מחרוזות מדבר על לקיחת חלק ממחרוזת קיימת. תוכניתנים עושים את זה כדי לעבד או לבדוק נתונים ספציפיים במחרוזת.
 
 ## איך לעשות:
-באליקסיר, אתה יכול למנות את המספרים מתחילת המחרוזת (אפס כמובן) או מסוף המחרוזת (ראשון). הנה דוגמה:
+קוד באליקסיר לחילוץ תת-מחרוזות:
 
-```Elixir
-iex> String.slice("Hello, world!", 0..4)
-"Hello"
+```elixir
+str = "שלום, עולם של אליקסיר!" 
 
-iex> String.slice("Hello, world!", -6..-2)
-"world"
+# חילוץ באמצעות טווחים
+substring = String.slice(str, 7, 5)
+IO.puts substring
+# Output: "עולם"
+
+# חילוץ באמצעות ראשית ואורך
+substring = String.slice(str, -6, 6)
+IO.puts substring
+# Output: "אליקסיר"
 ```
 
-## צלילה עמוקה
-בעבר, המתכנתים הינו צריכים לכתוב ממשק מבצע לטיפול בכל פונקציה של מחרוזת, אך אליקסיר מנותח את זה באופן מרשים עם מודולים מתקדמים. ישנם דרכים אחרות למשוך מחרוזות תתיות, אבל הרוב די מסתמך על המתודולוגיה שמציעה Elixir. מבחינת פרטי ההצגה, Elixir משתמשת באלגוריתם קל ומהיר שמאפשר לה למשוך תת מחרוזות באופן מהיר ויעיל.
+## עיון מעמיק:
+בהיסטוריה, חילוץ תת-מחרוזות היה תמיד חלק מהתוכנות - כמעט כל שפה תומכת בזה. באליקסיר, יש כמה דרכים לעשות את זה, הדוגמאות מראות שימוש בפונקציה `String.slice/3`. דרך נוספת היא להשתמש ב-`binary pattern matching` אשר מציע גמישות רבה אבל דורש ידע מסוים בפטרנים. כאשר מבצעים חילוץ, חשוב לזכור שאליקסיר עובדת עם UTF-8 באופן אוטומטי, מה שאומר שתווים כמו "ש" או "ל" מחשבים כתווים בודדים, למרות שבמערכות אחרות הם עשויים לתפוס יותר מבית אחד.
 
-## לראות גם
-למידע נוסף על אליקסיר ומחרוזת של מחרוזות, קישורים מומלצים הם:
-1. [תיעוד מקורי של Elixir String](https://hexdocs.pm/elixir/String.html)
-2. [הסבר מעולה על מחרוזות באליקסיר](https://elixirschool.com/en/lessons/basics/strings/)
-3. [הסבר על מחרוזות באליקסיר בStackOverflow](https://stackoverflow.com/questions/23094884/how-to-get-a-substring-in-elixir).
+## ראה גם:
+- [Elixir String module documentation](https://hexdocs.pm/elixir/String.html)
+- [Elixir School: Strings](https://elixirschool.com/en/lessons/basics/strings/)
+- [Elixir Forum for questions and discussions](https://elixirforum.com/)

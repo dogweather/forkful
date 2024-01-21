@@ -1,7 +1,8 @@
 ---
-title:                "Debug-tulosteen tulostaminen"
-html_title:           "Bash: Debug-tulosteen tulostaminen"
-simple_title:         "Debug-tulosteen tulostaminen"
+title:                "Virheenjäljitystulosteiden tulostaminen"
+date:                  2024-01-20T17:53:20.875049-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Virheenjäljitystulosteiden tulostaminen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
@@ -10,31 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mitä ja miksi?)
+Tulostus debug-viestinnässä tarkoittaa koodin suorituksen aikana tuotettujen viestien näyttämistä. Kehittäjät käyttävät sitä virheiden jäljittämiseen ja ohjelman toiminnan ymmärtämiseen.
 
-Tulosta debug-tulostus tarkoittaa erityisen viestin tulostamista ohjelman suorituksen aikana auttamaan virheenjäljityksessä. Ohjelmoijat käyttävät sitä ymmärtääkseen paremmin koodinsa toiminta logiikka ja tunnistamaankseen mahdolliset ongelmat tai virheet.
-
-## Kuinka tehdään:
-
-PowerShell tarjoaa Write-Debug -komennon debug-tulostuksen tulostamiseen. Tässä on perusesimerkki:
+## How to: (Kuinka tehdä:)
+PowerShellissa debug-viestejä voi tulostaa `Write-Host`, `Write-Output`, `Write-Verbose`, `Write-Debug` ja `Write-Information` komentojen avulla. Tässä muutama esimerkki:
 
 ```PowerShell
-$debugPreference="Continue"
-Write-Debug "Tämä on debug-viesti"
+# Yksinkertainen tulostus
+Write-Host "Tämä on tavallinen viesti."
+
+# Muuttujan arvon tulostus
+$muuttuja = "arvokas tieto"
+Write-Host "Muuttujan arvo on: $muuttuja"
+
+# Debug-viestin tulostus
+Write-Debug "Debug-viesti näkyy, jos $DebugPreference on 'Continue'."
+
+# Kehittynyt käyttö: custom-objektin tiedot
+$objekti = [PSCustomObject]@{
+    Nimi = 'PowerShell'
+    Versio = '7.1.3'
+}
+Write-Output $objekti
 ```
 
-Tämä skripti asettaa `$debugPreference`-muuttujan arvoksi "Continue", joka sallii debug-viestien tulostamisen. Skripti sitten tulostaa debug-viestin "Tämä on debug-viesti".
+Huomaa, että `Write-Debug` ja `Write-Verbose` vaativat tietyt asetukset ollakseen näkyviä.
 
-## Syväluotaus
+Tulosteena nähdään:
+```
+Tämä on tavallinen viesti.
+Muuttujan arvo on: arvokas tieto
+DEBUG: Debug-viesti näkyy, jos $DebugPreference on 'Continue'.
+@{Nimi=PowerShell; Versio=7.1.3}
+```
 
-Historiallisissa yhteyksissä debug-tulostus oli ensisijainen keino ohjelman toiminnan seuraamiseen. Nykyään käytettävissä olevat debuggerit tarjoavat tehokkaampia työkaluja, mutta debug-tulostus on edelleen välttämätön ohjelmoijan työkalu.
+## Deep Dive (Syvä sukellus)
+Historiallisesti debug-viestit ovat olleet kehittäjän työkaluja ohjelmiston toiminnan ymmärtämiseksi. PowerShellissä `Write-Debug` ja `Write-Verbose` ovat työkaluja syvempään analyysiin, mutta niiden viestit näkyvät vain, kun asetukset sallivat. Vaihtoehtoisia tapoja ovat esim. tiedostojen kirjoittaminen tai järjestelmän lokiviestit.
 
-Vaihtoehtoisesti PowerShellissä voidaan käyttää Write-Verbose tai Write-Information -komentoja tiedon ulostuloon. Käytäntö riippuu ohjelmoijan Henkilökohtaisesta mieltymyksestä ja tarpeesta.
+Kehittäjinä meidän on tärkeä ymmärtää, milloin ja mitä tulostusvälinettä käyttää. `Write-Host` muuttaa väriä ja muotoilua helpommin, kun taas `Write-Output` on suunniteltu välittämään objekteja eteenpäin komentoputkessa. `Write-Debug` ja `Write-Verbose` antavat yksityiskohtasia tietoja, mutta voivat häiritä tavallista käyttöä, eli niitä käytetään harvemmin. `Write-Information` voidaan säätää näyttämään viestit ilman, että sekatkaa tulostusta.
 
-PowerShellissä debug-viestit tulostuvat vain, jos `$debugPreference`-muuttuja on asetettu sopivasti. Tämä suojaa käyttäjiä tahattomasti näkemästä häiritseviä debug-viestejä.
+## See Also (Katso myös)
+Lisätietolähteitä ja lisäohjeita:
 
-## Katso myös
-
-- Lisätietoja Write-Debug -komennon käytöstä: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-debug
-- Lisätietoja $debugPreference-muuttujan käytöstä: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_preference_variables
-- Vertailu Write-Debug, Write-Verbose ja Write-Information -komentojen välillä: https://www.red-gate.com/simple-talk/sysadmin/powershell/comparing-powershell-commands-write-debug-write-verbose/
+- [about_Write-Host](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-host)

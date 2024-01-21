@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
+date:                  2024-01-20T18:01:59.469239-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,68 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# In Deutsch Senden einer HTTP-Anfrage mit Basic-Authentifizierung in Kotlin
-
 ## Was & Warum?
-HTTP-Basisauthentifizierung ist ein Vorgang, bei dem Benutzername und Passwort in der HTTP-Header einer Anforderung gesendet werden, um auf geschützte Ressourcen zuzugreifen. Programmierer tun dies, um Dienste zu nutzen, die eine Autorisierung erfordern, wie Web-APIs.
+HTTP-Anfragen mit Basic Authentication senden Nutzernamen und Passwort im Base64-codierten Format im `Authorization`-Header, um sich gegenüber einem Service zu authentifizieren. Programmierer nutzen das, um geschützte Ressourcen über eine API abzurufen oder zu manipulieren.
 
-## Anleitung:
-Machen wir eine HTTP-Anforderung mit Basisauthentifizierung in Kotlin mit Ktor, einem asynchronen I/O-Framework von JetBrains. 
-
-### Installation:
-Fügen Sie zuerst die Ktor-Client-Bibliothek zu Ihrer `build.gradle.kts` Datei hinzu:
-
+## So geht's:
 ```kotlin
-dependencies {
-    implementation("io.ktor:ktor-client-core:1.6.7")
-    implementation("io.ktor:ktor-client-cio:1.6.7")
-    implementation("io.ktor:ktor-client-auth:1.6.7")
-}
-```
-Aktualisieren Sie die Versionen entsprechend Ihrem Projektbedarf.
+import java.net.HttpURLConnection
+import java.net.URL
+import java.util.Base64
 
-### Code:
-Erstellen Sie den HttpClient mit BasicAuth und senden Sie die Anforderung:
+fun main() {
+    val url = URL("https://deine-api.de/datensatz")
+    val username = "nutzername"
+    val password = "passwort"
 
-```kotlin
-import io.ktor.client.HttpClient
-import io.ktor.client.features.auth.Auth
-import io.ktor.client.features.auth.providers.basic
-import io.ktor.client.request.get
-import io.ktor.client.request.header
+    val connection = url.openConnection() as HttpURLConnection
+    val encodedCredentials = Base64.getEncoder().encodeToString("$username:$password".toByteArray())
+    connection.setRequestProperty("Authorization", "Basic $encodedCredentials")
 
-suspend fun main() {
-    val client = HttpClient {
-    install(Auth) {
-        basic {
-            sendWithoutRequest = true
-            credentials {
-                BasicAuthCredentials(username = "Benutzername", password = "Passwort")
-            }
+    connection.apply {
+        requestMethod = "GET"
+        inputStream.bufferedReader().use {
+            it.lines().forEach { line -> println(line) }
         }
     }
 }
-
-val response: String = client.get("https://example.com") {
-    header("Accept", "application/json")
-}
-println(response)
-client.close()
+```
+Output (abhängig von der API und den Daten):
+```
+{
+  "id": 1,
+  "name": "Beispielname",
+  "beschreibung": "Das ist ein einfacher Datensatz."
 }
 ```
 
-Der obige Code sendet einen GET Request mit BasicAuth.
+## Deep Dive
+Basic Authentication ist ein Teil des HTTP/1.0-Standards und wurde wegen seiner Einfachheit in vielen frühen Webanwendungen eingesetzt. Es basiert auf der Annahme, dass die Verbindung zwischen Client und Server sicher ist, was heute durch HTTPS gewährleistet wird. Alles andere wäre unsicher, da Base64 leicht zu entschlüsseln ist.
 
-## Tief Tauchen:
-Historisch gesehen war Basic-Auth die erste Art der HTTP-Authentifizierung, die in RFC 1945 dokumentiert und schließlich in RFC 2617 formalisiert wurde. 
+Es gibt Alternativen wie Digest Access Authentication, OAuth und moderne Token-basierte Verfahren wie JWT (JSON Web Tokens), die sicherer sind. Basic Authentication sollte daher nur über HTTPS und besser noch nur als Teil einer mehrschichtigen Sicherheitsstrategie verwendet werden.
 
-Beachten Sie, dass bei der HTTP-Basisauthentifizierung Benutzername und Passwort im Klartext (basierend auf Base64) gesendet werden, was bedeutet, dass sie für einen Man-in-the-Middle-Angriff anfällig sind. Daher wird diese Methode nur mit einer HTTPS-Verbindung empfohlen.
+Beim Senden einer HTTP-Anfrage in Kotlin können auch Bibliotheken wie OkHttp oder Retrofit verwendet werden, die das Handling komplexer Anfragen und verschiedener Authentifizierungsformen vereinfachen.
 
-Alternativen zur Basisauthentifizierung sind Bearer-Token, OAuth und Sessions. Diese alternativen Ansätze bieten in der Regel bessere Sicherheit und mehr Features. 
-
-In der Ktor-Implementierung macht `sendWithoutRequest = true` die Bibliothek proaktiv. Anstatt auf einen `401 Unauthorized` zu warten, sendet es die Anmeldeinformationen direkt.
-
-## Siehe Auch:
-* [Ktor Docs on HTTP Client](https://ktor.io/docs/http-client-engines.html)
-* [Ktor Auth Feature](https://ktor.io/docs/basic.html)
-* [RFC 7617 - Grundlegende HTTP-Authentifizierung](https://tools.ietf.org/html/rfc7617)
+## Siehe Auch
+- [HTTP Authentication: Basic and Digest Access Authentication (RFC 7617)](https://tools.ietf.org/html/rfc7617)
+- [OkHttp Library](https://square.github.io/okhttp/)
+- [Retrofit Library](https://square.github.io/retrofit/)

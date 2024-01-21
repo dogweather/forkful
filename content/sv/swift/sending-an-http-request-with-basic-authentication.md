@@ -1,7 +1,8 @@
 ---
-title:                "Skicka en http-begäran med grundläggande autentisering"
-html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
-simple_title:         "Skicka en http-begäran med grundläggande autentisering"
+title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
+date:                  2024-01-20T18:02:40.531034-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -11,46 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skicka en HTTP-begäran med grundläggande autentisering innebär att HTTP-klienten inkluderar autentiseringsinformation i begäran för att verifiera rätten att få tillgång till specifika data eller funktioner. Det är användbart i programmeringssammanhang för att skydda känslig information från obehörig åtkomst.
+Att skicka en HTTP-begäran med Basic Authentication innebär att du inkluderar användarens legitimationer i en header för att få tillgång till skyddade resurser på en server. Programmerare gör detta för att säkerställa att endast behöriga användare kan interagera med sensitiva delar av en webbtjänst.
 
 ## Så här gör du:
-Nedan följer ett exempel på en HTTP-begäran med basic autentisering i Swift. Den använder `URLSession` och `URLRequest` för att ackomplishera detta.
+För att skicka en HTTP-begäran med Basic Authentication i Swift, använd URLSession. Här är ett exempel som demonstrerar processen:
 
 ```Swift
 import Foundation
 
-let credentials = "username:password"
-let encodedCredentials = Data(credentials.utf8).base64EncodedString()
+// Lagra användarnamn och lösenord
+let username = "anvandare"
+let password = "lösenord"
 
-var request = URLRequest(url: URL(string: "http://example.com")!)
-request.addValue("Basic \(encodedCredentials)", forHTTPHeaderField: "Authorization")
-
-let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-    if let error = error {
-        print("Error: \(error)")
-    } else if let data = data {
-        let str = String(data: data, encoding: .utf8)
-        print("Received data:\n\(str ?? "")")
+// Skapa en credentials-sträng och koda den i base64
+if let credentialsData = "\(username):\(password)".data(using: .utf8) {
+    let base64Credentials = credentialsData.base64EncodedString(options: [])
+    
+    // Skapa en URLRequest och inkludera header för Basic Authentication
+    if let url = URL(string: "https://example.com/protected") {
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Basic \(base64Credentials)", forHTTPHeaderField: "Authorization")
+        
+        // Skicka begäran
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print("Något gick fel: \(error?.localizedDescription ?? "Okänt fel")")
+                return
+            }
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                if let responseString = String(data: data, encoding: .utf8) {
+                    print("Svar från servern: \(responseString)")
+                }
+            } else {
+                print("Begäran misslyckades, statuskod: \((response as? HTTPURLResponse)?.statusCode ?? 0)")
+            }
+        }
+        task.resume()
     }
 }
-task.resume()
 ```
-När koden ovan körs kommer den att skicka en HTTP-begäran till `http://example.com` med de angivna inloggningsuppgifterna i HTTP-headern `Authorization`.
 
-## Djupdykning
+Om allt går som det ska bör du se serverns svar utskrivet i konsolen.
 
-**Historiskt sammanhang**
-HTTP Basic Authentication är en av de ursprungliga autentiseringsmetoderna för HTTP, definierad i HTTP/1.0-specifikationen. Trots att det är enkelt gör det jobbet för enklare fall, men exponerar ofta känslig information som lösenord i klartext.
+## Fördjupning
+Basic Authentication har använts i HTTP sedan tidigt 90-tal och ingår i HTTP/1.0-specifikationen. Trots sin enkelhet är det mindre säkert jämfört med modernare autentiseringsmetoder som OAuth 2.0, på grund av att användaruppgifter skickas i klartext (endast base64-kodat). Dock är Basic Authentication fortfarande relevant för interna tjänster eller enklare API:er där hög säkerhet inte är lika kritisk.
 
-**Alternativ** 
-Det finns många alternativ till HTTP Basic Authentication, som HTTP Digest Authentication, OAuth och JWT (Json Web Tokens) autentisering. Dessa metoder anses vara säkrare och mer flexibla än HTTP Basic Authentication.
+Implementationen i Swift använder URLSession för att hantera HTTP-begäran och respons. Det är viktigt att nota att credentials alltid ska överföras över en säker anslutning (HTTPS) för att minimera risken för avlyssning. 
 
-**Implementeringsdetaljer**
-I Swift är HTTP-begäran med grundläggande autentisering främst implementerad med `URLSession` och `URLRequest`. Kreditera som "username:password" konverteras till base64-format och läggs till i HTTP-headern som "Basic {encodedCredentials}".
-
-## Se också
-Du kan läsa mer om HTTP Basic Authentication och dess alternativ från följande källor:
-1. [Mozilla HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-2. [Basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
-3. [RFC 7617: The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
-4. [Swift URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+## Se även
+- [Using URLSession in Swift](https://developer.apple.com/documentation/foundation/urlsession)
+- [HTTP Authentication: Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)

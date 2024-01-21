@@ -1,7 +1,8 @@
 ---
-title:                "Skriva ut felsökningsresultat"
-html_title:           "Fish Shell: Skriva ut felsökningsresultat"
-simple_title:         "Skriva ut felsökningsresultat"
+title:                "Skriva ut felsökningsdata"
+date:                  2024-01-20T17:52:50.915365-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skriva ut felsökningsdata"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Testing and Debugging"
@@ -10,45 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Lua (den aktuella versionen) - Skriv ut felsökningsoutput
+## What & Why?
+Skriva ut felsökningsmeddelanden i Lua hjälper dig att förstå vad som händer i koden. Vi gör det för att snabbt identifiera och åtgärda buggar.
 
-## Vad & Varför?
-
-Att skriva ut felsökningsoutput, eller "debugging", är när du visar programmeringsdata för att spåra och fixa kodfel. Programmerare gör detta för att lättare identifiera fel och problemområden inom koden.
-
-## Så här gör du:
-
-I Lua skriver du ut med `print()` funktionen. Här är hur du gör:
+## How to:
+Använd `print()` för att visa värden. Kolla exemplet:
 
 ```Lua
-print("Hej, världen!")  -- skriver ut "Hej, världen!"
-```
-Vill du skriva ut variabler? Inga problem, så här:
+local variabel = "Hej"
+print(variabel)  -- Skriver ut: Hej
 
-```Lua
-namn = "Anna"
-print(namn)  -- skriver ut "Anna"
-```
-Men säg att du vill spåra en bugg i en loop:
-
-```Lua
-for i = 1, 5 do
-   print("Loop nummer: " .. i) -- skriver ut "Loop nummer: 1", "Loop nummer: 2", etc.
+-- För mer komplexa typer kan du använda pairs() för att iterera:
+local tabell = {nyckel1 = "värde1", nyckel2 = "värde2"}
+for nyckel, värde in pairs(tabell) do
+    print(nyckel, värde)
 end
+-- Skriver ut:
+-- nyckel1      värde1
+-- nyckel2      värde2
 ```
 
-## Djupdykning
+## Deep Dive:
+Felsökning genom utskrift har funnits sedan programmeringens gryning. Lua är inget undantag. Varför `print()`? Det är enkelt. Men det finns alternativ, till exempel `io.write()`, som ger mer kontroll över formatet. `print()` lägger automatiskt till en radbrytning, `io.write()` gör inte det.
 
-Historiskt sett har alla programmeringsspråk haft någon form av utskriftsfunktion för felsökning. I Lua har vi `print()` funktionen, men det finns alternativ. Du kan t.ex. använda `io.write()` för att skriva ut utan radbyte, eller skapa dina egna felsökningsfunktioner.
+I komplexa program, där prestanda och struktur är viktiga, kan `print()` bli rörigt. Då kan inbyggda eller tredjeparts loggbibliotek som `LuaLogging` vara bättre. De erbjuder loggnivåer (INFO, ERROR, etc.), filutskrift och formaterade meddelanden.
 
-```Lua
-io.write("Hej, ") io.write("värden!")  -- skriver ut "Hej, värden!"
-```
-Kom ihåg att `print()` i Lua egentligen bara är en inbyggd wrapper runt `io.write()`. Den lägger till ett radbyte och omvandlar variabler till strängar åt dig.
-
-## Se också
-
-För en djupare förståelse av felsökning i Lua, se dessa resurser:
-
-- [Programming in Lua: Input and Output](http://www.lua.org/pil/21.1.html)
-- [Lua-users Wiki: Simple Stand Alone Debug Info](http://lua-users.org/wiki/SimpleStandAloneDebugInfo)
+## See Also:
+- Lua 5.4 Reference Manual: https://www.lua.org/manual/5.4/
+- LuaLogging på GitHub: https://github.com/lunarmodules/lualogging

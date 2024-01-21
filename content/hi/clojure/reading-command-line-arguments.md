@@ -1,7 +1,8 @@
 ---
-title:                "कमांड लाइन तर्कों को पढ़ना"
-html_title:           "Kotlin: कमांड लाइन तर्कों को पढ़ना"
-simple_title:         "कमांड लाइन तर्कों को पढ़ना"
+title:                "कमांड लाइन आर्गुमेंट्स पढ़ना"
+date:                  2024-01-20T17:55:53.276370-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "कमांड लाइन आर्गुमेंट्स पढ़ना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,33 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why?
+कमांड लाइन आर्गुमेंट्स पढ़ना ऐप्लिकेशन को बाहरी इनपुट देने का एक तरीका है। प्रोग्रामर्स इसे इस्तेमाल करते हैं ताकि यूजर के सीधे इनपुट द्वारा प्रोग्राम की फंक्शनैलिटी को कस्टमाइज कर सकें।
 
-आप क्या जाना है: *कमांड लाइन आर्ग्यूमेंट्स क्या होते हैं और उन्हें पढ़ने का क्या इरादा है*। प्रोग्रामर कमांड लाइन आर्ग्यूमेंट्स पढ़ते हैं क्योंकि ये उन्हें उनके कोड में डाइनेमिक परिवर्तन करने का संज्ञान देते हैं।
-
-## कैसे:
-
-Clojure में कमांड लाइन आर्ग्यूमेंट्स को पढ़ने का तरीका ```*command-line-args*``` का इस्तेमाल करना है:
-
-``` Clojure 
-(defn -main 
-  [& args] 
-  (println "Command line arguments are:" args))
-```
-
-यानि यदि आप इसे चलाते हैं ```lein run arg1 arg2 arg3``` तो आपका आउटपुट होगा:
+## How to:
+Clojure में, आप `*command-line-args*` का इस्तेमाल करके कमांड लाइन से आर्गुमेंट्स पढ़ सकते हैं।
 
 ```Clojure
-Command line arguments are: (arg1 arg2 arg3)
+; args.clj के नाम से फाइल बनाएं और ये कोड उसमें लिखें
+
+(defn -main
+  [& args]
+  (println "Command line arguments: " args))
+
+; टर्मिनल में lein run चला कर देखें
 ```
 
-## गहरी डाइव
+अगर आप इसे चलाते हैं `lein run arg1 arg2 arg3`, आपको आउटपुट मिलेगा:
 
-कमांड लाइन आर्ग्यूमेंट्स का इतिहास काफी पुराना है और ये प्रोग्रामिंग की शायरी में काम का आधार हैं। इन्हें पढ़ने के लिए Clojure में अन्य विकल्प भी हैं। ```tools.cli``` एक ऐसा लाइब्रेरी है जिससे आप एडवांस्ड पार्सिंग, वैलिडेशन, और एरर हैंडलिंग जैसी सुविधाओं का उपयोग कर सकते हैं।
+```
+Command line arguments:  (arg1 arg2 arg3)
+```
 
-## अधिक जानकारी के लिए
+## Deep Dive
+Clojure में कमांड लाइन आर्गुमेंट्स को पढ़ने की सुविधा JVM (Java Virtual Machine) के जरिये आती है, क्योंकि Clojure जावा पर आधारित है। स्क्रिप्ट या एप्लिकेशन की फ्लेक्सिबिलिटी के लिए ये तरीका बहुत पुराना और सिद्ध है। `*command-line-args*` एक बिल्ट-इन वैरिएबल है जो एक लाजी सिक्वेंस में आर्गुमेंट्स को स्टोर करता है। इसे दूसरे फंक्शन्स में पास करके आप अपने कोड को अधिक मॉड्यूलर बना सकते हैं।
 
-अधिक जानकारी के लिए निम्नलिखित संसाधनों का उपयोग करें:
+Clojure की जगह आप सीधे जावा के `main` फंक्शन में `String[] args` का इस्तेमाल कर सकते हैं, या शेल स्क्रिप्टिंग जैसे alternatives भी चुन सकते हैं। पर Clojure का सिंटैक्स और फंक्शनल एप्रोच इसे और आसान बना देते हैं।
 
-- **Clojure डॉक्स** (http://clojure.org): Clojure का आधिकारिक डॉक्युमेंटेशन, जहां पर आप ```*command-line-args*``` के बारे में विस्तार में जान सकते हैं।
-- **Clojure की गूगल ग्रुप** (https://groups.google.com/forum/#!forum/clojure): यहां पर आप अगर कोई समस्या आती है तो उसके लिए समाधान खोज सकते हैं।
+## See Also
+- [Clojure Docs: command-line-args](https://clojuredocs.org/clojure.core/*command-line-args*)
+- [Clojure for the Brave and True - Basic Emacs](https://www.braveclojure.com/basic-emacs/)

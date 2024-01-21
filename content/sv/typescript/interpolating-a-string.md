@@ -1,7 +1,8 @@
 ---
-title:                "Interpolering av en sträng"
-html_title:           "Arduino: Interpolering av en sträng"
-simple_title:         "Interpolering av en sträng"
+title:                "Interpolera en sträng"
+date:                  2024-01-20T17:51:40.946194-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolera en sträng"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,31 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Arbeta med stränginterpolation i TypeScript
-
 ## Vad & Varför?
-Stränginterpolation är en process för att infoga eller kommer in värden inuti en stränglitteral. Den används för att göra kod mer läsbar och underlätta formatet för dynamiska strängar.
+Stringinterpolering är att smidigt bädda in variabler eller uttryck i strängar. Vi gör det för att bygga dynamiska texter enklare och för att koden ska bli renare och lättare att läsa.
 
-## Hur man:
-Här är ett exempel på hur man använder stränginterpolation i TypeScript:
-
+## Hur gör man:
 ```TypeScript
-let name = "Kalle";
-let age = 28;
+let användare = 'Anna';
+let hälsning = `Hej ${användare}, välkommen tillbaka!`;
+console.log(hälsning);  // Output: Hej Anna, välkommen tillbaka!
 
-let greeting = `Hej ${name}, du är ${age} år gammal.`;
-
-console.log(greeting);  // Output:  Hej Kalle, du är 28 år gammal.
+let pris = 45.99;
+let produkt = 'bok';
+console.log(`Totalt pris för ${produkt}: ${pris} kr`); // Output: Totalt pris för bok: 45.99 kr
 ```
-I detta fall kan variablerna `name` och `age` variera, vilket gör stränginterpolation mycket användbar för att skapa dynamiska strängar.
 
 ## Djupdykning
-1. Historisk kontext: Stränginterpolation har existerat i programmering i många år, och har använts i många programmeringsspråk inklusive Ruby och Python innan TypeScript lade till det. 
-2. Alternativ: Innan stränginterpolation fanns, använde utvecklare konkatenering, som kan bli rörigt och svårläst när du arbetar med flera variabler.
-3. Implementeringsinformation: I TypeScript skrivs stränginterpolation med hjälp av bakåtstreck (\`) för att definiera strängarna och `${}` för att inkapsla de variabler eller uttryck som ska interpoleras.
+Före ES6 (ECMAScript 2015) användes konkatenering, som var klumpigt: `'Hej ' + användare + ', välkommen tillbaka!'`. Med ES6 introducerades `template literals`, tydliga med backticks (\`) som tillåter interpolering direkt i strängarna. Alternativ som `sprintf()` i andra språk finns, men i TypeScript är template literals standard. Implementationen under huven bygger på att körtiden ersätter platsen inom `${}` med värdet av variabeln eller resultatet av uttrycket.
 
-## Se också
-Om du vill lära dig mer om stränginterpolation i TypeScript och dess användning, se följande resurser:
-2. Stack Overflow: [Hur man använder stränginterpolation i TypeScript](https://stackoverflow.com/questions/3304014/how-to-interpolate-strings-in-typescript)
-
-Kom ihåg att stränginterpolation kan gör din kod mer läsbar och underlätta skapandet av dynamiska strängar!
+## Se även
+- TypeScript Handbook om Template Strings: [TypeScript Handbook Template Strings](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)
+- MDN Web Docs om Template Literals: [MDN Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+- Ett djupare dyk in i ES6 Template Literals: [Exploring ES6: Template Literals](http://exploringjs.com/es6/ch_template-literals.html)

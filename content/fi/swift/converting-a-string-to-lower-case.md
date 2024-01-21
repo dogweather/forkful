@@ -1,7 +1,8 @@
 ---
-title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
-html_title:           "Gleam: Merkkijonon muuttaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+date:                  2024-01-20T17:39:08.554349-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,42 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+Tekstin muuttaminen pieniksi kirjaimiksi tarkoittaa kaikkien merkkijonon kirjainten muuntamista vastaaviksi pienaakkosiksi. Tätä tehdään yhtenäistämään dataa, esimerkiksi käyttäjän syötteen vertailussa tai hakutoiminnallisuuksissa.
 
-Vaihtamalla merkkijonon pikkukirjaimiksi, voimme muuttaa kaikki tekstin kirjaimet yhtenäiseksi. Tämä auttaa välttämään monenlaisia ​​sekaannuksia ohjelmoinnissa, kuten esimerkiksi identtisten merkkijonjen vertailussa.
-
-## Kuinka:
-
-Swift tarjoaa suoran metodin merkkijonojen muuntamiseen pikkukirjaimiksi, nimeltään 'lowercased()'. Käytämme esimerkkiä havainnollistamaan tätä:
+## How to:
+Swiftissä merkkijonon muuttaminen pieniksi kirjaimiksi on yksinkertaista. Käytä `lowercased()` metodia:
 
 ```Swift
-let alkuMerkkijono = "Ohjelmointi ON HaUsKAA"
-let pieniMerkkijono = alkuMerkkijono.lowercased()
-
-print(pieniMerkkijono)  // Tulostaa: "ohjelmointi on hauskaa"
+let originalString = "Hei Maailma!"
+let lowercasedString = originalString.lowercased()
+print(lowercasedString)
 ```
-Tämä menetelmä muuntaa JOKAISEN ison kirjaimen merkkijonossa pikkukirjaimeksi.
 
-## Syvemmälle:
+Tulostuu: `hei maailma!`
 
-Historiallisesti merkkijonon muuntaminen pieniksi kirjaimiksi on ollut olennainen osa ohjelmistokehitystä, mahdollistaen vertailut ja käsittelyn riippumatta alkuperäisestä kirjainkoosta.
+## Deep Dive
+Alkuperäisen Swift 1:ssä (2014), `.lowercaseString` oli tapa muuttaa merkkijonot pieniksi kirjaimiksi. Swift 3:ssa (2016) se muutettiin `.lowercased()` metodiksi, joka on ollut käytössä siitä lähtien. Alternatiiveja suoraan `.lowercased()` metodille ei ole, mutta voi olla tilanteita, joissa halutaan esimerkiksi säilyttää tietyt merkit sellaisinaan tai soveltaa kulttuurisensitiivistä pienten kirjaimien käyttöä, missä tarvitaan lisälogiikkaa. Swift tekee pienentämisen Unicode-standardin mukaisesti, joten se käsittelee laajan valikoiman kirjaimia eri kielistä.
 
-Vaihtoehtoisesti, Swift tarjoaa menetelmän 'caseInsensitiveCompare', joka mahdollistaa kirjainkoon huomiotta jättävän vertailun. Tämä ei kuitenkaan muuta merkkijonon alkuperäistä muotoa.
-
-```Swift
-let alkuMerkkijono = "Ohjelmointi"
-let vertailuMerkkijono = "oHJeLMoInTi"
-
-if alkuMerkkijono.caseInsensitiveCompare(vertailuMerkkijono) == .orderedSame {
-    print("Merkkijonot ovat samat!")
-} else {
-    print("Merkkijonot eivät ole samat!")
-}
-```
-Mutta `lowercased()`-metodia käyttämällä, saamme yhtenäisen muodon, joka helpottaa jatkokäsittelyä.
-
-## Katso myös:
-
-- Swift-koodausoppaat: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
-- Stack Overflow -keskustelut: https://stackoverflow.com/questions/25111064/swift-convert-string-to-lower-case-and-upper-case 
-- Algoritmien opas: https://www.algoexpert.io/blog/convert-string-to-lowercase-swift
+## See Also
+- Swiftin virallinen dokumentaatio merkkijonon käsittelyyn: [Swift String and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- Unicode-standardi: [Unicode Character Database](https://www.unicode.org/ucd/)

@@ -1,7 +1,8 @@
 ---
-title:                "Convertir une chaîne en minuscules"
-html_title:           "Arduino: Convertir une chaîne en minuscules"
-simple_title:         "Convertir une chaîne en minuscules"
+title:                "Conversion d'une chaîne de caractères en minuscules"
+date:                  2024-01-20T17:38:38.271900-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Conversion d'une chaîne de caractères en minuscules"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,42 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Un tour à Haskell - Conversion de Chaînes de Caractères en Minuscule
+## What & Why?
+Convertir une chaîne de caractères en minuscules, c'est transformer tous les caractères alphabétiques en leurs équivalents en minuscule. Les programmeurs font ça pour normaliser les données, par exemple pour comparer des chaînes de manière insensible à la casse.
 
-## Quoi & Why?
-La conversion de chaîne en minuscules est une transformation standard dans l'informatique où tous les caractères alphabétiques dans une chaîne sont rendus minuscules. On le fait surtout pour normaliser les données textuelles pour le traitement, la comparaison ou le tri.
-
-## Comment faire:
+## How to:
+Haskell rend ce processus assez simple avec la fonction `toLower` du module `Data.Char`. Voici comment ça marche :
 
 ```Haskell
 import Data.Char (toLower)
 
-main = do
-    let inputString = "J'aime HASKELL!"
-    let lowerCaseString = map toLower inputString
-    putStrLn lowerCaseString
-```
-Cela donnera le résultat suivant:
+-- Convertit tous les caractères d'une chaîne en minuscules
+lowercaseString :: String -> String
+lowercaseString = map toLower
 
-```Haskell
-j'aime haskell!
+-- Exemple d'utilisation
+main :: IO ()
+main = putStrLn $ lowercaseString "CeCI eST uN TeST!"
 ```
 
-Comme on peut le voir, le `map` est utilisé pour appliquer la fonction `toLower` à chaque caractère de la chaîne.
+Sortie attendue:
 
-## Plongée profonde
+```
+ceci est un test!
+```
 
-### Contexte historique:
-La fonction de conversion en minuscules est une pratique standard depuis le début de la programmation, pour rendre le texte uniforme indépendamment des cas utilisés lors de la saisie de données.
+## Deep Dive
+La fonction `toLower` existe depuis les premières versions de Haskell, témoignant de l'importance de la manipulation de textes. L'alternative est d'écrire une fonction personnalisée qui gère manuellement les correspondances de casse, ce qui n'est ni élégant ni efficace.
 
-### Alternatives:
-La bibliothèque standard Text (Data.Text.Lazy et Data.Text) pourrait être utilisée pour des routines plus complexes ou pour une performance meilleure que celle des chaînes internes de Haskell.
+Pourquoi utiliser `map toLower`? Haskell est fonctionnel et traite les chaînes comme des listes de caractères. La fonction `map` applique `toLower` à chaque élément de la liste, nous offrant une solution élégante et concise.
 
-### Details d'Implémentation:
-La fonction `map` dans Haskell est une fonction de haut ordre qui prend une autre fonction et une liste comme arguments pour produire une nouvelle liste construite à partir de l'application de la fonction à chaque élément de la liste.
+Les implémentations internes de `toLower` prennent en compte les spécificités des caractères Unicode, ce qui la rend robuste pour les textes internationaux.
 
-## Voir Aussi:
-
-1. Pour plus d'informations sur la fonction `map` en Haskell, consultez la [Documentation de Hackage sur 'map'](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:map)
-2. Pour comprendre la présence de conversions de cas en informatique, jetez un coup d'oeil à [Wikipedia's 'Case Folding'](https://en.wikipedia.org/wiki/Case_folding)
-3. Pour une performance plus rapide pour de grandes données, utilisez [Data.Text Library](https://hackage.haskell.org/package/text)
+## See Also
+- Haskell `Data.Char` documentation: https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html
+- Article on "Text manipulation in Haskell": https://www.schoolofhaskell.com/school/to-infinity-and-beyond/older-but-still-useful/text-manipulation-in-haskell
+- Tutorial "Learn You a Haskell for Great Good!": http://learnyouahaskell.com/chapters

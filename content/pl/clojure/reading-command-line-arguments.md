@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie argumentów linii poleceń"
-html_title:           "Bash: Czytanie argumentów linii poleceń"
-simple_title:         "Czytanie argumentów linii poleceń"
+title:                "Odczytywanie argumentów linii poleceń"
+date:                  2024-01-20T17:55:49.075368-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie argumentów linii poleceń"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,31 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Czytanie argumentów linii poleceń to sposób na przekazanie parametrów do aplikacji. Programiści robią to, by obsługiwać różne scenariusze działania programu bez zmiany kodu.
 
-Czytanie argumentów linii poleceń odnosi się do danych wejściowych, które są przekazywane do programu podczas jego uruchamienia. Programiści robią to, aby umożliwić swojemu oprogramowaniu, być bardziej elastycznym i interaktywnym.
+## How to (Jak to zrobić):
+W Clojure, argumenty linii poleceń są dostępne jako lista stringów `*command-line-args*`. Oto jak to wygląda w praktyce:
 
-## Jak to Zrobić?
-
-Clojure (1.10.1) korzysta z obiektu `*command-line-args*` do przechowywania argumentów linii poleceć.
 ```Clojure
-(let [args *command-line-args*]
-  (println "Podane argumenty to: " args))
+; Uruchomienie programu: lein run arg1 arg2
+
+(defn -main
+  [& args]
+  (println "Argumenty: " args))
+
+; Wynik:
+; Argumenty:  (arg1 arg2)
 ```
+Jeśli chcesz przetwarzać argumenty na dane numeryczne lub stosować flagi, użyj biblioteki third-party, np. `tools.cli`.
 
-Kiedy uruchamiasz program z argumentami, np., `java -cp clojure.jar clojure.main my_script.clj arg1 arg2` dostajemy:
-```
-Podane argumenty to: (arg1 arg2)
-```
+## Deep Dive (W głębię tematu):
+Clojure, jako język na platformie JVM, obsługuje argumenty linii poleceń w sposób podobny do Javy. W przeszłości, opcje obsługi były ograniczone i wymagały ręcznego parsowania stringów. Dzisiaj, biblioteki takie jak `tools.cli` lub `clj-commons/cli` oferują bardziej zaawansowane i wygodne narzędzia do obsługi argumentów.
 
-## Pogłębione Zanurzenie
+Alternatywne podejścia to np. definiowanie konfiguracji w plikach edn lub yaml, ale argumenty linii poleceń nadal są popularne ze względu na prostotę i bezpośredniość.
 
-Czytanie argumentów linii poleceń ma długą historię, pochodzącą jeszcze od czasów, gdy interfejsy użytkownika były głównie oparte na tekście. Istnieją alternatywne metody przekazania danych do programu, takie jak strumienie wejściowe, pliki, interaktywne inputy użytkownika, itp.
+Szczegółowe implementacje różnią się zależnie od tego, czy aplikacja Clojure jest uruchamiana jako skrypt, graalvm native-image, czy standardowy jar, ale zasada działania pozostaje podobna.
 
-W Clojure, `*command-line-args*` przechowuje argumenty jako listę znaków string, podobnie jak większość innych języków programowania. 
-
-## Zobacz Również
-
-1. Dokumentacja Clojure na temat globalnych zmiennych: [clojure.org](https://clojure.org/reference/vars#_dynamic)
-2. Wstęp do programowania Clojure: [Clojure for the Brave and True](https://www.braveclojure.com/clojure-for-the-brave-and-true/)
-3. Obsługa argumentów linii poleceń w innych językach: [Python](https://docs.python.org/3/library/argparse.html#module-argparse), [Ruby](https://docs.ruby-lang.org/en/2.7.0/OptionParser.html)
+## See Also (Zobacz także):
+- Dokumentacja `tools.cli`: https://github.com/clojure/tools.cli
+- Tutorial dotyczący argumentów linii poleceń w Clojure: https://clojure.org/guides/deps_and_cli
+- Porównanie `tools.cli` z innymi bibliotekami: https://gist.github.com/dakrone/2147459

@@ -1,7 +1,8 @@
 ---
-title:                "Zeichen löschen, die einem Muster entsprechen"
-html_title:           "C#: Zeichen löschen, die einem Muster entsprechen"
-simple_title:         "Zeichen löschen, die einem Muster entsprechen"
+title:                "Löschen von Zeichen, die einem Muster entsprechen"
+date:                  2024-01-20T17:41:44.562919-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,64 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Das Löschen von Zeichen, die einem Muster entsprechen, ist eine übliche Praxis in der Programmierung, um unerwünschte Zeichen aus einer Zeichenkette zu entfernen. Dies wird meist zum Säubern von Eingabedaten oder Dateien verwendet.
+## What & Why? (Was & Warum?)
+Das Löschen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte Zeichen aus einem Text zu entfernen. Programmierer nutzen diese Technik, um Eingaben zu säubern, Daten zu formatieren oder unerwünschte Information zu entfernen.
 
-## So geht das:
-Wir werden die Standardbibliothek `string.h` in C verwenden, um Zeichen zu löschen, die einem bestimmten Muster entsprechen. Sehen wir uns das anhand eines Codebeispiels an:
-
-```c
+## How to: (Wie geht das:)
+```C
 #include <stdio.h>
 #include <string.h>
 
-const char* DeletePattern(char *str, char *pattern)
-{
-    int str_index = 0, result_index = 0;
-    int len = strlen(pattern);
- 
-    while (str[str_index])
-    {
-        int j;
-        for (j = 0; j < len; j++)
-            if (str[str_index] == pattern[j])
-                break;
- 
-        if (j == len)
-            str[result_index++] = str[str_index];
- 
-        str_index++;
+void delete_pattern(char *str, const char *pattern) {
+    char *src = str, *dst = str;
+    while (*src) {
+        const char *p = pattern;
+        // Prüfen, ob aktuelles Zeichen ein Muster entspricht.
+        while (*p && *src != *p) p++;
+        
+        // Wenn Zeichen nicht im Muster ist, kopieren.
+        if (*p == '\0')
+            *dst++ = *src;
+        src++;
     }
-    
-    str[result_index] = '\0';
-    
-    return str;
+    *dst = '\0';
 }
 
-int main()
-{
-    char str[] = "Beispieltext";
-    char pattern[] = "ext";
-    printf("Vorher: %s\n", str);
-    printf("Nachher: %s\n", DeletePattern(str, pattern));
-    
+int main() {
+    char text[] = "Hallo Welt! 123";
+    // Zeichen die gelöscht werden sollen: Leerzeichen und Ziffern
+    delete_pattern(text, " 1234567890");
+    printf("%s\n", text); // Ausgabe: "HalloWelt!"
     return 0;
 }
 ```
 
-Die Ausgabe dieses Programms sieht so aus:
+## Deep Dive (Tieferer Einblick)
+Früher, vor modernen hohen Programmiersprachen, war es üblich, Zeichenmanipulationen direkt auf niedriger Speicherebene durchzuführen. Dies beinhaltete direkte Pointeroperationen und oft manuelle Schleifen durch Strings.
 
-```c
-Vorher: Beispieltext
-Nachher: Bispilm
-```
-In diesem Code nehmen wir eine String und ein Muster, und wiederholen den String Zeichen für Zeichen. Wenn das aktuelle Zeichen im Muster gefunden wird, wird es nicht in den resultierenden String aufgenommen.
+Heutzutage gibt es viele Alternativen: Reguläre Ausdrücke und höherwertige String-Verarbeitungsfunktionen in Bibliotheken wie `regex.h` oder in Sprachen wie Python und JavaScript. 
 
-## Vertiefung
-Früher, vor der Verfügbarkeit von Standard-Bibliotheksfunktionen wie `strspn()`, `strpbrk()`, etc., hatten Programmierer in C ihren eigenen Code zum Löschen von Zeichen geschrieben, die einem Muster entsprechen. Jetzt bieten Standard-Bibliotheken Alternativen, die einfacher und effizienter zu nutzen sind. Zum Beispiel kann das `strpbrk()` verwendet werden, um das erste Vorkommen eines beliebigen Zeichens aus einer Menge von Zeichen zu finden, und `strspn()` kann verwendet werden, um den kürzesten Substring zu finden, der nur Zeichen aus der Menge enthält.
+Bei der obigen Implementierung gehen wir Zeichen für Zeichen durch und behalten nur jene, die nicht im Muster sind. Das ist sicher und vermeidet Schaffung neuer Strings, spart also Speicher.
 
-Je nach Bedarf des Programms kann diese Funktion modifiziert werden. Z.B. könnten wir nur das erste Vorkommen eines Zeichenmusters löschen, oder alle bis auf das letzte Vorkommen, usw.
-
-## Siehe auch
-- https://en.cppreference.com/w/c/string/byte/strpbrk
-- https://en.cppreference.com/w/c/string/byte/strspn
-- https://www.geeksforgeeks.org/remove-character-array-string-c/
+## See Also (Siehe auch)
+- C Standard Library: https://en.cppreference.com/w/c/string/byte
+- Reguläre Ausdrücke in C: https://en.cppreference.com/w/c/regex
+- Möglichkeiten der String-Manipulation: https://www.gnu.org/software/libc/manual/html_node/String-and-Array-Utilities.html

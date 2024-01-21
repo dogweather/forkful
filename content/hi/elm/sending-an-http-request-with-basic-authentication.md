@@ -1,7 +1,8 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:02:22.537148-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,44 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# एल्एम में बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना 
+## What & Why? (क्या और क्यों?)
 
-## क्या और क्यों?
-HTTP अनुरोध के माध्यम से, हम वेबसर्वर कोन्नेक्ट करते हैं और डेटा को या तो प्राप्त करते हैं या भेजते हैं। बेसिक प्रमाणीकरण का उपयोग करके, हम हमारे अनुरोध की सुरक्षा सुनिश्चित करते हैं, और यह सत्यापित करतें हैं कि केवल अधिकृत यूजर्स ही डेटा का उपयोग कर सकते हैं।
+HTTP अनुरोध जिसमें बेसिक प्रमाणीकरण शामिल होता है एक सरल विधि है जहां यूजरनेम और पासवर्ड को बेस-६४ में कोड करके हेडर में भेजते हैं। प्रोग्रामर्स इसका उपयोग उस सर्विस से जुड़ने के लिए करते हैं जिसके लिए पहचान और अधिकारीकरण आवश्यक हैं।
 
-## कैसे करें: 
-एल्एम का उपयोग करते हुए, हम ऐसा कैसे कर सकते हैं, अब देखते हैं ।
+## How to: (कैसे करें:)
 
 ```Elm
 import Http
-import Http.Headers as Headers
+import Base64
 
-basicAuth : String -> String -> Http.Header
-basicAuth username password =
-    let
-        token =
-            Basics.toBase64 (username ++ ":" ++ password)
-    in
-        Headers.authorization ("Basic " ++ token)
+-- बेसिक प्रमाणीकरण हेडर बनाएं
+authorizationHeader : String -> String -> Http.Header
+authorizationHeader username password =
+  let
+    encodedCredentials = Base64.encode (username ++ ":" ++ password)
+  in
+  Http.header "Authorization" ("Basic " ++ encodedCredentials)
 
--- Example usage
-myRequest : Http.Request String
-myRequest =
-    Http.request
-        { method = "GET"
-        , headers = [ basicAuth "my-username" "my-password" ]
-        , url = "http://my-server.com"
-        , body = Http.emptyBody
-        , expect = Http.expectString (Result.Ok >> Ok)
-        , timeout = Nothing
-        , tracker = Nothing
-        }
+-- HTTP GET अनुरोध भेजें
+getWithBasicAuth : String -> String -> String -> Http.Request String
+getWithBasicAuth url username password =
+  Http.request
+    { method = "GET"
+    , headers = [ authorizationHeader username password ]
+    , url = url
+    , body = Http.emptyBody
+    , expect = Http.expectStringResponse identity
+    , timeout = Nothing
+    , tracker = Nothing
+    }
+
+-- उपयोग का उदाहरण
+sampleRequest : Http.Request String
+sampleRequest =
+  getWithBasicAuth "http://example.com/data" "user123" "password456"
 ```
 
-## गहरी छानबीन :
-बेसिक प्रमाणीकरण भेजते समय, यूज़रनेम और पासवर्ड को Base64 में कोड करते हैं। यह पद्धति 1990 के दशक में HTTP/1.0 के साथ विकसित की गई थी। इसके विकल्पों में डाइजेस्ट एक्सेस प्रमाणीकरण और OAuth हैं, जो एक अधिक सुरक्षित तरीके से यूज़र का प्रमाणीकरण सत्यापित करते हैं। यदि आपको अधिक सुरक्षा की आवश्यकता है, तो आपके पास इनका उपयोग करना विकल्प है।
+## Deep Dive (गहराई से जानकारी)
 
-## और देखें :
-1. [Elm's HTTP package documentation](https://package.elm-lang.org/packages/elm/http/latest/)
-2. [Basics in Elm](https://elm-lang.org/docs/from-javascript)
-3. [Basic Authorization on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
+HTTP Basic Authentication वेब की शुरुआत से मौजूद है। यह सरल है लेकिन हमें HTTPS के साथ इसका उपयोग करना चाहिए वरना क्रेडेंशियल्स आसानी से चोरी हो सकते हैं। Elm में, `Http` मॉड्यूल और `Base64` पैकेज का उपयोग करके आप इसे आसानी से इम्पलीमेंट कर सकते हैं। यह तरीका ज्यादातर APIs के लिए पर्याप्त होता है। हालांकि, जटिल प्रमाणीकरण जैसे कि OAuth के लिए अलग तरीके होते हैं।
+
+इम्पलीमेंटेशन में, क्रेडेंशियल्स को बेस-६४ में कोड करना और हेडर में `Basic` स्कीम के साथ जोड़ना शामिल है। Elm में आप `Http.header` का उपयोग करके आसानी से कस्टम हेडर्स बना सकते हैं।
+
+## See Also (देखें भी)
+
+- [Elm Http Package Documentation](https://package.elm-lang.org/packages/elm/http/latest/)
+- [Base64 Elm Package](https://package.elm-lang.org/packages/truqu/elm-base64/latest/)
+- [HTTP Authentication: Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)
+- [Elm Lang Official Guide](https://guide.elm-lang.org/)

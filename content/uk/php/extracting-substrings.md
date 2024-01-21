@@ -1,7 +1,8 @@
 ---
-title:                "Видобування підрядків"
-html_title:           "C++: Видобування підрядків"
-simple_title:         "Видобування підрядків"
+title:                "Виділення підрядків"
+date:                  2024-01-20T17:46:33.827630-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Виділення підрядків"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,43 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що таке і навіщо?)
+Просто кажучи, витягування підрядків – це процес отримання частини тексту з більшої стрічки. Програмісти роблять це, щоб обробити, перевірити, чи відобразити тільки ту інформацію, яка їм потрібна.
 
-Видобування підрядків в PHP - це процес отримання конкретної частини рядка. Програмісти роблять це для аналізу та маніпуляції з даними в рядках.
-
-## Як робити:
-
-Ось декілька прикладів коду PHP для видобування підрядків.
-
-```PHP
+## How to: (Як робити:)
+```php
 <?php
-$string = 'Привіт, світ!';
-$substring = substr($string, 0, 6);
-
-echo $substring;
-// Виведе: 'Привіт'
+$text = "Привіт, світ!";
+// Витягування підрядка від початку
+echo substr($text, 0, 7); // Виведе 'Привіт,'
+// Витягування підрядка з кінця
+echo substr($text, -5); // Виведе 'світ!'
 ?>
 ```
-Вищенаведений код витягує перші 6 символів з рядка `$string`. Нижче код витягує останні 5 символів:
 
-```PHP
-<?php 
-$string = 'Київ - столиця України';
-$substring = substr($string, -5);
+## Deep Dive (Поглиблений погляд)
+Метод `substr()` в PHP використовується з часів ранніх версій мови. Як альтернатива існує `mb_substr()`, який бере до уваги багатобайтові символи, що важливо для правильної роботи з UTF-8 (наприклад, українською мовою).
 
-echo $substring;
-// Виведе: 'раїни'
-?>
-```
-## Поглиблений огляд:
+У функції `substr()` три аргументи: сама строка, початковий індекс і довжина підрядка. Початковий індекс може бути негативним, що означає відлік з кінця стрічки.
 
-Підфункція `substr` нещодавно прийшла до PHP, але вона вже є фундаментальною для обробки рядків. Є інші функції, такі як `strpos` та `str_replace`, які також можуть використовуватися для обробки рядків, але вони не такі гнучкі, як `substr`.
-
-Альтернативною можливістю є `mb_substr`, яка ефективніше працює з многобайтовими символами, створеними UTF-8.
-
-## Дивіться ще:
-
-1. [PHP: substr - Manual](https://www.php.net/manual/en/function.substr.php)
-2. [PHP: Mb_substr - Manual](https://www.php.net/manual/en/function.mb-substr.php)
-3. [PHP: Strpos - Manual](https://www.php.net/manual/en/function.strpos.php)
-4. [PHP: Str_replace - Manual](https://www.php.net/manual/en/function.str-replace.php)
+## See Also (Додаткові ресурси)
+- [PHP substr() function](https://www.php.net/manual/en/function.substr.php)
+- [PHP mb_substr() function](https://www.php.net/manual/en/function.mb-substr.php)
+- [PHP string manipulation](https://www.php.net/manual/en/ref.strings.php)

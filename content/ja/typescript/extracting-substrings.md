@@ -1,6 +1,7 @@
 ---
 title:                "部分文字列の抽出"
-html_title:           "Lua: 部分文字列の抽出"
+date:                  2024-01-20T17:46:53.874955-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "部分文字列の抽出"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,32 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なんでしょうか？そして、なぜ？
+## What & Why? (何とその理由?)
+文字列の一部を取り出すことを「サブストリングを抽出する」と言います。データの一部を切り取り、表示したり処理したりするためにプログラマーはこれをよく行います。
 
-部分文字列の抽出は、元の文字列から特定の範囲の文字を取り出すプロセスのことを指します。開発者は主にデータ操作や情報のフィルタリングを実行するために、この技術を使用します。
-
-## 使い方：
-
-TypeScriptでは、「substring」や「slice」メソッドで部分文字列を抽出します。
-
+## How to: (やり方)
 ```TypeScript
-let str = 'TypeScript サブストリング';
-console.log(str.substring(0,10));   // Output: 'TypeScript'
-console.log(str.slice(start));       // Output: 'サブストリング'
+// 文字列から部分文字列を取得する方法
+
+const fullText: string = 'こんにちは、TypeScript!';
+
+// substringメソッド
+const sub1: string = fullText.substring(0, 5);
+console.log(sub1);  // 出力: こんにちは
+
+// sliceメソッド
+const sub2: string = fullText.slice(7);
+console.log(sub2);  // 出力: TypeScript!
+
+// substrメソッド (非推奨、使わない方が良い)
+const sub3: string = fullText.substr(7, 10);
+console.log(sub3);  // 出力: TypeScript!
 ```
 
-## ディープダイブ：
+## Deep Dive (深掘り)
+最初はJavaScriptからサブストリング抽出メソッドを受け継いだTypeScript。`substring`, `slice`, `substr`の3つのメソッドがあります。ただし、`substr`は非推奨で将来のバージョンで削除される可能性があります。新しいコードでは`substring`か`slice`を使いましょう。
 
-部分文字列の抽出は、ユーザからの入力が予測不能で多様性のあるシチュエーションや大量のテキストデータの解析など、多くのプログラミング場面で使用されます。
+`substring`と`slice`の違いは、主に引数に負の値を指定できるかどうかです。`slice`は負の値を使って後ろから文字を数えられますが、`substring`ではできません。また、`substring`メソッドは引数の順番が逆でも最小値を始点、最大値を終点と解釈します。
 
-伝統的には、「substring」メソッドは開始位置と終了位置を受け取り、「slice」メソッドは開始位置と抽出する文字数を受け取りますが、TypeScriptでは両メソッドとも同じ挙動をします。
+他の言語でも似たような関数があり、そこでの経験がTypeScriptでの理解に繋がるでしょう。
 
-なお、他の抽出の方法として「substr」メソッドも存在しますが、現在は非推奨とされ、確実な互換性のためには「substring」か「slice」メソッドを利用するべきです。
-
-## その他参考になる情報源：
-
-TypeScript公式ドキュメントの該当部分:
-- [`String.prototype.substring()`](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [`String.prototype.slice()`](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-
-これらのリンクは、TypeScriptでの部分文字列の抽出についてより深く学ぶための参考資料となります。
+## See Also (関連情報)
+- TypeScript公式ドキュメント: [https://www.typescriptlang.org/docs/](https://www.typescriptlang.org/docs/)
+- MDN Web Docs (文字列): [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- String.prototype.slice() vs String.prototype.substring(): [https://stackoverflow.com/questions/2243824/what-is-the-difference-between-string-slice-and-string-substring](https://stackoverflow.com/questions/2243824/what-is-the-difference-between-string-slice-and-string-substring)

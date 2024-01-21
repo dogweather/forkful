@@ -1,6 +1,7 @@
 ---
 title:                "חילוץ תת-מחרוזות"
-html_title:           "Bash: חילוץ תת-מחרוזות"
+date:                  2024-01-20T17:46:27.616728-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חילוץ תת-מחרוזות"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,22 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-חילוץ תת-מחרוזות הוא פעולה שבה מביאים מחרוזת מביצעים עליה פעולה, ומקבלים חלק ממנה. תכנתים עושים את זה כדי למנוע חוזר חלילה על קוד או לתפקיד עיבוד מידע.
+## What & Why?
+מה זה חילוץ תת-מחרוזות ולמה זה חשוב? בקצרה, זה פעולה שבה אנו לוקחים חלק מתוכן מחרוזת קיימת. תכנותים עושים את זה כדי לעבד נתונים, לשלוף מידע ספציפי, או לשנות פורמטים.
 
-## איך:
-בעזרת סקריפט Fish Shell, ניתן לחלץ תת-מחרוזות בקלות.
+## How to:
+ב-Fish Shell, חילוץ תת-מחרוזות הוא פשוט. נבדוק כמה דוגמאות:
 
+```Fish Shell
+# דוגמה 1: חילוץ תת-מחרוזת מתוך מחרוזת.
+set -l my_string "Hello, world!"
+echo $my_string[1..5]  # יוצא Hello
+
+# דוגמה 2: חילוץ מתחילת המחרוזת עד תו מסוים.
+echo $my_string[..5]  # יוצא Hello
+
+# דוגמה 3: חילוץ מתו מסוים עד סוף המחרוזת.
+echo $my_string[8..-1]  # יוצא world!
+
+# דוגמה 4: חילוץ תת-מחרוזת באמצעות נקודות קץ שליליות.
+echo $my_string[-6..-2]  # יוצא world
 ```
-echo "Hello, World!" | string sub -s 6 -l 5
-```
-הפלט יהיה "World".
 
-## צלילה עמוקה:
-הפקודה string sub הגיעה בגרסה 2.3 של Fish Shell, התכנה שהשיפרה את התמיכה בעיבוד מחרוזת. בדיקה אחרת שאנו יכולים לבצע היא להשתמש בפקודה cut שהיא כלי חד שרירי שמגיע עם UNIX. לחליפה, אנו יכולים גם להשתמש ביכולת ה-bash של `${string:start:length}` על פני מספר של אפשרויות.
-חשוב לדעת שהספרת הראשונה ב- Fish Shell שלנו היא 1, לעומת 0 באסמבל, מה שמקל על חילוץ תת-מחרוזות.
+ניתן לשים לב כי הדפסנו חלקים שונים של המחרוזת על ידי ציון המקום התחלתי והסופי בסוגריים מרובעים.
 
-## ראו גם:
-1. [הדוקומנטציה הרשמית של Fish Shell למחרוזת](https://fishshell.com/docs/current/commands.html#string)
-2. [מדריך לשפת תכנות Fish Shell](https://github.com/jorgebucaran/fish-cookbook)
-3. [פוסט בפורום Stackoverflow אודות חליצת תת-מחרוזות ב-Fish Shell](https://stackoverflow.com/questions/428109/extract-substring-in-bash)
+## Deep Dive
+ב-Fish Shell, חילוץ מחרוזות אינו מסובך, אך יש כמה פרטים לזכור:
+1. האינדקסים מתחילים מ-1, לא מ-0 כמו בשפות אחרות.
+2. ניתן להשתמש באינדקסים שליליים לחילוץ מהסוף להתחלה.
+3. בשפות תכנות אחרות, נמצאים פקודות חילוץ מחרוזות אחרות, כמו `.substring()` ב-Java או `substr()` ב-PHP. במקרים אלו, ישנן כללים שונים וסינטקס משתנה.
+4. בהיסטוריה, מערכות שונות ושפות תכנות פיתחו מגוון דרכים לעשות פעולת חילוץ, אך המטרה תמיד הייתה זהה - לאפשר גישה ושינוי לחלקים מסוימים בתוך מחרוזת.
+
+## See Also
+1. הדוקומנטציה הרשמית של Fish Shell - [Substring Expansion](https://fishshell.com/docs/current/index.html#expand-index-range)
+2. מדריך לשפות תכנות אחרות על חילוץ מחרוזות - [W3Schools: JavaScript String slice()](https://www.w3schools.com/jsref/jsref_slice_string.asp)
+3. פורום עזרה לשאלות על Fish Shell - [Stack Overflow](https://stackoverflow.com/questions/tagged/fish)

@@ -1,7 +1,8 @@
 ---
-title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+date:                  2024-01-20T18:01:48.532570-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,40 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mikä ja Miksi?
+Lähettääksesi HTTP-pyynnön perusautentikaation kera, lisätään käyttäjätunnus ja salasana pyynnön ylätunnisteeseen. Tämä antaa ohjelmillesi pääsyn suojattuun dataan.
 
-HTTP-pyynnön lähettäminen perustodentamisen kanssa on prosessi, jossa lähetetään tietoja palvelimelle käyttämällä salasanoja tai muita tunnistetietoja. Ohjelmoijat tekevät tämän ylläpitääkseen tietoturvaa ja suojatakseen luottamuksellisia tietoja.
+## How to: - Näin teet:
+```gleam
+import gleam/http
+import gleam/http/elli
+import gleam/base64
 
-## Miten:
+fn basic_auth_header(user: String, password: String) -> http.Header {
+  let credentials = base64.encode(user ++ ":" ++ password)
+  http.header("Authorization", "Basic " ++ credentials)
+}
 
-Alla on esimerkki siitä, miten lähetetään HTTP-pyyntö perustodentamisen kanssa Gleam-ohjelmointikielellä:
+pub fn main() {
+  let auth_header = basic_auth_header("kayttaja", "salainen")
+  let request = http.Request(
+    method: http.Get,
+    headers: [auth_header],
+    ..http.default_request("https://esimerkki.com")
+  )
 
-```Gleam
-let request = http.new_request("http://example.com")
- |> http.post(_, "body content")
- |> http.header("Authorization", "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==")
- |> http.make()
- 
- case http.send(request) {
-   Error(e) -> e
-   Ok(response) -> response.body
- }
- ```
- 
-Tässä ohjelman tuloste:
- 
- ```Gleam
- "Response body here..."
- ```
- 
-## Syvennys
+  try response = elli.send(request)
+  io.println(response)
+}
+```
 
-HTTP-pyynnön lähettäminen perustodentamisella on ollut käytössä pitkään, ja sen historiallinen konteksti ulottuu verkkoprotokollien alkuun. Se on tärkeä arkaluonteisen datan lähettämisen menetelmä, mutta ei suositelluin vaihtoehto, koska sen tietoturva on verrattain heikko. Usein sen alternatiiveiksi ehdotetaan vahvempia todentamismenetelmiä, kuten token-pohjaista todentamista tai OAuth2:ta.
+Esimerkkitulostus:
+```
+Response(200, "OK", ...)
+```
 
-## Katso myös:
+## Deep Dive - Syväsukellus:
+HTTP-perusautentikaatio on alkeellinen tapa suojata verkkoresursseja. Se on osa HTTP-protokollaa vuodesta 1996. Vaikka se on yksinkertainen, se ei ole turvallisin vaihtoehto - käytä HTTPS:n yli.
 
-Lisätietoja ja muita lähteitä voi löytää seuraavista linkeistä:
+Vaihtoehtoja ovat OAuth tai API-avaimet. Ne tarjoavat kehittyneempää suojaa, mutta ne vaativat enemmän asetuksia.
 
-3. [RFC7617- Basic Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617)
+Kun lähetät HTTP-pyynnön Gleamilla, voit käyttää `http` kirjaston toimintoja. Muista koodata käyttäjätunnus ja salasana Base64-koodauksella. `elli` on eräs Gleamin tarjoama HTTP-asiakas, jolla pyynnöt lähetetään.
 
-Suosittelen tutustumaan näihin aiheisiin syvällisemmin etenkin, jos teet paljon verkko-ohjelmointia tai työskentelet arkaluonteisten tietojen kanssa.
+## See Also - Katso Myös:
+- Gleam HTTP library documentation: [https://hexdocs.pm/gleam_http/](https://hexdocs.pm/gleam_http/)
+- Elli, a Gleam HTTP client: [https://github.com/gleam-experiments/elli](https://github.com/gleam-experiments/elli)
+- HTTP authentication: Basic and Digest Access Authentication: [https://tools.ietf.org/html/rfc2617](https://tools.ietf.org/html/rfc2617)
+- Web security topics on MDN: [https://developer.mozilla.org/en-US/docs/Web/Security](https://developer.mozilla.org/en-US/docs/Web/Security)

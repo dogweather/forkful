@@ -1,6 +1,7 @@
 ---
 title:                "Generando números aleatorios"
-html_title:           "Arduino: Generando números aleatorios"
+date:                  2024-01-20T17:49:21.813562-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generando números aleatorios"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,38 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+## Qué y Por Qué?
+La generación de números aleatorios crea secuencias impredecibles de números, esencial en criptografía, simulaciones y hasta en juegos. Los programadores recurrimos a ello para añadir incertidumbre controlada y probar cómo nuestros programas manejan lo inesperado.
 
-Generar números aleatorios es el proceso de producir secuencias que no pueden ser predichas de manera lógica. Los programadores lo hacen para simular eventos aleatorios, como tirar un dado en un juego.
+## Cómo hacerlo:
+Haskell usa el módulo `System.Random` para generar números aleatorios. Primero, importa el módulo. A continuación, te muestro cómo generar un número aleatorio:
 
-## ¿Cómo se hace?
-
-Haskell tiene una biblioteca estándar llamada `System.Random` que podemos usar para generar números aleatorios. Aquí está un ejemplo básico:
-
-```Haskell
+```haskell
 import System.Random
 
-generarAleatorio :: IO Int
-generarAleatorio = getStdRandom (randomR (1, 100))
-
+main :: IO ()
 main = do
-    numero <- generarAleatorio
-    print numero
+  gen <- newStdGen
+  let (rndNumber, _) = random gen :: (Int, StdGen)
+  print rndNumber
 ```
 
-Este programa genera un número aleatorio entre 1 y 100. Cada vez que lo ejecutes, verás un número diferente.
+Ejecuta esto y obtendrás un número entero aleatorio como salida:
 
-## Conocimiento profundo
+```
+1734928476574
+```
 
-Haskell usa un generador de números pseudoaleatorios, el cual genera secuencias de números que parecen aleatorios pero que se repiten tras un cierto periodo. Históricamente, el concepto de aleatoriedad ha sido crucial en la criptografía. En cuanto a alternativas, se podría usar cualquier número de módulos de terceros para generar números aleatorios, pero `System.Random` es suficientemente robusto para la mayoría de las aplicaciones.
+## Profundizando
+En Haskell, el sistema de tipos y la naturaleza funcional de la lengua exigen un tratamiento distinto de la aleatoriedad. Históricamente, la generación de números aleatorios en programación ha evolucionado con los avances en algoritmos y la comprensión de la entropía y los patrones pseudoaleatorios.
 
-En cuanto a los detalles de implementación, `randomR` genera un número aleatorio en el rango especificado, y `getStdRandom` usa el generador aleatorio global en su ejecución.
+Alternativas en Haskell incluyen usar `randomR` para rangos específicos o `getStdRandom` para obtener resultados directamente sin manejar el generador. A nivel de implementación, Haskell usa una semilla (`StdGen`) para comenzar la secuencia aleatoria; cambia la semilla y cambiará la secuencia. Esto es crucial para la reproducibilidad en pruebas o simulaciones.
 
-## Consultar también
-
-1. [Haskell: Biblioteca System.Random](http://hackage.haskell.org/package/random-1.1/docs/System-Random.html)
-
-2. [Introducción a `System.Random` en Haskell](http://book.realworldhaskell.org/read/using-typeclasses.html#id689872)
-
-
-Estos recursos pueden proporcionarte más detalles sobre cómo trabajar con números aleatorios en Haskell.
+## Ver También
+- Sistema de Tipos de Haskell: https://www.haskell.org/tutorial/types.html
+- Documentación de `System.Random`: https://hackage.haskell.org/package/random-1.2.0/docs/System-Random.html
+- "Introduction to Randomness and Random Numbers" de random.org para una visión general sobre la aleatoriedad: https://www.random.org/randomness/

@@ -1,6 +1,7 @@
 ---
 title:                "Iniciando un nuevo proyecto"
-html_title:           "Bash: Iniciando un nuevo proyecto"
+date:                  2024-01-20T18:03:14.201533-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,42 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
-Comenzar un nuevo proyecto de programación significa poner en marcha una nueva idea desde cero. Los programadores lo hacen para resolver problemas específicos, implementar nuevas funcionalidades o experimentar con nuevas tecnologías.
+## Qué y por qué?
+Iniciar un nuevo proyecto es básicamente establecer el terreno para tu futuro código. Los programadores lo hacen para comenzar con una base estructurada y ordenada, lo que facilita el desarrollo y el mantenimiento a largo plazo.
 
-## ¿Cómo se hace?
-Aquí te muestro cómo iniciar un nuevo proyecto con Leiningen, una popular herramienta de Clojure para la gestión de proyectos. 
-
-Primero, debes instalar Leiningen. Luego, para crear un nuevo proyecto, usa la pestaña `new`:
+## Cómo hacerlo:
+Para comenzar un nuevo proyecto en Clojure, puedes usar Leiningen o la CLI (Command Line Interface) de Clojure. Aquí te muestro cómo hacerlo con Leiningen:
 
 ```Clojure
-lein new mi-proyecto
-```
-Esto generará una nueva carpeta llamada `mi-proyecto` con toda la estructura necesaria para comenzar a codificar.
+;; Instala Leiningen siguiendo las instrucciones en https://leiningen.org/
+;; Luego, crea un nuevo proyecto con este comando:
+lein new app nombre-de-tu-proyecto
 
-Para ejecutar tu proyecto, debes ubicarte en la carpeta del proyecto e introducir el comando `run`:
+;; Esto generará la siguiente estructura de directorios:
+; nombre-de-tu-proyecto/
+;   README.md
+;   doc/
+;     intro.md
+;   project.clj
+;   resources/
+;   src/
+;     nombre_de_tu_proyecto/
+;       core.clj
+;   test/
+;     nombre_de_tu_proyecto/
+;       core_test.clj
+```
+
+Con Clojure CLI, el proceso es similar:
 
 ```Clojure
-cd mi-proyecto
-lein run
+;; Asegúrate de tener instalado Clojure CLI
+;; Crear un nuevo proyecto:
+clojure -M:new app nombre-de-tu-proyecto
+
+;; Estructura similar a la creada por Leiningen
 ```
-El resultado será algo así:
 
-```
-Hello, World!
-```
-Por supuesto, puedes modificar el código a tu gusto.
+Después de crear tu proyecto, puedes empezar a desarrollar tu aplicación dentro del archivo `src/nombre_de_tu_proyecto/core.clj`.
 
-## Un vistazo profundo
+## Profundizando
+Históricamente, en Clojure se ha utilizado Leiningen como la herramienta estándar para manejar proyectos. Sin embargo, con la evolución del lenguaje, Clojure CLI ha ganado popularidad debido a su integración más directa con las herramientas de Clojure.
 
-Empezar un nuevo proyecto con Leiningen es fácil y rápido, pero no siempre fue así. Históricamente, antes de tener este tipo de herramientas, iniciar un nuevo proyecto era un proceso tedioso y complejo.
+Leiningen se destaca por su simplicidad y plugins disponibles, mientras que Clojure CLI brinda una experiencia más "clojurística" y se integra bien con las herramientas de deps.edn para gestionar dependencias. Anteriormente, uno usaba `project.clj` para manejar dependencias y configuraciones, pero con Clojure CLI, ahora usamos `deps.edn`, que es más sencillo y está más alineado con la filosofía de Clojure.
 
-Existen alternativas a Leiningen. Para Clojure, Boot es otro gestor de proyectos popular, y para otros lenguajes de programación existen herramientas similares como Maven para Java o Cargo para Rust.
+Independientemente de la herramienta que elijas, ambas te ayudarán a crear un esqueleto de proyecto que sigue las convenciones comunes de Clojure, ayudándote a mantener un código limpio y organizado.
 
-Los detalles de implementación al iniciar un nuevo proyecto con Leiningen incluyen la generación de un archivo `project.clj` que define las dependencias del proyecto y las tareas asociadas con él. Además, Leiningen genera automáticamente una estructura de directorios y archivos ideal para proyectos de Clojure.
-
-## Ver También
-1. [Leiningen: para gestión de proyectos](https://leiningen.org/)
-2. [Boot: alternativa a Leiningen](https://boot-clj.com/)
-3. [Documentación de Clojure](https://clojure.org/guides/getting_started)
-4. [La Guía de estilo de Clojure](https://github.com/bbatsov/clojure-style-guide)
+## Ver también
+Para más detalles y guías, consulta los siguientes recursos:
+- Leiningen: [Guía de inicio](https://leiningen.org/)
+- Clojure CLI: [Referencia de herramientas CLI](https://clojure.org/guides/deps_and_cli)
+- Tutorial de Clojure para principiantes de Brave Clojure: [Clojure for the Brave and True](https://www.braveclojure.com/clojure-for-the-brave-and-true/)

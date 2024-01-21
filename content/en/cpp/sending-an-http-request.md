@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request"
-html_title:           "Bash recipe: Sending an http request"
+date:                  2024-01-20T17:59:22.887557-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request"
 programming_language: "C++"
 category:             "C++"
@@ -10,59 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Sending HTTP Requests in C++
-
 ## What & Why?
-Sending an HTTP request involves a client (your application) asking a server for specific resources. Programmers do this to communicate with web servers, APIs, and other web-based services.
+Sending an HTTP request fetches data from a web server. Programmers do this to interact with web services, gather info, or communicate between systems.
 
 ## How to:
-C++ doesn't offer in-built support for HTTP requests, but we can use popular libraries, like cURL or Boost Beast. Let's proceed with cURL for simplicity. First, install the library if you haven't yet.
-
-```C++
-sudo apt-get install libcurl4-openssl-dev
-```
-
-Here's a basic example of how to send an HTTP GET request:
 
 ```C++
 #include <iostream>
-#include <curl/curl.h>
+#include <cpr/cpr.h> // Make sure to install the CPR library first
 
-size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* userp) {
-    userp->append((char*)contents, size * nmemb);
-    return size * nmemb;
-}
-
-int main()
-{
-    CURL* curl;
-    CURLcode res;
-    std::string readBuffer;
-
-    curl = curl_easy_init();
-    if (curl) {
-      curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-      curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-      curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
-      res = curl_easy_perform(curl);
-      curl_easy_cleanup(curl);
-
-      std::cout << readBuffer << std::endl;  
-    }
+int main() {
+    cpr::Response r = cpr::Get(cpr::Url{"http://httpbin.org/get"});
+    std::cout << r.text << std::endl; // Outputs the response body
     return 0;
 }
 ```
 
-Output will be HTML from example.com.
+Sample output:
+```json
+{
+  "args": {},
+  "headers": {
+    "Accept": "*/*",
+    "Host": "httpbin.org",
+    "User-Agent": "curl/7.64.1"
+  },
+  "origin": "0.0.0.0",
+  "url": "https://httpbin.org/get"
+}
+```
 
 ## Deep Dive
-C++, unlike Python or JavaScript, doesn't have built-in HTTP request functions. Early C++ use was low-level system tasks, not web-based work.
+HTTP requests have been crucial since the advent of the web; they follow a client-server model. Prior to C++ libraries like CPR, sending HTTP requests typically meant using `libcurl` directly, or integrating with another language better equipped for web communication.
 
-Alternatives to cURL are Boost Beast and POCO, offering more comprehensive libraries.
+CPR, which stands for C++ Requests, is a simple-to-use wrapper inspired by Python's `requests` module. It abstracts away many of `libcurl`'s complexities. Alternatives still exist, like Boost.Beast for lower-level HTTP/S operations, or POCO libraries offering portability.
 
-cURL works by setting up an easy handle, attaching options (url, method, etc.), and executing. It's critical to cleanup afterwards, releasing system resources.
+Diving under the hood, sending an HTTP request involves setting up a TCP connection, formatting a request compliant with the HTTP protocol, then parsing the response. Getting this right from scratch is non-trivial due to error handling, HTTP version complexities, and security considerations.
 
 ## See Also
-[cURL library](https://curl.haxx.se/libcurl/)  
-[Boost Beast](https://www.boost.org/doc/libs/1_75_0/libs/beast/doc/html/index.html)  
-[POCO](https://pocoproject.org/)
+
+- CPR Github Repository: https://github.com/libcpr/cpr
+- `libcurl` documentation for more advanced usage: https://curl.se/libcurl/
+- Official Boost.Beast documentation: https://www.boost.org/doc/libs/release/libs/beast/
+- POCO C++ Libraries documentation: https://pocoproject.org/docs/

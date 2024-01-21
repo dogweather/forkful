@@ -1,7 +1,8 @@
 ---
-title:                "Interpolation d'une chaîne de caractères"
-html_title:           "Ruby: Interpolation d'une chaîne de caractères"
-simple_title:         "Interpolation d'une chaîne de caractères"
+title:                "Interpolation de chaînes de caractères"
+date:                  2024-01-20T17:51:04.219727-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolation de chaînes de caractères"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,35 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
+## What & Why?
+L'interpolation de chaînes c'est quand on insère des valeurs variables dans une chaîne de caractères. Les programmeurs le font pour simplifier la création de texte dynamique.
 
-**L'interpolation de chaînes** est une façon d'insérer des valeurs variables dans une chaîne fixe. Les programmeurs l'utilisent pour créer des messages dynamiques et facilement lisibles.
-
-## Comment faire :
-
-Voici un exemple simple de comment faire l'interpolation de chaînes en Lua avec la bibliothèque `string.format` :
-
+## How to:
 ```Lua
-nom = "Jean"
-message = string.format("Bonjour, %s!", nom)
-print(message)  -- Output: Bonjour, Jean!
+-- Concaténation classique
+local nom = "Mundo"
+local message = "Hola, " .. nom .. "!"
+print(message)  -- Hola, Mundo!
+
+-- Utilisation de string.format
+local age = 30
+local texte = string.format("J'ai %d ans.", age)
+print(texte)  -- J'ai 30 ans.
 ```
 
-## Approfondissement 
+## Deep Dive
+Historiquement, Lua n'avait pas d'interpolation de chaîne intégrée comme certaines autres langues; les développeurs utilisaient la concaténation avec `..` ou `string.format()`. Plus récemment, des bibliothèques externes ont ajouté des fonctionnalités d'interpolation, comme `interpolate` dans LuaRocks. En termes d'alternatives, certains préfèrent utiliser des fonctions comme `string.gsub()` pour remplacer les marqueurs par des valeurs spécifiques. La plupart des méthodes d’interpolation dans Lua restent cependant explicites, sans syntaxe propre à l'interpolation comme dans d'autres langages.
 
-Historiquement, Lua n'avait pas de fonction d'interpolation de chaînes comme celle qu'on trouve dans d'autres langages. À la place, on utilisait la méthode `string.format`. 
-
-Cependant, il existe des alternatives à `string.format` telles que la méthode `..` qui peut aussi être utilisée pour concaténer des chaînes, comme ceci :
-
-```Lua
-nom = "Jean"
-message = "Bonjour, "..nom.."!"
-print(message)  -- Output: Bonjour, Jean!
-```
-
-Cependant, `string.format` est généralement préféré pour son expressivité et sa facilité d'utilisation.
-
-## Voir aussi 
-
-1. [Documentation Lua](https://www.lua.org/manual/5.3/) pour une connaissance plus profonde de `string.format` et des autres bibliothèques de chaînes de caractères en Lua.
-2. [Guide de style Lua](https://github.com/Olivine-Labs/lua-style-guide) pour des bonnes pratiques en écriture de code Lua.
+## See Also
+- La documentation officielle de Lua pour `string.format`: https://www.lua.org/manual/5.4/manual.html#pdf-string.format
+- LuaRocks, la gestionnaire de paquets de modules pour Lua, où vous pouvez trouver des bibliothèques d'interpolation : https://luarocks.org/
+- Un tutoriel sur `string.gsub`: http://lua-users.org/wiki/StringLibraryTutorial

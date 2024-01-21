@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon pituuden selvittäminen"
-html_title:           "Go: Merkkijonon pituuden selvittäminen"
+date:                  2024-01-20T17:47:19.636867-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,36 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Stringin pituuden määrittäminen tarkoittaa merkkijonon merkkien lukumäärän laskemista. Ohjelmoijat käyttävät tätä saadakseen tietoa datan muodosta, validoinnista ja tekstinkäsittelystä.
 
-Merkkijonojen pituuden selvittäminen tarkoittaa sen selvittämistä, kuinka monta merkkiä merkkijonossa on. Ohjelmoijat tekevät tämän usein, kun haluavat tarkistaa, onko merkkijono tyhjä, tai kun heidän on säädettävä merkkijonoja tietyllä tavalla.
+## How to (Kuinka tehdä)
+```Fish Shell
+# Määritä jono
+set string "moikka"
 
-## Näin se tehdään:
+# Laske jonon pituus
+set length (string length $string)
 
-Fish Shellissa merkkijonon pituuden saa selville käyttämällä `string length` -toimintoa.
-
-```fish
-# Esimerkki 1 - merkkijonon "Hei maailma" pituus
-set lause "Hei maailma"
-echo (string length $lause)
+# Tulosta pituus
+echo $length
+```
+Esimerkin tulostus:
+```
+6
 ```
 
-Tässä esimerkissä tulostuu `11`, koska merkkijono "Hei maailma" on 11 merkkiä pitkä.
+## Deep Dive (Syväsukellus)
+Fish shellin `string`-komennon `length`-toiminto julkaistiin Fish 2.3.0:ssa, ja se on säilynyt yhtenä perustyökaluista merkkijonojen käsittelyssä. Se syrjäytti tarpeen käyrätorttuisille Awk- ja Sed-ratkaisuille stringin pituuden mittaamiseen Fishissä. `string length`-komennon toteutus on tehokas ja suoraan ytimessä, verrattuna muihin yleiskäyttöisiin shellicommandoihin, jotka saattavat vaatia pidempiä komentoketjuja saman lopputuloksen aikaansaamiseksi.
 
-## Syvemmälle:
-
-Merkkijonojen pituuden selvittäminen on yksinkertainen mutta keskeinen toiminto suurimmassa osassa ohjelmointikieliä. Fish Shell tarjoaa yksinkertaisen ja suoraviivaisen tavan selvittää merkkijonon pituus `string length` toiminnon avulla.
-
-Vaihtoehtoisesti voit käyttää `wc`-komentoa (word count), joka laskee myös rivit ja sanat sekä merkit.
-
-```fish
-echo -n $lause | wc -m
-```
-
-Tässä `wc -m` laskee merkit, ja `-n` estää rivinvaihdon tulostumisen.
-
-Merkkijonojen pituuden selvittämiseen liittyy yksityiskohtia, kuten se, että tietyt merkit, kuten välilyönnit, lasketaan mukaan pituuteen. Tämä on tärkeää muistaa, kun manipuloidaan merkkijonoja.
-
-## Katso myös:
-
-1. Fish Shell dokumentaatio - [Merkkijonot](https://fishshell.com/docs/current/commands.html#string)
+## See Also (Katso Myös)
+- Fish Shellin virallinen dokumentaatio `string`-komennosta: [link](https://fishshell.com/docs/current/cmds/string.html)
+- Fish Shellin GitHub-repositorio: [link](https://github.com/fish-shell/fish-shell)

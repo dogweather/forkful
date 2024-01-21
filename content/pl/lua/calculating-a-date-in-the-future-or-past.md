@@ -1,6 +1,7 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
-html_title:           "Lua: Obliczanie daty w przyszłości lub przeszłości"
+date:                  2024-01-20T17:31:58.714171-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,36 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Obliczanie daty w przyszłości lub przeszłości to proces określania dokładnego dnia, który występuje po lub przed określoną datą. Programiści to robią, aby zarządzać danymi czasu, np. do tworzenia harmonogramów czy przypomnień.
+## Co i Dlaczego?
+Calculating a date in the future or past to znalezienie konkretnej daty przed lub po wyznaczonej liczbie dni. Programiści robią to, aby obsługiwać rezerwacje, terminy płatności, przypomnienia i inne funkcje związane z czasem.
 
 ## Jak to zrobić:
-Obliczanie daty w przyszłości lub przeszłości w Lua jest proste. Użyjemy wbudowanej funkcji `os.time()`, która zwraca aktualny czas w sekundach, a `os.date()` do formatowania daty:
-
 ```Lua
--- Obliczanie daty za 7 dni
-local czas_teraz = os.time()
-local sekundy_na_dobe = 60 * 60 * 24 -- 60 sekund, 60 minut, 24 godziny
-local dni_w_przyszlosci = 7
+os = require('os')
+time = os.time() -- bieżący czas w formacie epoki Unix
 
-local czas_w_przyszlosci = czas_teraz + sekundy_na_dobe * dni_w_przyszlosci
-local data_w_przyszlosci = os.date('%d-%m-%Y', czas_w_przyszlosci)
-print(data_w_przyszlosci) -- Wydrukuj datę.
+-- Dodaj 7 dni do bieżącej daty
+future_time = time + (7 * 24 * 60 * 60) -- 7 dni, 24 godziny, 60 minut, 60 sekund
+
+-- Odejmij 7 dni od bieżącej daty
+past_time = time - (7 * 24 * 60 * 60) -- to samo, ale odejmujemy
+
+-- Formatuj daty by wyświetlić w przyjaznym formacie
+future_date = os.date("%Y-%m-%d", future_time)
+past_date = os.date("%Y-%m-%d", past_time)
+
+print("Data w przyszłości: " .. future_date)
+print("Data w przeszłości: " .. past_date)
 ```
-
-Podobnie, możemy obliczyć datę w przeszłości odejmując dni:
-
-```Lua
--- Obliczanie daty 7 dni temu
-local dni_w_przeszlosci = 7
-local czas_w_przeszlosci = czas_teraz - sekundy_na_dobe * dni_w_przeszlosci
-local data_w_przeszlosci = os.date('%d-%m-%Y', czas_w_przeszlosci)
-print(data_w_przeszlosci) -- Wydrukuj datę.
+Sample output:
+```
+Data w przyszłości: 2023-04-14
+Data w przeszłości: 2023-03-31
 ```
 
 ## Deep Dive
-Obliczanie daty w przyszłości lub przeszłości to powszechna praktyka od czasów maszyn liczących, kiedy to stosowano algorytmy takie jak mechanizm Zeller'a. Alternatywą dla naszego podejścia w Lua są bibloteki do zarządzania czasem, takie jak date.lua, które oferują więcej funkcji i elastyczności. W Lua, `os.time()` zwraca czas w sekundach od pewnej epoki, zwykle od 00:00:00 UTC, 1 stycznia 1970, co jest typowym zachowaniem dla systemów Unix.
+Kariera daty w przyszłości lub przeszłości sięga jeszcze czasów przed informatyką, ale wraz z nadejściem komputerów i potrzebą zarządzania czasem, szybko stała się jedną z podstawowych funkcji programistycznych. W Lua, taka operacja jest relatywnie prosta dzięki wbudowanemu modułowi `os` i funkcji `os.time`, która zwraca czas w formacie epoki Unix — liczby sekund, które upłynęły od północy 1 stycznia 1970 GMT. Alternatywą jest biblioteka `luadate`, która oferuje bogatsze możliwości manipulacji datami. Funkcja `os.date` pozwala konwertować czas epoki na bardziej zrozumiały format daty.
 
-## Zobacz również
-- Dokumentacja Lua: https://www.lua.org/manual/5.4/manual.html#6.9
-- Pakiet date dla Lua: https://olivinelabs.com/date/
+Rozważając implementację, pamiętaj, że różne strefy czasowe i zmiana czasu z letniego na zimowy może wpłynąć na obliczanie dokładnej daty. W komputach Lua opartych na systemach POSIX (takich jak Linux), czas epoki Unix nie ulega zmianie z powodu zmian strefy czasowej, co jest znaczącą zaletą dla programistów.
+
+## See Also
+- Dokumentacja Lua 5.4 [`os` library](https://www.lua.org/manual/5.4/manual.html#6.9)
+- Projekt `luadate` na GitHub: [luadate](https://github.com/Tieske/date)
+- Dokładne omówienie czasu w Unix na stronie [Wikipedia: Unix time](https://en.wikipedia.org/wiki/Unix_time)

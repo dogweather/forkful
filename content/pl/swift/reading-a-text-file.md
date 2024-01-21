@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie pliku tekstowego"
-html_title:           "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+date:                  2024-01-20T17:55:33.977595-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,38 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Czytanie pliku tekstowego to operacja pobierania danych zapisanych w pliku na dysku. Programiści robią to, aby wczytywać konfiguracje, analizować dane lub odczytywać treści stworzone przez użytkowników.
 
-Odczytywanie pliku tekstowego to proces wydobywania danych z zapisanych wcześniej plików tekstowych. Programiści robią to, aby móc manipulować, analizować i wykorzystywać te dane w swojem kodzie.
-
-## Jak to zrobić:
-
-Oto przykład, jak odczytać plik tekstowy w Swift:
-
+## How to: (Jak to zrobić:)
 ```Swift
-import Foundation
+import Foundation // Import required for file handling
 
-let fileURL = Bundle.main.url(forResource: "Example", withExtension: "txt")
-do {
-    let content = try String(contentsOf: fileURL!, encoding: .utf8)
+// Funkcja czytająca zawartość pliku tekstowego
+func readTextFromFile(atPath path: String) -> String? {
+    // Sprawdzamy, czy plik istnieje
+    guard FileManager.default.fileExists(atPath: path) else {
+        print("Plik nie istnieje.")
+        return nil
+    }
+    
+    // Próbujemy odczytać dane z pliku
+    do {
+        let content = try String(contentsOfFile: path, encoding: .utf8)
+        return content
+    } catch {
+        print("Nie udało się odczytać pliku: \(error)")
+        return nil
+    }
+}
+
+// Ścieżka do pliku (dostosuj ścieżkę do swoich potrzeb)
+let path = "/path/to/your/textfile.txt"
+
+// Czytamy zawartość pliku
+if let content = readTextFromFile(atPath: path) {
+    print("Zawartość pliku:")
     print(content)
-} catch {
-    print("Cannot read the file")
+} else {
+    print("Nie można odczytać pliku.")
 }
 ```
-
-W tym przypadku, jeśli plik "Example.txt" znajduje się w głównym pakiecie i zawiera linijkę "Hello, Swift!", wynikiem będzie:
-
-```Swift
-Hello, Swift!
+Wyjście przykładowe ('sample output'):
+```
+Zawartość pliku:
+Witaj, świecie!
+Oto przykładowy tekst z pliku.
 ```
 
-## Deep Dive
+## Deep Dive (Dogłębna analiza):
+Odczytywanie plików tekstowych w językach programowania to stary jak świat koncept - to jedna z podstawowych umiejętności. W Swift od wczesnych wersji dostępne są narzędzia do obsługi plików. Alternatywy dla `String(contentsOfFile:encoding:)` to na przykład `InputStream`, `FileHandle`, czy biblioteki zewnętrzne, ale zwykle to standardowe API w zupełności wystarcza.
 
-Często odczytywanie plików tekstowych bywa konieczne, np. przy analizie danych czy konfiguracji aplikacji. Istnieje wiele sposobów na odczyt plików tekstowych, a Swift oferuje prosty i intuicyjny interfejs do tej operacji. Historia plików tekstowych sięga czasów Unixa i do dziś są one znaczącym elementem komputacji. Co do szczegółów implementacji, Swift wykorzystuje typ String do przechowywania zawartości pliku. 
+Jednym z wyzwań przy odczytywaniu dużej ilości danych jest zarządzanie pamięcią. Odczytywanie całego pliku do pamięci może być niewydajne, dlatego w przypadku dużych plików warto rozważyć strumieniowe przetwarzanie danych lub odczyt fragmentami.
 
-## Zobacz również 
+Swift jest również dobry w pracy ze stringami dzięki wsparciu Unicode, co jest kluczowe w międzynarodowym otoczeniu (np. polskie znaki).
 
-1. Dokumentacja Swift: [String](https://developer.apple.com/documentation/swift/string)
-2. Jak odczytać plik w Swift: [StackOverflow](https://stackoverflow.com/questions/24581517/read-a-file-url-line-by-line-in-swift)
-3. Więcej o plikach tekstowych: [Wikipedia](https://pl.wikipedia.org/wiki/Plik_tekstowy)
+## See Also (Zobacz również):
+- [Apple's Guide to Working with Strings](https://developer.apple.com/documentation/swift/string)
+- [FileManager Documentation](https://developer.apple.com/documentation/foundation/filemanager)
+- [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)

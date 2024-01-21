@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie pliku tekstowego"
-html_title:           "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+date:                  2024-01-20T17:54:29.807549-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -11,55 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Czytanie pliku tekstowego to proces, w którym program odczytuje dane zapisane w pliku tekstowym. Programiści robią to, aby manipulować danymi zapisanymi na dysku, a nie tylko w pamięci.
+Czytanie pliku tekstowego to proces pozyskiwania danych z zapisanego tekstu. Programiści robią to, by obsłużyć informacje – konfigurować aplikacje, analizować dane lub po prostu wczytywać instrukcje.
 
 ## Jak to zrobić:
+Do wczytywania plików tekstowych w Javie wykorzystujemy klasę `Files` z pakietu `java.nio.file`, która oferuje metodę `readAllLines`. Poniżej prosty przykład:
 
-Oto przykładowy kod pokazujący, jak czytać plik tekstowy w Javie.
+```java
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
 
-```Java
-import java.nio.file.*;
-
-public class ReadFile {
-    public static void main(String[] args) throws Exception {
-        Path path = Paths.get("example.txt");
-        byte[] bytes = Files.readAllBytes(path);
-        String content = new String(bytes);
-
-        System.out.println(content);
-    }
-}
-```
-
-Uruchomienie tego kodu da wyjście równoznaczne z zawartością pliku "example.txt".
-
-## Deep Dive
-
-**Historycznie** czytanie pliku tekstowego sięga początków programowania. Java, od wersji 7 (2011 r.), udostępnia API *NIO (New Input/Output)* do lepszego zarządzania I/O takich jak operacje na plikach.
-
-**Alternatywy** to korzystanie ze starszych klas, takich jak *FileReader* i *BufferedReader*, które oferują większą kontrolę, ale są bardziej skomplikowane w użyciu.
-
-```Java
-import java.io.*;
-
-public class ReadFile {
-    public static void main(String[] args) throws Exception {
-        File file = new File("example.txt");
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        
-        String line;
-        while ((line = br.readLine()) != null) {
-            System.out.println(line);
+public class ReadTextFileExample {
+    public static void main(String[] args) {
+        try {
+            Path filePath = Path.of("example.txt");
+            List<String> lines = Files.readAllLines(filePath);
+            lines.forEach(System.out::println);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        br.close();
     }
 }
 ```
 
-**Szczegóły implementacji**: metoda `Files.readAllBytes` odczytuje cały plik jako jedną dużą partię danych, co nie jest efektywne dla dużych plików. Klasa `BufferedReader` odczytuje plik linia po linii, co jest dużo bardziej efektywne dla dużych plików.
+Przy założeniu, że w pliku `example.txt` znajduje się:
 
-## Zobacz także
+```
+Witaj w pliku tekstowym.
+To jest druga linia.
+```
 
-1. [Dokumentacja Java NIO](https://docs.oracle.com/javase/8/docs/api/java/nio/package-summary.html) - szczegółowa dokumentacja o klasach Java NIO.
-2. [Przewodnik Oracle's File I/O](https://docs.oracle.com/javase/tutorial/essential/io/) - bardziej szczegółowy przewodnik po I/O w Javie.
+Wynik wykonania programu:
+
+```
+Witaj w pliku tekstowym.
+To jest druga linia.
+```
+
+## Pogłębiona wiedza
+Czytanie plików tekstowych ewoluowało w Javie. Kiedyś dominowała klasa `FileReader` w połączeniu z `BufferedReader`. Dziś preferujemy `Files` z `java.nio.file` dla lepszej wydajności i prostoty.
+
+Alternatywy to na przykład `Scanner` do czytania danych z różnych źródeł włączając pliki, czy `FileInputStream` dla binarnych danych. 
+
+Ważne: Obsługa wyjątków i kodowania to kluczowe aspekty. `readAllLines` domyślnie używa UTF-8, co jest bezpieczne dla większości języków, wliczając polski.
+
+## Zobacz również
+- Dokumentacja `Files.readAllLines`: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Files.html#readAllLines(java.nio.file.Path)
+- Tutorial Oracle do NIO.2 (nowe wejście/wyjście): https://docs.oracle.com/javase/tutorial/essential/io/fileio.html
+- Ewolucja wejścia/wyjścia w Javie (ang.): https://www.baeldung.com/java-io-vs-nio

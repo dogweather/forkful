@@ -1,6 +1,7 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Arduino: Lese kommandolinjeargumenter"
+date:                  2024-01-20T17:56:46.481415-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,37 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Behandle kommandolinje-argumenter med Ruby
-
 ## Hva & Hvorfor?
+Kommandolinjeargumenter lar deg sende data direkte til et Ruby-program når du kjører det. Programmere bruker dette for å gjøre programmene fleksible og tilpasse kjøringen uten å endre koden.
 
-Kommando-linje-argumenter er inputs som brukes til å styre programfløden, gitt ved program-start. Programmers bruker dem for å tilpasse programoppførsel uten endringer i koden.
-
-## Hvordan?
-
-Ruby gjør behandling av kommandolinje-argumenter enkelt med `ARGV` array. Den lagrer argumentene som strenger. Her er hvordan:
+## Hvordan:
+Her er et enkelt Ruby-script som leser argumenter fra kommandolinjen:
 
 ```Ruby
-# Lage et program som gjentar de gitte argumentene
-ARGV.each do |argument|
-  puts "Gitt argument: #{argument}"
+# kommandolinje_arg.rb
+argumenter = ARGV
+puts "Du har gitt meg #{argumenter.length} argument(er):"
+argumenter.each_with_index do |arg, index|
+  puts "Argument #{index + 1}: #{arg}"
 end
 ```
-Hvis du kjører dette skriptet som `ruby script.rb Hei Verden`, vil du få:
-
-```Bash
-Gitt argument: Hei
-Gitt argument: Verden
+Kjør scriptet med noen argumenter:
+```
+$ ruby kommandolinje_arg.rb Hei Verden!
+Du har gitt meg 2 argument(er):
+Argument 1: Hei
+Argument 2: Verden!
 ```
 
-## Deep Dive
-
-La oss se litt dypere inn i denne egenskapen av Ruby.
-
-1. **Historisk kontekst**: Fra Unix's tidlige dager har det vært tradisjon å gi innstillinger og data til programmer via kommandolinje-argumentene.
-2. **Alternativene**: Ruby har mange bibliotek som `optparse` for å hjelpe deg med å håndtere mer komplekse argumenter og flagg.
-3. **Implementasjonsdetaljer**: `ARGV` er bare en global array. Dere kan manipulere den på samme måte som alle andre arrays i Ruby. ARGV[0] inneholder det første argumentet, ARGV[1] inneholder det andre, og så videre.
+## Dypdykk
+Tilbake på 90-tallet, da Ruby først kom ut, var det viktig å behandle inputt fra kommandolinjen effektivt, spesielt for script og server-side programmer. Alternativer til `ARGV` inkluderer bruk av `gets` for å lese interaktiv input eller miljøvariabler. Implementasjonsdetaljer: `ARGV` er et globalt array som Ruby tolker fyller med kommandolinjeargumentene før skriptet kjøres. I moderne Ruby-versjoner kan du også bruke `OptionParser` for mer komplekse behov.
 
 ## Se også
-
-Her er noen hjelpsomme kilder som du kan se for å lære mer:
+- Ruby's dokumentasjon om ARGV: https://www.ruby-lang.org/en/documentation/quickstart/4/
+- `OptionParser` klasse dokumentasjon: https://ruby-doc.org/stdlib-2.6.1/libdoc/optparse/rdoc/OptionParser.html
+- En guide til kommandolinjeprogrammering i Ruby: https://www.jstorimer.com/blogs/workingwithcode/7766119-building-awesome-command-line-programs-in-ruby

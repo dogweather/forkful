@@ -1,6 +1,7 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "C++: Porównywanie dwóch dat"
+date:                  2024-01-20T17:34:12.191862-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,39 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego? 
+## Co i Dlaczego?
+Porównywanie dwóch dat polega na ustaleniu, która z nich jest wcześniejsza, późniejsza lub czy są identyczne. Programiści robią to, aby zarządzać wydarzeniami w czasie, np. sortować wpisy bloga, sprawdzać ważność certyfikatów, czy organizować harmonogramy.
 
-Porównywanie dwóch dat to sposób na ustalenie, która data jest wcześniejsza lub późniejsza, albo czy są takie same. Programiści robią to, aby zarządzać i manipulować chronologią eventów i działań w aplikacjach.
-
-## Jak To Zrobić:
-
-W Rust, używamy typu `std::time::SystemTime` do przechowywania punktów w czasie. Sprawdźmy, jak porównać dwie daty:
-
+## Jak to zrobić:
 ```Rust
-use std::time::SystemTime;
+use chrono::{DateTime, Utc};
 
 fn main() {
-    let date1 = SystemTime::now();
-    let date2 = SystemTime::now();
-    
-    match date1.duration_since(date2) {
-        Ok(_) => println!("date1 jest późniejsza"),
-        Err(_) => println!("date1 jest wcześniejsza lub taka sama jak date2"),
+    // Pierwsza data
+    let date1 = Utc.ymd(2023, 3, 14).and_hms(12, 0, 0);
+    // Druga data
+    let date2 = Utc.ymd(2023, 3, 14).and_hms(18, 30, 0);
+
+    if date1 < date2 {
+        println!("date1 jest wcześniej niż date2");
+    } else if date1 > date2 {
+        println!("date1 jest później niż date2");
+    } else {
+        println!("date1 i date2 są identyczne");
     }
 }
 ```
-Wypisze "date1 jest wcześniejsza lub taka sama jak date2", ponieważ date1 i date2 są inicjalizowana praktycznie w tym samym czasie. 
+Wynik:
+```
+date1 jest wcześniej niż date2
+```
 
-## Deep Dive:
+## Deep Dive
+Porównywanie dat w programowaniu jest tak stare jak samo oprogramowanie. W Rust używa się głównie biblioteki `chrono`, która oferuje wiele funkcji do zarządzania czasem i datami. Choć istnieją inne sposoby porównywania dat, jak czas systemowy, `chrono` jest uznawane za de facto standard.
 
-Porównywanie dat jest istotną operacją, która ma swoje korzenie jeszcze w erze przed-komputerowej. Ta operacja jest używana w różnych kontekstach, od zarządzania bazami danych po tworzenie harmonogramów i planów.
+Implementacja porównywania dat wykorzystuje przeciążanie operatorów, które pozwala na używanie symboli takich jak `<`, `>` i `==` do oceny relacji między datami. Konwersja na wartość czasu Unix lub porównanie poszczególnych komponentów (takich jak rok, miesiąc, dzień) to alternatywy, ale są mniej wygodne w użyciu i mogą prowadzić do błędów.
 
-Rust oferuje kilka alternatyw dla `SystemTime`, takich jak biblioteki zewnętrzne, np. `chrono` albo `time`, które umożliwiają więcej operacji na datach.
-
-Główna zaleta `SystemTime` to prostota i wbudowanie w standardową bibliotekę języka. Jednak, nie obsługuje różnych stref czasowych ani formatów dat. Jeżeli jest to wymagane, warto skorzyć z zewnętrznej biblioteki.
-
-## Zobacz Też:
-
-1. [Dokumentacja Rust na SystemTime](https://doc.rust-lang.org/std/time/struct.SystemTime.html)
-2. [Dokumentacja na chrono](https://docs.rs/chrono/0.4.0/chrono/)
-3. [Dokumentacja na time](https://docs.rs/time/0.3.3/time/)
+## Zobacz też:
+- [Chrono Crate Documentation](https://docs.rs/chrono/)
+- [The Rust Programming Language – Understanding Ownership](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html)
+- [Rust by Example](https://doc.rust-lang.org/rust-by-example/)
+- [Rust Time Crate](https://docs.rs/time/) - alternatywna biblioteka do zarządzania czasem

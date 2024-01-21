@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:51:22.918258-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,45 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Interpolacja łańcuchów w PowerShell: Krótkie wprowadzenie
+## What & Why? (Co i Dlaczego?)
+Interpolacja napisów to wstawianie wartości wyrażeń do napisu. Programiści używają tego, aby tworzyć tekst z dynamicznie zmieniającymi się danymi, co ułatwia czytelność i utrzymanie kodu.
 
-## Co to i po co?
-Interpolacja łańcuchów to proces, który umożliwia wstawianie wartości zmiennych bezpośrednio do łańcuchów. Dzięki temu programiści mogą tworzyć dynamiczne łańcuchy znaków, co zwiększa czytelność i efektywność kodu.
-
-## Jak to zrobić:
-Interpolację łańcuchów w PowerShell możemy zrealizować na dwa sposoby. Używając podwójnych cudzysłowów (`"`) lub specjalnego operatora `-f`. Oto przykłady:
-
+## How to: (Jak to zrobić:)
 ```PowerShell
-# Przykład 1: Podwójne cudzysłowy
-$name = "Jan"
-$welcomeMessage = "Witaj, $name"
-Write-Output $welcomeMessage
-```
+# Tworzenie zmiennych
+$userName = "Bartek"
+$dayOfWeek = Get-Date -Format "dddd"
 
+# Interpolacja napisu
+$text = "Cześć, $userName! Dziś jest $dayOfWeek."
+Write-Output $text
+```
 Wynik:
 ```
-Witaj, Jan
+Cześć, Bartek! Dziś jest środa.
 ```
 
+Dodatkowy przykład z użyciem wyrażenia w środku napisu:
 ```PowerShell
-# Przykład 2: Operator -f
-$name = "Jan"
-$welcomeMessage = "Witaj, {0}" -f $name
-Write-Output $welcomeMessage
+$hoursToMeeting = 3
+$text = "Do spotkania pozostało: $($hoursToMeeting * 60) minut."
+Write-Output $text
 ```
-
 Wynik:
 ```
-Witaj, Jan
+Do spotkania pozostało: 180 minut.
 ```
 
-## Szczegółowa analiza:
-Interpolacja łańcuchów jest techniką powszechnie stosowaną nie tylko w PowerShell, ale także w wielu innych językach programowania, takich jak JavaScript czy C#. Przed wprowadzeniem interpolacji łańcuchów w PowerShell, najczęściej korzystano z operatora formatującego `-f`.
+## Deep Dive (Dogłębna analiza)
+Interpolacja napisów nie zawsze była dostępna w językach programowania. W PowerShell pojawiła się jako część 'expandable strings', gdzie $ można użyć do osadzenia zmiennej wewnątrz napisu. Jeśli potrzebujesz umieścić bardziej skomplikowane wyrażenia, używaj `$()` wewnątrz napisu.
 
-Alternatywą dla interpolacji łańcuchów może być sklejanie łańcuchów za pomocą operatora `+` , ale nie jest to zalecana metoda, gdyż jest mniej efektywna, zwłaszcza przy większej ilości danych.
+Alternatywą w PowerShell jest użycie operatora plus (`+`) do łączenia napisów z wartościami, ale to zazwyczaj mniej wygodne niż interpolacja. Naprzykład:
+```PowerShell
+# Przykład bez interpolacji
+$text = "Cześć, " + $userName + "! Dziś jest " + $dayOfWeek + "."
+Write-Output $text
+```
 
-Interpolacja łańcuchów w PowerShell jest obsługiwana poprzez zastosowanie mechanizmu parsera kodu, który odczytuje wartości zmiennych pomiędzy cudzysłowami i umożliwia ich dynamiczne zastępowanie w łańcuchach.
+Interpolacja jest implementowana tak, że w czasie działania programu, środowisko wykonawcze zastępuje wyrażenie zawarte między `$` i końcem napisu lub zamkniętym nawiasem `$()` wartością tej zmiennej lub wyrażenia.
 
-## Zobacz również:
-1. [Wsparcie dla interpolacji łańcuchów w dokumentacji Microsoft](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1#string-expansion-within-double-quotes)
-2. [Poradnik dotyczący operatora -f na stronie SS64](https://ss64.com/ps/syntax-f-operator.html)
+## See Also (Zobacz również)
+- [Microsoft's PowerShell documentation](https://docs.microsoft.com/en-us/powershell/)

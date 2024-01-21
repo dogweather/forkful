@@ -1,6 +1,7 @@
 ---
 title:                "Å starte et nytt prosjekt"
-html_title:           "C: Å starte et nytt prosjekt"
+date:                  2024-01-20T18:03:21.458660-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "C#"
 category:             "C#"
@@ -11,38 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å starte et nytt prosjekt i C# er å opprette en struktur av koder og filer for å bygge en applikasjon eller et bibliotek. Programmerere gjør dette for å omsette ideer til virkelighet, løse problemer, eller teste konsepter.
 
-Å starte et nytt prosjekt innebærer å begynne på en helt ny kodebase, ofte for å oppnå en bestemt funksjon eller løsning. Programmerere gjør dette for å implementere ideer, løse problemer eller skape programvare som forbedrer eksisterende løsninger.
-
-## Hvordan:
-
-Opprett et nytt prosjekt i C# ved hjelp av `.NET Core CLI` (Command-Line Interface). Det er raskt og enkelt. Følg instruksjonene nedenfor:
+## Slik gjør du:
+For å starte et nytt prosjekt, kan du bruke .NET CLI (Command Line Interface) eller Visual Studio. La oss kjøre gjennom CLI:
 
 ```C#
-// Åpne et kommandovindu og naviger til mappen hvor du vil opprette det nye prosjektet.
-// Skriv kommandoen nedenfor for å opprette et nytt konsollprosjekt:
+// 1. Åpne terminal og skriv inn:
+dotnet new console -o MyNewProject
 
-dotnet new console -n MittProsjekt
+// 2. Naviger til prosjektmappen:
+cd MyNewProject
 
-// Denne kommandoen vil opprette en ny mappe med navnet "MittProsjekt" med en enkel "Hello World" konsollapplikasjon.
-// Du kan kjøre dette programmet ved å bruke følgende kommandoer:
+// 3. Skriv inn følgende kode i Program.cs:
+using System;
 
-cd MittProsjekt
+namespace MyNewProject
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hei, Norge!");
+        }
+    }
+}
+
+// 4. Kjør prosjektet med:
 dotnet run
+```
 
-// Output vil være:
-
-Hello World!
+Kjører du koden over, vil du se:
+```
+Hei, Norge!
 ```
 
 ## Dypdykk:
+C#-prosjekter har vært en del av utvikleres liv siden .NET-plattformen ble lansert i 2002. Før CLI ble populært, støttet Visual Studio opprettelsen av nye prosjekter med en grafisk tilnærming - noe som fortsatt er vanlig. Alternativer for å starte nye prosjekter inkluderer å bruke IDEer som JetBrains Rider eller Visual Studio Code med passende utvidelser.
 
-Historien om C# er ganske fascinerende, da språket er en del av .NET-plattformen som ble lansert av Microsoft i 2002. Alternativene til å starte et nytt prosjekt i C# inkluderer bruk av andre programmeringsspråk som Java, Python, eller JavaScript, avhengig av prosjektkravene.
+C# og .NET har vært gjennom mange iterasjoner. Fra .NET Framework til .NET Core og nå til .NET 5/6 og fremover, måten vi oppretter prosjekter på har blitt forenklet betydelig. .NET CLI er idag et kraftfullt verktøy for å administrere prosjekter, håndtere avhengigheter og kjøre applikasjoner.
 
-En viktig detalj med implementeringen av et nytt prosjekt i C# er struktur og organisering av kode. C# følger et objektorientert programmeringsparadigme, noe som betyr at dataene er strukturert som objekter og klasser, noe som kan bidra til å opprettholde ren og effektiv kode.
+Når du oppretter et prosjekt med `dotnet new`, er det en rekke maler tilgjengelig. For eksempel kan `console` byttes ut med `webapp` for å lage en ASP.NET Core webapplikasjon eller `classlib` for å lage et klassebibliotek.
 
-## Se Også:
+.NET 5 og 6 har introdusert ny funksjonalitet for å forbedre ytelsen og produktiviteten. For eksempel, med top-level statements trenger du ikke lenger `namespace` eller `class` deklarasjoner i enkle programmer, noe som forenkler kodebasen ytterligere.
 
-- Microsoft Docs (.NET Core CLI): [https://docs.microsoft.com/dotnet/core/tools/](https://docs.microsoft.com/dotnet/core/tools/)
-- Introduksjon til C# - lærebok: [https://docs.microsoft.com/dotnet/csharp/tour-of-csharp/](https://docs.microsoft.com/dotnet/csharp/tour-of-csharp/)
-- Grunnleggende objektorientert programmering i C#: [https://www.w3schools.com/cs/cs_oop.php](https://www.w3schools.com/cs/cs_oop.php)
+## Se også:
+- Microsofts offisielle dokumentasjon for .NET CLI: https://docs.microsoft.com/dotnet/core/tools/
+- Oversikt over C# prosjektstruktur: https://docs.microsoft.com/dotnet/core/tutorials/
+- Lær mer om .NET versjonshistorikk: https://dotnet.microsoft.com/platform/dotnet-standard#versions
+- Om top-level statements: https://docs.microsoft.com/dotnet/csharp/fundamentals/program-structure/top-level-statements

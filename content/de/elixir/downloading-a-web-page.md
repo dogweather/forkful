@@ -1,7 +1,8 @@
 ---
-title:                "Eine Webseite herunterladen"
-html_title:           "Arduino: Eine Webseite herunterladen"
-simple_title:         "Eine Webseite herunterladen"
+title:                "Webseite herunterladen"
+date:                  2024-01-20T17:44:02.455773-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Webseite herunterladen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,42 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Webseiten Herunterladen mit Elixir
-
 ## Was & Warum?
-
-Das Herunterladen einer Webseite bedeutet, ihre Inhalte lokal zu speichern. Programmierer tun dies häufig, um Daten zu analysieren oder Offline-Zugriff zu ermöglichen.
+Das Herunterladen einer Webseite bedeutet, ihren Inhalt über das Internet abzurufen. Programmierer machen das, um Daten zu sammeln, automatisierte Tests durchzuführen oder Inhalte für die Verarbeitung zu extrahieren.
 
 ## So geht's:
+Elixir verwendet die HTTPoison-Bibliothek für HTTP-Anfragen. Wir installieren HTTPoison, machen eine Anfrage und verarbeiten die Antwort:
 
-Sie können die HTTPotion-Bibliothek in Elixir verwenden, um eine Website zu holen. Hier ein einfaches Beispiel:
+```elixir
+# In mix.exs, fügen Sie {:httpoison, "~> 1.8"} zum Abschnitt :deps hinzu.
+defp deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
+end
 
-```Elixir
-defmodule DownloadWebPage do
-  def download(url) do
-    HTTPotion.start
-    {:ok, response} = HTTPotion.get(url)
-    response.body
+# Dann führen Sie `mix deps.get` aus, um die Abhängigkeit zu installieren.
+
+# Verwenden Sie HTTPoison, um eine Webseite herunterzuladen:
+defmodule PageDownloader do
+  def fetch(url) do
+    case HTTPoison.get(url) do
+      {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
+        {:ok, body}
+      {:ok, %HTTPoison.Response{status_code: code}} ->
+        {:error, "Unable to fetch page. Status code: #{code}"}
+      {:error, %HTTPoison.Error{reason: reason}} ->
+        {:error, "Error fetching page: #{reason}"}
+    end
   end
 end
 
-IO.puts DownloadWebPage.download("https://www.example.com")
+# Beispielaufruf und mögliche Ausgabe:
+PageDownloader.fetch("http://example.com")
+# => {:ok, "<html>...</html>"}
 ```
 
-In diesem Code wird die `get`-Methode von HTTPotion aufgerufen, um den Inhalt der angegebenen URL zu erhalten. Das Ergebnis wird dann ausgegeben.
+## Deep Dive:
+Elixir-Programmierer nutzen oft HTTPoison, das auf Erlangs `hackney`-Bibliothek basiert, um HTTP-Anfragen zu machen. Es gibt Alternativen wie `Tesla`, das Middleware unterstützt, und `HTTPotion`, wobei HTTPoison meistens für seine Einfachheit und Leistungsfähigkeit bevorzugt wird. Beim Herunterladen einer Webseite müssen Dinge wie Antwort-Codes, Weiterleitungen, Timeouts und Fehlerbehandlung berücksichtigt werden.
 
-## Deep Dive
-
-Das Herunterladen von Webseiten ist keine neue Praxis. Es reicht bis in die frühen Tage des Internets zurück, als Zugang selten und kostspielig war. Heute wird es bei Web Scrapping, Datamining und für Offline-Zugänge genutzt.
-
-Alternativen zum Herunterladen einer Webseite in Elixir sind andere Bibliotheken wie HTTPoison oder :httpc, die standardmäßig in Erlang/OTP enthalten ist, auf dem Elixir basiert.
-
-Beim Herunterladen von Webseiten ist es wichtig, den "robots.txt" der jeweiligen Webseite zu beachten, um Regeln und Einschränkungen einzuhalten. Zudem sollte man die Anfragen soweit wie möglich limitieren, um die Webseite nicht zu überlasten.
-
-## Siehe Auch
-
-Verwandte Ressourcen zum Thema:
-
-- Elixir's offizielle Dokumentation auf [Elixir School](https://elixirschool.com/de/)
-- Erlaubnisse und ethisches Surfen - [Robots.txt](https://developers.google.com/search/docs/advanced/robots/create-robots-txt?visit_id=637672168116277084-3858952796&rd=1)
-- Alternative Bibliotheken zur HTTP-Anforderung in Elixir - [HTTPoison auf Github](https://github.com/edgurgel/httpoison) und [:httpc in Erlang/OTP](http://erlang.org/doc/man/httpc.html)
+## Siehe Auch:
+- [HTTPoison documentation](https://hexdocs.pm/httpoison/HTTPoison.html)
+- [Erlang `hackney` library](https://github.com/benoitc/hackney)
+- [Tesla Elixir library](https://github.com/teamon/tesla)

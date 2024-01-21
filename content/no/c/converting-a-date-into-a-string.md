@@ -1,6 +1,7 @@
 ---
 title:                "Konvertere en dato til en streng"
-html_title:           "C: Konvertere en dato til en streng"
+date:                  2024-01-20T17:35:52.395623-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konvertere en dato til en streng"
 programming_language: "C"
 category:             "C"
@@ -11,46 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å konvertere en dato til en streng i programmering betyr å endre en datoverdi til en lesbar tekststreng. Programmerere gjør dette for mer brukervennlig visning, lagring av data, eller for å manipulere dem i tekstform.
+Konvertering av en dato til en streng innebærer å omdanne datotypen som representerer tidspunkter til tekstformat. Dette gjøres for å lettere vise datoer for brukere eller å lagre dem i tekstbaserte formater som JSON eller CSV.
 
-## Hvordan du gjør det:
-Dato til streng konvertering i C kan oppnås ved bruk av `strftime` funksjonen. Dette er en standardisert funksjon tilgjengelig i `time.h` biblioteket.
+## Slik gjør du det:
+For å konvertere en dato til en streng i C, kan du bruke `strftime`-funksjonen. Koden nedenfor viser et enkelt eksempel:
 
-```C
-#include <time.h>
+```c
 #include <stdio.h>
+#include <time.h>
 
 int main() {
-    char str[80];
-    time_t t = time(NULL);
-    struct tm *tmp = localtime(&t);
+    char datoStreng[100];
+    time_t naa = time(NULL);
+    struct tm *tidStruktur = localtime(&naa);
 
-    if(tmp == NULL) {
-        printf("Failed to execute localtime\n");
-        return 1;
-    }
+    strftime(datoStreng, sizeof(datoStreng), "%d-%m-%Y %H:%M", tidStruktur);
+    printf("Dagens dato og tid: %s\n", datoStreng);
 
-    if(strftime(str, sizeof(str), "%d-%m-%Y %H:%M:%S", tmp) == 0) {
-        printf("Failed to execute strftime\n");
-        return 1;
-    }
-
-    printf("%s\n", str);
     return 0;
 }
 ```
-Når du kjører koden over, vil den skrive ut den gjeldende datoen og tiden i formatet "dd-mm-yyyy HH:MM:SS".
 
-## Dypdykk
-**Historisk kontekst:** `strftime` funksjonen har sitt opphav i C standardbiblioteket og har vært tilgjengelig helt siden C89/C90 standarden. Dette gjør det til en betrodd og utbredt løsning for dato-streng konvertering.
+Forventet utdata:
+```
+Dagens dato og tid: 24-03-2023 14:55
+```
 
-**Alternativer:** Det er også mulig å bruke sprintf-funksjonen for å konvertere en strukturert dato til en streng. Men `strftime` har fordelen at det håndterer validering med datasikring på en mer effektiv måte.
+## Dypdykk:
+`strftime` funksjonen har vært en del av C standardbiblioteket siden C89-standarden og gir formateringsmuligheter for dato og tid som er fleksible. Alternativer til `strftime` kan være `sprintf` kombinert med individuelle tidkomponenter eller bruk av tredjeparts biblioteker som `date.h` for mer komplekse behov. Når du implementerer datokonvertering, bør du tenke på lokalitet, siden datoformatet kan variere fra sted til sted.
 
-**Implementeringsdetaljer:** `strftime` fungerer ved å ta en formatteringstreng som definert av brukeren. Denne strengen inneholder forskjellige direktiver som begynner med `%`, fulgt av bokstaver som representerer forskjellige dato- og tidskomponenter.
-
-## Se Også
-For å lære mer om temaet, sjekk ut følgende ressurser:
-
-1. C Standard Library referanse: strftime: https://www.cplusplus.com/reference/ctime/strftime/
-2. "Mastering Algorithms with C" av Kyle Loudon.
-3. "C Programming Absolute Beginner's Guide (3rd Edition)" av Greg Perry og Dean Miller.
+## Se også:
+- C Standard Library: https://en.cppreference.com/w/c/chrono
+- `date.h`: https://github.com/HowardHinnant/date
+- JSON-formatet: https://www.json.org/json-en.html
+- CSV-formatet: https://tools.ietf.org/html/rfc4180

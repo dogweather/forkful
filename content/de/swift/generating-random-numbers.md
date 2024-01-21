@@ -1,7 +1,8 @@
 ---
-title:                "Zufallszahlen generieren"
-html_title:           "Arduino: Zufallszahlen generieren"
-simple_title:         "Zufallszahlen generieren"
+title:                "Generierung von Zufallszahlen"
+date:                  2024-01-20T17:50:00.884970-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generierung von Zufallszahlen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Numbers"
@@ -10,30 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und Warum?
-Zufallszahlen zu generieren bedeutet, eine Nummer in einem bestimmten Bereich zu erzeugen, die nicht vorhersehbar ist. Dies ist nützlich in vielen Bereichen der Programmierung, wie z.B. bei Spielen, zum Testen und bei Kryptographie.
+## Was & Warum?
+Zufallszahlen erzeugen heißt, nicht vorhersehbare Werte zu kreieren. Programmierer nutzen das für Spiele, Simulationen und alles, wo's auf Unvorhersehbarkeit ankommt.
 
-## Wie man's macht:
-In Swift können wir die `random(in:)` Funktion verwenden, um Zufallszahlen zu generieren. Sie muss einfach durch den gewünschten Bereich aufgerufen werden, und sie gibt uns eine Zufallszahl zurück.
+## How to:
+Swift macht's einfach. Hier ein paar Beispiele:
+
 ```Swift
-let randomInt = Int.random(in: 0..<10)
-let randomDouble = Double.random(in: 0..<10)
-let randomBool = Bool.random()
-
+// Ganze Zahlen zwischen 0 und 10
+let randomInt = Int.random(in: 0...10)
 print(randomInt)
+
+// Gleitkommazahlen zwischen 0 und 1
+let randomDouble = Double.random(in: 0...1)
 print(randomDouble)
+
+// Zufälliger Boolean
+let randomBool = Bool.random()
 print(randomBool)
 ```
-Die Ausgabe könnte wie folgt aussehen:
-```Swift
-3
-7.465829345460347
-false
+
+Erwartete Ausgabe könnte sein:
+```
+7
+0.1349238796013456
+true
 ```
 
-## Vertiefung:
-Historisch gesehen wurde die Generierung von Zufallszahlen früher durch kompliziertere Algorithmen erreicht, aber seit Swift 4.2 stellt das Swift-Team uns eine einfache und intuitive Methode zur Verfügung. Alternativen könnten die Verwendung von Random Number Generators (RNGs) von Drittanbietern sein, aber in den meisten Fällen ist die eingebaute Funktion genug. Die Swift-Implementierung verwendet ein sicherer RNG, was wichtig für kritische Einsatzzwecke wie Kryptographie ist.
+## Deep Dive
+Swift verwendet für Zufallszahlen unter der Haube `arc4random_uniform()` oder neuerdings `random()` Funktionen. Seit Swift 4.2 bietet `RandomNumberGenerator` Protokoll mehr Flexibilität. Historisch wurde oft der Pseudozufallszahlengenerator (PRNG) statt echter Zufallszahlengeneratoren (RNG) eingesetzt. Swift kümmert sich darum, sodass der Default ausreicht.
 
-## Siehe auch:
-- [Apple Docs zu random(in:) Funktion](https://developer.apple.com/documentation/swift/int/2995648-random) 
-- [SO: How to generate random numbers in Swift](https://stackoverflow.com/questions/24007129/how-does-one-generate-a-random-number-in-apples-swift-language)
+Aber was, wenn's spezifisch sein muss? Es gibt `SystemRandomNumberGenerator` für's betriebssystemeigene RNG. Für Reproduzierbarkeit: eigene Generatoren. `seed()`-Methoden gestalten den Startwert handhabbar.
+
+## See Also
+- Apple's Dokumentation zum `RandomNumberGenerator` Protokoll: [Hier ansehen](https://developer.apple.com/documentation/swift/randomnumbergenerator)
+- Ein Artikel über Zufallszahlen in Swift: [Hier lesen](https://www.raywenderlich.com/802-jump-start-random-number-generation-in-swift)

@@ -1,7 +1,8 @@
 ---
-title:                "Démarrer un nouveau projet"
-html_title:           "Elm: Démarrer un nouveau projet"
-simple_title:         "Démarrer un nouveau projet"
+title:                "Lancement d'un nouveau projet"
+date:                  2024-01-20T18:03:23.763577-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lancement d'un nouveau projet"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Getting Started"
@@ -10,11 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Démarrer un nouveau projet en programmation Go c'est comme dessiner un plan pour un bâtiment. C'est essentiel car sans cela, nous ne saurions pas où aller et comment le rendre réel.
+## Quoi & Pourquoi ?
 
-## Comment faire:
-Voici comment vous pouvez initialiser un nouveau projet Go :
+Commencer un nouveau projet en Go, c'est initialiser l'espace de travail avec les fichiers de base. Les programmeurs font ça pour organiser et préparer le terrain pour leur code futur.
+
+## Comment Ça Marche :
 
 ```Go
 package main
@@ -22,19 +23,34 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("Bonjour, nouveau projet!")
+    fmt.Println("Bonjour le nouveau projet Go!")
 }
 ```
 
-Exécutez le fichier, vous verrez ce qui suit en sortie :
-
-```Go
-Bonjour, nouveau projet!
+Sortie attendue :
+```
+Bonjour le nouveau projet Go!
 ```
 
-## Plongée en profondeur
-Historiquement, les projets Go étaient tous dans un même espace de travail ce qui causaient des conflits de dépendances. Vers Go 1.11, "Go modules" est devenu la nouvelle norme pour la gestion de projet - ses concurrents étant GB et Godep. Les modules ont permis d'avoir de multiples versions d'un même package dans un même espace de travail.
+Initialisation du projet :
+```shell
+$ mkdir monprojetgo
+$ cd monprojetgo
+$ go mod init monprojetgo
+```
 
-## Voir Également
-2. [Gérer les dépendances avec Go modules](https://blog.golang.org/using-go-modules)
-3. [Initier un nouveau projet Go avec VSCode](https://medium.com/@san40u/setting-up-golang-in-vscode-8ea79b2106fb)
+Après l'initialisation, vous pouvez créer des fichiers `.go` et commencer à coder.
+
+## Des Infos Plus Poussées
+
+Historiquement, Go (ou Golang) a été créé par Google pour simplifier la programmation système. En structurant un nouveau projet, on établit les dépendances avec `go mod` depuis Go 1.11. C'est plus propre que les anciens GOPATH. 
+
+Alternatives ? Certains utilisent des outils comme GoLand ou Visual Studio Code avec des extensions pour démarrer un projet, mais la ligne de commande reste roi pour la simplicité et contrôle.
+
+Côté implémentation, la création d'un `go.mod` définit les modules et leurs versions. On gère ainsi mieux les paquets utilisés, ce qui rend les builds répétables et les partages de projet plus fluides. Plus de "ça marche sur ma machine" !
+
+## Voir Aussi
+
+- La documentation officielle de Go: https://golang.org/doc/
+- Un tutoriel approfondi sur `go mod`: https://blog.golang.org/using-go-modules
+- Un guide pour bien structurer vos projets Go: https://github.com/golang-standards/project-layout

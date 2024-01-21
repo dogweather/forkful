@@ -1,6 +1,7 @@
 ---
 title:                "המרת תאריך למחרוזת"
-html_title:           "Bash: המרת תאריך למחרוזת"
+date:                  2024-01-20T17:36:09.649095-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "המרת תאריך למחרוזת"
 programming_language: "C"
 category:             "C"
@@ -10,42 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה? (What & Why?)
+## What & Why?
+## מה ולמה?
 
-המרת תאריך למחרוזת היא תהליך של שינוי התאריך מפורמט של משתנה מסוג תאריך למשתנה מסוג מחרוזת. מתכנתים עושים את זה כדי להציג או לשמור את התאריך בצורה קריאה לאנוש.
+להמיר תאריך למחרוזת זה לקחת נתוני תאריך (כמו שנה, חודש, יום) ולהפוך אותם לרצף תווים. פרוגרמרים עושים את זה בשביל לנהל ולהציג תאריכים בצורה ידידותית למשתמש או להפוך אותם לפורמט שניתן לאחסון.
 
-## איך: (How to:)
+## How to:
+## איך לעשות:
+
+ב-C, הפיכת תאריך למחרוזת מתבצעת בעזרת הפונקציה `strftime`. דוגמה לשימוש:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    char buffer[80];
-    time_t rawtime;
-    struct tm * timeinfo;
+    char dateStr[100];
+    time_t now = time(NULL);
+    struct tm *tm_struct = localtime(&now);
 
-    time (&rawtime);
-    timeinfo = localtime (&rawtime);
-
-    strftime (buffer,80,"אנו כעת בשעה %I:%M%p והתאריך הוא %A, %B %d, %Y.",timeinfo);
-    puts (buffer);
+    strftime(dateStr, sizeof(dateStr), "%d/%m/%Y %H:%M:%S", tm_struct);
+    printf("The current date and time is: %s\n", dateStr);
 
     return 0;
 }
 ```
 
-אתה יכול לצפות לראות פלט מהסוג של: "אנו כעת בשעה 07:26PM והתאריך הוא יום שני, נובמבר 22, 2021."
+פלט דוגמה:
+```
+The current date and time is: 21/03/2023 14:55:31
+```
 
-## צלילה עמוקה (Deep Dive)
+## Deep Dive
+## צלילה לעומק
 
-1. **קונטקסט היסטורי:** בעבר, מתכנתים היו נאלצים לכתוב שורות רבות של קוד על מנת להמיר תאריך למחרוזת. אך עם הזמן, שפות תכנות חדישות כמו C התפתחו וסיפקו פונקציות מובנות שמקלות על התהליך.
-   
-2. **אלטרנטיבות:** אתה יכול גם להשתמש בפונקציה sprintf, אך המלצתנו היא להשתמש בפונקציה strftime שכוללת יותר אפשרויות עיצוב.
-   
-3. **פרטי התממשק:** נציב הפונקציה strftime מאפשר לך לעצב את המחרוזת ערך באופן שאתה מעוניין. %.A מקביל לשם היום, %.B לשם החודש, %.d ליום בחודש, %.Y לשנה.
+הסטנדרט לשפת C, כבר מהשנים ה-70’, כלל דרכים לעבוד עם תאריכים וזמנים. עם השנים, נוספו פונקציות כמו `strftime` שמאפשרת המרה של נתוני `struct tm` (המייצגת זמן במערכת) למחרוזת בפורמטים שונים. אלטרנטיבות כמו `sprintf` או שימוש במחלקות זמן בספריות חיצוניות קיימות, אך `strftime` נותרת פופולרית בגלל היעילות והגמישות שלה. מידע על time zones, daylight saving ותרבויות שונות יכול להשפיע על אופן ההצגה של התאריך וזמן, לכן תמיד כדאי לבדוק שנתונים אלו מנוהלים נכון.
 
-## ראה גם (See Also)
+## See Also
+## ראה גם:
 
-1. [תיעוד של strftime](https://www.cplusplus.com/reference/ctime/strftime/)
-3. [C library function - strftime()](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
+- [C Standard Library - `<time.h>`](http://www.cplusplus.com/reference/ctime/)
+- [strftime - C++ Reference](http://www.cplusplus.com/reference/ctime/strftime/)
+- [ISO C and POSIX time APIs](https://en.wikipedia.org/wiki/C_date_and_time_functions)

@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http"
-html_title:           "Arduino: Wysyłanie żądania http"
-simple_title:         "Wysyłanie żądania http"
+title:                "Wysyłanie żądania HTTP"
+date:                  2024-01-20T18:00:39.376305-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie żądania HTTP"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -11,34 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i Dlaczego?
-Wysyłanie żądania HTTP to prośba wysłana do serwera, aby udostępnił potrzebne nam dane. Programiści robią to, aby uzyskać dostęp do danych, z którymi chcą pracować, bez konieczności ich przechowywania lokalnie.
+
+Wysyłanie żądania HTTP to sposób na komunikację Twojego programu z serwerem webowym; wyślij zapytanie i odbierz odpowiedź. Programiści to robią, aby akcesować dane, interaktywować z API lub serwisami webowymi.
 
 ## Jak to zrobić:
-Najprostszym sposobem na wysłanie żądania HTTP w Ruby jest użycie gemu 'net/http'. Oto przykładowe użycie:
+
+Ruby używa kilku gemów do obsługi HTTP, jak `net/http` – wbudowane i gotowe do użycia. Oto przykład:
 
 ```Ruby
 require 'net/http'
+require 'uri'
 
-url = URI("http://example.com/")
-response = Net::HTTP.get(url)
+uri = URI('http://example.com/index.html')
+response = Net::HTTP.get(uri)
 
 puts response
 ```
 
-Wykonanie powyższego kodu zwróci ciało żądania jako napis.
+Jeśli uruchomisz ten kod, zobaczysz zawartość strony `http://example.com/index.html` wyświetlającą się w konsoli.
+
+## Deep Dive
+
+Zanim powstały gemy takie jak `net/http`, `httparty` czy `rest-client`, komunikacja HTTP była bardziej skomplikowana. Musiałeś samodzielnie radzić sobie z niższym poziomem szczegółów, takich jak tworzenie gniazd sieciowych i ręczne parsowanie odpowiedzi HTTP. Na szczęście, te biblioteki ułatwiają zadanie, abstrahując większość złożoności.
+
+Alternatywami dla `net/http` są `httparty` i `rest-client`, które oferują bardziej intuicyjne API:
 
 ```Ruby
-# Output
-""Hello world"
+# Z 'httparty'
+require 'httparty'
+
+response = HTTParty.get('http://example.com/index.html')
+puts response.body
 ```
 
-## Pogłębiona Analiza
-Ruby nie zawsze miało takie możliwości. W rzeczywistości, obsługa HTTP została dodana już w okolicach Ruby 1.8. WCześniej, musieliśmy polegać na narzędziach zewnętrznych, jak curl.
+```Ruby
+# Z 'rest-client'
+require 'rest-client'
 
-Jest wiele alternatyw dla 'net/http', takich jak 'open-uri' lub 'HTTParty', które oferują bardziej rozbudowane funkcje i łatwiejszy interfejs. W przypadku bardziej skomplikowanych zapytań, mogą okazać się lepszym wyborem.
+response = RestClient.get('http://example.com/index.html')
+puts response.body
+```
 
-Wysyłanie żądania HTTP to dość proste zadanie - od strony implementacji najtrudniejszym elementem jest prawdopodobnie obsługa błędów i sytuacji nietypowych. ULatwia to zrozumienie, jak działa protokół HTTP i jakie kody statusu można oczekiwać.
+Implementacje mogą różnić się w zależności od potrzeb – `net/http` jest dobry do prostych rzeczy, ale dla większych aplikacji warto rozważyć coś bardziej wydajnego. Pamiętaj, że przy każdym z tych rozwiązań musisz obsłużyć możliwe wyjątki i błędy połączenia.
 
-## Zobacz również
-- [Dokumentacja net/http](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Dokładny opis protokołu HTTP](https://developer.mozilla.org/pl/docs/Web/HTTP/Overview)
+## Zobacz także:
+
+- Ruby Dokumentacja `Net::HTTP`: https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/Net/HTTP.html
+- `HTTParty` gem: https://github.com/jnunemaker/httparty
+- `Rest-Client` gem: https://github.com/rest-client/rest-client
+- Przewodnik po HTTP w Ruby: https://www.rubyguides.com/2018/08/ruby-http-request/

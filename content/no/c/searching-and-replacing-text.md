@@ -1,7 +1,8 @@
 ---
-title:                "Søking og erstatning av tekst"
-html_title:           "Lua: Søking og erstatning av tekst"
-simple_title:         "Søking og erstatning av tekst"
+title:                "Søking og erstatting av tekst"
+date:                  2024-01-20T17:57:20.420126-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Søking og erstatting av tekst"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,69 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Søk og Erstatt Tekst i C Programmering
+## What & Why?
+Tekstsøk og -erstattning lar oss finne spesifikke ord eller fraser og bytte dem ut med noe annet. Hvorfor? Det sparer tid, automatiserer kjedelige oppgaver og reduserer menneskelige feil i kode eller dokumenter.
 
-## Hva & Hvorfor?
-
-Søk og erstatt tekst refererer til den prosessen hvor du lokaliserer en bestemt tekststreng i et større datasett og bytter det ut med annen tekst. Dette er avgjørende for programmerere da det vesentlig hjelper ved behandling av tekstfiler, oppdatering av kode eller datatabeller.
-
-## Hvordan:
-
-La oss gå rett til koden. Vi vil bruke funksjonen `strstr` for å søke og funksjonen `strcpy` for å erstatte tekst. Se eksempelet nedenfor.
+## How to:
+Nedenfor finner du en enkel C-programkode som bruker `strstr` og `strcpy` for å søke og erstatte tekst.
 
 ```C
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
 
-#define MAX_RLEN 50
+void searchAndReplace(char *source, const char *search, const char *replace) {
+    char buffer[1024]; 
+    char *pos;
+    int index = 0;
 
-void search_replace(char *str, char *oldWord, char *newWord){
-    char buffer[MAX_RLEN];
-    char *ch;
- 
-    // Sjekker om det gamle ordet er i strengen
-    while((ch = strstr(str, oldWord)) != NULL){
-        // Backup pekeren
-        strncpy(buffer, str, ch-str); 
-        buffer[ch-str] = '\0';
-        
-        // Legg det nye ordet til bufferen
-        strcat(buffer, newWord);
- 
-        // Legg resten av den opprinnelige strengen til bufferen
-        strcat(buffer, ch+strlen(oldWord));
- 
-        // Kopier buffer til den opprinnelige strengen
-        strcpy(str, buffer);
+    while ((pos = strstr(source, search)) != NULL) {
+        strcpy(buffer, source);
+        index = pos - source;
+        source[index] = '\0';
+        strcat(source, replace);
+        strcat(source, buffer + index + strlen(search));
     }
 }
 
-int main(){
-    char str[] = "Hei verden";
-    char oldWord[] = "verden";
-    char newWord[] = "Norge";
+int main() {
+    char text[] = "Eple er godt, og jeg liker eple!";
+    const char *search = "eple";
+    const char *replace = "banan";
 
-    search_replace(str, oldWord, newWord);
-
-    printf("%s", str);
-
+    searchAndReplace(text, search, replace);
+    printf("Erstattet tekst: %s\n", text);
     return 0;
 }
 ```
 
-Kjører dette vil gi følgende utskrift:
+Forventet utskrift:
 
-`Hei Norge`
+```
+Erstattet tekst: Banan er godt, og jeg liker banan!
+```
 
-## Dyp Dykk
+## Deep Dive
+Søk og erstatning er en gammel idé. I tidlige dager av databearbeidning, var det en manuell jobb. Med fremveksten av tekstbehandlere på 60- og 70-tallet, ble det enklere.
 
-Historisk sett har søk og erstatt tekst vært en funksjon som har vært tilgjengelig på mange forskjellige høynivåspråk og tekstbehandlingsapplikasjoner. I C underbygger det mange funksjoner og er viktig for alle som jobber med store tekstfiler.
+`strstr` søker etter en understreng. `strcpy` og `strcat` håndterer kopiering og sammenslåing. Effektiviteten av disse funksjonene avhenger av implementasjonen og lengden på tekstene involvert.
 
-Alternativene til `strstr` og `strcpy` inkluderer funksjoner som `strchr` (søke etter første forekomst av en karakter) og `strrchr` (søke etter siste forekomst av en karakter), samt funksjoner som `strncat` og `strncpy`.
+Alternativer til C sin standardbibliotek inkluderer regulære uttrykk via biblioteker som PCRE (Perl Compatible Regular Expressions), og moderne språkfunksjoner som tilbyr mer kraftfulle tekstbehandling verktøy out-of-the-box.
 
-Disse funksjonene baserer seg på å streife gjennom hvert karakter av strengen, fra første til siste karakter, og sjekk med forekomsten av det gamle ordet. Dette gjør at 'søk og erstatstekst' fungerer i konstant tidsspredning.
+I C er detaljert håndtering nødvendig fordi programmereren må passe på bufferstørrelser og minnehåndtering. Det er en del av språkets lave nivå natur som gir kraften og fleksibiliteten mange C-programmerere verdsetter.
 
-## Se Også:
-
-For mer info om tekstbehandling i C, sjekk ut:
-2. [C String-handling Library](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+## See Also
+- C Standard Library documentation: https://en.cppreference.com/w/c/string
+- PCRE Project: https://www.pcre.org/
+- Regular Expressions info: https://www.regular-expressions.info/

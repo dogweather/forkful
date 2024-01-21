@@ -1,7 +1,8 @@
 ---
-title:                "文字列を小文字に変換する"
-html_title:           "Arduino: 文字列を小文字に変換する"
-simple_title:         "文字列を小文字に変換する"
+title:                "文字列を小文字に変換"
+date:                  2024-01-20T17:39:19.815018-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "文字列を小文字に変換"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,38 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# TypeScriptで文字列を小文字に変換する方法
+## What & Why?
+## なにを？そしてなぜ？
 
-## 何となぜ？
-文字列を小文字に変換するとは、全ての大文字を対応する小文字に変更することです。この操作は大小文字の区別なく文字列を検索、比較、マッチングするときによく使用されます。
+文字列を小文字に変換するとは、アルファベットが大文字で書かれている文字列を全て小文字にする処理のこと。この変換は、大文字小文字を区別せずにデータを比較したり、検索したりするときに使う。
 
-## どうやる？
-次のコードブロックでは、TypeScriptで文字列を小文字に変換する方法を示しています：
-
-```TypeScript
-let msg = "Hello World!";
-console.log(msg.toLowerCase());
-```
-
-出力は次の通りです：
+## How to:
+## 方法:
 
 ```TypeScript
-"hello world!"
-```
+// 文字列を小文字に変換する簡単な例:
+let greeting: string = "Konnichiwa, Sekai!";
+let lowerCaseGreeting: string = greeting.toLowerCase();
 
-## ディープダイブ
-大文字と小文字を区別せずに文字列比較を行う際に小文字変換が使用されるのは、この手法が昔から続いているからです。しかし、たまには大小文字を無視したい場合もあります。その場合には`toLocaleLowerCase()`メソッドが活用できます。
+console.log(lowerCaseGreeting); // "konnichiwa, sekai!"
+```
 
 ```TypeScript
-let msg = "Hello World!";
-console.log(msg.toLocaleLowerCase('tr-TR')); // Turkish locale.
+// 大文字小文字混じりの文字列を扱う例:
+let mixedCaseString: string = "TypeScript Wa Tanoshii!";
+let lowerCasedString: string = mixedCaseString.toLowerCase();
+
+console.log(lowerCasedString); // "typescript wa tanoshii!"
 ```
 
-実装に関しては、`toLowerCase()`と`toLocaleLowerCase()`はJavaScript（そしてTypeScript）の内部で異なるUnicode処理を使用します。
+## Deep Dive
+## 詳細情報:
 
-## 参考情報
-以下のリンクは関連する情報源を示しています：
+文字列を小文字に変換する処理は、プログラミングの世界に古くから存在しています。最初は単純な文字列処理としてのみ用いられていましたが、今日ではデータの正規化や検索処理に欠かせないツールとなっています。
 
-1. JavaScriptの`toLowerCase()` [詳細](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+TypeScriptでは、`String.prototype.toLowerCase` メソッドを使用してこの変換を行います。このメソッドはECMAScriptの標準に基づき、Unicode標準に従って各文字を適切な小文字に変換します。
 
-2. JavaScriptの`toLocaleLowerCase()` [詳細](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)
+代替手段として、`String.prototype.toLocaleLowerCase` があり、これは特定の言語に特化した小文字変換を提供します。たとえばトルコ語では、大文字の 'I' は小文字の 'i' には変換せず 'ı' にします。しかし、ほとんどのケースでは `toLowerCase` で十分です。
+
+変換の実装には、特定の文字コードの範囲を対象としたマッピングテーブルが使われることが一般的です。各文字コードに対応する小文字のコードを見つけ出し、新しい文字列を作成します。
+
+## See Also
+## 関連情報:
+
+- MDN Web Docsの`String.prototype.toLowerCase`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+- Unicode標準についての詳細情報: https://www.unicode.org/
+- TypeScript公式ドキュメント: https://www.typescriptlang.org/docs/

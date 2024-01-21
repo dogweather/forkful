@@ -1,6 +1,7 @@
 ---
 title:                "HTTPリクエストの送信"
-html_title:           "Bash: HTTPリクエストの送信"
+date:                  2024-01-20T18:00:14.742611-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTPリクエストの送信"
 programming_language: "Java"
 category:             "Java"
@@ -10,38 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-HTTPリクエストの送信は、Webサーバーに対する指示です。これを行うと、APIからデータを取得したり、Webサービスと対話したりすることができます。
+## What & Why? (何となぜ？)
 
-## どうやって：
-以下に、JavaでHTTP requestを送信する一例を示します：
+HTTPリクエストっていうのは、Webサーバーに情報を要求する方法です。この技術を使う理由は、外部データの取得やAPIとの連携のため。簡単かつ強力です。
 
-```Java
+## How to: (やり方)
+
+以下のサンプルコードを使って、JavaでHTTP GETリクエストを送る方法を見てみましょう。
+
+```java
+import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.net.URI;
-import java.net.http.HttpHeaders;
-import java.net.http.HttpClient.Version;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
-        HttpClient client = HttpClient.newBuilder().version(Version.HTTP_2).build();
-        HttpRequest request = HttpRequest.newBuilder().uri(URI.create("http://example.com")).GET().build();
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        
-        System.out.println("Response code is: " + response.statusCode());
-        HttpHeaders headers = response.headers();
-        headers.map().forEach((k, v) -> System.out.println(k + ":" + v));
+    public static void main(String[] args) {
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://example.com"))
+                .build();
+
+        client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+                .thenApply(HttpResponse::body)
+                .thenAccept(System.out::println)
+                .join();
     }
 }
 ```
 
-このコードは、"http://example.com"へのHTTP GETリクエストを作成し、送信してから、レスポンスを表示します。
+サンプル出力:
 
-## 詳細掘り下げ：
-HTTPリクエストの送信は、インターネットの基本的な機能です。初期のインターネットはNCSA Mosaicなどのブラウザを通じて人々に開放され、HTTPリクエストとレスポンスの概念が広く知られることになりました。JavaでHTTPリクエストを送信するための別の方法は、Apache HttpClientなどのサードパーティのライブラリを使用することですが、Java 11以降では、Java標準ライブラリのHttpClientがあります。'GET','POST','PUT','DELETE'などの様々なHTTPメソッドをサポートし、レスポンスのハンドリングも柔軟に行うことができます。
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
 
-## 参照：
-- [OracleのJava 11 HttpClientガイド](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
-- [Apache HttpClient](https://hc.apache.org/httpcomponents-client-ga/)
+## Deep Dive (深く掘り下げて)
+
+かつてJavaでは、`HttpURLConnection` クラスを使ってHTTPリクエストを送っていましたが、Java 11からは `java.net.http.HttpClient` クラスが導入され、よりシンプルかつモダンなAPIとして推奨されています。他の言語のライブラリと同様に、非同期処理もサポートされています。`HttpClient`の使用により、HTTP/2のサポートやWebSocketなど、他にも強力な機能を利用できます。
+
+## See Also (関連情報)
+
+- [Oracleの公式ドキュメンテーション](https://docs.oracle.com/en/java/javase/17/docs/api/java.net.http/java/net/http/HttpClient.html)
+- [HTTPリクエストのバリエーションを理解する](https://www.baeldung.com/java-9-http-client)

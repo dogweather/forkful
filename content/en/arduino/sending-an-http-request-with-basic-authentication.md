@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
+date:                  2024-01-20T18:00:50.041796-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,74 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-HTTP requests allow two machines to communicate via the internet. Using basic authentication when sending an HTTP request is a simple way to secure the data transmitted. 
+Sending an HTTP request with basic authentication adds a layer of security by requiring a username and password. Programmers use it to access APIs or web services that are locked down to authorized users only.
 
 ## How to:
-
-We can easily send an HTTP GET request with basic authentication using the ESP8266WiFi and ESP8266HTTPClient libraries on the Arduino. 
+To make this happen on an Arduino, you first need to include the necessary libraries – typically `<ESP8266WiFi.h>` for ESP8266 or `<WiFi.h>` for ESP32, and `<Base64.h>` for encoding authentication details. Here's a bare-bones snippet to get you started:
 
 ```Arduino
 #include <ESP8266WiFi.h>
-#include <ESP8266HTTPClient.h>
+#include <Base64.h>
 
-const char* ssid = "your_SSID";
-const char* password = "your_PASSWORD";
+const char* ssid = "yourSSID";
+const char* password = "yourPassword";
+const char* server = "your.server.com";
+const char* authUser = "user";
+const char* authPass = "pass";
 
-void setup () {
-
+void setup() {
   Serial.begin(115200);
   WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  
+  String auth = "Basic " + base64::encode(String(authUser) + ":" + String(authPass));
 
-    delay(1000);
-    Serial.println("Connecting...");
-
+  WiFiClient client;
+  if (client.connect(server, 80)) {
+    client.println("GET /route HTTP/1.1");
+    client.print("Host: ");
+    client.println(server);
+    client.println("Authorization: " + auth);
+    client.println("Connection: close");
+    client.println();
   }
 }
 
 void loop() {
-
-  if (WiFi.status() == WL_CONNECTED) { //Check WiFi connection status
- 
-    HTTPClient http;  //Declare an object of class HTTPClient
-
-    http.begin("http://your-server.com");  //Specify request destination
-    http.addHeader("Authorization", "Basic your_base64_encoded_credentials");  //Add Basic Authentication header
-
-    int httpCode = http.GET();                                     
-
-    if (httpCode > 0) { //Check for the returning code
- 
-        String payload = http.getString();
-        Serial.println(payload);
- 
-      }
-
-    http.end();   //Close connection
-  
-  }
-
-  delay(30000);    //Send a request every 30 seconds
-
+  // Your regular code here
 }
 ```
-The above piece of code connects to a Wi-Fi network, then sends a GET request with Basic Authentication to a specified server. The response is printed on the Serial Monitor. 
+
+Upon running, the Arduino will connect to the specified server with the credentials and fetch the protected content.
 
 ## Deep Dive
 
-Basic authentication was part of HTTP/1.0 (1996) for protecting web resources. It uses base64 encoding which is not encryption; hence, it's often used with SSL/TLS.
+HTTP Basic Authentication has been around since the early days of the web, defined in 1996 by RFC 2617. It's simple: encode username and password in base64 and slap it onto an HTTP header. It's not the most secure method (because base64 is easily reversible), but it's straightforward for low-stakes or internal tools.
 
-Alternatively, Digest Access Authentication and Bearer tokens are more secure yet more complex forms of HTTP authentication than Basic.
+There are alternatives, like Digest Access Authentication or OAuth, which are more secure, but they're also heavier on resources – something to consider on a tiny Arduino.
 
-On implementation, the "Authorization" header's syntax is "Basic base64(username:password)". It sends username and password on each request leading to inefficient transmissions on weak networks.
+For implementation, keep in mind that base64 encoding increases the size of the creds by about 33%, and Arduino's memory is limited. Also, ensure your server uses SSL/TLS (HTTPS) if you're sending creds over the internet to avoid exposure.
 
 ## See Also
-
-1. HTTP/1.1 specification ("rfc2616"): <https://tools.ietf.org/html/rfc2616>
-2. Arduino ESP8266WiFi library <https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html>
-3. Arduino ESP8266HTTPClient library <https://arduino-esp8266.readthedocs.io/en/latest/esp8266httpclient/readme.html>
-4. Base64 encoding <https://en.wikipedia.org/wiki/Base64>
-5. Digest Access Authentication <https://en.wikipedia.org/wiki/Digest_access_authentication>
-6. Bearer tokens <https://tools.ietf.org/html/rfc6750>
+- [Wikipedia on Basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [Secure your HTTP request](https://arduino.cc/en/Tutorial/WebClientRepeating)

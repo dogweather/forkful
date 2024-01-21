@@ -1,7 +1,8 @@
 ---
-title:                "Generere tilfeldige tall"
-html_title:           "Arduino: Generere tilfeldige tall"
-simple_title:         "Generere tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+date:                  2024-01-20T17:48:38.289105-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generering av tilfeldige tall"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Numbers"
@@ -11,42 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-
-Å generere tilfeldige tall er prosessen med å produsere en sekvens av tall som ikke kan forutsies på noen bedre måte enn ved ren tilfeldighet. Programmerere gjør dette for å sørge for unikalitet eller pseudotilfeldighet i ulike anvendelser, for eksempel i spill, simuleringer og kryptering.
+Å generere tilfeldige tall betyr å lage nummer som ikke har noe forutsigbart mønster. Programmerere bruker det for alt fra å teste kode til å skape spillmekanikker eller sikkerhetssystemer.
 
 ## Hvordan:
-
-Bash tilbyr en intern variabel `$RANDOM` for å generere tilfeldige tall. Her er noen enkle bruksområder:
-
 ```Bash
-# Enkelt tilfeldig tall mellom 0 og 32767
-echo $RANDOM
+# Generer et tilfeldig tall mellom 1 og 10
+echo $((RANDOM % 10 + 1))
+
+# Eksempel på utskrift
+7
 ```
 
-Utskrift kan variere da tallet er tilfeldig, men det vil være et tall mellom 0 og 32767.
-
-For å begrense det tilfeldige tallet til et spesifikt område, bruk modulusoperatøren `%`.
-
 ```Bash
-# Tilfeldig tall mellom 0 og 99
-echo $((RANDOM%100))
+# Generer et tilfeldig tall med /dev/urandom for større sikkerhet
+echo $(( $(od -An -N2 -i /dev/urandom) % 10 + 1 ))
+
+# Eksempel på utskrift
+3
 ```
 
-## Dyp Dykk: 
+## Dypdykk
+I Bash eksisterer det en innebygd variabel `$RANDOM` som gir et pseudotilfeldig tall mellom 0 og 32767. Å bruke `%` operatøren begrenser området, noe som er nyttig i mange scenarioer.
 
-Generering av tilfeldige tall har en lang historie i databehandling, og mange metoder har blitt utviklet. `$RANDOM` i Bash, er faktisk et pseudotilfeldig tall, det vil si det er generert av en deterministisk prosess, men ser tilfeldig ut. 
+Historisk har tilfeldige tall fra datasystem kun vært pseudotilfeldige, noe som betyr at de er beregnet ved hjelp av en algoritme. Hvis du trenger mer sikre tilfeldige tall for kryptografi, er `/dev/urandom` et bedre valg siden den henter inndatadrevet "støy" for å produsere tallene.
 
-Det er også alternative metoder til `$RANDOM` for å generere tilfeldige tall i Bash, for eksempel ved hjelp av spesielle steder i systemet som `/dev/urandom` eller `/dev/random`. De benytter miljøstøy samlet fra enhetsdrivere og andre kilder for å produsere tilfeldige tall.
+Alternativer til `$RANDOM` kan inkludere `shuf`, `awk` eller til og med å installere eksterne verktøy som `rng-tools` for maskinvaregenerert entropi.
 
-```Bash
-# Generer et tilfeldig tall ved hjelp av /dev/urandom
-od -A n -t d -N 2 /dev/urandom | awk '{print $1}'
-```
-
-Det er viktig å merke seg at forskjellige metoder kan ha forskjellige egenskaper, både i forhold til ytelse og kvaliteten på tilfeldigheten. 
-
-## Se Også:
-
-For mer informasjon om generering av tilfeldige tall i Bash og alternativer til `$RANDOM`, sjekk ut følgende ressurser:
-
-- Bash Handbook: [https://github.com/denysdovhan/bash-handbook](https://github.com/denysdovhan/bash-handbook)
+## Se Også
+- `man bash` - for å lære mer om innebygde Bash-kommandoer.
+- `man od` - for å forstå mer om `od` kommandoen for å lese binærfiler.
+- [Diehard tests](https://en.wikipedia.org/wiki/Diehard_tests) - en serie av statistiske tester for å sjekke tilfeldigheten av tall.

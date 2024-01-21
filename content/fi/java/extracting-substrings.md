@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:45:57.639063-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,32 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Aloitus Java: Opi Alistringien Poisto
+## What & Why? (Mikä & Miksi?)
+Substringit ovat jonoista irrotettuja osia. Ohjelmoijat käyttävät niitä tiedon käsittelyyn ja analysointiin - leikaten tarpeelliset palat isommasta tekstistä.
 
-## Mitä & Miksi?
-Substringien poisto on toiminto, jossa uusi merkkijono luodaan olemassa olevasta merkkijonosta. Ohjelmoijat tekevät tämän esimerkiksi silloin, kun he tarvitsevat tietyn osan merkkijonosta erilliseen käyttöön tai analysointiin.
-
-## Kuinka Tehdään:
+## How to: (Kuinka tehdään:)
 ```java
-public class Main {
+public class SubstringExample {
     public static void main(String[] args) {
-        String str = "Moikka Suomesta!";
-        String sub = str.substring(7, 15); 
-        System.out.println(sub); 
+        String text = "Ohjelmointi on hauskaa";
+        String sub = text.substring(13); // Otetaan osa jälkeen indexin 13
+        String subWithEnd = text.substring(0, 13); // Otetaan osa indeksien 0 ja 13 väliltä
+
+        System.out.println(sub); // Tulostaa "hauskaa"
+        System.out.println(subWithEnd); // Tulostaa "Ohjelmointi on"
     }
 }
 ```
-Näytteellä on tulostus:
-```
-Suomesta!
-```
-Tässä `substring()`-metodi ottaa kaksi parametria: alkuindeksin ja loppuindeksin. Alkuindeksi on paikan ensimmäinen sijainti, josta aloitetaan ja loppuindeksi on sijainti johon asti luetaan.
+## Deep Dive (Sukellus syvyyksiin):
+Substringien konsepti on vanha, juontuen ajoista kun ohjelmistoja kirjoitettiin nauhoille. Java tarjoaa `substring()` metodin `String`-luokassa, jolla voi hakea osajonot tehokkaasti. Alternatiiveina ovat `subSequence()` käyttäminen tai regex (säännölliset lausekkeet), joilla voi hakea monimutkaisempia kuvioita. Suorituskyvyn kannalta Java käyttää `String`-luokassa muistiystävällistä tapaa, jossa osajonot viittaavat alkuperäisen merkkijonon muistialueeseen eivätkä kopioi dataa suotta.
 
-## Syvemmälle Sukellus
-Historiallisesti substring-toiminto löytyy useista ohjelmointikielistä ja sillä on pitkä käytännön historia. Vaihtoehtoisesti voit käyttää `subSequence()`, joka on periaatteessa sama metodi, mutta se palauttaa `CharSequence`-olion. Interneissä yksityiskohdissa `substring()`-luokka tekee sisäistä optimointia vähentämään muistin käyttöä, kun luodaan useita alimerkkijonoja samasta alkuperäisestä merkkijonosta.
-
-## Katso Myös
-Java String substring() metodi: [Oracle Java Dokumentaatio](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int))
-StringManipulation Java: [GeeksforGeeks](https://www.geeksforgeeks.org/string-class-in-java/)  
-
-Kun olet täysin ymmärtänyt substringien luomisen merkityksen ja kuinka se toimii, voit tutustua samankaltaisista toiminnoista `split()`, `concat()`, ja `trim()`, jotka myös kuuluvat Java String -luokkaan.
+## See Also (Katso myös):
+- Oracle Java Documentation: [String.substring](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#substring(int,int))
+- Regular Expressions in Java: [Pattern](https://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html)

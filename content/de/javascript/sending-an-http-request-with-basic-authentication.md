@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
+date:                  2024-01-20T18:02:06.432200-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,49 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# HTTP Anfrage mit Basic Authentication senden: Was und warum?
-
 ## Was & Warum?
+HTTP-Requests mit Basisauthentifizierung schicken Daten sicher über das Netz. Entwickler nutzen das, um vertrauliche Daten wie Benutzernamen und Passwörter zu schützen.
 
-Die HTTP Anfrage mit Basic Authentication ist eine Technik, um sicheren Zugang zu Webressourcen zu gewährleisten. Programmierer verwenden es, um sicher zu stellen, dass nur berechtigte Benutzer Zugriff auf bestimmte Ressourcen haben.
-
-## Wie es geht:
-
-`axios` ist eine beliebte Javascript-Bibliothek, um HTTP-Anfragen zu erstellen. Hier ist ein einfacher Code, um eine HTTP-Anfrage mit Basic Authentication zu erstellen:
-
+## How to:
 ```Javascript
-const axios = require("axios");
+const axios = require('axios');
 
-axios({
-    method: "get",
-    url: "http://api.example.com/data",
-    auth: {
-        username: "Benutzername",
-        password: "Passwort"
-    }
+const username = 'deinUsername';
+const password = 'deinPasswort';
+const base64Credentials = Buffer.from(`${username}:${password}`).toString('base64');
+
+axios.get('https://deinbeispiel.de/daten', {
+  headers: {
+    'Authorization': `Basic ${base64Credentials}`
+  }
 })
 .then(response => {
-    console.log(response.data);
+  console.log('Daten erfolgreich abgerufen:', response.data);
 })
 .catch(error => {
-    console.log(error);
+  console.error('Fehler beim Abrufen der Daten:', error);
 });
 ```
 
-Wenn dieses Script ausgeführt wird, werden Ihre Benutzername und Passwort Base64-codiert und im Authorization Header der Anfrage hinzugefügt.
-
 ## Deep Dive
+Basisauthentifizierung (Basic Authentication) ist ein alter Mechanismus aus den frühen HTTP-Tagen, um Login-Daten sicher zu übermitteln. Kombiniert mit HTTPS ist es sicherer, aber es gibt modernere Alternativen, wie OAuth.
 
-Historisch gesehen wurde die Basic Authentication Methode bereits in den frühen Tagen des Internets eingeführt. Sie ist jedoch aufgrund ihrer schwach ausgeprägten Sicherheitsmechanismen inzwischen veraltet.
+Die Authentifizierung wird als Base64-codierter String gesendet, der im `Authorization`-Header der HTTP-Anfrage platziert wird. Die Base64-Codierung ist nicht verschlüsselt, verschleiert die Credentials nur leicht. Wichtig ist, HTTPS statt HTTP zu verwenden, damit die Credentials nicht im Klartext im Netzwerk sichtbar sind.
 
-Alternativen zur Basic Authentication sind Token-basierte Authentifizierungsmethoden wie Bearer Token oder OAuth2. Diese bieten eine höhere Sicherheit, da sie einen Einmal-Token anstelle von Benutzername und Passwort verwenden.
+Dein Server oder API, der die Anfrage empfängt, muss dann diesen Header prüfen und bestätigen, dass Username und Passwort gültig sind.
 
-Beim Senden einer HTTP-Anfrage mit Basic Authentication sollten Sie vorsichtig sein, da die übertragenen Daten nicht verschlüsselt sind. Für höhere Sicherheit können Sie Ihre Anfragen über HTTPS senden.
-
-## Siehe auch
-
-Für weitere Informationen, überprüfen Sie diese Links:
-
-1. [Axios Dokumentation](https://axios-http.com/)
-2. [Mozilla’s HTTP Authentication Guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-3. [NPM Paket für Basic-Auth](https://www.npmjs.com/package/basic-auth)
+## Siehe auch:
+- MDN Web Docs zu Basic authentication: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- Axios, ein beliebter HTTP-Client für JavaScript: https://axios-http.com/
+- Informationen zur sicheren Verwendung von Basisauthentifizierung: https://owasp.org/www-community/controls/Basic_Authentication

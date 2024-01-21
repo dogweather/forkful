@@ -1,7 +1,8 @@
 ---
-title:                "디버그 출력을 인쇄하기"
-html_title:           "Clojure: 디버그 출력을 인쇄하기"
-simple_title:         "디버그 출력을 인쇄하기"
+title:                "디버그 출력을 찍어보기"
+date:                  2024-01-20T17:52:42.971189-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "디버그 출력을 찍어보기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,34 +11,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 그리고 왜?
+## What & Why? (무엇과 왜?)
 
-디버그 출력은 프로그래밍에서 중요한 부분입니다. 이것은 개발자가 프로그램의 특정 부분이 어떻게 작동하는지 파악하는 데 도움이 됩니다. 이런 방식으로 문제점을 찾아내고 수정할 수 있습니다.
+프로그램이 어떻게 동작하는지 이해하려면 디버그 출력이 필요합니다. 이는 변수나 계산 결과를 볼 수 있게 해주어 버그를 찾고 문제를 해결하는 데 도움이 됩니다.
 
-## 사용법
+## How to: (방법)
 
-여기서는 'Debug.Trace' 모듈을 사용하여 표준 오류에 디버그 정보를 출력하는 방법을 보여줍니다.
+Haskell에서 디버그 출력을 사용하는 가장 간단한 방법은 `print` 함수입니다.
 
 ```Haskell
-import Debug.Trace
-
 main :: IO ()
-main = trace "This will be printed before the main function" (return ())
+main = do
+  let number = 42
+  print number
 ```
 
-위 프로그램은 "This will be printed before the main function" 메세지를 출력 후 아무런 동작도 수행하지 않고 종료합니다.
+출력:
+```
+42
+```
 
-## 깊은 이해
+더 복잡한 데이터 구조를 보려면 `Show` 인스턴스가 필요합니다:
 
-디버그 출력은 프로그래밍의 오랜 역사와 함께 왔습니다. 시작부터 거의 모든 언어가 이런 기능을 제공했습니다. Haskell에서는 이러한 디버그 출력을  `Debug.Trace` 모듈로 제공하고 있습니다.
+```Haskell
+data Person = Person { name :: String, age :: Int } deriving Show
 
-이 방법의 단점은 디버그 정보가 표준 오류로 출력되므로, 프로그램을 통제된 환경에서 실행해야만 합니다.
+main :: IO ()
+main = do
+  let john = Person "John Doe" 30
+  print john
+```
 
-그러나 이런 문제를 해결하기 위한 다른 방법들도 있습니다. 예를 들어, Haskell에는 디버깅을 돕는 여러 라이브러리가 있습니다. 가령, "ghcid"은 파일이 변경될 때마다 자동으로 코드를 재컴파일하며 발생한 오류 또는 경고를 즉시 표시합니다.
+출력:
+```
+Person {name = "John Doe", age = 30}
+```
 
-## 그밖에 참고하면 좋을 것들
+## Deep Dive (심층 분석)
 
-디버그 기술에 대한 더 깊은 이해를 원한다면, 이러한 참고자료들이 도움이 될 것입니다:
+디버그 출력은 코드 실행을 이해하는 빠른 방법이지만, 성능에 부담을 줄 수 있습니다. Haskell에서는 `Debug.Trace` 모듈을 사용하여 컴파일 최적화에 영향을 주지 않고 중간 값들을 확인할 수 있습니다.
 
-- Hackage: Debug.Trace 모듈에 대한 자세한 문서를 제공합니다. [링크](http://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html)
-- Haskell Wiki: 디버깅에 대한 다양한 팁과 트릭이 제공됩니다. [링크](https://wiki.haskell.org/Debugging)
+```Haskell
+import Debug.Trace (trace)
+
+main :: IO ()
+main = do
+  let number = trace "debugging" 42
+  print number
+```
+
+하지만 `trace`는 순수함수에 부작용을 삽입하기 때문에, 이를 남용해서는 안 됩니다. 실제 제품에서는 빼야 합니다.
+
+대안으로, 특히 큰 프로그램에서는 로거 라이브러리를 사용하는 것이 좋습니다. 예를 들어, `monad-logger`와 `co-log` 등이 있습니다.
+
+역사적으로, Haskell은 Lisp과 같은 초기 함수형 언어에서 영향을 받았습니다. 디버깅은 자원 사용과 효율적인 실행을 위해 중요합니다. 디버깅 시 접근 가능한 정보가 코드 성능에 어떻게 영향을 미칠지 이해하는 것이 중요합니다.
+
+## See Also (참고 자료)
+
+- Haskell `Debug.Trace` 모듈: [Hackage Debug.Trace](https://hackage.haskell.org/package/base-4.16.1.0/docs/Debug-Trace.html)
+- `print` 함수 문서: [Hackage print](https://hackage.haskell.org/package/base-4.16.1.0/docs/Prelude.html#v:print)
+- `monad-logger` 라이브러리: [Hackage monad-logger](https://hackage.haskell.org/package/monad-logger)
+- `co-log` 라이브러리: [Hackage co-log](https://hackage.haskell.org/package/co-log)

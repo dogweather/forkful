@@ -1,7 +1,8 @@
 ---
-title:                "Merkkien poistaminen vastaavalla mallilla"
-html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
-simple_title:         "Merkkien poistaminen vastaavalla mallilla"
+title:                "Merkkien poistaminen hakemalla osumia kaavaan"
+date:                  2024-01-20T17:43:24.689964-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,34 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+Mitä ja miksi? Kun poistetaan merkkejä, jotka vastaavat tiettyä kaavaa, siivotaan merkkijonoja. Tämä auttaa meitä pääsemään eroon ei-toivotuista merkeistä, kuten ylimääräisistä välilyönneistä tai erikoismerkeistä, järkeistämään syötettä tai valmistelemaan dataa käsittelyyn.
 
-Poistaminen merkkejä, jotka vastaavat tiettyä mallia, tarkoittaa sen merkkijonon osien etsimistä, joka vastaa tiettyä säännöllistä lauseketta, ja sen poistamista. Ohjelmoijat tekevät tämän usein merkkijonon muotoilun tai epätarkkuuden poistamiseksi tai merkkijonon sisällön suodattamisen yksinkertaistamiseksi.
+## How to:
+Käytännössä:
+```TypeScript
+function removePatternFromString(input: string, pattern: RegExp): string {
+  return input.replace(pattern, '');
+}
 
-## Kuinka:
-
-Alla on esimerkkejä siitä, miten voit toteuttaa tämän TypeScriptilla:
+// Esimerkki: Poistetaan kaikki numerot merkkijonosta
+const originalString = 'Hei! Tämä on esimerkki123.';
+const noNumbers = removePatternFromString(originalString, /\d+/g);
+console.log(noNumbers); // Hei! Tämä on esimerkki.
+```
 
 ```TypeScript
-let teksti = 'Hei, olen TypeScript ohjelmoija!';
-let poista = /TypeScript /g;
-
-let uusiTeksti = teksti.replace(poista, '');
-
-console.log(uusiTeksti); // "Hei, olen ohjelmoija!"
+// Esimerkki: Poistetaan erikoismerkit, paitsi pisteet ja kysymysmerkit
+const stringWithSpecialChars = 'Hei! Onko kaikki hyvin??? $$$';
+const cleanedString = removePatternFromString(stringWithSpecialChars, /[^a-zA-ZäöåÄÖÅ .?]/g);
+console.log(cleanedString); // Hei! Onko kaikki hyvin??? 
 ```
-Näiden koodirivien suorittaminen poistaa kaikki "TypeScript " tekstit, jolloin saamme "Hei, olen ohjelmoija!" tulosteeksi.
 
-## Syvä Sukellus:
+## Deep Dive:
+Syväsukellus: Mallien mukainen merkkien poistaminen merkkijonoista ei ole uusi idea; se on ollut osa ohjelmoinnin perustyökalupakkia jo regexin (säännölliset lausekkeet) varhaispäivistä lähtien. TypeScriptissa, kuten JavaScriptissä, regexiä käytetään mallien tunnistamiseen ja manipulaatioon. Vaihtoehtoja on toki olemassa: voit käyttää yksinkertaisempia string-menetelmiä kuten `split` ja `join` tai loopata merkkijonon läpi poistaen merkkejä yksi kerrallaan, mutta regex tarjoaa suoraviivaisen ja tehokkaan tavan suorittaa monimutkaisia haku- ja korvaustoimenpiteitä. Käytettäessä TypeScriptiä, tyyppiturvallisuus auttaa varmistamaan, että funktiot käsittelevät odotetun tyyppisiä merkkijonoja ja regex-malleja, vähentäen virheiden mahdollisuutta.
 
-Historiallisessa kontekstissa merkkijonon manipulointi on ollut osa ohjelmointia ohjelmoinnin alusta alkaen. Konsepti on peräisin aikakaudelta, jolloin muisti oli arvokasta ja ohjelmoijien piti hallita tietojen tallennustilaa tarkasti.
-
-Vaihtoehtoina voit myös käyttää kukin kieliominaisuudet, kuten split-funktio tai map-funktio tietyissä tapauksissa.
-
-Implementointitietojen osalta TypeScript käyttää ECMA-262 standardin String.prototype.replace -metodia. Tämä metodi tarkistaa merkkijonon jokaisen osion säännöllisen lausekkeen vastaavuuden osalta ja korvaa vastaavat osiot annetulla merkkijonolla tai paluuarvolla.
-
-## Katso Myös:
-
-- [MDN dokumentaatio String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) 
-- [TypeScriptin viralliset dokumentit](https://www.typescriptlang.org/docs/handbook/basic-types.html#string) 
-- [ECMA-262 standard](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
+## See Also:
+Lisätietoja:
+- [MDN Web Docs: Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- [Regex Tester - Testaa säännölliset lausekkeet verkossa](https://regexr.com/)

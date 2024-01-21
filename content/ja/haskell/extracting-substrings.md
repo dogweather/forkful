@@ -1,6 +1,7 @@
 ---
 title:                "部分文字列の抽出"
-html_title:           "Lua: 部分文字列の抽出"
+date:                  2024-01-20T17:46:12.004589-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "部分文字列の抽出"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,44 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ ?
+## What & Why? (何となぜ？)
+文字列から部分文字列を取り出すとは、大きな文字列の中から必要な範囲の文字だけを抜き出すことです。この操作はデータの解析、パースや、特定のパターン検索時などによく使われます。
 
-部分文字列の抽出は、大きな文字列から任意のサブセット（部分文字列）を取得することです。これは、データ解析やテキスト処理において特定の情報を見つけ出すのに役立ちます。
+## How to: (方法)
+Haskellでは部分文字列の抽出には様々な関数が用意されています。以下に例を示します。
 
-## 使い方 :
+```haskell
+import Data.List (isPrefixOf, isSuffixOf, isInfixOf)
 
-以下のコードを見てみましょう。
-
-```Haskell
-import Data.List.Split
-
-substring :: Int -> Int -> String -> String
-substring start end = unwords . take (end-start+1) . drop start . words
-```
-
-上記コードを実行すると、例えば、
-
-```Haskell
 main :: IO ()
-main = print(substring 2 4 "Hello world from Haskell")
+main = do
+  let text = "こんにちはHaskell世界"
+
+  -- 先頭からの取り出し
+  let beginning = take 5 text
+  putStrLn beginning  -- 出力: "こんにちは"
+
+  -- 末尾からの取り出し
+  let ending = drop 5 text
+  putStrLn ending  -- 出力: "Haskell世界"
+
+  -- 部分文字列が存在するか確認
+  putStrLn $ if "Haskell" `isInfixOf` text then "含む" else "含まない" -- 出力: "含む"
+
+  -- パターンにマッチする部分を取り出し（先頭マッチ）
+  putStrLn $ if "こんにちは" `isPrefixOf` text then "マッチする" else "マッチしない" -- 出力: "マッチする"
+
+  -- パターンにマッチする部分を取り出し（末尾マッチ）
+  putStrLn $ if "世界" `isSuffixOf` text then "マッチする" else "マッチしない" -- 出力: "マッチする"
 ```
 
-この実行結果は `"world from Haskell"` です。
+## Deep Dive (深堀り)
+部分文字列を取り出す処理はHaskellの初期からある基本的な機能です。`take`、`drop`関数はリスト操作関数で、文字列は文字のリストとして扱えるため、これらを直接使えます。代替として `takeWhile` や `dropWhile` 関数もあり、条件を満たす間要素を取り出すことができます。
 
-## 深堀り :
+Haskellには文字列専用の便利なライブラリもあるため、例えば `Data.Text` ライブラリだとより強力な文字列処理関数を使えます。これらは `Text` 型が必要ですが、`pack` と `unpack` 関数で通常の文字列と変換可能です。
 
-- 歴史的文脈 :
-部分文字列の抽出は古くからあるテキスト処理の一部であり、数多くのプログラミング言語でサポートされています。
+パフォーマンス面では、文字列を頻繁に操作する場合は `Text` 型や `ByteString` 型を使う方が効率的です。これはHaskellのデフォルト文字列（リスト）が連結リストであるため、大きなデータには不向きだからです。
 
-- 代替手段 :
-Haskellの`Data.List.Split`ライブラリは非常に多機能であり、強力なテキスト処理機能を提供しています。しかし、特別な理由がなければ、上記の関数のような自作の関数でも十分なことが多いです。
-
-- 実装詳細 :
-`substring`関数は、単純なリスト操作（`drop`と`take`）を利用しています。まず`drop`で必要な開始位置まで要素をスキップし、その後`take`で必要な数の要素を取得します。
-
-## 他にも :
-
-Haskellについてさらに学びたい方は、以下のリンクをご参照ください：
-
-- Haskellの公式チュートリアル : [https://www.haskell.org/tutorial/](https://www.haskell.org/tutorial/)
-- 抽出部分文字列の例 : [https://stackoverflow.com/questions/18892281/substring-in-haskell](https://stackoverflow.com/questions/18892281/substring-in-haskell)
+## See Also (参照)
+1. Real World Haskell: [http://book.realworldhaskell.org/](http://book.realworldhaskell.org/)
+2. Haskell `Data.Text` documentation: [https://hackage.haskell.org/package/text](https://hackage.haskell.org/package/text)
+3. Learn You a Haskell for Great Good: [http://learnyouahaskell.com/](http://learnyouahaskell.com/)
+4. Haskell `Data.ByteString` documentation: [https://hackage.haskell.org/package/bytestring](https://hackage.haskell.org/package/bytestring)

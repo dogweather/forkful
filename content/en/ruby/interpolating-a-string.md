@@ -1,6 +1,7 @@
 ---
 title:                "Interpolating a string"
-html_title:           "Arduino recipe: Interpolating a string"
+date:                  2024-01-20T17:51:31.620513-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolating a string"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,56 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why? 
+## What & Why?
 
-Interpolation is a method of injecting values directly into a string. It makes it easy to insert variables or computed values into a text in Ruby — saving programmers from fumbling with string concatenation.
+String interpolation lets you embed variables or expressions inside a string. We do this for cleaner, more readable code that glues together dynamic content with static text.
 
-## How to
+## How to:
 
-String interpolation in Ruby looks like this:
-
-```Ruby 
-name = "Ruby"
-puts "Hello, #{name}!"
-```
-
-The output would be:
-
-```
-Hello, Ruby!
-```
-
-You can also inject code. Consider that we need to calculate a total price:
+In Ruby, you wrap your variable or expression in `#{}` and plunk it down where you want it in a double-quoted string. Like so:
 
 ```Ruby
-quantity = 10
-price_per_item = 2.5
-puts "Total price is #{quantity * price_per_item}"
+name = "Jesse"
+greeting = "Hey there, #{name}!"
+puts greeting # => Hey there, Jesse!
 ```
 
-And the output:
-
-```
-Total price is 25.0
-```
-
-## Deep Dive 
-
-String interpolation was introduced in Ruby 1.9, replacing the older and more verbose `sprintf` formatting approach. 
-
-An alternative to interpolation is concatenation, but beware, interpolation often reads more easily. Compare these two pieces of code:
+You're not limited to just variables; any Ruby code can go in there:
 
 ```Ruby
-puts "Hello, " + name + "!"  # Concatenation 
-puts "Hello, #{name}!"       # Interpolation
+price_per_kg = 5
+quantity = 2
+puts "Your total is: $#{price_per_kg * quantity}" # => Your total is: $10
 ```
 
-When interpolating, Ruby executes the code inside the curly braces and converts the result to a string. It's handy, but keep in mind your string cannot perform heavy computations or complex object manipulations.
+Remember, single quotes won't work:
+
+```Ruby
+puts 'Hey there, #{name}!' # => Hey there, \#{name}!
+```
+
+## Deep Dive
+
+Back in the day, we'd concatenate strings and variables using `+` or `<<`, making things messy fast.
+
+```Ruby
+email = "user" + "@" + "example.com"
+```
+
+Enter string interpolation in Ruby, a more refined way to merge text with code. Ruby evaluates whatever's inside `#{}` and converts it to a string automatically. Consider the work it saves from converting and concatenating strings:
+
+```Ruby
+"pi is roughly #{Math::PI.round(2)}"
+```
+
+Ruby's not unique; many languages have their own flavor of this handy feature. But caution: unlike some languages, Ruby strictly reserves this magic for double-quoted strings and certain other cases (like backticks and symbols). Single-quotes just spit out what's inside them, curly braces and all.
 
 ## See Also
 
-Look up these related topics:
-
-- [Ruby docs: String](https://ruby-doc.org/core-2.7.0/String.html)
-- [Ruby docs: String interpolation](https://ruby-doc.org/core-2.7.0/doc/syntax/literals_rdoc.html#label-Strings)
-- [Intro to Ruby: String Interpolation](http://ruby-for-beginners.rubymonstas.org/bonus/string_interpolation.html)
+- Ruby Documentation on syntax: [Ruby Docs - Syntax](https://ruby-doc.org/core-3.1.2/doc/syntax/literals_rdoc.html#label-Strings)
+- A deeper look into string manipulation: [Ruby-Doc.org - String](https://ruby-doc.org/core-3.1.2/String.html)

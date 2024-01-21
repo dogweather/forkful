@@ -1,7 +1,8 @@
 ---
-title:                "Skriva ut felsökningsresultat"
-html_title:           "Fish Shell: Skriva ut felsökningsresultat"
-simple_title:         "Skriva ut felsökningsresultat"
+title:                "Skriva ut felsökningsdata"
+date:                  2024-01-20T17:53:32.788516-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skriva ut felsökningsdata"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -10,42 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Ruby: Skriv ut Debug Output
-Lär dig hur du kan använda Ruby för att skriva ut debug information direkt i konsolen.
+## What & Why?
+Utskrift för felsökning är när vi spottar ut text till konsolen för att se vad som händer i vår kod. Programmerare gör detta för att snabbt hitta och rätta till fel.
 
-## Vad & Varför?
-Att skriva ut debug output handlar om att få datorn att visa information om vilka processer som körs och vad de gör. Detta är ett hårdvaruprogrammerarens nödvändiga verktyg för att hitta och fixafel i sin kod.
+## How to:
+Ruby ger oss `puts` och `p` för att skriva ut värden:
 
-## Så här gör du:
-Här är så att säga grunderna för att skriva ut debug-informatiom i Ruby.
+```Ruby
+# Använd puts för att skriva ut en sträng
+puts "Hej, programmerare!"
 
-```ruby
-puts "Detta är ett meddelande"
+# Använda p för att skriva ut en datastruktur med mer information
+p [1, 2, 3]
 
-debug = "Detta är debug information"
-puts debug
+# Utskrift med variabler
+x = "Ruby är kul"
+puts x
 ```
 
-Output:
+Förväntad utskrift:
 ```
-Detta är ett meddelande
-Detta är debug information
-```
-
-Du kan också använda `p` istället för `puts` för att få mer detaljerad info.
-
-```ruby
-p debug
+Hej, programmerare!
+[1, 2, 3]
+Ruby är kul
 ```
 
-Detta kommer att ge dig outputen: `"Detta är debug information"`
+## Deep Dive:
+I Ruby's barndom använde folk `print` för att skriva ut data, men `puts` blev populär då den lägger till en nyrad automatiskt. `p` är ännu mer detaljerad, då den visar en mer "rå" version av objektet, vilket är nyttigt vid debuggning.
 
-## Djupdykning
-Ruby, som ursprungligen skapades 1995, har länge haft möjligheten att skrivaut debug-output, det här mönstret har nu adopterats till de flesta moderna programmeringsspråk. Ett alternativ till `puts` och `p` är att använda debugging bibliotek som `byebug` eller `pry` som innehåller kraftfulla funktioner för att felsöka din kod. `puts` och `p` skriver ut informationen till standard output (`STDOUT`), vilket vanligtvis är terminalen eller konsolen.
+Det finns även bibliotek och inbyggda verktyg som `logger` där du kan specificera olika nivåer av felmeddelanden. För stora applikationer är detta att föredra. Biblioteket `awesome_print` ger också färgade och lättlästa utskrifter.
 
-## Se Även
-För mer information och resurser om Ruby och debugging, kolla in följande:
+Implementationen av `puts` och `p` är enkel - de anropar objektets `to_s` respektive `inspect` metod och skriver sedan ut resultatet till konsolen.
 
-- Officiella Ruby API dokumnetationen för puts [här](https://ruby-doc.org/core-2.6.3/IO.html#method-i-puts).
-- Officiella Ruby Dokumentationen för p [här](https://ruby-doc.org/core-2.6.3/Kernel.html#method-i-p).
-- En guide i hur man använder `byebug` [här](https://edgeguides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-byebug-gem).
+```Ruby
+# Inspect visar objektets interna struktur
+puts [1, 2, 3].inspect  # "[1, 2, 3]"
+p [1, 2, 3]             # "[1, 2, 3]"
+
+# to_s konverterar objektet till en sträng
+puts [1, 2, 3].to_s  # "123"
+```
+
+## See Also:
+- Ruby Dokumentation för `puts`: https://ruby-doc.org/core-2.7.0/IO.html#method-i-puts
+- Ruby Dokumentation för `p`: https://ruby-doc.org/core-2.7.0/Kernel.html#method-i-p
+- Ruby `logger` bibliotek: https://ruby-doc.org/stdlib-2.7.0/libdoc/logger/rdoc/Logger.html
+- `awesome_print` gem: https://rubygems.org/gems/awesome_print/

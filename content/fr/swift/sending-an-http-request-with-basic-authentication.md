@@ -1,7 +1,8 @@
 ---
-title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
-simple_title:         "Envoyer une requête http avec une authentification de base"
+title:                "Envoi d'une requête HTTP avec authentification de base"
+date:                  2024-01-20T18:02:40.069239-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Envoi d'une requête HTTP avec authentification de base"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,50 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## Qu'est-ce que c'est & Pourquoi ?
 
-L'envoi d'une requête HTTP avec une authentification de base est le processus de transmission d'informations sensibles, comme les noms d'utilisateur et les mots de passe, en utilisant une chaîne encodée en base64. Les programmeurs font cela pour autoriser l'accès à des ressources protégées sur un serveur web.
+Envoyer une requête HTTP avec une authentification de base consiste à fournir un nom d'utilisateur et un mot de passe pour accéder à une ressource web. Les programmeurs l'utilisent pour sécuriser l'accès aux API et aux services web.
 
-## Comment faire:
-
-Vous pouvez le faire en Swift en utilisant la classe `URLRequest` et `URLSession`. Voici un exemple:
+## Comment faire :
 
 ```Swift
 import Foundation
 
-// Création des identifiants
-let username = "username"
-let password = "password"
+let username = "user"
+let password = "pass"
+let loginString = String(format: "%@:%@", username, password)
+let loginData = loginString.data(using: String.Encoding.utf8)!
+let base64LoginString = loginData.base64EncodedString()
 
-// Mise en place de l'URL
-let url = URL(string: "https://mywebserver.com")!
-var request = URLRequest(url: url)
+var request = URLRequest(url: URL(string: "https://example.com/api/data")!)
+request.httpMethod = "GET"
+request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
 
-// Encodage en base64 de vos identifiants
-let loginData = String(format: "%@:%@", username, password).data(using: String.Encoding.utf8)!
-let base64LoginData =  loginData.base64EncodedString()
-
-// Ajout de l'en-tête d'autorisation
-request.addValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
-
-// Envoi de la requête
-let task = URLSession.shared.dataTask(with: request) { data, response, error in
-    guard let data = data, error == nil else { return }
-    print(String(data: data, encoding: .utf8) ?? "")
-}
-task.resume()
+let session = URLSession.shared
+session.dataTask(with: request) { data, response, error in
+    guard let data = data, error == nil else {
+        print(error?.localizedDescription ?? "No data")
+        return
+    }
+    if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+        print("StatusCode should be 200, but is \(httpStatus.statusCode)")
+        print("Response = \(response!)")
+    }
+    let responseData = String(data: data, encoding: .utf8)
+    print("ResponseData: \(responseData!)")
+}.resume()
 ```
 
-## Plongée en profondeur:
+Exemple de sortie :
 
-L'authentification de base HTTP a été l'une des premières méthodes d'authentification utilisées dans le cadre du protocole HTTP, introduite avec HTTP/1.0 en 1996. Elle est simple, mais elle présente des risques de sécurité, car les informations d'identification ne sont pas fortement cryptées.
+```
+ResponseData: {"data": "Données sécurisées"}
+```
 
-Alternativement, des méthodes plus sécurisées comme l'authentification Digest ou OAuth peuvent être utilisées. Toutefois, dans certaines situations où une sécurité élevée n'est pas nécessaire, l'utilisation de l'authentification de base HTTP peut être suffisante.
+## Plongée en profondeur
 
-Lors de l'envoi de la requête, la classe `URLRequest` crée un objet de requête contenant des informations sur les en-têtes HTTP, le corps de la requête et d'autres configurations. `URLSession` envoie la requête en utilisant sa méthode `dataTask`.
+Historiquement, l'authentification de base HTTP - inventée au début des années 90 - fait partie intégrante des standards d’Internet. Des alternatives modernes comprennent OAuth et les JWT (Jetons Web JSON) qui offrent une sécurité améliorée et une plus grande flexibilité. Une mise en œuvre correcte doit passer par la sécurisation de la connexion avec TLS/SSL, sinon les identifiants seraient exposés en clair sur internet. D'ailleurs, n'oubliez pas de stocker vos identifiants de manière sécurisée (pas en dur dans le code !).
 
-## Voir aussi:
+## Voir également
 
-- Documentation officielle sur `URLRequest`: https://developer.apple.com/documentation/foundation/urlrequest
-- Documentation officielle sur `URLSession`: https://developer.apple.com/documentation/foundation/urlsession
-- RFC2617 - Méthodes d'authentification HTTP: https://tools.ietf.org/html/rfc2617
+- [Documentation URLSession Apple](https://developer.apple.com/documentation/foundation/urlsession)
+- [RFC 7617 - 'The 'Basic' HTTP Authentication Scheme'](https://tools.ietf.org/html/rfc7617)
+- [Comment mieux sécuriser ses données de connexion](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet)

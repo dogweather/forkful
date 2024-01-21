@@ -1,6 +1,7 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "C#: Verkkosivun lataaminen"
+date:                  2024-01-20T17:43:33.042835-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,83 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Mikä ja miksi? Ladataan web-sivu, eli haetaan tiedot internetissä olevasta osoitteesta. Koodarit tekevät tämän, kun tarvitsevat päivittää laitteen dataa tai käyttää etärajapintoja.
 
-Web-sivun lataaminen on prosessi, jossa tiedot haetaan verkkosivulta paikalliseen laitteeseen. Ohjelmoijat tekevät tämän tiedon hankkimiseksi tai tiettyjen tehtävien, kuten web-sisällön skannauksen, automatisoimiseksi.
-
-## Näin se tehdään:
-
-Arduino-koodin käyttämällä voimme ladata web-sivun. Esimerkki alla:
+## How to:
+Miten se tehdään:
 
 ```Arduino
 #include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
 
-const char* ssid     = "your_SSID";
-const char* password = "your_PASSWORD";
-
-const char* host = "your_webhost.com"; 
+const char* ssid = "sinunSSID";
+const char* password = "sinunSalasana";
 
 void setup() {
   Serial.begin(115200);
-  delay(10);
-
-  // Yhdistetään WiFi-verkkoon
-  Serial.println();
-  Serial.println();
-  Serial.print("Yhdistetään: ");
-  Serial.println(ssid);
-  
   WiFi.begin(ssid, password);
-  
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
+
+  while(WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Yhdistetään WiFi-verkkoon...");
   }
 
-  Serial.println("");
-  Serial.println("WiFi yhdistetty");  
-  Serial.println("IP osoite: ");
+  Serial.println("WiFi yhdistetty!");
+  Serial.print("IP-osoite: ");
   Serial.println(WiFi.localIP());
 }
 
 void loop() {
-  delay(10000);
-
-  Serial.print("Yhdistetään: ");
-  Serial.println(host);
-
-  // Käytä WiFiClient-luokkaa yhteyden luomiseksi.
-  WiFiClient client;
-
-  const int httpPort = 80;
-  if (!client.connect(host, httpPort)) {
-    Serial.println("Yhteys epäonnistui");
-    return;
+  if(WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    
+    http.begin("http://example.com"); // Web-sivusi URL
+    int httpCode = http.GET();
+    
+    if(httpCode > 0) {
+      if(httpCode == HTTP_CODE_OK) {
+        String payload = http.getString();
+        Serial.println(payload);
+      }
+    } else {
+      Serial.println("Virhe HTTP-pyynnössä");
+    }
+    
+    http.end();
   }
-
-  // Lähetämme HTTP GET -pyynnön:
-  client.print(String("GET ") + "/path-to-webpage" + " HTTP/1.1\r\n" +
-               "Host: " + host + "\r\n" + 
-               "Connection: close\r\n\r\n");
-               
-  while(client.connected()){
-    String line = client.readStringUntil('\r');
-    Serial.print(line);
-  }
+  
+  delay(10000); // Odota 10 sekuntia ennen seuraavaa pyyntöä
 }
 ```
 
-Koodi luo WiFi-yhteyden, yhdistää määritettyyn isäntään ja lähettää HTTP GET -pyynnön isännälle. Se tulostaa vastauksen sarjamonitoriin.
-
 ## Deep Dive
+Sukellus syvemmälle:
 
-Historiallisesti web-sivun lataaminen aloitettiin tekstipohjaisen selaimen avulla, joka kävi läpi HTML-koodin. Vastaavasti Arduino-ohjelma käy läpi HTML-tekstin ja voidaan määrittää suorittamaan tehtäviä tuloksen perusteella.
+Historiallisesti Arduinot eivät olleet yhteydessä internetiin. ESP8266-moduulin tai Ethernet-shieldin kaltaiset laajennukset muuttivat tilanteen. Nyt voit ladata web-sivuja suoraan ohjelmoimaltasi laitteelta.
 
-Web-sivujen lataamiseen on useita vaihtoehtoja eri ohjelmointikielillä, esimerkiksi Python-kieli käyttää `requests`-kirjastoa. Käytetty metodi riippuu laitteesta ja käytetyistä käytännöistä. Arduino-käyttäjät yleensä käyttävät ESP8266WiFi-kirjastoa.
+Vaihtoehtoja HTTPClient-kirjastolle ovat esimerkiksi WebClient tai käyttämällä matalamman tason TCP/UDP-protokollia. Käyttämäsi kirjasto määräytyy tarpeesi, kuten muistin, suorituskyvyn tai erityistoimintojen, mukaan.
 
-## Katso myös
+Tekninen toteutus vaatii verkkoyhteyden hallintaa ja HTTP-protokollan ymmärrystä. Käytettäessä GET-metodia pyydetään tietoa palvelimelta. Saatua vastausta voidaan käsitellä esimerkiksi jäsentämällä HTML tai JSON-muodossa.
 
-1. [Arduino virallinen kotisivu](https://www.arduino.cc/)
-2. [ESP8266WiFi kirjaston dokumentaatio](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)
-3. [HTTP GET pyyntöjen opas](https://www.w3schools.com/tags/ref_httpmethods.asp)
-4. [Arduino langaton kommunikaatio](https://www.arduino.cc/en/Guide/ArduinoWirelessShield)
+## See Also
+Katso myös:
+
+- [ESP8266WiFi-kirjaston dokumentaatio](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)
+- [Arduinon Ethernet-kirjaston dokumentaatio](https://www.arduino.cc/en/Reference/Ethernet)

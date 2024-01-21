@@ -1,6 +1,7 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "Java: Interpolando uma string"
+date:                  2024-01-20T17:51:06.863818-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolando uma string"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,38 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que e Por Que?
-
-Interpolação de strings é uma conveniência que permite inserir variáveis diretamente em strings. Programadores usam isso para construir dinamicamente strings de uma maneira mais legível e eficiente.
+## O Quê & Por Que?
+Interpolar uma string é o processo de incorporar variáveis diretamente no texto de uma string. Programadores fazem isso para criar mensagens dinâmicas, personalizadas e para reduzir a complexidade e erros em concatenação de strings.
 
 ## Como Fazer:
+A interpolação de strings no Gleam é feita com a sintaxe `{}` dentro de strings marcadas com a letra `s` no início. Aqui estão alguns exemplos com a saída esperada:
 
-Na versão atual do Gleam, você pode usar os operadores de concatenação para combinar strings. Veja um exemplo:
-
-```Gleam
-let nome = "João"
-let mensagem = "Olá, " ++ nome
-mensagem // "Olá, João"
+```gleam
+let name = "Mundo"
+let message = s"Olá, {name}!"
+io.println(message)
+```
+Saída:
+```
+Olá, Mundo!
 ```
 
-Para números e outros tipos, use a função `int_to_string` ou funções semelhantes antes da concatenação:
+Um exemplo com expressões mais complexas:
+```gleam
+let aircraft = "avião"
+let flight_number = 815
+let departure = "Lisboa"
+let destination = "Porto"
 
-```Gleam
-let idade = 25
-let mensagem = "Eu tenho " ++ int_to_string(idade) ++ " anos"
-mensagem // "Eu tenho 25 anos"
+let announcement = s"O {aircraft} número {flight_number} irá de {departure} para {destination}."
+io.println(announcement)
+```
+Saída:
+```
+O avião número 815 irá de Lisboa para Porto.
 ```
 
-## Aprofundando o Assunto:
+## Mergulho Profundo
+A interpolação de strings não é um conceito novo, existindo em muitas outras linguagens como Python, Ruby e JavaScript. No contexto histórico, ajuda a evitar a confusa e propensa a erros concatenação de strings, onde tínhamos que usar o operador de adição para juntar partes de uma mensagem.
 
-Historicamente, a interpolação de strings foi popularizada por linguagens como Perl e Ruby. No Gleam, a interpolação nativa de strings ainda não é apresentada, então usamos a concatenação de strings.
+Alternativas à interpolação incluem a concatenação manual (usando `+` ou funções específicas) ou o uso de funções de formatação como `sprintf` em outras linguagens.
 
-Há linguagens que têm funções especiais para interpolação de strings, como Java com `String.format()` ou Python com f-strings. Apesar de mais diretas, podem ser menos eficientes.
+Em termos de implementação, o compilador de Gleam geralmente transforma a interpolação de strings em uma sequência de operações de junção de strings, similar à concatenação manual, mas de uma maneira muito mais legível e menos suscetível a erros.
 
-Os detalhes de implementação de concatenação no Gleam são bastante simples. Ele só combina as duas strings em uma única string.
+## Veja Também
+Vislumbre mais sobre strings em Gleam e outras funcionalidades da linguagem nos links abaixo:
 
-## Veja Também:
-
-Para mais informações sobre trabalhar com strings em Gleam, confira a documentação oficial: [Documentação Gleam](https://gleam.run/docs/tour/strings/)
-
-Para uma introdução mais geral à interpolação de strings em outras linguagens, a página da Wikipedia é um bom ponto de partida: [Interpolação de String - Wikipedia](https://en.wikipedia.org/wiki/String_interpolation)
+- [The Gleam Book - Strings](https://gleam.run/book/tour/strings.html)

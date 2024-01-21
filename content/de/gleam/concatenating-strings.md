@@ -1,7 +1,8 @@
 ---
-title:                "Strings verketten"
-html_title:           "Bash: Strings verketten"
-simple_title:         "Strings verketten"
+title:                "Zeichenketten verknüpfen"
+date:                  2024-01-20T17:34:38.967165-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Zeichenketten verknüpfen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,29 +11,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why? (Was & Warum?)
+String-Konkatenation klebt Wörter oder Sätze zusammen. Programmierer nutzen das, um dynamische Texte zu erzeugen oder Daten zu formatieren.
 
-Das Zusammenfügen von Zeichenketten oder "String-Konkatenation" erlaubt es uns, zwei oder mehr Strings zu einem einzigen String zusammenzuführen. Programmierer nutzen dies, um dynamische Inhalte zu erzeugen oder Informationen aus verschiedenen Quellen zu kombinieren.
-
-## So geht's:
-
-Betrachten wir einige Beispiele mit Gleam:
-
-```Gleam
-let str1 = "Hallo, "
-let str2 = "Welt!"
-io.println(str1 ++ str2)
-// Ausgabe: '"Hallo, Welt!"'
+## How to: (Anleitung:)
+```gleam
+fn main() {
+  let greeting = "Hallo "
+  let name = "Welt!"
+  let message = string.concat([greeting, name])
+  io.println(message) // "Hallo Welt!"
+}
 ```
 
-In Gleam fügen wir Zeichenketten mit `++` zusammen. Die obige Funktion wird `"Hallo, Welt!"` zur Konsole ausgeben.
+## Deep Dive (Tiefer Tauchgang)
+String-Konkatenation ist essentiell und allgegenwärtig, startend in den frühen Tagen der Programmierung. Alternativ zur Konkatenation könnte man `string_builder`s verwenden, um performanter größere Textmengen zu verarbeiten. In Gleam wird String-Konkatenation typsicher gehandhabt dank des starken Typensystems, wodurch Fehler wie das versehentliche Zusammenfügen nicht-string Typen verhindert werden.
 
-## Genauer betrachtet
-
-Historisch gesehen ist das Verknüpfen von Zeichenketten in fast allen Sprachen weit verbreitet, obwohl der genaue Mechanismus variiert. Alternativ könnten Sie auch Funktionen wie `String.join` verwenden, wenn Sie mehrere Strings zusammenfügen möchten. Allerdings ist `++` in Gleam die gängige Methode.
-
-Unter der Haube erzeugt Gleam bei der Verwendung von `++` eine neue Zeichenkette, anstatt die ursprünglichen Zeichenketten zu ändern. Dies sichert die Unveränderlichkeit von Daten, ein Grundpfeiler von funktionaler Programmiersprachen wie Gleam.
-
-## Weiterführende Literatur
-
-Weitere Informationen und Beispiele zum Arbeiten mit Zeichenketten in Gleam finden Sie in der offiziellen Gleam-Dokumentation:
+## See Also (Siehe Auch)
+- Gleam's official documentation on strings: [https://gleam.run/book/tour/strings.html](https://gleam.run/book/tour/strings.html)

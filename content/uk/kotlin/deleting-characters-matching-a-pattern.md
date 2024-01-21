@@ -1,7 +1,8 @@
 ---
-title:                "Видалення символів, що відповідають патерну"
-html_title:           "C: Видалення символів, що відповідають патерну"
-simple_title:         "Видалення символів, що відповідають патерну"
+title:                "Видалення символів за візерунком"
+date:                  2024-01-20T17:42:44.683640-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Видалення символів за візерунком"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,41 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що та Чому?)
+Видалення символів, що відповідають паттерну, полягає в тому, щоб очистити рядок від непотрібних або небезпечних знаків. Програмісти роблять це для валідації вводу, безпеки даних і оптимізації інформації.
 
-Видалення символів, що відповідають паттерну, це процес видалення конкретного набору символів з рядка в програмуванні. Це допомагає програмістам очистити дані або маніпулювати рядками за потреби.
-
-## Як це зробити:
-
-```Kotlin
+## How to: (Як зробити:)
+```kotlin
 fun main() {
-    val pattern = Regex("[aeiou]")  // Співпадання будь-якої голосної
-    val input = "Hello, World!"
-    
-    val output = pattern.replace(input, "")
-    println(output)  // Виведе: "Hll, Wrld!"
+    val inputString = "Програмування в Kotlin - це круто!123"
+    val pattern = "\\d+".toRegex() // Паттерн для видалення усіх цифр
+    val resultString = inputString.replace(pattern, "")
+    println(resultString)
 }
 ```
-Вищенаведений код видаляє всі голосні з рядка "Hello, World!".
 
-## Поглиблене вивчення:
+Output:
+```
+Програмування в Kotlin - це круто!
+```
 
-1. Історичний контекст: Процес видалення символів, що відповідають паттерну, існує стільки, скільки й самі початки програмування. Ця операція зазвичай використовується для очищення вхідних даних або підготовки рядків до подальшого оброблення.
+## Deep Dive (Занурення у Деталі)
+Видалення символів за паттерном в Kotlin базується на регулярних виразах, інструменті з історією, що йде від 1950-х. Альтернативи регулярним виразам включають роботу зі строками через `filter` або використання `forEach` для перебору символів. При видаленні великої кількості даних ефективність може варіюватись, тому варто обирати підхід залежно від ситуації.
 
-2. Альтернативи: Ви також можете використовувати `filterNot` в Kotlin для видалення символів, що відповідають паттерну.
-
-   ```Kotlin
-    fun main() {
-       val input = "Hello, World!"
-       val output = input.filterNot { it in 'a'..'z' || it in 'A'..'Z' }  // Видаляємо все, що є буквою.
-       println(output)  // Виведе: ", !"
-    }
-   ```
-   
-3. Реалізація: Коли ви використовуєте `Regex(pattern).replace(input, "")` в Kotlin, Ви використовуєте вбудований об'єкт `Regex` для створення паттерну, а потім застосовуєте його до вхідного рядка. Зазначена заміна порожнім рядком ("") ефективно видаляє співпадання переданого паттерну.
-
-## Див. також:
-
-1. [Kotlin API документація: Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-2. [Kotlin API документація: String.filterNot](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/filter-not.html)
-3. [Туторіал: Робота з рядками в Kotlin](https://kotlinlang.org/docs/tutorials/kotlin-for-py/strings.html)
+## See Also (Дивіться Також)
+- [Kotlin Documentation on Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+- [Kotlin `replace` function](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)

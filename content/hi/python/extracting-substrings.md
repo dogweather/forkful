@@ -1,6 +1,7 @@
 ---
 title:                "सबस्ट्रिंग्स निकालना"
-html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+date:                  2024-01-20T17:46:36.430970-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "Python"
 category:             "Python"
@@ -10,38 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-सबस्ट्रिंग उत्तोलन या अंश स्ट्रिंग उत्तोलन प्रोसेस का एक उपयोग है, जिसमें एक लबा स्ट्रिंग से एक छोटा स्ट्रिंग बाहर निकाला जाता है। प्रोग्रामर इसे करते हैं क्योंकि कई बार हमे केवल किसी स्ट्रिंग का कोई छोटा हिस्सा चाहिए जो महत्वपूर्ण जानकारी या संख्या या टेक्स्ट संग्रहित करता है।
+उपशब्द (substring) निकालना मतलब है किसी दिए गए स्ट्रिंग से कुछ हिस्सा लेना। प्रोग्रामर्स यह काम तब करते हैं जब उन्हें बड़ी सूचना में से सिर्फ ज़रूरी डेटा चाहिए होता है।
 
-## कैसे करें:
+## How to: (कैसे करें:)
 
-सबस्ट्रिंग उत्तोलन के लिए Python में कुछ विभिन्न तरीके हैं। नीचे कुछ उदाहरण दिए गए हैं:
+Python में substrings को निकालने के लिए सबसे सीधा तरीका स्ट्रिंग slicing है:
 
 ```Python
-# एक साधारण स्ट्रिंग का उद्धरण
-my_string = "हेलो, दुनिया "
-# स्पष्ट इंडेक्स का उपयोग करके सबस्ट्रिंग निकालें
-substring = my_string[7:13]
-print(substring)  # आउटपुट: दुनिया
+# पूरी स्ट्रिंग
+text = "Hello, World!"
+
+# Substring इस्तेमाल करके पहले शब्द को निकालना
+first_word = text[0:5]  # 'Hello'
+
+# Substring इस्तेमाल करके आखिरी शब्द को निकालना
+last_word = text[7:12]  # 'World'
+
+print(first_word)  # Hello
+print(last_word)   # World
 ```
 
-## गहरी गुत्ती:
+इसके अलावा, `find()` और `index()` जैसे स्ट्रिंग मेथड्स का उपयोग कर विशेष स्थितियों में substring निकाल सकते हैं:
 
-###### ऐतिहासिक संदर्भ:
-Python में स्ट्रिंग का उपयोग करने के ये तरीके पायथन के संस्करण 1 से ही थे और इनकी क्षमताओं में समय के साथ सुधार और अपग्रेडेशन किया गया है।
+```Python
+# 'World' शब्द की शुरुआती पोजिशन पता लगाकर substring निकालना
+start_index = text.find('World')  # 7
+if start_index != -1:
+    world_substring = text[start_index:start_index+5]
+    print(world_substring)  # World
+```
 
-###### विकल्प:
-Python में इंडेक्सिंग के अलावा आप ```split()``` और ```find()``` जैसे मेथड भी उपयोग कर सकते हैं।
+## Deep Dive (गहराई में जानकारी)
 
-###### कार्यान्वयन विवरण:
-Python में सबस्ट्रिंग उत्तोलन स्ट्रिंग ऑब्जेक्ट के इंडेक्सिंग एक्सेस का उपयोग करता है। यह बहुत तेज़ और समर्थ है, और यदि आपको ठीक से लगता है कि इंडेक्स कहां शुरू और समाप्त होता है, तो यह बहुत विशिष्ट और नियंत्रित हो सकता है।
+स्ट्रिंग स्लाइसिंग Python की क्षमता है जो 1991 से ही उपयोग में है, जब Guido van Rossum ने Python को बनाया। इसका सैटेक्स सरल है: `s[start:stop:step]` जहाँ `start` स्टार्ट इंडेक्स है, `stop` एंड इंडेक्स है और `step` जंप की साइज है।
 
-## देखने के लिए भी:
+अगर `start` या `stop` में कोई संख्या नहीं दि जाए तो Python उसे समझता है और पूरी लेंथ लेता है। `step` में निगेटिव वैल्यू से उलटी स्लाइसिंग भी कर सकते हैं।
 
-- Python स्ट्रिंग के अधिक डिसेक्शन के लिए Python की आधिकारिक डॉक्यूमेंटेशन:  
-  - https://docs.python.org/3/tutorial/introduction.html#strings
-  - https://docs.python.org/3/library/stdtypes.html#textseq
-- Python के स्प्लिट और इन्डेक्सिंग मेथड्स के बारे में और जानकारी:
-  - https://www.w3schools.com/python/ref_string_split.asp
-  - https://www.w3schools.com/python/ref_string_find.asp
+Alternatives और उनकी ताकत:
+- `split()`: स्ट्रिंग को डिलिमिटर के हिसाब से बांटकर लिस्ट में रखता है।
+- `partition()`: स्ट्रिंग को तीन हिस्सों में बांटता है, जो डिलिमिटर से पहले, डिलिमिटर खुद, और डिलिमिटर के बाद होते हैं।
+- Regular Expressions (regex): जटिल पैटर्न मिलान और String manipulation के लिए।
+
+## See Also (और भी देखें)
+
+- Python के ऑफिशियल डॉक्युमेंटेशन में [String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [Regex tutorial](https://www.regular-expressions.info/) - Regular Expressions सीखने के लिए comprehensive guide

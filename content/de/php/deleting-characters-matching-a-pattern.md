@@ -1,7 +1,8 @@
 ---
-title:                "Zeichen löschen, die einem Muster entsprechen"
-html_title:           "C#: Zeichen löschen, die einem Muster entsprechen"
-simple_title:         "Zeichen löschen, die einem Muster entsprechen"
+title:                "Löschen von Zeichen, die einem Muster entsprechen"
+date:                  2024-01-20T17:43:11.855130-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -11,36 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Löschen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte Teile aus einem String zu entfernen, die einem vorgegebenen Muster folgen. Programmierer machen das, um Eingaben zu säubern, Daten zu formatieren oder unnötige Informationen zu entfernen.
 
-Das Löschen von Zeichen, die mit einem Muster übereinstimmen, ist ein Kernaufgabe in der Textverarbeitung. Hierbei entfernt der Programmierer nützliche Daten aus großen Textmengen oder bereinigt Eingabe-Strings, die vom Nutzer kommen könnten.
+## Anleitung:
+Hier ein Beispiel, wie man Zeichen in PHP löscht:
 
-## Wie zu:
-
-Wir können die eingebaute PHP-Funktion `preg_replace()` verwenden, um Zeichenfolgen zu löschen, die einem bestimmten Muster entsprechen.
-
-```PHP
+```php
 <?php
-$eingabe = "Das ist 1 Beispiel!";
-$sauber = preg_replace("/[^A-Za-zäöüÄÖÜß ]/", "", $eingabe);
-echo $sauber;
-// Ausgabe: "Das ist Beispiel!"
+$text = "Hallo Welt! 123";
+$pattern = '/[0-9]+/';
+
+$cleanedText = preg_replace($pattern, '', $text);
+
+echo $cleanedText; // Gibt aus: Hallo Welt!
 ?>
 ```
 
-In diesem Fall entfernt `preg_replace()` alle Zeichen, die keine Buchstaben (einschließlich Umlaute) oder Leerraum sind.
+Dieser Code benutzt `preg_replace()`, um alle Zahlen aus dem `$text` zu entfernen. Nach der Ersetzung enthält `$cleanedText` den String ohne Ziffern.
 
-## Tiefen-Tauchgang
+## Vertiefung:
+Zum Löschen von Zeichen nach einem Muster wird meistens reguläre Ausdrücke (Regex) verwendet, die es seit den 1950er-Jahren gibt und in der UNIX-Welt populär wurden. PHP implementiert Regex mithilfe der PCRE (Perl Compatible Regular Expressions) Library. Alternativen zur `preg_replace()`-Funktion sind `str_replace()` und `str_ireplace()`, die allerdings keine Mustererkennung bieten, sondern nur einfache Zeichenkettenersetzung ermöglichen. Ein interessanter Aspekt bei der Implementierung von `preg_replace()` ist, dass die Funktion auch Rückrufe (Callbacks) mittels `preg_replace_callback()` unterstützt, was komplexere Ersetzungsmuster ermöglicht.
 
-Ursprünglich entwickelten Computerwissenschaftler reguläre Ausdrücke (RegEx), um Muster in Texten zu erkennen und zu manipulieren. Die `preg_replace()`-Funktion in PHP ist nur eine von vielen Möglichkeiten, reguläre Ausdrücke zu verwenden.
-
-Alternativ könnten Sie auch `str_replace()` oder `strtr()` verwenden, aber diese Funktionen erlauben nur einfache ersetzen und nicht die Leistungsfähigkeit von Mustern wie `preg_replace()`.
-
-Die genaue Funktionsweise von `preg_replace()` hängt vom verwendeten Muster ab. Die Funktion verwendet das PCRE (Perl Compatible Regular Expressions)-Format und es gibt zahlreiche Optionen und Variationen, mit denen Sie verschiedene Arten von Mustern definieren können.
-
-## Siehe auch
-
-Um mehr über die `preg_replace()`-Funktion zu erfahren, besuchen Sie die offizielle PHP-Dokumentation: [https://www.php.net/manual/de/function.preg-replace.php](https://www.php.net/manual/de/function.preg-replace.php)
-
-Um mehr über die Geschichte und Theorie von regulären Ausdrücken zu erfahren, siehe [https://en.wikipedia.org/wiki/Regular_expression](https://en.wikipedia.org/wiki/Regular_expression).
-
-Um den Unterschied zwischen `preg_replace()`, `str_replace()` und `strtr()` zu sehen, besuchen Sie [https://www.php.net/manual/de/function.str-replace.php](https://www.php.net/manual/de/function.str-replace.php) und [https://www.php.net/manual/de/function.strtr.php](https://www.php.net/manual/de/function.strtr.php).
+## Siehe Auch:
+- Die offizielle PHP-Dokumentation zu `preg_replace()`: https://www.php.net/manual/de/function.preg-replace.php
+- Ein Tutorial zu regulären Ausdrücken in PHP: https://www.phptutorial.net/php-tutorial/php-regular-expressions/
+- PCRE-Dokumentation für tieferes Verständnis: https://www.pcre.org/current/doc/html/

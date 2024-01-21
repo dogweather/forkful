@@ -1,7 +1,8 @@
 ---
-title:                "חיבור מחרוזות"
-html_title:           "C++: חיבור מחרוזות"
-simple_title:         "חיבור מחרוזות"
+title:                "שרשור מחרוזות"
+date:                  2024-01-20T17:36:11.622563-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרשור מחרוזות"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,28 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-עיבוד מחרוזות הוא תהליך של שליפת מספר מחדילים של מחרוזות ושלבהן למחרוזת אחת. מתכנתים עושים זאת כדי ליצור טקסטים מורכבים (כגון הודעות, דפי HTML) באופן דינמי.
+קיטון מחרוזות זה פשוט לדביק ביחד שניים או יותר טקסטים ליצירת מחרוזת אחת. תכניתנים עושים את זה כדי לבנות משפטים, מסרים, או פורמטים דינמיים בקוד.
 
 ## איך לעשות:
-הנה דרך לבצע עיבוד מחרוזות בשפת Swift:
-
 ```Swift
-var string1 = "היי, "
-var string2 = "איך אני יכול לעזור לך?"
-var message = string1 + string2
-print(message)
-```
+let firstName = "יונתן"
+let lastName = "כהן"
+let fullName = firstName + " " + lastName // שימוש באופרטור חיבור
+print(fullName) // פלט: יונתן כהן
 
-אתה צפוי לראות את הפלט הבא:
+// עם interpolation של מחרוזות
+let greeting = "שלום, שמי \(firstName) \(lastName)!"
+print(greeting) // פלט: שלום, שמי יונתן כהן!
 
-```Swift
-היי, איך אני כול לעזור לך?
+// דרך שלישית עם append
+var message = "מר"
+message += " "
+message += fullName
+print(message) // פלט: מר יונתן כהן
 ```
 
 ## צלילה עמוקה
-עיבוד מחרוזות הוא לא מורכב, אבל זה זכאי לכמה הזכרה של ההיסטוריה והאלטרנטיבות שלו. אף פעם לא נכתב במקור בשפות מהמדתיות, אבל Swift בנוי כל כך כמו שאפשר לך ליצור בקלות חלקים מנותקים של טקסט. ייתכן ותבחר לשנות משתנים, להשתמש במחרוזות תבנית או אף לחלק מחרוזת למערך.
+בעבר, קיטון מחרוזות היה לעיתים קרובות פעולה לא יעילה. זה בגלל שהיה צריך ליצור אובייקטים חדשים בזיכרון בכל פעם שמחברים מחרוזות. בשפות מודרניות כמו Swift, קיטון מחרוזות הוא בדרך כלל יעיל יותר, עם מיטובי זיכרון וביצועים שנעשו על ידי מהדר השפה.
 
-## ראה גם:
-* הדרכות של Apple למחרוזות ב-Swift: https://developer.apple.com/documentation/swift/string
-* דף Wikipedia של Python: https://he.wikipedia.org/wiki/Swift_(שפת_תוכנה)
-* בלוג Hackernoon על עיבוד מחרוזות ב-Swift: https://hackernoon.com/swift-strings-6fc2629aecf7
+כלי חלופיים לקיטון כוללים שימוש במחלקות כמו `NSMutableString` ב-Objective-C, או `StringBuilder` ב-Java, שמועילים במקרים של עיבוד מחרוזות כבד.
+
+ב-Swift, המיטוב נעשה 'תחת המכסה' כך שהתכניתנים יכולים לקטון מחרוזות בצורה אינטואיטיבית, מבלי לחשוש מתוצאות לא יעילות.
+
+## גם כן ראה
+- [String Interpolation in Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Swift Programming from Scratch](https://www.weheartswift.com/swift-programming-scratch-100-exercises/)
+- [Apple's Swift String Documentation](https://developer.apple.com/documentation/swift/string)

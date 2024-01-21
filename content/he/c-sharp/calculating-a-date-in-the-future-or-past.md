@@ -1,6 +1,7 @@
 ---
 title:                "חישוב תאריך בעתיד או בעבר"
-html_title:           "C#: חישוב תאריך בעתיד או בעבר"
+date:                  2024-01-20T17:31:23.197951-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חישוב תאריך בעתיד או בעבר"
 programming_language: "C#"
 category:             "C#"
@@ -11,41 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+לחשב תאריך בעתיד או בעבר זו בסך הכל יכולת לקבוע מתי משהו יקרה או קרה, מתוך נקודת זמן מסוימת. תוכניתנים עושים את זה לתכנון אירועים, לעקוב אחר מועדים, או לפענח נתונים תקופתיים.
 
-חישוב תאריך בעתיד או בעבר הוא תהליך של מניפולציה על תאריך כדי למצוא תאריך אחר המתייחס לו. מתכנתים מפעילים את זה לצורך עיבוד היסטוריה, תזמון, תכנון, ועוד.
-
-## כיצד לעשות:
-
-על מנת לחשב תאריך בעתיד או בעבר, אנו משתמשים בכלי DateTime של C#. שימו לב להדגמה הבאה.
+## איך לעשות:
+פשוט קח את הקוד הבא והשתמש בו:
 
 ```C#
-DateTime todaysDate = DateTime.Now;
-DateTime futureDate = todaysDate.AddDays(10);
-DateTime pastDate = todaysDate.AddDays(-5);
-Console.WriteLine("Today's date: " + todaysDate.ToShortDateString());
-Console.WriteLine("Future date: " + futureDate.ToShortDateString());
-Console.WriteLine("Past date: " + pastDate.ToShortDateString());
+using System;
+
+public class DateExample
+{
+    public static void Main()
+    {
+        DateTime today = DateTime.Now;
+        DateTime futureDate = today.AddDays(10);//עשרה ימים מהיום
+        DateTime pastDate = today.AddDays(-10);//עשרה ימים לפני
+        Console.WriteLine("Today: " + today.ToString("dd/MM/yyyy"));
+        Console.WriteLine("Date in the future: " + futureDate.ToString("dd/MM/yyyy"));
+        Console.WriteLine("Date in the past: " + pastDate.ToString("dd/MM/yyyy"));
+    }
+}
+```
+וזה תוצאות הדוגמה:
+
+```
+Today: 14/03/2023
+Date in the future: 24/03/2023
+Date in the past: 04/03/2023
 ```
 
-וזו תהיה הפלט:
+## נפנוף לעומק:
+לחישוב תאריכים יש חשיבות היסטורית רמה - מלוח השנה יוליאני לגרגוריאני. המעברים בין השיטות שינו תאריכים והפכו חישובים למורכבים יותר. ב-C#, `DateTime` הוא המחלקה שמספקת התמיכה בתאריכים ובזמנים. חלופות כוללות `DateTimeOffset` עבור התמכרות לאזורי זמן ו-`TimeSpan` להבדלי זמן. ברמת המימוש, `DateTime` עוקף בעיות של שינוי שעת קיץ ועוד עבור חישובים פשוטים כמו הדוגמה. לפעמים יש צורך להפעיל חשבון שנים עבריות ולזה יש ספריות מיוחדות.
 
-```C#
-Today's date: 10/31/2023
-Future date: 11/10/2023
-Past date: 10/26/2023
-```
-
-## הפוקוס העמוק:
-### היסטוריה
-החישוב של תאריכים בעתיד או בעבר הפך לכלי נפוץ מאז הוצגה לראשונה בשפות תכנות, מאגרי מידע ולמעשה כל ממשק שיש לו את הצורך לחשב את מרווח הזמן בין תאריכים. זהו כלי קריטי עבור כרטיסי בנק, שרותים משלוחים, ומערכות התזמון.
-
-### חלופות
-בנוסף למתודת `AddDays()`, ישנן מתודות נוספות כמו `AddHours()`, `AddMinutes()`, `AddMonths()`, `AddYears()` ועוד, אשר מאפשרות למתכנתים להוסיף או להחסיר ימים, שעות, דקות, חודשים, ושנים מתאריך.
-
-### פרטי המימוש
-חישוב תאריך בעתיד או בעבר מתבצע על-ידי اתחול התאריך המקורי, ואז הוספה או הפחתה של כמות הימים, החודשים, השנים, השעות, הדקות, לדוגמה. אפשרות אחרת היא שימוש בשיטות של `TimeSpan`.
-
-## ראה גם
-* DateTime: https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0
-* TimeSpan: https://docs.microsoft.com/en-us/dotnet/api/system.timespan?view=net-6.0
-* מאגר מידע מקוון על C#: https://www.c-sharpcorner.com/learn/learn-c-sharp-programming
+## לראות גם:
+- מידע נוסף על `DateTime`: [Microsoft Documentation - DateTime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
+- מידע על `TimeSpan`: [Microsoft Documentation - TimeSpan](https://docs.microsoft.com/en-us/dotnet/api/system.timespan?view=net-6.0)
+- למידע על עבודה עם אזורי זמן מומלץ `TimeZoneInfo`: [Microsoft Documentation - TimeZoneInfo](https://docs.microsoft.com/en-us/dotnet/api/system.timezoneinfo?view=net-6.0)
+- פרויקט NodaTime, ספריית תאריכים/זמנים חזקה עם תמיכה בקלנדרים שונים: [NodaTime](https://nodatime.org/)

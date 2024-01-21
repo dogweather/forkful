@@ -1,6 +1,7 @@
 ---
 title:                "生成随机数"
-html_title:           "Go: 生成随机数"
+date:                  2024-01-20T17:49:14.777066-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "生成随机数"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,43 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么与为什么？
+## What & Why? (是什么以及为什么？)
+生成随机数就是创建没有确定模式的数字序列。程序员用它来模拟和测试，例如游戏中的随机事件或安全的密码生成。
 
-产生随机数是编程中一个常见的操作，它能够生成一组不可预知的数字序列。程序员之所以要经常生成随机数，是因为在很多场合下，比如在模拟事件、进行随机采样，以及在加密等技术上，随机数能带来很大的便利。
-
-## 如何做：
-
-在Fish Shell中，你可以使用`random`命令来生成随机数。下面是一些简单的示例：
-
+## How to (如何操作)
 ```Fish Shell
-# 生成0-999之间的随机数
-random 1000
+# 生成一个 1 到 100 的随机数
+set random_number (random 1 100)
+echo $random_number
+```
+输出示例:
+```
+42
+```
+```Fish Shell
+# 生成 5 个随机数，范围是 1 到 100
+for i in (seq 5)
+    echo (random 1 100)
+end
+```
+输出示例:
+```
+8
+77
+32
+50
+91
 ```
 
-输出可能是："362"
+## Deep Dive (深入了解)
+Fish Shell 的 `random` 命令是基于伪随机数生成器 (PRNG)；这意味着数字序列是由算法生成的，表面上看随机，但实际上如果你知道算法的状态，你就能预测出来。在历史上，多种PRNG方法被开发出来，比如线性同余生成器（LCG）或梅森旋转算法（MT19937），但他们有不同的性能和随机质量。在安全领域，使用加密安全的随机数生成器（CSPRNG）更加常见。
 
-```Fish Shell
-# 生成10-20之间的随机数
-random 10 20
-```
-
-输出可能是："13"
-
-```Fish Shell
-# 生成三个0-999之间的随机数
-random 3 1000 9999
-```
-
-输出可能是："2742 2847 7505"
-
-## 深入研究
-
-生成随机数的概念在计算机科学中有着悠久的历史。尽管它在早期的计算机系统中应用并不广泛，但随着时间的推移，随机数生成在许多领域能够发挥重要作用。Fish Shell的随机数生成，就是基于JavaScript的Math.random()函数实现的。
-
-另外，Fish Shell中生成随机数的方式并非唯一，例如在一些情况下，你可以使用`jot -r`或者`shuf`命令生成随机数。具体选择哪种方式，主要取决于你的任务需求以及平台支持。
-
-## 另见：
-
-如果你要查看更多关于Fish Shell的信息，可以访问 [Fish Shell官方文档](https://fishshell.com/docs/current/index.html).
-
-关于随机数的更深入的理论知识，建议阅读 [Wikipedia的随机数条目](https://zh.wikipedia.org/wiki/%E9%9A%8F%E6%9C%BA%E6%95%B0)。
+## See Also (另请参阅)
+- Fish Shell 官方文档中的 `random` 命令: [https://fishshell.com/docs/current/cmds/random.html](https://fishshell.com/docs/current/cmds/random.html)
+- 维基百科关于伪随机数生成器: [https://en.wikipedia.org/wiki/Pseudorandom_number_generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+- CSPRNG 在维基百科上的解释: [https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator](https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator)

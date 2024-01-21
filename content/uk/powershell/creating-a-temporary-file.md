@@ -1,6 +1,7 @@
 ---
 title:                "Створення тимчасового файлу"
-html_title:           "C: Створення тимчасового файлу"
+date:                  2024-01-20T17:40:53.150191-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Створення тимчасового файлу"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,42 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та чому?
+## What & Why? | Що і Чому?
+Тимчасові файли — це файли, створені для короткочасного використання, зазвичай для вивантаження даних або як проміжне сховище. Програмісти створюють їх, щоб зберегти простір пам'яті, уникнути конфліктів даних і полегшити себе від непотрібного управління файлами.
 
-Створення тимчасового файлу - це практичний спосіб тимчасового зберігання даних в процесі виконання програми. Програмісти роблять це для оптимізації роботи програми, збереження проміжних результатів або відлагодження.
-
-## Як зробити:
-
-Створення тимчасового файлу в PowerShell можна виконати за допомогою командлету `New-TemporaryFile`.
-
+## How to: | Як це зробити:
 ```PowerShell
-# Створення нового тимчасового файлу
-$tempFile = New-TemporaryFile
+# Створення тимчасового файла
+$tempFile = [System.IO.Path]::GetTempFileName()
 
-# Виведення повного шляху до тимчасового файлу
-$tempFile.FullName
+# Робота з тимчасовим файлом
+Set-Content -Path $tempFile -Value 'Some temporary data.'
+Get-Content -Path $tempFile
+
+# Виведення прикладу результату
+"Some temporary data."
+
+# Видалення тимчасового файла
+Remove-Item $tempFile
+
+# Перевірка, чи файл більше не існує
+Test-Path $tempFile
+
+# Виведення прикладу результату
+False
 ```
 
-Після виконання цього сценарію, ви отримаєте повний шлях до створеного тимчасового файлу.
+## Deep Dive | Поглиблено:
+Ідея тимчасових файлів існує дуже давно і використовується не лише в Windows, але й в UNIX-подібних системах. Alternatives to using `$tempFile` in PowerShell include creating a Random file name with `[System.IO.Path]::GetRandomFileName()` that doesn't automatically create the file, or using a custom function for even greater control.
 
-## Поглиблена Інформація
+When creating a temporary file, it's critical to ensure cleanup to prevent temporary files from consuming disk space. Ideally, temporary files are removed after their intended use, as shown in the example above.
 
-Створюючи тимчасовий файл, ми оперуємо ядром системи, що є таким самим за якого б то не було продукту корпорації Майкрософт, що використовує .NET Framework. 
+PowerShell's approach combines .NET class methods with PowerShell cmdlets, showing its interoperable nature. This hybrid style is common in PowerShell, making it versatile for various tasks.
 
-Альтернатива: ви можете створити тимчасовий файл вручну, використовуючи команду Out-File, але це буде менш автоматизовано.
-
-```PowerShell
-# Створення нового тимчасового файлу за допомогою Out-File
-$tempFilePath = "$env:TEMP\tempFile.txt"
-"Some data" | Out-File -FilePath $tempFilePath -Force
-```
-
-У виконанні команди `New-TemporaryFile` .Net Core викликає функцію ядра Windows, що створює тимчасовий файл з унікальним іменем в каталозі для тимчасових файлів, при цьому відслідковуючи деякі метадані.
-
-## Дивіться також
-
-Для отримання більш детальної інформації розгляньте наступні ресурси:
-
-1. Документація PowerShell: https://docs.microsoft.com/uk-ua/powershell/
-2. Порівнювач .NET і .NET Core: https://docs.microsoft.com/en-us/dotnet/standard/choosing-core-framework-server
-3. Використання тимчасових файлів в Windows: https://www.petri.com/using-temp-files-in-powershell
+## See Also | Додатково:
+- Official PowerShell Documentation: https://docs.microsoft.com/en-us/powershell/
+- .NET System.IO Namespace: https://docs.microsoft.com/en-us/dotnet/api/system.io?view=net-5.0
+- About Temporary Files in Windows: https://support.microsoft.com/en-us/topic/description-of-the-use-of-temporary-files-in-windows-7cf55d59-ba71-57cf-ba45-3a8d74f1b6cb

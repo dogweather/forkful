@@ -1,6 +1,7 @@
 ---
 title:                "새 프로젝트 시작하기"
-html_title:           "Arduino: 새 프로젝트 시작하기"
+date:                  2024-01-20T18:03:01.235936-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "새 프로젝트 시작하기"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,38 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+새 프로젝트 시작은 빈 스케치에서 자신만의 코드를 쓰는 것입니다. 프로그래머들은 아이디어를 현실로 만들거나 새로운 기술을 배우기 위해 이를 합니다.
 
-새 프로젝트를 시작하는 것은 개발자가 아이디어를 현실로 구현하는 첫 단계입니다. 이를 통해 프로그래머들은 창의적인 생각을 형상화하고 세계를 바꿀 수 있습니다.
+## How to: (어떻게 하나요?)
+Arduino IDE에서 새 프로젝트를 시작하세요. 아래는 LED를 깜박이는 간단한 예제입니다.
 
-## 어떻게 하는가:
-
-아래의 코드는 LED가 1초 간격으로 깜박이는 아두이노 프로젝트를 시작하는 예제입니다.
-
-```Arduino
+```arduino
 void setup() {
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT); // 내장 LED를 출력으로 설정
 }
 
 void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(1000);
+  digitalWrite(LED_BUILTIN, HIGH);   // LED 켜기
+  delay(1000);                       // 1초 기다리기
+  digitalWrite(LED_BUILTIN, LOW);    // LED 끄기
+  delay(1000);                       // 1초 기다리기
 }
 ```
-이 코드를 업로드하면 내장 LED가 1초 간격으로 켜지고 꺼집니다.
+위 코드를 업로드하면 아두이노의 내장 LED가 1초 간격으로 깜빡이게 됩니다.
 
-## 딥 다이브:
+## Deep Dive (심층 탐구)
+아두이노는 2005년 이탈리아에서 교육용으로 시작되어 전 세계 메이커들과 교육자들에게 사랑받는 플랫폼이 되었습니다. 비주얼 스튜디오 코드(VSCode) 와 같은 대안적인 개발 환경이 있지만, Arduino IDE는 간단하고 접근하기 쉬운 인터페이스로 여전히 많은 사람들에게 첫 선택이 됩니다. 이 IDE는 Wiring 프로그래밍 언어를 사용하여, 하드웨어의 복잡성을 감소시키고 프로그래밍을 쉽게 만들었습니다. 신규 프로젝트를 시작할 때 기본적으로 `setup()` 함수와 `loop()` 함수를 사용합니다. `setup()`은 프로그램 시작 시 한 번 실행되고 `loop()`는 주기적으로 반복 실행됩니다.
 
-1. **역사적 맥락:** 아두이노는 2005년 이탈리아의 Interaction Design Institute에서 학생들에게 프로그래밍 및 전자공학을 손쉽게 가르치기 위한 도구로 개발되었습니다.
-  
-2. **대안들:** 라즈베리 파이, ESP8266 등 다른 마이크로 컨트롤러도 고려해 볼 만한 대안입니다. 그러나 아두이노는 입문자 친화적인 커뮤니티와 일관된 업데이트로 인해 여전히 인기가 있습니다.
-   
-3. **구현 세부사항:** 새 프로젝트를 시작하면, 아두이노 IDE는 기본 포맷인 `setup()`와 `loop()` 함수를 생성합니다. `setup()`는 프로그램이 시작할 때 한 번만 실행되고, `loop()`는 계속해서 반복됩니다.
-
-## 참고 자료:
-
-- [아두이노 공식 웹사이트](https://www.arduino.cc/)
-- [아두이노를 위한 프로젝트 아이디어](https://create.arduino.cc/projecthub)
-- [LED 깜박이기 튜토리얼](https://www.arduino.cc/en/Tutorial/BuiltInExamples/Blink)
+## See Also (관련자료)
+- Arduino 공식 사이트: [https://www.arduino.cc/](https://www.arduino.cc/)
+- 프로젝트 예제 및 튜토리얼: [Arduino Project Hub](https://create.arduino.cc/projecthub)
+- Arduino 언어 참조: [Arduino Reference](https://www.arduino.cc/reference/en/)
+- 개발 환경 설정과 추가 도구 사용: [Arduino IDE 2.0](https://www.arduino.cc/en/software#experimental-software)

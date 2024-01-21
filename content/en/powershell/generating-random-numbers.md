@@ -1,6 +1,7 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Arduino recipe: Generating random numbers"
+date:                  2024-01-20T17:49:29.976810-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generating random numbers"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,38 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Generating Random Numbers with PowerShell
-
 ## What & Why?
-Generating random numbers simply means creating a number that can't be logically predicted. Programmers do it to introduce randomness in their code for scenarios like password generation, statistical sampling, simulation, and testing. 
+Random numbers are unpredictable values. In programming, we use them for stuff like testing, security, and simulating unpredictable events.
 
 ## How to:
-PowerShell makes it very easy to generate random numbers using the `Get-Random` cmdlet. Here's how:
-
-To generate a random number between 0 and 10, you would use:
+PowerShell makes generating random numbers easy-peasy. Let's see it in action.
 
 ```PowerShell
-Get-Random -Maximum 10
+# Basic random number between 0 and Int32.MaxValue
+$randomNumber = Get-Random
+Write-Output $randomNumber
+
+# Random number within a specified range
+$randomInRange = Get-Random -Minimum 10 -Maximum 50
+Write-Output $randomInRange
+
+# Random selection from an array
+$array = 1..10
+$randomElement = Get-Random -InputObject $array
+Write-Output $randomElement
 ```
 
-Sample output would be something like `7`, depending on how your stars align today.
+Sample output:
+```
+1073741823
+27
+8
+```
 
-If you want to specify a range, say between 10 and 20, use:
+To get consistent results (handy for testing), set the seed:
 
 ```PowerShell
-Get-Random -Minimum 10 -Maximum 20
+# Setting the seed for reproducibility
+[Random]::new(11).Next(1, 100)
 ```
-
-Sample output could be `14`, `19`, or `10`. Don't take my word for it, though - your output may differ.
 
 ## Deep Dive
-The `Get-Random` cmdlet in PowerShell makes use of the .NET System.Random class, which implements a pseudo-random number generator. Although it works totally fine for most practical use-cases, it's not ideal for applications requiring cryptographically secure random numbers.
+Way back, random numbers were generated manually—which was a hassle. Then computers stepped in. In PowerShell, the `Get-Random` cmdlet uses a pseudo-random number generator (PRNG). A PRNG uses algorithms to spit out number sequences that appear random but aren't truly unpredictable (hence "pseudo").
 
-For historical context, before PowerShell and .NET, scripting languages like Visual Basic Script didn't provide built-in functionality for generating random numbers. Developers had to manually implement a random number generator using various algorithms.
+Alternatives? Sure. You could tap into .NET's `[Random]` class for more control, like the seed example above. Or delve into cryptography with `[System.Security.Cryptography.RandomNumberGenerator]` for more robust randomness.
 
-An alternative would be using the .NET classes directly. For instance, you could create a new object of the System.Random class to generate random numbers by using `$Random = New-Object -TypeName System.Random` command. But `Get-Random` is indeed more PowerShell-ish, and does the same job in less code.
+Implementation-wise, computers rely on math for "randomness," often involving complex algorithms like the Mersenne Twister. The catch is, it starts with a seed value. Change the seed, and you change the sequence. Hence, the reproducibility.
 
 ## See Also
-Check out these resources to learn more about random numbers in PowerShell and .NET:
-- PowerShell `Get-Random` cmdlet: [Official Documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.1)
-- .NET `System.Random` class: [Official Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0)
+- PowerShell docs on `Get-Random`: [link](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-random)
+- Microsoft's .NET `[Random]` class: [link](https://docs.microsoft.com/en-us/dotnet/api/system.random)
+- Cryptographically secure random numbers: [link](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator)

@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T17:59:23.946796-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -12,46 +13,87 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्या और क्यों?
 
-HTTP request भेजना, किसी web server से data को fetch करने का एक simple तरीका है। Programmers इसे तभी use करते हैं जब उन्हें अपने Arduino device को remotely control करना होता है या किसी बाहरी source से data प्राप्त करना होता है।
+HTTP अनुरोध भेजना वेब सर्वर पर एक निश्चित डेटा अनुरोध या प्रतिक्रिया भेजने की प्रक्रिया है। प्रोग्रामर्स ऐसा डेटा पाने, वेब सर्विसेज से बात करने या IoT डिवाइसेस को नेटवर्क से जोड़ने के लिए करते हैं।
 
 ## कैसे करें:
 
-Arduino HTTP request bhjene ke liye, ESP8266WiFi library ko use karte hain. Niche ek example diya gaya hai:
-
 ```Arduino
-#include <ESP8266HTTPClient.h>
 #include <ESP8266WiFi.h>
 
+const char* ssid = "yourSSID";
+const char* password = "yourPASSWORD";
+
+const char* host = "example.com";
+
 void setup() {
-  WiFi.begin("your_SSID", "your_PASSWORD");
+  Serial.begin(115200);
+  delay(10);
+
+  // वाई-फाई से कनेक्ट करें
+  Serial.println();
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+
+  WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
+    delay(500);
+    Serial.print(".");
   }
 
-  HTTPClient http;
-  
-  http.begin("http://example.com"); 
-  int httpCode = http.GET();                                       
-      
-  if (httpCode > 0) {
-    String payload = http.getString();    
-    Serial.println(payload);
+  Serial.println("");
+  Serial.println("WiFi connected");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+
+  // सर्वर से कनेक्ट करें
+  Serial.print("Connecting to ");
+  Serial.println(host);
+
+  // Use WiFiClient class to create TCP connections
+  WiFiClient client;
+  const int httpPort = 80;
+  if (!client.connect(host, httpPort)) {
+    Serial.println("Connection failed");
+    return;
   }
-  
-  http.end(); 
+
+  // HTTP अनुरोध भेजें
+  String url = "/path";
+  Serial.print("Requesting URL: ");
+  Serial.println(url);
+  client.print(String("GET ") + url + " HTTP/1.1\r\n" +
+               "Host: " + host + "\r\n" + 
+               "Connection: close\r\n\r\n");
+
+  while (client.connected()) {
+    String line = client.readStringUntil('\n');
+    if (line == "\r") {
+      Serial.println("Headers received");
+      break;
+    }
+  }
+
+  // रिस्पॉन्स पढ़ें
+  String line = client.readStringUntil('\n');
+  if (line.startsWith("{\"state\":\"success\"")) {
+    Serial.println("Received a successful response from the server");
+  } else {
+    Serial.println("Received an unexpected response from the server");
+  }
 }
 
-void loop() {}
+void loop() {
+  // Nothing to do here
+}
 ```
-Example program में, हम्हे "your_SSID" और "your_Password" अपने WiFi network के details से replace करना होगा। इसके बाद, इस program को run करने से हमें "http://example.com" website का response mil jayega।
 
-## गहराई में:
-HTTP request का concept World Wide Web के early दिनों से ही use किया जा रहा है। Arduino में इसका implementation HTTPClient library के through होता है, जो की कई different types की HTTP methods supports करता है, जैसे की GET, POST, PUT, DELETE, etc। 
+## गहराई से जानकारी:
 
-Arduino के alternatives में Particle, BeagleBone Black, और Raspberry Pi होते हैं। ये सभी boards internet-connected applications के लिए use किये जा सकते हैं, अलग-अलग boards का use different situations में होता है। जैसे की, Raspberry Pi में एक fully functional operating system hota है जो complex tasks के लिए suitable होता है। 
+ESP8266 मॉड्यूल अरुदिनो को वाई-फाई से जोड़कर HTTP अनुरोध भेजने की क्षमता देता है। एक समय में, प्रोग्रामर्स इथरनेट शील्ड के सहारे नेटवर्क ऑपरेशन्स करते थे, लेकिन इसके वायरलेस संस्करण ने IoT परियोजनाओं में क्रांति ला दी है। REST एपीआई और Webhooks जैसे तकनीकें हमें वेब सर्विसेज से बातचीत के लिए HTTP अनुरोधों का इस्तेमाल करने देती हैं।
 
-## और भी देखें:
+## देखें भी:
 
-- More about HTTP requests: [link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
-- Alternatives to Arduino: [Raspberry Pi](https://www.raspberrypi.org/), [BeagleBone](https://beagleboard.org/bone), [Particle](https://www.particle.io/)
+- [Arduino HttpClient library](https://www.arduino.cc/en/Tutorial/LibraryExamples/HttpClient)
+- [Arduino WiFi library documentation](https://www.arduino.cc/en/Reference/WiFi)

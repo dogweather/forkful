@@ -1,7 +1,8 @@
 ---
-title:                "Générer des nombres aléatoires"
-html_title:           "Elixir: Générer des nombres aléatoires"
-simple_title:         "Générer des nombres aléatoires"
+title:                "Génération de nombres aléatoires"
+date:                  2024-01-20T17:48:56.656547-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Génération de nombres aléatoires"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Numbers"
@@ -10,38 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Générer des nombres aléatoires est une façon de produire des chiffres sans ordre ou sans modèle prévisible. Les programmeurs le font pour des raisons variées : simulations, jeux, tests, et plus encore.
+## What & Why?
+Générer des nombres aléatoires, c'est comme lancer un dé virtuel. On le fait pour introduire de l'imprévisibilité dans nos applications, pour des jeux, des simulations ou des choix aléatoires.
 
-## Comment faire:
-Voici comment générer un nombre aléatoire simple en Elixir.
-```Elixir 
-IO.inspect(:rand.uniform(10)) 
+## How to:
+En Elixir, utiliser `:rand.uniform/1` pour sortir un nombre aléatoire.
+
+```elixir
+# Générer un nombre aléatoire entre 1 et 10
+random_number = :rand.uniform(10)
+IO.puts(random_number)
 ```
 
-Quand on exécute ce programme, on obtient une sortie comme ceci : 
-```Elixir 
-7
+Output pourrait être `7`, ou un autre chiffre entre 1 et 10.
+
+Pour les graines aléatoires:
+
+```elixir
+# Initialiser la graine
+:rand.seed(:exs1024, :os.timestamp())
+
+# Maintenant générer un nombre
+random_number = :rand.uniform(10)
+IO.puts(random_number)
 ```
 
-Pour des nombres à virgule, essayez ceci:
-```Elixir 
-IO.inspect(:rand.uniform()) 
-```
+Le résultat change à chaque exécution.
 
-Output :
-```Elixir 
-0.5641242522238273
-```
+## Deep Dive
+Avant Elixir 1.3, `:random` était utilisé, mais a été remplacé par `:rand`. Pourquoi? Consistance et performance. `:rand` offre une meilleure uniformité sur les distributions de nombres.
 
-## Plongée profonde
-Historiquement, générer des nombres aléatoirement était difficile et pas toujours parfait. Aujourd'hui, Elixir utilise l'algorithme de Mersenne Twister pour générer du faux aléatoire, qui est presque aussi bon que le vrai aléatoire.
+Le seeding est crucial; il détermine la séquence de nombres aléatoires. Sans seeding explicite, `:rand` utilise un seed automatiquement généré. Mais avec seeding, comme avec `:os.timestamp()`, la séquence est plus prévisible en redémarrages.
 
-Il y a d'autres façons de générer des nombres aléatoires en Elixir. Par exemple, la librairie 'exs1024' offre une alternatif aux fonctions intégrées :rand.
+Si `:rand` ne suffit pas, des librairies tierces comme `:exsplus` fournissent plus de fonctionnalités.
 
-Il faut savoir que :rand.uniform() en Elixir retourne un nombre aléatoire de l'intervalle [0.0, 1.0). Notez que 1.0 est exclu.
-
-## Voir aussi
-- [ElixirDocs - :rand](https://hexdocs.pm/elixir/Kernel.html#inspect/2)
-- [Librairie 'exs1024'](https://github.com/jj1bdx/exs1024/)
-- [Algorithme de Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)
+## See Also
+- [Elixir School - Random](https://elixirschool.com/en/lessons/basics/enum#shuffle)
+- [Erlang -- rand](http://erlang.org/doc/man/rand.html)

@@ -1,7 +1,8 @@
 ---
-title:                "ランダムな数字の生成"
-html_title:           "C#: ランダムな数字の生成"
-simple_title:         "ランダムな数字の生成"
+title:                "ランダム数の生成"
+date:                  2024-01-20T17:48:31.756485-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "ランダム数の生成"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Numbers"
@@ -10,38 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (なぜか？)
+ランダムな数を生成するとは、予測不可能な数字のシリーズを作ることです。これは、ゲームやセキュリティーシステム、シミュレーションなど多様なプログラムで必要とされます。
 
-ランダムな数値生成とは、予測不可能な数値を生み出すプロセスです。プログラマーはこれを使って、例えばゲームの要素をランダム化したり、一意のIDを生成したりします。
-
-## 使い方:
-
+## How to: (やり方)
 ```Arduino
 void setup() {
-  // 初期化.
   Serial.begin(9600);
-  // randomSeed関数の初期化.
   randomSeed(analogRead(0));
 }
 
 void loop() {
-  // ランダムな整数を生成し、シリアルモニターに出力.
-  Serial.println(random(100));
-  delay(1000);  // 次の数値を生成する前の遅延.
+  int randomNumber = random(100); // 0から99までのランダムな数
+  Serial.println(randomNumber);
+  delay(1000); // 次の数を生成する前に1秒待つ
 }
 ```
+サンプル出力:
+```
+23
+79
+4
+...
+```
 
-上記のコードは、0から99までのランダムな整数を毎秒生成します。randomSeedは、異なるシーケンスを生成するためのランダム関数を初期化します。
+## Deep Dive (深堀り)
+- **歴史**: 数世紀にわたり乱数は数学、統計学で一役買ってきた。最初の乱数表は1901年に作られた。
+- **代替**: ハードウェアRNG(乱数生成器)、ソフトウェアアルゴリズム（例：Mersenne Twister）など。
+- **実装**: Arduinoの`randomSeed()`関数は乱数発生器を初期化するのに使う。`analogRead(0)`からのアナログ値を利用すると良い。`random(min, max)`は範囲指定のランダム数を生成する。
 
-## 深堀り
-
-ランダムな数値生成は、初期のコンピューターシステムの時代から存在しています。これは、アプリケーションが予測不可能な要素や値を必要とするたびに利用されます。
-
-Arduinoでは、`random()`と`randomSeed()`といった関数が提供されています。しかし、他の方法、例えば、ハードウェアからのノイズや、外部のエントロピーソースを利用する方法もあります。
-
-また、Arduinoの`random()`関数は一部の範囲内での均等な分布を提供しないという限定的な事実があります。この点は特に重要な場合は、カスタムのランダム生成関数を使用することを考慮に入れてください。
-
-## 参考情報
-
-1. Arduino公式サイトでの[random関数](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/) のドキュメンテーション。
-3. 特定の範囲内で等確率のランダム数を生成するための[カスタム関数](https://forum.arduino.cc/index.php?topic=261053.0)の例。
+## See Also (関連情報)
+- Arduino Reference for `random()`- https://www.arduino.cc/reference/en/language/functions/random-numbers/random/
+- Arduino Reference for `randomSeed()` - https://www.arduino.cc/reference/en/language/functions/random-numbers/randomseed/
+- Mersenne Twister algorithm - https://en.wikipedia.org/wiki/Mersenne_Twister

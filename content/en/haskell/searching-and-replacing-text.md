@@ -1,6 +1,7 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "Arduino recipe: Searching and replacing text"
+date:                  2024-01-20T17:57:57.492309-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Searching and replacing text"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,54 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Haskell: The Ins and Outs of Searching & Replacing Text
-
 ## What & Why?
-
-Searching and replacing text means finding given sequences of characters (strings) within a larger string and swapping them out for other sequences. This operation is core to text processing, making it invaluable to programmers when manipulating data, performing transformations, or removing unwanted characters.
+Searching and replacing text lets you find strings and swap them out. Programmers use it to update code, refactor, or change data quickly.
 
 ## How to:
 
-Haskell offers inbuilt string functions, but we'll leverage the `Data.Text` library's `replace` function for this exercise. Install the `text` library if you haven't.
+Let's search and replace text using Haskell. We'll use `Data.Text` for Unicode text handling and efficiency. Make sure to import `Data.Text` like this: 
 
-```Haskell
-import Data.Text (replace, pack, unpack)
-
-searchAndReplace :: String -> String -> String -> String
-searchAndReplace old new text = unpack $ replace (pack old) (pack new) (pack text)
+```haskell
+import qualified Data.Text as T
 ```
 
-This function works by converting `String` values to `Text`, applying `replace`, then converting back to `String`. 
+Now, let's replace all instances of "hello" with "hi" in a text:
 
-Let's give it a spin:
+```haskell
+replaceText :: T.Text -> T.Text -> T.Text -> T.Text
+replaceText old new = T.replace old new
 
-```Haskell
 main :: IO ()
 main = do
-    let old = "banana"
-    let new = "apple"
-    let text = "I love bananas. Do you love bananas too?"
-    putStrLn (searchAndReplace old new text)
+  let originalText = T.pack "hello world, hello Haskell!"
+  let newText = replaceText (T.pack "hello") (T.pack "hi") originalText
+  print newText -- "hi world, hi Haskell!"
 ```
 
-This script will output:
-
-```Haskell
-"I love apples. Do you love apples too?"
-```
-
-Bingo! We've replaced all occurrences of "banana" with "apple".
+The `replace` function does the heavy lifting. We've wrapped it in `replaceText` for clarity.
 
 ## Deep Dive
 
-Haskell's historical favor for list processing reflects in its core string handling, treating strings as lists of characters. However, this approach isn't ideal for larger applications due to inefficiency. The Haskell `text` library, enacted in 2009, offers high-performance, memory-efficient string processing.
+Haskell's text replacement functions like `T.replace` are built on top of array processing capabilities of Haskell. Looking back, Haskell was first conceived in the '80s, with a focus on functional programming. This paradigm makes operations like text replacement elegant and less error-prone due to immutability and strong type systems.
 
-Alternatives include the `stringsearch` library, providing more advanced capabilities like Boyer-Moore and Knuth-Morris-Pratt algorithms. Though `text` is perfectly sufficient for most basic operations and keeps code clean by resembling standard string functions.
+As for alternatives, you could manually iterate over text and replace substrings, but that's more error-prone and inefficient. 
 
-While `replace` seems straightforward, it performs multiple transformations: `pack` converts `String` to `Text`, `replace` does the swapping, and `unpack` converts back to `String`.
+The `Data.Text` library uses a different internal representation than the `String` type (which is just a list of characters), making it better suited for large-scale text operations. The `T.replace` function itself uses efficient algorithms for string searching, which offer good performance even for large texts.
 
 ## See Also
 
-* [Haskell Text Library](https://hackage.haskell.org/package/text)
-* [Intro To Haskell](https://www.futurelearn.com/info/courses/functional-programming-haskell/0/steps/27233)
-* [Haskell stringsearch Library](https://hackage.haskell.org/package/stringsearch)
+For more on `Data.Text`, check out: 
+
+- [Text package on Hackage](https://hackage.haskell.org/package/text)
+
+Also consider broader reading on Haskell's string manipulation:
+
+- [Haskell Wiki on strings](https://wiki.haskell.org/Strings)
+- [Learn You a Haskell for Great Good! on Text](http://learnyouahaskell.com/input-and-output#files-and-streams)

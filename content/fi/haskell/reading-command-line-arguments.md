@@ -1,7 +1,8 @@
 ---
-title:                "Komentorivin argumenttien lukeminen"
-html_title:           "Bash: Komentorivin argumenttien lukeminen"
-simple_title:         "Komentorivin argumenttien lukeminen"
+title:                "Komennoriviparametrien lukeminen"
+date:                  2024-01-20T17:56:02.282341-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Komennoriviparametrien lukeminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,16 +11,14 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+## What & Why?
+Komennon rivin argumenttien lukeminen mahdollistaa parametrien antamisen ohjelmalle sen käynnistyessä. Ohjelmistokehittäjät käyttävät tätä toimintoa räätälöidäkseen ohjelman toimintaa helposti ja joustavasti.
 
-Komentorivin argumentit ovat ohjelman suorituksen aikana käyttäjän antamat syötteet. Ne mahdollistavat ohjelman suorituksen mukauttamisen lennosta. 
-
-## Kuinka: 
-
-Haskellissa voit lukea komentorivin argumentteja ```getArgs```-funktion avulla. Tässä on esimerkki:
+## How to:
+Haskellissa komentorivin argumentit luetaan `System.Environment` kirjaston `getArgs` funktiolla:
 
 ```Haskell
-import System.Environment
+import System.Environment (getArgs)
 
 main :: IO ()
 main = do
@@ -27,22 +26,19 @@ main = do
     print args
 ```
 
-Tämä koodi tulostaa kaikki käyttäjän syöttämät argumentit. Esimerkkejä ajoista:
+Kun ohjelma ajetaan komentoriviltä esim. `runhaskell script.hs arg1 arg2`, tulostuu:
 
-```Shell
-$ runhaskell example.hs argumentti1 argumentti2
-["argumentti1","argumentti2"]
+```Haskell
+["arg1", "arg2"]
 ```
 
-## Syvempi sukellus
+## Deep Dive
+Haskellissa komentorivin argumenttien käsittely on suhteellisen yksinkertaista ja suoraviivaista. `System.Environment` on tarjonnut tämän toiminnallisuuden pitkään ja se on tavanomainen tapa käsitellä argumentteja. Vaihtoehtoisesti, voit käyttää kirjastoja kuten `optparse-applicative` monimutkaisempien komentorivin työkalujen rakentamiseen, jotka tarjoavat monipuolisemmat vaihtoehdot ja automaattisen ohjeistuksen.
 
-```getArgs```-funktio on osa ```System.Environment```-kirjastoa, joka on ollut osa Haskell-standardia 1.3-versiosta lähtien. Vaikka funktio on suoraviivainen ja helppokäyttöinen, sen rinnalle on kehitetty myös monimutkaisempia ratkaisuja, kuten ```optparse-applicative```-kirjasto. ```optparse-applicative``` tukee monimutkaisten komentorivikomentojen määrittelyä.
+Implementaation yksityiskohdat ovat melko suoraviivaisia – `getArgs` palauttaa listan merkkijonoja (`[String]`), jotka ovat argumentit ohjelmalle. Järjestelmänriippuvainen osa piiloutuu `System.Environment` kirjaston taakse, joten kehittäjän ei tarvitse murehtia eri käyttöjärjestelmien eroista.
 
-Käytännön tasolla ```getArgs``` toteutetaan siten, että se hakee listan argumentteja suoraan komentotulkin (shellin) ympäristöstä. On hyvä muistaa, että tämä lista ei sisällä itse ohjelman nimeä, jos tarvitset sen, voit käyttää ```getProgName```-funktiota.
+## See Also
+Tässä muutamia vinkejä, jos haluat sukeltaa syvemmälle:
 
-## Katso myös
-
-- ```System.Environment``` [dokumentaatio](http://hackage.haskell.org/package/base/docs/System-Environment.html)
-- ```optparse-applicative``` [dokumentaatio](https://hackage.haskell.org/package/optparse-applicative) 
-- Yleisemmin ohjelmointi Haskellilla [Learn You a Haskell](http://learnyouahaskell.com/chapters) 
-- Kattava keskustelu Haskellin komentoriviparametreistä [StackOverflow](https://stackoverflow.com/questions/10129381/cli-argument-parsing-in-haskell)
+- Haskellin dokumentaatio `System.Environment`-moduulista: https://hackage.haskell.org/package/base/docs/System-Environment.html
+- `optparse-applicative` kirjaston dokumentaatio: https://hackage.haskell.org/package/optparse-applicative

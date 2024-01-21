@@ -1,6 +1,7 @@
 ---
 title:                "Enviando una solicitud http con autenticación básica"
-html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
+date:                  2024-01-20T18:02:30.152586-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,39 +11,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué?
+## Qué & Por Qué?
 
-Enviar una solicitud HTTP con autenticación básica es acreditar una solicitud HTTP con usuario y password. Los programadores lo hacen cuando quieren interactuar con APIs protegidas que requieren autenticación.
+Enviar una solicitud HTTP con autenticación básica es el proceso de comunicarse con un servidor web usando credenciales codificadas en Base64 (usuario:contraseña). Los programadores lo hacen para acceder a recursos protegidos o para interactuar con APIs que requieren autenticación.
 
 ## Cómo hacerlo:
 
-```Rust
-use reqwest::blocking::Client;
-use reqwest::header::{HeaderMap, HeaderValue, AUTHORIZATION};
+En Rust, puedes usar la biblioteca `reqwest` para manejar solicitudes HTTP. Vamos a ver cómo implementarlo.
 
-fn main() {
-    let client = Client::new();
-    let mut headers = HeaderMap::new();
-    headers.insert(AUTHORIZATION, HeaderValue::from_static("Basic usuario:password"));
-    let res = client.get("https://ejemplo.com").headers(headers).send();
+Primero, añade `reqwest` a tu archivo `Cargo.toml`:
 
-    match res {
-        Ok(response) => println!("Respuesta exitosa: {:?}", response),
-        Err(error) => println!("Ocurrió un error: {:?}", error),
-    }
+```toml
+[dependencies]
+reqwest = "0.11"
+base64 = "0.13"
+```
+
+Luego, en tu archivo principal:
+
+```rust
+use reqwest::header::{Authorization, Basic};
+use base64::encode;
+
+#[tokio::main]
+async fn main() -> Result<(), reqwest::Error> {
+    let username = "mi_nombre_de_usuario";
+    let password = "mi_contraseña";
+    let encoded_credentials = encode(&format!("{}:{}", username, password));
+    
+    let client = reqwest::Client::new();
+    let response = client.get("https://mi.servidor.com/recurso")
+        .header(Authorization(Basic {
+            username: username.to_string(),
+            password: Some(password.to_string()),
+        }))
+        .send()
+        .await?;
+    
+    println!("Status: {}", response.status());
+    println!("Headers:\n{:#?}", response.headers());
+    
+    let body = response.text().await?;
+    println!("Body:\n{}", body);
+    
+    Ok(())
 }
 ```
 
-## Análisis en profundidad
+Al ejecutar este código, deberías ver la salida del status de la solicitud y detalles de la respuesta. Asegúrate de que `tokio` también esté añadido a tus dependencias si piensas usar `async`.
 
-La autenticación HTTP básica es uno de los métodos más antiguos para autenticar usuarios en la web. Sin embargo, debido a su simplicidad, también es vulnerable a varios ataques si no se utiliza con una conexión segura (HTTPS).
+## Análisis Profundo
 
-Una alternativa al autenticación básica es la autenticación de portador del token. Este método implica enviar un token en el encabezado de la autorización en lugar de las credenciales en texto plano.
+La autenticación básica es un método antiguo pero aún utilizado. Es parte del protocolo HTTP desde la versión 1.0. Aunque es simple, no es la opción más segura porque la credencial se envía en texto claro codificada en Base64, fácil de decodificar.
 
-En cuanto a la implementación con Rust, el paquete "reqwest" es una opción popular debido a su simplicidad y facilidad de uso. Además, permite personalizar los encabezados de las solicitudes HTTP, lo que facilita la autenticación básica.
+Existen alternativas más seguras como OAuth y JWT (JSON Web Tokens). Sin embargo, la autenticación básica se mantiene popular para ciertos contextos donde la facilidad y rapidez de implementación son claves, como al desarrollar y probar APIs internas.
 
-## Ver también
+Técnicamente, la autenticación básica se implementa incluyendo el encabezado `Authorization` con el valor `Basic`, seguido de las credenciales codificadas. Rust's `reqwest` y `base64` simplifican este proceso manejando el encoding y el manejo de los headers automáticamente.
 
-1. Documentación oficial de Rust: https://doc.rust-lang.org/rust-by-example/
-2. 'reqwest' en Crates.io: https://crates.io/crates/reqwest
-3. Autenticación HTTP básica en Wikipedia: https://es.wikipedia.org/wiki/Autenticación_de_acceso_básica
+## Ver También
+
+Para más información, explorar los siguientes enlaces puede ser útil:
+
+- [reqwest crate documentation](https://docs.rs/reqwest/)
+- [The Rust `async` Book](https://rust-lang.github.io/async-book/)
+- [HTTP Authentication: Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)
+- [MDN Web Docs on HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [base64 crate documentation](https://docs.rs/base64/)
+
+Este contenido te ayudará a profundizar tu conocimiento sobre la autenticación HTTP básica en Rust y otros métodos de autorización.

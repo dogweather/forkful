@@ -1,6 +1,7 @@
 ---
 title:                "文字列の補間"
-html_title:           "Arduino: 文字列の補間"
+date:                  2024-01-20T17:50:18.985885-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "文字列の補間"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,37 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何と何故？
+## What & Why? (何となぜ？)
+文字列補間とは変数や式の結果を文字列に埋め込むことです。プログラマーはコードの可読性を上げたり、動的なメッセージを作ったりするためにこれを行います。
 
-文字列の内挿とは、文字列内に変数等の要素を挿入することを言います。プログラマーがこれを行う理由は主に、動的で複雑な文字列を効率良く作成し、コードの可読性とメンテナビリティを向上させるためです。
-
-## 実践方法：
-
+## How to: (実践方法)
 ```Bash
-name="Taro"
-echo "Hello, $name. How are you?"
+# 変数に値を割り当てます
+greeting="こんにちは"
+name="世界"
+
+# 文字列補間を使って変数を出力します
+echo "${greeting}、${name}！"
+
+# 数式の結果も埋め込むことができます
+a=5
+b=10
+echo "合計は: $(($a + $b))"
+```
+出力:
+```
+こんにちは、世界！
+合計は: 15
 ```
 
-上記コードは`Hello, Taro. How are you?`と出力します。
+## Deep Dive (掘り下げ)
+文字列補間は古くからシェルスクリプトにおける基本機能で、効率的なコード作成に役立ちます。Bash以前は`expr`コマンドを使用しますが、今では`$()`や`${}`構文が使われています。これらは子プロセスを作らずに処理できるため効率的です。代わりにダブルクオートを使うと、変数やコマンド出力が展開されません。
 
-変数名と文字列を明確に区別するには、中括弧`${}`を使用します：
-
-```Bash
-day="Sunday"
-echo "Today is ${day}."
-```
-
-上記コードは`Today is Sunday.`と出力します。
-
-## 深層解析:
-
-1. 歴史的な文脈: Bashは1979年から存在し、文字列内挿はその初期から利用されています。これは、シェルスクリプトの効率と柔軟性を高めるための重要な特性となっています。
-
-2. 代替案: 内挿の代わりに`printf`関数を使用することも可能です。例えば`printf "Hello, %s.\n" $name`は同様の結果を提供します。
-
-3. 実装詳細: Bashの文字列内挿は、ダブルクォート("")で囲まれた文字列内の`$`記号に続くパターンを認識します。変数名と文字列を明確に区別するためには中括弧(`{}`)を使用すると良いでしょう。
-
-## 参考資料:
-
-- Bashの文字列内挿の詳細： https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion
-- プログラミングに関する効率的な文字列操作： https://www.geeksforgeeks.org/bash-string-interpolation/
+## See Also (参照)
+- Bash Manual: [Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
+- Advanced Bash-Scripting Guide: [ABS Guide](https://www.tldp.org/LDP/abs/html/)

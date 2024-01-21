@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-html_title:           "Arduino: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+date:                  2024-01-20T17:38:04.359725-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "C#"
 category:             "C#"
@@ -10,28 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Muutetaan Merkkijonot Pieniksi Kirjaimiksi C #: ssa
+## What & Why? / Mikä ja miksi?
+Muutetaan merkkijono pieniksi kirjaimiksi. Teemme sen siksi, että voimme vertailla tekstejä tasapuolisesti riippumatta alkuperäisestä kirjainkoosta tai toteuttaa ei-luokkauttavaa käyttäjäsyötteen käsittelyä.
 
-## Mikä & Miksi?
-Merkkijonon muuttaminen pienaakkosiksi tarkoittaa, että jokainen merkkijonoa muodostava iso kirjain muutetaan pieneksi kirjaimeksi. Tämä on hyödyllistä esimerkiksi tehtäessä tietojen vertailua, hakua tai lajittelua, koska isot ja pienet kirjaimet tulkitaan yleensä eri merkeiksi.
-
-## Kuinka:
-Käytä sisäänrakennettua `ToLower`-metodia merkkijonon muuttamiseen pienaakkosiksi C # -koodissa.
+## How to / Miten tehdään:
+C# kielessä käytät `ToLower()`-metodia, joka on osa `String`-luokkaa. Tässä yksinkertainen esimerkki ja sen tulostus.
 
 ```C#
-string source = "Moi Maailma";
-string result = source.ToLower();
-Console.WriteLine(result);
+// Merkkijonon muuttaminen pieniksi kirjaimiksi
+string originalText = "Hyvää Päivää!";
+string lowerCaseText = originalText.ToLower();
+
+Console.WriteLine(lowerCaseText);
 ```
-Tämän koodinpätkän tuloste on: `moi maailma`.
 
-## Syvä Sukellus:
-Muuttaa isot kirjaimet pieniksi C#:ssa, kehitettiin osana tekstinkäsittelyä, missä kirjainkoolla ei ollut merkitystä. `ToLower()`-metodi on osa `String`-luokkaa .NET-kehyksessä.
+Tulostus on:
 
-Vaihtoehtoisesti voit käyttää `ToLowerInvariant`-metodia, joka käyttää kulttuuririippumatonta muunnosta, toisin kuin `ToLower`, joka käyttää kulttuurikohtaista muunnosta. Tämä on tärkeää, kun käsitellään kielikohtaisia ​​sääntöjä.
+```
+hyvää päivää!
+```
 
-Käyttää `ToLower` tai `ToLowerInvariant` syntyy uusi merkkijono, koska .NET-merkkijonot ovat muuttumattomia. Alkuperäistä merkkijonoa ei muuteta.
+## Deep Dive / Syväsukellus:
+Ennen .NET Frameworkia kehittäjät käyttivät usein C- tai C++-kirjastoja merkkijonojen käsittelyyn, joka oli työläämpää ja alttiimpaa virheille. `.ToLower()`-metodi on yksinkertaistanut prosessia huomattavasti. 
 
-## Katso Myös:
-- Microsoft .NET-dokumentaatio: [ToLower](https://docs.microsoft.com/fi-fi/dotnet/api/system.string.tolower?view=net-5.0)
-- Microsoft .NET-dokumentaatio: [ToLowerInvariant](https://docs.microsoft.com/fi-fi/dotnet/api/system.string.tolowerinvariant?view=net-5.0)
+Kuitenkin metodin käytössä on otettava huomioon kielikohtaiset erityistapaukset. Esimerkiksi turkkilaisessa aakkostossa on pisteellinen ja pisteetön 'i', jotka vaativat kielikohtaista käsittelyä. C# käyttää kulttuurikohtaisia asetuksia (`CultureInfo`), jos halutaan ottaa huomioon eri kieltä puhuvien käyttäjien tarpeet.
+
+Vaihtoehtoisesti, jos haluat varmistaa, että käytät "invarianttia kulttuuria" (kulttuurista riippumatonta), voit käyttää `ToLowerInvariant()`-metodia:
+
+```C#
+string invariantLowerCaseText = originalText.ToLowerInvariant();
+```
+
+Toinen huomionarvoinen asia on suorituskyky. Suuremmille tekstipaljouksille suorituskyky saattaa laskea, joten kannattaa harkita metodin kutsukertojen minimoimista.
+
+## See Also / Katso myös:
+- C# dokumentaatio `String.ToLower()`: https://docs.microsoft.com/dotnet/api/system.string.tolower
+- C# dokumentaatio `String.ToLowerInvariant()`: https://docs.microsoft.com/dotnet/api/system.string.tolowerinvariant
+- C# dokumentaatio kulttuuritietoisuudesta (`CultureInfo`): https://docs.microsoft.com/dotnet/api/system.globalization.cultureinfo
+- Tietoa suorituskyvystä ja optimoinnista: https://docs.microsoft.com/dotnet/standard/base-types/best-practices-strings

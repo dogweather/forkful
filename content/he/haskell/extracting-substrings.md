@@ -1,6 +1,7 @@
 ---
 title:                "חילוץ תת-מחרוזות"
-html_title:           "Bash: חילוץ תת-מחרוזות"
+date:                  2024-01-20T17:45:59.377974-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חילוץ תת-מחרוזות"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,30 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה זה ולמה? 
-חילופי תת-מחרוזות הם הפעולה של חילופי רצפים של תווים מתוך מחרוזת. מתכנתים עושים זאת כדי למנות, להבחין או לעבד נתונים מסוימים.
+## מה ולמה?
+חילוץ תת-מחרוזות (substrings) ב-Haskell הוא פעולה שמאפשרת לנו לבחור חלק מתוך מחרוזת. זה נעשה לעיבוד טקסט, ולידוא נתונים או למשימות אחרות שדורשות עבודה עם מידע מובנה.
 
-# איך לעשות: 
+## איך לעשות:
 ```Haskell
-import Data.List
+import Data.Text (Text)
+import qualified Data.Text as T
 
--- ניצול substring באמצעות drop ו take
-substring :: Int -> Int -> String -> String
-substring startPos endPos = take (endPos - startPos + 1) . drop startPos
-```
-יציאה לדוגמה:
-```Haskell
+-- חילוץ תת-מחרוזת ממיקום התחלתי עד סוף
+substringFrom :: Int -> Text -> Text
+substringFrom start text = T.drop start text
+
+-- חילוץ תת-מחרוזת מהתחלה ועד מיקום סופי
+substringTo :: Int -> Text -> Text
+substringTo end text = T.take end text
+
+-- חילוץ תת-מחרוזת בעזרת טווח
+substring :: Int -> Int -> Text -> Text
+substring start end text = T.take (end - start) (T.drop start text)
+
+-- דוגמה לשימוש
+main :: IO ()
 main = do
-    putStrLn $ substring 0 4 "היי, עולם של Haskell"
-    -- יוצא "היי,"
+  let text = T.pack "שלום, עולם!"
+  putStrLn . T.unpack $ substringFrom 6 text  -- "עולם!"
+  putStrLn . T.unpack $ substringTo 5 text    -- "שלום"
+  putStrLn . T.unpack $ substring 7 12 text  -- "עולם"
 ```
+תוצאת הקוד: ביצוע פונקציות החילוץ על המחרוזת "שלום, עולם!" יחזיר "עולם!", "שלום", ו"עולם" בהתאמה.
 
-# צלילה עמוקה:
-1. הHaskell, בניגוד לשפות תכנות אחרות שהגדירו מונחים מוכנים מראש למחרוזת, מספק בפועל דרכים מרכזיות לתיחום תת-מחרוזות: `drop` ו `take`.
-2. חלופות לגישה זו כוללות שימוש בספריות נוספות, כמו Data.ByteString.Char8 או Data.Text, שמספקות דרכים מהירות ויעילות יותר לעבוד עם מחרוזות ותת-מחרוזות.
-3. במימוש זה, `drop` "מניח" את המחרוזת עד שהתווים מתחילים ו `take` מחזיר מחרוזת שארכה היא המרחק בין נקודת ההתחלה לנקודת הסיום.
+## צלילה עמוקה
+Haskell משתמש בפונקציות חילוץ מחרוזות מהספריה `Data.Text` כדי להימנע מעבודה עם מחרוזות מטיפוס `String`, שהן פחות יעילות. ההיסטוריה של פונקציות החילוץ הופכת את עבודת הטקסט לפשוטה יותר ב-Haskell. ישנם גם שיטות אלטרנטיביות כמו פרסור (parsing) וביטויים רגולריים, אך לעיתים הפונקציות המובנות עושות את העבודה נאמנה ובמהירות. דבר נוסף שחשוב לדעת הוא שחילוץ תת-מחרוזות צריך להיעשות תוך כדי התחשבות במיקומים שמאחרי הגבולות שאתה מגדיר, כדי להימנע משגיאות זמן ריצה.
 
-# ראה גם:
-- Data.ByteString.Char8: http://hackage.haskell.org/package/bytestring-0.10.8.2/docs/Data-ByteString-Char8.html
-- Data.Text: http://hackage.haskell.org/package/text-1.2.3.1/docs/Data-Text.html
-- פונקציות מחרוזת Haskell: https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/string
+## ראה גם
+- ספריית המחרוזות `Data.Text`: http://hackage.haskell.org/package/text
+- מבוא לשפת Haskell (באנגלית): http://learnyouahaskell.com/chapters
+- מדריך לביטויים רגולריים ב-Haskell: https://wiki.haskell.org/Regular_expressions

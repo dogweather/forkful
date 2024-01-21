@@ -1,6 +1,7 @@
 ---
 title:                "Convertendo uma string para minúsculas"
-html_title:           "Fish Shell: Convertendo uma string para minúsculas"
+date:                  2024-01-20T17:39:12.643401-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,44 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Conversão de Strings para Minúsculas em Rust: Um Guia Prático
-
 ## O Que & Por quê?
-
-Converter string para minúsculas significa transformar todos os caracteres da string de letras maiúsculas para minúsculas. É uma operação comum quando queremos padronizar os dados de entrada para comparações, pesquisas ou visualizações sem diferenciar maiúsculas e minúsculas.
+Converter uma string para minúsculas significa transformar todos os caracteres alfabéticos do texto para sua forma minúscula. Programadores fazem isso para padronizar entradas de dados, facilitando comparações e buscas insensíveis a maiúsculas/minúsculas.
 
 ## Como fazer:
-
-Aqui está um exemplo simples:
-
-```rust
+```Rust
 fn main() {
-    let s = "Olá, MUNDO!";
-    println!("{}", s.to_lowercase());
+    let texto = "Rust é LEGAL!";
+    let texto_minusculo = texto.to_lowercase();
+    println!("{}", texto_minusculo);
 }
 ```
-
-A saída será: `olá, mundo!`
-
-## Deep Dive
-
-A necessidade de converter strings para minúsculas tem sido parte da programação desde o início. Os primeiros computadores eram sistemas sensíveis ao caso considerando 'A' e 'a' como diferentes. Então a conversão para minúsculas se tornou crucial para comparações de texto sem diferenças.
-
-Existem formas alternativas de fazer isso em Rust. Uma forma é usar um loop e o método `to_ascii_lowercase()`, retornando o caractere convertido para ascii lowercase.
-
-```rust
-fn main() {
-    let s = "Olá, MUNDO!";
-    let lower_s: String = s.chars().map(|c| c.to_ascii_lowercase()).collect();
-    println!("{}", lower_s);
-}
+Saída:
+```
+rust é legal!
 ```
 
-Nota: `to_lowercase()` trabalha com strings unicode, enquanto `to_ascii_lowercase()` somente com strings ASCII. 
+## Mergulho Profundo
+Historicamente, a conversão de strings para caixa baixa é essencial em várias operações de software, como comparação de dados e ordenação alfabética. No Rust, o método `.to_lowercase()` é definido pelo trait `Unicode` e difere de `.to_ascii_lowercase()`, que só afeta caracteres ASCII. O Rust considera pontos de código Unicode, fornecendo uma operação de conversão mais completa e globalmente relevante que é diferente da oferecida em linguagens como C e Java, onde as operações podem se basear apenas na tabela ASCII.
+
+Alternativas ao `.to_lowercase()` incluem o uso de bibliotecas de terceiros que podem oferecer controle mais granular sobre a conversão de caracteres ou manipulação direta de bytes se estiver trabalhando apenas com ASCII.
 
 ## Veja Também
-
-- Documentação Rust oficial sobre `to_lowercase()`: https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase 
-- Documentação Rust oficial sobre `to_ascii_lowercase()`: https://doc.rust-lang.org/std/primitive.char.html#method.to_ascii_lowercase 
-
-Este artigo deve lhe oferecer uma base sólida para compreender como e por que as strings são convertidas para minúsculas em Rust.
+- [Unicode case mapping](https://www.unicode.org/reports/tr21/tr21-5.html)
+- [Documentação Rust para `String`](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Rust by Example - Strings](https://doc.rust-lang.org/stable/rust-by-example/std/str.html)

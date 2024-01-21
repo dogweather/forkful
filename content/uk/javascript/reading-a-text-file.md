@@ -1,6 +1,7 @@
 ---
 title:                "Читання текстового файлу"
-html_title:           "Arduino: Читання текстового файлу"
+date:                  2024-01-20T17:54:30.101720-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Читання текстового файлу"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,34 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
+## What & Why? (Що та Чому?)
+Reading text files means grabbing text data from a .txt (or similar) file. Programmers read files to use data like configuration settings, import user data, or to analyze text outside of the application itself.
 
-Читання текстових файлів, це процес отримання інформації з файлу, збереженої в текстовому форматі. Програмісти роблять це для обробки даних, збережених в таких файлах, як налаштування, логи, документація тощо.
-
-## Як це робити:
-
-Щоб прочитати текстовий файл в JavaScript, використовуємо вбудований модуль `fs` (File System). Подивимося на приклад:
+## How to: (Як зробити:)
+Use `fetch` for web files, `FileReader` for client-side operations, or `fs` in Node.js. Here’s the quick code.
 
 ```Javascript
+// Web files:
+fetch('data.txt')
+  .then(response => response.text())
+  .then(text => console.log(text));
+
+// Client-side files:
+document.getElementById('input-file').addEventListener('change', event => {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+  reader.onload = e => console.log(e.target.result);
+  reader.readAsText(file);
+});
+
+// Node.js:
 const fs = require('fs');
 
-fs.readFile('MyFile.txt', 'utf8', function(err, data){
-    if (err) throw err;
-    console.log(data);
+fs.readFile('data.txt', 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log(data);
 });
 ```
 
-Код вище читає вміст файлу `MyFile.txt` і виводить його в консоль. Якщо під час читання файлу виникає помилка, код виведе цю помилку.
+Sample Output for each:
+```
+Hello, this is a text file content!
+```
 
-## Поглиблений аналіз
+## Deep Dive (Поглиблене занурення):
+Historically, JavaScript was browser-only; Node.js allowed server-side file operations. Alternatives include `XMLHttpRequest` for browsers (but `fetch` is modern). Implementation details matter: know when to use asynchronous (`fs.readFile`) versus synchronous (`fs.readFileSync`) for Node.js, or how to handle file reading in chunks for big files.
 
-Історично, читання файлів в JavaScript було обмежене оскільки це клієнтська мова. Але з приходом Node.js, JavaScript отримав доступ до файлової системи, що дозволяє читати й записувати файли.
-
-Альтернативою для `fs` є модуль `fs.promises`, який використовує проміси замість зворотніх викликів, що робить код чистішим і зрозумілішим.
-
-Зверніть увагу, що читання файлів - це блокуюча операція, що може вплинути на продуктивність. Тому для великих файлів рекомендується використовувати потоки.
-
-## Дивіться також
-
-- Документація Node.js про модуль 'fs': [Посилання](https://nodejs.org/api/fs.html)
-- MDN Web Docs - Читання файлів у браузері: [Посилання](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications)
+## See Also (Дивіться також):
+- MDN Docs on `fetch()`: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+- Node.js `fs` module docs: https://nodejs.org/api/fs.html
+- FileReader API docs: https://developer.mozilla.org/en-US/docs/Web/API/FileReader

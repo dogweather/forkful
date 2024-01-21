@@ -1,7 +1,8 @@
 ---
-title:                "Generera slumpmässiga nummer"
-html_title:           "Arduino: Generera slumpmässiga nummer"
-simple_title:         "Generera slumpmässiga nummer"
+title:                "Generera slumpmässiga tal"
+date:                  2024-01-20T17:49:05.986246-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generera slumpmässiga tal"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Numbers"
@@ -11,35 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Generering av slumpmässiga nummer är när datorprogran skapar nummer på ett oplanerat sätt. Programmerare gör detta för att simulera en händelse med ovisst resultat, som simulerar en tärningkast, eller för att generera unika identifierare.
+Slumpmässiga tal används för att skapa oförutsägbarhet i program och kan vara nyckeln i allt från spel till säkerhetsalgoritmer. Programmerare behöver dem för att testa, simulera och skapa dynamiska upplevelser.
 
-## Så här gör du:
-Här är ett exempel på hur man skapar ett slumpmässigt heltal i Go:
-
+## How to:
 ```Go
 package main
+
 import (
 	"fmt"
 	"math/rand"
 	"time"
 )
+
 func main() {
+	// Seed generatorn med nuvarande tid för variation
 	rand.Seed(time.Now().UnixNano())
+
+	// Skapa ett slumpmässigt tal mellan 0 och 99
 	randomNumber := rand.Intn(100)
 	fmt.Println(randomNumber)
+
+	// Skapa ett slumpmässigt flyttal mellan 0.0 och 1.0
+	randomFloat := rand.Float64()
+	fmt.Printf("%.2f\n", randomFloat)
 }
 ```
-När du kör det här programmet kan din utmatning se ut så här:
-
-```Go
-42
+Exempelutdata:
 ```
-Remember, resultatet varierar varje gång du kör programmet eftersom det är slumpmässigt.
+42
+0.81
+```
 
-## Djupdykning
-Historiskt sett började generering av slumpmässiga nummer inom datorer med metoder som strålning eller termiskt brus innan programmet innehöll metoder. Alternativ inkluderar krypto-säkra generatorer, men dessa är mer komplexa. I Go kan du använda paketet math/rand, vilket är snabbt och enkelt att använda. Men det bör noteras att Go's standardgenerator inte är krypto-säkert, så den bör inte användas för kryptografiska syften.
+## Deep Dive:
+Generering av slumpmässiga tal startade långt innan datorer, med verktyg som tärningar och lotthjul. I datorns värld används pseudoslumptalsgeneratorer (PRNG) som simulerar slumpmässighet, eftersom strikt slumpmässighet är svår att uppnå digitalt.
 
-## Se även
-Relaterade ämnen inkluderar hur man genererar slumpmässiga nummer inom specifika intervall, eller hur man genererar krypto-säkra slumpmässiga nummer. Här är några länkar till Go-dokument om de här ämnena:
-- [Go math/rand paket dokumentation](https://golang.org/pkg/math/rand/)
-- [Go crypto/rand paket dokumentation](https://golang.org/pkg/crypto/rand/)
+`math/rand` i Go är inte säker för kryptografisk användning för det. Kryptografiskt säkra tal får du från `crypto/rand`, som läser ur en entropikälla. 
+
+Go använder ett deterministiskt system, så om du vill ha nya nummer varje gång måste du "seed:a" generatorn - vi gör detta med `time.Now().UnixNano()` för att få unix-tiden i nanosekunder som seed.
+
+## See Also:
+- Go dokumentation för `math/rand` paketet: https://golang.org/pkg/math/rand/
+- Kryptografiskt säkra slumptal med `crypto/rand`: https://golang.org/pkg/crypto/rand/
+- Om pseudoslumptal och dess användning: https://en.wikipedia.org/wiki/Pseudorandom_number_generator

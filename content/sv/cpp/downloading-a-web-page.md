@@ -1,7 +1,8 @@
 ---
-title:                "Ladda ner en webbsida"
-html_title:           "Bash: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Hämta en webbsida"
+date:                  2024-01-20T17:43:38.444844-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Hämta en webbsida"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -11,25 +12,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att ladda ner en webbsida innebär att hämta sidans innehåll över nätet. Programmerare gör detta för att analysera innehållet, granska data eller integrera funktionalitet från externa webbplatser i sina applikationer.
 
-Att ladda ner en webbsida betyder att kopiera den för offline-användning. Programmerare gör detta för att analysera data, testa funktionalitet eller hitta buggar.
-
-## Hur man gör:
-
-För att ladda ner en sida i C++, kan vi använda libcurl bibliotek. Här är ett exempel:
+## Så här gör du:
+För att ladda ner en webbsida i C++ kan vi använda biblioteket cURL. Först måste du se till att cURL är installerat och länkat till ditt projekt.
 
 ```C++
-#include <curl/curl.h>
 #include <iostream>
-#include <string>
+#include <curl/curl.h>
 
-size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* userp) {
-    userp->append((char*)contents, size * nmemb);
+static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp) {
+    ((std::string*)userp)->append((char*)contents, size * nmemb);
     return size * nmemb;
 }
 
 int main() {
-    CURL* curl;
+    CURL *curl;
     CURLcode res;
     std::string readBuffer;
 
@@ -40,23 +38,25 @@ int main() {
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
         res = curl_easy_perform(curl);
         curl_easy_cleanup(curl);
-        std::cout << readBuffer << std::endl;
+
+        if(res == CURLE_OK) {
+            std::cout << readBuffer << std::endl;
+        }
     }
     return 0;
 }
 ```
+Kör programmet. Om allt är som det ska bör du se webbsidans HTML i konsolen.
 
-Om du kör programmet bör du se innehållet på http://example.com skrivet till konsolen.
+## Fördjupning:
+Tidigare använde många programmerare sockets och lågnivå-nätverksbibliotek för att ladda ner webbdata. cURL biblioteket är nu standard; det hanterar URL-syntax, protokoll och till och med SSL-certifikat transparent.
 
-## Djupdykning
+Alternativ till cURL inkluderar andra bibliotek som libwww eller högnivå C++ bibliotek som Boost.Beast, vilket också kan använda moderna C++ funktioner och asynkrona begärningar.
 
-Först, programmets historiska sammanhang: libcurl, släpptes 1997, har blivit en standard för att hantera URL-baserade operationer i C++.
+När du implementerar en nedladdning är det viktigt att hantera fel korrekt och respektera webbserverns ev. begränsningar, såsom att respektera `robots.txt`.
 
-Andra metoder: En annan populär metod för att ladda ner webbsidor i C++ innebär användning av Boost.Asio med HTTP-klientexempel.
-
-Vad gäller implementeringsdetaljerna, tar libcurl hand om mycket bakom kulisserna. Det stöder massor av protokoll (HTTP, HTTPS, FTP, SFTP, etc), och hanterar fel, omdirigering, och mycket mer.
-
-## Se också
-
-- *[libcurl Documentation](https://curl.haxx.se/libcurl/)*: För mer information om att använda libcurl.
-- *[Stackoverflow](https://stackoverflow.com/questions/1011339/how-do-you-make-a-http-request-with-c)*: Diskussioner om olika sätt att utföra HTTP-anrop i C++.
+## Se även:
+- cURL: https://curl.se/
+- libcurl C++ wrapper-dokumentation: https://curl.se/libcurl/cplusplus/
+- Boost.Beast GitHub-sida: https://github.com/boostorg/beast
+- HTTP-protokollets specifikationer: https://www.ietf.org/rfc/rfc2616.txt

@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie pliku tekstowego"
-html_title:           "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+date:                  2024-01-20T17:54:57.683300-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,37 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-
-Czytanie plików tekstowych to proces odzyskiwania danych zapisanych w zasobie tekstowym. Programiści robią to, aby uzyskać informacje przechowywane poza aplikacją, które mogą być użyte do różnych celów, takich jak analiza, manipulacja danych i wiele innych.
+## Co i Dlaczego?
+Czytanie pliku tekstowego to proces pobierania danych zawartych w pliku tekstowym do dalszego przetwarzania. Programiści robią to, by obsługiwać konfiguracje, importować dane lub po prostu wyświetlać tekst użytkownikowi.
 
 ## Jak to zrobić:
-
-Użycie wbudowanej w PHP funkcji `file_get_contents` jest jednym ze sposobów na odczytanie zawartości pliku tekstowego. Oto przykładowy kod i wynik:
-
 ```PHP
 <?php
-$filename = 'example.txt';
-$filedata = file_get_contents($filename);
-echo $filedata;
+// Otwieramy plik 'przykladowy.txt' w trybie tylko do odczytu
+$plik = fopen('przykladowy.txt', 'r');
+
+// Czytamy całą zawartość pliku do zmiennej $zawartosc
+$zawartosc = fread($plik, filesize('przykladowy.txt'));
+
+// Wyświetlamy zawartość
+echo $zawartosc;
+
+// Zamykamy plik
+fclose($plik);
 ?>
 ```
 
-The output:
+## Deep Dive
+Historia czytania plików tekstowych w językach programowania jest tak stara jak same języki. Alternatywą dla `fopen()` i `fread()` w PHP jest użycie funkcji `file_get_contents()`, która skróci kod:
 
 ```PHP
-'Hello World!'
+<?php
+$zawartosc = file_get_contents('przykladowy.txt');
+echo $zawartosc;
+?>
 ```
 
-## Pogłębiona analiza
-
-Czytanie plików tekstowych była jedną z pierwszych operacji, które starożytne komputery mogły wykonywać. Historia rozpoczęła się od kart perforowanych, które zawierały informacje w postaci otworów w konkretnych miejscach.
-
-Alternatywą dla funkcji `file_get_contents` jest użycie funkcji `fread()` po otwarciu pliku za pomocą `fopen()`. Jednak `file_get_contents` jest zdecydowanie prostsza do użycia, szczególnie dla początkujących.
-
-Podczas odczytywania dużych plików tekstowych, trzeba zachować ostrożność, ponieważ `file_get_contents` ładuje cały plik do pamięci. Dla bardzo dużych plików, może to prowadzić do problemów z wydajnością.
+Ale czym się różnią te metody? Używając `fopen()`, możemy precyzyjnie kontrolować, jak dużo danych czytamy z pliku oraz reagować na błędy podczas otwierania pliku. `file_get_contents()` jest proste i szybkie, ale mniej elastyczne.
 
 ## Zobacz również
-
-- [Oficjalna dokumentacja PHP na temat odczytywania plików](https://www.php.net/manual/en/function.file-get-contents.php)
-- [Alternatywne metody odczytywania plików w PHP](https://www.php.net/manual/en/function.fread.php)
+- Tutorial do głębszego zanurzenia się w temat: [PHP: The Right Way](https://phptherightway.com/#files)

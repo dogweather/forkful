@@ -1,6 +1,7 @@
 ---
 title:                "Interpolera en sträng"
-html_title:           "C++: Interpolera en sträng"
+date:                  2024-01-20T17:51:30.648021-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolera en sträng"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,43 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-
-Interpolerad strängning innebär att infoga variabler eller uttryck inom en sträng. Programmerare gör detta för att skapa dynamiska strängar och förhindra onödiga konkatenationer.
+Stränginterpolering innebär att man blandar variabler med vanlig text. Programmerare gör detta för att skapa dynamiska meddelanden, där innehållet kan ändras vid körning.
 
 ## Hur man gör:
-
-Rust tillåter stränginterpolation genom att använda `format!` makroet. Här är ett exempel:
-
 ```Rust
 fn main() {
-    let name = "Daniel";
-    let age = 30;
-    let presentation = format!("Hej, jag heter {} och jag är {} år gammal", name, age);
-    
-    println!("{}", presentation);
+    let name = "Världen";
+    println!("Hej, {}!", name); // Standard interpolering
+    let age = 28;
+    println!("Du är {} år gammal.", age); // Siffror fungerar också
 }
 ```
-
-I konsolen ser du:
-
+Utskrift:
 ```
-Hej, jag heter Daniel och jag är 30 år gammal
+Hej, Världen!
+Du är 28 år gammal.
 ```
 
-## Djupdykning 
+## Djupdykning:
+I många språk görs stränginterpolering med specialtecken som `{}` eller `${}`. I Rust använder vi `{}` och format-makrot för detta. Historiskt sett hade man kanske använt format-specifikatorer som i språket C. Alternativ till `println!` kan vara att använda `format!` för att spara den formaterade strängen i en variabel, eller `write!` för att skriva till en mätare. Denna interpolationsmetod är typsäker, vilket innebär att Rust-kompilatorn kommer att säkerställa att data som är inbäddade i strängar är av rätt typ, och detta sker vid kompilering snarare än vid körning.
 
-Stränginterpolation har funnits i andra språk som Ruby och JavaScript långt innan Rust införde `format!`. I Rust används dock en starkt typad stränginterpolation för att undvika fel vid runtime.
-
-Alternativt kan du använda `println!` direkt för interpolation om resultatet ska skrivas ut. Men `format!` är mer flexibel eftersom det returnerar den interpolerade strängen.
-
-När det gäller implementeringsdetaljer är det värt att nämna att `format!` använder ett komplex serie av makron för att uppnå detta, och fungerar endast på litterära strängar, inte strängvariabler.
-
-## Se også 
-
-För vidare utveckling, kolla in dessa källor:
-
-1. ["The Rust Programming Language" Bok](https://doc.rust-lang.org/book/title-page.html) - Här finns detaljerade om rust programmering inklusive stränginterpolation och mer. 
-
-2. [Rust´s Official Documentation on "format!" Macro](https://doc.rust-lang.org/std/fmt/) - Detaljerad information om 'format!' makroet, inkluderar exempel och olika användningsfall. 
-
-3. [Rust by Example](https://doc.rust-lang.org/rust-by-example/index.html) - Detta är en samling praktiska exempel för att hjälpa dig att lära dig Rust programmering.
+## Se även:
+- Rusts officiella dokumentation om "format strings": https://doc.rust-lang.org/std/fmt/
+- `println!` makrodetaljer: https://doc.rust-lang.org/std/macro.println.html
+- Översikt över Rusts "macros": https://doc.rust-lang.org/book/ch19-06-macros.html

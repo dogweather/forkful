@@ -1,7 +1,8 @@
 ---
-title:                "एक पाठ फ़ाइल पढ़ना"
-html_title:           "Bash: एक पाठ फ़ाइल पढ़ना"
-simple_title:         "एक पाठ फ़ाइल पढ़ना"
+title:                "टेक्स्ट फ़ाइल पढ़ना"
+date:                  2024-01-20T17:54:29.698228-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "टेक्स्ट फ़ाइल पढ़ना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,46 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-टेक्स्ट फ़ाइल को पढ़ना मतलब है, उसकी सामग्री को कॉड में इस्तेमाल करने के लिए लाना। प्रोग्रामर्स इसे डेटा मॉडलिंग, फ़ाइल मैनिपुलेशन और बनाये गए कॉड के परिणामों के विश्लेषण के लिए करते हैं। 
+टेक्स्ट फाइल पढ़ने का मतलब है, फाइल से डेटा लेना और उसे प्रोग्राम में उपयोग करना। प्रोग्रामर्स यह इसलिए करते हैं क्योंकि कई बार कॉन्फ़िगरेशन, डेटा या स्क्रिप्ट्स को टेक्स्ट फाइलों में स्टोर किया जाता है।
 
-## कैसे करें:
+## How to: (कैसे करें:)
+
 ```C++
 #include <iostream>
 #include <fstream>
 #include <string>
 
-int main()
-{
+int main() {
+    std::ifstream inputFile("example.txt");
     std::string line;
-    std::ifstream file("example.txt");
 
-    if (file.is_open())
-    {
-        while (getline(file, line))
-        {
+    if (inputFile.is_open()) {
+        while (getline(inputFile, line)) {
             std::cout << line << '\n';
         }
-        file.close();
+        inputFile.close();
+    } else {
+        std::cout << "फाइल खोलने में असमर्थ।" << std::endl;
     }
-
-    else std::cout << "Unable to open the file";
 
     return 0;
 }
 ```
+सैंपल आउटपुट:
+```
+पहला लाइन
+दूसरा लाइन
+तीसरा लाइन
+```
 
-ऊपरी कोड पूरी फ़ाइल की लाइनों को पढ़ता है और प्रत्येक लाइन को न्यायवादी रेखा पर प्रिंट करता है। “Unable to open the file” संदेश निष्पादित होता है यदि फ़ाइल उपलब्ध नहीं होती है या उसे खोलने का प्रयास करने पर त्रुटि होती है।
+## Deep Dive (गहराई से जानकारी):
 
-## गहराई में:
+टेक्स्ट फाइल पढ़ने की प्रक्रिया साधारण है, लेकिन पुराने जमाने में यह काफी जटिल था क्योंकि हर सिस्टम की अपनी एन्कोडिंग और फाइल सिस्टम होती थी। C++ में `ifstream` वर्ग का इस्तेमाल करते हुए यह काम आसान हो जाता है। वैकल्पिक तरीकों में `stdio` की `fopen`, `fgets` वगैरह शामिल हैं। आज के आधुनिक C++ में, `ifstream` का उपयोग करना ज्यादा साफ़-सुथरा और ऑब्जेक्ट-ओरिएंटेड तरीका माना जाता है।
 
-टेक्स्ट फ़ाइल को पढ़ना आमतौर पर C++ के आधारभूत्त IO बाइबलियों का एक अहम हिस्सा है। यह आसान है और वर्षों से इस्तेमाल हो रहा है।
+## See Also (देखें भी):
 
-वैकल्पिक रूप से, आप `boost` में `fstream` जैसी उच्च स्तरीय बाइबलिया भी इस्तेमाल कर सकते हैं। यहां पर, `std::getline` विधि इस्तेमाल की जाती है जो `std::string` प्रकार की किसी भी इकाई को पढ़ने के लिए एक सामग्रीक विधि है।
-
-## यह भी देखें:
-
-- [C++ डॉक्युमेंटेशन: इनपुट/आउटपुट बाइबलिया](http://www.cplusplus.com/reference/iostream/)
-- [C++ ट्यूटोरियल: टेक्स्ट फ़ाइलस से डेटा पठने](https://www.cplusplus.com/doc/tutorial/files/)
-- [Boost बाइबलिया](https://www.boost.org/doc/libs/1_72_0/libs/iostreams/doc/index.html)
+- C++ डॉक्युमेंटेशन ऑन `ifstream`: https://en.cppreference.com/w/cpp/io/basic_ifstream
+- C++ फाइल हैंडलिंग ट्यूटोरियल: https://www.cplusplus.com/doc/tutorial/files/
+- GeeksforGeeks पर फाइल I/O गाइड: https://www.geeksforgeeks.org/file-handling-c-classes/

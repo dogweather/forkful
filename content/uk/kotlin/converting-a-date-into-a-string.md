@@ -1,6 +1,7 @@
 ---
 title:                "Перетворення дати в рядок"
-html_title:           "Lua: Перетворення дати в рядок"
+date:                  2024-01-20T17:37:32.067294-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Перетворення дати в рядок"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,33 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що та Чому?)
+Перетворення дат в строки дозволяє зручно відображати і зберігати тимчасові дані в текстовому форматі. Програмісти роблять це для локалізації, логування, інтерфейсу користувача та обміну даними.
 
-Перетворення дати в рядок - це процес, коли дата змінює свій формат з типу даних "Дата" на рядок. Програмісти роблять це, щоб візуалізувати дату в зручному, зрозумілому людям форматі.
-
-## Як це зробити:
-Ось базовий приклад перетворення дати в рядок в Kotlin:
+## How to (Як це зробити):
 ```Kotlin
-import java.time.LocalDate
+import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-fun main(args: Array<String>) {
-    val currentdate = LocalDate.now()
-    val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
-    val formatted = currentdate.format(formatter)
-    println("Дата в форматі рядка: $formatted")
+fun main() {
+    val currentDateTime = LocalDateTime.now()
+    val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
+    val formattedDate = currentDateTime.format(formatter)
+    println(formattedDate)
 }
 ```
-Цей код переведе поточну дату у прийнятний формат і виведе його. Наприклад, якщо сьогодні 22 шілня 2022 року, ви побачите: "Дата в форматі рядка: 22-11-2022".
+Sample output (Приклад виведення):
+```
+24-03-2023 15:45:10
+```
 
-## Поглиблений занурення
+## Deep Dive (Поглиблений Розбір):
+Исторично, форматування дати як строки користувалось різними бібліотеками в Java, такими як `SimpleDateFormat`. З різницями в часових зонах і локалізаціями, уникнути плутанини було важко. Kotlin, використовуючи Java Time API (введений у Java 8), призводить до покращеного досвіду з `DateTimeFormatter`.
 
-Перетворення дати в рядок - давня практика, сформована з необхідності записати дату в текстові документи та інтерфейси. Є різні способи це зробити, але в Kotlin найбільш поширеним є `DateTimeFormatter`. Щодо впровадження, `DateTimeFormatter` бере шаблон і використовує його для форматування дати в рядок, виконуючи реальну зміну типів даних в рантаймі.
+Альтернативи включають сторонні бібліотеки, такі як Joda-Time, яку колись широко використовували до Java 8, і прийнятні системні методи, такі як `toString()`, які можуть не відповідати всім потребам.
 
-## Дивіться ще
+Ключ до поняття – формат. `DateTimeFormatter` дає можливість вказати точний формат (наприклад `dd-MM-yyyy HH:mm:ss` для день-місяць-рік та години:хвилини:секунди) і враховує локалізацію, що критично для багатомовних застосунків.
 
-[Введення в DateTime API в Kotlin](https://kotlinlang.org/docs/dates-times.html)
-
-[Процес форматування дати в Kotlin](https://www.baeldung.com/kotlin/dates) 
-
-[Tutorial: Patterns for Formatting and Parsing](http://tutorials.jenkov.com/java-internationalization/simpledateformat.html)
+## See Also (Дивіться також):
+- [Java 8 DateTimeFormatter documentation](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- [Kotlin API reference](https://kotlinlang.org/api/latest/jvm/stdlib/)
+- [Joda-Time library](https://www.joda.org/joda-time/)

@@ -1,7 +1,8 @@
 ---
-title:                "Utskrift av feilsøkingsresultat"
-html_title:           "Arduino: Utskrift av feilsøkingsresultat"
-simple_title:         "Utskrift av feilsøkingsresultat"
+title:                "Skrive ut feilsøkingsdata"
+date:                  2024-01-20T17:53:16.537521-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skrive ut feilsøkingsdata"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -11,51 +12,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Utskriving av feilsøkingsdata i Rust lar deg se hva som foregår under panseret i koden din. Programmere gjør dette for å spore flyten og oppdage bugs.
 
-Utskrift av feilsøkingsdata er prosessen med å vise programdata for å løse problemer. Programmerere bruker det for å forstå hva som skjer under panseret når noe går galt.
-
-## Hvordan gjør jeg det:
+## Hvordan:
 ```Rust
 fn main() {
-    let data = vec![1, 2, 3];
-    println!("{:?}", data);
+    let rustacean = "Ferris";
+    println!("Hei, {}", rustacean);
+    dbg!(rustacean);
 }
 ```
-Dette vil skrive ut: `[1, 2, 3]`
-
-Hvis datatypen din ikke støtter debug-utskrift, kan du legge til en `#[derive(Debug)]` annotering:
-
-```Rust
-#[derive(Debug)]
-struct Person {
-    name: String,
-    age: u8,
-}
-
-fn main() {
-    let person = Person { name: String::from("Alice"), age: 20 };
-    println!("{:#?}", person);
-}
+Output:
 ```
-Utskriften vil være:
-
-```
-Person {
-    name: "Alice",
-    age: 20,
-}
+Hei, Ferris
+[src/main.rs:4] rustacean = "Ferris"
 ```
 
-## Dypt Dykk
+## Dypdykk
+Tilbake på 70-tallet var printf-deklarasjoner greia for feilsøking. I Rust bruker vi `println!` for vanlig output og `dbg!` makroen for debug. `dbg!` tar eierskap, returnerer verdien, og skriver til standard error, som gjør det lett å skille fra vanlig output. For å se under overflaten, har Rust-typer `Debug` trait som lar de fleste typer formatere for feilsøking. Implementer `Debug` manuelt for custom typer eller legg til `#[derive(Debug)]` over struct-deklarasjonene dine.
 
-Historisk sett, oppsto behovet for feilsøkingsutskrift som en enkel metode for å forstå hva en kode gjør, spesielt når du finner feil. Det har vært i bruk siden tidlige programmeringsspråk.
-
-Alternativene inkluderer logger, som gir mer kontroll over hvor og hvordan de skriver ut. Du kan også bruke en debugger, som lar deg sjekke programtilstanden på ethvert punkt.
-
-Når det gjelder implementeringsdetaljer, gir Rust deg `fmt::Debug`-trait som kan brukes til å skrive ut din datatypes tilstand. Et annet nyttig verktøy er `#[derive(Debug)]`, som genererer en grunnleggende implementasjon for deg.
-
-## Se også
-
-- [Rust sin Debug Trait Dokumentasjon](https://doc.rust-lang.org/std/fmt/#formatting-traits)
-- [Rust sin Kunnskapsbase om Utledning](https://doc.rust-lang.org/rust-by-example/trait/derive.html)
-- [Bloggpost om Praktisk Feilsøking i Rust](https://medium.com/nearprotocol/debugging-rust-a537424a2609)
+## Se Også
+- Rust by Example: https://doc.rust-lang.org/stable/rust-by-example/hello/print/debug.html
+- The Rust Programming Language - Chapter 5: https://doc.rust-lang.org/book/ch05-00-structs.html
+- Rust Documentation on std::fmt: https://doc.rust-lang.org/std/fmt/

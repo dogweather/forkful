@@ -1,7 +1,8 @@
 ---
-title:                "Merkkien poistaminen vastaavalla mallilla"
-html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
-simple_title:         "Merkkien poistaminen vastaavalla mallilla"
+title:                "Merkkien poistaminen hakemalla osumia kaavaan"
+date:                  2024-01-20T17:42:45.307494-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,30 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Mitä & Miksi?
+Lua:ssa merkkien poistaminen kuvion mukaan on tapa siivota merkkijonoja – otetaan pois mitä ei tarvita. Koodarit käyttävät tätä esimerkiksi käyttäjän syötteen puhdistamiseen tai datan muotoiluun.
 
-Hahmojen poistaminen tietyn mallin mukaisesti tarkoittaa sellaisten merkkien poistamista, jotka täyttävät tietyn ehdon tai säännön. Ohjelmoijat tekevät tämän yleensä siistimään ja parantamaan dataa.
-
-## Kuinka Näin:
-
-Voit poistaa merkit tietyn mallin mukaan Lua-ohjelmointikielellä käyttäen gsub-metodia. Esimerkissämme poistetaan kaikki numerot merkkijonosta:
-
+## How to:
+Miten:
 ```Lua
-merkkijono = "abcd1234"
-muokattu_merkkijono = merkkijono:gsub("%d", "")
-print(muokattu_merkkijono)  -- Output: "abcd"
+local str = "Käyttäjä123Syöte!"
+local pattern = "%D"
+-- Poistetaan kaikki ei-numeeriset merkit
+local cleanStr = str:gsub(pattern, "")
+print(cleanStr)  -- Tulostaa: 123
+```
+```Lua
+local finnish_text = "Hänellä on 2 kissaa ja 3 koiraa."
+local pattern = "%d"
+-- Poistetaan kaikki numerot
+finnish_text = finnish_text:gsub(pattern, "")
+print(finnish_text)  -- Tulostaa: Hänellä on  kissaa ja  koiraa.
 ```
 
-## Syvällisemmin:
+## Deep Dive
+Syväsukellus:
+Lua:n patterit ovat regexin (säännölliset lausekkeet) kaltainen konsepti, mutta yksinkertaisempi. Ei ole aina ollut näin. Aikaisemmissa Lua-versioissa oli rajoitetumpi sana- ja merkkikäsittely, mutta versiosta 5.1 lähtien `string`-kirjasto on tarjonnut paremmat työkalut kuvioon perustuvalle tekstinkäsittelylle.
 
-Historiallisessa kontekstissa mallien mukaisten merkkien poistaminen on ollut olennainen osa ohjelmointikielejä vuosikymmenten ajan. Luan gsub-metodi, joka otettiin käyttöön jo varhaisessa versiossa, on peräisin Perl-ohjelmointikielestä.
+Vaihtoehtoisesti, kehittäjät voivat käyttää `string.find`- tai `string.match`-funktioita etsimiseen, mutta `string.gsub` on tehokas työkalu suoraan monen merkin poistoon.
 
-Vaihtoehtoisina lähestymistapoina voidaan käyttää erilaisia mallikirjastoja, kuten lpeg tai rex, jotka tarjoavat laajempia tai erilaisia toiminnallisuuksia.
+Suorituskyvyn kannalta, vaikka Lua ei tarjoa regexin täyttä tehoa, sen kuvioratkaisut ovat optimoituja eivätkä yleensä muodosta suorituskyvyn pullonkaulaa.
 
-Gsub-metodin toiminta perustuu siihen, että se etsii merkkijonosta mallin määräämiin kohtiin ja korvaa nämä osat toisella merkkijonolla (tässä tapauksessa tyhjällä merkkijonolla, "" pois lukien mallia vastaavat merkit)
-
-## Katso Myös:
-
-- Lua:n virallinen dokumentaatio gsub-metodista: http://www.lua.org/manual/5.1/manual.html#pdf-string.gsub  
-- Rex-kirjastoja, erityisesti PCRE-mallijärjestelmää varten: http://lualibrary.fandom.com/wiki/REX  
-- Huipputehokas mallitoteutus käyttäen LPEG-kirjastoa: http://www.inf.puc-rio.br/~roberto/lpeg/lpeg.html
+## See Also
+Lisätietoja:
+- [Lua 5.4 Reference Manual: Patterns](https://www.lua.org/manual/5.4/manual.html#6.4.1)
+- [Programming in Lua (first edition): Strings](https://www.lua.org/pil/20.2.html)
+- [Lua Users Wiki: Patterns Tutorial](http://lua-users.org/wiki/PatternsTutorial)

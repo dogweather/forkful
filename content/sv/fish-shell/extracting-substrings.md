@@ -1,6 +1,7 @@
 ---
 title:                "Extrahera delsträngar"
-html_title:           "Arduino: Extrahera delsträngar"
+date:                  2024-01-20T17:45:37.058976-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extrahera delsträngar"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,37 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Substrängextraktion i Fish Shell: En snabbguide
-
 ## Vad och varför?
-Substrängsextraktion innebär att urskilja nödvändiga delar ur en sträng med bokstäver, siffror, och tecken. Programmerare gör detta eftersom det hjälper dem att bearbeta eller analysera specifik data inuti en given sträng.
+Ibland behöver du bara en del av en sträng, antingen för att analysera data eller för att manipulera text. Att extrahera substrängar låter dig snoppa av precis det du behöver.
 
-## Hur man gör det:
-Här är grunderna för att extrahera substrängar i Fish Shell. 
-
+## Hur man gör:
 ```Fish Shell
-set sträng 'Jag älskar programmering'
-echo $sträng[1 9]  # Skriver 'Jag älska'
+set full_string "Fisk skal är trevligt"
+set start_index 6
+set length 4
+
+# Extrahera en substräng med start och längd
+set substring (string sub -s $start_index -l $length -- $full_string)
+echo $substring
+# Output: skal
 ```
 
-Koden ovan delar strängen 'Jag älskar programmering' och skriver ut 'Jag älskar'. 
-
-```Fish Shell
-set sträng 'Jag älskar programmering'
-echo $sträng[6..end]  # Skriver 'ar programmering'
-```
-
-Denna kod skriver ut 'ar programmering' från strängen 'Jag älskar programmering'.
-
-## Djupdykning:
-7000-talet f.Kr. började människor extrahera substrängar, men inte i Fish Shell, naturligtvis! Termen och konceptet har varit omkring sedan de tidigaste skrivar- och läsdagen. 
-
-Det finns andra sätt att extrahera substrängar i andra skal om du föredrar - Bash, Zsh, och Tcsh är bara några exempel. 
-
-För implementation detaljer, sök upp substränghandfunktionen i Fish Shells källkod.
+## Djupdykning
+Att extrahera substrängar i Fish Shell är direkt och smidigt. Det har inte alltid varit så i shell-programmering, där beroende på verktyg kan syntaxen vara krånglig. Till skillnad från bash som använder parameterexpansion, erbjuder Fish inbyggda 'string'-kommandon som gör det hela mycket tydligare. Det finns förstås andra sätt att sköta detta på, till exempel med 'sed' eller 'awk', men de kan vara överkill för enkla ändamål och kräver oftast mer kod. När du använder Fish Shell's `string sub`-kommando, kan du enkelt ange startindex och längd för den substräng du vill ha.
 
 ## Se även:
-1. [Fish Shells officiella dokumentation](https://fishshell.com/docs/current/index.html)
-2. [Forum för Fish Shell Community](https://github.com/fish-shell/fish-shell/issues)
-3. [Extrahera substrängar i Bash](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion)
-4. [Extrahera substrängar i Zsh](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Substring-Flags)
+- [Fish Shell Dokumentation för 'string'-kommandon](https://fishshell.com/docs/current/commands.html#string)
+- [Fish Shell Tutorial om Stränghantering](https://fishshell.com/docs/current/tutorial.html#tut_strings)
+- [Stack Overflow: Hur man extraherar substrängar i Fish Shell](https://stackoverflow.com/questions/tagged/fish)

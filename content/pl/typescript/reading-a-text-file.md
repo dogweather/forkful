@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie pliku tekstowego"
-html_title:           "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+date:                  2024-01-20T17:55:35.992376-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,40 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why?
+Czytanie pliku tekstowego to po prostu wczytywanie zawartości pliku do pamięci komputera. Programiści robią to, by manipulować danymi, dokonywać analiz czy też wdrażać logikę konfiguracyjną aplikacji.
 
-Czytanie pliku tekstowego to proces otwierania i odczytywania zawartości pliku używając kodu. Programiści robią to, aby przetworzyć najróżniejsze dane: konfiguracje, dane wejściowe, logi i wiele innych.
-
-## Jak to zrobić:
-
-W TypeScript możemy wykorzystać moduł 'fs' do odczytania pliku. Oto prosty przykład:
+## How to:
+Łapcie krótki przykład użycia `fs` i `readFile` z `promises` (do uniknięcia callback hell).
 
 ```TypeScript
-import * as fs from 'fs';
+import { promises as fsPromises } from 'fs';
 
-fs.readFile('plik.txt', 'utf8', function(err, data) {
-    if (err) {
-        return console.error(err);
-    }
-    console.log(data); 
-});
+async function readTextFile(filePath: string): Promise<string> {
+  try {
+    const data = await fsPromises.readFile(filePath, 'utf8');
+    return data;
+  } catch (error) {
+    throw new Error('Error reading the file');
+  }
+}
+
+// Użycie
+const filePath = './sample.txt';
+
+readTextFile(filePath)
+  .then((content) => console.log(content))
+  .catch((error) => console.error(error));
 ```
-Jeżeli np. w pliku `plik.txt` mieliśmy tekst "Witaj, Świecie!", to wynikiem tego kodu powinno być:
 
+Gdybyśmy mieli plik `sample.txt` z tekstem "Witaj, świecie!", output będzie:
 ```
-Witaj, Świecie!
+Witaj, świecie!
 ```
 
-## W głębokie wody:
+## Deep Dive:
+Czytanie plików tekstowych w TypeScript ma długą historię, głównie związana z Node.js, który dostarczał API dla operacji na plikach. Wcześniej rozpowszechnione były callbacki, które mogły prowadzić do zagnieżdżonych konstrukcji, nazywanych "callback hell". Dziś preferowane są `Promise` i `async/await` dla lepszej czytelności i obsługi błędów.
 
-Historia: Czytanie plików istniało już od wczesnej ery informatyki, gdy jednym ze sposobów przechowywania danych były taśmy magnetyczne.
+Alternatywy dla `fs` obejmują biblioteki zewnętrzne, takie jak `fs-extra` czy strumienie (streams), które lepiej nadają się do pracy z dużymi plikami. Strumienie pozwalają na odczyt danych w cząstkach, nie obciążając pamięci całym plikiem na raz.
 
-Alternatywy: Inne sposoby odczytu pliku to m.in: sync read, read streams. Wybór zależy od konkretnej sytuacji.
+W implementacji warto zwrócić uwagę na kodowanie pliku (standardowo `utf8`), ponieważ ignorowanie tego może prowadzić do problemów z niepoprawnie wyświetlającymi się znakami.
 
-Szczegóły implementacji: Metoda `readFile` wczytuje cały plik do pamięci przed wywołaniem callback, co może być problematyczne dla dużych plików. Aby to ominąć, warto skorzystać z read stream.
-
-## Zobacz też:
-
-- [Dokumentacja fs Node.js](https://nodejs.org/api/fs.html)
-
-Pamiętaj, że TypeScript jest tylko nakładką na JavaScript, więc wiele informacji na tematy JavaScript również będzie przydatne!
+## See Also:
+- Node.js `fs` module documentation: [Node.js File System](https://nodejs.org/api/fs.html)
+- `fs-extra` library: [fs-extra](https://github.com/jprichardson/node-fs-extra)
+- Understanding `async/await` in TypeScript: [Async/Await - Mozilla](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await)

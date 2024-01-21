@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie argumentów linii poleceń"
-html_title:           "Bash: Czytanie argumentów linii poleceń"
-simple_title:         "Czytanie argumentów linii poleceń"
+title:                "Odczytywanie argumentów linii poleceń"
+date:                  2024-01-20T17:56:59.743955-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie argumentów linii poleceń"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -11,38 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
+Argumenty linii poleceń to parametry przekazywane do programu, kiedy jest on uruchamiany z terminala. Programiści korzystają z nich, by wpływać na zachowanie programu bez zmiany kodu.
 
-Czytanie argumentów linii poleceń to zrozumienie danych przekazanych do programu podczas jego uruchomienia. Programiści robią to, żeby kontrolować i dostosowywać działanie aplikacji z poziomu terminala.
-
-## Jak to zrobić:
+## How to:
+Odczytujemy argumenty z tablicy `CommandLine.arguments`. Przykładowy kod:
 
 ```Swift
-let arg = CommandLine.arguments[1]
-print(arg)
+// main.swift
+
+for arg in CommandLine.arguments {
+    print(arg)
+}
 ```
 
-Ten kod wczytuje pierwszy argument przekazany do programu i wyświetla go w konsoli. Na przykład:
+Jeśli uruchomisz program z dodatkowymi parametrami, na przykład:
 
-```Shell
-$ swift app.swift argument
+```bash
+swift run myprogram arg1 arg2
 ```
 
-Na ekranie zobaczysz:
+Wynik będzie następujący:
 
 ```
-argument
+/path/to/myprogram
+arg1
+arg2
 ```
 
-## W głąb tematu
+## Deep Dive:
+Argumenty linii poleceń są starym, lecz uniwersalnym pomysłem interakcji użytkownika z programem. Alternatywy to interfejsy graficzne czy konfiguracje z plików, lecz CLI (Command Line Interface) jest często wybierany dla uprośczenia i automatyzacji. W Swift `CommandLine` jest obiektem dostarczającym dostęp do argumentów. Implementacja zakłada, że pierwszym argumentem jest ścieżka do wykonywalnego pliku programu, a reszta to przekazywane parametry.
 
-Historia: Argumenty linii poleceń to standardowa metoda interakcji z programem, wszechobecna od początku historii Unixa.
-
-Alternatywy: Możesz zastosować pliki konfiguracyjne, interfejsy graficzne użytkownika lub interaktywne konsolowe menu do przekazywania danych do programu. Wybór zależy od wymagań aplikacji i preferencji użytkownika.
-
-Szczegóły implementacji: Swift traktuje argumenty linii poleceń jako tablicę łańcuchów znaków, gdzie pierwszy element (`CommandLine.arguments[0]`) to nazwa programu, a każdy kolejny to argumenty przekazane do programu.
-
-## Zobacz także
-
-Dokumentacja Apple o argumentach linii poleceń: (https://developer.apple.com/documentation/swift/commandline)
-
-Arthur Ariel Sabintsev na temat wczytywania argumentów linii poleceń w Swift: (https://www.swiftbysundell.com/articles/command-line-arguments-in-swift-script/)
+## See Also:
+- [Swift.org Documentation](https://www.swift.org/documentation/): Oficjalna dokumentacja Swift.
+- [Ray Wenderlich: Command Line Programs on macOS Tutorial](https://www.raywenderlich.com/511-command-line-programs-on-macos-tutorial): Tutorial o programowaniu wiersza poleceń na macOS.

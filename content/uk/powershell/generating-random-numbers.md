@@ -1,6 +1,7 @@
 ---
 title:                "Генерація випадкових чисел"
-html_title:           "Java: Генерація випадкових чисел"
+date:                  2024-01-20T17:49:32.494695-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Генерація випадкових чисел"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,41 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Генерація випадкових чисел в PowerShell
+## What & Why? (Що і Чому?)
+Random numbers are surprise elements in a predictable system. Programmers use them for everything from security (like generating keys) to gaming logic (like dice rolls).
 
-## Що й чому?
-Випадкові числа - це числа, які генеруються програмою в доволі непередбачуваний порядок. Програмісти створюють випадкові числа для забезпечення непередбачуваності, скажімо, при тестуванні коду або роботі з хеш-функціями.
-
-## Як це робиться:
-
-Ось декілька прикладів коду для генерації випадкових чисел у PowerShell.
+## How to (Як це зробити):
+In PowerShell, you can summon random numbers easily. Roll a virtual die or pick a secret number with these snippets:
 
 ```PowerShell
-# Створення об'єкта Get-Random
-$randomNumber = Get-Random
-# Виводимо на екран випадкове число
-Write-Host "Випадкове число: $randomNumber"
+# Roll a die
+Get-Random -Minimum 1 -Maximum 7
+
+# Generate a random number between 0 and 100
+Get-Random -Maximum 100
 ```
 
-Виправімо обмеження для генерації числа від 1 до 100.
+Sample output:
 
-```PowerShell
-# Генерація випадкового числа від 1 до 100
-$randomNumber = Get-Random -Minimum 1 -Maximum 100
-# Виводимо на екран випадкове число
-Write-Host "Випадкове число: $randomNumber"
+```
+6
+42
 ```
 
-## Занурення в глибину:
+These get you unpredictability in a snap.
 
-Випадкові числа давно є частиною комп'ютерного кодування. У 1946 році, коли виникли перші комп'ютери, випадкові числа вже використовувалися. 
+## Deep Dive (Поглиблено):
+Historically, true randomness was challenging. Early programs used algorithms that mimicked randomness, known as pseudo-random number generators (PRNGs).
 
-Альтернативами `Get-Random` є методи .NET `[System.random]` та `[System.Security.Cryptography.RNGCryptoServiceProvider]`. `Get-Random` використовує `(new-object random)`, який є частиною .NET, щоб згенерувати псевдовипадкове число. 
+In PowerShell, `Get-Random` taps into .NET's `System.Random` class by default, which is a PRNG. It's sufficient for most tasks but not for high-security needs.
 
-Якщо вам потрібні числа з криптографічної якості, краще використовуйте `[System.Security.Cryptography.RNGCryptoServiceProvider]`. 
+Alternatives include tapping directly into the cryptographic class `[System.Security.Cryptography.RandomNumberGenerator]` for more security-sensitive use cases.
 
-## Дивіться також:
+Remember, the upper limit number in `Get-Random -Maximum` is exclusive—you never get that number.
 
-1. Довідник по PowerShell: [Get-Random](https://docs.microsoft.com/uk-ua/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.1)
-2. Розгляд методів генерації випадкових чисел: [Random Number Generation in .NET](https://www.dotnetperls.com/random)
-3. Криптографічно безпечне генерування випадкових чисел: [RNGCryptoServiceProvider Class](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0)
+## See Also (Дивіться також):
+- Learn more about `[System.Random]`: https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-6.0
+- For advanced secure random numbers, `[System.Security.Cryptography.RandomNumberGenerator]`: https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator?view=net-6.0
+- About randomness in computing: https://en.wikipedia.org/wiki/Randomness
+
+No fluff. Get coding, get random! 🎲

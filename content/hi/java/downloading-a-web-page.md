@@ -1,7 +1,8 @@
 ---
-title:                "एक वेब पेज डाउनलोड करना"
-html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
-simple_title:         "एक वेब पेज डाउनलोड करना"
+title:                "वेब पेज डाउनलोड करना"
+date:                  2024-01-20T17:44:49.707952-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "वेब पेज डाउनलोड करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,43 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+वेब पेज डाउनलोड करना मतलब उसकी सामग्री को अपने कंप्यूटर पर सहेजना है। प्रोग्रामर इसे डेटा एकत्र करने, वेब स्क्रैपिंग, या ऑफलाइन एनालिसिस के लिए करते हैं।
 
-वेब पेज डाउनलोड करना मतलब वेब सर्वर से वेब पेज को अपने कंप्यूटर में स्थानांतरित करना। कोडर इसे डेटा एनालिसिस, वेब स्क्रेपिंग, और ऑफलाइन उपयोग के लिए करते हैं।
-
-## कैसे करें:
-
-```Java
+## How to: (कैसे करें:)
+```java
 import java.io.*;
 import java.net.URL;
 
-public class Main {
-   public static void main(String[] args) throws Exception {
-      URL url = new URL("http://www.example.com");
-      BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
-      String line;
+public class WebPageDownloader {
+    public static void main(String[] args) throws IOException {
+        String webPageUrl = "http://example.com";
+        URL url = new URL(webPageUrl);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("downloaded_page.html"));
 
-      while((line = reader.readLine()) != null) {
-         System.out.println(line);
-      }
-      reader.close();
-   }
+        String line;
+        while ((line = reader.readLine()) != null) {
+            writer.write(line);
+        }
+
+        reader.close();
+        writer.close();
+        System.out.println("वेब पेज डाउनलोड हो गया है।");
+    }
 }
 ```
-इसे जब रन किया जाता है, तो यह example.com का एचटीएमएल स्रोत कोड दिखाता है:
-
-```Java
-<!doctype html>
-<html>
-<head>
-   <title>Example Domain</title>
-   ...
+सैंपल आउटपुट:
 ```
-## गहरी डाइव
+वेब पेज डाउनलोड हो गया है।
+```
 
-वेब पेज डाउनलोड करने की क्षमता का इस्तेमाल करके, वेब का विस्तार और क्षमताएं बढ़ती गई हैं। वास्तविक दुनिया में, कई बार प्रोग्रामर्स लाइब्रेरीज , जैसे कि JSoup (Java Site Scraper) का उपयोग करते हैं, जो एचटीएमएल पैर्सिंग, CSS-like selectors, और अन्य सुविधा समर्थन करता है।
+## Deep Dive (गहराई से जानकारी)
+वेब पेज डाउनलोड करना इतिहास में पहली बार तब शुरु हुआ जब इंटरनेट नया था। तब से, HTML, CSS, और जावास्क्रिप्ट के जटिलता बढ़ गए हैं, और इसलिए वेब स्क्रैपिंग की कठिनाई भी। एक विकल्प है जावा लाइब्रेरी Jsoup का उपयोग करना, जो HTML को पार्स करके सरल बनाता है। वर्तमान में, मल्टीथ्रेडिंग और एसिंक्रोनस विधियों का उपयोग वेब पेज डाउनलोडिंग को तेज और कार्यकुशल बना सकता है।
 
-## संबंधित देखें:
-
-- [Java के साथ HTML पृष्ठों को पर्स करने के लिए JSoup गाइड](https://jsoup.org/cookbook/extracting-data/selector-syntax)
-- [Apache HttpClient लाइब्रेरी का उपयोग कर के वेब पेज डाउनलोड](https://mkyong.com/java/apache-httpclient-examples/)
+## See Also (और जानकारी के लिए)
+- [Jsoup प्रलेखन](https://jsoup.org/)
+- [जावा नेटवर्किंग प्रलेखन](https://docs.oracle.com/javase/tutorial/networking/urls/index.html)
+- [जावा मल्टीथ्रेडिंग गाइड](https://docs.oracle.com/javase/tutorial/essential/concurrency/)

@@ -1,7 +1,8 @@
 ---
-title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
-simple_title:         "Envoyer une requête http avec une authentification de base"
+title:                "Envoi d'une requête HTTP avec authentification de base"
+date:                  2024-01-20T18:00:59.079850-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Envoi d'une requête HTTP avec authentification de base"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,60 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et Pourquoi?
+## What & Why?
 
-Faire une requête HTTP avec une authentification de base, c'est simplement envoyer une requête HTTP qui inclut des informations d'authentification dans l'en-tête. Les développeurs le font pour accéder à des ressources sécurisées sur le web.
+Envoyer une requête HTTP avec une authentification de base, c'est communiquer avec un serveur tout en fournissant un nom d'utilisateur et un mot de passe encodés. Les programmeurs font cela pour accéder à des ressources sécurisées sur le web.
 
-## Comment faire:
+## How to:
 
-Voici un simple exemple en C avec libcurl:
+Pour envoyer une requête HTTP avec authentification basique en C, on utilise souvent libcurl. Voici un exemple concis :
 
-```C 
+```C
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
-
-  curl_global_init(CURL_GLOBAL_DEFAULT);
-
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
-
-    struct curl_slist *headers = NULL;
-
-    headers = curl_slist_append(headers, "Authorization: Basic base64(credentials)");
-
-    curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-
-    res = curl_easy_perform(curl);
-
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
-
-    curl_easy_cleanup(curl);
-  }
-
-  curl_global_cleanup();
-
-  return 0;
+int main() {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com/resource");
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
+        curl_easy_setopt(curl, CURLOPT_USERNAME, "user");
+        curl_easy_setopt(curl, CURLOPT_PASSWORD, "pass");
+        
+        CURLcode res = curl_easy_perform(curl);
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+        }
+        curl_easy_cleanup(curl);
+    }
+    return 0;
 }
 ```
 
-## Creuser un peu plus:
+Sortie attendue: `(La sortie dépendra de la ressource spécifique et du serveur consultés)`
 
-Historiquement, l'authentification de base HTTP a été développée comme un moyen simple de sécuriser les communications sur le web. Cependant, elle est devenue moins populaires car elle n'offre pas assez de sécurité par rapport aux alternatives comme l'authentification à jeton.
+## Deep Dive
 
-En utilisant `libcurl`, nous avons une facilité d'implémentation à notre disposition. N'oubliez pas que les informations d'authentification envoyées avec l'authentification de base HTTP sont codées en Base64, pas cryptées. Ce n'est pas un moyen sécurisé d'envoyer des informations sensibles sans une connexion sécurisée.
+Historiquement, l'authentification de base en HTTP a été une des premières méthodes pour sécuriser l'accès aux ressources web. Cependant, elle n'offre qu'un niveau de sécurité minimal et peut être vulnérable à des attaques de type 'man-in-the-middle' si non utilisée avec HTTPS. Des alternatives plus sûres comme OAuth ou JWT (JSON Web Tokens) gagnent en popularité. Dans l'implémentation, le plus important est l'encodage Base64 du nom d'utilisateur et du mot de passe qui sont passés dans l'entête `Authorization` de la requête HTTP. La librairie libcurl s'occupe de cet encodage automatiquement.
 
-## Voir aussi:
+## See Also
 
-[Pour comprendre les bases de l'utilisation de libcurl (En anglais)](https://curl.se/libcurl/c/)
-
-[Pour plus d'informations sur les méthodes d'authentification HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication) 
-
-[Documentation officielle Base64 (En anglais)](https://tools.ietf.org/html/rfc4648)
+- CURL library: https://curl.se/libcurl/
+- HTTP authentication basics: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- Base64 encoding: https://en.wikipedia.org/wiki/Base64
+- RFC 7617, 'The 'Basic' HTTP Authentication Scheme': https://tools.ietf.org/html/rfc7617
+- Security considerations (HTTPS & alternatives): https://www.owasp.org

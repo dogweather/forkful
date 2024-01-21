@@ -1,6 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-html_title:           "Haskell: Drukowanie komunikatów debugowania"
+date:                  2024-01-20T17:53:19.158196-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,42 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Wypisywanie informacji debugowania to sposób pokazywania wewnętrznej pracy programu. Programiści robią to, by śledzić błędy i monitorować, co się dzieje podczas wykonywania kodu.
 
-Drukowanie informacji debugowania, to sposób na logowanie i śledzenie aktywności w programie - to jak zrobienie rentgena kodu. Programiści robią to, aby łatwiej było im znaleźć i naprawić błędy.
-
-## Jak to zrobić:
-
+## How to: (Jak to zrobić:)
 ```PowerShell
-# Używając cmdlet Write-Debug
-$DebugPreference = 'Continue'
-Write-Debug "To jest moja wiadomość debugowania"
+# Prosty przykład wypisywania tekstu
+Write-Host "Hello, World!"
+
+# Wypisywanie zmiennej
+$debugMessage = "Current value: "
+$currentValue = 42
+Write-Debug "$debugMessage$currentValue" -Debug
+
+# Wykorzystanie Write-Verbose do wypisywania informacji diagnostycznych
+$verboseMessage = "Checking the configuration..."
+Write-Verbose $verboseMessage -Verbose
+
+# Zapisywanie informacji debugowania do pliku
+Start-Transcript -Path "C:\debug_log.txt" -Append
+Write-Debug "This will be saved to a log file."
+Stop-Transcript
+```
+Wynik:
+```
+Hello, World!
+DEBUG: Current value: 42
+VERBOSE: Checking the configuration...
 ```
 
-Po uruchomieniu tego kodu, otrzymasz następujący wynik:
+## Deep Dive (W Głąb Tematu)
+Historia mechanizmów debugowania sięga początków programowania. Pierwotnie debugowanie było procesem manualnym. PowerShell od wersji 1.0 umożliwia szerokie opcje debugowania. Zamiast `Write-Debug` lub `Write-Verbose`, można używać `Write-Information` do bardziej szczegółowego kontrolowania co jest wypisywane. Zmienna `$DebugPreference` i podobne pozwalają na finezyjne ustawienia wyświetlania komunikatów debugowania.
 
-```PowerShell
-DEBUG: To jest moja wiadomość debugowania
-```
+Alternatywą dla wypisywania informacji są breakpointy, ale to narzędzie do bardziej interaktywnego debugowania – warto je rozważyć, gdy sam output nie wystarcza.
 
-Inny sposób to używanie 'Write-Host' z parametrem '-Debug':
+Ważne jest, by pamiętać o wydajności. Wypisywanie zbyt wielu logów może spowolnić program, szczególnie w środowisku produkcyjnym.
 
-```PowerShell
-Write-Host "To jest inny sposób na debugowanie" -Debug
-```
-
-Efekt będzie taki sam - wyświetli się wiadomość debugowania.
-
-## Deep Dive:
-
-Historia debugowania sięga lat '40. i '50., kiedy programiści szukali fizycznych błędów w swoich maszynach.
-
-Współcześnie mamy różne techniki debugowania. Oprocz `Write-Debug`, jest jeszcze np. `Set-PSBreakpoint`, który umożliwia ustawianie punktów przerwania. Dodatkowo, `Write-Debug` jest wbudowanym cmdletem w PowerShell, więc nie potrzebujesz żadnych dodatkowych narzędzi.
-
-Ważne jest jednak, aby nie nadużywać drukowania debugowania - za dużo danych może przeszkadzać w szybkim znalezieniu problemu. Dobrą praktyką jest wyłączanie logowania debugowania, gdy kod jest gotowy do produkcji.
-
-## Zobacz także:
-
-- Kompletny przewodnik po Debugging w PowerShell: https://mcpmag.com/articles/2018/09/06/debugging-with-powershell.aspx
-- Oficjalna dokumentacja PowerShell na temat Write-Debug: https://docs.microsoft.com/pl-pl/powershell/module/microsoft.powershell.utility/write-debug?view=powershell-7.1
-- Zrozumienie debugowania w PowerShell: https://adamtheautomator.com/powershell-debugging/
+## See Also (Zobacz też)
+- Dokumentacja `Write-Debug`: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-debug
+- Dokumentacja `Write-Verbose`: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-verbose
+- Informacje o debugowaniu w PowerShell: https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-debugging
+- Jak używać `Start-Transcript`: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.host/start-transcript

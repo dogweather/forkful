@@ -1,7 +1,8 @@
 ---
-title:                "基本認証を使用してhttpリクエストを送信する"
-html_title:           "C#: 基本認証を使用してhttpリクエストを送信する"
-simple_title:         "基本認証を使用してhttpリクエストを送信する"
+title:                "基本認証を使用したHTTPリクエストの送信"
+date:                  2024-01-20T18:01:21.049212-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "基本認証を使用したHTTPリクエストの送信"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,40 +11,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why?
+何とは何か？そしてなぜ？
 
-HTTPリクエストを基本認証で送信するとは、ユーザー名とパスワードをヘッダーに含めてサーバーにリクエスト送信を行うことです。これにより、プログラマは認証が必要なWebサービスに安全にアクセスできます。
+HTTPリクエストに基本認証を付けて送ることで、アクセスを許可されたユーザーだけが情報を取得できるように制限します。プログラマーはこれを使ってセキュリティを保ちます。
 
-## どうやって：
-
-C++でHTTPリクエストを基本認証で送信する一例を示します。この例では、`CPR`というライブラリを使用します：
+## How to:
+どうやって？
 
 ```C++
-#include <cpr/cpr.h>
+#include <iostream>
+#include <curl/curl.h>
+
+static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp) {
+    ((std::string*)userp)->append((char*)contents, size * nmemb);
+    return size * nmemb;
+}
 
 int main() {
-    cpr::Authentication auth{"user", "pass"};
+    CURL *curl;
+    CURLcode res;
+    std::string readBuffer;
+    
+    curl = curl_easy_init();
+    if(curl) {
+        std::string userPwd = "username:password"; // ベーシック認証のユーザー名とパスワード
 
-    cpr::Response r = cpr::Get(cpr::Url{"http://example.com"}, auth);
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com/resource");
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+        curl_easy_setopt(curl, CURLOPT_USERPWD, userPwd.c_str());
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 
-    std::cout << r.status_code << std::endl;
-    std::cout << r.header["content-type"] << std::endl;
-    std::cout << r.text << std::endl;
-
+        res = curl_easy_perform(curl);
+        
+        if (res != CURLE_OK) {
+            std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res) << std::endl;
+        } else {
+            std::cout << readBuffer << std::endl; // HTTPレスポンスの内容を表示
+        }
+        
+        curl_easy_cleanup(curl);
+    }
     return 0;
 }
 ```
+出力例:
+```
+<html>
+<body>
+<p>認証された内容がここに表示されます。</p>
+</body>
+</html>
+```
 
-この例では、ユーザーネームとパスワードを含むAuthenticationオブジェクトを作成し、それをGETリクエストに添付しています。レスポンスのステータスコード、ヘッダー、本文は標準出力に出力されます。
+## Deep Dive:
+深いダイブ
 
-## ディープダイブ
+基本認証は、RFC 7617で定義されています。ユーザーネームとパスワードをコロンで連結し、Base64でエンコードします。比較的単純だが、HTTPSを使わないと情報漏洩のリスクがあります。
 
-HTTPリクエストに基本認証を追加するプラクティスは、インターネットの初期、特に状態のないHTTPプロトコルの世界でよく見られました。しかし、現代のWeb開発では、セッションベースの認証やトークンベースの認証（OAuthなど）がより頻繁に利用されています。ただし、基本認証はそのシンプルさから一部の場合で有効な手段として残っています。
+代わりにOAuthなどのよりセキュアな手法が利用されることもあります。ただ、簡単な内部システムやテスト用のケースでは、基本認証が使われることも多いです。
 
-上記のコード例ではCPRライブラリを使用しましたが、他の有名なHTTPクライアントライブラリ、例えば `libcurl` や `Boost.Asio` なども同様のことが可能です。これらライブラリの選択は、そのAPIの簡潔さ、パフォーマンス、そして依存関係によって異なり、あなたのプロジェクトの要件によって選択するべきです。
+CURLはC言語のライブラリですが、C++からも使えます。設定は`curl_easy_setopt`を通じて行い、`CURLOPT_USERPWD`でユーザーネームとパスワードを設定します。これにより、HTTPヘッダに認証情報が組み込まれます。
 
-## 参考情報
+## See Also:
+参照してください
 
-- CPRライブラリのドキュメンテーション: [https://docs.libcpr.org](https://docs.libcpr.org/)
-- libcurlライブラリのドキュメンテーション: [https://curl.se/libcurl/c](https://curl.se/libcurl/c)
-- Boost.Asioライブラリのドキュメンテーション: [https://www.boost.org/doc/libs/1_77_0/doc/html/boost_asio.html](https://www.boost.org/doc/libs/1_77_0/doc/html/boost_asio.html)
+- libcurl公式ドキュメント: https://curl.se/libcurl/
+- RFC 7617, 'The 'Basic' HTTP Authentication Scheme': https://tools.ietf.org/html/rfc7617
+- Base64エンコード: https://ja.wikipedia.org/wiki/Base64
+- OAuth: https://oauth.net/

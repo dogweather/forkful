@@ -1,6 +1,7 @@
 ---
 title:                "Interpolering av en streng"
-html_title:           "Bash: Interpolering av en streng"
+date:                  2024-01-20T17:50:23.349565-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolering av en streng"
 programming_language: "C#"
 category:             "C#"
@@ -10,50 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
 
-Interpolasjon av tekststrenger i C# er prosessen for innsetting av variable verdier direkte til en tekststreng. Det gir programmerere en renere og mer lesbar kode ved formatering av strenger.
+Stringinterpolasjon lar deg plugge variabler og uttrykk rett inn i tekststrenger. Det forenkler både koden og gjør det mer leselig, ved å slippe å bruke en haug av `+` teikn for å sette sammen strenger.
 
-## Hvordan:
+## How to:
 
-Vi kan interpolere en streng i C# ved hjelp av dollartegn ($). Se eksemplet nedenfor:
+Med interpolasjon bruker vi `{}` for å inkludere variabler inne i en streng, forhåndet av `$`:
 
 ```C#
 string navn = "Ola";
-string hilsen = $"Hei, {navn}!";
-Console.WriteLine(hilsen);
+int alder = 25;
+string beskrivelse = $"Hei, jeg heter {navn} og jeg er {alder} år gammel.";
+Console.WriteLine(beskrivelse);
 ```
 
-I utdata får vi følgende:
-
+Sample output:
 ```
-Hei, Ola!
-```
-
-Hvis vi vil formatere tallverdier, gjør vi det slik:
-
-```C#
-double pris = 1250.5;
-string formatertPris = $"Prisen er {pris:C}.";
-Console.WriteLine(formatertPris);
+Hei, jeg heter Ola og jeg er 25 år gammel.
 ```
 
-Utdataen blir da:
+## Deep Dive
 
-```
-Prisen er kr 1 250,50.
-```
+Før C# 6.0 brukte vi `String.Format` for å sette inn verdier i en streng, som så mer klønete ut. Etter C# 6.0 er interpolasjon standarden, da det både er enklere og raskere. Under panseret bruker C# en `FormattableString` klasse for å gjøre om kode med interpolasjon til kjørbar kode, og i kjøretid behandlet like som `String.Format`. Det finnes alternativer, som konkatenasjon (`+` operator) eller `StringBuilder`, men de anbefales for spesifikke tilfeller, ikke generelt.
 
-## Dypdykk:
+## See Also
 
-Historisk sett, før introduksjonen av strenginterpolasjon i C# 6.0, benyttet vi `String.Format`-metoden for å formatere tekststrenger. 
+Her er enda mer lesestoff:
 
-Det finnes andre alternativer til strenginterpolasjon, for eksempel `StringBuilder.Append` og konkatenasjon ved hjelp av pluss (+) operatøren. Men strenginterpolasjon gir mer lesbar og elegant kode.
-
-Når det gjelder utførelsen, lager kompilatoren egentlig en formatert streng ved å bruke `String.Format` under panseret når vi bruker strenginterpolasjon. Dette gjør det like effektivt som å bruke `String.Format` direkte.
-
-## Se Også:
-
-- Microsoft Docs om strenginterpolasjon i C#: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated
-- Stack Overflow diskusjon om effektiviteten av strenginterpolasjon: https://stackoverflow.com/questions/33044848/is-string-interpolation-in-c-6.0-efficient
-- C# station tutorial om strengmanipulasjon i C#: https://csharp-station.com/HowTo/Strings
+- Microsofts offisielle dokumentasjon: [String Interpolation in C#](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
+- Et dypdykk i `FormattableString`: [FormattableString Class](https://docs.microsoft.com/en-us/dotnet/api/system.formattablestring?view=net-6.0)
+- Når du bør bruke `StringBuilder`: [When to use StringBuilder](https://docs.microsoft.com/en-us/dotnet/standard/base-types/stringbuilder)

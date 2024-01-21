@@ -1,7 +1,8 @@
 ---
-title:                "Laste ned en nettside"
-html_title:           "Elixir: Laste ned en nettside"
-simple_title:         "Laste ned en nettside"
+title:                "Nedlasting av en nettside"
+date:                  2024-01-20T17:44:03.914534-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Nedlasting av en nettside"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,62 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
+## Hva & Hvorfor?
 
-Nedlasting av en nettside er prosessen med å hente data fra en nettside til din lokale maskin. Programmører gjør dette for å analysere, monitorere, lagre eller manipulere nettinnhold.
+Å laste ned en nettside betyr å hente HTML-koden fra en webserver for å lagre eller behandle den lokalt. Programmerere gjør dette for å skrape data, teste webtjenester eller automatisere oppgaver som er avhengige av innholdet på en nettside.
 
-## Hvordan gjøre:
-
-Først, vi trenger å legge til `httpoison` og `floki` i vår `mix.exs` fil:
+## Hvordan:
 
 ```elixir
-defp deps do
-  [
-    {:httpoison, "~> 1.8"},
-    {:floki, "~> 0.30"}
-  ]
-end
-```
-
-Kjør deretter `mix deps.get` for å hente avhengighetene. Nå er vi klare til å laste ned en nettside:
-
-```elixir
-defmodule WebpageDownloader do
+defmodule PageDownloader do
   require HTTPoison
-  
+
   def download(url) do
     case HTTPoison.get(url) do
-      {:ok, response} -> 
-        response.body
-      {:error, reason} -> 
-        IO.inspect(reason)
+      {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
+        {:ok, body}
+      {:ok, %HTTPoison.Response{status_code: status_code}} ->
+        {:error, "Failed to download. Status code: #{status_code}"}
+      {:error, %HTTPoison.Error{reason: reason}} ->
+        {:error, "Failed to download. Reason: #{reason}"}
     end
   end
 end
+
+# Bruk PageDownloader for å laste ned en nettside
+{:ok, body} = PageDownloader.download("http://example.com")
+IO.puts(body)
 ```
 
-Kall på denne funksjonen som så:
-
-```elixir
-WebpageDownloader.download("https://www.example.com")
+Eksempelutskrift:
 ```
-
-Du vil motta HTML-koden til nettsiden som en streng.
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</head>
+...
+</html>
+```
 
 ## Dypdykk
 
-Historisk sett ble nedlasting av nettsider gjort ved å programmere HTTP forespørsler manuelt. Selv om Elixir gir deg muligheten til å gjøre dette, er det anbefalt å bruke bibliotek som HTTPoison for enkelthet og tilbud om bedre feilhåndtering.
+Å laste ned nettsider er ikke noe nytt; det har vært en del av web-programmering siden internettets barndom. I Elixir brukes ofte HTTP-klientbiblioteker som HTTPoison eller Tesla for å utføre oppgaven. Disse bibliotekene forenkler prosessen ved å håndtere HTTP-forespørsler for deg. Alternativt kan man bruke lavnivå biblioteker som Erlangs :httpc. Når du laster ned en nettside, er det viktig å respektere robots.txt-filer og eventuelle API-grenser for å unngå å overbelaste serverne eller bryte med tjenestevilkår.
 
-Alternativer til nedlasting av webinnhold inkluderer webscraping og web crawling, men disse teknikkene handler ofte om datahenting på et større skala. 
+## Se Også
 
-Når det gjelder implementeringsdetaljer, er koden ovenfor ganske enkel. Den bruker HTTPoison-biblioteket for å sende en HTTP GET forespørsel til den oppgitte URL-en og returnerer svaret som en streng. Hvis det oppstår en feil, returneres feilmeldingen som en streng i stedet.
-
-## Se Også:
-
-  - [HTTPoison Dokumentasjon](https://hexdocs.pm/httpoison/HTTPoison.html)
-  
-  - [Floki Dokumentasjon](https://hexdocs.pm/floki/readme.html)
-
-  - [Elixir School: Tutorials on Elixir](https://elixirschool.com/en/)
-
-  - [Learn You Some Erlang For Great Good (A background on Erlang which Elixir is built upon)](https://learnyousomeerlang.com/)
+- HTTPoison GitHub-side: https://github.com/edgurgel/httpoison
+- Tesla GitHub-side: https://github.com/teamon/tesla
+- Elixir’s offisielle dokumentasjon: https://elixir-lang.org/docs.html
+- Web scraping guide med Elixir: https://www.scrapingbee.com/blog/web-scraping-elixir/

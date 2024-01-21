@@ -1,6 +1,7 @@
 ---
 title:                "Convertendo uma string para minúsculas"
-html_title:           "Fish Shell: Convertendo uma string para minúsculas"
+date:                  2024-01-20T17:38:36.900227-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,46 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# A arte de converter strings para minúsculas em Haskell: o quê, porquê e como?
-
-## O quê e porquê?
-Converter uma string para minúsculas é o procedimento de computação que muda todas as letras maiúsculas de uma string para minúsculas. Os programadores frequentemente utilizam essa técnica para normalizar os dados de entrada e torná-los insensíveis ao caso. 
+## O Que e Por Quê?
+Converter uma string para minúsculas é transformar todos os caracteres alfabéticos dela em suas versões minúsculas. Programadores fazem isso para uniformizar dados, facilitar comparações e buscas de texto.
 
 ## Como fazer:
-Em Haskell, a função `toLower` do módulo `Data.Char` é frequentemente usada para converter strings para minúsculas. Vamos precisar importar esse módulo antes de utilizá-la.
+Vamos usar a biblioteca `Data.Char` para converter strings para minúsculas em Haskell:
 
-```Haskell
+```haskell
 import Data.Char (toLower)
 
-main :: IO ()
-main = do
-  let str = "Hello, World!"
-  putStrLn $ map toLower str
+-- Converte uma string para minúsculas
+toLowerCase :: String -> String
+toLowerCase = map toLower
+
+-- Exemplo de uso
+main = putStrLn (toLowerCase "Olá Mundo!")
 ```
 
-Este script converterá a string `"Hello, World!"` para minúsculas, e a saída será: `"hello, world!"`.
-
-## Deep Dive
-A função `toLower` tem uma história interessante, proveniente da época do ASCII, onde os caracteres maiúsculos e minúsculos são separados por um valor constante. Em Haskell, ela é implementada usando o padrão Unicode para apoiar uma ampla gama de caracteres.
-
-Uma alternativa à função seria a aplicação direta de uma função lambda que faz a conversão:
-
-```Haskell
-import Data.Char (toLower)
-
-main :: IO ()
-main = do
-  let str = "Hello, World!"
-  putStrLn $ map (\c -> toLower c) str
+Saída do exemplo:
+```
+olá mundo!
 ```
 
-A expressão `(\c -> toLower c)` é um exemplo de função lambda que toma um único caracter e o converte para minúsculas. O resultado dessa execução é o mesmo do exemplo anterior. 
+## Aprofundando
+Haskell tem uma abordagem funcional interessante para operações como essa. Originalmente, a função `toLower` foi introduzida na biblioteca `Data.Char`, que faz parte do Prelude do Haskell, a biblioteca padrão que é automaticamente importada.
 
-Entenda que a abordagem com `map` é eficiente e idiomaticamente haskelliana. A função `map` é aplicada a cada elemento da string para resultar na conversão.
+Alternativas para essa operação em Haskell poderiam envolver a escrita de uma função case-by-case manual, mas é desnecessário dada a existência da função pronta. Em termos de detalhes de implementação, `toLower` lida com o Unicode. No entanto, Haskell não realiza automaticamente a conversão de maiúsculas de títulos ou letras especiais que podem ter regras de caixa baixa específicas de localidade (às vezes necessárias para além do ASCII).
 
-## See Also
-Para ir além e se aprofundar mais em Haskell consulte as seguintes fontes:
+## Veja Também
+Para explorar mais sobre strings e caracteres em Haskell:
 
-- LYAHFGG: [Funções de alta ordem](http://learnyouahaskell.com/higher-order-functions#map)
-- Hackage, Data.Char: [toLower](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html#g:12)
-- SO, Haskell: [Convert String to lower or upper case](https://stackoverflow.com/questions/20368534/convert-string-to-lower-or-upper-case-in-haskell)
+- A documentação da biblioteca `Data.Char`: https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html
+- Haskell Wiki sobre strings: https://wiki.haskell.org/Working_with_strings
+- Para um entendimento mais complexo de manipulação de texto Unicode em Haskell, a biblioteca `text`: https://hackage.haskell.org/package/text

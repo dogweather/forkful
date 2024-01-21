@@ -1,7 +1,8 @@
 ---
-title:                "एक अस्थायी फ़ाइल बनाना"
-html_title:           "Arduino: एक अस्थायी फ़ाइल बनाना"
-simple_title:         "एक अस्थायी फ़ाइल बनाना"
+title:                "अस्थायी फाइल बनाना"
+date:                  2024-01-20T17:40:52.725939-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "अस्थायी फाइल बनाना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -12,26 +13,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्या और क्यों?
 
-अस्थायी फ़ाइल एक फ़ाइल होती है जिसे किसी कार्य के लिए तात्कालिक उपयोग के लिए बनाया जाता है। यह तब आवश्यक होता है जब हमें डाटा को सुरक्षित रखना होता है या बाद में पुन: उपयोग करने के लिए बचाना होता है।
+अस्थायी फाइल बनाना मतलब है एक ऐसी फाइल जिसकी जरूरत कुछ ही समय के लिए पड़ती है। प्रोग्रामर ऐसी फाइल्स का इस्तेमाल डाटा स्टोर करने, टेस्टिंग के लिए या इंटर-प्रोसेस कम्युनिकेशन के लिए करते हैं।
 
-## कैसे करें:
+## कैसे:
 
-Haskell में, `System.IO.Temp` मॉड्यूल का उपयोग करके अस्थायी फ़ाइलों का निर्माण किया जा सकता है।
+```haskell
+import System.IO
 
-```Haskell
-import System.IO.Temp
-
-main = withSystemTempFile "myTempFile.txt" $ \tempFilePath tempFileHandle -> do
-    putStrLn $ "अस्थायी फ़ाइल " ++ tempFilePath ++ " बनाई गई है।"
+-- टेम्परेरी फाइल बनाएं और उसमें लिखें
+main :: IO ()
+main = do
+  (tempFilePath, tempHandle) <- openTempFile "." "temp"
+  hPutStrLn tempHandle "यह कुछ अस्थायी डाटा है"
+  hClose tempHandle
+  putStrLn $ "टेम्परेरी फाइल बनाई गयी: " ++ tempFilePath
 ```
 
-उपरोक्त कोड एक अस्थायी फ़ाइल बनाता है और इसका पथ प्रिंट करता है।
+सैंपल आउटपुट:
+```
+टेम्परेरी फाइल बनाई गयी: ./temp1234.txt
+```
 
-## गहराई में:
+## गहराई से जानकारी
 
-Haskell में, `System.IO.Temp` मॉडयूल 2010 के आस-पास समावेशित हुआ। इसके विकल्प रूप में, आप 'System.Directory' का उपयोग कर सकते हैं, लेकिन यहां आपको फ़ाइल के निर्माण और मिटाने की जिम्मेदारी होती है। `withSystemTempFile` का उपयोग करना यह सुनिश्चित करता है कि अस्थायी फ़ाइल स्वचालित रूप से मिटाई जा सकती है।
+अस्थायी फाइलें उनकी सामयिकता के लिए प्रसिद्ध हैं। यह अवधारणा Unix-like सिस्टम्स से आई है, जहां `/tmp` डायरेक्टरी अस्थायी फाइलों के लिए होती है। हास्केल में, `System.IO` मॉड्यूल का उपयोग करके आसानी से टेम्परेरी फाइलें बनाई जा सकती हैं। इसके विकल्प के तौर पर, `temporary` पैकेज भी है जो अधिक सुविधाएँ और अधिक नियंत्रण प्रदान करता है। टेम्परेरी फाइल्स सुरक्षा के दृष्टिकोण से भी महत्वपूर्ण हो सकती हैं, क्योंकि वे केवल उस समय के लिए मौजूद रहती हैं जब तक उनकी जरूरत होती है और फिर स्वचालित रूप से साफ हो जाती हैं।
 
-## देखें भी:
+## और भी जानें
 
-1. [Haskell डॉक्स: System.IO.Temp](https://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html)
-2. [Haskell पुस्तक: फ़ाइल प्रणाली](https://www.haskell.org/tutorial/io.html)
+- Haskell `System.IO` Module: [System.IO Documentation](https://hackage.haskell.org/package/base/docs/System-IO.html)
+- टेम्परेरी फाइल्स के लिए `temporary` पैकेज: [temporary Package](https://hackage.haskell.org/package/temporary)
+- सुरक्षित टेम्परेरी फाइल्स पर लेख: [Secure Temp File Creation](https://www.owasp.org/index.php/Insecure_Temporary_File)

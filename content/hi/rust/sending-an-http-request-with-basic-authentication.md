@@ -1,7 +1,8 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:03:10.755321-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,48 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# एचटीटीपी अनुरोध के साथ बेसिक प्रमाणीकरण भेजना रस्ट (Rust) में 
+## क्या और क्यों? (What & Why?)
+HTTP रिक्वेस्ट वेब सर्वर से इन्फॉर्मेशन मांगने का एक तरीका है। बेसिक ऑथेंटिकेशन का उपयोग हम तब करते हैं जब हमें उस इन्फॉर्मेशन तक पहुंचने के लिए यूजरनेम और पासवर्ड के साथ वेरिफाई करना होता है।
 
-## क्या और क्यों?
-बेसिक प्रमाणीकरण (Basic Authentication) क्षेतु में, एचटीटीपी अनुरोध भेजना से आप वेब सेवाओं और एपीआई के साथ सुरक्षित बातचीत स्थापित करते हैं। यह सुनिश्चित करता है कि केवल प्राधिकृत उपयोगकर्ताओं को ही पहुंच हो। 
+## कैसे करें? (How to:)
+Rust में `reqwest` क्रेट का इस्तेमाल करके बेसिक ऑथेंटिकेशन के साथ HTTP रिक्वेस्ट भेजना सीखते हैं:
 
-## कैसे करें:
 ```Rust
-use reqwest::{Client, header};
-use std::collections::HashMap;
+// आपके Cargo.toml में निम्न dependency जोड़ें
+// [dependencies]
+// reqwest = "0.11"
+// tokio = { version = "1", features = ["full"] }
 
-pub async fn send_request() -> Result<(), reqwest::Error> {
-   let mut headers = header::HeaderMap::new();
-   let client = Client::new();
-   
-   let username = "user1";
-   let password = "password123";
-   
-   headers.insert("Authorization", header::HeaderValue::from_str(&format!("Basic {}", base64::encode(&format!("{}:{}", username, password))))?);
-   
-   let res = client.get("https://httpbin.org/anything")
-       .headers(headers)
-       .send()
-       .await?;
-   
-   println!("{:?}", res.status());
-   
-   Ok(())
+#[tokio::main]
+async fn main() -> Result<(), reqwest::Error> {
+    let client = reqwest::Client::new();
+    let user = "user123";
+    let pass = "password456";
+
+    let response = client.get("http://example.com")
+        .basic_auth(user, Some(pass))
+        .send()
+        .await?;
+
+    println!("Status: {}", response.status());
+    println!("Headers:\n{:?}", response.headers());
+
+    Ok(())
 }
 ```
 
-यदि आपकी प्राधिकृति सही है, तो आपको 200 OK स्थिति मिलेगी। यदि आपकी प्राधिकृति अमान्य है, तो आपको 401 Unauthorized मिलेगा।
+जब आप यह कोड चलाते हैं, आपको रिस्पॉन्स मिलेगा जैसे:
 
-## गहराई में:
-बेसिक प्रमाणीकरण, वेब प्रमाणीकरण की पुरानी तकनीक है। अपनी सरलता के कारण, इसे आज भी काफी मात्रा में इस्तेमाल किया जाता है, हालांकि इसे SSL / TLS के साथ संरक्षित कनेक्शन पर ही इस्तेमाल करने की सलाह दी जाती है। 
+```
+Status: 200 OK
+Headers:
+{
+    ...
+}
+```
 
-विकल्प स्वरूप, आप Bearer Token अथॉराइजेशन, OAuth, या डाइजेस्ट प्रमाणीकरण का उपयोग कर सकते हैं। 
+## गहराई से जानकारी (Deep Dive)
+HTTP बेसिक ऑथेंटिकेशन एक सिंपल लेकिन कमजोर सिक्योरिटी प्रोटोकॉल है। यह बेस64 इन्कोडिंग का इस्तेमाल करता है, जो कि एन्क्रिप्शन नहीं है। इसीलिए इसका इस्तेमाल आमतौर पर HTTPS के साथ किया जाता है।
 
-Rust में, `reqwest` क्रेट (crate) HTTP अनुरोध को संभालने के लिए सबसे लोकप्रिय विकल्प है। इसे सिंकनेस (sync) और असिंकनेस (async) दोनों परंपराओं में कार्यान्वित किया जा सकता है। 
+वैकल्पिक तरीके हो सकते हैं जैसे कि ओआईडीसी (OIDC), ओअथ2 (OAuth2) या मल्टी-फैक्टर ऑथेंटिकेशन, जो अधिक सुरक्षित होते हैं।
 
-## देखें भी:
-रस्ट (Rust) में Proceeding HTTP अनुरोध करने के बारे में और जानने के लिए, निम्नलिखित संसाधनों का अन्वेषण करें:
+बेसिक ऑथेंटिकेशन का इस्तेमाल जब भी आप `basic_auth` मेथड लगाते हो, हेडर में `Authorization` जोड़े जाते हैं जिसमें `username:password` बेस64-इन्कोडेड स्ट्रिंग के रूप में होते हैं।
 
-2. The [reqwest crate](https://docs.rs/reqwest/0.11.3/reqwest/) documentation.
-3. [Basic Authentication on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
-4. [How to send HTTP Requests in Rust](https://www.section.io/engineering-education/rust-http-request/) guide.
+## और भी जानकारी (See Also)
+- Rust `reqwest` क्रेट का डॉक्युमेंटेशन: [https://docs.rs/reqwest](https://docs.rs/reqwest)
+- बेसिक ऑथेंटिकेशन स्पेसिफिकेशन: [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)
+- Rust async नेटवर्किंग के लिए Tokio ट्यूटोरियल: [https://tokio.rs/tokio/tutorial](https://tokio.rs/tokio/tutorial)

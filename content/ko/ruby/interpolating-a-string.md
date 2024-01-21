@@ -1,6 +1,7 @@
 ---
 title:                "문자열 보간하기"
-html_title:           "Clojure: 문자열 보간하기"
+date:                  2024-01-20T17:51:35.050185-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "문자열 보간하기"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,31 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 이게 무엇이고 왜 필요한가요?
-문자열 내삽(String Interpolation)이란, 문자열 안에 Ruby 코드를 넣어 그 값을 바로 출력할 수 있는 기법을 일컫습니다. 이를 통해 반복적으로 값을 더하거나 변경하지 않아도 되므로 코드를 깔끔하게 유지할 수 있습니다.
+## What & Why? (무엇인가요? 왜 사용하나요?)
+스트링 인터폴레이션은 문자열 안에 변수나 표현식의 결과를 삽입하는 것입니다. 코드를 더 읽기 쉽고 유지보수하기 족하게 하기 위해 사용합니다.
 
-## 어떻게 사용해야 할까요?
+## How to (어떻게 하나요?)
 ```Ruby
-name = 'Kim'
-puts "Hey #{name}, How are you?"
+name = "세종대왕"
+age = 615
+
+# 문자열 인터폴레이션 사용 예제
+greeting = "안녕하세요, #{name}님! 당신의 나이는 #{age}살이군요."
+puts greeting
 ```
-위의 코드를 실행하면, `#{name}` 부분이 'Kim'으로 치환되어 "Hey Kim, How are you?"라는 결과가 출력됩니다.
-
-```Ruby
-x = 10
-y = 20
-puts "Sum of #{x} and #{y} is #{x + y}"
+출력:
 ```
-이란 코드는 "#{x + y}" 부분이 두 수의 합인 '30'으로 치환되어 "Sum of 10 and 20 is 30"이라는 결과를 출력합니다.
+안녕하세요, 세종대왕님! 당신의 나이는 615살이군요.
+```
 
-## 깊게 알아보기
-문자열 내삽은 Ruby의 역사적인 부분으로, 그 기원은 Perl에서 찾을 수 있습니다. Perl보다 더 강력한 표현력을 가지며, JavaScript의 Template Literals, Python의 F-strings 같은 다른 언어의 비슷한 기능과 비교됩니다.
+## Deep Dive (심층 탐구)
+스트링 인터폴레이션이라는 개념은 오래 전부터 프로그래밍에서 사용됐습니다. Ruby에서는 중괄호 내부에 `#{}` 구문을 사용해 구현됩니다. 이는 코드 내에서 문자열을 동적으로 조립할 때 강력한 도구입니다. `+`연산자나`concat` 메서드 등의 대안이 있긴 하지만, 가독성이나 퍼포먼스 면에서 인터폴레이션이 더 낫습니다. 내부적으로, Ruby는 이를 처리하기 위해 해당 변수나 표현식을 문자열로 변환하는 `to_s` 메서드를 자동으로 호출합니다.
 
-Ruby에서는 '%' 기호나 '+'처럼 다른 기호를 사용해 문자열을 연결하는 대신, "#{...}" 형태로 보다 간결하게 코드를 작성할 수 있습니다.
-
-문자열 내삽은 실제로 문자열의 `to_s` 메소드를 호출하여 값을 문자열로 변환합니다. 이 점은 숫자나 객체를 문자열에 내삽할 때 특히 유용합니다.
-
-## 참고 자료
-1. [Ruby Documentation: String Interpolation](https://ruby-doc.org/core-2.7.0/doc/syntax/literals_rdoc.html#label-Strings)
-2. [Ruby Learning](http://rubylearning.com/satishtalim/ruby_string_interpolation.html)
-3. [Geeks for Geeks: Ruby String Interpolation](https://www.geeksforgeeks.org/ruby-string-interpolation/)
+## See Also (관련 자료)
+- [The Pragmatic Programmers' Guide](http://ruby-doc.com/docs/ProgrammingRuby/)

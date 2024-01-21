@@ -1,7 +1,8 @@
 ---
-title:                "एक वेब पेज डाउनलोड करना"
-html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
-simple_title:         "एक वेब पेज डाउनलोड करना"
+title:                "वेब पेज डाउनलोड करना"
+date:                  2024-01-20T17:43:40.134412-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "वेब पेज डाउनलोड करना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,42 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
+## What & Why? (क्या और क्यों?)
+वेब पेज डाउनलोड करना यानी इंटरनेट से सामग्री प्राप्त करना। प्रोग्रामर्स डेटा एनालिसिस, स्क्रैपिंग या ऑफ़लाइन एक्सेस के लिए इसे करते हैं।
 
-वेब पेज डाउनलोड करना मतलब उसकी सामग्री को अपने कंप्यूटर पर कॉपी करना। प्रोग्रामर्स इसे डाटा विश्लेषण, वेब स्क्रेपिंग या ऑफलाइन पठन के लिए करते हैं।
+## How to: (कैसे करें:)
+C# का इस्तेमाल करके, आप HttpClient क्लास के साथ बहुत आसानी से वेब पेज डाउनलोड कर सकते हैं।
 
-## कैसे करें:
-
-वेब पेज डाउनलोड करने के लिए C# का उपयोग करते हुए कुछ कोड का उदाहरण यहां दिया गया है:
-
-```C#
+```csharp
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
 class Program
 {
-    private static readonly HttpClient client = new HttpClient();
-
-    static async Task Main()
+    static async Task Main(string[] args)
     {
-        var responseString = await client.GetStringAsync("http://example.com");
-
-        Console.WriteLine(responseString);
+        HttpClient client = new HttpClient();
+        try
+        {
+            string webpageContent = await client.GetStringAsync("http://www.example.com");
+            Console.WriteLine(webpageContent);
+        }
+        catch (HttpRequestException e)
+        {
+            Console.WriteLine("\nException Caught!");
+            Console.WriteLine("Message :{0} ", e.Message);
+        }
     }
 }
 ```
 
-आपको ऊपर दी गई URL के स्थान पर अपनी URL डालनी होगी। यह कोड HTTP अनुरोध करेगा और सर्वर का प्रतिक्रिया प्राप्त करेगा।
+सैंपल आउटपुट वेब पेज के HTML कोड का होगा:
 
-## गहरी जानकारी:
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
 
-वेब पेज डाउनलोड करने की क्षमता वेब ब्राउज़र के विकास के साथ ही कई दशक पुरानी है। इसके विकल्प में अन्य प्रोग्रामिंग भाषाओं का उपयोग भी हो सकता है, जैसे कि Python के `requests` लाइब्रेरी। हालांकि, C# में HttpClient class बहुत सक्षम और लचीली होती है। यह asynchronous operations का समर्थन करती है, जिससे एप्लीकेशन के प्रदर्शन में सुधार होता है।
+## Deep Dive (गहन अध्ययन)
+पहले, WebRequest और WebClient का इस्तेमाल होता था। HttpClient नया और असिंक्रोनस तरीका प्रदान करता है जो परफॉर्मेंस और स्केलेबिलिटी में सुधार करता है। डाउनलोड किए गए वेब पेज को पार्स करने के लिए HtmlAgilityPack जैसे थर्ड-पार्टी लाइब्रेरीज़ का इस्तेमाल किया जाता है। वेब पेज डाउनलोड करने का कार्य कानूनी और एथिकल सीमाओं में होना चाहिए।
 
-## और भी देखें:
-
-वेब पेज डाउनलोड करने के बारे में और जानने के लिए नीचे दिए गए संसाधनों की जाँच करें:
-
-- [HttpClient Class in .NET](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
-- [Web Scraping with C#](https://www.pluralsight.com/guides/web-scraping-with-csharp)
-- [Asynchronous Programming in C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)
+## See Also (और जाने)
+- .NET में HttpClient के बारे में और पढ़ें: [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
+- HtmlAgilityPack का उपयोग कैसे करें: [HtmlAgilityPack](https://html-agility-pack.net/)
+- वेब स्क्रैपिंग के कानूनी पहलू: [Web Scraping Legal Issues](https://benbernardblog.com/web-scraping-and-crawling-are-perfectly-legal-right/)

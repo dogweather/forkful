@@ -1,7 +1,8 @@
 ---
-title:                "Imprimer la sortie de débogage"
-html_title:           "Arduino: Imprimer la sortie de débogage"
-simple_title:         "Imprimer la sortie de débogage"
+title:                "Affichage des sorties de débogage"
+date:                  2024-01-20T17:52:37.492132-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Affichage des sorties de débogage"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,35 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi?
+## What & Why? | Quoi et Pourquoi ?
+L'impression de débogage consiste à afficher des données pour suivre le flux d'exécution ou les valeurs pendant le développement. On le fait pour traquer les bogues plus facilement et comprendre ce qui se trame dans le programme.
 
-L'impression de sortie de débogage est un moyen pour les programmeurs d'afficher des messages d'erreur, des variables et d'autres données pour vérifier le fonctionnement du programme. C'est essentiel pour identifier et résoudre les problèmes rapidement.
-
-## Comment faire:
-
-Gleam vous permet d'imprimer le débogage avec la fonction `io.debug`. Prenez cet exemple:
-
-```Gleam
+## How to: | Comment faire :
+```gleam
 import gleam/io
 
-fn main() {
-  let a = 100
-  io.debug(a) // Affiche "DEBUG: 100\n" dans la console
+pub fn main() {
+  let some_value = 42
+  let debug_message = "Current value is: "
+  
+  // Print to standard output
+  io.debug(debug_message ++ int.to_string(some_value))
+  
+  // Some more code (...)
 }
 ```
-Lors de l'exécution de ce programme, `100` sera affiché dans la sortie de débogage.
+Output:
+```
+Current value is: 42
+```
+## Deep Dive | Plongée en profondeur :
+Historiquement, l'affichage pour le débogage est aussi vieux que la programmation elle-même. Les alternatives modernes incluent l'utilisation d'environnements de développement intégrés (IDE) avec des débogueurs avancés ou la journalisation avec des niveaux de gravité. En Gleam, l'acte d’impression est simple, mais ne doit pas se retrouver dans le code de production. Il peut ralentir les performances et révéler des informations sensibles inopportunément.
 
-## Plongée profonde
-
-Historiquement, l'impression de débogage est une pratique ancienne qui remonte aux premiers jours de la programmation. En Gleam, c'est une fonctionnalité simple mais essentielle qui incorpore le meilleur des langages de programmation fonctionnels et impératifs.
-
-Une autre alternative possible pour débugger en Gleam est d'utiliser une interface débogueur avec un EDI comme Visual Studio Code, qui offre un environnement pour surveiller activement les variables et l'état du programme.
-
-Quant à l'implémentation, `io.debug` fonctionne en affichant des messages sur `stderr`; ce qui signifie que le débogage n'affecte pas la sortie standard du programme, garantissant ainsi que seul le développeur verra les messages de débogage.
-
-## Voir aussi
-
-Pour en savoir plus sur le débogage en Gleam, consultez les ressources suivantes :
-
-- [Gleam Language Guide](https://gleam.run/book/tour/)
-- [Visual Studio Code - Debugger Extension](https://code.visualstudio.com/docs/editor/debugging)
+## See Also | À voir également :
+- Effective debugging strategies in functional programming
+- A guide to logging in BEAM languages (Erlang, Elixir, Gleam)

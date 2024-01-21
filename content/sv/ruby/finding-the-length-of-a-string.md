@@ -1,6 +1,7 @@
 ---
 title:                "Hitta längden på en sträng"
-html_title:           "Arduino: Hitta längden på en sträng"
+date:                  2024-01-20T17:48:21.535961-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Hitta längden på en sträng"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,40 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att hitta längden på en sträng innebär att räkna antalet tecken den innehåller. Programmerare gör detta för att validera indata, formatera utdata eller utföra operationer som kräver kännedom om strängens storlek.
 
-Att hitta längden på en sträng betyder att räkna antalet tecken i den. Programmerare gör detta för att manipulera data, validera input, eller lösa problem (t.ex., att avgöra om ett användarnamn är för långt).
+## Hur gör man:
+I Ruby, använd `.length` eller `.size` på en sträng för att få dess längd.
 
-## Hur man gör:
-
-Använd `String#length` eller `String#size` metod i Ruby för att hitta längden på ett sträng. Här är exempel på kod och utdata:
-
-```Ruby
-str = "Hej Sverige"
-puts str.length  # Ger 11
-puts str.size    # Ger också 11
+```ruby
+str = "Hej världen!"
+puts str.length  # Output: 12
+puts str.size    # Output: 12
 ```
 
-Båda metoderna ger exakt samma resultat, vilket är antalet tecken i strängen.
+Båda metoderna returnerar samma resultat.
 
-## Fördjupning
-
-Historiskt sett har både `length` och `size` metoder funnits i Ruby sedan version 1.2. De är precis likadana eftersom `size` är ett alias för `length` - det ger utvecklare fler alternativ att använda beroende på vad som låter mest naturligt för dem.
-
-En alternativ metod för att hitta längden på en sträng är att använda `String#bytesize`, men det ger antalet bytes och inte antalet tecken. Detta är viktigt när man hanterar icke-ASCII eller flerbytes tecken. Till exempel:
-
-```Ruby
-str = "hej"
-puts str.length      # Ger 3
-puts str.bytesize    # Ger 3
-
-str = "hej 😀"        # Innehåller en emoji tecken
-puts str.length      # Ger 4
-puts str.bytesize    # Ger 8
+```ruby
+tom_strang = ""
+puts tom_strang.length  # Output: 0
 ```
 
-Så, i allmänhet, använd `length` eller `size` för stränglängd, och `bytesize` för bytesize.
+Even an empty string can be checked and will return 0.
 
-## Se även:
+## Djupdykning
+I tidigare programmeringsspråk var hantering av strängar inte lika direkt. Till exempel, i C bestäms strängens längd genom att söka efter en termineringskaraktär (`\0`) – ett manuellt och ibland buggigt förfarande.
 
-- Ruby Docs [`String#length`](https://ruby-doc.org/core-2.7.0/String.html#method-i-length), [`String#size`](https://ruby-doc.org/core-2.7.0/String.html#method-i-size) och [`String#bytesize`](https://ruby-doc.org/core-2.7.0/String.html#method-i-bytesize) för mer information och exempel.
-- [Learn Ruby](https://learnrubythehardway.org/book/ex6.html) för mer baslärande om strängar.
+I Ruby är `.length` och `.size` alias för varandra; det spelar ingen roll vilket du använder. Det finns också en metod `.bytesize` som returnerar antalet bytes som strängen upptar, vilket kan skilja sig från `.length` om strängen innehåller flerbyte-tecken, som emoji eller vissa internationella tecken.
+
+```ruby
+emoji_strang = "🙂"
+puts emoji_strang.length   # Output: 1
+puts emoji_strang.bytesize # Output: 4
+```
+
+I exemplet ovan har emoji-symbolen en längd av 1 tecken men upptar 4 bytes.
+
+## Se även
+- Ruby-dokumentation för strängklassen: [String](https://ruby-doc.org/core/String.html)
+- Ruby-dokumentation för strängmetoden `.bytesize`: [String#bytesize](https://ruby-doc.org/core-2.5.1/String.html#method-i-bytesize)

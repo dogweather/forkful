@@ -1,7 +1,8 @@
 ---
-title:                "קריאה של ארגומנטים משורת הפקודה"
-html_title:           "C#: קריאה של ארגומנטים משורת הפקודה"
-simple_title:         "קריאה של ארגומנטים משורת הפקודה"
+title:                "קריאת פרמטרים משורת הפקודה"
+date:                  2024-01-20T17:56:48.526980-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "קריאת פרמטרים משורת הפקודה"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,40 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# תכנות בשפת Gleam: קריאת ארגומנטים מהשורה של הפקודה
-
 ## מה ולמה?
+קריאת ארגומנטים משורת הפקודה היא התהליך שבו תוכנית מקבלת פרמטרים מהמשתמש דרך הטרמינל. מתכנתים עושים זאת כדי לאפשר גמישות ושליטה יותר גדולה בהפעלת התוכנית.
 
-לקריאת ארגומנטים מהשורה של הפקודה מתייחסים כאשר אנחנו מעבירים פרמטרים או משתנים לתוכנית שלנו בעת הרצתה. זה מאוד שימושי בשל ביצועי סיום, פרמטרים משתנים, וטכניקות שליטה אחרות בתהליך התכנית.
+## איך לעשות:
+ב-Gleam, ניתן לקרוא ארגומנטים משורת הפקודה דרך המודול `gleam/io`. להלן דוגמא פשוטה:
 
-## איך:
-
-קוד ב-Gleam משתמש בחבילת `gleam/otp` על מנת לקרוא את הארגומנטים:
 ```gleam
-import gleam/list
-import gleam/otp.{process}
+import gleam/io
 
-fn main(args: list.List(String)) {
-    let args = process.start_link(args)
-    case args {
-        Ok(val) -> io.format("Success: ~p~n", [val])
-        Error(err) -> io.format("Error: ~p~n", [err])
-    }
+fn main(args: List(String)) {
+  case args {
+    [] -> 
+      io.println("No arguments were passed.")
+    [head | _] -> 
+      io.println("The first argument is: " ++ head)
+  }
 }
 ```
-בריצה של התכנית עם הפרמטר "hello":
 
-```console
-$ gleam run main hello
-Success: ["hello"]
+פלט דוגמא אם לא הועברו ארגומנטים:
+```
+No arguments were passed.
 ```
 
-## עומק נוסף:
+פלט דוגמא אם הועבר ארגומנט `"Hello"`:
+```
+The first argument is: Hello
+```
 
-(1) למרות שקריאת ארגומנטים מהשורה של הפקודה היא רעיון ישן, תמיכתה ב-Gleam חדישה יחסית, מתוך השקפה שמתמקדת בשילוב של שפות ארלאנג ואליקסר. 
-(2) חלופות רבות לקריאת ארגומנטים קיימות בשפות אחרות, כולל אופציות מבוססות בניית מילונים או בראייה מפורטת של מידע מהשורה של הפקודה. (3) ב-Gleam, `gleam/otp.process` מאפשר למרות הסינטקס המבונה.
+## עיון מעמיק
+בעבר, קריאת ארגומנטים משורת הפקודה היתה תחום ששפות כמו C ו-Perl דיברו בו הרבה. גישות מודרניות, כמו ב-Gleam, מנצלות מודולים סטנדרטיים ומספקות API נקי יותר וקל לשימוש. חלופות אולי כוללות ביבליות צד שלישי לפרסינג מתקדם יותר של ארגומנטים, כמו קביעת דגלים ואופציות.
 
-## ראו גם:
+בפלטפורמות מסוימות ובשפות אחרות, קריאת ארגומנטים עשויה להיות מורכבת יותר בשל הבדלים באופן שבו ארגומנטים מנותחים ומועברים לתוכנית. ב-Gleam, הכל עובר ברשימת מחרוזות, מה שמפשט את התהליך.
 
-- מפרט ה-Gleam OTP: https://hexdocs.pm/gleam_otp/gleam/otp/process.html.
-- ספר לימוד שפת תכנות Gleam: https://gleam.run/book/.
+## ראה גם
+- [Gleam getting started guide](https://gleam.run/getting-started/)
+- [Command Line Applications in Rust](https://rust-cli.github.io/book/index.html) - למרות שהוא על Rust, יש פרק על קריאת ארגומנטים שעשוי להיות רלוונטי מבחינת תכנון.

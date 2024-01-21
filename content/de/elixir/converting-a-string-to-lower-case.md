@@ -1,7 +1,8 @@
 ---
-title:                "Einen String in Kleinbuchstaben umwandeln"
-html_title:           "Elm: Einen String in Kleinbuchstaben umwandeln"
-simple_title:         "Einen String in Kleinbuchstaben umwandeln"
+title:                "Umformung eines Strings in Kleinbuchstaben"
+date:                  2024-01-20T17:38:15.380096-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Umformung eines Strings in Kleinbuchstaben"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,27 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, jeden Großbuchstaben in seinem Äquivalent in Kleinbuchstaben zu ändern. Es wird oft verwendet, um die Benutzereingabe zu normalisieren oder eine case-insensitive Suche zu ermöglichen.
 
-Das Umwandeln von Zeichenketten in Kleinbuchstaben ist eine alltägliche Aufgabe in der Programmierung. Dabei wird jede Großbuchstabe in der Zeichenkette in ihren entsprechenden Kleinbuchstaben umgewandelt. Programmierer machen das oft, um den Vergleich von Zeichenketten zu erleichtern und ein einheitliches Benutzererlebnis zu gewährleisten.
-
-## So geht's:
-
-In Elixir sieht die Umwandlung einer Zeichenkette in Kleinbuchstaben so aus:
+## How to:
+Elixir macht die Konvertierung mit der `String.downcase/1` Funktion kinderleicht. Hier ist ein Beispiel:
 
 ```elixir
-iex> String.downcase("HALLO WELT")
-"hallo welt"
+original = "Elixir ROCKT!"
+klein = String.downcase(original)
+IO.puts(klein)  # Gibt aus: "elixir rockt!"
 ```
-Du mobilisierst einfach die `downcase` Funktion auf dem `String` Modul und gibst die Zeichenkette, die du transformieren möchtest, als Argument.
 
-## Vertiefung
+Dieser Code wandelt den String `original` in Kleinbuchstaben um und gibt ihn aus.
 
-Die Behandlung von Groß- und Kleinbuchstaben in Programmiersprachen ist ein Erbe aus der Zeit der mechanischen Schreibmaschinen und hat sich bis heute in fast allen Programmiersprachen durchgesetzt. In Elixir wird die Umwandlung von Zeichenketten in Kleinbuchstaben durch die Funktion `downcase` implementiert, die auf dem Unicode-Datenbank beruht. Das bedeutet, dass sie für alle Zeichenketten arbeitet, unabhängig von der Sprache oder dem Alphabet, das sie verwenden. Es gibt Alternativen zur `downcase` Funktion, wie die `swapcase` Funktion, die jede Kleinbuchstabe in ihre entsprechende Großbuchstabe umwandelt, und umgekehrt.
+## Deep Dive
+Früher war die Umwandlung von Groß- zu Kleinbuchstaben nicht so geradlinig, da es in verschiedenen Sprachen unterschiedliche Regeln gibt. Elixir nutzt Unicode, wodurch die meisten sprachspezifischen Fälle abgedeckt sind.
 
-## Siehe auch
+Eine Alternative könnte eine manuelle Konvertierung mit einer Schleife und Charaktervergleich sein, aber dies wäre unwirtschaftlich und fehleranfällig. Da Elixir auf der Erlang VM läuft, nutzt es womöglich auch Erlangs robuste String-Handling-Funktionen.
 
-Weitere Informationen finden Sie unter:
+Bei der Implementierung ist wichtig, dass `String.downcase/1` auch mit Graphemen umgehen kann, die aus mehreren Unicode-Zeichen bestehen. So werden auch kombinierte Charaktere richtig in Kleinbuchstaben umgewandelt.
 
-- Elixir Offiziell: String Modul (https://hexdocs.pm/elixir/String.html)
-- Erlang/OTP Quellcode von Elixir (https://github.com/elixir-lang/elixir)
-- Elixir Forum (https://elixirforum.com/)
+## See Also
+- Elixir Documentation für `String.downcase/1`: https://hexdocs.pm/elixir/String.html#downcase/1
+- Unicode Standard: https://unicode.org
+- Erlang's String-Module, welches von Elixir verwendet wird: http://erlang.org/doc/man/string.html

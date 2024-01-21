@@ -1,7 +1,8 @@
 ---
-title:                "Eliminazione dei caratteri corrispondenti a un modello"
-html_title:           "PowerShell: Eliminazione dei caratteri corrispondenti a un modello"
-simple_title:         "Eliminazione dei caratteri corrispondenti a un modello"
+title:                "Eliminazione di caratteri che corrispondono a un pattern"
+date:                  2024-01-20T17:42:15.040690-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,42 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che Cosa & Perché?
+## What & Why?
+Cancellare i caratteri che corrispondono a un pattern significa selezionare e rimuovere specifici caratteri da una stringa seguendo una regola definita. Programmatori fanno questo per pulire i dati, validare input, o manipolare il testo per requisiti specifici.
 
-L'eliminazione dei caratteri corrispondenti a un modello è un'azione che permette di eliminare specifiche sequenze di caratteri in base a un modello o a un'espressione regolare. Questa tecnica è spesso utilizzata per pulire o filtrare i dati di input e per la manipolazione delle stringhe.
-
-## Come si fa:
-
-Gleam non include nativamente funzioni per l'uso di espressioni regolari, ma possiamo utilizzare il modulo Regex di Erlang. Ecco un esempio:
+## How to:
+Gleam non ha una libreria standard che supporti espressioni regolari nativamente. Si può usare funzioni come `string.replace` o librerie esterne. Ecco un esempio che usa `string.replace` per eliminare i numeri da una stringa:
 
 ```gleam
-import erlang/regex
-import gleam/bool.{to_string}
+import gleam/string
+
+fn strip_numbers(text: String) -> String {
+  string.replace(text, "0", "")
+  |> string.replace(_, "1", "")
+  // Continua per tutti gli altri numeri...
+  |> string.replace(_, "9", "")
+}
 
 fn main() {
-   let re = "^a"
-   let string = "abc abc"
-   case regex.run(re, string) {
-      Ok(_) -> io.println("Match trovato!")
-      Error(_) -> io.println("Nessun match!")
-   }
+  let result = strip_numbers("Il 7 e l'8 sono in mezzo al 6 e al 9.")
+  assert result == "Il  e l' sono in mezzo al  e al ."
+  result
 }
 ```
 
-Se esegui questo codice, vedrai stampato `Match trovato!` perché la stringa inizia con `a`.
+Output:
+```
+"Il  e l' sono in mezzo al  e al ."
+```
 
-## Approfondimento
+## Deep Dive
+Gleam è un nuovo linguaggio di programmazione staticamente tipizzato per la BEAM, l'ambiente virtuale di linguaggi come Erlang ed Elixir. Da quando è uno più giovane nella famiglia BEAM, molte funzionalità come l'elaborazione avanzata di stringhe attraverso le regex non sono presenti nativamente come nei suoi 'fratelli maggiori'. I pattern possono quindi essere eliminati utilizzando funzioni di stringhe o manipolando la stringa a mano. Come alternativa si può ricorrere a librerie esterne, come `gleam_otp/regular_expressions`, che sfruttano le capacità di regex di Erlang. Da considerare, però, il trade-off tra prestazioni e leggibilità quando si utilizzano queste soluzioni.
 
-L'eliminazione dei caratteri corrispondenti a un modello nasce con le espressioni regolari, che sono una caratteristica importante dei linguaggi di programmazione storici come Perl e Python. In Gleam, dobbiamo decidere di integrare le funzionalità Erlang per utilizzare le espressioni regolari.
-
-Un'alternativa all'uso di espressioni regolari potrebbe essere l'iterazione attraverso la stringa e l'eliminazione manuale dei caratteri che corrispondono a un criterio specifico, ma questo può essere un processo più lento e intensivo di codice.
-
-La funzione `regex.run` di Erlang in realtà compila l'espressione regolare in un automa a stati finiti, che è quindi utilizzato per la corrispondenza con la stringa. Questo rende il processo di elimina dei caratteri molto efficiente.
-
-## Guarda Anche
-
-Ecco alcuni link utili per approfondire l'argomento:
-
-1. [Documentazione Regex di Erlang](http://erlang.org/doc/man/re.html)
-2. [Guida alla sintassi Regex](https://www.regular-expressions.info/tutorial.html)
-3. [Documentazione sulla programmazione funzionale in Gleam](https://gleam.run/book/tour/)
+## See Also
+Per approfondire, ecco alcune risorse utili:
+- `gleam_otp/regular_expressions` per regex support in Gleam: [https://hex.pm/packages/gleam_otp](https://hex.pm/packages/gleam_otp)

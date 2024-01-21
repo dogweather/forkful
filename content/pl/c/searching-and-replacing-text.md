@@ -1,7 +1,8 @@
 ---
-title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
-simple_title:         "Wyszukiwanie i zastępowanie tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+date:                  2024-01-20T17:57:33.635017-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,40 +11,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to i dlaczego?
-Szukanie i zamiana tekstu to podstawowe operacje, dzięki którym możemy manipulować danymi w programach. Programiści robią to, aby przekształcać, filtrować czy korygować tekst na potrzeby swoich aplikacji.
+## What & Why? (Co i dlaczego?)
+Wyszukiwanie i zamiana tekstu to operacje, które umożliwiają szybką edycję ciągów znaków - od prostego zastępowania słów po zaawansowane przetwarzanie danych. Programiści używają tych operacji, by naprawiać błędy, aktualizować informacje i ogólnie ulepszać interakcję z tekstem w aplikacjach.
 
-## Jak to zrobić:
+## How to: (Jak to zrobić?)
+Przykład w C, który pokazuje, jak szukać i zastępować tekst:
 
-Spróbujmy szukać i zastąpić tekst za pomocą prostego przykładu.
 ```C
+#include <stdio.h>
 #include <string.h>
 
-int main() {
-    char text[] = "Witam Cieszę się, że omawiamy programowanie w C.";
-    char *szukaj = "C";
-    char *zamiana = "C++";
-    char *wynik;
+void searchReplace(char *str, const char *search, const char *replace) {
+    char buffer[1024];
+    char *insert_point = &buffer[0];
+    const char *tmp = str;
+    size_t search_len = strlen(search);
+    size_t replace_len = strlen(replace);
 
-    wynik = strstr(text, szukaj);
+    while (1) {
+        const char *p = strstr(tmp, search);
 
-    if(wynik) {
-    	strncpy(wynik, zamiana, strlen(zamiana));
-    	puts(text);
+        // jeśli nie znaleziono szukanego tekstu zakończ pętlę
+        if (p == NULL) {
+            strcpy(insert_point, tmp);
+            break;
+        }
+
+        // kopiowanie części przed wystąpieniem szukanego tekstu
+        memcpy(insert_point, tmp, p - tmp);
+        insert_point += p - tmp;
+
+        // wstawiamy nowy tekst
+        memcpy(insert_point, replace, replace_len);
+        insert_point += replace_len;
+
+        // aktualizujemy tmp, przesuwając się za zastąpiony tekst
+        tmp = p + search_len;
     }
+
+    // kopiujemy z bufora do oryginalnego miejsca
+    strcpy(str, buffer);
+}
+
+int main() {
+    char text[] = "Ala ma kota, kot ma Ale.";
+
+    searchReplace(text, "kot", "pies");
+    printf("Zmieniony tekst: %s\n", text);
 
     return 0;
 }
 ```
-Jeżeli uruchomisz ten kod, otrzymasz tekst: "Witam C++ieszę się, że omawiamy programowanie w C.".
+Output:
+```
+Zmieniony tekst: Ala ma piesa, pies ma Ale.
+```
 
-## Pogłębiamy temat
+## Deep Dive (Dogłębna analiza)
+Wczesne komputery operowały na prostych tekstach - wyszukiwanie i zamiana były jednymi z podstawowych operacji. Dziś, mimo rozwiniętych edytorów i IDE, te operacje wciąż są kluczowe dla automatyzacji i pracy z kodem źródłowym.
 
-Szukanie i zamiana tekstu to jeden z najstarszych trików w programowaniu, obecny w niemal każdym języku programowania. Istnieją również inne metody, takie jak wyrażenia regularne, które mogą być bardziej elastyczne, ale są trudniejsze do opanowania. Szczegóły implementacji naszego podejścia do szukania i zamiany opierają się na bibliotece string.h z języka C, która zawiera funkcje takie jak strstr() do wyszukiwania ciągów znaków i strncpy() do ich zamiany.
+Alternatywy:
+- Regex (wyrażenia regularne) - dla bardziej skomplikowanych wzorców tekstowych.
+- Funkcje wbudowane - języki wyższego poziomu oferują bardziej złożone i elastyczne metody.
 
-## Zobacz również
+Szczegóły implementacji:
+Szukanie tekstu odbywa się przez `strstr()`, a realokacja tekstu przez bufory tymczasowe, aby uniknąć nadpisania danych w trakcie operacji.
 
-Poznaj więcej o manipulacji tekstem w C:
-1. String.h biblioteki C: https://www.tutorialspoint.com/c_standard_library/string_h.htm
-2. Wyrażenia regularne w C: https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html
-3. Inne techniki manipulacji tekstem w C: https://www.geeksforgeeks.org/string-handling-in-c-set-1/
+## See Also (Zobacz też)
+- [GNU C Library: Searching and Sorting](https://www.gnu.org/software/libc/manual/html_node/Searching-and-Sorting.html)
+- [Stack Overflow: Implementing str_replace](https://stackoverflow.com/questions/779875/what-is-the-function-to-replace-string-in-c)
+- [Regex Tutorial](https://www.regular-expressions.info/tutorial.html)

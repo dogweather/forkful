@@ -1,6 +1,7 @@
 ---
 title:                "명령줄 인수 읽기"
-html_title:           "Arduino: 명령줄 인수 읽기"
+date:                  2024-01-20T17:56:10.210738-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "명령줄 인수 읽기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,39 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇이며 왜?)
+명령줄 인수를 읽기는 스크립트가 사용자 지정 옵션과 데이터를 받는 방법입니다. 프로그래머는 이를 통해 스크립트의 유연성과 사용자 경험을 향상시킵니다.
 
-커맨드 라인 인자 읽기는 개발자가 콘솔에서 신호를 프로그램으로 전달할 수 있게 하는 기능입니다. 이는 자동화를 통해 코드를 효과적으로 제어하거나 테스트하고, 사용자 대화형 인터페이스를 구축하는 데 사용됩니다.
-
-## 어떻게:
-
-다음 샘플 코드에서는 Fish shell에서 커맨드 라인 인자를 읽는 방법을 보여줍니다.
-
+## How to (어떻게 하나요?)
 ```Fish Shell
-function hello
-    echo Hello, $argv[1]
+# simple_args.fish
+for arg in $argv
+    echo "Argument: $arg"
 end
-
-> hello Geeky
-Hello, Geeky
 ```
 
-이 코드는 "hello" 함수를 정의하고, 커맨드 라인 인자를 사용하여 사용자에게 인사를 전달합니다. `$argv[1]`는 첫 번째 인자를 참조합니다.
+```sh
+$ fish simple_args.fish one two three
+Argument: one
+Argument: two
+Argument: three
+```
 
-## 깊이 이해하기:
+옵션과 파라미터를 다루기 위한 예제:
 
-Fish shell에서 커맨드 라인 인자를 처리하는 방법은 POSIX 쉘 스크립트와 달리, 인덱싱이 1부터 시작합니다. 이 차이점은 언어 설계자들이 1부터 시작하는 인덱싱을 장려하기 위해 Fish shell을 구현하는 동안 도입된 것입니다.
+```Fish Shell
+# options_params.fish
+set -l name (status current-command)
+set -l age ''
+set -l city ''
 
-인자를 읽는 대다수의 언어와 플랫폼(예: Python, Java 등)에서 사용자는 개별 인자를 동적으로 설정할 수 있습니다. Fish shell은 이를 통해 사용자가 많은 모듈과 함수를 독립적으로 제어하고 커스텀화할 수 있도록 합니다.
+for arg in $argv
+    switch $arg
+        case -n --name
+            set name $argv[2]
+            set argv $argv[2..-1]
+        case -a --age
+            set age $argv[2]
+            set argv $argv[2..-1]
+        case -c --city 
+            set city $argv[2]
+            set argv $argv[2..-1]
+        case '*'
+            echo "Unknown argument: $arg"
+            exit 1
+    end
+end
 
-Fish shell의 경우, 커맨드 라인 인자는 `$argv` 변수를 통해 접근할 수 있습니다. 이 변수는 인자 리스트의 배열을 참조합니다.
+echo "Name: $name"
+echo "Age: $age"
+echo "City: $city"
+```
 
-## 참고 자료:
+```sh
+$ fish options_params.fish --name Alice --age 42 --city Seoul
+Name: Alice
+Age: 42
+City: Seoul
+```
 
-Fish shell에 대한 자세한 정보를 얻기 위해 다음의 링크들을 참조하세요:
+## Deep Dive (심도있게 알아보기)
+Fish Shell에서는 `$argv` 변수를 이용해 인수를 읽습니다. `$argv`는 리스트 형태로, 스크립트에 전달된 모든 인수를 포함합니다. 다른 셸과 달리 Fish는 내장 `argparse` 명령을 사용하여 옵션 파싱을 제공하지 않습니다. 대신, 전통적인 `for` 루프와 `switch` 문을 사용합니다. 이 방법은 역사적으로 스크립트 언어에서 사용자의 입력을 처리하는데 일반적인 패턴이었습니다. `bash`나 `zsh` 같은 경쟁 셸들은 `getopts` 또는 강력한 `argparse` 구현을 가지고 있지만, Fish의 설계 철학은 간결함과 명확함에 있으므로 복잡한 내장 파싱 도구는 제공하지 않습니다.
 
-1. Fish Shell 공식 웹사이트: https://fishshell.com
-2. Fish Shell 문서: https://fishshell.com/docs/current/tutorial.html
-3. Fish Shell GitHub 페이지: https://github.com/fish-shell/fish-shell
-
-Fish shell에 대한 더 진입적인 이해를 얻으려면, 이 주제에 대한 여러 자료를 찾아보는 것이 좋습니다.
+## See Also (참고자료)
+- [Fish Shell 공식 문서](https://fishshell.com/docs/current/index.html)
+- [Command-line arguments in Fish 소개글](https://fishshell.com/docs/current/tutorial.html#tut_scripting)
+- [Fish Shell GitHub 저장소](https://github.com/fish-shell/fish-shell)

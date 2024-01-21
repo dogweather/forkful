@@ -1,7 +1,8 @@
 ---
-title:                "Надсилання http-запиту"
-html_title:           "Arduino: Надсилання http-запиту"
-simple_title:         "Надсилання http-запиту"
+title:                "Надсилання HTTP-запиту"
+date:                  2024-01-20T17:59:35.442289-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,31 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це та навіщо потрібно?
-Надсилання HTTP-запиту – це процес, під час якого ваш код взаємодіє з веб-сторінками чи API. Завдяки цьому можливо отримати, змінити та надсилати дані, збережені в інтернеті.
+## What & Why? (Що та Чому?)
+HTTP запит – це спосіб звернення до сервера за даними чи послугами. Програмісти відсилають HTTP запити, щоб спілкуватися з веб-серверами, отримувати інформацію, відправляти дані та інтегрувати системи.
 
-## Як це зробити:
-Ось простий приклад, як надіслати HTTP GET-запит у Clojure:
-
-```clojure
+## How to: (Як це зробити:)
+```Clojure
 (require '[clj-http.client :as client])
 
-(let [response (client/get "http://example.com" {:as :json})]
-  (println (:status response))
-  (println (:body response)))
+;; Створення простого GET запиту
+(def response (client/get "https://api.example.com/data"))
+(println response)
+
+;; Відправлення POST запиту з параметрами
+(def post-response (client/post "https://api.example.com/submit"
+                  {:form-params {:key "value"}}))
+(println post-response)
 ```
-У вищезазначеному коді на початку ми імпортуємо HTTP-клієнта. І надсилаємо HTTP-запит до `http://example.com`. Параматер `{ :as :json }` говорить, що ми очікуємо відповідь у форматі JSON. Наша відповідь буде об'єктом, властивостями якого будуть статус та тіло відповіді.
+Простий GET запит повертає дані, а POST запит відсилає дані на сервер. Код друкує відповіді для кожного запиту.
 
-## Занурюємося глибше:
-Надсилання HTTP запитів мало велике значення для формування сучасного Інтернету. Це насправді основа всіх веб-з'єднань. 
+## Deep Dive (Поглиблений Розгляд):
+HTTP запити існують з ранніх днів Інтернету. Вони частина протоколу TCP/IP, що був стандартом комунікацій з 1980-х. В Clojure, бібліотека `clj-http` часто використовується для роботи з HTTP запитами завдяки своїй зручності та гнучкості.
 
-Що стосується альтернатив, Clojure пропонує багато інших бібліотеки, таких як `http-kit` і `aleph`. Вибір залежить від ваших специфічних потреб.
+Альтернативою є `http-kit` або низькорівневі Java бібліотеки, як-от `Apache HttpClient`.
 
-А ще, HTTP-клієнт в Clojure використовує Java HTTP-клієнта під капотом. Завдяки цьому ми можемо використовувати всю потужність JVM при роботі з HTTP.
+HTTP запити в Clojure, як і в інших JVM мовах, кінцево виконуються через Java-класи і механізми, але Clojure обгортки значно спрощують процес.
 
-## Дивіться також:
-1. [Офіційна документація clj-http](https://github.com/dakrone/clj-http)
-2. [Документація по http-kit](http://www.http-kit.org/)
-3. [Документація по aleph](https://aleph.io/)
-
-Нагадую, що найкращий спосіб вивчити надсилання HTTP-запитів – це погратися з різними видами запитів самостійно. Так що - витягуйте свої редактори коду та веселіться, кодячи!
+## See Also (Додатково):
+- [clj-http GitHub repository](https://github.com/dakrone/clj-http)
+- [The Java™ Tutorials - All About Sockets](https://docs.oracle.com/javase/tutorial/networking/sockets/index.html)
+- [HTTP-kit project](http://www.http-kit.org/)

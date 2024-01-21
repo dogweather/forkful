@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie zapytania http z podstawową autoryzacją"
+date:                  2024-01-20T18:01:44.855318-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,51 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## What & Why? / Co i Dlaczego?
+Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem to proces dołączania loginu i hasła do żądania sieciowego. Programiści używają tego do komunikacji z zabezpieczonymi endpointami API, wymagającymi uwierzytelnienia.
 
-Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem to metoda umożliwiająca przesyłanie pewnych informacji (np. nazwy użytkownika i hasła) niezbędnych do dostępu do zasobu. Programiści to robią, aby chronić swoje zasoby przed nieuprawnionym dostępem.
+## How to: / Jak to zrobić:
+W Gleam do wysłania żądania z podstawowym uwierzytelnieniem można użyć popularnej biblioteki HTTP. Oto przykład:
 
-## Jak to zrobić:
-
-Oto przykładowy kod, który demonstruje, jak wymagać podstawowego uwierzytelnienia HTTP w Gleam:
-
-```Gleam
+```gleam
+import gleam/http
 import gleam/httpc
-import gleam/bit_builder.{BitBuilder}
 import gleam/base64
 
-fn basic_auth_header(user: String, pass: String) -> httpc.Header {
-  BitBuilder.new()
-  |> BitBuilder.append_string(user)
-  |> BitBuilder.append_string(":")
-  |> BitBuilder.append_string(pass)
-  |> BitBuilder.to_binary()
-  |> base64.encode()
-  |> (auth) { Ok(httpc.header("Authorization", tuple("Basic", auth))) }
-}
+pub fn send_authenticated_request() {
+  let username = "user"
+  let password = "pass"
+  let credentials = base64.encode(username ++ ":" ++ password)
+  let auth_header = "Basic " ++ credentials
 
-fn request_with_auth(url: httpc.Url, user: String, pass: String) {
-  auth_header = basic_auth_header(user, pass)
+  let headers = [
+    {"Authorization", auth_header}
+  ]
 
-  httpc.get(url, [auth_header])
-  |> result.unwrap()
-  |> httpc.send()
+  try request = httpc.post(
+    "https://example.com/api/resource",
+    headers,
+    http.Body("")
+  )
+  request
 }
 ```
 
-## Na głęboko:
+Przykładowe wyjście może wyglądać tak:
 
-### Kontekst historyczny
-Podstawowe uwierzytelnianie HTTP jest jednym z najstarszych sposobów uwierzytelniania w Internecie, wprowadzonym w standardzie HTTP 1.0 w 1996 roku.
+```gleam
+Ok(#http.Response(200, [], "Resource content"))
+```
 
-### Alternatywy
-Alternatywą dla podstawowego uwierzytelnienia HTTP jest uwierzytelnienie typu "bearer", szczególnie używane przy tokenach JWT, uwierzytelnianie Digest i uwierzytelnianie OAuth.
+## Deep Dive / Dogłębna analiza:
+Wczesne wersje protokołu HTTP nie miały wbudowanych mechanizmów uwierzytelniania. Basic authentication została dodana w HTTP 1.0 i jest prostym, lecz mniej bezpiecznym sposobem uwierzytelniania. Dane są kodowane w Base64, co nie jest metodą szyfrowania, a jedynie kodowania. Alternatywą jest Digest Authentication, OAuth, lub stosowanie tokenów, np. JWT (JSON Web Tokens).
 
-### Szczegóły implementacji
-Wartości użytkownika i hasła są konkatenowane i następnie przekształcane na systemy binarne. Ta wartość jest następnie kodowana w Base64 i dodana do nagłówka autoryzacji.
+Podstawowe uwierzytelnienie w HTTP jest proste w implementacji, wystarczy dodać nagłówek 'Authorization' z poświadczeniami zakodowanymi w Base64. W przypadku Gleama i większości współczesnych języków, istnieją gotowe biblioteki, ułatwiające ten proces i zapewniające większe bezpieczeństwo, np. poprzez obsługę HTTPS.
 
-## Zobacz też:
-
-- Dokumentacja Gleam `httpc` i `base64`: https://hexdocs.pm/gleam_stdlib/
-- Specyfikacja uwierzytelnienia HTTP: https://tools.ietf.org/html/rfc7617
-- Alternatywy dla podstawowego uwierzytelnienia HTTP: https://auth0.com/blog/understanding-http-authentication-schemes/
+## See Also / Zobacz również:
+- Dokumentacja Gleam HTTP: [https://hexdocs.pm/gleam_http/](https://hexdocs.pm/gleam_http/)
+- RFC 7617, 'The 'Basic' HTTP Authentication Scheme': [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)

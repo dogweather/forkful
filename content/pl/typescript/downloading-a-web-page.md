@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C#: Pobieranie strony internetowej"
+date:                  2024-01-20T17:44:53.198425-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,42 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Pobieranie strony internetowej to proces ściągania jej danych. Programiści robią to, aby przetworzyć, przeszukać lub wyszukać konkretną treść.
 
-Pobieranie strony internetowej to proste pobranie zawartości HTML danej strony. Programiści robią to w celu analizy, testowania, a czasem nawet scrapingu danych.
+## How to: (Jak to zrobić:)
+Do pobierania stron internetowych w TypeScript użyjemy biblioteki `axios`. Oto przykład:
 
-## Jak to zrobić:
-
-```TypeScript
+```typescript
 import axios from 'axios';
 
-const getPokemons = async () => {
+async function downloadWebPage(url: string): Promise<string> {
   try {
-    const response = await axios.get('https://pokeapi.co/api/v2/pokemon/ditto');
-    console.log(response.data);
+    const response = await axios.get(url);
+    return response.data; // zawartość strony jako string
   } catch (error) {
-    console.error(error);
+    throw new Error(`Nie można pobrać strony: ${error}`);
   }
 }
 
-getPokemons();
+// Użycie funkcji:
+downloadWebPage('https://www.example.com')
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
 ```
 
-To jest nieskomplikowany kod TypeScript do pobierania strony API Pokemon za pomocą `axios`. Po uruchomieniu będziesz widział dane Pokemonu - 'Ditto'.
+Jeśli wszystko pójdzie dobrze, zobaczysz HTML strony w konsoli.
 
-## Wgłębna analiza
+## Deep Dive (Dogłębna analiza)
+Pierwsze narzędzia do pobierania stron powstały już w latach 90., na przykład `wget`. Obecnie, oprócz `axios`, popularne są `fetch` (wbudowane w nowoczesne przeglądarki i środowisko Node.js) czy `puppeteer` do zaawansowanych scenariuszy z przeglądarką.
 
-Historia pobierania stron internetowych rozpoczęła się wraz z rozwojem internetu. Początkowo, było to stosowane do testowania i analizowania stron. Dziś jest to podstawa do scrapingu danych i automatyzacji sieci.
+Alternatywy mają różne moce: `fetch` ma mniejszy rozmiar i jest natywnie wspierane, `puppeteer` umożliwia interakcje z JavaScript na stronie. Dlatego ważne jest wybranie odpowiedniego narzędzia do zadania. Detale implementacyjne mogą obejmować obsługę ciasteczek, nagłówków HTTP czy obsługę sesji.
 
-Jest wiele alternatyw do `axios`, takich jak `fetch`, `request` czy `superAgent`. Każda z nich ma swoje plusy i minusy, a wybór zależy od twoich specyficznych potrzeb.
-
-Szczegółowa implementacja pobierania strony internetowej zależy od wielu czynników; np. jak skomplikowany jest twój cel, jakie dane chcesz wydobyć, czy chcesz to zautomatyzować itp.
-
-## Zobacz też:
-
-1. Axios - https://github.com/axios/axios
-2. Fetch - https://developer.mozilla.org/pl/docs/Web/API/Fetch_API/Using_Fetch
-3. Request - https://github.com/request/request
-4. SuperAgent - https://github.com/visionmedia/superagent
-
-Zawsze sprawdzaj i porównuj swoje opcje przed podjęciem decyzji. Zapoznaj się z powyższymi linkami i wybierz najbardziej efektywne narzędzie dla swoich potrzeb. Dobre programowanie!
+## See Also (Zobacz także)
+- Dokumentacja `axios`: https://www.npmjs.com/package/axios
+- Porównanie `fetch` i `axios`: https://www.smashingmagazine.com/2020/06/rest-api-axios-fetch-javascript/
+- Strona projektu `puppeteer`: https://pptr.dev/

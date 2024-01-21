@@ -1,7 +1,8 @@
 ---
-title:                "Interpolando una cadena de texto"
-html_title:           "Haskell: Interpolando una cadena de texto"
-simple_title:         "Interpolando una cadena de texto"
+title:                "Interpolación de cadenas de texto"
+date:                  2024-01-20T17:51:03.445283-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolación de cadenas de texto"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,36 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+## ¿Qué & Por Qué?
+La interpolación de cadenas permite insertar valores dentro de una cadena de texto, y los programadores la usan para construir strings dinámicamente y mejorar la legibilidad del código.
 
-Interpolar una cadena en programación significa insertar variables dentro de strings de texto en tiempo de ejecución. ¿Por qué? Para construir textos de forma dinámica y clara.
-
-## Cómo hacerlo:
-
-Haskell a priori no soporta interpolación de strings, pero módulos externos como `Text.Printf` o `Interpolate` sí lo hacen. Aquí un ejemplo simple:
+## Cómo Hacerlo:
+En Haskell, puedes usar la librería `text-format` o `Printf` para la interpolación de cadenas. Aquí tienes algunos ejemplos:
 
 ```Haskell
 import Text.Printf (printf)
 
-main = do
-  let nombre = "Ana"
-  putStrLn $ printf "¡Hola, %s!" nombre
+-- Usando printf
+nombre :: String
+nombre = "Mundo"
+
+saludo :: String
+saludo = printf "Hola, %s!" nombre
+
+main :: IO ()
+main = putStrLn saludo  -- "Hola, Mundo!"
 ```
 
-Correr este cógido produces la salida:
+Y con `text-format`, que es más potente pero también requiere entender un poco más sobre los tipos de datos:
 
-```bash
-¡Hola, Ana!
+```Haskell
+import Data.Text.Format (format)
+import Data.Text.Lazy.IO as I
+
+nombre :: String
+nombre = "Mundo"
+
+saludo :: String
+saludo = format "Hola, {}!" [nombre]
+
+main :: IO ()
+main = I.putStrLn saludo  -- "Hola, Mundo!"
 ```
 
-## Viaje a lo más profundo
+## Inmersión Profunda:
+La interpolación de cadenas no es una función nativa de Haskell como en otros lenguajes. En los inicios, se usaba la función `++` para concatenar cadenas, lo cual puede ser molesto y propenso a errores. La librería `Printf` fue una de las primeras en facilitar este proceso, inspirada en el lenguaje C. Sin embargo, `text-format`, aunque más nueva, ofrece mayor flexibilidad y eficiencia al trabajar con el tipo de dato `Text` en lugar de `String`. Detrás de escenas, estas funciones funcionan transformando las plantillas de cadenas en funciones que al aplicarlas generan el resultado deseado.
 
-Se puede usar interpolación de strings en Haskell mediante módulos especiales - no se encuentra en el lenguaje por diseño pa' mantenerlo simple. Entre las alternativas están `Text.Printf` (desarrollado inicialmente en C) y `Interpolate`, que provee una sintaxis más moderna. No estrésese por la eficiencia: estos módulos son más que capaces para tareas generales de interpolación.
-
-## Mira También
-
-Visite estos enlaces para aprender más sobre interpolación en Haskell:
-
-1. Text.Printf en Hackage: https://hackage.haskell.org/package/base-4.15.0.0/docs/Text-Printf.html
-2. Módulo Interpolate: https://hackage.haskell.org/package/interpolate
-3. Descripción de Interpolation en Haskell Wiki: https://wiki.haskell.org/Interpolation
+## Ver También:
+- Documentación de `text-format`: https://hackage.haskell.org/package/format
+- Tutorial Printf en Haskell: https://hackage.haskell.org/package/base-4.16.1.0/docs/Text-Printf.html
+- Haskell Wiki sobre la interpolación de cadenas: https://wiki.haskell.org/Interpolation

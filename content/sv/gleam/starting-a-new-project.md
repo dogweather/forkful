@@ -1,7 +1,8 @@
 ---
-title:                "Att starta ett nytt projekt"
-html_title:           "Arduino: Att starta ett nytt projekt"
-simple_title:         "Att starta ett nytt projekt"
+title:                "Att påbörja ett nytt projekt"
+date:                  2024-01-20T18:03:23.748253-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Getting Started"
@@ -10,37 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Nybörjarguide till att Starta ett Nytt Projekt i Gleam
-
 ## Vad & Varför?
-Att starta ett nytt projekt innebär att strukturera en ny kodbas för att lösa specifika uppgifter. Programmerare gör detta för att förstå, experimentera och generera lösningar till nya problem.
 
-## Så gör du:
-Låt oss säga att du vill skapa ett nytt Gleam-projekt kallat "hej_verden".
+Att starta ett nytt projekt innebär att skapa en grund för en framtida applikation eller ett system. Programmerare gör detta för att omvandla idéer till fungerande programvara, utforska nya teknologier eller lösa specifika problem.
 
-```Gleam
-$ rebar3 new gleam_lib hej_verden
-===> Writing hej_verden/src/hej_verden.app.src
-===> Writing hej_verden/src/hej_verden.gleam
+## Hur gör man:
+
+```gleam
+fn start_project(project_name: String) {
+  // For example, creating a new Gleam project
+  // Gleam shell command to create a project
+  io.println("gleam new " ++ project_name)
+}
+
+// Sample usage of the function
+pub fn main() {
+  start_project("awesome_project")
+}
 ```
-Med dessa kommandon skapar du en ny Gleam-app i en katalog som heter "hej_verden".
-
-Nu, testa din nya app.
-
-```Gleam
-$ cd hej_verden
-$ rebar3 eunit
+```shell
+$ gleam new awesome_project
 ```
-Om allt står rätt till borde du se ett meddelande som säger att allt gick bra.
 
-## Djupdykning
-Historiskt sett, kommer Gleam från landskapet av Erlang-beam-språk, inspirerade av den starka säkerheten hos statiskt typade språk. Det finns andra sätt att starta ett projekt, till exempel 'make' eller 'cmake', men 'rebar3' är det mest använda verktyget inom Erlang/Gleam gemenskapen. På implementationssidan genererar rebar3 en grundläggande katalogstruktur som paketerar all nödvändig kod och konfigurationer för din Gleam-app.
+## Djupdykning:
 
-## Se även 
-För mer information eller djupare studier om Gleam och rebar3, besök följande resurser:
+När du startar ett nytt projekt i Gleam är det första steget att generera projektets skelett, vilket ger en strukturerad början. Detta koncept är inte nytt och liknar hur man hanterar projekt i många andra språk som Elixir eller Rust. Alternativ till att starta från grunden inkluderar att klona ett befintligt projekt eller använda en projektmall. Implementationen av ett nytt projekt i Gleam är förenat med att definiera moduler, beroenden och konfiguration, vilket kan involvera att använda Gleams pakethanterare `gleam add` för att inkludera externa bibliotek.
 
-- Gleam's officiella webbplats: [Gleam's officiella webbplats](https://gleam.run/)
-- Rebar3's officiella dokumentation: [Rebar3's officiella dokumentation](https://www.rebar3.org/docs)
-- Introduktion till Rebar3: [How to build with Rebar3](https://adoptingerlang.org/docs/development/setup/)
-  
-Gör dig redo att dyka in i världen av Gleam!
+## Se även:
+
+- Gleam's officiella dokumentation för att skapa nya projekt: https://gleam.run/book/getting-started/starting-a-project.html
+- Gleam GitHub repository: https://github.com/gleam-lang/gleam
+- Exempel på Gleam-projektmallar: https://github.com/gleam-lang/gleam_examples

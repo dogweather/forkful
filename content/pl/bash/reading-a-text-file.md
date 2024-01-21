@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie pliku tekstowego"
-html_title:           "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+date:                  2024-01-20T17:53:47.529705-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -11,30 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Czytanie pliku tekstowego to wydobycie i interpretacja danych zapisanych w pliku. Programiści robią to, aby manipulować danymi, przetwarzać informacje i budować interakcje w swoich aplikacjach.
+Przeczytanie pliku tekstowego w Bashu to po prostu wyświetlenie jego zawartości w terminalu. Programiści robią to do analizy danych, debugowania i automatyzacji zadań.
 
 ## Jak to zrobić:
-
 ```Bash
-# Użyj polecenia 'cat'
+# Wyświetlenie całego pliku używając komendy 'cat':
 cat plik.txt
 
-# Używając polecenia 'less' do czytania długich plików
+# Wyświetlenie pliku strona po stronie z 'less':
 less plik.txt
+
+# Użycie pętli 'while' do przeczytania pliku linia po linii:
+while IFS= read -r line; do
+    echo "$line"
+done < plik.txt
+
+# Wypisywanie numerów linii wraz z zawartością:
+cat -n plik.txt
 ```
-na przykład, jeżeli plik.txt zawiera linie "Hello, World!", output wygląda tak:
-```Bash
-Hello, World!
+
+Output przykładowy dla `cat plik.txt`:
+```
+To jest pierwsza linia pliku.
+To jest druga linia pliku.
 ```
 
-## Głębsze zagłębienie
+## Głębsze zanurzenie
+Początki poleceń do czytania plików sięgają wczesnych lat tworzenia systemów uniksowych. 'Cat', 'less' i 'tail' to klasyka, a końcówka TXT dla plików tekstowych pochodzi z czasów ograniczeń systemów DOS.
 
-Bash, wprowadzone w 1989 roku, jest jednym z najstarszych języków skryptowych. Inne niż Bash alternatywy do czytania plików tekstowych to Python, Ruby czy PHP. Działanie czytania plików w Bashu polega na buforowaniu zawartości pliku i sekwencyjnym odczytywaniu danych.
+Alternatywami dla 'cat' są 'more' i 'less', które mogą być przydatne przy większych plikach. 'Tak' pozwala śledzić zmiany w pliku w czasie rzeczywistym.
 
-## Zobacz też:
+Detaily implementacyjne:
+- `IFS=` zapobiega interpretowaniu białych znaków jako separatorów.
+- `read -r` uniemożliwia interpretację backslashów.
+- Użycie `<` przekierowuje zawartość pliku do pętli.
 
-* Podstawy Bash: https://ryanstutorials.net/bash-scripting-tutorial/bash-input.php
-* Czytanie plików w Pythonie: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
-* Czytanie plików w Ruby: https://ruby-doc.org/core-2.5.0/IO.html#method-i-read
-* Czytanie plików w PHP: https://www.php.net/manual/en/function.fread.php
+## Zobacz również
+- [The GNU Operating System and the Free Software Movement](https://www.gnu.org/)
+- [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/)
+- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/)

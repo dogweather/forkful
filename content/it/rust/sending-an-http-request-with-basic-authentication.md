@@ -1,6 +1,7 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "Bash: Inviare una richiesta http con autenticazione di base"
+date:                  2024-01-20T18:02:49.678860-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,39 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cosa & Perché?
-Invio di una richiesta HTTP con autenticazione base significa fornire un nome utente e una password per l'accesso al server. I programmatori lo fanno per garantire la sicurezza e restringere l'accesso a particolari risorse sul server.
+## What & Why?
+Mandare una richiesta HTTP con autenticazione di base significa inserire username e password per accedere a risorse protette. I programmatori lo fanno per interagire con API che richiedono sicurezza.
 
-## Come fare:
-In Rust, potresti usare la libreria 'reqwest'. Ecco un esempio:
+## How to:
+Installiamo `reqwest`, una crate Rust per effettuare chiamate HTTP.
 
-```Rust
-use reqwest::Client;
-use reqwest::header::HeaderValue;
-
-let client = Client::new();
-let url = "http://example.com";
-let auth_value = HeaderValue::from_str(&format!("Basic {}", base64::encode("username:password")))
-    .unwrap();
-
-let res = client.get(url)
-    .header(reqwest::header::AUTHORIZATION, auth_value)
-    .send()
-    .await?;
-
-println!("Response: {:?}", res);
+```toml
+[dependencies]
+reqwest = "0.11"
+tokio = { version = "1", features = ["full"] }
 ```
 
-Questo codice invia una richiesta GET ad un URL con l'autenticazione base. Nella risposta, vedrai se l'accesso è stato concesso o no.
+Usiamo `reqwest` con autenticazione di base in un ambiente asincrono:
 
-## Approfondimento:
-L'autenticazione base evita l'accesso non autorizzato, ma non è sicura come altre tecniche, poiché trasmette le credenziali come una stringa codificata in Base64, che può essere facilmente decodificata. Entrò in uso nei primi giorni dell'Internet.
+```rust
+use reqwest::header::{HeaderMap, AUTHORIZATION, CONTENT_TYPE};
+use std::error::Error;
 
-Esistono alternative più sicure, come l'autenticazione Digest o l'autenticazione con token JWT. Inoltre, l'autenticazione OAuth è ampiamente usata per le API Web.
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn Error>> {
+    let client = reqwest::Client::new();
+    let username = "user";
+    let password = "pass";
+    let auth_value = format!("Basic {}", base64::encode(format!("{}:{}", username, password)));
 
-Implementare l'autenticazione base in Rust implica la codifica di una coppia username e password in Base64 e l'invio di questa stringa nell'header di autorizzazione della richiesta HTTP.
+    let mut headers = HeaderMap::new();
+    headers.insert(AUTHORIZATION, auth_value.parse().unwrap());
+    headers.insert(CONTENT_TYPE, "application/json".parse().unwrap());
 
-## Vedi anche:
-1. [Rust Reqwest Doc](https://docs.rs/reqwest/0.10.4/reqwest/)
-2. [HTTP Basic Auth](https://developer.mozilla.org/it/docs/Web/HTTP/Authentication)
-3. [Rust Base64](https://docs.rs/base64/0.9.3/base64/)
+    let response = client
+        .get("http://example.com/resource")
+        .headers(headers)
+        .send()
+        .await?;
+
+    println!("Risposta: {}", response.text().await?);
+    Ok(())
+}
+```
+
+Risultato campione:
+
+```
+Risposta: {"status": "success", "data": ...}
+```
+
+## Deep Dive
+L'autenticazione di base HTTP, definita nel RFC 7617, codifica `username:password` con Base64. Alternativa più sicura: autenticazione Bearer con token. Implementarla con `reqwest` è semplice, ma attenzione, Base64 non è crittografia, quindi HTTPS è essenziale per proteggere le credenziali. `reqwest` gestisce internamente dettagli come la gestione della connessione e il riutilizzo.
+
+## See Also
+- Documentazione di `reqwest`: https://docs.rs/reqwest/
+- RFC 7617 (Autenticazione di base HTTP): https://tools.ietf.org/html/rfc7617
+- Guida per HTTP su MDN (Mozilla Developer Network): https://developer.mozilla.org/en-US/docs/Web/HTTP

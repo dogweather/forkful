@@ -1,6 +1,7 @@
 ---
 title:                "המרת תאריך למחרוזת"
-html_title:           "Bash: המרת תאריך למחרוזת"
+date:                  2024-01-20T17:37:01.515222-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "המרת תאריך למחרוזת"
 programming_language: "Go"
 category:             "Go"
@@ -10,32 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-הופך את התאריך למחרוזת הוא התרגום של נתוני התאריך, כמו היום, החודש והשנה, לטקסט. מתכנתים משתמשים בכך כדי להציג את המידע למשתמשים ולשמור על אחידות בפורמט תאריך בפרויקטים שלהם.
+## What & Why?
+מה ולמה?
+המרת תאריך למחרוזת היא תהליך שבו פורמט של תאריך מומר לטקסט. תכניתנים עושים זאת כדי להציג תאריכים באופן קריא ונוח למשתמש או לאחסון בבסיסי נתונים.
 
-## איך מבצעים:
-על מנת להמיר תאריך למחרוזת ב-Golang, משתמשים בפונקציה Time.Format. נתחיל עם תאריך ונהפוך אותו למחרוזת עם הפורמט "YYYY-MM-DD".
-
-```Go
+## How to:
+איך לעשות:
+```go
 package main
+
 import (
 	"fmt"
 	"time"
 )
+
 func main() {
-	t := time.Now()
-	fmt.Println(t.Format("2006-01-02"))
+	// יצירת אובייקט תאריך
+	currentTime := time.Now()
+	
+	// פורמט המרה למחרוזת
+	dateStr := currentTime.Format("2006-01-02 15:04:05")
+	
+	fmt.Println("התאריך במחרוזת:", dateStr)
 }
 ```
 פלט דוגמה:
 ```
-2022-07-28
+התאריך במחרוזת: 2023-03-15 17:45:30
 ```
 
-## צלילה עמוקה:
-הפונקציה Time.Format ב-Go התפתחה מהמחלקה SimpleDateFormat ב-Java. לעומת פונקציות אחרות שהשתמשו במבנים מורכבים, פונקציה זו משתמשת בערכים מסוימים שניתן להכניס אותם כ-String. הפורמט מחזורי "2006-01-02 15:04:05" בהתאם ל-API של Go. ישנם דרכים חלופיות להמיר תאריך למחרוזת כמו שימוש בספריות גולנג חיצוניות.
+## Deep Dive
+טבילת עומק:
+ב-Golang, המרת תאריך למחרוזת מתבצעת בעזרת המתודה `Format` של מסוג `time.Time`. המחרוזת שמחזירה קובעת את הפורמט. שימוש ב-"2006-01-02 15:04:05" כך הוא תבנית שקבעה השפה לקביעת פורמטים. קיימים פורמטים חלופיים כמו `RFC3339` או פונקציות צדדיות כמו `strconv` להמרות מחרוזת-מספר ולהפך. לפעמים, רוצים המרה למחרוזת בשפה מסוימת - ניתן להשתמש בחבילות כמו `golang.org/x/text` לתמיכה בלוקליזציה.
 
-## ראה גם:
-* [דוקומנטציה אופיציאלית של Golang ל- Time.Format](https://golang.org/pkg/time/#Time.Format)
-* [ספרייה חיצונית להמרת תאריכים ב-Golang](https://github.com/metakeule/fmtdate)
-* [המדריך המקיף של Golang לעבודה עם תאריכים וזמנים](https://yourbasic.org/golang/format-parse-string-time-date-example/)
+## See Also
+ראו גם:
+- [Package time](https://pkg.go.dev/time)
+- [Package strconv](https://pkg.go.dev/strconv)
+- [Go by Example: Time Formatting / Parsing](https://gobyexample.com/time-formatting-parsing)
+- [golang.org/x/text](https://pkg.go.dev/golang.org/x/text)

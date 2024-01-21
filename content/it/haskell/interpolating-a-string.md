@@ -1,6 +1,7 @@
 ---
 title:                "Interpolazione di una stringa"
-html_title:           "Clojure: Interpolazione di una stringa"
+date:                  2024-01-20T17:51:06.457994-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolazione di una stringa"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,34 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Interpolazione di Stringhe in Haskell
+## What & Why?
+Interpolare una stringa significa inserire dinamicamente espressioni o variabili direttamente all'interno di una stringa di testo. I programmatori lo fanno per costruire stringhe in modo flessibile e leggere, adattandole in base ai dati in esecuzione.
 
-## Cosa & Perché?
-L'interpolazione di stringhe consente di incorporare espressioni all'interno dei bloci di stringhe che vengono convertiti in valori quando il programma viene eseguito. Questo risulta più comodo e leggibile quando si desidera generare stringhe complesse.
-
-## Come fare:
-In Haskell, l'interpolazione delle stringhe si ottiene utilizzando la libreria `Text.Printf`. Ecco un esempio di base:
+## How to:
+Haskell non ha l'interpolazione di stringa incorporata come altri linguaggi, ma possiamo ottenere un risultato simile usando la libreria `text` e il quasiquoter `str`.
 
 ```Haskell
-import Text.Printf
+{-# LANGUAGE OverloadedStrings, QuasiQuotes #-}
 
+import Data.Text (Text)
+import qualified Data.Text.IO as T
+import Data.String.Interpolate (i)
+
+myName :: String
+myName = "Giuseppe"
+
+main :: IO ()
 main = do
-  let nome = "Mario"
-  let eta = 25
-  printf "Ciao %s, hai %d anni.\n" nome eta
+  let age = 30
+  let greeting = [i|Ciao, sono #{myName} e ho #{age} anni.|]
+  T.putStrLn greeting
 ```
-Nell'esempio, `%s` e `%d` sono segnaposto. Quando il programma viene eseguito, ottieni:
 
-```Haskell
-Ciao Mario, hai 25 anni.
+Questo codice stamperà:
+
 ```
-## Approfondimento: 
-**Contesto storico**: L'interpolazione delle stringhe esiste da molto tempo in vari linguaggi di programmazione come Perl, Python, e PHP. Haskell utilizza un approccio simile attraverso la sua libreria `printf`.
+Ciao, sono Giuseppe e ho 30 anni.
+```
 
-**Alternative**: Un'altra opzione in Haskell è utilizzare le funzioni di concatenazione di stringhe (`++`), ma questo rende il codice più complicato e meno leggibile rispetto all'interpolazione delle stringhe.
+## Deep Dive
+L'interpolazione di stringa non è un concetto nativo di Haskell, un linguaggio creato nel 1990 con un focus sulla programmazione puramente funzionale. In altri linguaggi, l'interpolazione è spesso integrata direttamente nella sintassi del linguaggio. In Haskell, la funzionalità può essere raggiunta attraverso librerie di terze parti come `text` e `interpolate`.
 
-**Dettagli di implementazione**: In `Text.Printf`, il segnaposto `%s` viene utilizzato per le stringhe, `%d` per i numeri interi, `%f` per i numeri a virgola mobile, e così via. La funzione `printf` interpreta la stringa e sostituisce i segnaposto con i valori forniti.
+Alternativamente, è possibile utilizzare la funzione `printf` da `Text.Printf` che offre un'interpolazione ispirata a quella del linguaggio C, oppure costruire la propria funzione di interpolazione con funzioni di formattazione basiche disponibili in Haskell.
 
-## Da Vedere Anche:
-1. [Printf in Haskell](http://hackage.haskell.org/package/base-4.12.0.0/docs/Text-Printf.html) - Documentazione ufficiale di Text.Printf in Haskell.
-2. [Printf Programming](https://en.wikipedia.org/wiki/Printf_format_string) - Wikipedia entry that explains the details of printf-style string formatting.
+Entrando nei dettagli di implementazione, `str` è un quasiquoter che traduce la stringa interpolata in una espressione che combina stringhe e valori. Questo avviene a tempo di compilazione. Quindi, a differenza di linguaggi come Python o JavaScript, l'interpolazione in Haskell viene risolta prima dell'esecuzione.
+
+## See Also
+- Documentazione sulla libreria `text`: https://www.stackage.org/package/text
+- Documentazione sulla libreria `interpolate`: https://hackage.haskell.org/package/interpolate
+- Un tutorial su `printf` in Haskell: http://zvon.org/other/haskell/Outputprelude/printf_f.html
+
+Ricorda: Haskell è molto potente e offre diversi modi per lavorare con le stringhe, quindi esplora e trova il metodo che preferisci per le tue esigenze di interpolazione!

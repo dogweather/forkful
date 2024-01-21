@@ -1,7 +1,8 @@
 ---
-title:                "पाठ की खोज और प्रतिस्थापन"
-html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
-simple_title:         "पाठ की खोज और प्रतिस्थापन"
+title:                "पाठ खोजना और बदलना"
+date:                  2024-01-20T17:58:52.761001-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पाठ खोजना और बदलना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,32 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
+## What & Why? (क्या और क्यों?)
+टेक्स्ट सर्च और रिप्लेस का मतलब है किसी दिए गए स्ट्रिंग में शब्द या फ्रेज को ढूंढकर उसे बदलना। प्रोग्रामर्स ये इसीलिए करते हैं ताकि वे डाटा को अपडेट कर सकें या टाइपो को ठीक कर सकें।
 
-सर्च और रिप्लेस टेक्स्ट, अन्य किसी टेक्स्ट क्वेरी को खोजने और उसे नए टेक्स्ट से बदलने की क्रिया है। प्रोग्रामर्स इसे डाटा ऐनालिटिक्स, डिबगिंग और टेक्स्ट प्रोसेसिंग के लिए करते हैं। 
+## How to: (कैसे करें:)
+```javascript
+// सरल उदाहरण: स्ट्रिंग में टेक्स्ट रिप्लेस करना
+let text = "Hello, World!";
+let newText = text.replace("World", "JavaScript");
+console.log(newText); // "Hello, JavaScript!"
 
-## कैसे करें: 
-
-Javascript में, हम `String.prototype.replace()` और `RegExp` का उपयोग करके खोज और बदलाव कर सकते हैं। 
-
-```Javascript 
-let pangram = "The quick brown fox jumps over the lazy dog"
-pangram = pangram.replace(/fox/g, "cat");
-console.log(pangram)
+// ग्लोबल रिप्लेस उदाहरण: स्ट्रिंग में सभी इंस्टेंस को रिप्लेस करना
+let greeting = "नमस्ते दुनिया! दुनिया की सुंदर सुबह!";
+let newGreeting = greeting.replace(/दुनिया/g, "विश्व");
+console.log(newGreeting); // "नमस्ते विश्व! विश्व की सुंदर सुबह!"
 ```
 
-आउटपुट:
-```Javascript 
-"The quick brown cat jumps over the lazy dog"
-```
+## Deep Dive (गहराई में जानकारी):
+सर्च और रिप्लेस की क्षमता 1940s के टेक्स्ट एडिटर्स से ही हमारे संग है। Javascript में `replace()` मेथड दो चीज़ों को लेता है - पैटर्न और रिप्लेसमेंट स्ट्रिंग। पैटर्न एक स्ट्रिंग या एक रेगुलर एक्सप्रेशन (RegExp) हो सकता है। अगर पैटर्न एक सिंपल स्ट्रिंग है, तो सिर्फ पहला मैच रिप्लेस होगा। 'g' फ्लैग का उपयोग करके आप ग्लोबली सभी मैचेस को रिप्लेस कर सकते हैं। `replace()` फंक्शन के द्वारा आप कस्टम लॉजिक भी लागू कर सकते हैं अगर आपको रिप्लेसमेंट स्ट्रिंग जेनरेट करने के लिए एक फंक्शन पास करते हैं।
 
-## गहरा गोताखोरी: 
-
-खोजने और बदलने के विचारधारा का इतिहास कंप्यूटर विज्ञान के शुरुआती दिनों से है। इसपर अल्टरनेटिवों में खोजने के लिए `.indexOf()` और बदलने के लिए `.splice()` स्वरूपक मिलेंगे, लेकिन उन्हें `RegExp` की तरह शक्तिशाली नहीं माना जाता। अधिक जानकारी के लिए, आप [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) पर विस्तार से पढ़ सकते हैं। 
-
-## और भी देखें:
-
-- [JavaScript String replace() Method](https://www.w3schools.com/jsref/jsref_replace.asp)
-- [JavaScript RegExp Object](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-- [JavaScript String indexOf() Method](https://www.w3schools.com/jsref/jsref_indexof.asp)
-- [JavaScript Array splice() Method](https://www.w3schools.com/jsref/jsref_splice.asp)
+## See Also (और भी जानकारी):
+- MDN Web Docs on `replace()`: [MDN replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- Regular Expressions Guide: [RegExp Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- JavaScript Info – Replacing the part of the string: [JavaScript Info String Replace](https://javascript.info/string#replacing-the-part-of-the-string)

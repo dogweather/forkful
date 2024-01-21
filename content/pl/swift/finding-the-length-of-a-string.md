@@ -1,7 +1,8 @@
 ---
-title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Arduino: Znajdowanie długości ciągu znaków"
-simple_title:         "Znajdowanie długości ciągu znaków"
+title:                "Znalezienie długości ciągu znaków"
+date:                  2024-01-20T17:48:16.208851-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Znalezienie długości ciągu znaków"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,29 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Co i Dlaczego?
 
-Długość ciągu to liczba znaków, które go tworzą. Programiści muszą to znać, aby operować i manipulować ciągami – czy to wyświetlanie tekstu, przetwarzanie danych, czy analiza tekstu.
+Wyliczanie długości ciągu znaków to sposób, by dowiedzieć się, ile znaków zawiera dany tekst. Programiści robią to, gdy potrzebują na przykład walidować dane wejściowe lub manipulować tekstem.
 
-## Jak to zrobić:
+## How to:
+Jak to zrobić:
 
-W Swift, używamy właściwości `count` na ciągu, aby uzyskać jego długość. Oto jak to zrobić: 
+W Swift obliczenie długości stringa to bułka z masłem. Użyj właściwości `count` na instancji `String`. Oto jak to wygląda w kodzie:
 
 ```Swift
-let str = "Cześć, Swift!"
-let length = str.count
-print(length)  // Wynik: 13
+let greeting = "Dzień dobry!"
+let length = greeting.count
+print("Długość napisu: \(length)")
 ```
 
-Te dwie linie kodu zwrócą długość ciągu "Cześć, Swift!", która wynosi 13.
+Wynik działania kodu:
 
-## Pogłębiona analiza
+```
+Długość napisu: 12
+```
 
-Długość ciągu była zawsze istotnym aspektem dla programistów, ponieważ na podstawie długości ciągów wykonują różne operacje. W Swift, `count` zwraca liczbę "znaków wyświetlanych", co może być różne dla różnych języków i systemów.
+Ale uwaga na Unicode! Policzmy znaki w emoji:
 
-Jako alternatywę, możesz używać metody `utf16.count` lub `utf8.count` do uzyskania długości ciągu, ale to zależy od konkretnego zastosowania i żądanych szczegółów implementacji.
+```Swift
+let emoji = "👨‍👩‍👧‍👦"
+let emojiLength = emoji.count
+print("Długość emoji: \(emojiLength)")
+```
 
-## Zobacz także
+Ile to jest?
 
-* Dokumentacja Apple o ciągach: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
-* Post na StackOverflow o długości ciągów: https://stackoverflow.com/questions/24092886/get-length-of-string-in-swift
+```
+Długość emoji: 1
+```
+
+Emoji rodzinne traktowane jest jako jeden znak, mimo że jest złożone z kilku innych.
+
+## Deep Dive:
+W Głąb Tematu:
+
+W przeszłości liczenie znaków w stringu w Swift mogło być bardziej skomplikowane - używano indeksów, co było mniej przejrzyste. Dziś mamy `.count`, ale warto pamiętać, że Swift traktuje stringi jako kolekcje znaków Unicode, a nie proste tablice bajtów. To oznacza, że każdy grafem, czyli najmniejsza wizualna jednostka tekstu, liczy się jako jeden "znak" bez względu na liczbę składników Unicode, z której się składa.
+
+Alternatywy? Można bawić się w niższopoziomowe manipulacje, ale po co, skoro `.count` robi to za nas efektywnie i bezpiecznie.
+
+Szczegół implementacyjny: Swift używa czegoś zwanego "grapheme clustering", co jest zgodne ze standardem Unicode. Podczas przetwarzania tekstu trzeba pamiętać, że operacje na stringach mogą być kosztowne czasowo - zwłaszcza, gdy pracujemy z bardzo długimi ciągami znaków.
+
+## See Also:
+Zobacz Również:
+
+- Dokumentacja Swift `String`: [Apple Developer Documentation](https://developer.apple.com/documentation/swift/string)
+- Unicode i Swift String: [Swift String and Unicode](https://swift.org/blog/utf8-string/)
+- Wykład o stringach w Swift: [Strings in Swift](https://academy.realm.io/posts/getting-to-know-swifts-string-type/)

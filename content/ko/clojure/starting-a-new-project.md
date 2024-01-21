@@ -1,6 +1,7 @@
 ---
 title:                "새 프로젝트 시작하기"
-html_title:           "Arduino: 새 프로젝트 시작하기"
+date:                  2024-01-20T18:03:29.139390-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "새 프로젝트 시작하기"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,41 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 시작은 무엇이며, 왜 하는가?
+프로젝트를 시작한다는 건 새로운 소프트웨어 작업을 만들어나가는 출발점입니다. 프로그래머들은 새로운 아이디어를 실현하거나 문제를 해결하기 위해 프로젝트를 시작합니다.
 
-새로운 프로젝트를 시작하는 것은 기존 애플리케이션에서 독립적인 새로운 기능을 구현하거나 완전히 새로운 소프트웨어 제품을 개발하는 것을 의미합니다. 프로그래머들은 새로운 아이디어를 테스트하거나 특정 문제를 해결하기 위해 이를 수행합니다.
-
-## 어떻게 하나:
-
-Clojure 새 프로젝트를 시작하는 것은 여러 단계로 이루어집니다. 우선, Leiningen이라는 도구를 이용하여 프로젝트 디렉토리를 생성합니다:
+## 실행 방법:
+Clojure 프로젝트를 시작하려면 Leiningen이라는 빌드 도구를 사용하는 것이 일반적입니다. 이 예제는 간단한 Clojure 애플리케이션을 생성하는 방법을 보여줍니다.
 
 ```Clojure
-lein new project-name
+; Leiningen을 설치합니다.
+; 터미널에서 새 프로젝트를 만드는 명령어를 입력합니다.
+lein new app my-cool-app
+
+; 생성된 프로젝트 폴더로 이동합니다.
+cd my-cool-app
+
+; 주요 애플리케이션 코드는 src/my_cool_app/core.clj 파일에 있습니다.
+; core.clj 파일을 열고
+(ns my-cool-app.core
+  (:gen-class))
+
+(defn -main
+  [& args]
+  (println "안녕, 여러분! 이것이 내 첫 Clojure 프로젝트입니다!"))
+  
+; 프로젝트를 실행합니다.
+lein run
+
+; 출력 예시:
+; 안녕, 여러분! 이것이 내 첫 Clojure 프로젝트입니다!
 ```
 
-그런 다음, 생성된 프로젝트의 디렉토리로 이동합니다:
+## 심층 분석:
+Clojure는 2007년 Rich Hickey에 의해 고안되었고, 불변성과 함수형 프로그래밍이 주된 특징입니다. 프로젝트를 실행하고 관리하기 위해 Leiningen, Boot, Clojure CLI 등의 도구를 사용할 수 있습니다. Leiningen은 가장 인기 있는 도구로, 프로젝트 구성, 종속성 관리, 빌드 자동화 등을 쉽게 만들어주죠. `lein new app` 명령은 기본 프로젝트 구조를 생성하며, 여기에는 소스 코드, 테스트 케이스, 리소스 디렉터리, 그리고 프로젝트 설정을 위한 project.clj 파일 등이 포함됩니다.
 
-```Clojure
-cd project-name
-```
-
-일단 프로젝트 디렉토리에 있으면, Clojure 소스 코드를 작성할 수 있습니다.
-
-## 깊은 탐색:
-
-새 프로젝트를 시작하는 개념은 프로그래밍의 역사 상 가장 오래되었고, 다양한 언어와 환경에 적용되었습니다. Clojure에서는 Leiningen이라는 도구를 사용하여 이를 처리하며, 이는 프로젝트의 빌드와 관리를 단순화합니다. 이외에도 Boot이나 Clojure-CLI라는 대안적인 도구도 있습니다. 
-
-새 프로젝트를 생성하는 동안 Clojure는 일반적으로 다음과 같은 몇 가지 요소를 설정합니다:
-
-- 프로젝트의 이름과 버전
-- 프로젝트의 종속성
-- Application의 시작점
-
-## 참고:
-
-아래는 Clojure 프로젝트 관리에 대한 추가적인 정보를 제공하는 몇몇 소스들입니다: 
-
-- [Official Clojure](https://clojure.org/guides/getting_started) : Clojure 공식 가이드
-- [Leiningen](https://leiningen.org/) : Leiningen 공식 문서
-- [Boot](https://boot-clj.com/) : Boot 공식 문서
-- [Clojure-CLI](https://clojure.org/reference/deps_and_cli) : Clojure-CLI 공식 문서
+## 관련 자료:
+- Leiningen 공식 웹사이트: [https://leiningen.org/](https://leiningen.org/)
+- Clojure 공식 문서: [https://clojure.org/guides/getting_started](https://clojure.org/guides/getting_started)
+- Clojure 동사협회: [http://clojure.kr/](http://clojure.kr/)

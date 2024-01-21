@@ -1,6 +1,7 @@
 ---
 title:                "Extracting substrings"
-html_title:           "Arduino recipe: Extracting substrings"
+date:                  2024-01-20T17:45:34.263238-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extracting substrings"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,34 +12,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
+Extracting substrings means pulling specific parts out of a string. Programmers do it to isolate, manipulate, or analyze pieces of text data.
 
-Extracting substrings involves retrieving specific subsets of string data based on user-defined parameters, such as start and end index. This common operation allows programmers to manipulate and utilize pieces of larger strings effectively.
+## How to:
 
-## How To:
-
-In Elm, the `String.slice` function does the job by taking the start and end indices as arguments. It returns the substring from the start index up to (but not including) the end index. If the end index exceeds the string length, it'll use the string length.
-
-Here's a simple example:
+Elm makes it easy. For a start, let's use `String.slice`:
 
 ```Elm
-import Html exposing (text)
-import String
+import String exposing (slice)
 
-main =
-  text (String.slice 0 3 "Hello, world!")
+fullText : String
+fullText = "Hello, Elm world!"
+
+-- Extracting "Elm"
+substring : String
+substring = slice 7 10 fullText
+
+-- Output: "Elm"
 ```
-In this code, we're grabbing the first three characters of the string "Hello, world!". So the output will be "Hel".
+
+Now, let's get a bit more dynamic with `String.left` and `String.right`:
+
+```Elm
+import String exposing (left, right)
+
+-- Getting first 5 characters
+leftString : String
+leftString = left 5 fullText
+
+-- Output: "Hello"
+
+-- Getting last 5 characters
+rightString : String
+rightString = right 5 fullText
+
+-- Output: "orld!"
+```
 
 ## Deep Dive
 
-`String.slice` has roots back in JavaScript, and its function is identical in Elm. Extracting substrings can be done in various ways based on the programming language you are using. JavaScript offers `substring` and `substr`, Python has `slice` and `substring` operations, and in Elm, it's `String.slice`.
+Historically, substring extraction is as old as programming itself. In Elm, as in other functional languages, string manipulation functions are immutable - they return new strings rather than altering the original.
 
-Remember, the `String.slice` function can take negative numbers as indices. Negative indices count from the end of the string, -1 being the last character. However, Elm doesn't support the usage of negative start and end indexes. 
+Alternatives like `String.dropLeft` and `String.dropRight` exist. They trim characters from either end of the string:
+
+```Elm
+import String exposing (dropLeft, dropRight)
+
+-- Dropping first 7 characters
+droppedLeftString : String
+droppedLeftString = dropLeft 7 fullText
+
+-- Output: "Elm world!"
+
+-- Dropping last 6 characters
+droppedRightString : String
+droppedRightString = dropRight 6 fullText
+
+-- Output: "Hello, Elm"
+```
+
+Implementation-wise, these functions are built into the Elm standard library and handle Unicode, though there are considerations to be made with Unicode's surrogate pairs and combining characters.
 
 ## See Also
 
-String Manipulation in Elm: [https://guide.elm-lang.org/interop/](https://guide.elm-lang.org/interop/)
-
-Elm String Library Documentation: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String) 
-
-Happy Coding!
+- Elm `String` module documentation: https://package.elm-lang.org/packages/elm/core/latest/String
+- Elm guide on strings: https://guide.elm-lang.org/strings/
+- MDN Web Docs on Unicode: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt

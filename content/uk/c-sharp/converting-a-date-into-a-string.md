@@ -1,6 +1,7 @@
 ---
 title:                "Перетворення дати в рядок"
-html_title:           "Lua: Перетворення дати в рядок"
+date:                  2024-01-20T17:36:43.369223-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Перетворення дати в рядок"
 programming_language: "C#"
 category:             "C#"
@@ -10,25 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & чому?
-Перетворення дати в рядок - це процес форматування дати в рядок, який можна легко зрозуміти та відобразити. Програмісти роблять це для гнучкого відображення дат на веб-сайтах, в додатках та інших місцях.
+## What & Why? (Що та Чому?)
+Конвертація дати в рядок дозволяє представити дату в зручному для людини форматі. Програмісти використовують це, щоб зберегти дати в базах даних, вивести їх на екран, або здійснити локалізацію форматів дат.
 
-## Як це зробити:
+## How to: (Як це зробити:)
 ```C#
-DateTime dateTime = new DateTime(2020, 5, 9);
-string dateString = dateTime.ToString("dd.MM.yyyy");
-Console.WriteLine(dateString);
+using System;
+using System.Globalization;
+
+class Program
+{
+    static void Main()
+    {
+        DateTime now = DateTime.Now;
+        
+        // Convert to a simple date string
+        string simpleDateString = now.ToString("d");
+        Console.WriteLine(simpleDateString); // Output example: 3/16/2023
+        
+        // Convert using custom formats
+        string customFormatted = now.ToString("dd-MM-yyyy HH:mm");
+        Console.WriteLine(customFormatted); // Output example: 16-03-2023 12:34
+        
+        // Convert with culture info (Ukrainian)
+        CultureInfo cultureInfo = new CultureInfo("uk-UA");
+        string localizedDate = now.ToString(cultureInfo);
+        Console.WriteLine(localizedDate); // Output example: четвер, 16 березня 2023 р. 12:34:56
+    }
+}
+
 ```
-Введений рядок коду конвертує DateTime об'єкт в рядок ("09.05.2020") і виводить його в консоль. 
 
-## Поглиблений аналіз
-1. **Історичний контекст**: Від самого початку розвитку програмування було необхідно вирішити проблему представлення дати доступним та зручним способом для людей. C# з самого початку мав кілька методів для цього, включаючи ToString().
-2. **Альтернативи**: Поряд з ToString(), використовується метод String.Format(). Нижче наведено приклад використання цього методу:
-    ```C#
-    DateTime dateTime = new DateTime(2020, 5, 9);
-    string dateString = String.Format("{0:dd.MM.yyyy}", dateTime);
-    ```
-3. **Деталі реалізації**: ToString("dd.MM.yyyy") використовує форматний рядок, який визначає, як дата має бути представлена. "dd" означає день, "MM" - місяць, а "yyyy" - рік. Ви можете змінити ці параметри, щоб отримати потрібний вам формат. 
+## Deep Dive (Поглиблений Аналіз)
+Конвертація дати в рядок існує від часів ранніх мов програмування, адже потреба відображення дат для людей завжди була актуальною. В C#, System.DateTime і метод ToString() дають велику гнучкість для цього завдання, дозволяючи використовувати стандартні і користувацькі формати, а також локалізовані шаблони з CultureInfo. Альтернативами є інші класи, наприклад DateTimeOffset або бібліотека NodaTime для складніших завдань, пов'язаних з датами.
 
-## Дивитись також
-2. [Офіційна документація Microsoft з перетворення дати в рядок](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings)
+## See Also (Дивіться також):
+- [Microsoft Docs: Standard Date and Time Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings)
+- [Microsoft Docs: Custom Date and Time Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
+- [Microsoft Docs: CultureInfo Class](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo)

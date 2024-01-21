@@ -1,7 +1,8 @@
 ---
-title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
-simple_title:         "Wyszukiwanie i zastępowanie tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+date:                  2024-01-20T17:57:48.915717-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,43 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Szukanie i zamiana tekstu w C#: proste i szybko
-
 ## Co i dlaczego?
-Szukanie i zamiana tekstu to podstawowe operacje, które pozwalają na manipulowanie danymi tekstowymi. Programiści korzystają z nich codziennie, aby poprawić efektywność i zautomatyzować monotonne zadania.
+Szukanie i zamiana tekstu to codzienny chleb programisty. Robimy to, aby modyfikować dane, poprawiać błędy, czy też dostosowywać ciągi znaków pod konkretne potrzeby. Proste, ale niezwykle istotne narzędzie w naszej kuchni kodu.
 
 ## Jak to zrobić:
-W C# możemy użyć metody `Replace` do wymiany ciągów tekstowych. Poniżej znajduje się przykład kodu.
+W C# używamy głównie klasy `String`. Oto jak szukać i zamieniać tekst:
 
 ```C#
-using System;
+string source = "Witaj świecie! Hello World!";
+string toFind = "świecie";
+string replaceWith = "programisto";
 
-class Program
-{
-    static void Main()
-    {
-        const string tekst = "Cześć, jak się masz?";
-        const string szukać = "masz";
-        const string zamienić = "czujesz";
-
-        string wynik = tekst.Replace(szukać, zamienić);
-
-        Console.WriteLine(wynik);  // Wypisuje: "Cześć, jak się czujesz?"
-    }
-}
+// Zamiana tekstu
+string replaced = source.Replace(toFind, replaceWith);
+Console.WriteLine(replaced);  // Wynik: "Witaj programisto! Hello World!"
 ```
 
-## Wgłębne informacje
+A co jeśli chcesz coś bardziej zaawansowanego? Na przykład, zamienić wyłącznie pierwsze wystąpienie frazy. Regułki (regex) wchodzą do gry:
 
-1. **Kontekst historyczny:** Szukanie i zamiana tekstu to jedne z najstarszych funkcji w programowaniu, istnieją od czasów języka Assembly. Chociaż techniki i metody uległy zmianie, podstawowy koncept pozostaje taki sam.
-2. **Alternatywy:** Oprócz metody `Replace`, programiści mogą korzystać z wyrażeń regularnych (`Regex`) do bardziej skomplikowanych zastąpień. Wyrażenia regularne oferują większą elastyczność, ale są również trudniejsze do opanowania.
-3. **Szczegóły implementacji:** Metoda `Replace` działa poprzez iterowanie przez ciąg, porównywanie podciągów i zastępowanie dopasowań. To proste, ale efektywne podejście, które dobrze działa dla większości zastosowań.
+```C#
+using System.Text.RegularExpressions;
 
-## Zobacz także
+string text = "Kot, kot, coś tam kot.";
+string pattern = "kot";
+string replacement = "pies";
+string result = Regex.Replace(text, pattern, replacement, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(500));
 
-Jeśli chcesz dowiedzieć się więcej o szukaniu i zamianie tekstu w C#, sprawdź poniższe źródła:
+Console.WriteLine(result);  // Wynik: "Pies, kot, coś tam kot."
+```
 
-1. ["String.Replace Method" (Microsoft Docs)](https://docs.microsoft.com/pl-pl/dotnet/api/system.string.replace?view=net-5.0)
-3. ["Manipulacja ciągami w C#" (tutorialsteacher.com)](https://www.tutorialsteacher.com/csharp/csharp-string)
+To tylko ignoryje wielkość liter i zamienia pierwsze wystąpienie, dzięki parametrowi `RegexOptions.IgnoreCase`.
 
-+-
+## Deep Dive
+Szukanie i zamiana tekstu to funkcjonalności które miały swoje początki w edytorach tekstu lat 60-tych. Obecne implementacje, jak regex, pochodzą z prac Stephena Cole'a Kleene'a.
+
+Alternatywy? Jak najbardziej. Pluginy do IDE, narzędzia do obsługi tekstów jak sed, awk w Unix lub PowerShell w Windows. Składnia różni się, ale idea ta sama.
+
+Szukanie i zamiana w C# pod spodem działają na tablicach znaków. Ma to wpływ na wydajność – szczególnie przy dużych ciągach tekstowych.
+
+## See Also
+- [Microsoft's official String documentation](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netcore-3.1)
+- [Regex class documentation](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1)
+- [Informacje o wyrażeniach regularnych](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/regular-expressions) 
+
+Co dalej? Eksperymentuj. Może dodaj odrobinę LINQ do przeszukiwania kolekcji tekstu. Przede wszystkim jednak, baw się swoim kodem. To najlepsza metoda nauki.

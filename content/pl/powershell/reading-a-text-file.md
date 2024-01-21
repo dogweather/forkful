@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie pliku tekstowego"
-html_title:           "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+date:                  2024-01-20T17:54:56.114422-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,29 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Czytanie plików tekstowych w PowerShell - Jak to zrobić?
+## What & Why? (Co i Dlaczego?)
+Czytanie pliku tekstowego to pobieranie jego zawartości do pamięci dla dalszej obróbki. Programiści robią to codziennie, by np. wczytywać konfiguracje, analizować dane lub przetwarzać logi.
 
-## Co & Dlaczego?
-Czytanie z plików tekstowych to proces, w którym wskaźnik wczytuje dane z pliku tekstowego do pamięci programu. Programiści robią to, aby móc przetwarzać zapisane wcześniej dane, których używają ich programy.
-
-## Jak to zrobić:
-Używać będziemy cmdlet `Get-Content`. Przykładowe użycie:
-
+## How to: (Jak to zrobić:)
 ```PowerShell
-$tekst = Get-Content -Path C:\mojPlik.txt
-Write-Output $tekst
+# Wczytanie całego pliku
+$content = Get-Content -Path 'C:\plik.txt'
+Write-Host $content
+
+# Wczytanie pliku linia po linii
+Get-Content -Path 'C:\plik.txt' | ForEach-Object {
+    Write-Host $_
+}
 ```
 
-Jeżeli `mojPlik.txt` zawierałby tekst "Witaj, świecie!", to output wyglądałby tak:
-
-```PowerShell
-Witaj, świecie!
+Wyjście przykładowe:
+```
+To jest zawartość pliku tekstowego.
+Druga linia tekstu.
 ```
 
-## Deep Dive
-Cmdlet `Get-Content` to jeden z najwcześniejszych sposobów na odczyt plików tekstowych wprowadzonych w PowerShell. Alternatywą może być funkcja [.NET](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readalltext?view=net-5.0), takie jak `System.IO.File]::ReadAllText("C:\mojPlik.txt")`. Pod względem wykonania, wydajność cmdlet `Get-Content` jest lepsza przy dużych plikach, ponieważ odczytuje plik sekwencyjnie, podczas gdy `ReadAllText` wczytuje cały plik do pamięci na raz.
+## Deep Dive (Głębsze spojrzenie)
+Czytanie plików tekstowych jest tak stare jak pierwsze komputery. Alternatywami `Get-Content` są `[System.IO.File]::ReadAllText('ścieżka')` w .NET, czy `cat` w Unixowych skryptach shell'a. A przy dużych plikach? Użyj `-ReadCount` i `-TotalCount` w `Get-Content` dla efektywności.
 
-## Zobacz też:
+Implementacja `Get-Content` korzysta z Windows Management Instrumentation (WMI), dając dostęp do wielu zaawansowanych funkcji, m.in. kodowania czy przesyłania strumieniowego.
 
-- [Dokumentacja Microsoft dla Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1)
-- [Wiecej o System.IO.File]::ReadAllText](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readalltext?view=net-5.0)
+## See Also (Zobacz również)
+- [Microsoft Official Documentation for Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1)
+- [About_Automatic_Variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1#_)
+- [StackOverflow: Reading large text files with Powershell](https://stackoverflow.com/questions/21737976/powershell-read-large-log-files)

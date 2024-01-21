@@ -1,6 +1,7 @@
 ---
 title:                "새 프로젝트 시작하기"
-html_title:           "Arduino: 새 프로젝트 시작하기"
+date:                  2024-01-20T18:03:01.501661-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "새 프로젝트 시작하기"
 programming_language: "C++"
 category:             "C++"
@@ -10,41 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인지 & 왜 그렇게 하는건지?
+## What & Why? (무엇과 왜?)
+새 프로젝트를 시작한다는 것은, 빈 캔버스에 첫 획을 긋는 것과 같아요. 프로그래머들에게 새 시작은 아이디어를 현실로 만들어내는 과정이며, 새로운 해결책을 만들거나 기술을 배우는 기회가 됩니다.
 
-새 프로젝트를 시작하다는 것은 아무래도 새로운 아이디어를 실현하기 위한 코드를 작성하기 시작하는 것을 말합니다. 이를 위해 프로그래머들은 초기 구상 및 설계단계를 거쳐 코드를 구현하게 됩니다.
-
-## 어떻게 할까요:
-
-다음은 간단한 C++ 프로젝트를 시작하는 방법입니다.
-
+## How to: (어떻게 하나요?)
 ```C++
-// include the necessary libraries
 #include <iostream>
 
-// main function - this is where the actual coding magic happens
 int main() {
-    std::cout << "새로운 프로젝트를 시작해볼까요? 화이팅!\n";
-    return 0;  //this is used to indicate that the program has ended without error.
+    std::cout << "Hello, new project!" << std::endl;
+    return 0;
 }
 ```
-
-이 코드를 실행해보면, 터미널에 다음과 같이 출력될 것입니다:
-
+출력:
 ```
-새로운 프로젝트를 시작해볼까요? 화이팅!
+Hello, new project!
 ```
 
-## 딥다이브
+## Deep Dive (심층 탐구)
+새 프로젝트를 시작할 때는 과거의 경험, 사용 가능한 라이브러리, 언어 선택 등을 고려해야 합니다. C++는 1980년대 초에 Bjarne Stroustrup에 의해 개발되었고, 그의 초기 목표는 C 언어의 범위를 확장하여 객체지향 프로그래밍을 용이하게 하는 것이었습니다. 현재에는 C++20이 최신 표준이며, 이는 더 많은 기능과 향상된 추상화를 제공합니다. 대안으로 Python, Java, Rust와 같은 언어들이 있지만, 성능과 제어가 중요한 프로젝트에서는 여전히 C++이 널리 사용됩니다. 구조화된 프로젝트 설정은 이후 유지보수와 확장성에 상당한 영향을 미칩니다.
 
-**역사적 배경**: C++는 1979년에 최초로 개발된 언어입니다. 그 이후로 C++는 발전하면서 시간이 지날수록 효율적인 코딩을 가능하게 하는 다양한 기능들이 추가되었습니다.
-
-**대안**: Python, Java, JavaScript 등은 C++에 대한 인기 있는 대안입니다. 단, 프로젝트 상황이나 요구사항에 따라 가장 적합한 언어를 선택해야 합니다.
-
-**구현 상세**: 새 프로젝트를 시작할 때 초기 단계에서 구조와 설계를 명확히 하는 것이 중요합니다. 좋은 설계는 효율적인 코드를 작성하는데 중요한 역할을 합니다.
-
-## 참고하기 
-
-1. [시작하기: C++ 시작하기](https://www.learn-cpp.org/)
-2. [중급자: C++의 중급 개발자를 위한 가이드](https://www.advancedcplusplus.com/)
-3. [전문가: C++의 고급 사용자를 위한 리소스](https://en.cppreference.com/)
+## See Also (참고 자료)
+- [C++ 공식 웹사이트](https://isocpp.org/)
+- [C++ 기초 문법 가이드](https://www.learncpp.com/)
+- [C++20 표준 소개](https://en.cppreference.com/w/cpp/20)
+- [C++ 커뮤니티 FAQ](https://isocpp.org/faq)

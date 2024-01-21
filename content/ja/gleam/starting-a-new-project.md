@@ -1,6 +1,7 @@
 ---
 title:                "新しいプロジェクトを始める"
-html_title:           "C: 新しいプロジェクトを始める"
+date:                  2024-01-20T18:03:21.793727-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "新しいプロジェクトを始める"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,29 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何で、それなぜ？
+## What & Why? (何となぜ？)
+新しいプロジェクトを始めることは、アイデアをコードに変える初歩です。プログラマは新しさを求め、問題解決やスキル向上のために新プロジェクトを始めます。
 
-新プロジェクトを開始するとは、新しいコードベースをゼロから作り上げることを指します。プログラマはこれを行うことで、特定の問題を解決する独自のソリューションを作成したり、新しいアプリケーションを開発したりして、自分自身を表現し、スキルを向上させる機会を得ることができます。
+## How to: (方法)
+Gleamプロジェクトを始めるのは簡単。コマンド一つでスタート。
 
-## 使い方：
+```gleam
+// Gleam CLIを使って新しいプロジェクトを作成しましょう。
+$ rebar3 new lib your_project_name
 
-新しいGleamプロジェクトを始めるには、以下のコマンドを使用します。サンプルの出力も示します。
-
-```Gleam
-$ rebar3 new gleam_lib my_project
+// 成功したら、下記のような出力が見えます。
+===> Writing your_project_name/src/your_project_name_app.erl
+===> Writing your_project_name/src/your_project_name_sup.erl
+===> Writing your_project_name/src/your_project_name.erl
+...
 ```
 
-これにより、新しいプロジェクト「my_project」が作成されます。
+## Deep Dive (深掘り)
+Gleamは、型安全な関数型言語であり、ErlangのBEAM仮想マシンの上で動作します。始める前は、Erlang と rebar3 をインストールする必要があります。他の BEAM 言語と比べて、Gleamは静的型付けと Erlang VMのパワーを組み合わせることに注力しています。これにより、並行性や分散システムの構築に優れたプラットフォームを提供しています。
 
-## 深堀り：
-
-プロジェクトを始める判断は、プログラマのバックグラウンドや必要とする問題解決策に基づくものです。コーディングは1970年代に出現し、以来、さまざまな方法で進化してきました。初期のプログラマは、しばしば完全なソフトウェアプロジェクトを一人で作成していましたが、現在ではチームが一緒に作業することが一般的です。
-
-Gleamの代わりに、他のErlang VM言語（ElixirやLFEなど）を使用しても新しいプロジェクトを開始することは可能です。しかしGleamには、静的な型システムやErlangとの優れた互換性など、他の言語にはない利点があります。
-
-新プロジェクトを開始するとき、実装詳細に注意を払うことは重要です。良いアーキテクチャ設計は、コードの読みやすさとメンテナンス性を向上させ、バグを減らすことができます。
-
-## 参考資料：
-
-2. [Gleamリポジトリ](https://github.com/gleam-lang/gleam)
-4. [Erlang](https://www.erlang.org/)
+## See Also (参照)
+- [Gleam公式サイト](https://gleam.run)
+- [Gleam GitHubリポジトリ](https://github.com/gleam-lang/gleam)
+- [rebar3ドキュメント](https://www.rebar3.org/docs)

@@ -1,6 +1,7 @@
 ---
 title:                "Omvandla ett datum till en sträng"
-html_title:           "Arduino: Omvandla ett datum till en sträng"
+date:                  2024-01-20T17:35:55.061520-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,40 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Konvertering av ett datum till sträng innebär omvandlingen av datumdata till textformat, vanligtvis för presentation eller lagring. Programmerare gör detta för att tillåta läsbarare hantering och visning av datat.
+Att konvertera ett datum till en sträng innebär att omvandla tidsdata till läsbart textformat. Programmerare gör detta för att visa datum på skärmar eller för att logga händelser i system.
 
-## Så här gör man:
-Här är ett exempel på hur man konverterar ett datum till en sträng i Arduino.
-
+## Hur gör man:
 ```Arduino
-#include <TimeLib.h>
+#include <Wire.h>
+#include <RTClib.h>
+
+RTC_DS3231 rtc;
 
 void setup() {
-  Serial.begin(9600); 
-  setTime(8, 30, 0, 1, 1, 2023); // Set the time to 8:30:00 on 1 Jan 2023.
+  Serial.begin(9600);
+  if (!rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    while (1);
+  }
+  if (rtc.lostPower()) {
+    Serial.println("RTC lost power, setting the time!");
+    // När tiden är satt en gång behövs inte dessa rader om klockan får ström
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  }
 }
 
 void loop() {
-  String datestr = "";
-  datestr += day();
-  datestr += " ";
-  datestr += month();
-  datestr += " ";
-  datestr += year();
-
-  Serial.println(datestr); // Outputs the date as a string.
+  DateTime now = rtc.now();
+  char dateStr[20];
+  sprintf(dateStr, "%d-%02d-%02d %02d:%02d:%02d", now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second());
+  Serial.println(dateStr);
   delay(1000);
 }
 ```
+Exempelutskrift: 2023-03-14 21:45:58
 
-## Djupdykning
-Historiskt sett i tidiga programmeringssystem, kunde datum inte hanteras enkelt som strängar. Över tiden har olika system och språk utvecklat sina metoder för att ta itu med detta.
+## Djupdykning:
+Att omvandla datum till strängar har blivit standard för att hantera datum i programmering sedan tidiga datorer. Andra metoder, som tidsstämplar och inbyggda datumfunktioner, finns också. Arduino använder `sprintf` för att formattera datum som strängar. Det här är kraftfullt eftersom du kan bestämma precis hur datumet ska visas, men det kräver också förståelse för `sprintf`-syntax.
 
-Alternativ till dessa metoder kan innebära att använda olika bibliotek som innehåller inbyggda metoder för datumsträngskonvertering, eller skapande av anpassade funktioner.
-
-Detaljerad genomförande kan variera beroende på vilken version av Arduino du använder. Det kan också vara olika beroende på om du hanterar kalenderdatum (dag, månad, år) eller tid (timmar, minuter, sekunder).
-
-## Se också
-- För mer information om tidsfunktioner i Arduino, se: https://www.arduino.cc/en/Reference/Time 
-- Ytterligare information om TimeLib-biblioteket: https://github.com/PaulStoffregen/Time 
-- För en bredare kontext om datum och tidsformat, se: https://en.wikipedia.org/wiki/System_time.
+## Se även:
+- Arduino's Time Library: https://www.arduino.cc/en/Reference/Time
+- RTClib, en populär bibliotek för tidskretsar: https://github.com/adafruit/RTClib
+- strftime-funktion för formatering av datum och tid: http://www.cplusplus.com/reference/ctime/strftime/

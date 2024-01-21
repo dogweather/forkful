@@ -1,6 +1,7 @@
 ---
 title:                "מחיקת תווים התואמים לתבנית"
-html_title:           "Elixir: מחיקת תווים התואמים לתבנית"
+date:                  2024-01-20T17:42:59.890763-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "מחיקת תווים התואמים לתבנית"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,29 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-מחיקה של תווים התואמים לתבנית היא פעולה המאפשרת לנו להסיר ממחרוזת תווים את כל התווים התואמים לתבנית מסוימת. מתכנתים עשויים לצלוח לביצוע הפעולה הזו כדי לטהר קלט, להפוך מידע לפורמט מסויים או לרפורמט מידע קיים.
+## מה ולמה?
+מחיקת תווים שתואמים דפוס היא פעולה שבה נשלפים תווים מתוך מחרוזת אם הם עונים על תנאי מסוים. מתכנתים משתמשים בזה לניקוי קלט, תיקון נתונים ועיבוד טקסט.
 
 ## איך לעשות:
-בעזרת הפונקציה `filter` שבספריית Prelude של השפה ניתן לבצע כאמור. לדוגמה:
+ב-Haskell, ניתן להשתמש בפונקציות סטנדרטיות כמו `filter` למימוש התהליך:
 
 ```Haskell
-נתון string = "להסיר תווים מסויימים ממחרוזת זו"
-מנותר = filter (לא . (`elem` "אוי")) string
+import Data.Char (isDigit)
+
+-- פונקציה למחיקת כל הספרות מתוך מחרוזת
+deleteDigits :: String -> String
+deleteDigits = filter (not . isDigit)
+
+main :: IO ()
+main = putStrLn $ deleteDigits "He7ll9o W0or6ld"  -- תוצאה: Hello World
 ```
-הפלט יהיה:
+
+ניתן גם להגדיר דפוסי regex ולהשתמש בם למחיקת תווים:
 
 ```Haskell
-"להסר תווים מסוימים ממחרוזת זו"
-```
-בדוגמה זו הוסרו תווים מהמחרוזת ע"פ הצורך .
+import Text.Regex.TDFA ((=~))
 
-## צוללים עמוק יותר
-- הקונטקסט ההיסטורי: Haskell הוא שפת תכנות פונקציונלית שפותחה בשנת 1990. עם זאת, ה"רעיון" של ביצוע פילטור על תווים במחרוזת הגיע לפני Haskell, על ידי שפות תכנות אחרות שכמוה עוסקות בעיבוד מחרוזות טקסט. 
-- חלופות:קיימות שיטות אחרות להסרת תווים ממחרוזת, כולל שימוש ב-regEx או הפיכת המחרוזת לרשימה והסרת האיברים הרצויים. 
-- פרטי היישום: בהשוואה לשפות תכנות אחרות, בהן יתכן להיות צורך בפיתוח הרבה יותר של קוד כדי להסיר תווים ממחרוזת, ב-Haskell ניתן לעשות זאת באופן מפושט להפליא באמצעות שימוש אינטואיטיבי בפונקציה 'filter'.
- 
-## ראו גם:
-- [תיעוד 'filter'](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:filter): פרטים נוספים על הפונקציה 'filter' ב Haskell.
-- [הדרך הפונקציונאלית](https://www.haskell.org/tutorial/): מלא מידע על פיתוח בהaskell.
-- [עיבוד טקסט בHaskell](http://book.realworldhaskell.org/read/efficient-file-processing-regular-expressions-and-file-name-matching.html):מדריך לעיבוד מחרוזת.
+-- פונקציה למחיקת כל האותיות הגדולות מתוך מחרוזת
+deleteUpperCase :: String -> String
+deleteUpperCase str = str =~ "[^A-Z]" :: String
+
+main :: IO ()
+main = putStrLn $ deleteUpperCase "Hello World"  -- תוצאה: ello orld
+```
+
+## עיון מעמיק
+היסטורית, מחיקת תוים תואמי דפוס נוצרה בכדי להתמודד עם טקסטים גולמיים ועלובים. אם פעם נעשה שימוש בכלים כמו `sed` ו`awk` בסביבת יוניקס, היום לשפות תכנות מודרניות כמו Haskell יש ספריות עשירות המאפשרות יישום חלק ויעיל של מניפולציות טקסט.
+
+כלים אלטרנטיביים כוללים שימוש בפונקציות כמו `map`, `concatMap`, או פונקציות ב-slice ו-append למחרוזות. פרטי מימוש כוללים עבודה עם מבני נתונים ברמה נמוכה יותר כדי לטפל ביעילות במחרוזות גדולות.
+
+## ראה גם
+- [Hackage: regex-tdfa package](https://hackage.haskell.org/package/regex-tdfa)
+- [Learn You a Haskell for Great Good! - פונקציה עבור כל מצב](http://learnyouahaskell.com/higher-order-functions#maps-and-filters)

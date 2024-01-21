@@ -1,7 +1,8 @@
 ---
-title:                "Konkatenacja ciągów znaków"
-html_title:           "Bash: Konkatenacja ciągów znaków"
-simple_title:         "Konkatenacja ciągów znaków"
+title:                "Łączenie łańcuchów znaków"
+date:                  2024-01-20T17:35:01.804020-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Łączenie łańcuchów znaków"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,27 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Łączenie napisów, znane jako konkatenacja, to proces łączenia dwóch lub więcej ciągów znaków w jeden ciąg. Programiści robią to, aby manipulować danymi tekstowymi czy tworzyć wiadomości dla użytkowników.
+## Co i dlaczego?
+
+Łączenie napisów to po prostu sklejanie ich końców. Programiści robią to, aby tworzyć nowe ciągi znaków – ścieżki do plików, wiadomości, dynamiczne teksty w aplikacjach.
 
 ## Jak to zrobić:
-W Haskellu, operatorem konkatenacji jest `++`. Wygląda to tak:
+
 ```Haskell
+main :: IO ()
 main = do
-    let a = "Programowanie "
-    let b = "w Haskellu jest fajne"
-    let c = a ++ b
-    putStrLn c
+    let hello = "Witaj, "
+    let world = "świecie!"
+    putStrLn (hello ++ world)  -- Wykorzystanie operatora ++ do łączenia napisów
+    putStrLn $ concat ["Data: ", show (2023, 3, 15)] -- Funkcja concat do łączenia listy napisów
 ```
-Na powyższym przykładzie wydrukuje "Programowanie w Haskellu jest fajne".
 
-## Zanurzmy się głębiej
-Konkatenacja w Haskellu jest różna od innych języków programowania. W Haskellu znaki są łączone przy użyciu list. Wynika to z historycznego faktu, że Haskell traktuje ciągi jako listy znaków.
+Sample output:
 
-Alternatywą do `++` jest `concat`, które łączy listę napisów w jeden ciąg.
+```
+Witaj, świecie!
+Data: (2023,3,15)
+```
 
-Szczegółem implementacji jest to, że `++` ma złożoność O(n), więc jeśli ciągi są duże, `++` może być wolny. W takich przypadkach `Data.Text` i `Data.ByteString` są lepszymi alternatywami.
+## Głębsze spojrzenie:
 
-## Zobacz także
-1. [Dokumenty Hackage dla `++`](http://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:-43--43-)
-2. [Haskell Wiki o ciągach](https://wiki.haskell.org/Strings)
+String w Haskell to lista znaków, więc łączenie napisów odbywa się przez konkatenację list. Operator `++` jest standardem od początku języka. Alternatywą może być `concat`, gdy łączymy listę stringów, czy `Data.Text`, biblioteka dla dużych napisów.
+
+Haskell był zaprojektowany z myślą o leniwej ewaluacji, więc połączone napisy nie są od razu tworzone w pamięci, co jest wydajne. Należy jednak pamiętać, że nadużycie `++` może prowadzić do kiepskiej wydajności dla dużych napisów ze względu na konieczność przechodzenia przez całą listę. Tutaj z pomocą przychodzi `Data.Text`, oferując szybszą alternatywę ze stałym czasem dorzucania na końcu.
+
+## Zobacz również:
+
+- [Haskell Documentation on Strings](https://haskell.org/documentation)
+- [Hackage: Data.Text library](https://hackage.haskell.org/package/text)

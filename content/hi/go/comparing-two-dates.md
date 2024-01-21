@@ -1,6 +1,7 @@
 ---
 title:                "दो तारीखों की तुलना"
-html_title:           "Elixir: दो तारीखों की तुलना"
+date:                  2024-01-20T17:33:48.242447-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "दो तारीखों की तुलना"
 programming_language: "Go"
 category:             "Go"
@@ -10,40 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Go Programming ke Duniya me: Dates Ki Tulna
+## What & Why? (क्या और क्यों?)
+तारीखों की तुलना करना समय के दो पलों के बीच अंतर को समझने की प्रक्रिया है। प्रोग्रामर्स यह तुलना डेटा की वैधता, समय-सीमा निर्धारित करना, और समय संबंधित गणना के लिए करते हैं।
 
-## क्या और क्यूँ?
-
-दो तारीखों की तुलना (comparing two dates) यह होती है जब हम पता लगाने की कोशिश करते हैं कि एक दिनांक (date) दूसरे दिनांक से पहले, बाद में, या उनके बीच में है। यह समय-मूल्यांकन लॉजिक में एक आवश्यक कार्य होता है, जैसे कि कृपया आपको समझाने के लिए पता करें कि कौन सा event सबसे पहले हुआ था, या किसी कार्य की सीमा कब समाप्त होगी।
-
-## कैसे करे:
+## How to: (कैसे करें:)
+Go में दो तारीखों का तुलना करना आसान है। `time` पैकेज का प्रयोग करें। नीचे एक उदाहरण है:
 
 ```Go
 package main
+
 import (
     "fmt"
     "time"
 )
 
 func main() {
-    date1 := time.Date(2020, 1, 1, 0, 0, 0, 0, time.UTC)
-    date2 := time.Date(2021, 1, 1, 0, 0, 0, 0, time.UTC)
+    // तारीखों का परिभाषित करना
+    layout := "2006-01-02"
+    date1, _ := time.Parse(layout, "2023-04-01")
+    date2, _ := time.Parse(layout, "2023-04-12")
+
+    // तारीखों की तुलना करना
     if date1.Before(date2) {
-        fmt.Println("Date1 is before Date2")
+        fmt.Println("date1 पहले है date2 से")
     } else if date1.After(date2) {
-        fmt.Println("Date1 is after Date2")
+        fmt.Println("date1 बाद में है date2 से")
     } else {
-        fmt.Println("Both dates are equal")
+        fmt.Println("date1 और date2 समान हैं")
     }
+
+    // तारीखों के बीच अंतर का पता लगाना
+    diff := date2.Sub(date1)
+    fmt.Printf("दोनों तारीखों के बीच का अंतर: %v\n", diff)
 }
 ```
 
-## गहराई में:
+संभावित आउटपुट:
 
-दो तारीखों की तुलना न कर पाने वाली परम्परागत कम्पाइल भाषाओं केवलं है। स्थिरता और अनुकूलन को बाना में रखते हुए, Go ने इस क्षमता को बहुत ही सीधा और स्वच्छ तरीका बनाया है। अल्टरनेटिवली, हम `Equal()` और `Sub()` जैसे फ़ंक्शन्स को भी उपयोग कर सकते हैं, जो अरबी इकाइयों के लिए सही और आवश्यक हो सकते हैं।
+```
+date1 पहले है date2 से
+दोनों तारीखों के बीच का अंतर: 264h0m0s
+```
 
-## भी देखें:
+## Deep Dive (गहराई से जानकारी):
+Go में `time` पैकेज `time.Time` प्रकार से तारीखों को संभालता है, जिसके बहुत से उपयोगी फंक्शन्स हैं। `Before`, `After`, और `Equal` फंक्शन्स से हम तारीखों की तुलना करते हैं। `Sub` फंक्शन दो तारीखों के बीच के समय का अंतर देता है। इतिहास में, प्रोग्रामर्स को यह सारे गणनाएँ खुद से करने पड़ते थे, पर Go ने इसे सरल बना दिया है। अल्टरनेटिव्स में `date` पैकेज और दूसरे लाइब्रेरीज शामिल हैं, लेकिन Go का स्टैण्डर्ड लाइब्रेरी बहुत सक्षम है।
 
-1. Go के तारीख और समय संबंधी फ़ंक्शन्स के बारे में अधिक जानकारी के लिए यहाँ जाएं: https://golang.org/pkg/time/
-2. Go में समय की तुलना का तरीका: https://yourbasic.org/golang/compare-dates/
-3. डेट की तुलना के बारे में विस्तृत डॉक्यूमेंटेशन के लिए StackOverflow ब्लॉग पर ध्यान दें: https://stackoverflow.com/questions/36530251/how-to-compare-two-dates
+## See Also (और भी देखें):
+- Go दस्तावेज़ीकरण `time` पैकेज: [https://golang.org/pkg/time/](https://golang.org/pkg/time/)
+- Go टाइम पार्सिंग और फॉर्मेटिंग: [https://yourbasic.org/golang/format-parse-string-time-date-example/](https://yourbasic.org/golang/format-parse-string-time-date-example/)
+- Go के `date` पैकेज भी देखें: [https://github.com/rickb777/date](https://github.com/rickb777/date)

@@ -1,7 +1,8 @@
 ---
-title:                "पाठ की खोज और प्रतिस्थापन"
-html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
-simple_title:         "पाठ की खोज और प्रतिस्थापन"
+title:                "पाठ खोजना और बदलना"
+date:                  2024-01-20T17:58:04.838541-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पाठ खोजना और बदलना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,35 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+टेक्स्ट सर्चिंग और रिप्लेसिंग का मतलब है किसी दस्तावेज़ में शब्दों या वाक्यांशों को ढूँढना और बदलना। प्रोग्रामर्स इसे डेटा मोडिफिकेशन, एरर करेक्शन, या कोड रिफैक्टरिंग के लिए करते हैं।
 
-टेक्स्ट खोजना और बदलना एक क्रिया है, जिसमें हम एक स्पष्ट टेक्स्ट खोजते हैं और उसे किसी अन्य टेक्स्ट से बदल देते हैं। यह डेटा संसाधन और प्रसंस्करण के प्रक्रियाओं को आसान बनाने और प्रोग्राम की दक्षता को बढ़ाने के लिए कार्यकर्ताओं द्वारा काम में लाया जाता है। 
+## How to: (कैसे करें:)
+Go में `strings` पैकेज string manipulation के लिए उपयोगी फंक्शंस provide करता है। ये एक सिम्पल उदाहरण है:
 
-## ऐसे करें:
-
-```Go
+```go
 package main
-import "strings"
-import "fmt"
+
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-    str := "Welcome to Go Programming!"
-    newStr := strings.Replace(str, "Go", "Hindi", -1)
-    fmt.Println(newStr)
+	originalText := "हेलो, यह एक टेस्ट है।"
+	searchFor := "टेस्ट"
+	replaceWith := "डेमो"
+
+	// Replace text
+	result := strings.Replace(originalText, searchFor, replaceWith, -1)
+
+	fmt.Println("पहले: ", originalText)
+	fmt.Println("बाद में: ", result)
 }
 ```
 
-साउटपुट:
+आउटपुट:
 
-```Go
-Welcome to Hindi Programming!
+```
+पहले: हेलो, यह एक टेस्ट है।
+बाद में: हेलो, यह एक डेमो है।
 ```
 
-## गहरा डाइव:
+## Deep Dive (गहराई में जानकारी):
+स्ट्रिंग सर्च और रिप्लेसमेंट बेसिक प्रोग्रामिंग में से एक हैं। मानव सभ्यता में लंबे समय से हाथ से लिखे गए टेक्स्ट को एडिट करना रिवाज रहा है, पर डिजिटल युग में यह सरल हो गया है। इसका उपयोग लार्ज फाइल्स में वर्ड्स को जल्दी से ढूंढने और बदलने में होता है। `strings.Replace` हमें गो में यह काम करने की क्षमता देता है, और `-1` third पैरामीटर के रूप में सभी occurrences को रिप्लेस करने का संकेत देता है। वैकल्पिक तरीकों में `Regexp` पैकेज के साथ regular expressions का उपयोग शामिल है जो ज्यादा कॉम्प्लेक्स पैटर्न सर्चिंग में मदद करता है।
 
-औद्योगिक आरंभ में, यह टेक्स्ट खोजने और बदलने की क्रिया मैन्युअल रूप से काम में ली गई थी जिसमें ज्यादा समय और प्रयास लगता था। लेकिन Go और अन्य प्रोग्रामिंग भाषाओं के निर्माण से, इसे संगणकीयता से और कुशलतापूर्वक किया जा सकता है। संबंधित `strings.Replace()` function का उपयोग करके Go में टेक्स्ट को खोजा और बदला जा सकता है। जैसा कि ऐसे तरीकों में संभवतः विचलन शामिल हो सकते हैं, कई अन्य समाधान, जैसे कि regex, पहुंचने में समय लेने वाले और जटिल खोजों के लिए उपयोगी हैं। 
-
-## भी देखें:
-
-- Go द्वारा और अधिक Text Manipulations: https://golang.org/pkg/strings/
-- Regex के साथ खोजें और बदलें: https://golang.org/pkg/regexp/
+## See Also (देखें भी):
+- Go स्टैंडर्ड लाइब्रेरी के `strings` पैकेज का डॉक्युमेंटेशन: [strings package](https://pkg.go.dev/strings)
+- Go by Example पर स्ट्रिंग फंक्शन गाइड: [Go by Example: String Functions](https://gobyexample.com/string-functions)
+- Regular expressions in Go के लिए `regexp` पैकेज का उपयोग: [regexp package](https://pkg.go.dev/regexp)

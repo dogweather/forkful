@@ -1,6 +1,7 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "C: Usuwanie znaków pasujących do wzorca"
+date:                  2024-01-20T17:43:02.061984-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,44 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? - Co i Dlaczego?
+Usuwanie znaków pasujących do wzorca to proces wyciągania specyficznych sekwencji z łańcucha tekstowego. Programiści robią to, by oczyścić dane, usunąć niepożądany szum lub przygotować tekst do dalszej obróbki.
 
-Usuwanie znaków pasujących do danego wzorca to proces, który polega na identyfikacji i usunięciu określonych ciągów znaków z większego tekstu. Programiści korzystają z tej metody, aby sprzątnąć dane wejściowe, usunąć niepotrzebne znaki lub przetworzyć tekst na bardziej pożądany format.
-
-## Jak to zrobić:
-
-W Lua, możemy użyć funkcji gsub(), aby usunąć znaki pasujące do wzorca. Oto proste przykłady.
-
+## How to: - Jak to zrobić:
 ```Lua
-local str = "H3110 W0rld, Lua Pr0gramm1ng!"
+local text = "Kodowanie w Lua jest łatwe i przyjemne!"
+local pattern = "%a+" -- Wzorzec do znalezienia liter
 
--- Usuwanie cyfr
-local result = str:gsub("%d", "")
-print(result)  -- Output: "H World, Lua Programming!"
+-- Usuwanie znaków pasujących do wzorca
+local cleaned_text = text:gsub(pattern, "")
+print(cleaned_text)  -- Wypisuje: "      !"
+```
+Wzorce można też dostosować, na przykład:
+```Lua
+local text = "E-mail: przyklad@example.com, Telefon: +48 123 456 789"
+local email_pattern = "[\%w%.]+@[\%w%.]+"
+local phone_pattern = "%+%d%d%d%d%d%d%d%d%d%d%d"
 
--- Usunięcie znaków nie będałcych literami
-result = str:gsub("%W", "")
-print(result)  -- Output: "H3110W0rldLuaPr0gramm1ng"
+-- Usuń adresy e-mail
+local without_email = text:gsub(email_pattern, "")
+print(without_email)  -- Wypisuje: ", Telefon: +48 123 456 789"
+
+-- Usuń numery telefonów
+local without_phone = text:gsub(phone_pattern, "")
+print(without_phone)  -- Wypisuje: "E-mail: przyklad@example.com, Telefon: "
 ```
 
-## Głębsze zrozumienie
+## Deep Dive - Dokładna analiza:
+Lua oferuje potężne narzędzia do manipulacji tekstami przez wzorce stylizowane na wyrażenia regularne. Wersje Lua od 5.1 do najnowszej wprowadzały różne udoskonalenia, ale podstawowa funkcjonalność pozostała stabilna.
 
-Funkcja gsub() jest częścią biblioteki standardowej string w Lua, dostępnej od jego pierwszych wersji. Wspiera wzorce, które są trochę podobne do wyrażeń regularnych w Perl, ale mniej rozbudowane. 
+Alternatywą dla `string.gsub` jest użycie funkcji `string.match` do znalezienia pasujących fragmentów, a następnie ich usunięcie - ale to bardziej karkołomne i mniej wydajne. Warto pamiętać, że wzorce Lua nie są tak rozbudowane jak w pełni rozwinięte wyrażenia regularne, znane na przykład z Perl.
 
-Jeżeli chodzi o alternatywy, mogłoby to obejmować napisanie własnej funkcji do iteracji przez ciąg, ale gsub() jest na tyle wydajne i wszechstronne, że rzadko jest to konieczne. 
+Implementacja potraktowania wzorców w Lua różni się od typowych wyrażeń regularnych – na przykład znak `%` używany jest jako escape dla specjalnych znaków, zamiast bardziej powszechnego w wyrażeniach regularnych znaku `\`.
 
-Co ciekawe, gsub() zwraca dwa wyniki: przetworzony ciąg i liczbę dokonanych zastąpień, co może być przydatne w niektórych przypadkach.
-
-```Lua
-local result, count = str:gsub("%d", "")
-print(result, count)  -- Output: "H World, Lua Programming!" 6
-```
-
-## Zobacz także:
-
-Przydatne źródła dotyczące tego tematu obejmują dokumentację Lua  
-1. [String Manipulation in Lua](https://www.lua.org/manual/5.4/manual.html#6.4)
-2. [Lua Patterns Tutorial](https://www.lua.org/pil/20.2.html)
-3. [Lua gsub function](https://www.lua.org/manual/5.4/manual.html#pdf-string.gsub)
-
-Jak zawsze, praktyka jest najlepszym nauczycielem, więc warto spróbować różnych wzorców i stringów, aby zrozumieć, jak to działa.
+## See Also - Zobacz również:
+- [Programming in Lua (4th edition)](https://www.lua.org/pil/contents.html) - oficjalny przewodnik po języku Lua.
+- [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/) - dokumentacja wzorców w Lua.
+- [Lua-users wiki: Patterns Tutorial](http://lua-users.org/wiki/PatternsTutorial) - poradnik użytkowników Lua na temat wzorców.

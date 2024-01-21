@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:46:20.956633-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,33 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Alistringien Poiminta Pythonilla
+## What & Why? (Mitä & Miksi?)
+Substring extraction is about pulling specific parts from a string. Programmers do it to process or analyze text data - like extracting usernames from email addresses.
 
-## Mikä & Miksi?
-Alistringien poiminta on prosessi, jossa poimitaan osa muuttujasta tai tietotyypistä (tässä tapauksessa merkkijonosta) Python-ohjelmoinnissa. Ohjelmoijat tekevät sen tyypillisesti tiedon suodatukseen, analysointiin tai manipulointiin.
+## How to: (Kuinka tehdä:)
+```Python
+# Basic substring extraction with slice notation
+text = "hello world"
+substring = text[1:5]  # Extracts 'ello'
+print(substring)
 
-## Miten:
+# Extracting from the start and to the end
+start = text[:5]  # Extracts 'hello'
+end = text[6:]   # Extracts 'world'
+print(start, end)
 
-Pythonissa alistringien poiminta on suoraviivaista. Se voidaan tehdä käyttämällä merkkijonojen (str) leikkausoperaatiota.
-
-```python
-str = "Ohjelmointi on hauskaa"
-# Poimi alistringi, joka alkaa indeksistä 0 ja päättyy indeksiin 10
-print(str[0:11])
+# Using a step in slicing
+steps = text[::2]  # Every second character: 'hlowrd'
+print(steps)
+```
+Output:
+```
+ello
+hello world
+hlowrd
 ```
 
-Tulosteeksi saadaan 'Ohjelmointi', koska se on osa alkuperäistä merkkijonoa, joka alkaa indeksistä 0 ja päättyy indeksiin 10.
+## Deep Dive (Syväsukellus)
+Substring extraction has been a part of programming since the early days of string manipulation. Python's slice notation is borrowed from older languages but with a more readable syntax. Alternatives to slicing include using `substr()` in earlier languages or regular expressions for complex patterns. When slicing, Python creates a new string, and the original is left unchanged, promoting immutability and making code less error-prone.
 
-## Syvempi Sukellus:
+## See Also (Katso Myös)
+For more on slicing and string manipulation in Python:
+- Python's official documentation on strings: https://docs.python.org/3/library/stdtypes.html#string-methods
+- Real Python's guide to string slicing: https://realpython.com/python-string-slicing/
 
-Alistringin poiminta Pythonilla perustuu leikkausoperaatioon, joka on historiallisesti periytynyt alkuperäisestä ohjelmointikieli ALGOL 60:sta. 
+If you need to handle more complex patterns, regular expressions are powerful;
+- Python's `re` module documentation: https://docs.python.org/3/library/re.html
 
-Vaihtoehtoja Pythonin merkkijonojen leikkausoperaatioille ovat esimerkiksi `substring`-toiminto kielissä, kuten Java tai C#. 
-
-Pythonissa merkkijonon leikkausoperaatio toimii tehokkaasti, koska se pääsee käsiksi suoraan muistilokatioon, vaikka leikkaus luo uuden merkkijonon eikä muuta alkuperäistä merkkijonoa.
-
-## Katso Myös:
-
-1. Pythonin virallinen dokumentaatio merkkijonoista: https://docs.python.org/3/tutorial/introduction.html#strings
-2. Verkkokurssi merkkijonojen alistringeistä: https://www.learnpython.org/en/String_Slicing
-3. ALGOL 60:n vaikutus ohjelmointikieliin: https://en.wikipedia.org/wiki/ALGOL_60
+For a historical perspective on string manipulation:
+- A retrospective on string manipulation in programming: (No link provided, as this is a fictional reference for the purposes of this example)

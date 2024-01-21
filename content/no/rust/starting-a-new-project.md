@@ -1,7 +1,8 @@
 ---
-title:                "Starter et nytt prosjekt"
-html_title:           "Arduino: Starter et nytt prosjekt"
-simple_title:         "Starter et nytt prosjekt"
+title:                "Å starte et nytt prosjekt"
+date:                  2024-01-20T18:04:21.356131-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Getting Started"
@@ -10,52 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-
 ## Hva & Hvorfor?
-Å starte et nytt prosjekt er å lage en nytt kodebase for et bestemt formål. Programmerere gjør dette for å begynne å løse en annen problemstilling eller utvikle en ny programvare.
+Å starte et nytt prosjekt betyr å initialisere strukturen du trenger for å bygge noe fra scratch i Rust. Programmerere gjør dette for å skape et rent arbeidsområde med alle nødvendige verktøy og biblioteker.
 
 ## Slik gjør du:
-Her er et eksempel på hvordan man kan starte med et nytt prosjekt i Rust med ```cargo init```.
+For å starte, trenger du Rusts pakkehåndtering og byggeverktøy, Cargo:
 
 ```Rust
-$ cargo new mitt_prosjekt
-$ cd mitt_prosjekt
-```
+// Installer først Rust og Cargo ved å følge instruksjonene på https://rustup.rs/
 
-Dette vil generere en ny katalog kalt `mitt_prosjekt` med en enkel "Hello, World!" kodefil og en Cargo.toml fil, din pakkemanager for Rust prosjekt.
+// Åpne så en terminal og kjør:
+cargo new mitt_prosjekt
 
-Koden vil se slik ut:
+// For å bygge og kjøre ditt nye prosjekt:
+cd mitt_prosjekt
+cargo run
 
-```Rust
-fn main() {
-    println!("Hei, Verden!");
-}
-```
-
-Kjør prosjektet ditt med ```cargo run``` i din terminal.
-
-```Rust
-$ cargo run
-   Compiling mitt_prosjekt v0.1.0 (/path/to/your/project/mitt_prosjekt)
-    Finished dev [unoptimized + debuginfo] target(s) in 2.83s
+// Du vil se output lignende dette hvis alt går etter planen:
+   Compiling mitt_prosjekt v0.1.0 (/sti/til/mitt_prosjekt)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.5 secs
      Running `target/debug/mitt_prosjekt`
-Hei, Verden!
+Hello, world!
 ```
 
-Som du ser, sier programmet "Hei, Verden!".
+## Deep Dive
+Rust ble offisielt lansert i 2015 og har raskt blitt et populært språk for systemnære programmer. Med Cargo, som kom med fra starten, får man en robust pakke- og prosjektmanager. I motsetning til noen andre språk hvor du kanskje må bygge opp dette fra grunnen hver gang, gir Cargo deg en standardisert prosjektstruktur. Dette inkluderer en `Cargo.toml` for konfigurasjon, en `src` mappe for kildekoden din, samt det initielle `main.rs` eller `lib.rs` avhengig av om du bygger et binært eller et biblioteksprosjekt.
 
-## Dypdykk
-Rust ble først utgitt i 2010 av Mozilla Research for å løse problemer med system programmering. De ønsket et språk som ga kontroll over systemressurser, men som også vektla hastighet og sikkerhet.
+Det er verdt å nevne alternativer som `cargo-generate`, som lar deg starte et prosjekt basert på forskjellige maler. Dette kan være nyttig når du har mer spesifikke krav eller ønsker å adoptere bestemte prosjektstrukturer fra fellesskapet.
 
-Alternativt kan man kan også bruke andre språk som Go, C++, Java for system programmering, men Rust har fått mye oppmerksomhet på grunn av sin ytelse og memory-safe design.
+Implementasjonsdetaljer er enkle med Rust. Selve språket håndhever god kodepraksis som hjelper i storskala prosjekter, som eierskapsmodellen som hindrer minnelekkasjer og race conditions. Med Cargo blir det inkludert det som trengs for å kompilere prosjektet ditt: avhengigheter, bygg scripts og kommandoer for testing og benchmarking.
 
-Når det gjelder Rust prosjekter, er det viktig å merke seg at Cargo spiller en vesentlig rolle i prosjektadministrasjon. Det håndterer Rust pakker (kalt "crates") og sikrer at riktig versjon er installert og kompilert.
-
-## Se Også
-For mer i dybden informasjon, se følgende ressurser:
-1. [The Rust Programming Language book](https://doc.rust-lang.org/book/)
-2. [Rust by Example](https://doc.rust-lang.org/stable/rust-by-example/)
-3. [Rust-Lang website](https://www.rust-lang.org/)
-4. [Cargo Guide](https://doc.rust-lang.org/cargo/guide/)
----
+## Se også
+- Rust hjemmeside: [https://www.rust-lang.org/](https://www.rust-lang.org/)
+- Cargo bok: [https://doc.rust-lang.org/cargo/](https://doc.rust-lang.org/cargo/)
+- `cargo-generate` GitHub side: [https://github.com/cargo-generate/cargo-generate](https://github.com/cargo-generate/cargo-generate)
+- Rust og WebAssembly bok: [https://rustwasm.github.io/docs/book/](https://rustwasm.github.io/docs/book/)

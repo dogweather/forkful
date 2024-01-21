@@ -1,6 +1,7 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+date:                  2024-01-20T17:37:54.074998-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "C++"
 category:             "C++"
@@ -10,39 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Konwersja Stringów na Małe Litery w C++: Jak to Zrobić
-Napiszemy dzisiaj o konwersji stringów na małe litery w C++. Jest to wystarczająco częste, aby zatytułować ten wpis "Jak to zrobić".
+## What & Why? (Co i Dlaczego?)
+Zmiana napisów na małe litery oznacza przekształcenie wszystkich liter w ciągu znaków na ich małe odpowiedniki. Robimy to dla ujednolicenia danych, łatwiejszego porównywania stringów, czy też przygotowania tekstu do wyszukiwań czy sortowań niezależnych od wielkości liter.
 
-## Co & Dlaczego?
-Konwersja stringa na małe litery polega na zamianie wszystkich wielkich liter w stringu na małe. Programiści robią to często, aby ułatwić sobie porównywanie i sortowanie stringów.
-
-## Jak to Zrobić:
-Wykorzystamy wbudowaną w C++ funkcję `tolower()`. Oto prosty przykład: 
+## How to (Jak to zrobić):
+Chcąc zmienić napis na małe litery w C++, używamy standardowej biblioteki `<algorithm>` i funkcji `std::transform` wraz z `::tolower`.
 
 ```C++
-#include <cctype>
+#include <iostream>
+#include <string>
 #include <algorithm>
+#include <cctype>
 
 int main() {
-    std::string str_upper("WITAJ, ŚWIECIE!");
-    std::transform(str_upper.begin(), str_upper.end(), str_upper.begin(), ::tolower);
-    std::cout << str_upper;
+    std::string text = "Witaj, Świecie!";
+    std::transform(text.begin(), text.end(), text.begin(),
+                   [](unsigned char c){ return std::tolower(c); });
+
+    std::cout << text << std::endl;
+    // Output: witaj, świecie!
+    return 0;
 }
 ```
 
-Wyjście:  `witaj, świecie!`
+## Deep Dive (Głębsze spojrzenie)
+Konwersja na małe litery jest prostym, ale ważnym narzędziem w programowaniu. Kiedyś musieliśmy pisać własne pętle by to zrobić. Teraz `std::transform` i `::tolower` robią wszystko za nas, obsługując nawet różne lokalizacje.
 
-## Szczegółowe Omówienie
-Konwersja stringów na małe litery to powszechna operacja, szczególnie w kontekście przetwarzania tekstu i analizy danych. 
+Inne metody to używanie metod `std::for_each` lub pisania własnej pętli for. Warto też wspomnieć o bibliotece Boost, która oferuje bogatszą funkcjonalność. Implementation może się różnić w zależności od charsetu (np. ASCII vs. Unicode) i lokalizacji.
 
-1. **Kontekst Historyczny**: Początkowo, funkcje konwersji przypadków były częścią większości bibliotek języków programowania, z koniecznością obsługi różnych standardów kodowania. Wraz z ewolucją Unicode, funkcje te stały się bardziej złożone i zróżnicowane.
+Dużym wyzwaniem w C++ jest wielojęzykowość i obsługa różnych systemów kodowania, takich jak UTF-8. Biblioteki takie jak ICU mogą być pomocne w przypadku gdy standardowe metody zawodzą, szczególnie gdy pracujemy z nie-angielskimi zestawami znaków.
 
-2. **Alternatywy**: Jest wiele innych metod konwersji stringa na małe litery. Możemy również użyć pętli for, iterując przez każdy znak i korzystając z funkcji `tolower()`, czy skorzystać z `boost::algorithm::to_lower(str)` z biblioteki Boost.
-
-3. **Szczegóły Implementacji**: Funkcja `tolower()` konwertuje każdy znak na małą literę (jeśli jest to litera). Najważniejsze jest, aby pamiętać o poprawnym obszarze kodowania, szczególnie dla non-ASCII znaków.
-
-## Zobacz Również
-Więcej na ten temat można znaleźć, przechodząc do tych źródeł:
-1. ["tolower" na cppreference.com](https://en.cppreference.com/w/cpp/string/byte/tolower)
-2. [Lowercasing strings with Boost](https://www.boost.org/doc/libs/1_73_0/doc/html/boost/algorithm/to_lower.html)
-3. [Unicode Case Mapping](https://unicode.org/faq/casemap_charprop.html)
+## See Also (Zobacz również)
+- Dokumentacja C++ `std::transform`: http://www.cplusplus.com/reference/algorithm/transform/
+- Dokumentacja C++ `std::tolower`: http://www.cplusplus.com/reference/cctype/tolower/
+- Unicode Technical Report #21: https://unicode.org/reports/tr21/tr21-5.html
+- International Components for Unicode (ICU) Library: http://site.icu-project.org/

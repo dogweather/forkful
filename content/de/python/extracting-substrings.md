@@ -1,7 +1,8 @@
 ---
-title:                "Teilzeichenketten extrahieren"
-html_title:           "PowerShell: Teilzeichenketten extrahieren"
-simple_title:         "Teilzeichenketten extrahieren"
+title:                "Teilstrings extrahieren"
+date:                  2024-01-20T17:46:18.649037-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Teilstrings extrahieren"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,38 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und Warum?
+## What & Why?
+Das Herausziehen von Teilstrings (Substrings) hilft dabei, spezifische Daten aus größeren Textmengen zu gewinnen. Programmierer nutzen diese Technik häufig für die Datenaufbereitung, Validierung oder um bestimmte Muster und Informationen zu isolieren.
 
-Das Extrahieren von Teilstrings ist das Herausnehmen bestimmter Teile eines Strings. In der Programmierung wird dies getan, um spezifische Daten, wie Benutzer-IDs, Tags und Schlüsselwörter zu isolieren.
-
-## Wie geht das:
-
-In Python können wir substrings mit Indexierung oder der `find()` und `slice()` Methode extrahieren. Hier sind einige Beispiele:
+## How to:
+Hier ist der schnelle Weg, Substrings in Python zu extrahieren:
 
 ```python
-# Beispiel String
-s = "Hallo, mein Name ist Python Programmierer!"
-
-# Substring durch Indexierung
-print(s[7:11])         # Ausgabe: "mein"
-
-# Substring durch find() und slice()
-start = s.find("Name")
-end = s.find(" ist")
-substring = s.slice(start, end)
-print(substring)       # Ausgabe: "Name"
+text = "Hallo, Welt!"
+teil = text[7:12]
+print(teil)  # Das druckt 'Welt'
 ```
 
-## Vertiefung
+Noch ein Beispiel mit einem Start- und ohne Endindex: 
 
-Substring-Extraktion ist nicht nur auf Python beschränkt, es ist eine grundlegende Funktion in fast allen Programmiersprachen. Es geht bis in die frühen Tage der Programmierung zurück, als Speicher eine kostbare Ressource war.
+```python
+text = "Python Programmierung"
+teil = text[7:]
+print(teil)  # Ergebnis: 'Programmierung'
+```
 
-Es gibt viele Methoden, um Substrings in Python zu extrahieren, und einige davon verwenden Bibliotheken wie `re` (Regular Expressions) und `numpy`. Während Indexierung und `find()` & `slice()` in den meisten Fällen ausreichen, können diese Bibliotheken in komplexeren Szenarien nützlich sein.
+So klappt's auch von hinten (negative Indizes):
 
-Genauer gesagt, Python speichert Strings intern als Arrays von Bytes. Dies ermöglicht es dem Programm, auf bestimmte Zeichen zuzugreifen, indem es ihren Index verwendet.
+```python
+text = "Python Programmierung"
+teil = text[-13:-1]
+print(teil)  # Ergebnis: 'Programmierun'
+```
 
-## Siehe Auch
+Und wenn du einen Teilstring brauchst, der jeden zweiten Buchstaben nimmt:
 
-- Python Dokumentation für Strings: [Link](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- Python-Reguläre Ausdrücke: [Link](https://docs.python.org/3/library/re.html)
-- Tutorial zum extrahieren von Substrings in Python: [Link](https://www.journaldev.com/23674/python-remove-character-from-string)
+```python
+text = "Python Programmierung"
+teil = text[::2]
+print(teil)  # Ergebnis: 'Pto rgamirg'
+```
+
+## Deep Dive
+Teilstring-Extraktion ist eine grundlegende Technik, die in vielen Programmiersprachen vorhanden ist. In Python gibt's das schon seit den Anfängen. Python nutzt eine 0-basierte Indexierung, was bedeutet, dass der erste Buchstabe an Position 0 ist. Das Substring-Slicing arbeitet mit einem `[start:stop:step]`-Modell.
+
+Es gibt Alternativen zu Slicing, wie die `substring`-Methode in anderen Sprachen, aber in Python ist Slicing geschmeidig und effektiv. Intern verwendet Python Objekte vom Typ `slice` für diese Operationen, was zu schnellen und speichereffizienten Ergebnissen führt.
+
+Noch tiefer? Python speichert lange Strings intern als Arrays von Zeichen. Wenn du einen Substring extrahierst, erzeugt Python ein neues String-Objekt, das einen Verweis auf einen Teil des ursprünglichen Arrays enthält. Das ist Teil der Magie, die Python bei Substring-Operationen so schnell macht.
+
+## See Also
+- Die offizielle Python-Dokumentation über die Stringtypen (auf Englisch): https://docs.python.org/3/library/stdtypes.html#string-methods
+- Ein Python-Tutorial zum Thema Strings und Slicing (auf Englisch): https://realpython.com/python-strings/
+- Das Python-Glossar, für grundlegende Begriffe und Konzepte (auf Englisch): https://docs.python.org/3/glossary.html

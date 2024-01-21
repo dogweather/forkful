@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
+date:                  2024-01-20T18:02:23.036437-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,54 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why? 
-Sending an HTTP request with basic authentication is using a simple authentication scheme of the HyperText Transfer Protocol (HTTP) to protect data transfer between systems. Programmers do it to ensure that only authorized individuals can access certain data or features of a web application.
+## What & Why?
+
+Sending an HTTP request with basic authentication is when your program reaches out to a web server and says "Hey, it's me," using a username and password. Programmers use this to access APIs or resources that need a proof of identity – it's like a secret handshake that lets you in the club.
 
 ## How to:
-Below is a step-by-step guide on sending an HTTP request with basic authentication.
+
+Here's how you ask a server nicely for data with a 'please' in the form of basic authentication:
 
 ```PowerShell
-# Supply your credentials
-$Username = 'YourUsername'
-$Password = 'YourPassword'
- 
-# Create a credentials object
-$SecPass = ConvertTo-SecureString $Password -AsPlainText -Force
-$Cred = New-Object System.Management.Automation.PSCredential ($Username, $SecPass)
- 
-# Define the URL to send the request to
-$URL = 'http://your-url.com'
- 
-# Use Invoke-WebRequest to send the HTTP request
-$Response = Invoke-WebRequest -Uri $URL -Method Get -Credential $Cred
- 
-# Print the response
-$Response.Content
+# Prepping the credentials
+$user = 'YourUsername'
+$pass = 'YourPassword'
+$pair = "$($user):$($pass)"
+$encodedCreds = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($pair))
+
+# Setting up the headers
+$headers = @{
+    Authorization = "Basic $encodedCreds"
+}
+
+# The URL you're knocking on
+$url = 'https://api.example.com/data'
+
+# Now, let's make the call
+$response = Invoke-RestMethod -Uri $url -Method Get -Headers $headers
+
+# Output the results
+$response
 ```
 
-After running this script, you should see an output similar to this:
+Sample output might look like this, assuming the response is in JSON format:
 
-```PowerShell
-<!DOCTYPE html>
-<html lang='en'>
-<head>
-  <title>Your Website Title</title>
-  <!-- other meta tags -->
-</head>
-<body>
-  <!-- your website content -->
-</body>
-</html>
+```json
+{
+    "name": "John Doe",
+    "email": "john@example.com"
+}
 ```
+
 ## Deep Dive
-Basic authentication is a part of HTTP protocol since its inception in 1991. It simply transmits the credentials in clear text, base64 encoded. This doesn't provide strong security as it can be decoded easily.
 
-If you're looking for alternatives, you might want to consider Digest Access Authentication, an extension to HTTP that applies MD5 cryptographic hashing with usage of nonces to prevent replay attacks. Another alternative is token-based authentication which uses tokens for clients to enter their information in a secure way.
+Basic auth is old-school, tracing back to the early days of the internet where everyone knew everyone. While still used, it's not super secure on its own - it's like sending your secret club password on a postcard. Nowadays, we usually send it over HTTPS to encrypt it, which is like putting that postcard in a locked box.
 
-In the PowerShell example, we're using `Invoke-WebRequest` cmdlet which sends an HTTP or HTTPS request to a RESTful web service. `-Uri` parameter specifies the Uniform Resource Identifier (URI) of the Internet resource to which the web request is sent. `-Method` parameter represents the method used for web request. `-Credential` contains the credential object that authorizes the connection to the remote computer. 
+Alternatives? Plenty. You've got API keys, OAuth, bearer tokens... the list goes on. Each comes with its own handshakes and secret words.
+
+Implementation-wise, with PowerShell, you're converting your username and password to a format that the HTTP protocol can understand – base64. But remember, base64 isn't encryption; it's just text toying with a disguise. Any snooper can reveal it unless it's sent over HTTPS.
 
 ## See Also
-For further reading, do check out these sources:
 
-- [About Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/?view=aspnetcore-5.0)
-- [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
+- [Invoke-RestMethod Documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod)
+- [HTTP Basic Access Authentication on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [Understanding Base64 Encoding](https://en.wikipedia.org/wiki/Base64)
+- [Info on HTTPS Encryption](https://en.wikipedia.org/wiki/HTTPS)

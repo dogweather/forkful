@@ -1,6 +1,7 @@
 ---
 title:                "HTTPリクエストの送信"
-html_title:           "Bash: HTTPリクエストの送信"
+date:                  2024-01-20T17:59:56.443224-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTPリクエストの送信"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,51 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# KotlinでHTTPリクエストを送信する
+## What & Why? (何となぜ？)
+HTTPリクエストを送るとは、インターネット上でサーバーとデータをやり取りすること。サーバーから情報を取得したり、データを送信したり、ウェブの仕組みに必須の操作である。
 
-## 何＆なぜ?
-
-HTTPリクエストを送信するとは、ウェブサーバーと通信するために使用されるメソッドのことです。これにより、プログラマーはアプリケーションとウェブサーバー間のデータの送受信を可能にします。
-
-## 実装方法
-
-Ktorを使用したサンプルコードを示します。まず、KtorとKotlinのコルーチンを利用するための依存関係を追加します。
+## How to: (やり方)
+KotlinでHTTPリクエストを送る最も簡単な方法は、`HttpURLConnection`クラスを利用すること。以下にコード例を示す。
 
 ```kotlin
-dependencies {
-    implementation("io.ktor:ktor-client-core:1.6.3")
-    implementation("io.ktor:ktor-client-cio:1.6.3")
+import java.net.HttpURLConnection
+import java.net.URL
+
+fun sendGetRequest() {
+    val url = URL("http://example.com")
+    
+    with(url.openConnection() as HttpURLConnection) {
+        requestMethod = "GET" // HTTP GETリクエスト
+        
+        println("Response Code: $responseCode")
+        inputStream.bufferedReader().use {
+            it.lines().forEach { line ->
+                println(line)
+            }
+        }
+    }
+}
+
+fun main() {
+    sendGetRequest()
 }
 ```
 
-HTTPリクエストの送信は次のように行います。
-
-```kotlin
-import io.ktor.client.*
-import io.ktor.client.request.*
-
-suspend fun main() {
-    val client = HttpClient()
-
-    val response: String = client.get("http://example.com")
-
-    println(response)
-}
+サンプル出力:
+```
+Response Code: 200
+<!doctype html>
+<html>
+...
+</html>
 ```
 
-これにより、`http://example.com`からデータを取得するHTTP GETリクエストが送信されます。応答の文字列がコンソールに表示されます。
+## Deep Dive (深掘り)
+HTTPリクエストはウェブの黎明期から存在し、基本的なウェブ操作に影響を与えている。Kotlinでは、`HttpURLConnection`のほかにも、`khttp`や`Fuel`などのサードパーティライブラリを利用してHTTPリクエストを送る方法がある。各ライブラリは独自の利点があるが、シンプルさを求めるなら`HttpURLConnection`で十分。実装時はタイムアウト設定やエラーハンドリングも忘れずに。
 
-## ディープダイブ
-
-HTTPリクエストを送信するというコンセプトは、ウェブの歴史と深く結びついています。これがなければ、ウェブ上の情報を取得または送信することはできません。例えば、銀行のアプリケーションはHTTPリクエストを送信して口座の残高を取得します。
-
-さて、KotlinではKtor以外にも、OkHttpやFuelなどのライブラリを使用してHTTPリクエストを送信することができます。
-
-具体的な実装については、Ktorでは非同期プログラミングを可能にするKotlinコルーチンが使用されています。これにより、HTTPリクエストの送信と受信をブロックせずに行うことができます。
-
-## 参考資料
-
-- [Kotlin公式ドキュメンテーション](https://kotlinlang.org/docs/reference/)
-- [Ktor公式ドキュメンテーション](https://ktor.io/docs/index.html)
-- [OkHttpのページ](https://square.github.io/okhttp/)
-- [Fuelのページ](https://fuel.gitbook.io/documentation/)
+## See Also (関連情報)
+- [khttp GitHub repository](https://github.com/ascclemens/khttp)
+- [Fuel GitHub repository](https://github.com/kittinunf/fuel)

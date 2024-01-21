@@ -1,7 +1,8 @@
 ---
-title:                "基本認証を使用してhttpリクエストを送信する"
-html_title:           "C#: 基本認証を使用してhttpリクエストを送信する"
-simple_title:         "基本認証を使用してhttpリクエストを送信する"
+title:                "基本認証を使用したHTTPリクエストの送信"
+date:                  2024-01-20T18:01:33.051710-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "基本認証を使用したHTTPリクエストの送信"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,72 +11,83 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why?
+何となぜ？
 
-HTTPリクエストに基本認証を使用するとは、ウェブサーバーからデータを取得したり、送信する際の安全な手段です。これにより、プログラマーは機密データを安全に転送できます。
+HTTPリクエストを基本認証付きで送るとは、ユーザ名とパスワードで保護されたリソースにアクセスするための手段です。これにより、制限されたデータに確実に安全にアクセスすることができます。
 
-## どうやるか：
-
-以下はArduinoによる基本認証を使用したHTTPリクエストのサンプルコードです：
+## How to:
+やり方：
 
 ```Arduino
 #include <ESP8266WiFi.h>
-#include <ESP8266HTTPClient.h>
+#include <Base64.h>
 
-const char* ssid = "your_SSID";
-const char* password = "your_PASSWORD";
+const char* ssid     = "yourSSID";     // WiFiのSSID
+const char* password = "yourPassword"; // WiFiのパスワード
+const char* server   = "server.com";   // サーバのドメインまたはIPアドレス
 
-void setup () {
+const char* httpUser = "yourUsername"; // HTTPのユーザ名
+const char* httpPass = "yourHTTPPass"; // HTTPのパスワード
 
+WiFiClient client;
+
+void setup() {
   Serial.begin(115200);
+  
+  // WiFi接続
   WiFi.begin(ssid, password);
-
   while (WiFi.status() != WL_CONNECTED) {
-
-    delay(1000);
-    Serial.print("Connecting..");
-
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("Connected to WiFi");
+  
+  // HTTPリクエストの送信
+  if (client.connect(server, 80)) {
+    String authValue = "Basic " + base64::encode(String(httpUser) + ":" + String(httpPass));
+    
+    client.println("GET /restricted/data HTTP/1.1");
+    client.println("Host: " + String(server));
+    client.println("Authorization: " + authValue);
+    client.println("Connection: close");
+    client.println();
   }
 }
 
 void loop() {
-  
-  if (WiFi.status() == WL_CONNECTED) { 
-    HTTPClient http;  
-      
-    http.begin("http://yourserver.com");  
-    http.addHeader("Content-Type", "text/plain");  //Specify content-type header
-    http.setAuthorization("username","password");  //Specify basic authentication
-    
-    int httpCode = http.GET();   
-                                               
-   
-    if (httpCode > 0) { 
-
-        String payload = http.getString();
-        Serial.println(payload);                     
-      
-      }
-    
-    http.end();   
+  // サーバからの応答があるまで待機
+  while(client.available()) {
+    String line = client.readStringUntil('\r');
+    Serial.print(line);
   }
-
-  delay(30000);
-
+  
+  // 応答の読み込みが完了したら切断
+  if (!client.connected()) {
+    Serial.println();
+    Serial.println("Disconnecting from server...");
+    client.stop();
+    
+    // 再度接続しなくてもよいので、ループから抜け出す
+    while(true) {
+      delay(1000);
+    }
+  }
 }
 ```
-このサンプルでは、Arduinoが30秒おきにHTTPリクエストを送信し、レスポンスをシリアルコンソールに出力します。
 
-## ディープダイブ：
+## Deep Dive:
+深掘り：
 
-HTTPリクエストの基本認証は、ユーザー名とパスワードを一緒にBase64エンコードした「Authorization」ヘッダーとして送信します。このテクニックは、HTTP/1.0が初めて実装された1990年代から存在しています。
+HTTP基本認証は、1989年に発明されたWebの初期から存在します。これは、HTTPプロトコルの認証メカニズムの一つで、ユーザ名とパスワードをBase64でエンコードして送信します。HTTPSと併用することで、情報が暗号化されるため、信頼性が高まります。
 
-代替手段として、OAuthやJWTなどのより安全な認証方法がありますが、それらはセットアップがより複雑です。基本認証はシンプルで設定が容易なため、セキュリティが必要ない内部ネットワークでよく利用されます。
+代替手段としてOAuthやAPIキーなど他の認証方式がありますが、シンプルさと簡易な実装のために基本認証はまだ利用されています。
 
-実装詳細については、ユーザー名とパスワードをBase64でエンコードする点が重要です。Arduinoでは、WiFiClientおよびHTTPClientライブラリを使用することで、HTTPリクエストと基本認証を容易に実装できます。
+ESP8266などのマイクロコントローラを使用する場合、リクエストのヘッダに認証情報を追加する必要があります。Arduino環境でのHTTP通信には、`ESP8266HTTPClient`ライブラリもありますが、今回はそのライブラリを使わずに直接TCP接続を行っています。
 
-## 参考情報：
+## See Also:
+関連する情報：
 
-1. [Arduino公式](https://www.arduino.cc/en/Main/Software): Arduinoのダウンロードとドキュメンテーション。
-2. [HTTPClientライブラリ](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266HTTPClient): HTTPリクエストを簡単に行うためのライブラリ。
-3. [Basic Authentication on Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication): 基本認証の詳細とその歴史。
+- Arduino公式サイトのHTTPClientライブラリ: https://www.arduino.cc/en/Reference/HTTPClient
+- Base64エンコーディングについて: https://www.base64encode.org/
+- よりセキュアな認証方法としてのOAuth: https://oauth.net/

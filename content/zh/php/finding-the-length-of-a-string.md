@@ -1,7 +1,8 @@
 ---
-title:                "查找字符串的长度"
-html_title:           "Javascript: 查找字符串的长度"
-simple_title:         "查找字符串的长度"
+title:                "获取字符串的长度"
+date:                  2024-01-20T17:48:08.376065-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "获取字符串的长度"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,48 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# PHP 字符串长度求解
+## What & Why? (是什么与为什么？)
+找出字符串的长度就是测量它有多少个字符。程序员需要这信息来验证数据（比如密码强度）、限制输入、或优化存储。
 
-## 什么 & 为什么？
-
-在编程中，字符串长度的概念就是计算在一个字符串中字符的数量。为什么要方便的获取字符长度呢？这是因为，对于数据验证，输入限制，或者字符串操作等方面，知道字符串的长度都是非常有帮助的。
-
-## 如何求解：
-
-PHP 中获取字符串长度的标准方式是使用 `strlen()` 函数。例子如下：
+## How to: (如何操作：)
+```PHP
+<?php
+$string = "你好世界";
+echo strlen($string);  // 输出: 12
+?>
+```
+注意在UTF-8编码下，中文字符可能被计算为多个字节。要准确计算字符数，请使用 `mb_strlen`。
 
 ```PHP
-$str = "Hello, 世界!";
-echo strlen($str);
+<?php
+$string = "你好世界";
+echo mb_strlen($string, "UTF-8");  // 输出: 4
+?>
 ```
 
-输出结果：
+## Deep Dive (深入探究)
+在早期PHP版本中，`strlen()` 函数足以处理大多数字符串长度问题。但随着多语言支持的引入，单个字符可能占多个字节（比如UTF-8编码的中文字符），这就需要 `mb_strlen` 来准确处理。对于不同编码的字符串，始终使用 `mb_strlen`，并明确指定编码。
 
-```PHP
-15
-```
-
-注意对于含有非ASCII字符的字符串, `strlen()` 函数计算的可能不是你预期中的结果, 这是因为它在计算时是按照字节来计数的, 比如 "世界" 占用了 6 个字节. 如果要正确的计算出字符数量, 我们则需要使用 `mb_strlen()` 函数.
-
-```PHP
-$str = "Hello, 世界!";
-echo mb_strlen($str, 'utf8');
-```
-
-输出结果：
-
-```PHP
-9
-```
-
-## 深入探讨
-
-在历史上，由于早期的计算机主要在处理英文字符，因此 `strlen()` 的设计初衷就是以字节为单位的。随着全球化的需求增长, 对支持多语言环境的需求也日益增长, 这就引入了多字节字符集 (比如 UTF-8) 的支持. `mb_strlen()` 方法就是在这样的背景下诞生的。
-
-除了 `strlen()` 或 `mb_strlen()`，你也可以使用其它方式来获取字符串长度，例如 `substr_count($str, "") - 1` 也可达此目的，但是效率上可能不如前者。
-
-## 参考资料
-
-1. [PHP 官方文檔：strlen](https://www.php.net/manual/zh/function.strlen.php)
-2. [PHP 官方文檔：mb_strlen](https://www.php.net/manual/zh/function.mb-strlen.php)
-3. [Stack Overflow: PHP 字符串长度计算含有中文字符](https://stackoverflow.com/questions/17342504/what-is-the-difference-between-strlen-and-mb-strlen)
+## See Also (另请参阅)
+- PHP官方文档关于 `strlen`: https://www.php.net/manual/en/function.strlen.php 
+- PHP官方文档关于 `mb_strlen`: https://www.php.net/manual/en/function.mb-strlen.php 
+- PHP多字节字符串处理: https://www.php.net/manual/en/book.mbstring.php

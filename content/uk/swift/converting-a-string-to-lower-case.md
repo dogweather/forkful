@@ -1,7 +1,8 @@
 ---
-title:                "Перетворення рядка в нижній регістр"
-html_title:           "Elixir: Перетворення рядка в нижній регістр"
-simple_title:         "Перетворення рядка в нижній регістр"
+title:                "Перетворення рядка у нижній регістр"
+date:                  2024-01-20T17:39:20.706021-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Перетворення рядка у нижній регістр"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,48 +11,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-
-Перетворення рядків на нижній регістр - це процес заміни всіх великих літер на маленькі в рядку. Це використовується програмістами для нормалізації даних, наприклад, при порівнянні рядків або перевірці контексту.
+## Що і Чому?
+Перетворення рядків на нижній регістр - це зміна усіх великих літер на маленькі. Це корисне для уніфікації тексту, наприклад, під час порівняння або пошуку даних.
 
 ## Як це зробити:
-
-Використовуючи Swift, ми можемо легко змінити рядок до нижнього регістру. Ось як:
-
 ```Swift
-var str = "HELLO, WORLD!"
-str = str.lowercased()
-print(str)
+let originalString = "Привіт, Світ!"
+let lowercasedString = originalString.lowercased()
+print(lowercasedString)  // Виводить: "привіт, світ!"
 ```
 
-Виходом буде:
+## Докладно:
+Історично методи перетворення рядків на нижній регістр виникли з необхідності обробки тексту в однорідний спосіб. На відміну від методу `.lowercased()`, є метод `.uppercaseString`, який робить протилежне. Перетворення в Swift враховує локалізацію: наприклад, "i" до "I" в Турецькій локалі стане "İ". Також слід зазначити, що `.lowercased()` використовує Unicode для правильного відображення символів.
 
-```
-hello, world!
-```
-
-## Пірнемо глибше:
-
-1. **Історичний контекст:** Функція переведення рядків до нижнього регістру була однією з перших високорівневих функцій обробки рядків, що з'явилися в ранніх мовах програмування.
-
-2. **Альтернативи:** Іноді, замість того, щоб переводити весь рядок в нижній регістр, ви можете вирішити перевести лише першу букву рядка до верхнього регістру (так званий "Title Case"). Це також можливо в Swift:
-
-```Swift
-var str = "hello, world!"
-str = str.capitalized
-print(str)
-```
-
-Виведення:
-
-```
-Hello, World!
-```
-
-3. **Деталі реалізації:** Функція `.lowercased()` в Swift використовує Unicode для точного визначення, як перетворювати кожну букву. Це означає, що вона працює із символами з різних мов та скриптів, не тільки з ASCII.
-
-## Дивись також:
-
-1. [String and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html) - Офіційний підручник Swift про рядки та символи.
-2. [Unicode](https://unicode.org) - Сайт Unicode, де ви можете дізнатися більше про те, як працюють символи в комп'ютерах.
-3. [Swift API Reference](https://developer.apple.com/documentation/swift/string) - Опис функції `.lowercased()` в документації Apple.
+## Див. також:
+- [String Documentation on Apple’s Developer Website](https://developer.apple.com/documentation/swift/string)
+- [Unicode Standard on Case Mapping](https://www.unicode.org/reports/tr21/tr21-5.html)
+- [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)

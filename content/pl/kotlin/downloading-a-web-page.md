@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C#: Pobieranie strony internetowej"
+date:                  2024-01-20T17:44:16.039786-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,36 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Pobieranie strony internetowej to proces ściągania danych z serwera. Programiści robią to, by pracować z treścią offline, analizować dane czy integrować funkcjonalności.
 
-Pobieranie strony internetowej oznacza odczytywanie jej zawartości do Twojego programu. Programiści robią to, aby przetwarzać dane z internetu - od skrapowania danych do automatycznego przeglądania stron.
-
-## Jak to zrobić:
-
-Możemy pobrać stronę internetową przy użyciu biblioteki `Ktor`. Poniższy kod demonstruje, jak to zrobić:
+## How to:
+Kotlin pozwala na proste pobieranie treści sieciowej. Oto podstawowy przykład:
 
 ```Kotlin
-import io.ktor.client.*
-import io.ktor.client.request.*
+import java.net.URL
 
-suspend fun main() {
-    HttpClient().use { klient ->
-        val strona = klient.get<String>("http://wp.pl")
-        println(strona)
+fun main() {
+    val websiteContent = URL("http://example.com").readText()
+    println(websiteContent)
+}
+```
+
+Wyjście (sample output):
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+    ...
+</html>
+```
+Ten kod wyświetli kod HTML strony example.com.
+
+## Deep Dive
+Pobieranie stron internetowych jest starym jak WWW. Historia sięga protokołu HTTP i HTML. Alternatywami są biblioteki jak OkHttp lub Retrofit dla funkcji bardziej zaawansowanych, takich jak obsługa błędów i asynchroniczność.
+
+```Kotlin
+import okhttp3.OkHttpClient
+import okhttp3.Request
+
+fun main() {
+    val client = OkHttpClient()
+    val request = Request.Builder()
+                     .url("http://example.com")
+                     .build()
+
+    client.newCall(request).execute().use { response ->
+        if (!response.isSuccessful) throw IOException("Błąd: ${response.code}")
+
+        println(response.body?.string())
     }
 }
 ```
 
-Jako wynik, pokaże zawartość strony wp.pl.
+Korzystanie z zewnętrznych bibliotek daje większą kontrolę i bezpieczeństwo. Pamiętaj o dodaniu zależności w Gradle.
 
-## Wgłębny nurkowanie:
-
-1. Kontekst historyczny: Początkowo, programiści musieli samodzielnie zaimplementować funkcje pobierania stron, co było trudne i niewygodne.
-2. Alternatywy: Oprócz `Ktor`, można użyć innych bibliotek w Kotlinie, takich jak `Jsoup` albo `Fuel`.
-3. Szczegóły implementacji: `Ktor` działa asynchronicznie, nie blokując głównego wątku podczas pobierania strony.
-
-## Zobacz także:
-
-1. Dokumentacja `Ktor`: [link](https://ktor.io/)
-2. Przewodnik `Jsoup`: [link](https://jsoup.org/cookbook/)
-3. Przewodnik `Fuel`: [link](https://fuel.gitbook.io/documentation/)
+## See Also
+- OkHttp: https://square.github.io/okhttp/
+- Retrofit: https://square.github.io/retrofit/
+- Dokumentacja Kotlin: https://kotlinlang.org/docs/reference/
+- Przewodnik po HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview

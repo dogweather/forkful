@@ -1,7 +1,8 @@
 ---
-title:                "Łączenie ciągów znaków"
-html_title:           "Arduino: Łączenie ciągów znaków"
-simple_title:         "Łączenie ciągów znaków"
+title:                "Łączenie łańcuchów znaków"
+date:                  2024-01-20T17:35:17.521422-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Łączenie łańcuchów znaków"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,48 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Concatenation to łączenie kilku stringów w jeden. Programiści robią to, by składać tekst z różnych części, np. tworząc wiadomości czy dynamiczne treści.
 
-Łączenie ciągów (string concatenation) to proste polegające na złączeniu dwóch lub więcej ciągów znaków (strings) w jeden. Programiści często to robią, aby tworzyć dynamiczne komunikaty, sformułowania czy ścieżki do plików.
-
-## Jak to zrobić:
-
-Połączenie ciągów w PowerShell jest łatwe. Najprostszym sposobem jest użycie operatora '+'. Dajmy na to:
-
+## How to: (Jak to zrobić:)
 ```PowerShell
-$str1 = "Cześć, "
-$str2 = "świecie!"
-$połączone = $str1 + $str2
-Write-Output $połączone
+# Using the + operator
+$greeting = "Cześć"
+$name = "Ania"
+$fullGreeting = $greeting + ", " + $name + "!"
+Write-Host $fullGreeting # Cześć, Ania!
+
+# Using the -f operator for formatted strings
+$template = "Dzień dobry, {0} {1}!"
+$firstName = "Jan"
+$lastName = "Kowalski"
+$formattedGreeting = $template -f $firstName, $lastName
+Write-Host $formattedGreeting # Dzień dobry, Jan Kowalski!
+
+# Using the -join operator
+$words = "Mam", "na", "imię", "Ewa"
+$joinedSentence = $words -join " "
+Write-Host $joinedSentence # Mam na imię Ewa
 ```
 
-Wyjście:
+## Deep Dive (Głębsze spojrzenie)
+Concatenation w PowerShellu jest proste, ale warto znać kontekst. W przeszłości używano operatora `+`, ale może być nieefektywny przy dużej ilości łańcuchów. Operator `-f` jest użyteczny przy formatowaniu i wstawianiu wartości. Metoda `.Join()` lub operator `-join` są świetne do łączenia kolekcji stringów.
 
-```PowerShell
-Cześć, świecie!
-```
+Nowsze wersje PowerShell obsługują "here-strings", które pozwalają na tworzenie wieloliniowych stringów i ułatwiają concatenation bez obaw o znaki nowej linii.
 
-Pamiętaj, że za pomocą operatora '+' możesz łączyć tylko ciągi. Jeśli chcesz dodać liczby do ciągu, musisz je najpierw przekonwertować na ciągi.
+Alternatywą jest również użycie StringBuilder z .NET, przydatne do optymalizacji w skryptach, które wykonują wiele operacji łączenia stringów.
 
-## Głębsze zrozumienie:
-
-Historia łączenia ciągów jest stara jak programowanie. Jest to jedna z najprostszych operacji, które programista może wykonać.
-
-W PowerShell, alternatywą dla operatora '+' jest użycie metody '.Concat()' klasy String:
-
-```PowerShell
-$str1 = "Cześć, "
-$str2 = "świecie!"
-$połączone = [string]::Concat($str1, $str2)
-Write-Output $połączone
-```
-
-Wydanie będzie takie samo jak wcześniej.
-
-Warto wspomnieć, że operator '+' tworzy nowy ciąg, a nie zmienia istniejących. To ważne w kontekście zarządzania pamięcią.
-
-## Zobacz też:
-
-1. Szczegółowy przewodnik po ciągach w PowerShell: https://ss64.com/ps/syntax-strings.html
-2. Oficjalna dokumentacja Microsoftu na temat ciągów w PowerShell: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1
-3. Dokumentacja Microsoftu na temat operatorów w PowerShell: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1
+## See Also (Zobacz także)
+- [About Join](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_join?view=powershell-7)
+- [Using -f Operator for Formatting Strings](https://ss64.com/ps/syntax-f-operator.html)

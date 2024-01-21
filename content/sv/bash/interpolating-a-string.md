@@ -1,6 +1,7 @@
 ---
 title:                "Interpolera en sträng"
-html_title:           "C++: Interpolera en sträng"
+date:                  2024-01-20T17:50:21.085085-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolera en sträng"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,34 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att interpolera en sträng innebär att infoga variablernas värden inom en sträng direkt. Programmerare gör detta för att skapa dynamisk kod, effektivisera utskriften och förbättra kodläsbarheten.
+## What & Why? (Vad & Varför?)
+Interpolering av strängar tillåter dig att infoga variabler eller uttryck i en sträng. Programmerare använder det för att skapa dynamiska meddelanden och för att förenkla sammanfogning av text och data.
 
-## Så här gör du:
-Vårt exempel kommer att använda echo-kommandot för att demonstrera stränginterpolation i Bash. 
-
+## How to: (Så här gör du:)
 ```Bash
-#!/bin/bash
-name="Stockholm"
-echo "Jag bor i $name"
+name="Världen"
+greeting="Hej, $name!"
+echo $greeting  # Skriver ut: Hej, Världen!
+
+# Med kommandoutbyte:
+user_count=$(who | wc -l)
+echo "Det är $user_count användare inloggade på systemet."
+
+# Med aritmetik:
+a=5
+b=7
+echo "$(( a + b )) är summan av 5 och 7."  # Skriver ut: 12 är summan av 5 och 7.
 ```
-Kör detta skript och du kommer att se följande utdata:
 
-```Bash
-Jag bor i Stockholm
-```
+## Deep Dive (Djupdykning)
+Stränginterpolering är ingen nyhet i programmering. Det har använts i olika språk, som Perl och PHP, långt innan Bash introducerade det. I Bash ersätter `$variabelnamn` eller `${variabelnamn}` med värdet av variabeln, och `$(kommando)` tar utdatan från ett kommando. Alternativ som `'single quotes'` förhindrar interpolering, bra när exakta värden behövs. I komplicerade skript, använd dubbla citattecken för att undvika oönskad ordexpansion. Kom ihåg, allt i Bash er processas sekventiellt, så interpolering sker vid exekveringstid.
 
-## Djupdykning
-Stränginterpolation i Bash går tillbaka till skapandet av Unix-skriptspråken. Det är en standardfunktion och föredras framför att använda konkatenation. Det finns liknande funktioner i andra skriptspråk som Python och Ruby. Införandet av stränginterpolation förbättrade effektiviteten i kodningen och minskade komplexiteten. 
-
-Alternativen till stränginterpolation inkluderar användning av "expr" eller 'printf'-funktionen. Men dessa kan vara mer komplicerade och mindre lättlästa än stränginterpolation.
-
-När det gäller implementeringsdetaljer, när en variabel interpoleras i en sträng, byter Bash automatiskt ut variabelnamnet med dess värde. Det kräver inte några extra resurser och påverkar därmed inte programmets prestanda. 
-
-## Se också 
-För mer information om Bash och stränginterpolation, se följande länkar: 
-
-1. [Bash Beginners Guide](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_03.html)
-2. [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/string-manipulation.html)
-   
-Notera: för att läsa artiklarna ovan behöver du engelska kunskap.
+## See Also (Se även)
+- [Bash Variable Expansion](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion)
+- [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/)
+- [Bash command substitution](https://www.gnu.org/software/bash/manual/bash.html#Command-Substitution)

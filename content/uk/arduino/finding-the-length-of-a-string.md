@@ -1,7 +1,8 @@
 ---
-title:                "Знаходження довжини рядка"
-html_title:           "Arduino: Знаходження довжини рядка"
-simple_title:         "Знаходження довжини рядка"
+title:                "Визначення довжини рядка"
+date:                  2024-01-20T17:46:52.737507-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Визначення довжини рядка"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,37 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та чому?
+## What & Why?
+Що таке довжина рядка та чому це важливо? Довжина рядка – це кількість символів у ньому. Програмісти використовують цю інформацію для обробки текстових даних, валідації вводу та керування пам'яттю.
 
-Знаходження довжини рядка - це процес визначення кількості символів у рядку. Програмісти роблять це, щоб контролювати обробку даних та забезпечувати коректну роботу додатків.
-
-## Як це робити:
-
-Код Arduino, щоб знайти довжину рядка, можна зробити за допомогою функції `length()`, яка повертає кількість символів. Ось простий приклад:
+## How to:
+Ось як отримати довжину рядка в Arduino:
 
 ```Arduino
-String myString = "Hello, world!";
-int length = myString.length();
-Serial.println(length);
+void setup() {
+  Serial.begin(9600);
+  String myString = "Привіт, світе!";
+  int stringLength = myString.length();
+  Serial.println(stringLength);
+}
+
+void loop() {
+  // nothing to do here
+}
 ```
-Цей скетч виведе "13" - кількість символів у "Hello, world!".
+**Вивід:** `14`
 
-## Поглиблено
+## Deep Dive
+Ардуїно широко використовується для DIY проектів. Отже, вам часто потрібно буде працювати з текстовими рядками. Функція `length()` є базовою та швидкою. Історично в мовах програмування завжди була потреба визначити довжину рядка, щоб уникнути переповнення буферів та інших помилок. В Arduino, є інші способи, як-от `strlen()` для `char` масивів. Але `String.length()` є більш безпечним та простим у використанні.
 
-1. **Історичний контекст**: Функція `length()` була введена в Arduino з їх початкової версії і є стандартним методом обработки рядків до сих пір.
-   
-2. **Альтернативний метод**: Якщо ви не хочете користуватися вбудованою функцією `length()`, ви можете обрахувати довжину рядка вручну, використовуючи цикл:
-
-    ```Arduino
-    String myString = "Hello, world!";
-    int length = 0;
-    for(int i=0; myString[i]; i++)
-      length++;
-    Serial.println(length);
-    ```
-3. **Деталі реалізації**: Функція `length()` працює швидко і ефективно, оскільки Arduino зберігає довжину рядка в пам'яті.
-
-## Дивіться також
-
-[Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/): Офіційна документація Arduino по рядкам.  
-[Arduino Programming Course](https://startingelectronics.org/software/arduino/learn-to-program-course/): Хороший вступний курс з програмування на Arduino.
+## See Also
+- [Arduino Reference for String Object](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Arduino Forum for String Discussion ](https://forum.arduino.cc/index.php?board=9.0)

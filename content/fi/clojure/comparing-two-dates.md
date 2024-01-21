@@ -1,7 +1,8 @@
 ---
-title:                "Kahden päivämäärän vertaaminen"
-html_title:           "Bash: Kahden päivämäärän vertaaminen"
-simple_title:         "Kahden päivämäärän vertaaminen"
+title:                "Kahden päivämäärän vertailu"
+date:                  2024-01-20T17:32:47.779409-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,34 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi? 
-Päivämäärien vertaaminen tarkoittaa kahta ajankohtaa suhteessa toisiinsa. Ohjelmoijat tekevät tämän selvittääkseen esimerkiksi, onko yksi päivämäärä ennen toista tai kuinka kauan kahden päivämäärän välinen ero on.
+## What & Why?
+Verrataan kahta päivämäärää, ymmärtääksemme kummanko ajanhetki sijoittuu ennen toista. Ohjelmoijille se on tärkeää ajoitukseen, tapahtumien käsittelyyn ja logiikkaan.
 
-## Miten:
-`java.time.LocalDate` ja `java.time.Period` -luokkia voidaan käyttää päivämäärien vertaamiseen Clojure-ohjelmassa.
+## How to:
+Clojuren `clj-time` kirjasto on kätevä päivämäärävertailuihin: 
 
-```clojure
-(ns comparing-dates
-  (:import [java.time LocalDate Period]))
+```Clojure
+(require '[clj-time.core :as time])
+(require '[clj-time.coerce :as coerce])
 
-(def date1 (LocalDate/of 2020 1 1))
-(def date2 (LocalDate/of 2021 1 1))
-
-(def period (Period/between date1 date2))
-  
-(println (.getYears period)) ;; tulostaa 1
+(let [date1 (coerce/to-date-time "2021-01-01T12:00:00.000Z")
+      date2 (coerce/to-date-time "2021-12-31T16:00:00.000Z")]
+  {:before (time/before? date1 date2)
+   :after  (time/after? date1 date2)
+   :equal  (time/equal? date1 date2)})
+```
+Tuloste:
+```Clojure
+{:before true, :after false, :equal false}
 ```
 
-## Syvällisemmin:
-Päivämäärien vertaaminen ei ole uusi käsite, vaan se on peräisin ohjelmoinnin alkuajoista. Useita tapoja on esitetty ajankohdan määrittämiseen; joitakin näistä tavoista käytetään edelleen.
+## Deep Dive
+Alun perin Clojure-kielessä päivämäärien käsittely oli java.util.Date-luokan varassa. `clj-time` perustuu Joda-Time-kirjastoon, joka on vanhan `java.util.Date`-luokan parempi versio. Jos `clj-time` ei ole käytössä, voi käyttää myös `java.time`-kirjastoa:
 
-`java.time`-kirjasto, joka esiteltiin Javassa 8, tarjoaa useita luokkia, kuten `LocalDate` ja `Period`, joita voidaan käyttää päivämäärien vertailuun.
+`java.time`-esimerkki:
 
-On olemassa myös muita kirjastoja, kuten Joda-Time, jotka tarjoavat samanlaisia ominaisuuksia. Mutta ne ovat nykyään vähemmän suosittuja `java.time`-kirjaston käyttöönoton jälkeen.
+```Clojure
+(import java.time.ZonedDateTime)
 
-Yksityiskohdat päivämäärien vertailusta ja niiden edustuksesta voivat vaihdella ohjelmointikielillä. Joissakin niistä, kuten Pythonissa, päivämäärän tyyppi on sisäänrakennettu, mutta toisissa, kuten JavaScriptissä, se ei ole.
+(defn compare-dates [date1-str date2-str]
+  (let [date1 (ZonedDateTime/parse date1-str)
+        date2 (ZonedDateTime/parse date2-str)]
+    (cond
+      (.isBefore date1 date2) "date1 is before date2"
+      (.isAfter date1 date2)  "date1 is after date2"
+      :else "dates are equal")))
 
-## Katso myös:
-- Java-ohjelman päivämäärien käsittely ja vertaaminen: https://docs.oracle.com/javase/tutorial/datetime/
-- Päivämäärien vertailu Joda-Time-kirjastossa: https://www.joda.org/joda-time/
-- Päivämäärien vertaaminen eri ohjelmointikielissä: https://www.codeproject.com/Articles/2750/Handling-Dates-and-Time-in-Various-Programming-Lan
+(compare-dates "2021-01-01T12:00:00Z" "2021-12-31T16:00:00Z")
+```
+Tuloste:
+```Clojure
+"date1 is before date2"
+```
+
+Verrattuna Joda-Timeen `java.time` on osa Java 8:aa ja sitä uudempia versioita.
+
+Päivämäärien vertailu voi tuntua suoraviivaiselta, mutta aikavyöhykkeet ja kesäaikaan siirtyminen tekevät siitä monimutkaista. On tärkeää valita oikea kirjasto, joka käsittelee nämä yksityiskohdat.
+
+## See Also
+- `clj-time` GitHub-sivusto: https://github.com/clj-time/clj-time
+- Java 8 `java.time` dokumentaatio: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+- Joda-Time projekti: http://www.joda.org/joda-time/
+
+Nämä materiaalit auttavat syventämään ymmärrystä päivämäärien käsittelystä Clojuressa.

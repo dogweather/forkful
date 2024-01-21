@@ -1,7 +1,8 @@
 ---
-title:                "文字列を小文字に変換する"
-html_title:           "Arduino: 文字列を小文字に変換する"
-simple_title:         "文字列を小文字に変換する"
+title:                "文字列を小文字に変換"
+date:                  2024-01-20T17:38:02.826242-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "文字列を小文字に変換"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,31 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why?
+何となぜ？
+文字列を小文字に変換する、つまり「ケース変換」とは文字列中の大文字をすべて小文字にすることです。検索、ソート、ユーザー入力の正規化など、一貫性と比較のためにプログラマはこれを行います。
 
-文字列を小文字に変換するとは、すべての大文字を対応する小文字に置き換えることです。一貫性を保つために、またはユーザー入力を扱う際に、プログラマーはこの技術をよく使用します。
-
-## 方法：
-
-次はElixirで文字列を小文字に変換する方法です。
+## How to:
+やり方：
+Elixirでは、`String.downcase/1`関数を使って簡単に文字列を小文字に変換できます。以下にコード例と出力を示します。
 
 ```elixir
-string = "HELLO, WORLD!"
-downcase_string = String.downcase(string)
-IO.puts(downcase_string)
-```
-実行結果は次の通りです。
-```elixir
-hello, world!
+string = "HELLO, World!"
+IO.puts String.downcase(string)
+# 出力: hello, world!
 ```
 
-## 深堀り
+## Deep Dive
+深掘り：
+Elixirの`String.downcase/1`はUnicodeをサポートしており、多言語のテキストで正確なケース変換が可能です。歴史的には、ASCIIだけをサポートした関数が使われていましたが、国際化のニーズが高まるにつれて、より包括的な対応が求められるようになりました。`downcase`の代わりに正規表現や自前のロジックを使う方法もありますが、パフォーマンスと信頼性の観点から、組み込み関数の使用が推奨されます。
 
-1. 過去の文脈: 古いプログラミング言語では、文字列を小文字に変換するのはより手間がかかりました。しかし、現代の多くの言語では、組み込み関数を提供しています。
-2. 代替方法: `downcase`関数の代わりに、各文字に`char_downcase`を適用することも可能ですが、`downcase`関数の方が簡単で効率的です。
-3. 実装詳細: Elixirの`downcase`関数は、Unicodeの大文字と小文字変換をサポートしています。これは、様々な言語と文字に対応していることを意味します。
-
-## 関連情報
-
-- Elixirの公式ドキュメンテーションには詳細な説明があります: [https://hexdocs.pm/elixir/String.html#downcase/2](https://hexdocs.pm/elixir/String.html#downcase/2)
-- "Programming Elixir"の本も参考になります: [https://pragprog.com/titles/elixir16/programming-elixir-1-6/](https://pragprog.com/titles/elixir16/programming-elixir-1-6/)
+## See Also
+関連情報：
+- Elixirの公式ドキュメント: [String.downcase/1](https://hexdocs.pm/elixir/String.html#downcase/1)
+- Unicodeのケースマッピングに関する情報: [Unicode Case Mappings](https://www.unicode.org/reports/tr21/)
+- Elixir School: [Strings](https://elixirschool.com/en/lessons/basics/strings/)

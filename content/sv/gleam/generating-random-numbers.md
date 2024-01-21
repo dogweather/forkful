@@ -1,7 +1,8 @@
 ---
-title:                "Generera slumpmässiga nummer"
-html_title:           "Arduino: Generera slumpmässiga nummer"
-simple_title:         "Generera slumpmässiga nummer"
+title:                "Generera slumpmässiga tal"
+date:                  2024-01-20T17:49:12.365160-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generera slumpmässiga tal"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Numbers"
@@ -11,38 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att generera slumpmässiga tal är en process där din kod skapar ett nummer som inte kan förutspås. Programmerare gör detta för allt från spellogik till säkerhetskryptering.
 
-Att generera slumpmässiga nummer betyder att skapa nummer utan någon märkbar mönster eller upprepning. Programmerare gör detta för att simulera slumpmässighet och osäkerhet i program och algoritmer.
+## How to:
+```gleam
+import gleam/int
+import gleam/random
 
-## Hur man Gör:
-
-Gleam har inbyggt stöd för att generera slumpmässiga nummer. Följande exempel demonstrerar hur du kan generera ett slumpmässigt heltal mellan 1 och 10.
-
-``` Gleam
-import gleam/random.{Generator}
-
-fn main() {
-  let generator = Generator.default()
-  let (number, next) = generator.int(1, 10)
-  assert Ok(_) = io.println(number)
+pub fn main() {
+  let seed = random.default_seed()
+  let (num, _new_seed) = random.int(seed, 1, 100)
+  int.to_string(num)
 }
 ```
+Sample output: `42`
 
-Kör programmet och se output:
+## Deep Dive
+Randomisering i programmering har använts sedan datorns barndom för att simulera oförutsägbarhet och komplexa system. Historiskt sett har metoder varierat från enkla algoritmer som Linear Congruential Generator (LCG) till mer avancerade som Mersenne Twister. I Gleam används en pseudoslumptalsgenerator som ger en tillräckligt "slumpmässig" sekvens för de flesta användningsfall. Viktigt att notera är att pseudoslumptal inte är lämpliga för stark kryptografisk säkerhet; för dessa ändamål behövs hardware-baserade eller mer sofistikerade algoritmer.
 
-```
-> gleam run .
-7
-```
+Alternativ till Gleam's inbyggda random-modul inkluderar att binda till externa bibliotek skrivna i andra språk som tillhandahåller olika randomiseringstekniker.
 
-Notera att varje körning av programmet kommer att producera ett annat tal.
+Implementationen i Gleam använder sig av Erlang's :rand-modul under huven, vilket gör det robust och välpresterande, samtidigt som det håller Gleam's typsäkra snitt framåt.
 
-## Djup Dykning
-
-Historiskt sett har programmerare alltid behövt generera slumpmässiga nummer för olika uppgifter, från simulering av komplexa system till skapande av unika identifierare. Det finns alternativ till Gleams metoder, som att använda operativsystemets inbyggda funktioner eller att skriva en egen slumpgenerator från grunden. Det är dock enklast att använda ett inbyggt bibliotek som Gleam tillhandahåller. Generatorn använder en version av Mersenne Twister algoritmen för att skapa dess numeriska sekvens.
-
-## Se Även
-
-- Gleam Random modul dokumentation: https://hexdocs.pm/gleam_stdlib/gleam/random 
-- Mersenne Twister: https://en.wikipedia.org/wiki/Mersenne_Twister
-- Introduktion till Random Number Generation: https://towardsdatascience.com/introduction-to-random-number-generators-98dc7e0d842d
+## See Also
+- Gleam's official `random` module documentation: https://hexdocs.pm/gleam_stdlib/gleam/random/
+- Understanding randomness in computer programs: https://en.wikipedia.org/wiki/Random_number_generation
+- More on pseudorandom number generators: https://en.wikipedia.org/wiki/Pseudorandom_number_generator

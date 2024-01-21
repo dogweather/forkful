@@ -1,7 +1,8 @@
 ---
-title:                "कमांड लाइन तर्कों को पढ़ना"
-html_title:           "Kotlin: कमांड लाइन तर्कों को पढ़ना"
-simple_title:         "कमांड लाइन तर्कों को पढ़ना"
+title:                "कमांड लाइन आर्गुमेंट्स पढ़ना"
+date:                  2024-01-20T17:57:35.680899-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "कमांड लाइन आर्गुमेंट्स पढ़ना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,35 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
+## What & Why? (क्या और क्यों?)
+कमांड लाइन आर्ग्यूमेंट पढ़ना यानी कमांड लाइन से इनपुट लेना। प्रोग्रामर्स इसे इसलिए करते हैं, क्योंकि यह ज़रूरी होता है कार्यक्रम को फ्लेक्सिबल बनाने के लिए।
 
-Command line arguments क्या होते हैं? ये कुछ परिवर्तनशील मान होते हैं जिन्हे हम एक script को run करते समय पास कर सकते हैं। प्रोग्रामर्स इसे क्यों करते हैं? प्राथमिकता का सम्पादन, प्रवेशि डेटा को customize करने के लिए और अन्य टॉस्क्स को अनुकूलित करने के लिए। 
-
-## कैसे करें:
+## How to: (कैसे करें:)
+TypeScript में कमांड लाइन आर्ग्यूमेंट पढ़ने के लिए `process.argv` एरे का इस्तेमाल करते हैं। ये बेसिक उदाहरण दिखाता है:
 
 ```TypeScript
-// index.ts
-let myArgs: string[] = process.argv.slice(2);
-console.log('myArgs: ', myArgs);
-```
-उपरोक्त कोड को run करने पर, यदि आपके उस कोड के command line पर `node index.js arg1 arg2 arg3` इत्यादि input देते हैं, तो आपको निम्नलिखित output मिलेगा:
-
-```Shell
-myArgs:  [ 'arg1', 'arg2', 'arg3' ]
+// filename: greet.ts
+const args = process.argv.slice(2); // पहले दो एलीमेंट्स को हटाता हैं
+console.log(`नमस्ते ${args[0]}!`);
 ```
 
-## Deep Dive:
+कमांड लाइन से इसे ऐसे चलाएं:
 
-हमेशा से ही प्रोग्रामर्स ने shell script और अन्य text-based programs में command line arguments का उपयोग किया है। यह ट्रेडिशनल तरीका है किसी script को बाहरी inputs प्रदान करने का। 
+```bash
+$ tsc greet.ts
+$ node greet.js John
+नमस्ते John!
+```
 
-कुछ स्थानों पर आप optargs नामक library का उपयोग करके जटिल command line arguments के साथ काम कर सकते हैं। 
+## Deep Dive (गहराई से जानकारी)
+पहले लोग बहुत सारे टूल्स इस्तेमाल करते थे, पर `process.argv` डायरेक्ट Node.js से आ रहा है।
 
-TypeScript में, `process.argv` array का उपयोग करके command line arguments पढ़ें। "process" एक Global object है जो Node.js environment के बारे में जानकारी प्रदान करता है, और `argv` एक array है जो command line आर्ग्युमेंट्स को माल्टी प्लैटफार्म तरीके से सहेजता है। 
+बेहतर समझ और एरर हैंडलिंग के लिए `yargs` या `commander` जैसे लाइब्रेरीज का भी इस्तेमाल होता है।
 
-## अधिक देखें:
+TypeScript में interface या class के साथ types को डिफाइन करके आर्ग्यूमेंट्स की वैलिडीटी चेक कर सकते हैं। जैसे:
 
-1. [Node.js documentation for Command Line Options](https://nodejs.org/api/cli.html) 
-2. [Stack Overflow on Parsing Command Line Arguments](https://stackoverflow.com/questions/4351521/how-do-i-pass-command-line-arguments) 
-3. [Understanding Process in Node.js](https://nodejs.org/api/process.html)
+```TypeScript
+interface CommandLineOptions {
+  name: string;
+  // आप और भी ऑप्शन्स ऐड कर सकते हैं।
+}
 
-ध्यान दें अगर आपको और विस्तृत साहित्य की आवश्यकता है, तो आप अधिक स्रोतों का अन्वेषण कर सकते हैं।
+// ...कोड के बाकी हिस्से में आप चेक कर सकते हैं कि 'CommandLineOptions' के तहत वैल्यूज सही हैं या नहीं।
+```
+
+## See Also (देखने के लिए)
+- Node.js `process.argv` documentation: [Node.js Docs](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- `yargs` library: [yargs GitHub](https://github.com/yargs/yargs)
+- `commander` library: [Commander GitHub](https://github.com/tj/commander.js)
+
+प्रोग्रामिंग की दुनिया में और सीखने के लिए इन लिंक्स को चेक करते रहें।

@@ -1,7 +1,8 @@
 ---
-title:                "Debug-tulosteen tulostaminen"
-html_title:           "Bash: Debug-tulosteen tulostaminen"
-simple_title:         "Debug-tulosteen tulostaminen"
+title:                "Virheenjäljitystulosteiden tulostaminen"
+date:                  2024-01-20T17:52:12.496761-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Virheenjäljitystulosteiden tulostaminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -10,41 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Mikä & Miksi?
 
-Tulostetaan ohjelman debug-tietoja, eli debug-tulosteita, jotta ymmärretään ohjelman toimintaa syvemmin. Ohjelmoijat tekevät tämän huomatakseen virheet ja tehdäkseen korjaukset.
+Debug-tulostus auttaa ohjelmoijia näkemään, mitä ohjelmassa tapahtuu. Se on välttämätön, koska se valottaa ohjelman suorituksen tilaa ja auttaa virheiden jäljittämisessä.
 
-## Kuinka:
+## How to:
+Miten:
 
-Tässä on esimerkki Elm-koodista (versio 0.19.1), jossa käytetään `Debug.log` -funktiota:
+Elmissä debug-tulostuksen saa esiin `Debug.log`-funktiolla. Se tulostaa arvon ja palauttaa sen sellaisenaan, joten voit sijoittaa sen missä tahansa koodissasi.
 
 ```Elm
+import Html
 import Debug
 
 main =
-  let
-     koodi = "Elm"
-  in
-  Debug.log "Testi" koodi
-```
-
-Ohjelma tulostaa seuraavan consoleen:
+  Html.text (Debug.log "DebugMessage" "Hello, Elm!")
 
 ```
-"Testi: Elm"
-"<muu ohjelman tulostus>"
-```
 
-## Syvempi tieto
+Tämä koodi tulostaa konsoliin "DebugMessage: "Hello, Elm!"" ja näyttää viestin "Hello, Elm!" selaimessa.
 
-Elm-ohjelmointikielen alkuajoista lähtien debug-tulostus on ollut olennainen osa ohjelmoijien työkalupakkia. Se auttaa meitä ymmärtämään paremmin ohjelman toimintaa, mutta sen käyttö tuotannossa ei ole suositeltavaa, koska se voi haitata suorituskykyä.
+## Deep Dive
+Syväsukellus:
 
-Debug-tulostuksen vaihtoehtona voi käyttää "Time-Travel Debugging" -ominaisuutta, joka on yksi Elm kielen merkittävistä piirteistä.
+Elm otti `Debug.log`-funktion käyttöön varhaisessa vaiheessa, jotta ohjelmoijille tarjottiin yksinkertainen tapa tarkkailla ohjelmansa tilaa. Historiallisesti monet kielet, kuten JavaScript, ovat käyttäneet `console.log`-funktiota samassa tarkoituksessa. Ellei debug-tulostusta tarvita, Elm kannustaa käyttämään puhdasta funktiota ilman sivuvaikutuksia. `Debug.log` on työkalu kehityksen aikana, ei tuotantokoodissa. Käyttö voi myös aiheuttaa suorituskykyongelmia, jos tulostettavaa dataa on paljon.
 
-Tietoa `Debug.log`-funktion toteutuksesta: se ottaa kaksi argumenttia: tag (merkkijono) sekä luettavaksi tarkoitettu arvo. Tag auttaa tunnistamaan tulostuslähteen, ja luettavaksi tarkoitettu arvo voi olla mikä tahansa tyyppi.
+## See Also
+Katso Myös:
 
-## Katso myös
-
-1. [Elm Debug -dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-2. [Video, joka kattaa Elm Debug -työkalun](https://www.youtube.com/watch?v=-4j7WupU_g8)
-3. [Elm Time-Travel Debugging -ominaisuuden esittely](https://elm-lang.org/blog/time-travel-made-easy)
+Elm Debugger: https://guide.elm-lang.org/debugging/
+Elm Debug.log dokumentaatio: https://package.elm-lang.org/packages/elm/core/latest/Debug#log
+Elm-yhteisön keskusteluja: https://discourse.elm-lang.org/

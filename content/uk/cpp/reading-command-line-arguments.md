@@ -1,6 +1,7 @@
 ---
 title:                "Читання аргументів командного рядка"
-html_title:           "Arduino: Читання аргументів командного рядка"
+date:                  2024-01-20T17:55:33.660533-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Читання аргументів командного рядка"
 programming_language: "C++"
 category:             "C++"
@@ -10,40 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що І Чому?
+## Що і Чому?
+Читання аргументів командного рядка — це отримання вхідних даних для програми напряму з консолі. Програмісти використовують цей прийом для гнучкості: ви задаєте параметри запуску та налаштовуєте програму без зміни коду.
 
-Інтерфейс командного рядка (Command Line Interface, CLI) дозволяє користувачам interagit' з програмою за допомогою команд уведених через рядок введення. Для програмістів, читання аргументів командного рядка дає змогу керувати поведінкою програми за умовчанням або налаштувати її під кастомні потреби.
-
-## Як до:
-
-Щоб прочитати аргументи з командного рядка, використовуйте основний метод `main()`. Приклад:
-
+## Як це зробити:
 ```C++
 #include <iostream>
 
-int main(int argc, char** argv) {
-    for(int i = 1; i < argc; i++) {
-        std::cout << "Аргумент " << i << ": " << argv[i] << std::endl;
+int main(int argc, char* argv[]) {
+    std::cout << "You have entered " << argc << " arguments:" << std::endl;
+    
+    for (int i = 0; i < argc; ++i) {
+        std::cout << i << ": " << argv[i] << std::endl;
     }
-
+    
     return 0;
 }
 ```
-
-У цьому прикладі, `argc` представляє кількість аргументів командного рядка, а `argv` -- це масив цих аргументів. Спробуйте запустити такий код з аргументами, ви отримаєте наступний вивід:
-
-```C++
-Аргумент 1: тест
-Аргумент 2: 123
+При запуску програми `./program Hello World!`, виведе:
+```
+You have entered 3 arguments:
+0: ./program
+1: Hello
+2: World!
 ```
 
-## Поглиблення:
+## Поглиблений аналіз
+Традиційно, `argc` вказує кількість аргументів, а `argv` — це масив рядків, кожен з яких є одним аргументом. Це старовинний спосіб з часів мови С, проте і в сучасному C++ використовується часто. Як альтернативу, можна використати бібліотеки, такі як Boost.Program_options чи TCLAP, які дозволяють зручніше парсити командний рядок. Розширені можливості включають валідацію введення, автоматичне створення документації щодо параметрів тощо. Власне реалізація читання командного рядка залежить від операційної системи.
 
-Читання аргументів командного рядка є дуже старим концептом, що иснує ще з часів Unix'овських систем. Але чи існують альтернативи? Звісно, такі як використання файлів конфігурації, environment'ових змінних, налаштування через UI або API, але командний рядок все ще використовується через свою простоту і універсальність.
-
-## Дивіться також:
-
-1. ["Command line arguments in C/C++"](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-2. ["Command Line Interfaces"](https://tldp.org/LDP/intro-linux/html/sect_03_02.html)
-
-Remember, be creative, and use these capabilities to build more dynamic, flexible programs.
+## Дивіться також
+- Документація по бібліотеці Boost.Program_options: https://www.boost.org/doc/libs/release/libs/program_options/
+- TCLAP - Templated C++ Command Line Parser Library: http://tclap.sourceforge.net/
+- GNU getopt library for parsing command-line options: https://www.gnu.org/software/libc/manual/html_node/Getopt.html

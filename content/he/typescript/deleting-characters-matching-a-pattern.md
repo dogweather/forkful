@@ -1,6 +1,7 @@
 ---
 title:                "מחיקת תווים התואמים לתבנית"
-html_title:           "Elixir: מחיקת תווים התואמים לתבנית"
+date:                  2024-01-20T17:44:10.850158-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "מחיקת תווים התואמים לתבנית"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,34 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מחיקת תווים התואמים לדפוס ב- TypeScript: הדרך הקלה
-
 ## מה ולמה?
 
-כאשר אנחנו מתייחסים ל"מחיקת תווים התואמים לדפוס", אנחנו מתייחסים להסרת תווים מחרוזת שמתאימה לדפוס מסוים, באמצעות ביטויים רגולאריים או מחרוזות תת. מתכנתים עושים זאת כדי לנקות ולתקן נתונים, כמו מחיקת רווחים מיותרים מסביב למחרוזת.
+ב TypeScript, למחוק תווים התואמים תבנית זה לעבוד עם קטעי טקסט ולהסיר את מה שאיננו רצוי. מתכנתים עושים זאת לנקות קלט, לשפר מבנה נתונים, או להתאים טקסט לשימוש מסוים.
 
-## איך לעשות את זה:
+## איך לעשות:
 
-נוכל להשתמש בשיטת replace של מחרוזת ובביטוי רגולארי:
+כדי למחוק תווים שתואמים תבנית ב-TypeScript, אתה יכול להשתמש בביטויים רגולריים עם המתודה `replace`. דוגמה:
 
-```TypeScript
-let myString = 'שלום עולם!  עשרה   ';
-myString = myString.replace(/\s+/g, ' ').trim();
-console.log(myString); // "שלום עולם! עשרה"
+```typescript
+const cleanString = (str: string, pattern: RegExp): string => {
+  return str.replace(pattern, '');
+};
+
+const exampleString = 'Hey! How are you doing today?';
+const cleanedString = cleanString(exampleString, /[?!]/g); // הסרת סימני שאלה וקריאה
+
+console.log(cleanedString); // הדפסת התוצאה
 ```
 
-בקוד החלופי, אנחנו מציאים את כל הרווחים המיותרים ומחליפים אותם ברווח יחיד. השימוש ב- trim נותן לנו להסיר את הרווחים משני הקצוות של המחרוזת.
+פלט דוגמה:
 
-## צלילה עמוקה:
+```
+Hey How are you doing today
+```
 
-השמת דפוסים מתווים מאוד מוכרת בתכנות. היא נוסעת אחורה לימי שפת התכנות Perl, שאחראית לביטויים הרגולאריים המודרניים שלנו. ב- TypeScript, אנחנו יכולים להשתמש בפעולת replace כחלופה.
+## נפילה לעומק:
 
-חשוב לציין שישנם שיטות אחרות למחיקת דפוסים מתווים ב-TypeScript ושפות תכנות אחרות, כמו split ו- join, אך בדרך כלל הם מתבצעים באופן כמעט זהה, וההבדלים נובעים בעיקר מממשק ה- API.
+ביטויים רגולריים (Regex) הם כלי חזק בכל שפת תכנות, וכבר קיימים מאז שנות ה-60. ב-TypeScript, שהיא הרחבה קטנועית של JavaScript, השימוש ב-Regex דומה מאוד. מלבד `replace`, יש גם שיטות אחרות כמו `match` ו-`search` שמאפשרות עבודה עם תבניות. ב-Symbols חדשניים ב-RegExp יכולים לשפר את הביצועים בהתאם לפעולות שביצעת – למשל, שימוש בסימן `g` לחיפוש גלובלי.
 
-דינמיקות ביטוי הרגולארי המשמשת כאן, '/\s+/g', מייצגת "איתור תווים של רווחים אחד או יותר".
+האם יש חלופות ל-RegExp? כן, דרך אחרת היא להשתמש במתודות מחרוזת כמו `split` ו-`join`. זה יכול להיות אפקטיבי אם אתה צריך להסיר תווים פשוטים, אבל במקרים מורכבים, Regex הוא כלי עוף.
 
 ## ראה גם:
 
-- [מדריך לביטויים רגולאריים ב- TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html)
-- [הסרת תווים מתחילת או מהסוף של מחרוזת](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim)
-- [שימוש במתודה replace ב-TypeScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [MDN Web Docs - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- [RegExp שימושים וטיפים](https://regexr.com/)

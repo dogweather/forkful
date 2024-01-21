@@ -1,7 +1,8 @@
 ---
-title:                "Télécharger une page web"
-html_title:           "Bash: Télécharger une page web"
-simple_title:         "Télécharger une page web"
+title:                "Téléchargement d'une page web"
+date:                  2024-01-20T17:43:29.348322-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Téléchargement d'une page web"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,71 +11,87 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce & Pourquoi?
+## Qu'est-ce que c'est & Pourquoi ?
 
-Télécharger une page web consiste à récupérer son contenu et à le stocker pour une lecture hors ligne. Les programmeurs le font pour l'analyse de données, le web scraping, la sauvegarde de l'information et le test de la connectivité.
+Télécharger une page web, c'est récupérer son contenu via Internet. Les programmeurs font ça pour interagir avec des données en ligne, collecter des informations ou contrôler des appareils à distance.
 
 ## Comment faire :
 
-Voici un exemple simple de comment télécharger une page Web en utilisant Arduino :
-
 ```Arduino
-#include <SPI.h>
-#include <Ethernet.h>
+#include <ESP8266WiFi.h>
 
-byte mac[] = {  
-  0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-
-char server[] = "www.example.com";
-
-EthernetClient client;
+const char* ssid = "Votre_SSID";
+const char* password = "Votre_mot_de_passe";
+const char* host = "example.com";
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
+  delay(10);
 
-  if (Ethernet.begin(mac) == 0) {
-    Serial.println("Failed to configure Ethernet");
+  // Connectez-vous au Wi-Fi
+  Serial.println();
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("");
+  Serial.println("WiFi connected");
+
+  // Debut de la connexion avec le serveur web
+  WiFiClient client;
+  const int httpPort = 80;
+  if (!client.connect(host, httpPort)) {
+    Serial.println("Connection failed");
     return;
   }
 
-  delay(1000);
+  // Envoie d'une requete HTTP
+  client.print(String("GET /") + " HTTP/1.1\r\n" +
+               "Host: " + host + "\r\n" + 
+               "Connection: close\r\n\r\n");
 
-  if (client.connect(server, 80)) {
-    client.println("GET / HTTP/1.1");
-    client.println("Host: www.example.com");
-    client.println("Connection: close");
-    client.println();
+  // Attente de la reponse du serveur
+  while(client.available() == 0) {
+    if (!client.connected()) {
+      Serial.println("Server disconnected!");
+      client.stop();
+      return;
+    }
   }
-  else {
-    Serial.println("Connection failed");
-  }
+
+  // Lecture de la premiere ligne du serveur Web
+  String line = client.readStringUntil('\r');
+  Serial.print("Status Line: ");
+  Serial.println(line);
 }
 
 void loop() {
-  if (client.available()) {
-    char c = client.read();
-    Serial.print(c);
-   }
-
-  if (!client.connected()) {
-    Serial.println();
-    Serial.println("Disconnecting.");
-    client.stop();
-    for(;;)
-      ;
-  }
+  // execution recurrente non nécessaire ici
 }
 ```
 
-Ce programme connecte Arduino à Internet via ethernet, se connecte à un serveur web et télécharge une page. 
+Sortie échantillon :
+```
+Connecting to Votre_SSID
+......
+WiFi connected
+Status Line: HTTP/1.1 200 OK
+```
 
-## Approfondissement
+## Exploration approfondie :
 
-Le téléchargement d'une page web avec Arduino est un concept relativement moderne qui a émergé avec l'avènement des cartes de communication réseau pour les microcontrôleurs. Des alternatives comme les modules wifi ESP8266 ou ESP32 peuvent être utilisées pour réaliser une telle opération d'une manière plus sophistiquée. Les détails d'implémentation pour le téléchargement de la page web impliquent établir une connexion TCP avec le serveur, envoyer une requête HTTP GET et lire la réponse.
+Historiquement, les Arduinos étaient utilisés pour des projets locaux. Avec l’avènement d'Arduino équipés de WiFi comme l'ESP8266 ou l'ESP32, il est possible de télécharger des pages web, ouvrant ainsi la voie à l’Internet des Objets (IoT). Alternatives ? Il existe d'autres manières d'interagir avec le web, comme l'utilisation d'API REST, MQTT pour la communication entre appareils IoT, ou même d'autres cartes comme Raspberry Pi pour des tâches plus lourdes. Les détails criticels de la mise en œuvre incluent la sécurisation des connexions via HTTPS, la gestion des requêtes asynchrones pour ne pas bloquer le programme, et le parsing efficace des données reçues.
 
-## Voir aussi :
+## À voir également :
 
-- Guide approfondi sur le protocole HTTP : http://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html 
-- Utilisation de la bibliothèque Ethernet Arduino : https://www.arduino.cc/en/Reference/Ethernet 
-- Guide pour télécharger une page web en Python pour la comparaison : https://www.geeksforgeeks.org/python-how-to-request-webpages/.
-- Utilisation des modules ESP8266 et ESP32 : https://randomnerdtutorials.com/
+- Documentation Arduino sur la gestion du WiFi : https://www.arduino.cc/en/Reference/WiFi
+- Guide d'utilisation de l'ESP8266 avec Arduino : https://randomnerdtutorials.com/projects-esp8266/
+- Tutoriels sur l'interaction avec des APIs web via Arduino : https://www.arduino.cc/en/Tutorial/WebClient  
+- Introduction à l'IoT et Arduino : https://www.arduino.cc/en/IoT/HomePage

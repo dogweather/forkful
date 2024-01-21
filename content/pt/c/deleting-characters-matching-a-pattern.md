@@ -1,6 +1,7 @@
 ---
 title:                "Excluindo caracteres que correspondem a um padrão"
-html_title:           "Arduino: Excluindo caracteres que correspondem a um padrão"
+date:                  2024-01-20T17:41:45.701311-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "C"
 category:             "C"
@@ -10,50 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Artigo: Removendo Caracteres Correspondentes a um Padrão em C
+## What & Why?
 
-## O Que & Por Quê?
+Deletar caracteres que correspondem a um padrão em C significa procurar certos caracteres numa string e removê-los. Programadores fazem isso para limpar entradas de dados, validar informações ou preparar strings para serem processadas mais adiante.
 
-Deleting caractere pelo padrão permite que você remova caracteres específicos de uma string, essencial quando você deseja extrair dados úteis ou limpar ruído. Isso ajuda a evitar erros relacionados à entrada do usuário, tornando o software mais resistente e eficiente.
+## How to:
 
-## Como Fazer:
+Vamos usar a função `strpbrk` da biblioteca padrão de C para procurar os caracteres indesejados e a função `strcpy` para removê-los.
 
-Veja um exemplo de como usar a função `strpbrk()`, que retorna um ponteiro para o personagem que corresponde a qualquer caracter de uma string:
+```c
+#include <stdio.h>
+#include <string.h>
 
-```C
-#include<stdio.h>
-#include<string.h>
+void delete_pattern(char *str, const char *pattern) {
+    char *found = str;
+    while (*found) {
+        found = strpbrk(found, pattern);
+        if (!found) {
+            break;
+        }
+        strcpy(found, found + 1);
+    }
+}
 
-int main()
-{
-    char str1[40], str2[20];
-    char *pos;
-    
-    printf("Digite a string inicial: ");
-    fgets(str1, sizeof str1, stdin);
-    
-    printf("Digite os caracteres que deseja remover: ");
-    fgets(str2, sizeof str2, stdin);
-    
-    while ((pos = strpbrk(str1, str2)) != NULL)
-        memmove(pos, pos + 1, strlen(pos));
-        
-    printf("A string final é: %s\n", str1);
-    
+int main() {
+    char texto[] = "Exemplo: Eliminar 123 os dígitos.";
+    const char *padrao = "1234567890";
+
+    printf("Original: %s\n", texto);
+    delete_pattern(texto, padrao);
+    printf("Modificado: %s\n", texto);
+
     return 0;
 }
 ```
 
+Saída esperada:
+
+```
+Original: Exemplo: Eliminar 123 os dígitos.
+Modificado: Exemplo: Eliminar  os dígitos.
+```
+
 ## Deep Dive
 
-A função `strpbrk()` foi introduzida no padrão ISO C e, desde então, tem sido uma ferramenta útil para manipular strings em C. 
-Como alternativa, os programadores também podem criar suas próprias funções personalizadas para excluir caracteres correspondentes a um padrão. No entanto, é sempre mais eficiente e seguro usar funções da biblioteca padrão sempre que possível.
-Finalmente, sobre a implementação, `strpbrk()` busca na string o primeiro caractere que corresponde a qualquer caractere especificado na chave, retornando o ponteiro para esse caractere.
+A função `strpbrk` existe desde a linguagem C padrão ANSI C, adotada em 1989. Ela é uma das várias funções de manipulação de strings disponíveis no `<string.h>`. Uma alternativa seria usar expressões regulares com a biblioteca `regex.h`, mas isso pode ser exagero para casos simples.
 
-## Veja Também
+Quanto aos detalhes de implementação, `strpbrk` busca a primeira ocorrência de qualquer um dos caracteres fornecidos no padrão, enquanto `strcpy` copia strings, possibilitando sobrepor o caractere indesejado.
 
-Aqui estão alguns recursos adicionais se você deseja aprender mais:
+Em nossa abordagem direta, simplesmente sobrescrevemos os caracteres que queremos remover ao copiar o resto da string um caractere para trás, usando o `strcpy`. É uma técnica eficiente para strings menores, mas pode não ser ideal para strings muito grandes devido à operação de cópia envolvida a cada remoção.
 
-1. Documentação oficial do GNU C Library: https://www.gnu.org/software/libc/manual/html_node/Search-Functions.html
-2. Página do Tutorialspoint sobre a função `strpbrk()`: https://www.tutorialspoint.com/c_standard_library/c_function_strpbrk.htm
-3. Página de referência Cplusplus sobre a função `strpbrk()`: http://www.cplusplus.com/reference/cstring/strpbrk/
+## See Also
+
+- Documentação da função `strpbrk`: https://www.cplusplus.com/reference/cstring/strpbrk/
+- Tutorial sobre manipulação de strings em C: https://www.tutorialspoint.com/cprogramming/c_strings.htm
+- Introdução a expressões regulares em C: https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html

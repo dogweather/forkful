@@ -1,6 +1,7 @@
 ---
 title:                "Eliminando caracteres que coinciden con un patrón"
-html_title:           "Elixir: Eliminando caracteres que coinciden con un patrón"
+date:                  2024-01-20T17:41:37.730353-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "C"
 category:             "C"
@@ -10,47 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# "## ¿Qué y Por Qué?"
-La eliminación de caracteres que coinciden con un patrón es una técnica usada para depurar cadenas en la programación de C. Los programadores hacen esto para filtrar o hacer una limpieza consistente de datos, mejorando la eficiencia y la facilidad de manejo.
+## Qué y Por Qué?
+Eliminar caracteres que coinciden con un patrón es básicamente buscar y destruir ciertas secuencias en un texto. Los programadores hacen esto para limpiar datos, validar entradas o procesar texto de manera más eficiente.
 
-# "## ¿Cómo hacerlo?:"
-Vamos a aprender a eliminar todos los caracteres en una cadena que coinciden con un cierto patrón. Aquí está el código base:
+## Cómo hacerlo:
+Usaremos la función `strremove()` que añadieron en C23 para hacer este trabajo de forma simple y directa.
 
-```C
+```c
 #include <stdio.h>
 #include <string.h>
 
-void eliminarChars(char *s, char c) { 
-   int j, n = strlen(s); 
-   for (int i=j=0; i<n; i++) 
-      if (s[i] != c) 
-         s[j++] = s[i]; 
-      
-   s[j] = '\0'; 
+void strremove(char *str, const char *sub) {
+    char *p, *q, *r;
+    if (*sub && (q = r = strstr(str, sub)) != NULL) {
+        size_t len = strlen(sub);
+        while ((r = strstr(p = r + len, sub)) != NULL) {
+            while (p < r)
+                *q++ = *p++;
+        }
+        while ((*q++ = *p++));
+    }
 }
 
-int main() { 
-   
-   char s[100]; 
-   fgets(s, sizeof(s), stdin);
-
-   // Eliminate 'a'
-   eliminarChars(s, 'a'); 
-   
-   printf("%s", s);
-
-   return 0; 
+int main() {
+    char text[] = "Hola Mundo! Programamos en C sin rodeos.";
+    strremove(text, "Mundo!");
+    printf("Texto limpio: %s\n", text);
+    return 0;
 }
 
 ```
 
-Cuando ejecutas el programa anterior, si introduces la frase "hola como estas", la salida será "hol como ests", ya que hemos eliminado todas las 'a'.
+Salida esperada:
+```
+Texto limpio: Hola  Programamos en C sin rodeos.
+```
 
-# "## Análisis detallado:"
-La eliminación de caracteres se lleva a cabo desde los primeros días del lenguaje C para manipular cadenas de caracteres de manera más efectiva. Existe una función más sofisticada llamada strpbrk() en la biblioteca de C para encontrar la primera ocurrencia de un conjunto de caracteres, pero para la simple eliminación de caracteres, 'for' y 'if' son suficientes.
+Notarás que la función `strremove()` localiza la subcadena y la elimina, y luego mueve el resto de la cadena para llenar el hueco.
 
-Los programadores han implementado esta técnica de manera diferente en función de sus necesidades. Algunos pueden preferir funciones reutilizables en una biblioteca personalizada, mientras que otros pueden encontrar más rápido ejecutar sentencias condicionales en el lugar donde sea necesario.
+## Inmersión Profunda
+Eliminar caracteres que coincidan con un patrón no siempre ha sido tan sencillo en C. Históricamente, habrías usado bucles y aritmética de punteros. La función `strremove()` es una adición muy reciente en C23. Alternativas como `strchr()`, `strstr()`, o el uso de expresiones regulares con `regex.h` existen pero son más complejas. La implementación mostrada arriba, aunque hecha a mano, es bastante directa: encuentra la subcadena, sobrescribe y avanza.
 
-# "## Ver también:"
-1. "Manipulación de strings en C": Aquí encontrarás detalles de las diferentes formas en que puedes jugar con las cadenas en C.
-2. "Biblioteca de funciones de C": Visite este enlace para obtener información detallada sobre la biblioteca de funciones de C y cómo puede facilitar la programación en C.
+## Ver También
+Para expandir tus conocimientos, consulta la documentación oficial de funciones de manipulación de cadenas en C:
+- [C String Library](https://en.cppreference.com/w/c/string/byte)
+
+Si tienes curiosidad por las soluciones de expresiones regulares en C, mira:

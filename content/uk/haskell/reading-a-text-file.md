@@ -1,6 +1,7 @@
 ---
 title:                "Читання текстового файлу"
-html_title:           "Arduino: Читання текстового файлу"
+date:                  2024-01-20T17:54:41.603932-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Читання текстового файлу"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,36 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що і Чому?)
+Читання текстових файлів – це процес отримання даних з файлів, збережених на диску. Програмісти роблять це для обробки або аналізу інформації, що в них міститься.
 
-Читання текстового файлу - це процес зчитування даних з файла, записаного у вигляді тексту. Програмісти роблять це, щоб маніпулювати цими даними або використовувати їх для різних цілей у своїх програмах.
-
-## Як це зробити:
-
-Простий код для читання файлу в Haskell:
-
+## How to: (Як робити:)
 ```Haskell
-import System.IO  
+-- Імпортуємо модуль
+import System.IO
 
-main = do  
-    handle <- openFile "example.txt" ReadMode  
-    contents <- hGetContents handle  
-    putStr contents  
-    hClose handle 
+-- Функція для читання файлу
+readFileExample :: FilePath -> IO ()
+readFileExample filePath = do
+    content <- readFile filePath
+    putStrLn "Содержимое файла:"
+    putStrLn content
+
+main :: IO ()
+main = readFileExample "test.txt"
 ```
+Під час запуску `main`, програма виведе вміст файлу `test.txt`.
 
-Цей код відкриє "example.txt" для зчитування, збереже його зміст у "contents" та виведе на екран.
+## Deep Dive (Поглиблене вивчення)
+Історично, читання файлів в Haskell використовувало `lazy IO`, але з часом програмісти стикались з проблемами з управлінням ресурсів через непередбачуваний порядок виконання. Сучасні бібліотеки, як-от `text` або `bytestring`, пропонують більше контролю через `strict IO`. Вибір `lazy` чи `strict` версії залежить від конкретної задачі. Розуміння монад IO у Haskell також критично важливо для правильної роботи з файлами.
 
-## Поглиблений матеріал:
+Альтернативи `readFile` включають `readFile'` з бібліотеки `text`, яка прочитає вміст файлу строго, а `Data.ByteString` пропонує аналогічну функціональність для роботи з байтами.
 
-1. Історичний контекст: Haskell був винайдений у 1990 році з метою створення потужної мови програмування, яка спрощує читання файлів та інших операцій з введенням/виведенням.
-
-2. Альтернативи: Є багато інших мов програмування, таких як Python або Java, які теж можна використовувати для читання текстових файлів. Вони можуть бути простішими для початківців.
-
-3. Деталі реалізації: Функція `openFile` в Haskell використовує подвійний механізм: воно відкриває файл і повертає ідентифікатор файлу, який потім можна використовувати для зчитування змісту файлу.
-
-## Додаткова інформація:
-
-1. Офіційна документація Haskell: https://www.haskell.org/documentation/
-2. Туторіал по читанню файлів в Haskell: http://learnyouahaskell.com/input-and-output#reading-files
-3. Порівняння читання файлів в різних мовах програмування: https://www.geeksforgeeks.org/read-write-file-using-haskell/
+## See Also (Дивіться також)
+- [Haskell Wiki on IO](https://wiki.haskell.org/IO_inside)
+- [Text library](https://hackage.haskell.org/package/text)
+- [Bytestring library](https://hackage.haskell.org/package/bytestring)
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/input-and-output) - введення в IO у Haskell.

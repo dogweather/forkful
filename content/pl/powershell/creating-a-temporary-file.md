@@ -1,7 +1,8 @@
 ---
-title:                "Tworzenie tymczasowego pliku"
-html_title:           "C#: Tworzenie tymczasowego pliku"
-simple_title:         "Tworzenie tymczasowego pliku"
+title:                "Tworzenie pliku tymczasowego"
+date:                  2024-01-20T17:41:13.845892-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,34 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why?
+Tworzenie pliku tymczasowego to proces generowania tymczasowego miejsca do przechowywania danych. Programiści robią to, aby przechować informacje, które są potrzebne tymczasowo, jak np. podczas przetwarzania danych lub w testowaniu kodu.
 
-Tworzenie tymczasowego pliku polega na utworzeniu pliku o określonym czasie życia, używanego do przechowywania informacji przez krótki okres czasu. Programiści korzystają z plików tymczasowych do zapisaniu danych pośrednich, które mogą być potrzebne później w trakcie wykonywania programu.
-
-## Jak:
-
-Poniżej przedstawię przykład tworzenia pliku tymczasowego w PowerShell:
+## How to:
 ```PowerShell
-# Tworzenie nazwy pliku
+# Tworzenie pliku tymczasowego
 $tempFile = [System.IO.Path]::GetTempFileName()
+"Przykładowa zawartość" | Out-File -FilePath $tempFile
 
-# Zapis danych do pliku
-Set-Content -Path $tempFile -Value "Awokado z grilla"
+# Wyświetlenie ścieżki do pliku tymczasowego
+$tempFile
 
-# Wyświetlanie zawartości pliku
+# Odczytanie i wyświetlenie zawartości pliku
 Get-Content -Path $tempFile
+
+# Usunięcie pliku tymczasowego
+Remove-Item -Path $tempFile
 ```
-To powyższe polecenia utworzą plik tymczasowy i zapiszą do niego tekst "Awokado z grilla". Następnie wyświetli zawartość pliku.
 
-## Deep Dive:
+Sample output:
+```
+C:\Users\Example\AppData\Local\Temp\tmp1234.tmp
+Przykładowa zawartość
+```
 
-Pliki tymczasowe są używane od początków programowania komputerowego. Powstają jako odpowiedź na potrzebę przechowywania danych między różnymi operacjami lub sesjami. Pozwalają na przechowywanie dużych ilości danych, które nie muszą być przechowywane na stałe.
+## Deep Dive
+Pliki tymczasowe są stare jak sama informatyka. Służą do wielu celów, od buforowania i przetwarzania danych po testy jednostkowe bez ryzyka uszkodzenia stałych danych. W PowerShellu, `[System.IO.Path]::GetTempFileName()` wykorzystuje API Windowsa do zapewnienia unikatowej nazwy pliku, który jest automatycznie tworzony w folderze tymczasowym systemu. Można też stworzyć plik tymczasowy ręcznie, używając cmdlet `New-Item`, ale GetTempFileName() jest prostsze i bezpieczniejsze, bo minimalizuje ryzyko konfliktów nazw.
 
-Jeśli chodzi o alternatywy, wykorzystanie pamięci RAM do przechowywania danych tymczasowych może być szybsze, ale jest ograniczone przez dostępną ilość pamięci.
+Alternatywą mogą być także niestandardowe skrypty używające `Get-Random` do stworzenia unikalnych nazw plików, ale to mniej polecane z uwagi na potencjalne kolizje nazw. W zakresie implementacji warto pamiętać, by zawsze usuwać pliki tymczasowe po ich użyciu, aby nie zaśmiecać systemu zbędnymi plikami.
 
-W PowerShell, funkcja [System.IO.Path]::GetTempFileName() tworzy unikalne pliki tymczasowe. Każdy utworzony plik otrzymuje unikalną nazwę, co zapobiega kolizji z innymi plikiem tymczasowym. 
-
-## See Also:
-
-- Dokumentacja Microsoft odnośnie do funkcji GetTempFileName(): [System.IO.Path.GetTempFileName Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename?view=net-5.0)
-- Alternatywa dla plików tymczasowych - Pamięci RAM: [RAM as a storage in computing](https://en.wikipedia.org/wiki/Random-access_memory)
+## See Also
+- [File and Stream I/O](https://docs.microsoft.com/en-us/dotnet/standard/io/)
+- [PowerShell documentation](https://docs.microsoft.com/en-us/powershell/)

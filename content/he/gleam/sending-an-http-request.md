@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http"
-html_title:           "Bash: שליחת בקשת http"
-simple_title:         "שליחת בקשת http"
+title:                "שליחת בקשת HTTP"
+date:                  2024-01-20T17:59:50.312487-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,32 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# שולחים בקשת HTTP ב-Gleam 
-
-## מה זה ולמה?
-שליחת בקשת HTTP היא פעולה שבה מחשב או תוכנה מבקשים מידע משרת על ידי שליחת בקשת HTTP. תכנתים עושים את זה כדי למצוא, לשנות, להוסיף או למחוק נתונים בשרת.
+## מה ולמה?
+שליחת בקשת HTTP היא הליך שבו המחשב שלך מבקש מידע משרת ברשת. תכנתים עושים זאת כדי לשלוף מידע, לשלוח נתונים, או לבצע פעולות מרחוק.
 
 ## איך לעשות:
-הנה איך אתה שולח HTTP request ב-Gleam.
+קוד שבו תשלחו בקשת HTTP ב-Gleam עשוי להיראות כך:
 
-```Gleam
-import gleam/http.{Error}
-import gleam/httpc.{get, Client}
+```gleam
+import gleam/http
+import gleam/httpc
+import gleam/result.{Result, Ok, Error}
 
-fn fetch_data() {
-  let client = Client.default()
-  let result = get(client, "https://api.example.com/data")
-  case result {
-    Ok(response) -> io.println(response.body)
-    Error(e) -> io.println("Failed to get data: " ++ string.from(e))
+pub fn make_request() -> Result(http.Response, http.Error) {
+  httpc.send(http.Request(
+    method: http.Get,
+    url: "https://example.com",
+    headers: [],
+    body: nil,
+  ))
+}
+
+pub fn main() {
+  case make_request() {
+    Ok(response) -> 
+      io.println("Got a response!")
+      io.println(response)
+    Error(error) ->
+      io.println("Oops, there was an error.")
+      io.println(error)
   }
 }
 ```
 
-## ביקור עמוק 
-במהלך השנים, יציאת בקשת HTTP הפכה לחלק בלתי נפרד מתכנות רבות. בעוד שבשפות אחרות ייתכן שלא היית צריך לדעת כיצד לשלוח בקשת HTTP, ב-Gleam, אנחנו שמים דגש על שליטה מלאה ותחשיב על עצמך. חלופות אחרות כוללות ביבליותיהם של HTTP-ביבליות אחרות, אך Gleam מחזיקה באופציה הכי נוחה לדעתי. 
+פלט הדוגמה:
 
-## לראות גם:
-למידע נוסף שאולי יעזור לך להבין:
-1. [HTTP ב-VMDN](https://developer.mozilla.org/en-US/docs/Web/HTTP) 
-3. [מבוא ל-Gleam](https://gleam.run/getting-started/)
+```
+Got a response!
+Response(status: 200, headers: [], body: "Hello, World!")
+```
+
+או
+
+```
+Oops, there was an error.
+Error(ConnectTimeout)
+```
+
+## עיון מעמיק
+שליחת בקשות HTTP היא חלק אינטגרלי בתכנות כבר מאז אימוץ הפרוטוקול בשנות ה-90. יש חלופות כמו GraphQL ו-WebSocket ליישומים שונים, אבל HTTP נשאר מוביל בזכות פשטותו ורווחיותו. Gleam משתמש בחבילת `httpc` לשליחת בקשות, אבל יש גם חבילות חיצוניות כמו `gleam_http` או `reqwest` שמתווספות יכולות נוספות.
+
+## גם כדאי לראות
+- התיעוד של Gleam HTTP: <https://hexdocs.pm/gleam_http/>
+- מדריכים ל-Gleam: <https://gleam.run/book>
+- רשימת חבילות של Gleam: <https://hex.pm/packages?search=gleam>

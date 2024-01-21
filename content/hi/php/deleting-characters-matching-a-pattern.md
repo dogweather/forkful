@@ -1,7 +1,8 @@
 ---
-title:                "पैटर्न से मिलते जुलते वर्णों को हटाना"
-html_title:           "Elixir: पैटर्न से मिलते जुलते वर्णों को हटाना"
-simple_title:         "पैटर्न से मिलते जुलते वर्णों को हटाना"
+title:                "पैटर्न से मेल खाते अक्षरों को हटाना"
+date:                  2024-01-20T17:43:09.475446-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पैटर्न से मेल खाते अक्षरों को हटाना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,51 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-किसी पैटर्न/प्रतिमान से मेल खाने वाले वर्णों को हटाना मतलब है PHP में ऐसे वर्णों को संशोधन करना जो एक निर्दिष्ट प्रतिमान/पैटर्न से मेल खा रहे हों। प्रोग्रामर्स इसे आंकड़ों से निपटने, डाटा सफाई और बेहतर इनपुट प्रबंधन के लिए करते हैं।
+पैटर्न से मेल खाते कैरक्टर्स को हटाना मतलब विशेष तरह के कैरक्टर्स को स्ट्रिंग से निकाल देना। प्रोग्रामर इसे डेटा सफाई, वैधीकरण या फॉर्मेटिंग के लिए करते हैं।
 
-## कैसे करें:
+## How to: (कैसे करें:)
 
-PHP में, हम `preg_replace()` का उपयोग कर सकते हैं। यहां एक उदाहरण है:
-
-```PHP
-<?php
-$string = "Hello, World!";
-$string_new = preg_replace("/[^a-zA-Z0-9]/", "", $string);
-echo $string_new;
-?>
-```
-
-आउटपुट होगा:
-
-```
-HelloWorld
-```
-
-## गहराई में जाएं:
-
-"Deleting characters matching a pattern" का विधान PHP 4.0 और PHP 5.0 के बीच में आया था। इससे पहले इसे बीटा बाई बीट एक्सेस मेथड का उपयोग करके किया जाता था। 
-
-आप substr_replace() और str_replace() जैसे विकल्प भी उपयोग कर सकते हैं, लेकिन preg_replace() बेहद शक्तिशाली है क्योंकि यह नियमित अभिव्यक्तियों का समर्थन करता है।
-
-हम प्रतियोगी "str_replace" का उपयोग नीचे दिए गए कोड में देख सकते हैं:
+PHP में, आप `preg_replace()` फंक्शन का उपयोग करके पैटर्न मैचिंग करके कैरक्टर्स डिलीट कर सकते हैं।
 
 ```PHP
 <?php
-$string = "Hello, World!";
-$string_new = str_replace(' ', '', $string);
-echo $string_new;
+$text = "नमस्ते! कैसे हैं आप? 123";
+$pattern = '/[0-9]+/'; // संख्याओं को ढूंढने का पैटर्न
+
+$cleaned_text = preg_replace($pattern, '', $text);
+echo $cleaned_text; // आउटपुट: "नमस्ते! कैसे हैं आप? "
 ?>
 ```
 
-आउटपुट होगा:
+## Deep Dive (गहराई से विवेचना)
 
-```
-Hello,World!
-```
+`preg_replace()` फंक्शन PCRE (Perl Compatible Regular Expressions) का इस्तेमाल करता है। यह पहले PHP 4 में आया था, और अब PHP 7 और PHP 8 में भी है। अल्टरनेटिव में आप `str_replace()` या `str_ireplace()` का इस्तेमाल कर सकते हैं, अगर सिर्फ साधारण स्ट्रिंग्स को रिप्लेस करना हो। लेकिन जब पैटर्न मैचिंग की आवश्यकता हो, `preg_replace()` ज्यादा शक्तिशाली होता है। इसके इंटरनल इम्प्लिमेंटेशन में यह "backtracking" एल्गोरिथ्म का उपयोग करता है, जो पैटर्न को मैच करने के लिए इधर-उधर देखता है।
 
-## अन्य देखें:
+## See Also (और भी देखें)
 
-1. `str_replace()` का PHP प्रलेखन: [https://www.php.net/manual/en/function.str-replace.php](https://www.php.net/manual/en/function.str-replace.php)
-2. `preg_replace()` का PHP प्रलेखन: [https://www.php.net/manual/en/function.preg-replace.php](https://www.php.net/manual/en/function.preg-replace.php)
+- PHP official documentation for preg_replace: [PHP: preg_replace - Manual](https://www.php.net/manual/en/function.preg-replace.php)
+- Regular expressions tutorial: [Regex Tutorial](https://www.regular-expressions.info/tutorial.html)
+- PHP Regular Expressions (PCRE): [PHP: PCRE - Manual](https://www.php.net/manual/en/book.pcre.php)

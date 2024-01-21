@@ -1,7 +1,8 @@
 ---
-title:                "Відправлення HTTP-запиту"
-html_title:           "Bash: Відправлення HTTP-запиту"
-simple_title:         "Відправлення HTTP-запиту"
+title:                "Надсилання HTTP-запиту"
+date:                  2024-01-20T18:00:30.101099-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,34 +11,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why?
 
-Відправка HTTP-запиту - це засіб комунікації з веб-сервером або API. Програмісти роблять це для виконання операцій, як от отримання, оновлення або видалення даних.
+Суть та Причини?
 
-## Як це робити:
+Sending HTTP requests is how your Ruby program talks to the web; it's like asking a question and awaiting the answer. Programmers do this to retrieve data, submit forms, or interact with APIs – essential for feature-rich applications.
 
-Для відправлення HTTP-запиту в Ruby можна використовувати бібліотеку Net::HTTP. Давайте спробуємо відправити GET-запит.
+## How to:
 
-```Ruby
+Як це зробити:
+
+Ruby's standard library, Net::HTTP, is simple to use for sending requests:
+
+```ruby
 require 'net/http'
 require 'uri'
 
-uri = URI.parse("http://example.com/")
-response = Net::HTTP.get_response(uri)
+uri = URI('https://api.example.com/items')
+response = Net::HTTP.get(uri)
+
+puts response
+```
+
+Sample output:
+
+```
+[{"id":1,"name":"Apple"},{"id":2,"name":"Orange"}]
+```
+
+Post request with form data:
+
+```ruby
+require 'net/http'
+require 'uri'
+
+uri = URI('https://api.example.com/items')
+request = Net::HTTP::Post.new(uri)
+request.set_form_data({'name' => 'Banana'})
+
+response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') do |http|
+  http.request(request)
+end
 
 puts response.body
 ```
 
-Ця програма з’єднується з веб-сервером на example.com та друкує тіло відповіді.
+Assuming the API acknowledges the POST request:
 
-## Поглиблено:
+```
+{"id":3,"name":"Banana","status":"created"}
+```
 
-1. Історичний контекст: HTTP-запити на початку були задумані як простий спосіб обміну гіпертекстовою інформацією через інтернет.
-2. Альтернативи: До альтернатив бібліотеки Net::HTTP в Ruby належать Faraday та HTTParty. Вони можуть бути простішими у використанні в деяких випадках.
-3. Деталі реалізації: При відправленні HTTP-запиту програма створює TCP-з'єднання з веб-сервером, відправляє запит, отримує відповідь і закриває з'єднання.
+## Deep Dive
 
-## Див. також:
+Поглиблений Аналіз:
 
-* Офіційна документація Ruby для Net::HTTP: https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html
-* Faraday: https://lostisland.github.io/faraday/
-* HTTParty: https://github.com/jnunemaker/httparty
+Ruby's Net::HTTP module has been around since the 1.x days, constantly evolving. It became friendlier with the introduction of methods like `Net::HTTP.get` and wrappers like OpenURI. It's basic, but it works.
+
+Alternatives? You bet. Many prefer gems like 'httparty' or 'rest-client' for syntactic sugar. They're more intuitive and feature-packed.
+
+Implementation details? Using `Net::HTTP.start` helps manage connections more effectively. SSL? Set `use_ssl: true` and always verify certificates to avoid security risks.
+
+## See Also
+
+Дивіться Також:
+
+- Ruby Net::HTTP documentation: [https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html)
+- httparty gem: [https://github.com/jnunemaker/httparty](https://github.com/jnunemaker/httparty)
+- rest-client gem: [https://github.com/rest-client/rest-client](https://github.com/rest-client/rest-client)
+- Ruby security best practices: [https://brakemanscanner.org/docs/warning_types/ssl_verification_bypass/](https://brakemanscanner.org/docs/warning_types/ssl_verification_bypass/)

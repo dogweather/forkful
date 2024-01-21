@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon pituuden selvittäminen"
-html_title:           "Go: Merkkijonon pituuden selvittäminen"
+date:                  2024-01-20T17:47:39.098598-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,44 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Mittauksella tarkoitetaan merkkijonon pituuden selvittämistä. Ohjelmoijat tarvitsevat tätä toimintoa, jotta voivat käsitellä tekstidataa tehokkaasti ja tehdä päätöksiä ohjelmissaan.
 
-Merkkijonon pituuden etsiminen on toimenpide, jolla selvitetään kuinka monta merkkiä merkkijonossa on. Ohjelmoijat tekevät tämän esimerkiksi silloin, kun heidän tarvitsee rajoittaa merkkijonon pituutta tai jakaa se osiin.
+## How to:
+Merkkijonon pituuden saat näin:
 
-## Miten:
-
-Katsotaanpa, kuinka se toimii suoraan esimerkkiä käyttäen:
-
-```Lua 
-local str = "Hei, Suomi!"
-print(#str)
+```Lua
+local teksti = "Hei maailma!"
+print(#teksti)  -- Tulostaa merkkijonon pituuden
 ```
 
-Se tulostaa:
+Tulos:
 
-```Lua 
+```
 12
 ```
 
-Tämä Lua-koodi laskee merkkijono "Hei, Suomi!" merkkien määrän ja tulostaa sen.
-
-## Syväsukellus:
-
-(1) Historiallinen asiayhteys: Lua on ohjelmointikieli, joka on suunniteltu erityisesti upotettaviin sovelluksiin. Se on yksinkertainen ja tehokas, ja sen sisäänrakennetut työkalut, kuten merkkijonon pituuden laskeminen, tekevät siitä sopivan valinnan moniin tehtäviin.
-
-(2) Vaihtoehtoja: On muitakin tapoja laskea merkkijonon pituus Luassa. Yksi näistä on 'string.len' funktio. Esimerkki:
+## Deep Dive
+Lua käyttää `#` operaattoria merkkijonon pituuden hakuun. Historiallisesti, tämä valinta on tehty sen yksinkertaisuuden ja tehokkuuden vuoksi. Vaihtoehtoisesti, voit käyttää `string.len`-funktiota, joka on equivaläntti `#` operaattorille.
 
 ```Lua
-local str = "Hei, Suomi!"
-print(string.len(str))
+print(string.len(teksti))
 ```
 
-(3) Toteutuskohdat: '#'-operaattori Luassa on kätevä työkalu, mutta sillä on myös rajoituksia. Se ei esimerkiksi toimi kunnolla, jos merkkijonossa on nolla tavua ('\0'). Tässä tapauksessa 'string.len' -funktio on parempi valinta, koska se laskee kaikki tavut.
+Tämä toimii samalla tavalla. Merkkijono tallennetaan Lua:ssa 'byte array' muodossa, ja `#` operaattori laskee täten arrayn koon. Tämä tarkoittaa myös sitä, että Unicode-merkit, kuten ääkköset, voivat vaikuttaa laskettuun pituuteen, sillä ne saattavat olla enemmän kuin yhden byten pituisia.
 
-## Katso myös:
-
-Koodin viite: [Lua 5.4 merkkijono-operaattoridokumentaatio](http://www.lua.org/manual/5.4/manual.html#3.4.7)
-
-Ohjekirja: [Programming in Lua](https://www.lua.org/pil/)
-
-Luiz Henrique de Figueiredonin sivu: [Lua-ohjelmointikielen tie operaattorien luomiseen](http://lua-users.org/wiki/User:LuizHenriqueDeFigueiredo)
+## See Also
+- Lua 5.4 referenssi: https://www.lua.org/manual/5.4/manual.html#3.4.7
+- 'Programming in Lua' kirjan alkeet: https://www.lua.org/pil/11.5.html
+- Lua string-funktioiden lista: https://www.lua.org/manual/5.4/manual.html#6.4

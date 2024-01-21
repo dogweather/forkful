@@ -1,7 +1,8 @@
 ---
-title:                "Перетворення рядка в нижній регістр"
-html_title:           "Elixir: Перетворення рядка в нижній регістр"
-simple_title:         "Перетворення рядка в нижній регістр"
+title:                "Перетворення рядка у нижній регістр"
+date:                  2024-01-20T17:38:59.795827-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Перетворення рядка у нижній регістр"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,34 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
-Перетворення рядка в нижній регістр - це процес, коли всі символи в рядку змінюються на їх еквівалент у нижньому регістрі. Програмісти роблять це, щоб уникнути помилок, спричинених відмінностями регістру, та згодом виконати послідовне порівняння.
+## What & Why? (Що і Чому?)
+Переведення рядків у нижній регістр – це зміна всіх великих літер на малі в текстовому рядку. Програмісти це роблять для уніфікації даних, полегшення порівнянь та пошуку.
 
-## Як це робиться:
-Ось приклад коду Python, який конвертує рядок у нижній регістр:
-
+## How to: (Як це зробити:)
 ```Python
-word = "Привіт Світе"
-lowercase_word = word.lower()
-print(lowercase_word)
+# Перетворення рядка у нижній регістр
+text = "Привіт, Як справи?"
+lower_text = text.lower()
+
+print(lower_text)  # виведе: привіт, як справи?
 ```
 
-В результаті ви отримаєте:
+Ще приклад, коли порівнюємо рядки:
+```Python
+# Порівняння рядків без урахування регістра
+user_input = "Київ"
+city = "київ"
 
+print(user_input.lower() == city.lower())  # виведе: True
 ```
-'привіт світе'
-```
 
-## Поглиблений огляд
-### Історичний контекст
-Python від початку мав засоби для роботи з рядками. Метод '.lower()' був включений до них щоб полегшувати роботу з текстами різних регістрів.
+## Deep Dive (Поглиблений розбір)
+Python's `str.lower()` method dates back to the early versions of Python. It allows strings to be converted to a lower case, which is especially useful because case sensitivity can lead to issues during string comparisons. This feature is not unique to Python: most programming languages offer similar functionality.
 
-### Альтернативи
-Якщо потрібно перетворити лише перший символ рядка в нижній регістр, використовуйте метод `capitalize()`. Якщо ж потрібно зробити це для кожного слова в рядку, то `title()` буде тим, що вам потрібно.
+Alternatives include using regular expressions or manual mapping of characters to their lower-case equivalents, but these methods are more verbose and error-prone.
 
-### Розробка
-Функція `lower()` Python базується на таблицях перетворень кодування Unicode, які визначають еквівалент в нижньому регістрі для кожного символу в верхньому регістрі.
+Under the hood, `str.lower()` works by iterating over each character in the string and mapping it to its lower-case equivalent based on Unicode standard. This means it can correctly handle most languages, including complex cases like German's ß, which becomes 'ss'.
 
-## Докладніше
-- [Документація Python про методи рядків](https://docs.python.org/uk/3/library/stdtypes.html#string-methods)
-- [Стандарт Unicode про кодування символів](https://www.unicode.org/standard/standard.html)
+## See Also (Дивіться також)
+- The official Python documentation on string methods: https://docs.python.org/3/library/stdtypes.html#string-methods
+- Unicode Standard for characters: https://home.unicode.org/
+- Python PEP regarding string methods and Unicode: https://www.python.org/dev/peps/pep-3137/

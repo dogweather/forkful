@@ -1,7 +1,8 @@
 ---
-title:                "אינטרפולציה של מחרוזת"
-html_title:           "Arduino: אינטרפולציה של מחרוזת"
-simple_title:         "אינטרפולציה של מחרוזת"
+title:                "שרבוב מחרוזת"
+date:                  2024-01-20T17:50:59.710401-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרבוב מחרוזת"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,33 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מאמר דרך ההשל: ריבוב מחרוזות בהשל (Haskell)
+## What & Why?
+מה זה אינטרפולציה של מחרוזות? זו טכניקה להטמעת ערכים בתוך מחרוזת טקסט בקוד. למה זה נחוץ? כדי להפוך את התוכנה לגמישה וכדי להתאים טקסט למשתמש או מצב.
 
-## מה ולמה?
-ריבוב מחרוזות הוא תהליך בו נכנסים ערכים של משתנים מתוך הקוד לתוך מחרוזת. התכנתים עושים זאת כדי להדפיס, לבנות או למניפולציה של מחרוזות בצורה דינאמית.
-
-## איך:
-```haskell
+## How to:
+```Haskell
 import Text.Printf (printf)
 
 main :: IO ()
 main = do
-    let name = "Avraham"
-        age  = 34
-    putStrLn $ printf "שלום, אני %s ואני בן %d" name age
+    let name = "דוד"
+    let booksCount = 3
+    putStrLn $ printf "שלום, %s! יש לך %d ספרים." name booksCount
 ```
-הפלט:
+פלט:
 ```
-שלום, אני Avraham ואני בן 34
+שלום, דוד! יש לך 3 ספרים.
 ```
 
-## צלילה עמוקה
-- קונטקסט היסטורי: השל, שנכתב בתחילה בשנת 1990, מכיל ספריות כמו "Text.Printf" להפוך את ריבוב המחרוזת לפשוט יותר.
-- חלופות: ספריה כמו "Text.InterpolatedString.Perl6" מאפשרת ריבוי של מחרוזות בצורה המזכירה שפות תכנות אחרות כמו Perl או פייתון.
-- פרטי ההתקנה: פונקציית printf משתמשת בפרמטרים וסימני פרמטר (%s, %d) כדי למקם את הערכים בטקסט.
+## Deep Dive:
+אינטרפולציה של מחרוזות לא הייתה חלק מהשפה המקורית של Haskell, אבל היא הופכת למקובלת יותר בעזרת הספרייה `Text.Printf`. זו ספרייה שמעניקה פונקציונליות דומה לפונקציית `printf` בשפות כמו C. ישנן גם חלופות כמו הפקקיג 'interpolate' ו'formatting' שמציעים גישה עשירה יותר וסינטקס נוח יותר עבור אינטרפולציה.
 
-## ראה גם
-למידה נוספת על ריבוב מחרוזות בהשל:
-- דוקומנטציה אופיציאלית של הספרייה "Text.Printf": https://hackage.haskell.org/package/base-4.14.1.0/docs/Text-Printf.html
-- מאמר שנכתב על נושא זה בקומוניטי: https://schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/printf
-- פוסט בנושא ב-Stack Overflow: https://stackoverflow.com/questions/14557994/what-is-the-haskell-way-of-formatting-strings-with-variables-in-them
+הללו דרכים לטפל באינטרפולציה:
+- `Text.Printf` – גמיש, אבל מבנה סינטקטי מסובך יותר.
+- `Data.Text` עם `Data.Text.Lazy.Builder` – מתאים להרכבה יעילה של טקסט מחרוזות רבות.
+- חבילות חיצוניות כמו 'interpolate' או 'formatting' – סינטקס נקי יותר, תכונות נוספות.
+
+בחירת הגישה תלויה בצרכים הספציפיים של הפרויקט.
+
+## See Also:
+- [Text.Printf documentation](https://hackage.haskell.org/package/base-4.16.1.0/docs/Text-Printf.html)
+- [formatting package](https://hackage.haskell.org/package/formatting)
+- [interpolate package](https://hackage.haskell.org/package/interpolate)
+
+זוהי התחלה למסע בעולם האינטרפולציה של מחרוזות בהסקל. תהליך למידה עשיר ומלא בפתרונות יעילים מחכה לכם.

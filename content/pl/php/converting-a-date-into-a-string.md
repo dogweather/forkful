@@ -1,7 +1,8 @@
 ---
-title:                "Konwersja daty na ciąg znaków"
-html_title:           "Clojure: Konwersja daty na ciąg znaków"
-simple_title:         "Konwersja daty na ciąg znaków"
+title:                "Konwersja daty na łańcuch znaków"
+date:                  2024-01-20T17:37:09.348411-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Konwersja daty na łańcuch znaków"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,44 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+W PHP konwersja daty do postaci łańcucha znaków pozwala na łatwe wyświetlanie i zapisywanie w różnych formatach. Robimy to często, by dostosować datę do preferencji użytkowników lub wymogów systemu.
 
-Konwersja daty na tekst umożliwia nam zapisanie tej daty w czytelniejszym formacie, który z łatwością można wyświetlić lub zapisywać. Programiści przeprowadzają tę operację, aby ułatwić prezentację danych datowych w human-friendly formie oraz aby ułatwić przechowywanie i manipulację tymi danymi.
-
-## Jak to zrobić:
-
-Użyjemy wbudowanej funkcji PHP o nazwie `date()`. Operuje ona na obiekcie `DateTime`.
-
-`date()` przyjmuje dwa argumenty. Pierwszy to format, w jakim chcielibyśmy zobaczyć naszą datę. Drugi, który jest opcjonalny, to znacznik czasu Unix, który chcemy przekształcić.
+## How to:
+Użyj funkcji `date()` do formatowania i konwersji obiektu `DateTime` na łańcuch znaków.
 
 ```PHP
 <?php
+$date = new DateTime();
+echo $date->format('Y-m-d H:i:s');
+// Wyświetla: 2023-03-15 10:00:00
 
-$date = new DateTime('2000-01-01');
-
-echo $date->format('Y-m-d H:i:s') . "\n";
+// Strefy czasowe
+$date->setTimezone(new DateTimeZone('Europe/Warsaw'));
+echo $date->format('Y-m-d H:i:s');
+// Wyświetla: 2023-03-15 11:00:00
 ?>
 ```
 
-To wygeneruje:
+Możesz również skorzystać z funkcji `strftime()` by dostosować format daty do ustawień lokalnych.
 
-```
-2000-01-01 00:00:00
-```
-## Głębsze zanurzenie:
+## Deep Dive
+Przed PHP 8, `strftime()` był popularny w konwersji dat, ale został oznaczony jako przestarzały (deprecated). Od PHP 8, zalecane jest używanie `DateTime::format()`.
 
-Funkcję `date()` wprowadzono w PHP 4, a od tej pory stała się jednym z podstawowych narzędzi dla każdego programisty PHP. 
+Dlaczego konwersja jest ważna? Dostosowanie formatu daty do lokalnych standardów pomaga w międzynarodowej obsłudze użytkowników. Umożliwia także łatwiejsze porównanie i sortowanie dat w bazach danych.
 
-Alternatywą dla `date()` jest funkcja `gmdate()`, która działa dokładnie tak samo, z tym wyjątkiem, że zawsze zwraca czas GMT.
+Alternatywą dla `DateTime::format()` jest `IntlDateFormatter` z rozszerzenia Internationalization (intl), które pozwala na jeszcze bardziej elastyczne formatowanie dat z uwzględnieniem lokalizacji.
 
-`DateTime::format '()` jest metodą obiektu `DateTime` wprowadzoną w PHP 5.2.0, która umożliwia konwertowanie daty na ciąg zgodnie z podanym formatem.
+Implementacja `DateTime::format()` wykorzystuje wewnętrzne klasy C w PHP, co zapewnia wydajność i dokładność w przetwarzaniu dat.
 
-Wszystkie te funkcje korzystają z formatów opartych na tych używanych przez funkcję `strftime()` w języku C. Istnieje wiele różnych znaczników, które można zastosować, każdy reprezentujący różne elementy daty i czasu, na przykład `Y` dla pełnego roku, `m` dla miesiąca i `d` dla dnia.
-
-## Zobacz też:
-
-1. Dokumentacja PHP dla date() - https://www.php.net/manual/pl/function.date.php
-2. Dokumentacja PHP dla gmdate() - https://www.php.net/manual/pl/function.gmdate.php
-3. Dokumentacja PHP dla DateTime - https://www.php.net/manual/pl/class.datetime.php
-4. Dokumentacja PHP dla DateTime::format() - https://www.php.net/manual/pl/datetime.format.php
-5. Formaty języka C używane w PHP - https://www.php.net/manual/pl/function.strftime.php.
+## See Also
+- Dokumentacja PHP na temat DateTime: https://www.php.net/manual/en/class.datetime.php
+- Informacje o funkcji strftime() i jej przestarzałości: https://www.php.net/manual/en/function.strftime.php
+- Przykłady IntlDateFormatter: https://www.php.net/manual/en/class.intldateformatter.php

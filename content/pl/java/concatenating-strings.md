@@ -1,7 +1,8 @@
 ---
-title:                "Konkatenacja ciągów znaków"
-html_title:           "Bash: Konkatenacja ciągów znaków"
-simple_title:         "Konkatenacja ciągów znaków"
+title:                "Łączenie łańcuchów znaków"
+date:                  2024-01-20T17:35:07.509148-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Łączenie łańcuchów znaków"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,39 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Łączenie stringów to technika, dzięki której możemy łączyć dwie lub więcej sekwencji znaków w jedną sekwencję. Programiści korzystają z niej, aby ułatwić wyświetlanie i manipulację danymi tekstowymi.
+## What & Why? (Co i Dlaczego?)
+Łączenie łańcuchów znaków, czyli stringów, to po prostu proces ich zestawiania w jeden ciągły tekst. Dzięki temu możemy tworzyć wiadomości, które mają sens, generować dynamiczne treści czy też manipulować danymi dla formatowania wyjścia.
 
-## Jak to zrobić:
-Podstawową techniką łączenia stringów w Java jest użycie operatora `+`. Here is a simple example:
+## How to? (Jak to zrobić?)
+Łączenie stringów w Javie to pestka. Możesz użyć operatora plus (+), metody `concat()` lub klasy `StringBuilder`. Oto przykłady:
 
-```Java 
-String sentence = "Hello, " + "World!";
-System.out.println(sentence);  // Wydruk: Hello, World!
+```java
+// Operator +
+String greeting = "Cześć, " + "jak się masz?";
+System.out.println(greeting); // Wyświetli: Cześć, jak się masz?
+
+// Metoda concat()
+String hello = "Hej ".concat("świecie!");
+System.out.println(hello); // Wyświetli: Hej świecie!
+
+// StringBuilder
+StringBuilder builder = new StringBuilder();
+builder.append("To ").append("jest ").append("proste.");
+String message = builder.toString();
+System.out.println(message); // Wyświetli: To jest proste.
 ```
 
-Alternatywnie, możemy użyć metody `concat()` klasy String:
+## Deep Dive (Głębsze spojrzenie)
+Historia łączenia stringów sięga początków programowania. W Javie, każdy string jest obiektem klasy `String`, która jest niemutowalna. To oznacza, że każde łączenie tworzy nowy obiekt, co może być problematyczne dla wydajności.
 
-```Java 
-String sentence = "Hello, ".concat("World!");
-System.out.println(sentence);  // Wydruk: Hello, World!
-```
+Alternatywy jak `StringBuilder` (dla operacji w obrębie jednego wątku) i `StringBuffer` (dla operacji wielowątkowych) są bardziej efektywne. Wprowadzono je, by zapewnić wydajność przy częstym dodawaniu stringów.
 
-## Głębsze zrozumienie
-Historia łączenia stringów w Java sięga wstecz do samego początku tego języka. Operator `+` był dostępny od pierwszej wersji i jest on nadal najczęściej stosowany.
+Kiedy używasz `+` do łączenia stringów, kompilator w tle zamienia to na `StringBuilder.append()`. Więc dla prostych operacji może to być ok, ale przy mnóstwie łączeń w pętli lepiej użyc `StringBuilder` bezpośrednio.
 
-Innym rozwiązaniem jest użycie klasy StringBuilder, zwłaszcza gdy mamy wiele operacji konkatenacji do wykonania:
-
-```Java 
-StringBuilder sb = new StringBuilder();
-sb.append("Hello, ");
-sb.append("World!");
-System.out.println(sb.toString()); // Wydruk: Hello, World!
-```
-
-Szczegół implementacyjny do zapamiętania to fakt, że Java automatycznie przekształca operacje na `String` używające operatora `+` do użycia `StringBuilder`, więc efektywność obu technik jest porównywalna.
-
-## Zobacz również
-- [Oracle Java documentation: Strings](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
-- [Javatpoint: String concatenation in Java](https://www.javatpoint.com/string-concatenation-in-java)
-- [Baeldung: A Guide to Java String Concatenation](https://www.baeldung.com/java-strings-concatenation)
+## See Also (Zobacz również)
+- [Dokumentacja Java – StringBuilder](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html)
+- [Oracle Tutorial on Strings](https://docs.oracle.com/javase/tutorial/java/data/strings.html)

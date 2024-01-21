@@ -1,6 +1,7 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "C++: הורדת דף אינטרנט"
+date:                  2024-01-20T17:43:48.843333-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,53 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## מה ולמה? - What & Why?
 
-# הורדת דף אינטרנט באמצעות Bash
+להוריד דף אינטרנט זה לשמור עליו במחשב שלך. תכנותים עושים את זה לניתוח נתונים, בדיקות אוטומטיות, או פשוט לשימוש אופליין.
 
----
+## איך לעשות: - How to:
 
-## מה זה ולמה?
+השתמש ב-`curl` כדי להוריד דף:
 
-הפעולה שנקראת "הורדת דף אינטרנט" היא בעצם שליחת בקשת GET לשרת באמצעות HTTP. התכנתים בוחרים להוריד דף אינטרנט כדי לבצע ניתוח נתונים, לבדוק זמינות של אתר או לגרום לפעולות אוטומטיות להתרחש.
+```Bash
+curl http://example.com -o page.html
+```
 
----
+תוצאה:
 
-## כיצד:
+```Bash
+# page.html נוצר עם התוכן של example.com
+```
+
+או תוכלו להשתמש ב-`wget` למטרה דומה:
 
 ```Bash
 wget http://example.com
 ```
 
-פלט דוגמה:
+תוצאה:
 
 ```Bash
---2021-05-06 20:04:34--  http://example.com/
-Resolving example.com (example.com)... 93.184.216.34, 2606:2800:220:1:248:1893:25c8:1946
-Connecting to example.com (example.com)|93.184.216.34|:80... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 1256 (1.2K) [text/html]
-Saving to: ‘index.html’
-
-index.html          100%[===================>]   1.23K  --.-KB/s    in 0s      
-
-2021-05-06 20:04:34 (156 MB/s) - ‘index.html’ saved [1256/1256]
+# הורדה: example.com => 'index.html'
 ```
 
----
+## צלילה לעומק - Deep Dive:
 
-## העמקת הפרטים
+חוקרים ופיתחו כלים כמו `curl` ו-`wget` מתחילת תקופת האינטרנט. הם מאפשרים אוטומציה וניהול של קבצים מגוונים. ב-`curl` יש אופציות רבות למיפוי התקשורת. `wget` אוהב לשמש להורדות רקורסיביות ומראות של אתרים כוללים. שניהם ניתנים לשילוב בתוך סקריפטים מורכבים.
 
-*בהקשר היסטורי:* קומנדה `wget` אותה אנו משתמשים היום נכתבה למעלה מ-20 שנה. האמצעים האינטרנטיים השתנו מאז, אך המחשבים עדיין משתמשים ב-`wget` לשליחת בקשות HTTP. 
+## ראה גם: - See Also:
 
-*אלטרנטיבות:* ל-`wget` קיימות אלטרנטיבות רבות, כמו `curl` ו-`HTTPie`. כל אחת מהן מבצעת את המשימה בשיטות שונות ומציגה פלט שונה.
-
-*פרטי המימוש:* ברוב המקרים, `wget` ישמור את הדף המבוקש בקובץ `index.html`. הדף נשמר כקובץ HTML פשוט, כך שניתן לפתוח אותו ולנתחו באמצעות Bash או שפות תכנות אחרות.
-
----
-
-## מקורות נוספים
-
-* מדריך של ה-`Curl`: [קישור](https://curl.haxx.se/docs/httpscripting.html)
-* מדריך של ה-`HTTPie`: [קישור](https://httpie.org/doc)
-* הסבר מעמיק על בקשות HTTP: [קישור](https://www.tutorialspoint.com/http/http_requests.htm)
+- מדריך ל-`curl`: https://curl.se/docs/manpage.html
+- מדריך ל-`wget`: https://www.gnu.org/software/wget/manual/wget.html
+- בלוג עם טיפים ל-`curl` ו-`wget`: https://daniel.haxx.se/blog/

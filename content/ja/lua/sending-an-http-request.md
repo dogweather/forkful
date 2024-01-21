@@ -1,6 +1,7 @@
 ---
 title:                "HTTPリクエストの送信"
-html_title:           "Bash: HTTPリクエストの送信"
+date:                  2024-01-20T18:00:09.335708-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTPリクエストの送信"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,44 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
 
-HTTPリクエストの送信はWebサーバーに対する要求の送信を指します。これはWebサイトのコンテンツを取得したり、データを更新したりするためにプログラマーが使用します。
+HTTPリクエストを送るとは、サーバーにWebページやサービスへの問い合わせを行うことです。プログラマーがこれを行う理由は、データを取得したり、外部サービスと連携するためです。
 
-## 使い方：
+## How to (やり方):
 
-Luaを用いてHTTPリクエストを送信する例を以下に示します。
+Luaでは、HTTPリクエストを送るために`socket.http`や`luasocket`モジュールを使うことが多いです。
 
 ```Lua
-http = require('socket.http')
+local http = require("socket.http")
+local body, code, headers, status = http.request("http://www.example.com")
 
-url = 'http://httpbin.org/post'
-
-response_body, response_status, response_headers, response_status_line = http.request{
-  url = url,
-  method = 'POST',
-  headers = {
-    ['Content-Type'] = 'application/x-www-form-urlencoded'
-  },
-  source = ltn12.source.string('key=value'),
-  sink = ltn12.sink.table(respbody)
-}
-
-print(response_status)  -- 出力：200
+if code == 200 then
+    print(body)  -- サーバーの応答を出力
+else
+    print(status)  -- エラー情報を出力
+end
 ```
-このコードは`http://httpbin.org/post`に`POST`リクエストを送信します。レスポンスステータスは`200`を出力します。
 
-## 深掘り：
+サンプル出力:
 
-Webプログラミングの初期では、HTTPリクエストは手動ですべてのヘッダーとともに構築し、送信する必要がありました。しかし、現在ではバージョン5.1から共有ライブラリとして利用できるLuaSocketライブラリのようなツールにより、このプロセスが大幅に簡素化されました。
+```
+<!doctype html>...
+```
 
-Lua以外にも多くの言語でHTTPリクエストを送信する方法が存在します。Pythonでは`requests`ライブラリ、JavaScriptでは`fetch`APIが一般的です。
+これは`www.example.com`からHTMLを取得しています。
 
-LuaではHTTPリクエストを送信するためにコルーチンを使用することも可能です。これは非同期操作を行うための方法で、プログラムの他の部分がレスポンスを待つ間に実行を続けることができます。
+## Deep Dive (深掘り):
 
-## 参考リンク：
+HTTPリクエストの送信方法は、インターネットの初期からあります。`socket.http`は基本的ですが、`HTTP/1.1`プロトコルの機能は全部サポートしていません。全機能が必要な場合は、`lua-requests`や`luasocket`ライブラリのようなもっと進んだライブラリを使うことがあります。
 
+これらのライブラリは内部でTCP/IP接続を管理し、HTTPプロトコルを通じてデータを送受信します。`luasocket`ライブラリを使うと、HTTPSリクエストも送れますが、これには別途`ssl.https`モジュールが必要です。
 
-2. [HTTP made really easy](http://www.jmarshall.com/easy/http/): HTTPプロトコルの基本から詳細まで説明している資料です。
+## See Also (関連情報):
 
-3. [Lua JIT](https://luajit.org/): LuaのJITコンパイラの公式ページ。Luaのパフォーマンスを向上させるためのツールです。
+- LuaSocket公式サイト：http://w3.impa.br/~diego/software/luasocket/
+- LuaSec (HTTPSサポート)：https://github.com/brunoos/luasec
+- lua-requests：https://github.com/JakobGreen/lua-requests (シンプルなHTTPライブラリ)

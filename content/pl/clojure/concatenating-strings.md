@@ -1,7 +1,8 @@
 ---
-title:                "Konkatenacja ciągów znaków"
-html_title:           "Bash: Konkatenacja ciągów znaków"
-simple_title:         "Konkatenacja ciągów znaków"
+title:                "Łączenie łańcuchów znaków"
+date:                  2024-01-20T17:35:08.533320-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Łączenie łańcuchów znaków"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,52 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Łączenie ciągów, znane jako konkatenacja, polega na łączeniu dwóch lub więcej ciągów w jeden. Programiści robią to, aby manipulować danymi tekstowymi, tworzyć nowe ciągi i zwiększyć czytelność kodu.
+## Co i dlaczego?
+Łączenie stringów to po prostu sklejanie ich końców, tworząc jeden dłuższy tekst. Programiści robią to, żeby skonstruować wiadomości, dynamiczne URL-e czy po prostu połączyć dane w czytelną całość.
 
 ## Jak to zrobić:
-Do łączenia ciągów w Clojure używamy funkcji `str`.
+W Clojure, łączenie stringów jest proste jak śniadanie. Użyj `str`, żeby połączyć kawałki tekstu razem. Oto przykłady:
 
-Podajemy ciągi jako argumenty do `str`:
+```clojure
+(str "Przykład" " " "prosty")
+;=>"Przykład prosty"
 
-```Clojure 
-(str "Clojure" " " "jest" " " "super!")
+;; Łączenie z użyciem zmiennych
+(let [first-name "Jan"
+      last-name "Kowalski"]
+  (str "Cześć, " first-name " " last-name "!"))
+;=> "Cześć, Jan Kowalski!"
+```
+Jeśli masz kolekcję, użyj `clojure.string/join`:
+```clojure
+(clojure.string/join ", " ["jabłka" "banany" "kiwi"])
+;=> "jabłka, banany, kiwi"
+```
+Jeśli szybkość jest kluczowa, spróbuj użyć `StringBuilder`:
+```clojure
+(-> (StringBuilder.)
+    (.append "Przyśpieszamy ")
+    (.append "proces")
+    .toString)
+;=> "Przyśpieszamy proces"
 ```
 
-Jako wynik otrzymamy:
+## Deep Dive
+Łączenie stringów to prozaiczna, ale kluczowa część programowania od samego początku. W Clojure, `str` jest magią, która wyręcza nas z myślenia o szczegółach. W innych językach, jak Java, bezpośrednie łączenie stringów jest drogie ze względu na niemutowalność stringów — każde `+` to nowy obiekt. Stąd `StringBuilder` w przykładach powyżej — w Javie realizuje ten sam koncept.
 
-```Clojure
-"Clojure jest super!"
-```
+Alternatywą jest używanie `format` dla bardziej skomplikowanego formatowania, czy biblioteki jak `clojure.string`, oferująca `join`, która jest idealna, gdy mamy do czynienia z kolekcjami stringów.
 
-Możemy też użyć `str` do łączenia ciągów z innymi danymi, np. z liczbami:
+Implementacja funkcji `str` jest prosta i efektywna, używa ona Java `StringBuilder` pod spodem. To znaczy, że jest szybka, ale za to nie zawsze idealna przy mega wielkich stringach, gdzie trzeba uważać na używanie pamięci.
 
-```Clojure
-(str "Mam " 5 " kotow.")
-```
-
-Tutaj otrzymamy:
-
-```Clojure
-"Mam 5 kotow."
-```
-
-## Głębsze Zanurzenie
-Historia łączenia ciągów w Clojure jest związana z jej funkcją `str`, która pochodzi z języka Lisp, na którym Clojure jest oparte. Ta funkcja jest bardziej zwięzła i elastyczna niż metody stosowane w niektórych innych językach, takich jak metoda `.concat(String)` w Javie.
-
-Alternatywą dla `str` jest funkcja `join` z biblioteki `clojure.string`. `join` łączy ze sobą ciągi z listy, umieszczając między nimi separator.
-
-```Clojure
-(clojure.string/join " " ["Clojure" "jest" "super!"])
-```
-
-Ten kod wygeneruje ten sam rezultat co nasz pierwszy przykład, tzn. "Clojure jest super!".
-
-Szczegółami implementacji, które warto znać, jest to, że `str` łączy ciągi szybko i efektywnie, zwracając nowy ciąg. Nadmiarowe użycie `str` może jednak prowadzić do dużego zużycia pamięci, jeśli tworzy się wiele dużych ciągów.
-
-## Zobacz Także
-Chcesz dowiedzieć się więcej? Sprawdź te zasoby:
-
-1. Oficjalna dokumentacja Clojure: https://clojure.org/guides/learn/functions
-2. Dokumentacja funkcji str: https://clojuredocs.org/clojure.core/str
-3. Dokumentacja biblioteki clojure.string: https://clojuredocs.org/clojure.string
+## Zobacz również
+- Oficjalna dokumentacja `str`: [https://clojuredocs.org/clojure.core/str](https://clojuredocs.org/clojure.core/str)
+- Dokumentacja `clojure.string/join`: [https://clojuredocs.org/clojure.string/join](https://clojuredocs.org/clojure.string/join)

@@ -1,6 +1,7 @@
 ---
 title:                "Пошук та заміна тексту"
-html_title:           "C++: Пошук та заміна тексту"
+date:                  2024-01-20T17:58:06.142235-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Пошук та заміна тексту"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,33 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо?
-
-Пошук і заміна тексту - це процес знаходження конкретних наборів символів (рядків) та їхньої заміни. Програмісти роблять це, щоб автоматизувати та спростити редагування коду.
+## Що це та навіщо?
+Пошук та заміна тексту — це засіб обробки рядків, що дозволяє знаходити фрагменти тексту та замінювати їх на інші. Програмісти роблять це для автоматизації редагування коду, швидкої модифікації даних чи масштабування змін.
 
 ## Як це зробити:
-
-Ось приклад використання стандартного модуля `Data.Text` в Haskell для пошуку та заміни тексту:
-
 ```Haskell
-import qualified Data.Text as T
+import Data.Text as T
 
-searchAndReplace :: T.Text -> T.Text -> T.Text -> T.Text
-searchAndReplace old new = T.replace old new
+-- Пошук та заміна простим текстом
+replaceText :: String -> String -> String -> String
+replaceText old new = T.unpack . T.replace (T.pack old) (T.pack new) . T.pack
 
-ghci> searchAndReplace "Hello" "Hi" "Hello, World!"
-"Hi, World!"
+-- Використання функції
+main = putStrLn $ replaceText "cat" "dog" "The cat sat on the mat"
+
+-- Результат:
+-- "The dog sat on the mat"
 ```
-В цьому прикладі функція `searchAndReplace` шукає рядок "Hello" та замінює його на "Hi".
+Для регулярних виразів використовуємо `Text.Regex`:
+```Haskell
+import Text.Regex
 
-## Поглиблений матеріал
+-- Пошук та заміна за допомогою регулярних виразів
+replaceRegex :: String -> String -> String -> String
+replaceRegex regex new input =
+  let compiledRegex = mkRegex regex
+  in subRegex compiledRegex input new
 
-1. Історичний контекст: Функції для пошуку та заміни тексту існують у багатьох мовах програмування, включаючи JavaScript, Python, та інші. Вони утворюють основу для редагування тексту у багатьох додатках та інструментах.
-   
-2. Альтернативи: Хоча `Data.Text` надає прямолінійний спосіб пошуку та заміни, інші можливості включають використання регулярних виразів через модуль `Text.Regex`, який набагато більш потужний, але й складніший.
-   
-3. Деталі реалізації: `T.replace` працює шляхом розбивання вхідного тексту на фрагменти, збігається з пошуковим текстом, а потім об'єднує їх назад, вставляючи новий текст замість старого.
+-- Використання функції
+main = putStrLn $ replaceRegex "c.t" "dog" "The cat sat on the mat"
 
-## Дивіться також:
+-- Результат:
+-- "The dog sat on the mat"
+```
 
-- [Data.Text documentation](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)
+## Поглиблений розділ:
+Пошук та заміна тексту бере свій початок ще від ранніх редакторів тексту, таких як `ed` і `sed` у Unix. Ці інструменти використовувались для роботи з текстовими файлами за допомогою командного рядка. У Haskell ми маємо ряд бібліотек, що надають функціональність для пошуку та заміни, включаючи `Data.Text` для простого тексту та `Text.Regex` при роботі з регулярними виразами.
+
+Головна альтернатива — це використання стандартної бібліотеки `Prelude` з її функціями для роботи з рядками, але `Data.Text` пропонує покращену продуктивність з великими текстами.
+
+Для регулярних виразів популярною альтернативою є `regex-pcre-builtin`, що використовує бібліотеку PCRE для мови Haskell, надаючи більш розширений синтаксис та контроль.
+
+## Дивись також:
+- [Документація для модуля Data.Text](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)
+- [Документація для Text.Regex](https://hackage.haskell.org/package/regex-compat-0.95.1/docs/Text-Regex.html)
+- [An introduction to regex in Haskell](https://wiki.haskell.org/Regular_expressions)
+- [Інформація про регулярні вирази PCRE](http://www.pcre.org)

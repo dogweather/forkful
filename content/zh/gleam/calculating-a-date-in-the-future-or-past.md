@@ -1,6 +1,7 @@
 ---
 title:                "计算未来或过去的日期"
-html_title:           "Gleam: 计算未来或过去的日期"
+date:                  2024-01-20T17:30:51.994754-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "计算未来或过去的日期"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,40 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 是什么与为什么？
+## 什么 & 为什么？
+计算未来或过去的日期，就是找出从现在开始的某个时间点相距多少天的日期。程序员做这个通常是为了事件规划、提醒功能或者数据分析。
 
-计算未来或过去的日期是指在当前日期基础上加减特定的时间单位，比如天、周、月、年等。程序员经常需要进行此类计算来处理和时间相关的需求，例如制定日程、预设提醒、创建日期日志等。
-
-## 如何完成：
-
-使用 Gleam 进行日期计算非常直观，下面是一个计算5天后日期的代码示例：
-
+## 如何做：
 ```gleam
-import gleam/datetime.{Date}
-import gleam/int
+import gleam/calendar.{Date, add_days}
 
-fn days_later(date: Date, days: Int) -> Date {
-    Date.add_days(date, days)
-}
+pub fn main() {
+  let today = Date(year: 2023, month: 4, day: 1)
+  
+  // 计算10天后的日期
+  let future_date = add_days(today, 10)
+  io.println(future_date)
 
-fn main() {
-    let now = Date.today()
-    let future_date = days_later(now, 5)
-    future_date
+  // 计算10天前的日期
+  let past_date = add_days(today, -10)
+  io.println(past_date)
 }
 ```
-运行结果就是5天后的日期。
+输出：
+```
+Date(year: 2023, month: 4, day: 11)
+Date(year: 2023, month: 3, day: 22)
+```
 
-## 深入解析
-
-历史上，人们处理日期时间的方式各异，直到 1972 年，由于计算机科技的发展，导致我们现在的日期时间处理方案显得更为科学合理。 
-
-曾经没有标准库支持，开发人员不得不针对特定的编程语言自己写代码来进行日期计算。然而，这样做通常会导致一些奇怪的问题，例如无法正确处理闰年或跨年问题。
-
-Gleam 的 `gleam/datetime` 模块提供了一种高级且标准的方式来处理日期计算。它对不同的编程语言提供了简洁一致的 API，并提供了大量的实用方法来操作和处理日期和时间。
-
-然而，你也可以选择其它库或自行实现相关的功能，但如果非要在已经有很好的轮子的情况下，还要重复地发明轮子，未免有些浪费时间。
-
-## 参考资料
-
-* 日期计算相关的知识: [https://www.timeanddate.com/date/workdays.html](https://www.timeanddate.com/date/workdays.html)
+## 深入了解
+历史上，日期计算一直是重要的。在没有计算机的时代，它依赖于天文学和数学。Gleam内置的`calendar`模块让日期计算变得简单。选择Gleam而不是JavaScript、Python等，因为Gleam是静态类型语言，更安全、错误更少。此外，它能轻松处理闰年和不同月份天数的差异。

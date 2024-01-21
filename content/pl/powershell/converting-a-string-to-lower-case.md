@@ -1,6 +1,7 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+date:                  2024-01-20T17:39:15.254339-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,25 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Zamiana łańcucha znaków na małe litery oznacza przekształcenie wszystkich liter alfabetu w łańcuchu na ich mało literowe odpowiedniki. Programiści robią to, aby ułatwić porównanie i sortowanie napisów, ponieważ operacje te często są niezależne od wielkości liter.
+## What & Why?
+Konwersja stringa do małych liter polega na zmianie każdej wielkiej litery na odpowiadającą jej małą. Programiści robią to, by ujednolicić dane – na przykład, w sytuacjach, gdy wielkość liter nie ma znaczenia, jak przy porównywaniu tekstów.
 
-## Jak to zrobić:
-Napisy w PowerShell możemy zapisać małymi literami za pomocą metody `.ToLower()`. Oto przykład:
+## How to:
+Aby przekształcić string do małych liter w PowerShell, używamy metody `.ToLower()`. Oto jak to działa:
+
 ```PowerShell
-$mojString = "HeLLo PoWeRShELL"
-$mojString.ToLower()
-```
-Po uruchomieniu powyższego kodu output będzie następujący:
-```PowerShell
-"hello powershell"
+$exampleString = "PowerShell Jest Super!"
+$lowerCaseString = $exampleString.ToLower()
+$lowerCaseString
 ```
 
-## Głębsze Zanurzenie:
-Metoda `.ToLower()` była dostępna od wczesnych wersji języków programowania .NET, w tym C# i Visual Basic. Alternatywą jest użycie metody `.ToLowerInvariant()`, która zapewnia konsekwencje między różnymi ustawieniami języka.
+Wynik powyższego kodu:
 
-Co więcej, szczegółowa implementacja `.ToLower()` zależy od konkretnego .NET Runtime'a. W środowisku .NET Framework, ta metoda opiera się na informacjach zawartych w "TextInfo" dla aktualnej kultury.
+```
+powershell jest super!
+```
 
-## Zobacz także:
-- Dokumentacja Microsoft na temat metody `.ToLower()`: [link](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=net-5.0)
-- Dokumentacja Microsoft na temat znaków niezależnych od kultury: [link](https://docs.microsoft.com/en-us/dotnet/standard/base-types/best-practices-strings?view=net-5.0)
+## Deep Dive
+Konwersja do małych liter jest standardowym narzędziem w wielu językach programowania, mającym swoje korzenie w starych systemach, gdzie wielkość liter była niekiedy ignorowana. W PowerShell, metoda `.ToLower()` jest częścią typu `String` w .NET Framework, który PowerShell intensywnie wykorzystuje.
+
+Alternatywną metodą może być użycie operatora `-c` wraz z funkcją `Replace`, kiedy chcemy ignorować wielkość liter przy zamianie tekstów.
+
+Oto przykład, jak to można zrealizować:
+
+```PowerShell
+$exampleString = "PowerShell JEST Super!"
+$exampleString -creplace 'JEST', 'jest'
+```
+
+Wynik:
+```
+PowerShell jest Super!
+```
+
+Operator `-c` jest ważny, ponieważ w przeciwnym razie PowerShell traktuje tekst jako wyrażenie regularne. Warto też pamiętać, że metoda `.ToLower()` nie wpływa na znaki spoza alfabetu angielskiego, co może być istotne w kontekście polskich znaków diakrytycznych.
+
+## See Also
+Dla bardziej szczegółowych informacji o pracy z tekstami w PowerShell, zobacz:
+- Oficjalna dokumentacja PowerShell `.ToLower()` metody: [PowerShell String Methods](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=net-6.0)

@@ -1,6 +1,7 @@
 ---
 title:                "HTTP 요청 보내기"
-html_title:           "Clojure: HTTP 요청 보내기"
+date:                  2024-01-20T17:59:56.930772-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Java"
 category:             "Java"
@@ -10,47 +11,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# HTTP 요청을 보내는 것은 무엇이며 왜 필요한가?
+## What & Why? (무엇과 왜?)
+HTTP 요청을 보내는 것은 웹 서버에 정보를 요청하거나 제출하는 방법입니다. 프로그래머는 데이터를 주고받거나, API를 활용하여 웹 서비스와 상호작용하기 위해 이를 사용합니다.
 
-HTTP 요청은 웹서버에 정보를 요청하거나 전달하는 방법입니다. 개발자들은 이것을 통해 웹에 있는 다양한 자원들과 상호작용하게 됩니다.
+## How to: (방법)
+Java에서 HTTP 요청을 보내는 간단한 예제입니다.
 
-# 어떻게 해야 할까?
+```java
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 
-Java에서 HTTP 요청을 보내기 위해 우리는 `java.net.http.HttpClient` 라이브러리를 사용한다. 아래에 예시를 나타내줍니다.
-
-```Java
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-
-public class Main {
-    public static void main(String[] args) throws Exception {
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-              .uri(new URI("http://example.com"))
-              .build();
-
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-        System.out.println(response.body());
+public class HttpRequestExample {
+    public static void main(String[] args) throws IOException {
+        String urlToRequest = "http://example.com";
+        URL url = new URL(urlToRequest);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        
+        try {
+            connection.setRequestMethod("GET");
+            
+            int responseCode = connection.getResponseCode();
+            System.out.println("Response Code: " + responseCode);
+            
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
+                
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                in.close();
+                
+                System.out.println("Response: " + response.toString());
+            } else {
+                System.out.println("GET request not worked");
+            }
+        } finally {
+            connection.disconnect();
+        }
     }
 }
 ```
+실행 결과:
+```
+Response Code: 200
+Response: ... (실제 응답 내용)
+```
 
-위 코드를 실행하면 "http://example.com" 의 결과를 출력하게 됩니다.
+## Deep Dive (심층 분석)
+HTTP 요청을 보내는 것은 웹의 초창기부터 이루어져 왔습니다. 초기의 인터넷은 정보 교환을 위해 설계되었으며, HTTP는 이를 위한 프로토콜로 자리잡았습니다. Java에서는 처음에 low-level의 `HttpURLConnection` 클래스를 사용하여 요청을 처리했으나, Java 11부터는 새로운 HTTP Client API가 도입되어 비동기 처리같은 현대적인 요구사항을 더 쉽게 처리할 수 있게 되었습니다.
 
-# 더 깊게 알아보기
+다른 많은 언어와 프레임워크가 간편한 HTTP 통신을 위한 여러 라이브러리와 도구를 제공하지만, Java 역시 Apache HttpClient, OkHttp, Retrofit 등 다양한 도구를 갖추고 있습니다. 각각의 도구들은 성능, 사용 편의성, 추가 기능 측면에서 각기 장단점을 가지고 있으며 작업에 맞게 선택할 수 있습니다.
 
-HTTP 요청은 웹의 기본적인 구조를 이루는 요소 중 한 가지입니다. 웹은 1990년대 중반에 처음 등장하여, 그 시작부터 HTTP는 핵심 역할을 하고 있습니다.
-
-Java에서는 여러 가지 방법으로 HTTP 요청을 보낼 수 있습니다. 예를들어 `HttpURLConnection`, `HttpClient` 등이 있습니다. 이 중 `HttpClient`는 Java 11에서 추가되었으며, 편리한 API와 함께 모던한 기능들을 제공합니다.
-
-내부적으로 `HttpClient` 는 각 요청을 병렬로 처리하며, 결과는 `CompletableFuture`를 통해 반환됩니다. 이러한 방식을 사용함으로써 Java는 효율적이고 확장가능한 HTTP 요청 처리를 제공합니다.
-
-# 참고 자료
-
-다음의 링크들에서 HTTP 요청과 관련된 더 많은 정보를 찾아볼 수 있습니다.
-
-1. [Oracle의 HttpClient 문서](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
-2. [모던 Java에서의 HTTP 통신](https://www.baeldung.com/httpclient-guide)
+## See Also (참고 자료)
+- [HTTPURLConnection (Oracle Official Documentation)](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
+- [HttpClient (Oracle Official Documentation for Java 11+)](https://openjdk.java.net/groups/net/httpclient/intro.html)
+- [OkHttp](https://square.github.io/okhttp/)
+- [Retrofit](https://square.github.io/retrofit/)

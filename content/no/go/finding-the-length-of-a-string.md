@@ -1,7 +1,8 @@
 ---
-title:                "Finne lengden på en streng"
-html_title:           "Go: Finne lengden på en streng"
-simple_title:         "Finne lengden på en streng"
+title:                "Finn lengden på en streng"
+date:                  2024-01-20T17:47:46.886982-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Finn lengden på en streng"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -11,36 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å finne lengden på en streng betyr å telle antall tegn den inneholder. Programmerere gjør dette for å validere input, manipulere tekst, eller bare for å få kontroll på dataene de jobber med.
 
-Å finne lengden på en streng betyr å telle antall karakterer den inneholder. Dette er ofte nyttig i programmeringssituasjoner, som for eksempel når vi ønsker å iterere gjennom hver karakter i strengen, eller når vi trenger å vite størrelsen på dataene vi behandler.
-
-## Slik gjør du:
-
-Her er et enkelt eksempel på hvordan du finner lengden på en streng i Go:
-
+## Hvordan:
 ```Go
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unicode/utf8"
+)
 
 func main() {
-    str := "Hei på deg, Verden!"
-    fmt.Println(len(str))
+	str := "Hei, verden!"
+	fmt.Println("Antall bytes:", len(str))                   // Antall bytes i strengen
+	fmt.Println("Antall utf8-tegn:", utf8.RuneCountInString(str)) // Antall UTF-8-tegn i strengen
 }
 ```
+Output:
+```
+Antall bytes: 13
+Antall utf8-tegn: 12
+```
 
-Ved kjøretid vil dette skrive ut "19", som er antall karakterer i strengen "Hei på deg, verden!"
+## Dykk Ned:
+I Go er en `string` en slags sekvens av bytes, ikke nødvendigvis bare ASCII-tegn. Før i tiden, med enkle tegnsett, var hvert tegn representert med et fast antall bytes - ofte bare ett. I Go og moderne programmering må vi tenke på Unicode, som introduserer konseptet med variabel lengde på tegn ved bruk av UTF-8 koding.
 
-## Dypdykk:
+`len()`-funksjonen i Go gir oss antall bytes, ikke tegn. Fordi noen tegn kan være mer enn én byte, bruker vi `utf8.RuneCountInString()`-funksjonen for å få det faktiske antall tegn (runer) i en streng.
 
-Historisk sett har håndtering av strenger alltid vært en sentral del av computing. Fra de tidligste dagene med datainntasting til moderne webapplikasjoner, er strenger, og måling av deres lengde, en nøkkelfunksjon i de fleste programmeringsspråk.
+Et annet alternativ er å bruke en `range`-loop over strengen, som itererer over runene og ikke bytes:
 
-Det finnes alternative måter å finne strenglengden i Go, som å bruke `range`-funksjonen til å iterere gjennom strengen og telle karakterene manuelt. Men `len`-funksjonen er som regel det enkleste og mest effektive alternativet. 
-
-Når det gjelder implementasjonsdetaljer, retter `len`-funksjonen i Go seg mot implementeringen av strengobjektet, noe som betyr at det henter lengden på strengen direkte fra strengstructen. Dette gjør det til en svært rask operasjon sammenlignet med novelleskriving av strengens lengdefunksjon.
+```Go
+str := "Hei, verden!"
+count := 0
+for range str {
+	count++
+}
+fmt.Println("Antall runer:", count)
+```
 
 ## Se Også:
-
-Se detaljert dokumentasjon og mer avansert bruk av `len`-funksjonen i Go:
-- Go offisiell dokumentasjon på len - https://golang.org/pkg/builtin/#len
-- Go tutorial: strings, bytes, runes and characters in Go - https://blog.golang.org/strings
+- Go blogg på strenger: [https://blog.golang.org/strings](https://blog.golang.org/strings)
+- Unicode standarden: [https://unicode.org/standard/standard.html](https://unicode.org/standard/standard.html)
+- Go pakke dok for utf8: [https://pkg.go.dev/unicode/utf8](https://pkg.go.dev/unicode/utf8)

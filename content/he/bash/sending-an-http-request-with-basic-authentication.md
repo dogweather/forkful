@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http עם אימות בסיסי"
-html_title:           "C: שליחת בקשת http עם אימות בסיסי"
-simple_title:         "שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת HTTP עם אימות בסיסי"
+date:                  2024-01-20T18:01:20.547658-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP עם אימות בסיסי"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,30 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה אומר ולמה? 
-
-שליחת בקשת HTTP עם אוטנטיקציה בסיסית מאפשרת לשלוח בקשות WEB מהמסוף שלך לשרת שדורש ממך שם משתמש וסיסמה. תכנתים משתמשים בזה כדי לגשת למשאבים מאובטחים שמחייבים אימות.
+## מה ולמה?
+שליחת בקשת HTTP עם אימות בסיסי מאפשרת העברת שם משתמש וסיסמה בצורה מאובטחת לאתר כדי לקבל גישה. תכנתים עושים זאת כדי לאמת משתמשים בסקריפטים ויישומים שמתבצעים מהשרת או מה-terminal.
 
 ## איך לעשות:
+שליחת בקשה ישירות מה-terminal באמצעות `curl` עם שם משתמש וסיסמה:
 
-לדוגמה, הפקודה הבאה משתמשת ב-curl כדי לשלוח בקשת GET עם אוטנטיקציה בסיסית:
 ```Bash
-curl -u username:password http://localhost:8080/resource
+curl -u username:password http://example.com
 ```
-אותו משימה באמצעות wget תיראה כך:
+
+הצפנת הסיסמה עם Base64 והכנסתה לבקשה עם Header מותאם:
+
 ```Bash
-wget --user username --password 'password' http://localhost:8080/resource
+ENCODED=$(echo -n 'username:password' | base64)
+curl -H "Authorization: Basic $ENCODED" http://example.com
 ```
-אתה צריך להחליף username:password עם שם המשתמש והסיסמה שלך. 
 
-## צלילה עמוקה
+דוגמא לפלט שעשוי להופיע לאחר בקשת HTTP מוצלחת:
 
-בראשית היישום של HTTP אין אופציה לאימות. בהמשך, אימות בסיסי הוזן לפרוטוקול. הרעיון מאחורי זה הוא למנוע ממשתמשים שאינם מורשים לגשת למשאב. למרות שאימות בסיסי ב-HTTP נמשך, הוא מוגבל במידת ההצפנה שלו.
+```
+<html>
+<head><title>An Example Page</title></head>
+<body>
+<p>Welcome to our website!</p>
+</body>
+</html>
+```
 
-חלופות לאימות בסיסי ב-HTTP כוללות אימות Digest, אימות NTLM, ואימות אסימטרי.
+## טבילה עמוקה
+שיטת האימות הבסיסי עברה הרבה מחזורי חיים מאז התחלת האינטרנט. היא פשוטה ונפוצה אך לא הכי מאובטחת בהשוואה לתקנים חדשים כמו OAuth. ברמת המימוש, השם והסיסמה מועברים ב-Header של הבקשה אחרי הצפנה עם Base64. זכרו, Base64 אינו הצפנה בטוחה; הוא רק קידוד. לכן, תמיד משתמשים ב-SSL/TLS בשילוב עם בקשה מוצפנת כדי לשמור על בטיחות הנתונים.
 
-## ראה גם
-
-1. Curl User Guide, http://curl.haxx.se/docs/manual.html
-2. Wget User Guide, https://www.gnu.org/software/wget/manual/html_node/index.html
-3. HTTP Authentication, https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+## ראה גם:
+1. [cURL Documentation](https://curl.se/docs/)
+2. [RFC 7617: The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+3. [Mozilla Developer Network - HTTP authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+4. [Base64 Encoding](https://en.wikipedia.org/wiki/Base64)

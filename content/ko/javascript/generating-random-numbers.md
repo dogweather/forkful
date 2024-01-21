@@ -1,7 +1,8 @@
 ---
-title:                "임의의 숫자 생성하기"
-html_title:           "Elixir: 임의의 숫자 생성하기"
-simple_title:         "임의의 숫자 생성하기"
+title:                "난수 생성하기"
+date:                  2024-01-20T17:49:44.184514-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "난수 생성하기"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Numbers"
@@ -10,36 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-랜덤 숫자 생성이란 정의에 맞게 불규칙한 수를 만드는 것을 의미합니다. 이는 게임, 통계적 시뮬레이션, 보안과 같은 기능에서 의사 난수를 통해 예측할 수 없는 결과를 만들길 원할 때 프로그래머들이 주로 사용합니다.
+## What & Why? (무엇과 왜?)
+랜덤 숫자를 생성하는 것은 예측 불가능한 숫자를 만드는 프로세스입니다. 프로그래머들은 게임, 시뮬레이션, 보안 시스템, 그리고 테스트 데이터를 만들 때 이를 활용합니다.
 
-## 방법:
-아래는 JavaScript에서 난수를 생성하는 방법의 예시입니다:
+## How to: (어떻게 해?)
+```javascript
+// 기본적인 랜덤 숫자 생성
+let randomNum = Math.random(); // 0과 1 사이의 랜덤한 숫자 반환
+console.log(randomNum);
 
-```Javascript
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
-
-console.log(getRandomInt(3));
-console.log(getRandomInt(1));
-console.log(getRandomInt(9));
+// 정수 범위 내에서 랜덤 숫자 생성
+let min = 1;
+let max = 100;
+let randomInt = Math.floor(Math.random() * (max - min + 1)) + min; // 1에서 100 사이의 랜덤한 정수 반환
+console.log(randomInt);
 ```
-출력 예시:
-```Javascript
-2
-0
-7
+
+Sample Output:
 ```
-위 코드에서 `Math.random()`은 0과 1사이의 부동소수점, [0, 1) 범위의 새로운 의사 난수를 반환합니다. `Math.floor()`를 사용하여 결과를 소수 아래로 반올림하여 정수를 얻습니다.
+0.8273629810924768
+42
+```
 
-## 깊게 알아보기
-**역사적 맥락**: JavaScript의 `Math.random()`은 결정론적이며, 완벽하게 무작위 수를 생성하지 못한다는 연구 결과가 있습니다. 이는 컴퓨터가 정교한 계산으로 작동하므로 이전의 숫자에 기반하여 '임의성'을 만들어내야하기 때문입니다.
+## Deep Dive (심층 분석)
+프로세서들이 진짜 '랜덤성'을 생성할 수 없기 때문에 JavaScript의 `Math.random()` 함수는 사실적인 확률 분포를 모방하는 난수 생성기를 사용합니다. 이는 의사 랜덤(pseudorandom)이라고 불립니다. 한때는 많은 난수 생성 알고리즘이 있었지만, 현재 대부분의 JavaScript 엔진은 고품질의 난수를 생성하기 위해 Xorshift128+ 같은 첨단 알고리즘을 사용합니다.
 
-**대체 방법**: JavaScript로 더 안전한 난수를 생성하기 위한 대안은 표준 라이브러리의 `crypto.getRandomValues()` 함수를 사용하는 것입니다. 이 함수는 보안상 중요한 목적으로 랜덤 값을 요구하는 경우에 효과적입니다.
+더욱 강력한 보안이 필요할 때는 `crypto.getRandomValues()` 메소드를 사용하여 암호학적으로 안전한 난수를 생성할 수 있습니다. 이는 예측이 거의 불가능하며 주로 암호화 작업에 사용됩니다.
 
-**구현 세부 정보**: JavaScript의 `Math.random()`은 '0'을 포함하고 '1'을 제외하는 값을 반환합니다. 즉, 반환값은 앞의 예에서와 같이 연속된 범위안의 어떠한 값도 될 수 있습니다.
+```javascript
+// 암호학적으로 안전한 난수 생성
+let array = new Uint32Array(1);
+window.crypto.getRandomValues(array);
+console.log(array[0]); // 큰 범위의 정수 난수 반환
+```
 
-## 참고:
-다음은 주제에 대한 추가 학습을 위한 몇 가지 유용한 링크입니다:
-- [MDN (getRandomValues) documentation](https://developer.mozilla.org/ko/docs/Web/API/Crypto/getRandomValues) - 'getRandomValues' 함수에 대한 MDN 문서입니다.
+## See Also (참고할만한 내용)
+- MDN Web Docs on `Math.random()`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+- MDN Web Docs on `crypto.getRandomValues()`: https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues
+- Randomness in cryptography: https://en.wikipedia.org/wiki/Randomness
+- Xorshift: https://en.wikipedia.org/wiki/Xorshift

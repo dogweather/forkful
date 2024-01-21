@@ -1,7 +1,8 @@
 ---
-title:                "Generere tilfeldige tall"
-html_title:           "Arduino: Generere tilfeldige tall"
-simple_title:         "Generere tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+date:                  2024-01-20T17:49:18.551190-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generering av tilfeldige tall"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Numbers"
@@ -11,10 +12,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å generere tilfeldige tall er en prosess for å produsere tall på en uforutsigbar måte. Programmere gjør dette for å skape uforutsigbarhet, simulere fenomener, eller prototypere algoritmer.
+Å generere tilfeldige tall betyr å skape nummer som ikke kan forutsies, og det er viktig for alt fra spill til sikkerhet. Kode trenger ofte element av uforutsigbarhet for å teste scenarier eller gi en følelse av naturlighet.
 
-## Hvordan:
-I Go kan du generere tilfeldige tall ved hjelp av `math/rand` biblioteket:
+## Slik gjør du:
+For å bruke Go's innebygde funksjoner for å generere tilfeldige tall, trenger du først å importere "math/rand"-pakken og "time"-pakken for å bruke tidsavhengig seeding. Her er et eksempel:
 
 ```Go
 package main
@@ -26,21 +27,36 @@ import (
 )
 
 func main() {
+	// Seed generator, bruk nåværende tid
 	rand.Seed(time.Now().UnixNano())
-	fmt.Println(rand.Intn(100))
+
+	// Generer et tilfeldig heltall mellom 0 og 99
+	randomNumber := rand.Intn(100)
+	fmt.Println("Tilfeldig tall: ", randomNumber)
+
+	// Generer et tilfeldig flyttall mellom 0.0 og 1.0
+	randomFloat := rand.Float64()
+	fmt.Println("Tilfeldig flyttall: ", randomFloat)
 }
 ```
-Kjører du dette programmet, vil du få forskjellig output hver gang siden tiden hvorfra tallet blir seedet er alltid forskjellig
+
+Når du kjører programmet, får du noe slikt:
+
+```
+Tilfeldig tall: 47
+Tilfeldig flyttall: 0.8223541256379213
+```
+
+Resultatene vil variere hver gang siden de er tilfeldige.
 
 ## Dypdykk
-Bruken av tilfeldig tallgenerering er historisk viktig innen programmering, og daterer tilbake til de tidligste dagene av computing for simuleringer. 
+Historisk har programmerere brukt ulike metoder for å generere pseudo-tilfeldige tall, som egentlig er deterministiske, men ser tilfeldige ut. Go bruker én av flere mulige algoritmer kalt 'pseudorandom number generators' (PRNGs). Seed-funksjonen er kritisk her; uten en variabel seed, vil programmet gi de samme resultatene hver gang det kjøres.
 
-Det finnes også andre metoder for generering av tilfeldige tall i Go, som bruk av `crypto/rand` biblioteket for kryptografisk sikre tall. 
+Alternativer for Go inkluderer å bruke kryptografisk sikre tall fra "crypto/rand"-pakken, nyttig når du trenger høyere sikkerhet, så som for passord eller krypteringsnøkler.
 
-Intern fungering av random nummer generasjon i Go bruker en pseudo-random nummer generator som er seedet ved programstart. Dette gir en unik sekvens av numre hver gang programmet kjøres.
+Implementeringsmessig, "math/rand"-pakken er bra for grunnleggende tilfeldighet og testing, mens "crypto/rand" er tregere, men gir bedre tilfeldighet.
 
-## Se også:
-Her er noen nyttige lenker med mer informasjon:
-- Godocs for `math/rand` biblioteket: https://golang.org/pkg/math/rand/
-- Introduksjon til Random Number Generator (RNG) i Go: https://yourbasic.org/golang/generate-random-number/ 
-- Generering av kryptografisk sikre tilfeldige tall: https://go.dev/play/p/3i0wGlUFuC.tgz
+## Se Også
+- Golang dokumentasjon for 'math/rand'-pakken: https://golang.org/pkg/math/rand/
+- Golang blogg om tilfeldighet: https://blog.golang.org/random
+- "crypto/rand"-dokumentasjon: https://golang.org/pkg/crypto/rand/

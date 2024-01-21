@@ -1,6 +1,7 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "C++: הורדת דף אינטרנט"
+date:                  2024-01-20T17:44:22.853126-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,32 +12,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-הורדת דף אינטרנט היא תהליך שבו תוכנית מחשב מאחסנת גרסת מקומית של דף אינטרנט. תכנתים משתמשים בזה כדי לעבד מידע מהאינטרנט כהמשך לעבודה או לאחסון לשימוש עתידי.
+להוריד עמוד ווב זו תהליך שבו אנחנו מבקשים וקולטים תוכן משרת באינטרנט. תכניתנים עושים את זה כדי לקבל נתונים, לעבד מידע או לאחסן אותו לשימוש מאוחר יותר.
 
-## כיצד לעשות:
-אני מצטער שאני לא מצליח לספק דוגמה לוגית של קוד 'Elm' שאמור להוריד דף אינטרנט כיוון שהשפה 'Elm' מביאה איתה אבטחת נתונים מאוד חזקה שהיא לא מאפשרת לבצע הורדה ישירה של מידע מהאינטרנט. 
-
-במקום זאת, 'Elm' משתמשת ברעיון של 'קריאות HTTP'. 
+## איך לעשות:
+ב-Elm, אנו משתמשים ב-http package כדי להוריד נתונים מהאינטרנט:
 
 ```Elm
+module Main exposing (main)
+
+import Html exposing (Html, text)
 import Http
-import Json.Decode as Decode
+import Json.Decode exposing (string)
 
-getWebPage : String -> Cmd Msg
-getWebPage url =
-    Http.get { url = "https://www." ++ url, expect = Http.expectString GotWebPage }
+type Msg
+    = GotText (Result Http.Error String)
 
-type Msg = GotWebPage (Result Http.Error String)
+type alias Model =
+    { content : String }
+
+init : Model
+init =
+    { content = "" }
+
+update : Msg -> Model -> Model
+update msg model =
+    case msg of
+        GotText (Ok newText) ->
+            { model | content = newText }
+
+        GotText (Err _) ->
+            model
+
+subscribe : Model -> Sub Msg
+subscribe model =
+    Http.get
+        { url = "https://example.com"
+        , expect = Http.expectString GotText
+        }
+        |> Sub.task
+
+view : Model -> Html Msg
+view model =
+    text model.content
+
+main : Program () Model Msg
+main =
+    Html.program
+        { init = (init, Cmd.none)
+        , view = view
+        , update = update
+        , subscriptions = subscribe
+        }
 ```
 
-אם היינו יוצרים תוכנית שמקבילה לדף אינטרנט, המידע שנקרא באמצעות שימוש בקריאה ל HTTP ישמש אותנו כגרסה המקומית של הדף.
+הדוגמא מתארת איך לשלוח בקשה לשרת ולקבל תוכן כטקסט.
 
 ## צלילה עמוקה
-הורדת דפי אינטרנט התחילה בגיל האחרון של אינטרנט (HTTP). בשפות שונות, ישנן שיטות ורעיונות שונים להורדת הדפים, גאווה ההורדה שאנו משתמשים באיבוד הזמן מאפשרת. 'Elm' מאפשרת accessing לאינטרנט באופן בטוח ומבנה, תוך שמירה מוחלטת על אבטחת המידע.
-
-אלטרנטיבות להורדת דפי אינטרנט ב- 'Elm' כוללות שימוש ב Ajax לעבודה עם בקשות HTTP או Node.js להורדת דף אינטרנט מהשרת. ברבים נמצאים מעל הבחירה בברחינו.
+Elm מספקת פרדיגמה נקייה לניהול תוכנת ווב על ידי שימוש ב-Architecture שלה: Model, Update ו-View. בעבר, בשפות אחרות כמו JavaScript, תהליך זה היה מעט מסורבל יותר. Elm מאוד ממוקדת בטיפול בתוצאות אסינכרוניות, כמו הורדות, בצורה מסודרת ועקבית. תחליף אפשרי ל-http ב-Elm הוא עבודה עם WebSockets למהירות גבוהה יותר ותקשורת דו-כיוונית.
 
 ## ראה גם
-1. Http - https://package.elm-lang.org/packages/elm/http/latest/
-2. Elm's Web Standards - https://elm-lang.org/guide/web-apps
-3. README на Elm - https://github.com/evancz/elm-lang.org
+- [Elm HTTP package documentation](https://package.elm-lang.org/packages/elm/http/latest/)
+- [Elm Guide on HTTP](https://guide.elm-lang.org/effects/http.html)
+- [JSON Decode documentation](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode)
+- [Elm Architecture Tutorial](https://guide.elm-lang.org/architecture/)

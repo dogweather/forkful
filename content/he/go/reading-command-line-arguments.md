@@ -1,7 +1,8 @@
 ---
-title:                "קריאה של ארגומנטים משורת הפקודה"
-html_title:           "C#: קריאה של ארגומנטים משורת הפקודה"
-simple_title:         "קריאה של ארגומנטים משורת הפקודה"
+title:                "קריאת פרמטרים משורת הפקודה"
+date:                  2024-01-20T17:56:33.929538-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "קריאת פרמטרים משורת הפקודה"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -11,42 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-קריאת ארגומנטים ממסוף היא הקניית ערכים ממסוף משתמש באמצעות שפת תכנות שכמו Go. זה מאפשר לנו להפוך את הקוד שלנו ליישומים פרטיים יותר ומותאמים אישית.
+קריאת ארגומנטים משורת הפקודה מאפשרת למשתמש להעביר פרטים ופרמטרים לתוכנית בעת הרצתה. תכניתיים עושים זאת כדי להגביר את הגמישות ולהתאים את התוכנית לצרכים סציפיים בכל הרצה.
 
-## איך:
-ב-Go, אנחנו יכולים להשתמש בספריית `os` למען מטרה זו.
-
+## איך לעשות:
 ```Go
 package main
 
 import (
-    "fmt"
-    "os"
+	"fmt"
+	"os"
 )
 
 func main() {
-    argsWithProg := os.Args
-    argsWithoutProg := os.Args[1:]
-   
-    arg := os.Args[3]
-   
-    fmt.Println(argsWithProg)
-    fmt.Println(argsWithoutProg)
-    fmt.Println(arg)
+	args := os.Args[1:] // תעלם את הארגומנט הראשון שהוא תמיד הנתיב לתכנית
+	for i, arg := range args {
+		fmt.Printf("ארגומנט #%d: %s\n", i+1, arg)
+	}
 }
 ```
-פלט עשוי להיראות כך:
 
-```Go
-[./argstest arg1 arg2 arg3]
-[arg1 arg2 arg3]
-arg3
+פלט לדוגמא:
+```
+ארגומנט #1: hello
+ארגומנט #2: world
 ```
 
-## לעומק:
-עד ש-Go הגיע, היה שם מעט שליטה או שימוש מנותב בערכים המעברים מהמסוף. Go אפשר לתכנתים לפעול בצורה יותר שלמה בקרבת המשתמש. אפשרויות אלטרנטיביות שמתקיימות ב- Go מאפשרות למרשר פלט (דרך flag או pflag למשל). 
+## צלילה עמוקה
+בעבר, קודמי Go השתמשו בספריית flag כדי לנתח ארגומנטים מפורשים יותר. כיום, יש גם חבילות של צד שלישי כמו `cobra` ו-`urfave/cli`, המציעות יותר תכונות ונוחות. שימוש ב-`os.Args` הוא הדרך הישירה והפשוטה ביותר לקבל ארגומנטים, אבל היא לא תמכה בפרמטרים אופציונליים או בפורמט של flags ללא תוספת עיבוד.
 
-## ראה גם:
-* [os.Args ב-Tour of Go](https://tour.golang.org/list)
-* [os package in Go by Example](https://gobyexample.com/command-line-arguments)
-* [בלוג Go של Dave Cheney בבניית פרמטרים מילוליים](https://dave.cheney.net/2019/09/24/be-wary-of-functions-which-take-several-parameters-of-the-same-type)
+## ראה גם
+- מדריך לחבילת `flag`: https://pkg.go.dev/flag
+- דף בית של `cobra`: https://github.com/spf13/cobra
+- דף בית של `urfave/cli`: https://github.com/urfave/cli
+- מדריך לחבילת `os`: https://pkg.go.dev/os

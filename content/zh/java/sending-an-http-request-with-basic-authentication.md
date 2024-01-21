@@ -1,7 +1,8 @@
 ---
-title:                "使用基本认证发送http请求"
-html_title:           "Bash: 使用基本认证发送http请求"
-simple_title:         "使用基本认证发送http请求"
+title:                "使用基本认证发送 HTTP 请求"
+date:                  2024-01-20T18:01:57.120126-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "使用基本认证发送 HTTP 请求"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,47 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？ (What & Why?)
-使用基本认证发送HTTP请求是一项技术，允许应用程序通过网络发送受保护的信息。程序员之所以使用它，主要是为了确保数据在互联网上的传输安全。
+## 什么 & 为什么？
+发送带有基本认证的HTTP请求是一种通过网络向服务器验证身份的方式。程序员这么做主要是为了安全地访问受保护的资源。
 
-## 如何实现： (How to:) 
-使用Java可以简单快速地实现HTTP请求加基本认证，下面以Java库OkHttp为例介绍一下实现步骤：
+## 如何：
 ```java
-//首先，导入必要的库：
-import okhttp3.*;
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
+import java.net.URL;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 
-public class OkHttpExample {
-  public static void main(String[] args) throws Exception {
- 	// 创建OkHttpClient
-    OkHttpClient client = new OkHttpClient();
+public class BasicAuthExample {
+    public static void main(String[] args) {
+        try {
+            URL url = new URL("http://example.com/api/data");
+            Authenticator.setDefault(new Authenticator() {
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication("username", "password".toCharArray());
+                }
+            });
 
-    // 添加请求认证
-    String credentials = Credentials.basic("username", "password");
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
 
-    // 创建请求对象
-    Request request = new Request.Builder()
-      .url("https://api.github.com/user")
-      .header("Authorization", credentials)
-      .build();
+            int status = connection.getResponseCode();
+            System.out.println("Response Code: " + status);
 
-    try (Response response = client.newCall(request).execute()) {
-      // 打印响应状态和响应体
-      System.out.println(response.code() + " " + response.body().string());
+            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String inputLine;
+            StringBuilder content = new StringBuilder();
+
+            while ((inputLine = in.readLine()) != null) {
+                content.append(inputLine);
+            }
+
+            in.close();
+            System.out.println("Response Body: " + content);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
-运行以上代码将会输出如下内容（模拟输出，因为这取决于你的用户名和密码）：
+输出样例：
 ```
-200 {"login":"username","id":123456,...}
+Response Code: 200
+Response Body: { "data": "This is the data from the server." }
 ```
-## 深入探究 (Deep Dive)
-使用基础认证发送HTTP请求的历史可以追溯到HTTP/1.0的早期，那时候大家对网路安全的重视还不足。随着网路安全的越来越受到重视，HTTPS和更加安全的认证协议逐渐取代了基础认证。但是基础认证仍然在很多场景中被广泛使用，如简单应用、测试环境、内部系统等。
 
-在Java中，除了OkHttp库之外，还有很多其他库可以实现HTTP请求，例如Apache HttpClient, HttpUrlConnection等。虽然实现方式上有些差异，但核心思想都是一样的。
+## 深潜
+发送带有基本认证的HTTP请求一直是一个老生常谈的话题。它的历史可追溯到早期的HTTP协议。虽然现今有更安全的认证方式（如OAuth 2.0），但因为简便性，基本认证仍广泛用于内网和不那么敏感的数据访问。重要的实现细节包括在请求头中包含一个经过Base64编码的用户名和密码组合，并以`Authorization: Basic`来加以前缀。
 
-在实现过程中，把用户名和密码加密编码后放到请求头是至关重要的一步，这样可以在信息在网络上传输的过程中保证其安全性。
-
-## 另请参阅 (See Also)
-- [OkHttp官方文档](https://square.github.io/okhttp/)
-- [HttpUrlConnection官方文档](https://developer.android.com/reference/java/net/HttpURLConnection)
+## 参见
+- [HTTP基本认证规范(RFC7617)](https://tools.ietf.org/html/rfc7617)
+- [Java网络编程概览](https://docs.oracle.com/javase/tutorial/networking/index.html)
+- [Java中的Base64编码和解码](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html)
+- [如何使用Java安全地存储密码](https://www.oracle.com/technical-resources/articles/javase/security.html)

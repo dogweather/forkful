@@ -1,6 +1,7 @@
 ---
 title:                "Berechnung eines zukünftigen oder vergangenen Datums"
-html_title:           "Gleam: Berechnung eines zukünftigen oder vergangenen Datums"
+date:                  2024-01-20T17:30:51.301233-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,34 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Berechnen eines Datums in der Zukunft oder Vergangenheit bedeutet, ausgehend von einem bekannten Datum ein neues Datum zu ermitteln, das eine bestimmte Zeitspanne entfernt liegt. Programmierer nutzen dies für Funktionen wie Erinnerungen, Terminplanungen oder Zeitvergleiche.
 
-Berechnungen von Daten in der Zukunft oder Vergangenheit sind Methoden, um ein bestimmtes Datum basierend auf einem anderen zu ermitteln. Programmierer machen das, weil Zeit wichtige Rollen in Softwareanwendungen spielt, von Erinnerungsfunktionen bis hin zu Ablaufdaten.
+## How to:
+Gleam bietet keine integrierte Zeitbibliothek. Aber du kannst `gleam_stdlib` nutzen, ähnlich zu dieser Art:
 
-## Wie geht's:
+```gleam
+import gleam/calendar.{ Date, Duration, add }
 
-Hier ist ein einfaches Beispiel dafür, wie man das in Gleam (der aktuellen Version) macht.
+pub fn calculate_future_date(base_date: Date, days_to_add: Int) -> Date {
+  let duration_to_add = Duration(days: days_to_add)
+  add(base_date, duration_to_add)
+}
 
-```Gleam
-import gleam/date
-import gleam/time.{next_day, previous_day}
-
-// Ein Beispiel für die Berechnung eines zukünftigen Datums
-let tomorrow = next_day(date.new(2021, 12, 31))
-
-//Ein Beispiel für die Berechnung eines vergangenen Datums
-let yesterday = previous_day(date.new(2021, 12, 31))
-
+pub fn main() {
+  let today = Date(year: 2023, month: 4, day: 15)
+  let tomorrow = calculate_future_date(today, 1)
+  tomorrow
+}
 ```
-Die Ausgabe von 'tomorrow' wäre `2022-01-01` und die von 'yesterday' wäre `2021-12-30`.
 
-## Tiefere Einblicke:
+Sample output:
 
-Historisch gesehen wurde die Berechnung von Datumsangaben bereits in der Frühe der Computertechnik eingesetzt, meistens zum Verwalten von Zeitstempeln und Terminen. Mit der fortschreitenden Entwicklung hat sich das weitaus komplizierter und nuancierter gestaltet. Alternativen zu Gleam können andere Programmiersprachen sein wie Python, Java oder JavaScript, aber Gleam bietet eine saubere und kompakte Art, Datum zu berechnen. 
+```gleam
+Date(year: 2023, month: 4, day: 16)
+```
 
-Eines der Dinge, die bei der Datumsberechnung zu beachten sind, ist die Berücksichtigung von Schaltjahren.
+## Deep Dive
+Historisch lehnt sich Gleam an funktionale Sprachen wie Erlang und OCaml an, jedoch ohne eingebaute Zeitverwaltung. Alternativen Optionen sind Bibliotheken wie `chronos` oder Bindungen zu Erlangs `:calendar`. Beim Rechnen mit Daten ist es wichtig, Timezones und Schaltjahre zu berücksichtigen, was in Bibliotheken eingebaut sein kann.
 
-## Siehe auch:
-
-Prüfen diese Ressourcen aus, um weiter zu lernen:
-
-- Allgemeine Datums- und Zeitfunktionen: [https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
+## Siehe Auch
+- [Erlang's calendar module documentation](http://erlang.org/doc/man/calendar.html)
+- [Chronos Gleam library](https://hex.pm/packages/chronos)

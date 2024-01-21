@@ -1,6 +1,7 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
-html_title:           "Go: המרת מחרוזת לאותיות קטנות"
+date:                  2024-01-20T17:38:52.826337-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,22 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-שינוי מחרוזת לאותיות קטנות הוא לשנות את האותיות הגדולות במחרוזת לקטנות. תכנתים עושים את זה כדי להשוות בקלות בין מחרוזות, מבלי לדאוג לדיכוי.
+המרה של מחרוזת לאותיות קטנות זה פשוט לקחת טקסט ולהפוך את כל האותיות הגדולות לקטנות. תוכניתנים עושים את זה כדי לאחד פורמטים, להקל על השוואות טקסט, ולשמור על עקביות בבסיסי נתונים.
 
 ## איך לעשות:
-ב- Elm, ניתן לשנות מחרוזת לאותיות קטנות באמצעות הפונקציה `String.toLower`. שימוש בפונקציה זו נראה כך:
+באלם זה פשוט מאוד. תשתמשו בפונקציה `String.toLower` כדי להמיר כל מחרוזת שברצונכם.
 
 ```Elm
 import String
 
-txt = "HELLO WORLD"
-lowerTxt = String.toLower txt
+lowercaseString : String -> String
+lowercaseString str =
+  String.toLower str
 
--- הדפסה של lowerTxt תביא ל- "hello world"
+-- דוגמא לשימוש:
+result : String
+result =
+  lowercaseString "HELLO, WORLD!"
+
+-- תוצאה:
+-- "hello, world!"
 ```
 
-## צלילה עמוקה
-שינוי מחרוזת לאותיות קטנות הוא רעיון תכנותי ישן שראה אור בשנות ה-60. ב-Elm, חייבים להשתמש במודול `String` שמכיל את הפונקציה `toLower`. אפשר לבחור לבצע את המרה באמצעות קוד נוסף, אך מומלץ להשתמש בכלי התכנות הסטנדרטיים של שפת התכנות.
+## עיון מעמיק
+המרה לאותיות קטנות היא משימה סטנדרטית בתכנות, ואפשר היה למצוא אותה כבר בשפות עתיקות כמו לימוד שפת מ"א. ישנם חלופות כמו השימוש בביטויים רגולריים או פונקציות עזר מותאמות אישית, אבל באלם, 'String.toLower' היא פונקציה פשוטה וישירה שעושה את העבודה. מאחורי הקלעים, הפונקציה חייבת לכבד כללים של השפה, כמו אותיות גדולות בשפות שונות וסימנים מיוחדים.
 
 ## ראו גם
-אתר הבית של Elm: [אפשר למצוא כאן](https://elm-lang.org/), הדריך הרשמי: [מדריך Elm](https://guide.elm-lang.org/), מודול ה-String של Elm: [String Elm](https://package.elm-lang.org/packages/elm/core/latest/String#toLower).
+- תיעוד הפונקציה `String.toLower` באלם: [https://package.elm-lang.org/packages/elm/core/latest/String#toLower](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
+- מדריך לעבודה עם טקסט ומחרוזות בסטנדרטים שונים.

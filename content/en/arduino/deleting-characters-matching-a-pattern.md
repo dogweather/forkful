@@ -1,6 +1,7 @@
 ---
 title:                "Deleting characters matching a pattern"
-html_title:           "Lua recipe: Deleting characters matching a pattern"
+date:                  2024-01-20T17:41:18.857704-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -12,42 +13,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Occasionally, programmers find a need to delete characters in a string that follow a specific pattern - this is known as pattern matching. This neat trick cleans up your data and simplifies further data analysis!
+Deleting characters matching a pattern means getting rid of specific sequences of characters from strings—think cleaning up data or inputs. Programmers do this to standardize, simplify, or validate the information before processing it.
 
 ## How to:
 
-Deleting characters matching a pattern in Arduino is straightforward. Here is an example. The function `deleteChar()` is what we're after.
+Let's say we want to drop all numeric digits from our string. We've got a string with some random numbers, and we're going after a clean, letters-only result.
 
 ```Arduino
-void setup()   {
+void setup() {
   Serial.begin(9600);
+
+  // Our initial string with numbers
+  String stringWithNumbers = "Ar3du1n0 1s aw3som3!";
+  String cleanedString = deletePattern(stringWithNumbers, "0123456789");
+
+  // Print the cleaned string
+  Serial.println(cleanedString);
 }
 
-void loop()
-{
-  String text = "Hello#World";
-  deleteChar(text, '#');
-  Serial.println(text); //Prints "HelloWorld"
-  delay (1000);
+void loop() {
+  // Nothing to do here
 }
 
-void deleteChar(String &s, char c) {
-  s.remove(s.indexOf(c));
+String deletePattern(String str, String pattern) {
+  for (unsigned int i = 0; i < pattern.length(); i++) {
+    str.replace(String(pattern[i]), "");
+  }
+  return str;
 }
 ```
 
-In the snippet above, the character '#' is deleted from the string "Hello#World", outputting "HelloWorld".
+If you upload and run this on your Arduino, you'll see the string without numbers in the serial monitor:
+
+```
+Arduino is awesome!
+```
 
 ## Deep Dive
 
-Though there's no native function in C++ to delete a char, Arduino's String Class fills the gap with the `remove()` function. Before Arduino was around, the same could've been achieved with a cumbersome iteration through a string. Nowadays, this clean, alternative way of deleting characters from strings hardly takes any time!
+Removing characters matching a specific pattern isn't a new concept. Early programming languages had functions to process and manipulate strings. In Arduino, although a high-level function for pattern deletion doesn't exist natively, we can create our custom logic, like in the `deletePattern` function above.
 
-When choosing an alternative to the `remove()` function, one must understand the performance trade-off. The standard `remove()` function performs adequately for small text sizes. However, when dealing with larger strings or frequent deletions, it might make sense to use a more efficient string manipulation library.
+There are alternatives in other languages, such as regex (regular expressions) in Python or JavaScript, but Arduino's coding environment is more basic. It doesn't include regex functions out of the box, mainly due to its limited processing power and memory.
 
-Lastly, let's draw focus to the implementation aspect. Remember to pass the string by reference (`String &s`) - this ensures your function manipulates the original string and not a copy!
+Under the hood, our `deletePattern` function iterates through our pattern string, uses the `String.replace()` method to search for the current character, and replaces it with an empty string, therefore "deleting" it from our original string.
 
 ## See Also
 
-For more on Arduino's String class: [Arduino String Functions](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
-
-Dig deeper into String Libraries in C++: [C++ String Library - cplusplus.com](http://www.cplusplus.com/reference/string/string/)
+- String manipulation with Arduino: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/
+- Arduino String reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- More on string replacement: http://www.cplusplus.com/reference/string/string/replace/

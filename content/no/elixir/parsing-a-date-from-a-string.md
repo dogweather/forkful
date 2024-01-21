@@ -41,4 +41,3 @@ Parsing av datoer fra strenger er sentralt i mange applikasjoner. Historisk har 
 ## Se også
 - [Timex Documentation](https://hexdocs.pm/timex/Timex.html)
 - [Elixir's Date module](https://hexdocs.pm/elixir/Date.html)
-- [strftime Directive Reference](https://www.foragoodstrftime.com/)

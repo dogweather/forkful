@@ -1,7 +1,8 @@
 ---
-title:                "पाठ की खोज और प्रतिस्थापन"
-html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
-simple_title:         "पाठ की खोज और प्रतिस्थापन"
+title:                "पाठ खोजना और बदलना"
+date:                  2024-01-20T17:58:21.968851-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पाठ खोजना और बदलना"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,27 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+टेक्स्ट खोजना और बदलना है तार (string) में विशेष अक्षर या शब्दों को ढूँढ कर उन्हें नए से बदल देना। प्रोग्रामर्स यह इसलिए करते हैं क्योंकि अक्सर कोड में या डाटा में सुधार या अपडेट्स की ज़रूरत होती है।
 
-खोजना और बदलना सादा एक प्रोग्रामिंग के तरीके हैं वाकय को पिछानने और ऐडिट करने के लिए। प्रोग्रामर इसे कोड के टुकड़ों को पुन: उपयोग करने, त्रुटियाँ सुधारने और डाटा को अनुकूलित करने के लिए करते हैं। 
-
-## कैसे करें:
-
-Lua में टेक्स्ट खोजने और बदलने के लिए `string.gsub` फ़ंक्शन का उपयोग करें। इसका उपयोग निम्नलिखित तरीके से किया जा सकता है:
-
+## How to: (कैसे करें:)
 ```Lua
-text = "नमस्ते, दुनिया!"
-text = string.gsub(text, "नमस्ते", "अलविदा")
-print(text) -- अलविदा, दुनिया!
+local text = "Hello World! Welcome to Lua programming!"
+local to_find = "World"
+local replacement = "Lua"
+
+local result = text:gsub(to_find, replacement)
+print(result)
 ```
+Output:
+```
+Hello Lua! Welcome to Lua programming!
+```
+यहां `gsub` फंक्शन `to_find` वाले शब्द को `replacement` से बदल देता है।
 
-## गहराई में:
+## Deep Dive (गहराई से जानकारी)
+Lua में string मॉड्यूल का उपयोग करने से टेक्स्ट खोजना और बदलना आसान होता है। `gsub` एक उदाहरण है जिसका उपयोग रेगुलर एक्सप्रेशन पैटर्न्स के साथ भी किया जा सकता है। पहले कंप्यूटर साइंस में यह काम बहुत मुश्किल और लंबा होता था, पर Lua जैसी भाषाएं इसे आसानी से सीखने और लिखने योग्य बना देती हैं। कुछ भाषाएं `sed`, `awk`, या `perl` भी इसी प्रकार के काम में माहिर हैं। Lua में, `gsub` हाई-पर्फोरमेंस तथा लचीलापन के कारण चुना जाता है।
 
-1. ऐतिहासिक प्रसंग: Lua का पहला संस्करण, जो 1993 में जारी हुआ, ने string.gsub फ़ंक्शन को पहली बार परिभाषित किया था।
-2. विकल्प: Regex भी Lua में खोज और बदलाव करने का एक विकल्प है, जो अधिक काम्याबी और शक्तिशाली हो सकता है, लेकिन अधिक जटिल है।
-3. क्रियान्वयन विवरणी: `gsub` फ़ंक्शन पहले string में पैटर्न की खोज करता है, फिर उसे नई string के साथ बदलता है। यह अपने आप में एक loop की तरह काम करता है।
-
-## अन्य स्रोत देखें:
-
-1. Lua 5.3 रेफरेंस मैनुअल: [string.gsub](https://www.lua.org/manual/5.3/manual.html#pdf-string.gsub)
-2. Lua-Users विकी: [StringLibraryTutorial](http://lua-users.org/wiki/StringLibraryTutorial)
+## See Also (अधिक जानकारी के लिए)
+- Lua 5.4 Reference Manual: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
+- Online Lua Compiler / Web-based Lua playground for testing: [https://repl.it/languages/lua](https://repl.it/languages/lua)
+- Regular Expressions in Lua: [http://lua-users.org/wiki/PatternsTutorial](http://lua-users.org/wiki/PatternsTutorial)

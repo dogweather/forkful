@@ -1,7 +1,8 @@
 ---
-title:                "Estrazione di sottosequenze"
-html_title:           "Arduino: Estrazione di sottosequenze"
-simple_title:         "Estrazione di sottosequenze"
+title:                "Estrazione di sottostringhe"
+date:                  2024-01-20T17:45:09.231965-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,41 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cosa & Perché?
+## What & Why?
+Estrarre sottostringhe significa catturare parti specifiche di una stringa di testo. I programmatori lo fanno per analizzare, modificare, o semplicemente visualizzare segmenti rilevanti dei loro dati di input.
 
-L'estrazione di sottostringhe in C è l'atto di estrarre una parte di una stringa esistente per creare una nuova stringa. Gli sviluppatori lo fanno per lavorare con parti specifiche delle stringhe, senza dover gestire l'intera lunghezza della stringa.
-
-## Come fare:
-
-Ecco un esempio di come estrarre una sottostringa usando la funzione `strncpy` nel linguaggio C.
+## How to:
+Estrarre sottostringhe in C si fa spesso con `strncpy`. Ma attenzione: `strncpy` non aggiunge automaticamente il carattere `\0` per terminare la stringa. Ecco come fare:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char sorgente[] = "Buongiorno, mondo!";
-    char destinazione[15];
+    char text[] = "Ciao, mondo!";
+    char dest[5]; // Scegli dimensione adeguata
 
-    strncpy(destinazione, sorgente, 10);
-    destinazione[10] = '\0';  // End of string
+    // Estrarre "Ciao"
+    strncpy(dest, text, 4);
+    dest[4] = '\0';   // Aggiungi il terminatore di stringa manualmente
 
-    printf("%s\n", destinazione);  // Outputs: Buongiorno
+    printf("La sottostringa è: '%s'\n", dest);
     return 0;
 }
 ```
-In questo esempio, stiamo estraendo i primi 10 caratteri dalla stringa "Buongiorno, mondo!" e stiamo mettendo il risultato nella stringa di destinazione.
 
-## Approfondimento
+Output:
+```
+La sottostringa è: 'Ciao'
+```
 
-Estrarre una sottostringa è una tecnica comune in programmazione e contesti di elaborazione del testo. Questa pratica risale ai primi giorni di programmazione. Anche se la funzione `strncpy` è abbastanza diretta, è importante notare che non aggiunge automaticamente un carattere null alla fine della sottostringa, quindi è necessario farlo manualmente.
+## Deep Dive:
+L'estrazione di sottostringhe ha radici storiche nella necessità di manipolare testo limitando l'uso della memoria. Nei primi tempi, con meno memoria disponibile, ogni byte contava.
+Alternative a `strncpy` includono `memcpy` e `strndup`. `memcpy` si usa quando si conosce la lunghezza del segmento di memoria e `strndup` duplica la sottostringa, occupandosi anche del `\0` finale.
+L'implementazione varia considerando che nessuna funzione standard di C fornisce una soluzione completa per sottostringhe sicure - c'è sempre da pensare al terminatore di stringa.
 
-Ci sono alternative alla funzione `strncpy` come l'uso di puntatori per estrarre una sottostringa. Tuttavia, `strncpy` è considerato più sicuro poiché minimizza i problemi di overflow del buffer.
-
-L'implementazione effettiva di `strncpy` può variare leggermente a seconda del compilatore o del sistema operativo, ma l'idea di base è la stessa.
-
-## Vedere Anche
-
-1. Documentazione ufficiale di `strncpy`: http://www.cplusplus.com/reference/cstring/strncpy/
-2. Guida stringhe C sulla W3schools: https://www.w3schools.in/c-tutorial/strings/
-3. Wikipedia, manipolazione delle stringhe: https://en.wikipedia.org/wiki/String_manipulation
+## See Also:
+- [`strncpy` reference](http://www.cplusplus.com/reference/cstring/strncpy/)
+- [Manipolare stringhe in C - tutorial](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+- [`strndup` function](https://linux.die.net/man/3/strndup)

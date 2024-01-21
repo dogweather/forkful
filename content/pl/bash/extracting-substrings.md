@@ -1,7 +1,8 @@
 ---
-title:                "Wydobywanie podciągów"
-html_title:           "Python: Wydobywanie podciągów"
-simple_title:         "Wydobywanie podciągów"
+title:                "Wycinanie podłańcuchów"
+date:                  2024-01-20T17:45:17.492325-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wycinanie podłańcuchów"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,32 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Operacja wyodrębniania podciągów ("substring") pozwala na wybranie części większego ciągu znaków. Programiści często z niej korzystają, gdy muszą zidentyfikować, zmodyfikować lub użyć określonej części ciągu.
+Wyciąganie podciągów to wydobywanie konkretnych fragmentów tekstu z większych ciągów znaków. Programiści robią to, by manipulować danymi, weryfikować format, czy po prostu wydobyć potrzebne informacje.
 
 ## Jak to zrobić:
-
-Oto przykładowy kod Bash i jego wyjście:
-
 ```Bash
-str="Witaj w świecie programowania!"
-echo ${str:6:5}
+# Wyodrębnienie podciągu używając indeksów
+text="Bash jest super!"
+echo ${text:5:4} # wypisze 'jest'
+
+# Wyodrębnienie podciągu od końca ciągu znaków
+echo ${text: -6:5} # wypisze 'super'
+
+# Użycie sztuczki z 'expr substr' do wyciągania podciągów
+podciag=$(expr substr "$text" 6 4)
+echo $podciag # również wypisze 'jest'
 ```
 
-Wyjście:
+## Głębsze zanurzenie
+Wycinanie podciągów w Bashu ma długą historię – funkcjonalność ta była dostępna już w wersjach przed Bash 4. Pozwala to na obsługę zarówno prostych skryptów jak i złożonych skryptów do przetwarzania tekstu.
 
-```Bash
-w świ
-```
+Alternatywnie, można użyć narzędzi zewnętrznych jak `awk`, `sed`, `cut`, jeśli wymagane jest coś bardziej skomplikowanego lub potrzebujemy większej kontroli nad procesem.
 
-W tym przykładzie ${str:6:5} wyodrębnia 5 znaków zaczynając od 6 pozycji w ciągu `$str`.
+Szczegóły implementacji w Bashu to głównie operacje na zmiennych typu string, które wspierają indeksację i mogą być stosunkowo wolne w porównaniu z dedykowanymi programami do przetwarzania tekstu. Niemniej, w wielu przypadkach są wystarczające i znacznie prostsze w użyciu.
 
-## Głębsze zrozumienie
-
-Bash, dysponując funkcją wyodrębniania podciągów, kontynuuje tradycję powłok UNIX-owskich, które znane są z obsługi operacji na ciągach znaków na wysokim poziomie. Alternatywą dla tej operacji w Bash jest używanie `awk` czy `sed`, ale wyodrębnianie podciągów jest zazwyczaj szybsze i prostrze. Co do szczegółów implementacji, po prostu indeksuje znaki w ciągu znaków i zwraca ciąg składający się z znaków pomiędzy tymi indeksami.
-
-## Zobacz też
-
-Zapoznaj się z tymi linkami, aby uzyskać dodatkowe informacje:
-
-3. [Bash Substring Documentation](https://tldp.org/LDP/abs/html/string-manipulation.html)
+## Zobacz również:
+- [Bash String Manipulation](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion)
+- [Advanced Bash-Scripting Guide: String Operations](http://tldp.org/LDP/abs/html/string-manipulation.html)
+- Stack Overflow odpowiedzi dotyczące [manipulacji ciągami znaków w Bashu](https://stackoverflow.com/questions/tagged/string+bash)

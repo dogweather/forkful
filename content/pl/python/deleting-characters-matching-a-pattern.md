@@ -1,6 +1,7 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "C: Usuwanie znaków pasujących do wzorca"
+date:                  2024-01-20T17:43:03.177930-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Python"
 category:             "Python"
@@ -10,37 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Usuwanie Znaków Odpowiadających Wzorcowi w Pythonie
+## Co i Dlaczego?
+Usuwanie znaków pasujących do wzorca to proces filtrowania tekstu według zdefiniowanych reguł, na przykład za pomocą wyrażeń regularnych. Robimy to, by usunąć niepożądane lub niepotrzebne informacje, zwiększając tym samym czytelność i poprawność danych.
 
-## Czym i Dlaczego?
-
-Usuwanie znaków, które pasują do określonego wzorca, to jedno z podstawowych zadań programisty - pomaga w czyszczeniu danych wejściowych, manipulowaniu tekstami i obsłudze różnych przypadków. Narzędzia języka Python umożliwiają wykonanie tej pracy efektywnie i łatwo.
-
-## Jak to Zrobić:
-
-Kod Pythona do usuwania znaków pasujących do wzorca jest prosty. Poniżej znajdują się przykładowe zastosowania:
-
+## Jak to zrobić:
 ```Python
-import re 
+import re
 
-# Usuń wszystkie cyfry z tekstu
-tekst = re.sub('\d', '', 'abc123')
-print(tekst)  # output: 'abc'
+# Przykład usuwania cyfr
+tekst_z_liczbami = 'To jest przykład 123 z liczbami 456'
+pattern = r'\d+' # Wzorzec dla cyfr
+tekst_bez_liczb = re.sub(pattern, '', tekst_z_liczbami)
+print(tekst_bez_liczb)
 
-# Usuń wszystkie litery
-tekst = re.sub('[a-zA-Z]', '', 'abc123')
-print(tekst)  # output: '123'
+# Przykład usuwania znaków specjalnych
+tekst_ze_znakami_specjalnymi = 'Hello! Jak się masz? Świetnie :) #python'
+usun_znaki = r'[!?:)#]'
+tekst_czysty = re.sub(usun_znaki, '', tekst_ze_znakami_specjalnymi)
+print(tekst_czysty)
 ```
-Powyższy kod używa modułu 're' i metody 'sub' do wyszukiwania wzorców i ich zastępowania. 
 
-## Głębsze Zrozumienie:
+Output:
+```
+To jest przykład  z liczbami 
+Hello Jak się masz Świetnie  python
+```
 
-Historia wyrażeń regularnych, które są silnym narzędziem do manipulowania wzorcami, ma korzenie w teorii języków formalnych i automatach. Alternatywną metodą manipulowania tekstem w Pythonie mogą być listy składane lub inne techniki zbiorów.
+## Deep Dive
+Usuwanie znaków matching a pattern to częsta operacja w programowaniu, a korzenie ma w początkach informatyki. Istnieją różne podejścia, ale wyrażenia regularne (regex) to dziś standard. Regex umożliwia bardzo skomplikowane operacje na tekstach, co wykorzystywane jest w walidacji danych, wyszukiwaniu, etc. Alternatywą dla regex są funkcje wbudowane języków programowania jak `str.replace()` czy biblioteki takie jak `string`, lecz są mniej elastyczne.
 
-Implementacja usuwania znaków pasujących do określonego wzorca jest efektywna dzięki silnym mechanizmom Pythona do obsługi wyrażeń regularnych i manipulacji ciągami. W Pythonie każdy ciąg znaków zawsze jest obiektem, co zapewnia szybkość i wydajność.
+Ważny szczegół: `re.sub()` używa żądłowego (eager) przetwarzania, tzn. znajdzie wszystkie wystąpienia wzorca. Można też użyć `re.finditer()` do leniwego (lazy) przeszukiwania tekstu, co może być efektywniejsze dla dużych danych.
 
-## Zobacz Również:
-
-1. Dokumentacja modułu 're' w Pythonie: [https://docs.python.org/3/library/re.html](https://docs.python.org/3/library/re.html)
-2. Python - Manipulowanie Tekstem: [https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting](https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting)
-3. Wyrażenia Regularne (Regex) w Pythonie: [https://realpython.com/regex-python/](https://realpython.com/regex-python/)
+## See Also
+- Dokumentacja Pythona na temat modułu `re`: https://docs.python.org/3/library/re.html
+- Interaktywny tutorial wyrażeń regularnych: https://regexone.com/
+- Dokumentacja Pythona na temat stringów i metod operacji na nich: https://docs.python.org/3/library/string.html

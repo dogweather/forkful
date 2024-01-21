@@ -1,7 +1,8 @@
 ---
-title:                "Інтерполяція рядка"
-html_title:           "Java: Інтерполяція рядка"
-simple_title:         "Інтерполяція рядка"
+title:                "Інтерполяція рядків"
+date:                  2024-01-20T17:50:44.226602-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Інтерполяція рядків"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,30 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? / Що таке та Навіщо?
+Інтерполяція рядків – це спосіб вставлення значень у рядки. Програмісти використовують її для зручного форматування тексту та динамічного створення рядків.
 
-Інтерполяція рядків - це спосіб форматування рядків в C#, який дозволяє укладати змінні прямо в рядок, використовуючи фігурні дужки `{}`. Це дозволяє програмісту легше та продуктивніше створювати рядки, особливо коли рядок залежить від декількох змінних.
-
-## Як це зробити:
-
+## How to: / Як це зробити:
 ```C#
-string name = "Peter";
-int age = 35;
-Console.WriteLine($"Hello, {name}. You are {age} years old.");
+string name = "Олексій";
+int age = 29;
+string message = $"Привіт, {name}! Тобі вже {age} років!";
+Console.WriteLine(message);
+```
+Output / Вивід:
+```
+Привіт, Олексій! Тобі вже 29 років!
 ```
 
-Виведення:
-```
-Hello, Peter. You are 35 years old.
-```
+## Deep Dive / Поглиблений Розгляд:
+В C# інтерполяція рядків з'явилася у версії 6.0 як удосконалення старіших методів форматування, таких як `string.Format`. Інтерполяція дозволяє вставляти вирази безпосередньо в рядки, що робить код чистішим. Наприклад, `string.Format("Привіт, {0}!", name)` замінено на `$"Привіт, {name}!"`. 
 
-## Поглиблений огляд
+Під капотом, компілятор переводить інтерпольований рядок у рядок, сформований через `string.Format`, і вставляє вирази як аргументи. Це може вплинути на продуктивність, особливо при великих обсягах даних, але на практиці такий вплив мінімальний.
 
-Інтерполяція рядків була введена в C# 6. Вона свого роду замінила `string.Format()`, але та і досі доступна для використання. Інтерполяція рядків простіша у використанні, бо не вимагає порядку розміщення аргументів, як це робить `string.Format()`.
+Інтерполяція також підтримує форматування та вирівнювання, як наприклад `$"{name,-20}"` додасть до рядку пробіли до двадцяти символів, а `$"{age:D5}"` виведе число з п'ятма цифрами, доповнюючи нулями.
 
-Для інтерполяції рядків компілятор C# використовує метод `String.Format`. Тобто, інтерполяційний рядок створює рядок шаблону і масив аргументів, а потім передає ці два об'єкти в `String.Format` для обробки.
-
-## Дивіться також 
-
-* [MSDN documentation on String Interpolation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
-* [MSDN Guide on Formatting types](https://docs.microsoft.com/en-us/dotnet/standard/base-types/formatting-types)
+## See Also / Дивіться також:
+- [String Interpolation in C#](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
+- [C# Programming Guide](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/)
+- [C# String.Format Method](https://learn.microsoft.com/en-us/dotnet/api/system.string.format?view=net-6.0)

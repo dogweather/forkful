@@ -1,6 +1,7 @@
 ---
 title:                "Å starte et nytt prosjekt"
-html_title:           "C: Å starte et nytt prosjekt"
+date:                  2024-01-20T18:04:14.762933-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,34 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å starte et nytt prosjekt handler om å skape en ren skifer for å utvikle programvare. Programmerere gjør dette for å realisere nye ideer, løse problemer, eller teste ut nye teknologier.
 
-Å starte et nytt prosjekt er prosessen med å opprette en grunnstruktur for en ny applikasjon. Programmerere gjør det for å legge grunnlaget for utviklingen med en god struktur og spesialtilpasset oppsett.
+## Slik gjør du:
+For å sparke i gang et Haskell-prosjekt, starter vi med Stack, et bygge- og prosjektverktøy som gjør livet lettere. 
 
-## Hvordan:
-
-La oss lage en enkel "Hello, World!"-program i Haskell. 
-
-```Haskell
-main :: IO ()
-main = putStrLn "Hello, World!"
+Installer Stack om du ikke har det:
+```shell
+curl -sSL https://get.haskellstack.org/ | sh
 ```
 
-Når du kjører denne koden, vil output være:
-
+Nå, la oss lage et nytt prosjekt:
+```shell
+stack new mittprosjekt
 ```
-Hello, World!
+
+Koden over hiver deg inn i en verden av Haskell med et standardoppsett. `mittprosjekt` kan være hva som helst du ønsker.
+
+For å bygge prosjektet ditt, naviger til prosjektmappe og kjør:
+```shell
+cd mittprosjekt
+stack build
 ```
 
-Dette er grunnleggende Haskell-kode for å skrive ut en streng til konsollen.
+Kjør programmet med:
+```shell
+stack exec mittprosjekt-exe
+```
 
-## Dyp Dykk:
+Du burde se noe ala:
+```
+Noe flott output fra ditt Haskell-program!
+```
 
-Historisk, Haskell ble utviklet i 1990 for å hindre redundans og øke kodeeffektiviteten. Det er mange alternativer til Haskell, som Python, Java, og C++, men Haskell er kjent for sin sterke statiske type system, late evaluering, rik uttrykkskraft og klar syntaks.
+## Dypdykk
+Haskell ble sluppet løs i 1990, bygd for funksjonell programmering. Stack kom derimot i 2014 for å gjøre Haskell-håndtering enklere. Alternativer inkluderer Cabal, Haskells originale byggesystem, men Stack vinner på brukervennlighet.
 
-Et prosjekt i Haskell involverer vanligvis flere filer, moduler og pakkedirektiver. Prosjektstrukturen hjelper deg å organisere koden din bedre og gjør den enklere å vedlikeholde.
+Når du starter et prosjekt, setter Stack opp et byggemiljø som håndterer avhengigheter og kompilering uten hodebry. Det bruker en kurert sett av pakker kalt Stackage for å unngå "dependency hell". 
 
-## Se Også:
+Stack og project templates hjelper deg å hoppe over tørr koden og rett på det gøyale – skape noe nytt.
 
-1. Hvis du er ny til Haskell, ta en titt på [Learn You a Haskell](http://learnyouahaskell.com/chapters) for en omfattende tutorial.
-2. For mer komplekse eksempler og "beste praksis", besøk [Haskell's offisielle Wikibook](https://en.wikibooks.org/wiki/Haskell).
-3. Skjekk ut [Haskell's offisielle dokumentasjon](https://www.haskell.org/documentation) for omfattende detaljer om språket og dets biblioteker.
+## Se også
+- [Official Stack documentation](https://docs.haskellstack.org/en/stable/README/)
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
+- [Haskell Programming from First Principles](http://haskellbook.com/)
+- [The Haskell Tool Stack Subreddit](https://www.reddit.com/r/haskellstack/)

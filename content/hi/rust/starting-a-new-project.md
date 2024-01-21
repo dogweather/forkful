@@ -1,7 +1,8 @@
 ---
-title:                "नया प्रोजेक्ट शुरू करना"
-html_title:           "C: नया प्रोजेक्ट शुरू करना"
-simple_title:         "नया प्रोजेक्ट शुरू करना"
+title:                "नई परियोजना शुरू करना"
+date:                  2024-01-20T18:04:23.196908-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "नई परियोजना शुरू करना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Getting Started"
@@ -10,23 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-नया प्रोजेक्ट शुरू करना का मतलब होता है स्वतंत्र स्रोत कोड का एक नया सेट तैयार करना, जो एक विशिष्ट कार्य को पूरा करता है। कार्यक्रमकर्ता इसे नई समस्याओं को हल करने के लिए और अधिक कुशल तरीके से करते हैं।
+## क्या और क्यों? (What & Why?)
+नया प्रोजेक्ट शुरू करते वक्त हम Rust का सरल संरचना बनाते हैं। ये इसलिए किया जाता है ताकि एक स्वच्छ और संगठित आधार पर हम कोडिंग शुरू कर सकें।
 
-## कैसे करें:
-Rust में नया प्रोजेक्ट शुरू करने के लिए अपने टर्मिनल में निम्नलिखित कोड चलाएं:
-
+## कैसे करें? (How to:)
 ```Rust
-$ cargo new my_project
-$ cd my_project
+// Rust में नया प्रोजेक्ट बनाने के लिए निम्न कमांड उपयोग में लाएं:
+
+cargo new my_project
+
+/* 
+आउटपुट:
+     Created binary (application) `my_project` package
+*/
+
+// अब `my_project` डायरेक्टरी में जाएं और सरल हेलो वर्ल्ड प्रोग्राम चलाएं:
+
+cd my_project
+cargo run
+
+/* 
+आउटपुट:
+   Compiling my_project v0.1.0 (/path/to/my_project)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.5 secs
+     Running `target/debug/my_project`
+Hello, world!
+*/
 ```
 
-यह एक नया डायरेक्टरी `my_project` बनाएगा, जिसमें `Cargo.toml` (Rust के पैकेज मैनेजर के लिए एक अत्यावश्यक फ़ाइल) और `src` डायरेक्टरी मौजूद होता है। हाय, आपका Rust प्रोजेक्ट तैयार है!
+## विस्तृत जानकारी (Deep Dive)
+Rust प्रोग्रामिंग भाषा का विकास 2010 में Mozilla Research द्वारा शुरू हुआ था। `cargo new` कमांड Rust के package manager और build system, Cargo का उपयोग करके एक नया प्रोजेक्ट बनाने के लिए है। इससे आपको मानक फाइल संरचना और `Cargo.toml` कॉन्फ़िगरेशन फाइल मिलती है जो निर्भरताओं और build settings को संभालती है। विकल्पों के रूप में, आप लाइब्रेरी या बाइनरी प्रोजेक्ट तैयार कर सकते हैं और git repository भी आरंभ कर सकते हैं।
 
-## गहरी जाँच:
-Cargo, Rust का पैकेज मैनेजर, 2015 में Rust के 1.0 वर्जन के साथ आया था। इससे पहले, Rust प्रोजेक्ट को शुरू करने का कोई एकीकृत तरीका नहीं था। Cargo के विकल्पों में Python का Pip और JavaScript का NPM शामिल हैं, लेकिन Cargo Rust के स्पेसिफिक उपयोग को देखते हुए तैयार किया गया है।
-
-## देखें भी:
-- [Rust का आधिकारिक प्रलेखन](https://doc.rust-lang.org/stable/book/)
-- [Cargo का प्रलेखन](https://doc.rust-lang.org/cargo/)
-- [Cargo गाइड](https://doc.rust-lang.org/cargo/guide/)
+## सम्बंधित स्रोत (See Also)
+- Rust के आधिकारिक दस्तावेज़ [यहाँ](https://www.rust-lang.org/learn) देखें।
+- Cargo के बारे में और पढ़ें [यहाँ](https://doc.rust-lang.org/cargo/)।
+- Rust के लिए प्रारंभिक गाइड प्राप्त करें [यहाँ](https://www.rust-lang.org/learn/get-started)।

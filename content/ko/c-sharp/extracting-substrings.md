@@ -1,6 +1,7 @@
 ---
 title:                "부분 문자열 추출"
-html_title:           "Arduino: 부분 문자열 추출"
+date:                  2024-01-20T17:45:11.393115-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "부분 문자열 추출"
 programming_language: "C#"
 category:             "C#"
@@ -10,28 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜?
-부분 문자열 추출이란 주어진 문자열의 특정 부분을 가져오는 것을 말합니다. 이를 통해 프로그래머들은 불필요한 데이터를 제거하고, 필요한 정보만을 분리해 낼 수 있습니다.
+## What & Why? (무엇 & 왜?)
+문자열에서 특정 부분을 끄집어내는 것을 '부분 문자열 추출'이라고 합니다. 데이터 처리, 입력 검증, 혹은 문자열 형태소를 분석할 때 필요합니다.
 
-## 어떻게 할 수 있을까: 
-C#에서는 `Substring` 메소드를 이용해서 부분 문자열을 추출할 수 있습니다. 
-필요한 정보만 선택적으로 가져오기 위한 예제를 살펴봅시다.
-
+## How to: (방법)
 ```C#
-string original = "안녕하세요, C# 프로그래밍을 배우는 교육생 여러분!";
-string part = original.Substring(10, 16);
-Console.WriteLine(part);
+using System;
+
+class SubstringExample {
+    static void Main() {
+        // 예제 문자열
+        string example = "안녕하세요, C# 세계에 오신 것을 환영합니다!";
+
+        // Substring을 이용한 추출
+        string greet = example.Substring(0, 5); // "안녕하세요"
+        string welcome = example.Substring(14, 2); // "환영"
+
+        // 결과 출력
+        Console.WriteLine(greet);
+        Console.WriteLine(welcome);
+    }
+}
 ```
 
-여기서는 10번째 문자부터 16개의 문자를 가져왔으며, 출력 결과는 "C# 프로그래밍을 배우는" 입니다.
+## Deep Dive (심층 학습)
+C#에서 문자열 추출은 주로 `Substring` 메소드로 수행합니다. 2000년 .NET 프레임워크의 첫 등장부터 사용됐어요. 대안으로는 `Span<T>` 혹은 정규 표현식(Regex)이 있습니다. `Substring`은 새로운 문자열을 반환하지만, `Span<T>`는 메모리를 절약할 수 있는 방법입니다. 성능이 중요한 상황에서는 `Span<T>` 사용을 고려해보세요.
 
-## 더 깊게 알아보기:
-`Substring` 메소드는 .NET Framework 1.1부터 사용 가능하게 되었습니다. 이전에는 문자열 처리를 위해서 문자 단위로 직접 처리하는 것이 일반적이었습니다.
-
-C# 에서는 `Substring` 외에도 `Split`, `Remove`, `Replace` 등의 메소드로도 문자열을 다룰 수 있습니다. 이 중에서 적절한 메소드를 선택해서 사용하면 됩니다.
-
-`Substring` 메소드는 문자열의 복사본을 만들어서 처리하기 때문에, 원본 문자열은 변경되지 않습니다. 이를 `immutable` 하다고 합니다.
-
-## 참고하면 좋을 사이트들: 
-1. [Microsoft Official C# Documentation](https://docs.microsoft.com/ko-kr/dotnet/csharp/)
-2. [C# Station Tutorial](https://www.csharp-station.com/tutorial)
+## See Also (참고 자료)
+- Microsoft의 Substring 메소드 문서: [Substring Method in C#](https://learn.microsoft.com/en-us/dotnet/api/system.string.substring?view=netcore-3.1)
+- 정규 표현식 (Regex) 사용법에 대한 문서: [Regular Expressions in C#](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- `Span<T>`에 대한 정보: [Span<T> in C#](https://learn.microsoft.com/en-us/dotnet/api/system.span-1?view=netcore-3.1)

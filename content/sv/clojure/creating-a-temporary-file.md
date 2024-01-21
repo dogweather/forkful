@@ -1,7 +1,8 @@
 ---
-title:                "Att skapa en tillfällig fil"
-html_title:           "Bash: Att skapa en tillfällig fil"
-simple_title:         "Att skapa en tillfällig fil"
+title:                "Skapa en temporär fil"
+date:                  2024-01-20T17:39:54.059651-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skapa en temporär fil"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,33 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skapa en temporär fil innebär en process där ett datorprogram skapar en fil som behövs för en kort stund, men inte permanent. Programmerare gör detta för olika ändamål, till exempel för att lagra data som behövs under programmets körning, men inte efteråt.
+Att skapa en temporär fil betyder att du tillfälligt lagrar data på disken. Programmerare gör detta för att hantera data som inte behöver vara permanent eller när de testar kod som interagerar med filsystemet.
 
-## Hur du gör:
-Du kan skapa temporära filer i Clojure med hjälp av `java.io.File`-klassen. Här är ett kort exempel:
-
+## Hur gör man:
 ```Clojure
-(ns temp.example
-    (:import
-        [java.io File]))
+(require '[clojure.java.io :as io])
 
-(defn create-temp-file []
-    (let [temp-file (File/createTempFile "temp" ".txt")]
-        (println (.getPath temp-file))))
+;; Skapa en temporär fil
+(def temp-file (io/file (io/create-temp-file "prefix-" ".suffix")))
+
+;; Använd temp-filen, här skriver vi bara lite text
+(spit temp-file "Hej från Clojure!")
+
+;; Läs från temp-filen
+(println (slurp temp-file))
+
+;; Rensa upp: ta bort temp-filen när du är klar
+(.delete temp-file)
 ```
-
-Om du kör denna kod kommer den att skriva ut sökvägen till den nyligen skapade temporära filen.
+Output skulle vara texten skriven i temp-filen, t.ex. "Hej från Clojure!".
 
 ## Djupdykning
-Historiskt sett uppfanns temporära filer för att hantera storleksbegränsningar på äldre system, men idag används de mest för att lindra lasten på ett systems primärminne.
+Temporära filer har varit ett verktyg i programmerares verktygslåda sedan de tidiga dagarna av datorutveckling. De är perfekta för att hantera stora datamängder som inte får plats i minnet, eller när du behöver en isolerad miljö för att testa filoperationer utan att riskera befintliga data. Alternativen till temporära filer kan inkludera användning av in-memory datastrukturer, som till exempel vectors eller hashtabeller i Clojure, men dessa är inte alltid praktiska eller möjliga. Implementationen av temporära filer i Java, som Clojure är byggt ovanpå, säkerställer att filerna är säkra och unika, och att de ofta kommer att raderas automatiskt när programmet som skapade dem avslutas.
 
-Det finns alternativ för temporära filer i Clojure. Ett sådant alternativ är att använda ett ramlager eller in-memory datastrukturer. Men det är värt att komma ihåg att dessa alternativ kan ha begränsningar beroende på volymen av data som behandlas.
-
-När det gäller detaljer om implementation, när `File/createTempFile` kallas, skapar JVM en ny, tom fil på filsystemet och returnerar en `File` referens till den här filen. Det är viktigt att notera att den här filen endast är tillgänglig för befintligt program och raderas när JVM stängs av.
-
-## Se Även
-Du kan läsa mer om användningen och skapandet av temporära filer i programmering genom följande länkar:
-
-1. [Oracle Java Documentation for File Class](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
-2. [Clojure Cookbook's Section on Dealing with Files](https://www.braveclojure.com/core-functions-in-depth/)
-3. [Stack Overflow's Topics on Temporary Files](https://stackoverflow.com/questions/tagged/temporary-files)
+## Se även
+- Clojure Documentation: https://clojure.org/api/api
+- Java's File API (som Clojure använder): https://docs.oracle.com/javase/8/docs/api/java/io/File.html
+- Guide to `java.io`: https://www.baeldung.com/java-io

@@ -1,7 +1,8 @@
 ---
-title:                "कमांड लाइन तर्कों को पढ़ना"
-html_title:           "Kotlin: कमांड लाइन तर्कों को पढ़ना"
-simple_title:         "कमांड लाइन तर्कों को पढ़ना"
+title:                "कमांड लाइन आर्गुमेंट्स पढ़ना"
+date:                  2024-01-20T17:57:32.698606-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "कमांड लाइन आर्गुमेंट्स पढ़ना"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,30 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-आदेश पंक्ति तर्क (`command line arguments`) उन मापदंडों को कहा जाता है जिन्हें आप अपने प्रोग्राम को शुरू करते समय पास करते हैं। प्रोग्रामर इसे संचालन के समय उपयोगकर्ता आदान-प्रदान और कस्टमाइज़ेशन को सशक्त करने के लिए करते हैं। 
+## What & Why? (क्या और क्यों?)
+कमांड लाइन आर्गुमेंट्स पढ़ना, यूज़र से डाटा इनपुट पाने का एक तरीका है। प्रोग्रामर्स इसे इस्तेमाल करते हैं ताकि वे फ्लेक्सिबल प्रोग्राम बना सकें जो अलग-अलग सिचुएशन्स के लिए कस्टमाइज़ हो सकें।
 
-## कैसे करें
-आइए देखें कि कैसे Lua प्रोग्राम के आदेश पंक्ति तर्क को पढ़ा जाता है। 
+## How to (कैसे करें):
+Lua में कमांड लाइन आर्गुमेंट्स पढ़ना सीधा है। यहाँ एक उदाहरण है:
 
-```lua
-for i, v in ipairs(arg) do
-   print("Argument " .. i .. " : " .. v)
+```Lua
+-- सेव करें जैसे: hello.lua
+
+-- पहला आर्गुमेंट {_G.arg[0]} होता है जो स्क्रिप्ट का नाम होता है
+print("स्क्रिप्ट का नाम:", _G.arg[0])
+
+-- बाकी आर्गुमेंट्स {_G.arg[1], _G.arg[2], ...}
+if #_G.arg > 0 then
+    print("नमस्ते", _G.arg[1])
+else
+    print("नमस्ते, दुनिया!")
 end
 ```
-इसका आउटपुट कुछ ऐसा होगा अगर हम 'lua test.lua Hello World' चलाते हैं:
 
-```lua
-Argument 0 : test.lua
-Argument 1 : Hello
-Argument 2 : World
+कमांड लाइन पर चलाएँ:
+
+```
+> lua hello.lua Sita
+स्क्रिप्ट का नाम: hello.lua
+नमस्ते Sita
 ```
 
-## गहराई से अध्ययन
-आदेश पंक्ति के तर्कों का उपयोग प्राचीनिक समय से हो रहा है, जब उद्घोषणात्मक भाषाएँ पहली बार उद्भव हुई थीं। लुआ में, आप `arg` ग्लोबल तालिका का उपयोग करके इन तर्कों को पढ़ सकते हैं। वैकल्पिक रूप से, यदि आपको आदेश पंक्ति पार्सर की अधिक कन्ट्रोल की आवश्यकता है, तो आप कस्टम आदेश पंक्ति पार्सर लाइब्रेरियों का उपयोग कर सकते हैं। 
+## Deep Dive (गहराई से जानकारी):
+कमांड लाइन आर्गुमेंट्स की क्षमता पुराने डेवेलपमेंट सिस्टम्स से आई है जहां इंटरेक्टिव इनपुट्स सीमित थे। लुआ में, `_G.arg` table इंडेक्स `0` से शुरू होता है जो स्क्रिप्ट का पूरा पाथ देता है, फिर `1` से उसके बाद के आर्गुमेंट्स मिलते हैं। इसके अलावा, लुआ में आर्गुमेंट्स लेने के दूसरे तरीके भी हैं जैसे कि `io.read()` या लाइब्रेरीज़ जैसे `lapp` और `argparse`। पर `_G.arg` का इस्तेमाल सबसे आम है क्योंकि यह सिंपल और पोर्टेबल होता है।
 
-## संबंधित जानकारी
-यदि आप और अधिक जानना चाहते हैं, तो निम्नलिखित साधनों की जाँच करें:
-- विकिपीडिया पर आदेश पंक्ति तर्क: https://en.wikipedia.org/wiki/Command-line_interface#Arguments
-- Lua में arg table का डॉक्यूमेंटेशन: https://www.lua.org/pil/20.1.html
--  कस्टम आदेश पंक्ति पार्सर: https://github.com/luarocks/argparse
+## See Also (और भी जानकारी):
+- Lua ऑफिसियल डॉक्यूमेंटेशन: [https://www.lua.org/pil/contents.html](https://www.lua.org/pil/contents.html)
+- एक्सटर्नल आर्गुमेंट प्रोसेसिंग लाइब्रेरी `Penlight`: [https://github.com/lunarmodules/Penlight](https://github.com/lunarmodules/Penlight)
+- लुआ `lapp` लाइब्रेरी फॉर आर्गुमेंट पार्सिंग: [https://stevedonovan.github.io/Penlight/api/libraries/pl.lapp.html](https://stevedonovan.github.io/Penlight/api/libraries/pl.lapp.html)
+- लुआ संबंधित ट्यूटोरियल्स और गाइड्स: [http://lua-users.org/wiki/TutorialDirectory](http://lua-users.org/wiki/TutorialDirectory)

@@ -1,6 +1,7 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
-html_title:           "Go: המרת מחרוזת לאותיות קטנות"
+date:                  2024-01-20T17:38:57.110680-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,31 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-המרת מחרוזת לאותיות קטנות הוא התהליך שבו אנו מבצעים שינוי של כל האותיות הגדולות במחרוזת לאותיות קטנות. תכנתים משתמשים בזה בעיקר למטרות דמה, כאשר נדרשת אחידות של הנתונים.
+המרת מחרוזת לאותיות קטנות זו פעולה שמשנה את כל האותיות הגדולות במחרוזת לאותיות קטנות. תכנתים עושים את זה כדי לאחד נתונים, למשל, לצורך השוואה או חיפוש בלי רגישות לרישיות.
 
 ## איך לעשות:
+Haskell כולל מודול שמוכן זמין למרת מחרוזות לאותיות קטנות - `Data.Char`. הנה דוגמה:
+
 ```Haskell
 import Data.Char (toLower)
 
-lowercaseStr :: String -> String
-lowercaseStr = map toLower
-```
-דוגמת פלט:
-```Haskell
-lowercaseStr "Hello, World!"
--- "hello, world!"
-```
+lowercaseString :: String -> String
+lowercaseString = map toLower
 
-## צלילה עמוקה:
-ישנן הרבה שפות תכנות שבהן ניתן להמיר מחרוזת לאותיות קטנות, אך ב-Haskell זה מתבצע באמצעות הפונקציה `toLower` שנמצאת במודול `Data.Char`. יתרה מכך, תכלית הפונקציה `map` היא להחיל פעולה (כמו `toLower`) על כל איבר ברשימה (או במקרה שלנו, מחרוזת).
-
-למרות שהפונקציה `toLower` היא אחת האפשרויות, אפשר גם להשתמש בקוד שנכתב בהשם עצמו, שימשיך לעבוד גם אם ה-API של `Data.Char` ישתנה עתידית. למשל, במקרה שבו יש מחרוזת של ASCII, ניתן לשנות כל אות גדולה לאות קטנה באמצעות הוספה של 32 לקוד ה-ASCII שלה.
-
-```Haskell
-lowercaseAscii :: String -> String
-lowercaseAscii = map (\c -> if 'A' <= c && c <= 'Z' then toEnum (fromEnum c + 32) else c)
+-- דוגמה לשימוש בפונקציה
+main :: IO ()
+main = putStrLn (lowercaseString "Hello, World!")
+-- פלט: hello, world!
 ```
 
-## ראה גם:
-1. [Hoogle Documentation - `toLower`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html#v:toLower): מסמך ה-API של `toLower` במודול `Data.Char`.
-3. [ASCII Table](http://www.asciitable.com/): מידע נוסף על קודי ASCII ואיך הם קשורים לאותיות גדולות וקטנות.
+הפונקציה `toLower` מתירה אות אחת. `map toLower` מפעילה אותה על כל האותיות במחרוזת.
+
+## טבילה עמוקה
+הסטנדרט של השפה Haskell מתעדכן עם הזמן, וכך גם התמיכה בעבודה עם טקסט ומחרוזות. `Data.Char` זה חלק מהתקן של Haskell 98.
+
+לחלופין, אפשר להשתמש בספריות צד שלישי כמו `text` או `CaseConversion` ליכולת המרה משופרת ותמיכה בשפות עם קבוצות אותיות יחודיות.
+
+פרטי מימוש: `toLower` ב`Data.Char` מתבצעת באמצעות טבלת גודל ASCII, אך גם כוללת תמונה של אותיות לפי מפת Unicode, כך שתואמת לטווח רחב של שפות ותווים מיוחדים. למרות זאת, יחסיות רישיות יכולים להיות מורכבים בשפות שונות ולכן ייתכנו חריגים.
+
+## ראה גם
+- המדריך הרשמי ל`Data.Char`: http://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Char.html
+- דוקומנטציה על הספרייה `text`: https://hackage.haskell.org/package/text
+- פרויקט CaseConversion ב-GitHub: https://github.com/stackbuilders/case-insensitive
+- סקירה של הספרייה `CaseConversion`: https://hackage.haskell.org/package/case-conversion

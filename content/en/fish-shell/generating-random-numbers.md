@@ -1,6 +1,7 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Arduino recipe: Generating random numbers"
+date:                  2024-01-20T17:48:48.973634-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generating random numbers"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,45 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Generating random numbers involves creating number sequences that lack any pattern. Programmers use this for tasks like creating unique identifiers, simulating unpredictable behaviour and enhancing security in applications.
+Generating random numbers is creating numbers that cannot be reasonably predicted. Programmers use them for tasks like security protocols, games, simulations, or anything that needs unpredictability.
 
 ## How to:
-In Fish shell, generating a random number is simple. Use the built-in `random` function that has an optional range feature.
+In Fish, you can generate random numbers easily:
 
-```fish
+```Fish Shell
 # Generate a random number between 1 and 10
-random 1 10
+set -l rand_num (random 1 10)
+echo $rand_num
 ```
-This could output:
-```
-7
-```
-A random number between 1 and 10.
 
-For a series of random numbers collectively, loop can be used:
-```fish
+Sample output could be: `7`
+
+To get a series of random numbers:
+
+```Fish Shell
 # Generate 5 random numbers between 1 and 100
-for i in (seq 5); random 1 100; end
+for i in (seq 5)
+    echo (random 1 100)
+end
 ```
-This could output:
+
+Sample output might be:
+
 ```
-13
-86
+84
 22
-45
-89
+67
+99
+30
 ```
-Each number is randomly chosen from the range of 1 to 100.
 
 ## Deep Dive
-Historically, Random number generation in computing evolved from generating pseudo-random numbers where algorithms produce sequences that are statistically random. Fish Shell's `random` command, however, actually uses a cryptographic library to provide more true randomness.
+Fish Shell's random number generator has a simple interface but an intricate underlying mechanism. Before Fish Shell 3.0, random functionality was notable for lacking compared to other shells, prompting scripts to leverage external utilities like `awk`.
 
-Two alternatives are:
-1. Pseudo-random number generator (PRNG) libraries or code snippets.
-2. Using an external command-line random number generator like `shuf`.
+Today's `random` is a built-in and relies on pseudorandom number generators (PRNGs), which are algorithms that produce sequences of numbers approximating randomness. Despite their deterministic nature, for most purposes, the numbers are "random enough".
 
-Fish's `random` implementation works by transforming a uniformly distributed random value into a set range defined by the arguments passed. It's useful, fast, and since it's a native function of the shell, it doesn't require installing extra tools or libraries.
+Alternatives to `random` include calling external commands like `shuf`, `awk`, or using the `$RANDOM` environment variable in bash for scripts that need to remain cross-shell.
+
+Regarding cryptographic security, you shouldn't use Fish's `random` for that. Instead, use a language or tool designed with cryptography in mind, like OpenSSL. Fish's `random` is more about convenience and quick, simple use cases that don't require cryptographically secure randomness.
 
 ## See Also
-For more details on how Fish shell `random` works, you can check out the official documentation here: [Fish Shell Documentation](https://fishshell.com/docs/current/commands.html#random).
-For a deeper dive into random number generation, Wikipedia article is a good place to start: [Random number generation](https://en.wikipedia.org/wiki/Random_number_generation).
+- [Fish Shell Documentation on `random`](https://fishshell.com/docs/current/cmds/random.html)
+- [OpenSSL Random Numbers Generation](https://www.openssl.org/)
+- [Wikipedia article on Pseudorandom Number Generators](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)

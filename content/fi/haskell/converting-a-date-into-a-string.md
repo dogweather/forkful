@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän muuttaminen merkkijonoksi"
-html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+date:                  2024-01-20T17:36:59.458854-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,40 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mikä ja Miksi?
+Muuttamalla päivämäärän merkkijonoksi voimme näyttää sen helposti ymmärrettävässä muodossa. Ohjelmoijat tekevät tämän, jotta päivämäärät sopivat käyttöliittymiin ja logeihin ihmisten luettaviksi.
 
-Päivämäärän muuntaminen merkkijonoksi tarkoittaa päivämäärän ilmaisemista tekstimuodossa - esim. "2. tammikuuta 2022". Se on hyödyllistä, koska se tekee päivämäärästä ihmislukuisen ja sitä voidaan käyttää esimerkiksi logitiedostoissa tai käyttöliittymässä.
-
-## Miten:
-
-Ensin tuomme tarvittavat moduulit:
-
+## How to: - Kuinka tehdä:
 ```Haskell
 import Data.Time
+
+-- Oletetaan, että meillä on päivämäärä muuttujassa 'date'
+date :: UTCTime
+date = UTCTime (fromGregorian 2023 4 7) (secondsToDiffTime 0)
+
+-- Muuntaa päivämäärän merkkijonoksi
+dateToString :: UTCTime -> String
+dateToString = formatTime defaultTimeLocale "%Y-%m-%d"
+
+-- Esimerkki käytöstä
+main :: IO ()
+main = putStrLn $ dateToString date
 ```
 
-Tässä on yksinkertainen esimerkki päivämäärän muuntamisesta merkkijonoksi:
-
-```Haskell
-muunnaPvm :: IO String
-muunnaPvm = do
-   päivämäärä <- getCurrentTime
-   return (show päivämäärä)
+Output:
+```
+2023-04-07
 ```
 
-Tämän koodiesimerkin tulostus voi olla jotain tämän kaltaista: "2022-01-02 15:45:50.1234 UTC"
+## Deep Dive - Syväsukellus
+Päivämäärät merkkijonoina ovat olleet käytössä tietokoneiden alkuaikojen jälkeen, jolloin ihmiset alkoivat tarvita tapoja luettavasti tallentaa ja esittää ajanhetkiä. Historiallisesti C ja C++ ovat vaikuttaneet muiden kielien päivämääräkäsittelyyn. 
 
-## Sukellus syvyyksiin:
+Haskell käyttää `Data.Time` kirjastoa päivämäärän käsittelyyn. `formatTime` funktio mahdollistaa päivämäärän muuntamisen monenlaisiin formaatteihin. Muotoilujono, esim. `"%Y-%m-%d"`, määrittelee tulosteen muodon. `defaultTimeLocale` määrää kulttuurikohtaiset asetukset, kuten viikonpäivien ja kuukausien nimet.
 
-Historiallinen yhteys: Yleisessä käytössä oleva päivän ja ajan esitysmuoto merkkijonoissa määriteltiin alun perin ISO 8601 -standardissa.
+Vaihtoehtoisesti, Haskell tarjoaa myös `time` kirjaston, joka sisältää vanhemmat funktiot, kuten `show` ajan esittämiseen, mutta ne ovat vähemmän joustavia.
 
-Vaihtoehdot: Haskellin `Data.Time` -moduulin lisäksi myös muissa kielissä, kuten Python tai JavaScript, löytyy vastaavat funktionaalisuudet päivämäärien käsittelyyn.
+Suoritusyksityiskohdat liittyvät siihen, miten Haskell käsittelee aikaan liittyviä tietotyyppejä ja kuinka `formatTime` funktio purkaa muotoilujonon muuntaakseen päivämääräarvon merkkijonoksi. Joustavuuden ja kansainvälistymisen myötä on tullut tarve tukea erilaisia kalentereita ja kulttuurisidonnaisia aikamuotoja.
 
-Toteutuksen yksityiskohdat: `show` -funktio Haskellissa muuntaa päivämäärän vakioformaatiksi (ISO 8601), jossa päivämäärä ja aika erotetaan toisistaan välilyönnillä.
-
-## Katso myös:
-
-- [Haskell Data.Time dokumentaatio](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- [ISO 8601-standardi Wikipediassa](https://fi.wikipedia.org/wiki/ISO_8601)
-- [Python datetime moduulin dokumentaatio](https://docs.python.org/3/library/datetime.html)
-- [JavaScript Date-objektin dokumentaatio](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+## See Also - Katso Myös
+- [Haskell.org Documentation](https://www.haskell.org/documentation/) – Haskellin virallinen dokumentaatio.
+- [Data.Time Library on Hackage](https://hackage.haskell.org/package/time-1.11.1.2/docs/Data-Time.html) – Tarkemmat tiedot `Data.Time` kirjastosta.

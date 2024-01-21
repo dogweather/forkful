@@ -1,7 +1,8 @@
 ---
-title:                "连接字符串"
-html_title:           "C: 连接字符串"
-simple_title:         "连接字符串"
+title:                "字符串拼接"
+date:                  2024-01-20T17:34:42.867040-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "字符串拼接"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,34 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么?
-字符串连接是将两个或更多字符串连接成一个更长字符串的过程。程序员这么做是为了生成动态文本，或者在输出中组合多个单独的字符串。
+## What & Why? 什麼 & 為什麼?
+字符串拼接就是将多个字符串合并成一个。程序员这么做为了生成动态内容、构建路径或者组合消息。
 
-## 如何:
-在Fish Shell中，你可以使用以下两种主要方法来连接字符串：
+## How to: 怎麼做
+Fish Shell 组合字符串很直接。
 
+```Fish Shell
+# 使用隐式拼接
+set greeting "你好, "
+set name "世界!"
+echo $greeting$name
+# 输出: 你好, 世界!
+
+# 使用 `string` 命令
+set full_greeting (string join '' $greeting $name)
+echo $full_greeting
+# 输出: 你好, 世界!
 ```
-# 方法一：使用 string join 命令
-> set a "Hello"
-> set b "World"
-> string join ' ' $a $b
-Hello World
-```
-此方法将"$a"和"$b"连接起来，并在它们之间添加一个空格。
+## Deep Dive 深入探討
+拼接字符串是编程中最基础的功能之一，Fish Shell 提供的方法简单且直观。历史上，不同的编程语言有不同的拼接方法，诸如在 C 语言中需要使用函数 `strcat`，Python 中可以用 `+` 或 `.join()`。Fish Shell 的隐式拼接符合其简洁易用的设计哲学，而 `string` 命令则提供了更多灵活性和功能。
 
-```
-# 方法二：从Shell脚本中直接输出字符串
-> set a "Hello"
-> set b "World"
-> echo $a$b
-HelloWorld
-```
-此方法直接将"$a"和"$b"连接起来，不使用分隔符。
+Fish Shell 的 `string` 命令不仅限于拼接，它也能分割、替换等操作字符串。不过，相比其他语言，Fish 不支持 `+` 操作符用于拼接，而是通过空格来自然拼接或者利用 `string` 命令。
 
-## 深入了解：
-Fish Shell的设计目标之一是简单易用。早在20世纪70年代的Unix Shell就有字符串连接的功能，Fish Shell的实现方式更符合人类的认知。
-Fish Shell提供了多种连接字符串的方式，如上面提到的`string join`和`echo`命令，你可以根据具体场景选择使用。
-字符串连接在各种程式语言中都有不同实现方式。例如，在Python中，可以使用`+`运算符连接字符串，PHP则使用`.`。
-
-## 另请参阅：
-- Fish Shell的[官方手册](https://fishshell.com/docs/current/index.html)对该主题有深入的研究。
+## See Also 相关资源
+- [Fish Shell 官方文档](https://fishshell.com/docs/current/index.html)
+- [Fish Shell GitHub 仓库](https://github.com/fish-shell/fish-shell)

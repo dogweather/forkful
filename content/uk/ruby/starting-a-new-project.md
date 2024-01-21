@@ -1,7 +1,8 @@
 ---
-title:                "Початок нового проєкту"
-html_title:           "Elm: Початок нового проєкту"
-simple_title:         "Початок нового проєкту"
+title:                "Починаємо новий проект"
+date:                  2024-01-20T18:04:14.900178-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Починаємо новий проект"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -10,42 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що та Чому?)
+Starting a new project (ініціація нового проекту) means setting up the initial structure for your code – imagine it's the foundation of a house you're about to build. Programmers start new projects to turn ideas into running code, making the abstract concrete.
 
-Починати новий проєкт - це означає створити чистий холст для вашого коду, це ваш шанс обмежити творчий хаос, розсортувавши його в структурований та зрозумілий процес. Програмісти роблять це, щоб створити організовану структуру проєкту, яку зможуть розуміти і використовувати інші, та для більш ефективного використання ресурсів.
+## How to: (Як це зробити:)
+```ruby
+# Install the latest version of Ruby (if you don't have it yet)
+# $ sudo apt-get install ruby-full
 
-## Як це зробити:
+# Starting a new project is simple. Create a directory and initialize it:
 
-```Ruby
-# Щоб створити новий проєкт у Ruby, вам знадобиться спершу інсталювати bundler
-gem install bundler
+# Create a project directory
+$ mkdir my_new_project
+$ cd my_new_project
 
-# Після цього, ви можете створити новий проєкт за допомогою цієї команди
-bundle new my_project
+# Initialize with Bundler (if using) to manage dependencies
+$ bundle init
+
+# Sample output:
+# Writing new Gemfile to /path/to/your/new/project/Gemfile
+
+# Create a basic Ruby file
+$ touch main.rb
+
+# Edit your main.rb to include some basic Ruby code
+$ echo "puts 'Hello, Україно!'" > main.rb
+
+# Run your Ruby file
+$ ruby main.rb
+
+# Sample output:
+Hello, Україно!
 ```
 
-Цей код створить нову папку з назвою "my_project" з основною структурою проєкту Ruby.
+## Deep Dive (Поглиблений Аналіз):
+Starting a new project isn’t just about the initial setup; it's about beginning with good practices. Historically, tools like `bundler` have become essential, as managing dependencies and ensuring a consistent environment for your Ruby application is crucial.
 
-```Ruby
-# Всередині папки "my_project" ви знайдете ці файли:
-ls my_project
-```
+Alternatives like creating a project in an IDE (such as RubyMine) or using `rails new` for a Ruby on Rails app exist but tailor to more specific use cases.
 
-Виведення:
+Diving into implementation, starting off with version control (like initializing a Git repository with `git init`) is a best practice. Additionally, consider a version manager like `rbenv` or `rvm` to maintain different Ruby versions for various projects.
 
-```
-Gemfile  lib  my_project.gemspec  Rakefile  README.md
-```
-
-## Поглиблена інформація:
-
-Коли ви починаєте новий проєкт, ви користуєтесь досвідом, отриманим з попередніх проєктів. Історично, програмісти винаходили свої власні шаблони організації коду, але з часом виникли більш стандартні структури, як от структура проєкту, що створюється за допомогою Bundler в Ruby.
-
-Як альтернативу, можна використовувати Rails або Sinatra для створення веб-проєкту, що мають власні шаблони організації проєкту.
-
-У файлі "my_project.gemspec" ви знайдете деталі про ваш проєкт, включаючи назву, версію, автора та короткий опис. Bundler використовує цю інформацію при побудові вашого проєкту.
-
-## Дивись також:
-
-* Докладна інформація по організації Ruby проєктів доступна тут: [How to Structure Large Ruby on Rails Codebases](https://www.toptal.com/ruby-on-rails/rails-service-objects-tutorial)
-* Якщо ви хочете дізнатися більше про Rails або Sinatra, відвідайте їхні сайти: [Ruby on Rails](https://rubyonrails.org/), [Sinatra](http://sinatrarb.com/)
+## See Also (Додатково):
+- [The Ruby Programming Language](https://www.ruby-lang.org/en/)
+- [Bundler: The best way to manage a Ruby application's gems](https://bundler.io/)
+- [Ruby on Rails Guides for creating a new Rails project](https://guides.rubyonrails.org/getting_started.html)
+- [RubyMine IDE by JetBrains](https://www.jetbrains.com/ruby/)
+- [Git - fast, scalable, distributed revision control system](https://git-scm.com/)
+- [Rbenv: Groom your app’s Ruby environment](https://github.com/rbenv/rbenv)
+- [RVM: Ruby Version Manager](https://rvm.io/)

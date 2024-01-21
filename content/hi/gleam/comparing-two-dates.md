@@ -1,6 +1,7 @@
 ---
 title:                "दो तारीखों की तुलना"
-html_title:           "Elixir: दो तारीखों की तुलना"
+date:                  2024-01-20T17:33:34.680278-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "दो तारीखों की तुलना"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,43 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+तारीखों की तुलना करने का मतलब है दो तारीखों के बीच के अंतराल या काल क्रम को समझना। प्रोग्रामर इसे घटनाओं को शेड्यूल करने, डेडलाइंस की जांच करने और समय पर आधारित लॉजिक लागू करने के लिए करते हैं।
 
-दो तारीखों की तुलना करने से मतलब है, एक तारीख को दूसरी तारीख से तुलना करना। प्रोग्रामर इसे करते हैं ताकि वे तारीखों के बीच के समय की अवधि को गणना कर सकें और टाइम-बेस्ड लॉजिक को समझ सकें।
+## How to: (कैसे करें:)
+```gleam
+import gleam/calendar.{Date, time_since}
 
-## कैसे करें
+fn compare_dates(date1: Date, date2: Date) -> i64 {
+  time_since(date1, date2).in_seconds
+}
 
-Gleam कोड उदाहरण के साथ, दो तारीखों की तुलना करने का तरीका निम्नलिखित है:
-
-```Gleam
-import gleam/stdlib/dates
-import gleam/stdlib/int
-import gleam/ok.{Ok, Error}
-
+// उदाहरण:
 fn main() {
-    let date1 = dates.new(2021, 12, 25)
-    let date2 = dates.new(2023, 1, 1)
+  let date1 = Date(year: 2023, month: 1, day: 15)
+  let date2 = Date(year: 2023, month: 2, day: 14)
 
-    match (date1, date2) {
-        (Ok(d1), Ok(d2)) => {
-            let diff = dates.diff_days(d1, d2)
-            io.println(diff)
-            case diff {
-                Ok(days) => io.println("दिनों का अंतर: " ++ int.to_string(days))
-                Error(err) => io.println("एरर: " ++ err)
-            }
-        }
-        _ => io.println("तारीख ग़लत है")
-    }
+  let difference = compare_dates(date1, date2)
+  difference
+  // परिणाम: -30 * 24 * 60 * 60 सेकंड 
 }
 ```
 
-इस कोड के उत्पादन में "दिनों का अंतर: 372" प्रिंट होगा, जिसका अर्थ होता है कि दो तारीखों के बीच 372 दिन का अंतर है।
+## Deep Dive (गहराई से जानकारी)
+ग्लीम एक आधुनिक प्रोग्रामिंग भाषा है जो टाइप सेफ़्टी और एर्गोनॉमिक्स पर जोर देती है। पहले के जमाने में, तारीख की तुलना करने के लिए मैन्युअल कैलकुलेशन्स की जरूरत होती थी, पर Gleam के `calendar` मॉड्यूल में `Date` और `time_since` जैसे फंक्शन हमें यह काम आसानी से करने की सजगता देते हैं। अन्य भाषाओं में भी ऐसे फंक्शन हैं, पर Gleam की सख्त टाइप सिस्टम के कारण यह और भी सटीक हो जाता है। तुलना आमतौर पर सेकंड्स में की जाती है, और तारीखें मानक ISO फॉर्मेट में होनी चाहिए।
 
-## गहन जानकारी
-
-तारीखों की तुलना करने वाले कोड के विकास का इतिहास उन तकनीकों और अवधारणाओं से जुड़ा हुआ है जिन्हें प्रोग्रामर्स ने समय और तारीख की गणना के लिए विकसित किया है। इसके विकल्प के रूप में समय मुद्राओं का उपयोग किया जा सकता है, जो UNIX एपोक के सेकेंड में मापे जाते हैं। Gleam में इसका कार्यान्वयन `gleam/dates` पैकेज में होता है, यह एक्स्कर्सन के टाइम लाइब्ररी को अंतर्निहित करता है।
-
-## आगे देखें
-
-- [UNIX एपोक के बारे में विकिपीडिया लेख](https://en.wikipedia.org/wiki/Unix_time)
+## See Also (और भी देखें)
+- Understanding Time Zones in Programming: Related concepts when dealing with dates across different time zones.
+- [Gleam's GitHub repository](https://github.com/gleam-lang/gleam): ग्लीम का सोर्स कोड और लेटेस्ट अपडेट।

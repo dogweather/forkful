@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anforderung senden"
-html_title:           "Bash: Eine HTTP-Anforderung senden"
-simple_title:         "Eine HTTP-Anforderung senden"
+title:                "Einen HTTP-Request senden"
+date:                  2024-01-20T17:59:17.662591-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Einen HTTP-Request senden"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,52 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# HTTP-Anfrage in C: Was, Warum und wie man sie sendet
-
 ## Was & Warum?
-Das Senden einer HTTP-Anfrage ist der Prozess der Kommunikation mit Webservern, um Informationen zu empfangen oder zu senden. Programmierer tun dies, um Aufgaben wie APIs abrufen, Daten von Websites extrahieren oder sogar Web-Scraping durchzuführen.
 
-## Wie geht das?
-Wir werden die Curl-Bibliothek verwenden, um HTTP-Anfragen in C zu senden. Hier ist ein einfaches Beispiel:
+HTTP-Anfragen ermöglichen die Kommunikation mit Webservern – es ist, als würdest du mit dem Server plaudern. Programmiere verwenden sie, um Daten zu senden und zu empfangen; das ist essenziell für Web-Interaktionen.
+
+## Wie geht das:
+
+Hier ein simples Beispiel in C, um eine GET-Anfrage zu senden. Vorher `libcurl` installieren:
 
 ```C
+#include <stdio.h>
 #include <curl/curl.h>
 
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
+int main(void) {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        // Füge hier noch andere Optionen hinzu, falls nötig
+        CURLcode res = curl_easy_perform(curl);
 
-  curl_global_init(CURL_GLOBAL_DEFAULT);
-
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-
-    /* for secure connections */
-    curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
-
-    res = curl_easy_perform(curl);
-
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
-
-    curl_easy_cleanup(curl);
-  }
-
-  curl_global_cleanup();
-
-  return 0;
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+        }
+        curl_easy_cleanup(curl);
+    }
+    return 0;
 }
 ```
-Dieses Programm ruft einfach eine Webseite ab und druckt ihren Inhalt in der Konsole aus.
 
-## Deep Dive
-HTTP-Anfragen haben eine lange Geschichte, die auf die Anfänge des Webs zurückgeht. Ursprünglich eine einfache Anforderungs-Antwort-Struktur, hat sich die Technologie entwickelt, um komplexere Daten und Formate zu verarbeiten. Alternativen zum Senden von HTTP-Anfragen in C umfassen die Verwendung anderer Bibliotheken wie WinINet oder die WebSocket-API für Echtzeitanwendungen. Die Implementierung hängt von der spezifischen Bibliothek ab, die Sie verwenden - Curl zum Beispiel bietet sowohl blockierende als auch nicht-blockierende Versionen seiner API an.
+Beispiele der Ausgabe findest du nicht hier – es hängt davon ab, was `http://example.com` zurückgibt.
 
-## Weitere Infos
-Für weitere Informationen über das Senden von HTTP-Anfragen in C, schauen Sie bitte auf die folgenden Links:
-- [Curl Official Documentation](https://curl.se/libcurl/c/)
-- [HTTP Made Really Easy](http://www.jmarshall.com/easy/http/)
-- [RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1](https://tools.ietf.org/html/rfc2616)
+## Tiefere Einblicke
+
+Früher war HTTP-Kommunikation nur über das korrekte Schreiben von Sockets möglich – ein mühsamer Prozess. Aber dann kam `libcurl`, eine standfeste Bibliothek für solche Aufgaben. 
+
+Alternativen? Klar: `libhttp`, `Poco C++ Libraries` und für die Mutigen, rein manuelle Sockets.
+
+Die Implementierung über `libcurl` ist beliebt, weil es die Komplexität nimmt. Es kümmert sich um URLs, Header, Keep-Alive und mehr. Ohne solche Hilfsmittel musst du dich mit TCP/IP-Stacks und HTTP-Protokollen herumschlagen.
+
+Die Ausführung einer HTTP-Anfrage in C geht eigentlich um drei Schritte:
+
+1. Initialisiere die Bibliothek (hier `libcurl`).
+2. Setze die nötigen Optionen (URL, HTTP-Methode, Header, etc.).
+3. Führe die Anfrage aus und handle die Antwort.
+
+Jeder Schritt hat potenzielle Fallstricke – Fehlerbehandlung ist ein Muss.
+
+## Weiterführende Quellen
+
+Sieh dir die Dokumente an, die fürs Herz der HTTP-Anfragen in C sind:
+
+- [libcurl Documentation](https://curl.haxx.se/libcurl/c/)
+- [HTTP Made Really Easy](https://www.jmarshall.com/easy/http/)
+- [Curl Introduction Tutorial](https://curl.se/docs/httpscripting.html)
+
+Diese Links erklären, wie du mit `libcurl` loslegst, zeigen dir die Grundlagen von HTTP und lehren dich fortgeschrittene Skripttechniken mit `curl`.

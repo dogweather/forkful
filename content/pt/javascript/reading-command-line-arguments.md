@@ -1,7 +1,8 @@
 ---
-title:                "Lendo argumentos de linha de comando"
-html_title:           "Arduino: Lendo argumentos de linha de comando"
-simple_title:         "Lendo argumentos de linha de comando"
+title:                "Lendo argumentos da linha de comando"
+date:                  2024-01-20T17:56:15.006828-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,37 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Artigo sobre programação em Javascript: A Leitura de Argumentos de Linha de Comando
-
-## O Que & Por Que?
-Ler argumentos de linha de comando é obter os detalhes passados para o seu programa durante a execução. Programadores fazem isso para controlar o comportamento do programa e flexibilizar seu uso.
+## O Que é & Por Que?
+Ler argumentos da linha de comando em JavaScript significa pegar informações extras passadas ao iniciar um script Node.js. Programadores fazem isso para personalizar a execução de um programa sem alterar o código.
 
 ## Como Fazer:
-Aqui está um exemplo de como você pode usar o objeto `process.argv` para ler os argumentos de linha de comando em Javascript.
-
-```Javascript
-// process.argv irá conter uma array com os argumentos
-process.argv.forEach((valor, indice) => {
-  console.log(`${indice}: ${valor}`);
+```javascript
+// myScript.js
+process.argv.forEach((val, index) => {
+  console.log(`${index}: ${val}`);
 });
+
+// Rodando o script no terminal
+// $ node myScript.js arg1 arg2 arg3
+
+/* Saída esperada:
+0: /path/to/node
+1: /path/to/myScript.js
+2: arg1
+3: arg2
+4: arg3
+*/
 ```
-Quando você executa um programa como `node programa.js primeiro-argumento segundo-argumento`, ele imprimirá:
-```Javascript
-0: node
-1: /caminho/para/programa.js
-2: primeiro-argumento
-3: segundo-argumento
-```
-Perceba que `process.argv` inclui o caminho para o node e para o arquivo do script em execução.
 
-## Aprofundando
-Historicamente, a leitura de argumentos de linha de comando remonta aos primórdios da computação, quando a interatividade era mínima e os programas eram controlados principalmente por meio desses argumentos. No ambiente Node.js, `process.argv` é o meio mais direto e fácil de acessar esses argumentos. Entretanto, se você precisa de algo mais sofisticado, existem bibliotecas como `commander` ou `yargs` que provêem um parsing de argumentos mais avançado.
+## Mergulho Profundo
+Historicamente, acessar argumentos da linha de comando no Node.js sempre foi possível pelo objeto `process.argv`, um array que contém todos os argumentos passados. Alternativas modernas incluem bibliotecas como `yargs` ou `commander` que facilitam a parseação e adição de opções mais elaboradas. Os argumentos começam na terceira posição do array porque as duas primeiras são reservadas: a primeira para o caminho do executável do Node.js e a segunda para o script sendo executado.
 
-Quando falamos em detalhes de implementação, vale lembrar que `process.argv` é uma array. O primeiro elemento é sempre 'node', e o segundo é o caminho para o arquivo de script em execução. Os argumentos da linha de comando começam no índice 2.
-
-## Veja Também
-Para mais informações sobre a leitura de argumentos de linha de comando em JavaScript, você pode visitar os links a seguir:
-
-1. Documentação do `process.argv` na documentação do Node.js: https://nodejs.org/docs/latest/api/process.html#process_process_argv
-2. Biblioteca `commander` para manipulação avançada de argumentos: https://www.npmjs.com/package/commander
-3. Biblioteca `yargs` para parsing de argumentos: https://www.npmjs.com/package/yargs
+## Ver Também:
+- Documentação oficial do Node.js para `process.argv`: https://nodejs.org/docs/latest/api/process.html#process_process_argv
+- `yargs` para parseamento mais avançado de argumentos: https://www.npmjs.com/package/yargs
+- `commander` para construção de interfaces de linha de comando: https://www.npmjs.com/package/commander

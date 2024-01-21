@@ -1,7 +1,8 @@
 ---
-title:                "स्ट्रिंग्स को जोड़ना"
-html_title:           "Bash: स्ट्रिंग्स को जोड़ना"
-simple_title:         "स्ट्रिंग्स को जोड़ना"
+title:                "स्ट्रिंग को जोड़ना"
+date:                  2024-01-20T17:36:18.566942-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग को जोड़ना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,42 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+String concatenation दो या दो से अधिक strings को जोड़ने का काम है। इस काम को प्रोग्रामर्स अक्सर डेटा को format करने या मेसेजेस क्रिएट करने के लिए करते हैं।
 
-वाक्यांशों को जोड़ने का अर्थ है, कई छोटे वाक्यांशों को एक बड़े वाक्यांश में बदलने की प्रक्रिया। प्रोग्रामर इसे मानव-यंत्र संवाद को सुचारु बनाने और जटिल डाटा पठन को सरल करने के लिए करते हैं।
-
-## कैसे करें:
-
+## How to: (कैसे करें:)
 ```TypeScript
-// वाक्यांश संयोजन के नमूना
+// Simple String Concatenation with Plus (+) Operator
+let greeting: string = "नमस्ते, ";
+let name: string = "विश्व!";
+let welcomeMessage: string = greeting + name;
+console.log(welcomeMessage); // "नमस्ते, विश्व!"
 
-let str1 = "नमस्ते, ";
-let str2 = "दुनिया!";
-let str3 = str1.concat(str2);
-console.log(str3);  // आउटपुट: नमस्ते, दुनिया!
-
-// लिट्रल टेम्पलेट सहित वाक्यांश संयोजन
-
-let name = "रवि";
-let greeting = `नमस्ते, ${name}!`;
-console.log(greeting);  // आउटपुट: नमस्ते, रवि!
-```
-## गहरी डाइव:
-
-(1) ऐतिहासिक संदर्भ में, जबसे कंप्यूटर बनाये गए हैं, वाक्यांश संयोजन का उपयोग हो रहा है। इसका मुख्य उपयोग मानव मशीन इंटरफ़ेस में होता है।
-
-(2) विकल्पत: आप '+=' ऑपरेटर का भी इस्तेमाल कर सकते हैं।
-
-``` TypeScript
-let str1 = "नमस्ते, ";
-str1 += "दुनिया!";
-console.log(str1);  // आउटपुट: नमस्ते, दुनिया!
+// String Concatenation with Template Literals
+let user: string = "अर्जुन";
+let age: number = 30;
+let introduction: string = `मेरा नाम ${user} है और मेरी उम्र ${age} वर्ष है।`;
+console.log(introduction); // "मेरा नाम अर्जुन है और मेरी उम्र 30 वर्ष है।"
 ```
 
-(3) आंतरिक विवरण: TypeScript में, वाक्यांशों को जोडने (जैसे की `concat` मथोद या '+=' ऑपरेटर) पर कार्य करते समय, अंतर्निहित जावास्क्रिप्ट एंजन नई स्ट्रिंग स्थान बनाता है, यदि किसी स्ट्रिंग को परिवर्तित किया गया है या नए स्ट्रिंग ने पुराने स्ट्रिंग को बदल दिया है।
+## Deep Dive (गहराई में जानकारी)
+पुराने जमाने में, strings को concatenation करने के लिए बस '+' operator का इस्तेमाल होता था। लेकिन इसमें कभी-कभी गड़बड़ हो जाती थी जब numbers और strings को मिलाया जाता था। TypeScript जैसी मॉडर्न languages में template literals का इस्तेमाल करके, जिन्हें backticks (`) से पहचाना जाता है, हम आसानी से variables को strings में डाल सकते हैं और उन्हें readable बना सकते हैं। इससे गलतियाँ कम होती हैं और कोड साफ-सुथरा रहता है।
 
-## देखें भी:
-
-- [MDN Web Docs on String Concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-- [TypeScript Handbook on String Manipulation](https://www.typescriptlang.org/docs/handbook/utility-types.html)
-- [JavaScript & TypeScript concat method](https://www.w3schools.com/jsref/jsref_concat_string.asp)
+## See Also (और देखें)
+- TypeScript Handbook on Template Literals: [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)
+- MDN Web Docs on String Concatenation: [MDN String Concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat) 
+- Stack Overflow discussion on String Concatenation in TypeScript: [Stack Overflow](https://stackoverflow.com/questions/tagged/typescript+string-concatenation)

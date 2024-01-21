@@ -1,7 +1,8 @@
 ---
-title:                "Debug-tulosteen tulostaminen"
-html_title:           "Bash: Debug-tulosteen tulostaminen"
-simple_title:         "Debug-tulosteen tulostaminen"
+title:                "Virheenjäljitystulosteiden tulostaminen"
+date:                  2024-01-20T17:52:59.830966-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Virheenjäljitystulosteiden tulostaminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,34 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Tehostaaksemme koodin tarkistamista ja virheiden paikallistamista, tulostamme erityistä tietoa, jonka nimitämme debug-tulosteeksi. Se on kuin majakka koodissamme, joka ohjaa meitä ohjelmoimaan paremmin ja tehokkaammin. 
+## What & Why? - Mikä & Miksi?
+Debug-tulostus auttaa näkemään mitä ohjelmassasi tapahtuu – se on kuin vilkaisisi konepellin alle ajaessasi. Ohjelmoijat käyttävät sitä virheiden löytämiseen ja korjaamiseen sekä ohjelman toiminnan ymmärtämiseen paremmin.
 
-## Kuinka:
-Gleamissa debug-tulostus toteutetaan funktiolla `io.debug/1` ja sen käyttö on seuraavanlainen:
+## How to: - Kuinka:
+```gleam
+// Gleam-esimerkki debug-tulosteille
+fn main() {
+  let secret_number = 42
+  dbg!("Salainen numero on: ", secret_number)
+  // Tekemistäsi täällä...
+}
 
-```Gleam
+// Tulostettava esimerkkiteksti:
+// > Salainen numero on: 42
+```
+
+```gleam
+// Toinen tapa: käytä `io.debug` -funktiota
 import gleam/io
 
 fn main() {
-  let list = list.from([1, 2, 3])
-
-  // Tulostetaan lista debug-tietoina
-  io.debug(list)
+  let message = "Tähän jotakin tärkeää"
+  io.debug(message)
+  // Jatka koodaamista...
 }
-```
-Tulostus näyttää seuraavalta:
-```
-Debug: [1, 2, 3]
-```
-## Deep Dive
-Aiemmin Gleam-ohjelmassa debug-tietojen tulostaminen oli hieman hankalaa. Historiallisesti Gleam käytti Erlangin 'io:format' -funktiota, joka oli kömpelö ja sekava Gleam-kehittäjille. 
 
-Vaihtoehtoiset debug-tulostusmenetelmät löytyvät useista muista ohjelmointikielistä, kuten JavaScriptin `console.log` tai Pythonin `print`. Gleamin `io.debug/1` on nyt yksinkertaisempi ja helpompi tapa.
+// Tulostuu:
+// Tähän jotakin tärkeää
+```
 
-Gleamin `io.debug/1` palauttaa aiemman arvon käytännön syistä, ja nyt käytettävissä on myös `io.debug/2`, joka ottaa merkkijonon lisättäväksi tulostettuun debug-tietoon. 
+## Deep Dive - Syväsukellus:
+Tulostaminen on vanha keino seurata ohjelman kulkua. Ennen IDE:iden ja debuggerien aikaa, tulostus oli usein ainut tapa ymmärtää, mitä ohjelmassa tapahtuu. Gleamissa, kuten monissa muissa nykyaikaisissa kielissä, voit käyttää `dbg!`-makroa tai `io.debug`-toimintoa tulostukseen, mutta on hyvä muistaa poistaa debug-tulosteet ennen ohjelman julkaisua, jotteivät ne häiritse lopputuotetta.
 
-## Katso Myös
-- [Gleam Io-Moduuli](https://hexdocs.pm/gleam_stdlib/gleam/io.html#debug/1)
-- [Gleam-kielen opas](https://gleam.run/book/)
-- [Io-debug-funktio lähdekoodissa](https://github.com/gleam-lang/stdlib/blob/main/src/gleam/io.gleam)
+Vaihtoehtoina on monia debugger-työkaluja tai vaikkapa “logitus” (logging), joka tallentaa tietoja tiedostoon myöhemmää tutkiskelua varten. Gleamissa on omat kirjastonsa sekä logitukseen että debuggaamiseen, mutta debug-tulosteet toimivat hyvänä nopeana työkaluna, kun tarvitsee vain pikaisesti tarkastaa muuttujan arvon.
+
+## See Also - Katso Myös:
+- Gleamin virallinen dokumentaatio `io`: https://gleam.run/std-lib/gleam/io/
+- Debuggaus vs. logitus selitys: https://randycoulman.com/blog/2016/03/15/debugging-vs-logging/
+- Artikkeli ohjelman virheenkorjauksen historiasta: https://en.wikipedia.org/wiki/Debugging#History
+
+Muista, debug-tulostus on työkalu, ei lopullinen ratkaisu. Käytä sitä viisaasti!

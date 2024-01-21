@@ -1,6 +1,7 @@
 ---
 title:                "Generowanie liczb losowych"
-html_title:           "Gleam: Generowanie liczb losowych"
+date:                  2024-01-20T17:48:23.093785-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generowanie liczb losowych"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,36 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why?
+Co to jest generowanie losowych liczb? To po prostu sposób na otrzymanie liczby, która jest nieprzewidywalna. Programiści wykorzystują je do wszystkiego - od gier po symulacje i eksperymenty.
 
-Generowanie liczb losowych to proces tworzenia liczb, które nie mają przewidywalnej sekwencji lub wzoru. Programiści generują liczby losowe, aby wprowadzić element nieprzewidywalności w swoje projekty, jak gry komputerowe lub symulacje.
-
-## Jak to zrobić:
-
-Generowanie liczb losowych w Arduino jest proste. Poniższy kod generuje losowe liczby w zakresie od 0 do 100:
+## How to:
+Użycie funkcji `random()` w Arduino to bułka z masłem. Podstawmy to do kodu:
 
 ```Arduino
-void setup(){
-  Serial.begin(9600);
-  randomSeed(analogRead(0)); 
+void setup() {
+  Serial.begin(9600);        // Start the serial communication
+  randomSeed(analogRead(0)); // Initialize random number generator
 }
 
-void loop(){
-  int randomNumber = random(0,100);
-  Serial.println(randomNumber);
-  delay(1000);
+void loop() {
+  int randomNumber = random(1, 100); // Generate a random number between 1 and 99
+  Serial.println(randomNumber);       // Print the random number to the serial monitor
+  delay(1000);                        // Wait for a second
 }
 ```
-Kod ten wypisuje co sekundę losową liczbę w przedziale 0-100.
 
-## Dogłębnie:
+Po zuploadowaniu kodu, otwórz Monitor Serialny. Pojawią się losowe liczby co sekundę.
 
-Historia generowania liczb losowych w komputerach sięga lat siedemdziesiątych XX wieku, kiedy to po raz pierwszy użyto algorytmów do generowania pseudolosowych ciągów liczb. O alternatywach dla funkcji `random()` na Arduino warto wspomnieć o generowaniu liczb losowych przy użyciu szumu termicznego, co zapewnia lepszy poziom losowości, ale jest skomplikowane do implementacji. Jeżeli chodzi o `random()`, jest to jedna z najprostszych opcji dostępnych dla Arduino i dla większości zastosowań jest wystarczająco dobry.
+## Deep Dive:
+Generowanie losowych liczb w elektronice ma długą historię. Na początku stosowano wielkie, mechaniczne "maszyny losujące". Arduino, używając `randomSeed()`, inicjuje generator liczb pseudolosowych, co znaczy, że liczby wyglądają na losowe, ale bazują na określonym algorytmie.
 
-## Zobacz wiele innych:
+Inne metody? Możesz użyć zewnętrznych czujników (jak termistor) do generowania ziarna dla lepszej losowości. Detale implementacji? Znaczące jest że funkcja `random()` bez `randomSeed()` wygeneruje ten sam ciąg liczb po każdym resecie Arduino.
 
-1. Więcej o generowaniu liczb losowych: [Kurs Arduino] (https://create.arduino.cc/projecthub/arjun/generating-random-numbers-in-arduino-a-simple-guide-ec0665)
+## See Also:
+Spragniony więcej? Zajrzyj:
 
-2. Szum termiczny jako źródło losowości: [Szum termiczny] (https://playground.arduino.cc/Main/TrueRandom/)
-
-3. Inne metody generowania liczb losowych: [Metody generowania liczb losowych] (https://www.geekhideout.com/arduino-rand.shtml)
+- Dokumentacja Arduino o funkcji `random()`: https://www.arduino.cc/reference/en/language/functions/random-numbers/random/
+- Dyskusja na forum Arduino o losowości i Ziarnach: https://forum.arduino.cc/index.php?topic=396450
+- Rozważanie entropii i sprzętowych generatorów liczb losowych (HWRNGs): http://www.circuitbasics.com/arduino-random-numbers/

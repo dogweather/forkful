@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http"
-html_title:           "Arduino: Wysyłanie żądania http"
-simple_title:         "Wysyłanie żądania http"
+title:                "Wysyłanie żądania HTTP"
+date:                  2024-01-20T17:59:50.609871-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie żądania HTTP"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,46 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Wysyłamy żądanie HTTP, by porozmawiać z serwerem – zapytać o dane lub coś tam wysłać. Programiści robią to, bo to podstawa komunikacji w sieci, od stron internetowych po aplikacje.
 
-Wysyłanie żądania HTTP to proces, w którym komputer wysyła żądanie do serwera za pomocą protokołu HTTP. Programiści robią to, aby nawiązać komunikację między klientem a serwerem i przetwarzać dane.
-
-## Jak to zrobić:
-
-Poniżej znajduje się przykładowy kod Go, który wysyła żądanie GET do określonego URL.
-
+## How to (Jak to zrobić):
 ```Go
 package main
 
 import (
-    "fmt"
-    "net/http"
-    "io/ioutil"
+	"fmt"
+	"io/ioutil"
+	"net/http"
 )
 
 func main() {
-    response, err := http.Get("http://example.com")
-    if err != nil {
-        fmt.Printf("The HTTP request failed with error %s\n", err)
-    } else {
-        data, _ := ioutil.ReadAll(response.Body)
-        fmt.Println(string(data))
-    }
+	response, err := http.Get("http://example.com")
+	if err != nil {
+		fmt.Printf("Błąd podczas żądania: %s\n", err)
+		return
+	}
+	defer response.Body.Close()
+
+	body, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		fmt.Printf("Nie mogę czytać danych: %s\n", err)
+		return
+	}
+
+	fmt.Println(string(body))
 }
 ```
+Wynik działania:
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+    ...
+</html>
+```
 
-Gdy uruchomisz ten kod, zobaczysz odpowiedź HTML z powyższego URL.
+## Deep Dive (Głębsze zagłębienie):
+HTTP pozostaje głównym protokołem do komunikacji w sieci od jego wprowadzenia w 1991 roku. Obecnie mamy HTTP/2 i nadchodzi HTTP/3, ale idea pozostaje ta sama – klient wysyła żądanie, serwer odpowiada. 
 
-## Deep Dive:
+Alternatywą dla standardowej biblioteki Go do żądań HTTP jest np. `gorilla/websocket` dla WebSocketów czy pakiet `gRPC-go` dla gRPC. Ważne, aby pamiętać o bezpieczeństwie – sprawdzanie certyfikatów SSL, użycie HTTPS.
 
-Wysyłanie żądań HTTP, jest praktykowane od wprowadzenia protokołu HTTP w 1991 r., co było rewolucją w sposobie, w jaki dane są przesyłane przez internet. 
+Kiedy piszemy klienta HTTP w Go, najczęściej używamy pakietu `net/http`. "Get", "Post", "PostForm" i "Do" to funkcje, które tam znajdziemy. "Do" daje najwięcej kontroli nad żądaniem HTTP – metoda, headers, body. Ważne, by pamiętać o zamykaniu `response.Body`, by uniknąć wycieków zasobów.
 
-W języku Go można użyć pakietu "net/http" do wysyłania żądań HTTP, ale istnieją również inne biblioteki, takie jak "fasthttp" i "goreq", które oferują więcej funkcji i są wydajniejsze pod różnymi względami.
+## See Also (Zobacz również):
+- Dokumentacja Go `net/http`: https://golang.org/pkg/net/http/
+- Tutorial 'Making HTTP Requests in Go': https://golangcode.com/making-http-requests/
+- Artykuł o bezpieczeństwie w żądaniach HTTP w Go: https://blog.golang.org/http-tracing
 
-W przeciwieństwie do niektórych innych języków, Go obsługuje żądania HTTP na niskim poziomie, co oznacza, że musisz obsługiwać wiele szczegółów samodzielnie. To jednak daje większą kontrolę nad tym, jak Twoje żądania są obsługiwane i przetwarzane.
-
-## Zobacz też:
-
-- Dokumentacja Go na temat pakietu net/http: https://golang.org/pkg/net/http/
-- Porównanie różnych bibliotek HTTP dla Go: https://medium.com/@jenchikito/http-requests-in-golang-57e8a2721cbb
-- Wprowadzenie do protokołu HTTP: https://developer.mozilla.org/pl/docs/Web/HTTP/Overview
+Remember, to keep your coding journey enjoyable! Udanego kodzenia!

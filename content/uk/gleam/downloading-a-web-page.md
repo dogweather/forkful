@@ -1,6 +1,7 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "Gleam: Завантаження веб-сторінки"
+date:                  2024-01-20T17:44:10.435501-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,46 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що і Чому?)
+Завантаження веб-сторінки — це процес отримання її вмісту через інтернет. Програмісти роблять це для аналізу даних, автоматизації завдань чи інтеграції з веб-сервісами.
 
-Завантаження веб-сторінки - це процес отримання вмісту веб-сторінки з сервера. Програмісти роблять це, щоб зробити аналіз даних, перевірити доступність веб-сайтів або розробити веб-скрепери.
+## How to (Як це зробити):
+```gleam
+import gleam/http
+import gleam/httpc
 
-## Як робити:
-#### Встановлення
-Спочатку потрібно встановити Gleam, використовуючи команду:
-```shell
-rebar3 new gleam_lib my_project
+pub fn main() {
+  case httpc.get("https://example.com") {
+    Ok(response) -> 
+      io.println("Page downloaded! Status: " ++ response.status_code.to_string())
+    
+    Error(error) ->
+      io.println("Failed to download page: " ++ error)
+  }
+}
 ```
-#### Кодування
-Приклад коду для завантаження веб-сторінки в Gleam:
-```Gleam
-import gleam/http.{get}
-import gleam/uri.{parse}
-import gleam/option.{unwrap}
-
-let my_request =
-  parse("http://example.com")
-  |> unwrap(_)
-  |> get
+Sample output:
 ```
-Ви отримаєте результат, подібний на наступний:
-```Gleam
-Ok(
-  Response(
-    headers: [],
-    status: 200,
-    body: "Дані веб-сторінки"
-  )
-)
+Page downloaded! Status: 200
 ```
-## Поглиблений погляд
 
-1. **Історичний контекст**: Процес завантаження веб-сторінок виник з необхідності автоматизованого доступу до веб-контенту. Він користується неабиякою популярністю серед розробників-початківців і досвідчених програмістів.
-2. **Альтернативи**: Існують інші інструменти для завантаження веб-сторінок, головним чином бібліотеки Python, такі як Requests та Beautiful Soup, а також Node.js інструменти, такі як Axios.
-3. **Деталі реалізації**: Для завантаження веб-сторінки Gleam використовує HTTP-запити. Ви можете налаштувати параметри запитів, такі як заголовки або тіло запиту, за власним розсудом.
+## Deep Dive (Занурення у глибину):
+Downloading web pages can be traced back to the beginning of the web itself. In Gleam, we use the `http` and `httpc` modules for clean, asynchronous HTTP requests. Alternatives in other languages include Python's `requests` or JavaScript's `fetch`. Gleam, being functional and type-safe, offers reliable error handling allowing for robust applications. Understanding the HTTP protocol and status codes can greatly improve how you implement page downloading.
 
-## Дивитись також
-
-- Документація Gleam: https://gleam.run/docs/
-- Руководство по HTTP у Gleam: https://gleam.run/book/tour/http-requests.html
-- Більше про URI у Gleam: https://gleam.run/book/tour/uri.html
+## See Also (Дивіться також):
+- Gleam HTTP library documentation: https://hexdocs.pm/gleam_http/
+- HTTP status codes explanation: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+- RFC 7230 (HTTP/1.1 Protocol): https://tools.ietf.org/html/rfc7230

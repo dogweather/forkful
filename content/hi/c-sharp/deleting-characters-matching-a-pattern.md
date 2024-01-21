@@ -1,7 +1,8 @@
 ---
-title:                "पैटर्न से मिलते जुलते वर्णों को हटाना"
-html_title:           "Elixir: पैटर्न से मिलते जुलते वर्णों को हटाना"
-simple_title:         "पैटर्न से मिलते जुलते वर्णों को हटाना"
+title:                "पैटर्न से मेल खाते अक्षरों को हटाना"
+date:                  2024-01-20T17:42:09.629141-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पैटर्न से मेल खाते अक्षरों को हटाना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,41 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# पैटर्न से मेल खाने वाले वर्णों को हटाना (Deleting Characters Matching a Pattern)
+## What & Why? (क्या और क्यों?)
+पैटर्न से मेल खाते करैक्टर्स को हटाना मतलब है कि आप किसी स्ट्रिंग से विशेष अक्षरों या टेक्स्ट को निकाल रहे हो। यह तकनीक डेटा को साफ़ करने, अनावश्यक जानकारी को हटाने या फॉर्मेटिंग स्टैंडर्ड्स को लागू करने के लिए उपयोगी होती है।
 
-## क्या और क्यों? (What & Why?)
-
-वर्णों को पैटर्न से मेल खाने के हिसाब से हटाना मतलब होता है की आप उस वर्ण को हटा देते हैं, जो निर्दिष्ट पैटर्न से मेल खाता है। प्रोग्रामर्स इसे इसलिए करते हैं क्योंकि ऐसा करने से कोड के भागों को साफ करने और पाठ डेटा को संशोधित करने में मदद मिलती है।
-
-## कैसे: (How to:)
-
-हम `Regex.Replace` का उपयोग करके स्ट्रिंग से चरित्र हटा सकते हैं। निम्नलिखित C# कोड संग्रहण में, हम ["१", "२", "३"] पैटर्न से मेल खाते सभी वर्णों को हटा रहे हैं।
-
+## How to: (कैसे करें:)
 ```C#
 using System;
 using System.Text.RegularExpressions;
 
-class Program
-{
-    static void Main()
-    {
-        var inputStr = "मेरी उम्र ३० वर्ष है।";
-        var pattern = "[१२३]";
-        var replacedStr = Regex.Replace(inputStr, pattern, string.Empty);
-        Console.WriteLine(replacedStr);  // Outputs: मेरी उम्र ० वर्ष है।
+class Program {
+    static void Main() {
+        string sampleText = "Hello, नमस्ते123!";
+        string pattern = @"\d";  // इस पैटर्न का मतलब है कोई भी अंक (0-9) मिलेगा, तो हटा दो
+        
+        // Regex का use करके characters हटाएं
+        string cleanedText = Regex.Replace(sampleText, pattern, "");
+        Console.WriteLine(cleanedText); // Output: Hello, नमस्ते!
     }
 }
 ```
 
-## गहरा विवेचन (Deep Dive):
+## Deep Dive (गहराई से विचार):
+स्ट्रिंग्स से पैटर्न मैचिंग करके करैक्टर्स हटाने का विचार लंबे समय से है। पुराने जमाने में, प्रोग्रामर्स लूप्स और कंडीशन्स का उपयोग करके इस काम को अंजाम देते थे, लेकिन .NET के आने के बाद से `Regex` (Regular Expression) लाइब्रेरी ने यह काम आसान कर दिया है। `Regex.Replace` मेथड सबसे तेज़ और व्यापक तरीका है। इसके अलावा, LINQ (Language Integrated Query) इस्तेमाल करने का एक और तरीका हो सकता है, लेकिन `Regex` के लिए जटिल पैटर्न्स को हैंडल करना ज्यादा उपयुक्त है।
 
-1. **ऐतिहासिक संदर्भ (Historical context):** वर्णों को हटाना या बदलना पाठ संशोधन का मूल तत्व है, जो विभिन्न कार्यक्रमों में वर्णों, शब्दों या वाक्यांशों को बदलने की अनुमति देता है। 
-   
-2. **वैकल्पिक (Alternatives):** `Regex.Replace` के अलावा, `StringBuilder` और लूप्स का भी इस्तेमाल किया जा सकता है जबकि यह एक अधिक लगवग समाधान हो सकता है।
-   
-3. **कार्यान्वयन विवरण (Implementation details):** `Regex.Replace` विधि स्ट्रिंग को पैटर्न के साथ मिलान ढूंढ़ती है, और हर मिलान हटा देती है जब आवश्यक हो। यह मीटिंग पतटर के साथ-साथ जटिल पैटर्न्स के साथ भी काम करता है।
-
-## और भी देखें (See Also):
-
-1. [Microsoft's Guide to .NET Regular Expressions](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions) - रेगुलर एक्सप्रेशन के अधिक उपयोगों के लिए।
-2. [Microsoft's String Manipulation Guide](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/modify-string-contents) - अन्य स्ट्रिंग मणिपुलेशन की तकनीकों के लिए।
+## See Also (इसे भी देखें):
+- [Regular Expressions in .NET](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions)
+- [.NET String Class and its methods](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-7.0)
+- [Regex Class](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=net-7.0)

@@ -1,6 +1,7 @@
 ---
 title:                "Interpolering av en streng"
-html_title:           "Bash: Interpolering av en streng"
+date:                  2024-01-20T17:50:46.899659-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolering av en streng"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,40 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-
 ## Hva & Hvorfor?
-Interpolering av en streng betyr å injisere variabler direkte i strengen. Programmerere gjør dette for å lette verdiinnsamling og skrive renere kode.
+String-interpolasjon lar deg sette verdier inn i tekststrenger. Det sparer tid og gjør koden mer leselig ved å flette variabler og tekst sammen på en retningslinje.
 
-## Hvordan gjøre det:
-I Gleam, bruk `{}` for å interpolere string. Sjekk koden nedenfor:
+## Slik gjør du:
+```gleam
+fn main() {
+  let name = "Olav"
+  let greeting = "Hei, \(name)!"
+  io.println(greeting)
+}
 
-```Gleam
-let navn = "Ola"
-let hilsen = "Hei, {}"
-io.println(hilsen.format([navn])) // Output: Hei, Ola
+// Utdata: Hei, Olav!
 ```
 
-Her er et eksempel til for å vise multi-interpolering:
+## Dypdykk
+Strings har blitt manipulert siden programmeringens barndom. I gamle språk kunne det være knot, men moderne språk som Gleam gjør det enkelt og effektivt. Alternativer til interpolasjon inkluderer manuell sammenslåing av strenger eller bruk av formateringsfunksjoner. Implementeringen skjer ofte ved at kompilatoren eller tolken erstatter variabelreferansen med dens verdi direkte i den endelige strengen.
 
-```Gleam
-let x = 10
-let y = 20
-io.println("Vi adderer {} og {} for å få {}.".format([x, y, x+y])) // Output: Vi adderer 10 og 20 for å få 30.
-```
-
-## Dyp Dykk
-String interpolering startet som en funksjon i RPG og andre programmeringsspråk i 1960-tallet. Det gir en mer lesbar og kompakt måte å manipulere strenger på. Mens noen programmeringsspråk som Perl og Python innebygger det i selve språket, krever Gleam en mer uttrykkelig metode ved bruk av `.format()` -funksjonen.
-
-Alternativene til string interpolering inkluderer bruk av tradisjonelle strengmanipulasjonsfunksjoner som konkatenasjon. Men det er en mindre ønskelig tilnærming på grunn av deres verbose natur.
-
-Implementeringsdetaljer: Gleam bruker en liste med variabler i `.format()` -funksjonen som deretter innebygges i strengverdien på `{}` -merkene.
-
-## Se Også
-For mer informasjon, se disse kildene:
-- [Gleam String Dokumentasjon](https://gleam.run/book/tour/strings.html)
-- [Historien om String Interpolering](https://en.wikipedia.org/wiki/String_interpolation)
-
----
-
-Husk, øvelse gjør mester! Prøv selv på forskjellige varianter av strenginterpolering i Gleam.
+## Se også
+- Gleam language documentation: [https://gleam.run/book](https://gleam.run/book)
+- String manipulation best practices: [https://pragprog.com](https://pragprog.com)

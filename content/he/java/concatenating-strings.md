@@ -1,7 +1,8 @@
 ---
-title:                "חיבור מחרוזות"
-html_title:           "C++: חיבור מחרוזות"
-simple_title:         "חיבור מחרוזות"
+title:                "שרשור מחרוזות"
+date:                  2024-01-20T17:35:26.274044-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרשור מחרוזות"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,35 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?: (What & Why?)
-הצירוף של מחרוזות הוא להכניס הרבה מידע בשורה אחת באופן מוסרד. מתכנתים משתמשים בזה להוסיף טטסט, לבנות מחרוזת שמייצגת מידע מרובה או לשים יחד נתונים ממקורות שונים.
+## What & Why? (מה ולמה?)
+כשמדברים על שרשור מחרוזות ב-Java, אנחנו מתכוונים לתהליך שבו שתי מחרוזות (או יותר) מתחברות לאחת. זה מועיל ליצירת טקסטים דינמיים או כשרוצים לאחד נתונים לדוגמא.
 
-## איך לעשות זאת: (How to)
-הנה משל לכמה דרכים לעשות זאת ב-Java.
+## How to: (איך לעשות את זה?)
+קוד Java פשוט שמראה איך לשרשר מחרוזות:
 
-מנותח '+':
-```Java
-String firstName = "John";
-String lastName = "Doe";
-String fullName = firstName + " " + lastName;
-System.out.println(fullName); // Prints: John Doe
+```java
+public class StringConcatExample {
+    public static void main(String[] args) {
+        String hello = "שלום";
+        String world = "עולם";
+        String greeting = hello + " ל" + world + "!";
+
+        System.out.println(greeting);
+    }
+}
 ```
-באמצעות StringBuilder:
-```Java
-StringBuilder sb = new StringBuilder();
-sb.append("John");
-sb.append(" ");
-sb.append("Doe");
-System.out.println(sb.toString()); // Prints: John Doe
+
+פלט דוגמא:
+
 ```
-## התרתעות (Deep Dive)
-בהקשר ההיסטורי, המנותח '+' הוא אופציה פופולרית, אך יעיל רק למספר קטן של מחרוזות. עבור צירוף מחרוזת מרובה, StringBuilder הוא אפשרות יותר יעילה מבחינת הביצועים.
+שלום לעולם!
+```
 
-בנוסף ל'+' ו-StringBuilder, קיימות אפשרויות נוספות כמו String.format בעבודה גם עם מחרוזת מורכבת.
+## Deep Dive (עמוק יותר)
+בעבר, שרשור מחרוזות ישירות עלול היה להיות פחות יעיל כאשר משתמשים בלולאות גדולות כי כל שרשור יצר עותק חדש של המחרוזת. מאז Java 5, היתרון הזה נעלם כי קומפיילר ה-Java משתמש במחלקה StringBuilder כדי לייעל את התהליך.
 
-בהנחה שאתה משתמש ב-Java 8 או גרסה חדשה יותר, ניתן לדעת שהצירוף של מחרוזות מתבצע נכונה במדרך דינמי של JVM בשמו 'indify string concatenation'.
+לחלופין, ניתן להשתמש במחלקות כמו `StringBuilder` או `StringBuffer`:
 
-## לראות גם: (See Also)
-- [Documentations on String class in Java](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Efficient String Concatenation in Java](https://dzone.com/articles/string-concatenation-performacne-improvement-in-ja)
-- [Oracle tutorial on string concatenation](https://docs.oracle.com/javase/tutorial/java/data/buffers.html)
+```java
+StringBuilder builder = new StringBuilder();
+builder.append("שלום");
+builder.append(" ל");
+builder.append("עולם!");
+String greeting = builder.toString();
+
+System.out.println(greeting);
+```
+
+`StringBuffer` מתאים לקוד מרובה תהליכים כי הוא מסנכרן את השיטות, בעוד `StringBuilder` מהיר יותר אך לא בטיחות חוטית (thread-safe).
+
+## See Also (ראה גם)
+- [Oracle Java documentation on String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) - מידע רשמי מתיעוד אורקל בנושא מחרוזות ב-Java (קישור עלול להשתנות בהתאם לגירסה).
+- [Oracle Java documentation on StringBuilder](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html) - מידע רשמי בנושא StringBuilder.
+- [Effective Java by Joshua Bloch](https://www.pearson.com/us/higher-education/program/Bloch-Effective-Java/PGM308398.html) - ספר מומלץ לקבלת הבנה טובה יותר על תכנות נכון ויעיל ב-Java.

@@ -1,7 +1,8 @@
 ---
-title:                "एक तारीख को स्ट्रिंग में परिवर्तित करना"
-html_title:           "Java: एक तारीख को स्ट्रिंग में परिवर्तित करना"
-simple_title:         "एक तारीख को स्ट्रिंग में परिवर्तित करना"
+title:                "तारीख को स्ट्रिंग में बदलना"
+date:                  2024-01-20T17:37:28.476045-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "तारीख को स्ट्रिंग में बदलना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,31 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why?
+तारीख को स्ट्रिंग में बदलने का मतलब है एक तारीख ऑब्जेक्ट को पढ़ने लायक टेक्स्ट फॉर्मेट में परिवर्तित करना। डेवलपर्स इसे यूज़र इंटरफेस में तारीख दिखाने, लॉग फाइल्स में तारीख लिखने, या डेटा को सहेजते और पुनः प्राप्त करने के लिए करते हैं।
 
-"डेट को स्ट्रिंग में बदलना" एक ऐसी प्रक्रिया है जिसमें हम एक तारीख को पाठ(स्ट्रिंग) रूप में बदलते हैं। प्रोग्रामर्स इसे तब करते हैं जब उन्हें डेटा को उपयोगकर्ता-मित्री तरीके से प्रदर्शित करना होता है या सर्वर से डेटा क्वेरी करना होता है।
+## How to:
+```Javascript
+let currentDateTime = new Date();
+console.log(currentDateTime.toString()); // "Wed Mar 24 2021 11:28:34 GMT+0530 (India Standard Time)"
 
-## कैसे करें:
+console.log(currentDateTime.toISOString()); // "2021-03-24T05:58:34.959Z"
 
-आइए देखें कि हम JavaScript में डेट को स्ट्रिंग में कैसे परिवर्तित करते हैं।
+console.log(currentDateTime.toLocaleDateString('hi-IN')); // "24/3/2021"
 
-```Javascript 
-let currentDate = new Date();
-let stringDate = currentDate.toString();
-console.log(stringDate);
+console.log(currentDateTime.toTimeString()); // "11:28:34 GMT+0530 (India Standard Time)"
 ```
 
-यदि आप कोड को चलाते हैं, तो आपको सिस्टम की मौजूदा तारीख और समय मिलेगा, जैसे की "Tue Feb 22 2022 17:10:16 GMT+0530 (India Standard Time)"। 
+## Deep Dive
+तारीख को स्ट्रिंग में बदलने के कई तरीके हैं। सबसे पहले, `.toString()` से शुरू होते हैं जो जावास्क्रिप्ट के पुराने वर्ज़न्स से है। यह पूर्ण तारीख और समय दिखाता है। इसके बाद `.toISOString()` है, जो ISO-8601 फॉर्मेट में तारीख देता है - यह डाटाबेस स्टोरेज और API के लिए उपयोगी होता है। फिर `.toLocaleDateString()` है जो लोकल फॉर्मेटिंग के साथ तारीख देता है, अर्थात अलग-अलग भागों में अलग तरीके से तारीख दिखाना। मसलन, 'hi-IN' पारित करने पर, हिंदी (भारत) के लिए स्थानीयकृत तारीख प्राप्त होती है।
+`.toTimeString()` सिर्फ समय भाग देता है। ये फंक्शन जावास्क्रिप्ट Date ऑब्जेक्ट की परिचालित परिभाषाओं का हिस्सा हैं और तारीख-संबंधित डेटा को मैनेज करने में विभिन्न परिदृश्यों के लिए उपयुक्त होते हैं।
 
-## गहराई से जानकारी:
-
-JavaScript में, `Date` object को 1970 से ISO 8601 spec के अनुसार डेट और टाइम की गणना की गई है। `toString` मेथड सिस्टम क्षेत्र की settings के आधार पर डेट को स्ट्रिंग में बदलता है। वैकल्पिक रूप से, आप `toLocaleDateString` या `toUTCString` जैसे अन्य मेथडों का उपयोग कर सकते हैं।
-
-यदि आप अधिक अनुकूलित प्रारूप चाहते हैं, तो `Moment.js` जैसे libraries का उपयोग कर सकते हैं। वे विशेष तथा पेशेवर स्तर के फ़ॉर्मैटिंग विकल्प प्रदान करते हैं।
-
-## अधिक देखें:
-
-विस्तृत जानकारी और संबंधित सामग्री के लिए:
-- Date object (Mozilla): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
-- Moment.js: https://momentjs.com/ 
-- JavaScript Date Formats (w3schools): https://www.w3schools.com/js/js_date_formats.asp
+## See Also
+- MDN Web Docs for Date objects: [Date - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- ISO 8601 Date and time format: [ISO 8601 - Wikipedia](https://en.wikipedia.org/wiki/ISO_8601)
+- Date and time formatting in JavaScript: [Date.prototype.toLocaleDateString() - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)

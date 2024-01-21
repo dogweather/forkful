@@ -1,7 +1,8 @@
 ---
-title:                "Laste ned en nettside"
-html_title:           "Elixir: Laste ned en nettside"
-simple_title:         "Laste ned en nettside"
+title:                "Nedlasting av en nettside"
+date:                  2024-01-20T17:44:24.753677-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Nedlasting av en nettside"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,34 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
+## What & Why?
+Nedlasting av nettsider er henting av data fra en URL for å se eller behandle informasjonen. Programmerere gjør dette for å trekke ut data, automatisere oppgaver eller integrere tjenester.
 
-Å laste ned en webside innebærer å hente hele innholdet på en gitt URL slik at det kan brukes eller lagres lokalt. Programmerere gjør dette for å hente rå data, gjøre skraping, søke i innholdet på websider, lage offline kopier av nettsteder, eller som en del av integrasjonsflyt mellom applikasjoner.
-
-## Hvordan:
+## How to:
+Kotlin gjør det enkelt. Her er en kjapp kode som viser hvordan du laster ned innholdet på en nettside:
 
 ```Kotlin
+import java.net.HttpURLConnection
 import java.net.URL
 
+fun downloadWebpage(urlToDownload: String): String {
+    val url = URL(urlToDownload)
+    val httpConnection = url.openConnection() as HttpURLConnection
+    return httpConnection.inputStream.bufferedReader().readText()
+}
+
 fun main() {
-    val url = URL("http://exemple.com")
-    val content = url.readText()
-    println(content)
+    val webpageContent = downloadWebpage("https://example.com")
+    println(webpageContent)
 }
 ```
-Dette lille programmet skrives til kommandolinjen og skriver ut innholdet på websiden "http://exemple.com" til kommandolinjegrensesnittet (CLI).
 
-## Dypdykk
+Kjører du dette, skal output lignende dette vises:
 
-Historisk sett har henting av webinnhold vært en standard del av webutvikling siden dens tidlige dager. I Kotlin kan dette gjøres enkelt ved hjelp av `java.net.URL` klassen som standard i Java-biblioteket, som Kotlin kan bruke direkte.
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+```
 
-Det er også flere alternativer for mer spesialiserte oppgaver, deriblant Jsoup for webscraping og oppløsning av DOM, eller okHttp for mer avansert nettverkshåndtering og håndtering av HTTP/HTTPS. 
+## Deep Dive:
+Nedlasting av nettsider går langt tilbake til nettets tidlige dager, da det ofte ble gjort via terminaler og enkle script. Alternativer i Kotlin inkluderer biblioteker som `khttp` eller `Fuel` for mer komplekse behov.
 
-Ved implementering er det viktig å merke seg at `readText()`-funksjonen leser hele webinnholdet til minnet før det returnerer som en streng. Dette er ok for mindre nettsider, men kan forårsake hukommelsesproblemer for større nettsider. I slike tilfeller vil buffering og strømbehandling være nødvendig.
+Når det gjelder implementeringsdetaljer, åpner koden over en HTTP-tilkobling og leser innholdet som en streng. Dette er funksjonelt for enkel bruk, men moderne applikasjoner bruker ofte tredjepartsbiblioteker for å håndtere cookies, omadresseringer og asynkronitet på en mer robust måte.
 
-## Se også
-
-* [Java URL API Documentation](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/net/URL.html)
-* [Jsoup Official Website](https://jsoup.org/)
-* [OkHttp Official Website](https://square.github.io/okhttp/)
-* [Kotlin Official Documentation](https://kotlinlang.org/docs/reference/)
+## See Also:
+- Kotlin docs for HttpURLConnection: https://kotlinlang.org/api/latest/jvm/stdlib/java.net/-http-url-connection/
+- khttp GitHub repo: https://github.com/jkcclemens/khttp
+- Fuel GitHub repo: https://github.com/kittinunf/fuel

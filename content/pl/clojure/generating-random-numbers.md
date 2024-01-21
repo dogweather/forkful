@@ -1,6 +1,7 @@
 ---
 title:                "Generowanie liczb losowych"
-html_title:           "Gleam: Generowanie liczb losowych"
+date:                  2024-01-20T17:49:07.857683-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generowanie liczb losowych"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,39 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Generowanie losowych liczb to proces tworzenia numerów, które nie mają z góry określonej kolejności i nie można ich przewidzieć. Programiści używają tych liczb w symulacjach, grach, testowaniu oprogramowania, i wszędzie tam, gdzie potrzebują elementu nieprzewidywalności.
 
-Generowanie liczb losowych jest tworzeniem sekwencji liczb, które nie mają występującego wcześniej wzoru, są nieprzewidywalne. Programiści robią to dla wielu celów, takich jak tworzenie danych testowych, modelowanie i symulacje, gry, kryptografia i wiele innych aplikacji.
-
-## Jak to zrobić:
-
-Generowanie liczb losowych w Clojure jest proste dzięki wbudowanej funkcji `rand`. 
+## How to: (Jak to zrobić:)
+Clojure używa namespace `java.util.Random` albo `clojure.core/rand` do generowania losowych liczb. Oto kilka przykładów:
 
 ```Clojure
-;; Generowanie losowej liczby
-(rand)
-;; => 0.6598789386091669
+;; Użycie java.util.Random dla liczb całkowitych
+(import 'java.util.Random)
+(let [rng (Random.)]
+  (.nextInt rng)) ;=> losowa liczba całkowita
+
+;; Użycie clojure.core/rand dla liczby zmiennoprzecinkowej od 0 do 1
+(rand) ;=> 0.7099110737135088
+
+;; Losowy element z kolekcji
+(rand-nth [1 2 3 4 5]) ;=> 3
+
+;; Losowa liczba całkowita w danym zakresie, np. od 0 do 99
+(rand-int 100) ;=> 42
 ```
 
-Jeśli chcemy wygenerować losową liczbę całkowitą z określonego zakresu, możemy skorzystać z funkcji `rand-int`.
+## Deep Dive (Głębokie zanurzenie)
+Tradycyjnie, losowe liczby generowano za pomocą fizycznych metod, jak rzuty kostką czy losowania. W komputerach losowość jest symulowana – nazywamy to liczbami pseudolosowymi. Algorytmy takie jak algorytm Mersenne Twister lub Linear congruential generator (LCG) używane są do ich generowania.
 
-```Clojure
-;; Generowanie losowej liczby całkowitej pomiędzy 0 a 9
-(rand-int 10)
-;; => 7
-```
+W Clojure, `rand`, `rand-int`, i `rand-nth` opierają się na java.util.Random, który jest implementacją LCG. Istnieją lepsze generatory, jak `/dev/random` w systemach Unix czy SecureRandom w Javie, które używają różnych źródeł entropii, są wolniejsze, ale za to oferują wyższy stopień losowości.
 
-## Glebokie zanurzenie
+Alternatywą dla `rand` mogą być biblioteki zewnętrzne jak `clj-random`, które mogą oferować większą kontrolę i dodatkowe funkcje.
 
-Generowanie liczb losowych to temat, który znacznie przekracza ramy tego artykułu, ale służy też jako ważne wprowadzenie do wielu dziedzin informatyki i matematyki. 
-
-1. **Kontekst historyczny**: Historia generatorów liczb losowych sięga 1946 roku, kiedy to John von Neumann przedstawił „Metodę średniej kwadratowej”.
-2. **Alternatywy**: Clojure ma kilka bibliotek zewnętrznych, które zapewniają zaawansowane funkcje generowania liczb losowych, takie jak [test.check](https://github.com/clojure/test.check) i [incanter](https://github.com/incanter/incanter).
-3. **Szczegóły implementacji**: W Clojure, funkcje `rand` i `rand-int` używają generatora liczb losowych `java.util.Random` pod spodem. 
-
-## Zobacz również
-
-- [Dokumentacja Clojure na temat generowania liczb losowych](https://clojuredocs.org/clojure.core/rand)
-- [java.util.Random](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html) - generator liczb losowych używany przez Clojure
-- [Incanter](https://github.com/incanter/incanter) - Biblioteka do statystyki i generowania liczb losowych dla Clojure
-- [test.check](https://github.com/clojure/test.check) - Biblioteka do generowania losowych danych testowych dla Clojure
+## See Also (Zobacz również)
+- [Clojure - Random](https://clojuredocs.org/clojure.core/rand)
+- [Java.util.Random](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Random.html)
+- [SecureRandom](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html)

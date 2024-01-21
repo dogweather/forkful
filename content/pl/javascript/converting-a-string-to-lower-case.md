@@ -1,6 +1,7 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+date:                  2024-01-20T17:38:59.319736-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,37 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Przekształcanie napisu na małe litery w JavaScript
-
 ## Co i dlaczego?
-Przekształcenie napisu na małe litery oznacza zmianę wszystkich wielkich liter w napisie na ich małe odpowiedniki. Programiści robią to, aby uniknąć pomyłek związanych z rozróżnianiem wielkości liter, co jest przydatne przy porównywaniu łańcuchów lub wyszukiwaniu danych.
+Konwersja łańcucha znaków (string) do małych liter to proces zmiany wszystkich liter w tekście na ich małe odpowiedniki. Robimy to, aby ujednolicić dane, szczególnie przy porównywaniu tekstów, gdzie wielkość liter nie ma znaczenia.
 
 ## Jak to zrobić:
-
-W JavaScript, aby przekształcić napis na małe litery, używamy metody `.toLowerCase()`. Poniżej znajduje się kod i przykładowe wyjście:
-
 ```Javascript
-let greeting = 'Cześć, JAK SIĘ MASZ?';
+let greeting = "Witaj Świecie!";
 let lowerCaseGreeting = greeting.toLowerCase();
-console.log(lowerCaseGreeting);  // wydrukuje: 'cześć, jak się masz?'
+
+console.log(lowerCaseGreeting); // "witaj świecie!"
 ```
-
-## Dogłębne informacje
-
-1. Historyczne kontekst: Metoda `.toLowerCase()` jest dostępna w JavaScript od jego wczesnych wersji, co czyni ją jednym z podstawowych narzędzi dla programistów.
-2. Alternatywy: Choć metoda `.toLowerCase()` jest najprostszą i najczęściej używaną, można również użyć metody `.toLocaleLowerCase()`, która dodatkowo uwzględnia lokalne ustawienia językowe.
-3. Szczegóły implementacji: Metoda `.toLowerCase()` nie modyfikuje oryginalnego napisu. Zamiast tego zwraca nowy napis, w którym wszystkie wielkie litery są zamienione na małe.
 
 ```Javascript
-let name = 'JAN';
-console.log(name.toLowerCase()); // wydrukuje: 'jan'
-console.log(name); // wydrukuje: 'JAN'
+// Przykład z użyciem łańcuchów znaków zawierających polskie znaki diakrytyczne
+let polishText = "Język JavaScript jest Zabawny!";
+let lowerCasePolishText = polishText.toLowerCase();
+
+console.log(lowerCasePolishText); // "język javascript jest zabawny!"
 ```
-Jak widać, oryginalny napis `name` pozostał niezmieniony.
 
-## Zobacz także
+## W głębi tematu
+Konwersja tekstów do małych liter jest standardowym narzędziem w programowaniu od lat. W JavaScript funkcja `toLowerCase()` istnieje od początku i jest częścią standardu ECMAScript. Alternatywą jest funkcja `toLocaleLowerCase()`, która uwzględnia specyfikę lokalną – na przykład tureckie i azerskie małe i duże litery 'i'. Szczegóły implementacji różnią się w zależności od środowiska, ale ogólnie `toLowerCase()` działa poprzez mapowanie każdej dużej litery do jej małej odpowiedniczki w utf-16.
 
-Więcej informacji znajdziesz w dokumentacji JavaScript:
-
-- [Metoda toLowerCase()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [Metoda toLocaleLowerCase()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)
+## Zobacz również
+- MDN Web Docs o `toLowerCase()`: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- MDN Web Docs o `toLocaleLowerCase()`: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)
+- Specyfikacja ECMAScript dla `String.prototype.toLowerCase()`: [https://tc39.es/ecma262/#sec-string.prototype.tolowercase](https://tc39.es/ecma262/#sec-string.prototype.tolowercase)

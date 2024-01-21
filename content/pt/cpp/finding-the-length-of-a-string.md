@@ -1,7 +1,8 @@
 ---
-title:                "Encontrando o comprimento de uma string"
-html_title:           "C: Encontrando o comprimento de uma string"
-simple_title:         "Encontrando o comprimento de uma string"
+title:                "Descobrindo o comprimento de uma string"
+date:                  2024-01-20T17:47:09.986891-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Descobrindo o comprimento de uma string"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,37 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
+## What & Why?
+Não há enrolação: calcular o tamanho de uma string significa descobrir quantos caracteres ela tem. Fazemos isso para manipular texto com precisão, seja para slice, comparar ou validar dados.
 
-Encontrar o comprimento de uma string em C++ é determinar quantos caracteres há nela, incluindo espaços e caracteres especiais. Os programadores fazem isso para manipulação de texto, loops, memória alocada, dentre outros.
-
-## Como Fazer:
-Aqui está um exemplo de como você pode obter o comprimento de uma string em C++.
+## How to:
+C++ oferece métodos simples para essa tarefa. Vamos usar `length()` e `size()` — sim, os dois funcionam igual no mundo das strings. Confira:
 
 ```C++
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 using namespace std;
 
-int main(){
-   string str;
-   cout<<"Digite uma string: ";
-   getline(cin, str);
-   cout<<"O comprimento da string é: "<< str.length();
-   return 0;
+int main() {
+    string minha_string = "Olá, programadores!";
+    cout << "Tamanho usando length(): " << minha_string.length() << endl;
+    cout << "Tamanho usando size(): " << minha_string.size() << endl;
+    return 0;
 }
 ```
-Se você inserir a string "Ola, Mundo!", o programa retornará "O comprimento da string é: 12".
 
-## Mergulho Profundo
+Saída:
 
-Historicamente, em C++ original (também conhecido como C++98), as strings eram manipuladas como arrays de caracteres e terminadas por um caractere nulo. Para obter o comprimento de uma string, era necessário iterar através do array até encontrar o caractere nulo.
+```
+Tamanho usando length(): 20
+Tamanho usando size(): 20
+```
 
-Quanto a alternativas, em C++ você também pode usar a função `size()` em vez de `length()`. Ambas executam a mesma ação, pois são sinônimos no padrão C++ (ambas retornam o número de bytes, não o número de caracteres).
+Ambos dizem quantos caracteres temos. Simples assim.
 
-Sobre a implementação, `length()` e `size()` são implementadas como funções de membro da classe std::string. Eles retornam o número de bytes, não o número de caracteres, o que importa quando sua string contém caracteres multibyte, como em Unicode ou UTF-8.
+## Deep Dive
+O negócio dos tamanhos vem de longe. Na era do C, `strlen()` fazia o serviço, mas iterando até achar o terminador nulo `'\0'`. Hoje, com C++, `string::length()` e `string::size()` são sinônimos e retornam um `size_type`. Eles são rápidos porque a `std::string` guarda seu tamanho.
 
-## Veja Também
+Alternativas? Podemos falar de `std::string_view` em C++17, que dá um jeito de ver strings sem copiar. E tem o `std::strlen()` da biblioteca `<cstring>`, herança do C.
 
-1. [Documentação Oficial do C++](http://www.cplusplus.com/)
-3. [Tutorial de Strings em C++ no Programiz](https://www.programiz.com/cpp-programming/strings)
+No caso da implementação, `std::string` tem a eficiência incorporada. Não é a busca cega de antigamente. Saber o tamanho é instantâneo, é parte da estrutura da string, então tanto `length()` quanto `size()` são O(1).
+
+## See Also
+Para uma olhada mais aprofundada nas entranhas das strings em C++:
+
+- C++ Reference para `std::string::size`: https://en.cppreference.com/w/cpp/string/basic_string/size
+- C++ Reference para `std::string::length`: https://en.cppreference.com/w/cpp/string/basic_string/length
+- Um artigo detalhado sobre `std::string` e `std::string_view`: https://www.modernescpp.com/index.php/c-core-guidelines-string
+- Para os curiosos sobre a evolução do C++ e suas strings: https://isocpp.org/wiki/faq/cpp-migration#char-strings-safe

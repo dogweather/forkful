@@ -1,6 +1,7 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
+date:                  2024-01-20T17:58:06.109199-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Java"
 category:             "Java"
@@ -12,36 +13,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Mitä & Miksi?
 
-Tekstin hakeminen ja korvaaminen on prosessi, jolla etsitään joukko merkkejä (eli merkkijono) tekstistä ja korvataan ne toisella merkkijonolla. Ohjelmoijat tekevät tämän datan siivoamiseen, tiedostojen muokkaamiseen, tiedon uudelleenjärjestämiseen ja paljon muuta.
+Tekstin etsiminen ja korvaaminen on tapa löytää merkkijono ja korvata se toisella. Ohjelmoijat käyttävät sitä päästäkseen eroon vanhentuneesta koodista, päivittääkseen tietoja tai tehdäkseen massamuutoksia nopeasti.
 
-## Kuinka:
+## Miten:
 
-Katsotaanpa, kuinka tämä toimii Java:ssa.
+Java tarjoaa `String`-luokan, jossa on metodit `replace()` ja `replaceAll()` tekstinkäsittelyyn. `replace()` toimii merkeille ja merkkijonoille, `replaceAll()` säännöllisille lausekkeille.
 
-```Java
-public class Main {
-  public static void main(String[] args) {
-    String str = "Hei Maailma!";
-    String updatedStr = str.replace("Hei", "Terve");
-    System.out.println(updatedStr);
-  }
+```java
+public class StringReplaceExample {
+    public static void main(String[] args) {
+        String originalString = "Ohjelmointi on hauskaa, kunnes ei ole.";
+        String replacedString = originalString.replace("hauskaa", "hidasta");
+        System.out.println(replacedString);
+
+        String regexReplacedString = originalString.replaceAll("hauskaa|ei ole", "turhauttavaa");
+        System.out.println(regexReplacedString);
+    }
 }
 ```
 
-Tässä yksinkertaisessa esimerkissä "Hei" korvataan sanalla "Terve". Outputtina saamme:
+Tulostus:
 
 ```
-Terve Maailma!
+Ohjelmointi on hidasta, kunnes ei ole.
+Ohjelmointi on turhauttavaa, kunnes turhauttavaa.
 ```
 
-## Syvällinen sukellus:
+## Syväsukellus:
 
-1. Historiallinen yhteys: Vanhat ohjelmointikielet, kuten C ja Fortran, joissa ei ollut sisäänrakennettuja funktioita tekstin hakemiseen ja korvaamiseen, vaativat ohjelmoijia kirjoittamaan paljon koodia tähän toimintoon.
-2. Vaihtoehdot: Joissain kielissä, kuten Perl:ssä ja Python:ssa, on kyky suorittaa Regular Expressions (säännölliset lausekkeet), joka on tehokas tapa etsiä ja korvata tekstiä.
-3. Toteutustiedot: Java:ssa `replace()`-metodi on osa `String`-luokkaa, ja se palauttaa uuden merkkijonon. Joissakin tapauksissa, kun suoritetaan useita korvaavia toimenpiteitä, esimerkiksi `StringBuilder` tai `StringBuffer` voi olla tehokkaampi.
+Historiallisesti tekstin korvaaminen tiedostoissa tehtiin komentorivillä käyttäen työkaluja kuten `sed` tai `awk` Unix-pohjaisissa järjestelmissä. Java-toteutus on osa korkean tason API:a, joka tekee käsittelystä yksinkertaista. `replaceAll()` käyttää säännöllisiä lausekkeita, jotka ovat voimakas mutta monimutkainen työkalu tekstinkäsittelyyn. Tämä on nopeampaa ja joustavampaa kuin manuaalisesti kirjoitetut ratkaisut.
 
-## Katso myös:
+## Katso Myös:
 
-1. Oracle Java Documentation about `replace()`: [Oracle Java Docs](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replace-char-char-)
-2. Tutorial on Regular Expressions in Java: [Java Regex Tutorial](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
-3. Information on StringBuilder: [StringBuilder in Java](https://www.javatpoint.com/StringBuffer-class)
+- Java String Documentation: https://docs.oracle.com/javase/10/docs/api/java/lang/String.html
+- RegExr, säännöllisten lausekkeiden harjoitteluun: https://regexr.com/
+- `Pattern` ja `Matcher` luokat: https://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html

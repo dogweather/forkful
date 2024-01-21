@@ -1,6 +1,7 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "Java: Interpolando uma string"
+date:                  2024-01-20T17:51:42.187548-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolando uma string"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,29 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
+## O Que & Porquê?
+A interpolação de strings permite misturar trechos de texto com código Ruby, para criar uma string única de forma dinâmica. Programadores usam essa técnica para construir mensagens personalizadas, acessar variáveis ou chamar métodos diretamente dentro de strings.
 
-Interpolação de string é uma técnica que permite inserir uma variável ou expressão diretamente dentro de uma string. Os programadores fazem isso para facilitar a manipulação de strings e tornar o código mais legível.
-
-## Como fazer:
-
-Ruby facilita a interpolação de strings com uma sintaxe especial chamada de _string interpolation_. Para isto, você precisa usar aspas duplas ("") em vez de aspas simples (''). Aqui está um exemplo:
-
+## Como Fazer:
 ```Ruby
 nome = "João"
-puts "Olá, #{nome}!" # => Olá, João!
+mensagem = "Olá, #{nome}! Tudo bem?"
+puts mensagem
+# Saída: Olá, João! Tudo bem?
+
+preco = 9.99
+quantidade = 2
+puts "O total é R$ #{preco * quantidade}"
+# Saída: O total é R$ 19.98
 ```
 
-O código dentro dos sinais de #{ } é uma expressão que é avaliada e então convertida para uma string.
-
-## Em Profundidade:
-
-A interpolação de string no Ruby, como em muitas outras linguagens de programação como Perl e PHP, vem de uma tradição em linguagens de shell Unix. 
-
-Uma alternativa à interpolação de string é a concatenação de string, que pode ser mais verbosa e menos clara.
-
-Detalhes de implementação são surpreendentemente complicados, como a interpolação de string na verdade envolve a criação de uma nova string com os valores interpolados. Isso pode ter implicações de desempenho se usado negligentemente em loops ou com strings muito grandes.
+## Mergulho Fundo:
+Interpolação de strings existe em Ruby desde suas versões iniciais, servindo como uma ferramenta conveniente e eficiente para combinar texto e código. Ela só funciona com aspas duplas ou literais de string `%Q`. Alternativas incluem a concatenação de strings com o operador `+` ou `<<`, mas a interpolação é mais performática por evitar a criação de novos objetos string durante o processo. Na interpolação, o que está dentro de `#{}` é avaliado como código Ruby, convertido para uma string e inserido na string maior.
 
 ## Veja Também:
-
-- [Ruby Doc sobre Strings](https://ruby-doc.org/core-2.7.0/String.html)
+- [Documentação oficial de String do Ruby](https://ruby-doc.org/core-2.7.0/String.html)
+- [Ruby Style Guide sobre interpolação](https://rubystyle.guide/#string-interpolation)

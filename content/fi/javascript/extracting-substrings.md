@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:45:56.336635-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,42 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mitä ja Miksi?
+Substringit ovat merkkijonoista poimittuja osajonoja. Ne auttavat meitä työstämään ja analysoimaan tekstiä tarpeen mukaan.
 
-Merkkijonoista osamerkkijonojen (substring) poimiminen on prosessi, jossa otetaan osa kokonaisesta merkkijonosta. Tämä on hyödyllistä useissa tilanteissa, kuten datan käsittelyssä ja tiettyjen koodirakenteiden parantamisessa.
-
-## Kuinka:
-
-Katsotaanko esimerkki Javascriptin 'substring', 'substr' ja 'slice' metodeista.
-
+## How to: - Kuinka:
 ```Javascript
-let str = "Ohjelmointi on kivaa";
+let fullString = "Hei maailma!";
+let partOfIt = fullString.substring(4, 10);
 
-// Kaikki alla olevat esimerkit tulostavat "Ohjelma"
-console.log(str.substring(0,7));
-console.log(str.substr(0,7));
-console.log(str.slice(0,7));
+console.log(partOfIt); // Tulostaa: maailm
+
+// Aloita alusta, ota neljä merkkiä
+let fromStart = fullString.substr(0, 4);
+
+console.log(fromStart); // Tulostaa: Hei 
+
+// Käytä slice-menetelmää alkaen indeksistä 8
+let slicedString = fullString.slice(8);
+
+console.log(slicedString); // Tulostaa: ilma!
 ```
+## Deep Dive - Sukellus Syvyyksiin:
+Substringit ovat vanhastaan osa ohjelmointia. JavaScriptissä on useita tapoja: `substr`, `substring` ja `slice`. 
 
-Ero näiden välillä on se, miten ne käsittelevät syöttöparametreja. Esimerkiksi, jos negatiivinen arvo annetaan toiseksi parametriksi substr-metodille, se otetaan merkkijonon pituudesta:
+- Historiallisesti `substring` ja `substr` olivat päämenetelmiä, mutta `substr` on vanhentunut.
+- `slice` on joustava: se toimii myös taulukoissa ja sallii negatiiviset indeksit.
+- Suorituskyvyssä erot ovat nykyisin minimaalisia, mutta eri selaimissa tilanne on saattanut vaihdella.
 
-```Javascript
-console.log(str.substr(0,-2)); // tulostaa "Ohjelmointi on k"
-```
-
-## Syvempi sukellus:
-
-Alunperin, JavaScriptissä oli vain 'substring' metodi. 'substr' ja 'slice' lisättiin myöhemmin tarjoamaan enemmän joustavuutta.
-
-- 'substring' ottaa kaksi argumenttia: aloitusindeksin ja lopetusindeksin. 
-- 'substr' ottaa aloitusindeksin ja palautettavan merkkijonojen määrän.
-- 'slice' toimii kuten 'substring', mutta se sallii negatiiviset indeksit, jotka viittaavat merkkijonon loppuun.
-
-On tärkeää tunnistaa nämä erot ja valita oikea metodi tarpeidesi mukaan.
-
-## Katso myös:
-
-Lisätietoja saadaksesi, tutustu seuraaviin lähteisiin:
-
-- MDN Web Docs ja sen artikkeli ["String.prototype.substring()"](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- W3Schoolsin opas ["JavaScript String Methods"](https://www.w3schools.com/js/js_string_methods.asp)
+## See Also - Katso Myös:
+- MDN Web Docs: String methods - [MDN String metodit](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- JavaScript Kit: Substring Extraction - [JavaScript Substring](http://www.javascriptkit.com/javatutors/string3.shtml)
+- Stack Overflow: When to use `substring` vs `substr` - [Stack Overflow keskustelu](https://stackoverflow.com/questions/3745515/what-is-the-difference-between-substr-and-substring)

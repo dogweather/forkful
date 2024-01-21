@@ -1,6 +1,7 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
-html_title:           "Haskell: Obliczanie daty w przyszłości lub przeszłości"
+date:                  2024-01-20T17:31:27.345461-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,33 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? | Co i dlaczego?
+Obliczanie daty w przeszłości lub przyszłości to zdefiniowanie momentu przed lub po danej dacie. Programiści robią to, aby zarządzać wydarzeniami, terminami, planować zadania czy przewidywać daty ważnych wydarzeń.
 
-Obliczanie daty w przyszłości/późniejszej to proces wyznaczania konkretnego dnia, miesiąca i roku, który występuje po lub przed zadaną datą. Programiści robią to, aby przewidzieć lub zrekonstruować daty i wydarzenia w aplikacjach takich jak kalendarze, planery czy systemy zarządzania projektami.
+## How to: | Jak to zrobić:
+W Haskellu używamy biblioteki `time` do pracy z datami. Oto przykład dodawania dni do aktualnej daty:
 
-## Jak to zrobić:
-
-Użyjąc modułu Data.Time dostarczanego przez bibliotekę time w Haskellu (aktualna wersja), możemy łatwo obliczyć datę w przyszłości lub przeszłości. Oto przykład:
-
-```haskell
+```Haskell
 import Data.Time
 
+addDaysToCurrent :: Integer -> IO Day
+addDaysToCurrent n = do
+    today <- getCurrentTime
+    let nDaysAfter = addDays n . utctDay $ today
+    return nDaysAfter
+
 main :: IO ()
-main = do 
-    czas <- getCurrentTime
-    let dzien = utctDay czas
-    print (addDays 5 dzien) -- Dodaje 5 dni do bieżącej daty
-    print (addDays (-7) dzien) -- Odejmuje 7 dni od bieżącej daty
+main = do
+    futureDate <- addDaysToCurrent 10
+    print futureDate
 ```
-Wejście programu jest aktualnym datą i godziną, a wyjście to przyszła lub przeszła data.
 
-## Deep Dive
+Przykładowe wyjście:
 
-Obliczanie daty w przyszłości lub przeszłości ma wiele zastosowań, nie tylko w obliczeniach, ale także w historii i prognozowaniu. Na przykład w systemach bankowych, potrzeba prognozowania dat przyszłych płatności.
+```plaintext
+2023-04-25
+```
 
-Alternatywą dla wbudowanej funkcji `addDays` w Haskellu jest ręczne dodawanie lub odejmowanie dni od daty. To jednak może prowadzić do błędów, jak na przykład nieuwzględnienie roku przestępnego.
+Aby obliczyć datę w przeszłości, odejmujemy dni:
 
-## Zobacz też
+```Haskell
+subtractDaysFromCurrent :: Integer -> IO Day
+subtractDaysFromCurrent n = do
+    today <- getCurrentTime
+    let nDaysBefore = addDays (-n) . utctDay $ today
+    return nDaysBefore
 
-"Haskell/Date and Time" - podręcznik dostępny na Wikibooks: [https://en.wikibooks.org/wiki/Haskell/Date_and_Time](https://en.wikibooks.org/wiki/Haskell/Date_and_Time)
-"Dodatek do czasu" - dokumentacja funkcji `addDays` w Haskellu: [https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html#v:addDays](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html#v:addDays)
+main :: IO ()
+main = do
+    pastDate <- subtractDaysFromCurrent 10
+    print pastDate
+```
+
+Przykładowe wyjście:
+
+```plaintext
+2023-04-05
+```
+
+## Deep Dive | Wnikliwa analiza:
+Obliczanie dat w Haskellu wykorzystuje bibliotekę `time`, która jest standardem od momentu jej wprowadzenia w GHC 6.8. Jest ona inspirowana biblioteką Joda-Time z Javy. Alternatywy jak `old-time` są obecnie rzadziej używane.
+
+Kluczowe typy danych to `UTCTime`, `Day`, `TimeOfDay`. Istnieje też spora gama funkcji jak `addDays` czy `diffUTCTime` dla operacji na datach.
+
+Zarządzanie czasem jest niebanalne przez strefy czasowe i zmiany czasu (Daylight Saving Time). Biblioteka `time` radzi sobie z tymi zagadnieniami, lecz w praktyce brane są też inne biblioteki jak `timezone-series` czy `timezone-olson`.
+
+## See Also | Zobacz również:
+- Oficjalna dokumentacja biblioteki `time`: http://hackage.haskell.org/package/time
+- Tutorial do zarządzania czasem w Haskellu: https://www.haskell.org/haskellwiki/Working_with_time
+- Joda-Time, inspiracja dla `time`: https://www.joda.org/joda-time/
+- Alternatywa `timezone-series`: http://hackage.haskell.org/package/timezone-series

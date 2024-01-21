@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request"
-html_title:           "Bash recipe: Sending an http request"
+date:                  2024-01-20T17:59:48.745761-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -12,31 +13,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Sending HTTP requests is a way for your JavaScript code to communicate with servers and fetch data. It's a core part of many apps' functionality, enabling user interactivity and dynamic content updates.
+Sending an HTTP request is how your JavaScript code talks to a server. It's done to exchange data, fetch resources, or send data to the server for processing. 
 
-## How To:
+## How to:
 
-Here's how you can send an HTTP GET request using fetch() API in JavaScript.
+JavaScript uses the `fetch` API for sending requests. Here’s how to do a simple GET request:
 
-```Javascript
-fetch('https://api.github.com/users/github')
+```javascript
+fetch('https://jsonplaceholder.typicode.com/posts/1')
   .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));
+  .then(json => console.log(json))
+  .catch(err => console.error('Error:', err));
 ```
 
-In this example, we are fetching data from Github's API for the 'github' user. After the data is fetched, it is logged to the console. If there's an error executing the request, it is caught and logged in the catch block.
+The output will be JSON data from the URL. Easy, right?
+
+And for a POST request:
+
+```javascript
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'foo',
+    body: 'bar',
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then(response => response.json())
+  .then(json => console.log(json))
+  .catch(err => console.error('Error:', err));
+```
+
+This sends new data and outputs the server's response.
 
 ## Deep Dive
 
-Historically, we used to leverage XMLHttpRequest for sending HTTP requests. But this has been simplified and improved with the Fetch API, which returns Promises and is more powerful and flexible.
+HTTP requests have been around since the beginning of the web—think HTML forms. XMLHttpRequest (XHR) was once the go-to method for sending requests in JavaScript, but it's clunky. 
 
-An alternative to `fetch` is the `axios` library. It's a popular choice since it provides some additional features like interceptors and automatic transforms, and it's more browser-compatible than fetch.
+Enter `fetch`, a modern approach that's promise-based, making it cleaner and more robust. Unlike XHR, `fetch` handles both requests and responses in a single, unified API and is built into the language, no libraries required.
 
-Bear in mind that when you're sending a HTTP request, you're actually sending a packet of data over the Internet to a specific server. This packet includes information about what you're requesting (GET, POST, etc.), where you're sending the request, and any additional data (like headers or body content). The server then processes this request and sends a response back to the client.
+Alternatives? Sure. Libraries like Axios or jQuery's Ajax are still in use. They offer some syntactic sugar and workarounds for specific quirks, but `fetch` is native and generally the way forward.
 
+Implementation details? Remember to handle errors, work with different response types, and be aware of cross-origin resource sharing (CORS) rules. 
+    
 ## See Also
 
-[MDN Documentation on Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) \
-[Axios Library](https://axios-http.com/docs/intro) \
-[MDN Documentation on XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+- MDN `fetch` API Documentation: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+- Using promises in JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
+- Learn about CORS: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS

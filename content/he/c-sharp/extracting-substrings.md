@@ -1,6 +1,7 @@
 ---
 title:                "חילוץ תת-מחרוזות"
-html_title:           "Bash: חילוץ תת-מחרוזות"
+date:                  2024-01-20T17:45:16.099119-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חילוץ תת-מחרוזות"
 programming_language: "C#"
 category:             "C#"
@@ -10,41 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## "מה ולמה?"
+## What & Why?
+מה זה חלק מחרוזת ולמה לעשות את זה? להוציא חלק ממחרוזת זה לקחת חתיכה מתוך מחרוזת אחת וליצור ממנה מחרוזת חדשה. תוכניתנים עושים זאת כדי לעבד נתונים, לסנן תוכן או להציג חלק מפרטים ממחרוזת ארוכה.
 
-החלצת תת-מחרוזת היא הליך שבו אנו מחלצים חלק ממחרוזת. מתכנתים משתמשים בה בחלק הגדול מן הדיאלוגים עם מתכנתי VB, כאשר יש צורך לקחת חלק ממחרוזת שהמתכנת קבל.
-
-## "איך מבצעים את זה": 
-
-קוד בשפת C#:
+## How to:
+הנה דוגמה לאיך עושים זאת ב-C#:
 
 ```C#
 using System;
 
-public class Program
-{
-    public static void Main()
-    {
-        string str = "Hello, welcome to C# programming!";
-        string sub = str.Substring(7, 7);
-        
-        Console.WriteLine(sub);
+class Program {
+    static void Main() {
+        string fullText = "שלום, עולם של תוכנות!";
+        string extracted = fullText.Substring(6, 5); // קח את התווים החל מהאינדקס ה-6, באורך 5 תווים
+        Console.WriteLine(extracted); // ידפיס "עולם"
     }
 }
 ```
-
-פלט לדוגמה:
-
-```C#
-welcome
+פלט הדוגמה:
+```
+עולם
 ```
 
-## "צלילה עמוקה"
+## Deep Dive:
+לשלוף חלק ממחרוזת היא טכניקה עתיקה. מראשית ימי המחשב, כאשר היה צורך לטפל במונחים טקסטואליים. ב-C#, למחלקת `String` יש כמה שיטות לעשות את זה, כמו `Substring`, `Split`, `Remove`, ועוד. בחרו בעיקר ב-`Substring` כאשר אתם יודעים בדיוק את המיקום ואת אורך החלק שאתם צריכים. זכרו, אינדקסים ב-C# מתחילים ב-0.
 
-החלצת תת-מחרוזת היא שיטה שנעשתה בשימוש לראשונה ב-1964, כאשר פותחה שפת BASIC. ישנן שיטות חלופיות לחלצת תת-מחרוזת, כולל `"Split()"`, המשתמשת בסימן מפריד כדי לחלץ תת-מחרוזות. בהנחה שהמספרים שנשלחים לשיטה `"Substring"` חוקיים, לא יהיה שגיאה ב-IndexOutOfRangeException.
-
-## "ראה גם"
-
-מאמרים שקשורים:
-
-- [מדריך למחרוזות בשפת C# באתר Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
+## See Also:
+בדקו את המקורות הבאים למידע נוסף:
+- [Microsoft Docs - String.Substring Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
+- [Microsoft Docs - String Methods in C#](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-5.0)
+- [Stack Overflow - Extracting a substring in C#](https://stackoverflow.com/questions/218384/what-is-a-nullreferenceexception-and-how-do-i-fix-it)

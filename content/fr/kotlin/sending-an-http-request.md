@@ -1,7 +1,8 @@
 ---
-title:                "Envoyer une requête http"
-html_title:           "Bash: Envoyer une requête http"
-simple_title:         "Envoyer une requête http"
+title:                "Envoi d'une requête HTTP"
+date:                  2024-01-20T18:00:12.137575-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Envoi d'une requête HTTP"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,43 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## C'est quoi et pourquoi?
+## What & Why?
+Envoyer une requête HTTP, c'est demander des données à un serveur web. Les programmeurs en ont besoin pour les applications qui bouffent de l'info en ligne - pensez apps météo, news, ou réseaux sociaux.
 
-Envoyer une demande HTTP, c'est comme demander une page web spécifique à un serveur. Ça permet aux programmeurs de récupérer des données, gérer des APIs, même automatiser des tâches.
-
-## Comment faire :
-
-Pour envoyer une demande HTTP avec Kotlin, nous utilisons ktor, une bibliothèque Kotlin. Voici un exemple rapide :
+## How to:
+En Kotlin, utilisez la bibliothèque `ktor` pour simplifier les requêtes HTTP :
 
 ```kotlin
 import io.ktor.client.*
+import io.ktor.client.engine.cio.*
 import io.ktor.client.request.*
+import io.ktor.client.statement.*
 
-suspend fun main() {
-    val client = HttpClient()
-    
-    client.use {
-        val result: String = client.get("https://example.com")
-    
-        println(result)
-    }
+suspend fun fetchUrl(url: String): HttpResponse {
+    val client = HttpClient(CIO)
+    val response: HttpResponse = client.get(url)
+    client.close()
+    return response
 }
+
+// Utilisez ça dans une coroutine, genre comme ça :
+// val response = fetchUrl("http://example.com")
+// println(response.readText())
 ```
 
-En exécutant ce code, vous obtiendrez la source HTML de "https://example.com".
+Ce code va chercher le contenu de `http://example.com`. L'output ? Le HTML de la page.
 
-## Plongée en détail
+## Deep Dive
+Avant `ktor`, on avait pas mal d'autres choix en Kotlin, du genre Apache HttpClient ou OkHttp. Mais `ktor` est plus récent, conçu spécialement pour Kotlin et les coroutines. Cool, parce qu'il simplifie la vie avec sa gestion d'async.
 
-Ktor est relativement récent (2018) mais gagne en popularité chez les programmeurs Kotlin. Alternativement, OkHttp et Fuel sont aussi populaires pour les demandes HTTP. 
+Les requêtes HTTP sont au coeur du web depuis Tim Berners-Lee en a profité pour partager des docs au CERN dans les années 90. Maintenant, elles sont partout, pour tout et n'importe quoi touchant le web.
 
-Côté implantation, Ktor est non bloquant par défaut, ce qui est intéressant pour des opérations gourmandes en I/O comme les demandes HTTP. Il utilise coroutines pour accomplir cela, une solution légère pour la gestion de la simultanéité Kotlin.
+Le truc avec les requêtes HTTP, c'est de bien gérer le réseau. Ça peut être lent, ça peut foirer. Gérez les timeouts, les erreurs réseau, et assurez-vous de fermer les connexions.
 
-## Voir aussi :
-
-Pour en savoir plus, visitez les documents suivants :
-
-- [ktor.io](https://ktor.io/) (documentation officielle)
-- [OkHttp](https://square.github.io/okhttp/)
-- [Fuel](https://github.com/kittinunf/fuel)
-
-Voilà, vous avez maintenant les bases pour faire des requêtes HTTP avec Kotlin !
+## See Also
+- Ktor docs pour plus de détails : [https://ktor.io/docs/](https://ktor.io/docs/)
+- Kotlin coroutines guide, ça aide pour l'async : [https://kotlinlang.org/docs/coroutines-guide.html](https://kotlinlang.org/docs/coroutines-guide.html)
+- Pour la comparaison, voici OkHttp : [https://square.github.io/okhttp/](https://square.github.io/okhttp/)

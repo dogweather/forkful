@@ -1,7 +1,8 @@
 ---
-title:                "Konkatenacja ciągów znaków"
-html_title:           "Bash: Konkatenacja ciągów znaków"
-simple_title:         "Konkatenacja ciągów znaków"
+title:                "Łączenie łańcuchów znaków"
+date:                  2024-01-20T17:34:12.479530-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Łączenie łańcuchów znaków"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,39 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Łączenie łańcuchów to proces łączenia dwóch lub więcej ciągów znaków w jeden dłuższy ciąg. Programiści robią to, aby skutecznie manipulować i organizować dane tekstowe.
+## What & Why? (Co i dlaczego?)
+Łączenie łańcuchów to po prostu sklejanie słów lub zdań, aby tworzyć nowe ciągi znaków. Programiści robią to, by tworzyć komunikaty, dynamiczne treści albo przetwarzać teksty.
 
-## Jak to zrobić:
-W C++ jednym ze sposobów na łączenie łańcuchów jest zastosowanie operatora `+`. Zobaczmy jak to działa.
+## How to: (Jak to zrobić?)
+C++ oferuje kilka sposobów na łączenie łańcuchów znaków. Spójrzmy na przykłady:
 
 ```C++
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 
 int main() {
-    std::string str1 = "Dzień";
-    std::string str2 = " dobry";
-    std::string str3 = str1 + str2; // concatenate strings
-    std::cout << str3 << std::endl; // It will print: Dzień dobry
+    // Używając operatora +
+    std::string hello = "Hello, ";
+    std::string world = "World!";
+    std::string greeting = hello + world;
+    std::cout << greeting << std::endl; // Output: Hello, World!
+
+    // Używając metody append()
+    std::string name = "Jan";
+    std::string welcome = "Witaj, ";
+    welcome.append(name);
+    std::cout << welcome << std::endl; // Output: Witaj, Jan
+
+    // Używając stringstream
+    #include <sstream>
+    std::stringstream ss;
+    ss << hello << world;
+    std::cout << ss.str() << std::endl; // Output: Hello, World!
+    
     return 0;
 }
 ```
-## Głębsze spojrzenie:
-Łączenie łańcuchów znaków jest już od dawna ważnym narzędziem w programowaniu. W starszych językach, takich jak C, łączenie łańcuchów było bardziej skomplikowane i wymagało korzystania z funkcji takich jak `strcat()`. W C++, dzięki klasie `std::string`, jest to o wiele prostsze.
 
-Alternatywą dla bezpośredniego użycia operatora `+` jest metoda `append()` klasy `std::string`.
+## Deep Dive (Głebokie zanurzenie)
+Łączenie łańcuchów znaków, czyli konkatenacja, jest od dawna w C++. W wersjach przed C++11, często używano `char` arrays i funkcji `strcat`, ale były uciążliwe i mniej bezpieczne. Od C++11 mamy `std::string`, co ułatwia życie.
 
-```C++
-std::string str1 = "Cześć, ";
-std::string str2 = "świecie!";
-str1.append(str2); // concatenate using append()
-std::cout << str1 << std::endl; // It will print: Cześć, świecie!
-```
-Łączenie łańcuchów znaków C++ jest wygodne, ale nie zawsze jest najefektywniejsze. W przypadku dużej ilości danych tekstowych, lepiej jest używać funkcji takich jak `std::stringstream`.
+Alternatywnie, używamy `std::stringstream` do skomplikowanego składania tekstu, ale to może być wolniejsze. Pamiętajcie też o `operator+=`, gdybyście chcieli do istniejącego łańcucha dodać coś na końcu.
 
-## Zobacz też:
-Aby dowiedzieć się więcej na temat łączenia łańcuchów znaków w C++, zobacz te dodatkowe źródła:
-* Dokumentacja C++ na stronie [cplusplus.com](http://www.cplusplus.com/reference/string/string/operator+/)
-* Wyniki na temat łączenia łańcuchów znaków na [Stack Overflow](https://stackoverflow.com/questions/144130/how-do-i-concatenate-a-stdstring-and-an-int)
-* Szczegółowe informacje na temat `std::stringstream` na [cplusplus.com](http://www.cplusplus.com/reference/sstream/stringstream/)
+Z pod kątem implementacji, operator `+` tworzy nowy łańcuch, podczas gdy `append()` i `operator+=` modyfikują istniejący, co jest zwykle wydajniejsze.
+
+## See Also (Zobacz również)
+- [cppreference.com](https://en.cppreference.com/w/cpp/string/basic_string)
+- [cplusplus.com](http://www.cplusplus.com/reference/string/string/)
+- [Stringstream reference](https://en.cppreference.com/w/cpp/io/basic_stringstream)

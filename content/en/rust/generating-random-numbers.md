@@ -1,6 +1,7 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Arduino recipe: Generating random numbers"
+date:                  2024-01-20T17:49:47.355528-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generating random numbers"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,49 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# An Introduction On Generating Random Numbers in Rust
-
 ## What & Why?
-
-Generating random numbers, put simply, is producing unpredictable values that typically fall within set constraints. Programmers need this for tasks like creating unique IDs, shuffling playlists, or simulating unpredictability in games.
+Random numbers are unpredictable values. Programmers use them for stuff like games, simulations, and security (ever heard of encryption?).
 
 ## How to:
+Rust's `rand` crate is the go-to for random numbers. First, add `rand` to your `Cargo.toml`:
 
-In Rust, `rand::Rng` trait is usually used to generate random numbers:
-
-```Rust   
- use rand::Rng;
-
- fn main() {
-    let mut rng = rand::thread_rng();
- 
-    let random_integer = rng.gen_range(1..101);
-    println!("Random Integer: {}", random_integer);
-
-    let random_float = rng.gen::<f64>();
-    println!("Random Float: {:?}", random_float);
- }
+```toml
+[dependencies]
+rand = "0.8"
 ```
 
-Running the above code will give us output similar to this:
+Now the fun part: generating some numbers!
 
-```   
-Random Integer: 42
-Random Float: 0.12345678
+```rust
+use rand::{Rng, thread_rng};
+
+fn main() {
+    let mut rng = thread_rng();
+
+    // Random f64 from 0 to 1
+    let x: f64 = rng.gen();
+    println!("Random f64: {}", x);
+
+    // Random i32
+    let y: i32 = rng.gen();
+    println!("Random i32: {}", y);
+
+    // Random bool
+    let z: bool = rng.gen();
+    println!("Random bool: {}", z);
+}
+```
+
+Output - expect something unexpected:
+
+```
+Random f64: 0.840938355033784
+Random i32: 1690851234
+Random bool: false
 ```
 
 ## Deep Dive
 
-The Rust language adopted inspiration from the RNG implementations seen in libraries such as PCG and Xorshift. Rust currently uses two types of basic RNGs: `ThreadRng`, which is local to each thread and `SmallRng`, which is a small, fast RNG.
+Before `rand`, folks used primitive methods like the linear congruential generator. “What's that?”, you might ask. Old-school math for pseudo-random sequences. They were good, but had patterns. Easy to guess, not so great for crypto.
 
-Alternatives to `rand::Rng` include other RNG libraries like `rand_pcg` or `rand_xoshiro`, or using system-specific ways of generating random numbers.
+Now, `rand` uses more complex algorithms. `thread_rng`, for example, hooks into your operating system's random features to get good-quality randomness, suitable for cryptography.
 
-One thing to note is that, in Rust, the value range in `.gen_range()` is inclusive at the lower bound, and exclusive at the upper bound. So, `.gen_range(1..101)` generates a value between 1 and 100.
+There's more than one way to skin a cat, though: Rust also offers `rand_pcg`, `rand_xoshiro`, etc., for when you need different performance or randomness characteristics.
 
-## See Also:
+Implementation-wise, `rand` uses traits like `Rng` and `SeedableRng`. Traits define behavior. `Rng` says, "This type can generate random numbers," and `SeedableRng` is for when you want to create a reproducible sequence of "random" numbers (helpful for testing).
 
-- [The Rust `rand` crate](https://docs.rs/rand): For documentation and further exploration.
-- [`rand::Rng` trait documentation](https://docs.rs/rand/0.8.4/rand/trait.Rng.html): Specifics about Rng trait.
-- [Wikipedia page on RNGs](https://en.wikipedia.org/wiki/Random_number_generation): Offers history and types of RNGs.
+## See Also
 
-Knowledge of generating random numbers in Rust is a practical tool for your programmer toolkit. Happy coding!
+Check out these links for more brain food:
+
+- The `rand` crate's documentation: https://docs.rs/rand
+- Rust's trait system: https://doc.rust-lang.org/book/ch10-02-traits.html
+- Cryptographically secure randomness: https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator

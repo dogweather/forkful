@@ -1,7 +1,8 @@
 ---
-title:                "Ein neues Projekt starten"
-html_title:           "C#: Ein neues Projekt starten"
-simple_title:         "Ein neues Projekt starten"
+title:                "Einen neuen Projekt starten"
+date:                  2024-01-20T18:03:45.968857-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Einen neuen Projekt starten"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -10,34 +11,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why?
+Ein neues Projekt zu starten bedeutet, eine frische Codebasis anzulegen, um eine Idee zum Leben zu erwecken. Programmierer tun dies, um Problemlösungen zu entwickeln, Innovationen voranzutreiben oder einfach ihre Skills zu verbessern.
 
-Ein neues Projekt zu starten bedeutet, eine frische Programmieraufgabe zu beginnen, um eine bestimmte Anforderung zu erfüllen. Programmierer tun dies, um neue Lösungen zu entwickeln, ihre Fähigkeiten zu erweitern oder vorhandene Software zu verbessern.
-
-## So geht's:
-
-Mit der Shell für Fische können Sie einfach ein neues Projekt starten. Hier ist ein einfacher Code zum Erstellen eines neuen Verzeichnises und zum Navigieren in das Verzeichnis:
+## How to:
+Ein neues Projekt in Fish beginnen? Kein Problem. Zuerst ein Verzeichnis erstellen und dann rein wechseln:
 
 ```Fish Shell
-mkdir neues_projekt
-cd neues_projekt
+mkdir mein_neues_projekt
+cd mein_neues_projekt
+```
+
+Jetzt initialisieren wir ein Git-Repository, falls Versionierung gewünscht:
+
+```Fish Shell
+git init
+```
+
+Umweltfreundlich? Setzen wir einige Umgebungsvariablen:
+
+```Fish Shell
+set -Ux EDITOR code
+set -Ux PROJECT_PATH (pwd)
+echo $PROJECT_PATH
 ```
 
 Ausgabe:
 
-```Fish Shell
->
+```
+/home/dein_name/mein_neues_projekt
 ```
 
-## Tiefenbohrung:
+Du brauchst eine isolierte Umgebung für Python-Abhängigkeiten?
 
-Der Fish-Shell ist relativ neu und wurde Anfang der 2000er Jahre entwickelt. Rootshell und Bash sind bekannte Alternativen, aber Fish-Shell ist bekannt für seine Benutzerfreundlichkeit und gute Interaktion. Bei der Entwicklung eines neuen Projekts in Fish-Shell ist es wichtig, die Syntax und die inneren Abläufe der Shell zu verstehen, um den Code effizient und effektiv zu verwalten.
+```Fish Shell
+python3 -m venv venv
+source venv/bin/activate.fish
+```
 
-## Siehe auch:
+Jetzt bist du startklar und kannst loscoden!
 
-Für weitere Informationen über das Starten neuer Projekte und die Programmierung in Fish-Shell, besuchen Sie bitte die folgenden Links:
+## Deep Dive
+Fish, kurz für "friendly interactive shell", ist eine Smart-Shell, die auf Usability fokussiert ist. Seit 2005 gibt's Fish, es vereinfacht komplexe Shell-Operationen. Alternative Shells sind z.B. Bash, Zsh und PowerShell.
 
-1. Fish-Shell Documentation: http://fishshell.com/docs/current/index.html
-2. Starten von neuen Projekten: http://fishshell.com/docs/current/tutorial.html#tut_new_project
-3. Fish-Shell GitHub: https://github.com/fish-shell/fish-shell
-4. Programmierung in Fish-Shell: https://fishshell.com/docs/current/commands.html
+Wichtigste Features sind Autosuggestions und Syntax-Highlighting. Das macht Fish einzigartig – und produktiv. Die Konfiguration ist einfach, Frickeleien nicht nötig. Keinesfalls zu vergessen, Fish hat eine eigene Syntax, also nicht direkt kompatibel mit Bash-Skripten.
+
+Vergleich? Bash ist der alte Hase, enorm weit verbreitet und dokumentiert. Zsh ist wie Bash, aber mit Extras. Fish setzt auf User-Freundlichkeit und Einfachheit, manchmal mit dem Trade-off der Kompatibilität zu Bash-Skripten.
+
+Flexibilität gewünscht? Funktionen in Fish sind leichtgewichtig und modular:
+
+```Fish Shell
+function greet
+    echo "Hallo $argv!"
+end
+```
+
+Aktiviere die Funktion:
+
+```Fish Shell
+greet Welt
+```
+
+Ausgabe:
+
+```
+Hallo Welt!
+```
+
+## See Also
+- Die offizielle Fish-Website: [fishshell.com](https://fishshell.com)
+- Fish- Dokumentation: [fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- GitHub-Repository für Fish: [github.com/fish-shell/fish-shell](https://github.com/fish-shell/fish-shell)
+- Eine umfangreiche Liste mit Fish-Plugins: [github.com/jorgebucaran/awesome-fish](https://github.com/jorgebucaran/awesome-fish)
+- Plugin-Manager für Fish: [github.com/jorgebucaran/fisher](https://github.com/jorgebucaran/fisher)

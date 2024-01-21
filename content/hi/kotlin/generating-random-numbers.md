@@ -1,7 +1,8 @@
 ---
-title:                "यादृच्छिक संख्याओं का निर्माण"
-html_title:           "Clojure: यादृच्छिक संख्याओं का निर्माण"
-simple_title:         "यादृच्छिक संख्याओं का निर्माण"
+title:                "यादृच्छिक संख्याएँ उत्पन्न करना"
+date:                  2024-01-20T17:49:58.295875-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Numbers"
@@ -10,35 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+रैंडम नंबर जेनरेटिंग यानी अनिश्चित संख्या उत्पन्न करना होता है। इसका उपयोग डेवलपर्स गेमिंग, सिमुलेशन, सुरक्षा, और टेस्टिंग में करते हैं जहाँ अप्रत्याशितता महत्वपूर्ण है।
 
-यादृच्छिक संख्याओं का उत्पन्न करना मतलब है कि किसी अनुप्रेक्ष्य अवलोकन में अन्य संख्याओं से अधिक प्रमाणिकता प्राप्त करना। यह सॉफ़्टवेयर डेवलपर्स के लिए महत्वपूर्ण है क्योंकि आवश्यकतानुसार अद्वितीय संख्याओं की पैदावार की आवश्यकता हो सकती है, जैसे कि पासवर्ड, OTP आदि।
-
-## कैसे:
-
-Kotlin में, आप `Random()` क्लास का उपयोग करके यादृच्छिक संख्याएं उत्पन्न कर सकते हैं। 
-
+## How To: (कैसे करें?)
 ```Kotlin
 import kotlin.random.Random
 
-fun main(){
-  val randomNo = Random.nextInt(10)
-  println(randomNo)
+fun main() {
+    // एक रैंडम संख्या जेनरेट करें
+    val randomNumber = Random.nextInt(0, 100)
+    println("Random Number: $randomNumber") // उदाहरण: Random Number: 52
+
+    // रैंडम डबल जेनरेट करें
+    val randomDouble = Random.nextDouble(1.0, 10.0)
+    println("Random Double: ${"%.2f".format(randomDouble)}") // उदाहरण: Random Double: 3.14
 }
 ```
 
-ऊपरी कोड का चलाने पर आपको 0-9 के बीच का यादृच्छिक संख्या मिलेगा। 
+## Deep Dive (गहराई में जानकारी)
+रैंडम नंबर जेनरेटर्स (RNGs) का इतिहास 1940 के दशक से है, जब शुरूआती कंप्यूटर्स के लिए वे विकसित किए गए थे। Kotlin में `Random` क्लास RNGs के साथ काम करने के लिए एक आसान API प्रदान करती है।
 
-## गहराई में:
+`java.util.Random` पुराना है और अब `kotlin.random.Random` से बदल दिया गया है, जो बेहतर प्रदर्शन और बेहतर API प्रदान करता है। कोटलिन के रैंडम नंबर जेनरेटर अंतर्गत रूप से सिएड वैल्यूज पे निर्भर करते हैं। इससे प्रत्येक रन पर अलग नतीजा मिलता है। 
 
-(1) ऐतिहासिक संदर्भ: मैथ्स में, यादृच्छिक संख्याओं की अवधारणा काे संगणक विज्ञान में लागू करने का विचार 20 वीं सदी के मध्य में आया। 
+RNGs की विश्वसनीयता और एंट्रापी कोल्होसन की गुणवत्ता पर बहुत निर्भर करती हैं। यहां, कोटलिन निश्चित नहीं होता - ये ओएस या हार्डवेयर RNG पर डिपेन्ड करता है।
 
-(2) विकल्प: यादृच्छिक संख्या उत्पादन थर्ड पार्टी लाइब्रेरी, जैसे कि Apache Commons Math, द्वारा भी किया जा सकता है। 
-
-(3) कार्यान्वयन विवरण: Kotlin में `Random()` क्लास का उपयोग करते समय, इसे अंतर्निहित रूप से Java के `java.util.Random` 클래스 का उपयोग करके यादृच्छिक संख्याएँ उत्पन्न की जाती हैं।
-
-## यह भी देखें:
-
-अधिक जानकारी के लिए निम्नलिखित स्रोतों का उपयोग करें:
-2. [कोटलिन डॉक्स](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
-3. [Apache Commons Math](http://commons.apache.org/proper/commons-math/)
+## See Also (और भी जानकारी)
+- Kotlin Random API documentation: [Kotlinlang.org API Reference](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/)
+- Wikipedia on Random Number Generation: [Wikipedia RNG](https://en.wikipedia.org/wiki/Random_number_generation)
+- Understanding Random Number Generation: [Computerphile RNG Explanation Video](https://www.youtube.com/watch?v=SxP30euw3-0)

@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Bash: Merkkijonon interpolointi"
+date:                  2024-01-20T17:51:00.387197-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,42 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Merkinjonojen interpolointi tarkoittaa muuttujien ja muiden arvojen sijoittamista tekstimuotoiseen merkkijonoon. Ohjelmoijat käyttävät tätä säilyttämään koodin selkeänä ja ylläpidettävänä sekä dynaamisesti muuttuvien arvojen käsittelyyn.
+## What & Why? - Mitä ja miksi?
+String-interpolointi tarkoittaa muuttujien ja ilmaisujen yhdistämistä merkkijonoihin. Koodareiden arjessa tämä on käytännöllistä, sillä se helpottaa dynaamisten tekstien luomista ja tekee koodista luettavampaa.
 
-## Näin se toimii:
-Katsotaan miten merkkijonojen interpolointi tehdään Javascriptillä.
+## How to: - Näin teet sen:
+```JavaScript
+// Perinteinen yhdistely +
+let tervehdys = "Hei";
+let nimi = "Maija";
+console.log(tervehdys + ", " + nimi + "!"); // Output: Hei, Maija!
 
-```Javascript
-let nimi = "Pekka";
-let tervehdys = `Hei, ${nimi}!`;
-console.log(tervehdys); //Output: "Hei, Pekka!"
+// ES6 Template literals (template strings) ``
+let ikä = 25;
+console.log(`${tervehdys}, ${nimi}! Olet ${ikä}-vuotias.`); // Output: Hei, Maija! Olet 25-vuotias.
 ```
-Tässä yllä olevassa koodissa, `${nimi}` sijoittaa muuttujan `nimi` arvon merkkijonoon.
 
-## Syvällisemmin
-Interpolointi tuli suosituksi muiden ohjelmointikielten, kuten Ruby ja Perl, kanssa. JavaScriptissä tämä lisättiin osaksi ECMAScript 2015 -standardia.
+## Deep Dive - Syväsukellus:
+String-interpolointi ei ole uusi juttu, mutta JavaScriptin ES6-versiossa (ECMAScript 2015) se sai helpomman muodon template literaleina. Ennen ES6:a koodarit käyttivät `+`-operaattoria tai `concat`-metodia, mikä teki koodista helposti sekavaa. Template literaleissa käytetään takakenoviivoja (\`) ja `${}`-syntaksia, mikä selkeyttää ilmaisujen ja muuttujien sijoittamista merkkijonojen sisään.
 
-Vaihtoehtoisia tapoja ovat 
-1. Merkkijonon yhdistäminen käyttämällä `+` -operaattoria:
-   ```Javascript
-   let nimi = "Pekka";
-   let tervehdys = "Hei, " + nimi + "!";
-   console.log(tervehdys); //"Hei, Pekka!"
-   ```
- 
-2. `concat()` -funktion käyttö:
-   ```Javascript
-   let nimi = "Pekka";
-   let tervehdys = "Hei, ".concat(nimi,"!");
-   console.log(tervehdys); //"Hei, Pekka!"
-   ```
- 
-Interpoloituja merkkijonoja ei voida toteuttaa vanhemmissa selaimissa, jotka eivät tue ECMAScript 2015 -standardia tai uudempaa.
+Vaihtoehtona on myös kirjastoja, kuten Lodash, joka tarjoaa template-funktion. Kuitenkin, nykyään suositaan nativiin JavaScriptin tuomaa simplicityä.
 
-## Katso myös 
-MDN String Interpolation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+Template literaleita voi myös käyttää monirivisten merkkijonojen esittämiseen ilman, että joutuu käyttämään rivinvaihto-merkkejä (\n).
 
-ECMAScript 2015 (ES6) standardi: https://262.ecma-international.org/6.0/ 
+```JavaScript
+let runo = `
+Oi kuu taivaan,
+sinä yöllinen vahti.
+Kuiskaat tuulen mukana,
+unelmieni matkaa tähti.`;
+console.log(runo);
+```
 
-JavaScript String concat() Method: https://www.w3schools.com/jsref/jsref_concat_string.asp
+## See Also - Katso myös:
+- MDN Web Docs String interpolation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+- Template literal polyfills for supporting older browsers
+- ECMAScript 2015 specification: http://www.ecma-international.org/ecma-262/6.0/

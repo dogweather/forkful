@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Bash: Merkkijonon interpolointi"
+date:                  2024-01-20T17:51:41.128538-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Python"
 category:             "Python"
@@ -10,30 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Muotoile String Pythonissa: Mitä, Miksi ja Kuinka?
-
 ## Mitä & Miksi?
+Stringin interpolointi tarkoittaa muuttujien ja lausekkeiden upottamista merkkijonoihin. Se tekee koodista luettavampaa ja dynaamisempaa, helpottaen muuttuvan datan esittämistä.
 
-Merkkijonojen interpolointi on tapa sisällyttää muuttujien arvoja suoraan merkkijonoon. Tätä käytetään, jotta voidaan tuottaa dynaamista sisältöä tai formatoida tietoja keskustelujenomaisella tavalla.
-
-## Kuinka:
-Niille, jotka ovat uusia Pythonissa tai ohjelmoinnissa, tässä on kaksi tapaa muotoilla merkkijonoja Pythonissa: `.format()`-metodi ja f-stringit.
+## Miten:
 ```Python
-# Esimerkki 1: .format()-metodi:
-nimi = "Jaska"
-viesti = "Hei, nimeni on {}.".format(nimi)
-print(viesti) # Tulostaa: "Hei, nimeni on Jaska."
+# Python 3.6+
+nimi = "Pekka"
+ikä = 42
+print(f"Hei, nimeni on {nimi} ja olen {ikä} vuotta vanha.")
 
-# Esimerkki 2: f-string:
-nimi = "Jaska"
-viesti = f"Hei, nimeni on {nimi}."
-print(viesti) # Tulostaa: "Hei, nimeni on Jaska."
+# Tuloste:
+# Hei, nimeni on Pekka ja olen 42 vuotta vanha.
+
+# Vanhemmissa versioissa:
+print("Hei, nimeni on {} ja olen {} vuotta vanha.".format(nimi, ikä))
 ```
-## Deep Dive
-Merkkijonojen interpolointi on ollut olemassa pitkään useissa ohjelmointikielissä. Pythonin `.format()`-metodi esiteltiin Python 2.6:ssa ja f-stringit Python 3.6:ssa. F-stringit ovat yleensä suositumpia, koska ne ovat vähemmän monisanaisia ja nopeampia suorittaa. On kuitenkin tärkeää huomata, että joissakin tilanteissa, esimerkiksi kun merkkijonoja säilytetään erillisissä tietostossa, `.format()` saattaa olla parempi valinta.
 
-## Katso myös
-- Pythonin dokumentaatio merkkijonojen muotoilusta: https://docs.python.org/3/tutorial/inputoutput.html
-- `.format()` vs f-stringit: https://realpython.com/python-f-strings/#f-strings-a-new-and-improved-way-to-format-strings-in-python  
+## Syväsukellus:
+Interpolointi on ollut käytössä vanhemmissa ohjelmointikielissä, esim. Perl ja PHP. Pythonissa `.format()` metodi tuli käyttöön ensin, f-merkkijonot (formatted string literals) tulivat Python 3.6:ssa. Muita tapoja ovat %-formatointi ja template strings, mutta f-merkkijonot ovat suositumpia selkeyden ja lyhyyden vuoksi. Teknisenä yksityiskohtana, f-merkkijonot käsitellään suoritusajassa, mahdollistaen lausekkeiden dynaamisen arvioinnin merkkijonon sisällä.
 
-Ota rohkeasti koodi ja leiki sen kanssa itse!
+## Katso Myös:
+- Pythonin virallinen dokumentaatio f-merkkijonoista: https://docs.python.org/3/reference/lexical_analysis.html#f-strings
+- PEP 498, joka esittelee f-merkkijonot: https://www.python.org/dev/peps/pep-0498/
+- Pythonin `.format()` metodi: https://docs.python.org/3/library/stdtypes.html#str.format
+- String Template Class: https://docs.python.org/3/library/string.html#template-strings

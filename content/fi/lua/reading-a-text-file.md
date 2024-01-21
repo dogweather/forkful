@@ -1,6 +1,7 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Lua: Tekstitiedoston lukeminen"
+date:                  2024-01-20T17:54:37.360305-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,40 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Lukemalla tekstitiedostoa koodissasi käsittelet tiedon virtoja. Ohjelmoijat lukevat tiedostoja automatisoidakseen datan käsittelyä – hae, muokkaa, tallenna.
 
-Tekstitiedoston lukeminen tarkoittaa tiedostosta tietojen lukemista merkkijonoina. Koodaajat tekevät sen hakiessaan tietoja tiedostoista.
-
-## Miten tehdään:
-
-Luin tiedoston lua-koodauksella näin:
-
+## How to: (Miten tehdä:)
 ```Lua
-local tiedosto = io.open("testi.txt", "r") -- tiedoston avaus lukutilassa
-if tiedosto then 
-    for rivi in tiedosto:lines() do -- käydään tiedoston rivit läpi
-        print(rivi) -- tulostetaan rivi
-    end 
-    tiedosto:close() -- tiedoston sulkeminen
-else
-    print("Ei voitu avata tiedostoa!") -- virheenkäsittely
-end
+-- Tiedoston avaaminen lukutilassa
+local tiedosto = io.open("esimerkki.txt", "r")
+
+-- Tiedoston sisällön lukeminen
+local sisalto = tiedosto:read("*a")
+print(sisalto)
+
+-- Muista sulkea tiedosto!
+tiedosto:close()
+```
+Output:
+```
+Tämä on esimerkkitiedoston sisältö.
+Toinen rivi tekstiä.
 ```
 
-Koodin ajo tulostaa tiedostossa olevat rivit.
+## Deep Dive (Sukellus syvyyksiin)
+Lua, kevyt skriptikieli, on ollut olemassa 1990-luvun alkupuolelta. Tiedostonlukutoiminnot ovat perusominaisuuksia, ja `io`-kirjaston käyttö on yleinen tapa käsitellä tiedostoja. Vaihtoehtona Lua tarjoaa myös `file:lines()` funktion iteraattorina, jolla voi käydä läpi tiedoston rivi riviltä – hyvä muistin hallintaan. Tiedostonlukemisen suorituskyky ja turvallisuus syntyvät oikeasta toteutuksesta. Ota huomioon virhetilanteet, kuten olemattomat tiedostot tai käyttöoikeusongelmat.
 
-## Syvempi sukellus
-
-Lua perustuu alun perin 1993 julkaistuun Fast Light Toolkit -kirjastoon. Sen syntyyn vaikutti halu kevyempään ja nopeampaan ohjelmointityökaluun.
-
-Vaihtoehtoisia keinoja tiedostojen lukemiseen on, kuten 'io.lines' sijaan käyttää 'io.read'. Erilaisia lukuoptioita on esimerkiksi '*line' (lue seuraava rivi), '*all' (lue kaikki) ja '*number' (lue seuraava numero).
-
-Tiedoston lukeminen tapahtuu puskuroimalla, joka pitää sisällään datan lukemisen kerrallaan suuremmassa osassa kuin yksi tavu, mikä tekee prosessista nopeampi. 
-
-## Katso myös:
-
-[Lua Ohjelmoinnin Perusteet](https://ohjelmointi.net/lua)
-
-[Lua Kielen Historia](https://fi.wikipedia.org/wiki/Lua_(ohjelmointikieli)) 
-
-[Tietoa Tiedoston Lukemisesta](https://www.tutorialspoint.com/lua/lua_file_io.htm)
+## See Also (Katso lisäksi)
+- Lua 5.4 referenssi (suositeltava versio): https://www.lua.org/manual/5.4/manual.html#6.8
+- Programming in Lua (kirja ohjelmoinnista Luassa): https://www.lua.org/pil/ 
+- Lua-users wiki (käyttäjien ylläpitämä tietopankki): http://lua-users.org/wiki/IoLibraryTutorial

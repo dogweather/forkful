@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie pliku tekstowego"
-html_title:           "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+date:                  2024-01-20T17:54:19.969488-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,51 +11,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Czytanie pliku tekstowego to proces odczytania danych zapisanych w formacie tekstowym. Programiści robią to, aby przetworzyć i manipulować danymi do różnych celów, takich jak przekształcanie tych danych w przydatne informacje.
+## What & Why? (Co i dlaczego?)
+Czytanie pliku tekstowego to ładowanie jego zawartości do pamięci programu. Programiści robią to, by przetworzyć dane, wczytać konfiguracje, lub po prostu wyświetlić tekst użytkownikowi.
 
-## Jak to zrobić:
-Biblioteka `System.IO` w C# zawiera wiele przydatnych funkcji do czytania plików tekstowych. Najprostszym sposobem jest użycie `File.ReadAllText()`.
-
+## How to: (Jak to zrobić:)
 ```C#
+using System;
 using System.IO;
 
-string path = @"C:\SomeDirectory\SomeFile.txt";
-string readText = File.ReadAllText(path);
-Console.WriteLine(readText);
-```
-Wyjście programu to zawartość pliku `SomeFile.txt`.
-
-Aby odczytać plik wiersz po wierszu, można użyć `File.ReadLines()`.
-
-```C#
-foreach (string line in File.ReadLines(path))
+class ReadTextFileExample
 {
-    Console.WriteLine(line);
-}
-```
-Wyjście programu to linie tekstu w `SomeFile.txt`.
-
-## Głębsze zrozumienie
-Czytanie plików tekstowych jest ważnym elementem wielu programów, ciągle się rozwija i ma długą historię, nie tylko w C#. Alternatywnie do wykorzystania klas `File`, istnieje możliwość użycia `StreamReader`, który oferuje większą kontrolę i bardziej zaawansowane funkcje.
-
-```C#
-using (StreamReader sr = new StreamReader(path))
-{
-    string line;
-    while ((line = sr.ReadLine()) != null)
+    static void Main()
     {
-        Console.WriteLine(line);
+        string filePath = "example.txt";
+
+        // Czytanie całego pliku na raz
+        string fileContent = File.ReadAllText(filePath);
+        Console.WriteLine("Zawartość pliku:");
+        Console.WriteLine(fileContent);
+
+        // Czytanie pliku linia po linii
+        Console.WriteLine("\nLinie pliku:");
+        string[] fileLines = File.ReadAllLines(filePath);
+        foreach (string line in fileLines)
+        {
+            Console.WriteLine(line);
+        }
+
+        // Czytanie pliku z użyciem StreamReader
+        Console.WriteLine("\nZawartość pliku ze StreamReader:");
+        using (StreamReader reader = new StreamReader(filePath))
+        {
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+            }
+        }
     }
 }
 ```
-To podejście jest bardziej rozbudowane, ale przydaje się w bardziej skomplikowanych sytuacjach.
 
-## Zobacz też
-Dla bardziej zaawansowanych operacji we/wy warto zainteresować się `System.IO.StreamReader` i `System.IO.StreamWriter`:
-* Dokumentacja Microsoft .NET: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.streamreader
-* Dokumentacja Microsoft .NET: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.streamwriter 
+```plaintext
+Zawartość pliku:
+To jest treść pliku tekstowego.
 
-Dla operacji na plikach i katalogach:
-* Dokumentacja Microsoft .NET: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.file
-* Dokumentacja Microsoft .NET: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.directory
+Linie pliku:
+To
+jest
+treść
+pliku
+tekstowego.
+
+Zawartość pliku ze StreamReader:
+To
+jest
+treść
+pliku
+tekstowego.
+```
+
+## Deep Dive (Głębsze spojrzenie)
+Czytanie plików tekstowych w C# ma swoje korzenie w wcześniejszych językach i modelach IO. Klasa `System.IO.File` pojawiła się w .NET Framework 1.0 w 2002 roku i ewoluowała przez lata. Do alternatyw należą `File.ReadAllBytes` dla danych binarnych oraz `FileStream` dla zaawansowanego sterowania IO.
+
+Implementacja zależy od potrzeb: `File.ReadAllText` i `File.ReadAllLines` są proste ale mogą być problematyczne przy dużych plikach ze względu na wykorzystanie pamięci. `StreamReader` czyta strumieniowo, co jest efektywne dla dużych plików.
+
+## See Also (Zobacz także)
+- Dokumentacja Microsoft o `System.IO.File`: [https://docs.microsoft.com/en-us/dotnet/api/system.io.file](https://docs.microsoft.com/en-us/dotnet/api/system.io.file)
+- Dokumentacja Microsoft o `StreamReader`: [https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)
+- Przewodnik Microsoft po plikach i strumieniach we/wy: [https://docs.microsoft.com/en-us/dotnet/standard/io/](https://docs.microsoft.com/en-us/dotnet/standard/io/)

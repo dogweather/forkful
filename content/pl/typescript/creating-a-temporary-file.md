@@ -1,7 +1,8 @@
 ---
-title:                "Tworzenie tymczasowego pliku"
-html_title:           "C#: Tworzenie tymczasowego pliku"
-simple_title:         "Tworzenie tymczasowego pliku"
+title:                "Tworzenie pliku tymczasowego"
+date:                  2024-01-20T17:41:39.967018-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,29 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Tworzenie tymczasowego pliku polega na utworzeniu pliku, który służy do przechowywania danych na krótki czas. Programiści robią to zwykle, gdy potrzebują przechować dane, które są tylko tymczasowo potrzebne lub które chcą chronić przed utratą w przypadku awarii.
+## What & Why?
+Tworzenie pliku tymczasowego to proces generowania pliku, który ma służyć chwilowym celom i zwykle jest usuwany po użyciu. Programiści używają plików tymczasowych do przechowywania danych tymczasowych, testowania i oddzielania procesów, aby nie zakłócać pracy głównego systemu plików.
 
-## Jak to zrobić:
-Tworzenie tymczasowych plików w TypeScript jest proste. Możemy skorzystać z pakietu "tmp", który dostarcza wygodne funkcje do tego zadania. Instalujemy go za pomocą npm przy użyciu komendy `npm install tmp` i można go użyć jak poniżej.
+## How to:
+W TypeScript korzystamy z paczki `fs` z Node.js, żeby łatwo zarządzać plikami — tworzyć, odczytywać, pisać i usuwać, także te tymczasowe.
 
-```TypeScript
-import { fileSync } from 'tmp';
+```typescript
+import fs from 'fs';
+import os from 'os';
+import path from 'path';
 
-let tmpobj = fileSync();
-console.log('File: ', tmpobj.name);
-console.log('Filedescriptor: ', tmpobj.fd);;
+function createTempFile(prefix: string): string {
+  // Stwórz unikalną ścieżkę bazując na czasie i prefixie
+  const tempPath = path.join(os.tmpdir(), `${prefix}${Date.now()}`);
+  
+  // Stwórz plik i zwróć ścieżkę
+  fs.writeFileSync(tempPath, 'Moje tymczasowe dane');
+  return tempPath;
+}
+
+// Użycie funkcji:
+const tempFilePath = createTempFile('myAppTemp');
+console.log(`Plik tymczasowy został utworzony w: ${tempFilePath}`);
+
+// Sprzątanie po skończonej pracy
+fs.unlinkSync(tempFilePath);
+console.log(`Plik tymczasowy został usunięty.`);
 ```
 
-Przy wykonaniu tego kodu, stworzony zostanie unikalny tymczasowy plik i jego nazwa zostanie wyświetlona na konsoli.
+Output:
 
-## Pogłębione informacje
-Stworzenie tymczasowego pliku nie jest nowym konceptem. Zostało to wprowadzone w starszych systemach operacyjnych, takich jak Unix, gdzie takie pliki były przechowywane w `/tmp` lub `/var/tmp`. 
+```
+Plik tymczasowy został utworzony w: /tmp/myAppTemp1612331122337
+Plik tymczasowy został usunięty.
+```
 
-Jedną z alternatyw w TypeScript jest używanie modułu `fs` w Node.js, który również oferuje funkcje do tworzenia i manipulacji plikami. Choć jest to bardziej niskopoziomowe podejście, daje to większą kontrolę nad tworzeniem plików.
+## Deep Dive
+Pliki tymczasowe nie są nowością; istnieją od dawna, ułatwiając programowanie aplikacji wymagających tymczasowej pamięci pomocniczej. Alternatywy dla plików tymczasowych obejmują używanie baz danych w pamięci lub specjalnych systemów plików w pamięci RAM, jak tmpfs w systemach typu Unix.
 
-Pakiet "tmp" używa `fs` pod spodem, ale zapewnia większą wygodę i bezpieczeństwo, takie jak automatyczne usuwanie pliku po zakończeniu programu.
+Przy tworzeniu pliku tymczasowego ważne jest, by zapewnić jego unikatowość, najlepiej przez dodanie znacznika czasowego lub używając funkcji generujących unikalne identyfikatory. Zwróć uwagę na odpowiednie zarządzanie życiem pliku tymczasowego — nie chcesz, by śmieci zalegały twoim systemie.
 
-## Zobacz również
-1. [Pakiet tmp na npm](https://www.npmjs.com/package/tmp)
-2. [Moduł fs w Node.js](https://nodejs.org/api/fs.html)
+## See Also
+1. Node.js File System API: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
+2. `os.tmpdir()` dokumentacja: [https://nodejs.org/api/os.html#ostmpdir](https://nodejs.org/api/os.html#ostmpdir)
+3. `path` moduł dokumentacja: [https://nodejs.org/api/path.html](https://nodejs.org/api/path.html)

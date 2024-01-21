@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C#: Pobieranie strony internetowej"
+date:                  2024-01-20T17:44:05.141254-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,35 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Ściąganie strony internetowej to proces zapisywania zawartości z internetu na lokalnym dysku. Programiści to robią, by analizować dane, testować aplikacje lub pracować offline.
 
-Pobieranie strony internetowej to proces, w którym zawartość konkretnej strony web jest zapisywany na dysku twardym. Programiści robią to, żeby mieć lokalny dostęp do stron, analizować struktury HTML itd.
-
-## Jak to zrobić:
-
+## How to: (Jak to zrobić:)
 ```Fish Shell
-# użyj “curl” do pobrania strony
-curl -o nazwa_pliku.html https://twojastrona.com
-```
-Tym samym poleceniem pobierasz stronę internetową, zapisując ją pod nazwą `nazwa_pliku.html`.
+function fetch_page -d "Download web page content"
+    set url $argv[1]
+    set output $argv[2]
+    curl $url -o $output
+end
 
-```Fish Shell
-# Przykładowe wyjście
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  200k  100  200k    0     0  4545k      0 --:--:-- --:--:-- --:--:-- 4545k
+fetch_page "http://example.com" "example_page.html"
 ```
 
-## Zanurkowanie
+Jeśli wszystko przebiegnie pomyślnie, zobaczysz utworzony plik `example_page.html` z zawartością strony `example.com`.
 
-Pobieranie stron internetowych ma swoje korzenie w czasach, gdy prędkość internetu była zbyt wolna, aby przeglądać strony online. Teraz służy do wielu celów, takich jak automatyzacja, badania itp.
+## Deep Dive (Dogłębna analiza)
+Zanim `curl` stał się standardem, używano `wget` do ściągania plików. Dzisiaj `curl` jest preferowany ze względu na elastyczność i wsparcie dla wielu protokołów. Fish Shell to nowoczesna powłoka, która ułatwia życie programisty, m.in. przez wbudowane funkcje, takie jak wyżej definiowane `fetch_page`. Umożliwiają one tworzenie skryptów, które integrują różne narzędzia w bardziej czytelne i zarządzalne bloki kodu.
 
-Alternatywą dla `curl` jest `wget`, które także jest często używane do pobierania stron. Obie te komendy mają różne opcje dostosowania.
+Gdy ściągasz stronę, pamiętaj o prawach autorskich i zasadach korzystania ze strony — nie wszystkie treści są dozwolone do pobrania. Dodatkowo, zwróć uwagę na `robots.txt` danego serwisu, gdzie określone mogą być zasady skanowania strony przez boty.
 
-Za pobraniem strony internetowej za pomocą `curl` stoi wiele mechanizmów, takich jak nawiązywanie połączenia TCP, wysyłanie żądania HTTP, odbieranie odpowiedzi itd.
-
-## Zobacz też
-
-- [curl vs wget](https://daniel.haxx.se/docs/curl-vs-wget.html): artykuł porównujący curl i wget.
-- [Fish Shell dokumentacja](https://fishshell.com/docs/current/index.html): oficjalna dokumentacja Fish Shella.
-- [HTTP - jak to działa](https://developer.mozilla.org/pl/docs/Web/HTTP/Overview): Artykuł MDN tłumaczący, jak działa HTTP.
+## See Also (Zobacz również)
+- [Official Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [cURL Project](https://curl.se/)
+- [Wget Manual](https://www.gnu.org/software/wget/manual/wget.html)
+- [HTTP client/server technology for Fish](https://github.com/fish-shell/fish-shell/wiki/HTTP-client/server-technology)

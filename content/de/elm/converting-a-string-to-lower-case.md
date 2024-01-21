@@ -1,7 +1,8 @@
 ---
-title:                "Einen String in Kleinbuchstaben umwandeln"
-html_title:           "Elm: Einen String in Kleinbuchstaben umwandeln"
-simple_title:         "Einen String in Kleinbuchstaben umwandeln"
+title:                "Umformung eines Strings in Kleinbuchstaben"
+date:                  2024-01-20T17:38:08.077721-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Umformung eines Strings in Kleinbuchstaben"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,36 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why?
+Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Zeichen des Strings in ihre Kleinbuchstaben-Äquivalente zu transformieren. Programmierer nutzen dies, um die Groß- und Kleinschreibung zu vereinheitlichen, oft beim Vergleichen von Text oder bei der Standardisierung von Nutzereingaben.
 
-In Elm besteht das Umwandeln eines Strings in Kleinbuchstaben darin, jeden Großbuchstaben in einem gegebenen String in seinen entsprechenden Kleinbuchstaben zu verwandeln. Dies ist nützlich, um sicherzustellen, dass der Vergleich von Zeichenkette, die nicht von der Groß- und Kleinschreibung abhängig ist, immer gleich bleibt.
-
-## So geht's:
-
-Umwandeln von Zeichenketten in Kleinbuchstaben in Elm ist ein einfacher Prozess, der die eingebaute `String.toLower` Funktion nutzt. Hier ein einfaches Beispiel:
+## How to:
+In Elm kannst du den `String.toLower`-Funktion nutzen, um einen String in Kleinbuchstaben umzuwandeln. So geht's:
 
 ```Elm
-module Main exposing(..)
-
-import Html exposing (text)
 import String
 
+lowercaseString : String -> String
+lowercaseString str =
+    String.toLower str
+
+-- Beispiel-Nutzung
 main =
-    String.toLower "HELLLO, ELM!"
-        |> text
+    lowercaseString "Hallo, Welt!"  --> "hallo, welt!"
 ```
-Wenn Sie dieses Programm ausführen, wird die Ausgabe `"helllo, elm!"` sein.
 
-## Tiefgehende Infos:
+Der Aufruf `lowercaseString "Hallo, Welt!"` gibt dir `"hallo, welt!"` zurück.
 
-Das Konzept der Groß- und Kleinschreibung selbst stammt aus den Anfängen der geschriebenen Sprache. Es wurde zur Unterscheidung von Namen und Beginn eines Satzes benutzt. In modernen Programmiersprachen ist es ein wichtiges Konzept hauptsächlich aufgrund von Zeichenkettenvergleichen.
+## Deep Dive
+Die Umwandlung zu Kleinbuchstaben ist ein klassisches Problem und ein Standardfeature in vielen Programmiersprachen. Historisch gesehen folgt Elm hier anderen funktionalen Sprachen wie Haskell oder ML. Elm vereinfacht dies im Vergleich zu JavaScript, wo unterschiedliche Browser unterschiedlich auf `String.toLowerCase()`-Aufrufe reagieren könnten.
 
-Statt `String.toLower` könnten Sie auch die `Char.toLower` Funktion benutzen und durch jeden Buchstaben in einem String iterieren. Dies kann nützlich sein, wenn Sie etwas mehr Kontrolle über den Prozess haben wollen.
+Es gibt Alternativen, wie zum Beispiel die manuelle Umwandlung jedes Zeichens durch eine eigens definierte Funktion, was aber meist unnötig komplex ist. Die Implementierung von `String.toLower` nutzt die Unicode-Standardisierung, um zuverlässige Ergebnisse zu garantieren, egal für welche Sprache oder welches Zeichensystem.
 
-Aber `String.toLower` erledigt diese Aufgabe effektiv. Intern verwendet es eine Standard-Funktion der Elm-Runtime, um jedes Zeichen in der Zeichenkette in seinen Kleinbuchstabenequivalent umzuwandeln.
+## See Also
+Zum Vertiefen empfehle ich folgende Ressourcen:
 
-## Weiterführende Links:
-
-- [Elm String API-Dokumentation](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm Char API-Dokumentation](https://package.elm-lang.org/packages/elm/core/latest/Char)
-- [Unicode Character Case Mapping](https://www.unicode.org/versions/Unicode13.0.0/ch03.pdf#G33992)
+- Elm's offizielle `String`-Dokumentation: [package.elm-lang.org/packages/elm/core/latest/String#toLower](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
+- Unicode-Standard: [unicode.org/reports/tr21/tr21-5.html](https://unicode.org/reports/tr21/tr21-5.html)

@@ -1,7 +1,8 @@
 ---
-title:                "Знаходження довжини рядка"
-html_title:           "Arduino: Знаходження довжини рядка"
-simple_title:         "Знаходження довжини рядка"
+title:                "Визначення довжини рядка"
+date:                  2024-01-20T17:48:30.828742-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Визначення довжини рядка"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,34 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-**## Що і для чого?**
+## What & Why? (Що і Чому?)
+Finding the length of a string in Swift is about getting the count of characters it contains. Programmers do this to validate inputs, size elements, manage loops, and more. It's a bread-and-butter operation for almost any app dealing with text.
 
-Знаходження довжини рядка - це визначення кількості символів, які включені до рядка. Програмісти роблять це, оскільки це часто потрібно для виконання циклів, порівняння рядків та вирішення інших типових завдань.
+## How to (Як це зробити):
+Swift makes checking a string's length straightforward. Use the `count` property of a string instance. Here's how:
 
-**## Як зробити:**
-
-Код та приклади виведення в кодовому блоку Swift:
-
-```Swift
-let helloWorld = "Привіт, Світ"
-let lengthOfString = helloWorld.count
-print(lengthOfString)
+```swift
+let greeting = "Вітаю"
+let length = greeting.count
+print("The length of the string is \(length)")
 ```
 
-У вищенаведеному коді, ми визначаємо довжину рядка через власність `.count` рядка, і потім друкуємо цю довжину. Виведення буде `12`.
+Sample Output:
 
-**## Поглиблений занурення:**
+```
+The length of the string is 6
+```
 
-**Історичний контекст:** В ранніх версіях Swift, замість `.count` використовувався метод `.characters.count`. Але від Swift 4, кількість символів рядка можна отримати прямо через властивість `.count`.
+Strings with complex characters, like emojis, are handled correctly:
 
-**Альтернативи:** Можна використовувати `.lengthOfBytes(using:)` для отримання довжини рядка в байтах, але це не те ж саме, що і кількість символів.
+```swift
+let emojiGreeting = "Hello 👋"
+print("The emoji string length is \(emojiGreeting.count)")
+```
 
-**Деталі реалізації:** Пам'ятайте, властивість `.count` строк в Swift повертає кількість символів Unicode. Тому якщо в рядку є символи, які виражаються через декілька знакових єдиниц (наприклад, емодзі), `.count` може повернути більше значення, ніж ви очікуєте.
+Sample Output:
 
-**## Дивіться також:**
+```
+The emoji string length is 7
+```
 
-[Стрічки та символи](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+## Deep Dive (Поглиблений Огляд):
+Historically, string length calculation could trip up new developers due to Unicode complexities. In some languages, it was not a simple property access.
 
-[Кодування Unicode](https://unicode.org/faq/utf_bom.html#utf8-4)
+Swift's `String` type is Unicode-compliant. This means `.count` gives you the number of user-perceived characters, known as grapheme clusters, not the underlying code units or bytes. Characters outside the Basic Multilingual Plane, like emojis, are treated as single characters despite being made up of multiple Unicode scalars.
 
-[Swift рядок](https://developer.apple.com/documentation/swift/string)
+Alternatives? Before `count`, Swift programmers might have relied on `NSString`'s `length` property, which returns the UTF-16 code units count. This method is not Swift-native and can misrepresent the actual character count.
+
+Implementation-wise, Swift's `String` keeps track of the character count as you modify the string, so accessing `.count` is an O(1) operation – fast and independent of the string's length.
+
+## See Also (Дивіться також):
+To go beyond the basics:
+
+- Swift Documentation on Strings: [Swift.org Documentation](https://www.swift.org/documentation/#the-swift-programming-language)
+- Deeper look at Unicode and Swift Strings: [Swift's String Manifesto](https://github.com/apple/swift/blob/main/docs/StringManifesto.md)
+- Understanding grapheme clusters: [Unicode Text Segmentation](http://unicode.org/reports/tr29/)

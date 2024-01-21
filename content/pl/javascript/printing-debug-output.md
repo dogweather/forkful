@@ -1,6 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-html_title:           "Haskell: Drukowanie komunikatów debugowania"
+date:                  2024-01-20T17:52:40.848285-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,27 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why? (Co i dlaczego?)
+Wypisywanie danych debugowania pomaga zrozumieć, co się dzieje w kodzie. Programiści używają tego, by szybko znaleźć błędy lub monitorować działanie aplikacji.
 
-## Co i dlaczego?
-Drukowanie informacji diagnostycznych to sposób, w jaki programiści monitorują i debugują swój kod. Pomaga to zrozumieć, co dokładnie dzieje się "pod maską" podczas wykonywania programu.
-
-## Jak to zrobić:
-```Javascript
-console.log("Witaj, jestem informacją diagnostyczną!");
-```
-Po uruchomieniu programu z powyższym poleceniem, wyświetli się komunikat: "Witaj, jestem informacją diagnostyczną!".
+## How to: (Jak to zrobić?)
+Oto kilka przykładów:
 
 ```Javascript
-let zmiennaDebug = "Witaj ponownie";
-console.debug(zmiennaDebug);
+console.log('Hej, tu Twój kod!');
+// Output: Hej, tu Twój kod!
+
+let zmienna = 42;
+console.debug('Wartość zmiennej:', zmienna);
+// Output: Wartość zmiennej: 42
+
+try {
+  // Kod, który może wywołać błąd
+} catch (error) {
+  console.error('Coś poszło nie tak:', error);
+}
 ```
-Podobnie jak wyżej, informacja diagnostyczna pokaże komunikat zapisany w zmiennej "zmiennaDebug": "Witaj ponownie".
 
-## Bardziej szczegółowo:
-Historia drukowania informacji diagnostycznych sięga początków programowania. Zostało to wprowadzone jako sposób na zrozumienie, co się dzieje z naszym kodem. Alternatywą dla `console.log` i `console.debug` jest `console.info` albo `console.warn`, które mogą być używane do drukowania różnych poziomów informacji diagnostycznych.
+## Deep Dive (Dogłębna analiza)
+Pierwsi programiści nie mieli konsoli debugowania - używali lamp i papierowych zapisów. Z czasem powstały narzędzia takie jak GDB czy nowoczesne konsole przeglądarek. Alternatywą dla `console.log` może być używanie debuggera czy zapisywanie danych do pliku. W JavaScript console jest obiektem globalnym, który dostarcza metody takie jak `log`, `debug`, `error`, `info`, czy `warn`, każda z własnym stylem wyjścia.
 
-Kiedy użyjemy `console.log`, zostaje wywołana wewnętrzna metoda `process.stdout.write`, która wypisuje informacje do strumienia wyjściowego procesu. Przy `console.debug`, informacje zostaną wyświetlone tylko wtedy, gdy jest ustawione odpowiednie środowisko (np. `NODE_DEBUG`).
-
-## Zobacz także:
-3. [Metody obiektu konsoli](https://developer.mozilla.org/en-US/docs/Web/API/console)
+## See Also (Zobacz też)
+- [MDN Web Docs Console](https://developer.mozilla.org/pl/docs/Web/API/Console)
+- [Node.js console documentation](https://nodejs.org/api/console.html)
+- [Introduction to debugging JavaScript](https://javascript.info/debugging-chrome)

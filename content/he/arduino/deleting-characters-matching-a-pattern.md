@@ -1,6 +1,7 @@
 ---
 title:                "מחיקת תווים התואמים לתבנית"
-html_title:           "Elixir: מחיקת תווים התואמים לתבנית"
+date:                  2024-01-20T17:41:54.038591-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "מחיקת תווים התואמים לתבנית"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,30 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-מחיקת תווים התואמים לדפוס היא פעולה חוזרת ונשנית בתכנות, המאפשרת לנו ל"Mאתחל" גורם מסוים למצבו הראשוני. תהליך זה משמש להפך גזרה, מנקה את הרעש או מתקן מידע פגום.
+הסרת תווים התואמים לתבנית היא פרקטיקה שבה אנו מחפשים תווים מסוימים במחרוזת ומוחקים אותם. תכניתנים עושים זאת כדי לטהר קלט, הסרת פורמטינג או לאמת נתונים.
 
 ## איך לעשות:
-
-כאן ניקח את `str` ונסיר ממנו את כל התווים המתאימים לדפוס.
+ארדואינו לא תומך באופן מובנה בביטויים רגולריים. נצטרך לעשות זאת ידנית. הנה דוגמא:
 
 ```Arduino
-String str = " אני מתכנת Arduino מיומנות";
-str.replace("Arduino", "");
-Serial.println(str);
+String removePattern(String str, char toRemove) {
+  String result = "";
+  for (unsigned int i = 0; i < str.length(); i++) {
+    if (str[i] != toRemove) result += str[i];
+  }
+  return result;
+}
+
+void setup() {
+  Serial.begin(9600);
+  String data = "Hello-World-123";
+  Serial.println(removePattern(data, '-'));  // "HelloWorld123"
+}
+
+void loop() {
+  // Nothing to do here
+}
 ```
 
-הפלט יהיה: "אני מתכנת מיומנות"
+פלט הדוגמה: "HelloWorld123"
 
-## צלילה עמוקה
+## עיון מעמיק:
+עד לשנות ה-70, כאשר עיבוד טקסט התחיל להיות נפוץ יותר, לא הייתה דרך פשוטה להסיר תווים לפי תבנית. ביטויים רגולריים, שנוצרו בשנת 1956 על ידי סטיבן קליני, שיפרו את היכולת לחפש ולעבד טקסט באופן יעיל. קוד הארדואינו נועד להיות פשוט ואינו כולל תמיכה רשמית בביטויים רגולריים, מכיוון שלוקח הרבה משאבים במערכת עם משאבים חסוכים. דרך חלופית היא להשתמש בספריות צד שלישי שנועדו לארדואינו, אך יש לשים לב לשימוש בזיכרון ובמשאבי מעבד.
 
-השימוש במחיקת תווים המתאימים לדפוס הוא מעין שיטת הגישה לתכנות מהימים הראשונים של המחשבים עצמם. שמקורו בתרבית התכנות בה המפתחים התמודדו עם משאבים מוגבלים. כגון מקום זיכרון.
-
-לחלופין, אם יש לנו את  `regex.h` (bibliotheca de defined regular expressions), נוכל להשתמש בה כדי למחוק תווים המתאימים לדפוס בצורה מסודרת ועקבית.
-
-אמנם Arduino עשוי להתמודד עם הגבלות מקום, אך לא לשם זה לא מאוד מאמצים את regex. במקום זה, אנו משתמשים בעזרה כמו "String"-.replace()
-
-## ראה גם
-
-* [Arduino Reference - String replace()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
-* [C++ Reference - std::regex](http://www.cplusplus.com/reference/regex/)
-* [Arduino Forum - Delete characters from string](https://forum.arduino.cc/index.php?topic=486320.0)
+## ראה גם:
+- [מדריך ארדואינו רשמי](https://www.arduino.cc/reference/en/)
+- [דוקומנטציה למחרוזות בארדואינו](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [פורום התמיכה של ארדואינו](https://forum.arduino.cc/)
+- [ביטויים רגולריים](https://en.wikipedia.org/wiki/Regular_expression) (להבנה כללית, לא ספציפית לארדואינו)

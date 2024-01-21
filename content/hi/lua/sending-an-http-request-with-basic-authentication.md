@@ -1,7 +1,8 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:02:52.252544-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -12,48 +13,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्या और क्यों?
 
-HTTP request और basic authentication एक प्रकार की कोडिंग क्रिया हैं जिसका उपयोग programmers भुनावटियों, सर्वर और डेटा की अवधारणा के लिए करते हैं। यह प्रक्रिया निजी डेटा की सुरक्षा में सहयोग देती है और ग़ैर-औरोरित सभी संचारों को रोकती है।
+HTTP अनुरोध भेजना इंटरनेट पर संसाधनों की अनुरोध करने की प्रक्रिया है। बेसिक ऑथेंटिकेशन का उपयोग करके, हम यूजरनेम और पासवर्ड के साथ सेवा प्रदानकर्ता को सत्यापित कर सकते हैं। प्रोग्रामर्स इसे तब करते हैं जब उन्हें संरक्षित संसाधनों तक पहुँचना होता है।
 
 ## कैसे करें:
 
 ```Lua
--- LuaSocket और LuaSec लाइब्रेरिज़ की स्थापना 
 local http = require("socket.http")
-local https = require("ssl.https")
 local ltn12 = require("ltn12")
 
--- यूज़रनेम और पासवर्ड
-local user = 'your_username'
-local password = 'your_password'
+local url = "http://example.com/data"
+local user = "your_username"
+local password = "your_password"
 
--- आवेदन का पाठ
-local auth = 'Basic ' .. (mime.b64(user .. ':' .. password))
+local response_body = {}
 
--- एचटीटीपी अनुरोध भेजना
-local response_body, status, response_headers = http.request
-{
-    url = "http://example.com",
-    method = "GET",
-    headers =
-    {
-        Authorization = auth,
-    },
+http.request{
+  url = url,
+  method = "GET",
+  headers = {
+    ["Authorization"] = "Basic " .. (mime.b64(user .. ":" .. password))
+  },
+  sink = ltn12.sink.table(response_body)
 }
 
--- प्रतिसाद दिखाना
-print(response_body)
+-- प्रतिक्रिया देखने के लिए प्रिंट करें
+print(table.concat(response_body))
 ```
 
-## गहन विवेचना
+इस कोड से आउटपुट जैसा कुछ होगा:
+```
+<Response contents here>
+```
 
-एचटीटीपी basic authentication को HTTP/1.0 विनिर्देश में पहली बार पेश किया गया था। यह एक साधारण और ईमानदार तरीका प्रमाणीकरण करने का है जो यूज़र नाम और पासवर्ड को Base64 कोडिंग द्वारा कोड किया जाता है।
+## गहराई में:
 
-इसके विकल्प में Digest Authentication, NTLM Authentication, और Form-Based Authentication आते हैं जिन्हें भी तथा स्थानीय आवश्यकताओं के आधार पर इस्तेमाल किया जा सकता है।
+HTTP अनुरोध भेजना और बेसिक ऑथेंटिकेशन 1990 के दशक से वेब एप्लिकेशन में प्रचलित है। बेसिक ऑथेंटिकेशन सरल होता है, लेकिन कम सुरक्षित भी होता है, इसलिए कभी-कभी OAuth जैसे ज्यादा सुरक्षित विकल्पों का उपयोग किया जाता है। लुआ में इसे करने के लिए सामान्यतः `socket.http` लाइब्रेरी का उपयोग होता है, और प्रत्युत्तर को संभालने के लिए `ltn12`। 
 
-स्थापना में LuaSocket और LuaSec (HTTPS के लिए) लाइब्रेरिज़ का इस्तेमाल हुआ है। इसमें `http.request` का इस्तेमाल करके URL, विधि, और हेडर को एक तालिका द्वारा पारित किया जाता है।
+चूंकि बेसिक ऑथेंटिकेशन Base64 कोडिंग का प्रयोग करता है, हमें यह कोडिंग प्रदान करने वाली `mime` लाइब्रेरी की भी आवश्यकता होती है। सुरक्षा के लिहाज़ से, HTTPS उपयोग करना और अपनी क्रेडेंशियल्स को हार्डकोड न करना सदैव बेहतर होता है।
 
-## भी देखें
+## देखें भी:
 
-- [HTTP Basic Authentication - Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication)
-- [LuaSocket HTTP reference](http://w3.impa.br/~diego/software/luasocket/http.html)
-- [LuaSec reference](https://github.com/brunoos/luasec/wiki)
+- LuaSec लाइब्रेरी (HTTPS सपोर्ट के लिए): https://github.com/brunoos/luasec
+- HTTP और अन्य Lua नेटवर्किंग ऑपरेशंस के बारे में और जानकारी: http://w3.impa.br/~diego/software/luasocket
+- MIME टाइप हैंडलिंग के लिए LuaSocket MIME लाइब्रेरी: http://w3.impa.br/~diego/software/luasocket/mime.html
+- अधिक सुरक्षित OAuth ऑथेंटिकेशन मेथड: https://oauth.net/

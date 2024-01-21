@@ -1,7 +1,8 @@
 ---
-title:                "Satunnaisten numeroiden luominen"
-html_title:           "Bash: Satunnaisten numeroiden luominen"
-simple_title:         "Satunnaisten numeroiden luominen"
+title:                "Satunnaislukujen generointi"
+date:                  2024-01-20T17:48:28.118025-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Satunnaislukujen generointi"
 programming_language: "C"
 category:             "C"
 tag:                  "Numbers"
@@ -10,38 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Satunnaislukujen tuottaminen C-ohjelmoinnissa
+## What & Why? (Mikä & Miksi?)
+Satunnaislukujen generointi tarkoittaa arvaamattomien numeroiden tuottamista. Koodaajat käyttävät niitä peleissä, simulaatioissa ja turvallisuussovelluksissa, joissa ennakoimaton käytös on olennaista.
 
-## Mikä ja Miksi?
-
-Satunnaislukujen tuottaminen on ohjelmointitehtävä, jossa generoidaan ennustamattomia numeroita määritellyssä joukossa. Ohjelmoijat käyttävät sitä lisätäkseen joustavuutta sekä simuloimaan todennäköisyystapahtumia.
-
-## Näin se tehdään:
-
+## How to: (Kuinka Tehdään:)
 ```C
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
 int main() {
+    // initialise random number generator
     srand(time(NULL));
-    int random_number = rand() % 100;
-    printf("%d\n", random_number);
+
+    // generate and print a random number
+    printf("Random number: %d\n", rand());
+
     return 0;
 }
 ```
+Esimerkitulostus voisi olla:
+```
+Random number: 50732
+```
 
-"Tämä ohjelma tuotetaan satunnaisen numeron välillä 0-99. Käyttäen rand() -funktiota, modulo-operaattoria rajataksesi arvoa ja srand() -funktiota alustamaan pseudosatunnaislukugeneraattorin."
+## Deep Dive (Sukellus Syvemmälle)
+C-kielessä `rand()` on klassinen tapa luoda satunnaislukuja, mutta se tuottaa ennalta määrätyn sarjan. `srand()` kutsutaan kerran ohjelmassa asettamaan satunnaislukugeneraattorin siemen, joka usein on `time(NULL)` varmistamaan ainutlaatuisuutta.
 
-## Syvä sukellus
+Ennen C11-standardia, satunnaisuus oli rajoittunutta ja ennustettavaa, joka ei sovi kaikkiin käyttötarkoituksiin. C11 toi mukanaan `_Generic` makron, mikä mahdollistaa paremmin satunnaislukugeneraattoreiden käytön.
 
-1. **Historiallinen konteksti:** Ensimmäiset yksinkertaiset satunnaislukugeneraattorit olivat mekaanisia laitteita. Nykyään tietokoneet simuloivat satunnaisuutta käyttäen pseudosatunnaislukugeneraattoreita.
+Vaihtoehteja `rand()`:lle on, kuten `/dev/random` ja `/dev/urandom` Unix-järjestelmissä sekä erilaiset kryptograafiset kirjastot, jotka tarjoavat vahvemman satunnaisuuden.
 
-2. **Vaihtoehdot:** C-kielissä on olemassa monia muita menetelmiä satunnaislukujen tuottamiseksi, mukaan lukien uudempi arc4random() macOS:ssä ja BSD.ssä.
-
-3. **Toteutustiedot:** rand() -funktion todellinen toiminta voi vaihdella kääntäjältä toiselle. Useimmissa tapauksissa se käyttää lineaarista yhtälöryhmää.
-
-## Katso myös
-
-1. C Standard Library - [`rand` ja `srand`](http://www.cplusplus.com/reference/cstdlib/rand/)
-4. [Lineaaristen yhtälöryhmien](https://en.wikipedia.org/wiki/Linear_congruential_generator) Wikipedia-sivu
+## See Also (Katso Myös)
+- C Standard Library documentation: https://en.cppreference.com/w/c/numeric/random
+- An article on random number generation in C: https://www.learncpp.com/cpp-tutorial/59-random-number-generation/
+- Information about randomness in cryptography: https://www.schneier.com/crypto-gram/archives/1999/0915.html

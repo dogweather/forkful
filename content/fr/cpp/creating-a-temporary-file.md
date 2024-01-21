@@ -1,6 +1,7 @@
 ---
 title:                "Création d'un fichier temporaire"
-html_title:           "Kotlin: Création d'un fichier temporaire"
+date:                  2024-01-20T17:39:34.484350-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Création d'un fichier temporaire"
 programming_language: "C++"
 category:             "C++"
@@ -10,49 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Création de fichiers temporaires en C++
+## What & Why?
 
-## Qu'est-ce que c'est & Pourquoi ?
+Créer un fichier temporaire permet de stocker des données de façon éphémère pendant l'exécution d'un programme. On le fait pour manipuler des données sans affecter le système de fichiers permanent ou pour garantir qu'elles disparaissent automatiquement après usage.
 
-La création d'un fichier temporaire consiste à générer un fichier pour y stocker des données uniquement pendant la durée d'exécution d'un programme. Ceci est très utile pour gérer de grandes quantités de données, sans surcharger la mémoire vive.
+## How to:
 
-## Comment faire
-
-Pour créer un fichier temporaire en C++, nous utilisons la bibliothèque `<cstdio>`. Voici comment:
+En C++, la bibliothèque standard `<filesystem>` fournit de quoi gérer les fichiers temporaires. Utilisons `std::filesystem::temp_directory_path` pour trouver le répertoire des temporaires et créons un fichier unique avec `std::filesystem::unique_path`.
 
 ```C++
-#include <cstdio>
+#include <iostream>
+#include <fstream>
+#include <filesystem>
 
-int main(){
-    char cheminTemp[] = "/tmp/fichierXXXXXX";
-    int descripteur = mkstemp(cheminTemp);
-
-    if (descripteur == -1) {
-        perror("Erreur lors de la création du fichier temporaire");
-        return 1;
+int main() {
+    std::filesystem::path temp_dir = std::filesystem::temp_directory_path();
+    std::filesystem::path temp_file = temp_dir / std::filesystem::unique_path();
+    
+    std::ofstream file_stream(temp_file.string());
+    if (file_stream.is_open()) {
+        // On écrit quelque chose dans le fichier temporaire.
+        file_stream << "Salut, fichier temporaire!" << std::endl;
+        std::cout << "Fichier temporaire créé: " << temp_file << std::endl;
+    } else {
+        std::cerr << "Impossible de créer le fichier temporaire." << std::endl;
     }
-    printf("Fichier temporaire créé : %s\n", cheminTemp);
-    close(descripteur);
+    // On ferme le fichier pour libérer les ressources.
+    file_stream.close();
+
+    // Supprimer le fichier temporaire avant de terminer le programme.
+    std::filesystem::remove(temp_file);
+
     return 0;
 }
 ```
 
-Lorsqu'exécuté, ce code générera une sortie similaire à ceci:
+## Deep Dive:
 
-```
-Fichier temporaire créé : /tmp/fichierf3Im0
-```
+Les fichiers temporaires ne sont pas nouveaux. Ils étaient déjà utiles dans les premiers jours de la programmation pour gérer des données temporaires. Avec le temps, leur utilisation est devenue plus sophistiquée, passant de simples fichiers à des objets plus sécurisés et isolés.
 
-## Plongée profonde
+À part l'approche standard C++, il existe des méthodes spécifiques à l'OS comme `tmpfile()` en C, ou des bibliothèques tierces qui peuvent offrir plus de fonctionnalités ou une meilleure performance dans certains cas.
 
-Créer un fichier temporaire n'est pas une fonction native du C++, mais une convention issue de l'ère Unix, où `/tmp` est un répertoire pour stocker les fichiers temporaires.
+Il est crucial de s'assurer que les fichiers temporaires soient bien supprimés après utilisation pour éviter les fuites de données ou l'utilisation excessive de l'espace disque.
 
-Il existe des alternatives pour créer des fichiers temporaires, comme l'utilisation de la bibliothèque Boost. Cependant, l'approche présentée ici est celle qui se conforme le plus au standard POSIX.
+## See Also:
 
-Lors de l'utilisation de `mkstemp()`, elle modifie le modèle passé, remplaçant les 'X' par des caractères uniques pour éviter les conflits de nom de fichier.
-
-## À voir également
-
-- La documentation de GNU pour `mkstemp()`: https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html
-- Un guide plus détaillé pour gérer les fichiers temporaires avec C++ : https://cplusplus.com/articles/tmpfile/
-- L'approche alternative avec la bibliothèque Boost : https://www.boost.org/doc/libs/1_75_0/libs/io/doc/temp_file_guide.html
+- Documentation C++ sur les opérations de fichiers et chemin : [cppreference.com - Filesystem](https://en.cppreference.com/w/cpp/filesystem)
+- Guide sur la gestion de ressource et exceptions en C++ (RAII) : [cppreference.com - RAII](https://en.cppreference.com/w/cpp/language/raii)

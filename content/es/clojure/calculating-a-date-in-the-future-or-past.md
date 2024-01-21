@@ -1,7 +1,9 @@
 ---
-title:                "Calculando una fecha en el futuro o pasado"
-html_title:           "Clojure: Calculando una fecha en el futuro o pasado"
-simple_title:         "Calculando una fecha en el futuro o pasado"
+title:                "Cálculo de una fecha en el futuro o el pasado"
+date:                  2024-01-20T17:28:40.944773-07:00
+model:                 gpt-4-1106-preview
+html_title:           "Arduino: Cálculo de una fecha en el futuro o el pasado"
+simple_title:         "Cálculo de una fecha en el futuro o el pasado"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,53 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+## Qué y Por Qué?
+Calcular una fecha en el futuro o pasado es básicamente sumar o restar días a una fecha dada. Lo hacemos para programar eventos, calcular vencimientos o medir periodos de tiempo.
 
-Calcular una fecha futura o pasada es determinar exactamente un día, mes y año futuro o previo desde una fecha dada. Los programadores lo hacen para manejar tareas basadas en el tiempo, como registrar eventos, programar pagos, etc.
+## How to:
+Para trabajar con fechas en Clojure, usaremos la librería `clj-time`, una envoltura para Joda-Time. La instalamos agregando `[clj-time "0.15.2"]` a nuestro archivo `project.clj`. Aquí hay ejemplos simples:
 
-## Como hacerlo:
+```clojure
+(require '[clj-time.core :as t])
+(require '[clj-time.coerce :as c])
 
-Clojure te permite manipular fechas con facilidad. Dado un objeto de fecha, puedes añadir o restar días, meses o años.
+;; Sumar días a una fecha
+(def fecha-actual (t/now))
+(def futuro (t/plus fecha-actual (t/days 10)))
 
-```Clojure
-(require '[clj-time.core :as t]
-         '[clj-time.coerce :as c]
-         '[clj-time.periodic :as p])
+;; Restar días a una fecha
+(def pasado (t/minus fecha-actual (t/days 10)))
 
-(defn future-date [days months years]
-  (-> 
-   (t/now)
-   (t/plus (t/years years))
-   (t/plus (t/months months))
-   (t/plus (t/days days))
-   (c/to-date))) 
-
-(defn past-date [days months years]
-  (-> 
-   (t/now)
-   (t/minus (t/years years))
-   (t/minus (t/months months))
-   (t/minus (t/days days))
-   (c/to-date)))
+;; Imprimir fechas
+(println (c/to-string fecha-actual)) ;; "2023-03-31T18:04:21.236Z"
+(println (c/to-string futuro))       ;; "2023-04-10T18:04:21.236Z"
+(println (c/to-string pasado))       ;; "2023-03-21T18:04:21.236Z"
 ```
 
-Estas funciones producirán una fecha futura o pasada, respectivamente, en función de la cantidad de días, meses y años que añadas o restes.
+## Deep Dive:
+Calcular fechas es vital desde que los sistemas informáticos empezaron a manejar eventos y tareas programados. Antes teníamos que hacerlo manualmente, pero con evolución de las bibliotecas de manejo de tiempo como Joda-Time y `java.time`, es mucho más sencillo.
 
-## Inmersión Profunda:
+Alternativas a `clj-time` incluyen trabajar directamente con `java.time` en Clojure, o bibliotecas como `tick` y `time-literals`. Cada una tiene sus ventajas, pero `clj-time` es muy popular por su capacidad de trabajar con la familiar Joda-Time.
 
-A lo largo de la historia de la programación, los desarrolladores han empleado varios métodos para el cálculo de fechas. Un enfoque popular es usar bibliotecas de manejo de tiempo, como Joda-Time en Java. Clojure, un dialecto de Lisp que corre en la JVM, tiene acceso a estas bibliotecas, pero también ofrece su propio manejo idiomático de tiempo a través de `clj-time`. 
+Al calcular fechas en el pasado y futuro, debemos tener en cuenta zonas horarias y cambios como el horario de verano. `clj-time` lo maneja elegantemente, mientras que las operaciones manuales requerirían conocimiento detallado de estos aspectos.
 
-Una alternativa a `clj-time` sería `java.util.Date` y `java.util.Calendar`, pero ya están obsoletos en Java y son menos flexibles en comparación.
-
-Detalles de implementación: en las funciones anteriores, usamos `t/now` para obtener la fecha/hora actual y `t/plus` o `t/minus` para calcular fechas futuras o pasadas. Las funciones `t/years`, `t/moons` y `t/days` devuelven períodos, que son sumados o restados de la fecha/hora actual.
-
-## Ver ademas:
-
-Para aprender más sobre el manejo del tiempo en Clojure, revisa los siguientes recursos:
-
-- [ClojureDocs, clj-time](https://clojuredocs.org/clojure.core/time)
-- [Clj-time en Github](https://github.com/clj-time/clj-time)
-   
-Para entender las diferencias entre `java.util.Date`, `java.util.Calendar` y Joda-Time, visita:
-
-- [Java 8, Date Time API overview](https://www.baeldung.com/java-8-date-time-intro)
+## See Also:
+- Documentación `clj-time`: https://github.com/clj-time/clj-time
+- Guía sobre la API `java.time`: https://clojure.github.io/clojure/cheatsheets/java-time.html
+- Repositorio de `tick`: https://github.com/juxt/tick
+- Sintaxis `time-literals`: https://github.com/henryw374/time-literals

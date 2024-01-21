@@ -1,7 +1,8 @@
 ---
-title:                "Wydobywanie podciągów"
-html_title:           "Python: Wydobywanie podciągów"
-simple_title:         "Wydobywanie podciągów"
+title:                "Wycinanie podłańcuchów"
+date:                  2024-01-20T17:46:30.645907-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wycinanie podłańcuchów"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,38 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co I Dlaczego?
-
-Wyciąganie podciągów to operacja polegająca na wydzielaniu mniejszych ciągów znaków (podciągów) z większego ciągu znaków. Programiści robią to, aby manipulować danymi, analizować tekst lub filtrować informacje.
+## Co i dlaczego?
+Wyciąganie podłańcuchów to proces wzięcia kawałka tekstu z większego ciągu znaków. Programiści robią to, by operować na określonych fragmentach danych - czy to dla weryfikacji, wyszukiwania czy manipulacji tekstem.
 
 ## Jak to zrobić:
+Wyciągając podłańcuch w Pythonie, często używamy indeksowania i wycinania (`slicing`). Oto kilka przykładów:
 
-```Python
-# Definiowanie ciągu znaków
-napis = "Hello world"
+```python
+text = "Programowanie to pasja!"
 
-# Wyciąganie podciągu znaków
-podciąg = napis[0:5]
+# Pierwsze pięć znaków
+substr1 = text[:5]
+print(substr1)  # Wypisze 'Progr'
 
-# Wyświetlanie wyników
-print(podciąg)
+# Od dziesiątego do piętnastego znaku
+substr2 = text[10:15]
+print(substr2)  # Wypisze 'anie '
+
+# Ostatnie cztery znaki
+substr3 = text[-4:]
+print(substr3)  # Wypisze 'asja!'
 ```
 
-Kiedy uruchomisz ten kod, zobaczysz wynik:
+## W głębi tematu:
+W Pythonie, historia wycinania sięga wczesnych dni języka. Mechanizm ten pochodzi z koncepcji podobnych do tych w innych starszych językach jak Perl czy C, gdzie manipulacja ciągami znaków była powszechna.
 
-```
-Hello
-```
+Alternatywą do wycinania jest użycie metody `substring()`, która istnieje w niektórych innych językach, jak Java czy C#. W Pythonie jednak nie ma wbudowanej metody `substring()`, a wycinanie ('slicing') jest metodą idiomatyczną i preferowaną.
 
-## Głębsza wiedza
+Warto też wspomnieć o wydajności. Python korzysta z obiektów `slice`, które mogą być użyte powtórnie; jest to szczególnie użyteczne, kiedy robimy tę samą operację wiele razy.
 
-(1) Historyczny kontekst - Operacje na ciągach znaków są fundamentem programowania od jego początków. Korzystamy z nich w przypadku przetwarzania języka naturalnego, filtrowania danych i wielu innych zadań.
-
-(2) Alternatywy - Mimo iż nasz sposób to najszybszy i najprostszy, istnieją także inne metody jak np. z użyciem funkcji `slice()`, `substring()` czy regularnych wyrażeń. Wybór metody zależy od Twoich wymagań!
-
-(3) Szczegóły implementacji - Python indeksuje znaki w ciągu znaków, zaczynając od 0. Kiedy piszemy `napis[0:5]`, mówimy Pythonowi: "Daj mi podciąg zaczynając od indeksu 0 i kończąc na 5 (bez 5)"
-
-## Zobacz również
-
-- [Dokumentacja Pythona dotycząca ciągów znaków](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [Podstawy regularnych wyrażeń w Pythonie na realpython.com](https://realpython.com/regex-python/)
+## Zobacz także:
+- [Dokumentacja Python - Cięcia ciągów znaków](https://docs.python.org/3/tutorial/introduction.html#strings)
+- [Python String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods) - dokumentacja zawierająca metody operujące na stringach.
+- [Real Python - Guide to Slicing](https://realpython.com/lessons/indexing-and-slicing/) - głębokie zanurzenie w indeksowanie i wycinanie w Pythonie.

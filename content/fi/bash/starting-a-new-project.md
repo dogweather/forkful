@@ -1,7 +1,8 @@
 ---
-title:                "Aloittaminen uuden projektin"
-html_title:           "C: Aloittaminen uuden projektin"
-simple_title:         "Aloittaminen uuden projektin"
+title:                "Uuden projektin aloittaminen"
+date:                  2024-01-20T18:02:49.074949-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Getting Started"
@@ -10,33 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Uuden projektin aloittaminen tarkoittaa tyhjästä aloittamista, uuden ohjelmiston tai palvelun kehittämistä. Ohjelmoijat tekevät näin haastaakseen itsensä, oppiakseen uutta tai ratkaistakseen jonkin ongelman tai tarpeen.
+## What & Why? (Mitä & Miksi?)
+Uuden projektin aloittaminen on puhtaan koodisivun luomista ja projektikansion rakentamista. Koodarit aloittavat uusia projekteja organisoidakseen ideansa ja aloittaakseen puhtaalta pöydältä.
 
-## Näin teet:
-Seuraavassa on esimerkki Bash-skriptistä, joka luo uuden projektikansion ja alustaa tyhjän Git-repositorion.
-
+## How to: (Kuinka tehdä:)
 ```Bash
-#!/bin/bash
-# Uuden projektin luominen
-echo "Anna uuden projektin nimi:"
-read project_name
+# Luo uusi kansio projektille
+mkdir miinuusiiprojekti
 
-mkdir $project_name
-cd $project_name
+# Siirry uuteen kansioon
+cd miinuusiiprojekti
+
+# Alusta Git-repositorio (valinnainen)
 git init
-echo "# $project_name" >> README.md
-git add README.md
-git commit -m "alustava commit"
-echo "Uusi projekti luotu!"
+
+# Luo perustiedostot
+touch README.md main.sh
+
+# Tarkista kansio
+tree
+```
+Sample output:
+```Bash
+.
+├── README.md
+└── main.sh
+
+0 directories, 2 files
 ```
 
-Kun ajat tämän koodin, se näyttää haun uuden projektin nimen ja luo sitten sen kanssa kansion.
+## Deep Dive (Syväsukellus)
+Historiallisesti koodarit käyttivät paperia piirtääkseen koodin rungon ennen tietokoneille siirtymistä. Nyt käytämme kansiorakenteita ja versionhallintaa projektien hallintaan. Vaihtoehtoja ovat erilaiset projektinhallintatyökalut, kuten Yeoman tai Cookiecutter, jotka automatisoivat rakenteen. Implementaation yksityiskohdat vaihtelevat työkalujen ja ympäristön mukaan, mutta perusajatus on luoda looginen ja toimiva runko projektin eri osille alusta lähtien.
 
-## Syvä sukellus
-Projektin aloittaminen bash-skriptin avulla on nykyaikainen tapa, jota ohjelmoijat ovat käyttäneet 2000-luvun alkupuolelta lähtien, kun Bashista tuli yleisimmin käytetty unix-pohjaisten koneiden komentotulkki. Vaihtoehtoisia työkaluja ovat esimerkiksi Make, CMake tai Python-skriptit. Bash-skriptaus tarjoaa kuitenkin helpon ja nopean tavan aloittaa tyhjästä, etenkin kun käytetään versionhallintaa, kuten Git.
-
-## Katso myös
-1. Bash Programming -opas: https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html
-2. Gitin perusteet: https://git-scm.com/book/en/v2/Getting-Started-Git-Basics
-3. Projektipohjien luominen Bashissa: https://ryanstutorials.net/bash-scripting-tutorial/bash-input.php
+## See Also (Katso Myös)
+- [Git - perusteet](https://git-scm.com/book/fi/v2/Aloittaminen-Gitin-perusteet)
+- [Bash-skriptauksen ohje](https://www.gnu.org/software/bash/manual/)

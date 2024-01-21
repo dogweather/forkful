@@ -1,7 +1,8 @@
 ---
-title:                "Zufallszahlen generieren"
-html_title:           "Arduino: Zufallszahlen generieren"
-simple_title:         "Zufallszahlen generieren"
+title:                "Generierung von Zufallszahlen"
+date:                  2024-01-20T17:49:39.107388-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generierung von Zufallszahlen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Numbers"
@@ -11,35 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Erzeugen von Zufallszahlen ermöglicht es Programmen, Daten oder Verhaltensweisen zu variieren, was unter anderem für Spieleentwicklung, Simulationen und Tests unerlässlich ist. Programmierer nutzen Zufallszahlen, um Ergebnisse zu diversifizieren und Realismus oder Unvorhersehbarkeit zu erzeugen.
 
-Das Generieren von Zufallszahlen ist das Erzeugen einer Sequenz von Zahlen, die keinen erkennbaren Muster oder Beziehung aufweisen. Programmierer tun dies, um Daten zu simulieren, Tests zu randomisieren und Spiele zu kreieren.
-
-## So geht’s:
-
-Python stellt das Modul `random` zur Verfügung, um Zufallszahlen zu generieren.
-
-```Python
+## So geht's:
+```python
 import random
 
-# Zufallszahl zwischen 0 und 100
-print(random.randint(0, 100))
+# Eine Zufallszahl zwischen 1 und 10
+print(random.randint(1, 10))
+
+# Eine Zufallsfließkommazahl zwischen 0 und 1
+print(random.random())
+
+# Eine zufällige Auswahl aus einer Liste
+fruechte = ['Apfel', 'Banane', 'Kirsche', 'Dattel']
+print(random.choice(fruechte))
+
+# Output kann variieren
+# 7
+# 0.4376222438325043
+# Kirsche
 ```
-Bei Ausführung wäre die Ausgabe so etwas wie:
-```Python
-42
-```
-Denken Sie daran, das Ergebnis variiert bei jedem Lauf!
 
-## Vertiefung
-
-Zufallszahlen sind in der Informatik seit der Erfindung von Computern wichtig. Die Anwendungsbereiche sind vielfältig, von kryptographischen Anwendungen bis hin zu Simulationen und Computerspielen.
-
-Alternativ zu Python's `random` können auch Libraries wie `numpy` mit seiner Funktion `numpy.random` verwendet werden. Der Hauptunterschied liegt darin, dass `numpy.random` für größere, mehrdimensionale Arrays optimiert ist und mehr Funktionen bietet.
-
-Während `random` Zufallszahlen mit einer gleichmäßigen Verteilung erzeugt (d.h., jede Zahl zwischen den Grenzen hat die gleiche Wahrscheinlichkeit, ausgewählt zu werden), können Sie auch andere Verteilungen wie die Normalverteilung oder die Exponentialverteilung nutzen.
+## Tiefgang:
+Die Erzeugung von Zufallszahlen ist kein neues Konzept, historisch gesehen wurden physische Mittel wie Würfel oder Glücksräder verwendet. In der Informatik werden Pseudozufallszahlengeneratoren (Pseudo Random Number Generators, PRNGs) eingesetzt, weil echter Zufall schwierig digital zu erreichen ist. PRNGs nutzen Algorithmen, die zufällig wirkende Zahlenfolgen aus einem Startwert (Seed) generieren. In Python wird üblicherweise der Mersenne Twister als PRNG verwendet, eine Alternative wäre die Kryptographisch sichere Pseudozufallszahlengenerator-Bibliothek `secrets` für Zwecke, wo es um Sicherheit geht, wie das Erstellen von Passwörtern oder kryptographischen Schlüsseln.
 
 ## Siehe auch:
-
-- Die offizielle Python-Dokumentation zum `random` Modul: [https://docs.python.org/3/library/random.html](https://docs.python.org/3/library/random.html)
-- Ein umfangreicher Artikel über Zufallszahlen und deren Nutzung: [https://realpython.com/python-random/](https://realpython.com/python-random/)
-- Die `numpy.random` Dokumentation: [https://numpy.org/doc/stable/reference/random/index.html](https://numpy.org/doc/stable/reference/random/index.html)
+- Python Dokumentation für das `random` Modul: https://docs.python.org/3/library/random.html
+- Python Dokumentation für das `secrets` Modul: https://docs.python.org/3/library/secrets.html
+- Eine Diskussion zu Pseudozufallszahlengeneratoren vs. kryptographisch sichere Generatoren: https://stackoverflow.com/questions/20936993/how-can-i-create-a-random-number-that-is-cryptographically-secure-in-python

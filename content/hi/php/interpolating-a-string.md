@@ -1,7 +1,8 @@
 ---
-title:                "स्ट्रिंग का अंतर्कलन"
-html_title:           "Arduino: स्ट्रिंग का अंतर्कलन"
-simple_title:         "स्ट्रिंग का अंतर्कलन"
+title:                "स्ट्रिंग इंटरपोलेशन"
+date:                  2024-01-20T17:51:22.180286-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग इंटरपोलेशन"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,32 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-स्ट्रिंग इंटरपोलेशन, एक स्ट्रिंग में चर या व्यक्तिगत वारियों को एम्बेड करने की प्रक्रिया है। इससे कोड को बेहतर पढ़ने और लिखने में सुविधा होती है, साथ ही गणितीय और तार्किक ऑपरेशन को और अधिक स्पष्ट बनाती है।
+String interpolation एक तरीका है जिसमें हम PHP variables को सीधे strings के अंदर डालते हैं. इससे कोड पढ़ने और लिखने में आसानी होती है क्योंकि यह variable values को string के साथ जोड़ने का एक short और clear तरीका है.
 
-## कैसे:
-
-इंटरपोलेट करें:
+## How to: (कैसे करें:)
 
 ```PHP
-$greeting = "नमस्ते";
-$name = "तारा";
-echo "{$greeting}, {$name}!"; 
+$name = 'अंकित';
+$greeting = "नमस्ते, $name! कैसे हैं आप?";
+
+echo $greeting; // यह print करेगा: नमस्ते, अंकित! कैसे हैं आप?
 ```
-आउटपुट:
+Complex expression के लिए curly braces का इस्तेमाल:
 
+```PHP
+$order = (object) ['number' => 123];
+echo "आपका ऑर्डर नंबर { $order->number } प्रोसेस में है.";
+
+// यह print करेगा: आपका ऑर्डर नंबर 123 प्रोसेस में है.
 ```
-नमस्ते, तारा!
+
+## Deep Dive (गहराई से जानकारी):
+
+String interpolation पहली बार PHP में version 3 में आया था. हम double quotes ("") या heredoc syntax का इस्तेमाल कर string में variable डाल सकते हैं. Single quotes ('') में यह काम नहीं करता.
+
+Alternatives में concatenation (.) operator है, जो variables को strings के साथ जोड़ने के लिए use होता है, लेकिन यह थोड़ा clumsy हो सकता है:
+```PHP
+echo 'नमस्ते, ' . $name . '! कैसे हैं आप?';
 ```
 
-## गहरा डाइव:
+Implementation details:
+- Complex expression जैसे object properties या array elements को interpolate करने के लिए `{}` का use करना पड़ता है.
+- Interpolation करते समय PHP यह check करता है कि variable exist करता है और non-null है.
+- Performance के perspective से, string interpolation generally concatenation से तेज़ होता है.
 
-स्ट्रिंग इंटरपोलेशन के इस्तेमाल की शुरुआती घड़ियों से ही हुई थी, जब कम्प्यूटर प्रोग्रामिंग नई-नई शुरू हुई थी। इसे अलग-अलग प्रोग्रामिंग भाषाओं में अलग-अलग तरह से किया जाता है। PHP में हम कई प्रकार से वैकल्पिक रूप से इंटरपोलेट कर सकते हैं जैसे ‘echo’ या ‘print’ स्टैटमेंट का उपयोग करके। विशेष रूप से PHP में, इंटरपोलेशन डबल कोट्स ("") के भीतर होता है, जबकि सिंगल कोट्स ('') इंटरपोलेशन को प्रतिबंधित करते हैं।
+## See Also (और जानकारी के लिए:)
 
-## देखिए भी:
-
-इंटरपोलेशन के बारे में और विस्तार में जानने के लिए ये स्रोत एक स्थान हो सकता है:
-
-1. [PHP मैनुअल: स्ट्रिंग्स](https://www.php.net/manual/en/language.types.string.php)
-2. [स्टैक ओवरफ्लो](https://stackoverflow.com/questions/2631749/php-variable-interpolation-vs-concatenation) पर PHP स्ट्रिंग इंटरपोलेशन बनाम संयोजन पर एक चर्चा.
+- PHP documentation on string interpolation: [php.net/manual/en/language.types.string.php#language.types.string.parsing](https://www.php.net/manual/en/language.types.string.php#language.types.string.parsing)
+- PHP string functions: [php.net/manual/en/ref.strings.php](https://www.php.net/manual/en/ref.strings.php)
+- PHP string operators: [php.net/manual/en/language.operators.string.php](https://www.php.net/manual/en/language.operators.string.php)

@@ -1,6 +1,7 @@
 ---
 title:                "Å starte et nytt prosjekt"
-html_title:           "C: Å starte et nytt prosjekt"
+date:                  2024-01-20T18:03:32.101385-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,42 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-title: Starte ditt første prosjekt med Gleam
----
+## What & Why?
+Å starte et nytt prosjekt betyr å skape en helt ny mappestruktur og kodebase for idéen din. Programmerere gjør dette for å realisere unike løsninger eller teste ut ideer.
 
-## Hva & Hvorfor?
+## How to:
+For å kickstarte et Gleam-prosjekt, installer `gleam` og kjør:
 
-Å starte et nytt prosjekt er prosessen med å initialisere et nytt sett med kodefiler som er organisiert på en spesifikk måte. Programmerere gjør dette for å bygge en ny applikasjon eller et verktøy.
-
-## Hvordan:
-
-Å starte et nytt Gleam-prosjekt er enkelt. Bare bruk `gleam new` kommandoen og gi det et navn. 
-
-```Gleam
-$ gleam new mitt_prosjekt
-```
-Da får du en mappenstruktur som dette:
-
-```Gleam
-mitt_prosjekt
-├── gleam.toml
-├── README.md
-├── src
-│   ├── mitt_prosjekt.gleam
-│   ├── mitt_prosjekt.app.src
-├── test
-│   ├── mitt_prosjekt_test.gleam
+```bash
+gleam new mitt_kule_prosjekt
 ```
 
-## Dyp Dykk
+Dette lager en ny mappe `mitt_kule_prosjekt` med en standard mappestruktur. For å teste, naviger til prosjektmappe og bygg prosjektet:
 
-Gleam språket, selv om det er relativt nytt, har røtter i Erlang og Rust programmeringsspråk. Det er designet for å være svært uttrykksfullt og effektivt for både små og store prosjekter. 
+```Gleam
+cd mitt_kule_prosjekt
+gleam build
+```
 
-Alternativene til å starte et nytt Gleam prosjekt kan være å klonere et eksisterende prosjekt, eller å bruke en boilerplate eller mal. 
+Sample output:
 
-Når du starter et nytt Gleam prosjekt, opprettes en rekke filer og kataloger som hjelper deg med å organisere koden din. Gleam bruker en modulær struktur for å organisere koden, noe som gjør det enkelt å strukturere din applikasjon eller bibliotek.
+```
+Compiling mitt_kule_prosjekt
+Generated src/mitt_kule_prosjekt-app.erl
+Done!
+```
 
-## Se Også:
+## Deep Dive
+Gleam dukket opp i 2018, laget av Louis Pilfold, som en type-sikker funksjonell programmeringsspråk bygget på Erlang's robuste VM. Kontra alternativer som Elixir og Erlang, streber Gleam etter mer nøyaktig typehåndtering. Nytt prosjekt starter med `gleam new` og etablerer en OTP-applikasjonsstruktur, kjent fra Erlang-økosystemet. Det gir OOP-lignende funksjoner (via moduler og funksjoner) med funksjonell klarhet.
 
-- [Gleam's GitHub repo](https://github.com/gleam-lang/gleam)
+## See Also
+- Gleam's offisielle hjemmeside: [https://gleam.run/](https://gleam.run/)
+- Gleam's GitHub-repositorium: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)
+- Erlang/OTP konsepter: [https://www.erlang.org/doc/](https://www.erlang.org/doc/)

@@ -1,6 +1,7 @@
 ---
 title:                "Порівняння двох дат"
-html_title:           "Clojure: Порівняння двох дат"
+date:                  2024-01-20T17:33:55.410107-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Порівняння двох дат"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,51 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why?
+"Що і Чому?"
 
-Порівняння двох дат - це процес визначення, яка дата є ранішою, пізнішою або чи дати є рівними. Програмісти роблять це, щоби їм стежити за порядком подій, контролювати тайминг або встановити таймери. 
+Comparing two dates helps us figure out their order and how far apart they are. Programmers do it to manage events, reminders, or anything related to time-dependent features.
 
-## Як це зробити:
+## How to:
+"Як це зробити:"
 
-Ми використовуємо вбудовані методи `compare(:)` або `isEarlier(than:)`/`isLater(than:)`.
+Swift's `Date` objects can be compared using comparison operators. Here's how to do it:
 
 ```Swift
-let formatter = DateFormatter()
-formatter.dateFormat = "yyyy/MM/dd HH:mm"
-let date1 = formatter.date(from: "2022/02/21 10:00")!
-let date2 = formatter.date(from: "2022/02/21 12:00")!
+import Foundation
 
-if(date1.compare(date2) == .orderedAscending) {
-    print("Дата1 раніше Дати2")
-} else if(date1.compare(date2) == .orderedSame) {
-    print("Дата1 і Дата2 рівні")
+let now = Date()
+let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: now)!
+
+// Check if one date comes before the other
+if now < tomorrow {
+    print("Now is earlier than tomorrow.")
 } else {
-    print("Дата1 пізніше Дати2")
+    print("Now is not earlier than tomorrow.")
 }
 
-if(date1.isEarlier(than: date2)) {
-    print("Дата1 раніше Дати2")
+// Check if two dates are the same moment
+if now == tomorrow {
+    print("Now is the same as tomorrow.")
+} else {
+    print("Now is not the same as tomorrow.")
 }
 
-if(date1.isLater(than: date2)) {
-    print("Дата1 пізніше Дати2")
-}
+// Comparing dates for sorting
+let dates = [tomorrow, now]
+let sortedDates = dates.sorted(by: { $0 < $1 })
+print("Sorted dates: \(sortedDates)")
 ```
-Цей код виведе:
+
+Sample output:
+
 ```
-Дата1 раніше Дати2
-Дата1 раніше Дати2
+Now is earlier than tomorrow.
+Now is not the same as tomorrow.
+Sorted dates: [current date's timestamp, tomorrow's date's timestamp]
 ```
-## Поглиблений огляд
 
-В історичному контексті, при порівнянні дат раніше використовувалися довгі, складні підходи. Але з введенням вбудованих функцій в Swift стало значно простіше і ефективніше.
+## Deep Dive
+"Детальний огляд"
 
-Одна з альтернатив - використання вбудованої функції timeIntervalSince(), яка повертає різницю між двома датами в секундах. Якщо різниця від'ємна, перша дата раніша.
+In the old times of Objective-C, we compared dates using `NSDate` and methods like `compare:`. Now, with Swift, comparison operators make the code cleaner. 
 
-Перелічення `.orderedAscending`, `.orderedSame` та `.orderedDescending` - це частка спільного интерфейсу, виработаного Apple для порівняння.
+Alternatives to simple comparison include using `Calendar` and `DateComponents` for more complex operations, like comparing only specific components (just the day, month, or year). 
 
-## Дивитись також
+For implementation, Swift uses `TimeInterval` (a `Double` representing seconds) to measure exact differences between two `Date` objects.
 
-Для детальнішої інформації дивіться офіційну документацію Swift про працю з `Date` та `DateFormatter`:
-1. [Дата та Час в Swift](https://developer.apple.com/documentation/foundation/date)
-2. [Форматтер Дати](https://developer.apple.com/documentation/foundation/dateformatter)
+## See Also
+"Дивіться також"
+
+- Official Swift Documentation: [Date - Apple Developer](https://developer.apple.com/documentation/foundation/date)
+- Swift's `Calendar` and `DateComponents`: [Calendar - Apple Developer](https://developer.apple.com/documentation/foundation/calendar)
+- A more comprehensive guide to dates in Swift: [Working with Dates in Swift - NSHipster](https://nshipster.com/datecomponents/)

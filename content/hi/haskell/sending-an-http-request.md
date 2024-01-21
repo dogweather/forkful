@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:00:12.085013-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,38 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# HTTP Anurodh भेजना कैसे सीखें ? 
+## What & Why? (क्या और क्यों?)
+HTTP अनुरोध भेजना यह सुनिश्चित करता है कि आपका प्रोग्राम इंटरनेट पर सर्वर से डेटा मंगवा सके। प्रोग्रामर्स इसे वेब एपीआई से संवाद, डाटा की प्राप्ति या भेजने और वेब सर्विसेज के सामान्य इंटरैक्शन के लिए करते हैं।
 
-## क्या और क्यों?
-
-HTTP अनुरोध एक पुनर्वार्ती प्रक्रिया है, जिसके द्वारा कंप्यूटर कोड अन्य कंप्यूटर से जानकारी मांगता है। प्रोग्रामर इसे तब करते हैं जब वे इंटरनेट से डेटा संग्रहित करना चाहते हैं।
-
-## कैसे:
-
-Haskell में HTTP अनुरोध भेजने के लिए 'http-conduit' लाइब्रेरी का उपयोग करें। निम्नलिखित कोड उदाहरण देखें:
+## How to: (कैसे करें:)
+Haskell में HTTP अनुरोध भेजने के लिए `http-client` और `http-client-tls` पैकेज का इस्तेमाल कर सकते हैं।
 
 ```Haskell
-import Network.HTTP.Simple
+import Network.HTTP.Client
+import Network.HTTP.Client.TLS
+import qualified Data.ByteString.Lazy.Char8 as L8
 
 main :: IO ()
 main = do
-    response <- httpBS "http://httpbin.org/get"
-    print $ getResponseBody response
+    manager <- newManager tlsManagerSettings
+    request <- parseRequest "http://httpbin.org/get"
+    response <- httpLbs request manager
+    L8.putStrLn $ responseBody response
 ```
 
-उपरोक्त कोड एक HTTP GET अनुरोध भेजता है, और प्रतिक्रिया को प्रिंट करता है।
+जब आप ऊपर दी गई Haskell स्क्रिप्ट चलाएंगे, आपको `httpbin.org` से JSON रेस्पॉन्स मिलेगा जैसे:
 
-## गहरे प्रवेश:
+```
+{
+  "args": {}, 
+  "headers": {
+    "Accept-Encoding": "gzip", 
+    "Host": "httpbin.org", 
+    ...
+  }, 
+  "origin": "xx.xx.xx.xx", 
+  "url": "https://httpbin.org/get"
+}
+```
 
-1. **ऐतिहासिक प्रसंग:** HTTP अनुरोध का उपयोग 1990 के दशक में WWW (वर्ल्ड वाइड वेब) की शुरुआत के समय से किया जा रहा है।
+## Deep Dive (गहराई से जानकारी)
+HTTP अनुरोध 1990 के दशक से वेब इंटरैक्शन की मूल अवधारणा है। `http-client` और `http-client-tls` Haskell की लाइब्रेरीज़ हैं जो कि सिक्योर (TLS/SSL) और साधारण HTTP अनुरोधों को हैंडल करती हैं। विकल्प के रूप में `Wreq` और `http-conduit` जैसे पैकेज भी हैं, लेकिन `http-client` संक्षिप्तता और नियंत्रण में बेहतर हो सकता है।
 
-2. **विकल्प:** 'http-client', 'wreq', और 'req' जैसे अन्य Haskell पैकेज भी होते हैं जो HTTP अनुरोधों के लिए उपयोग किए जा सकते हैं।
+इसके अतिरिक्त, आप `Network.HTTP` मॉड्यूल का भी उपयोग कर सकते हैं, जो सिम्पल HTTP पैकेज प्रदान करता है, लेकिन यह नए `http-client` API की तुलना में कम फीचर्ड है।
 
-3. **कार्यान्वयन विवरण:** 'http-conduit' पैकेज एक हाई लेवल एपीआई प्रदान करता है जो हास्केल के 'सेलेक्ट राइट' के साथ काम करता है, जो एक सॉकेट पर ब्लॉकिंग I/O करने की अनुमति देता है।
-
-## यह भी देखें :
-
-1. [http-conduit लाइब्रेरी](https://hackage.haskell.org/package/http-conduit)
-2. [Haskell HTTP पैकेज](https://hackage.haskell.org/package/HTTP)
-
-आशा है कि यह लेख हास्केल प्रोग्रामिंग भाषा में HTTP अनुरोध भेजने में सहायता करेगा। आप लेख से सम्बंधित किसी भी प्रश्न के लिए मुझसे संपर्क कर सकते हैं।
+## See Also (यह भी देखें)
+- HTTP client package documentation: [http-client on Hackage](https://hackage.haskell.org/package/http-client)
+- TLS support for HTTP client: [http-client-tls on Hackage](https://hackage.haskell.org/package/http-client-tls)
+- Alternative HTTP packages: [Wreq](https://www.serpentine.com/wreq/) और [http-conduit](https://hackage.haskell.org/package/http-conduit)

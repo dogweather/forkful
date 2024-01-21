@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
+date:                  2024-01-20T18:02:30.095261-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Python"
 category:             "Python"
@@ -10,43 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Python and HTTP Requests: A Crash Course
 ## What & Why?
-At its core, sending an HTTP request with basic authentication is a way to interact with web services that require username/password credentials. We essentially pack up say "Hello, I'm 'username' and my password is 'password'", right in the HTTP request. Programmers do this to pull, push, or manipulate data from these web services.
+
+Sending an HTTP request with basic authentication involves tossing a username and password into a request to a server to prove you're allowed in. Programmers do this to interact with APIs or web services that are locked behind a user-credentials gate.
 
 ## How to:
-Python's requests library makes HTTP requests a breeze. Here’s a basic implementation:
+
+Here's how you get Python to chat with a server using Basic Auth.
 
 ```Python
 import requests
 from requests.auth import HTTPBasicAuth
 
-response = requests.get('https://httpbin.org/basic-auth/user/passwd', auth=HTTPBasicAuth('user', 'passwd'))
+# Replace with your actual credentials and the API endpoint you're hitting
+username = 'cooluser'
+password = 'supersecretpassword'
+url = 'https://api.someservice.com/data'
 
+response = requests.get(url, auth=HTTPBasicAuth(username, password))
+
+# Check out what we got back
 print(response.status_code)
-print(response.json())
+print(response.json())  # assuming the response is in JSON format
 ```
 
-Running this code, you should receive:
+Output might look like this if things went smooth:
 
 ```
 200
-{'authenticated': True, 'user': 'user'}
+{'data': 'Your secret stuff!'}
 ```
 
-This assumes the webservice at `https://httpbin.org/basic-auth/user/passwd` requires basic auth using 'user' as username and 'passwd' as password.
+But if you goofed up the creds:
 
+```
+401
+```
+
+That's a no-entry sign right there.
 
 ## Deep Dive
-The use of HTTP basic authentication goes way back to the early days of the web. Back when the internet was a new frontier, basic auth provided an easy method of securing a web page or web service.
 
-As for alternatives, more secure methods of authentication have been developed over the years including Digest, token-based, and OAuth. Basic auth has its limitations (credentials sent in plain text), but continues to be used due to its simplicity.
+Historically, HTTP Basic Auth is as old-school as it gets for web security, a simple way to do the secret handshake with a website. It's not very secure on its own because it sends credentials in plain text, just base64 encoded – not encrypted. Always use HTTPS to keep the credentials from being as easy to snag as candy from a baby.
 
-On the implementation details, the `requests.get()` function sends a GET request to the URL defined. The optional `auth` parameter is used to handle HTTP basic authentication. 
+There are more secure alternatives, like Digest Access Authentication where the password is never sent plain over the network. OAuth is another big one, especially for APIs today. It's more like issuing a temporary VIP pass than showing ID every time.
+
+Under the hood, the `requests` library is encoding your username and password and slapping them into an `Authorization` header formatted like `Basic base64encodedcredentials`. The server decodes this header, checks your creds, and if you're legit, gives you access.
 
 ## See Also
-For further information, check out these links:
 
-- [Python requests library documentation](https://docs.python.org/3/library/http.client.html)
-- [W3C docs on HTTP Basic Auth](http://www.w3.org/Protocols/HTTP/1.0/spec.html#BasicAA)
-- [HTTPbin for testing your requests](https://httpbin.org)
+- The official `requests` library docs give you the lowdown on auth and more: https://docs.python-requests.org/en/latest/
+- `http.client` for those who want to roll without a third-party library: https://docs.python.org/3/library/http.client.html
+- Real Python dives into HTTP basics and Python: https://realpython.com/python-requests/

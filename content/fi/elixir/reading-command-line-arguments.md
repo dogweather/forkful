@@ -1,7 +1,8 @@
 ---
-title:                "Komentorivin argumenttien lukeminen"
-html_title:           "Bash: Komentorivin argumenttien lukeminen"
-simple_title:         "Komentorivin argumenttien lukeminen"
+title:                "Komennoriviparametrien lukeminen"
+date:                  2024-01-20T17:55:43.658100-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Komennoriviparametrien lukeminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,35 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+Komennoriviparametrien lukeminen on tapa vastaanottaa käyttäjältä tietoja ohjelman suorituksen yhteydessä. Ohjelmoijat käyttävät tätä toimintoa mukauttamaan ohjelman käytöstä ilman, että koodia tarvitsee muuttaa.
 
-Komennon riviparametrien lukeminen tarkoittaa ohjelmalle syötettyjen käyttäjän antamien argumenttien vastaanottamista. Ohjelmoijat tekevät tämän, jotta voivat manipuloida ohjelman toimintaa käyttäjän tarpeiden mukaan.
+## How to:
+Elixirissä komennoriviparametrit saa napattua talteen `System.argv/0` -funktiolla. Tarkastellaan esimerkkiä:
 
-## Kuinka:
-
-Näin voit lukea komentorivin argumentit Elixirissä:
-
-```Elixir
-defmodule Demo do
-  def main(args) do
+```elixir
+defmodule CommandLineDemo do
+  def main do
+    args = System.argv()
     IO.inspect(args)
   end
 end
 
-System.argv |> Demo.main
+CommandLineDemo.main()
 ```
-Jos suoritat ohjelman komennolla `elixir demo.exs arg1 arg2`, saatu tulostus olisi `["arg1", "arg2"]`.
 
-## Syvällisemmin:
+Kun suoritat edellä mainitun skriptin komennolla `elixir demo.exs arg1 arg2 arg3`, saat tulosteeksi:
 
-Elixir periytyy alkuperäisestä Erlangista, joka rakennettiin vuonna 1986, ja on aina tukenut komentoriviparametreja.
+```
+["arg1", "arg2", "arg3"]
+```
 
-Vaihtoehtoja komentoriviparametrien lukemiseen sisältävät bash- tai zsh-kuoret, Python, Ruby, Perl ja monet muut. Elixir tarjoaa kuitenkin funktionaalisella ohjelmointityylillään selkeän ja minimalistisen tavan tehdä tämä.
+## Deep Dive
+Historiallisesti komennoriviparametrien käyttö on ollut tärkeä osa komentorivipohjaisten ohjelmien kanssa työskentelyssä. Elixirissä parametrit välitetään käyttöjärjestelmältä BEAM-ympäristöön, jossa Elixir suoritetaan. Tämä tapahtuu usein skriptin tai ohjelman käynnistyksen yhteydessä.
 
-Elixirin komentoriviparametrien käsittely tapahtuu `System.argv` funktion kautta. Arvot palautetaan aina listana merkkijonoja. Niitä ei voi muuttaa sen suorituksen aikana, joka on kutsunut `main` funktion.
+Vaihtoehtoja `System.argv/0`:lle ei ole suoranaisesti, mutta käsittelemiseen voit käyttää muita moduuleitakin. Esimerkiksi `OptionParser` on hyödyllinen, jos tarvitsee parsia liput ja kytkimet tarkemmin. Komentoriviparametrien lukemisessa keskeistä on, että ohjelma pystyy toimimaan joustavasti ilman että lähdekoodia tarvitsee muokata eri tilanteita varten.
 
-## Katso myös:
-
-1. [Elixirin virallinen dokumentaatio](https://hexdocs.pm/elixir/System.html#argv/0)
-3. [Erlang and OTP in Action](http://shop.oreilly.com/product/9781933988788.do):
-Erlangin historiasta ja toteutuksesta, sisältää tietoa komentoriviparametrien käsittelystä.
+## See Also
+- Elixirin dokumentaatio komentoriviparametreista: https://hexdocs.pm/elixir/System.html#argv/0
+- `OptionParser`-moduulin dokumentaatio: https://hexdocs.pm/elixir/OptionParser.html
+- Elixirin opas komentorivi-sovellusten kirjoittamiseen: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html

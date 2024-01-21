@@ -1,6 +1,7 @@
 ---
 title:                "Pesquisando e substituindo texto"
-html_title:           "Bash: Pesquisando e substituindo texto"
+date:                  2024-01-20T17:57:20.774285-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pesquisando e substituindo texto"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,29 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-A procura e substituição de textos é uma operação comum no desenvolvimento de software, isso envolve identificar uma cadeia específica na entrada e substituí-la por outra. Os programadores fazem isso porque é uma maneira eficiente de alterar grandes volumes de informações mantendo a precisão.
+## O Que É & Por Que?
+Pesquisar e substituir texto é a arte de encontrar certas palavras ou padrões e trocá-los por algo novo. Programadores fazem isso para corrigir erros, atualizar dados ou refatorar código de maneira eficiente.
 
-## Como fazer:
-O Clojure oferece várias funções úteis para manipulação de strings. Veja um exemplo de como usar a função replace:
-
+## Como Fazer:
 ```Clojure
-(use 'clojure.string)
-(replace "Hello, World!" "World" "Clojure")
+(defn substituir-texto
+  "Troca todas as ocorrências de 'procurado' por 'substituto' no 'texto'."
+  [texto procurado substituto]
+  (clojure.string/replace texto procurado substituto))
+
+;; Exemplo de uso:
+(substituir-texto "Olá, mundo!" "mundo" "Clojure")
+;; Saída esperada: "Olá, Clojure!"
 ```
-Saída:
-```Clojure
-"Hello, Clojure!"
-```
-Neste exemplo, estamos substituindo "World" por "Clojure" na string "Hello, World!"
 
-## Em Detalhes:
-Na verdade, a função replace em Clojure substitui todas as ocorrências da seqüência de destino. Foi projetada desta maneira para uma substituição eficiente e global. Clojure, sendo uma linguagem Lisp, segura a tradição Lisp de imutabilidade e transformação de dados.
+## Mergulho Profundo
+Substituir texto é uma operação fundamental em muitas áreas da computação, com raízes nos primórdios da edição de texto em terminais Unix. Alternativas de implementação podem envolver expressões regulares para padrões complexos ou funções de alto nível da linguagem. Em Clojure, a simplicidade é rei – a standard library já vem com o necessário, mas você sempre pode estender com pacotes poderosos como "clojure.spec" para validações mais complexas.
 
-As alternativas para procurar e substituir texto em Clojure incluem funções como `replace-first` que substituirá apenas a primeira ocorrência do padrão de destino. Para mais controle, você pode usar uma função regex, como `re-seq`, para procurar padrões complexos.
-
-A implementação real de replace no Clojure é, na verdade, baseada em regex e utiliza a implementação subjacente da JVM.
-
-## Veja Também:
-Para aprender mais sobre as funções de string Clojure, visite a documentação oficial [aqui](https://clojure.github.io/clojure/clojure.string-api.html).
-Para mais informações sobre expressões regulares (ou regex), um bom recurso é o [Guia de Regex de Clojure](https://clojure.org/guides/learn/regex).
+## Veja Também
+- ClojureDocs para exemplos da comunidade: [https://clojuredocs.org/](https://clojuredocs.org/)
+- Guia da linguagem Clojure: [https://clojure.org/guides/getting_started](https://clojure.org/guides/getting_started)
+- Documentação da função `clojure.string/replace`: [https://clojuredocs.org/clojure.string/replace](https://clojuredocs.org/clojure.string/replace)

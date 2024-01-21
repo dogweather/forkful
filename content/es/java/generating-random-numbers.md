@@ -1,6 +1,7 @@
 ---
 title:                "Generando números aleatorios"
-html_title:           "Arduino: Generando números aleatorios"
+date:                  2024-01-20T17:49:28.246694-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generando números aleatorios"
 programming_language: "Java"
 category:             "Java"
@@ -10,41 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Generación de Números Aleatorios en Java
+## What & Why?
+Generar números aleatorios es como sacar una carta al azar de un mazo; jamás sabes qué vas a obtener. En programación, esto es clave para juegos, pruebas, seguridad y simulaciones.
 
-## ¿Qué y Por Qué?
-Generar números aleatorios significa producir números que no tienen un patrón predecible. Los programadores lo hacen cuando necesitan una muestra aleatoria, por ejemplo, en juegos, en la simulación y en criptografía.
+## How to:
+Java nos facilita la creación de números aleatorios. Aquí te muestro cómo.
 
-## ¿Cómo se hace? 
-Generar números aleatorios en Java es sencillo gracias a la clase `Random` de Java:
-
-```Java
+```java
 import java.util.Random;
 
-public class Main {
-  public static void main(String[] args) {
-    Random rand = new Random();
-    int numeroAleatorio = rand.nextInt(100); // Genera un número aleatorio entre 0 y 99
-    System.out.println("El número aleatorio es: " + numeroAleatorio);
-  }
+public class GeneradorAleatorio {
+    public static void main(String[] args) {
+        Random random = new Random();
+
+        int numeroEnteroAleatorio = random.nextInt(100); // Entre 0 y 99
+        double numeroRealAleatorio = random.nextDouble(); // Entre 0.0 y 1.0
+
+        System.out.println("Número entero aleatorio: " + numeroEnteroAleatorio);
+        System.out.println("Número real aleatorio: " + numeroRealAleatorio);
+    }
 }
 ```
-Ejecutar este programa imprimirá en la consola un número aleatorio como este:
+
+Ejecutar el código te lanzará dos números, uno entero y otro real, así:
+
 ```
-El número aleatorio es: 42
-```
-## Profundiza
-Históricamente, Java proporciona varias maneras de generar números aleatorios. La anterior es la más común, pero existen otras como `Math.random()` y `ThreadLocalRandom.current()`.
-
-Pueden ser alternativas útiles según tu caso. Por ejemplo, `Math.random()` es ideal si sólo necesitas un número de doble precisión entre 0.0 y 1.0.
-
-En cuanto a los detalles de implementación, el método `nextInt(100)` genera un número aleatorio entre 0 (incluido) y 100 (excluido). Usarlo sin argumentos da un entero aleatorio en todo el rango de valores de int (ambos extremos incluidos).
-
-```Java
-int noRango = rand.nextInt(); // Genera un número aleatorio en todo el rango de valores de int
+Número entero aleatorio: 42
+Número real aleatorio: 0.73046875
 ```
 
-## Ver También
-1. Para aprender más sobre la clase `Random`, puedes visitar su documentación en la [Java API](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html).
-2. Para aprender sobre `Math.random()`, puedes consultar su documentación en la [Java API](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#random--).
-3. Información sobre `ThreadLocalRandom` en su [página en la Java API](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadLocalRandom.html) puede ser útil para programas multihilo.
+## Deep Dive:
+La generación de números aleatorios en Java ha evolucionado. Antes usábamos `Math.random()` que todavía funciona, pero `Random` es más flexible. ¿Sabías que los números "aleatorios" en la computación no son realmente aleatorios? Se basan en algoritmos predecibles, por eso se les llama pseudoaleatorios.
+
+Para necesidades de alta seguridad, como criptografía, no uses `Random`. En su lugar, `SecureRandom` es la opción, ya que produce números menos predecibles.
+
+Antes de `Random`, los programadores recurrían a rutinas matemáticas para crear su propia suerte, pero la estandarización de las bibliotecas facilitó enormemente las cosas.
+
+## See Also:
+Aquí tienes algunas fuentes para expandir tu conocimiento:
+
+- [Java Random Class Doc](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html)
+- [SecureRandom Class Doc](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html)
+- [Math.random() vs new Random.nextInt(int)](https://stackoverflow.com/questions/738629/math-random-versus-random-nextintint)

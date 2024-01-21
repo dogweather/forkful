@@ -1,6 +1,7 @@
 ---
 title:                "המרת תאריך למחרוזת"
-html_title:           "Bash: המרת תאריך למחרוזת"
+date:                  2024-01-20T17:36:44.519393-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "המרת תאריך למחרוזת"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,40 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-המרה של תאריך למחרוזת היא תהליך שבו משנים את המבנה של תאריך ממבנה בינארי (או אובייקט) למחרוזת (במיוחד בפורמט הדרוש). מתכנתים עושים את זה כדי להציג את התאריך בצורה מובנת או כדי לשמור אותו במקום כלשהו.
+המרת תאריך למחרוזת אומרת שאתה לוקח אובייקט שמייצג תאריך ושם זמן ושומר אותו כטקסט. תוכניתנים עושים את זה כדי להציג תאריכים למשתמשים או לשמור פורמטים עקביים לנתונים.
 
-## איך לגרום לזה לקרות:
-כאן נראה דוגמא להמרת תאריך למחרוזת באמצעות Elm:
-
+## איך לעשות:
 ```Elm
 import Time exposing (Posix)
-import Time.Extra exposing (toISO8601)
+import Time.Zone exposing (Zone)
+import Task
 
-type alias Model =
-  { time  : Posix
-  , asStr : String
-  }
+-- יצירת פונקציה שממירה תאריך למחרוזת
+toDateString : Zone -> Posix -> String
+toDateString zone posix =
+    Time.toUtc zone posix
+        |> Time.posixToMillis
+        |> String.fromInt
+        |> (\millis -> millis ++ " UTC")
 
-getTimeAsStr : Model -> String
-getTimeAsStr model =
-  toISO8601 model.time
+-- דוגמה לשימוש בפונקציה
+example : Task.Task Time.Error String
+example =
+    Task.map (toDateString Time.utc) (Time.now)
+
+-- ריצת הקוד תחזיר מחרוזת שמייצגת את התאריך והזמן כרגע בפורמט UTC
 ```
-תוצאות האמונה הם:
-```Elm
-> getTimeAsStr { time = Time.millisToPosix 1617580800000, asStr = "" }
-"2021-04-05T00:00:00.000Z" : String
+פלט לדוגמה:
+```
+"1617850794000 UTC"
 ```
 
-## צלילה עמוקה:
-(1) בהקשר היסטורי, אלם הפך לשפה פופולרית בקרב מתכנתי קידמה בזכות הערכה הגבוהה של שפה אמינה וחזקה. 
-
-(2) האחריות של המתכנתים היא להחליט איזה פורמט מחרוזת לשקול. הנה כמה אפשרויות: `ISO8601`, `RFC2822`, או `Pretty`. במקרה של פומט ה- `ISO8601`, זה מחזיר מחרוזת בפורמט `"2021-04-05T00:00:00.000Z"`
-
-(3) פעולה זו כלולה בחבילת `Time.Extra`.
+## נפך מעמיק:
+בעבר, מרבית השפות סיפקו ספריות תאריך ברירת מחדל, ול-Elm יש 'Time' לניהול תאריכים. ישנן גם ספריות חיצוניות כמו 'ryannhg/date-format' הנותנות תמיכה נוספת בפורמטינג. ביצוע המרה מחייב להתחשב באזורי זמן ובפורמט הרצוי של המחרוזת. Elm מאפשר לעבוד עם פוסיק (Posix) זמן, המתאר זמן במילישניות מאז ינואר 1970, המכונה גם 'Unix Epoch'.
 
 ## ראה גם:
-נא להסתכל במקורות הללו למידע נוסף:
-
-1. הדרכות ומידע נרחב יותר על אלם: [Docs](https://package.elm-lang.org/packages/elm/time/latest/)
-
-לא יש כאן "חלק סיכום".
+- [תיעוד החלק של הזמנים ב-Elm](https://package.elm-lang.org/packages/elm/time/latest/)
+- [ryannhg/date-format](https://package.elm-lang.org/packages/ryannhg/date-format/latest)
+- [טיפול באזורי זמן ב-Elm](https://package.elm-lang.org/packages/elm/time/latest/Time-Zone)

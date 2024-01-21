@@ -1,7 +1,8 @@
 ---
-title:                "Encontrando o comprimento de uma string"
-html_title:           "C: Encontrando o comprimento de uma string"
-simple_title:         "Encontrando o comprimento de uma string"
+title:                "Descobrindo o comprimento de uma string"
+date:                  2024-01-20T17:47:44.617780-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Descobrindo o comprimento de uma string"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,42 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Encontrando o tamanho de uma string em Haskell
+## What & Why?
+Calcular o comprimento de uma string é simplesmente descobrir quantos caracteres ela possui. Programadores fazem isso para validar entradas, limitar texto numa interface gráfica, ou simplesmente para manipulação de dados.
 
-## O que é e por quê?
+## How to:
+O Haskell possui uma função integrada chamada `length` que retorna o comprimento de uma lista, incluindo strings que, em Haskell, são listas de caracteres. Veja só:
 
-Encontrar o tamanho de uma string significa determinar o número de caracteres que ela contém. Como programadores, fazemos isso quando precisamos saber quantos caracteres um usuário inseriu, ou quando estamos trabalhando com análises de texto.
-
-## Como fazer:
-
-Para encontrar o tamanho (ou comprimento) de uma string em Haskell, você pode usar a função `length`.
-
-```Haskell
-tamanho :: String -> Int
-tamanho str = length str
+```haskell
+main :: IO ()
+main = do
+    let minhaString = "Olá, Haskell!"
+    print $ length minhaString
 ```
 
-Para testar, você pode utilizar essa função no interprete do Haskell.
+Saída esperada:
 
-```Haskell
-ghci> tamanho "Ola, mundo!"
+```
 13
 ```
 
-Este resultado indica que a string "Ola, mundo!" tem 13 caracteres.
+## Deep Dive
+Historicamente, em Haskell, a função `length` é parte do Prelude, um módulo importado por padrão. A `length` funciona contando cada elemento em uma estrutura de dados até que todos sejam contabilizados.
 
-## Mergulhando fundo
+Existem alternativas. Por exemplo, você pode usar recursão para criar sua própria função de comprimento:
 
-A função `length` em Haskell tem sua raiz no cálculo Lambda, um conceito que é fundamental para a programação funcional e para Haskell em si. Por estar usando listas, essa função precisa percorrer toda a lista (ou seja, a string) para contar seus elementos, o que implica em um tempo de execução de O(n).
+```haskell
+comprimento :: [a] -> Int
+comprimento [] = 0
+comprimento (_:xs) = 1 + comprimento xs
+```
 
-Há outras maneiras de encontrar o tamanho de uma string em Haskell. Você pode usar recursão direta para implementar uma função de comprimento por conta própria. No entanto, `length` é mais comumente usado por causa de sua simplicidade e eficiência.
+Há também um pacote chamado `Data.Text` para trabalhar com texto Unicode de maneira mais eficiente do que com Strings clássicas. Em `Data.Text`, você usaria a função `length` do mesmo jeito, mas ela seria mais performática.
 
-Além disso, é importante lembrar que strings em Haskell são listas de caracteres. Portanto, o tamanho de uma string é o número de caracteres que ela contém, e não o número de bytes.
+```haskell
+import qualified Data.Text as T
 
-## Veja também
+main :: IO ()
+main = do
+    let minhaString = T.pack "Olá, Haskell!"
+    print $ T.length minhaString
+```
 
-Você pode aprender mais sobre strings e listas em Haskell nos seguintes recursos:
+## See Also
+Para explorar mais, confira:
 
-1. LYAHFGG (Learn You a Haskell For Great Good) sobre [listas](http://learnyouahaskell.com/starting-out#tuples)
-2. Real World Haskell: [Strings e listas de caracteres](http://book.realworldhaskell.org/read/using-typeclasses.html)
-4. Se você é novo em Haskell, você pode achar útil esse tutorial sobre [setup de ambiente e sintaxe básica](http://learnyouahaskell.com/introduction).
+- [Haskell Documentation for Lists](https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-List.html)
+- [Data.Text package on Hackage](https://hackage.haskell.org/package/text)
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters) - Um guia introdutório para Haskell com uma abordagem divertida.

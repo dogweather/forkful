@@ -1,6 +1,7 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "C: Usuwanie znaków pasujących do wzorca"
+date:                  2024-01-20T17:42:39.040635-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,31 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Usuwanie znaków pasujących do wzorca polega na usunięciu ze ciągu znaków wszystkich symboli, które pasują do określonego wzorca. Programiści robią to, aby zmanipulować dane tekstowe - czy to do czyszczenia danych, czy do ułatwienia analizy tekstu.
+## What & Why? (Co i Dlaczego?)
+Usuwanie znaków pasujących do wzorca to proces filtrowania tekstu poprzez wykluczenie określonych znaków lub grup znaków. Programiści używają tej techniki, by oczyścić dane wejściowe, usunąć zbędne fragmenty czy przygotować tekst do dalszego przetwarzania.
 
-## Jak to zrobic:
-Możemy to zrobić w JavaScript za pomocą metody `replace()`. Oto prosty przykład:
+## How to: (Jak to zrobić:)
+W JavaScript używamy metody `.replace()` wraz z wyrażeniami regularnymi, by usunąć znaki odpowiadające wzorcowi.
 
-```Javascript
-let str = "Cześć, jak się masz?";
-let newStr = str.replace(/Cześć/g, '');
-console.log(newStr);
+```javascript
+let text = "J4v45cr1pt 1s awe50me!";
+let pattern = /[0-9]/g;  // wzorzec znajdujący cyfry
+
+let cleanedText = text.replace(pattern, "");  // usunięcie cyfr
+console.log(cleanedText); // "Javascript is awesome!"
 ```
 
-Po uruchomieniu powyższego kodu, dostaniesz:
+Prosty wzorzec, jak `/[0-9]/g`, usunie wszystkie cyfry, ale możesz dostosować wzorzec do swoich potrzeb.
 
-```
-, jak się masz?
-```
+## Deep Dive (Dogłębna analiza)
+Wyrażenia regularne to potężne narzędzie w JavaScript, które pojawiło się już w jego wczesnych wersjach. Dzięki nim, można łatwo manipulować tekstami. Są skomplikowane, ale ich nauka to dobrze zainwestowany czas.
 
-## Głębsze zanurzenie
-Usuwanie znaków pasujących do wzorca nie jest nowym koncepcją. Zostało to wprowadzone w JavaScript 1.2, co jest starą wersją tego języka. 
+Alternatywy dla wyrażeń regularnych mogą obejmować użycie pętli i instrukcji warunkowych, ale takie rozwiązania często są mniej eleganckie i wymagają więcej kodu.
 
-Alternatywą dla metody `replace()` jest użycie wyrażeń regularnych. Wyrażenia regularne są bardziej elastyczne i potężne, choć są nieco trudniejsze do zrozumienia.
+Usuwając znaki, zwróć uwagę na flagi wyrażeń regularnych. Na przykład, flaga 'g' oznacza globalne wyszukiwanie (bez niej zatrzymamy się na pierwszym trafieniu), a 'i' ignoruje wielkość liter.
 
-Ważny szczegół implementacyjny: Metoda `replace()` nie zmienia oryginalnego łańcucha. Tworzy nowy łańcuch ze zmienionymi danymi.
-
-## Zobacz również
-1. [MDN Web Docs: String.prototype.replace()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-2. [Wyrażeń regularne w JavaScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions)
+## See Also (Zobacz również)
+- Dokumentacja MDN o wyrażeniach regularnych: [MDN Regular Expressions](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions)
+- Tester wyrażeń regularnych: [Regex101](https://regex101.com/)
+- Interaktywny kurs JavaScript: [Codecademy JavaScript Course](https://www.codecademy.com/learn/introduction-to-javascript)

@@ -1,7 +1,8 @@
 ---
-title:                "插值字符串"
-html_title:           "Arduino: 插值字符串"
-simple_title:         "插值字符串"
+title:                "字符串插值"
+date:                  2024-01-20T17:50:59.920616-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "字符串插值"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,46 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么 ? (What & Why?)
+## What & Why? 什么是字符串插值？为什么程序员要使用它？
+字符串插值是把变量或表达式的值嵌入到字符串中的技术。程序员这么做，是为了创建动态和易于读写的信息。
 
-字符串插值使程序员可以在字符串中直接嵌入变量。这样做可以让读代码、编写代码的人更容易理解其含义。
-
+## How to: 怎样进行字符串插值？
 ```java
-int apples = 5;
-String msg = "我有 " + apples + " 个苹果.";
+public class StringInterpolationExample {
+    public static void main(String[] args) {
+        String name = "小明";
+        int age = 25;
+        
+        // 使用String.format()
+        String greeting = String.format("你好, %s。你今年 %d 岁。", name, age);
+        System.out.println(greeting); // 输出: 你好, 小明。你今年 25 岁。
+        
+        // Java 15起, 可以使用文本块（Text Blocks）进行字符串插值
+        String story = """
+            %s正坐在房间里，此时他%s岁。
+            """.formatted(name, age);
+            
+        System.out.println(story.trim()); // 输出: 小明正坐在房间里，此时他25岁。
+    }
+}
 ```
 
-## 如何: (How to:)
+## Deep Dive 深入探讨
+在Java历史上，字符串插值不像在其他一些语言中那么直接。初期，程序员通常会使用字符串连接操作符（`+`）来组合字符串和其他类型的值。这样的方法简单却低效，尤其是在拼接多个变量或处理大量数据时。
 
-在Java的`printf`或者`String.format`函数中，可以使用`%s`为任何变量准备占位符。
+`String.format()`是后来提供的一个更强大的工具，它使用占位符和类型指定符，使得字符串模板和变量值的组合更加灵活和强大。Java 15 引入的文本块（Text Blocks）提供了一个新的方式来简化多行字符串的创建，并与`formatted()`方法结合使用，来实现更为简洁的字符串插值。
 
-```java
-String name = "Alice";
-System.out.printf("Hello, %s!\n", name);  // "Hello, Alice!"
-```
+替代方案包括使用`StringBuilder`或`StringBuffer`进行字符串拼接，这对性能有所提升。
 
-或者使用`%d`为数字预备占位符。
-
-```java
-int oranges = 7;
-System.out.printf("你有 %d 个橙子.\n", oranges);  // "你有 7 个橙子."
-```
-
-## 深度探索 (Deep Dive)
-
-字符串插值很早就在其他语言如Perl和Ruby中出现了，但在Java中，直到Java 1.5的`String.format`和`printf`才出现。
-
-数组和列表等集合类的字符串插值比较复杂。一般需要使用 `String.join` 或者流 (stream) 。 
-
-```java
-List<String> words = Arrays.asList("I", "love", "Java");
-String sentence = String.join(" ", words);
-System.out.println(sentence);  // "I love Java"
-```
-
-可能你会看见有用 `+` 连接字符串的例子，但这种方式经常在复杂情况下产生效率问题。
-
-## 延伸阅读 (See Also)
-
-- Oracle 的 [printf 方法文档](https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax)
-- Oracle 的 [String.format 方法文档](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-)
+## See Also 相关资料链接
+- [Oracle's Java Documentation on Strings](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
+- [Java String.format() method](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...))
+- [Oracle's introduction to Text Blocks](https://openjdk.java.net/jeps/378)

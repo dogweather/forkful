@@ -1,6 +1,7 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+date:                  2024-01-20T17:38:03.379665-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "C#"
 category:             "C#"
@@ -10,34 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Zmienianie ciągu znaków na małe litery to proces zamiany wszystkich wielkich liter w tekście na ich małe odpowiedniki. Programiści to robią, aby ujednolicić dane, np. przy porównywaniu ciągów lub przygotowaniu tekstu do wyświetlenia.
 
-Konwersja łańcucha na małe litery to proces zamiany każdej litery w łańcuchu na jej odpowiednik w małych literach. Programiści robią to, aby ułatwić porównywanie tekstu, ignorując różnicę między dużymi a małymi literami.
-
-## Jak to zrobić:
-
-Podstawowym sposobem konwersji łańcucha na małe litery w C# jest użycie metody `ToLower()`. Poniżej znajduje się przykład:
+## How to: (Jak to zrobić:)
+W C# zamiana na małe litery jest prosta dzięki metodzie `ToLower()`. Poniżej przykład użycia:
 
 ```C#
-string myString = "Hello, World!";
-string lowerCaseString = myString.ToLower();
+using System;
 
-Console.WriteLine(lowerCaseString);
-//Wyniki: hello, world!
+class Program
+{
+    static void Main()
+    {
+        string example = "Witaj, Świecie!";
+        string lowerCaseExample = example.ToLower();
+        
+        Console.WriteLine(lowerCaseExample); // wyświetli: "witaj, świecie!"
+    }
+}
 ```
 
-Ta metoda zwraca nowy łańcuch, w którym wszystkie wielkie litery są zastąpione małymi literami.
+## Deep Dive (Dogłębna analiza)
+Historia metody `ToLower()` w C# jest powiązana z ewolucją języka i jego funkcji do pracy z tekstami. W przeszłości, alternatywą była ręczna iteracja po znakach i przekształcanie ich przy pomocy mapowania Unicode. 
 
-## Deep Dive
+Alternatywnie, jeśli pracujemy w kontekście międzynarodowym, lepiej użyć `ToLowerInvariant()`, które ignoruje ustawienia regionalne i zapewnia spójność wyników.
 
-Konwersja tekstu na małe litery jest stosowana od początku czasów informatyki. Niemniej jednak, nowoczesne języki programowania takie jak C# mają wbudowane funkcje, które ułatwiają tę pracę.
+Implementacja `ToLower()` w .NET używa informacji o lokalizacji (CultureInfo) aby określić, jak przekształcić każdy znak - to ma znaczenie dla alfabetów innych niż łaciński.
 
-Alternatywą dla metody `ToLower()` jest metody `ToLowerInvariant()`. Różnica polega na tym, że `ToLowerInvariant()` jest bardziej odpowiednia dla celów związanych z kulturą niezależną od tekstu, takich jak porównywanie haseł, podczas gdy `ToLower()` jest bardziej odpowiednia dla wyświetlania tekstu.
-
-Warto zauważyć, że metoda `ToLower()` w C# działa na zasadzie tzw. in-place: nie modyfikuje oryginalnego łańcucha, ale zwraca nowy, zmodyfikowany łańcuch. Jest to zgodne z faktem, że stringi w C# są niemutowalne.
-
-## Zobacz również
-
-- MSDN Dokumentacja: [String.ToLower Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower)
-- Stack Overflow: [Difference between ToLowerInvariant and ToLower](https://stackoverflow.com/questions/2801508/difference-between-tolowerinvariant-and-tolower) 
-- C# Station: [String Manipulation](https://csharp-station.com/Tutorial/CSharp/Lesson08)
+## See Also (Zobacz również)
+- Dokumentacja Microsoft na temat metody `ToLower()`: [https://docs.microsoft.com/dotnet/api/system.string.tolower](https://docs.microsoft.com/dotnet/api/system.string.tolower)
+- Dokumentacja Microsoft na temat kulturowych informacji (`CultureInfo`): [https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo)
+- Stack Overflow - dyskusje i problemy dotyczące przekształcania ciągów znaków: [https://stackoverflow.com/questions/tagged/c%23+lowercase](https://stackoverflow.com/questions/tagged/c%23+lowercase)

@@ -1,7 +1,8 @@
 ---
-title:                "Eine Webseite herunterladen"
-html_title:           "Arduino: Eine Webseite herunterladen"
-simple_title:         "Eine Webseite herunterladen"
+title:                "Webseite herunterladen"
+date:                  2024-01-20T17:43:51.728306-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Webseite herunterladen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,47 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why?
+Webseiten herunterladen bedeutet, den Inhalt einer Webseite auf deinen Rechner zu übertragen. Programmierer machen das, um Daten zu sammeln, Services zu automatisieren oder Inhalte offline verfügbar zu machen.
 
-Das Herunterladen einer Webseite ist der Prozess, bei dem der HTML-Code einer Webseite abgerufen wird. Programmierer machen das, um Informationen zu sammeln, Seiten zu testen oder Inhalte zu durchsuchen.
+## How to:
+Gleam verwendet die `http` Bibliothek für Webanfragen. Sieh hier wie's geht:
 
-## So geht's:
-
-In Gleam können Sie eine Webseite mittels des `gleam/httpc`-Moduls herunterladen. Sehen Sie sich das folgende Beispiel an.
-
-```Gleam
+```gleam
+import gleam/http
 import gleam/httpc
-import gleam/http.{Request}
 
-fn download() {
-  let request = Request(
-    method: httpc.Get, 
-    url: "https://www.example.com", 
-    headers: [], 
-    body: httpc.Empty
-  )
-  let _ = httpc.send(request)
+pub fn main() {
+  let result = httpc.send(req())
+  case result {
+    Ok(response) -> response.body
+    Error(error) -> "An error occurred"
+  }
 }
-```
-Die Ausgabe wäre der HTML-Text der Webseite.
 
-```Gleam
-{Ok, 
-  Response(
-    status: 200, 
-    headers: [], 
-    body: "..."
+fn req() -> http.Request {
+  http.Request(
+    method: http.Get,
+    url: "http://example.com",
+    headers: [],
+    body: http.Nil,
   )
 }
 ```
 
-## Tiefertauchen
+Ausgabe:
 
-Früher verwendeten Programmierer Shell-Dienstprogramme wie `wget` und `curl`, um Webseiten herunterzuladen. Heute bieten viele Sprachen eingebaute HTTP-Clients wie `httpc` in Gleam an. Alternativen in Gleam sind zum Beispiel die Verwendung einer HTTP-Bibliothek wie Gun oder Hackney.
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
 
-Die Implementierung in Gleam basiert auf der OTP-Bibliothek, die auf vielen Ebenen der Netzwerkprogrammierung in Erlang verwendet wird. `httpc` ist ein einfacher HTTP-Client, der eine Asynchronität und Schutz vor Fehlern bietet.
+## Deep Dive
+Das Herunterladen von Webseiten ist so alt wie das Web selbst. Früher verwendete man Werkzeuge wie `wget` oder `curl`. Heute bieten moderne Sprachen wie Gleam eingebaute oder externe Bibliotheken an. Gleam's `httpc` Modul ist ein Wrapper um `erlang`'s `httpc`, erweitert um typsichere Funktionen. Das Erhalten des Webseiteninhalts erfolgt über einen GET-Request, der häufigste HTTP-Request zur Anforderung von Daten.
 
-## Siehe auch
-
-- [Gun HTTP Client Bibliothek](https://github.com/ninenines/gun)
-- [hackney: Simple HTTP client](https://github.com/benoitc/hackney)
+## See Also
+- Gleam HTTP Dokumentation: https://hexdocs.pm/gleam_stdlib/gleam/http/
+- Erlang's `httpc` Modul: https://erlang.org/doc/man/httpc.html
+- Rust's `reqwest` für einen Vergleich: https://docs.rs/reqwest/

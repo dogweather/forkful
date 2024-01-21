@@ -1,7 +1,8 @@
 ---
-title:                "Calculando uma data no futuro ou no passado"
-html_title:           "Fish Shell: Calculando uma data no futuro ou no passado"
-simple_title:         "Calculando uma data no futuro ou no passado"
+title:                "Calculando uma data no futuro ou passado"
+date:                  2024-01-20T17:31:01.614346-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Calculando uma data no futuro ou passado"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,39 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Calculando Datas no Futuro e no Passado com o Shell Fish
+## O Que & Porquê?
+Calcular datas futuras ou passadas é o processo de adicionar ou subtrair dias a uma data específica. Programadores utilizam essa habilidade para automatizar lembretes, gerenciar prazos ou criar relatórios baseados em períodos de tempo.
 
-## O que & Por quê?
-Calculando datas futuras ou passadas é um método que permite ao programador determinar um ponto específico em tempo relativo à data atual. Os programadores fazem isso para rastrear prazos, eventos futuros ou calcular o tempo transcorrido.
-
-## Como fazer
-
-No Shell Fish, utilize a função `date` para manipular datas. Para calcular uma data futura ou passada, o formato é `date -d"+n days"`.
-
+## Como Fazer:
+Calculando 5 dias no futuro:
 ```Fish Shell
-date -d"+7 days"
+set data_atual (date +%Y-%m-%d)
+set data_futura (date -d "$data_atual + 5 days" +%Y-%m-%d)
+echo $data_futura
+```
+Saída de exemplo:
+```
+2023-04-05
 ```
 
-A saída será a data de uma semana a partir de hoje.
-
+Calculando 10 dias no passado:
 ```Fish Shell
-date -d"-30 days"
+set data_atual (date +%Y-%m-%d)
+set data_passada (date -d "$data_atual - 10 days" +%Y-%m-%d)
+echo $data_passada
 ```
-
-A saída será a data 30 dias atrás.
+Saída de exemplo:
+```
+2023-03-21
+```
 
 ## Mergulho Profundo
+Calcular datas é uma funcionalidade essencial desde o início da programação. Antes de bibliotecas e funções dedicadas, cálculos de data eram realizados manualmente, o que era suscetível a erros. Hoje, Fish Shell, assim como outras shells e linguagens de programação, incorpora ferramentas que simplificam essas operações.
 
-Observe que, usando `date -d`, estamos utilizando a função date incorporada em muitos sistemas operacionais Unix e Linux. Sua utilização remonta à década de 1970, um testemunho de sua utilidade e poder.
+Outras ferramentas como `dateutils`, `GNU coreutils`, ou pacotes de linguagens de programação como `DateTime` em Python, substituíram métodos antigos.
 
-Existem alternativas, como a função `strftime` em Python ou a biblioteca `Date` em JavaScript, mas a maioria das linguagens possui suas próprias funções para lidar com datas e tempo.
+Em Fish, a manipulação de datas se apoia principalmente no comando `date` Unix, que é robusto mas pode ter pequenas diferenças entre sistemas (*BSD vs GNU, por exemplo). Fish não tem recursos inerentes de manipulação de datas, então invoca ferramentas do sistema.
 
-A data calculada inclui informações como ano, mês, dia, horas, minutos, segundos e fusos horários. O Fish Shell apenas faz uma ponte para a função `date`, portanto, a implementação exata pode variar dependendo do sistema operacional.
-
-## Veja Também
-
-Para mais informações sobre a função `date`, veja [a página de manual](https://man7.org/linux/man-pages/man1/date.1.html). Para saber mais sobre o cálculo e manipulação de datas em geral, aqui estão alguns recursos úteis:
-
-- [Trabalhando com datas e hora no Python](https://docs.python.org/3/library/datetime.html)
-- [Date and time in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Como trabalhar com datas e horas no Shell Fish](https://fishshell.com/docs/3.1/tutorial.html#date-and-time)
+## Ver Também
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [GNU Coreutils - Date Input Formats](https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html)
+- [Stack Overflow - Manipulating Dates in Fish Shell](https://stackoverflow.com/questions/tagged/date+fish)

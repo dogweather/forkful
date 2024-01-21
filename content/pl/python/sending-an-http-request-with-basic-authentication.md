@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie zapytania http z podstawową autoryzacją"
+date:                  2024-01-20T18:02:40.849360-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,38 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-
-Wysyłanie zapytań HTTP z podstawowym uwierzytelnieniem polega na przekazaniu danych logowania do serwera w celu autoryzacji. Programiści robią to, aby uzyskać dostęp do zasobów dostępnych tylko dla zarejestrowanych lub zalogowanych użytkowników.
+## Co i dlaczego?
+Wysyłanie żądania HTTP z podstawową autentykacją to proces, gdzie klient HTTP przesyła swoją nazwę użytkownika i hasło w celu uzyskania dostępu do zasobów serwera. Programiści używają tego mechanizmu, żeby zapewnić bezpieczny dostęp do API czy zawartości internetowej wymagającej weryfikacji tożsamości.
 
 ## Jak to zrobić:
+Wykorzystamy bibliotekę `requests` do wysłania żądania HTTP. Upewnij się, że instalacja tej biblioteki jest już wykonana (`pip install requests`). Oto przykład:
 
-Python oferuje wiele modułów do pracy z sieciami. Oto przykład, jak to zrobimy za pomocą modułu `requests`.
-
-```Python
+```python
 import requests
 from requests.auth import HTTPBasicAuth
 
-response = requests.get('https://pomocniczy-api.pl', auth=HTTPBasicAuth('uzytkownik', 'haslo'))
+# Twój URL zasobu
+url = 'http://twojserwer.com/dane'
 
-print(response.status_code)
+# Twoje dane do logowania
+nazwa_uzytkownika = 'uzytkownik123'
+haslo = 'bezpieczneHaslo'
+
+# Wysyłamy żądanie z autentykacją podstawową
+odpowiedz = requests.get(url, auth=HTTPBasicAuth(nazwa_uzytkownika, haslo))
+
+# Sprawdzamy odpowiedź
+if odpowiedz.status_code == 200:
+    print('Sukces:', odpowiedz.text)
+elif odpowiedz.status_code == 401:
+    print('Nieudane logowanie. Sprawdź dane do autentykacji.')
+else:
+    print('Błąd:', odpowiedz.status_code)
 ```
 
-Przykładowe wyjście:
-
-```Python
-200
+Output, gdy logowanie jest udane:
+```
+Sukces: <dane zasobu>
 ```
 
-## Głębiej:
+Output, gdy logowanie jest nieudane:
+```
+Nieudane logowanie. Sprawdź dane do autentykacji.
+```
 
-**Kontekst historyczny**: Uwierzytelnianie HTTP ma swoje korzenie w protokole HTTP. Wprowadzono je, gdy zorientowano się, że istnieje potrzeba zabezpieczania informacji na stronach internetowych.
+## Deep Dive:
+Podstawowa autentykacja HTTP jest jedną z prostszych form autentykacji, wprowadzoną w specyfikacji HTTP 1.0. Polega na wysłaniu zakodowanego w Base64 ciągu zawierającego nazwę użytkownika i hasło. To łatwe w implementacji, ale mało bezpieczne – szczególnie bez szyfrowania transportu jakim jest HTTPS.
 
-**Alternatywy**: Oprócz podstawowego uwierzytelnienia, istnieją inne schematy uwierzytelniania, takie jak uwierzytelnianie Digest lub Bearer. Moduł `requests` obsługuje również te typy uwierzytelnienia.
+Alternatywy to m.in. Digest Authentication, OAuth czy tokeny JWT. W przypadku wyższego poziomu bezpieczeństwa, zalecane jest użycie bardziej zaawansowanych metod.
 
-**Szczegóły implementacji**: Podstawowe uwierzytelnianie HTTP jest proste w użyciu, ale ma pewne słabości. Dlatego zawsze powinniśmy korzystać z połączenia HTTPS, aby chronić dane uwierzytelniające.
+Warto pamiętać, że niektóre biblioteki HTTP w Pythonie, jak `httpx`, ułatwiają pracę z autentykacją, oferując wbudowane mechanizmy.
 
-## Zobacz również:
-
-- [Dokumentacja modułu requests](https://requests.readthedocs.io/en/latest/)
-- [Specyfikacja uwierzytelniania HTTP](https://tools.ietf.org/html/rfc7617)
+## Zobacz także:
+- Dokumentacja biblioteki `requests`: https://docs.python-requests.org/en/latest/
+- Bezpieczne praktyki w autentykacji: https://owasp.org/www-project-cheat-sheets/cheatsheets/Authentication_Cheat_Sheet.html
+- Specyfikacja HTTP Basic Authentication: https://tools.ietf.org/html/rfc7617

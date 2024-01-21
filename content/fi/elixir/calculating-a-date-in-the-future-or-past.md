@@ -1,6 +1,8 @@
 ---
 title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-html_title:           "Elixir: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+date:                  2024-01-20T17:28:34.558383-07:00
+model:                 gpt-4-1106-preview
+html_title:           "C#: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,44 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Menneiden tai tulevien päivien laskenta on päivämäärien manipulointia. Sitä käytetään esimerkiksi vanhentumispäivien, tapahtumien ajoitusten tai aikavälien selvittämiseen.
 
-Laskenta tulevaisuudessa tai menneisyydessä olevaan päivämäärään tarkoittaa tietyssä ajankohtassa tapahtuvan siirron laskemista ajan yli. Ohjelmoijat suorittavat tämän toimenpiteen erilaisten ajankohtaisten tarpeiden, kuten vanhenevien tunnusten tai eräpäivien määrittämiseksi.
+## How to:
+Elixirissä päivämäärien kanssa työskentely onnistuu `Date`-moduulin avulla. Katsotaan esimerkkiä:
 
-## Miten:
+```elixir
+# Nykyinen päivämäärä
+current_date = Date.utc_today()
 
-Elixirissä voit laskea tulevat tai menneet päivämäärät `DateTime.add/3` -funktiolla.
+# Viiden päivän kuluttua
+five_days_later = Date.add(current_date, 5)
+IO.inspect(five_days_later)
 
-```Elixir
-start_date = DateTime.utc_now()
-IO.inspect(start_date)
-
-# +3 days
-new_date = DateTime.add(start_date, 3 * 24 * 60 * 60, :second)
-IO.inspect(new_date)
-
-# -3 days
-new_date = DateTime.add(start_date, -3 * 24 * 60 * 60, :second)
-IO.inspect(new_date)
-```
-Havainnollistavan esimerkin tulostus olisi seuraava:
-```Elixir
-~U[2022-07-07T18:20:30Z] 
-~U[2022-07-10T18:20:30Z]
-~U[2022-07-04T18:20:30Z]
+# Kolme päivää sitten
+three_days_ago = Date.add(current_date, -3)
+IO.inspect(three_days_ago)
 ```
 
-## Syvempi sukellus:
+Sample output:
+```
+~D[2023-03-14]
+~D[2023-03-06]
+```
 
-Historiaa: Elixirin DateTime-moduuli on ollut käytössä sitten version 1.3. Monia muita käyttäjäystävällisiä päivämäärä- ja aika-toimintoja on lisätty alusta lähtien.
+## Deep Dive
+Päivämäärien laskenta Elixirissä liittyy suoraan Erlangin aikakirjastoon. Historiallisesti, päivämäärien käsittely monissa kielissä on ollut monimutkaista. Elixirin `Date`-moduuli yksinkertaistaa tätä käyttäen hyväksi Erlangin vakaita toimintoja.
 
-Vaihtoehdot: Voit käyttää myös `Time.add/3` ja `Date.add/2` lähtökohtana, riippuen siitä, haluatko muuttaa vain ajan tai päivämäärän.
+Vaihtoehtoisia kirjastoja, kuten `Timex`, tarjoavat vielä laajempia ominaisuuksia, mutta perustoiminnot löytyvät suoraan Elixirstä. Moduulissa käytetään `:calendar` Erlang-moduulin toimintoja ja se tukee ISO 8601 -standardia, joka on kansainvälisesti tunnustettu päivämäärien esittämisen standardi.
 
-Toteutuksen yksityiskohdat: DateTime.add käyttää Erlangin :calendar-moduulia aikaa ja päivämääriä koskevien yksityiskohtien käsittelyyn. Siinä on kaikki tarvittavat työkalut aika-arvojen lisäämiseen tai vähentämiseen.
+`Date.add/2`-funktio ottaa päivämäärän ja lisää siihen (tai vähentää, jos luku on negatiivinen) halutun määrän päiviä. `Date.utc_today/0` palauttaa nykyisen UTC-päivämäärän.
 
-## Katso myös:
-
-- [Elixir School: Dates and Times](https://elixirschool.com/en/lessons/basics/date_time/)
-- [HexDocs: DateTime Module](https://hexdocs.pm/elixir/DateTime.html)
-- [HexDocs: Time add Function](https://hexdocs.pm/elixir/Time.html#add/3)
-- [HexDocs: Date add Function](https://hexdocs.pm/elixir/Date.html#add/2)
+## See Also
+- Elixirin virallinen dokumentaatio `Date`-moduulista: [https://hexdocs.pm/elixir/Date.html](https://hexdocs.pm/elixir/Date.html)
+- Lisätiedot ISO 8601 -standardista: [https://en.wikipedia.org/wiki/ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)
+- `Timex`-kirjasto vaihtoehtoisia aikakäsittelyfunktioita varten: [https://hex.pm/packages/timex](https://hex.pm/packages/timex)

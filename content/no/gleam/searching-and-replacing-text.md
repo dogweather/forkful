@@ -1,7 +1,8 @@
 ---
-title:                "Søking og erstatning av tekst"
-html_title:           "Lua: Søking og erstatning av tekst"
-simple_title:         "Søking og erstatning av tekst"
+title:                "Søking og erstatting av tekst"
+date:                  2024-01-20T17:57:48.892961-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Søking og erstatting av tekst"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -11,43 +12,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Søke- og erstattefunksjoner lar deg finne tekststrenger og bytte dem ut med noe annet. Programmerere bruker dette for å oppdatere kode, korrigere feil, eller massemanipulere data.
 
-Søking og erstatting av tekst er prosessen med å identifisere og erstatte spesielle strenger eller mønstre av tegn i en tekst. Programmerere gjør dette for å manipulere data, automatisere oppgaver og forbedre kodekvaliteten.
-
-## Hvordan Gjør Man Det:
-
-I Gleam kan vi bruke `string.replace` funksjonen for å søke og erstatte tekst. Her er et grunnleggende eksempel:
-
+## Slik gjør du:
 ```gleam
 import gleam/string
 
-pub fn main() {
-  let text = "Hei, verden!"
-  let new_text = string.replace(text, "verden", "Gleam")
+pub fn search_and_replace_example() {
+  let text = "Hilsen fra Norge!"
+  let new_text = string.replace(text, "Norge", "Gleam-verdenen")
   new_text
 }
+
+// Output
+//"Hilsen fra Gleam-verdenen!"
 ```
+Denne koden viser en enkel søk-og-erstatt handling i Gleam.
 
-Output:
+## Dykk dypere
+I de tidligste dagene av programmering var tekstmanipulasjon en langt mer omstendelig prosess, ofte med lavnivå-språk. Alternativer til Gleam for søk og erstatt inkluderer `regex`-biblioteker og verktøy som `sed` i Unix-baserte systemer. Implementasjonsdetaljer varierer, men de fleste moderne språk bruker abstraksjoner slik at programmerere enkelt kan manipulere strenger uten å tenke på de underliggende datastrukturene.
 
-```
-"Hei, Gleam!"
-```
-
-I ovennevnte kode, vil "verden" bli erstattet med "Gleam".
-
-## Dypdykk:
-
-1. Historisk kontekst: Søk og erstatt funksjonen har vært en sentral del av programmering siden de første høy-nivå språkene. Det er en grunnleggende operasjon for tekstbehandling.
-
-2. Alternativer: Gleam støtter også regular expressions (regex) for mer komplekse søk-og-erstatt oppgaver. Gleam sin `regex` modulen har funksjoner som `replace` og `find`.
-
-3. Implementasjonsdetaljer: I Gleam, er stringer håndtert som lister av tegn. Dette betyr at søk og erstatt kan være en tidkrevende operasjon, spesielt for store stringer. Men, på grunn av Gleam sin sterke type-sikkerhet og ren funksjonalitet, vil effekten på side-effektene være minimal.
-
-## Se Også:
-
-1. Gleam Documentation: https://gleam.run/book/tour/
-2. `gleam/string` modulen: https://hexdocs.pm/gleam_stdlib/gleam/string/index.html
-3. `gleam/regex` modulen: https://hexdocs.pm/gleam_stdlib/gleam/regex/index.html
-
-Studere disse ressursene vil gi deg dypere innsikt og forståelse rundt søk-og-erstatt i Gleam.
+## Se også
+- Regular expressions (regex) guide: [https://www.regular-expressions.info/](https://www.regular-expressions.info/)
+- GNU sed manual: [https://www.gnu.org/software/sed/manual/sed.html](https://www.gnu.org/software/sed/manual/sed.html)

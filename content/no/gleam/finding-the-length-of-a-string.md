@@ -1,7 +1,8 @@
 ---
-title:                "Finne lengden på en streng"
-html_title:           "Arduino: Finne lengden på en streng"
-simple_title:         "Finne lengden på en streng"
+title:                "Finn lengden på en streng"
+date:                  2024-01-20T17:47:17.209653-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Finn lengden på en streng"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,48 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why? (Hva & Hvorfor?)
+Å finne lengden på en streng betyr å telle antall tegn den inneholder. Programmører trenger denne infoen for å validere input, manipulere tekst, eller bare for å sjekke størrelsen på dataene.
 
-Å finne lengden på en streng betyr å bestemme antall tegn i den gitte strengen. Dette er en vanlig oppgave i programmering, da det gir oss muligheten til å manipulere og begrense strenger mer effektivt.
-
-## Hvordan:
-
-La oss ta en titt på hvordan vi kan finne lengden på en streng i Gleam. Legg merke til at, som en statisk typet språk, krever Gleam at vi er tydelige med typer vi håndterer.
-
-```Gleam
-import gleam/string
-
+## How to: (Slik gjør du:)
+```gleam
+// La oss finne lengden på en streng
 fn main() {
-  let my_string = "Hei, Verden!"
-  let length = string.length(my_string)
-  io.println(to_string(length))
+  let greeting = "Hei, verden!"
+  let length = string.len(greeting)
+  io.debug(length)
 }
+
+// Output vil være: 12
 ```
 
-Denne koden vil utskrive "13", som er lengden på strengen "Hei, Verden!".
+## Deep Dive (Dypdykk)
+I eldre programmeringsspråk var det ikke alltid like lett å hente strenglengder, og en måtte ofte løpe gjennom hver bokstav manuelt. I Gleam, som mange moderne språk, er dette en enkel operasjon. 
 
-## Dypdykk
+Alternativer for å måle strenglengder inkluderer bruk av loop eller andre innebygde funksjoner, men `string.len` er både raskere og mer lesbar. Implementasjonsmessig bruker `string.len` effektive maskinnivåoperasjoner i de fleste systemer for å gi umiddelbar tilgang til strenglengden.
 
-Finne lengden av en streng har vært en vanlig oppgave i programmeringsspråk i mange år. Dette skyldes at strenger er grunnleggende datatype i nesten alle moderne programmeringsspråk.
-
-I Gleam, er `string.length` funksjonen vi bruker til å bestemme lengden på en streng. Denne funksjonen går gjennom hver bokstav i strengen én om gangen til den når slutten, og teller deretter antall bokstaver som er forbi. 
-
-Det er alternativer til `string.length`. For eksempel, hvis vi jobber med en streng som er satt opp som en liste med tegn, kan vi bruke `list.length` funksjonen i stedet.
-
-```Gleam
-import gleam/list
-
-fn main() {
-  let my_list = ['H', 'e', 'i', ', ', 'V', 'e', 'r', 'd', 'e', 'n', '!']
-  let length = list.length(my_list)
-  io.println(to_string(length))
-}
-```
-
-Denne koden vil også utskrive "13". 
-
-## Se også
-
-1. Gleam's String-modul dokumentasjon: https://hexdocs.pm/gleam_stdlib/gleam/string/
-2. Artikkel om hvordan arbeide med strenger i Gleam: https://gleam.run/book/tour/strings.html
-3. Gleam's List-modul dokumentasjon: https://hexdocs.pm/gleam_stdlib/gleam/list/
+## See Also (Se også)
+- Gleam's official documentation on strings: [https://gleam.run/book/tour/strings.html](https://gleam.run/book/tour/strings.html)

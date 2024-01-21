@@ -1,6 +1,7 @@
 ---
 title:                "Interpolering av en streng"
-html_title:           "Bash: Interpolering av en streng"
+date:                  2024-01-20T17:50:40.548706-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolering av en streng"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,30 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Interpolering av en streng er prosessen der variabler, uttrykk eller funksjoner byttes ut med deres faktiske verdier inni en streng. Dette gjør vi for å dynamisk lage strenger, spesielt når vi trenger å inkludere variabeldata i dem.
+## What & Why?
+Strenginterpolasjon betyr å smelte sammen variabler med tekst. Vi gjør det for å bygge brukertilpassede meldinger eller for å kombinere data dynamisk.
 
-## Hvordan gjøre det:
-I Elm, bruker vi `++` operatoren for å bygge sammensatte strenger. Her er en kodeeksempel:
+## How to:
+Elm bruker `++` operatoren for å sette sammen strenger. Det er ingen innebygget strenginterpolasjon, men vi kan lage klar og lesbar kode likevel:
+
 ```Elm
-firstname = "Ola"
-lastname = "Nordmann"
-greeting = "Hei, " ++ firstname ++ " " ++ lastname ++ ". Hvordan har du det?"
+name = "Ola"
+greeting = "Hei, " ++ name ++ "!"
+
+-- Output: "Hei, Ola!"
 ```
-Når du kjører denne koden, vil `greeting` være "Hei, Ola Nordmann. Hvordan har du det?"
 
-## Dyp Dykk:
-Historisk sett ble strenginterpolering først brukt i programmeringsspråk på 1960-tallet, og har siden blitt en standardfunksjon i mange moderne språk. Selv om Elm ikke støtter direkte strenginterpolering, kan `++` operasjonen effektivt brukes for det samme formålet.
+Du kan også sette sammen tall og strenger etter å ha konvertert tallet:
 
-Alternativt til `++`, kan funksjonen `String.concat` brukes til å bygge sammensatte strenger fra en liste av strenger.
 ```Elm
-name = String.concat ["Ola", " ", "Nordmann"]
+age = 30
+ageMessage = "Jeg er " ++ String.fromInt(age) ++ " år gammel."
+
+-- Output: "Jeg er 30 år gammel."
 ```
-Denne koden vil gi samme resultat som det tidligere eksemplet, "Ola Nordmann".
 
-Fra implementeringsperspektivet, endrer ikke `++` operasjonen den opprinnelige strengen i Elm. I stedet lager den en ny streng ved å sette sammen de to operandene. Dette bidrar til den funksjonelle naturen til Elm ved å unngå "side-effekter".
+## Deep Dive
+Elm har aldri hatt innebygget strenginterpolasjon som i andre språk (JavaScript's template literals for eksempel). Dette holder språket enkelt og konsistent. Du klarer deg godt med `++` for å sette sammen strenger.
 
-## Se også:
-1. ["++" Operator Documentasjon](https://package.elm-lang.org/packages/elm/core/latest/String#++)
-2. [String.concat Funksjonsdokumentasjon](https://package.elm-lang.org/packages/elm/core/latest/String#concat)
-3. [Elm Guide: Strenger](https://guide.elm-lang.org/core_language.html#strings)
+Alternativer inkluderer skreddersydde interpolasjonsfunksjoner. Noen biblioteker gir også ekstra funksjonalitet, men for de fleste Elm-utviklere, `++` gjør jobben.
+
+Interessant, tidligere versjoner av språk som JavaScript hadde ikke heller strenginterpolasjon. Utviklere brukte pluss-operatoren, lik Elm i dag.
+
+## See Also
+- Elm dokumentasjon om strenger: https://package.elm-lang.org/packages/elm/core/latest/String
+- Elm community diskusjoner: https://discourse.elm-lang.org/
+- En hjelpsom Elm pakke for mer kompleks strengmanipulasjon: https://package.elm-lang.org/packages/elm-community/string-extra/latest/

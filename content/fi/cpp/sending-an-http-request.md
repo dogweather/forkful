@@ -1,6 +1,7 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-html_title:           "Bash: HTTP-pyynnön lähettäminen"
+date:                  2024-01-20T17:59:04.545720-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "C++"
 category:             "C++"
@@ -10,51 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? - Mitä ja miksi?
+HTTP-pyynnön lähettäminen tarkoittaa pyynnön esittämistä verkkopalvelimelle. Ohjelmoijat tekevät tämän hankkiakseen tietoa tai toimittaakseen dataa.
 
-HTTP-pyynnön lähettäminen tarkoittaa palvelimen kanssa kommunikoinnin aloittamista verkon yli HTTP-protokollaa käyttäen. Ohjelmoijat tekevät tämän hakeakseen tai lähettääkseen dataa.
+## How to: - Kuinka tehdä:
+C++ ei suoraan tue HTTP-pyyntöjä standardikirjastossaan, mutta kirjastoja kuten `libcurl` tai `cpp-httplib` voidaan käyttää.
 
-## Näin teet:
-
-Katsotaan esimerkkiä käyttämällä `C++17:n` `CPR` -kirjastoa.
 ```C++
-#include <cpr/cpr.h>
+#include <iostream>
+#include <httplib.h>
 
 int main() {
-  cpr::Response r = cpr::Get(cpr::Url{"http://www.httpbin.org/get"},
-                            cpr::Parameters{{"key", "value"}});
-
-  std::cout << r.text << std::endl; 
-  return 0;
+    httplib::Client cli("http://example.com");
+    
+    auto res = cli.Get("/");
+    if (res && res->status == 200) {
+        std::cout << res->body << std::endl;
+    } else {
+        std::cerr << "Request failed with status: " << res->status << std::endl;
+    }
+    
+    return 0;
 }
 ```
 
-Odotettu tuloste on seuraava:
+Tämä koodi lähettää GET-pyynnön `http://example.com` -palvelimelle ja tulostaa vastauksen.
 
-```json
-{
-  "args": {
-    "key": "value"
-  },
-  "headers": {
-    "Accept": "*/*",
-    "Host": "www.httpbin.org"
-  },
-  "origin": "YOUR_IP_ADDRESS",
-  "url": "http://www.httpbin.org/get?key=value"
-}
-```
+## Deep Dive - Syväsukellus:
+HTTP on perustettu 1990-luvulla ja on internetin tiedonsiirron perusta. C++:ssa ei ole sisäänrakennettua HTTP-tukea, koska se on yleiskäyttöinen kieli eikä keskity verkkotoiminnallisuuksiin. Vaihtoehtoja `libcurl` ja `cpp-httplib` kirjastoille ovat muun muassa `Boost.Beast` ja `Poco`. Näitä kirjastoja käyttämällä voidaan hallita matalan tason verkkoyhteyksiä tai rakentaa omia HTTP-pyynnön käsittelijöitä.
 
-## Deep Dive:
-
-Lähettäessäsi HTTP-pyyntöä, olet itse asiassa seuraamassa käytäntöä, joka on ollut olemassa vuodesta 1991, kun HTTP (Hypertext Transfer Protocol) esiteltiin. 
-
-Vaihtoehtoisesti voit käyttää kirjastoa ASUSU. Se tarjoaa enemmän joustavuutta ja se on hyvä vaihtoehto pitkäaikaisiin projekteihin.
-
-Toteutusyksityiskohdat: `C++17:n CPR` käärii `libcurl`-kirjaston, joka on tehokas ja monipuolinen tapa lähettää HTTP-pyyntöjä. Se ottaa URL:n ja määritteet nimettyjen parametrien muodossa, minkä jälkeen se lähettää pyynnön ja palauttaa vastauksen.
-
-## Katso myös:
-
-- [CPR GitHub](https://github.com/whoshuu/cpr)
-- [HTTP](https://www.ietf.org/rfc/rfc2616.txt)
-- [ASUSU](http://www.example.com)
+## See Also - Katso myös:
+- `libcurl`: https://curl.se/libcurl/
+- `cpp-httplib`: https://github.com/yhirose/cpp-httplib
+- `Boost.Beast`: https://www.boost.org/doc/libs/1_75_0/libs/beast/doc/html/index.html
+- `Poco`: https://pocoproject.org/

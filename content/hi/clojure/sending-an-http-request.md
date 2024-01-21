@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T17:59:56.504357-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,32 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? (What & Why?)
-HTTP अनुरोध भेजना, एक सर्वर से डेटा अनुरोध करने की प्रक्रिया है। प्रोग्रामर्स इसे वेब API के साथ काम करने और वेबसाइटों या वेब सेवाओं से डेटा एक्सेस करने के लिए करते हैं।
+## What & Why? (क्या और क्यों?)
+HTTP अनुरोध भेजना मतलब वेब सर्वर से जानकारी माँगना है। प्रोग्रामर ऐसा डेटा प्राप्त करने, API से बातचीत करने, और दूरस्थ सेवाओं के साथ संवाद करने के लिए करते हैं।
 
-## कैसे करें (How to)
-HTTP अनुरोध भेजने के लिए, आप `clj-http` लाइब्रेरी का उपयोग कर सकते हैं। स्थापित करने के लिए, आपको अपने `project.clj` फ़ाइल में निम्नलिखित लाइन जोड़नी होगी:
-
-```Clojure
-[clj-http "3.12.0"]
-```
-
-फिर, आप अनुरोध भेजने के लिए `clj-http.client` के `get` मेथड का उपयोग कर सकते हैं:
+## How to: (कैसे करें:)
+Clojure में HTTP अनुरोध भेजने के लिए `clj-http` लाइब्रेरी का इस्तेमाल अक्सर किया जाता है। यहाँ एक साधारण GET अनुरोध है:
 
 ```Clojure
-(ns my-app.core
-  (:require [clj-http.client :as client]))
+(require '[clj-http.client :as client])
 
-(defn fetch-data []
-  (let [response (client/get "http://example.com/api/data")]
-    (println response)))
+(def response (client/get "http://httpbin.org/get"))
+
+(println response)
 ```
-जब आप इस फ़ंक्शन को चलाते हैं, यह HTTP GET अनुरोध भेजता है और प्रतिक्रिया को मुद्रित करता है।
 
-## गहरी डाइव (Deep Dive)
-HTTP अनुरोध भेजने की क्षमता, 1990 में HTTP प्रोटोकॉल के साथ आयी। इसने वेब पर डाटा का आदान-प्रदान करने के नये तरीके साझा किए। विकल्प समाधानों में cURL और HTTPie शामिल हैं, लेकिन Clojure में, `clj-http` काफ़ी लोकप्रिय है।
+इस कोड का नतीजा कुछ ऐसा होगा:
 
-## और देखें (See Also)
-* clj-http documentation: https://github.com/dakrone/clj-http
-* HTTP Specification: https://tools.ietf.org/html/rfc2616
-* Other HTTP Libraries in Clojure: https://www.clojure-toolbox.com/
+```
+{:status 200, :headers {...}, :body "..."}
+```
+
+पोस्ट अनुरोध करने का उदाहरण:
+
+```Clojure
+(def response (client/post "http://httpbin.org/post" {:form-params {:key "value"}}))
+
+(println response)
+```
+
+इसका नतीजा भी कुछ ऐसा ही होगा, लेकिन बॉडी में पोस्ट डेटा दिखाई देगा।
+
+## Deep Dive (गहन जानकारी)
+HTTP अनुरोध भेजना वेबसाइटों की जानकारी पढ़ने और इंटरनेट संचार की बुनियादी क्रिया है। `clj-http` लाइब्रेरी Java की Apache HttpComponents लाइब्रेरी पर आधारित है, जो Clojure के लिए यह कार्यक्षमता प्रदान करती है। विकल्प के रूप में, `http-kit` और `aleph` जैसी लाइब्रेरियाँ भी हैं, जो अलग-अलग विशेषताएं और परफॉरमेंस के मापदंड पेश करती हैं। विस्तृत प्रोग्रामिंग में, आपको अनुरोधों के प्रकार, हेडर्स, बॉडी और रिस्पॉन्स को समझना पड़ सकता है।
+
+## See Also (इसे भी देखें)
+- `clj-http` GitHub Repo: [https://github.com/dakrone/clj-http](https://github.com/dakrone/clj-http)
+- HttpComponents: [https://hc.apache.org/](https://hc.apache.org/)
+- `http-kit`: [http://www.http-kit.org/](http://www.http-kit.org/)
+- `aleph`: [https://github.com/ztellman/aleph](https://github.com/ztellman/aleph)
+- Official Clojure site: [https://clojure.org/](https://clojure.org/)

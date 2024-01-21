@@ -1,7 +1,8 @@
 ---
-title:                "पैटर्न से मिलते जुलते वर्णों को हटाना"
-html_title:           "Elixir: पैटर्न से मिलते जुलते वर्णों को हटाना"
-simple_title:         "पैटर्न से मिलते जुलते वर्णों को हटाना"
+title:                "पैटर्न से मेल खाते अक्षरों को हटाना"
+date:                  2024-01-20T17:42:22.115067-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पैटर्न से मेल खाते अक्षरों को हटाना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,44 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+अक्षरों को पैटर्न के हिसाब से मिटाना मतलब है एक निश्चित श्रृंखला से चुनिंदा अक्षरों को हटाना। प्रोग्रामर्स यह काम करते हैं डाटा को साफ करने और मान्यता की प्रक्रिया में।
 
-"मिलाने वाले वर्णों को हटाना" एक क्रिया है जिसमें एक प्रोग्रामिंग भाषा का उपयोग करके आप एक विशिष्ट पैटर्न से मेल खाने वाले वर्णों को हटा सकते हैं। कार्यक्रमकर्ता इसे पाठ संसाधनों को मुख्य रूप से मान्यता प्राप्त करने और अनावश्यक उपादानों को दूर करने के लिए करते हैं। 
-
-## कैसे करें:
-
-Elm में, `String.foldl` और `String.contains` की मदद से आप इस कार्य को संभवनीय रूप से कर सकते हैं।
-
+## How to: (कैसे करें:)
 ```Elm
-patternDelete : String -> String -> String
-patternDelete pattern string =
-    String.foldl (\char output -> 
-      if String.contains (String.fromChar char) pattern then 
-        output
-      else 
-        String.append output (String.fromChar char)) "" string
+module Main exposing (main)
+
+import Html exposing (Html, text)
+import Regex
+
+removePattern : String -> String -> String
+removePattern pattern input =
+    Regex.replace Regex.All (Regex.regex pattern) (\_ -> "") input
+
+main : Html msg
+main =
+    let
+        originalString = "123 Elm Street - Elmwood City 456"
+        cleanedString = removePattern "[\\d-]+" originalString
+    in
+    text cleanedString
 ```
-
-ऊपर दिए गए कोड का उदाहरण देखने के लिए:
-
-```Elm
-patternDelete "aeiou" "Hello, World"
+सैंपल आउटपुट:
 ```
-
-आउटपुट:
-
-```Elm
-"Hll, Wrld"
+" Elm Street  Elmwood City "
 ```
+यह एल्म कोड `[\\d-]+` पैटर्न से सभी अंकों और डैश को मिटा देगा।
 
-## गहरी डाइव
+## Deep Dive (गहराई से जानकारी):
+पैटर्न के हिसाब से अक्षरों को मिटाना न केवल Elm में बल्कि कई अन्य प्रोग्रामिंग भाषा में आम है। यह क्रिया रेगुलर एक्सप्रेशन (Regex) का उपयोग करके की जाती है, जो एक शक्तिशाली पैटर्न मिलान उपकरण है। इतिहास में पहली बार केन थॉम्पसन ने QED टेक्स्ट एडिटर में Regex को लागू किया था। विकल्प के रूप में, कभी-कभी सीधी स्ट्रिंग मैनीपलेशन फंक्शन्स जैसे कि `String.filter`, `String.foldr` या `String.map` तकनीक का उपयोग कर सकते हैं। लेकिन, अगर जटिल पैटर्न की जरूरत हो तो Regex सबसे बेहतर है। Elm में, `Regex.replace` फंक्शन यह काम अत्यंत कुशलता से करता है।
 
-इस फंक्शन की सामर्थ्य साधारण रूप से वाइल्डकार्ड और पैटर्न मिलान की भाषाओं में प्रेषित होती है और यदादृच्छिक पाठ प्रणाली के द्वारा सुनिश्चित की जाती है। संख्यात्मक और कम्प्यूटेशनल क्षेत्रों में अक्सर अनावश्यक वर्णों को निकालने का इस तरीके का उपयोग किया जाता है। Elm में इसे `String.foldl` और `String.contains` से सुविधाजनक रूप से लागू किया जा सकता है।
-
-## यह भी देखें:
-
-नीचे दिए गए कुछ साधारण और उन्नत टुटोरियल्स और स्रोतों पर जाएं जो आपको और अधिक सीखने में मदद करेंगे:
-
-3. [Elm और pattern matching पर डीप डाइव](https://elmprogramming.com/pattern-matching.html) 
-
-ध्यान दें कि Elm भाषा शुद्ध कार्यों और असिंक्रोन प्रोग्रामिंग के बीच अद्वितीय संतुलन की सिफारिश करती है, जिससे कार्यक्रमकर्ताओं को सुरक्षित और सटीक कोड लिखने में मदद मिलती है।
+## See Also (और देखें):
+- Elm Regex package documentation: [https://package.elm-lang.org/packages/elm/regex/latest](https://package.elm-lang.org/packages/elm/regex/latest)
+- Regular Expressions (Regex) Tutorial: [https://www.regular-expressions.info/](https://www.regular-expressions.info/)
+- Elm String documentation for string manipulation alternatives: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)

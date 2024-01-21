@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:45:56.829704-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,43 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+Substring on osajono, pala isompaa merkkijonoa. Koodarit kaivavat substringeja datan parsimiseen, tietojen näyttämiseen tai yksinkertaisesti, koska tarvitaan vain tietty pätkä tekstiä.
 
-Alimerkkijonon poiminta on toiminto, jolla voidaan hakea osa merkkijonosta. Ohjelmoijat käyttävät tätä ominaisuutta erityisesti datan manipulointiin ja jäsentämiseen.
-
-## Kuinka näin:
-
-Alla esimerkkejä Kotlin-koodista ja sen tulosteista. Käytämme `substring` -funktiota.
-
-```Kotlin
-fun main() {
-    val text = "Tervetuloa Kotlin-ohjelmointiin!"
-    println(text.substring(0, 10)) // Tulostaa: "Tervetuloa"
-}
+## How to:
+``` Kotlin
+val fullString = "Hello, mahtava Kotlin!"
+val extractedSubstring = fullString.substring(7, 14)
+println(extractedSubstring) // tulostaa: mahtava
 ```
-Tämä pala koodia tulostaa merkkijonon "Tervetuloa Kotlin-ohjelmointiin!" ensimmäiset 10 merkkiä, eli "Tervetuloa".
-
-```Kotlin
-fun main() {
-    val text = "Tervetuloa Kotlin-ohjelmointiin!"
-    println(text.substringAfter(" ")) // Tulostaa: "Kotlin-ohjelmointiin!"
-}
+Voit myös käyttää range-operaattoreita:
+``` Kotlin
+val rangeSubstring = fullString.slice(7..13)
+println(rangeSubstring) // sama tulos: mahtava
 ```
-Tämä koodinpätkä etsii ensimmäisen välilyönnin jälkeisen merkkijonon "Tervetuloa Kotlin-ohjelmointiin!" ja tulostaa sen, eli "Kotlin-ohjelmointiin!".
+Tai alkupään ilmaisemiseen:
+``` Kotlin
+val startSubstring = fullString.substring(0..4)
+println(startSubstring) // Hello
+```
 
-## Syvempi Sukellus:
+## Deep Dive
+Substring-toimintoja on käytetty aivan ohjelmoinnin alkuaikoina. Kotlinissa, kuten Javassa, metodi `substring` kuuluu String-luokkaan. Vaihtoehtoisesti, `slice` antaa jouston käyttää rangetoimintoa. On tärkeää huomioida, että indeksit Kotlinissa alkavat nollasta ja päättyvät n-1.
 
-#### Historiallinen Konteksti:
-Alimerkkijonon poiminta on perusominaisuus useimmissa ohjelmointikielissä. Myös Kotlinin varhaisissa versioissa tämä ominaisuus on ollut jo käytössä.
-
-#### Vaihtoehdot:
-Voit käyttää myös `substringBefore` ja `substringAfterLast` funktioita, jotka ovat samankaltaisia mutta eroavat käyttötavoissaan.
-
-#### Toteutusyksityiskohdat:
-Kotlin käyttää Javan `String` -luokkaa ja sen `substring` -metodia alimerkkijonotoiminnoissa. Javan virtuaalikoneen ansiosta tämä on erittäin tehokasta.
-
-## Katso Myös:
-
-- Kotlinin virallinen dokumentaatio alimerkkijonoista: [Kotlin substring Doc](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
-- Stack Overflow's discussion on substring functions: [Stack Overflow Discussions](https://stackoverflow.com/questions/36574183/how-to-substring-in-kotlin)
-- Online Kotlin compiler for testing code: [Kotlin Playground](https://play.kotlinlang.org/)
+## See Also
+Kotlinin virallinen dokumentaatio substringeista: [Kotlin Substring Documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
+Java-stringien käsittelyä seikkaperäisemmin: [Oracle Java Strings](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)

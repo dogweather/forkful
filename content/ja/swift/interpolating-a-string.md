@@ -1,6 +1,7 @@
 ---
 title:                "文字列の補間"
-html_title:           "Arduino: 文字列の補間"
+date:                  2024-01-20T17:51:44.817858-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "文字列の補間"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,27 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-文字列のエンベッドは変数、定数やリテラルなどの値を文字列に直接組み込むことです。プログラマがこれを行う理由は、コードをきれいに読みやすくするためと、表示用の文字列の更新や修正を容易に行うためです。
+## What & Why? (何となぜ？)
+文字列補間とは、文字列に変数や定数、リテラル、式を埋め込むこと。プログラマは、動的な文字列を作ったり、読みやすい出力を生成したりするためにこれを行います。
 
-## 使い方:
-以下にSwiftでの文字列のインターポレーションを示します。
-```Swift
-let studentName = "Kento"
-let studentAge = 20
-let studentInfo = "My name is \(studentName) and I'm \(studentAge) years old."
-print(studentInfo)
+## How to: (方法)
+```swift
+// 文字列補間の基本
+let name = "田中"
+let greeting = "こんにちは、\(name)さん!"
+print(greeting)  // 出力: こんにちは、田中さん!
+
+// 式の利用
+let price = 1500
+let taxRate = 0.08
+let totalPrice = "合計: \(Double(price) * (1 + taxRate))円"
+print(totalPrice)  // 出力: 合計: 1620.0円
+
+// 複数の値の補間
+let quantity = 3
+let item = "りんご"
+let summary = "\(quantity)個の\(item)を買いました。"
+print(summary)  // 出力: 3個のりんごを買いました。
 ```
 
-上記のコードは次の出力を生成します。
-```Swift
-My name is Kento and I'm 20 years old.
-```
-変数に自由に値を設定でき、この方法を使用すると文字列内に値を動的に挿入できます。
+## Deep Dive (深い潜水)
+過去、文字列は`+`演算子で結合されていましたが、これは煩雑で読みにくいコードになりがちでした。Swiftが導入された時、文字列補間はコードの明瞭さと簡潔さを大幅に改善しました。PythonやRubyなど他の言語にも似た機能がありますが、Swiftの文字列補間は型安全を強化するため、コンパイル時に型検査が行われます。
 
-## 深層探検 
-文字列のインターポレーションは、Swiftが登場する以前から数多くの言語に実装されていました。しかし、Swiftはこの機能をより直感的で使いやすいものにアップグレードしました。代替策としては、文字列の連結やフォーマット指定文字列がありますが、これらはコードの見通しを悪くしたり、型安全性を損なう可能性があります。Swiftの文字列インターポレーションはこのような問題を解決し、型安全性を保ちつつ、見通しの良いコードを書くことが可能です。
+裏では、Swiftは補間された各部分を取り、それらを適切な文字列表現に変換して1つの新しい文字列に結合します。これにより、パフォーマンスの低下を防ぎつつ、動的な文字列の生成が可能になります。 
 
-## 参考資料
-- Swift公式ドキュメント - 字句構造: [https://docs.swift.org/swift-book/ReferenceManual/LexicalStructure.html](https://docs.swift.org/swift-book/ReferenceManual/LexicalStructure.html)
-- スタックオーバーフロー- Swiftの文字列インターポレーション: [https://stackoverflow.com/questions/24051314/whats-the-string-format-specifier-for-a-string-in-swift](https://stackoverflow.com/questions/24051314/whats-the-string-format-specifier-for-a-string-in-swift)
+文字列補間は単なる変数埋め込みにとどまらず、\()内で計算や関数呼び出しも行えます。これにより、必要に応じて複雑なロジックも展開できる強力なツールです。
+
+## See Also (関連項目)
+- Swift公式ドキュメント内の文字列補間のセクション: [String Interpolation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID292)

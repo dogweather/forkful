@@ -1,7 +1,8 @@
 ---
-title:                "Calculer une date dans le futur ou le passé"
-html_title:           "Rust: Calculer une date dans le futur ou le passé"
-simple_title:         "Calculer une date dans le futur ou le passé"
+title:                "Calcul d'une date future ou passée"
+date:                  2024-01-20T17:32:12.152076-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Calcul d'une date future ou passée"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,34 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Calculer une date dans le futur ou le passé, c'est simplement déterminer une date qui est soit avant soit après une date donnée. Les programmeurs le font souvent pour des besoins de suivi de tâches, de planification et d’analyse historique.
+## Quoi et Pourquoi ?
+Calculer une date dans le futur ou le passé consiste à ajouter ou soustraire une durée à une date existante. Les programmeurs le font pour gérer des échéances, des rappels, des intervalles de temps, ou juste pour savoir quel jour ça sera dans X jours.
 
 ## Comment faire :
-Voici un exemple basique de calcul d'une date dans le futur dans Rust:
-
 ```Rust
-extern crate chrono;
-use chrono::{DateTime, Duration, Utc};
+use chrono::{Duration, Utc};
 
 fn main() {
-  let now: DateTime<Utc> = Utc::now();
-  let future_date = now.checked_add_signed(Duration::days(5)).unwrap();
-  println!("Dans 5 jours, la date sera : {}", future_date);
+    let today = Utc::now();
+    let five_days_later = today + Duration::days(5);
+    let five_days_before = today - Duration::days(5);
+
+    println!("Aujourd'hui: {}", today.format("%d-%m-%Y %H:%M:%S"));
+    println!("Dans cinq jours: {}", five_days_later.format("%d-%m-%Y %H:%M:%S"));
+    println!("Il y a cinq jours: {}", five_days_before.format("%d-%m-%Y %H:%M:%S"));
 }
 ```
-Exécution de ce code donne un résultat qui ressemble à:
-
+Résultats:
 ```
-Dans 5 jours la date sera: 2025-09-18T09:28:00.434187Z
+Aujourd'hui: 02-04-2023 14:20:15
+Dans cinq jours: 07-04-2023 14:20:15
+Il y a cinq jours: 28-03-2023 14:20:15
 ```
 
 ## Plongée en profondeur
-Historiquement, le calcul de dates a longtemps été un défi dans le domaine de l'informatique. De nombreux bugs et problèmes ont été rencontrés dans le passé. Avez-vous entendu parler du bug de l'an 2000 ?
+Avant, on manipulait les dates en C avec `time.h`, qui était délicat. Rust offre la crate `chrono` pour une meilleure gestion des dates et du temps. Alternativement, on peut utiliser la bibliothèque standard, mais elle est plus limitée. `chrono` gère les fuseaux horaires, précisions sub-secondaires et facilite les calculs.
 
-Il existe plusieurs alternatives pour calculer une date dans le futur ou le passé en Rust. Vous pourriez utiliser la bibliothèque `time` qui propose des méthodes similaires à `chrono`.
-
-Les détails de l'implémentation liés au calcul des dates dans `chrono` sont complexes. `chrono` gère les durées, les fuseaux horaires, les périodes ainsi que les formats d'affichage et de parsing de dates.
+Les détails d’implémentation sont importants car les dates gèrent les années bissextiles, les fuseaux horaires et d'autres subtilités. `chrono` abstrait cela, permettant des manipulations fiables et moins d'erreurs.
 
 ## Voir aussi
-Pour plus d'informations, consultez les docs et exemples de la librairie `chrono` ici: [chrono - Rust](https://docs.rs/chrono/0.4.19/chrono/) et pour la librairie `time` ici: [time - Rust](https://docs.rs/time/0.1.42/time/).
+- Documentation de `chrono`: https://docs.rs/chrono/
+- Rust CookBook, manipulation des dates et temps: https://rust-lang-nursery.github.io/rust-cookbook/datetime.html
+- Rust by Example, traitant du temps: https://doc.rust-lang.org/rust-by-example/std_misc/datetime.html

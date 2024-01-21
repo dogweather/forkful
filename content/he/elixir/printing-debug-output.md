@@ -1,7 +1,8 @@
 ---
-title:                "הדפסת פלט ניפוי שגיאות"
-html_title:           "Arduino: הדפסת פלט ניפוי שגיאות"
-simple_title:         "הדפסת פלט ניפוי שגיאות"
+title:                "הדפסת פלט לניפוי באגים"
+date:                  2024-01-20T17:52:42.624029-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "הדפסת פלט לניפוי באגים"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,28 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-הדפסת פלט לאיתור תקלות הוא דרך שבה מתכנתים מציגים מידע על תהליך הריצה של הקוד לבחינתו. הם אותרים בעיות תוך שימוש בכלים של שפת התכנות, כאמור, באמצעות הדפסות.
+## What & Why? (מה ולמה?)
+דיבאגינג הוא כלי קריטי בארסנל של המתכנת. זה מאפשר לך להדפיס פלט שיכול לעזור לך לאתר באגים בקוד שלך. אנו משתמשים בזה כי לפעמים הכי פשוט הוא הכי טוב: רואים מה הקוד עושה צעד-אחר-צעד.
 
-## איך להשתמש:
-מספר דוגמאות איך להשתמש בכלים של Elixir להדפסת המידע:
-
-```elixir
-IO.puts "Hello, world!"
-```
+## How to (איך לעשות:)
+ב-Elixir, אפשר להשתמש בפונקציה `IO.inspect` כדי להדפיס מידע לדיבאגינג:
 
 ```elixir
-defmodule MyModule do
-  def my_function do
-    IO.puts "This is a debug message"
-    # rest of the code...
+defmodule Example do
+  def who_is_it?(name) do
+    name 
+    |> String.upcase()
+    |> IO.inspect(label: "Name in uppercase")
   end
 end
+
+Example.who_is_it?("elixir")
 ```
 
-## צולעים עמוק:
-פלט ה debug הוא כלי שנמצא בשימוש מאז ימי המחשב הראשונים. זה הדרך האינטואטיבית ביותר להבין את הדאטה שהמחשב טופל. אבל מהדפסת פלט debug אינה הדרך היעילה ביותר לאתר בעיות, נמתחים עכשיו מערכות לפרנסיסקה שנראים כמו Graphical Debuggers. ב Elixir, מודול IO מתקשר עם ה kernel של erlang כדי להדפיס מידע.
+פלט דוגמה:
 
-## ראה גם:
-1. [דוגמאות IO של Elixir](https://hexdocs.pm/elixir/IO.html)
-2. [מדריך תיקון שגיאות אליקסיר](https://elixirschool.com/en/lessons/specifics/debugging/)
+```
+Name in uppercase: "ELIXIR"
+```
+
+`IO.inspect` מחזירה את הערך שהיא מדפיסה, אז תוכל לשרשר אותה בתוך פייפליינים.
+
+## Deep Dive (לעומק המים)
+בעולמות התכנות העתיקים, כמו ב-C, היינו משתמשים ב-`printf` לדיבאגינג. ב-Elixir, `IO.inspect` הפך לכלי העדיף מאחר והוא מחזיר את הערך ותופס פחות מקום. במקום `IO.inspect`, יש גם את Logger, שמאפשר לוגינג מפורט יותר עם רמות שונות. בחירה בין השניים תלויה בצורך: `IO.inspect` לבדיקות מהירות, Logger למעקב אחר מערכת שלמה.
+
+## See Also (ראו גם)
+- [Elixir `IO` Module Documentation](https://hexdocs.pm/elixir/IO.html)
+- [Elixir `Logger` Module Documentation](https://hexdocs.pm/logger/Logger.html)
+- [Programming Elixir](https://pragprog.com/titles/elixir16/programming-elixir-1-6/) - ספר המכיל דיונים יסודיים על כלים לדיבאג ולניטור הרצת קוד.
+- [The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) - מובאים שיטות וטכניקות כלליות לתכנות אפקטיבי ובטוח, כולל דיבאגינג.

@@ -1,7 +1,8 @@
 ---
-title:                "Utdrag av understrenger"
-html_title:           "Bash: Utdrag av understrenger"
-simple_title:         "Utdrag av understrenger"
+title:                "Uthenting av delstrenger"
+date:                  2024-01-20T17:45:15.269478-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uthenting av delstrenger"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,44 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å trekke ut understrenger betyr at vi henter deler av en tekststreng. Programmerere gjør dette for å analysere data, validere input, eller jobbe med bestemte tekstsegmenter.
 
-Utdrag av substrings er å hente en bestemt del av en streng. Dette er nyttig når programmerere trenger å jobbe med eller manipulere spesifikke deler av tekst, ikke hele tekststrengen.
-
-## Hvordan gjør man det?
-
-Her er et grunnleggende eksempel på hvordan vi kan trekke ut en substring fra en tekststreng i C.
-
+## Slik gjør du:
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char str[] = "Hei, Verden!";
-    char substr[10];
+    char tekst[] = "Hallo Norge!";
+    char understreng[6];
 
-    memcpy(substr, &str[4], 6);
-    substr[6] = '\0';
-    
-    printf("Utdraget substring er: '%s'\n", substr);
+    strncpy(understreng, tekst + 6, 5);  // Henter "Norge"
+    understreng[5] = '\0';               // Legger til en null-terminator
+
+    printf("Understreng: %s\n", understreng);  // Skriver ut "Norge"
     return 0;
 }
 ```
-
-Kjører vi denne koden, vil utdata være:
-```C
-Utdraget substring er: 'Verden'
+Output:
+```
+Understreng: Norge
 ```
 
-## Deep Dive
-
-Historisk sett har behovet for å arbeide med deler av tekst blitt mer krevende med tiden. Tidligere språk hadde ikke innebygde funksjoner for å håndtere dette, men moderne språk som C gir oss funksjonene vi trenger.
-
-Det finnes flere alternativer til `memcpy` for å hente ut substrings, som `strncpy`. Hver funksjon har sin egen unike implementering og bruksscenarier, så det er best å velge den som passer best for ditt spesifikke problem.
-
-De viktigste detaljene i implementeringen er selve utdraget og avslutningen av den nye strengen med '\0'. Dette er viktig fordi uten '\0' på slutten kan vi ende opp med ekstra tegn i vår substring, som kan føre til all slags morsomme bugs.
+## Dypdykk
+I C, å trekke ut understrenger har vært en del av språket siden C's barndom. Funksjoner som `strncpy` gjør det mulig, men forsiktighet er nødvendig for å unngå buffer overflyt og sikre null-terminering. Alternativer som `strndup` kan være sikrere, men ikke alltid tilgjengelige. Detaljer som hvor du setter null-terminatoren er kritiske, da C strenger alltid slutter med `\0`.
 
 ## Se Også
-
-For mer informasjon og alternative måter å håndtere substring utdrag, se følgende linker:
-
-- [C Standard Library - string.h](https://en.cppreference.com/w/c/string)
+- C Standard Library: https://en.cppreference.com/w/c/string/byte
+- Sikker string håndtering i C: https://owasp.org/www-community/vulnerabilities/C_String_Vulnerabilities

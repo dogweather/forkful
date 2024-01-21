@@ -1,7 +1,8 @@
 ---
-title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-html_title:           "Elm: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+title:                "Tulevan tai menneen päivämäärän laskeminen"
+date:                  2024-01-20T17:31:03.533254-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,39 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+# Mitä ja Miksi?
 
-Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen tarkoittaa tietyn ajanjakson lisäämistä tai vähentämistä jonkin tietyn päivämäärän päälle. Ohjelmoijat tekevät sen ajastamaan toimintoja, hallitsemaan tapahtumia tai laskemaan päiviä erityisten päivämäärien välillä.
+Laskevaisuuteen tai menneisyyteen sijoittuvien päivämäärien laskeminen mahdollistaa ohjelmiston ajankäytön hallinnan ja suunnittelun. Ohjelmoijat tarvitsevat tätä esimerkiksi aikataulutuksen, muistutusten tai ajanjaksojen laskennan toteuttamiseksi.
 
-## Miten tehdään:
+# Kuinka:
 
-Koodaus esimerkki, jossa luodaan uusi päivämäärä seuraavalle päivälle Elm:n avulla:
+Elm:ssä päivämäärien käsittelyyn käytetään usein `elm/time` kirjastoa. Alla on esimerkki päivän lisäämisestä nykyiseen aikaan:
 
 ```Elm
-import Time exposing (..)
+import Time
+import Task
+import Browser
 
-saatUudenPaivamaaran : Posix -> Posix
-saatUudenPaivamaaran vanhaPaivamaara =
-    addDays 1 vanhaPaivamaara
+getDateFuture : Int -> Task.Task Time.Error Time.Posix
+getDateFuture daysToAdd =
+    Time.now
+        |> Task.andThen (\now -> Task.succeed (Time.add (Time.millisToPosix (daysToAdd * 86400000)) now))
 
--- Käyttöesimerkki
-uusiPaivamaara = saatUudenPaivamaaran (fromMillis (toFloat (Date.now())))
+-- Käyttöesimerkki:
+main =
+    Task.attempt (resultToHtml) (getDateFuture 10)
+        
+resultToHtml : Result Time.Error Time.Posix -> Browser.Document msg
+resultToHtml result =
+    case result of
+        Ok posix ->
+            -- Muunna Posix-aika tarvittaessa
+            Browser.sandbox { init = (), update = \_ _ -> (), view = \_ -> Html.text (String.fromInt (Time.posixToMillis posix)) }
+
+        Err _ ->
+            Browser.sandbox { init = (), update = \_ _ -> (), view = \_ -> Html.text "An error occurred" }
+
 ```
-Output saattaa näyttää tältä:
-```Elm
-Posix 1584662400000 -- Seuraavan päivän Unix-aika
-```
 
-## Syvä sukellus:
+Huomaa, että käyttäessäsi `Time.now`, saat nykyhetken UTC-aikana.
 
-Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen on ollut ohjelmoinnin osa niin kauan kuin ihmiset on tarvinnut ajastaa toimintaansa. Elm tarjoaa `Time` moduulin tarkkaan päivämäärän käsittelyyn.
+# Syväsukellus:
 
-Vaihtoehtoina ovat muun muassa JavaScriptin sisäänrakennetut Date-objektit tai jos tarvitset lisää toiminnallisuuksia, voit käyttää `elm-date-extra`-kirjastoa.
+Elmin päivämääräkäsittely perustuu JavaScriptin Date-objektista saatavaan POSIX-aikaan, joka esittää ajan millisekunteina vuoden 1970 alusta. `elm/time` kirjasto tarjoaa kehyksen ajan hallintaan Elm-koodissa. Vaihtoehtoisia kirjastoja, kuten `justinmimbs/date`, voi käyttää monipuolisempaan päivämääräkäsittelyyn. Näiden kirjastojen implementaatio yksinkertaistaa monimutkaisia tehtäviä, kuten karkausvuosien hallintaa, aikavyöhykelaskentaa ja muotoilua.
 
-Lasketaan päivämäärä lisäämällä tai vähentämällä millisekunteja. Elm hoitaa yksityiskohdat, kuten karkausvuodet ja eri kuukausien päivien määrät, puolestamme.
+# Katso Myös:
 
-
-## Katso myös:
-
-- Elm:n virallinen [Time](https://package.elm-lang.org/packages/elm/time/latest/) dokumentaatio
-- Erinomainen [elm-date-extra](https://package.elm-lang.org/packages/rluiten/elm-date-extra/latest) kirjasto päivämäärätoiminnoille
+- Elm Time kirjaston dokumentaatio: [package.elm-lang.org/packages/elm/time/latest](https://package.elm-lang.org/packages/elm/time/latest)
+- Justin Mimbsin Date kirjasto: [package.elm-lang.org/packages/justinmimbs/date/latest](https://package.elm-lang.org/packages/justinmimbs/date/latest)
+- Elm-langin opas ajan käsittelystä: [guide.elm-lang.org/effects/time.html](https://guide.elm-lang.org/effects/time.html)

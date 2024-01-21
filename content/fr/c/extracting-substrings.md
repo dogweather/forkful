@@ -1,6 +1,7 @@
 ---
 title:                "Extraction de sous-chaînes"
-html_title:           "Arduino: Extraction de sous-chaînes"
+date:                  2024-01-20T17:45:08.918684-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "C"
 category:             "C"
@@ -10,37 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi?
-L'extraction de sous-chaînes est une technique consistant à récupérer une certaine portion d'une chaîne de caractères. Les développeurs l'utilisent pour analyser et manipuler des données complexes.
+## What & Why?
+Extraire des sous-chaînes, c'est prendre des morceaux spécifiques d'une chaîne de caractères. On fait ça pour analyser, formater ou manipuler des données textes, souvent des entrées d'utilisateurs ou des fichiers.
 
-## Comment faire:
-Voici un exemple de comment vous pouvez extraire des sous-chaînes en C.
+## How to:
+En C, on utilise souvent `strncpy` pour extraire une sous-chaîne. Faites attention à inclure le caractère nul à la fin.
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char str1[20] = "Salut monde!";
-    char str2[10];
+    char text[] = "Salut le monde!";
+    char buffer[5];
 
-    strncpy(str2, str1, 5);
-    str2[5] = '\0';   // Ajouter le caractère nul à la fin de str2
+    // Copiez les 4 premiers caractères dans buffer.
+    strncpy(buffer, text, 4);
+    buffer[4] = '\0'; // N'oubliez pas le caractère de fin de chaîne.
 
-    printf("%s\n", str2); //Output: Salut
-
+    printf("Sous-chaîne: '%s'\n", buffer);
     return 0;
 }
 ```
-Dans cet exemple, nous avons copié les 5 premiers caractères de "Salut monde!" dans `str2`. La sortie affichera "Salut".
 
-## Approfondissement:
-L'extraction de sous-chaînes est une méthode souvent utilisée en informatique depuis la naissance du langage C dans les années 70. Les alternatives à la fonction `strncpy` incluent la function `memcpy`, que vous pouvez utiliser si vous manipulez des données binaires non formatées, et la fonction `sprintf` qui, avec le bon format, peut également extraire des sous-chaînes.
+Sortie:
+```
+Sous-chaîne: 'Salu'
+```
 
-Lors de l'utilisation de `strncpy`, n'oubliez pas d'ajouter le caractère nul à la fin de la sous-chaîne. Si vous omettez cette étape, vous obtiendrez une chaîne mal formée qui peut causer des bugs difficiles à traquer.
+## Deep Dive
+Historiquement, C n'a pas de classe de chaînes de caractères intégrée comme d'autres langues. La bibliothèque standard fournit des fonctions pour travailler avec des chaînes de caractères. Outre `strncpy`, il existe des fonctions comme `strstr` et `strtok` pour la recherche et la découpe de chaînes. Pour éviter les dépassements de tampon, considérez `strncat`, `snprintf`, ou encore, des fonctions de la bibliothèque annexes (comme `strlcpy` dans la lib BSD).
 
-## Voir aussi:
-- [La documentation C de strncpy](http://www.cplusplus.com/reference/cstring/strncpy/)
-- [Un guide pour comprendre les strings en C](https://www.learncpp.com/cpp-tutorial/an-introduction-to-stdstring/)
-- [La fonction memcpy](https://en.cppreference.com/w/c/string/byte/memcpy)
-- [La fonction sprintf](https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm)
+## See Also
+- Manuel C en ligne: https://en.cppreference.com/w/c/string/byte
+- "The C Programming Language" par Kernighan et Ritchie, souvent appelé K&R, pour une compréhension fondamentale de C.
+- GNU C Library: https://www.gnu.org/software/libc/manual/html_node/String-and-Array-Utilities.html

@@ -1,7 +1,8 @@
 ---
-title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+date:                  2024-01-20T18:01:04.734396-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,14 +11,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? - Mitä ja Miksi?
+Lähettäessämme HTTP-pyynnön perusautentikaation kera, liitämme käyttäjän tunnistetiedot pyyntöömme. Ohjelmoijat tekevät tämän turvatakseen pääsyn suojattuihin resursseihin, kuten APIihin tai verkkopalveluihin.
 
-Lähettäessämme HTTP-pyynnön perustunnistuksen kanssa, lähetämme Internet-palvelimelle pyynnön, joka sisältää käyttäjänimen ja salasanan suoritettaessa erilaisia ​​tehtäviä. Ohjelmoijat tekevät tämän tietojen turvallisen jakamisen ja suojattujen resurssien saamiseksi.
-
-## Kuinka:
-
-Lähetä HTTP-pyyntö perustunnistuksen kanssa C#-koodilla:
-
+## How to - Kuinka tehdä:
 ```C#
 using System;
 using System.Net;
@@ -26,38 +23,51 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BasicAuthentication
+public class BasicAuthExample
 {
-    class Program
+    private static async Task Main()
     {
-        static async Task Main()
+        string username = "kayttaja";
+        string password = "salasana";
+        string url = "https://example.com/api/data";
+
+        using (HttpClient client = new HttpClient())
         {
-            var httpClient = new HttpClient();
-            var byteArray = Encoding.ASCII.GetBytes("username:password");
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+            // Encode the credentials and set the basic auth header
+            var encoding = Encoding.UTF8.GetBytes($"{username}:{password}");
+            var base64String = Convert.ToBase64String(encoding);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", base64String);
 
-            HttpResponseMessage response = await httpClient.GetAsync("https://example.com");
-
-            Console.WriteLine(response.StatusCode);
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(responseBody);
+            }
+            catch (HttpRequestException e)
+            {
+                Console.WriteLine("\nException Caught!");
+                Console.WriteLine($"Message :{e.Message}");
+            }
         }
     }
 }
 ```
-Koodin ajo tulostaa HTTP-koodin, joka osoittaa, menikö pyyntö läpi vai ei.
+Sample Output:
+```
+{"data": "Salainen data palautettu onnistuneesti."}
+```
 
-## Syvällisemmin:
+## Deep Dive - Syväsukellus:
+Perusautentikaatio on HTTP-protokollan vanhin autentikaatiomenetelmä. Se on yksinkertainen, muttei erityisen turvallinen, sillä tunnukset lähetetään base64-enkoodattuna, mikä on helppo purkaa. Siksi sitä ei tulisi käyttää sensitiivisille tiedoille ilman HTTPS-protokollaa.
 
-### Historiallinen Konteksti:
-HTTP-perustunnistus on yksi vanhimmista tavaroista, jotka ovat osa HTTP-protokollaa ja jota kehittäjät käyttävät edelleen tietoturvaan.
+Alternatiiveina on useita turvallisempia menetelmiä, kuten OAuth2, JWT (JSON Web Tokens), tai API-avaimet. Näissä menetelmissä tunnistetiedot eivät kulje selvätekstinä tai helposti purettavissa muodossa.
 
-### Vaihtoehdot:
-Vaikka perustunnistusta käytetään yleisesti, se saattaa olla haavoittuvainen "man-in-the-middle" hyökkäyksille. Siksi vaihtoehtoisia menetelmiä, kuten OAuth ja token-perusteinen tunnistautuminen, kannattaa harkita.
+Perusautentikaation toteuttamisessa C#:ssa tulee huomioida, että HttpClient pitäisi olla uudelleenkäytettävä sovelluksen elinkaaren ajan. Se vähentää latencya ja resurssien kulutusta.
 
-### Toteutuksen yksityiskohdat:
-Käyttäjänimen ja salasanan lähettäminen suoraan verkon yli ei ole turvallista. Sen sijaan ne on koodattava Base64-koodauksessa, kuten esimerkissämme näytettiin.
-
-## Katso Lisäksi:
-
-HTTPS-tiedonsiirron turvaaminen: [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-5.0)
-HTTP-pyynnön lähettämisen useita esimerkkejä: [Microsoft Documentation](https://docs.microsoft.com/en-fi/azure/architecture/best-practices/api-design)
-OAuth- ja token-pohjainen autentikointi: [Introduction to OAuth](https://oauth.net/2/), [Token-based Authentication](https://www.varonis.com/blog/token-based-authentication/)
+## See Also - Katso Myös:
+- [HttpClient Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
+- [Basic Authentication on Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [Introduction to Authentication with ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/)
+- [Secure a Web API with Individual Accounts and Local Login in ASP.NET Web API 2.2](https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/individual-accounts-in-web-api)

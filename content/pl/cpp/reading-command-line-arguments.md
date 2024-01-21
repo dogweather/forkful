@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie argumentów linii poleceń"
-html_title:           "Bash: Czytanie argumentów linii poleceń"
-simple_title:         "Czytanie argumentów linii poleceń"
+title:                "Odczytywanie argumentów linii poleceń"
+date:                  2024-01-20T17:55:30.025837-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie argumentów linii poleceń"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,48 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Odczytywanie argumentów linii komend to sposób na przekazywanie danych zewnętrznych do programu przy jego starcie. Programiści wykorzystują to, aby dostosować działanie aplikacji bez interakcji z GUI lub plikami konfiguracyjnymi.
 
-Czytanie argumentów z linii poleceń to sposób na wprowadzanie informacji do programu podczas jego uruchamiania. Programiści robią to, gdy chcą zwiększyć elastyczność i uniwersalność swoich aplikacji.
-
-## Jak to zrobić:
-
-W poniższym kodzie C++ zobaczysz, jak czytać argumenty z linii poleceń.
-
+## How to: (Jak to zrobić:)
 ```C++
-#include<iostream>
-using namespace std;
+#include <iostream>
 
-int main(int argc, char *argv[])
-{
-    cout<<"Liczba argumentów: "<<argc<<endl;
-    for(int i=0; i<argc; i++)
-        cout<<"Argument "<<i+1<<": "<<argv[i]<<endl;
-
+int main(int argc, char* argv[]) {
+    std::cout << "You have entered " << argc << " arguments:" << std::endl;
+    for (int i = 0; i < argc; ++i) {
+        std::cout << i << ": " << argv[i] << std::endl;
+    }
     return 0;
 }
 ```
-
-Przykładowe wyjście mogłoby wyglądać tak:
-
-```Text
-Liczba argumentów: 3
-Argument 1: ./program
-Argument 2: arg1
-Argument 3: arg2
+Przykładowe wyjście, gdy uruchamiasz `./program arg1 arg2 arg3`:
+```
+You have entered 4 arguments:
+0: ./program
+1: arg1
+2: arg2
+3: arg3
 ```
 
-## Pogłębione informacje
+## Deep Dive (Dogłębna analiza):
+Odczytywanie argumentów linii komend ma korzenie w początkach programowania. W C++, argumenty te są zazwyczaj przekazywane do funkcji `main()` jako `argc` (liczba argumentów) i `argv` (tablica argumentów). Metoda ta jest standardem POSIX i jest używana w różnych systemach oraz językach programowania.
 
-Historia: Czytanie argumentów z linii poleceń jest stosowane od czasów korzeni języka,
-C - stąd ta funkcjonalność została przekazana do C++.
+Alternatywą jest użycie bibliotek, takich jak `boost::program_options`, które oferują przejrzysty interfejs do zarządzania złożoną logiką argumentów.
 
-Alternatywy: Istnieją biblioteki jak Boost.Program_options, które zapewniają bardziej zaawansowane możliwości parso- wania, ale są bardziej skomplikowane.
+Jako szczegóły implementacyjne warto zaznaczyć, że `argv[0]` jest zawsze nazwą programu, a `argv[argc]` jest zawsze `NULL`, co może pomóc w projektowaniu bezpiecznych pętli.
 
-Implementacja: Parametry `argc` i `argv` są przekazywane do głównej funkcji (`main`). `argc` to liczba argumentów, a `argv` to tablica wskaźników do ciągów, które są argumentami.
-
-## Zobacz także
-
-1. Documentacja Boost.Program_options: https://www.boost.org/doc/libs/1_71_0/doc/html/program_options.html
-2. Kompendium C++: https://cpp0x.pl/ksiazka/
-3. cppreference.com: Odczyt argumentów z linii poleceń w C++: https://en.cppreference.com/w/cpp/language/main_function
+## See Also (Zobacz również):
+- [cppreference.com on "main function"](https://en.cppreference.com/w/cpp/language/main_function)
+- [GNU documentation on "Program Arguments"](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html)
+- [Boost.Program_options library](https://www.boost.org/doc/libs/1_75_0/doc/html/program_options.html)

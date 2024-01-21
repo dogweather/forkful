@@ -1,7 +1,8 @@
 ---
-title:                "स्ट्रिंग का अंतर्कलन"
-html_title:           "Arduino: स्ट्रिंग का अंतर्कलन"
-simple_title:         "स्ट्रिंग का अंतर्कलन"
+title:                "स्ट्रिंग इंटरपोलेशन"
+date:                  2024-01-20T17:51:02.354349-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग इंटरपोलेशन"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,32 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+इंटरपोलेटिंग स्ट्रिंग का मतलब होता है वेरिएबल्स या एक्सप्रेशन्स को स्ट्रिंग्स के अंदर डायरेक्ट इंसर्ट करना। प्रोग्रामर्स इसे इसलिए करते हैं ताकि वे डायनेमिक वैल्यूज़ को आसानी से मैनेज और डिस्प्ले कर सकें।
 
-स्ट्रिंग इंटरपोलेशन एक कार्य है जिससे हम वेरिएबल्स की मानों को स्ट्रिंग्स में शामिल कर सकते हैं। प्रोग्रामर्स इसका उपयोग डायनेमिक और पठनीय कोड लिखने के लिए करते हैं।
-
-## कैसे करें:
-
+## How to: (कैसे करें:)
 ```Fish Shell
-set city "New Delhi"
-echo "Welcome to $city!" 
+# वेरिएबल सेट करें
+set name "दुनिया"
+
+# स्ट्रिंग इंटरपोलेशन का प्रयोग
+echo "नमस्ते, $name!"
+
+# आउटपुट
+नमस्ते, दुनिया!
 ```
-आउटपुट:
-```
-Welcome to New Delhi!
-```
 
-## गहराई से समझना:
+## Deep Dive (गहराई में जानकारी)
+Fish Shell में स्ट्रिंग इंटरपोलेशन शुरुआत से ही अन्य शेल्स की तुलना में साफ-सुथरा रहा है। जैसे, Bash शेल में डबल कोट्स के अंदर `$` साइन का इस्तेमाल करके इंटरपोलेशन किया जाता है, Fish में भी यही तरीका है लेकिन यहाँ ब्रेसेस `{}` की जरूरत नहीं होती।
 
-1. इतिहास: स्ट्रिंग इंटरपोलेशन का उपयोग पुराने इंटरप्रेटेड प्रोग्रामिंग भाषाओं में होता आया है। यह विशेषता Fish shell में भी उपस्थित है।
-2. दूसरे विकल्प: आप कर्ली ब्रेसेज `{}` का भी उपयोग कर सकते हैं। जैसे-
-```Fish Shell
-echo "Welcome to {$city}!" 
-```
-3. कैसे काम करता है: `$` साइन के इस्तेमाल से बताया जाता है कि वेरिएबल का नाम शुरू हो रहा है, और शेल उस वेरिएबल की मूल्य को खोजता है और उसे स्ट्रिंग में रीप्लेस कर देता है। 
+Fish Shell में इंटरपोलेटेड स्ट्रिंग्स को और भी प्रभावी तरीके से इस्तेमाल किया जा सकता है, जैसे कमांड सब्स्टीट्यूशन के लिए `(command)` संरचना का प्रयोग, जो सीधे स्ट्रिंग के अंदर ही रिजल्ट डाल देता है। यह फीचर कोड को काफी रीडेबल और मेंटेन करने योग्य बनाता है।
 
-## देखने के लिए भी:
-
-1. एक साधारण ट्यूटोरियल Fish string interpolation के बारे में - [Fish Shell Basic String Interpolation](http://www.fishshell.com/docs/current/tutorial.html)
-
-2. एक विस्तृत गाइड जिसमें सबकुछ है जो आपको Fish Shell के वेरिएबल्स के बारे में पता होना चाहिए - [Fish Shell](http://www.fishshell.com/docs/current/index.html)
+## See Also (और जानकारी के लिंक)
+- [Fish Documentation on String Interpolation](https://fishshell.com/docs/current/index.html#syntax-command-sub)
+- [Learn X in Y minutes for Fish](https://learnxinyminutes.com/docs/fish/)
+- [Fish Shell GitHub Repository](https://github.com/fish-shell/fish-shell)

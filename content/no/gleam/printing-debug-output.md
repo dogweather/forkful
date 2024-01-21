@@ -1,7 +1,8 @@
 ---
-title:                "Utskrift av feilsøkingsresultat"
-html_title:           "Arduino: Utskrift av feilsøkingsresultat"
-simple_title:         "Utskrift av feilsøkingsresultat"
+title:                "Skrive ut feilsøkingsdata"
+date:                  2024-01-20T17:52:23.705912-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skrive ut feilsøkingsdata"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,32 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why? (Hva & Hvorfor?)
+Å skrive ut debug-informasjon betyr å vise midlertidige data i konsollen for å forstå hva koden gjør. Programmerere gjør dette for å finne og fikse feil lettere.
 
-Utskrift av feilsøkingsoutput er prosessen med å vise kodeløp og variabelverdier mens programmet kjører. Dette gjøres for å hjelpe programmererne med å finne og fikse problemer i koden.
-
-## Hvordan gjøre det:
-
-I Gleam, kan ```io.debug``` brukes til å skrive ut feilsøkingsinformasjon. Her er et enkelt eksempel:
-
-```Gleam
+## How to: (Hvordan:)
+```gleam
 import gleam/io
 
-fn main() {
-  io.debug("Hei, feilsøking!")
+pub fn main() {
+  let debug_value = "Hei fra Gleam!"
+  
+  io.debug(debug_value) // Skriver ut debug-informasjon i konsollen
 }
+
+// Eksempel på output:
+// => "Hei fra Gleam!"
 ```
+## Deep Dive (Dypdykk)
+Debug-utskrifter har eksistert lenge, helt siden de tidlige dagene av programmering. På de gode, gamle dager måtte programmerere observere maskinens lamper og brytere for å feilsøke! I Gleam og mange andre moderne språk gir `debug` funksjonen en enkel måte å logge verdier på uten å påvirke produksjonsloggene. Det er alternativer som loggbiblioteker for mer strukturert og nivåbasert logging, men for rask og skitten innsikt, er `io.debug` din venn.
 
-Når du kjører dette programmet, vil du se følgende utskrift:
-
-```Gleam
-"Hei, feilsøking!"
-```
-
-## Dyp Dykk
-
-Feilsøkingsutskrift har en lang historie, går tilbake til dagene med fysiske printere og perforerte kort. Alternativene til feilsøkingsutskrift inkluderer logger og formelle feilsøkingsverktøy, men noen ganger kan ingenting slå enkelheten og direktheten til utskrift for feilsøking. I Gleam kan ```io.debug``` brukes til å skrive ut hvilken som helst type som kan gjengis som en streng, og på noe miljø som implementerer Gleam's IO-modul.
-
-## Se Også
-
-For en mer detaljert forklaring på ```io.debug``` og dens bruk, sjekk ut [Gleam IO Module Documentation](https://hexdocs.pm/gleam_erlang/gleam/io.html). For mer om feilsøking i Gleam, ta en titt på [Gleam School](https://gleam.run/tutorials/).
+## See Also (Se Også)
+- Gleam's official documentation on IO: https://hexdocs.pm/gleam/gleam/io.html
+- Effective Logging Practices in Programming: https://www.oreilly.com/library/view/effective-logging-practices/0680REX2E_GL/
+- Debugging Strategies for Programmers: https://www.informit.com/articles/article.aspx?p=1998559

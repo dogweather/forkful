@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:00:22.385752-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,27 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+HTTP अनुरोध भेजना यानी आप इंटरनेट पर किसी वेबसर्वर से जानकारी मांग रहे होते हैं। प्रोग्रामर इसलिए ऐसा करते हैं क्योंकि वे डेटा पुनप्राप्त करना चाहते हैं या सर्वर को कुछ डेटा भेजना चाहते हैं।
 
-HTTP अनुरोध भेजना ज्ञात होता है जब एक कंप्यूटर वेबसाइट के सर्वर से तथ्य या जानकारी मांगता है। प्रोग्रामर्स इसे करते हैं ताकि वे वेबसाइटों के साथ बातचीत का संपादन कर सकें, उनसे तथ्य प्राप्त करें और अद्यतित करें। 
+## How to: (कैसे करें:)
+PowerShell में `Invoke-RestMethod` या `Invoke-WebRequest` cmdlet का इस्तेमाल करके HTTP अनुरोध भेजा जाता है। 
 
-## कैसे:
-
-PowerShell का उपयोग करके HTTP अनुरोध भेजने के लिए, `Invoke-WebRequest` cmdlet का प्रयोग करें:
-
+GET अनुरोध के लिए:
 ```PowerShell
-$response = Invoke-WebRequest -Uri "http://example.com"
+$response = Invoke-RestMethod -Uri 'http://example.com/api/data' -Method Get
+$response
 ```
 
-यह उदाहरण http://example.com से HTTP अनुरोध भेजता है और प्राप्त रिस्पांस को $response variable में संचित करता है।
+POST अनुरोध के लिए, JSON डेटा के साथ:
+```PowerShell
+$body = @{
+    'key1' = 'value1'
+    'key2' = 'value2'
+} | ConvertTo-Json
 
-## गहरी जानकारी:
+$response = Invoke-RestMethod -Uri 'http://example.com/api/data' -Method Post -Body $body -ContentType 'application/json'
+$response
+```
 
-HTTP अनुरोध की अवधारणा पहली बार 1991 में HTTP/1.0 विनिर्देश में परिचयित की गई थी। PowerShell में वैकल्पिक रूप से `Invoke-RestMethod` cmdlet भी उपयोग कर सकते हैं, जो JSON या XML रिस्पांस को स्वचालित रूप से पार्स करता है। `Invoke-WebRequest` और `Invoke-RestMethod` cmdlets, .NET Framework के System.Net.WebRequest class का उपयोग करते हैं HTTP संचार करने के लिए।
+उदाहरण आउटपुट:
+```
+{
+    "responseKey1": "responseValue1",
+    "responseKey2": "responseValue2"
+}
+```
 
-## अधिक जानने के लिए:
+## Deep Dive (गहराई से जानकारी):
+HTTP अनुरोध 1990 के दशक में आरम्भ हुआ जब वर्ल्ड वाइड वेब बनाया गया। PowerShell `Invoke-RestMethod` और `Invoke-WebRequest` cmdlets आजकल के स्क्रिप्ट्स में RESTful APIs से जुड़ने का आम तरीका हैं।
 
-1. [Invoke-WebRequest आधिकारिक डॉक्युमेंटेशन](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
-2. [Invoke-RestMethod आधिकारिक डॉक्युमेंटेशन](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1)
-3. [.NET Framework HTTP विनिर्देश](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httprequestmessage?view=net-5.0)
-4. [HTTP विनिर्देश](https://www.rfc-editor.org/rfc/rfc2616.html)
+वैकल्पिक तरीके में `curl` या `.NET` क्लासेस जैसे `HttpClient` आते हैं, लेकिन PowerShell cmdlets आसानी से समझने योग्य और इस्तेमाल करने में सुविधाजनक होते हैं। 
+
+`Invoke-RestMethod` ज्यादातर JSON या XML डेटा फॉर्मेट के लिए है, जबकि `Invoke-WebRequest` एक ज्यादा सामान्य HTTP अनुरोध cmdlet है जिसमें पूरे HTTP प्रतिक्रिया ऑब्जेक्ट तक एक्सेस मिलती है। 
+
+## See Also (और देखें):
+- [Invoke-RestMethod documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod)
+- [Invoke-WebRequest documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest)
+- [Understanding REST APIs](https://www.redhat.com/en/topics/api/what-is-a-rest-api)
+- [About HTTP Requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)

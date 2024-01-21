@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
+date:                  2024-01-20T18:01:28.229106-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,49 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum? 
+## Was & Warum?
+HTTP-Requests mit Basisauthentifizierung ermöglichen gesicherte Zugriffe auf Webressourcen, indem Benutzername und Passwort übermittelt werden. Programmierer nutzen dies, um APIs oder Webdienste zu konsumieren, die eine solche Authentifizierungsform erfordern.
 
-HTTP-Anfrage mit Basic Authentication ermöglicht es Programmierern, einem Server Authentifizierungsdaten in einer HTTP-Anfrage zu übermitteln. Das ist nützlich, wenn wir Daten abrufen möchten, die nur für authentifizierte Benutzer zugänglich sind.
-
-## Wie Man:
-
-In Elixir können wir das HTTPoison-Paket verwenden, um HTTP-Anfragen zu senden und HTTParty für die Basic Authentication. Hier ist ein Beispiel:
+## How to:
+Elixir verwendet das `HTTPoison` Paket, ein beliebter HTTP-Client, um Requests mit Basisauthentifizierung durchzuführen. Installiere `HTTPoison` über `mix.exs` und folge dem Beispiel:
 
 ```elixir
-defmodule MyModule do
-  def fetch_basic_auth_data do
-    url = "https://api.meinedomain.de/resource"
-    headers = ["Authorization": {:basic_auth, {"benutzername", "passwort"}}]
+# mix.exs
+defp deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
+end
+```
 
-    HTTPoison.get(url, headers)
+Jetzt in deinem Code:
+
+```elixir
+defmodule HTTPExample do
+  def fetch_protected_content do
+    # Benutzername und Passwort
+    auth = {"meinBenutzername", "meinPasswort"}
+
+    # HTTP GET Request mit Basic Authentication
+    HTTPoison.get("https://meineprotectedseite.com", [], basic_auth: auth)
   end
 end
 ```
 
-Diese Funktion sendet eine GET-Anfrage an die angegebene URL mit Basic Authentication. Der Serverantwort kann dann wie folgt gehandhabt werden:
+Führe `mix deps.get` aus, um `HTTPoison` zu installieren, und dann rufe `HTTPExample.fetch_protected_content()` auf. Du erhältst eine Antwort im Format:
 
 ```elixir
-case MyModule.fetch_basic_auth_data() do
-  {:ok, response} ->
-    IO.inspect(response.status_code) # Gibt den Statuscode der Antwort aus.
-    IO.inspect(response.body) # Gibt den Inhalt der Antwort aus.
-
-  {:error, reason} ->
-    IO.inspect(reason) # Gibt den Grund für den Fehler aus.
-end
+{:ok, %HTTPoison.Response{status_code: 200, body: response_body}}
 ```
 
 ## Deep Dive
+Die Basisauthentifizierung sendet Benutzernamen und Passwort im `Authorization`-Header, kodiert als Base64-String. Historisch wurde sie eingeführt, um eine einfache Zugangskontrolle zu implementieren. Obwohl einfach, gilt sie als unsicher, wenn nicht über HTTPS genutzt, da die Zugangsdaten im Klartext vorlagen könnten.
 
-Die Idee der Basic-Authentication stammt aus den Anfängen des Web. Sie war Teil der HTTP/1.0 Spezifikation und dient als einfacher Mechanismus zur Übermittlung von Benutzerdaten. Sie hat jedoch ihre Schwächen, insbesondere das Fehlen einer eingebauten Verschlüsselung.
+Alternativen zur Basisauthentifizierung beinhalten OAuth, Token-basierte Authentifizierung und andere komplexere Systeme, die zusätzliche Sicherheit bieten. 
 
-Heutzutage gibt es sicherere Alternativen wie OAuth oder JWT (JSON Web Tokens), die auf den meisten modernen APIs zum Einsatz kommen. Sie bieten Verbesserungen wie die Möglichkeit zur Delegation von Berechtigungen oder zur zeitgesteuerten Ablaufsteuerung von Tokens.
+In Elixir gibt es neben `HTTPoison` verschiedene Pakete wie `Tesla` oder `Hackney`, die ebenfalls HTTP-Requests ermöglichen. Die `HTTPoison`-Bibliothek basiert auf `Hackney`. Die Wahl hängt vom spezifischen Anwendungsfall ab.
 
-Allerdings ist die Basic Authentication noch immer in vielen Situationen sinnvoll - insbesondere für einfachere Aufgaben oder beim Umgang mit älteren Systemen.
-
-## Siehe Auch
-
-Für weitere Informationen und alternative Implementierungsdetails, siehe die folgenden Ressourcen:
-
-- [Elixir HTTPoison GitHub Repo](https://github.com/edgurgel/httpoison)
-- [HTTParty GitHub Repo](https://github.com/jnunemaker/httparty)
+## See Also
+- [HTTPoison Git Repository](https://github.com/edgurgel/httpoison)
+- [Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [MDN Documentation on HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

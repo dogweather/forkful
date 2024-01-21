@@ -1,6 +1,7 @@
 ---
 title:                "문자열 보간하기"
-html_title:           "Java: 문자열 보간하기"
+date:                  2024-01-20T17:50:32.799381-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "문자열 보간하기"
 programming_language: "C++"
 category:             "C++"
@@ -10,47 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜 사용하는가?
+## What & Why? (무엇이며, 왜 사용하는가?)
+문자열 보간은 변수와 상수를 문자열 안에 통합하는 과정입니다. 이를 사용해 동적인 문자열을 쉽고 간결하게 생성할 수 있습니다.
 
-문자열 내삽(Interpolating a string)은 변수 또는 표현식을 쉽게 문자열에 포함시키는 기법입니다. 이는 코드의 가독성을 높이고 문법적인 오류를 최소화하기 위해 프로그래머들이 자주 사용합니다.
-
-## 어떻게 사용하는가:
-
-C++에서 문자열 내삽은 아래와 같이 간단하게 이루어질 수 있습니다.
+## How to (방법)
+C++에서는 `std::stringstream`, `std::format` (C++20부터 사용 가능) 등을 사용하여 문자열 보간을 할 수 있습니다. 여기 두 가지 예시가 있습니다:
 
 ```C++
 #include <iostream>
+#include <sstream>
 #include <string>
+#include <format>
 
 int main() {
-    std::string name = "John";
-    int age = 20;
+    // Using stringstream
+    std::stringstream ss;
+    int age = 25;
+    ss << "나이: " << age << "세";
+    std::cout << ss.str() << std::endl; // Output: 나이: 25세
     
-    std::cout << "Hello, my name is " << name << " and I am " << age << " years old.\n";
-    
+    // Using std::format (C++20)
+    std::string name = "홍길동";
+    std::cout << std::format("이름: {}", name) << std::endl; // Output: 이름: 홍길동
+
     return 0;
 }
 ```
 
-코드를 실행하면 출력되는 결과는 다음과 같습니다:
+## Deep Dive (심층 분석)
+문자열 보간은 오래 전부터 다양한 프로그래밍 언어에서 사용되어 왔습니다. C++에서는 오랫동안 `sprintf`와 같은 C 스타일의 함수를 사용했습니다. 하지만 C++11에서 `std::stringstream`이 등장했으며, 더 최근 C++20에서는 `std::format`을 도입하여 더 쉬운 문자열 보간을 가능하게 했습니다.
 
-```C++
-Hello, my name is John and I am 20 years old.
-```
+`std::format`은 Python의 `str.format()`과 유사한 문법을 제공합니다. 이는 타입 안전성과 가독성을 크게 개선합니다. 다만 이 기능을 사용하려면 C++20 이상을 지원하는 컴파일러가 필요합니다.
 
-## 깊은 탐구:
+`std::stringstream`은 보다 오래된 방법이지만, 모든 현대 C++ 컴파일러에서 사용할 수 있습니다. 그리고 문자열을 조립하는 방식에서 유연성을 제공합니다.
 
-1. 과거의 C++에서는 문자열 내삽을 하는 방법이 제한적이었으며, 대부분의 경우 문자열 연결(string concatenation) 또는 sprintf 함수를 사용해야 했습니다. 
-
-2. 하지만 현재의 C++에서는 더 효율적인 방법들이 제공됩니다. 그 중 하나가 위에서 보여준 `<<` 연산자를 이용하는 방법입니다.
-
-3. C++에서 문자열 내삽을 구현하는 또 다른 방법은 `std::ostringstream` 라이브러리를 사용하는 것입니다. 이 방법을 사용하면 변수를 포함한 문자열을 완벽하게 제어할 수 있습니다.
-
-## 참고자료:
-
-다음은 문자열 내삽에 관련된 추가 정보와 자료를 확인 할 수 있는 사이트 및 문서입니다:
-
-1. [C++ Strings - w3schools](https://www.w3schools.com/cpp/cpp_strings.asp)
-2. [C++ String Interpolation - stackoverflow](https://stackoverflow.com/questions/2342162/stdstring-formatting-like-sprintf)
-3. [C++ String Manipulation - cppreference](https://en.cppreference.com/w/cpp/string)
-4. [C++ User-Defined Literals - cplusplus.com](http://www.cplusplus.com/doc/tutorial/constants/)
+## See Also (추가 정보)
+- [cppreference.com - std::format](https://en.cppreference.com/w/cpp/utility/format)
+- [cppreference.com - std::stringstream](https://en.cppreference.com/w/cpp/io/basic_stringstream)
+- [Wikipedia - String interpolation](https://en.wikipedia.org/wiki/String_interpolation)

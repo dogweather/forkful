@@ -1,7 +1,8 @@
 ---
-title:                "Sending en http-forespørsel med grunnleggende autentisering"
-html_title:           "Javascript: Sending en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sending en http-forespørsel med grunnleggende autentisering"
+title:                "Å sende en HTTP-forespørsel med grunnleggende autentisering"
+date:                  2024-01-20T18:02:07.876945-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,30 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Sending av HTTP-forespørsler med grunnleggende autentisering er en vanlig praksis for programmere. Dette er et måte å validere brukeren sin identitet på og sikre at bare autoriserte personer har tilgang til visse tjenester eller ressurser. Det er vanligvis brukt i API-kall eller nettleserbaserte applikasjoner.
+# Hva og hvorfor?
 
-# Hvordan:
-For å sende en HTTP-forespørsel med grunnleggende autentisering i Javascript, må du først opprette en instans av XMLHttpRequest-objektet. Deretter må du sette metoden til "GET" eller "POST", avhengig av hva slags forespørsel du vil sende. Så må du sette URLen til hvor forespørselen skal sendes, og legge til etautentiseringsheader ved hjelp av "setRequestHeader" -metoden med "Authorization" som parameter. Til slutt må du sende forespørselen ved hjelp av "send" -metoden. En implementasjon kan se slik ut:
+Å sende en HTTP-forespørsel med grunnleggende autentisering betyr at du inkluderer brukernavn og passord i forespørselshodet for å få tilgang til en ressurs. Programmerere bruker dette for sikker tilgang og for å identifisere brukere.
+
+# Slik gjør du:
 
 ```Javascript
-var xhr = new XMLHttpRequest();
+const axios = require('axios');
+const base64 = require('base-64');
 
-xhr.open("GET", "https://example.com/resource"); 
-xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
-xhr.send();
+let username = 'dinbruker';
+let password = 'dittPassord';
+let basicAuth = 'Basic ' + base64.encode(username + ':' + password);
+
+axios.get('http://eksempel.no/data', { headers: { 'Authorization': basicAuth } })
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.error('Autentisering feilet: ', error);
+  });
 ```
 
-##Forventet Output:
-Dette avhenger av hva som er forespurt, men hvis forespørselen er vellykket, vil responsen være en statuskode 200 og eventuelle data som er returnert av serveren.
+Eksempelutdata:
 
-#Dypdykk:
-HTTP-grunnleggende autentisering er en enkel måte å validere brukere på, men det er viktig å merke seg at brukernavn og passord som sendes i klartekst, kan potensielt bli fanget opp av uautoriserte personer. Derfor er det mer sikre autentiseringsmetoder tilgjengelig som OAuth og JWT. I tillegg er den nåværende versjonen av Javascript, ES6, introdusert Fetch API som tilbyr en mer moderne og enklere tilnærming til å sende HTTP-forespørsler.
+```
+{ "id": 1, "navn": "Ola Nordmann", "data": "Hemmelig informasjon" }
+```
 
-#Se også:
-- MDN Web Docs: Basic authentication over HTTP
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme
-- Google Developers: Working with HTTP basic authentication in Javascript
-https://developers.google.com/web/updates/2017/01/basic-auth-and-forms 
-- W3Schools: XMLHttpRequest Set Request Header Method
-https://www.w3schools.com/xml/ajax_xmlhttprequest_setrequestheader.asp
+# Dypdykk
+
+I gamle dager var grunnleggende autentisering over HTTP standard for å beskytte tilgangen. Men det er ikke så sikkert siden det er lett å avkode Base64-koding. I dag er alternativer som OAuth 2.0 og JWT (JSON Web Tokens) ofte brukt fordi de tilbyr større sikkerhet. Med grunnleggende autentisering, må du alltid bruke HTTPS for å kryptere brukerdata over nettverket.
+
+Grunnleggende autentisering er enkel å implementere og forstå. Det krever bare at serveren sjekker 'Authorization'-hodet i HTTP-forespørselen. Men pass på: Lagre aldri passord i klar tekst i din kode. Bruk miljøvariabler eller en hemmelighetsbehandlingstjeneste for å holde din autentiseringsinfo sikker.
+
+# Se også:
+
+- MDN Web Docs om grunnleggende autentisering: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme
+- Axios GitHub repo for HTTP-forespørsler: https://github.com/axios/axios
+- Sikkerhetspraksis for autentisering: https://owasp.org/www-project-top-ten/

@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http"
-html_title:           "Arduino: Wysyłanie żądania http"
-simple_title:         "Wysyłanie żądania http"
+title:                "Wysyłanie żądania HTTP"
+date:                  2024-01-20T18:00:26.799250-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie żądania HTTP"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,46 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Wysyłanie żądań HTTP w Rust 
+## What & Why? (Co i dlaczego?)
+Wysyłanie żądania HTTP to po prostu pytanie, które komputer zadaje serwerowi w sieci. Programiści robią to, by pobrać dane, wysłać informacje lub komunikować się z usługami webowymi.
 
-## Co i dlaczego?
+## How to: (Jak to zrobić:)
+Aby wysłać żądanie HTTP w Rust, możesz użyć popularnej biblioteki `reqwest`. Oto prosty przykład:
 
-Wysyłanie żądań HTTP to proste jak bułka z masłem, polega na nawiązaniu połączenia z serwerem i wysłaniu do niego wiadomości. Programiści robią to na co dzień, aby komunikować się z usługami internetowymi.
-
-## Jak to zrobić:
-
-W Rust, wysyłanie żądań HTTP jest proste dzięki bibliotece `reqwest`. Zaczniemy od dodania zależności do naszego `Cargo.toml`:
 ```Rust
-[dependencies]
-reqwest = "0.11"
-tokio = { version = "1", features = ["full"] }
-```
+use reqwest;
 
-Następnie napiszmy prosty kod, który wysyła żądanie GET:
-```Rust
 #[tokio::main]
 async fn main() -> Result<(), reqwest::Error> {
-    let response = reqwest::get("https://httpbin.org/ip")
-        .await?
-        .text()
-        .await?;
-    println!("response: {}", response);
+    let response = reqwest::get("https://api.github.com/repos/rust-lang/rust").await?;
+    
+    println!("Status: {}", response.status());
+    println!("Headers:\n{:#?}", response.headers());
+    
+    let body = response.text().await?;
+    println!("Body:\n{}", body);
+    
     Ok(())
 }
 ```
 
-Gdy uruchomisz ten program, powinieneś zobaczyć respons z Serwera.
+Wynik działania:
+```
+Status: 200 OK
+Headers:
+...
+Body:
+{ ... }
+```
 
-## Głębsze spojrzenie
+## Deep Dive (W głąb tematu):
+Pierwsze kroki wysyłania żądań HTTP w Rust mogły używać `hyper`, niskopoziomowej biblioteki. `Reqwest` to zbudowana na `hyper` biblioteka zapewniająca wyższy poziom abstrakcji. Istnieją alternatywy takie jak `surf` w ekosystemie async, ale `reqwest` często jest wybierany za bogactwo funkcji i łatwość użycia. Aby skorzystać z biblioteki `reqwest`, musisz także użyć `tokio`, asynchronicznego środowiska uruchomieniowego, ponieważ `reqwest` jest asynchroniczny.
 
-Wysłanie żądania HTTP jest jednym z podstawowych zadań w pracy każdego programisty. Stosowane jest do komunikacji z serwerem, a także do wymiany danych między różnymi usługami internetowymi.
-
-W przeszłości, do wysyłania takich zapytań najczęściej używano języka `bash` i narzędzia `curl`. Dziś, z pomocą nowoczesnych języków programowania (takich jak Rust) i ich pakietów, jesteśmy w stanie osiągać to samo w bardziej czytelny i efektywny sposób.
-
-Warto też pamiętać, że używamy biblioteki `reqwest` do wykonania żądania HTTP, ale Rust posiada wiele alternatywnych bibliotek do tego celu, takich jak `hyper` czy `surfer`.
-
-## Zobacz także:
-
-1. [Dokumentacja reqwest](https://docs.rs/reqwest/0.11.3/reqwest/)
-2. [Dokumentacja tokio](https://docs.rs/tokio/1.5.0/tokio/)
-3. [Dokumentacja async Rust](https://rust-lang.github.io/async-book/01_getting_started/04_async_await_primer.html)
+## See Also (Zobacz też):
+- [Dokumentacja `reqwest`](https://docs.rs/reqwest/)
+- [Dokumentacja `hyper`](https://docs.rs/hyper/)
+- [The Rust Async Book](https://rust-lang.github.io/async-book/)
+- [Dokumentacja `surf`](https://docs.rs/surf/)

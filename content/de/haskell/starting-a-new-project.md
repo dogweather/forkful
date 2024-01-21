@@ -1,7 +1,8 @@
 ---
-title:                "Ein neues Projekt starten"
-html_title:           "C#: Ein neues Projekt starten"
-simple_title:         "Ein neues Projekt starten"
+title:                "Einen neuen Projekt starten"
+date:                  2024-01-20T18:03:45.041269-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Einen neuen Projekt starten"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -10,51 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Ein neues Haskell-Projekt starten: Eine Anleitung
+## Was & Warum?
+Ein neues Projekt zu starten bedeutet, den Grundstein für eine frische Code-Basis zu legen. Programmierer tun dies, um Ideen in funktionale Software umzusetzen und Probleme mit maßgeschneiderten Lösungen zu bewältigen.
 
-## Was und Warum?
-
-Ein neues Projekt zu starten bedeutet, eine leere Leinwand zu haben, auf der Sie Ihren Code schaffen. Programmierer machen das, um ihre Ideen in die Realität umzusetzen und Lösungen für Probleme zu entwickeln.
-
-## Wie es Funktioniert:
-
-In Haskell starten wir ein neues Projekt normalerweise mithilfe von Stack. Hier ist ein Beispiel:
+## How to:
+Hier ist ein minimalistisches Beispiel, um ein Haskell-Projekt mit Stack zu starten:
 
 ```Haskell
--- Installation Stack
-$ curl -sSL https://get.haskellstack.org/ | sh
+-- Installiere Stack, falls noch nicht geschehen
+-- $ curl -sSL https://get.haskellstack.org/ | sh
 
--- Neues Projekt erstellen
-$ stack new myproject
+-- Initialisiere ein neues Projekt namens "meinprojekt"
+$ stack new meinprojekt simple
+
+-- Wechsle ins Projektverzeichnis
+$ cd meinprojekt
+
+-- Baue das Projekt
+$ stack build
+
+-- Führe das Projekt aus
+$ stack exec meinprojekt-exe
 ```
-Dadurch entsteht eine neue Projektstruktur, und Sie können Ihren Code in der `Main.hs`-Datei in `src` schreiben.
+
+Das `simple` Template erstellt ein grundlegendes Haskell-Projekt mit einem `Main.hs` File. Hier ist dessen Inhalt:
 
 ```Haskell
--- src/Main.hs
-
 module Main where
 
 main :: IO ()
-main = putStrLn "Hallo, Welt!"
+main = putStrLn "Hallo Welt!"
 ```
 
-Führen Sie dann Ihren Code mit Stack aus:
+Nach dem Build-Prozess zeigt die Ausführung des Programms:
 
 ```Haskell
-$ stack build
-$ stack exec myproject
-Hallo, Welt!
+Hallo Welt!
 ```
 
-## Tiefere Einblicke
+## Deep Dive:
+Das Haskell-Tool Stack (seit 2015) ist stark in der Haskell-Community verankert und eine Alternative zu Cabal, dem älteren Build-Tool. Stack bietet reproduzierbare Builds, vereinfachte Paketverwaltung und Integration mit dem Stackage Server, der geprüfte Paket-Sets bereitstellt. Im Gegensatz dazu hat Cabal oft mit "dependency hell" Problemen zu kämpfen gehabt, was Stack durch seine Herangehensweise vermeidet. Stack's Template-System unterstützt Anfänger und Experten gleichermaßen, indem es die Erstellung standardisierter und komplexer Projektstrukturen ermöglicht.
 
-Historisch gesehen gibt es in Haskell verschiedene Wege, neue Projekte zu starten, wie z.B. Cabal oder reines GHC. Stack ist jedoch aufgrund seiner Einfachheit und Zuverlässigkeit eine populäre Wahl geworden.
-
-Abgesehen von Stack bietet auch Cabal eine ausgezeichnete Möglichkeit, neue Haskell-Projekte zu starten, insbesondere wenn Sie eine Feinkontrolle über die verwendeten Bibliotheken und GHC-Versionen benötigen.
-
-Bei der Implementierung eines neuen Projekts in Haskell ist es wichtig, auf Modulstruktur und Programmarchitektur zu achten. Haskell ist eine sehr ausdrucksstarke Sprache, und es ist leicht, sich in komplexen Abstraktionen zu verlieren.
-
-## Siehe Auch
-
-- [Haskell Stack Documentation](https://docs.haskellstack.org/en/stable/README)
-- [Introduction to Cabal](https://www.haskell.org/cabal/users-guide/intro.html)
+## See Also:
+- Stack Dokumentation: https://docs.haskellstack.org/en/stable/README/
+- Haskell "Getting Started" Guide: https://www.haskell.org/downloads/
+- Stackage Server für Paket-Dokumentation und Versionen: https://www.stackage.org/
+- Haskell Paket-Bibliothek (Hackage): http://hackage.haskell.org/

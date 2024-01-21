@@ -1,6 +1,7 @@
 ---
 title:                "HTTP 요청 보내기"
-html_title:           "Clojure: HTTP 요청 보내기"
+date:                  2024-01-20T17:59:49.611627-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,38 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+HTTP 요청을 보내는 것은 웹 서버에 정보를 요청하거나 데이터를 전송하는 방법입니다. 프로그래머들은 데이터를 교환하고 API를 사용하여 다른 서비스와 상호작용하기 위해 이 방식을 사용합니다.
 
-HTTP 요청을 보내는 것은, 클라이언트가 서버에 정보를 요청하거나 송신하는 방법입니다. 프로그래머는 이를 통해 웹 기반 리소스를 추출하고 사용자와 상호 작용합니다.
-
-## 사용 방법:
-
-Gleam에서는 `gleam/httpc` 라이브러리를 통해 HTTP 요청을 보낼 수 있습니다. 아래 코드는 GET 요청의 예시입니다:
-
-```Gleam
+## How to: (어떻게 하나요?)
+```gleam
+import gleam/http
 import gleam/httpc
-import gleam/http.{Uri}
+import gleam/should
 
-fn request_example() {
-  let uri = Uri.parse("http://example.com/")
-  case httpc.get(uri) {
-    Ok(response) -> io.println(response.status)
-    Error(e) -> io.println(e)
-  }
+pub fn request_example() {
+  // HTTP GET 요청을 보내고 결과 처리하기
+  let response = httpc.send(http.Request(method: Get, url: "http://example.com"))
+  should.equal(response.status, 200)
+  should.equal(response.body, "Hello, Gleam!")
 }
+
 ```
-위 코드 실행 시, '200' (성공 응답) 또는 에러 메시지가 출력됩니다.
 
-## 더 깊게 알아보기
+예상 출력:
+```
+Ok(Response(200, "Hello, Gleam!"))
+```
 
-HTTP 요청에는 과거와 현재, 여러 가지 방법이 있습니다. 과거에는 주로 `XMLHttpRequest`를 사용했지만, 현재는 더 강력한 `Fetch API`가 일반적입니다. 
+## Deep Dive (깊은 탐색)
+HTTP 요청을 보낼 때는 간단한 일부터 복잡한 작업까지 다양한 목적으로 사용됩니다. 처음에는 HTML 페이지나 파일을 요청하기 위해 만들어진 매커니즘이었지만, 지금은 API 통신, 데이터 전송 등에 폭넓게 사용됩니다. Gleam에서는 `gleam/http` 라이브러리를 사용해서 HTTP 요청을 처리할 수 있습니다. 다른 언어와 마찬가지로, 요청 메소드, 헤더, 본문 등을 설정하며 사용할 수 있습니다. 또 다른 대안으로는 `hyper`, `reqwest` 등의 Rust 기반 라이브러리를 FFI (Foreign Function Interface)를 통해 사용할 수도 있습니다.
 
-HTTP 요청의 중요한 기능 중 하나는 서버에서 동적 콘텐츠를 가져오는 것입니다. 이를 통해 사용자가 요청한 맞춤 정보가 실시간으로 표시됩니다.
-
-다만, Gleam에서는 타입 안전성을 제공하므로, 이는 다른 언어에 비해 사용자에게 더 큰 이점을 제공합니다.
-
-## 참고자료
-
-1. Gleam 공식 문서: https://gleam.run/docs/
-2. HTTP 클라이언트 라이브러리 문서: https://github.com/gleam-lang/http
-3. Fetch API 관련 MDN 문서: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+## See Also (더 보기)
+- RESTful API 디자인 가이드: [RESTful API Design](https://restfulapi.net/)

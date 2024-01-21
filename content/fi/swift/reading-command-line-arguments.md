@@ -1,7 +1,8 @@
 ---
-title:                "Komentorivin argumenttien lukeminen"
-html_title:           "Bash: Komentorivin argumenttien lukeminen"
-simple_title:         "Komentorivin argumenttien lukeminen"
+title:                "Komennoriviparametrien lukeminen"
+date:                  2024-01-20T17:56:54.670264-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Komennoriviparametrien lukeminen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,49 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miten Luet Komentorivin Argumentteja Swiftissä?
+## What & Why? (Mitä & Miksi?)
+Komennon rivin argumentit ovat ohjelmalle syötettyjä tietoja, joita käsitellään sen käynnistyessä. Ohjelmoijat käyttävät niitä mukauttaakseen ohjelman käyttäytymistä ilman koodin muuttamista.
 
-## Mikä & Miksi?
-Lukeminen komentorivin argumentit tarkoittaa sisääntulevien tietojen käsittelyä, kun ohjelmisto suoritetaan komentorivin kautta. Ohjelmoijat tekevät tämän mahdollistaakseen käyttäjän määrittelemään ohjelman toiminnallisuuden suoritushetkellä.
-
-## Näin se toimii:
-Tässä on Swift-koodin esimerkki ja siitä saatu näyte tuloste.
+## How to: (Miten:)
+Swiftissä komentorivin argumentit luetaan `CommandLine`-luokan avulla. Tässä yksinkertainen esimerkki:
 
 ```Swift
-// Command LineArguments.swift
-import Foundation
+// Pääohjelma
 
-let arguments = CommandLine.arguments
-print("You've entered \(arguments.count) arguments:")
-for arg in arguments {
-    print(arg)
+// Tulosta kaikki komentorivin argumentit
+for argument in CommandLine.arguments {
+    print(argument)
+}
+
+// Käsittele argumentit
+if CommandLine.arguments.count > 1 {
+    let argument = CommandLine.arguments[1]
+    print("Ensimmäinen argumentti on: \(argument)")
+} else {
+    print("Argumentteja ei annettu.")
 }
 ```
 
-Suorita skripti komentorivillä:
-
+Kun suoritat yllä olevan ohjelman, saat esimerkiksi seuraavaa tulostetta:
 ```
-$ swift CommandLineArguments.swift arg1 arg2 arg3
-```
-
-Tuloste:
-
-```
-You've entered 4 arguments:
-CommandLineArguments.swift
-arg1
-arg2
-arg3
+$ swift run MyProgram param1 param2
+./MyProgram
+param1
+param2
+Ensimmäinen argumentti on: param1
 ```
 
-## Tarkempaa Tietoa
-Komentorivin argumentit on ollut osa ohjelmointikieliä jo pitkään. Ne antavat mahdollisuuden määritellä ohjelman toiminta dynaamisesti suorituksen yhteydessä. Swiftissä `CommandLine.arguments` on taulukko, joka sisältää kaikki komentorivin argumentit. 
+## Deep Dive (Sukellus syvemmälle)
+Komentorivin argumentit ovat peruja UNIX-järjestelmien ajoilta ja ovat edelleen pätevä tapa antaa ohjelmalle tietoja. Swiftissä `CommandLine` on perinteinen tapa argumenttien käsittelyyn; alternatiivina voidaan käyttää esimerkiksi Apple'n ArgumentParser-kirjastoa, joka tarjoaa kehittyneempää argumenttien käsittelyä. Käytännössä, `CommandLine`-luokka tallentaa argumentit `arguments`-taulukkoon, jonka indeksi alkaa nollasta (ohjelman polku) ja jatkuu annettujen argumenttien mukaisesti.
 
-Vaihtoehtoisesti voit käyttää `getopt`-funktiota (peräisin C-kielestä) tarkempaan komentorivin argumenttien käsittelyyn. Se antaa enemmän joustavuutta ja kontrollia, mutta vaatii enemmän koodia.
-
-Käytön yksinkertaisuuden ja äärimmäisen suorituskyvyn vuoksi valtaosa Swift-ohjelmoijista suosii `CommandLine.arguments`-lähestymistapaa.
-
-## Lisäluettavaa
-1. Apple Developer Documentation: [Command Line Arguments](https://developer.apple.com/documentation/swift/commandline)
-2. Medium: [Handling command line arguments in Swift](https://medium.com/@mimicatcodes/handling-command-line-arguments-in-swift-3dd502c821d8)
-3. Stack Overflow: [How to read command line arguments in Swift?](https://stackoverflow.com/questions/24035515/how-to-read-command-line-arguments-in-swift)
+## See Also (Katso myös)
+- Swift.org:n dokumentaatio komentorivin argumenteista: [Swift.org Documentation](https://www.swift.org)
+- GitHub-repo Swift Argument Parserille: [Swift Argument Parser GitHub](https://github.com/apple/swift-argument-parser)

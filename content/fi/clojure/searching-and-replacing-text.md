@@ -1,6 +1,7 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
+date:                  2024-01-20T17:57:56.274103-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,35 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Tekstin hakeminen ja korvaaminen on ohjelmoinnillinen toimenpide, jossa etsitään ja vaihdetaan merkkijonon osia toisiin. Ohjelmoijat tekevät tämän tiedon muotoilun helpottamiseksi ja tehokkuuden parantamiseksi.
+## What & Why?
+Tekstin etsiminen ja korvaaminen on prosessi, jossa löydetään tietyt merkkijonot ja korvataan ne toisilla. Ohjelmoijat käyttävät tätä tekstin päivittämiseen, virheiden korjaamiseen tai datan muotoiluun.
 
-## Miten?
-Clojuressa voimme käyttää `clojure.string/replace` funktiota tekstin korvaamiseen. Katso esimerkki alla:
+## How to:
+Clojurissa käytetään `clojure.string/replace` funktiota tekstinkorjaukseen. Tässä pari esimerkkiä:
 
-```Clojure
+```clojure
 (require '[clojure.string :as str])
 
-(def original-text "Hei, olen ohjelmoija!")
-(def modified-text (str/replace original-text "olen" "AI"))
+; Yksinkertainen korvaus
+(str/replace "Moikka maailma" "maailma" "Clojure")
+; Output: "Moikka Clojure"
 
-(println modified-text)
+; Säännöllisiin lausekkeisiin perustuva korvaus
+(str/replace "Etsi numeroita 123 tästä" #"\d+" "NUMERO")
+; Output: "Etsi numeroita NUMERO tästä"
 ```
 
-Kun suoritat koodin, saat alla olevan tulostuksen:
+## Deep Dive
+Tekstin etsiminen ja korvaaminen on vanha käytäntö, ulottuen editorien kuten ed ja sed varhaisiin päiviin Unix-järjestelmissä. Clojure, moderni Lispin sukupolvi, käsittelee tekstin korvauksia funktionaalisesti.
 
-```Clojure
-"Hei, AI ohjelmoija!"
+Vaihtoehtoina Clojurelle, voi käyttää toisaalta tekstieditoreita tai komentorivin työkaluja kuten `sed` ja `awk`. Clojure eroaa niistä immutaabilisuutensa ja laiskan evaluoinnin avulla, mikä mahdollistaa tehokkaan datankäsittelyn.
+
+Yksityiskohdista, `clojure.string/replace` voi ottaa myötä funktiot, jotka määrittävät korvauslogiikan dynaamisemmin. Esimerkiksi:
+
+```clojure
+(str/replace "Joku teksti jossa on numeroita 123 ja 456"
+             #"\d+"
+             (fn [match] (str "<<" match ">>")))
+; Output: "Joku teksti jossa on numeroita <<123>> ja <<456>>"
 ```
 
-## Syvempi tieto
-Historiallisesti tekstinkäsittelyn työkalut kuten SED ja AWK sisälsivät jo tekstinkorvausominaisuudet. Niiden rajoituksista johtuen syntyi uusia, monipuolisempia kirjastoja kuten Perl ja nyt Clojure.
-
-Clojuressa on vaihtoehtoja tekstinkorvauksen suorittamiseen, kuten käyttämällä regular expression (regex). `str/replace` funktio mahdollistaa regexin käytön, mikä tekee siitä erittäin joustavan työkalun.
-
-`str/replace`-toteutuksen yksityiskohdat paljastavat, että funktio käyttää Java String-luokan `replace`-metodia. Tämä tekee toiminnosta erittäin suorituskykyisen, koska se hyödyntää suoraan Javan vakioita.
-
-## Katso myös
-1. Clojure officiaalinen dokumentaatio: https://clojure.org/guides/getting_started
-2. Clojure string manipuloinnin opas: https://clojure.org/api/cheatsheet
-3. Regex in Clojure: https://www.regular-expressions.info/clojure.html
+## See Also
+- [ClojureDocs `clojure.string/replace`](https://clojuredocs.org/clojure.string/replace)
+- [Regular expressions in Clojure](https://www.braveclojure.com/functional-programming/#Regular_Expressions)

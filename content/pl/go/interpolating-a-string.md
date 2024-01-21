@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:51:09.288179-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,40 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego?
-
-Interpolacja ciągów to proces, który pozwala wstawiać zmienne lub wyrażenia bezpośrednio do ciągów znaków. Programiści używają tego, aby efektywnie tworzyć i manipulować ciągami.
+## Co i dlaczego?
+Interpolacja ciągów znaków pozwala na wstawienie wartości zmiennych bezpośrednio wewnątrz stringów. Programiści używają tej techniki, by dynamicznie budować tekst i wzory, łącząc sztywny tekst z zmiennymi danymi.
 
 ## Jak to zrobić:
-
-Interpolacja ciągów w języku Go można zrealizować za pomocą funkcji `fmt.Sprintf`. Oto przykład:
-
-```Go
+```go
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	name := "Jan Kowalski"
-	message := fmt.Sprintf("Cześć, %s!", name)
+	// Podstawowa interpolacja przy użyciu Sprintf
+	name := "Anna"
+	age := 28
+	message := fmt.Sprintf("Cześć, mam na imię %s i mam %d lat.", name, age)
 	fmt.Println(message)
+	
+	// Interpolacja z użyciem złożonych struktur
+	type User struct {
+		Name string
+		Age  int
+	}
+	user := User{"Tomasz", 35}
+	userInfo := fmt.Sprintf("Użytkownik %s ma %d lat.", user.Name, user.Age)
+	fmt.Println(userInfo)
 }
 ```
 
-Po uruchomieniu tego kodu, otrzymamy następujący wynik:
-```Go
-Cześć, Jan Kowalski!
+Sample output:
+```
+Cześć, mam na imię Anna i mam 28 lat.
+Użytkownik Tomasz ma 35 lat.
 ```
 
-## Pogłębiona analiza:
+## Głębiej w temat
+Interpolacja ciągów znaków w języku Go jest przeważnie realizowana za pomocą funkcji `fmt.Sprintf`. Mechanizm ten ma swoje korzenie w językach takich jak C, które oferowały formatowanie tekstu z użyciem funkcji `sprintf`. W Go, dzięki formatowaniu z użyciem werb (takich jak `%s` dla stringów i `%d` dla liczb), możemy dokładnie określić jak dane powinny być wypisane.
 
-1. **Kontekst historyczny**: Interpolacja ciągów jest featurem dostępnym w wielu językach programowania, takich jak Python, Ruby, czy JavaScript. W języku Go jej użycie jest dość proste i wydajne.
+Alternatywne metody interpolacji to sklejanie ciągów poprzez operator `+` lub stosowanie buforów i builderów w ciężkich operacjach tekstowych. W wersjach Go przed 1.10, budowanie długich ciągów za pomocą `+` było mniej wydajne niż teraz, ponieważ każde połączenie tworzyło nowy ciąg znaków.
 
-2. **Alternatywne metody**: Inną metodą jest użycie konkatenacji ciągów znaków, ale to jest mniej wydajne, szczególnie dla dużych ciągów.
+Szczegół implementacyjny w Go to fakt, że `fmt.Sprintf` korzysta z odzwierciedlenia (reflection), co może wpłynąć na wydajność. Dlatego programiści czasem decydują się na inne metody w krytycznych dla wydajności przypadkach.
 
-3. **Szczegóły implementacji**: W Go, funkcja `Sprintf` formatuje i zwraca ciąg bez wyświetlania go na ekranie. To pozwala nam przechować sformatowany ciąg w zmiennej do dalszego użycia.
-
-## Zobacz również:
-
-- Dokumentacja języka Go na temat pakietu fmt: [https://golang.org/pkg/fmt](https://golang.org/pkg/fmt)
-- Dokumentacja języka Go na temat funkcji fmt.Sprintf: [https://golang.org/pkg/fmt/#Sprintf](https://golang.org/pkg/fmt/#Sprintf)
+## Zobacz również
+- Dokumentacja `fmt` pakietu: https://golang.org/pkg/fmt/
+- Go by Example - String Formatting: https://gobyexample.com/string-formatting
+- The Go Blog - Strings: https://blog.golang.org/strings

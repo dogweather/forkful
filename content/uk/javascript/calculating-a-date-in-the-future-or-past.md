@@ -1,7 +1,8 @@
 ---
-title:                "Розрахунок дати в майбутньому або минулому"
-html_title:           "Javascript: Розрахунок дати в майбутньому або минулому"
-simple_title:         "Розрахунок дати в майбутньому або минулому"
+title:                "Обчислення дати у майбутньому або минулому"
+date:                  2024-01-20T17:31:25.555221-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Обчислення дати у майбутньому або минулому"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,22 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Обчислення дат в майбутньому або минулому - це задача, яка включає в себе додавання або віднімання днів, місяців або років від конкретної дати. Це корисно для програмістів при створенні календарів, застосунків для нагадування, історичних моделей даних тощо.
+## Що і Навіщо?
 
-## Як це зробити:
+Обчислення дат у майбутньому чи минулому - це спосіб визначення дат до або після заданої точки в часі. Програмісти використовують це для розкладів, таймерів, термінів дії чи будь-чого, де важливий час.
+
+## Як робити:
+
 ```Javascript
-let now = new Date();
-let future = new Date();
-future.setDate(now.getDate() + 10);
-console.log(`Сьогодні: ${now.toDateString()}`);
-console.log(`Через 10 днів: ${future.toDateString()}`);
+const today = new Date();
+const daysToAdd = 5;
+
+// Додавання днів
+const futureDate = new Date(today);
+futureDate.setDate(futureDate.getDate() + daysToAdd);
+
+console.log(`Сьогодні: ${today.toDateString()}`);
+console.log(`Дата в майбутньому: ${futureDate.toDateString()}`);
+
+// Віднімання днів
+const daysToSubtract = 3;
+const pastDate = new Date(today);
+pastDate.setDate(pastDate.getDate() - daysToSubtract);
+
+console.log(`Дата в минулому: ${pastDate.toDateString()}`);
 ```
 
-## Поглиблений огляд
-Історично, обчислення дати у майбутньому або минулому було складною задачею, враховуючи високосні роки, різне кількість днів у місяцях і т.д. JavaScript забезпечує вбудовані функції для легкого руху між датами. Альтернативами для цього можуть бути бібліотеки, такі як Moment.js, які пропонують більш широкий функціонал та гнучкість.
-Деталі реалізації: "new Date()" створює новий об'єкт дати із поточного моменту, а "setDate()" встановлює день місяця для зазначеної дати відповідно до місцевого часу. "getDate()" отримує день місяця для вказаної дати відповідно до місцевого чasу.
+Сампл виводу:
 
-## Див. також
-1. MDN Web Docs [дата](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date)
-1. Бібліотека JavaScript для роботи з датами [Moment.js](https://momentjs.com/)
+```
+Сьогодні: Wed Apr 05 2023
+Дата в майбутньому: Mon Apr 10 2023
+Дата в минулому: Sun Apr 02 2023
+```
+
+## Детальніше:
+
+Клас `Date` в JavaScript існує з початкових версій мови і є основним засобом для роботи з датами і часом. Альтернативи, як `moment.js`, колись були популярніши за умовчання в JavaScript, але тепер, з поліпшенням базової мови, часто достатньо стандартного `Date`. Деталі, як часові зони та перехід на літній/зимовий час, можуть ускладнити роботу з датами. Так звані ISO строки (`toISOString()`) і `Date.UTC()` можуть бути корисними для работы в универсальному часовому форматі (UTC).
+
+## Також дивіться:
+
+- [MDN Web Docs: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) - Офіційна документація класу `Date`.
+- [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) - Стандарт оформлення дат та часу, корисний для міжнародних застосунків.
+- [You Don't Need Moment.js](https://you-dont-need.github.io/You-Dont-Need-Momentjs/) - Поради як обходитися без додаткових бібліотек для роботи з датами.

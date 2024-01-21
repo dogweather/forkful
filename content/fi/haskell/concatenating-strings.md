@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
-html_title:           "Gleam: Merkkijonojen yhdistäminen"
+date:                  2024-01-20T17:35:12.789124-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,36 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? | Mikä & Miksi?
+Yhdistelemme merkkijonoja (eli teemme konkatenointia) liittääksemme tekstinpätkiä yhteen. Se on peruskauraa kaikessa ohjelmoinnissa: loihdit viestejä, teet tulosteista luettavia tai kasaat dataa käsittelyä varten.
 
-Merkkijonojen yhdistäminen tarkoittaa useiden erillisten merkkijonojen liittämistä yhteen loogisen kokonaisuuden muodostamiseksi. Ohjelmoijat tekevät näin tehdäkseen ohjelmakoodistaan entistä yksinkertaisemman ja informatiivisemman.
-
-## Miten se tehdään:
-
-Yhdistämme merkkijonot Haskellissa (++) operaattorilla. Katsotaan esimerkki:
+## How to: | Näin teet:
+Haskellissa on suoraan sanottuna nautinnollisen puhdasta koodata. Katsoppas näitä esimerkkejä:
 
 ```Haskell
-let sana1 = "Hei"
-let sana2 = ", maailma!"
-let tervehdys = sana1 ++ sana2
-print tervehdys
+-- Yksinkertainen yhdistäminen
+main = putStrLn $ "Moikka, " ++ "maailma!"
+
+-- Funktio merkkijonojen yhdistämiseen
+yhdistä :: String -> String -> String
+yhdistä a b = a ++ b
+
+-- Käyttö
+main = putStrLn $ yhdistä "Koodausta " "Haskellilla."
+
+-- Käyttämällä `concat` funktiota listoille
+main = putStrLn $ concat ["Haskell ", "on ", "täällä ", "jäädäkseen."]
+
+-- Tulos kullekin:
+-- "Moikka, maailma!"
+-- "Koodausta Haskellilla."
+-- "Haskell on täällä jäädäkseen."
 ```
 
-Tämän koodipätkän tulostus on:
+Ei turhia kommervenkkejä. Käynnistä GHCi ja kokeile itse.
 
-```Haskell
-"Hei, maailma!"
-```
+## Deep Dive | Syvä Sukellus:
+Haskellissa merkkijonojen yhdistäminen on ikivanhaa perinnettä. Ne ovat listoja, joissa on `Char`-tyypin alkiot – siksi '++' toimii niin saumattomasti.
 
-## Syvällisempi tarkastelu:
+Muita tapoja? Funktio `concatMap` tekee näppärän tempun listoille. Monadeille `[Char]` eli `String` -tyypille löytyy `>>=` operaattori, joka tekee saman mutta hieman eri tavalla. Muista että `Text` ja `ByteString` ovat tehokkaampia isommille datamäärille.
 
-Historiallinen konteksti: Haskellin merkkijonot ovat listoja merkkejä ja tämä on periytynyt funktionaalisen ohjelmoinnin alkuaikojen lisp-kielestä.
+Merkkijonojen yhdistäminen on pohjimmiltaan listojen yhdistämistä. Haskellissa tämä on optimoitu käytettäväksi järkevästi, mutta älä unohda suorituskykyseikkoja suurten datamäärien kanssa.
 
-Vaihtoehtoja: Concat-funktio on toinen tapa yhdistää merkkijonoja Haskellissa. Tämä on hyödyllinen, kun meillä on useita merkkijonoja listassa ja haluamme liittää ne yhteen.
+## See Also | Katso Myös:
+- Haskellin viralliset dokumentit: https://www.haskell.org/documentation
+- "Learn You a Haskell" ilmaiseksi netissä osoitteessa: http://learnyouahaskell.com/
+- Hoogle (Haskell API-haku): https://hoogle.haskell.org/
 
-Toteutuksen yksityiskohdat: Yhdistämisoperaattoria (++) tai concat-funktiota käytettäessä jokaisen merkin pitää olla samaa tyyppiä. Tämä tarkoittaa, että jos meillä on esimerkiksi lista numeroita, meidän täytyy muuttaa ne merkkijonoiksi ennen yhdistämistä.
-
-## Katso myös:
-
-2. [Haskellin listaoperaattorit](http://learnyouahaskell.com/starting-out#an-intro-to-lists)
-3. [Haskellin Concat-funktion dokumentaatio](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:concat)
+Koodaile rohkeasti ja kokeile eri tapoja. Haskell on siitä kiehtova, että se pakottaa ajattelemaan asioita hieman eri kulmasta. Hauskoja hetkiä merkkijonojen parissa!

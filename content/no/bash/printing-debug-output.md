@@ -1,7 +1,8 @@
 ---
-title:                "Utskrift av feilsøkingsresultat"
-html_title:           "Arduino: Utskrift av feilsøkingsresultat"
-simple_title:         "Utskrift av feilsøkingsresultat"
+title:                "Skrive ut feilsøkingsdata"
+date:                  2024-01-20T17:51:47.509789-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skrive ut feilsøkingsdata"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,44 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Debugging i Bash: En Hands-On Guide
-
 ## Hva & Hvorfor?
+Å skrive ut feilsøkingsdata i terminalen hjelper programmerere å forstå hva som foregår under hetta. Det er som å ha et kart når du navigerer i en ny by - essensielt for å finne ut hvor og hvordan ting går galt.
 
-`printf` eller `echo` i Bash lar deg skrive ut debug-informasjon - dette er semantisk data som hjelper deg å forstå hva som skjer underveis i koden din. Og hvorfor vi bruker dette? Enkelt: å finne feil raskere og lettere! 
-
-## Hvordan gjør man det:
-
-La oss si at vi har en skript som gjør flere ting, men vi er ikke sikre på hva som skjedde etter at vi kjørte det. Se følgende kode:
-
+## Slik gjør du:
+For enkel tekst:
 ```Bash
-#!/bin/bash
-navn="Ola Nordmann"
-echo "Hei, mitt navn er $navn"
-```
-Når du kjører denne skripten, vil det skrive ut: `Hei, mitt navn er Ola Nordmann`
-
-Vi kan legge til en debug-melding rett før `echo` kommandoen slik:
-
-```Bash
-#!/bin/bash
-navn="Ola Nordmann"
-echo "Debug: navn har nå verdien $navn"
-echo "Hei, mitt navn er $navn"
+echo "Dette er en feilsøkingsmelding"
 ```
 
-Nå får vi litt mer info når vi kjører skriptet: `Debug: navn har nå verdien Ola Nordmann`
+Med variabler:
+```Bash
+DEBUG="Feilsøkingsverdien er"
+VALUE=42
+echo "$DEBUG $VALUE"
+```
 
-## Deep Dive
+Utskrift med betingelse:
+```Bash
+DEBUG_MODE=1
+if [ "$DEBUG_MODE" -eq 1 ]; then
+  echo "Feilsøking er på."
+fi
+```
 
-Historisk sett har `echo` vært standarden for å printe tekster til terminalen i Unix/Linux miljøer. Men siden `printf` funksjonen ble introdusert, har den sakte men sikkert tatt over. `printf` gir det mer kontroll og er mer portabel mellom ulike operativsystemer.
+## Dybdeplunge:
+Å skrive ut feilsøkingsdata, kjent som 'logging', har eksistert så lenge programmering har. Tidlige programmerere brukte fysiske utskrifter eller lyspaneler for å spore operasjoner.
 
-Det er også noe alternativ til `printf` og `echo` for debugging, som `set -x` som gir deg muligheten til å spore utgivelsen av hver kommando i skriptet ditt. Slik kan du se akkurat hvor ting begynner å gå galt.
+Alternativer inkluderer skreddersydde feilsøkingsverktøy som `gdb` for detaljert sporing, eller ‘logger’-kommandoen i Bash for å håndtere alvorlighetsnivåer.
 
-Fra implementasjonsdetaljene, skal `printf` og `echo` skrive til standard output (`stdout`). Du kan imidlertid omdirigere denne utgangen til filer, pipes, osv. Du kan også sende inn tekst som skal skrives ut som parametere til enten `printf` eller `echo`.
+Bash bruker standardfilstrømmer; standard output (`stdout`) for normal utskrift og standard error (`stderr`) for feilmeldinger. Dette lar deg omdirigere dem til filer eller andre kommandoer.
 
-## Se Også
-
-For mer informasjon om debugging og logger i Bash, sjekk følgende lenker:
-* [Advanced Bash-Scripting Guide - debugging](http://tldp.org/LDP/abs/html/debugging.html)
-* [Bash man side](http://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html) - en detaljert manual for Bash, inkludert 'echo' og 'printf'
+## Se også:
+- Bash man-page for fler detaljer: `man bash`
+- Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/
+- The Unix `logger` command: https://linux.die.net/man/1/logger

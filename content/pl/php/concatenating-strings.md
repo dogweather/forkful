@@ -1,7 +1,8 @@
 ---
-title:                "Konkatenacja ciągów znaków"
-html_title:           "Bash: Konkatenacja ciągów znaków"
-simple_title:         "Konkatenacja ciągów znaków"
+title:                "Łączenie łańcuchów znaków"
+date:                  2024-01-20T17:35:15.931676-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Łączenie łańcuchów znaków"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,47 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-
-Łączenie ciągów znaków, znanego również jako konkatenacja, to proces spajania dwóch lub więcej ciągów znaków w jeden dłuższy. Programiści robią to, aby manipulować danymi i tworzyć dynamiczne ciągi, które są bardziej użyteczne i elastyczne.
+## Co i Dlaczego?
+Łączenie stringów to po prostu sklejanie dwóch lub więcej tekstów w jeden. Programiści robią to, aby budować wiadomości, tworzyć zapytania SQL, a nawet zarządzać wyświetlanymi adresami URL – w zasadzie wszędzie tam, gdzie dynamika i elastyczność tekstu są potrzebne.
 
 ## Jak to zrobić:
 
-Łączenie ciągów w PHP jest proste. Używamy operatora kropki (.), aby to zrobić. W poniższym przykładzie łączymy dwa teksty.
+Łączenie stringów w PHP jest banalnie proste, użyj po prostu kropki:
 
 ```PHP
-<?php
-  $txt1 = "Witaj";
-  $txt2 = "świecie!";
-  echo $txt1 . " " . $txt2;
-?>
-```
-Rezultatem tego kodu będzie:
-```
-Witaj świecie!
+$powitanie = 'Cześć';
+$imie = 'Janek';
+$zdanie = $powitanie . ', ' . $imie . '!';
+echo $zdanie;
 ```
 
-## Głębsze spojrzenie:
+Wyjście (output):
 
-Konkatenacja ciągów znaków jest podstawą wielu języków programowania, a PHP nie jest wyjątkiem. W historii PHP, operator konkatenacji (.) jest już obecny od jego pierwszej wersji.
+```
+Cześć, Janek!
+```
 
-Istnieją alternatywne metody łączenia ciągów. Jednym z nich jest używanie funkcji `sprintf()`:
+A jeśli lubisz bardziej nowoczesne rozwiązania, od PHP 5.5 możesz użyć operatora złączenia (`.=`) do dodania stringa do istniejącego:
 
 ```PHP
-<?php
-  $txt1 = "Witaj";
-  $txt2 = "świecie!";
-  echo sprintf("%s %s", $txt1, $txt2);
-?>
+$zdanie = 'Programowanie w PHP ';
+$zdanie .= 'jest fajne!';
+echo $zdanie;
 ```
-Rezultatem tego kodu będzie identyczny jak poprzedniego - `Witaj świecie!` .
 
-Warto również pamiętać, że operacje łączenia ciągów mają pewne koszty wydajności, wszystko zależy od konkretnej implementacji i zastosowania.
+Wyjście (output):
 
-## Zobacz też:
+```
+Programowanie w PHP jest fajne!
+```
 
-[Zasady programowania w PHP](https://php.net/manual/pl/)
+## W głębi tematu:
 
-[Łączenie ciągów w PHP](https://www.php.net/manual/pl/language.operators.string.php)
+### Historia
+W PHP, jak w wielu innych językach, od zawsze istniała potrzeba pracy z tekstami. W prastarych czasach PHP, przed erą HTML i powszechnej komunikacji sieciowej, łączenie stringów miało już swoje miejsce.
 
-[Alternatywne metody łączenia ciągów w PHP](https://www.geekhideout.com/urlcode.php)
+### Alternatywy
+Możesz też użyć funkcji `sprintf()` albo `printf()` do formatowania i łączenia stringów, co może być szczególnie użyteczne przy większej ilości zmiennych:
+
+```PHP
+$nazwa = 'świat';
+$format = 'Witaj, %s!';
+echo sprintf($format, $nazwa);
+```
+
+Wyjście (output):
+
+```
+Witaj, świat!
+```
+
+### Realizacja
+Wewnętrznie, stringi w PHP są mutowalne, ale z każdą operacją łączenia tworzony jest nowy string, co może wpłynąć na używanie pamięci gdy łączy się bardzo dużo i długie stringi.

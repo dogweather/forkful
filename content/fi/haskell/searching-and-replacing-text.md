@@ -1,6 +1,7 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
+date:                  2024-01-20T17:58:13.914510-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,33 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Tekstin hakeminen ja korvaaminen on toiminto, joka etsii tietyt merkkijonot ja korvaa ne sitten uusilla. Koodaajat käyttävät tätä metodia ohjelmoinnissa manipuloidakseen merkkijonoja ja korjatakseen virheitä.
+## What & Why?
+Tekstin etsintä ja korvaaminen auttaa löytämään ja muokkaamaan koodissa tai tekstitiedostoissa olevia merkkijonoja. Ohjelmoijat käyttävät tätä toimintoa nopeuttaakseen koodin refaktorointia ja virheiden korjausta.
 
-## Miten:
-Tässä on Haskell esimerkkikoodi - koodi joka etsii ja korvaa merkkijonot:
-
+## How to:
 ```Haskell
-import Data.List.Utils
+import Data.List (isInfixOf)
 
+-- Etsi tekstiä listasta ja korvaa uudella tekstillä
 replaceText :: String -> String -> String -> String
-replaceText old new = join new . split old
+replaceText old new = unwords . map (replaceWord old new) . words
+  where
+    replaceWord o n word = if o `isInfixOf` word then n else word
 
 main :: IO ()
-main = putStrLn $ replaceText "vanha" "uusi" "Tämä on vanha teksti."
+main = do
+    let originalText = "Tervetuloa Haskellin ihmeelliseen maailmaan!"
+    let newText = replaceText "ihmeelliseen" "hauskaan" originalText
+    putStrLn newText
 ```
 
-Käynnistä ohjelma, se tulostaa: "Tämä on uusi teksti."
+Esimerkkitulostus:
+```
+Tervetuloa Haskellin hauskaan maailmaan!
+```
 
-## Syvä sukellus:
-Historiallisesti, merkkijonojen korvaaminen on ollut ohjelmoinnin tärkeä toiminto, sen juuret ulottuvat takaisin varhaiseen konekoodaukseen.
+## Deep Dive
+Haskellissa tekstinkäsittely on funktionaalista. Se tarkoittaa, että tekstin etsiminen ja korvaaminen tapahtuu ilman muuttuvia tiloja. Historiallisesti tämä lähestymistapa juontaa juurensa alkujaan LISP-kielestä, joka vaikutti funktionaalisen ohjelmoinnin kehitykseen.
 
-Vaihtoehtoisia menetelmiä tekstin korvaamiseen Haskellissa ovat esimerkiksi regex-kirjastot tai Text.ICU-kirjasto. Valinta riippuu kuitenkin vaatimuksista ja henkilökohtaisista mieltymyksistä.
+Vaihtoehtoisesti voit käyttää regex-kirjastoa monimutkaisempiin hakuihin ja korvauksiin (esim. `Text.Regex.TDFA`). Tämän kirjaston avulla voit käyttää säännöllisiä lausekkeita tehokkaampaan tekstinkäsittelyyn.
 
-Haskell toteuttaa merkkijonojen korvaamisen luomalla väliaikaisen listan, joka sisältää kaikki erilliset tekstin osat (split function), nämä osat yhdistetään sitten uudestaan uuden merkkijonon kanssa (join function).
+Haskell toteuttaa tekstinkorvauksen immutaabelilla tavalla, mikä tarkoittaa, että alkuperäinen teksti pysyy muuttumattomana. Tämä on yksi monista Haskellin ominaisuuksista, joka auttaa välttämään sivuvaikutuksia ja tekee koodista turvallisempaa.
 
-## Katso myös:
-Tässä on muutamia linkkejä, joista saa lisätietoja:
-- Tekstin korvaaminen Haskelissa: https://stackoverflow.com/questions/30551033/replace-a-substring-in-haskell 
-- Data.List.Utils dokumentaatio: http://hackage.haskell.org/package/MissingH-1.4.3.0/docs/Data-List-Utils.html
-- Text.ICU kirjasto: http://hackage.haskell.org/package/text-icu
+## See Also
+- Haskellin dokumentaatio: [https://www.haskell.org/documentation/](https://www.haskell.org/documentation/)
+- "Learn You a Haskell for Great Good!" -kirja aloittelijoille: [http://learnyouahaskell.com/](http://learnyouahaskell.com/)
+- `regex-tdfa` kirjasto: [https://hackage.haskell.org/package/regex-tdfa](https://hackage.haskell.org/package/regex-tdfa)

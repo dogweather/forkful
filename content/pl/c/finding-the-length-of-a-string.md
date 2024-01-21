@@ -1,7 +1,8 @@
 ---
-title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Arduino: Znajdowanie długości ciągu znaków"
-simple_title:         "Znajdowanie długości ciągu znaków"
+title:                "Znalezienie długości ciągu znaków"
+date:                  2024-01-20T17:46:49.921844-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Znalezienie długości ciągu znaków"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,35 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co & Dlaczego?)
+W C obliczanie długości łańcucha znaków to po prostu zliczanie znaków aż do osiągnięcia terminatora null (`\0`). To kluczowe, bo dzięki temu wiemy, ile danych przetwarzamy, zarządzamy pamięcią, czy też unikamy przekroczeń bufora.
 
-Długość łańcucha to ilość znaków zawartych w łańcuchu. Programiści muszą znać długość łańcucha do poprawnego manipulowania danymi i do złudzenia precyzyjnego zarządzania pamięcią.
-
-## Jak to zrobić:
-
-C provide `strlen()` do znalezienia długości łańcucha. Przyjrzyjmy się przykładowemu kodowi:
-
+## How to: (Jak to zrobić:)
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-   char str[100];
-   int len;
+    char text[] = "Witaj, świecie!";
 
-   printf("Wprowadź łańcuch: ");
-   gets(str);
+    // Obliczanie długości stringa funkcją strlen.
+    int dlugosc = strlen(text);
 
-   len = strlen(str);
-   printf("Długość łańcucha to: %d", len);
-
-   return 0;
+    printf("Długość łańcucha znakowego: %d\n", dlugosc);
+    return 0;
 }
 ```
-Na przykład, gdy wprowadzisz "Hello, World!", Output to "Długość łańcucha to: 13".
+Output:
+```
+Długość łańcucha znakowego: 15
+```
 
-## Pogłębiona analiza
+## Deep Dive (Dogłębna Analiza)
+Kiedyś, przed funkcją `strlen` z biblioteki `string.h`, programiści musieli samodzielnie iterować przez łańcuch zliczając znaki. Alternatywą jest pisania własnej funkcji, co może być bardziej wydajne w specjalnych przypadkach (np. liczenie długości tylko do pewnego znaku). 
 
-Pomimo że `strlen()` jest łatwy do użycia i często stosowany, ma również swoje wady. Funkcja biega przez łańcuch do momentu natrafienia na null-terminator ('\0'), co sprawia, że nie jest to najwydajniejsza metoda.
+Implementując własną funkcję, pamiętaj o terminatorze null, który oznacza koniec stringa. Oto przykład minimalistycznej implementacji:
 
-Alternatywą dla `strlen()` jest iterowanie przez łańcuch samodzielnie używając pętli, co daje więcej kontroli nad procesem. Pamiętaj, że każdy łańcuch zakończy się null-terminatorem.
+```C
+int custom_strlen(const char *str) {
+    int count = 0;
+    while(*str++)
+        count++;
+    return count;
+}
+```
+
+Różnice w wydajności między `strlen` a własną funkcją bywają znikome, ale `strlen` jest zazwyczaj zoptymalizowana przez kompilator.
+
+## See Also (Zobacz Również)
+- Dokumentacja `strlen` na stronie [cppreference.com](https://en.cppreference.com/w/c/string/byte/strlen)
+- Przykłady przekroczeń bufora (buffer overflows) na [owasp.org](https://owasp.org/www-community/vulnerabilities/Buffer_Overflow)
+- Porównanie funkcji z `string.h` z własnymi implementacjami na [stackoverflow.com](https://stackoverflow.com/questions/tagged/c+string)

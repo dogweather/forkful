@@ -1,7 +1,8 @@
 ---
-title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
-simple_title:         "Wyszukiwanie i zastępowanie tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+date:                  2024-01-20T17:58:15.864864-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,34 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Wyszukiwanie i zamienianie tekstu to proces, który pozwala odnaleźć konkretne fragmenty tekstu i wymienić je na inne. Programiści robią to przeważnie dla automatyzacji edycji w tekstach o dużym rozmiarze.
+## What & Why? ("Co i Dlaczego?")
+Wyszukiwanie i zamiana tekstu to podstawowe operacje umożliwiające zmianę jednego ciągu znaków na inny w obrębie większego tekstu. Programiści robią to często: aby poprawić błędy, zmieniać nazwy czy dostosowywać dane.
 
-## Jak to zrobić:
-Oto jak używamy metody `replace()` w Java, aby wyszukać i zamienić tekst:
+## How to: ("Jak to zrobić:")
+```java
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-```Java
-public class Main {
+public class TextReplaceExample {
     public static void main(String[] args) {
-        String txt = "Witaj, świecie!";
-        String newTxt = txt.replace("świecie", "Java");
+        String originalText = "Jabłka są zielone i jabłka są czerwone.";
+        String searchText = "jabłka";
+        String replaceWith = "banany";
 
-        System.out.println(newTxt);
+        // Proste zastąpienie
+        String replacedText = originalText.replaceAll(searchText, replaceWith);
+        System.out.println(replacedText);
+        // Output: Banany są zielone i banany są czerwone.
+
+        // Za pomocą wyrażeń regularnych
+        Pattern pattern = Pattern.compile(searchText, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(originalText);
+        String regexReplacedText = matcher.replaceAll(replaceWith);
+        System.out.println(regexReplacedText);
+        // Output: Banany są zielone i banany są czerwone.
     }
 }
 ```
-Na wyjściu dostaniemy:
 
-```
-Witaj, Java!
-```
+## Deep Dive ("Dogłębna analiza"):
+Zanim pojawiły się wygodne biblioteki i funkcje, taki jak `replaceAll` w Javie, wyszukiwanie i zamiana tekstu wymagały manualnej iteracji po znakach i porównywania znalezionych ciągów. Harsh reality. Teraz to wyjątkowo proste.
 
-## Zanurzmy się głębiej:
-Pierwsze techniki zamiany tekstu pojawiały się w latach 70. z pojawieniem się pierwszych edytorów tekstowych. Alternatywami dla metody `replace()` w Java są skomplikowane metody korzystające z wyrażeń regularnych, takie jak `replaceAll()` lub `replaceFirst()`.
+Alternatywy? Sprawdź `replace` zamiast `replaceAll` dla prostych, dosłownych zastąpień czy `replaceFirst` żeby zmienić tylko pierwsze wystąpienie. Masz też biblioteki zewnętrzne jak Apache Commons Lang `StringUtils`, jeśli potrzebujesz czegoś bardziej wyspecjalizowanego.
 
-Do implementacji `replace()` w Java używa się algorytmu dwuetapowego. Najpierw przegląda się ciąg znaków, a następnie tworzy nowy ciąg znaków z zamienionym tekstem.
+Szczegóły implementacji? `replaceAll` wykorzystuje wyrażenia regularne pod maską, więc jest potężne, ale może być wolniejsze z powodu overheadu kompilacji wyrażeń. Pamiętaj, by używać `Pattern.CASE_INSENSITIVE`, jeśli wielkość liter nie jest istotna.
 
-## Zobacz również:
-1. [Dokumentacja Oracle för metody replace()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replace-char-char-)
-2. [Tutorial do używania metody replace()](https://www.javatpoint.com/java-string-replace)
-3. [Dyskusja o wydajności metody replace()](https://stackoverflow.com/questions/16228992/commons-lang-stringutils-replace-performance-vs-string-replace)
+## See Also ("Zobacz również"):
+- [Dokumentacja Oracle – Class Pattern](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html)
+- [Dokumentacja Oracle – Class String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)
+- [Apache Commons Lang – StringUtils](https://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/StringUtils.html)

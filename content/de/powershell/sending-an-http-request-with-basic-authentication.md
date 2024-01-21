@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
+date:                  2024-01-20T18:02:16.318571-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -11,40 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+HTTP-Anfragen mit Basis-Authentifizierung sind essentiell, wenn Dienste oder APIs einen Nutzernachweis erfordern. Entwickler verwenden sie, um Zugriff auf geschützte Ressourcen zu erhalten, oftmals für Automatisierung oder Datenintegration.
 
-Das Senden einer HTTP-Anfrage mit Basisauthentifizierung ist eine übliche Methode, um sich bei einer Website oder einem Webdienst anzumelden. Programmierer verwenden diese Methode oft, um Benutzern einen sicheren Zugang zu einer Website zu ermöglichen.
-
-## So geht's:
-
-Es ist einfach, in PowerShell eine HTTP-Anfrage mit Basisauthentifizierung zu erstellen. Beachten Sie die folgenden Beispiele:
+## Wie geht das:
+Hier ist ein einfaches Beispiel, wie man eine HTTP-Anfrage mit Basic Authentication in PowerShell macht:
 
 ```PowerShell
-# Zuerst erstellen wir die Anmeldedaten
-$User = 'Benutzername'
-$Pass = 'Passwort' | ConvertTo-SecureString -AsPlainText -Force
-$Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $Pass
+# Benutzername und Passwort festlegen
+$Benutzername = 'MeinBenutzer'
+$Passwort = 'MeinPasswort'
 
-# Dann Instanziieren wir die WebClient-Klasse und fügen die Anmeldedaten hinzu
-$WebClient = New-Object System.Net.WebClient
-$WebClient.Credentials = $Credential
+# Base64-Encoder für Credentials verwenden
+$Base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("$Benutzername:$Passwort")))
 
-# Jetzt erstellen und senden wir die Anfrage
-$Result = $WebClient.DownloadString('http://example.com')
+# HTTP-Request mit Headers erstellen
+$response = Invoke-RestMethod -Uri 'http://meineapi.de/daten' -Method Get -Headers @{Authorization=("Basic {0}" -f $Base64AuthInfo)}
 
-# Lassen Sie uns das Resultat betrachten
-$Result
+# Antwort ausgeben
+$response
 ```
 
-## Vertiefung:
+Sample Output:
 
-Das HTTP Basic Authentication Protokoll wurde erstmals 1996 im HTTP/1.0 Spezifikations-Dokument RFC 1945 vorgestellt. Es ist ein einfacher Mechanismus zur Authentifizierung, bei dem ein Benutzername und ein Passwort über HTTP-Kopfzeilen gesendet werden. 
+```
+{Name: "Beispiel", Wert: "42", Status: "Erfolg"}
+```
 
-Alternativen zur Basisauthentifizierung sind Digest-Authentifizierung, Formular-basierte Authentifizierung, OAuth und OpenID, die zusätzliche Sicherheitsfunktionen bieten können.
+## Tiefere Einblicke
+Historisch gesehen ist Basic Authentication ein altes, aber bewährtes Authentifizierungsprotokoll im HTTP-Standard. Es ist einfach zu implementieren, allerdings ist es ohne HTTPS unsicher, weil die Credentials im Klartext übertragen werden. Für zusätzliche Sicherheit kann OAuth verwendet werden, was Token anstatt von Benutzername und Passwort benutzt. In PowerShell spezifisch ist `Invoke-RestMethod` die bevorzugte Methode für Webanfragen, da sie hocheffizient und einfach zu benutzen ist.
 
-Die Details der Implementierung der Basisauthentifizierung in PowerShell beinhalten die Verwendung der .NET WebClient-Klasse und die `DownloadString`-Methode, die den Webinhalt als Zeichenkette herunterlädt.
-
-## Weiterführende Informationen:
-
-- [MDN Web Docs: HTTP Basic Access Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [RFC 1945: HTTP/1.0 Spezifikationsdokument](https://tools.ietf.org/html/rfc1945)
-- [PowerShell-Dokumentation: Die WebClient-Klasse](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=netframework-4.8)
+## Siehe auch
+- Microsoft-Dokumentation zu `Invoke-RestMethod`: https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.utility/invoke-restmethod
+- Basic Authentication-Überblick: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- Informationen zu OAuth: https://oauth.net

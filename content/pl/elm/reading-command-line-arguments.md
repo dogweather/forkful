@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie argumentów linii poleceń"
-html_title:           "Bash: Czytanie argumentów linii poleceń"
-simple_title:         "Czytanie argumentów linii poleceń"
+title:                "Odczytywanie argumentów linii poleceń"
+date:                  2024-01-20T17:55:50.971506-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie argumentów linii poleceń"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,45 +11,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Czytanie argumentów z linii poleceń to sposób na przekazywanie danych do programu podczas jego uruchamiania. Programiści robią to, by zwiększyć elastyczność i interaktywność aplikacji bez wprowadzania zmiennych bezpośrednio w kodzie.
 
-Czytanie argumentów wiersza poleceń polega na wejściu w dania dostarczone dla twojego programu poprzez terminal. Programiści robią to, aby umożliwić użytkownikom spersonalizowanie działania programu.
-
-## Jak to robić:
-
-W Elm (aktualna wersja), nie ma natywnej obsługi dla czytania argumentów z linii poleceń, ale możemy to osiągnąć za pomocą JavaScript.
+## How to:
+Elm nie obsługuje bezpośrednio czytania argumentów linii poleceń, ponieważ jest językiem skoncentrowanym na aplikacjach webowych. Ale można to osiągnąć za pośrednictwem JavaScript i portów (ports).
 
 ```Elm
 port module Main exposing (..)
 
-port toJS : String -> Cmd msg
+import Browser
+import Json.Decode as Decode
+
+port args : (String -> msg) -> Sub msg
+
+type Msg = CmdArgs String
 
 main =
-    toJS "Hello JavaScript!"
+    Browser.element
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = \_ -> args CmdArgs
+        }
+
+init : () -> (Model, Cmd Msg)
+init _ =
+    (Model "", Cmd.none)
+
+type alias Model =
+    { cmdArgs : String }
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        CmdArgs argsString ->
+            ({ model | cmdArgs = argsString }, Cmd.none)
+
+view : Model -> Html.Html Msg
+view model =
+    Html.text ("Command line arguments were: " ++ model.cmdArgs)
 ```
 
-Gdzie "toJS" to port, który wysyła komunikaty z Elm do JavaScript.
+W JavaScript:
+```javascript
+const flags = process.argv.slice(2).join(' ');
+const app = Elm.Main.init({ flags });
 
-W pliku html, który uruchamia kod Elm:
-
-```JavaScript
-<script>
-var app = Elm.Main.init();
-
-app.ports.toJS.subscribe(function(data) {
-  console.log(data);  // Prints: "Hello JavaScript!"
+app.ports.args.subscribe((args) => {
+  console.log('Received args:', args);
 });
-</script>
 ```
 
 ## Deep Dive
+W Elm, porty są mostem do JavaScript, pozwalają na komunikację między językami. Przyjmijmy, że Elm jeszcze bardziej naciska na prace z przeglądarką, argumenty linii poleceń są bardziej naturalne dla środowiska Node.js czy inneś języka serwerowego. Chociaż Elm nie jest przeznaczony do skryptów, można wykorzystać porty do tej funkcjonalności.
 
-Elm, będący językiem osadzonym w środowisku przeglądarki, nie ma bezpośredniej możliwości interakcji z wierszem poleceń. Dlatego, aby przekazać argumenty z linii poleceń do Elm, będziesz musiał wykorzystać JavaScript.
+Alternatywą dla portów może być WebAssembly lub inne narzędzia kompilacji Elm do JS, które umiejętnie obsługują CLI.
 
-Alternatywą jest wykorzystanie języka, który ma natywną obsługę takich argumentów, na przykład Node.js, a następnie komunikować się z Elm za pomocą portów.
+Co do historii, Elm powstał głównie dla aplikacji webowych, więc czytanie argumentów z linii poleceń nie było nigdy priorytetem.
 
-Szczegółowa implementacja może zależeć od specyfiki twojego projektu, ale generalnie polegać będzie na wczytaniu argumentów w JavaScript, a następnie przesłaniu ich do Elm.
-
-## Zobacz też
-
-- [Elm Guide - Interoperability](https://guide.elm-lang.org/interop/)
+## See Also
+- Oficjalna strona Elm: [https://elm-lang.org/](https://elm-lang.org/)
+- Dokumentacja portów Elm: [https://guide.elm-lang.org/interop/ports.html](https://guide.elm-lang.org/interop/ports.html)
+- Node.js dokumentacja `process.argv`: [https://nodejs.org/docs/latest/api/process.html#process_process_argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)

@@ -1,6 +1,7 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+date:                  2024-01-20T17:38:18.684874-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,33 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to i dlaczego?
-Zamiana tekstu na małe litery to operacja polegająca na przekształcaniu wszystkich liter każdego wyrazu ze zbioru znaków na ich małe odpowiedniki. Programiści przeprowadzają tę operację, aby ułatwić porównywanie i sortowanie napisów, jak również usunąć możliwość pomyłki związanej z wielkością liter.
+## What & Why?
+"Co i Dlaczego?"
 
-## Jak to zrobić:
-Gleam, język programowania statycznego, umożliwia łatwe wywołanie tej funkcji. Poniżej znajduje się przykład przekształcania napisu na małe litery:
+Zamiana łańcucha znaków na małe litery umożliwia standaryzację danych tekstowych. Programiści robią to, aby ułatwić porównywanie i przetwarzanie tekstu.
+
+## How to:
+"Jak to zrobić:"
+
+Gleam ma wbudowaną funkcję do manipulacji ciągami znaków. Oto jak wygląda w akcji:
 
 ```gleam
 import gleam/string
 
+fn to_lower_case_example() {
+  let my_string = "Witaj, Świecie!"
+  string.lowercase(my_string)
+}
+
 fn main() {
-  let text = "Dzień Dobry, Świecie!"
-  let lower_text = string.lower(text)
-  println(lower_text)
+  to_lower_case_example() |> io.debug
 }
 ```
 
-Po wywołaniu programu otrzymasz:
-
-```gleam
-"dzień dobry, świece!"
+Przykładowe wyjście:
 ```
-## Pogłębienie
-Zasada działania tej funkcji jest bardzo prosta. Gdy wprowadzamy tekst, program przechodzi przez każdą literę i zamienia jej ASCII lub Unicode na odpowiednik z małą literą. Początkowo funkcja ta powstała w C i została przeniesiona do większości języków programowania.
+"witaj, świecie!"
+```
 
-W niektórych językach, takich jak JavaScript, mamy alternatywne metody, takie jak `toLocaleLowerCase()`, które dodatkowo uwzględniają lokalizację.
+## Deep Dive
+"Dokładniejsze spojrzenie":
 
-Nie jest jednak zawsze konieczne przechodzenie przez całą procedurę konwersji, jeżeli wiemy, że nasz tekst jest już znormalizowany. W Gleam, funkcja string.lower jest zrealizowana z użyciem funkcji 'str.toLocaleLowerCase()' z JavaScript.
+W przeszłości, zamiana na małe litery była różnie implementowana w różnych językach programowania, często uwzględniając ustawienia regionalne. Gleam używa podejścia Unicode do konwersji, co zapewnia konsystencję między różnymi systemami. Alternatywnie, można użyć funkcji specyficznych dla poszczególnych lokalizacji, ale w Gleam priorytetem jest klarowność i prostota. Wewnętrznie, `string.lowercase` przekształca każdy znak w stringu zgodnie z zasadami Unicode.
 
-## Zobacz też:
-2. [Więcej o funkcji str.toLocaleLowerCase (ang. str.toLocaleLowerCase function on MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+## See Also
+"Zobacz również":
+
+- Unicode Case Mapping Info: [https://www.unicode.org/reports/tr21/tr21-5.html](https://www.unicode.org/reports/tr21/tr21-5.html)

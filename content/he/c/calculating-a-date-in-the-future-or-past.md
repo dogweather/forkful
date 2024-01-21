@@ -1,6 +1,7 @@
 ---
 title:                "חישוב תאריך בעתיד או בעבר"
-html_title:           "C: חישוב תאריך בעתיד או בעבר"
+date:                  2024-01-20T17:31:12.324742-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חישוב תאריך בעתיד או בעבר"
 programming_language: "C"
 category:             "C"
@@ -10,37 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מחשבת תאריך עתידי/עברי בשפת C
-
 ## מה ולמה?
-ביכולתנו לחשב תאריך בעתיד או בעבר היא היכולת למצוא תאריך מסוים מבלי לספור את הימים באופן ידני. זה נותן למתכנתים את היכולת להניע יישומים באופן דינאמי בהתאם לתאריך, פונקציה שתכופה ביישומים רבים.
+חישוב תאריך בעתיד או בעבר הוא תהליך שבו אנו מוסיפים או מחסירים ימים, שבועות, חודשים, או שנים מתאריך נתון. תכנתים עושים זאת לתכנון עתידי, הזמנות, לוחות זמנים, ותזכורות.
 
-## כיצד למעשה:
-חבל הקוד הבא מחשב את התאריך שנייה מעכשיו:
-
-```C
+## איך לעשות:
+```c
 #include <stdio.h>
 #include <time.h>
 
+// חישוב והדפסת תאריך חמישה ימים מהיום
 int main() {
-    time_t now = time(NULL);
-    time_t future = now + 2;
+    time_t now;
+    time(&now);
+    struct tm newDate = *localtime(&now);
 
-    char* c_time_string = ctime(&future);
-    printf("The time two seconds in the future will be: %s", c_time_string);
+    // הוספת חמישה ימים לתאריך הנוכחי
+    newDate.tm_mday += 5;
+    mktime(&newDate);
+
+    // הדפסת התאריך החדש
+    char buffer[80];
+    strftime(buffer, 80, "%d-%m-%Y", &newDate);
+    printf("תאריך חמישה ימים מעכשיו: %s\n", buffer);
 
     return 0;
 }
 ```
+פלט לדוגמא:
+```
+תאריך חמישה ימים מעכשיו: 30-03-2023
+```
 
-העתיד המודפס בפלט צפוי להיות כ-2 שניות מתאריך הזמן שבו התוכנה התחילה.
+## צלילה עמוקה
+חישוב תאריך הוא בעל היסטוריה ארוכה, מימי השעון השמש ועד עידן ה-Kernel של מערכות ההפעלה המודרניות. חלופות כוללות שימוש בפונקציות שונות מהספרייה הרגילה של C, או שימוש בספריות חיצוניות כמו `date.h`. כאשר אנו חושבים על חישוב תאריך, צריך להיזהר משגיאות נפוצות כמו זיעוז בין זמני קיץ וחורף, עיבוד שגוי של חודשים עם מעט ימים מהרגיל, והתעלמות משנים מעוברות. ניתן להשתמש ב-funcion `mktime` כדי לוודא שהתאריך יושבץ נכון לאחר שינויים.
 
-## צלילה עמוקה:
-השילוב של הפונקציות `time` ו- `ctime` נפוץ בעידן המודרני של שימוש בשפת תכנות C, אך הן מוצאות את מקורן בתחילת שנות ה-70. אלטרנטיבות כוללות שימוש ב- `gettimeofday` במקרים בהם הדיוק הוא יותר חשוב, או מערכות ניהול זמן מותאמות אישית לישומים ספציפיים כמו תוכנות ניהול פרויקטים.
-
-בראש ובראשונה, חשיבה על התאריך העתידי או העברי היא פשוטה באמצעות שפת תכנות C, שכן דורש להוסיף או להפחית מהאינטגרל 'זמן' כדי להתקבל לתאריך החדש.
-
-## ראו גם:
-דף עזרה של `time`: [http://www.cplusplus.com/reference/ctime/time/](http://www.cplusplus.com/reference/ctime/time/)
-רמות `ctime`: [http://www.cplusplus.com/reference/ctime/ctime/](http://www.cplusplus.com/reference/ctime/ctime/)
-מדריך ל- `gettimeofday`: [https://www.gnu.org/software/libc/manual/html_node/Elapsed-Time.html](https://www.gnu.org/software/libc/manual/html_node/Elapsed-Time.html)
+## ראה גם
+- [C Time Library](https://www.cplusplus.com/reference/ctime/)
+- [Stack Overflow - How to add days to `struct tm`?](https://stackoverflow.com/questions/1442116/how-to-get-the-date-and-time-values-in-a-c-program)

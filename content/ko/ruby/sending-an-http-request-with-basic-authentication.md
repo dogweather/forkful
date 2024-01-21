@@ -1,7 +1,8 @@
 ---
-title:                "기본 인증을 사용하여 http 요청 보내기"
-html_title:           "Bash: 기본 인증을 사용하여 http 요청 보내기"
-simple_title:         "기본 인증을 사용하여 http 요청 보내기"
+title:                "기본 인증을 사용한 HTTP 요청 보내기"
+date:                  2024-01-20T18:02:30.598852-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "기본 인증을 사용한 HTTP 요청 보내기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,44 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 & 왜냐하면?
+## What & Why? (무엇이며, 왜?)
+HTTP 기본 인증으로 요청을 보내는 것은, 사용자 이름과 비밀번호를 이용해 보안된 자원에 접근하는 방법입니다. 프로그래머들은 이 방식을 사용하여 서버가 요구하는 인증을 제공, 데이터에 안전하게 접근합니다.
 
-기본 인증을 사용한 HTTP 요청을 보내는 것은 웹 서버로의 안전한 접근을 위한 표준 방법인 것입니다. 프로그래머들이 이것을 사용하는 이유는 웹서버에 무작위 접속을 막기 위해 사용자이름과 비밀번호를 이용하여 인증 과정을 거치는 것입니다.
-
-## 어떻게 하는가:
-
-다음은 Ruby에서 `Net::HTTP`를 이용하여 기본 인증과 함께 GET 요청을 보내는 방법을 나타내는 코드입니다.
+## How to: (방법)
+Ruby에서 HTTP 요청을 기본 인증과 함께 보내려면 `Net::HTTP` 라이브러리를 사용합니다. 예를 들어보죠.
 
 ```Ruby
 require 'net/http'
 require 'uri'
 
-uri = URI('http://example.com/index.html')
-req = Net::HTTP::Get.new(uri)
-req.basic_auth 'user', 'pass'
+uri = URI('https://example.com')
+username = 'user'
+password = 'pass'
 
-res = Net::HTTP.start(uri.hostname, uri.port) {|http|
-  http.request(req)
-}
-puts res.body
+Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
+  request = Net::HTTP::Get.new(uri)
+  request.basic_auth(username, password)
+  response = http.request(request)
+  
+  puts response.body
+end
 ```
 
-이 코드를 실행하면, 주어진 사용자 이름과 비밀번호를 사용하여 주어진 주소로 HTTP GET 요청이 실행됩니다.
+위 코드는 기본 인증을 통해 `https://example.com`에 HTTP GET 요청을 보냅니다. 서버의 응답은 콘솔에 출력됩니다.
 
-## 심층 연구
+## Deep Dive (심층 분석)
+기본 인증은 HTTP 1.0부터 사용되는 인증 방식입니다. Base64로 인코딩된 사용자 이름과 비밀번호를 `Authorization` 헤더에 넣어 전송합니다. 보안이 강화된 현대에는 기본 인증 대신 OAuth, API 키, 토큰 기반 인증과 같은 더 안전한 방법을 선호합니다.
 
-기본 인증을 이용한 HTTP 요청은 웹의 초기부터 존재하였습니다. 1996년에 처음으로 RFC 1945에 문서화된 이후로 흔히 사용되어 왔습니다. 그러나 보안 문제로 인해 이에 대한 대체책들이 제시되었습니다. OpenID, OAuth, SAML 등이 그 예시입니다.
+`Net::HTTP`는 Ruby의 표준 라이브러리 중 하나로, HTTP 클라이언트 기능을 제공합니다. 하지만, 성능과 사용의 편의성 측면에서 `HTTParty`나 `Faraday` 같은 서드파티 라이브러리를 이용하는 경우도 많습니다.
 
-다른 방법으로 Ruby에서 기본 인증과 함께 HTTP 요청을 보내는 방법은 `RestClient`나 `HTTParty` 같은 라이브러리를 이용하는 것입니다.
+안전하지 않은 네트워크에서 기본 인증을 사용할 때는 주의가 필요합니다. 누군가 트래픽을 캡처한다면, 사용자 이름과 비밀번호가 노출될 수도 있습니다. HTTPS를 사용하면 이러한 위험을 줄일 수 있습니다.
 
-구현 관련 세부 정보로는 Net::HTTP 모듈이 Ruby의 표준 라이브러리로 포함되어 있어 추가적으로 설치해주지 않아도 되며, 풍부한 기능을 제공한다는 것을 알 수 있습니다.
-
-## 참고 자료
-
-Ruby `Net::HTTP` 공식 문서: [https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
-
-`RestClient` 라이브러리: [https://github.com/rest-client/rest-client](https://github.com/rest-client/rest-client)
-
-`HTTParty` 라이브러리: [https://github.com/jnunemaker/httparty](https://github.com/jnunemaker/httparty)
-
-기본 인증에 대한 RFC 문서: [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)
+## See Also (추가 정보)
+- [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+- [HTTParty GitHub repository](https://github.com/jnunemaker/httparty)
+- [Faraday GitHub repository](https://github.com/lostisland/faraday)

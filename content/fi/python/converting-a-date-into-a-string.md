@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän muuttaminen merkkijonoksi"
-html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+date:                  2024-01-20T17:37:15.309715-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,50 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mikä & Miksi?)
+Muunnetaan päivämäärä merkkijonoksi, jotta voimme näyttää päivämäärän haluamassamme muodossa. Sitä tarvitaan lokitiedostoissa, käyttöliittymissä ja datan tallennuksessa.
 
-Muunnos päivämäärästä merkkijonoksi Pythonissa tarkoittaa päivämäärän muuttamista luettavaksi tekstiksi - merkkijonoksi. Tätä tarvitaan useimmiten tiedon näyttämisessä selkeästi käyttäjälle tai päivämäärien tallennukseen tekstimuodossa.
-
-## Näin Se Teetään
-
-Pythonin sisäänrakennetun `datetime`-moduulin avulla muuntaminen on helppoa. Tässä on esimerkki siitä, miten se toimii:
-
+## How to: (Kuinka tehdä:)
 ```Python
 from datetime import datetime
+
+# Nykyinen aika ja päivämäärä
 nyt = datetime.now()
-merkkijonona = nyt.strftime("%m/%d/%Y, %H:%M:%S")
 
-print(merkkijonona)
+# Muotoilu merkkijonoksi
+merkkijono_muodossa = nyt.strftime("%d.%m.%Y %H:%M")
+
+print(merkkijono_muodossa)  # Esim. "30.03.2023 16:41"
 ```
 
-Tämä koodi tuottaa seuraavanlaisen tulosteen nykyisellä ajalla:
+## Deep Dive (Syväsukellus)
+Pythonissa päivämäärät muunnetaan merkkijonoksi `datetime`-moduulilla, joka tuli käyttöön Python 2.3:ssa. Vaihtoehtoiset kirjastot, kuten `Arrow` tai `Pendulum`, tarjoavat enemmän ominaisuuksia mutta eivät ole vakiokirjastossa. `strftime`-metodi on vakiintunut tapa päivämäärän muotoiluun merkkijonoksi, jossa voit määritellä päivämäärän esitysmuodon monipuolisesti.
 
-```Python
-"02/23/2023, 14:30:10"
-```
-
-`strftime()`-funktio saa argumentiksi muotoiluohjeet, joilla määritellään tulosteen muoto.
-
-## Deep Dive
-
-### Historiaa
-
-`strftime()`-funktion nimi tulee C-ohjelmointikielestä, jossa "s" tarkoittaa merkkijonoa (string) ja "f" tarkoittaa muotoilua (format). Pythonissa tämä funktio on otettu käyttöön sen vanhoista versioista lähtien ja se on yleisesti käytetty tapa päivämäärän muuttamiseen merkkijonoksi.
-
-### Vaihtoehdot
-
-Voit myös käyttää päivämäärän suoraan merkkijonona, mutta tällöin menetät mahdollisuuden tehdä päivämäärien välisiä laskutoimituksia vaivattomasti. Muut Python kirjastot, kuten `pendulum` tai `arrow`, tarjoavat myös päivämäärän muuntamisen merkkijonoksi, mutta ne ovat vähemmän tunnettuja ja niitä käytetään harvemmin.
-
-### Toteutus
-
-`strftime`-metodi on osa Pythonin `datetime`-moduulia, joka käyttää C-ohjelmointikielen ajan funktioita.
-
-## Katso Myös
-
-['datetime' Pythonin dokumentaatiossa](https://docs.python.org/fi/3/library/datetime.html)
-
-['strftime()' ja 'strptime()' käyttö Pythonissa](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior) 
-
-['pendulum' kirjaston kotisivut](https://pendulum.eustace.io/)
-
-['arrow' kirjaston kotisivut](https://arrow.readthedocs.io/)
+## See Also (Katso Myös)
+- Pythonin virallinen dokumentaatio `datetime`: https://docs.python.org/3/library/datetime.html
+- strftime()- ja strptime()-käytännön ohjeet: https://strftime.org/
+- Arrow-dokumentaatio: https://arrow.readthedocs.io/en/latest/
+- Pendulum-dokumentaatio: https://pendulum.eustace.io/

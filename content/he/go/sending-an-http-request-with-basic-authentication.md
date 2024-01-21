@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http עם אימות בסיסי"
-html_title:           "C: שליחת בקשת http עם אימות בסיסי"
-simple_title:         "שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת HTTP עם אימות בסיסי"
+date:                  2024-01-20T18:01:41.395544-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP עם אימות בסיסי"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -11,12 +12,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+שליחת בקשת HTTP עם אימות בסיסי מאפשרת לנו להוסיף שכבת אבטחה פשוטה לבקשות שלנו. תוכניתנים משתמשים בפרוטוקול הזה כדי להגביל גישה למשאבים מסוימים על שרת.
 
-שליחת בקשת HTTP עם אוטנטיקציה בסיסית היא התהליך שבו יישום מבצע בקשה לשרת עם זיהוי משתמש וסיסמה. מתכנתים עושים זאת כשהם רוצים לבצע בקשת HTTP למשאב שדורש אימות משתמש.
-
-## איך לעשות:
-
-```Go
+## איך עושים את זה:
+```go
 package main
 
 import (
@@ -27,31 +26,36 @@ import (
 
 func main() {
 	client := &http.Client{}
-	req, _ := http.NewRequest("GET", "http://example.com", nil)
-	basicAuth := "username:password"
-	// הצפנה של שם המשתמש והסיסמה בלוביט SOAP1
-	req.Header.Add("Authorization", "Basic "+base64.StdEncoding.EncodeToString([] byte(basicAuth)))
-	resp, _ := client.Do(req)
-	fmt.Println("Response status:", resp.Status)
+	req, err := http.NewRequest("GET", "http://example.com", nil)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	// הגדרת משתמש וסיסמה
+	username := "user"
+	password := "pass"
+
+	// קידוד ל-Base64
+	auth := base64.StdEncoding.EncodeToString([]byte(username + ":" + password))
+
+	// הוספת כותרת אימות לבקשה
+	req.Header.Add("Authorization", "Basic "+auth)
+
+	// ביצוע הבקשה
+	resp, err := client.Do(req)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer resp.Body.Close()
+	
+	// כאן אפשר לטפל בתגובה
 }
 ```
-כאשר אתה מבצע את הקוד הזה, אתה צפוי לראות פלט שכזה:
+## צלילה לעומק:
+פרוטוקול אימות בסיסי בHTTP קיים כבר שנים רבות. זהו אחד מהשיטות הפשוטות ביותר להוסיף אימות לבקשות HTTP. חשוב לדעת שכיום יש שיטות מאובטחות יותר כמו OAuth, אבל במקרים מסוימים אימות בסיסי עדיין ממלא את התפקיד. שימוש בHTTPS מומלץ להעברת שם המשתמש והסיסמה באופן מאובטח.
 
-```Go
-Response status: 200 OK
-```
-
-## צלילה עמוקה 
-
-אוטנטיקציה בסיסית הוא שיטה מעונת 1996 (RFC 1945) המחייבת את השרת לבדוק אם שם המשתמש המסופק וסיסמה תואמים לאלה שקיימים במאגר הנתונים שלו. השיטה הזו עשויה להתרחש באופן בלתי מוחקר, אך היא מהירה ובסיסית. לאחר מכן, השיטות התחליפיות כוללות OAuth, JWT, שימוש ב-API של Google או Facebook ועוד.
-
-פרטי היישום של שליחת בקשת HTTP עם אוטנטיקציה בסיסית מתמקדים גם באיך להוסיף את הכותרת "Authorization" וכיצד למיתג שם משתמש וסיסמה לפורמט Base64.
-
-## ראה גם
-
-1. [מאמר RFC 1945](https://www.ietf.org/rfc/rfc1945)
-2. [אוטנטיקציה ב-Go](https://go.dev/play/p/6Wv1KZHxQuV) 
-3. [צפינת Base64](https://en.wikipedia.org/wiki/Base64) 
-4. [HTTP בקשות עם Go](https://golang.org/pkg/net/http/)
-5. [Google API](https://developers.google.com/identity/protocols/oauth2)
-6. [Facebook API](https://developers.facebook.com/docs/facebook-login/)
+## ראה גם:
+- [מסמכי האימות של HTTP ב-MDN (Mozilla Developer Network)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [תיעוד לפונקציות רלוונטיות ב-pkg.go.dev](https://pkg.go.dev/net/http#Request.SetBasicAuth)

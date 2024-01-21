@@ -1,6 +1,7 @@
 ---
 title:                "Reading a text file"
-html_title:           "Go recipe: Reading a text file"
+date:                  2024-01-20T17:54:51.510451-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Reading a text file"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,43 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
+Reading a text file means pulling in data from a file composed of text on your disk. Programmers do this to access and manipulate stored information, like configs, logs, or any data their apps need.
 
-Reading a text file is the act of extracting content from a file stored in a text format. Programmers do this for a multitude of reasons like analyzing data, checking logs, or using configuration values that need to be read at runtime.
+## How to:
+Gleam doesn't include file IO in its standard library, so we'll use Erlang functions. We start by opening a text file using `file.open/2`, read its content, handle potential errors, and finally close the file. Here's the beef:
 
-## How To:
+```gleam
+import gleam/erlang
+import gleam/result
 
-Reading files in Gleam is done using the built-in `file` module's 'read' function. Here's how it's done:
-
-```Gleam
-import gleam/ok
-import gleam/file.{Error}
-
-
-pub fn read_my_file() {
- ok.with(file.read("path_to/my_file.txt")) 
- |> result.or_else(|e| case e {
-   Error.NotFound -> Ok("> File not found")
-   _ -> Ok("> Unexpected error") 
- })
+fn main() {
+  case erlang.file.open("example.txt", [read]) {
+    Ok(file) ->
+      case erlang.file.read(file) {
+        Ok(data) -> {
+          erlang.io.format("Content: ~p~n", [data])
+          erlang.file.close(file)
+        }
+        Error(err) -> {
+          erlang.io.format("Error reading file: ~p~n", [err])
+        }
+      }
+    Error(err) ->
+      erlang.io.format("Error opening file: ~p~n", [err])
+  }
 }
 ```
 
-Let's test it:
-
-```Gleam
-read_my_file() == Ok("> File content here...")
-```
+Run this and you'll see your text file's content, or an error if something went sideways.
 
 ## Deep Dive
+Reading files is nothing new; it's been in programming since the punch card days. Gleam, a static-typed language that compiles to the Erlang VM, leans on Erlang's mature ecosystem for file operations. You've got other options, too: async reads, streaming lines, or using libraries like `gleam_otp` for a more Gleam-ish approach.
 
-Historically, file I/O was not a trivial task and many programming languages make it complex. Gleam simplifies this process, making it straightforward and easy to handle errors.
+Understanding file IO includes error handling. Files might not exist, could be locked, or you might lack permission. Gleam's pattern matching and `result` module give you a clean path for managing the unexpected.
 
-Alternatives to reading a text file in Gleam include using other languages like Erlang or Elixir which run on the BEAM, the same runtime system as Gleam, but it's noteworthy that Gleam offers stronger type safety.
-
-Implementation-wise, Gleam's `file.read` function uses the underlying file reading functionality provided by Erlang. This encapsulates the complexity and provides a user-friendly, type-safe method of reading files.
+Lastly, consider your file's size. Our simple `erlang.file.read` reads the whole thing into memory, which could be problematic for huge files. Streaming chunks or lines would be more efficient.
 
 ## See Also
-
-2. [Gleam - Getting started guide](https://gleam.run/getting-started/)
-3. [Elixir - File docs](https://hexdocs.pm/elixir/File.html)
-4. [Erlang - File docs](http://erlang.org/doc/man/file.html)
+- [Erlang's file module docs](http://erlang.org/doc/man/file.html) since we're using Erlang's capabilities.
+- [Erlang's IO docs](http://erlang.org/doc/apps/stdlib/io_protocol.html) for understanding how input/output works under the hood.

@@ -1,6 +1,7 @@
 ---
 title:                "भविष्य या अतीत में तारीख की गणना"
-html_title:           "Elm: भविष्य या अतीत में तारीख की गणना"
+date:                  2024-01-20T17:31:04.550803-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "भविष्य या अतीत में तारीख की गणना"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,33 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-भविष्य या अतीत में तारीख की गणना क्या होती है और प्रोग्रामर्स इसे क्यों करते हैं? भविष्य या अतीत की दिनांक गणना, किसी विशेष दिनांक से कुछ दिनों को जोड़ने या घटाने का कार्य होता है।  प्रोग्रामर्स इसे तारीख और समय से संबंधित कार्यों को संचालित करने के लिये करते हैं।
+## क्या और क्यों? (What & Why?)
 
-## कैसे करें:
-यहां हमने एल्म स्क्रिप्ट के माध्यम से एक दिनांक को गणना किया है:
+तारीख की गणना का मतलब है भविष्य या अतीत में किसी खास दिन की तलाश। प्रोग्रामर इसे ईवेंट्स, रिमाइंडर्स, और टाइम-बाउंड कार्यों को हैंडल करने के लिए करते हैं।
+
+## कैसे करें? (How to:)
+
+Elm में एक date को manipulate करने के लिए हम `Time` package का इस्तेमाल कर सकते हैं। यहाँ एक सिंपल उदाहरण है:
 
 ```Elm
 import Time exposing (..)
-import Task
-import Task.Extra as Task exposing (..)
-import Date.Extra as Date exposing (..)
+import Date exposing (..)
 
-doCalculation : Time.Posix -> Time.Zone -> Maybe Date
-doCalculation posix datezone = 
-    Date.fromPosix datezone posix
-    |> Maybe.map (\date -> Date.add Date.Day 7 date )
-
-main =
-    Task.attempt always 
-    <| Task.map3 doCalculation (Time.now) (Task.succeed Time.utc)
+addDays : Int -> Date -> Date
+addDays days date =
+    let
+        duration = days * 86400000 -- Milliseconds in a day
+    in
+        Date.fromTime (Time.posixToMillis (Date.toTime date) + duration)
 ```
-संचलन के परिणाम स्वरूप समय स्थिति के 7 दिन बाद की तारीख दिखाई देगी। 
 
-## गहरी दिविंग
-यदि आप भविष्य या अतीत में तारीख की गणना को अधिक संदर्भ में देखना चाहते हैं, पुराने दौर में तारीख की गणना का उपयोग केवल कैलेंडर को चालने के लिए होता था। लेकिन आज के समय में, इसका उपयोग सटीक समय प्रबंधन, प्रावधान और सूचनाबद्धता के लिये किया जाता है। एल्म में तारीख की गणना के लिए कुछ विकल्पों में से एक है "Date.Extra" पैकेज जो तारीखों की संचालन और गणना में मदद करता है। 
+सैंपल आउटपुट कुछ इस तरह होगा:
 
-## उपयोगी लिंक्स
-ये कुछ उपयोगी स्रोत हैं जो अतिरिक्त जानकारी प्रदान करते हैं:
-- [Elm के लिए अधिकारिक डॉक्यूमेंटेशन](https://guide.elm-lang.org)
-- [पुराने दौर में तारीख की गणना](https://en.wikipedia.org/wiki/Date_and_time_notation_in_Europe)
+```Elm
+> current = Date.fromTime (Time.millisToPosix 0)
+<Date 1970-01-01>
+> addDays 10 current
+<Date 1970-01-11>
+```
+
+## गहराई से समझ (Deep Dive)
+
+इतिहास में, तारीख की गणना हमेशा कैलेंडर सिस्टम्स और टाइमज़ोन्स के जटिल नियमों के कारण चुनौतीपूर्ण रही है। Elm में `Date` और `Time` पैकेज सरलीकृत इंटरफेसेज प्रदान करते हैं लेकिन पूरी तरह से बारीकियों को संभालने के लिए नहीं। उदाहरण के लिए, लीप इयर्स और डेलाइट सेविंग्स टाइम जैसे इश्यूज पर खास ध्यान देना पड़ता है। `moment.js` एक JavaScript लाइब्रेरी है जो इन जटिलताओं को हैंडल करती है, और Elm प्रोजेक्ट में JavaScript इंटरऑपरेबिलिटी का इस्तेमाल करके इसका लाभ उठाया जा सकता है।
+
+## देखें इसे भी (See Also)
+
+- [Elm Time Documentation](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Elm Date Documentation](https://package.elm-lang.org/packages/justinmimbs/date/latest/)
+- [Elm Guide on Time](https://guide.elm-lang.org/effects/time.html)
+- [JavaScript Interop in Elm](https://guide.elm-lang.org/interop/)

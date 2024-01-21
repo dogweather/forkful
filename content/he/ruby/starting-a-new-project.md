@@ -1,6 +1,7 @@
 ---
 title:                "התחלת פרויקט חדש"
-html_title:           "Clojure: התחלת פרויקט חדש"
+date:                  2024-01-20T18:04:34.997528-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "התחלת פרויקט חדש"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,35 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-חלוף מיזם חדש בתכנות הוא בעצם יצירת עבודה מוגברת מאפס, ממזג פנאי או מטרה מקצועית. תכנתי ביראו להקים מיזמים חדשים כדי לבנות יכולות, להניאו מרזולוציות, לדרמש או להמציא תוספות. 
+כשאנחנו מתחילים פרויקט חדש ברובי, אנחנו למעשה יוצרים אוסף של קבצים ותיקיות שישמשו כבסיס לקוד שלנו. תכניתנים עושים זאת כדי לסדר את הקוד שלהם בצורה מובנית – בין אם זה סקריפט קטן או אפליקציה מורכבת.
 
 ## איך לעשות:
-הקוד הבא מדריך כיצד ליצור מיזם Ruby חדש באמצעות מחשב שורת ראשית.
+אתה יכול להשתמש בכלי כמו `rails new` או `bundle gem` ליצירת פרויקט חדש בצורה מסודרת:
 
 ```Ruby
-#First, you would need to install the Ruby environment on your terminal, if it wasn't installed already.
-$ \curl -sSL https://get.rvm.io | bash -s stable --ruby
+# יצירת פרויקט חדש בדרך של Rails
+rails new my_new_project
 
-#Then, you can create a new project by creating a new directory.
-$ mkdir my_new_project
+# יצירת ג'מ (gem) חדש עם Bundler
+bundle gem my_new_gem
 ```
 
-נבדוק את הפלט:
+כאשר אתה מריץ את הפקודות הללו, רובי יצור תיקיות וקבצים הנחוצים להתחלת העבודה על הפרויקט שלך.
 
-```Ruby
-$ ls
-my_new_project
-```
+## עיון מעמיק
+ליצירת פרויקט ברובי היו השפעות מגוונות לאורך השנים. 'Bundler' ו-'Rails' הם שני כלים ששינו את אופן יצירת וניהול פרויקטים ברובי. 'Rails' התפרסם בשל כוחו לקחת חבילות (gems) וליצור מערכת שלמה, בעוד 'Bundler' מסייע בניהול תלותיות בפרויקט. על אף שישנן חלופות כמו 'Sinatra' ו-'Hanami' ל-Rails, ו-'Rake' ו-'Thor' ל-Bundler, הם נותרו הבחירה הפופולרית בקרב רבים מפיתחי ה-Ruby.
 
-## שקיעה מעמיקה
-
-1) היסטוריה: Ruby הוא שפת תכנות דינמית מתפתחת מאז 1995. מאז שנוצרה, Ruby היא שפה פופולרית לטיפול במיזמים בקוד מקור פתוח.
-
-2) אלטרנטיבות: אין חובה להשתמש ב-Ruby ליצירת מיזם חדש. שפות כמו Python, Java, או C++ מספקות כלים ומאפיינים שונים שרלוונטיים למטרות ספציפיות.
-
-3) יישומים: Ruby מאפשרת מגוון רחב של יישומים, מגיבוץ נתונים לפיתוח אינטרנט אינטראקטיבי. יישומים אלו הם שינויי מדינה שעשויים להיות מואזמים במיזם שלך.
-
-## ראה גם:
-* Ruby official documentation [link](https://www.ruby-lang.org)
-* Ruby on Rails guides for web applications [link](https://guides.rubyonrails.org)
-* Codecademy’s Ruby track for learning [link](https://www.codecademy.com/learn/learn-ruby)
+## ראה גם
+- [Ruby on Rails Guides](https://guides.rubyonrails.org/)
+- [Bundler's Documentation](https://bundler.io/docs.html)
+- [Creating a New Gem](https://guides.rubygems.org/make-your-own-gem/)
+- [Learn Ruby the Hard Way - More on Gems](https://learnrubythehardway.org/book/ex46.html)
+- [Sinatra](http://sinatrarb.com/)
+- [Hanami](https://hanamirb.org/)

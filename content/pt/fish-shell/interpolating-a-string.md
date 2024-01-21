@@ -1,6 +1,7 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "Java: Interpolando uma string"
+date:                  2024-01-20T17:50:58.052055-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolando uma string"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,36 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Título: Interpolação de Strings com o Fish Shell
-
-## O Que e Por Que?
-
-A interpolação de strings é a incorporação de variáveis dentro de uma string. Programadores fazem isso para tornar o código mais limpo e menos propenso a erros.
+## O Que é & Por Quê?
+Interpolar uma string é o ato de inserir dinamicamente variáveis ou expressões dentro dela. Programadores fazem isso para construir mensagens ou comandos de forma flexível, diretamente no código, ajustando-se às diferentes situações e dados de entrada.
 
 ## Como Fazer:
-
-Você pode usar aspas simples para strings não interpoladas (sem variáveis), e aspas duplas para strings interpoladas. Veja abaixo:
-```Fish Shell
-set nome "Dev"
-echo "Olá, $nome"  # Olá, Dev
-echo 'Olá, $nome'  # Olá, $nome
 ```
-E se a variável não estiver definida?
-```Fish Shell
-echo "Olá, $sobrenome"  # Olá,
+# Defina uma variável
+set name "Mundo"
+
+# Interpole a variável dentro de uma string
+echo "Olá, $name!"
+
+# Saída esperada
+Olá, Mundo!
 ```
-Nenhum erro é disparado. O valor não definido simplesmente desaparece.
 
-## Aprofundando:
+```
+# Utilize comandos em substituição de comandos (command substitution)
+set greeting (echo "Olá")
+echo "$greeting, $name!"
 
-Interpolação de strings é uma ideia antiga que vem de linguagens mais antigas como Perl e Ruby. As alternativas em Shell incluem a concatenação de strings ou o uso de `printf`, mas a interpolação tende a ser mais legível.
+# Saída esperada
+Olá, Mundo!
+```
 
-Internamente, o Fish substitui a variável pela string logo após o analisador identificar que ele está dentro de aspas duplas. Isso é antes da execução dos comandos.
+## Mergulho Profundo
+A interpolação de strings no Fish Shell é direta e limpa, como visto acima. Historicamente, shells como o Bash exigiam uma sintaxe mais complexa, com uso de aspas e chaves de maneiras específicas. No Fish, a interpolação é facilitada pela sintaxe simples, que pode ser utilizada com variáveis e substituições de comandos.
 
-## Veja Mais:
+Existem alternativas à interpolação, como a concatenação de strings, mas isso pode tornar o código mais verboso e difícil de ler. Pode-se dizer que a interpolação é uma forma de "template" simples, permitindo ao desenvolvedor manter a expressividade do código ao mesmo tempo que o mantém organizado e compreensível.
 
-Dive in to the wonderful world of Fish Shell with the following resources:
+Internamente, quando você interpola uma string no Fish, o shell faz o processo de substituição antes de executar o comando, criando a versão final da string com todos os valores adequados no lugar.
 
-- Documentação oficial do Fish Shell: [link](https://fishshell.com/docs/current/index.html)
-- Como trabalhar com Strings no Fish: [link](https://fishshell.com/docs/current/tutorial.html#tut_strings)
-- Guia de introdução ao Fish Shell: [link](https://fishshell.com/docs/current/tutorial.html)
+## Veja Também
+- Documentação oficial do Fish Shell sobre a sintaxe de variáveis: [fishshell.com/docs/current/index.html#variables](https://fishshell.com/docs/current/index.html#variables)
+- Tutorial sobre substituição de comandos no Fish: [fishshell.com/docs/current/index.html#command-substitution](https://fishshell.com/docs/current/index.html#command-substitution)

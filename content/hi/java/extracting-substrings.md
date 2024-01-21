@@ -1,6 +1,7 @@
 ---
 title:                "सबस्ट्रिंग्स निकालना"
-html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+date:                  2024-01-20T17:46:04.109850-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "Java"
 category:             "Java"
@@ -10,32 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# जावा में उपवाक्यांश निकालना
+## What & Why? (क्या और क्यों?)
 
-## क्या और क्यों?
+Java में substring निकालना मतलब है किसी स्ट्रिंग के एक हिस्से को पकड़ना। इसे प्रोग्रामर्स तब इस्तेमाल करते हैं जब उन्हें सिर्फ स्ट्रिंग के एक खास हिस्से की जरूरत होती है, जैसे किसी यूजरनेम में से डोमेन निकालना या फिर प्रोडक्ट कोड में से खास सीरियल नंबर को पाना।
 
-उपवाक्यांश निकालना एक वाक्यांश या स्ट्रिंग निकालने की एक क्रिया है। प्रोग्रामर इसे डेटा को छोटे खंडों में विभाजित करने और प्रबंधित करने के लिए करते हैं।
+## How to: (कैसे करें:)
 
-## कैसे करें:
-
-```Java
-public class Main {
+```java
+public class SubstringExample {
     public static void main(String[] args) {
-        String str = "Hello, world!";
-        String substr = str.substring(7, 12);
-        System.out.println(substr);  // Outputs "world"
+        String str = "HelloWorld";
+        // पहले से चौथे करैक्टर तक का सबस्ट्रिंग
+        String sub1 = str.substring(1, 5); // "ello"
+        // छठे करैक्टर से आखिर तक का सबस्ट्रिंग
+        String sub2 = str.substring(5); // "World"
+        
+        System.out.println("Substring 1: " + sub1);
+        System.out.println("Substring 2: " + sub2);
     }
 }
 ```
-इस कोड का उदाहरण फ़ंक्शन `substring(7, 12)` का उपयोग करके `"Hello, world!"` वाक्यांश से `"world"` उपवाक्यांश को निकालता है।
 
-## बारीकी से समझना
+आउटपुट:
+```
+Substring 1: ello
+Substring 2: World
+```
 
-जावा भाषा में `substring` क्रिया का प्रयोग 1990 वीं सताब्दी में हुआ था। इसके विकल्पों में `split`, `indexOf` और `charAt` शामिल हैं, परन्तु `substring` बहुत ही लोकप्रिय हुआ। इसे जब कोई वाक्यांश छोटे खण्डों में विभाजित करना होता है तो इसका उपयोग किया जाता है।
+## Deep Dive (गहराई से जानकारी):
 
-`substring` क्रिया अंत सूचक को छोड़कर सभी वर्णों को शामिल करती है। यदि आपके पास एक स्ट्रिंग `"Hello, world!"` है और आप `substring(0, 5)` का उपयोग करते हैं, तो आपको `"Hello"` मिलेगा।
+`substring()` मेथड Java में बहुत पहले से है, और ये String class का एक महत्वपूर्ण हिस्सा रहा है। जैसे-जैसे Java अपग्रेड होता गया, `substring()` में भी सुधार होते रहे, जिससे ये और भी कुशल हो गया। अलग-अलग तरीकों में `StringBuffer` और `StringBuilder` जैसे क्लासेस का भी इस्तेमाल होता है, जैसे `substring()` का इस्तेमाल करके भी कर सकते हैं। इंप्लीमेंटेशन डिटेल्स की बात करें तो, पुराने Java वर्जन्स में `substring()` का इस्तेमाल थोड़ा संसाधन गहन होता था क्योंकि यह नए स्ट्रिंग के लिए हमेशा नई memory अलॉकेट करता था।
 
-## जोर देखें
+## See Also (इसे भी देखें):
 
-1. [Java String substring() Method](https://www.javatpoint.com/java-string-substring)
-2. [Java - String substring() Method](https://www.tutorialspoint.com/java/java_string_substring.htm)
+- Oracle Java Documentation: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#substring(int,int)
+- Java String tutorial from w3schools: https://www.w3schools.com/java/java_strings.asp
+- Java String `substring()` method from GeeksforGeeks: https://www.geeksforgeeks.org/substring-in-java/

@@ -1,6 +1,7 @@
 ---
 title:                "문자열 보간하기"
-html_title:           "Clojure: 문자열 보간하기"
+date:                  2024-01-20T17:50:55.510898-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "문자열 보간하기"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,31 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Haskell에서 문자열 보간하기: 어떻게 할까?
+## What & Why? (무엇이며 왜?)
+문자열 보간(string interpolation)은 변수나 표현식의 값을 문자열 안에 바로 삽입하는 방법입니다. 프로그래머들은 코드를 더 읽기 쉽고 유지 관리하기 족하게 하기 위해 이를 사용합니다.
 
-## 무엇 & 왜?
-문자열 보간(string interpolation)이란, 문자열 안에 변수나 표현식을 삽입하여 새로운 문자열을 생성하는 것입니다. 이는 문자열을 조작하고 출력을 자동화하는데 있어 편리하고 유용한 스킬입니다.
+## How to: (어떻게 하나요?)
+Haskell에서 문자열 보간을 사용하기 위해서는 일반적으로 `printf` 함수나 템플릿 리터럴 같은 외부 라이브러리가 필요합니다. 여기 `printf` 예시가 있습니다:
 
-## 어떻게:
 ```Haskell
-{-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE QuasiQuotes       #-}
-import Str
+import Text.Printf (printf)
+
+name :: String
+name = "세상"
 
 main :: IO ()
-main = do
-    let name = "John Doe"
-    let age = 23
-    print $ str "이름: ${name}, 나이: ${age}"
+main = printf "안녕, %s!\n" name
 ```
-이 코드를 실행하면, `"이름: John Doe, 나이: 23"`라는 문자열이 출력됩니다.
 
-## 깊게 알아보기
-- 하스켈에서 문자열 보간을 가장 일반적으로 사용하는 방법은 "str" 데이터 타입을 사용하는 것입니다. 이는 문자열 보간을 Haskell에 빌트인 PLC 문자열에 대한 언어 확장으로 추가하였습니다.
-- 하스켈의 다른 문자열 보간 방법으로는 "Text.Printf" 안의 프린트프 처리를 활용하는 법이 있습니다. 이 방법이 더 강력할 수 있지만, 상황에 따라 코드를 복잡하게 만드는 단점이 있습니다.
-- 문자열 보간 구현의 주된 이슈 중 하나는 언어 확장의 사용에 따른 포터빌리티와 생산성 사이의 트레이드오프입니다. 일부 프로그래머들은 표준화된 텍스트 가공 라이브러리를 사용하느니 보다 네이티브하게 문자열을 처리하는 것을 선호합니다.
+실행 결과:
 
-## 참고 출처들
-- [Haskell 문자열 보간의 공식 문서](https://hackage.haskell.org/package/interpolate)
-- [Haskell에 대한 문자열 처리 가이드](https://wiki.haskell.org/String_interpolation)
-- ['printf' 처리에 대한 여러 예제 코드들](http://book.realworldhaskell.org/read/profiling-and-optimization.html)
+```
+안녕, 세상!
+```
+
+## Deep Dive (심화 탐구)
+문자열 보간은 다른 언어에서 흔한 기능으로, 초기 프로그래밍 언어에서부터 발전해 왔습니다. 하스켈에는 기본적으로 내장된 문자열 보간 기능이 없지만, `printf` 함수나 `text` 패키지와 같은 라이브러리를 사용할 수 있습니다. 
+
+이들 중 `printf`는 C 언어의 영향을 받아 만들어진 함수로, 형식 지정자(format specifier)를 사용합니다. 또한, QuasiQuotes를 사용하여 템플릿 리터럴을 구현할 수 있는 `interpolate` 라이브러리 같은 여러 대안들이 있습니다.
+
+```Haskell
+{-# LANGUAGE QuasiQuotes #-}
+import Data.String.Interpolate ( i )
+
+main :: IO ()
+main = putStrLn [i|안녕, #{name}!|]
+```
+
+이렇게 하면 변수를 문자열 안에 직접 삽입하여 더 자연스러운 문자열 작성이 가능합니다.
+
+## See Also (더 보기)
+- Haskell `printf` documentation: https://hackage.haskell.org/package/base-4.15.0.0/docs/Text-Printf.html
+- `text` package on Hackage: https://hackage.haskell.org/package/text
+- `interpolate` library: https://hackage.haskell.org/package/interpolate
+- Stack Overflow discussion on string interpolation in Haskell: https://stackoverflow.com/questions/4978578/how-to-interpolate-variables-in-strings-in-haskell

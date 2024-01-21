@@ -1,7 +1,8 @@
 ---
-title:                "未来または過去の日付を計算する"
-html_title:           "Rust: 未来または過去の日付を計算する"
-simple_title:         "未来または過去の日付を計算する"
+title:                "将来または過去の日付を計算する"
+date:                  2024-01-20T17:32:05.219397-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "将来または過去の日付を計算する"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,49 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-「未来や過去の日付の計算」とは、現在日から特定の日数を加えたり減らしたりして別の日付を得ることです。これは予約システムなど、特定の期間後の日付を扱うプログラムで広く用いられます。
+## What & Why? (何となぜ？)
+将来または過去の日付を計算するって、ある日から特定の日数を足したり引いたりすることだよ。何のために使うかって？イベント予定を立てたり、期限を計算したりする時に便利だからさ。
 
-## 手順：
-Rustではchronoパッケージを使って日付の計算が可能です。
-
-Cargo.tomlに下記を追加します。
-
+## How to: (やり方)
 ```Rust
-[dependencies]
-chrono = "0.4"
-```
-
-コード例：
-
-```Rust
-extern crate chrono;
-use chrono::{DateTime, Duration, Utc};
+use chrono::{Duration, Utc};
 
 fn main() {
-    let now: DateTime<Utc> = Utc::now();
-    println!("現在: {}", now);
+    let today = Utc::now();
+    println!("Today: {}", today);
 
-    let two_weeks_from_now = now + Duration::weeks(2);
-    println!("2週間後: {}", two_weeks_from_now);
+    let future_date = today + Duration::days(30);
+    println!("Future date: {}", future_date);
 
-    let two_weeks_ago = now - Duration::weeks(2);
-    println!("2週間前: {}", two_weeks_ago);
+    let past_date = today - Duration::days(30);
+    println!("Past date: {}", past_date);
 }
 ```
 
-出力結果:
-
-```Rust
-現在: 2022-05-20 12:34:56.7890 UTC
-2週間後: 2022-06-03 12:34:56.7890 UTC
-2週間前: 2022-05-06 12:34:56.7890 UTC
+出力例：
+```
+Today: 2023-04-14T12:00:00Z
+Future date: 2023-05-14T12:00:00Z
+Past date: 2023-03-15T12:00:00Z
 ```
 
-## ディープダイブ
-このような日付の計算は、COBOLなどの古い言語では煩雑で困難でしたが、Rustのような新しい言語では大変簡単に行うことが可能です。Rustではchronoパッケージが慣用的に使われます。他のパッケージとしてはtimeパッケージがありますが、chronoの方が機能が充実しています。この計算の実装は、日数を単純に加減算しているだけでなく、うるう年などの日数のズレの調整も行っています。
+## Deep Dive (掘り下げ)
+昔はカレンダー計算が大変だった。だけど、コンピュータとライブラリの出現で簡単になった。Rustでは`chrono`クレートが人気。代替として`time`クレートもある。`chrono`はTimezoneにも対応していて、計算もIntuitive。内部的には、エポック（1970年1月1日）からの経過時間をベースに計算するよね。
 
-## 参照情報
-1. Chrono公式ドキュメンテーション： https://docs.rs/chrono/0.4.19/chrono/
-2. Rustの日付と時間：https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html
-3. Rustプログラミングの日付操作：https://qiita.com/mopp/items/7c6d5c0326af6e02504c
+## See Also (関連情報)
+- [The Rust Programming Language](https://doc.rust-lang.org/book/) - Rustの基本を学ぶための資料。

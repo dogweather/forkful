@@ -1,7 +1,8 @@
 ---
-title:                "Перетворення рядка в нижній регістр"
-html_title:           "Javascript: Перетворення рядка в нижній регістр"
-simple_title:         "Перетворення рядка в нижній регістр"
+title:                "Перетворення рядка у нижній регістр"
+date:                  2024-01-20T17:37:47.281819-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Перетворення рядка у нижній регістр"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,28 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Перетворення рядка в нижній регістр - це процес заміни всіх великих букв в рядку на малі. Програмісти роблять це для полегшення порівняння рядків та пошуку даних, оскільки ця операція робить процес нечутливим до регістру.
+## What & Why? (## Що і Чому?)
+Converting a string to lower case means changing all uppercase letters in the text to their lowercase equivalents. Programmers often do this for consistency, especially when comparing or processing text data.
 
-## Як це робити:
-Щоб перетворити рядок на нижній регістр в Arduino, ви можете використовувати наступний код:
+## How to: (## Як зробити:)
+```arduino
+String original = "Hello, Ukraine!";
+String lowercase = original.toLowerCase();
 
-```Arduino
-String myString = "Hello, World!";
-myString.toLowerCase();
-Serial.println(myString);  // "hello, world!"
+Serial.begin(9600);
+Serial.println(lowercase); // prints "hello, ukraine!"
 ```
 
-У цьому прикладі, ми використовуємо метод `toLowerCase()` із класу `String`, щоб перетворити `myString` на нижній регістр. Потім ми виводимо `myString` на Serial Monitor.
+## Deep Dive (## Поглиблений аналіз)
+Lowercasing strings has been essential in computing since its early days when data storage and comparison needed standardization. In Arduino, the `String` object's `toLowerCase()` method makes this task easy. Alternatives, like using ASCII manipulation, are cumbersome and rarely used.
 
-## Занурення в деталі
-Перетворення рядка в нижній регістр - це часта задача в програмуванні, яка має важливе значення у процесах обробки тексту. Однак, важливо знати, що якщо ви працюєте з нон-ASCII символами, вам може бути потрібна більш складна логіка.
+When you use `toLowerCase()`, it internally loops through each character, checking if it's uppercase. If so, it calculates the lowercase version based on ASCII values. It's simple and efficient for Arduino projects where memory and processing power need careful management.
 
-Інші альтернативи включають написання свого власного коду або використання зовнішніх бібліотек, які подолають стандартні обмеження.
+Remember, lowercasing only applies to alphabetic characters; numbers and symbols are unaffected.
 
-У Arduino `toLowerCase()` працює шляхом ітерація по кожному символу рядка і зміни великих букв на малі, якщо вони наявні. Важливо розуміти, що цей метод змінює оригінальний рядок.
-
-## Дивіться також
-1. [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/) - Офіційна документація Arduino про об'єкти String
-2. [Arduino String toLowerCase()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/) - Детальніше про `toLowerCase()`.
-3. [Arduino пошук по рядку](https://www.arduino.cc/en/Tutorial/StringIndexOf) - Інший приклад використання рядків в Arduino, цього разу для пошуку підрядка в рядку.
+## See Also (## Дивіться також):
+- Arduino's official `String` reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/tolowercase/
+- C++ `transform` and `tolower`: a more complex but versatile method, for interested programmers: https://en.cppreference.com/w/cpp/algorithm/transform
+- Unicode consideration for non-ASCII characters (advanced topic): https://unicode.org/reports/tr21/tr21-5.html

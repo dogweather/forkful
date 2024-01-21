@@ -1,7 +1,8 @@
 ---
-title:                "Eine Zeichenkette interpolieren"
-html_title:           "Arduino: Eine Zeichenkette interpolieren"
-simple_title:         "Eine Zeichenkette interpolieren"
+title:                "Zeichenketten interpolieren"
+date:                  2024-01-20T17:51:06.798729-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Zeichenketten interpolieren"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,40 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+String-Interpolation ermöglicht es, Variablenwerte direkt in Strings einzufügen. Das macht den Code übersichtlicher und erleichtert die Erstellung dynamischer Textausgaben.
 
-Interpolation von Zeichenketten bezieht sich auf den Prozess der Einbettung von Ausdrücken in Zeichenketten, so dass sie zur Laufzeit ausgewertet werden. Programmierer verwenden es wegen seiner Benutzerfreundlichkeit und Effizienz bei der Erstellung dynamischer Strings.
- 
-## Anleitung:
+## How to:
+In Haskell gibt es keine eingebaute String-Interpolation wie in manch anderen Sprachen. Stattdessen nutzen wir die `printf`-Funktion aus dem `Text.Printf`-Modul oder die Template-Strings aus dem `interpolate`-Paket. Hier sind zwei Methoden:
 
-In Haskell verwenden wir die Paket `Text.Printf` für Zeichenketteninterpolation. Hier sind einige Beispiele eingebettet.
+Mit `printf`:
 
-```Haskell
+```haskell
 import Text.Printf
 
+main :: IO ()
 main = do
-  let name = "John"
-  let age = 29
-
-  let interpolatedString = printf "Hallo %s, du bist %d Jahre alt!\n" name age
-  
-  putStrLn interpolatedString
+    let name = "Welt"
+    printf "Hallo, %s!\n" name
 ```
 
-Wenn Sie das obige Programm ausführen, sehen Sie etwas wie:
-
-```Haskell
-Hallo John, du bist 29 Jahre alt!
+Ausgabe:
 ```
-## Vertiefung:
+Hallo, Welt!
+```
 
-Historisch gesehen, ist Zeichenketteninterpolation ein Konzept, das in der Shell-Programmierung populär wurde und in vielen Hochsprachen übernommen wurde. In Haskell ist die `Text.Printf` Bibliothek für dieses Konzept verantwortlich. Es besteht auch die Alternative, einfache Konkatenation zu verwenden, aber Interpolation ist oft sauberer und lesbarer.
+Mit Template-Strings:
 
-Die Implementierung von `Text.Printf` in Haskell stützt sich auf Typklassen und variadische Funktionen. Sie erzeugt während der Kompilierung spezialisierten Code für jeden interpolierten String.
+Zuerst, fügen Sie das `interpolate`-Paket Ihrem Projekt hinzu, indem Sie die entsprechende Zeile in Ihrer `.cabal`-Datei oder `stack.yaml` aufnehmen. Jetzt verwenden Sie es:
 
-## Weiterführende Informationen:
+```haskell
+{-# LANGUAGE QuasiQuotes #-}
+import Data.String.Interpolate (i)
 
-Für komplexere Anwendungsfälle und weitere Informationen über Zeichenketteninterpolation in Haskell, kannst du folgende Ressourcen konsultieren:
+main :: IO ()
+main = do
+    let name = "Welt"
+    putStrLn [i|Hallo, #{name}!|]
+```
 
-- Haskell Text.Printf Dokumentation: http://hackage.haskell.org/package/base-4.14.1.0/docs/Text-Printf.html
-- Kaufen Sie das Buch "Real World Haskell" hier: http://book.realworldhaskell.org/
-- Weitere Informationen zur Zeichenkettenmanipulation in Haskell: https://wiki.haskell.org/Introduction
+Ausgabe:
+```
+Hallo, Welt!
+```
+
+## Deep Dive
+Historisch gesehen hatte Haskell keine eingebaute String-Interpolation, hauptsächlich wegen des starken Fokus auf Typsicherheit und Funktionsreinheit. Frühe Haskeller benutzten `++` für die Verkettung von Strings oder `printf` für formatierte Ausgaben, ähnlich wie in C.
+
+Das Paket `Text.Printf` bringt C-ähnliche `printf`-Funktionalität nach Haskell, während die `interpolate`-Bibliothek ein moderneres Gefühl mit Template-Strings bietet. Die Implementierung nutzt QuasiQuotes, eine Erweiterung, die es ermöglicht, Strings zu parsen und in Haskell-Ausdrücke umzuwandeln.
+
+Alternativen sind Monoid-Operationen mit `(++)` oder `concat`, sowie `show` für die Umwandlung von Daten in Strings. Viele Haskeller verwenden auch Formatierungsbibliotheken wie `formatting`, die leistungsfähig sind, aber eine lernkurve haben.
+
+## See Also
+Hier sind einige Ressourcen, um mehr über String-Interpolation und verwandte Themen in Haskell zu erfahren:
+
+- [Text.Printf Dokumentation](https://hackage.haskell.org/package/base-4.15.0.0/docs/Text-Printf.html)
+- [`interpolate` Paket auf Hackage](https://hackage.haskell.org/package/interpolate)
+- [`formatting` Paket auf Hackage](https://hackage.haskell.org/package/formatting)
+- [HaskellWiki zu Strings](https://wiki.haskell.org/Strings)
+- [Learn You a Haskell für großartige Güte!](http://learnyouahaskell.com/chapters)

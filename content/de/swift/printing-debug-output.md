@@ -1,7 +1,8 @@
 ---
-title:                "Ausgabe von Debugging-Informationen drucken"
-html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
-simple_title:         "Ausgabe von Debugging-Informationen drucken"
+title:                "Debug-Ausgaben drucken"
+date:                  2024-01-20T17:53:25.471457-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Debug-Ausgaben drucken"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -11,42 +12,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Printing debug output ist das Ausgeben von Nachrichten in der Konsole, um zu verfolgen, was im Code passiert. Programmierer verwenden es, um Fehler zu finden und zu verstehen, wie ihr Code während der Ausführung funktioniert.
 
-Die Druckausgabe von Debug-Informationen ist ein Vorgang, bei dem die Interna eines Programms auf einfache Weise angezeigt werden. Programmierer nutzen dies oft, um Fehler im Code aufzuspüren und Datenflüsse besser zu verstehen.
-
-## Wie macht man das?
-
-In Swift gibt es die eingebaute Funktion `print()`, um Debug-Ausgaben zu erzeugen. Hier sind einige Beispiele:
-
+## So geht's:
+Um etwas in der Konsole auszugeben, nutzen wir `print()` oder `debugPrint()`. Hier ein Beispiel:
 ```Swift
-let name = "Lukas"
-print(name)
-// Ausgabe: Lukas
+let name = "Welt"
+print("Hallo, \(name)!")
+// Ausgabe: Hallo, Welt!
 
-let number = 24
-print("Meine Zahl ist \(number).")
-// Ausgabe: Meine Zahl ist 24.
-
-print("Wenn man hier ankommt, ist etwas schief gelaufen.")
-// Ausgabe: Wenn man hier ankommt, ist etwas schief gelaufen.
+debugPrint("Hallo, \(name)!")
+// Ausgabe: "Hallo, Welt!"
 ```
+Die Funktion `debugPrint()` ist hilfreich, wenn wir eine detailliertere Ausgabe für Debug-Zwecke wollen.
 
-## Vertiefung
+## Tiefere Einblicke:
+Die `print()`-Funktion gibt es seit den Anfängen von Swift. Alternativen zu `print()` sind beispielsweise `NSLog()`, das mehr Kontext bietet, aber langsamer ist. Eine weitere Möglichkeit ist die Verwendung von Logging-Frameworks wie `os_log`, die in Apples Betriebssystemen integriert sind und eine konfigurierbare Log-Ebene bieten.
 
-Während der Entwicklung von Swift wurde der Bedarf an starken Debugging-Werkzeugen wie `print()` früh erkannt. Historisch gesehen waren Ausgaben zur Fehlerbehebung bereits in den Anfängen der Programmiersprachen präsent.
+Debug Output sollte nicht in Produktionscode verbleiben, da es Performance beeinträchtigen kann und potenziell sensible Informationen preisgibt. Es ist sinnvoll, die Logs bei der Veröffentlichung einer App zu entfernen oder auf ein Minimum zu reduzieren.
 
-Eine Alternative zu `print()` ist die Funktion `debugPrint()`. Sie liefert detailliertere Ausgaben, einschließlich der Namen von Enum-Case-Konstanten und Variablen:
-
-```Swift
-var age = 24
-debugPrint("Alter ist \(age).")
-// Ausgabe: "Alter ist 24.\n"
-```
-
-Interessanterweise implementiert Swift das Drucken von Debug-Ausgaben durch Umleitung der Standardausgabe ("stdout"). Dies ermöglicht es, Ausgaben auch an andere Orte als die Konsole zu senden, wie zum Beispiel Dateien.
-
-## Siehe auch
-
-Hier sind einige Ressourcen, wenn du dich weiter mit dem Thema beschäftigen willst:
-
-- "Hacking with Swift": [Printing debug text with print()](https://www.hackingwithswift.com/read/0/3/printing-debug-text-with-print)
+## Siehe auch:
+- Apples Swift Logging API: https://developer.apple.com/documentation/os/logging
+- Swift Dokumentation über `print()`: https://developer.apple.com/documentation/swift/1541053-print
+- Swift Dokumentation über `debugPrint()`: https://developer.apple.com/documentation/swift/1539127-debugprint

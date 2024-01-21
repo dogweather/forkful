@@ -1,7 +1,8 @@
 ---
-title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Arduino: Znajdowanie długości ciągu znaków"
-simple_title:         "Znajdowanie długości ciągu znaków"
+title:                "Znalezienie długości ciągu znaków"
+date:                  2024-01-20T17:47:11.206096-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Znalezienie długości ciągu znaków"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,34 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why?
+Długość ciągu znaków – to ile znaków zawiera. Programiści muszą to wiedzieć, aby np. weryfikować dane wejściowe czy obsługiwać teksty o zmiennej długości.
 
-Długość łańcucha to liczba znaków w danym łańcuchu. Programiści potrzebują tej informacji w różnych kontekstach, takich jak generowanie błędów walidacyjnych, przycinanie tekstu lub operacje na tekście.
-
-## Jak zrobić?
-
-Aby sprawdzić długość łańcucha w Elm, używamy funkcji `String.length`. Oto przykład:
+## How to:
+W Elm używa się funkcji `String.length` do uzyskania długości ciągu znaków. Oto przykład:
 
 ```Elm
-import Html exposing (text)
+import String
 
 main =
-  text (String.fromInt (String.length "Cześć"))
+    let
+        myString = "Cześć, świecie!"
+    in
+    String.length myString
+    -- Wynik: 16
 ```
 
-Gdy uruchomisz ten kod, wyświetli się "5" – liczba znaków w słowie "Cześć".
+## Deep Dive
+Historia języka Elm sięga 2012 roku. W Elm, operacja znalezienia długości ciągu jest prostsza niż w wielu innych językach – `String.length` robi to za nas. Alternatywy to własne funkcje rekurencyjne albo użycie bibliotek. Elm przechowuje stringi w UTF-16, więc `String.length` zwraca liczbę tzw. code units, co może być mylące przy specjalnych znakach czy emoji.
 
-## W Głąb Tematu
-
-Elm to język funkcyjny, który podziela wiele cech z Haskell. Warto zauważyć, że choć Elm ma wbudowaną funkcję `String.length`, pamiętać o tym, że ta funkcja działa poprawnie jedynie na łańcuchach reprezentujących poprawny tekst w formacie UTF-16. W przypadku niewłaściwych sekwencji, wynik może być nieprzewidywalny.
-
-Alternatywnie, jeśli operujesz na listach znaków zamiast łańcuchach, możesz użyć funkcji `List.length`.
-
-Szczegółami implementacji `String.length` nie musisz się przejmować - język Elm został zaprojektowany z myślą o bezpieczeństwie i łatwości obsługi, więc te niskopoziomowe kwestie są dla Ciebie ukryte.
-
-## Zobacz Też
-
-Jeżeli chcesz zgłębić temat operacji na łańcuchach w Elm, zapraszam do lektury następujących źródeł:
-
-- Dokumentacja Elm: [String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- Dokumentacja o listach w Elm: [List](https://package.elm-lang.org/packages/elm/core/latest/List)
+## See Also
+Dalsze informacje i przykłady znajdziesz w [dokumentacji Elm](https://package.elm-lang.org/packages/elm/core/latest/String#length) oraz na stronie [Elm Guide](https://guide.elm-lang.org/).

@@ -1,7 +1,8 @@
 ---
-title:                "भविष्य या अतीत में एक तारीख की गणना"
-html_title:           "Arduino: भविष्य या अतीत में एक तारीख की गणना"
-simple_title:         "भविष्य या अतीत में एक तारीख की गणना"
+title:                "भविष्य या अतीत में तारीख की गणना"
+date:                  2024-01-20T17:31:28.509004-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "भविष्य या अतीत में तारीख की गणना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,55 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Future और Past Date की Calculation कैसे करे Arduino से?
+## क्या और क्यों? (What & Why?)
 
-## What & Why? (यह क्या है और क्यों?)
+भविष्य या अतीत की तारीख की गणना मतलब है आज की तारीख से कुछ दिनों को जोड़ना या घटाना। प्रोग्रामर इसे इवेंट्स की डेट, रिमाइंडर्स, या दूसरे समय-संबंधित कामों के लिए करते हैं।
 
-Future या Past Date की calculation से हम मतलब रखते हैं एक तारीख की गणना करना, जो अब से कुछ समय बाद या पहले हो। प्रोग्रामर्स इसको इसलिए करते हैं क्योंकि इससे उन्हें time-sensitive  tasks और event tracking में मदद मिलती हैं। 
+## कैसे: (How to:)
 
-## How to: (कैसे करें)
+Arduino बोर्ड पर आप "TimeLib.h" लाइब्रेरी का इस्तेमाल करके आसानी से तारीख की गणना कर सकते हैं:
 
-चलिए अब हम देखते हैं कि कैसे Arduino काम करता है इसे समझने के लिए। 
-
-```Arduino 
-#include <TimeLib.h>
-void setup() {
-  setTime(12, 0, 0, 1, 1, 2021); //HH:MM:SS, DD:MM:YYYY
-  Serial.begin(9600);
-}
-void loop() {
-  time_t futureTime = now() + (1 * DAYS); 
-  Serial.print("Current Date: ");
-  Serial.print(day());
-  Serial.print("/");
-  Serial.print(month());
-  Serial.print("/");
-  Serial.println(year());
-  Serial.print("Future Date: ");
-  Serial.print(day(futureTime));
-  Serial.print("/");
-  Serial.print(month(futureTime));
-  Serial.print("/");
-  Serial.println(year(futureTime));
-  delay(10000);
-}
-```
-Output :
 ```Arduino
-Current Date: 1/1/2021
-Future Date: 2/1/2021
+#include <TimeLib.h>
+
+void setup() {
+  Serial.begin(9600);
+  setTime(23, 59, 50, 4, 1, 2021); // 23:59:50, 4 January 2021
+}
+
+void loop() {
+  time_t now = now();
+  
+  // भविष्य में 10 दिन जोड़ना
+  time_t futureDate = now + 10 * SECS_PER_DAY;
+  Serial.print("Future Date: ");
+  Serial.println(day(futureDate));
+  Serial.print("/");
+  Serial.println(month(futureDate));
+  Serial.print("/");
+  Serial.println(year(futureDate));
+  Serial.println();
+
+  // अतीत में 10 दिन घटाना
+  time_t pastDate = now - 10 * SECS_PER_DAY;
+  Serial.print("Past Date: ");
+  Serial.println(day(pastDate));
+  Serial.print("/");
+  Serial.println(month(pastDate));
+  Serial.print("/");
+  Serial.println(year(pastDate));
+  Serial.println();
+
+  delay(10000); // Update every 10 seconds
+}
 ```
-## Deep Dive (गहरी जानकारी)
 
-इस concept का उपयोग Arduino Programming में historical context तैयार करने, date-based operations को execute करने और temporal logic पर base किए गए systems को manage करने में किया जाता है। 
+## गहराई में: (Deep Dive)
 
-विकल्पों के हिसाब से, आप और भी libraries जैसे कि <DateTime.h> और <RTClib.h> का उपयोग कर सकते हैं। ये Arduino के लिए अधिक विस्तृत functionality provide करते हैं। 
+तारीखों को गणना करना कंप्यूटर साइंस और प्रोग्रामिंग के पुराने समस्याओं में से एक है। यह ज्यादातर प्रोग्रामर लाइब्रेरी या टाइम सर्विस API के जरिए करते हैं जो कि टाइम जोन्स, लीप ईयर और दूसरी जटिलताओं को संभालते हैं। Arduino में `TimeLib.h` एक ऐसी ही शक्तिशाली लाइब्रेरी है जो समय और तारीख की गणना में मदद करती है।
 
-Date calculation की implementation details के लिए TimeLib library 'now()' function का उपयोग करती है जो current time को UNIX timestamp के रूप में return करती है। इसे एक Day (expressed as seconds) से add किया जाता है future date जनरेट करने के लिए।
+'Unix Time' प्रणाली भी लोकप्रिय है, जहां समय को 1 जनवरी 1970 से सेकंड्स में मापा जाता है। लेकिन Arduino पर डेट और टाइम के साथ काम करते वक्त, मेमोरी और प्रोसेसिंग पावर कम होने की वजह से 'TimeLib.h' जैसी लाइब्रेरीज को पसंद किया जाता है।
 
-## See Also (संबंधित जानकारी )
+## संबंधित स्रोत: (See Also)
 
-1. [Arduino Time Library](https://www.arduinolibraries.info/libraries/time)
-2. [Arduino Date Calculation Example](http://playground.arduino.cc/Code/time)
-3. [Arduino DateTime Library](https://github.com/ropg/ezTime) 
-4. [Arduino RTC library](https://www.arduino.cc/reference/en/libraries/rtclib/)
+- Arduino Time Library: https://www.arduino.cc/en/Reference/Time
+- Unix Time and Date Command: https://www.unixtimestamp.com/
+- NTP Client for Arduino: https://github.com/arduino-libraries/NTPClient
+
+अधिक जानकारी और कोड उदाहरण के लिए इन स्रोतों पर जाएं। यह आपकी समझ को और भी बेहतर बनाने में मदद करेंगे।

@@ -1,6 +1,7 @@
 ---
 title:                "임시 파일 생성하기"
-html_title:           "Python: 임시 파일 생성하기"
+date:                  2024-01-20T17:40:07.307774-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "임시 파일 생성하기"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,30 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜요?
+## What & Why? (무엇과 왜?)
+임시 파일 생성은 데이터를 일시적으로 저장하기 위한 파일을 만드는 것입니다. 프로그래머는 주로 데이터 처리 중간 결과를 보관하거나, 애플리케이션간 데이터 전달 시 사용합니다.
 
-임시 파일 생성은 특정 절차를 거친 후 삭제되는 일시적인 파일을 생성하는 것입니다. 해야 할 일이 크고 복잡하거나 많은 양의 데이터를 임시로 저장해야 할 때 프로그래머들이 이를 사용합니다.
+## How to: (방법)
+Clojure에서 임시 파일을 만들려면 `java.io.File`의 `createTempFile` 메서드를 사용합니다. 예제를 확인해 보세요.
 
-## 방법:
-
-Clojure에서 temp file을 만들어봅시다.
-
-```Clojure
+```clojure
 (require '[clojure.java.io :as io])
-(let [tf (io/make-temp-file "prefix" ".ext")]
-  (println "Temp file:" (.getPath tf)))
+
+; 임시 파일 생성
+(def temp-file (io/file (java.io.File/createTempFile "temp" ".txt")))
+
+; 사용 예 - 단어 목록을 임시 파일에 씁니다.
+(spit temp-file "clojure\njava\nlisp\n")
+
+; 임시 파일 읽기
+(slurp temp-file)
+; => "clojure\njava\nlisp\n"
 ```
 
-이 코드는 임시 파일을 만들고, 그 경로를 출력합니다.
+만들어진 임시 파일은 프로그램이 종료될 때 시스템에 의해 자동으로 삭제됩니다.
 
-## 딥 다이브
+## Deep Dive (심층 분석)
+임시 파일 생성은 UNIX 시스템에서 시작되어 널리 사용되는 기능입니다. `java.io.File/createTempFile` 메서드는 자바에서 제공하며, Clojure는 자바 플랫폼 위에서 실행되므로 이 메서드를 이용할 수 있습니다. 임시 파일은 일반적으로 시스템의 특정 폴더에 생성되는데, 직접 위치를 지정할 수도 있습니다. 대체 방법으로는 NIO 패키지의 `Files/createTempFile`을 사용할 수도 있습니다. 하지만 임시 파일 사용 시 보안을 중요시해야 하며 악의적인 프로그램에 의해 사용될 위험도 있습니다.
 
-임시 파일은 컴퓨팅 역사와 함께 오랜 경험을 가지고 있으며, 주로 중간 계산 결과를 저장하거나 대량의 데이터를 분석하는 등의 일시적인 용도로 사용됩니다. Clojure에서의 대안으로는 메모리나 데이터베이스에 데이터를 임시로 저장하는 방법이 있습니다. Clojure에서 io/make-temp-file 함수는 java.io.File.createTempFile 메소드를 사용하여 임시 파일을 생성하며, 이 파일은 JVM이 종료되거나 코드가 명시적으로 삭제하거나 재부팅할 때까지 존재합니다.
-
-## 참고자료
-
-다음은 관련 링크입니다:
-
-- Clojure java.io API: https://clojuredocs.org/clojure.java.io
-- Clojure Cookbook: https://www.clojure-cookbook.com/
-- Java Temp File: https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile(java.lang.String,%20java.lang.String)
+## See Also (더 보기)
+- [Java Platform SE 8 java.io.File](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- [ClojureDocs `spit`](https://clojuredocs.org/clojure.core/spit)
+- [ClojureDocs `slurp`](https://clojuredocs.org/clojure.core/slurp)
+- [Oracle's Guide to java.nio.file.Files](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)

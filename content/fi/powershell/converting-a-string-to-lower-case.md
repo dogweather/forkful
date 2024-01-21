@@ -1,7 +1,8 @@
 ---
-title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
-html_title:           "Gleam: Merkkijonon muuttaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+date:                  2024-01-20T17:39:23.851647-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,31 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+## What & Why? | Mikä & Miksi?
+Muuttamalla merkkijonon pieniksi kirjaimiksi varmistetaan, että tiedon vertailu ja käsittely on yhdenmukaista, tapahtuipa se sitten käyttöliittymässä tai tietokannassa. Ohjelmoijat tekevät tämän esimerkiksi poistaakseen syötteiden kirjainkokoriippuvuuden, mikä vähentää virheitä ja parantaa käyttäjäkokemusta.
 
-Muuttaa merkkijono pienaakkosiksi tarkoittaa kaikkien isoja kirjaimia sisältävän merkkijonon muuttamista pienaakkosiksi. Tätä tarvitaan, koska ohjelmoijat usein vertailevat merkkijonoja, ja nämä vertailut ovat usein kirjainkoon herkkiä.
-
-
-## Kuinka:
-
-PowerShellissä tämä on erittäin yksinkertaista. Käytä `ToLower()` metodia. Tässä on esimerkki:
+## How to: | Kuinka:
+PowerShellissa merkkijonon muuttaminen pieniksi kirjaimiksi on yksinkertaista. Käytä `.ToLower()` -metodia tai `ToLowerInvariant()` -metodia, jos haluat varmistaa kielen alueellisten asetusten huomiotta jättämisen. 
 
 ```PowerShell
-$sana = "Moi MAAILMA! "
-$alempi_sana = $sana.ToLower()
-echo $alempi_sana
-
-# Tulostaa: "moi maailma!"
+# Käytetään .ToLower() -metodia
+$exampleString = "Hello, World!"
+$lowerCaseString = $exampleString.ToLower()
+$lowerCaseString
 ```
-Verrattuna alkuperäiseen merkkijonoon, uudessa muuttujassa kaikki kirjaimet ovat pieniä.
 
-## Syvällisempi tarkastelu:
+Sample output:
+```
+hello, world!
+```
 
-Merkkijonon muuttaminen pienaakkosiksi ei ole uusi käsite. Se on ollut mahdollista jo ohjelmointikielistä alkaen, kuten Perl ja JavaScript. PowerShell on sisällyttänyt `ToLower()` metodin .NET-kirjastoihin, jotka ovat olemassa ohjelmointikielestä .NET Framework 1.0, julkaistu vuonna 2002.
+```PowerShell
+# Käytetään ToLowerInvariant() -metodia
+$exampleString = "HELLO, WORLD!"
+$lowerCaseString = $exampleString.ToLowerInvariant()
+$lowerCaseString
+```
 
-On vaihtoehtoinen tapa muuttaa merkkijono pienaakkosiksi PowerShellissä. Käyttää `mb.ToLower()`-metodia, joka tekee saman asian, mutta se on määritetty tekstin kulttuuriasetuksille. Se muuttaa merkkijonon pienaakkosiksi mukauttamalla merkkijonoa kulttuurille, joka on määritetty nykyiselle threadille.
+Sample output:
+```
+hello, world!
+```
 
-## Katso myös:
+## Deep Dive | Syväsukellus:
+Ennen PowerShellin aikaa käyttäjät turvautuivat alhaisemman tason kielissä, kuten C:ssä, käsin kirjoitetut koodit merkkijonon muuttamiseen pieniksi kirjaimiksi. `.ToLower()` ja `.ToLowerInvariant()` metodit ovat olleet osa .NET-kirjastoa alusta asti, ja ne helpottavat työtä antamalla valmiin toiminnallisuuden.
 
-- `.NET String Class`: https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-5.0 
-- `PowerShell Documentation`: https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1
+Vaihtoehtoisesti, voit käyttää `tr` -komentoa Unix-pohjaisissa järjestelmissä tai koetella tekemään muunnoksen käyttäen ASCII-arvoja, mutta nämä menetelmät ovat mutkikkaampia ja alttiimpia virheille.
+
+`.ToLower()` käyttää kulttuurispecifistä pienten kirjainten mappia, mikä voi johtaa eroihin riippuen kulttuuriasetuksista. `.ToLowerInvariant()` puolestaan käyttää invarianttia kulttuuria, mikä tuottaa yhdenmukaisia tuloksia riippumatta alueellisista asetuksista.
+
+## See Also | Katso Myös:
+- Microsoft's official documentation on ToLower() and ToLowerInvariant(): [Linkki](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower)
+- Stack Overflow discussions on string manipulation in PowerShell: [Linkki](https://stackoverflow.com/questions/tagged/powershell+string+tolower)

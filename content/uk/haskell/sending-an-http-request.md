@@ -1,7 +1,8 @@
 ---
-title:                "Надсилання http-запиту"
-html_title:           "Arduino: Надсилання http-запиту"
-simple_title:         "Надсилання http-запиту"
+title:                "Надсилання HTTP-запиту"
+date:                  2024-01-20T17:59:58.552904-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,34 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке і навіщо це потрібно?
+## Що & Навіщо?
+HTTP-запит використовується для взаємодії з веб-сервісами: отримання та надсилання даних. Програмісти роблять це, щоб їхні програми могли спілкуватися з іншими системами через Інтернет.
 
-Відправлення HTTP-запиту -  це процес передачі повідомлень від клієнта до сервера в Інтернеті або будь-якій іншій мережі, використовуючи протокол HTTP. Програмісти роблять це для взаємодії з веб-сервісами: отримання даних, надсилання даних тощо.
+## Як це зробити:
+У Haskell для HTTP-запитів можна використовувати пакет `http-conduit`. Ось приклад простого GET-запиту:
 
-## Як це зробити?
+```Haskell
+{-# LANGUAGE OverloadedStrings #-}
 
-Нижче наведено код для відправлення простого HTTP GET запиту в Haskell:
-
-```Haskell 
 import Network.HTTP.Simple
 
 main :: IO ()
 main = do
-    response <- httpLBS "http://example.com"
-    print $ getResponseStatusCode response
-    print $ getResponseStatusMessage response
-    print $ getResponseBody response
+    response <- httpBS "http://httpbin.org/get"
+    print (getResponseBody response)
 ```
 
-У відповідь отримаєте статус-код відповіді, повідомлення про статус та тіло відповіді. 
+Коли ви запустите цей код, вивід буде приблизно таким:
 
-## Більш глибоко 
+```
+"{\n  \"args\": {}, \n  \"headers\": {\n    \"Accept-Encoding\": \"gzip\", \n    \"Host\": \"httpbin.org\", \n    \"User-Agent\": \"haskell http-conduit\"\n  }, \n  \"origin\": \"[your IP]\", \n  \"url\": \"https://httpbin.org/get\"\n}\n"
+```
 
-1. В історичному контексті, HTTP був створений для передачі гіпертекстових документів. Зараз, він використовується для передачі різних типів даних.
-2. Є різні альтернативи HTTP, такі як WebSocket, gRPC, GraphQL тощо. Вибір залежить від специфіки завдання.
-3. Процес відправлення HTTP-запиту в Haskell полягає в надсиланні запиту через TCP/IP з використанням бібліотеки, яка абстрагує низькорівневі деталі.
+## Поглиблено:
+Використовуючи `http-conduit`, ви насолоджуєтеся автоматичним управлінням пулом з'єднань і можливістю відправляти асинхронні запити. Цей пакет побудований на `conduit`, що забезпечує потокову обробку даних і ефективне управління ресурсами.
 
-## Див. також 
+Як альтернативу можна розглянути такі пакети, як `wreq` або нижньорівневу бібліотеку `http-client`. У минулому для HTTP-взаємодій в Haskell часто використовувалася бібліотека `network`.
 
-1. Офіційні документи Haskell: https://www.haskell.org/
-2. Огляд HTTP в Haskell : https://hackage.haskell.org/package/http
+Ключове в уточненні HTTP-запиту в Haskell — це побудова правильного Request об'єкту, управління заголовками, кукі та методами запитів. Модуль `Network.HTTP.Simple` дозволяє з легкістю керувати цими аспектами.
+
+## Дивіться також:
+- [http-conduit на Hackage](https://hackage.haskell.org/package/http-conduit)
+- [Wreq: a Haskell Web Client Library](https://hackage.haskell.org/package/wreq)

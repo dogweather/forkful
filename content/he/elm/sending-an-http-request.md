@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http"
-html_title:           "Bash: שליחת בקשת http"
-simple_title:         "שליחת בקשת http"
+title:                "שליחת בקשת HTTP"
+date:                  2024-01-20T17:59:44.914017-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -11,50 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-בקשת HTTP היא דרך לשלוח ולקבל מידע משרת באמצעות הפרוטוקול HTTP. תכניתאים משתמשים בזה לגשת למידע ממאגרים מרוחקים, לתקשר עם ממשקים תוכנה ציבוריים (APIs), ולביצוע פעולות אחרות שדורשות שיחה עם שרת.
+שליחת בקשת HTTP היא פעולה שבה התכנית שלך פונה לשרת באינטרנט ומבקשת מידע או מבצעת פעולה. תכניתנים עושים זאת כדי להאבק נתונים, לשלוח נתונים או לבצע אינטראקציה עם שירותי רשת.
 
-## כיצד ל:
-כאן יש דוגמא לשליחת בקשת HTTP באמצעות ביבליותקה המובנת `Http` של Elm, והצגת התוצאות.
+## איך לעשות:
+ב-Elm, שליחת בקשת HTTP דורשת שימוש במודול `Http`. דוגמה בסיסית:
 
 ```Elm
-module Main exposing (..)
-
 import Http
 import Json.Decode as Decode
 
-type alias Result =
-    { name : String }
+type Msg
+    = GotData (Result Http.Error String)
 
-decoder : Decode.Decoder Result
-decoder =
-    Decode.map Result (Decode.field "name" Decode.string)
-
-sendRequest : Cmd msg
-sendRequest =
-    Http.request
-        { method = "GET"
-        , url = "https://api.example.com"
-        , headers = []
-        , body = Http.emptyBody
-        , expect = Http.expectJson Msg decoder
-        , timeout = Nothing
-        , tracker = Nothing
+getData : Cmd Msg
+getData =
+    Http.get
+        { url = "https://api.example.com/data"
+        , expect = Http.expectString GotData
         }
 
-main =
-    sendRequest
+type alias Model = 
+    { data : String
+    , error : String
+    }
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        GotData (Ok data) ->
+            ({ model | data = data }, Cmd.none)
+
+        GotData (Err _) ->
+            ({ model | error = "Failed to fetch data." }, Cmd.none)
 ```
-התכנית עוברת על חלקים שונים של בקשת HTTP, כולל המתודה (במקרה זה, "GET"), ה- URL של השרת, כותרות (אם יש) והגוף של הבקשה.
 
-## צלילה עמוקה
-שליחת בקשת HTTP היא חלק אינטגרלי מן האינטרנט כפי שאנו מכירים אותו כיום. היא הופקה כחלק מתקן HTTP שנוצר ב- 1991.
+תוצאת דוגמה (`Model` עדכני):
 
-על אף שכמה שפות תכנות אחרות מציעות שיטות דומות לעיבוד בקשות HTTP, Elm ניהיליסט הגנטלי המציגת גישה יחודית באופן שהיא טסטית וחסונה במיוחד לשגיאות ריצה. 
+```Elm
+{ data = "נתונים מהשרת", error = "" }
+```
 
-תכנים זה משתמש בממיר JSON תוך שימוש בגישה מבנית ומסוג של Elm לטיפול בנתונים החוזרים מהבקשה.
+## עיון עמוק
+בעבר, שליחת בקשות HTTP בכל שפת תכנות הייתה כרוכה בשימוש ב-APIs נמוכים יותר כמו XMLHttpRequest ב-JavaScript. Elm מפשטת זאת על ידי מידול של בקשות ותגובות HTTP והפיכתם לבטוחים לטיפוס. עבור ניתוח הג'ייסון (JSON), Elm משתמשת במודול `Json.Decode` כדי להבטיח שהנתונים שמתקבלים תואמים לצורה אותה אנו מצפים לה. קיימים גם שיטות אלטרנטיביות כמו GraphQL, אבל בקשת HTTP רגילה עדיין היא הכי נפוצה ומתאימה לרוב הצרכים.
 
 ## ראה גם
-למידה נוספת על שליחת בקשת HTTP באמצעות Elm:
-
-- [The official Elm guide on HTTP requests](https://guide.elm-lang.org/)
-- [HTTP in Elm - video tutorial](https://www.youtube.com/watch?v=t2YWnZSFsg0)
+- [Elm HTTP package documentation](https://package.elm-lang.org/packages/elm/http/latest/)
+- [Json.Decode documentation](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode)
+- [An introduction to Elm by Evan Czaplicki](https://guide.elm-lang.org/)
+- [HTTP Basics - Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP)

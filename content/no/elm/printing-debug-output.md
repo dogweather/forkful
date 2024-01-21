@@ -1,7 +1,8 @@
 ---
-title:                "Utskrift av feilsøkingsresultat"
-html_title:           "Arduino: Utskrift av feilsøkingsresultat"
-simple_title:         "Utskrift av feilsøkingsresultat"
+title:                "Skrive ut feilsøkingsdata"
+date:                  2024-01-20T17:52:21.420264-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skrive ut feilsøkingsdata"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -11,41 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Debug-utskrift er å kaste ut data til konsollen for å spore hva programmet ditt gjør. Programmerere gjør dette for å forstå feil og forbedre kodeflyten.
 
-Utskrift av feilsøkingsdata er teknikken som brukes til å vise informasjon for å spore kodeflyt og identifisere problemer. Programmerere bruker dette for å forstå og løse feil effektivt.
-
-## Slik gjør du:
-
-Bruk `Debug.log` funksjonen i Elm. Vi printer en melding og hvilken verdi vi ønsker å sjekke. Her er en enkel kode:
+## Hvordan:
+I Elm, bruk `Debug.log` for å skrive ut vid debug-info i konsollen. Pass på, den er ment for lokalt arbeid – ikke for produksjon!
 
 ```Elm
-module Main exposing (main)
-
-import Browser
-import Html exposing (..)
+import Html exposing (text)
+import Debug
 
 main =
-    Html.text <|
-        Debug.log "Vår debug melding" "Hei verden!"
+    let
+        _ = Debug.log "Inspected value" (4 * 3)
+    in
+    text "Se konsollen for debug-output!"
 ```
 
-Når du kjører dette, vil du se i konsollen din:
- 
+Du vil se dette i konsollen:
+
 ```
-Vår debug melding:  "Hei verden!"
+Inspected value: 12 : number
 ```
-## Dypdykk 
 
-Historisk sett har utskrift av feilsøkingsdata alltid vært en del av programmering, fra fysisk lesing av hullkort til moderne software debugging.
+Denne koden multipliserer 4 med 3, og resultatet (12) vises i konsollen.
 
-Som et alternativ i Elm, kan du bruke `Debug.todo` som vil kaste en feil med en egendefinert melding. Dette kan være nyttig når du utvikler og vet at en viss kodebit ikke har blitt implementert ennå.
+## Dypdykk:
+`Debug.log` kom med Elm og har vært et nyttig verktøy siden. Alternativer til `Debug.log` inkluderer å lage egne logger-funksjoner eller bruk av eksterne verktøy som Elm Monitor. `Debug.log` tar to argumenter: en beskjed og verdien som skal inspiseres. Verdien blir returnert ubehandlet, så du kan smette `Debug.log` inn midt i uttrykk!
 
-Detaljert implementering av `Debug.log` tvinger programmet til å skrive ut en melding til konsollen sammen med verdien som blir sjekket. Det returnerer den verifiserte verdien uendret, slik at det kan brukes i hvilken som helst sammenheng i koden din.
+Husk at debug-utskrifter kan bremse applikasjonen og bør fjernes før produksjon for å beskytte sensitiv informasjon.
 
-## Se også 
-
-For mer informasjon, sjekk følgende ressurser:
- 
-- Elm dokumentasjon på `Debug.log`: https://package.elm-lang.org/packages/elm/core/latest/Debug#log
-- Artikkel om feilsøking i Elm: https://elmprogramming.com/debugging.html
-- Inndypende blogg om hvordan bruke `Debug.log`: https://www.elm-tutorial.org/en-v01/03-basics/13-debugging-with-log.html
+## Se Også:
+- Elm's offisielle dokumentasjon om feilsøking: https://guide.elm-lang.org/effects/debugging.html
+- Blogginnlegg om Elm og feilsøking: https://elm-lang.org/news/debugging-elm
+- Elm Monitor for mer avansert debugging: https://github.com/layflags/elm-monitor

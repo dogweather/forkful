@@ -1,7 +1,8 @@
 ---
-title:                "Debug-tulosteen tulostaminen"
-html_title:           "Bash: Debug-tulosteen tulostaminen"
-simple_title:         "Debug-tulosteen tulostaminen"
+title:                "Virheenjäljitystulosteiden tulostaminen"
+date:                  2024-01-20T17:51:49.616511-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Virheenjäljitystulosteiden tulostaminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,34 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Tulostaminen 'debug output' on työkalu, jonka avulla ohjelmoijat voivat nähdä ohjelmiensa toiminnan askel askeleelta. Tämä auttaa tunnistamaan ja korjaamaan virheitä sekä ymmärtämään paremmin ohjelman toimintaa.
+## What & Why? - Mikä ja Miksi?
+Debug-tulostus auttaa näkemään mitä ohjelmassasi tapahtuu. Sitä käytetään virheiden etsintään ja ohjelman toiminnan ymmärtämiseen.
 
-## Näin se tehdään:
-Voit tulostaa debug-tietoja Arduino-iskäntäohjelmassa hyvin yksinkertaisesti. Lähetä vain viestejä sarjaportin kautta avoimeen valvontaikkunaan. Tässä on esimerkki koodipätkä, joka lähettää rivin tekstiä "Hello, World!".
-
+## How to - Kuinka tehdä:
 ```Arduino
 void setup() {
-  Serial.begin(9600);   
+  Serial.begin(9600); // Käynnistetään sarjayhteys
 }
 
 void loop() {
-  Serial.println("Hello, World!"); 
-  delay(1000);
+  Serial.println("Tämä on debug-viesti."); // Tulostetaan debug-viesti
+  delay(1000); // Viivytetään sekunti
 }
 ```
 
-Tässä koodissa `Serial.begin(9600);` asettaa tiedonsiirtonopeuden ja `Serial.println("Hello, World!");` lähettää rivin tekstiä sarjamonitorille. `delay(1000);` pysäyttää ohjelman sekunniksi, ennen kuin lähetetään seuraava viesti. 
+Esimerkkitulostus:
+```
+Tämä on debug-viesti.
+Tämä on debug-viesti.
+...
+```
 
-## Syvä sukellus
-Alun perin tulostaminen debug-tietoihin kehitettiin ohjelmoijien työkaluksi koodin ongelmien tunnistamiseksi ja ratkaisemiseksi, kuten ohjelmavirheiden tai toiminnallisien ongelmien etsiminen. Arduinolla tämä toteutettiin SPP:llä (Serial Port Protocol), joka on yksinkertainen ja tehokas tapa kommunikoida virheraportit.
+## Deep Dive - Syväsukellus:
+Debug-tulostuksen historia juontaa juurensa ohjelmoinnin alkuhämäriin, jolloin se oli yksi harvoista tavoista seurata ohjelman toimintaa reaaliaikaisesti. Vaihtoehtoina debug-tulostukselle ovat muun muassa LEDien vilkuttaminen tai reaaliaikaiset debuggerit. Arduino käyttää sarjaliikennettä (Serial) debug-tulostukseen, mikä on yksinkertaista mutta tehokasta – data kulkee USB:n kautta tietokoneelle, missä voimme lukea sen sarjaportin monitorista.
 
-Vaihtoehtoisia menetelmiä ovat mm. LCD-näytöt, tiedonsiirto internetin tai paikallisen verkon kautta tai tiedon tallentaminen SD-muistikortille. Näiden avulla voi olla käytännöllistä tarkastella tietoja reaaliajassa tai jopa paikan päällä, mutta ne vaativat lisäkomponentteja tai -kirjastoja.
-
-Iteohjelmointiympäristössä, Arduinon `Serial`-olio sisältää funktion `println`, joka hoitaa itse tekstirivin lähettämisen ja sisäänrakennetun rivinvaihdon. Serial-luokka käyttää RXTX-kirjastoa (Receive/Transmit), joka on laajasti käytetty sarjaliikennettä tarvitsevissa Java-sovelluksissa.
-
-## Katso myös
-Enemmän tietoa debuggauksesta ja sen työkaluista löydät näistä lähteistä:
-
-1. [Arduino Debugging](https://www.arduino.cc/en/Tutorial/LibraryExamples/SoftwareSerialExample)
-3. [Understanding Arduino UNO Hardware Design](https://www.allaboutcircuits.com/technical-articles/understanding-arduino-uno-hardware-design/)
+## See Also - Katso Myös:
+- Arduino'n virallinen dokumentaatio Serial-käskystä: https://www.arduino.cc/reference/en/language/functions/communication/serial/
+- Arduino debugging techniques: https://www.arduino.cc/en/Tutorial/BuiltInExamples/SerialEvent
+- Beginners' guide to Arduino programming: https://www.arduino.cc/en/Guide/HomePage

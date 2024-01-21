@@ -1,6 +1,7 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "C#: Verkkosivun lataaminen"
+date:                  2024-01-20T17:44:20.095762-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,36 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mikä ja Miksi?
+Ladataan nettisivu, eli noudetaan webbisivun sisältö ohjelmoitavasti. Ohjelmoijat tekevät tämän datan keräämiseen, testaukseen tai palvelujen automatisointiin.
 
-Web-sivun lataaminen tarkoittaa sivun datan siirtämistä internetistä omaan koneeseen. Ohjelmoijat tekevät tämän tiedon keräämisen, analysoinnin tai offline-käyttöön liittyvien tehtävien vuoksi.
-
-## Näin se tehdään:
-
-Haskellilla voit ladata verkkosivun käyttämällä kirjastoa nimeltä `http-conduit`. Katsotaanpa esimerkkiä:
+## How to: - Kuinka tehdään:
+Haskellilla webbisivujen lataaminen onnistuu kirjastoilla kuten `http-conduit`. Asentakaa ensin tarvittavat kirjastot:
 
 ```haskell
+-- web-sivun lataamiseen
 import Network.HTTP.Simple
 
+-- esimerkkikoodi web-sivun lataamiseksi
 main :: IO ()
 main = do
-    response <- httpBS "http://example.com"
-    putStrLn $ B.unpack $ getResponseBody response
+    response <- httpLBS "http://example.com"
+    let statusCode = getResponseStatusCode response
+    if statusCode == 200
+        then putStr "Sivun lataus onnistui!\n"
+        else putStr "Jokin meni pieleen.\n"
+    print $ getResponseBody response
 ```
 
-Tämä ohjelma lataa etusivun "example.com"-verkkosivulta ja tulostaa vastauksen.
+Suoritetaan ja saadaan tulosteeksi sivun sisältö, tai virheviesti jos lataus epäonnistuu.
 
-## Sukellus syvälle:
+## Deep Dive - Syväsukellus:
+Web-sivujen lataus Haskellissa on kehittynyt ajan myötä. Alkuaikoina käytettiin peruskirjastoja kuten `Network.HTTP`, mutta moderneissa sovelluksissa siirryttiin korkeamman tason `http-conduit`-kaltaisiin ratkaisuihin, joissa tietoturva ja helppokäyttöisyys ovat parempia. Vaihtoehtoja ovat muun muassa `http-client` ja `wreq`. Ne tarjoavat erilaista käytettävyyttä ja suorituskykyä.
 
-Historiallisessa kontekstissa, web-sivujen lataaminen on ollut osa ohjelmointia Internetin alusta alkaen sen tarjoaman tiedon vuoksi. Haskellin `http-conduit`-kirjasto on yksi tapa toteuttaa se, mutta on olemassa myös muiden ohjelmointikielten kirjastoja, kuten Pythonin `requests` tai JavaScriptin `axios`.
+Toimiakseen, nämä kirjastot hyödyntävät Haskellin laiskan evaluaation ominaisuutta. Se mahdollistaa tehokkaan datan käsittelyn ilman tarvetta ladata koko sivun sisältöä muistiin. Yksi huomionarvoinen seikka on, että koneen verkkoyhteyden asetukset voivat vaikuttaa latausprosessiin.
 
-Web-sivun lataaminen voi tuntua yksinkertaiselta, mutta sen toteutuksessa on paljon yksityiskohtia. HTTP-pyynnöt, otsikot, vastauksen käsittely, virheiden käsittely, ja paljon muuta. 
-
-Ainoa sääntö on, että ongelmien välttämiseksi sinun on aina noudatettava verkkosivuston käyttöehtoja ja robot.txt-tiedostoa lataessasi web-sivuja.
-
-## Katso myös:
-
-Seuraavat linkit tarjoavat hyödyllistä tietoa ja syvällisempää tietoa aiheesta:
-
-2. [http-conduit GitHub](https://github.com/snoyberg/http-client)
-4. [Robot Exclusion Standard](https://www.robotstxt.org/orig.html)
+## See Also - Katso Myös:
+- Haskell `http-conduit` -kirjaston dokumentaatio: [http-conduit on Stackage](https://www.stackage.org/package/http-conduit)
+- `Network.HTTP.Simple` API-esimerkit: [Network.HTTP.Simple](https://hackage.haskell.org/package/http-conduit-2.3.8/docs/Network-HTTP-Simple.html)
+- Haskellin virallinen oppaan verkossa: [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
+- HTTP-protokollan yleiskatsaus: [HTTP - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP)

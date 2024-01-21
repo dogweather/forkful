@@ -1,7 +1,8 @@
 ---
-title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
-simple_title:         "Envoyer une requête http avec une authentification de base"
+title:                "Envoi d'une requête HTTP avec authentification de base"
+date:                  2024-01-20T18:00:46.377056-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Envoi d'une requête HTTP avec authentification de base"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,59 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi ?
+## Quoi et Pourquoi?
 
-Une requête HTTP avec authentification de base est une technique pour access à des ressources web contrôlées en fournissant un nom d'utilisateur et un mot de passe en clair. Les programmeurs l'utilisent parce que c'est simple et largement accepté, malgré des problèmes évidents de sécurité.
+Envoyer une requête HTTP avec une authentification de base consiste à transmettre des informations d'identification (nom d'utilisateur et mot de passe) dans l’en-tête de la requête pour accéder à une ressource protégée sur un serveur. Les programmeurs le font pour sécuriser l'accès aux API ou aux services web qui nécessitent une vérification de l'identité de la personne qui envoie la requête.
 
-## Comment faire :
+## Comment faire:
 
-Utiliser `ESP8266WiFiBasic` et `ESP8266HTTPClient` bibliothèques :
 ```Arduino
 #include <ESP8266WiFi.h>
-#include <ESP8266HTTPClient.h>
+#include <Base64.h>
 
-const char* ssid = "votre_ssid";
-const char* password = "votre_password";
+const char* ssid = "VOTRE_SSID"; // Remplacez avec votre SSID
+const char* password = "VOTRE_MOT_DE_PASSE"; // Remplacez avec votre mot de passe
+const char* server = "votre.serveur.com";
+const char* user = "votre_utilisateur";
+const char* pass = "votre_mot_de_passe";
+
+WiFiClient client;
 
 void setup() {
   Serial.begin(115200);
   WiFi.begin(ssid, password);
+  Serial.println("Connexion");
 
   while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Connexion...");
+    delay(500);
+    Serial.print(".");
   }
 
-  HTTPClient http;
-  
-  http.begin("http://example.com");
-  http.setAuthorization("username", "password");
-  
-  int httpCode = http.GET();
-
-  if(httpCode > 0) {
-    String payload = http.getString();
-    Serial.println(payload);
-  } else {
-    Serial.println("Erreur http...");
+  if (client.connect(server, 80)) {
+    String authValue = "Basic " + base64::encode(String(user) + ":" + String(pass));
+    client.println("GET /chemin/ressource HTTP/1.1");
+    client.println("Host: " + String(server));
+    client.println("Authorization: " + authValue);
+    client.println("Connection: close");
+    client.println();
   }
-
-  http.end();
 }
 
 void loop() {
+  delay(10000); // Un délai pour de futures requêtes
 }
+
 ```
 
-## Plongeon Profond
+## Exploration
 
-L'authentification de base HTTP est existé depuis les premiers jours de l'internet. Mais à cause de sa vulnérabilité (transmettant un nom d'utilisateur et un mot de passe en clair), il n'est plus tout aussi populaire malgré la simplicité de son exécution.
+Historiquement, l'authentification de base HTTP a été l'une des premières méthodes pour sécuriser l'accès aux ressources web. Elle reste une solution simple bien qu'elle ne soit pas la plus sûre. Alternativement, on utilise souvent l'authentification par jeton (token) comme OAuth. Concernant Arduino, l'utilisation de bibliothèques comme ESP8266WiFi facilite l'envoi des requêtes HTTP. Attention, l'authentification de base doit être utilisée avec HTTPS pour éviter l'exposition des credentials en clair.
 
-Alternativement, vous pouvez utiliser l'authentification Digest, OAuth, ou même un token JWT. Chacun a ses avantages et inconvénients, selon l'application.
+## Voir aussi
 
-En envoyant une requête HTTP à l'aide d'Arduino, la gestion des connexions est crucial. Par exemple, dans notre code précédent, nous avons utilisé `http.end();` pour fermer la connexion HTTP après l'utilisation.
+- Documentation Arduino ESP8266WiFi: https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html
+- Guide de l'authentification HTTP de base: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- Base64 encoding with Arduino: https://www.arduino.cc/reference/en/libraries/base64/
 
-## Voir aussi :
-
-2. Guide de l'ESP8266 WiFiBasic : [https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)
-3. Article de wikipedia sur l'authentification HTTP : [https://fr.wikipedia.org/wiki/Authentification_HTTP](https://fr.wikipedia.org/wiki/Authentification_HTTP)
+(Remarquez que les liens sont en anglais, car les ressources en français sont moins fréquentes pour des sujets techniques spécifiques comme celui-ci.)

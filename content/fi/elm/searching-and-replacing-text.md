@@ -1,6 +1,7 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
+date:                  2024-01-20T17:57:30.028883-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,44 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Tekstin hakeminen ja korvaaminen tarkoittaa jonkin tekstin osan etsimistä ja sen vaihtamista toiseen tekstiin. Ohjelmoijat tekevät sitä tiedon päivittämiseksi, formaatin muuttamiseksi tai virheiden korjaamiseksi.
 
-Tekstinhaku ja -korvaus ovat ohjelmoinnissa käytettyjä toimintoja, joissa etsitään tiettyjä merkkijonoja ja korvataan ne toisella merkkijonolla. Ohjelmoijat käyttävät tätä toimintoa usein datan muokkaamiseen tai virheiden korjaamiseen koodissa.
-
-## Näin se tehdään:
-
-Alla on koodiesimerkki Elm-ohjelmointikielellä. Esimerkki näyttää kuinka voit etsiä ja korvata merkkijonoja.
+## How to:
+Elmissä voit käyttää `String` -moduulia tekstin käsittelyyn. Tässä pikainen esimerkki kuinka tekstiä haetaan ja korvataan:
 
 ```Elm
-module Main exposing (..)
-
 import String
 
-replace :: String -> String -> String -> String
-replace old new = 
-    String.split old >> String.join new 
+searchAndReplace : String -> String -> String -> String
+searchAndReplace searchTerm replacement text =
+    String.replace searchTerm replacement text
 
 main =
-    "Hello, World!" |> replace "World" "Finland"
+    let
+        originalText = "Hello, World!"
+        newText = searchAndReplace "World" "Elm" originalText
+    in
+    newText
 ```
 
-Esimerkkikoodin tuloste on:
+Tämän tuloksena näkisit: "Hello, Elm!"
 
-```Elm
-"Hello, Finland!"
-```
+## Deep Dive
+Tekstinkäsittely on ollut tietotekniikan alusta asti, ja hakeminen sekä korvaaminen on tärkeä osa sitä. Elm, kuten useimmat nykykielet, tarjoaa valmiita toimintoja tekstin käsittelyyn. `String.replace` on yksi näistä yksinkertaisista toiminnoista. Vaihtoehdot, kuten regex-kirjastot (säännölliset lausekkeet), tarjoavat monimutkaisempia hakuehtoja, mutta Elm itsessään ei sisällytä regex-tukea ydinkirjastossaan. Tarkkuus ja suorituskyky ovat tärkeitä, kun toteutetaan tekstinkorvauslogiikkaa erityisesti suurissa tekstimassoissa.
 
-## Syvempi tarkastelu:
-
-Tekstinhaku ja -korvaus on hyvin vanha ohjelmointitemppu. Sen jäljet kulkevat aina 1970-luvulle, jolloin ensimmäiset tekstinkäsittelyjärjestelmät esiteltiin.
-
-Elm tarjoaa `String.split` ja `String.join` integroidun työkalun tekstinhakuun ja -korvaukseen, mutta on olemassa myös muita tapoja tehdä tämä. Voit esimerkiksi käyttää regex-syntejä, jos sinun on käsiteltävä monimutkaisempia kuvioita.
-
-Elm:ssä `String.split` funktio jakaa merkkijonon haluttujen symbolien tai merkkijonojen mukaan palauttaen taulukon merkkijonoja. `String.join` funktio toimii päinvastoin, se liittää merkkijonot yhteen käyttäen erottimena annettua merkkijonoa.
-
-## Katso myös:
-
-Lisää esimerkkejä ja tietoa String.split ja String.join -funktioista Elm-ohjelmointikielessä löydät täältä:
-
-- [Elm String.join dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/String#join)
-- [Elm String.split dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/String#split)
+## See Also
+- Elm `String` module: https://package.elm-lang.org/packages/elm/core/latest/String
+- Community discussions on string manipulation: https://discourse.elm-lang.org/
+- Elm patterns for text processing: http://elm-lang.org/examples/patterns

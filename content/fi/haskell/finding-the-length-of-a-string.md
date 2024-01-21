@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon pituuden selvittäminen"
-html_title:           "Go: Merkkijonon pituuden selvittäminen"
+date:                  2024-01-20T17:47:41.411420-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,37 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Haskell-ohjelmointi: Merkkijonon pituuden määrittäminen
+## What & Why?
+Mittaaminen tarkoittaa merkkijonon pituuden selvittämistä. Ohjelmoijat tekevät sen, koska pituuden tietäminen on kriittistä kun käsitellään tekstidataa – esimerkiksi validointiin, rajaukseen ja iterointiin.
 
-## Mikä & Miksi?
-Merkkijonon pituuden määrittämisellä tarkoitetaan yksinkertaisesti sen mittaamista, kuinka monta merkkiä merkkijonossa on. Tämä on oleellista esimerkiksi silloin, kun haluamme suodattaa tai jakaa tietoa merkkijonon pituuden perusteella.
+## How to:
+Haskellissa merkkijonon pituuden löytäminen on suoraviivaista. Käytä `length`-funktiota. 
 
-## Kuinka:
-Käsittelimme merkkijonon pituuden määrittämistä `length` funktion avulla, nähdään esimerkki:
+```haskell
+main :: IO ()
+main = do
+    let tervehdys = "Hei maailma!"
+    print (length tervehdys) -- Tulostaa merkkijonon pituuden
+```
 
-```Haskell
-let str = "Hei Suomi"
-print (length str)
-```  
-Tulostuu: 9
+Koodin ajaminen tulostaa `12`, koska "Hei maailma!" on 12 merkin pituinen.
 
-## Syvempi tarkastelu
-Haskell-ohjelmointikielen `length` funktio on peräisin ensimmäisestä julkaisusta vuonna 1990. Se palauttaa merkkijonon pituuden kokonaislukuna.
+## Deep Dive
+Alun perin, Haskellin `length`-funktio oli osa standardikirjastoa. Se laskee listan alkiot, ja merkkijono Haskellissa on merkkilista.
 
-Vaihtoehtoinen tapa olisi käyttää `foldl`-funktiota merkkijonon pituuden laskemiseen:
+Vaihtoehtoina, voit käyttää `Data.Text`-kirjastoa, joka tarjoaa tehokkaampia työkaluja tekstinkäsittelyyn. 
 
-```Haskell
-let str = "Hei Suomi"
-let len = foldl (\n _ -> n + 1) 0 str 
-print len
-```  
-Tulostuu: 9
+`Data.Text.length` on suorituskyvyltään parempi suurien merkkijonojen kanssa:
 
-Tämä tapa on monimutkaisempi eikä sitä yleensä suositella, kun yksinkertainen `length`-funktio on käytettävissä.
+```haskell
+import qualified Data.Text as T
+import qualified Data.Text.IO as TIO
 
-## Katso myös
-Lue lisää Haskellin merkkijonoista ja funktioista:
+main :: IO ()
+main = do
+    let tervehdys = T.pack "Hei maailma!"
+    print (T.length tervehdys)
+```
 
-1. "Learn You a Haskell for Great Good" - [Merkit ja merkkijonot](http://learnyouahaskell.com/starting-out#strings)
-2. Hoogle - [length](https://hoogle.haskell.org/?hoogle=length) 
-3. Haskell Wiki - [Haskell merkkijonot](https://wiki.haskell.org/Strings)
+Toteutukseltaan, `length` on rekursiivinen funktio. Se käy läpi listan, laskien yhden jokaisesta alkioista, kunnes lista on tyhjä. Suurien listojen kanssa tämä voi olla tehotonta, mikä selittää `Data.Text`-kirjaston suosion.
+
+## See Also
+- [Haskell `length` documentation](https://hackage.haskell.org/package/base-4.16.1.0/docs/Prelude.html#v:length)
+- [`Data.Text` package](https://hackage.haskell.org/package/text) 
+- [Performance comparison of string types in Haskell](https://stackoverflow.com/questions/16022417/performance-comparison-of-string-types-in-haskell)

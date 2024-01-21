@@ -1,7 +1,8 @@
 ---
-title:                "Komentorivin argumenttien lukeminen"
-html_title:           "Elm: Komentorivin argumenttien lukeminen"
-simple_title:         "Komentorivin argumenttien lukeminen"
+title:                "Komennoriviparametrien lukeminen"
+date:                  2024-01-20T17:55:53.139027-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Komennoriviparametrien lukeminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,40 +11,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## Mitä & Miksi?
+Komennon rivin argumenttien lukeminen tarkoittaa syötteiden vastaanottamista käynnistyksen yhteydessä. Ohjelmoijat käyttävät tätä toimintoa, koska se mahdollistaa ohjelmien joustavan käytön ja mukauttamisen käyttäjän tarpeisiin.
 
-Komennonriviparametrien lukeminen tarkoittaa käyttäjän syöttämien komentojen tulkitsemista ja niiden käyttämistä ohjelman ohjaamiseen. Tämä on hyödyllistä, koska se mahdollistaa joustavuuden ohjelman käyttäytymisessä käyttäjän syötteiden perusteella.
-
-## Miten se tehdään:
-
-Seuraavassa koodiesimerkissä näytetään, miten lukea ja käsitellä komennonriviparametreja Elm-ohjelmointikielessä.
+## Näin toimit:
+Elm ei suoraan tue komentorivin argumenttien käsittelyä, koska se on suunniteltu pääasiassa web-kehitykseen. Tämän sijaan, voit käyttää JavaScriptin `process.argv` ominaisuutta Elm-ohjelmasta käsin käyttämällä portteja (ports). Tässä on esimerkki kuinka voit saada argumentit Elm-ohjelmaasi:
 
 ```Elm
-import Process
+port module Main exposing (..)
 
+import Browser
+import Json.Decode as Decode
+
+-- Määritä portti komentorivin argumenttien vastaanottamiseen
+port cmdlineArgs : (List String -> msg) -> Sub msg
+
+-- Käynnistä ohjelma
 main =
-    Process.commandLineArguments
-    |> List.map String.toUpper
-    |> List.filter (\arg -> String.length arg > 1)
-    |> List.sort
-    |> String.join " "
-    |> Console.log
+    Browser.element
+        { init = init
+        , update = update
+        , view = view
+        , subscriptions = subscriptions
+        }
+
+-- Aloita tilan hallinta
+init : () -> (Model, Cmd Msg)
+init _ =
+    -- Alusta malli ilman argumentteja
+    (Model [], Cmd.none)
+
+type Msg
+    = ReceiveArgs (List String)
+
+-- Päivitä tila
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        ReceiveArgs args ->
+            -- Tallenna vastaanotetut argumentit malliin
+            (Model args, Cmd.none)
+
+-- Malli, joka sisältää komentorivin argumentit
+type alias Model =
+    { args : List String }
+
+-- Tilaus komentorivin argumenttien kuunteluun
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    cmdlineArgs ReceiveArgs
+
+-- (Tyhjä) näkymä
+view : Model -> Html msg
+view model =
+    -- Käytä tässä osaa nähdäksesi argumentit web-sivulla
+    Html.text ""
 ```
 
-Esimerkiksi aja tämä koodi komennolla `elm make main.elm -- moikka maailma`, ja se tulostaa: `MAAILMA MOIKKA`.
+Lisää JavaScript-koodisi index.html tiedostoon:
 
-## Syvempi katsaus:
+```JavaScript
+const app = Elm.Main.init({
+  node: document.getElementById('elm')
+});
 
-(1) Historiallisessa kontekstissa komennonriviparametreja on käytetty laajasti jo ennen graafisten käyttöliittymien aikakautta. Ne tarjoavat tavan antaa komentoja ohjelmalle ja kontrolloida sen toimintaa. 
+// Lähetä komentorivin argumentit Elmiin portin kautta
+app.ports.cmdlineArgs.send(process.argv);
+```
 
-(2) On olemassa muitakin tapoja syöttää tietoa ohjelmaan, kuten lukea tiedostoja, käyttää verkko-rajapintoja tai kysyä käyttäjältä syötteitä dynaamisesti käyttöliittymän kautta. 
+## Syväsukellus
+Elm ei suoraan tarjoa tapaa lukea komentorivin syötteitä, koska kielessä keskitytään selkeisiin web-sovelluksiin. Tämä on yksi suurista erityispiirteistä Elmissä verrattuna muihin ohjelmointikieliin, jotka on suunniteltu yleiskäyttöön, kuten Python tai Node.js. Jos tarvitset komentorivin argumentteja Elmissä, yllä kuvattu JavaScript-porttiratkaisu on tyypillinen tapa yhdistää Elm ja Node.js ympäristöt.
 
-(3) Elm-ohjelmassa, `Process.commandLineArguments` palauttaa listan komennonriviparametreista. Listaa voidaan käsitellä monin tavoin sen mukaan, mitä tarvitset ohjelmasi tekemään.
-
-## Katso myös:
-
-Elm-kirjastojen dokumentaation voi löytää seuraavista lähteistä, joissa on lisätietoa aiheesta.
-
-- [Elm Process](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd#Cmd)
-- [Elm String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm List](https://package.elm-lang.org/packages/elm/core/latest/List)
+## Katso Myös
+- Elm-portit: https://guide.elm-lang.org/interop/ports.html
+- Elm ja Node.js: https://elm-lang.org/news/interop-with-node-js-and-electron
+- JSON-dekoodaus Elmissä: https://package.elm-lang.org/packages/elm/json/latest/

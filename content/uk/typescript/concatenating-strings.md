@@ -1,7 +1,8 @@
 ---
-title:                "Конкатенація рядків"
-html_title:           "PHP: Конкатенація рядків"
-simple_title:         "Конкатенація рядків"
+title:                "Об'єднання рядків"
+date:                  2024-01-20T17:35:58.889866-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Об'єднання рядків"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,27 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це і чому?
-Складання рядків - це процес об’єднання двох або більше рядків в програмуванні. Програмісти роблять це для маніпулювання даними, створення динамічного вмісту, або формування повідомлень для користувача.
+## What & Why? (Що та Чому?)
 
-## Як зробити:
-Для складання рядків у TypeScript використовуються оператори `+` або `${}` в шаблонних літералах. Ось декілька прикладів:
+Concatenating strings means sticking them together end-to-end to make one longer string. Programmers do this to combine text in ways that make sense for the task, like creating messages or building URLs.
 
-```TypeScript
-let hello: string = "Привіт, ";
-let world: string = "світ!";
-let helloWorld: string = hello + world;
-console.log(helloWorld); // "Привіт, світ!"
+## How to: (Як це зробити:)
 
-let name: string = "Валя";
-console.log(`Привіт, ${name}!`); // "Привіт, Валя!"
+```typescript
+// Using the + operator
+let greeting: string = "Привіт, " + "світе!";
+console.log(greeting); // "Привіт, світе!"
+
+// Using template literals (backticks)
+let user: string = "Андрій";
+let age: number = 25;
+let userInfo: string = `Ім'я користувача: ${user}, вік: ${age}`;
+console.log(userInfo); // "Ім'я користувача: Андрій, вік: 25"
 ```
 
-## Поглиблений аналіз
-Складання рядків - не нова концепція, вона присутня в більшості мов програмування. Однак, в TypeScript це можливо зробити двома способами: за допомогою оператора `+` і за допомогою шаблонних літералів `${}`. Шаблонні літерали були введені в ES6 і є більш потужними та гнучкими, дозволяючи вставляти вирази безпосередньо в рядок.
+## Deep Dive (Поглиблений Занурення)
 
-Є різні альтернативи для складання рядків, такі як методи `concat()`, `join()`, або навіть оператор `+=`. Втім, в TypeScript, оскільки він використовує стандарти ES6, шаблонні літерали є часто використовуваним методом.
+In the early days, concatenating strings was often tedious, especially in languages without built-in support. JavaScript, and therefore TypeScript, has always made this easy with the + operator. However, since ES2015, template literals have been the trend because they’re more readable and offer direct interpolation of variables and expressions.
 
-## Дивіться також
-- [Рядки і шаблонні літерали в TypeScript](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)
-- [Тема складання рядків в JavaScript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Guide/Grammar_and_types#Склеювання_рядків)
+Alternatives to string concatenation include the `String.prototype.concat()` method, but it's less common due to verbosity. For large-scale string manipulation (like generating HTML or creating long reports), you might also consider string builders or buffers, but TypeScript developers typically use simple concatenation or template literals.
+
+As for implementation, remember that strings in TypeScript are immutable. Every concatenation creates a new string instead of modifying an existing one, which can matter for performance in heavy string processing tasks.
+
+## See Also (Дивіться також)
+
+- [MDN Web Docs: Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
+- [w3schools TypeScript Tutorial](https://www.w3schools.com/typescript/)

@@ -1,7 +1,8 @@
 ---
-title:                "Merkkien poistaminen vastaavalla mallilla"
-html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
-simple_title:         "Merkkien poistaminen vastaavalla mallilla"
+title:                "Merkkien poistaminen hakemalla osumia kaavaan"
+date:                  2024-01-20T17:42:27.769607-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,36 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mikä & Miksi?)
+Kun poistetaan merkkejä, jotka vastaavat tiettyä kaavaa, siivotaan merkkijonoa tarpeettomasta sisällöstä. Tämä on hyödyllistä, jotta voidaan esimerkiksi puhdistaa käyttäjän syötteet tai muotoilla dataa jatkokäsittelyä varten.
 
-Hahmon poistaminen tarkoittaa tiettyjen merkkien tai merkityyppien poistamista tekstistä. Ohjelmoijat tekevät tämän monestakin syystä, esimerkiksi datan siivoamiseksi tai tekstissä olevan tiedon uuttamiseksi.
-
-## Miten näin:
-
-Kotlinin sisäisten funktioiden, kuten replace() tai replaceAll(), avulla voimme poistaa hahmot. Katsotaan esimerkkiä.
-
-```Kotlin
-val str = "Tervetuloa Kotlinin maailmaan!"
-val result = str.replace("o", "")
-println(result) // Tulostaa "Tervetulaa Kotlinin maailmaan!"
+## How to: (Kuinka tehdä:)
+```kotlin
+fun main() {
+    val originalText = "Täällä on esimerkki4 tekstistä, jossa on 3 numeroa."
+    val pattern = "\\d".toRegex() // Kaava numeroiden tunnistamiseen
+    val cleanedText = originalText.replace(pattern, "")
+    println(cleanedText) // Tulostetaan puhdistettu teksti
+}
 ```
-Tässä esimerkissä poistamme kaikki "o" kirjaimet merkkijonosta.
-
-## Sukellus syvemmälle
-
-Historiallisesti merkkien poistaminen on ollut olennainen osa tekstinkäsittelyohjelmoinnin sekä datankäsittelyn. Nykyisin Kotlinin tarjoamia valmiita toimintoja kannattaa käyttää.
-
-Vaihtoehtoina voit myös hyödyntää muita tekniikoita kuten Regular Expression -ilmaisuja (regex). Niiden avulla voit määritellä monimutkaisempia malleja poistettavaksi.
-
-```Kotlin
-val str = "Terve 123, tervetuloa Kotlinin maailmaan 456!"
-val result = str.replace("\\d+".toRegex(), "")
-println(result) // Tulostaa "Terve , tervetuloa Kotlinin maailmaan !"
+Sample output:
+```
+Täällä on esimerkki tekstistä, jossa on  numeroa.
 ```
 
-Tässä esimerkissä käytämme regex lauseketta "\\d+", joka tunnistaa yhden tai useamman numerosarjan ja poistaa ne merkkijonosta.
+## Deep Dive (Sukellus syvyyksiin)
+Alun perin merkkijonojen kaavojen käsittely kehitettiin osaksi suurempia, tekstinkäsittelyyn tarkoitettuja ohjelmia, kuten sed ja awk UNIX-järjestelmissä. Kotlin käyttää Java-perustaisia regular expressions -järjestelmiä. Vaihtoehtoja merkkijonojen käsittelyyn ovat muiden ohjelmointikielten kirjastot tai työkalut, kuten Perl tai Python. Kotlinissa `.replace`-funktio ottaa regulaarilausekkeen ja korvaa kaikki vastaavat osat merkkijonossa annetulla korvaavalla merkkijonolla.
 
-## Katso myös
-
-1. [Kotlinin virallinen dokumentaatio replace()-funktiosta](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
-3. [Kattava opas regex-syntaksiin](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+## See Also (Katso myös)
+- Kotlinin virallinen dokumentaatio: [Regular Expressions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+- Java Platform, Standard Edition & Java Development Kit -versio 17 API-määritys: [Pattern](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html)
+- [RegExr](https://regexr.com/): Regulaarilausekkeiden opettelun ja testauksen työkalu
+- [RegEx101](https://regex101.com/): Toinen hyödyllinen sivusto regulaarilausekkeiden testaamiseen

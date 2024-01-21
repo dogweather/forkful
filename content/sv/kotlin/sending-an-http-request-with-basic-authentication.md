@@ -1,7 +1,8 @@
 ---
-title:                "Skicka en http-begäran med grundläggande autentisering"
-html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
-simple_title:         "Skicka en http-begäran med grundläggande autentisering"
+title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
+date:                  2024-01-20T18:02:24.949096-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -11,32 +12,91 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skicka en HTTP-begäran med grundläggande autentisering innebär att vi använder en bestämd användarnamn och lösenord-kombination för att begära data från servern. Programmerare gör det för att skydda känslig data och hålla webbtjänster säkra.
+Skicka en HTTP-förfrågan med basic-autentisering innebär att koda ihop användarnamn och lösenord och skicka med det i en förfrågans `Authorization` header. Vi gör det för att säkerställa att endast behöriga användare får tillgång till skyddade resurser.
 
-## Hur man gör:
-Först, lägg till `Ktor-client-auth` till ditt beroenden. Sedan, du kan enkelt skicka en HTTP-begäran i Kotlin. Se nedan:
-```Kotlin
-val client = HttpClient() {
-    install(Auth) {
-        basic {
-            username = "username"
-            password = "password"
+## Så här gör man:
+Här är ett exempel på hur man skickar en HTTP-förfrågan med basic-autentisering i Kotlin med hjälp av `java.net.HttpURLConnection`:
+
+```kotlin
+import java.net.HttpURLConnection
+import java.net.URL
+import java.util.Base64
+
+fun sendGetRequestWithBasicAuth(url: String, username: String, password: String) {
+    val connection = URL(url).openConnection() as HttpURLConnection
+    val credentials = "$username:$password"
+    val authHeaderValue = "Basic " + Base64.getEncoder().encodeToString(credentials.toByteArray())
+
+    connection.requestMethod = "GET"
+    connection.setRequestProperty("Authorization", authHeaderValue)
+
+    val responseCode = connection.responseCode
+    println("Response Code: $responseCode")
+
+    // Läs svaret om förfrågan lyckades
+    if (responseCode == HttpURLConnection.HTTP_OK) {
+        connection.inputStream.bufferedReader().use { reader ->
+            println("Response: ${reader.readText()}")
         }
+    } else {
+        println("Failed to authenticate.")
     }
 }
 
-runBlocking {
-    val response: HttpResponse = client.get("https://www.example.com")
-
-    println(response.readText())
+fun main() {
+    val testUrl = "https://example.com/protected"
+    val username = "user"
+    val password = "password"
+    sendGetRequestWithBasicAuth(testUrl, username, password)
 }
 ```
-Detta kodblock skapar en HTTP-klient, installerar Basic Auth med användarnamn och lösenord, och sedan gör en GET-förfrågan till `www.example.com`. Svaret skrivs sedan ut i konsolen.
+Output:
+```
+Response Code: 200
+Response: {response from the server}
+```
+Eller så använder man ett bibliotek som `OkHttp` för att göra processen smidigare:
+```kotlin
+import okhttp3.Credentials
+import okhttp3.OkHttpClient
+import okhttp3.Request
 
-## Djup dykning:
-Grundläggande autentisering har bestått en lång tid och det är en traditionell metod för att skydda webbtjänster. Men det finns andra alternativ, som OAuth och JWT, som ger mer robusta och flexibla lösningar. När det gäller att implementera HTTP-begäran med basic autentisering i Kotlin, 'Ktor' och 'OkHttp' är populära bibliotek på grund av deras enkelhet och effektivitet.
+fun sendGetRequestWithOkHttp(url: String, username: String, password: String) {
+    val client = OkHttpClient()
+    val credentials = Credentials.basic(username, password)
+    val request = Request.Builder()
+        .url(url)
+        .header("Authorization", credentials)
+        .build()
 
-## Se även:
-- Ktor Basic Authentication: [https://ktor.io/docs/basic.html](https://ktor.io/docs/basic.html)
-- OkHttp Basic Authentication: [https://square.github.io/okhttp/recipes/#basic-authentication-kt-java](https://square.github.io/okhttp/recipes/#basic-authentication-kt-java)
-- Alternativ för autentisering: [https://oauth.net/](https://oauth.net/) och [https://jwt.io/introduction/](https://jwt.io/introduction/)
+    client.newCall(request).execute().use { response ->
+        println("Response Code: ${response.code}")
+        println("Response: ${response.body?.string()}")
+    }
+}
+
+fun main() {
+    val testUrl = "https://example.com/protected"
+    val username = "user"
+    val password = "pass"
+    sendGetRequestWithOkHttp(testUrl, username, password)
+}
+```
+Output:
+```
+Response Code: 200
+Response: {response from the server}
+```
+
+## Fördjupning
+Basic-autentisering finns länge och fungerar genom att man använder `Base64` för att koda användaruppgifter. Att det är enkelt är bra, men säkerheten är inte toppen då `Base64` inte är kryptering. HTTPS är ett måste när detta används.
+
+Moderna alternativ till basic-autentisering inkluderar OAuth och API-nycklar. De erbjuder bättre säkerhet och flexibilitet, men kan vara mer komplext att implementera och förvalta.
+
+När man implementerar basic-autentisering är det viktigt att hantera lösenord korrekt. Lagra aldrig okrypterade lösenord och kom ihåg att autentiseringsuppgifterna alltid ska skickas över en säker anslutning.
+
+## Se även
+- [OkHttp's GitHub repo](https://github.com/square/okhttp)
+- [RFC 7617, The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+- [Basic access authentication - Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [Kotlin Programming Language](https://kotlinlang.org/)

@@ -1,7 +1,8 @@
 ---
-title:                "Laste ned en nettside"
-html_title:           "Elixir: Laste ned en nettside"
-simple_title:         "Laste ned en nettside"
+title:                "Nedlasting av en nettside"
+date:                  2024-01-20T17:43:34.459982-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Nedlasting av en nettside"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,30 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Nedlasting av en nettside betyr å hente ned data og kode som lager selve nettsiden. Vi programmerere gjør dette for blant annet å analysere innholdet, teste hastigheten, eller hente bestemt informasjon.
+## What & Why?
+Nedlasting av en nettside betyr å hente ned HTML-innholdet så det kan analyseres eller manipuleres lokalt. Programmerere gjør dette for datainnsamling, testing eller for å integrere informasjon i sine applikasjoner.
 
-## Hvordan:
-Clojure bruker en innebygd funksjon `slurp` for å laste ned webinnhold. Så enkelt kan det gjøres:
+## How to:
+I Clojure kan vi bruke `clj-http` biblioteket for å laste ned nettsider. Her er et kort eksempel:
 
-```Clojure
-(defn download-page [url]
-  (slurp url))
+```clojure
+(require '[clj-http.client :as client])
+
+(defn download-webpage [url]
+  (:body (client/get url)))
+
+(println (download-webpage "http://example.com"))
 ```
 
-La oss teste den med en side:
+Kjøring gir deg HTML-innholdet til `http://example.com`.
 
-```Clojure
-(download-page "http://example.com")
-```
+## Deep Dive
+Nedlasting av nettsider går helt tilbake til webbens barndom. Det handler om å sende en HTTP GET-forespørsel til en server. 
 
-Output vil være selve HTML-koden av siden.
+Alternativer til `clj-http` inkluderer `http-kit` og `aleph`. De har sine egne styrker, som non-blocking I/O, som kan være mer effektiv for noen applikasjoner.
 
-## Dyp Dykk
-Historisk sett, ble nedlasting av nettsider gjort via terminalprogrammer som `wget` eller `curl`. I dag finnes det hundrevis av biblioteker, i alle programmeringsspråk, for denne oppgaven. Clojure sin innebygde `slurp` funksjon er faktisk ganske høy-nivå sammenlignet med mange alternative løsninger: den gjør mye arbeid i bakgrunnen, som å håndtere nettverkstilkoblinger og strømming av data. Hvis du trenger mer kontroll, f. eks. For å sende spesielle HTTP-headers, kan du bruke mer komplekse biblioteker som `clj-http`.
+Implementasjonen kan involvere mer enn bare å hente innholdet. Tenk på feilhåndtering, tidsavbrudd og håndtering av omdirigeringer. Med `clj-http` kan du konfigurere disse aspektene nøyaktig slik du trenger.
 
-## Se Også
-- Clj-http: https://github.com/dakrone/clj-http
-- En tutorial på `slurp`: http://clojure-doc.org/articles/tutorials/reading_urls.html
-- Wget: https://www.gnu.org/software/wget/
-- Curl: https://curl.se/
+## See Also
+- `[clj-http GitHub repo](https://github.com/dakrone/clj-http)`
+- `[Official Clojure Documentation](https://clojure.org/guides/getting_started)`
+- `[http-kit](http://www.http-kit.org/)`
+- `[aleph](https://aleph.io/)`

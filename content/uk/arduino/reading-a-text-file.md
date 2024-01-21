@@ -1,6 +1,7 @@
 ---
 title:                "Читання текстового файлу"
-html_title:           "Arduino: Читання текстового файлу"
+date:                  2024-01-20T17:54:06.209017-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Читання текстового файлу"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,53 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & навіщо?
+## Що і Чому?
+Читання текстового файлу — це процес збору даних з файлу, збереженого на пристрої для зберігання, як от SD-картка чи внутрішня пам'ять. Програмісти це роблять, щоби програма могла отримати вхідні дані, конфігурацію чи зразки тексту без необхідності жорсткого кодування інформації в скетчі.
 
-Читання текстового файлу - це процес зчитування інформації з файлу у текстовому форматі. Програмісти цим займаються для обробки та аналізу даних або ж для відображення цих даних в користувацькому інтерфейсі.
-
-## Як це робити:
-
-Для читання текстових файлів у Arduino вам знадобиться SD картка і модуль читача SD карт. Послідовності команд можуть виглядати так:
+## Як це зробити:
+Для читання текстового файлу використовуймо `SD` бібліотеку, яку треба спершу підключити.
 
 ```Arduino
-#include <SPI.h>
 #include <SD.h>
-
 File myFile;
 
 void setup() {
   Serial.begin(9600);
-  
+  while (!Serial) {
+    ; // чекайте поки не запуститься серіалний порт
+  }
+
   if (!SD.begin(4)) {
-    Serial.println("Initialization failed!");
+    Serial.println("Помилка ініціалізації SD");
     return;
   }
-  
-  myFile = SD.open("test.txt");
 
+  myFile = SD.open("test.txt");
   if (myFile) {
     while (myFile.available()) {
       Serial.write(myFile.read());
     }
     myFile.close();
   } else {
-    Serial.println("Error opening file!");
+    Serial.println("Помилка читання файлу");
   }
 }
 
 void loop() {
-  // nothing happens after setup
+  // тут ми залишаємо пусто, тому що читання відбувається один раз при запуску
 }
 ```
 
-## Поглиблено:
+Запуск такої програми виведе вміст файлу `test.txt` через серіалний порт.
 
-1) Arduino почав використовувати модуль читання SD карт у 2006 році, щоб забезпечити гнучкий спосіб зберігання та обробки даних не тільки в текстовому форматі.
-2) Альтернативами є модулі EEPROM або SPI Flash, але вони зазвичай мають менший обсяг зберігання.
-3) Arduino використовує бібліотеку SD для роботи з SD картами, і вона повертає дані у вигляді байт. Ви можете конвертувати ці байти в текстовий формат.
+## Поглиблений Розбір
+У 2005 році Arduino Project запропонував легкий доступ до мікроконтролерів, в тому числі й для роботи з файловою системою. Сьогодні читання текстових файлів – звичайна практика, альтернативи – SPIFFS для ESP8266 або LittleFS для новіших модулів. Читання файлів потребує контролер з SD-картки чи внутрішньої пам'яті. Процес включає відкриття файлу, читання його змісту та закриття після завершення. Пам'ятайте про обмеження по пам'яті та часу доступу до пам'яті під час роботи з великими файлами.
 
-## Дивіться також:
-
-1) [Детальніше про бібліотеку SD в Arduino](https://www.arduino.cc/en/reference/SD)
-2) [Додаткові приклади із використанням SD карт в Arduino](https://arduinogetstarted.com/tutorials/arduino-sd-card)
-3) [Навчальний курс по Arduino на YouTube](https://www.youtube.com/watch?v=VV9QcbiZg7g)
+## Дивіться Також
+- Офіційна документація по `SD` бібліотеці - [Arduino SD Library](https://www.arduino.cc/en/Reference/SD)
+- Порадник як підключити SD-картку до Arduino - [Connecting the SD card to Arduino](https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite)
+- Інструкції до `SPIFFS` та `LittleFS` - [ESP8266FileSystemPlugin](https://github.com/esp8266/arduino-esp8266fs-plugin), [Arduino ESP32 Filesystem Upload Guide](https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/)

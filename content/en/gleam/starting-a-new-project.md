@@ -1,6 +1,7 @@
 ---
 title:                "Starting a new project"
-html_title:           "Bash recipe: Starting a new project"
+date:                  2024-01-20T18:03:21.460852-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Starting a new project"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -12,41 +13,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Starting a new project is the creation of a fresh idea on a blank canvas; it's where innovation births. Coders kickstart new projects to materialize designs, solve problems, create applications, or just to explore the depths of a new technology.
+Starting a new project means initializing a fresh codebase with the necessary structure and configuration. Programmers do it to kickstart development with a clean slate, ensuring best practices and organization from the get-go.
 
 ## How to:
 
-In Gleam, creating a new project is a breeze, using predefined templates, elements, and the `gleam new` command.
+To create a new Gleam project, you’ll need the `gleam` command-line tool. Install it, and then run:
 
-```Gleam
-$ gleam new my_cool_project
+```shell
+gleam new my_cool_project
 ```
 
-If you're looking for a back-end application: 
+This creates a new directory named `my_cool_project` with a basic project structure:
 
-```Gleam
-$ gleam new my_cool_project --template gleam/http
+```plaintext
+my_cool_project/
+├── gleam.toml
+├── src
+│   └── my_cool_project.gleam
+└── test
+    └── my_cool_project_test.gleam
 ```
 
-Running these commands sets up a standard, ready-to-go project architecture in a directory called "my_cool_project". 
+The `src` directory contains the main Gleam module, and the `test` directory is where your tests will live. Let’s peek at the default `my_cool_project.gleam`:
 
-## Deep Dive 
-
-Gleam stems from the Erlang ecosystem's roots. Its 'new project' generation utilizes Rebar3 (Erlang's build tool), yielding cross-compatibility with Erlang and Elixir.
-
-Alternatively, you can also start projects manually, crafting each file and folder from scratch, but it's not recommended because of the efficiency and convenience provided by the built-in project generator.
-
-Once a project is created, it will follow a pre-defined structure:
-
-```Gleam
-src/                  # Source Gleam files
-test/                 # Test Gleam files
-rebar.config          # Rebar3 config file
-gleam.toml            # Gleam configuration file
-.gitignore            # Whitelist for version control
+```gleam
+pub fn hello_world() {
+  "Hello, world!"
+}
 ```
+
+Sweet and simple. Now you've started a new Gleam project!
+
+## Deep Dive
+
+Gleam burst onto the scene around 2018, aiming to bring strong static typing to the Erlang ecosystem—without losing its famed reliability and concurrency model.
+
+Alternatives to starting a project with `gleam new` might involve cloning a template from a repository or manually creating the file structure. However, using the Gleam tool provides a consistent starting point, and it's designed to work seamlessly within the ecosystem.
+
+Behind the scenes, `gleam new` sets up a `rebar3` or `mix` project depending on your preference (the default is `rebar3`). It populates the necessary configuration files such as `gleam.toml` for dependency management and project settings, and `rebar.config` or `mix.exs` for Erlang or Elixir interoperability, respectively.
 
 ## See Also
 
-- [Rebar3 Docs](https://www.rebar3.org/docs/getting-started)
-- [Erlang Language Basics](http://erlang.org/doc/getting_started/users_guide.html)
+- Gleam's official getting started guide: [https://gleam.run/book/getting-started/](https://gleam.run/book/getting-started/)
+- GitHub repository of Gleam: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)
+- Gleam's standard library documentation: [https://hexdocs.pm/gleam_stdlib/](https://hexdocs.pm/gleam_stdlib/)

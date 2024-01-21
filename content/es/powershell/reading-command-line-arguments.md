@@ -1,7 +1,8 @@
 ---
-title:                "Leyendo argumentos de la línea de comandos"
-html_title:           "Bash: Leyendo argumentos de la línea de comandos"
-simple_title:         "Leyendo argumentos de la línea de comandos"
+title:                "Lectura de argumentos de línea de comandos"
+date:                  2024-01-20T17:56:36.282960-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lectura de argumentos de línea de comandos"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,48 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+## Qué y Por Qué?
+Leer argumentos de la línea de comandos permite a los scripts de PowerShell recibir información externa al ejecutarse. Los programadores usan esta técnica para hacer sus scripts más flexibles y adaptativos a distintos contextos y necesidades.
 
-La lectura de argumentos de línea de comandos se refiere a cómo un programa de línea de comandos accede a los datos que un usuario proporciona cuando se ejecuta el programa. Los programadores lo hacen para interactuar dinámicamente con los datos del usuario sin la necesidad de cambiar y recompilar el código del programa.
-
-## Cómo hacer:
-
-Para acceder a los argumentos de línea de comandos en PowerShell, usamos la variable automática `$args` que contiene una matriz de los argumentos no analizados. Aquí hay un ejemplo:
+## Cómo Hacerlo:
+Para leer argumentos en PowerShell, se usa la variable automática `$args`, que es un array. Aquí tienes algunos ejemplos prácticos:
 
 ```PowerShell
-# Argumentos.ps1
-Write-Host "Número de argumentos: $($args.Count)"
-for ($i=0; $i -lt $args.Count; $i++)
-{
-    Write-Host "Argumento $i es: $($args[$i])"
-}
+# archivo: get-names.ps1
+param(
+    [string]$firstName,
+    [string]$lastName
+)
+
+Write-Host "Hola, $firstName $lastName!"
 ```
 
-Ahora, si ejecutamos el script `Argumentos.ps1` con algunos argumentos como:
+Ejecución y salida esperada:
+```
+PS> .\get-names.ps1 -firstName "Juan" -lastName "Pérez"
+Hola, Juan Pérez!
+```
 
+También puedes acceder a los argumentos sin declarar parámetros:
 ```PowerShell
-PS C:\> .\Argumentos.ps1 uno dos tres
+# archivo: greet-user.ps1
+Write-Host "¡Hola, $($args[0])!"
 ```
 
-Obtendríamos la siguiente salida:
-
-```PowerShell
-Número de argumentos: 3
-Argumento 0 es: uno
-Argumento 1 es: dos
-Argumento 2 es: tres
+Ejecución y salida esperada:
+```
+PS> .\greet-user.ps1 Mundo
+¡Hola, Mundo!
 ```
 
-## Visión Detallada:
+## Inmersión Profunda:
+Históricamente, los argumentos de línea de comandos se utilizan en muchos lenguajes de programación para controlar el comportamiento de las aplicaciones en la ejecución. En PowerShell, `$args` es una variable incorporada que captura todos los argumentos que no están asociados con un parámetro nombrado. Pero, para tener un control más robusto, se utilizan los parámetros, como en el ejemplo con `param(...)`, que también permite la tipificación y la validación de datos.
 
-Desde una perspectiva histórica, la lectura de argumentos de línea de comandos ha sido una característica básica en la programación de línea de comandos desde los primeros días de Unix.
+Alternativamente, puedes usar `Getopts` y `CmdletBinding` para un control más avanzado en scripts que requieren una estructura similar a la de un cmdlet. Además, puedes acceder a `MyInvocation` para más detalles sobre cómo se invocó el script, incluyendo la línea de comandos completa.
 
-Como alternativa a `$args`, PowerShell ofrece funciones avanzadas que pueden declarar parámetros para tomar entrada. Esto ofrece una manera más formateada y flexible de gestionar la entrada del usuario.
-
-En cuanto a los detalles de implementación, `$args` es una matriz, como tal, puede utilizar métodos de matriz en `$args`. Sin embargo, uno tiene que considerar que `$args` es solo útil en el ámbito del script actual y no se pasa a los bloques de comando hijos.
+Con respecto a la implementación, es importante tener claro que los elementos en `$args` están indexados desde 0, que es lo común en los lenguajes de programación. Sin embargo, no debes olvidar que si un usuario introduce más argumentos de los que espera tu script, necesitarás manejar los adicionales o imprevistos para evitar errores.
 
 ## Ver También:
-
-- Documentación de Microsoft sobre `$args`: https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1#args
-- Información detallada sobre funciones avanzadas: https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.core/about/about_functions_advanced?view=powershell-7.1
-- Información sobre el uso del `$args` en bloques de comando secuenciales: https://stackoverflow.com/questions/33115019/powershell-pass-args-into-other-scripts
+- Guía sobre `$args`: [about_Automatic_Variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2&viewFallbackFrom=powershell-6)

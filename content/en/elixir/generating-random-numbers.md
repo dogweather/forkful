@@ -1,6 +1,7 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Arduino recipe: Generating random numbers"
+date:                  2024-01-20T17:48:55.366372-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generating random numbers"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,47 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Generating random numbers is the process of producing numerical values that lack any predictable patterns. Programmers use this feature for creating uniqueness, for example, generating IDs, or during game development to create unpredictable scenarios.
+
+Generating random numbers is a way to produce unpredicted numerical values, often used in simulations, games, or as part of cryptographic operations. Programmers need randomness to test scenarios, add gameplay elements, or secure data.
 
 ## How to:
-To generate random numbers in Elixir, we use the Erlang built-in function `:rand.uniform/1`. This function receives a number as a parameter and generates a random number from 1 to that given number. 
 
-Let's conveniently omit the dots when calling Erlang built-ins, courtesy of Elixir. Here's how to do it - 
+In Elixir, you can generate random numbers using functions from the `:rand` module, which is part of the Erlang standard library. Here's a quick run-through:
 
-```Elixir
-IO.puts(:rand.uniform(10))
+```elixir
+# Seed the random number generator
+:rand.seed(:exsplus, {1234, 5678, 91011})
+
+# Generate a random integer
+random_int = :rand.uniform(10)
+IO.puts(random_int)  # This will print a random integer between 1 and 10
+
+# Generate a random float
+random_float = :rand.uniform()
+IO.puts(random_float)  # This will print a random float between 0.0 and 1.0
 ```
 
-The Output can be anything between 1 to 10
-
-```Elixir
-5
+Sample output might look like this (but, of course, your output will vary!):
 ```
-
-For generating a random float, we use `uniform/0`.
-
-```Elixir
-IO.puts(:rand.uniform())
-```
-
-The Output would be a floating-point number between 0 and 1.
-
-```Elixir
-0.5672394922195978
+7
+0.44358372783200783
 ```
 
 ## Deep Dive
-Random number generation, in concept, has been around since the early days of computing, even though its implementations have changed significantly over the years. 
 
-In the context of Elixir, `:rand.uniform/1` is being used. It employs a sophisticated, high-quality algorithm known as the exsplus algorithm, which was introduced in Erlang 19 and is a significant improvement over the earlier algorithm used. The algorithm provides better uniform distribution of values and significantly longer period length.
+The `:rand` module hasn't always been around. In the past, Elixir used the `:random` module, but it was deprecated in favor of `:rand`. This new module provides better algorithms for random number generation. It has multiple algorithms available, but `:exsplus` is a good default for most uses.
 
-If you need more control over the random number generation, there are many libraries available, for instance, "Randopoxy," a library designed to enhance the capabilities of Erlang's `:rand` module.
+It's crucial to seed the random number generator, otherwise it defaults to seeds based on the current time and process ID. Seeding ensures reproducibility, which is handy for tests or specific simulations.
 
-Remember, while `:rand` functions are often sufficient, they're not perfect, considering they're pseudo-random generators, meaning, the generated output is deterministically dependent on the input. For use-cases requiring truly random numbers, like cryptography, more specialized library or algorithms are advised.
+Also, when you need cryptographically secure random numbers, you might consider alternatives like OpenSSL or other crypto libraries, since `:rand` is not suitable for cryptographic purposes due to its predictability.
 
 ## See Also
 
-- Elixir's official documentation: https://hexdocs.pm/elixir/main.html
-- Detailed docs of the erlang `:rand` module: https://erlang.org/doc/man/rand.html
-- Package Randopoxy: https://hex.pm/packages/randopoxy
-- For pseudo-randomness vs true randomness, look into https://www.random.org/randomness/
+For more details on the `:rand` module, check out Erlang's official documentation: [Erlang -- rand](http://erlang.org/doc/man/rand.html)
+
+To explore more on cryptographic secure random number generation, visit:
+- [Introduction to Cryptography in Erlang/Elixir](https://blog.voltone.net/post/5)

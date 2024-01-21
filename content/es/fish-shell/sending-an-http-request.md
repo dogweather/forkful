@@ -1,6 +1,7 @@
 ---
 title:                "Enviando una solicitud http"
-html_title:           "Bash: Enviando una solicitud http"
+date:                  2024-01-20T17:59:43.511164-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Enviando una solicitud http"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,37 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-
-Enviar una solicitud HTTP implica realizar una petición a un servidor web o API utilizando el protocolo HTTP. Los programadores lo hacen para comunicarse con servicios de la web, obtener o enviar datos.
+## Qué y Por Qué?
+Enviar una solicitud HTTP significa pedirle a un servidor web que te brinde algo, como una página web o datos de una API. Los programadores lo hacen para interactuar con la web, probar APIs o automatizar tareas en internet.
 
 ## Cómo hacerlo:
-
-Enviando una petición GET con curl en Fish Shell es tan fácil como esto:
-
-```Fish Shell
-function http_get
-    curl $argv[1]
-end
-```
-Ejecútelo con el URL de su elección, así:
+En Fish, puedes usar `curl` o `wget` para enviar solicitudes HTTP. Aquí hay ejemplos rápidos para obtener el contenido de example.com.
 
 ```Fish Shell
-http_get 'https://jsonplaceholder.typicode.com/posts'
+curl http://example.com
 ```
 
-Esto va a imprimir la respuesta del servidor en su terminal.
+```Fish Shell
+wget -qO- http://example.com
+```
 
-## Inmersión Profunda:
+La salida será el HTML de la página de inicio de example.com.
 
-Históricamente, las solicitudes HTTP han sido la manera en que los clientes hablan con los servidores desde que Tim Berners-Lee inventó la web. Hay alternativas a HTTP, como gRPC de Google, pero HTTP y HTTPS son todavía los reyes.
+## Deep Dive
+Antes, los comandos como `telnet` se usaban para interactuar con servidores web, pero eran más complicados y menos seguros. `curl` y `wget` son herramientas especializadas que soportan múltiples protocolos y métodos de encriptación. `curl` es útil para probar y depurar APIs porque te permite enviar diferentes tipos de datos y personalizar cabeceras. `wget` es excelente para descargar archivos o sitios enteros. En Fish, usar estas herramientas es sencillo, pero la potencia reside en las opciones y argumentos que permiten una amplia personalización de las solicitudes.
 
-Fish Shell no tiene bibliotecas HTTP integradas como otros lenguajes. En vez de eso, nos apoyamos en la utilidad de línea de comandos curl, incluida en casi todos los sistemas Unix.
-
-## Ver También:
-
-Para una lectura más profunda sobre solicitudes HTTP, recomiendo [La documentación oficial HTTP en MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Overview).
-
-Para aprender más acerca de cómo funciona curl, echa un vistazo a [La documentación de curl](https://curl.haxx.se/docs/manpage.html).
-
-Y por supuesto, puedes consultar [La documentación de Fish Shell](https://fishshell.com/docs/current/index.html) para obtener más detalles sobre cómo funciona y los comandos que puedes usar.
+## Ver También
+- La documentación oficial de `curl`: https://curl.se/docs/
+- La documentación oficial de `wget`: https://www.gnu.org/software/wget/manual/wget.html
+- Tutorial Fish Shell para principiantes: https://fishshell.com/docs/current/tutorial.html

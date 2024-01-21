@@ -1,6 +1,7 @@
 ---
 title:                "सबस्ट्रिंग्स निकालना"
-html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+date:                  2024-01-20T17:46:18.398017-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,24 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-सबस्ट्रिंग निकालना (Extracting Substring), किसी बड़ी स्ट्रिंग से छोटे स्ट्रिंग को प्राप्त करना है। प्रोग्रामर्स इसे डाटा परिष्करण, रिपोर्टिंग, और क्वैरी बनाने के लिए करते हैं।
+## What & Why? (क्या और क्यों?)
+उपश्रृंग (substring) निकालना मतलब किसी स्ट्रिंग के छोटे हिस्सों को पाना। प्रोग्रामर्स इसे तब करते हैं, जब उन्हें बड़ी स्ट्रिंग के कुछ विशेष खंडों की जरूरत होती है, जैसे फ़ाइलों के नाम, यूजर इनपुट, या कोड में पैटर्न मैचिंग के लिए। 
 
-## करने की विधि:
-Bash में, हम '${string:position:length}' संदर्भ का उपयोग करके सबस्ट्रिंग निकाल सकते हैं। आइए इसका प्रयोग देखें।
-
+## How to: (कैसे करें:)
 ```Bash
-#!/bin/bash
-string="Hello, World!"
-echo ${string:7:5}
+# एक बेसिक उदाहरण
+string="Welcome to Bash Programming"
+# Offset और लेंथ के साथ सबस्ट्रिंग निकालना
+substring=${string:11:4}
+echo $substring  # Output: Bash
+
+# शुरुआत के बिना और अंत तक सबस्ट्रिंग निकालना
+substring=${string:11}
+echo $substring  # Output: Bash Programming
+
+# कहीं से भी शुरू करके एक शब्द निकालने के लिए डिलिमीटर का उपयोग
+delimiter=" "
+s=$string$delimiter
+
+array=()
+while [[ $s ]]; do
+    array+=( "${s%%"$delimiter"*}" )
+    s=${s#*"$delimiter"}
+done
+
+echo ${array[2]}  # Output: Bash
 ```
-इसके आउटपुट में 'World' मिलेगी।
 
-## गहराई में जाने के लिए:
-Bash में सबस्ट्रिंग निकालने की क्रिया प्राचीन Unix तरीके जैसे 'cut' और 'awk' से अधिक समय बचाती है। वैकल्पिक रूप से, 'sed' और 'perl' के जैसे उपकरण भी मिलते हैं, लेकिन वे अधिक क्लियर और उच्च प्रदर्शन वाली बातें नहीं हैं। बाश में सबस्ट्रिंग को निकालने की क्रिया tokenize और regex में से कोई भी उपयोग नहीं करता है जो इसे अधिक तेज बनाती है।
+## Deep Dive (गहराई में डाइव करें):
+Bash में सबस्ट्रिंग एक लोकप्रिय औजार है, लेकिन यह शुरूआत में नहीं था। पुराने शेल स्क्रिप्टिंग से उद्धार करके, Bash ने उपयोग में आसान, और पॉवरफुल स्ट्रिंग हैंडलिंग ऑप्शन मुहैया कराए। सबस्ट्रिंग में फ्लेक्सिबिलिटी है - आप ऑफसेट के साथ स्टार्ट कर सकते हैं, लेंथ स्पेसिफाई कर सकते हैं, या डिलिमिटर का उपयोग कर सकते हैं। इससे प्रोग्रामर्स को डेटा सैनिटाइजेशन, पार्सिंग, या कॉम्प्लेक्स लॉजिक के लिए उपयुक्त टूल्स मिलते हैं।
 
-## देखने के लिए भी:
-आप और जानकारी और संसाधनों के लिए निम्नलिखित लिंक देख सकते हैं:
-- GNU Bash Reference: [https://www.gnu.org/software/bash/manual/bash.html](https://www.gnu.org/software/bash/manual/bash.html)
-- Advanced Bash Scripting Guide: [https://tldp.org/LDP/abs/html/string-manipulation.html](https://tldp.org/LDP/abs/html/string-manipulation.html)
-- 'Extracting Substrings in Bash' स्टैक ओवरफ्लो पोस्ट: [https://stackoverflow.com/q/428109/https://stackoverflow.com/q/428109](https://stackoverflow.com/q/428109/https://stackoverflow.com/q/428109)
+Awk और Perl जैसे अल्टरनेटिव टूल्स भी हैं जो पावरफुल टेक्स्ट प्रोसेसिंग प्रदान करते हैं, लेकिन सिंपल Bash स्क्रिप्टिंग अक्सर लाइटवेट और जल्दी काम चलाने के लिए काफी होती है। Bash के `{string:offset:length}` सिंटैक्स को समझना और कुशलता से उपयोग करना, यह शक्ति देता है Bash users को कि वे स्ट्रिंग मणिपुलेशन को सरलता से कर सकें।
+
+## See Also (और भी देखें):
+- Bash Substring Documentation: https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+- Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/string-manipulation.html
+- Stack Overflow Discussions: https://stackoverflow.com/questions/tagged/bash+substring
+
+इन लिंक्स में आपको Bash सबस्ट्रिंग्स के और भी गहन जानकारी और उपयोगी टिप्स मिल जाएंगे।

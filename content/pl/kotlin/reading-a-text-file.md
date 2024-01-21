@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie pliku tekstowego"
-html_title:           "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+date:                  2024-01-20T17:54:57.380621-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,46 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Czytanie pliku tekstowego to pobieranie danych z pliku zapisanego na dysku. Programiści to robią, aby wczytać konfiguracje, dane wejściowe lub po prostu tekst do przetworzenia.
 
-Czytanie pliku tekstowego to proces odczytywania danych zapisanych w formacie pliku tekstowego (.txt, .log, .xml itp.) przez program. Programiści robią to, aby na przykład przetwarzać logi, odczytywać dane konfiguracyjne, zmieniać pliki XML i wiele innych zastosowań.
-
-## Jak to zrobić:
-
-Przykładowy kod w Kotlinie do odczytu pliku tekstowego wygląda tak:
-
-```Kotlin
+## How to: (Jak to zrobić:)
+```kotlin
 import java.io.File
 
-fun main(args: Array<String>) {
-    val fileName = "test.txt"
-
-    val lines: List<String> = File(fileName).readLines()
-
-    lines.forEach { line -> println(line) }
+fun main() {
+    val textContent = File("example.txt").readText(Charsets.UTF_8)
+    println(textContent)
 }
 ```
-Jeżeli nasz plik `test.txt` zawierałby np. takie linie:
-
+Sample output (Przykładowy wynik):
 ```
-Pierwsza linia
-Druga linia
-Trzecia linia
+To jest treść pliku tekstowego.
 ```
 
-To nasz program wydrukowałby na ekranie:
+Aby czytać plik linia po linii:
+```kotlin
+import java.io.File
+
+fun main() {
+    File("example.txt").forEachLine { line ->
+        println(line)
+    }
+}
 ```
-Pierwsza linia
-Druga linia
-Trzecia linia
+
+## Deep Dive (Dogłębna analiza)
+Czytanie plików tekstowych jest podstawowym elementem programowania od jego początków. W Kotlinie, operacje na plikach są ułatwione przez standardową bibliotekę, która zapewnia metody takie jak `readText` i `forEachLine`. 
+
+Alternatywie można użyć `BufferedReader` dla większej efektywności przy dużych plikach:
+```kotlin
+File("example.txt").bufferedReader().use { reader ->
+    var line: String?
+    while (reader.readLine().also { line = it } != null) {
+        println(line)
+    }
+}
 ```
 
-## W głąb tematu:
+Zaawansowane implementacje mogą uwzględniać obsługę błędów i kodowanie znaków. Pamiętaj, że obsługa błędów jest kluczowa, gdy pliki mogą nie istnieć lub nie mieć odpowiednich uprawnień do czytania.
 
-Kotlin, jak wiele innych języków programowania, posiada wbudowane funkcje do manipulowania plikami tekstowymi. Tym niemniej, warto znać też alternatywne sposoby jak na przykład biblioteki zewnętrzne np. Apache Commons IO. Ważnym aspektem jest również zrozumienie, jak odczyt plików jest implementowany na poziomie systemu operacyjnego - Back in the days, operacje na plikach były dużo bardziej skomplikowane, ale na szczęście teraz wielu z tych szczegółów jest ukrytych za prostymi API.
-
-## Zobacz też:
-
-- Dokumentacja Kotlin do odczytu plików tekstowych: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/read-lines.html](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/read-lines.html)
-- Apache Commons IO, zewnętrzna biblioteka do obsługi plików: [https://commons.apache.org/proper/commons-io/](https://commons.apache.org/proper/commons-io/)
-- Artykuł na temat odczytu plików w Kotlinie: [https://www.baeldung.com/kotlin-read-file](https://www.baeldung.com/kotlin-read-file)
+## See Also (Zobacz również)
+- Dokumentacja Kotlin na temat pracy z IO: [Kotlin IO](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/)
+- Wskazówki na temat obsługi błędów IO w Kotlinie: [Kotlin Exception Handling](https://kotlinlang.org/docs/exceptions.html)

@@ -1,7 +1,8 @@
 ---
-title:                "Надсилання http-запиту"
-html_title:           "Arduino: Надсилання http-запиту"
-simple_title:         "Надсилання http-запиту"
+title:                "Надсилання HTTP-запиту"
+date:                  2024-01-20T18:00:09.933363-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,30 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що таке та навіщо потрібно?
+## What & Why? (Що та Чому?)
+Sending an HTTP request is how your JavaScript code asks the internet for data or sends data to a server. We do it to interact with web services, grab fresh content, submit forms, and basically breathe life into websites.
 
-Надсилання HTTP-запиту - це процес, при якому ваш код "запитує" інформацію від сервера. Ми робимо це для отримання, відправки, оновлення або видалення даних на віддаленому сервері.
+## How to: (Як зробити:)
+Here's how to send a GET request using the `fetch` API to grab some JSON data and then post data using `fetch`.
 
-## Як це працює:
-
-```Javascript
-fetch('https://api.github.com/users/github')
+```javascript
+// GET request for remote image in node.js
+fetch('https://jsonplaceholder.typicode.com/posts/1')
   .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));
+  .then(json => console.log(json))
+  .catch(err => console.error('Error:', err));
+
+// POST request using fetch()
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'foo',
+    body: 'bar',
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then(response => response.json())
+  .then(json => console.log(json))
+  .catch(err => console.error('Error:', err));
 ```
-Ця функція відправляє запит до посилання URL, потім конвертує відповідь в формат JSON, а потім виводить результат в консоль. Якщо сталася помилка, вона буде виведена в консоль.
 
-## Поглиблений аналіз:
+## Deep Dive (Занурення у Деталі):
+Long before `fetch`, we had `XMLHttpRequest`. It did the job but was clunky. `fetch` is the modern, promise-based evolution of web requests. Alternatives? Yes, many use `axios` for more features out of the box. Behind the scenes, `fetch` wraps around the low-level HTTP protocol, dealing with strings and streams neatly, so you don't have to.
 
-HTTP-запити були вперше представлені в 1990-их для комунікації між браузерами і веб-серверами. Існують альтернативи HTTP-запитам, такі як WebSockets, які використовуються для неперервного обміну даними.
+Historically, sending requests from the browser was limited by the same-origin policy - a security measure. But now, with CORS (Cross-Origin Resource Sharing), we can request resources from different origins, given the server allows it.
 
-Щодо деталей втілення, метод fetch використовує протокол HTTP або HTTPS в залежності від URL-адреси. Результатом є об'єкт Promise, який представляє відгук на запит.
-
-## Дивись також:
-
-Не забудьте ознайомитися з іншими ресурсами, які допоможуть вам вивчити цю тему глибше:
-
-1. [Mozilla Developer Network (MDN) - Fetch API](https://developer.mozilla.org/uk/docs/Web/API/Fetch_API/Using_Fetch)
-2. [MDN - HTTP запити](https://developer.mozilla.org/uk/docs/Web/HTTP/Methods)
-3. [Уроки JavaScript на Codecademy](https://www.codecademy.com/learn/introduction-to-javascript)
+## See Also (Дивіться Також):
+- MDN Web Docs on `fetch()`: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+- JSONPlaceholder for fake online REST: https://jsonplaceholder.typicode.com/
+- `axios` GitHub repo: https://github.com/axios/axios
+- CORS explanation by MDN: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS

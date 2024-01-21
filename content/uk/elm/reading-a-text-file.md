@@ -1,6 +1,7 @@
 ---
 title:                "Читання текстового файлу"
-html_title:           "Arduino: Читання текстового файлу"
+date:                  2024-01-20T17:54:17.028361-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Читання текстового файлу"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,40 +12,82 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Що і чому?
-Читання текстового файлу - це процес, під час якого програма відкриває та читає вміст текстового документу. Програмісти роблять це, щоб вивчити дані, збережені у файлі, або для програмного маніпулювання цими даними.
+Читання текстового файлу – це процес отримання даних з файлу, збереженого на вашому диску. Програмісти роблять це, щоб обробити збережені дані, налаштувати програму, або завантажити конфігурації.
 
-## Як зробити:
-Elm не підтримує читання з файлів напряму, але ви можете обробити вхідні дані через порти. Нижче наведено приклад коду.
+## Як це зробити:
+Elm напряму не має здатності читати файли через браузерну безпеку, але ви можете использовати Port для інтеграції з JavaScript.
 
 ```Elm
 port module Main exposing (..)
 
-import Html exposing (..)
+import Html exposing (Html, button, div, text)
+import Html.Events exposing (onClick)
 
-type alias Model = 
-    { fileContent: String
+port readFile : () -> Cmd msg
+port fileRead : (String -> msg) -> Sub msg
+
+type Msg
+    = ReadFile
+    | FileRead String
+
+type alias Model =
+    { content : String
     }
 
 init : Model
 init =
-    { fileContent = ""
+    { content = ""
     }
 
--- Port binding to read file
-port readFile : (() -> msg) -> Sub msg
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        ReadFile ->
+            (model, readFile ())
+
+        FileRead content ->
+            ({ model | content = content }, Cmd.none)
+
+view : Model -> Html Msg
+view model =
+    div []
+        [ button [ onClick ReadFile ] [ text "Читати файл" ]
+        , div [] [ text model.content ]
+        ]
 
 main =
     Html.program
-        { init = init
-        , view = view
+        { init = (init, Cmd.none)
         , update = update
-        , subscriptions = subscriptions
+        , subscriptions = \_ -> fileRead FileRead
+        , view = view
         }
 ```
 
-## Поглиблено:
-Починаючи з Elm 0.19, мову Elm обмежено таким чином, щоб вона була більш безпечною і прогнозованою. Це означає, що немає нативної підтримки для таких речей, як читання файлів. Замість цього Elm використовує порти для взаємодії з JavaScript для таких операцій. Хоча це може бути незручно, це запобігає багатьом типам помилок.
+JavaScript для інтеграції з портами Elm:
 
-## Дивись також:
-1. [Elm Guide on Interacting with JavaScript](https://guide.elm-lang.org/interop/)
-2. [Elm package for File Handling](https://package.elm-lang.org/packages/elm/file/latest/)
+```javascript
+app.ports.readFile.subscribe(function() {
+    var selectedFile = document.getElementById('file-input').files[0];
+    var reader = new FileReader();
+    
+    reader.onload = function(event) {
+        app.ports.fileRead.send(event.target.result);
+    };
+    
+    reader.readAsText(selectedFile);
+});
+```
+
+HTML елемент для вибору файлу:
+
+```html
+<input type="file" id="file-input" />
+```
+
+## Поглиблений розгляд:
+Elm був створений для надання надійності та продуктивності frontend-розробці. Читання файлів локально не підтримується безпосередньо через пріоритет безпеки й простоту. Історично Elm вибрали шлях взаємодії з JavaScript для таких задач через Ports. Альтернативою є використання File Reader API в JavaScript і передача даних через порт у Elm. Це рішення дозволяє обробляти файли безпосередньо в браузері.
+
+## Дивіться також:
+- [Офіційні порти Елма](https://guide.elm-lang.org/interop/ports.html) - навчання, як використовувати порти для двосторонньої взаємодії з JavaScript.
+- [File Reader API](https://developer.mozilla.org/en-US/docs/Web/API/FileReader) - опис API для читання змісту файлів у веб-браузерах.

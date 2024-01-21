@@ -1,7 +1,8 @@
 ---
-title:                "यादृच्छिक संख्याओं का निर्माण"
-html_title:           "Clojure: यादृच्छिक संख्याओं का निर्माण"
-simple_title:         "यादृच्छिक संख्याओं का निर्माण"
+title:                "यादृच्छिक संख्याएँ उत्पन्न करना"
+date:                  2024-01-20T17:49:04.707053-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Numbers"
@@ -12,27 +13,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्या और क्यों?
 
-रैंडम नंबर्स का उत्पन्न करना का अर्थ होता है कि प्रोग्रामिंग में कुछ अप्रत्याशित मूल्यों को उत्पन्न करें। प्रोग्राममर्स इसे तब करते हैं जब उन्हें डाटा सर्वर से अव्यक्त तरीके से लेना होता है, या टेस्टिंग के लिए कुछ अनिर्दिष्ट मूल्यों की आवश्यकता होती है।
+रैंडम संख्या वह होती है जो किसी निश्चित पैटर्न का अनुसरण नहीं करती। प्रोग्रामर्स इन्हें गेम्स, साइंस सिमुलेशंस, या सिक्योरिटी के लिए सटीकता से प्रयोग करते हैं।
 
-## कैसे करें :
+## कैसे करें?
 
-Elm प्रोग्रामिंग में, रैंडम संख्याएं बनाने के लिए `Random` मॉड्यूल का उपयोग करना होगा। उदाहरण के लिए :
+Elm में रैंडम नंबर्स जेनरेट करना `Random` मॉड्यूल का इस्तेमाल करके होता है। ये हमें `Generator` टाइप देता है, जिसके जरिए हम रैंडम वैल्यूज पा सकते हैं।
 
-```Elm
+```
+Elm
 import Random
 
-genRandom : Random.Generator Int
-genRandom = 
-    Random.int 1 100
+randomInt : Int
+randomInt =
+    Random.step (Random.int 1 100) (Random.initialSeed 42) |> fst
 ```
-यहां `Random.int 1 100` एक नया रैंडम जनरेटर बनाता है जो 1 और 100 के बीच की संख्याओं को उत्पन्न कर सकता है। 
 
-## गहराई में: 
+यह कोड `1` से `100` के बीच का एक रैंडम इंटीजर बनाता है। याद रखें, Elm में हर बार एक ही `Seed` से शुरू करके हमें समान नंबर मिलेगा।
 
-ऐतिहासिक प्रसंग में, रैंडम संख्या जनरेटिंग कंप्यूटर की शुरुआत से ही रही है। अल्टर्नेटिव्स में आप Pseudo-Random Number Generators (PRNGs) का उपयोग कर सकते हैं जो असलियत में पूरी तरह से यादृच्छिक नहीं होते, लेकिन अधिकांश उपयोगों के लिए पर्याप्त होते हैं। Elm में, `Random` मॉड्यूल PRNGs का उपयोग करता है।
+## गहराई से समझें
 
-## देखें भी :
+रैंडम नंबर जेनरेशन की हिस्ट्री लंबी है - यह पुरानी सिविलाइजेशन से लेकर मॉडर्न कंप्यूटर्स तक पहुँची है। Elm उपयोग करता है प्यूडो-रैंडम नंबर जेनरेटर्स (PRNGs), जो एक डिटर्मिनिस्टिक प्रोसेस है लेकिन आउटपुट रैंडम सा दिखता है। अलग विकल्पों में हम `Random.float`, `Random.list` आदि का उपयोग कर सकते हैं। इम्प्लीमेंटेशन की बात करें तो, Elm एक सीड वैल्यू का इस्तेमाल करता है जिसे शुरुआत में पास किया गया था और उसी को आगे के नंबर्स के जनरेशन में इस्तेमाल करता है।
 
-1. [Elm का डॉक्यूमेंटेशन Random पैकेज के लिए](http://package.elm-lang.org/packages/elm-lang/core/latest/Random)
-2. [रैंडम संख्याओं के उत्पन्न करने के बारे में और अधिक जानकारी](https://en.wikipedia.org/wiki/Random_number_generation)
-3. [Pseudo-Random Number Generators के बारे में और अधिक जानकारी](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+## संबंधित स्रोत
+
+- [Elm's Random module documentation](http://package.elm-lang.org/packages/elm/random/latest)
+- [Intro to Random in Elm by Elm Guide](https://guide.elm-lang.org/effects/random.html)
+- [Seed-based randomness in computer programs](https://en.wikipedia.org/wiki/Random_seed)

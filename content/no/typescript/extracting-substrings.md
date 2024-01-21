@@ -1,7 +1,8 @@
 ---
-title:                "Utdrag av understrenger"
-html_title:           "Bash: Utdrag av understrenger"
-simple_title:         "Utdrag av understrenger"
+title:                "Uthenting av delstrenger"
+date:                  2024-01-20T17:46:40.079223-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uthenting av delstrenger"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,39 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Å hente ut understrenger betyr å ta ut en spesifisert del av en streng. Programmerere gjør dette for å bearbeide data, validere input eller simpelthen skille ut relevant informasjon.
 
-Uttrekking av substrings er prosessen med å isolere spesifikke deler av en streng. Programmerere gjør det ofte for å manipulere, sammenligne eller analysere data.
-
-## Hvordan:
-
-Her er et enkelt eksempel på bruk av `substr()`-funksjonen i TypeScript.
-
-```typescript
-let tekst: string = "Hei, Verden!";
-let delTekst: string = tekst.substr(0, 3);
-console.log(delTekst);
+## How to:
+```TypeScript
+let fullString: string = "Hallo, verden!";
+let substring: string = fullString.substring(7, 13);
+console.log(substring); // Output: "verden"
 ```
 
-Denne koden vil skrive ut følgende:
+Eller, med moderne JavaScript/TypeScript, kan du bruke string literal templates:
 
-```typescript
-"Hei"
-```
-Det tar to argumenter: den første er startindeksen, og den andre er antallet tegn du vil utvinne.
-
-## Dypdykk
-
-Uttrekking av substrings har vært en grunnleggende operasjon av mange programmeringsspråk, inkludert tidligere versjoner av JavaScript. I TypeScript, anbefaler vi bruk av `slice()` over `substr()` som det er mer forutsigbart.
-
-`substr()` kan gi uventet oppførsel med negative indekser, mens `slice()` håndterer dem mer konsekvent. Her er et eksempel:
-
-```typescript
-let tekst: string = "Hei, Verden!";
-console.log(tekst.slice(-1));   // utskrifter: "!",
-console.log(tekst.substr(-1));  // utskrifter: "Verden!"
+```TypeScript
+let user = "Ola";
+let message: string = `Hei, ${user}!`;
+console.log(message.substring(4)); // Output: "Ola!"
 ```
 
-## Se Også 
+## Deep Dive
+Før ES6 og TypeScript, var `substring()` og `slice()` de mest brukte metodene for å hente ut understrenger. Men, disse metodene oppfører seg litt annerledes: `slice()` kan ta negative indekser, mens `substring()` ikke kan det.
 
-- Microsofts TypeScript Handbook for mer informasjon om [strenger i TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html#string).
+Alternativt kan du bruke `substr()`, men denne metoden er nå foreldet og bør unngås.
+
+At TypeScript tillater streng-interpolasjon og har sterk typetøtte gjør jobben med strenger lettere og mer feilsikker.
+
+## See Also
+- MDN på `substring()`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
+- TypeScript Docs: https://www.typescriptlang.org/docs/
+- ECMAScript 2015 (ES6) spesifikasjoner: https://www.ecma-international.org/ecma-262/6.0/

@@ -1,7 +1,8 @@
 ---
-title:                "Aloittaminen uuden projektin"
-html_title:           "C: Aloittaminen uuden projektin"
-simple_title:         "Aloittaminen uuden projektin"
+title:                "Uuden projektin aloittaminen"
+date:                  2024-01-20T18:03:31.491218-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -10,36 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? - Mikä & Miksi?
+Uuden projektin aloittaminen on tyhjältä pöydältä alkaminen: uusi hakemisto, uusi Git-repo, uudet tiedostot. Koodarit aloittavat projekteja testatakseen ideoita, ratkaistakseen ongelmia tai vain opetellakseen jotain uutta.
 
-Aloittaa uusi projekti tarkoittaa uuden ohjelmoinnin aloittamista tyhjästä. Ohjelmoijat tekevät tämän tuodakseen uusia ideoita eloon ja ratkaistakseen ongelmia.
-
-## Näin se tehdään:
-
-Fish Shell tarjoaa helpon tavan aloittaa uusi projekti. Esimerkiksi, voit luoda uuden hakemiston näin:
-
+## How to: - Näin teet:
 ```Fish Shell
-mkdir uusi_projekti
-cd uusi_projekti
+# Luo uusi hakemisto projektillesi ja siirry sinne
+mkdir minun_projektini
+cd minun_projektini
+
+# Alusta Git-repositorio
+git init
+
+# Luo esimerkiksi 'index.html' tiedosto
+touch index.html
+
+# Katso tiedostoja
+ls
+```
+```
+./minun_projektini
+./minun_projektini/.git
+./minun_projektini/index.html
 ```
 
-Näytölle tulostuu seuraavasti:
+## Deep Dive - Syväsukellus
+Fish Shell, eli "friendly interactive shell", on vuonna 2005 syntynyt komentotulkki, joka keskittyi käyttäjäystävällisyyteen ja helppoon skriptattavuuteen. Vaihtoehtoja ovat Bash, Zsh ja monet muut, mutta Fish erottuu paremmalla automaattisella täydennyksellä ja selkeämmällä syntaksilla. Uuden projektin aloittaminen Fish Shellissä ei paljoa eroa muiden shellien käytöstä, mutta Fishin skriptaus ja mukauttaminen voivat olla sujuvampia.
 
-```Fish Shell
-/uusi_projekti/
-```
-
-Ja nyt, olet valmis aloittamaan koodauksen uudessa projektissasi!
-
-## Syvempi sukellus:
-
-Fish Shell, joka julkaistiin alun perin vuonna 2005, tarjoaa monia ominaisuuksia, jotka helpottavat uuden projektin aloittamista. Se on moderni, ystävällinen komentorivikäyttöliittymä, jonka tavoitteena on lisätä käyttäjän tuottavuutta.
-
-Vaihtoehtoisina työkaluina voidaan mainita Bash, Zsh ja PowerShell, jotka tarjoavat samanlaisia toiminnallisuuksia.
-
-Fish Shell on toteutettu C++-kielellä ja se on cross-platform, mikä tarkoittaa, että se toimii monilla eri käyttöjärjestelmillä.
-
-## Katso myös:
-
-1. Fish Shell Ohjeet: [Fish Documentation](https://fishshell.com/docs/current/index.html)
-2. Hienoja koodivinkkejä Fish Shell -käyttöön: [Awesome Fish](https://github.com/jorgebucaran/awesome.fish)
+## See Also - Katso Myös
+- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [Gitin aloitusopas](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
+- [Gitin ja Fish Shellin integrointi](https://github.com/jorgebucaran/fisher)

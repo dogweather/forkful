@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie zapytania http z podstawową autoryzacją"
+date:                  2024-01-20T18:01:23.209982-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,55 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Wysyłanie żądania HTTP z podstawową autentykacją to proces, w którym klient internetowy przekazuje dane logowania do serwera w zabezpieczonym formacie. Programiści używają tego, by umożliwić aplikacjom dostęp do zasobów wymagających weryfikacji użytkownika.
 
-Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem to nasz sposób na komunikację z serwerem, przekazując przy tym potrzebne nam dane. Programiści robią to, aby bezpiecznie przesyłać niezbędne informacje, takie jak login i hasło, do serwisów internetowych.
-
-## Jak to zrobić:
-
-Możemy to zrealizować w C++ za pomocą biblioteki libcurl. Przykładowy kod poniżej pokazuje, jak to można zrobić.
+## How To (Jak To Zrobić):
+C++ nie ma wbudowanego wsparcia dla HTTP, więc użyjemy biblioteki `CURL` oraz dodatkowo `cpp-base64` do zakodowania poświadczeń. Zainstaluj CURL i dołącz go do projektu. Poniżej kod:
 
 ```C++
+#include <iostream>
 #include <curl/curl.h>
+#include <string>
+#include "base64.h"
 
 int main() {
-    CURL *curl;
-    CURLcode res;
- 
-    curl_global_init(CURL_GLOBAL_DEFAULT);
-    curl = curl_easy_init();
+    CURL *curl = curl_easy_init();
 
-    if (curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-        curl_easy_setopt(curl, CURLOPT_USERNAME, "username");
-        curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
+    if(curl) {
+        // Twoje dane logowania
+        std::string userName = "user";
+        std::string password = "pass";
+        
+        // Zakoduj poświadczenia do Base64
+        std::string credentials = base64_encode(userName + ":" + password);
+        
+        // Ustaw nagłówek autoryzacji
+        struct curl_slist *headers = nullptr;
+        headers = curl_slist_append(headers, ("Authorization: Basic " + credentials).c_str());
 
-        res = curl_easy_perform(curl);
+        // Ustaw URL oraz nagłówek
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com/resource");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+        // Wykonaj żądanie
+        CURLcode res = curl_easy_perform(curl);
+        
+        // Sprawdź błędy
         if(res != CURLE_OK)
-          fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+            std::cerr << "CURL error: " << curl_easy_strerror(res) << std::endl;
 
-        /* always cleanup */ 
+        // Posprzątaj
+        curl_slist_free_all(headers);
         curl_easy_cleanup(curl);
     }
-
-    curl_global_cleanup();
 
     return 0;
 }
 ```
 
-Jeśli wszystko przebiegło poprawnie, nie otrzymasz żadnego komunikatu. W przeciwnym razie zostanie wyświetlony komunikat o błędzie.
+Wyjście zależy od odpowiedzi serwera, więc nie podajemy przykładu. Kod powyżej wyśle żądanie GET do `http://example.com/resource`.
 
-## Rozwinięcie tematu
+## Deep Dive (Dogłębna Analiza):
+Kiedyś proste żądania HTTP mogły być wysyłane przez gniazda sieciowe (`sockets`), ale zwiększenie bezpieczeństwa sieci wymusiło użycie silniejszych bibliotek. Najpopularniejsze alternatywy dla CURL to: `Boost.Beast`, `cpp-httplib`, i `Poco`. Podstawowa autentykacja, choć prosta, nie jest najbezpieczniejszą metodą; bardziej zaawansowaną i bezpieczną metodą jest OAuth. Realizacja a klienckiej strony może być mniej skomplikowana niż na serwerowej; klient musi tylko odpowiednio przygotować i wysłać poświadczenia.
 
-- Kontekst historyczny: Podstawowe uwierzytelnianie to najstarsza metoda uwierzytelniania w HTTP. Powstała jeszcze w czasach, gdy bezpieczeństwo nie było priorytetem.
-
-- Alternatywa: Jest wiele alternatyw dla podstawowego uwierzytelniania, takich jak uwierzytelnianie Digest czy tokeny JWT. Te metody są bardziej zabezpieczone, ale również bardziej skomplikowane do implementacji.
-
-- Szczegół implementacji: Uwierzytelnianie odbywa się przez dodanie nagłówka "Authorization" do żądania HTTP. W przypadku podstawowego uwierzytelniania, nagłówek ten zawiera słowo "Basic" poprzedzające zakodowane w base64 dane uwierzytelniające, zwykle login i hasło.
-
-## Zobacz także:
-
-- Dokumentacja libcurl: [https://curl.se/libcurl/c/](https://curl.se/libcurl/c/)
-- HTTP Authentication: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- Base64 Encoding: [https://en.wikipedia.org/wiki/Base64](https://en.wikipedia.org/wiki/Base64)
+## See Also (Zobacz Również):
+- Dokumentacja CURL: https://curl.haxx.se/libcurl/c/
+- Biblioteka cpp-base64: https://github.com/ReneNyffenegger/cpp-base64
+- Boost.Beast: https://www.boost.org/doc/libs/1_75_0/libs/beast/doc/html/index.html
+- cpp-httplib: https://github.com/yhirose/cpp-httplib
+- Poco Libraries: https://pocoproject.org/
+- OAuth: https://oauth.net/

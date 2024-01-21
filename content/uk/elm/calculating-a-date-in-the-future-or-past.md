@@ -1,7 +1,8 @@
 ---
-title:                "Обчислення дати в майбутньому або минулому"
-html_title:           "Elm: Обчислення дати в майбутньому або минулому"
-simple_title:         "Обчислення дати в майбутньому або минулому"
+title:                "Обчислення дати у майбутньому або минулому"
+date:                  2024-01-20T17:31:04.186687-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Обчислення дати у майбутньому або минулому"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,37 +11,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Навіщо?
-"Обчислення дати в майбутньому або минулому" - це процедура, коли програміст визначає дату, яка відбувається після або перед вказаною датою. Це потрібно для всеосяжного управління подіями, налагодження напливу даних і відслідковування подій у часі.
+## What & Why?
+## Що і чому?
 
-## Як це зробити:
-Ось шматочок коду, що демонструє обчислення дати в майбутньому та минулому в Elm.
+Calculating a future or past date involves figuring out a date some days ahead or behind a specific date. Coders need this for features like reminders, subscription renewals, or historical data analysis.
+
+## How to:
+## Як це робити:
+
+Elm makes date computations quite clear. Let's calculate today's date plus 10 days and minus 30 days.
+
 ```Elm
 import Time
-import Time.Offset as Offset
+import Date exposing (Date)
+import Task
+import Browser
 
-прошлый : Time.Posix -> Time.Posix
-прошлый вр = 
-    Offset.subtract 
-        (Offset.Days 2) 
-        вр
+type Msg
+    = GotTime Posix
 
-будущее : Time.Posix -> Time.Posix
-будущее вр =
-    Offset.add 
-        (Offset.Days 2)
-        вр
+type alias Model =
+    { today : Maybe Date
+    , plusTen : Maybe Date
+    , minusThirty : Maybe Date
+    }
+
+init : () -> ( Model, Cmd Msg )
+init _ =
+    ( { today = Nothing, plusTen = Nothing, minusThirty = Nothing }
+    , Time.now |> Task.perform GotTime
+    )
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        GotTime posix ->
+            let
+                today = posix |> Time.toDate
+                plusTen = Date.add Days 10 today
+                minusThirty = Date.add Days -30 today
+            in
+            ( { model | today = Just today, plusTen = Just plusTen, minusThirty = Just minusThirty }
+            , Cmd.none
+            )
+
+-- Add your view and subscriptions if needed, for a complete program
+
 ```
-Цей код бере поточний час `вр`, і за допомогою функцій `subtract` і `add` з бібліотеки `Offset`, він знаходить дату 2 дні в майбутньому або минулому. 
 
-## Занурення глибше:
-(1) Історичний контекст: Elm - це чиста функціональна мова, яка не використовує змінні для зміни стану. Робота з датами та часом - це деякі з завдань, які можуть бути складними без використання змінних, але Elm користується елегантними і вбудованими рішеннями. 
+Sample Output:
 
-(2) Альтернативи: Іриски, як-то JavaScript, Python, і Ruby мають свої бібліотеки для обробки дат та часу, проте Elm пропонує гарантовану бажану поведінку без побічних ефектів. 
+```Elm
+Model
+    { today = Just (Date 2023-03-25)
+    , plusTen = Just (Date 2023-04-04)
+    , minusThirty = Just (Date 2023-02-23)
+    }
+```
 
-(3) Імплементація: За допомогою функцій `add` і `subtract` ми зміщуємо поточний час на вказане значення. Також можливе зміщення на тижні, місяці або роки.
+## Deep Dive
+## Поглиблений розгляд
 
-## Дивись також:
-https://package.elm-lang.org/packages/elm/time/latest/ - Офіційна документація Elm про роботу з датою і часом.
+Elm's handling of dates hinges on the `Time` and `Date` modules. Historically, date manipulation in programming is tricky due to time zones and leap years. Elm simplifies this by using `Posix` time, counting milliseconds since the Unix epoch.
 
-https://www.elm-tutorial.org/en/ - Детальное керівництво з Elm, включаючи теми, які стосуються обробки дат та часу.
+Alternatives? You could use JavaScript's `Date`, but it has issues around daylight saving time and mutability. Elm's `Date` is immutable and handles complexities silently.
+
+For in-depth date logic, like recurring events, you might need a custom solution. Elm's simplicity also means some use cases require extra effort, like installing third-party date libraries.
+
+## See Also
+## Дивись також
+
+- Elm's [official Time documentation](https://package.elm-lang.org/packages/elm/time/latest/)
+- [rtfeldman/elm-iso8601-date-strings](https://package.elm-lang.org/packages/rtfeldman/elm-iso8601-date-strings/latest/) for ISO 8601 string parsing

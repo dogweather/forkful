@@ -1,6 +1,7 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "Gleam: Завантаження веб-сторінки"
+date:                  2024-01-20T17:43:58.293552-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,45 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та для чого?
+## What & Why? (Що та Чому?)
+Завантаження веб-сторінки - це процес отримання її вмісту через інтернет. Програмісти роблять це, щоб отримати дані, якими можна маніпулювати та використовувати в своїх програмах.
 
-Завантаження веб-сторінки включає отримання вмісту веб-сторінки через Інтернет. Програмісти роблять це, щоб отримати дані з веб-сайтів або виконати операції на стороні сервера.
-
-## Як це зробити:
-
-В Elm ми можемо використовувати модуль `Http` для завантаження веб-сторінки. Ось приклад:
+## How to: (Як зробити:)
+В Elm, ви можете завантажити веб-сторінку використовуючи `Http` модуль. Нижче представлений приклад запиту до сервера та обробки відповіді.
 
 ```Elm
 import Http
 import Json.Decode as Decode
 
-getWebsiteContent : String -> Cmd Msg
-getWebsiteContent url =
-    Http.get
-        { url = url
-        , expect = Http.expectString GotWebsiteContent
-        }
+type Msg
+    = GotText (Result Http.Error String)
 
-type Msg = GotWebsiteContent (Result Http.Error String)
+getText : Cmd Msg
+getText =
+    Http.get
+        { url = "https://example.com"
+        , expect = Http.expectString GotText
+        }
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
     case msg of
-        GotWebsiteContent result ->
-            case result of
-                Ok response ->
-                    ...
+        GotText (Ok text) ->
+            ({ model | content = text }, Cmd.none)
 
-    Http.send GotWebsiteContent (getWebsiteContent "http://example.com")
+        GotText (Err _) ->
+            (model, Cmd.none)
+
+-- initialize and subscriptions omitted for brevity
+
 ```
 
-## Більше деталей:
+У прикладі вище код робить HTTP GET запит до `"https://example.com"` і очікує на текстову відповідь.
 
-### Історичний контекст
-Elm був розроблений Evan Czaplicki у 2012 році як безпечна, функциональна мова програмування для веб-розробки, зокрема для роботи з HTTP-запитами.
+## Deep Dive (Поглиблений Аналіз)
+Завантаження веб-сторінок у Elm розпочалося з релізом мови, який перекладення веб-запитів на більш високий рівень абстракції. Elm використовує `Http` модуль, який робить чисті HTTP запити без бокових ефектів, узгоджуючись з архітектурою Elm. 
+Альтернативою є пряме використання JavaScript через порти (ports), але це здебільшого підходить для складних випадків, де Elm `Http` модуль не пропонує потрібного функціоналу. Модуль `Http` використовує `Task` для представлення асинхронних запитів які можуть виконатися паралельно та легко об'єднуватися.
 
-### Альтернативи
-У Elm основний спосіб роботи з HTTP - це через використання модуля `Http`. Однак, є інші JavaScript-бібліотеки, такі як `fetch` або `axios`, які можна використовувати через порти.
-
-### Деталі реалізації
-Зверніть увагу, що Elm використовує свій власний тип `Http.Error` для обробки помилок,
+## See Also (Дивись також)
+- Елм модуль Http: [Http package](https://package.elm-lang.org/packages/elm/http/latest)
+- Про обробку JSON у Елм: [JSON Decoding](https://guide.elm-lang.org/effects/json.html)
+- Офіційний Elm Гід: [Official Elm Guide](https://guide.elm-lang.org/)

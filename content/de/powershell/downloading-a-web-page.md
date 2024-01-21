@@ -1,7 +1,8 @@
 ---
-title:                "Eine Webseite herunterladen"
-html_title:           "Arduino: Eine Webseite herunterladen"
-simple_title:         "Eine Webseite herunterladen"
+title:                "Webseite herunterladen"
+date:                  2024-01-20T17:44:50.030093-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Webseite herunterladen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,33 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why?
+Herunterladen einer Webseite bedeutet, ihren Inhalt zu sichern, um ihn offline zu analysieren oder zu verarbeiten. Programmierer machen das, um Daten zu sammeln, automatisierte Tests durchzuführen oder Inhalte zu überwachen.
 
-Webseiten herunterzuladen bedeutet, die HTML-Daten einer Webseite auf Ihren lokalen Rechner zu kopieren. Programmierer tun dies, um Daten zu sammeln, die Analyse zu automatisieren, Tests durchzuführen oder Offline-Kopien zu erstellen.
-
-## So geht's:
-
-Mit PowerShell können wir die `Invoke-WebRequest` Funktion verwenden, um eine Webseite herunterzuladen. Hier ist ein einfaches Beispiel:
+## How to:
+PowerShell macht's einfach. Hier ein Basic-Beispiel, das eine Webseite lädt:
 
 ```PowerShell
-$url = "http://beispiel.de"
-$response = Invoke-WebRequest -Uri $url
-$response.Content > "beispiel.html"
+$response = Invoke-WebRequest -Uri 'http://example.com'
+$response.Content
 ```
 
-Wenn Sie dies ausführen, wird die HTML-Inhalte der Webseite "beispiel.de" in die Datei "beispiel.html" gespeichert.
+Ausgabe könnte so aussehen:
 
-## Deep Dive
+```HTML
+<!doctype html>
+....
+</html>
+```
 
-PowerShell ist die Nachfolgeversion von Microsofts Command Prompt und wurde erstmals 2006 eingeführt. Im Gegensatz zu seinem Vorgänger unterstützt PowerShell .Net und hat eine viel größere Palette an Funktionen, einschließlich `Invoke-WebRequest`.
+Erweitertes Beispiel, mit Speichern des Inhalts in einer Datei:
 
-Abgesehen von PowerShell gibt es viele andere Tools, mit denen Sie Webseiten herunterladen können, z. B. `wget` und `curl` in Linux oder einfach durch Rechtsklick auf eine Webseite und "Speichern unter" in einem normalen Webbrowser.
+```PowerShell
+$url = 'http://example.com'
+$outputPath = 'C:\path\to\your\file.html'
+Invoke-WebRequest -Uri $url -OutFile $outputPath
+Write-Host "Webseite heruntergeladen nach: $outputPath"
+```
 
-`Invoke-WebRequest` sendet standardmäßig einen GET-Request an die angegebene URL. Es unterstützt jedoch auch POST, DELETE und andere HTTP-Methoden. Es können auch zusätzliche Header, Nutzdaten und Cookies gesendet werden.
+## Deep Dive:
+Vor PowerShell nutzte man Tools wie `wget` oder `curl` für solche Aufgaben. PowerShell bietet nun mit `Invoke-WebRequest` und `Invoke-RestMethod` eigene Befehle. `Invoke-WebRequest` eignet sich für Standard-HTTP-Anfragen, während `Invoke-RestMethod` für den Umgang mit REST-APIs gedacht ist.
 
-## Siehe Auch
+Anders als `curl`, das mit Command-Line-Optionen arbeitet, nutzt PowerShell's `Invoke-WebRequest` benannte Parameter und gibt Objekte zurück. Das ermöglicht eine tiefere Integration in Skripte und komplexere Verarbeitung ohne zusätzlichen Parsing-Aufwand.
 
-Weitere Informationen und Quellen können Sie auf folgenden Seiten finden:
-- [Microsofts Dokumentation zu Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7)
-- [W3Schools Tutorials zu HTML](https://www.w3schools.com/html)
-- [Mozilla Developers Network (MDN) Einführung in HTTP](https://developer.mozilla.org/de/docs/Web/HTTP/Overview)
+## See Also:
+- [PowerShell Dokumentation für Invoke-WebRequest](https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.utility/invoke-webrequest)
+- [Vergleich zwischen curl und Invoke-RestMethod](https://stackoverflow.com/questions/32798864/compare-curl-and-invoke-restmethod)
+- [Mehr zu REST-APIs mit Invoke-RestMethod](https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.utility/invoke-restmethod)

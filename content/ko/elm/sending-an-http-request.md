@@ -1,6 +1,7 @@
 ---
 title:                "HTTP 요청 보내기"
-html_title:           "Clojure: HTTP 요청 보내기"
+date:                  2024-01-20T17:59:38.559949-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,42 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인가 & 왜 해야하는가?
-HTTP 요청은 클라이언트가 서버에 정보를 요청하거나 서버로 정보를 전송하는 데 사용하는 방법입니다. 프로그래머가 이를 사용하는 이유는 웹 애플리케이션에서 필요한 데이터를 가져오고, 웹 서버에 데이터를 전송하기 위해서입니다.
+## What & Why? (무엇 그리고 왜?)
+HTTP 요청을 보낸다는 것은 웹 서버에 정보를 요청하거나 데이터를 전송하는 방법입니다. 프로그래머는 웹 애플리케이션에서 서버와 통신하고 데이터를 주고받기 위해 이를 사용합니다.
 
-
-## 어떻게 하는가:
-여기에는 Elm에서의 HTTP 요청 예제를 보여줍니다. 필요한 데이터를 'GET' 요청을 통해 어떻게 가져오는지, 'POST' 요청을 통해 어떻게 보내는지를 보여줍니다.
-
+## How to: (어떻게 하나요?)
 ```Elm
--- GET 요청
 import Http
-import Json.Decode as Decode
+import Json.Decode exposing (Decoder, string)
 
-fetchData : Http.Request String
-fetchData = 
+type Msg
+    = GotData (Result Http.Error String)
+
+-- define your decoder
+decoder : Decoder String
+decoder =
+    string
+
+-- create an HTTP request
+getRequest : Cmd Msg
+getRequest =
     Http.get
-        { url = "서버의 URL"
-        , expect = Http.expectString (Result.withDefault "" << Result.map Decode.string)
+        { url = "http://example.com/data"
+        , expect = Http.expectJson GotData decoder
         }
 
--- POST 요청
-postData : String -> Http.Request String
-postData data = 
-    Http.post
-        { url = "서버의 URL"
-        , body = Http.stringBody "application/json" data
-        , expect = Http.expectString (Result.withDefault "" << Result.map Decode.string)
-        }
+-- sample output for a successful request
+GotData (Ok "Your string data here")
+
+-- sample output for a failed request
+GotData (Err Http.BadStatus { status = 404, body = "Not Found" })
 ```
-위의 코드는 GET 또는 POST 요청을 발생시키지만, 응답은 처리하지 않습니다. 이를 처리하려면 `Http.send` 함수를 사용하고, 결과를 처리하는 콜백 함수를 제공해야 합니다.
 
+## Deep Dive (심층 붐빔)
+엘름에서 HTTP 요청은 비동기적으로 처리됩니다. Http 모듈은 웹 요청을 만들고 결과를 다루기 위한 함수와 타입들을 제공합니다. 과거에는 XMLHTTPRequest를 사용했지만 현재는 Fetch API가 널리 사용됩니다. 엘름에서는 `Http.get`과 `Http.post`와 같은 함수를 사용해 요청을 쉽게 보낼 수 있습니다. 요청의 결과는 `Msg` 타입을 통해 애플리케이션에 전달됩니다.
 
-## 깊게 알아보기
-* Elm은 함수형 프로그래밍 언어로 웹 개발을 위한 언어입니다. 따라서 Elm에서 HTTP 요청을 다루는 방식 역시 함수적입니다.
-* 원한다면 JavaScript와 같은 다른 언어를 사용해 HTTP 요청을 보낼 수 있습니다. 하지만 Elm에서 HTTP 요청을 보내면 코드의 일관성을 유지하고, Elm의 타입 안전성을 활용할 수 있습니다.
-* GET 요청 만드는 것 부터 응답 처리까지 하나의 함수형 파이프라인으로 처리할 수 있습니다. 이는 Elm에서 HTTP 요청을 보내는 고유한 특성입니다.
-
-
-## 참고 자료
-* [Elm 공식 문서 - Http](https://package.elm-lang.org/packages/elm/http/latest/)
+## See Also (함께 보기)
+- 엘름 공식 문서의 HTTP 가이드: [Elm HTTP guide](https://guide.elm-lang.org/effects/http.html)
+- JSON 디코딩에 대한 자세한 정보: [JSON Decode documentation](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode)

@@ -1,6 +1,7 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "Arduino: Inviare una richiesta http con autenticazione di base"
+date:                  2024-01-20T18:01:27.725201-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "C++"
 category:             "C++"
@@ -10,64 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Invio di una richiesta HTTP con autenticazione di base in C++
+## What & Why?
+Inviare una richiesta HTTP con autenticazione di base significa trasmettere username e password in formato codificato per accedere a risorse protette. I programmatori usano questo metodo per interagire con API che richiedono autenticazione per ottenere dati o eseguire operazioni.
 
-## Che cos'è e perché?
-L'invio di richieste HTTP con autenticazione di base è un modo per le applicazioni di comunicare con i servizi web in modo sicuro. I programmatori lo utilizzano spesso per fornire un livello essenziale di sicurezza durante la trasmissione di dati su internet.
-
-## Come si fa:
-Qui c'è un esempio di come inviare una richiesta HTTP con autenticazione di base utilizzando la libreria `C++ REST SDK` chiamata `Casablanca`. 
+## How to:
+Per inviare una richiesta HTTP con autenticazione di base in C++, possiamo usare la libreria `cURL`. Ecco un esempio di codice:
 
 ```C++
-#include <cpprest/http_client.h>
-#include <cpprest/filestream.h>
+#include <iostream>
+#include <curl/curl.h>
+#include <string>
 
-using namespace utility;                    
-using namespace web;                        
-using namespace web::http;                  
-using namespace web::http::client;          
-using namespace concurrency::streams;       
+static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp) {
+    ((std::string*)userp)->append((char*)contents, size * nmemb);
+    return size * nmemb;
+}
 
-int main(int argc, char* argv[])
-{
-    http_client client(U("http://example.com"));
-    http_request request(methods::GET);
+int main() {
+    CURL *curl;
+    CURLcode res;
+    std::string readBuffer;
 
-    request.headers().add(L"Authorization", L"Basic " + utility::conversions::to_base64(L"username:password"));
-
-    client.request(request)
-    .then([](http_response response) -> pplx::task<json::value>
-    {
-        return response.extract_json();
-    })
-    .then([](pplx::task<json::value> previousTask)
-    {
-        try
-        {
-            const json::value& v = previousTask.get();
-            std::wcout << v.to_string() << std::endl;
+    curl = curl_easy_init();
+    if(curl) {
+        std::string userPwd = "username:password"; // Sostituisci con le tue credenziali
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com/data");
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
+        curl_easy_setopt(curl, CURLOPT_USERPWD, userPwd.c_str());
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+        
+        res = curl_easy_perform(curl);
+        if(res != CURLE_OK) {
+            std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res) << std::endl;
+        } else {
+            std::cout << "Output: " << readBuffer << std::endl;
         }
-        catch (http_exception const & e)
-        {
-            std::wcout << e.what() << std::endl;
-        }
-    })
-    .wait();
-
+        
+        curl_easy_cleanup(curl);
+    }
     return 0;
 }
 ```
 
-Nel codice, modificare `"username:password"` con le tue credenziali.
+Output esemplificativo:
+```
+Output: { "message": "Benvenuto all'API! Le tue credenziali sono valide." }
+```
 
-## Approfondimenti
+## Deep Dive
+L'uso di autenticazione di base risale agli albori del web. Mentre è semplice da implementare, oggi non è considerato molto sicuro, poiché le credenziali codificate in base64 possono essere facilmente decodificate. Dove è richiesta maggiore sicurezza, si preferisce l'utilizzo di token di autenticazione, OAuth, o altri meccanismi più robusti.
 
-L'autenticazione di base è una tecnica standard per la gestione dell'accesso sicuro ai servizi web, tuttavia, risale agli albori del web e la sua semplicità si riflette nel suo nome: è davvero piuttosto "di base". Questo metodo non fornisce un'ampia gamma di caratteristiche di sicurezza e si basa su username e password crittografate in base64.
+Nell'esempio fornito, `libcurl` si occupa della complessità della comunicazione HTTP. Fornisce un'interfaccia per inviare richieste con vari metodi di autenticazione, ma occorre dedicare attenzione alla gestione della memoria e alla pulizia delle risorse (`curl_easy_cleanup`).
 
-Esistono alternative più sicure all'autenticazione di base, come l'autenticazione Digest e l'autenticazione delle informazioni di accesso OAuth2. Quest'ultima è l'opzione preferita per le applicazioni moderne grazie al suo livello di sicurezza avanzato e alla flessibilità. 
+L'uso di callback, come `WriteCallback`, serve per gestire i dati ricevuti in risposta. È possibile personalizzare questi handler per adattarli alle specifiche esigenze dell'applicativo.
 
-Tuttavia, per l'utilizzo di base e i test, l'autenticazione con credenziali di base si dimostra ancora un'opzione popolare e utile a causa della sua semplicità di implementazione.
-
-## Per saperne di più
-- Per una panoramica più completa dell'autenticazione di base: [HTTP Basic Access Documentation](https://datatracker.ietf.org/doc/html/rfc7617)
-- Per prendere in considerazione metodi di autenticazione alternativi: [OAuth 2.0](https://oauth.net/2/)
+## See Also
+- Documentazione ufficiale di libcurl: https://curl.se/libcurl/c/
+- Wikipedia HTTP Basic Authentication: https://it.wikipedia.org/wiki/Basic_access_authentication
+- RFC 7617 (The 'Basic' HTTP Authentication Scheme): https://tools.ietf.org/html/rfc7617

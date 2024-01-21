@@ -1,6 +1,7 @@
 ---
 title:                "Читання текстового файлу"
-html_title:           "Arduino: Читання текстового файлу"
+date:                  2024-01-20T17:55:05.340339-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Читання текстового файлу"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -12,33 +13,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Що і чому?
 
-Читання текстових файлів полягає в отриманні даних, присутніх у цих файлах, за допомогою програм. Програмісти це роблять, щоб маніпулювати і аналізувати ці дані, що важливо для вирішення багатьох задач.
+Читання текстового файлу — це процес отримання даних із файлу, який зберігає текст. Програмісти роблять це для обробки, аналізу, або виведення інформації, збереженої у цих файлах.
 
-## Як це зробити:
+## Як робити:
 
-Отже, прочитати текстовий файл у PowerShell можна за допомогою вбудованої команди `Get-Content`. Ось приклад її використання:
-
-```PowerShell
-$get_content = Get-Content "C:\Users\Example\example.txt"
-$get_content
-```
-
-Програма поверне весь вміст вашого файлу `example.txt` рядок за рядком.
-
-## Поглиблений занурення:
-
-Читання файлів — одна із перших операцій, яку виконує комп'ютер. У минулому це вимагало більше коду і часу через обмежені можливості мов програмування.
-
-Альтернативою команді `Get-Content` є команда `.NET` — `System.IO.File]::ReadAllText()`. Вона може бути корисною, коли нам потрібно прочитати файл як єдиний рядок тексту:
+Читання всього файлу одразу:
 
 ```PowerShell
-[System.IO.File]::ReadAllText("C:\Users\Example\example.txt")
+$content = Get-Content -Path "D:\Example\file.txt"
+Write-Host $content
 ```
 
-`Get-Content` використовує .NET клас `System.IO.File` у кулісах, працюючи з файлами, але максимально спрощує синтаксис для користувачів PowerShell.
+Sample output:
 
-## Диви також: 
+```
+Це текст з файлу.
+Ура!
+```
 
-1. [Офіційна документація PowerShell по `Get-Content`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1).
-2. [Детальніше про `System.IO.File` в .NET](https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=net-5.0).
-3. [Тематичний блог про PowerShell](https://devblogs.microsoft.com/scripting/).
+Читання файлу построково:
+
+```PowerShell
+Get-Content -Path "D:\Example\file.txt" | ForEach-Object {
+    Write-Host $_
+}
+```
+
+Sample output:
+
+```
+Це текст з файлу.
+Ура!
+```
+
+Використання `StreamReader` для великих файлів:
+
+```PowerShell
+$stream = [System.IO.StreamReader] "D:\Example\huge_file.txt"
+while ($line = $stream.ReadLine()) {
+    Write-Host $line
+}
+$stream.Close()
+```
+
+## Поглиблено
+
+Reading text files is fundamental in programming. In the DOS era, we had `TYPE` and `MORE` commands. PowerShell, more advanced, introduced `Get-Content` cmdlet, which is part of the Microsoft.PowerShell.Management module. 
+
+While `Get-Content` is handy for small-to-medium files, `StreamReader` (a .NET class) should be used for larger ones to save memory and improve performance. For instance, `StreamReader` reads a file lazily (line by line) when you loop through it, instead of loading the entire content into memory.
+
+You can also use other .NET classes like `File.ReadAllLines` or `File.ReadAllText` when interoperating within different .NET languages, which further exemplifies the versatility in file handling within the PowerShell environment.
+
+Alternatives within PowerShell include `Import-Csv` for structured data and `Select-String` for pattern matching, which both internally handle text file reading but with additional layers for their specific use-cases.
+
+## Дивіться також
+
+- [`Get-Content` documentation on Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content)
+- [About StreamReaders on Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)
+- [PowerShell subreddit - a community for questions and sharing scripts](https://www.reddit.com/r/PowerShell/)

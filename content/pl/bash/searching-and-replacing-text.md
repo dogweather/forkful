@@ -1,7 +1,8 @@
 ---
-title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
-simple_title:         "Wyszukiwanie i zastępowanie tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+date:                  2024-01-20T17:57:12.712992-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,35 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-
-Wyszukiwanie i zamiana tekstu polega na lokalizowaniu konkretnych sekwencji znaków w tekście i ich podmienianiu. Programiści robią to, by modyfikować dane, naprawiać błędy albo dostosowywać kody do nowych wymagań.
+## Co i Dlaczego?
+Wyszukiwanie i zamiana tekstu to operacje na ciągach znaków, umożliwiające szybkie modyfikowanie treści. W programowaniu stosuje się je dla efektywności pracy, np. do poprawiania błędów czy zmiany formatowania kodu.
 
 ## Jak to zrobić:
-
-Kod poniżej demonstruje, jak używać `grep` do wyszukiwania tekstu i `sed` do zamiany tekstu w Bashu.
-
 ```Bash
-# Wyszukiwanie tekstu
-grep "cel" plik.txt
+# Wyszukaj i zamień tekst w pliku za pomocą sed
+sed -i 's/szukany_tekst/nowy_tekst/g' plik.txt
 
-# Zamiana tekstu
-sed 's/stary nowy/g' plik.txt
+# Przykład zamiany 'kot' na 'pies' w pliku 'zwierzeta.txt'
+sed -i 's/kot/pies/g' zwierzeta.txt
+
+# Wypisz wynik zamiany na ekranie
+sed 's/kot/pies/g' zwierzeta.txt
+```
+Output:
+```Bash
+Jeden pies, dwa psy, trzy psy.
 ```
 
-Jeśli plik.txt zawiera 'cel', `grep` wyświetli linie z wynikami. `sed` podmieni każde wystąpienie 'stary' na 'nowy' w plik.txt.
+## A na głębszą wodę: 
+Polecenie `sed` (stream editor) to klasyk w UNIX-owych systemach, używany od lat '70. Alternatywami dla `sed` mogą być `awk`, `perl`, czy nowoczesne skrypty w Pythonie, których wybór zależy od złożoności zadania i preferencji programisty. Ważne jest, że `sed` działa na strumieniach, przez co jest szybki i sprawnie przetwarza nawet duże pliki. 
 
-## Deep Dive
+Flaga `-i` w `sed` oznacza zapisanie zmian bezpośrednio w pliku. `g` na końcu wzorca zamiany mówi o globalnej zamianie – bez niej `sed` zmieni tylko pierwsze wystąpienie w linii.
 
-Metody wyszukiwania i zamiany tekstu istnieją od początków informatyki. Komendy `grep` i `sed` wywodzą się z systemu Unix z lat 70-tych, ale nadal są wykorzystywane z powodu swej efektywności i prostoty.
-
-Alternatywą dla `grep` i `sed` może być `awk`, który jest bardziej złożony, lecz oferuje wyższy stopień kontroli. Możemy też skorzystać z wbudowanych funkcji wyszukiwania i zamiany w edytorach tekstowych jak Vim czy Emacs.
-
-Wszystko to, co robimy za pomocą `grep` i `sed`, jest interpretowane przez interpreter shella. Interpreter odczytuje nasz kod linia po linii, interpretuje go i wykonuje. 
-
-## Zobacz także
-
-- Dokumentacja GNU dla `grep`: https://www.gnu.org/software/grep/manual/grep.html
-- Dokumentacja GNU dla `sed`: https://www.gnu.org/software/sed/manual/sed.html
-- Vim Tutor: http://www2.geog.ucl.ac.uk/~plewis/teaching/unix/vimtutor
-- Emacs manual: https://www.gnu.org/software/emacs/manual/emacs.html.
+## Zobacz także:
+- [GNU sed manual](https://www.gnu.org/software/sed/manual/sed.html) – szczegółowa dokumentacja `sed`.
+- [Regular Expressions](https://www.regular-expressions.info/) – poradnik i tutorial dotyczący wyrażeń regularnych.
+- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/) – ogólny kurs skryptowania w Bashu.

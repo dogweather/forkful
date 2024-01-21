@@ -1,7 +1,8 @@
 ---
-title:                "Interpolation d'une chaîne de caractères"
-html_title:           "Ruby: Interpolation d'une chaîne de caractères"
-simple_title:         "Interpolation d'une chaîne de caractères"
+title:                "Interpolation de chaînes de caractères"
+date:                  2024-01-20T17:51:02.336118-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolation de chaînes de caractères"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,53 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-L'interpolation de chaîne consiste à insérer des valeurs de variables dans une chaîne de caractères. Les programmeurs le font pour rendre le code plus lisible, faciliter le formatage de texte et éviter les erreurs causées par la concaténation complexe.
+## What & Why?
+L'interpolation de chaînes permet d'insérer des variables dans des chaînes de texte. On s'en sert pour construire des messages dynamiques sans jongler avec la concaténation compliquée.
 
-## Comment faire:
-Voici un exemple simple d'interpolation de chaîne en Go. 
+## How to:
+En Go, on interpole avec `fmt.Sprintf`. Simple et efficace.
 
 ```Go
 package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func main() {
-	name := "Jean"
-	message := fmt.Sprintf("Bonjour, %s!", name)
+	// Variables
+	name := "Marie"
+	age := 29
+	
+	// Interpolation avec fmt.Sprintf
+	message := fmt.Sprintf("Bonjour, %s ! Tu as %d ans.", name, age)
+	fmt.Println(message)
 
-	fmt.Println(message) 
+	// Utiliser avec des types complexes
+	currentTime := time.Now()
+	dateMessage := fmt.Sprintf("Nous sommes le %s.", currentTime.Format("02-01-2006"))
+	fmt.Println(dateMessage)
 }
 ```
-Cela affiche:
-
-```Go
-Bonjour, Jean!
+Sortie attendue:
+```
+Bonjour, Marie ! Tu as 29 ans.
+Nous sommes le 24-03-2023.
 ```
 
-L'interpolation s'effectue en utilisant `Sprintf` de `fmt` et `%s` est le spécificateur de format pour une chaîne.
+## Deep Dive
+Historiquement, Go utilise toujours `fmt.Sprintf` pour l'interpolation depuis sa sortie. Alors que certains langages utilisent `+` ou diverses méthodes, Go choisit la simplicité.
 
-## Plongée plus profonde
-Historiquement, Go n'a pas offert l'interpolation de chaînes comme d'autres langages. C'était intentionnel, afin d'encourager la clarté et de minimiser les erreurs. cependant, avec `Sprintf`, vous pouvez intercaler sans souci.
+Autres méthodes :
+- Concaténation : `"Salut " + name + " !"`
+- Builder : `strings.Builder` pour les grandes concaténations
 
-Les alternatives à l'interpolation incluent la concaténation (+) et la jointure (strings.Join). Cependant, elles peuvent devenir verbeuses et difficiles à lire. Par exemple:
+Implémentation :
+- Utilise `verb` (ex : `%s` pour `string`, `%d` pour `int`) pour définir comment interpoler.
+- L'interpolation est type-safe ; pas de surprises de casting implicite.
 
-```Go
-name := "Jean"
-message := "Bonjour, " + name + "!"
-```
-ou
-```Go
-parts := []string{"Bonjour, ", name, "!"}
-message := strings.Join(parts, "")
-```
+## See Also
 
-Utiliser `Sprintf` est souvent plus clair, concis, et plus efficace en termes de mémoire.
-
-## Voir aussi
-Pour plus d'informations sur l'interpolation de chaîne en Go, consultez:
-1. Documents officiels de Go: https://golang.org/pkg/fmt/
-2. Écriture efficace avec `sprintf` : https://yourbasic.org/golang/fmt-printf-sprintf-fprintf-print-println/
-3. Spécificateurs de format: https://dave.cheney.net/2019/07/09/annotating-log-strings.
+- La documentation officielle de `fmt`: [Package fmt](https://pkg.go.dev/fmt)
+- Des exemples sur 'Go by Example': [String Formatting](https://gobyexample.com/string-formatting)
+- Un tutoriel sur 'Go Blog': [Using Go Modules](https://blog.golang.org/using-go-modules) (module handling can indirectly affect string operations)

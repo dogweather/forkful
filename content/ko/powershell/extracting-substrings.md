@@ -1,6 +1,7 @@
 ---
 title:                "부분 문자열 추출"
-html_title:           "Arduino: 부분 문자열 추출"
+date:                  2024-01-20T17:46:24.192808-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "부분 문자열 추출"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,31 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 사용하나요?
-문자열에서 일부 문자를 추출하는 것을 'substring 추출'이라 합니다. 프로그래머들은 원하는 정보만을 찾아내거나 특정 패턴을 분석하기 위해 이를 사용합니다.
+## What & Why? (무엇과 왜?)
+문자열에서 부분 문자열을 추출한다는 건, 큰 문자열 안에서 원하는 작은 조각을 뽑아내는 작업입니다. 코드를 통해 데이터를 분해하고, 필요한 정보만 골라내기 위해 이 과정을 사용합니다.
 
-## 어떻게 사용하나요:
-다음은 PowerShell에서 substring을 추출하는 방법입니다:
-
+## How to: (어떻게 하나요?)
 ```PowerShell
-$string = "PowerShell Scripting"
-$substring = $string.substring(0, 9)
-write-host $substring
+# 기본적인 Substring 사용
+$string = "Hello, PowerShell!"
+$substring = $string.Substring(7, 11)
+Write-Output $substring # PowerShell!
+
+# 문자열 범위를 사용한 부분 추출
+$range = 7..17
+$substring = $string[$range]
+Write-Output $substring # PowerShell!
+
+# -split을 사용해 문자열 자르기
+$parts = $string -split ', '
+Write-Output $parts[1] # PowerShell!
+
+# 정규 표현식과 -match를 이용한 부분 추출
+$string -match "PowerShell"
+Write-Output $matches[0] # PowerShell
 ```
 
-실행 결과:
+## Deep Dive (심층 분석)
+부분 문자열을 추출하는 방식은 컴퓨터 프로그래밍의 초기부터 있어왔습니다. PowerShell에서는 `.Substring()`, 문자열 범위, `-split`, `-match`와 같은 다양한 방법으로 부분 문자열 추출을 수행할 수 있습니다. `.Substring()`은 기본적이고 직관적인 방법이며, `문자열[인덱스..인덱스]` 범위를 통해서도 가능합니다. `-split` 분할자는 문자열을 정해진 구분자로 나누어 배열로 반환하고, `-match`와 정규 표현식은 특정 패턴에 일치하는 부분을 찾을 때 유용합니다. PowerShell은 .NET 프레임워크 위에서 구동되기 때문에 .NET의 강력한 문자열 처리 기능을 그대로 활용할 수 있습니다.
 
-```PowerShell
-PowerShell
-```
+## See Also (참고 자료)
+- [about_Split](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_split)
+- [about_Regular_Expressions](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions)
+- [String class on MSDN](https://docs.microsoft.com/dotnet/api/system.string)
 
-여기서 substring 함수의 첫 번째 인자는 시작 위치를 나타내며, 두 번째 인자는 추출하려는 문자열의 길이를 나타냅니다.
-
-## 딥다이브:
-Substring 추출은 문자열의 일부분을 접근하고 처리하는 기본적인 프로그래밍 개념입니다. 문자열 처리는 빅데이터 분석, 자연어 처리 등의 분야에서 중요하게 사용됩니다. PowerShell에서는 .NET Framework의 String.Substring 메서드를 통해 이를 지원합니다. 
-
-대안으로는 Split, Replace와 같은 다른 문자열 함수를 사용하거나 정규표현식을 이용하여 더 복잡한 패턴의 문자열을 추출할 수도 있습니다. 특히, 정규표현식은 유효성 검사, 검색 및 치환 등에서 널리 사용됩니다.
-
-## 참고 자료:
-1. [PowerShell Substring 메서드 문서](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0)
-3. [자연어 처리를 위한 문자열 처리](https://realpython.com/natural-language-processing-spacy-python/)
+*참고: 위의 웹사이트들은 영어로 작성된 자료입니다.*

@@ -1,7 +1,8 @@
 ---
-title:                "पाठ की खोज और प्रतिस्थापन"
-html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
-simple_title:         "पाठ की खोज और प्रतिस्थापन"
+title:                "पाठ खोजना और बदलना"
+date:                  2024-01-20T17:58:22.781894-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पाठ खोजना और बदलना"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,58 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-टेक्स्ट की खोज और बदलाव से हम किसी भी स्ट्रिंग में विशेष एलिमेंट्स का पता लगाने और उन्हें बदलने का काम करते हैं। प्रोग्रामर्स इसे करते हैं ताकि वे डाटा को उपयुक्त तरीके से प्रसंस्करण और मानिपुलेट कर सकें। 
+टेक्स्ट सर्चिंग और रिप्लेसिंग, मतलब टेक्स्ट की खोज करना और उसे बदलना। प्रोग्रामर्स इसे गलतियाँ ठीक करने, डाटा अपडेट करने और कोड को दोहराव से बचाने के लिए करते हैं।
 
-## कैसे करें:
+## How to (कैसे करें):
 
-C में, `strstr` और `sprintf` इस्तेमाल होते हैं। हम पहले खोजते हैं, फिर बदलते हैं। 
+सी प्रोग्रामिंग में टेक्स्ट सर्च और रिप्लेस का एक उदाहरण देखिए -
 
-```C
-#include<stdio.h>
-#include<string.h>
+```c
+#include <stdio.h>
+#include <string.h>
 
-void searchAndReplace(char* source, char* search, char* replace){
-    char buffer[1024] = { 0 };
-    char *insertPoint = &buffer[0];
-    char *tmp = source;
-    char *foundHere;
-    int searchLen = strlen(search);
-    int replaceLen = strlen(replace);
-
-    while( (foundHere = strstr(tmp, search)) ){
-        memcpy(insertPoint, tmp, foundHere - tmp);
-        insertPoint += foundHere - tmp;
-        memcpy(insertPoint, replace, replaceLen);
-        insertPoint += replaceLen;
-        tmp = foundHere + searchLen;
+void searchAndReplace(char *source, const char *search, const char *replace) {
+    char buffer[1024];
+    char *p;
+    
+    if ((p = strstr(source, search)) == NULL) {
+        printf("String not found!\n");
+        return;
     }
-
-    strcpy(tmp, insertPoint);
+    
+    strncpy(buffer, source, p - source);
+    buffer[p - source] = '\0';
+    
+    snprintf(buffer + (p - source), sizeof(buffer) - (p - source), "%s%s", replace, p + strlen(search));
     strcpy(source, buffer);
+    
+    printf("Updated String: %s\n", source);
 }
 
-int main(){
-    char testStr[100] = "Hello, world! I love the world!";
-    printf("Before: %s\n", testStr);
-    searchAndReplace(testStr, "world", "Earth");
-    printf("After: %s\n", testStr);
+int main() {
+    char sourceString[1024] = "Hello World!";
+    searchAndReplace(sourceString, "World", "There");
     return 0;
 }
 ```
 
-सैंपल आउटपुट:
+Sample Output:
 
-    Before: Hello, world! I love the world!
-    After: Hello, Earth! I love the Earth!
+```
+Updated String: Hello There!
+```
 
-## गहरी बातचीत
+## Deep Dive (गहराई में):
 
-टेक्स्ट सर्च और रिप्लेस की कामना प्रोग्रामिंग की शुरुआत से रही है। `strstr` और `sprintf` C स्टैंडर्ड लाइब्रेरी का हिस्सा हैं। इन समस्याओं के लिए अन्य विकल्प भी हैं। जैसे की `gnu` लाइब्रेस द्वारा प्रदान किया गया `strcasestr` और `strfry`। इसे लागू करने वाला कोड `buffer` का उपयोग करके काम करता है, जिसे हम 'insertPoint' के माध्यम से index करते हैं ताकि हमें जोड़ना हो, वहां जोड़ सकें।
+टेक्स्ट सर्च और रिप्लेस एक सामान्य लेकिन महत्वपूर्ण कार्य है। सी में `strstr` और `strcpy`, `strncpy` जैसे फंक्शन्स रिप्लेसमेंट के लिए उपयोगी होते हैं। पुराने जमाने में `sed` या `awk` जैसे टूल्स का इस्तेमाल होता था जो आज भी वैलिड हैं। एक उपयोगी ऑल्टरनेटिव रेगुलर एक्सप्रेशन्स या "regex" है, जो कि जटिल पैटर्न्स की खोज और रिप्लेसमेंट को आसान करता है।
 
-## यह भी देखें
+इंप्लिमेंटेशन में सबसे महत्वपूर्ण बात यह है कि बफर ओवरफ्लो न हो। सुनिश्चित करें कि `buffer` उतना बड़ा हो कि नया टेक्स्ट समा सके।
 
-1. [`strstr` डॉक्युमेंटेशन - Cplusplus.com](http://www.cplusplus.com/reference/cstring/strstr/)
-2. [`sprintf` डॉक्युमेंटेशन - Cplusplus.com](http://www.cplusplus.com/reference/cstdio/sprintf/)
-3. [GNU लाइब्रेस डॉक्युमेंटेशन](https://www.gnu.org/software/libc/manual/)
+## See Also (और जानकारी):
+
+- C Standard Library Functions: `strstr`, `strcpy`, `strncpy`, `snprintf` ([cplusplus.com](https://www.cplusplus.com/reference/cstring/))
+- Regular Expressions in C (regex.h): [GNU documentation](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+- Sed & Awk Tools: [GNU documentation](https://www.gnu.org/software/sed/manual/sed.html) and [Awk Tutorial](https://www.gnu.org/software/gawk/manual/gawk.html)

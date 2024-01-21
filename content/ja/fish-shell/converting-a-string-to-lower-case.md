@@ -1,7 +1,8 @@
 ---
-title:                "文字列を小文字に変換する"
-html_title:           "Arduino: 文字列を小文字に変換する"
-simple_title:         "文字列を小文字に変換する"
+title:                "文字列を小文字に変換"
+date:                  2024-01-20T17:38:12.915451-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "文字列を小文字に変換"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,24 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-文字列を小文字に変換するとは、コンピュータプログラム内のすべての大文字を小文字に変換する処理を指します。これはデータの一貫性を保つため、また、ユーザ入力の形式に関係なく検索や比較を行うためによく行われます。
+## What & Why? (何となぜ？)
+文字列を小文字に変換することは、大文字を対応する小文字に変えることです。これはデータの標準化や、大文字と小文字を区別しない検索、ソートに使われます。
 
-## どうやって：
-Fish Shellでは、`string lower`関数を使用して文字列を小文字に変換します。以下に例を示します：
+## How to: (方法)
+Fish Shellでは、`string lower` コマンドを使って文字列を小文字に変換できます。
 
 ```Fish Shell
-set text 'HELLO WORLD'
-echo $text | string lower
+echo 'Fish SHELL is Fun!' | string lower
 ```
 
-出力は以下の通りです：
+出力:
+
 ```
-hello world
+fish shell is fun!
 ```
 
-## ディープダイブ
-文字列を小文字に変換する概念は古くから存在しており、古いプログラミング言語でも見つけることができます。Fish Shellでは、`string lower`関数を実装するためにC++の`std::tolower`関数を使用しています。他の方法としては、`tr`コマンドを使用したUNIXスタイルの方法や、PythonやJavaScriptのような他のプログラミング言語で提供されている組み込み関数を使用する方法があります。
+## Deep Dive (深掘り)
+文字列を小文字に変換する操作は、プログラマーにとって基本的です。歴史的にこれはUNIX系システムで小さな文字変換ツールとして始まりました。Fish Shellでは`string lower`コマンドがこの任務を担います。このコマンドはユニコードにも対応しているため、多国言語の大文字も小文字に変換可能です。代替としては、`tr` コマンドや `awk` の組み込み関数を使う方法もありますが、Fish Shell内蔵の`string lower`が最も簡単です。
 
-## 参照情報
-Fish Shellの詳細については、[公式ドキュメンテーション](https://fishshell.com/docs/current/index.html)を参照してください。他のプログラミング言語で文字列を小文字に変換する方法については、[StackOverflow](https://stackoverflow.com/questions/tagged/string+lowercase)の関連スレッドが参考になります。
+## See Also (関連情報)
+- [Fish Shell Documentation on `string`](https://fishshell.com/docs/current/cmds/string.html)
+- [AWK Programming Language](https://www.gnu.org/software/gawk/manual/gawk.html)

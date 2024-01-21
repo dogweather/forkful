@@ -1,6 +1,7 @@
 ---
 title:                "文字列の補間"
-html_title:           "Arduino: 文字列の補間"
+date:                  2024-01-20T17:50:45.306835-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "文字列の補間"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,34 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (なに？どうして？)
+文字列補間とは、固定のテキストの中に変数や式の値を埋め込むことです。プログラマは可読性やメンテナンス性を高めるためにこれを行います。
 
-文字列補間とは、文字列中に変数を挿入する方法です。これを行う主な理由は一貫性と見通しの良さを確保するためです。
+## How to: (やり方)
+Gleamでは`String.interpolate`を使います。使い方の例を見てみましょう。
 
-## やり方：
+```gleam
+import gleam/io
 
-文字列補間を使ってみましょう。
-
-```Gleam 
-let name = "Yamada"
-let hello = "こんにちは、{name}さん"
-IO.println(hello)
+fn main() {
+  let name = "Mika"
+  let message = String.interpolate("こんにちは、${name}さん!")
+  io.print(message)
+}
 ```
 
-出力結果:
-
+出力：
 ```
-こんにちは、Yamadaさん
+こんにちは、Mikaさん!
 ```
 
-## より深く：
+## Deep Dive (掘り下げ)
+歴史的には、文字列補間は多くの言語で採用され、異なる構文を使用しています。例えば、Rubyでは`"#{expression}"`、Pythonでは`f"{expression}"`が使われます。Gleamの場合、`${}`構文が使われ、その中に式を入れることができます。
 
-1. 詠み込みの歴史的背景: 古いプログラミング言語では、文字列と変数を連結するために '+' オペレータを使用していました。でも、これは扱いが難しく、エラーを起こしやすいです。幸い、現代のプログラミング言語ではこの問題を解決するために文字列補間があります。
+Gleamの内部では、文字列補間は単に文字列の集合として実装され、実行時に連結されます。これにより、パフォーマンスが向上し、コンパイル時に型チェックが行われるため安全性が確保されます。
 
-2. 代替案: 場合によっては、文字列の連結や、フォーマット指定子を使用した `printf` ような関数を使用することも可能です。
+選択肢としては、文字列の`++`演算子を使って手動で連結する方法もありますが、文字列補間の方が簡潔で読みやすいコードになります。
 
-3. 実装の詳細: Gleamでは、文字列補間は `{}`内に変数名を含む特殊な構文を使用して行います。内部的には、これは特定の変数名に基づいて新しい文字列を生成します。
-
-## さらに学ぶ：
-
-- 文字列連結と補間: [https://gleam.run/book/tour/strings.html](https://gleam.run/book/tour/strings.html)
+## See Also (関連情報)
+- [Comparative study of string interpolation across different languages](https://en.wikipedia.org/wiki/String_interpolation)

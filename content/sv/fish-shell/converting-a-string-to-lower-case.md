@@ -1,7 +1,8 @@
 ---
-title:                "Omvandla en sträng till gemener"
-html_title:           "Arduino: Omvandla en sträng till gemener"
-simple_title:         "Omvandla en sträng till gemener"
+title:                "Konvertera en sträng till gemener"
+date:                  2024-01-20T17:38:15.675697-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Konvertera en sträng till gemener"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -11,21 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att konvertera en sträng till gemener innebär att ändra alla tegn i strängen till små bokstäver. Programmerare gör detta för att standardisera datainmatningen och göra strängmatchning okänslig för stora och små bokstäver.
+Att konvertera en sträng till gemener innebär att ändra alla bokstäver till små bokstäver. Programmerare gör det för att förenkla jämförelser och sökningar, då det tar bort skillnaden mellan stora och små bokstäver.
 
-## Hur man gör:
-I Fish Shell, du kan använda `string lower` för att konvertera en sträng till gemener. Här är ett enkelt exempel:
+## How to:
+För att konvertera en sträng till gemener i Fish Shell kan du använda `string lower`.
 
 ```Fish Shell
-> string lower -a 'Hej VÄRLD'
-hej värld
+set my_string "HeJ på DiG!"
+string lower $my_string
 ```
-I ovanstående exempel konverteras strängen 'Hej VÄRLD' till gemener.
 
-## Fördjupning
-Att konvertera strängar till gemener har använts sedan datorns gryning för att förenkla textanalyser. Det finns alternativ till `string lower`, som `tr '[:upper:]' '[:lower:]'`, men `string lower` är det mest föredragna sättet i Fish Shell på grund av dess tydlighet och enkelhet. Implementeringsdetaljerna för `string lower` innebär att den itererar över varje tecken i strängen och använder Unicode-normer för att bestämma den lägre motsvarigheten för varje tecken.
+Ovanstående kommando ger ut:
 
-## Se Även
-För mer information om `string lower` och andra funktioner i Fish Shell, se följande länkar:
-- Officiell Fish Shell Dokumentation: [https://fishshell.com/docs/current/](https://fishshell.com/docs/current/)
-- Stack Overflow Tråd om att konvertera strängar till gemener: [https://stackoverflow.com/questions/2264428/](https://stackoverflow.com/questions/2264428)
+```
+hej på dig!
+```
+
+## Deep Dive
+Fish, en modern kommandotolk, har inbyggda strängoperationer. Förr var man tvungen att använda externa verktyg som `tr` eller `awk` för sådana uppgifter. I Fish utförs strängmanipulation internt och effektivt med funktioner som `string lower`. Det övergripande målet är att ge en enhetlig och skriptvänlig upplevelse.
+
+Alternativ historiskt har inkluderat piping av output till `tr '[:upper:]' '[:lower:]'` eller att använda en extern applikation som `sed`. Dessa metoder fungerar men är inte lika snygga eller enkla som Fishs direkt integration.
+
+Implementationsdetaljer är att `string lower` fungerar genom att ta emot en eller flera strängar och behandlar varje sträng individuellt, konverterar den till gemener. Funktionen har även extra flaggor som `-l` för att specificera en locale vilket är användbart i hantering av speciella tecken i olika språk.
+
+## See Also
+* officiell dokumentation: [https://fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
+* Stack Overflow diskussioner: [https://stackoverflow.com/questions/tagged/fish](https://stackoverflow.com/questions/tagged/fish)

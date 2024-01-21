@@ -1,6 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-html_title:           "Haskell: Drukowanie komunikatów debugowania"
+date:                  2024-01-20T17:52:57.652041-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,34 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Drukowanie danych debugowania to jak rozmowa z programem: "Co robisz?". Programiści używają tego do śledzenia wartości i zachowania aplikacji podczas pisania kodu - znacznie ułatwia to znalezienie i naprawienie błędów.
 
-Drukowanie informacji do debugowania to sposób, dzięki któremu programiści umieszczają komunikaty wyjścia w swoim kodzie, aby „zobaczyć co się dzieje” podczas wykonywania. Ułatwia to zrozumienie i rozwiązanie problemów.
-
-## Jak to zrobić:
-
-To bardzo proste w Kotlinie. Możemy użyć funkcji `println()` do drukowania informacji do debugowania. Oto przykład:
+## How to: (Jak to zrobić:)
+W Kotlinie wypisywanie debugowania jest banalne. Używasz `println()` do wyrzucania wartości na konsolę.
 
 ```kotlin
 fun main() {
-    var variable = "Hello, Kotlin!"
-    println("Debugging Info: $variable")
+    val interestingValue = 42
+    println("Interesting value is $interestingValue")
 }
 ```
-
 Output:
 ```
-Debugging Info: Hello, Kotlin!
+Interesting value is 42
 ```
+Opcjonalnie, dla zmiennych i wyrażeń użyj `$` wewnątrz stringów.
 
-## Zanurzenie:
-Historicznie, drukowanie do debugowania było jedną z pierwszych technik używanych przez programistów do identyfikowania błędów w ich kodzie. Pomimo rozwoju skomplikowanych narzędzi do debugowania, wciąż pozostaje niezawodnym, uniwersalnym narzędziem w arsenale programisty.
+## Deep Dive (Głębsze zanurzenie)
+Kiedyś, w erze komputerów kart perforowanych, debugowanie było jak szukanie igły w stogu siana. Dzisiaj `println()` jest tylko wierzchołkiem góry lodowej opcji debugowania. Alternatywy to loggery takie jak Log4j, które oferują poziomy logowania (np. INFO, DEBUG, ERROR). Są też IDE z wbudowanymi debuggerami pokazującymi co jest grane na żywo. Implementacja `println()` jest prosta i bezpośrednio pisze do standardowego wyjścia (stdout), a to oznacza konsolę dla większości programów.
 
-Alternatywy dla drukowania informacji do debugowania obejmują użycie dedykowanych narzędzi do debugowania lub zapisów logów. Podczas gdy te metody mogą oferować większą precyzję i szczegółowość, drukowanie informacji do debugowania jest niewątpliwie najprostszym sposobem, szczególnie dla początkujących programistów.
-
-W Kotlinie, funkcja `println()` używa standardowego strumienia wyjściowego (`System.out`) do drukowania informacji, co oznacza, że informacje będą widoczne w konsoli podczas wykonywania.
-
-## Zobacz także:
-
-1. Dokumentacja Kotlin `println()`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/println.html
-2. Artykuł o debugowaniu w Kotlinie: https://medium.com/androiddevelopers/debugging-kotlin-with-style-d64d80d3f60
+## See Also (Zobacz również)
+- [Dokumentacja Kotlin – Logging](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/)
+- [Przewodnik po loggerach w Kotlinie](https://www.baeldung.com/kotlin/logging)

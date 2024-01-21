@@ -1,6 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-html_title:           "Haskell: Drukowanie komunikatów debugowania"
+date:                  2024-01-20T17:52:38.833780-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,32 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
 
-Drukowanie informacji do debugowania to metoda śledzenia zachowania kodu poprzez wyświetlanie wartości zmiennych, stanów funkcji itp. Na ogół stosuje się ją, aby szybko i skutecznie znajdować i naprawiać błędy w kodzie.
+Drukowanie danych diagnostycznych to wyświetlanie informacji, które pomagają zrozumieć, co się dzieje w skrypcie. Programiści robią to, żeby szybko znaleźć i naprawić błędy.
 
-## Jak to zrobić:
+## How to: (Jak to zrobić:)
 
-Jeżeli chcesz wydrukować komunikat debugowania w Fish Shell, możesz użyć funkcji `echo`. Prosty przykład wygląda tak:
-
-```Fish Shell
-set var "Hello World"
-echo $var
-```
-
-Wynik powinien wyglądać tak: 
+Najprostszy sposób to użyć `echo` do wypisania wartości zmiennych lub komunikatów.
 
 ```Fish Shell
-Hello World
+set my_variable "Tajemnica strumieni"
+echo "Debug: wartość zmiennej to: $my_variable"
 ```
 
-## Głębsze zrozumienie:
+Sample output (Przykładowe wyjście):
 
-Historia drukowania informacji do debugowania jest długa i różnorodna, ale zawsze była kluczowym elementem narzędzi developerskich. Alternatywą dla wykorzystania `echo` w Fish Shell jest na przykład użycie interpretera `printf`, który oferuje więcej opcji formatowania. Co do technicznych szczegółów, funkcja `echo` działa poprzez wysłanie tekstu na standardowe wyjście, zazwyczaj terminal.
+```
+Debug: wartość zmiennej to: Tajemnica strumieni
+```
 
-## Zobacz także:
+Możesz też użyć `stderr` do wypisania błędów.
 
-Jeżeli jesteś zainteresowany poznaniem więcej na temat debugowania w Fish Shell, oto kilka linków, które mogą Ci pomóc:
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Programming in Fish](http://fishshell.com/docs/3.1/tutorial.html#tut_scripts)
-- [Debugging in Fish](https://stackoverflow.com/questions/26753042/how-do-i-debug-fish-scripts)
+```Fish Shell
+echo "To jest błąd" >&2
+```
+
+## Deep Dive (Dogłębna analiza)
+
+Historia: Fish, krótko od "friendly interactive shell", istnieje od 2005 roku. Jego celem jest bycie bardziej przystępnym i interaktywnym niż tradycyjne shelle.
+
+Alternatywy: Oprócz `echo`, można używać `printf` do formatowania wyjścia, co daje większą kontrolę.
+
+```Fish Shell
+set my_value 42
+printf "Debug: '%s' is the answer\n" $my_value
+```
+
+Szczegóły implementacyjne: STDOUT i STDERR to dwa główne strumienie danych w shellach Uniksowych. Pisanie na STDERR (`echo "error" >&2`) zapewnia, że tylko faktyczne dane wyjściowe trafiają do STDOUT, co jest ważne przy przekierowywaniu wyniku komend do plików czy innych komend.
+
+## See Also (Zobacz również)
+
+1. [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+2. [The Unix Philosophy](http://www.catb.org/esr/writings/taoup/html/)
+3. [Writing Robust Shell Scripts](https://www.davidpashley.com/articles/writing-robust-shell-scripts/)

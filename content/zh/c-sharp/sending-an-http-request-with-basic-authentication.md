@@ -1,7 +1,8 @@
 ---
-title:                "使用基本认证发送http请求"
-html_title:           "Bash: 使用基本认证发送http请求"
-simple_title:         "使用基本认证发送http请求"
+title:                "使用基本认证发送 HTTP 请求"
+date:                  2024-01-20T18:01:14.310810-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "使用基本认证发送 HTTP 请求"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,13 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何为何？ - 什么是使用基本认证发送HTTP请求，程序员为什么要做？
+## What & Why? (什么 & 为什么?)
+发送带基本认证的HTTP请求，指使用用户名和密码获取网络资源。程序员这样做是为了安全访问限制区域。
 
-使用基本认证发送HTTP请求是一个过程，其中，我们使用用户名和密码创建请求头，以进行身份验证。程序员通常会做这件事情，以便从需要身份验证的服务器上获取资源。
-
-## 如何做 - 使用C#发送带有基本认证的HTTP请求
-
-以下是一个简单的示例，显示如何使用HttpClient发送带有基础认证（用户名和密码）的HTTP GET请求：
+## How to: (如何操作)
+简单代码示例：
 
 ```C#
 using System;
@@ -24,34 +23,47 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-public class BasicAuthExample{
-    static async Task Main()
+class BasicAuthExample
+{
+    static async Task Main(string[] args)
     {
         var client = new HttpClient();
+        var credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes("username:password"));
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", credentials);
 
-        var byteArray = Encoding.ASCII.GetBytes("username:password");
-        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
-
-        var response = await client.GetAsync("http://example.com/resource");
-        var data = await response.Content.ReadAsStringAsync();
-
-        Console.WriteLine(data);
+        try
+        {
+            HttpResponseMessage response = await client.GetAsync("http://example.com/protected");
+            response.EnsureSuccessStatusCode();
+            string responseBody = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(responseBody);
+        }
+        catch(HttpRequestException e)
+        {
+            Console.WriteLine("\nException Caught!");	
+            Console.WriteLine("Message :{0} ",e.Message);
+        }
     }
 }
 ```
 
-这个示例会向"http://example.com/resource"发送一个HTTP GET请求，并在控制台上打印返回的数据。
+输出样例：
 
-## 深入剖析 - HTTP Basic认证的历史，替代方案，以及实现细节
+```
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Welcome to the protected area</h1>
+</body>
+</html>
+```
 
-HTTP Basic认证是一个老牌的身份验证方案，其源于HTTP/1.0的时代，它现在依然被广泛支持，但有其安全性问题。
+## Deep Dive (深入了解)
+基本认证由HTTP协议定义，最早在1996年的RFC 1945中提出。它不是最安全的认证方式——比如，若没有TLS/SSL，凭据可被截获。更安全的替代方法包括OAuth2.0和JWT (JSON Web Tokens)。在C#中，发送带基本认证的HTTP请求，重点在于生成合适的`Authorization`头部，该头部含有Base64编码的用户名和密码。还可以用`HttpClientHandler`来设置凭据，C# 5.0及以上版本支持`async`和`await`用于更高效的异步操作。
 
-作为替代方案，我们有Digest认证、Bearer认证（常用于OAuth）、或者使用一个基于token的身份验证方法。
-
-在实现上，Basic认证是将用户名和密码以":"组合，并Encode成base64字符串，然后将这字符串作为Authorization头的一部分发送。这是一个非常直接的方式，但注意，如果不使用HTTPS，它容易被窃取。
-
-## 参考资料 - 了解更多关于HTTP认证的资料
-
-1. [理解HTTP Basic认证](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Authorization)
-2. [C#中HttpClient类的使用](https://docs.microsoft.com/zh-cn/dotnet/api/system.net.http.httpclient)
-3. [更多关于HTTPs的信息](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview)
+## See Also (另请参阅)
+- HTTP基本认证规范: [RFC7617](https://tools.ietf.org/html/rfc7617)
+- C# `HttpClient` 类: [MSDN Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
+- Base64编码: [Base64 on Wikipedia](https://en.wikipedia.org/wiki/Base64)
+- 关于OAuth 2.0: [OAuth 2.0 Authorization Framework](https://oauth.net/2/)
+- 关于JWT (JSON Web Tokens): [Introduction to JSON Web Tokens](https://jwt.io/introduction/)

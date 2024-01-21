@@ -1,6 +1,7 @@
 ---
 title:                "Sökning och ersättning av text"
-html_title:           "Arduino: Sökning och ersättning av text"
+date:                  2024-01-20T17:57:51.216764-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sökning och ersättning av text"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,32 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att söka och ersätta text innebär att hitta specifika strängar i data och byta ut dem mot annan text. Programmerare gör detta för att uppdatera kod, korrigera fel eller bearbeta data.
 
-Sökning och ersättning av text är en grundläggande operation där en viss textsträng "söks" och sedan byts ut mot en annan. Programmerare utför detta för att modellera, analysera eller transformera data effektivt.
-
-## Hur gör man:
-
-Här är ett exempel på hur du kan söka och ersätta text inom Gleam:
-
+## Hur man gör:
 ```Gleam
-import gleam/int
-import gleam/string.{replace}
+import gleam/string
 
-pub fn main() {
-  let text = "Hej, Världen!"
-  let updated_text = string.replace(text, "Världen", "Gleam")
-  assert updated_text == "Hej, Gleam!"
+pub fn search_and_replace(subject: String, from: String, to: String) -> String {
+  string.replace(&subject, &from, &to)
+}
+
+fn main() {
+  let text = "Hej och välkommen till Gleam!"
+  let updated_text = search_and_replace(text, "Gleam", "Gleam 1.0")
+  io.println(updated_text)
 }
 ```
+Resultat:
+```
+Hej och välkommen till Gleam 1.0!
+```
 
-När du kör den här kodspoken, kommer utmatningen att bli `"Hej, Gleam!"`.
+## Fördjupning:
+Sök och ersätt funktionalitet har varit grundläggande i textredigerare och programmeringsverktyg sedan tidiga datorer. Varianter inkluderar kommando-line verktyg som `sed` i Unix-baserade system. I moderna programmeringsspråk, som Gleam, används funktioner som `replace` för att uppnå samma resultat på ett mer läsbart och underhållbart sätt. Dessa funktioner hanterar strängar som oföränderliga data, vilket betyder att varje ersättningsoperation skapar en ny sträng istället för att ändra den ursprungliga.
 
-## Fördjupning
-
-(1) Historiskt sett har sök-och-ersätt operationer varit centrala i textredigerare från tidiga UNIX-verktyg som `sed` till moderna programmeringsmiljöer.
-(2) Du kan också använda regelbundna uttryck (eller "regex") i många språk för att göra mer avancerade textförändringar. Gleam har dock inte inbyggt stöd för regex i dagsläget.
-(3) I Gleam ändras textsträngar genom att skapa en ny sträng, eftersom strängar i Gleam är "immutable" (de kan inte ändras när de har skapats).
-
-## Se även
-
-* [String.replace documentation](https://hexdocs.pm/gleam_stdlib/gleam/string.html#replace/3)
+## Se även:
+- The `sed` Unix stream editor: [GNU sed documentation](https://www.gnu.org/software/sed/manual/sed.html)

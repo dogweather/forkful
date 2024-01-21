@@ -1,7 +1,8 @@
 ---
-title:                "Aloittaminen uuden projektin"
-html_title:           "C: Aloittaminen uuden projektin"
-simple_title:         "Aloittaminen uuden projektin"
+title:                "Uuden projektin aloittaminen"
+date:                  2024-01-20T18:04:43.108160-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Getting Started"
@@ -10,40 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Käytännön opas uuden projektin aloittamiseen PHP:lla
+## What & Why? (Mitä & Miksi?)
+Uuden projektin aloittaminen PHP:ssä on kuin tyhjältä pöydältä aloittamista; uutta luovaa prosessia. Koodarit tekevät sen paketoidakseen ideoita ja ratkaistakseen ongelmia.
 
-PHP, laajalti käytetty palvelinpuolen koodikieli, on äärimmäisen joustava ja voimakas työkalu monien web-projektien kehittämiseksi. Alla on olennaista tietoa uuden PHP-projektin aloittamisesta.
+## How to: (Kuinka tehdä:)
+Aloitetaan yksinkertaisella `"Hello, world!"` -esimerkillä. Tallenna tämä tiedostoksi nimeltä `index.php`.
 
-## "## Mikä & Miksi?"
-
-Uuden projektin aloittaminen tarkoittaa uuden sovelluksen tai ohjelman luomista tyhjältä pöydältä. Ohjelmoijat aloittavat uusia projekteja palvellakseen erityistä tarkoitusta tai ratkaisemaan tietyn ongelman. 
-
-## "## Kuinka:"
-
-PHP-koodinäyte uuden projektin aloittamiseksi:
-
-```PHP
+```php
 <?php
-echo "Tämä on alku uudelle PHP-projektillesi!";
+echo "Hello, world!";
 ?>
 ```
 
-Koodin suorituksen tuloste on yksinkertaisesti:
+Aja tämä paikallisella palvelimellasi ja näet tulosteen:
 
 ```
-Tämä on alku uudelle PHP-projektillesi!
+Hello, world!
 ```
 
-## "## Syväsukellus:"
+Sitten, luodaan yksinkertainen lomake käyttäjän syötteen keräämiseksi. Tiedosto `form.php`:
 
-PHP ilmestyi ensimmäisen kerran vuonna 1995, ja siitä lähtien se on kehittynyt jatkuvasti ollakseen monipuolisempi ja tehokkaampi. Uuden projektin aloittaminen PHP:lla edellyttää ymmärrystä sen toiminnallisuuksista ja kyvystä adaptoitua sen muuttuvaan ekosysteemiin.
+```php
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $_POST['name'] ?? 'nobody';
+    echo "Hello, {$name}!";
+    exit;
+}
+?>
 
-On olemassa muitakin kieliä kuten JavaScript (Node.js) tai Python, jotka voivat toteuttaa samanlaisia tehtäviä kuin PHP. Valinta riippuu usein projektin vaatimuksista, tiimin kokemuksesta, tai yksinkertaisesti henkilökohtaisista mieltymyksistä.
+<form method="POST">
+    <label for="name">Nimesi:</label>
+    <input type="text" id="name" name="name">
+    <button type="submit">Lähetä</button>
+</form>
+```
 
-Jokaisen projektin alussa kannattaa pitää mielessä joitakin seikkoja, kuten projektin ajastus, resurssit, vaatimukset ja tavoitteet. On tärkeää valita oikea lähestymistapa ja työkalut, jotka sopivat parhaiten projektin tarpeisiin.
+Tämä tulostaa `Hello, [nimi]!`, kun lomake lähetetään.
 
-## "## Katso myös:"
+## Deep Dive (Sukellus syvyyksiin)
+Aloitettaessa uuden PHP-projektin tekemistä on hyvä ymmärtää kontekstia. PHP syntyi 90-luvulla yksinkertaisena skriptaustyökaluna, mutta on kasvanut täydeksi ohjelmointikieleksi, joka pyörittää isoa osaa internetistä. Nykyään on monia vaihtoehtoja uuden projektin aloittamiseen – raamit, kuten Laravel tai Symfony, jotka tarjoavat rikkaan toiminnallisuuden ja ovat ajan tasalla parhaiden käytäntöjen kanssa. 
 
-1. PHP:n viralliset dokumentaatiot: [http://php.net/manual/](http://php.net/manual/)
-2. PHP:n uusimpien versioiden tiedot: [https://www.php.net/releases/index.php](https://www.php.net/releases/index.php)
-3. Opas PHP:n aloittamiseen: [http://www.phptherightway.com](http://www.phptherightway.com)
+Implementoidessa alusta asti, on tärkeää valita sopiva tiedostorakenne. Pidä sovelluslogiikka, näkymät ja muut resurssit erillään. Käytä Composeria riippuvuuksien hallintaan. Noudattamalla PSR-standardeja varmistat koodisi laadun ja ylläpidettävyyden. Aloita pienesti, suunnittele eteenpäin.
+
+## See Also (Katso myös)
+- PHP:n viralliset dokumentit: [php.net/manual](https://www.php.net/manual/en/)
+- Composer, riippuvuuksien hallintatyökalu: [getcomposer.org](https://getcomposer.org/)
+- PHP-FIG ja PSR-standardit: [php-fig.org/psr/](https://www.php-fig.org/psr/)
+- Framework-katsaukset: Laravel [laravel.com](https://laravel.com/) ja Symfony [symfony.com](https://symfony.com/)

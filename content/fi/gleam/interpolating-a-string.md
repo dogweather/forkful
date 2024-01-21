@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Bash: Merkkijonon interpolointi"
+date:                  2024-01-20T17:51:08.613096-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,42 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+## What & Why? - Mikä & Miksi?
+Interpolointi on tapa sijoittaa muuttujien arvoja suoraan merkkijonoon. Ohjelmoijat käyttävät sitä dynaamisen sisällön luomiseen ja koodin selkeysasteen parantamiseen.
 
-Merkkijonojen interpolointi on ohjelmointikielestä riippumaton tekniikka, jossa ohjelma luo uuden merkkijonon arvot, jotka on määritetty muuttujissa tai lausekkeissa, sisällyttämällä suoraan merkkijonoon. Koodarit käyttävät sitä koodin legibiliteetin parantamiseksi ja toistuvan koodin vähentämiseksi.
+## How to: - Näin teet:
+```gleam
+pub fn greet(name: String) -> String {
+  "Hello, " ++ name ++ "!"
+}
 
-## Näin teet:
-
-Tässä on esimerkki Gleam-koodista.
-
-```Gleam
-let nimi = "Koodari"
-let tervehdys = "Hei, {nimi}!"
-io.println(tervehdys)
+fn main() {
+  let greeting = greet("Mikko")
+  io.println(greeting)
+}
+```
+```output
+Hello, Mikko!
 ```
 
-Lopputulos olisi:
+## Deep Dive - Sukellus syvyyksiin:
+Merkkijonon interpoloinnilla on juurensa varhaisemmissa ohjelmointikielissä, kuten C:ssä ja Perlissä, mutta se on ajan myötä kehittynyt yksinkertaisemmaksi ja turvallisemmaksi. Gleamissa, kuten monissa moderneissa kielissä, interpolointi toteutetaan yhdistämällä merkkijonoja `++` operaattorilla, joka on turvallisempi vaihtoehto kuin vanhempien kielten mallineiden käyttö. Turvallisuus tulee siitä, että Gleam seuraa tiukkaa tyyppijärjestelmää, joka estää monet yleiset virheet.
 
-```
-"Hei, Koodari!"
-```
+Vaihtoehtoja string-interpoloinnille ovat format-funktiot tai mallinekirjastot, jotka saattavat tarjota monimutkaisempia formatointiominaisuuksia. Kuitenkin, suoraviivaisissa tapauksissa, kuten yleisessä tervehdyksessä, yksinkertainen yhdistäminen kuten yllä näytetty riittää.
 
-## Syvä sukellus:
+Gleamissa stringien yhdistäminen, vaikkakin manuaalista, on suoraviivaista ja helpottaa usein luetettavuutta, kunhan käytetään maltillisesti. Se antaa kehittäjälle kontrollin sisällöstä ja tavasta, jolla se esitetään.
 
-Merkkijonojen interpolointi ei ole uusi idea, se on ollut sellaisissa kielissä kuin Perl 1980-luvulta asti. Gleamissa, toisin kuin joissakin kielissä, merkkijonojen interpolointi suoritetaan soveltamalla syntaksin sokeria, eikä se ole kielen ominaisuus.
-
-Vaihtoehtoisesti, voit käyttää merkkijonon yhdistämistä saavuttaaksesi saman tuloksen, mutta se ei ole yhtä selkeä ja on altis virheet:
-
-```Gleam
-let nimi = "Koodari"
-let tervehdys = "Hei, " ++ nimi ++ "!"
-io.println(tervehdys)
-```
-
-Implementointi yksityiskohtiin sukeltaminen, Gleam korvaa interpoloidut lausekkeet niiden arvoilla suoritusaikana.
-
-## Katso myös:
-
-- Gleam `String` dokumentaatio: https://hexdocs.pm/gleam_stdlib/gleam/string
-- Wikipedia artikkeli merkkijonojen interpoloinnista: https://fi.wikipedia.org/wiki/Merkkijonon_interpolointi
-- Stack Overflow keskustelu: https://stackoverflow.com/questions/tagged/string-interpolation
+## See Also - Katso myös:
+- Gleam's official string documentation: [https://gleam.run/book/tour/strings.html](https://gleam.run/book/tour/strings.html)
+- The Gleam Playground, where you can experiment with code examples: [https://gleam.run/](https://gleam.run/)

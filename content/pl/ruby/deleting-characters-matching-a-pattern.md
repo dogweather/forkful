@@ -1,6 +1,7 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "C: Usuwanie znaków pasujących do wzorca"
+date:                  2024-01-20T17:43:19.421181-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,38 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Usuwanie Znaków Pasujących do Wzorca w Ruby: Krótki Przewodnik
+## What & Why? (Co i Dlaczego?)
+Usuwanie znaków pasujących do wzorca to filtrowanie stringów przez wykrywanie i wyeliminowanie niechcianych sekwencji. Programiści robią to, by oczyścić dane, ujednolicić formaty lub usunąć niebezpieczne lub niepotrzebne elementy.
 
-## Co I Dlaczego?
-Usuwanie znaków pasujących do wzorca to technika, która pozwala programistom precyzyjnie manipulować danymi tekstowymi. Jest to niezbędne, gdy chcemy usunąć niepotrzebne lub niechciane znaki z ciągów, np. białe znaki, znaki specjalne czy wiadomości spamowe.
-
-## Jak to Zrobić:
-Usuwanie konkretnych znaków z ciągu w Ruby jest proste. Używamy metody `delete`, podając odpowiedni wzorzec.
-
+## How to: (Jak to zrobić?)
 ```Ruby
-str = "Hello, World!"
-str.delete("l")  # Usuń wszystkie litery 'l'
-puts str
+# Usuwanie wszystkich cyfr z tekstu
+text = "Ruby ver. 3.1.0 - 2023 release"
+cleaned_text = text.gsub(/[0-9]/, '')
+puts cleaned_text
+# Output: Ruby ver. . -  release
+
+# Usuwanie tylko określonych znaków (np. kropek i myślników)
+specific_chars_removed = text.gsub(/[.-]/, ' ')
+puts specific_chars_removed
+# Output: Ruby ver  3 1 0   2023 release
+
+# Użyj `delete` do usunięcia konkretnych znaków
+no_dashes = text.delete('-')
+puts no_dashes
+# Output: Ruby ver. 3.1.0  2023 release
 ```
 
-Wynikiem powyższego kodu będzie: `Heo, Word!`
+## Deep Dive (Dogłębna analiza)
+Usuwanie znaków według wzorca nie jest nowością. Narzędzia takie jak `sed` w systemach Unix już dawno oferowały podobne funkcje. W Ruby, metoda `gsub` jest mocno rozbudowana i pozwala używać wyrażeń regularnych do określania wzorców, które chcemy usunąć. Alternatywnie, `delete` jest prosta, ale usuwa tylko konkretnie określone znaki.
 
-Możemy również używać zakresów znaków.
+Ruby używa wyrażeń regularnych kompatybilnych z biblioteką `Onigmo`, która rozwijała się od standardów POSIX i Perl. Pozwala to na bardzo elastyczne wzorce. W praktyce oznacza to, że możliwości edycji stringów są ogromne, ograniczone tylko wyobraźnią programisty.
 
-```Ruby
-str = "abc123"
-str.delete("a-c")  # Usuń znaki od 'a' do 'c'
-puts str
-```
+Niekiedy lepszym wyborem może być `tr`, gdy chcemy zamienić jeden zestaw znaków na inny. `gsub` i `delete` operują na kopiach stringa, co może być istotne przy bardzo dużych danych ze względu na zużycie pamięci.
 
-Wyjście: `123`
-
-## Deep Dive
-Metoda `delete` w Ruby jest jedną z podstawowych metod manipulacji produkcyjnych danych tekstowych. Wprowadzono ją w Ruby 1.1 i od tego czasu jest stale ulepszana. Alternatywą dla `delete` mogłaby być metoda `gsub`, która umożliwia również usuwanie znaków, ale z większą precyzją i możliwością używania wyrażeń regularnych. 
-
-W implementacji, `delete` tworzy nowy ciąg bez znaków pasujących do wzorca, nie modyfikując oryginalnego ciągu. To oznacza, że `delete` jest "nie destrukcyjna". Metoda ta jest szybka i efektywna, a jej wydajność jest jednym z powodów, dla których jest tak często używana.
-
-## Zobacz Też
-- [Dokumentacja Ruby: String#delete](https://ruby-doc.org/core-2.7.1/String.html#method-i-delete)
-- [Poradnik Ruby: Wyrażenia Regularne](https://www.rubyguides.com/2015/06/ruby-regex/)
-- [Stack Overflow: Jak usunąć określony znak z ciągu](https://stackoverflow.com/questions/14348480/how-to-remove-specific-character-from-string)
+## See Also (Zobacz także)
+- [Ruby API Documentation for `String#gsub`](https://ruby-doc.org/core-3.1.0/String.html#method-i-gsub)
+- [Ruby API Documentation for `String#delete`](https://ruby-doc.org/core-3.1.0/String.html#method-i-delete)
+- [Ruby Quicktips - Regular Expressions](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Onigmo Regular Expressions Library](https://github.com/k-takata/Onigmo)

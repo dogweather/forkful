@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:00:49.229065-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,26 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-HTTP request (हाइपर टेक्स्ट ट्रांसफर प्रोटोकॉल अनुरोध) कैसे और क्यों भेजें, इसे समझना बहुत महत्वपूर्ण है। यह एक सिग्नल भेजता है जो किसी सर्वर से जानकारी लेना चाहता है। प्रोग्रामर्स इसे वेब डेटा क्षेत्रीयकरण, ऐपीआई एक्सेक्यूशन और रिमोट सर्वर एक्सेक्यूशन के लिए उपयोग करते हैं।
+## What & Why? (क्या और क्यों?)
+HTTP अनुरोध भेजना यानी वेब सर्वर से डेटा मांगना। प्रोग्रामर इसे वेब एपीआई के साथ बातचीत, वेबसाइट्स से डेटा हासिल करने, और वेब सेवाओं को कमांड भेजने के लिए करते हैं।
 
-## कैसे करें:
-Lua में HTTP request भेजने के लिए `lua-http` पैकेज का उपयोग होता है। नीचे एक उदाहरण दिया गया है:
+## How to: (कैसे करें)
+Lua में HTTP अनुरोध भेजने के लिए, 'lua-http' या 'socket.http' जैसे मॉड्यूल का उपयोग होता है। नीचे 'lua-http' का उपयोग करके साधारण GET अनुरोध का उदाहरण है:
 
 ```Lua
-local http_request = require "http.request"
-local _, stream = assert(http_request.new_from_uri("http://example.com"):go())
-local body = assert(stream:get_body_as_string())
-print(body)
+local http = require('http')
+
+local function fetchUrl(url)
+    local response, err = http.request("GET", url)
+    if not response then
+        print("HTTP अनुरोध में त्रुटि:", err)
+        return
+    end
+    print(response:get_body_as_string())
+end
+
+fetchUrl("http://httpbin.org/get")
 ```
 
-इस कोड स्निपेट का उद्देश्य "http://example.com" पर HTTP request भेजना है और सर्वर का प्रतिसाद प्रिंट करना है।
+यह कोड एक वेब पेज से कंटेंट को प्रिंट करेगा। अगर त्रुटि आती है, तो वह भी प्रिंट होगी।
 
-## गहराई के संग:
-HTTP अनुरोधों का इस्तेमाल 90 के दशक से हो रहा है, जब इंटरनेट नई-नई शुरू हुई थी। Lua में, इसे `lua-http` द्वारा लागू किया गया है, जो सॉकेट, कोरूटाइन्स और HTTP/1 और HTTP/2 सपोर्ट ला सकता है। `lua-http` के विकल्प में `luasocket http` शामिल है, यदि आपको आवश्यकता होती है तो।
+## Deep Dive (गहराई से जानकारी)
+HTTP (HyperText Transfer Protocol) इंटरनेट पर डेटा संचार का मुख्य माध्यम है। इसकी शुरुआत 1989 में हुई थी। Lua में, हमे सरल HTTP अनुरोध के लिए 'lua-http' या 'LuaSocket' जैसे तीसरे पक्ष के लाइब्रेरीज का सहारा लेना पड़ता है। 'lua-http' अधिक मॉडर्न और फुल-फीचर्ड है, जबकि 'LuaSocket' पुराना पर मजबूत है। 
 
-## यह भी देखें:
-अधिक जानकारी के लिए, नीचे दिए गए संसाधनों पर जाएं:
-- Lua-http प्रलेखन: http://daurnimator.github.io/lua-http/
-- Luasocket प्रलेखन: http://w3.impa.br/~diego/software/luasocket/http.html
-- HTTP विकी पन्ना: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+इन दोनों का विकल्प REST API के संपर्क में आने के लिए, संदेश स्वरूप (JSON या XML) में कन्वर्ट करना, और हेडर्स, पैरामीटर्स, और अथेंटिकेशन जैसे बारीकियाँ संभालना अहम हैं।
+
+## See Also (इसे भी देखें)
+- Lua HTTP documentation: [https://github.com/daurnimator/lua-http](https://github.com/daurnimator/lua-http)
+- HTTP बिन (टेस्ट HTTP अनुरोध): [http://httpbin.org/](http://httpbin.org/)

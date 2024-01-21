@@ -1,7 +1,8 @@
 ---
-title:                "Komentorivin argumenttien lukeminen"
-html_title:           "Bash: Komentorivin argumenttien lukeminen"
-simple_title:         "Komentorivin argumenttien lukeminen"
+title:                "Komennoriviparametrien lukeminen"
+date:                  2024-01-20T17:57:09.153762-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Komennoriviparametrien lukeminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,43 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Komentoriviparametrien lukeminen on prosessi, jossa ohjelma ottaa syötteitä suoraan komentoriviltä, jota ohjelmoija tai käyttäjä on syöttänyt. Ohjelmoijat tekevät tämän, koska se mahdollistaa ei-graafisten sovellusten suorittamisen ja säätämisen ilman erillistä käyttöliittymää.
+## What & Why?
+Komennoriviargumenttien lukeminen tarkoittaa käyttäjän antamien syötteiden noutamista komentoriviltä ohjelman suorituksen aikana. Ohjelmoijat tekevät tämän, jotta voivat muokata ohjelmansa toimintaa lennosta tai antaa input-arvoja ilman kovan koodauksen tarvetta.
 
-## Näin se toimii:
+## How to:
+```TypeScript
+// tiedosto: greet.ts
+const arguments = process.argv.slice(2);
+console.log(`Hei ${arguments[0]}!`);
 
-TypeScriptillä me voimme käyttää Node.js:n 'process.argv' taulukkoa komentoriviparametrien lukemiseksi. Katsotaanpa lyhyt esimerkki:
+// Komentoriviltä ajettuna:
+// $ ts-node greet.ts Tero
+// Output: Hei Tero!
+```
+
+## Deep Dive
+Komentoriviargumenttien lukeminen on ollut osa ohjelmoinnin perustoimintoja siitä asti, kun käyttöjärjestelmät alkoivat tukea komentorivikieltoja. Node.js:ssä `process.argv` on standarditapa päästä käsiksi näihin argumentteihin. Taulukon ensimmäiset kaksi arvoa ovat node-binääritiedoston polku ja ajettavan skriptin polku, joten oikeat argumentit löytyvät taulukon indeksistä 2 eteenpäin.
+
+Vaihtoehtoisesti voimme käyttää kirjastoja, kuten `yargs` tai `commander`, jotka tarjoavat enemmän toiminnallisuutta ja helpottavat argumenttien käsittelyä.
 
 ```TypeScript
-// Ohjelma lukee tämän käynnistyspolun ja mahdolliset parametrit
-let myArgs = process.argv.slice(2);
+// Esimerkki yargs-kirjaston käytöstä
+import yargs from 'yargs';
 
-// Tulostaa argumentit
-console.log('Argumentit: ', myArgs);
+const args = yargs(process.argv.slice(2)).argv;
+console.log(`Hei ${args.name}!`);
+
+// Komentoriviltä:
+// $ ts-node greet.ts --name=Tero
+// Output: Hei Tero!
 ```
 
-Kun suoritat yllä olevan koodin komentoriviltä seuraavilla argumenteilla:
+Argumenttien lukeminen TypeScriptissä tapahtuu Node.js:n tavoin, mutta lisäetuna on, että voimme hyödyntää TypeScriptin tyypityksiä vähentääksemme virheiden määrää ja parantaaksemme koodin selkeyttä.
 
-```bash
-node myscript.ts 1 2 3
-```
-
-Saat tulostuksesi:
-
-```
-Argumentit: [ '1', '2', '3' ]
-```
-
-## Syvällisemmin:
-
-(1) Historiallinen konteksti: varhaiset tietokoneohjelmat hyödynsivät komentorivisäätöjä, koska graafisia käyttöliittymiä ei ollut saatavilla. Tämä perinne on jatkunut uudempiin kieliin, kuten TypeScript. 
-
-(2) Vaihtoehdot: Muutamat kirjastot, kuten 'yargs' ja 'commander', tarjoavat enemmän toimintoja ja mukavuutta työskennellä komentoriviparametrien kanssa. 
-
-(3) Käytännön yksityiskohdat: 'process.argv' taulukko sisältää ensimmäisessä indeksissä polun Node.js:ään, toisessa indeksissä polun suoritettavaan tiedostoon, ja loput indeksit sisältävät komentoriviparametrit. Siksi 'process.argv.slice(2)' leikkaa pois kaksi ensimmäistä oliota, antaen meille vain parametrit.
-
-## Katso myös:
-
-- Yargs: [https://www.npmjs.com/package/yargs](https://www.npmjs.com/package/yargs)
-- Commander: [https://www.npmjs.com/package/commander](https://www.npmjs.com/package/commander)
-- Node.js prosessi-dokumentaatio: [https://nodejs.org/api/process.html#process_process_argv](https://nodejs.org/api/process.html#process_process_argv)
+## See Also
+- [Node.js process.argv dokumentaatio](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- [Yargs GitHub-sivusto](https://github.com/yargs/yargs)
+- [Commander.js GitHub-sivusto](https://github.com/tj/commander.js)

@@ -1,7 +1,8 @@
 ---
-title:                "एक वेब पेज डाउनलोड करना"
-html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
-simple_title:         "एक वेब पेज डाउनलोड करना"
+title:                "वेब पेज डाउनलोड करना"
+date:                  2024-01-20T17:44:34.571117-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "वेब पेज डाउनलोड करना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,51 +11,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-वेब पेज को डाउनलोड करना उसकी सामग्री को अपने कंप्यूटर पर डाउनलोड करने का कार्य होता है। प्रोग्रामर इसे करते हैं क्योंकि यह उन्हें डेटा के साथ काम करने में मदद करता हैतौर कंप्यूटर की लोकल कॉपी बनाकर हमें बाद में उसे ऑफ़लाइन पड़ने की सुविधा देता है।
+वेब पेज डाउनलोड करना मतलब इंटरनेट से सूचना अपने एप्लीकेशन में लाना। प्रोग्रामर इसको करते हैं डेटा प्राप्त करने, संसाधित करने और उपयोगकर्ताओं को दिखाने के लिए।
 
-## कैसे करें:
+## How to: (कैसे करें?)
 
-Elm में, आप `Http` पैकेज का उपयोग करके वेब पेज को डाउनलोड कर सकते हैं। नीचे एक सरल उदाहरण दिया गया है:
+Elm में वेब पेज डाउनलोड करना http कार्यों का उपयोग करके किया जाता है। नीचे एक साधारण कोड का उदाहरण दिया गया है:
 
 ```Elm
+module Main exposing (..)
 
-import Html exposing (Html, text)
 import Http
+import Html exposing (Html, text)
+import Json.Decode as Decode
+
+type Msg 
+    = GotText (Result Http.Error String)
+
+type alias Model =
+    { content : String }
+
+initialModel : Model
+initialModel =
+    { content = "" }
+
+update : Msg -> Model -> Model
+update msg model =
+    case msg of
+        GotText (Ok text) ->
+            { model | content = text }
+
+        GotText (Err _) ->
+            model -- यहाँ त्रुटि हैंडल करें
+
+view : Model -> Html Msg
+view model =
+    Html.div []
+        [ Html.text model.content ]
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    Sub.none
 
 main =
-  Http.get { url = "http://example.com", expect = Http.expectString GotResponse }
+    Html.program
+        { init = (initialModel, downloadPage "http://example.com")
+        , view = view
+        , update = update
+        , subscriptions = subscriptions
+        }
 
-type Msg = GotResponse (Result Http.Error String)
-
-update msg model =
-  case msg of
-    GotResponse result ->
-      case result of
-        Ok body -> 
-          ( body, Cmd.none )
-        
-        Err _ -> 
-          ( "Something went wrong", Cmd.none )
-          
-display model =
-  Html.div [] [ Html.text model ]
-
-main = 
-  Html.beginnerProgram { model = "", view = display, update = update }
-
+downloadPage : String -> Cmd Msg
+downloadPage url =
+    Http.getString url
+        |> Http.send GotText
 ```
 
-## गहरी डाइव:
+जब आप इस कोड को रन करेंगे, Elm `http://example.com` से पेज का टेक्स्ट डाउनलोड करेगा और `model.content` में स्टोर कर देगा।
 
-1. **ऐतिहासिक प्रसंग:** वेब पेज डाउनलोडिंग की क्षमता की मांग हमेशा से रही है। एचटीटीपी (HTTP) प्रोटोकॉल ईंटरनेट की मांग की पूर्ति के लिए डिज़ाइन की गई थी।
+## Deep Dive (गहन जानकारी)
 
-2. **विकल्प:** `Http` पैकेज के अलावा, आप `elm-fetch` जैसे पैकेज का भी उपयोग कर सकते हैं।
+Elm में वेब पेज डाउनलोड करने की पद्धति अपेक्षाकृत नई है। पुराने संस्करण में इसके लिए बहुत सारी कस्टम जावास्क्रिप्ट लिखनी पड़ती थी, लेकिन Elm 0.19 में `Http` मॉड्यूल के साथ यह सरल हो गया है। `Http.getString` एक आसान फंक्शन है जो GET रिक्वेस्ट करके टेक्स्ट के रूप में डेटा लौटाता है।
 
-3. **कार्यान्वयन विवरण:** `Http.get` का उपयोग करते समय, आप एक यूआरएलऔर 'Http.expectString' फंक्शन का उपयोग करके एक `Http.Request` बनाते हैं। यह अनुरोध सर्वर को भेजा जाता है और सर्वर की प्रतिक्रिया को `Msg` टाइप के रूप में हैंडल किया जाता है।
+विकल्प के तौर पर, आप `Http.get` या `Http.request` का उपयोग कर सकते हैं जब आपको अधिक जटिल अनुरोध करना होता है, जैसे जेसन डेटा प्राप्त करना या हेडर्स सेट करना।
 
-## भी देखें:
+Elm में एक महत्वपूर्ण बात यह है कि सभी साइड इफ़ेक्ट्स (जैसे कि HTTP रिक्वेस्ट्स) कमांड्स (Cmd) के माध्यम से होते हैं। यह प्योर फंक्शनल प्रोग्रामिंग का पालन करते हुए आपके एप्लीकेशन को प्रेडिक्टेबल बनाता है।
 
-1. [Elm के आधिकारिक डॉक्यूमेंटेशन](https://guide.elm-lang.org/) 
-3. [GitHub पर Elm-Http पैकेज](https://github.com/elm/http)
+## See Also (और भी देखें)
+
+- [Elm HTTP package documentation](https://package.elm-lang.org/packages/elm/http/latest/)
+- [Elm guide on HTTP](https://guide.elm-lang.org/effects/http.html)
+- [JSON decoding in Elm](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode)

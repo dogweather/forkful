@@ -1,6 +1,7 @@
 ---
 title:                "下载网页"
-html_title:           "Arduino: 下载网页"
+date:                  2024-01-20T17:43:20.995918-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "下载网页"
 programming_language: "C"
 category:             "C"
@@ -10,57 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么与为何？
+## What & Why? / 什么和为什么？
 
-下载网页就是将互联网上的一整个网页保存到本地设备上。程序员下载网页以备离线浏览，进行数据抓取，或对网页内容加以分析和使用。
+下载网页就是从互联网上获取网页的内容。程序员这么做是为了处理或分析网页数据。
 
-## 怎么做：
+## How to: / 怎么做：
 
-以下是一个C语言实现下载网页的代码示例。在此示例中，我们使用libcurl库来下载网页。
+使用C库比如libcurl进行网页下载：
 
-```C
+```c
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
+static size_t write_data(void *ptr, size_t size, size_t nmemb, void *stream) {
+    size_t written = fwrite(ptr, size, nmemb, (FILE *)stream);
+    return written;
+}
 
-  curl_global_init(CURL_GLOBAL_DEFAULT);
+int main(void) {
+    CURL *curl;
+    FILE *fp;
+    CURLcode res;
+    char *url = "http://example.com";
+    char outfilename[FILENAME_MAX] = "downloaded_page.html";
 
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+    curl = curl_easy_init();
+    if(curl) {
+        fp = fopen(outfilename,"wb");
+        curl_easy_setopt(curl, CURLOPT_URL, url);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+        res = curl_easy_perform(curl);
+        /* Always cleanup */
+        curl_easy_cleanup(curl);
+        fclose(fp);
 
-#ifndef NDEBUG
-    curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
-#endif
-
-    res = curl_easy_perform(curl);
-
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
-
-    curl_easy_cleanup(curl);
-  }
-
-  curl_global_cleanup();
-
-  return 0;
+        if (res == CURLE_OK)
+            printf("Download successful.\n");
+        else
+            printf("Download failed: %s\n", curl_easy_strerror(res));
+    }
+    return 0;
 }
 ```
-执行此代码，您将在终端看到对应的HTML输出。这就是网页内容。
+编译时记得链接libcurl：
 
-## 深入探究
+```bash
+gcc -o download download.c -lcurl
+```
 
-1. 历史背景：早期的网页获取方法主要依赖于TCP/IP socket编程，然后发送HTTP请求并接收响应。然后libcurl库的出现，让这个过程变得更加简单。
-2. 替代方案：除了libcurl，还有其他库，如wget，也可以用来轻松下载网页。
-3. 实现细节：下载网页的主要步骤包括创建一个HTTP请求，发送请求，然后接收并解析响应。libcurl方法包括了这些步骤的所有细节。
+运行后会看到 `Download successful.` 并在当前目录找到下载的HTML文件。
 
-## 还可参阅
+## Deep Dive / 深入研究：
 
-+ libcurl官方文档 [https://curl.haxx.se/libcurl/](https://curl.haxx.se/libcurl/)
-+ C语言socket编程 [http://beej.us/guide/bgnet/](http://beej.us/guide/bgnet/)
-+ wget官方文档 [https://www.gnu.org/software/wget/manual/](https://www.gnu.org/software/wget/manual/)
+早年，下载网页通常采用HTTP协议，手写socket编程。现今，libcurl库是一种流行的方法，支持HTTPS，更安全。但libcurl不是C语言标准库的一部分，需要先安装。可以直接读取内存数据，或者保存到文件。其他方法如WinINet针对Windows，但libcurl跨平台。
+
+## See Also / 另请参阅：
+
+- libcurl官网: https://curl.se/libcurl/
+- cURL命令行工具教程: https://curl.se/docs/manual.html
+- HTTP协议介绍: https://www.w3.org/Protocols/

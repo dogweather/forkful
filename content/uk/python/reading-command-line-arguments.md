@@ -1,6 +1,7 @@
 ---
 title:                "Читання аргументів командного рядка"
-html_title:           "Arduino: Читання аргументів командного рядка"
+date:                  2024-01-20T17:56:44.480306-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Читання аргументів командного рядка"
 programming_language: "Python"
 category:             "Python"
@@ -10,41 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Python: Як читати аргументи командного рядка
+## What & Why?
+## Що це таке та навіщо?
 
-## Що і навіщо?
+Reading command line arguments means grabbing the extra info you pass to your script when you run it. Programmers do this to make scripts interact with the user, customize their behavior, or handle different tasks without changing the code.
 
-Аргументи командного рядка - це параметри, які передаємо нашій програмі при її запуску. Це корисно, дозволяючи нам контролювати програму без змін в коді.
-
+## How to:
 ## Як це зробити:
 
-Модуль `sys` у Python містить список `argv`, що містить аргументи командного рядка. Перший аргумент ( `argv [0]` ) - це назва нашого скрипта Python.
-
-```Python
+```python
 import sys
 
-print("Назва скрипта:", sys.argv[0])
+# Simple script to echo the command line arguments
+def main():
+    # Check if we've got arguments besides the script name
+    if len(sys.argv) > 1:
+        for index, arg in enumerate(sys.argv[1:], start=1):
+            print(f"Argument {index}: {arg}")
+    else:
+        print("No arguments were provided.")
 
-# якщо аргументи передані
-if len(sys.argv) > 1:
-    print("Аргументи:", sys.argv[1:])
+if __name__ == "__main__":
+    main()
 ```
 
-Коли виконаємо скрипт з аргументами, отримаємо наступне:
+Run it like this: `python your_script.py Hello World 123`
+Sample output:
 
-```shell
-$ python3 test.py arg1 arg2 arg3
-Назва скрипта: test.py
-Аргументи: ['arg1', 'arg2', 'arg3']
+```
+Argument 1: Hello
+Argument 2: World
+Argument 3: 123
 ```
 
-## Поглиблений огляд:
+## Deep Dive
+## Поглиблений огляд
 
-1. Історичний контекст: Читання аргументів командного рядка використовується основними мовами програмування ще з часів С і Бейсик.
-2. Альтернативи: Для більш складних випадків, таких як обробка опцій CLI, бібліотеки, наприклад `argparse`, можуть бути дуже корисними.
-3. Деталі реалізації: Модуль `sys` Python заповнює список `argv` з аргументів командного рядка, коли інтерпретатор Python стартує. 
+Historically, command line arguments come from the time before GUIs were common. They've stuck around because they're a simple and effective way to input data. Alternatives include using input from within the script, config files, or environment variables, but each has its use case. Python's `sys.argv` fetches arguments as a list, with the script name as the first element. Libraries like `argparse` offer more control, with parsing options, custom help messages, and more.
 
-## Див. також:
+## See Also
+## Див. також
 
-- Документація по Python на `sys.argv`: https://docs.python.org/uk/3/library/sys.html#sys.argv
-- Посібник по модулю Python `argparse`: https://docs.python.org/uk/3/library/argparse.html#module-argparse
+- Python's `argparse` module: [docs.python.org/3/library/argparse.html](https://docs.python.org/3/library/argparse.html)
+- An in-depth guide to command line arguments: [realpython.com/command-line-interfaces-python-argparse/](https://realpython.com/command-line-interfaces-python-argparse/)
+- Using environment variables in Python: [12factor.net/config](https://12factor.net/config)

@@ -1,7 +1,8 @@
 ---
-title:                "ランダムな数字の生成"
-html_title:           "C#: ランダムな数字の生成"
-simple_title:         "ランダムな数字の生成"
+title:                "ランダム数の生成"
+date:                  2024-01-20T17:49:35.444286-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "ランダム数の生成"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Numbers"
@@ -10,41 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ? (What & Why?)
+## What & Why? (何となぜ？)
+乱数生成とは、予測不可能な数字のシーケンスを作るプロセスです。プログラマーは、テストデータ生成、シミュレーション、ゲームの要素など、さまざまな状況でこれを利用します。
 
-ランダムな数字の生成は、予測可能なパターンを作らない新しい番号の作成を意味します。プログラマーはこれを行うことで、テストの多様性を高めたり、意図しない偏りを減らすことができます。
+## How to: (どのように？)
+Javaでは、`Random`クラスや`SecureRandom`、Java 8で導入された`ThreadLocalRandom`、そして`Random`クラス以上に推奨される`java.util.concurrent`パッケージの`ThreadLocalRandom`を使って乱数を生成します。サンプルコードを見てみましょう。
 
-## 手順 (How to):
-
-以下のコードブロックでは、Javaのテクニックを使用してランダム数字の生成方法を示します。
-
-```Java
+```java
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
-public class Main {
+public class RandomNumbers {
     public static void main(String[] args) {
-        Random rand = new Random();
-
-        int num = rand.nextInt(50);
-        System.out.println("生成されたランダムな数値は: " + num);
+        // Random クラスを使う
+        Random random = new Random();
+        int randomInt = random.nextInt(100); // 0 から 99 までの乱数
+        System.out.println("Random int: " + randomInt);
+        
+        // ThreadLocalRandom クラスを使う
+        int tlRandomInt = ThreadLocalRandom.current().nextInt(100);
+        System.out.println("ThreadLocalRandom int: " + tlRandomInt);
     }
 }
 ```
 
-上記のコードを実行すると、出力は次のようになります（値はランダムに変わるため、毎回変わります）：
-
-```Java
-生成されたランダムな数値は: 37
+サンプル出力：
+```
+Random int: 42
+ThreadLocalRandom int: 85
 ```
 
+## Deep Dive (深い潜入)
+乱数生成は、計算機の歴史と共に進化し続けています。初期のコンピュータでは、物理プロセスに基づいたハードウェア乱数ジェネレータが使われていました。ソフトウェアベースでは、線形合同法(LCG)など古典的なアルゴリズムが広く使われてきました。
 
-## ディープダイブ (Deep Dive):
+`Random` クラスは内部で線形合同法を使用していますが、高性能・高並列性を求めるアプリケーショのニーズに応えるため`java.util.concurrent`パッケージの `ThreadLocalRandom` が推奨されます。`ThreadLocalRandom` は、乱数生成を複数のスレッドで効率よく行えるようにするために作られています。
 
-過去には、ランダムな数字を生成するための他の方法が一般的でした。例えば、`Math.random()`関数は、`java.util.Random()`コンストラクタが導入される前によく使用されていました。しかし、現代では`java.util.Random()`がより優れた選択となっています。これは、複数の並列タスクでの性能低下を防ぐためのThreadLocalRandom、よりに高いエントロピーのRandomなど、より多くの選択肢が提供されているためです。
+セキュリティが重要な場面では、`SecureRandom` クラスが確率論的ランダム性を提供し、より予測が困難な乱数を生成します。これは暗号ソリューションで一般的に使用されます。
 
-## 参考資料 (See Also):
-
-関連情報については以下をご覧ください:
-
-- Oracle公式ドキュメントにおけるRandomクラス: https://docs.oracle.com/javase/8/docs/api/java/util/Random.html
-- StackOverFlowにおけるランダムな数値生成に関する議論: https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java
+## See Also (関連項目)
+- Oracle Docs – Random Class: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Random.html
+- Oracle Docs – ThreadLocalRandom Class: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ThreadLocalRandom.html
+- Oracle Docs – SecureRandom Class: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/SecureRandom.html

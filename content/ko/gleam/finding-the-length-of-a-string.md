@@ -1,6 +1,7 @@
 ---
 title:                "문자열의 길이 찾기"
-html_title:           "Lua: 문자열의 길이 찾기"
+date:                  2024-01-20T17:47:36.320596-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "문자열의 길이 찾기"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,39 +12,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 무엇 & 왜?
+문자열 길이 찾기는 문자열에 있는 문자 수를 알아내는 것입니다. 프로그래머들은 루프, 조건문 처리 또는 잘라내기 위해서 이 정보를 사용합니다.
 
-문자열의 길이를 찾는 것은 문자열에 포함된 문자의 총 개수를 구하는 것입니다. 이 정보는 텍스트 처리, 입력 검증 등 프로그래밍 작업에서 중요한 역할을 합니다.
-
-## 방법:
-
-Gleam에서 문자열의 길이를 구하는 것은 간단합니다. 아래의 코드를 확인해보세요.
-
-```Gleam
+## How to:
+```gleam
 import gleam/string
 
-fn main() {
-  let my_string = "안녕하세요"
-  let length = string.len(my_string)
-    
-  length
-  |> Int.to_string
-  |> io.println
-}
+// 문자열 길이 구하기
+let greeting = "안녕하세요"
+let length = string.len(greeting)
+println(length) // 출력: 5
 ```
-출력:
-```Gleam
-5
-```
-위 예제에서는 "안녕하세요"의 길이인 5가 출력됩니다.
 
-## 깊게 알아보기
+## Deep Dive
+문자열의 길이를 찾는 작업은 오래된 컴퓨팅 문제입니다. 프로그래밍 언어마다 다르게 구현됩니다. 예를 들어, C에서는 문자열의 끝에 null 값을 사용해서 끝을 나타냅니다. Gleam에서는 `string.len` 함수를 사용하는데, 이것은 문자열 내의 유니코드 스칼라 값의 수를 세어서 길이를 반환합니다. 길이를 구하는 다른 방법으로 문자열을 순환하면서 직접 세는 것도 있지만, Gleam의 표준 함수가 훨씬 간결하고 효율적입니다.
 
-문자열의 길이를 찾는 것은 프로그래밍의 초기부터 매우 중요한 작업이었습니다. C언어에서는 문자열의 끝에 NULL 문자(`\0`)가 있어 이를 이용해 문자열의 길이를 구했습니다. Gleam에서는 String 모듈의 `len` 함수를 이용해 문자열의 길이를 구합니다.
-
-그외에도 문자열을 순회하면서 길이를 계산한는 방법, 리슨티프 형태를 이용하는 방법 등으로 표현하고 구현할 수도 있습니다. 그러나 Gleam에서는 내장 함수를 이용하는 것이 더 간단하고 효율적입니다.
-
-## 참고하기
-
-다른 관련된 소스는 아래에서 확인하세요:
-
-2. [String Functions - Elixir School](https://elixirschool.com/en/lessons/basics/strings/)
+## See Also
+- Gleam 공식 문서: [https://gleam.run/book](https://gleam.run/book)
+- 문자열 처리에 대한 더 깊은 이해: [https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Levenshtein_distance](https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Levenshtein_distance)

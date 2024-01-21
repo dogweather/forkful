@@ -1,7 +1,8 @@
 ---
-title:                "Générer des nombres aléatoires"
-html_title:           "Elixir: Générer des nombres aléatoires"
-simple_title:         "Générer des nombres aléatoires"
+title:                "Génération de nombres aléatoires"
+date:                  2024-01-20T17:48:57.233702-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Génération de nombres aléatoires"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Numbers"
@@ -10,35 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ?
-
-Générer des nombres aléatoires implique de produire une suite de nombres qui ne semblent suivre aucun schéma prévisible. C'est crucial pour de nombreux programmes, notamment pour les jeux, la cryptographie et les simulations.
+## Quoi & Pourquoi ?
+La génération de nombres aléatoires sert à créer des données imprévisibles. Les développeurs l'utilisent pour les jeux, les simulations, et là où l'onécessite de l'entropie.
 
 ## Comment faire :
+```gleam
+import gleam/erlang
+import gleam/int
 
-Voici comment générer un nombre aléatoire dans Gleam:
-```Gleam
-import gleam/list.{shuffle} 
-import gleam/map.new
-import gleam/random.{generator, int, Range}
-
-fn rand() {
-  let manual_seed_generator = generator(1)
-  let (manual_seed_generator, _seed) = int(Range(1, 100), manual_seed_generator)
-  manual_seed_generator
+pub fn main() {
+  // Générer un nombre aléatoire entre 0 et 99
+  let rand_num = erlang.rand_uniform(100)
+  int.to_string(rand_num)
 }
 ```
+Sortie d’exemple : `"42"`
 
-Cet exemple réalise un générateur manuel puis génère un nombre aléatoire entre 1 et 100.
+## Exploration en profondeur :
+La génération de nombres aléatoires n'est pas vraiment "aléatoire" en informatique ; on parle de pseudo-aléatoire parce qu'elle suit un algorithme. Historiquement, les algorithmes comme le générateur congruentiel linéaire (LCG) étaient populaires, mais avaient des faiblesses. Aujourd'hui, on préfère des méthodes plus robustes comme Mersenne Twister, bien que Erlang utilise son propre système. En Gleam, qui est construit sur la VM d'Erlang, on accède à la fonctionnalité aléatoire à travers le module `erlang`. Attention, ceci n'est pas destiné à des usages cryptographiques, pour lesquels il faudrait des générateurs aléatoires cryptographiquement sécurisés.
 
-## Exploration Approfondie
-
-Historiquement, le problème de la génération aléatoire a été abordé via diverses méthodes allant de l'irrégularité physique, comme le lancer d'un dé, à des algorithmes électriques et numériques. Gleam utilise un générateur de nombres aléatoires basé sur un mélange de mutabilité et de pureté fonctionnelle.
-
-Dans Gleam, on pourrait penser à utiliser des alternatives comme `random.float` ou `random.bits` selon le type de données nécessaire. Toutes ces fonctions prennent un générateur de nombres aléatoires comme argument et retournent un nouveau générateur avec le résultat. Cela permet de maintenir une implication de pureté fonctionnelle.
-
-## Voir Aussi
-
-Pour un aperçu détaillé de la génération de nombres aléatoires dans Gleam, consultez la documentation officielle [ici](https://gleam.run/documentation/generating-random-numbers/).
-
-Vous pouvez également consulter ce [guide](https://gleam.run/guide-to-random/) pour une exploration plus en profondeur sur la génération aléatoire dans Gleam.
+## Voir également :
+- Pour une sécurité accrue, RNGs cryptographiques : [https://en.wikipedia.org/wiki/Cryptographically-secure_pseudorandom_number_generator](https://en.wikipedia.org/wiki/Cryptographically-secure_pseudorandom_number_generator)
+- Un aperçu des générateurs de nombres pseudo-aléatoires : [https://en.wikipedia.org/wiki/Pseudorandom_number_generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)

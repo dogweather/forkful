@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:46:32.838555-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,47 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# PowerShell Alimerkkijonojen Käyttö
+## What & Why? (Mitä & Miksi?)
+Substringien poiminta on prosessi, jolla valikoidaan ja otetaan tietty osa merkkijonosta. Ohjelmoijat tekevät tätä, koska usein tarvitaan vain pala dataa esimerkiksi analyysia tai formaattia varten.
 
-## Mitä & Miksi?
-
-Alimerkkijonot ovat osa isompaa merkkijonoa. Ohjelmoijat käyttävät alimerkkijonoja kun he haluavat erottaa tietyt pätkät datasta tai muotoilla tekstiä tietyllä tavalla.
-
-## Miten Tehdään:
-
-Käytetään joko `substring` tai `remove` metodeja PowerShellissä. Tässä on esimerkkejä:
-
+## How to: (Kuinka tehdä:)
 ```PowerShell
-# Luodaan merkkijono
-$s = "Tervetuloa PowerShellin maailmaan!"
+# Otetaan esimerkiksi merkkijono
+$esimerkkiMerkkijono = "Tämä on esimerkki merkkijono"
 
-# Otetaan alimerkkijono käyttämällä substring-metodia
-$subs = $s.substring(0,9)
-$subs
+# Substring alkaa indeksistä 8 ja päättyy indeksiin 17
+$substring = $esimerkkiMerkkijono.Substring(8, 10)
+Write-Host $substring
+```
 
-# Tulostaa: "Tervetulo"
+Tulostus:
+```
+esimerkki
 ```
 
 ```PowerShell
-# Luodaan merkkijono
-$s = "Tervetuloa PowerShellin maailmaan!"
-
-# Otetaan alimerkkijono käyttämällä remove-metodia
-$subs = $s.Remove(9)
-$subs
-
-# Tulostaa: "Tervetulo"
+# Voit myös käyttää -split operaattoria ja valita haluamasi osan
+$osat = $esimerkkiMerkkijono -split ' '
+Write-Host $osat[3]
 ```
 
-## Syvemmälle:
+Tulostus:
+```
+esimerkki
+```
 
-`Substring` tekee leikkauksen määritellystä kohdasta merkkijonossa. Tämä metodi on ollut olemassa pitkään monissa ohjelmointikielissä, mukaan lukien PowerShell.
+## Deep Dive (Syväsukellus)
+Substringien poiminnalla on pitkä historia ohjelmoinnissa; se on perusoperaatio, jota on käytetty lähes kaikissa ohjelmointikielissä tiedon käsittelyyn. PowerShellissä `.Substring()` metodi ja `-split` operaattori ovat yleisimpiä tapoja tehdä tämä.  Niiden toteutus hyödyntää .NET -alustan luokkakirjastoja, jotka ovat tehokkaita ja optimoituja. Vaihtoehtoisia menetelmiä ovat esimerkiksi regex -ilmaisut tai string-metodit, kuten `.IndexOf()` yhdistettynä `.Remove()`- tai `.Replace()`-metodeihin.
 
-`Remove` poistaa määritellyn kohdan loppuun asti. Tämä on toinen tapa tehdä sama asia, mutta se sopii paremmin silloin, kun halutaan poistaa osa merkkijonosta.
-
-Käyttäjä voi valita, kumpaa metodia käyttää tarpeensa mukaisesti. Molemmat tukevat PowerShellin kokonaan, mukaan lukien erilaiset kulttuuriasetukset, joten kumman tahansa valinnassa ei ole suurta eroa.
-
-## Katso Myös:
-
-* Microsoftin dokumentaatiosta löytyy lisää tietoa [`substring`](https://docs.microsoft.com/fi-fi/dotnet/api/system.string.substring?view=net-5.0) ja [`remove`](https://docs.microsoft.com/fi-fi/dotnet/api/system.string.remove?view=net-5.0) metodeista.
-* [Stack Overflow](https://stackoverflow.com/questions/14104547/what-is-the-best-way-to-extract-a-substring-in-powershell) on hyvä lähde nähdä lisää esimerkkejä ja keskusteluja alimerkkijonojen käytöstä PowerShellissä.
+## See Also (Katso Myös)
+- PowerShellin string operaattorit: [about Split operator in PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-7.1)

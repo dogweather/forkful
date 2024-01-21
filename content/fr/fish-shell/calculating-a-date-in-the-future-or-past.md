@@ -1,7 +1,8 @@
 ---
-title:                "Calculer une date dans le futur ou le passé"
-html_title:           "Fish Shell: Calculer une date dans le futur ou le passé"
-simple_title:         "Calculer une date dans le futur ou le passé"
+title:                "Calcul d'une date future ou passée"
+date:                  2024-01-20T17:30:52.701163-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Calcul d'une date future ou passée"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,32 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Calculer une date dans le futur ou le passé est une technique pour déterminer une date spécifique à partir d'une date de référence donnée. Les programmeurs s'en servent généralement pour automatiser des tâches basées sur le temps ou pour analyser des données historiques.
+## What & Why? - Quoi et Pourquoi ?
+Calculer une date dans le futur ou le passé, c'est juste changer la date d'aujourd'hui par un certain nombre de jours, mois ou années. Les programmeurs font ça pour des rappels, des échéances ou pour traquer le temps qui passe.
 
-## Comment faire:
-Calculez une date future en utilisant la commande `date` de Fish Shell avec l'option `-v` pour ajuster la valeur. Par exemple, pour obtenir la date de demain:
-
+## How to: - Comment faire :
 ```Fish Shell
-set date (date -v+1d)
-echo $date
+# Ajouter 10 jours à aujourd'hui
+set future_date (date -d "+10 days" +"%Y-%m-%d")
+echo $future_date
+
+# Sortie attendue: 2023-04-21 (dépend de la date actuelle)
+
+# Soustraire 20 jours à partir d'aujourd'hui
+set past_date (date -d "-20 days" +"%Y-%m-%d")
+echo $past_date
+
+# Sortie attendue: 2023-03-22 (dépend de la date actuelle)
 ```
 
-Pour une date passée, changez simplement le signe `+` en `-`. Par exemple, pour la date d'hier:
+## Deep Dive - Plongée en profondeur
+L'histoire de la gestion des dates dans les langages de programmation est pleine de pièges, surtout à cause des fuseaux horaires et des calendriers différents. En Fish Shell, on utilise souvent `date`, une commande Unix, car elle est puissante et flexible. Attention aux systèmes où `date` se comporte différemment (comme macOS). Des alternatives? Des langages comme Python ou PHP avec leurs propres bibliothèques de dates. Pour l'implémentation, on manie avec soin les formats et les calculs pour éviter des erreurs subtiles comme des débordements d'heure ou de date.
 
-```Fish Shell
-set date (date -v-1d)
-echo $date
-```
-
-## Approfondissement:
-Historiquement, la commande `date` est présente depuis les premières versions d'UNIX. En Fish Shell, elle a été améliorée avec l'option `-v` pour ajuster les dates. 
-
-Parmi les alternatives à l'utilisation de la commande `date`, il y a des outils comme `datetime` de Python ou `Date` de JavaScript. Cependant, ces méthodes requièrent souvent d'inclure et d'appeler des librairies supplémentaires, alors que `date` est une commande intégrée à la Fish Shell.
-
-S'agissant des détails d'implémentation, la commande `date` utilise la bibliothèque standard C pour calculer les dates. Elle génère une valeur de temps en secondes, qu'elle ajuste ensuite en fonction des paramètres fournis.
-
-## Voir aussi:
-Pour plus d'informations sur le sujet, vous pouvez consulter :
-- La page de manuel de `date`: [https://fishshell.com/docs/current/commands.html#date](https://fishshell.com/docs/current/commands.html#date)
-- Les caractéristiques de la Fish Shell : [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+## See Also - Voir Aussi
+- La page de manuel de `date`: https://man7.org/linux/man-pages/man1/date.1.html
+- Gestion des dates en Python: https://docs.python.org/3/library/datetime.html
+- Gestion des dates en PHP: https://www.php.net/manual/en/book.datetime.php

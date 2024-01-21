@@ -1,7 +1,8 @@
 ---
-title:                "Lendo argumentos de linha de comando"
-html_title:           "Arduino: Lendo argumentos de linha de comando"
-simple_title:         "Lendo argumentos de linha de comando"
+title:                "Lendo argumentos da linha de comando"
+date:                  2024-01-20T17:55:52.862037-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,31 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-A leitura de argumentos da linha de comando refere-se à aptidão de um programa em processar informações inseridas através do terminal do sistema operacional. É útil para personalizar a execução de um script, como ajustar configurações ou especificar a fonte de um arquivo de dados.
+## What & Why?
+Ler argumentos da linha de comando permite que programas em Elixir recebam dados externos quando são iniciados, tornando-os customizáveis e flexíveis. Programadores usam esses argumentos para modificar o comportamento do programa sem mudar o código.
 
-## Como fazer:
-Para ler argumentos da linha de comando em Elixir, você usa a função padrão `System.argv()`. Este é um exemplo que lista cada argumento:
+## How to:
+Comece com um projeto Elixir. Aqui está o que você precisa:
 
-```Elixir
-Enum.each(System.argv(), fn arg -> IO.puts(arg) end)
+```elixir
+# Para capturar argumentos da linha de comando, use System.argv():
+
+defmodule CommandLineExample do
+  def main(args \\ System.argv()) do
+    IO.inspect(args)
+  end
+end
+
+# Para rodar, chame `CommandLineExample.main` na shell interativa:
+CommandLineExample.main(["arg1", "arg2", "arg3"])
+# Saída esperada: ["arg1", "arg2", "arg3"]
 ```
-Se você executar `elixir script.exs arg1 arg2 arg3`, a saída será:
+Para executar com argumentos de linha de comando reais, compile e execute o seguinte:
 
-```shell
-arg1
-arg2
-arg3
+```elixir
+# compile o código
+elixirc command_line_example.exs
+
+# execute com argumentos
+elixir -e "CommandLineExample.main" -- arg1 arg2 arg3
+# Saída esperada: ["arg1", "arg2", "arg3"]
 ```
 
-## Mergulho Profundo
-A capacidade de ler argumentos da linha de comando é uma prática comum na programação devido à sua origem nos sistemas operacionais baseados em Unix. Esta funcionalidade oferece uma interface conveniente para manipular a execução de um programa.
+## Deep Dive
+Historicamente, Elixir, assim como muitas linguagens no universo de Erlang VM, é usada para sistemas distribuídos. Argumentos da linha de comando são essenciais para iniciar nodos, configurar detalhes do sistema e passar flags de ambiente.
 
-Há alternativas dependendo do seu caso de uso. Se você precisa de uma análise mais complexa de argumentos, como suporte a bandeiras ("/f"), o Elixir tem a opção de utilizar bibliotecas externas como a `OptionParser`.
+Alternativamente, se você precisa de análise de argumentos mais sofisticada, como flags, olhe para bibliotecas externas como `OptionParser`:
 
-Os argumentos de linha de comando em Elixir são implementados como uma lista de strings. Cada item na lista representa um argumento adicional após o nome do script. Esta lista é retornada ao chamar `System.argv()`.
+```elixir
+parsed_args = OptionParser.parse(args, switches: [mode: :string])
+```
 
-## Ver Também
-1. Documentação oficial da System.argv(): https://hexdocs.pm/elixir/System.html#argv/0
-2. Guia para OptionParser: https://hexdocs.pm/elixir/OptionParser.html
-3. Artigo sobre o uso de argumentos da linha de comando: https://thinkingelixir.com/understanding-command-line-arguments-in-elixir-1-3-scripts/
+Ao ler argumentos da linha de comando diretamente, o Elixir os trata como uma lista de strings. Todo o parsing e a validação são por sua conta, o que é ótimo para controle granular, mas pode ser trabalhoso para casos mais complexos.
+
+## See Also
+- [Getting Started Guide](https://elixir-lang.org/getting-started/introduction.html)
+- [Erlang's documentation on argument handling](http://erlang.org/doc/man/init.html#get_arguments-0)

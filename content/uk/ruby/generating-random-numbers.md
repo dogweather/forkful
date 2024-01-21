@@ -1,6 +1,7 @@
 ---
 title:                "Генерація випадкових чисел"
-html_title:           "Java: Генерація випадкових чисел"
+date:                  2024-01-20T17:50:01.133257-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Генерація випадкових чисел"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,37 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ЩО І НАВІЩО?
+## What & Why? (Що і Чому?)
+Generating random numbers in Ruby is as simple as calling a method. Programmers do it for tasks like simulations, gaming, security, and testing.
 
-Генерування випадкових чисел - це процес створення чисел, які не передбачувані, в контексті, в якому вони використовуються. Програмісти це роблять для створення випадкового вмісту, моделювання випадкових ситуацій, черг, тестування та багато іншого.
-
-## ЯК ЦЕ ЗРОБИТИ:
-
-Ось декілька прикладів того, як генерувати випадкові числа в Ruby:
-
+## How to: (Як це зробити:)
 ```Ruby
-# Генеруючи випадкове число від 0 до 100
-puts rand(100) 
+# Basic random number
+rand_num = rand(100) # Random number between 0 and 99
+puts rand_num
 
-# Генеруючи випадкове число від 50 до 100
-puts rand(50..100)
+# Random number within a range
+range_num = rand(1..10) # Random number between 1 and 10
+puts range_num
+
+# Secure random number for cryptography
+require 'securerandom'
+secure_num = SecureRandom.random_number(100) # Random number between 0 and 99
+puts secure_num
 ```
-Приклад виводу:
-
-```Shell
-23 
-76
+Sample output could look like:
+```
+42
+7
+53
 ```
 
-## ПОГЛИБЛЕННЯ:
+## Deep Dive (Поглиблений Аналіз):
+Random number generation in Ruby relies on pseudorandom number generators (PRNG), which simulate randomness algorithmically. Historically, PRNG methods have evolved to offer better randomness and avoid patterns.
 
-Історично, генерування випадкових чисел використовувалось в різних сферах від криптографії до ігор та симулюваннь. Але з появою комп'ютерних систем, воно стало невід’ємною частиною програмування. 
+Alternatives to Ruby's built-in `rand` method include the `Random` class for more control, or external libraries like SecureRandom for cryptographic purposes.
 
-В мові програмування Ruby є декілька способів генерування випадкових чисел, тому ви можете вибрати той, який найбільше підходить для вашої конкретної ситуації. Для більш складних випадків, коли потрібен більш контрольований випадковий розподіл, можна використовувати модулі, такі як 'Random' і 'SecureRandom'.
+Implementation-wise, Ruby's `rand` pulls numbers from a PRNG that's seeded by default, or you can provide your own seed to replicate results.
 
-Усередині цих методів використовуються так називані "рівномерні псевдовипадкові генератори чисел", які створюють послідовність чисел, що здається випадковою. Для створення нової послідовності генератору потрібно сід - це невелике число, яке визначає стартове значення генератора.
-
-## ДИВІТЬСЯ ТАКОЖ:
-
-1. Ruby Doc про [`Kernel#rand`:](https://ruby-doc.org/core-2.5.1/Kernel.html#method-i-rand)
-2. Ruby Doc про [`Random`](https://ruby-doc.org/core-2.5.1/Random.html) клас
+## See Also (Дивись Також):
+- Ruby's `Random` class documentation: [https://ruby-doc.org/core-3.1.0/Random.html](https://ruby-doc.org/core-3.1.0/Random.html)
+- SecureRandom library for Ruby: [https://ruby-doc.org/stdlib-3.1.0/libdoc/securerandom/rdoc/SecureRandom.html](https://ruby-doc.org/stdlib-3.1.0/libdoc/securerandom/rdoc/SecureRandom.html)
+- About pseudorandom number generators: [https://en.wikipedia.org/wiki/Pseudorandom_number_generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)

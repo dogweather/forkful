@@ -1,7 +1,8 @@
 ---
-title:                "Laste ned en nettside"
-html_title:           "Elixir: Laste ned en nettside"
-simple_title:         "Laste ned en nettside"
+title:                "Nedlasting av en nettside"
+date:                  2024-01-20T17:43:29.550898-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Nedlasting av en nettside"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,53 +12,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Lasting av nettsider gjør at din Arduino kan hente data fra internett; det kan være alt fra værdata til aksjepriser. Programmerere gjør dette for å gi enheter tilgang til oppdateringer og interaktivitet med nettet.
 
-Å laste ned en webside innebærer å motta data fra en nettserver og lagre den i en lokal fil. Programmerere gjør dette for å hente og behandle data fra weben i deres prosjekter.
-
-## Slik Gjør Du:
-
-Her er et enkelt eksempel på hvordan du kan laste ned en webside med Ethernet-biblioteket i Arduino.
-
+## Hvordan gjør man det:
 ```Arduino
-#include <Ethernet.h>
+#include <WiFi.h>
+#include <HTTPClient.h>
+
+// Erstatt med ditt nettverksnavn og passord
+const char* ssid = "DITT_SSID";
+const char* password = "DITT_PASSORD";
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
 
-  // Oppstart Ethernet-klienten
-  if (Ethernet.begin(mac) == 0) {
-    Serial.println("Konfigurasjon mislyktes");
-    while (true);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Kobler til WiFi...");
   }
-  delay(1000);
+  
+  Serial.println("WiFi tilkoblet.");
 
-  // Koble til serveren
-  if (client.connect(server, 80)) {
-    client.println("GET / HTTP/1.1");
-    client.println("Host: www.example.com");
-    client.println("Connection: close");
-    client.println();
+  if(WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    http.begin("http://example.com"); // Adresse til nettsiden du vil laste ned
+    int httpCode = http.GET();
+
+    if(httpCode > 0) {
+        String payload = http.getString();
+        Serial.println(payload);
+    } else {
+        Serial.println("Feil under nedlasting av siden.");
+    }
+
+    http.end();
   }
 }
 
 void loop() {
-  // Skriv ut responsen fra serveren
-  if (client.available()) {
-    char c = client.read();
-    Serial.print(c);
-  }
+  // Ikke noe behov for kode her for nå.
 }
 ```
 
+Sample Output:
+```
+<!doctype html>
+<html>
+<head>
+    <title>Eksempel Nettside</title>
+...
+```
+
 ## Dypdykk
+Historisk har Arduino-enheter vært begrenset til håndtering av sensorer og aktuatorer uten nettforbindelse. Med introduksjonen av nettverksmoduler som ESP8266 og ESP32, er nedlasting av nettsider blitt vanlig. Alternative metoder inkluderer bruk av Ethernet-shields eller andre Wi-Fi-moduler. En viktig implementeringsdetalj er håndtering av HTTP-responser og sikring mot ugyldige nettsideadresser for å unngå feil i programmet.
 
-Laste ned websider har blitt en vanlig praksis siden webens begynnelse. Tidlig på 1990-tallet ble det vanlig å bruke protokoller som HTTP til å anmode data fra servere og lagre disse dataene lokalt.
-
-Som et alternativ til det innebygde Ethernet-biblioteket, kan du også bruke andre nettverksbiblioteker som WiFi101, WiFiNINA eller Ethernet2 avhengig av hardwaren din.
-
-Detaljer rundt implementeringsmetodene er varierte. Kodeeksempelet over bruker `GET`-metoden til å hente hovedsiden på webserveren ved hjelp av HTTP/1.1-protokollen. Den bruker 'client.available()' til å sjekke for tilgjengelige bytes å lese og viser deretter responsen.
-
-## Se Mer:
-
-- [Arduino Ethernet Library](https://www.arduino.cc/en/Reference/Ethernet)
-- [Protokoller](https://www.sololearn.com/Course/Networking/))
+## Se Også
+- Arduino's "WiFi"-bibliotekdokumentasjon: https://www.arduino.cc/en/Reference/WiFi
+- HTTPClient-biblioteket for ESP32: https://github.com/espressif/arduino-esp32/tree/master/libraries/HTTPClient
+- En guide for HTTP-forespørsler i Arduino: https://www.arduino.cc/en/Tutorial/LibraryExamples/HttpClient
+- Introduksjon til ESP8266 og ESP32: https://randomnerdtutorials.com/projects-esp8266/

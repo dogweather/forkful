@@ -1,7 +1,8 @@
 ---
-title:                "Utskrift av feilsøkingsresultat"
-html_title:           "Arduino: Utskrift av feilsøkingsresultat"
-simple_title:         "Utskrift av feilsøkingsresultat"
+title:                "Skrive ut feilsøkingsdata"
+date:                  2024-01-20T17:52:55.407095-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skrive ut feilsøkingsdata"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -11,45 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Printerfeilsøkingsoutput er en måte programmerere legger inn midlertidig kode for å spore feil eller betingelser gang imellom. Vi bruker det for å forstå hvorfor og hvordan noe uventet skjedde i koden.
+Å skrive ut debug informasjon betyr å printe ut data for å forstå hva koden din gjør eller finne feil. Programmerere gjør dette for å se programflyten eller verdiene som brukes under kjøring.
 
-## Hvordan gjøre det:
-Bruk `System.out.println()` for å skrive ut til konsollen. Her er et eksempel i Java:
+## Slik gjør du:
+Bruk `System.out.println()` for enkel output til konsollen.
 
-```Java
-public class DebugExample {
+```java
+public class DebugDemo {
     public static void main(String[] args) {
-        int x = 10;
-        int y = 0;
-        
-        System.out.println("Starting the division operation...");
-        
-        try {
-            int z = x / y;
-        } catch(Exception e) {
-            System.out.println("Caught an error: " + e);
+        int sum = 0;
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Legger til: " + i);
+            sum += i;
+            System.out.println("Summen er nå: " + sum);
         }
-        
-        System.out.println("Ended the operation.");
     }
 }
 ```
-Output:
 
+Eksempel på utskrift:
 ```
-Starting the division operation...
-Caught an error: java.lang.ArithmeticException: / by zero
-Ended the operation.
+Legger til: 1
+Summen er nå: 1
+Legger til: 2
+Summen er nå: 3
+Legger til: 3
+Summen er nå: 6
+Legger til: 4
+Summen er nå: 10
+Legger til: 5
+Summen er nå: 15
 ```
-
-Du får en umiddelbar innsikt i hva som skjer underveis i koden.
 
 ## Dypdykk
-Å printe debug-output er praksis som går tilbake til de tidligste dagene av programmering. Alternativer inkluderer bruken av feilsøkingsverktøy som lar deg «steg-for-steg» gjennom koden og inspisere data. Men, når det er sagt, er å printe debug-output ofte raskere og mer intuitivt for enkle feilsøkinger.
+Debug-utskrift er ikke ny. Det stammer fra de tidlige dagene av programmering da utviklere trengte måter å forstå og kontrollere programkjøringen på. Alternativer til `System.out.println()` inkluderer loggerrammer som `Log4j` eller `SLF4J` som tilbyr komplekse loggnivåer og formattering. Disse rammene hjelper til med å strukturere output bedre og er enklere å slå av i produksjon.
 
-Husk å fjerne alle `System.out.println()`-statements fra produksjonskode fordi de vil bremse ytelsen. Java bruker en synkronisert ut-datastrøm for `System.out.println()`, noe som kan føre til at tråder blokkeres mens de venter på at utgangene skal bli klare.
+Loggerrammene gjør det også mer håndterbart å eksportere loggene til eksterne systemer for analyse, noe som er vanskelig med enkel konsollutskrift. I Java kan implementering av logging også gjøres ved bruk av `java.util.logging`, som er innebygd i standardbiblioteket.
 
-## Se Også
-Feilsøking i Java: https://www.baeldung.com/java-debugging-strategies
-Logger i Java: https://www.vogella.com/tutorials/Logging/article.html
-IntelliJ IDEA debugging: https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html
+## Se også
+- [Logger (Java Platform SE 8)](https://docs.oracle.com/javase/8/docs/api/java/util/logging/Logger.html)
+- [SLF4J Project Page](http://www.slf4j.org/)
+- [Apache Log4j 2](https://logging.apache.org/log4j/2.x/)

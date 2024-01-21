@@ -1,6 +1,7 @@
 ---
 title:                "Å starte et nytt prosjekt"
-html_title:           "C: Å starte et nytt prosjekt"
+date:                  2024-01-20T18:03:49.865769-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Java"
 category:             "Java"
@@ -11,59 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-
-Å starte et nytt prosjekt handler om å skape en ny kodebase for et spesifikt formål. Programutviklere gjør dette for å løse et problem, forbedre en prosess, eller lage en tjeneste.
+Når du begynner et nytt prosjekt, starter du med en blank slate for å kode noe fra bunnen av. Programmerere gjør dette for å løse et nytt problem, utforske en ide, eller bygge en løsning som ikke finnes enda.
 
 ## Hvordan:
-
-Her viser vi hvordan man oppretter et nytt Java-prosjekt ved hjelp av et verktøy som IntelliJ IDEA.
-```
-Java
-// Create a new Project
-> File > New > Project...
-
-// Select `Java`
-> New Project > Java
-
-// Define project location and name
-> Project Location: D:\Projects\HelloWorld
-> Project Name: HelloWorld
-
-// Click Finish to complete
-> Finish
-```
-Når prosjektet er opprettet, lager vi en hovedklasse med en main metode:
-```
-Java
-public class Main {
+```java
+// Opprette en ny klasse
+public class HeiVerden {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        System.out.println("Hei, verden!");
     }
 }
-```
-Output blir da:
-```
-Java
-Hello, World!
+
+// Kompiler og kjør programmet
+// $ javac HeiVerden.java
+// $ java HeiVerden
+// Output: Hei, verden!
 ```
 
-## Deep Dive:
-
-Historisk sett har Java-prosjekter blitt startet manuelt ved å skrive koden fra bunnen av. I dag er det vanlig å bruke utviklerverktøy som IntelliJ IDEA, som håndterer mye av det grunnleggende oppsettet for deg.
-
-Det er mange måter å starte et nytt prosjekt på. Alternativ til IntelliJ IDEA, er verktøy som Eclipse eller Apache NetBeans. Valg av verktøy er ofte bestemt av programmererens preferanse eller prosjektets spesifikke krav.
-
-Et typisk Java-prosjekt har denne strukturen:
-```
-Java
-HelloWorld
-└───src
-    └───Main.java
-```
-Dette er relativt enkelt for små prosjekter, men for større prosjekter kan det være lurt å bruke byggeverktøy som Maven eller Gradle for å håndtere avhengigheter og byggeprosesser.
+## Dypdykk:
+Å starte et nytt prosjekt i Java har en lang historie siden språkets introduksjon i 1995. Tidligere trengte utviklere tyngre IDEer og komplekse oppsett, mens nå kan man bruke enkle teksteditorer og kommandolinjen. Alternativt til å manuelt opprette filer og mapper, kan rammeverk som Maven eller Gradle automatisere prosjektstrukturen og avhengighetene. Dette sikrer konsistens og effektivitet. Valget mellom manuell oppsett og bruk av automatiseringstjenester avhenger av prosjektets omfang og preferanser.
 
 ## Se Også:
-
-- IntelliJ IDEA: https://www.jetbrains.com/idea/
-- Apache Maven: https://maven.apache.org/
-- Gradle: https://gradle.org/
+- [Oracle Java Tutorials](https://docs.oracle.com/javase/tutorial/)
+- [Maven Getting Started Guide](http://maven.apache.org/guides/getting-started/)
+- [Gradle Guides](https://guides.gradle.org/)

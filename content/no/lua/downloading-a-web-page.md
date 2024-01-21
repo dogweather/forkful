@@ -1,7 +1,8 @@
 ---
-title:                "Laste ned en nettside"
-html_title:           "Elixir: Laste ned en nettside"
-simple_title:         "Laste ned en nettside"
+title:                "Nedlasting av en nettside"
+date:                  2024-01-20T17:44:27.431995-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Nedlasting av en nettside"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,39 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Last ned en nettside med Lua
-
 ## Hva & Hvorfor?
-
-Å laste ned en webside betyr å hente data fra en webserver til din lokale maskin. Programmerere gjør dette for å få tilgang til webinnhold for parsing, scrapping, eller offline bruk.
+Å laste ned en nettside betyr å hente HTML-koden til siden slik at vi kan jobbe med den lokalt. Programmerere gjør dette for å analysere innhold, hente data, eller sjekke tilgjengelighet.
 
 ## Slik gjør du:
-
-Her er et enkelt eksempel på hvordan du kan laste ned en webside med Lua ved bruk av luasocket biblioteket.
-
 ```Lua
-http = require("socket.http")
-url = "http://www.google.com"
+-- Last ned en nettside med Lua
 
-function download_page(url)
-  local page = http.request(url)
-  return page
+-- Sørg for å ha 'socket.http' installert
+local http = require("socket.http")
+local body, code = http.request("http://www.eksempel.no")
+
+if code == 200 then
+    print(body)
+else
+    print("Kunne ikke laste ned siden, statuskode: " .. code)
 end
-
-local result = download_page(url)
-print(result)
+```
+Sample Output:
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Din Tittel Her</title>
+</head>
+<body>
+    Innholdet på siden...
+</body>
+</html>
 ```
 
-Når du kjører koden over, bør du se HTML-innholdet i Google hjemmesiden som utskrift i konsollen.
-
 ## Dypdykk
-
-- **Historisk kontekst:** Lua ble designet i 1993 av Roberto Ierusalimschy, Luiz Henrique de Figueiredo, og Waldemar Celes fra Pontifical Catholic University of Rio de Janeiro i Brasil. Lua er superlett og fleksibelt, og er dermed en favoritt for innbygd bruk, prototyping og scripting.
-- **Alternativer:** Du kan laste ned websider ved hjelp av mange programmeringsspråk, nylig er Python og dens 'requests' bibliotek også mye brukt. Men valget av språk avhenger av mange faktorer; for eksempel bruker du Lua hvis du skal jobbe med innebygde systemer eller spillutvikling.
-- **Implementering detaljer:** Lua bruker en modul kalt socket.http for å håndtere HTTP-kommunikasjon. Dette er innpakket av `http.request` funksjonen, som sender en HTTP GET forespørsel til URLen som ble angitt.
+Før `socket.http` var den greie måten å laste ned nettsider i Lua, brukte programmere ofte kommandolinje-verktøy som `curl` via `os.execute`. Alternativer i Lua verden inkluderer `luasocket`, for enkel tilgang til TCP og UDP sockets, og `lua-requests` for en mere HTTP-sentrisk tilnærming som etterligner Python `requests` modulen. Ved nedlasting håndterer `socket.http` omformingshåndtering og feilkoder, men du må behandle omadresseringer og avansert HTTP funksjonalitet for hånd eller med ekstra biblioteker.
 
 ## Se også
-
-- Lua 5.4 reference manual: https://www.lua.org/manual/5.4/
-- LuaSocket manual: http://w3.impa.br/~diego/software/luasocket/http.html
-- Artikkel om hvordan å bruke Lua for Web Scraping: https://www.freecodecamp.org/news/scraping-in-lua/
+- LuaSocket dokumentasjon: http://w3.impa.br/~diego/software/luasocket/
+- LuaSec for HTTPS støtte: https://github.com/brunoos/luasec/wiki
+- 'lua-requests' for et alternativ som etterligner Python requests: https://github.com/JakobGreen/lua-requests

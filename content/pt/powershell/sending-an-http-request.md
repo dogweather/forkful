@@ -1,7 +1,8 @@
 ---
-title:                "Enviando uma solicitação http"
-html_title:           "Bash: Enviando uma solicitação http"
-simple_title:         "Enviando uma solicitação http"
+title:                "Enviando uma requisição HTTP"
+date:                  2024-01-20T18:00:32.571971-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Enviando uma requisição HTTP"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,32 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## What & Why?
+Enviar uma requisição HTTP significa pedir informações a um servidor web. Programadores fazem isso para interagir com APIs, buscar dados e comunicar-se com outros serviços pela internet.
 
-Enviar uma solicitação HTTP é pedir informações a um servidor da web. Programadores fazem isso para interagir com APIs, buscar dados, enviar dados, entre outros.
-
-## Como fazer:
-
-Para enviar uma solicitação HTTP no PowerShell, utilizamos o cmdlet `Invoke-WebRequest`. Aqui está um exemplo simples:
+## How to:
+Vamos usar o comando `Invoke-RestMethod` para enviar uma requisição GET simples:
 
 ```PowerShell
-$url = "http://api.exemplo.com"
-$response = Invoke-WebRequest -Uri $url
-echo $response.Content
+$response = Invoke-RestMethod -Uri 'http://api.exemplo.com/dados' -Method Get
+Write-Output $response
 ```
-Isso chamará a URL e imprimirá a resposta do conteúdo.
 
-## Mergulho profundo
+Para enviar uma requisição POST com corpo JSON, faríamos:
 
-Historicamente, enviávamos solicitações HTTP em PowerShell usando a classe .NET `System.Net.WebRequest`, mas desde o PowerShell 3.0, temos o cmdlet `Invoke-WebRequest` muito mais amigável.
+```PowerShell
+$body = @{
+    chave = 'valor'
+    outro = 'dado'
+} | ConvertTo-Json
 
-Se você precisar de uma alternativa ao `Invoke-WebRequest`, pode considerar o `Invoke-RestMethod`, que analisa a resposta diretamente para você quando possível.
+$response = Invoke-RestMethod -Uri 'http://api.exemplo.com/envio' -Method Post -Body $body -ContentType 'application/json'
+Write-Output $response
+```
 
-Ao enviar uma solicitação HTTP, o sistema cria uma conexão TCP com o servidor web, envia os detalhes da solicitação (ou seja, GET, POST, cabeçalhos, etc.), e então espera e coleta a resposta. O `Invoke-WebRequest` abstrai a maior parte disso para você, mas é importante saber o que está acontecendo nos bastidores.
+## Deep Dive
+O `Invoke-RestMethod` é um cmdlet disponível no PowerShell que simplifica o envio de requisições HTTP. Ele foi introduzido no PowerShell 3.0 e se tornou uma ferramenta principal para interações web. Alternativas incluem `Invoke-WebRequest`, mas este é mais verboso para trabalhar com APIs RESTful, uma vez que retorna mais dados e cabeçalhos de resposta. Em comparação, o `Invoke-RestMethod` retorna diretamente o conteúdo da resposta, frequentemente em um objeto PowerShell.
 
-## Veja também
+Numa requisição POST, comumente usa-se `ConvertTo-Json` para formatar corretamente o corpo da mensagem. A requisição será enviada com o header 'Content-Type' configurado para 'application/json' para que o servidor saiba como processar o corpo da mensagem.
 
-1. [Documentação oficial do Microsoft PowerShell](https://docs.microsoft.com/pt-br/powershell/)
-3. [Página da web do PowerShell cmdlet Invoke-WebRequest](https://docs.microsoft.com/pt-br/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
+Lembrando que você precisa lidar com autenticação, timeouts, e outros aspectos de uma conexão HTTP que podem ser configurados através de parâmetros adicionais do cmdlet.
 
-Lembre-se, a prática leva à perfeição. Continue codificando e explorando!
+## See Also
+- [Documentação oficial do Invoke-RestMethod](https://docs.microsoft.com/pt-br/powershell/module/microsoft.powershell.utility/invoke-restmethod)

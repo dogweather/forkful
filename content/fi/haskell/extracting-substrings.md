@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:46:05.335070-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,36 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+Subjonojen poiminta tarkoittaa merkkijonon osien irrottamista. Ohjelmoijat tekevät sitä, kun tarvitsevat käsitellä merkkijonojen erityisiä segmenttejä – kuten tietojen siistimistä tai merkkijonon analysointia.
 
-Alistringien erottaminen tarkoittaa merkkijonon osien valitsemista ja käyttämistä. Tämä on hyödyllistä, kun haluamme tarkastella tai käyttää vain osaa datasta.
-
-## Näin se toimii:
-
-Haskellissa voimme käyttää erilaisia funktioita alistringien erottamiseksi. Tässä on muutama esimerkki:
+## How to:
+Haskellissa käytetään usein funktioita `take`, `drop` ja `substring` merkkijonorakenteiden käsittelyyn. Tässä pari esimerkkiä:
 
 ```Haskell
--- 'take' ottaa n ensimmäistä merkkiä
-take 5 "Hello, World!"    -- Palauttaa "Hello"
+import Data.List
 
--- 'drop' jättää n ensimmäistä merkkiä pois
-drop 7 "Hello, World!"    -- Palauttaa "World!"
+-- Otetaan merkkijonon alusta 5 merkkiä
+takeExample :: String -> String
+takeExample = take 5
 
--- 'splitAt' jakaa merkkijonon n kohdasta kahteen osaan
-splitAt 5 "Hello, World!" -- Palauttaa ("Hello",", World!")
+-- Poistetaan alusta 5 merkkiä
+dropExample :: String -> String
+dropExample = drop 5
+
+-- Otetaan merkkijonosta alkaen kolmas merkki ja otetaan 5 merkkiä
+substringExample :: String -> String
+substringExample = take 5 . drop 2
+
+-- Esimerkkien käyttö:
+main :: IO ()
+main = do
+  let testString = "Moikka maailma!"
+  putStrLn $ takeExample testString      -- Tulostuu "Moikk"
+  putStrLn $ dropExample testString      -- Tulostuu "maailma!"
+  putStrLn $ substringExample testString -- Tulostuu "ikka "
 ```
 
-## Syvä sukellus:
+## Deep Dive
+Haskellin funktiot `take` ja `drop` ovat peräisin funktionaalisen ohjelmoinnin maailmasta ja ne ovat olleet kielessä sen alkuaikoina. Substring-toiminnallisuudelle ei ole vakioratkaisua, mutta edellä esitetyt funktiot tekevät työn hyvin. Nämä funktiot toimivat 'lazy evaluation' periaatteella, mikä on tehokasta isojen datasettien kanssa.
 
-Haskell otettiin käyttöön 1990-luvulla, ja sen standardikirjasto tarjoaa erilaisia tapoja merkkijonojen käsittelyyn. Yllä käytetyt 'take', 'drop' ja 'splitAt' -funktiot ovat osa tätä kirjastoa.
+Vaihtoehtoina on kirjastoja kuten `text` ja `bytestring`, jotka tarjoavat tehokkaampia työkaluja, kun työstetään suuria tekstiaineistoja. Suorituskyky syistä, näiden kirjastojen käyttäminen voi olla fiksumpaa, jos sovellus käsittelee paljon dataa.
 
-Vaihtoehtoisesti voimme käyttää 'substring' -funktiota 'Data.Text' kirjastosta, joka tarjoaa tehokkaampaa merkkijonojen käsittelyä suurille datamassoille.
+Haskellissa voit myös toteuttaa substring-funktion itse, mikä antaa lisää joustavuutta ja voi olla opettavaista, erityisesti jos haluat ymmärtää miten Haskellissa työskennellään listojen ja rekursiivisten funktioiden kanssa.
 
-Näiden funktioiden implementointi Haskellissa perustuu sen 'lazy-evaluation' -periaatteelle, joka mahdollistaa tehokkaan suorituskyvyn ja muistinkäytön.
-
-## Katso myös:
-
-Linkkejä liittyviin lähteisiin:
-
-- Merkkijonojen käsitteleminen Haskellin peruskirjastossa: https://haskell-lang.org/tutorial/string-types
-- Data.Text kirjaston dokumentaatio: http://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html
+## See Also
+- Haskell Wiki: [https://wiki.haskell.org](https://wiki.haskell.org/Introduction)
+- "Learn You a Haskell for Great Good!" online-kirja: [http://learnyouahaskell.com](http://learnyouahaskell.com/)
+- `text` kirjaston dokumentaatio: [https://hackage.haskell.org/package/text](https://hackage.haskell.org/package/text)
+- `bytestring` kirjaston dokumentaatio: [https://hackage.haskell.org/package/bytestring](https://hackage.haskell.org/package/bytestring)

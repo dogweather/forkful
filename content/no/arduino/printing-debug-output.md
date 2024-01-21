@@ -1,7 +1,8 @@
 ---
-title:                "Utskrift av feilsøkingsresultat"
-html_title:           "Arduino: Utskrift av feilsøkingsresultat"
-simple_title:         "Utskrift av feilsøkingsresultat"
+title:                "Skrive ut feilsøkingsdata"
+date:                  2024-01-20T17:51:54.266485-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skrive ut feilsøkingsdata"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -11,31 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Trykking av feilsøkingsutdata er det når programmerere logger data for å spore variabler og systemtilstand under kjøringen av et program. Dette gjør at de kan identifisere og fikse feilene raskere og mer effektivt.
+Å skrive ut feilsøkingsdata ("debug output") handler om å vise programdata og -tilstander til skjermen for å forstå hva koden faktisk gjør. Programmerere gjør dette for å finne og rette feil effektivt.
 
-## Hvordan:
-Her er noen nyttige eksempler på hvordan du kan prøve ut feilsøkingsutskrift i Arduino.
-
+## Slik gjør du:
 ```Arduino
 void setup() {
-  Serial.begin(9600); //starter serial kommunikasjon  
+  Serial.begin(9600); // Starter seriell kommunikasjon
 }
+
 void loop() {
-  int sensorValue = analogRead(A0); //leser sensor verdien fra A0 pin
-  Serial.println(sensorValue); //printer sensorverdien for feilsøk
-  delay(1000); //venter i 1 sekund
+  Serial.println("Hei, verden!"); // Skriver ut til seriell monitor
+  delay(1000); // Venter ett sekund før neste utskrift
 }
 ```
+Eksempel på output:
+```
+Hei, verden!
+Hei, verden!
+Hei, verden!
+...
+```
 
-Når du laster opp denne koden, vil Arduino lese sensorverdien hvert sekund og skrive den ut i den serielle monitoren. Dette hjelper oss med å holde oversikt over sensordataene.
-
-## Dyp Dykk
-Historisk ble feilsøkingsutskrift brukt fordi verktøyene for interaktiv feilsøking var primitive eller ikke-eksisterende. Selv om vi nå har mer sofistikerte feilsøkingsverktøy, er feilsøkingsutskrift fortsatt et nyttig verktøy på grunn av dets enkelhet og brede bruksområder.
-
-Det finnes alternativer til feilsøkingsutskrift, som f.eks interaktive feilsøkere, som gir mer detaljert informasjon og mer avansert kontroll over kjøringen. Men de kan være mer kompliserte og overkill for mange situasjoner.
-
-Fra implementeringsperspektivet er `Serial.print` og `Serial.println` funksjoner i Arduino brukt for å sende data (tekst, variabler) fra Arduino til datamaskinen over USB-tilkoblingen. Disse funksjonene er en del av Serial Library.
+## Dypdykk
+Før "Serial" ble standard, var feilsøking vanskeligere, og lysdioder eller fysiske instrumenter ble brukt for å indikere status. Alternativer til `Serial` inkluderer LCD-skjermer eller nettverksprotokoller som MQTT for ekstern feilsøking. Når du bruker `Serial`, sendes data gjennom UART (Universal Asynchronous Receiver Transmitter) på Arduino-kortet. Overføringshastigheten (baudrate) må være lik på begge ender.
 
 ## Se Også
-1. [Arduino Reference - Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-3. [Understanding the Serial.print() Function in Arduino](https://www.makerguides.com/arduino-serial/)
+Arduino sin offisielle "Serial" dokumentasjon:
+[https://www.arduino.cc/reference/en/language/functions/communication/serial/](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+
+Forståelse av UART:
+[https://learn.sparkfun.com/tutorials/serial-communication](https://learn.sparkfun.com/tutorials/serial-communication)
+
+Feilsøking ved bruk av MQTT:
+[https://randomnerdtutorials.com/what-is-mqtt-and-how-it-works/](https://randomnerdtutorials.com/what-is-mqtt-and-how-it-works/)

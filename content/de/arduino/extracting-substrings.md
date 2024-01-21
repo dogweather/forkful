@@ -1,7 +1,8 @@
 ---
-title:                "Teilzeichenketten extrahieren"
-html_title:           "PowerShell: Teilzeichenketten extrahieren"
-simple_title:         "Teilzeichenketten extrahieren"
+title:                "Teilstrings extrahieren"
+date:                  2024-01-20T17:44:58.321543-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Teilstrings extrahieren"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -11,26 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Extrahieren von Teilstrings (Substrings) ist das Herausnehmen von kleinen Teilen aus einem größeren String. Diese Fähigkeit ist unverzichtbar, wenn du bestimmte Teile Daten aus einem gesamten Informationsstring benötigst.
+Das Herausfiltern von Teilstrings, also Substrings, ist der Prozess des Isolierens eines bestimmten Teils eines Strings. Programmierer nutzen das, um spezifische Daten aus größeren Textmengen zu extrahieren oder um Datenformate anzupassen.
 
-## So geht's:
-In Arduino verwenden wir die Methode substring(). Hier ist ein Beispiel, wie es funktioniert:
-
+## How to:
 ```Arduino
-String str = "Hallo, Welt!";
-String substr = str.substring(7, 12);
-Serial.println(substr);  // Ausgabe: "Welt"
+String text = "Hallo Welt, hier Arduino!";
+int start = 6;
+int ende = 10;
+String teilString = text.substring(start, ende);
+
+Serial.begin(9600);
+while(!Serial); // Warten auf die Serial-Verbindung
+Serial.println(teilString); // Gibt "Welt" aus
+```
+Ausgabe:
+```
+Welt
 ```
 
-In diesem Beispiel wird ein Teilstring, der aus den Zeichen 7 bis 11 besteht (beachte, dass das zweite Argument den Index nach dem letzten gewünschten Zeichen angibt) aus dem String "str" extrahiert und als "substr" gespeichert. Die Ausgabe ist 'Welt'.
+## Deep Dive
+Arduino-Programmierer extrahieren Substrings schon seit den frühen Tagen des Boards, um Sensordaten zu parsen oder Kommunikation zu erleichtern. Während `substring()` die gängige Methode in der Arduino-Welt ist, nutzen andere Sprachen Methoden wie `substr()` oder `slice()`. Bei der Implementierung ist zu beachten, dass der start-Index inklusiv, der ende-Index jedoch exklusiv ist. Für ressourcenbeschränkte Systeme ist es wichtig, Effizienz und Speichernutzung bei der Verwendung von String-Operationen zu berücksichtigen.
 
-## Vertiefung
-Das Extrahieren von Substrings ist ein klassischer Ansatz, der seit den Anfängen der Programmierung genutzt wird. Es gibt Alternativen zu substring() wie strtok() in der C-Standardbibliothek, aber die Verwendung von substring() in Arduino ist am einfachsten, da es direkt die String-Klasse verwendet und keine zusätzlichen Bibliotheken benötigt.
-
-Die Implementierung von substring() in Arduino erstellt intern eine neue Instanz der String-Klasse und kopiert die Zeichen des Ursprungs-Strings in den neuen String. Es ist wichtig, den Speicherverbrauch im Auge zu behalten, da dies einen Einfluss auf die Performance haben kann.
-
-## Siehe auch
-Um dein Wissen über das Arbeiten mit Strings in Arduino weiter zu vertiefen, sieh dir bitte die folgenden Links an:
-
-1. [Arduino String-Referenz](https://www.arduino.cc/reference/de/language/variables/data-types/string/): Hier findest du die offizielle Dokumentation zur Arbeit mit Strings in Arduino.
-2. [Substring in Arduino: A complete guide](https://www.makerguides.com/arduino-string-substring/): In diesem Leitfaden werden alle Aspekte bezüglich Teilstrings in Arduino eingehend behandelt.
+## See Also
+- Arduino String Reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/substring/
+- Arduino Forum: https://forum.arduino.cc/
+- Tutorial zum Arbeiten mit Strings in Arduino: https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringSubstring

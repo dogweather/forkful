@@ -1,6 +1,7 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Lua: Tekstitiedoston lukeminen"
+date:                  2024-01-20T17:54:09.803081-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,31 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mikä & Miksi?)
 
-Tekstitiedoston lukeminen tarkoittaa tiedostossa olevan tekstin lukemista muistiin, käsiteltäväksi ja/tai muutettavaksi koodissa. Ohjelmoijat tekevät tämän yleisesti tiedon lukemiseksi ja kirjoittamiseksi tiedostoihin, jolloin sovellukset voivat säilyttää tai jakaa tietoja.
+Lukemalla tekstitiedostoa ohjelma voi käsitellä tiedon sisältöä. Tämä on peruskauraa, koska tiedot tallennetaan ja jaetaan usein tekstitiedostoina.
 
-## Näin teet:
+## How to: (Kuinka tehdä:)
 
-Voit lukea tiedoston Elixirillä `File.read/1` -funktiolla. Esimerkki:
+Elixiriä käyttäen tekstitiedoston lukeminen:
 
-```Elixir
-{:ok, data} = File.read("example.txt")
-IO.inspect(data)
+```elixir
+# Lue koko tiedosto kerralla
+content = File.read!("example.txt")
+IO.inspect(content)
+
+# Lue tiedosto rivi riviltä
+File.stream!("example.txt")
+|> Enum.each(fn line -> IO.puts(line) end)
 ```
 
-Suorittamalla tämän koodin, luetaan "example.txt" tiedoston sisältö ja tulostetaan se.
+Esimerkin tuloste:
 
-## Syvempi tarkastelu
+```
+"Terve! Tämä on esimerkkitiedosto.\nSeuraava rivi alkaa tästä..\n"
+Terve! Tämä on esimerkkitiedosto.
+Seuraava rivi alkaa tästä..
+```
 
-Elixirin `File.read/1` -funktio on saanut inspiraationsa perinteisistä UNIX-työkaluista, jotka tekevät tiedostojen käsittelystä selkeää ja tehokasta. 
+## Deep Dive (Syväsukellus)
 
-Työkaluja tämän toteuttamiseksi on myös muita. Esimerkiksi `File.stream!/1` -funktio, joka voi lukea suuria tiedostoja pieninä palasina estämättä muita prosesseja.
+Tekstitiedoston lukeminen on peräisin aikojen alusta, kun tietokoneet alkoivat muokata ja tallentaa tietoa. 
 
-`File.read/1` toteutus käyttää sisäisesti Erlangin `:file.read_file/1` -funktiota. Tämän ansiosta yhteensopivuus muiden BEAM-koneella toimivien kielten (kuten Erlang ja LFE) kanssa on taattu.
+Elixirissä `File.read!/1` on helppo tapa lukea tiedostoja, koska se palauttaa koko sisällön merkkijonona. Jos tiedosto on iso tai haluat prosessoida sisältöä rivi kerrallaan, käytä `File.stream!/1`, joka palauttaa enumerablen.
 
-## Katso myös
+Vaihtoehtoina voisi käyttää myös kolmannen osapuolen kirjastoja, mutta vakiokeinot toimivat hyvin ja ovat suoraviivaisia.
 
-- [Elixirin virallinen dokumentaatio - File module](https://hexdocs.pm/elixir/File.html)
-- [Erlangin :file Module](http://erlang.org/doc/man/file.html)
-- [The Pragmatic Bookshelf - Programming Elixir ≥ 1.6](https://pragprog.com/titles/elixir16/programming-elixir-1-6/)
+Tarkkana pitää olla virhekäsittelyn kanssa. `File.read!/1` heittää virheen, jos tiedoston lukemisessa on ongelma. `File.read/1` palauttaa tuple-rakenteen jossa on `:ok` tai `:error`.
+
+## See Also (Katso Myös)
+
+- Elixirin virallinen dokumentaatio tiedoston käsittelystä: [https://hexdocs.pm/elixir/File.html](https://hexdocs.pm/elixir/File.html)
+- Elixir Forum, keskustelua tiedostonlukemisesta: [https://elixirforum.com/](https://elixirforum.com/)
+- "Programming Elixir" kirja, josta saa syvempää tietoa kielen paradigmoista, mukaan lukien tiedoston käsittely.

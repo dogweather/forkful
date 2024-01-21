@@ -1,7 +1,8 @@
 ---
-title:                "पैटर्न से मिलते जुलते वर्णों को हटाना"
-html_title:           "Elixir: पैटर्न से मिलते जुलते वर्णों को हटाना"
-simple_title:         "पैटर्न से मिलते जुलते वर्णों को हटाना"
+title:                "पैटर्न से मेल खाते अक्षरों को हटाना"
+date:                  2024-01-20T17:43:48.022595-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पैटर्न से मेल खाते अक्षरों को हटाना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,27 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+पैटर्न के हिसाब से कैरेक्टर्स को हटाना मतलब है गिवेन शर्तों को मैच करने वाले अक्षरों को स्ट्रिंग से निकालना। प्रोग्रामर ऐसा क्यों करते हैं? सिम्पल है, कभी-कभी हमें पूरी तरह से साफ़ सुथरी स्ट्रिंग की जरूरत होती है, जैसे कि URL से स्पेशल कैरेक्टर्स हटाना या यूजर इनपुट से अनवांटेड स्पेसेज को ट्रिम करना।
 
-पैटर्न से मेल खाते वर्णों को हटाना मतलब होता है कुछ निर्दिष्ट वर्णों को स्ट्रिंग से निकालना। प्रोग्रामर इसे अनावश्यक स्ट्रिंग के हिस्से हटाने, कस्टम फॉर्मैटिंग लागू करने और डेटा क्लीनअप करने के लिए करते हैं। 
-
-## कैसे:
-
+## How to: (कैसे करें:)
 ```Swift
-let string = "नमस्ते दुनिया!"
-let characterSet = CharacterSet(charactersIn: "नते दय!")
-let result = string.trimmingCharacters(in: characterSet)
-print(result) // prints "मस्तुनि"
+import Foundation
+
+let originalString = "यह एक परीक्षण स्ट्रिंग है! 123!"
+let pattern = "[^\\w\\s]"
+
+if let regex = try? NSRegularExpression(pattern: pattern, options: []) {
+    let range = NSRange(location: 0, length: originalString.utf16.count)
+    let modifiedString = regex.stringByReplacingMatches(in: originalString, options: [], range: range, withTemplate: "")
+    print(modifiedString) // Output: यह एक परीक्षण स्ट्रिंग है 123
+}
 ```
 
-इस कोड का उद्घाटन करें, आपको एक स्ट्रिंग `नमस्ते दुनिया!` मिलेगी। फिर `CharacterSet` `नते दय!` सेट किया जाता है। इसके बाद, हम स्ट्रिंग से किरदारों को हटाने के लिए `trimmingCharacters(in:)` का उपयोग करते हैं। अंत में, यदि हम परिणामत: प्रिंट करते हैं, तो "मस्तुनि" मिलेगा।
+ऊपर दिया गया कोड `originalString` से सभी non-word और non-space कैरेक्टर्स को हटाता है, जो `pattern` में दर्शाया गया है।
 
-## गहरी चर्चा:
+## Deep Dive (विस्तार से जानकारी)
+जब से स्ट्रिंग्स को हैंडल करने के लिए रेगुलर एक्सप्रेशंस का आविष्कार हुआ, कैरेक्टर्स को मैचिंग पैटर्न्स के जरिए हटाना बहुत आसान हो गया। `NSRegularExpression` Swift में यह कार्य बखूबी करता है। वैकल्पिक तौर पर, डेवलपर्स `filter` या `replacingOccurrences(of:with:)` जैसे फंक्शन्स का भी उपयोग कर सकते हैं, लेकिन ये इतने पावरफुल नहीं हैं जबकि पैटर्न्स कॉम्प्लेक्स हों।
 
-Swift में characters को हटाने के बारे में जब बात होती है, तो `trimmingCharacters(in:)` फंक्शन सबसे प्रयोगिक और मुख्य उपकरण होता है। यह फंक्शन Swift भाषा के पहले वर्जन से ही उपलब्ध है और इसकी वजह से, Swift प्रोग्रामर अपने स्ट्रिंग को आसानी से तैयार और संशोधित कर सकते हैं। इसके अतिरिक्त, आप `filter(_:)` फंक्शन का उपयोग करके कस्टम फ़िल्टर भी लागू कर सकते हैं। ऐसा करने पर आपको अधिक नियंत्रण मिलेगा, लेकिन यह अधिक कोड लिखने की आवश्यकता हो सकती है।
-
-## देखें भी:
-
-1. "How to Use Regex with Swift": [Link](https://www.raywenderlich.com/5765-regular-expressions-tutorial-getting-started)
-2. "Swift String and Characters": [Link](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-3. "Understanding CharacterSet in Swift": [Link](https://flaviocopes.com/swift-character-set/)
+## See Also (और भी जानकारी के लिए)
+- [Apple Documentation on NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Ray Wenderlich Swift Regex Tutorial](https://www.raywenderlich.com/5765-regular-expressions-tutorial-getting-started-with-regex-in-swift)

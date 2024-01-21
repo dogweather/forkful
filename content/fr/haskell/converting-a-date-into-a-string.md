@@ -1,7 +1,8 @@
 ---
-title:                "Convertir une date en chaîne de caractères"
-html_title:           "Gleam: Convertir une date en chaîne de caractères"
-simple_title:         "Convertir une date en chaîne de caractères"
+title:                "Conversion d'une date en chaîne de caractères"
+date:                  2024-01-20T17:36:43.360644-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Conversion d'une date en chaîne de caractères"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,38 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ? 
-
-Convertir une date en chaîne de caractères consiste à transformer une structure de données de type date dans un langage de programmation en une chaîne de caractères. Les programmeurs le font pour faciliter l'affichage et le stockage qui sont souvent plus compatibles avec le type chaîne de caractères.
+## Quoi & Pourquoi ?
+Convertir une date en chaîne nous permet de la formater pour l'affichage. Les programmeurs le font pour rendre les dates compréhensibles par les humains ou préparer pour la sérialisation.
 
 ## Comment faire :
-
-Dans Haskell, vous pouvez utiliser la bibliothèque `Data.Time` pour le faire. Voici un exemple de code :
-
-```haskell
+```Haskell
 import Data.Time
 
+-- Convertit une date en une chaîne avec un formatage standard
 dateToString :: IO String
 dateToString = do
     current_time <- getCurrentTime
-    let format = formatTime defaultTimeLocale "%Y-%m-%d %H:%M:%S " current_time
-    return format
+    let date = utctDay current_time
+    return $ showGregorian date
+
+main :: IO ()
+main = do
+    dateString <- dateToString
+    putStrLn dateString
+```
+Sortie possible :
+```
+2023-03-15
 ```
 
-Quand vous exécutez ce code, vous obtiendrez une sortie comme celle-ci : 
+## Plongeon en profondeur
+Haskell utilise le package `time` pour gérer les dates. Historiquement, `Data.Time` est le module standard pour travailler avec le temps et les dates, succédant à des bibliothèques moins complètes. Alternativement, on peut utiliser `formatTime` pour un contrôle précis sur le format de sortie. L'implémentation repose sur des types abstraits comme `UTCTime`, ce qui assure la validité des données.
 
-```haskell
-"2022-03-07 14:30:55 "
-```
-
-## Plongée en profondeur :
-
-Haskell n'a pas toujours eu une manipulation de date et d'heure intégrée, celle-ci a été introduite avec la bibliothèque `Data.Time` dans la version 6.6. Avant cela, les programmeurs devaient implémenter manuellement la conversion des dates en chaînes de caractères, souvent à travers des bibliothèques externes.
-
-Comme alternative, vous pourriez opter pour la bibliothèque `time-format` qui vous permet d'utiliser des formats de style strftime pour convertir une date en chaîne de caractères. C'est une option si vous préférez un contrôle plus minutieux sur le formatage.
-
-La fonction `formatTime` de la bibliothèque `Data.Time` prend deux arguments, une spécification de format qui détermine comment la date doit être convertie en chaîne de caractères, et le temps à formater. La fonction renvoie ensuite la chaîne de caractères formatée.
-
-## Voir aussi :
-
-1. [Data.Time - Haskell Documentation](http://hackage.haskell.org/package/time-1.11.1.1/docs/Data-Time.html)
+## Voir aussi
+- [Haskell `time` package](https://hackage.haskell.org/package/time)
+- [`Data.Time.Format` documentation](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)
+- [Haskell Hierarchical Libraries](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/)

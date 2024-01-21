@@ -1,6 +1,7 @@
 ---
 title:                "חילוץ תת-מחרוזות"
-html_title:           "Bash: חילוץ תת-מחרוזות"
+date:                  2024-01-20T17:45:50.860875-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חילוץ תת-מחרוזות"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,26 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-חליפת substrings היא הפעולה של רמת ה-string בה אנחנו הופכים כחלק ממחרוזת למחרוזת נפרדת. זה שימושי כאשר נדרשים חלקים מסוימים ממחרוזת, דבר המאפשר חילוף, ניתוח ואינטרפרטציה של אותם חלקים.
+## What & Why?
+מה זה חלקי תת-מחרוזות ולמה צריך אותם? זה הפעולה של לקיחת חתיכת טקסט מתוך מחרוזת קיימת. תכנותים עושים את זה בשביל לעבד ולנתח מידע סציפי ממחרוזות.
 
-## איך ל:
+## How to:
+ב-Elm, אתה יכול להשתמש בפונקציות כמו `String.slice` כדי לקחת חלקים ממחרוזת. דוגמה:
+
 ```Elm
-substring : Int -> Int -> String -> Maybe String
-substring start end string =
-    if start >= 0 && end <= String.length string && start <= end then
-        Just (String.slice start end string)
-    else
-        Nothing
+import String
+
+main =
+    let
+        original = "שלום, עולם!"
+        substring = String.slice 6 11 original
+    in
+    text substring
 ```
-קוד זה מאמץ את תפקידו של מחרוזת `substring` ב- Elm. הוא מחזיר `Just substring`, ואם התנאים לא מתקיימים - `Nothing`.
 
-## צלילה מעמיקה
-(1) הפונקציה `substring` ב- Elm אף פעם לא הייתה חלק בשפה, כי היא אפשרית למימוש בצורה פשוטה באמצעות פעולה של `slice`.
-(2) Elm קונצנטרי בביטחון הקוד, ולכן הוא מבקש מהמתכנת שיבדוק את תנאים קדם מקדים.
-(3) `slice` מומש ב- JavaScript שעליו מבוסס Elm, והוא משתמש ב-JavaScript native `substring` אם התנאים מתקיימים.
+הפלט יהיה:
 
-## לראות גם
-1. דוקומנטציה ל- [`String`](https://package.elm-lang.org/packages/elm/core/latest/String): מאגר הפקדים המלא של אייל.
-2. [איך להשתמש להבין את `Maybe`](https://guide.elm-lang.org/error_handling/maybe.html): מדריך לשימוש בהכנות `Maybe` כחלק מהוא איילת.
-3. [`String.slice`](https://package.elm-lang.org/packages/elm/core/latest/String#slice): את הדוקומנטציה לפעולה `slice`.
+```
+עולם
+```
+
+## Deep Dive
+בעבר, שפות תכנות שונות התמודדו אית חילוץ תת-מחרוזות בדרכים רבות. ב-Elm, הפונקציה `String.slice` היא הפופולרית ביותר לכך. `String.slice` מקבלת שני מפתחות, התחלה וסוף, ותחזיר את החלק ביניהם. חשוב להבין שהאינדקס של הסיום לא כלול. אם אינדקס ההתחלה גדול מאינדקס הסיום, היא תחזיר מחרוזת ריקה.
+
+חלופות כוללות שימוש ב- `String.left` ו- `String.right` לחילוץ מחרוזות מהתחלה או סוף בהתאמה, אבל פחות גמישות.
+
+## See Also
+קרא עוד במסמכי Elm:
+- [String.slice](https://package.elm-lang.org/packages/elm/core/latest/String#slice)
+- [String](https://package.elm-lang.org/packages/elm/core/latest/String)
+
+לעומק יותר על מחרוזות ב-Elm, בדוק:
+- [An Introduction to Elm Strings](https://elmprogramming.com/string.html)

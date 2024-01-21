@@ -1,7 +1,8 @@
 ---
-title:                "Komentorivin argumenttien lukeminen"
-html_title:           "Elm: Komentorivin argumenttien lukeminen"
-simple_title:         "Komentorivin argumenttien lukeminen"
+title:                "Komennoriviparametrien lukeminen"
+date:                  2024-01-20T17:55:24.291492-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Komennoriviparametrien lukeminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,44 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Komennorivin argumenttien lukeminen tarkoittaa parametrien vastaanottamista ohjelmaan komentokehotteesta. Se on hyödyllistä, koska voimme muokata ohjelman toimintaa lennosta käyttäjän syötteillä.
 
-Komennon riviparametrien lukeminen on toimintatapa, jolla käyttäjän syötteitä voidaan lukea suoraan ohjelman käynnistyksen yhteydessä. Tätä tarvitaan usein, jolloin ohjelma voi käsitellä dynaamisia tietoja tai suorittaa erilaisia tehtäviä käyttäjän määritelmän mukaan.
-
-## Näin se tehdään:
-
-Tässä yksinkertainen esimerkki C-kielen koodista, jossa luetaan ja tulostetaan komennot riviparametrit.
-
-```C 
+## How to: (Kuinka tehdä:)
+```C
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    int i;
-    for(i = 0; i < argc; i++) {
-        printf("Argument %d: %s\n", i, argv[i]);
+    printf("Ohjelmaan annettujen argumenttien lukumäärä: %d\n", argc);
+    for (int i = 0; i < argc; i++) {
+        printf("Argumentti %d: %s\n", i, argv[i]);
     }
     return 0;
 }
 ```
-
-Käynnistä ohjelma komennolla `./ohjelma arg1 arg2`. Ohjelman tuloste näyttää seuraavalta:
-
+Käynnistä ohjelma komentokehotteesta:
+```bash
+$ gcc ohjelma.c -o ohjelma
+$ ./ohjelma testi1 testi2
+Ohjelmaan annettujen argumenttien lukumäärä: 3
+Argumentti 0: ./ohjelma
+Argumentti 1: testi1
+Argumentti 2: testi2
 ```
-Argument 0: ./ohjelma
-Argument 1: arg1
-Argument 2: arg2
-```
 
-## Syvempi sukellus:
+## Deep Dive (Sukellus syvälle):
+C:n standardikirjasto on tarjonnut tapoja lukea komentorivin argumentteja kauan sitten. `argc` edustaa "argument count" ja `argv[]` on "argument vector", joka sisältää itse argumentit. Jokainen moderni käyttöjärjestelmä tukee tätä mekanismia. Vaihtoehtoisia tapoja on, kuten käyttää `getopt`-funktion perhettä monimutkaisemmissa skenaarioissa. Lisäyksissä ja poistoissa komentorivisyntaksin yhteydessä kannattaa olla huolellinen, sillä väärät argumentit voivat aiheuttaa virheitä tai odottamattomia toimintoja ohjelmassa.
 
-Komennon riviparametrien lukeminen on ollut osa C-kieltä sen alkuvuosista lähtien, tämän takia se on keskeinen osa ohjelmointikielen käsittelyä ja käyttöä. Vaihtoehtoja komentorivin parametrien lukemiseen ovat mm. stdio-kirjaston scanf-funktio tai tiedoston luku funktiot.
-
-Riviparametrien lukemisessa käytettävät "argc" ja "argv" muuttujat ovat osa ohjelman "main" fuktiota. Argc kuvastaa argumenttien lukumäärää ja argv on osoitin merkkijonojen taulukkoon, jossa argit ovat.
-
-## Katso myös:
-
-Vaikka tämä artikkeli antaa yleiskuvan komentoriviparametrien lukemisesta, seuraavat lähteet tarjoavat syvempää tietoa ja konkreettisia esimerkkejä.
-
-- C Programming Language, 2nd Edition by Brian W. Kernighan and Dennis M. Ritchie: https://www.amazon.com/Programming-Language-Brian-W-Kernighan/dp/0131103628
-- Learn C the Hard Way by Zed Shaw: https://learncodethehardway.org/c/
-- C tutorial by TutorialsPoint: https://www.tutorialspoint.com/cprogramming/index.htm
+## See Also (Katso myös):
+- GNU 'getopt': https://www.gnu.org/software/libc/manual/html_node/Getopt.html
+- C Standard Library documentation: https://en.cppreference.com/w/c/header
+- Online C Compiler for testing code snippets: https://www.onlinegdb.com/online_c_compiler

@@ -1,6 +1,7 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-html_title:           "Bash: HTTP-pyynnön lähettäminen"
+date:                  2024-01-20T17:59:57.707271-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,31 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä & Miksi?)
+HTTP-pyynnöt ovat tapa kommunikoida web-palvelimien kanssa. Ohjelmoijat käyttävät niitä dataa liikuttaakseen, API-kutsuja tehden ja verkkososiaalisuutta hallinnoidakseen.
 
-HTTP-pyyntö on tapa, jolla selain (tai muu asiakasohjelma) pyytää tietoja palvelimelta. Ohjelmoijat lähettävät näitä pyyntöjä datan saamiseksi tai lähettämiseksi palvelimille tai API:ille. 
-
-## Näin se tapahtuu:
-
-Fish Shell tarjoaa helpon tavan lähettää HTTP-pyyntöjä käyttäen `curl`-työkalua. Tässä on esimerkki:
+## How to: (Kuinka tehdä:)
+Fish Shellissa HTTP-pyynnön lähettäminen onnistuu `curl` tai `httpie` komentojen avulla. 
 
 ```Fish Shell
-curl "http://www.example.com" -o "output.html"
+# Lähetä GET-pyyntö
+curl http://httpbin.org/get 
+
+# POST-pyyntö datan kanssa
+curl -d 'data=HelloWorld' http://httpbin.org/post
+
+# Käyttäen httpie:tä, jos se on asennettu
+http GET http://httpbin.org/get
+http POST http://httpbin.org/post data=HelloWorld
 ```
 
-Tämä lähettää GET-pyynnön http://www.example.com:iin ja tallentaa vastauksen tiedostoon nimeltä output.html.
+Esimerkkituloste `curl`:lla GET-pyynnön jälkeen:
 
-## Syvemmälle
+```Fish Shell
+{
+  "args": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Host": "httpbin.org", 
+    "User-Agent": "curl/7.64.1"
+  }, 
+  "origin": "93.123.45.67, 93.123.45.67", 
+  "url": "https://httpbin.org/get"
+}
+```
 
-HTTP-pyynnön lähettäminen kehitettiin webin varhaisessa vaiheessa, joten kaikkein ensimmäiset HTTP-pyynnöt lähetettiin tekstipohjaisesta selaimesta nimeltä Lynx. Vaihtoehtoisesti voit lähettää HTTP-pyynnön myös `wget`-työkalulla, joka toimii samankaltaisesti kuin `curl`, tai voit käyttää HTTP-kirjastoja kielissä, kuten Python tai Javascript.
+## Deep Dive (Sukellus syvyyksiin)
+HTTP-pyynnöt ovat perustana webin toiminnalle. Ne alkoivat 90-luvulla yksinkertaisina GET- ja POST-metodeina ja ovat kasvaneet laajaksi metodi- ja statuskoodien kokoelmaksi. Fish Shellissä `curl` ja `httpie` ovat suosittuja työkaluja HTTP-pyyntöjen lähettämiseen, tarjoten näppärän komentorivirajapinnan.
 
-HTTP-pyynnön toiminnallisuus liittyy lähinnä TCP/IP-protokollan rakenteeseen. HTTP-pyyntö luodaan, lähetetään ja vastaanotetaan tämän protokollan avulla.
+`curl` on laajalti käytössä oleva komentorivityökalu, joka tukee monia protokollia. Se on sisäänrakennettu useimpiin Unix-pohjaisiin järjestelmiin. `httpie`, toisaalta, on modernimpi vaihtoehto, jolla on helpommin luettava ulostulo.
 
-## Katso myös
+Fishissä, kuten muissakin shellissä, näiden työkalujen avulla voi automatisoida verkkopyyntöjä osana skriptejä, tai yhdistää niitä muihin komentoihin datan käsittelyä varten.
 
-Jos haluat lisätietoa, katso seuraavat linkit:
-
-1. [Fish Shell -dokumentaatio](https://fishshell.com/docs/current/index.html)
-2. [Curl-käyttöohje](https://curl.haxx.se/docs/manpage.html)
-3. [HTTP-protokollan työnkulku](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
-4. [Wget-työkalun dokumentaatio](https://www.gnu.org/software/wget/manual/wget.html)
+## See Also (Katso myös)
+- [curl projektin kotisivu](https://curl.haxx.se/)
+- [httpie kotisivu](https://httpie.io/)
+- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [HTTP-protokollan yleiskatsaus](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)

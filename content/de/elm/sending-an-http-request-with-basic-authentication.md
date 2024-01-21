@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
+date:                  2024-01-20T18:01:34.905465-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,48 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und Warum?
+## Was & Warum?
 
-Das Senden einer HTTP-Anfrage mit Basisauthentifizierung ist eine gängige Vorgehensweise um zu verifizieren, dass ein Nutzer authorisiert ist, bestimmte Daten oder Dienste zu verwenden. Entwickler verwenden diese Methode, um die Sicherheit von Netzwerkanwendungen zu verbessern und den unberechtigten Zugriff auf sensible Daten zu verhindern.
+Das Senden einer HTTP-Anfrage mit Basisauthentifizierung heißt, dass du deine Anmeldedaten in einer sicheren, codierten Form mitschickst, um Zugriff auf geschützte Ressourcen zu bekommen. Programmierer nutzen dies, um eine einfache Authentifizierung auf Webservern zu realisieren, wenn größere Sicherheitsmechanismen nicht erforderlich sind.
 
-## Wie werde ich's los?
+## So geht's:
 
-Jetzt ein einfacher Code, wie man eine HTTP-Anfrage mit Basisauthentifizierung in Elm sendet: 
+Elm macht HTTP-Anfragen mit Basisauthentifizierung simpel. Du musst nur die `Http`-Bibliothek verwenden und die `Headers` entsprechend setzen. Hier ist ein schnelles Beispiel:
 
-``` Elm
-import Http exposing (..)
-import Http.Auth
+```Elm
+import Http
+import Base64
 
-basicAuth : String -> String -> Http.Header
-basicAuth username password =
-    Http.header "Authorization" ("Basic " ++ btoa(username ++ ":" ++ password))
+type alias Credentials =
+    { username : String
+    , password : String
+    }
 
-request : Http.Request String
-request =
-    Http.request
-        { method = "GET"
-        , headers = [ basicAuth "Benutzername" "Passwort" ]
-        , url = "https://meine-api.de/daten"
-        , body = Http.emptyBody
-        , expect = Http.expectString (Ok)
-        , timeout = Nothing
-        , tracker = Nothing
+basicAuthHeader : Credentials -> Http.Header
+basicAuthHeader creds =
+    let
+        encoded =
+            Base64.encode (creds.username ++ ":" ++ creds.password)
+    in
+    Http.header "Authorization" ("Basic " ++ encoded)
+
+getProtectedResource : Credentials -> String -> Cmd msg
+getProtectedResource creds url =
+    Http.get
+        { url = url
+        , headers = [ basicAuthHeader creds ]
         }
+        -- Geh davon aus, dass die Antwort ein `String` ist.
+        |> Http.expectString
 ```
-Dieser Code erstellt einen HTTP-GET-Request mit Basisauthentifizierung. Bei Erfolg erhält man eine positive Antwort vom Server.
- 
-## Tiefere Einblicke
 
-Die Basisauthentifizierung ist eine ältere Methode zur Authentifizierung von Webanfragen, wurde aber von neueren und sichereren Methoden wie dem OAuth 2.0 Protokoll weitgehend abgelöst.
+Stelle sicher, dass du die `elm/http` und `truqu/elm-base64` Pakete in deinem Projekt installiert hast, um die obigen Importe zu nutzen.
 
-Alternativen zur Basisauthentifizierung umfassen nicht nur OAuth, sondern auch Token-basierte Authentifizierungssysteme wie JWT (JSON Web Tokens), die oft in Single Page Applications (SPAs) eingesetzt werden.
+## Tiefgang:
 
-Die Methode `basicAuth` benutzt die Funktion `Http.header` um einen "Authorization"-Header zu Ihrem HTTP-Request hinzuzufügen. Der Wert dieses Headers ist ein Basis-64-kodierter String, der aus Ihrem Benutzernamen, einem Doppelpunkt und Ihrem Passwort besteht.
+Die Verwendung von Basisauthentifizierung geht auf das HTTP/1.0-Protokoll zurück und wird in der RFC 7617 spezifiziert. Während die Methode aufgrund des Fehlens von Verschlüsselung kritisiert wurde, ist es für einfache Authentifizierungsszenarien durchaus üblich. Als Alternative kannst du komplexere Authentifizierungsmechanismen wie OAuth nutzen, welche Tokens statt Benutzerdaten verwenden. Bei der Implementierung in Elm ist zu beachten, dass die Anmeldeinformationen (Benutzername und Passwort) kodiert und im `Authorization` Header gesendet werden müssen. Sicherheitsempfehlungen raten davon ab, Basisauthentifizierung ohne HTTPS zu verwenden, da die Anmeldeinformationen sonst leicht abgefangen werden können.
 
-## Siehe auch
+## Siehe auch:
 
-Für weiterführende Informationen können folgende Links hilfreich sein:
-
-- Elm Documentation zu HTTP-Requests: https://package.elm-lang.org/packages/elm/http/latest/
-- Informationen zur Basisauthentifizierung: https://developer.mozilla.org/de/docs/Web/HTTP/Authentication
-- Alternative Authentifizierungsmethoden: https://auth0.com/blog/cookies-vs-tokens-definitive-guide/
+- Elm HTTP Paket Dokumentation: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)
+- Elm Base64 Paket: [https://package.elm-lang.org/packages/truqu/elm-base64/latest/](https://package.elm-lang.org/packages/truqu/elm-base64/latest/)
+- RFC 7617, The 'Basic' HTTP Authentication Scheme: [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)

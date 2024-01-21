@@ -1,7 +1,8 @@
 ---
-title:                "Generere tilfeldige tall"
-html_title:           "Arduino: Generere tilfeldige tall"
-simple_title:         "Generere tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+date:                  2024-01-20T17:48:30.972624-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generering av tilfeldige tall"
 programming_language: "C"
 category:             "C"
 tag:                  "Numbers"
@@ -10,13 +11,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+("Hva & Hvorfor?")
+Å generere tilfeldige tall betyr å skape tall som ikke kan forutsies. I programmering bruker vi dette for å tilføre tilfeldighet i spill, simuleringer og sikkerhet.
 
-Tilfeldige tallgenerering er prosessen med å produsere tall som ikke kan forutsis bedre enn ved tilfeldig sjanse. Programmerere gjør dette for mange formål, som å simulere data, implementere spill og til crypto.
-
-## Hvordan:
-
-Her er et grunnleggende eksempel på hvordan du genererer et tilfeldig tall i C:
+## How to:
+("Slik gjør du:")
+I C kan du generere pseudotilfeldige tall med `rand()` funksjonen, som krever `stdlib.h`. Men husk å så "frøet" med `srand()` for variasjon.
 
 ```C
 #include <stdio.h>
@@ -24,25 +25,32 @@ Her er et grunnleggende eksempel på hvordan du genererer et tilfeldig tall i C:
 #include <time.h>
 
 int main() {
-    srand(time(0)); 
-    int num = rand(); 
-    printf("Generated Random Number is: %d\n", num);
+    srand(time(NULL));  // Sår frøet med nåværende tid
+    for(int i = 0; i < 5; i++) {
+        printf("%d\n", rand() % 100);  // Tilfeldige tall mellom 0 og 99
+    }
     return 0;
 }
 ```
-Når du kjører programmet, produserer det et tilfeldig tall hver gang.
 
-## Dyp Dykk:
+Sample output kan variere hver gang. Her er ett eksempel:
 
-Tallgenerering med `rand()`-funksjonen i C har en interessant historisk kontekst. Denne funksjonen ble først introdusert i den opprinnelige ANSI C-standarden fra 1989 (C89). Derimot er verdien den returnerer ikke veldig tilfeldig, da den produserer en sekvens av tall som vil begynne å gjenta seg etter et visst antall kall.
+```
+42
+55
+19
+83
+67
+```
 
-Det er flere alternativer for å generere tilfeldige tall. I nyere C-standarder som C11, kan du bruke `rand_s()` eller `random()` for å få en bedre distribusjon av tilfeldige tall.
+## Deep Dive:
+("Dypdykk:")
+Før `rand()` og `srand()`, var tilfeldighet vanskelig i datamaskiner. Maskiner er deterministiske, så matematisk tilfeldighet som vi bruker i dag er egentlig "pseudotilfeldig". C's `rand()` funksjon følger en forutsigbar sekvens, som er hvorfor vi bruker `srand()` for å gi et unikt frø, vanligvis tid. Det er mer avanserte metoder som `random()` og `arc4random()` på noen plattformer, eller til og med hardware baserte løsninger for større tilfeldighet.
 
-Når det gjelder implementeringsdetaljer, bruker `rand()` en pseudotilfeldig algoritme basert på en startverdi eller 'seed'. `srand(time(0));` brukes for å sette seed-verdien til det gjeldende systemtiden, noe som gir forskjellige resultater hver gang programmet kjøres.
+Alternativer til `rand()` inkluderer funksjoner fra C11 standard biblioteket `stdrandom.h` som tilbyr bedre algoritmer og distribusjoner. Denne praksis, sammen med kryptografisk sikre biblioteker, forbedrer både tilfeldighet og sikkerhet.
 
-## Se Også:
-
-For en mer utfyllende studie av tilfeldige tallgenerering i C, ta en titt på følgende ressurser:
-
-
-2. StackOverflow: [Why do I always get the same sequence of random numbers with rand() ?](https://stackoverflow.com/questions/4768180/why-do-i-always-get-the-same-sequence-of-random-numbers-with-rand)
+## See Also:
+("Se også:")
+- C Standards documentation (https://en.cppreference.com/w/c/numeric/random)
+- An Introduction to Random Number Generators in C (https://www.thesprucecrafts.com/random-numbers-in-c-4112003)
+- C Programming/C Reference/stdlib.h/rand (https://en.wikibooks.org/wiki/C_Programming/C_Reference/stdlib.h/rand)

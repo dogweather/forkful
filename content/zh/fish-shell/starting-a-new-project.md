@@ -1,7 +1,8 @@
 ---
-title:                "开始新项目"
-html_title:           "Lua: 开始新项目"
-simple_title:         "开始新项目"
+title:                "开始一个新项目"
+date:                  2024-01-20T18:03:30.176225-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "开始一个新项目"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -10,30 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
-开始一个新项目就是创建一个全新的编程工作据点，程序员这么做是为了实现特定的软件目标。
+## What & Why? (是什么 & 为什么?)
+开新项目，就是创建从零开始的代码集合。程序员这么做是为了解决新问题，开发新功能，或者尝试新想法。
 
-## 如何做：
-在下面的```Fish Shell```代码块中，我们将看到如何启动一个新项目。
-
+## How to: (如何操作：)
+在Fish Shell中启动新项目，基本就是建立新目录，初始化版本控制，和创建初始文件。
 ```Fish Shell
-# 创建一个新的文件夹
-mkdir newproject
-cd newproject
+# 新建项目目录
+mkdir my_project
+cd my_project
 
-# 初始化Git
+# 初始化git（如果使用）
 git init
 
-# 创建一个简单的README文件
-echo "# New Project" > README.md
+# 创建基础文件
+touch README.md main.fish .gitignore
 ```
-在上述操作之后，你的新项目目录将包含一个.git目录和README.md文件。
+输出没有特殊显示，命令执行后，新的项目结构被创建。
 
-## 深入探索
-开始一个新项目在过去的几十年间一直是编程的核心部分。虽然还有其他方式可以管理你的代码，例如子版本（SVN），和梅丽尓神墓（Mercurial），但Git已经成为最优先的工具，几乎所有现代开发者在起步时都会选择Git。此外，每个项目都应该有描述项目内容的Readme文件。
+## Deep Dive (深入了解)
+从历史上看，项目开始通常手动进行。进入现代，脚手架工具自动化这个过程，比如 `yeoman` 或 `cargo`。Fish Shell本身是个现代化的Shell，强调易用性和可发现性。其他Shell（比如Bash或Zsh）也有自己的方法启动项目，但Fish提供了独特的便利特性，比如丰富的提示和自动建议。
 
-## 另请参阅：
-1. [学习Git](https://git-scm.com/book/zh/v2)
-2. [Fish Shell文档](https://fishshell.com/docs/current/tutorial.html)
+实现层面，新项目通常包括目录结构，基础代码，配置文件，和版本控制。Fish Shell不直接提供项目管理工具，但它与git等工具无缝协作，让项目开始变得十分流畅。使用像 `fisher` 或 `oh-my-fish` 之类的包管理器，可以进一步扩展Fish的功能，提升项目开发效率。
 
-备注：为了减少不必要的错误，建议总是利用你的编辑器的文件保存对话框来创建新文件或目录。
+## See Also (另请参阅)
+- [Fish Shell官网](https://fishshell.com)
+- [Git版本控制系统](https://git-scm.com/)
+- [Fisher包管理器](https://github.com/jorgebucaran/fisher)
+- [Oh My Fish包管理器](https://github.com/oh-my-fish/oh-my-fish)

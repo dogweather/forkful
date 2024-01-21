@@ -1,6 +1,7 @@
 ---
 title:                "Concatenating strings"
-html_title:           "PHP recipe: Concatenating strings"
+date:                  2024-01-20T17:33:50.055851-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Concatenating strings"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,50 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Concatenating strings means joining two or more strings together. It's a common task for handling and manipulating data in programming.
+Concatenating strings means squishing them together end-to-end to make a new one. Programmers do it to merge messages, build commands, or just to display info neatly.
 
 ## How to:
+Let's do some string-joining! All within setup because we just want a quick look—no need for a repeat loop.
 
-In Arduino, you can concatenate strings using the `+` or `+=` operator. Here's a simple recipe:
+```arduino
+void setup() {
+  // Start serial communication
+  Serial.begin(9600);
 
-```Arduino
-String hello = "Hello";
-String world = "World";
-String greeting = hello + ", " + world;
-Serial.println(greeting);
+  // Create two strings
+  String greeting = "Hello, ";
+  String name = "Arduino!";
+
+  // Concatenate them
+  String combined = greeting + name;
+
+  // Print the result
+  Serial.println(combined); 
+}
+void loop() {
+  // Nothing to loop over here
+}
 ```
-Output: `Hello, World`
 
-You can also append, or concatenate, using `+=`. It joins the new string to the end of the existing string. Like so:
+You run it, and the output waits for you in the Serial Monitor:
 
-```Arduino
-String greeting = "Hello";
-greeting += ", ";
-greeting += "World";
-Serial.println(greeting);
 ```
-Output: `Hello, World`
+Hello, Arduino!
+```
 
 ## Deep Dive
+Concatenating strings is old as hills in programming—been around since early languages took their baby steps. In Arduino, you can use either the `+` operator like we did, or the `+=` to tack a string onto an existing one. Behind the scenes, these operators are actually calling functions that handle memory allocation and copying the characters efficiently.
 
-Historically, `"char"` arrays were used in C/C++ for handling string data. But juggling them was a chore. Arduino introduced the `String` class to simplify this. 
+Why not always concatenate? Well, if you're dealing with tiny microcontrollers and doing a lot of string-merging, you could run into memory issues—because every time you combine, you create a new string, consuming more memory. For heavy string manipulation, folks sometimes resort to character arrays (classic C-style) to save space and avoid potential performance hits.
 
-However, using `String` comes with a cost - dynamic memory allocation. It can lead to memory fragmentation. For uber-large applications or long run times, consider `char` arrays or the `strcat()` function for lower-level control.
+Also, check string functions like `concat()`, which can add not just strings but other data types to an existing string.
 
-Alternatives? Sure! In fact, you can use `sprintf` to concatenate and format strings:
-
-```Arduino
-char greeting[20];
-sprintf(greeting, "Hello, %s", "World");
-Serial.println(greeting); 
-```
-Output: `Hello, World`
-
-This gives you lower-level control, avoids memory fragmentation but is somewhat trickier to handle.
-
-## See Also 
-
-1. [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-2. [Arduino Print class reference i.e., println()](https://www.arduino.cc/en/Serial/Print)
-3. [StackOverflow discussion about String performance issues](https://arduino.stackexchange.com/questions/44936/arduino-string-versus-char-array)
+## See Also
+Looking for more? Here’s where to dive deeper:
+- Arduino String Reference: [arduino.cc/reference/en/language/variables/data-types/string/](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- Memory Management in Arduino: [learn.adafruit.com/memories-of-an-arduino](https://learn.adafruit.com/memories-of-an-arduino)
+- The Evils of Arduino Strings: [majenko.co.uk/blog/evils-arduino-strings](https://majenko.co.uk/blog/evils-arduino-strings)

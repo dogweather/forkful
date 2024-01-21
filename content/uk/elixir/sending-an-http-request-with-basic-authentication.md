@@ -1,7 +1,8 @@
 ---
-title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
-html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
-simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+date:                  2024-01-20T18:02:02.848395-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,36 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що таке це & Навіщо?
-Відправка HTTP-запиту з базовою авторизацією - це процес, коли ваша програма з'єднується з веб-сервером, використовуючи логін та пароль для доступу до ресурсів. Програмісти роблять це, коли вони хочуть отримати дані від веб-сервісів, доступ до яких обмежений.
+## Що це & Чому?
 
-## Як це робити:
-У мові програмування Elixir для цього ми можемо використовувати бібліотеку HTTPoison. Ось приклад використання:
+Надсилання HTTP-запиту з базовою автентифікацією — це процес, де клієнт додає до своєї вимоги логін і пароль для доступу до захищених ресурсів. Програмісти роблять це, щоб забезпечити безпечний обмін даними.
 
-```Elixir
-defmodule MyModule do
+## Як це зробити:
+
+```elixir
+defmodule HTTPClient do
+  require Logger
+
+  @url "http://example.com"
+  @username "user"
+  @password "pass"
+
   def send_request do
-    auth = Base.encode64("myusername:mypassword")
+    :httpc.request(
+      :get,
+      {to_charlist(@url), []},
+      [autoredirect: true, 
+        headers: ["Authorization": basic_auth_header(@username, @password)]
+      ],
+      []
+    )
+  end
 
-    headers = [
-      {"Authorization", "Basic #{auth}"}
-    ]
-
-    HTTPoison.get!("https://mywebservice.com", headers)
+  defp basic_auth_header(username, password) do
+    "Basic " <> Base.encode64("#{username}:#{password}")
   end
 end
+
+# Sample output
+{:ok,
+ {{'HTTP/1.1', 200, 'OK'},
+  [{"content-type", "application/json; charset=utf-8"}],
+  '...response body...'}}
 ```
 
-Цей код відправить HTTP GET запит до `https://mywebservice.com` з іменем користувача та паролем для авторизації.
+## Поглиблений огляд
 
-## Пірнання глибше
-Відправка HTTP-запиту з базовою авторизацією - це стандартний спосіб отримання даних від веб-сервісів, який був частиною HTTP стандарту з самого початку. 
+Базова автентифікація — це стара, але проста схема автентифікації. Вона передбачає відправлення імені користувача та паролю з кожним запитом. Еліксир використовує модуль `:httpc`, який входить до Erlang/OTP, і підтримує базову автентифікацію. При базовій автентифікації потрібно кодувати логін і пароль у форматі Base64.
 
-Альтернативою цьому є використання OAuth, його варіацій або JWT, які зазвичай використовуються для більш безпечної авторизації. 
+Є альтернативи безпечніші, як OAuth 2.0, але для простих чи внутрішніх додатків базова автентифікація іноді все ще використовується. Важливо не забувати, що базова автентифікація без HTTPS небезпечна, оскільки логін і пароль можуть бути легко перехоплені.
 
-Слід зазначити, що базова авторизація передає логін та пароль в незашифрованому вигляді. Використовуйте TLS/SSL для безпечної передачі даних.
+## Дивись також:
 
-## Дивись також
-1. Детальніше про HTTPoison ви можете прочитати тут: [HTTPoison README](https://github.com/edgurgel/httpoison)
-2. Про OAuth - тут: [OAuth Wikipedia](https://uk.wikipedia.org/wiki/OAuth)
-3. Про JWT - тут: [JWT Official Website](https://jwt.io/)
+- Elixir's `HTTPoison` library documentation: [https://hexdocs.pm/httpoison](https://hexdocs.pm/httpoison)
+- Official `:httpc` module documentation: [http://erlang.org/doc/man/httpc.html](http://erlang.org/doc/man/httpc.html)
+- HTTP Basic Authentication on Mozilla Developer Network: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+- Guide to HTTP authentication with Elixir's `Plug`: [https://hexdocs.pm/plug/Plug.Conn.html#module-basic-authentication](https://hexdocs.pm/plug/Plug.Conn.html#module-basic-authentication)

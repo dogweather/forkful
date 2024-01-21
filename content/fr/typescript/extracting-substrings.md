@@ -1,6 +1,7 @@
 ---
 title:                "Extraction de sous-chaînes"
-html_title:           "Arduino: Extraction de sous-chaînes"
+date:                  2024-01-20T17:46:50.792503-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,39 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why? (Quoi et Pourquoi ?)
+L'extraction de sous-chaînes consiste à prendre des morceaux spécifiques d'une chaîne de caractères. Les développeurs le font pour analyser, manipuler ou afficher des données textuelles de manière plus pertinente.
 
-Extraire des sous-chaînes consiste à obtenir une partie spécifique d'une chaîne de caractères.
-C'est essentiel lorsque les programmeurs ont besoin de manipuler ou analyser certaines parties d'un texte ou des données.
+## How to: (Comment faire :)
+Voici comment extraire des sous-chaînes en TypeScript avec `substring`, `slice` et `substr` (déprécié mais bon à connaître).
 
-## Comment faire:
+```typescript
+let text: string = "TypeScript est génial!";
 
-Dans TypeScript, l'extraction de sous-chaînes peut être réalisée avec les méthodes `slice`, `substr` et `substring`. Jetons un coup d'œil à ces exemples:
+// Utiliser substring
+let subText1: string = text.substring(0, 10); // "TypeScript"
 
-```TypeScript
-let string = "Bonjour tout le monde!";
+// Utiliser slice
+let subText2: string = text.slice(11, 18); // "est"
 
-// Utilisation de slice
-console.log(string.slice(8, 12));  // sortie: "tout"
+// Utiliser substr (déprécié)
+let subText3: string = text.substr(19, 7); // "génial!"
 
-// Utilisation de substr
-console.log(string.substr(8, 4));  // sortie: "tout"
-
-// Utilisation de substring
-console.log(string.substring(8, 12));  // sortie: "tout"
+console.log(subText1); // Affiche: TypeScript
+console.log(subText2); // Affiche: est
+console.log(subText3); // Affiche: génial!
 ```
 
-Chaque méthode retourne la sous-chaîne de "Bonjour tout le monde!" depuis l'index 8 jusqu'à l'index 12.
+## Deep Dive (Plongée en profondeur)
+Historiquement, `substr` fut longtemps utilisé malgré une implémentation et un usage inconsistants entre les navigateurs. TypeScript, comme super-ensemble de JavaScript, en hérite mais privilégie `substring` et `slice` pour leur comportement plus prédictible.
 
-## Plongée profonde
+Alternatives ? On pourrait aussi utiliser des expressions régulières avec `match` ou des méthodes orientées sur les tableaux comme `split` et `join`.
 
-Historiquement, `substr` et `substring` étaient des méthodes populaires pour l'extraction de sous-chaînes, mais leurs usages se sont mélangés avec le temps. Aujourd'hui, la plupart des développeurs préfèrent `slice` pour sa flexibilité et sa cohérence avec d'autres méthodes de tableau JavaScript.
+Pour ce qui est de l'implémentation, `substring` et `slice` prennent deux indices : début et fin alors que `substr` prend l'indice de départ et le nombre de caractères. Petit détail : `slice` peut prendre des indices négatifs pour travailler en arrière à partir de la fin.
 
-En regardant les alternatives, il existe également des expressions régulières et l'utilisation de `split` pour extraire des sous-chaînes, bien que ces méthodes soient généralement plus adaptées aux cas plus complexes.
-
-Quant aux détails de l'implémentation, `slice` et `substring` diffèrent légèrement dans leur comportement lorsqu'ils sont fournis avec des indices négatifs. `slice` considère un indice négatif comme une position à partir de la fin de la chaîne, tandis que `substring` traite cela comme un zéro.
-
-## Voir Aussi
-
-Pour plus d'informations sur l'extraction de sous-chaînes dans TypeScript, consultez ces liens intéressants:
-- La documentation officielle de Mozilla sur les strings et leurs méthodes: [MDN String](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String)
+## See Also (Voir aussi)
+- Documentation TypeScript sur les chaînes de caractères : [TypeScript String](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#strings)
+- MDN Web Docs sur `slice()`, `substring()`, et `substr()`: [String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice), [String.prototype.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring), [String.prototype.substr() (déprécié)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
+- Regex one-liners pour l'extraction de sous-chaînes : [Regexr](https://regexr.com/)
+- Un guide pour manipuler les chaînes de caractères en JavaScript (applicable à TypeScript) : [String Manipulation in JavaScript](https://exploringjs.com/impatient-js/ch_strings.html)

@@ -1,6 +1,7 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-html_title:           "Bash: HTTP-pyynnön lähettäminen"
+date:                  2024-01-20T18:00:11.703472-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,45 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä & Miksi?)
+PHP:ssä HTTP-pyyntö lähettää tietoja palvelimelle tai hakee niitä sieltä. Ohjelmoijat tekevät tämän, jotta voivat siirtää dataa, hakea resursseja tai kommunikoida muiden palveluiden kanssa.
 
-HTTP-pyynnön lähettäminen on prosessi, jossa tietoja lähetetään verkkosivulle tai sovellukseen. Ohjelmoijat tekevät sen esimerkiksi hakeakseen dataa, lähettääkseen dataa tai tehdäkseen päivityksen jo olemassa olevaan dataan.
-
-## Näin teet:
+## How to: (Miten tehdään:)
+PHP:ssä HTTP-pyyntöjen tekeminen voi olla yksinkertaista. Tässä esimerkkejä `file_get_contents`- ja `cURL`-funktioilla:
 
 ```PHP
-<?php
-// Alustetaan cURL
-$ch = curl_init();
+// Perus GET-pyyntö file_get_contents-funktiolla
+$response = file_get_contents('https://api.example.com/data');
+echo $response;
 
-// Asetetaan URL ja muut vaihtoehdot
-curl_setopt($ch, CURLOPT_URL, "http://esimerkki.com");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_HEADER, 0);
-
-// Pyydetään URL ja tallennetaan se muuttujaan $output
-$output = curl_exec($ch);
-
-// Suljetaan cURL-istunto
+// cURL:lla tehokkaampi vaihtoehto
+$ch = curl_init('https://api.example.com/data');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
 curl_close($ch);
-
-// Tulostetaan saatu tulos
-echo $output;
-?>
+echo $response;
 ```
 
-Esimerkkikoodimme lähettää GET-pyynnön "http://esimerkki.com"-osoitteeseen ja tulostaa saadun vastauksen. 
+Molemmat palauttavat palvelimelta saadun vastauksen.
 
-## Syvempi tieto:
+## Deep Dive (Sukellus syvemmälle)
+Alun perin PHP:ssä HTTP-pyyntöjä lähetettiin suorilla socket-funktioilla, mutta se oli monimutkaista. `file_get_contents` ja `fopen` -funktiot tarjosivat yksinkertaistuksen, mahdollistaen nopeamman tiedonhaun.
 
-HTTP-pyyntöjen lähettäminen on ollut olennainen osa web-sovelluksia aina WWW:n alkuaikojen PERL-skripteistä nykyisiin JavaScript-yksisivusovelluksiin. PHP:ssa on monta tapaa tehdä HTTP-pyynnön lähettäminen, kuten `file_get_contents()`, `fsockopen()`, ja `stream_context_create()`. 
+`cURL` lib on kehitettynä lisäfunktioilla varustettu työkalu, joka mahdollistaa monipuolisemmat HTTP-pyynnöt, kuten POST, HEAD, PUT ja DELETE, sekä lisää ohjausta yhteydenhallintaan (esim. timeout, headerit).
 
-Näistä kaikista cURL on kuitenkin tehokkain ja monipuolisin. cURL yleistyi sen tehokkaan suorituskyvyn ja tuekkaan kyvynsä käsitellä eri protokollia ansiosta, jota muut PHP:n sisäänrakennetut funktiot eivät kykene. 
+Vaihtoehtoisia kirjastoja, kuten Guzzle ja Requests for PHP, on myös olemassa, jotka tarjoavat objektilähtöisen lähestymistavan ja helppokäyttöisen API:n.
 
-Huomaa kuitenkin, että cURL tulee asentaa ja ottaa käyttöön erikseen PHP:ssa, joka saattaa olla hankalaa joissakin ympäristöissä.
-
-## Katso myös:
-
-- PHP:n virallinen cURL-dokumentaatio (https://www.php.net/manual/en/book.curl.php)
-- PHP: The Right Way - suositukset HTTP-pyynnön lähettämisestä (https://phptherightway.com/)
-- Stack Overflow keskusteluja HTTP-pyynnöistä PHP:ssa (https://stackoverflow.com/questions/tagged/php+http-request)
+## See Also (Katso myös)
+- PHP.net cURL: https://www.php.net/manual/en/book.curl.php
+- PHP.net HTTP context options: https://www.php.net/manual/en/context.http.php
+- GuzzleHTTP documentation: http://docs.guzzlephp.org/en/stable/
+- Requests for PHP: http://requests.ryanmccue.info/

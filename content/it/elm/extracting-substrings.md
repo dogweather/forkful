@@ -1,7 +1,8 @@
 ---
-title:                "Estrazione di sottosequenze"
-html_title:           "Arduino: Estrazione di sottosequenze"
-simple_title:         "Estrazione di sottosequenze"
+title:                "Estrazione di sottostringhe"
+date:                  2024-01-20T17:45:22.986945-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,40 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è & Perché?
+## What & Why?
+Estrarre sottostringhe significa selezionare parti specifiche di una stringa. I programmatori lo fanno per manipolare o analizzare testi in modo più dettagliato.
 
-Estrarre sottosequenze è l'operazione di ottenere una parte di una stringa, iniziando da un punto specifico e terminando in un altro. Noi programmatori lo facciamo per manipolare e analizzare porzioni di dati all'interno di una stringa più grande.
-
-## Ecco come fare:
-
-In Elm, `String.slice` è il tuo amico quando devi estrarre sottosequenze. Vediamo un esempio:
+## How to:
+Elm usa funzioni come `String.slice` per estrarre sottostringhe. Ecco come funziona:
 
 ```Elm
 import String
 
-sottosequenza = String.slice 0 5 "Hello, World!"
+-- Estrai una sottostringa dalla posizione `start` alla posizione `end`.
+substring : String -> Int -> Int -> String
+substring text start end =
+    String.slice start end text
+
+-- Esempio d'uso:
+main =
+    let
+        text = "Ciao, mondo!"
+    in
+    substring text 0 4  -- Risultato: "Ciao"
 ```
 
-L'output di questo codice sarà:
-
+Output:
 ```Elm
-"Hello"
+"Ciao"
 ```
 
-La funzione `slice` inizia a contare da 0 e prende le lettere dalla posizione iniziale alla posizione finale, escludendo quest'ultima.
+## Deep Dive
+Il concetto di estrarre sottostringhe risale ai primi giorni della programmazione. Prima di funzioni dedicate, gli sviluppatori dovevano iterare carattere per carattere. In Elm, oltre a `String.slice`, puoi usare `String.left` o `String.right` per ottenere parti di una stringa dal principio o dalla fine. Dettagli importanti da tenere a mente includono l'indexing in Elm che inizia da 0 e che `String.slice` prenderà caratteri fino, ma non inclusi, l'indice `end`.
 
-## Approfondimenti
-
-- Storia: prelevare sottosequenze è un concetto risalente agli albori della programmazione. In Elm, le funzioni per farlo sono disponibili fin dalle prime versioni.
-
-- Alternative: `String.left` e `String.right` possono essere utilizzate per estrarre sottosequenze dall'inizio o dalla fine di una stringa.
-
-- Dettagli Implementativi: `String.slice` in Elm utilizza l'implementazione di basso livello fornita dal linguaggio JavaScript sottostante.
-
-Inoltre, tenete presente che gli indici in Elm iniziano da 0. Quindi, se si tenta di accedere a un indice oltre la lunghezza della stringa, Elm restituirà una stringa vuota invece di un errore.
-
-## Vedi anche:
-
-Consulta la documentazione di Elm su [String.slice](https://package.elm-lang.org/packages/elm/core/latest/String#slice) per ulteriori dettagli.
-
-Riferimenti esterni utili: MDN (Mozilla Developer Network) ha un'ottima documentazione di [String.prototype.slice()](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/slice) in JavaScript, che potrebbe esserti utile per comprendere l'implementazione di `String.slice` in Elm.
+## See Also
+- Documentazione Elm `String`: https://package.elm-lang.org/packages/elm/core/latest/String
+- Elm Guide sui record e le stringhe: https://guide.elm-lang.org/records/strings.html
+- Stack Overflow per domande specifiche: https://stackoverflow.com/questions/tagged/elm

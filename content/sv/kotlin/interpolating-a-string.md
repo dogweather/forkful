@@ -1,6 +1,7 @@
 ---
 title:                "Interpolera en sträng"
-html_title:           "C++: Interpolera en sträng"
+date:                  2024-01-20T17:51:14.333197-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolera en sträng"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,29 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Stränginterpolation är en process där vi ersätter variabler inuti en sträng med deras faktiska värden. Det hjälper programmerare att skapa mer läsbar och underhållbar kod.
+Stringinterpolering är när du plockar in variabler eller uttryck direkt i en textsträng. Det gör din kod mer läsbar och effektiv eftersom du slipper klumpiga plusoperatorer för att bygga dina strängar.
 
-## Så här gör du:
-I Kotlin kan du utföra stränginterpolation genom att infoga variabler direkt i strängen med hjälp av "$" tecknet. Nedan är ett kodexempel samt dess utdata.
+## Så Här Gör Du:
+I Kotlin använder du dollar-tecken `$` följt av variabelnamnet, eller `${}` för uttryck. 
 
-```Kotlin 
+```Kotlin
 fun main() {
-    val name = "Sven"
-    val age = 22
-    println("Hej $name, du är $age år gammal.")
+    val name = "Oscar"
+    val age = 30
+    println("Hej, jag heter $name och är $age år gammal.")
+
+    val plånbok = arrayOf(20, 50, 100)
+    println("Jag har ${plånbok.size} sedlar i min plånbok.")
 }
 ```
-När du kör den här koden blir utskriften
-
-``` 
-"Hej Sven, du är 22 år gammal."
+Output:
 ```
+Hej, jag heter Oscar och är 30 år gammal.
+Jag har 3 sedlar i min plånbok.
+```
+
 ## Djupdykning
-Stränginterpolation har sitt ursprung i Unix-skal och Perl. Alternativen till stränginterpolation inkluderar att använda funktionen `format()` eller konkatenering.
+Förr var man tvungen att använda konkatenation med `+` eller `StringBuilder` för att sätta ihop strängar. Med Kotlin 1.0 kom stringinterpolering, och det förenklade skrivandet av dynamisk text. Alternativ till stringinterpolering är att använda formateringsmetoder som `String.format()`, vilket kan vara mer lämpligt för komplex formatering. När det gäller implementation, konverterar Kotlin-kompilatorn dina interpolerade strängar till `StringBuilder`-operationer under huven, vilket gör det effektivt.
 
-I Kotlin ersätts interpolerade strängar direkt av kompilatorn med deras motsvarande `StringBuilder`-operationer. Detta leder till att prestandan för kod som använder stränginterpolation och kod som använder `StringBuilder` är i princip lika.
-
-## Se även
-Här är några praktiska länkar till ytterligare läsning om stränginterpolation:
-1. Kotlin dokumentation om stränginterpolation: [https://kotlinlang.org/docs/idioms.html#string-interpolation](https://kotlinlang.org/docs/idioms.html#string-interpolation)
-2. StackOverflow-tråd om stränginterpolation: [https://stackoverflow.com/questions/42780000/kotlin-string-interpolation](https://stackoverflow.com/questions/42780000/kotlin-string-interpolation)
+## Se Också
+- Kotlin dokumentation om stringinterpolering: [https://kotlinlang.org/docs/basic-syntax.html#string-templates](https://kotlinlang.org/docs/basic-syntax.html#string-templates)
+- `String.format()` i Kotlin: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/format.html](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/format.html)
+- `StringBuilder` klassen i Kotlin: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/index.html](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/index.html)

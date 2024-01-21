@@ -1,7 +1,8 @@
 ---
-title:                "Aloittaminen uuden projektin"
-html_title:           "C: Aloittaminen uuden projektin"
-simple_title:         "Aloittaminen uuden projektin"
+title:                "Uuden projektin aloittaminen"
+date:                  2024-01-20T18:05:04.507924-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Getting Started"
@@ -10,49 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mikä ja Miksi?)
+Aloitetaan uusi projekti tarkoittaa puhtaalta pöydältä lähtöä, uuden sovelluksen tai kirjaston kehittämistä. Ohjelmoijat tekevät tämän, kun heillä on uusi idea tai tarve, jota ei voi tyydyttää olemassa olevilla ratkaisuilla.
 
-Uuden projektin aloittaminen on ohjelmiston tai sovelluksen kehittämisen ensimmäinen vaihe. Ohjelmoijat aloittavat uuden projektin kehittämällä uuden ratkaisun tai parantamalla olemassa olevaa sovellusta.
-
-## Miten Tehdään:
-
-Aloitetaan uusi Typescript-projekti seuraavilla komennolla:
-
+## How to: (Kuinka tehdä:)
 ```TypeScript
-npm init -y
+// Asenna tarvittavat työkalut (esim. Node.js ja npm)
+// Luo uusi kansio projektillesi ja navigoi sinne komentorivillä
+
+// Initialisoi Node-projekti
+$ npm init -y
+
+// Asenna TypeScript
+$ npm install typescript --save-dev
+
+// Luo tsconfig.json tiedosto TypeScriptin konfigurointiin
+$ npx tsc --init
+
+// Luo ensimmäinen TypeScript-tiedosto, esimerkiksi index.ts
+// Kirjoita koodisi
+function moi(name: string): string {
+  return `Moi, ${name}!`;
+}
+
+// Konsolille tulostuu: Moi, maailma!
+console.log(moi('maailma'));
 ```
 
-Tämä luo uuden `package.json` tiedoston. Sitten asennetaan tarvittavat TypeScript-moduulit komennolla:
+## Deep Dive (Sukellus syvyyksiin)
+TypeScript luotiin vastaamaan JavaScriptin dynaamisuuden ja skaalautuvuuden haasteisiin. TypeScript on ollut olemassa vuodesta 2012, ja sen on kehittänyt Microsoft. Se laajentaa JavaScriptiä lisäämällä siihen tyypityksen.
 
-```TypeScript
-npm install typescript ts-node --save-dev
-```
+Vaihtoehtoiset tapoja käynnistää projektiin voisi olla esimerkiksi JavaScript, Python tai Go kielellä. Jokaisella on omat vahvuutensa erilaisissa projekteissa. TypeScriptin valtti on sen kyky parantaa koodin laatua ja ylläpidettävyyttä tiukalla tyypityksellään.
 
-Tämän jälkeen luodaan `tsconfig.json` ja `index.ts` tiedostot:
+Tärkeää projektin alussa on miettiä, onko tarvetta esimerkiksi frontend-kirjastolle (kuten React tai Angular) tai jos taas backend on huomion keskipisteessä, voisi valita Express.js:n tai NestJS:n, jotka toimivat sujuvasti TypeScriptin kanssa.
 
-```TypeScript
-npx tsc --init 
-echo console.log('Hei maailma!') > index.ts
-```
-
-Sitten, voit suorittaa TypeScript-koodin:
-
-```TypeScript
-npx ts-node index.ts
-```
-
-Näytölle tulostuu teksti "Hei maailma!".
-
-## Syvempi Sukellus:
-
-Uuden projektin aloittamisen käsite on kehittynyt  vuosien varrella. Alkuvaiheessa ohjelmoijat loivat usein tiedoston järjestelmän ja aloittivat kehittämisen tyhjältä pöydältä. Nykyään monissa ohjelmistokehyksissä on mukana työkaluja, kuten Yeoman, joka automatisoi projektin luomisen.
-
-Vaihtoehto Typescriptille on JavaScript tai uudempi ECMAScript. Vaikka TypeScript on tiukemmin typed, jotkut kehittäjät pitävät JavaScriptin joustavuudesta ja yksinkertaisuudesta.
-
-Uuden projektin aloittamisen toteuttaminen voi vaihdella ohjelmointikielen, käyttöjärjestelmän ja käytetyn työkalun mukaan. Jotkut kehittäjät käyttävät edistyneitä integroituja kehitysympäristöjä (IDE), kun taas toiset saattavat käyttää yksinkertaisempia tekstieditoria.
-
-## Katso myös:
-
-1. [TypeScriptin viralliset dokkarit](https://www.typescriptlang.org/docs/): Täydellinen opas TypeScriptin syntaksiin ja ominaisuuksiin.
-2. [Node.js:n ja NPM:n asennus](https://nodejs.org/en/download/): Opas Node.js:n ja NPM:n asennukseen eri käyttöjärjestelmissä.
-3. [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/): Syvällinen katsaus TypeScriptiin. Kattava, ja hienosti kirjoitetu.
+## See Also (Katso myös)
+- [TypeScriptin viralliset dokumentit](https://www.typescriptlang.org/docs/)
+- [npm:n dokumentaatio (projektin juurruttamiseksi)](https://docs.npmjs.com/cli/init)
+- [Microsoftin TypeScript GitHub-repositorio](https://github.com/Microsoft/TypeScript)
+- [TypeScript Deep Dive -ilmaiskirja](https://basarat.gitbook.io/typescript/)

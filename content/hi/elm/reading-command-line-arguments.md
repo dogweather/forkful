@@ -1,7 +1,8 @@
 ---
-title:                "कमांड लाइन तर्कों को पढ़ना"
-html_title:           "Kotlin: कमांड लाइन तर्कों को पढ़ना"
-simple_title:         "कमांड लाइन तर्कों को पढ़ना"
+title:                "कमांड लाइन आर्गुमेंट्स पढ़ना"
+date:                  2024-01-20T17:56:07.654721-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "कमांड लाइन आर्गुमेंट्स पढ़ना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,26 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+कमांड लाइन आर्गुमेंट्स पढ़ना यह तरीका है कि आप अपने प्रोग्राम को शुरू करते वक्त उसे अतिरिक्त जानकारी दे सकें। प्रोग्रामर इसे इस्तेमाल करते हैं ताकि वो एप्लिकेशन को ज्यादा फ्लैक्सिबल बना सकें, और यूजर्स से इनपुट्स ले सकें।
 
-आदेश लाइन तर्क या Command Line Arguments उन परामीतियों को कहा जाता है जो हमें एक कमांड के प्रारंभ में देने होते हैं। ये स्वतंत्रता देते हैं की प्रोग्राम को किस तरह चलाना है। उदाहरण स्वरुप, हम किसी फ़ाइल के नाम को एक कमांड लाइन आर्गुमेंट के रूप में पास कर सकते हैं।
-
-## कैसे:
-
-माफ़ कीजिये, लेकिन Elm में कमांड लाइन आर्गुमेंट्स का समर्थन डिफ़ॉल्ट रूप से उपलब्ध नहीं है। लेकिन, आप निम्न तरीके का उपयोग कर सकते हैं जिसमे आप एक Node.js script बनाते हैं जो आपके Elm प्रोग्राम को कमांड लाइन आर्गुमेंट्स पास करेगा:
+## How to: (कैसे करें:)
+ध्यान दें, Elm में डायरेक्ट कमांड लाइन आर्गुमेंट्स पढ़ना सपोर्टेड नहीं है क्योंकि यह फ्रंट-एंड वेब प्रोग्रामिंग के लिए बनाया गया है। परन्तु, अगर आप एक Elm प्रोग्राम को Node.js पर चला रहे हैं, तो आप flags की मदद से आर्गुमेंट्स पास कर सकते हैं। यहां एक उदाहरण है:
 
 ```Elm
-var { app } = require('./elm/main.js');
-var input = process.argv[2];
+port module Main exposing (..)
 
-app.Main.init({flags: input});
+port toJs : String -> Cmd msg
+
+main =
+    Program.worker
+        { init = init
+        , update = update
+        , subscriptions = subscriptions
+        }
+
+init flags =
+    ([], toJs flags)
+
+update msg model =
+    (model, Cmd.none)
+
+subscriptions model =
+    Sub.none
 ```
-उपर्युक्त कोड एक Node.js script हैं जो कमांड लाइन आर्गुमेंट्स को एक Elm प्रोग्राम में पास करने के लिए हैं।
 
-## गहराई में:
+और फिर JavaScript में:
 
-तब जब Elm बना, उसके लक्ष्य में वेब विकास को सशुल्क और सुविधाजनन बनाना था, इसलिए इसे एक प्रमुख ब्राउज़र-आधारित भाषा के रूप में विकसित किया गया। इसका मतलब यह है कि कुछ डिफ़ॉल्ट उपयोग के मामले (जैसे कि command line arguments का उपयोग करना) समर्थित नहीं हो सकते हैं। फिर भी, आपको कमांड लाइन आर्गुमेंट्स के साथ काम करने के लिए कोई "पुल" (जैसे Node.js) का उपयोग करना होगा। 
+```javascript
+const { Elm } = require('./elm.js');
 
-## और भी देखें:
+const app = Elm.Main.init({
+  flags: process.argv.slice(2).join(" ")
+});
 
-1. Elm में Flags का उपयोग करें: [https://guide.elm-lang.org/interop/flags.html](https://guide.elm-lang.org/interop/flags.html)
+app.ports.toJs.subscribe(console.log);
+```
+
+सैंपल आउटपुट:
+
+```
+node main.js Hello Elm!
+"Hello Elm!"
+```
+
+## Deep Dive (गहराई से समझें):
+Elm में कमांड लाइन आर्गुमेंट्स डायरेक्ट पढ़ने की क्षमता नहीं है क्योंकि इसकी मुख्य फोकस वेब ब्राउजर में चलने वाले एप्लिकेशन्स पर है। जहाँ तक इतिहास की बात है, Elm ऐसे डिजाइन किया गया था कि वह प्रिडिक्टेबल वेब एप्स बनाने में मदद करे।
+
+अल्टरनेटिव के रूप में आप Node.js सर्वर या इलेक्ट्रॉन जैसे टूल्स के साथ Elm को यूज कर सकते हैं, जहां आप 'flags' की मदद से जरूरी डाटा Elm प्रोग्राम को भेज सकते हैं। इंप्लीमेंटेशन में आमतौर पर यूज ऑफ जावास्क्रिप्ट इंटरऑप का होता है, जैसा कि ऊपर उदाहरण में दिखाया गया है।
+
+## See Also (और भी देखें):
+- Elm official guide on interop with JavaScript: [Elm Guide: Interop](https://guide.elm-lang.org/interop/)
+- Elm package for server-side applications (Elm 0.19.1+): [elm-fullstack](https://github.com/elm-fullstack/elm-fullstack)
+- Detailed article about Elm and Node.js: [Elm and Node.js](https://medium.com/@_rchaves_/using-elm-0-19-with-node-6f0c681e8a4c)

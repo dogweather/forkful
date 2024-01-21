@@ -1,6 +1,7 @@
 ---
 title:                "डीबग आउटपुट प्रिंट करना"
-html_title:           "Gleam: डीबग आउटपुट प्रिंट करना"
+date:                  2024-01-20T17:53:52.601184-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "डीबग आउटपुट प्रिंट करना"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,26 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
-Debug आउटपुट प्रिंट करना, यह है की आपके कोड का कुछ विशेष भाग को चेक करने के लिए टर्मिनल पर संदेश प्रिंट करना। इसका मुख्य उद्देश्य यह होता है कि प्रोग्रामर को उसके कोड की कार्यक्षमता और व्यवहार को समझने में मदद मिल सके।
+## क्या और क्यों?
+डीबग आउटपुट प्रिंट करना यानी विकास के दौरान कोड से संबंधित जानकारी का आउटपुट दिखाना। प्रोग्रामर्स इसे इसलिए करते हैं ताकि वे समझ सकें कि कोड कैसे चल रहा है और संभावित समस्याओं का पता लगा सकें।
 
-## कैसे करें: 
-चलिए देखते हैं कि PowerShell में debug आउटपुट को कैसे प्रिंट करते हैं। 
+## कैसे करें:
+PowerShell में डीबग आउटपुट प्रिंट करने के लिए आम तौर पर `Write-Host`, `Write-Debug`, और `Write-Verbose` जैसे cmdlets का उपयोग किया जाता है।
+
 ```PowerShell
-# Debug Message को प्रिंट करने के लिए Write-Debug cmdlet का उपयोग करें
-Write-Debug "Debug मेसेज: यहाँ कुछ कोड होगा"
+# सामान्य प्रिंटिंग
+Write-Host "नमस्ते! यह संदेश है।"
 
-# इसे रन करने पर आपको कुछ नहीं दिखाई देगा, जब तक की $DebugPreference इसे "Continue" नहीं सेट करता है
-$DebugPreference = "Continue"
-Write-Debug "Debug मेसेज: यहाँ कुछ कोड होगा"
+# डिबग संदेश
+Write-Debug "डिबग: इसे केवल तब दिखाई देगा जब डिबग पसंदीदा हो।"
+
+# वर्बोज संदेश
+Write-Verbose "वर्बोज: इसे केवल तब दिखाई देगा जब वर्बोज पसंदीदा हो।"
 ```
-जब आप इसे रन करेंगे, आपको दूसरी लाईन 'Debug message: here would be some code' को दिखाया जाएगा।
 
-## गहरा ज्ञान 
-Debug आउटपुट हमेशा से ही कोड डीबग करने और त्रुटियों को पहचानने के लिए एक महत्वपूर्ण उपकरण रहा है। PowerShell में `Write-Debug` cmdlet पहले से ही मौजूद है और यह डेवलपर्स को डीबग जानकारी को प्रिंट करने में सहायता करता है। 
-वैकल्पिक तौर पर, `Write-Verbose` और `Write-Warning` भी उपयोगी हो सकते हैं, आवश्यकता के आधार पर। 
-प्रत्येक cmdlet में अपने खुद के पहचानकर्ता या दृष्टिकोण होते हैं, और यही सबसे अच्छी बात है इन cmdlets की।
-यह इनका इस्तेमाल बहुत ही विविध और आसान बना देता है।
+```PowerShell
+# $DebugPreference और $VerbosePreference सेटिंग
+$DebugPreference = 'Continue'
+$VerbosePreference = 'Continue'
 
-## और भी देखें: 
-2. [PowerShell Write-Debug (Microsoft Docs)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-debug?view=powershell-7)
+Write-Host "नमस्ते! यह संदेश है।"
+Write-Debug "अब यह डिबग संदेश दिखेगा।"
+Write-Verbose "और यह वर्बोज संदेश भी दिखेगा।"
+```
+## गहराई से जानकारी:
+PowerShell में डीबग आउटपुट एक महत्वपूर्ण फंक्शन है, जिसकी जड़ें पहले के स्क्रिप्टिंग और प्रोग्रामिंग भाषाओं में नजर आती हैं। `Write-Host` से आउटपुट सीधे कंसोल में प्रिंट होता है, पर `Write-Debug` और `Write-Verbose` अधिक लचीलापन प्रदान करते हैं, क्योंकि उन्हें पसंदीदा सेटिंग्स के आधार पर टॉगल किया जा सकता है। इन cmdlets का उपयोग करने से स्क्रिप्ट्स को डिबग करना आसान हो जाता है और कोड के विभिन्न हिस्सों की निगरानी के लिए सूक्ष्म नियंत्रण मिलता है।
+
+## संबंधित स्रोत:
+- [About Write-Debug](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-debug)
+- [About Write-Host](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-host)
+- [About Write-Verbose](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-verbose)

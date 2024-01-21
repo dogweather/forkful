@@ -1,6 +1,7 @@
 ---
 title:                "문자열 연결하기"
-html_title:           "Arduino: 문자열 연결하기"
+date:                  2024-01-20T17:34:56.750105-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "문자열 연결하기"
 programming_language: "Java"
 category:             "Java"
@@ -10,38 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+문자열 연결(concatenating strings)은 두 개 이상의 문자열을 하나로 묶는 것을 말해요. 프로그래머는 메시지를 구성하거나, 데이터를 형식화할 때 문자열을 연결합니다.
 
-문자열 연결은 두 개 이상의 문자열을 하나의 문자열로 합치는 프로세스입니다. 프로그래머는 데이터의 표현을 보다 유연하고 가독성이 좋게 만들기 위해 이를 사용합니다.
-
-## 방법은?
-
-아래는 문자열 연결의 기본적인 사용법입니다:
-```Java
-String str1 = "Hello,";
-String str2 = "World!";
-String joinedStr = str1 + str2;
-System.out.println(joinedStr); // 출력: Hello,World!
+## How to: (어떻게:)
+```java
+public class StringConcatExample {
+    public static void main(String[] args) {
+        String hello = "안녕";
+        String world = "세계";
+        String exclamation = "!";
+        
+        // + 연산자를 사용해서 문자열을 연결합니다.
+        String greeting = hello + " " + world + exclamation;
+        System.out.println(greeting);  // 출력: 안녕 세계!
+        
+        // StringBuilder를 사용하여 문자열 연결하기
+        StringBuilder sb = new StringBuilder();
+        sb.append(hello).append(" ").append(world).append(exclamation);
+        System.out.println(sb.toString());  // 출력: 안녕 세계!
+    }
+}
 ```
-Java에서는 `+` 연산자를 사용하여 문자열을 쉽게 연결할 수 있습니다.
 
-## 깊게 알아보기
+## Deep Dive (심층 탐구)
+과거에는 '+' 연산자가 문자열 연결의 주된 방법이었습니다. 하지만 많은 문자열을 연결할 때 성능 문제가 발생할 수 있죠. 자바 5부터는 `StringBuilder`가 성능 개선을 위해 등장했습니다. `StringBuffer`도 있지만, 멀티쓰레드 환경에서만 필요합니다. 내부적으로 `String` 클래스는 문자 배열을 사용하여 데이터를 처리하며, 불변(immutable)이죠. 그래서 기존 문자열에 변화를 주면 새로운 `String` 객체가 만들어지게 됩니다.
 
-역사적 측면에서 보자면, 최초의 문자열 연결은 '+' 연산자의 오버로딩으로 제공되었습니다. 그러나 문자열이 많아질수록 성능 이슈가 발생했습니다. 이를 해결하기 위해 `StringBuilder` 클래스가 도입되었습니다.
+## See Also (더보기)
+- [String concatenation in Java](https://www.baeldung.com/java-strings-concatenation)
+- [StringBuilder vs String](https://www.geeksforgeeks.org/string-vs-stringbuilder-vs-stringbuffer-in-java/)
+- [Java Documentation for StringBuilder](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html) 
 
-대안적으로, `StringBuilder` 또는 `StringBuffer`를 사용하여 문자열을 연결할 수 있습니다. 이들은 메모리를 더 효율적으로 사용하며, 복잡한 문자열 연산을 수행하는데 더 유리합니다.
-
-```Java
-StringBuilder sb = new StringBuilder();
-sb.append("Hello,");
-sb.append("World!");
-System.out.println(sb.toString()); // 출력: Hello,World!
-```
-문자열 연결의 세부구현은 JVM에서 처리되며, JVM은 컴파일 시점에서 `+`를 `StringBuilder.append()`로 변환합니다.
-
-## 참고
-
-문자열 연결에 대한 보다 상세한 정보는 다음의 자료를 참조하십시오:
-
-1. Oracle Java 문서: [StringBuilder](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/StringBuilder.html)
-2. Java Tutorials: [Manipulating Characters in a String](https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html)
+(참고자료 링크는 학습을 더 확장하고 싶을 때 유용합니다. 영문 자료지만, 쉽게 따라 할 수 있어요.)

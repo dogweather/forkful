@@ -1,6 +1,7 @@
 ---
 title:                "Порівняння двох дат"
-html_title:           "Clojure: Порівняння двох дат"
+date:                  2024-01-20T17:32:31.054040-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Порівняння двох дат"
 programming_language: "C++"
 category:             "C++"
@@ -10,63 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це і навіщо?
+## Що і чому?
 
-Порівняння двох дат - це процес визначення, яка з двох дат є ранішою або пізнішою. Програмісти роблять це, коли їм потрібно сортувати події за датою або визначити проміжок часу між двома датами.
+Порівняння двох дат – це процедура визначення відносних позицій двох об'єктів у часі. Програмісти роблять це для управління подіями, збереження послідовності, та для функцій, які залежать від часу.
 
 ## Як це зробити:
 
 ```C++
-#include<iostream>
-#include<ctime>
-using namespace std;
+#include <iostream>
+#include <chrono>
+#include <iomanip>
 
-int main(){
-    // Отримання поточного часу
-    time_t now = time(0);
-    tm *dt = localtime(&now);
+int main() {
+    // Встановлення двох дат
+    std::tm tm1 = {};
+    std::tm tm2 = {};
+    strptime("2023-03-15", "%Y-%m-%d", &tm1);
+    strptime("2023-03-20", "%Y-%m-%d", &tm2);
 
-    // Отримання дати у форматі року, місяця та дня
-    int year = 1900 + dt->tm_year;
-    int month = 1 + dt->tm_mon;
-    int day = dt->tm_mday;
+    // Конвертація в time_point
+    std::chrono::system_clock::time_point tp1 = std::chrono::system_clock::from_time_t(mktime(&tm1));
+    std::chrono::system_clock::time_point tp2 = std::chrono::system_clock::from_time_t(mktime(&tm2));
 
-    cout << "Сьогодні: " << day << "-" << month << "-" << year << endl;
-
-    // Припустимо, що ми маємо іншу дату 
-    int other_day = 25;
-    int other_month = 12;
-    int other_year = 2030;
-
-    // Порівнюємо дві дати
-    if(other_year > year || 
-       (other_year == year && other_month > month) || 
-       (other_year == year && other_month == month && other_day > day))
-        {
-            cout << "Вказана дата є пізнішою." << endl;
-        }
+    // Порівняння дат
+    if (tp1 < tp2)
+        std::cout << "Перша дата раніше другої." << std::endl;
+    else if (tp1 > tp2)
+        std::cout << "Перша дата пізніше другої." << std::endl;
     else
-        {
-            cout << "Вказана дата не є пізнішою." << endl;
-        }
+        std::cout << "Дати однакові." << std::endl;
+    
     return 0;
 }
 ```
 
-Цей код виведе результат у форматі:
-
+Вивід:
 ```
-Сьогодні: 3-4-2025
-Вказана дата є пізнішою.
+Перша дата раніше другої.
 ```
 
-## Глибше занурення
+## Поглиблений огляд:
 
-Порівняння дат пройшло довгий шлях від простого порівняння днів, місяців і років. Сучасні мови програмування, такі як C++, надають можливість використовувати функції бібліотеки `<ctime>` для автоматичного отримання поточного часу та дати. Альтернатива - використовувати зовнішні бібліотеки, але велосипеди тут не потрібні.
+Історія: Порівняння дат – стара проблема в комп'ютерних науках. Спочатку це було здійснено через операції зі строками або числами.
 
-Зверніть увагу, що функція `localtime()` вказує на структуру, яка ініціюється статично і може бути перезаписана кожного разу при виклику функції.
+Альтернативи: Існують бібліотеки, як `boost::date_time` чи старі методи `std::mktime` і `std::difftime`, але `std::chrono` є засобом сучасного C++, який запроваджений для стандартної бібліотеки.
 
-## Дивіться також
+Деталі реалізації: `std::chrono` використовує точні часові точки (`time_points`) для представлення моментів у часі та тривалостей (`durations`). Це дозволяє зробити порівняння точними та безпечними для типів.
 
-- [`<ctime>` бібліотека](https://www.cplusplus.com/reference/ctime/)
-- [Функція `localtime()`](https://www.cplusplus.com/reference/ctime/localtime/)
+## Дивись також:
+
+- C++ reference про `std::chrono`: https://en.cppreference.com/w/cpp/chrono
+- Документація по `boost::date_time`: https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html
+- Tutorial по роботі із датами і часом в C++: https://www.learncpp.com/cpp-tutorial/date-and-time/

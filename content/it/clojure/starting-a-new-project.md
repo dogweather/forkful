@@ -1,7 +1,8 @@
 ---
-title:                "Iniziare un nuovo progetto"
-html_title:           "Arduino: Iniziare un nuovo progetto"
-simple_title:         "Iniziare un nuovo progetto"
+title:                "Avvio di un nuovo progetto"
+date:                  2024-01-20T18:03:04.595548-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Avvio di un nuovo progetto"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
@@ -10,43 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è & Perché?
+## What & Why? (Cosa & Perché?)
+Avviare un nuovo progetto significa configurare l'ambiente di sviluppo per piazzare solidamente le basi del software. I programmatori fanno questo per garantire che partano con le migliori pratiche, abbiano una struttura organizzata e possano integrare strumenti che aumentino l'efficienza dello sviluppo.
 
-Iniziare un nuovo progetto in programmazione significa creare un nuovo ambiente di lavoro, tutto pulito e carico di nuove opportunità. Lo facciamo per realizzare idee, creare nuovi software, o semplicemente per imparare nuove tecnologie.
-
-## Come Fare:
-
-Per iniziare un nuovo progetto in Clojure, utilizziamo Leiningen (un famoso strumento di gestione di progetti Clojure), eseguendo il seguente comando nell'interfaccia a linea di comando:
+## How to: (Come fare:)
+Clojure offre uno strumento integrato,`lein`, per iniziare nuovi progetti. Ecco come si usa:
 
 ```Clojure
-lein new nome-del-progetto
-```
+;; Installa Leiningen seguendo le istruzioni su https://leiningen.org/
+;; Poi, avvia un nuovo progetto con:
+lein new app il-mio-nuovo-progetto
 
-Questo genererà una nuova directory con lo stesso nome del progetto contenente altri file e directory, tra cui `project.clj` (il cuore del tuo progetto) e `src/nome_del_progetto/core.clj` (il tuo principale file sorgente Clojure).
+;; Hai creato un nuovo progetto Clojure! La struttura sarà simile a questa:
+;.
+;├── project.clj
+;├── README.md
+;├── resources
+;├── src
+;│   └── il_mio_nuovo_progetto
+;│       └── core.clj
+;└── test
+;    └── il_mio_nuovo_progetto
+;        └── core_test.clj
 
-Per eseguire il tuo progetto, entra nella directory del progetto e esegui:
-
-```Clojure
+;; Per eseguire il progetto:
 lein run
+
+;; Per eseguire i test:
+lein test
 ```
 
-L'output sarà qualcosa di simile a:
+Il risultato del comando `lein run` sarà il classico "Hello, World!" se non hai cambiato il contenuto di `core.clj`.
 
-```Clojure
-Hello, World!
-```
+## Deep Dive (Approfondimento)
+`lein` è abbreviazione di Leiningen, uno strumento di automazione build pensato per Clojure. Prende il nome dal protagonista della storia "Leiningen Versus the Ants". Prima di Leiningen, i Clojuristi spesso usavano strumenti Java come Maven o Ant, ma questi non erano ottimizzati per Clojure. Leiningen offre templates e plugin, rendendo facile scalare il progetto. Alternativamente, c'è `clj` e `deps.edn` introdotti di recente per gestire dipendenze in un modo più semplice.
 
-## Approfondimento:
-
-Clojure è un linguaggio funzionale moderno nato nel 2007, creato da Rich Hickey. È basato su Lisp ma consuma la JVM (Java Virtual Machine), il che lo rende un'alternativa popolare ad altri linguaggi JVM come Java o Scala.
-
-Ci sono alternative a Leiningen, come Boot o Clojure CLI, tuttavia, Leiningen rimane lo standard del settore per Clojure grazie alla sua facilità d'uso e alla sua vasta comunità.
-
-Implementare un nuovo progetto in Clojure richiede una buona conoscenza di Clojure (logicamente!), una comprensione della filosofia funzionale che sottosta il linguaggio, e una consapevolezza degli strumenti e delle librerie disponibili.
-
-## Vedi Anche:
-
-1. [Leiningen Homepage](https://leiningen.org/)
-2. [Clojure CLI](https://clojure.org/guides/getting_started)
-4. [Impara Clojure in Y minuti](https://learnxinyminutes.com/docs/clojure/)
-5. [Introduzione a Clojure - Video Corso](https://www.youtube.com/watch?v=VSdnJDO-xdg)
+## See Also (Vedi Anche)
+- [Leiningen Home Page](https://leiningen.org/)
+- [Clojure Getting Started Guide](https://clojure.org/guides/getting_started)
+- [ClojureScript, per Clojure su browser](https://clojurescript.org/)
+- [Practicalli Clojure, risorse per iniziare ed approfondire](https://practical.li/clojure/)

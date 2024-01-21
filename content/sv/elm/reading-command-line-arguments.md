@@ -1,7 +1,8 @@
 ---
-title:                "Läsa kommandoradsargument"
-html_title:           "Bash: Läsa kommandoradsargument"
-simple_title:         "Läsa kommandoradsargument"
+title:                "Läsa in kommandoradsargument"
+date:                  2024-01-20T17:55:52.061702-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Läsa in kommandoradsargument"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,47 +11,86 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att läsa kommandoradsargument är metoden att ta emot input från terminalen när du kör ditt program. Det hjälper programmerare att göra sina program flexibla och mer adaptiva till olika användarbehov.
+## What & Why?
+Att läsa kommandoradsargument innebär att tolka data som användarna anger när de startar ett program från terminalen. Programmerare gör detta för att tillåta dynamiskt beteende beroende på användarinput.
 
-## Så här gör du:
-Tyvärr stöder det aktuella Elm (0.19) inte direkt läsning av kommandoradsargument. Elm är en funktionell programmeringsspråk för frontend-webben och hanterar inte samma I/O som andra backend-språk. Men vi kan använda `Node.js` för att direkt ta kommandoradsargument och skicka det till vår Elm applikation.
+## How to:
+Elm är designat för webbprogram och saknar direkt tillgång till kommandoradsargument som server-sidans språk har. Men vi kan emulera en interaktion med nedanstående exempel.
 
-Först, skapa en fil `index.js` för att köra din Elm-kod:
+Först, installera `elm` och skapa ett nytt projekt:
 
-```Javascript
-var Elm = require('./elm/Main');
-var app = Elm.Main.init({
-    flags: process.argv
-});
+```bash
+npm install -g elm
+elm init my-project
+cd my-project
 ```
 
-Sedan i din Elm `Main.elm`:
+Lägg till en fil `index.html` som laddar ditt Elm-program:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Elm Command Line Arguments</title>
+  <script src="elm.js"></script>
+</head>
+<body>
+  <script>
+    Elm.Main.init({ flags: "Din initiala data här" });
+  </script>
+</body>
+</html>
+```
+
+Och här är `Main.elm`, där vi hanterar "argumentet":
 
 ```Elm
 module Main exposing (..)
 
-import Platform
+import Browser
+import Html exposing (text)
 
-type alias Flags = List String 
+type alias Model = String
+
+init : String -> (Model, Cmd msg)
+init flags =
+    (flags, Cmd.none)
+
+type Msg = NoOp
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update _ model =
+    (model, Cmd.none)
+
+view : Model -> Html msg
+view model =
+    text ("Kommandoradsargumentet var: " ++ model)
 
 main =
-    Platform.worker
+    Browser.element
         { init = init
-        , subscriptions = always Sub.none
+        , view = view
+        , update = update
+        , subscriptions = \_ -> Sub.none
         }
-
-init : Flags -> ((), Cmd Msg)
-init flags =
-    ( (), Cmd.none )
 ```
 
-Dit `init` tar argumenten från kommandoraden och Elm tar emot de som flaggor.
+Kompilera Elm till JavaScript:
 
-## Djupgående Diver
-Historiskt sett har att läsa kommandoradsargument i programmering erbjudit flexibilitet och makt för operativsystemanvändare att interagera med program. Alternativ i Elm inkluderar skapande av fler interaktiva användargränssnitt eller sömlös kommunikation med serverskript för att arbeta runt dess I/O-begränsningar. Intressant nog är Elm's unika implementering till stor del baserad på dess mål att förbättra pålitlighet och underhållbarhet i webbapplikationskod.
+```bash
+elm make src/Main.elm --output=elm.js
+```
 
-## Se Även
-[Node.js dokumentation om `process.argv`](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
-[Elm Guide om Flaggor](https://guide.elm-lang.org/interop/flags.html)
-[Community Diskussion om Kommandoradsargument på Elm Discourse](https://discourse.elm-lang.org/t/command-line-arguments-in-elm/1988)
+Öppna nu `index.html` i webbläsaren. Du ser texten: "Kommandoradsargumentet var: Din initiala data här".
+
+## Deep Dive
+Elm är ett funktionellt språk skapat för webbutveckling, särskilt för främjsidesapplikationer, där kommandoradsargument inte är applicerbart direkt som i server-side språk som Python eller Node.js. Tidigare språk som Haskell och F# har inspirerat Elms syntax och funktionell stil, men Elm fokuserar mer på webben än allmän systemprogrammering.
+
+Alternativ för att hantera extern input kan inkludera att ta emot argument via webbadresser (URLs) eller genom en webbtjänst där Elmapplikationen kan hämta data vid körning.
+
+För en regelrätt interaktion med systemkommandon och för att läsa kommandoradsargument direkt, överväg att använda Node.js med Elm, eller ett annat backend-språk som kan kommunicera med din Elm-klient.
+
+## See Also
+- Elm Official Guide: https://guide.elm-lang.org/
+- Elm Packages: https://package.elm-lang.org/
+- Elm och Node.js Integration: https://elm-lang.org/news/porting-to-elm-0.19#nodejs-integration

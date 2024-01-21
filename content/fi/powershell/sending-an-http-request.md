@@ -1,6 +1,7 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-html_title:           "Bash: HTTP-pyynnön lähettäminen"
+date:                  2024-01-20T18:00:44.528628-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,42 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mikä & Miksi?)
+HTTP-pyyntöjen lähettäminen on tapa kommunikoida verkon yli olevien palvelimien kanssa, esimerkiksi noutaaksesi dataa tai lähetettäessäsi sitä. Ohjelmoijat käyttävät sitä tiedon vaihtoon sovellusten ja backend-järjestelmien välillä.
 
-HTTP-pyyntöjen lähettäminen on prosessi, jossa sovelluksesi pyytää tietoja tai suorittaa toiminnon verkkopalvelimella. Ohjelmoijat tekevät tämän tiedon jakamiseksi ja tehtävien suorittamiseksi etäisäntäkoneilla.
-
-## Miten?
-
-### PowerShell-koodiesimerkki:
- ```PowerShell 
-# Luo HTTP-pyyntö
-$request = [System.Net.WebRequest]::Create('http://example.com')
-
-# Lähetä pyyntö ja saa vastaus
-$response = $request.GetResponse()
-
-# Tulosta vastauksen tilakoodi
-Write-Host $response.StatusCode 
-
-# Liberaalaa resurssit
-$response.Close()
- ```
-
-#### Tulostusnäyte:
+## How to: (Kuinka tehdään:)
+Esimerkki: Hae JSON-datan GET-pyynnöllä.
 ```PowerShell
-OK
+$response = Invoke-RestMethod -Uri 'https://api.example.com/data' -Method Get
+$response
+```
+Esimerkkituloste:
+```PowerShell
+name   : PowerShell
+type   : CoolnessOverload
+status : Success
 ```
 
-## Syvemmälle Sukeltaminen
+Esimerkki: Lähetä JSON-datan POST-pyynnöllä.
+```PowerShell
+$body = @{
+  name = 'PowerShell'
+  type = 'CoolnessOverload'
+}
+$json = $body | ConvertTo-Json
+$response = Invoke-RestMethod -Uri 'https://api.example.com/submit' -Method Post -Body $json -ContentType 'application/json'
+$response
+```
+Esimerkkituloste:
+```PowerShell
+result  : Success
+message : Data received
+```
 
-Historiallisesti HTTP-pyynnöt tunnetaan ensimmäisenä menetelmänä verkkopalvelimelta tiedon hakemiseen, joka lanseerattiin HTTP:n, World Wide Webin perustan, kanssa. PowerShellissa HTTP-pyynnöt voidaan tehdä useilla tavoilla, mukaan lukien Invoke-WebRequest ja Invoke-RestMethod cmdletit, jotka voidaan suorittaa lyhyemmillä koodiriveillä, mutta lisäkehitys mahdollistaen laajemman toiminnallisuuden, kuten otsikkotiedon lisäämisen tai mukautettujen pyyntöjen tekemisen. Paljon syvemmällä, HTTP-pyyntöjen lähettäminen on todella socket-ohjelmointi, jossa luodaan TCP-yhteys palvelimelle ja lähetetään pyyntöjä.
+## Deep Dive (Syväsukellus)
+HTTP-pyyntöjä on hyödynnetty 1990-luvun alusta, REST API:ien tullessa suosituiksi 2000-luvulla. PowerShellissä `Invoke-RestMethod` on yleinen tapa lähettää HTTP-pyyntöjä, ja se tukee erilaisia HTTP-metodeja, kuten GET, POST, PUT, ja DELETE.
 
-## Lisätietoja
+Vaihtoehtoja:
+- `Invoke-WebRequest`: Käytetään, kun tarvitaan yksityiskohtaista vastauksen hallintaa, kuten HTTP-vastauskoodeja tai otsikoita.
+- cURL tai wget: Eri käyttöjärjestelmissä suosittu työkalu HTTP-pyyntöihin komentoriviltä.
 
-Invoke-WebRequest Cmdlet (https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
+Toteutustiedot:
+- Älä unohda asettaa oikea sisällön tyyppi (`ContentType`), erityisesti POST-pyyntöjä lähettäessä.
+- Autentikaatio ja otsikoiden määritys tapahtuvat käyttämällä `-Headers` parametria.
+- Asynkroniset pyynnöt ja suorituskyky on mahdollista hallita `-AsJob` parametrin avulla.
 
-Invoke-RestMethod Cmdlet (https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1)
-
-HTTP-profiili (https://developer.mozilla.org/fi/docs/Web/HTTP)
-
-Syvällisempi johdatus socket-ohjelmointiin (https://www.codeproject.com/Articles/52752/A-Streamlined-Method-of-Communicating-with-Network)
+## See Also (Lisätietoja)
+- [Invoke-RestMethod documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod)
+- [About REST APIs](https://www.redhat.com/en/topics/api/what-is-a-rest-api)
+- [PowerShell scripting tutorial](https://docs.microsoft.com/en-us/powershell/scripting/overview)
+- [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)

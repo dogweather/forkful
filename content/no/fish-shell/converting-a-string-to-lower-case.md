@@ -1,6 +1,7 @@
 ---
 title:                "Konvertere en streng til små bokstaver"
-html_title:           "Arduino: Konvertere en streng til små bokstaver"
+date:                  2024-01-20T17:38:17.134228-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,37 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å konvertere en streng til små bokstaver innebærer å endre alle store bokstaver i teksten til deres tilsvarende små bokstaver. Programmerere gjør dette for å oppnå konsistent datainnsamling og -behandling, spesielt i tekstbehandling og søk algoritmer.
+Å konvertere en streng til små bokstaver betyr å endre alle tegn i strengen til deres småbokstav-ekvivalenter. Programmerere gjør dette for å standardisere tekstinput for enkel sammenligning og datahåndtering.
 
 ## Hvordan:
-Du kan enkelt konvertere en streng til små bokstaver i Fish shell ved hjelp av følgende kode.
+```Fish Shell
+# Konverter en enkel streng til små bokstaver.
+echo "Hei Verden!" | string lower
 
-```
-set streng 'Hei Verden'
-echo $streng | tr '[:upper:]' '[:lower:]'
-```
+# Sample output:
+hei verden!
 
-Når du kjører denne koden, vil du se følgende resultat:
-```
-hei verden
-```
+# Konverter output fra en kommando
+set versjon (fish --version | string lower)
+echo $versjon
 
-## Dypdykk:
-Historisk sett har konvertering av tekst til små bokstaver vært en viktig funksjon i mange programmeringsspråk for å forenkle strengsammenligning og indeksering. I Fish shell bruker vi 'tr' kommandoen for å oppnå dette. Men du kan også bruke 'awk' eller 'perl' for samme formål hvis du vil.
-
-```
-# Med awk
-echo $streng | awk '{print tolower($0)}'
-
-# Med perl
-echo $streng | perl -ne 'print lc'
+# Sample output:
+fish, versjon 3.x.x
 ```
 
-Hver av disse mulighetene har egne fordeler. For eksempel lar 'tr' deg enkelt bytte mellom store og små bokstaver. Imens 'awk' og 'perl' gir mer kontroll over dataanalyse og -manipulering.
+## Dypdykk
+I gamle dager, før Unicode og komplekse tegnsett, var strengkonvertering rettfram. Nå må moderne verktøy håndtere et bredt spekter av tegn og kodninger. Alternativer til `string lower` inkluderer bruk av `awk`, `tr`, eller programmeringsspråk som Python. I Fish Shell tar `string lower` seg av tungløftingen, og gir en ren syntaks uten behov for eksterne verktøy eller rørledningsakrobatikk.
 
-## Se Også: 
-For mer informasjon om hvordan du bruker disse kommandoene, kan du ta en titt på de følgende kildene:
-
-- 'tr' kommandobruk: [GNU Coreutils - tr](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html#tr-invocation)
-- 'awk' kommandobruk: [GNU Awk User’s Guide](https://www.gnu.org/software/gawk/manual/gawk.html)
-- 'perl' kommando bruk: [Perl Command-Line Options](https://perldoc.perl.org/perlrun)
+## Se Også
+- Fish dokumentasjon om strengmanipulasjon: https://fishshell.com/docs/current/cmds/string.html
+- Unicode case mapping: https://www.unicode.org/reports/tr21/tr21-5.html
+- Shell script tutorials: https://www.shellscript.sh

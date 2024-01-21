@@ -1,6 +1,7 @@
 ---
 title:                "Pesquisando e substituindo texto"
-html_title:           "Bash: Pesquisando e substituindo texto"
+date:                  2024-01-20T17:58:02.773936-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pesquisando e substituindo texto"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,48 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Substituição de texto na Haskell: Mais Simples do Que Você Imagina
-
-## O que e Porquê?
-
-A busca e substituição de texto envolve identificar todas as ocorrências de uma string específica (a ser buscada) e substituí-la por outra. Programadores fazem isso para mapear variáveis no código, atualizar funções antigas ou melhorar a legibilidade do código programado.
+## O Que & Porquê?
+Procurar e substituir texto é uma tarefa comum na programação: significa encontrar sequências de caracteres e trocá-las por outras. Fazemos isso para corrigir erros, atualizar dados ou modificar código de maneira eficiente.
 
 ## Como Fazer:
-
-Em Haskell, a função `substitute` da biblioteca Data.String.Utils é frequentemente usada.
-
-Instale com o seguinte comando:
 ```Haskell
-cabal install MissingH
-```
-Aqui está um exemplo de código:
-```Haskell
-import Data.String.Utils
+import Data.Text as T
 
-main = print $ substitute "world" "Haskell" "Hello, world!"
+-- Exemplo de função de substituição de texto
+substituirTexto :: T.Text -> T.Text -> T.Text -> T.Text
+substituirTexto antigo novo = T.replace antigo novo
+
+main :: IO ()
+main = do
+  let textoOriginal = "Olá mundo! Programação em Haskell é demais!"
+  let textoAtualizado = substituirTexto "mundo" "galera" textoOriginal
+  putStrLn $ T.unpack textoAtualizado
 ```
-A saída será:
-```Haskell
-"Hello, Haskell!"
+
+Saída da amostra:
 ```
-Neste exemplo, o programa procura pela string "world" na frase "Hello, world!" e a substitui por "Haskell".
+Olá galera! Programação em Haskell é demais!
+```
 
 ## Mergulho Profundo
+Substituir texto é uma operação tão antiga quanto os primeiros editores de texto. Em Haskell, a biblioteca `Data.Text` é uma alternativa moderna às Strings tradicionais (`[Char]`), oferecendo melhor desempenho e funcionalidades prontas como `replace`. Além disso, existem bibliotecas de expressões regulares como `regex-tdfa` se as substituições forem mais complexas.
 
-Haskell é uma linguagem de programação puramente funcional desenvolvida no final dos anos 80. Uma das alternativas para a função `substitute` é a função `replace`, da biblioteca `Text`.
+Implementar uma função de substituição eficiente em Haskell pode ser um desafio, porque strings em Haskell são imutáveis. Isso significa que modificar um caractere envolve a criação de uma nova string. No entanto, `Data.Text` utiliza arrays mutáveis internamente para otimizar operações como substituição.
 
-Vale lembrar que a função `substitute` tem complexidade O(n). A complexidade também pode ser afetada dependendo do tamanho do texto a ser pesquisado e substituído.
-
-## Veja Também:
-
-Para mais informações e assuntos relacionados, você pode visitar os seguintes links:
-
-1. [Haskell: Guia Básico para Iniciantes](https://learnxinyminutes.com/docs/pt-br/haskell-pt/)
-   
-2. [Documentação Oficial da Linguagem Haskell](https://www.haskell.org/documentation/)
-
-3. [Data.String.Utils](http://hackage.haskell.org/package/MissingH-1.2.1.0/docs/Data-String-Utils.html)
-   
-4. [Text](http://hackage.haskell.org/package/text-1.2.3.1/docs/Data-Text.html)
-
-Dê uma olhada nos recursos acima para aprender mais sobre Haskell e sua aplicação na busca e substituição de texto.
+## Veja Também
+- [Text](https://hackage.haskell.org/package/text) – Documentação sobre a biblioteca Text.
+- [Tutorial básico de Haskell](http://haskell.tailorfontela.com.br/) – Um guia prático e introdutório em português.
+- [Regular Expressions: regex-tdfa](https://hackage.haskell.org/package/regex-tdfa) – Para substituições baseadas em padrões complexos.

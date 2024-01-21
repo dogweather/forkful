@@ -1,6 +1,7 @@
 ---
 title:                "भविष्य या अतीत में तारीख की गणना"
-html_title:           "Clojure: भविष्य या अतीत में तारीख की गणना"
+date:                  2024-01-20T17:31:08.466849-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "भविष्य या अतीत में तारीख की गणना"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,38 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और ज़रूरत क्यों : भविष्य या विगत की तारीक हिसाब करना क्या है?
+## क्या और क्यों? (What & Why?)
+तारीखों को भविष्य या अतीत में गणना करना एक प्रोग्रामिंग क्रिया है जिसमें हम वर्तमान तारीख से निश्चित समय के बाद या पहले की तारीख का पता लगाते हैं। यह भुगतान समय सीमा, इवेंट प्लानिंग, या डेटा रिटेंशन स्कीम्स जैसे प्रोग्राम्मिंग कार्यों के लिए आवश्यक है।
 
-भविष्य या अतीत की तारीख का हिसाब लगाना मतलब एक विशेष तारीख से निश्चित समय इकाईयों (दिन, महीने आदि) को जोड़ना या घटाना। यह संगठनात्मक योजना, डेटाबेस क्वेरी, खेल कोडिंग के लिए बहुत महत्वपूर्ण हो सकता है। 
+## कैसे करें? (How to:)
+Clojure में डेट लाइब्रेरीज जैसे कि `clj-time` का इस्तेमाल करके हम आसानी से तारीखों की गणना कर सकते हैं।
 
-## कैसे :
+```clojure
+;; Clojure के लिए आवश्यक लाइब्रेरी जोड़ना
+(require '[clj-time.core :as time])
+(require '[clj-time.coerce :as coerce])
+(require '[clj-time.format :as format])
 
-Clojure में, ``clj-time``library का उपयोग करके भूतकाल या भविष्य की तारीख का हिसाब किया जा सकता है। 
+;; वर्तमान तारीख प्राप्त करना
+(def now (time/now))
 
-```Clojure
-(require '[clj-time.core :as t])
-(require '[clj-time.periodic :as p])
+;; भविष्य में तीन दिन जोड़ना
+(def three-days-from-now (time/plus now (time/days 3)))
 
-(defn add-days [days]
-  (t/plus (t/now) (t/days days)))
+;; अतीत में तीन दिन घटाना
+(def three-days-ago (time/minus now (time/days 3)))
 
-(defn sub-days [days]
-  (t/minus (t/now) (t/days days)))
-
-(println (add-days 10)) ; outputs: '2021-01-25T18:06:38.674Z' when today's date is '2021-01-15'
-(println (sub-days 10)) ; outputs: '2021-01-05T18:06:38.674Z' when today's date is '2021-01-15'
+;; तारीखों को स्ट्रिंग्स में बदलना और प्रिंट करना
+(println "अभी की तारीख:" (format/unparse (format/formatters :date-time-no-ms) coerce/to-date-time now))
+(println "तीन दिनों के बाद की तारीख:" (format/unparse (format/formatters :date-time-no-ms) coerce/to-date-time three-days-from-now))
+(println "तीन दिनों के पहले की तारीख:" (format/unparse (format/formatters :date-time-no-ms) coerce/to-date-time three-days-ago))
 ```
 
-## गहरा डूबना : 
+संभावित आउटपुट (वर्तमान तारीख के आधार पर बदलेगा):
+```
+अभी की तारीख: "2023-04-07T12:34:56.789Z"
+तीन दिनों के बाद की तारीख: "2023-04-10T12:34:56.789Z"
+तीन दिनों के पहले की तारीख: "2023-04-04T12:34:56.789Z"
+```
 
-Clojure programming language 2007 में Richie Hickey ने बनाई थी। इसका मुख्य उद्देश्य सरलता, शक्ति, और चुस्त स्थूल समझ का संगम है। 
+## गहराई से जानकारी (Deep Dive)
+`clj-time` लाइब्रेरी, Joda-Time पर आधारित है, जो Java के लिए एक मजबूत डेट-टाइम लाइब्रेरी है। Clojure, जो Java Virtual Machine (JVM) पर चलता है, सीधे इसका फायदा उठाता है। इसके अलावा, Java 8 और बाद में `java.time` पैकेज भी उपलब्ध है, जो समय और तारीख के साथ काम करने के लिए एक मजबूत फ्रेमवर्क प्रदान करता है।
 
-अन्य तारीख/समय libraries जैसे की ``Joda-Time`` या मौजूदा जावा 8 डेटाटाइम API ऑफर alternative approaches हो सकते हैं। लेकिन clj-time library Clojure के साथ अच्छे integrate करती है और कम code में अधिक काम करने में मदद करती है। 
+समय और तारीख की गणना करते समय समय-क्षेत्र और डेलाइट सेविंग टाइम को भी ध्यान में रखना चाहिए, जो कभी-कभी जटिल हो सकते हैं। `clj-time` इन्हें संभालने में सहायक है।
 
-clj-time library, Joda-Time पर बनाई गई है जो Java में तारीख और समय के साथ काम करने वाली एक मान्यता प्राप्त API है। 
+दूसरे विकल्पों में `goog.date` शामिल है, जो ClojureScript के लिए दिनांक संबंधी कार्यों के साथ मदद करता है, जो कि Clojure का एक वेब-आधारित संस्करण है।
 
-## अन्य जानकारियां :
-
-- [क्लोजर का विकिपीडिया पृष्ठ](https://en.wikipedia.org/wiki/Clojure)
-- [Clj-Time अधिकारी GitHub Repo](https://github.com/clj-time/clj-time)
-- [An Introduction to Clojure](https://clojure.org/guides/getting_started)
+## देखें भी (See Also)
+- clj-time GitHub repository: [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
+- Joda-Time documentation: [https://www.joda.org/joda-time/](https://www.joda.org/joda-time/)
+- Java 8 java.time package: [https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- ClojureScript goog.date docs: [https://google.github.io/closure-library/api/goog.date.html](https://google.github.io/closure-library/api/goog.date.html)

@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie pliku tekstowego"
-html_title:           "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+date:                  2024-01-20T17:55:15.600877-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,33 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-
-Czytanie pliku tekstowego to proces, dzięki któremu twój program może odczytać zawartość pliku i używać go w swojej pracy. Programiści robią to, gdy chcą pracować z danymi zapisanymi jako tekst, np. komunikować się z innymi programami, analizować dane lub testować swoje kody.
+## Co i Dlaczego?
+Czytanie pliku tekstowego to proces wyciągania informacji z pliku zapisanego na dysku. Programiści robią to, by manipulować danymi, wyświetlać je użytkownikowi, lub wczytywać konfiguracje swoich aplikacji.
 
 ## Jak to zrobić:
-
-Oto prosty kod w Pythonie, który pokazuje, jak odczytać plik tekstowy.
-
 ```Python
-plik = open('plik.txt', 'r')
-print(plik.read())
-plik.close()
+# Przykład 1: Odczytanie całego pliku
+
+with open('przykladowy.txt', 'r', encoding='utf-8') as plik:
+    zawartosc = plik.read()
+print(zawartosc)
+
+# Przykład 2: Odczytanie linijka po linijce
+
+with open('przykladowy.txt', 'r', encoding='utf-8') as plik:
+    for linijka in plik:
+        print(linijka.strip())
 ```
-Ten kod otwiera plik o nazwie 'plik.txt', odczytuje całą jego zawartość, a następnie zamyka plik.
 
-## Głębsza analiza
-
-Czytanie plików tekstowych jest fundamentalnym aspektem programowania, praktykowanym jeszcze, zanim istniały takie języki jak Python. Alternatywą dla bezpośredniego odczytu pliku jest skorzystanie z modułu pandas, który pozwala na szybsze i wygodniejsze przetwarzanie plików CSV.
-
-Szczegółem implementacyjnym, o którym warto pamiętać, jest obsługa plików za pomocą tzw. kontekstów, które automatycznie zamykają plik, nawet gdy wystąpi błąd. Oto przykładowy kod:
-
-```Python
-with open('plik.txt', 'r') as plik:
-    print(plik.read())
+Wynik (dla obu przykładów, zakładając identyczną zawartość pliku `przykladowy.txt`):
 ```
-## Zobacz też:
+Pierwsza linijka tekstu
+Druga linijka tekstu
+Trzecia linijka tekstu
+```
 
-1. Python Documentation on File I/O: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
-2. Python File Handling Cheat Sheet: https://www.pythonforbeginners.com/cheatsheet/python-file-handling
-3. W3Schools Tutorial on File Handling in Python: https://www.w3schools.com/python/python_file_handling.asp
+## Głębsze spojrzenie:
+Odczyt plików tekstowych jest jak chleb powszedni w programowaniu. Python od swojego początku proponuje wbudowane funkcje do obsługi plików, a jego filozofia "Batteries included" oznacza, że wszystko jest pod ręką.
+
+Wcześniej użycie trybu 'r' w funkcji `open` było standardem, ale nie zawsze obsługiwało poprawnie Unicode. Od Pythona 3.x, zalecane jest jawne określenie kodowania, np. `utf-8`.
+
+Alternatywy? Możesz użyć modułu `io` dla zaawansowanych możliwości lub `pandas` do wczytywania tabelarycznych danych.
+
+Szczegóły implementacji? W Pythonie plik jest obiektem, który ma swoje metody, np. `.read()`, `.readline()` czy `.readlines()`, dostosowane do różnych potrzeb. Otwarcie pliku za pomocą `with` zapewnia jego prawidłowe zamknięcie po zakończeniu operacji.
+
+## Zobacz także:
+- [Dokumentacja Pythona dla `open`](https://docs.python.org/3/library/functions.html#open)
+- [Python Input and Output](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [Moduł `io` w Pythonie](https://docs.python.org/3/library/io.html)
+- [Moduł `pandas` - wczytywanie danych](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html)

@@ -1,7 +1,8 @@
 ---
-title:                "Démarrer un nouveau projet"
-html_title:           "Elm: Démarrer un nouveau projet"
-simple_title:         "Démarrer un nouveau projet"
+title:                "Lancement d'un nouveau projet"
+date:                  2024-01-20T18:02:55.198465-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lancement d'un nouveau projet"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Getting Started"
@@ -10,40 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why? / Quoi et Pourquoi ?
+Démarrer un nouveau projet C#, c’est créer une base pour transformer vos idées en code opérationnel. Les programmeurs se lancent dans de nouveaux projets pour résoudre des problèmes, exploiter des nouvelles idées ou apprendre de nouvelles techniques.
 
-Démarrer un nouveau projet est comme créer une toile vierge sur laquelle vous pouvez exprimer vos idées de programmation. Les programmeurs font ceci pour lancer des solutions innovantes, adapter des idées existantes à de nouvelles utilisations, ou simplement pour améliorer leurs compétences.
-
-## Comment faire:
-
-Créer un nouveau projet en C# n'est pas compliqué. Voici quelques étapes simples à suivre.
+## How to / Comment faire :
+Créons un projet console simple. Vous avez besoin de .NET SDK installé.
 
 ```C#
-using System;
-namespace MonProjet
-{
-   class Programme
-   {
-      static void Main(string[] args)
-      {
-         Console.WriteLine("Bonjour le monde!");
-      }
-   }
-}
+// Ouvrez le terminal et exécutez :
+dotnet new console -o MonProjetConsole
+cd MonProjetConsole
+dotnet run
+
+// Vous devriez voir :
+Hello, World!
 ```
-Ceci est un exemple simple d'un nouveau projet C#. Pour exécuter ce code, vous pouvez simplement utiliser la commande `dotnet run` dans votre terminal / console.
 
-## Plongée en profondeur:
+## Deep Dive / Plongée en Profondeur
+Historiquement, les projets C# étaient souvent créés avec Visual Studio, mais .NET Core et maintenant .NET 5/6/7 ont introduit une manière plus légère et cross-platform avec `dotnet` CLI. Alternativement, vous pouvez utiliser des IDEs comme Visual Studio, Visual Studio Code avec l'extension C# ou JetBrains Rider. Pour la structure, un projet console est plus simple, mais pour des applications web, des APIs, ou des apps mobiles, envisagez `dotnet new web`, `dotnet new webapi`, ou `dotnet new maui`.
 
-Lancer un nouveau projet peut avoir différentes connotations pour différents programmeurs. Historiquement, cela signifie souvent initialiser une nouvelle base de code et créer des bibliothèques, mais dans le contexte des langages modernes comme C#, cela peut signifier simplement créer un nouveau 'namespace'.
-
-Il existe plusieurs manières alternatives de démarrer un projet, par exemple en utilisant des modèles de projet préexistants fournis par l'IDE ou le cadre de travail. Avec l'avènement des frameworks comme .NET Core, vous pouvez même créer des projets à partir du terminal avec la commande `dotnet new`.
-
-Néanmoins, toutes ces approches ont un point commun: elles vous permettent de construire votre propre structure à partir de zéro, de choisir les bibliothèques et les dépendances, et de contrôler tous les aspects de votre environnement de développement.
-
-## Voir aussi:
-
-1. [Documentation officielle Microsoft pour commencer](https://docs.microsoft.com/fr-fr/dotnet/csharp/)
-2. [Introduction aux namespaces en C#](https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/namespaces/)
-3. [Travailler avec des projets et des solutions dans Visual Studio](https://docs.microsoft.com/fr-fr/visualstudio/ide/quickstart-projects-solutions?view=vs-2019)
-4. [Créer un nouveau projet avec `dotnet new`](https://docs.microsoft.com/fr-fr/dotnet/core/tools/dotnet-new)
+## See Also / Voir Aussi
+- Documentation .NET: https://docs.microsoft.com/fr-fr/dotnet/core/tools/dotnet-new
+- Introduction à C#: https://docs.microsoft.com/fr-fr/dotnet/csharp/
+- Tutoriels Visual Studio: https://docs.microsoft.com/fr-fr/visualstudio/get-started/csharp/tutorial-console

@@ -1,7 +1,8 @@
 ---
-title:                "Skicka en http-begäran med grundläggande autentisering"
-html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
-simple_title:         "Skicka en http-begäran med grundläggande autentisering"
+title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
+date:                  2024-01-20T18:02:15.914307-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -12,44 +13,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-HTTP-request med Basic Authentication innebär att skicka en begäran till en server med användarnamn och lösenord för säker åtkomst. Programmerare gör det för att skydda känslig information och begränsa åtkomst till nödvändiga användare.
+Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att man inkluderar användarnamn och lösenord kodat i bas64-format i requestens `Authorization` header. Programmerare gör detta för att säkerställa att endast auktoriserade användare får tillgång till skyddade resurser på en server.
 
 ## Hur man gör:
 
-Här är ett grundläggande exempel på hur man skickar en HTTP-begäran med Basic Authentication i Java:
-
-```Java
-import java.net.URL;
+```java
+import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.nio.charset.StandardCharsets;
+import java.net.URL;
 import java.util.Base64;
 
 public class BasicAuthRequest {
-    public static void main(String[] args) throws Exception {
-        URL url = new URL("http://example.com");
-        
-        String userCredentials = "username:password";
-        String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes(StandardCharsets.UTF_8)));
 
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestProperty("Authorization", basicAuth);
+    public static void main(String[] args) throws IOException {
+        String webPage = "http://example.com/api";
+        String name = "user";
+        String password = "pass";
 
-        int responseCode = connection.getResponseCode();
-        System.out.println("Response Code : " + responseCode);
+        String authString = name + ":" + password;
+        String encodedAuth = Base64.getEncoder().encodeToString(authString.getBytes());
+
+        URL url = new URL(webPage);
+        HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+        urlConnection.setRequestProperty("Authorization", "Basic " + encodedAuth);
+
+        // Resten av koden för att hantera anslutningens input/output kommer här...
     }
 }
 ```
 
-Exemplet ovan skapar en HTTP-anslutning till `http://example.com` med användaruppgifter kodade i Basic Authentication-stilen.
+Sample output saknas här eftersom det handlar mer om serverns respons än själva Java-koden.
 
 ## Djupdykning
 
-1. Historisk kontext: Basic Authentication inrättades ursprungligen som en del av HTTP / 1.0-standarden på 90-talet. Det är inte lika säkert som nyare autentiseringsmetoder, men det är fortfarande populärt för sin enkelhet.
-2. Alternativ: Det finns säkrare alternativ till Basic Authentication tillgängliga, såsom OAuth och Kerberos. 
-3. Implementeringsdetaljer: När du skickar en HTTP-begäran med Basic Authentication, följer användarnamnet och lösenordet med i begäran. Denna information kodas dock med Base64, vilket inte är en krypteringsmetod, endast en kodning. 
+Skicka HTTP-förfrågan med grundläggande autentisering är så elementärt som det låter - det har använts sedan HTTP/1.0. Även om det är enkelt, bör man vara medveten om att det inte är det säkraste sättet att skicka känslig information eftersom bas64-kodning lätt kan dekodas. Modernt alternativ inkluderar OAuth och tokens.
 
-## Se även
+En viktig aspekt av implementationen i Java är `HttpURLConnection`-klassen, som möjliggör skapandet och hanteringen av förbindelser till resurser på nätverket. Från Java 11 och framåt kan man även använda `HttpClient`-klassen för att göra HTTP-förfrågningar på ett mer flexibelt sätt, inklusive asynkron hantering.
 
-1. Officiell Java-dokumentation: [URL-klassen](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/net/URL.html)
-2. Officiell Java-dokumentation: [HttpURLConnection-klassen](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/net/HttpURLConnection.html)
-4. [Alternativa autentiseringsmetoder](https://auth0.com/docs/protocols)
+## Se också
+
+- [Java 11 HttpClient Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
+- [Base64 Encoding and Decoding](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html)
+- [RFC 7617 'The 'Basic' HTTP Authentication Scheme'](https://tools.ietf.org/html/rfc7617)
+- [Understanding Java HttpURLConnection](https://www.baeldung.com/java-http-url-connection)

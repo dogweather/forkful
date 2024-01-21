@@ -1,6 +1,7 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Arduino recipe: Generating random numbers"
+date:                  2024-01-20T17:49:45.377639-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generating random numbers"
 programming_language: "PHP"
 category:             "PHP"
@@ -12,52 +13,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Random numbers are numbers produced by a process whose outcome is unpredictable. Programmers generate such numbers for applications like simulations, cryptography, games, or for testing algorithms.
+Random numbers in PHP? Yep, they make your programs unpredictable. Handy for games, simulating scenarios, or security (like salts in encryption).
 
 ## How to:
 
-To generate a random number in PHP, you'd use the `rand()` or `mt_rand()` functions. For instance:
+### Basic Random Number
 
-```PHP
-<?php
-// Generate a random number between 1 and 10
-$randomNumber = rand(1, 10);
-echo $randomNumber;
-?>
+Get a simple random integer between 0 and 100.
+```php
+echo rand(0, 100);
 ```
+Sample output: `42`
 
-Looking a bit unpredictable, isn't it? Let's not stop there; let's use `mt_rand()`:
+### Better Randomness
 
-```PHP
-<?php
-// Generate a number between 20 and 50
-$randomNumber = mt_rand(20, 50);
-echo $randomNumber;
-?>
+Need more security? Use `random_int()` instead. It's cryptographically secure.
+```php
+echo random_int(0, 100);
 ```
+Sample output: `57`
 
-`mt_rand()` works similar to `rand()`, but it's a bit faster and produces a better random value.
+### Random Bytes
+
+Generating random bytes, often for cryptographic use:
+```php
+echo bin2hex(random_bytes(5));
+```
+Sample output: `3f7a2b1d3c`
+
+### Seeding the Generator
+
+As of PHP 7.1, `rand()` and `mt_rand()` no longer require manual seeding. It's now automatic and more secure!
 
 ## Deep Dive
 
-Initially in PHP, only `rand()` was available. But it was found that its algorithm has statistical issues and produces numbers that aren't evenly distributed. Enter Mersenne Twister's `mt_rand()`, a better pseudo-random number generator that brings better uniformity. 
+Back in the day, random numbers in PHP were less random than you'd want (talking pre-PHP 7 here). `rand()` was okay for simple tasks but not for anything needing real unpredictability. That's where `mt_rand()`, based on Mersenne Twister algorithm, came in - better, but still not good for crypto-stuff.
 
-For most ordinary purposes, like games or randomized content, `rand()` and `mt_rand()` will do. However, these are not cryptographically secure. For something truly random, such as generating cryptographic salts or keys, you'd use PHP’s `random_int()` or `random_bytes()` functions. 
+Enter PHP 7, and things got serious. The random functions got an overhaul. `random_int()` and `random_bytes()` were introduced, wielding cryptographically secure randomness care of your operating system's random number generator (CSPRNG). Now that's proper randomness.
 
-```PHP
-<?php
-  // Generate a cryptographically secure random integer between 1 and 100
-  $randomInt = random_int(1, 100); 
-  echo $randomInt;
-?>
-```
+Why not always use `random_int()`? Performance. It's slower than `rand()` due to the added security. So, pick what fits your needs.
 
-This function gets us as close to true randomness as feasible.
+Lastly, on seeding: That's like starting a random number pattern. Old PHP made you do it yourself, leading to predictable patterns if done wrong. Now PHP handles it invisibly and way better. 
 
 ## See Also
 
-Want a deep dive into PHP's random number generation? Check these out:
-- PHP Manual's [rand()](https://www.php.net/manual/en/function.rand.php)
-- [mt_rand()](https://www.php.net/manual/en/function.mt-rand.php)
-- [random_int()](https://www.php.net/manual/en/function.random-int.php)
-- [random_bytes()](https://www.php.net/manual/en/function.random-bytes.php)
+- PHP Manual on Random Integers: [PHP: random_int - Manual](https://www.php.net/manual/en/function.random-int.php)
+- PHP Manual on Random Bytes: [PHP: random_bytes - Manual](https://www.php.net/manual/en/function.random-bytes.php)

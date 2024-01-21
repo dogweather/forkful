@@ -1,6 +1,7 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Lua: Tekstitiedoston lukeminen"
+date:                  2024-01-20T17:53:50.334274-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "C"
 category:             "C"
@@ -10,46 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Luettaessa Tekstitiedostoja C-ohjelmoinnissa
+## What & Why? (Mitä ja Miksi?)
+Tekstitiedoston lukeminen tarkoittaa tiedoston sisältämän tekstin tuomista ohjelmaasi. Ohjelmoijat tekevät tätä datan käsittelyyn, analysointiin tai ohjelmiston asetusten lataamiseen.
 
-## Mikä & Miksi?
-Tekstitiedoston lukeminen on prosessi, jossa ohjelma lukee merkkejä tiedostosta ja käsittelee niitä. Tämä on hyödyllistä, kun moitteettomasti varastoituja tietoja halutaan hyödyntää ohjelman toiminnassa.
-
-## Kuinka Toimia:
-Alla on esimerkki siitä, kuinka lukea tekstitiedostoa C-ohjelmointikielellä.
-
+## How to: (Miten tehdään:)
 ```C
 #include <stdio.h>
 
-int main(){
+int main() {
     FILE *file;
-    char c;
+    char line[100];
 
-    file = fopen("tiedosto.txt", "r");
-    if(file == NULL){
-        printf("Tiedostoa ei voida avata!\n");
+    file = fopen("esimerkki.txt", "r");
+    if (file == NULL) {
+        perror("Virhe tiedoston avaamisessa");
         return 1;
     }
 
-    while((c = fgetc(file)) != EOF){
-        printf("%c", c);
+    while (fgets(line, sizeof(line), file)) {
+        printf("%s", line);
     }
 
     fclose(file);
     return 0;
 }
 ```
+Output:
+```
+Tässä on esimerkkitekstiä.
+Toinen rivi tekstiä.
+```
 
-Tämä ohjelma avaa "tiedosto.txt", lukee sen sisällön merkki kerrallaan ja tulostaa sen. Jos tiedostoa ei voida avata, se tulostaa virheviestin ja lopettaa.
+## Deep Dive (Syväsukellus)
+Tekstitiedoston lukemisen historia alkaa jo varhaisista käyttöjärjestelmistä, kun kaikki tieto tallennettiin ja käsiteltiin tekstimuodossa. C-kielen standardikirjasto tarjoaa funktiot `fopen`, `fgets`, `fread`, jne. tiedostojen käsittelyyn. Vaihtoehtoisia tapoja lukea tiedostoja ovat esimerkiksi `mmap`, kolmannen osapuolen kirjastot tai komentorivipohjaiset ratkaisut. `fgets` lukee tiedoston rivi riviltä, kun taas `fread` voi lukea suurempia datablokkeja. Tietoturvan kannalta on tärkeää muistaa tarkistaa tiedoston avaaminen ja käsitellä virheitä oikein, ettei luotaisi haavoittuvuuksia.
 
-## Syvempi Sukellus
-Historiallisesti C on tarjonnut tiedostonkäsittelytoiminnot, mukaan lukien luku, kirjoitus, luominen ja poistaminen. `FILE *` pointteri ja `fopen`, `fgetc`, ja `fclose` funktiot ovat osa tämän ominaisuuden tarjoamista välineitä.
-
-Vaihtoehtoisesti, voit käyttää `fscanf` tai `fgets` funktioita lukemaan kokonaisen rivin kerrallaan tai formatoidun syötteen. Valinta riippuu tiedostosi sisällöstä ja siitä, kuinka haluat käsitellä sen.
-
-Tiedoston käsittelemiseen liittyy resurssienhallinta, mm. tiedoston avaaminen ja sulkeminen. Jos et sulje tiedostoa, saatat aiheuttaa resurssivuotoja, jotka kuluttavat muistia tarpeettomasti.
-
-## Katso Myös
-Lisätietoja ja lähteitä:
-- [C Library - <stdio.h>](https://www.tutorialspoint.com/c_standard_library/stdio_h.htm)
-- [File I/O in C programming with examples](https://beginnersbook.com/2014/01/c-file-io/)
+## See Also (Katso Myös)
+- C Standard Library documentation: https://en.cppreference.com/w/c/io
+- GNU C Library Manual: https://www.gnu.org/software/libc/manual/html_node/Opening-Streams.html
+- POSIX `mmap`: https://man7.org/linux/man-pages/man2/mmap.2.html

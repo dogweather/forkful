@@ -1,7 +1,8 @@
 ---
-title:                "Å sende en http-forespørsel"
-html_title:           "C++: Å sende en http-forespørsel"
-simple_title:         "Å sende en http-forespørsel"
+title:                "Å sende en HTTP-forespørsel"
+date:                  2024-01-20T17:58:56.301342-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,46 +12,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+En HTTP-forespørsel lar en Arduino snakke med internett - den spør, og et server svarer. Vi gjør dette for å slå opp data, styre ting på avstand, eller logge informasjon online.
 
-Å sende en HTTP-forespørsel er å be en server om en ressurs, for eksempel en nettside. Som programmerere gjør vi dette for å hente data, oppdatere data, slette data, etc.
-
-## Hvordan:
-
-Først, vi må inkludere Ethernet-biblioteket.
+## Slik gjør du:
+Arduino-kode for å sende en enkel GET-forespørsel:
 
 ```Arduino
-#include <Ethernet.h>
+#include <WiFi.h>
+const char* ssid = "dittNettverksnavn";
+const char* password = "dittPassord";
+const char* host = "www.eksempel.com";
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("WiFi tilkoblet.");
+  Serial.print("IP-adresse: ");
+  Serial.println(WiFi.localIP());
+
+  WiFiClient client;
+  if (!client.connect(host, 80)) {
+    Serial.println("Tilkobling feilet");
+    return;
+  }
+  
+  client.print(String("GET ") + "/sti/til/ressurs" + " HTTP/1.1\r\n" +
+               "Host: " + host + "\r\n" + 
+               "Connection: close\r\n\r\n");
+  unsigned long timeout = millis();
+  while (client.available() == 0) {
+    if (millis() - timeout > 5000) {
+      Serial.println(">>> Timeout!");
+      client.stop();
+      return;
+    }
+  }
+  while(client.available()) {
+    String line = client.readStringUntil('\r');
+    Serial.print(line);
+  }
+}
+
+void loop() {
+}
+```
+Eksempel-output når alt har gått bra:
+```
+WiFi tilkoblet.
+IP-adresse: 192.168.1.4
+HTTP/1.1 200 OK
+...
 ```
 
-Dernest, definerer vi MAC-adressen og IP-adressen.
-
-```Arduino
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-IPAddress ip(192,168,1,177);
-```
-
-Og vi initialiserer Ethernet-serveren.
-
-```Arduino
-EthernetServer server(80);
-```
-
-Nå kan vi åpne en forbindelse og sende HTTP-forespørselen.
-
-```Arduino
-EthernetClient client = server.available();
-client.println("GET / HTTP/1.1");
-```
-
-Forespørslens resultat vil da være tilgjengelig i klientobjektet.
-
-## Dypere info
-
-HTTP-forespørsler ble opprinnelig brukt i nettlesere for å hente nettsideinnhold. I Arduino kan vi bruke dem til å kommunisere med web-APIer, sende data til skytjenester, etc. Det finnes flere metoder å sende HTTP-forespørsler på, GET og POST er de mest brukte. GET brukes til henting av data, POST til sending. I denne opplæringen brukte vi GET.
-
-Detaljer om implementeringen: I vårt eksempel definerte vi en MAC-adresse og IP-adresse. I virkeligheten vil MAC-adressen være unik for det eksakte Ethernet-grensesnittet du bruker, og IP-adressen vil avhenge av nettverkskonfigurasjonen din.
+## Dybdedykk
+Å sende HTTP-forespørsler er essensielt for tingenes internett (IoT). På 90-tallet begynte webklienter å be om data fra servere, noe som drev fremveksten av det moderne internett. Alternativene til HTTP inkluderer MQTT for lette meldinger i IoT eller WebSockets for kontinuerlig kommunikasjon. Med Arduino, er utfordringen ofte i detaljene – å sikre stabile nettverksforbindelser, effektiv kode, og sikkerhetsaspekter som SSL/TLS.
 
 ## Se også
-
-- Arduino Ethernet-biblioteket: [link](https://www.arduino.cc/en/Reference/Ethernet)
-- Mer informasjon om HTTP-forespørsler: [link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+- [ESP8266WiFi library for spesifikke instruksjoner for ESP8266-moduler](https://github.com/esp8266/Arduino)
+- [MQTT for Arduino: et alternativ for IoT-kommunikasjon](https://pubsubclient.knolleary.net/)

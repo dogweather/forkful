@@ -1,6 +1,8 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
-html_title:           "Arduino: Obliczanie daty w przyszłości lub przeszłości"
+date:                  2024-01-20T17:28:41.164098-07:00
+model:                 gpt-4-1106-preview
+html_title:           "Clojure: Obliczanie daty w przyszłości lub przeszłości"
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,38 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Obliczanie daty w przyszłości lub przeszłości to proces określania konkretnych dat z przyszłości lub przeszłości, znając obecną datę i ilość dni do dodania lub odjęcia. Programiści robią to, gdy magazynują lub analizują dane związane z czasem.
+# Obliczanie daty w przeszłości lub przyszłości na Arduino
 
-## Jak to zrobić:
-W Arduino, możemy to zrobić za pomocą biblioteki TimeLib. Oto prosty przykładowy kod:
+## Czym i dlaczego?
+Obliczanie daty w przyszłości lub przeszłości to ustalenie dnia, miesiąca i roku przed lub po danym dniu. Programiści robią to, by zarządzać czasem w projektach, np. w systemach przypomnień czy logowaniu zdarzeń.
 
+## Jak zrobić:
 ```Arduino
 #include <TimeLib.h>
 
-void setup(){        
-  setTime(15, 45, 0, 4, 11, 2021); //ustawienie aktualnego czasu i daty 
+void setup() {
   Serial.begin(9600);
+  setTime(8, 29, 0, 8, 4, 2023); // ustawienie czasu na 8:29 8 kwietnia 2023
 }
 
-void loop(){  
-  time_t future_date = now() + 7 * SECS_PER_DAY; //obliczenie daty za 7 dni
-  Serial.print(day(future_date));
-  Serial.print(".");
-  Serial.println(month(future_date));
-  delay(1000);
+void loop() {
+  time_t teraz = now();
+  time_t przyszlosc = teraz + 7 * SECS_PER_DAY; // data za tydzień
+  time_t przeszlosc = teraz - 30 * SECS_PER_DAY; // data sprzed miesiąca
+
+  Serial.print("Teraz: ");
+  pokazDate(teraz);
+  Serial.print("Za tydzień: ");
+  pokazDate(przyszlosc);
+  Serial.print("Miesiąc temu: ");
+  pokazDate(przeszlosc);
+
+  delay(10000); // czekaj 10 sekund
+}
+
+void pokazDate(time_t czas) {
+  Serial.println(day(czas));
+  Serial.print("-");
+  Serial.println(month(czas));
+  Serial.print("-");
+  Serial.println(year(czas));
+  Serial.println();
 }
 ```
-Tym kodem obliczamy datę za 7 dni od bieżącej daty. W wyjściu zobaczymy datę za tydzień od naszej pierwotnie ustawionej daty.
 
-## Głębiej
-Za obliczanie dat w przyszłości lub przeszłości zwykle odpowiada wbudowana biblioteka lub funkcja w danym języku programowania. W Arduino korzystamy z biblioteki TimeLib, która jest łatwo dostępna i znacząco ułatwia tę czynność.
+## Dokładniej:
+Kiedyś programiści musieli liczyć czasy samodzielnie — błąd roku 2000 to przykład. Teraz używają gotowych bibliotek jak `TimeLib.h`. Można też korzystać z `RTC` — modułów czasu rzeczywistego. Ważne są strefy czasowe i zmiany takie jak DST (Daylight Saving Time).
 
-Jednak w kontekście historycznym funkcjonalność tą czesto trzeba bylo implementować samemu. Dopiero pojawienie się konkretnych bibliotek ułatwiło ten proces. 
-
-Alternatywą dla TimeLib w Arduino może być na przykład biblioteka RTClib, która także umożliwia operacje na datach. Wybór między jedną a drugą zależy od konkretnych wymagań projektu, jak na przykład ilość dostępnej pamięci w mikrokontrolerze.
-
-## Zobacz też
-1. [Dokumentacja TimeLib](https://www.pjrc.com/teensy/td_libs_Time.html)
-2. [Dokumentacja RTClib](https://adafruit.github.io/RTClib/html/index.html)
-3. [Instrukcja Arduino o czasie i dacie](https://www.arduino.cc/reference/en/libraries/rtc/)
+## Zobacz także:
+- [TimeLib Library](https://www.pjrc.com/teensy/td_libs_Time.html)
+- [RTC Lib](https://www.arduino.cc/en/Reference/RTC) 
+- [Processing DateTime](http://playground.arduino.cc/Code/DateTime)
+- [Arduino Time Library](https://github.com/PaulStoffregen/Time)

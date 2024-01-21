@@ -1,7 +1,8 @@
 ---
-title:                "קריאה של ארגומנטים משורת הפקודה"
-html_title:           "C#: קריאה של ארגומנטים משורת הפקודה"
-simple_title:         "קריאה של ארגומנטים משורת הפקודה"
+title:                "קריאת פרמטרים משורת הפקודה"
+date:                  2024-01-20T17:57:47.253799-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "קריאת פרמטרים משורת הפקודה"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,45 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה? 
+## מה ולמה?
+קריאת ארגומנטים משורת הפקודה זה התהליך שבו תוכנה מקבלת קלטים מהמשתמש דרך הטרמינל. תכניתנים עושים את זה כדי לאפשר שליטה גמישה ואינטראקטיבית בהפעלת התוכנית.
 
-קריאה של ארגומנטים מהשורה הפקודה היא דרך לקבל נתונים מהמשתמש שיכולים לשנות את התנהגות התוכנית. מתכנתים משתמשים בכך כדי לתת גמישות למשתמשים ולאפשר שינויים דינאמיים בהתנהגות התוכנית.
-
-## איך:
-
-הנה דוגמא של קיבולת ארגומנטים מהשורה הפקודה ב- TypeScript:
+## איך לעשות:
+ב-TypeScript, אנחנו משתמשים ב`process.argv` כדי לקרוא ארגומנטים. נתחיל עם דוגמה פשוטה:
 
 ```TypeScript
-// args.ts
-function main() {
-    const args = process.argv.slice(2);
-    args.forEach((value, index) => {
-    console.log(`Arg ${index}: ${value}`);
-    });
-}
+// index.ts
 
-main();
+// הדפס את כל הארגומנטים
+process.argv.forEach((val, index) => {
+  console.log(`${index}: ${val}`);
+});
 ```
-הרצת תוכנית ה- TypeScript אם נעביר לה את הארגומנטים "hi" ו- "hello":
+
+רץ את הקוד עם `ts-node index.ts arg1 arg2 arg3` ותקבל:
 
 ```
-$ tsc args.ts && node args.js hi hello
+0: path/to/node
+1: path/to/index.ts
+2: arg1
+3: arg2
+4: arg3
 ```
-תוצאה:
 
+אם אתה רוצה רק את הארגומנטים של המשתמש (ולא את הנתיבים), התחל מהאינדקס השלישי:
+
+```TypeScript
+// index.ts
+
+const userArgs = process.argv.slice(2);
+
+console.log(userArgs); // ['arg1', 'arg2', 'arg3']
 ```
-Arg 0: hi
-Arg 1: hello
-```
-## הצצה לעומק:
 
-לקרוא ארגומנטים מהשורה הפקודה הוא פרקטיקה נפוצה בתיכנות. היא משמשת בראש ובראשונה בשפות תכנות המתחילות מהשורה הפקודה, אך בשנים האחרונות היא מתפשטת לתוכניות מחשב רגילות. חלופה אחרת היא שימוש בקלט משתמש דרך ממשק המשתמש.
+## צלילה עמוקה
+קריאת ארגומנטים משורת הפקודה זה לא חידוש. ברוב שפות התכנות, זה מנגנון יסודי. ב-TypeScript, שהוא למעשה JavaScript מוכתב, אנו משתמשים בגישה הדומה של `process.argv` שיש לנו ב-Node.js.
 
+חלופות לקריאת ארגומנטים קיימות. לדוגמה, חבילות כמו `yargs` או `commander` מספקות יותר גמישות ואפשרויות לפרסון של ארגומנטים.
 
-ל- TypeScript, `process.argv` הוא מערך שמכיל את הארגומנטים של שורת הפקודה. המספרים שנתונים ל- `slice(2)` הם כדי להתעלם מהשני הראשונים במערך, שם התוכנית והחלק המוגדר תמיד.
+פרט לכך, קריאה ישירה מ-`process.argv` יכולה להיות גולמית ולדרוש הרבה קוד ניתוח משלך. שים לב שכל ארגומנט נחשב כטקסט, אז אם אתה צריך להמיר לסוגים אחרים (כמו מספרים), תצטרך לעשות זאת בעצמך.
 
-## ראה גם:
-
-פרטים נוספים על איך להשתמש ב- `process.argv`:
-- [MDN Web Docs - process.argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
-- [Stack Overflow - How to pass command line arguments to a Node.js program?](https://stackoverflow.com/questions/4351521/how-do-i-pass-command-line-arguments-to-a-node-js-program)
+## ראה גם
+- [Node.js process.argv documentation](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- [Yargs GitHub repository](https://github.com/yargs/yargs) - כדי להבין איך להשתמש ב`yargs` לניתוח ארגומנטים.
+- [Commander GitHub repository](https://github.com/tj/commander.js) - עוד אפשרות פופולרית לניהול ארגומנטים בצורה מסודרת.

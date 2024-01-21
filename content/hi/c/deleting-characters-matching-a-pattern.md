@@ -1,7 +1,8 @@
 ---
-title:                "पैटर्न से मिलते जुलते वर्णों को हटाना"
-html_title:           "Elixir: पैटर्न से मिलते जुलते वर्णों को हटाना"
-simple_title:         "पैटर्न से मिलते जुलते वर्णों को हटाना"
+title:                "पैटर्न से मेल खाते अक्षरों को हटाना"
+date:                  2024-01-20T17:42:13.769801-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पैटर्न से मेल खाते अक्षरों को हटाना"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,59 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+पैटर्न से मेल खाने वाले करैक्टर्स को हटाना मतलब यह है कि किसी स्ट्रिंग से खास करैक्टर्स को इस प्रकार से निकाल देना कि जो हमारे काम के हों वही बचें। प्रोग्रामर्स यह तब करते हैं जब उन्हें डेटा साफ करना होता है या सिर्फ ज़रूरी जानकारी निकालनी होती है।
 
-निर्दिष्ट पैटर्न के अनुसार वर्णों को हटाने का अर्थ होता है किसी स्ट्रिंग से विशिष्ट वर्णों को हटाना। प्रोग्रामर्स इसे तब करते हैं जब उन्हें स्ट्रिंग को कुछ विशिष्ट रूप में दिखाने की आवश्यकता होती है।
+## How to: (कैसे करें:)
+```c
+#include <stdio.h>
+#include <string.h>
 
-## कैसे करें:
-
-ये कोडिंग उदाहरण स्ट्रिंग से विशिष्ट वर्णों को हटाना दिखाते हैं:
-
-```C
-#include<stdio.h>
-#include<string.h>
-
-void removeChars(char *str, char *remove) {
-  int i = 0, j = 0;
-  char temp[100];
-  
-  while(str[i]) {
-    if(strchr(remove, str[i]) == NULL) {
-      temp[j] = str[i];
-      j++;
+void remove_chars(char *str, const char *chars_to_remove) {
+    for (int i = 0, j = 0; str[i] != '\0'; ++i) {
+        char *c = strchr(chars_to_remove, str[i]);
+        if (c == NULL) {
+            str[j++] = str[i];
+        }
     }
-    i++;
-  }
-  temp[j] = '\0';
-  
-  strcpy(str, temp);
+    str[j] = '\0'; // Null-terminate the modified string
 }
 
 int main() {
-  char str[] = "Hello, world!";
-  char remove[] = "l";
-  
-  removeChars(str, remove);
-  
-  printf("%s\n", str);
-  
-  return 0;
+    char str[] = "Hello, नमस्ते! 123";
+    const char *chars = ",!123";
+
+    printf("Original String: %s\n", str);
+    remove_chars(str, chars);
+    printf("Modified String: %s\n", str);
+
+    return 0;
 }
 ```
-
-और आउटपुट होगा:
-
+Sample Output:
 ```
-Heo, word!
+Original String: Hello, नमस्ते! 123
+Modified String: Hello नमस्ते 
 ```
 
-## गहराई में:
+## Deep Dive (गहराई से जानकारी):
+स्ट्रिंग प्रोसेसिंग और डेटा सेनेटाइजेशन प्राचीन प्रोग्रामिंग समस्याओं में से एक है। स्ट्रिंग्स से विशेष करैक्टर्स को हटाना कई दफा आवश्यक होता है, जैसे लॉग फाइलों से अनचाही जानकारी को निकालना। `strchr` फंक्शन C में इस्तेमाल होता है जो निर्दिष्ट करैक्टर की पहली उपस्थिति को खोजता है। अल्टरनेटिव्स में `strpbrk` या regex लाइब्रेरीज जैसे POSIX या PCRE शामिल हैं, लेकिन वे ज्यादा कॉम्प्लेक्स होते हैं। एक सरल लूप और `strchr` से पता चलता है कि बिना जटिलता के कैसे ऐसा काम किया जा सकता है।
 
-1. आइतिहासिक संदर्भ: C में वर्णों को हटाने के लिए `strchr()` फ़ंक्शन पहली बार C89 में शामिल किया गया था।
-2. वाईकल्पिक: `strpbrk()` फ़ंक्शन भी इसके लिए उपयोग किया जा सकता है, जो दो स्ट्रिंगों के बीच पहली मिलान वाली स्थिति लौटाता है।
-3. कार्यान्वयन विवरण: `strchr()` फ़ंक्शन स्ट्रिंग में वर्ण की पहली उपस्थिति खोजता है। यदि यह वर्ण पाता है, तो यह उसका पॉइंटर लौटाता है।
-
-## और भी देखें:
-
-1.  [Remove all characters in second string which are present in first string](https://www.geeksforgeeks.org/remove-characters-from-the-first-string-which-are-present-in-the-second-string/)
-2.  [How to remove a specific character from a string in C programming](https://www.includehelp.com/c/remove-all-occurrences-of-a-character-from-string-in-c.aspx)
+## See Also (इसे भी देखें):
+- और विस्तार में स्ट्रिंग हैंडलिंग के लिए [C String Handling](https://www.cplusplus.com/reference/cstring/)
+- POSIX रेगुलर एक्सप्रेशंस के लिए [POSIX Regex](https://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html)
+- PCRE लाइब्रेरी के उपयोग के लिए [PCRE Library](https://www.pcre.org/)

@@ -1,7 +1,8 @@
 ---
-title:                "Imprimindo saída de debug"
-html_title:           "C#: Imprimindo saída de debug"
-simple_title:         "Imprimindo saída de debug"
+title:                "Exibindo saídas de depuração"
+date:                  2024-01-20T17:53:36.671081-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Exibindo saídas de depuração"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,63 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é & Por quê?
+## What & Why? (O Quê & Por Quê?)
+Vamos falar sobre impressão de saídas de depuração: é colocar na tela informações do que está rolando no seu código. Fazemos isso para saber o que está acontecendo lá dentro durante a execução, achando erros ou otimizando processos.
 
-Imprimir output de debug é a prática de saída de dados do programa para rastrear e entender o fluxo de execução. Programadores fazem isso para identificar falhas e resolver problemas mais rapidamente.
-
-## Como fazer:
-
-Aqui estão alguns exemplos de como imprimir na saída de depuração no Swift. Experimente-os em seu ambiente de codificação:
+## How To (Como Fazer)
+Simples e direto: use `print()` para jogar na tela o que você precisa. Se liga nos exemplos:
 
 ```Swift
-// Imprimir texto simples
-print("Olá, Mundo!")
+// Imprimir uma mensagem simples
+print("Oi, estou aqui!")
 
-// Imprimir valor de variável
-let nome = "João"
-print("Olá, \(nome)!")
+// Combinar texto e variáveis
+let fruta = "banana"
+print("Eu gosto de comer \(fruta)s.")
 
-// Imprimir com estruturas de controle
-for i in 1...5 {
-    print("Número: \(i)")
+// Versão mais sofisticada, printando várias variáveis
+let preco = 3.5
+let quantidade = 2
+print("Preço total por \(quantidade) \(fruta)s: \(preco * Double(quantidade))")
+```
+
+Saída:
+```
+Oi, estou aqui!
+Eu gosto de comer bananas.
+Preço total por 2 bananas: 7.0
+```
+
+## Deep Dive (Mergulho Profundo)
+Antigamente, a gente usava o `println` para isso no Swift, mas ficou old school e foi removido na versão 2.0. Outra opção é usar `debugPrint()` quando precisar de uma saída mais detalhada para depuração. Ele é legal porque mostra mais infos, como a estrutura interna do que você está printando.
+
+Vamos a um exemplo do `debugPrint()`:
+
+```Swift
+struct Pessoa {
+    var nome: String
+    var idade: Int
 }
 
-// Imprimir informações de debug
-debugPrint("Esta é uma informação de debug")
-
-// Imprimir usando o operador dump
-let array = ["Maçã", "Banana", "Carambola"]
-dump(array)
+let fulano = Pessoa(nome: "João", idade: 28)
+debugPrint(fulano)
 ```
 
-Isto vai produzir:
-
-```Swift
-Olá, Mundo!
-Olá, João!
-Número: 1
-Número: 2
-Número: 3
-Número: 4
-Número: 5
-Esta é uma informação de debug
-- "Maçã"
-- "Banana"
-- "Carambola"
+Saída:
+```
+Pessoa(nome: "João", idade: 28)
 ```
 
-## Mergulhando fundo
+Saca só: com `debugPrint()`, você tem uma visualização formatada da instância do struct, o que facilita a vida na hora de depurar.
 
-A prática de imprimir para depuração existe desde o início da linguagem de programação. No Swift, temos várias funções, como `print()`, `debugPrint()` e `dump()`, para imprimir saída de depuração. 
-
-A função `print()` é a mais comum e usada para imprimir valores na saída padrão. A `debugPrint()`, por outro lado, é usada para imprimir valores de maneira adequada para depuração. 
-
-Outra alternativa é o operador `dump()`. Este apresenta uma saída de depuração mais detalhada, útil quando você precisa de uma repartição mais completa do objeto.
-
-## Veja também
-
-Para aprofundar seu conhecimento sobre a depuração no Swift, confira esses recursos:
-
-- Documentação oficial do Swift sobre a função `print()`: https://developer.apple.com/documentation/swift/1541053-print
-- Guia detalhado da Ray Wenderlich sobre depuração no Swift: https://www.raywenderlich.com/113038/debugging-swift
-- Dicas e truques de depuração do Swift no Medium: https://medium.com/@johnsundell/debugging-swift-code-d01717d1cfb5
+## See Also (Veja Também)
+- [Documentação oficial do Swift sobre Printing](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID309)
+- [Artigo sobre debugging em Swift da Ray Wenderlich](https://www.raywenderlich.com/2107-debugging-with-xcode)
+- [WWDC video sobre debugging em Swift](https://developer.apple.com/videos/play/wwdc2018/412/)

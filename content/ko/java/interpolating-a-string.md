@@ -1,6 +1,7 @@
 ---
 title:                "문자열 보간하기"
-html_title:           "Java: 문자열 보간하기"
+date:                  2024-01-20T17:50:54.906274-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "문자열 보간하기"
 programming_language: "Java"
 category:             "Java"
@@ -10,39 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 사용하는가?
+## What & Why?
+문자열 보간이란 무엇이고 왜 사용하는가?
+문자열 보간은 변수나 표현식의 값을 문자열 안에 직접 삽입하는 기법입니다. 코드를 더 명확하고 간결하게 만들기 위해 사용합니다.
 
-문자열 보간(Interpolating a string)은 문자열 내의 변수를 그 값으로 바꾸는 것입니다. 이렇게 하면 코드를 읽고 이해하는데 더 쉽고 유출되는 정보를 쉽게 다룰 수 있습니다.
+## How to:
+자바에서의 문자열 보간 방법
+```java
+public class StringInterpolationExample {
+    public static void main(String[] args) {
+        String name = "Kim";
+        int age = 25;
 
-## 사용 방법:
-
-자바 15 버전부터는 `formatted()` 메소드를 사용해 문자열 보간을 할 수 있습니다. 아래는 예시입니다:
-	
-```Java 
-int age = 20;
-String name = "홍길동";
-System.out.println("이름: %s, 나이: %d".formatted(name, age)); 
-``` 
-	
+        String greeting = String.format("Hello, %s! You are %d years old.", name, age);
+        System.out.println(greeting);
+    }
+}
+```
 출력:
-	
-```Java 
-이름: 홍길동, 나이: 20
-``` 
+```
+Hello, Kim! You are 25 years old.
+```
 
-보시다시피, `%s`와 `%d`는 `formatted()` 메소드를 통해 `name`과 `age`로 치환됩니다.
+## Deep Dive:
+문자열 보간에 대한 깊은 이해
 
-## 깊게 알아보기:
+보간은 오래전부터 프로그래밍에서 사용된 개념입니다. Java에서는 `%s`, `%d` 같은 형식 지정자를 `String.format()` 메서드에 쓰는 방식으로 보간 기능을 사용합니다. 최신 언어들은 `${variable}` 같은 표현식을 직접 쓸 수 있지만, Java에선 아직 이런 단순한 문법이 없습니다.
 
-1. **역사적 맥락**: 자바는 오래 전부터 문자열 보간을 위한 다양한 방법을 제공했습니다. 이전에는 `String.format()` 메소드를 사용했습니다. 그러나 자바 15 버전에서는 `formatted()` 메소드를 추가하여 작성 능력을 강화했습니다.
+다른 방법:
+- `+` 연산자로 문자열에 변수 연결하기.
+- `StringBuilder`나 `StringBuffer` 클래스 사용하기.
 
-2. **대체 방법**: 위에서 언급한 것처럼 이전에는 `String.format()`을 사용했습니다. 또한, `MessageFormat` 또는 `StringBuilder`를 사용하는 등 다른 라이브러리와 클래스를 사용하는 방법도 있습니다.
+구현 세부 사항:
+- 내부적으로 `String.format()`은 `Formatter` 클래스를 사용합니다.
+- 성능이 중요하다면 `+` 연산자 대신 `StringBuilder`를 사용하는 것을 고려해야 합니다, 특히 반복문 안에서 문자열을 많이 다룰 때.
 
-3. **구현 세부 정보**: `formatted()`와 같은 메소드는 내부적으로 `Formatter` 클래스를 사용해 문자열 보간을 수행합니다. 이는 중괄호 `{}` 안에 있는 인덱스를 참조하여 변환된 값을 대체합니다.
+## See Also:
+관련 링크:
 
-## 참고:
-
-- [Oracle Documentation - formatted()](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#formatted(java.lang.Object...))
-- [Oracle Documentation - String.format()](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...))
-
-이정도면 문자열 보간에 대해 충분히 알게 되셨을 것입니다. 이상입니다!
+- 공식 Java 문서의 String.format: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)
+- Formatter 클래스: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html
+- StringBuilder 클래스에 대한 튜토리얼: https://docs.oracle.com/javase/tutorial/java/data/buffers.html

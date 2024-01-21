@@ -1,7 +1,8 @@
 ---
-title:                "Ein Datum in einen String umwandeln"
-html_title:           "Java: Ein Datum in einen String umwandeln"
-simple_title:         "Ein Datum in einen String umwandeln"
+title:                "Datum in einen String umwandeln"
+date:                  2024-01-20T17:36:32.511218-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Datum in einen String umwandeln"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,44 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Datum in String konvertieren: Eine Anleitung für das Gleam-Programmieren
-
 ## Was & Warum?
+Ein Datum in einen String umzuwandeln bedeutet, es in eine lesbare Textform zu bringen – praktisch für Nutzeranzeige und Speicherung. Programmierer machen das, um Daten handhabbar und menschenlesbar zu machen.
 
-Das Konvertieren eines Datums in eine Zeichenkette (String) ist eine grundlegende Operation in der Programmierung, die es ermöglicht, Daten in lesbarer Form zu präsentieren oder zu speichern. Programmierer machen das oft, um eine bessere, menschenlesbare Darstellung von Datumsinformationen zu ermöglichen.
-
-## Wie geht das?
-
-In Gleam kann ein Datum mit dem `to_string` Funktion des `calendar` Moduls in eine Zeichenkette umgewandelt werden. Hier ist ein einfaches Beispiel:
-
+## So geht's:
 ```gleam
-import gleam/calendar
+import gleam/calendar.{Date}
+import gleam/erlang
 
-let geburtstag = calendar.new(1990, 12, 28)
+// Datum erstellen
+let mein_date = Date(from_iso_year_month_day: #(2023, 3, 14))
+assert Ok(mein_date) = mein_date
 
-let geburtstag_string = calendar.to_string(geburtstag)
+// Datum zu String konvertieren
+let datum_string = erlang.date_to_string(mein_date)
+assert Ok("2023-03-14") = datum_string
 ```
 
-Dies gibt die Zeichenkette `"1990-12-28"` zurück.
-
-## Vertiefung
-
-Die Funktion `to_string` in Gleam wurde entwickelt, um die Umwandlung von Datumsobjekten in Zeichenketten zu erleichtern und folgt der Tradition der meisten modernen Hochsprachen. Vor der Einführung von Funktionen wie `to_string` mussten Programmierer oft mehrere Schritten durchlaufen, um ein Datum in eine formatierte Zeichenkette zu konvertieren.
-
-Es gibt verschiedene Methoden, um ein Datum in einen String zu konvertieren. In Gleam könnte man zum Beispiel auch die `format` Funktion des `calendar` Moduls verwenden, um ein Datum in einen maßgeschneiderten Formatstring zu konvertieren:
-
-```gleam
-import gleam/calendar
-
-let geburtstag = calendar.new(1990, 12, 28)
-
-let geburtstag_formatiert = calendar.format(geburtstag, "{YYYY}-{MM}-{DD}")
+Ausgabe:
+```
+"2023-03-14"
 ```
 
-Die Umwandlung von Daten in Zeichenketten in Gleam ist effizient und sicher implementiert, was die Fehleranfälligkeit dieser Operation reduziert.
+## Tiefgang
+Historisch gesehen folgen Datumsstrings oft dem ISO 8601-Standard, da dieser international klar und vergleichbar ist. Alternativen zur Umwandlung können Bibliotheken wie `calendar` in anderen Sprachen sein oder Funktionen wie `format_date` zur individuellen Anpassung des Formats. In Gleam wird die Konvertierung effizient mit erlang-Funktionen gehandhabt, die zuverlässige Pattern-Matching und Typsicherheit bieten.
 
-## Siehe auch
-
-- Die offizielle Gleam Dokumentation: https://gleam.run/docs/
-- Weitere Beispiele und Tutorials: https://exercism.io/tracks/gleam
-- Die `calendar` Modul Dokumentation: https://hexdocs.pm/gleam_stdlib/gleam/calendar.html
+## Weiterführendes
+- Gleam-Dokumentation: [https://gleam.run/](https://gleam.run/)
+- ISO 8601-Standard: [https://www.iso.org/iso-8601-date-and-time-format.html](https://www.iso.org/iso-8601-date-and-time-format.html)
+- Erlang's calendar module: [http://erlang.org/doc/man/calendar.html](http://erlang.org/doc/man/calendar.html)

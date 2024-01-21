@@ -1,6 +1,7 @@
 ---
 title:                "Descargando una página web"
-html_title:           "Arduino: Descargando una página web"
+date:                  2024-01-20T17:43:28.420987-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Descargando una página web"
 programming_language: "C++"
 category:             "C++"
@@ -10,33 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
-Descargar una página web es el proceso de solicitar y recibir los datos de una página específica a través de internet. Los programadores descargan páginas web para realizar tareas como extracción de datos, prueba de software o desarrollo web.
+## Qué y Por Qué?
+Descargar una página web significa traer el contenido de una página de Internet a tu propia máquina. Los programadores hacen esto para analizar los datos, interactuar con servicios web, o simplemente para guardar información localmente.
 
-## Cómo Hacerlo:
-Aquí tienes un sencillo ejemplo de cómo descargar una página web en C++ utilizando la biblioteca Cpr:
+## Cómo hacerlo:
 
 ```C++
-#include <cpr/cpr.h>
 #include <iostream>
+#include <curl/curl.h>
 
-int main(){
-    cpr::Response r = cpr::Get(cpr::Url{"https://www.ejemplo.com/"});
-    
-    std::cout << r.text << std::endl;
+static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp) {
+    ((std::string*)userp)->append((char*)contents, size * nmemb);
+    return size * nmemb;
+}
+
+int main() {
+    CURL *curl;
+    CURLcode res;
+    std::string readBuffer;
+
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+        
+        res = curl_easy_perform(curl);
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+        } else {
+            std::cout << readBuffer << std::endl;
+        }
+        curl_easy_cleanup(curl);
+    }
     return 0;
 }
 ```
-La salida será el código HTML de la página `www.ejemplo.com`.
 
-## Profundizando
-1. **Contexto Histórico:** En los primeros días de internet, las páginas web se descargaban utilizando comandos de terminal. A medida que se popularizó la programación, surgieron bibliotecas para simplificar este proceso.
-2. **Alternativas:** Hay muchas bibliotecas para descargar páginas web en C++. Otras opciones populares son libcurl, Poco y Boost.Asio.
-3. **Detalles de Implementación:** La biblioteca Cpr envía una solicitud GET a la url especificada y luego espera la respuesta. Una vez recibida la respuesta, `r.text` contiene el código HTML de la página.
+Salida de muestra:
+
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+    ...
+</head>
+<body>
+...
+</body>
+</html>
+```
+
+## Profundización
+
+Históricamente, para descargar una página web se usaba `libcurl`, una biblioteca de cliente para transferir datos con URL syntax. Hoy sigue siendo una de las más usadas debido a su estabilidad y soporte en múltiples plataformas. Algunas alternativas modernas son las librerías como `Poco` y bibliotecas en otros lenguajes como Python's `requests`. Sin embargo, `libcurl` es a menudo preferida para trabajos en C++ debido a su rendimiento y flexibilidad.
+
+`libcurl` te permite hacer mucho más que solo descargar contenido: puedes enviar datos a un servidor, modificar cabeceras HTTP, manejar cookies, y muchas otras tareas relacionadas con protocolos de red. Implementar correctamente `libcurl` requiere conocimientos de punteros y funciones de callback, pero el esfuerzo vale la pena por la potencia que ofrece. 
 
 ## Ver También
-Te recomiendo las siguientes fuentes para aprender más:
-- Documentación CPR: https://whoshuu.github.io/cpr/
-- Tutorial libcurl: https://curl.haxx.se/libcurl/c/
-- Documentación Poco: https://pocoproject.org/docs/
-- Tutorial Boost.Asio: https://think-async.com/Asio/
+
+- Documentación oficial de libcurl: [curl.haxx.se/libcurl/](https://curl.haxx.se/libcurl/)
+- Tutorial C++ de Curl: [https://curl.se/libcurl/c/libcurl-tutorial.html](https://curl.se/libcurl/c/libcurl-tutorial.html)
+- Sobre Poco Libraries: [https://pocoproject.org/](https://pocoproject.org/)
+- Libro "The C++ Standard Library" para profundizar en alternativas en C++ estándar.

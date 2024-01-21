@@ -1,6 +1,7 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+date:                  2024-01-20T17:39:04.042949-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Python"
 category:             "Python"
@@ -11,41 +12,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Zmiana ciągu znaków (stringa) na małe litery to proces, w którym wszystkie litery w stringu są konwertowane na odpowiedniki w małych literach. Programiści robią to, aby uniknąć niepotrzebnych błędów i ułatwić sortowanie i porównywanie stringów. 
+Konwersja łańcucha znaków do małych liter to proces zmiany wszystkich wielkich liter na małe. Robimy to dla uproszczenia porównywania tekstu, wyszukiwania, lub by spełnić standardy formatowania danych.
 
 ## Jak to zrobić:
-
-Oto prosty przykład, jak w Pythonie można przekształcić ciąg znaków na małe litery:
-
 ```python
-text = "CZEŚĆ, ŚWIECIE!"
-lower_case_text = text.lower()
-print(lower_case_text)
+# Przykład konwersji tekstu do małych liter
+tekst = "Witaj Świecie!"
+tekst_male_litery = tekst.lower()
+
+print(tekst_male_litery)  # wyjście: witaj świecie!
 ```
 
-Po uruchomieniu tego kodu otrzymasz:
+## Zagłębiamy się
+W Pythonie metoda `.lower()` istnieje już od dawna, oferując prosty sposób na konwersję tekstu. Inne języki programowania też mają swoje odpowiedniki. Istnieje wiele alternatyw takich jak `casefold()`, która jest bardziej agresywna i lepiej radzi sobie z niestandardowymi przypadkami, jak np. niemieckie ostre s (ß). Wewnątrz każdego znaku Unicode zapisana jest informacja o tym, jak powinien być przedstawiany w wersji małych liter, co wykorzystywane jest podczas konwersji.
 
-```python
-'cześć, świecie!'
-```
-
-## Pogłębione spojrzenie:
-
-1. **Kontekst historyczny**: W dawnych językach programowania, takich jak COBOL czy FORTRAN, nie było tak łatwo konwertować ciągu znaków na małe litery. W Pythonie jest to bardzo proste dzięki wbudowanej funkcji `.lower()`.
-
-2. **Alternatywy**: Istnieją inne sposoby na konwertowanie stringów na małe litery w Pythonie, na przykład poprzez użycie list comprehension: 
-
-    ```python
-    text = "CZEŚĆ, ŚWIECIE!"
-    lower_case_text = ''.join([char.lower() for char in text])
-    print(lower_case_text)
-    ```
-
-    Ale najprostszym i najbardziej zalecanym sposobem jest użycie wbudowanej funkcji `.lower()`.
-
-3. **Szczegóły implementacji**: Funkcja `.lower()` mapuje każdą dużą literę w stringu na jej małoliterowy odpowiednik. Działa to dla wszystkich znaków Unicode, które mają małe i duże wersje.
-
-## Zobacz również:
-
-Możesz dowiedzieć się więcej o manipulacji stringami w Pythonie, odwiedzając oficjalną dokumentację Pythona na temat ciągów znaków [tutaj](https://docs.python.org/pl/3.8/library/string.html). Jeśli jesteś początkujący, [ten tutorial](https://www.learnpython.org/en/Basic_String_Operations) nauczy Cię podstaw operacji na stringach.
+## Zobacz również
+- Dokumentacja Python `str.lower()`: https://docs.python.org/3/library/stdtypes.html#str.lower
+- Opis metody `str.casefold()`: https://docs.python.org/3/library/stdtypes.html#str.casefold
+- Unicode Standard: https://unicode.org/standard/standard.html

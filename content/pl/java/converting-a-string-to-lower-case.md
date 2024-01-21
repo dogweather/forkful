@@ -1,6 +1,7 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+date:                  2024-01-20T17:38:37.299020-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Java"
 category:             "Java"
@@ -10,46 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego? (What & Why?)
-W Javie konwersja łańcucha na małe litery oznacza zmianę wszystkich dużych liter znajdujących się w łańcuchu na ich małe odpowiedniki. Programiści robią to, by ułatwić porównywanie i sortowanie łańcuchów.
+## Co & Dlaczego?
 
-## Jak to zrobić (How To)
-Klasa ``String`` w Javie udostępnia metodę ``toLowerCase()``. Oto przykład jej użycia:
+Konwersja stringa do małych liter to proces zmiany wszystkich liter w tekście na ich małe odpowiedniki. Robimy to dla jednolitości danych, łatwiejszego porównywania stringów i spełnienia wymogów np. systemów wrażliwych na wielkość liter.
 
-```Java
-String str = "Hello World!";
-String lowerCaseStr = str.toLowerCase();
-System.out.println(lowerCaseStr);
+## Jak to zrobić:
+
+```java
+public class LowerCaseConversion {
+
+    public static void main(String[] args) {
+        String originalText = "Jakiś Tekst z WIELKIMI i małymi Literami!";
+        String lowerCaseText = originalText.toLowerCase();
+
+        System.out.println("Original: " + originalText);
+        System.out.println("LowerCase: " + lowerCaseText);
+    }
+}
 ```
 
-To wydrukuje:
-
+Wyjście:
 ```
-hello world!
-```
-
-## Dogłębna Analiza (Deep Dive)
-Konwersja łańcucha na małe litery nie jest czymś znanym tylko z Javy. Jest to powtarzalny wzorzec w wielu językach programowania i ma korzenie w łatwiejszym porównywaniu łańcuchów.
-
-Alternatywą dla metody ``toLowerCase()`` jest używanie strumieni i operacji ``map`` w Javie 8 i wyższych. Tak wygląda ten sposób:
-
-```Java
-String str = "Hello World!";
-String lowerCaseStr = str.chars()
-        .mapToObj(c -> Character.toLowerCase((char)c))
-        .map(String::valueOf)
-        .collect(Collectors.joining());
-System.out.println(lowerCaseStr);
+Original: Jakiś Tekst z WIELKIMI i małymi Literami!
+LowerCase: jakiś tekst z wielkimi i małymi literami!
 ```
 
-Metoda ``toLowerCase()`` korzysta z konfiguracji regionalnej domyślnej w systemie. Możemy też podać konkretną konfigurację regionalną, jeśli chcemy uniknąć możliwych problemów z różnicami w ustawieniach:
+## Szczegółowe Informacje
 
-```Java
-String str = "HELLO WORLD!";
-String lowerCaseStr = str.toLowerCase(Locale.ROOT);
-System.out.println(lowerCaseStr);
+Metoda `toLowerCase()` w Java posiada długą historię i jest częścią standardowej biblioteki od początków języka. Opiera się ona na regułach Unicode i może zachować się inaczej w zależności od lokalizacji (Locale). W wersji bezargumentowej używa domyślnej lokalizacji środowiska uruchomieniowego, która może nie być właściwa dla wszystkich języków.
+
+Alternatywą jest uzycie przeciążonej wersji `toLowerCase(Locale locale)`, która pozwoli ci określić lokalizację i upewnić się, że konwersja obsłuży specyficzne przypadki, jak np. tureckie 'i', które ma inny odpowiednik małej litery niż w większości alfabetów.
+
+```java
+String originalText = "Istanbul";
+System.out.println(originalText.toLowerCase(new Locale("tr", "TR"))); // wyjście: istanbul
+System.out.println(originalText.toLowerCase()); // wyjście: istanbul lub ISTANBUL w zależności od domyślnej lokalizacji
 ```
 
-## Zobacz także (See Also)
-- [Dokumentacja metody toLowerCase()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
-- [Tutorial Oracle o łańcuchach](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
+Implementacja `toLowerCase()` używa wewnętrznych tabel Unicode, gdzie każdej dużej literze przypisuje się mały odpowiednik, uwzględniając różnice w poszczególnych językach.
+
+## Zobacz też
+
+- [Dokumentacja Oracle - metoda String.toLowerCase()](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#toLowerCase())
+- [Unicode Standard](https://www.unicode.org/standard/standard.html)
+- [Java Internationalization: Understanding Locale](https://www.oracle.com/technical-resources/articles/javase/locale.html)

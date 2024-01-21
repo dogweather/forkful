@@ -1,7 +1,8 @@
 ---
-title:                "Skriva ut felsökningsresultat"
-html_title:           "Fish Shell: Skriva ut felsökningsresultat"
-simple_title:         "Skriva ut felsökningsresultat"
+title:                "Skriva ut felsökningsdata"
+date:                  2024-01-20T17:52:05.650822-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skriva ut felsökningsdata"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -10,67 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad och Varför?
+## Vad & Varför?
+Utskrift för felsökning är när man skriver ut meddelanden för att förstå vad programmet gör. Programmerare gör detta för att snabbt hitta och fixa buggar.
 
-Debug-utskrift är en teknik som hjälper programmerare att diagnostisera och fixera problem i sina program. Genom att utrealisera data på skärmen eller en loggfil kan man mer effektivt spåra och isolera fel.
-
-# Hur man gör:
-
-Att skriva ut debug-utskrift i C++ är ganska enkelt med `cout` i `<iostream>`. Här är ett exempel:
-
+## Hur man gör:
 ```C++
 #include <iostream>
 
 int main() {
-  for (int i = 0; i < 5; ++i) {
-    std::cout << "Loop iteration: " << i << '\n';
-  }
-  return 0;
+    int x = 10;
+    std::cout << "Debug: x has value " << x << std::endl; // Skriver ut värdet av x
+    // ... övrig kod ...
+    return 0;
 }
 ```
-
-Utskriften skulle vara:
-
+Sample Output:
 ```
-Loop iteration: 0
-Loop iteration: 1
-Loop iteration: 2
-Loop iteration: 3
-Loop iteration: 4
+Debug: x has value 10
 ```
 
-Vi kan också skriva till en textfil för senare granskning:
+## Djupdykning
+Printing debug output i C++ är grundläggande men kraftfullt. Historiskt sett har `printf` använts från C, vilket fortfarande fungerar. Alternativ inkluderar loggbibliotek, som `spdlog` eller `boost::log`, och att skriva till en fil. Generella implementationer använder ofta `std::cout` för konsolen eller `std::ofstream` för filer. Preprocessor directives, som `#ifdef DEBUG`, kan hjälpa till att endast inkludera debug-utskrifter i utvecklingsversioner.
 
-```C++
-#include <fstream>
-
-int main() {
-  std::ofstream fout("debug_log.txt");
-
-  for (int i = 0; i < 5; ++i) {
-    fout << "Loop iteration: " << i << '\n';
-  }
-  fout.close();
-
-  return 0;
-}
-``` 
-
-Om du öppnar `debug_log.txt`, ser du samma utskrift som ovan.
-
-# Djupdykning
-
-C++ har inkluderat debug-utskrift sedan dess födelse på 1980-talet. Dess syntax har förblivit relativt oförändrad genom åren, vilket är något av en prestation i sig.
-
-Det finns andra sätt att ta del av debug-utskrift. Du kan använda en dedikerad debugger som `gdb` eller använda loggbibliotek som `spdlog` eller `boost::log`.
-
-Vad gäller implementeringsdetaljer är det värt att notera att `cout` och `cerr` från `<iostream>` går till standardutdata respektive standardfel. De skiljer sig åt främst i att `cerr` inte buffrar dess utdata, vilket gör det perfekt för felmeddelanden.
-
-# Se även
-
-Om du vill lära dig mer om debug-utskrift och debugging i allmänhet, kan du kolla in följande resurser:
-
-- ["The Art of Debugging"](https://www.oreilly.com/library/view/the-art-of/9781593271749/)
-- [Cppreference - iostream](https://en.cppreference.com/w/cpp/io)
-- [SO - How does cerr and cout differ?](https://stackoverflow.com/questions/22157594/difference-between-cout-cerr)
-- [Debugging med GDB](https://sourceware.org/gdb/current/onlinedocs/gdb/)
+## Se Även
+- C++ Reference std::cout: https://en.cppreference.com/w/cpp/io/cout
+- spdlog GitHub Repository: https://github.com/gabime/spdlog
+- Boost.Log Documentation: https://www.boost.org/doc/libs/1_75_0/libs/log/doc/html/index.html

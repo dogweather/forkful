@@ -1,7 +1,8 @@
 ---
-title:                "Merkkien poistaminen vastaavalla mallilla"
-html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
-simple_title:         "Merkkien poistaminen vastaavalla mallilla"
+title:                "Merkkien poistaminen hakemalla osumia kaavaan"
+date:                  2024-01-20T17:42:00.366256-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,38 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Mikä ja miksi? Ohjelmoinnissa merkkien poistaminen kuvioon sopivasti on datan siistimistä. Tehdään nätimpää, helpommin käsiteltävää.
 
-Merkkien poistaminen sovitetusta kaavasta viittaa merkkijonoista erityisten merkkien poistamiseen ohjelmoinnissa. Ohjelmoijat tekevät tämän puhdistamaan ja muodoittamaan tietoja.
+## How to:
+```Clojure
+;; Esimerkki: Poista kaikki numerot stringistä
 
-## Miten tehdään:
+(defn poista-numerot [teksti]
+  (clojure.string/replace teksti #"\d+" ""))
 
-Clojuren `clojure.string/replace`-funktio on kodinomainen keino poistaa merkkijonoista merkit. Se hyväksyy merkkijonon, kaavan ja korvikkeen, ja palauttaa uuden merkkijonon.
+;; Käyttö:
+(poista-numerot "abc123def456")
+;; Output: "abcdef"
+```
 
 ```Clojure
-(require '[clojure.string :as s])
+;; Esimerkki: Poista erikoismerkit
+(defn poista-erikoismerkit [teksti]
+  (clojure.string/replace teksti #"[^\w\s]" ""))
 
-(defn remove-chars [str pattern]
-  (s/replace str pattern ""))
-
-(println (remove-chars "H3llo, W0rld!" #"\d")) 
+;; Käyttö:
+(poista-erikoismerkit "Hello, World!")
+;; Output: "Hello World"
 ```
 
-Ohjelman tulostus on: 
+## Deep Dive
+Syvensinä. Ennen satoja ohjelmointikieliä, datan siivous oli manuaalista. Clojure, noin vuodesta 2007, tarjoaa modernit työkalut kuten regex (säännölliset lausekkeet) ja string-manipulaatio funktiot. Alternatiiveja? Muut kielet, funktiot. Mutta Clojuren funktionaalinen luonne tekee patterneihin sopivien merkkien poistosta yksinkertaista.
 
-```Clojure 
-"Hllo, Wrld!"
-```
+## See Also
+Related Links:
 
-Tässä esimerkissä digitaaliset merkit (0 ja 3) on poistettu alkuperäisestä merkkijonosta.
-
-## Syvempi sukellus: 
-
-Vaikka `clojure.string/replace` on käytännöllinen ja tyypillisesti riittävän nopea useimmille sovelluksille, on olemassa muitakin tapoja poistaa merkkijonosta merkit. Voit esimerkiksi rakentaa uuden merkkijonon käymällä vanhan merkkijonon läpi yksi merkki kerrallaan ja ottaa mukaan vain sopivat merkit.
-
-Clojuren olemassaolon historiassa on ollut monia tapoja tehdä tämä. Yksi ensimmäisistä oli `clojure.string/replace-first`, joka kuitenkin käytti enemmän käyttömuistia kuin uudempi `clojure.string/replace`.
-
-## Katso myös: 
-
-- [Clojure Official Documentation: `clojure.string`](https://clojuredocs.org/clojure.string)
-- [Clojure: `clojure.string/replace` vs `clojure.string/replace-first`](https://stackoverflow.com/questions/67114126/clojure-clojure-string-replace-vs-clojure-string-replace-first)
+- Clojure doc: [https://clojuredocs.org/clojure.string/replace](https://clojuredocs.org/clojure.string/replace)
+- Regex guide: [https://www.regular-expressions.info/](https://www.regular-expressions.info/)
+- String manipulation: [https://clojure.org/guides/weird_characters](https://clojure.org/guides/weird_characters)

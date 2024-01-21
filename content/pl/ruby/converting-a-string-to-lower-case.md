@@ -1,6 +1,7 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+date:                  2024-01-20T17:39:11.663863-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,31 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## Co i dlaczego?"
-Przekształcanie łańcuchów znaków na małe litery to proces zmiany wszystkich dużych liter w łańcuchu na ich odpowiedniki w niższej formie. Dlaczego programiści to robią? Często, aby ułatwić porównanie ciągów lub normalizację danych.
+## What & Why? (Co i Dlaczego?)
+Zmienianie stringów na małe litery to proces konwersji wszystkich znaków w łańcuchu tekstowym na ich małe odpowiedniki. Programiści to robią głównie, aby ujednolicić dane, ułatwić porównywanie i wyszukiwanie tekstu oraz robić case-insensitive matching.
 
-"## Jak to zrobić:"
-Aby przekształcić łańcuch znaków na małe litery w Ruby, użyjemy metody downcase. To proste!
-
+## How to: (Jak to zrobić:)
 ```Ruby
-tekst = "TU JEST JAKIŚ TEKST"
-puts tekst.downcase
+# Przykład konwersji stringa na małe litery w Ruby
+original_string = "Jestem WIELKI napis!"
+lowercase_string = original_string.downcase
+
+puts lowercase_string
+# Output: jestem wielki napis!
 ```
 
-Wyjście:
+## Deep Dive (Dogłębna Analiza)
+Ruby od zawsze dba o to, by operacje na stringach były proste i intuicyjne. Metoda `.downcase` istnieje w Ruby od początku jej istnienia i jest wykorzystywana do konwersji stringów na małe litery. Alternatywą dla `.downcase` jest `.downcase!`, która bezpowrotnie zmienia oryginalny string, a nie tylko zwraca jego kopię.
 
-```Ruby
-tu jest jakiś tekst
-```
+W Ruby, metoda `.downcase` dotyczy Unicode, co oznacza, że radzi sobie nie tylko z literami ASCII, ale również z literami w wielu różnych systemach pisma, jak łacińskim, greckim, cyrylicą, itp. Jeśli potrzebujesz operować tylko na literach ASCII, możesz użyć `.downcase!` z opcją, która ogranicza działanie do 7-bitowego ASCII.
 
-"## Głębsze zrozumienie"
-**Kontekst historyczny**: Przekształcanie ciągów na małe litery (i większe) jest jednym z podstawowych procesów przetwarzania tekstu, stosowanych od początku ery komputerowej.
+Implementacja `.downcase` wykorzystuje tablice mapowania znaków, gdzie każdemu znakowi wielko-litery odpowiada jego mało-literowa wersja. Podczas konwersji Ruby po prostu zamienia każdy znak zgodnie z tą tablicą.
 
-**Alternatywy**: Ruby oferuje także metody takie jak downcase!, która zmieni na małe litery oryginalny ciąg znaków, a nie tworzy nowego. 
-
-**Szczegóły implementacji**: Metoda downcase działa na obiektach String, które są niezmienne w Ruby. Dlatego metoda ta zwraca nowy obiekt String, pozostawiając oryginalny łańcuch niezmienionym.
-
-"## Zobacz także"
-Wybierz jedno z poniższych źródeł, aby dowiedzieć się więcej o pracy z łańcuchami znaków w Ruby:
-1. Dokumentacja języka Ruby: [String — Ruby 3.0.0](https://ruby-doc.org/core-3.0.0/String.html)
-2. "Programming Ruby": [Operacje na łańcuchach](http://ruby-doc.com/docs/ProgrammingRuby/)
+## See Also (Zobacz Również)
+- Dokumentacja `.downcase` [Ruby Docs: downcase](https://ruby-doc.org/core-2.7.0/String.html#method-i-downcase)
+- Co nowego w Ruby? [Ruby News](https://www.ruby-lang.org/en/news/)

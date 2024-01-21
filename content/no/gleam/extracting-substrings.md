@@ -1,7 +1,8 @@
 ---
-title:                "Utdrag av understrenger"
-html_title:           "Bash: Utdrag av understrenger"
-simple_title:         "Utdrag av understrenger"
+title:                "Uthenting av delstrenger"
+date:                  2024-01-20T17:45:57.894286-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uthenting av delstrenger"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,35 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Utdrag av understrenger lar deg hente spesifikke deler av en tekststreng. Det er nyttig for å analysere data, manipulere tekst og når man jobber med brukerinput.
 
-Å trekke ut delstrenger er en operasjon hvor vi lager en ny streng fra en del av en eksisterende streng. Dette er nyttig for å manipulere og analyser data inni strenger.
+## How to:
+Gleam gjør det enkelt med sin standardbibliotek-funksjonalitet for strenger. Her er noen eksempler:
 
-## Hvordan:
+```gleam
+import gleam/string
 
-Her er hvordan du trekker ut understrenger i Gleam:
+// Start-index inkludert, slutt-index ekskludert
+pub fn eksempel_en() {
+  let tekst = "Heisann, Sveisann!"
+  string.slice(tekst, 0, 7) // "Heisann"
+}
 
-```Gleam
-import gleam/substring.{slice}
+// Negativ indexering støttes ikke, bruk lengde for beregning
+pub fn eksempel_to() {
+  let tekst = "Fjell og daler"
+  let lengde = string.len(tekst) // 13
+  string.slice(tekst, lengde-5, lengde) // "daler"
+}
 
-fn main() {
-  let string = "Hallo, Verden!"
-
-  let hello = slice(string, 0, 5)
-  let world = slice(string, 7, 13)
-
-  println(hello)  // "Hallo"
-  println(world)  // "Verden!"
+pub fn main() {
+  eksempel_en() |> io.debug // Skriver ut "Heisann"
+  eksempel_to() |> io.debug // Skriver ut "daler"
 }
 ```
-## Dypdykk:
 
-Substring ekstraksjon er en vanlig streng-operasjon siden tidlige programmeringsspråk som C. Alternativer til `slice` funksjonen inkluderer `substring` og `substr` i andre språk, men de kan ha litt forskjellige parametere og oppførsel. `Slice` i Gleam bruker null-indeksering og 'start' og 'end' parameterne for å bestemme hvilken del av streng å beholde.
+## Deep Dive
+Utdraging av understrenger er en grunnleggende funksjon i programmering, tidlig implementert i språk som C og Perl. I eldre språk kunne det være mer komplekst, med manuell håndtering av minne og pekere. Gleam forbedrer brukeropplevelsen ved å ha sikre og enkle strengfunksjoner.
 
-## Se også:
+Strings i Gleam er Unicode-kompatible, noe som betyr at du kan forvente at tekst som inneholder emoji eller andre ikke-latinske tegn håndteres riktig. Dette er forskjellig fra noen eldre språk der Unicode ofte var et ettertanke.
 
-For flere detaljer og relaterte emner, sjekk ut disse kildene:
+Gleam bygger på de sterke typene og mønstergjenkjenningsfunksjonene fra Erlang-systemet, men legger til en mer moderne og brukervennlig syntaks. Dette sikrer både ytelse og pålitelighet.
 
-- Gleam's String modul (https://hexdocs.pm/gleam/gleam/string.html)
-- Gleam's Substring modul (https://hexdocs.pm/gleam/gleam/substring.html)
-- W3Schools String Methods (https://www.w3schools.com/js/js_string_methods.asp)
+## See Also
+- Gleam's string module documentation: https://hexdocs.pm/gleam_stdlib/gleam/string/
+- Unicode string handling in programming: https://unicode.org/reports/tr18/
+- Erlang's influence on Gleam: https://gleam.run/book/tour/erlang-ecosystem/

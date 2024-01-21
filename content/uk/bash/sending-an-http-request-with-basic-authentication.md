@@ -1,7 +1,8 @@
 ---
-title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
-html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
-simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+date:                  2024-01-20T18:01:14.758983-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,33 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке & Навіщо це?
+## Що це таке & Навіщо?
+Відправлення HTTP-запиту з базовою аутентифікацією - це спосіб передачі логіна та паролю на сервер для доступу до захищених ресурсів. Програмісти використовують це, щоб забезпечити безпечний обмін даними.
 
-Отже, відправка HTTP-запиту із базовою автентифікацією – це процес передачі даних на веб-сервер з використанням методу автентифікації. Програмісти роблять це, щоб обмінюватися данними в безпечному середовищі.
-
-## Як це зробити:
-
-Базовий приклад: 
-
+## Як саме:
 ```Bash
-username='username'
-password='password'
-auth=$(echo -n "$username:$password" | base64)
-curl -H "Authorization: Basic $auth" http://somewebsite.com
+# Встановлення змінних для користувача та пароля
+USER='myusername'
+PASSWORD='mypassword'
+
+# Кодування користувача і пароля у форматі Base64
+ENCODED_CREDENTIALS=$(echo -n "$USER:$PASSWORD" | base64)
+
+# Відправлення запиту GET з використанням Basic Auth
+RESPONSE=$(curl -H "Authorization: Basic $ENCODED_CREDENTIALS" -X GET http://example.com/resource)
+
+# Виведення відповіді
+echo $RESPONSE
+```
+Sample output:
+```Bash
+{"status":"success","message":"Authenticated"}
 ```
 
-Якщо ви запустите цей скрипт, ви потенційно отримаєте відгук від `http://somewebsite.com`.
+## Глибше занурення
+Колись HTTP Basic Auth був широко поширеним стандартом для захисту веб-ресурсів. Простота його реалізації та підтримка на багатьох платформах забезпечила популярність. Сучасні альтернативи, такі як OAuth та JWT, пропонують більшу безпеку та гнучкість. При використанні Basic Auth важливо забезпечити шифрування з'єднання з SSL/TLS, щоб уникнути перехоплення облікових даних.
 
-## Поглиблено
-
-1. **Історичний контекст**: Метод базової автентифікації був стандартом HTTP/1.0, проте із часом його стали заміщувати складніші системи автентифікації.
-2. **Альтернативи**: Токени `Bearer` часто використовуються як альтернатива для автентифікації, оскільки вони надають більше безпеки і можливостей для контролю.
-3. **Деталі реалізації**: Використання `base64` для кодування в базовому методі автентифікації HTTP не є методом шифрування; це просто кодування. Це важливо розуміти, тому що `base64` можна легко розкодувати.
-
-## Див. також
-
-[HTTP authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) - Wikipedia стаття про базову автентифікацію HTTP.
-
-[Bearer token](https://oauth.net/2/bearer-tokens/) - інформація про токени та їх використання для автентифікації. 
-
-[cURL manual](https://curl.se/docs/manpage.html) - деталі про використання cURL в командному рядку.
+## Дивіться також
+- [cURL Documentation](https://curl.haxx.se/docs/manpage.html)
+- [HTTP authentication: Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)
+- [Base64 Encoding](https://www.base64encode.org/)
+- [Understanding Basic Access Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)

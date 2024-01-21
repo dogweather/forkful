@@ -1,6 +1,7 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "Bash: Inviare una richiesta http con autenticazione di base"
+date:                  2024-01-20T18:01:55.842721-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,45 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Invio Richiesta HTTP con Autenticazione Basilare in Haskell
+## What & Why?
+L'autenticazione di base HTTP è un metodo per inviare le credenziali (username e password) in un'intestazione HTTP. I programmatori la utilizzano per accedere a server e servizi web che richiedono identificazione.
 
-## Che cos'è e perché?
-
-L'invio di una richiesta HTTP con autenticazione basica è un processo in cui un client manda una richiesta al server con le credenziali dell'utente codificate in base64. È un metodo comune per garantire la sicurezza e l'autorizzazione nelle applicazioni web.
-
-## Come fare:
-
-Per inviare una richiesta HTTP con autenticazione basica in Haskell, puoi usare la libreria `http-conduit`. Installare il pacchetto con il comando `cabal update && cabal install http-conduit`
-
-Ecco un esempio di codice:
+## How to:
+Per eseguire una richiesta HTTP con autenticazione di base in Haskell, utilizziamo la libreria `http-conduit`. Installala con `cabal install http-conduit`.
 
 ```Haskell
 import Network.HTTP.Simple
-import Network.HTTP.Types.Header
+import Network.HTTP.Types.Header (hAuthorization)
+import Data.ByteString.Base64 (encode)
+import qualified Data.ByteString.Char8 as BS
 
 main :: IO ()
 main = do
-  let request' = setRequestBasicAuth "username" "password"
-                $ "http://example.com"
-  response <- httpLBS request'
+  let username = "utente"
+  let password = "secret"
+  let auth = BS.concat ["Basic ", encode (BS.concat [username, ":", password])]
+  
+  request' <- parseRequest "http://esempio.com/dati"
+  let request = setRequestHeader hAuthorization [auth] request'
 
+  response <- httpLBS request
   putStrLn $ "Status code: " ++ show (getResponseStatusCode response)
-  print $ getResponseHeader "Content-Type" response
-  LBS.putStrLn $ getResponseBody response
+  print $ getResponseBody response
 ```
 
-In questo snippet, stiamo impostando un nome utente e una password sulla richiesta al server. Alla fine, stamperemo il codice di stato, l'intestazione "Content-Type" e il corpo della risposta.
+Esegui e vedi il risultato, che includerà il codice di stato e il contenuto della risposta.
 
-## Approfondimento
+## Deep Dive
+L'autenticazione HTTP di base esiste dagli inizi del web. Sebbene non sia la più sicura (le credenziali sono codificate in Base64 ma non criptate), è semplice da implementare. Oggi, sarebbe meglio usare alternative come l'autenticazione OAuth. In Haskell, le richieste HTTP sfruttano le librerie come `http-conduit`, che gestiscono dettagli basso-livello come la connessione di rete e l'elaborazione delle risposte.
 
-L'autenticazione HTTP basica è stata introdotta con la specifica HTTP/1.0 negli anni '90 come metodo semplice e diretto per controllare l'accesso.
-
-Esistono alternative all'autenticazione basica, come l'autenticazione digest o l'autenticazione token-based. L'autenticazione basica è tuttavia la più semplice da implementare nonostante sia la meno sicura.
-
-L'autenticazione basica in Haskell può essere realizzata attraverso la libreria `http-conduit`, che offre un'API di alto livello per l'invio di richieste HTTP.
-
-## Vedi Anche
-
-- Documentazione di http-conduit: http://hackage.haskell.org/package/http-conduit
-- Guida alla sicurezza di HTTP: https://developer.mozilla.org/it/docs/Web/HTTP/Authentication
-- Base64 Encoding: https://www.base64encode.net/base64-url-safe-encoding
+## See Also
+- `http-conduit` documentation: [https://hackage.haskell.org/package/http-conduit](https://hackage.haskell.org/package/http-conduit)
+- HTTP Basic Authentication on MDN: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme)
+- Alternative Auth Methods – OAuth: [https://oauth.net/](https://oauth.net/)

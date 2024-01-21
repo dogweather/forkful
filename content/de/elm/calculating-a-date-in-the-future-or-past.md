@@ -1,7 +1,8 @@
 ---
-title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
-html_title:           "Elm: Berechnung eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "Berechnung eines zukünftigen oder vergangenen Datums"
+date:                  2024-01-20T17:30:45.380514-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,52 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Berechnen eines zukünftigen oder vergangenen Datums ist ein übliches Bedürfnis in der Programmierung, um Zeitintervalle, wie das Alter oder Fälligkeitsdaten, zu verwalten.
+## Was & Warum?
+Das Berechnen von zukünftigen oder vergangenen Daten bedeutet, einem bestimmten Datum Tage, Monate oder Jahre hinzuzufügen oder abzuziehen. Programmierer nutzen diese Funktion, um Fristen zu verwalten, Erinnerungen zu planen oder Zeitabstände zu analysieren.
 
-# So geht's:
-
-In Elm verwenden wir die Bibliothek `elm/time` und ihre `Time.Posix`-Module, um dies zu erreichen. Schauen wir uns an, wie wir ein Datum 7 Tage in der Zukunft berechnen können:
+## How to:
+Elm bietet keine eingebaute Bibliothek für Datum-Manipulationen, wie JavaScripts `Date`, aber Pakete wie `justinmimbs/date` erweitern diese Funktionalität. Hier ein Beispiel, wie man mit diesem Paket ein Datum berechnen kann:
 
 ```Elm
-import Time exposing (Posix, secondsToTime, timeToMillis, millisToTime)
+import Date
+import Date.Extra as DateExtra
+import Time
 
-addDays : Int -> Posix -> Posix
-addDays days date =
+-- Angenommen, heute ist der 1. Januar 2023
+calculateDate : Date.Date
+calculateDate =
     let
-        millisPerDay = 86400000
-        daysInMillis = toFloat (days * millisPerDay)
+        today = Date.fromCalendarDate 2023 1 1
     in
-    date
-        |> timeToMillis
-        |> ((+) daysInMillis)
-        |> millisToTime
+    case today of
+        Ok initialDate ->
+            -- Addieren von 10 Tagen zum heutigen Datum
+            DateExtra.add Days 10 initialDate
+
+        Err _ ->
+            -- Fehlerbehandlung, falls das Datum ungültig ist
+            initialDate  -- Just use the initial date as a placeholder
+
+-- Angenommen, calculateDate gibt `Ok 2023-01-11` zurück
 ```
 
-Rufen wir diese Funktion mit einem aktuellen Datum auf:
+Das Ergebnis der Funktion `calculateDate` wäre ein neues Datum, das 10 Tage in der Zukunft liegt – der 11. Januar 2023.
 
-```Elm
-import Time exposing (now)
+## Deep Dive:
+Die direkte Manipulation von Daten ist in Elm nicht so einfach wie in Sprachen, die eine eingebaute Datum-Behandlung haben. Historisch betrachtet setzt Elm auf Immutable-Zustände, was bedeutet, dass Daten und Zustände nicht direkt verändert werden, sondern durch die Erstellung neuer Instanzen.
 
-calculateFutureDate : Cmd Msg
-calculateFutureDate =
-    Task.perform AdjustedDate (now |> Task.map (addDays 7))
-```
+Elm-Pakete wie `justinmimbs/date` oder `rtfeldman/elm-iso8601-date-strings` bieten Funktionen an, um mit Daten zu arbeiten. Diese Pakete zielen darauf ab, die Arbeit mit Daten in Elm einfacher und sicherer zu machen, vermeiden aber die Mutable-Zustände von JavaScripts `Date` Objekt.
 
-Die Ausgabe ist ein neues Datum, das 7 Tage in der Zukunft liegt.
+Die Implementierung von Datumsfunktionen in Elm bleibt explizit und kontrolliert durch die Nutzung von Types und Error Handling, was typisch für funktionale Programmiersprachen ist.
 
-# Vertiefung
+## See Also:
+Hier sind einige nützliche Ressourcen für die Arbeit mit Daten in Elm:
 
-Das Managen von Daten ist seit den Anfängen der Programmierung ein zentrales Thema. Historisch gesehen gab es viele Ansätze, um dieses Problem zu lösen, von einfachen Unix-Zeitstempeln bis hin zu komplexen Datum-Bibliotheken.
-
-Das Elm Time Modul ist ein solcher moderner Ansatz, es verwendet die POSIX-Zeit, ein Industriestandard, um Zeit und Datum zu behandeln. Das ermöglicht eine einfache und konsistente Handhabung quer durch verschiedene Plattformen und Sprachen.
-
-Es gibt jedoch Alternativen wie die Libraries `elm-date-extra` und `justinmimbs/date`, die zusätzliche Funktionen oder unterschiedliche Ansätze zur Datumsberechnung bieten.
-
-Neben dem `elm/time`-Paket, das wir hier verwendet haben, bietet Elm auch das `Date`-Paket an. Diese enthält eine Reihe von Funktionen zur Manipulation von Datums- und Zeitwerten und bietet möglicherweise eine einfachere Syntax für bestimmte Anwendungsfälle.
-
-# Siehe auch
-
-- [Elm Time Dokumentation](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Elm Date Extra Dokumentation](https://package.elm-lang.org/packages/rluiten/elm-date-extra/latest/)
-- [Justin Mimbs Date Dokumentation](https://package.elm-lang.org/packages/justinmimbs/date/latest/)
+- [justinmimbs/date documentation](http://package.elm-lang.org/packages/justinmimbs/date/latest)
+- [rtfeldman/elm-iso8601-date-strings](http://package.elm-lang.org/packages/rtfeldman/elm-iso8601-date-strings/latest)
+- [Elm Lang - Time](https://package.elm-lang.org/packages/elm/time/latest/)

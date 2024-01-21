@@ -1,6 +1,7 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Arduino recipe: Generating random numbers"
+date:                  2024-01-20T17:49:07.872387-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generating random numbers"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,44 +11,84 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Haskell and the Art of Random Number Generation
-
 ## What & Why?
 
-Generating random numbers is about producing non-deterministic values. Programmers use it to simulate scenarios, shuffle elements, create unique IDs, and more.
+Generating random numbers is like rolling dice with your code; you get unpredictability. Programmers need randomness for simulations, games, and sometimes for shuffling data or security purposes.
 
 ## How to:
 
-The most basic way to generate random numbers in Haskell involves using the `randomRIO` function from the `System.Random` library.
+First off, let’s get our imports in:
 
 ```Haskell
-import System.Random
-
-generateRandomInt :: IO Int
-generateRandomInt = randomRIO (1, 100)
+import System.Random (randomRIO)
 ```
 
-Running this `generateRandomInt` function gives you random integers between 1 and 100. Each time you call it, you're getting a fresh random value.
+Now, here’s how to roll a six-sided dice:
 
 ```Haskell
-> generateRandomInt
-42
-> generateRandomInt
-67
-> generateRandomInt
-13
+main :: IO ()
+main = do
+  result <- randomRIO (1, 6)
+  print result
 ```
 
-## Deep Dive:
+Running this is like throwing a dice:
 
-Haskell's `System.Random` library is based on the algorithms from Donald E. Knuth's "The Art of Computer Programming, Volume 2", specifically section 3.2.1, 3.2.2, and 3.3.4. It's a classic approach, but modern alternative libraries like `random-fu` and `mwc-random` offer better performance and reliability.
+```
+4
+```
 
-The key concept here is that these random numbers are actually pseudo-random; they are deterministic but emulate randomness. For genuine randomness, we'd need external sources, like system entropy or hardware devices.
+Each run potentially gives a different number, 1 through 6.
 
-Did you notice `IO` in `IO Int`? It's because random number generation is an effectful operation; it has side-effects (each call can produce a different result). This is why it's wrapped in the `IO` monad, reinforcing Haskell's paradigm of rigid separation between pure and impure functions. 
+Want a random letter? Let's pick from 'a' to 'z':
 
-## See Also:
+```Haskell
+import System.Random (randomRIO)
 
-- [Haskell Library: System.Random](https://hackage.haskell.org/package/random-1.1/docs/System-Random.html)
-- [The "random-fu" Package](http://hackage.haskell.org/package/random-fu) 
-- [The "mwc-random" Package](http://hackage.haskell.org/package/mwc-random)
+main :: IO ()
+main = do
+  char <- randomRIO ('a', 'z')
+  print char
+```
+
+Sample output could be:
+
+```
+'e'
+```
+
+Generate a list of randoms? Use `replicateM`:
+
+```Haskell
+import System.Random (randomRIO)
+import Control.Monad (replicateM)
+
+randomList :: Int -> (Int, Int) -> IO [Int]
+randomList n bounds = replicateM n (randomRIO bounds)
+
+main :: IO ()
+main = do
+  numbers <- randomList 5 (1,100)
+  print numbers
+```
+
+This might output something like:
+
+```
+[42, 7, 95, 13, 76]
+```
+
+## Deep Dive
+
+Haskell, a pure functional language, handles randomness through the `IO` monad to maintain purity. A random number generator (RNG) typically uses an algorithm, providing a sequence of numbers that only seem random (pseudo-random).
+
+Historically, RNGs often started with a 'seed' value. The new Haskell approach, embodied in the `randomRIO` function, abstracts seed management so you don't need to pass it around.
+
+Alternatives include the `random` package for more control. It lets you choose RNGs and manage seeds explicitly if needed.
+
+Implementing custom algorithms in Haskell is straightforward but remember, Haskell values purity and thread safety, so make sure your custom solution respects that paradigm.
+
+## See Also
+
+1. [Hackage: random library](https://hackage.haskell.org/package/random)
+3. [School of Haskell: Basics of Random in Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/randoms)

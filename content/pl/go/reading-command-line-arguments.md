@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie argumentów linii poleceń"
-html_title:           "Bash: Czytanie argumentów linii poleceń"
-simple_title:         "Czytanie argumentów linii poleceń"
+title:                "Odczytywanie argumentów linii poleceń"
+date:                  2024-01-20T17:56:26.887981-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie argumentów linii poleceń"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,15 +11,12 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Czytanie argumentów linii poleceń to sposób, by program Go mógł otrzymywać dane wejściowe od użytkownika bez interfejsu użytkownika. Programiści wykorzystują to do tworzenia elastycznych narzędzi, które pracują z różnymi danymi bez potrzeby zmian w kodzie.
 
-Czytanie argumentów z linii poleceń to sposób, w jaki program komputerowy odbiera dane wejściowe podane przez użytkownika w momencie uruchomienia. Robimy to, aby umożliwić naszym programom działanie w bardziej elastyczny i konfigurowalny sposób.
-
-## Jak to zrobić:
-
-Oto prosty przykład, jak czytać argumenty z linii poleceń w języku Go:
-
-```Go
+## How to: (Jak to zrobić:)
+```go
+// Przykład: main.go
 package main
 
 import (
@@ -27,36 +25,27 @@ import (
 )
 
 func main() {
-	argsWithProg := os.Args
-	argsWithoutProg := os.Args[1:]
-
-	arg := os.Args[3]
-
-	fmt.Println(argsWithProg)
-	fmt.Println(argsWithoutProg)
-	fmt.Println(arg)
+	args := os.Args[1:] // Ignoruje nazwę programu (args[0])
+	for i, arg := range args {
+		fmt.Printf("Argument %d: %s\n", i+1, arg)
+	}
 }
 ```
-
-Podczas uruchamiania tego programu z argumentami, np.: `./main arg1 arg2 arg3`, wynikiem będzie:
-
-```bash
-[./program arg1 arg2 arg3]
-[arg1 arg2 arg3]
-arg3
+Uruchomienie w terminalu:
+```
+$ go run main.go these are arguments
+```
+Wyjście:
+```
+Argument 1: these
+Argument 2: are
+Argument 3: arguments
 ```
 
-## Głębsze zrozumienie:
+## Deep Dive (Dogłębna analiza)
+Go, od pierwszych wersji, wyposażony jest w `os` package do interakcji z systemem operacyjnym. Argumenty linii poleceń są dostępne poprzez `os.Args`, tablicę stringów. Element `os.Args[0]` to ścieżka do uruchomionego programu, dlatego pomijany jest podczas dostępu do argumentów. Alternatywy jak `flag` albo `cobra` służą do bardziej złożonych scenariuszy z flagami czy opcjami. Implementacja jest prosta, ale umożliwia pisanie skryptów i narzędzi zdolnych do przetwarzania danych wejściowych dynamicznie.
 
-Czytanie argumentów z linii poleceń jest z nami od dawna. Wiele starszych języków programowania, takich jak C i Perl, również dostarcza metod do czytania argumentów z linii poleceń.
-
-Jednym z alternatywnych podejść jest użycie `flag` package dostarczonego przez Go. Pozwala on na bardziej wyspecjalizowane odczytywanie flag i argumentów.
-
-Szczegółem implementacji godnym uwagi jest to, że `os.Args` dostarcza nam pełną listę argumentów, włącznie z nazwą programu `(os.Args[0])`. Stąd często widzisz `os.Args[1:]`, co pomija nazwę programu.
-
-## Zobacz również:
-
-Dla lepszego zrozumienia problemu, sugerowane są następujące źródła:
-- Dokumentacja Go na temat pakietu `os`: https://golang.org/pkg/os/
-- Dokumentacja Go na temat pakietu `flag`: https://golang.org/pkg/flag/ 
-- Przykładowy tutorial na temat argumentów wiersza polecenia w Go: https://gobyexample.com/command-line-arguments
+## See Also (Zobacz również)
+- Oficjalna dokumentacja Go dla `os` package: https://pkg.go.dev/os
+- Pakiet `flag` do zarządzania flagami komend: https://pkg.go.dev/flag
+- Cobra, framework do tworzenia potężnych aplikacji komendowych w Go: https://github.com/spf13/cobra

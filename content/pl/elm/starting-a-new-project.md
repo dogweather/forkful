@@ -1,6 +1,7 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Bash: Rozpoczynanie nowego projektu"
+date:                  2024-01-20T18:03:26.952097-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,42 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Zaczynanie nowego projektu to jak otwieranie nowej, pustej książki, w którą możemy wpisać dowolny kod. Programiści rozpoczynają nowe projekty, by tworzyć aplikacje od zera, eksplorować pomysły lub uczyć się nowych technologii.
 
-Rozpoczęcie nowego projektu to proces tworzenia od podstaw skomplikowanej aplikacji lub strony internetowej w języku Elm. Programiści robią to, aby zrozumieć i wykorzystać w pełni możliwości tego języka, a także stworzyć rozwiązania spełniające konkretne wymagania klientów.
-
-## Jak to zrobić:
-
-Do rozpoczęcia nowego projektu w Elm używamy narzędzia `elm-init`. Oto przykład kodu i wyniku:
+## How to: (Jak to zrobić:)
+Zainstaluj Elm i utwórz nowy projekt krok po kroku.
 
 ```Elm
-cd ~/MojeProjekty
+-- Zainstaluj Elm korzystając z npm:
+npm install -g elm
+
+-- Utwórz nowy projekt:
 elm init
+
+-- Twoje drzewo projektu powinno wyglądać tak:
+.
+├── elm.json
+└── src
+    └── Main.elm
+
+-- Uruchom kompilator Elm, by sprawdzić czy wszystko działa:
+elm make src/Main.elm
 ```
 
-Twoje wyjście będzie wyglądać mniej więcej tak:
+Wynik powinien wyświetlić informacje o sukcesie kompilacji.
 
-```
-Here is my plan:
+## Deep Dive (Głębsze spojrzenie)
+Elm to kompilowany język, który powstał, aby ułatwić tworzenie niezawodnych aplikacji webowych. Jego historia sięga 2012 roku i od tego czasu przeszedł kilka ważnych zmian, stale ewoluując i udoskonalając doświadczenie programisty. Alternatywą dla Elm jest używanie czystego JavaScriptu lub frameworków takich jak React czy Angular, ale Elm wyróżnia się silnym typowaniem i brakiem wyjątków w czasie działania. Gdy zaczynasz nowy projekt w Elm, skupiasz się na modelu, widokach i aktualizacjach, co promuje architekturę zapewniającą łatwość utrzymania kodu.
 
-    Initialize a new Git repo in ~/MojeProjekty?
-    │
-    └─> Yes
-        │
-        └─> Ok. I created an "elm.json" file for you.
-```
-
-## Pogłębione spojrzenie:
-
-Rozpoczęcie projektu w Elm to nie tylko pisanie kodu, ale także zrozumienie, jak język funkcjonuje. Elm wywodzi się z języków funkcyjnych, takich jak Haskell, i jest przeznaczony do tworzenia bezpiecznych, wydajnych aplikacji internetowych. 
-
-Jednym z alternatywnych podejść jest użycie frameworków JavaScript, takich jak React czy Angular. Elm jest jednak znacznie bardziej bezpieczny, łatwiej przewiduje błędy na etapie kompilacji i zapewnia lepszą wydajność.
-
-Szczegółem implementacyjnym, który warto rozważyć, jest to, że Elm kompiluje cały swój kod do JavaScriptu, co umożliwia łatwe wdrożenie go na dowolnej stronie internetowej. Elm ma również własne narzędzia, takie jak `elm reactor` i `elm make`, które pomagają w procesie tworzenia kodu.
-
-## Zobacz też:
-
-- Oficjalna dokumentacja Elm: https://elm-lang.org/docs
-- Przewodnik po Elm: https://guide.elm-lang.org/
-- Repozytorium Elm na GitHub: https://github.com/elm/elm-lang.org
-- Kurs Elm na freeCodeCamp: https://www.freecodecamp.org/news/an-intro-to-elm-programming-language/
+## See Also (Zobacz również)
+- Oficjalna strona Elm: [https://elm-lang.org/](https://elm-lang.org/)
+- Elm Guide dla początkujących: [https://guide.elm-lang.org/](https://guide.elm-lang.org/)
+- Elm Packages, strona z bibliotekami: [https://package.elm-lang.org/](https://package.elm-lang.org/)

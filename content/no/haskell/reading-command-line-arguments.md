@@ -1,6 +1,7 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Arduino: Lese kommandolinjeargumenter"
+date:                  2024-01-20T17:56:15.954553-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,36 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Lesing av kommandolinjeargumenter i Haskell: en enkel guide
+## Hva & Hvorfor?
+Lese kommandolinjeargumenter betyr å hente inn data som brukeren gir når de kjører programmet ditt. Det gjør vi for å gi fleksibilitet og tilpasse oppførselen til programmet uten å hardkode verdier.
 
-## Hva og hvorfor?
-Kommandolinjeargumenter er parametere som følger etter programnavnet når det kjøres i terminalen. Det å kunne lese disse argumentene gir fleksibilitet ved å tillate brukerinput utenfor selve programmet.
-
-## Slik gjør du det:
-Haskell gir en innebygd funksjon kalt `getArgs` for å hente kommandolinjeargumentene. Her er en enkel bit kode som viser hvordan man gjør det.
+## Hvordan:
+For å lese argumenter fra kommandolinjen i Haskell, kan du bruke `getArgs` fra `System.Environment`. Her er et enkelt eksempel:
 
 ```Haskell
-import System.Environment
+import System.Environment (getArgs)
+
 main :: IO ()
 main = do
     args <- getArgs
     print args
 ```
 
-Når du kjører dette programmet og skriver argumenter etter programnavnet, vil det trykke argumentene til konsollen. For eksempel:
+Kjører du programmet med `runghc myprogram.hs arg1 arg2 arg3`, blir resultatet:
 
 ```
-$ ghc Args.hs
-$ ./Args Hei Haskell
-["Hei", "Haskell"]
+["arg1", "arg2", "arg3"]
 ```
 
-## Dypdykk
-Historisk sett har kommandolinjeargumenter vært en måte å parametrisere programmer på siden tidlig utvikling av Unix-systemer. I Haskell, kan du benytte funksjonen `getArgs` som vi viste tidligere, men det finnes også biblioteker som `optparse-applicative` som gir en mer kraftfull og fleksibel håndtering av argumenter.
+## Dykk Dypere:
+I Haskell, som i mange andre språk, er kommandolinjeargumenter essensielle for interaktivitet. Det startet med UNIX og C, hvor `int main(int argc, char *argv[])` lar deg håndtere argumenter.
 
-En interessant ting å merke seg er at `getArgs` returnerer en liste over `String`. Dette er fordi den tolker argumentene som separate strenge hvis de er adskilt av mellomrom på kommandolinjen.
+Det finnes alternativer til `getArgs`, som `getProgName` for programnavnet, eller mer avanserte biblioteker som `optparse-applicative` for rike og komplekse argumenter. Selve implementasjonen i Haskell håndterer argumentene som en liste av strenger, noe som gjør det lett å jobbe med.
 
-## Se også
-Hvis du vil læle mer om dette emnet, er her noen nyttige kilder:
-- [Biblioteksdokumentasjon for System.Environment](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-Environment.html)
-- [Dokumentasjon for optparse-applicative](https://hackage.haskell.org/package/optparse-applicative)
+Det er også viktig å validere og håndtere forventede og uventede argumenter på en sikker måte for å unngå feil i kjøringen av programmet.
+
+## Se Også:
+- [Haskell System.Environment Documentation](https://hackage.haskell.org/package/base-4.16.0.0/docs/System-Environment.html)
+- [optparse-applicative på Hackage](https://hackage.haskell.org/package/optparse-applicative) for kompleks argumenthåndtering
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/) for en mer omfattende introduksjon til Haskell

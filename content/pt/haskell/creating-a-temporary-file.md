@@ -1,6 +1,7 @@
 ---
 title:                "Criando um arquivo temporário"
-html_title:           "Bash: Criando um arquivo temporário"
+date:                  2024-01-20T17:40:19.342292-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Criando um arquivo temporário"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,35 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-
-Criar um arquivo temporário é uma tarefa que envolve a criação de um arquivo que serve apenas durante a duração de uma determinada sessão ou processo. Os programadores costumam fazer isso quando estão trabalhando com grandes volumes de dados ou quando precisam de um espaço para armazenar dados intermediários.
+## O Que É & Porquê?
+Criar um arquivo temporário é gerar um arquivo que é destinado a ser utilizado durante a execução de um programa e, geralmente, excluído após o uso. Programadores fazem isso para manter dados voláteis, como caches, ou para manipular informações sem riscos de alterar dados permanentes.
 
 ## Como Fazer:
 
-Vamos fazer uso da biblioteca `System.IO.Temp` do Haskell. Segue abaixo um exemplo de como você pode criar um arquivo temporário. 
+Para criar um arquivo temporário em Haskell, você pode usar a biblioteca `temporary`. Vou te mostrar como rola:
 
-```Haskell
+```haskell
+import System.IO (hClose)
 import System.IO.Temp (withSystemTempFile)
-import System.IO (hPutStrLn, hClose)
 
-main = do
-    withSystemTempFile "temp.txt" $ \tempFilePath hFile -> do
-        hPutStrLn hFile "Alguma data aqui."
-        hClose hFile
+main :: IO ()
+main = withSystemTempFile "meuTemp.txt" $ \filepath handle -> do
+  putStrLn $ "O arquivo temporário é: " ++ filepath
+  -- Escreva no arquivo usando handle
+  -- Quando o bloco terminar, o arquivo é automaticamente excluído
 ```
-Executando este código, Haskell criará um arquivo temporário chamado `temp.txt`, escreverá "Alguma data aqui." nele e então fechará o arquivo.
+
+Quando você executar isso, verá algo assim:
+
+```
+O arquivo temporário é: /tmp/meuTemp.txt123456
+```
+
+Pronto! O arquivo existe enquanto seu código roda, e depois, puff, some.
 
 ## Mergulho Profundo
 
-Historicamente, a criação de arquivos temporários tem sido uma prática comum na programação, especialmente em situações em que o volume de dados ou a complexidade dos cálculos tornam impraticável manter todos os dados na memória. 
+Antigamente, antes de termos abstrações bacanas como `withSystemTempFile`, você teria que gerenciar os arquivos temporários na mão. Isso poderia ser enrolado e trazer bugs.
 
-Uma alternativa a criação de arquivos temporários seria usar estruturas de dados na memória, como listas ou arrays. No entanto, isso pode ser menos eficiente se os dados forem massivos e nem sempre é prático.
+Alternativas? Claro, você pode criar arquivos com nomes únicos manualmente, mas por que reinventar a roda?
 
-A função `withSystemTempFile` em Haskell cria um novo arquivo temporário no sistema de arquivos, escreve no arquivo usando a função de manipulação fornecida e, em seguida, fecha o arquivo. Importante ressaltar que `withSystemTempFile` abrirá e fechará o arquivo para você e garantirá que o arquivo seja excluído quando não for mais necessário.
+Implementação... a `withSystemTempFile` cuida do ciclo de vida do arquivo temporário. Ela cria, passa o handle pro seu código, e assegura que o arquivo seja deletado após o bloco. Conveniente, né?
 
-## Ver Também
+## Veja Também
 
-Segue abaixo alguns links úteis para consulta posterior.
+- [Pacote temporary no Hackage](https://hackage.haskell.org/package/temporary)
+- [Tutorial de IO em Haskell](http://learnyouahaskell.com/input-and-output)
+- [Repositório GHC, onde você pode bisbilhotar como as coisas são feitas em Haskell](https://gitlab.haskell.org/ghc/ghc) 
 
-- Documentação da System.IO.Temp: [aqui](http://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html)
+Ié, isso é só um gostinho. Haskell tem muito mais sob o capô. Fuçar esses links e explorar por conta própria é uma boa pedida.

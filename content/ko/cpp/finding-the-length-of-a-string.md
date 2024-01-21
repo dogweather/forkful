@@ -1,6 +1,7 @@
 ---
 title:                "문자열의 길이 찾기"
-html_title:           "Lua: 문자열의 길이 찾기"
+date:                  2024-01-20T17:47:19.626135-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "문자열의 길이 찾기"
 programming_language: "C++"
 category:             "C++"
@@ -10,38 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+문자열의 길이를 찾는 것은 개수를 셉니다. 프로그래머들은 데이터 처리나 유효성 검사할 때 이 정보가 필요합니다.
 
-문자열의 길이를 찾는 것이란 문자열에 포함된 문자의 수를 계산하는 것입니다. 프로그래머들이 이 작업을 수행하는 이유는 주로 입력 데이터의 유효성 검사, 반복, 부분 문자열 연산 등을 수행하기 위함입니다.
-
-## 어떻게 하는가:
-
-C++에서 문자열의 길이를 찾는 가장 흔한 방법은 표준 라이브러리에 포함된 `length()` 함수를 사용하는 것입니다.
+## How to: (어떻게: )
+C++에는 `std::string`의 `size()` 혹은 `length()` 메소드를 사용하여 문자열 길이를 쉽게 찾을 수 있습니다.
 
 ```C++
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 
 int main() {
-   std::string str = "강남역";
-   std::cout << "Length of string is: " << str.length();
-   return 0;
+    std::string myString = "안녕하세요!";
+    std::cout << "문자열의 길이: " << myString.size() << std::endl; // size() 사용
+    std::cout << "문자열의 길이: " << myString.length() << std::endl; // length() 사용
+    return 0;
 }
+
+// 출력:
+// 문자열의 길이: 6
+// 문자열의 길이: 6
 ```
 
-위 프로그램을 실행하면 다음과 같은 출력이 생깁니다:
-```
-Length of string is: 3
-```
+## Deep Dive (심층 탐구)
+C++에서 문자열 길이를 찾는 방법은 `std::string`의 도입과 함께 C++의 표준 일부가 되었습니다. 이전 C 스타일 문자열에서는 `strlen()` 함수를 사용해야 했습니다. 이 함수는 문자열 끝의 널 문자(`'\0'`)를 찾을 때까지 루프를 돌며 길이를 계산합니다. `std::string`에 내장된 `size()`와 `length()` 메소드는 내부적으로 문자열의 길이를 저장하고 바로 반환하므로, `strlen()`보다 효율적입니다. 두 메소드는 기능적으로 동일합니다. 
 
-## 깊이있게 알아보기
+C++17 부터는 `std::string_view`가 등장하여 메모리 할당 없이 문자열을 참조할 수 있게 해주며, 여기서도 `size()` 메소드를 사용하여 길이를 알 수 있습니다. 표현식 `myString.size()`는 상수 시간 복잡도 O(1)로 실행됩니다.
 
-문자열의 길이를 찾는 몇 가지 대안 방법이 존재합니다. 예를 들어, C 스타일 문자열에서는 null 종료 문자를 새는 `strlen()` 함수를 사용할 수 있습니다. 하지만 C++에서는 표준 라이브러리에 내장된 `length()`나 `size()` 함수를 사용하는 것이 더 안전하며 권장되는 방법입니다.
-
-`length()` 함수는 문자열에 저장된 문자의 수를 반환하며, 이 함수는 문자열의 끝을 나타내는 null 문자를 계산에 포함하지 않습니다. `length()` 함수는 O(1) 시간 복잡도를 가지므로 문자열의 길이를 찾는 데 매우 빠릅니다.
-
-## 관련 자료
-
-- [C++ String length()](http://www.cplusplus.com/reference/string/string/length/)
-- [C++ String size()](http://www.cplusplus.com/reference/string/string/size/)
-- [C++ strlen()](http://www.cplusplus.com/reference/cstring/strlen/)
+## See Also (참고 자료)
+- C++ std::string reference: https://cplusplus.com/reference/string/string/
+- C++ std::string_view reference: https://cplusplus.com/reference/string_view/string_view/
+- C-style strings and strlen: https://cplusplus.com/reference/cstring/strlen/

@@ -1,7 +1,8 @@
 ---
-title:                "Extrayendo subcadenas"
-html_title:           "C: Extrayendo subcadenas"
-simple_title:         "Extrayendo subcadenas"
+title:                "Extracción de subcadenas"
+date:                  2024-01-20T17:45:43.423230-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Extracción de subcadenas"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,51 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Extracción de subcadenas en Haskell
+## ¿Qué y Por Qué?
+Extraer subcadenas significa tomar trozos específicos de un texto. Los programadores lo hacen para analizar, transformar o simplemente acceder a partes relevantes de los datos.
 
-## ¿Qué y por qué?
-
-La extracción de subcadenas es el proceso de obtener segmentos específicos de una cadena más grande. Los programadores la utilizan para manipular y analizar datos en formato de texto con mayor eficacia.
-
-## ¿Cómo se hace?
-
-In Haskell, puedes utilizar las funciones de biblioteca estándar para extraer subcadenas de manera eficiente. Diferentes funciones te permiten extraer por posiciones, extraer prefijos o sufijos y más.
-
-Aquí tienes algunas funciones de subcadena útiles:
-
-Para extraer del principio de una cadena:
+## Cómo hacerlo:
+Aquí tienes ejemplos de cómo extraer subcadenas:
 
 ```Haskell
-Prelude> take 5 "Hola mundo"
-"Hola "
+import Data.Text (Text, pack, unpack, take, drop)
+
+-- Crear una función para empaquetar y desempaquetar cadenas
+substring :: Int -> Int -> String -> String
+substring start end = unpack . take (end - start) . drop start . pack
+
+main :: IO ()
+main = do
+    let text = "¡Hola, aficionados a Haskell!"
+    putStrLn $ substring 7 18 text -- "aficionados"
 ```
 
-Para descartar del principio de una cadena:
+Salida de la muestra: `"aficionados"`
 
-```Haskell
-Prelude> drop 5 "Hola mundo"
-"mundo"
-```
+## Exploración Profunda
+Extraer subcadenas es un concepto antiguo, tan viejo como los propios lenguajes de programación. En Haskell, se pueden usar las funciones `take` y `drop` del módulo `Data.Text` para hacer el trabajo, pero hay otras bibliotecas, como `Data.ByteString`, para diferentes tipos de datos.
 
-Para extraer del final de una cadena:
+La elección entre `Data.Text` y `Data.ByteString` depende de si estás trabajando con texto estructurado (como HTML o JSON) o datos binarios. `Data.Text` está optimizado para Unicode, haciéndolo ideal para texto multilingüe.
 
-```Haskell
-Prelude> reverse (take 5 (reverse "Hola mundo"))
-"mundo"
-```
+## Ver También
+Para profundizar, aquí hay algunos enlaces:
 
-## Deep Dive
-
-La extracción de subcadenas ha sido una capacidad útil en la programación durante décadas y variable en todos los idiomas. Los primeros lenguajes de programación como COBOL y FORTRAN tenían capacidades integradas para extraer subcadenas.
-
-Las alternativas a la extracción de subcadenas generalmente involucran el uso de expresiones regulares, que pueden ser más potentes pero también más complejas. Haskell soporta tanto la extracción de subcadenas como el uso de expresiones regulares.
-
-Debajo del capó, la extracción de subcadenas en Haskell es extremadamente eficiente. Por supuesto, debes tener cuidado al hacerlo en cadenas muy grandes, ya que podría consumir demasiada memoria.
-
-## Ver también
-
-Para más detalles y tutoriales sobre la extracción de subcadenas en Haskell, puedes consultar estos recursos (en inglés):
-
-- Real World Haskell, capítulo 8: Manipulación de texto (http://book.realworldhaskell.org/read/text.html)
-- Learn You a Haskell for Great Good!: String (http://learnyouahaskell.com/starting-out#strings)
-- Hoogle - Buscador de funcionalidad Haskell (https://hoogle.haskell.org/)
+- Documentación oficial de Haskell: [Haskell Text](https://www.stackage.org/haddock/lts-18.18/text-1.2.4.1/Data-Text.html)
+- Tutorial de Haskell sobre `bytestring`: [Haskell ByteString](https://hackage.haskell.org/package/bytestring-0.11.1.0/docs/Data-ByteString.html)

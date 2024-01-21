@@ -1,6 +1,7 @@
 ---
 title:                "Extraindo substrings"
-html_title:           "Bash: Extraindo substrings"
+date:                  2024-01-20T17:46:23.874533-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extraindo substrings"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,44 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que e Por Quê?
-
-Extrair substrings é o processo de pegar uma parte específica de uma string. Programadores fazem isso para manipular, analisar ou transformar os dados de maneira mais eficaz.
+## O Que & Porquê?
+Extrair substrings é o processo de selecionar partes específicas de uma string. Programadores fazem isso para manipular, analisar ou validar informações de acordo com a necessidade.
 
 ## Como Fazer:
+No PHP, a função `substr()` te deixa pegar um pedaço da string. Aqui está um exemplo rápido:
 
-A função `substr` é frequentemente usada para extrair uma substring.
-
-```PHP
-<?php
-$string = 'Olá, mundo!';
-$substring = substr($string, 4, 5);
-echo $substring;  // retorno: ', mun'
-?>
+```php
+$texto = "Olá, mundo!";
+$parte = substr($texto, 4, 5); // Começa na posição 4 e pega 5 caracteres
+echo $parte; // Saída: "mundo"
 ```
+E se você quiser pegar até o final, sem especificar o comprimento:
 
-No exemplo acima, `substr` pega a string 'Olá, mundo!' e extrai a substring começando na posição 4 (0 based) e com comprimento 5.
+```php
+$texto = "Olá, desenvolvedor!";
+$final = substr($texto, 5); // Começa na posição 5 até o fim
+echo $final; // Saída: "desenvolvedor!"
+```
 
 ## Mergulho Profundo
+A função `substr()` existe desde as primeiras versões do PHP. Uma alternativa é a função `mb_substr()`, que é mais apropriada para strings multibyte, como as em UTF-8.
 
-**Contexto histórico**: Em versões anteriores do PHP, `strstr` foi usada para extrair substrings, mas era menos eficiente que `substr`.
+Outra função, `strstr()`, também permite extrair substrings, porém ela busca por uma ocorrência específica e retorna tudo a partir dela. Aqui está um exemplo:
 
-**Alternativas**: Além do `substr`, a função `mb_substr` pode ser usada para suportar o multibyte, o que é importante ao lidar com caracteres não latinos.
-
-```PHP
-<?php
-$string = 'Olá, mundo!';
-$substring = mb_substr($string, 4, 5, "UTF-8");
-echo $substring;
-?>
+```php
+$email = "nome@exemplo.com";
+$dominio = strstr($email, '@');
+echo $dominio; // Saída: "@exemplo.com"
 ```
 
-**Detalhes de implementação**: Em PHP, as strings são zero-indexadas, o que significa que o primeiro caractere é na posição 0. 
+Detalhes de implementação incluem a manipulação de índices negativos em `substr()`, introduzidos no PHP 7.1, que permitem começar do final da string.
 
-## Veja Também
-
-Informações adicionais podem ser encontradas na documentação oficial do PHP para: 
-- [substr](https://www.php.net/manual/pt_BR/function.substr.php)
-- [mb_substr](https://www.php.net/manual/pt_BR/function.mb-substr.php)
-
-Lembrando que, em programação, sempre existem várias maneiras de resolver um problema. A extração de substrings é apenas uma maneira de manipular strings. Considere outras funções PHP como `strpos`, `strstr` e `str_split` para diferentes necessidades de manipulação.
+## Veja Também:
+Para aprender mais sobre as funções de string no PHP, dê uma olhada na documentação oficial:
+- [Função substr()](https://www.php.net/manual/pt_BR/function.substr.php)
+- [Função mb_substr()](https://www.php.net/manual/pt_BR/function.mb-substr.php)
+- [Função strstr()](https://www.php.net/manual/pt_BR/function.strstr.php)

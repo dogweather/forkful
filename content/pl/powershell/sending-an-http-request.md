@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http"
-html_title:           "Arduino: Wysyłanie żądania http"
-simple_title:         "Wysyłanie żądania http"
+title:                "Wysyłanie żądania HTTP"
+date:                  2024-01-20T18:01:23.739316-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie żądania HTTP"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,36 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Wysyłamy zapytanie HTTP, by porozumieć się z serwisami internetowymi. Programiści robią to, aby pobierać dane, wysyłać informacje, autoryzować użytkowników, i więcej.
 
-Wysyłanie żądania HTTP to proces, w którym twój program komunikuje się z serwerem internetowym. Programiści robią to, aby uzyskać dane, wymienić informacje lub interaktywnie pracować z usługami sieciowymi.
-
-## Jak to zrobić:
-
-PowerShell sprawia, że wysyłanie żądań HTTP jest proste jak bułka z masłem. Tutaj znajduje się prosty kod, który wysyła żądanie GET do strony internetowej:
+## How to: (Jak to zrobić?)
+Wysłanie prostej prośby GET do serwisu:
 
 ```PowerShell
-$Response = Invoke-RestMethod -Uri "http://api.poznajswiat.pl/"
-Write-Output $Response
+$response = Invoke-RestMethod -Uri 'https://jsonplaceholder.typicode.com/todos/1' -Method Get
+$response
 ```
 
-W tym przykładzie, `Invoke-RestMethod` wysyła żądanie do podanego URI i zwraca odpowiedź. `Write-Output` wyświetla odpowiedź.
+Przykładowy wynik:
 
-## Pogłębione informacje:
+```
+userId    : 1
+id        : 1
+title     : delectus aut autem
+completed : false
+```
 
-1. **Kontekst historyczny**: Pierwsze żądania HTTP wysyłane były za pomocą surowego tekstu i socketów sieciowych. Dzięki rozwojowi języków i narzędzi programistycznych, teraz jest to znacznie prostsze.
-
-2. **Alternatywy**: W PowerShell możemy również korzystać z cmdletu `Invoke-WebRequest`, który dostarcza informacji o odpowiedzi HTTP, takich jak status czy metadane.   
-
-3. **Detale implementacji**: Żądanie HTTP wysyłane przez `Invoke-RestMethod` jest typem "GET" domyślnie, ale można wysyłać inne typy żądań, np. "POST" lub "DELETE". Wystarczy dodać parametr `-Method`.
+Wysyłanie danych metodą POST:
 
 ```PowerShell
-$Response = Invoke-RestMethod -Uri "http://api.poznajswiat.pl/" -Method 'POST'
-Write-Output $Response
+$uri = 'https://jsonplaceholder.typicode.com/posts'
+$body = @{
+  title = 'foo'
+  body = 'bar'
+  userId = 1
+}
+$response = Invoke-RestMethod -Uri $uri -Method Post -Body ($body | ConvertTo-Json) -ContentType 'application/json'
+$response
 ```
 
-## Zobacz też:
+Przykładowy wynik:
 
-1. **Dokumentacja Microsoftu na temat Invoke-RestMethod**: [Link](https://docs.microsoft.com/pl-pl/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1)
-2. **Dokumentacja Microsoftu na temat Invoke-WebRequest**: [Link](https://docs.microsoft.com/pl-pl/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
-3. **Składnia żądań HTTP**: [Link](https://developer.mozilla.org/pl/docs/Web/HTTP/Methods)
+```
+userId : 1
+id     : 101
+title  : foo
+body   : bar
+```
+
+## Deep Dive (Dogłębna analiza)
+Invoke-RestMethod to dość nowe rozwiązanie w PowerShellu. Przed jego pojawieniem się, zadanie wykonałbyś z WebClient lub HttpWebRequest. Świat się zmienia, HTTP/2 i HTTP/3 wkraczają, lecz Invoke-RestMethod jest wystarczająco elastyczny, by podążać za tym. 
+
+Alternatywy, jak cURL czy POSTMAN, są dobre do testowania, ale nie zawsze wygodne w skryptach. Invoke-RestMethod może też używać autoryzacji, nagłówków HTTP, a nawet obsługiwać sesje związane z ciasteczkami.
+
+Co więcej, obsługa błędów: jeżeli zapytanie się nie powiedzie, Invoke-RestMethod może zwrócić wyjątek z HttpErrorResponseException zawierający status odpowiedzi oraz treść błędu.
+
+## See Also (Zobacz również)
+- [Invoke-RestMethod Documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod)
+- [About HTTP Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+- [Understanding REST APIs](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/)
+- [PowerShell Gallery for REST-related Modules](https://www.powershellgallery.com/)

@@ -1,6 +1,7 @@
 ---
 title:                "Перетворення дати в рядок"
-html_title:           "Lua: Перетворення дати в рядок"
+date:                  2024-01-20T17:37:52.640242-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Перетворення дати в рядок"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,28 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Перетворення дати в рядок — це процес «перекладу» об'єктів дати на рядкове представлення. Програмісти роблять це для зручного показу дат користувачам або для зберігання дати в текстовому форматі.
+## Що і Чому?
+Перетворення дати в рядок — це спосіб представлення часових значень в зручному для читання форматі. Програмісти це роблять для візуалізації, логування, чи збереження дат в базах даних.
 
 ## Як це зробити:
-Нижче наведено приклади коду та приклади виводу:
 ```TypeScript
-let currentDate = new Date();
-let dateStr = currentDate.toISOString();
-console.log(dateStr);
-// Виведення: 2021-08-06T14:12:27.612Z
+const currentDate: Date = new Date();
+
+// Перетворення в локально зрозумілий рядок
+const dateString1: string = currentDate.toLocaleDateString("uk-UA");
+console.log(dateString1); // 'dd.mm.yyyy' (формат може варіюватися в залежності від браузера і ОС)
+
+// Перетворення в стандартний ISO формат
+const dateString2: string = currentDate.toISOString();
+console.log(dateString2); // 'yyyy-mm-ddTHH:MM:SS.sssZ'
+
+// Форматування з використанням Intl.DateTimeFormat
+const formatOptions: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const localDateFormatter = new Intl.DateTimeFormat('uk-UA', formatOptions);
+const dateString3: string = localDateFormatter.format(currentDate);
+console.log(dateString3); // 'четвер, 8 березня 2023 р.'
 ```
-В цьому коді є об'єкт `currentDate` типу `Date`, який перетворюється на рядок за допомогою методу `.toISOString()`.
- 
 
-## Глибоке занурення
-**Історичний контекст**: Метод `toISOString()` в JavaScript/TypeScript був стандартизований ще в ES5 і є одним із найпопулярніших для перетворення дат в рядок.
+## Поглиблення:
+Перетворення дат в рядки не нове - це робили ще до появи JavaScript. Сучасні можливості TypeScript базуються на засобах JavaScript. Розглянемо декілька альтернатив:
+- `Date.prototype.toString()`: просте перетворення без можливості вказати формат.
+- Бібліотеки, як `moment.js` чи `date-fns`, пропонують широкий спектр функцій для роботи з датами та форматування.
+- `Intl.DateTimeFormat`: частина міжнародної стандартної бібліотеки ECMAScript для форматування з урахуванням локалі. Вибір формату залежить від потреби.
 
-**Альтернативи**: Javascript/TypeScript пропонує різні методи перетворення дати в рядок. Окрім `.toISOString()`, є методи як `.toString()`, `.toLocaleString()`, `.toDateString()`, `.toTimeString()` і інші.
+Конвертація дат з TypeScript може використовувати будь-які вбудовані або зовнішні методи, що доступні у JavaScript. Важливо враховувати часові пояси й локалізацію при представленні дат користувачам.
 
-**Деталі реалізації**: Метод `.toISOString()` повертає дату в форматі ISO, тобто `YYYY-MM-DDTHH:mm:ss.sssZ`, де `Z` позначає UTC-час.
+## Дивіться також:
+- MDN Web Docs про `Date`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+- Документація `Intl.DateTimeFormat`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
+- `moment.js`: https://momentjs.com/
+- `date-fns`: https://date-fns.org/
 
-## Дивіться також
-1. [MDN Web Docs: Date.prototype.toISOString()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString) - довідка MDN щодо `toISOString()`.
-2. [Сайт TypeScript](https://www.typescriptlang.org/docs/) - Документація TypeScript.
-3. [Кращі практики з JavaScript/TypeScript](https://github.com/airbnb/javascript) - База знань від Airbnb з наголосом на кращі практики.
+Ці ресурси допоможуть збагнути різноманітність способів форматування та перетворення дат.

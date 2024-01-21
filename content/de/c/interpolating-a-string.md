@@ -1,7 +1,8 @@
 ---
-title:                "Eine Zeichenkette interpolieren"
-html_title:           "Arduino: Eine Zeichenkette interpolieren"
-simple_title:         "Eine Zeichenkette interpolieren"
+title:                "Zeichenketten interpolieren"
+date:                  2024-01-20T17:50:25.195116-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Zeichenketten interpolieren"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,31 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Zeichenketten-Interpolation in C: Eine Kurze Einführung 
+## What & Why?
+String-Interpolation ermöglicht das Einsetzen von Variablenwerten innerhalb eines Strings. Programmierer nutzen diese, um dynamische Textausgaben zu erzeugen und Code lesbarer zu gestalten.
 
-## Was und Warum?
-Die Interpolation von Zeichenketten ist ein Hilfsmittel zur Erstellung formatierter Zeichenketten. Sie ermöglicht es Programmierern, Variablen direkt in eine Zeichenkette einzubauen und sorgt so für eine effizientere und lesbarere Codierung.
-
-## So geht's:
-In C verwenden wir die `printf` Funktion für die Zeichenketten-Interpolation. Hier ist ein einfaches Beispiel:
+## How to:
+C hat keine eingebaute String-Interpolation wie höhere Programmiersprachen. Stattdessen verwendet man `sprintf()` oder `printf()` Funktionen. Hier einige Beispiele:
 
 ```C
 #include <stdio.h>
 
 int main() {
-    char name[] = "John";
-    printf("Hallo, %s!\n", name);
+    char name[] = "Welt";
+    int age = 42;
+
+    // Mit printf direkt ausgeben
+    printf("Hallo, %s! Du bist %d Jahre alt.\n", name, age);
+
+    // Verwenden von sprintf um den String zu speichern
+    char greeting[50];
+    sprintf(greeting, "Hallo, %s!", name);
+    printf("%s\n", greeting);
+
     return 0;
 }
 ```
 
-In diesem Code ersetzt `%s` den Wert der `name` Variable, so dass die Ausgabe sein wird: `Hallo, John!`.
+Sample Output:
+```
+Hallo, Welt! Du bist 42 Jahre alt.
+Hallo, Welt!
+```
 
-## Tiefgang:
-Historisch gesehen ist `printf` ein Teil der C-Standardbibliothek und wurde ursprünglich in der Sprache B entwickelt. Alternativen zur Interpolation von Zeichenketten in C können Formatierungsfunktionen wie `sprintf` oder `snprintf` sein. Beachten Sie jedoch, dass die Überschrift `%s` im `printf` eine spezifische Implementierung ist, die auf einem Zeiger auf char basiert und die Zeichenkette bis zum ersten Null-Byte liest.
+## Deep Dive
+In den Anfangstagen von C, vor `sprintf` und `printf`, mussten alle Strings manuell zusammengefügt werden. Mit C99 kamen die variadic functions, die eine variierende Anzahl von Argumenten akzeptieren. Heute verwenden wir Format-Specifier wie `%s` für Strings und `%d` für Integer in Verbindung mit `printf()`-Familienfunktionen zur String-Interpolation.
 
-## Siehe Auch:
-Für weitere Informationen über die `printf` Funktion und Zeichenketten-Interpolation in C, siehe:
+Alternative Methoden sind:
+- `snprintf()`: sicherer, da Überläufe verhindert werden können
+- Bibliotheken wie `asprintf()` auf einigen Systemen verfügbar
 
-- [Die offizielle Dokumentation von C's printf](https://www.cplusplus.com/reference/cstdio/printf/)
-- [Zeichenketten-Interpolation auf Wikipedia](https://en.wikipedia.org/wiki/String_interpolation)
+Intern verwendet `printf()` eine ziemlich komplexe Mechanik, um Typen zu überprüfen und die entsprechende Repräsentation zu erstellen. Es ist wichtig zu verstehen, dass Fehlentsprechungen zwischen Format-Specifiern und den gegebenen Typen zu undefiniertem Verhalten führen können.
+
+## See Also
+- C Standard Library reference on `printf`: https://en.cppreference.com/w/c/io/fprintf
+- GNU C Library documentation over `printf()`: https://www.gnu.org/software/libc/manual/html_node/Formatted-Output-Functions.html
+- Tutorial on variadic functions in C: https://www.cprogramming.com/tutorial/c/lesson17.html

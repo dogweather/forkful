@@ -1,7 +1,8 @@
 ---
-title:                "Aloittaminen uuden projektin"
-html_title:           "C: Aloittaminen uuden projektin"
-simple_title:         "Aloittaminen uuden projektin"
+title:                "Uuden projektin aloittaminen"
+date:                  2024-01-20T18:04:14.542738-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Getting Started"
@@ -10,37 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+## What & Why? (Mitä & Miksi?)
+Uuden projektin aloitus on tyhjän koodisivun muuttamista alustaviksi tiedostoiksi ja koodirungoiksi. Koodarit tekevät tämän, jotta saavat puhtaan pohjan, josta kasvattaa ideansa.
 
-Uuden projektin aloittaminen tarkoittaa uuden ohjelmistohankkeen käynnistämistä tyhjästä. Koodarit tekevät näin, jotta he voivat luoda räätälöityjä sovelluksia, jotka täyttävät tietyn tarpeen tai ratkaisevat tietyn hyvin määritellyn ongelman.
-
-## Kuinka:
-Pythonissa voit aloittaa uuden projektin tyhjällä kooditiedostolla. Käytämme esimerkkinä yksinkertaista "Hello, World!"-ohjelmaa.
-
-```Python
-print("Hello, World!")
-```
-Kun ajamme tämän, saamme seuraavan tulosteen:
+## How to: (Kuinka tehdä:)
+Python-projektin voi aloittaa luomalla uuden virtuaaliympäristön ja asentamalla tarvittavat paketit. Tässä esimerkki:
 
 ```Python
-Hello, World!
+# Asenna virtualenv, jos se ei ole vielä asennettu
+pip install virtualenv
+
+# Luo uusi virtuaaliympäristö nimeltä 'projekti'
+virtualenv projekti
+
+# Aktivoi virtuaaliympäristö
+# Windows:
+projekti\Scripts\activate
+# Linux tai macOS:
+source projekti/bin/activate
+
+# Asenna paketit käyttäen pip-komentoa
+pip install flask
+
+# Luo uusi tiedosto 'app.py'
+touch app.py  # Linux/macOS tai 'type nul > app.py' Windowsissa
+
+# Kirjoita seuraava Flask-esimerkkisovellus 'app.py'-tiedostoon
+import flask
+
+app = flask.Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello, World!"
+
+# Suorita sovellus
+export FLASK_APP=app  # Linux/macOS tai 'set FLASK_APP=app' Windowsissa
+flask run
 ```
 
-Tämä on yksinkertaisin mahdollinen Python-projekti. Vaikka se on yksinkertainen, siinä on silti peruselementit: se on suoritettava ohjelma, joka tuottaa määritellyn tuloksen.
+Kun suoritat viimeisen komennon, saat näkyviin:
 
-## Deep Dive
+```
+ * Running on http://127.0.0.1:5000/
+```
 
-Historiallisesti, uuden projektin aloittamisessa oli paljon muodollisempaa. Koodereiden täytyi määritellä monimutkaisia rakenteita, ennen kuin he voisivat aloittaa koodauksen. Nykyään, kiitos modernejen ohjelmointikielten kuten Pythonin, voimme aloittaa uuden projektin suoraan.
+Avaa selain ja mene osoitteeseen http://127.0.0.1:5000/ nähdäksesi tervehdyksen.
 
-Pythonilla on monia vaihtoehtoja uusien projektien aloittamiseen. Voimme käyttää esimerkiksi Django- tai Flask-kehikkoa verkkosovelluksille, tai Pygame-kehikkoa pelien kehittämiseen. Vaikka jokaisella näistä kehyksistä on omat vaatimuksensa, perusperiaate on sama: aloitat luomalla uuden tiedoston ja kirjoitat koodia, joka määrittelee sovelluksen toiminnot.
+## Deep Dive (Sukellus syvyyksiin)
+Projektin aloituksella on pitkä historia. Aikana, jolloin koko koodi kirjoitettiin alusta loppuun joka kerta, projektit aloitettiin tyhjältä pöydältä. Virtuaaliympäristöt ja paketinhallintajärjestelmät, kuten `pip`, tulivat peliin ja ovat nykyisin keskeinen osa Python-koodarien arkea.
 
-Nämä yksityiskohdat ovat keskeisessä asemassa projektin aloittamisessa: projekti on nimetty ja jaettu hallitusti, ja se koostuu johdonmukaisesta, selkeitä tehtäviä suorittavasta koodista. Tietojen hallinnan ja organisaation kannalta on tärkeää ymmärtää, miten ja miksi projektin rakenne muodostetaan tietyllä tavalla.
+On olemassa vaihtoehtoja. Joissakin tapauksissa koodarit voivat käyttää `conda`-ympäristöjä, erityisesti tieteellisessä laskennassa tai jos käytetään erityisiä C-kirjastoja. Työkalut kuten `Poetry` ja `Pipenv` yhdistävät riippuvuuksien hallinnan ja paketinhallinnan, tarjoten tiukan kontrollin yli sovellusriippuvuuksista.
 
-## Katso myös
+Projektin aloittamisessa tärkeää on johdonmukaisuus ja ylläpidettävyys. Hyvät käytännöt, kuten kommentointi, testaus ja dokumentaatio, kannattaa aloittaa ajoissa.
 
-Lisätietoja Python-projectien luomisesta löydät seuraavista lähteistä:
-
-1. [Pythonin virallinen dokumentaatio](https://docs.python.org/3/tutorial/index.html)
-2. [Python-projectien aloitusopas Django-kehikossa](https://docs.djangoproject.com/en/3.2/intro/)
-3. [Python-projectien aloitusopas Flask-kehikossa](http://flask.palletsprojects.com/en/1.1.x/tutorial/)
-4. [Python-projectien aloitusopas Pygame-kehikossa](https://www.pygame.org/wiki/GettingStarted)
+## See Also (Katso myös)
+- Pythonin virallinen dokumentaatio virtuaaliympäristöistä: https://docs.python.org/3/tutorial/venv.html
+- Flaskin aloitussivu: http://flask.pocoo.org/
+- `pip`-dokumentaatio: https://pip.pypa.io/en/stable/
+- `virtualenv` dokumentaatio: https://virtualenv.pypa.io/en/latest/
+- `conda` dokumentaatio: https://docs.conda.io/en/latest/
+- `Poetry` dokumentaatio: https://python-poetry.org/docs/
+- `Pipenv` dokumentaatio: https://pipenv.pypa.io/en/latest/

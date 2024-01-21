@@ -1,7 +1,8 @@
 ---
-title:                "Convirtiendo una cadena a minúsculas"
-html_title:           "Bash: Convirtiendo una cadena a minúsculas"
-simple_title:         "Convirtiendo una cadena a minúsculas"
+title:                "Conversión de una cadena de texto a minúsculas"
+date:                  2024-01-20T17:38:27.526301-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Conversión de una cadena de texto a minúsculas"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,32 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Convertir una cadena a minúsculas implica cambiar todos los caracteres en mayúscula de una cadena a su correspondiente formato en minúscula. Los programadores hacen esto para normalizar los datos de entrada y realizar comparaciones insensibles a las mayúsculas.
+## Qué y Por Qué?
+Convertir una cadena a minúsculas significa cambiar todas las letras mayúsculas de un texto a su equivalente en minúsculas. Esto se hace para uniformizar los datos, facilitar comparaciones de texto y mejorar la consistencia.
 
-## ¿Cómo se hace?
-Con Gleam, utilizamos la función `string.to_lower`. Veamos un ejemplo.
+## Cómo hacerlo:
+En Gleam, puedes usar la función `string.lowercase` para convertir una cadena a minúsculas. Aquí tienes un ejemplo sencillo:
 
-```Gleam
+```gleam
 import gleam/string
 
-fn cadena_a_minuscula() {
-  let cadena = "Hola Mundo"
-  string.to_lower(cadena)
+fn main() {
+  let texto = "¡Hola, Mundo!"
+  let texto_en_minusculas = string.lowercase(texto)
+  texto_en_minusculas
 }
 ```
 
-Ejecutando este código obtendrás "hola mundo" como resultado.
+Output esperado:
 
-## Profundizando 
-La conversión de cadenas a minúsculas viene desde los primeros días de la informática, cuando se necesitaba una forma de hacer las comparaciones de cadenas independientes del formato de las mismas.
+```
+"¡hola, mundo!"
+```
 
-Una alternativa a `string.to_lower` podría ser hacer tu propia función usando `string.foldl`.
+## Profundizando
+Históricamente, convertir texto a minúsculas ha sido una tarea común en la programación porque facilita la manipulación y comparación de cadenas. Especialmente en contextos donde el formato y el uso de mayúsculas puede ser inconsistente, normalizar a minúsculas permite comparaciones más efectivas, como en los sistemas de búsqueda o al ordenar palabras por orden alfabético.
 
-En cuanto a cómo Gleam implementa `string.to_lower`, se utiliza el módulo de Erlang underlying's, que tiene una implementación eficiente y segura en términos de localización y Unicode.
+Alternativas para la conversión de mayúsculas a minúsculas varían dependiendo del lenguaje de programación, pero generalmente se tiene una función dedicada para ello, como `toLowerCase()` en JavaScript o `lower()` en Python.
 
-## Ver también
-Para más sobre el manejo de cadenas en Gleam, revisa los siguientes recursos:
+En cuanto a la implementación, las funciones para convertir a minúsculas manejan típicamente mapeos de caracteres Unicode, atendiendo a la complejidad de diferentes sistemas de escritura que van más allá del alfabeto inglés estándar.
 
-1. Documentación oficial de Gleam para el módulo string: https://hexdocs.pm/gleam_stdlib/gleam/string/
-2. Tutorial sobre manipulación de strings en Gleam: https://gleam.run/book/tour/strings
+## Ver También
+- Documentación de Gleam: [string.uppercase](https://hexdocs.pm/gleam_stdlib/gleam/string.html#lowercase/1) para convertir texto a mayúsculas.
+- Unicode Case Folding: [Casos especiales y consideraciones](https://www.unicode.org/reports/tr21/tr21-5.html) para comprender mejor cómo se manejan las conversiones de mayúsculas y minúsculas en un contexto Unicode.
+- Comparaciones de cadenas en distintos lenguajes de programación: Un artículo que muestra cómo diferentes lenguajes manejan las transformaciones y comparaciones de texto.

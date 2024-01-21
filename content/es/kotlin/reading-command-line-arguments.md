@@ -1,7 +1,8 @@
 ---
-title:                "Leyendo argumentos de la línea de comandos"
-html_title:           "Bash: Leyendo argumentos de la línea de comandos"
-simple_title:         "Leyendo argumentos de la línea de comandos"
+title:                "Lectura de argumentos de línea de comandos"
+date:                  2024-01-20T17:56:38.101512-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lectura de argumentos de línea de comandos"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,40 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué y Por Qué?
+Leer argumentos de la línea de comandos permite a tu programa en Kotlin recibir datos externos al ejecutarse. Los programadores usan esto para personalizar la ejecución sin cambiar el código.
 
-Leer argumentos de línea de comandos se refiere a recibir valores a través de la terminal al inicio de un software. Programamos este patrón ya que es una forma eficaz de pasar datos mientras ejecutamos una aplicación.
+## Cómo:
+Para acceder a los argumentos de línea de comandos en Kotlin, usamos la función `main` que toma un array de Strings como argumento. Mira el ejemplo:
 
-## ¿Cómo hacerlo?
-
-Veamos cómo Kotlin facilita la lectura de los argumentos de la línea de comandos en una aplicación de consola.
-
-```Kotlin
+```kotlin
 fun main(args: Array<String>) {
-    args.forEach { arg -> println(arg) }
+    if (args.isNotEmpty()) {
+        println("Hola, ${args[0]}!")
+    } else {
+        println("Hola, desconocido. Por favor, pasa un argumento.")
+    }
 }
 ```
+Si ejecutas este programa así:
 
-Ejecuta el programa con argumentos - `./mi-programa.kt Hola Mundo`. Verás una salida similar:
-
+```shell
+kotlin MiProgramaKt Buenos Aires
 ```
-Hola
-Mundo
+La salida será:
+```
+Hola, Buenos Aires!
 ```
 
-## Inmersión profunda
+## Inmersión Profunda:
+Históricamente, leer argumentos de línea de comandos es una práctica común en la programación, especialmente en aplicaciones de consola. Kotlin hereda esta capacidad de Java, construido para ser compatible con ella. Alternativas incluyen la entrada de usuario durante la ejecución o la configuración de archivos. A nivel de implementación, cuando se pasa una lista de argumentos, Kotlin los recibe en un array que puede manejar como cualquier otro arreglo en el lenguaje.
 
-1. **Contexto histórico**: Desde los primeros días de la programación, los argumentos de la línea de comandos han sido una forma efectiva de dar instrucciones a los programas. Kotlin, a pesar de su modernidad, mantiene esta práctica porque es útil y familiar para muchos desarrolladores.
-
-2. **Alternativas**: Hay otras formas de obtener datos al ejecutar un programa, como el uso de archivos de entrada / salida o interacción con el usuario en tiempo real. Sin embargo, los argumentos de la línea de comandos aún se prefieren para ciertos casos de uso puntuales donde la simplicidad es clave.
-
-3. **Detalles de implementación**: Kotlin almacena los argumentos de la línea de comandos en un array de String que se pasa a la función `main()`. Puedes acceder a estos datos como harías con cualquier otro array.
-
-## Ver también
-
-Para explorar este tema en mayor profundidad, consulta estos enlaces útiles:
-
-- [Kotlin Documentation: Command line arguments](https://kotlinlang.org/docs/tutorials/command-line.html)
-- [Medium: Kotlin command line arguments](https://medium.com/@cervonefrancesco/kotlin-command-line-arguments-40487f3c5bdb)
-
-Esperamos que este artículo te haya dado una buena visión general de cómo manejar argumentos de la línea de comandos en Kotlin. ¡Feliz codificación!
+## Ver También:
+- [Kotlinlang.org - Argumentos de funciones](https://kotlinlang.org/docs/functions.html#parameters)
+- [Documentación oficial de Kotlin](https://kotlinlang.org/docs/command-line.html)
+- [Tutorial de Kotlin Basic Syntax](https://kotlinlang.org/docs/basic-syntax.html)

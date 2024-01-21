@@ -1,6 +1,7 @@
 ---
 title:                "미래나 과거의 날짜 계산하기"
-html_title:           "Haskell: 미래나 과거의 날짜 계산하기"
+date:                  2024-01-20T17:31:11.654524-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "미래나 과거의 날짜 계산하기"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,47 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭐하고 왜 하나요?
+## 무엇 & 왜?
 
-'미래나 과거의 날짜 계산하기'는 특정 날짜에서 특정 일수를 더하거나 빼서 새로운 날짜를 찾는 것입니다. 프로그래머들은 이를 사용하여 날짜 관련 문제를 해결하거나, 특정 이벤트의 발생 시점을 예측하는 데 사용합니다.
+미래나 과거의 날짜를 계산하는 것은 특정 기준일로부터 특정 기간을 더하거나 빼서 날짜를 얻는 과정입니다. 프로그래머들은 유효기간 처리, 예약 시스템, 데이터 분석 등의 다양한 상황에서 사용합니다.
 
-## 어떻게 만드나요:
-
-```Haskell
-import Data.Time.Clock (UTCTime, NominalDiffTime, addUTCTime)
-import Data.Time.Calendar (Day, addDays)
-
-futureDate :: UTCTime -> NominalDiffTime -> UTCTime
-futureDate time duration = addUTCTime duration time
-
-pastDate :: Day -> Integer -> Day
-pastDate date days = addDays (-days) date
-```
-
-다음과 같이 실행하면 출력을 얻을 수 있습니다.
+## 사용 방법:
 
 ```Haskell
-futureDate someUTCTime (daysToNominalDiffTime 7)
-pastDate someDate 30
+import Data.Time
+
+-- 기준 날짜를 정하고, 동일한 날짜 객체 형식으로 반환
+let baseDate = fromGregorian 2023 3 14 -- 2023년 3월 14일
+
+-- 날짜에 일수를 더하거나 빼기
+let tenDaysLater = addDays 10 baseDate
+let tenDaysBefore = addDays (-10) baseDate
+
+-- 결과 출력
+main = do
+  putStrLn $ "Ten days later: " ++ show tenDaysLater
+  putStrLn $ "Ten days before: " ++ show tenDaysBefore
 ```
 
-## 깊게 들어가기
-
-'미래나 과거의 날짜 계산하기'는 컴퓨터가 탄생하기 이전부터 사용되어 왔습니다. 원래는 필기로 수행되었지만, 이제는 대부분의 언어가 내장 기능 혹은 라이브러리를 통해 제공합니다. Haskell에서는 `Data.Time.Clock`와 `Data.Time.Calendar` 패키지를 사용하여 간단하게 수행할 수 있습니다.
-
-대안으로, 우리는 날짜 간의 경과일을 계산하는데 사용될 수 있는 `diffDays` 함수를 사용할 수 있습니다.
-
-```Haskell
-import Data.Time.Calendar (Day, diffDays)
-
-daysBetween :: Day -> Day -> Integer
-daysBetween day1 day2 = diffDays day1 day2
+출력:
+```
+Ten days later: 2023-03-24
+Ten days before: 2023-03-04
 ```
 
-이 구현의 세부 사항은 `Julian Day Numbers (JDN)` 시스템에 얽힌 것입니다, 이 시스템은 날짜 수치 연산에 일반적으로 사용되며 Haskell의 `Day`는 내부적으로 이를 사용합니다.
+## 깊이 있는 정보:
 
-## 참고 할 수 있는 링크
+날짜 계산은 그리고리력(Gregorian calendar)을 기반으로 합니다. 그리고리력은 1582년에 도입되어 오늘날 대부분 국가에서 사용됩니다. Haskell의 `Data.Time` 라이브러리는 이력 관리와 관련된 강력한 기능을 제공합니다.
 
-- [Haskell Date and Time Guide](https://two-wrongs.com/haskell-time-library-tutorial)
-- [Learn You a Haskell: Library documentation](http://hackage.haskell.org/package/time)
-- [Julian Day Numbers explained](https://en.wikipedia.org/wiki/Julian_day)
+대안으로, 라이브러리 사용 없이 순수한 함수로 날짜를 직접 계산하는 방법도 있지만 복잡한 달력 규칙과 윤년 처리를 고려해야 합니다.
+
+데이터 타입과 다양한 날짜 및 시간 함수들(`addDays`, `addGregorianMonthsRollOver` 등)을 사용하여 원하는 날짜 산출은 상대적으로 간단합니다. Haskell의 타입 시스템은 오류를 줄이고 명확한 코드 작성을 돕습니다.
+
+## 참고 자료:
+
+- Haskell Documentation: [Data.Time](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- [Zvon Haskell Reference: The Calendar and Time Library](http://zvon.org/other/haskell/Outputglobal/index.html)
+
+이 문서들은 Haskell의 날짜 및 시간에 관련된 기능을 더 자세히 이해하는데 도움을 줄 것입니다.

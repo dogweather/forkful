@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän muuttaminen merkkijonoksi"
-html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+date:                  2024-01-20T17:36:19.845274-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,38 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mitä ja Miksi?
+Muuntaminen päivämäärästä merkkijonoksi tarkoittaa päivämäärän esittämistä luettavassa muodossa. Ohjelmoijat tekevät tämän, jotta päivämäärät olisivat ihmisen ymmärrettävissä ja sopivat eri järjestelmiin.
 
-Muuntaa päivämäärän merkkijonoksi tarkoittaa päivämäärän esittämistä luettavassa muodossa. Ohjelmoijat tekevät tämän siksi, että päivämäärät ovat ymmärrettäviä ja helposti käsiteltäviä ikään kuin ne olisivat normaaleja tekstejä.
-
-## Näin teet:
-
-Alla on esimerkki siitä, kuinka muuntaa päivämäärä merkkijonoksi Fish Shellissä:
-
+## How to: - Kuinka:
 ```Fish Shell
-set -l nykyinen_pvm (date "+%d-%m-%Y")
-echo $nykyinen_pvm
+# Muunnetaan nykyinen päivämäärä merkkijonoksi
+set päivämäärä (date "+%Y-%m-%d %H:%M:%S")
+echo $päivämäärä
+```
+Esimerkkitulostus:
+```
+2023-04-05 14:30:25
 ```
 
-Kun ajetat tämän, se näyttää jotain tältä:
-
 ```Fish Shell
-20-11-2021
+# Määritellään mukautettu muoto
+set mukautettu_päivämäärä (date "+%d.%m.%Y")
+echo $mukautettu_päivämäärä
+```
+Esimerkkitulostus:
+```
+05.04.2023
 ```
 
-## Syvällisemmin:
+## Deep Dive - Syväsukellus
+Fish Shellissä päivämäärän muuntaminen merkkijonoksi hyödyntää `date`-komentoa, joka on ollut Unix-järjestelmissä vuosikymmeniä. Vaihtoehtoina on käyttää erilaisia päivämääräkirjastoja eri ohjelmointikielillä. Fishissä oleellista on yksinkertaisuus ja selkeys, siksi `date` on yleisin työkalu.
 
-Muuntaa päivämäärän merkkijonoksi -konsepti on ollut olemassa jo pitkään, koska se on olennainen osa päivämäärien käsittelyä ohjelmistokehityksessä. Erilaisia kirjastoja ja kieliominaisuuksia on olemassa tätä tarkoitusta varten eri ohjelmointikielissä. Fish Shell käyttää GNU-Coreutilit 'date'-komentoa, joka antaa meille mahdollisuuden määrittää muodot päivämäärien muuntamiseksi.
+Muotomääreet, kuten `%Y` vuodelle tai `%d` päivälle, määrittävät tulosteen muodon. Ne ovat standardoituja ja laajalti tuettuja.
 
-Vaihtoehtoisesti, jos haluat määrittää tietyn aikavyöhykkeen, voit tehdä sen seuraavasti:
-
-```Fish Shell
-set -l nykyinen_pvm (env TZ=Europe/Helsinki date "+%d-%m-%Y %T %Z")
-echo $nykyinen_pvm
-```
-
-Esimerkki tulostaa päivämäärän muodossa 'dd-mm-YYYY HH:MM:SS TZ', joka on määritelty aikavyöhykkeeseen 'Europe/Helsinki'.
-
-## Katso myös:
-
-2. GNU Coreutils Date Documentation: [Link here](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+## See Also - Katso Myös
+- Fish Shellin kotisivu: [https://fishshell.com](https://fishshell.com)
+- `date`-komento: [https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- Unix Time Muunnin: [https://www.unixtimestamp.com/](https://www.unixtimestamp.com/)

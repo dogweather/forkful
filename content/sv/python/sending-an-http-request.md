@@ -1,7 +1,8 @@
 ---
-title:                "Att skicka en http-begäran"
-html_title:           "Go: Att skicka en http-begäran"
-simple_title:         "Att skicka en http-begäran"
+title:                "Skicka en http-förfrågan"
+date:                  2024-01-20T18:00:27.207528-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skicka en http-förfrågan"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -11,45 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Skicka en HTTP-begäran är hur din kod pratar med webbservern. Programmerare gör detta för att hämta data, skicka information eller interagera med olika webbtjänster.
 
-HTTP-anrop är uppmaningar skickade från en klient till en server för att hämta data. Programmers behöver detta för att interagera med webbtjänster, ladda ner filer och allt däremellan.
+## How to:
+I Python använder vi ofta `requests`-biblioteket för att hantera HTTP-begäranden.
 
-## Hur man:
-
-Python har ett inbyggt bibliotek som heter `requests` för att skicka HTTP-anrop. Första gången, kommer du behöva installera det med kommandot `pip install requests`.
-
-Här är ett exempel på hur du gjör detta:
-
-```python
+```Python
 import requests
 
-response = requests.get('http://example.com')
-
+# Get-begäran
+response = requests.get('https://api.example.com/data')
 print(response.status_code)
-print(response.content)
+print(response.json())
+
+# Post-begäran med data
+payload = {'key1': 'value1', 'key2': 'value2'}
+response = requests.post('https://api.example.com/submit', json=payload)
+print(response.status_code)
+print(response.text)
 ```
 
-När du kör detta kommer det att visa:
-
+Sample Output:
 ```
 200
-b'<!doctype html>...'
+{'data': ['item1', 'item2', 'item3']}
+200
+{"result":"success","message":"Data received"}
 ```
 
-Det betyder att du har fått en HTTP 200 status kod, vilket betyder "OK", och innehållet på sidan som en `bytes`-typ.
+## Deep Dive
+HTTP-begäranden modellerar webbkommunikation sedan tidigt 90-tal. `requests` är inte den enda vägen; `http.client` finns i Python's standardbibliotek, men `requests` är enklare. När du skickar en begäran använder `requests` metoderna GET, POST, PUT, DELETE m.fl. för att specificera begäranstypen.
 
-## Djupdykning
-
-Historiskt sett var det betydligt mer komplicerat att skicka HTTP-anrop innan `requests`-modulen skapades. Python har ett äldre modul som heter `urllib`, men det är betydligt mer komplicerat att använda.
-
-Vad gäller alternativ till `requests`, så finns det bibliotek som `http.client` (inbyggt), `httplib2`, `treq` och många fler. De är dock generellt sett mer komplexa att använda än `requests`.
-
-När det kommer till detaljer av implementering, skickar `requests.get()`-funktionen en `GET`-begäran till den angivna URL:en. Den returnerar ett `Response`-objekt som innehåller serverns svar på vår begäran.
-
-## Se Även
-
-För ytterligare undersökning, se:
-
-- [Officiella dokument för requests](https://requests.readthedocs.io/)
-- [HTTP: The Protocol Every Web Developer Must Know](https://developer.mozilla.org/en-US/docs/Web/HTTP)
-- [Python’s Requests Library](https://realpython.com/python-requests/) (tutorial)
+## See Also
+- `requests` dokumentation: https://requests.readthedocs.io
+- RESTful API-design: https://restfulapi.net/
+- HTTP-specifikationer: https://httpwg.org/specs/
+- Python `http.client` dokumentation: https://docs.python.org/3/library/http.client.html

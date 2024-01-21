@@ -1,6 +1,7 @@
 ---
 title:                "명령줄 인수 읽기"
-html_title:           "Arduino: 명령줄 인수 읽기"
+date:                  2024-01-20T17:56:32.818204-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "명령줄 인수 읽기"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,41 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇이며 왜?)
+명령줄 인수는 프로그램에 입력으로 넘겨주는 값들입니다. 프로그래머는 사용자의 요구를 동적으로 받아들여 유연한 도구를 만들기 위해 이를 사용합니다.
 
-명령행 인자 읽기는 프로그램이 터미널에서 그 다음에 오는 인자들을 받아오는 것을 의미합니다. 프로그래머들이 이것을 하는 이유는 사용자가 프로그램을 실행할 때 인자로 데이터를 제공하여 프로그램의 동작을 변경하거나 관리할 수 있게하기 위해서입니다. 
+## How to:
+Elm은 주로 웹 프론트엔드 개발에 사용되므로, 명령줄 인수를 직접 읽는 기능을 내장하고 있지 않습니다. 그러나 Elm을 Node.js와 함께 사용하는 방법으로 명령줄 인수를 다룰 수 있습니다. 아래는 `elm/interop` 패키지를 사용한 예시입니다.
 
-## 어떻게 할까:
-
-Elm에서는 Marchelito 패키지를 사용하여 명령행 인자를 읽는다. 그 예는 다음과 같습니다:
 ```Elm
-import Marchelito
+port module Main exposing (..)
 
-main : Program () () ()
+import Json.Decode as Decode
+import Platform
+
+port cmdlineArgs : (Decode.Value -> msg) -> Sub msg
+
+type Msg
+    = ReceiveCmdLineArgs (List String)
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    cmdlineArgs (Decode.list Decode.string |> Decode.map ReceiveCmdLineArgs)
+
 main =
-    Marchelito.run () update view
-
-update : CmdArgument -> () -> Tuple (CmdArgument, Cmd CmdArgument)
-update arg () =
-   Tuple (arg, Cmd.none)
-
-view : () -> Html
-view _ =
-  div []
-    [ text "Hello, world!" 
-    , text (toString (Marchelito.args))
-    ]
+    Platform.program
+        { init = init
+        , update = update
+        , subscriptions = subscriptions
+        }
+        
+-- 해당 코드는 Node.js 환경에서 실행되어야 합니다.
 ```
 
-## 깊은 탐구:
+노드 환경에서 `node index.js arg1 arg2 arg3` 같이 실행하면, Elm 프로그램은 리스트 `["arg1", "arg2", "arg3"]`를 `ReceiveCmdLineArgs` 메세지로 받게 됩니다.
 
-명령행 인자를 다루는 작업은 개발의 역사가 거듭되며 이루어져 왔습니다. 소프트웨어를 사용자가 원하는 대로 제어할 수 있도록 해주는 간편한 방법 중 하나입니다. 
+## Deep Dive (심층 탐구)
+Elm이 웹 브라우저를 위해 설계되었기 때문에, 직접적인 명령줄 인수 처리 기능이 내장되어 있지 않습니다. 이는 Elm의 안전성과 예측 가능성에 중점을 둔 설계 철학과 관련이 있습니다. 대안으로, Elm에서 포트를 사용해 JavaScript와의 상호 운용성을 활용할 수 있습니다. 이를 통해 Node.js에서 Elm 애플리케이션이 명령줄 인수를 읽을 수 있습니다. 포트를 통한 데이터 교환은 타입 안전성을 보장하면서 두 언어 간 연동하게 해줍니다. 
 
-대안적으로, 다른 패키지나 도구를 사용하여 명령행 인자를 읽어 올 수 있습니다만, Elm에서 가장 일반적으로 사용하는 방법은 Marchelito 패키지를 사용하는 것입니다. 
-
-Marchelito 패키지는 환경 변수를 읽어 오는 Code가 자동으로 생성되며, 이 코드는 Elm 애플리케이션의 main 함수로 전달됩니다. 
-
-## 참조 자료:
-
-2. [Elm official documentation](https://elm-lang.org/) 
-4. [Elm guide on interactivity](https://guide.elm-lang.org/interop/)
+## See Also (참조)
+- Elm 공식 문서: [https://guide.elm-lang.org/interop/](https://guide.elm-lang.org/interop/)
+- Elm Ports 예제: [https://guide.elm-lang.org/interop/ports.html](https://guide.elm-lang.org/interop/ports.html)

@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request"
-html_title:           "Bash recipe: Sending an http request"
+date:                  2024-01-20T17:59:59.071111-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -12,39 +13,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Sending an HTTP request is a way for a program to communicate with a server, fetching or sending data. Programmers do this to interact with APIs, load media files, or submit form data.
+Sending an HTTP request is like asking a web server to do something or give you something. Programmers do it to interact with web services, pull data, submit forms, or communicate with APIs.
 
 ## How to:
 
-In Kotlin, we can use the Ktor library to send HTTP requests. It's simple and efficient. 
+Kotlin makes HTTP requests straightforward. Here's a basic example using `khttp`, a user-friendly library:
 
-```kotlin
+```Kotlin
+import khttp.get
+
+fun main() {
+    val response = get("https://api.github.com/users/octocat/orgs")
+    println(response.text)
+}
+```
+
+Output:
+
+```Kotlin
+[{"login":"octo-org","id":583231,"url":"https://api.github.com/orgs/octo-org", ...}]
+```
+
+For more robust needs, here's a snippet using `ktor`, a Kotlin framework, to asynchronously fetch data:
+
+```Kotlin
 import io.ktor.client.*
+import io.ktor.client.engine.cio.*
 import io.ktor.client.request.*
 
 suspend fun main() {
-    val client = HttpClient()
-
-    val response: String = client.get("http://example.com")
-    println(response) 
-   
+    val client = HttpClient(CIO)
+    val response: String = client.get("https://api.github.com/users/octocat/orgs")
+    println(response)
     client.close()
 }
 ```
-Executing the above code will print the HTML from "http://example.com" to your console. 
 
-## Deep Dive 
+Output similar to the first example.
 
-Sending HTTP requests has been an integral part of programming since the advent of web services. Originally, this task was often handled using libraries that directly implemented the HTTP protocol. Nowadays, various third-party libraries such as Ktor in Kotlin make the process more standardized and user-friendly.
+## Deep Dive
 
-Alternatives to Ktor include OkHttp and Fuel. These libraries provide similar functionality but may vary in terms of verbosity and configuration options. The choice often depends on the specific project or personal preference.
+The `khttp` library is a convenient tool, modeled after Python's `requests`. It's great for quick scripts but hasn't been actively maintained. `ktor` is a newer, active project by JetBrains, designed with coroutines for asynchronous operations. It's meant for scalable apps. Both handle HTTP requests but serve different use cases.
 
-When sending an HTTP request, you shouldn't have to worry about the underlying implementation details. Under the hood, the client creates a connection to the server, sends the HTTP request, waits for the response, and finally closes the connection. This process is abstracted in modern libraries like Ktor, leaving you to focus on the core functionality.
+Historically, HTTP requests in Kotlin were done with Java libraries like `HttpURLConnection` or Apache's `HttpClient`. These are still valid but are more verbose and lack Kotlin's language features.
+
+As for implementation, remember to handle common HTTP errors and read the response code. You'll also want to use `try-catch` for network exceptions and might need to work with headers and query parameters.
 
 ## See Also
 
-For further knowledge on HTTP requests, check these links:
-
-3. Understanding HTTP: [HTTP Basics](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
-
-Please note that this article assumes a working knowledge of Kotlin. If you're new to Kotlin or need a refresher, it may be best to start here: [Kotlin Basics](https://kotlinlang.org/docs/kotlin-docs.pdf).
+- Ktor Documentation: https://ktor.io/
+- khttp GitHub Repository: https://github.com/jkcclemens/khttp (Note the maintenance status)
+- Kotlin HTTP calls with HttpURLConnection: https://kotlinlang.org/api/latest/jvm/stdlib/java.net/-http-u-r-l-connection/

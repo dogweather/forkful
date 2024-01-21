@@ -1,7 +1,8 @@
 ---
-title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
-simple_title:         "Wyszukiwanie i zastępowanie tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+date:                  2024-01-20T17:57:44.333418-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,26 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Szukanie i zastępowanie tekstu to podstawowe operacje w pracy programisty, które pozwalają na szybkie znalezienie i zamianę określonych ciągów znaków w tekście. Jest niezbędne w wielu dziedzinach programowania, takich jak analiza danych czy modyfikacja plików.
+## What & Why?
+"Co i dlaczego?"
 
-## Jak zrobić:
-Żeby wyszukać i zastąpić tekst w Elm, wykorzystamy funkcję `String.replace`. Zobacz poniższy przykład:
+Szukanie i zamiana tekstu to podstawowe operacje pozwalające na lokalizowanie wzorców w tekście oraz ich modyfikację. Programiści używają tej techniki do refaktoryzacji, poprawiania błędów, czy też zmian masowych w kodzie.
 
-```Elm
-String.replace "pies" "kot" "Mam piesa i dwa koty"
-```
-
-Tekst "Mam piesa i dwa koty" zostanie zmieniony na "Mam kota i dwa koty". Proste, prawda?
-
-## Pogłębiona analiza
-Szukanie i zamiana tekstu jest stara jak pisarstwo. Najpierw było używane w edytorach tekstu, a później zaimplementowano je w różnych językach programowania. 
-Alternatywą dla `String.replace` w Elm jest używanie funkcji `List.map`, która pozwala na przechodzenie przez każdy element listy i wykonanie na nim określonej funkcji.
+## How to:
+"Jak to zrobić:"
 
 ```Elm
-List.map (String.replace "pies" "kot") ["Mam piesa", "i dwa koty"]
-```
-W ten sposób również zastąpisz "pies" "kotem", ale w liście stringów zamiast pojedynczego stringa.
+import String
 
-## Zobacz również
-Gorąco zachęcam do odwiedzenia oficjalnej dokumentacji Elm, gdzie znajdziesz więcej informacji na temat funkcji `String.replace`: https://package.elm-lang.org/packages/elm/core/latest/String#replace. Spójrz również na moduł `List`, jeśli jesteś zainteresowany alternatywą: https://package.elm-lang.org/packages/elm/core/latest/List#map.
+-- Funkcja szukająca i zastępująca tekst w Elm
+replaceText : String -> String -> String -> String
+replaceText find replace text =
+    String.split find text
+        |> String.join replace
+
+-- Przykład użycia
+example : String
+example =
+    replaceText "hello" "hi" "hello there, hello world!"
+
+-- Wynik: "hi there, hi world!"
+```
+
+## Deep Dive
+"Dogłębna analiza"
+
+Szukanie i zamiana tekstu to jedne z najstarszych pojęć w informatyce, sięgające czasów edytorów tekstów i początków programowania. W elm każda manipulacja tekstem odbywa się przez funkcje w module `String`, co świadczy o jej bezstanowości i funkcyjnym charakterze. Alternatywy? W innych językach, jak JavaScript, zastosujesz wyrażenia regularne, które są potężne, ale skomplikowane. Elm trzyma rzeczy proste, oferując czyste, czytelne API bez wirów wyrażeń regularnych. To znaczy, że operacje na tekstach są mniej elastyczne, ale bardziej przewidywalne i łatwe w utrzymaniu.
+
+## See Also
+"Zobacz także"
+
+- Elm `String` documentation: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)

@@ -1,6 +1,7 @@
 ---
 title:                "Starting a new project"
-html_title:           "Bash recipe: Starting a new project"
+date:                  2024-01-20T18:04:28.935864-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Starting a new project"
 programming_language: "Rust"
 category:             "Rust"
@@ -12,51 +13,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Starting a new project is the initial step of creating a new, unique application from ground zero. Programmers do this to design new functionality, solve a problem, or take an idea and bring it to life.
+Starting a new project in Rust means setting up a basic structure so your code has a place to live. Programmers kick off new projects to solve problems, learn, or develop software from scratch.
 
 ## How to:
 
-In Rust, you'll use Cargo, Rust's built-in package manager, to create and manage your projects. Here's how:
+To start a new Rust project, you need Cargo—the Rust package manager. Install Rust and Cargo through the official installer, rustup.
 
-```Rust
-// To create a new Rust project
-$ cargo new my_cool_project
-Created binary (application) `my_cool_project` package
-
-// Check out the directory it created
-$ cd my_cool_project
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-Your directory should look like this:
+After that, it's a simple command to create a new project:
 
-```Rust
-my_cool_project
- ├── Cargo.toml
- └── src
-     └── main.rs
+```sh
+cargo new my_project
 ```
 
-Cargo.toml is your project build config and src/main.rs is a basic 'Hello, World!' application. Now, run the project:
+This command conjures up a new directory called 'my_project' with all the necessary files:
 
-```Rust
-$ cargo run
-   Compiling my_cool_project v0.1.0 (/my_cool_project)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.31s
-     Running `target/debug/my_cool_project`
+- `Cargo.toml`: Your project’s manifest with metadata and dependencies.
+- `src`: A directory where your source files live.
+- `main.rs`: The main entry point for your program.
+
+Here's how simple your `main.rs` looks after creation:
+
+```rust
+fn main() {
+    println!("Hello, world!");
+}
+```
+
+To compile and run your project:
+
+```sh
+cd my_project
+cargo run
+```
+
+And like magic, you'll see the output:
+
+```
+   Compiling my_project v0.1.0 (path/to/my_project)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.0 secs
+     Running `target/debug/my_project`
 Hello, world!
 ```
-The 'Hello, World!' message is a success! You're up and running.
 
 ## Deep Dive
 
-Historically, Rust and therefore Cargo, came into being to solve complex system issues with a focus on safety and performance. Before Cargo, managing a Rust project was chaotic—managing dependencies and building a project robbed you of time and energy before you even got to your code.
+Rust has had its own package manager and build system, Cargo, from the early days. Created around 2013, it's Rust's way of managing projects, dependencies, and builds.
 
-Key alternatives to starting a project, like cloning a repo or reusing code from another project, lack the freshness and learning experience of a new project. Moreover, they may come wired with old bugs or unwanted features.
+Why is Cargo so great for starting new projects?
 
-Your new project creation uses templates and defaults as described in the Cargo.toml file. It's the heart of your Rust application. It defines your project details (like its name and version), its dependencies, and build instructions. This declarative approach, coupled with Cargo's functionality of downloading and building your dependencies, simplifies working with Rust to a large degree.
+- **Consistency**: It creates a standardized project structure.
+- **Dependencies**: It manages external libraries with ease.
+- **Compilation**: It compiles your code, leverages Rust's safety, and performance features.
+
+Other languages use different tools—Node.js has npm, Ruby has Bundler, and Python has Pip. Cargo is Rust's answer to these and arguably does much more out-of-the-box by including the build system, which others delegate to separate tools, like Grunt or Webpack in the JavaScript ecosystem.
+
+Alternatives to starting projects in Rust? Well, you could craft everything by hand or use IDEs, but why reinvent the wheel when Cargo does the heavy lifting?
 
 ## See Also
 
-- Details on Cargo.toml and how to customize it: https://doc.rust-lang.org/cargo/reference/manifest.html
-- A full list of Cargo's commands: https://doc.rust-lang.org/cargo/commands/index.html
-- From newbie to professional Rustacean: The Rust Programming Language book: https://doc.rust-lang.org/book/.
+- The Rust Programming Language Book: https://doc.rust-lang.org/book/
+- Rust and Cargo installation guide: https://www.rust-lang.org/tools/install
+- Cargo documentation: https://doc.rust-lang.org/cargo/

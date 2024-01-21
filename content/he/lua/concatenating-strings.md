@@ -1,7 +1,8 @@
 ---
-title:                "חיבור מחרוזות"
-html_title:           "C++: חיבור מחרוזות"
-simple_title:         "חיבור מחרוזות"
+title:                "שרשור מחרוזות"
+date:                  2024-01-20T17:35:14.696616-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרשור מחרוזות"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,35 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?: Concatenating Strings ערבוב מחרוזות
-הצפה של מחרוזות ב-Lua (concatenating) היא תהליך של איחוד שניים או יותר מחרוזות למחרוזת אחת. התכנתים עושים את זה כדי ליצור או לשנות טקסט בצורה גמישה וברורה.
+## מה ולמה?
+מיזוג מחרוזות ב-Lua זה התהליך של דביקה של מחרוזת אחת לשנייה ליצירת מחרוזת אחת חדשה. תכנותים עושים את זה כי לעתים קרובות צריך לשלב טקסטים כחלק מהקלט או הפלט של התכנית.
 
 ## איך לעשות:
-ב-Lua, אנחנו משתמשים בסימן `..` כדי לערבב מחרוזות. נראה איך זה עובד:
-
 ```Lua
-greeting = "שלום, " 
-name = "דוד"
-message = greeting .. name
-print(message)
-```
+-- צירוף באמצעות אופרטור הקונקטנציה '..'
+local greeting = "שלום"
+local name = "עולם"
+local message = greeting .. ", " .. name .. "!"
+print(message)  -- הדפסה: שלום, עולם!
 
-תוצאה:
-
-```Lua
-שלום, דוד
+-- צירוף באמצעות פונקציית string.format (מומלץ למחרוזות מורכבות)
+local age = 30
+local formatted = string.format("%s, אתה בן %d שנים.", name, age)
+print(formatted) -- הדפסה: עולם, אתה בן 30 שנים.
 ```
 
 ## צלילה עמוקה
-1. *קונטקסט היסטורי*: בגרסאות הראשונות של Lua, הפונקציה format של string (כמו printf ב-C) הייתה הדרך היחידה לconcentrate מחרוזות.
-2. *חלופות*: Lua מציע גם אפשרויות אחרות, כמו string.format, נגיד:
-```Lua
-name = "דוד"
-message = string.format("שלום, %s", name)
-print(message)
-```
-3. *פרטי יישום*: המחרוזת שנוצרת מתהליך הערבוב נמצאת במיקום חדש בזיכרון. המחרוזות המקוריות לא משתנות בגלל שהן אי־ניתנות לשינוי (immutable).
+הצירוף היה חלק מ-Lua מהרגע הראשון. בשנים הראשונות, צירוף מחרוזות היה פחות יעיל, אך לאורך השנים הופך להיות ביצועית. חלופות לצירוף מחרוזות כוללות את השימוש בטבלאות עם `table.concat`, המתאימה יותר לצירוף מחרוזת המורכבת מחלקים רבים.
 
-## ראה גם:
-- Lua Users Wiki: String Library Tutorial - http://lua-users.org/wiki/StringLibraryTutorial
-- Lua 5.1 Reference Manual: String Manipulation - https://www.lua.org/manual/5.1/manual.html#5.4
+פרטי יישום שימושיים:
+- ב-Lua, צירוף מחרוזות עלול להיות פעולה יקרה בזמן ריצה אם תעשה בלולאה או בצורה חוזרת.
+- אופטימיזציה יכולה להגיע משימוש ב-`table.concat` או בפורמטירה מראש של המחרוזות.
+- אם צריך לשלב מחרוזות ומשתנים בצורה מורכבת, `string.format` היא הדרך ללכת אליה עם קוד נקי וקריא.
+
+## ראה גם
+- [תיעוד ה-Lua על מחרוזות](https://www.lua.org/manual/5.4/manual.html#6.4)
+- [פוסטים בבלוג של Lua על טיפים לצירוף מחרוזות](http://lua-users.org/wiki/StringLibraryTutorial)
+- [מדריך לימוד Lua](http://tylerneylon.com/a/learn-lua/)

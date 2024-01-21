@@ -1,6 +1,7 @@
 ---
 title:                "Skicka en http-förfrågan"
-html_title:           "Javascript: Skicka en http-förfrågan"
+date:                  2024-01-20T18:00:06.572478-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Skicka en http-förfrågan"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,49 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att skicka en HTTP-begäran innebär att be en webbserver om data eller att utföra en handling via internet. Programmerare gör detta för att kommunicera med webbtjänster, hämta information eller skicka data för bearbetning.
 
-Att skicka en HTTP-begäran är processen att begära data från en server via World Wide Web. Programmerare gör det eftersom det är en grundläggande del av alla applikationer som interagerar med webb-innehåll.
-
-## Hur ska man:
-
-Här är hur du kan skicka HTTP-GET-förfrågan i Haskell med 'http-conduit'-biblioteket.
+## How to:
+I Haskell används ofta biblioteket `http-conduit` för att skicka HTTP-begäran. Här är hur du gör en enkel GET-begäran:
 
 ```Haskell
-import Network.HTTP.Conduit
-import Control.Monad.IO.Class
+import Network.HTTP.Simple
 
+main :: IO ()
 main = do
-  manager <- newManager tlsManagerSettings
-  request <- parseRequest "http://httpbin.org/get"
-  response <- httpLbs request manager
-
-  liftIO $ print (responseBody response)
+    response <- httpLBS "http://httpbin.org/get"
+    putStrLn $ "Statuskod: " ++ show (getResponseStatusCode response)
+    putStrLn $ "Svarskropp: " ++ show (getResponseResponseBody response)
 ```
-När du kör programmet, bör du se en HTTP-svar från servern, vilket ser ut ungefär så här:
+
+Kör programmet och förvänta dig något liknande:
+
+```
+Statuskod: 200
+Svarskropp: "{\"args\":{},\"headers\":{...},\"origin\":\"...\",\"url\":\"http://httpbin.org/get\"}"
+```
+
+## Deep Dive
+HTTP-begäran har varit grundläggande för webbprogrammering sedan tidiga 90-talet. Alternativ till `http-conduit` inkluderar `http-client` och lågnivåbibliotek som `network`. `http-conduit` använder `http-client` under huven men förenklar hantering av begäran och svar.
+
+För att skicka en POST-begäran och hantera headers använd följande kod:
 
 ```Haskell
-"{
-  \"args\": {}, 
-  \"headers\": {
-    \"Host\": \"httpbin.org\", 
-    ... 
-}"
+{-# LANGUAGE OverloadedStrings #-}
+
+import Network.HTTP.Simple
+
+main :: IO ()
+main = do
+    let request
+            = setRequestMethod "POST"
+            $ setRequestPath "/post"
+            $ setRequestHost "httpbin.org"
+            $ setRequestHeader "Content-Type" ["application/json"]
+            $ setRequestBodyLBS "{\"sample\":\"data\"}"
+            $ defaultRequest
+    response <- httpLBS request
+    putStrLn $ "Statuskod: " ++ show (getResponseStatusCode response)
+    putStrLn $ "Svarskropp: " ++ show (getResponseResponseBody response)
 ```
-## Fördjupa Dig:
 
-Historiskt sett har Haskell inte varit det huvudsakliga språket för att hantera HTTP-begäranden. Tack vare bibliotek som 'http-conduit', är det nu smidigt och enkelt att göra HTTP-anrop direkt från Haskell.
+Detta öppnar för mer kontroll med fler alternativ för konfiguration av begäran.
 
-Alternativen till 'http-conduit' inkluderar 'http-client' och 'Wreq'. 'http-client' är mer lättviktig medan 'Wreq' erbjuder en mer abstrakt högnivå API.
-
-Vad gäller själva implementeringen, utför 'http-conduit' nätverksoprationer genom att använda en "Manager". Denna manager sköter alla anslutningar och ser till att förfrågningar utförs på rätt sätt.
-
-## Se även:
-
-Börja med de officiella dokumenten för HTTP-begäranden i Haskell:
-
-- HTTP-begäranden i Haskell, officiell dokumentation: http://hackage.haskell.org/package/http-conduit
-
-För att lära sig mer om alternativ till 'http-conduit':
-
-- 'http-client': http://hackage.haskell.org/package/http-client
-- 'Wreq': http://www.serpentine.com/wreq/tutorial.html
+## See Also
+- `http-conduit` dokumentation: https://www.stackage.org/package/http-conduit
+- Officiell `http-client` tutorial: https://haskell-lang.org/library/http-client
+- Haskell network-programmering: http://book.realworldhaskell.org/read/network-programming.html

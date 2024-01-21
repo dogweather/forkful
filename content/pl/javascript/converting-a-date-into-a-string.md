@@ -1,7 +1,8 @@
 ---
-title:                "Konwersja daty na ciąg znaków"
-html_title:           "Clojure: Konwersja daty na ciąg znaków"
-simple_title:         "Konwersja daty na ciąg znaków"
+title:                "Konwersja daty na łańcuch znaków"
+date:                  2024-01-20T17:37:08.682754-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Konwersja daty na łańcuch znaków"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,48 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Czasami potrzebujemy reprezentować datę tekstowo - do wyświetlenia, logowania czy zapisywania. Robimy to, przekształcając obiekty daty (`Date`) w JavaScript na ciągi znaków (stringi), aby były czytelne dla ludzi i kompatybilne z innymi systemami.
 
-Rzutowanie daty na ciąg znaków to konwersja obiektu daty na ciąg tekstowy, taki jak "12-12-2022". Programiści robią to, by łatwiej przekazywać i przechowywać dane daty.
+## How to:
+Konwersja daty na string w JS jest prosta. Spójrzmy:
 
-## Jak to zrobić:
+```javascript
+const aktualnaData = new Date();
 
-W JavaScript, aby przekształcić datę w string, używamy metody `toLocaleDateString()`. Oto przykład:
+// Konwersja do stringa przy użyciu metody toString()
+console.log(aktualnaData.toString()); // "Wed Apr 05 2023 12:34:56 GMT+0200 (Central European Summer Time)"
 
-```Javascript 
-let data = new Date();
-let dataJakoString = data.toLocaleDateString();
-console.log(dataJakoString); // 'dd.mm.yyyy'
+// Formatowanie do UTC używając metody toUTCString()
+console.log(aktualnaData.toUTCString()); // "Wed, 05 Apr 2023 10:34:56 GMT"
+
+// Formatowanie zgodne z ISO przy użyciu toISOString()
+console.log(aktualnaData.toISOString()); // "2023-04-05T10:34:56.000Z"
 ```
 
-Ten kod zwraca bieżącą datę jako ciąg znaków w formacie "dd.mm.yyyy".
+Gdy potrzebujemy tylko daty bez godziny i strefy czasowej:
 
-## Głębsza analiza
-
-#### Kontekst historyczny
-
-JavaScript od samego początku umożliwiał konwersję dat na ciągi znaków. Metody, takie jak `toString()`, `toDateString()`, `toLocaleDateString()`, zawsze były dostępne dla programistów.
-
-#### Alternatywy
-
-Inne metody, takie jak `toISOString()` lub `toJSON()`, również konwertują datę na ciąg znaków, ale w różnych formatach. Przykładowo `toISOString()` zwraca date w formacie ISO 8601, który zawiera datę i czas w formacie UTC.
-
-```Javascript 
-let data = new Date();
-console.log(data.toISOString()); // 'yyyy-mm-ddT00:00:00.000Z'
+```javascript
+console.log(aktualnaData.toDateString()); // "Wed Apr 05 2023"
 ```
 
-#### Szczegóły implementacji
+Lub gdy chcesz samemu kontrolować format:
 
-`toLocaleDateString()` jest uzupełniana przez argumenty lokalizacji i opcji, które pozwalają na personalizacje formatu daty. Na przykład:
-
-```Javascript
-let data = new Date();
-let opcje = { year: 'numeric', month: 'long', day: 'numeric' };
-console.log(data.toLocaleDateString('pl-PL', opcje)); // "długi dzień miesiąca siódmy roku 2022"
+```javascript
+console.log(aktualnaData.toLocaleDateString('pl-PL')); // "05.04.2023"
 ```
 
-## Zobacz także:
+## Deep Dive:
+Historia metod konwersji daty w JS sięga początków języka. „toString” i „toUTCString” były od zawsze, a „toISOString” dodano później, ustandaryzowano w ES5.
 
-1. Dokumentacja MDN na temat [`toLocaleDateString()`](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
-3. Poradnik [Working with JavaScript Date](https://flaviocopes.com/javascript-dates/) na Flavio Copes blogu.
+Alternativy to biblioteki zewnętrzne jak Moment.js czy nowoczesna biblioteka date-fns, które oferują bardziej zaawansowane formatowanie.
+
+Jeśli chodzi o implementację, metody obiektu Date korzystają z ustawień przeglądarki - strefy czasowej czy lokalizacji, co wpływa na wynik metody `toLocaleDateString`. Z kolei `toISOString` zawsze zwraca datę w UTC, więc jest niezawodna dla formatowania międzynarodowego.
+
+## See Also:
+- MDN Web Docs dla metody [`Date.prototype.toString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toString)
+- MDN Web Docs dla [`Date.prototype.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)
+- Porównanie bibliotek dat [`Moment.js vs date-fns`](https://stackoverflow.com/questions/35272893/what-is-the-difference-between-moment-js-and-date-fns)

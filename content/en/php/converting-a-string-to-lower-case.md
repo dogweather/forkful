@@ -1,6 +1,7 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "Clojure recipe: Converting a string to lower case"
+date:                  2024-01-20T17:38:53.131250-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Converting a string to lower case"
 programming_language: "PHP"
 category:             "PHP"
@@ -12,38 +13,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Converting a string to lower case means turning all the uppercase characters of a string to lowercase. This process is a common programming task when comparing strings, since it provides consistency and mitigates problems caused by different text input.
+In PHP, converting a string to lower case means transforming all alphabetical characters in a string to their lowercase variant. Programmers do this for consistency, especially when comparing or sorting strings, where case-sensitivity could mess things up.
 
 ## How to:
 
-To convert a string to lower case in PHP, we use the `strtolower()` function. It's as easy as pie. Here's a quick example:
+PHP uses `strtolower` to make all characters in a string lower case. Here’s how it works:
 
-```PHP
+```php
 <?php
-$string = "HELLO, WORLD!";
-echo strtolower($string);
+$originalString = "HeLLo WoRLD!";
+$lowerCaseString = strtolower($originalString);
+
+echo $lowerCaseString; // Outputs: hello world!
 ?>
 ```
-That will output:
-```PHP
-hello, world!
+
+If you need to handle multibyte character encodings, like UTF-8, use `mb_strtolower` instead:
+
+```php
+<?php
+$originalString = "İstanbul";
+$lowerCaseString = mb_strtolower($originalString, 'UTF-8');
+
+echo $lowerCaseString; // Outputs: istanbul (correctly converts İ to i)
+?>
 ```
-It's that simple!
 
 ## Deep Dive
 
-The `strtolower()` function has been part of PHP since its infancy (PHP 4). This function works with all string formats and uses ASCII value comparison, thus making it universally applicable. 
+Historically, PHP's `strtolower` function has been the go-to function for case conversion, introduced in very early versions of PHP. However, as PHP applications became more global, the need to correctly handle multibyte character encodings brought about `mb_strtolower`.
 
-If you're dealing with multibyte character strings (like Unicode), you may have to consider alternatives like `mb_strtolower()`, which supports a broader spectrum of characters.
+Alternatives to `strtolower` and `mb_strtolower` include using regular expressions with the `mb_ereg_replace_callback` function or `preg_replace_callback`, but for simple case conversion, they are overkill.
 
-In terms of implementation detail, `strtolower()` loops through the string, checks ASCII value of each character, and converts uppercase ASCII characters to their corresponding lowercase counterparts. This operation generally takes linear time in relation to the length of the string.
+In PHP, strings have traditionally been byte-based, not character-based, meaning each byte is one character. This works for single-byte encodings like ASCII, where each character indeed is one byte. For multibyte encodings, `mb_strtolower` understands character encoding and treats characters as they should be treated.
 
 ## See Also
 
-1. `strtoupper()`: A counterpart to `strtolower()`, converts all characters to uppercase. [PHP strtoupper() Function - W3Schools](https://www.w3schools.com/php/func_string_strtoupper.asp)
-
-2. `mb_strtolower()`: More suitable for multibyte string (like Unicode). [PHP: mb_strtolower - Manual](https://www.php.net/manual/en/function.mb-strtolower)
-
-3. ASCII table: To understand ASCII value comparison, check this source. [ASCII Chart – RapidTables](https://www.rapidtables.com/code/text/ascii-table.html)
-
-Feel free to deepen your understanding of PHP strings by exploring the above resources!
+- PHP Manual on `strtolower`: https://www.php.net/manual/en/function.strtolower.php
+- PHP Manual on `mb_strtolower`: https://www.php.net/manual/en/function.mb-strtolower.php
+- UTF-8 and Unicode for PHP devs: https://www.php.net/manual/en/book.mbstring.php

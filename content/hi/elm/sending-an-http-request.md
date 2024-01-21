@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:00:00.788979-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,52 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-HTTP अनुरोध भेजना यह सुनिश्चित करने का एक तरीका है कि वेब ब्राउज़र (या किसी अन्य क्लाइंट) सर्वर से डेटा भेज सके और प्राप्त कर सके। प्रोग्रामर इसे तब करते हैं जब उन्हें वेब क्लाइंट और सर्वर के बीच डेटा संवाद की आवश्यकता होती है।
+HTTP अनुरोध एक प्रकार का अनुरोध है जिसे वेबसर्वर पर भेजा जाता है ताकि डेटा लिया या भेजा जा सके। प्रोग्रामर इसे उपयोगकर्ताओं को जरूरी जानकारी देने या डाटा कलेक्ट करने के लिए करते हैं।
 
-## कैसे करें:
-
-निम्नलिखित कोड एक HTTP GET request उदाहरण है:
+## How to: (कैसे करें:)
 
 ```Elm
-import Http exposing (..)
-import Json.Decode as Decode
+import Http
+import Json.Decode exposing (Decoder, string)
 
-getExample : String -> Cmd Msg
-getExample url =
+type alias User =
+    { name : String
+    , age : Int
+    }
+
+userDecoder : Decoder User
+userDecoder =
+    Json.Decode.map2 User
+        (Json.Decode.field "name" string)
+        (Json.Decode.field "age" Json.Decode.int)
+
+fetchUser : Cmd Msg
+fetchUser =
     Http.get
-        { url = url
-        , expect = Http.expectString GotResult
+        { url = "https://api.example.com/user"
+        , expect = Http.expectJson MsgReceived userDecoder
         }
 
-type Msg =
-    GotResult (Result Http.Error String)
+type Msg
+    = MsgReceived (Result Http.Error User)
 
-update : Msg -> Model -> ( Model, Cmd Msg )
+update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
     case msg of
-        GotResult result ->
-            case result of
-                Ok data ->
-                    ( { model | data = Just data }, Cmd.none )
+        MsgReceived (Ok user) ->
+            ({ model | user = Just user }, Cmd.none)
 
-                Err _ ->
-                    ( model, getExample "https://jsonplaceholder.typicode.com/posts/1" )
+        MsgReceived (Err _) ->
+            (model, Cmd.none)
 ```
 
-सामान्य रूप से, आपका आउटपुट प्राप्त पदों की सूची होगा।
+सैम्पल आउटपुट:
+```
+User { name = "Alice", age = 42 }
+```
 
-## गहराई में जानें: 
+## Deep Dive (गहराई से जानकारी):
 
-1) HTTP अनुरोध का विकास 1990 में हुआ था, जब वर्ल्ड वाइड वेब को जन्म दिया गया। यह सर्वर के साथ तुरंत संवाद करने की क्षमता प्रदान करता है।
- 
-2) HTTP के विकल्प में वेबसॉकेट, एजैक्स, और साप्ट शामिल हैं, जो सभी संवेदनशील प्रवाहों के लिए कुछ कोई फायदा प्रदान करते हैं। 
+एल्म में HTTP अनुरोध भेजने की प्रक्रिया साफ और निर्भर है। यह एक प्योर फंक्शनल प्रोग्रामिंग भाषा है, जिसका मतलब है कि साइड इफेक्ट्स, जैसे HTTP अनुरोध, को `Cmd` के माध्यम से manage किया जाता है। जावास्क्रिप्ट या अन्य भाषाओं की तरह Promise या Callback का इस्तेमाल नहीं होता।
 
-3) Elm में HTTP अनुरोध का निपटारा `Cmd` द्वारा किया जाता है, एक तरीका जो Elm की प्रतिक्रिया सिस्टम के साथ बहुत अच्छी तरह से मिलता है। 
+अतीत में, Ajax और XMLHttpRequest जैसे विभिन्न तरीके थे जिसके द्वारा वेब पर HTTP अनुरोध किए जाते थे। एल्म ने इसे अधिक सरल और अनुमानित बनाया है। डेटा को decode करने के लिए यह `Json.Decode` सिस्टम का उपयोग करता है, जो कि टाइप सुरक्षित है और रनटाइम एरर को कम करता है।
 
-## अन्य स्रोत:
+HTTP पैकेज Elm 0.18 में जोड़ा गया था, और इसे Elm 0.19 में सुधारा गया। इसने एल्म एप्लिकेशन्स में HTTP इंटरेक्शन को और भी शक्तिशाली और लचीला बनाया।
 
-1) [MDN वेब डॉक्स - HTTP परिचय](https://developer.mozilla.org/hi/docs/Web/HTTP/Overview)
-2) [Elm प्रलेखन - Http](https://package.elm-lang.org/packages/elm/http/latest/)
-3) [Elm Guide - Effects](https://guide.elm-lang.org/effects/)
+## See Also (और देखें):
+
+- [Elm HTTP package documentation](https://package.elm-lang.org/packages/elm/http/latest/)
+- [Elm JSON Decode guide](https://guide.elm-lang.org/effects/json.html)
+- [Using Elm in Production](https://elm-lang.org/blog/small-assets-without-the-headache)

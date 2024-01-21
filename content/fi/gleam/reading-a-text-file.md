@@ -1,6 +1,7 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Lua: Tekstitiedoston lukeminen"
+date:                  2024-01-20T17:54:08.621674-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,54 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Lukemalla tekstitiedoston koodi voi käsitellä tiedon sisältöä. Ohjelmoijat tekevät tämän tiedon hakemiseen, muokkaamiseen ja tallentamiseen.
 
-Lukeminen tekstitiedostosta on prosessi, jossa ohjelmisto lukee tietoja tekstitiedostosta. Ohjelmoijat tekevät sen usein, koska tiedostojen käsittely on olennainen osa ohjelmointia, auttaa tiedon tallentamisessa ja jakamisessa.
+## How to: (Kuinka tehdä:) 
+```gleam
+import gleam/io
+import gleam/erlang
 
-## Miten tehdään:
-
-```Gleam
-import gleam/otp/process
-import gleam/file.{File, OpenMode}
-
-fn read_file(path: String) -> Result(List(String), String) {
-  let file = File.open(path, OpenMode.Read)
-  case file {
-     Ok(_) -> 
-         let lines = file.unwrap().read_lines()
-         case lines {
-            Ok(lines) -> 
-                Ok(lines)
-            Error(err) ->
-                Error(err)
-         }
-     Error(err) ->
-         Error(err)
-  }
-}
-
-fn main(argv) {
-  case read_file("test.txt") {
-     Ok(lines) ->
-         process.display(lines)
-     Error(err) ->
-         process.display(err)
+pub fn main() {
+  let result = erlang.read_file("esimerkki.txt")
+  case result {
+    Ok(contents) -> io.println(contents)
+    Error(error) -> io.println("Unable to read file: " ++ error)
   }
 }
 ```
+Output:
+```
+Tässä on esimerkkitekstisi sisältö.
+```
 
-## Syvempi sukellus:
+## Deep Dive (Sukellus syvälle)
+Reading a text file isn't anything new – it's foundational in programming. Historians would point to the dawn of computing. Alternatives to file reading include databases or online APIs, but files are simple and often the right tool.
 
-Lukeminen tekstitiedostoista on ollut olennainen osa ohjelmointia sen alkuperästä lähtien. Se on yksinkertainen ja tehokas tapa tallettaa ja jakaa tietoa. Gleam tarjoaa `file` moduulin tiedostojen käsittelyyn, joka sisältää `open` ja `read_lines` toiminnot tiedostojen lukemiseksi.
+Gleam is built on Erlang's rock-solid foundation. It inherits file reading capabilities from Erlang's own `file` module. The `erlang.read_file/1` function we use is a direct bridge to Erlang.
 
-Vaihtoehtoisesti voit käyttää `read` funktiota lukeaksesi koko tiedoston kerralla, tai `read_bytes` funktiota jos haluat lukea tiedoston tavuina.
+Understanding *how* Gleam reads files requires knowing about the Beam VM and Erlang's process model. Each file operation potentially blocks a process, so it's best handled asynchronously. Gleam encapsulates this complexity neatly.
 
-Tiedoston lukemisessa on tärkeää käsittellä virheitä asianmukaisesti. Gleam:n `Result` tyyppi tarjoaa turvallisen tavan käsitellä virheitä.
-
-## Myös katso:
-
-[Gleam:n virallinen dokumentaatio](https://gleam.run/book/)
-
-[`File` moduuli](https://hexdocs.pm/gleam_stdlib/gleam/file.html)
-
-[Tiedostojen luku Gleam:lla](https://www.learn-gleam.dev/tutorials/how-to-read-files/)
+## See Also (Katso myös)
+- Erlang `file` module documentation: [Erlang File Module](http://erlang.org/doc/man/file.html)

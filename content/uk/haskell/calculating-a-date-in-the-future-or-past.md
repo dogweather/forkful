@@ -1,7 +1,8 @@
 ---
-title:                "Розрахунок дати в майбутньому або минулому"
-html_title:           "Haskell: Розрахунок дати в майбутньому або минулому"
-simple_title:         "Розрахунок дати в майбутньому або минулому"
+title:                "Обчислення дати у майбутньому або минулому"
+date:                  2024-01-20T17:31:42.768859-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Обчислення дати у майбутньому або минулому"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,34 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## Що та Чому?
+Обчислення дати у майбутньому чи минулому — це процес знаходження дат, що відрізняються від вихідної на заданий період. Програмісти роблять це для планування задач, прогнозування подій, чи обробки дат.
 
-Розрахунок дати у майбутньому або минулому полегшує організацію подій і спланування. Програмісти обчислюють це, щоб відслідковувати дати оплати, визначати терміни доставки, нагадування і так далі.
-
-
-## Як:
-
-Використовуючи бібліотеку Time в Haskell, ми можемо легко обчислити дату в майбутньому або минулому. Наприклад:
+## Як це зробити:
+Гарно, напишемо функцію. Вас знайомити з `Data.Time` бібліотекою.
 
 ```Haskell
 import Data.Time
 
+addDaysToCurrent :: Integer -> IO Day
+addDaysToCurrent n = do
+  currentDay <- utctDay <$> getCurrentTime
+  return $ addDays n currentDay
+
 main :: IO ()
 main = do
-    currentTime <- getCurrentTime
-    let tenDays = fromIntegral (86400 * 10) :: NominalDiffTime
-    print $ addUTCTime tenDays currentTime
+  putStrLn "Сьогодні плюс 10 днів буде:"
+  tenDaysLater <- addDaysToCurrent 10
+  print tenDaysLater
 ```
-При виконанні цього коду, ви побачите дату через 10 днів від поточного часу.
 
-## Поглиблений підхід:
+Запустимо код і отримаємо:
+```
+Сьогодні плюс 10 днів буде:
+2023-04-21
+```
 
-1. Історичний контекст: розрахунок дати в майбутньому або минулому має довгу історію в програмуванні. Однак Haskell зробив це надзвичайно простим завдяки своїй бібліотеці Time.
+## Поглиблений розгляд:
+Обчислення дати було завжди актуальним. Астрономи, історики й банкіри — всі працювали з календарями. В Haskell, `Data.Time` це стандартна бібліотека для роботи з часом. Вона охоплює часові зони, і на відміну від старої `Data.Time.Calendar`, враховує переведення часу. Альтернативи — `time` і `old-time`, але `Data.Time` використовувати простіше і воно має повнішу підтримку таймзон.
 
-2. Альтернативи: У Haskell є інші бібліотеки, такі як date-arithmetic, для роботи з датами. Вибір бібліотеки залежить від вашої задачі. 
+## Дивіться також:
+- [Haskell Data.Time Library](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- [Learn You a Haskell for Great Good! (by Miran Lipovača)](http://learnyouahaskell.com/) - Легкий вступ до Haskell.
 
-3. Деталі реалізації: Час в Haskell використовує тип `NominalDiffTime` для збереження різниці між двома моментами часу. `addUTCTime` приймає `NominalDiffTime` і `UTCTime` і повертає новий `UTCTime`.
-
-## Див. також:
-
-1. [Документація Haskell Time](https://hackage.haskell.org/package/time-1.6/docs/Data-Time-Clock.html).
+Тримайтеся просто, глибоко розумійте свої інструменти, і програмуйте щасливо!

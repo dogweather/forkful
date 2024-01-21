@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
-html_title:           "Gleam: Merkkijonojen yhdistäminen"
+date:                  2024-01-20T17:35:51.522305-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,56 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? / Mikä & Miksi?
+Yhdistämme merkkijonoja eli "stringejä" saumattomasti yhteen. Tähän on syynsä: näytetään käyttäjälle kustomoituja viestejä, rakennetaan dynaamista dataa tai muodostetaan koodin sisällä olevia hakulauseita.
 
-Merkkijonojen yhdistäminen on toiminto, jossa kaksi tai useampi merkkijono liitetään yhteen, muodostaen yhden yhtenäisen merkkijonon. Ohjelmoijat tekevät näin määrittääkseen tai muokatakseen sisältöä dynaamisesti koodissaan.
-
-## Miten tehdään:
-
-Rubyssä merkkijonot voidaan yhdistää (+) operaattorin avulla:
+## How to: / Kuinka:
+Merkkijonojen yhdistäminen eli "concatenation" Rubyssa on suoraviivaista. Tässä pari tapaa:
 
 ```Ruby
-tervehdys = "Moi " + "sinulle!"
-puts tervehdys
+# Plus-merkin käyttäminen
+tervehdys = "Hei " + "maailma!"
+puts tervehdys  # Tulostuu: Hei maailma!
+
+# Selkeyden vuoksi käytetään "interpolationia"
+nimi = "Matti"
+viesti = "Moi, #{nimi}!"
+puts viesti  # Tulostuu: Moi, Matti!
+
+# Shovel-operattori alias <<, muuttaa alkuperäistä merkkijonoa
+perusta = "Moi"
+perusta << ", " << "kuinka " << "kuluu?"
+puts perusta  # Tulostuu: Moi, kuinka kuluu?
 ```
 
-Tämä tuottaa tulostuksen: `Moi sinulle!`
+## Deep Dive / Syväsukellus:
+Merkkijonojen yhdistäminen on ollut käytössä alusta asti. Historiassa, yksinkertaiset operaattorit kuten '+' ovat olleet normi, mutta Ruby tuo tähän kaivattua joustavuutta ja tehoa.
 
-Toinen vaihtoehto on käyttää `(<<)` operaattoria:
+'+': Tämä on intuitiivinen, mutta luo aina uuden merkkijonon, mikä voi olla hidas operaatio suurilla tekstimassgilla.
 
-```Ruby
-tervehdys = "Moi "
-tervehdys << "sinulle!"
-puts tervehdys
-```
+'#{...}': Tämä on Ruby-interpolaatio, mikä on tehokkaampi ja puhtaampi tapa yhdistää merkkijonoja kun koodista halutaan ymmärrettävämpää.
 
-Tämä tuottaa myös tulostuksen: `Moi sinulle!`
+'<<': Tunnettu nimellä "shovel operator". Se muokkaa alkuperäistä merkkijonoa, ollen usein tehokkaampi, koska uutta merkkijonoa ei luoda.
 
-## Syvempi tarkastelu:
+On tärkeä huomata mitä metodia käytetään, sillä kaikilla on omat etunsa ja heikkoutensa eri käyttötilanteissa.
 
-Ruby syntaksi on muuttunut vuosien saatossa, mutta merkkijonojen yhdistämisen periaate on pysynyt samana. Yllämainittu `(<<)` operaattori on myös vähemmän resurssihakuinen, sillä se muokkaa alkuperäistä merkkijonoa luomatta uutta; tämä on hyödyllistä isojen tekstimassojen käsittelyssä.
-
-Vaihtoehtoisesti voit käyttää `concat()` funktiota, joka toimii samalla tavalla kuin `(<<)` operatori:
-
-```Ruby
-tervehdys = "Moi "
-tervehdys.concat("sinulle!")
-puts tervehdys
-```
-
-Tämä tuottaa tulostuksen: `Moi sinulle!`
-
-Rubyssä on myös `join()` menetelmä, jota käytetään lähinnä taulukoissa:
-
-```Ruby
-tervehdys = ["Moi", "sinulle!"].join(' ')
-puts tervehdys
-```
-
-Tämä tuottaa tulostuksen: `Moi sinulle!`
-
-## Katso myös:
-
-- Ruby Dokumentaatio: String Concatenation: https://ruby-doc.org/core-2.7.0/String.html#method-i-3C-3C
-- Ruby Style Guide: https://rubystyle.guide/
-- StackOverflow: How do I concatenate strings in Ruby: https://stackoverflow.com/questions/4675263/how-do-i-concatenate-strings-in-ruby
+## See Also / Katso Lisäksi:
+- Ruby-dokumentaatio merkkijonoista: [https://ruby-doc.org/core-3.1.0/String.html](https://ruby-doc.org/core-3.1.0/String.html)
+- Ruby Style Guide merkkijonojen yhdistämisen suhteen: [https://rubystyle.guide/#string-interpolation](https://rubystyle.guide/#string-interpolation)
+- Tehokas koodaus Rubyssa ja merkkijonojen käsittely: [https://www.toptal.com/ruby/ruby-metaprogramming-cooler-than-it-sounds](https://www.toptal.com/ruby/ruby-metaprogramming-cooler-than-it-sounds)

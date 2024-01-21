@@ -1,6 +1,7 @@
 ---
 title:                "명령줄 인수 읽기"
-html_title:           "Arduino: 명령줄 인수 읽기"
+date:                  2024-01-20T17:57:05.986863-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "명령줄 인수 읽기"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,45 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜? 와 무엇?
+## What & Why? (무엇과 왜?)
 
-명령행 인자 읽기는 프로그램이 명령행에서 입력을 받아들이는 과정입니다. 프로그래머들이 이것을 하는 이유는 사용자 정의 입력을 쉽게 처리하고 특정 동작을 자동화하는 데 유용하기 때문입니다.
+명령줄 인자(command line arguments)를 읽는 것은 스크립트에 입력을 전달하는 방법입니다. 프로그래머는 이를 활용해 유연하고 재사용 가능한 코드를 작성합니다.
 
-## 어떻게:
+## How to: (어떻게 하나요?)
+
+PowerShell에서 명령줄 인자를 읽으려면 `$args`나 `param`을 사용합니다. `$args`는 모든 인자를 배열로 저장하고, `param`은 스크립트 시작부에 선언해 각 인자를 변수로 사용합니다.
 
 ```PowerShell
-# 입력 인수 출력
+# $args 예제
+Write-Host "인자들: $args"
+```
+사용 예시:
+```shell
+PS> .\script.ps1 인자1 인지2 인자3
+인자들: 인자1 인지2 인자3
+```
+
+`param` 사용법은 다음과 같습니다:
+
+```PowerShell
+# param 예제
 param (
-   [string[]]$arguments
+    [string]$이름,
+    [int]$나이
 )
-
-foreach ($arg in $arguments)
-{
-    Write-Output $arg
-}
+Write-Host "안녕하세요, $이름 님, 나이는 $나이 살입니다."
 ```
-해당 코드를 myscript.ps1로 저장하고, PowerShell에서 다음 명령을 실행합니다.
-```PowerShell
-.\myscript.ps1 인수1 인수2 인수3
+사용 예시:
+```shell
+PS> .\script.ps1 -이름 홍길동 -나이 26
+안녕하세요, 홍길동 님, 나이는 26살입니다.
 ```
 
-출력 결과:
-```
-인수1
-인수2
-인수3
-```
+## Deep Dive (심도 있는 정보)
 
-이 예시에서, 명령행 인자로 넘긴 세 개의 인자가 출력됩니다.
-
-## 깊게 알아보기:
-
-명령행 인자 읽기는 초기 유닉스 셸 스크립트와 최초의 C 프로그램 언어에서 유래되었습니다. 그 이후,이 개념은 거의 모든 현대적인 프로그래밍 언어에 적용되었습니다.
-
-PowerShell 같은 스크립트 언어는 넓은 범위의 사용을위해 이러한 입력 인수를 쉽게 노출합니다. 
-
-단, PowerShell 매개변수는 기본적으로 하나의 값만 허용하지만, `[string[]]$arguments`와 같은 배열을 선언함으로써 여러 개의 값이 데이터 형식으로 수신 될 수 있습니다.
-
-## 더 찾아보기:
-
-- Stack Overflow: [How can I read command line parameters from an alias?](https://stackoverflow.com/questions/8475232/how-can-i-read-command-line-parameters-from-an-alias)
+명령줄 인자는 UNIX 시스템부터 시작해, 사용자가 프로그램에 입력을 제공하는 일반적인 방법이 되었습니다. PowerShell은 `$args`와 `param`을 이용해 이전의 CMD나 Bash 스크립트에 비해 더 진보된 인자 처리를 제공합니다. 예를 들어, `param` 블럭 안에서 인자 유형을 지정해 타입 안전성을 확보할 수 있습니다. 또한, `Get-Command -Syntax`나 `Get-Help`와 같은 PowerShell Cmdlet을 사용해 스크립트에 대한 인자 정보를 얻을 수 있습니다.

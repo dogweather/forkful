@@ -1,7 +1,8 @@
 ---
-title:                "Sende en http-forespørsel med grunnleggende autentisering"
-html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
+title:                "Å sende en HTTP-forespørsel med grunnleggende autentisering"
+date:                  2024-01-20T18:02:04.042473-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,52 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å sende en HTTP-forespørsel med grunnleggende autentisering betyr å inkludere brukernavn og passord for tilgangskontroll. Programmerere gjør dette for å sikre at API-forespørsler er autoriserte.
 
-Å sende en HTTP-forespørsel med grunnleggende autentisering betyr at vi sender en forespørsel til en server, med brukernavn og passord inkludert. Programmerere gjør dette for å sikre tilgang til beskyttet innhold på websider.
-
-## Hvordan gjøre det:
-
-Java 11 introduserte den innebygde HTTP-klienten som gjør HTTP-forespørsler mye friksjonsfrie. Her er et eksempel:
-
-```Java
+## Slik gjør du:
+```java
 import java.net.URI;
 import java.net.http.HttpClient;
-import java.net.http.HttpHeaders;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Base64;
 
-public class Main {
-  public static void main(String[] args) throws Exception {
-    String name = "brukernavn";
-    String password = "passord";
-    String auth = name + ":" + password;
-
-    String encodedAuth = Base64.getEncoder().encodeToString(auth.getBytes());
-    
-    HttpClient client = HttpClient.newHttpClient();    
-    HttpRequest request = HttpRequest.newBuilder()
-        .uri(new URI("http://example.com"))
-        .header("Authorization", "Basic " + encodedAuth)
-        .build();
+public class BasicAuthExample {
+    public static void main(String[] args) {
+        String url = "https://example.com/api";
+        String username = "brukernavn";
+        String password = "passord";
         
-    HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-    
-    System.out.println(response.body());
-  }
+        String encodedCredentials = Base64.getEncoder().encodeToString((username + ":" + password).getBytes());
+        String authorizationHeader = "Basic " + encodedCredentials;
+        
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(url))
+                .header("Authorization", authorizationHeader)
+                .build();
+                
+        try {
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            System.out.println("Statuskode: " + response.statusCode());
+            System.out.println("Respons: " + response.body());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
 ```
+Sample output:
+```
+Statuskode: 200
+Respons: { "message": "Innlogget!" }
+```
 
-## Dyp Dykk
-
-*Historisk sammenheng*: Basic authentication har vært standard metode for autentisering siden tidlige dager av weben, selv om det har begrensninger, som at brukerens legitimasjon sendes uten kryptering.
-
-*Alternativer*: Av sikkerhetsgrunner, har mange alternativer til grunnleggende autentisering blitt utviklet, som Digest Access Authentication, OAuth, og mer kompliserte autentiseringsskjemaer med SSL og JWT.
-
-*Gjennomføringsdetaljer*: I eksempelet over, bruker vi `Base64.getEncoder().encodeToString()` for å sende brukernavn og passord kodet i Base64 i HTTP-headeren. 
+## Dypdykk
+Basic autentisering er en gammel metode, del av HTTP-standarden siden 1990-tallet. Den passer enkle scenarier men er ikke den sikreste, fordi brukernavn og passord er kodet, ikke kryptert. Alternativer inkluderer OAuth, tokens og API-nøkler. I Java, bruk `java.net.http.HttpClient` for å lage HTTP-forespørsler. Du må kode brukernavn og passord med Base64. Sørg alltid for å bruke HTTPS for å beskytte legitimasjonen under overføring.
 
 ## Se også
-
-* [Java HttpClient dokumentasjon](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
-* [Java Base64 Encoder dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.Encoder.html)
-* [Tutorial om Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication) på Mozilla Developer Network
+- [HTTP Authentication: Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)
+- [Java SE Documentation for java.net.http](https://docs.oracle.com/en/java/javase/15/docs/api/java.net.http/java/net/http/package-summary.html)
+- [Understanding Base64 Encoding in Java](https://www.baeldung.com/java-base64-encode-and-decode)

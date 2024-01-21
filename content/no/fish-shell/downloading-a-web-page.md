@@ -1,7 +1,8 @@
 ---
-title:                "Laste ned en nettside"
-html_title:           "Elixir: Laste ned en nettside"
-simple_title:         "Laste ned en nettside"
+title:                "Nedlasting av en nettside"
+date:                  2024-01-20T17:44:10.514583-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Nedlasting av en nettside"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -11,49 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Nedlasting av en nettside betyr å hente HTML-koden fra en nettadresse til lokalt lagringsmedium. Programmerere gjør dette for å analysere innhold, teste nettsider eller automatisere datainnsamling.
 
-Nedlasting av en webside innebærer å hente HTML-koden som webserveren sender når du ber om en side. Dette gjør programmerere for å analysere sidens data, lagre den for offline bruk, eller føre overvåkning på siden.
-
-## Hvordan gjør man det:
-
-I Fish Shell kan nedlasting av nettsider oppnås ved hjelp av `curl` eller `wget` kommandoene. Her er et eksempel som viser bruk av begge.
-
+## Hvordan:
 ```Fish Shell
-# Bruke curl
-curl -O http://eksempelside.no
+# Last ned en nettside med curl
+curl https://example.com -o example.html
 
-# Bruke wget
-wget http://eksempelside.no
+# Sjekk ut resultatet
+cat example.html
 ```
 
-Hvis alt gikk bra, vil output være noe som dette:
+```Fish Shell
+# Hvis du vil vise innholdet direkte
+curl https://example.com
+```
 
 ```Fish Shell
-# Curl output
-  % Total     % Received  % Xferd    Average Speed   Time    Time     Time  Current
-                                Dload   Upload  Total   Spent    Left   Speed
-100  178k  100  178k  0     0   197k      0 --:--:-- --:--:-- --:--:--  197k
+# Lagre nettsiden mer stilfullt med wget
+wget -O fancy-example.html https://example.com
+```
 
-# Wget output
---2022-01-01 12:00:00--  http://eksempelside.no/
-Resolving eksempelside.no (eksempelside.no)... 93.184.216.34, 2606:2800:220:1:248:1893:25c8:1946
-Connecting to eksempelside.no (eksempelside.no)|93.184.216.34|:80... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘index.html’
+```Fish Shell
+# Eller bruk wget for å laste ned hele nettsteder
+wget --mirror --convert-links --adjust-extension --page-requisites --no-parent http://example.com
+```
+
+```Fish Shell
+# Eksempel på output
+<!doctype html>
+<html>
+<head>
+    <title>Eksempel</title>
+</head>
+<body>
+    <p>Dette er et eksempel på en HTML-side.</p>
+</body>
+</html>
 ```
 
 ## Dypdykk
+Originally, nedlasting av webinnhold var en primitiv men kritisk oppgave for tidlige internett-brukere og utviklere. Verktøy som `wget` og `curl` ble opprettet for å lette denne prosessen. De ble tilgjengelige i UNIX og Linux-distribusjoner og er fortsatt essensielle i moderne skript og automatiseringsoppgaver. Alternativer som HTTP-klientbiblioteker i programmeringsspråk (for eksempel Python's `requests`, Javascript's `axios`) tilbyr kraftigere og mer fleksibelt funksjonalitet i større programmer. Det underliggende prinsippet er det samme - sende en HTTP-forespørsel og lagre svaret.
 
-Opp gjennom historien har vi utviklet mange måter å laste ned websider på. Selv før `curl` og `wget` ble standard kommandoer, brukte programmerere sockets og HTTP-protokoller til å gjøre dette manuelt.
+Mens `wget` og `curl` kan virke overlappende, har de sine særegenheter. `curl` støtter flere protokoller og er ofte innebygd i programmeringsspråk for HTTP-forespørsler. `wget` er mer fokusert på nedlasting av filer og kan laste ned rekursivt, noe som er ideelt for å speile nettsteder.
 
-Selv om `curl` og `wget` begge brukes til å laste ned innhold, har de noen forskjeller. `curl` støtter flere protokoller, mens `wget` kan laste ned hele nettsider rekursivt.
+For Fish Shell-brukere, klippe og lime disse kommandoene for nedlasting er ganske rett frem. Men Fishs syntaks kan variere subtilt fra andre shells (som bash), så vær klar over syntaksforskjeller før dykking i mer komplekse skripting.
 
-Disse kommandoene sender en HTTP GET forespørsel til serveren og lagrer responsen – vanligvis en HTML-fil – i en lokal fil.
-
-## Se også 
-
-1. [Fish Shell Offisiell Dokumentasjon](https://fishshell.com/docs/current/index.html)
-2. [cURL Offisiell Dokumentasjon](https://curl.haxx.se/docs/manpage.html)
-3. [Wget Offisiell Dokumentasjon](https://www.gnu.org/software/wget/manual/wget.html) 
-4. [HTTP GET forespørsel](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET) på MDN Web Docs.
+## Se Også
+- Fish Shell dokumentasjon: https://fishshell.com/docs/current/index.html
+- `curl` dokumentasjon: https://curl.se/docs/manual.html
+- `wget` dokumentasjon: https://www.gnu.org/software/wget/manual/wget.html
+- Lær mer om HTTP-protokollen: https://developer.mozilla.org/en-US/docs/Web/HTTP

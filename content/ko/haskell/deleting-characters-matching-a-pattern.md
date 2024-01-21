@@ -1,6 +1,7 @@
 ---
 title:                "패턴에 일치하는 문자 삭제"
-html_title:           "Fish Shell: 패턴에 일치하는 문자 삭제"
+date:                  2024-01-20T17:42:42.592054-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "패턴에 일치하는 문자 삭제"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,40 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜합니까? (What & Why?)
+## 무엇 & 왜?
+패턴과 일치하는 문자 삭제는 특정 기준에 맞는 문자들을 문자열에서 제거하는 것을 의미합니다. 이 작업은 데이터를 정제하거나, 불필요한 부분을 제거하여 프로그램의 입력을 깔끔하게 다듬기 위해 수행됩니다.
 
-패턴과 일치하는 문자 삭제는, 이름에서 알 수 있듯이, 특정 패턴과 일치하는 문자를 문자열에서 제거하는 작업입니다. 이 작업은 보통 불필요한 문자나 문자열을 제거하여 데이터를 정리하고 가공하는 데 사용됩니다.
-
-## 어떻게 합니까? (How to?)
-
-여기 Haskell에서 패턴과 일치하는 문자를 삭제하는 간단한 예시를 보여드리겠습니다.
-
+## 실행 방법:
 ```Haskell
-import Data.Char (isSpace)
-import Data.List (dropWhileEnd)
+import Data.List (intercalate)
+import Text.Regex.Posix ((=~))
 
-trim :: String -> String
-trim = dropWhileEnd isSpace . dropWhile isSpace
+-- 패턴에 맞는 문자 삭제
+deletePattern :: String -> String -> String
+deletePattern pat str = intercalate "" (str =~ pat :: [String])
 
-main = putStrLn (trim "   Hello, World!   ")
-
--- Output: "Hello, World!"
+main :: IO ()
+main = do
+    let str = "안녕하세요, Haskell!"
+    let pattern = "[^가-힣]" -- 한글이 아닌 모든 문자에 대한 패턴
+    let result = deletePattern pattern str
+    putStrLn result -- "안녕하세요"
 ```
 
-위의 코드는 문자열의 앞과 뒤에서 공백 문자를 삭제합니다.
+## 깊은 이해:
+- **역사적 맥락**: 문자열 처리는 컴퓨터 프로그래밍의 근간 중 하나로, 초기 프로그래밍 언어부터 현대 언어에 이르기까지 발전해왔습니다. Haskell과 같은 함수형 언어는 이러한 문자열 처리 작업을 불변성과 함수 조합으로 처리합니다.
+- **대안**: `Data.Text` 모듈을 사용하는 것도 한 방법입니다. `Text` 타입은 문자열을 더 효율적으로 다룹니다. 또한, 직접 정규 표현식 대신 `filter` 함수와 같은 리스트 고차 함수를 사용해서 특정 조건을 만족하는 문자만 유지하는 방법도 있습니다.
+- **구현 세부사항**: 패턴 매칭은 정규 표현식을 기반으로 수행됩니다. Haskell에서는 `Text.Regex.Posix` 모듈을 이용해 POSIX 호환 정규 표현식을 적용할 수 있습니다. 이 예제에서는 `=~` 연산자를 사용해 문자열을 패턴에 매칭되지 않는 부분들로 나누고, 이를 다시 결합하여 목표 문자열을 얻었습니다.
 
-## 깊이 있는 정보 (Deep Dive)
-
-패턴과 일치하는 문자를 삭제하는 이 개념은 결코 새로운 것이 아닙니다. 이는 컴퓨터 프로그래밍 초기부터 프로그래머들이 데이터를 보다 쉽게 처리하고 분석할 수 있도록 도와주었습니다.
-
-Haskell 외에도, 대부분의 프로그래밍 언어는 특정 패턴에 일치하는 문자를 삭제하는 방법을 제공합니다. Python에서는 `re.sub()`를, JavaScript에서는 `replace()`를 사용하여 유사한 작업을 수행할 수 있습니다.
-
-이런 기능은 문자열 처리 작업의 일부로 구현된 것이며 현재 Haskell의 기본 라이브러리인 `Data.List`와 `Data.Char`에서도 지원되고 있습니다.
-
-## 참고 자료 (See Also)
-
-패턴과 일치하는 문자 삭제에 대해 더 배우고 싶다면, 다음의 링크들을 참조해주시기 바랍니다.
-
-1. Haskell의 공식 문서: http://haskell.org/
-2. "Learn You a Haskell for Great Good": http://learnyouahaskell.com/
-3. Stack Overflow의 "How to delete a character from a string using Haskell?": https://stackoverflow.com/questions/19184856/how-to-delete-a-character-from-a-string-using-haskell
+## 참고자료:
+- [Hoogle](https://hoogle.haskell.org/): Haskell 표준 라이브러리 검색 엔진.
+- [Haskell Language](https://www.haskell.org/documentation/): Haskell 공식 문서 및 자료.
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/): Haskell 입문서.
+- [Regular Expressions](https://wiki.haskell.org/Regular_expressions): Haskell Wiki에서 정규 표현식에 대한 논의.

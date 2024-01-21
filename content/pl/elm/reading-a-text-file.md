@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie pliku tekstowego"
-html_title:           "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+date:                  2024-01-20T17:54:23.896483-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,50 +11,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
 
-Czytanie pliku tekstowego to proces, w którym program wyciąga dane z zewnętrznego źródła pliku tekstowego. Programiści robią to, kiedy potrzebują dostać się do konkretnych informacji, które mogą być przechowywane w pliku.
+Czytanie plików tekstowych polega na załadowaniu ich zawartości do programu. Programiści robią to, żeby przetwarzać dane, konfigurować aplikacje lub ładować zasoby.
 
-## Jak to zrobić:
+## How to:
+
+Elm aktualnie nie obsługuje bezpośredniego odczytu plików z dysku ze względów bezpieczeństwa i filozofii języka. Jednak możesz odczytać pliki tekstowe przesłane przez użytkownika przy użyciu `File` i `FileReader` API dostępnych w przeglądarce. Oto przykład:
 
 ```Elm
-import Http
-import Json.Decode
+module Main exposing (..)
 
-type alias Model =
-    { content : String
-    }
-
-init : ( Model, Cmd Msg )
-init =
-    ( Model "", Http.send GotFile (Http.get "file.txt" Json.Decode.string) )
+import Browser
+import Html exposing (..)
+import Html.Events exposing (on, targetValue)
+import Html.Attributes exposing (type')
+import File exposing (File)
+import File.Selector exposing (file)
+import File.Reader exposing (readAsText)
 
 type Msg
-    = GotFile (Result Http.Error String)
+    = SelectFile (List File)
+    | FileLoaded (Result FileReader.Error String)
 
-update : Msg -> Model -> ( Model, Cmd Msg )
+main =
+    Browser.sandbox { init = init, update = update, view = view }
+
+init =
+    { content = "" }
+
 update msg model =
     case msg of
-        GotFile (Ok s) ->
-            ({ model | content = s }, Cmd.none)
+        SelectFile files ->
+            case files of
+                file :: _ ->
+                    ( model, readAsText file FileLoaded )
 
-        GotFile (Err e) ->
-            ({ model | content = toString e }, Cmd.none)
+                [] ->
+                    ( model, Cmd.none )
+
+        FileLoaded (Ok fileContent) ->
+            { model | content = fileContent }
+
+        FileLoaded (Err _) ->
+            ( model, Cmd.none )
+
+view model =
+    div []
+        [ input [ type' "file", on "change" (Json.Decode.map SelectFile targetValue |> file) ] []
+        , pre [] [ text model.content ]
+        ]
 ```
 
-W powyższym przykładzie czytamy plik `file.txt` i przypisujemy jego zawartość do struktury `Model`.
+Sample output depends on the file content - it displays the content inside a `pre` element after selecting a file.
 
-## Pogłębiona analiza
+## Deep Dive
 
-Czytanie pliku tekstowego jest jednym z najbardziej podstawowych zadań, które programista może wykonać. Elm, będący funkcjonalnym językiem programowania skierowanym na przeglądarkę, różni się od większości innych języków, ponieważ nie oferuje natywnej możliwości czytania plików. Zamiast tego, korzysta z requestów HTTP do uzyskania danych.
+Początkowo Elm został zaprojektowany tak, aby skupić się na front-endzie bez bezpośredniej interakcji z systemem plików. To część większej decyzji zapewnienia bezpiecznego, przewidywalnego środowiska do pisania aplikacji webowych. Alternatywy? Możesz użyć portów do komunikacji z JavaScriptem dla operacji po stronie serwera czy też użyć lokalnego przechowywania, jak `localStorage` do trzymania danych. Implementacja FileReader'a w Elm wykorzystuje pod spodem natywny mechanizm podobny do tego z JavaScriptu, ale zapakowany w bardziej funkcyjne i bezpieczne API.
 
-Podczas gdy tradycyjne języki jak Python lub Java mogą czytać pliki bezpośrednio z dysku twardego, Elm musi korzystać z serwera. Jest to związane z bezpieczeństwem przeglądarek internetowych - nie chcemy, aby dowolna strona mogła czytać dowolny plik z dysku twardego użytkownika.
+## See Also
 
-Dlatego w Elm, aby przeczytać plik, musimy go najpierw udostępnić przez serwer, a następnie zrobić request HTTP, jak pokazano powyżej.
-
-## Zobacz też
-
-1. Dokumentacja Elm Http: https://package.elm-lang.org/packages/elm/http/latest/
-2. Jak używać Json.Decode w Elm: https://guide.elm-lang.org/effects/json.html
-3. Tokarzewski, S. (2016). Elm - język nowej generacji. Helion. Link: https://helion.pl/ksiazki/elm-jezyk-nowej-generacji-sebastian-tokarzewski,elmnja.htm
-4. Capan, I. (2017). Praktyczne programowanie w Elm. PWN. Link: https://pwn.pl/produkt/praktyczne-programowanie-w-elm,180278030.html
+- Elm File package: https://package.elm-lang.org/packages/elm/file/latest/
+- Elm File.Reader package: https://package.elm-lang.org/packages/elm/file/latest/File-Reader
+- Elm Guide on JavaScript Interop (Ports): https://guide.elm-lang.org/interop/

@@ -1,6 +1,7 @@
 ---
 title:                "התחלת פרויקט חדש"
-html_title:           "Clojure: התחלת פרויקט חדש"
+date:                  2024-01-20T18:03:45.918889-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "התחלת פרויקט חדש"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,39 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+כשמתחילים פרויקט חדש ב-Clojure, אנחנו בעצם יוצרים סביבה נקייה עבור קוד שעתיד לגדול. תוכניתנים עושים זאת כדי להבטיח התחלה מובנית ומסודרת שמשתלבת עם תהליכי עבודה וכלים מודרניים.
 
-אתחול פרויקט חדש הוא המהלך הראשון שבו אתה מחליט ליצור תוכנה או אפליקציה באמצעות שפת התכנות Clojure. תכנתים מתחילים פרויקטים כדי ליישם רעיונות חדשים, לנתח מחדש בעיות ולבנות פתרונות אותם סף החוויה שלהם מאפשר.
+## איך לעשות:
+כדי להתחיל פרויקט חדש ב-Clojure, בואו נשתמש ב-Leiningen, הכלי הפופולארי ביותר עבור ניהול פרויקטים ב-Clojure.
 
-## איך ל:
+התקינו את Leiningen:
 
-נתחיל בבניית פרויקט חדש. על מנת ליצור פרויקט חדש של Clojure, נשתמש בכלי Leiningen.
-```Clojure
-lein new myproject
+```shell
+brew install leiningen
 ```
-אתה צריך לראות מספר קבצים ותיקיות שנוצרו:
-```Clojure
-myproject/
-|- .gitignore
-|- project.clj
-|- README.md
-|- doc/
-|  |- intro.md
-|- resources/
-|- src/
-|  |- myproject/
-|     |- core.clj
-|- test/
-   |- myproject/
-      |- core_test.clj
+
+לאחר ההתקנה, צרו פרויקט חדש:
+
+```shell
+lein new app my-cool-project
 ```
-## Deep Dive 
 
-Clojure החלה לפתח ב-2007, והיא שפת תכנות פונקציונלית המתמקדת בתכנות תרחיש מערכת. היא מספקת כלים למניעת בעיות שמתרחשות בעת כתיבת קוד ברוב השפות הלא פונקציונליות. 
+פלט הדוגמה:
 
-חלופות ל-Clojure כוללות שפות פונקציונאליות אחרות כמו Haskell, Erlang, F#, ואחרות. אך Clojure מציעה שילוב ייחודי של תנאים: גישה סידורתית, מבנה נתונים אי שנוי, אינטרופיה לJVM עם גישה מלאה ל-API של Java.
+```text
+Generating a project called my-cool-project based on the 'app' template.
+```
 
-## ראה גם
+דירוגטוריית הפרויקט החדש שלכם צריכה להיראות כך:
 
-1. [תיעוד של Clojure](https://clojure.org/guides/getting_started)
-2. [Leiningen גייד](https://leiningen.org/)
-3. [Clojure ב-Codecademy](https://www.codecademy.com/learn/learn-clojure)
+```shell
+tree my-cool-project
+```
+
+```text
+my-cool-project
+├── project.clj
+├── README.md
+├── resources
+├── src
+│   └── my_cool_project
+│       └── core.clj
+└── test
+    └── my_cool_project
+        └── core_test.clj
+```
+
+כעת, אתם מוכנים להתחיל לכתוב קוד.
+
+## שיקולים מעמיקים:
+Leiningen היה הכלי המהפכני ששינה את דרך עבודתם של מפתחים ב-Clojure. פותח ב-2009, זה הפך לסטנדרט דה פקטו לניהול פרויקטים ב-Clojure. חלק מהאלטרנטיבות כוללות כלים כמו Boot ו-Clojure CLI, אך כיום Leiningen עדיין הוא המועדף עבור הרבה מפתחים. בעוד ש-Leiningen מאפשר לנו ליצור פרויקטים, לנהל תלויות ולהפעיל משימות, חשוב להיות מודעים למאפייני פרויקט מודרניים - מערכת בנייה גמישה, טיפול בסביבות שונות וקוד שיכול לספק ביצועים טובים.
+
+## ראו גם:
+- [Leiningen's Official Website](http://leiningen.org/)
+- [Clojure for the Brave and True - Starting a Project](https://www.braveclojure.com/getting-started/)
+- [Clojure CLI - an alternative tool to Leiningen](https://clojure.org/guides/deps_and_cli)

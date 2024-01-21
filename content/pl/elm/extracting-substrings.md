@@ -1,7 +1,8 @@
 ---
-title:                "Wydobywanie podciągów"
-html_title:           "Python: Wydobywanie podciągów"
-simple_title:         "Wydobywanie podciągów"
+title:                "Wycinanie podłańcuchów"
+date:                  2024-01-20T17:45:37.337507-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wycinanie podłańcuchów"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,37 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Wyciąganie podciągów to tak naprawdę wycinanie kawałków tekstu z większych łańcuchów znaków. Programiści robią to, żeby dostać użyteczne informacje, czyścić dane, czy też do zastosowań logiki biznesowej.
 
-Wyodrębnianie podciągów to proces selekcji specyficznego fragmentu ciągu tekstowego. Programiści robią to, aby manipulować danymi, przetwarzać tekst i analizować struktury danych.
-
-## Jak to zrobić:
-
-W Elm, mamy dostępną funkcję `String.slice`. Spróbujmy zobaczyć, jak to działa:
-
+## How to:
 ```Elm
-import Html exposing (text)
+import String exposing (slice)
 
-main =
-    text (extractSubstring 5 10 "Witaj, świecie Elm!")
+-- Przykład użycia `slice` do wyjęcia części stringa:
+substringExample : String
+substringExample =
+    let
+        text = "Witaj, świat programowania w Elm!"
+        startIndex = 7
+        endIndex = 13
+    in
+    slice startIndex endIndex text  -- "świat"
 
-extractSubstring : Int -> Int -> String -> String
-extractSubstring start end str =
-    String.slice start end str
-```
-Kiedy uruchomimy powyższy program, wynikiem będzie:
-```Elm
-"-- świec"
+-- Wynik:
+-- "świat"
 ```
 
-## W głąb tematu:
+## Deep Dive
+Elm, choć może nie jest aż tak popularny jak JavaScript czy Python, daje prosty i wydajny sposób na pracę z ciągami znaków, a wyciąganie podciągów jest jednym z podstawowych narzędzi. W Elm korzystamy z funkcji `slice`, która działa podobnie do tej znanej z JavaScript – określamy indeks początkowy i końcowy, by wyciąć pożądany fragment tekstu.
 
-Historia: Elm, choć współczesny, jest mocno zainspirowany językami takimi jak Haskell i OCaml, które mają podobne funkcje do manipulowania ciągami.
+Alternatywą jest użycie funkcji `String.left` i `String.right`, które pozwalają na podcięcie ciągu znaków od lewej lub prawej strony. Co do implementacji, Elm robi to bezpieczniej niż wiele języków, ponieważ ma stały system, który pomaga w uniknięciu błędów typu out-of-bound access (próba dostępu poza zakresem).
 
-Alternatywy: Innymi funkcjami, które mogą być użyteczne podczas pracy z ciągami w Elm są: `String.left`, `String.right` oraz `String.dropLeft` i `String.dropRight`.
+Historia Elm pokazuje, że język od początku był projektowany z myślą o bezpieczeństwie i łatwości użycia, co ma odzwierciedlenie także w operacjach na stringach.
 
-Szczegóły implementacyjne: Funkcja `String.slice` w Elm działa w czasie liniowym, co oznacza, że czas potrzebny na jej wykonanie rośnie liniowo wraz z długością ciągu. Jest to związane z faktem, że Elm implementuje ciągi jako listy jednokierunkowe.
-
-## Zobacz również:
-
-- Oficjalna dokumentacja Elm do manipulacji ciągami: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
+## See Also
+- Dokumentacja Elm na temat pracy ze stringami: [String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- Inny przydatny pakiet do zaawansowanych operacji na stringach: [elm-string-extra](https://package.elm-lang.org/packages/elm-community/string-extra/latest/)

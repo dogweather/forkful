@@ -1,6 +1,7 @@
 ---
 title:                "문자열을 소문자로 변환하기"
-html_title:           "Bash: 문자열을 소문자로 변환하기"
+date:                  2024-01-20T17:38:39.307143-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,31 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜?
+## What & Why? (무엇과 왜?)
+문자열을 소문자로 변환하는 것은 대소문자를 구분하지 않고 비교하거나 정렬할 때 유용합니다. 프로그래머들은 데이터를 일관되게 처리하고 사용자 입력의 대소문자 오류를 방지하기 위해 문자열을 소문자로 변환합니다.
 
-문자열을 소문자로 변환하는 것은 그 대소문자 구분 없이 같은 단어로 인식하도록 하는 작업입니다. 대소문자를 무시하고 문자열을 비교하거나 정렬하려면 이런 변환이 필요합니다.
+## How to: (어떻게 하나요?)
+Fish Shell에서 문자열을 소문자로 바꾸는 것은 간단합니다. `string lower` 명령을 사용하세요.
 
-## 사용법: 
-
-Fish Shell에서 문자열을 소문자로 변환하는 방법을 보여드릴게요.
-
-```Fish Shell
-> set string "Hello, World!"
-> echo $string | tr '[:upper:]' '[:lower:]'
-hello, world!
+```fish
+echo "Fish SHELL Is Fun!" | string lower
 ```
-이런 식으로 `tr` 명령어를 사용합니다.
 
-## 깊이 들어가보기: 
+예상 출력:
 
-대소문자 변환 기능은 초기 컴퓨팅 시스템의 탄생부터 있었습니다. 그때부터 개발자들은 사용자의 입력이나 데이터를 표준화하기 위해 이를 많이 사용했습니다.
+```
+fish shell is fun!
+```
 
-다른 대안으로 Bash shell에서는 `tr` 외에도 `awk`나 `sed` 같은 도구를 사용할 수 있습니다.
+여러 단어를 포함한 문자열이든, 파일 이름이든, 코드 내 변수값이든 상관 없이 이 명령은 잘 동작합니다.
 
-Fish Shell에서는 내부적으로 `tr`이 POSIX character classes를 사용하여 작동합니다. 이 클래스는 '[[:upper:]]'와 '[[:lower:]]'같은 형태로 표현되며, 알파벳 대문자와 소문자를 나타냅니다.
+## Deep Dive (심층 붐뻡)
+Fish Shell에서 문자열을 소문자로 바꾸는 기능은 유니코드 표준을 따르고 있어 모든 언어와 문자에 적용됩니다. `string lower`은 Fish 2.3.0부터 사용 가능하며 POSIX `tr` 명령어나 다른 셸의 내장 기능보다 사용하기 쉽습니다. 이 명령은 현재 로케일에 기반하여 동작하므로, 특정 언어에 특화된 문자 변환도 올바르게 처리할 수 있습니다. 예를 들어, 터키어에서는 'I'의 소문자가 'ı'가 됩니다.
 
-## 참고자료:
+```fish
+set -lx LANG tr_TR.UTF-8
+echo "I FISH" | string lower
+```
 
-Fish Shell의 공식 문서를 확인해보세요. 여기서 많은 정보를 얻을 수 있습니다. 
-- [Fish Shell 공식 문서](https://fishshell.com/docs/current/index.html)
-- [POSIX character class](https://en.wikipedia.org/wiki/Regular_expression#POSIX_character_classes)
+예상 출력 (터키어 로케일에서):
+
+```
+ı fish
+```
+
+그러나 로케일에 따라 다른 결과가 나올 수 있으므로 주의해야 합니다.
+
+## See Also (관련 자료)
+- `string` 명령에 대한 공식 문서: [link](https://fishshell.com/docs/current/cmds/string.html)
+- Fish Shell 문서와 튜토리얼: [link](https://fishshell.com/docs/current/index.html)
+- 유니코드 문자 변환에 대한 자세한 정보: [Unicode Standard](http://www.unicode.org/standard/standard.html)

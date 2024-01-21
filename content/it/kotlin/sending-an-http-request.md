@@ -1,6 +1,7 @@
 ---
 title:                "Inviare una richiesta http"
-html_title:           "C++: Inviare una richiesta http"
+date:                  2024-01-20T18:00:17.164851-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,33 +11,100 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che Cosa & Perché?
+## What & Why?
+Mandare una richiesta HTTP significa comunicare con un server web: invii una richiesta, lui ti risponde. Lo facciamo per prelevare dati, inviare form, interagire con API o accedere a servizi web.
 
-Invio di una richiesta HTTP è il processo con cui i nostri programmi chiedono informazioni alla rete. I programmatori lo usano per accedere a servizi web, scaricare dati, fare operazioni CRUD e molte altre cose.
-
-## Come fare:
-
-Ecco l'esempio di come si fa con `khttp`.
+## How to:
+In Kotlin, inviare una richiesta HTTP è semplice. Ecco un esempio con `HttpURLConnection`:
 
 ```Kotlin
-import khttp.get
+import java.net.HttpURLConnection
+import java.net.URL
+
+fun sendGetRequest() {
+    val url = URL("http://example.com")
+    with(url.openConnection() as HttpURLConnection) {
+        requestMethod = "GET" // Tipo di richiesta
+
+        inputStream.bufferedReader().use {
+            val response = it.readText()
+            println(response)
+        }
+    }
+}
 
 fun main() {
-    val response = get("https://httpbin.org/get")
-    println(response.statusCode)
-    println(response.text)
+    sendGetRequest()
 }
 ```
 
-Qui, basta importare il modulo `khttp` e usare il metodo `get`. Questo restituirà una risposta che ha un campo di statusCode e text.
+Questo stamperà la risposta del server.
 
-## Approfondimento
+Per POST, cambia `requestMethod` e scrivi nel `outputStream`:
 
-Historicamente, le richieste HTTP sono tra le prime operazioni eseguite dai programmi per l'interazione con Internet. Oggigiorno, è possibile usare vari approcci come `HttpURLConnection`, altre librerie come `OkHttp` o il modulo `khttp`.
+```Kotlin
+fun sendPostRequest() {
+    val url = URL("http://example.com")
+    val params = "param1=value1&param2=value2"
 
-Come dettaglio di implementazione, le richieste HTTP seguono un modello di `request-response`. Invi un messaggio di richiesta, il server lo processa, e poi si riceve una risposta che può essere trattata a piacimento.
+    with(url.openConnection() as HttpURLConnection) {
+        requestMethod = "POST"
+        doOutput = true
 
-## Da Vedere Anche:
+        outputStream.bufferedWriter().use {
+            it.write(params)
+        }
 
-- Per saperne di più su `khttp` [clicca qui](https://github.com/jkcclemens/khttp).
-- Documentazione sulle richieste HTTP [qui](https://developer.mozilla.org/it/docs/Web/HTTP/Overview).
+        inputStream.bufferedReader().use {
+            val response = it.readText()
+            println(response)
+        }
+    }
+}
+
+fun main() {
+    sendPostRequest()
+}
+```
+
+Assicurati di gestire le eccezioni dove necessario.
+
+## Deep Dive
+Le richieste HTTP risalgono agli inizi del web. Oggi, abbiamo standard come REST e GraphQL che usano HTTP.
+
+Alternative a `HttpURLConnection` includono librerie esterne come OkHttp o Retrofit, che offrono un'esperienza più pulita e strutturata. Ad esempio, OkHttp gestisce meglio il pooling delle connessioni e i timeout.
+
+Per Retrofit:
+
+```Kotlin
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.GET
+
+interface ApiService {
+    @GET("data")
+    suspend fun fetchData(): MyData
+}
+
+fun main() {
+    val retrofit = Retrofit.Builder()
+        .baseUrl("http://example.com")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+    
+    val service = retrofit.create(ApiService::class.java)
+    
+    runBlocking {
+        val data = service.fetchData()
+        println(data)
+    }
+}
+```
+
+I dettagli di implementazione cambiano in base alle esigenze: sincrono vs. asincrono, trattamento degli errori, strategie di deserializzazione dei dati, ecc.
+
+## See Also
+- Documentazione ufficiale Kotlin: https://kotlinlang.org/docs/home.html
+- OkHttp: https://square.github.io/okhttp/
+- Retrofit: https://square.github.io/retrofit/
+- Tutorial su HTTP in Kotlin: https://www.baeldung.com/kotlin-http-requests

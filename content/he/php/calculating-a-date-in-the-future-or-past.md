@@ -1,6 +1,7 @@
 ---
 title:                "חישוב תאריך בעתיד או בעבר"
-html_title:           "PHP: חישוב תאריך בעתיד או בעבר"
+date:                  2024-01-20T17:31:59.536421-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חישוב תאריך בעתיד או בעבר"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,33 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-חישוב תאריך בעתיד או בעבר הוא פשוט למצוא תאריך שהוא X ימים, שבועות, חודשים או שנים לפני או אחרי תאריך מסוים. מתכנתים מנצלים את זה ליישום משימות כמו חישוב תאריך התפוגה, תזכורות, ועוד.
+## מה ולמה?
+חישוב תאריך בעתיד או בעבר זה פשוט התאמת תאריכים לפני או אחרי נקודת זמן מסוימת. מתכנתים עושים את זה לצורך תכנון פונקציונליות, כגון תזכורות, סטטיסטיקות ותחזיות.
 
-## איך:
-בקוד PHP ניתן לחשב את התאריכים הללו באמצעות פעולת תאריך. הנה דוגמא:
-
-```PHP 
+## איך לעשות:
+```PHP
 <?php
-$date = new DateTime('2021-01-01');
-$date->add(new DateInterval('P1M'));
-echo $date->format('Y-m-d');
+// תאריך היום
+$today = new DateTime();
+echo $today->format('Y-m-d'); // הדפסת התאריך הנוכחי
+
+// חישוב 10 ימים לעתיד
+$futureDate = (clone $today)->modify('+10 days');
+echo $futureDate->format('Y-m-d'); // הדפסת תאריך 10 ימים מהיום
+
+// חישוב 5 שנים אחורה
+$pastDate = (clone $today)->modify('-5 years');
+echo $pastDate->format('Y-m-d'); // הדפסת תאריך 5 שנים לפני היום
 ?>
 ```
-
-הפלט של הדוגמה הזו יהיה:
-
-```PHP 
-"2021-02-01"
+תוצאה:
+```
+2023-04-01 // תאריך נוכחי
+2023-04-11 // 10 ימים לעתיד
+2018-04-01 // 5 שנים לעבר
 ```
 
-זה מחשב תאריך שהוא חודש לאחר התאריך המסוים, במקרה הזה, 1 בינואר 2021.
-
-## בחפיפה עמוקה יותר:
-חישובים אלו פותחו כבר בתיקוני קוד PHP המוקדמים ובהמשך התוספים והמשתפרים.  ישנן שיטות חלופיות לחשב תאריכים בעתיד או בעבר, כמו שימוש בספריות חיצוניות או שימוש בfgetdate.
-בנוסף, ניתן להוסיף ולהסיר כמויות זמן שונות כמו שנים, ימים, שעות, דקות ושניות מאובייקט DateTime.
+## עיון מעמיק:
+בעבר, פונקציות כמו `strtotime()` ו-`mktime()` היו הדרך לנהול תאריכים ב-PHP. היום, אנחנו משתמשים ב-`DateTime` class, שמספק גמישות ודיוק רב יותר. אלטרנטיבות ל-`DateTime` כוללות את ההרחבה `DateTimeImmutable`, שמונעת שינוי עצמי באובייקט התאריך, ואת הספרייה `Carbon`, שהיא מעטפת ל-`DateTime` עם תכונות נוספות.
 
 ## ראה גם:
-MySQL DATE_ADD(): https://www.w3schools.com/sql/func_mysql_date_add.asp
-Python datetime timedelta: https://docs.python.org/3/library/datetime.html#timedelta-objects
-Java add(): https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html#add-int-int-
+- [תיעוד רשמי של PHP לגבי הכיתה DateTime](https://www.php.net/manual/en/class.datetime.php)
+- [תיעוד לגבי הפונקציה strtotime()](https://www.php.net/manual/en/function.strtotime.php)
+- [אתר Carbon, מעטפת ל-DateTime](https://carbon.nesbot.com/)

@@ -1,7 +1,8 @@
 ---
-title:                "文字列の長さを見つける"
-html_title:           "Elm: 文字列の長さを見つける"
-simple_title:         "文字列の長さを見つける"
+title:                "文字列の長さを求める"
+date:                  2024-01-20T17:47:19.586291-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "文字列の長さを求める"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,36 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となく？
+## What & Why?
+文字列の長さを測るとは、与えられたテキストの文字数を数えることです。これをプログラマーが行う理由は、テキスト処理や検証、UIレイアウトの最適化などを行う際に必要だからです。
 
-文字列の長さを調べるとは、その文字列が何文字から構成されているかを確認することです。大抵のプログラマーは、配列や文字列の長さを操作するためや、入力の有効性を確認するためにこれを用います。
-
-## やってみよう：
-
-文字列の長さを調べる方法を学ぶために、以下のGleamのコード例題を見てみましょう：
-
-```Gleam
-import gleam/string
-
-fn main() {
-  let text = "こんにちは、世界"
-  let length = string.length(text)
+## How to:
+```gleam
+pub fn main() {
+  let greeting = "こんにちは"
+  let length = string.len(greeting)
   io.println(length)
 }
 ```
+出力は `5`です。 (`こんにちは`の文字数)
 
-上記のコードを実行すると、文字列`"こんにちは、世界"`の長さ、つまり文字数が出力されます。
+## Deep Dive
+Gleam言語では、文字列の長さを簡単に見つけることができ、`string.len`関数を使用します。ここでの「長さ」とは、文字列内の文字の数を意味し、Gleamの前身であるErlangのビルトイン機能を利用しています。他のプログラミング言語と異なり、GleamはUTF-8エンコーディングされた文字列を扱い、全ての文字はUnicodeとして正しくカウントされます。他の言語では、特殊なエンコーディングまたは異なる文字カウント方法が提供されることがありますが、Gleamは開発者に明確で一貫した挙動を提供します。
 
-## 深堀り：
-
-1. **歴史的文脈**：古くからの多くのプログラミング言語では、文字列の長さを調べるための組み込み関数が用意されています。その中には、Gleamや、その他の関数型PLも含まれます。
-
-2. **代替案**：多くの言語（Gleamを含む）では、組み込み関数を使う以外にも、ループを使って一文字ずつ数える方法など、独自に文字列の長さを計算する方法を用いることも可能です。
-
-3. **実装の詳細**: Gleamの`string.length`関数は内部的にはErlangの`byte_size`関数を使用しています。この方法では、UTF-8エンコードされた文字列のバイト数が返されるため、含まれている全ての文字を正確にカウントします。
-
-## 関連情報：
-
-関連するリソースについては、以下のリンクをチェックしてみてください：
-
-- Gleamの公式ドキュメンション：[文字列](https://gleam.run/book/tour/strings.html)
+## See Also
+- Gleam公式ドキュメント: [https://gleam.run/](https://gleam.run/)
+- Unicodeについて: [https://unicode.org/](https://unicode.org/)
+- Erlangの文字列処理: [http://erlang.org/doc/apps/stdlib/unicode_usage.html](http://erlang.org/doc/apps/stdlib/unicode_usage.html)

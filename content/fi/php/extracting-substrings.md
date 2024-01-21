@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:46:21.425376-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,31 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mitä ja Miksi?
+Substringien poiminta tarkoittaa isommasta merkkijonosta tietyn osan eli alamerkkijonon erottamista. Ohjelmoijat käyttävät sitä datan räätälöintiin, järjestelyyn ja analysointiin.
 
-Aliketjujen erottaminen on prosessi, jossa valitaan ja kopiodaan merkkijonoista osia uuteen merkkijonoon. Ohjelmoijat tekevät tämän, koska se auttaa pitämään koodin siistinä, helpottaa tietojen käsittelyä ja analysointia.
-
-## Kuinka:
-
-Käytämme PHP:n sisäänrakennettua `substr()` -funktiota. Tässä esimerkki:
+## How to: - Kuinka tehdä:
+PHP:ssä alamerkkijonoja voi poimia `substr`- ja `mb_substr`-funktioiden avulla. Tässä pari esimerkkiä:
 
 ```PHP
 <?php
-$input = "Hello, World!";
-$result = substr($input, 7, 5);
-echo $result;
+$merkkijono = "Hei, maailma!";
+
+// Ota alamerkkijono indeksistä 0, pituus 3
+$tervehdys = substr($merkkijono, 0, 3);
+echo $tervehdys; // Tulostaa: Hei
+
+// Ota loppu alkaen indeksistä 5
+$loppuosa = substr($merkkijono, 5);
+echo $loppuosa; // Tulostaa: maailma!
+
+// Käytä negatiivista indeksiä viimeisten merkkien poimimiseen
+$huutomerkki = substr($merkkijono, -1);
+echo $huutomerkki; // Tulostaa: !
 ?>
 ```
 
-Tulostettu merkkijono on "World".
+## Deep Dive - Syväsukellus
+`substr` on ollut osana PHP:tä varhaisista versioista lähtien ja auttaa nopeasti selville palan tekstistä. `mb_substr` toimii monikielisten alamerkkijonojen kanssa, tärkeä UTF-8 merkistöä käytettäessä. Vaikka `substr` on nopea ja helppo, leikattu data saattaa vaatia lisäkäsittelyä, kuten remmien poistoa tai päätellen hakua.
 
-## Syvä Sukellus:
+Monet modernit PHP kehykset, kuten Laravel, tarjoavat omia apuvälineitä merkkijonojen käsittelyyn, jotka voivat olla joustavampia mutta saattavat lisätä ylimääräisiä riippuvuuksia.
 
-Aikaisemmissa PHP-versioissa oli olemassa funktio nimeltä `substr()`, joka toimi samalla tavalla mutta oli hitaampi. PHP 7 paransi tämän. Vaihtoehtoisesti voit käyttää `mb_substr()` -funktiota, jos käsittelet monitavuisia merkkijonoja.
-
-PHP:n `substr()` -funktion toteutus on tehokas, tapa, jolla se käsittelee merkkijonoja. Se luo uuden merkkijonon, jossa on sama alkuperäinen merkkijono mutta eri aloitus- ja lopetuspisteet. Tämä tarkoittaa, että `substr()` muistuttaa 'viittauksia' alkuperäiseen merkkijonoon eikä kopioi merkkijonoa, mikä tekee siitä nopean.
-
-## Katso Myös:
-
-- [PHP:n virallinen dokumentaatio substr-funktiosta](https://www.php.net/manual/en/function.substr.php)
-- [PHP The Right Way - suositukset ja parhaat käytännöt](https://phptherightway.com)
+## See Also - Katso Myös
+- PHP Manual substr - [php.net/manual/en/function.substr.php](https://www.php.net/manual/en/function.substr.php)
+- PHP Manual mb_substr - [php.net/manual/en/function.mb-substr.php](https://www.php.net/manual/en/function.mb-substr.php)
+- String handling functions in PHP - [php.net/manual/en/ref.strings.php](https://www.php.net/manual/en/ref.strings.php)

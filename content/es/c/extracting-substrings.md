@@ -1,7 +1,8 @@
 ---
-title:                "Extrayendo subcadenas"
-html_title:           "C: Extrayendo subcadenas"
-simple_title:         "Extrayendo subcadenas"
+title:                "Extracción de subcadenas"
+date:                  2024-01-20T17:45:02.032134-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Extracción de subcadenas"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,48 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+## What & Why?
+Extraer subcadenas es sacar partes específicas de una cadena de texto. Es útil para procesar información, validar datos o simplemente para obtener lo que necesitas de un montón de caracteres.
 
-Extraer subcadenas es un proceso que nos permite obtener una secuencia de caracteres de una cadena en particular. Los programadores lo hacen para manipular y analizar secciones específicas de datos de texto.
-
-## ¡Cómo hacerlo!
-
-En C, podemos extraer subcadenas utilizando la función `strncpy()`. Aquí hay un ejemplo:
+## How to:
+Aquí tienes un fragmento de cómo extraer una subcadena en C usando la función `strncpy`:
 
 ```C
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
 
 int main() {
-  char str[] = "Hola, Mundo!";
-  char sub[5];
+    char str[] = "Hola, programador!";
+    char sub[10];
 
-  strncpy(sub, str, 4);
-  sub[4] = '\0';
+    // Copia 9 caracteres empezando desde la posición 0
+    strncpy(sub, str, 9);
+    sub[9] = '\0'; // Asegúrate de terminar con NULL
 
-  printf("%s\n", sub);
+    printf("Subcadena: %s\n", sub);
 
-  return 0;
+    return 0;
 }
-```  
-La salida de este código será:
-
 ```
-Hola
+
+Salida:
 ```
-Este código copia los primeros 4 caracteres de `str` en `sub`.
+Subcadena: Hola, pro
+```
 
-## Inmersión Profunda
+## Deep Dive
+Extraer subcadenas es un concepto antiguo en la programación. En C, aunque no hay una función integrada que haga esto directamente, `strncpy` es comúnmente usada. Las alternativas podrían ser `sscanf` o manipulación manual de índices. La implementación precisa de `strncpy` es fundamental para evitar errores como faltas de terminación `NULL` o desbordamientos del buffer. 
 
-Históricamente, la función `strncpy()` ha sido parte del lenguaje C desde sus primeros días. Aunque es una función versátil, tiene algunas limitaciones. Si no se maneja correctamente, puede llevar a errores de desbordamiento del búfer y a problemas de terminación de cadena nula.
+## See Also
+Aquí tienes algunos recursos para seguir aprendiendo:
 
-Como alternativas para `strncpy()`, se podría usar `snprintf()` o `memcpy()`. Ambos pueden manejar el límite de tamaño de la cadena del destino, protegiéndote contra desbordamientos de búfer.
-
-En cuanto a su implementación, la función `strncpy()` copia los caracteres del buffer de origen al de destino uno a uno hasta que ha copiado el número especificado de caracteres.
-
-## Ver También
-
-Si esta guía te fue útil, quizás quieras explorar temas relacionados. Aquí te dejamos un par de recursos útiles:
-
-- Sobre `snprintf()`: [cplusplus.com](http://www.cplusplus.com/reference/cstdio/snprintf/)
-- Sobre `memcpy()`: [cplusplus.com](http://www.cplusplus.com/reference/cstring/memcpy/)
+- Documentación de `strncpy`: https://www.cplusplus.com/reference/cstring/strncpy/
+- Buenas prácticas con strings en C: http://sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html
+- Fundamentos de `sscanf`: https://en.cppreference.com/w/c/io/fscanf

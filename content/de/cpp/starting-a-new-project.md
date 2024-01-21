@@ -1,7 +1,8 @@
 ---
-title:                "Ein neues Projekt starten"
-html_title:           "C#: Ein neues Projekt starten"
-simple_title:         "Ein neues Projekt starten"
+title:                "Einen neuen Projekt starten"
+date:                  2024-01-20T18:02:57.317472-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Einen neuen Projekt starten"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Getting Started"
@@ -11,46 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Ein neues C++ Projekt beginnen heißt, die Struktur für frischen Code aufzubauen. Programmierer starten neue Projekte, um Ideen umzusetzen, Probleme zu lösen oder Tools zu erschaffen.
 
-Ein neues Projekt zu starten bedeutet, ein leeres Blatt Papier in ein erstaunliches Stück Software zu verwandeln. Programmierer starten neue Projekte, um eine kreative Lösung für ein spezifisches Problem anzubieten oder ihre Fähigkeiten zu erweitern.
-
-## So geht's:
-
-Hier ist ein einfacher Weg, ein neues C++ Projekt mit Visual Studio zu beginnen.
-
-```C++
-1. Starten Sie Visual Studio
-2. Wählen Sie "Datei" -> "Neues Projekt" 
-3. Wählen Sie "Leeres Projekt"
-4. Geben Sie Ihrem Projekt einen Namen
-5. Schreiben Sie Ihren Code im Haupt.cpp
-```
-
-Zum Beispiel:
+## How to:
+Wir erstellen ein einfaches "Hello, World!" Beispiel. Das ist traditionell der Startpunkt für ein neues Projekt.
 
 ```C++
 #include <iostream>
 
 int main() {
-    std::cout << "Hallo Welt!";
+    std::cout << "Hello, World!" << std::endl;
     return 0;
 }
 ```
 
-Die Ausgabe wäre dann:
-
+Ausgabe:
 ```
-Hallo Welt!
+Hello, World!
 ```
 
-## Tiefer Tauchen:
+Um ein Projekt zu kompilieren, speichern wir den Code in einer Datei `main.cpp` und verwenden einen Compiler wie `g++`.
 
-1. Historischer Kontext: C++ wurde Anfang der 80er Jahre von Bjarne Stroustrup entwickelt, seitdem hat es diverse Überarbeitungen und Erweiterungen erfahren.
-2. Alternativen: Andere gängige Programmiersprachen zum Starten eines neuen Projektes sind Python, Java oder JavaScript, alle haben ihre eigenen Vorteile und Ansätze.
-3. Implementierungsdetails: C++ ist eine kompilierte Sprache. Das bedeutet, dass Ihr Code in Maschinensprache übersetzt werden muss, bevor er ausgeführt werden kann.
+Befehl für die Kommandozeile:
+```
+g++ main.cpp -o hello
+./hello
+```
 
-## Siehe auch:
+## Deep Dive
+C++ Projektanfang ist mehr als Code schreiben. Es umfasst Setup von Build-Systemen wie Makefile oder CMake, und Konfiguration einer Entwicklungsumgebung. Historisch hat sich viel getan; von einfachen Texteditoren bis zu komplexen Integrated Development Environments (IDEs) wie CLion oder Visual Studio.
 
-1. [C++ Dokumentation](https://docs.microsoft.com/de-de/cpp/?view=msvc-160)
-2. [Visual Studio Dokumentation](https://docs.microsoft.com/de-de/visualstudio/?view=vs-2019)
-3. [Ein Leitfaden für moderne C++](https://www.modernescpp.com/)
+Alternativen zum manuellen Set-up sind Projektgeneratoren wie `cookiecutter` für C++ Vorlagen. Für die Einbindung von Libraries und Abhängigkeiten gibt es Paketmanager wie `vcpkg` oder `conan`.
+
+Details sind entscheidend:
+- Wähle die C++ Version mit `-std=c++XX`, wobei `XX` das Jahr der Standardversion (z.B. `17` für C++17) ist.
+- Bestimme kompatible Compiler und teste deinen Code auf verschiedenen Plattformen.
+
+## See Also
+- Cppreference für Sprachspezifikationen: https://en.cppreference.com/
+- CMake Dokumentation für Build-System-Setup: https://cmake.org/documentation/
+- Vcpkg für Paketverwaltung: https://github.com/microsoft/vcpkg
+
+Die genannten Links führen zu umfangreichen Informationen und sind eine Hilfe für die Projekteinstellungen und fortgeschrittene Themen.

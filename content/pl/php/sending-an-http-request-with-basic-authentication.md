@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie zapytania http z podstawową autoryzacją"
+date:                  2024-01-20T18:02:09.811628-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,43 +11,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego? 
+## What & Why? (Co i Dlaczego?)
+Wysyłanie żądania HTTP z podstawową autentykacją to proces, gdzie serwer oczekuje loginu i hasła do wykonania akcji. Programiści robią to dla zabezpieczenia dostępu do zasobów.
 
-Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem to proces, w którym klient komunikuje się z serwerem, przekazując dane uwierzytelniające (z reguły login i hasło) w nagłówku żądania. Programiści robią to, aby uzyskać dostęp do zasobów serwera, które są chronione i wymagają uwierzytelniania.
-
-## Jak to zrobić:
-
-Aby wysłać żądanie HTTP z podstawowym uwierzytelnianiem w PHP, możesz skorzystać z biblioteki cURL. Poniżej znajduje się przykładowy kod:
+## How to: (Jak to zrobić:)
+W PHP możesz użyć cURL lub context stream. Przykład z cURL:
 
 ```PHP
-$ch = curl_init();
+<?php
+$url = 'http://example.com/api/data';
+$username = 'user';
+$password = 'pass';
 
-curl_setopt($ch, CURLOPT_URL, 'https://twojastrona.pl/zasoby');
+$ch = curl_init($url);
 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-curl_setopt($ch, CURLOPT_USERPWD, 'login:haslo');
+curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 $response = curl_exec($ch);
-
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 curl_close($ch);
 
-echo $response;
+if($httpCode == 200) {
+    echo "Odpowiedź serwera: " . $response;
+} else {
+    echo "Błąd: " . $httpCode;
+}
+?>
 ```
 
-Ten skrypt wysyła żądanie GET do 'https://twojastrona.pl/zasoby' z podstawowym uwierzytelnianiem, używając loginu 'login' i hasła 'haslo'. Wynik żądania jest drukowany na standardowym wyjściu.
+Możesz też użyć stream context:
 
-## Głębsze spojrzenie:
+```PHP
+<?php
+$url = 'http://example.com/api/data';
+$username = 'user';
+$password = 'pass';
+$options = [
+    'http' => [
+        'header' => 'Authorization: Basic ' . base64_encode("$username:$password"),
+        'method' => 'GET'
+    ]
+];
 
-Podstawowe uwierzytelnianie HTTP to metoda uwierzytelniania, której używano w internetowej komunikacji z serwerem już od początku lat 90. Udostępnia ona podstawowe zabezpieczenia, ale nie jest zalecana w przypadku bardzo wrażliwych danych, ponieważ hasło jest przesyłane jako dane zakodowane w Base64, co jest dość łatwe do odczytania. 
+$context  = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
 
-Alternatywą dla podstawowego uwierzytelniania jest uwierzytelnianie znaku, uwierzytelnianie OAuth albo używanie tokenów JWT. Te metody są zazwyczaj bezpieczniejsze i skuteczniejsze.
+if($result !== FALSE) {
+    echo "Odpowiedź serwera: " . $result;
+} else {
+    echo "Błąd podczas wykonywania żądania.";
+}
+?>
+```
 
-Szczegóły implementacji zależą od konkretnego przypadku. W wybranych sytuacjach możesz potrzebować dostosować czas wygaśnięcia żądania, obsłużyć różne kody odpowiedzi, lub zaimplementować obsługę błędów.
+## Deep Dive (Wnikliwa analiza)
+HTTP Basic Authentication to stary, ale prosty sposób na uwierzytelnienie. Jest łatwy w implementacji, ale wysyła dane w niezaszyfrowanej formie, więc używaj go tylko przez HTTPS!
 
-## Zobacz również:
+Alternatywy? OAuth, tokeny API, sesje. Ale Basic Auth jest nadal używany, bo jest proste i wspierane "out-of-the-box".
 
-Tutaj znajdziesz więcej informacji na ten temat:
+Kiedy używasz cURL, pamiętaj o obsłudze błędów i właściwej konfiguracji. Z `stream_context`, trzeba się zabezpieczyć przed błędami z `file_get_contents`.
 
-1. Autorytet informacji na temat PHP: [PHP.net](https://www.php.net/manual/en/book.curl.php)
-2. Pewne zalecenia na temat autoryzacji HTTP: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-3. Jak zabezpieczyć dane uwierzytelniające przy przesyłaniu: [OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)
+## See Also (Zobacz również)
+- PHP cURL: https://www.php.net/manual/en/book.curl.php
+- HTTP authentication with PHP: https://www.php.net/manual/en/features.http-auth.php
+- Secure HTTP: https://en.wikipedia.org/wiki/HTTPS
+- HTTP Basic Authentication standard: https://tools.ietf.org/html/rfc7617

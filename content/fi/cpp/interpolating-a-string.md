@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Bash: Merkkijonon interpolointi"
+date:                  2024-01-20T17:50:36.726573-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "C++"
 category:             "C++"
@@ -10,48 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Merkkijonon interpolointi C++:ssa: Mitä, Miksi ja Miten?
-
 ## Mitä & Miksi?
+Merkkijonon interpolointi tarkoittaa muuttujien ja lausekkeiden yhdistämistä merkkijonojen sisään. Sitä käytetään dynaamisen tekstin luontiin, joka helpottaa esimerkiksi käyttäjän syötteiden tai muuttujien arvojen näyttämistä ohjelmassa.
 
-Merkkijonon interpolointi on prosessi, jossa muuttujien tai lausekkeiden arvot sijoitetaan suoraan merkkijonoon. Se helpottaa koodin kirjoittamista, parantaa sen luettavuutta ja ylläpidettävyyttä.
-
-## Miten se tehdään:
-
-Katsotaan miten merkkijonon interpolointi tehdään C++:ssa (nykyversiossa, C++20).
-
+## Miten:
 ```C++
 #include <iostream>
-#include <format>
+#include <string>
 
 int main() {
-    std::string name = "Pekka";
-    int age = 33;
-
-    std::string message = std::format("Hei, nimeni on {} ja olen {} vuotta vanha", name, age);
-
-    std::cout << message << std::endl;
-
+    int age = 25;
+    std::string name = "Jarkko";
+    // C++20 std::format toimintoa hyödyntäen
+    std::string greeting = std::format("Hei! Nimeni on {0} ja olen {1} vuotta vanha.", name, age);
+    std::cout << greeting << std::endl;
     return 0;
 }
 ```
-
-Tulostus:
-
-```bash
-Hei, nimeni on Pekka ja olen 33 vuotta vanha
+Tuloste tulisi olla:
+```
+Hei! Nimeni on Jarkko ja olen 25 vuotta vanha.
 ```
 
-## Syvempi sukellus:
+## Syväsukellus
+Merkkijonon interpolointi on ollut ohjelmoinnissa käytössä jo vuosikymmeniä. Esimerkiksi C:ssä yhdisteltiin tekstejä printf-funktion avulla, mutta C++ otti askeleen eteenpäin tarjoten paremman typeturvallisuuden ja helpomman syntaksin `std::format`-funktion myötä C++20:ssä. Aiemmin saatettiin käyttää `std::ostringstream`-luokkaa tai raskaita `sprintf`-funktioita, mutta `std::format` tekee saman tehokkaammin ja ilman buffer overflow -riskejä. 
 
-Merkkijonon interpolointi tulee skriptikielistä, kuten Perl ja Ruby. C++ sai tämän toiminnon vasta C++20-versiossa `std::format`-funktion myötä.
+Vaihtoehtoisia menetelmiä ovat esimerkiksi string stream -luokat (`std::stringstream`, `std::ostringstream`) ja `boost::format` kirjaston käyttö, jos C++20 ei ole käytössä.
 
-Vaihtoehtoisesti voit käyttää `sprintf`-funktiota tai `std::stringstream`-luokkaa, mutta ne ovat monimutkaisempia ja herkempiä virheille.
-
-Merkkijonon interpoloitumisen yksityiskohdat: `std::format` ottaa muodon merkkijonon ja korvaa jokaisen "{}" paikanmuuttujan argumenttien arvoilla. Argumentit muunnetaan merkkijonoiksi ja lopputulos on interpoloitu merkkijono.
-
-## Katso myös:
-
-1. [C++ Reference-std::format](https://en.cppreference.com/w/cpp/utility/format)
-2. [sprintf-Function](https://www.cplusplus.com/reference/cstdio/sprintf/)
-3. [std::stringstream Class](http://www.cplusplus.com/reference/sstream/stringstream/)
+## Katso Myös
+- C++20 `std::format`: https://en.cppreference.com/w/cpp/utility/format/format
+- Historiaa `printf`-funktiosta: https://en.wikipedia.org/wiki/Printf_format_string
+- `std::ostringstream`: https://en.cppreference.com/w/cpp/io/basic_ostringstream

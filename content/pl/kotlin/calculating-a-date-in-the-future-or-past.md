@@ -1,6 +1,7 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
-html_title:           "Kotlin: Obliczanie daty w przyszłości lub przeszłości"
+date:                  2024-01-20T17:31:28.145140-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,46 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-
-Obliczanie daty w przyszłości lub przeszłości to proces odpowiadania na pytania typu: "Jaka będzie data za 7 dni?" albo "Jaka była data 4 miesiące temu?". Programiści robią to w celach takich jak harmonogramowanie zadań czy tworzenie czasowych znaczników (timestamps).
+## Co i dlaczego?
+Obliczanie daty w przyszłości lub przeszłości to sposób na znalezienie dat, które są określoną liczbę dni przed lub po danej dacie. Programiści używają tego do ustalania terminów, planowania zadań, czy też obliczania okresów ważności.
 
 ## Jak to zrobić:
-
-W Kotlinie możemy użyć klasy `LocalDate` z biblioteki `java.time` do manipulacji datami. Oto krótki przykład:
+Na początek potrzebujemy prostego kodu. Użyjemy `LocalDate` z biblioteki `java.time`, która jest dostępna w Kotlinie. Tak to zrobisz:
 
 ```Kotlin
 import java.time.LocalDate
+import java.time.temporal.ChronoUnit
 
 fun main() {
-    val dzisiaj = LocalDate.now()
-    val przyszlosc = dzisiaj.plusDays(7)
-    val przeszlosc = dzisiaj.minusMonths(4)
+    val today = LocalDate.now()
+    val tenDaysLater = today.plusDays(10)
+    val tenDaysBefore = today.minusDays(10)
 
-    println("Dzisiaj: $dzisiaj")
-    println("Przyszłość: $przyszlosc")
-    println("Przeszłość: $przeszlosc")
+    println("Dzisiaj jest: $today")
+    println("Za 10 dni będzie: $tenDaysLater")
+    println("10 dni temu było: $tenDaysBefore")
 }
 ```
 
-Wynik:
-
+Wyjście (zależnie od aktualnej daty):
 ```
-Dzisiaj: 2022-04-01
-Przyszłość: 2022-04-08
-Przeszłość: 2021-12-01
+Dzisiaj jest: 2023-04-01
+Za 10 dni będzie: 2023-04-11
+10 dni temu było: 2023-03-22
 ```
 
-## Pogłębiona analiza:
+## Głębsze spojrzenie:
+Biblioteka `java.time` wprowadzona w Javie 8 (i dostępna w Kotlinie) to nowoczesne API do obchodzenia się z datą i czasem, który zastąpił starsze, mniej intuicyjne klasy jak `java.util.Date`. W Kotlinie możemy używać tej biblioteki bezpośrednio, albo z pomocą Kotlin extensions, które czynią kod nawet bardziej czytelnym.
 
-Historycznie, obliczanie dat bywało złożonym zadaniem, szczególnie z powodu ruchomych dni świątecznych, skomplikowanych reguł dotyczących roku przestępnego, itp. Nowoczesne języki programowania jak Kotlin ułatwiają ten proces przez wbudowane biblioteki.
+Obecnie `java.time` jest standardem do pracy z datami w Javie oraz Kotlinie, ale istnieją też alternatywy jak Joda-Time – już jednak coraz rzadziej używana po wprowadzeniu nowego API.
 
-Alternatywą dla `java.time.LocalDate` jest `Calendar` z Java, ale jest mniej wygodny i intuicyjny. `LocalDate` jest niezmienniczy (immutable) i bezpieczny do użycia w środowiskach wielowątkowych.
 
-Jeśli chodzi o szczegóły implementacji, `plusDays()` i `minusMonths()` zwracają nowe instancje `LocalDate`. Obiekt oryginalny pozostaje niezmieniony.
+Warte zastanowienia są też kwestie stref czasowych – `LocalDate` ignoruje strefy czasowe, więc jeśli działamy globalnie, możemy potrzebować `ZonedDateTime`. 
 
-## Zobacz także:
+Dodatkowo, możemy manipulować datami odpowiadającymi różnym jednostkom czasu używając `plus` i `minus` z różnymi argumentami jak `ChronoUnit.WEEKS` czy `ChronoUnit.MONTHS`, ale pamiętaj o niuansach związanych ze zmianą czasu letniego/zimowego itp.
 
-1. [Dokumentacja `java.time.LocalDate`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-2. [Porównanie bibliotek dat i czasu w Javie](https://www.baeldung.com/java-8-date-time-intro)
-3. [Tutorial do pakietu `java.time`](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
+## Zobacz również:
+- Dowiedz się więcej o `java.time` bezpośrednio z [dokumentacji Oracle](https://docs.oracle.com/javase/tutorial/datetime/).
+- Przejrzyj kotlinową dokumentację dotyczącą pracy z datami na [stronie Kotlinlang](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date/).
+- Przeczytaj o alternatywnej bibliotece Joda-Time na [ich oficjalnej stronie](https://www.joda.org/joda-time/).

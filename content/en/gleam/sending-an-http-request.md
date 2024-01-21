@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request"
-html_title:           "Bash recipe: Sending an http request"
+date:                  2024-01-20T17:59:42.719306-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,45 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?  
-An HTTP request is a way for your program to communicate with a web server by sending a request and receiving a response. Programmers send HTTP requests to interact with APIs, fetch data, or post data onto a server.  
+## What & Why?
+Sending an HTTP request is how your program asks for data from somewhere else on the internet. Programmers do this to interact with web services, grab fresh data, or to integrate external APIs into their apps.
 
-## How To:
-In Gleam, we can use the `gleam/httpc` package. Here's a basic example:
+## How to:
+In Gleam, we don't have a built-in HTTP client yet, so let's use the `gleam_http` library. Here's a simple GET request:
 
-```Gleam
+```gleam
+import gleam/http.{Response, Error}
 import gleam/httpc
 
-let get_request() {
-    httpc.get("http://example.com")
-    |> result.unwrap_to_string
+pub fn main() -> Result(Response, Error) {
+  // Send a GET request to example.com
+  httpc.send(httpc.Request(
+    method: httpc.Get,
+    url: "http://example.com",
+    headers: [],
+    body: httpc.Empty,
+  ))
 }
 ```
-This will send a GET request to `http://example.com`.
 
-To send a POST request with JSON data, we can do something like this:
-
-```Gleam
-import gleam/httpc.{Headers, Post}
-import gleam/map
-import gleam/uri.{Uri}
-
-let post_request() {
-  let headers = Headers.new(map.from_list([tuple("Content-Type", "application/json")]))
-  let uri = Uri.parse("https://jsonplaceholder.typicode.com/posts")
-  let body = "{\"title\": \"foo\", \"body\": \"bar\", \"userId\": 1}"
-  let request = Post.new_request(uri, body) |> Post.set_headers(headers)
-
-  httpc.send(request)
-  |> result.unwrap_to_string
-}
-```
-This sends a POST request to `https://jsonplaceholder.typicode.com/posts` with JSON data.
+Running this will send a request to example.com and return the response. Remember, you'll need to handle the result to actually make use of it.
 
 ## Deep Dive
-HTTP requests aren't new. They've been part of web communication since HTTP v1.0 back in the '90s. Today, programmers have various ways to send HTTP requests—in Gleam, `httpc` is our go-to package, but alternatives like `curl` or `axios` exist in other languages.
+Historically, sending HTTP requests was a task for specialized tools like `curl` or libraries in other languages. It's fairly new that languages themselves are incorporating smooth HTTP request functionalities. Alternatives for sending HTTP requests in Gleam include third-party libraries like `gleam_http` and platform-specific bindings.
 
-The `httpc` package allows flexible interaction with servers using Gleam’s strong typing system. You set up the request, send it, and get a response back that you can handle as you wish.
+Regarding implementation, there are two parts: constructing the request and receiving the response. Requests have methods (GET, POST, etc.), URLs, headers, and bodies while responses carry status codes, headers, and bodies as well.
+
+Gleam's type system and pattern matching shine here, enabling exhaustive error handling and clear parsing of responses. This isn't just firing data into the void and hoping for the best; it's a controlled, structured conversation.
 
 ## See Also
-For more info on the `httpc` package, check out the [Gleam HTTP package](https://hexdocs.pm/httpc/readme.html) docs. For more on Gleam itself, here's its [GitHub Repository](https://github.com/gleam-lang/gleam). Interested in HTTP specifications? The [HTTP/1.1 RFC]( https://tools.ietf.org/html/rfc2616) is worth your time.
+- [Gleam's HTTP documentation](https://hexdocs.pm/gleam_httpc/)
+- [HTTP RFC 7231](https://tools.ietf.org/html/rfc7231) for the nitty-gritty on HTTP.
+- [Gleam's standard library](https://hexdocs.pm/gleam_stdlib/) for other networking features.

@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Bash: Merkkijonon interpolointi"
+date:                  2024-01-20T17:50:54.499244-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,27 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
-Stringin interpolaatio on tapa liittää muuttujien arvoja suoraan merkkijonojen sisälle. Koodaajat turvautuvat tähän yksinkertaistamaan ja selkiyttämään koodia.
+## What & Why?
+Mikä on merkkijonojen interpolointi ja miksi ohjelmoijat käyttävät sitä? Merkkijonojen interpoloinnilla tarkoitetaan muuttujien tai lausekkeiden upottamista suoraan merkkijonoon. Tämä helpottaa dynaamisten arvojen yhdistämistä tekstiin, mikä on hyödyllistä esimerkiksi käyttöliittymien teksteissä tai viestien muodostamisessa.
 
-## Miten:
-Elm-kieli ei tue suoraan stringin interpolaatiota, mutta sen voi saavuttaa liitännäisfunktioiden, kuten `++`(concatenation) kautta. Tässä on esimerkki:
+## How to:
+Elmissä, merkkijonojen yhdistäminen tapahtuu `++` operaattorilla, koska suoraa interpolointia ei tueta. Tässä esimerkki:
 
 ```Elm
-tervehdys : String -> String
-tervehdys nimi =
-    "Hei, " ++ nimi ++ "! Kuinka voit?"
+name = "Pekka"
+welcomeMessage = "Hei, " ++ name ++ "!"
 
-main = 
-    print (tervehdys "Pekka")
+-- Tuloste: "Hei, Pekka!"
 ```
-Kun tämä koodi ajetaan, se tulostaa: `Hei, Pekka! Kuinka voit?`
 
-## Syvempi sukellus:
-Vaikka stringin interpolaatio on ollut mukana useimmissa ohjelmointikielissä aina alkuajoista lähtien, Elm-päättäjät ovat päättäneet olla toteuttamatta sitä kielen yksinkertaisuuden takia. Sen sijaan Elm tarjoaa '++' operaattorin, joka liittää yhteen kaksi stringiä.
+Jos haluat yhdistää useampia, käytä `(++)` funktiota yhdessä List.foldl:n kanssa:
 
-Elm:n lisäksi jotkut muut kielet, kuten Python ja JavaScript, tukevat stringin interpolaatiota käyttäen erityistä syntaksia, esim. `'Hei ${nimi}! Kuinka voit?'`.
+```Elm
+parts = ["Sinun", "nimesi", "on", name]
+fullSentence = List.foldl (++) "" parts
 
-## Katso myös:
-- Strings in Elm: [https://elmprogramming.com/strings.html]
-- Elm Concatenation: [https://elm-lang.org/docs/syntax#operators]
+-- Tuloste: "Sinun nimesi on Pekka"
+```
+
+## Deep Dive
+Elmissä ei ole sisäänrakennettua string-interpolointia kuten joissain muissa kielissä, kuten JavaScriptin Template Literalsissa. Tämä on design-valinta, joka pitää kielen yksinkertaisempana. Vaihtoehtoina käyttäjät hyödyntävät yksinkertaista yhdistämistä (`++`) tai kirjastoja, jotka tarjoavat formaattausfunktioita. Kirjastot, kuten `elm-format-string`, mahdollistavat muuttujien arvojen upottamisen merkkijonoihin sijoitusmerkintöjen avulla.
+
+Vaikka Elm ei sisällä interpolointia suoraan, se kannustaa ohjelmoijia pitämään koodin selkeänä ja ennustettavana. Tämä lähestymistapa auttaa välttämään monimutkaisuutta ja säilyttämään ylläpidettävyyden.
+
+## See Also
+- Elm-kielen virallinen dokumentaatio: [Elm-lang](https://elm-lang.org/docs)
+- List.foldl:n dokumentaatio: [List.foldl](https://package.elm-lang.org/packages/elm/core/latest/List#foldl)

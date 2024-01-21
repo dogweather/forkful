@@ -1,6 +1,7 @@
 ---
 title:                "텍스트 검색 및 교체"
-html_title:           "Elixir: 텍스트 검색 및 교체"
+date:                  2024-01-20T17:57:15.553103-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "텍스트 검색 및 교체"
 programming_language: "C++"
 category:             "C++"
@@ -10,55 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 그런가?
+## What & Why? (무엇과 왜?)
+텍스트 검색 및 교체는 문자열에서 특정단어를 찾아 다른 단어로 바꾸는 과정입니다. 프로그래머들은 데이터 수정, 코드 리팩토링, 자동화된 일괄 처리 등을 위해 이 기능을 사용합니다.
 
-문자열에서 텍스트를 찾고 대체하는 것은 흔한 프로그래밍 작업입니다. 이는 데이터 정제, 사용자 입력 처리, 코드 자동화 등 다양한 컨텍스트에서 사용됩니다.
-
-## 어떻게 하는가:
-
-다음은 C++에서 문자열 내의 텍스트를 찾아 대체하는 작업을 수행하는 간단한 코드 예제입니다.
-
+## How to: (방법)
 ```C++
-#include <string>
 #include <iostream>
+#include <string>
+#include <regex>
 
-int main(void) {
-  std::string s = "Hello, World!";
-  size_t pos = s.find("World");
+int main() {
+    std::string text = "안녕하세요. 이 문장 안에 있는 말을 바꿉니다: 사과.";
+    std::regex word_to_replace("사과");
+    std::cout << "Before:\n" << text << std::endl;
 
-  if(pos != std::string::npos)
-     s.replace(pos, 5, "C++");
+    text = std::regex_replace(text, word_to_replace, "오렌지");
 
-  std::cout << s << '\n';
-
-  return 0;
+    std::cout << "After:\n" << text << std::endl;
+    return 0;
 }
 ```
-
-위 코드를 실행하면 결과가 출력됩니다:
-
-```C++
-Hello, C++!
+Sample Output:
 ```
-그래서 "World"라는 단어가 "C++"로 대체되었습니다.
-
-## 깊은 이해
-
-텍스트 탐색 및 대체 기능은 거의 모든 프로그래밍 언어에서 제공되며, 특별히 C++은 STL(Standard Template Library) 내의 문자열에서 직접 사용할 수 있습니다.
-
-대체 방법으로, C++에서 Boost Library의 `replace_all`함수를 사용할 수도 있습니다.
-
-```C++
-#include <boost/algorithm/string/replace.hpp>
-boost::replace_all(s, "World", "C++");
+Before:
+안녕하세요. 이 문장 안에 있는 말을 바꿉니다: 사과.
+After:
+안녕하세요. 이 문장 안에 있는 말을 바꿉니다: 오렌지.
 ```
 
-하지만 이 방법은 부스트 라이브러리가 설치되어 있어야 합니다.
+## Deep Dive (심층 탐구)
+C++은 STL(Standard Template Library)의 `std::string` 클래스를 사용하여 문자열을 관리합니다. 과거 C 스타일의 문자 배열을 사용한 뒤 `std::string`으로 옮겨갔습니다.
 
-## 참조
+규칙기반 텍스트 변경에는 `std::regex` 클래스를 사용합니다. 찾고자 하는 패턴을 정규 표현식으로 정의하고 `std::regex_replace` 함수로 대체합니다. 
 
-아래 링크에서 C++ 텍스트 검색 및 대체에 대한 더 많은 정보를 찾을 수 있습니다:
+대안으로는 문자열의 `find()`와 `replace()`를 사용할 수 있지만, 정규 표현식을 사용하면 복잡한 패턴 매칭에 유용합니다.
 
-1. [cplusplus.com: std::string - find](http://www.cplusplus.com/reference/string/string/find/)
-2. [cplusplus.com: std::string - replace](http://www.cplusplus.com/reference/string/string/replace/)
-3. [Boost Library: replace_all function](https://www.boost.org/doc/libs/1_73_0/doc/html/string_algo/usage.html#id-1.3.3.6.9)
+C++11 이전에는 정규 표현식을 직접 구현해야 했지만, 이후 표준 라이브러리에 통합되어 사용하기가 훨씬 쉬워졌습니다.
+
+## See Also (추가 정보)
+- C++ Reference for std::regex: https://en.cppreference.com/w/cpp/regex
+- C++ Reference for std::string: http://www.cplusplus.com/reference/string/string/
+- Regex tester and debugger: https://regex101.com/

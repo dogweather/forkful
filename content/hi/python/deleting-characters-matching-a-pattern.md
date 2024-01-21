@@ -1,7 +1,8 @@
 ---
-title:                "पैटर्न से मिलते जुलते वर्णों को हटाना"
-html_title:           "Elixir: पैटर्न से मिलते जुलते वर्णों को हटाना"
-simple_title:         "पैटर्न से मिलते जुलते वर्णों को हटाना"
+title:                "पैटर्न से मेल खाते अक्षरों को हटाना"
+date:                  2024-01-20T17:43:48.982368-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पैटर्न से मेल खाते अक्षरों को हटाना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,35 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## क्या और क्यों? (What & Why?)
+पैटर्न के अनुरूप अक्षर हटाना यह है कि खास पैटर्न से मिलते जुलते अक्षरों को स्ट्रिंग से निकाल देना। प्रोग्रामर्स इसे इसलिए करते हैं क्योंकि कई बार हमें सिर्फ जरुरी डेटा चाहिए होता है, बेकार के अक्षरों या शब्दों को हटाकर साफ-सुथरा डेटा पाने के लिए।
 
-मैचिंग विधि से वर्ण मिटाना, यहाँ हम एक स्ट्रिंग या एक टेक्स्ट से विशेष किसी पैटर्न के अनुसार क्यूनी हटाते हैं। प्रोग्रामर्स इस प्रक्रिया का उपयोग अनावश्यक डेटा को हटाने और महत्वपूर्ण डेटा की खोज करने के लिए करते हैं।
-
-## कैसे करें:
-
+## तरीका (How to:)
 ```Python
 import re
-input_string = "नमस्ते, मुझे Python पसंद है।"
-pattern = '[^a-zA-Z0-9 ािीुूेैोौंँ]'
-output = re.sub(pattern, '', input_string)
-print(output)
+
+# उदाहरण स्ट्रिंग
+example_string = "Hello123, नमस्ते456, Bye789"
+
+# पैटर्न: अंक हटाओ
+pattern = '[0-9]'
+
+# उस पैटर्न को मिलाने वाले चरित्रों को हटाएं
+cleaned_string = re.sub(pattern, '', example_string)
+
+print(cleaned_string)  # 'Hello, नमस्ते, Bye'
 ```
 
-ऊपर दिए गए कोड का आउटपुट होगा: 
-```
-नमस्ते मुझे Python पसंद है
-```
+## डीप डाइव (Deep Dive)
+पैटर्न मिलानकर्ता, जैसे की रेगुलर एक्सप्रेशन्स (regular expressions), शक्तिशाली उपकरण हैं जो 1950 के दशक से उपयोग में हैं। Python में `re` मॉड्यूल का उपयोग इन पैटर्न मिलानकर्ता के लिए किया जाता है। `re.sub()` फंक्शन आपको इस पैटर्न वाले अक्षरों को हटा के स्ट्रिंग को साफ करने देता है।
 
-## गहरी डाइव
+एक और तरीका `str.translate()` हो सकता है, पर यह बहुत जटिल पैटर्न के लिए इतना अच्छा नहीं है। `re.sub()` आपको पॉवरफुल पैटर्न मैचिंग क्षमता देता है वो भी जटिलता को समझने में आसान तरीके से।
 
-1. हिस्टोरिकल कॉन्टेक्स्ट: Python भाषा में विधि मिटाने या बदलने की क्षमता वास्तव में Perl की रेगुलर एक्सप्रेसन क्षमता से प्रभावित है। 
-2. विकल्प: आप `replace()` फ़ंक्शन का भी उपयोग कर सकते हैं, लेकिन यहां आपको रेप्लेस करने के लिए केवल निश्चित स्ट्रिंग मिलेगी। 
-3. इंप्लीमेंटेशन विवरण: `re.sub()` फ़ंक्शन का उपयोग करके Python में यह काम किया जाता है। 
+जब आप `re.sub()` का उपयोग करते हैं, आपको ध्यान देना होता है कि पैटर्न सही से लिखा जाए क्योंकि गलत पैटर्न का मतलब होगा गलत डेटा। इसलिए, जब भी पैटर्न लिखें, उसे टेस्ट करना ना भूलें।
 
-## भी देखें
-
-रेगुलर एक्सप्रेसन से सम्बंधित अन्य स्रोतों को देखने के लिए, अगले लिंक्स का उपयोग करें:
-
-1. [Python Documentation for re module](https://docs.python.org/3/library/re.html)
-2. [Python Regular Expression HOWTO](https://docs.python.org/3/howto/regex.html)
-3. [Python Regular Expressions – Real World Examples](https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial)
+## यह भी देखें (See Also)
+- Python `re` मॉड्यूल का दस्तावेज: [Python re documentation](https://docs.python.org/3/library/re.html)
+- रेगुलर एक्सप्रेशन्स क्विक स्टार्ट गाइड: [Regular Expressions Quick Start](https://www.regular-expressions.info/quickstart.html)
+- `re.sub()` के और उदाहरणों के लिए: [re.sub() examples](https://www.programiz.com/python-programming/methods/string/replace)

@@ -1,6 +1,7 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
-html_title:           "Javascript: Obliczanie daty w przyszłości lub przeszłości"
+date:                  2024-01-20T17:31:28.786415-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,44 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Obliczanie daty w przeszłości lub przyszłości to sposób na zdobycie informacji o dacie, która jest wcześniej lub później niż aktualna data. Programiści robią to, aby przewidzieć wydarzenia, zarządzać harmonogramami lub obsługiwać terminy.
+Obliczanie daty w przyszłości lub przeszłości to proces ustalania daty, która będzie miała miejsce za określoną liczbę dni, miesięcy, czy lat od konkretnej daty wyjściowej. Programiści robią to często, aby obsługiwać zadania związane z harmonogramami, przypomnieniami czy terminami.
 
 ## Jak to zrobić:
+Załóżmy, że chcesz dodać 10 dni do dzisiejszej daty:
 
-Obliczanie daty w przyszłości lub przeszłości nie jest trudne. Oto prosty przykład:
-
-```Javascript
-let dataTeraz = new Date();
-console.log("Dzisiaj: " + dataTeraz);
-
-// Dodanie 5 dni do obecnej daty
-dataTeraz.setDate(dataTeraz.getDate() + 5);
-console.log("Za 5 dni: " + dataTeraz);
-
-// Odejmowanie 7 dni od obecnej daty
-dataTeraz.setDate(dataTeraz.getDate() - 7);
-console.log("7 dni temu: " + dataTeraz);
+```javascript
+let today = new Date();
+let tenDaysLater = new Date(today.setDate(today.getDate() + 10));
+console.log(tenDaysLater.toDateString());
 ```
 
-Możliwy wynik tego kodu to:
+Lub odejmij 5 lat:
 
-```Javascript
-"Dzisiaj: Thu Sep 16 2021 12:34:56 GMT+0200 (Central European Summer Time)"
-"Za 5 dni: Tue Sep 21 2021 12:34:56 GMT+0200 (Central European Summer Time)"
-"7 dni temu: Tue Sep 14 2021 12:34:56 GMT+0200 (Central European Summer Time)"
+```javascript
+let fiveYearsEarlier = new Date(new Date().setFullYear(new Date().getFullYear() - 5));
+console.log(fiveYearsEarlier.toDateString());
 ```
 
-## Więcej szczegółów:
+Wynik:
+```
+"Fri Apr 21 2023" // dla pierwszego kodu, zakładając, że dziś jest 11 kwietnia 2023.
+"Sun Apr 11 2018" // dla drugiego kodu.
+```
 
-Obliczanie daty w przeszłości i przyszłości jest popularne, ale było trudne do zrealizowania na początku ery komputerowej z powodu ograniczeń pamięci i procesora.
-
-Alternatywą dla metody setDate() w JavaScript jest użycie zewnętrznej biblioteki, jak moment.js, która oferuje większą precyzję i polepsza sterowanie datą.
-
-Ważnym aspektem implementacji jest to, że setDate() uwzględnia przepełnienia. Na przykład, jeśli do daty 31 stycznia dodasz jeden dzień, wynikiem będzie 1 lutego.
+## Deep Dive:
+Daty w JavaScript opierają się na obiekcie `Date`, który był częścią języka niemal od początku, odnosząc się do standardu ECMAScript 1 z 1997 roku. Obiekt `Date` może być niestabilny przez strefy czasowe i zmiany czasu letniego/zimowego. Alternatywą może być używanie bibliotek takich jak Moment.js, które ułatwiają pracę z datami. Kiedy dodajesz lub odejmujesz czas, pamiętaj, że nie wszystkie miesiące mają tyle samo dni i uwzględnij zmiany czasu letniego/zimowego.
 
 ## Zobacz także:
-
-1. [JavaScript Date Reference na stronie MDN](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date)
-2. [Biblioteka Moment.js](https://momentjs.com/)
-3. [JavaScript Date Tutorial na W3Schools](https://www.w3schools.com/js/js_date_methods.asp)
+- MDN Web Docs - Date: https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date
+- Moment.js: https://momentjs.com/
+- Date-fns: https://date-fns.org/ – nowoczesna biblioteka do pracy z datami.

@@ -1,7 +1,8 @@
 ---
-title:                "使用基本认证发送http请求"
-html_title:           "Bash: 使用基本认证发送http请求"
-simple_title:         "使用基本认证发送http请求"
+title:                "使用基本认证发送 HTTP 请求"
+date:                  2024-01-20T18:02:03.876575-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "使用基本认证发送 HTTP 请求"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,42 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 用基本身份验证发送HTTP请求的JavaScript编程
+## What & Why? (是什么？为什么？)
+发送带有基本认证的HTTP请求可以让你访问需要验证的资源。程序员这么做是为了确保安全性，只允许经过授权的人访问敏感数据。
 
-## 什么 & 为什么?
-
-发送带有基本身份验证的HTTP请求是一种向服务器发送信息，同时通过用户名和密码验证自己身份的方法。程序员之所以这样做，是因为HTTPS请求可以从服务器获取携带特定数据的响应，而基本身份验证则保证了数据安全。
-
-## 如何实现:
-
-在Javascript中，你可以使用fetch来发送带有基本身份验证的请求。以下是一个例子：
-
+## How to: (如何实现)
 ```Javascript
-const username = 'your-username';
-const password = 'your-password';
+// 使用Node.js的内置https模块发送带基本认证的HTTP请求
+const https = require('https');
 
-fetch('https://your-api-url.com', {
+// 编码你的用户名和密码到Base64格式
+const base64Credentials = Buffer.from('username:password').toString('base64');
+
+// 设置HTTP请求头
+const options = {
+  hostname: 'example.com',
+  port: 443,
+  path: '/your-protected-resource',
   method: 'GET',
   headers: {
-    'Authorization': 'Basic ' + btoa(username + ":" + password)
+    'Authorization': `Basic ${base64Credentials}`
   }
-})
-.then(response => response.json())
-.then(data => console.log(data))
-.catch(error => console.error('Error:', error));
+};
+
+// 发送请求
+const req = https.request(options, (res) => {
+  console.log(`状态码: ${res.statusCode}`);
+
+  res.on('data', (d) => {
+    process.stdout.write(d);
+  });
+});
+
+// 错误处理
+req.on('error', (e) => {
+  console.error(e);
+});
+
+req.end();
 ```
-此代码首先创建了一个带有基本认证头的fetch请求，然后处理得到的json响应，最后用console.log打印数据，或者catch块处理错误。
+输出示例:
+```
+状态码: 200
+```
+## Deep Dive (深入研究)
+基本认证是HTTP协议中历史悠久的一部分，基于RFC 7617标准。尽管简单，但不适合高安全需求，因为Base64编码非加密，可逆。现代应用常用更安全的认证方式，如OAuth。执行时，记得使用HTTPS以防中间人攻击，保持传输加密。
 
-## 深入了解
-
-发送带有基本身份验证的HTTP请求的做法可以追溯到HTTP/1.0的早期。然而，该方法不应用于非加密通信，因为用户名和密码以明文形式发送，易遭监听。
-
-如今，有许多替代方法可以用于身份验证，如OAuth和JWT。然而，基本身份验证的实现仍广泛使用，因为它简单、易于理解。
-
-在发送带有基本身份验证的HTTP请求时，重要的是正确地构建'Authorization'头。其中的用户名和密码需要用`:`连接，然后用Base64进行编码。
-
-## 参考资料
-
-- MDN的fetch文档: [MDN Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- 基本认证详解: [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
-- 替代的认证方法： [OAuth](https://oauth.net/) 和 [JWT](https://jwt.io/)
+## See Also (另请参阅)
+- MDN web docs on HTTP authentication: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- Node.js `https` module documentation: https://nodejs.org/api/https.html
+- RFC 7617, The 'Basic' HTTP Authentication Scheme: https://tools.ietf.org/html/rfc7617

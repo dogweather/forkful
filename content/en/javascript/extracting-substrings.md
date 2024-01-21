@@ -1,6 +1,7 @@
 ---
 title:                "Extracting substrings"
-html_title:           "Arduino recipe: Extracting substrings"
+date:                  2024-01-20T17:45:59.182526-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extracting substrings"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,47 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Extracting substrings means pulling out smaller pieces of a larger string. Programmers do this to handle or manipulate specific portions of the text—handy when you're dealing with user input, file data, or even massive DNA sequences!
+Extracting substrings means grabbing a piece of a string. Programmers slice and dice strings to isolate data, input some format, or tweak text for output.
 
 ## How to:
 
-In JavaScript, you can extract substrings by using a few different methods: `substring()`, `substr()`, or `slice()`. Each returns a new string without changing the original string.
-
-```Javascript 
-let str = "Hello, world!";
-
-console.log(str.substring(0,5)); // "Hello"
-console.log(str.substr(0,5));    // "Hello"
-console.log(str.slice(0,5));     // "Hello"
+### Using `substring` method:
+```javascript
+let text = "JavaScript is awesome!";
+let extracted = text.substring(0, 10);
+console.log(extracted); // Output: JavaScript
 ```
 
-They work a bit differently though. Here's an example:
-
-```Javascript 
-let str = "Hello, world!";
-
-console.log(str.substring(-3));  // "Hello, world!", negative arguments are treated as 0
-console.log(str.substr(-3));     // "ld!", negative first argument means starting backwards from the end
-console.log(str.slice(-3));      // "ld!", and same for slice method
+### Using `slice` method:
+```javascript
+let text = "JavaScript is awesome!";
+let sliced = text.slice(-9, -1);
+console.log(sliced); // Output: awesome
 ```
 
-## Deep Dive:
-
-**Historical context** - Extracting substrings has been a fundamental part of programming since its early days —because really, what's programming without handling text?
-
-**Alternatives** - Besides `substring()`, `substr()`, and `slice()`, you can also use `split()` to break the string at certain points and choose parts to work with. Combine with `join()` can yield similar results.
-
-```Javascript 
-let str = "Hello, world!";
-console.log(str.split(', ')[0]); // "Hello"
+### Using `substr` method (deprecated):
+```javascript
+let text = "JavaScript is awesome!";
+let substrd = text.substr(11, 7);
+console.log(substrd); // Output: awesome
 ```
 
-**Implementation details** - `substring()` and `slice()` are similar, but treat negatives differently. `substr()` treats its second argument as a length, not an ending index. It’s also considered a legacy function and might not be present in future versions of JavaScript.
+## Deep Dive
+Extracting substrings isn't new – it's as old as programming itself. The `substring` and `slice` methods in JavaScript are tools from the 1990s, part of the language's initial feature set. `substr` was also in there, but it's now legacy code and should be avoided in modern applications. 
 
-## See Also:
+The difference? `substring` and `slice` are similar – both take start and end index parameters – but handle negatives differently: `slice` can handle negative indices, counting from the end, while `substring` treats them as zeroes. All these methods don’t mutate the original string; they produce new ones.
 
-For more on strings in JavaScript, check out these links:
-- [MDN Web Docs - String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [JavaScript.info - Strings](https://javascript.info/string)
-- [W3Schools - JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
+## See Also
+- Mozilla Developer Network on Strings: [MDN Web Docs - String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- String manipulation with JavaScript: [W3Schools - JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
+- JavaScript string basics: [JavaScript.info - Strings](https://javascript.info/string)

@@ -1,7 +1,8 @@
 ---
-title:                "Leyendo argumentos de la línea de comandos"
-html_title:           "Bash: Leyendo argumentos de la línea de comandos"
-simple_title:         "Leyendo argumentos de la línea de comandos"
+title:                "Lectura de argumentos de línea de comandos"
+date:                  2024-01-20T17:55:35.356802-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lectura de argumentos de línea de comandos"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,39 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+## ¿Qué y Por Qué?
+Leer argumentos de la línea de comandos permite que los programas reciban datos del usuario al iniciarse. Los programadores utilizan esta técnica para personalizar la ejecución de un programa sin la necesidad de una interfaz de usuario gráfica.
 
-Leer argumentos de línea de comandos implica extraer y manipular información pasada al script que se está ejecutando a través de la terminal. Hacemos esto porque nos permite personalizar nuestros programas y hacerlos más versátiles.
+## Cómo Hacerlo:
+En Clojure, accedes a los argumentos de la línea de comandos con `*command-line-args*`. Aquí hay un ejemplo simple:
 
-## Cómo hacerlo:
+```Clojure
+(defn -main [& args]
+  (println "Argumentos recibidos:" args))
 
-En Clojure, se pueden leer argumentos de línea de comandos utilizando `*command-line-args*`. Mira este ejemplo:
-
-```clojure
-(doseq [arg *command-line-args*]
-  (println arg))
+;; Si ejecutas el programa así:
+;; clojure -M your_script.clj uno dos tres
+;; La salida será:
+;; Argumentos recibidos: (uno dos tres)
 ```
 
-Puedes pasar los argumentos en la terminal de esta manera:
+## Análisis Profundo:
+En Clojure, `*command-line-args*` es una var especial que contiene una lista de argumentos de línea de comandos como strings. Esta funcionalidad viene integrada desde las primeras versiones de Clojure.
 
-```shell
-$ java -cp clojure.jar clojure.main script.clj ARG1 ARG2 ARG3
-```
+Hay otras maneras de manejar argumentos y configuraciones, como usar librerías de terceros que ofrecen más opciones y un parsing más detallado, por ejemplo `tools.cli`.
 
-`ARG1`, `ARG2`, y `ARG3` serán impresos uno por uno en la terminal debido al programa.
+En cuanto a la implementación, `*command-line-args*` se inicializa antes de que se ejecute la función `-main`, directo del entorno JVM que ejecuta Clojure. Al ser una lista, puedes manipularla con cualquier función de Clojure que trabaje sobre secuencias, como `map`, `reduce`, `filter`, etc.
 
-## Profundización:
-
-(1) En el contexto histórico, leer argumentos de la línea de comandos ha sido una práctica común desde los primeros días de la programación, especialmente en el mundo UNIX. 
-
-(2) Además de `*command-line-args*`, también puedes usar bibliotecas externas, como `tools.cli`, que ofrecen más opciones y flexibilidad para leer y analizar argumentos de línea de comandos.
-
-(3) En cuanto a los detalles de implementación, `*command-line-args*` se trata de una variable global en Clojure y contiene una lista de cadenas. Cuando se inicia el programa, el runtime de Clojure llena esta variable con los argumentos que se pasaron por línea de comandos.
-
-## Ver también:
-
-Para aprender más sobre este tema, considera los siguientes recursos:
-
-- Documentación oficial de Clojure: https://clojure.org/reference/vars#_dynamic_vars
-- "Programación en Clojure": un libro por Alex Miller: http://shop.oreilly.com/product/9780596514983.do
-- Biblioteca tools.cli en GitHub: https://github.com/clojure/tools.cli
+## Ver También:
+- Documentación oficial de Clojure sobre [`*command-line-args*`](https://clojure.org/reference/vars#_command_line_args)
+- [`tools.cli`](https://github.com/clojure/tools.cli) para parsing de línea de comandos más avanzado.

@@ -1,6 +1,7 @@
 ---
 title:                "문자열 보간하기"
-html_title:           "Clojure: 문자열 보간하기"
+date:                  2024-01-20T17:51:07.611270-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "문자열 보간하기"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,45 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+String interpolation은 문자열에 변수나 계산 결과를 삽입하는 것입니다. 코드를 간결하게 만들고 가독성을 높이기 위해 사용합니다.
 
-문자열 보간이란 변수, 결과 또는 식을 문자열 내에 쉽게 삽입하는 프로그래밍 기법입니다. 이것은 코드의 가독성을 개선하고 동적인 내용을 수동으로 조합하는 번거로움을 줄여주세요.
+## How to: (어떻게:)
+```javascript
+// 변수를 사용한 보간법 (String Interpolation)
+let name = "지수";
+let greeting = `안녕, ${name}!`;
+console.log(greeting); // 출력: 안녕, 지수!
 
-## 방법:
-
-아래는 JavaScript에서 문자열 보간을 사용하는 방법을 보여주는 예입니다.
-
-```Javascript
-let name = "지민";
-let intro = `안녕하세요, ${name}입니다.`;
-console.log(intro); // "안녕하세요, 지민입니다."
-```
-#
-이러한 활용은 동적으로 변하는 값을 쉽게 문자열에 삽입할 수 있게 만들어줍니다.
-
-```Javascript
-let apples = 5;
-let oranges = 7;
-let fruitSummary = `나는 사과 ${apples}개와 오렌지 ${oranges}개를 가지고 있습니다.`;
-console.log(fruitSummary); // "나는 사과 5개와 오렌지 7개를 가지고 있습니다."
+// 표현식을 사용한 보간법
+let price = 19000;
+let taxRate = 0.1;
+let total = `총 금액은 ${price + (price * taxRate)}원 입니다.`;
+console.log(total); // 출력: 총 금액은 20900원 입니다.
 ```
 
-## 깊은 분석:
+## Deep Dive (심층 분석)
+String interpolation은 ES6부터 시작된 자바스크립트의 기능입니다. 이전에는 문자열 연결을 위해 '+' 연산자를 사용했었죠. 예를 들어:
 
-**역사적 배경**: 이전에는 문자열 안에 변수를 삽입하려면 '+' 연산자를 사용하는 복잡한 프로세스가 필요했습니다. ES6 (ECMAScript 2015)에서 템플릿 리터럴 및 문자열 보간이 도입되면서 개발자들은 문자열 생성에 더욱 편리한 방법을 갖게 되었습니다.
-
-**대체 방법**: 문자열 연결은 문자열 보간의 주요 대체 방법입니다. 하지만, 이 방법은 가독성이 낮고 코드가 더 길어지므로 피하는 것이 좋습니다.
-
-```Javascript
-let name = "지민";
-let intro = "안녕하세요, " + name + "입니다.";
-console.log(intro); // "안녕하세요, 지민입니다."
+```javascript
+// ES5 이전의 문자열 연결 방법
+var oldGreeting = "안녕, " + name + "!";
+console.log(oldGreeting); // 출력: 안녕, 지수!
 ```
 
-**구현 세부 사항**: 문자열 보간은 백틱(`)을 사용하여 감싸진 템플릿 리터럴과 ${}를 사용하여 식을 삽입함으로써 작동합니다.
+이 방법은 길고 가독성이 떨어집니다. String interpolation은 템플릿 리터럴이라 불리는 ` ` 안에 `${}`를 사용하여 변수나 표현식을 쉽게 삽입할 수 있게 해줍니다. 이는 코드의 간결함을 증진시키고, 실수를 줄여줍니다.
 
-## 참고 자료:
+또 하나의 대안은 문자열 포맷팅 함수를 사용하는 것인데, 이는 더 복잡하거나 특정 형식을 요구할 때 적합합니다.
 
-1. [MDN Web Docs - 템플릿 리터럴](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals)
-2. [JavaScript.info - 문자열](https://ko.javascript.info/string)
-3. [W3Schools - JavaScript String Interpolation](https://www.w3schools.com/js/js_string_templates.asp)
+## See Also (관련 자료)
+- MDN 웹 문서의 템플릿 리터럴 (Template Literals): [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+- ECMA-262, 6th Edition, The ECMAScript 2015 Language Specification: [https://www.ecma-international.org/ecma-262/6.0/](https://www.ecma-international.org/ecma-262/6.0/)

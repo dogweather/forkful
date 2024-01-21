@@ -1,6 +1,7 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "Gleam: Завантаження веб-сторінки"
+date:                  2024-01-20T17:44:09.640288-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,37 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та чому?
-
-Завантаження веб-сторінки - це процес отримання даних цієї сторінки з серверу. Програмісти це роблять, щоб обробити ці дані, витягти з них корисну інформацію або просто показувати сторінки користувачам.
+## Що та Чому?
+Завантаження веб-сторінки - це процес отримання її вмісту через HTTP. Програмісти роблять це для аналізу контенту, моніторингу змін чи збору даних.
 
 ## Як це зробити:
-
-Перш ніж ми почнемо, встановіть бібліотеку `http-conduit` за допомогою команди `cabal install http-conduit`.
-
-Тепер подивімось, як завантажити веб-сторінку в Haskell:
-
 ```Haskell
-import Network.HTTP.Conduit
-import qualified Data.ByteString.Lazy as L
+import Network.HTTP.Conduit (simpleHttp)
 
+main :: IO ()
 main = do
-    simpleHttp "http://example.com" >>= L.writeFile "example.html"
+    webpage <- simpleHttp "http://example.com"
+    putStrLn $ take 1000 $ show webpage  -- Показуємо перші 1000 символів вмісту
 ```
 
-За допомогою цього коду ми завантажуємо вміст веб-сторінки http://example.com і зберігаємо його у файлі `example.html`.
+Вивід може виглядати так:
+```
+"<html>...
+... зміст веб-сторінки ...
+...</html>"
+```
 
-## Поглиблено:
+## Поглиблений розгляд:
+У мінулому, завантаження веб-сторінки в Haskell часто виконувалось за допомогою пакету `HTTP`. З часом, `http-conduit` став популярний через своє зручне управління з'єднаннями та підтримку SSL. Окрім `http-conduit`, існують інші бібліотеки, як-от `wreq` чи `req`, кожна зі своїми особливостями. Обравши `Network.HTTP.Conduit`, ви отримуєте могутніші інструменти для роботи з HTTP в Haskell, що особливо корисно при складніших завданнях, таких як обробка редиректів чи використання проксі.
 
-Завантаження веб-сторінок було основний елемент інтернету з самого його початку. Проте методи його виконання значно вдосконалювалися. 
-
-На початку було використовувано командні утиліти (як wget), але з появою високорівневих мов програмування виникли бібліотеки для завантаження веб-сторінок.
-
-У Haskell є декілька бібліотек для роботи з HTTP, такі як `http-conduit`, `wreq`, `http-client` тощо, які мають свої особливості та переваги.
-
-Використовуючи `http-conduit`, ми завантажуємо всі дані сторінки в пам'ять, що може бути неефективним для великих сторінок. Але для більшості випадків це працює досить добре.
-
-## Дивіться також:
-
-- [http-conduit on Hackage](http://hackage.haskell.org/package/http-conduit)
-- [Haskell School of Music](http://www.haskellforall.com/2012/01/haskell-school-of-music.html)
+## Додаткові ресурси:
+- [The http-conduit package on Hackage](https://hackage.haskell.org/package/http-conduit)
+- [The Haskell Network.HTTP documentation](https://hackage.haskell.org/package/HTTP)

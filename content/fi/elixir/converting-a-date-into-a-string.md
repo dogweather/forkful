@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän muuttaminen merkkijonoksi"
-html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+date:                  2024-01-20T17:36:36.523744-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,38 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+Muuntaminen päivämäärästä merkkijonoksi tarkoittaa päivämäärä-datan esittämistä luettavassa muodossa. Kehittäjät tekevät tätä, koska ihmiset ymmärtävät paremmin "1. maaliskuuta 2023" kuin puhdasta aikaleimadataa.
 
-Muunnetaan päivämäärä merkkijonoksi tarkoittaa päivämäärätiedon esittämistä sanallisesti tai numeerisesti. Tätä tehdään usein, jotta päivämäärät voidaan esittää ihmisille ymmärrettävässä muodossa tai jotta ne voidaan lajitella tiedostoihin tai tietokantoihin. 
+## How to:
+```elixir
+# Luodaan Päivämäärä
+date = ~D[2023-03-01]
 
-## Miten:
+# Muunnetaan merkkijonoksi
+date_string = to_string(date)
 
-```Elixir
-defmodule DateFormat do
-  def convert_date_to_string(date) do
-    date
-    |> Date.to_iso8601 
-  end
-end
+# Tulostetaan merkkijono
+IO.puts(date_string)
 ```
-Esimerkki tulosteesta:
-```Elixir
-iex> DateFormat.convert_date_to_string(~D[2021-11-22])
-"2021-11-22"
+Tulostus:
+```
+"2023-03-01"
 ```
 
-## Syvä sukellus
+## Deep Dive
+Elixir tarjoaa `Date`-moduulin päivämääräkäsittelyyn. Historiallisesti päivämäärän käsittely on ollut monimutkaista eri ohjelmointikielissä. Elixiriin tämä on tuotu käyttäjäystävällisesti BEAM-virtuaalikoneen, jolle Elixir on rakennettu, ominaisuuksien ansiosta.
 
-Historia: Elixirin Date-moduuli perustuu Erlangin kalenterimoduuliin, joka otettiin käyttöön Erlang 20:ssa. 
+Vaihtoehtoja on monia. Päivämäärän voi esittää eri formaateissa käyttäen `Timex`-kirjastoa, mikä on monipuolinen vaihtoehto Elixirin sisäänrakennetulle `Date`-moduulille. Tätä voi käyttää esimerkiksi `Timex.format!(date, "{ISO:Extended}")` esittämisen tapaan.
 
-Vaihtoehdot: Käyttäjät voivat käyttää kolmannen osapuolen kirjastoja, kuten Timex, lisätaidoille, kuten aikavyöhykkeiden tuki. 
+Perustoteutus Elixirissä käyttää `to_string/1` funktiota, joka hyödyntää sigil `~D` luodessaan `Date`-rakennetta ja muuntaessaan sen merkkijonoksi oletusmuodossa, kuten yllä olevassa esimerkissä on nähty.
 
-Toteutusyksityiskohdat: `Date.to_iso8601/1` -funktio muuntaa Date-tyyppisen argumentin ISO 8601 -päivämääräksi (merkkijono). Date-moduuli käyttää Gregoriaanista kalenteria.
-
-## Katso myös
-
-Elixirin Date-moduulin virallinen dokumentaatio: https://hexdocs.pm/elixir/Date.html
-
-Timex, monipuolinen päivämäärä- ja kellonaikakirjasto: https://hexdocs.pm/timex/Timex.html
-
-Tutustu Erlangin kalenterimoduuliin: https://erlang.org/doc/man/calendar.html
+## See Also
+- Elixir `Date`-moduulin dokumentaatio: https://hexdocs.pm/elixir/Date.html
+- Timex-kirjasto: https://hexdocs.pm/timex/Timex.html
+- Elixirin sigilit: https://hexdocs.pm/elixir/master/sigils.html

@@ -1,6 +1,7 @@
 ---
 title:                "חיפוש והחלפת טקסט"
-html_title:           "Elm: חיפוש והחלפת טקסט"
+date:                  2024-01-20T17:58:15.629358-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חיפוש והחלפת טקסט"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,37 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+חיפוש והחלפת טקסט היא תהליך שבו אנו מוצאים רצפים של תווים בתוך מחרוזת ומחליפים אותם ברצף אחר. תכניתנים עושים זאת כדי לעבד נתונים טקסטואליים – לתקן שגיאות, לעדכן מידע או לשנות פורמט.
 
-חיפוש והחלפה של טקסט הן פעולות שמתוכנתים משתמשים בהם כדי למצוא קטעי טקסט מסוימים ולהחליף אותם בקטעים אחרים. זה מועיל כאשר יש צורך לשנות באופן תקני או לשנות טקסט במשתנים שלמים.
+## איך לעשות:
+ב-Elm, אנחנו יכולים להשתמש בפונקציונליות שמובנית בספריית `String` לצורך חיפוש והחלפה. נראה דוגמה:
 
-## איך ל:
-
-כאן דוגמה לקוד Elm שמבצע את פעולת החיפוש וההחלפה:
-
-```Elm
+```elm
 import String
 
 replaceText : String -> String -> String -> String
-replaceText old new str =
-    String.split old str |> String.join new
+replaceText toFind toReplace inText =
+    String.replace toFind toReplace inText
+
+main =
+    let
+        originalText = "שלום עולם"
+        newText = replaceText "עולם" "world" originalText
+    in
+    text newText
+-- תוצאה: "שלום world"
 ```
 
-ובעזרת הפונקציה הזו, נוכל להחליף טקסט:
-
-```Elm
-replaceText "בוקר" "לילה" "בוקר טוב"
--- תוצאה: "לילה טוב"
-```
-
-## צלילה עמוקה
-
-חיפוש והחלפה של טקסט השתנו המון מאז התחלת המחשבים. רעיונות שהוחזו ללא תועלת במחשבים הראשונים הפכו לתכנות קריטיים בשפות תכנות מודרניות כמו Elm.
-
-תמיד יש אלטרנטיבות. יש ביבליות JavaScript, כמו lodash, שמתקנות בעיה זו בצורה אלגנטית. אך פתרון Elm - עם הספרייה שלה לקיצור מחרוזת - הוא מצוין כיוון שהוא פשוט, מקצועי ונכון למתכנתים Elm.
-
-לגבי איך זה מממש, מקוד בחלק התחתון, הפונקציה 'split' מחזירה רשימה של מחרוזות, שמופרדות במקרה שלנו על ידי המחרוזת הישנה 'old'. הפונקציה 'join' מחברת אותן שוב עם המחרוזת החדשה 'new' במקום.
+## עיון מעמיק:
+חיפוש והחלפת טקסט היא פונקציה יסודית במרבית שפות התכנות והיא קיימת משנות ה-60. ישנם כלים רבים לחיפוש והחלפה כמו רגולר אקספרשנס ומערכת עיבוד טקסטים למשל. ב-Elm, חיפוש והחלפה מתבצעים באופן פשוט יותר, ללא תמיכה ישירה בביטויים רגולריים. זה חלק ממודל הפשטות של השפה אשר מקל על התוכניתן אך לעיתים מגביל.
 
 ## ראה גם:
-
-- [מדריך התחלתי ל Elm](https://guide.elm-lang.org)
-- [String functions in Elm](https://package.elm-lang.org/packages/elm/core/latest/String#replace)
+- התיעוד הרשמי לספריה `String` ב-Elm: https://package.elm-lang.org/packages/elm/core/latest/String#replace
+- פוסט בלוג על עיבוד טקסט ב-Elm: https://elm-lang.org/news/patterns-in-text
+- מדריך על עבודה עם מחרוזות ב-Elm: https://korban.net/elm/elm-string-handling/

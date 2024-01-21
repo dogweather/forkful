@@ -1,7 +1,8 @@
 ---
-title:                "Générer des nombres aléatoires"
-html_title:           "Elixir: Générer des nombres aléatoires"
-simple_title:         "Générer des nombres aléatoires"
+title:                "Génération de nombres aléatoires"
+date:                  2024-01-20T17:49:39.509715-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Génération de nombres aléatoires"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Numbers"
@@ -10,24 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ?
-La génération de nombres aléatoires est un processus d'obtention de chiffres qui ne sont pas prévisibles, et pour lesquels tous les nombres ont une probabilité égale d'être obtenus. Les programmeurs le font pour des usages tels que les jeux, les simulations, et même pour la sécurité.
+## Quoi & Pourquoi ?
+Générer des nombres aléatoires, c'est comme lancer un dé virtuel : on obtient une valeur imprévisible. Les programmeurs s'en servent pour tout, des jeux aux simulations, en passant par les tests de logiciel.
 
 ## Comment faire :
 ```Lua
+-- D'abord, on initialise le générateur
 math.randomseed(os.time())
-local randomNumber = math.random(1, 100)
-print(randomNumber)
+
+-- Pour un nombre aléatoire entre 1 et 100
+local nombre = math.random(1, 100)
+print(nombre)
+
+-- Pour un nombre flottant aléatoire entre 0 et 1
+local flottant = math.random()
+print(flottant)
 ```
-Cela génèrera et affichera un nombre aléatoire entre 1 et 100 à chaque fois que vous exécutez le script.
+Sample output:
+```
+42
+0.7345975135794
+```
 
 ## Plongeon en profondeur
-La fonction `math.random` a été introduite dans Lua 3.0. Avant cela, les programmeurs avaient besoin d'implémenter leurs propres générateurs de nombres aléatoires.
-
-It y a plusieurs alternatives à `math.random`. Par exemple, vous pouvez utiliser des bibliothèques externes pour obtenir des nombres aléatoires plus sophistiqués. L'une d'entre elles est pouvoir utiliser l'API `love.math.random` de LÖVE, si vous faites du développement avec ce framework.
-
-La fonction `math.random` de Lua utilise l'algorithme de génération de nombres pseudo-aléatoires appelé Mersenne Twister, qui est réputé pour sa vitesse et sa qualité de nombres aléatoires.
+Avant Lua 5.1, le générateur de nombres aléatoires n'était pas fiable. Avec la version actuelle, `math.randomseed` utilise `os.time()` pour de meilleurs résultats. Il existe d’autres méthodes, comme le Mersenne Twister, mais pour la simplicité et beaucoup de besoins, math.random fait l'affaire. L'important est de se rappeler d'initialiser le générateur avec `math.randomseed` sinon, vous obtiendrez la même séquence de nombres à chaque fois.
 
 ## Voir aussi
-[La documentation officielle de LUA pour math.random](https://www.lua.org/manual/5.1/manual.html#pdf-math.random)
-[Le lien vers LÖVE, un framework de développement de jeux en Lua](https://love2d.org/)
+- La documentation officielle de Lua : https://www.lua.org/manual/5.4/
+- Une discussion sur les générateurs de nombres aléatoires : https://stackoverflow.com/questions/20152105/what-random-seed-to-use-in-lua
+- Informations sur le Mersenne Twister (en anglais) : https://en.wikipedia.org/wiki/Mersenne_Twister

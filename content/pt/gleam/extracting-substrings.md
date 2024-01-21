@@ -1,6 +1,7 @@
 ---
 title:                "Extraindo substrings"
-html_title:           "Bash: Extraindo substrings"
+date:                  2024-01-20T17:45:39.999491-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extraindo substrings"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,31 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por quê?
+## O que é e Por quê?
 
-Extrair substrings é o processo de obter uma parte de uma cadeia de caracteres. Programadores fazem isso para manipular e analisar dados, isolando partes importantes de um conjunto maior de dados.
+Extrair substrings é pegar partes específicas de uma string toda, como uma frase ou uma palavra. Programadores fazem isso para manipular, analisar ou validar textos, separando o que é importante do que não é.
 
 ## Como fazer:
 
-Aqui está um exemplo básico de como extrair uma substring em Gleam:
+A seguir estão exemplos de como você pode extrair substrings em Gleam:
 
 ```gleam
-import gleam/string
+pub fn main() {
+  let texto = "Olá, mundo maravilhoso!"
+  let saudacao = string.slice(texto, 0, 5) // Pega "Olá, "
+  let mundo = string.slice(texto, 6, 11) // Pega "mundo"
+  let exclamacao = string.at(texto, 22) // Pega "!"
 
-string.slice("Olá, Mundo!", 0, 4)
+  saudacao // "Olá, "
+  mundo // "mundo"
+  exclamacao // Some("!")
+}
 ```
 
-O código acima retornará `Olá`.
+E a saída seria:
 
-## Imersão profunda:
+```
+"Olá, "
+"mundo"
+Some("!")
+```
 
-1. Historia: Embora Gleam seja uma linguagem relativamente nova, a extração de substrings é uma funcionalidade básica encontrada na maioria das linguagens de programação.
-2. Alternativas: No Gleam, podemos também usar a função `substring` para obter o mesmo resultado.
-3. Detalhes de implementação: Em Gleam, `string.slice` pega três argumentos: a string original, o início da substring e o final da substring.
+## Imersão
 
-## Ver também:
+Extrair substrings é uma prática tão antiga quanto as primeiras linguagens de programação. Em Gleam, que é fortemente tipada e funcional, fazer isso é direto e geralmente livre de erros em tempo de execução, diferentemente de linguagens mais antigas como C onde um erro poderia corromper a memória.
 
-Para mais informações sobre a manipulação de strings em Gleam, você pode verificar os seguintes links:
+Comparando com outras linguagens modernas, Gleam oferece segurança de tipo e imutabilidade como padrões que ajudam a prevenir muitos erros comuns ao lidar com strings. Por exemplo, ao invés de retornar `null` ou uma exceção para um índice inválido, `string.at` retorna um `Option`, forçando o programador a lidar com a possibilidade de uma falha de forma explícita.
 
-1. Documentação oficial de Gleam para a Função String: [Clique aqui](https://gleam.run/book/tour/strings.html)
-2. Tutorial de YouTube sobre a linguagem de programação Gleam: [Clique aqui](https://www.youtube.com/watch?v=R2FtPcXkYEo)
+Na implementação, as funções `slice` e `at` de Gleam são otimizadas para lidar com UTF-8, o que as torna robustas para manipulação de uma grande variedade de caracteres.
+
+## Veja Também
+
+- Documentação oficial do Gleam sobre strings: [https://gleam.run/book/tour/strings.html](https://gleam.run/book/tour/strings.html)
+- Comunidade do Gleam no Reddit: [https://www.reddit.com/r/gleamlang/](https://www.reddit.com/r/gleamlang/)

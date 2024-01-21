@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request"
-html_title:           "Bash recipe: Sending an http request"
+date:                  2024-01-20T17:59:35.692464-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,36 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Interactive Studio: Programming with Fish Shell - Sending HTTP Requests
-
 ## What & Why?
-Sending an HTTP request is your means of asking a web server to give you stuff (document, image, video, etc.). Knowing how to do it is a must for any programmer, as it allows you to interact with APIs, collect data from websites, and submit data to online databases.
+
+Sending HTTP requests is a way to communicate with web servers, fetching or sending data as needed. Programmers use HTTP requests to interact with APIs or web services, enabling applications to access resources, services, and data on the internet.
 
 ## How to:
-Here's a simple way to send a GET request using curl in Fish shell:
 
-```Fish Shell
-curl https://example.com
+Fish doesn't have built-in commands for sending HTTP requests, but you can use `curl` right from the shell:
+
+```Fish
+curl http://api.example.com/data
 ```
-Resulting data will be spat out right into your terminal.
 
-To send a POST request with some data:
+For a POST request with JSON data:
 
-```Fish Shell
-curl -X POST -d "name=fish&color=blue" https://example.com
+```Fish
+curl -X POST -H "Content-Type: application/json" -d '{"key":"value"}' http://api.example.com/data
 ```
-This sends a 'name' and 'color' to the example.com server. Look out for JSON or XML data in response.
+
+To store the response:
+
+```Fish
+set response (curl -X GET http://api.example.com/data)
+```
+
+And here's what you might see after a GET request:
+
+```Fish
+{
+  "response": "Some data from the server"
+}
+```
 
 ## Deep Dive
-The `curl` command dates back to 1996. It's a Swiss Army knife for transferring data with URLs - making it a perfect tool for us. 
 
-Fish shell runs `curl` just like any other Unix-like terminal. You have alternatives like `wget` for downloading or `httpie` for prettified, colorized HTTP traffic. They differ in syntax and functionality, but the essence - sending an HTTP request from terminal - stays the same.
+Historically, UNIX and Linux shells are handy for networking tasks. In the early days, tools like `telnet` were common for such purposes. Today, utility programs like `curl` and `wget` are the go-to. `curl` is a versatile tool that supports multiple protocols, and it's often used because of its simplicity and flexibility.
+
+Python or Node.js can be used when you need more complex request handling. But for quick tasks or simple scripts, `curl` in Fish is efficient and effective.
+
+Implementing an HTTP request through Fish usually means relying on third-party tools. Fish itself is designed to be a smart and user-friendly command-line shell, not a do-all tool. When you combine it with the power of utilities like `curl`, you get the best of both worlds: Fish's usability and `curl`'s capability.
 
 ## See Also
-Explore more with:
-- Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- cURL: [https://curl.se/](https://curl.se/)
-- HTTPie: [https://httpie.io/](https://httpie.io/)
-- Beginners guide to HTTP: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
 
-Go on and flex those Fish fins in the vast sea of web data!
+- Learn more about `curl`: https://curl.se/docs/manual.html
+- Fish Shell documentation: https://fishshell.com/docs/current/index.html
+- HTTP basics overview: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
+- Explore APIs with `httpie`, an alternative to `curl`: https://httpie.io/

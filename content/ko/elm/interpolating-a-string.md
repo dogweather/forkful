@@ -1,6 +1,7 @@
 ---
 title:                "문자열 보간하기"
-html_title:           "Clojure: 문자열 보간하기"
+date:                  2024-01-20T17:50:50.797940-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "문자열 보간하기"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,32 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+문자열 보간은 변수나 표현식을 문자열 안에 포함하는 것입니다. 코드를 간결하게 유지하고 동적으로 문자열을 조작하기 위해 사용됩니다.
 
-문자열 보간(string interpolation)은 문자열 내에 변수나 상수, 식을 삽입하는 것입니다. 이것은 코드의 가독성을 높이고 유지 보수를 용이하게 만들어 주기 때문에 프로그래머들이 주로 사용합니다.
+## How to: (방법)
+Elm의 최신 버전에서는 문자열 보간이 직접적으로 지원되지 않습니다. 대신, `String` 모듈의 함수를 사용해야 합니다. 다음은 그 예시입니다:
 
-## 사용 방법:
+```Elm
+name = "Jane"
+greeting = "Hello, " ++ name ++ "!"
 
-Elm에서는 "+" 연산자를 사용해 문자열을 이어붙일 수 있습니다.
-
-```elm
-name = "John"
-greeting = "Hello, " + name + "!"
+-- 출력: "Hello, Jane!"
 ```
 
-이와 같이 코드를 작성하면, "greeting" 변수에는 "Hello, John!"이라는 문자열이 저장됩니다.
+만약 여러 값을 하나의 문자열로 결합하려면, `String.concat` 혹은 `++` 연산자를 사용하세요:
 
-## 깊이 탐구하기:
+```Elm
+age = 25
+welcomeMessage = "Welcome, " ++ name ++ "! You are " ++ String.fromInt(age) ++ " years old."
 
-Elm은 현존하는 가장 오래된 프로그래밍 언어 중 하나로, 문자열 보간과 같은 기능을 한창 새롭게 소개하는 데 이바지했습니다. Elm은 '+’ 연산자를 사용하여 문자열과 변수를 결합하는 독특한 방식을 사용합니다. 
+-- 출력: "Welcome, Jane! You are 25 years old."
+```
 
-다른 대안으로는 JavaScript처럼 문자열 보간을 위해 숫자를 문자열로 변환하거나, Python처럼 f-string을 사용하여 문자열을 보간하는 방법이 있습니다.
+## Deep Dive (심층 탐구)
+Elm에서는 다른 언어들처럼 백틱(`)이나 특수한 문자열 구문(`${}`)을 사용한 문자열 보간이 없습니다. 대신, 문자열을 결합하기 위해 `++` 연산자를 사용하거나 여러 값을 가진 리스트를 `String.concat`으로 합치는 방법을 사용해야 합니다. 이는 Elm의 단순함과 명료성에 기반한 디자인 선택입니다.
 
-문자열 보간 구현 방법에 관해 좀 더 살펴보면, Elm이 먼저 변수를 문자열로 변환한 다음, '+' 연산자를 사용해 문자열을 이어붙이는 것을 알 수 있습니다. 이 방법은 매우 고급적인 것처럼 보이지만, 실제로는 간단한 작업을 하는 것뿐입니다.
+역사적으로, Elm은 JavaScipt와의 호환성에 집중했지만, 문자열 보간과 관련해 직접적인 JS의 템플릿 리터럴 대응물을 갖고 있지 않습니다. 문자열 연산의 경우, Elm의 타입 안전성과 오류를 줄이기 위한 목적에서 명시적으로 값들을 문자열로 변환하고 합치는 것을 선택했습니다.
 
-## 참고 자료:
-
-1. Elm 공식 문서: https://elm-lang.org/docs
-2. 문자열 보간에 대한 자세한 설명: https://en.wikipedia.org/wiki/String_interpolation
-
-이 정도면 문자열 보간에 대한 기초적인 내용을 모두 다룬 것 같습니다. 좀 더 구체적이거나 복잡한 내용은 위의 참고 자료를 통해 알아보시기 바랍니다.
+## See Also (참고 자료)
+- Elm 문서: [String 모듈](https://package.elm-lang.org/packages/elm/core/latest/String)
+- Elm 문서: [연산자](https://package.elm-lang.org/packages/elm-lang/core/latest/Basics#operators)
+- Elm 커뮤니티 예시와 토론: [Elm Discourse](https://discourse.elm-lang.org/)

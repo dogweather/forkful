@@ -1,6 +1,7 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Bash: Rozpoczynanie nowego projektu"
+date:                  2024-01-20T18:04:35.132822-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Python"
 category:             "Python"
@@ -10,35 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Tworzenie nowego projektu to jak otwieranie pustego zeszytu. Programiści robią to, by rozwiązywać problemy, uczyć się i tworzyć coś nowego.
 
-Rozpoczęcie nowego projektu to nic innego jak uruchomienie nowego zadania programistycznego od podstaw. Programiści robią to w celu rozwijania nowych aplikacji, narzędzi czy systemów, które mają na celu rozwiązanie konkretnych problemów.
+## How to: (Jak to zrobić:)
+```python
+# Instalacja środowiska wirtualnego (virtualenv)
+python -m venv nazwa_srodowiska
 
-## Jak to zrobić:
+# Aktywacja środowiska wirtualnego na Windows
+nazwa_srodowiska\Scripts\activate.bat
 
-Zaczniemy od stworzenia nowego projektu. Niech to będzie prosta aplikacja do drukowania "Hello, World!"
+# Aktywacja środowiska wirtualnego na Unix/MacOS
+source nazwa_srodowiska/bin/activate
 
-```Python
-# To jest twój kod źródłowy
-print("Hello, World!")
+# Instalacja pakietu (przykładowo: requests)
+pip install requests
+
+# Tworzenie pliku main.py i uruchomienie pierwszego skryptu
+echo 'print("Witaj, świecie!")' > main.py
+python main.py
+```
+Oczekiwane wyjście:
+```
+Witaj, świecie!
 ```
 
-Po uruchomieniu tego kodu, output powinien wyglądać tak:
+## Deep Dive (Dogłębna analiza)
+Historia tworzenia nowych projektów w Pythonie ewoluowała — od prostych skryptów do zaawansowanych aplikacji. Używanie środowisk wirtualnych (`venv`) stało się najlepszą praktyką, by uniknąć konfliktów między bibliotekami. Istnieją też narzędzia jak `pipenv` czy `poetry`, które oferują rozszerzone zarządzanie zależnościami. Sam Python ewoluował, dostarczając nowe możliwości z każdą wersją, jak np. deklaratywne adnotacje typów od Python 3.5.
 
-```Python
-Hello, World!
-```
-
-## Głębsze spojrzenie
-
-Historia pokazuje, że rozpoczynanie nowych projektów jest fundamentalną częścią postępu technologicznego. Od czasów pierwszych komputerów, programiści rozpoczynają nowe projekty aby rozwiązać nowe problemy, czy to poprzez tworzenie nowych algorytmów, czy rozwijanie nowych systemów operacyjnych.
-
-Istnieją różne alternatywy dla rozpoczynania nowego projektu w Pythonie,   takie jak sklonowanie istniejącego repozytorium Git lub użycie szablonu projektu. Wybór między tymi opcjami zależy od konkretnych potrzeb i wymagań projektu.
-
-Rozpoczynając nowy projekt, ważne jest, aby zrozumieć różne aspekty implementacji, takie jak organizacja kodu, zarządzanie zależnościami czy testy jednostkowe. Python oferuje wiele narzędzi (takie jak pip czy venv), które pomagają zarządzać tymi aspektami.
-
-## Zobacz też
-
-1. [Python Docs: Rozpoczynanie nowych projektów](https://docs.python.org/3/tutorial/appetite.html)
-2. [GitHub: Przykładowe projekty Python](https://github.com/topics/python)
-3. [Real Python: Jak tworzyć Python Package](https://realpython.com/tutorials/packages/)
+## See Also (Zobacz również)
+- [Dokumentacja Pythona](https://docs.python.org/3/)
+- [Wprowadzenie do pip](https://pip.pypa.io/en/stable/getting-started/)
+- [Poetry - Python dependency management](https://python-poetry.org/docs/)
+- [Pipenv: Python Dev Workflow for Humans](https://pipenv.pypa.io/en/latest/)

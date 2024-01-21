@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http"
-html_title:           "Arduino: Wysyłanie żądania http"
-simple_title:         "Wysyłanie żądania http"
+title:                "Wysyłanie żądania HTTP"
+date:                  2024-01-20T17:59:04.223672-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie żądania HTTP"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,49 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Wysyłanie żądania HTTP to sposób, w jaki twój program komunikuje się z serwerem internetowym, wymieniając dane. Programiści robią to, aby pobierać lub wysyłać dane do zewnętrznych serwerów, tworzyć interaktywne aplikacje i strony internetowe.
+## What & Why? (Co i Dlaczego?)
+Wysyłanie żądania HTTP pozwala naszemu programowi komunikować się z serwerem webowym - wymieniać dane, pobierać strony internetowe czy korzystać z API. Programiści robią to, aby integrować aplikacje C z internetem, zbierać informacje lub interagować z usługami webowymi.
 
-## Jak to zrobić:
-Aby wysłać żądanie HTTP w C, możemy skorzystać z biblioteki `libcurl`. Kod może wyglądać następująco:
+## How to: (Jak to zrobić?)
+Użycie biblioteki cURL w C do wysłania żądania HTTP jest proste. Oto przykład:
 
-``` C
+```C
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
+int main(void) {
+    CURL *curl;
+    CURLcode res;
 
-  curl_global_init(CURL_GLOBAL_DEFAULT);
-  curl = curl_easy_init();
-  
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-    res = curl_easy_perform(curl);
+    curl_global_init(CURL_GLOBAL_ALL);
 
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-      
-    curl_easy_cleanup(curl);
-  }
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        // Pełni rolę użytkownika przeglądarki
+        curl_easy_setopt(curl, CURLOPT_USERAGENT, "libcurl-agent/1.0");
 
-  curl_global_cleanup();
-  return 0;
+        // Wykonanie żądania, res przechwytuje wynik
+        res = curl_easy_perform(curl);
+
+        // Sprawdzenie błędów
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                    curl_easy_strerror(res));
+
+        // Zawsze czyść po sobie
+        curl_easy_cleanup(curl);
+    }
+
+    curl_global_cleanup();
+
+    return 0;
 }
 ```
 
-Kod ten wysyła żądanie GET do `http://example.com` i wyświetla odpowiedź.
+Po uruchomieniu, program wysyła żądanie GET do `http://example.com` i wypisuje odpowiedź.
 
-## Więcej szczegółów
-- Kontekst historyczny: Protokół HTTP zaczęto rozwijać w 1989 roku przez Tima Bernersa-Lee w CERN. 
-- Alternatywy: Oblężenie, Apache JMeter i Locust to alternatywy dla HTTP requests w C. Mogą one być szybsze i bardziej wydajne, ale są też trudniejsze do nauki.
-- Szczegóły implementacyjne: Dla wielu żądań równocześnie warto używać wielowątkowości. W przypadku dużych danych warto skorzystać z asynchronicznego przetwarzania.
+## Deep Dive (Dogłębna analiza)
+Wysyłanie żądań HTTP z C nie zawsze było tak łatwe. W przeszłości trzeba było ręcznie tworzyć gniazda i obsługiwać protokół HTTP. Biblioteka cURL, wydana w 1997 roku, uprościła proces poprzez dostarczenie prostego API.
 
-## Zobacz też
-- Libcurl Tutorial: http://curl.haxx.se/libcurl/c/libcurl-tutorial.html
-- Protokół HTTP: https://tools.ietf.org/html/rfc2616
-- Curl Github: https://github.com/curl/curl
-- Wielowątkowość w C: https://www.tutorialspoint.com/c_standard_library/c_function_pthread_create.htm
-- Przetwarzanie asynchroniczne: https://en.wikipedia.org/wiki/Asynchronous_I/O
+Alternatywami dla cURL są libwww, Qt network module, czy Boost.Asio dla C++. Współczesne implementacje opierają się na wygodzie użytkowania i bezpieczeństwie; wiele z nich dba o zarządzanie pamięcią i automatyczne obsługiwanie certyfikatów SSL/TLS.
+
+## See Also (Zobacz również)
+- Dokumentacja cURL: https://curl.haxx.se/libcurl/c/
+- Wstęp do gniazd w C: https://beej.us/guide/bgnet/
+- Informacje o protokole HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP

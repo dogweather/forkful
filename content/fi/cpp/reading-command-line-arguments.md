@@ -1,7 +1,8 @@
 ---
-title:                "Komentorivin argumenttien lukeminen"
-html_title:           "Elm: Komentorivin argumenttien lukeminen"
-simple_title:         "Komentorivin argumenttien lukeminen"
+title:                "Komennoriviparametrien lukeminen"
+date:                  2024-01-20T17:55:42.729081-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Komennoriviparametrien lukeminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,36 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
-Komennorivin argumenttien lukeminen tarkoittaa tulotietojen noutamista pääohjelmaan komennoriviltä. Tämä on hyödyllistä parametrien välittämiseen ohjelmallesi, ja se mahdollistaa joustavat ja dynaamiset ohjelmat.
+## What & Why? (Mitä ja miksi?)
+Komennon rivin argumentit ovat parametreja, jotka annetaan ohjelmalle sen käynnistyessä. Ne mahdollistavat joustavan ohjelman käytön, koska käyttäjä voi määrittää toimintoja ohjelman ulkopuolelta.
 
-# Kuinka:
-C++:lla pääset käsiksi komennorivin argumentteihin pääfunktion parametrien avulla. Tässä esimerkki:
-
+## How to: (Kuinka tehdä:)
 ```C++
 #include <iostream>
 
 int main(int argc, char *argv[]) {
+    std::cout << "Ohjelmaan annettiin " << argc << " argumenttia.\n";
+    
     for (int i = 0; i < argc; ++i) {
-        std::cout << "Argumentti " << i << " : " << argv[i] << std::endl;
+        std::cout << "Argumentti " << i << ": " << argv[i] << "\n";
     }
+    
     return 0;
 }
+
+/* Käytä ohjelmaa komentoriviltä näin:
+   $ ./ohjelma ensimmäinen toinen "kolmas neljäs"
+   Tulos:
+   Ohjelmaan annettiin 4 argumenttia.
+   Argumentti 0: ./ohjelma
+   Argumentti 1: ensimmäinen
+   Argumentti 2: toinen
+   Argumentti 3: kolmas neljäs
+*/
 ```
 
-Jos ohjelma suoritetaan kommentilla `program esimerkki1 esimerkki2`, tuloste on:
+## Deep Dive (Syväsukellus):
+Komennon rivin argumentit ovat olleet osa ohjelmointia siitä asti, kun ihmiset alkoivat kirjoittaa monikäyttöisiä ohjelmia. C ja C++ tukevat näitä suoraan `main`-funktion kautta. Vaihtoehtoisia tapoja lukea argumentteja ovat kirjastot, kuten Boost.Program_options tai TCLAP, jotka tarjoavat monimutkaisempia toiminnallisuuksia. Tärkeää on ymmärtää, että `argv[0]` sisältää ohjelman nimen tai polun, ja laskenta alkaa tästä. Tietoturvasyistä on hyvä validoida ja desinfioida käyttäjän syöttämät komennot ennen niiden käyttöä.
 
-```
-Argumentti 0 : program
-Argumentti 1 : esimerkki1
-Argumentti 2 : esimerkki2
-```
-
-# Syvemmälle
-Komennorivin argumenttien käyttö ei ole uusi käsite, se on ollut olemassa vuosikymmenet. Se tarjoaa tehokkuutta ja joustavuutta ohjelmointiin. Vaihtoehtona on kovakoodausten käyttäminen tai datan ottaminen tiedostoista, joka voi johtaa monimutkaisempaan ja vähemmän mukautettavaan koodiin.
-
-Pääfunktiossa `argc` on argumenttien määrä, `argv` on argumenttien arvot. Huomaa, että argv[0] on aina ohjelman suoritettavan tiedoston nimi.
-
-# Katso Myös
-- C++ Komennorivin Argumentit (Kattavampi opas): https://www.sanfoundry.com/cpp-programming-examples-command-line-arguments/
-- C++:n Virallinen Dokumentaatio: https://en.cppreference.com/w/cpp/language/main_function
+## See Also (Katso myös):
+- C++17 Standard (ISO/IEC 14882:2017): https://www.iso.org/standard/68564.html
+- Boost.Program_options: https://www.boost.org/doc/libs/1_76_0/doc/html/program_options.html
+- TCLAP - Templatized C++ Command Line Parser Library: http://tclap.sourceforge.net/
+- Command-Line Arguments in C/C++: https://www.cprogramming.com/tutorial/command-line-arguments.html

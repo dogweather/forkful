@@ -1,6 +1,7 @@
 ---
 title:                "新しいプロジェクトを始める"
-html_title:           "C: 新しいプロジェクトを始める"
+date:                  2024-01-20T18:03:37.754740-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "新しいプロジェクトを始める"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,45 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+新しいプロジェクトを始めるのは白紙からソフトウェアを作り出すことです。プログラマは新たな問題を解決したり、アイディアを形にしたりするために新しいプロジェクトを始めます。
 
-新規プロジェクトの開始とは、新しいアイディアや問題解決のためのコードを作り始めることです。プログラマーはこれを行うことで、ソフトウェアを改善し、新しい機能を開発します。
-
-## どうやって？
-
-はじめに、まっさらなプロジェクトを作成します。例えば、次のように`stack new myproject`を実行します。
+## How to: (方法)
+Haskellで新しいプロジェクトを始めるには、以下の手順を実行します。
 
 ```Haskell
-$ stack new myproject
+-- stackを使用して新しいプロジェクトを作成する
+stack new myproject
+
+cd myproject
+tree
+```
+出力例:
+```plaintext
+myproject/
+├── app
+│   └── Main.hs
+├── src
+│   └── Lib.hs
+├── test
+│   └── Spec.hs
+├── myproject.cabal
+├── stack.yaml
+└── ...
 ```
 
-これで新しいHaskellプロジェクト`myproject`が作成されました。フォルダと必要なファイルが自動で生成されます。
+プロジェクトの基本的な構造が作られたので、`Main.hs`や`Lib.hs`にコードを書き始めることができます。
 
-次に、生成されたプロジェクトフォルダに移動します。
+## Deep Dive (深堀り)
+Haskellは1990年に発表された純粋関数型プログラミング言語です。プロジェクトを始めるのには`cabal`と`stack`という二つのツールがあります。`stack`は設定が簡単で、依存関係管理が行き届いているため、特に新規プロジェクトにおすすめです。`cabal`も強力ですが、より高度な設定やHaskellの経験が必要になることもあります。
 
-```Haskell
-$ cd myproject
-```
+Haskellの新プロジェクトでは、プロジェクトのスケルトンを確立し、モジュールやテストのためのディレクトリとファイルを生成します。これは、開発を始める前に一貫性のある構造を与え、保守管理を容易にするためです。
 
-あとは`stack build`と入力し、プロジェクトをビルドします。
+## See Also (関連情報)
+以下のリンクから、Haskellのプロジェクト開始に関するさらに多くの情報を見ることができます。
 
-```Haskell
-$ stack build
-```
+- Haskell公式サイト: [https://www.haskell.org/](https://www.haskell.org/)
+- Stackのドキュメント: [https://docs.haskellstack.org/](https://docs.haskellstack.org/)
+- Cabalユーザーガイド: [https://www.haskell.org/cabal/users-guide/](https://www.haskell.org/cabal/users-guide/)
 
-これでプロジェクトの準備が整いました。
-
-## ディープダイブ
-
-新規プロジェクトの開始の背後には様々な要素があります。おそらく最も重要なのは、各プロジェクトが自分自身の独立した環境を持つという概念、つまり「sandboxing」です。これは、異なるプロジェクト間でライブラリのバージョンや設定が競合しないようにするためのものです。
-
-これに対する代替手段としては、globalにライブラリをインストールし、全てのプロジェクトで同じライブラリを共有するというやり方もありますが、sandboxingの方が衝突のリスクを遥かに低減します。
-
-新規プロジェクトを作成するとき、`stack`はデフォルトで一連のディレクトリとファイルを生成します。もちろん、これらは後から調整やカスタマイズが可能です。
-
-## 参考リンク
-
-以下のリンクはさらに詳しい情報や関連リソースを提供します：
-
-- Stack公式ドキュメンテーション: [https://docs.haskellstack.org/](https://docs.haskellstack.org/)
-- Haskellプロジェクトの作成：[https://www.tutorialspoint.com/haskell/haskell_quick_guide.htm](https://www.tutorialspoint.com/haskell/haskell_quick_guide.htm)
+これらのソースを参照して、Haskellでのプロジェクト開始に関してより深く学ぶことができます。

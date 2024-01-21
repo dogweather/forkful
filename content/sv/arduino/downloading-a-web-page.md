@@ -1,7 +1,8 @@
 ---
-title:                "Ladda ner en webbsida"
-html_title:           "Bash: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Hämta en webbsida"
+date:                  2024-01-20T17:43:32.772197-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Hämta en webbsida"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,61 +12,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Ladda ner en webbsida innebär att hämta HTML-data från en server till din Arduino. Programmerare gör det för att interagera med webben, samla data eller styra enheter fjärran.
 
-Att ladda ner en webbsida innebär att hårdvara (till exempel en Arduino) begär och lagrar sidans data för senare användning. Programmörer gör detta för att analysera data, övervaka förändringar, eller återanvända innehållet på något sätt.
-
-## Hur Man Gör:
-
-Arduino-biblioteket som "Ethernet.h" hjälper oss att kommunicera med internet. Här är ett exempel:
-
+## Gör så här:
 ```Arduino
-#include <Ethernet.h>
-#include <SPI.h>
+#include <ESP8266WiFi.h>
 
-byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
-EthernetClient client;
+const char* ssid = "DITT_WIFI_NAMN";
+const char* password = "DITT_LÖSENORD";
+const char* host = "example.com";
+
+WiFiClient client;
 
 void setup() {
-  if (Ethernet.begin(mac) == 0) {
-    while (true);
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
   }
-  
-  if (!client.connect("www.example.com", 80)) {
-    while (true);
+  Serial.println("Ansluten till WiFi!");
+
+  if (!client.connect(host, 80)) {
+    Serial.println("Anslutning misslyckades");
+    return;
   }
-  
-  client.println("GET / HTTP/1.1");
-  client.println("Host: www.example.com");
-  client.println("Connection: close");
-  client.println();
+
+  client.print(String("GET /") + " HTTP/1.1\r\n" +
+               "Host: " + host + "\r\n" +
+               "Connection: close\r\n\r\n");
+
+  while(client.available() == 0) {
+    if (!client.connected()) {
+      Serial.println("Servern kopplade ifrån");
+      client.stop();
+      return;
+    }
+  }
+
+  while(client.available()) {
+    String line = client.readStringUntil('\r');
+    Serial.print(line);
+  }
 }
 
 void loop() {
-  if (client.available()) {
-    char c = client.read();
-    Serial.print(c);
-  }
-  
-  if (!client.connected()) {
-    client.stop();
-    while (true);
-  }
+  // Här kör vi ingenting
 }
 ```
+Utskrift: 
+```
+HTTP/1.1 200 OK
+[...webbsidans HTML innehåll...]
+```
 
-Denna kodanslutningar till www.example.com, skickar en HTTP GET-begäran, och skriver ut den mottagna data. Du kommer att se webbsidans HTML-kod i seriemonitorn.
+## Fördjupning
+Tidigare använde Arduino Ethernet Shield för nätverksuppkoppling, men nu är Wi-Fi-moduler som ESP8266 och ESP32 populära. De är kostnadseffektiva och innehåller inbyggt Wi-Fi. 
+Alternativ finns också: HTTP-klientbibliotek som 'HTTPClient' för ESP kan förenkla processen.
+Viktigt är att hantera anslutning och att skicka korrekta HTTP-headrar. Svar skickas som rå text och kan behöva tolkas för att användas.
 
-## Djupgående:
-
-Historiskt sett har webbsidescraping (webbsidehämtning) använts sedan webbens början. Programmeringsspråk som Perl och Python gjorde det möjligt tidigt. Arduino ger oss tillförlitliga bibliotek för detta.
-
-Alternativ till "Ethernet.h" biblioteket inkluderar "WiFi101.h" för WiFi-anslutning och "GSM.h" för mobildata.
-
-Tänk på att ladda ner stora mängder data kan påverka din Arduinos prestanda. Använd koncept som "streaming" för att bearbeta data i mindre bitar.
-
-## Se Även:
-
-- [Ethernet Library](https://www.arduino.cc/en/Reference/Ethernet): För mer information om "Ethernet.h"
-
-
-Kom ihåg att alltid respektera webbplatsernas användarvillkor och inte överbelasta deras servrar med för många förfrågningar. God programmering!
+## Se också
+- [ESP8266WiFi bibliotek](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)
+- [Arduino Ethernet Shield](https://www.arduino.cc/en/Main/ArduinoEthernetShield)

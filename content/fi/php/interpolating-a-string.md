@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Bash: Merkkijonon interpolointi"
+date:                  2024-01-20T17:51:36.860617-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,45 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi? 
+## What & Why? - Mitä & Miksi?
+Interpolointi tarkoittaa muuttujien arvojen yhdistämistä merkkijonoon. Koodarit käyttävät sitä dynaamisten viestien luomiseen ja koodin selkeyden parantamiseen.
 
-Merkkijonon interpolointi on prosessi, jossa muuttujan arvo sidotaan suoraan merkkijonoon. Tämä tehdään helpottamaan ja nopeuttamaan koodin kirjoitusta ja lukemista.
-
-## Kuinka:
-
-Tarkastele seuraavaa koodinäytettä merkkijonon interpoloinnin käytöstä:
-
-```PHP
+## How to: - Miten:
+```php
 <?php
-$nimi = "Pekka";
-echo "Hei, olen $nimi";
+$juoma = "kahvi";
+$aika = "aamulla";
+
+// Kaksoislainausmerkkien sisällä
+$viesti = "Miten olisi kuppi $juoma$aika?";
+echo $viesti; // Miten olisi kuppi kahviaamulla?
+
+// Käyttäen aaltosulkeita selvyyden vuoksi
+$viesti = "Miten olisi kuppi {$juoma} {$aika}?";
+echo $viesti; // Miten olisi kuppi kahvi aamulla?
+
+// Huom. Yksinkertaiset lainausmerkit eivät interpoloi
+$viesti = 'Miten olisi kuppi $juoma $aika?';
+echo $viesti; // Miten olisi kuppi $juoma $aika?
 ?>
 ```
-Ohjelman tulostus on:
 
-```
-Hei, olen Pekka
-```
+## Deep Dive - Syväsukellus:
+Interpoloinnin juuret ovat varhaisissa ohjelmointikielissä, kuten Perlissä, joka PHP:n syntaksia on voimakkaasti vaikuttanut. Alternatiiveina ovat yhdistämisoperaattori `.` tai `sprintf()`-funktio, jotka voivat lisätä koodin monimutkaisuutta:
 
-## Syvempi sukellus:
-
-Historiallisesti ottaen, PHP-ohjelmoijat alkoivat käyttää merkkijonon interpolointia, kun huomasivat sen nopeuttavan ohjelmien kirjoittamista ja lisäävän koodin luettavuutta.
-
-Sen sijaan, että käyttäisit pitkää ja sekavaa jonon yhdistämistä, kuten:
-
-```PHP
-$nimi = "Pekka";
-echo "Hei, olen " . $nimi;
+```php
+$viesti = 'Miten olisi kuppi ' . $juoma . ' ' . $aika . '?';
 ```
 
-Voit käyttää interpolointia parantaaksesi koodin selkeyttä ja tehokkuutta.
+Interpoloinnin toteutus PHP:ssä on tehokas sillä merkkijonoon voi liittää muuttujia suoraan, kun käyttää kaksoislainausmerkkejä tai heredoc-syntaksia. Muista käyttää aaltosulkeja (`{}`) sekavuuden välttämiseksi, erityisesti jos muuttujan nimi ympäröidään muulla tekstillä.
 
-Ole kuitenkin tietoinen, että interpolointi voi olla haavoittuvainen SQL-injektiohyökkäyksille, jos et suodata syötteitäsi. 
-
-## Katso myös:
-
-Tässä muutamia linkkejä, jotka voivat auttaa ymmärtämään merkkijonon interpolointia paremmin:
-
-1. [PHP:n viralliset dokumentit](https://www.php.net/manual/en/language.types.string.php)
-2. [PHP:n merkkijonon interpolointi Stackoverflow'ssa](https://stackoverflow.com/questions/28267266/php-string-interpolation-vs-concatenation)
-3. [Hyviä tapoja estää SQL-injektio PHP:ssa](https://www.w3schools.com/php/php_mysql_prepared_statements.asp)
+## See Also - Katso Myös:
+- PHP manuaali merkkijonoista: https://www.php.net/manual/en/language.types.string.php
+- PHP `sprintf`-funktion dokumentaatio: https://www.php.net/manual/en/function.sprintf.php

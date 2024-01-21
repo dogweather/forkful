@@ -1,7 +1,8 @@
 ---
-title:                "कमांड लाइन तर्कों को पढ़ना"
-html_title:           "Kotlin: कमांड लाइन तर्कों को पढ़ना"
-simple_title:         "कमांड लाइन तर्कों को पढ़ना"
+title:                "कमांड लाइन आर्गुमेंट्स पढ़ना"
+date:                  2024-01-20T17:56:10.679407-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "कमांड लाइन आर्गुमेंट्स पढ़ना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,37 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Haskell में कमांड लाइन आर्गुमेंट्स पढ़ना 
+## What & Why? (क्या है और क्यों?)
 
-## क्या और क्यों?
+कमांड लाइन आर्ग्यूमेंट्स हमें प्रोग्राम चलाते वक्त इनपुट देने का एक तरीका है। इनका उपयोग इसलिए होता है क्योंकि ये फ्लेक्सिबलिटी देते हैं और यूजर को प्रोग्राम के व्यवहार को कण्ट्रोल करने की सुविधा प्रदान करते हैं।
 
-कमांड लाइन आर्गुमेंट्स पढ़ना, इसका मतलब होता है प्रोग्राम में उपयोगकर्ता के द्वारा दी गयी माहिती को हासिल करना। विकासकर्ताओं को यह सुनिश्चित करने के लिए की उनका प्रोग्राम विभिन्न तरीकों से विन्यस्त किया जा सकता है, इसलिए वे इसे करते हैं।
+## How to: (कैसे करें:)
 
-## कैसे:
-
-```Haskell
-मुख्य मोड्यूल (main module) में, हम कमांड लाइन आर्गुमेंट्स के लिए `getArgs` फंक्शन का उपयोग करेंगे:
+Haskell में कमांड लाइन आर्ग्यूमेंट्स पढ़ने के लिए:
 
 ```Haskell
-import System.Environment
+import System.Environment (getArgs)
 
 main :: IO ()
 main = do
     args <- getArgs
-    putStrLn ("Hello, " ++ args !! 0)
+    print args
 ```
 
-आप किसी विशेष आर्गुमेंट को इंडेक्स (`args !! 0`) के माध्यम से पहुंच सकते हैं। इस उदाहरण में, यह प्रथम आर्गुमेंट ले रहा है।
+इस कोड के चलने पर, जो आर्ग्यूमेंट्स आपने कमांड लाइन पर दिए होंगे, वो एक लिस्ट में प्रिंट होंगे।
+
+सैंपल आउटपुट:
+```
+$ runhaskell MyProgram.hs arg1 arg2 arg3
+["arg1", "arg2", "arg3"]
 ```
 
-## गहराई से जानकारी
+## Deep Dive: (गहराई में जानकारी:)
 
-- **ऐतिहासिक प्रासंगिकता**: Haskell भाषा में `getArgs` फ़ंक्शन का इस्तेमाल कमांड लाइन आर्गुमेंट्स को पढ़ने के लिए वाणिज्यिक रूप से कार्य करने के लिए बहुत समय से किया जा रहा है। यह एक मानकीकृत तरीका है।
-- **विकल्प**: आप `optparse-applicative` जैसे पैकेज का उपयोग करके भी अधिक विस्तृत और सहायक कमांड लाइन इंटरफ़ेस बना सकते हैं।
-- **कार्यान्वयन विवरण**: `getArgs` एक IO फंक्शन है, जिसका मतलब है कि यह मुख्य IO एक्शन में काम करेगा और सिस्टम के बाहरी वール्ड के साथ बातचीत करने में सक्षम है।
+कमांड लाइन आर्ग्यूमेंट्स का इस्तेमाल 1960s से हो रहा है; Unix पर बेस्ड सिस्टम्स ने इसे काफी लोकप्रिय बनाया। Haskell में `getArgs` फंक्शन `System.Environment` मॉड्यूल का हिस्सा है और इसे सीधे लिस्ट के फॉर्म में आर्ग्यूमेंट्स प्राप्त करने के लिए उपयोग किया जाता है।
 
-## और भी देखें
+एल्टरनेटिव के रूप में, `optparse-applicative` जैसे लाइब्रेरी का उपयोग करना संभव है जो कि मोर सोफिस्टिकेटेड कमांड लाइन पार्सिंग ऑप्शन्स प्रदान करते हैं।
 
-- [Haskell में कमांड लाइन आर्गुमेंट्स कैसे इस्तेमाल करें](https://www.haskell.org/tutorial/io.html)
-- [ऑप्शन पार्सिंग: optparse-applicative](https://hackage.haskell.org/package/optparse-applicative)
-- [कमांड लाइन इंटरफ़ेस डिजाइन](https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours/Parsing)
+## See Also: (अधिक जानकारी के लिए:)
+
+- Haskell `System.Environment` मॉड्यूल: [Haskell Documentation](https://hackage.haskell.org/package/base-4.16.0.0/docs/System-Environment.html)
+- `optparse-applicative` लाइब्रेरी: [optparse-applicative on Hackage](https://hackage.haskell.org/package/optparse-applicative)

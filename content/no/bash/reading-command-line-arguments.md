@@ -1,6 +1,7 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Arduino: Lese kommandolinjeargumenter"
+date:                  2024-01-20T17:55:20.388578-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,38 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å lese kommandolinjeargumenter betyr ganske enkelt at skriptet ditt plukker opp informasjon direkte fra terminalen. Programmerere bruker dette til å gjøre skriptene fleksible og tilpassbare for ulike oppgaver uten å endre på koden hver gang.
 
-Kommandolinje-argumenter er inndata som styres via terminalet når du kjører et skript. De hjelper programmerere med å øke fleksibiliteten og tilpasningsevnen til kodeskriptene sine.
-
-## Slik gjør du:
-
-Å lese kommandolinje-argumenter i Bash er enkelt. Argumentene blir lagret i spesielle variabler ($0,$1,$2,...). Her er et eksempel:
-
+## Hvordan:
 ```Bash
 #!/bin/bash
-echo "Skriptnavnet er $0"
-echo "Første argument er $1"
-echo "Andre argument er $2"
+echo "Hei, $1!"
+```
+Kjør skriptet med `./hilsen.sh Verden`, og du får:
+```
+Hei, Verden!
+```
+For å håndtere flere argumenter:
+```Bash
+#!/bin/bash
+echo "Hei, $1!"
+echo "Velkommen til $2 kurs."
+```
+Kjør med `./hilsen.sh Ola Bash`, og resultatet er:
+```
+Hei, Ola!
+Velkommen til Bash kurs.
 ```
 
-Bruk skriptet slik: `./skript.sh arg1 arg2` . Og output blir:
+## Dypdykk
+Kommandolinjeargumenter ble introdusert tidlig i UNIX-historien for at skript og programmer skulle kunne håndtere ulike situasjoner uten endringer. `$1`, `$2`, og så videre representerer hvert sitt argument. `$0` er selve skriptnavnet.
 
-```
-Skriptnavnet er ./skript.sh
-Første argument er arg1
-Andre argument er arg2
-```
+Åpne filer eller prosesser med navn som argumenter er en vanlig praksis. Alternativer til `$1` inkluderer `getopts` for mere avanserte alternativer og `shift` for å traversere argumenter.
 
-## Deep Dive
+Når det gjelder implementasjonsdetaljer, husk på at ubrukte argumenter ignoreres. Sjekk alltid for gyldighet og antall argumenter for robusthet. Bruk `$#` til å få antall argumenter. 
 
-Kommandolinje-argumenter i Bash har røtter tilbake til de tidlige dagene av UNIX. De gir brukeren mulighet til å påvirke skriptenes oppførsel uten å måtte endre koden.
-
-Alternativene til dem inkluderer bruk av inputstrømmer eller filinput/output, men ingen av dem gir samme nivå av brukervennlighet og enkel tilpasning.
-
-Husk at antall argumenter er lagret i `$#`, og samling av alle argumentene er tilgjengelig i `$@`. `shift` kommandoen kan brukes til å 'rotete' argumentene til venstre.
-
-## Se også:
-
-- 'Command Line Parameters in Shell Script' på TutorialsPoint: https://www.tutorialspoint.com/unix/unix-command-line.htm
-- 'Special Parameters' i Bash manual: https://www.gnu.org/software/bash/manual/bash.html
-- 'Input and Output' i Advanced Bash-Scripting Guide: http://www.tldp.org/LDP/abs/html/io-redirection.html
+## Se Også
+- [The Bash Guide](https://guide.bash.academy/)
+- [Bash Scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial)
+- [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/)

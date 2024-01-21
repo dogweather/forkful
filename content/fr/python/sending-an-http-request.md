@@ -1,7 +1,8 @@
 ---
-title:                "Envoyer une requête http"
-html_title:           "Bash: Envoyer une requête http"
-simple_title:         "Envoyer une requête http"
+title:                "Envoi d'une requête HTTP"
+date:                  2024-01-20T18:00:31.642041-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Envoi d'une requête HTTP"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,37 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que et Pourquoi?
+## What & Why?
+Envoyer une requête HTTP permet à votre programme d'obtenir ou d'envoyer des données sur le web. C'est essentiel pour interagir avec des API, des services web ou tout simplement pour récupérer du contenu en ligne.
 
-Envoyer une requête HTTP, c'est comme envoyer une lettre à un serveur Web pour demander certaines informations. Les programmeurs le font pour interagir avec les API, récupérer des informations des sites Web et même envoyer des données sur Internet.
+## How to:
+Utiliser Python pour envoyer des requêtes HTTP est simple avec la bibliothèque `requests`. D'abord, installez-le si ce n'est pas déjà fait :
 
-## Comment faire:
+```bash
+pip install requests
+```
 
-En Python, nous utilisons le module `requests` pour envoyer des requêtes HTTP :
+Ensuite, un exemple basique pour récupérer le contenu d'une page web :
 
 ```Python
 import requests
 
 reponse = requests.get('https://www.example.com')
-print(reponse.text)
+print(reponse.status_code)
+print(reponse.text[:200])  # Affiche les 200 premiers caractères du contenu.
 ```
 
-Dans cet exemple, nous demandons au serveur de 'https://www.example.com' de nous envoyer son contenu. Si tout va bien, les données de la page Web s'afficheront.
+Pour envoyer des données en utilisant POST :
 
-## Plongeons plus profondément 
+```Python
+donnees = {'key': 'value'}
+reponse = requests.post('https://www.example.com', data=donnees)
+print(reponse.status_code)
+```
 
-Historiquement, nous utilisions httplib ou urllib en Python pour les requêtes HTTP, mais elles sont trop verboses et compliquées. `Requests` est devenu le standard de facto en raison de sa simplicité.
+Résultats typiques :
 
-Un autre module courant pour traiter les requêtes HTTP en Python est `http.client` (anciennement httplib), qui fait partie de la bibliothèque standard. 
+```
+200
+<!doctype html> ...
+```
 
-En termes d'implémentation, lorsqu'une requête est envoyée, elle passe par plusieurs couches (SSL, TCP, IP) avant d'arriver au serveur. Le serveur traite la requête et renvoie une réponse, qui suit le même chemin de retour jusqu'à votre application.
+```
+200
+```
 
-Noter:
-- Une requête GET est envoyée dans l'exemple, mais d'autres types de requêtes peuvent être envoyées comme POST, DELETE, PUT, etc.
-- Chaque requête HTTP a un code de statut. Un code "200" signifie que tout s'est bien passé.
+## Deep Dive
+Historiquement, l'envoi de requêtes HTTP s'effectuait en Python avec `urllib`. `requests` est apparu comme une alternative plus simple et plus conviviale. 
 
-## Voir aussi 
+Contrairement à `urllib`, `requests` simplifie le processus en gérant automatiquement les cookies, les en-têtes et les paramètres, rendant le code plus intuitif. De plus, `requests` gère les exceptions plus clairement et supporte mieux les sessions HTTP.
 
-- Documentation Python requests : https://docs.python-requests.org/fr/latest/
-- Explainer sur les requêtes HTTP : https://developer.mozilla.org/fr/docs/Web/HTTP/Overview
-- Tutoriel sur l'interaction avec les API à l'aide de requests : https://realpython.com/python-requests/#the-get-request
+Par exemple, avec `requests` on peut gérer une session avec context manager, comme ceci :
+
+```Python
+with requests.Session() as session:
+    session.get('https://www.example.com')  # utilise des cookies persistants si nécessaire
+```
+
+Un autre point fort de `requests` est la gestion des requêtes asynchrones via `requests-async` ou `httpx` pour des workflows encore plus efficaces.
+
+## See Also
+- Documentation de `requests`: https://requests.readthedocs.io/en/master/
+- Comparaison entre `requests` et `urllib`: https://findwork.dev/blog/advanced-usage-python-requests-timeouts-retries-hooks/
+- `httpx`, une bibliothèque tierce pour les requêtes HTTP asynchrones: https://www.encode.io/httpx/

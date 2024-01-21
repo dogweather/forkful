@@ -1,7 +1,8 @@
 ---
-title:                "Befehlszeilenargumente lesen"
-html_title:           "Arduino: Befehlszeilenargumente lesen"
-simple_title:         "Befehlszeilenargumente lesen"
+title:                "Lesen von Kommandozeilenargumenten"
+date:                  2024-01-20T17:57:04.755367-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lesen von Kommandozeilenargumenten"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,38 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Lesen der Befehlszeilenargumente in Swift
-
 ## Was & Warum?
-Befehlszeilenargumente sind Werte, die Sie an Ihr Programm beim Start über die Befehlszeile übergeben. Sie geben Programmierern die Möglichkeit, das Verhalten des Programms zu ändern, ohne den Code anpassen zu müssen.
+Das Lesen von Kommandozeilenargumenten ermöglicht es deinen Swift-Programmen, beim Start Input zu erhalten – praktisch für flexible Tools und Automatisierung. Programmierer nutzen das, um ihre Anwendungen an verschiedene Szenarien anzupassen, ohne den Code zu ändern.
 
 ## So geht's:
+Swift macht das Einlesen von Kommandozeilenargumenten einfach. `CommandLine.arguments` enthält alle Argumente als `[String]`, direkt loslegen:
 
-Sie können auf Befehlszeilenargumente in Swift über das `CommandLine` Verzeichnis zugreifen. Hier ist ein Beispielcode:
-
-```Swift
-let argumente = CommandLine.arguments
-
-for argument in argumente {
-    print("Argument: \(argument)")
+```swift
+// main.swift
+for arg in CommandLine.arguments {
+    print(arg)
 }
 ```
 
-Wenn Sie dieses Programm mit `swift program.swift arg1 arg2` ausführen, sehen Sie folgende Ausgabe:
+Wenn du das Programm mit `swift main.swift eins zwei drei` ausführst, bekommst du:
 
-```Swift
-Argument: program.swift
-Argument: arg1
-Argument: arg2
+```
+main.swift
+eins
+zwei
+drei
 ```
 
-## Vertiefung
+## Tiefgang:
+Historisch gesehen kommen Kommandozeilenargumente aus den Zeiten vor grafischen Oberflächen. Nutzer interagierten textbasiert mit dem Betriebssystem.
 
-Historisch gesehen stammen Befehlszeilenargumente aus der Zeit der ersten Betriebssysteme und Sprachen wie C und Bash. In Swift haben wir Zugang zum `CommandLine.arguments` Array. Da Swift auf halbem Wege zwischen Hoch- und Niedrigsprachen liegt, gibt es keine eingebauten Hilfsfunktionen zur Verarbeitung der Argumente. 
+Alternativen zu `CommandLine.arguments` inkludieren Umgebungsvariablen (`ProcessInfo.processInfo.environment`) oder spezielle Parsing-Bibliotheken, die mehr Komplexität erlauben, etwa [Swift Argument Parser](https://github.com/apple/swift-argument-parser).
 
-Es gibt jedoch Alternativen. Frameworks wie Swift Argument Parser bieten detailliertere Funktionen für Befehlszeilenargumente. Sie können die Argumente als Typen behandeln und sogar automatisierte Hilfe und Fehlermeldungen erzeugen.
+Bei der Implementierung solltest du berücksichtigen, dass `CommandLine.arguments` das erste Argument, den Pfad zur ausführbaren Datei, immer enthält. Nicht-Kommandozeilenprogramme sollten das nicht nutzen – es gibt bessere Wege, um mit einem Benutzer zu interagieren.
 
-## Siehe auch
-
-- Swift Argument Parser: [Swift Argument Parser auf Github](https://github.com/apple/swift-argument-parser)
-- Blog über die Verwendung des Swift Argument Parser: [Swift Argument Parser Tutorial](https://www.hackingwithswift.com/articles/216/complete-guide-to-swift-argumentparser)
+## Siehe auch:
+- Apple's Dokumentation zu [ProcessInfo](https://developer.apple.com/documentation/foundation/processinfo) und [CommandLine](https://developer.apple.com/documentation/swift/commandline).
+- Der offizielle Swift Blog Beitrag über den [Swift Argument Parser](https://swift.org/blog/argument-parser/).
+- Eine Anleitung zum Parsing von Kommandozeilenargumenten mit dem Swift Argument Parser: [Ray Wenderlich Tutorial](https://www.raywenderlich.com/511-command-line-programs-on-macos-tutorial).

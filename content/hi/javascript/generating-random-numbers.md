@@ -1,7 +1,8 @@
 ---
-title:                "यादृच्छिक संख्याओं का निर्माण"
-html_title:           "Clojure: यादृच्छिक संख्याओं का निर्माण"
-simple_title:         "यादृच्छिक संख्याओं का निर्माण"
+title:                "यादृच्छिक संख्याएँ उत्पन्न करना"
+date:                  2024-01-20T17:49:58.973520-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Numbers"
@@ -10,29 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या & क्यों? (What & Why?)
-यादृच्छिक संख्याओं का उत्पादन यदि आपके कोड का हिस्सा है, तो यह अद्वितीयता और अप्रत्याशितता को सुनिश्चित करता है। खेलों, एन्क्रिप्शन, एल्गोरिदमों आदि में प्रोग्रामर्स इसे उपयोग करते हैं।
+## What & Why? (क्या और क्यों?)
+जावास्क्रिप्ट में यादृच्छिक संख्याएँ (random numbers) उत्पन्न करना मतलब है कि प्रत्येक बार कोड चलते समय अलग-अलग संख्याओं का प्राप्त करना। गेम्स, सिमुलेशन, टेस्टिंग, और सुरक्षा (जैसे कि OTPs में) में अक्सर ऐसी संख्याओं की जरूरत होती है।
 
-## कैसे: (How to:)
-Javascript में, `Math.random()` फ़ंक्शन एक यादृच्छिक संख्या उत्पन्न करता है।
+## How to: (कैसे करें:)
 ```Javascript
-let randomNo = Math.random();
-console.log(randomNo);
+// सिंपल रैंडम नंबर 0 से 1 के बीच
+console.log(Math.random());
+
+// 1 से 100 के बीच रैंडम इंटेजर के लिए
+console.log(Math.floor(Math.random() * 100) + 1);
 ```
-उदाहरण के लिए, अगर आप `0` और `10` के बीच एक यादृच्छिक संख्या चाहते हैं तो,
-```Javascript
-let randomNo = Math.floor(Math.random() * 11);
-console.log(randomNo);
+सैंपल आउटपुट:
 ```
+0.432423432423
+57
+```
+`Math.random()` फंक्शन एक यादृच्छिक संख्या देता है, जिसे हम आवश्यकता अनुसार संशोधित कर सकते हैं।
 
-## गहरा डाइव (Deep Dive)
-यादृच्छिक संख्या उत्पन्न करने का आविष्कार 20वीं सदी की शुरुआत में हुआ था और यह क्रॉनिक श्रृंखला के नाम से जाना जाता था।
+## Deep Dive (गहराई में जानकारी)
+जावास्क्रिप्ट के शुरुआती दिनों से `Math.random()` यादृच्छिक संख्याएँ उत्पन्न करने का मानक तरीका रहा है। यह एक पीआरएनजी (Pseudorandom Number Generator) है, जो वास्तविक यादृच्छिकता नहीं होती, लेकिन प्रैक्टिकल यूज़ के लिए पर्याप्त होती है। यदि आपको क्रिप्टोग्राफिक रूप से सुरक्षित यादृच्छिक संख्याओं की आवश्यकता हो, `crypto.getRandomValues()` विकल्प देखें।
 
-बदले में, `crypto.getRandomValues()` और Web Crypto API लागू कर सकते हैं - यादृच्छिक बाइट्स उत्पन्न करता है।
-
-`Math.random()` उत्पन्न अविश्वसनीय यादृच्छिक संख्याएं उत्पन्न करता है। इसका परिणाम सोचम सीड (seed) का प्रयोग करता है।
-
-## भी देखें: (See Also:)
-1. [MDN Web Docs - Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-2. [MDN Web Docs - crypto.getRandomValues()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues)
-3. [Wikipedia - Pseudorandomness](https://en.wikipedia.org/wiki/Pseudorandomness)
+## See Also (और भी देखें)
+- MDN Web Docs के [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) पेज पर जाकर आप और भी गहराई से समझ सकते हैं।

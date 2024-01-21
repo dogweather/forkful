@@ -1,7 +1,8 @@
 ---
-title:                "Utskrift av feilsøkingsresultat"
-html_title:           "Arduino: Utskrift av feilsøkingsresultat"
-simple_title:         "Utskrift av feilsøkingsresultat"
+title:                "Skrive ut feilsøkingsdata"
+date:                  2024-01-20T17:52:55.826173-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skrive ut feilsøkingsdata"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -11,30 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å skrive ut feilsøkingsdata, eller "debug output", lar utviklere se hva som skjer i koden under kjøring. Vi gjør det for å forstå feil, optimalisere ytelsen og bekrefte at alt fungerer som det skal.
 
-Å trykke ut feilsøkingsdata ('debug output' på engelsk) er prosessen med å vise kodeinformasjon på skjermen for testing og feilsøking. Programmerere gjør dette for lettere å merke feil, se inneværende verdier på variable, og oppnå mer innsikt i hvordan koden kjører.
-
-## Hvordan gjøre det:
-
-Her er en enkel måte å trykke ut feilsøkingsdata på i Javascript:
+## Hvordan:
+Bruk `console.log()` for å skrive ut verdier til konsollen. Her er et eksempel:
 
 ```Javascript
-console.log("Hello, World!"); // Resultat: Hello, World!
-let x = 5;
-console.log("Verdien av x er: ", x); // Resultat: Verdien av x er: 5
+let frukt = 'Eple';
+console.log(frukt); // Skriver ut: Eple
 ```
-Å bruke `console.log()` er den mest brukte måten å feilsøke i Javascript, Linjen vil bli printet til Javascript konsollen i din nettside's utviklerverktøy.
 
-## Dypdykk
+Ønsker du mer komplisert datastruktur, bruk `JSON.stringify()`:
 
-I historisk sammenheng, begynte bruk av feilsøkingsutskrift i de mest primitive datamaskinene, der man faktisk skrev ut resultater på papir. Nå er det en integrert del av moderne programmeringspraksis, spesielt i dynamiske språk som Javascript.
+```Javascript
+let bil = { merke: 'Tesla', modell: 'Model S' };
+console.log(JSON.stringify(bil, null, 2));
+// Output:
+// {
+//   "merke": "Tesla",
+//   "modell": "Model S"
+// }
+```
 
-Alternativer til `console.log()` inkluderer `console.error()` og `console.warn()`, som også skriver til konsollen, men blir merket som feil eller advarsler, som kan være nyttig for å skille mellom ulike typer debug output.
+For å fikse funksjoner, bruk `console.log()` inni funksjonen:
 
-På implementeringsnivå, går `console.log()`-meldinger direkte til webleserens Javascript engine, hvor de blir skrevet ut til konsollen.
+```Javascript
+function add(a, b) {
+  console.log(`Legger sammen: ${a} + ${b}`);
+  return a + b;
+}
 
-## Se Også
+let sum = add(5, 7);
+// Konsoll: Legger sammen: 5 + 7
+```
 
-For mer detaljert informasjon om feilsøkingsutskrift i Javascript, se disse kildene:
-- [Mozilla Developer Network - console](https://developer.mozilla.org/en-US/docs/Web/API/Console)
-- [Google Developers - Get Started with Debugging JavaScript in Chrome DevTools](https://developer.chrome.com/docs/devtools/javascript/)
+## Dykking:
+Utskrift til konsollen for feilsøking har vært standard siden de gamle dager av programmering. Alternativer til `console.log()` inkluderer mer avanserte verktøy som debuggere, som lar deg pause kodekøringen og inspisere variabler. Implementasjonen av `console.log()` og lignende funksjoner kan variere mellom ulike JavaScript-motorer, som V8 (Chrome, Node.js) og SpiderMonkey (Firefox), men funksjonaliteten er stort sett lik.
+
+For visning av tabellformat, bruk `console.table()`:
+
+```Javascript
+let folk = [{ navn: 'Erik', alder: 30 }, { navn: 'Anna', alder: 25 }];
+console.table(folk);
+```
+
+For å filtrere loggnivåer etter viktighet, bruk funksjoner som `console.info()`, `console.warn()`, og `console.error()` for hhv. informativ, advarsel- og feilmeldingsutskrift.
+
+## Se Også:
+- MDN Web Docs - Console: https://developer.mozilla.org/en-US/docs/Web/API/console
+- Node.js debugging guide: https://nodejs.org/en/docs/guides/debugging-getting-started/
+- Chrome DevTools JavaScript debugger: https://developers.google.com/web/tools/chrome-devtools/javascript/

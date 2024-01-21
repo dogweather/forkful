@@ -1,6 +1,7 @@
 ---
 title:                "חיפוש והחלפת טקסט"
-html_title:           "Elm: חיפוש והחלפת טקסט"
+date:                  2024-01-20T17:59:07.703476-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חיפוש והחלפת טקסט"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,34 +12,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+חיפוש והחלפת טקסט הם פעולות נפוצות שמאפשרות לך לאתר חלקי טקסט במחרוזת ולשנות אותם. תוכניתנים עושים זאת לשם תחזוקה, ניקוי נתונים או תיקונים אוטומטיים.
 
-חיפוש והחלפת טקסט הם פעולות שמאפשרות לנו למצוא כל מילה או פרגמנט ולהחליף אותו בערך אחר. מתכנתים משתמשים בכך למשל בשדרוג codebase או בהתאמות של השפה.
+## איך לעשות:
+```typescript
+let greeting: string = 'שלום, עולם! שלום לכולם!';
+let searchFor: string = 'שלום';
+let replaceWith: string = 'להתראות';
+let result: string = greeting.replace(new RegExp(searchFor, 'g'), replaceWith);
 
-## איך לממש?
-
-```TypeScript
-let str = "היי, איך אני משנה מחרוזת?";
-
-// חיפוש והחלפה ישירה
-let newStr = str.replace("מחרוזת", "string");
-console.log(newStr);  
-// Output: "היי, איך אני משנה string?"
-
-// חיפוש והחלפה של כמה מופעים
-let regex = /מחרוזת/g;
-newStr = str.replace(regex, "string");
-
-console.log(newStr); 
-// Output: "היי, איך אני משנה string?"
+console.log(result);  // Outputs: להתראות, עולם! להתראות לכולם!
 ```
 
-## צלילה עמוקה
+בדוגמא מעלה, השתמשנו ב-RegExp כדי להחליף את כל המופעים של "שלום" ב-"להתראות".
 
-1. בהקשר היסטורי: בשנת 1995 נוסף הmethod `replace()` ל- JavaScript, כחלק מהstandard  ECMA-262.
-2. אלטרנטיבות: ניתן להשתמש גם בmethods `split()` ו `join()` כדי לבצע משימות דומות. רוב המתכנתים מעדיפים `replace()`.
-3. פרטי הרצה: `replace()` בTypeScript (כמו בJavaScript) מחזיר מחרוזת חדשה ולא משנה את המחרוזת המקורית.
+## עיון מעמיק:
+חיפוש והחלפת טקסט התפתחו ככלי חשובים בעיבוד טקסטים ותכנות מהימים הראשונים של המחשבים. חלופות כוללות שימוש בפונקציות מובנות של מסדי נתונים או שימוש בספריות צד שלישי. ב-TypeScript, החלפת טקסט מבוצעת בדרך כלל על ידי המתודה `.replace()` של מחרוזת, עם פרמטרים לחיפוש או ביטוי רגולרי ולמחרוזת ההחלפה.
 
 ## ראו גם:
-
-1. [מסמך האפיון של ECMA-262](https://www.ecma-international.org/ecma-262/10.0/index.html#sec-string.prototype.replace)
-2. [MDN Web Docs - String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [MDN Web Docs on replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [Regular Expressions (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)

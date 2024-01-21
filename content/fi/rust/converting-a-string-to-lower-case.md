@@ -1,7 +1,8 @@
 ---
-title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
-html_title:           "Gleam: Merkkijonon muuttaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+date:                  2024-01-20T17:39:48.492908-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,28 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+"Mikä & Miksi?"
 
-Muunnetaan merkkijono pienaakkosiksi tarkoittaa, että jokainen isoaakkonen merkkijonossa muunnetaan vastaavaksi pienaakkoseksi. Tämä on hyödyllistä erityisesti vertailutilanteissa, joissa halutaan ohittaa kirjaintyyppien aiheuttamat erot: esim. hakukoneet tai käyttäjän syötteen käsittely.
+Muuttaa merkkijonon pieniksi kirjaimiksi. Tämä helpottaa vertailua ja hakua, koska isot ja pienet kirjaimet kohdellaan samoin.
 
-## Kuinka:
+## How to:
+"Kuinka tehdä:"
 
 ```Rust
 fn main() {
-    let s = "Moi SUOMI!";
-    println!("{}", s.to_lowercase());
+    let original = "Moikka Maailma!";
+    let lowercased = original.to_lowercase();
+
+    println!("{}", lowercased);
+    // Tulostuu: "moikka maailma!"
 }
 ```
 
-Tässä ohjelman tuloste on "moi suomi!".
+## Deep Dive
+"Sukellus syvyyksiin"
 
-## Syväsukellus
+Rustin to_lowercase-funktio muuttaa merkkijonot pieniksi kirjaimiksi Unicode-standardin mukaisesti. Se ottaa huomioon eri kielet ja erikoistapaukset, ei vain ASCII-merkkejä. Tämä tehtiin siksi, että Rust tukee monia alustoja ja kulttuureja.
 
-1. Historiallinen yhteys: Merkkijonojen pienennys on ollut tarpeellista ohjelmoinnin alkuaikojen jälkeen, kun tietokoneet alkoivat käsitellä tekstiä. 
-2. Vaihtoehdot: Rust tarjoaa muitakin tapoja työskennellä merkkijonojen kanssa, kuten `to_uppercase()` isoaakkosten luomiseksi.
-3. Toteutus: Metodi `to_lowercase()` Rustissa tekee kopion merkkijonosta ja muuntaa kaikki isoaakkoset pienaakkosiksi. Huomaa: tämä ottaa huomioon myös ei-latinalaiset merkit!
+Vaihtoehtoja ovat mm. ASCII-toimintoja käyttävä to_ascii_lowercase, joka ei huomioi lokaalisia erityispiirteitä. Näin on olemassa kompromissi nopeuden ja täydellisen tuen välillä.
 
-## Katso myös:
+Mitä toteutukseen tulee, Rust käyttää tehokkaita iterointimekanismeja ja merkkijonojen käsittely on suunniteltu niin, että muistinkäyttö on optimaalinen ja turvallinen.
 
-[Rust-Ohjekirja: Merkkijonot](https://doc.rust-lang.org/book/ch08-02-strings.html)
-[Rust-Standardikirjasto: to_lowercase()](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase)
+## See Also
+"Katso myös"
+
+- Rust-dokumentaatio to_lowercase-funktiosta: [https://doc.rust-lang.org/std/primitive.str.html#method.to_lowercase](https://doc.rust-lang.org/std/primitive.str.html#method.to_lowercase)
+- Unicode-standardi: [http://www.unicode.org/](http://www.unicode.org/)
+- Vertailu Rustin iterointimekanismeista: [https://doc.rust-lang.org/book/ch13-02-iterators.html](https://doc.rust-lang.org/book/ch13-02-iterators.html)

@@ -1,7 +1,9 @@
 ---
-title:                "Calculer une date dans le futur ou le passé"
-html_title:           "C#: Calculer une date dans le futur ou le passé"
-simple_title:         "Calculer une date dans le futur ou le passé"
+title:                "Calcul d'une date future ou passée"
+date:                  2024-01-20T17:28:42.102902-07:00
+model:                 gpt-4-1106-preview
+html_title:           "C++: Calcul d'une date future ou passée"
+simple_title:         "Calcul d'une date future ou passée"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,45 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Calculer une date dans le futur ou le passé en C#
+## Quoi & Pourquoi ?
 
-## Qu'est-ce et pourquoi?
+Calculer une date dans le futur ou le passé, c'est juste ajuster une date actuelle pour trouver une autre date. Les développeurs le font pour gérer des abonnements, des échéances ou des événements futurs, et pour enregistrer ou analyser des événements passés.
 
-Calculer une date dans le futur ou le passé signifie définir une date précise en avant ou en arrière à partir de la date actuelle. Les programmeurs en ont besoin pour gérer efficacement le temps dans les applications, comme la programmation d'événements ou le suivi des délais.
+## Comment faire :
 
-## Comment faire
-
-Voici comment calculer une date dans le futur et dans le passé avec C# :
+Voici comment on joue avec les dates en C# :
 
 ```C#
-// Obtention de la date d'aujourd'hui
-DateTime today = DateTime.Now;
+using System;
 
-// Calcul d'une date dans le futur
-DateTime futureDate = today.AddDays(30);
-Console.WriteLine(futureDate);
-
-// Calcul d'une date dans le passé
-DateTime pastDate = today.AddDays(-30);
-Console.WriteLine(pastDate);
+class ManipulationDates
+{
+    static void Main()
+    {
+        DateTime today = DateTime.Now;
+        
+        // Ajouter 10 jours
+        DateTime futureDate = today.AddDays(10);
+        Console.WriteLine(futureDate.ToShortDateString());
+        
+        // Enlever 5 jours
+        DateTime pastDate = today.AddDays(-5);
+        Console.WriteLine(pastDate.ToShortDateString());
+    }
+}
 ```
-Exemple de sortie :
+
+Si aujourd'hui c'est le 12 avril 2023, le programme affichera :
 
 ```
-2022-03-15 13:14:22
-2022-01-15 13:14:22
+22/04/2023
+07/04/2023
 ```
 
-## Examen approfondi
+## Exploration :
 
-Le calcul des dates dans le futur ou le passé est une pratique courante depuis les débuts de l'informatique. Pour un contexte historique, l'horloge interne des ordinateurs a été conçue pour compter les secondes passées depuis une date spécifique, à savoir le 1er janvier 1970. Cette date est communément appelée l' "epoch Unix".
+**Contexte historique :** Avant .NET, on manipulait les dates en C# avec plus de peine. `DateTime` a simplifié la vie. 
 
-En ce qui concerne les alternatives, vous pouvez utiliser également Noda Time - une bibliothèque pour le calcul du temps en C#. Elle offre plus de flexibilité et de précision que les méthodes standard de DateTime en C#.
+**Alternatives :** On peut aussi utiliser `TimeSpan` pour des durées, ou `DateTimeOffset` pour les fuseaux horaires. Il y a la bibliothèque NodaTime aussi, pour les casse-têtes de date et heure.
 
-Pour ce qui est des détails de mise en œuvre, C# rend le calcul d'une date dans le futur ou le passé plutôt simple grâce à ses méthodes intégrées. Par exemple, `AddDays` est une méthode de la classe `DateTime`, qui retourne une nouvelle instance de `DateTime` après l'ajout du nombre spécifié de jours à l'instance `DateTime`.
+**Détails d'implémentation :** `AddDays` est pratique mais attention aux années bissextiles et changements d'heure. C# s'occupe de ces détails, mais il faut quand même tester pour des cas spéciaux.
 
-## Pour en savoir plus
+## Voir Aussi :
 
-- Documentation .NET sur DateTime: [https://docs.microsoft.com/fr-fr/dotnet/api/system.datetime](https://docs.microsoft.com/fr-fr/dotnet/api/system.datetime)
-- Bibliothèque Noda Time : [https://nodatime.org/](https://nodatime.org/)
-- "Epoch Unix" Wikipédia : [https://fr.wikipedia.org/wiki/Heure_Unix](https://fr.wikipedia.org/wiki/Heure_Unix)
+- Documentation Microsoft sur DateTime : [docs.microsoft.com/dotnet/api/system.datetime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
+- NodaTime, pour aller plus loin : [nodatime.org](https://nodatime.org/)

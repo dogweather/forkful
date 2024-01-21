@@ -1,7 +1,8 @@
 ---
-title:                "Skicka en http-begäran med grundläggande autentisering"
-html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
-simple_title:         "Skicka en http-begäran med grundläggande autentisering"
+title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
+date:                  2024-01-20T18:01:50.047790-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,34 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
-Att skicka en HTTP-begäran med grundläggande autentisering innebär att ett program framför en begäran till en server med användarnamn och lösenord. Programmerare gör det för att få åtkomst till skyddade resurser på en server.
+## Vad & Varför?
+Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att du inkluderar användarnamn och lösenord i förfrågningen för att få tillgång till skyddad data. Programmerare gör detta för att interagera med API:er som kräver enkel men säker användarverifiering.
 
-## Hur man gör: 
-Här är ett exempel på hur man använder HTTP-klientbiblioteket för att skicka en HTTP-begäran med grundläggande autentisering i Haskell.
+## Hur man gör:
+Här är ett exempel i Haskell med `http-client` och `base64-bytestring` för att skicka en HTTP GET-förfrågan med grundläggande autentisering:
 
 ```Haskell
 import Network.HTTP.Client
-import Network.HTTP.Client.TLS
+import Network.HTTP.Types.Header (hAuthorization)
+import Data.ByteString.Base64 (encode)
+import Data.ByteString.Char8 (pack, append)
 
-main :: IO ()
-main = do
-    manager <- newManager tlsManagerSettings
-    let request = applyBasicAuth "username" "password"
-                  $ defaultRequest
-                  { method = "GET"
-                  , host = "example.com"
-                  }
-    response <- httpLbs request manager
-    print $ responseBody response
+-- Konfigurera HTTP-manager
+manager <- newManager defaultManagerSettings
+
+-- Bygg URL och autentiseringsuppgifter
+let url = "https://example.com/api/data"
+let credentials = "användarnamn:lösenord"
+let authHeader = "Basic " `append` (encode . pack $ credentials)
+
+-- Skapa förfrågan och inkludera autentiseringsheader
+request <- parseRequest url
+let requestWithAuth = request { requestHeaders = [(hAuthorization, authHeader)] }
+
+-- Skicka förfrågan och få svar
+response <- httpLbs requestWithAuth manager
+
+-- Skriv ut svaret
+putStrLn $ show (responseBody response)
 ```
-Första delen skapar en ny HTTP-manager med TLS-stöd (för HTTPS-förfrågningar). Sedan skapas en förfrågan med `applyBasicAuth` som tillämpar grundläggande autentisering, och `defaultRequest` sätter upp resten av förfrågan. Slutligen skickas förfrågan med `httpLbs`.
 
-## Djupdykning
-Att skicka HTTP-förfrågningar med grundläggande autentisering har använts länge och står som en standard i RFC 7617. Alternativ till grundläggande autentisering inkluderar Digest Access Authentication och mer moderna tekniker som OAuth.
+I det här exemplet ska du ersätta `"användarnamn:lösenord"` med dina faktiska autentiseringsuppgifter. Efter att ha kört koden bör du se svaret från servern. Kom ihåg att hålla dina autentiseringsuppgifter säkra!
 
-Utförandet av en HTTP-begäran med grundläggande autentisering i Haskell innebär att användarnamn och lösenord kodas till Base64 och läggs till i `Authorization`-huvudet i HTTP-begäran.
+## Fördjupning
+Grundläggande autentisering är en del av HTTP-protokollet sedan det skapades på 90-talet. Det är inte den säkraste metoden men det är lätt att implementera och fungerar därför bra för enklare use cases eller interna nätverk.
 
-## Se även
-[Haskell HTTP klients officiella dokumentation](http://hackage.haskell.org/package/http-client-0.7.8/docs/Network-HTTP-Client.html)
-[RFC 7617 - Basic Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+Alternativ till grundläggande autentisering inkluderar OAuth och API-nycklar, som båda erbjuder högre säkerhetsnivåer. I Haskell kan du använda bibliotek som `wreq` eller `http-conduit` för flexibilitet och fler autentiseringsmetoder.
+
+En viktig detalj när du använder grundläggande autentisering är att alltid använda HTTPS för att förhindra att din trafik avlyssnas. Att skicka autentiseringsuppgifter okrypterat över HTTP är en stor säkerhetsrisk.
+
+## Se Även
+- HTTP-client dokumentation: https://hackage.haskell.org/package/http-client
+- Base64-bytestring dokumentation: https://hackage.haskell.org/package/base64-bytestring
+- Hur man arbetar säkert med HTTP i Haskell: https://www.yesodweb.com/book/http-client

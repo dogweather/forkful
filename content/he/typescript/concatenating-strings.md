@@ -1,7 +1,8 @@
 ---
-title:                "חיבור מחרוזות"
-html_title:           "C++: חיבור מחרוזות"
-simple_title:         "חיבור מחרוזות"
+title:                "שרשור מחרוזות"
+date:                  2024-01-20T17:36:24.794599-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרשור מחרוזות"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -11,20 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-השרשור של מחרוזות הוא התהליך שבו אנו מחברים שתי מחרוזות או יותר למחרוזת אחת. מתכנתים עושים את זה למגוון של סיבות, מהתאמה לצורך השליחה של נתונים כטקסט.
+צירופי מחרוזות הוא פשוט לקחת שתי מחרוזות (או יותר) ולהדביק אותן יחד לאחת. תכנתים שעושים זאת כדי ליצור טקסט משולב, לבנות משפטים דינמיים, או להוסיף מידע לפלט.
 
 ## איך לעשות:
-הנה דוגמה של קוד שמשרשר מחרוזות ב-TypeScript:
+```typescript
+let greeting = 'שלום';
+let target = 'עולם';
+let message = greeting + ', ' + target + '!'; // צירוף עם אופרטור +
+console.log(message); // "שלום, עולם!"
 
-```TypeScript
-let str1: string = "שלום, ";
-let str2: string = "עולם!";
-let str3: string = str1.concat(str2);
-console.log(str3);  // "שלום, עולם!"
+// עם תבנית מיתר (Template Literals)
+message = `${greeting}, ${target}!`;
+console.log(message); // "שלום, עולם!"
+
+// צירוף מערך של מחרוזות עם מפריד
+let colors = ["אדום", "ירוק", "כחול"];
+let listOfColors = colors.join(", ");
+console.log(listOfColors); // "אדום, ירוק, כחול"
 ```
 
-## הצצה לעומק:
-שיטת שרשור מחרוזות התפתחה הרבה לפני שפת התכנות טייפסקריפט. היא נעשתה מקובלת בשפות רבות מאז השנים הראשונות של התכנות. בטייפסקריפט, ישנם דרכים נוספות לעבוד עם מחרוזות מלבד `concat()`, כולל באמצעות תו האסוציאציה (`${}`). יתרה מכך, TypeScript מתאים למערכת סוג של JavaScript, שהיא לא ניתן לסוג, ומאפשרת גמישות רבה בטיפול במחרוזות.
+## נסוף במבט מעמיק
+בעבר, כשהרי קוד לא היו נוחים ומשתמשי עומסים נמוכים, צירוף מחרוזות הוא פעולה שנראתה יקרה. היום, זו פעולה יעילה ושכיחה. ישנן דרכים שונות לצרף מחרוזות ב-TypeScript כמו אופרטור `+` או template literals, שהם יותר קריאים וקלים לניהול. `Array.join()` שימושי כאשר צריך לצרף רשימה של מחרוזות עם מפריד קבוע. במקרה של הביצועים, ההבדלים כיום הם זניחים לרוב השימושים, אבל במידרג רשימות גדולות template literals יכולים להיות יותר יעילים מקטינת שימוש בזיכרון.
 
-## ראה גם:
-- [String ב- MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+## ראה גם
+- [MDN String Concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [TypeScript Handbook - Template Strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#template-strings)
+- [JavaScript Performance - Concatenation vs. Template Literals](https://medium.com/@KevinBGreene/javascript-performance-string-concatenation-vs-template-literals-eecbfde1d2d3)

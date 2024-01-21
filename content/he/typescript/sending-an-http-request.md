@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http"
-html_title:           "Bash: שליחת בקשת http"
-simple_title:         "שליחת בקשת http"
+title:                "שליחת בקשת HTTP"
+date:                  2024-01-20T18:00:57.448884-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,30 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-שליחת בקשה HTTP היא בראש ובראשונה תקשורת בין שני מחשבים דרך האינטרנט:  אחד ששולח (Client) והשני שמקבל (Server). מהו המטרה? נפוח מאד, בין היתר לקריאת נתונים, שינוי נתונים וביצוע פקודות/פעולות בצד השרת.
+## What & Why? (מה ולמה?)
+שליחת בקשת HTTP זה הדרך לדבר עם שרתים ברשת. פרוגרמרים עושים את זה כדי להחליף נתונים, לגשת ל-APIs, ולאפשר לאפליקציות שלהם לתקשר.
 
-## איך לכתוב:
-ראשית, התקנו את החבילה axios באמצעות הפקודה `npm install axios`. עכשיו נוכל לעשות בקשה HTTP:
+## How to (איך לעשות את זה):
+הנה קטע קוד TypeScript ששולח בקשת GET בסיסית עם `fetch` ומחזיר את התוצאה:
 
 ```TypeScript
-import axios from 'axios';
+async function fetchTodos() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Error fetching data', error);
+  }
+}
 
-axios.get('https://api.example.com/data')
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(error => {
-    console.error(error);
-  });
+fetchTodos();
 ```
 
-הפלט של הקוד הזה יהיה הנתונים שהשרת מחזיר בתגובה לבקשה שלנו.
+תוצאת דוגמה:
 
-## צלילה מעמיקה:
-בעבר, נעשה שימוש רחב של חבילת XMLHttpRequest על מנת לבצע בקשות HTTP. אך באנשי הדור החדש מעדיפים לשלוח בקשות HTTP באמצעות חבילת axios שתומכת Promise באופן מובנה ומאפשרת שליחה קלה ונוחה של בקשות HTTP.
+```json
+{
+  "userId": 1,
+  "id": 1,
+  "title": "delectus aut autem",
+  "completed": false
+}
+```
 
-חלונית שימשה ב-HTTP 2.0 כגרסה הראשונה שדילתה עם נושאים של אילתור נתונים ותקשורת יעילה בין שרת ולקוח.
+## Deep Dive (צלילה עמוקה)
+שליחת בקשות HTTP החלה בשנות ה-90 עם תחילת ה-Web. כיום, קיימים מספר אופציות ב-TypeScript, כמו `XMLHttpRequest`, `fetch`, וספריות כמו Axios. `fetch` היא מודרנית ומבוססת Promises, ולכן נוחה לשימוש. עליך לטפל בשגיאות נכון ולשים לב למידע שאתה שולח ומקבל.
 
-## ראו גם:
-1. מזהים ל-APIים מרשת על מנת לבדוק בקשות HTTP - https://www.postman.com/
+## See Also (ראו גם)
+- [MDN Web Docs - fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- [Axios library](https://github.com/axios/axios)
+- [JSONPlaceholder for fake Online REST API](https://jsonplaceholder.typicode.com/)

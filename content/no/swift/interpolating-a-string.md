@@ -1,6 +1,7 @@
 ---
 title:                "Interpolering av en streng"
-html_title:           "Bash: Interpolering av en streng"
+date:                  2024-01-20T17:51:35.531592-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolering av en streng"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,54 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why?
+Stringinterpolasjon lar deg sette variabler rett inn i strenger. Det forenkler kombinasjonen av statisk tekst og variabler, noe som gjør koden mer leselig og vedlikeholdbar.
 
-## Hva & Hvorfor?
-
-Stringinterpolering er prosessen å sette variabler eller uttrykk inn i en streng. Programmerere bruker det for å gjøre koden lettere å lese og for å samle og presentere data på en enkel måte.
-
----
-
-## Hvordan gjøre det: 
-
-Her er et enkelt eksempel på string-interpolering i Swift:
-
-```swift
-var brukerNavn = "Ola"
-print("Hei, \(brukerNavn)!")
+## How to:
+```Swift
+let name = "Ola"
+let welcomeMessage = "Hei, \(name)!"
+print(welcomeMessage)
 ```
+Output: `Hei, Ola!`
 
-Utskriften vil være: 
-
+```Swift
+let apples = 3
+let oranges = 5
+let fruitSummary = "Jeg har \(apples + oranges) frukter totalt."
+print(fruitSummary)
 ```
-Hei, Ola!
-```
+Output: `Jeg har 8 frukter totalt.`
 
-Du kan også legge inn matematiske uttrykk direkte i stringen:
+## Deep Dive
+Stringinterpolasjon har vært en del av Swift siden begynnelsen i 2014. Alternativer inkluderer sammenslåing av strenger med `+` og formatfunksjoner som `String(format:)`, men disse kan være klønete. Interpolasjon er implisitt, så du trenger ikke en ekstra funksjon eller operatør. Teknisk sett bruker Swift `CustomStringConvertible` protokollen, som lar typer definere hvordan de skal omdannes til strenger. Dette gjør interpolasjon svært kraftig, siden det kan håndtere nesten hvilken som helst datatype ved å automatisere konverteringsprosessen basert på typens implementasjon av `description` egenskapen.
 
-```swift
-print("Fire ganger fire blir \(4 * 4)")
-```
-
-Utskriften vil være: 
-
-```
-Fire ganger fire blir 16
-```
-
----
-
-## Dypdykk
-
-Swift ble introdusert i 2014 av Apple, som en forbedring fra Objective-C, men med metoder for stringinterpolering inspirert av andre moderne programmeringsspråk som Ruby.
-
-Et alternativ til stringinterpolering ville være traditionelle metoder for sammenføyning av strenger, men disse er ofte mindre leselige og mer tidkrevende å skrive.
-
-Når det kommer til implementasjonsdetaljer, konverterer Swift de interpolerte delene av strengen til den riktige stringify-representasjonen først og deretter setter sammen de fullførte strengene.
-
----
-
-## Se også:
-
-- Swift dokumentasjon om String interpolation: [Hvis du vil lære mer](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- Andre moderne bruk av stringinterpolering: [Besøk denne linken](https://www.hackingwithswift.com/read/0/5/string-interpolation)
+## See Also
+- The Swift Programming Language (String Interpolation): [Swift Docs](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID292)
+- Customizing String Interpolation in Swift 5: [Hacking with Swift](https://www.hackingwithswift.com/articles/178/super-powered-string-interpolation-in-swift-5)

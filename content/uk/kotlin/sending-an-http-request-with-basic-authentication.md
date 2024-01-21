@@ -1,7 +1,8 @@
 ---
-title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
-html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
-simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+date:                  2024-01-20T18:02:01.106957-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,40 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## Що і Чому?
 
-Відправка HTTP-запиту з базовою аутентифікацією - це процес, коли ваше додаток встановлює віддалене з'єднання з сервером шляхом надсилання логіна і паролю. Це корисно, коли додаток потребує доступу до захищених ресурсів.
+Відправка HTTP-запиту з базовою аутентифікацією – це метод захисту доступу до ресурсів вебсервісу через логін і пароль. Програмісти використовують це для забезпечення безпеки та обмеженого доступу до API або веб-ресурсів.
 
 ## Як це зробити:
 
-Використовуємо бібліотеку Ktor для цього. Ось приклад коду:
-
 ```Kotlin
-val client = HttpClient() {
-    install(Auth) {
-        basic {
-            sendWithoutRequest = true
-            username = "your_username"
-            password = "your_password"
-        }
+import java.net.URL
+import java.util.Base64
+import javax.net.ssl.HttpsURLConnection
+
+fun sendBasicAuthRequest(username: String, password: String, endpoint: String) {
+    val url = URL(endpoint)
+    val connection = url.openConnection() as HttpsURLConnection
+
+    val credentials = "$username:$password"
+    val encodedCredentials = Base64.getEncoder().encodeToString(credentials.toByteArray(Charsets.UTF_8))
+    connection.setRequestProperty("Authorization", "Basic $encodedCredentials")
+
+    connection.apply {
+        requestMethod = "GET"
+        doInput = true
+        doOutput = true
     }
+
+    println("Response Code: ${connection.responseCode}")
+    println("Response Message: ${connection.responseMessage}")
 }
 
-val response: HttpResponse = client.get("https://example.com")
-println(response.status.value)
+fun main() {
+    val username = "user"
+    val password = "pass"
+    val endpoint = "https://yourapi.com/data"
+
+    sendBasicAuthRequest(username, password, endpoint)
+}
 ```
-Зверніть увагу, що деталі для аутентифікації слід змінити на власні. Виходом буде код статусу відповіді, наприклад, `200`.
 
-## Глибоке занурення:
+Виходи:
 
-Базова аутентифікація була введена у стандарт HTTP/1.0 ще у 90-ті роки. Вона проста, але також має свої недоліки, особливо крізняк безпеки.
+```
+Response Code: 200
+Response Message: OK
+```
 
-Альтернативи включають OAuth та JWT. Вони більш складні, але надають більше функцій безпеки.
+## Поглиблено:
 
-Відправка HTTP-запиту з базовою аутентифікацієєю в Kotlin включає в себе створення HttpClient та інсталяцію Auth модуля. Логін і пароль кодуються у форматі Base64, потім відправляються через заголовок `Authorization`.
+Базова аутентифікація з'явилася ще на світанку вебу і досі користується популярністю через свою простоту. Хоча зараз існує більш безпечні методи, наприклад OAuth 2.0, базова аутентифікація залишається значущою для швидких або внутрішніх рішень. Значення `"Authorization"` header кодується у Base64 і включає `username` та `password`, розділені двокрапкою. Варто пам'ятати, що Base64 не є шифруванням і його легко декодувати; тому використання HTTPS є важливим для забезпечення безпеки. У Kotlin для HTTP-запитів з автентифікацією можна користуватися різними бібліотеками, але базовий приклад використовує інтегровані Java класи.
 
 ## Дивіться також:
 
-- [Довідник Ktor](https://ktor.io/)
-- [Вступ до HTTP Basic Access Authentication на MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [Детальний огляд OAuth і JWT](https://www.oauth.com)
+- [Base64 Encoding in Java](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html)
+- [Understanding Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [Java™ Secure Socket Extension (JSSE) Reference Guide](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html)

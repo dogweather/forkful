@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon pituuden selvittäminen"
-html_title:           "Go: Merkkijonon pituuden selvittäminen"
+date:                  2024-01-20T17:47:43.190090-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Java"
 category:             "Java"
@@ -10,51 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Löydä merkkijonosi pituus Java-koodauksessa
+## What & Why?
+Mitä ja miksi? Stringin pituuden selvittäminen tarkoittaa merkkijonon merkkien määrän laskemista. Ohjelmoijat tarvitsevat tätä toimintoa esimerkiksi silloin, kun haluavat varmistaa, että syöte on tietyn mittainen tai kun he pilkkovat ja käsittelevät tekstiä.
 
-## Mitä & Miksi?
+## How to:
+Koodiesimerkit ja tulosteet
 
-Merkkijonon pituuden löytäminen tarkoittaa merkkisolmujen määrän laskemista merkkijonossa. Tätä toimintoa tarvitaan usein ohjelmistokehityksessä, esimerkiksi validoinnissa tai silmukoissa.
-
-## Miten:
-
-Aloitetaan yksinkertaisimmalla tavalla merkkijonon pituuden selvittämiseksi Java-koodauksessa.
-
-```Java
-public class Main {
+```java
+public class StringLengthExample {
     public static void main(String[] args) {
-        String merkkijono = "Moi Maailma";
-        int pituus = merkkijono.length();
-        System.out.println("Merkkijonon pituus on: " + pituus);
+        String aString = "Heippa!";
+        int length = aString.length();
+        System.out.println("String length: " + length);
     }
 }
 ```
+
 Tuloste:
 
 ```
-Merkkijonon pituus on: 11
+String length: 7
 ```
 
-## Sukella syvemmälle
+## Deep Dive
+Sukellus syvyyksiin: `String`-luokan `length()`-metodi on ollut osa Javaa sen alkuajoista lähtien ja se on perusväline merkkijonojen pituuksien hallintaan. Metodi palauttaa `int`-tyypin arvon, joka kertoo merkkijonon merkkien määrän. Vaihtoehtoisia tapoja pituuden mittaamiseen ei juurikaan ole, sillä `length()` on niin yksinkertainen ja suoraan asiaan menevä. Se kannattaa kuitenkin muistaa, että tyhjän merkkijonon ("") pituus on 0 ja että `null`-arvoisella string-olioilla `length()`-metodia ei voi kutsua ilman, että ohjelma kaatuu `NullPointerException`-poikkeuksen vuoksi.
 
-**Historiallinen tausta**: Java-ohjelmointikielen `length()`-metodi on ollut olemassa ohjelmointikielen ensimmäisistä versioista asti. Tämä metodi on perusta monille ohjelmointitehtäville.
+## See Also
+Lisätietoja:
 
-**Vaihtoehdot**: Halutessasi voit myös laskea merkkijonon pituuden käyttämällä Java 8 -virran metodia, kuten alla esitetyssä esimerkissä:
-
-```Java
-public class Main {
-    public static void main(String[] args) {
-        String merkkijono = "Moi Maailma";
-        long pituus = merkkijono.chars().count();
-        System.out.println("Merkkijonon pituus on: " + pituus);
-    }
-}
-```
-
-**Toteutuksen yksityiskohdat**: `length()`-metodi on määritetty `String` luokassa, joka palauttaa `int` tyyppisen arvon, joka on merkkijonon pituus. Jos merkkijono on null tai tyhjä, `length()` palauttaa arvon 0.
-
-## Katso myös:
-
-2. [Java String -luokka (Oracle Docs)](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html)
-
-Syvempiä tietoja ja lisää esimerkkejä yllä olevista linkeistä. Opettele, koodaa ja kehitä taitojasi!
+- Oracle Java Documentation: [String.length() method](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#length())
+- Java String handling tutorial: [Working with Strings in Java](https://www.baeldung.com/java-string)
+- Java programming practices and principles: [Effective Java by Joshua Bloch](https://www.pearson.com/us/higher-education/program/Bloch-Effective-Java-3rd-Edition/PGM334834.html)

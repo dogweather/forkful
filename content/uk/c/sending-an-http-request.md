@@ -1,7 +1,8 @@
 ---
-title:                "Надсилання http-запиту"
-html_title:           "Arduino: Надсилання http-запиту"
-simple_title:         "Надсилання http-запиту"
+title:                "Надсилання HTTP-запиту"
+date:                  2024-01-20T17:59:12.893048-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,51 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і Навіщо?
+## What & Why? (Що та Чому?)
 
-Надсилання HTTP-запиту - це процес відправки запиту до веб-серверу для завантаження веб-сторінки чи отримання даних. Програмісти це роблять, коли їм потрібно взаємодіяти з веб-сервісами або API.
+Sending an HTTP request means asking a server for data or action. Programmers do it to interact with web services, grab information, or send data over the internet.
 
-## Як це робити:
+## How to: (Як це зробити:)
 
-У фрагменті коду нижче наведено використання бібліотеки libcurl для надсилання HTTP-запиту.
+Here's a quick example using libcurl in C to send a simple HTTP GET request.
 
 ```C
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
-
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-
-    res = curl_easy_perform(curl);
-
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
-
-    curl_easy_cleanup(curl);
-  }
-  return 0;
+int main(void) {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        CURLcode res;
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        res = curl_easy_perform(curl);
+        if (res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+        curl_easy_cleanup(curl);
+    }
+    return 0;
 }
 ```
+Expected output: The content of `http://example.com` is printed to stdout, or an error message if the request failed.
 
-При виконанні цього коду, якщо все пройде успішно, відбудеться HTTP-запит до example.com.
+## Deep Dive (Поглиблений Розбір)
 
-## Поглиблено
+Initially, HTTP requests were manual telnet sessions. Automation came with libraries like libcurl and languages building in functionality.
 
-HTTP-запити використовуються з самого початку інтернету – вони є основою передачі даних через веб. Хоча є інші протоколи, такі як FTP і SMTP, HTTP домінує, коли мова йде про взаємодію з веб-сайтами і API.
+Alternatives include sockets programming in C for a more manual approach, or high-level protocols in other languages like Python's `requests`.
 
-Є багато способів надсилати HTTP-запити в C. Наведений раніше код використовує libcurl, відому бібліотеку для взаємодії з URL. Але є і інші бібліотеки, наприклад, POCO і Boost.Asio.
+Details: Libcurl is versatile - supports GET, POST, and more. Under the hood, it handles connection persistence, redirects, and SSL. Be aware of version compatibility and OS differences.
 
-Важливо розуміти, що libcurl використовує низькорівневі системні виклики для встановлення з'єднання, надсилання та отримання даних. Код вище тільки приховує цю складність.
+## See Also (Дивіться також)
 
-## Див. також:
+- Libcurl Documentation: https://curl.se/libcurl/c/
+- HTTP Protocol Overview: https://developer.mozilla.org/en-US/docs/Web/HTTP
+- C Network Programming with Sockets: https://beej.us/guide/bgnet/
 
-1. [Документацію libcurl](https://curl.haxx.se/libcurl/c/)
-2. [POCO бібліотека](https://pocoproject.org/)
-3. [Boost.Asio бібліотека](https://www.boost.org/doc/libs/1_66_0/doc/html/boost_asio.html)
+Check these out for a broader understanding or different perspectives on HTTP requests in C.

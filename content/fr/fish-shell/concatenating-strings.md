@@ -1,7 +1,8 @@
 ---
-title:                "Concaténation de chaînes"
-html_title:           "C: Concaténation de chaînes"
-simple_title:         "Concaténation de chaînes"
+title:                "Concaténation de chaînes de caractères"
+date:                  2024-01-20T17:34:43.649713-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Concaténation de chaînes de caractères"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,42 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi ?
-La concaténation de chaînes, c'est l'assemblage de plusieurs chaînes de caractères en une seule. Les programmeurs le font pour manipuler ou modifier des données textuelles.
+## What & Why?
+Concaténer des chaînes, c'est coller des bouts de texte ensemble. On le fait pour construire des messages, des chemins de fichiers, ou tout autre texte dynamique en programmation.
 
-## Comment Concaténer les Chaînes en Fish 
-En Fish Shell, la concaténation des chaînes est simple et directe. Voici un exemple :
+## How to:
+Concaténer des chaînes en Fish est intuitif. Voilà quelques exemples :
 
-```fish
-set str1 "Bonjour"
-set str2 ", monde!"
-echo $str1$str2
+```Fish Shell
+set string1 "Bonjour, "
+set string2 "le monde!"
+echo $string1$string2
+# Output: Bonjour, le monde!
 ```
 
-La sortie sera :
+Pour ajouter des espaces ou des éléments statiques, placez-les dans les guillemets :
 
-```
-Bonjour, monde!
-```
+```Fish Shell
+set greeting "Hola, "
+set name "Jean"
+set exclamation "!"
 
-## Entrons dans les Détails
-Historiquement, la concaténation de chaînes a des racines profondes dans la programmation informatique - elle existait bien avant l'avènement des langages modernes comme Fish. C'est un concept universel dans tous les langages de programmation.
-
-Il existe des alternatives à la concaténation directe de chaînes en Fish, comme l’utilisation de la fonction `string` :
-
-```fish
-set str1 "Bonjour"
-set str2 ", monde!"
-echo (string join "" $str1 $str2)
+echo "$greeting$name$exclamation"
+# Output: Hola, Jean!
 ```
 
-Le résultat serait le même qu’avant :
+Si vos chaînes viennent de commandes, collez-les ainsi :
 
+```Fish Shell
+set path (pwd)
+set filename "/mon_fichier.txt"
+echo $path$filename
+# Mettons que vous êtes dans /home/user, le résultat sera :
+# Output: /home/user/mon_fichier.txt
 ```
-Bonjour, monde!
-```
 
-La concaténation de chaînes en Fish est réalisée en interne via le moteur Fish qui prend en charge les manipulations de chaînes. C'est une opération très rapide et généralement sans coût significatif en termes de performances.
+## Deep Dive
+Concaténer des chaînes est une pratique vieille comme la programmation. Historiquement, chaque langage a ses propres méthodes : `+` en Python, `.concat()` en JavaScript, ou simplement juxtaposer en C.
 
-## Pour En Savoir Plus
-Pour en savoir plus sur la concaténation de chaînes et d'autres opérations de chaînes en Fish, consultez la documentation officielle de Fish Shell : [Fish Shell Documentation](https://fishshell.com/docs/current/index.html).
+En Fish, pas besoin de fonction compliquée ou d'opérateur spécial ; écrivez simplement les variables l'une à côté de l'autre. Fish gère l'espace entre les mots lorsque vous utilisez des guillemets. C'est clair et naturel, par rapport à des langages où on doit parfois jongler avec différents outils pour obtenir le résultat escompté.
+
+D'autres shells, comme Bash, utilisent des syntaxes plus cryptiques comme l'utilisation de `${var}`. Fish, fidèle à sa philosophie de simplicité, rend cette tâche transparente.
+
+## See Also
+Pour plus de détails sur la manipulation de chaînes en Fish, consultez :
+- La documentation officielle de Fish sur les variables : [https://fishshell.com/docs/current/index.html#variables](https://fishshell.com/docs/current/index.html#variables)
+- Un tutoriel Fish complet pour débutants : [https://fishshell.com/docs/current/tutorial.html](https://fishshell.com/docs/current/tutorial.html)
+- Questions fréquentes (FAQ) de Fish, incluant des astuces sur les chaînes : [https://fishshell.com/docs/current/faq.html](https://fishshell.com/docs/current/faq.html)

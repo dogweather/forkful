@@ -1,6 +1,7 @@
 ---
 title:                "Порівняння двох дат"
-html_title:           "Clojure: Порівняння двох дат"
+date:                  2024-01-20T17:33:24.356597-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Порівняння двох дат"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,41 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-(Українська версія)
+## What & Why? (Що і Чому?)
+Comparing two dates means figuring out their order—earlier, later, or the same moment. Programmers compare dates to track events, expire sessions, or sort timelines.
 
-# Порівняння Дат в Kotlin
-
-## Що і Чому?
-
-Порівняння двох дат - це спосіб визначення порядку подій в часі в програмах. Це важливо для створення функціоналу, пов'язаного з календарем, розрахунком термінів тощо.
-
-## Як це зробити:
-
-В Kotlin для порівняння двох дат ви можете використовувати методи `isAfter`, `isBefore` та `isEqual`.
-
+## How to (Як це зробити):
 ```Kotlin
 import java.time.LocalDate
 
 fun main() {
-    val date1 = LocalDate.of(2022, 1, 1)
-    val date2 = LocalDate.of(2022, 12, 31)
+    val date1 = LocalDate.of(2023, 4, 1)
+    val date2 = LocalDate.now()
 
-    println(date1.isBefore(date2))  // Виведе: true
-    println(date1.isAfter(date2))   // Виведе: false
-    println(date1.isEqual(date2))   // Виведе: false
+    println(date1.isBefore(date2)) // true if date1 is before date2
+    println(date1.isAfter(date2))  // true if date1 is after date2
+    println(date1.isEqual(date2))  // true if date1 is equal to date2
 }
 ```
+Output varies depending on today's date.
 
-## Глибше в тему:
+## Deep Dive (Поглиблений Аналіз):
+Kotlin, like Java, has rich support for date-time operations using `java.time` package. Historically, Java's old `Date` and `Calendar` classes were troublesome. Kotlin, benefiting from Java's evolution, recommends `java.time` (JSR-310) for modern date-time handling.
 
-**Історичний контекст:** Структури даних для дат були вперше введені в мовах програмування в 1960-х роках. Однак, тоді методи порівняння були дуже примітивні. Kotlin використовує LocalDate з Java для праці з датами, що значно спрощує життя розробникам.
+Alternatives? You could use `Date` and `Calendar` from old Java times, but that’s masochism. Stick to `java.time`.
 
-**Альтернативи:** Є й інші бібліотеки для роботи з датами, наприклад, Joda-Time. Kotlin також може використовувати `compareTo` для порівняння дат.
+Implementation details? `LocalDate` is just for dates, no times. If you need to compare time, you'd use `LocalDateTime` or `Instant`. `ZonedDateTime` is there for handling time zones.
 
-**Деталі реалізації:** Метод `isBefore` порівнює дати, перетворюючи їх у мілісекунди від початкової епохи (1 січня 1970 року). Коли ці числа порівнюються, ми отримуємо результат.
-
-## Див. також:
-
-1. [Документація Kotlin по `LocalDate`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date/index.html)
-2. [Порівняння дат в Kotlin на StackOverflow](https://stackoverflow.com/questions/56706749/how-to-compare-dates-in-kotlin)
-3. [Документація по Joda-Time](https://www.joda.org/joda-time/)
+## See Also (Дивіться також):
+- [Oracle's java.time tutorial](https://docs.oracle.com/javase/tutorial/datetime/)
+- [Kotlin's Date and Time - Baeldung](https://www.baeldung.com/kotlin/dates)

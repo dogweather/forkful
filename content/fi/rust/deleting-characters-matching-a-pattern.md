@@ -1,7 +1,8 @@
 ---
-title:                "Merkkien poistaminen vastaavalla mallilla"
-html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
-simple_title:         "Merkkien poistaminen vastaavalla mallilla"
+title:                "Merkkien poistaminen hakemalla osumia kaavaan"
+date:                  2024-01-20T17:43:13.101917-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,50 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Poistamme merkkejä, jotka sopivat tiettyyn malliin, tehden merkkijonoista puhtaampia tai datasta relevantimpaa. Ohjelmoijat tekevät tämän siistimiseen ja tarpeettoman datan karsimiseen.
 
-Hahmojen poistaminen määrätyllä kuvioilla tarkoittaa joukkoa ohjelmointitekniikoita, joita käytetään tietyn kriteerin täyttävien merkkijonojen tunnustamiseen ja poistamiseen. Ohjelmoijat tekevät tämän puhdistaakseen tai muokatakseen dataa.
-
-## Näin se toimii:
-
-Käytämme Rustin sisäänrakennettua `replace`-funktiota näissä esimerkeissä. Seuraava koodi poistaa kaikki "a"-kirjaimet merkkijonosta:
-
+## How to: (Kuinka tehdä:)
 ```Rust
-let s = "Tämä on testi".to_string();
-let result = s.replace("a", "");
-println!("{}", result);
+fn main() {
+    let original = "Ruoste - Rust 1.58.0";
+    let pattern = "-";
+    let result = original.replace(pattern, "");
+    println!("Ennen: {}", original);
+    println!("Jälkeen: {}", result);
+}
 ```
 
-Tuloste on:
-
+Esimerkin tuloste:
 ```
-"Tämä on testi"
+Ennen: Ruoste - Rust 1.58.0
+Jälkeen: Ruoste  Rust 1.58.0
 ```
 
-Voimme myös käyttää säännöllisiä lausekkeita poistamaan määrätyt kuviot. Katso seuraava koodi:
-
+Poistetaan kaikki numerot regex-kirjaston avulla:
 ```Rust
 use regex::Regex;
 
-let re = Regex::new("a").unwrap();
-let s = "Tämä on toinen testi".to_string();
-let result = re.replace_all(&s, "");
-println!("{}", result);
-```
-Tuloste on:
-
-```
-"Tämä on toinen testi"
+fn main() {
+    let original = "Ruoste 1.58.0";
+    let regex = Regex::new(r"\d").unwrap();
+    let result = regex.replace_all(&original, "");
+    println!("Numeroita ilman: {}", result);
+}
 ```
 
-## Syvä sukellus
+Tuloste:
+```
+Numeroita ilman: Ruoste ..
+```
 
-Historiallisesti merkkijonojen poistaminen määrätyllä kuvioilla on ollut yleinen tehtävä ohjelmoijille. Se on tapa virheenkorjaukselle, datan puhdistukselle ja tiedon erottamiselle.
-Rustissa, `replace`- ja `regex`-kirjastojen avulla tämä on suhteellisen yksinkertaista. `regex`-kirjasto on erittäin tehokas, mutta se voi olla hidas suurilla datamassoilla. Joissakin tapauksissa voi olla nopeampaa käyttää muita menetelmiä, kuten `str::replacen`.
+## Deep Dive (Syväkatsaus)
+Merkkijonoista kuvioiden mukaan poistaminen on peräisin tiedonkäsittelytaiteesta, jossa merkkijonojen käsittely on keskeistä. Rustissa tämä tapahtuu `.replace()` tai `.replace_all()`-metodeilla. Regex-kirjastolla voimme käyttää monimutkaisempia säännöllisiä lausekkeita, joka vaatii hiukan enemmän suorituskykyä. Tämän vaihtoehdon etuna on joustavuus: voit poistaa merkkijonosta lähes mitä tahansa kuvioita.
 
-Rustissa on monia tapoja toteuttaa hahmojen poistaminen määrätyillä kuvioilla. `replace`-funktion lisäksi voit käyttää `regex`-kirjastoa, joka antaa sinulle monipuolisen ja voimakkaan suodatinmekanismin kuvioiden poistamiseen.
-
-## Katso myös
-
-- Rustin virallinen dokumentaatio: https://doc.rust-lang.org/std/string/struct.String.html#method.replace
-- RegEx-kirjaston dokumentaatio: https://docs.rs/regex/1.3.9/regex/
+## See Also (Katso myös)
+- [Rust Documentation on `str`](https://doc.rust-lang.org/std/primitive.str.html)
+- [Regex crate documentation](https://docs.rs/regex)
+- [Rust by Example on Text Processing](https://doc.rust-lang.org/stable/rust-by-example/std/str.html)

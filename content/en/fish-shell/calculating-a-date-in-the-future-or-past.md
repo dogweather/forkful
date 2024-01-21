@@ -1,6 +1,7 @@
 ---
 title:                "Calculating a date in the future or past"
-html_title:           "Fish Shell recipe: Calculating a date in the future or past"
+date:                  2024-01-20T17:30:42.415931-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Calculating a date in the future or past"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,43 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Fish Shell for Time Travel (Sort Of)
-Step into the fascinating world of Fish Shell, where you can roam around dates past, present and future, like a time lord, but at a slightly lower pay scale. 
-
 ## What & Why?
-Ever wondered, "What date will it be 100 days from now?" or "What's the date 50 days before March 30, 2025?" This is called calculating dates in the future or past. As a programmer, you'll do it, well, because software eats time for breakfast, and you want to stay ahead!
+Calculating a future or past date involves manipulating dates to find out what day it was or will be. Programmers do this for scheduling, reminders, or determining durations and deadlines.
 
 ## How to:
-In Fish Shell, using date function is the pathway to go:
-```Fish Shell
-date -v+30d
-```
-Easy, right? The `-v` option adjusts the specified date and `+30d` indicates 30 days in future.
+Here's a cool way of rolling with dates in Fish Shell:
 
-To roll back to the past, just use a minus `-`:
 ```Fish Shell
-date -v-30d
-```
-Print the date 30 days back.
+# Add days to the current date
+set -l days_to_add 10
+date -d "+$days_to_add days"
 
-And not just days, you can go full Hogwarts with weeks (`w`), months (`m`), years (`y`), hours (`H`), minutes (`M`), or seconds (`S`).
-```Fish Shell
-date -v+1y
-date -v+2H
-date -v-2M
+# Output example (varies by current date):
+# Wed Mar 29 00:29:10 PDT 2023
+
+# Subtract days from the current date
+set -l days_to_subtract 10
+date -d "-$days_to_subtract days"
+
+# Output example (again, your date may vary):
+# Sun Mar 9 00:30:42 PDT 2023
 ```
-This will print the date 1 year in future, 2 hours in future, and 2 minutes in past respectively.
 
 ## Deep Dive
-The `date` function has been partying with Unix-like operating systems since the dawn of time (or 1970). It's got your back in all POSIX-compliant fellows, including our bright-eyed Fish Shell. 
+Fish isn't all about the splash; it comes with history. Shells like bash used to be the go-to for date calculations, typically through GNU `date`. Fish, keeping it streamlined, uses similar syntax but can be more user-friendly and readable – great for both swimming newbies and seasoned trout.
 
-Looking for alternatives? You've got yourself the `strftime` or the royal `datetime` module in Python, or JavaScript's `Date`, if you're into that sort of thing.
-
-Diving deeper, `date -v` changes the date relative to the one it's given. When it's not given a date, it takes 'now'. Then it adjusts according to the `value`, where 'value' is an integer with an optional minus `-` sign for times in the past.
+Alternatives for date calculations include programming languages like Python or using `dateutils`. Each has its own strengths, though `dateutils` is a bit more obscure and Python might be overkill for simple tasks. Implementation in Fish is a middle ground, with the `date` command borrowing from UNIX standards – it's pretty much installed everywhere and ties into system time settings smoothly.
 
 ## See Also
-1. [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-2. [Unix date man pages](https://man7.org/linux/man-pages/man1/date.1.html)
-3. [Wikipedia: Unix Time](https://en.wikipedia.org/wiki/Unix_time) 
-
-Feel free to lose yourself in the sands of time. Or at least, know how to calculate 'em.
+For more details, dive into these waters:
+- [GNU Coreutils – Date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html): Get a grasp of how `date` works under the hood.
+- [The Fish Shell Documentation](https://fishshell.com/docs/current/index.html): Official docs, where you can learn about Fish and its other commands.
+- [StackOverflow: Date Arithmetic](https://stackoverflow.com/questions/tagged/date-arithmetic): See real-world problems and solutions from the community.

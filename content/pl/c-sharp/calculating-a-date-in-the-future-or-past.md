@@ -1,6 +1,8 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
-html_title:           "C#: Obliczanie daty w przyszłości lub przeszłości"
+date:                  2024-01-20T17:28:33.019139-07:00
+model:                 gpt-4-1106-preview
+html_title:           "Clojure: Obliczanie daty w przyszłości lub przeszłości"
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "C#"
 category:             "C#"
@@ -10,45 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Obliczanie daty w przyszłości lub przeszłości to technika pozwalająca manipulować datami w programowaniu. Programiści robią to, aby przewidzieć, przeliczyć lub śledzić różne zdarzenia względem czasu.
+## What & Why?
+Co to jest obliczanie daty w przyszłości lub przeszłości? To po prostu wyliczanie nowej daty, dodając lub odejmując czas od danej daty początkowej. Programiści robią to często – zarządzają terminami, planują zdarzenia, tworzą logi.
 
-## Jak to zrobić:
-Poniżej znajduje się proste użycie metody `AddDays` w C#:
-
-```C#
-DateTime teraz = DateTime.Now;
-Console.WriteLine("Teraz: " + teraz);
-DateTime jutro = teraz.AddDays(1);
-Console.WriteLine("Jutro: " + jutro);
-```
-Tutaj obliczyliśmy datę jutrzejszą. Przykładowy wynik:
+## How to:
+C# ma mocne wsparcie dla operacji na datach. Spójrz na poniższe przykłady.
 
 ```C#
-Teraz: 19-10-2022 12:35:08
-Jutro: 20-10-2022 12:35:08
-```
-Funktacja `AddDays` umożliwia również obliczanie daty w przeszłości (używając wartości ujemnych):
+using System;
 
-```C#
-DateTime wtedy = teraz.AddDays(-10);
-Console.WriteLine("10 dni temu: " + wtedy);
+class DateExample
+{
+    static void Main()
+    {
+        DateTime today = DateTime.Now;
+        DateTime nextWeek = today.AddDays(7);
+        DateTime lastMonth = today.AddMonths(-1);
+        
+        Console.WriteLine("Dzisiaj: " + today.ToShortDateString());
+        Console.WriteLine("Za tydzień będzie: " + nextWeek.ToShortDateString());
+        Console.WriteLine("Miesiąc temu było: " + lastMonth.ToShortDateString());
+    }
+}
 ```
-Przykładowy wynik:
 
-```C#
-10 dni temu: 09-10-2022 12:35:08
+Sample output:
 ```
+Dzisiaj: 12.03.2023
+Za tydzień będzie: 19.03.2023
+Miesiąc temu było: 12.02.2023
+```
+
 ## Deep Dive
-Historia: Obliczanie daty w przyszłości i przeszłości jest starym zabiegiem w programowaniu, obecnym od początków tego rzemiosła.
+Zanim dołączono klasę `DateTime` do .NET, obliczenia na datach wymagały ręcznego zarządzania czasem – co było skomplikowane i narażone na błędy. `DateTime` uprościło zadania i jest częścią .NET od samego początku.
 
-Alternatywy: Alternatywą dla metody `AddDays` jest użycie metody `Subtract`:
+Inne opcje to `TimeSpan` dla różnic czasowych, a `DateTimeOffset` dla operacji świadomych strefy czasowej. We współczesnym C#, można także używać biblioteki NodaTime dla bardziej zaawansowanych scenariuszy związanych z czasem.
 
-```C#
-DateTime dziesiecDni = TimeSpan.FromDays(10);
-DateTime dziesiecDniWstecz = DateTime.Now.Subtract(dziesiecDni);
-```
-Szczegóły implementacji: W C#, zarówno `AddDays`, `AddHours`, `AddMinutes`, etc., jak i `Subtract` są członkami klasy `System.DateTime`. `Add` zmienia datę o podaną ilość, podczas gdy `Subtract` odejmuje datę od innej daty, zwracając różnicę jako `TimeSpan`.
+Szczegóły implementacji? Klasa `DateTime` reprezentuje punkt w czasie, dokładność do 100-nanosekund, a `DateTimeKind` rozróżnia czas uniwersalny (UTC) od lokalnego. Pamiętaj też o sprawdzeniu ustawień regionalnych – formatowanie daty może się różnić.
 
-## Zobacz także
-Aby dowiedzieć się więcej o klasie DateTime, odwiedź [Microsoft Documentation](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime?view=net-6.0). Możesz też zerknąć na [TimeSpan in C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.timespan?view=net-6.0)
+## See Also
+- Dokumentacja Microsoft: [DateTime Struct](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
+- Poradnik MSDN: [Standard DateTime Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings)
+- Projekt NodaTime: [http://nodatime.org/](http://nodatime.org/)
+- Stack Overflow: dyskusje i pytania dotyczące `DateTime` w C#

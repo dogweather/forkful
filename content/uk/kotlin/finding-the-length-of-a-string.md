@@ -1,7 +1,8 @@
 ---
-title:                "Знаходження довжини рядка"
-html_title:           "Arduino: Знаходження довжини рядка"
-simple_title:         "Знаходження довжини рядка"
+title:                "Визначення довжини рядка"
+date:                  2024-01-20T17:47:54.941138-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Визначення довжини рядка"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,41 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why?
 
-Визначення довжини рядка - це процес знаходження кількості символів у рядку. Програмісти роблять це, щоб контролювати та маніпулювати даними, які вони обробляють.
+## Що та Навіщо?
+Визначення довжини рядка дозволяє вам знати, скільки символів міститься в ньому. Програмісти роблять це для валідації вводу, обрізання тексту, для подальших маніпуляцій з даними.
+
+## How to:
 
 ## Як зробити:
-
-У Kotlin розмір рядка визначається за допомогою властивості `length`. Ви можете побачити, як це працює, на наступному прикладі:
-
-```Kotlin
+```kotlin
 fun main() {
-    val str = "Привіт, Україно!"
-    println(str.length)
+    val exampleString = "Вітаємо!"
+    val lengthOfExampleString = exampleString.length
+    println("Довжина рядка: $lengthOfExampleString")
 }
 ```
-
-Виконуючи цей код, ви отримаєте наступний результат:
-
+Вивід:
 ```
-16
+Довжина рядка: 9
 ```
 
-## Глибше занурення
+## Deep Dive
 
-1. Історичний контекст: Властивість `length` є стандартною особливістю більшості мов програмування.
-2. Альтернативи: У Kotlin є додаткова можливість отримати довжину рядка за допомогою функції `count()`. Ось як вона виглядає: 
-```Kotlin
-fun main() {
-    val str = "Привіт, Україно!"
-    println(str.count())
-}
-```
-Виконання цього коду також даст вам результат 16.
-3. Деталі реалізації: Функція `length` кілька швидша за `count()`, особливо для довгих рядків, бо вона повертає вже обчислену властивість, тоді як `count()` перебирає всі символи рядка.
+## Поглиблений Підхід
+У Kotlin, як і в Java, рядки представлені класом `String`, що зберігає символи у масиві. Метод `.length` повертає кількість символів. Це корисно, але пам'ятайте, що він не завжди відображає кількість візуально сприйнятих символів через використання UTF-16 кодування, де деякі символи можуть займати два 'кодові пункти'. Альтернативою є використання `.codePointCount()`, особливо коли працюєте з Unicode. Історично, мірою оптимізації рядків були серії оновлень до структур даних, які їх представляли, починаючи з простих об'єктів масивів, і далі до складних форм зі збереженням символів та довжини.
 
-## Дивіться також
+## See Also
 
-- Документацію Kotlin про рядки: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- Корисні приклади роботи з рядками в Kotlin: [https://www.programiz.com/kotlin-programming/string](https://www.programiz.com/kotlin-programming/string)
+## Додатково
+- [Kotlin String documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- [Stack Overflow: Counting Unicode characters](https://stackoverflow.com/questions/1735110/count-number-of-unicode-characters-in-a-string-with-kotlin)

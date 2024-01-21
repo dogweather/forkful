@@ -1,6 +1,7 @@
 ---
 title:                "Création d'un fichier temporaire"
-html_title:           "Kotlin: Création d'un fichier temporaire"
+date:                  2024-01-20T17:39:56.412545-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Création d'un fichier temporaire"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,46 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why?
+Créer un fichier temporaire, c'est générer un fichier destiné à un usage court terme, souvent pour manipuler des données transitoires. Les programmeurs le font pour éviter de surcharger la mémoire, faciliter le nettoyage après usage, ou pour sécuriser des opérations qui nécessitent des fichiers intermédiaires.
 
-Créer un fichier temporaire, c'est exactement ce que cela signifie : un fichier destiné à stocker des informations pour une courte période. Les programmeurs le font pour gérer les flux de travail qui nécessitent un stockage temporaire sans affecter les données permanentes.
-
-## Comment faire :
-
-Pour créer un fichier temporaire en Elixir, vous pouvez utiliser le module `:file` de Erlang/OTP. Voici comment :
-
-1. Générez un nom de fichier unique et créez le fichier.
+## How to:
+En Elixir, la création d'un fichier temporaire n'est pas directement intégrée dans la bibliothèque standard. On utilise généralement `:os.cmd` avec des commandes systèmes, ou des packages tiers, comme `Temp` de la bibliothèque Erlang.
 
 ```elixir
-{:ok, path} = :file.mktemp()
-IO.puts(path)
+# Avec :os.cmd et le système
+commande = "mktemp"
+{fichier_temp, 0} = :os.cmd(commande) |> to_string() |> String.trim() |> String.split("\n")
+IO.puts("Fichier temporaire créé: #{fichier_temp}")
+
+# Utiliser après et supprimer le fichier temporaire
+# [...]
+:os.cmd('rm ' <> fichier_temp)
 ```
 
-2. Écrivez dans le fichier temporaire.
+Output:
 
-```elixir
-{:ok, file} = File.open(path, [:write])
-IO.binwrite(file, "Du texte temporaire")
-File.close(file)
+```
+Fichier temporaire créé: /tmp/tmp.WaXbJk9kUR
 ```
 
-3. Lisez le contenu du fichier temporaire.
+C’est brut et sans fioritures, mais ça marche.
 
-```elixir
-{:ok, file} = File.read(path)
-IO.puts(file)
-```
+## Deep Dive
+Avant, les fichiers temporaires étaient risqués – si vous ne les supprimez pas, ils s’accumulent. En Elixir, sans fonction intégrée pour les fichiers temporaires, il faut bien faire le ménage soi-même ou utiliser une bibliothèque. `:os.cmd` est notre rustine ici, mais attention : ces commandes dépendent du système d'exploitation et ne sont pas multiplateformes.
 
-## Plongée profonde
+En considérant les alternatives, la bibliothèque [Temp](https://hex.pm/packages/temp) d'Erlang est assez sympa pour simplifier tout cela. Elle crée et supprime des fichiers temporaires sans que vous ayez à vous inquiéter du système sous-jacent.
 
-Au fil des années, de nombreux langages et systèmes ont fourni diverses manières de créer des fichiers temporaires. En Elixir, grâce à l'interopérabilité avec Erlang/OTP, nous pouvons profiter du module `:file`.
-
-Il existe d'autres alternatives en Elixir pour créer des fichiers temporaires. Par exemple, vous pouvez utiliser le module `System` pour obtenir un nom de fichier unique basé sur le PID du processus Elixir, puis créer le fichier à l'aide de `File.open/2`.
-
-Les détails de mise en œuvre comprennent l'utilisation de `:file.mktemp/0,1,2` qui crée un fichier dans le répertoire temporaire. Il garantit également que le nom de fichier est unique en utilisant le PID du processus Erlang actuel et un numéro unique.
-
-## À voir également
-
-Pour plus d'informations sur le traitement des fichiers en Elixir, consultez la documentation officielle de [File](https://hexdocs.pm/elixir/File.html) et [:file](http://erlang.org/doc/man/file.html). 
-
-La question pertinente sur [Stack Overflow](https://stackoverflow.com/questions/35473854/how-to-generate-a-temporary-file-name-in-elixir) fournit également diverses idées et solutions pour la gestion des fichiers temporaires en Elixir.
+## See Also
+- [Elixir Documentation](https://hexdocs.pm/elixir/)
+- Library for temporary files: [Temp](https://hex.pm/packages/temp)
+- Pour plus sur `:os.cmd`: [Erlang os Module](http://erlang.org/doc/man/os.html)

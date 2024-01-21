@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C#: Pobieranie strony internetowej"
+date:                  2024-01-20T17:44:27.587174-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,38 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
- 
-Pobieranie strony internetowej to proces zapisywania wszystkich danych strony na dysku lokalnym - to tak, jakbyś robił zrzut ekranu, ale zapisywał całe jej "ciało". Programiści to robią, aby móc analizować strukturę strony, pracować nad jej zawartością offline, a także do celów testowania i debugowania.
+## What & Why? (Co i Dlaczego?)
+Pobieranie strony internetowej to proces ściągania jej treści, by móc z nią interaktywnie pracować poza przeglądarką. Programiści robią to, aby analizować dane, testować wydajność lub archiwizować zawartość.
 
-## Jak to zrobić:
+## How to: (Jak to zrobić:)
+JavaScript pozwala na pobieranie stron internetowych za pomocą Fetch API, które jest obecnie standardem. Poniżej znajduje się prosty przykład użycia:
 
-Zajmijmy się najprostszym sposobem na pobranie strony internetowej za pomocą Node.js i popularnej biblioteki `axios`. Pamiętaj, aby najpierw zainstalować `axios` za pomocą npm, wpisując w wierszu poleceń `npm install axios`.
-
-```Javascript
-var axios = require('axios');
-var fs = require('fs');
-
-axios.get('http://example.com').then((response) => {
-    fs.writeFile('example.html', response.data, (err) => {
-        if(err) console.log(err);
-        console.log('Strona zapisana pomyślnie.');
-    });
-});
+```javascript
+// Zainicjowanie pobierania strony
+fetch('https://example.com')
+  .then(response => {
+    // Sprawdź status odpowiedzi
+    if (response.ok) return response.text();
+    throw new Error('Pobieranie nie powiodło się: ' + response.status);
+  })
+  .then(html => {
+    // Tutaj masz pobraną treść jako HTML
+    console.log(html);
+  })
+  .catch(error => {
+    // Obsługa błędów
+    console.error('Wystąpił błąd', error);
+  });
 ```
 
-Taki kod pobierze stronę `http://example.com` i zapisze jej zawartość do pliku `example.html`.
+Przykładowy output:
 
-## Pogłębione spojrzenie:
+```
+<!doctype html>
+<html>
+<head>
+    <title>Przykładowa strona</title>
+...
+</head>
+<body>
+    <p>Jest to przykładowa zawartość strony</p>
+...
+</body>
+</html>
+```
 
-Historia pobierania stron internetowych sięga początków internetu - kiedy to programiści musieli nauczyć się, jak robic "migawki" stron internetowych i analizować je offline. Wykorzystywane do tego techniki ewoluowały na przestrzeni lat - od korzystania z surowego HTML do skomplikowanych bibliotek JavaScript.
+## Deep Dive (Dogłębna analiza)
+Fetch API, które zastąpiło XMLHttpRequest, stanowi obecnie nową erę asynchronicznych żądań w JavaScript. Historycznie, pobieranie stron polegało na użyciu technologii takich jak iframe lub AJAX. Alternatywą dla Fetch może być Axios, biblioteka oparta na promisach, która oferuje nieco szersze możliwości konfiguracji.
 
-Alternatywą dla `axios` może być `node-fetch`, biblioteka która korzysta z API Fetch, znanego przede wszystkim z przeglądarek internetowych. Wybór pomiędzy tymi dwoma zwykle zależy od osobistych preferencji.
+Implementację warto rozszerzać o obsługę błędów, timeoutów i limitów czasu odpowiedzi. Fetch API samo z siebie nie obsługuje timeoutów, ale można dokonać tej funkcjonalności za pomocą dodatkowego kodu. Jest to szczególnie ważne podczas pracy z dużymi obciążeniami lub niestabilnymi połączeniami internetowymi.
 
-Szczegóły implementacji "pobierania strony" mogą rożnić się w zależności od strony. Na przykład, niektóre strony mogą wymagać użycia cookies lub innych nagłówków HTTP, aby pobrać całą jej zawartość.
+## See Also (Zobacz także)
+- MDN Web Docs na temat Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+- Porównanie Fetch i Axios: https://www.npmjs.com/package/axios
+- Praktyczne porady dotyczące Fetch API: https://davidwalsh.name/fetch
 
-## Zobacz też:
-
-1. Więcej o `axios`: [Axios na GitHub](https://github.com/axios/axios)
-2. Więcej o `node-fetch`: [node-fetch na GitHub](https://github.com/node-fetch/node-fetch)
-3. Metody `fs.writeFile()` i `fs.writeFileSync()` : [Dokumentacja Node.js](https://nodejs.org/api/fs.html#fs_file_system)
+Wskazane źródła pozwolą na dalsze zgłębianie tematu i rozszerzenie wiedzy o szczegółowe aspekty pobierania treści stron oraz bardziej zaawansowane przypadki użycia.

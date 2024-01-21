@@ -1,6 +1,7 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "Gleam: Завантаження веб-сторінки"
+date:                  2024-01-20T17:44:12.445082-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "Go"
 category:             "Go"
@@ -10,49 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
+## What & Why? (Що та Чому?)
+Завантаження веб-сторінки – це процес отримання HTML-коду сторінки з сервера. Програмісти роблять це, щоб зчитати дані, автоматизувати процеси тестування веб-інтерфейсів, або створювати скрапери контенту.
 
-Скачування веб-сторінки - це завантаження її коду з сервера. Програмісти це роблять, щоб аналізувати та використовувати дані, які ця сторінка містить.
-
-## Як це зробити:
-
-Отже, аби скачати веб-сторінку в Go, нам потрібен наступний код:
-
+## How to: (Як це зробити:)
 ```Go
 package main
 
 import (
-	"io/ioutil"
+	"fmt"
+	"io"
 	"net/http"
+	"os"
 )
 
+func DownloadWebPage(url string) error {
+	// Створення HTTP запиту
+	resp, err := http.Get(url)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+
+	// Відкриття файлу для запису
+	outFile, err := os.Create("output.html")
+	if err != nil {
+		return err
+	}
+	defer outFile.Close()
+
+	// Копіювання вмісту веб-сторінки у файл
+	_, err = io.Copy(outFile, resp.Body)
+	return err
+}
+
 func main() {
-	res, err := http.Get("http://www.example.com/")
+	url := "http://example.com"
+	err := DownloadWebPage(url)
 	if err != nil {
-		panic(err)
+		fmt.Println("Error downloading page:", err)
+		return
 	}
-	defer res.Body.Close()
-	body, err := ioutil.ReadAll(res.Body)
-	if err != nil {
-		panic(err)
-	}
-	println(string(body))
+	fmt.Println("Web page downloaded successfully")
 }
 ```
-Цей код здійснює HTTP запит до `www.example.com`, а потім читає та друкує тіло відповіді.
+**Sample output:**
+```
+Web page downloaded successfully
+```
 
-## Поглиблений огляд:
+## Deep Dive (Поглиблений розгляд)
+В історії інтернету завантаження веб-сторінок змінювалось від простих HTTP запитів до роботи з складними JavaScript-програмами. Go, зі своїм стандартним пакетом `net/http`, пропонує легкий спосіб завантаження статичного контенту; динамічний контент може потребувати додаткових бібліотек, таких як "chromedp" чи "rod" для роботи з браузерами. Важливими аспектами є обробка відповідей сервера, належна робота з запитами/відповідями та правильне закриття ресурсів за допомогою `defer`.
 
-**Історичний контекст:** Багато з того, що ми робимо в веб-програмуванні, походить з часів, коли значною мірою відповідальність за обробку даних лежала на клієнті. Скачування веб-сторінок — це одна з таких задач, що так і залишилась.
-
-**Альтернативи:** Є багато способів робити це в Go. Наприклад, ви можете використовувати пакет `os` для створення файлу і запису веб-сторінки туди напряму, або `bufio` для буферизованого введення-виводу, що є ефективнішим за ioutil при роботі з великими файлами.
-
-**Деталі реалізації:** Зверніть увагу на користування `defer res.Body.Close()`. Go має унікальну можливість використовувати `defer` для впевненості, що ресурси будуть вчасно звільнені, незалежно від того, в якому місці коду відбулися помилки.
-
-## Вибрана література:
-
-1. [Туторіал Go](https://golang.org/doc/tutorial/getting-started)
-
-2. [Бібліотека net/http](https://golang.org/pkg/net/http/)
-
-3. [Бібліотека io/ioutil](https://golang.org/pkg/io/ioutil/)
+## See Also (Дивіться також)
+- Офіційна документація Go 'net/http' пакету: [https://pkg.go.dev/net/http](https://pkg.go.dev/net/http)
+- "chromedp" для роботи з браузерами: [https://github.com/chromedp/chromedp](https://github.com/chromedp/chromedp)
+- "rod" бібліотека для автоматизації браузерів: [https://github.com/go-rod/rod](https://github.com/go-rod/rod)
+- Go by Example, працюючи з HTTP: [https://gobyexample.com/http-clients](https://gobyexample.com/http-clients)

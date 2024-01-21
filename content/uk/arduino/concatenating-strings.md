@@ -1,7 +1,8 @@
 ---
-title:                "Конкатенація рядків"
-html_title:           "PHP: Конкатенація рядків"
-simple_title:         "Конкатенація рядків"
+title:                "Об'єднання рядків"
+date:                  2024-01-20T17:34:10.520027-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Об'єднання рядків"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,35 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Що це таке і навіщо?
-Конкатенація рядків це процес об'єднання двох або більше рядків у один. Програмісти використовують це для зосередження інформації в одному рядку та її подальшого використання.
+## What & Why? / Що та Чому?
+Concatenating strings means sticking them end-to-end to form a new string. Programmers do it to combine messages and data into readable formats or build commands.
 
-# Як це робиться:
-Отже, давайте подивимось на простий приклад коду, який демонструє, як ми можемо об'єднати рядки у Arduino.
-
+## How to / Як це зробити
 ```Arduino
-String stringOne = "Hello";
-String stringTwo = " World";
-String stringThree = stringOne + stringTwo;
-Serial.println(stringThree);
-```
-Внаслідок виконання цього коду, наш вихід буде: `Hello World`
+String partOne = "Привіт, ";
+String partTwo = "світ!";
+String combined = partOne + partTwo; // Конкатенація
 
-# Глибше занурення:
-Метод конкатенації рядків у Arduino базується на бібліотеці C++. Гісторично, ця функція була розроблена ще в перших версіях C++, але її доопрацювали й у Arduino для полегшення роботи зі строками. Конкатенування використовує швидку та ефективну оперативну пам'ять для об'єднання рядків.
-
-Альтернативою для об'єднання рядків може бути використання методу `concat()`:
-
-```Arduino
-String stringOne = "Hello";
-String stringTwo = " World";
-stringOne.concat(stringTwo);
-Serial.println(stringOne);
+Serial.begin(9600);
+Serial.println(combined); // Вивід: Привіт, світ!
 ```
 
-Вихід обох кодів буде ідентичним.
+With character arrays:
+```Arduino
+char partOne[] = "Привіт, ";
+char partTwo[] = "світ!";
+char combined[20]; // Це повинно бути достатньо для обох рядків та нульового символу
 
-# Дивитись також:
-Чудовим ресурсом для глибшого розуміння конкатенації рядків у Arduino є офіційна документація Arduino:
-- Офіційна документація по методу +: https://www.arduino.cc/en/Reference.StringPlusOperator
-- Офіційна документація по методу concat(): https://www.arduino.cc/en/Tutorial/StringConcat
+strcat(combined, partOne);
+strcat(combined, partTwo);
+
+Serial.begin(9600);
+Serial.println(combined); // Вивід: Привіт, світ!
+```
+
+## Deep Dive / Поглиблений Огляд
+In early computing, memory was scarce, so efficient string handling was crucial. Arduino follows C/C++ string handling: straightforward concatenation with `+` for `String` objects, `strcat` for C-style character arrays.
+
+Alternatives like `sprintf()` exist but are overkill for simple concatenation. Remember, `String` objects can cause memory fragmentation, so for larger projects, character arrays are safer.
+
+Understanding the `null-terminating character` (`\0`) is key. Every character array meant to be a string ends with `\0`, which tells functions where the string ends.
+
+## See Also / Додатково
+- Arduino String Reference: https://www.arduino.cc/reference/en/language/variables/data-types/string/
+- Arduino `strcat()` Reference: https://www.arduino.cc/reference/en/language/functions/c-strings/strcat/
+- Arduino Memory Management: https://www.arduino.cc/en/Tutorial/Memory

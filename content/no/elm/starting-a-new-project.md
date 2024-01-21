@@ -1,6 +1,7 @@
 ---
 title:                "Å starte et nytt prosjekt"
-html_title:           "C: Å starte et nytt prosjekt"
+date:                  2024-01-20T18:03:21.406676-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,33 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Et nytt prosjekt er starten på en frisk kodebase, og programmerere starter nye prosjekter for å realisere unike ideer eller løse spesifikke problemer. Det gir ren arkitektur og nytt potensial.
 
-Å starte et nytt prosjekt handler om å sette opp en grunnleggende struktur for koden din, et skall for å bygge din applikasjon på. Programmerere gjør dette for å organisere sine ideer og lette vedlikehold av koden.
-
-## Hvordan:
-
-Her er noen grunnleggende kodesnutter og eksempler for Elm:
+## How to:
+Installer først `elm` på systemet ditt. Bruk `elm init` for å sette opp et nytt prosjekt:
 
 ```Elm
+$ elm init
+```
+
+Du får nå en `elm.json` fil og en `src` mappe. For å lage din første Elm-modul:
+
+```Elm
+module Main exposing (main)
+
 import Html exposing (text)
 
-main =
-  text "Hei, Verden!"
+main = 
+    text "Hei, Norge!"
 
 ```
 
-Når du kjører dette, vil du se "Hei, Verden!" utskrevet i nettleseren din.
+Lagre koden over i en fil kalt `Main.elm` under `src` mappen. Kjør så:
 
-For å starte et nytt Elm-prosjekt, trenger du elm compiler. Du kan installere det ved å kjøre kommandoen 'npm install -g elm' i terminalen din. Deretter, bare opprett en ny mappe og initialiser et nytt Elm-prosjekt med 'elm init'-kommando.
+```Elm
+$ elm make src/Main.elm
+```
 
+Dette produserer en `index.html` som du kan åpne i nettleseren din for å se "Hei, Norge!".
 
-## Dypdykk
+## Deep Dive:
+Elm ble introdusert i 2012, og har siden tilbudt et robust system for å lage webapplikasjoner. Med en kompilator som genererer JavaScript, unngår man runtime-feil, og får en sterk type-sikkerhet. Alternativer inkluderer språk som PureScript og ReasonML, som også sikter mot funksjonell programmering i frontend-utvikling. Siden Elm styrer hele view-laget, passer det godt i prosjekter hvor du vil unngå direkte manipulasjon av DOM og heller fokusere på robusthet og vedlikeholdbarhet.
 
-Elm, som ble lansert i 2012 av Evan Czaplicki, er en funksjonell programmeringsspråk for frontend utvikling. Det gir utviklere en robust, sikker og vedlikeholdbar kodebase. Alternativene til Elm inkluderer JavaScript og dens forskjellige biblioteker som React, Vue, og Angular. Men, Elm tilbyr fordeler som null runtime errors og innebygd pakkesystem. I Elm, hver eneste fil er en egen modul som kan importeres inn i en annen fil, noe som muliggjør en strukturert og modulerbar tilnærming til prosjektene dine.
-
-## Se Også
-
-1. Elm Offisielt Dokumentasjon: https://guide.elm-lang.org/
-2. Elm GitHub Repository: https://github.com/elm/
-3. ELM: En introduksjon - https://elm-lang.org/blog/blazing-fast-html-round-two
+## See Also:
+- Elm's offisielle hjemmeside: [https://elm-lang.org/](https://elm-lang.org/)
+- Elm pakker og dokumentasjon: [https://package.elm-lang.org/](https://package.elm-lang.org/)
+- Elm diskusjonsforum: [https://discourse.elm-lang.org/](https://discourse.elm-lang.org/)

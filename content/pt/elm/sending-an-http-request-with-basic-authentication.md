@@ -1,7 +1,8 @@
 ---
-title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
-simple_title:         "Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma requisição HTTP com autenticação básica"
+date:                  2024-01-20T18:01:30.784809-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Enviando uma requisição HTTP com autenticação básica"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,46 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
-Enviar uma solicitação HTTP com autenticação básica significa fornecer nome de usuário e senha em um formato codificado para validar sua sessão. Programadores fazem isso para proteger recursos online dos usuários e evitar acessos não autorizados.
+## What & Why?
+Enviar uma requisição HTTP com autenticação básica é o processo de acessar recursos protegidos em um servidor, fornecendo um nome de usuário e senha. Programadores fazem isso para garantir que apenas usuários autorizados acessem certos dados.
 
-## Como Fazer:
-Aqui estão algumas etapas simples para enviar uma solicitação HTTP com autenticação básica em Elm.
-
+## How to:
 ```Elm
-module Main exposing (..)
-
 import Http
-import Json.Decode as Decode
+import Base64
 
-type Msg
-    = GotUser (Result Http.Error String)
+type alias Credentials =
+    { username : String
+    , password : String
+    }
 
-getUser : Cmd Msg
-getUser =
+-- Encode your username and password
+encodeCredentials : Credentials -> String
+encodeCredentials creds =
+    "Basic " ++ (Base64.encode (creds.username ++ ":" ++ creds.password))
+
+-- Create the Authorization header
+authorizationHeader : Credentials -> Http.Header
+authorizationHeader creds =
+    Http.header "Authorization" (encodeCredentials creds)
+
+-- Send an HTTP request with Basic Auth
+sendRequestWithBasicAuth : Credentials -> String -> (Result Http.Error String -> msg) -> Cmd msg
+sendRequestWithBasicAuth creds url toMsg =
     Http.request
         { method = "GET"
-        , headers = [ Http.header "Authorization" "Basic = QWxhZGRpbjpvcGVuIHNlc2FtZQ==" ]
-        , url = "https://api.seuwebsite.com/users/1"
+        , headers = [ authorizationHeader creds ]
+        , url = url
         , body = Http.emptyBody
-        , expect = Http.expectString GotUser
+        , expect = Http.expectString toMsg
         , timeout = Nothing
         , tracker = Nothing
         }
+
+-- Exemplo de uso
+creds = Credentials "user" "password"
+url = "https://some-protected-resource.com"
 ```
 
-No exemplo acima, `QWxhZGRpbjpvcGVuIHNlc2FtZQ==` é o nome de usuário e senha codificados.
+## Deep Dive
+Autenticação básica é um método antigo, introduzido pelo HTTP/1.0. Apesar de sua simplicidade, hoje em dia é considerada insegura se usada sem HTTPS, pois as credenciais são enviadas como texto puro codificado em Base64. Alternativas modernas incluem OAuth e tokens JWT. No Elm, a autenticação básica é realizada adicionando o cabeçalho de autorização a uma requisição. Vale notar que o módulo `Http` do Elm gerencia os detalhes de baixo nível da rede e o `Base64` garante a codificação correta das credenciais.
 
-## Mergulho Profundo:
-
-- **Contexto Histórico:** A autenticação básica HTTP é um método de autenticação que permite a um cliente HTTP fornecer um nome de usuário e senha quando faz uma solicitação. Foi projetado em 1996 e continua sendo uma maneira popular de autenticação por sua simplicidade.
-
-- **Alternativas:** Além da autenticação básica, existem outras formas de autenticação, como o OAuth e o token JWT. Estes oferecem um nível de segurança superior e são recomendados para aplicações modernas.
-
-- **Detalhes de Implementação:** Na autenticação básica HTTP, o nome de usuário e a senha são concatenados com um dois-pontos (:) como separador, e então a string resultante é codificada em Base64.
-
-## Veja Também:
-1. [Elm HTTP package documentation](https://package.elm-lang.org/packages/elm/http/latest)
-2. [The Basics of HTTP Basic Authentication](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication)
-3. [Alternative method: OAuth](https://oauth.net/)
-4. [Alternative method: JWT](https://jwt.io/introduction/)
+## See Also
+- [Elm HTTP package documentation](https://package.elm-lang.org/packages/elm/http/latest/)
+- [Base64 Encoding in Elm](https://package.elm-lang.org/packages/truqu/elm-base64/latest/)
+- [OAuth 2.0](https://oauth.net/2/)
+- [JSON Web Tokens (JWT)](https://jwt.io/)

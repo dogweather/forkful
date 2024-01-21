@@ -1,7 +1,8 @@
 ---
-title:                "Jämför två datum"
-html_title:           "Arduino: Jämför två datum"
-simple_title:         "Jämför två datum"
+title:                "Jämföra två datum"
+date:                  2024-01-20T17:32:11.403089-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Jämföra två datum"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -11,55 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Jämförelse av två datum är en funktion där man ser om ett datum kommer före, efter eller är samma som ett annat datum. Programmerare använder det för att skapa logik där tidsförlopp är viktigt, som kalenderappar.
+Att jämföra två datum innebär att bedöma deras ordning i tiden och avgöra tidsintervaller. Programmerare gör detta för att hantera och utvärdera tidsrelaterade händelser, som utlöpare, tidsfrister eller hålla reda på varaktigheter.
 
-## Hur Kan Man:
-Här är ett exempel på hur du jämför två datum i Arduino:
+## Hur gör man:
+```arduino
+#include <RTClib.h>
 
-```Arduino
-// Definiera två datum
-int year1 = 2022, month1 = 5, day1 = 20;
-int year2 = 2022, month2 = 5, day2 = 21;
+RTC_DS3231 rtc;
 
-if(year1 < year2){ 
-  Serial.println("Det första datumet är tidigare");
+void setup() {
+  Serial.begin(9600);
+  if (!rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    while (1);
+  }
+
+  DateTime now = rtc.now();
+  DateTime deadline(2023, 4, 30, 23, 59, 59);
+
+  if (now < deadline) {
+    Serial.println("Deadline not passed");
+  } else if (now == deadline) {
+    Serial.println("Deadline is right now");
+  } else {
+    Serial.println("Deadline has passed");
+  }
 }
-else if (year1 > year2){
-  Serial.println("Det andra datumet är tidigare");
-}
-else { // Samma år
-  if(month1 < month2){
-     Serial.println("Det första datumet är tidigare");
-  }
-  else if(month1 > month2){ 
-    Serial.println("Det andra datumet är tidigare");
-  }
-  else { // Samma månad
-    if(day1 < day2){
-      Serial.println("Det första datumet är tidigare");
-    }
-    else if(day1 > day2){ 
-      Serial.println("Det andra datumet är tidigare");
-    }
-    else{
-      Serial.println("Datumen är samma");
-    }
-  }
+
+void loop() {
+  // Main loop does nothing in this example.
 }
 ```
+Exempelutmatning:
+```
+Deadline not passed
+```
 
-Utskriften blir: `Det första datumet är tidigare`
+## Fördjupning
+Att jämföra datum är ett ämne så gammalt som programmering själv. Innan bibliotek som RTClib fanns, var datumhantering komplex och felbenägen. Alternativ till RTClib inkluderar TimeLib och inbyggda funktioner i många databashanterare. Viktiga detaljer i implementationen inkluderar att hantera skottår, tidszoner och övergångar till/från sommartid.
 
-## Djupdykning
-Arduino är inte känt för sin datumanvändning, då mycket av dess applikationer ligger utanför traditionell dators datahantering. De ovannämnda kodstyckena är enkla och funktionaliteten är inbyggd. Men det finns också bibliotek, till exempel TimeLib, som kan hantera mycket av tids- och dataknepigheterna för dig. 
-
-Det finns många sätt att jämföra datum på. Du kan konvertera båda till UNIX-tidsstämplar och jämföra heltalen, eller så kan du använda specifika bibliotek som kan jämföra datumen för dig.
-
-Detaljer: Arduino lagrar inte datatyperna `date` eller `time` prydligt, så du kan förvänta dig att lagra varje komponent av ett datum (år, månad, dag) som en heltalsvariabel. Jämförelse sker sedan på vanlig sätt med selection (`if`) statements.
-
-## Se Även
-Det finns några källor för mer information om jämförelse av datum i Arduino:
-
-1. [Arduino documentation](https://arduino.cc)
-2. [TimeLib Library](https://github.com/PaulStoffregen/Time)
-3. [A detailed guide on Arduino Time technique](https://www.makerguides.com)
+## Se även
+- RTClib dokumentation: https://github.com/adafruit/RTClib
+- Arduino Time Library: https://www.arduino.cc/en/Reference/Time
+- Artikel om tidshantering och problematik: https://www.arduino.cc/en/Tutorial/BuiltInExamples/DateTime

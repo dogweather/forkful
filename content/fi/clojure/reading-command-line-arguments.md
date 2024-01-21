@@ -1,7 +1,8 @@
 ---
-title:                "Komentorivin argumenttien lukeminen"
-html_title:           "Elm: Komentorivin argumenttien lukeminen"
-simple_title:         "Komentorivin argumenttien lukeminen"
+title:                "Komennoriviparametrien lukeminen"
+date:                  2024-01-20T17:55:35.535415-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Komennoriviparametrien lukeminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,28 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja Miksi?
+## What & Why?
+Komennoriviparametrien lukeminen tarkoittaa argumenttien vastaanottamista suoraan ohjelmalle, kun sen käynnistää terminaalista. Ohjelmoijat tekevät sen, jotta voivat antaa dynaamisia syötteitä ja muuttaa ohjelman toimintaa lennosta.
 
-Komentoriviparametrien lukeminen on prosessi, jossa ohjelmisto ottaa käyttäjän syöttämät argumentit tai parametrit suoraan käytettäviksi ohjelmassa. Tätä tehdään yleensä, koska se antaa joustavuutta ohjelman käyttöön, mahdollistaen sen, että samaa koodia voidaan käyttää eri tarkoituksiin ilman, että sitä tarvitsee uudelleenkirjoittaa.
-
-## Näin se tehdään:
-
-Voit lukea Clojuressa komentoriviparametreja käyttämällä 'clojure.core/*command-line-args* -muuttujaa. Katsotaan esimerkkiä:
+## How to:
+Clojure-ohjelmissa komennoriviparametrien käyttö on suoraviivaista. Tässä on helppo esimerkki:
 
 ```Clojure
-(defn -main
-  [& args]
-  (println "Tervetuloa! Tässä ovat syöttämäsi argumentit:" args))
+;; Sovelluksen pääfunktio, joka tulostaa komennoriviparametrit
+(defn -main [& args]
+  (println "Antamasi argumentit ovat:")
+  (doseq [arg args]
+    (println arg)))
 
-;; Käynnistä ohjelma komentoriviltä argumenteilla 'Hei' ja 'Maailma'
-;; Tulostaa "Tervetuloa! Tässä ovat syöttämäsi argumentit: (Hei Maailma)"
+;; Sovelluksen suoritus terminaalissa
+;; komento: lein run Moi Maailma
+
+;; Tulostuu:
+;; Antamasi argumentit ovat:
+;; Moi
+;; Maailma
 ```
 
-## Syvällinen sukellus:
+## Deep Dive
+Command line arguments -historia ulottuu aikaisiin Unix-päiviin. Clojure, mikä pyörii JVM:llä, perii Javan tapoja käsitellä argumentteja. `*command-line-args*` -globaali muuttuja oli aikaisemmin käytössä, mutta `-main` funktion `& args` on nykyinen tapa.
 
-Historiallisesti komentoriviparametrin lukeminen on ollut oleellinen osa komentoriviohjelmistojen suunnittelua Unix-järjestelmistä lähtien. Vaikka nykyaikaisilla ohjelmointikielillä on useita vaihtoehtoja parametrien käsittelyyn, Clojure vaalii yksinkertaisuutta ja minimalismia, ja midnightship/java käytetään. Huomaathan, että '*'clojure.core/*command-line-args**'- muuttuja on saatavilla vain ohjelmasi käynnistämisen aikana.
+Vaihtoehtoina komennorivisyötteille löytyy erilaisia kirjastoja, esimerkiksi `tools.cli`, joka tarjoaa kehittyneempiä analyysityökaluja ja validaatiota.
 
-## Katso myös:
+Implementointi yksityiskohdat riippuvat siitä, mitä ohjelmalla halutaan tehdä argumenteilla. Yksinkertaisesti ne voidaan tulostaa, kuten yllä, tai käyttää ohjauksessa ja konfiguraatiossa.
 
-- Hyvä perehdytys komentoriviparametrien lukemisen perusteisiin on saatavilla [Clojure Doc](https://clojure.org/guides/getting_started#_command_line_arguments) sivuilla.
-- Lisätietoja komentoriviparametrien käsittelystä Midnightship/javan kanssa löydät seuraavasta [linkistä](https://github.com/bhauman/lein-figwheel/wiki/Node.js-development-with-figwheel).
+## See Also
+- [ClojureDocs - Command Line Arguments Example](https://clojuredocs.org/clojure.core/*command-line-args*)
+- [GitHub - tools.cli](https://github.com/clojure/tools.cli)

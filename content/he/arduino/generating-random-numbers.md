@@ -1,7 +1,8 @@
 ---
-title:                "גירוד מספרים אקראיים"
-html_title:           "Haskell: גירוד מספרים אקראיים"
-simple_title:         "גירוד מספרים אקראיים"
+title:                "גילוי מספרים אקראיים"
+date:                  2024-01-20T17:48:50.929874-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "גילוי מספרים אקראיים"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Numbers"
@@ -10,34 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה? 
+## מה ולמה?
+ייצור מספרים אקראיים הוא תהליך בו נוצרים מספרים שלא ניתן לחזות מראש את ערכם. תכניתנים משתמשים בכך למטרות שונות: מבחנים, גיוון במשחקים ובחירה נטולת הטיות.
 
-מספרים אקראיים בתכנות מתייחסים לנתונים שנוצרים לאופן חסר דוגמה ולא צפוי. מתכנתים משתמשים בהם לעיתים על מנת לבצע בדיקות עמידות, ליצירת גיוון במשחקים ולתפעול שונה של אלגוריתמים.
-
-## איך עושים זאת:
-
-אפשר להשתמש בפונקציה `random()` שבווינות Arduino ליצירת מספרים אקראיים.  
-
+## איך לעשות:
 ```Arduino
 void setup() {
-  Serial.begin(9600); 
-  randomSeed(analogRead(0));
+  Serial.begin(9600);
+  randomSeed(analogRead(0)); // הגדלת אקראיות בעזרת קריאה אנלוגית
 }
 
 void loop() {
-  Serial.println(random(100)); 
-  delay(1000); 
+  int randNumber = random(1, 100); // ייצור מספר אקראי בין 1 ל-99
+  Serial.println(randNumber);
+  delay(1000); // המתנה של שנייה אחת בין כל ייצור
 }
 ```
+פלט לדוגמא: 
+```
+23
+67
+89
+...
+```
 
-הפונקציה `random(100)` מחזירה מספר אקראי בין 0 ל-99. `randomSeed(analogRead(0))` מאתחלים את הגנרטור האקראי.
+## ניתוח מעמיק
+בעבר ייצור מספרים אקראיים במחשבים היה אתגר גדול מאחר ומחשבים הם דטרמיניסטיים על פי טבעם. אך בעזרת פונקציות כמו `randomSeed()` וקריאות אנלוגיות, אנו יכולים להגדיל את האקראיות.
 
-## צלילה עמוקה 
+אלטרנטיבות ליצירת מספרים אקראיים כוללות שימוש בחיישנים חיצוניים כדי לקבל נתונים שאינם צפויים, או באלגוריתמים מתמטיים מורכבים. 
 
-מרכז ההוראות האקראיים הראשון נבנה בשנת 1946 ונקרא "רנדום", והפך לבסיס למספרים אקראיים של עוד הרבה שנים. ישנם שיטות אלטרנטיביות ליצירת מספרים אקראיים כמו השיטה של Monte Carlo או גנרטורים פיזיים אקראיים. אך במרבית המקרים, `random()` הוא הגישה הפשוטה והיעילה ביותר.
+על פרטי המימוש, `randomSeed()` מקבלת ערך כלשהו (seed) שמשמשת נקודת התחלה לאלגוריתם הגנרטיבי - כלומר, עם אותו seed תמיד ייוצרו המספרים האקראיים באותו סדר. לכן, חשוב להשתמש בערך חיצוני משתנה, כמו קריאה אנלוגית שאינה יציבה, כדי להבטיח יותר אקראיות.
 
-## ראה גם
-
-1. Arduino Reference: Random Numbers - https://www.arduino.cc/reference/en/language/functions/random-numbers/random/
-2. How Arduino generates random numbers - https://techexplorations.com/guides/arduino/programming/random-numbers/
-3. Understanding Random Numbers in Arduino - https://www.makerguides.com/arduino-random-numbers/ .
+## ראו גם
+- [תיעוד Arduino לפונקציית random](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+- [תיעוד Arduino לפונקציית randomSeed](https://www.arduino.cc/reference/en/language/functions/random-numbers/randomseed/)
+- [מאמר על אלגוריתמים של מספרים אקראיים](https://en.wikipedia.org/wiki/Random_number_generation)

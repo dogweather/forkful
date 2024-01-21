@@ -1,6 +1,7 @@
 ---
 title:                "Створення тимчасового файлу"
-html_title:           "C: Створення тимчасового файлу"
+date:                  2024-01-20T17:39:49.416179-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Створення тимчасового файлу"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,33 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це і навіщо?
+## What & Why? / Що і Чому?
 
-Створення тимчасового файлу - це процес, при якому генерується окремий, короткочасний файл для міжсезонного чи тимчасового зберігання даних. Програмісти роблять це, коли є потреба в обробці великих об'ємів інформації, що не повинна залишитися постійно в системі.
+Створення тимчасового файла допомагає зберігати дані, які потрібні лише короткий час. Програмісти використовують їх для тестування, безпечного вміщення чутливих даних, та уникнення засмічення системи постійними файлами.
 
-## Як це робити:
+## How to: / Як зробити:
 
-Створення тимчасового файлу в Clojure може виглядати так:
+Clojure використовує Java Interop для створення тимчасових файлів. Ось як це працює:
 
 ```Clojure
-(require '[clojure.java.io :as io])
+(import '(java.io File)
+        '(java.nio.file Files))
 
 (defn create-temp-file [prefix suffix]
-  (let [temp-file (java.io.File/createTempFile prefix suffix)]
-    (println (.getAbsolutePath temp-file))
-    (.deleteOnExit temp-file)))
+  (.toString (Files/createTempFile prefix suffix)))
+
+; Це створює тимчасовий файл і друкує його шлях
+(println (create-temp-file "example" ".txt"))
 ```
 
-Вказавши префікс і суфікс, ми генеруємо унікальний тимчасовий файл.
+Запуск цього коду дасть вам унікальний шлях до новоствореного тимчасового файла в вашій тимчасовій директорії.
 
-## Поглиблено:
+## Deep Dive / Глибоке занурення:
 
-Створення тимчасового файлу - старий метод, що датується до часів, коли розмір пам'яті був ограничений. Сьогодні цей метод все ще користується популярністю, особливо при обробці великих файлів.
+Тимчасові файли не нові; вони були частиною програмування з самого початку, як спосіб обійти обмеження пам’яті. У Clojure, ми часто покладаємося на Java Interop для таких речей, через пов'язаність з JVM. Альтернативно, можна використати бібліотеки, такі як `clojure.java.io`, але для тимчасових файлів Java API просте та випробуване. Тимчасові файли, створені через `Files/createTempFile`, будуть автоматично видалені при виході з JVM, якщо ви не вкажете інакше.
 
-Альтернативою може бути використання in-memory databases або створення постійного файлу, що потім видаляється. Обідва методи мають свої переваги та недоліки.
+## See Also / Дивіться також:
 
-Під капотом, `java.io.File/createTempFile` інтерфейс використовує системні засоби операційної системи для генерації унікальних імен файлів.
-
-## Див. також:
-
-За більш детальною інформацією рекомендую звернутися до [Java 7 Documentation for File.createTempFile](https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile(java.lang.String,%20java.lang.String)), та [Clojure Cookbook: Temporary Files](https://clojure-cookbook.com/).
+- JavaDoc для [Files.createTempFile](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html#createTempFile(java.nio.file.Path,%20java.lang.String,%20java.lang.String,%20java.nio.file.attribute.FileAttribute...))
+- Офіційне керівництво Clojure по Java Interop: [Clojure Java Interop](https://clojure.org/reference/java_interop)
+- Бібліотека для роботи з файлами у Clojure: [clojure.java.io](https://clojuredocs.org/clojure.java.io)

@@ -1,6 +1,7 @@
 ---
 title:                "문자열을 소문자로 변환하기"
-html_title:           "Bash: 문자열을 소문자로 변환하기"
+date:                  2024-01-20T17:39:11.080344-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,30 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 사용하나요?
-문자열을 소문자로 변환한는 것은 모든 대문자를 소문자로 바꾸는 과정입니다. 대소문자를 구분하지 않는 검색이나 비교를 하거나, 일관된 출력을 보장하기 위해 프로그래머들은 이를 사용합니다.
+## What & Why? (무엇과 왜?)
+문자열을 소문자로 변환한다는 건, 문자열 내의 모든 대문자를 소문자로 바꾸는 것을 말합니다. 프로그래머들은 이 작업을 주로 데이터를 일관되게 처리하거나, 대소문자를 구별하지 않는 검색을 수행할 때 사용합니다.
 
-## 어떻게 작성하나요:
-PowerShell에서는 문자열을 소문자로 변환하기 위한 간편한 메소드인 'ToLower()'를 제공합니다. 
+## How to (어떻게 하나요?)
+PowerShell에서 문자열을 소문자로 바꾸는 방법은 간단합니다. `.ToLower()` 메서드를 사용하면 돼요. 아래 예제 코드를 실행해보세요.
 
 ```PowerShell
-$originalString = "Hello, World!"
-$lowerCaseString = $originalString.ToLower()
-$lowerCaseString
+# 변수에 문자열 할당
+$str = "HELLO, WORLD!"
+
+# 소문자로 변환
+$lowerStr = $str.ToLower()
+
+# 결과 출력
+$lowerStr
 ```
 
-위 코드를 실행하면, 결과는 다음과 같이 출력됩니다.
+실행 결과는 다음과 같이 나와야 합니다:
 
-```PowerShell
+```
 hello, world!
 ```
 
-## Deep Dive
-소문자 변환은 컴퓨터 프로그래밍에서 오래 동안 이용되어 왔고, 대부분의 프로그래밍 언어가 빠르고 효동적인 방법으로 이를 지원합니다. PowerShell은 문자열 메소드인 'ToLower()'를 통해 이 기능을 수행합니다. 다른 언어, 예를 들어 Python에서는 `.lower()`, Java에서는 `.toLowerCase()`를 사용해 동일한 기능을 시행합니다.
+가끔은 전체 파이프라인을 통해 여러 항목에 적용할 수 있습니다:
 
-변환 작업은 문자열 내의 각 문자에 대해 Unicode 값을 찾아 소문자 Unicode 값으로 대체하는 방식으로 일어납니다. 때문에 변환 작업은 시간과 메모리를 어느 정도 사용하며, 큰 크기의 문자열에서는 이를 주의해야 합니다.
+```PowerShell
+# 배열의 모든 문자열을 소문자로 변환
+$strings = "FIRST", "SECOND", "THIRD"
+$strings | ForEach-Object { $_.ToLower() }
+```
 
-## 참고 문헌 
-1. [PowerShell ToLower() 메소드](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=net-5.0)
-2. [Python lower() 메소드](https://docs.python.org/3/library/stdtypes.html#str.lower)
-3. [Java toLowerCase() 메소드](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
+결과:
+
+```
+first
+second
+third
+```
+
+## Deep Dive (심층 분석)
+과거에는 대소문자 변환 작업이 컴퓨터에 많은 자원을 소모했어요. 하지만 현대의 PowerShell은 이 작업을 빠르고 효율적으로 합니다. 대안으로는 `$str.toLowerInvariant()`가 있습니다. 이것은 특정 문화권에 관계없이 변환을 실행합니다. 이해하려면 유니코드와 문화권이 어떻게 문자 변환에 영향을 미치는지 알아야 하죠. 소문자 변환은 유니코드 표준에 기반하여 작동하며, 각 문자는 고유 코드 포인트를 가지고 있어요.
+
+## See Also (관련 링크)
+- [String Methods - Microsoft .NET Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-5.0)

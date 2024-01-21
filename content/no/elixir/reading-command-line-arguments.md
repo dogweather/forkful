@@ -1,6 +1,7 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Arduino: Lese kommandolinjeargumenter"
+date:                  2024-01-20T17:56:07.895007-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,28 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Når vi snakker om å lese kommandolinje-argumenter, mener vi å ta innspill fra brukeren direkte fra kommandolinjen mens de kjører et program. Dette gir programmerere større fleksibilitet, slik at de kan lage mer dynamiske og tilpassbare programmer.
+## What & Why? (Hva & Hvorfor?)
+Å lese kommandolinjeargumenter handler om å hente data som brukeren gir når de kjører programmet ditt. Vi gjør det for å gjøre programmer fleksible – slik at de kan utføre forskjellige oppgaver basert på hva brukeren ønsker.
 
-## How to:
-Bruke `System.argv/0` funksjonen i Elixir lar deg gripe og håndtere kommandolinje-argumenter. Her er en enkel bruk:
-
+## How To (Hvordan)
 ```Elixir
-defmodule Test do
+defmodule Greeter do
   def main(args) do
-    IO.inspect(args)
+    case args do
+      [name] ->
+        IO.puts("Hei, #{name}!")
+      _ ->
+        IO.puts("Heisann! Hvem er du?")
+    end
   end
 end
 
-System.argv(["-e","Test.main([])"])
+# Hvis lagret som greeter.exs, kjør dette i terminalen:
+# elixir greeter.exs Odin
+# Output: Hei, Odin!
 ```
 
-Når du kjører dette, vil du se at det blir printet en liste med strengene "-e" og "Test.main([])" til terminalen.
+## Deep Dive (Dypdykk)
+I de tidlige dagene av datamaskiner ga kommandolinjeinteraksjon programmerere en direkte linje til operativsystemet. I Elixir, som er en moderne språk, får vi tilgang til kommandolinjeargumenter med `System.argv()`. Alternativer inkluderer bruk av OptionParser-modulen for mer komplekse behov der du kan tolke flagg og nøkkel/verdi-argumenter. Under panseret konverterer BEAM-vm, som Elixir kjører på, brukerinput fra en binærstreng til Elixir-strenger og lister som vi enkelt kan manipulere.
 
-## Deep Dive
-Lesing av kommandolinjeargumenter var en nødvendighet helt tilbake til de tidligste operativsystemene. Spesifikt for Elixir, kan du også bruke funksjonen `OptionParser.parse/2` for mer kompliserte inngangstolkninger. Dette er spesielt nyttig hvis du trenger å håndtere flagg eller nøkkel-verdi par. På implementasjonsnivå blir disse argumentene lagt til i en liste og passert til hovedfunksjonen ved oppstart.
-
-## See Also
-For mer informasjon om hvordan du bruker `System.argv/0` og `OptionParser.parse/2`, se den offisielle Elixir-dokumentasjonen:
-- [System.argv/0](https://hexdocs.pm/elixir/System.html#argv/0)
-- [OptionParser.parse/2](https://hexdocs.pm/elixir/OptionParser.html#parse/2)
+## See Also (Se Også)
+- [Elixir-lang.org - Getting Started Guide](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html)
+- [HexDocs - OptionParser](https://hexdocs.pm/elixir/OptionParser.html)

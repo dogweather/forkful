@@ -1,6 +1,7 @@
 ---
 title:                "Downloading a web page"
-html_title:           "Bash recipe: Downloading a web page"
+date:                  2024-01-20T17:43:48.588566-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Downloading a web page"
 programming_language: "Elm"
 category:             "Elm"
@@ -12,65 +13,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Downloading a web page means to grab the content of that page programmatically. This can be useful for things like web scraping, automated testing, or offline viewing.
+Downloading a web page means grabbing data from the internet directly into your app to display or process it. Programmers do it to obtain real-time information or provide dynamic content to users.
 
 ## How to:
 
-Elm doesn't directly let you download a webpage due to its strictly enforced architecture. However, through HTTP requests, we can retrieve the HTML content.
+Elm requires side effects like HTTP requests to be structured as commands. You'll use the `Http` module to fetch and handle the response.
 
 ```Elm
-import Http
-import Html exposing (Html, text)
-import Json.Decode as Decode
 
-main =
-    Html.program
-        { init = init
-        , view = view
-        , update = update
-        , subscriptions = subscriptions
-        }
+module Main exposing (main)
+
+import Browser
+import Html exposing (Html, text)
+import Http
+
+type alias Model =
+    { content : String }
 
 type Msg
-    = GotPage (Result Http.Error String)
+    = GotText (Result Http.Error String)
 
-init : ( String, Cmd Msg )
+init : ( Model, Cmd Msg )
 init =
-    ( ""
-    , Http.getString "https://elm-lang.org"
-        |> Http.send GotPage
+    ( Model ""
+    , fetchPage "https://api.example.com/data"
     )
 
-update : Msg -> String -> ( String, Cmd Msg )
+fetchPage : String -> Cmd Msg
+fetchPage url =
+    Http.get { url = url, expect = Http.expectString GotText }
+
+update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        GotPage result ->
-            case result of
-                Ok page ->
-                    ( page, Cmd.none )
+        GotText (Ok data) ->
+            ( { model | content = data }, Cmd.none )
 
-                Err _ ->
-                    ( model, Cmd.none )
+        GotText (Err _) ->
+            ( { model | content = "Error: Could not fetch page." }, Cmd.none )
 
-view : String -> Html Msg
+view : Model -> Html Msg
 view model =
-    text model
+    text model.content
 
-subscriptions : String -> Sub Msg
-subscriptions model =
-    Sub.none
+main : Program () Model Msg
+main =
+    Browser.sandbox { init = init, update = update, view = view }
+
 ```
-Output will be the HTML content of the page.
+
+Given a successful fetch, `content` in your model will hold the page's contents. On error, it'll contain a simple error message.
 
 ## Deep Dive
 
-Historically, downloading web pages was a breeze. However, with Elm, due to its design goals to provide a delightful language with no runtime exceptions, some actions that bear potential errors are made impossible to be done directly. Downloading a web page is one such task, as it may lead to issues like network failure, wrong URLs, non-existent pages, and more.
+Elm treats side effects as a Data, which means HTTP requests are managed by the Elm runtime, not directly in your code. Historically, this was a departure from languages like JavaScript, where side effects are more free-wheeling. Alternatives in other languages might be `fetch` in JavaScript or Python's `requests`. Elm's approach ensures your app remains predictable and maintainable by encoding side effects into types and using a centralized `update` function to manage changes.
 
-An alternative to Elm for this task might be Javascript, which provides a more flexible web handling but also leaves more room for errors and unhandled exceptions.
+The `Http` module didn't always exist in Elm. Early versions rolled their own AJAX, which was cumbersome. Now, `Http` provides a suite of functions to handle various cases, like expecting JSON or strings, which makes it more user-friendly.
 
-The Elm example works by making a simple HTTP GET request to the page's URL, then sends the result to the Elm runtime. The Elm runtime invokes the update function, handling either a successful page download (GotPage Ok) or an error (GotPage Err).
+Implementation-wise, when you call `fetchPage`, Elm sends a message to your `update` function with the result. It will either be `Ok data` if it succeeds or `Err error` if it fails. You pattern-match on these outcomes and update your `Model` and view accordingly.
 
 ## See Also
 
-Checkout these resources:
-- Elm's doc about [HTTP library](https://package.elm-lang.org/packages/elm/http/latest/)
+- Elm's HTTP package documentation: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)
+- Elm Guide on Effects: [https://guide.elm-lang.org/effects/](https://guide.elm-lang.org/effects/)
+- JSON Decoding in Elm (for when the data you're fetching isn't a plain string): [https://package.elm-lang.org/packages/elm/json/latest/](https://package.elm-lang.org/packages/elm/json/latest/)

@@ -1,7 +1,8 @@
 ---
-title:                "Debug-tulosteen tulostaminen"
-html_title:           "Bash: Debug-tulosteen tulostaminen"
-simple_title:         "Debug-tulosteen tulostaminen"
+title:                "Virheenjäljitystulosteiden tulostaminen"
+date:                  2024-01-20T17:53:00.540390-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Virheenjäljitystulosteiden tulostaminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -10,33 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Tulostaminen debug-tiedot on ohjelmointitekniikka, jonka avulla ohjelmoijat voivat tarkastella sovelluksen sisäistä tilaa. Tätä tekniikkaa käytämme, koska se auttaa meitä korjaamaan vikoja nopeammin.
+## What & Why? (Mitä & Miksi?)
+Debug-tulosteiden printtaaminen auttaa bongaamaan ohjelman ongelmakohtia. Koodarit tekevät tätä koska se on simppeli tapa nähdä, mitä sovelluksessa tapahtuu eri vaiheissa.
 
-## Miten tehdä:
-Java tarjoaa `System.out.println` -komennon, jonka avulla voit tulostaa debug-tiedot. Tässä on yksinkertainen esimerkki:
-
-```Java
+## How to: (Kuinka tehdä:)
+```java
 public class DebugDemo {
     public static void main(String[] args) {
-        int sum = 0;
-        for(int i=1; i<=10; i++){
-            sum += i;
-            System.out.println("Sum after adding " + i + ": " + sum);
+        int luku = 42;
+        System.out.println("Muuttujan 'luku' arvo on: " + luku);
+        
+        // Kokeillaan, toimiiko silmukka oikein
+        for(int i = 0; i < 5; i++) {
+            System.out.println("Silmukan iteraatio: " + i);
         }
+        
+        // Tsekataan, palauttaako funktio oikean tuloksen
+        int tulos = kertolasku(7, 6);
+        System.out.println("Funktion palauttama tulos: " + tulos);
+    }
+    
+    public static int kertolasku(int a, int b) {
+        // Debug-tulostus funktion sisällä
+        System.out.println("Kertolasku, luvut: " + a + " ja " + b);
+        return a * b;
     }
 }
 ```
-Tämä ohjelma laskee numerot 1-10 ja tulostaa summan jokaisen lisäyksen jälkeen.
+Sample output:
+```
+Muuttujan 'luku' arvo on: 42
+Silmukan iteraatio: 0
+Silmukan iteraatio: 1
+Silmukan iteraatio: 2
+Silmukan iteraatio: 3
+Silmukan iteraatio: 4
+Kertolasku, luvut: 7 ja 6
+Funktion palauttama tulos: 42
+```
 
-## Syvempi sukellus:
-Historiallisesti ottaen, debug-tulostuksen käyttö on ollut yksi vanhimmista ja luotettavimmista debuggausmenetelmistä. Modernit IDE:t ja lähdekoodin debuggaustyökalut tarjoavat korkeatasoisempia tapoja debuggaukseen, kuten asettaminen taukokohtia ja seuraaminen muuttujien tilaa ohjelman suorituksen aikana. Kuitenkin, debug-tulostus antaa yksinkertaisen ja tehokkaan tavan hankkia nopeasti yleiskäsitys ohjelman tilasta.
+## Deep Dive (Syväsukellus)
+Alkujaan, konsoliin tulostaminen oli yksi harvoista tavoista saada välitöntä palautetta ohjelman suorituksesta. Lukuisat debuggertyökalut ovat syntyneet, mutta `System.out.println` pysyy käytössä sen yksinkertaisuuden ja nopeuden vuoksi. Vaihtoehtoina ovat esimerkiksi loggervälineet (kuten Log4j), jotka tarjoavat hienostuneempaa kontrollia ja tietojen tallennusta. Koodin sisäiset debug-tulosteet kannattaa poistaa tuotantoversiosta suorituskyvyn ja turvallisuuden takia.
 
-Java käyttää virtuaalikoneen (JVM) standarditulostuskanavaa (standard out, tai sysout) debug-tulostuksen lähettämiseen, johon `System.out.println` kirjoittaa.
-
-On myös olemassa alternativeja `System.out.println` komennolle, kuten loggauskehykset (esim. Log4J, SLF4J), jotka tarjoavat enemmän joustavuutta ja kontrollia viestien tulostamisesta ja tallentamisesta.
-
-## Katso myös:
-1. Oracle Java Documentation: [System (Java Platform SE 8 )](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-2. Apache Logging Services: [Log4j](https://logging.apache.org/log4j/2.x/)
-4. StackOverflow Discussion: [When and why is it appropriate to use System.out.println() for debugging?](https://stackoverflow.com/questions/1778689/when-and-why-is-it-appropriate-to-use-system-out-println-for-debugging)
+## See Also (Katso myös)
+- [Oracle Java Documentation](https://docs.oracle.com/en/java/)
+- [Log4j – Apache Logging Services](https://logging.apache.org/log4j/2.x/)
+- [Java Debugging with Eclipse - Tutorial](http://www.vogella.com/tutorials/EclipseDebugging/article.html)

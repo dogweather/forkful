@@ -1,7 +1,8 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:01:28.398551-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -12,42 +13,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्या और क्यों?
 
-HTTP अनुरोध भेजना बुनियादी प्रमाणीकरण के साथ, एक वेब सर्वर से डेटा प्राप्त करने का एक तकनीक है, जिसमें यूज़रनेम और पासवर्ड की मांग की जाती है। प्रोग्रामर्स इसे उपयोग करते हैं क्योंकि यह उन्हें सुरक्षित ढंग से वेब सर्वर के साथ बातचीत करने की अनुमति देता है। 
+HTTP अनुरोध भेजना एक तरीका है जिससे आपका Arduino इंटरनेट पर मौजूद सर्वर से बात कर सकता है। बेसिक प्रमाणीकरण का उपयोग करके, आप उसे सुरक्षित तरीके से कर सकते हैं। प्रोग्रामर्स आमतौर पर डाटा भेजने या मांगने के लिए इस प्रक्रिया का इस्तेमाल करते हैं।
 
 ## कैसे करें:
 
-Arduino के साथ कोड लिखने का एक उदाहरण नीचे दिया गया है:
-
 ```Arduino
-#include <ESP8266HTTPClient.h>
+#include <ESP8266WiFi.h>
+#include <Base64.h>
+
+const char* ssid = "आपका_WiFi_नाम";
+const char* password = "आपका_WiFi_पासवर्ड";
+const char* server = "example.com";
+const char* apiEndpoint = "/api/data"; // API एंडपॉइंट
+const char* user = "user";  // बेसिक प्रमाणीकरण यूजरनेम
+const char* pass = "pass";  // बेसिक प्रमाणीकरण पासवर्ड
+
+WiFiClient client;
 
 void setup() {
-  Serial.begin(115200); 
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+  
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  if (client.connect(server, 80)) {
+    String auth = user + ":" + pass;
+    String encodedAuth = base64::encode(auth);
+  
+    // HTTP अनुरोध बनाना
+    String httpRequest = String("GET ") + apiEndpoint + " HTTP/1.1\r\n" +
+                         "Host: " + server + "\r\n" +
+                         "Authorization: Basic " + encodedAuth + "\r\n\r\n";
+    client.print(httpRequest);
+  }
 }
 
 void loop() {
-  HTTPClient http;  
-  http.begin("http://example.com"); 
-  http.setAuthorization("username", "password"); 
-  int httpCode = http.GET();  
-  if(httpCode > 0) {
-     String payload = http.getString(); 
-     Serial.println(payload); 
+  if (client.available()) {
+    String line = client.readStringUntil('\r');
+    Serial.println(line);
   }
-  http.end();
 }
 ```
+सैंपल आउटपुट:
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+{"status":"success","message":"Hello, world!"}
+```
 
-## गहरी तक 
+## डीप डाइव:
 
-बुनियादी प्रमाणीकरण के साथ HTTP अनुरोध भेजने की प्रक्रिया वर्षों से अभ्यास में है, लेकिन इसमें मुख्य जोखिम यह है कि यदि कनेक्शन असुरक्षित है, तो कोई अनाधिकृत उपयोगकर्ता आपके क्रेडेंशियल्स को इंटरसेप्ट कर सकता है। 
+HTTP बेसिक प्रमाणीकरण एक सरल लेकिन प्राचीन तकनीक है, जिसे वेब की शुरुआती दिनों से इस्तेमाल किया जा रहा है। यह यूजरनेम और पासवर्ड को बेस64 एन्कोडिंग में परिवर्तित करके एचटीटीपी हेडर्स में भेजता है। एचटीटीपीएस जैसे अधिक सुरक्षित विकल्प भी हैं। इसके अलावा, मॉडर्न अप्रोचेस जैसे कि OAuth का इस्तेमाल करके ज्यादा सुरक्षित और नियंत्रण योग्य प्रमाणीकरण संभव है। Arduino में, यह प्रक्रिया ESP8266WiFi जैसे लाइब्रेरीज का उपयोग करके सरलीकृत है।
 
-इसके बदले में, आप OAuth जैसे प्रमाणीकरण मेकेनिज्म का उपयोग कर सकते हैं, यदि आपके पास उच्च स्तर की सुरक्षा की आवश्यकता है। 
+## देखें भी:
 
-आप HTTPClient लाइब्रेरी का उपयोग करके Arduino में HTTP अनुरोध भेज सकते हैं। 'http.begin()' कला में, आप यूआरएल पास करते हैं जहां आप HTTP अनुरोध भेजना चाहते हैं। 'http.setAuthorization()' हमें यूज़रनेम और पासवर्ड प्रदान करने की अनुमति दे रहा है। और 'http.GET()' HTTP अनुरोध भेजता है। 
-
-## और देखें 
-
-1. Official Arduino documentation: https://www.arduino.cc/reference/en/
-2. Guide to HTTPClient library: https://arduino-esp8266.readthedocs.io/en/latest/httpclient.html
-3. More on HTTP Basic Access Authentication: https://tools.ietf.org/html/rfc7617
+- Arduino के लिए ESP8266WiFi लाइब्रेरी डॉक्युमेंटेशन: https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html
+- बेसिक प्रमाणीकरण के लिए RFC 7617: https://tools.ietf.org/html/rfc7617
+- Arduino और REST API इंटिग्रेशन गाइड: https://www.arduino.cc/en/Guide/ArduinoEthernetShield
+- Base64 एन्कोडिंग/डिकोडिंग लाइब्रेरी: https://github.com/adamvr/arduino-base64

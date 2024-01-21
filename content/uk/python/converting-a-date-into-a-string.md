@@ -1,6 +1,7 @@
 ---
 title:                "Перетворення дати в рядок"
-html_title:           "Lua: Перетворення дати в рядок"
+date:                  2024-01-20T17:37:37.492194-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Перетворення дати в рядок"
 programming_language: "Python"
 category:             "Python"
@@ -10,43 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і для чого?
-
-Конвертація дати в рядок в Python - це процес перетворення об'єкта дати на рядок. Це зручно для відображення дати в певному форматі або для зберігання в текстовій формі.
+## Що & Навіщо?
+Конвертація дати у рядок перетворює об'єкти дат і часу у зрозумілі та легко читаємі формати тексту, корисні для виводу, зберігання та обміну даними. Програмісти роблять це для гнучкості форматування та інтеграції з іншими системами.
 
 ## Як це зробити:
+Зараз побачимо, як конвертувати дату у рядок у Python.
 
-В Python для конвертації дати в рядок ми використаємо функцію `strftime()`. Ось приклад:
-
-```python
+```Python
 from datetime import datetime
 
-# створимо об'єкт дати
-date = datetime(2025, 7, 4)
+# Текуща дата і час
+now = datetime.now()
 
-# конвертуємо дату в рядок
-date_string = date.strftime("%d.%m.%Y")
+# Конвертація в рядок за замовчуванням
+default_str = now.strftime("%Y-%m-%d %H:%M:%S")
+print(default_str)  # "2023-04-01 12:30:45"
 
-print(date_string)
+# Конвертація в різні формати
+date_str = now.strftime("%d/%m/%Y")
+time_str = now.strftime("%H:%M:%S")
+print(date_str)  # "01/04/2023"
+print(time_str)  # "12:30:45"
 ```
 
-Вихідний результат:
+## Поглиблений огляд
+Функція `strftime` є основою конвертації дат у рядки в Python, і вона приходить з C бібліотеки часу. Синтаксис форматування дат повторює стандарти C, що забезпечує сумісність між мовами. 
+
+Альтернативи - це модулі третіх сторін, наприклад, `arrow` та `pendulum`, що пропонують зручніші інтерфейси і додаткові функції. 
+
+Важливий момент - локалізація. Щоб виводити дату в українському форматі, можна встановити локаль:
+
+```Python
+import locale
+locale.setlocale(locale.LC_TIME, 'uk_UA')
+
+localized_str = now.strftime("%A, %d %B %Y р.")
+print(localized_str)  # "Субота, 01 Квітень 2023 р."
 ```
-"04.07.2025"
-```
 
-## Поглиблений огляд:
+Увага: Локаль потрібно підтримувати на вашій системі, інакше ви отримаєте помилку.
 
-`strftime()` - це функція, що була введена ще в Python 1.5.2 і вона являє собою вбудований метод у Python, який дозволяє форматувати об'єкти datetime як рядки.
-
-Саме `strftime()` є найрозповсюдженішим методом для конвертування дат в рядки. Проте можна також використовувати функцію `isoformat()` для отримання рядка дати у форматі ISO 8601.
-
-Важливо зазначити, що `strftime()` забезпечує гнучкість у визначенні формату вихідного рядка за допомогою різноманітних директив форматування, таких як "%Y" для року або "%d" для дня місяця.
-
-## Дивіться також:
-
-1. Python `datetime` documentation: https://docs.python.org/3/library/datetime.html
-
-2. Python String Format Code for `strftime()`: https://strftime.org/
-
-3. Python Formatter class: https://docs.python.org/3/library/string.html#format-string-syntax
+## Дивіться також
+- Документація по модулю `datetime` в Python: https://docs.python.org/3/library/datetime.html
+- Документація по форматам часу в strftime: https://strftime.org/
+- Модуль `arrow` для Python: https://arrow.readthedocs.io/
+- Модуль `pendulum` для Python: https://pendulum.eustace.io/

@@ -1,6 +1,7 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
+date:                  2024-01-20T17:58:20.460227-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,41 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mitä & Miksi?)
 
-Tekstin hakeminen ja korvaaminen on prosessi, jossa ohjelma löytää tietyn merkkijonon (tekstin) ja vaihtaa sen toiseen. Ohjelmoijat tekevät tämän tekstin ja datan manipulointiin, usein virheiden korjaamiseksi tai tiedon muuttamiseksi.
+Tekstin etsiminen ja korvaaminen on vakiintunut keino manipuloida stringejä: löydät ja korvaat määritettyä tekstiä. Käytämme tätä nopeuttaaksemme kehitystä ja automatisoimme tylsiä tehtäviä.
 
-## Miten:
+## How to: (Kuinka tehdä:)
 
-Javascriptissa voit käyttää metodit `.replace()` ja `.search()` tekstin etsimiseen ja korvaamiseen. 
-
-
-```javascript
-let str = "Hei maailma!";
-let result = str.replace("maailma", "Javascript");
-
-console.log(result); //"Hei Javascript!"
-```
-Tässä esimerkissä `.replace()` metodi etsii merkkijonoa "maailma" ja korvaa sen merkkijonolla "Javascript".
-
-## Deep Dive
-
-Tekstin etsimisen ja korvaamisen mahdollisuus tuli käytäntöön jo historiallisen ajan tekstinkäsittelyjärjestelmissä, kuten Unixin Sed-komento. Se on pysynyt tärkeänä työkaluna, joka helpottaa ohjelman kehitystyötä.
-
-Vaihtoehtoina `.replace()` metodille on muitakin tapoja tehdä samanlaisia toimintoja, kuten regular expression eli RegEx. RegEx on voimakas ohjelmointikielen työkalu, joka antaa hienostuneemmat tekstin etsintä- ja korvausmöglichkeiten.
+JavaScriptissa `String`-objektilla tehtävä etsi ja korvaa on suoraviivaista. Tutkitaan `replace()`-metodia:
 
 ```javascript
-let str = "Hei maailma!";
-let regex = /maailma/gi;
-let result = str.replace(regex, "Javascript");
+let teksti = "Hei Maailma! Maailma on suuri.";
+let uusiTeksti = teksti.replace("Maailma", "Javaskripti");
 
-console.log(result); //"Hei Javascript!"
+console.log(uusiTeksti); // Tulostaa: Hei Javaskripti! Maailma on suuri.
 ```
-Tässä esimerkissä RegEx korvaa kaikki "maailma" esiintymät, riippumatta kirjoitustavasta.
 
-## See Also 
+Huomaat, että vain ensimmäinen "Maailma" korvautui. Globaalisti korvataksesi käytä regexiä:
 
-Lisätietoja JavaScriptin tekstin etsinnästä ja korvaamisesta voit löytää seuraavilta sivustoilta:
-- [MDN Web Docs: String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [W3Schools: JavaScript String replace() Method](https://www.w3schools.com/jsref/jsref_replace.asp)
-- [Eloquent JavaScript: Regular Expressions](https://eloquentjavascript.net/09_regexp.html)
+```javascript
+let globaaliTeksti = teksti.replace(/Maailma/g, "Javaskripti");
+
+console.log(globaaliTeksti); // Tulostaa: Hei Javaskripti! Javaskripti on suuri.
+```
+
+## Deep Dive (Sukellus syvyyksiin)
+
+Ennen moderneja JavaScript-versioita, tekstinkorjaus oli työläämpää ja hitaampaa. ECMAScript 2015 toi nuolifunktioita ja template-literal-syntaksia, mikä yksinkertaisti string-käsittelyä.
+
+Vaihtoehtoisia menetelmiä ovat `split()` ja `join()` yhdistelmiä, jotka voivat tehdä saman asian:
+
+```javascript
+let vaihtoehtoinenTeksti = teksti.split("Maailma").join("Javaskripti");
+console.log(vaihtoehtoinenTeksti); // Hei Javaskripti! Javaskripti on suuri.
+```
+
+Suorituskyvyn näkökulmasta `replace()`-metodi regexillä on yleensä tehokkain. Mutta jos haluat korvata jotain mutkikkaampaa, regex-syntaksi saattaa olla monimutkainen ja vaikeaselkoinen.
+
+## See Also (Katso myös)
+
+- MDN Web Docs - String.replace(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+- RegExp-ohjeet: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+- JavaScript Info - Replace method: https://javascript.info/string#replacing-parts-of-a-string
+
+Nykyaikaiset ohjelmointikielen ominaisuudet tekevät tekstinkäsittelystä näppärää ja nopeaa. Opettelemalla eri metodeja voit valita työkalun tehtävään sopivasti ja työstää stringejä tehokkaasti.

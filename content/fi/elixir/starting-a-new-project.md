@@ -1,7 +1,8 @@
 ---
-title:                "Aloittaminen uuden projektin"
-html_title:           "C: Aloittaminen uuden projektin"
-simple_title:         "Aloittaminen uuden projektin"
+title:                "Uuden projektin aloittaminen"
+date:                  2024-01-20T18:03:30.608583-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Getting Started"
@@ -10,53 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+## What & Why? (Mitä & Miksi?)
+Uuden projektin aloittaminen Elixirissä tarkoittaa uuden sovelluksen tai kirjaston kehityksen käynnistämistä. Koodarit tekevät tämän tyhjältä pöydältä, järjestäen koodinsa modulaarisesti ja tehokkaasti uusien ominaisuuksien tai palveluiden kehittämiseksi.
 
-Uuden projektin aloittaminen tarkoittaa uuden ohjelmistotuotteen tai -palvelun luomista alusta alkaen. Ohjelmoijat tekevät tämän ideoinnistaan, oppimisestaan tai liiketoiminnan tarpeiden täyttämiseksi.
+## How to: (Kuinka tehdään:)
+Elixirissä projekti käynnistetään käyttämällä Mix-työkalua. Mix on Elixiriin sisäänrakennettu työkalu, joka hallinnoi riippuvuuksia ja tehtäviä. Tässä on miten tehdään:
 
-## Kuinka Tehdä:
-
-Aloitetaan asentamalla Elixir kieli. Asenna se seuraavalla koodilla:
-
-```elixir
-sudo apt-get install elixir
+```Elixir
+# Asenna Elixir, jos sitä ei ole jo
+mix new esimerkki_projekti
+cd esimerkki_projekti
+# Tarkista, että projekti toimii
+mix test
 ```
 
-Kun sinulla on Elixir asennettuna, voit luoda uuden projektin seuraavalla koodilla:
+Tämän pitäisi antaa sinulle tuloste, joka ilmoittaa, että testit ohittuivat:
 
-```elixir
-mix new hello_world
+```
+Compiling 1 file (.ex)
+Generated esimerkki_projekti app
+..
+
+Finished in 0.02 seconds
+2 tests, 0 failures
+
+Randomized with seed 54321
 ```
 
-Tämä luo uuden projektin nimeltä `hello_world`, joka luo seuraavat tiedostot ja hakemistot:
+## Deep Dive (Sukellus syvyyksiin):
+Elixir julkaistiin vuonna 2011, ja se on suunniteltu erityisesti skaalautuvuuden ja ylläpidettävyyden tarpeisiin. Se hyödyntää Erlang VM:ää (BEAM), joka on tunnettu rinnakkaisuudestaan ja vikasietoisuudestaan.
 
-```elixir
-* creating README.md
-* creating .gitignore
-* creating mix.exs
-* creating config
-* creating config/config.exs
-* creating lib
-* creating lib/hello_world.ex
-* creating test
-* creating test/test_helper.exs
-* creating test/hello_world_test.exs
-```
+Vaihtoehtoisia työkaluja projektin aloitukseen Elixirissä ovat muun muassa Phoenix (web-kehikko) ja Nerves (ohjelmisto järjestettyyn laitteistokehitykseen). Perustavanlaatuista valmistelua ei tarvita, koska Mix auttaa kaiken tarvittavan pystyttämisessä, mukaan lukien testirungon ja moduulirakenteen.
 
-## Sukellus syvemmälle
-
-Uuden projektin aloittaminen on perusta kaikelle ohjelmoinnille. Jo 1960-luvulta lähtien ohjelmoijat ovat luoneet uusia projekteja järjestelmien rakentamiseksi.
-
-Mix on Elixiriin sisältyvä rakennustyökalu. Se on moderni ja tehokas vaihtoehto monille vanhemmille työkaluille, kuten make tai ant. Mixiin sisältyy myös paketinhallinta Hexin kanssa.
-
-Projektisi ensimmäinen tiedosto, `mix.exs`, määrittää projektin asetukset ja riippuvuudet. `lib/hello_world.ex` on pääohjelmatiedosto, joka sisältää runko-ohjelmasi.
-
-## Katso myös
-
-Lue lisää Elixiristä ja projektien luomisesta seuraavista lähteistä:
-
-1. [Elixirin Virallinen Sivusto](https://elixir-lang.org/)
-2. [Elixir School](https://elixirschool.com/)
-3. [Phoenix Framework](https://phoenixframework.org/)
-4. [Hex](https://hex.pm/)
-5. [Awesome Elixir](https://github.com/h4cc/awesome-elixir)
+## See Also (Lisätietoja):
+- Elixirin virallinen sivusto: https://elixir-lang.org/
+- Mix-työkalun dokumentaatio: https://hexdocs.pm/mix/Mix.html
+- Phoenix-kehikon opas: https://www.phoenixframework.org/
+- Nerves-projektin verkkosivu: https://www.nerves-project.org/
+- Elixirin oppaat ja tutoriaalit Alchemist Campissa: https://alchemist.camp/lessons

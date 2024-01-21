@@ -1,7 +1,8 @@
 ---
-title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
-html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
-simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+date:                  2024-01-20T18:01:37.054611-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,51 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
-Відправлення HTTP-запиту з базовою автентифікацією - це процес передачі ваших облікових данних серверу для перевірки. Програмісти роблять це, щоб забезпечити безпечність даних та доступ до особистих ресурсів.
+## Що це та Навіщо?
+Отже, HTTP-запити з базовою автентифікацією — це коли ви відправляєте ім'я користувача та пароль у заголовку запиту, щоб отримати доступ до захищеного ресурсу. Програмісти роблять це, щоб взаємодіяти з веб-сервісами, які вимагають перевірки автентичності.
 
 ## Як це зробити:
 ```C
+#include <stdio.h>
 #include <curl/curl.h>
 
 int main(void) {
     CURL *curl;
     CURLcode res;
 
-    curl_global_init(CURL_GLOBAL_DEFAULT);
-
     curl = curl_easy_init();
     if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-
+        // Встановлення URL
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com/resource");
+        
+        // Встановлення заголовку для базової автентифікації
         curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
-        curl_easy_setopt(curl, CURLOPT_USERPWD, "user:password");
-
+        curl_easy_setopt(curl, CURLOPT_USERNAME, "user");
+        curl_easy_setopt(curl, CURLOPT_PASSWORD, "pass");
+        
+        // Виконання запиту
         res = curl_easy_perform(curl);
         if(res != CURLE_OK)
-            fprintf(stderr, "curl_easy_perform() failed: %s\n",
-                    curl_easy_strerror(res));
-
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+        
+        // Завершення сесії
         curl_easy_cleanup(curl);
     }
-
-    curl_global_cleanup();
-
     return 0;
 }
 ```
-Вищенаведений код відправить HTTP-запит до "http://example.com" з базовою автентифікацією, використовуючи облікові дані "user:password".
+Вище наведений код демонструє, як виконати запит з базовою автентифікацією за допомогою бібліотеки cURL. Якщо все пройшло успішно, відповідь сервера буде виведена на стандартний вихід. У разі помилки, ви побачите опис помилки.
 
-## Докладний погляд
-Відправлення HTTP-запитів із базовою автентифікацією було впроваджено в RFC 2617 у 1999 році як частина протоколу HTTP 1.1.
+## Поглиблені знання
+Базова автентифікація — це метод автентифікації HTTP, в якому логін і пароль (не зашифровані) включаються в заголовок запиту. Це старий і простий, але не найбезпечніший спосіб передачі облікових даних. Як альтернативу, розгляньте OAuth або токени, які забезпечують більш безпечну авторизацію. Щодо реалізації у мові C, бібліотека cURL є популярним вибором для роботи з HTTP-запитами, оскільки вона підтримує широкий спектр протоколів і характеризується гнучкістю та простотою у використанні.
 
-Щодо альтернатив, ви можете використовувати дайджест-автентифікацію, токени OAuth або SSL-сертифікати для автентифікації на сервері.
-
-Існує декілька різних бібліотек для відправлення HTTP-запитів у C, але libcurl є однією з найпопулярніших частин, частково через свою підтримку різних методів автентифікації.
-
-## Дивіться також
-[Офіційна документація libcurl](https://curl.se/libcurl/c/)
-
-[HTTP-автентифікація на MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-
-[RFC 2617 - HTTP Authentication: Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)
+## Дивіться також:
+- [cURL libcurl - Using libcurl in C programs](https://curl.se/libcurl/c/)
+- [RFC 7617 – The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+- [RFC 6750 – The OAuth 2.0 Authorization Framework: Bearer Token Usage](https://tools.ietf.org/html/rfc6750)

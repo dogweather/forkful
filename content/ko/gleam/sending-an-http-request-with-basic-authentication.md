@@ -1,7 +1,8 @@
 ---
-title:                "기본 인증을 이용한 HTTP 요청 보내기"
-html_title:           "Arduino: 기본 인증을 이용한 HTTP 요청 보내기"
-simple_title:         "기본 인증을 이용한 HTTP 요청 보내기"
+title:                "기본 인증을 사용한 HTTP 요청 보내기"
+date:                  2024-01-20T18:01:48.512697-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "기본 인증을 사용한 HTTP 요청 보내기"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,37 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 사용하나요?
+## What & Why? (무엇과 왜?)
+HTTP 요청에 기본 인증을 보내는 것은, 사용자 이름과 비밀번호를 사용해서 서버에 인증을 요구하는 과정입니다. 프로그래머들은 보통 보안이 필요한 데이터에 접근하고자 할 때 이 방법을 사용합니다.
 
-HTTP 요청을 기본 인증과 함께 보내는 것이란, 서버에 보안된 엔드포인트에 액세스할 수 있는 권한을 표현하는 방법입니다. 프로그래머들은 이러한 방법을 사용하여 API를 안전하게 사용하거나 정보에 접근합니다.
-
-## 어떻게 사용하나요:
-
-Gleam에서 HTTP 요청과 기본 인증을 보내는 코드 예시입니다:
-
+## How to: (방법:)
 ```gleam
-import gleam/http.{client, Request}
+import gleam/http
+import gleam/http/basic_auth
 
-let request = Request
-  .new("https://my-secure-api.com")
-  .header("Authorization", "Basic QWxhZGRpbjpPcGVuU2VzYW1l")
+pub fn send_request() {
+  let auth_header = basic_auth.build_header("username", "password")
+  let request = http.Request(
+    method: http.Get,
+    url: "https://example.com/protected",
+    headers: [auth_header],
+    ..http.default_request()
+  )
 
-client.send(request)
+  let response = http.send(request)
+  match response {
+    Ok(response) ->
+      io.println("Success! Data: " ++ response.body)
+    
+    Error(error) ->
+      io.println("Failed to send request: " ++ error)
+  }
+}
+```
+Sample output:
+```
+Success! Data: {"message":"You accessed protected data!"}
 ```
 
-위의 코드 실행을 통해, 서버는 응답을 반환할 것입니다.
+## Deep Dive (심층 분석)
+기본 인증(basic authentication)은 HTTP 1.0에서부터 사용되는 인증 메커니즘입니다. 헤더에 `Authorization`을 추가하며, 값은 `Base64`로 인코딩된 `username:password` 형태입니다. 이 방법은 간단하지만, HTTPS가 아닌 연결에서는 취약할 수 있습니다. 대안으로 OAuth, JWT 등이 있지만, 설정이 더 복잡합니다. Gleam은 `gleam/http` 패키지를 사용하여 기본 인증을 구현할 수 있게 해줍니다. 이 패키지는 요청 및 응답 처리를 위한 다양한 함수와 타입을 제공하며, `basic_auth` 모듈은 `Authorization` 헤더를 쉽게 만들 수 있도록 도와줍니다.
 
-## 깊이 알아보기
-
-기본 인증은 웹의 초창기부터 서버에 액세스하기 위한 간단한 방법으로 사용되었습니다. 이 방식은 사용자 이름과 비밀번호를 Base64로 인코딩하여 "Authorization" 헤더에 넣습니다.
-
-비록 기본 인증이 간편하고 코드 구현도 비교적 쉽지만, 약점도 있습니다. 예를 들어, 평문 문자열이 Base64로 인코딩된다는 점 때문에, 트래픽 감청이 가능하므로 항상 보안 연결(HTTPS) 위에서 사용되어야 합니다.
-
-또한, OAuth 2.0 또는 JWT(Json Web Tokens)와 같은 다른 인증 방법도 고려해 볼 만합니다. 이들은 동적인 인증을 허용하며, 토큰 간에 부가 정보를 교환할 수 있는 기능을 갖추고 있습니다.
-
-## 참고 자료
-
-다음은 HTTP 요청을 기본 인증과 함께 보내는 데 관한 추가 정보를 찾을 수 있는 몇가지 참고 차례입니다:
-
-- [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
-- [Mozilla Developer Network - HTTP authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+## See Also (관련 자료)
+- Gleam HTTP package documentation: [https://hexdocs.pm/gleam_http/](https://hexdocs.pm/gleam_http/)
+- HTTP Basic Authentication standard: [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)
+- Base64 Encoding: [https://en.wikipedia.org/wiki/Base64](https://en.wikipedia.org/wiki/Base64)

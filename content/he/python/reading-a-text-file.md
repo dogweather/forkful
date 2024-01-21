@@ -1,6 +1,7 @@
 ---
 title:                "קריאת קובץ טקסט"
-html_title:           "Go: קריאת קובץ טקסט"
+date:                  2024-01-20T17:55:18.294916-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "קריאת קובץ טקסט"
 programming_language: "Python"
 category:             "Python"
@@ -11,42 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+קריאת קובץ טקסט בפייתון זה לקחת את המידע שמור בקובץ ולהנגיש אותו לקוד שלנו. עושים את זה כי הרבה פעמים מידע שרוצים לעבד מגיע בצורת קבצי טקסט.
 
-קריאת קובץ טקסט בפייתון היא התהליך שבו משתמשים בפקודות בקוד כדי לקרוא תוכן שנמצא בקובץ. מתכנתי פייתון עושים זאת כדי לטפל בנתונים, לנתח פלטים ולשם גיבוי ושחזור.
-
-## איך לעשות את זה:
-
-```Python
-# פתח קובץ
-text_file = open('example.txt', 'r')
-
-# קרא קובץ
-print(text_file.read())
-
-# סגור קובץ
-text_file.close()
-```
-
-פלט:
-
-```
-זהו דוגמא לטקסט שנקרא מקובץ.
-```
-
-## הצצה לעמוק ביותר
-
-בעבר, בשפות תכנות אחרות, היה צורך לכתוב קוד מורכב יותר כדי לקרוא קבצים. פייתון מאפשרת לנו לעשות את זה בקלות יותר. יתר על כן, באופן אלטרנטיבי, ניתן לשימוש ב-with statement במקום לסגור את הקובץ באופן ידני. בנוסף, אם הקובץ גדול מאוד, עלול להיות טוב יותר לקרוא את הקובץ בצורה שונה כדי לחסוך בזיכרון.
+## איך לעשות:
+קוד פשוט לקרוא מקובץ:
 
 ```Python
-with open('example.txt', 'r') as text_file:
-    for line in text_file:
-        print(line)
+with open('example.txt', 'r', encoding='utf-8') as file:
+    content = file.read()
+    print(content)
 ```
 
-## ראה גם
+פלט לדוגמה:
+```
+שלום, עולם!
+דוגמה לטקסט בקובץ.
+```
 
-[מדריך רשמי על טיפול קבצים בפייתון](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+לקרוא כל שורה לתוך רשימה:
 
-[אתר StackOverflow עם שאלות ותשובות על הנושא](https://stackoverflow.com/questions/tagged/python+file-io)
+```Python
+with open('example.txt', 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+    print(lines)
+```
 
-[מאמר מעמיק המסביר על טיפול בקבצים בפייתון](https://realpython.com/read-write-files-python/)
+פלט לדוגמה:
+```
+['שלום, עולם!\n', 'דוגמה לטקסט בקובץ.\n']
+```
+
+## עיון מעמיק
+קריאת קבצים היא מרכיב בסיסי בתכנות מאז השנות ה-40. היא השתנתה במהלך השנים והיום בפייתון אפשר גם להשתמש ב`io` או `os` לשימושים מתקדמים. פייתון טיפל בבעיות של קידוד ומערכות הפעלה שונות כדי שאין צורך לדאוג להכל בעצמנו.
+
+## תראו גם
+- המסמך הרשמי למודול `open`: https://docs.python.org/3/library/functions.html#open
+- המדריך למודול `io`: https://docs.python.org/3/library/io.html
+- המדריך לטיפול בקבצים וחיתוכים: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files

@@ -1,7 +1,8 @@
 ---
-title:                "使用基本认证发送http请求"
-html_title:           "Bash: 使用基本认证发送http请求"
-simple_title:         "使用基本认证发送http请求"
+title:                "使用基本认证发送 HTTP 请求"
+date:                  2024-01-20T18:01:34.372731-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "使用基本认证发送 HTTP 请求"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,37 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么与为什么?
+## 什么 & 为什么?
+发送带有基本认证的HTTP请求就是通过网络向服务器发送信息，并携带用户名和密码进行验证。程序员这样做是为了安全地访问受保护的资源，比如API端点。
 
-当我们发送带有基础认证的 HTTP 请求时，我们在 Web 服务请求中包含一组凭证。程序员这么做是为了通过 Web 服务器在无需交互的情况下验证用户的身份。
+## 如何做:
+```gleam
+import gleam/http
+import gleam/http/cowboy
 
-## 如何实现:
+// 定义认证凭证
+fn basic_auth_header(username: String, password: String) -> http.Header {
+  let credentials = base64.encode(username ++ ":" ++ password)
+  http.header("Authorization", "Basic " ++ credentials)
+}
 
-在Gleam中，我们可以使用`gleam/httpc`库发送HTTP请求。让我们看一个示例：
+// 发送请求
+pub fn send_authenticated_request() {
+  let auth_header = basic_auth_header("user", "pass")
+  let request = http.Request(
+    method: http.Get,
+    headers: [auth_header],
+    url: "http://example.com/protected",
+    ..http.default_request()
+  )
 
-```Gleam
-import gleam/httpc.{Get, send}
-import gleam/httpc/header.{RequestHeaders, Authorization}
+  let response = http.send(request)
 
-fn request_with_auth(url: String, username: String, password: String) {
-  let auth_header = Authorization.basic(username, password)
-  let headers = RequestHeaders.new()
-    |> RequestHeaders.append(auth_header)
-  send(Get(url), [headers])
+  match response {
+    Ok(response) -> io.println("Success! Response: " ++ response.body)
+    Error(error) -> io.println("Error sending request: " ++ error)
+  }
 }
 ```
-
-当你运行这个代码片段时，你将能够发送一个带有基本授权的 HTTP GET 请求。
+输出示例: 
+```
+Success! Response: Welcome to the protected endpoint!
+```
 
 ## 深入了解
+HTTP基本认证是一种简单的认证协议，客户端通过Authorization头部发送用户名和密码。这种方法存在于HTTP/1.0，至今仍被应用。尽管基本认证易于实现，但由于凭证以明文形式发送（尽管经过Base64编码），因此不安全——如果不是在HTTPS上使用。
 
-发送带有基本认证的HTTP请求阐明了Web服务的安全性。虽然“基础”认证并不提供强大的安全性（因为它通过简单的 base64 编码发送用户凭证），但它在历史上是 Web 认证的重要部分，尤其是在 中间人你不需要或不能对请求进行加密的场景下。
+替代方案包括OAuth和Token-based认证，它们都较为复杂但提供了更高的安全性。
 
-对于发送HTTP请求有多种实现方式，如使用cookies或token，或者使用更复杂的认证方式如OAuth。
+在Gleam中发送带有基本认证的HTTP请求，首先需要构造一个带有`Authorization`头部的请求，然后使用`http.send`函数发送。Gleam的类型系统和模式匹配功能让处理响应简洁且安全。
 
-在代码实现细节中，我们是在HTTP请求头中包含了`Authorization`头来发送凭证。其中，`Authorization.basic`是`gleam/httpc`库中的一个函数，生成了一个基本认证头。
-
-## 参考资料 
-
-- Gleam HTTP 客户端文档: https://hexdocs.pm/gleam_httpc/readme.html
-- HTTP 认证: https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication
+## 参考链接
+- Gleam HTTP客户端文档: [https://hexdocs.pm/gleam_http/](https://hexdocs.pm/gleam_http/)
+- HTTP认证标准: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- Base64编码说明: [https://developer.mozilla.org/en-US/docs/Glossary/Base64](https://developer.mozilla.org/en-US/docs/Glossary/Base64)

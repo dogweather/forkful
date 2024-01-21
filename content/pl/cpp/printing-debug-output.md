@@ -1,6 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-html_title:           "Haskell: Drukowanie komunikatów debugowania"
+date:                  2024-01-20T17:51:57.399643-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "C++"
 category:             "C++"
@@ -11,39 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Drukuje drukowanie debugowania to technika programowania służąca do śledzenia wartości zmiennych i błędów w programie w czasie rzeczywistym. Programiści robią to, aby sprawniej naprawiać błędy i zrozumieć działanie swojego kodu.
+Drukowanie informacji debug jest jak dziennik programisty. Pomaga śledzić co się dzieje w kodzie — kiedy, gdzie i dlaczego. Programiści używają tej techniki, żeby szybko wykrywać błędy i monitorować zachowanie aplikacji.
 
 ## Jak to zrobić:
-
-Prosty przykład wyników debugowania:
-
 ```C++
 #include <iostream>
 
 int main() {
-    int a = 5;
-    std::cout << "Wartość a: " << a << std::endl;
+    // Prosty output do konsoli
+    std::cout << "Start aplikacji" << std::endl;
+
+    int liczba = 42;
+    // Debug wartości zmiennej
+    std::cerr << "Wartość zmiennej liczba: " << liczba << std::endl;
+
+    // ... reszta programu
+
+    std::cout << "Koniec aplikacji" << std::endl;
     return 0;
 }
 ```
-
-Po uruchomieniu powyższy kod wypisze na ekranie:
-
+Output:
 ```
-Wartość a: 5
+Start aplikacji
+Wartość zmiennej liczba: 42
+Koniec aplikacji
 ```
 
-## W głąb tematu:
+## Szczegółowo:
+W dawnych czasach programiści debugowali kod na kartach perforowanych. Dzisiaj mamy `std::cout` i `std::cerr` – standardowe strumienie w C++. Używamy `std::cout` do wydruku normalnych danych, a `std::cerr` do komunikatów błędów czy debugu, który może być przekierowany do innego miejsca niż główny output programu.
 
-Drukuje debugowanie używane jest od początków programowania. W przeszłości zamiast tego, programiści używali lamp i oscylografów do śledzenia działania programu.
+Alternatywy to np. używanie bibliotek jak `log4cpp` czy `spdlog`, które oferują zaawansowane opcje logowania. Do wypisywania w trybie debug mogą też służyć makra, jak `assert`, które służą do weryfikacji założeń w kodzie.
 
-Alternatywą dla drukowania debugowania jest użycie bardziej zaawansowanych narzędzi do debugowania kodu, takich jak GDB dla C++. Te narzędzia oferują więcej funkcji, ale są też bardziej skomplikowane do użytku.
-
-Szczegółowy opis implementacji drukowania debugowania zależy od języka programowania. W C++ najprostszym sposobem jest użycie `cout` z biblioteki standardowej `iostream`, jak w naszym powyższym przykładzie.
-
-## Zobacz też:
-
-- Oficjalna dokumentacja C++ na temat `cout` i `iostream`: www.cppreference.com/w/cpp/io
-- Szczegółowy przewodnik na temat debugowania w C++ z użyciem GDB: www.gnu.org/software/gdb/documentation/
-- Przewodnik na temat technik debugowania: www.geekhideout.com/debug.shtml
+## Zobacz także:
+- [cppreference.com: Input/output library](https://en.cppreference.com/w/cpp/io)
+- [github.com: spdlog](https://github.com/gabime/spdlog)

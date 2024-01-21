@@ -1,7 +1,8 @@
 ---
-title:                "Strings verketten"
-html_title:           "Bash: Strings verketten"
-simple_title:         "Strings verketten"
+title:                "Zeichenketten verknüpfen"
+date:                  2024-01-20T17:34:12.652404-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Zeichenketten verknüpfen"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,46 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Strings in C Zusammenfügen: Eine Einführung
+## Was & Warum?
 
-## Was und Warum?
+String-Konkatenation ist das Verknüpfen von zwei oder mehreren Zeichenketten (Strings) zu einer neuen, durchgehenden Zeichenkette. Das kommt oft vor, wenn wir dynamische Nachrichten bauen oder Daten formatieren müssen.
 
-Stringzusammenfügung ist das Verfahren, durch das mehrere Zeichenfolgen in eine einzige Zeichenfolge zusammengefügt werden. Programmierer tun dies, um Daten sinnvoll zu organisieren und zu manipulieren.
+## So geht's:
 
-## Wie geht das?
-
-Wir können die `strcat` Funktion aus der Bibliothek `string.h` verwenden, um Strings in C zusammenzufügen. Hier sehen Sie, wie das geht:
-
-```C
+```c
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char str1[50] = "Guten ";
-    char str2[]   = "Tag!";
-    
-    strcat(str1, str2);
-    printf("%s\n", str1);
-    
+    char greeting[20] = "Hallo, ";
+    char name[] = "Welt";
+
+    strcat(greeting, name); // "Hallo, Welt" wird erzeugt
+    printf("%s\n", greeting); // Ausgabe: Hallo, Welt
+
     return 0;
 }
 ```
 
-Wenn Sie dieses Programm ausführen, sehen Sie folgenden Output:
+## Tiefgang
 
-```C
-Guten Tag!
-```
+Historisch gab es schon immer das Bedürfnis, Zeichenketten zu manipulieren. Die C-Standardbibliothek bietet hierfür Funktionen wie `strcat()` und `strncat()`. Die Nutzung dieser Funktionen verlangt jedoch Vorsicht, weil Überläufe des Ziel-Arrays zu Sicherheitsproblemen führen können. Moderne Alternativen in anderen Sprachen nutzen Builder-Pattern oder überladen den `+`-Operator für eine sicherere und intuitivere Verknüpfung von Strings.
 
-## Tiefgehende Informationen
+In C sollte das Ziel-Array genügend Speicherplatz reserviert haben, um beide Strings und das Nullterminierungszeichen aufzunehmen. `strncat()` ist eine sicherere Variante, welche die Anzahl der konkatenierten Zeichen limitiert, aber dennoch sollte man aufmerksam die Größe des Buffers prüfen. Fehler beim Umgang mit Zeichenketten können zu Pufferrüberläufen (Buffer Overflows) führen, die in der Vergangenheit oft ausgenutzt wurden.
 
-Zur geschichtlichen Entwicklung, die Stringzusammenfügung ist schon seit den Anfangstagen der Programmierung ein zentrales Konzept, da Text oft das wichtigste Medium zur Interaktion mit Benutzern ist.
+## Siehe Auch
 
-Es gibt andere Methoden, um Strings in C zu konkatenieren, z.B. die `sprintf` Funktion oder manuelles Verknüpfen mithilfe von Pointern.
-
-Hinsichtlich der Implementation, `strcat` setzt das Ende des ersten Strings auf das Anfangszeichen des zweiten Strings und das Ende des zweiten Strings auf eine Null-Terminator. Es ist wichtig zu beachten, dass der erste String genügend Speicherplatz enthalten muss, um beide Strings aufzunehmen.
-
-## Weitere Informationen
-
-- Manual Page für `strcat`: http://man7.org/linux/man-pages/man3/strcat.3.html
-- C Programming/String handling - Wikibooks: https://en.wikibooks.org/wiki/C_Programming/String_handling
+- ISO/IEC 9899:201x - Arbeitsentwurf des C Standard: http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf
+- `strcat` - cppreference: https://en.cppreference.com/w/c/string/byte/strcat
+- `strncat` - cppreference: https://en.cppreference.com/w/c/string/byte/strncat
+- CWE-120: Klassische Pufferüberlaufschwachstelle: https://cwe.mitre.org/data/definitions/120.html

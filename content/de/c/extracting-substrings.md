@@ -1,7 +1,8 @@
 ---
-title:                "Teilzeichenketten extrahieren"
-html_title:           "PowerShell: Teilzeichenketten extrahieren"
-simple_title:         "Teilzeichenketten extrahieren"
+title:                "Teilstrings extrahieren"
+date:                  2024-01-20T17:44:59.324622-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Teilstrings extrahieren"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,42 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Extrahieren von Teilstrings bedeutet, dass wir ein Stück aus einem längeren String herausschneiden. Programmierer nutzen das, um spezifische Daten zu verarbeiten, Informationen zu validieren oder Formatierungen anzupassen.
 
-Das Extrahieren von Teilstrings ist der Prozess, mit dem wir spezifische Teile einer Zeichenkette auswählen und isolieren. Es ist nützlich, wenn wir bestimmte Daten aus einem Textblock brauchen oder wenn wir das Verhalten unseres Programms auf bestimmte Wortgruppen oder -muster steuern möchten.
-
-## So geht's:
-
-Halten wir's einfach. Angenommen, Sie haben einen String und wollen einen Teil davon extrahieren. In C können wir das mit den Funktionen `strncpy()` und `sprintf()` tun. Hier ist ein Beispiel:
-
+## Wie geht das?
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main()
-{
-    char str[] = "Hallo, Welt!";
-    char buff[50];
+int main() {
+    char text[] = "Wir lernen C-Programmierung!";
+    char substr[20];
 
-    strncpy(buff, str, 5);
-    buff[5] = '\0'; // Fügt das Ende-Zeichen hinzu
-
-    printf("Der Teilstring ist: %s\n", buff); // Gibt "Hallo" aus
-
+    // Extrahieren eines Teilstrings ab Position 4, Länge 7
+    strncpy(substr, text + 4, 7);
+    substr[7] = '\0'; // Null-Terminator nicht vergessen!
+    
+    printf("Teilstring: %s\n", substr);
     return 0;
 }
 ```
-Wichtig ist: Mit der Funktion `strncpy()` kopieren wir die ersten fünf Zeichen aus dem String in den Puffer. Dann setzen wir das Null-Zeichen manuell auf die Position nach dem letzten kopierten Zeichen, um das Ende des Strings zu markieren und nur den gewünschten Teil auszugeben.
+Ausgabe:
+```
+Teilstring: lernen
+```
 
-## Deep Dive
-
-Extrahieren von Teilstrings ist nichts Neues. Schon in den frühen Tagen von C standen Funktionen wie `strncpy()`, `strcat()`, `strstr()` zur Verfügung. Es gibt auch leistungsfähigere Alternativen wie `sscanf()`, `strchr()`, `strrchr()` usw. 
-
-Aber Vorsicht: String-Manipulation kann zu gefürchteten Puffernüberläufen führen, wenn sie unsachgemäß verwendet wird. Im obigen Code kümmern wir uns darum, indem wir das Ende-Zeichen '\0' manuell setzen. Ohne dieses Zeichen würde `printf()` Bytes lesen, bis es ein Null-Zeichen findet, was einen Buffer-Überlauf verursachen kann.
+## Tiefere Einblicke
+Teilstrings zu extrahieren, ist so alt wie das Programmieren mit Strings selbst. C bietet keine eingebaute Substring-Funktion, anders als höhere Sprachen wie Python oder Java. `strncpy()` ist jedoch ein Standardwerkzeug, und mit Kenntnis von Pointern lässt sich viel erreichen. Man sollte vorsichtig sein, um Pufferüberläufe und fehlende Null-Terminatoren zu vermeiden. Alternativen sind Bibliotheken wie `strstr` zum Finden von Substrings oder das manuelle Iterieren durch den String.
 
 ## Siehe auch
-
-Wollen Sie weiter gehen und C noch besser verstehen? Hier sind ein paar Links:
-
-- Funktionen zur Zeichenkettenverarbeitung: https://en.cppreference.com/w/c/string/byte
-- Sichere String-Manipulation in C: https://owasp.org/www-community/attacks/Buffer_overflow_attack
-- Codewars zum Üben Ihres C-Codes: https://www.codewars.com/collections/basic-c
+- C Standard Library documentation on `strncpy()`: https://en.cppreference.com/w/c/string/byte/strncpy
+- Tutorial über Pointer in C: https://www.tutorialspoint.com/cprogramming/c_pointers.htm
+- "The C Programming Language" von K&R - klassische Lektüre zum Umgang mit Strings und Pointern.

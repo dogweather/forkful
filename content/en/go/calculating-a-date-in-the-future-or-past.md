@@ -1,6 +1,7 @@
 ---
 title:                "Calculating a date in the future or past"
-html_title:           "Go recipe: Calculating a date in the future or past"
+date:                  2024-01-20T17:31:12.352599-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Calculating a date in the future or past"
 programming_language: "Go"
 category:             "Go"
@@ -12,13 +13,12 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Calculating a date in the future or past is about determining the precise calendar date by adding or subtracting a given number of days, months, or years from a particular point in time. Programmers often do it for tasks like scheduling events, measuring time intervals, or setting deadlines.
+Calculating a date in the future or past is just what it sounds like - figuring out what date it'll be, say, 10 days from now, or what date it was 50 days ago. Programmers do this for stuff like setting deadlines, expiry dates, or handling reservations.
 
-## How To:
+## How to:
 
-Here's an example of how to calculate a future or past date in Go using in-built time package:
+Let's mess with time in Go:
 
-To get a future date:
 ```Go
 package main
 
@@ -28,44 +28,42 @@ import (
 )
 
 func main() {
+	// Today's date
 	today := time.Now()
-	futureDate := today.AddDate(1, 0, 0) //Add 1 year
+	fmt.Println("Today is:", today.Format("Jan 2, 2006"))
 
-	fmt.Println("Today's Date: ", today)
-	fmt.Println("Future Date: ", futureDate)
+	// Future date, 10 days from now
+	future := today.Add(10 * 24 * time.Hour)
+	fmt.Println("10 days from now:", future.Format("Jan 2, 2006"))
+
+	// Past date, 50 days ago
+	past := today.Add(-50 * 24 * time.Hour)
+	fmt.Println("50 days ago:", past.Format("Jan 2, 2006"))
 }
 ```
-Output of the above script will be today's date and a date a year from now.
 
-And, here's how you get a past date:
-```Go
-package main
+Run it and you'll see something like:
 
-import (
-	"fmt"
-	"time"
-)
-
-func main() {
-    today := time.Now()
-    pastDate := today.AddDate(-1, 0, 0) //Subtract 1 year
-
-    fmt.Println("Today's Date: ", today)
-    fmt.Println("Past Date: ", pastDate)
-}
 ```
-This will output today's date and the same date last year.
+Today is: Mar 15, 2023
+10 days from now: Mar 25, 2023
+50 days ago: Jan 24, 2023
+```
 
 ## Deep Dive
 
-Historically, calculating dates in programming languages came with the advent of time libraries. Before that, countless bugs had occurred due to mishandling date and time calculation. In Go, the 'time' package is used for date and time operations.
+Why care about dates? Well, historically, tracking time has been key for agriculture, science, history, you name it. In computing, it's just as crucial - think of tasks like backups, expiration checks, and scheduling.
 
-An alternative way of calculating future or past dates in Go is by using the 'Add' method provided in the 'time' package. This method adds the duration provided as a parameter to the current time. However, 'AddDate' provides better management by allowing you to individually increment or decrement years, months, or days.
+Before Go's `time` package, we had to rely on less intuitive libraries or, heaven forbid, manual calculations. Now, we can manipulate dates using `Add` for adding durations, or `Sub` for finding the duration between two dates.
 
-When calculating future or past dates, it is crucial to be mindful of leap years. Luckily, Go's 'time' package handles this complexity for you.
+Also, here's a fun fact: calculations consider leap years and stuff, but there's no handling for quirks in human-made calendars (like when Britain skipped 11 days in 1752).
+
+Alternatives? Sure. You could use `AddDate` to add specific numbers of years, months, and days, if you don't fancy the `duration * time.Hour` approach.
+
+Implementation-wise, Go uses a proleptic Gregorian calendar, extended back to year one and forward to the far future. It's the same system we use daily, minus quirks of historical calendar reforms.
 
 ## See Also
 
-1. Go's official time package documentation: https://golang.org/pkg/time/
-2. An introduction to Go's time package: https://yourbasic.org/golang/time-date-difference-timestamp/
-3. Converting times between time zones in Go: https://blog.golang.org/here-is-the-time
+- The Go Programming Language Specification on time: https://golang.org/ref/spec#Time
+- The Go `time` package docs: https://pkg.go.dev/time
+- Rob Pike’s talk on Go’s Time Formatting: https://www.youtube.com/watch?v=rKnDgT73v8s

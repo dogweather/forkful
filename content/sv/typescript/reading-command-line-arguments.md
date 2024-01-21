@@ -1,7 +1,8 @@
 ---
-title:                "Läsa kommandoradsargument"
-html_title:           "Bash: Läsa kommandoradsargument"
-simple_title:         "Läsa kommandoradsargument"
+title:                "Läsa in kommandoradsargument"
+date:                  2024-01-20T17:57:10.723284-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Läsa in kommandoradsargument"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -11,36 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Läsa kommandoradsargumenten är processen att extrahera och tolka de data som skickas till ett program vid körning. Programmerare gör detta för att manipulera programmets beteende beroende på användarens önskemål.
+Att läsa in kommandoradsargument är metoden att fånga användarinput från konsolen i ditt program. Programmerare gör det för att tillåta användare att skräddarsy exekveringen av applikationen genom att ge olika värden vid start.
 
 ## Hur gör man:
-Med Node.js kan du läsa kommandoradsargument med `process.argv`, ett inbyggt objekt som returnerar en array av kommandoradsargument.
-
-```TypeScript
-process.argv.forEach((val, index) => {
-  console.log(`${index}: ${val}`);
-});
-```
-
-Om du kör detta skript med Node.js och lägger till några argument (till exempel `node script.js arg1 arg2`), kommer du att se följande utskrift:
+Dags att dyka in. För att börja, installera `ts-node` för att kunna köra TypeScript filer direkt:
 
 ```bash
-0: /path/to/node
-1: /path/to/script.js
-2: arg1
-3: arg2
+npm install -g ts-node
 ```
 
-Notera att `process.argv` alltid har minst två element.
+Skapa sen en `parseArgs.ts` och använd process-objektet:
 
-## Djupdykning
-Läsning av kommandoradsargument har sin base i tidigare programparadigm, där interaktivt input var begränsat eller icke-existerande. Till exempel i C, skulle du genom att definiera `main` funktionen med parametrar `(int argc, char *argv[])` kan läsa kommandoradsargument.
+```TypeScript
+// parseArgs.ts
 
-Som alternativ kan vi i Node.js använda paket som `minimist` eller `yargs` för att underlätta hanteringen och tolkningen av kommandoradsargument.
+// Argumenten finns i 'process.argv', index 2 och framåt
+const args = process.argv.slice(2);
 
-Intressant nog, `process.argv` är inte en ren array. Det är faktiskt en instans av `Object` med några Array-liknande egenskaper. 
+console.log(args);
+```
 
-## Se också
-- MDN-dokumentation om 'process.argv' (https://nodejs.org/docs/latest/api/process.html#process_process_argv)
-- Paketet `minimist` på npm (https://www.npmjs.com/package/minimist)
-- Paketet `yargs` på npm (https://www.npmjs.com/package/yargs)
+Kör filen såhär:
+
+```bash
+ts-node parseArgs.ts arg1 arg2 arg3
+```
+
+Förväntat svar skulle vara:
+
+```plaintext
+[arg1, arg2, arg3]
+```
+
+## Djupdykning:
+Kommandoradsargument i Node.js (och TypeScript) hanteras genom globala `process`-objektet, specifikt `argv` egenskapen. Historiskt sett härstammar detta från C och Unix-världen där argumenten hanterades genom `argv[]` i `main`-funktionen.
+
+Det finns alternativ som `commander` och `yargs` för mer avancerad manipulering och validering av kommandoradsargument.
+
+Implementationen är omedelbar: indexerade från 0 där index 0 är sökvägen till node.exe och index 1 är den exekverade .ts filens sökväg. Därför börjar våra egna argument från index 2.
+
+## Se också:
+- Node.js dokumentation om process.argv: https://nodejs.org/docs/latest-v16.x/api/process.html#process_process_argv
+- `commander` npm paket: https://www.npmjs.com/package/commander
+- `yargs` npm paket: https://www.npmjs.com/package/yargs

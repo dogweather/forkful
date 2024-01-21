@@ -1,7 +1,8 @@
 ---
-title:                "Ladda ner en webbsida"
-html_title:           "Bash: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Hämta en webbsida"
+date:                  2024-01-20T17:44:16.977159-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Hämta en webbsida"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,39 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att ladda ner en webbsida innebär att hämta HTML-koden som browsern använder för att visa sidan. Programmerare gör detta för att skrapa data, automatiskt testa webbplatser eller övervaka förändringar.
 
-Nedladdning av en webbsida innebär att man hämtar HTML-koden för en särskild URL. Detta gör programmerare för att programmiskt analysera, manipulera eller spara informationen på sidan.
+## Hur gör man?:
+```java
+import java.io.*;
+import java.net.*;
 
-## Så här gör du:
-
-För att ladda ner en webbsida i Java kan du använda `java.net.URL` och `java.util.Scanner` klasserna. Använd `URL` klassen för att öppna en anslutning till din önskade webbsida och `Scanner` för att läsa innehållet.
-
-```Java
-import java.net.URL;
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) throws Exception {
-        URL url = new URL("http://www.example.com");
-        Scanner scanner = new Scanner(url.openStream());
+public class WebPageDownloader {
+    public static void main(String[] args) throws IOException {
+        URL url = new URL("http://example.com");
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         
-        while(scanner.hasNext()) {
-            System.out.println(scanner.nextLine());
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+            String inputLine;
+            StringBuilder content = new StringBuilder();
+            
+            while ((inputLine = reader.readLine()) != null) {
+                content.append(inputLine).append("\n");
+            }
+            
+            System.out.println(content.toString());
+        } finally {
+            connection.disconnect();
         }
-        scanner.close();
     }
 }
 ```
-Koden använder `Scanner` för att läsa HTML-koden rad för rad, vilket resulterar i webbsidans fullständiga innehåll som skrivs ut på skärmen.
+_Sample output:_
+HTML-innehållet i http://example.com, utskrivet i konsolen.
 
-## Djupdykning
+## Fördjupning:
+För 20-ish år sedan använde Java-klasser som `URLConnection`. Nuförtiden finns det modernare bibliotek som Apache's HttpClient eller OkHttp som förenklar webbskrapning och API-användning. Dessa bibliotek erbjuder fördelar som inbyggd stöd för HTTPS, cookieshantering och automatisk omdirigering. När du implementerar en webbsida nedladdare, tänk på respons- och anropshanteringen, felhantering och potentiella säkerhetsrisker.
 
-1. **Historisk kontext:** Nedladdning av webbsidor har varit en del av programmeringsspråket sedan dess uppkomst på 90-talet. Från början användes råa `Socket`-anslutningar för att ansluta till en webbserver och begära en webbsida.
-2. **Alternativ:** Förutom `java.net.URL` kan du också använda bibliotek som Jsoup som gör det lätt att hantera och analysera HTML. 
-3. **Detaljer:** `java.net.URL` öppnar en ström till webbsidan, och `Scanner` läser innehållet i den strömmen. Kom ihåg att alltid stänga `Scanner` när du är klar för att frigöra resurser.
-
-## Se också:
-
-1. [Oracle Java-docs: URL](https://docs.oracle.com/javase/9/docs/api/java/net/URL.html)
-2. [Oracle Java-docs: Scanner](https://docs.oracle.com/javase/9/docs/api/java/util/Scanner.html)
-3. [Jsoup: Java HTML-parser](https://jsoup.org/)
+## Se även:
+- [Apache HttpComponents](https://hc.apache.org/)
+- [OkHttp](https://square.github.io/okhttp/)
+- [JSoup](https://jsoup.org/) för HTML-parsing
+- [HTMLUnit](http://htmlunit.sourceforge.net/) för att simulera en webbläsare i Java

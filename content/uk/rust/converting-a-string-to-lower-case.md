@@ -1,7 +1,8 @@
 ---
-title:                "Перетворення рядка в нижній регістр"
-html_title:           "Elixir: Перетворення рядка в нижній регістр"
-simple_title:         "Перетворення рядка в нижній регістр"
+title:                "Перетворення рядка у нижній регістр"
+date:                  2024-01-20T17:39:18.879169-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Перетворення рядка у нижній регістр"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,27 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Конвертація рядка в нижній регістр – це процес перетворення всіх літер рядка в нижній регістр. Програмісти роблять це для полегшення порівняння рядків, зниження помилок даних і нормалізації вводу. 
+## What & Why? / Що і навіщо?
+Перетворення строки в нижній регістр - це зміна всіх великих літер на малі. Програмісти роблять це для уніфікації даних, полегшення пошуку та порівняння строк.
 
-## Як це робиться: 
+## How to: / Як це зробити:
 ```Rust
-let str = "Hello, World!";
-let lower_str = str.to_lowercase();
-println!("{}", lower_str);
+fn main() {
+    let greeting = "Вітаю, Світе!";
+    let lower_case_greeting = greeting.to_lowercase();
+    println!("{}", lower_case_greeting);
+}
 ```
-Вивід: 
-```Rust
-hello, world!
+Вивід:
 ```
-## Глибше в тему
-Перетворення рядка в нижній регістр - не нова ідея, та вона активно використовується в багатьох мовах програмування. Більше того, `to_lowercase` в Rust використовує Unicode Scalar Value, що є більш інтуїтивним для користувачів, які мають різні мовні налаштування. 
+вітаю, світе!
+```
 
-Є кілька альтернативних методів конвертації рядків в нижній регістр, наприклад, використання ASCII. Однак, `to_lowercase` вміє працювати з більшим розмаїттям символів, включаючи спеціальні символи і букви з діакритичними знаками. 
+## Deep Dive / Поглиблений розбір:
+Переведення строки у нижній регістр не новина; ця функціональність існує в багатьох мовах програмування. У Rust, метод `to_lowercase()` враховує локаль та специфіку мови, також правильно обробляє Unicode. Альтернатива - `to_ascii_lowercase()`, яка працює тільки з ASCII символами. Внутрішньо, Rust використовує Unicode database для визначення того, яким має бути нижній регістр для кожного символу.
 
-Реалізація `to_lowercase` в Rust також надає перевагу в якості компілювання, що робить цей метод ефективним і надійним для виконання своїх задач. 
-
-## Дивіться також
-- [Rust String](https://doc.rust-lang.org/std/string/struct.String.html) 
-- [Unicode Scalar Value](https://doc.rust-lang.org/std/primitive.char.html)
-- [Rust to_lowercase](https://doc.rust-lang.org/std/primitive.str.html#method.to_lowercase)
+## See Also / Дивіться також:
+- Rust documentation on String methods: [Strings in Rust](https://doc.rust-lang.org/std/string/struct.String.html)
+- For understanding Unicode handling in Rust: [Unicode Scalar Values in Rust](https://doc.rust-lang.org/book/ch08-02-strings.html#unicode-scalar-values)
+- The ASCII function's documentation: [to_ascii_lowercase()](https://doc.rust-lang.org/std/primitive.str.html#method.to_ascii_lowercase)

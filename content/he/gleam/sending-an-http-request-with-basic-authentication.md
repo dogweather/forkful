@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http עם אימות בסיסי"
-html_title:           "C: שליחת בקשת http עם אימות בסיסי"
-simple_title:         "שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת HTTP עם אימות בסיסי"
+date:                  2024-01-20T18:02:43.196175-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP עם אימות בסיסי"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -11,33 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+שליחת בקשת HTTP עם אימות בייסיק היא טכניקה להגנה על גישה למשאבי ווב באמצעות שם משתמש וסיסמה. תכניתנים משתמשים בה כדי לוודא שרק משתמשים מורשים יכולים לגשת או לשנות משאבים.
 
-שליחת בקשת HTTP עם אימות בסיסי היא תהליך שבו תכנית נותנת מידע אימות לשרת. התכניתות משתמשות בכך כדי להבטיח שהן מתקשרות עם השרת הנכון ובאופן בטוח.
+## איך לעשות:
+הנה דוגמא של שליחת בקשה עם אימות בייסיק ב-Gleam:
 
-## כיצד ל:
+```gleam
+import gleam/http
+import gleam/http/gleam_uri.{Uri}
 
-הנה דוגמה של שליחת בקשת HTTP עם אימות בסיסי באמצעות שפת התכנות Gleam:
+fn main() {
+  let uri = Uri.parse("http://example.com/resource").unwrap()
+  let basic_auth = http.basic_auth("username", "password")
+  let request = http.Request(
+    method: http.Get,
+    uri: uri,
+    headers: [basic_auth],
+    body: http.NoBody,
+  )
 
-```Gleam
-import gleam/http.{Get, basic_auth}
-import gleam/uri.Uri
-import gleam/httpc
-
-let request = Get
-  |> basic_auth("username", "password")
-  |> httpc.request(Uri.parse("http://example.com")?)
-let response = httpc.send(request)
-
-assert Ok(response) = response
+  try response = http.send(request)
+  case response {
+    Ok(response) -> 
+      io.println("Success: " ++ response.body)
+    Error(error) -> 
+      io.println("Error: " ++ error)
+  }
+}
 ```
-הקוד הזה משלח בקשת GET לכתובת `"http://example.com"` באמצעות שם המשתמש `"username"` והסיסמה `"password"` כאימות בסיסי.
+רץ את הקוד ותחזיר תשובה מהשרת. אם הכול הולך כשורה, "Success:" והתוכן יודפסו. אם לא, תראה "Error:" והבעיה.
 
-## צלילה עמוקה
+## עיון מעמיק:
+אימות בייסיק היא אחת משיטות האימות הפשוטות והוותיקות ביותר בHTTP. הוא מקודד שם המשתמש והסיסמה ב-base64 ושולח אותם בכותרת הבקשה. עם זאת, ללא שימוש ב-HTTPS, האימות נחשף לידיעת כל המאזינים ברשת.
 
-אימות בסיסי ב-HTTP הוא שיטה יחסית ישנה שנוצרה בשנות ה-90. היא מאוד משובשת ולא מאוד בטוחה, אך היא עדיין מצויה בשימוש. ישנן חלופות יותר מודרניות ובטוחות, כמו OAuth ו-Token Based Authentication. כאשר אתה שולח בקשת HTTP עם אימות בסיסי, השם משתמש והסיסמה שלך מאוחדים למחרוזת אחת, שמועברת בבקשת ה-HTTP כחלק מכותרת ה-Authorization.
+קיימות גם חלופות יותר בטוחות לאימות בייסיק, כמו אותות OAuth או JWT (JSON Web Token), אשר מאפשרות רמה גבוהה יותר של אבטחה. אך לפעמים מספיק הפשטות והיכולת ליישם מהר הופכים את אימות בייסיק לבחירה הולמת למקרים מסוימים.
 
-## ראה גם
+ב-HEAD כותרת, אם אינך מבצע HTTP בעת ההעברה, שם המשתמש והסיסמה נשלחים כטקסט רגיל באופן בסיסי. הם מופרדים זה מזה על ידי נקודותיים ואז מקודדים ב-base64.
 
-[המסמך המקורי של Basic Authentication Schema](https://tools.ietf.org/html/rfc7617)
+בגרסה הנוכחית של Gleam, השילוח של בקשה מתבצע לעיתים עם libcurl או ספרייה דומה ברמת המערכת, תלוי בספריה שמשתמשים בה לשליחת בקשות HTTP.
 
-[מסמך Gleam HTTP](https://hexdocs.pm/gleam_http/gleam/http/)
+## ראה גם:
+
+- מסמכי Gleam לגבי מודולי HTTP: https://hexdocs.pm/gleam_http/gleam/http/
+- מדריך לבסיסי HTTP Authentication של MDN: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- מודול gleam_http: https://github.com/gleam-lang/http
+- HTTP קוד המצב שמחזיר שהאימות הצליח או נכשל: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status

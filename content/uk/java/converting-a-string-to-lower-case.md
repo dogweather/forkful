@@ -1,7 +1,8 @@
 ---
-title:                "Перетворення рядка в нижній регістр"
-html_title:           "Elixir: Перетворення рядка в нижній регістр"
-simple_title:         "Перетворення рядка в нижній регістр"
+title:                "Перетворення рядка у нижній регістр"
+date:                  2024-01-20T17:38:26.274309-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Перетворення рядка у нижній регістр"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,39 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що і Чому?)
 
-Перетворення рядка на нижній регістр - це процес заміни всіх символів верхнього регістра на відповідні символи нижнього регістра. Програмісти це роблять, щоб стандартизувати і спростити обробку текстових даних.
+Converting a string to lower case means changing all the uppercase letters within a string to their lowercase equivalents. Programmers do it for consistency, especially when comparing strings, ignoring case differences.
 
-## Як це робиться:
+## How to: (Як це зробити:)
 
-```Java
-public class Main {
-     public static void main(String[] args) {
-         String str = "HELLO, WORLD!";
-         String lowerCaseStr = str.toLowerCase();
-         System.out.println(lowerCaseStr);
-     }
+Use `toLowerCase()` method:
+
+```java
+public class LowerCaseExample {
+    public static void main(String[] args) {
+        String original = "Hello, Друзі!";
+        String lowerCased = original.toLowerCase();
+        System.out.println(lowerCased);
+    }
 }
 ```
 
-Цей код представить такий результат:
-
-```Java
-"hello, world!"
+Output:
+```
+hello, друзі!
 ```
 
-## Поглиблений розбір:
+## Deep Dive (Поглиблений розбір)
 
-### Історичний контекст:
-Із появою комп'ютерів виникла потреба у стандартизації текстових даних, однією з яких є перетворення всіх символів на нижній регістр.
+Historically, converting strings to lower case helped normalize data, avoiding mismatches due to case differences. Alternatives include using regular expressions or manually mapping characters, but `toLowerCase()` is built-in and robust. It considers locale: `String.toLowerCase(Locale locale)`. With this, you can specify how conversion behaves with locale-specific characters.
 
-### Альтернативи:
-В Java є метод `Character.toLowerCase()`, який перетворює окремий символ у нижній регістр.
+## See Also (Дивіться також)
 
-### Деталі реалізації:
-У Java метод `toLowerCase()` використовує правила локального перетворення символів для переведення символів у нижній регістр.
-
-## Додатково:
-
-Для більш детального ознайомлення з роботою з рядками в Java, відвідайте офіційну документацію Oracle [тут](https://docs.oracle.com/javase/tutorial/java/data/strings.html).
+- Oracle Java Documentation: [String.toLowerCase()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toLowerCase())
+- Tutorial on Java Strings and locales: [Working with Strings](https://docs.oracle.com/javase/tutorial/i18n/text/string.html)
+- Explore the Locale class: [Locale](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html)

@@ -1,7 +1,8 @@
 ---
-title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
-html_title:           "Gleam: Merkkijonon muuttaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+date:                  2024-01-20T17:39:01.037425-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,33 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Muuttaminen pieniksi kirjaimiksi tarkoittaa merkkijonon kirjainten muuntamista pienaakkosiksi. Tämä helpottaa esimerkiksi käyttäjän syötteen vertailua, hakutoimintoja ja tietojen yhdenmukaistamista.
 
-Merkkijonojen muuttaminen pienaakkosiksi tarkoittaa merkkijonojen muuttamista siten, että kaikki suuraakkoset korvataan vastaavilla pienaakkosilla. Tämän avulla voimme tehdä tietojen vertailusta yksinkertaisempaa ja vähemmän virhealtista. 
+## How to:
+PHP:ssä merkkijonon voi muuttaa pieniksi kirjaimiksi `strtolower()`-funktiolla. Tässä helppo esimerkki:
 
-## Näin se toimii:
-
-Sisäänrakennetun `strtolower()` funktion avulla PHP:ssä voidaan muuttaa merkkijonot pienaakkosiksi. 
-Katso esimerkki alla:
-
-```PHP
+```php
 <?php
-$myStr = "PÄIVÄÄ SUOMI";
-echo strtolower($myStr);
+$esimerkkiTeksti = "HEI MAAILMA!";
+$pienetKirjaimet = strtolower($esimerkkiTeksti);
+echo $pienetKirjaimet; // tulostuu "hei maailma!"
 ?>
 ```
-Tässä tapauksessa tuloste olisi "päivää suomi".
+Ja toinen esimerkki monikielisillä merkeillä:
 
-## Syvä sukellus:
+```php
+<?php
+$tervehdys = "HYVÄÄ PÄIVÄÄ!";
+$pienennetty = mb_strtolower($tervehdys, 'UTF-8');
+echo $pienennetty; // tulostuu "hyvää päivää!"
+?>
+```
 
-Kun `strtolower()` esiteltiin alunperin PHP 3:ssa, sitä on käytetty laajasti siistimään ja normalisoimaan tietoja. Se on edelleen tärkeä osa PHP:n merkkijonon käsittelyvälineitä. 
+## Deep Dive
+Alkuaikoina PHP:ssä oli pelkästään `strtolower()` käytettävissä, mutta se ei tue monikielisiä merkistöjä. Tästä syystä `mb_strtolower()` luotiin, joka toimii useilla kielillä, mukaan lukien esimerkiksi suomi ja muut UTF-8 -enkoodatut merkistöt.
 
-Vaihtoehtoja on, kuten `mb_strtolower()`, joka hoitaa monikieliset merkkijonot paremmin, mutta `strtolower()` on yleisimmin käytetty tapa PHP:ssa. 
+Vaihtoehtoisia tapoja merkkijonon pienentämiseen ovat esimerkiksi `strtoupper()` kääntäen tai `ucwords()` joka muuttaa jokaisen sanan ensimmäisen kirjaimen isoksi. Yksittäisen merkin muuttamiseen voi käyttää `strtolower()` tai `mb_strtolower()` yhdessä `substr()`-funktion kanssa.
 
-Nämä funktiot toimivat skannaamalla läpi merkkijonon ja korvaamalla jokainen suuraakkonen vastaavalla pienaakkosella käyttäen ASCII-arvotaulukkoa. 
+Algoritminen toteutus yksinkertaistuu, koska jokaiselle kirjainten välinen koodiero on vakio (esimerkiksi ASCII-koodistossa isojen ja pienten kirjainten välillä on 32 yksikön ero). Kuitenkin, monikielisen tuen ja erikoismerkkien myötä algoritmi voi olla monimutkaisempi.
 
-## Katso myös:
-
-Lisätietoa saadaksesi, tutustu seuraaviin lähteisiin:
-- [PHP:n virallinen ohjekirja strtolower()](https://www.php.net/manual/en/function.strtolower.php)
-- [PHP:n virallinen ohjekirja mb_strtolower()](https://www.php.net/manual/en/function.mb-strtolower.php)
+## See Also
+- PHP Manual `strtolower()`: https://www.php.net/manual/en/function.strtolower.php
+- PHP Manual `mb_strtolower()`: https://www.php.net/manual/en/function.mb-strtolower.php
+- Unicode standard: https://home.unicode.org
+- PHP Multibyte String Extension: https://www.php.net/manual/en/book.mbstring.php

@@ -1,6 +1,7 @@
 ---
 title:                "חילוץ תת-מחרוזות"
-html_title:           "Bash: חילוץ תת-מחרוזות"
+date:                  2024-01-20T17:45:32.730753-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חילוץ תת-מחרוזות"
 programming_language: "C++"
 category:             "C++"
@@ -11,35 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+חילוץ תת-מחרוזות זה אומר לקחת חלק ממחרוזת קיימת. תכנתים עושים את זה כשהם צריכים רק קטע ממחרוזת לטיפול נפרד או אנליזה.
 
-חילוץ תת-מחרוזות (substring) הוא פעולה של קיצוז מחרוזת למקטע קטן יותר. מתכנתים משתמשים בכך למען מעקב אחר מידע ספציפי במחרוזת או לתהליך מידע בצורה מקוטלת.
-
-## איך?
-
-באמצעות הפונקציה `substr()` ב-C++, ניתן לחלץ תת-מחרוזת. ראה את הדוגמאות הבאות:
+## איך לעשות:
+ב-C++ יש כמה דרכים לחלץ תת-מחרוזות. נתמקד בשיטה הכי פשוטה - `substr()`.
 
 ```C++
 #include <iostream>
 #include <string>
 
 int main() {
-    std::string str = "Hello, World!";
-    std::string substr = str.substr(7, 5);
-     
-    std::cout << substr;
-     
+    std::string fullStr = "שלום עולם";
+    std::string subStr = fullStr.substr(0, 4); // חולץ את "שלום"
+
+    std::cout << subStr << std::endl; // ידפיס "שלום"
+
     return 0;
 }
 ```
-פלט:
-```
-World
-```
+תוצאת הדפסה: שלום
 
-## צוללים לפרטים
+## עיון מעמיק:
+חילוץ תת-מחרוזות הוא תכנות לחם וחמאה מימי קדם. כבר בשפות תכנות מוקדמות הייתה התמכרות לפונקציונליות זו.
+ב-C++, השיטה `substr()` הגיעה עם תקן ה-Standard Template Library (STL). יש גם חלופות, כמו לעבור על המחרוזת בעצמך או להשתמש ב-iterators או ב-regex לחילוץ יותר מתוחכם.
+בעיות נפוצות בחילוץ תת-מחרוזות כוללות index out of bounds או קודינג שגוי של תווים ייחודיים, כמו מחרוזות בעברית.
 
-אזלנו נקודה היסטורית: הפונקציה `substr()` הוצגה בתחילה במימד בינלאומי של C++ (ISO) בשנת 1990 . מאז, היא הפכה לדרך נפוצה במיוחד לראות במחרוזת.
-
-בניגוד לפונקציה `substr()`, C++ גם כוללת את התוספות `find_first_of()` ו- `find_last_of()`. אלו מאפשרים למתכנתים לחפש סוף ותחילת תת-מחרוזת.
-
-היא גם מיישמת את substring על ידי שימוש בשני מידעים – האינדקס שבו אנו רוצים להתחיל והאורך של התת-מחרוזת.
+## ראו גם:
+- [std::string::substr](https://en.cppreference.com/w/cpp/string/basic_string/substr) - מידע מעמיק על הפונקציה `substr`.
+- [cppreference.com](https://cppreference.com/) - מקור מקיף לתיעוד על C++.
+- [Regular Expressions in C++](https://www.cplusplus.com/reference/regex/) - כיצד להשתמש בביטויים רגולריים כדי למצוא ולחלץ תת-מחרוזות.

@@ -1,7 +1,8 @@
 ---
-title:                "नया प्रोजेक्ट शुरू करना"
-html_title:           "C: नया प्रोजेक्ट शुरू करना"
-simple_title:         "नया प्रोजेक्ट शुरू करना"
+title:                "नई परियोजना शुरू करना"
+date:                  2024-01-20T18:04:50.790127-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "नई परियोजना शुरू करना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Getting Started"
@@ -10,41 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## क्या और क्यों? (What & Why?)
+नया प्रोजेक्ट शुरू करना एक खाली कैनवास पर चित्र बनाने जैसा है। प्रोग्रामर्स इसलिए नए प्रोजेक्ट्स शुरू करते हैं क्योंकि उन्हें नई समस्याओं का समाधान करना होता है या नए आइडियाज पर काम करना होता है।
 
-एक नई परियोजना का आरंभ करना यानी एक नया इजीक्यूटेबल कोड बनाना शुरू करना है। प्रोग्रामर्स इसे नई संकेतिक समस्या का समाधान करने या एक नयें कार्यक्षेत्र में अपनी क्षमता का प्रदर्शन करने के लिए करते हैं।
-
-## कैसे करें:
-
-पावरशेल में एक नई 'Hello World' स्क्रिप्ट बनाने का उदाहरण नीचे दिया गया है:
+## कैसे करें? (How to:)
+PowerShell में नया प्रोजेक्ट शुरू करना बहुत सीधा है। मान लीजिए आपको एक स्क्रिप्ट के लिए नया फोल्डर बनाना है:
 
 ```PowerShell
-# नई स्क्रिप्ट।
-"Hello, World!" | Out-File -FilePath ./Hello.ps1
+# नया फोल्डर बनाने के लिए New-Item इस्तेमाल करें:
+New-Item -Path 'C:\MyNewProject' -ItemType Directory
 
-# स्क्रिप्ट चलाएं।
-.\Hello.ps1
+# फोल्डर की सूची देखें:
+Get-ChildItem -Path 'C:\'
 ```
 
-उपर्युक्त कोड का उत्पादन निम्न होगा:
+आउटपुट होगा कुछ इस प्रकार:
 
-```PowerShell
-Hello, World!
+```
+    Directory: C:\
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        1/1/2023   9:00 AM                MyNewProject
 ```
 
-## गहराई में:
+## गहराई से जानकारी (Deep Dive)
+PowerShell अपने शुरूआती दिनों से ही स्क्रिप्टिंग और ऑटोमेशन के लिए लोकप्रिय है। पहले बैच फाइल्स और VBScript का इस्तेमाल होता था, लेकिन PowerShell ने इसे आसान और शक्तिशाली बनाया। नए प्रोजेक्ट्स के लिए आप Module, Script, Manifest जैसे संसाधनों का ढांचा बना सकते हैं। प्रत्येक की अपनी अहमियत है:
 
-(1) ऐतिहासिक प्रसंग:
-PowerShell, Microsoft द्वारा 2006 में जारी हुआ, इसे Windows सिस्टम प्रशासन कार्यों से निपटने के लिए बनाया गया था। इसके बाद से, यह उच्च क्षमता वाली स्क्रिप्टिंग भाषा में विकसित हुई है।
+- **Module**: पुन: प्रयोग योग्य फंक्शन्स और वेरिएबल्स का सेट।
+- **Script**: निष्पादन योग्य पावरशेल स्क्रिप्ट।
+- **Manifest**: मॉड्यूल मेटाडेटा।
 
-(2) विकल्प:
-PowerShell के अलावा, Python, Java, C++, आदि. भी नई परियोजनाओं के लिए उपयोग की जा सकती हैं।
+किसी भी नए प्रोजेक्ट को शुरू करने से पहले, यह ध्यान में रखना अच्छा है कि आप कोड को कैसे संरचना देना चाहते हैं और क्या आप भविष्य में इसके पुन: उपयोग का सोच रहे हैं।
 
-(3) क्रियान्वयन विवरण:
-PowerShell स्थितिपात्रों (variables), फ़ंक्शन्स, और CMDlets (built-in कमांड) का उपयोग करके प्रवाहों को संचालित करता है, जो Windows के मूल आपरेटिंग सिस्टमतांत्रिक क्षमताओं से बाहर जा सकते हैं।
-
-## देखें भी:
-
-1. [PowerShell डॉक्यूमेंटाशन](https://docs.microsoft.com/en-us/powershell/)
-2. [PowerShell स्क्रिप्टिंग गाइड](https://docs.microsoft.com/en-us/powershell/scripting/how-to-use-docs?view=powershell-7.1)
-3. [PowerShell के बारे में विकीपीडिया](https://en.wikipedia.org/wiki/PowerShell)
+## संबंधित सोर्सेज (See Also)
+- [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
+- [PowerShell Scripting Guide](https://docs.microsoft.com/en-us/powershell/scripting/overview)
+- [About Modules (PowerShell)](https://docs.microsoft.com/en-us/powershell/scripting/developer/module/understanding-a-windows-powershell-module)

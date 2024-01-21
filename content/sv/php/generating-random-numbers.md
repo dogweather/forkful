@@ -1,7 +1,8 @@
 ---
-title:                "Generera slumpmässiga nummer"
-html_title:           "Arduino: Generera slumpmässiga nummer"
-simple_title:         "Generera slumpmässiga nummer"
+title:                "Generera slumpmässiga tal"
+date:                  2024-01-20T17:49:33.606375-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generera slumpmässiga tal"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Numbers"
@@ -11,34 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att generera slumptal är processen att producera siffror på ett tillfälligt ordnat sätt för att simulera slumpmässighet. Programmerare gör detta för att injicera osäkerhet i sina koder, ofta för att underlätta tester och simuleringar eller skapa slumpmässiga spelresultat.
+Att generera slumpmässiga tal är en process där ditt PHP-skript skapar ett nummer som inte kan förutsägas. Programmerare behöver det för allt från att säkra data (kryptografi) till att simulerar händelser (spel, tester).
 
-## Så här gör man:
-Att generera ett slumptal i PHP är relativt rakt på sak. Följande kodskärv visar hur man kan skapa ett slumptal mellan 1 och 10:
+## How to:
+PHP har inbyggda funktioner för att generera slumpmässiga tal. Här är några snabba exempel:
 
 ```PHP
 <?php
-$randomNum = rand(1, 10);
-echo $randomNum;
+// Enkelt slumptal
+echo random_int(0, 100); // Ger: ett tal mellan 0 och 100
+
+// Kryptografiskt säkert slumptal
+echo random_bytes(10); // Ger: en sträng av 10 slumpmässigt genererade bytes
+
+// Slumptal för hjälp av mt_rand (snabbare men mindre säkert)
+echo mt_rand(0, 100); // Ger: ett tal mellan 0 och 100
 ?>
 ```
-Output för ovanstående kod kan vara något nummer mellan 1 och 10, eftersom det är de gränser vi satte med `rand(1, 10)`.
 
-Exempelvis,
-```PHP
-7
-```
- 
-## Fördjupning
-Generering av slumptal har en lång historia i programmering, och PHP är inget undantag. Från ett histormässigt perspektiv, var `rand()` det ursprungliga sättet att skapa slumptal i PHP. Dock, för mer kryptografiskt säkra ändamål, introducerades PHP 7-funktionen `random_int()`.
+## Deep Dive
+Slumptalsgenerering i PHP har kommit långt. `rand()` användes mycket i början men är inte rekommenderat idag p.g.a. dess förutsägbarhet. `mt_rand()` är en förbättring men för säkerhetskrävande uppgifter bör `random_int()` eller `random_bytes()` användas eftersom de genererar kryptografiskt säkra tal.
 
-Alternativt till `rand()`, kan du använda `mt_rand()`, vilket är snabbare och producerar bättre slumptal men kanske inte är så kryptografiskt säkert som `random_int()`
+Ett alternativ utanför de inbyggda PHP-funktionerna är att använda biblioteket `random_compat` som back-portar `random_int()` och `random_bytes()` till äldre PHP-versioner.
 
-För att förstå implementeringsdetaljer i PHP, är det viktigt att förstå att dessa funktioner används för att skapa pseudo-slumptal. Det innebär att de producerar nummer som ser slumpmässiga ut, men Genereras av en deterministisk process.
+Det är viktigt när du implementerar slumpmässiga tal att välja rätt verktyg för jobbet. Är prestanda nyckeln, eller säkerhet? Det är en avvägning du måste göra.
 
-## Se också
-För mer information om slumptalsgenerering i PHP och relaterade ämnen, besök följande länkar:
-
-1. PHP Manual på [rand()](https://www.php.net/manual/en/function.rand.php) och [random_int()](https://www.php.net/manual/en/function.random-int.php)
-2. PHP Manual på [mt_rand()](https://www.php.net/manual/en/function.mt-rand.php)
-3. En artikel om [cryptographically secure pseudo-random number](https://paragonie.com/blog/2015/07/how-safely-generate-random-strings-and-integers-in-php)
+## Se Även
+- PHPs officiella dokumentation för [random_int()](https://www.php.net/manual/en/function.random-int.php)
+- PHPs officiella dokumentation för [random_bytes()](https://www.php.net/manual/en/function.random-bytes.php)
+- random_compat GitHub-repo: [https://github.com/paragonie/random_compat](https://github.com/paragonie/random_compat)
+- En guide om [PHPs random-funktioner](https://www.php.net/manual/en/book.random.php)

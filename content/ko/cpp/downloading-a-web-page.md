@@ -1,6 +1,7 @@
 ---
 title:                "웹 페이지 다운로드하기"
-html_title:           "Bash: 웹 페이지 다운로드하기"
+date:                  2024-01-20T17:43:30.464721-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "웹 페이지 다운로드하기"
 programming_language: "C++"
 category:             "C++"
@@ -10,50 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇과 왜? (What & Why?)
-웹 페이지를 다운로드하는 것은 인터넷에 존재하는 페이지의 데이터를 복사하여 로컬 컴퓨터에 저장하는 것입니다. 프로그래머들은 데이터 분석을 위하거나 웹 스크래핑을 할 때 이렇게 웹 페이지를 다운로드합니다.
+## What & Why? (무엇과 왜?)
 
-# 어떻게 하는가: (How to:)
-C++로 웹 페이지를 다운로드하려면, 다음과 같이 libcurl 라이브러리를 사용할 수 있습니다. 아래는 간단한 예제 코드입니다:
+웹 페이지를 다운로드하는 것은 인터넷에서 페이지의 콘텐츠를가져와 내 프로그램에서 사용할 수 있게 하는 것입니다. 이는 페이지에서 데이터를 추출하거나 웹 스크래핑을 할 때 필요합니다.
+
+## How to: (방법:)
 
 ```C++
+#include <iostream>
 #include <curl/curl.h>
 
-size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
-    size_t written = fwrite(ptr, size, nmemb, stream);
-    return written;
+// 콜백 함수
+size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp) {
+    ((std::string*)userp)->append((char*)contents, size * nmemb);
+    return size * nmemb;
 }
 
-int main(void) {
+int main() {
     CURL *curl;
-    FILE *fp;
     CURLcode res;
-    char *url = "http://www.example.com";
-    char outfilename[FILENAME_MAX] = "downloaded_page.html";
+    std::string readBuffer;
+
     curl = curl_easy_init();
-    if (curl) {
-        fp = fopen(outfilename,"wb");
-        curl_easy_setopt(curl, CURLOPT_URL, url);
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
         res = curl_easy_perform(curl);
+        if(res != CURLE_OK) {
+            std::cerr << "Error: " << curl_easy_strerror(res) << std::endl;
+        } else {
+            std::cout << readBuffer << std::endl;
+        }
         curl_easy_cleanup(curl);
-        fclose(fp);
     }
     return 0;
 }
 ```
 
-# 깊게 알아보기 (Deep Dive)
-웹 페이지 다운로드는 다양한 방법으로 구현될 수 있습니다. libcurl은 이 중 한 가지 방법이며 C++로 구현된 가장 간단하고 효과적인 방법 중 하나입니다.
+출력 예제:
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+    ...
+</head>
+<body>
+...
+</body>
+</html>
+```
 
-오랜 시간 동안 libcurl는 강력하고 신뢰성 있는 데이터 전송 라이브러리로 역할을 해왔습니다. 그것은 다양한 인터넷 프로토콜을 지원하며, HTTP와 HTTPS를 통해 웹 페이지를 쉽게 다운로드할 수 있습니다.
+## Deep Dive (심층 분석)
 
-대안으로서, C++에서 Boost.Asio를 사용하여 웹 페이지를 다운로드하는 것도 가능하지만, 이 방법은 보통 더 많은 코드와 시간이 필요합니다.
+웹 페이지 다운로드는 인터넷 초기부터 있어왔습니다. 초기에는 FTP나 HTTP 프로토콜로 명령 줄에서 직접 다운로드했습니다. 오늘날엔 라이브러리가 있어 쉽게 다운로드합니다. C++에서 `libcurl`은 가장 인기 있는 라이브러리 중 하나입니다. 대안으로는 Poco 라이브러리도 있습니다. `libcurl`은 멀티 프로토콜 지원, 스레딩, 병렬 다운로드 등을 제공합니다.
 
-최근에는 현대적인 C++ 기반 코루틴을 이용한 비동기 웹 요청 처리도 점점 더 인기를 얻고 있습니다. 이러한 기법은 코드의 복잡성을 줄이는데 도움이 될 수 있습니다.
+## See Also (참고 자료)
 
-# 참고 자료 링크 (See Also)
-1. [libcurl - A Free and easy-to-use client-side URL transfer library](https://curl.haxx.se/libcurl/c/)
-2. [Boost.Asio - A cross-platform C++ library for network and low-level I/O programming](https://www.boost.org/doc/libs/1_65_1/doc/html/boost_asio.html)
-3. [Coroutines in C++ - A revolution in programming](https://www.modernescpp.com/index.php/coroutines)
+- cURL 공식 홈페이지: https://curl.se/
+- cURL for C++: https://curl.se/libcurl/c/
+- Poco Libraries: https://pocoproject.org/
+- C++ HTTP 네트워킹에 대한 더 깊은 이해: 
+  - https://en.cppreference.com/w/cpp/links/libs
+  - https://www.boost.org/doc/libs/1_75_0/libs/beast/doc/html/index.html

@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anforderung senden"
-html_title:           "Bash: Eine HTTP-Anforderung senden"
-simple_title:         "Eine HTTP-Anforderung senden"
+title:                "Einen HTTP-Request senden"
+date:                  2024-01-20T18:00:07.247634-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Einen HTTP-Request senden"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,46 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+HTTP-Anfragen sind der Weg, über den Programme im Internet kommunizieren. Programmierer senden sie, um Daten zu holen, zu senden, zu ändern oder zu löschen - die Grundbausteine der Interaktion mit Webdiensten.
 
-Ein HTTP-Anfrage (oder HTTP-Request) ist eine Anforderung, die ein Client an einen Server sendet, um Daten zu erhalten oder zu senden. Programmierer nutzen sie, um Informationen von Webseiten zu extrahieren, APIs zu nutzen oder Web-Anwendungen zu erstellen.
+## So geht's:
+Hier ist ein einfaches Beispiel, wie man eine GET-Anfrage in Java sendet, um den Inhalt einer Webseite zu holen:
 
-## Wie geht das?
-
-Mit Java 16 können wir dies durch die `HttpClient`, `HttpRequest` und `HttpResponse` Klassen tun. Hier ist wie:
-
-```Java
+```java
+import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class Main {
-    public static void main(String[] args) throws Exception {
-        HttpClient client = HttpClient.newHttpClient();
+public class HttpGetRequest {
 
+    public static void main(String[] args) {
+        HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(new URI("http://example.com"))
+                .uri(URI.create("http://example.com"))
                 .build();
 
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-        System.out.println(response.statusCode());
-        System.out.println(response.body());
+        try {
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            System.out.println(response.statusCode());
+            System.out.println(response.body());
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
 ```
+Sample Output:
+```
+200
+<!doctype html>...
+```
 
-Dieses Beispiel sendet eine GET-Anfrage an "http://example.com" und druckt den Statuscode und den Körper der Antwort in die Konsole. 
+## Deep Dive:
+HTTP-Anfragen gehen zurück bis zur Entstehung des Webs in den 1990ern. Sie folgen einem Request-Response-Modell. Java bietet mehrere Möglichkeiten, HTTP-Anfragen zu senden – `HttpURLConnection`, externe Bibliotheken wie Apache HttpClient, und ab Java 11 gibt's die `java.net.http` API, die modern und einfach zu bedienen ist.
 
-## Vertiefung
+Während `HttpURLConnection` Basisfunktionalität bietet, ermöglicht die `java.net.http` API mehr Kontrolle und Asynchronität. Die Alternativen dazu, wie OkHttpClient oder Apache HttpClient, bieten eigene Vorteile, wie etwa komplexere Konfigurationen und Unterstützung für ältere Java-Versionen.
 
-Die oben gezeigten Klassen (`HttpClient`, `HttpRequest`, und `HttpResponse`) wurden in Java 9 eingeführt, um die altmodische `HttpURLConnection` zu ersetzen. Die neue API ist viel flexibler und einfacher zu benutzen.
+Tiefer gehend, für POST-Anfragen kann man `HttpRequest.BodyPublishers` verwenden, um Content mitzusenden. Für Asynchronität bietet `HttpClient` die Funktion `sendAsync()` an, welche mit `CompletableFuture` arbeitet.
 
-Ein alternativer Ansatz wäre die Verwendung von Bibliotheken wie OkHttp oder Apache HttpClient, die unter bestimmten Umständen mehr Funktionen bieten können.
-
-Die Methode `HttpClient.newHttpClient()` erstellt einen neuen HttpClient mit Standardkonfiguration. Für spezielle Anforderungen, wie Proxys oder Authentifizierung, können wir einen `HttpClient.Builder` verwenden und diesen konfigurieren.
-
-## Siehe Auch
-
-1. [Offizielle Java-Dokumentation für HttpClient](https://docs.oracle.com/en/java/javase/16/docs/api/java.net.http/java/net/http/HttpClient.html)
-3. [OkHttp Library](https://square.github.io/okhttp/)
+## Siehe Auch:
+- [Java 11 HTTP/2 API Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
+- [Baeldung on Java HTTP Requests](https://www.baeldung.com/java-9-http-client)
+- [Oracle tutorial on HttpURLConnection](https://docs.oracle.com/javase/tutorial/networking/urls/readingWriting.html)
+- [OkHttp’s GitHub Repository](https://github.com/square/okhttp)

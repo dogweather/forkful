@@ -1,7 +1,8 @@
 ---
-title:                "Debug-tulosteen tulostaminen"
-html_title:           "Bash: Debug-tulosteen tulostaminen"
-simple_title:         "Debug-tulosteen tulostaminen"
+title:                "Virheenjäljitystulosteiden tulostaminen"
+date:                  2024-01-20T17:53:31.027454-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Virheenjäljitystulosteiden tulostaminen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -10,47 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## Mikä ja Miksi?
+Debug-tulostus auttaa näkemään mitä koodissasi tapahtuu. Käytämme sitä virheiden jäljittämiseen ja koodin toiminnan varmistamiseen.
 
-Tulostaminen debug-tulostus on ohjelmointitekniikka, jossa tulostetaan ohjelman tilatietoja, esimerkiksi muuttujien arvoja, ohjelman suorittamisen aikana. Sitä käytetään auttamaan ohjelmoijia ymmärtämään ja korjaamaan ohjelmien virheitä.
-
-## Näin teet:
-
-Rustissa debug-tulostaminen on yksinkertaista ja intuitiivistä. Tässä on perusesimerkki:
+## Miten:
+Rustissa debug-tulostus onnistuu `println!` makrolla:
 
 ```Rust
-let x = 5;
-println!("x:n arvo on: {:?}", x);
+fn main() {
+    let muuttuja = 42;
+    println!("Debug-tulostus: {:?}", muuttuja);
+}
 ```
-Tämä tulostaa: `x:n arvo on: 5`
 
-Debug-tulostamiseen voidaan käyttää myös rakenteita ja tietoliikennemuotoja:
+Tulostuu:
+
+```
+Debug-tulostus: 42
+```
+
+Struktuurien kanssa käytä `derive(Debug)`:
 
 ```Rust
 #[derive(Debug)]
-struct Rakenne {
+struct OmaTietue {
     nimi: String,
-    arvo: i32,
+    id: i32,
 }
 
-let y = Rakenne {
-    nimi: String::from("Y"),
-    arvo: 10,
-};
-
-println!("{:?}", y);
+fn main() {
+    let henkilo = OmaTietue {
+        nimi: String::from("Matti"),
+        id: 1234,
+    };
+    println!("Debug-tulostus: {:?}", henkilo);
+}
 ```
 
-Tämä tulostaa: `Rakenne { nimi: "Y", arvo: 10 }`
+Tulostuu:
 
-## Syvemmälle:
-Debug-tulostaminen on ollut ohjelmoinnin perustekniikka jo vuosikymmenien ajan. Sitä käytetään yleisesti kaikissa ohjelmissa, kaikilla ohjelmointikielillä.
+```
+Debug-tulostus: OmaTietue { nimi: "Matti", id: 1234 }
+```
 
-Rustin lähdekoodin tarkistukseen ja debug-tulostamiseen on useita vaihtoehtoja. Esimerkiksi, voit käyttää `Debug`-merkintää tai `Display`-merkintää. Kuitenkin `Display` ei sovi debug-tulostamiseen, koska se vaatii erityisen tulostusformaatin.
+## Syväsukellus:
+Debug-tulostus on ollut kauan ohjelmistokehityksen työkalu. Se on suoraan, helposti luettava tapa nähdä arvoja suorituksen aikana. Rustin `println!` makro tukee debug-tulostusta käyttäen `Debug` traitia. Sen avulla monimutkaisemmatkin tyypit voi tulostaa siististi, kunhan ne toteuttavat tai johdetaan `Debug` traitin. Vaihtoehtoina voidaan käyttää logitus-kirjastoja, kuten `log` tai `env_logger`.
 
-Rustin `println!` makro käyttää alla olevaa Rustin formaattikirjastoa toteuttamaan debug-tulostamisen. Tämä tekee debug-tulostamisesta erittäin joustavaa ja tehokasta.
-
-## Katso myös:
-
-- Rust-by-Example debuggaus: https://doc.rust-lang.org/stable/rust-by-example/hello/print/print_display.html
-- Debug-makron dokumentaatio: https://doc.rust-lang.org/std/fmt/struct.Debug.html
+## Katso Myös:
+- Rustin `std::fmt` moduuli: https://doc.rust-lang.org/std/fmt/
+- Rust Book aiheesta "Debug" tulostaminen: https://doc.rust-lang.org/book/ch05-02-example-structs.html#adding-useful-functionality-with-derived-traits
+- Rust `log` kirjasto: https://crates.io/crates/log
+- `env_logger` kirjasto: https://crates.io/crates/env_logger

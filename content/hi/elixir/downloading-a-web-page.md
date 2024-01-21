@@ -1,7 +1,8 @@
 ---
-title:                "एक वेब पेज डाउनलोड करना"
-html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
-simple_title:         "एक वेब पेज डाउनलोड करना"
+title:                "वेब पेज डाउनलोड करना"
+date:                  2024-01-20T17:44:32.115145-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "वेब पेज डाउनलोड करना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,32 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+वेब पेज डाउनलोड करना सरल है: आप एक वेबसाइट से सूचना प्राप्त करते हैं। प्रोग्रामर्स यह कार्य आँकड़े इकठ्ठा करने, सेवाओं का मिलान करने, या स्वत: अपडेट प्राप्त करने के लिए करते हैं।
 
-वेबपेज को डाउनलोड करना मतलबे उसे अपने कंप्यूटर पर स्थानीय तौर पर सहेजना। प्रोग्रामर्स इसे सॉर्स कोड को अनालाइज़ या सामग्री का परीक्षण करने के लिए करते हैं। 
+## How to: (कैसे करें:)
+Elixir में, `HTTPoison` लाइब्रेरी का प्रयोग कर वेब पेज डाउनलोड करना आसां होता है। इसे `mix.exs` में निम्नलिखित कोड के साथ जोड़ें:
 
-## कैसे करें:
-
-```Elixir
-defmodule Downloader do
-  def download_page(url) do
-    {:ok, body} = HTTPoison.get!(url).body
-    String.split(body, "\n")
-  end
+```elixir
+defp deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
 end
 ```
 
-फ़ंक्शन `download_page` यूआरएल को डाउनलोड करता है और वेबपेज की सामग्री को वापस लौटाता है। ये सामग्री फाइल्स की फॉर्म में होती हैं।
+आवश्यकतानुसार सेटअप करने के बाद, वेब पेज को डाउनलोड करने के लिए:
 
-## ज्यादा ज़रूरी जानकारी
+```elixir
+defmodule PageDownloader do
+  def download(url) do
+    case HTTPoison.get(url) do
+      {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
+        {:ok, body}
+      {:ok, %HTTPoison.Response{status_code: status_code}} ->
+        {:error, "Failed with status code: #{status_code}"}
+      {:error, %HTTPoison.Error{reason: reason}} ->
+        {:error, reason}
+    end
+  end
+end
 
-वेबपेजों की डाउनलोडिंग हमेशा से ही जरूरी रही है, चाहे वे ऑफ़लाइन पढ़ने के लिए हों या डेटा एनालिटिक्स परोजेक्ट्स के लिए। इतने सालों में कई दूसरे तरीके भी आ गए हैं, जैसे कि `wget` या `curl` उपयोग करना लेकिन प्रोग्राम पुरा नियंत्रण देता है कि किसे डाउनलोड करना हैं और उसे कैसे संसाधित करना हैं। 
+# सैंपल आउटपुट
+PageDownloader.download("http://example.com")
+# {:ok, "<html>...</html>"}
+```
 
-यदि आप Elixir में डाउनलोडिंग करना चुनते हैं, तो आप `HTTPoison` जैसे पैकेज पर भरोसा कर सकते हैं, जो एक HTTP प्रोटोकॉल पुस्तकालय है।
+## Deep Dive (गहरी जानकारी)
+इलिक्सिर के अन्दर वेब पेज डाउनलोड करने का इतिहास नया है, लेकिन इसका आधार Erlang के HTTP क्लाइंट पर है। `HTTPoison` इस्तेमाल करने का विकल्प `HTTPotion` या Erlang के `:httpc` मॉड्यूल हैं। `HTTPoison` का प्रयोग इसकी आसान API और सुविधाजनक तरीकों की वजह से किया जाता है। इस लाइब्रेरी में एसिंक्रोनस अनुरोध और प्लगइंस जैसी कई सशक्त क्षमताएँ होती हैं।
 
-## देखें भी:
-
-1. [HTTPoison GitHub](https://github.com/edgurgel/httpoison)
-2. [Elixir Official Website](https://elixir-lang.org/)
-3. [Hex: package manager for the Erlang ecosystem](https://hex.pm/) 
-4. [Elixir School](https://elixirschool.com/en/)
+## See Also (और भी देखें)
+- HTTPoison GitHub Repo: https://github.com/edgurgel/httpoison
+- Elixir Document सरकारी साइट: https://elixir-lang.org/docs.html
+- Erlang `:httpc` मॉड्यूल: http://erlang.org/doc/man/httpc.html

@@ -1,7 +1,8 @@
 ---
-title:                "Łączenie ciągów znaków"
-html_title:           "Arduino: Łączenie ciągów znaków"
-simple_title:         "Łączenie ciągów znaków"
+title:                "Łączenie łańcuchów znaków"
+date:                  2024-01-20T17:35:49.050839-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Łączenie łańcuchów znaków"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,67 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to i dlaczego?
+## What & Why? (Co i Dlaczego?)
 
-Łączenie ciągów znaków, czyli konkatenacja, to sposób na scalenie dwóch lub więcej napisów w jeden. Programiści robią to, aby manipulować i formatować dane tekstowe w łatwy i wydajny sposób.
+Łączenie ciągów znaków (stringów) to proces tworzenia jednego ciągu ze dwojga lub więcej. Programiści używają tej techniki do budowania komunikatów, danych i skryptów - to podstawy manipulowania tekstami.
 
-## Jak to zrobić:
+## How to: (Jak to zrobić?)
 
-W Pythonie mamy kilka podstawowych technik do łączenia ciągów znaków.
+Łączenie stringów w Pythonie możemy zrealizować na różne sposoby. Tutaj kilka przykładów:
 
-1. Operator `+`:
 ```Python
-napis1 = "Cześć"
-napis2 = "Pythonie"
-print(napis1 + ", " + napis2)
-```
-Na wyjściu otrzymasz:
-```
-Cześć, Pythonie
+# Przykład 1: operator +
+powitanie = "Cześć, " + "jak się masz?"
+print(powitanie)  # Wyjście: Cześć, jak się masz?
+
+# Przykład 2: f-string
+imie = "Olaf"
+przywitanie = f"Witaj {imie}!"
+print(przywitanie)  # Wyjście: Witaj Olaf!
+
+# Przykład 3: metoda join()
+lista_slow = ["Hej", "to", "ja"]
+calosc = " ".join(lista_slow)
+print(calosc)  # Wyjście: Hej to ja
 ```
 
-2. String Formatowanie:
+## Deep Dive (Głębsze spojrzenie)
+
+Kiedyś, w Pythonie 2, popularnym sposobem łączenia stringów była operacja `%` zwaną operatorem interpolacji. Przykład:
+
 ```Python
-print("{} jest super!".format("Python"))
-```
-Na wyjściu otrzymasz:
-```
-Python jest super!
+imie = "Karol"
+powitanie = "Hej %s!" % imie
 ```
 
-3. f-strings (dostępne od Python 3.6):
+Jednak od Pythona 3.6+, f-stringi (literal string interpolation) stały się zalecanym sposobem formatowania ciągów. Szybkie, czytelne i mniej podatne na błąd.
+
+Alternatywą może być metoda `format()`, która istnieje od Pythona 2.6+:
+
 ```Python
-wersja = 3.6
-print(f"Używamy Pythona {wersja}")
-```
-Na wyjściu otrzymasz:
-```
-Używamy Pythona 3.6
+powitanie = "Cześć, {}!".format(imie)
 ```
 
-## Deep Dive
+Kwestią techniczną jest fakt, że ciągi znaków w Pythonie są niemutowalne, co oznacza, że każda operacja łączenia tworzy nowy ciąg, nie modyfikując istniejących. Dlatego, przy łączeniu dużej liczby stringów, `join()` jest wydajniejszy niż wielokrotne użycie `+`, ponieważ `+` w każdym kroku tworzy nowy string, co jest kosztowne przy dużych ilościach danych.
 
-Konkatenacja stringów to technika stosowana od początku istnienia języków programowania. Zasada jest prosta: skleić razem różne ciągi znaków. 
+## See Also (Zobacz również)
 
-Ale w Pythonie, mamy więcej niż jedną metodę na łączenie ciągów. Operator `+` jest klasycznym sposobem, ale ma pewne ograniczenia. Nie łączy ciągów z innymi typami danych bez jawnego rzutowania.
+- Dokumentacja Pythona na temat f-stringów: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
+- Dokumentacja metody `str.join()`: https://docs.python.org/3/library/stdtypes.html#str.join
+- Dokumentacja metody `format()`: https://docs.python.org/3/library/stdtypes.html#str.format
 
-Nowocześniejsze metody, takie jak f-strings, są bardziej elastyczne i pozwalają na proste formatowanie ciągów. F-strings są również wydajne pod względem pamięci i wydajności. 
-
-Alternatywą dla wszystkich tych metod może być metoda `join()`. Jest to metoda bardziej Pythoniczna, czyli bardziej zgodna z filozofią Pythona, preferująca czytelność i prostotę.
- 
-```Python
-lista_słów = ['Cześć', 'świecie', 'Pythona']
-print(' '.join(lista_słów))
-```
-Na wyjściu otrzymasz:
-```
-Cześć świecie Pythona
-```
-
-## Zobacz też
-
-Zaawansowane formatowanie ciągów, dokumentacja Pythona: https://docs.python.org/3/library/string.html#format-string-syntax
-
-PEP 498 -- Literał formatujący ciągu znaków (f-strings) w Pythonie 3.6: https://peps.python.org/pep-0498/ 
-
-Metoda `join()`, dokumentacja Pythona: https://docs.python.org/3/library/stdtypes.html#str.join
+Rozszerz swoją wiedzę o łączeniu łańcuchów znaków i wykorzystuj je z głową. Znajdziesz stosowne przykłady w dokumentacji Pythona, która jest świetnym zasobem dla każdego programisty.

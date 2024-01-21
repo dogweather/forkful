@@ -1,6 +1,7 @@
 ---
 title:                "读取命令行参数"
-html_title:           "C: 读取命令行参数"
+date:                  2024-01-20T17:56:27.052362-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "读取命令行参数"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,37 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-命令行参数读取是程序获取命令行中输入信息的方式。程序员需要使用命令行参数来允许用户定义程序的运行方式。
+## What & Why? 什么 & 为什么？
+在 PHP 中读取命令行参数使我们能在脚本执行时接受用户输入。程序员这么做是为了提高灵活性和交互性，让程序可以更具有适应性。
 
-## 如何实现：
+## How to: 如何做？
 ```PHP
 <?php
-$arguments = $argv;
-array_shift($arguments); 
-foreach($arguments as $key => $value) {
-    echo "参数$key 是 $value . \n";
+// 检查是否有参数传入
+if ($argc > 1) {
+    echo "Hello, " . $argv[1] . "!\n";
+} else {
+    echo "Hello, world!\n";
 }
 ?>
 ```
+运行脚本 `php script.php Neo` 输出将会是 `Hello, Neo!`。
 
-在命令行中运行它，比如 `php file.php A B C`，你将看到以下输出：
+## Deep Dive 深入探索
+从 PHP 4.3.0 版本开始，`$argc` 和 `$argv` 变量被引入，使得读取命令行参数变得简单。还有其他方式，像是使用 `getopt()` 函数来获取选项和参数。实现细节上，`$argc` 表示参数数量，`$argv` 是个数组包含了所有参数。在命令行运行 PHP 脚本时，第一个参数总是脚本名称。
 
-```
-参数1 是 A . 
-参数2 是 B . 
-参数3 是 C .
-```
-
-## 深入解析:
-早在命令行界面（CLI）主导计算机操作的年代，命令行参数就已经被广泛使用。尽管现在图形用户界面已经大规模普及，但命令行参数在许多场景中依然十分重要，例如在脚本、自动化任务或服务器环境中。
-
-在PHP中，除了 `$argv` 之外还有一些获取命令行参数的方法。例如可以使用 getopt 函数来以更加灵活的方式处理命令行参数。
-
-而 `$argv` 是一个内置数组，它的第一个元素总是包含自身脚本的名称。对于其他的命令行参数，PHP会将它们当作字符串存储在此数组中的后续元素里。
-
-## 相关资源：
-这些是一些有关PHP命令行参数的其他资源：
-
-2. PHP官方文档中关于 `getopt` 函数的页面：[https://php.net/manual/function.getopt.php](https://php.net/manual/function.getopt.php)
-3. 一个关于PHP命令行参数处理的细致教程：[https://www.sitepoint.com/php-command-line-1/](https://www.sitepoint.com/php-command-line-1/)
+## See Also 参见
+- PHP 官方文档命令行使用: [https://www.php.net/manual/en/features.commandline.usage.php](https://www.php.net/manual/en/features.commandline.usage.php)
+- `getopt()` 函数: [https://www.php.net/manual/en/function.getopt.php](https://www.php.net/manual/en/function.getopt.php)

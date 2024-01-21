@@ -1,6 +1,7 @@
 ---
 title:                "Konvertere en streng til små bokstaver"
-html_title:           "Arduino: Konvertere en streng til små bokstaver"
+date:                  2024-01-20T17:39:23.866101-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,37 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å konvertere en streng til små bokstaver innebærer å endre alle bokstaver i teksten til deres lavere kasse ekvivalent. Programmerere gjør dette for data-normalisering eller for å forenkle sammenligning av tekststrenger.
 
-Å konvertere en streng til små bokstaver innebærer å endre alle store bokstaver i en streng til deres lille bokstav tilsvarende. Vi gjør det for å unngå uønskede resultater ved sammenligning, fordi "Code" og "code" blir behandlet forskjellig i de fleste programmeringsspråk.
-
-## Hvordan gjør man det:
-
-For å konvertere en streng til små bokstaver i PowerShell, bruker vi .ToLower() metoden. Her er hvordan:
+## Hvordan gjøre det:
+Bruk `ToLower()` metoden for å konvertere strenger:
 
 ```PowerShell
-$text = "Hei Verden!"
-$lowerText = $text.ToLower()
-Write-Host $lowerText
+$streng = "Hei, Norge!"
+$småBokstaver = $streng.ToLower()
+Write-Output $småBokstaver
 ```
-Når du kjører koden ovenfor, vil utdata være "hei verden!" - som er den opprinnelige strengen, men i små bokstaver.
 
-## Dypere forståelse:
+Forventet resultat:
 
-Historisk sett har konvertering til små bokstaver vært en vanlig funksjon i programmeringsspråk, med varierende implementeringer. I Bash, for eksempel, bruker du `tr '[:upper:]' '[:lower:]'`, mens i Python, det likner PowerShell med `str.lower()`.
+```
+hei, norge!
+```
 
-Det finnes alternativer til .ToLower() i PowerShell. For eksempel kan du bruke -lowercase parameter med CaseConversion cmdlet fra PowerShell Community Extensions (Pscx) modulen:
+## Dypdykk:
+Historisk sett, handler denne konverteringen om konsistens i data og var en del av tidlige datamaskiners kapasiteter for tekstbehandling. Alternativer til `ToLower()` inkluderer `ToUpper()` for å endre til store bokstaver eller bruk av regulære uttrykk for mer kontroll. Når du bruker `ToLower()`, påvirkes ikke tall eller tegnsetting, kun bokstaver fra A til Å.
+
+PowerShell bruker kulturelt sensitiv `ToLower()` metode som standard, som tar hensyn til lokale konvensjoner basert på maskinens innstillinger eller kultur parameter. Hvis du trenger en kultur-uavhengig operasjon, bruk `ToLowerInvariant()`.
 
 ```PowerShell
-Import-Module Pscx
-$text = "Hei Verden!"
-$lowerText = CaseConversion -lower $text
-Write-Host $lowerText
+$streng = "BRØD OG SKI!"
+$kultureltSmåBokstaver = $streng.ToLower('nn-NO') # Nynorsk - Norge
+$kulturUavhengigSmåBokstaver = $streng.ToLowerInvariant()
+Write-Output $kultureltSmåBokstaver
+Write-Output $kulturUavhengigSmåBokstaver
 ```
 
-Når det gjelder implementeringsdetaljer, bruker .ToLower() -metoden Unicode-standarder for å matche og erstatte store bokstaver med deres motstykke i små bokstaver.
+Vær oppmerksom på at kultur-spesifikke endringer kan forekomme, for eksempel med tyrkisk 'İ' blir det til 'i' når du bruker `ToLower()` med den tyrkiske kulturkoden, men til 'ı' med `ToLowerInvariant()`.
 
-## Se også:
-
-1. PowerShell Community Extensions (Pscx) - https://github.com/Pscx/Pscx
-2. .NET String.ToLower Metode - https://docs.microsoft.com/dotnet/api/system.string.tolower
-3. Sebastiaan's PowerShell Blog - https://www.powershellmagazine.com/author/sebastiaan-
+## Se Også:
+- PowerShell dokumentasjon om strenger: https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-string-data-type?view=powershell-7.1
+- Om Unicode og tekstbehandling: https://unicode.org
+- Microsoft guide til kulturelle konvensjoner i .NET: https://docs.microsoft.com/en-us/dotnet/standard/globalization-localization/culture-and-cultureinfo

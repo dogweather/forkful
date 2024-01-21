@@ -1,6 +1,7 @@
 ---
 title:                "Sammenslåing av strenger"
-html_title:           "Arduino: Sammenslåing av strenger"
+date:                  2024-01-20T17:34:50.748859-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sammenslåing av strenger"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,36 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+I programmering er det å konkatere strenger å sette dem sammen til én. Vi gjør det for å bygge setninger, lage dynamiske meldinger, eller kombinere data på en meningsfull måte.
 
-Sammenslåing av strenger er prosessen med å sette sammen to eller flere strenger til én. Dette er nyttig for programmerere fordi det lar dem manipulere og formatere tekstdata på mer komplekse måter.
-
-## Hvordan:
-
-Her er noen grundige eksempler på hvordan du kobler sammen strenger i Gleam:
+## How to:
+Gleam gjør det enkelt. Se på disse eksemplene:
 
 ```Gleam
-let greeting = "Hei, "
-let name = "Ola"
-let message = greeting ++ name
-message
+fn main() {
+  let greet = "Hei"
+  let name = "Ola"
+  let message = greet ++ ", " ++ name ++ "!"
+  message
+}
+
+// Output: "Hei, Ola!"
 ```
 
-Når du kjører dette programmet, vil output være:
+```Gleam
+fn assemble_sentence(subject: String, verb: String, object: String) -> String {
+  subject ++ " " ++ verb ++ " " ++ object ++ "."
+}
 
+fn main() {
+  let sentence = assemble_sentence("Katten", "jag", "musen")
+  sentence
+}
+
+// Output: "Katten jag musen."
 ```
-Hei, Ola
-```
-## Dyp Dykk:
 
-- Historisk kontekst: Sammensetning av strenger har vært en grunnleggende funksjon i programmering siden opprettelsen. Det hjelper til med å lage dynamiske meldinger og formattere tekst på en mer lesbar måte.
+Du legger bare `++` mellom strengene du vil sette sammen.
 
-- Alternativer: Andre metoder for å manipulere strenger inkluderer funksjoner som trimming av ledende eller etterfølgende mellomrom (`trim`), konvertering til store bokstaver (`to_upper`) og mer.
+## Deep Dive
+Konkatenering av strenger er ikke nytt. Historisk har det variert fra språk til språk, noen brukte operatører som `+` eller funksjoner som `concat()`. I Gleam, og mange funksjonelle språk, brukes `++`.
 
-- Implementasjonsdetaljer: I Gleam, er operatorer brukt til å sammenføye strenger. Den mest vanlige operatoren er `++`.
+Alternativer? I noen språk kan du bruke string interpolation eller template literals, hvor du kan sette inn variabler direkte i strengen. Gleam støtter ikke dette nå, men det ryktes at framtidige versjoner kan innføre liknende funksjoner.
 
-## Se Også:
+Implementasjonsdetaljer? Når konkatenering skjer, skapes en ny streng i minnet. Dette kan være dyrt hvis det gjøres mye, så noen språk har spesialiserte strukturer som `StringBuilder` i Java for å forbedre ytelsen. Gleam håndterer dette effektivt internt så du sjelden trenger å bekymre deg for ytelse her.
 
-For mer ressurser om programmering i Gleam, sjekk ut disse linkene:
-
-- Gleam GitHub Repo: [https://github.com/gleam-lang/gleam/](https://github.com/gleam-lang/gleam/)
+## See Also
+For mer om Gleam og strenger:
+- En guide til funksjonelle språk prinsipper: [https://wiki.haskell.org/Functional_programming](https://wiki.haskell.org/Functional_programming)
+- String konkatenering i andre språk: [https://rosettacode.org/wiki/String_concatenation](https://rosettacode.org/wiki/String_concatenation)

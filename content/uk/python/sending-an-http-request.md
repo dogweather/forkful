@@ -1,7 +1,8 @@
 ---
-title:                "Надсилання http-запиту"
-html_title:           "Arduino: Надсилання http-запиту"
-simple_title:         "Надсилання http-запиту"
+title:                "Надсилання HTTP-запиту"
+date:                  2024-01-20T18:00:13.880328-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,39 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та Навіщо?
+## What & Why? (Що і Чому?)
+Sending an HTTP request means asking a server for data or sending data to it. Programmers do it to interact with web services, fetch content, or push data.
 
-Відправка HTTP-запиту - це процес обміну даними між клієнтом (вашим комп'ютером) та сервером. Програмісти це роблять, щоб отримати, відправити, оновити або видалити інформацію на сервері.
-
-## Як це робити:
-
-Використовуємо бібліотеку Python `requests`. Поглянемо на приклади коду:
-
-```python
+## How to: (Як це зробити:)
+```Python
 import requests
 
-# Створюємо GET запит
-response = requests.get('http://example.com')
-
-# Виведемо статус-код відповіді
+# Get request
+response = requests.get('https://api.github.com')
 print(response.status_code)
+print(response.json())
 
-# Виведемо вміст відповіді
-print(response.text)
+# Post request
+data = {'key': 'value'}
+response = requests.post('https://httpbin.org/post', json=data)
+print(response.status_code)
+print(response.json())
+```
+Output:
+```
+200
+{'current_user_url': 'https://api.github.com/user', ...}
+
+200
+{
+  "args": {}, 
+  "data": "{\"key\": \"value\"}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    ...
+  }, 
+  ...
+}
 ```
 
-Якщо все в порядку, ви побачите код статусу `200`, що означає "ОК", і вміст HTML-сторінки example.com.
+## Deep Dive (Поглиблений Аналіз)
+HTTP requests have been around since the early '90s, an essential part of web browsing. Python's `requests` library makes requests easy: you use `get` to fetch data and `post` to send it. There are alternatives, like `http.client` for lower-level operations and the `urllib` library, but they are more verbose and complex. `requests` handles many implementation details like encoding parameters and managing responses.
 
-## Поглиблений аналіз:
-
-**Історичний контекст**: HTTP запити були в основі веб-браузерного спілкування з серверами з моменту зародження WWW у 1990-х.
-
-**Альтернативи**: Інші популярні бібліотеки для роботи з HTTP в Python це `urllib`, `httplib`, але `requests` є набагато простішою та зручнішою.
-
-**Деталі реалізації**: Бібліотека `requests` використовує методи `get`, `post`, `put`, `delete` тощо, які відповідають однойменним методам HTTP. Ви також можете додати параметри запиту, заголовки та дані форми в свої запити.
-
-## Дивіться також:
-
-1. Офіційна документація `requests`: http://docs.python-requests.org/
-2. Введення в HTTP: https://developer.mozilla.org/uk/docs/Web/HTTP/Overview
-3. Підручник Python `requests`: https://realpython.com/python-requests/
+## See Also (Дивіться також)
+- Official `requests` library documentation: https://requests.readthedocs.io
+- HTTP protocol overview on MDN: https://developer.mozilla.org/en-US/docs/Web/HTTP
+- Python `http.client` docs: https://docs.python.org/3/library/http.client.html
+- Python `urllib` tutorial: https://docs.python.org/3/howto/urllib2.html

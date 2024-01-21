@@ -1,6 +1,7 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "C#: Verkkosivun lataaminen"
+date:                  2024-01-20T17:43:39.363461-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "C#"
 category:             "C#"
@@ -10,45 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä ja Miksi?)
+Web-sivun lataaminen on sen sisällön hakemista internetistä ohjelmallisesti. Ohjelmoijat tekevät tämän tiedon käsittelyyn, analysointiin tai varmuuskopiointiin.
 
-Web-sivun lataaminen on prosessi, jossa tietokone hakee ja tallentaa verkkosivun tiedot. Ohjelmoijat tekevät sen hakiessaan tai kerätessään tietoa verkosta.
-
-## Miten:
-
-Katsotaanpa esimerkkiä, jossa käytetään `HttpClient` luokkaa:
+## How to: (Kuinka tehdä:)
 
 ```C#
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-class Program
+class WebPageDownloader
 {
-    private static readonly HttpClient client = new HttpClient();
-
     static async Task Main()
     {
-        var url = "http://example.com";
-        var responseString = await client.GetStringAsync(url);
-        Console.WriteLine(responseString);
+        var url = "http://www.example.com";
+        using var client = new HttpClient();
+
+        try
+        {
+            string content = await client.GetStringAsync(url);
+            Console.WriteLine(content);
+        }
+        catch (HttpRequestException e)
+        {
+            Console.WriteLine($"Error fetching the page: {e.Message}");
+        }
     }
 }
 ```
 
-Ohjelma hakee sisällön osoitteesta `http://example.com` ja tulostaa sen konsoliin.
+Sample output:
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
 
+## Deep Dive (Syväsukellus):
 
-## Syvempää keskustelua:
+Web-sivun lataamista ohjelmallisesti on tehty lähes niin kauan kuin web on ollut olemassa. Alkuaikoina käytettiin yksinkertaisia skriptejä, mutta nykyään on hienostuneempia työkaluja, kuten HttpClient C#:ssa.
 
-- Historiallinen konteksti: Alun perin verkkosivujen lataaminen tehtiin käyttäen `WebRequest` / `WebResponse` -luokkia. Myöhemmin `HttpClient` esiteltiin yksinkertaistamaan ja parantamaan tätä prosessia.
-  
-- Vaihtoehdot: Muita vaihtoehtoja ovat kolmansien osapuolien kirjastot, kuten `RestSharp` tai `Flurl.Http`, jotka tarjoavat lisäominaisuuksia ja yksinkertaisemman käyttöliittymän.
-  
-- Toteutuksen yksityiskohdat: `HttpClient.GetStringAsync` -metodin takana tapahtuu paljon. Se luo HTTP GET -pyynnön määriteltyyn URL-osoitteeseen, odottaa vastausta, lataa vastauksen sisällön ja palauttaa sen merkkijonona.
+Vaihtoehtoisia tapoja ladata sivuja on monia: WebClient-luokka (nykyään vanhentunut), HttpWebRequest/Response (matalamman tason hallinta), tai kolmannen osapuolen kirjastot, kuten RestSharp tai HtmlAgilityPack.
 
-## Katso myös:
+Tärkeimmät toteutusyksityiskohdat ovat virheenkäsittely (internet-yhteyksien epävarmuus), ja asynkroninen käyttö (et blokeeraa sovelluksesi toimintaa ladatessasi).
 
-- Microsoftin dokumentaatio HttpClient:ille: https://docs.microsoft.com/fi-fi/dotnet/api/system.net.http.httpclient
-- Tutkittava blogikirjoitus HttpClientin käytöstä: https://johnthiriet.com/efficient-api-calls/
-- Lisää tietoa web-satunnaisten käytöstä c#:ssa: https://www.pluralsight.com/courses/csharp-httpfundamentals
+## See Also (Katso myös):
+
+- Microsoftin HttpClient-dokumentaatio: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
+- Asynkronisen ohjelmoinnin perusteet C# kielisessä ympäristössä: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/csharp/async)
+- HTTP:n perusteet: [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+- HtmlAgilityPack-kirjasto: [html-agility-pack.net](https://html-agility-pack.net/)

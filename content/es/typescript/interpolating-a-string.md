@@ -1,7 +1,8 @@
 ---
-title:                "Interpolando una cadena de texto"
-html_title:           "Haskell: Interpolando una cadena de texto"
-simple_title:         "Interpolando una cadena de texto"
+title:                "Interpolación de cadenas de texto"
+date:                  2024-01-20T17:51:44.539615-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolación de cadenas de texto"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,43 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+## What & Why?
+La interpolación de strings nos permite insertar valores de variables dentro de cadenas de texto. Lo hacemos para construir mensajes dinámicos sin ensuciar el código con un montón de concatenaciones.
 
-La interpolación de strings en TypeScript es la inserción de variables u expresiones dentro de un string. Esto puede facilitar la codificación ya que permite insertar variables directamente en un string en lugar de concatenarlas.
-
-## Cómo hacerlo:
-
-La interpolación de cadenas en TypeScript se hace utilizando el carácter backtick (` `) y poniendo la variable o expresión dentro de ${}. Aquí se muestra un ejemplo:
+## How to:
+TypeScript, al igual que JavaScript, utiliza backticks (`` ` ``) para definir template literals, permitiéndonos insertar expresiones directamente usando `${expresión}`. Aquí te dejo unos ejemplos:
 
 ```TypeScript
-let nombre = "Juan";
-let saludo = `Hola, ${nombre}`;
-console.log(saludo);  // Output: Hola, Juan
+let name: string = 'Mundo';
+let message: string = `Hola, ${name}!`;
+console.log(message); // Salida: Hola, Mundo!
+
+let price: number = 9.99;
+let product: string = 'libro';
+console.log(`El precio del ${product} es ${price} euros.`); // Salida: El precio del libro es 9.99 euros.
 ```
 
-Si combinas con una expresión, la expresión será evaluada y el resultado ser insertada en la string:
+## Deep Dive
+Antes de ES6 (ECMAScript 2015), que es la versión en la que TypeScript se basa, la interpolación no existía en JavaScript. Teníamos que usar el operador `+` para concatenar variables y cadenas, lo que a veces resultaba engorroso:
 
-```TypeScript
-let a = 10;
-let b = 5;
-let suma = `La suma de ${a} y ${b} es ${a+b}`;
-console.log(suma);  // Output: La suma de 10 y 5 es 15
+```JavaScript
+var name = 'Mundo';
+var message = 'Hola, ' + name + '!';
+// en TypeScript, también podríamos usar comillas simples o dobles de la misma manera
 ```
 
-## Inmersión Profunda
+Ahora con las template strings, el código es más legible y mantenible. Además, TypeScript también verifica los tipos dentro de las interpolaciones, ayudándote a evitar errores tontos.
 
-La interpolación de cadenas, también conocida como las "plantillas de cadena" en TypeScript, fue introducida en ES6 y luego adoptada por TypeScript. Antes de ES6, debías concatenar las variables con el string, lo que podía ser un proceso largo y confuso especialmente para strings largas y con muchas variables.
+Una alternativa a la interpolación es usar la función `replace` con una expresión regular o con un marcador de posición como `%s`, aunque esto es menos intuitivo y más propenso a errores.
 
-Existen alternativas a la interpolación de cadenas, como la concatenación de strings, pero estas alternativas pueden requerir más código y pueden resultar en código más difícil de leer.
+La interpolación de strings se realiza en tiempo de ejecución, compilando primero la plantilla de string y luego reemplazando las expresiones con los valores de las variables.
 
-En cuanto a los detalles de implementación, las plantillas de cadenas en TypeScript se implementan como instancias del objeto global String. Eso significa que tienes acceso a todos los métodos que un objeto string normal tendría, incluyendo .length, .indexOf(), etc.
-
-## Ver También
-
-Para obtener más información sobre la interpolación de cadenas en TypeScript y otras características de TypeScript, puedes revisar los siguientes recursos:
-
-- "Interpolación de Cadenas y Plantillas"
-(https://typescript.ninja/typescript/es6-template-strings)
-- Documentación Oficial de TypeScript (https://www.typescriptlang.org/docs/)
-- Guía de TypeScript en MDN 
-(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Text_formatting_with _template_literals)
+## See Also
+- [Template Literals (MDN)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Template_literals) - Una guía detallada sobre template literals en JavaScript.
+- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/) - La documentación oficial de TypeScript, donde puedes aprender más sobre tipos, interfaces y otras funcionalidades.

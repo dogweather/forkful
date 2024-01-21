@@ -1,6 +1,7 @@
 ---
 title:                "부분 문자열 추출"
-html_title:           "Arduino: 부분 문자열 추출"
+date:                  2024-01-20T17:46:03.772880-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "부분 문자열 추출"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,33 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why?
+(무엇 & 왜?)
+문자열에서 필요한 부분만 뽑아내는 것을 서브스트링 추출이라고 합니다. 데이터를 정제하고, 필요한 정보만을 가져오기 위해 프로그래머들이 이 방법을 자주 사용합니다.
 
-문자열에서 특정 부분을 추출하는 것이 '서브스트링 추출'입니다. 프로그래머들은 데이터를 정제하고, 구분하고, 분석하는 과정에서 이 기능을 사용하곤 합니다.
+## How to:
+(어떻게 하나요?)
+```kotlin
+fun main() {
+    val fullString = "안녕하세요, 여러분"
+    val extracted = fullString.substring(4, 9)
+    
+    println(extracted) // 출력: 세요, 
+}
 
-## 어떻게 하는가:
+fun getRangeFromText(startText: String, endText: String, fullText: String): String? {
+    val startIndex = fullText.indexOf(startText) + startText.length
+    val endIndex = fullText.indexOf(endText, startIndex)
+    
+    return if (startIndex > 0 && endIndex > 0) fullText.substring(startIndex, endIndex) else null
+}
 
-서브스트링 추출은 코틀린에서 매우 직관적입니다.
-
-```Kotlin
-val string = "안녕하세요, 저는 코틀린 입니다."
-val substring = string.substring(0, 5)
-println(substring)
+fun main() {
+    val startText = "안녕"
+    val endText = "분"
+    val fullText = "안녕하세요, 여러분"
+    val result = getRangeFromText(startText, endText, fullText)
+    
+    println(result) // 출력: 하세요, 여러
+}
 ```
 
-출력 결과는 "안녕하세요"입니다.
+## Deep Dive:
+(심층 탐구)
+서브스트링 추출은 문자열 처리의 기초입니다. 이 기능은 원시 문자열을 다룰 때부터 있었고 많은 프로그래밍 언어가 이를 지원합니다. Kotlin 에서는 `substring` 함수와 범위 연산자를 통해 구현할 수 있습니다. `substring` 함수를 사용할 때는 시작 인덱스와 종료 인덱스를 명시하여 원하는 부분을 추출합니다. 종료 인덱스는, 그 자리 문자는 포함하지 않습니다. 인덱스 계산을 실수로 하지 않도록 주의하세요. 문자열 처리에는 정규식이라는 강력한 대안이 있지만, 더 복잡할 수 있습니다. `indexOf` 함수를 사용해 특정 문자나 문자열의 위치를 찾은 다음, 서브스트링을 추출하는 것도 가능한 방법 중 하나입니다.
 
-## 깊은 탐색:
-
-서브스트링을 추출하는 능력은 문자열 처리의 핵심 부분입니다. 코틀린은 자바에서 오랜 역사를 가지고 있는 문자열 처리 기능을 그대로 물려받았습니다.
-
-알TERNATIVES 이름에서 서브스트링을 추출하는 다른 방법으로는 `split` 함수를 사용하는 것이 있습니다. 하지만, 이 방법은 구분자가 필요하고 조금 더 복잡한 로직이 필요하다는 단점이 있습니다.
-
-코틀린은 `substring` 함수를 사용하여 필요한 부분만큼만 추출합니다. `substring`은 시작 인덱스와 종료 인덱스를 포함해서 이 범위에 있는 모든 문자를 반환합니다.
-
-## 참고 자료:
-
-더 다양한 기능과 정보를 얻고 싶다면 아래 링크를 참조해 보세요.
-- 공식 코틀린 문서 : https://kotlinlang.org/docs/reference/
-- 코틀린 문자열 처리 튜토리얼: https://developer.android.com/kotlin/learn#manipulating-text
-- 코틀린으로 서브스트링 추출하기: https://stackoverflow.com/questions/36574183/how-to-get-substring-in-kotlin
+## See Also:
+(관련 자료)
+- Kotlin 공식 문서의 문자열 처리 섹션: [Kotlin String Documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)

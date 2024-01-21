@@ -1,7 +1,8 @@
 ---
-title:                "नया प्रोजेक्ट शुरू करना"
-html_title:           "C: नया प्रोजेक्ट शुरू करना"
-simple_title:         "नया प्रोजेक्ट शुरू करना"
+title:                "नई परियोजना शुरू करना"
+date:                  2024-01-20T18:03:59.211483-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "नई परियोजना शुरू करना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Getting Started"
@@ -10,37 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# नई प्रोजेक्ट: आरंभ करने की विधि - Elixir Programming (वर्तमान संस्करण)
+## What & Why? (क्या और क्यों?)
+नई प्रोजेक्ट शुरू करने का मतलब है एक ताज़ा आधार से कोडिंग करना। प्रोग्रामर्स इसे नई चीजों को सीखने, कस्टम समाधान बनाने और अपने आइडियाज़ को साकार करने के लिए करते हैं।
 
-## क्या और क्यों?
-
-नई प्रोजेक्ट का आरंभ करना मतलब एक नया कोडिंग कार्य शुरू करना है। प्रोग्रामर इसे इसलिए करते हैं ताकि वे अपनी योजनाएं या सिस्टम का स्केलअप कर सकें। 
-
-## कैसे:
-
-Elixir में नई प्रोजेक्ट आरंभ करने के लिए देखिए:
+## How to (कैसे करें):
+Elixir में नया प्रोजेक्ट Mix टूल का इस्तेमाल कर के शुरू किया जाता है:
 
 ```elixir
-mix new project_name
+mix new greet_everyone
 ```
 
-जैसे कि, हमारी प्रोजेक्ट "नमस्ते_दुनिया" है, तो हमें निम्नलिखित करना होगा:
+आउटपुट:
+
+```plaintext
+* creating README.md
+* creating .formatter.exs
+* creating .gitignore
+* creating mix.exs
+* creating lib
+* creating lib/greet_everyone.ex
+* creating test
+* creating test/test_helper.exs
+* creating test/greet_everyone_test.exs
+
+Your Mix project was created successfully.
+You can use "mix compile" to compile it,
+"use 'mix test' to test it,
+or 'iex -S mix' for an interactive prompt.
+```
+
+यह कमांड आपके लिए एक नई Elixir एप्लीकेशन की संरचना बना देता है।
 
 ```elixir
-mix new नमस्ते_दुनिया
+cd greet_everyone
+iex -S mix
 ```
 
-## गहरी जानकारी
+यह कमांड आपको इंटरएक्टिव प्रॉम्प्ट में ले जाती है, जहाँ आप अपने कोड को लाइव टेस्ट कर सकते हैं।
 
-1. ऐतिहासिक संदर्भ: Elixir, एरिक संदग्रेन द्वारा डिजाइन और विकसित किया गया, ऑपन-सोर्स, सामर्थ्य-केंद्रित, सामान्य प्रयोजन की भाषा है, जिसका उद्देश्य तर्क का निर्माण करना, वितरण, और त्रुटियों को ठीक करना है। 
+## Deep Dive (गहराई में):
 
-2. विकल्प: नई प्रोजेक्ट को आरंभ करने के लिए अन्य भाषाएं जैसे कि Ruby, Python, Java इत्यादि भी इस्तेमाल की जा सकती हैं। लेकिन Elixir इसे बहुत सरल और आसान बनाता है। 
+Elixir में Mix एक बिल्ड टूल है जो कि 2012 में José Valim ने बनाया। यह आधुनिक प्रोजेक्ट्स के लिए एक स्कैफोल्डिंग टूल की तरह काम करता है। Mix के विकल्प में rebar3 है, जिसका इस्तेमाल Erlang प्रोजेक्ट्स के लिए होता है। Mix आपको डिपेंडेन्सी मैनेजमेंट, कॉन्फिगरेशन, टेस्टिंग और कई दूसरे टास्क्स आसानी से करने देता है। प्रोजेक्ट शुरू करना और प्रोजेक्ट का मैनेजमेंट बहुत महत्वपूर्ण है, इसीलिए Mix जैसे टूल्स डेवलपर्स की बहुत मदद करते हैं।
 
-3. कार्यान्वयन विवरण: ऊपर दिए गए `mix new` आदेश से Elixir नई प्रोजेक्ट डायरेक्ट्री बना देता है, `lib` डायरेक्ट्री में कोडींग के लिए खाली फ़ाइलें बनाता है, और `test` डायरेक्ट्री में खाली टेस्ट फ़ाइलें बनाता है। 
+## See Also (और भी देखें):
 
-## अतिरिक्त जानकारी
+- Elixir की आधिकारिक वेबसाइट: [Elixir Lang](https://elixir-lang.org/)
+- Mix डॉक्युमेंटेशन: [Mix Task](https://hexdocs.pm/mix/Mix.html)
+- Elixir स्कूल: [Elixir School](https://elixirschool.com/en/)
 
-1. [Elixir का आधिकारिक डॉक्युमेंटेशन](https://elixir-lang.org/docs.html)
-2. [Elixir का गेटिंग स्टार्टेड गाइड](https://elixir-lang.org/getting-started/introduction.html)
-3. [Elixir के साथ प्रोजेक्ट की बुनियादी संरचना कैसे सेट करें](https://elixirschool.com/en/lessons/basics/mix/)
-4. [Elixir प्रोजेक्ट संगठन: टिप्स और ट्रिक्स](https://medium.com/@ttacoopes/structuring-elixir-projects-d91d7951b185)
+इन लिंक्स पर जाकर आप Elixir के बारे में और भी जानकारी प्राप्त कर सकते हैं।

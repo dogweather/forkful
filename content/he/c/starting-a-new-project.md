@@ -1,6 +1,7 @@
 ---
 title:                "התחלת פרויקט חדש"
-html_title:           "Clojure: התחלת פרויקט חדש"
+date:                  2024-01-20T18:03:03.576779-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "התחלת פרויקט חדש"
 programming_language: "C"
 category:             "C"
@@ -11,34 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+Starting a new project ב-C זה כמו לצאת למסע; זו ההתחלה של יצירת משהו חדש מאפס. תכנתים עושים את זה כי יש להם רעיון או בעיה לפתור, והם רוצים להביא את הפתרון שלהם לחיים.
 
-התחלת פרויקט חדש היא תהליך שבו מתכנת יוצר מסגרת בסיסית לפיתוח תוכנית. מתכנתים עושים זאת כדי לבנות בסיס מהימן, גמיש וחזק לתוכנית הגדולה שהם יפתחו.
+## איך לעשות:
+בואו נדבר על התחלות. כשאנחנו פותחים פרויקט חדש ב-C, הכי חשוב להקים את הבסיס נכון.
 
-## כיצד:
-```C 
+```C
 #include<stdio.h>
 
-int main() 
-{
-   printf("התחלתי פרויקט חדש ב-C!");
-   return 0;
+int main() {
+    printf("Hello, World!\n");
+    return 0;
 }
 ```
-הפלט:
+
+זה מדפיס:
+```plaintext
+Hello, World!
 ```
-התחלתי פרויקט חדש ב-C!
-```
+
+זהו ה-"Hello, World!" הקלאסי שלנו. מההתחלה הזו אפשר לבנות הלאה את הפרויקט.
 
 ## צלילה עמוקה:
+מדוע "Hello, World!" הוא כזה פופולארי? הוא נוצר בשנות ה-70 על ידי Brian Kernighan ו-Dennis Ritchie בספר "The C Programming Language". המטרה הייתה להראות דרך פשוטה ומהירה לקבל פידבק מהמחשב, שמאשר שהכל עובד כשורה.
 
-החל משנות ה-70 של המאה ה-20, פתחו מתכנתים פרויקטים ב-C בכדי ליישם שפות תכנות, מערכות הפעלה, בסיסי נתונים, ומגוון רחב של אפליקציות תוכנה אחרות. אלטרנטיבות לזה הן שפות אחרות כמו ג'אווה או Python, אך C משאירה למתכנתיות הרבה יותר שליטה עצמאית על האסמבלי, מה שגורם לה להישאר מרכזית. הפרטים שלא מכוסים בהתחלת פרויקט מדברים על פרסום מודולים, סדר תרגומים, ושגרות ניקוי.
+והאלטרנטיבות? יש שפות רבות אחרות, אבל ל-C יש מקום מיוחד בלב, כי הוא כל כך קרוב למערכת. זה אומר שאתה מקבל בקרה מלאה על המחשב שלך, אם כי זוהי חרב פיפיות – טעויות יכולות להיות קריטיות.
 
-## ראו גם:
+כשאתה יוצר פרויקט חדש, חשוב לבחור את המבנה הנכון. לדוגמה, תריץ יחידת בדיקות כדי לוודא שהקוד שלך עובד כמצופה. ואל תשכח להשתמש בגיט כדי לנהל את הקוד שלך.
 
-[C Programming - Tutorialspoint](https://www.tutorialspoint.com/cprogramming/index.htm)
+## ראה גם:
+- [The C Programming Language by Brian W. Kernighan and Dennis M. Ritchie](https://en.wikipedia.org/wiki/The_C_Programming_Language)
+- [Learn-C.org](https://www.learn-c.org/)
+- [GNU Compiler Collection (GCC)](https://gcc.gnu.org/)
 
-[W3schools - Learn C](https://www.w3schools.com/C/)
-
-[C Programming Wiki - Wikibooks](https://en.wikibooks.org/wiki/C_Programming)
-
-[“C Programming Absolute Beginner’s Guide (3rd Edition)"](https://www.amazon.com/Programming-Absolute-Beginners-Guide-3rd/dp/0789751984)
+במשאבים האלה תמצאו מידע נוסף על תיכנות ב-C, היסטוריה וכלים שיעזרו לכם להתחיל ולנהל פרויקטים בהצלחה.

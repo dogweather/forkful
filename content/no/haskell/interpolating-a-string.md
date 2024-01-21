@@ -1,6 +1,7 @@
 ---
 title:                "Interpolering av en streng"
-html_title:           "Bash: Interpolering av en streng"
+date:                  2024-01-20T17:51:06.431996-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolering av en streng"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,37 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Strenginterpolering lar deg sette inn variabler eller uttrykk inni en tekststreng. Det gjør det enklere å bygge dynamiske tekster, og holder koden ryddig og leselig.
 
-Stringinterpolasjon er teknikken å sette, eller bytte inn, verdier inni en streng. Programmerere bruker det for å lage lesebare koder og formatere strenger mer effektivt.
+## Hvordan:
 
-## Slik gjør du:
-
-I Haskell bruker vi `printf` funksjonen for å interpolere strenger. Her er et enkelt eksempel:
-
-```Haskell
-import Text.Printf (printf)
-
-navn = "Ola"
-jobb = "Programmør"
-printf "Hei, mitt navn er %s og jeg er en %s." navn jobb
-```
-
-Resultatet vil være:
+Interpolering i Haskell kan gjøres med `printf` fra `Text.Printf` biblioteket eller med `interpolate` fra `Data.String.Interpolate` for å få en mer moderne syntaks à la template strings i JavaScript.
 
 ```Haskell
-"Hei, mitt navn er Ola og jeg er en Programmør."
+import Text.Printf
+
+main :: IO ()
+main = do
+   let navn = "Verden"
+   putStrLn (printf "Hei, %s!" navn)
 ```
-## Dypdykk
+Output:
+```
+Hei, Verden!
+```
 
-Strenginterpolasjon har vært en del av programmeringsspråk siden tidlig i historien. I noen språk, som Perl og Ruby, er det mer innebygd i språket selv. I Haskell er det litt mer begrenset, men `printf` funksjonen gir oss likevel en god del fleksibilitet.
+Eller ved hjelp av `interpolate` bibilioteket:
 
-Alternativt kan du bruke biblioteket `interpolate`, som gir et mer "Haskellete" måte å gjøre strenginterpolasjon på.
+```Haskell
+{-# LANGUAGE QuasiQuotes #-}
+import Data.String.Interpolate ( i )
 
-Implementeringen av strenginterpolasjon i Haskell er avhengig av hvordan `printf` eller `interpolate` er implementert. Det er visitig å nevne at i Haskell handler det meste om funksjonalitet og mindre om lavnivåimplementeringer.
+main :: IO ()
+main = do
+   let navn = "Verden"
+   putStrLn [i|Hei, #{navn}!|]
+```
+Output:
+```
+Hei, Verden!
+```
 
-## Se også
+## Deep Dive
 
-For mer informasjon, se:
+Tidligere i Haskell, var strengkonkatenering og `++` operatoren normen for å bygge strenger med variabler. Men det var tungvint og feilutsatt. `printf`-stilen kom fra C og ble adoptert i Haskell for tradisjonell strengformatering. Den fungerer, men syntaksen er ikke ideell.
 
-1. `Printf` https://hackage.haskell.org/package/base-4.14.1.0/docs/Text-Printf.html
-2. `Interpolate` https://hackage.haskell.org/package/interpolate
+`Data.String.Interpolate` er et tredjepartsbibliotek som introduserer moderne strenginterpolering. Dette biblioteket bruker en quasiquote syntaks (`[i|...|]`), som gir mer lesbar kode og direkte støtte for interpolering uten å måtte bruke spesielle tegn eller formatteringsdirektiver som med `printf`.
+
+For å implementere strenginterpolering på denne måten, bruker `Data.String.Interpolate` Haskell sin Template Haskell-funksjonalitet, som er en kraftig metaprogrammeringsfasilitet. Det oversetter interpolerte strenger til effektiv konkatenert kode ved kompileringstid, og sikrer god ytelse.
+
+## See Also
+
+For videre lesning og dybdekunnskap, sjekk ut disse ressursene:
+- [Haskell's Text.Printf documentation](http://hackage.haskell.org/package/base-4.14.0.0/docs/Text-Printf.html)
+- [Data.String.Interpolate on Hackage](http://hackage.haskell.org/package/interpolate)
+- [Haskell Wiki: String interpolation](https://wiki.haskell.org/String_interpolation)

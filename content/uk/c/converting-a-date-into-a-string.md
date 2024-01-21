@@ -1,6 +1,7 @@
 ---
 title:                "Перетворення дати в рядок"
-html_title:           "Lua: Перетворення дати в рядок"
+date:                  2024-01-20T17:36:31.000646-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Перетворення дати в рядок"
 programming_language: "C"
 category:             "C"
@@ -10,62 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це & Навіщо?
-Перетворення дати в рядок - це процес, коли дату як об'єкт перетворюють в текстовий формат. Програмісти роблять це, щоб зручніше відображати дату та час, або зберігати їх у текстових файлах.
+## What & Why? (Що і чому?)
+Перетворення дати в рядок дозволяє нам зручно зберігати або виводити інформацію про час і дату. Це важливо для логування, інтерфейсів користувача та обміну даними.
 
-## Як це зробити:
-Для перетворення дати в рядок в C ми використовуємо стандартну бібліотеку часу.
-
+## How to: (Як це зробити:)
 ```C
-#include <time.h>
 #include <stdio.h>
+#include <time.h>
 
 int main() {
-    time_t now;
-    time(&now);
-    char* date = ctime(&now);
+    char dateStr[100];
+    time_t now = time(NULL);
+    struct tm *ptm = localtime(&now);
 
-    printf("Актуальна дата і час: %s\n", date);
+    if (ptm == NULL) {
+        puts("Error: Could not retrieve the local time.");
+        return 1;
+    }
+
+    // YYYY-MM-DD format
+    strftime(dateStr, sizeof(dateStr), "%Y-%m-%d", ptm);
+    printf("The date is: %s\n", dateStr);
+
+    // DD-MM-YYYY format
+    strftime(dateStr, sizeof(dateStr), "%d-%m-%Y", ptm);
+    printf("Or in another format: %s\n", dateStr);
 
     return 0;
 }
 ```
-В результаті ви отримаєте такий вивід:
-
-```C
-Актуальна дата і час: Wed Aug 28 10:34:28 2019
+Output:
+```
+The date is: 2023-04-01
+Or in another format: 01-04-2023
 ```
 
-## Поглиблений огляд
-Перетворення дати в рядок було важливою частиною C від самого початку. Відтоді багато бібліотек і мов додали свої власні варіанти цієї функції, але основний принцип залишився незмінним.
+## Deep Dive (Детальний огляд):
+Converting a date to a string wasn't always straightforward in C. Before standardized libraries, coders often rolled custom functions. The C Standard Library included `strftime`, allowing predictable date-to-string conversions. With this, developers choose format, respecting locale.
 
-Один з альтернативних підходів - це використання `strftime()`, які надає більше контролю над форматом.
+Alternatives? Sure. You could use `sprintf` for simple output but lose `strftime`'s locale awareness and flexibility. For detailed control, dig into `strftime` or time handling libraries; some cater to complex scenarios.
 
-```C
-#include <time.h>
-#include <stdio.h>
+Under the hood, `strftime` takes a `tm` struct, which holds date/time components. It reads this struct and the format string you provide, then outputs a human-readable date/time string. Formats themselves range from complete ISO 8601 strings (`"%FT%TZ"`) to custom arrangements of day, month, year, and even time.
 
-int main() {
-    char buffer[30];
-    time_t now;
-    struct tm* time_info;
-
-    time(&now);
-    time_info = localtime(&now);
-
-    strftime(buffer, 30, "%d-%m-%Y %H:%M:%S", time_info);
-
-    printf("Форматована дата і час: %s\n", buffer);
-
-    return 0;
-}
-```
-
-Зверніть увагу, що дана процедура використовує повну структуру часу `struct tm`, що допомагає краще керувати всіма аспектами дати і часу.
-
-## Див. також 
-Більше інформації про зазначену тематику можна знайти за наступними посиланнями:
-
-1. [Стандартна бібліотека часу в C](http://www.cplusplus.com/reference/ctime/)
-2. [Функція `ctime`](http://www.cplusplus.com/reference/ctime/ctime/)
-3. [Функція `strftime`](http://www.cplusplus.com/reference/ctime/strftime/)
+## See Also (Додатково):
+- C11 Standard: ISO/IEC 9899:2011 (http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)
+- GNU C Library Reference for `strftime`: https://www.gnu.org/software/libc/manual/html_node/Formatting-Calendar-Time.html#index-strftime
+- `time.h` Header: https://en.cppreference.com/w/c/chrono
+- Date and Time Utilities in Standard C: https://en.cppreference.com/w/c/chrono

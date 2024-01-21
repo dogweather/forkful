@@ -1,6 +1,7 @@
 ---
 title:                "HTTP 요청 보내기"
-html_title:           "Clojure: HTTP 요청 보내기"
+date:                  2024-01-20T18:00:44.489022-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Python"
 category:             "Python"
@@ -10,34 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜?
+## What & Why? (무엇과 왜?)
+HTTP 요청을 보낸다는 것은 웹 서버에 정보를 요청하거나 데이터를 전송하는 것입니다. 프로그래머들은 API와 상호 작용하거나, 웹 콘텐츠를 가져오고, 웹 기반 서비스에 데이터를 전송하기 위해 이를 사용합니다.
 
-HTTP 요청 전송은 웹 서버와 클라이언트 간의 정보 교환을 위한 방법입니다. 프로그래머들은 이를 사용하여 웹 API를 실행하고, 웹 구성 요소의 상태를 제어하거나, 웹 사이트의 데이터를 가져옵니다.
-
-## 어떻게 하나요:
-
-Python에서 HTTP 요청을 보내는 가장 간단한 방법은 `requests` 라이브러리를 사용하는 것입니다. 이 라이브러리에는 GET, POST 및 DELETE와 같은 일반적인 HTTP 메소드가 제공됩니다.
+## How to: (어떻게 하나요?)
+Python에서 HTTP 요청을 보내려면 `requests` 라이브러리를 사용하는 것이 일반적입니다. 다음은 간단한 GET 요청의 예입니다.
 
 ```Python
 import requests
 
-# GET 요청
-response = requests.get('http://example.com')
-# 응답 내용 출력
-print(response.text)
+response = requests.get('https://api.github.com')
+print(response.status_code)
+print(response.json())
 ```
 
-## 깊게 알아보기
+실행 결과는 다음과 같습니다.
 
-이전에는 소켓 프로그래밍으로 HTTP 요청을 구현했지만, 이는 복잡하고 시간이 많이 소요되었습니다. 이후 `httplib`이 도입되었으나, 여전히 편리하지 않았습니다. `requests` 라이브러리의 등장으로 HTTP 요청 전송이 훨씬 쉬워졌습니다.
+```
+200
+{'current_user_url': 'https://api.github.com/user', 'current_user_authorizations_html_url': 'https://github.com/settings/connections/applications{/client_id}', ... }
+```
 
-최근에는 `aiohttp`와 같은 비동기 HTTP 라이브러리가 인기를 얻고 있습니다. 이 라이브러리들은 동시에 여러 HTTP 요청을 보낼 수 있으므로 효율적인 프로그래밍이 가능합니다.
+POST 요청을 보내는 예제:
 
-하지만, HTTP 요청 전송에는 `requests`와 `aiohttp` 외에도 많은 방법이 있습니다. 예를 들어, `http.client`와 `urllib.request`는 Python의 표준 라이브러리에 포함되어 있으며 커스텀화가 가능한 고급 기능을 제공합니다.
+```Python
+import requests
 
-## 관련 자료
+data = {'key': 'value'}
+response = requests.post('https://httpbin.org/post', data=data)
+print(response.status_code)
+print(response.json())
+```
 
-- Python requests 공식 문서: http://docs.python-requests.org/
-- aiohttp 공식 문서: https://aiohttp.readthedocs.io/
-- Python http.client 문서: https://docs.python.org/3/library/http.client.html
-- Python urllib.request 문서: https://docs.python.org/3/library/urllib.request.html
+실행 결과는 다음과 같습니다.
+
+```
+200
+{'args': {}, 'data': '', 'files': {}, 'form': {'key': 'value'}, ... }
+```
+
+## Deep Dive (심층 분석)
+HTTP 요청은 웹의 기본적인 동작 중 하나입니다. 1991년에 개발된 HTTP는 타이밍과 컨텍스트에 따라 여러 버전(HTTP/1.0, HTTP/1.1, HTTP/2, 그리고 최근의 HTTP/3)이 있습니다. `requests`는 사용하기 쉽고, 많은 내장 기능이 있어 Python에서 가장 인기 있는 HTTP 클라이언트 라이브러리 중 하나입니다.
+
+대안으로는 `http.client`가 내장되어 있으며, 비동기 처리를 위한 `aiohttp` 같은 라이브러리도 있습니다. 각 라이브러리는 구현 세부 사항과 지원하는 기능면에서 차이가 있어, 프로젝트의 요구에 맞게 선택해야 합니다.
+
+## See Also (함께 보기)
+- `requests` 문서: https://requests.readthedocs.io
+- Python 공식 `http.client` 문서: https://docs.python.org/3/library/http.client.html
+- `aiohttp` 문서: https://docs.aiohttp.org
+
+이 기사를 통해 HTTP 요청에 대한 기본적인 이해를 얻기를 바랍니다. 더 깊이 탐구하고 싶다면 상기 링크된 문서들에서 추가 정보를 찾아볼 수 있습니다.

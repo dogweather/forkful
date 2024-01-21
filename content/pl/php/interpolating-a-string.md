@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:51:29.281309-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -11,34 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Interpolacja łańcuchów w PHP to możliwość osadzania zmiennych bezpośrednio w ciągu znaków, zamiast łączyć je za pomocą operatora konkatenacji. Programiści robią to dla zwiększenia czytelności kodu i efektywności.
+Interpolacja stringów to wstawianie zmiennych do napisów w kodzie, aby dynamicznie budować tekst. Programiści używają jej, by kod był bardziej elastyczny i czytelny — zmienne mogą zmieniać treść napisu bez konieczności jego ciągłego przepisywania.
 
 ## Jak to zrobić:
+Interpolować stringi możemy za pomocą podwójnych cudzysłowów lub heredoc. Oto przykłady:
 
 ```PHP
+// Przykład z podwójnymi cudzysłowiami
 $name = "Jan";
 echo "Cześć, $name!";
-```
-Powinno zwrócić: `Cześć, Jan!`
+// Wyświetli: Cześć, Jan!
 
-Inny przykład
+// Przykład z heredoc
+$car = "Fiat";
+$owner = "Krzysztof";
+
+$story = <<<EOT
+Właścicielem auta marki $car jest $owner.
+EOT;
+
+echo $story;
+// Wyświetli: Właścicielem auta marki Fiat jest Krzysztof.
+```
+
+## Głębsze spojrzenie:
+Interpolacja stringów jest w PHP od zawsze — ułatwia łączenie zmiennych z tekstem. Alternatywą dla interpolacji jest konkatenacja za pomocą kropki (.), ale jest ona mniej wydajna i estetyczna w użyciu.
 
 ```PHP
-$name = "Jan";
-$age = 25;
-echo "Cześć, $name! Masz już $age lat.";
+// Konkatenacja - alternatywna metoda
+$name = "Ania";
+echo 'Cześć, ' . $name . '!';
+// Wyświetli: Cześć, Ania!
 ```
-Powinno zwrócić: `Cześć, Jan! Masz już 25 lat.`
 
-## Głębsza analiza
+Interpolacja działa tylko gdy string jest otoczony podwójnymi cudzysłowiami lub heredoc — w jednolitych cudzysłowach zmienne nie są interpretowane. Heredoc jest szczególnie przydatny przy bardzo długich tekstach, ponieważ zwiększa czytelność kodu.
 
-- **Kontekst historyczny:** Interpolacja łańcuchów nie jest nową funkcją i jest dostępna w wielu językach programowania, nie tylko w PHP. Została wprowadzona w PHP 4, co oznacza, że jest dostępna niezależnie od wersji PHP, którą aktualnie używasz.
-- **Alternatywy:** Alternatywą dla interpolacji łańcuchów jest łączenie łańcuchów za pomocą operatora `.`, choć jest to bardziej czasochłonne i może powodować błędy.
-- **Szczegóły implementacji:** Interpolacja łańcuchów w PHP rozpoczyna się od znaku `$`. Zmienne osadzone w ciągu znaków są zastępowane ich wartościami podczas wykonywania.
-
-## Zobacz również
-
-- [Pełna dokumentacja PHP](https://www.php.net/docs.php)
-
-Remember programming is a continuous endeavor, always seek ways to improve your craft. Happy Coding!
+## Zobacz również:
+- Oficjalną dokumentację PHP na temat stringów: https://www.php.net/manual/pl/language.types.string.php
+- Artykuł na temat różnic między podwójnymi a jednolitymi cudzysłowiami: https://www.php.net/manual/pl/language.types.string.php#language.types.string.syntax.double
+- Poradnik na temat używania heredoc i nowdoc w PHP: https://www.php.net/manual/pl/language.types.string.php#language.types.string.syntax.heredoc

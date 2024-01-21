@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C#: Pobieranie strony internetowej"
+date:                  2024-01-20T17:44:33.849526-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Python"
 category:             "Python"
@@ -10,13 +11,15 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pobieranie Strony Internetowej w Pythonie
+## What & Why?
+"## Co i dlaczego?"
 
-## Co i Dlaczego?
-Pobieranie strony internetowej to proces zapisywania jej zawartości na dysku twardym. Programiści robią to, żeby analizować dane, skrapować informacje lub monitorować zmiany na stronie.
+Pobieranie strony internetowej to proces zapisywania jej zawartości na dysk. Programiści robią to, by przetwarzać dane, automatyzować zadania lub archiwizować informacje.
 
-## Jak to zrobić:
-Python dostarcza wiele narzędzi do tej pracy, ale najbardziej popularnym jest biblioteka `requests`. Poniżej znajduje się prosta metoda do pobrania strony:
+## How to:
+"## Jak to zrobić:"
+
+Do pobierania stron użyjemy biblioteki `requests`. Oto przykład, jak to zrobić:
 
 ```Python
 import requests
@@ -24,20 +27,34 @@ import requests
 url = 'http://example.com'
 response = requests.get(url)
 
-# Pobrane dane są dostępne za pomocą metody .text
-print(response.text)
+if response.ok:
+    html_content = response.text
+    print(html_content[:100])  # Wyświetlamy pierwsze 100 znaków
+else:
+    print("Nie udało się pobrać strony.")
 ```
-Po uruchomieniu tego kodu, na ekranie powinien pojawić się kod HTML pobranej strony.
 
-## Głębsze Zanurzenie
-**Historia**: Na początku istnienia internetu, aby pobrać stronę, trzeba było korzystać z niskopoziomowych bibliotek sieciowych. Dzisiaj mamy do dyspozycji wiele wysokopoziomowych narzędzi, takich jak `requests`.
+Output:
 
-**Alternatywy**: Inne biblioteki, które oferują podobne funkcje to `urllib` i `http.client`. Są one wbudowane w Pythona i nie wymagają dodatkowej instalacji, ale są trudniejsze w obsłudze.
+```Python
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+<...
+```
 
-**Szczegóły Implementacji**: Kiedy robisz zapytanie GET za pomocą `requests.get()`, wywołujesz kilka warstw abstrakcji obsługujących połączenie sieciowe, przekierowania, kodowanie znaków i wiele innych.
+## Deep Dive:
+"## Wnikliwa analiza:"
 
-## Zobacz Także
-1. Oficjalna dokumentacja `requests`: https://requests.readthedocs.io/en/master/
-2. Dokumentacja `urllib`: https://docs.python.org/3/library/urllib.html
-3. Dokumentacja `http.client`: https://docs.python.org/3/library/http.client.html
-4. Przewodnik `BeautifulSoup` do analizy HTML: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+Kiedy internet stawał się popularny, zaczęto pobierać strony, aby działać na danych offline. Alternatywy to `wget` i `curl`, ale są to narzędzia wiersza poleceń. W Pythonie, przed `requests`, popularna była biblioteka `urllib`, która jest bardziej niskopoziomowa.
+
+`requests` jest wygodna i czytelna - ważne dla utrzymania kodu. Dużą zaletą jest obsługa sesji i ciasteczek. Programiści mogą dodatkowo wykorzystać takie opcje jak parametryzowanie zapytań czy obsługa timeoutu.
+
+## See Also:
+"## Zobacz również:"
+
+- Dokumentacja `requests`: https://requests.readthedocs.io/
+- Porównanie `requests` i `urllib`: https://realpython.com/requests-vs-urllib/
+- Tutorial `wget`: https://www.gnu.org/software/wget/manual/wget.html
+- Informacje o `curl`: https://curl.se/docs/manual.html

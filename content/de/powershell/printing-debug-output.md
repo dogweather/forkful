@@ -1,7 +1,8 @@
 ---
-title:                "Ausgabe von Debugging-Informationen drucken"
-html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
-simple_title:         "Ausgabe von Debugging-Informationen drucken"
+title:                "Debug-Ausgaben drucken"
+date:                  2024-01-20T17:53:04.756883-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Debug-Ausgaben drucken"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
@@ -11,29 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Drucken von Debug-Ausgaben ist ein Prozess, bei dem Programmierer die Innenarbeit ihres Codes verfolgen. Das hilft uns, Fehler zu finden und zu korrigieren. 
+Druckausgaben zum Debuggen sind so etwas wie Wegweiser beim Programmieren - sie zeigen, wo die Daten entlanglaufen und wo sie sich verstecken. Programmierer nutzen sie, um den Überblick zu behalten, denken wir mal an Brotkrumen im Wald der Variablen und Funktionen.
 
-## Wie macht man das:
-PowerShell macht das einfach. Benutze den `Write-Debug` Befehl. Hier ist ein einfaches Beispiel:
+## Wie geht das:
+PowerShell bietet das `Write-Host`, `Write-Debug`, `Write-Verbose` und `Write-Information` Cmdlet an, um unterschiedliche Arten von Ausgaben zu erzeugen. Einfach im Code an der gewünschten Stelle platziert:
 
 ```PowerShell
-# Aktivieren Sie zuerst die Debug-Preference
-Set-PSDebug -Trace 1
+# Einfache Ausgabe
+Write-Host "Hier stehen Dinge, die jeder sehen soll."
 
-# Dann docke Debug-Ausgabe
-Write-Debug "Das ist eine Debug-Nachricht"
+# Debug-Ausgabe
+Write-Debug "Dies sehen nur die, die es wirklich wollen."
 
-# Die Debug-Nachricht wird angezeigt
-debug: Das ist eine Debug-Nachricht
+# Ausführliche Ausgabe
+Write-Verbose "Falls jemand JEDEN Schritt wissen möchte."
+
+# Informationen
+Write-Information "Hier steht etwas Wichtiges, vielleicht."
 ```
 
-## Tiefer eintauchen
-Historisch gesehen, Debugging wurde seit den frühen Tagen der Programmierung verwendet. In PowerShell, `Write-Debug` ist nicht die einzige Option. Alternativen beinhalten `Write-Verbose` oder `Write-Information`.
+Standardausgabe von `Write-Host` wird direkt sichtbar sein. Um die anderen Ausgaben zu sehen, müsst ihr die entsprechenden Präferenzen setzen ($DebugPreference, $VerbosePreference, etc.) oder die Parameter -Debug und -Verbose beim Scriptaufruf nutzen.
 
-Die Implementierung von Debug-Ausdrucken in PowerShell hängt von der `PSDebug`-Preference ab. Mit `Set-PSDebug -Trace 1` aktivieren Sie eine detaillierte Spur aller ausgeführten Befehlslinien.
+## Vertiefung:
+Früher war `Write-Host` verpönt, weil es die Ausgabe direkt in die Konsole schrieb, ohne Umleitungsmöglichkeiten. Ab PowerShell 5.0 ist das anders - jetzt lässt sich alles mit `Write-Host` Geschriebene umleiten oder aufzeichnen. Alternativen sind die Verwendung von `Write-Output` für normale Outputs oder `Out-File` zum Schreiben in Dateien. Der Hauptunterschied liegt in der Sichtbarkeit und dem Umgang mit den Ausgaben im weiteren Verlauf: `Write-Host` ist eher dann, wenn es nicht weiterverarbeitet werden muss, `Write-Output` hingegen ist perfekt, wenn Ergebnisse weitergeleitet oder genutzt werden sollen.
 
-## Siehe auch
-Für weitere Informationen und Beispiele, schauen Sie sich diese Ressourcen an:
-
-- [PowerShell-Dokumentation zu Write-Debug](http://go.microsoft.com/fwlink/?LinkID=113426)
-- [Set-PSDebug-Dokumentation](http://go.microsoft.com/fwlink/?linkid=2116527)
+## Siehe auch:
+- Ein Artikel zu den Best Practices: [PowerShell Best Practices](https://devblogs.microsoft.com/scripting/understanding-streams-redirection-and-write-host-in-powershell/)

@@ -1,6 +1,7 @@
 ---
 title:                "Pesquisando e substituindo texto"
-html_title:           "Bash: Pesquisando e substituindo texto"
+date:                  2024-01-20T17:58:49.278091-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pesquisando e substituindo texto"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,40 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Buscar e Substituir Texto em TypeScript
-
-## O Quê & Porquê?
-
-Buscar e substituir texto é uma operação comum que permite localizar uma sequência de texto dentro de outra e substituí-la por uma nova sequência. Programadores fazem isso para manipular dados, corrigir erros e melhorar a legibilidade do código.
+## O Que & Por Quê?
+Buscar e substituir texto é o processo de encontrar sequências de caracteres e trocá-las por outras. Programadores fazem isso para corrigir erros, atualizar dados ou simplificar refatorações em códigos.
 
 ## Como Fazer:
-
-Em TypeScript, você pode utilizar o método `replace()` para buscar e substituir texto. Abaixo está um exemplo:
-
 ```TypeScript
-let texto = "Olá, Mundo!";
-let novoTexto = texto.replace("Mundo", "TypeScript");
-console.log(novoTexto);  // Saída: "Olá, TypeScript!"
+function substituirTexto(texto: string, busca: string, substituto: string): string {
+  return texto.replace(new RegExp(busca, 'g'), substituto);
+}
+
+// Exemplo de uso:
+const textoOriginal = "Olá, mundo! O mundo é vasto e mundo é a nossa casa.";
+const textoModificado = substituirTexto(textoOriginal, "mundo", "planeta");
+
+console.log(textoModificado);
+// Saída: Olá, planeta! O planeta é vasto e planeta é a nossa casa.
 ```
 
-No código acima, a função `replace()` procura a string "Mundo" e a substitui por "TypeScript".
+Neste exemplo, usamos `replace` com uma `RegExp` para substituir todas as ocorrências da palavra "mundo" por "planeta".
 
-## Aprofundando
+## Mergulho Profundo
+Historicamente, a necessidade de buscar e substituir em textos vem desde os primeiros editores de texto e ambientes de programação. Alternativas para a função `replace` incluem o uso de bibliotecas de manipulação de strings, ferramentas de linha de comando como `sed`, ou até recursos nativos de editores de texto e IDEs.
 
-Historicamente, a necessidade de buscar e substituir texto remonta aos primeiros dias da computação. Selecione a ferramenta adequada com base nas necessidades do seu projeto. Além da função `replace()`, existem outras maneiras de procurar e substituir texto em TypeScript, como a expressão regular.
+A implementação do `replace` no JavaScript e, por extensão, no TypeScript faz parte dos objetos `String`. Ela pode ser simples ou complexa, usando strings literais ou expressões regulares (RegExp) para encontrar padrões mais sofisticados. Importante: a função `replace()` por padrão substitui apenas a primeira ocorrência, a não ser que uma flag global 'g' seja usada na `RegExp`.
 
-```TypeScript
-let texto = "Olá, Mundo!";
-let novoTexto = texto.replace(/Mundo/g, "TypeScript");
-console.log(novoTexto);  // Saída: "Olá, TypeScript!"
-```
+## Veja Também:
 
-No código acima, `/Mundo/g` é uma expressão regular que busca por todas as ocorrências de "Mundo" no texto e as substitui por "TypeScript". O 'g' significa 'global', o que significa que procurará em todo o texto, não apenas na primeira ocorrência.
-
-## Veja Também
-
-Para obter mais informações sobre as operações de string em TypeScript, confira estes links:
-
-1. Documentação oficial do TypeScript sobre [Strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-2. Uma introdução ao [TypeScript com exemplos](https://www.tutorialsteacher.com/typescript)
-3. Documentação oficial do JavaScript na MDN sobre [replace()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/Replace) e [Expressões regulares](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions).
+- MDN Web Docs sobre a função `replace`: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- Guia de expressões regulares em JavaScript para iniciantes: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- Documentação TypeScript: [https://www.typescriptlang.org/docs/](https://www.typescriptlang.org/docs/)
+- Uma interessante ferramenta online para testar suas RegExp: [https://regex101.com/](https://regex101.com/)

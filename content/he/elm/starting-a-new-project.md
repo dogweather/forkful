@@ -1,6 +1,7 @@
 ---
 title:                "התחלת פרויקט חדש"
-html_title:           "Clojure: התחלת פרויקט חדש"
+date:                  2024-01-20T18:03:34.642730-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "התחלת פרויקט חדש"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,39 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כאשר אנו מתחילים פרויקט חדש בתכנות, אנו בעצם בונים יישום מאפס, לחפש פתרונות לבעיה ספציפית. מתכנתים עושים את זה כאשר הם מנסים ליצור מוצר שיש מחסור בו בשוק, או כאשר הם מחפשים לחדד הבנה של השפה והמנגנון מאחורי הקוד.
+התחלת פרויקט חדש ב-Elm היא הקמת סביבה בסיסית לכתיבת אפליקציה. מתכנתים עושים זאת כדי ליצור אפליקציות ווב עדינות בשפה טהורה ופונקציונלית.
 
 ## איך לעשות:
-נכתוב קוד בססי של אפליקציה אלם בעזרת מבנה של פרויקט מאורגן.
+כדי להתחיל פרויקט חדש ב-Elm, בצע את הפקודות הבאות:
+
 ```Elm
-module Main exposing (..)
+-- התקן את ארגז הכלים של Elm (אם טרם הותקן)
+npm install -g elm
 
-import Html exposing (div, text, beginnerProgram)
+-- צור פרויקט חדש
+elm init
 
-type alias Model = String
-
-init : Model
-init =
-    "Hello, World!"
-
-type Msg = NoOp
-
-update : Msg -> Model -> Model
-update msg model =
-    model
-
-view : Model -> Html.Html Msg
-view model =
-    div [] [ text model ]
-
-main =
-    beginnerProgram { model = init, view = view, update = update }
+-- זה ייווצר קבצים וספריות בסיסיים
+-- src/
+-- elm.json
 ```
-כאשר אנו מריצים את הפרויקט, זה יחזיר “Hello, World!” בדפדפן.
 
-## צלילה מעמיקה:
-השפה הפונקטיונאלית של אלם נוצרה ב2012 על ידי Evan Czaplicki כחלק מהמחקר שלו לתואר שני. בערוץ של השפה יש פוקוס על יציבות ובטיחות, ולכן היא מספקת הגנה מלאה ממחסורים רגילים של JavaScript כמו יוצאים למנות. יתר על כן, ישנן אלטרנטיבות כמו PureScript ו ReasonML אשר מספקות תכנות פונקציונאלי באותה מידה אך עם שונות במינוח ובעיצוב של השפה.
+אחרי הפקודה `elm init` ייציר קבצים עם מבנה התיקיות הרגיל לפרויקט Elm. כתוב ב-`src/Main.elm` את הקוד הבא:
 
-## ראה גם:
-1. [תיעוד האלם הרשמי](https://package.elm-lang.org/packages/elm/core/latest/)
-3. [הספר "Programming Elm: Build Safe, Sane, and Maintainable Front-End Applications"](https://pragprog.com/titles/jfelm/programming-elm/)
+```Elm
+module Main exposing (main)
+
+import Html exposing (text)
+
+-- התוכנית הראשונית שלך: מדפיסה "שלום עולם!"
+main =
+  text "שלום עולם!"
+```
+
+כדי להיכנס לפריסה במצב פיתוח ולראות את התוצאה על הדפדפן, הרץ:
+```Elm
+elm reactor
+```
+גש ל- `http://localhost:8000` ובחר את הקובץ `src/Main.elm` לתצוגה.
+
+## צלילה עמוקה:
+Elm הוא שפת תכנות פונקציונלית לפיתוח אפליקציות ווב. הוא נוצר על ידי Evan Czaplicki כחלק מפרויקט התיזה שלו ב-2012. הפונקציונליות של חווית המשתמש והביצועים ב-Elm עדיפים על רוב הטכנולוגיות האחרות כמו JavaScript.
+
+Elm משתמש בארכיטקטורת The Elm Architecture, שהיא דפוס לבניית אפליקציות בצורה נקייה ומבנית. היא דומה במידת מה ל-Redux בעולם של React, אך היא כלולה באופן טבעי ב-Elm.
+
+על אף שישנן חלופות נפוצות כמו React, Vue, או Angular ב-JavaScript, Elm מספקת יתרון בטיחותי בזכות מערכת הטיפוסים החזקה והקומפילציה ל-JavaScript, שמבטלים קטגוריה שלמה של באגים בזמן פיתוח.
+
+## גם ראה:
+- [Elm Guide](https://guide.elm-lang.org/) - המדריך הרשמי של Elm למתחילים.
+- [Elm Package Catalog](https://package.elm-lang.org/) - קטלוג החבילות הרשמי למציאת חבילות וישומים נתמכים.
+- [Elm Discourse](https://discourse.elm-lang.org/) - פורום הדיונים של Elm, מקום טוב לפניות מהקהילה.

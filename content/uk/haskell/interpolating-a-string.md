@@ -1,7 +1,8 @@
 ---
-title:                "Інтерполяція рядка"
-html_title:           "Java: Інтерполяція рядка"
-simple_title:         "Інтерполяція рядка"
+title:                "Інтерполяція рядків"
+date:                  2024-01-20T17:51:44.839060-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Інтерполяція рядків"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,35 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це і навіщо?
-Інтерполяція рядків - це вставка змінних або виразів прямо в текстовий рядок. Програмісти роблять це для динамічного створення тексту та вибіркового форматування.
+## Що це таке та навіщо?
+Інтерполяція рядків - це вбудовування змінних чи виразів у стрічку. Програмісти використовують це для зручності форматування тексту та динамічного створення рядків.
 
-## Як це робити:
-В Haskell ми використовуємо бібліотеку `Text.Printf` для інтерполяції рядків. Посмотримо на приклад:
+## Як це зробити:
+У Haskell інтерполяція рядків не є вбудованою, але можна використовувати бібліотеку `text` із шаблонними літералами. 
 
 ```Haskell
-import Text.Printf
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE QuasiQuotes       #-}
 
+import Data.Text
+import Data.String.Interpolate ( i )
+
+main :: IO ()
 main = do
-    let name = "Vasya"
-    let age = 30
-    putStrLn $ printf "My name is %s and I'm %d years old." name age
+  let userName = "Володимир"
+  let userEmail = "[email protected]"
+  putStrLn [i|Користувач: #{userName}, Електронна адреса: #{userEmail}|]
 ```
 
-Виконавши цей код, ви отримаєте наступний вивід:
+Запуск програми виведе:
+
+```
+Користувач: Володимир, Електронна адреса: [email protected]
+```
+
+Також бібліотека `printf` може слугувати для форматування рядків.
 
 ```Haskell
-My name is Vasya and I'm 30 years old.
+import Text.Printf ( printf )
+
+main :: IO ()
+main = do
+  let age = 30
+  printf "Мені %d років\n" age
 ```
 
-## Поглиблений занурення
-1. **Історичний контекст:** Ідея інтерполяції рядків є достатньо старою і була вперше реалізована в мовах Perl та Unix shell. Haskell не має вбудованої підтримки для інтерполяції рядків, але надає можливість через бібліотеку `Text.Printf`.
+Вивід буде:
 
-2. **Альтернативи:** Програмісти можуть використовувати конкатенацію рядків або інльтерполяцію рядків з допомогою бібліотеки `Text.Printf`.
+```
+Мені 30 років
+```
 
-3. **Деталі реалізації:** `printf` використовується для форматування рядка, де `%s` і `%d` це заповнювачі, які замінюються аргументами, переданими printf.
+## Занурення в глибину
+Haskell не має вбудованої підтримки для інтерполяції рядків, на відміну від мов як Python чи JavaScript. Історично, одна з причин – це типова система Haskell та немутабельність даних, які не сприяють простій встроєній інтерполяції. 
 
-## Дивіться також
-1. [Printf для Haskell](http://hackage.haskell.org/package/base-4.12.0.0/docs/Text-Printf.html)
-2. [Туторіал про правильне форматування рядків в Haskell](https://www.youtube.com/watch?v=H4CKZVGx3mw) 
-3. [Неформальне введення в Haskell (Розділ про рядки)](http://learnyouahaskell.com/starting-out#strings)
+Альтернативами вбудованій інтерполяції є: використання `printf` з модуля `Text.Printf`, що дозволяє форматування рядків, чи бібліотеки та пакети на зразок `interpolate`, `shakespeare`, і `formatting`.
+
+`text` і `interpolate` використовують quasi-quoters, які дають змогу створювати власні обчислювальні контексти u Haskell, внаслідок чого можливою стає інтерполяція.
+
+## Ще деякі ресурси
+- [Hackage: text](https://hackage.haskell.org/package/text) - документація бібліотеки `text`.
+- [Hackage: interpolate](https://hackage.haskell.org/package/interpolate) - інформація про бібліотеку `interpolate`.
+- [Haskell Wiki: String interpolation](https://wiki.haskell.org/String_interpolation) - стаття з вікіпедії Haskell про інтерполяцію рядків.
+- [Hackage: format](https://hackage.haskell.org/package/formatting) - документація бібліотеки `formatting`.

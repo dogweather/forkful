@@ -1,6 +1,7 @@
 ---
 title:                "Berechnung eines zukünftigen oder vergangenen Datums"
-html_title:           "Swift: Berechnung eines zukünftigen oder vergangenen Datums"
+date:                  2024-01-20T17:31:53.492713-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,37 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Berechnen eines zukünftiges oder vergangenen Datums ist ein grundlegendes Arbeitspferd in der Programmierung - es bestimmt, wie viele Tage, Wochen, Monate oder Jahre in der Zukunft oder Vergangenheit von einem bestimmten Datum sind. Programmierer tun dies, um Zeiträume zu verfolgen, Ereignisse zu planen oder durch Zeitreihendaten zu navigieren.
 
-## So geht's:
-Im Swift können wir das `Calendar`-Objekt und seine Methode `date(byAdding:value:to:wrappingComponents:)` nutzen, um ein Datum im Zukunft oder Vergangenheit zu berechnen.
+Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist das Ermitteln eines spezifischen Zeitpunkts vor oder nach einem bekannten Datum. Programmierer tun dies häufig für Features wie Erinnerungen, Buchungs-Systeme oder Ablaufdaten.
+
+## How to:
+
+Swift bietet das `Date` und `Calendar` Framework für Datumsberechnungen. Hier ein paar Beispiele:
 
 ```Swift
-// Aktuelles Datum holen
-let currentDate = Date()
+import Foundation
 
-// Ein Kalender Objekt erstellen
-let calendar = Calendar.current
+// Heutiges Datum erhalten
+let heute = Date()
 
-// Fügen Sie 2 Jahre zum aktuellen Datum hinzu
-if let newDate = calendar.date(byAdding: .year, value: 2, to: currentDate) {
-    print(newDate)
+// Kalender instanziieren
+var kalender = Calendar.current
+
+// 5 Tage in die Zukunft reisen
+if let zukunft = kalender.date(byAdding: .day, value: 5, to: heute) {
+    print("In 5 Tagen ist es \(zukunft).")
 }
 
-//Subtrahieren Sie 3 Monate vom aktuellen Datum
-if let oldDate = calendar.date(byAdding: .month, value: -3, to: currentDate) {
-    print(oldDate)
+// 3 Wochen in die Vergangenheit gehen
+if let vergangenheit = kalender.date(byAdding: .weekOfYear, value: -3, to: heute) {
+    print("Vor 3 Wochen war es \(vergangenheit).")
+}
+
+// Ausgabe
+// In 5 Tagen ist es <Zukünftiges Datum>.
+// Vor 3 Wochen war es <Vergangenes Datum>.
+```
+
+## Deep Dive
+
+Berechnungen mit Daten sind nich neu. Historisch wurden Kalendersysteme angepasst, um präzisere Zeitberechnungen zu erlauben – denken wir an die Gregorianische Kalenderreform. In der Programmierung haben wir es einfacher. Statt astronomische Tabellen zu wälzen, nutzen wir Frameworks. `DateComponents` bietet eine Alternative zu `date(byAdding:value:to:)`. Es lässt uns spezifischere Anforderungen stellen:
+
+```Swift
+let komponenten = DateComponents(year: 1, month: 2, day: 3)
+if let zukunftigesDatum = kalender.date(byAdding: komponenten, to: heute) {
+    print("In einem Jahr, zwei Monaten und drei Tagen ist es \(zukunftigesDatum).")
 }
 ```
 
-## Tiefere Einblicke
-Historisch gesehen haben Programmierer immer verschiedene Ansätze verfolgt, um ein zukünftiges oder vergangenes Datum zu berechnen. Früher, bevor Bibliotheken wie `Foundation` eingeführt wurden, mussten sie vielleicht manuell mit Tagen, Stunden, Minuten und Sekunden jonglieren. Mit der Einführung von `Calendar` in Swift ist diese Aufgabe jedoch viel einfacher und weniger fehleranfällig geworden.
+Beim Implementieren solltest du Zeitzonen und lokale Kalendereinstellungen beachten. `Calendar.current` bezieht sich auf die Systemeinstellungen des Users.
 
-Was die Alternativen betrifft, so könnten Entwickler auch andere Bibliotheken wie `DateComponents` oder Methoden wie `addingTimeInterval(_:)` in Erwägung ziehen. Während `Calendar`'s `date(byAdding:value:to:wrappingComponents:)` eine hohe Genauigkeit und Flexibilität bietet, kann die Verwendung von `addingTimeInterval(_:)` ausreichen, wenn man nur ein Datum und eine Zeit mit einem festen Intervall verschieben muss.
+## See Also
 
-Die Implementierung der Datumskalkulation in Swift berücksichtigt auch verschiedene Kalender und Zeitzonen, was es zu einem mächtigen und universellen Werkzeug macht. Aber Vorsicht: das Berücksichtigen von Zeitzonen und Kalenderunterschieden kann zu unerwarteten Ergebnissen führen, wenn es nicht richtig gehandhabt wird.
-
-## Siehe Auch
-- Die Swift-Dokumentation für `Calendar`: https://developer.apple.com/documentation/foundation/calendar
-- Die Swift-Dokumentation für `Date`: https://developer.apple.com/documentation/foundation/date
-- Ein Artikel über Zeitzonen in Swift: https://www.hackingwithswift.com/articles/73/how-to-handle-different-time-zones-in-swift
+- `DateComponents` und `Calendar` Dokumentation: [Date and Time Programming Guide for Cocoa](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DatesAndTimes/DatesAndTimes.html)

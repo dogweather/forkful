@@ -1,6 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-html_title:           "Haskell: Drukowanie komunikatów debugowania"
+date:                  2024-01-20T17:52:43.593339-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Java"
 category:             "Java"
@@ -10,47 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Drukowanie informacji debugowych to sposób na wypisywanie danych pomagających zrozumieć działanie kodu. Robimy to, aby szybko znaleźć i naprawić błędy.
 
-Wyświetlanie informacji debugujących (debug output) to technika wykorzystywana przez programistów do śledzenia i rozwiązywania problemów z kodem. Ułatwia to zrozumienie, co dzieje się wewnątrz programu podczas jego działania.
+## How to: (Jak to zrobić:)
+Użyj `System.out.println()` dla prostego debugowania czy `System.err.println()` dla błędów. Oto przykład:
 
-## Jak to zrobić:
-
-Chcesz wydrukować wiadomość debugowania w Javie? To jest bardzo proste. Wykorzystaj standardowe wyjście System.out lub wyjście błędów System.err. Przykład:
-
-```Java
-public class Main {
+```java
+public class DebugExample {
     public static void main(String[] args) {
-        System.out.println("Debugging Started");
-        int a = 10;
-        int b = 0;
-        try {
-            int result = a / b;
-            System.out.println("Result: " + result);
-        } catch (ArithmeticException e) {
-            System.err.println("Błąd! Dzielisz przez zero");
+        int sum = 0;
+        for (int i = 0; i <= 5; i++) {
+            sum += i;
+            System.out.println("i=" + i + ", sum=" + sum); // Debug output
         }
-        System.out.println("Debugging Finished");
+        System.err.println("Completed with sum=" + sum); // Error output
     }
 }
 ```
-W wyniku tego otrzymasz:
 
+Wyjście:
 ```
-Debugging Started
-Błąd! Dzielisz przez zero
-Debugging Finished
+i=0, sum=0
+i=1, sum=1
+i=2, sum=3
+i=3, sum=6
+i=4, sum=10
+i=5, sum=15
+Completed with sum=15
 ```
 
-## Głębsza analiza:
+## Deep Dive (Dogłębna analiza):
+W latach 60., kiedy komputery były duże i kosztowne, debugowanie odbywało się przez analizę wydruków lub migających lampek na panelach. Teraz mamy luksus wypisywania informacji na konsolę w czasie rzeczywistym. Istnieją również zaawansowane narzędzia jak loggery (np. `Log4j`, `SLF4J`) pozwalające kontrolować poziomy logowania i kierunki wyjściowe.
 
-- **Historyczne kontekst**: W początkach Javy, programiści często korzystali z instrukcji wydruku do śledzenia i debugowania swojego kodu. Od tego czasu nic się nie zmieniło!
+Zamiast drukowania bezpośrednio na konsolę, debugowanie można przeprowadzić używając wbudowanych debuggerów w IDE takich jak IntelliJ IDEA czy Eclipse, które oferują bardziej elastyczne możliwości. Pozwalają na ustawianie breakpointów, krokowe przeglądanie kodu oraz inspekcję zmiennych w czasie wykonania programu.
 
-- **Alternatywy**: Chociaż System.out i System.err to najprostsze sposoby na wydrukowanie informacji debugujących, są inne możliwości, takie jak wykorzystanie loggerów (np. Logger od SLF4J lub Log4J), które umożliwiają bardziej rozbudowane i konfigurowalne logowanie.
+Implementacja drukowania w Javie opiera się na klasach `PrintStream` i `PrintWriter`. Oferują one różne metody do formatowania i wyjścia danych. Dobrą praktyką jest minimalizowanie debugowania przez wypisywanie i korzystanie z "prawdziwego" debugowania lub logowania w celu utrzymania czytelności kodu.
 
-- **Szczegóły implementacji**: System.out i System.err to statyczne finalne zmienne, które są instancjami klasy PrintStream. Ta klasa zawiera metody pozwalające na zapisanie różnych typów danych, w tym liczby całkowitej, liczby zmiennoprzecinkowej, znaku i łańcucha.
-
-## Zobacz także:
-
-- [Logging w Javie](https://docs.oracle.com/javase/8/docs/technotes/guides/logging/overview.html)
-- [Logger od SLF4J](http://www.slf4j.org/manual.html)
+## See Also (Zobacz także):
+- [Oracle Java Documentation on PrintStream](https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html)
+- [SLF4J project page](http://www.slf4j.org/)
+- [Jak ustawiać breakpointy w IntelliJ IDEA](https://www.jetbrains.com/help/idea/using-breakpoints.html)

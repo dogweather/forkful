@@ -1,6 +1,7 @@
 ---
 title:                "Generowanie liczb losowych"
-html_title:           "Gleam: Generowanie liczb losowych"
+date:                  2024-01-20T17:50:09.711504-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generowanie liczb losowych"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,32 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i Dlaczego?
-Generowanie liczb losowych to proces tworzenia liczb, które nie mają żadnego przewidywalnego wzorca. Programiści robią to dla wielu celów, takich jak zabezpieczenia, symulacje czy testowanie.
+Generowanie losowych liczb to po prostu proces tworzenia nieprzewidywalnych wartości. Programiści wykorzystują je w wielu scenariuszach: od testowania oprogramowania przez symulacje po gry i aplikacje z elementami losowości.
 
 ## Jak to zrobić:
-PowerShell posiada wbudowany mechanizm do generowania liczb losowych. Załóżmy, że chcemy wygenerować losową liczbę między 1 a 100.
-
 ```PowerShell
-Get-Random -Minimum 1 -Maximum 100
+# Generowanie pojedynczej losowej liczby między 0 a 100
+$random = Get-Random -Minimum 0 -Maximum 101
+Write-Host "Wylosowana liczba: $random"
+
+# Generowanie ciągu 5 losowych liczb z zakresu 1 do 50
+$randomNumbers = 1..5 | ForEach-Object { Get-Random -Minimum 1 -Maximum 51 }
+$randomNumbers -join ', '
+```
+Przykładowe wyjście:
+```
+Wylosowana liczba: 28
+12, 7, 45, 19, 30
 ```
 
-Po wykonaniu tego kodu, na ekranie zobaczysz losową liczbę w tym zakresie.
+## Głębsze zanurzenie
+Generowanie losowych liczb nie jest nowe - matematycy zajmowali się tym od wieków. W komputerach stosuje się głównie algorytmy pseudolosowe, które opierają się na wartościach początkowych, zwanymi ziarnami (seeds). W PowerShell `Get-Random` domyślnie używa ziarna opartego o czas systemowy, ale można też określić własne.
 
-Jeśli chcesz wygenerować listę 10 losowych liczb, możesz to zrobić w następujący sposób:
+Istnieją także inne metody generowania losowości, na przykład za pomocą kryptograficznie bezpiecznych generatorów, które są ważne w zastosowaniach wymagających wysokiego poziomu bezpieczeństwa, jak SSL/TLS. W PowerShell możemy to zrobić przy użyciu `[System.Security.Cryptography.RNGCryptoServiceProvider]`.
 
-```PowerShell
-1..10 | ForEach-Object { Get-Random -Minimum 1 -Maximum 100 }
-```
-Wynik tego kodu to 10 losowych liczb między 1 a 100.
+Warto również pamiętać, że algorytmy losowości mają swoje ograniczenia i w określonych warunkach mogą być przewidywalne, co bywa wykorzystywane w atakach na systemy.
 
-## Pogłębione informacje:
-Generowanie liczb losowych było częścią programowania od początku jego istnienia. Zainteresowanie tym tematem zaczęło wzrastać w związku z coraz większym zapotrzebowaniem na bezpieczeństwo i prywatność w sieci.
-
-Jedną z alternatyw dla `Get-Random` jest użycie klasy `System.Random` w .NET, co oferuje dodatkowe funkcje, takie jak generowanie liczb losowych z określonego rozkładu.
-
-W przypadku `Get-Random`, PowerShell korzysta z generatora liczb pseudolosowych z klasy `System.Security.Cryptography.RNGCryptoServiceProvider` w .NET, który jest bardziej odpowiedni dla zastosowań wymagających większej losowości i bezpieczeństwa niż podstawowy generator `System.Random`.
-
-## Zobacz też:
-1. [Dokumentacja Get-Random na Microsoft Docs](https://docs.microsoft.com/pl-pl/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.1)
-2. [Dokumentacja System.Random na Microsoft Docs](https://docs.microsoft.com/pl-pl/dotnet/api/system.random?view=net-5.0)
-3. [Dokumentacja System.Security.Cryptography.RNGCryptoServiceProvider na Microsoft Docs](https://docs.microsoft.com/pl-pl/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0)
+## Zobacz również
+- Dokumentacja PowerShell dla `Get-Random`: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-random
+- Wprowadzenie do algorytmów generowania liczb losowych: https://pl.wikipedia.org/wiki/Generator_liczb_losowych
+- Informacje o bezpieczeństwie generatorów losowych: https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=netframework-4.8

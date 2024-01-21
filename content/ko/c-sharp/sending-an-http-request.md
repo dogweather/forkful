@@ -1,6 +1,7 @@
 ---
 title:                "HTTP 요청 보내기"
-html_title:           "Clojure: HTTP 요청 보내기"
+date:                  2024-01-20T17:59:20.687201-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP 요청 보내기"
 programming_language: "C#"
 category:             "C#"
@@ -10,11 +11,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
 
-HTTP 요청을 보내는 것은 인터넷에서 데이터를 교환하는 방법입니다. 프로그래머들이 이를 사용하여 웹 서버와 상호작용하며, 웹페이지 또는 API에서 정보를 조회하거나 업데이트합니다.
+HTTP 요청 보내기는 서버에 데이터를 요청하거나 제출하는 과정입니다. 프로그래머들은 API와의 통신, 웹 컨텐츠 가져오기, 데이터 업로드 등을 위해 이를 사용합니다.
 
-## 어떻게:
+## How to: (방법)
+
+C#에서 HTTP 요청을 보낼 때는 `HttpClient` 클래스를 주로 사용합니다. 아래는 간단하게 GET 요청을 보내는 예제코드와 출력 결과입니다.
 
 ```C#
 using System;
@@ -23,30 +26,34 @@ using System.Threading.Tasks;
 
 class Program
 {
-    static readonly HttpClient client = new HttpClient();
-
-    static async Task Main()
+    static async Task Main(string[] args)
     {
-        HttpResponseMessage response = await client.GetAsync("http://example.com");
-        response.EnsureSuccessStatusCode();
-        string responseBody = await response.Content.ReadAsStringAsync();
-        Console.WriteLine(responseBody);
+        using (HttpClient client = new HttpClient())
+        {
+            HttpResponseMessage response = await client.GetAsync("http://example.com");
+            string responseBody = await response.Content.ReadAsStringAsync();
+
+            Console.WriteLine(responseBody);
+        }
     }
 }
 ```
 
-이 예제는 "http://example.com"에서 HTTP GET 요청을 보내고 응답을 출력합니다. 출력은 가져온 웹페이지의 HTML 소스입니다.
+출력 결과는 http://example.com에서 제공하는 HTML 내용일 것입니다.
 
-## 깊이 들어가기:
+## Deep Dive (심층 분석)
 
-HTTP 요청을 보내는 것은 1990년 초 웹의 출현 이후로 이루어지고 있습니다. 이 기술은 웹 브라우저에서 웹 서버로 정보를 보낼 때 주로 사용됩니다. `HttpClient` 클래스는 .NET 프로그래밍에서 HTTP 통신을 수행하는 중심적인 방식입니다.
+과거에는 `WebRequest`나 `WebClient` 같은 클래스를 사용했지만, 지금은 `HttpClient`가 선호됩니다. 이는 비동기 작업을 위해 설계되었고, 성능도 좋습니다. `HttpClient`는 GET, POST, PUT, DELETE 등 다양한 HTTP 메소드를 지원합니다. 그리고, `HttpRequestMessage`와 `HttpResponseMessage`를 사용하여 요청과 응답을 더 세밀하게 제어할 수 있습니다. 
 
-대안으로는 레거시 `WebRequest`나 `WebClient` 클래스를 사용할 수 있습니다. 그러나 `HttpClient`가 더 현대적이고 유연한 API를 제공하므로 일반적으로 이를 선호합니다.
+HttpWebRequest 대신 HttpClient를 사용하는 이유:
+- 더 단순한 API
+- 자동으로 연결 재사용
+- 비동기 프로그래밍에 최적화
 
-`HttpClient.GetAsync` 메소드를 사용하여 GET 요청을 보낼 수 있습니다. POST, PUT, DELETE 등의 다른 HTTP 메소드를 위한 메소드도 있습니다.
+다른 HTTP 도구와 비교했을 때, `HttpClient`는 사용하기 쉬우면서도 강력한 성능을 제공합니다. 여러 `DelegatingHandler`를 이용해서 로깅, 인증, 오류 처리 등을 커스텀 할 수 있습니다.
 
-## 참고 링크:
+## See Also (참고 자료)
 
-1. Microsoft Docs HttpClient 클래스: https://docs.microsoft.com/ko-kr/dotnet/api/system.net.http.httpclient
-2. HTTP 요청 및 응답: https://developer.mozilla.org/ko/docs/Web/HTTP/Overview
-3. `HttpClient`를 이용한 REST 호출: https://docs.microsoft.com/ko-kr/dotnet/csharp/tutorials/console-webapiclient
+- [HttpClient 클래스 문서](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
+- [공식 Microsoft 가이드: HttpClient 사용하기](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/console-webapiclient)
+- [HTTP 요청 방법들](https://www.restapitutorial.com/lessons/httpmethods.html)

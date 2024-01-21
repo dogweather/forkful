@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon pituuden selvittäminen"
-html_title:           "Go: Merkkijonon pituuden selvittäminen"
+date:                  2024-01-20T17:48:13.302475-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,24 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
-Merkkijonojen pituuden löytäminen tallentaa merkkien lukumäärän merkkijonossa. Ohjelmoijat tarvitsevat tätä esimerkiksi silloin, kun heidän on varmistettava, että merkkijono sopii tiettyyn tilaan tai täyttää tiedonsiirron vaatimukset.
+Merkkijonon pituuden selvittämisessä saadaan tietoon kuinka monta merkkiä merkkijonossa on. Tämä on hyödyllistä esimerkiksi datan validoinnissa, tekstin käsittelyssä ja käyttöliittymän suunnittelussa.
 
-## Näin teet:
-Yksinkertainen tapa selvittää merkkijonon pituus PowerShellillä on käyttää Length-ominaisuutta. Kokeilemme tässä esimerkissä:
-
+## Miten toimitaan:
 ```PowerShell
-$merkkijono = "Hei maailma"
-$merkkijono.Length
+# Luo merkkijono-muuttuja
+$merkkijono = "Hei, PowerShell!"
+
+# Etsi merkkijonon pituus
+$pituus = $merkkijono.Length
+
+# Tulosta pituus
+Write-Output $pituus
+```
+Tuloste: 
+```
+15
 ```
 
-Tulostus on `11`, mikä tarkoittaa, että merkkijono sisältää 11 merkkiä (sisältäen välilyönnin).
+## Syventävä tieto:
+PowerShellissa merkkijonon pituuden selvittäminen on yksinkertaista käyttäen `.Length`-ominaisuutta, joka on ollut käytössä ohjelmointikielissä jo vuosikymmeniä. Historiallisesti, perinteisissä ohjelmointikielissä, kuten C:ssä, pituuden selvittäminen saattoi olla työläämpää, sillä kehittäjän täytyi itse kierrellä merkkijonoa loppumerkin löytämiseksi. PowerShellissa, kuten monissa nykykielissä, merkkijonot ovat olioita, joilla on valmiita metodeja ja ominaisuuksia.
 
-## Syvemmälle
-PowerShellin `Length`-ominaisuus liittyy .NET Frameworkiin, joka on ollut käytössä vuodesta 2002. Vaihtoehtoisia tapoja merkkijonon pituuden selvittämiseksi ovat esimerkiksi `Measure-Object` tai `StringInfo` .NET -luokan `LengthInTextElements` -metodi. Jälkimmäinen ottaa huomioon moninapaiset merkkijonot.
+Vaihtoehtoisia tapoja löytyy, kuten käyttämällä `Measure-Object` komentoa:
 
-## Katso lisäksi
-1. [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
-2. [.NET Length Property](https://docs.microsoft.com/en-us/dotnet/api/system.string.length)
-3. [StringInfo.LengthInTextElements Method](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.stringinfo.lengthintextelements)
+```PowerShell
+$merkkijono | Measure-Object -Character | Select-Object -ExpandProperty Characters
+```
 
-Huomaa, että PowerShellin dokumentaatio ja .NET -dokumentaatio ovat englanninkielisiä linkkejä, mutta voit käyttää sivuston sisäänrakennettua kääntäjää nähdäksesi sivut suomeksi. Jatka opiskelua ja koodaamista!
+Tämän funktionaalisen lähestymistavan sijaan `.Length` on kuitenkin yleensä suositumpi ja suoraviivaisempi, sillä se on suora ominaisuuskutsu ilman putkittamista. Käytännössä `.Length` on myös tehokkaampi, sillä se on optimoitu toiminto, joka on laajalti dokumentoitu ja yleisesti tunnettu kehittäjien keskuudessa.
+
+## Katso myös:
+- String-metodien käyttö PowerShellissa: [String Methods - PowerShell](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-6.0#methods)
+- PowerShellin perusteet: [PowerShell 101](https://channel9.msdn.com/Series/GetStartedPowerShell3)

@@ -1,6 +1,7 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Lua: Tekstitiedoston lukeminen"
+date:                  2024-01-20T17:54:22.624348-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,38 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? - Mitä ja Miksi?
 
-Tekstitiedoston lukeminen tarkoittaa tiedostossa olevan tekstin tulkkausta sen sisällön ymmärtämiseksi. Ohjelmoijat tekevät tämän tietojen noutamiseksi tiedostoista tai tiedostojen sisällön manipuloimiseksi.
+Tekstitiedoston lukeminen tarkoittaa tiedoston sisällön hakemista ohjelmallisesti. Ohjelmoijat tekevät sitä datan prosessoimiseen, konfiguraatioiden lataamiseen tai ulkoisen sisällön näyttämiseen.
 
-## Miten tehdään: 
+## How to: - Kuinka:
 
-Lukeminen on yksinkertaista Fish Shell-ohjelmassa. Käytämme `cat`-komentoa näyttääksemme tiedoston sisällön:
+```Fish Shell
+# Lukee koko tiedoston kerralla
+cat tiedosto.txt
 
-```Fish Shell 
-cat /polku/tiedostoon.txt
-```
-
-Edellä oleva koodi näyttää tekstin, joka sijaitsee polussa `/polku/tiedostoon.txt`. Toisen esimerkin voisi olla lukeminen riveittäin käyttäen `read`-komentoa:
-
-```Fish Shell 
-for rivi in (cat /polku/tiedostoon.txt)
+# Lukee tiedoston rivi riviltä
+while read -la rivi
     echo $rivi
-end
+end < tiedosto.txt
 ```
 
-Nämä komentorivit lukevat tiedoston `/polku/tiedostoon.txt` rivi kerrallaan ja tulostavat sen.
+Esimerkkituloste:
 
-## Syvemmälle:
+```
+Hei maailma!
+Tämä on toinen rivi.
+Ja kolmas rivi tässä.
+```
 
-`cat`-komento, jonka käytämme Fish Shell-ohjelmassa, on peräisin Unix-järjestelmästä ja sitä on käytetty jo 1970-luvulta lähtien tekstitiedostojen lukemiseen. Vaihtoehtoisesti voidaan käyttää `more` tai `less` komentoja, jotka antavat enemmän kontrollia tekstin selaamiseen.
+## Deep Dive - Syväsukellus:
 
-On tärkeää ymmärtää, että nämä komennot lukevat tiedostoja tavu kerrallaan, joten suurten tiedostojen kanssa saattaa tulla suorituskykyongelmia.
+Fish Shell (the friendly interactive shell) on moderni komentorivityökalu. Se syntyi 2000-luvun alussa, tarjoten käyttäjäystävällisemmän vaihtoehdon perinteisille shelleille kuten Bash. Fish automatisoi monia rutiineja (kuten auto-suggestions), mikä tekee ohjelmoinnista sujuvampaa.
 
-## Katso myös: 
+Vaihtoehtoina Fishille käyttöön voi ottaa esimerkiksi `awk` ja `sed` tekstiprosessointiin, jopa Pythonin tai Perl:in skripteihin asti. Fish käyttää yksinkertaista `read` komentoa tiedoston rivien lukemiseen, suoraviivaisemaan tulostuksiin ilman tarpeetonta monimutkaisuutta.
 
-Fish Shell -ohjelmoinnin oppimista varten kannattaa tutustua seuraaviin sivustoihin:
+## See Also - Katso Myös:
 
-- Fish Shellin virallinen dokumentaatio: https://fishshell.com/docs/current/index.html
-- Sovelluksia ja esimerkkejä Fish Shell scripteistä: https://github.com/jorgebucaran/awesome.fish
-- Fish Shell yhteisön keskustelupalsta: https://gitter.im/fish-shell/fish-shell
+- Fish Shell dokumentaatio: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- Unix Text Processing with `awk`: [https://www.gnu.org/software/gawk/manual/gawk.html](https://www.gnu.org/software/gawk/manual/gawk.html)
+- Sed, a stream editor: [https://www.gnu.org/software/sed/manual/sed.html](https://www.gnu.org/software/sed/manual/sed.html)
+- Python File I/O: [https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)

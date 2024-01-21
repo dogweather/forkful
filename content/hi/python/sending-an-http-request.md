@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:00:21.547613-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,24 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Title: HTTP अनुरोध को पायथन में कैसे भेजें: एक गाइड
+## क्या और क्यों? (What & Why?)
+HTTP अनुरोध भेजना इंटरनेट पर सर्वर से जानकारी माँगने का तरीका है। प्रोग्रामर्स इसे डेटा प्राप्त करने, वेबसर्विसेज से बात करने, और APIs का उपयोग करने के लिए करते हैं।
 
-## क्या & क्यों?
-HTTP अनुरोध भेजना इसका मतलब है कि आप एक वेब सर्वर से डेटा मांग रहे हैं या उसमें डेटा भेज रहे हैं। कार्यक्रमकर्ता इसे वेब में डेटा को प्राप्त और प्रसारित करने के लिए इस्तेमाल करते हैं।
-
-## कैसे करें:
+## कैसे करें? (How to:)
 ```Python
 import requests
-response = requests.get('https://www.example.com')
-print(response.status_code)
+
+# GET अनुरोध भेजें
+response = requests.get('https://api.github.com')
+
+# रिस्पांस को प्रिंट करें
+print(response.status_code)  # स्टेटस कोड
+print(response.json())      # JSON रिस्पांस को दिखाएँ
+
+# POST अनुरोध उदाहरण
+data = {'key': 'value'}
+response = requests.post('https://httpbin.org/post', data=data)
+
+# पोस्ट रिस्पांस देखें
+print(response.json())
 ```
-ऊपरी कोड माइक्रोसॉफ्ट के वेबसाइट से HTTP अनुरोध भेजता है। यदि आपका अनुरोध सफल होता है, इसका मतलब है कि आपको 200 का स्थिति कोड दिखाई देगा।
 
-## गहराई में:
-HTTP अनुरोध का इतिहास 1991 में शुरू होता है जब तिम बर्नेर्स-ली ने इंटरनेट प्रोटोकॉल के रूप में इसकी विकास यात्रा शुरू की। इसके विकल्प में gRPC, GraphQL, और अन्य HTTP/2-आधारित प्रोटोकॉल शामिल हैं, जो कि HTTP/1.1 की तुलना में कई मामलों में बेहतर परिणाम देते हैं। जब पांच हाथ लाइब्रेरी HTTP अनुरोध भेजती है, तो यह वास्तव में आपके ब्राउज़र की तरह TCP/IP माध्यम से सर्वर से कनेक्ट हो जाती है।
+```
+200
+{'current_user_url': 'https://api.github.com/user', 'current_user_authorizations_html_url': 'https://github.com/settings/connections/applications{/client_id}', ... }
+{'args': {}, 'data': '', 'files': {}, 'form': {'key': 'value'}, ... }
+```
 
-## और भी देखें:
-HTTP के बारे में अधिक जाने के लिए, आप निम्नलिखित लिंक की जांच कर सकते हैं। 
-- Mozilla Developer Network पर HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP
-- रिक्वेस्ट्स लाइब्रेरी डॉक्युमेंटेशन: http://docs.python-requests.org/en/latest/
-- Real Python 'रिक्वेस्ट्स' पायथन लाइब्रेरी गाइड: https://realpython.com/python-requests/
+## डीप डाइव (Deep Dive)
+HTTP अनुरोध (Requests) 1990 के दशक से हैं और वेब की नींव हैं। `requests` मॉड्यूल पायथन में HTTP अनुरोध आसानी से करने के लिए बनी है। इसके विकल्प में `http.client` और `urllib` जैसे अन्य मॉड्यूल भी शामिल हैं, पर `requests` अधिक सुविधाजनक है। सुरक्षा, लॉगिंग, और सेशन हैंडलिंग जैसी कार्यक्षमताओं का कोड जटिल हो सकता है, इसलिए ध्यान से प्रयोग करें।
+
+## इस के साथ (See Also)
+- `requests` के डॉक्यूमेंटेशन: https://requests.readthedocs.io/en/master/
+- Python के आधिकारिक `http` मॉड्यूल डॉक्स: https://docs.python.org/3/library/http.html
+- RESTful APIs के लिए मार्गदर्शक: https://www.restapitutorial.com/
+- HTTP स्टेटस कोड्स: https://httpstatuses.com/

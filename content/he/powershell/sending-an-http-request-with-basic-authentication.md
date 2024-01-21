@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http עם אימות בסיסי"
-html_title:           "C: שליחת בקשת http עם אימות בסיסי"
-simple_title:         "שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת HTTP עם אימות בסיסי"
+date:                  2024-01-20T18:02:24.744250-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP עם אימות בסיסי"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -11,30 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-שליחת בקשת HTTP עם אימות בסיסי היא פרוסדורה שבה מנותבת בקשת HTTP אל שרת, אם מידע שמאמת את זהותו של השולח. מתכנתים עושים את זה כדי לאפשר אימות מהיר וקל לשימוש בסיסי.
+שליחת בקשת HTTP עם אימות בסיסי (Basic Authentication) היא תהליך שבו אנו נותנים שם משתמש וסיסמה בתוך בקשה כדי להתאמת. תכניתנים עושים זאת כדי לשמור על גישה מאובטחת ל-APIs ולשרותים מרוחקים.
 
 ## איך לעשות:
-המשנה הבאה מראה לך איך לשלוח בקשת HTTP ב-PowerShell עם אימות בסיסי:
 ```PowerShell
-# הגדרת שם משתמש וסיסמה
-$userName = 'YourUsername'
-$password = 'YourPassword'
+# קוד לשליחת בקשת HTTP עם אימות בסיסי
+$user = 'myUsername'
+$pass = 'myPassword'
+$pair = "$($user):$($pass)"
+$bytes = [System.Text.Encoding]::ASCII.GetBytes($pair)
+$base64 = [System.Convert]::ToBase64String($bytes)
+$headers = @{
+    Authorization = "Basic $base64"
+}
 
-# יצירת אובייקט הסיסמה
-$secStringPassword = ConvertTo-SecureString -String $password -AsPlainText -Force
+$response = Invoke-RestMethod -Uri 'http://example.com/api/data' -Method Get -Headers $headers
 
-# יצירת אובייקט האימות
-$credObject = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $userName, $secStringPassword
-
-# שליחת בקשת GET לשרת
-Invoke-WebRequest -Uri 'http://yourserver.com' -Method GET -Credential $credObject
+# הדפסת התשובה
+$response
 ```
-פלט הדוגמא הנ"ל הוא התשובה מהשרת - XML, JSON, HTML, טקסט, וכו'.
+פלט לדוגמה:
+```
+id     : 123
+name   : דוגמה
+status : פעיל
+```
 
-## צפיה עמוקה
-שליחת בקשת HTTP עם אימות בסיסי היא מתודה ישנה שמורשת מתקני URI מהאינטרנט הקדום. חלופות יכולות לכלול אימות OAuth או JWT. כאשר PowerShell שולח בקשה, הוא מפענח את פרטי האימות למחרוזת Base64 ומוסיף אותה ככותרת של הבקשה.
+## ניתוח עמוק
+אימות בסיסי הוא שיטת אימות פשוטה שהחלה להיעשות בשנות ה-90. היא עשויה להיות פחות בטוחה משיטות אימות מודרניות יותר כמו OAuth. בPowerShell, שימוש ב`Invoke-RestMethod` עם הגדרות כותרת מתאימות מאפשרת שליחת בקשות בשיטה זו. לקחת בחשבון שהשימוש באימות בסיסי מחייב חיבור מאובטח (HTTPS) כדי למנוע את הדלפת נתוני האימות.
 
-## ראה גם:
-* [התקנים HTTP](https://www.ietf.org/rfc/rfc2616.txt)
-* [המסמך המקורי של Invoke-WebRequest](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7)
-* [מדריכי PowerShell שונים](https://www.powershelltutorial.net/)
+## ראה גם
+- [מידע נוסף על אימות בסיסי ב-HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [מידע על Invoke-RestMethod בתיעוד PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1)

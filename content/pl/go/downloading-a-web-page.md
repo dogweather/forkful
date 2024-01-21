@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C#: Pobieranie strony internetowej"
+date:                  2024-01-20T17:44:03.243086-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Go"
 category:             "Go"
@@ -10,53 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Pobieranie strony internetowej to proces ściągania danych z internetu na swój komputer. Programiści robią to, by przetworzyć informacje, testować aplikacje czy analizować treści.
 
-Pobieranie strony internetowej polega na zapisaniu jej zawartości lokalnie na dysku twardym. Programiści robią to, aby analizować strukturę strony, pobierać dane (web scraping) lub tworzyć kopie zapasowe stron.
-
-## Jak to zrobić:
-
+## How to: (Jak to zrobić:)
 ```Go
 package main
 
 import (
+	"fmt"
 	"io"
 	"net/http"
 	"os"
 )
 
 func main() {
-	resp, err := http.Get("http://example.com")
-	if err != nil {
-		panic(err)
-	}
-	defer resp.Body.Close()
+	// Adres URL strony do pobrania
+	url := "http://example.com"
 
+	// Wykonanie żądania HTTP GET
+	response, err := http.Get(url)
+	if err != nil {
+		fmt.Println("Błąd podczas pobierania strony:", err)
+		return
+	}
+	defer response.Body.Close()
+
+	// Otworzenie pliku do zapisu
 	file, err := os.Create("example.html")
 	if err != nil {
-		panic(err)
+		fmt.Println("Błąd podczas tworzenia pliku:", err)
+		return
 	}
 	defer file.Close()
 
-	_, err = io.Copy(file, resp.Body)
+	// Kopiowanie treści do pliku
+	_, err = io.Copy(file, response.Body)
 	if err != nil {
-		panic(err)
+		fmt.Println("Błąd podczas kopiowania treści:", err)
+		return
 	}
+
+	fmt.Println("Strona została pobrana pomyślnie.")
 }
 ```
+Po uruchomieniu, program zapisze zawartość strony z example.com do pliku "example.html".
 
-Uruchamiając powyższy kod, pobierzemy zawartość strony `http://example.com` i zapiszemy ją do pliku `example.html` na naszym dysku twardym.
+## Deep Dive (Dogłębna analiza)
+Pobieranie stron internetowych sięga początków Internetu, kiedy to korzystano z protokołów takich jak FTP. Dziś używa się głównie HTTP/HTTPS. Alternatywą dla standardowej biblioteki `net/http` w Go jest użycie zewnętrznych pakietów jak `gorilla/websocket` dla operacji czasu rzeczywistego czy `colly` dla scrapingu. Podczas implementacji ważne jest, aby zwrócić uwagę na obsługę przekierowań, limit czasu połączenia oraz poprawne zarządzanie sesją, zwłaszcza przy stronach dynamicznych.
 
-## Na głębsze wody
-
-Początki pobierania stron internetowych sięgają czasów, gdy internet był jeszcze w powijakach - to właśnie wtedy zaczęto tworzyć pierwsze web scrapery. Alternatywą dla powyższego rozwiązania jest użycie pakietu `goquery`, który umożliwia nie tylko pobranie strony, ale także wygodne przeszukiwanie jej zawartości. Szczegółowość implementacji pobierania stron internetowych może się znacznie różnić - od prostych skryptów do złożonych systemów z możliwością omijania zabezpieczeń i obsługą różnych formatów stron.
-
-## Zobacz też
-
-[`http.Get`](https://golang.org/pkg/net/http/#Client.Get) - Dokumentacja funkcji `http.Get` z pakietu `http`.
-
-[`io.Copy`](https://golang.org/pkg/io/#Copy) - Dokumentacja funkcji `io.Copy` z pakietu `io`.
-
-[`os.Create`](https://golang.org/pkg/os/#Create) - Dokumentacja funkcji `os.Create` z pakietu `os`.
-
-[`goquery`](https://github.com/PuerkitoBio/goquery) - Pakiet `goquery` umożliwiający wygodne przeszukiwanie zawartości stron.
+## See Also (Zobacz również)
+- Dokumentacja Go: https://golang.org/pkg/net/http/
+- Wprowadzenie do pakietu `colly`: http://go-colly.org/
+- Przewodnik po `gorilla/websocket`: https://github.com/gorilla/websocket

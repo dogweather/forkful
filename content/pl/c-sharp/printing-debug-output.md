@@ -1,6 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-html_title:           "Haskell: Drukowanie komunikatów debugowania"
+date:                  2024-01-20T17:52:31.645237-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "C#"
 category:             "C#"
@@ -10,41 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Wydrukowanie debugowania w C#
+## What & Why? (Co i dlaczego?)
+Debugowanie to proces śledzenia, co się dzieje w programie. Programiści drukują informacje debugowania, żeby łatwiej znaleźć i naprawić błędy.
 
-## Co i dlaczego?
-
-Drukowanie debugowania to narzędzie programistyczne, które umożliwia wyświetlanie informacji o funkcjonowaniu kodu. Programiści używają go do szybkiej identyfikacji i naprawy błędów w kodzie.
-
-## Jak to zrobić:
-
-Oto przykład jak użyć wydruku debugowania w C#.
-
+## How to (Jak to zrobić):
 ```C#
-using System.Diagnostics;
- 
-public class TestClass
+using System;
+
+class Program
 {
-    public static void Main()
+    static void Main()
     {
-        Debug.WriteLine("Uruchamianie testu");
-        
-        // tutaj jest część kodu do zdebugowania
-        
-        Debug.WriteLine("Zakończenie testu");
+        // Prosty przykład wypisania tekstu na konsoli
+        Console.WriteLine("Hej, tu info debugowe.");
+
+        // Formatowanie danych wyjściowych
+        int zIndex = 42;
+        Console.WriteLine($"Wartość zIndex: {zIndex}");
+
+        // Przy użyciu Debug.WriteLine (pamiętaj o dodaniu 'using System.Diagnostics;')
+        Debug.WriteLine("To pokaże się tylko podczas debugowania.");
     }
 }
 ```
+Oczekiwane wyjście:
 
-Gdy uruchomisz ten program, zobaczysz tekst "Uruchamianie testu" i "Zakończenie testu" w oknie wyjścia.
+```
+Hej, tu info debugowe.
+Wartość zIndex: 42
+```
+W Debug output:
 
-## Zagłębianie się:
+```
+To pokaże się tylko podczas debugowania.
+```
 
-Drukowanie debugowania ma długą historię w świecie programowania i jest powszechnie stosowane niezależnie od języka kodowania. W C#, Debug.WriteLine() jest najpopularniejszym narzędziem. Alternatywami mogą być Console.WriteLine() lub Trace.WriteLine(). Zasadnicza różnica polega na tym, że Debug.WriteLine() nie jest uwzględniane w finalnej kompilacji Release, a Console.WriteLine() i Trace.WriteLine() są. 
+## Deep Dive (Pogłębiona wiedza):
+Historia mechanizmów debugowania sięga początków programowania. Kiedyś debuggerów prawie nie było, więc wypisywanie informacji było podstawą. Alternatywy takie jak `Debug.WriteLine` i `Trace.WriteLine` w .NET pozwalają kontrolować, kiedy informacje są wypisywane, np. tylko przy debugowaniu, dzięki dyrektywom preprocesora jak `#if DEBUG`. Implementując debugowanie, programiści mogą używać również zewnętrznych narzędzi jak loggery, które oferują bardziej zaawansowane opcje jak filtrowanie czy formatowanie.
 
-## Zobacz również:
-
-- [Debugger.Display attribute](https://docs.microsoft.com/pl-pl/dotnet/api/system.diagnostics.debuggerdisplayattribute?view=net-5.0)
-- [Debugger in Visual Studio](https://docs.microsoft.com/pl-pl/visualstudio/debugger/?view=vs-2019)
-
-Oprócz tego polecam zagłębić się w zagadnienia debugowania i poznania różnych technik debugowania, które mogą przyspieszyć i ułatwić proces rozwijania oprogramowania.
+## See Also (Zobacz także):
+- [Microsoft Docs: Debugowanie w Visual Studio](https://docs.microsoft.com/pl-pl/visualstudio/debugger/)
+- [Microsoft Docs: Śledzenie i instrumentacja aplikacji](https://docs.microsoft.com/pl-pl/dotnet/framework/debug-trace-profile/tracing-and-instrumenting-applications)
+- [Stack Overflow - Kiedy używać Console.WriteLine vs Debug.WriteLine?](https://stackoverflow.com/questions/3788605/if-debug-vs-conditionaldebug)

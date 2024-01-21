@@ -1,6 +1,7 @@
 ---
 title:                "Gerando números aleatórios"
-html_title:           "C: Gerando números aleatórios"
+date:                  2024-01-20T17:49:05.074347-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Gerando números aleatórios"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,36 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O quê e por quê?
+## O Quê e Por Quê?
+Gerar números aleatórios é o processo de criar valores que não têm qualquer padrão previsível ou sequência. Programadores fazem isso para tudo, desde jogos até sistemas de segurança, garantindo elementos de surpresa ou disfarçando dados sensíveis.
 
-Gerar números aleatórios é a prática de criar sequências de números que não têm padrão discernível. Os programadores fazem isso para qualquer situação em que a aleatoriedade seja necessária, como para simulações, criptografia e jogos.
-
-## Como fazer:
-
-Aqui está um exemplo de como você pode gerar um número aleatório entre 1 e 100 no Fish Shell:
+## Como Fazer:
+```Fish Shell
+# Para gerar um número aleatório entre 0 e 999
+set random_number (random 1000)
+echo $random_number
+```
+Saída de amostra: `537`
 
 ```Fish Shell
-set -l range_start 1
-set -l range_end 100
-math (random % ($range_end + 1 - $range_start)) + $range_start"
+# Para gerar um número aleatório em um intervalo específico, digamos, 50 a 100
+set lower_limit 50
+set upper_limit 100
+set range (math "$upper_limit - $lower_limit + 1")
+set random_number (math "$lower_limit + (random $range) - 1")
+echo $random_number
 ```
+Saída de amostra: `72`
 
-Quando você executa o código acima, o shell retorna um número aleatório no intervalo especificado. Por exemplo, poderia retornar `78` ou `21`.
+## Mergulho Profundo
+A geração de números aleatórios não é realmente aleatória em computadores; é o que chamamos de pseudoaleatória, dependendo de algoritmos para simular aleatoriedade. O conceito existe desde a antiguidade, mas a prática em computadores começou por volta dos anos 1950 com o avanço da teoria da computação. O Fish Shell usa o comando `random`, que gera um número pseudoaleatório com base nos números fornecidos, como mostrado nos exemplos.
 
-## Aprofundando
+Existem alternativas a considerar: algumas linguagens de programação têm suas próprias funções de geração de números aleatórios, como `rand()` em C e `random.randint()` em Python. No contexto de shells em sistemas Unix-like, utilizado pelo Fish, há também o comando `shuf` e a utilização do dispositivo especial `/dev/urandom`, que serve para necessidades mais complexas e de criptografia. A escolha pelo método vai depender do seu projeto e dos requisitos de segurança.
 
-O conceito de números aleatórios tem uma longa história na computação, mas o que é importante saber é que os números gerados por computadores não são verdadeiramente aleatórios. Eles são determinados por algoritmos e, portanto, são chamados de "pseudo-aleatórios". 
-
-Existem alternativas no Fish Shell para gerar números aleatórios, por exemplo, usando o comando `jot -r`.
-
-```Fish Shell
-jot -r 1 1 100
-```
-
-No entanto, a função `math` com o módulo `random` é geralmente mais rápida e preferida para a geração de números aleatórios.
-
-## Veja também:
-
-- [Fish Shell Documentation](https://fishshell.com/docs/current/commands.html#random)
-- [StackOverflow: How to generate a random number in Fish?](https://stackoverflow.com/questions/55656492/how-to-generate-a-random-number-in-fish)
-- [Unix & Linux Stack Exchange: How to get a random number in Fish Shell?](https://unix.stackexchange.com/questions/140750/how-do-you-get-a-random-number-in-fish)
+## Veja Também
+- Documentação do Fish Shell sobre `random`: https://fishshell.com/docs/current/cmds/random.html
+- Uma explicação sobre pseudoaleatoriedade: https://pt.wikipedia.org/wiki/Gerador_de_n%C3%BAmeros_pseudoaleat%C3%B3rios
+- Introdução aos números aleatórios em programação: https://www.geeksforgeeks.org/random-number-generator-in-arbitrary-probability-distribution-fashion/

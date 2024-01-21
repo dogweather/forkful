@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:51:00.354502-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,34 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego?
+## Co i dlaczego?
 
-Interpolacja napisów to proces ścieżkowy, który pozwala na osadzanie wartości zmiennych bezpośrednio w napisach. Programiści robią to dla wygody, żeby łatwiej zrozumieć i zwiększyć czytelność kodu.
+Interpolacja łańcuchów to proces wstawiania wartości zmiennych do ciągu znaków. Programiści używają jej dla dynamizmu kodu i uproszczenia generowania tekstów zawierających dane.
 
 ## Jak to zrobić:
 
-Warto pamiętać, że Java nie obsługuje bezpośrednio interpolacji napisów, jak niektóre inne języki, ale wykorzystuje tzw. formatowanie Stringów. Przykładowo:
+W Java (jak w wersji 15 i późniejszych) możemy użyć text blocks oraz metody `formatted()`, aby łatwo interpolować stringi. Oto przykład:
 
-```Java
-String name = "Jan";
-String greeting = String.format("Cześć, %s!", name);
-System.out.println(greeting); // Wypisuje: Cześć, Jan!
+```java
+public class StringInterpolationExample {
+    public static void main(String[] args) {
+        String name = "Łukasz";
+        int age = 29;
+        String greeting = "Cześć, %s. Masz %d lat.".formatted(name, age);
+        System.out.println(greeting);
+    }
+}
 ```
 
-## Dogłębne informacje:
-
-Historycznie, interpolacja napisów nie była natywnie obsługiwana przez Jave. Java wprowadziła formatowanie Stringów w Jave 1.5, które służy jako alternatywa dla interpolacji. Jeśli chodzi o implementację, String.format() korzysta pod spodem z klasy Formatter, która tłumaczy format na konkretne wartości.
-
-Inne języki, takie jak Python, JavaScript czy Kotlin, obsługują interpolację napisów natywnie, co umożliwia bardziej eleganckie i zwięzłe formatowanie.
-
-```Java
-// Przykład w Kotlinie
-val name = "Jan"
-val greeting = "Cześć, $name!"
-println(greeting) // Wypisuje: Cześć, Jan!
+Wyjście:
+```
+Cześć, Łukasz. Masz 29 lat.
 ```
 
-## Zobacz też:
+## Pogłębienie:
 
-1. Dokumentacja Oracle na temat formatowania napisów: [https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html)
-2. Porównanie interpolacji napisów w różnych językach: [https://www.baeldung.com/string-interpolation-java](https://www.baeldung.com/string-interpolation-java)
+Interpolacja stringów pojawiła się w wielu językach przed Java, ale Java długo polegała na konkatenacji z użyciem operatora `+` lub `StringBuilder`. Opcje takie jak `String.format()` czy `MessageFormat` były dostępne, ale interpolacja stringów stała się znacznie wygodniejsza i bardziej czytelna dzięki wprowadzeniu text blocks w Java 15.
+
+Alternatywy obejmują użycie `String.format()`, łańcuchów z konkatenacją i `StringBuilder` dla starszych wersji Javy:
+
+```java
+String name = "Łukasz";
+int age = 29;
+String greeting = String.format("Cześć, %s. Masz %d lat.", name, age);
+```
+
+Interpolacja jest po prostu syntaktycznym cukrem, który upraszcza sposób, w jaki wstawiamy zmienne do łańcuchów znaków, zazwyczaj poprzez wewnętrzną zamianę na `String.format()` lub podobne implementacje.
+
+## Zobacz również:
+
+- [Dokumentacja Oracle dla text blocks](https://docs.oracle.com/en/java/javase/15/text-blocks/index.html)
+- [Dokumentacja Oracle dla metody `formatted()`](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#formatted(java.lang.Object...))
+- [Przewodnik Oracle'a do `String.format()`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-)

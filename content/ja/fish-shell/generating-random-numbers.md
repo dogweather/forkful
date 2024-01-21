@@ -1,7 +1,8 @@
 ---
-title:                "ランダムな数字の生成"
-html_title:           "C#: ランダムな数字の生成"
-simple_title:         "ランダムな数字の生成"
+title:                "ランダム数の生成"
+date:                  2024-01-20T17:49:00.062949-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "ランダム数の生成"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -10,49 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-ランダムな番号を生成するとは、決まった規則や順番なく数値を出力することです。この機能は、予測不可能な結果や要素をプログラムに組み込むためによく使われます。
+## What & Why?
+ランダム数生成とは予測不可能な数値を作り出すことであり、テストやシミュレーション、ゲームの要素など多岐にわたるプログラミング場面で活用されます。
 
-## 実装方法：
-Fish Shellにおけるランダム数値の生成には`random`コマンドが用いられます。
+## How to:
+Fish Shellでは、`random` コマンドを使って簡単にランダムな数字を生成できます。ここに例を示します:
 
-例：
-
-```fish
-# 1 and 10 の間のランダムな数
-random 1 10
+```Fish Shell
+# 1から10までのランダムな数字を生成
+set random_num (random 1 10)
+echo $random_num
 ```
 
-出力例:
+実行例:
 
-```fish
+```
+$ fish
+> set random_num (random 1 10)
+> echo $random_num
 7
 ```
 
-もう一つの例：
+## Deep Dive
+Fish Shellの`random` コマンドは以前は`shuf` コマンドに依存していましたが、現在は内蔵コマンドとして独自に実装されています。これにより、外部ツールに頼らずに使用できるようになりました。Bashや他のシェルスクリプトの `RANDOM` 変数や `openssl rand` 、PythonやJavaScriptの乱数生成機能と比較すると、Fishではコマンド一つで直感的に数値を生成できるのが特徴です。
 
-```fish
-# ランダムな暗証番号を生成
-random 0 9 (random 0 9) (random 0 9) (random 0 9)
-```
-
-出力例:
-
-```fish
-8 2 7 0
-```
-
-## ディープダイブ
-Fish Shellの`random`コマンドは、2005年のリリース以来、シェルスクリプトにおけるランダムな数値生成のための主要な手段となりました。同様の機能は他のシェルにも存在しますが、Fishはその使いやすさで人気があります。
-
-代替手段には、`$RANDOM`環境変数を利用する方法（Bashなど）があります。しかし、Fish Shellではこの方法はサポートされていません。
-
-`random`コマンドの実装については、特定の範囲の数値を均等に生成するために、擬似乱数生成器（PRNG）という技術が用いられています。
-
-## 参照
-以下は、関連するリソースへのリンク集です：
-
-1. Fish Shell公式ドキュメンテーション - [Random function](https://fishshell.com/docs/3.1/commands.html#random)
-1. Stack Overflow - [Generating Random Numbers in Fish Shell](https://stackoverflow.com/questions/31159157/generating-random-numbers-in-fish-shell)
-
-以上で、Fish Shellでのランダムな数値生成についての解説を終了します！
+## See Also
+- Fish Shellの公式ドキュメント: https://fishshell.com/docs/current/cmds/random.html
+- POSIX シェルスクリプトのランダム数: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html
+- より高度な乱数生成について: https://en.wikipedia.org/wiki/Random_number_generation

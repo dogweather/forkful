@@ -1,6 +1,7 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Lua: Tekstitiedoston lukeminen"
+date:                  2024-01-20T17:55:07.792215-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,38 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mitä ja Miksi?
+Lukemalla tekstitiedostoja, PHP:ssä voimme käsitellä dataa suoraan lähdemuodossaan. Tämä on tärkeää, koska se mahdollistaa tiedon dynaamisen hankkimisen ilman kovakoodattuja arvoja - olipa kyse sitten konfiguraatiosta, lokitiedostoista tai ulkoisesta sisällöstä.
 
-Tekstifilin lukeminen tarkoittaa sen sisällön saamista merkkijonona tai datapalasena. Ohjelmoijat tekevät tämän tiedon tallentamiseksi, käsitelläkseen sitä tai kommunikoidakseen toisten ohjelmien kanssa.
-
-## Kuinka:
-
-PHP:n sisäänrakennettu funktio `file_get_contents()` tekee tekstifilin lukemisen helpoksi. Katso esimerkki alla:
+## How to: - Kuinka:
+PHP tarjoaa useita tapoja lukea tekstitiedostoja. Alla on suoraviivainen esimerkki `file_get_contents` toiminnosta ja iteroinnista tiedoston riveille `file` toiminnolla.
 
 ```PHP
 <?php
-$file = 'example.txt';
-$content = file_get_contents($file);
-echo $content;
+// Luetaan koko tiedosto yhtenä merkkijonona
+$tiedostonSisalto = file_get_contents('esimerkki.txt');
+echo $tiedostonSisalto;
+
+// Luetaan tiedosto rivi riviltä taulukkoon
+$rivit = file('esimerkki.txt');
+foreach ($rivit as $rivi) {
+    echo $rivi;
+}
 ?>
 ```
-Oletetaan, että `example.txt` sisältää tekstin "Hello, World!". Yllä oleva skripti tulostaa:
-```
-Hello, World!
-```
 
-## Syvä Sukellus:
+Tuloste riippuu `esimerkki.txt` tiedoston sisällöstä. Jos tiedostossa on teksti "Hei maailma!", ensimmäinen koodi tulostaa koko lauseen ja toinen koodi tulostaa sen rivi kerrallaan.
 
-Tekstifilin lukeminen on perusosa ohjelmoinnin historiaa, ja se on ollut mukana ohjelmoinnissa alusta alkaen. PHP:ssä on useita tapoja lukea tiedostoja, esim. `fopen()`, `fread()`, mutta `file_get_contents()` on helpoin ja kompaktin koodauksen vuoksi usein suositeltu.
+## Deep Dive - Syväsukellus:
+Tiedoston lukeminen PHP:ssä ei ole uusi konsepti; se on ollut osa kieltä alusta alkaen. Alkuaikoina käytössä oli perusfunktioita kuten `fopen` ja `fgets`, joilla tiedosto avataan ja luetaan rivi kerrallaan. 
 
-Valittu menetelmä riippuu usein kyseisestä sovelluksesta ja sen erityistarpeista. Esimerkiksi, jos tiedoston koko on erittäin suuri, 'fread()' saattaa olla parempi vaihtoehto, koska se lukee tiedoston pienissä palasissa, vähentäen muistin käyttöä.
+Nykyään on useampia käteviä vaihtoehtoja:
+- `readfile()` - Echoes tiedoston sisällön suoraan
+- `file()` - Palauttaa tiedoston rivit taulukkona
+- `fopen()` ja `fread()` - Monipuolisin tapa, joka mahdollistaa hienojakoisen kontrollin lukuoperaatioihin
 
-Kuten useimmissa ohjelmointikielissä, PHP:llä lukiessa tiedosto on avattava ennen kuin sitä voidaan lukea ja suljettava sen jälkeen.
+Tiedoston lukuun vaikuttavat myös palvelimen oikeudet, tiedoston koko ja muoto. Suurten tiedostojen kanssa kannattaa käyttää 'fopen' ja looppia, joka lukee tiedoston osissa; tämä säästää muistia.
 
-## Katso Myös:
-
-1. PHP Official Documentation: file_get_contents() - [https://www.php.net/manual/en/function.file-get-contents.php](https://www.php.net/manual/en/function.file-get-contents.php)
-
-2. PHP Official Documentation: fopen() - [https://www.php.net/manual/en/function.fopen.php](https://www.php.net/manual/en/function.fopen.php)
-
-3. PHP Official Documentation: fread() - [https://www.php.net/manual/en/function.fread.php](https://www.php.net/manual/en/function.fread.php)
+## See Also - Katso Myös:
+- PHP:n virallinen dokumentaatio `file_get_contents`: https://www.php.net/manual/en/function.file-get-contents.php
+- PHP:n virallinen dokumentaatio `file`: https://www.php.net/manual/en/function.file.php
+- Stack Overflow -keskustelut tiedostojen käsittelystä: https://stackoverflow.com/questions/tagged/php+file-get-contents
+- Tutorial tutustumiseen tiedostojen käsittelyyn PHP:ssä: https://www.tutorialspoint.com/php/php_file_handling.htm
+- PHP.net-käsikirja `fopen` ja lukutoimintoihin liittyen: https://www.php.net/manual/en/function.fopen.php

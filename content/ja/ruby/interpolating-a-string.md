@@ -1,6 +1,7 @@
 ---
 title:                "文字列の補間"
-html_title:           "Arduino: 文字列の補間"
+date:                  2024-01-20T17:51:24.324291-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "文字列の補間"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,56 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ?
+## What & Why? (何となぜ？)
+文字列展開とは、文字列内に変数や式の値を挿入することです。これを行う理由は、動的に変化するデータを扱ったり、読みやすい文字列を作るためです。
 
-文字列補間（Interpolating a string）は、文字列の中に変数や式を埋め込むことであり、その結果、コードの可読性と効率性が高まります。
-
-## やり方：
-
-Rubyでは`#`記号と`{}`を使って文字列補間を行います。これは具体的な例で示すと理解しやすいでしょう。
-
+## How to: (方法)
 ```Ruby
-name = 'Yamada'
-greeting = "Hello, #{name}!"
+name = "太郎"
+age = 28
 
-puts greeting 
-```
-
-上記のコードでは、nameという変数をgreetingという文字列の中に埋め込んでいます。このコードを実行すると、以下のような出力結果が表示されます。
-
-```
-Hello, Yamada!
-```
-
-## 深層探索
-
-1. **歴史的背景**: Rubyが誕生した当初から文字列補間の機能は備わっており、他の言語と比較してもRubyの文字列補間は簡単で直感的です。 
-
-2. **代替方法**: 文字列の連結を使って同じ結果を得ることも可能です。ただし、それはコードの見通しを悪くし、複雑な式の場合にはより多くのコードを必要とします。
-
-```Ruby
-name = 'Yamada'
-greeting = 'Hello, ' + name + '!'
+# 文字列展開を使って変数を埋め込む
+greeting = "こんにちは、#{name}さん。あなたは#{age}歳ですね。"
 
 puts greeting
+# 出力: こんにちは、太郎さん。あなたは28歳ですね。
 ```
 
-3. **実装の詳細**: 文字列補間の際には、`#{}`内の式が先に評価され、その結果が文字列に置き換えられます。式が文字列以外の場合には、自動的に`.to_s`メソッドが適用されます。
+## Deep Dive (深い掘り下げ)
+文字列展開はRuby初期からある機能です。`#{}`を使うと、その中のコードが評価され、文字列に変換されます。`+`を使って文字列を結合する方法もありますが、文字列展開の方が高速で、コードもきれいになります。内部的には、Rubyのインタープリタが`#{}`の内容を評価し、結果を元の文字列に埋め込みます。
 
-```Ruby
-x = 10
-y = 20
-sum = "Sum is #{x + y}"
-
-puts sum
-```
-
-このコードを実行すると次のように表示されます：
-
-```
-Sum is 30
-```
-
-## 関連情報
-
-- [Ruby Documentation: String Interpolation](https://ruby-doc.org/core-2.7.0/doc/syntax/literals_rdoc.html#label-Strings)
+## See Also (関連情報)
+- Rubyの公式ドキュメントの文字列展開のセクション: [Ruby String Interpolation](https://docs.ruby-lang.org/en/trunk/syntax/literals_rdoc.html#label-Strings)

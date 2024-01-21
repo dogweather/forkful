@@ -1,6 +1,7 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "Gleam: Завантаження веб-сторінки"
+date:                  2024-01-20T17:44:32.477370-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,37 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це і навіщо?
+## Що і чому?
 
-Завантаження веб-сторінки - це процес отримання інформації з веб-сайту. Програмісти роблять це, щоб аналізувати структуру сайтів, отримувати потрібні дані або створювати резервні копії.
+Завантаження веб-сторінки - це отримання її копії з сервера. Програмісти роблять це, щоб аналізувати контент, виконувати автоматизацію чи просто зберегти дані локально.
 
 ## Як це зробити:
 
-Ось базовий приклад кода для завантаження веб-сторінки в Javascript за допомогою модуля `axios`.
+JavaScript може завантажити веб-сторінку за допомогою API Fetch або бібліотеки, як-от `axios`. Ось простий приклад із Fetch:
 
-```Javascript
-const axios = require('axios');
-
-axios.get('https://example.com')
-  .then((response) => {
-    console.log(response.data);
+```javascript
+fetch('https://some-website.com')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not OK');
+    }
+    return response.text();
   })
-  .catch((error) => {
-    console.log(error);
+  .then(html => {
+    console.log(html);
+  })
+  .catch(err => {
+    console.error('Failed to fetch page: ', err);
   });
 ```
-Вихідний код повинен відображати HTML структуру запитуваної веб-сторінки.
 
-## Поглиблений дискурс:
+Цей код друкує HTML веб-сторінки у консоль.
 
-Історично завантаження веб-сторінок було складним процесом, який вимагав глибоких знань мережевого рівня. З появою Node.js і модулів, таких як `axios`, завантаження стало набагато простішим.
+## Поглиблений розбір:
 
-Альтернативою `axios` може служити модуль `request`. Він також дозволяє завантажувати веб-сторінки, але має інший API.
+У минулому для завантаження веб-сторінок використовували XMLHTTPRequest. Але Fetch API - це більш сучасний і простий спосіб, який забезпечує проміси. Альтернативно, Node.js має свої модулі, такі як `http` і `https` для серверного запиту.
 
-Ці модулі працюють, відправляючи HTTP GET запит до сервера, який розміщує веб-сайт. Сервер повертає відповідь, яку модуль інтерпретує як HTML сторінку.
+Завантаження веб-сторінки інколи називають "скрейпінгом". Це може включати аналіз HTML і запис даних. Обережно з Термінами Використання сайтів, деякі забороняють скрейпінг.
 
-## Див. також:
+## Дивись також:
 
-- [HTTP - Вікіпедія](https://uk.wikipedia.org/wiki/HTTP)
-- [Axios](https://www.npmjs.com/package/axios)
-- [Request](https://www.npmjs.com/package/request)
+- [MDN Web Docs - Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [Axios on GitHub](https://github.com/axios/axios)
+- [Node.js `http` module documentation](https://nodejs.org/api/http.html)
+
+Ці ресурси допоможуть розширити ваші знання і дадуть більше інструментів для завантаження веб-сторінок.

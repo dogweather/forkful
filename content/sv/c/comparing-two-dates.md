@@ -1,7 +1,8 @@
 ---
-title:                "Jämför två datum"
-html_title:           "Arduino: Jämför två datum"
-simple_title:         "Jämför två datum"
+title:                "Jämföra två datum"
+date:                  2024-01-20T17:32:38.718645-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Jämföra två datum"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -11,47 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-
-Att jämföra två datum handlar om att se vilket datum är tidigare, senare eller om de är samma dag. Programmerare gör detta för att få inblick i händelsernas kronologi, tidsintervall och för att utföra andra datumrelaterade beräkningar.
+Att jämföra två datum handlar om att bestämma deras ordning: är det ena före, efter eller samma dag som det andra? Vi gör detta för att hantera tidsbaserade händelser i program, som utgångsdatum eller schemaläggning.
 
 ## Så här gör du:
-
-Vi kommer att använda `tm` strukturen och `mktime` funktionen för att jämföra datum. Här är en snabb exempelkod:
+C erbjuder inte direkt stöd för datumjämförelse, men `time.h` kan hjälpa. Här är ett enkelt exempel på hur man jämför två datum:
 
 ```C
-#include <time.h>
 #include <stdio.h>
+#include <time.h>
 
 int main() {
-    // Skapa två olika 'struct tm' objekt.
-    struct tm a = { .tm_year=120, .tm_mon=5, .tm_mday=30 };
-    struct tm b = { .tm_year=100, .tm_mon=2, .tm_mday=15 };
+    struct tm date1 = {0, 0, 0, 15, 4, 121}; // 15 maj 2021
+    struct tm date2 = {0, 0, 0, 20, 4, 121}; // 20 maj 2021
 
-    // Jämföra de två datumen.
-    double seconds = difftime(mktime(&a), mktime(&b));
-    
-    if(seconds < 0) {
-        printf("a är tidigare än b");
-    } else if (seconds > 0) {
-        printf("a är senare än b");
+    time_t time1 = mktime(&date1);
+    time_t time2 = mktime(&date2);
+
+    if (difftime(time1, time2) > 0) {
+        printf("Datum 1 är efter Datum 2.\n");
+    } else if (difftime(time1, time2) < 0) {
+        printf("Datum 1 är före Datum 2.\n");
     } else {
-        printf("a och b är samma dag");
+        printf("Datumen är samma.\n");
     }
 
     return 0;
 }
 ```
 
-Om du kör detta program, kommer utdata att vara "a är senare än b".
+Detta ger följande utskrift:
+```
+Datum 1 är före Datum 2.
+```
 
-## Djup Dopp
+## Djupdykning:
+I den tidiga C-eran hade vi inte `time.h`, och jämförelser blev mer komplicerade. Vi skulle hantera varje datumkomponent - år, månad, dag - manuellt. Med `time.h`, dock, omvandlar `mktime` en `struct tm` till ett `time_t`-värde, som representerar sekunder sedan "epoch" (1 januari 1970). `difftime` jämför sedan dessa sekunder.
 
-Att jämföra datum är inte nytt, och olika tillvägagångssätt har använts genom tiden. Den metoden vi visade använder C's inbyggda `tm` struktur och `mktime` funktion, ingår i `<time.h>` biblioteket som varit en del av C standarden sedan C89.
+Alternativen inkluderar databasfunktioner eller tredjepartsbibliotek som `date.h` i C++ för mer komplexa datumoperationer. Implementeringsdetaljer kan bli komplexa; tänk på skottår, tidszoner och kalenderomställningar.
 
-Alternativa metoder kan inkludera att manuellt jämföra år, månader och dagar, men att använda inbyggda funktioner som `mktime` kan ofta ge enklare och mer korrekta resultat, eftersom de tar hänsyn till saker som skottår och olika månadslängder.
-
-## Se Även
-
-För mer information om `tm` struktur och `mktime` funktion, besök dessa länkar:
-- [tm struct on cplusplus.com](http://www.cplusplus.com/reference/ctime/tm/)
-- [mktime function on cplusplus.com](http://www.cplusplus.com/reference/ctime/mktime/)
+## Se också:
+- C Standard Library documentation for `time.h`: https://en.cppreference.com/w/c/chrono
+- Howard Hinnant's Date library (för C++ användare): https://github.com/HowardHinnant/date
+- Stack Overflow, en guldgruva för programmeringsfrågor: https://stackoverflow.com/questions/tagged/c+date

@@ -1,7 +1,8 @@
 ---
-title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
-simple_title:         "Wyszukiwanie i zastępowanie tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+date:                  2024-01-20T17:58:14.774707-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,33 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-```markdown
-## Co i Dlaczego?
-Poszukiwanie i zamiana tekstu to operacje używane do znalezienia i zmiany specyficznych ciągów znaków w pliku czy programie. Programiści robią to, aby szybko aktualizować, korygować lub ulepszać kod.
+## What & Why? (Co i dlaczego?)
+Wyszukiwanie i zamiana tekstu to podstawy manipulacji ciągami. Programiści używają tych technik do edycji danych, automatyzacji poprawek i przetwarzania wprowadzania.
 
-## Jak to zrobić?
-W Lua możemy użyć funkcji `string.gsub` do wyszukiwania i zastępowania tekstu. Oto przykład:
-
+## How to: (Jak to zrobić:)
 ```Lua
--- Przykład funkcji string.gsub
-local str = "Witaj, świecie!"
-local find = "świecie"
-local replace = "Lua"
+local text = "Hello, world!"
+local toFind = "world"
+local toReplace = "Lua"
 
-local result = string.gsub(str, find, replace)
-print(result)
-```
-Wyjście programu to:
-```
-Witaj, Lua!
-```
-W powyższym kodzie, zmienna `find` to ciąg, którego szukamy, a zmienna `replace` to ciąg, którym chcemy go zastąpić. Funkcja `string.gsub` zwraca nowy ciąg z wykonanymi zmianami.
+-- Zwykłe wyszukiwanie tekstu.
+local found = string.find(text, toFind)
+print(found)  -- 8
 
-## Głębsze spojrzenie
-Poszukiwanie i zamiana tekstu mają swoje korzenie w tradycyjnych edytorach tekstu Unix, takich jak ed i vi. W Lua funkcja `gsub` pochodzi od wyrażeń regularnych używanych w tych edytorach. Alternatywą może być użycie funkcji `string.find` i `string.sub` do wykonania tych samych operacji, choć jest to bardziej złożone. Implementacja `string.gsub` w Lua jest efektywna, gdyż używa algorytmu Knutha-Morrisa-Pratta do wyszukiwania podciągów.
+-- Prosta zamiana tekstu.
+local replaced = string.gsub(text, toFind, toReplace)
+print(replaced)  -- Hello, Lua!
 
-## Zobacz także
-Dokumentację języka Lua na temat ciągów znaków znajdziesz [tutaj](https://www.lua.org/manual/5.1/manual.html#5.4).
-Oto [link](https://www.lua.org/pil/20.2.html) do więcej informacji o ciągach w Lua oraz metodach takich jak `gsub`, `find` i `sub`.
+-- Wyszukiwanie wzorców (pattern matching).
+local pattern = "(%w+), (%w+)"
+local new_text = string.gsub(text, pattern, "%2, %1")
+print(new_text)  -- world, Hello!
 ```
-Remember to always use the Polish versions of section headings ("## Co i Dlaczego?", "## Jak to zrobić?", "## Głębsze spojrzenie", "## Zobacz także") in Polish articles.
+
+## Deep Dive (Pogłębione spojrzenie):
+Wyszukiwanie i zamiana tekstu w Lua jest niezwykle wygodne dzięki funkcjom wbudowanym w standardową bibliotekę `string`. Historia języka Lua sięga 1993 roku, gdzie manipulacja tekstem już od początku była kluczowym aspektem. W Lua można używać patternów wzorowanych na regexach (choć nieco ograniczone), które pozwalają na bardziej złożone operacje. Alternatywy takie jak biblioteki zewnętrzne oferują dodatkowe możliwości, ale często standardowe narzędzia są więcej niż wystarczające. Implementacja tych funcji jest wydajna i dobrze zoptymalizowana, ale warto pamiętać o potencjalnym zagrożeniu, jakim jest nadmierne używanie wzorców w dużych ciągach tekstu, co może prowadzić do spadku wydajności.
+
+## See Also (Zobacz również):
+- [String Patterns in Lua](https://www.lua.org/pil/20.2.html) – informacje o wzorcach w Lua.
+- [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/) – oficjalny podręcznik referencyjny Lua.
+- [Lua-users wiki](http://lua-users.org/wiki/StringLibraryTutorial) – samouczek na temat używania biblioteki stringów.

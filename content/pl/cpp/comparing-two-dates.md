@@ -1,6 +1,7 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "C++: Porównywanie dwóch dat"
+date:                  2024-01-20T17:32:39.082920-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "C++"
 category:             "C++"
@@ -10,38 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Porównywanie dwóch dat polega na ustaleniu, która data jest wcześniejsza, późniejsza, lub czy obie są takie same. Programiści robią to, żeby monitorować i sortować wydarzenia chronologicznie w ich aplikacjach.
+## What & Why? (Co i dlaczego?)
+Porównywanie dwóch dat to sprawdzenie, która jest wcześniejsza, czy późniejsza, albo czy są identyczne. Programiści robią to, aby zarządzać terminami, sortować wydarzenia, czy też kontrolować czas trwania operacji.
 
-## Jak to zrobić:
-Poniżej znajdują się przykłady kodowania i próbki wyjściowe:
-
-```C++
+## How to (Jak to zrobić)
+```cpp
 #include <iostream>
-#include <chrono> 
-using namespace std;
-int main () {
-  chrono::system_clock::time_point today = chrono::system_clock::now();
-  chrono::system_clock::time_point past = chrono::system_clock::now() - chrono::hours(24*365);
+#include <chrono>
+#include <iomanip>
 
-  if(today > past)
-    cout << "Today is later than one year ago.";
-  else if(today == past)
-    cout << "Impossible! Time travel?";
-  else
-    cout << "Something went wrong!";
-  
-  return 0;
+int main() {
+    // Ustawiamy dwie daty
+    std::tm date1 = {}; date1.tm_year = 120; date1.tm_mon = 4; date1.tm_mday = 15;
+    std::tm date2 = {}; date2.tm_year = 121; date2.tm_mon = 4; date2.tm_mday = 15;
+
+    // Konwersja na time_t
+    std::time_t time1 = std::mktime(&date1);
+    std::time_t time2 = std::mktime(&date2);
+
+    // Porównywanie
+    if (time1 < time2) {
+        std::cout << "Data1 jest wcześniejsza niż Data2.\n";
+    } else if (time1 > time2) {
+        std::cout << "Data1 jest późniejsza niż Data2.\n";
+    } else {
+        std::cout << "Daty są identyczne.\n";
+    }
+
+    return 0;
 }
 ```
-Gdy uruchomisz ten kod, wyświetli ci się napis "Today is later than one year ago."
+### Przykładowe wyjście:
+```
+Data1 jest wcześniejsza niż Data2.
+```
 
-## Pogłębione zagłębienie:
-Porównywanie dat bywało trudniejsze, zanim wprowadzono bibliotekę chrono w C++11. Wcześniej trzeba było używać czasu strukturalnego i robić dużo ręcznego porównywania. Alternatywnie, można użyć innych bibliotek, takich jak Boost.DateTime.
+## Deep Dive (Głębsze spojrzenie)
+Porównywanie dat w C++ może wykorzystywać wiele podejść. Zanim wprowadzono `<chrono>`, często korzystano z `<ctime>` i własnych funkcji. `<chrono>` daje silne typowanie i większą dokładność; od C++20 oferuje także wsparcie dla stref czasowych i kalendarzy.
 
-Choć biblioteka chrono sprawia, że porównywanie dat jest prostsze, nadal wymaga zrozumienia podstawowych jednostek czasu. Biblioteka traktuje daty jako punkty w czasie i pozwala na porównywanie tych punktów bezpośrednio.
+Alternatywą jest również korzystanie z bibliotek zewnętrznych jak Boost.Date_Time, jeśli wymagane są bardziej zaawansowane operacje.
 
-## Zobacz też:
-1. [Dokumentacja biblioteki chrono](https://en.cppreference.com/w/cpp/chrono) 
-2. [Poradnik porównywania dat w C++ z użyciem biblioteki Boost.DateTime](https://www.boost.org/doc/libs/1_63_0/doc/html/date_time/examples.html#date_time.examples.comp_op_eg)
-3. [Poradnik jak reprezentować daty i godziny w C++](https://howardhinnant.github.io/date_algorithms.html)
+Ważne jest, aby zwrócić uwagę na szczegóły implementacyjne, takie jak różne sposoby przechowywania dat (np. liczba sekund od określonego punktu odniesienia, jak 'epoch'), strefy czasowe czy zmiany czasu (np. czas letni).
+
+## See Also (Zobacz również)
+- Dokumentacja C++20 `<chrono>`: https://en.cppreference.com/w/cpp/chrono
+- Biblioteka Boost.Date_Time: https://www.boost.org/doc/libs/release/libs/date_time/
+- Poradnik do `<ctime>`: https://www.cplusplus.com/reference/ctime/

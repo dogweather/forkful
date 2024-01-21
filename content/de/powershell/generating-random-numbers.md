@@ -1,7 +1,8 @@
 ---
-title:                "Zufallszahlen generieren"
-html_title:           "Arduino: Zufallszahlen generieren"
-simple_title:         "Zufallszahlen generieren"
+title:                "Generierung von Zufallszahlen"
+date:                  2024-01-20T17:49:40.775268-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generierung von Zufallszahlen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Numbers"
@@ -11,32 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Zufallszahlen werden erzeugt, um Unberechenbarkeit in Anwendungen zu erzeugen. Das ist besonders nützlich für Gaming, in Sicherheitsprotokollen und in simulierte Modelle, um eine repräsentative Stichprobe zu erzeugen.
+Das Generieren von Zufallszahlen in PowerShell ermöglicht es Programmen, Daten oder Verhaltensweisen zu variieren. Diese Technik ist essentiell für Tests, Spieleentwicklung oder Sicherheitsfunktionen.
 
-## Wie geht das?
-PowerShell bietet eine einfache Methode, um Zufallszahlen zu erzeugen. Hier ist ein kurzes Beispiel:
-
-```PowerShell
-# Zufallszahl zwischen 0 und 100
-$Random = Get-Random -Minimum 0 -Maximum 100
-Write-Host $Random
-```
-Der Befehl `Get-Random` generiert eine pseudozufällige Zahl. `Write-Host` zeigt die generierte Zahl an.
-
-## Vertiefende Informationen
-Die Methode `Get-Random` von PowerShell nutzt einen pseudozufälligen Zahlengenerator. Es ist wichtig zu wissen, dass diese Zahlen nicht für sicherheitskritische Anwendungen genutzt werden sollten.
-
-Alternativ kann man die Klasse `[System.Random]` nutzen, die Methoden für verschiedene Datentypen bietet. So erzeugt diese z.B. Zufallszahlen in Gleitkommaform:
+## So geht's:
+Erzeugen Sie eine Zufallszahl zwischen 1 und 100:
 
 ```PowerShell
-# Zufallszahl erzeugen mit System.Random
-$Rand = New-Object System.Random
-$Zufallszahl = $Rand.NextDouble()
-Write-Host $Zufallszahl
+$random = Get-Random -Minimum 1 -Maximum 101
+$random
 ```
-Beide Methoden sind auf der Basis des Mersenne-Twisters implementiert, einem allgemein bekannten und häufig genutzten Algorithmus für die Generierung von Zufallszahlen.
 
-## Weiterführende Links
-- Mehr über `Get-Random`: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-random 
-- Mehr über `[System.Random]`: https://docs.microsoft.com/dotnet/api/system.random
-- Geschichte und Details des Mersenne-Twisters: https://en.wikipedia.org/wiki/Mersenne_Twister.
+Beispielausgabe:
+
+```
+42
+```
+
+Eine Liste mit 5 Zufallszahlen erstellen:
+
+```PowerShell
+1..5 | ForEach-Object { Get-Random -Minimum 1 -Maximum 101 }
+```
+
+Beispielausgabe:
+
+```
+17
+58
+43
+2
+99
+```
+
+## Tiefgang
+PowerShell verwendet einen Pseudozufallszahlengenerator (PRNG), der eine Folge von Zahlen erstellt, die nur durch ihren Algorithmus bestimmt werden. Historisch gesehen stützen sich Computerprogramme seit den Anfängen der Programmierung auf PRNGs, oft mit Methoden wie der linearen Kongruenzmethode.
+
+Andere Programmiersprachen bieten unterschiedliche Ansätze: In Python verwendet man `random`, in Java `Random` oder `SecureRandom` für kryptografische Sicherheit. Die Qualität der Zufälligkeit hängt stark vom gewählten Algorithmus und dessen Implementierung ab. In der Regel sind PRNGs gut für viele Anwendungen, für kryptografische Zwecke sollte man jedoch sicherere Methoden nutzen.
+
+PowerShell bietet noch weitere Möglichkeiten für Zufallszahlen. Zum Beispiel kann `Get-Random` auch Elemente zufällig aus einem Array auswählen:
+
+```PowerShell
+$items = 'Apfel', 'Birne', 'Banane'
+Get-Random -InputObject $items
+```
+
+Diese Methode ist nützlich, um zufällige Stichproben aus einer größeren Datenmenge zu ziehen.
+
+## Siehe Auch
+- [Get-Random-Dokumentation auf Microsoft Docs](https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.utility/get-random)
+- [Über Zufallszahlengeneratoren bei RNGCryptoServiceProvider Klasse auf Microsoft Docs](https://docs.microsoft.com/de-de/dotnet/api/system.security.cryptography.rngcryptoserviceprovider)

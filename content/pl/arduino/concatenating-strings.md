@@ -1,7 +1,8 @@
 ---
-title:                "Łączenie ciągów znaków"
-html_title:           "Arduino: Łączenie ciągów znaków"
-simple_title:         "Łączenie ciągów znaków"
+title:                "Łączenie łańcuchów znaków"
+date:                  2024-01-20T17:34:16.557369-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Łączenie łańcuchów znaków"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,30 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to i dlaczego?
-
-Konkatenacja stringów polega na łączeniu dwóch lub więcej ciągów tekstów w jedną całość. Programiści robią to, aby skrócić kod i zwiększyć czytelność.
+## Co i dlaczego?
+Łączenie łańcuchów znaków, czyli konkatenacja, to proces tworzenia jednego łańcucha z dwóch lub więcej istniejących. Programiści robią to, by składać wiadomości, generować dane wyjściowe lub pracować z tekstami w programach.
 
 ## Jak to zrobić:
-
-W Arduino możemy dokonać konkatenacji za pomocą operatora '+'. Poniżej znajduje się przykład:
 ```Arduino
-String firstString = "Arduino";
-String secondString = " Programming";
-String finalString = firstString + secondString;
-Serial.println(finalString);
+String greeting = "Cześć ";
+String name = "Janek";
+String message = greeting + name + "!";
+Serial.begin(9600);
+Serial.println(message); // Wyświetla: Cześć Janek!
 ```
-Po wywołaniu powyższego kodu, otrzymujemy następującą wiadomość:
+
+Alternatywnie, przy użyciu metod dla obiektów String:
 ```Arduino
-"Arduino Programming"
+String greeting = "Cześć ";
+greeting.concat("Janek");
+greeting.concat("!");
+Serial.begin(9600);
+Serial.println(greeting); // Wyświetla: Cześć Janek!
 ```
-## Dogłębna analiza:
 
-Konkatenacja ciągów jest fundamentalnym elementem programowania, istniejącym od dawna. Alternatywą dla używania operatora '+' jest użycie funkcji `concat()` dla bardziej skomplikowanych operacji.
+Jeżeli przetwarzasz dane w pamięci podręcznej, unikaj String gdzie to możliwe:
+```Arduino
+char greeting[] = "Cześć ";
+char name[] = "Janek";
+char message[20];
+strcpy(message, greeting);
+strcat(message, name);
+strcat(message, "!");
+Serial.begin(9600);
+Serial.println(message); // Wyświetla: Cześć Janek!
+```
 
-Pamiętaj jednak, że konkatenacja w Arduino jest złożonym procesem. Arduino nie obsługuje dynamicznej alokacji pamięci, więc dodawanie tekstów komplikuje zarządzanie pamięcią.
+## Deep Dive
+Konkatenacja łańcuchów znaków nie jest czymś nowym – od dziesięcioleci jest fundamentem języków programowania. W przypadku Arduino i innych ograniczonych zasobowo środowisk, ważne jest, by pamiętać o zarządzaniu pamięcią. Używanie typu `String` może prowadzić do fragmentacji pamięci dynamicznej, szczególnie w przypadku wielokrotnego łączenia. Alternatywą może być użycie `char` arrays z funkcjami `strcpy` i `strcat`, które są bardziej przewidywalne pod względem zużycia pamięci.
 
-## Zobacz też:
-
-1. [Arduino String concat()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/)
-3. [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+## Zobacz również
+- [Arduino Reference: String Object](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Arduino Reference: String Concatenation](https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringAdditionOperator)

@@ -1,7 +1,8 @@
 ---
-title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
-simple_title:         "Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma requisição HTTP com autenticação básica"
+date:                  2024-01-20T18:01:20.935594-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Enviando uma requisição HTTP com autenticação básica"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,42 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Enviando uma requisição HTTP com autenticação básica em Clojure
+## O Que & Por Quê?
+Enviar uma requisição HTTP com autenticação básica é o processo de acessar uma URL que exige um nome de usuário e senha para entrar. Programadores fazem isso para interagir com APIs ou serviços web que requerem autenticação para garantir segurança e controle de acesso.
 
-## O que é e Por quê?
-
-Enviar uma requisição HTTP com autenticação básica é um método comum usado para acesso restrito a informações na Web. Programadores frequentemente fazem isto para acessar APIs seguras ou autenticar clientes em servidores.
-
-## Como fazer:
-
-O Clojure tem uma biblioteca chamada `clj-http` que faz requisições HTTP bastante simples. Primeiro, adicione a dependência `clj-http` ao seu projeto.
-
-```Clojure
-[clj-http "3.10.1"]
-```
-
-Aqui está um exemplo básico de como fazer uma requisição HTTP com autenticação:
-
-```Clojure
+## Como Fazer:
+```clojure
 (require '[clj-http.client :as client])
 
-(let [response (client/get "http://exemplo.com" 
-                           {:basic-auth ["usuario" "senha"]})]
-  (println (:status response))
-  (println (:body response)))
+(defn fetch-protected-resource [url username password]
+  (let [credentials (str username ":" password)
+        encoded-credentials (clojure.data.codec.base64/encode (.getBytes credentials))]
+    (client/get url {:headers {"Authorization" (str "Basic " encoded-credentials)}})))
+
+;; Exemplo de uso:
+(println (fetch-protected-resource "https://api.exemplo.com/dados" "seu-usuario" "sua-senha"))
 ```
+A função `fetch-protected-resource` recebe uma URL, um nome de usuário e uma senha, constrói o cabeçalho de autorização necessário e faz a requisição HTTP GET usando `clj-http.client`.
 
-O código acima primeiro requer o modulo `clj-http.client`, então faz uma requisição GET para "http://exemplo.com" com um nome de usuário e senha fornecidos.
+## Mergulho Profundo:
+A autenticação básica HTTP é um mecanismo antigo e simples, parte do HTTP desde o HTTP/1.0. Envolve codificar o nome de usuário e a senha em Base64 e passá-los no cabeçalho da requisição. Apesar de fácil, não é a forma mais segura, já que as credenciais podem ser facilmente decodificadas se interceptadas. Por isso, deve ser usada apenas com HTTPS, que adiciona uma camada de criptografia.
 
-## Mergulho Profundo
+Alternativas mais seguras incluem tokens de autenticação, como OAuth, que oferecem uma maneira mais robusta de controlar acessos sem expor diretamente as credenciais do usuário.
 
-Embora o método de autenticação básica seja bastante antigo (introduzido em 1996), continua sendo uma maneira eficaz e simples de fornecer autenticação stateless sobre HTTP. Tem suas desvantagens, como a transmissão de senhas em basicamente texto puro (base64 não é criptografia), mas juntamente com SSL/TLS, ainda é bastante seguro.
+Quando implementar a autenticação básica em Clojure, a biblioteca `clj-http` é uma escolha comum. Ela abstrai muitos dos detalhes baixo-nível de fazer requisições HTTP e permite que você foque na lógica do seu programa. A codificação Base64 das credenciais pode ser feita usando a biblioteca `clojure.data.codec`.
 
-Existem alternativas mais seguras, como a autenticação digest, mas a simplicidade da autenticação básica geralmente supera suas deficiências, especialmente quando usada com HTTPS.
-
-Por baixo do capô, `clj-http` está usando Java's `HttpURLConnection` ou apache's `HttpClient` para fazer as requisições sob o capô.
-
-## Veja Também
-
-- Documentação clj-http: [https://github.com/dakrone/clj-http](https://github.com/dakrone/clj-http)
-- Basics of HTTP Authentication: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+## Veja Também:
+- Documentação da clj-http: [https://github.com/dakrone/clj-http](https://github.com/dakrone/clj-http)
+- OAuth 2.0: [https://oauth.net/2/](https://oauth.net/2/)

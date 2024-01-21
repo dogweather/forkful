@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http"
-html_title:           "Bash: שליחת בקשת http"
-simple_title:         "שליחת בקשת http"
+title:                "שליחת בקשת HTTP"
+date:                  2024-01-20T17:59:54.851151-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,28 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-שליחת בקשת HTTP היא התנהלות מרכזית בעבודת המפתחים של היום, מאפשרת תקשורת ביננו לבין השרת. מתכנתים בוצעים שליחת בקשת HTTP כדי לקבל מידע, לעדכן, למחוק או ליצור משאבים בשרת.
+## What & Why?
+מה זה שליחת בקשת HTTP, ולמה זה חשוב? בקשת HTTP זה סתם דרך לשוחח עם שרתי אינטרנט. אנחנו עושים את זה כדי לקבל מידע, לשלוח נתונים, לעדכן דברים - בקיצור, לאינטרקט עם אפליקציות ובאתרים.
 
-## איך עושים?
-כאן יש דוגמה לאיך משלחים בקשת HTTP מתוך סקריפט Fish Shell:
+## How to:
+להלן דוגמאות קוד לשליחת בקשת HTTP דרך ה-Fish Shell. תזכרו, צריך להתקין בתור התחלה כלי ששולח בקשות, כמו `curl` או `httpie`.
 
 ```fish
+# שליחת בקשת GET באמצעות curl
+curl http://example.com
 
-set url 'http://mockbin.org/bin/9b9a2279-1e6f-4df3-875c-d9b0bc1a5378/view'
-set headers 'Content-Type' 'application/json'
-set body '{"key":"value"}'
+# שליחת בקשת POST עם נתונים
+curl -d "param1=value1&param2=value2" -X POST http://example.com/resource
 
-curl $url -X POST -H $headers -d $body
+# שימוש ב-httpie לבקשת GET
+http http://example.com
+
+# שליחת נתונים ב JSON באמצעות POST ו-httpie
+http POST http://example.com/resource param1=value1 param2=value2
 ```
-זה יציג לך את התוצאה שהוחזרה מהשרת.
 
-## בהקשר הרחב
-Fish Shell הוא שפת תסריטים מחשב מודרנית שמשלבת את היכולת לשלוח בקשות HTTP בצורה פשוטה ויעילה. חלופה לשליחת בקשות HTTP לפי Fish Shell היא באמצעות שפות תכנות אחרות כמו Python או Javascript. ברמת המימוש, בשימוש הפקודה 'curl' שהיא כלי שפועל בשורת הפקודה של מערכות ההפעלה וביצוע בקשת HTTP.
+## Deep Dive:
+פעם, בראשית האינטרנט, התקשורת הייתה פשוטה יותר. עם צמיחת הרשת, נולד הפרוטוקול HTTP. היום, זהו למעשה הסטנדרט שבו מתקשרים עם שרתי אינטרנט. חלק מהאלטרנטיבות לשליחת בקשות בליינים הפקודה כוללות ביבליות של שפות תכנות, כמו requests ב-Python או http ב-Node.js, אבל לעיתים קטנות זה יותר נוח לעשות זאת ישירות מהשורה פקודה. ב-Fish Shell, זה כולל להתקין ולהשתמש בכלים חיצוניים כמו `curl` ו-httpie`, כי השל shell לא כולל באופן ברירת מחדל פונקציונליות לשליחת בקשות HTTP`.
 
-## ראו גם
-עיין במקורות הבאים למידע מורחב לגבי שליחת בקשות HTTP באמצעות Fish Shell:
-
-- דף הבית של Fish Shell: https://fishshell.com
-- עזרה בנושא 'curl': https://curl.haxx.se/
-- מדריך לשפת תכנות Fish Shell: https://fishshell.com/docs/current/index.html
+## See Also:
+- הדוקומנטציה של `curl`: https://curl.haxx.se/docs/manpage.html
+- מדריך ל-httpie: https://httpie.io/docs#http-command
+- מידע נוסף על פרוטוקול HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP

@@ -1,6 +1,7 @@
 ---
 title:                "Пошук та заміна тексту"
-html_title:           "C++: Пошук та заміна тексту"
+date:                  2024-01-20T17:57:39.342171-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Пошук та заміна тексту"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,35 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і Чому?
+## Що і Навіщо?
+Пошук та заміна тексту - це замінення одного набору символів іншим у рядку. Програмісти використовують це для виправлення помилок, оновлення даних та рефакторингу коду.
 
-Пошук та заміна тексту - це процес, який допомагає програмістам знаходити специфічні фрагменти тексту та міняти їх на щось інше. Такий механізм полегшує модифікацію великого обсягу даних.
-
-## Як це робити:
-
-Подивимося на приклад із використанням Elm:
-
+## Як це зробити:
 ```Elm
-import String
+module Main exposing (..)
 
-replaceExample : String
-replaceExample =
+import Browser
+import Html exposing (text)
+import Regex exposing (..)
+
+main =
     let
-        originalText = "Привіт, Світе!"
+        originalText = "Hello, Elm!"
+        searchPattern = regex "Elm"
+        replacementText = "World"
+        newText = replace All searchPattern (\_ -> replacementText) originalText
     in
-    String.replace "Світе" "Україно" originalText
+    Html.beginnerProgram { model = newText, view = view, update = update }
 
--- Output: "Привіт, Україно!"
+view model =
+    text model
+
+update msg model =
+    model
+
+-- Вивід буде: "Hello, World!"
 ```
 
-У цьому прикладі ми замінюємо слово "Світе" на "Україно" в рядку "Привіт, Світе!".
-
 ## Поглиблений Розділ:
-
-- Пошук та заміна тексту в Elm використовують функцію `String.replace`, яка була частиною мови від її ранніх версій.
-- Альтернативою може слугувати використання функції `String.slice` для розбиття та заміни частин тексту. Проте, це може бути менш ефективним для великих обсягів даних.
-- Механізм пошуку та заміни в Elm працює на базі алгоритму Кнута-Морріса-Пратта, який шукає підрядки в тексті.
+Пошук і заміна тексту в Elm здійснюється через модуль `Regex`. Його інтерфейс схожий на регулярні вирази в більшості мов програмування, але з Elm-специфічним API. В історичному контексті, робота з регулярними виразами була і є основою обробки текстів у програмуванні, починаючи з UNIX утиліти `sed`. Альтернативи в Elm, наприклад, включають функції для роботи зі списками та рядками без регулярних виразів, але вони менш гнучкі. Деталі реалізації включають різні режими підстановки (наприклад, `All` для заміни всіх входжень) та callback функції для динамічної заміни.
 
 ## Дивіться Також:
-
-- [Офіційна документація Elm по String.replace](https://package.elm-lang.org/packages/elm/core/latest/String#replace)
+- Офіційна документація по Elm: [Official Elm Guide](https://guide.elm-lang.org/)
+- Документація модуля `Regex` в Elm: [Elm Regex Documentation](https://package.elm-lang.org/packages/elm/regex/latest/)
+- Інтерактивний пісочниця для тестування регулярних виразів: [Regex101](https://regex101.com/)

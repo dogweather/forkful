@@ -1,7 +1,8 @@
 ---
-title:                "Надсилання http-запиту"
-html_title:           "Arduino: Надсилання http-запиту"
-simple_title:         "Надсилання http-запиту"
+title:                "Надсилання HTTP-запиту"
+date:                  2024-01-20T17:59:17.929815-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,45 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та Навіщо?
-Надсилання HTTP-запиту - це процес взаємодії програми з веб-сервером для отримання або відправлення даних через протокол HTTP. Програмісти роблять це для взаємодії з API, структурованої взаємодії з веб-сторінками, або для отримання даних з веб-ресурсів.
+## What & Why? / Що і Чому?
+Відправка HTTP запиту - це спосіб обміну даними між вашим додатком C++ та сервером в інтернеті. Програмісти роблять це для отримання, відправлення чи зміни інформації віддалено.
 
-## Як зробити:
-Використовуючи бібліотеку cURL в C++. Переконайтесь, що встановили cURL на вашу систему і підключили його до свого проекту.
-
+## How to: / Як це зробити:
 ```C++
-#include <curl/curl.h>
+#include <iostream>
+#include <cpprest/http_client.h>
+#include <cpprest/filestream.h>
 
 int main() {
-  CURL *curl;
-  CURLcode res;
-  
-  curl_global_init(CURL_GLOBAL_DEFAULT);
-  curl = curl_easy_init();
+    auto fileStream = std::make_shared<concurrency::streams::ostream>();
 
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
- 
-    res = curl_easy_perform(curl);
-    
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
- 
-    curl_easy_cleanup(curl);
-  }
-  
-  curl_global_cleanup();
-  
-  return 0;
+    // Відкрийте потік для запису у файл
+    concurrency::streams::fstream::open_ostream(U("result.html")).then(
+        [fileStream](concurrency::streams::ostream outFile) {
+            *fileStream = outFile;
+
+            // Створіть HTTP-клієнта
+            web::http::client::http_client client(U("http://example.com"));
+
+            // Відправте запит GET
+            return client.request(web::http::methods::GET);
+        }
+    ).then([fileStream](web::http::http_response response) {
+        // Направте відповідь у потік файлу
+        return response.body().read_to_end(fileStream->streambuf());
+    }).then([fileStream](size_t) {
+        return fileStream->close();
+    }).wait();
+
+    std::cout << "HTTP request sent. Check 'result.html' for response." << std::endl;
+
+    return 0;
 }
 ```
-Цей код відправляє GET HTTP-запит до example.com.
 
-## Поглиблений матеріал:
-Надсилання HTTP-запитів з'явилося майже одночасно з виникненням всесвітньої мережі. Раніше було не так багато альтернатив, але зараз, крім cURL, є багато інших бібліотек, таких як Boost.Asio, POCO і Qt Network. Велика частина цих бібліотек задіяна в асинхронному вводі/виводі і наданні більш високого рівня абстракції.
+Sample output:
+```
+HTTP request sent. Check 'result.html' for response.
+```
 
-## Дивіться також:
-1. [cURL офіційний сайт](https://curl.haxx.se)
-2. [Boost.Asio](https://www.boost.org/doc/libs/1_65_1/doc/html/boost_asio.html)
-3. [POCO Net](https://pocoproject.org/docs/Poco.Net.html)
-4. [Qt Network](https://doc.qt.io/qt-5/qtnetwork-index.html)
+## Deep Dive / Заглиблення:
+Sending an HTTP request in C++ usually involves leveraging libraries because the standard C++ library doesn't provide this functionality directly. Historically, programmers often used libcurl, but C++ now has the `cpprestsdk` (formerly known as Casablanca) which simplifies these tasks. Alternatives to `cpprestsdk` include Boost.Beast or POCO libraries. When implementing an HTTP request, consider the type (GET, POST, etc.), error handling, resource cleanup, and platform-specific behavior.
+
+## See Also / Дивіться також:
+- [cpprestsdk GitHub](https://github.com/Microsoft/cpprestsdk)
+- [libcurl](https://curl.se/libcurl/)
+- [Boost.Beast](https://www.boost.org/doc/libs/release/libs/beast/)
+- [POCO Libraries](https://pocoproject.org/)

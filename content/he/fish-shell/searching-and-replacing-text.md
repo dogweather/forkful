@@ -1,6 +1,7 @@
 ---
 title:                "חיפוש והחלפת טקסט"
-html_title:           "Elm: חיפוש והחלפת טקסט"
+date:                  2024-01-20T17:58:19.777377-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חיפוש והחלפת טקסט"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,20 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-חיפוש והחלפת טקסט הם פעולות בסיסיות שמתכנתים עושים בשפות תכנות שונות. הם משמשים ביישום משובח של שינויים בנתונים, לחסוך זמן ולמזער את הסיכוי לשגיאות.
+חיפוש והחלפת טקסט הם פעולות שבהן אנו מחפשים מחרוזת מסוימת בקוד ומחליפים אותה באחרת. תכניתנים עושים זאת כדי לתקן שגיאות, לעדכן קוד או לשפר אוטומציה.
 
-## איך ל:
-אפשר לחפש ולהחליף ב-Fish Shell כך:
+## איך לעשות:
+ב-Fish Shell, שימוש ב-sed או בפקודות regex קל ויעיל. ניהול פשוט של חיפוש והחלפה ייראה כך:
 
 ```Fish Shell
-echo 'שלום, עולם!' | string replace 'עולם' 'דג'
+echo "תוכניתנים אוהבים לקודד" | sed 's/לקודד/לתכנת/'
 ```
-הפלט המנוסח שונית יהיה 'שלום, דג!'.
 
-## צלילה עמוקה
-Fish Shell הוא קדם וחפש בראש זריעה של Bourne Shell, שפת התכנות שממנה נכתבות Unix במקור. חלופות לפקודת 'string replace' משרתת Fish הן פקודות ה-sed או awk של Unix, שהן כמובן אקלכטיות יותר. פרטי המימוש: Fish משתמשת בספריה של C++ כדי לבצע את רוב הפעולות שלה, כולל 'string replace'.
+פלט דוגמא:
+
+```
+תוכניתנים אוהבים לתכנת
+```
+
+להחלפה בתוך קובץ, אתה עשוי לרצות להשתמש ב-`sed -i`:
+
+```Fish Shell
+sed -i 's/חתול/כלב/' סיפור.txt
+```
+
+זה מחליף את כל ההופעות של "חתול" ב"כלב" בקובץ `סיפור.txt`.
+
+## עיון מעמיק
+חיפוש והחלפה הם יסודות בכל שפת תכנות וסביבת עבודה. פעולה זו מקדמת אתימות של תחזוקת קוד ומאפשרת לנהל גרסאות רבות עם פחות טעויות. לעיתים נעשה שימוש בביטויים רגולריים כדי לבצע משימות מורכבות יותר של חיפוש והחלפה, מה שמצריך הבנה של syntax מתקדמת.
+
+הדוגמאות לעיל הם רק חלק מהאפשרויות. בעזרת `grep`, `awk`, ו`perl`, תוכל לבצע חיפוש והחלפה עם יותר אופציות ודיוק.
 
 ## ראה גם
-- [דוקומנטציה לפקודת Fish string replace](https://fishshell.com/docs/current/cmds/string-replace.html)
-- [טוטוריאל חיפוש והחלפה עם sed](https://www.grymoire.com/Unix/Sed.html)
-- [מדריך awk של GNU](https://www.gnu.org/software/gawk/manual/gawk.html)
+- [Documentation for sed](https://www.gnu.org/software/sed/manual/sed.html)
+- [Introduction to grep](https://www.gnu.org/software/grep/manual/grep.html)
+- [Using awk in shell](https://www.gnu.org/software/gawk/manual/gawk.html)
+- [Perl regex documentation](https://perldoc.perl.org/perlre.html)

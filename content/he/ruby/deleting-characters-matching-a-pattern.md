@@ -1,6 +1,7 @@
 ---
 title:                "מחיקת תווים התואמים לתבנית"
-html_title:           "Elixir: מחיקת תווים התואמים לתבנית"
+date:                  2024-01-20T17:43:02.186774-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "מחיקת תווים התואמים לתבנית"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,29 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-מחיקת תווים המתאימים לתבנית היא תרגיל שמטרתו למחוק תווים מסוימים מתוך מחרוזת. בעידן המידע והנתונים, התרגיל הזה הופך להיות בלתי נפסק, כדי לנקות נתונים, לרפורמט מידע או לבצע עיבוד טקסט.
+## What & Why? (מה ולמה?)
+מחיקת תווים התואמים לתבנית במחרוזת היא פעולה שמאפשרת לנקות מידע מלכלוך או פורמט מיותר, כמו תווי טקסט מיוחדים, תווים לא מועילים או מידע שאינו רלוונטי. תכניתנים עושים זאת על מנת לנתח, לעבד ולאמת נתונים באופן אוטומטי ויעיל.
 
-## איך לעשות:
-בשפת התכנות Ruby, ניתן להשתמש בשיטה `.delete`. היא ממחקת כל תו שמתאים לתבנית. נראה כיצד ניתן למחוק את כל האותיות הקטנות מתוך מחרוזת:
-
+## How to: (איך ל:)
 ```ruby
-str = "Hello there, my friend!"
-new_str = str.delete "a-z"
-puts new_str
-# "H, !"
+# הסבר קצר: נשתמש בשיטה gsub למחיקת תווים
+str = "שלום! 123 היי 456 מה קורה? 789"
+clean_str = str.gsub(/[0-9]/, '') # מחיקת כל הספרות
+puts clean_str # Output: שלום!  היי  מה קורה? 
+
+# גרסה נוספת בשימוש בשיטה delete
+more_clean_str = str.delete('0-9')
+puts more_clean_str # Output: שלום!  היי  מה קורה? 
 ```
 
-## בעומק:
-על פי בנייתה של Ruby, `.delete` מחזירה עותק של המחרודת, כאשר כל תו המתאים לתבנית מוחק. אם אתם זקוקים לשקול אופציות אחרות, אתם יכולים להשתמש בשיטה `.gsub`, שמאפשרת מחיקת תווים שמתאימים לביטוי רגולרי. אך שימו לב, `.gsub` דורשת יותר משאבים מ-`.delete`, אז תשקלו איפה ומתי להשתמש.
+## Deep Dive (עומק הים):
+ב-Ruby, יש כלים רבים לעבודה עם טקסטים. שיטת `gsub` (Global substitution) נוסדה עם רובי עצמה בעוד ש-'delete' היא פשוטה יותר לשימוש אך פחות גמישה. `gsub` מאפשרת להחליף תווים באמצעות ביטויים רגולריים, כך שאפשר למחוק או להחליף תבניות מורכבות יותר ולא רק תווים ספציפיים. השימוש בביטויים רגולריים נעשה נפוץ עלי בסיס ביטויים רגולריים שנפוצו בסביבות פיתוח אחרות והגיעו גם לרובי. הוספת תווים חדשים וביטויים לשפה מאפשרת לטפל במשימות שונות של ניתוח טקסט בצורה יעילה.
 
-```ruby
-str = "Hello there, my friend!"
-new_str = str.gsub /[a-z]/, ''
-puts new_str
-# "H, !"
-```
-
-## ראה גם:
-- [תיעוד שיטה `.delete`](https://ruby-doc.org/core-2.6.1/String.html#method-i-delete)
-- [תיעוד שיטה `.gsub`](https://ruby-doc.org/core-2.6.1/String.html#method-i-gsub)
+## See Also (ראו גם):
+- [Ruby's gsub method documentation](https://ruby-doc.org/core-2.7.0/String.html#method-i-gsub)
+- [Ruby's delete method documentation](https://ruby-doc.org/core-2.7.0/String.html#method-i-delete)
+- [Regular Expressions in Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)

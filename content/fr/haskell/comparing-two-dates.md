@@ -1,6 +1,7 @@
 ---
 title:                "Comparer deux dates"
-html_title:           "Clojure: Comparer deux dates"
+date:                  2024-01-20T17:33:08.658032-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Comparer deux dates"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,42 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi ?
+## What & Why?
+Comparer deux dates permet de déterminer laquelle est la plus ancienne ou de calculer la durée entre elles. C’est crucial dans les tâches comme l’organisation d’événements, la gestion de réservations ou le suivi de délais.
 
-Comparer deux dates, c'est déterminer si une date est antérieure, postérieure ou identique à une autre. Les programmeurs font cela pour répondre à de nombreuses questions, notamment ordonner des événements ou calculer des durées.
-
-## Comment faire :
-
-En Haskell, nous utilisons le type `UTCTime` du module `Data.Time.Clock` pour manipuler les dates. Voici un exemple de comparaison de deux dates :
+## How to:
+Comparons deux dates en Haskell. On va utiliser `time` qui est une bibliothèque puissante pour manipuler les dates et les heures.
 
 ```Haskell
 import Data.Time
 
+-- Définissons deux dates
+date1 = fromGregorian 2023 3 14  -- 14 mars 2023
+date2 = fromGregorian 2021 6 18  -- 18 juin 2021
+
+-- Comparons les dates
+compareDates :: Day -> Day -> Ordering
+compareDates = compare
+
+-- Testons la fonction
 main :: IO ()
 main = do
-  let date1 = UTCTime (fromGregorian 2021 1 1) 0
-  let date2 = UTCTime (fromGregorian 2022 1 1) 0
-
-  print (date1 > date2)
-  print (date1 <= date2)
+    let result = compareDates date1 date2
+    print result  -- Cela affichera GT parce que date1 est après date2
 ```
 
-Dans ce code, `date1` est plus ancienne que `date2`, alors `(date1 > date2)` sera `False` et `(date1 <= date2)` sera `True`.
+Sortie attendue :
 
-## Plongeons 
+```
+GT
+```
 
-Historiquement, en informatique, des dates ont souvent été comparées en les convertissant en secondes depuis une certaine période (ex: l'Universel Coordonné depuis 1970). Mais cette méthode n'était pas idéale en raison des complications comme les années bissextiles, les fuseaux horaires, etc.
+## Deep Dive
+Comparer deux dates n'est pas nouveau. Dès qu'on a eu des calendriers, on a eu besoin de comparer les dates. En Haskell, `Data.Time` est le choix standard depuis la sortie de la version 1.0 de la bibliothèque en 2006. La fonction `compare` fournit une comparaison générique, mais pour les dates, `Data.Time` offre aussi des fonctions plus spécifiques comme `diffDays` pour obtenir le nombre de jours entre deux dates. Les alternatives incluent l'utilisation de bibliothèques tierces comme `thyme`, mais `time` reste le choix le plus robuste et le plus intégré dans l'écosystème Haskell.
 
-En Haskell, le type `UTCTime` résout ces problèmes. Pour des comparaisons simples, l'opérateur de comparaison (`>`, `<`, `==`, etc.) suffit. Pour les calculs de durée plus complexes, Haskell propose les types `DiffTime` et `NominalDiffTime`.
-
-Des alternatives comme le type `Day` pourraient être utilisées pour des besoins spécifiques, mais elles ne tiennent pas compte de l'heure exacte.
-
-## Voir Aussi :
-
-Pour plus d'informations et des exemples, consultez les liens suivants :
-
-- [Haskell Data.Time](https://hackage.haskell.org/package/time-1.5.0.1/docs/Data-Time.html) : Pour plus d'informations sur le package `time` et ses fonctions.
-
-- [Learn You a Haskell](http://learnyouahaskell.com/) : Pour une introduction générale à Haskell.
-
-- [Real World Haskell](http://book.realworldhaskell.org/) : Pour une vue plus appliquée de Haskell, y compris sur comment manipuler les dates et les heures.
+## See Also
+- Une bonne documentation sur `Data.Time`: http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html
+- Guide sur les types de date et d'heure en Haskell: https://www.stephendiehl.com/posts/haskell_2017.html#data.time
+- Pour comprendre en profondeur la manipulation de date et heure : https://en.wikibooks.org/wiki/Haskell/Understanding_monads/IO

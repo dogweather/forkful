@@ -1,7 +1,8 @@
 ---
-title:                "Calculando una fecha en el futuro o pasado"
-html_title:           "Gleam: Calculando una fecha en el futuro o pasado"
-simple_title:         "Calculando una fecha en el futuro o pasado"
+title:                "Calcular una fecha en el futuro o pasado"
+date:                  2024-01-20T17:31:05.484612-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Calcular una fecha en el futuro o pasado"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,33 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
-Calcular una fecha en el futuro o el pasado es una tarea común en programación. Se utiliza para todo, desde la programación de recordatorios hasta el seguimiento de fechas de vencimiento.
+# Calculando fechas futuras y pasadas en Gleam
 
-## Cómo se hace:
-Aquí te muestro un ejemplo de cómo se puede calcular una fecha futura/pasada con Gleam:
+## ¿Qué y Por Qué?
+Calcular fechas futuras o pasadas significa sumar o restar días, meses o años a una fecha dada. Los programadores lo hacen para manejar eventos programados, suscripciones, recordatorios y todo lo que implique seguimiento de tiempo.
 
-```Gleam
-import gleam/calendar.{Date, Duration}
+## Cómo hacerlo:
+Aquí tienes unos ejemplos de cómo calcularíamos fechas en Gleam. Recuerda que tal vez necesites una librería para manejo de fechas como `gleam_datetime`.
+
+```gleam
+import gleam/datetime.{Date, add_days}
 
 fn main() {
-  let today = Date.today()
-  // Para sumar días futuros
-  let future_date = Date.add_days(today, 5)
-  // Para restar días pasados
-  let past_date = Date.sub_days(today, 5)
-  Io.println(future_date)
-  Io.println(past_date)
+  let today = Date(2023, 4, 12)
+  
+  // Sumando días
+  let tomorrow = add_days(today, 1)
+  io.println(tomorrow) // Salida: Date(2023, 4, 13)
+  
+  // Restando días
+  let yesterday = add_days(today, -1)
+  io.println(yesterday) // Salida: Date(2023, 4, 11)
 }
 ```
-El código anterior imprime la fecha de cinco días en el futuro y cinco días en el pasado a partir del día actual.
 
-## Análisis profundo
-Históricamente, el cálculo de fechas se ha utilizado en diversas aplicaciones para rastrear eventos, recordar fechas importantes y calcular duraciones. En términos de alternativas, muchos lenguajes de programación, incluido Gleam, proporcionan bibliotecas de fechas y horas incorporadas para este propósito.
-En cuanto a los detalles de la implementación, Gleam utiliza la función `add_days` para calcular una fecha en el futuro y la función `sub_days` para calcular una fecha en el pasado.
-
-## Ver también
-* Documentación oficial de Gleam: https://gleam.run/docs/
-* Otra ejemplos de código Gleam: https://gleam.run/examples/
-* The Book of Gleam: https://book.gleam.run/ 
-Por supuesto, la mejor manera de aprender es practicando. Así que atrévete a explorar y ensayar con diferentes funciones de Gleam para manejar y manipular fechas. ¡Buena suerte!
+## Análisis Profundo:
+Antiguamente, las operaciones con fechas se hacían manualmente y eran propensas a errores. Hoy día, lenguajes como Gleam ofrecen bibliotecas que simplifican el proceso. En comparación con otras alternativas (por ejemplo, Elixir o Python), Gleam es menos conocido pero su sistema de tipado estático y su sintaxis similar a Rust pueden ofrecer una experiencia de desarrollo más segura y robusta. Implementar el cálculo de fechas implica considerar años bisiestos y la duración variable de los meses, algo que estas bibliotecas manejan por nosotros.

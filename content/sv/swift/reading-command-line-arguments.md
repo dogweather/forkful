@@ -1,7 +1,8 @@
 ---
-title:                "Läsa kommandoradsargument"
-html_title:           "Bash: Läsa kommandoradsargument"
-simple_title:         "Läsa kommandoradsargument"
+title:                "Läsa in kommandoradsargument"
+date:                  2024-01-20T17:56:50.578773-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Läsa in kommandoradsargument"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -11,43 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Kommandoradsargument är parametrar som skickas till ett program vid start. Programmerare använder dem för att styra programbeteendet utan att ändra koden.
 
-Att läsa kommandoradsargument innebär att hämta de indata som ges till ett program vid dess start från terminalen. Detta är användbart när programmerare vill styra beteendet hos ett program baserat på användarens input.
-
-## Såhär:
-
-Du kan få tillgång till kommandoradsargument i Swift via `CommandLine.arguments`, vilket är en lista av strängar. Här är ett enkelt exempel:
+## Hur man gör:
+För att läsa kommandoradsargument i Swift, använder vi `CommandLine.arguments`. Här är ett litet exempel:
 
 ```Swift
-// main.swift
-for argument in CommandLine.arguments {
-    print("argument: \(argument)")
+print("Antal argument: \(CommandLine.arguments.count)")
+
+for arg in CommandLine.arguments {
+    print(arg)
 }
 ```
 
-Kör programmet med några argument:
-
-```terminal
-$ swift run programmet argument1 argument2 
+Kör programmet så här i terminalen:
+```bash
+swift myprogram.swift arg1 arg2 arg3
 ```
 
-Och här är möjlig output:
-
-```terminal
-argument: .build/debug/programmet
-argument: argument1
-argument: argument2
+Förväntad output:
+```
+Antal argument: 4
+myprogram.swift
+arg1
+arg2
+arg3
 ```
 
-## Djupdykning
+Observera att det första argumentet alltid är programmets sökväg.
 
-Historiskt sett har kommandoradsargument varit ett effektivt sätt för operativsystemet att skicka parametrar till program. Swift har gjort detta mycket enklare med `CommandLine.arguments`.
-
-Men det finns alternativ. Du kan använda bibliotek som `Swift Argument Parser` om du vill ha mer avancerad funktionalitet. 
-
-Vad gäller implementationen lagrar Swift alla dessa argument i en array som vi kan iterera igenom. Notera att den första strängen kommer alltid vara programmets sökväg.
+## Fördjupning
+Kommandoradsargument är en gammal tradition i programmering. De tillåter snabb interaktion med script och program, vilket är vanligt i Unix-liknande system. Alternativ till kommandoradsargument inkluderar konfigurationsfiler eller interaktiv inmatning under körning. I Swift sparas argumenten i en array - `CommandLine.arguments` - som är enkelt att iterera över. Det finns bibliotek som argparse i Python eller Rust's clap om du behöver mer avancerad funktionalitet för att hantera kommandoradsargument, men för många Swift-applikationer räcker grundfunktionaliteten.
 
 ## Se även
-
-- [Swift Argument Parser](https://github.com/apple/swift-argument-parser): Ett kraftfullt, Swift-nativt bibliotek för kommandoradsparsering.
-- [Swift Documentation](https://swift.org/documentation/): Apples officiella Swift-dokumentation.
+- [Swift Command Line Tool Tutorial](https://www.raywenderlich.com/511-command-line-programs-on-macos-tutorial) - En guide för att skapa kommandoradsprogram i Swift.
+- [Apple's Swift Documentation](https://developer.apple.com/documentation/swift) - Apples egna dokumentation av Swift, där `CommandLine` är en del av standardbiblioteket.
+- [Swift ArgumentParser](https://github.com/apple/swift-argument-parser) - Ett Swift-bibliotek för att tolka kommandoradsargument, skapat av Apple.

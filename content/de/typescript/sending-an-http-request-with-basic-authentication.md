@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
+date:                  2024-01-20T18:02:49.610504-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,46 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# HTTP-Anfragen mit Basic-Authentifizierung in TypeScript
-
 ## Was & Warum?
+HTTP-Anfragen mit Basisauthentifizierung schicken Nutzername und Passwort codiert im Header, um Zugriff auf geschützte Ressourcen zu erhalten. Programmierer nutzen das für einfache Authentifizierungsverfahren, wenn schneller Zugriff wichtiger ist als starke Sicherheit.
 
-Eine HTTP-Anfrage mit Basic-Authentifizierung ist eine Methode zur Übertragung von Anmeldeinformationen (Benutzername und Passwort) über das Internet. Programmierer verwenden sie, um sicheren Zugang zu Web-APIs zu ermöglichen.
+## So geht's:
+Verwenden Sie axios oder eine native fetch-Implementierung in TypeScript, um Basisauthentifizierung durchzuführen. Axios-Beispiel:
 
-## Wie geht das?
-
-Installiere zunächst das Axios, eine beliebte Bibliothek zur Durchführung von HTTP-Anfragen.
-
-```TypeScript
-npm install axios
-```
-
-Wir senden dann eine HTTP-GET-Anfrage mit Basic-Authentifizierung.
-
-```TypeScript
+```typescript
 import axios from 'axios';
 
-const config = {
-  auth: {
-    username: 'Benutzername hier einfügen',
-    password: 'Passwort hier einfügen'
-  }
-}
+const url = 'https://meine-api.de/daten';
+const username = 'meinUsername';
+const password = 'meinPasswort';
+const basicAuth = 'Basic ' + Buffer.from(username + ':' + password).toString('base64');
 
-axios.get('https://meine-api.de', config)
-  .then(response => console.log(response.data))
-  .catch(error => console.error(error));
+axios.get(url, {
+  headers: {
+    'Authorization': basicAuth
+  }
+})
+.then(response => {
+  console.log(response.data); // Erfolgreiche Antwort hier handhaben
+})
+.catch(error => {
+  console.error('Authentifizierungsfehler:', error); // Fehlerbehandlung
+});
 ```
 
-## Tiefentauchgang
+Verwendung mit `fetch`:
 
-Die Basic-Authentifizierung wurde von den frühen Standards des World Wide Web übernommen. Sie ist zwar einfach zu implementieren, bietet jedoch keine starke Sicherheit. Daher sollte sie über HTTPS und nicht über HTTP verwendet werden, um die Anmeldeinformationen zu verschlüsseln.
+```typescript
+const url = 'https://meine-api.de/daten';
+const username = 'meinUsername';
+const password = 'meinPasswort';
+const basicAuth = 'Basic ' + btoa(username + ':' + password);
 
-Alternativen zur Basic-Authentifizierung umfassen OAuth2 und JWT (JSON Web Token), die in Situationen mit höherer Sicherheitsanforderung vorteilhafter sind.
+fetch(url, {
+  method: 'GET',
+  headers: {
+    'Authorization': basicAuth
+  }
+})
+.then(response => response.json())
+.then(data => {
+  console.log(data); // Erfolgreiche Antwort hier handhaben
+})
+.catch(error => {
+  console.error('Authentifizierungsfehler:', error); // Fehlerbehandlung
+});
+```
 
-Die Zwei wichtigsten Teile der Implementierung von HTTP-Anfragen mit Basic-Authentifizierung sind: Erstens, der Parameter `auth` in der Axios-Anforderung, die den Benutzernamen und das Passwort enthält. Zweitens, die URL, auf die die Anfrage gerichtet ist. Diese Teile werden in der HTTP-Anforderung zusammengefügt und an den Server gesendet.
+## Vertiefung
+Basisauthentifizierung ist eine altbewährte Methode, die aufgrund ihrer Einfachheit in vielen alten und einigen modernen Systemen verwendet wird. Heutzutage gibt es sicherere Alternativen, wie OAuth und Tokenbasierte Authentifizierung, die besonders für öffentliche APIs bevorzugt werden. Die Basisauthentifizierung sendet Anmeldedaten in Base64 enkodiert, was nicht als sicher gilt, wenn es nicht über HTTPS erfolgt.
 
-## Siehe auch
-
-* [Axios-Dokumentation (englisch)](https://axios-http.com/docs/intro)
-* [Grundlagen zur Basic-Authentifizierung (englisch)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+## Siehe auch:
+- MDN Web Docs zur Authentifizierung: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- Axios Dokumentation: https://github.com/axios/axios
+- fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API

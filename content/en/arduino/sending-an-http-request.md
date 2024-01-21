@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request"
-html_title:           "Bash recipe: Sending an http request"
+date:                  2024-01-20T17:59:18.773359-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -12,51 +13,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Sending an HTTP request is a fundamental part of web communication, essentially it's how a device 'talks' to another device over the internet. Programmers do it to fetch or submit data from/to a server, enabling abilities like reading sensor data online or controlling appliances remotely using IoT.
+Sending an HTTP request is the way your Arduino talks to the web, like asking a server to send back some data. Programmers do it to let their Arduino interact with APIs, fetch web content, or communicate with other internet-based services.
 
 ## How to:
 
-Let's dive into how we do this using the Arduino HTTP Client library. Here's a simple code to send a GET request. Make sure your Arduino is connected to the internet.
+Working with the Arduino requires the `WiFiNINA` library for network features. Here's how to send a simple GET request:
 
 ```Arduino
-#include <HttpClient.h>
-#include <ArduinoHttpClient.h>
+#include <WiFiNINA.h>
 
-EthernetClient ethernet;
-HttpClient client = HttpClient(ethernet, server, port);
+char ssid[] = "yourNetworkName";       // your network SSID (name)
+char pass[] = "yourNetworkPass";       // your network password
+int status = WL_IDLE_STATUS;           // the WiFi radio's status
+char server[] = "example.com";         // server you want to connect to
+
+WiFiClient client;
 
 void setup() {
-   Ethernet.begin(mac, ip);  
-   Serial.begin(9600);
+  Serial.begin(9600);                  // start serial for debugging
+  WiFi.begin(ssid, pass);              // start the WiFi connection
+  while (status != WL_CONNECTED) {     // wait for the connection:
+    status = WiFi.status();
+    delay(1000);
+  }
+  Serial.print("Connected to ");
+  Serial.println(ssid);
 }
 
 void loop() {
-   Serial.println("Making GET request");
-   client.get("/api"); 
+  if (client.connect(server, 80)) {    // if you get a connection, send the request:
+    client.println("GET / HTTP/1.1");
+    client.println("Host: example.com");
+    client.println("Connection: close");
+    client.println();                   // end of the request
+  } else {
+    Serial.println("Connection failed"); // if you didn't get a connection to the server:
+  }
 
-   int statusCode = client.responseStatusCode(); 
-   String response = client.responseBody();
-   Serial.print("Status code: ");
-   Serial.println(statusCode);
-   Serial.print("Response: ");
-   Serial.println(response);
+  while (client.connected()) {         // while you're connected, read the data:
+    if (client.available()) {
+      char c = client.read();
+      Serial.print(c);
+    }
+  }
+
+  if (!client.connected()) {           // if the server's disconnected, stop the client:
+    client.stop();
+  }
+
+  delay(10000);                        // wait ten seconds before trying again
 }
 ```
 
-When you upload and run, you should see the HTTP status code and response printed in the Serial Monitor.
+Sample Output:
+```
+HTTP/1.1 200 OK
+Date: Mon, 23 Jan 2023 12:36:47 GMT
+Server: Apache/2.4.1 (Unix)
+...
+```
 
 ## Deep Dive
 
-Sending HTTP requests dates back to early days of the web. It paved the way for web interactivity, reshaping how we use the internet. 
+The concept of sending an HTTP request from a microcontroller wasn't always a thing. In the past, microcontrollers were more about sensors and physical world interaction. But with the advent of the IoT (Internet of Things), these devices started to need web connectivity. The Arduino can now use libraries like `WiFiNINA` to handle these connections robustly.
 
-Alternatives include UDP if speed is important and TCP for reliable transmission, both are less suited than HTTP for web communication but have use cases.
+Alternatives to `WiFiNINA` exist depending on your hardware. For instance, the `Ethernet` library leverages wired connections, while `WiFi101` works with older WiFi shields.
 
-When working with the Arduino HttpClient, understand that it's light-weight, suitable for microcontroller with limited resources. Under the hood, it opens a socket to the server, sends HTTP headers, and reads the response.
+On the implementation side, making an HTTP request seems simple, but the handshake, headers, and HTTP methods (GET, POST, etc.) are part of a strict protocol that allows devices to communicate over the web. The Arduino abstracts much of this complexity, but understanding the basics helps troubleshoot when things don't go smoothly.
 
 ## See Also
 
-For further reading and examples, check these links:
-
-- Arduino HttpClient Library Docs: https://www.arduino.cc/en/Reference/ArduinoHttpClient
-- Guide on HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP
-- More on IoT: https://en.wikipedia.org/wiki/Internet_of_things
+- Arduino `WiFiNINA` library docs: https://www.arduino.cc/en/Reference/WiFiNINA
+- HTTP protocol primer: https://developer.mozilla.org/en-US/docs/Web/HTTP
+- Arduino project hub for web-connected projects: https://create.arduino.cc/projecthub

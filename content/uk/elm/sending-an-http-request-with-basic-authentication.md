@@ -1,7 +1,8 @@
 ---
-title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
-html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
-simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+date:                  2024-01-20T18:01:42.164782-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,56 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та чому?
-Надсилання HTTP-запиту із базовою аутентифікацією - це метод, що дозволяє забезпечити доступ до захищених ресурсів в мережі. Програмісти використовують цей метод, щоб забезпечити безпеку даних користувачів і їх конфіденційність.
+## What & Why? (Що та Чому?)
+HTTP запит з базовою аутентифікацією - це спосіб використання логіна і пароля для доступу до ресурсів сервера. Програмісти роблять це для захисту важливих даних та контролю доступу до API.
 
-## Як це зробити?
-У Elm (остання версія) для надсилання HTTP-запиту з базовою аутентифікацією вам буде потрібна бібліотека `elm/http`. 
-
+## How to: (Як це зробити:)
 ```Elm
 import Http
-import Base64
+import Base64 exposing (encode)
 
-basicAuth : String -> String -> Http.Header
-basicAuth username password =
-  let
-    credentials =
-      Base64.encode (username ++ ":" ++ password)
-  in
-  Http.header "Authorization" ("Basic " ++ credentials)
+type alias Model =
+    { username : String
+    , password : String
+    }
 
-myRequest : Http.Request String
-myRequest = 
-  Http.request 
-  { method = "GET"
-  , headers = [ basicAuth "my_username" "my_password" ]
-  , url = "https://my-api-url.com"
-  , body = Http.emptyBody
-  , expect = Http.expectString identity
-  , timeout = Nothing
-  , tracker = Nothing 
-  }   
+model : Model
+model =
+    { username = "user"
+    , password = "pass"
+    }
+
+type Msg
+    = GotData (Result Http.Error String)
+
+basicAuthHeader : Model -> Http.Header
+basicAuthHeader creds =
+    let
+        encodedCredentials =
+            encode (creds.username ++ ":" ++ creds.password)
+    in
+    Http.header "Authorization" ("Basic " ++ encodedCredentials)
+
+requestData : Model -> Cmd Msg
+requestData creds =
+    Http.get
+        { url = "https://your.api/endpoint"
+        , headers = [ basicAuthHeader creds ]
+        }
+        |> Http.expectString GotData
 ```
-Вивід:
-```Elm
-{
-  method = "GET",
-  headers = [Authorization: "Basic bXlfdXNlcm5hbWU6bXlfcGFzc3dvcmQ="],
-  url = "https://my-api-url.com",
-  body = "",
-  expect = identity,
-  timeout = Nothing,
-  tracker = Nothing
-}
-```
-## Поглиблений розбір
-Базова аутентифікація була однією з перших форм аутентифікації у вебі, але з часом була замінена безпечнішими методами, такими як OAuth.
 
-Альтернатива базовій аутентифікації - це «маркери доступу», які зазвичай використовуються з OAuth. Вони дають більше контролю над тим, хто має доступ до яких ресурсів і на скільки довго.
+Цей код ініціалізує запит HttpMethod.Get з базовими аутентифікаційними даними. Якщо сервер підтверджує ці дані, він повертає відповідний вміст.
 
-Що стосується деталей реалізації, то Elm відправляє HTTP-запит із заголовком "Authorization", що містить закодовані в Base64 об'єднані ім'я користувача та пароль, передує "Basic".
+## Deep Dive (Поглиблений Аналіз):
+HTTP базова аутентифікація - історично одна з перших метод поданий у 1996 (RFC 1945) для захисту веб-ресурсів. Сьогодні існують безпечніші методи, наприклад OAuth 2.0 чи JWT, але базова аутентифікація ефективна для простих API або закритих систем. Elm використовує модуль `Http` для створення запитів і встановлення заголовків, таких як `Authorization`. Безпечно передавайте і зберігайте аутентифікаційні дані.
 
-## Дивіться також
-- [Elm Http бібліотека](https://package.elm-lang.org/packages/elm/http/latest/)
-- [Модуль Base64 Elm](https://package.elm-lang.org/packages/truqu/elm-base64/latest)
-- [Протокол аутентифікації HTTP (MDN Web Docs)](https://developer.mozilla.org/uk/docs/Web/HTTP/Authentication)
+## See Also (Дивіться Також):
+- Elm HTTP package: [http://package.elm-lang.org/packages/elm/http/latest](http://package.elm-lang.org/packages/elm/http/latest)
+- HTTP Authentication: Basic and Digest Access Authentication: [https://tools.ietf.org/html/rfc2617](https://tools.ietf.org/html/rfc2617)
+- Elm Base64 package: [http://package.elm-lang.org/packages/truqu/elm-base64/latest](http://package.elm-lang.org/packages/truqu/elm-base64/latest)

@@ -1,6 +1,7 @@
 ---
 title:                "Buscando y reemplazando texto"
-html_title:           "C: Buscando y reemplazando texto"
+date:                  2024-01-20T17:58:10.026380-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Buscando y reemplazando texto"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,50 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## Qué y Por Qué?
+Buscar y reemplazar texto implica localizar ciertas cadenas de caracteres y sustituirlas por otras diferentes. Los programadores lo hacen constantemente para actualizar código, datos o simplemente corregir errores de forma rápida y eficaz.
 
-La búsqueda y reemplazo de texto es el proceso de encontrar cadenas de texto específicas y sustituirlas por otras. Los programadores lo hacen para modificar o corregir el código, mejorar la eficiencia, o incluso cambiar el comportamiento de los programas.
+## Cómo hacerlo:
+En Haskell, podemos usar la librería `Data.Text` para estas tareas. Aquí hay un ejemplo rápido:
 
-## Cómo se hace:
+```haskell
+import Data.Text (replace)
+import qualified Data.Text.IO as TIO
 
-En Haskell, puedes usar la función `subRegex` del módulo `Text.Regex` para buscar y reemplazar texto. Para utilizarlo, debes importar el módulo así:
-
-```Haskell
-import Text.Regex (subRegex, mkRegex)
+main :: IO ()
+main = do
+    let textoOriginal = "Hola mundo! Hola a todos!"
+    let textoBuscado = "Hola"
+    let reemplazo = "Adiós"
+    let textoModificado = replace textoBuscado reemplazo textoOriginal
+    TIO.putStrLn textoModificado
 ```
 
-Creemos una función que busque todas las instancias de "buscar" y las reemplace con "reemplazar":
-
-```Haskell
-reemplazarTexto :: String -> String -> String -> String
-reemplazarTexto buscar reemplazar texto = 
-    subRegex (mkRegex buscar) texto reemplazar
+Salida esperada:
 ```
-
-Prueba la función con esta línea de código:
-
-```Haskell
-print (reemplazarTexto "gato" "perro" "El gato está en la caja")
+Adiós mundo! Adiós a todos!
 ```
+Este código cambiará todas las instancias de "Hola" por "Adiós".
 
-Obtendrás:
+## Análisis Profundo:
+La capacidad de buscar y reemplazar texto no es algo nuevo; ha sido una herramienta esencial desde los inicios de la informática. En Haskell, uno se beneficia de funciones altamente optimizadas y tipadas para estas tareas, esencialmente diferenciándose de herramientas de scripting como `sed` o `awk` que son usadas más comúnmente en contextos de Bash o directamente en el terminal. Otra alternativa en Haskell sería usar expresiones regulares con la librería `regex-tdfa`, pero para cambios directos y sencillos, `Data.Text.replace` es eficiente y más fácil de entender.
 
-```Haskell
-"El perro está en la caja"
-```
-
-## Más a fondo:
-
-La búsqueda y reemplazo de texto es una técnica que se ha utilizado desde los primeros días de la programación. Sin embargo, no todas las implementaciones son iguales. Algunas buscan y reemplazan texto utilizando algoritmos muy eficientes, mientras que otras, como el módulo `Text.Regex` de Haskell, utilizan expresiones regulares, que son mucho más flexibles y poderosas.
-
-Haskell también ofrece la función `replace` del modulo `Data.Text` como una alternativa a `subRegex`. Esta opción es más rápida, pero menos versátil, ya que no soporta expresiones regulares.
-
-Finalmente, está bueno conocer cómo funciona el reemplazo de texto en Haskell detrás de escena. Primero, se compila la expresión regular en un autómata finito determinista. Luego, se itera sobre el texto de entrada y se genera el texto de salida.
+Haskell favorece inmutabilidad; por eso, cuando "reemplazamos" texto, en realidad estamos creando una nueva cadena de texto con los cambios necesarios en lugar de modificar la original. Esto evita efectos colaterales, haciendo nuestro código más seguro y predecible.
 
 ## Ver También:
-
-Para más información sobre búsqueda y reemplazo de texto en Haskell, consulta los siguientes recursos:
-
-- Regex Basics en Haskell: www.haskell.org/tutorial/regex.html
-- Documentación del módulo Text.Regex: https://hackage.haskell.org/package/regex-compat-0.95.1/docs/Text-Regex.html
-- Documentación del módulo Data.Text: https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html
+- La documentación de Haskell sobre `Data.Text`: [Hackage Data.Text](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)
+- Un tutorial sobre expresiones regulares en Haskell: [Regex Tutorial](https://wiki.haskell.org/Regular_expressions)
+- Más información sobre la programación funcional y la inmutabilidad: [Haskell Wiki](https://wiki.haskell.org/Functional_programming)

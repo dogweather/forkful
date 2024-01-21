@@ -1,7 +1,8 @@
 ---
-title:                "Søking og erstatning av tekst"
-html_title:           "Lua: Søking og erstatning av tekst"
-simple_title:         "Søking og erstatning av tekst"
+title:                "Søking og erstatting av tekst"
+date:                  2024-01-20T17:57:52.464949-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Søking og erstatting av tekst"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,40 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Søk og erstatt tekst i Haskell
-
 ## Hva & Hvorfor?
+Tekstsøking og -erstatning lar oss finne og bytte ut spesifikt innhold i strenger. Programmerere bruker dette for å manipulere data, rette feil eller oppdatere informasjon i filer og applikasjoner.
 
-Å søke og erstatte tekst handler om å finne spesifikke tegn eller sekvenser av tegn (strenger) i en tekst, og erstatte dem med en annen streng. Dette er en viktig operasjon som programmerere ofte må utføre for å manipulere og behandle data.
+## Hvordan:
+I Haskell kan tekst søkes og erstattes ved hjelp av funksjoner fra standardbiblioteket, for eksempel `Data.Text` som håndterer strengdata effektivt. 
+```Haskell
+import Data.Text (replace, pack, unpack)
 
-## Hvordan?
+-- Definerer en enkel erstatningsfunksjon
+searchAndReplace :: String -> String -> String -> String
+searchAndReplace old new = unpack . replace (pack old) (pack new) . pack
 
-La oss se på et eksempel hvordan du kan implementere søk og erstatt funksjonalitet i Haskell:
+-- Eksempelbruk
+main :: IO ()
+main = putStrLn $ searchAndReplace "verden" "Norge" "Hallo, verden!"
 
-```haskell
-import Data.List.Utils
-
-main = do
-    let tekst = "Hei Verden"
-    let erstattetTekst = replace "Verden" "Norge" tekst
-    putStrLn erstattetTekst
+-- Forventet resultat
+-- "Hallo, Norge!"
 ```
-Kjører du dette eksempelprogrammet, vil du se at det printer ut "Hei Norge". Funksjonen `replace` fra `Data.List.Utils` gjør hele jobben for oss.
 
 ## Dypdykk
+Historisk har tekstmanipulasjon vært en kjernefunksjon i programmering. Funksjoner som `sed` i Unix har gjort dette lenge. I Haskell, som er funksjonell, brukes ofte biblioteker som `Data.Text` for effektivitet, siden standard `String` kan være langsom for store datamengder. Et alternativ er `regex-tdfa`-pakken for komplekse søkemønstre. Implementasjonen bruker lazy evaluation, noe som betyr at beregninger blir utsatt til resultatet er nødvendig.
 
-Historisk sett, har søking og erstatting tekst vært en grunnleggende funksjon i tekstbehandling, det være seg i programmeringsspråk, tekstbehandlere, databaser, og selv regulære uttrykk (regex).
-
-Det finnes en rekke alternativer til `Data.List.Utils.replace` i Haskell, som `Data.Text.replace` fra `Data.Text` biblioteket eller `subRegex` fra `Text.Regex` biblioteket for mer komplekse erstatninger.
-
-Implementasjonsdetaljer for `Data.List.Utils.replace` er litt kompliserte. Den bruker en effektiv algoritme basert på lister for å finne og erstatte teksten, og er designet for å være både rask og minneeffektiv.
-
-## Se også
-
-Trenger du mer informasjon, kan du lese følgende:
-
-* [Haskell Documentation: Data.List.Utils.replace](https://hackage.haskell.org/package/MissingH-1.4.3.0/docs/Data-List-Utils.html#v:replace)
-
-* [Tutorial: Text Manipulation in Haskell](http://learnyouahaskell.com/input-and-output#text-processing)
-
-Husk, den beste måten å lære på er å eksperimentere selv. God koding!
+## Se Også
+- [Haskell Documentation for `Data.Text`](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)
+- [Haskell Wiki om Regular expressions](https://wiki.haskell.org/Regular_expressions)
+- [Real World Haskell, kapittel om strenger og filer](http://book.realworldhaskell.org/read/io.html)

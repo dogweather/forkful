@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-html_title:           "Arduino: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+date:                  2024-01-20T17:39:12.372251-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,28 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Muunnetaan merkkijono pieniksi kirjaimiksi, se tarkoittaa, että kaikki merkkijonossa olevat iso kirjaimet muutetaan pieniksi kirjaimiksi. Ohjelmoijat tekevät tämän yleensä, kun he haluavat vertailla tai käsitellä merkkijonoja tapa-herkästi.
+## What & Why? - Mitä ja Miksi?
+Muuttaa merkkijono pieniksi kirjaimiksi. Tehdään johdonmukaisuuden ja vertailun helpottamiseksi.
 
-## Näin se tehdään:
-TypeScriptissä voit käyttää `.toLowerCase()` menetelmää muuttaaksesi merkkijonon pieniksi kirjaimiksi.
+## How to - Kuinka tehdään
 ```TypeScript
-let sana: string = "MOI MAAILMA";
-let pienetKirjaimet: string = sana.toLowerCase();
-console.log(pienetKirjaimet);
-```
-Koodinpätkän tulostus on 
-```
-"moi maailma"
+let greeting: string = "Hei Maailma!";
+let lowerCaseGreeting: string = greeting.toLowerCase();
+console.log(lowerCaseGreeting);  // "hei maailma!"
 ```
 
-## Syvää Sukeltamista
-Merkkijonon muuntaminen pieniksi kirjaimiksi on yleinen toiminto, jota on käytetty ohjelmoinnissa jo pitkään. Sitä käytetään usein tietojen normalisointiin ennen niiden vertailua tai tallennusta. TypeScriptissä `.toLowerCase()` menetelmä periytyy JavaScriptin `String` luokasta.
+## Deep Dive - Sukellus syvemmälle
+JavaScript, ja siten TypeScript, on käyttänyt `.toLowerCase()` metodia pienentääkseen kirjaimet jo vuosien ajan. Tämä on osa standardia ECMAScript-kirjastoa, mikä tarkoittaa että se on pysynyt suhteellisen muuttumattomana.
 
-Vaihtoehtoisesti, voit käyttää `.toLocaleLowerCase()` menetelmää. Se tekee saman asian kuin `.toLowerCase()`, mutta ottaa huomioon käyttäjän paikallisen ympäristön (locale).
+Vaihtoehtoina voidaan käyttää esimerkiksi `.toLocaleLowerCase()`, joka huomioi käyttäjän lokalisoinnit eri kielialueilla. Tämän voi nähdä käytännössä, jos halutaan esimerkiksi muuntaa turkkilainen "İ" oikein pieneksi "i":ksi.
 
-Itse `.toLowerCase()` menetelmän toteutus riippuu selaimesta tai JavaScript-ympäristöstä. Yleensä se käy läpi merkkijonon merkit yksi kerrallaan ja muuttaa jokaisen ison kirjaimen vastaavaksi pieneksi kirjaimeksi.
+Toiminta tapahtuu luomalla uusi merkkijono, missä jokainen alkuperäisen merkkijonon kirjain on muunnettu vastaavaksi pieneksi kirjaimeksi käyttäen Unicode-standardia.
 
-## Katso Myös
-1. JavaScriptin `String` luokan dokumentaatio: [MDN Website](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-2. TypeScriptin virallinen dokumentaio: [TypeScript Official Website](https://www.typescriptlang.org/docs/)
+## See Also - Katso myös
+- MDN Web Docs - String.prototype.toLowerCase(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+- Unicode standard: https://www.unicode.org/standard/standard.html
+- ECMAScript Language Specification: https://tc39.es/ecma262/

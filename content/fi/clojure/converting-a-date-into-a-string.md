@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän muuttaminen merkkijonoksi"
-html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+date:                  2024-01-20T17:36:19.612974-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,57 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+## What & Why?
+Muuttaminen päivämäärästä merkkijonoksi tarkoittaa `java.util.Date` objektin esittämistä luettavassa muodossa. Ohjelmoijat tekevät tämän jakamiseen, tallentamiseen tai näytölle tulostamiseen.
 
-Muunna päivämäärä merkkijonoksi tarkoittaa päivämäärän esittämistä tekstimuodossa. Ohjelmoijat tekevät tämän helpottaakseen päivämäärien käsittelyä ja esittämistä loppukäyttäjille.
+## How to:
+Clojure käyttää Java-kirjastoja päivämäärien käsittelyyn ja formaattiin. Tässä on esimerkki:
 
-## Kuinka:
+```clojure
+(import '(java.text SimpleDateFormat)
+         '(java.util Date))
 
-Clojure käyttää java.time.bibliotekan funktioita päivämäärien muuntamiseen. Seuraava esimerkki näyttää, kuinka muunnat `LocalDate`-objektin merkkijonoksi.
+(defn format-date [date pattern]
+  (let [date-format (SimpleDateFormat. pattern)]
+    (.format date-format date)))
 
-```Clojure 
-(require '[java.time :as jt])
-
-(defn format-date
-  [date]
-  (.format date (jt/DateTimeFormatter/ofPattern "dd.MM.yyyy")))
-
-(format-date (jt/LocalDate/of 2021 12 1))
+(println (format-date (Date.) "dd.MM.yyyy HH:mm:ss"))
+;; Esimerkki tuloste: "21.03.2023 14:56:07"
 ```
 
-Koodin suorittaminen tuottaa seuraavan tulosteen:
+## Deep Dive
+Päivämäärän merkkijonoksi muuttaminen on tärkeää, jotta se voidaan ilmaista ymmärrettävästi ihmisille. Historiallisesti, tämä on ollut osa ohjelmointia Java-kirjastojen ansiosta, jota Clojure suoraan hyödyntää.
 
-```Clojure
-"01.12.2021"
+Vaihtoehtoisesti, Clojure-kirjasto `clj-time` tarjoaa rikkaamman API:n päivämäärille ennen JDK 8:a, mutta nykyisin useimmissa tapauksissa riittää `java.time` -kirjasto, joka tuli osaksi Javaa versiossa 8. Tässä esimerkki `java.time` käyttämisestä:
+
+```clojure
+(import '(java.time LocalDateTime)
+         '(java.time.format DateTimeFormatter))
+
+(defn format-date-java-time [datetime pattern]
+  (let [formatter (DateTimeFormatter/ofPattern pattern)]
+    (.format datetime formatter)))
+
+(println (format-date-java-time (LocalDateTime/now) "dd.MM.yyyy HH:mm:ss"))
+;; Esimerkki tuloste: "21.03.2023 14:59:23"
 ```
 
-## Sukellus syvemmälle:
+Muutos tulee toteen Java metodin `.format` avulla, jolle annetaan formaatti `DateTimeFormatter` tai `SimpleDateFormat` luokasta. Joustavuus formaatin suhteen tarkoittaa, että voit määrittää päivämäärän ulkoasun tarkasti tarpeidesi mukaan.
 
-Historiallisessa yhteydessä päivämäärät ovat aina olleet vaikeasti käsiteltäviä ohjelmoinnissa. Java lanseerasi java.time-bibliotekan JDK 8:ssa vanhempien, monimutkaisten päivämääräkirjastojen korvaamiseksi.
-
-Alternatiivisesti, voit käyttää `format`-funktiota clojure.contrib.str-bibliotekasta seuraavalla tavalla:
-
-```Clojure 
-(require '[clojure.contrib.str :as str])
-
-(defn format-date-alt
-  [date]
-  (str/format "%1$td.%1$tm.%1$tY" date))
-
-(format-date-alt (jt/LocalDate/of 2021 12 1))
-```
-
-Joka tuottaa saman tulosteen:
-
-```Clojure
-"01.12.2021"
-```
-
-Ja suorituskykyä ajatellen, java.time.bibliotekan funktioita suositellaan niiden erinomaisen suorituskyvyllisyyden takia.
-
-## Katso myös:
-
-Vieraile seuraavissa lähteissä saadaksesi lisää apua ja tietoa:
-
-- [Clojure for the Brave and True: Dates and Time](https://www.braveclojure.com/core-functions-in-depth/#Dates_and_Times)
-- [Java SE 8 Date and Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+## See Also
+1. [Clojure Docs](https://clojuredocs.org/)
+2. [Java SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+3. [Java DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+4. [clj-time GitHub](https://github.com/clj-time/clj-time)

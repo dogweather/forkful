@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http"
-html_title:           "Bash: שליחת בקשת http"
-simple_title:         "שליחת בקשת http"
+title:                "שליחת בקשת HTTP"
+date:                  2024-01-20T18:00:20.777171-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,12 +12,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+שליחת בקשת HTTP היא דרך לתקשר עם שרתים באינטרנט - אתה שואל משהו, הם עונים. תכניתנים שולחים בקשות כאלה כדי לקבל נתונים, לשלוח מידע, או לבצע פעולות מרחוק.
 
-שליחת בקשת HTTP היא דרך שבאמצעותה מחשב או אפליקציה "דוברת" עם שרת ברשת. מפתחים משתמשים בכך כדי לגשת למידע, לעבוד עם ממשקים של שירותים אינטרנטיים ולשלוט במערכות מרוחקות.
-
-## איך עושים את זה:
-
-Java 11 מציעה את חבילת `java.net.http` שמאפשרת לנו לקבל מידע מאתר אינטרנט באמצעות בקשת HTTP. הנה דוגמה:
+## איך לעשות:
+ב-Java, שליחת בקשת HTTP היא די פשוטה. חלק מהדוגמאות ישתמשו בממשק `HttpClient`, המבוסס על יכולות שהוצגו ב-Java 11:
 
 ```Java
 import java.net.URI;
@@ -24,32 +23,28 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class Main {
-    public static void main(String[] args) throws Exception {
+public class HttpExample {
+    public static void main(String[] args) {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-              .uri(new URI("http://example.com"))
-              .build();
-
-        HttpResponse<String> response =
-              client.send(request, HttpResponse.BodyHandlers.ofString());
-
-        System.out.println(response.body());
+                .uri(URI.create("https://api.example.com/data"))
+                .build();
+        client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+                .thenApply(HttpResponse::body)
+                .thenAccept(System.out::println)
+                .join();
     }
 }
 ```
 
-זה מראה את תגובת השרת מאתר example.com. 
+אם הכל עובד כמו שצריך, יודפס תוכן הבקשה שקיבלת.
 
-## Deep Dive:
+## עיון מעמיק:
+במשך שנים, שליחת בקשות HTTP ב-Java היתה קשה יותר. תכניתנים נאלצו להשתמש ב-`HttpURLConnection` או ספריות חיצוניות כמו Apache HttpClient. מ-Java 11 והלאה, הממשק `HttpClient` מספק דרך ישירה ומודרנית יותר. הוא כולל תמיכה ב-HTTP/2, שליחת בקשות אסינכרוניות ועוד.
 
-שליחת בקשות HTTP אינה בהכרח דבר חדש - Java 8 כבר הכילה את HttpUrlConnection, אך היישום היה קשה יותר. עם מהדורת Java 11, ביצעה Oracle שדרוג משמעותי בתוספתו של HttpClient.
-
-בנוסף, ישנם שירותים דרישים כמו OkHttp וApache HttpClient שעושים את אותה העבודה, אך ללא דרישה לשדרוג לגרסה החדשה ביותר של Java. 
-
-אפשר לשנות את פרטי הבקשה כדי להתאים לדרישות מסוימות - כולל שינוי של הכותרות, שליחת מידע בגוף הבקשה, וכו'.
+אלטרנטיבות ל-`HttpClient` כוללות ספריות פופולריות כמו OkHttp וRetrofit, שמספקות יכולות נוספות וחוויית משתמש נעימה יותר לאנשים שעובדים הרבה עם REST APIs.
 
 ## ראה גם:
-
-* דוקומנטציה רשמית של [Oracle](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html) 
-* מרכז למידה חינמי ל-[OkHttp](https://square.github.io/okhttp/)
+- [Documentation for the `HttpClient`](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html) - תיעוד רשמי מאורקל.
+- [OkHttp](https://square.github.io/okhttp/) - דף הבית של OkHttp להורדות ותיעוד.
+- [Retrofit](https://square.github.io/retrofit/) - דף הבית של Retrofit להורדות ותיעוד.

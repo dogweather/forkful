@@ -1,7 +1,8 @@
 ---
-title:                "Eine Webseite herunterladen"
-html_title:           "Arduino: Eine Webseite herunterladen"
-simple_title:         "Eine Webseite herunterladen"
+title:                "Webseite herunterladen"
+date:                  2024-01-20T17:43:38.985265-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Webseite herunterladen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,39 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why?
+Das Herunterladen einer Webseite ermöglicht es uns, den Inhalt abzurufen und zu nutzen. Programmierer machen dies, um Daten zu analysieren, zu überwachen, oder um Webinhalte in ihre Anwendungen zu integrieren.
 
-Webseiten herunterladen ist der Prozess des Abrufens von Dateien von einem Server über das Internet. Programmierer tun dies meist, um den Inhalt der Seite für die Analyse oder Offline-Nutzung zu erfassen.
+## How to:
+Clojure macht das Abrufen von Webcontent einfach. Hier ist ein minimalistisches Beispiel mit `clj-http`:
 
-## Wie man:
+```clojure
+(require '[clj-http.client :as client])
 
-Hier ist ein einfacher Clojure-Code, um eine Webseite herunterzuladen:
+(defn download-page [url]
+  (:body (client/get url)))
 
-```Clojure
-(ns demo.webdownload
-  (:require [clojure.java.io :as io]))
+;; Verwendung:
+(println (download-page "https://example.com"))
+```
 
-(defn download-site
-  [site-path]
-  (let [site (io/input-stream site-path)
-        webpage (slurp site)]
-    (prn webpage)))
-
-(download-site "https://www.example.com")
+Output:
 
 ```
-Die Ausgabe wird der Inhalt der aufgerufenen Webseite sein.
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
 
-## Tiefere Einblicke
+## Deep Dive
+Das Herunterladen von Webseiten ist ein Grundkonzept, das seit den frühen Tagen des Internets existiert. Clojure-Anwendungen nutzen oft die `clj-http` Bibliothek, die auf Java's Apache HttpClient basiert. Alternativen dazu sind `http-kit` und `aleph`, die nicht-blockierende IO nutzen. Implementierungsdetails können SSL, Redirect-Handling und Zeitüberschreitungen umfassen, die relevant für robusten Code sind.
 
-Webseiten-Herunterladen hat eine lange Geschichte, die bis zu den Anfängen des WWW zurückreicht. Es gibt verschiedene Alternativen und Methoden, die je nach Kontext, z.B. Ausführungsgeschwindigkeit oder Ressourcenverbrauch, besser sein können. Sie könnten `clj-http.client` für komplexere Anforderungen verwenden, aber die in diesem Artikel vorgestellte Methode ist für einfache Anforderungen ausreichend.
+## See Also
+Hier sind nützliche Links für weitere Informationen:
 
-Die Implementierungsdetails des Webseiten-Download variiert je nach der spezifischen Programmiersprache und der Nutzung. In Clojure verwenden wir häufig `slurp` und `java.io.input-stream` zur Vereinfachung. 
-
-## Mehr zu sehen
-
-- Clojure offizielle Dokumentation: (https://clojure.org)
-- Übersicht über das Herunterladen von Webseiten: (https://en.wikipedia.org/wiki/Web_scraping)
-- clj-http.client Dokumentation:  (https://github.com/dakrone/clj-http)
-
- Bitte beachten Sie, dass Web-Scraping legalen und ethischen Bedenken unterliegt. Informieren Sie sich immer über diese Bedenken, bevor Sie eine Webseite scrapen.
+- [clj-http auf GitHub](https://github.com/dakrone/clj-http)
+- [Clojure-Dokumentation](https://clojure.org/)
+- [http-kit auf GitHub](https://github.com/http-kit/http-kit)
+- [aleph auf GitHub](https://github.com/ztellman/aleph)

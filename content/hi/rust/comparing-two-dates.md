@@ -1,6 +1,7 @@
 ---
 title:                "दो तारीखों की तुलना"
-html_title:           "Elixir: दो तारीखों की तुलना"
+date:                  2024-01-20T17:34:22.054049-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "दो तारीखों की तुलना"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,42 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Rust में दो तारीखों की तुलना (वर्तमान संस्करण)
-इस लेख में हम प्रोग्रामिंग भाषा Rust में दो तारीखों की तुलना के बारे में चर्चा करेंगे।  
+## What & Why? (क्या और क्यों?)
+रस्ट में दो तारीखों की तुलना करना यानी दो DateTime संस्थाएँ के बीच समयान्तर को समझना। प्रोग्रामर्स ऐसा तारीखों के अनुक्रम को जाँचने, समय सीमाएँ तय करने, और समयाधारित आंकड़ों को संसाधित करने के लिए करते हैं।
 
-## क्या और क्यों?
-तारीख की तुलना यानी दो तारीखों को आपस में तुलना करना। प्रोग्रामर्स इसे तब करते हैं जब उन्हें दो घटनाओं के बीच का समय निर्धारित करना होता है। 
-
-## कैसे करें:
-यहाँ दो तारीखों की Rust में तुलना की कोडिंग उदाहरण दिया गया है: 
-
+## How to: (कैसे करें:)
 ```Rust
-use std::cmp::Ordering;
-use chrono::NaiveDate;
+use chrono::{DateTime, Utc};
 
 fn main() {
-    let date1 = NaiveDate::from_ymd(2021, 7, 5);
-    let date2 = NaiveDate::from_ymd(2022, 7, 5);
-
-    match date1.cmp(&date2) {
-        Ordering::Less => println!("तारीख 1 पहले है"),
-        Ordering::Equal => println!("तारीखें बराबर है"),
-        Ordering::Greater => println!("तारीख 2 पहले है"),
+    let start_date: DateTime<Utc> = Utc.ymd(2023, 3, 14).and_hms(4, 30, 0);
+    let end_date: DateTime<Utc> = Utc.ymd(2023, 3, 15).and_hms(17, 45, 0);
+    
+    if start_date < end_date {
+        println!("शुरुआत की तारीख end_date से पहले है।");
+    } else if start_date == end_date {
+        println!("दोनों तारीखें एक समान हैं।");
+    } else {
+        println!("शुरुआत की तारीख end_date के बाद है।");
     }
 }
 ```
-
 आउटपुट:
 ```
-तारीख 1 पहले है
+शुरुआत की तारीख end_date से पहले है।
 ```
 
-## गहरी जानकारी
-1) ऐतिहासिक प्रकरण: कम्प्यूटर प्रोग्रामिंग में तारीखों की तुलना करने की क्षमता सदियों से ही रही है। Rust भाषा ने समय और तारीख की कामकाजी संगठन के लिए `chrono` क्रेट का उपयोग करके इसे और सुगम बनाया है।
-2) विकल्प: आपके पास Rust में तारीखों की तुलना करने के लिए कई विकल्प हैं, जैसे `time` और `date` क्रेटस। 
-3) कार्यान्वयन विस्तार: Chrono में `cmp()` फ़ंक्शन आपको Ordering enum के आधार पर तारीखों की तुलना करने की सुविधा देता है (Less, Equal, Greater)।
+## Deep Dive (गहराई से जानकारी):
+DateTime संरचना का उपयोग करके तारीखों की तुलना करना रस्ट में क्रोनो (chrono) लाइब्रेरी से संभव होता है। क्रोनो लाइब्रेरी, जो Rust में समय और तारीख से संबंधित कार्यों के लिए एक व्यापक समाधान प्रदान करती है, समय-क्षेत्र को संभालने के लिए `Utc` जैसे मॉड्यूल का उपयोग करती है। ऐतिहासिक संदर्भ में, Rust ने समय के संचालन को स्टैंडर्ड लाइब्रेरी में शामिल किया है, लेकिन अधिक विशेषताओं और सटीकता के लिए क्रोनो जैसी थर्ड-पार्टी लाइब्रेरीज आम तौर पर पसंद की जाती हैं। अल्टरनेटिवली, अन्य भाषाओं की तरह, Rust में भी तिथियों की तुलना के लिए पैकेज का चुनाव किया जा सकता है, जैसे कि time या date_time क्रेट्स। तुलना संचालन समय क्षेत्रों और लीप सेकंड्स जैसे जटिल मुद्दों को ध्यान में रखकर किया जाता है।
 
-## देखना भी:
-1) [Chrono Crates Documentation](https://docs.rs/chrono/0.4.19/chrono/)
-2) [Rust Official Documentation](https://doc.rust-lang.org/rust-by-example/std/chrono.html)
-3) [Stack Overflow Community](https://stackoverflow.com/questions/30186520/how-to-compare-dates-in-rust)
+## See Also (इसे भी देखें):
+- [Chrono Documentation](https://docs.rs/chrono/)
+- [Rust Programming Language Official Website](https://www.rust-lang.org/)
+- [The Rust Standard Library Documentation](https://doc.rust-lang.org/std/)

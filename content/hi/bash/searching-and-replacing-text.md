@@ -1,7 +1,8 @@
 ---
-title:                "पाठ की खोज और प्रतिस्थापन"
-html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
-simple_title:         "पाठ की खोज और प्रतिस्थापन"
+title:                "पाठ खोजना और बदलना"
+date:                  2024-01-20T17:57:57.021776-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पाठ खोजना और बदलना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,31 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-सर्चिंग और रिप्लेसिंग टेक्स्ट का काम एक या अधिक फाइलों में जब हम किसी टेक्स्ट या पैटर्न की खोज कर उसे दूसरे टेक्स्ट से बदलना चाहते हैं वह होता है। यह कार्य काफी आम है क्योंकि यह प्रोग्रामर्स के लिए टाइम-सेविंग और एफिशियेंट तरीका होता है टेक्स्ट फाइल्स को अपडेट करने का। 
+टेक्स्ट सर्चिंग और रिप्लेसिंग से मतलब है किसी फाइल में शब्दों को ढूंढकर उन्हें बदलना। प्रोग्रामर्स इसे डाटा को अपडेट करने, गलतियों को ठीक करने या फाइल फार्मेटिंग में सुधार के लिए करते हैं।
 
-## कैसे करें:
-
-निम्नलिखित कोड स्निपेट में, आप टेक्स्ट खोजने और बदलने के लिए `sed` कमांड विलक्षणता को देख सकते हैं।
+## How to: (कैसे करें:)
 
 ```Bash
-# ऑरिजनल फ़ाइल
-echo "Hello World" > example.txt
+# एक फाइल में 'apple' को 'orange' से बदलने के लिए
+sed 's/apple/orange/' fruits.txt
 
-# टेक्स्ट खोजें और बदलें
-sed 's/World/Universe/' example.txt
+# सभी occurrences को रिप्लेस करना
+sed -i 's/apple/orange/g' fruits.txt
+
+# आउटपुट के साथ
+echo "apple banana apple" | sed 's/apple/orange/g'
+# आउटपुट: orange banana orange
 ```
 
-स्क्रिप्ट चलाने पर ‘Hello Universe’ आउटपुट में दिखाई देगा।
+## Deep Dive (गहराई में):
 
-## गहराई विवेचन
+सर्च और रिप्लेस कमांड `sed` यानी 'stream editor' UNIX सिस्टम के पुराने दिनों से है। `sed` एक पावरफुल टूल है जो पाइपलाइन्स और स्क्रिप्ट्स में टेक्स्ट प्रोसेसिंग के लिए अक्सर इस्तेमाल होता है। `awk`, `grep`, `perl`, और `python` भी टेक्स्ट मणिपुलेशन के लिए विकल्प हो सकते हैं, पर `sed` की सिंप्लिसिटी और दक्षता इसे विशेष बनाती है। `sed` पैटर्न स्पेस का इस्तेमाल करके फाइल की प्रत्येक लाइन की प्रोसेसिंग करता है और कमांड लाइन पर दिए गए 's' फ्लैग (सब्स्टिट्यूट कमांड) के साथ पैटर्न मैच करने पर टेक्स्ट को बदल देता है।
 
-1. हिस्टोरिकल कन्टेक्ट: `sed` (Stream EDitor) यह एक पावरफुल और फ्लेक्सिबल खोज और रिप्लेस उपकरण है। इसे 1974 में मार्क डोद्नेट द्वारा विकसित किया गया था। 
-2. विकल्प: `awk`, `grep`, और `Perl` भी खोजने और बदलने के उपकरणों के रूप में उपयोग होते हैं।
-3. इंप्लिमेंटेशन विवरण: `sed` कमांड का उपयोग करके, हम एक पैटर्न या रेगुलर एक्सप्रेशन की खोज कर सकते हैं और पूरी फ़ाइल में उसे दूसरे टेक्स्ट के साथ रिप्लेस कर सकते हैं।
+## See Also (और भी देखें):
 
-## अन्य स्रोत देखें:
-
-* [GNU Sed Documentation](https://www.gnu.org/software/sed/manual/sed.html)
-* [GeeksforGeeks Sed Command Tutorial](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)
+1. GNU sed manual: [https://www.gnu.org/software/sed/manual/sed.html](https://www.gnu.org/software/sed/manual/sed.html)
+2. Regular Expressions (RegEx) Guide: [https://www.regular-expressions.info/](https://www.regular-expressions.info/)
+3. Linux Shell Scripting Tutorial: [https://bash.cyberciti.biz/guide/Main_Page](https://bash.cyberciti.biz/guide/Main_Page)
+4. Advanced Bash-Scripting Guide: [https://www.tldp.org/LDP/abs/html/](https://www.tldp.org/LDP/abs/html/)

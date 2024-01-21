@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request"
-html_title:           "Bash recipe: Sending an http request"
+date:                  2024-01-20T17:59:43.969878-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,35 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Untangling HTTP Requests in Haskell
-
 ## What & Why?
-
-Sending an HTTP request is a way to retrieve data from servers. Programmers do it to interact with web services, fetch information, or pass data between different parts of an application.
+Sending an HTTP request is the act of asking a web server for data or action. Programmers do it to interact with APIs, grab web content, or communicate between services.
 
 ## How to:
+Let's get to the fun stuff. You'll need `http-client` and `http-client-tls` packages. Set up your stack and add them to your `package.yaml` or `.cabal` file. Then, run `stack build` or appropriate commands to fetch them.
 
-To send HTTP requests in Haskell, we rely on the `http-conduit` library. You'll need to install it using cabal: `cabal install http-conduit`.
-
-Here's a simple GET request:
+Here’s a simple GET request:
 
 ```Haskell
-import Network.HTTP.Conduit
+import Network.HTTP.Client
+import Network.HTTP.Client.TLS
+import qualified Data.ByteString.Lazy.Char8 as L8
 
-main = simpleHttp "http://www.google.com" >>= 
-       putStrLn . take 100 . show
+main :: IO ()
+main = do
+    manager <- newManager tlsManagerSettings
+    request <- parseRequest "http://httpbin.org/get"
+    response <- httpLbs request manager
+    L8.putStrLn $ responseBody response
 ```
 
-This program fetches http://www.google.com and print the first hundred characters of the returned HTML.
+This will print the JSON you received from `httpbin.org`.
 
 ## Deep Dive
+Back in the day, Haskell's HTTP requests were less straightforward, but libraries like `http-client` have simplified the process.
 
-Historically, Haskell's HTTP libraries have not been the easiest to use. This has changed with `http-conduit`, which offers a simplified interface to HTTP connections.
+Alternatives? Sure. There's `wreq`, `req`, and others, often with syntactic sugar or extra features. But `http-client` is like that dependable swiss army knife in your drawer – it always gets the job done.
 
-When you attempt to perform an HTTP request in Haskell, you could alternatively use the `http-client` library. While `http-conduit` proposes a simpler to use high-level interface, `http-client` gives you more control over the requests you send.
-
-When sending an HTTP request, the key thing to know is that Haskell sends Internet data over a `Socket`, which is a type of IO channel. The mechanics of forming HTTP headers, parsing responses, and handling errors are all encapsulated within the libraries mentioned.
+Under the hood, `http-client` uses a `Manager` to handle connections. It's efficient and reuses sockets. You can tune it, but defaults are fine to start.
 
 ## See Also
+To extend your toolkit, check these out:
 
-For more in-depth information, consult the http-conduit library on Hackage: https://hackage.haskell.org/package/http-conduit. The Real World Haskell book also covers HTTP programming: http://book.realworldhaskell.org/read/extended-example-web-client-programming.html. Moreover, check out the http-client library: https://hackage.haskell.org/package/http-client.
+- [The `http-client` package](https://www.stackage.org/package/http-client)
+- [The `wreq` package for a more modern approach](https://www.stackage.org/package/wreq)
+- [Hackage for Haskell libraries](https://hackage.haskell.org/)

@@ -1,6 +1,7 @@
 ---
 title:                "コマンドライン引数の読み取り"
-html_title:           "Bash: コマンドライン引数の読み取り"
+date:                  2024-01-20T17:55:30.677249-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "コマンドライン引数の読み取り"
 programming_language: "C#"
 category:             "C#"
@@ -10,11 +11,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何それ & なぜ？ (What & Why?)
-コマンドライン引数とは、プログラムに渡す外部入力のことです。プログラマーはこれを使用して、プログラムの動作を制御または変更します。
+## What & Why? (何となぜ？)
+コマンドライン引数を読むのは、プログラムが実行されるときにユーザーから追加情報を受け取る方法だ。なぜやるか？柔軟性を高め、同じプログラムで異なる結果を得られるようにするためだ。
 
-## 実行方法 (How to:)
+## How to: (方法)
 ```C#
+using System;
+
 class Program
 {
     static void Main(string[] args)
@@ -26,18 +29,18 @@ class Program
     }
 }
 ```
-コマンドラインから次のように実行します。`program.exe arg1 arg2 arg3`
-出力は次の入力に反映されます。
-```C#
-arg1
-arg2
-arg3
+
+実行例:
+
+```
+> MyProgram.exe Hello World
+Hello
+World
 ```
 
-## じっくりと調べる (Deep Dive)
-コマンドライン引数の利用は、古くから存在する技術で、一部のプログラムではユーザー入力の主要な形態となっています。選択肢としては、環境変数や設定ファイルなどの他の入力源を利用することも可能ですが、コマンドライン引数は直感的で簡単です。C#では、string型の配列にすべての引数が格納されます。これらの引数は実行ファイルの名前の後にスペースで分けて記述されます。
+## Deep Dive (深く掘り下げて)
+かつてDOSやUNIXの時代には、コマンドライン引数が主なインターフェースだった。現代ではGUIが主流だけど、引数はスクリプトや自動化には不可欠。`string[] args`は`Main`メソッドの引数として利用され、そこにコマンドライン引数が格納される。`Environment.GetCommandLineArgs()`を使って取得する手もあるが、`args`の方が手っ取り早い。
 
-## 参考文献 (See Also)
-- [コマンドライン引数についてさらに知る (Learn more about command line arguments)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
-- [他の入力方法について学ぶ (Learn about other input methods)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/)
-- [C# の詳細なチュートリアル (Detailed C# tutorials)](https://www.microsoft.com/ja-jp/dev/tutorial/csharp)
+## See Also (関連情報)
+- [Microsoft C# Guide: Command-line arguments](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
+- [Environment.GetCommandLineArgs Method](https://docs.microsoft.com/en-us/dotnet/api/system.environment.getcommandlineargs)

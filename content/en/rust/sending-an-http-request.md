@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request"
-html_title:           "Bash recipe: Sending an http request"
+date:                  2024-01-20T18:00:43.269461-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,53 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Sending an HTTP request is, in essence, demanding data from a server, website, or other service via the Hypertext Transfer Protocol (HTTP). Programmers use it to interact with web services, fetch information, and communicate with other systems.
+Sending an HTTP request fetches data from or sends data to a web server. Programmers do it to interact with web services or APIs – grabbing info, posting updates, you name it.
 
 ## How to:
+To send a GET request in Rust, we use the `reqwest` crate. First, add it to your `Cargo.toml`:
 
-In Rust, you can use libraries like `reqwest` to perform HTTP requests. Firstly, make sure you've added `reqwest` to your `Cargo.toml`:
-
-```Rust
+```toml
 [dependencies]
 reqwest = "0.11"
+tokio = { version = "1", features = ["full"] }
 ```
 
-Now, let's send a GET request:
+Now, rustle up some async Rust code:
 
-```Rust
-use reqwest::Error;
+```rust
+use reqwest;
+use tokio;
 
 #[tokio::main]
-async fn main() -> Result<(), Error> {
-    let response = reqwest::get("https://httpbin.org/ip").await?;
+async fn main() -> Result<(), reqwest::Error> {
+    let response_text = reqwest::get("https://api.example.com/data")
+        .await?
+        .text()
+        .await?;
     
-    if response.status().is_success() {
-        let body = response.text().await?;
-        println!("body = {:?}", body);
-    } else {
-        println!("Error! Response: {:?}", response.status());
-    }
-
+    println!("Response: {}", response_text);
     Ok(())
 }
 ```
 
-Here, we use the `get` function to send a request. If the request is successful, we print the response body; otherwise, we print the error status.
+Sample output might look like this:
+
+```
+Response: {"key": "value", "hello": "world"}
+```
+
+That's all it takes to hit an endpoint with a GET request!
 
 ## Deep Dive
+HTTP requests are as old as the hills in internet years. They're the backbone of web-based communication. Rust uses crates like `reqwest` because it's not a web-specific language – flexibility is key. `reqwest` is built on `hyper`, which is fast and low-level, but `reqwest` adds ease of use on top.
 
-Historically, HTTP requests were pretty low-level tasks involving manual socket programming. Libraries like Python's `requests` and Rust's `reqwest` brought a layer of user-friendliness to HTTP requests. 
+Alternatives to `reqwest`? Sure. `hyper` for speed demons, `surf` if you're into async Rust or `ureq` for simplicity – no async fuss needed. 
 
-In Rust, alternatives to `reqwest` include `hyper`, a fast and low-level HTTP library, and `surf`, a lightweight, simple library for making requests. Each option trades off between speed, simplicity, and feature-completeness.
-
-Behind the scenes, when you send an HTTP request, `reqwest` handles much of the dirty work such as establishing a connection, formatting the request into HTTP protocol text, sending the request, and then parsing the response.
+Under the hood, when you send an HTTP request, Rust's doing much what any language would: establishing a TCP connection, sending along a formatted HTTP request, and interpreting the raw response. Asynchronous handling of these requests is where Rust shines, letting you do other stuff while awaiting the server’s reply.
 
 ## See Also
-
-To explore more, check out these resources:
-
-1. Reqwest Documentation - [https://docs.rs/reqwest](https://docs.rs/reqwest)
-2. Hyper Documentation - [https://hyper.rs/](https://hyper.rs/)
-3. Surf Github - [https://github.com/http-rs/surf](https://github.com/http-rs/surf)
-4. HTTP - The Rust Book [https://doc.rust-lang.org/book/ch20-01-single-threaded.html](https://doc.rust-lang.org/book/ch20-01-single-threaded.html)
+- [reqwest Documentation](https://docs.rs/reqwest/)
+- [The Rust Async Book](https://rust-lang.github.io/async-book/)
+- [Hyper HTTP Library](https://hyper.rs/)
+- [API Guidelines](https://rust-lang.github.io/api-guidelines/)

@@ -1,6 +1,7 @@
 ---
 title:                "יצירת קובץ זמני"
-html_title:           "C#: יצירת קובץ זמני"
+date:                  2024-01-20T17:40:18.850144-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "יצירת קובץ זמני"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,36 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-יצירת קובץ זמני היא פעולה המאפשרת למתכנת להחזיק במידע זמני שאינו נדרש לאחר ריצת התוכנה. אנחנו משתמשים בקבצים זמניים כשאנחנו רוצים להפחית את הזכרון שהתוכנה שלנו משתמשת בו ו/או במהלך תהליכים של ניתוח מידע בחשבון השרת.
+יצירת קובץ זמני מאפשרת טיפול בנתונים מבלי לסכן את הפרמננטיים. תוכניות עושות זאת לחישובים זמניים, גיבוי במצבים של קריסה, וטיפול בפרטיות הנתונים.
 
-## איך ליצור:
-קלט Clojure שלך יכול לראות משהו כמו זה:
+## איך לעשות:
+איך יוצרים קובץ זמני ב-Clojure? הנה דוגמה:
 
 ```Clojure
-(import 'java.io.File)
-(import 'java.nio.file.Files)
-(import 'java.nio.file.StandardCopyOption)
+(require '[clojure.java.io :as io])
 
-(defn create-temp-file []
-  (let [temp-file (File/createTempFile "prefix" "suffix")]
-    (println (.getPath temp-file))
-    temp-file))
+(let [temp-file (io/file (io/temp-dir) "my-temp-file.txt")]
+  (spit temp-file "התוכן שלי הזמני")
+  (slurp temp-file))
 ```
 
-זה פשוט ייצר קובץ זמני והדפיס את הנתיב לקונסולה. פלט דוגמתי יכול להיראות כך:
-
+פלט לדוגמה:
 ```
-/tmp/prefix1234567890suffix
+"התוכן שלי הזמני"
 ```
 
-## צלילה עמוקה
-Clojure היא לוקחת את ההשראה שלה מ-LISP, שולחת התכנות שהתפתחה בשנות ה-50. יצירת קבצי זמני היא חלק קריטי של העיבוד המוני של המידע (Big Data).
+## עומק ים:
+יצירת קובץ זמני נעשית מאז ימי הדיסקטים לצורך שמירת מצב ולהבטחת נקיון במערכות קבצים. ב-Clojure, משתמשים ב-java.io.File ליצירת קובץ זמני או אפילו על ידי יצירת סטרים זמני לנתונים הזרמתיים. יש גם ספריות חיצוניות המספקות אפשרויות נוספות ונוחות יותר.
 
-לחלופין, אם עבודתך משתמשת רק במעט מאוד מידע, אתה יכול להשתמש גם בסביבת JVM שלך על מנת לאחסן מידע זמני, זה יחסוך לך את הצורך בקבצים זמניים.
-
-התירגול שלנו ממש משתמש בממשק התכנותנית של Java ליצירת קובצים זמניים (java.io.File). זה הופך את העסק הרביד לקובץ זמני פשוט למדי.
-
-## ראה גם
-- התיעוד הרשמי של java.io.File: https://docs.oracle.com/javase/8/docs/api/java/io/File.html
-- מדריך נוסף ליצירת קובץ זמני של Clojure: https://lupan.pl/clj-file-temp/
-- מדריך לחסימת IO של stackoverflow עבודה עם קבצים: https://stackoverflow.com/questions/4853924/efficient-file-io-in-clojure
+## גם ראו:
+- [Clojure java.io documentation](https://clojure.github.io/clojure/clojure.java.io-api.html)
+- [דוקומנטציה של חבילת java.io.File](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
+- [מדריך לספרייה nio.file של Java](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)

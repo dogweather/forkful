@@ -1,7 +1,8 @@
 ---
-title:                "एक पाठ फ़ाइल पढ़ना"
-html_title:           "Bash: एक पाठ फ़ाइल पढ़ना"
-simple_title:         "एक पाठ फ़ाइल पढ़ना"
+title:                "टेक्स्ट फ़ाइल पढ़ना"
+date:                  2024-01-20T17:54:29.021279-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "टेक्स्ट फ़ाइल पढ़ना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,36 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# हास्केल में टेक्स्ट फ़ाइल पढ़ना
+## What & Why? (क्या और क्यों?)
 
-## क्या और क्यों?
-टेक्स्ट फ़ाइल पढ़ने का मतलब है किसी फ़ाइल से डेटा लेना। प्रोग्रामर्स इसे इसलिए करते हैं क्योंकि यहाँ से उन्हें उनके प्रोग्राम के लिए आवश्यक डेटा मिलता है।
+पाठ फ़ाइल को पढ़ना यानि फ़ाइल से डेटा एकत्र करना होता है। प्रोग्रामर्स यह अकसर एप्लिकेशन को जरुरी सूचनाएं देने या लॉग्स को प्रोसेस करने के लिए करते हैं।
 
-## कैसे करें:
-`readFile` फ़ंक्शन का उपयोग करके हम टेक्स्ट फ़ाइल पढ़ सकते हैं। 
+## How to: (कैसे:)
 
-```Haskell 
-import System.IO  
-   
-main = do   
-    contents <- readFile "hello.txt"  
-    putStr contents
-```  
-अगर "hello.txt" में "नमस्ते दुनिया" है, तो आउटपुट ऐसा होगा: 
+Haskell में पाठ फ़ाइल पढ़ना सीधा है:
 
-```
-नमस्ते दुनिया
+```Haskell
+import System.IO
+
+main :: IO ()
+main = do
+    contents <- readFile "hello.txt"
+    putStrLn contents
 ```
 
-## गहरा डाइव
-हास्केल का इस्तेमाल साल 1990 से हो रहा है। इसका उद्देश्य उन सभी असुविधाओं को दूर करना था जो अन्य भाषाओं में सामान्य रूप से होती थीं। 
+जब `hello.txt` में `"Hello, Haskell!"` होगा, आउटपुट होगा:
 
-`readFile` का विकल्प फ़ंक्शन है `hGetContents`. `hGetContents` हैंडल का उपयोग करता है जो बहुत अधिक आवश्यकताओं को पूरा करने के लिए अधिक नियंत्रण प्रदान कर सकता है। 
+```
+Hello, Haskell!
+```
 
-`readFile` फ़ंक्शन डेटा को लेने के लिए लेजी तरीका अपनाता है। यह डेटा को आवश्यकता के हिसाब से लेता है, जिससे हमारे सिस्टम की प्रदर्शन क्षमता पर नकारात्मक प्रभाव नहीं पड़ता है। 
+## Deep Dive (गहराई से जानकारी)
 
-## और भी देखें
-अधिक जानकारी के लिए, निम्नलिखित लिंक पर क्लिक करें :
+पाठ फ़ाइलों को पढ़ना आरंभिक कंप्यूटिंग युग से है। Haskell में, `readFile` एक लेज़ी फंक्शन है जो फ़ाइल को धीरे-धीरे पढ़ता है जब जरुरत होती है। वैकल्पिक तरीके में `Data.ByteString` लाइब्रेरी फ़ाइल को बाइनरी फॉर्म में पढ़ती है, जो बड़े डेटा के लिए उपयुक्त हो सकती है।
 
-[Haskell Text.File Interface](http://hackage.haskell.org/package/base-4.2.0.1/docs/System-IO.html)
-[Haskell Wiki](https://wiki.haskell.org/Index)
+सावधानी: `readFile` को `System.IO` मॉड्यूल से इम्पोर्ट करना जरुरी है, और फ़ाइल की पाठ्य सामग्री को संभालने में ठीक एरर हैंडलिंग की आवश्यकता होती है।
+
+## See Also (अधिक जानकारी के लिए)
+
+- Haskell डॉक्स: [System.IO Module](https://hackage.haskell.org/package/base-4.16.1.0/docs/System-IO.html)
+- Learn You a Haskell गाइड: [Input and Output chapter](http://learnyouahaskell.com/input-and-output)
+- Real World Haskell पुस्तक: [Working with Files and Streams](http://book.realworldhaskell.org/read/io.html)

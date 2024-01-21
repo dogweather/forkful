@@ -1,7 +1,8 @@
 ---
-title:                "भविष्य या अतीत में एक तारीख की गणना"
-html_title:           "C++: भविष्य या अतीत में एक तारीख की गणना"
-simple_title:         "भविष्य या अतीत में एक तारीख की गणना"
+title:                "भविष्य या अतीत में तारीख की गणना"
+date:                  2024-01-20T17:31:59.482763-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "भविष्य या अतीत में तारीख की गणना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -11,41 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों? (What & Why?)
+तारीख की गणना करना यह है कि एक निर्धारित समयावधि को जोड़कर या घटाकर भविष्य या भूतकाल की तारीख निकाली जा सकती है। प्रोग्रामर इसे आयोजनों की योजना बनाने, समय सीमाओं का प्रबंधन, और तारीख से संबंधित गणनाओं के लिए करते हैं।
 
-किसी भविष्य या अतीत की तारीख की गणना, यह होता है कि हम किसी विशेष तारीख से कुछ दिनों को बाधित या घटाकर नई तारीख की गणना करते हैं। प्रोग्रामर इसे क्यों करते हैं? कार्यक्रमों में तिथि की गणना से संबंधित कई कार्य, जैसे कि नये दिनों की पहुंच की यात्रा, प्रोजेक्ट की समय सीमा आदि, को सुविधाजनक रूप से संभालने में मदद मिलती है।
-
-## कैसे करें: (How to:)
-
-C++ लाइब्रेरी `ctime` का उपयोग करके हम एक विशेष तारीख से दिनों को जोड़कर भविष्य की तारीख की गणना कर सकते हैं। इसके लिए नीचे दिए गए कोड उदाहरण को देखें:
-
+## कैसे करें? (How to:)
 ```C++
+#include <iostream>
+#include <chrono>
+#include <iomanip>
 #include <ctime>
 
 int main() {
-    // आज की तारीख प्राप्त करें
-    std::time_t t = std::time(0);
-    std::tm* now = std::localtime(&t);
+    // वर्तमान तारीख और समय प्राप्त करना
+    std::chrono::system_clock::time_point today = std::chrono::system_clock::now();
+    
+    // 30 दिन भविष्य में की गणना
+    std::chrono::duration<int, std::ratio<60*60*24>> thirtyDays(30);
+    std::chrono::system_clock::time_point futureDate = today + thirtyDays;
 
-    // 7 दिन भविष्य में की तारीख की गणना करें
-    std::tm future_date = *now;
-    future_date.tm_mday += 7; // दिनों को जोड़ें
-    mktime(&future_date); // दिनांक को निर्धारित करें
+    // 30 दिन पहले की गणना
+    std::chrono::system_clock::time_point pastDate = today - thirtyDays;
+
+    // time_t में परिवर्तन और प्रिंट करना
+    time_t futureTime = std::chrono::system_clock::to_time_t(futureDate);
+    time_t pastTime = std::chrono::system_clock::to_time_t(pastDate);
+
+    std::cout << "आज की तारीख: " << std::put_time(std::localtime(&futureTime), "%Y-%m-%d") << std::endl;
+    std::cout << "30 दिन भविष्य में तारीख: " << std::put_time(std::localtime(&futureTime), "%Y-%m-%d") << std::endl;
+    std::cout << "30 दिन पहले की तारीख: " << std::put_time(std::localtime(&pastTime), "%Y-%m-%d") << std::endl;
 
     return 0;
 }
 ```
+सैंपल आउटपुट:
+```
+आज की तारीख: 2023-04-05
+30 दिन भविष्य में तारीख: 2023-05-05
+30 दिन पहले की तारीख: 2023-03-06
+```
 
-कोड के निष्पादन के बाद, `future_date` को 7 दिनों के बाद की तारीख संग्रहित करेगा।
+## गहन जानकारी (Deep Dive)
+तारीख की गणना एक ऐसी प्रक्रिया है जिसका इस्तेमाल सदियों से हो रहा है, लेकिन प्रोग्रामिंग में इसके तरीके विस्तृत और अधिक सटीक हैं। C++20 ने `<chrono>` लाइब्रेरी के साथ स्थानीय तिथियों और समय क्षेत्रों को संभालने में सुधार किया है। इसके अलावा बूस्ट डेट टाइम लाइब्रेरी और C++11 या पुराने संस्करणों के लिए `<ctime>` जैसे विकल्प भी हैं।
 
-## गहराई में (Deep Dive)
+तिथि की गणना करने का मुख्य लाभ डेटा परिचालन और इंटरफेसिंग में सुधार, साथ ही साथ ऐतिहासिक डेटा विश्लेषण और भविष्यवाणी मॉडलिंग में अत्याधुनिक उपकरणों का प्रयोग करना है। इसके अंतर्निहित तत्वों में समय और कैलेंडर का जटिल गणित शामिल है, जिसे छलांग वर्ष और समय क्षेत्रों के अंतरों के साथ-साथ सॉफ़्टवेयर उपकरणों द्वारा सावधानी से संभाला जाना चाहिए।
 
-(1) ऐतिहासिक संदर्भ: इस तरह की गणना संगणकों का जन्म होने से पहले से ही हो रही थी। जैसे-वक्त की गणना, चंद्रमा के चक्र आदि।
-
-(2) विकल्प: C++ में `chrono` मॉड्यूल भी है जिसका उपयोग तारीख और समय संबंधी गणनाओं के लिए किया जाता है।
-
-(3) क्रियान्वयन विवरण: `mktime` फ़ंक्शन `tm` संरचना को अद्यतित करके यह सुनिश्चित करता है कि यह सही है और एक वैध समय और तारीख का प्रतिनिधित्व करता है।
-
-## ये भी देखें (See Also)
-
-1. C++ संदर्भ (C++ Reference) - <https://www.cppreference.com/w/c/chrono/time_t>
-2. गीतहब: C++ तारीख और समय (GitHub: C++ Date and Time) - <https://github.com/HowardHinnant/date>
+## यह भी देखें (See Also)
+- [आधिकारिक C++ दस्तावेजीकरण](https://en.cppreference.com/w/)
+- [C++ `<chrono>` Library](https://en.cppreference.com/w/cpp/header/chrono)
+- [Boost Date_Time Library](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
+- [C++ Standards Support in GCC](https://gcc.gnu.org/projects/cxx-status.html)

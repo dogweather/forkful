@@ -1,6 +1,7 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Arduino recipe: Generating random numbers"
+date:                  2024-01-20T17:48:47.570320-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generating random numbers"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -12,43 +13,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Programming isn't just fixed variables and predictable outcomes. There're times where randomness plays a key role. Whether it's for game development, data analysis, or encryption, generating random numbers keeps things versatile, fun, and secure.
+Random numbers are unpredictable figures used in programs for stuff like games, simulations, and security. Coders use them because they stir in surprise, mimic real-world chaos, or safeguard data.
 
 ## How to:
-Let's head in. Random number generation in Clojure is no hard task. 
 
-To generate a simple random integer, you can do:
+In Clojure, the `rand`, `rand-int`, and `rand-nth` functions are your go-to for randomness:
 
-```clojure
-(let [rand-int (rand-int 100)] 
-  (println "Random integer:" rand-int))
+```Clojure
+(rand) ; a random double between 0.0 and 1.0
+=> 0.7095282210647944
+
+(rand-int 10) ; a random integer between 0 (inclusive) and 10 (exclusive)
+=> 7
+
+(rand-nth [1 2 3 4 5]) ; a random element from the collection
+=> 3
 ```
-This will output a random integer between 0 and 99. You can, of course, replace 100 with any number to change the range.
 
-Similarly for a random floating-point number:
+Tweak the seed for repeatable results:
 
-```clojure
-(let [rand-num (rand)] 
-  (println "Random number:" rand-num))
+```Clojure
+(use 'clojure.java.io)
+(binding [java.util.Random/*rnd* (java.util.Random. 42)]
+  (rand-int 100))
+=> 81
 ```
-This will generate a floating-point number between 0 (inclusive) and 1 (exclusive).
 
 ## Deep Dive
-Now, let's dive deeper. 
 
-1. **Historical Context**: Randomness has played a pivotal role in programming since its inception. In the early days, pseudo-random number generators like the middle-square method were used. But, with improved technology, we now have in-built functions to generate random numbers like we just saw in Clojure.
+Clojure’s random functions piggyback on Java’s `java.util.Random` class, woven tightly with the JVM. Historically, generating truly random numbers on computers is tough, so "pseudorandom number generators" (PRNGs) are used, which are predictable if you know the starting point, called the "seed".
 
-2. **Alternatives**: Clojure accepts seeds which can be useful when you want to reproduce the same sequence of "random" numbers. This is particularly handy in testing.
+The `rand` function, without arguments, shells out a floating-point number between 0 and 1. It’s a typical use case for stuff like probabilistic algorithms or simulating random events in a bounded space.
 
-```clojure
-(java.util.Random. 0) ;; Seed 0
-```
-3. **Implementation Details**: When you call `(rand)`, Clojure sources environment noise like the current timestamp to produce randomness. For `(rand-int n)`, it scales the `(rand)` output to the desired range.
+`rand-int` and `rand-nth` are variations on a theme for when you need integers or you're picking from a list. `rand-int` is perfect for games where you might be rolling a virtual dice or choosing a random enemy to spawn.
+
+Besides the core functions, there's java interop if you need heavier calibers. You could invoke `java.util.Random` directly or go nuclear with `SecureRandom` for cryptographic stuff. But remember, `SecureRandom` is overkill for most non-security uses and will slow down your program.
 
 ## See Also
-Make sure you explore further!
 
-- Official Clojure Documentation: [Random Numbers](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rand)
-  
-
-- Testing with seed: [StackOverflow Thread](https://stackoverflow.com/questions/25609153/how-to-return-random-but-deterministic-results-in-clojure)
+- The Clojure cheatsheet on randomness: [https://clojure.org/api/cheatsheet](https://clojure.org/api/cheatsheet)
+- Exploring Java’s Random: [https://docs.oracle.com/javase/8/docs/api/java/util/Random.html](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- When you need crypto-grade randomness: [https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html)
+- A deep-dive into randomness and Clojure's approach: ["Clojure from the ground up: modeling"](https://aphyr.com/posts/303-clojure-from-the-ground-up-modeling)

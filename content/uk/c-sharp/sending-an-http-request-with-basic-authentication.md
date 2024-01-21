@@ -1,7 +1,8 @@
 ---
-title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
-html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
-simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+date:                  2024-01-20T18:01:26.795314-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,42 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-
-Отправлення HTTP-запиту з базовою аутентифікацією - це спосіб передачі облікових даних користувача на сервер. Пристосовуємо це для того, щоб забезпечити безпечний доступ до ресурсів, здебільшого веб-сервісів.
+## Що це таке і навіщо?
+Відправка HTTP-запиту з базовою аутентифікацією — це коли твоя програма мусить "представитись" серверу, щоб отримати доступ то потрібних даних. Програмісти це використовують для доступу до захищених ресурсів чи API.
 
 ## Як це зробити:
-
-Спробуйте наступний код:
-
 ```C#
 using System;
-using System.Net;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
-var username = "yourUsername";
-var password = "yourPassword";
-var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://yoururl.com");
-httpWebRequest.Headers["Authorization"] = "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes(username + ":" + password));
-httpWebRequest.Method = "GET";
-
-var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+class Program
 {
-    var result = streamReader.ReadToEnd();
+    static async Task Main()
+    {
+        var username = "user";
+        var password = "pass";
+        var url = "http://example.com/api";
+
+        using var client = new HttpClient();
+        var authToken = Encoding.ASCII.GetBytes($"{username}:{password}");
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(authToken));
+
+        var response = await client.GetAsync(url);
+        
+        if (response.IsSuccessStatusCode)
+        {
+            string responseBody = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(responseBody);
+        }
+        else
+        {
+            Console.WriteLine($"Error: {response.StatusCode}");
+        }
+    }
 }
 ```
+Output:
+```
+{"data":"Це якийсь захищений вміст..."}
+```
 
-Цей код створює HTTP-запит, додає заголовок для базової аутентифікації і відправляє запит.
+## Докладніше:
+Базова аутентифікація – це старий, але простий метод для захисту даних. Вона кодує логін і пароль в Base64 і включає це в заголовок запиту. Але оскільки Base64 – це не шифрування, ніколи не використовуй її без HTTPS. Інакше, секретні дані можуть бути зламані під час передачі.
 
-## Поглиблений розбір: 
+Альтернативи базовій аутентифікації включають OAuth, токени сесій, JWT (JSON Web Tokens) тощо. В цих методах, посвідчення користувача перевіряються один раз, а потім сервер надає токен, який використовується для подальшої ідентифікації.
 
-1. **Історичний контекст**: Базова аутентифікація HTTP була стандартом з часів специфікації HTTP/1.0, хоча незахищена і рекомендована тільки для захищених підключень.
-2. **Альтернативи**: Сучасніші методи обіймуть Токени OAuth, Cookie, або JWT (JSON Web Tokens).
-3. **Деталі реалізації**: Наш метод реалізації передачі облікових даних в заголовку, "Basic ", після чого слідує користувач та пароль, кодовані в base64.
-
-## Дивіться також:
-
-1. [Докладніше про HTTP-аутентифікацію](https://developer.mozilla.org/uk/docs/Web/HTTP/Authentication)
-2. [Токени OAuth](https://oauth.net/)
-3. [JWT (JSON Web Tokens)](https://jwt.io/)
+## Також дивіться:
+- Документація Microsoft по HttpClient: https://docs.microsoft.com/dotnet/api/system.net.http.httpclient
+- Базова аутентифікація на MDN: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- Про безпечніше альтернативне аутентифікування: https://auth0.com/learn/token-based-authentication-made-easy/
+- Як налаштувати HTTPS у .NET: https://docs.microsoft.com/en-us/aspnet/core/security/enforcing-ssl

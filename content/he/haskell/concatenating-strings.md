@@ -1,7 +1,8 @@
 ---
-title:                "חיבור מחרוזות"
-html_title:           "C++: חיבור מחרוזות"
-simple_title:         "חיבור מחרוזות"
+title:                "שרשור מחרוזות"
+date:                  2024-01-20T17:35:39.751116-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרשור מחרוזות"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,31 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה? (What & Why?)
-השרשור של מחרוזות הוא פעולה שמאחדת שתי מחרודת או יותר לאחת. מתכנתים משתמשים בזה לבנייה נוחה ואלגנטית של מחרוזות מרכיבים שונים.
+## מה ולמה?
+הצמדת מחרוזות היא פעולה שבה אנו מחברים שתי מחרוזות או יותר ליצירת מחרוזת אחת גדולה יותר. תכניתנים עושים זאת כדי לבנות טקסטים דינמיים, להוסיף תכנים, או להכין משתנים להדפסה ולפלט.
 
-## כיצד לעשות את זה: (How to:)
-הדרך הכי קלה להשרשר מחרוזות בהסקל היא באמצעות האופרטור `++`
+## איך לעשות:
+בהסקל, הפעולה הכי בסיסית להצמדת מחרוזות היא על ידי שימוש באופרטור `++`.
+
 ```Haskell
-ghci> let greeting = "שלום " ++ "עולם"
-ghci> print greeting
-"שלום עולם"
-```
-אפשר גם להשתמש בפונקציה `concat` כדי להשרשר רשימה של מחרוזות
-```Haskell
-ghci> let colors = concat ["אדום", " ירוק", " כחול"]
-ghci> print colors
-"אדום ירוק כחול"
+main :: IO ()
+main = do
+    let hello = "שלום"
+    let world = "עולם"
+    let greeting = hello ++ ", " ++ world ++ "!"
+    putStrLn greeting
 ```
 
-## צלילה עמוקה (Deep Dive)
-האופרטור `++` בהסקל למעשה מממש רעיון שנקרא 'מונואיד'. במתמטיקה, מונואיד הוא מערכת שבה יש פעולה אחת שמאחדת פריטים, ויש יחידה שמשמשת כאיבר ניטרלי. בהסקל, הפונקציה `mappend` מוגדרת ברוב הסוגים למימוש של האופרטור `++`.
+פלט:
+```
+שלום, עולם!
+```
 
-לגבי חלופות, אפשר להשתמש גם ב`mconcat`, שהיא גרסה של `concat` שעובדת עם `mappend`.
+או על ידי שימוש בפונקציית `concat` כדי לחבר רשימת מחרוזות:
 
-לעניין הביצועים, כל פונקציה שמשתמשת בפעולת `++` מתאימה לשרשור מחרוזות קצרות, אבל לא תהיה יעילה עם מחרוזות ארוכות מכיוון שהיא דורשת סריקה של הרשימה השמאלית למקום הסיום שלה.
+```Haskell
+main :: IO ()
+main = do
+    let wordsList = ["שלום", " ", "עולם", "!"]
+    let greeting = concat wordsList
+    putStrLn greeting
+```
 
-## ראה גם (See Also)
-1. [Learn You a Haskell - String Concatenation](http://learnyouahaskell.com/starting-out#an-intro-to-lists)
-2. [Real World Haskell - Efficient List Concatenation](http://book.realworldhaskell.org/read/efficient-file-processing-regular-expressions-and-file-name-matching.html#idp140448)
-3. [Haskell Wiki - Difference between ++ and :](https://en.wikibooks.org/wiki/Haskell/Lists_and_tuples#Difference_between_.2B.2B_and_:)
+פלט:
+```
+שלום עולם!
+```
+
+## צלילה לעומק
+הצמדת מחרוזות היא פעולה נפוצה במרבית שפות התכנות, והיא הייתה קיימת כבר מאז ימי הקוד הראשונים. בהסקל, שפה פונקציונלית, הפעולה מנוצלת לעיבוד טקסטים וביצוע גריסות עם תבניות מידע מורכבות.
+
+אלטרנטיבות להצמדת מחרוזות כוללות שימוש בפונקציות כמו `intercalate` מהמודול `Data.List` שמאפשרת הצמדת מחרוזות עם תו מפריד:
+
+```Haskell
+import Data.List (intercalate)
+
+main :: IO ()
+main = do
+    let greeting = intercalate ", " ["שלום", "עולם"]
+    putStrLn (greeting ++ "!")
+```
+
+פלט:
+```
+שלום, עולם!
+```
+
+בעת הצמדת מחרוזות, חשוב לזכור שבהסקל, מחרוזות הן רשימות של תווים. פעולות על רשימות יכולות להיות לא יעילות במיוחד אם מדובר ברשימות ארוכות, מה שעלול להשפיע על הביצועים כאשר מבצעים הצמדות בלולאה או בפונקציות רקורסיביות.
+
+## גם זה רלוונטי:
+- [Hackage: Data.List Module](https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-List.html)
+- [LYAH: Learn You a Haskell for Great Good! - Starting Out](http://learnyouahaskell.com/starting-out#hello-world)

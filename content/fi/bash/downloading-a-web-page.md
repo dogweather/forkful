@@ -1,6 +1,7 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "C#: Verkkosivun lataaminen"
+date:                  2024-01-20T17:43:14.143267-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,29 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Webbisivun lataaminen tarkoittaa sen sisällön kopioimista omalle koneellesi. Ohjelmoijat tekevät tämän syystä tai toisesta - ehkä he haluavat käsitellä sivun tietoja, tai ehkä he tarvitsevat offline-versiota.
+## What & Why? / Mitä ja miksi?
+Ladataan verkkosivun sisältö palvelimelta omalle koneelle. Ohjelmoijat tekevät tämän, kun tarvitaan tietoa automaattisesti tai testataan sovelluksia.
 
-## Kuinka:
-Bash-skriptin avulla voit ladata webbisivuja nopeasti ja vaivattomasti. Pieni esimerkkikoodi voisi näyttää tältä:
+## How to: / Kuinka:
+```Bash
+# Lataa sivun sisältö wget-komennolla
+wget https://example.com
 
-```bash
-#!/bin/bash
-# Sivun URL
-url="http://example.com"
+# Tai käytä curl-komentoa ja tallenna tulos tiedostoon
+curl https://example.com -o example_page.html
 
-# Lataa sivu
-curl -o my_page.html $url
+# Tarkista lataus
+cat example_page.html
 ```
+Lataus onnistui ja sivun HTML on nyt paikallisessa tiedostossa.
 
-Kun ajat yllä olevan skriptin, luo se tiedoston `my_page.html`, joka sisältää koko sivun HTML-koodin. 
+## Deep Dive / Syväsukellus:
+Historiallisesti web-sivujen lataaminen liittyy tiedon hakemiseen ja webin indeksointiin (esim. hakukoneet). Eri työkalut, kuten `wget` ja `curl`, ovat yleisessä käytössä. `wget` on hyvä massalatausten aiheuttamaan kuormaan ja toimii rekursiivisesti. `curl` taas on monipuolinen yhden sivun tai API-vastauksen lataamiseen. Tärkeää on hallita työkalujen optiot ja käyttöoikeudet – liiallinen lataaminen voi aiheuttaa palvelunestohyökkäyksen.
 
-## Syvällisemmin:
-Webbisivun lataaminen on vanha konsepti, se oli netin alkuaikoina ohjelmoijien ainoa tapa käsitellä verkkosisältöä. Vaihtoehtoja on nykyään paljon, esim. API-kutsut tai päätepistekyselyt.
-
-Tämän Bash-skriptin toteutus käyttää `curl`-komentoa, joka on voimakas komentorivityökalu tiedon siirtämiseen verkossa. Se on olemassa lähes kaikissa UNIX-pohjaisissa käyttöjärjestelmissä.
-
-## Katso myös:
-- [Curl-komennon dokumentaatio](https://curl.se/docs/manpage.html)
-- [Verkkosisällön käsittely Bashilla](https://www.linuxjournal.com/content/downloading-entire-web-site-wget)
-- [API-kyselyt Bashissa](https://linuxize.com/post/curl-rest-api/)
+## See Also / Katso myös:
+- `man wget` ja `man curl` komentorivillä: lisätiedot ja käyttöohjeet.
+- [GNU Wget Manual](https://www.gnu.org/software/wget/manual/wget.html): Tarkka dokumentaatio `wget`-komennolle.
+- [curl Documentation](https://curl.se/docs/): Syvällistä tietoa `curl`-komennon käytöstä.

@@ -1,7 +1,8 @@
 ---
-title:                "Видобування підрядків"
-html_title:           "C++: Видобування підрядків"
-simple_title:         "Видобування підрядків"
+title:                "Виділення підрядків"
+date:                  2024-01-20T17:47:06.319823-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Виділення підрядків"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,40 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
+## Що це таке & навіщо?
+Витягнення підрядків – це процес отримання частин із більших рядків. Це корисно для аналізу тексту, форматування даних або коли потрібно працювати лише з частиною інформації.
 
-Видобування підрядків - це процес отримання менших рядків з більшого рядка. Розробники роблять це для аналізу та маніпулювання специфічними даними в межах більшого рядка. 
-
-## Як це робити:
-
-Подивимося на декілька прикладів в TypeScript:
-
+## Як це зробити:
 ```TypeScript
-let str = "Привіт світ";
-let subStr = str.substring(0, 6); 
-console.log(subStr); // виводить: "Привіт"
+// Використання slice
+const fullString: string = 'Привіт, світ!';
+const substring: string = fullString.slice(0, 7);
+console.log(substring); // Виведе: Привіт,
+
+// Використання substring
+const anotherSubstring: string = fullString.substring(8, 12);
+console.log(anotherSubstring); // Виведе: світ
+
+// Використання substr (застарілий)
+const oldSchoolSubstring: string = fullString.substr(8, 4);
+console.log(oldSchoolSubstring); // Виведе: світ
 ```
-У цьому прикладі, `substring()` використовується для отримання підрядка з індексу 0 до 6. 
 
-```TypeScript
-let str = "Привіт світ";
-let subStr = str.substring(7); 
-console.log(subStr); // виводить: "світ"
-```
-Тут `substring()` з одним аргументом повертає все з певного індексу і до кінця рядка.
+## Поглиблений розгляд
+У TypeScript, як і в JavaScript, історично існує декілька методів для витягу підрядків, але не всі однаково гарні. Наприклад, `substr` є застарілим, бо його робота може відрізнятись в різних виконавчих середовищах, тому краще використовувати `slice` або `substring`. Обидва методи викликаються на рядку і приймають індекси, що визначають початок і кінець необхідної частини. Різниця між `slice` і `substring` полягає у тому, що `slice` може приймати від'ємні індекси, обчислюючи їх від кінця рядка.
 
-## Поглиблений занурення:
-
-Видобування підрядків існує в ком'ютерних науках стільки ж, скільки і саме програмування. Було декілька способів вирішення цієї проблеми в минулому,  включаючи функції, аналогічні `substring()`, але і `slice()`, `substr()` в JavaScript.
-
-Як варіант, в TypeScript ви також можете використовувати `slice()`, який працює майже так само, але із деякими розходженнями: `substring()` не може приймати від'ємні індекси, тоді як `slice()` може.
-
-Щодо реалізації, TypeScript працює як надбудова над JavaScript. Тому видобування підрядків в TypeScript працює так само, як і в JavaScript.
-
-## Дивіться також:
-
-1. [MDN Web Docs - String.prototype.substring()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-2. [MDN Web Docs - String.prototype.slice()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-3. [TypeScript - String](https://www.typescripttutorial.net/typescript-tutorial/typescript-string/)
-  
-Звичайно, це тільки поверхня того, що ви можете робити із рядками в TypeScript. Продовжуйте вчитися та експериментуйте!
+## Дивіться також
+- [String.prototype.slice() | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [String.prototype.substring() | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)

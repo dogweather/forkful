@@ -1,6 +1,7 @@
 ---
 title:                "Deleting characters matching a pattern"
-html_title:           "Lua recipe: Deleting characters matching a pattern"
+date:                  2024-01-20T17:42:13.044712-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -12,43 +13,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Deleting characters matching a pattern is a common text manipulation task in programming. It helps you massage your data into the format you need, making it easier for your code to process.
+Deleting characters matching a pattern is basically filtering out unwanted characters or sequences from strings or file contents based on rules, known as patterns. Programmers do it to cleanse data, prep it for processing, or to extract meaningful info without the noise.
 
 ## How to:
 
-In Fish Shell, you can use the `string match` command to find patterns and the `string replace` command to delete them. Here is an example:
+```Fish Shell
+# Remove digits from a string
+set string "Fish123Shell"
+echo $string | string replace -ra '[0-9]' ''
+# Outputs: FishShell
 
-```fish
-# Let's say we have a variable with some text
-set text 'This is a pattern and a pattern to delete'
-
-# Use string replace to delete the word 'pattern'
-set modified_text (string replace -r 'pattern' '' -- $text)
-
-# Print the modified text
-echo $modified_text
-```
-Sample Output:
-```
-This is a  and a  to delete 
+# Strip out everything but lowercase letters
+set noisy_string "F!i@s#h$%S^h&e*l(l)__+"
+echo $noisy_string | string match -r '[a-z]+'
+# Outputs: ishhell
 ```
 
-The `-r` option makes 'pattern' act as a regular expression. The `--` is used to specify the source string to process.
+## Deep Dive
 
-## Deep Dive:
+In Fish Shell, the magic happens with the `string` utility, a handy built-in tool for string operations - introduced in version 2.3.0. Prior to this, users would fall back on UNIX staples like `sed` or `awk`. Why the change? Simplicity and integration. Having an in-house solution streamlines string manipulation, making scripts more readable and maintainable.
 
-The `string match` and `string replace` commands in Fish Shell provide a powerful way for programmers to manipulate text. They are based on regular expressions, a concept that originated in the 1950s and has been adopted by many programming languages.
+Alternatives? Sure, the old guard `sed` can still do the job:
 
-There are lots of alternatives in Fish Shell for pattern matching. For example, you could use the `string match` command to find all matches and then loop over them to make modifications.
+```Fish Shell
+set old_school_string "Fish@Shell2023"
+echo $old_school_string | sed 's/[0-9]//g'
+# Outputs: Fish@Shell
+```
 
-However, `string replace` provides a straightforward way to modify all instances at once and is often more efficient. 
+But why not leverage Fish’s own tools? For implementation, `string replace` has a `-r` option enabling regex patterns. `-a` applies the command to all matches, and adding a '' at the end tells it to replace with nothing, i.e., delete. Use `string match` when searching for a pattern to keep, instead of what to ditch.
 
-Under the hood, `string replace` uses the PCRE2 (Perl Compatible Regular Expressions) library. This provides a rich set of features for pattern matching, including lookaheads, lookbehinds, and other advanced regex features.
+## See Also
 
-## See Also:
-
-For more details, check out these great resources:
-
-- [Fish Shell Documentation: string replace](https://fishshell.com/docs/current/cmds/string-replace.html)
-- [Fish Shell Documentation: string match](https://fishshell.com/docs/current/cmds/string-match.html)
-- [PCRE2 Documentation](https://www.pcre.org/current/doc/html/)
+- Official Fish Shell Documentation on `string`: https://fishshell.com/docs/current/cmds/string.html
+- Regex tutorial for deep diving into patterns: https://www.regular-expressions.info/
+- Sed & Awk, age-old text powers: an intro: https://www.gnu.org/software/sed/manual/sed.html, http://www.grymoire.com/Unix/Awk.html

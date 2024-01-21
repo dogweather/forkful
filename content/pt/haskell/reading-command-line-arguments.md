@@ -1,7 +1,8 @@
 ---
-title:                "Lendo argumentos de linha de comando"
-html_title:           "Arduino: Lendo argumentos de linha de comando"
-simple_title:         "Lendo argumentos de linha de comando"
+title:                "Lendo argumentos da linha de comando"
+date:                  2024-01-20T17:56:16.539737-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,39 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-A leitura de argumentos de linha de comando permite a interação dos usuários com os programas através da linha de comando. Fazemos isso para influenciar o comportamento de um programa sem alterar o código em si.
+## O quê & Por quê?
+Ler argumentos da linha de comando é o ato de pegar informações digitadas pelo usuário quando eles executam seu programa. Programadores fazem isso para tornar os programas interativos e flexíveis às necessidades do usuário, adaptando a execução conforme os dados fornecidos.
 
-## Como:
-Para os exemplos de código em Haskell, vamos usar a função `getArgs` da biblioteca `System.Environment`. Aqui está um exemplo:
-
+## Como fazer:
 ```Haskell
-import System.Environment
+import System.Environment (getArgs)
 
 main :: IO ()
 main = do
     args <- getArgs
-    print args
+    putStrLn $ "Olá! Você passou os seguintes argumentos: " ++ show args
 ```
 
-Se você executar este programa com argumentos na linha de comando (por exemplo. `runhaskell Teste.hs ola mundo`), o resultado será:
+Se você salvar isso como `Args.hs` e rodá-lo com `runhaskell Args.hs um dois três`, você terá o seguinte resultado:
 
-```Haskell
-["ola","mundo"]
+```
+Olá! Você passou os seguintes argumentos: ["um", "dois", "três"]
 ```
 
-## Mergulho Profundo:
+## Mergulho Profundo
+Historicamente, a capacidade de ler argumentos da linha de comando remonta ao início dos sistemas operacionais, permitindo que os usuários interajam diretamente com os programas. No contexto do Haskell, a biblioteca `System.Environment` é usada comumente, mas existem alternativas, como `optparse-applicative`, para uma análise mais sofisticada de argumentos. 
 
-Ao longo dos anos, a leitura de argumentos da linha de comando tem sido uma importante forma de interação com programas. Isso é particularmente útil para scripts de automação e ferramentas de linha de comando.
+No que diz respeito à implementação, `getArgs` é uma função que retorna uma lista de strings (`[String]`), onde cada string é um argumento passado para o programa. Cada argumento é separado por espaços, a menos que esteja entre aspas, permitindo argumentos que contêm espaços.
 
-No Haskell, além do `getArgs`, existe também o `getProgName` que retorna o nome do programa em execução.
-
-Além disso, o módulo `System.Console.GetOpt` fornece funções para lidar com opções de linha de comando se você precisar de algo mais complexo. 
-
-## Veja Também:
-
-Para um guia mais aprofundado sobre a biblioteca `System.Environment`, consulte a documentação da biblioteca: [System.Environment](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html)
-
-Para mais exemplos de como usar `getOpt`, confira este tutorial: [Command line arguments in Haskell with GetOpt](http://hackage.haskell.org/package/base-4.14.1.0/docs/System-Console-GetOpt.html)
-
-Já para um tutorial completo do Haskell, o Learn You a Haskell é um ótimo recurso: [Learn You a Haskell](http://learnyouahaskell.com/)
+## Veja também
+- Tutorial oficial da Haskell: [https://www.haskell.org/tutorial/io.html](https://www.haskell.org/tutorial/io.html)
+- Documentação da System.Environment: [https://hackage.haskell.org/package/base/docs/System-Environment.html](https://hackage.haskell.org/package/base/docs/System-Environment.html)
+- Para uma abordagem mais avançada, `optparse-applicative`: [https://hackage.haskell.org/package/optparse-applicative](https://hackage.haskell.org/package/optparse-applicative)

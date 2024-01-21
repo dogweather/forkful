@@ -1,6 +1,7 @@
 ---
 title:                "Deleting characters matching a pattern"
-html_title:           "Lua recipe: Deleting characters matching a pattern"
+date:                  2024-01-20T17:42:12.349122-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,46 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Deleting characters matching a pattern is a way of removing specific symbols from a string of text. It's a common task for programmers when cleaning or preparing data for further processing.
+Deleting characters matching a pattern is about finding specific sequences in text and removing them. Programmers do this to clean data, parse relevant information, or sanitize inputs.
 
 ## How to:
+In Gleam, you usually work with the `String` module for text manipulation. Regex isn't built-in, but you can remove fixed patterns or use external libraries for more complex tasks. Let's clean up some text by removing exclamation marks from a string.
 
-Let's get right to it. We'll use a function to delete all the vowels from a string.
-
-```Gleam
+```gleam
 import gleam/string
 
-fn delete_vowels(input_string: String) -> String {
-  string.replace(input_string, "aeiou", "")
+pub fn remove_exclamations(text: String) -> String {
+  string.replace(text, "!", "")
+}
+
+// Usage
+fn main() {
+  let cleaned_text = remove_exclamations("Hello, World!!")
+  assert cleaned_text == "Hello, World"
 }
 ```
+This code replaces all exclamation marks with an empty string, effectively removing them.
 
-You can call this function as follows:
+## Deep Dive
+Gleam is a statically typed language for the Erlang virtual machine, favoring performance and reliability. Its String module provides basic manipulation functions but lacks advanced pattern matching found in regex libraries.
 
-```Gleam
-delete_vowels("Hello, Gleam!")
-```
+For historical context, regex has been around since the 1950s, originating from formal language theory and automata theory. Most programming languages adopted some form of regex implementation for pattern matching.
 
-This will produce the following output:
+In Gleam, to handle more sophisticated pattern deletions, you'd typically reach for an Erlang library or an Elixir module through interop since Gleam's ecosystem is still young. The implementation relies on the robustness of the BEAM (Erlang virtual machine) and its longstanding libraries.
 
-```Gleam
-"Hll, Glm!"
-```
+Alternatives in Gleam might include writing your own pattern matching functions for more predictable patterns or handling specific cases with `String` functions like `slice`, `split`, or `trim`.
 
-## Deep Dive:
-
-The concept of pattern matching traverses a long history of programming, originating from primitive text processing methods. In Gleam, string manipulation is achieved through the `gleam/string` module, a symbol of the language's focus on functional programming principles. 
-
-Alternative methods to character deletion exist. They range from iterative removal to using regular expressions. Yet, the `string.replace` function offers simplicity and readability, making it an ideal pick for many situations. 
-
-In terms of implementation, `string.replace` scans the input for occurrences of the pattern and replaces them with the provided replacement (an empty string in our case). It's quick, efficient, and handles potentially large datasets quite well.
-
-## See Also:
-
-1. [Gleam String Module Docs](https://hexdocs.pm/gleam_stdlib/gleam/string.html)
-   
-2. [Gleam Programming Language Home](https://gleam.run)
-   
-   
-There you have it! Happy Gleaming!
+## See Also
+- An introduction to Regex in general (not Gleam-specific): [https://www.regular-expressions.info/](https://www.regular-expressions.info/)

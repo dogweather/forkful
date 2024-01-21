@@ -1,6 +1,7 @@
 ---
 title:                "חיפוש והחלפת טקסט"
-html_title:           "Elm: חיפוש והחלפת טקסט"
+date:                  2024-01-20T17:57:32.100379-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חיפוש והחלפת טקסט"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,32 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-חיפוש והחלפה של טקסט היא תהליך של מציאת מחרוזות של טקסט מסוימות ושינויים שלהם לתוך משהו אחר. מתכנתים מבצעים אותו כדי לשנות נתונים, לשפר קריאות או לבצע תיקונים באופן אוטומטי.
+חיפוש והחלפת טקסט הוא תהליך של מציאת מחרוזות בקוד והחלפתן באחרות. מתכנתים עושים זאת לתיקונים, עדכונים, או לשיפור ניתוח קוד.
 
 ## איך לעשות:
-הנה דוגמה לחיפוש והחלף באמצעות Clojure: 
+קטעי קוד של חיפוש והחלפה ב-Clojure:
+```clojure
+; חיפוש טקסט במחרוזת
+(defn find-text [text pattern]
+  (re-seq (re-pattern pattern) text))
 
-```Clojure
-(defn search-and-replace [s old new]
-  (clojure.string/replace s old new))
+; הדפסת תוצאות חיפוש
+(println (find-text "שלום עולם ושלום מדברים" "שלום"))
 
-(defn -main []
-  (println (search-and-replace "Hello, World!" "World" "Clojure")))
+; החלפת טקסט במחרוזת
+(defn replace-text [text pattern replacement]
+  (clojure.string/replace text (re-pattern pattern) replacement))
+
+; הדפסת תוצאות החלפה
+(println (replace-text "שלום עולם ושלום מדברים" "שלום" "להתראות"))
+```
+פלט לדוגמה:
+```
+(שלום שלום)
+להתראות עולם ולהתראות מדברים
 ```
 
-בפעילות זו, התרגיל מחליף את "World" ב"Hello, World!" עם "Clojure". הפלט שמודפס הוא:
+## צלילה לעומק:
+חיפוש והחלפה הוא אספקט יסודי בעיבוד טקסטים מאז ימי הקוד הראשון. ב-Clojure, פונקציות כמו `re-find`, `re-seq`, ו`clojure.string/replace` מספקות גישה קלה ויעילה לטפל בביטויים רגולריים ומחרוזות. יתרונות עבודה ב-Clojure כוללים פשטות ויעילות. לעומת זאת, אלטרנטיבות כמו עיבוד טקסט בליספ קלאסי או ב-Java דורשות גישה מעט שונה ולעיתים, יותר מסורבלות.
 
-```Clojure
-Hello, Clojure!
-```
-
-## צלילה עמוקה 
-חיפוש והחלפה של טקסט הם הליכים בסיסיים שהם חלק מזמן מה של עבודת מתכנת. הם נמנים עם הכלים הראשונים שהתפתחו בשפות תכנות. Clojure, שהייתה הראשונה בשנת 2007, משתמשת בפונקציית המילואים clojure.string/replace לתמיכה זו.
- 
-יחד עם זאת, ישנם אלטרנטיבות רבות אחרות לפונקצייה זו. לדוג' sets ו-maps הם דרך טובה נוספת לבצע חיפושים והחלפות, תוך הקפת הצורך באופן בו clojure.string/replace פועלת. 
-
-נתינת קליטה עמוקה לפרטים הטכניים, clojure.string/replace משתמשת באלגוריתם של חיפוש והחלפה פשוט. בתחילה, הוא מחפש את המטבע המיוחל במחרוזת. לאחר מכן, כאשר מוצא את זה, הוא מחליף אותה.
-
-## ראה גם 
-[החלפת מחרוזת ב-Clojure](https://clojuredocs.org/clojure.string/replace) 
-[חיפוש והחלפה של טקסט: פתרון עקיפה פשוט](https://clojure.org/guides/learn/functional_data_structures)
+## ראה גם:
+- [Clojure - re-seq](https://clojuredocs.org/clojure.core/re-seq)
+- [Clojure - replace](https://clojuredocs.org/clojure.string/replace)

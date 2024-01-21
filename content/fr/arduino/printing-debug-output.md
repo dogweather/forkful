@@ -1,7 +1,8 @@
 ---
-title:                "Imprimer la sortie de débogage"
-html_title:           "Arduino: Imprimer la sortie de débogage"
-simple_title:         "Imprimer la sortie de débogage"
+title:                "Affichage des sorties de débogage"
+date:                  2024-01-20T17:51:50.012697-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Affichage des sorties de débogage"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,35 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## What & Why?
+Imprimer un débogage, c'est écrire dans la console pour suivre ce que fait votre programme. On le fait pour repérer les bugs et comprendre le flux d'exécution.
 
-L'impression de messages de debogage, c'est afficher des informations de diagnostic pour aider à repérer et résoudre les problèmes. Les développeurs le font pour comprendre l'état interne de leur code pendant l'exécution.
-
-## Comment faire:
-
-Voici comment imprimer un message de débogage sur la console série de l'Arduino:
+## How to:
+Imprimons "Hello, world!" et un nombre en boucle avec Arduino.
 
 ```Arduino
 void setup() {
-  Serial.begin(9600); 
+  Serial.begin(9600); // Démarre la communication série à 9600 bits par seconde
 }
 
 void loop() {
-  int val = analogRead(A0);
-  Serial.println(val);
-  delay(1000);
+  Serial.println("Hello, world!"); // Affiche le texte
+  for (int i = 0; i < 5; i++) {
+    Serial.println(i); // Affiche les nombres de 0 à 4
+    delay(1000); // Attends une seconde entre chaque nombre
+  }
 }
 ```
 
-Ce script lira la valeur du port analogique A0 toutes les secondes et l'affichera sur la console série.
+Sortie attendue:
 
-## Approfondissement
+```
+Hello, world!
+0
+1
+2
+3
+4
+Hello, world!
+0
+...
+```
 
-Historiquement, le débogage était un processus long et délicat avant que les logiciels de débogage deviennent courants. L'impression de messages de débogage est une alternative simple mais efficace pour comprendre ce qui se passe dans votre code, en particulier lorsque vous travaillez avec du matériel en temps réel comme Arduino. 
+## Deep Dive
+Le débogage dans les années 1970 reposait sur des LEDs et des affichages à 7 segments. Arduino a popularisé `Serial.print()` grâce à sa facilité d'emploi. Beaucoup utilisent aussi des LED ou des écrans LCD comme alternative. Comment ça marche ? `Serial` crée une communication série entre l'Arduino et l'ordinateur. Utilisez `Serial.begin()` dans `setup()` et `Serial.print()` ou `Serial.println()` pour écrire des données.
 
-En ce qui concerne les détails de mise en œuvre, Les messages de débogage sont envoyés via le port série, qui utilise les broches de transmission (TX) et de réception (RX) du microcontrôleur Arduino. Votre ordinateur doit être connecté à Arduino via USB pour recevoir ces messages.
-
-## Voir aussi
-
-- [Arduino Serial Communication](https://www.arduino.cc/reference/fr/language/functions/communication/serial/)
-- [Debugging With Arduino](https://learn.sparkfun.com/tutorials)
+## See Also
+- Documentation Arduino sur la communication série: https://www.arduino.cc/reference/en/language/functions/communication/serial/
+- Tutoriel pour débuter avec Arduino : https://www.arduino.cc/en/Guide/HomePage
+- Des exemples de débogage avancé : http://playground.arduino.cc/Main/GeneralCodeLibrary

@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
+date:                  2024-01-20T18:02:45.037749-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,43 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# HTTP-Anfragen mit Basic Authentication senden in Rust
-
 ## Was & Warum?
+HTTP-Anfragen mit Basic Authentication ermöglichen den Zugang zu gesicherten Ressourcen, indem sie Benutzername und Passwort in Base64-kodierter Form mit der Anfrage mitsenden. Programmierer nutzen dies, um Webdienste sicher zu konsumieren oder geschützte Daten zu übertragen.
 
-Das Senden einer HTTP-Anfrage mit Basic Authentication bezieht sich auf den Prozess, einen verschlüsselten Benutzernamen und Passwort mit einer Anfrage zu senden, um die Identität des Anwenders zu bestätigen. Programmierer machen dies, um sicherzustellen, dass nur authentifizierte Nutzer auf bestimmte Daten oder Funktionen zugreifen können.
-
-## Wie es geht:
-
-Um in Rust eine HTTP-Anfrage mit Basic Authentication zu senden, verwenden wir die Bibliothek reqwest. Zuerst müssen wir sie mit ```cargo add reqwest``` in unser Projekt aufnehmen.
+## So geht's:
+Mit Rust gestaltet sich der Versand von HTTP-Requests mit Basic Authentication mithilfe der `reqwest`-Bibliothek unkompliziert. Hier ein Beispiel:
 
 ```Rust
 extern crate reqwest;
-use reqwest::header::{HeaderValue, AUTHORIZATION};
+extern crate base64;
 
-let client = reqwest::Client::new();
-let auth = format!("Basic {}", base64::encode("Benutzername:Passwort"));
-let res = client.get("https://api.deineWebsite.com/daten")
-    .header(AUTHORIZATION, HeaderValue::from_str(&auth).unwrap())
-    .send()
-    .await?;
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = reqwest::blocking::Client::new();
+    let username = "user";
+    let password = "pass";
+    let encoded_credentials = base64::encode(format!("{}:{}", username, password));
 
-println!("Status: {}", res.status());
-let text = res.text().await?;
-println!("Body: \n\n{}", text);
+    let res = client.get("http://example.com")
+        .header("Authorization", format!("Basic {}", encoded_credentials))
+        .send()?;
+
+    println!("Status: {}", res.status());
+    println!("Headers:\n{:#?}", res.headers());
+    println!("Body:\n{}", res.text()?);
+    Ok(())
+}
 ```
 
-In diesem Code wird der Benutzername und das Passwort mit Basic Authentication an die URL gesendet, die du angeben. 
+Der obige Code gibt den Status der Anfrage, die Antwort-Header und den Body der Antwort aus.
 
 ## Deep Dive
+HTTP Basic Authentication ist ein älteres, aber dennoch weit verbreitetes Authentifizierungsprotokoll. Dabei ist es wichtig zu beachten, dass diese Methode die Anmeldeinformationen im Klartext (nach Base64-Kodierung) überträgt und daher nur über HTTPS verwendet werden sollte, um Abhören zu vermeiden.
 
-Historisch gesehen ist die Basic Authentication eine der ursprünglichsten Methoden zum Authentifizieren von HTTP-Anfragen und war bereits im ersten HTTP-Standard vorgesehen. Es hat seine Schwächen (wie die Übertragung von unverschlüsselten Passwörtern), aber es bleibt immer noch eine einfache und weit unterstützte Option.
-
-Alternativen zur Basic Authentication beinhalten OAuth, das einen dritten Parteien ermöglicht, ohne ein Passwort auf Nutzerdaten zuzugreifen, oder Digest Authentication, mit der Passwörter verschlüsselt an den Server gesendet werden.
-
-In Rust wird die Basic Authentication normalerweise über die HeaderProperties implementiert. Das `reqwest`-Package verwendet eine HeaderMap, um HeaderProperties zu speichern. Authentifizierungsinformationen werden dem "Authorization"-Header als eine HeaderValue hinzugefügt, die den Benutzernamen und das Passwort enthält. Dann wird die Anfrage mit diesem Header gesendet.
+Alternativ gibt es fortgeschrittenere Methoden wie OAuth, die anstelle von direkten Anmeldeinformationen Token verwenden. Implementierungsdetails bei Basic Authentication in Rust betreffen vor allem die korrekte Kodierung und das Setzen der Header. Die Fehlerbehandlung sollte auch bedacht werden, da Netzwerkoperationen fehlschlagen können.
 
 ## Siehe auch
-
-- [reqwest Dokumentation](https://docs.rs/reqwest)
-- [Basic Authentication auf MDN](https://developer.mozilla.org/de/docs/Web/HTTP/Headers/Authorization)
+- [reqwest crate Documentation](https://docs.rs/reqwest/)
+- [HTTP Authentication: Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)
+- [The Rust Programming Language](https://doc.rust-lang.org/book/)
+- [base64 crate Documentation](https://docs.rs/base64/)

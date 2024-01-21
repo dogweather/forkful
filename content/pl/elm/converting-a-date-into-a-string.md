@@ -1,7 +1,8 @@
 ---
-title:                "Konwersja daty na ciąg znaków"
-html_title:           "Clojure: Konwersja daty na ciąg znaków"
-simple_title:         "Konwersja daty na ciąg znaków"
+title:                "Konwersja daty na łańcuch znaków"
+date:                  2024-01-20T17:36:34.829892-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Konwersja daty na łańcuch znaków"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,36 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego?
+## What & Why?
+"Co i dlaczego?"
+Zamiana daty na ciąg znaków w Elm to proces przekształcenia wartości daty (którą komputer rozumie) na tekst, który jest czytelny dla człowieka. Programiści robią to, aby wyświetlić daty w aplikacjach w zrozumiałej formie dla użytkowników.
 
-Konwersja daty na ciąg w Elm polega na przekształceniu wartości daty w konkretną sekwencję znaków. Programiści robią to, aby móc wyświetlać daty w czytelnej dla użytkownika formie, albo zapisywać je w formie tekstowej np. w bazie danych.
-
-## Jak to zrobić:
-
-W Elm możemy to zrealizować za pomocą pakietu `justinmimbs/date`. Przykładowy kod przedstawiający konwersję daty na ciąg znaków prezentuje się tak:
-
+## How to:
+"Jak to zrobić:"
 ```Elm
-import Date exposing (fromIsoString, toIsoStringInZone, utc)
+import Time
+import Time.Extra as TimeExtra
 
-convertDate : Maybe String -> Maybe String
-convertDate isoDate =
-    isoDate
-        |> Maybe.andThen fromIsoString
-        |> Maybe.map (toIsoStringInZone utc)
+-- Przykładowa data
+let
+    exampleDate = Time.millisToPosix 1589932800000  -- "2020-05-20 00:00:00 UTC"
+    formatString = "%Y-%m-%d %H:%M:%S"             -- typowy format daty i czasu
+in
+TimeExtra.posixToDateTime exampleDate
+    |> TimeExtra.format formatString
+    |> Result.withDefault "Invalid date"
+-- Wynik: "2020-05-20 00:00:00"
 ```
 
-Działanie tego kodu to zwrócenie daty jako ciągu znaków w formacie ISO 8601.
+## Deep Dive
+"Głębsze spojrzenie"
+W Elm zamiana daty na ciąg znaków nie jest wbudowana bezpośrednio w podstawową bibliotekę, ale jest dostępna dzięki pakietom społeczności, takim jak `justinmimbs/time-extra`. Historia formatowania dat w programowaniu jest długa i pełna różnych standardów - w Elm skupiono się na prostocie i bezpieczeństwie typów, aby zapobiec błędom podczas pracy z datami. Alternatywą może być użycie wyrażeń regularnych do własnej manipulacji formatem albo inne biblioteki, które mogą zawierać więcej funkcji, jeśli taka potrzeba istnieje. Kluczowe jest zrozumienie formatu daty i godziny określone przez ciągi jak "%Y-%m-%d %H:%M:%S", które określają, jak data powinna być wyświetlana.
 
-## Pogłębiona analiza
-
-Pierwotnie w Elm nie było wbudowanej funkcji umożliwiającej proste przekształcenie daty do ciągu znaków. Dopiero popularność języka i rozwijające się społeczności dookoła niego przyczyniły się do stworzenia mnóstwa praktycznych pakietów, takich jak `justinmimbs/date`.
-
-Alternatywą dla tej metody może być wykorzystanie pakietu `elm/bytes`, który umożliwia bardziej niskopoziomowe manipulowanie danymi, ale jest też trudniejszy w obsłudze.
-
-Detal implementacyjny: pakiet `justinmimbs/date` konwertuje daty w taki sposób, że zwraca ciągi znaków w formacie UTC, co gwarantuje unikalność konkretnego momentu na różnych strefach czasowych.
-
-## Zobacz też
-
-Więcej informacji na temat używanego tutaj pakietu do manipulacji datami znajdziesz tutaj: 
-- Dokumentacja pakietu `justinmimbs/date`: https://package.elm-lang.org/packages/justinmimbs/date/latest/
-- Elm Bytes, zaawansowane manipulacje danymi: https://package.elm-lang.org/packages/elm/bytes/latest/
+## See Also
+"Zobacz także"
+- Elm Time Documentation: [https://package.elm-lang.org/packages/elm/time/latest/](https://package.elm-lang.org/packages/elm/time/latest/)
+- justinmimbs/time-extra package: [https://package.elm-lang.org/packages/justinmimbs/time-extra/latest/](https://package.elm-lang.org/packages/justinmimbs/time-extra/latest/)
+- strftime directives explanation: [https://strftime.org/](https://strftime.org/)

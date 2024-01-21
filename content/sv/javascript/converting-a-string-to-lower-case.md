@@ -1,7 +1,8 @@
 ---
-title:                "Omvandla en sträng till gemener"
-html_title:           "Arduino: Omvandla en sträng till gemener"
-simple_title:         "Omvandla en sträng till gemener"
+title:                "Konvertera en sträng till gemener"
+date:                  2024-01-20T17:38:54.468711-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Konvertera en sträng till gemener"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,31 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## What & Why? (Vad & Varför?)
+Att konvertera en sträng till gemener innebär att omvandla alla bokstäver i strängen till små bokstäver. Programmerare gör detta för att standardisera textdata, till exempel för att underlätta jämförelser eller sökningar oavsett hur datan matades in.
 
-Att konvertera en sträng till gemena bokstäver innebär att ändra alla stora bokstäver i en sträng till små bokstäver. Programmerare brukar göra det när de vill jämföra strängar utan att ta hänsyn till teckens case, dvs om en bokstav är stor eller liten.
-
-## Så här gör du:
-
-I JavaScript, använd metoden `toLowerCase()` för att göra om alla bokstäver i en sträng till små bokstäver. Det ser ut så här:
-
-```Javascript
-let str = "Hej Världen!";
-let lowerCaseStr = str.toLowerCase();
-console.log(lowerCaseStr); // utskrift: "hej världen!"
+## How to: (Hur gör man:)
+```javascript
+let greeting = "Hej Världen!";
+let lowerCaseGreeting = greeting.toLowerCase();
+console.log(lowerCaseGreeting);  // Output: "hej världen!"
 ```
 
-## Djupdykning:
+```javascript
+let cityName = "STOCKHOLM";
+console.log(cityName.toLowerCase());  // Output: "stockholm"
+```
 
-`toLowerCase()`-metoden har funnits sedan de första versionerna av JavaScript och är en del av ECMAScript-standarderna. Det finns alternativ, som `toLocaleLowerCase()`, som kan vara bättre om du jobbar med strängar som innehåller tecken som är specifika för vissa språk.
+```javascript
+let mixedCase = "HeLsInGbOrG";
+console.log(mixedCase.toLowerCase());  // Output: "helsingborg"
+```
 
-Metoden `toLowerCase()` går igenom varje tecken i strängen, checkar om det är en stor bokstav och omvandlar den sedan till en liten bokstav. Allting annat, inklusive siffror och specialtecken, lämnas som de är.
+## Deep Dive (Djupdykning)
+Innan JavaScript, på webbens tidiga dagar, hanterades text oftast som den matades in. Detta ledde till problem med datakonsistens. JavaScript introducerade `toLowerCase()` som en lösning på detta problem. 
 
-## Se även:
+Alternativ till `toLowerCase()` inkluderar t.ex. `toLocaleLowerCase()`, vilket tar hänsyn till användarens språkinställningar – användbart om du måste hantera speciella karaktärer som är unika för ett språk.
 
-För mer information, se följande resurser:
+När `toLowerCase()` anropas går JavaScript igenom varje tecken i strängen och använder Unicode-mappningar för att byta ut stora bokstäver mot motsvarande små bokstäver. Detta betyder att konverteringen är pålitlig över olika språk och teckenuppsättningar.
 
-- [Mozilla Developer Network's toLowerCase() Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [JavaScript.info’s guide to JavaScript strings](https://javascript.info/string) 
-
-Kom ihåg, ett bra program är ett flexibelt program. Använda rätt verktyg för rätt jobb, och låt dina strängar uttrycka sig själva på det sätt som passar bäst för ditt projekt.
+## See Also (Se även)
+- MDN Web Docs för `String.prototype.toLowerCase()`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+- MDN Web Docs för `String.prototype.toLocaleLowerCase()`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase
+- En guide till JavaScripts Unicode-stöd: https://flaviocopes.com/javascript-unicode/

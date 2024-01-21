@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http"
-html_title:           "Arduino: Wysyłanie żądania http"
-simple_title:         "Wysyłanie żądania http"
+title:                "Wysyłanie żądania HTTP"
+date:                  2024-01-20T17:59:51.773352-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie żądania HTTP"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -12,39 +13,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Wysyłanie żądania HTTP to podstawowy sposób, w jaki aplikacje infrastuktury internetowej. To zasadniczo korespondencja, gdzie aplikacja prosi o określone zasoby od serwera. Programiści robią to, aby uzyskać dane potrzebne dla ich aplikacji - to jak zadawanie pytania i otrzymywanie odpowiedzi.
+Wysyłanie żądania HTTP to sposób, w jaki Twój program może komunikować się z serwerem w internecie, np. aby pobrać dane lub wysłać informacje. Programiści robią to, by integrować zewnętrzne usługi i źródła danych, które dodają wartość do ich aplikacji.
 
 ## Jak to zrobić:
 
-Przykładowy kod, który pokazuje, jak wysłać prosty GET żądanie w Haskellu może wyglądać następująco:
+W Haskellu do wysyłania żądań HTTP możemy użyć biblioteki `http-conduit`. Poniżej znajdziesz przykład prostego żądania GET.
 
-```Haskell
+```haskell
 import Network.HTTP.Simple
 
 main :: IO ()
 main = do
-    response <- httpLBS "http://httpbin.org/get"
-
-    putStrLn $ "The status code was: " ++
-               show (getResponseStatusCode response)
-    print $ getResponseHeader "Content-Type" response
-    L8.putStrLn $ getResponseBody response
+    response <- httpBS "http://httpbin.org/get"
+    putStrLn $ "The status code was: " ++ show (getResponseStatusCode response)
+    putStrLn "The headers were:"
+    print $ getResponseHeaders response
+    putStrLn "The body was:"
+    BS.putStrLn $ getResponseBody response
 ```
 
-W wyniku powyższego kodu na wyjściu otrzymamy kod statusu, typ zawartości oraz treść odpowiedzi.
+Przy uruchomieniu, wynik będzie podobny do poniższego:
 
-## Szybki kurs:
+```
+The status code was: 200
+The headers were:
+[(CI.mk "Content-Type","application/json"), ...]
+The body was:
+{
+  ...
+}
+```
 
-Sterowanie HTTP wyewoluowało na przestrzeni lat od prostych zapytań GET do obecnych skomplikowanych komunikacji API. Haskell, jako potężne narzędzie do programowania funkcjonalnego, nie pozostaje w tyle, oferując różne pakiety, takie jak `http-simple` i `http-conduit`, które umożliwiają prostą i tę proces.
+## Deep Dive
 
-Alternatywą dla wysyłania zapytań HTTP w Haskellu mogą być inne języki programowania, takie jak Python lub JavaScript, które oferują podobne funkcje. Wybór zależy od kontekstu projektu i preferencji programisty.
+W roku 2011, HTTP Conduit został stworzony jako część większej biblioteki `conduit` dla języka Haskell, ułatwiająca obsługę strumieni danych. Alternatywami dla `http-conduit` mogą być `http-client` lub bardziej niskopoziomowa `http` - ale `conduit` oferuje dużą elastyczność, zwłaszcza przy obsłudze dużych danych.
 
-Szczegółowo, wysyłanie żądania HTTP w Haskellu opiera się na konstrukcji monad IO, która jest gęsto używana do opisywania operacji wejścia/wyjścia, takich jak te związane z siecią.
+Podczas wysyłania zapytania, `http-conduit` tworzy połączenie z podanym URL, wysyła żądanie i czeka na odpowiedź. Jest to asynchroniczna operacja, która w Haskellu jest obsługiwana za pomocą monad IO, pozwalając na efekty uboczne w czysto funkcyjnym środowisku.
 
-## Zobacz też:
+Alternatywne biblioteki jak `Wreq` lub `Req` też pozwalają na wysyłanie żądań HTTP, często z dodatkowymi udogodnieniami typu automatyczne przetwarzanie JSON, ale mogą być mniej elastyczne przy pracy ze specyficznymi rodzajami powiązań HTTP.
 
-Jeśli chcesz dowiedzieć się więcej o tej tematyce, polecam następujące źródła:
+## See Also
 
-- Dokumentacja pakietu `http-conduit`: https://hackage.haskell.org/package/http-conduit
-- Dokumentacja pakietu `http-simple`: https://hackage.haskell.org/package/http-simple
-- "Real World Haskell" autorstwa Briana O'Sullivana, Dona Stewarta i Johna Goera: https://book.realworldhaskell.org/
+- Biblioteka `http-conduit`: https://www.stackage.org/package/http-conduit
+- Dokumentacja `http-client`, której `http-conduit` używa: https://www.stackage.org/package/http-client
+- `conduit` tutorial, pokazujący jak zarządzać strumieniami danych: https://www.yesodweb.com/book/conduit
+- Porównanie bibliotek HTTP dla Haskell: https://wiki.haskell.org/Network_programming#Libraries_for_HTTP_client_programming

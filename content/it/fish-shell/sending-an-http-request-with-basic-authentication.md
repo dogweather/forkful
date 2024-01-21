@@ -1,6 +1,7 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "Bash: Inviare una richiesta http con autenticazione di base"
+date:                  2024-01-20T18:01:27.758107-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,36 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Invio di una richiesta HTTP con autenticazione di base in Fish Shell
+## What & Why?
+Inviare una richiesta HTTP con autenticazione di base significa trasmettere username e password per accedere a risorse protette su un server. I programmatori lo fanno per interagire con API che richiedono una dimostrazione di identità.
 
-## Cos'è e perché?
+## How to:
+Per inviare una richiesta con autenticazione di base in Fish, puoi utilizzare `curl`. Ecco un esempio: 
 
-L'invio di una richiesta HTTP con autenticazione di base è un mezzo per accedere a risorse Web protette da una semplice forma di identificazione. I programmatori lo fanno per interactare con API che richiedono un livello base di sicurezza.
-
-## Come fare
-
-Inviamo una richiesta GET ad esempio, con `curl` e basic auth: 
-
-```Fish Shell 
-set username 'tuo_nome_utente'
-set password 'tua_password'
-curl -u $username:$password https://esempio.com
+```Fish Shell
+set user "tuo_username"
+set password "tua_password"
+set encoded_auth (echo -n "$user:$password" | base64)
+curl -H "Authorization: Basic $encoded_auth" https://esempio.com/api/dati
 ```
 
-Se l'invio è andato a buon fine, la risposta HTTP comprenderà i dati richiesti.
+Output atteso (sarà diverso a seconda dei dati forniti dall'API):
+```
+{ "dati_risposta": "Ecco i tuoi dati privati!" }
+```
 
-## Approfondimento 
+## Deep Dive
+L'autenticazione HTTP Basic è uno dei metodi più antichi per controllare l'accesso alle risorse web. È semplice ma non il più sicuro, dato che le credenziali sono codificate in base64, un encoding facilmente decodificabile. Alternativamente, si può utilizzare l'autenticazione Digest o dei token, come OAuth, che sono più sicuri. Nell'esempio di Fish, la Base64 codifica l'username e la password prima di aggiungerli all'header della richiesta HTTP, simulando il processo che un browser farebbe automaticamente quando richiesto.
 
-Questa forma di autenticazione è stato introdotta dagli standard HTTP nel 1996. Da allora, è rimasta un elemento fondamentale delle operazioni HTTP, anche se esistono metodi alternativi più sicuri, come l'autenticazione digest e l'autenticazione basata su token.
-
-L'uso di `curl` in Fish Shell per l'invio delle richieste HTTP è una soluzione pratica. Il comando `-u` di `curl` si occupa di applicare l'header di autenticazione corretto (Authorization) alla richiesta HTTP. 
-
-Tenga presente, però, che le vostre credenziali sono inviate in chiaro con la Basic auth, quindi è importante assicurarsi che la connessione sia protetta con SSL/TLS.
-
-## Vedi Anche
-
-Per ulteriori informazioni sull’autenticazione di base, si veda la specifica della RFC 7617 a questo [link](https://tools.ietf.org/html/rfc7617). 
-
-Altro sul comando `curl` e le sue variabili opzioni si può trovare a questo [link](https://curl.haxx.se/).
-
-Per esplorare metodi alternativi di autenticazione HTTP, consultate questa [guida](https://developer.mozilla.org/it/docs/Web/HTTP/Authentication).
+## See Also
+- Documentazione `curl`: https://curl.se/docs/
+- Base64 Encoding wiki: https://it.wikipedia.org/wiki/Base64
+- Autenticazione HTTP: https://developer.mozilla.org/it/docs/Web/HTTP/Authentication

@@ -1,7 +1,8 @@
 ---
-title:                "पाठ की खोज और प्रतिस्थापन"
-html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
-simple_title:         "पाठ की खोज और प्रतिस्थापन"
+title:                "पाठ खोजना और बदलना"
+date:                  2024-01-20T17:59:23.069675-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पाठ खोजना और बदलना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,31 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-खोजना और पाठ्य बदलना एक प्रकार का काम है जिसमें हम किसी मूल शब्द को और दूसरे शब्द से प्रतिस्थापित करते हैं। इसका मुख्य उपयोग बड़ी फ़ाइलों या प्रोजेक्ट को संशोधित करने के लिए होता है, जिससे कोड को समझना और लिखना आसान होता है। 
+## What & Why? (क्या और क्यों?)
+टेक्स्ट सर्च करना और बदलना मतलब है किसी स्ट्रिंग में विशेष शब्द या पैटर्न को ढूंढना और उसे नई स्ट्रिंग से रिप्लेस करना। प्रोग्रामर्स इसे डाटा संशोधन, यूज़र इनपुट्स की जांच, और सॉफ्टवेयर इंटरनल्स में एडिटिंग करने के लिए करते हैं।
 
-## कैसे करें:
-TypeScript में, हम `replace` फ़ंक्शन का इस्तेमाल कर सकते हैं। नीचे दिए गए कोड के साथ:
+## How to: (कैसे करें:)
+```typescript
+// साधारण स्ट्रिंग रिप्लेसमेंट
+let quote = "जीवन एक यात्रा है।";
+let updatedQuote = quote.replace("यात्रा", "सफ़र");
+console.log(updatedQuote); // "जीवन एक सफ़र है।"
 
-```TypeScript
-let str = "Hello TypeScript!";
-let newStr = str.replace("TypeScript", "World");
-console.log(newStr);
+// ग्लोबल रिप्लेसमेंट रेगेक्स का इस्तेमाल करते हुए
+let essay = "बारिश शांत है। बारिश सुंदर है।";
+let updatedEssay = essay.replace(/बारिश/g, "सावन");
+console.log(updatedEssay); // "सावन शांत है। सावन सुंदर है।"
+
+// केस-इनसेंसिटिव रिप्लेसमेंट
+let message = "TypeScript ज्ञान है। TYPESCRIPT शक्ति है।";
+let updatedMessage = message.replace(/typescript/ig, "TypeScript");
+console.log(updatedMessage); // "TypeScript ज्ञान है। TypeScript शक्ति है।"
 ```
-इस कोड का आउटपुट होगा: 
 
-```TypeScript
-Hello World!
-```
+## Deep Dive (गहराई में):
+टेक्स्ट सर्चिंग और रिप्लेसमेंट की जरूरत 1950s में शुरू हुई, जब एडिटिंग टूल्स और प्रोग्रामिंग लैंग्वेजेज की शुरूआत हुई। जैसे-जैसे टेक्नोलॉजी आगे बढ़ी, रेगुलर एक्सप्रेशन्स (regex) का आविष्कार हुआ, जो जटिल पैटर्न्स की सर्चिंग और रिप्लेसिंग को सरल बनाते हैं। इन कार्यों को आज के प्रोग्रामिंग टूल्स में और अधिक कुशलता से इंटीग्रेट किया गया है। जैसे कि TypeScript में, `String.prototype.replace` फंक्शन हमारी मदद करता है विभिन्न फ्लेग्स (`g` for global, `i` for case-insensitive) को यूज़ करते हुए पूरी वर्सेटिलिटी के साथ।
 
-## गहन अध्ययन:
-1. ऐतिहासिक परिप्रेक्ष्य: खोज और प्रतिस्थापन की कार्यक्षमता का समर्थन बहुत पुराने समय से उपलब्ध है, जब कंप्यूटर प्रोग्रामिंग नई-नई शुरू हुई थी।
-
-2. विकल्प: TypeScript के अलावा, आप JavaScript, Java, Python, Ruby आदि जैसी अन्य भाषाओं में भी खोज और प्रतिस्थापन कर सकते हैं।
-
-3. कार्यान्वयन विवरण: `replace` फ़ंक्शन का उपयोग स्ट्रिंग में पाठ बदलने के लिए किया जाता है। यदि मैच नहीं होता है, तो `replace` फ़ंक्शन शांत रूप से String के अस्पर्शित रूप को वापस करता है। 
-
-## इसे भी देखें:
-1. [TypeScript Handbook: String](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-2. [MDN Web Docs: String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-3. [JavaScript Search and Replace](https://www.w3schools.com/jsref/jsref_replace.asp)
+## See Also (और भी जानें):
+- MDN Web Docs पर JavaScript String replace(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+- RegExr - Regex टेस्टिंग और लर्निंग टूल: https://regexr.com/
+- TypeScript डॉक्यूमेंटेशन: https://www.typescriptlang.org/docs/

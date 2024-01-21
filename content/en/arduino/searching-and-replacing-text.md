@@ -1,6 +1,7 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "Arduino recipe: Searching and replacing text"
+date:                  2024-01-20T17:57:16.396277-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Searching and replacing text"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -12,28 +13,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Searching and replacing text is changing specific string values within a larger body of text. Programmers do it to either edit specific string values or to manipulate data by altering certain parts of it.
+Searching and replacing text lets you find specific characters or strings in a text and switch them out for something else. Programmers do it to modify code, data, or user inputs without a fuss.
 
 ## How to:
 
-In Arduino, a common way to do this is using the `replace()` function from the String class. Here's a quick example:
+Arduino doesn't natively support string search and replace in the way high-level languages do. However, you can work with character arrays or use the `String` class which offers the `replace()` method. While the former is memory-efficient, the latter is more straightforward. Let's focus on the `String` class for clarity.
 
 ```Arduino
-String text = "Hello, Arduino!";
-text.replace("Arduino", "World");
-Serial.println(text);  // Output: "Hello, World!"
+void setup() {
+  Serial.begin(9600);
+  String text = "I like apples and apples are great!";
+  text.replace("apples", "oranges");
+  Serial.println(text);
+}
+
+void loop() {
+  // Nothing to do here.
+}
 ```
-In this example, the word "Arduino" in the string "text" will be replaced with "World." The modified string is then printed to the serial monitor.
+
+Sample Output:
+```
+I like oranges and oranges are great!
+```
 
 ## Deep Dive
 
-Searching and replacing text isn't new. It's been an integral part of programming and text editing since the days of early text editors. The Arduino `replace()` function is one aspect of this.
+Back in the day, string manipulation tasks on microcontrollers were rare — memory was limited, and applications were simpler. These days, with more complex projects and ample memory space (thanks to advances in microcontroller technology), such utilities are pretty standard.
 
-An alternative to using `replace()` is to manually find the index of the substring you want to change using `indexOf()`, and then manually replacing it using `substring()`. However, this is more complex and not recommended for simple replacements.
+If you don't want to use the `String` class because of its dynamic memory use, which can cause fragmentation, you can still search and replace in C-style strings (null-terminated character arrays) using functions like `strchr()`, `strstr()`, and manual copying or replacement with loops. It's more involved but gives you greater control over memory.
 
-One thing to note about how `replace()` works is that it replaces the _first_ occurrence of the specified substring in the string. If you want to replace _all_ occurrences, you'd typically use a loop.
+For instance, an alternative way to replace a substring could look like this:
 
-## See Also:
+```Arduino
+void replaceSubstring(char *input, const char *search, const char *replace) {
+  char buffer[100];
+  char *p;
 
-For further reading on text manipulation techniques in Arduino, see the official Arduino String reference at: https://www.arduino.cc/reference/en/language/variables/data-types/string/
-As well as this great article on string manipulation techniques from Bald Engineer: https://www.baldengineer.com/arduino-string-manipulation-using-minimal-ram.html
+  // 'strstr' checks if 'search' is part of 'input'.
+  if (!(p = strstr(input, search))) return;
+
+  // Copy up to the point where 'search' is found.
+  strncpy(buffer, input, p - input);
+  buffer[p - input] = '\0';
+
+  // Append 'replace' and the rest of 'input' after 'search'.
+  sprintf(buffer+(p - input), "%s%s", replace, p + strlen(search));
+
+  // Output result
+  strcpy(input, buffer);
+}
+
+void setup() {
+  Serial.begin(9600);
+  char text[] = "I like apples and apples are great!";
+  replaceSubstring(text, "apples", "oranges");
+  Serial.println(text);
+}
+
+void loop() {
+  // Still nothing to do here.
+}
+```
+
+Sample Output:
+```
+I like oranges and oranges are great!
+```
+
+## See Also
+
+- [Arduino Reference: String Object](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Arduino Reference: String Replace Function](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
+- [Cplusplus.com: C String Functions](http://www.cplusplus.com/reference/cstring/)

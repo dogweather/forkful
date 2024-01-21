@@ -1,6 +1,7 @@
 ---
 title:                "Extraction de sous-chaînes"
-html_title:           "Arduino: Extraction de sous-chaînes"
+date:                  2024-01-20T17:45:31.333103-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,34 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce & Pourquoi ?
-Extraire des sous-chaînes dans la programmation signifie recueillir une partie spécifique d'une chaîne de caractères. C'est utilisé couramment pour analyser ou manipuler l'information dans des scénarios spécifiques.
+## What & Why?
+Extraire des sous-chaînes, c'est comme découper un morceau précis de votre baguette préférée. Les programmeurs le font pour manipuler, analyser ou simplement afficher un fragment spécifique d'un texte.
 
-## Comment faire :
-Voici comment vous pouvez extraire une sous-chaîne en utilisant Fish Shell.
-
-Pour extraire une sous-chaîne à partir d'un indice spécifique, utilisez la commande `string sub`.
+## How to:
+Dans Fish, extrayons des morceaux de chaînes de caractères. Imaginez que vous avez un morceau de texte et que vous voulez juste un bout.
 
 ```Fish Shell
-set string "Bonjour tout le monde"
-string sub -s 9 -l 4 $string
+set phrase "Bonjour, je suis un script Fish!"
+echo $phrase[9..12]  # Extraire "je"
+echo $phrase[9..-1]  # Extraire "je suis un script Fish!"
 ```
-Output:
+
+Sortie:
+```
+je
+je suis un script Fish!
+```
+
+Vous pouvez aussi définir le début et la fin.
+
 ```Fish Shell
-tout
+set phrase "Pain au chocolat ou chocolatine?"
+echo $phrase[1..4]    # Extraire "Pain"
+echo $phrase[-12..-1] # Extraire "chocolatine?"
 ```
-Dans l'exemple ci-dessus, `-s 9` spécifie l'indice de départ de la sous-chaîne (le 9ème caractère) et `-l 4` spécifie la longueur de la sous-chaîne (4 caractères).
 
-## Plongée profonde :
-L'extraction des sous-chaînes est en fait une technique utilisée depuis les premiers jours de la programmation. C'est un outil essentiel qui s'avère utile dans de nombreux contextes, que ce soit pour l'analyse syntaxique, le traitement de texte ou l'interaction avec les APIs.
+Sortie:
+```
+Pain
+chocolatine?
+```
 
-Il existe de nombreuses alternatives à `string sub` dans Fish, comme l'utilisation de `cut` ou `awk`, mais `string sub` est généralement plus simple et plus facile à comprendre.
+## Deep Dive
+Historiquement, l'extraction de sous-chaînes est une fonctionnalité présente dans de nombreux langages, car les chaînes de caractères sont fondamentales en programmation. Dans le shell classique, `cut`, `awk`, `grep` peuvent faire le travail, mais sont moins intuitifs.
 
-En ce qui concerne l'implémentation, Fish utilise une approche basée sur les indices pour extraire des sous-chaînes. L'indice de départ est inclusif et l'indice de fin est exclusif.
+Fish offre une syntaxe claire, inspirée des langages comme Python. Il utilise des index basés sur 1, ce qui est naturel pour beaucoup d'utilisateurs (pas de tête cassée avec les index à partir de 0). Les index négatifs pour compter depuis la fin, c'est comme vérifier combien il reste de tranches dans la baguette sans la sortir du sac.
 
-## Voir aussi :
-Pour plus d'informations sur l'extraction de sous-chaînes et d'autres fonctionnalités de Fish, consultez les liens suivants.
+Fish rend aussi superflu l'usage de commandes externes pour des tâches simples, ce qui signifie moins de pipes et de subshells, donc des scripts plus lisibles et performants. C'est pur Fish et ça garde script frais et croustillant.
 
-- Documentation officielle de Fish Shell : https://fishshell.com/docs/current/index.html
-- Formation sur le Fish Shell: https://github.com/jorgebucaran/fisher
-- Guide de programmation Fish Shell: https://github.com/jbucaran/awesome-fish
+## See Also
+Pour creuser, voici des liens :
+
+- Documentation officielle de Fish sur les chaînes de caractères : [https://fishshell.com/docs/current/index.html#expand-index-range](https://fishshell.com/docs/current/index.html#expand-index-range)
+- Tutoriel Fish sur les manipulations de chaînes : [https://fishshell.com/docs/current/tutorial.html#tut_strings](https://fishshell.com/docs/current/tutorial.html#tut_strings)

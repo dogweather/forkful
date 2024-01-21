@@ -1,7 +1,8 @@
 ---
-title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-html_title:           "Haskell: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+title:                "Tulevan tai menneen päivämäärän laskeminen"
+date:                  2024-01-20T17:31:38.235458-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,37 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Menneisyyden tai tulevaisuuden päivämäärän laskeminen tarkoittaa päivämäärän siirtämistä taakse- tai eteenpäin kalenterissa. Ohjelmoijat tekevät tätä mm. vanhentumispäivien, muistutusten tai aikataulutusten automatisoimiseksi.
 
-Laskeminen päivämäärä tulevaisuudessa tai menneisyydessä tarkoittaa uuden päivämäärän muodostamista nykyisestä päivämäärästä lisäämällä tai vähentämällä päiviä. Ohjelmoijat tekevät tämän, kun heidän pitää suorittaa päivämäärän perusteella tapahtuvia toimintoja, kuten aikavälien laskemista tai päivämäärien vertailua.
-
-## Miten:
-
-Haskell-ohjelmointikielessä voimme käyttää 'Data.Time' -kirjastoa. Kas, tässä on pieni koodiesimerkki:
-
+## How to:
 ```Haskell
 import Data.Time
 
+-- Lisää päiviä nykyiseen päivämäärään
+addDaysToCurrentDate :: Integer -> IO Day
+addDaysToCurrentDate days = do
+  today <- utctDay <$> getCurrentTime
+  return $ addDays days today
+
+-- Esimerkki: Lisää 10 päivää tästä päivästä
+main :: IO ()
 main = do
-    let tänään = fromGregorian 2021 9 15
-    let viikonPäästä = addDays 7 tänään
-    putStrLn $ "Viikon päästä se on " ++ show viikonPäästä
+  futureDate <- addDaysToCurrentDate 10
+  print futureDate
+
+-- Tulostaisi esimerkiksi: 2023-04-15 jos tämä päivä on 2023-04-05
 ```
-Tämän suorittaminen tulostaa: "Viikon päästä se on 2021-09-22".
+```Haskell
+-- Vähennä päiviä nykyisestä päivämäärästä
+subtractDaysFromCurrentDate :: Integer -> IO Day
+subtractDaysFromCurrentDate days = do
+  today <- utctDay <$> getCurrentTime
+  return $ addDays (negate days) today
 
-## Syvempi sukellus
+-- Esimerkki: Vähennä 10 päivää tästä päivästä
+main :: IO ()
+main = do
+  pastDate <- subtractDaysFromCurrentDate 10
+  print pastDate
 
-### Historiallinen konteksti
-Ajan laskenta on ollut keskeisessä asemassa ohjelmoinnissa sen alkupäivistä saakka. Suurin haaste ajan käsittelyssä on erilaisten aikavyöhykkeiden, päivämäärien ja kellonaikojen käsittely eri maissa ja alueilla. Tässä onkin Haskellin 'Data.Time'-kirjaston vahvuus, sillä se tarjoaa monipuoliset työkalut näiden haasteiden kohtaamiseksi.
+-- Tulostaisi esimerkiksi: 2023-03-26 jos tämä päivä on 2023-04-05
+```
 
-### Vaihtoehdot
-Voit myös käyttää 'Data.Time.Clock'-kirjastoa, jos haluat suorittaa laskutoimituksia kellonaikojen kanssa. Se toimii hyvin yhdistettynä 'Data.Time'-kirjastoon.
+## Deep Dive
+Haskellissa päivämäärien käsittelyyn voitiin kukin käyttää vanhempia kirjastoja kuten `Time` pakettia, mutta nykyään `Data.Time` kirjasto on suosiossa, kiitos sen monipuolisemman ja käyttäjäystävällisen API:n. `Data.Time` tarjoaa funktioita kuten `addDays`, joka helpottaa päivämäärien laskentaa.
 
-### Toteutuksen yksityiskohdat
-'addDays'-funktio on olennainen osa päivämäärien laskemista Haskellissa. Se ottaa päivien määrän ja 'Day'-olion parametreikseen, ja palauttaa uuden 'Day'-olion joka on selkeä ja helppo tapa suorittaa päivien lisäystä tai vähennystä.
+Vaihtoehtoisesti voi hyödyntää myös muita kirjastopaketteja, kuten `time-lens`, joka tarjoaa funktionaalisempia tapoja ajan manipuloimiseen. Kuitenkin `Data.Time` on usein riittävä useimpiin tarpeisiin ja se on hyvin dokumentoitu.
 
-## Katso myös:
+Kun lasketaan tulevaisuuden tai menneisyyden päivämääriä, tärkeää on huomioida aikavyöhykkeet ja kesäaikaan siirtymiset. Tämä voi vaikuttaa lopputulokseen, etenkin jos ajanhetkiin liittyy kellonaikoja.
 
-1. [Haskell Data.Time kirjaston dokumentaatio](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html): Täydellistä tietoa Haskellin ajan ja päivämäärän käsittelyn kirjastosta. 
-2. [Kellonaikojen käsittely Haskellissa](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html): Opas kellonaikojen laskennasta Haskellilla. 
-3. [Haskellista wikipediassa](https://fi.wikipedia.org/wiki/Haskell): Lisätietoa Haskellin ohjelmointikielestä.
+## See Also
+- Haskell `Data.Time` –dokumentaatio: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html
+- Haskell-päivämäärä- ja aikakirjastojen vertailu: https://wiki.haskell.org/Library/Time
+- Keskustelua Haskellin aikakirjastoista: https://www.reddit.com/r/haskell/comments/3q9oxp/best_library_for_dealing_with_dates_and_times/

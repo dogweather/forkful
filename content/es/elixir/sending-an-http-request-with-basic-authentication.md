@@ -1,6 +1,7 @@
 ---
 title:                "Enviando una solicitud http con autenticación básica"
-html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
+date:                  2024-01-20T18:01:18.051876-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,40 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Enviar una solicitud HTTP con autenticación básica implica proporcionar un nombre de usuario y contraseña para acceder a recursos de API restringidos. Los programadores lo hacen para interactuar con APIs seguras que requieren autenticación.
+## Qué y Por Qué?
+Enviar una solicitud HTTP con autenticación básica significa añadir credenciales de usuario y contraseña en la cabecera de la petición para acceder a recursos protegidos. Los programadores lo hacen para interactuar de forma segura con APIs o servicios web que requieren autenticación.
 
-## ¿Cómo hacerlo?
-En Elixir, puedes usar la biblioteca HTTPoison para enviar una solicitud HTTP con autenticación básica. Aquí hay un ejemplo:
+## Cómo Hacerlo:
+```elixir
+# Primero, añade la dependencia :httpoison en mix.exs
+defp deps do
+  [{:httpoison, "~> 1.8"}]
+end
 
-```Elixir
-alias HTTPoison.{BasicAuth, Get}
+# Luego, ejecuta `mix deps.get` para instalar la dependencia
 
-auth = BasicAuth.encode_credentials("username", "password")
+# Después, aquí hay un ejemplo simple de una solicitud GET con autenticación básica usando HTTPoison:
+defmodule HttpClient do
+  def get_with_basic_auth(url, username, password) do
+    auth = :base64.encode("#{username}:#{password}")
+    headers = [{"Authorization", "Basic #{auth}"}]
 
-response = 
-  Get.stream!("https://myapi.com/endpoint", [], [basic_auth: auth])
-  |> Enum.to_list
+    HTTPoison.get(url, headers)
+  end
+end
 
-IO.inspect(response)
+# Uso:
+{:ok, response} = HttpClient.get_with_basic_auth("https://api.ejemplo.com/data", "usuario", "contraseña")
+
+# Output:
+# response.body tendrá el contenido de la respuesta
+# response.status_code será el código de estado HTTP
 ```
 
-Esto enviará una solicitud GET a la url especificada con las credenciales proporcionadas. La respuesta se transmite para evitar cargas excesivas en la memoria.
+## Inmersión Profunda:
+La autenticación básica HTTP es un método antiguo pero simple para controlar el acceso a recursos web. No es el más seguro porque las credenciales van codificadas en base64, que es fácilmente decodificable. Es por eso que es fundamental usar HTTPS para encriptar la comunicación.
 
-## Deep Dive (Inmersión profunda)
-El protocolo de autenticación básica HTTP tiene sus raíces en los primeros días de las aplicaciones web. Aunque es sencillo, no es seguro para las credenciales de texto plano sin una conexión HTTPS.
+Alternativas incluyen OAuth, que es más complejo pero también más seguro. Aun así, la autenticidad básica puede ser útil para servicios internos o para pruebas rápidas.
 
-En el código de Elixir presentado, la función `BasicAuth.encode_credentials/2` toma un nombre de usuario y contraseña y los codifica en el formato requerido para la cabecera Authorization HTTP.
+En el caso de Elixir, HTTPoison se basa en Hackney, que maneja la conexión HTTP subyacente. Otras librerías como Tesla también podrían ser consideradas, pero HTTPoison es popular por su simplicidad y fluidez en Elixir.
 
-También puedes hacerlo con el módulo `:httpc` de Erlang si prefieres trabajar con los bloques de construcción de más bajo nivel:
-
-```Elixir
-:httpc.request(:get, {'https://myapi.com/endpoint', [{'Authorization', 'Basic ' <> :base64.encode_to_string('username' <> ":" <> 'password')}]}, [], [])
-```
-
-Si la API se basa en tokens en lugar de en credenciales de usuario, puedes usar la misma técnica pero reemplazando las credenciales de BasicAuth con el token.
-
-## See Also (Ver también)
-Para más detalles, consulta los siguientes recursos:
-- [Documentación HTTPoison](https://hexdocs.pm/httpoison/readme.html)
-- [Documentación sobre las solicitudes HTTP en Erlang](http://erlang.org/doc/man/httpc.html)
+## Ver También:
+- [HTTPoison GitHub repository](https://github.com/edgurgel/httpoison)
+- [Base64 encode/decode in Elixir](https://hexdocs.pm/elixir/Base.html#encode64/2)
+- [Tesla, otra librería Elixir HTTP client](https://github.com/teamon/tesla)

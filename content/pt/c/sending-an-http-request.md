@@ -1,7 +1,8 @@
 ---
-title:                "Enviando uma solicitação http"
-html_title:           "Bash: Enviando uma solicitação http"
-simple_title:         "Enviando uma solicitação http"
+title:                "Enviando uma requisição HTTP"
+date:                  2024-01-20T17:59:26.779875-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Enviando uma requisição HTTP"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,48 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Enviando uma solicitação HTTP em C
+## O Que e Por Quê?
 
-## O que & Por quê?
-Enviar uma solicitação HTTP é o ato de pedir a um servidor web, através de HTTP, por dados ou ações para serem executadas. Os programadores o fazem para se comunicar, interagir e operar na internet.
+Enviar uma solicitação HTTP permite que o seu programa converse com a web. Programadores fazem isso para buscar dados, interagir com serviços ou APIs e trocar informações entre diferentes sistemas.
 
 ## Como Fazer:
-Aqui está um exemplo de como enviar uma solicitação HTTP usando a biblioteca `curl` em C.
+
+Para enviar uma solicitação HTTP em C, você pode usar a libcurl, uma biblioteca versátil que lida com URLs. Vamos lá:
 
 ```C
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
+int main() {
+    CURL *curl;
+    CURLcode res;
 
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-    res = curl_easy_perform(curl);
-    /* verifica o erro */
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() falhou: %s\n",
-              curl_easy_strerror(res));
-    /* sempre limpe */
-    curl_easy_cleanup(curl);
-  }
-  return 0;
+    curl_global_init(CURL_GLOBAL_DEFAULT);
+
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        
+        // Perform the request, res will get the return code 
+        res = curl_easy_perform(curl);
+        
+        // Check for errors 
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                    curl_easy_strerror(res));
+        
+        // Cleanup
+        curl_easy_cleanup(curl);
+    }
+
+    curl_global_cleanup();
+    return 0;
 }
 ```
-Quando isso é executado, uma solicitação HTTP GET é enviada para `http://example.com`.
 
-## Mergulho Profundo
-Enviar uma solicitação HTTP é um dos aspectos básicos do trabalho na web e existem muitas maneiras de fazê-lo. O exemplo usou `libcurl`, escolhido pela sua facilidade de uso e apoio da comunidade. 
+Esse código simples faz uma solicitação GET para "http://example.com".
 
-HTTP foi desenvolvido por Tim Berners-Lee e seu time no CERN no começo dos anos 90. Tem sido o alicerce da World Wide Web desde então, com várias versões lançadas ao longo dos anos.
+## Mergulho Profundo:
 
-Existem várias outras bibliotecas em C para enviar solicitações HTTP, como `libwww-c`, `neon`, `serf` entre outros. Você pode escolher uma dependendo das necessidades do seu projeto.
+A libcurl tem uma história rica, iniciada em 1997, e evoluiu para suportar uma vasta gama de protocolos além do HTTP. Alternativas como sockets POSIX podem ser usadas, mas exigem mais código e conhecimento detalhado dos protocolos. Com a libcurl, o manuseio dos protocolos é abstraído, permitindo focar na lógica do seu programa. Na implementação, é crucial liberar recursos e evitar vazamentos de memória, como fazemos com `curl_easy_cleanup()` após a conclusão da solicitação.
 
-A implementação da solicitação HTTP envolve a criação de um socket, configuração do cabeçalho HTTP e envio dos dados de solicitação. A resposta do servidor é então recebida e processada.
+## Veja Também:
 
-## Veja Também
-- Documentação Libcurl: [https://curl.haxx.se/libcurl/c/](https://curl.haxx.se/libcurl/c/)
-- Tutorial Libcurl: [https://curl.se/libcurl/c/libcurl-tutorial.html](https://curl.se/libcurl/c/libcurl-tutorial.html)
+- Documentação oficial da libcurl: https://curl.se/libcurl/c/
+- HTTP para principiantes: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Basics_of_HTTP
+- Sockets em C (Uma Alternativa Avançada): https://beej.us/guide/bgnet/

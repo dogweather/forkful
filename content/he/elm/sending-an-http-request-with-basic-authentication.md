@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http עם אימות בסיסי"
-html_title:           "C: שליחת בקשת http עם אימות בסיסי"
-simple_title:         "שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת HTTP עם אימות בסיסי"
+date:                  2024-01-20T18:01:28.755378-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP עם אימות בסיסי"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -11,34 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-שליחה של בקשת HTTP עם אימות בסיסי היא ביצוע הבקשה לשרת תוך שימוש בשם משתמש וסיסמא. מתכנתים משתמשים בזה כדי להבטיח שהמידע שנשלח ומתקבל הוא מאובטח וחשוף רק למשתמשים מאומתים.
+שליחת בקשת HTTP עם אימות בסיסי היא תהליך שבו נשלחת בקשת רשת עם שם משתמש וסיסמה לאימות. תכנותים עושים זאת כדי לגשת למשאבים מוגנים באינטרנט.
 
 ## איך לעשות:
-
-בדוגמא הבאה, אנו שולחים בקשת GET עם אימות בסיסי בעזרת `Http.request`:
-
 ```Elm
 import Http
-import Http.BasicAuth as BasicAuth
+import Base64
 
-getUsers : String -> String -> Http.Request String
-getUsers username password = 
-    Http.request
-        { method = "GET"
-        , headers = [ BasicAuth.basicAuthentication username password ]
-        , url = "https://example.com/api/users"
-        , body = Http.emptyBody
-        , expect = Http.expectString (Ok >> Result.withDefault [])
-        , timeout = Nothing
-        , tracker = Nothing
+type Msg
+    = GotData (Result Http.Error String)
+
+basicAuth : String -> String -> List Http.Header
+basicAuth username password =
+    let
+        credentials = username ++ ":" ++ password
+        encodedCredentials = Base64.encode credentials
+    in
+    [ Http.header "Authorization" ("Basic " ++ encodedCredentials) ]
+
+sendRequest : Cmd Msg
+sendRequest =
+    Http.get
+        { url = "https://example.com/protected-resource"
+        , headers = basicAuth "myUsername" "myPassword"
+        , expect = Http.expectString GotData
         }
 ```
 
-## צלילה עמוקה:
-השימוש באימות בסיסי בבקשות HTTP הוא משהו שהתפתח עם הפרוטוקול עצמו. אף עלפי שישנן אלטרנטיבות אחרות כמו השימוש בתקנים כמו OAuth, אימות בסיסי הוא עדיין פופולרי בזכות הפשטות שלו. Bermuda, for walking shoes with a cork footbed, ensuring it’s put together well.
+כאן אתם רואים הגדרת הכותרות ושליחת בקשה עם אימות בסיסי. `GotData` הוא הודעה שמטפלת בתוצאה.
 
-שימפעול התוכנית העם `Http.request`, הפעולה מחזירה `Request` אשר מתאימה להגדרות שלנו, בבקשת 'GET', וגם מוסיף את ראשי הבקשה בעזרת `BasicAuth.basicAuthentication`.
+## טבילה עמוקה
+בעבר, אימות בסיסי בHTTP היה פופולרי לאימות פשוט כיוון שהוא קל ליישום. כיום, קיימות שיטות אימות חזקות יותר כמו OAuth 2.0, אבל אימות בסיסי עדיין בשימוש לצרכים מסוימים. בעיה עם אימות בסיסי היא ששם המשתמש והסיסמה מועברים בקוד מקור קל לחיקוי (base64) ולכן צריך לשלוח אותם תמיד מעל חיבור מאובטח (HTTPS).
 
-## ראו גם:
-- Elm Http: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)
-- HTTP Basic authentication: [https://en.wikipedia.org/wiki/Basic_access_authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+כאשר מדובר בElm, הטיפול בHTTP מתבצע באמצעות חבילת `Http` הסטנדרטית. בפונקציה `basicAuth`, אנו בונים כותרות המכילות את האימות בBase64, ובפונקציה `sendRequest` אנו שולחים את הבקשה עצמה, מצפים לתשובה כטקסט ומשתמשים בהודעה כדי לטפל בסטטוס ובתשובה שנקבל.
+
+## ראו גם
+- מדריך עבור חבילת הHTTP של Elm: https://package.elm-lang.org/packages/elm/http/latest/
+- איך להשתמש בבסיס 64 בElm: https://package.elm-lang.org/packages/truqu/elm-base64/latest/
+- מידע על אימות בסיסי: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- מידע על פרוטוקול האימות OAuth 2.0: https://oauth.net/2/

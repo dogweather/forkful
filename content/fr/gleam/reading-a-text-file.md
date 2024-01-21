@@ -1,6 +1,7 @@
 ---
 title:                "Lecture d'un fichier texte"
-html_title:           "Arduino: Lecture d'un fichier texte"
+date:                  2024-01-20T17:54:24.372490-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lecture d'un fichier texte"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,51 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why? (Quoi et pourquoi?)
+Lire un fichier texte, c'est récupérer son contenu pour l'utiliser dans notre programme. Les programmeurs le font pour traiter des données, configurer des systèmes ou alimenter des applications avec des informations.
 
-Lire un fichier texte en programmation consiste à styphiser les lignes de code dans le fichier, une par une. Les programmeurs le font pour obtenir ou analyser des données, ou pour mettre en œuvre des tâches automatisées.
+## How to: (Comment faire:)
+```gleam
+import gleam/io
 
-## Comment faire:
-
-Avec Gleam, nous pouvons utiliser la bibliothèque `gleam/otp` pour lire des fichiers texte. Voici un exemple simple:
-
-```Gleam
-import gleam/otp.{File, Line}
-import gleam/otp.file.{open, Mode}
-
-let read_text_file = fn(path: String) {
-  case open(path, Mode.Read) {
-    Ok(file) ->
-      loop(file, [])
-    Error(err) ->
-      Error(err)
+pub fn main() {
+  // Try lire un fichier "example.txt" et traiter l'erreur si nécessaire
+  let result = io.read_file("example.txt")
+  case result {
+    Ok(content) -> io.println(content)
+    Error(error) -> io.println("Oops, quelque chose s'est mal passé: " ++ error)
   }
 }
-
-let rec loop = fn(file: File, lines: List(Line)) {
- case gleam/otp.file.read(file) {
-    Ok(line) ->
-      loop(file, [line | lines])
-    Error(end_of_file) ->
-      Ok(list:reverse(lines))
-    Error(other_error) ->
-      Error(other_error)
- }
-}
+```
+Sample output (Sortie d'exemple) :
+```
+Bonjour, voici le contenu du fichier texte !
 ```
 
-Cela retournera une liste de toutes les lignes dans le fichier texte.
+## Deep Dive (Plongée en profondeur)
+Historiquement, lire des fichiers textes est un besoin de base en informatique, avec des utilisations allant du simple stockage de données au contrôle de logiciels complexes. En Gleam, comme dans beaucoup d'autres langages fonctionnels, lire un fichier se fait de manière explicite pour gérer les erreurs potentielles de façon propre.
 
-## Plongeon Profond:
+Alternatives, vous avez par exemple `stream_file` pour lire de gros fichiers sans trop utiliser de mémoire. En termes de détails d'implémentation, on gère les erreurs grâce au pattern matching sur `Result`, qui sépare clairement succès (Ok) et erreur (Error).
 
-Historiquement, la lecture de fichiers texte est l'une des premières tâches que les ordinateurs étaient capables de faire. Elle a toujours été au cœur de la programmation. En Gleam, la `gleam/otp` est une bibliothèque open-source qui implémente un ensemble de comportements OTP (Open Telecom Platform).
-
-Il existe d'autres façons de lire des fichiers texte en Gleam, vous pouvez aussi utiliser la bibliothèque `gleam/io`.
-
-En ce qui concerne la mise en œuvre, Gleam est une langue typée statiquement, donc aucune donnée de runtime n'est requise pour le typage. La lecture de fichiers est effectuée ligne par ligne, ce qui est efficace pour les grands fichiers car toute la donnée du fichier n'a pas besoin d'être chargée en mémoire à la fois.
-
-## Voir Aussi:
-
-- Pour plus d'informations sur la bibliothèque `gleam/otp`, consultez la documentation officielle: https://hexdocs.pm/gleam_otp/readme.html
-- Pour en savoir plus sur la bibliothèque `gleam/io`, voici le lien: https://hexdocs.pm/gleam_io/readme.html
-- Pour en savoir plus sur le fonctionnement de Gleam, voici un bon ressource: https://gleam.run/learning/textbook.html
+## See Also (Voir aussi)
+- Documentation Gleam sur IO : https://gleam.run/book/tour/io.html
+- Tutoriel sur le Pattern Matching : https://gleam.run/book/tour/pattern-matching.html
+- Guide Gleam pour les erreurs : https://gleam.run/book/tour/errors.html

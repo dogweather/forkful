@@ -1,7 +1,8 @@
 ---
-title:                "קריאה של ארגומנטים משורת הפקודה"
-html_title:           "C#: קריאה של ארגומנטים משורת הפקודה"
-simple_title:         "קריאה של ארגומנטים משורת הפקודה"
+title:                "קריאת פרמטרים משורת הפקודה"
+date:                  2024-01-20T17:57:26.491628-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "קריאת פרמטרים משורת הפקודה"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,45 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+## What & Why? (מה ולמה?)
+נקרא לקלוט משורת הפקודה כי לפעמים נרצה שהסקריפט שלנו יהיה גמיש ויתאים למשתמשים שונים. זה דרך להתאימה לצרכים בלי לשנות קוד.
 
-קריאת ארגומנטים של שורת הפקודה היא דרך בה משתמשים יכולים להעביר מידע לסקריפט כאשר הם מריצים אותו. אנו עושים את זה כדי להפוך את הסקריפט ליותר גמיש ומותאם אישית.
+## How to: (איך ל:)
 
-## איך לעשות:
+כדי לקרוא ערכים משורת הפקודה, נשתמש במשתנה `$args`. זה משתנה מיוחד שמכיל את כל הארגומנטים.
 
 ```PowerShell
-# Code
+# דוגמה לסקריפט פשוט הדורש שימוש בארגומנטים
 param (
-    [Parameter(Mandatory=$true)][string]$name,
+  [String]$name,
+  [Int]$age
 )
-Write-Output "שלום $name!"
+
+Write-Host "שלום, $name! יש לך $age שנים."
+
+# אם נריץ אותו ככה:
+# .\script.ps1 -name דני -age 32
+# זה ידפיס:
+# שלום, דני! יש לך 32 שנים.
 ```
-כתוב והרץ את הסקריפט הנל, והגש את `שם` כארגומנט.
- 
+
+ניתן גם לעבוד עם `$args` בלי להגדיר פרמטרים במפורש:
+
 ```PowerShell
-# Output
-.\myscript.ps1 -name "דני"
-"שלום דני!" 
+# דוגמה פשוטה עם $args
+Write-Host "ארגומנטים שהתקבלו: $args"
+
+# אם נריץ בשורת הפקודה:
+# powershell .\script.ps1 שלום 123
+# הפלט יהיה:
+# ארגומנטים שהתקבלו: שלום 123
 ```
-זה מדפיס "שלום דני!".
 
+## Deep Dive (עומק הנושא)
+בימים הראשונים, קלט משורת הפקודה היה חיוני מכיוון שזה היה כל מה שהיה. ב-PowerShell, קריאת ארגומנטים דומה, אבל עם קצת סינטקס יותר עשיר וגמיש. הרבה סקריפטים מדברים עם משתמשים או עם סקריפטים אחרים, וזה מאוד עוזר.
 
-## צלילה עמוקה:
+חלופות נפוצות כוללות `Get-Content` לקרוא נתונים מקבצים, או `Read-Host` לקבל קלט במהלך ביצוע הסקריפט. בסופו של דבר, הארגומנטים מהפקודה הם רק רשימה של מחרוזות, ואם יש צורך לעבד אותם, נעשה את זה עם כלים פנימיים של PowerShell.
 
-1.היסטוריה: שימוש בארגומנטים בשורת הפקודה התחיל בתקופת המחשוב המוקדמת, כאשר הממשק המנשק היה הדרך היחידה לתקשר עם המחשב.
-
-2.חלופות: אפשרות אחרת להעביר מידע לסקריפט היא באמצעות הקרנה,
-אך שימוש בארגומנטים בשורת הפקודה עדיין הפרקטיקה הנפוצה.
-
-3.פרטי ביצוע: אם אתה נותן את `-name` כארגומנט, PowerShell מסתכל על הparam block ומחפש משתנה עם אותו שם. אם הוא מוצא, הוא מכין את הערך הנתון למשתנה.
-
-## ראה גם:
-
-1. [החלטה בין Param ו- $ args ב-PowerShell]
-(https://www.faqforge.com/powershell/deciding-between-param-and-args-in-powershell/)
-
-2. [עבודה עם משתנים ב-PowerShell]
-(https://www.red-gate.com/simple-talk/sysadmin/powershell/working-with-variables-in-powershell/)
-
-3. [עבודה עם System.Object משתנים ב-PowerShell]
-(https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-day-to-day-admin-tasks-working-with-object-variables/)</p>
+## See Also (ראו גם)
+- [about_Functions](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions)
+- [about_Automatic_Variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables)

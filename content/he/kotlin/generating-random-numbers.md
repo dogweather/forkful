@@ -1,7 +1,8 @@
 ---
-title:                "גירוד מספרים אקראיים"
-html_title:           "Haskell: גירוד מספרים אקראיים"
-simple_title:         "גירוד מספרים אקראיים"
+title:                "גילוי מספרים אקראיים"
+date:                  2024-01-20T17:49:29.990011-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "גילוי מספרים אקראיים"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Numbers"
@@ -10,24 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה? 
-צורת ראנדומלית היא יצירת רצף של מספרים שאין קשר בין אחד לשני, או שאין דרך לחזות מה הם יהיו. מתכנתים מייצרים מספרים אקראיים כדי להגיע לתוצאות שונות במהלך חישובים, לבחינת תרחישים תחליפיים או להפגיש את המשתמש באפקט הלא צפוי. 
+## What & Why?
+מה זה יצירת מספרים אקראיים ולמה זה חשוב בתכנות? יצירת מספרים אקראיים היא התהליך שבו אנו מייצרים ערכים לא צפויים. זה נחוץ למשחקים, בדיקות, אלגוריתמים של הסתברות ועוד.
 
-## איך לעשות את זה:
-הנה דוגמה באמצעות Kotlin:
+## How to:
+כדי ליצור מספרים אקראיים ב-Kotlin, אתה יכול להשתמש בקלאס `Random` או בפונקציות שכבר מובנות בסטנדרט לייבררי.
+
+```Kotlin
+import kotlin.random.Random
+
+fun main() {
+    val randomNumber = Random.nextInt(0, 100) // מספר אקראי בין 0 ל-99
+    println(randomNumber)
+}
 ```
-val randomValues = List(10) { Random.nextDouble() }
-println(randomValues)
-```
-הקוד הפשוט הזה מייצר רשימה של 10 מספרים אקראיים בטווח של 0 עד 1.
 
-## צלילה עמוקה:
-תחביר ה-Kotlin מספק דרכים משופרות ליצירת מספרים אקראיים בהשוואה לשפות אחרות, כמו Java. זו נותנת לך את השליטה ליצור מספרים אקראיים בטווחים ספציפיים ובצורות מסוימות.
-בנוסף לספריה הרגילה של Java, Kotlin מאפשר לך להשתמש במתודה Random.nextDouble(). המתודה הזו מחזירה מספר ממשי אקראי בטווח 0..1.
+עכשיו הפלט יהיה מספר אקראי מדי פעם שהתוכנית תרוץ.
 
-## ראו גם:
-מדריך לדמיון אקראי ב-Kotlin:
-https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/next-double.html
+## Deep Dive
+מיום המצאת המחשבים, הייתה צורך במספרים אקראיים לשימושים שונים כמו קריפטוגרפיה ומשחקים. כללית, יש שני סוגים של גנרטורים: פסאודו-אקראיים (PRNGs) והארדוור אקראי (TRNGs). ב-Kotlin, `Random` הוא PRNG, כלומר, עם אותו זרע יצירת המספרים ('seed'), הוא ייצר את אותה סדרה של מספרים. אם ברצונך מספר אקראי יותר "אמיתי", ייתכן שתרצה לשקול אפשרויות נוספות כמו גנרטורים המבוססים על אוסף נתונים אקראיים מהסביבה שלך.
 
-צורזת גייסון:
-https://www.geeksforgeeks.org/generate-random-numbers-kotlin/
+## See Also
+- המדריך הרשמי לכללים של אקראיות ב-Kotlin: [Kotlin Random](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/)
+- עיון עמוק יותר בגנרטורים פסאודו-אקראיים: [PRNGs](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+- רקע על השימוש בגנרטורים הארדוור אקראיים שהוא בסיסי לקריפטוגרפיה: [TRNGs](https://en.wikipedia.org/wiki/True_random_number_generator)

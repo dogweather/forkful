@@ -1,6 +1,7 @@
 ---
 title:                "Sammanslagning av strängar"
-html_title:           "C++: Sammanslagning av strängar"
+date:                  2024-01-20T17:34:35.580285-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sammanslagning av strängar"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,28 +12,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Sammanslagning av strängar är en operation där två eller fler strängar kopplas samman till en enda sträng. Programmerare gör detta för att snabbt bygga upp komplexa strängar från mindre delar.
+Konkatenering av strängar innebär att slå ihop textstycken så de bildar en längre sträng. Programmerare gör det för att enkelt kombinera textdata, exempelvis för att bygga meddelanden eller skapa dynamiska utskrifter.
 
-## Hur man gör:
-Här är exempel på kod och utdata i Gleam:
+## Så gör man:
+I Gleam kan du använda `++` för att konkatenera strängar. Kika på koden och resultatet nedan.
 
-```Gleam
-let fornamn = "Kalle"
-let efternamn = "Anka"
-let helsing = fornamn ++ " " ++ efternamn
+```gleam
+fn main() {
+  let hälsning = "Hej, "
+  let namn = "Anders!"
+  let komplettHälsning = hälsning ++ namn
+  komplettHälsning
+}
+
+// Output: "Hej, Anders!"
 ```
-
-Denna kod skapar en ny sträng `helsing` som kommer vara "Kalle Anka".
-
-```Gleam
-let text = "Kalle" ++ "Anka"
-```
-
-Denna kod skapar en ny sträng `text` som kommer vara "KalleAnka".
 
 ## Djupdykning
-(1) Historiskt sett har sammanslagning av strängar varit en grundläggande operation i många programmeringsspråk, inklusive tidiga versioner av C och FORTRAN. (2) Alternativt kan du använda formaterade strängfunktioner som `sprintf` i C eller `intertext` i Gleam för mer komplex strängmanipulation. (3) Implementationen av strängsammanslagning kan variera stort beroende på programmeringsspråket. I Gleam är `++` en inbyggd funktion för att sammanfoga strängar.
+Historiskt sett har strängkonkatenering varit en grundläggande del av många programmeringsspråk för att hantera textdata. Det finns alternativ, som att använda formatsträngar eller bygga en lista med strängdelar och sedan foga ihop dem. I Gleam genomförs konkatenering effektivt, men vid stora mängder data kan alternativa metoder som att använda `String.concat` eller `String.builder` vara att föredra för att optimera prestanda.
 
 ## Se även
-1. Officiell Gleam-dokumentation: https://gleam.run/
-3. En djupdykning i strängsammanslagningar: [Strängsammanslagning på Wikipedia](https://en.wikipedia.org/wiki/Concatenation)
+- Gleams officiella dokumentation om strängar: [https://gleam.run/book/tour/strings.html](https://gleam.run/book/tour/strings.html)

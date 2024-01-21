@@ -1,7 +1,8 @@
 ---
-title:                "Zufallszahlen generieren"
-html_title:           "Arduino: Zufallszahlen generieren"
-simple_title:         "Zufallszahlen generieren"
+title:                "Generierung von Zufallszahlen"
+date:                  2024-01-20T17:50:03.054328-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generierung von Zufallszahlen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Numbers"
@@ -10,47 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Generierung von Zufallszahlen in TypeScript
+## What & Why? (Was und Warum?)
+Zufallszahlen sind in der Programmierung essenziell für Spiele, Simulationen und Tests. Sie erzeugen Unvorhersehbarkeit und ermöglichen die Modellierung von Zufallsereignissen.
 
-## Was & Warum?
+## How to: (Wie geht das?)
+TypeScript nutzt JavaScript's `Math.random()` für Zufallszahlen. Hier zwei Beispiele:
 
-Die Erzeugung von Zufallszahlen besteht darin, einen unvorhersehbaren Wert von einer bestimmten Verteilung zu erhalten. Programmierer machen dies, um eine dynamische, unvorhersehbare Verhaltensweise in ihren Programmen zu erzeugen, z.B. in Spielen, Simulationen und Kodierungsexperimenten.
-
-## Wie geht das?
-
-Schauen wir uns ein simples Beispiel in TypeScript an, um eine Zufallszahl zu erzeugen:
-
+### Beispiel 1: Einfache Zufallszahl von 0 bis 1
 ```TypeScript
-function getRandom(): number {
-    return Math.random();
+let randomNumber: number = Math.random();
+console.log(randomNumber);
+```
+Ausgabe könnte sein: `0.4378294`
+
+### Beispiel 2: Ganze Zufallszahl zwischen zwei Werten
+```TypeScript
+function getRandomInt(min: number, max: number): number {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-console.log(getRandom());
+console.log(getRandomInt(1, 10));
 ```
+Ausgabe wäre eine Zahl zwischen 1 und 10, z.B. `7`.
 
-Da `Math.random()` ein Fließkommawert zwischen 0 und 1 ausspuckt, könnten Sie eine Ausgabe wie `0.7394483645177631` erwarten. 
+## Deep Dive (Tiefer Eintauchen)
+In JavaScript und TypeScript geht `Math.random()` auf die 1990er zurück und ist nicht kryptographisch sicher. Für Spiele und einfache Anwendungen reicht es, aber nicht für Sicherheitsanwendungen. Dort benutzt man `crypto.getRandomValues()`. Die Funktion `Math.random()` erzeugt Pseudozufallszahlen, echte Zufälligkeit erreicht man in Computern nur schwer.
 
-Wenn Sie eine Zufallszahl zwischen einem bestimmten Bereich benötigen, können Sie die Funktion entsprechend modifizieren:
-
-```TypeScript
-function getRandomInRange(min: number, max: number): number {
-    return min + Math.random() * (max - min);
-}
-
-console.log(getRandomInRange(10, 20));
-```
-
-In diesem Fall liegt der Wert zwischen 10 und 20.
-
-## Vertiefender Einblick
-
-Die `Math.random()`-Methode in JavaScript (und folglich in TypeScript) verwendet eine Mischung aus mehreren Algorithmen, um Zufallszahlen zu erzeugen, abhängig vom Browser oder der Laufzeitumgebung. Es sollte beachtet werden, dass diese Methode zwar für die meisten Anwendungsfälle ausreicht, sie jedoch nicht für kryptographische Zwecke geeignet ist.
-
-Alternativ könnten Sie ein Paket wie `crypto-random` verwenden, das kryptographisch sichere Zufallszahlen erzeugt. In Node.js bietet die `crypto`-Bibliothek auch Funktionen zur Erzeugung kryptographisch sicherer Zufallszahlen.
-
-## Siehe auch
-
-1. [JavaScript Math Reference - W3Schools](https://www.w3schools.com/js/js_math.asp)
-4. [Crypto-random - npm](https://www.npmjs.com/package/crypto-random)
-
-Bitte beachten Sie, dass, obwohl diese Links spezifisch für JavaScript sind, die meisten dieser Konzepte auch auf TypeScript anwendbar sind, da TypeScript eine Superset-Sprache von JavaScript ist.
+## See Also (Siehe auch)
+- MDN Web Docs on Math.random(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+- Mozilla's documentation on `crypto.getRandomValues()`: https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues
+- A TypeScript playground to experiment with the code: https://www.typescriptlang.org/play

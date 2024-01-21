@@ -1,7 +1,8 @@
 ---
-title:                "पाठ की खोज और प्रतिस्थापन"
-html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
-simple_title:         "पाठ की खोज और प्रतिस्थापन"
+title:                "पाठ खोजना और बदलना"
+date:                  2024-01-20T17:58:34.274117-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पाठ खोजना और बदलना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,41 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-टेक्स्ट खोजना और बदलना (Searching and Replacing text) यहाँ में हम एक वाक्यांश (जैसे के एक शब्द) को खोजते हैं और इसे किसी अन्य वाक्यांश से बदल देते हैं। प्रोग्रामर्स इसे इसलिए करते हैं ताकि वे अनावश्यक डेटा को हटा सकें और इसे आवश्यक डेटा से बदल सकें। 
+Text search और replace का मतलब है, एक स्ट्रिंग में खास अक्षर या वाक्यांशों को ढूंढकर उन्हें दूसरे अक्षर या वाक्यांशों से बदल देना। Programmers इसे डाटा को संपादित करने, बग ठीक करने, और कोड को refine करने के लिए करते हैं।
 
-## कैसे करें:
+## How to: (कैसे करें:)
 
-Python में आप `str.replace()` इस्तेमाल करके एक स्ट्रिंग में टेक्स्ट को खोजने और बदलने का कार्य कर सकते हैं। 
+Python में text search और replace करना सरल है। देखिए कैसे:
 
 ```python
-text = "मैं Python सीख रहा हूँ।"
-new_text = text.replace("Python", "Java")
+# Python में text replace करना
+
+# एक सिंपल स्ट्रिंग
+text = "Hello, World! World is beautiful."
+
+# 'World' को 'Earth' से replace करना
+new_text = text.replace("World", "Earth")
 print(new_text)
 ```
 
-आउटपुट:
+Sample Output:
 
-```python
-"मैं Java सीख रहा हूँ।"
+```
+Hello, Earth! Earth is beautiful.
 ```
 
-## गहराई में:
+## Deep Dive (गहराई में जानकारी):
 
-टेक्स्ट खोजने और बदलने की क्रिया का इतिहास कॉम्प्यूटर साइंस के शुरुआती दिनों से ही जुड़ा हुआ है। आधुनिक प्रोग्रामिंग भाषाओं ने इसे और आसान बना दिया है, लेकिन यह समस्या पाठ्य संसाधनों (text resources) के साथ काम करने वाले लगभग सभी सॉफ्टवेयर प्रोजेक्ट्स में आम है। 
+Text search और replace एक प्राचीन जरूरत है, जिसे पहले manually किया जाता था। Computer के आने के बाद, यह काम आसान हो गया। Python का `replace()` method इसे और भी सपाट बनाता है। लेकिन, कभी-कभी complex patterns ढूंढने के लिए हमें regular expressions (regex) की जरूरत पड़ सकती है। Python के `re` module में `sub()` function regex के साथ replace करने का ऑप्शन देता है।
 
-Python के अलावा, अन्य भाषाओं में भी इस तरह के समान संरचना (structure) और कार्यक्षमता (functionality) पाए जाते हैं। जैसे कि JavaScript में `.replace()` और Java में `.replaceAll()`.
+```python
+import re
 
-यह  Python में टेक्स्ट को पता लगाने और बदलने का एक आसान तरीका है, लेकिन यदि आपको जटिल खोज बदलाव करने हों, तो आपको Python के रेगुलर एक्सप्रेशन मॉड्यूल `re` का इस्तेमाल करना होगा। 
+# Regex के साथ replace करना
+text = "Hello, World! World is beautiful. World is vast."
 
-## अन्य स्रोतों के लिए देखें:
+# 'World' को 'Earth' से replace करना, लेकिन केवल पहले दो occurrences के लिए
+new_text = re.sub("World", "Earth", text, 2)
+print(new_text)
+```
 
-1. Python डॉक्स स्ट्रिंग मेथड्स:
-   [https://docs.python.org/3/library/stdtypes.html#string-methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
-2. Python रेगुलर एक्सप्रेशन डॉक्स:
-   [https://docs.python.org/3/library/re.html](https://docs.python.org/3/library/re.html)
-3. Java `String.replace()` मेथड: 
-   [https://www.geeksforgeeks.org/replace-a-character-in-a-string-in-java/](https://www.geeksforgeeks.org/replace-a-character-in-a-string-in-java/)
-4. JavaScript `String.replace()` मेथड:
-   [https://www.w3schools.com/jsref/jsref_replace.asp](https://www.w3schools.com/jsref/jsref_replace.asp)
+Sample Output:
+
+```
+Hello, Earth! Earth is beautiful. World is vast.
+```
+
+Alternatives में text editors (जैसे Vim, Emacs), IDEs (जैसे PyCharm, VSCode), और command-line tools (जैसे sed) शामिल हैं।
+
+## See Also (और भी देखें):
+
+इस topic पर और जानने के लिए ये links उपयोगी होंगे:
+
+- Python `re` module documentation: https://docs.python.org/3/library/re.html
+- An interactive regex tester: https://regex101.com/
+- A beginner's tutorial for understanding regular expressions in Python: https://realpython.com/regex-python/

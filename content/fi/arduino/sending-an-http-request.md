@@ -1,6 +1,7 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-html_title:           "Bash: HTTP-pyynnön lähettäminen"
+date:                  2024-01-20T17:58:49.102790-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,55 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mikä & Miksi?)
+HTTP-pyyntö on tapa hakea tai lähettää tietoja verkon yli palvelimelle. Ohjelmoijat käyttävät sitä tietojen synkronointiin, API-kutsuihin ja verkkopalveluiden integrointiin.
 
-HTTP-pyyntö on tapa, jolla laitteet kommunikoivat verkossa. Se on välttämätöntä tietojen vaihtamiseen palvelimien ja asiakasohjelmistojen, kuten Arduino-laitteen, välillä.
-
-## Miten toimii:
-
-Tässä esimerkki siitä, kuinka Arduino-laitteesi voi lähettää HTTP GET -pyynnön:
-
+## How to: (Kuinka tehdä:)
 ```Arduino
-#include <Ethernet.h>
-#include <SPI.h>
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
 
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-char server[] = "www.sivustosi.com";
-EthernetClient client;
+const char* ssid = "yourSSID";
+const char* password = "yourPassword";
 
 void setup() {
-  Serial.begin(9600);
-  Ethernet.begin(mac);
-  delay(1000);
-  
-  if (client.connect(server, 80)) {
-    client.println("GET /index.html HTTP/1.1");
-    client.println("Host: www.sivustosi.com");
-    client.println("Connection: close");
-    client.println();
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting to WiFi...");
   }
+
+  HTTPClient http;
+  http.begin("http://yourserver.com/data"); // Your API endpoint
+  int httpCode = http.GET();
+  
+  if (httpCode > 0) { 
+    String payload = http.getString();
+    Serial.println(httpCode);
+    Serial.println(payload);
+  } else {
+    Serial.println("Error on HTTP request");
+  }
+
+  http.end(); 
 }
 
 void loop() {
-  if (client.available()) {
-    char c = client.read();
-    Serial.print(c);
-  }
-  
-  if (!client.connected()) {
-    client.stop();
-    for(;;);
-  }
+  // Nothing to do here
 }
 ```
 
-## Syvällisemmin:
+## Deep Dive (Sukellus syvemmälle)
+HTTP-pyyntöjen lähettäminen on webin perustoimintoja, joka dates back to the early days of the internet. Alternatives include using WebSocket for continuous connections or MQTT for IoT applications. Implementation  needs a network-capable microcontroller like the ESP8266 or ESP32 and relies on the underlying TCP/IP stack. Libraries like ESP8266HTTPClient simplify the process.
 
-HTTP-pyynnöt tulivat internetiin 1990-luvun alussa HTTP-protokollan myötä. Vaihtoehtoina on monia muita tapoja tehdä verkkopyyntöjä, kuten POST, PUT ja DELETE.
-
-Mitä tulee toteutukseen, Arduino ylläpitää avoimen standardin Ethernet-kirjastoa, joka helpottaa HTTP-pyyntöjen tekemistä. Yllä olevassa koodissa, liitämme ensin EthernetClient-olioon, ja lähetämme sitten standardin GET-pyynnön sisältäen palvelimen nimen ja resurssin polun. 
-
-## Lisätietoa:
-
-1. [Arduinon Ethernet-kirjasto](https://www.arduino.cc/en/Reference/Ethernet)
-2. [HTTP-pyynnöt selitetty](https://www.tutorialspoint.com/http/http_requests.htm)
+## See Also (Katso myös)
+- [Arduino WiFi Library](https://www.arduino.cc/en/Reference/WiFi)
+- [HTTP Made Really Easy](http://www.jmarshall.com/easy/http/)
+- [Understanding MQTT](https://www.hivemq.com/mqtt-essentials/)

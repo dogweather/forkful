@@ -1,6 +1,7 @@
 ---
 title:                "명령줄 인수 읽기"
-html_title:           "Arduino: 명령줄 인수 읽기"
+date:                  2024-01-20T17:56:50.289078-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "명령줄 인수 읽기"
 programming_language: "Python"
 category:             "Python"
@@ -10,32 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 어떤 것 입니까 & 왜 그것이 필요한가요?
-명령 줄 인자를 읽는 것은 사용자가 프로그램을 실행할 때 추가로 제공하는 매개변수를 읽는 것을 의미합니다. 이는 프로그래머에게 유연성을 제공하여 동일한 코드가 다양한 시나리오에서 작동하도록 할 수 있습니다.
+## What & Why?
+(무엇과 왜?)
+커맨드 라인 인자 읽기는 터미널이나 명령 프롬프트에서 프로그램으로 매개변수를 전달하는 방법인데요. 프로그램을 유연하게 만들고 사용자가 입력을 커스텀할 수 있게 해주죠.
 
-## 사용방법:
+## How to:
+(어떻게 하나요?)
+파이썬에서는 `sys` 모듈의 `argv`를 사용하여 커맨드 라인 인자를 읽습니다. 아래 예시 코드와 결과를 참고하세요.
+
 ```Python
-# 필요한 모듈을 불러옵니다.
 import sys
 
-# 명령 줄 인자를 출력합니다.
-print("이름: ", sys.argv[0])
-print("인자: ", sys.argv[1:])
+# 인자를 출력합니다.
+print("Script Name:", sys.argv[0])
+for i, arg in enumerate(sys.argv[1:]):
+    print(f"Argument {i+1}: {arg}")
+
+# 사용해 보세요. 터미널에 이렇게 입력해 볼까요?
+# python script.py first_arg second_arg third_arg
 ```
-스크립트를 실행하면 다음과 같은 출력을 볼 수 있습니다 :
-```Shell
-$ python3 myscript.py arg1 arg2 arg3
-이름:  myscript.py
-인자:  ['arg1', 'arg2', 'arg3']
+
+예상 출력:
+```
+Script Name: script.py
+Argument 1: first_arg
+Argument 2: second_arg
+Argument 3: third_arg
 ```
 
 ## Deep Dive
-시간이 지남에 따라, `sys.argv` 와 같은 저수준의 기능 외에도 추가 기능을 제공하는 라이브러리도 등장하였습니다. 예를 들어, `argparse` 라이브러리는 강력한 인자 파싱 기능을 제공하며, `getopt` 라이브러리는 UNIX 스타일의 인자를 파싱하는 기능을 제공합니다.
+(깊이 파기)
+커맨드 라인 인자 읽기는 유닉스 시대부터 있었습니다. 이 방식은 단순히 스크립트를 실행하는 것보다 유연성을 더해준답니다. `argparse`나 `click` 같은 라이브러리로 더 발전시킬 수도 있어요. 이 라이브러리들은 인자를 더 쉽게 파싱하게 해주고, 사용자에게 명확한 도움말을 제공해 줍니다.
 
-대안으로, `click` 라이브러리는 간단한 스크립트에서 복잡한 CLI 어플리케이션까지 작성하기 위한 도구를 제공합니다. 이러한 라이브러리들은 사용자가 제공한 인자의 유효성을 검사하거나, 기본 값 및 에러 메시지를 설정하는 등의 편의성을 제공하곀으므로 `sys.argv`를 바로 사용하는 것보다 다소 복잡해 보일 수 있습니다. 
-
-## 참조 자료
-- Python 공식 문서에서 `sys.argv` 의 [문서](https://docs.python.org/3/library/sys.html#sys.argv)
-- Python `argparse` 모듈 [문서](https://docs.python.org/3/library/argparse.html)
-- 'click' 라이브러리 [소개 블로그](https://click.palletsprojects.com/en/7.x/)
-- Python `getopt` 모듈 [문서](https://docs.python.org/3/library/getopt.html)
+## See Also
+(참고자료)
+- [Python `sys` module documentation](https://docs.python.org/3/library/sys.html)
+- [The `argparse` module for more complex argument parsing](https://docs.python.org/3/library/argparse.html)
+- [The `click` library for creating beautiful command line interfaces](https://click.palletsprojects.com/en/7.x/)

@@ -1,7 +1,8 @@
 ---
-title:                "Zeichen löschen, die einem Muster entsprechen"
-html_title:           "C#: Zeichen löschen, die einem Muster entsprechen"
-simple_title:         "Zeichen löschen, die einem Muster entsprechen"
+title:                "Löschen von Zeichen, die einem Muster entsprechen"
+date:                  2024-01-20T17:43:04.202690-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,45 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Charaktere nach Muster Löschen in Rust
+# Rust-Programmierung: Löschung von Zeichen nach Muster
 
-## Was & Warum
+## Was & Warum?
+Zeichen, die einem Muster entsprechen, zu löschen, bedeutet, aus einem Text gezielt bestimmte Elemente zu entfernen. Programmierer nutzen diese Operation, um unnötige oder unerwünschte Daten zu säubern oder Formatierungen zu standardisieren.
 
-Musterbasiertes Löschen von Zeichen ist die Aktion, Zeichen aus einem Text zu entfernen, die einer bestimmten Regel oder einem Muster entsprechen. Programmierer machen dies, um Daten zu säubern oder Textformatierung zu handhaben.
-
-## Wie zu:
-
-Ein Weg, um Zeichen in Rust zu löschen, ist die Verwendung der Methode `replace()`. Sie erlaubt es uns, alle Instanzen eines Zeichen oder Muster durch nichts zu ersetzen, was effektiv dazu führt, dass es gelöscht wird.
-
+## So geht's:
 ```Rust
-let s = "Hallo, Welt!";
-let ohne_komma = s.replace(",", "");
-println!("{}", ohne_komma); // Ausgabe: "Hallo Welt!"
+fn main() {
+    let text = "F0o B4r ist 100% toll!";
+    let pattern = |c: char| c.is_digit(10) || !c.is_alphanumeric();
+    let result: String = text.chars().filter(|&c| !pattern(c)).collect();
+    
+    println!("Vorher: {}", text);
+    println!("Nachher: {}", result);
+}
 ```
-In diesem Beispiel wurde das Komma gelöscht.
 
-Wir können auch gängige Ausdrücke (regex) verwenden, um komplexere Muster zu matchen und zu löschen.
-
-```Rust
-use regex::Regex;
-let re = Regex::new(r"\d").unwrap();
-let s = "123abc456";
-println!("{}", re.replace_all(&s, "")); // Ausgabe: "abc"
+Ausgabe:
 ```
-Hier werden alle Ziffern aus der Zeichenkette gelöscht.
+Vorher: F0o B4r ist 100% toll!
+Nachher: F0o Br ist toll
+```
 
-## Deep Dive
+## Tiefere Einblicke:
+Früher wurden solche Muster mit regulären Ausdrücken oder eigenen Algorithmen gelöscht. In Rust gibt es effiziente Methoden wie die `filter`-Methode, die zusammen mit Lambda-Funktionen oder Closures flexibel einsetzbar ist. Alternativen dazu sind z.B. direkte Iterationen über Zeichen und manuelles Zusammensetzen von Strings oder die Nutzung von Textverarbeitungsbibliotheken wie `regex`.
 
-Das Löschen von Zeichen nach einem Muster ist eine gebräuchliche Praxis in der Textverarbeitung und hat seinen Ursprung in frühen Programmiersprachen wie Perl und sed. In Rust gibt es mehrere Weg dies zu tun, abhängig von der Situation und der benötigten Kontrolle über den Vorgang.
+Bei der Leistung spielt auch der Charakter der Muster eine Rolle. Einfache Operationen wie das Entfernen von Ziffern oder Satzzeichen sind mit Rusts Standard-Funktionen schnell erledigt. Komplexere Muster benötigen möglicherweise den Einsatz von `regex` für effektive Verarbeitung.
 
-Wir haben oben gesehen, wie wir `replace()` verwenden können, um einfach zu handhabende Fälle zu behandeln - einfach alle Instanzen eines Zeichen oder einer Zeichenkette durch nichts zu ersetzen.
-
-Wir haben auch gesehen, wie gängige Ausdrücke verwendet werden können, um komplexere Muster zu matchen und zu löschen.
-
-Wir sollten beachten, dass, obwohl gängige Ausdrücke leistungsfähig sind, ihre Verwendung manchmal zu Leistungseinbußen führen kann, da sie meist viel komplizierter sind als einfache Zeichen- oder Zeichenkettenvergleiche - also sollten sie vorsichtig verwendet werden.
-
-## Siehe auch
-
-- Rust Dokumentation: https://doc.rust-lang.org/std/string/struct.String.html#method.replace
-- Paket `regex`: https://crates.io/crates/regex
-- Rust Buch - Textverarbeitung: https://doc.rust-lang.org/book/ch08-03-hash-maps.html#storing-utf-8-encoded-text-with-strings
+## Weiterführende Informationen:
+- Rust Standard Library: [https://doc.rust-lang.org/std/]
+- Rust Regex Crate Dokumentation: [https://docs.rs/regex/]
+- Rust by Example - Textverarbeitung: [https://doc.rust-lang.org/rust-by-example/std/str.html]

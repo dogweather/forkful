@@ -1,6 +1,7 @@
 ---
 title:                "Gerando números aleatórios"
-html_title:           "C: Gerando números aleatórios"
+date:                  2024-01-20T17:48:53.087283-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Gerando números aleatórios"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,44 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Que?
-
-Gerar números aleatórios é o processo de criar números que não têm padrão previsível. Programadores fazem isso para muitos fins, como simulações, jogos e testes de programas, onde a aleatoriedade é necessária.
+## O Que & Porquê?
+Gerar números aleatórios significa criar números que não podem ser previstos logicamente. Programadores fazem isso para funcionalidades como jogos, simulações ou para gerar dados aleatórios em testes.
 
 ## Como Fazer:
-
-A geração de números aleatórios no Elm é realizada usando o módulo `Random`. Aqui está um exemplo de como gerar um número inteiro aleatório entre 1 e 100.
 ```Elm
-import Random exposing (Generator, int)
+import Random
 
-randomInt : Generator Int
-randomInt =
-    int 1 100
+-- Gerando um número aleatório entre 1 e 100
+randomNumber : Random.Generator Int
+randomNumber = Random.int 1 100
+
+-- Para utilizar o gerador, precisamos de uma semente e executar em um programa:
+main =
+    let
+        (number, _) = Random.step randomNumber (Random.initialSeed 42)
+    in
+    -- Isto irá mostrar um número aleatório no console.
+    Html.text (String.fromInt number)
 ```
-Depois de definir o gerador, podemos usá-lo dentro de uma função para gerar um valor aleatório.
-```Elm
-import Random exposing (Generator, int, generate)
 
-randomInt : Generator Int
-randomInt =
-    int 1 100
-
-generateRandomInt : Generator Int -> Cmd msg
-generateRandomInt gen =
-    generate always gen
-```
-## Deep Dive
-
-Historicamente, a geração de números aleatórios tem sido uma parte importante da programação desde o início dos computadores. No entanto, é importante lembrar que a geração de números aleatórios em computadores é, na verdade, pseudoaleatória. Isso significa que, dada a mesma "semente", a sequência de números gerados será a mesma.
-
-Alternativas para a geração de números aleatórios no Elm incluem o uso de diferentes distribuições, como uniforme ou normal, dependendo do uso pretendido. Além disso, a função `float` pode ser usada para gerar números aleatórios de ponto flutuante.
-
-Os detalhes de implementação para a geração de números aleatórios no Elm estão escondidos, como deveriam estar em uma linguagem de programação de alto nível. No entanto, é provavelmente baseado em algum tipo de gerador de número pseudoaleatório, semelhante a outras linguagens de programação modernas.
+## Mergulho Profundo
+Historicamente, a geração de números aleatórios nos computadores sempre foi um desafio, pois a lógica computacional é determinística. Alternativas para Elm incluem geradores de números pseudoaleatórios em diferentes linguagens, cada um com suas implementações e usos variados. Elm usa um sistema funcional que separa a geração de números do estado aleatório (a semente), o que facilita a previsibilidade em testes e evita efeitos colaterais.
 
 ## Veja Também
-
-Módulo `Random`: [Elm Documentation](https://package.elm-lang.org/packages/elm/core/latest/Random)
-
-Gerador Pseudoaleatório: [Wikipedia](https://pt.wikipedia.org/wiki/Gerador_de_números_pseudoaleatórios)
-
-Distribuições de Probabilidade: [Wikipedia](https://pt.wikipedia.org/wiki/Distribuição_de_probabilidade)
+- Documentação oficial Elm sobre números aleatórios: https://package.elm-lang.org/packages/elm/random/latest/
+- Um guia para testes em Elm com números aleatórios: https://elmprogramming.com/randomness.html
+- Artigo sobre a história da geração de números aleatórios em computadores: https://en.wikipedia.org/wiki/Random_number_generation

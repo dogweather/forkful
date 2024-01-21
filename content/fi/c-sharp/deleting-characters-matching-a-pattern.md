@@ -1,7 +1,8 @@
 ---
-title:                "Merkkien poistaminen vastaavalla mallilla"
-html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
-simple_title:         "Merkkien poistaminen vastaavalla mallilla"
+title:                "Merkkien poistaminen hakemalla osumia kaavaan"
+date:                  2024-01-20T17:41:43.713822-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,31 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
-Poistamme merkit, jotka vastaavat tiettyä kaavaa ohjelmoinnissa, jotta voimme tehokkaasti siivota tai muokata tietoja. Se voi auttaa meitä tasaamaan syöttötiedot, poistamaan ei-toivotut elementit tai suorittamaan tehtäviä, kuten merkkijonojen manipulointia.
+## Mitä & Miksi?
+Kun puhutaan merkkijonosta ja sen tietyllä mallilla vastaavien merkkien poistamisesta, tarkoitamme prosessia, jolla etsimme ja hävitämme tietyn mallin mukaiset merkit merkkijonosta. Ohjelmoijat tekevät tämän yleensä puhdistaakseen tietoja, erottaakseen olennaiset tiedot tai muodostaakseen uusia tietorakenteita.
 
-# Miten:
-Tässä on yksinkertainen esimerkki siitä, miten voit poistaa kaikki numerot merkkijonosta käyttämällä Regex.Replace C# monikäyttöistä metodia.
+## Miten:
 ```C#
+using System;
 using System.Text.RegularExpressions;
 
-string input = "Koodaaja123";
-string pattern = @"\d+";
-string output = Regex.Replace(input, pattern, "");
-Console.WriteLine(output);
-```
-Tulostus näyttäisi seuraavalta:
-```C#
-"Koodaaja"
+class PatternDeletion
+{
+    static void Main()
+    {
+        string original = "Hei, maailma! 123.";
+        string pattern = @"\d"; // Poistaa kaikki numerot
+        string cleaned = Regex.Replace(original, pattern, "");
+
+        Console.WriteLine(cleaned); // Output: Hei, maailma! .
+    }
+}
 ```
 
-# Syvä Sukellus
-(1) Historiallinen Konteksti: Regex, tai säännölliset lausekkeet, koodauskäytäntö on ollut olemassa jo vuodesta 1951 lähtien. Se alkoi komentorivikäytössä UNIX-järjestelmissä ja on sittemmin sisällytetty moniin eri ohjelmointikieliin, C# mukaan lukien.
-(2) Vaihtoehdot: Voit käyttää myös `String.Replace()` -menetelmää, jos kaava ei ole tarpeen tai jos haluat vain korvata yhteneväisen alimerkkijonon. Saatat myös luottaa LINQ-toimintoihin tiettyjen merkkien poistamiseen.
-(3) Toteutuksen Tiedot: C# Regex.Replace hyväksyy merkkijonoinputin, säännöllisen lausekkeen `pattern` ja korvaavan merkkijonon. Regex-engine etsii kaikki inputista löytyvät kaavaa vastaavat osiot ja korvaa ne tarjotulla merkkijonolla, tässä tapauksessa tyhjällä merkkijonolla.
+## Syväsukellus
+Merkinmukaisen kuvion poistamisen historia juontaa juurensa varhaisiin tekstinkäsittelytarpeisiin. C#:ssa tämä on usein toteutettu säännöllisten lausekkeiden (Regular Expressions eli Regex) avulla, koska ne tarjoavat voimakkaan työkalun merkkijonojen käsittelyyn.
 
-# Katso Myös
-* Microsoft C# Ohjeet: [Regex.Replace Method](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace?view=net-5.0)
-* [Säännölliset lausekkeet C#] (https://www.tutorialsteacher.com/csharp/csharp-regex)
-* [C# String.Replace Method](https://www.dotnetperls.com/replace)
-* [LINQ:n käyttö C#] (https://docs.microsoft.com/fi-fi/dotnet/csharp/programming-guide/concepts/linq/)
+Vaihtoehtoja ovat LINQ-kyselyt tai jopa yksinkertainen merkkijonokäsittely `String.Replace`, mutta nämä menetelmät eivät ole yhtä joustavia kuin Regex. Tulee huomata, että Regex-käsittely voi olla suorituskyvyltään hitaampaa, joten kannattaa arvioida käyttötapaus huolellisesti.
+
+## Katso Myös
+- C# Regex-luokan dokumentaatio: [https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex)
+- Microsoftin .NET -oppaat säännöllisistä lausekkeista: [https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions)
+- LINQ:n virallinen dokumentaatio: [https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/)

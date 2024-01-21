@@ -1,7 +1,8 @@
 ---
-title:                "Skicka en http-begäran med grundläggande autentisering"
-html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
-simple_title:         "Skicka en http-begäran med grundläggande autentisering"
+title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
+date:                  2024-01-20T18:01:11.748898-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -11,60 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-
-Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att man får tillstånd att kommunicera med en server genom att ange legitima inloggningsuppgifter. Utvecklare gör detta för att säkerställa att bara auktoriserade användare kan få tillgång till vissa data.
+I C programmering, innebär att skicka en HTTP-förfrågan med basautentisering att du lägger till användarnamn och lösenord i en förfrågan för att komma åt skyddat innehåll. Programmerare gör detta för att interagera med webbresurser som kräver säker åtkomst.
 
 ## Hur man gör:
-
-Här är ett kodexempel i C för att skicka en HTTP-förfrågan med grundläggande autentisering med hjälp av `libcurl` biblioteket.
+För att skicka en HTTP-förfrågan med basautentisering i C, kan du använda biblioteket `libcurl`. Här är ett grundläggande exempel:
 
 ```C
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main(void)
-{
-CURL *curl;
-CURLcode res;
-
-curl_global_init(CURL_GLOBAL_DEFAULT);
-
-curl = curl_easy_init();
-if(curl) {
-curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
-
-struct curl_slist *headers = NULL;
-headers = curl_slist_append(headers, "Authorization: Basic dXNlcjp1c2Vy"); // "user:password" => "dXNlcjp1c2Vy"
-
-curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-
-res = curl_easy_perform(curl);
-
-if(res != CURLE_OK)
-fprintf(stderr, "curl_easy_perform() failed: %s\n",
-curl_easy_strerror(res));
-
-curl_easy_cleanup(curl);
-}
-
-curl_global_cleanup();
-
-return 0;
+int main(int argc, char *argv[]) {
+    CURL *curl;
+    CURLcode res;
+    
+    curl_global_init(CURL_GLOBAL_ALL);
+    curl = curl_easy_init();
+    
+    if(curl) {
+        // Ställer in URL och autentiseringsuppgifter
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com/data");
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
+        curl_easy_setopt(curl, CURLOPT_USERNAME, "användarnamn");
+        curl_easy_setopt(curl, CURLOPT_PASSWORD, "lösenord");
+        
+        // Skickar förfrågan och hanterar svar
+        res = curl_easy_perform(curl);
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() misslyckades: %s\n", 
+                    curl_easy_strerror(res));
+        }
+        curl_easy_cleanup(curl);
+    }
+    
+    curl_global_cleanup();
+    return 0;
 }
 ```
-Exempelutdatan kan likna:
-`<p>Hello, authorized user!</p>`
+**Output** kan variera beroende på serverns svar eller statuskoderna.
 
-## Djupdykning
+## Djupdykning:
+Historiskt har HTTP-basautentisering varit en enkel metod för att begränsa åtkomst till webbresurser. Den är inte det säkraste alternativet men är lätt att implementera. I modern tid används ofta tokens och OAuth för större säkerhet. Med `libcurl`, som stöder dessa tekniker, är det dock fortfarande möjligt att använda basautentisering där det är lämpligt. Detaljer du bör tänka på inkluderar att autentiseringsuppgifter ska överföras över säkra anslutningar (HTTPS), och lösenord bör aldrig hårdkodas i produktionskod.
 
-Att skicka HTTP-förfrågan med autentisering i form av basisk autentisering är en teknik som blivit utbrett tack vare dess enkelhet. Historiskt sett har det varit den go-to-metoden för HTTP-autentisering sedan starten av webben, och anses säkert om det kombineras med SSL/TLS.
-
-Alternativ till grundläggande autentisering inkluderar Digest-autentisering, eller mer moderna metoder som OAuth. Valet beror på vilket säkerhetsnivå som krävs och vilka resurser som finns tillgängliga.
-
-Implementeringsdetaljer skiljer sig något beroende på vilket bibliotek man använder. I `libcurl` till exempel, ställs `CURLOPT_HTTPHEADER` alternativet till en lista med anpassade rubriker som inkluderar "Authorization: Basic" följt av inloggningsuppgifterna i form av en base64-kodad sträng.
-
-## Se också
-
-- `libcurl` dokumentation: https://curl.se/libcurl/c/
-- HTTP-autentisering: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
-- Alternativa autentiseringsmetoder: https://datatracker.ietf.org/doc/html/rfc2617
+## Se även:
+- cURL bibliotekets officiella dokumentation: https://curl.se/libcurl/c/libcurl.html
+- RFC 7617, 'The 'Basic' HTTP Authentication Scheme': https://tools.ietf.org/html/rfc7617
+- Säkra autentiseringsmetoder med OAuth: https://oauth.net/

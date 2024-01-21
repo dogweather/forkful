@@ -1,6 +1,7 @@
 ---
 title:                "Inviare una richiesta http"
-html_title:           "C++: Inviare una richiesta http"
+date:                  2024-01-20T17:59:43.556018-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,45 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Invio di una richiesta HTTP con Gleam
+## What & Why?
+Mandare una richiesta HTTP, in pratica, è come bussare alla porta di un sito web per chiedere informazioni o per inviarne. I programmatori lo fanno per interagire con servizi web, per esempio per scaricare dati, inviare form, o comunicare con API.
 
-## Che Cos'è e Perché?
+## How to:
+Installiamo `gleam_http` per iniziare. Aggiungi al tuo `rebar.config`:
 
-L'invio di una richiesta HTTP è un metodo per comunicare con server e servizi web. I programmatori lo usano per interagire con API, recuperare dati, inviare informazioni e molto altro ancora.
+```erlang
+{deps, [
+    {gleam_http, "0.8.1"}
+]}.
+```
 
-## Come si fa:
-Ecco un esempio di come si invia una richiesta HTTP GET utilizzando Gleam:
+Poi, un esempio di codice per mandare una GET request:
 
-```Gleam 
+```gleam
+import gleam/http
 import gleam/httpc
-import gleam/uri.{Uri}
 
-pub fn main(args: List(String)) {
-  let uri = uri.parse("http://my-website.com").unwrap()
-  let response = httpc.get(uri)
-  case response {
-    Ok(response) -> io.println(response.status)
-    Error(err) -> io.println(err)
+pub fn send_get_request() {
+  case httpc.send(http.Request(method: Get, url: "https://api.example.com/data", headers: [])) {
+    Ok(response) ->
+      io.println(response.body)
+    Error(error) ->
+      io.println("Oops, something went wrong: " ++ error)
   }
 }
 ```
-Quando esegui questo codice, vedrai qualcosa del genere:
+Esegui e guarda la magia.
 
-```Gleam
-200 OK
-```
+## Deep Dive
+Inviare richieste HTTP è essenziale fin dall'inizio del web. Prima facevamo tutto in CGI e Perl, ora abbiamo un sacco di lingue e pacchetti per farlo, tipo `curl` in Linux, `NSURLRequest` in Swift, o `HttpClient` in .NET.
 
-## Approfondimento:
+Usando Gleam, ci si allinea alla visione di Erlang/BEAM per la concorrenza e tolleranza agli errori. Non solo mandi una richiesta HTTP - lo fai in modo robusto, gestendo fallimenti e scalando facilmente.
 
-### Contesto storico:
-L'HTTP (Hypertext Transfer Protocol) è stato sviluppato negli anni '90 come componente fondamentale del World Wide Web. Da allora, è diventato lo standard per la comunicazione tra client e server.
+Le alternative in Gleam comprendono l'uso di librerie esterne come `gun` o `hackney`, ma `gleam_http` e `httpc` sono spesso tutto ciò di cui hai bisogno.
 
-### Alternative:
-Oltre a HTTP, esistono altri protocolli come HTTPS (versione sicura di HTTP), FTP, SMTP e altri. Tuttavia, HTTP rimane il più popolare per le applicazioni web moderne.
-
-### Dettagli di implementazione:
-Gleam utilizza il modulo `httpc` per inviare richieste HTTP. Un URI viene passato alla funzione `get` per eseguire la richiesta. Il risultato restituito è un `Result` che può essere un `Ok` con la risposta HTTP o un `Error` con un errore HTTP.
-
-## Vedi Anche:
-
-3. Documentazione [HTTP](https://developer.mozilla.org/it/docs/Web/HTTP) da Mozilla Developer Network.
+## See Also
+- Documentazione per `gleam_http`: https://hexdocs.pm/gleam_http/
+- Repo GitHub di Gleam HTTP: https://github.com/gleam-lang/http
+- Guida BEAM per la concorrenza: https://erlang.org/doc/design_principles/concurrency.html
+- Esempi di richieste HTTP in altre lingue per confronto: https://www.codecademy.com/articles/http-requests

@@ -1,7 +1,8 @@
 ---
-title:                "Teilzeichenketten extrahieren"
-html_title:           "PowerShell: Teilzeichenketten extrahieren"
-simple_title:         "Teilzeichenketten extrahieren"
+title:                "Teilstrings extrahieren"
+date:                  2024-01-20T17:46:43.797135-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Teilstrings extrahieren"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -12,43 +13,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Substring Extraktion ist der Vorgang, bei dem ein Teilstring aus einem größeren String herausgeholt wird. Das ist nützlich, um spezifische Daten oder Muster innerhalb eines Texts zu isolieren.
+Das Extrahieren von Teilzeichenketten (Substrings) heißt, spezifische Teile aus einem String herauszuschnippeln. Programmierer machen das, um bestimmte Daten zu isolieren oder zu manipulieren, zum Beispiel in Textanalysen oder beim Daten-Scrubbing.
 
-## Wie macht man das?
+## Anleitung:
 
 ```Ruby
-text = "Hallo, Welt!"
-substring = text[7,5]
-puts substring
+# Einen String initialisieren
+satz = "Ich bin ein Ruby-Entwickler!"
+
+# Extrahieren mit der slice-Methode
+teil1 = satz.slice(0, 3)          # Ergibt "Ich"
+teil2 = satz.slice(4, 3)          # Ergibt "bin"
+teil3 = satz[11, 5]               # Alternativer Zugriff, ergibt "Ruby"
+
+# Extrahieren mit Bereichsangaben
+teil4 = satz[16..-1]              # Ergibt "Entwickler!"
+
+# Ausgabe
+puts teil1
+puts teil2
+puts teil3
+puts teil4
 ```
-Output:
-```Ruby
-Welt!
-```
 
-Eine andere Methode ist `.slice()`. 
+Erwartete Ausgabe:
 
-```Ruby
-text = "Ich liebe Ruby!"
-substring = text.slice(7,4)
-puts substring
 ```
-Output:
-```Ruby
+Ich
+bin
 Ruby
+Entwickler!
 ```
-## Vertiefung
 
-Die Substring-Extraktion gibt es schon seit den frühen Tagen der Programmiersprachen. In Ruby gibt es mehrere Methoden, um Substrings zu extrahieren, einschließlich `slice()`, `[]` und `slice!()`. Es sei zu beachten, dass `slice!()` das Original verändert, indem es den extrahierten Substring entfernt.
+## Vertiefung:
 
-Alternative Methoden sind die Verwendung von regulären Ausdrücken, um spezifischere oder komplexere Muster zu extrahieren.
+Bevor Programmiersprachen moderne Strings und Hilfsmethoden boten, mussten Programmierer manuell Zeichen durchlaufen und kopieren. Heute bieten Sprachen wie Ruby mächtige Methoden wie `slice` und Bereichsangaben (`Range`), um Substrings effizient zu extrahieren.
 
-Der Ruby Interpreter extrahiert Substrings, indem er den Index jedes Zeichens in einem String als Ausgangspunkt verwendet. Er zählt dann die Anzahl der folgenden Zeichen, die sich aus der angegebenen Länge ergeben.
+Alternativen in Ruby sind `[]`, `slice`, `slice!` (ändert den Originalstring) und Reguläre Ausdrücke. Letztere sind besonders nützlich, wenn es um komplexe Suchmuster geht.
 
-## Siehe auch
+Unter der Haube verwendet Ruby Objekte und Methoden, um mit Textdaten umzugehen. Die Implementierung solcher Features kann in C geschrieben sein und nutzt meist effiziente Algorithmen für Textmanipulation.
 
-Ruby-Dokumentation zu `slice()`: https://ruby-doc.org/core-2.7.0/String.html#method-i-slice
+## Siehe auch:
 
-Ruby-Dokumentation zu `[]`: https://ruby-doc.org/core-2.7.0/String.html#method-i-5B-5D
-
-Einführung zu regulären Ausdrücken in Ruby: https://ruby-doc.org/core-2.5.1/Regexp.html
+- Ruby-Dokumentation zu Strings: [Ruby-Doc String](https://ruby-doc.org/core-2.7.0/String.html)
+- Ruby API-Dokumentation: [Ruby API](https://rubyapi.org/2.7/o/string#method-i-slice)
+- Tutorial zu regulären Ausdrücken in Ruby: [Ruby Regexp](https://www.rubyguides.com/2015/06/ruby-regex/)

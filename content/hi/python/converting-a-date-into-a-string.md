@@ -1,7 +1,8 @@
 ---
-title:                "एक तारीख को स्ट्रिंग में परिवर्तित करना"
-html_title:           "Java: एक तारीख को स्ट्रिंग में परिवर्तित करना"
-simple_title:         "एक तारीख को स्ट्रिंग में परिवर्तित करना"
+title:                "तारीख को स्ट्रिंग में बदलना"
+date:                  2024-01-20T17:37:40.926870-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "तारीख को स्ट्रिंग में बदलना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -11,34 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-
-डेट को स्ट्रिंग में बदलना एक ऐसा प्रक्रिया है जिसमें हम डेट's को human-readable text format में बदलते हैं। प्रोग्रामर्स इसे tabular form या फिर output को समुचित रूप से प्रस्तुत करने के लिए करते हैं।
+तारीख को स्ट्रिंग में बदलना यानी एक ऐसी प्रक्रिया है जिसमें तारीख को पठनीय टेक्स्ट फॉर्म में परिवर्तित किया जाता है। प्रोग्रामर्स इसका इस्तेमाल लॉग्स, यूजर इंटरफेस और डेटा स्टोरिंग के लिए करते हैं।
 
 ## कैसे करें:
-
-एक Python code के माध्यम से हम डेट को स्ट्रिंग में कैसे बदल सकते हैं, उसे समझें:
-
 ```Python
-from datetime import date
+from datetime import datetime
 
-# आज की तारीख प्राप्त करें
-today = date.today()
+# वर्तमान तारीख और समय प्राप्त करें
+current_datetime = datetime.now()
 
-# तारीख को स्ट्रिंग में कन्वर्ट करें
-date_string = today.strftime("%d/%m/%Y")
+# तारीख को स्ट्रिंग में परिवर्तित करें
+date_string = current_datetime.strftime('%d-%m-%Y %H:%M:%S')
 
-print(date_string)  # प्रिंट करें
+# परिवर्तित स्ट्रिंग दिखाएँ
+print(date_string)
 ```
-Sample Output:
-```Python
-'27/05/2022'
+सैंपल आउटपुट:
 ```
-## गहरा गोता
+05-04-2023 21:45:12
+```
 
-स्ट्रिंग में डेट कन्वर्शन की आवश्यकता उन समयों में होती है, जब हमें एक तारीख को उपयोगकर्ता को सोचे बिना पढ़ने योग्य रूप में प्रदर्शित करना हो। `%d`, `%m`, और `%Y` हमारे दिन, महीने, और वर्ष की formatting पुरण के सबसे सामान्य parameters हैं।
+## गहराई से जानकारी:
+जब सी प्रोग्रामिंग भाषा विकसित हुई थी, तब से ही `printf` जैसे फंक्शंस के द्वारा डेटा को स्ट्रिंग में परिवर्तित करने की क्षमता थी। Python में, `datetime` मॉड्यूल `strftime` मेथड के साथ यह कार्य बहुत ही सुविधाजनक बना देता है। विकल्प के रूप में, आप `isoformat()` या फिर `str()` फंक्शन का इस्तेमाल कर सकते हैं, परंतु `strftime` आपको कस्टम फॉर्मेट प्रदान करता है। आम तौर पर, हम डेट और टाइम को `%d`, `%m`, `%Y`, `%H`, `%M`, `%S` जैसे डायरेक्टिव्स के साथ फॉर्मेट करते हैं।
 
-## अन्य जानकारी रसिद:
-
-आप यहां अधिक जानकारी प्राप्त करने के लिए देख सकते हैं: 
-- Python के official documentation पर [datetime](https://docs.python.org/3/library/datetime.html)
-- Python के official documentation पर [strftime](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior)
+## इसे भी देखें:
+- Python ऑफिशियल डॉक्स का `datetime` मॉड्यूल: https://docs.python.org/3/library/datetime.html
+- `strftime()` और `strptime()` के लिए डायरेक्टिव्स की गाइड: https://strftime.org/

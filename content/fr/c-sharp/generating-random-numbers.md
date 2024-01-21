@@ -1,7 +1,8 @@
 ---
-title:                "Générer des nombres aléatoires"
-html_title:           "Elixir: Générer des nombres aléatoires"
-simple_title:         "Générer des nombres aléatoires"
+title:                "Génération de nombres aléatoires"
+date:                  2024-01-20T17:48:34.882207-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Génération de nombres aléatoires"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
@@ -10,34 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi?
-Générer des nombres aléatoires est un processus de création de chiffres qui ne peuvent pas être raisonnablement prédits, mieux que par le hasard. Les programmeurs générent des nombres aléatoires pour ajouter des éléments d'incertitude dans les jeux, les simulations et les tests de logiciels.
+## What & Why? (Quoi et Pourquoi ?)
+Générer des nombres aléatoires, c'est comme lancer un dé virtuel. Les programmeurs les utilisent pour des jeux, des simulations ou des tests où l'imprévisibilité est essentielle.
 
-## Comment faire:
+## How to: (Comment faire :)
 ```C#
 using System;
 
-class Programme
+class Program
 {
     static void Main()
     {
-        Random alea = new Random(); 
-        int nombreAleatoire = alea.Next(1, 100); 
-        Console.WriteLine(nombreAleatoire);
+        Random random = new Random();
+        int randomNumber = random.Next(1, 101); // Génère un nombre entre 1 et 100
+        Console.WriteLine(randomNumber); // Affiche le nombre
     }
 }
 ```
-Dans cet exemple, un nombre aléatoire entre 1 et 100 est généré et affiché à l'écran.
+Exemple de sortie :
+```
+42
+```
 
-## Plongée Profonde
-Historiquement, générer de véritables nombres aléatoires était compliqué à cause de la nature déterministe des ordinateurs. Maintenant, dans la plupart des langages de programmation, il y a des fonctions intégrées pour cela, comme `Random` en C#.
+## Deep Dive (Plongée en profondeur)
 
-Il existe d'autres alternatives, comme l'algorithme de Mersenne Twister, qui est plus complexe mais aussi plus précis. De plus, pour un besoin de sécurité plus élevé, il est recommandé d'utiliser `RNGCryptoServiceProvider`.
+Historiquement, les nombres aléatoires en informatique ne sont pas vraiment "aléatoires". Ils sont souvent déterminés par des algorithmes prévisibles, d'où le terme "pseudo-aléatoire". En C#, `System.Random` est suffisant pour les besoins généraux non sécuritaires. Pour une sécurité accrue, depuis .NET Core, utilisez `System.Security.Cryptography.RandomNumberGenerator`. Ce dernier est conçu pour les scénarios cryptographiques où la prévisibilité est inacceptable.
 
-L'implémentation détaillée de la classe `Random` en C# utilise un algorithme basé sur une équation linéaire pour générer des suites de nombres qui semblent aléatoires.
+Alternatives :
+- `Guid.NewGuid().GetHashCode()` - pour un moyen rapide et sale sans grandes prétentions de qualité aléatoire.
+- `RandomNumberGenerator.GetInt32()` - pour un remplacement direct et plus sécurisé du `Random.Next()`.
 
-## Voir Aussi
-Pour plus d'informations, consultez ces liens:
-* [Random Number Generation (Wikipedia)](https://en.wikipedia.org/wiki/Random_number_generation)
-* [Random Class (Microsoft Documentation)](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0)
-* [RNGCryptoServiceProvider Class (Microsoft Documentation)](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0)
+Implémentation :
+Lors de l'utilisation de `System.Random`, si instancié plusieurs fois dans un court intervalle, cela peut conduire à des résultats identiques. Pour éviter cela, réutilisez l'instance de `Random` ou utilisez un semeur (`seed`) statique global.
+
+## See Also (Voir également)
+
+- Documentation Microsoft sur [System.Random](https://docs.microsoft.com/fr-fr/dotnet/api/system.random?view=net-6.0)
+- Approfondissement sur [RandomNumberGenerator](https://docs.microsoft.com/fr-fr/dotnet/api/system.security.cryptography.randomnumbergenerator?view=net-6.0)
+- Concept des nombres pseudo-aléatoires sur [Wikipedia](https://fr.wikipedia.org/wiki/G%C3%A9n%C3%A9rateur_de_nombres_pseudo-al%C3%A9atoires)

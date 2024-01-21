@@ -1,6 +1,8 @@
 ---
 title:                "Calculating a date in the future or past"
-html_title:           "C++ recipe: Calculating a date in the future or past"
+date:                  2024-01-20T17:28:31.987934-07:00
+model:                 gpt-4-1106-preview
+html_title:           "C# recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
 programming_language: "C++"
 category:             "C++"
@@ -11,53 +13,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Calculating past or future dates in programming involves determining a date that's a certain number of days, weeks, months, or years ahead or behind a given date. This operation is used in many practical applications such as reminders, scheduling events, or predicting future outcomes.
+Calculating a date in the future or past means figuring out what date it'll be after or before a certain time span. It's useful for creating reminders, setting expiry dates, scheduling events, or simply logging how much time has passed.
 
 ## How to:
-
-In C++, the `<chrono>` library forms part of the solution, while the added functionality of the `<ctime>` library lets you manipulate the time and date specifically. Here's a simple code snippet to calculate a future date:
+C++20 introduced the `<chrono>` library upgrades, so dealing with time is less of a hassle. Here's a quick example of adding days to the current date:
 
 ```C++
 #include <iostream>
 #include <chrono>
-#include <ctime>
+#include <format>
+
+using namespace std::chrono;
 
 int main() {
-    // Get current time
-    auto now = std::chrono::system_clock::now();
-    // Add 30 days to the current time
-    auto future = now + std::chrono::hours(24*30);
-
-    // Convert timepoint to time_t
-    std::time_t future_time = std::chrono::system_clock::to_time_t(future);
+    // Get today's date
+    auto today = floor<days>(system_clock::now());
     
-    std::cout << "Future date: " << std::ctime(&future_time);
+    // Add 30 days to today
+    auto future_date = today + days(30);
+    
+    // Convert to time_point to output using system_clock
+    auto tp = system_clock::time_point(future_date);
+    
+    // Output
+    std::cout << "Today's date: "
+              << std::format("{:%F}\n", today);
+    std::cout << "Future date (30 days later): "
+              << std::format("{:%F}\n", tp);
+    return 0;
 }
 ```
 
-The program will output something like:
-
-```shell
-Future date: Tue Sep 16 15:10:40 2025
+Sample output:
+```
+Today's date: 2023-03-15
+Future date (30 days later): 2023-04-14
 ```
 
+Subtracting days works similarly—you'd just use `-` instead of `+`.
+
 ## Deep Dive
+Before C++20, you'd maybe use a library like Boost to manipulate dates. But the updated `<chrono>` simplifies it with `system_clock`, `year_month_day`, and `duration` types.
 
-Historically, date and time manipulation in C++ was not straightforward, leading to many errors and inconsistencies. The Standard Library's `std::chrono` (since C++11) introduced types that could handle duration, time points, clocks, etc., providing programmers with a powerful and accurate way to handle time.
+Historically, calculating dates was complex due to manual handling of varying month lengths, leap years, and time zones. C++20's `<chrono>` addresses these by providing calendar and timezone support.
 
-As alternatives, libraries like `Boost.Date_Time` and `date.h` (or Howard Hinnant's date library) offer even more functionality. These libraries provide a more comprehensive API for date and time manipulation, including the handling of date, time, and timezone.
+Alternatives? You could still use Boost or even handcraft your own date logic (adventurous, but why?). There's also third-party libraries like Howard Hinnant's "date" library, which was influential in the C++20 chrono updates.
 
-However, these alternatives may be overkill for simple tasks like calculating dates in the future or past. It's worth understanding how `std::chrono` works under the hood:
-
-- `now()` function gets the current point in time (`time_point`).
-- We can add any `duration` to this `time_point`, like `hours(24*30)`.
-- We convert the `time_point` to `time_t`, a format which can be represented as a string.
+Implementation-wise, `<chrono>` defines durations as compile-time rational constants, avoiding floating-point issues. Types like `year_month_day` rest on `sys_days`, which represents a time_point as days since a common epoch (1970-01-01).
 
 ## See Also
-
-For more in-depth information about handling time in C++, consider the following resources:
-
-1. [`std::chrono` documentation](http://en.cppreference.com/w/cpp/header/chrono)
-2. [Boost Date Time Library](https://www.boost.org/doc/libs/1_68_0/doc/html/date_time.html)
-3. [Howard Hinnant's date Library](https://howardhinnant.github.io/date/date.html)
+- C++ Reference for `chrono`: https://en.cppreference.com/w/cpp/header/chrono
+- Howard Hinnant's Date Library (a precursor to C++20's chrono updates): https://github.com/HowardHinnant/date
+- Boost Date/Time documentation: https://www.boost.org/doc/libs/release/libs/date_time/

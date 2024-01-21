@@ -1,6 +1,7 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "Clojure recipe: Converting a string to lower case"
+date:                  2024-01-20T17:37:54.271048-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Converting a string to lower case"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,44 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Converting a string to lower case means changing all the uppercase characters in a string to their lowercase counterparts. Programmers often do this to make string comparisons case-insensitive and for data normalization.
+Converting a string to lower case means transforming all the characters in the text to their lower-case variants, such as turning "Hello, World!" into "hello, world!". Programmers do this for consistency, especially in tasks like comparing user input where case shouldn't matter.
 
 ## How to:
-
-Clojure provides an in-built function `clojure.string/lower-case` to convert a string to lowercase.
+In Clojure, to convert a string to lower case, you'll use the `clojure.string/lower-case` function. Look how simple it is:
 
 ```clojure
 (require '[clojure.string :as str])
 
-(def s "HeLLo WoRLD")
-
-(str/lower-case s)
+(str/lower-case "Hello, World!") ; => "hello, world!"
 ```
 
-When you run the above code, it transforms the string "HeLLo WoRLD" into "hello world".
-
-## Deep Dive:
-
-Clojure's `lower-case` function is actually a wrapper around Java's `toLowerCase` method on strings. So not only does it benefit from the simplicity of being a Clojure function, it also enjoys the thoroughness with which Java handles case conversion, taking into account locale-specific rules. Of course, this means your output may vary based on the JVM's default locale setting.
-
-If, for some reason, you can't (or don't want to) use the `lower-case` function, you can reimplement it manually through a combination of `map` with the `Character/lowerCase` function and a join.
+Output is straightforward:
 
 ```clojure
-(defn lower-case [s]
-  (->> s
-       (map #(Character/toLowerCase %))
-       (apply str)))
-
-(lower-case "HeLLo WoRLD")
+"hello, world!"
 ```
 
-This version will likely be slower (since it doesn't benefit from the JVM's optimized string handling) but it could be useful if you're in a context where you can't use clojure.string.
+## Deep Dive
+Historically, case conversion has been around since early computing to harmonize text data processing. In Clojure, the `clojure.string/lower-case` function is part of the `clojure.string` library, a collection of utilities for string manipulation included in the core language.
 
-Although both `clojure.string/lower-case` and `Character/lowerCase` are great, be cautious about underestimating Unicode's habit of piling on surprises. 
+Alternatives to `clojure.string/lower-case` include rolling your own function through mapping with `char` manipulation, but this is reinventing the wheel when you have a built-in function that's optimized and well-tested.
 
-## See Also:
+Internally, `clojure.string/lower-case` hands off the heavy lifting to Java's own `toLowerCase` method, since Clojure runs on the Java Virtual Machine (JVM). This ensures high performance as it leverages Java's mature libraries.
 
-- To read more about the `lower-case` function and its alternatives, head over to [clojure.string API documentation](https://clojuredocs.org/clojure.string/lower-case).
-- For a deep dive into Clojure's string handling and Unicode complexities, [this article](https://clojure.org/guides/weird_characters) is a great place to dig in.
-- To see `toLowerCase` method and its usage in Java, refer to [Java String toLowerCase() Method](https://www.javatpoint.com/java-string-tolowercase).
+## See Also
+- Clojure's `clojure.string` API: https://clojuredocs.org/clojure.string
+- Java's `String.toLowerCase()` method: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toLowerCase()

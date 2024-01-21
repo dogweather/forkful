@@ -1,7 +1,8 @@
 ---
-title:                "기본 인증을 이용한 HTTP 요청 보내기"
-html_title:           "Arduino: 기본 인증을 이용한 HTTP 요청 보내기"
-simple_title:         "기본 인증을 이용한 HTTP 요청 보내기"
+title:                "기본 인증을 사용한 HTTP 요청 보내기"
+date:                  2024-01-20T18:01:57.628319-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "기본 인증을 사용한 HTTP 요청 보내기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,29 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇이며 왜?)
+HTTP 기본 인증으로 요청을 보내는 건 사용자 이름과 비밀번호를 이용해 웹 리소스 접근을 하는 방법입니다. 개발자들은 보안이 필요한 데이터에 안전하게 접근하기 위해 이 방법을 사용합니다.
 
-HTTP 요청을 기본 인증(Basic Authentication)으로 보내는 것은, 특정 웹서버로 요청을 보내고 결과를 받기 위해 사용자 이름과 비밀번호를 사용하는 프로세스입니다. 이를 통해 프로그래머들은 웹서비스를 안전하게 이용하고 있는지 확인할 수 있습니다.
-
-## 방법 :
+## How to (어떻게 하나요):
+다음 Fish Shell 예제는 기본 인증과 함께 HTTP 요청을 보내는 방법을 보여줍니다.
 
 ```Fish Shell
-set username 사용자이름
-set password 비밀번호
-set base64_creds (printf "$username:$password" | base64 --wrap=0)
+# 유저 이름과 비밀번호 설정
+set USER "your_username"
+set PASS "your_password"
 
-curl "https://example.com/api" -H "Authorization: Basic $base64_creds"
+# Base64로 인코딩
+set AUTH (printf "%s:%s" $USER $PASS | base64)
+
+# HTTP 요청 실행
+http --auth-type=basic --auth=$USER:$PASS GET http://example.com/resource
+
+# 또는, 'Authorization' 헤더로 직접 추가하기
+http GET http://example.com/resource "Authorization: Basic $AUTH"
 ```
-이번 코드는, Fish Shell에서 사용자 이름과 비밀번호로 기본 인증을 포함하여 HTTP 요청을 보내는 방법을 보여줍니다.
 
-## 심층 탐구 :
+예상 출력:
 
-초기 WWW 개발 단계에서 사용되었던 기본 인증은 정보를 Base64 인코딩하여 전송하는 간단한 방법입니다. 하지만, 더 안전한 대안이 개발되며, 대부분의 사이트에서는 인증 토큰이나 OAuth와 같은 방식을 사용하게 되었습니다. 
+```
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
 
-기본 인증 요청에서는 'Authorization'이라는 HTTP 헤더를 구성하게 되는데, 이 방식은 Fish Shell에서 `curl`명령과 함께 Environment Variable를 설정하는 것으로 구현됩니다. 
+{
+    "data": "Some secure data"
+}
+```
 
-## 참고 자료 :
+## Deep Dive (깊이 알아보기):
+HTTP 기본 인증은 RFC 7617에 정의돼 있으며, HTTP 프로토콜의 가장 초기의 인증 방식 중 하나입니다. 인증할 때 Base64로 인코딩된 `username:password` 형태의 토큰을 HTTP 헤더에 포함시킵니다. 중요한 건 이 인코딩이 암호화가 아니라 심플한 인코딩이라는 점입니다. 이로 인해 SSL/TLS 같은 보안 프로토콜 없이는 제3자에게 쉽게 누출될 수 있습니다.
 
-1. Basic Authentication (기본 인증)에 대한 정보 : [참고자료](https://en.wikipedia.org/wiki/Basic_access_authentication)
-2. curl을 이용한 기본 인증 : [참고자료](https://curl.se/docs/httpscripting.html#Basic)
-3. Fish Shell 공식 문서 : [참고자료](https://fishshell.com/docs/current/index.html)
+대안으로 OAuth, JWT(Json Web Tokens)와 같은 더 안전한 인증 방식이 널리 사용됩니다. 하지만 이들 방식은 구현이 더 복잡할 수 있어, 간단한 애플리케이션에서는 HTTP 기본 인증이 여전히 적합할 수 있습니다.
+
+Fish Shell에서는 `http` 명령으로 HTTP 요청을 보내는 것 외에도, `curl`이나 `wget` 같은 다른 도구들을 사용해 이와 같은 요청을 보낼 수 있습니다. 각 도구마다 약간의 문법 차이는 있지만, 기본적인 인증 개념은 동일합니다.
+
+## See Also (참고 자료):
+- Fish Shell 공식 문서: https://fishshell.com/docs/current/index.html
+- HTTP 기본 인증 RFC 7617 문서: https://tools.ietf.org/html/rfc7617
+- `httpie` 도구 GitHub 페이지: https://github.com/httpie/httpie

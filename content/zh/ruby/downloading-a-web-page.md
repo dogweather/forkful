@@ -1,6 +1,7 @@
 ---
 title:                "下载网页"
-html_title:           "Arduino: 下载网页"
+date:                  2024-01-20T17:44:40.234280-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "下载网页"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,26 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
-下载网页就是将互联网上的某个网页内容获取并保存到本地的过程。编程人员这么做主要是为了分析网页内容，或者将网页内容用于离线阅读。
+## What & Why? (是什么？为什么？)
+下载网页就是把网页内容从网络上拿到你的电脑里。程序员这么做可能是为了数据分析，或者是为了网页备份。
 
-## 如何操作：
-在Ruby中，我们可以用 `open-uri` 和 `nokogiri` 这两个库来下载并分析网页。以下是一个简单的例子：
+## How to (如何操作)
+在Ruby里，你可以使用`net/http`库简单快速地下载网页。以下是个示例：
 
 ```Ruby
-require 'open-uri'
-require 'nokogiri'
+require 'net/http'
+require 'uri'
 
-page = Nokogiri::HTML(open('https://www.example.com'))
-puts page.title
+uri = URI('http://www.example.com')
+response = Net::HTTP.get(uri)
+
+puts response
 ```
-如果你运行这段代码，你将看到输出为 "Example Domain"。这就是你从 https://www.example.com 这个网页获取的标题。
 
-## 深入探讨
-在早期，在对网页内容进行下载和解析的过程中，我们常常需要用到很复杂的方法。而有了 `open-uri` 和 `nokogiri` 等库，这个过程变得相当简单。对于其他语言，例如Python，你可能需要使用 `requests` 和 `beautifulsoup4` 等库。
+如果一切顺利，你会看到终端打印出`example.com`的HTML代码。
 
-在实现下载网页的功能时，一种可能的做法是直接将网页内容下载到内存中，然后再进行分析。然而这种做法会消耗大量的内存资源，尤其是当前下载的是大型网页的时候。因此，一种更好的做法是使用流的方式来下载和解析网页。
+## Deep Dive (深入了解)
+在Ruby早期版本，下载网页可能需用`open-uri`或外部的gem，比如`rest-client`。`net/http`是Ruby自带库，因此你不需要安装额外的gem。
 
-## 另请参见
-- Nokogiri 教程：http://www.nokogiri.org/tutorials/
-- Ruby open-uri 官方文档：https://ruby-doc.org/stdlib-2.6.1/libdoc/open-uri/rdoc/OpenURI.html
+另外，你还可以处理重定向、设置请求头或使用HTTPS协议。处理复杂情况时，更全面的库如`Faraday`或`HTTParty`会是不错的选择。
+
+使用`net/http`时，请注意可能的异常（比如网络问题导致的超时）。
+
+## See Also (另请参阅)
+- Ruby官方文档 [`Net::HTTP`](https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html)
+- [`HTTParty`](https://github.com/jnunemaker/httparty)
+- [`Faraday`](https://github.com/lostisland/faraday)

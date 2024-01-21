@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:45:32.722945-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,33 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Leikkaa & Opettele: Kuinka otetaan alijonot irti C#-kielellä
+## What & Why? (Mikä ja Miksi?)
+Substringit ovat jonoista poimittuja osia. Käyttämällä niitä, voidaan prosessoida, analysoida tai muokata tekstidataa tarpeen mukaan.
 
-## Mitä & Miksi?
-Alijonojen poiminta tarkoittaa merkkijonon osan ottamista itsenäiseen käyttöön. Ohjelmoijat tekevät tätä usein käsitelläkseen tai muokatakseen osia suuremmasta tietomassasta.
+## How to: (Kuinka tehdä:)
+C# tarjoaa useita tapoja työstää substringeja. Tutkitaanpa muutama esimerkki.
 
-## Kuinka:
-C#-kielellä alijonojen poiminta on helppoa. Pieneen osaan ohjelmaa voi sisällyttää seuraavan toimintalogiikan:
-
-```C#
-string lauseessa = "Tervetuloa Suomeen";
-string alijono = lauseessa.Substring(0, 11);
-Console.WriteLine(alijono);
-```
-
-Näytölle tulostuu:
+1. `Substring`-metodi:
 
 ```C#
-"Tervetuloa "
+string esimerkki = "Hello, World!";
+string tervehdys = esimerkki.Substring(0, 5);
+Console.WriteLine(tervehdys); // Output: Hello
 ```
 
-## Syvä sukellus
-Historiallisessa kontekstissa String-luokan Substring-metodi on ollut C#-kielen työkaluista käytössä varhaisesta vaiheesta lähtien, ja se on säilyttänyt paikkansa erittäin hyödyllisenä työkaluna.
+2. `Remove`-metodi:
 
-Vaihtoehtona Substring-metodille C#-kielellä voidaan käyttää myös juoksukykyä tai LINQ-kyselyä, mutta käytännön tehokkuuden kannalta Substring on useimmiten parempi vaihtoehto.
+```C#
+string viesti = "Hello, World!";
+string maailma = viesti.Remove(0, 7);
+Console.WriteLine(maailma); // Output: World!
+```
 
-Substring-metodin toteutuksen osalta, se ottaa kaksi parametria: aloitusindeksin (0-pohjainen) ja pituuden. Se palauttaa uuden merkkijonon, joka alkaa aloitusindeksistä ja jatkuu määritellyn pituuden verran.
+3. `Span<T>` ja `slice` C# 7.2:stä eteenpäin:
 
-## Katso myös
-- Microsoftin ohjelmointioppaassa: [Ohjeita merkkijonojen käsittelyyn](https://docs.microsoft.com/fi-fi/dotnet/csharp/programming-guide/strings/) 
-- Stack Overflow: [Miten voin leikata merkkijonon C#-kielellä?](https://stackoverflow.com/questions/308629/how-to-use-c-sharp-substring-c-sharp-net-substring-syntax)
+```C#
+string teksti = "Hello, World!";
+ReadOnlySpan<char> span = teksti.AsSpan();
+ReadOnlySpan<char> hello = span.Slice(0, 5);
+Console.WriteLine(hello.ToString()); // Output: Hello
+```
+
+## Deep Dive (Sukellus syvyyksiin):
+Substringien käsittely on vanha konsepti, juontuu ajoista ennen C#. Alkukantaisemmilla kielillä substringien käsittely on saattanut vaatia huomattavasti enemmän työtä. C#:ssa `Substring` on ollut alusta asti, mutta uudet ominaisuudet kuten `Span<T>` tuovat parannuksia suorituskykyyn erityisesti suurten tekstien käsittelyssä. Lisäksi `Span<T>` minimoi muistinkäyttöä, sillä sen avulla voidaan viitata tekstijonon osiin muistinkopiointien sijaan.
+
+Stringien immutaabeli luonne C#:ssa tarkoittaa, että kaikki muokkaukset luovat uusia merkkijonoja. Tämä voi olla suorituskykyongelma intensiivisessä stringien käsittelyssä. Tässä `StringBuilder` voi tulla avuksi, koska se sallii muokkaukset ilman uusia instansseja.
+
+## See Also (Katso myös):
+- MSDN-dokumentaatio `Substring`-metodista: https://docs.microsoft.com/en-us/dotnet/api/system.string.substring
+- MSDN-dokumentaatio `Span<T>`-tyypistä: https://docs.microsoft.com/en-us/dotnet/api/system.span-1
+- Microsoftin ohjeartikkeli `StringBuilder`:stä: https://docs.microsoft.com/en-us/dotnet/standard/base-types/stringbuilder

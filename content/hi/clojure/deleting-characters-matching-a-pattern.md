@@ -1,7 +1,8 @@
 ---
-title:                "पैटर्न से मिलते जुलते वर्णों को हटाना"
-html_title:           "Elixir: पैटर्न से मिलते जुलते वर्णों को हटाना"
-simple_title:         "पैटर्न से मिलते जुलते वर्णों को हटाना"
+title:                "पैटर्न से मेल खाते अक्षरों को हटाना"
+date:                  2024-01-20T17:42:04.814908-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पैटर्न से मेल खाते अक्षरों को हटाना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,35 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+पैटर्न से मिलते चरित्रों को हटाना एक प्रक्रिया है जहाँ हम एक निश्चित पैटर्न के अनुरूप आने वाले चरित्रों को एक स्ट्रिंग से निकाल देते हैं। प्रोग्रामर्स इसे डाटा सफाई, फॉर्मेटिंग, या अनवांटेड डाटा को हटाने के लिए करते हैं।
 
-विचारिए कि आपको किसी विशेष पैटर्न से मेल खाने वाले किरदारों को हटाना हो। यह बहुत ही सामान्य काम होता है - समय को सहेजने के लिए, कोड को स्वच्छ बनाने के लिए, या डेटा को सही तरीके से संसाधित करने के लिए।
+## How to: (कैसे करें:)
 
-## कैसे करें:
+Clojure में, हम `re-seq`, `re-find`, `clojure.string/replace` जैसे फंक्शंस का उपयोग कर पैटर्न से मिलते चरित्रों को आसानी से हटा सकते हैं।
 
-Clojure में, पैटर्न से मेल खाने वाले किरदारों को हटाने के लिए हम ```clojure.string/replace``` का उपयोग कर सकते हैं:
+```clojure
+; संख्याओं को हटाना
+(clojure.string/replace "Clojure123" #"\d+" "")
+; Output: "Clojure"
 
-```Clojure
-(require '[clojure.string :as str])
+; विशेष चरित्रों को हटाना
+(clojure.string/replace "Hello, World!" #"[^\w\s]" "")
+; Output: "Hello World"
 
-(defn delete-matching-chars [input pattern]
-  (str/replace input pattern ""))
+; बड़े / छोटे अक्षरों को हटाना
+(clojure.string/replace "Clojure Programming" #"[A-Z]" "")
+; Output: "lojure rogramming"
 ```
-सम्पादक में, उपरोक्त कोड कतार को चलाने पर, आपको नीचे वाला आउटपुट मिलेगा:
 
-```Clojure
-(delete-matching-chars "Hello, World!" ",")
-; "Hello World!"
-```
+## Deep Dive (गहराई में जानकारी):
 
-## गहराई में जाने:
+चरित्र हटाने के लिए RegEx (Regular Expressions) का इस्तेमाल पुराने समय से ही हो रहा है। Clojure भी JVM (Java Virtual Machine) आधारित होने के कारण Java के RegEx इंजन का उपयोग करता है।
 
-Clojure का इस्तेमाल 2007 में प्रारंभ हुआ था, और इसने लिस्प के विचारों को JVM पर पुनर्निर्मित किया। इसके विकल्प के रूप में  'java.util.regex' और `java.lang.String/replaceAll` जैसी API भी हैं।
+1. Historical context: RegEx प्रोसेसिंग अन्य प्रोग्रामिंग भाषाओं में भी मिलती है, और यह टेक्स्ट प्रोसेसिंग के सबसे शक्तिशाली टूल्स में से एक है।
+2. Alternatives: कुछ केसेस में `string/split`, `filter`, या `remove` जैसे कोर फंक्शंस से भी पैटर्न हटाना संभव है, लेकिन वे RegEx की तुलना में कम लचीले होते हैं।
+3. Implementation details: Clojure में `re-pattern` फंक्शन का प्रयोग कर कस्टम RegEx पैटर्न्स बनाए जा सकते हैं, और `re-matcher`, `re-matches`, `re-groups` जैसे फंक्शंस के साथ काम किया जा सकता है।
 
-तथापि, Clojure के `clojure.string/replace` का इस्तेमाल करना अधिक आसान हो जाता है, जबकि यह जावा आपरेशन्स के लिए सीधी एक्सेस प्रदान करता है, इसे उपयोगिता के लिए ओप्टाइमाइज़ किया जा सकता है।
+## See Also (इसे भी देखें):
 
-## अधिक जानकारी:
-
-- Clojure की API [clojure.string/replace](https://clojuredocs.org/clojure.string/replace)
-- Clojure के लिए [Practical LiSP](http://www.gigamonkeys.com/book/) बुक
-- Clojure के बारे में [StackOverflow](https://stackoverflow.com/questions/tagged/clojure) पर सवाल जवाब
+- Clojure के आधिकारिक डाक्यूमेंटेशन में [Regular Expressions](https://clojure.org/guides/learn/functions#_regular_expressions) सेक्शन
+- [ClojureDocs](https://clojuredocs.org/) पर `clojure.string/replace`
+- [Brave Clojure](https://www.braveclojure.com/) पर RegEx पर अधिकः जानकारी

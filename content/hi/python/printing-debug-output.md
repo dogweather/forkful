@@ -1,6 +1,7 @@
 ---
 title:                "डीबग आउटपुट प्रिंट करना"
-html_title:           "Gleam: डीबग आउटपुट प्रिंट करना"
+date:                  2024-01-20T17:53:39.168921-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "डीबग आउटपुट प्रिंट करना"
 programming_language: "Python"
 category:             "Python"
@@ -10,29 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या है और क्यों?)
+Debug output क्या है? Simple, जब आप कोडिंग करते हैं, और अपने प्रोग्राम की जांच पड़ताल करना चाहते हैं, तो आपको पता चलता है कि कौन सा हिस्सा कैसे चल रहा है, इसे हम debug output कहते हैं। यह महत्त्वपूर्ण क्यों है? क्योंकि यह हमें कोड में मौजूद समस्याओं की पहचान करने और उन्हें ठीक करने में मदद करता है।
 
-डीबग आउटपुट प्रिंट करना मतलब किसी प्रोग्राम में मौजूद बग्स को खोजने के लिए आउटपुट को देखना। यह प्रोग्रामर्स को बग्स को दूर करने में मदद करता है और किसी प्रोग्राम को समझने में भी। 
-
-## कैसे :
-
+## How to: (कैसे करें:)
 ```Python
-# साधारण print का उपयोग करके
-print("This is debug output")
+# साधारण प्रिंट स्टेटमेंट
+print("Hello, World!")
 
-# logging module का उपयोग करें।
-import logging
-logging.debug("This is debug output")
+# किसी वेरिएबल का मान देखने के लिए
+number = 50
+print("The number is:", number)
 
-# आउटपुट:
-# This is debug output
-# DEBUG:root:This is debug output
+# लूप के दौरान कीड़े का पता लगाने के लिए
+for i in range(5):
+    print(f"Loop iteration {i}")
+
+# कोड ब्लॉक्स के अंदर और बाहर प्रिंटिंग
+if number % 2 == 0:
+    print(f"{number} is even.")
+else:
+    print(f"{number} is odd.")
+```
+Sample Output:
+```
+Hello, World!
+The number is: 50
+Loop iteration 0
+Loop iteration 1
+Loop iteration 2
+Loop iteration 3
+Loop iteration 4
+50 is even.
 ```
 
-## गहरी डाइव:
+## Deep Dive (गहराई से समझ):
+Debugging की हिस्ट्री पुरानी है - जब कंप्यूटर के मेमोरी में कीड़े (bugs) फंस जाया करते थे। आज कल, `print` स्टेटमेंट्स के इलावा, हम लॉगिंग जैसी तकनीक का इस्तेमाल करते हैं, जो कंट्रोल के साथ ज्यादा detailed information देती है। Python में `logging` मॉड्यूल का इस्तेमाल एक और विकल्प है जिससे कि आप स्तर (level) सेट कर सकते हैं: DEBUG, INFO, WARNING, ERROR, और CRITICAL। यह तय करता है की कौन सी जानकारी रिकॉर्ड की जाए और कौन सी नहीं।
 
-प्राचीन समय से ही प्रोग्रामर्स प्रिंट डीबगिंग का उपयोग कर रहे हैं। लेकिन, हाल ही में logging module का उपयोग हो रहा है क्योंकि इसे लॉग की स्तर को control करने की अनुमति देता है। इसके विकल्प में pdb (Python Debugger) और pdb++ जैसे उपलब्ध हैं। 
-
-## देखने के लिये:
-
-1. [Python's official debugging documentation](https://docs.python.org/3/library/debug.html)
+## See Also (और भी देखें):
+- [Python Logging Module](https://docs.python.org/3/library/logging.html)
+- [Python `print` function](https://docs.python.org/3/library/functions.html#print)
+- [Python Debugging with PDB](https://docs.python.org/3/library/pdb.html)

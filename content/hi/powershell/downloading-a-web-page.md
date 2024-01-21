@@ -1,7 +1,8 @@
 ---
-title:                "एक वेब पेज डाउनलोड करना"
-html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
-simple_title:         "एक वेब पेज डाउनलोड करना"
+title:                "वेब पेज डाउनलोड करना"
+date:                  2024-01-20T17:45:00.946322-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "वेब पेज डाउनलोड करना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -12,42 +13,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्या और क्यों?
 
-वेब पेज को डाउनलोड करना का मतलब होता है कि आप इंटरनेट से उस पेज की कॉपी अपने कंप्यूटर पर लेते हैं। प्रोग्रामर्स इसे डाटा का विश्लेषण करने, वेब क्रॉलिंग और सामग्री को बाद में पढ़ने के लिए करते हैं।
+वेब पेज को डाउनलोड करना इसकी सामग्री को इंटरनेट से आपके सिस्टम पर सहेजना है। प्रोग्रामर्स इसे डेटा एकत्र करने, वेबसाइट स्थिति की निगरानी, और ऑटोमेशन के लिए करते हैं।
 
 ## कैसे करें:
 
-PowerShell का उपयोग करके आप इसे बहुत ही आसानी से कर सकते हैं। यहां कैसे:
-
+### सामान्य वेब पेज को डाउनलोड करना:
 ```PowerShell
-# प्रयोगिका वेब पेज डाउनलोड करने के लिए
-$page = Invoke-WebRequest -Uri https://example.com
-# सामग्री प्रिंट करें
-$page.Content
+$response = Invoke-WebRequest -Uri 'http://example.com'
+$response.Content | Out-File 'example.html'
 ```
 
-जो आउटपुट होगा वह कुछ इस तरह होगा:
-
+### सैंपल आउटपुट:
 ```PowerShell
-<!doctype html>
-<html>
-<head>
-    ...
-</head>
-<body>
-    ...
-</body>
-</html>
+dir example.html
 ```
 
-## गहराई से जानकारी
+```
+    Directory: C:\Users\YourUsername
 
-जब इंटरनेट नई-नई आई थी, तो वेब पेजों को डाउनलोड करने के लिए `wget` और `curl` जैसे टूल्स का उपयोग किया जाता था। PowerShell, .NET Framework पर बना, इसे बहुत आसान बनाता है। `Invoke-WebRequest` कमांडलेट का उपयोग करने के वैकल्पिक तरीके भी हैं, जैसे WebClient और HttpRequest classes। 
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        1/2/2023   3:15 PM          15423 example.html
+```
 
-जब `Invoke-WebRequest` चलता है, तो यह HTTP GET अनुरोध भेजता है, सर्वर से प्रतिक्रिया प्राप्त करता है, और इसे एक विशेष क्लास, WebResponse के रूप में संग्रहीत करता है, जिसे आप बाद में कंटेंट प्राप्त करने के लिए उपयोग कर सकते हैं।
+## गहराई से जानकारी:
 
-## अन्य जानकारी स्रोत
+वेब पेज को डाउनलोड करने का काम पहले ज्यादातर `wget` और `curl` जैसे टूल्स से होता था। PowerShell में `Invoke-WebRequest` और `Invoke-RestMethod` cmdlets ने इस काम को सरल बनाया है। इसके अल्टरनेटिव के रूप में .NET क्लासेज `WebClient` और `HttpClient` हैं, लेकिन PowerShell Cmdlets अधिक सहज हैं। डाउनलोड किए गए पेज में स्क्रिप्ट और डायनामिक कंटेंट नहीं चलेगा, क्योंकि वे ब्राउज़र के जावास्क्रिप्ट इंजन द्वारा संचालित होते हैं।
 
-1. [PowerShell स्क्रिप्टिंग गाइड](https://powershell.org/) - बहुत अच्छा स्रोत PowerShell सीखने के लिए। 
+## संबंधित सूत्र:
 
+- Microsoft PowerShell Documentation: [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Invoke-WebRequest)
+- .NET API Documentation: [HttpClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
 
-3. [वेब रिक्वेस्ट संकेतांक](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1) - `Invoke-WebRequest` कमांडलेट का विस्तृत विवरण।
+इन लिंक्स पर जाकर आप PowerShell और .NET API की और जानकारियाँ प्राप्त कर सकते हैं।

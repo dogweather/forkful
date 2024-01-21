@@ -1,6 +1,7 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "C#: Verkkosivun lataaminen"
+date:                  2024-01-20T17:44:58.324776-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,29 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Web-sivun lataaminen on prosessi, jossa verkkosivun sisältö, mukaan lukien HTML, CSS, JS ja kuvat, tallennetaan. Ohjelmoijat tekevät tämän esimerkiksi kootakseen sivustojen dataa tai luodakseen offline-versioita verkkosivuista.
+## What & Why? - Mitä & Miksi?
+Ladataan verkkosivu tarkoittaa sivun sisällön noutamista internetistä ohjelmoimalla. Ohjelmoijat tekevät tämän esimerkiksi tiedonkeruuta, sisällön analysointia tai automatisoitua testausta varten.
 
-## Miten:
-Rubyssa voit käyttää gemiä nimeltä 'open-uri'. Tässä esimerkki sen käyttötavasta:
-
+## How to: - Kuinka:
 ```Ruby
-require 'open-uri'
-sivusto_data = open('http://www.esimerkki.com').read
-puts sivusto_data
+require 'net/http'
+require 'uri'
+
+def download_web_page(url)
+  uri = URI(url)
+  response = Net::HTTP.get_response(uri)
+  return response.body if response.is_a?(Net::HTTPSuccess)
+  raise "Web page couldn't be retrieved: #{response.code}"
+end
+
+# Esimerkin käyttö:
+begin
+  content = download_web_page('http://example.com')
+  puts content[0..200] # tulostetaan vain sivun alku
+rescue StandardError => e
+  puts e.message
+end
 ```
 
-Käynnistäessäsi tämän koodin, se näyttää HTML-koodin osoitteesta 'http://www.esimerkki.com'.
+## Deep Dive - Syväkatsaus:
+Internetin alkuvuosina verkkosivujen lataus tapahtui käsin, mutta skriptit ja ohjelmointikielet helpottivat prosessia. Rubyssa klassinen tapa on käyttää `Net::HTTP`-kirjastoa, joka tulee Ruby standardikirjaston mukana. Vaihtoehtona on monia helppokäyttöisempiä kirjastoja, kuten `open-uri` ja `httparty`. `Net::HTTP` kuitenkin seuraa Ruby-yhteisön minimalistista filosofiaa: se mahdollistaa suoran kontrollin HTTP-pyynnöistä ja vastauksista selvittämättömästä käyttöliittymästä.
 
-## Syvempi tutkiskelu
-Ennen 'open-uri'-kirjastoa Rubyssa käytettiin 'net/http'-kirjastoa. Vaikkakin se on vahva ja monipuolinen, sen käyttö voi olla monimutkaista. 'open-uri' on suunniteltu olemaan yksinkertaisempi ja helpommin käytettävissä.
-
-Vaihtoehtoisesti, voit käyttää muita http-kirjastoja, kuten 'curb' ja 'httparty', jotka tarjoavat hieman erilaisia ominaisuuksia.
-
-Web-sivun lataaminen tapahtuu tehden HTTP GET -pyynnön haluttuun URL-osoitteeseen. Serveri vastaa tähän pyyntöön lähettämällä takaisin HTML-tiedoston, jonka ohjelma sitten tallentaa.
-
-## Katso myös
-1. Ruby 'open-uri' dokumentaatio: [https://ruby-doc.org/stdlib-2.7.0/libdoc/open-uri/rdoc/OpenURI.html](https://ruby-doc.org/stdlib-2.7.0/libdoc/open-uri/rdoc/OpenURI.html)
-2. Ruby 'net/http' dokumentaatio: [https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html](https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html)
-3. 'curb' gem: [https://rubygems.org/gems/curb](https://rubygems.org/gems/curb)
-4. 'httparty' gem: [https://rubygems.org/gems/httparty](https://rubygems.org/gems/httparty)
+## See Also - Katso Myös:
+- HTTParty gem for simpler HTTP requests: [https://github.com/jnunemaker/httparty](https://github.com/jnunemaker/httparty)

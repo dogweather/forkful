@@ -1,6 +1,7 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "Java: Interpolando uma string"
+date:                  2024-01-20T17:51:14.750414-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolando uma string"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,40 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e porquê?
+## O Que é & Porquê?
+Interpolação de strings permite inserir valores de variáveis diretamente numa string sem concatenação explícita. Programadores usam isso para simplificar a construção de strings e tornar o código mais legível e eficiente.
 
-Interpolar uma string no PHP significa incluir variáveis diretamente dentro da string, dando-lhe um acesso fácil e rápido aos seus valores. Os programadores fazem isto para evitar concatenar strings, tornando o código mais limpo e eficiente.
+## Como Fazer:
+```PHP
+<?php
+$planeta = "Terra";
+$mensagem = "Olá, $planeta!";
+echo $mensagem; // Saída: Olá, Terra!
+```
 
-## Como fazer:
-
-Aqui estão alguns exemplos de como interpolamos strings com o PHP.
+Se você quiser usar chaves complexas:
 
 ```PHP
-$nome = "João";
-echo "Olá, $nome! Seja bem-vindo.";
+<?php
+$dados = ['planeta' => 'Terra', 'satelite' => 'Lua'];
+$mensagem = "Olá, {$dados['planeta']} e sua satélite, {$dados['satelite']}!";
+echo $mensagem; // Saída: Olá, Terra e sua satélite, Lua!
 ```
 
-Saída:
+## Mergulho Profundo
+A interpolação de strings é algo que existe no PHP desde suas primeiras versões, facilitando a substituição de variáveis dentro de strings. Antigamente, era comum ver muita concatenação com o operador `.` – algo que pode tornar o código mais verboso e difícil de manter.
 
-```
-Olá, João! Seja bem-vindo.
-```
+Alternativas? Sim, as template strings (heredoc e nowdoc) são uma delas. E se precisar de uma interpolação mais complexa ou a avaliação de expressões, pode-se usar a função `sprintf()` ou `printf()`.
 
-## Um olhar mais atento
+Nos bastidores, o PHP processa strings com aspas duplas e procura por variáveis para substituir pelos seus valores. Mas cuidado: strings com aspas simples são literais, então nada de interpolação nelas.
 
-A interpolação de strings não é um conceito único do PHP. Foi introduzido nas linguagens Perl e Shell Script e o PHP adotou-o por ser uma forma eficiente de trabalhar com strings.
-
-Como alternativa à interpolação, pode-se usar a função `sprintf` ou `printf`. No entanto, a interpolação muitas vezes resulta num código mais claro e de leitura fácil.
-
-Note que na interpolação de strings, a string deve ser delimitada por aspas duplas (""). Aspas simples ('') não funcionarão. Isto é diferente de outras linguagens como o JavaScript, em que ambas as aspas simples e duplas funcionam.
-
-```PHP
-$nome = "João";
-echo 'Olá, $nome! Seja bem-vindo.'; // Isto não vai funcionar, imprime "Olá, $nome! Seja bem-vindo."
-```
-
-## Ver também
-
-1. [Interpolação de strings na documentação oficial do PHP](https://www.php.net/manual/pt_BR/language.types.string.php).
-2. [Perfis de string e aspas no site PHP: The Right Way](https://phptherightway.com/#strings_and_slangs).
-3. [Interpolation or concatenation? A PHP benchmark](https://stackoverflow.com/questions/4679953/single-quotes-vs-double-quotes-in-php-about-speed) for discovering the speed difference between interpolation and concatenation.
+## Veja Também
+- [String interpolation in PHP](https://www.php.net/manual/en/language.types.string.php#language.types.string.parsing) - Detalhes oficiais na documentação do PHP.
+- [sprintf() for formatted strings](https://www.php.net/manual/en/function.sprintf.php) - Documentação da função `sprintf()`.
+- [PHP: Strings](https://www.php.net/manual/en/language.types.string.php) - Variedade de operações de strings no PHP.
+- [PHP: Heredoc syntax](https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc) - Sintaxe heredoc no PHP.
+- [PHP: Nowdoc syntax](https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.nowdoc) - Sintaxe nowdoc no PHP.

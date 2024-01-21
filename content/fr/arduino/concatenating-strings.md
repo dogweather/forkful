@@ -1,7 +1,8 @@
 ---
-title:                "Concaténation de chaînes"
-html_title:           "C: Concaténation de chaînes"
-simple_title:         "Concaténation de chaînes"
+title:                "Concaténation de chaînes de caractères"
+date:                  2024-01-20T17:33:51.943093-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Concaténation de chaînes de caractères"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,44 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why?
+Concaténer des chaînes, c'est les assembler bout à bout. On le fait pour construire du texte dynamiquement, combiner des données ou créer des commandes.
 
-La Concaténation de chaînes est le processus de fusion de deux chaînes de caractères séparées en une seule. Les programmeurs le font quand ils veulent unir plusieurs morceaux d'information textuelle en une seule chaîne.
-
-## Comment faire:
-
-Voici une démonstration de la concaténation de chaînes en Arduino. Elle implique l'utilisation de la fonction strcat(). Pour saisir la méthode, réfère à cet exemple :
-
-```Arduino 
-  char texte1[50] = "Salut ";
-  char texte2[50] = "Arduino!";
-
-  strcat(texte1, texte2);
-
+## How to:
+```Arduino
+void setup() {
   Serial.begin(9600);
-  Serial.println(texte1);
-```
-Quand vous exécutez ce code, vous verrez la sortie :
+  String salut = "Bonjour";
+  String nom = "Monde";
+  String phrase = salut + ", " + nom + "!";
+  Serial.println(phrase); // Affiche: Bonjour, Monde!
+}
 
-```Arduino
-  Salut Arduino!
-```
-
-## Immersion Profonde :
- 
-La Concaténation de chaînes a été utilisée depuis les débuts de la programmation où la gestion efficace de la mémoire était essentielle. En Arduino, vous pouvez également utiliser la méthode `+=` pour concaténer, bien que cela puisse parfois conduire à une utilisation inefficace de la mémoire. 
-
-```Arduino
-String salut = "Salut ";
-salut += "Arduino!";
-
-Serial.begin(9600);
-Serial.println(salut);
+void loop() {
+  // Rien ici pour l'instant.
+}
 ```
 
-La fonction Arduino append(), qui ajoute un caractère ou une chaîne de caractères à la fin d'une autre chaîne, est également une alternative pour la concaténation de chaînes.
+## Deep Dive
+Concaténer des chaînes est essentiel depuis les débuts de la programmation. En C, on utilisait `strcat()` mais Arduino propose l'objet `String`, plus simple. Attention, abuser des `String` peut fragmenter la mémoire sur des systèmes avec peu de ressources. Une alternative : utiliser `snprintf()`, plus compliquée mais plus efficace en mémoire.
 
-## Voir Aussi :
-
-1. [Documentation Arduino](https://www.arduino.cc/reference/fr/language/variables/data-types/string/functions/concat/): Détails sur les string en Arduino
-3. [Wikipedia Concatenation](https://fr.wikipedia.org/wiki/Concat%C3%A9nation): L'article Wikipedia sur l'histoire et l'application générale de la concaténation de chaînes.
+## See Also
+- [Arduino Reference: String Object](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Arduino Forum: String concatenation](https://forum.arduino.cc/index.php?topic=396450)
+- [Arduino Memory Optimization](https://www.arduino.cc/en/Tutorial/Memory)

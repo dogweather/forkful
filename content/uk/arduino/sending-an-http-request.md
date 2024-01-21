@@ -1,7 +1,8 @@
 ---
-title:                "Надсилання http-запиту"
-html_title:           "Arduino: Надсилання http-запиту"
-simple_title:         "Надсилання http-запиту"
+title:                "Надсилання HTTP-запиту"
+date:                  2024-01-20T17:59:17.129892-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,73 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що й Навіщо? / What & Why?
+## What & Why? (Що таке та Навіщо?)
 
-HTTP-запит - це спосіб, яким комп'ютери спілкуються між собою через Веб. Програмісти використовують це для отримання або відправлення даних до сервера.
+Відправлення HTTP запиту - це спосіб взаємодії Arduino з вебом. Передача даних чи отримання інформації з сервера. Програмісти роблять це для дистанційного керування пристроями, збору даних або інтеграції з веб-сервісами.
 
-## Як це зробити / How to:
+## How to (Як це зробити):
 
- ```Arduino
-#include <ESP8266WiFi.h>
+Потрібно підключити ваш Arduino до інтернету через Ethernet shield або Wi-Fi модуль. Ось приклад коду:
 
-const char* ssid     = "your_SSID";
-const char* password = "your_PASSWORD";
+```Arduino
+#include <SPI.h>
+#include <Ethernet.h>
 
-const char* host = "maker.ifttt.com";
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+IPAddress server(192, 168, 1, 1);
+
+EthernetClient client;
 
 void setup() {
-  Serial.begin(115200);
-  delay(10);
+  Ethernet.begin(mac);
+  Serial.begin(9600);
 
-  WiFi.begin(ssid, password);
-
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
+  if (client.connect(server, 80)) {
+    client.println("GET /path/to/resource HTTP/1.1");
+    client.println("Host: 192.168.1.1");
+    client.println("Connection: close");
+    client.println();
   }
-
-  Serial.println("");
-  Serial.println("WiFi connected");  
-  Serial.println("IP address: ");
-  Serial.println(WiFi.localIP());
 }
 
 void loop() {
-  WiFiClient client;
-
-  const int httpPort = 80;
-  if (!client.connect(host, httpPort)) {
-    Serial.println("connection failed");
-    return;
+  if (client.available()) {
+    char c = client.read();
+    Serial.write(c);
   }
 
-  client.print(String("GET /trigger/event/with/key/your_key") + " HTTP/1.1\r\n" +
-               "Host: " + host + "\r\n" + 
-               "Connection: close\r\n\r\n");
-
-  delay(10);
-
-  while(client.available()){
-    String line = client.readStringUntil('\r');
-    Serial.print(line);
+  if (!client.connected()) {
+    Serial.println();
+    client.stop();
   }
-
-  Serial.println();
-  Serial.println("closing connection");
 }
- ```
+```
 
-## Поглиблено / Deep Dive:
+Результат у Serial Monitor буде виглядом відповіді сервера.
 
-- Історичний контекст: HTTP-запити були введені 1990 року та використовувалися як основний протокол передачі даних у Веб.
+## Deep Dive (Глибший Занурення):
 
-- Альтернативи: HTTPS (захищений HTTP), API-запити основані на REST або GraphQL.
+HTTP запити почали свій розвиток ще з 1991 року, коли було створено протокол HTTP. Для Arduino, варіанти включають Ethernet shield, Wi-Fi модулі (ESP8266/ESP32), і навіть GPRS/3G/4G щити. Важливо знати тип запиту: GET для отримання даних, POST для відправлення. Бібліотеки, як `Ethernet.h` та `WiFi.h`, спрощують процес.
 
-- Деталі реалізації: Код Arduino використовує ESP8266WiFi-бібліотеку для роботи з Wi-Fi та надсилання GET-запиту до сервера.
+## See Also (Дивіться також):
 
-## Дивитись також / See Also:
+- [Arduino Ethernet Library](https://www.arduino.cc/en/Reference/Ethernet)
+- [Arduino WiFi Library](https://www.arduino.cc/en/Reference/WiFi)
+- HTTP протокол деталізація: [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP)
 
-1. Документація ESP8266WiFi: https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html
-2. Посібник по HTTP-запитам: https://developer.mozilla.org/uk/docs/Web/HTTP/Methods
-3. Arduino Home: https://www.arduino.cc/
-4. HTTP, REST та GraphQL: https://www.codecademy.com/articles/what-is-rest
+Ця інформація допоможе посиленню ваших навичок взаємодії з веб через Arduino.

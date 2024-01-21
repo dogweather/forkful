@@ -1,7 +1,8 @@
 ---
-title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
-simple_title:         "Envoyer une requête http avec une authentification de base"
+title:                "Envoi d'une requête HTTP avec authentification de base"
+date:                  2024-01-20T18:01:40.513552-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Envoi d'une requête HTTP avec authentification de base"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,35 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi? 
-L’envoi d’une requête HTTP avec une authentification de base est un moyen de se connecter à des sites web protégés. Les programmeurs l’utilisent pour gérer l’accès aux ressources web.
+## Quoi & Pourquoi ?
+
+L’envoi d’une requête HTTP avec authentification basique consiste à transmettre à un serveur des identifiants (nom d’utilisateur et mot de passe) encodés en base64 dans les en-têtes HTTP afin de s'identifier. Les programmeurs utilisent cela pour accéder à des ressources protégées sur un serveur qui nécessite une vérification de l'identité.
 
 ## Comment faire :
-Nous allons utiliser le paquet `http-conduit` pour cela. Voici un exemple montrant comment envoyer une requête GET avec l'authentification de base.
 
-```haskell
-import Network.HTTP.Conduit
-import Network.HTTP.Client (applyBasicAuth)
-import Data.ByteString.Char8 (pack)
+```Haskell
+import Network.HTTP.Simple
+import Network.HTTP.Types.Header (hAuthorization)
+import Data.ByteString.Base64 (encode)
+import qualified Data.ByteString.Char8 as Char8
 
-main :: IO ()
-main = do
-    initReq <- parseUrlThrow "http://example.com"
-    let req = applyBasicAuth (pack "username") (pack "password") initReq
-    manager <- newManager tlsManagerSettings
-    res <- httpLbs req manager
-    print res
+-- Encoder les identifiants
+let username = "user"
+let password = "pass"
+let encodedCredentials = encode . Char8.pack $ username ++ ":" ++ password
+
+-- Création de l'en-tête d'autorisation
+let authHeader = (hAuthorization, "Basic " <> encodedCredentials)
+
+-- Construction de la requête
+let request = setRequestHeader authHeader $ defaultRequest
+                   { host = "example.com"
+                   , path = "/protected/resource"
+                   }
+
+-- Envoi de la requête
+response <- httpLBS request
+
+-- Affichage du code et du corps de la réponse
+putStrLn $ "Status code: " ++ show (getResponseStatusCode response)
+putStrLn $ "Body: " ++ Char8.unpack (getResponseBody response)
 ```
 
-## Plongée profonde
-Auparavant, nous utilisions le paquet `http`, mais il a été rendu obsolète par `http-conduit`, car il gère les connexions TLS et les pools de connexions, entre autres.
+## Exploration approfondie
 
-Il existe d'autres moyens d'envoyer une requête HTTP avec authentification de base, comme l'utilisation des paquets `http-client` et `http-client-tls`.
+Le concept d’authentification basique pour les requêtes HTTP n’est pas récent. Il est défini dans le RFC 7617, et bien qu'il soit simple à implémenter, il n'est pas le plus sécurisé car les identifiants encodés en base64 peuvent être facilement décodés. Citons comme alternatives plus sécurisées l'authentification Digest ou les tokens d’authentification comme OAuth.
 
-Les détails d'implémentation de l'envoi d'une requête HTTP avec authentification de base comprennent la création d'une `Request` initiale, l'application d'une authentification de base à la requête et l'envoi de la requête à l'aide d'un `Manager`.
+En Haskell, utiliser `Network.HTTP.Simple` pour les requêtes HTTP est un choix populaire car il offre une API simple. L'ajout de l'en-tête d'autorisation est direct avec le package `http-types`, et l'encodage des identifiants utilise `Data.ByteString.Base64`, ce qui garantit que les données sont correctement formées pour l'envoi.
 
 ## Voir aussi
-Pour plus d'informations sur l'envoi de demande HTTP avec authentification de base en Haskell, jetez un coup d'œil à ces liens :
-- Documentation http-conduit : https://www.stackage.org/haddock/lts-8.24/http-conduit-2.2.4/Network-HTTP-Conduit.html
-- Guide pratique sur les demandes HTTP en Haskell : https://seanhess.github.io/2015/08/04/practical-haskell-http.html
-- GitHub http-conduit : https://github.com/snoyberg/http-client
+
+- Documentation de `Network.HTTP.Simple` : https://hackage.haskell.org/package/http-conduit/docs/Network-HTTP-Simple.html
+- RFC 7617, The 'Basic' HTTP Authentication Scheme: https://tools.ietf.org/html/rfc7617
+- Informations sur OAuth : https://oauth.net/

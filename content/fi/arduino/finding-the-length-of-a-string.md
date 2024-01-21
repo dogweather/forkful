@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon pituuden selvittäminen"
-html_title:           "Go: Merkkijonon pituuden selvittäminen"
+date:                  2024-01-20T17:46:48.693442-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,37 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Merkkijonon pituuden selvittäminen tarkoittaa merkkien lukumäärän laskemista merkkijonossa. Ohjelmoijat tekevät tämän yleensä määrittääkseen, paljonko muistia merkkijono vie tai navigoidakseen merkkijonossa.
+## Mitä & Miksi?
+"Stringin" pituuden selvittäminen tarkoittaa merkkijonossa olevien merkkien lukumäärän laskemista. Ohjelmoijat tekevät tämän esimerkiksi tietojen validoinnin ja tekstipohjaisten komentojen käsittelyn yhteydessä.
 
-## Kuinka:
-Arduino-ohjelmointiympäristössä merkkijonon pituus voidaan selvittää funktion `strlen()` avulla. Tässä esimerkki koodista:
-
+## Näin teet:
 ```Arduino
 void setup() {
-  Serial.begin(9600);
-  char merkkijono[] = "Moi, Suomi!";
-  Serial.println(strlen(merkkijono));
+  Serial.begin(9600); // Aloita sarjaviestintä nopeudella 9600 bps
 }
+
 void loop() {
-  // toiminnot tähän
+  String data = "Moi Arduino!"; // Määritä merkkijono
+  unsigned int length = data.length(); // Selvitä merkkijonon pituus
+
+  Serial.print("Merkkijonon pituus: ");
+  Serial.println(length); // Tulosta pituus
+
+  delay(5000); // Viive ennen kuin toistetaan
 }
 ```
+Tuloste: `Merkkijonon pituus: 12`
 
-Saatu tuloste:
-
-```Arduino
-11
-```
-
-## Syvempi Sukellus:
-Historiallisessa yhteydessä, merkkijonon pituuden määrittely on ollut osa ohjelmointia sen alkuajoista lähtien. Se on oleellinen toiminto tiedon käsittelyssä ja hallinnassa.
-
-Vaihtoehtoina, eri ohjelmointikielissä tarjotaan usein funktioita merkkijonon pituuden määrittämiseen, esimerkiksi `length()` Javassa ja `len()` Pythonissa.
-
-Arduinossa, `strlen()` löytyy standardista C kirjastosta ja se laskee merkkijonon pituuden etsimällä merkkijonon loppua ilmaisevan nollabyten `\0`.
+## Syväsukellus
+String-olioiden pituuden selvittäminen antaa ytimen String-luokan merkittäville toiminnoille, joka esiteltiin Arduino-ympäristöön helpottamaan merkkijonojen käsittelyä, joka oli aiemmin hankalaa C:n perusteella. Vaihtoehtoina on käyttää C-tyylisiä char-taulukoita ja funktioita, kuten `strlen()`, mutta ne ovat monimutkaisempia käsitellä ja virhealttiimpia. `String.length()` on turvallinen menetelmä, koska se kapseloi muistin hallinnan ja pituuden laskennan.
 
 ## Katso myös:
-1. Arduino “strlen” - https://www.arduino.cc/reference/en/language/functions/character-functions/strlen/
-2. Merkkijonojen käsittely C-ohjelmoinnissa - http://users.jyu.fi/~pommi/Ctyohyv2.htm
-3. Merkkijonofunktiot C-kielessä (strlen) - https://www.learn-hsk.com/c-merkkijonot.html
+- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)

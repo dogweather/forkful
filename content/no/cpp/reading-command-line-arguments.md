@@ -1,6 +1,7 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Arduino: Lese kommandolinjeargumenter"
+date:                  2024-01-20T17:55:29.219355-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "C++"
 category:             "C++"
@@ -10,47 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why? (Hva & Hvorfor?)
+Å lese kommandolinjeargumenter betyr å fange opp data gitt direkte når du kjører programmet ditt. Programmere gjør dette for å tillate dynamiske inputverdier og skreddersy programoppførsel uten å måtte endre koden.
 
-Kommandolinjeargumenter er informasjon som direkte matet inn i programmer når de kjører. Programmers leser disse for å tilpasse programutførelsen basert på brukerens inngang.
-
-## Hvordan?
-
-Her er en enkel kode for å lese kommandolinjeargumenter i C++. 
-
+## How to (Slik gjør du det)
 ```C++
 #include <iostream>
 
-int main(int argc, char** argv) {
-    for(int i=0; i< argc; i++) {
-        std::cout << "Arg " << i << ": " << argv[i] << std::endl;
+int main(int argc, char *argv[]) {
+    std::cout << "Det er " << argc << " argument(er):\n";
+    for (int i = 0; i < argc; ++i) {
+        std::cout << i << ": " << argv[i] << std::endl;
     }
     return 0;
 }
+
+```
+Kjører du `./programmet ditt klare fjellvann`, får du:
+```
+Det er 4 argument(er):
+0: ./programmet ditt
+1: klare
+2: fjellvann
 ```
 
-Når du kjører dette programmet med argumenter, vil du få følgende utgang:
+## Deep Dive (Dypdykk)
+Før 1980-tallet brukte programmerere kommandolinjen for nesten all interaksjon med datamaskiner. Å lese kommandolinjeargumenter er en gammel tradisjon som står fast fordi det er effektivt. Alternativene inkluderer interaktiv input og konfigurasjonsfiler, men de er tregere for enkelte oppgaver. De tekniske detaljene involverer funksjonen `main` som får to parametere: `argc` (argument count) som forteller hvor mange argumenter, og `argv` (argument vector), som er et array av C-strenger (char pointers).
 
-``` 
-$ ./program arg1 arg2 arg3
-Arg 0: ./program
-Arg 1: arg1
-Arg 2: arg2
-Arg 3: arg3
-```
-
-## Dyp Dykk
-
-Historisk kontekst: Lesing av kommandolinjeargumenter har sitt opphav fra Unix-systemer der kommandolinjeverktøyer krever denne funksjonaliteten for fleksibilitets- og brukertilpasningsegenskaper.
-
-Alternativer: Boost.Program_options og TCLAP er eksempler på biblioteker som kan forenkle arbeidet med å håndtere kommandolinjeargumenter.
-
-Implementeringsdetaljer: Argumentene som er gitt til et program, blir lagret i en tabell av strenger (argv) som sendes til main() -funksjonen. Antallet argumenter (argc) blir også sendt.
-
-## Se Også
-
-Nedenfor er linker til noen nyttige ressurser om C++ kommandolinjeargumenter:
-
-- C++ Standard Library: http://www.cplusplus.com/reference/cstdlib/
-- Boost.Program_options: https://www.boost.org/doc/libs/1_76_0/doc/html/program_options.html
-- TCLAP - Templatized C++ Command Line Parser: http://tclap.sourceforge.net/
+## See Also (Se også)
+- [cppreference.com - Main function](https://en.cppreference.com/w/cpp/language/main_function)
+- [GNU: Using the GNU Compiler Collection (GCC) - Environment Variables](https://gcc.gnu.org/onlinedocs/gcc/Environment-Variables.html)
+- [Stack Overflow - How can I get the list of files in a directory using C or C++?](https://stackoverflow.com/questions/612097/how-can-i-get-the-list-of-files-in-a-directory-using-c-or-c)

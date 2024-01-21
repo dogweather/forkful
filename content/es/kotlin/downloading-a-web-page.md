@@ -1,6 +1,7 @@
 ---
 title:                "Descargando una página web"
-html_title:           "Arduino: Descargando una página web"
+date:                  2024-01-20T17:44:37.324473-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Descargando una página web"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,42 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué es y por qué?
 
-Descargar una página web es el proceso de extraer toda la información contenida en ella usando código. Los programadores lo hacen para manipular los datos, realizar web scraping o pruebas entre otros fines.
+Descargar una página web significa traer su contenido a tu programa. Esto lo hacen los programadores para analizar datos, interactuar con APIs, o simplemente para guardar información localmente.
 
-## ¿Cómo hacerlo?
+## Cómo hacerlo:
 
-Para descargar una página web en Kotlin, usaremos la biblioteca Jsoup. Primero, agrégala a tu proyecto con Gradle:
+Vamos a usar Kotlin y una librería sencilla llamada `khttp` para hacer el trabajo. Asegúrate de incluir `khttp` en tu `build.gradle`:
 
-```Kotlin
+```kotlin
 dependencies {
-  implementation 'org.jsoup:jsoup:1.13.1'
+    implementation 'io.ktor:ktor-client-core:1.6.7'
+    implementation 'io.ktor:ktor-client-apache:1.6.7'
 }
 ```
 
-Ahora veamos cómo descargar una página web:
+Ahora, para descargar el contenido de una página web:
 
-```Kotlin
-import org.jsoup.Jsoup
+```kotlin
+import io.ktor.client.*
+import io.ktor.client.request.*
+import io.ktor.client.statement.*
 
-fun main() {
-    val doc = Jsoup.connect("http://example.com").get()
-    val title = doc.title()
-    println("Título: $title")
+suspend fun downloadWebPage(url: String): String {
+    val client = HttpClient()
+    return client.use {
+        it.get(url).bodyAsText()
+    }
+}
+
+fun main() = runBlocking {
+    val content = downloadWebPage("http://example.com")
+    println(content) // Imprime el contenido de la página web
 }
 ```
 
-Lo que obtienes es el título de la página que se encuentra en el tag `<title>`. Es un ejemplo básico, pero Jsoup puede hacer mucho más.
+Esto imprime el HTML de `http://example.com`.
 
-## Inmersión profunda
+## Deep Dive:
 
-Originalmente, la descarga de páginas web se realizaba con rutinas de bajo nivel que manejaban directamente las conexiones HTTP. Ahora con bibliotecas como Jsoup, es mucho más fácil.
+Históricamente, en Kotlin se usaba `HttpURLConnection`, pero era más verboso y propenso a errores. Con la evolución del lenguaje, surgieron bibliotecas como `khttp` y `ktor`, que simplifican las cosas.
 
-Además de Jsoup, hay otras opciones como khttp y java.net, aunque Jsoup es la más completa en términos de manejo de HTML y CSS.
+Ktor es asincrónico y más idiomático en Kotlin. Con las coroutines de Kotlin, la gestión de hilos es más sencilla y eficiente.
 
-El método `connect()`, devuelve un objeto `Connection`, que luego se convierte en un `Document` al llamar a `get()`. Jsoup se encarga de todas las intrincaciones del manejo de conexiones HTTP y el parseo del HTML.
+Además de `ktor`, otro cliente HTTP popular es OkHttp, pero `ktor` tiene la ventaja de estar completamente escrito en Kotlin y ser diseñado para trabajar con coroutines desde el principio.
 
-## Ver también
+## Ver También:
 
-Para más información, revisa la [documentación oficial de Jsoup](https://jsoup.org/). Para conocer más opciones, puedes revisar [khttp](http://khttp.readthedocs.io/en/latest/) y la [API de java.net](https://docs.oracle.com/javase/8/docs/api/java/net/package-summary.html).
+- La documentación oficial de Ktor Client: [https://ktor.io/docs/client.html](https://ktor.io/docs/client.html)
+- Tutorial de OkHttp: [https://square.github.io/okhttp/](https://square.github.io/okhttp/)
+- Más sobre coroutines en Kotlin: [https://kotlinlang.org/docs/coroutines-overview.html](https://kotlinlang.org/docs/coroutines-overview.html)

@@ -1,7 +1,8 @@
 ---
-title:                "कमांड लाइन तर्कों को पढ़ना"
-html_title:           "Kotlin: कमांड लाइन तर्कों को पढ़ना"
-simple_title:         "कमांड लाइन तर्कों को पढ़ना"
+title:                "कमांड लाइन आर्गुमेंट्स पढ़ना"
+date:                  2024-01-20T17:57:17.447012-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "कमांड लाइन आर्गुमेंट्स पढ़ना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,40 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+कमांड लाइन आर्ग्यूमेंट पढ़ना यानी यूज़र से टर्मिनल के ज़रिए इनपुट लेना। प्रोग्रामर्स इसलिए करते हैं क्योंकि इससे सॉफ्टवेयर कस्टमाइज़ेशन आसान होता है और कोड को मल्टीपल सिचुएशन में चलाने की फ्लेक्सिबिलिटी मिलती है।
 
-Command Line Arguments क्या हैं और क्यों प्रोग्रामर्स इसे इस्तेमाल करते हैं? कमांड लाइन arguments वे parameters होते हैं जिसे मुख्य फंक्शन को पास किया जाता है। ये main() फंक्शन की flexibility बढ़ाते हैं और उपयोगकर्ताओं को नियंत्रण देते हैं।
-
-## कैसे करें:
-
-आपको बस `Array<String>` पैरामीटर का उपयोग करने की जरूरत होती है, जैसे निम्नलिखित कोड में दिखाया गया है।
-
-```Kotlin
+## How to (कैसे करें):
+```kotlin
 fun main(args: Array<String>) {
     if (args.isNotEmpty()) {
-        for (arg in args) {
-            println("Argument: $arg")
-        }
+        println("नमस्ते, ${args[0]}!")
     } else {
-        println("No arguments found.")
+        println("कमांड लाइन आर्ग्यूमेंट नहीं मिला।")
     }
 }
 ```
-
-आउटपुट के लिए अगर हम इस प्रोग्राम को `Kotlin ArgsDemoKt A B C` के साथ चलाते हैं:
-
-```bash
-Argument: A
-Argument: B
-Argument: C
+अगर आप प्रोग्राम को कुछ इस तरह चलाएं:
+```
+$ kotlinc YourProgram.kt -include-runtime -d YourProgram.jar
+$ java -jar YourProgram.jar आपका_नाम
+```
+आपको आउटपुट में दिखेगा:
+```
+नमस्ते, आपका_नाम!
 ```
 
-## गहराई में:
+## Deep Dive (गहराई में जानकारी):
+कमांड लाइन आर्ग्यूमेंट पढ़ने का इस्तेमाल लगभग हर प्रोग्रामिंग भाषा में होता है। Kotlin में `main` फंक्शन के अंदर `args` एरे के ज़रिये ये डेटा आता है। अलटर्नेटिव्स जैसे कि पर्यावरण वेरियेबल्स या कॉन्फ़िगरेशन फाइल्स भी यूज़ किए जाते हैं। 
 
-Command Line Arguments का इस्तेमाल C और C++ में शुरू हो गया था लेकिन इसकी क्षमता Kotlin में बढ़ गई है। वैकल्पिक इंपलीमेंटेशन के तौर पर, आप `JCommander` जैसे libraries का इस्तेमाल कर सकते हैं जो आपको और ज़्यादा पावर और फ्लेक्सिबिलिटी देती हैं। एक बात ध्यान देने योग्य है कि आपके arguments का क्रम महत्वपूर्ण हो सकता है। यदि किसी एप्लिकेशन के arguments का क्रम गलत हो जाए तो प्रोग्राम अप्रत्याशित रूप से व्यवहार कर सकता है।
+वैसे तो यह कॉन्सेप्ट सिंपल है, लेकिन बड़े प्रोग्राम्स में कमांड लाइन पार्सिंग लाइब्रेरीज़ की ज़रूरत हो सकती है जो ज़्यादा जटिल इनपुट्स को असानी से हैंडल कर सकें।
 
-## अधिक जानकारी के लिए:
-
-1. [Command Line Arguments in Kotlin](https://kotlinlang.org/docs/command-line.html)
-2. [Arguments Processing using JCommander](http://jcommander.org/)
-3. [Kotlin's Main Function](https://kotlinlang.org/docs/functions.html)
+## See Also (देखें भी):
+- Kotlin documentation on functions (फंक्शन्स पर Kotlin डॉक्युमेंटेशन): [Kotlin Functions](https://kotlinlang.org/docs/functions.html)
+- Command-line Argument Parsing in Kotlin with kotlinx.cli (Kotlin में kotlinx.cli के साथ कमांड लाइन अर्गुमेंट पार्सिंग): [kotlinx.cli](https://github.com/Kotlin/kotlinx-cli)
+- Comprehensive guide to command-line interfaces in Kotlin (Kotlin में कमांड लाइन इंटरफेसेस के लिए व्यापक मार्गदर्शिका): [CLI in Kotlin](https://ajalt.github.io/clikt/)

@@ -1,7 +1,8 @@
 ---
-title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Arduino: Znajdowanie długości ciągu znaków"
-simple_title:         "Znajdowanie długości ciągu znaków"
+title:                "Znalezienie długości ciągu znaków"
+date:                  2024-01-20T17:47:23.918923-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Znalezienie długości ciągu znaków"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,50 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Co i dlaczego? Znalezienie długości łańcucha znaków to sprawdzenie, ile znaków zawiera. Programiści robią to, by przykładowo weryfikować dane wejściowe lub zarządzać nimi podczas operacji na tekstach.
 
-Długość stringa to liczba znaków. Programiści potrzebują jej do kontrolowania danych wejściowych lub manipulowania nimi.
-
-## Jak to zrobić:
-
-Aby znaleźć długość stringa w Go, używamy funkcji len(). Oto przykład:
-
+## How to:
+Jak to zrobić:
 ```Go
 package main
-import "fmt"
+
+import (
+	"fmt"
+	"unicode/utf8"
+)
 
 func main() {
-    str := "Witaj, Świecie!"
-    fmt.Println(len(str))
+	sampleText := "Witaj, świecie!"
+	fmt.Println("UTF-8 runes:", utf8.RuneCountInString(sampleText)) // Użycie RuneCountInString dla UTF-8
+	fmt.Println("Bytes:", len(sampleText))                           // Użycie len dla bajtów
 }
 ```
-
-Na wyjściu zobaczysz wartość 16 - to długość naszego stringa.
-
-## Zagłębianie się
-
-- Kontekst historyczny: Język Go from the beginning miał wbudowaną funkcję len() do obsługi różnych typów danych, w tym stringów.
-
-- Alternatywy: Pamiętaj o rune. W przypadku stringów UTF-8 len() zwraca liczbę bajtów, a nie znaków. Jeśli potrzebujesz liczby znaków, użyj 'range' i 'rune'.
-
-```Go
-package main
-import "fmt"
-
-func main() {
-    str := "Dzień dobry"
-    runes := 0
-    for range str {
-        runes++
-    }
-    fmt.Println(runes)
-}
+Output:
+```
+UTF-8 runes: 15
+Bytes: 17
 ```
 
-- Szczegóły implementacji: Funkcja len() jest częścią języka Go, a nie pakietu standardowego. Oznacza to, że może działać na tablicach statycznych, segmentach, mapach, kanałach i stringach bez konieczności konwersji.
+## Deep Dive
+Szczegółowe spojrzenie: W Go, `len` zwraca liczbę bajtów, ale ze względu na UTF-8, który jest zmienną długością kodowania, to różni się od liczby znaków. Historia Unicode i UTF-8 zaczyna się w latach 80-tych i 90-tych, kiedy potrzeba uniwersalnego kodowania znaków stała się oczywista. W Go, używamy `utf8.RuneCountInString` do prawidłowego policzenia znaków. Alternatywą jest iteracja po łańcuchu runach, ale to bardziej złożone i rzadziej potrzebne.
 
-## Zobacz także:
-
-- Dokumentacja Go na temat len(): https://golang.org/pkg/builtin/#len
-
-- Wejście na blogu dotyczące różnicy między bajtami a runami: https://blog.golang.org/strings
+## See Also
+Zobacz także:
+- Dokumentacja Go o stringach i runach: https://golang.org/ref/spec#String_types
+- Artykuł o kodowaniu UTF-8: https://blog.golang.org/strings

@@ -1,7 +1,8 @@
 ---
-title:                "Merkkien poistaminen vastaavalla mallilla"
-html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
-simple_title:         "Merkkien poistaminen vastaavalla mallilla"
+title:                "Merkkien poistaminen hakemalla osumia kaavaan"
+date:                  2024-01-20T17:41:57.682674-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,36 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+"Mikä ja miksi?"
+Kun puhutaan merkkien poistamisesta kuvion mukaisesti Elixirissä, tarkoitamme tiettyjen merkkijonojen tai merkkiryhmien poistamista tekstistä. Ohjelmoijat tekevät tämän datan puhdistamiseen ja muotoiluun, mikä on tärkeää esimerkiksi käyttäjän syötteen käsittelyssä tai tiedon esittämisessä halutussa muodossa.
 
-"Pattern matching" on ohjelmoinnissa luotu termi, jolla viitataan prosessiin, jossa merkkijonosta poistetaan määrättyjä kuvioon sopivia merkkejä. Tämä on erittäin hyödyllinen ohjelmoijille, kun he haluavat esimerkiksi puhdistaa dataa tai tehdä säännöllisiä lausekkeita.
+## How to:
+"Näin teet:"
+Elixirissä RegExp-moduuli (regex) on työkalusi kun haluat poistaa merkkejä. Tässä on esimerkki koodi miten poistat kaikki numerot merkkijonosta:
 
-## Kuinka tehdä:
-
-Deleting characters in a string that match a pattern in Elixir is quite simple. Here's how you do it:
-
-```Elixir
-# Kirjoitetaan funktio
-def remove_pattern(string, pattern) do
-  String.replace(string, pattern, "")
-end
-
-# Funktio käytössä
-iex> remove_pattern("Hello, world!", ",")
-"Hello world!"
+```elixir
+string = "Elixir 1 on 2 mahtava 3 ohjelmointikieli!"
+pattern = ~r/[0-9]/
+clean_string = String.replace(string, pattern, "")
+IO.puts(clean_string)
 ```
-Tässä esimerkissä `remove_pattern` funktio ottaa kaksi argumenttia, merkkijonon ja kuviomme. Se palauttaa alkuperäisen merkkijonon, mutta poistaa kaikki kuviona olevat merkit.
 
-## Syvällisempi sukellus:
+Tulos:
+```
+Elixir  on  mahtava  ohjelmointikieli!
+```
 
-Pattern matchingilla on pitkä historia ohjelmoinnissa ja se tulee suoraan matematiikasta. Elixir käyttää Erlangin säännöllisiä ilmaisuja, jotka ovat peräisin luvulta 1970.
+Ja jos haluat poistaa välilyönnit:
 
-Joskus kuvion poisto ei välttämättä ole paras ratkaisu. Vaihtoehtoina on esim. kuvion sijainnin tai kuvion sisällä olevien merkkien tarkistaminen. Riippuu siitä, mitä tarvitset tehdä.
+```elixir
+string = "Elixir on    mahtava ohjelmointikieli!"
+clean_string = String.replace(string, ~r/[\s]+/, " ", global: true)
+IO.puts(clean_string)
+```
 
-Elixirin `String.replace/3` -metodi käyttää Elixirin & Erlangin vakioaloituskirjastoa ja tarttuu säännölliseen lausekkeeseen luodakseen uuden merkkijonon, joka puuttuu poistetusta kuvioista.
+Tulos:
+```
+Elixir on mahtava ohjelmointikieli!
+```
 
-## Katso myös:
+## Deep Dive
+"Sukellus syvyyksiin"
+Elixirin String-moduulin `replace/4`-functio on modernin Erlang-ekosysteemin kätevä perintö. Historiallisesti, monien kielten string-käsittelyn juuret ovat C:n libraryissä, mutta Elixir, kuten Erlang, hyötyy vahvasti toiminnallisen ohjelmoinnin paradigmoista, tekee koodistasi tiivistä ja helppolukuista. Vaihtoehtoiset menetelmät merkkien poistamiseen sisältävät `String.replace/3` ilman regex patternia ja `Regex.replace/3`, joka on matalamman tason kirjasto. Performance riippuu käytettävästä metodista, regex patternin monimutkaisuudesta, ja merkkijonon pituudesta. Silmälläpitäen, että Elixir käsittelee binäärejä tehokkaasti, edes pitkät merkkijonot eivät yleensä tuota ongelmia.
 
-- Erlangin dokumentaatio säännöllisistä lausekkeista: http://erlang.org/doc/man/re.html
-- Elixirin String-moduulin dokumentaatio: https://elixir-lang.org/docs/stable/elixir/String.html
-- Elixirin oppaat säännöllisten lausekkeiden käyttöön: https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html
+## See Also
+"Katso myös"
+- Elixirin viralliset dokumentit `String`-moduulista: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html) 
+- Regex-moduulin viralliset dokumentit: [https://hexdocs.pm/elixir/Regex.html](https://hexdocs.pm/elixir/Regex.html)
+- Online regex-testaustyökalu (hieno tapa kokeilla regex-patternit ennen koodiin lisäämistä): [https://regex101.com/](https://regex101.com/)

@@ -1,7 +1,8 @@
 ---
-title:                "Konkatenacja ciągów znaków"
-html_title:           "Bash: Konkatenacja ciągów znaków"
-simple_title:         "Konkatenacja ciągów znaków"
+title:                "Łączenie łańcuchów znaków"
+date:                  2024-01-20T17:34:16.195536-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Łączenie łańcuchów znaków"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,36 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Konkatenacja to fancy słowo na łączenie stringów. Robimy to, żeby zbudować większe ciągi znaków, zarządzać tekstami, ścieżkami plików czy tworzyć komunikaty.
 
-Łączenie ciągów, to proces sklejania dwóch lub więcej ciągów znaków w jeden. Programiści używają tego do tworzenia dynamicznych ciągów znaków, które mogą znaleźć zastosowanie przy generowaniu wiadomości, nazw plików itp.
-
-## Jak to zrobić:
-
-W Bashu łączenie ciągów jest proste. Można to zrobić, umieszczając ciągi obok siebie:
-
+## How to: (Jak to zrobić:)
 ```Bash
-string1="Cześć, "
-string2="Jak się masz?"
-połączone_ciągi=$string1$string2
-echo $połączone_ciągi
+# Połącz dwie zmienne
+first="Witaj, "
+second="Świecie!"
+greeting="${first}${second}"
+echo $greeting
+```
+Output:
+```
+Witaj, Świecie!
 ```
 
-Wynik:
 ```Bash
-Cześć, Jak się masz?
+# Dodaj string bezpośrednio do zmiennej
+prefix="Ile ważysz, "
+suffix=" kilogramów?"
+weight=75
+echo "${prefix}${weight}${suffix}"
+```
+Output:
+```
+Ile ważysz, 75 kilogramów?
 ```
 
-## Pogłębienie:
+```Bash
+# Używając polecenia printf
+printf -v full_greeting "%s%s" "$first" "$second"
+echo $full_greeting
+```
+Output:
+```
+Witaj, Świecie!
+```
 
-Choć łączenie ciągów jest dość prostym zadaniem w Bashu, warto znać kilka szczegółów:
 
-1. **Kontekst historyczny**: Bash pozwala na łatwe łączenie ciągów od dawnieństwa, co czyni go idealnym do skryptów shell.
+## Deep Dive (Wnikliwa Analiza)
+W latach 70., kiedy Unix zyskiwał na popularności, składnia stringów była podstawą. Bash, jako potomek shella z Unix, przejął te konwencje.
 
-2. **Alternatywy**: Inne języki skryptowe, takie jak Python czy JavaScript, używają różnych operatorów do łączenia ciągów.
+Alternatywą dla konkatenacji w Bash są inne języki skryptowe jak Python czy Perl, które mają bardziej zaawansowane operacje na stringach.
 
-3. **Szczegóły implementacji**: W Bashu nie potrzebujesz specjalnego operatora do łączenia ciągów. Bash automatycznie połączy ciągi, ustawione obok siebie.
+Bash traktuje zmienne jako stringi domyślnie, więc nie musisz deklarować typów. Dodatkowo, konkatenacja stringów w Bash jest bezpośrednia - wystarczy umieścić zmienne obok siebie.
 
-## Zobacz też:
+## See Also (Zobacz także)
+- [Bash String Operations](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion)
+- [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/)
 
-- Unix & Linux Stack Exchange: [How to concatenate strings in bash](https://unix.stackexchange.com/questions/76329/how-to-concatenate-strings-in-bash)
+Pamiętaj, że Bash jest potężnym narzędziem - z małą ilością kodu możesz zdziałać wiele! Ale również warto wiedzieć, kiedy do zadania lepiej użyć innego języka.

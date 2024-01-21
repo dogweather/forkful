@@ -1,6 +1,7 @@
 ---
 title:                "Extrahera delsträngar"
-html_title:           "Arduino: Extrahera delsträngar"
+date:                  2024-01-20T17:46:01.934098-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extrahera delsträngar"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,34 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
+## Vad & Varför?
 
-Att extrahera delsträngar (substrings) refererar till processen av att ta en specifik sekvens av tecken från en sträng. Programmörer gör det för att manipulera data för olika syften - exempelvis, att dela upp användarens inmatning eller att tolka och bearbeta text.
+Att extrahera delsträngar i JavaScript handlar om att plocka ut specifika delar ur en sträng. Programmerare gör detta för att manipulera och använda data mer effektivt, som att hämta användarnamn från email-adresser eller visa delar av text på en användargränssnitt.
 
-## Såhär gör du:
+## Hur man gör:
 
-Du kan extrahera en delsträng i Javascript med metoden `slice()`, `substring()` eller `substr()`. Här är exempel på hur varje metod fungerar:
+Extrahera en delsträng med `substring()`, `slice()` eller `substr()` (fast den sistnämnda är föråldrad).
 
-```Javascript
-let str = 'Hej, världen!';
+```javascript
+let text = "Hej, jag heter Sven!";
+let delstrang = text.substring(4, 7); // "jag"
+console.log(delstrang);
 
-console.log(str.slice(0, 3));   // Output: "Hej"  
-console.log(str.substring(0, 3)); // Output: "Hej" 
-console.log(str.substr(0, 3));   // Output: "Hej" 
+delstrang = text.slice(-5, -1); // "Sven"
+console.log(delstrang);
+
+// Notera: substr() är föråldrad men så här skulle det se ut:
+delstrang = text.substr(11, 4); // "heter"
+console.log(delstrang);
 ```
 
-Alla tre metoder ger samma resultat i det här fallet, men de skiljer sig åt i hur de hanterar första och andra argumentet.
+## Djupdykning
 
-## Djupdykning:
-
-Historiskt sett introducerades `slice()` och `substring()` först i javascript, medan `substr()` kom senare. `substr()` anses dock vara förlegad och rekommenderas inte för användning i nya projekt.
-
-De viktigaste skillnaderna mellan metoderna är deras beteende vid negativa värden och deras andra argument. `slice()` och `substr()` accepterar negativa tal, varvid de räknar från slutet av strängen, medan `substring()` gör negativa tal till noll. `slice()` och `substring()` använder det andra argumentet som en indexposition, medan `substr()` använder det som längden på delsträngen.
-
-Vi rekommenderar att du föredrar `slice()` över de andra två metoderna i de flesta fallen på grund av dess förmåga att hantera negativa tal.
+Förr användes ofta `substr()`, men den är inte rekommenderad längre då den är föråldrad. `substring()` och `slice()` är de rätta valen nu. De skiljer sig åt när det gäller att hantera negativa index: `slice()` kan hantera dessa medan `substring()` omvandlar negativa index till 0. Det är viktigt att välja rätt metoder för rätt syfte, speciellt när man hanterar större och mer komplexa strängar.
 
 ## Se även:
 
-För mer djupgående diskussion och jämförelser mellan olika delsträngsmetoder, se följande artiklar och goldbiter:
-
-3. [JavaScript String prototype property on W3Schools](https://www.w3schools.com/js/js_string_methods.asp)
+- MDN Web Docs för `substring()`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
+- MDN Web Docs för `slice()`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+- En diskussion om `substr()`s avskrivning på TC39 GitHub: https://github.com/tc39/proposal_string_replaceAll/issues/34

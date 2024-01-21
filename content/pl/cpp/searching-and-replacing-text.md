@@ -1,7 +1,8 @@
 ---
-title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
-simple_title:         "Wyszukiwanie i zastępowanie tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+date:                  2024-01-20T17:57:42.538266-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,42 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i dlaczego?
+Zastępowanie tekstu to podmiana jednego ciągu znaków innym. Programiści robią to, by szybko modyfikować dane czy kod - poprawiają błędy, aktualizują informacje, dostosowują do nowych wymagań.
 
-Wyszukiwanie i zastępowanie tekstu to podstawowy zabieg programistyczny, który pozwala na lokalizowanie określonego ciągu znaków (wyszukiwanie) i jego zamianę na inny (zastępowanie). Programiści robią to, aby szybko zmieniać kod, poprawiać błędy czy dostosowywać oprogramowanie do nowych wymagań.
-
-## Jak to Zrobić:
-
-Poniżej znajduje się przykładowy kod służący do wyszukiwania i zastępowania tekstu, napisany w języku C++:
-
+## Jak to zrobić:
 ```C++
+#include <iostream>
 #include <string>
-using namespace std;
+#include <regex>
 
 int main() {
-    string tekst = "Jestem programistą C++";
-    size_t pozycja = tekst.find("programistą");
+    std::string tekst = "Ala ma kota, a kot ma Alę.";
+    std::regex wzorzec("kot");
+    std::string nowy_fragment = "pies";
 
-    if (pozycja != string::npos) {
-        tekst.replace(pozycja, 12, "mistrzem");
-    }
-
-   cout << tekst << endl;  //"Jestem mistrzem C++"
-
+    // Zastępowanie wszystkich wystąpień wzorca 'kot' na 'pies'
+    std::string zmieniony_tekst = std::regex_replace(tekst, wzorzec, nowy_fragment);
+    
+    std::cout << zmieniony_tekst << std::endl; // Wyświetli: Ala ma psa, a pies ma Alę.
+    
     return 0;
 }
 ```
-W powyższym kodzie, metoda `find()` wyszukuje "programistą" w tekście, a `replace()` zastępuje go słowem "mistrzem".
 
-## W Głąb Tematu:
+## Głębsze spojrzenie:
+Zastępowanie tekstu to stary, uniwersalny trik. Programiści korzystają z tego od dekad, szczególnie kiedy trzeba było dbać o oszczędność pamięci. Historia narzędzi typu `sed` w Unix czy `Find and Replace` w edytorach tekstu pokazuje jego znaczenie. Alternatywy? Biblioteki do manipulacji stringami, jak `Boost`, czy języki z potężnymi narzędziami do pracy z tekstem, np. Perl. We współczesnym C++ korzystamy z `std::regex` dla wyrażeń regularnych i `std::string` dla manipulacji ciągami znaków.
 
-**Historycznie:** Wyszukiwanie i zastępowanie tekstu jest tak starym konceptem jak same początki programowania. Było niezbędne do optymalizacji przepływu danych i poprawy wydajności.
+## Zobacz również:
+- [cppreference std::regex](https://en.cppreference.com/w/cpp/regex)
+- [cplusplus.com std::string](http://www.cplusplus.com/reference/string/string/)
 
-**Alternatywy:** Mamy różne sposoby na wyszukiwanie i zastępowanie tekstu. Możemy użyć standardowych bibliotek C++, takich jak `<algorithm>`. Możemy też korzystać z bibliotek zewnętrznych, takich jak Boost.
-
-**Szczegóły Implementacji:** W naszym przypadku, `find()` zwraca pozycję początkową pierwszego wystąpienia danego ciągu. Jeżeli ciąg nie zostanie znaleziony, funkcja zwraca `string::npos`. Po znalezieniu pozycji, możemy użyć `replace()`, podając jej pozycję startową, długość ciągu do zastąpienia i nowy ciąg.
-
-## Zobacz Również:
-
-1. Dokumentację standardowej biblioteki szablonów C++ (STL): [STL Dokumentacja](http://www.cplusplus.com/reference/string/string/)
-2. Dokumentacja biblioteki Boost: [Boost Dokumentacja](https://www.boost.org/doc/libs/)
+Pamiętaj, że poradniki i dokumentacje bywają najlepszym źródłem głębszej wiedzy. Ćwiczenie czyni mistrza, więc testuj różne metody i znajdź tę idealną dla swojego projektu.

@@ -1,7 +1,8 @@
 ---
-title:                "Zeichen löschen, die einem Muster entsprechen"
-html_title:           "C#: Zeichen löschen, die einem Muster entsprechen"
-simple_title:         "Zeichen löschen, die einem Muster entsprechen"
+title:                "Löschen von Zeichen, die einem Muster entsprechen"
+date:                  2024-01-20T17:42:33.531069-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,12 +12,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Löschen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte Zeichen aus einem String zu entfernen, die einem vorgegebenen Kriterium entsprechen. Programmierer machen das, um Eingabedaten zu bereinigen, zu validieren oder einfach um unnötige Informationen zu entfernen.
 
-Die Löschung von Zeichen, die einem Muster entsprechen, bezieht sich darauf, bestimmte Zeichen aus einem String zu entfernen. Diese Operation ist nützlich, wenn Sie unerwünschte oder nicht benötigte Zeichen aus Ihrer Eingabe entfernen möchten.
-
-## Wie man es macht:
-
-In Haskell können wir die Bibliotheksfunktion `filter` verwenden, um diese Aufgabe zu erfüllen. Nachfolgend finden Sie ein einfaches Beispiel:
+## Anleitung:
+Um Zeichen zu löschen, die einem Muster in Haskell entsprechen, können wir die `filter`-Funktion zusammen mit einer passenden Bedingung verwenden. Hier ein einfaches Beispiel, das alle Ziffern aus einem String entfernt:
 
 ```Haskell
 import Data.Char (isDigit)
@@ -24,27 +23,40 @@ import Data.Char (isDigit)
 deleteDigits :: String -> String
 deleteDigits = filter (not . isDigit)
 
-main = print (deleteDigits "Hello123World45")
+main :: IO ()
+main = putStrLn $ deleteDigits "Haskell 2023 ist cool"
 ```
 
-Wenn Sie dieses Skript ausführen, erhalten Sie die Ausgabe:
+Ausgabe:
+
+```
+Haskell  ist cool
+```
+
+Für kompliziertere Muster können wir den `Text.Regex`-Modul verwenden:
 
 ```Haskell
-"HelloWorld"
+import Text.Regex (mkRegex, subRegex)
+
+deletePattern :: String -> String -> String
+deletePattern pattern input = subRegex (mkRegex pattern) input ""
+
+main :: IO ()
+main = putStrLn $ deletePattern "[0-9]+" "Haskell 2023 ist cool"
 ```
 
-## Tiefere Einblicke
+Ausgabe:
 
-Die Funktion `filter` ist eine Standardbibliotheksfunktion, die in Haskell seit seiner ersten Veröffentlichung vorhanden ist. Sie nimmt eine Funktion und eine Liste als Eingabe und gibt eine Liste zurück, die nur die Elemente enthält, für die die Funktion `True` gibt.
+```
+Haskell  ist cool
+```
 
-Es gibt andere Methoden, um diese Aufgabe zu erfüllen, z.B. mit einer Schleife oder mit einer rekursiven Funktion, aber die `filter` Methode ist die einfachste und meist verwendete Methode in Haskell.
+## Tiefergehende Informationen:
+Das Löschen von Mustern in Strings hat in der Geschichte der Programmierung eine lange Tradition und ist besonders in der Textverarbeitung und beim Parsing von Daten wichtig. In Haskell, wie in vielen anderen funktionalen Sprachen, bieten Funktionen wie `filter` und Pakete wie `regex-base` eine mächtige und expressive Weise, diese Operationen durchzuführen. Alternativ zu `regex-base` gibt es auch `regex-pcre`, die Perl-ähnliche Reguläre Ausdrücke unterstützt, was für manche Entwickler vertrauter ist.
 
-Die Implementierung von `filter` ist ziemlich einfach und effizient. Sie durchläuft die Liste einmal und fügt nur die Elemente in die neue Liste ein, die die Bedingung erfüllen, daher hat sie eine lineare Zeitkomplexität.
+Im Kern ist die Implementierung dieser Funktionalität in Haskell daran interessiert, Seiteneffekte zu vermeiden und Immutable (unveränderliche) Datenstrukturen zu verwenden, was zu einem prägnanten und sicheren Code führt.
 
-## Weitere Infos
-
-Für weiterführende Informationen können Sie die Haskell-Dokumentation für die 'filter'-Funktion besuchen: http://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:filter
-
-Und hier ist ein Link zu einem Beitrag über die Verwendung der `filter` Funktion in Haskell, der auch einige fortgeschrittene Nutzungsszenarien behandelt: https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/text
-
-Hoffentlich hilft Ihnen dieser kurze Leitfaden beim effizienten Umgang mit Textbearbeitungsaufgaben in Haskell. Viel Spaß beim Codieren!
+## Siehe auch:
+- Haskell `Text.Regex` Dokumentation: https://hackage.haskell.org/package/regex-compat-0.95.1/docs/Text-Regex.html
+- `regex` GitHub Repository: https://github.com/haskell-hvr/regex
+- Haskell Wiki zu Regulären Ausdrücken: https://wiki.haskell.org/Regular_expressions

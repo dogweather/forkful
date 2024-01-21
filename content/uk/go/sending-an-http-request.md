@@ -1,7 +1,8 @@
 ---
-title:                "Надсилання http-запиту"
-html_title:           "Arduino: Надсилання http-запиту"
-simple_title:         "Надсилання http-запиту"
+title:                "Надсилання HTTP-запиту"
+date:                  2024-01-20T17:59:41.955712-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,43 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & навіщо? 
-Надсилання HTTP-запиту - це процес, подібний тому, як браузер запитує веб-сторінки від сервера. Програмісти роблять це, щоб обмінюватися даними між серверами та слідкувати за їх поведінкою.
+## What & Why? (Що і Чому?)
+Sending an HTTP request means reaching out to a web server for data or action. Programmers do it to interact with APIs, fetch web content, or communicate between services.
 
-## Як це зробити: 
-В Go ви можете використовувати стандартну бібліотеку "net/http" для надсилання HTTP-запитів. Ось простий приклад:
+## How to: (Як це зробити:)
+Here's a basic GET request:
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"net/http"
-	"io/ioutil"
+    "fmt"
+    "io/ioutil"
+    "net/http"
 )
 
 func main() {
-	resp, err := http.Get("http://example.com/")
-	if err != nil {
-		panic(err)
-	}
-	defer resp.Body.Close()
-	
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		panic(err)
-	}
-	
-	fmt.Println(string(body))
+    resp, err := http.Get("http://example.com")
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
+
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(string(body))
 }
 ```
 
-Після запуску програми вона зробить GET-запит до "http://example.com/" і виведе тіло відповіді у консоль.
+And just like that, you should see `example.com`'s HTML in your console.
 
-## Поглиблено
-Відправлення HTTP-запиту - це важлива частина взаємодії з веб-серверами. Це було створено ще в 1989 році коли Тім Бернерс-Лі створив World Wide Web. У Go, ви також можете використовувати альтернативні бібліотеки, такі як "gorequest" або "fasthttp", які можуть пропонувати більший функціонал або кращу продуктивність. Однак, у більшості випадків "net/http" буде достатньо.
+## Deep Dive (Поглиблений Занурення)
+HTTP requests in Go were popularized by the `net/http` package, efficient and robust for web interactions. Alternatives include using `curl` in Unix systems or libraries like `Resty` for simpler syntax. Under the hood, Go manages details like TCP/IP protocols and thread safety, simplifying the process for developers.
 
-## Дивіться також 
-- "net/http" документація: https://golang.org/pkg/net/http/ 
-- "gorequest" Github сторінка: https://github.com/parnurzeal/gorequest
-- "fasthttp" Github сторінка: https://github.com/valyala/fasthttp
+## See Also (Дивіться також):
+- Go `net/http` package documentation: https://pkg.go.dev/net/http
+- `ioutil` package, for reading the response: https://pkg.go.dev/io/ioutil
+- Go by Example, HTTP clients: https://gobyexample.com/http-clients
+- Official Go blog, "Go's HTTP client and server": https://blog.golang.org/http

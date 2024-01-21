@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie pliku tekstowego"
-html_title:           "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+date:                  2024-01-20T17:54:00.831350-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,33 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+(Co i dlaczego?)
 
-Czytanie pliku tekstowego to proces, w którym program odczytuje dane zawarte w pliku tekstowym. Programiści robią to, aby manipulować danymi, zrozumieć strukturę pliku, a nawet debugować błędy.
+Czytanie pliku tekstowego to pobieranie jego zawartości do pamięci programu. Programiści robią to, by manipulować danymi, wyświetlić je użytkownikowi lub dokonać jakiejś analizy.
 
-## Jak to zrobić:
+## How to:
+(Jak to zrobić:)
 
-Poniżej znajduje się przykład użycia Clojure do odczytania pliku tekstowego:
+Czytanie pliku w Clojure może być proste jak bułka z masłem. Oto przykłady:
 
-```clojure
-(require '[clojure.java.io :as io])
+```Clojure
+;; Czytanie całego pliku na raz
+(slurp "ścieżka/do/pliku.txt")
 
-(with-open [reader (io/reader "ścieżka/do/pliku.txt")]
-(let [lines (line-seq reader)]
-  (doseq [line lines]
-    (println line))))
+;; Czytanie linia po linii
+(with-open [r (clojure.java.io/reader "ścieżka/do/pliku.txt")]
+  (doseq [line (line-seq r)]
+    (println line)))
+```
+Jeśli masz plik `przyklad.txt` z treścią "Cześć, Clojure!", to wynik będzie:
+
+```Clojure
+"Cześć, Clojure!"
 ```
 
-Wykonanie powyższego kodu spowoduje wyświetlenie zawartości pliku `plik.txt`.
+## Deep Dive:
+(Głębsze zanurzenie:)
 
-## Głębszy wgląd:
+Wczesne lata programowania opierały się na czytaniu danych z kart perforowanych i taśm magnetycznych. Dzisiaj pliki tekstowe to podstawowa forma wymiany i przechowywania danych.
 
-(1) **Kontekst historyczny:** Początki odczytu plików tekstowych w Clojure są ściśle związane z powstaniem samego języka, który zawsze był silnie związany z Javą. Dzięki temu Clojure oferuje doskonałe wsparcie dla operacji na plikach, w tym odczytu plików tekstowych.
+Alternatywy dla `slurp` i `line-seq` obejmują stosowanie niskopoziomowego Java API, używając `java.io.BufferedReader` dla większej kontroli nad procesem czytania.
 
-(2) **Alternatywy:** Istnieje wiele różnych bibliotek i technik, które mogą być używane do odczytania plików tekstowych w Clojure, takie jak `clojure-csv` dla plików CSV.
+Szczegóły implementacji: `slurp` ładnie obsługuje małe pliki, ale nie nadaje się do dużych, bo zużywa zbyt wiele pamięci. Dla dużych plików lepiej używać `line-seq` w `with-open`, co zapewnia stopniowe czytanie i automatyczne zamknięcie zasobów.
 
-(3) **Szczegóły implementacji:** W powyższym przykładzie użyliśmy `with-open`, aby otworzyć plik, `io/reader`, aby przetworzyć plik, `line-seq`, aby przechodzić przez każdą linię, a `println`, aby wyświetlić wszystkie linie.
+## See Also:
+(Zobacz również:)
 
-## Zobacz też:
-
-- [Clojure Docs - clojure.java.io/reader](https://clojuredocs.org/clojure.java.io/reader): Dokumentacja tej funkcji w Clojure.
+- Clojure Documentation: https://clojure.org/guides/learn/functions#_file_io
+- Clojure for the Brave and True (Rozdział o I/O): https://www.braveclojure.com/io/
+- Clojure from the ground up: https://aphyr.com/posts/301-clojure-from-the-ground-up-welcome

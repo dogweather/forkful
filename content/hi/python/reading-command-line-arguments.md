@@ -1,7 +1,8 @@
 ---
-title:                "कमांड लाइन तर्कों को पढ़ना"
-html_title:           "Kotlin: कमांड लाइन तर्कों को पढ़ना"
-simple_title:         "कमांड लाइन तर्कों को पढ़ना"
+title:                "कमांड लाइन आर्गुमेंट्स पढ़ना"
+date:                  2024-01-20T17:57:08.135486-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "कमांड लाइन आर्गुमेंट्स पढ़ना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,34 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-कमांड लाइन आर्गुमेंट्स पढ़ना, किसी प्रोग्राम को इसकी शुरुआती परामीतियाँ प्राप्त करने का एक तरीका है। प्रोग्रामर इसे उपयोगकर्ता इनपुट को वर्णित करने के लिए करते हैं और यह किसी तत्कालीन सामर्थ्य की समायोजन के लिए होता है।
+## What & Why? (क्या और क्यों?)
+कमांड लाइन आर्ग्यूमेंट्स का पढ़ना, यह होता है कि जब आप अपने प्रोग्राम को रन करते हैं, तो यूजर से इनपुट कैसे लें। इससे प्रोग्रामर्स को फ्लेक्सिबिलिटी मिलती है कि वे अपने कोड को अलग-अलग सिचुएशन के हिसाब से एडजस्ट कर सकें।
 
-## कैसे 
-पायथन में, `sys.argv` का उपयोग कमांड लाइन आर्गुमेंट्स पढ़ने के लिए किया जाता है।
-
-```Python
+## How to: (कैसे करें?)
+```python
 import sys
 
-print("नाम द्वारा चलाया गया स्क्रिप्ट:", sys.argv[0])
-print("पहला आर्गुमेंट:", sys.argv[1])
-print("दूसरा आर्गुमेंट:", sys.argv[2])
+# अर्ग्यूमेंट्स को प्रिंट करें
+if len(sys.argv) > 1:
+    print(f"Arguments received: {sys.argv[1:]}")
+else:
+    print("No arguments received.")
+
+# Example usage: python script.py arg1 arg2 arg3
 ```
-आउटपुट:
+Sample Output: `Arguments received: ['arg1', 'arg2', 'arg3']`
 
-```Shell
-$ python3 test.py आर्गुमेंट1 आर्गुमेंट2
-नाम द्वारा चलाया गया स्क्रिप्ट: test.py
-पहला आर्गुमेंट: आर्गुमेंट1
-दूसरा आर्गुमेंट: आर्गुमेंट2
-```
+## Deep Dive (गहराई में जानकारी)
+कमांड लाइन आर्ग्यूमेंट्स का चलन पुराना है; यह यूनिक्स सिस्टम्स से शुरू हुआ था। `sys` मॉड्यूल का उपयोग करते हुए `argv` वेरिएबल में आर्ग्यूमेंट्स को पढ़ा जाता है। वीकल्पिक तरीके के रूप में `argparse` मॉड्यूल का इस्तेमाल होता है, जो ज्यादा उन्नत विकल्पों को संभाल सकता है।
 
-## गहरी जानकारी
-ऐतिहासिक प्रसंग में, कमांड लाइन आर्गुमेंट्स का उपयोग तब होता था जब ग्राफिकल यूजर इंटरफेस नहीं होते थे। यह सीधे डेटा प्रबंधन और प्रोसेसिंग का एक शक्तिशाली तरीका होता था।  
-विकल्प के रूप में, आप `argparse` मॉड्यूल का उपयोग भी कर सकते हैं जो अधिक सक्षम होता है और कमांड लाइन आर्गुमेंट्स को पार्स करने में अधिक कठिनाई देता है।  
-`sys.argv` का उपयोग करते समय, ध्यान दें कि यह एक सूची होती है जिसमें मूल स्क्रिप्ट नाम भी शामिल होता है, जिसे आमतौर पर उपेक्षित किया जाता है।
-
-## अधिक देखें
-1. अधिक विस्तार में `sys.argv` के बारे में: https://docs.python.org/3/library/sys.html#sys.argv
-2. `argparse` मॉड्यूल का उपयोग करने का तरीका: https://docs.python.org/3/howto/argparse.html
-3. अन्य विचारणाएं कमांड लाइन आर्गुमेंट्स के लिए: https://realpython.com/command-line-interfaces-python-argparse/
+## See Also (और देखें)
+- [Python `argparse` Documentation](https://docs.python.org/3/library/argparse.html)
+- [Python `sys` module](https://docs.python.org/3/library/sys.html) 
+- ["Automate the Boring Stuff with Python" by Al Sweigart](https://automatetheboringstuff.com/)

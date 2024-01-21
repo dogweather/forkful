@@ -1,7 +1,8 @@
 ---
-title:                "Utdrag av understrenger"
-html_title:           "Bash: Utdrag av understrenger"
-simple_title:         "Utdrag av understrenger"
+title:                "Uthenting av delstrenger"
+date:                  2024-01-20T17:46:11.625885-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uthenting av delstrenger"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,38 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
+## What & Why?
+Hva er ekstrahering av delstrenger? Det er når du plukker ut deler av en tekststreng. Hvorfor? Fordi noen ganger trenger du bare et spesifikt stykke av informasjonen, som brukernavn fra en e-post eller en dato fra en tekst.
 
-Å trekke ut substrings betyr å velge deler av en streng basert på posisjon eller mønster. Dette er viktig i programmering for å manipulere tekstdata effektivt.
-
-## Hvordan:
-
-Her er noen enkle eksempler på hvordan du trekker ut substrings i Kotlin:
-
+## How to:
 ```Kotlin
-val text = "Hei,Verden!"
-println(text.substring(0,3)) //Output: Hei
+fun main() {
+    val fullString = "hello@world.com"
+    val userName = fullString.substringBefore("@")
+    val domain = fullString.substringAfter("@")
 
-val fraIndex = text.indexOf(",") + 1
-println(text.substring(fraIndex)) //Output: Verden!
+    println(userName)  // Skriver ut: hello
+    println(domain)   // Skriver ut: world.com
+
+    val date = "2023-04-01"
+    val year = date.substring(0, 4)
+    val month = date.substring(5, 7)
+    
+    println(year)  // Skriver ut: 2023
+    println(month) // Skriver ut: 04
+}
 ```
 
-I det første eksemplet trekker vi ut de første tre tegnene av strengen. I det andre eksempelet finner vi indexen til kommaet og trekker ut alt som kommer etter.
+## Deep Dive
+Delstrengekstraksjon går tilbake til de tidlige dagene av programmering. Språk som C brukte funksjoner som `substr`. I Kotlin, er det innebygde funksjoner som `substring`, `substringBefore`, og `substringAfter`. Disse metodene støtter både enkelhet og lesbarhet.
 
-## Dypdykk:
+Når det gjelder alternativer, kan du bruke regulære uttrykk for komplekse mønstre. Men for enkelhetens skyld, er `substring`-funksjonene ofte å foretrekke. Kotlin håndterer `String`-referanser ved å bruke immutabilitet og utfører subsekvent kopiering for å sikre ytelse og unngå endringer i den opprinnelige strengen.
 
-Hensikten med å trekke ut substrings går langt tilbake i programmeringshistorien. Tekstbehandling og mønster-gjenkjenning er noen av hjørnesteinene i informatikk. 
-
-I Kotlin kan du også bruke `substringBefore` og `substringAfter` funksjonene som gir deg mer direkte kontroll over hva som ekstraheres.
-
-```Kotlin
-val text = "Hei,Verden!"
-println(text.substringBefore(",")) //Output: Hei
-println(text.substringAfter(",")) //Output: Verden!
-```
-
-En annen viktig detalj er håndteringen av 'IndexOutOfBoundsException'. Dersom du prøver å trekke ut en substring utenfor strengens lengde, vil programmet kaste en unntak. Det er derfor viktig å sjekke indeksene før man prøver å trekke ut substrings.
-
-## Se også:
-
-1. [Offisiell Kotlin dokumentasjon på substrings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
+## See Also
+- [Regex i Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/index.html)

@@ -1,7 +1,8 @@
 ---
-title:                "Interpolation d'une chaîne de caractères"
-html_title:           "Ruby: Interpolation d'une chaîne de caractères"
-simple_title:         "Interpolation d'une chaîne de caractères"
+title:                "Interpolation de chaînes de caractères"
+date:                  2024-01-20T17:50:35.027186-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolation de chaînes de caractères"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,36 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce et Pourquoi?
+## What & Why?
+L'interpolation de chaînes c'est insérer des variables ou des expressions dans une chaîne de caractères. On le fait pour dynamiser les textes et les rendre plus flexibles.
 
-L'interpolation de chaînes est une méthode pour insérer des valeurs variables directement dans une chaîne. Les programmeurs l'utilisent pour formater les chaînes de façon plus lisible et efficace.
+## How to:
+En Fish, l'interpolation est simple et directe. Voici comment ça marche:
 
-## Comment faire:
-
-Voici comment vous pouvez l'utiliser dans Fish Shell.
-
-```fish
-define votre_nom as "Jean"
-echo "Bonjour, $votre_nom. Comment ça va?"
+```Fish Shell
+set nom "Monde"
+echo "Bonjour, $nom!"
 ```
 
-Lorsque vous exécutez ce code, vous verrez:
+Sortie :
 
-```fish
-Bonjour, Jean. Comment ça va?
 ```
-Le "$" précède la variable que nous voulons insérer dans notre chaîne.
+Bonjour, Monde!
+```
 
-## Plongée en profondeur:
+Et avec des commandes :
 
-Historiquement, l'interpolation de chaînes est populaire dans de nombreux langages de programmation. Fish Shell l'a adopté pour une syntaxe plus intuitive et une facilité de lecture.
+```Fish Shell
+set compteur (seq 3)
+for nbr in $compteur
+    echo "Compteur est à $nbr"
+end
+```
 
-Comme alternative, Fish propose également une méthode dite de "concaténation de chaînes". Moins directe, elle nécessite l'utilisation de séparateurs spéciaux.
+Sortie :
 
-Les détails de mise en œuvre sont relativement simples dans Fish Shell. Le signe '$' indique le début de la variable à interpoler dans la chaîne de caractères.
+```
+Compteur est à 1
+Compteur est à 2
+Compteur est à 3
+```
 
-## Voir aussi:
+## Deep Dive
+Historiquement, Fish s'est démarqué pour son approche conviviale et son souci de simplification. Là où les autres shells utilisent des guillemets ou des caractères d'échappement, Fish se contente d'une syntaxe épurée.
 
-Pour plus d'informations sur l'interpolation de chaînes dans Fish Shell, vous pouvez consulter les ressources suivantes:
+Alternatives : Bash requiert souvent des guillemets ou `$()` pour des opérations similaires. Fish, lui, évite ces complications.
 
-1. ["Fish Shell Documentation"](https://fishshell.com/docs/current/index.html): Comprend une variété de guides et de tutoriels pour aider les utilisateurs à comprendre Fish Shell.
+Détails d'implémentation : Fish utilise une expansion des variables en temps réel, ce qui signifie que la valeur d'une variable est évaluée et insérée lors de l'exécution de la commande.
+
+## See Also
+Pour plus d'informations, consultez la documentation officielle de Fish sur l'interpolation de chaînes et la manipulation de variables :
+
+- Documentation Fish sur les variables : [https://fishshell.com/docs/current/#variables](https://fishshell.com/docs/current/#variables)
+- FAQ Fish Shell : [https://fishshell.com/docs/current/faq.html#faq-string](https://fishshell.com/docs/current/faq.html#faq-string)

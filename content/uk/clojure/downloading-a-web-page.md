@@ -1,6 +1,7 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "Gleam: Завантаження веб-сторінки"
+date:                  2024-01-20T17:43:37.806340-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,38 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
+## Що це та навіщо?
+Завантаження веб-сторінки — це процес отримання її вмісту через Інтернет. Програмісти роблять це, щоб аналізувати дані, моніторити зміни або витягувати інформацію для подальшої обробки.
 
-Завантаження веб-сторінки - це процес отримання вмісту сторінки через Інтернет. Програмісти цим займаються, коли їм потрібно обробити дані з сайту автоматично, наприклад, для аналізу даних.
-
-## Як це робити:
-
-В Clojure для завантаження веб-сторінки ми можемо використовувати бібліотеку `clj-http`. Ось як це можна зробити:
-
+## Як це зробити:
 ```clojure
-(require '[clj-http.client :as client])
+(require '[org.httpkit.client :as http])
 
-(let [response (client/get "https://example.com")]
-  (println (:status response))
-  (println (:body response)))
+(defn download-page [url]
+  (let [response (http/get url)]
+    (-> response
+        @(:body))))
+
+(println (download-page "http://example.com"))
 ```
+Вищезазначений код асинхронно завантажує веб-сторінку та виводить її вміст у консоль.
 
-Це виведе код статусу відповіді та вміст веб-сторінки.
+## Глибоке занурення
+Історично, для завантаження веб-сторінок у Clojure використовувалися бібліотеки як `clj-http` чи `http-kit`. Альтернативно, можна застосовувати Java бібліотеки через Java інтероперабельність. Важливим є розуміння того, що більшість HTTP-клієнтів у Clojure працюють асинхронно, тому зазвичай вам потрібно розібратись з промісами або майбутніми результатами (futures).
 
-## Глибше занурення:
-
-#### Історичний контекст:
-Clojure, як і багато високорівневих мов, пропонує декілька чудових бібліотек для роботи з HTTP. `clj-http` - одна з найпопулярніших, благодарі своєму багатому API і гнучкості.
-
-#### Альтернативи:
-Існують також інші бібліотеки, такі як `http-kit` та `aleph`, які також можуть бути використані для завантаження веб-сторінок.
-
-#### Деталі реалізації:
-Коли ви використовуєте `clj-http` для відправки HTTP-запиту, він використовує Java-бібліотеку Apache HttpComponents під капотом. Він дозволяє вам надсилати різні типи HTTP-запитів і добре працює з великими обсягами даних.
-
-## Дивіться також:
-
-- [clj-http GitHub](https://github.com/dakrone/clj-http)
-- [http-kit GitHub](https://github.com/http-kit/http-kit)
-- [aleph GitHub](https://github.com/ztellman/aleph)
-- [Apache HttpComponents](https://hc.apache.org/)
+## Див.також
+- [http-kit GitHub repository](https://github.com/http-kit/http-kit)
+- [clj-http: A Clojure HTTP library](https://github.com/dakrone/clj-http)
+- [ClojureDocs - Guide to Clojure Core.async](https://clojuredocs.org/clojure.core.async)

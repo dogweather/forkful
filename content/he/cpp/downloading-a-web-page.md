@@ -1,6 +1,7 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "C++: הורדת דף אינטרנט"
+date:                  2024-01-20T17:43:50.418816-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "C++"
 category:             "C++"
@@ -11,54 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-
-הורדת דף אינטרנט היא תהליך של שמירת תוכן האינטרנט (כמו דף HTML) על המחשב שלך. מתכנתים מנהלים את תהליך זה כדי לעבד נתונים מהאינטרנט לניתוח התנהגותי, בדיקת חווית משתמש, ועוד.
+להוריד דף אינטרנט זה לגשת לתוכן שלו דרך הרשת ולשמור אותו במקומית. פרוגרמיסטים עושים זאת כדי לעבד דאטה, בדוק כניסה חיה, או לקחת פרטים.
 
 ## איך לעשות:
+כדי להוריד דף אינטרנט ב-C++, נשתמש בספריית פופולרית בשם `cURL` לדוגמה.
 
-הנה קוד C++ שמשתמש בספריית libcurl להורדת דף אינטרנט.
 ```C++
-#include <curl/curl.h>
+#include <iostream>
 #include <string>
+#include <curl/curl.h>
 
-size_t WriteCallback(void *contents, size_t size, size_t nmemb, std::string *s) {
-    size_t newLength = size*nmemb;
-    s->append((char*)contents, newLength);
-    return newLength;
+size_t callbackfunction(void *ptr, size_t size, size_t nmemb, std::string *data) {
+    data->append((char*) ptr, size * nmemb);
+    return size * nmemb;
 }
 
-std::string DownloadHTML(const char* url) {
-    CURL* curl = curl_easy_init();
+std::string download_html(const std::string &url) {
+    CURL *curl;
     CURLcode res;
-    std::string s;
+    std::string response_data;
 
+    curl = curl_easy_init();
     if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, url);
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &s);
+        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, callbackfunction);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response_data);
         res = curl_easy_perform(curl);
         curl_easy_cleanup(curl);
     }
-    return s;
+    return response_data;
 }
 
-// מקרה של שימוש: הורדת דף HTML
 int main() {
-    std::string content = DownloadHTML("http://www.google.com");
-    std::cout << content;
+    std::string url = "http://example.com";
+    std::string html_content = download_html(url);
+    
+    if (!html_content.empty()) {
+        std::cout << "HTML content downloaded successfully:" << std::endl;
+        std::cout << html_content << std::endl;
+    } else {
+        std::cout << "Failed to download the content." << std::endl;
+    }
+
     return 0;
 }
 ```
+זה ידפיס את ה-HTML של http://example.com.
 
-## במעמקים:
-
-1. הקשר היסטורי: הספרייה libcurl שאתה רואה בדוגמה של הקוד הייתה מהראשונות שהפכו את הגישה לאינטרנט לקלה יותר בשפות תכנות C ו־C++. נכון להיום, libcurl היא ספרייה מוכרת ומקובלת שנמצאת בשימוש גם היום.
-2. חלופות: ניתן להשתמש בספריות אחרות, כמו Beast ב-Boost, POCO או ספריות מודרניות יותר כמו cpp-httplib. להחלטה יש את התלות בהעדפה האישית, הצרכים של הפרויקט והקביעות להקריב למידה של תכנות חדשה.
-3. פרטי ביצוע: libcurl מתמקדת בנוחות של שימוש אך עשויה לא להיות הכי מהירה או הכי יעילה מבחינת ניצול משאבי מערכת. על מנת למקסם את היכולות שלך, תרצה לבדוק ספריות אחרות ולבחון כיצד להשתמש בהן במקרה שלך.
+## עיון מעמיק:
+הורדת דף אינטרנט לא הייתה פשוטה תמיד. לפני cURL, היינו צריכים להשתמש ב-sockets ולדבר ישירות עם ברוטוקול HTTP. חלופות ל-cURL כוללות ספריות כמו `Boost.Beast` ו`Poco`. אם אתה צריך לעבוד עם HTTPS, אז cURL ישתמש בסיפרת SSL/TLS בצורה שקופה. בעת שימוש ב-cURL בפרויקט שלך, זכור להוסיף אותו למערכת הבניה שלך, כמו CMake או Make.
 
 ## ראה גם:
-
-- הדרכה להתחלה עם libcurl: https://curl.haxx.se/libcurl/c/
-- הספרייה cpp-httplib: https://github.com/yhirose/cpp-httplib
-- הספרייה POCO Net: https://pocoproject.org/docs/Poco.Net.html
-- הספרייה Beast: https://www.boost.org/doc/libs/1_72_0/libs/beast/doc/html/index.html
+- הדוקומנטציה של cURL: https://curl.se/libcurl/c/
+- מדריכים ל-CMake: https://cmake.org/documentation/
+- על HTTP/HTTPS ופרוטוקולים: https://developer.mozilla.org/en-US/docs/Web/HTTP
+- מדריך Boost.Beast: https://www.boost.org/doc/libs/1_75_0/libs/beast/doc/html/index.html
+- מידע על Poco Libraries: https://pocoproject.org/docs/

@@ -1,7 +1,8 @@
 ---
-title:                "नया प्रोजेक्ट शुरू करना"
-html_title:           "C: नया प्रोजेक्ट शुरू करना"
-simple_title:         "नया प्रोजेक्ट शुरू करना"
+title:                "नई परियोजना शुरू करना"
+date:                  2024-01-20T18:03:50.578491-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "नई परियोजना शुरू करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Getting Started"
@@ -10,38 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+नया प्रोजेक्ट शुरू करना मतलब बिल्कुल नया कोड बेस तैयार करना, जैसे खाली कैनवास पर पेंटिंग करना। प्रोग्रामर इसे तब करते हैं जब उन्हें नई वेबसाइट, एप्लिकेशन या सिस्टम बनाना है या कोई नई प्रोब्लेम सोल्व करनी होती है।
 
-नई प्रोजेक्ट शुरू करना मतलब होता है एक नई कोडिंग यात्रा की शुरुवात करना। प्रोग्रामर्स प्रोजेक्ट शुरू करते हैं क्योंकि यह उन्हें सम्मान, पेशेवर विकास, और तकनीकी ज्ञान विकसित करने का अवसर प्रदान करता है।  
+## How to: (कैसे करें:)
+यहाँ एक साधारण Java प्रोजेक्ट शुरू करने का उदाहरण दिया गया है:
 
-
-## कैसे करें:
-
-Java में एक प्रोजेक्ट शुरू करने के लिए, कुछ साधारण कदम देखिए जो निम्नलिखित है:
-  
-```Java 
-public class Main {  
-    public static void main(String[] args) {      
-        System.out.println("नमस्ते, दुनिया!");  
-    }  
-}  
-```
-इसे जब आप रन करेंगे, तो आपको निम्नलिखित आउटपुट दिखाई देगा:
-
-```Java
-नमस्ते, दुनिया!
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
 ```
 
-## गहरी डाइव:
+इस कोड को रन करने पर आपको निम्नलिखित आउटपुट देखने मिलेगा:
 
-**ऐतिहासिक संदर्भ:** Java का विकास 1995 में स्टार्ट हुआ, कोडिंग की दुनिया को बदल देने के साथ। 
-  
-**विकल्प:** प्रोजेक्ट शुरू करने के अन्य विकल्प में Javascript, Python और Ruby शामिल हैं, जो इसे विभिन्न परिप्रेक्ष्यों में अधिक समग्रा और लचीला बनाते हैं। 
-  
-**कार्यान्वयन विवरण:** Java प्रोजेक्ट शुरू करने के लिए, आपको JDK (Java Development Kit) और एक विकास पर्यावरण (जैसे IntelliJ IDEA या Eclipse) की आवश्यकता होगी।
+```
+Hello, World!
+```
 
-## देखिए भी:
+## Deep Dive (गहराई से जानकारी)
+प्राचीन समय से जब लोग मैनुअली कोड टाइप करते थे, तब से अब जब IDEs जैसे IntelliJ IDEA और Eclipse ने कोडिंग को और भी ज्यादा सरल बनाया है, प्रोजेक्ट शुरू करने के तरीके बहुत बदल चुके हैं। पहले जहां सिर्फ टेक्स्ट एडिटर और कमांड लाइन हुआ करती थी, वहीं अब Maven और Gradle जैसे बिल्ड टूल्स ने डिपेंडेंसी मैनेजमेंट और बिल्ड प्रोसेस को काफी आसान बना दिया है। हालांकि Java के सबसे बेसिक फॉर्म में, जैसे ऊपर दिखाया गया कोड सैंपल में, आपको सिर्फ `public static void main(String[] args)` मेथड की ज़रूरत होती है जिसे जावा एप्लिकेशन की शुरुवात माना जाता है।
 
-- [Oracle Java ट्यूटोरियल](https://docs.oracle.com/en/java/javase/tutorial/)
-- [Java के बारे में और अधिक जानें](https://www.learnjavaonline.org/)
-- [GitHub से Java प्रोजेक्ट](https://github.com/topics/java)
+## See Also (और जानकारी)
+- Oracle Java Documentation:
+
+  [Official Java Tutorials](https://docs.oracle.com/javase/tutorial/)
+
+- Apache Maven और Gradle के बारे में ज्यादा जानें:
+
+  [Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/)
+
+  [Gradle Guides](https://gradle.org/guides/) 
+
+- अन्य उपयोगी IDEs:
+
+  [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+
+  [Eclipse](https://www.eclipse.org/)

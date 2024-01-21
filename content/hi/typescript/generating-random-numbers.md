@@ -1,7 +1,8 @@
 ---
-title:                "यादृच्छिक संख्याओं का निर्माण"
-html_title:           "Clojure: यादृच्छिक संख्याओं का निर्माण"
-simple_title:         "यादृच्छिक संख्याओं का निर्माण"
+title:                "यादृच्छिक संख्याएँ उत्पन्न करना"
+date:                  2024-01-20T17:50:50.805213-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Numbers"
@@ -10,31 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-रैंडम नंबर उत्पन्न करना का मतलब होता है एक बेतरतीब (अप्रत्याशित) संख्या उत्पन्न करना। कार्यक्रमकर्ताएं यदि संख्या का अनुमान लगाना चाहते हैं, लेकिन उन्हें पता नहीं होता कि वो कोनसी होगी, तो वे रैंडम नंबर उत्पन्न करते हैं।
+## What & Why? (क्या और क्यों?)
+रैंडम नंबर्स उत्पन्न करना मतलब है ऐसे नंबर्स बनाना जो कि हर बार अलग-अलग हों। प्रोग्रामर्स इसका इस्तेमाल गेमिंग, सिमुलेशन और डाटा एनालिसिस में करते हैं ताकि परिणाम यादृच्छिक (random) हो।
 
-## कैसे बनाएं: 
-आइए देखें कुछ टाइपस्क्रिप्ट कोड का नमूना:
-
+## How to: (कैसे करें:)
 ```TypeScript
-function getRandomArbitrary(min: number, max: number) {
-  return Math.random() * (max - min) + min;
+function getRandomNumber(min: number, max: number): number {
+  // यादृच्छिक संख्या उत्पन्न करना min और max के बीच 
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-console.log(getRandomArbitrary(1, 100));
+// उदाहरण के लिए:
+console.log(getRandomNumber(1, 10));
+console.log(getRandomNumber(1, 100));
 ```
-इस कोड से आप निम्न और ऊपर सीमा के बीच में एक उत्कृष्ट रैंडम संख्या उत्पन्न कर सकते हैं। साउटपुट कुछ इस तरह होगा:
 
-`56.78996221962878`
+सैंपल आउटपुट (ये हर बार बदल सकता है):
+```
+4
+83
+```
 
-## गहरी जानकारी
-रैंडम नंबर जनरेशन का इतिहास बहुत रोमांचक है, जिसमें ज्यामिति और संख्या विज्ञान का मजेदार संगम है। 
+## Deep Dive (गहराई से जानकारी):
+प्राचीन काल से मनुष्यों ने रैंडमनेस का इस्तेमाल किया है - चाहे वो पासे के खेल में हो या अप्रत्याशित निर्णय लेने में। डिजिटल युग में, `Math.random()` JavaScript और TypeScript का इस्तेमाल करके रैंडम नंबर्स बनाए जाते हैं, जो कि पसुडो-रैंडम (नकली रैंडम) नंबर जेनरेटर (PRNG) पर आधारित होता है। यह असली रैंडमनेस नहीं है क्योंकि कंप्यूटर्स बहुत अनुमानित होते हैं। अगर वास्तविक रैंडमनेस चाहिए, तो क्रिप्टोग्राफिक रूप से सुरक्षित मेथोड्स की जरूरत पड़ती है जैसे कि `crypto.getRandomValues()` जो कि ब्राउज़र APIs में मौजूद है।
 
-वैकल्पिक तरीके में, आप Math.random() की जगह crypto.getRandomValues() का उपयोग कर सकते हैं, जो और अधिक यादृच्छिक और सुरक्षित होता है। लेकिन, यह ब्राउज़र के वातावरण में ही काम करता है।
-
-Math.random() आपको 0 (समेत) और 1 (लिए बिना) के बीच एक यादृच्छिक संख्या देता है। इसलिए, हमने इसे min और max के बीच अपने संख्याओं की सीमा मिलाने के लिए उपयोग किया।
-
-## अधिक जानें 
-[RNG विकिपीडिया पृष्ठ](https://en.wikipedia.org/wiki/Random_number_generation)
-[MDN Web Docs Math.random()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-[MDN Web Docs crypto.getRandomValues()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues)
+## See Also (और भी देखें):
+- [Mozilla Developer Network on Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [Mozilla Developer Network on crypto.getRandomValues()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues)
+- [Stack Overflow discussions on random number generation](https://stackoverflow.com/questions/tagged/random)

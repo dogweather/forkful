@@ -1,6 +1,7 @@
 ---
 title:                "दो तारीखों की तुलना"
-html_title:           "Elixir: दो तारीखों की तुलना"
+date:                  2024-01-20T17:33:28.807651-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "दो तारीखों की तुलना"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,31 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-दो तारीखों की तुलना करना मतलब है यह सुनिश्चित करना कि कौनसी तारीख पहले या बाद में है, या क्या वे एक ही हैं। प्रोग्रामर इसे कार्यों को अनुसूचित करने, समय-संबंधी नियमों का पालन करने आदि के लिए करते हैं।
+## What & Why? (क्या और क्यों?)
+तारीखों की तुलना करने का मतलब है दो तिथियों को आपस में मिलान करना। प्रोग्रामर्स यह काम तिथियों की सीमाओं को जानने, समय-सीमा की पुष्टि करने, और क्रमबद्ध करने के लिए करते हैं।
 
-## कैसे करें:
-में, हम एक `Data.Time` मॉड्यूल का उपयोग करके तारीखों की तुलना करेंगे।
-
+## How to: (कैसे करें:)
 ```Haskell
 import Data.Time
 
-day1 :: Day
-day1 = fromGregorian 2000 5 15
+-- दो तिथियों की तुलना करने का फंक्शन
+compareDates :: Day -> Day -> Ordering
+compareDates date1 date2 = compare date1 date2
 
-day2 :: Day
-day2 = fromGregorian 2000 7 25
-
-compareDates = compare day1 day2
+main :: IO ()
+main = do
+    -- तिथियों का उदाहरण
+    let date1 = fromGregorian 2023 1 1 -- 1 जनवरी 2023
+    let date2 = fromGregorian 2023 12 31 -- 31 दिसंबर 2023
+    
+    -- तुलना का परिणाम प्रिंट करना
+    print $ compareDates date1 date2
+```
+आउटपुट:
+```Haskell
+LT -- 'LT' का मतलब है date1 कम है date2 से (Less Than)
 ```
 
-इसका उत्तर होगा `LT` यानी `day1` `day2` से पहले है।
+## Deep Dive (गहराई से जानकारी):
+तिथियों की तुलना ऐतिहासिक रूप से कैलेंडर सिस्टमों के विकास के साथ आई है। Haskell `Data.Time` लाइब्रेरी में इसे कार्यान्वित करने के कई तरीके हैं, जैसे कि `UTCTime`, `ZonedTime`, आदि उपयोग करना। `compareDates` फंक्शन `compare` का इस्तेमाल कर के `Day` टाइप की तिथियों की स्वतः तुलना करता है। आप `before`, `after` जैसे फंक्शन्स का भी इस्तेमाल कर सकते हैं।
 
-## गहरी डाइव
-तारीखों की तुलना में हम आमतौर पर `Data.Time` मॉड्यूल का उपयोग करते हैं, जिसका विकास काफी पुराना है और यह Haskell की मूल रूप से क्षुद्र कार्यक्षमता का हिस्सा है। वैकल्पिक रूप से, आप कस्टम तुलना ऑपरेटर भी बना सकते हैं, लेकिन `Data.Time` ने इस क्षेत्र में जरूरी कार्यवाही की है। तुलना करने के लिए, यह `Ord` टाइप क्लास का उपयोग करता है, जिसमें `compare` मेथड शामिल होता है।
-
-## अन्य फ़टाफट देखें
-अगर आप गहराई में जाना चाहते हैं, तो निम्नलिखित स्रोत देखें:
-- [Haskell's Data.Time Module](https://hackage.haskell.org/package/time-1.11.1.1/docs/Data-Time.html)
-- [Haskell's Ord Typeclass](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#t:Ord)
-- [Haskell Date Manipulation](https://riptutorial.com/haskell/example/5804/date-manipulation)
+## See Also (और जानकारी के लिए):
+- Haskell Documentation for `Data.Time` Library: [https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)

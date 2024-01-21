@@ -1,6 +1,7 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "C++: Porównywanie dwóch dat"
+date:                  2024-01-20T17:33:03.650408-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,35 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Porównywanie dwóch dat pozwala ustalić, która jest wcześniejsza, późniejsza czy identyczna. Programiści robią to na przykład do weryfikacji ważności terminów, sortowania wydarzeń czy obliczeń związanych z czasem.
 
-Porównywanie dwóch dat to proces sprawdzania, która z nich jest wcześniejsza lub późniejsza. Programiści robią to, aby zrozumieć różnicę czasu pomiędzy dwoma momentami lub uporządkować dane według czasu.
-
-## Jak to zrobić:
-
-Za pomocą biblioteki `gleam/date` w Gleam, porównywanie dat jest proste. Tutaj jest jak to można zrobić:
-
+## How to: (Jak to zrobić:)
 ```gleam
-import gleam/date.{from_timestamp, from_tuple}
+import gleam/calendar.{Date}
+import gleam/int
 
-let date_one = from_tuple(~year=2020, ~month=1, ~day=1)
-let date_two = from_timestamp(1609459200)
-
-date.compare(date_one, date_two)
+fn main() {
+  let date1 = Date(2023, 3, 14)
+  let date2 = Date(2024, 1, 18)
+  
+  int.compare(date1.to_iso_days(), date2.to_iso_days())
+}
 ```
 
-To zwróci `Gt` jeśli pierwsza data jest późniejsza, `Lt` jeśli jest wcześniejsza, lub `Eq` jeśli są równe.
+Sample output (Przykładowe wyjście):
+```
+-1 // date1 jest wcześniejsza niż date2
+```
 
-## Głębiej
+## Deep Dive (Dogłębna analiza)
+Gleam, funkcjonalny język z rodziny ML, używa modułu `calendar` do pracy z datami. W przedstawionym przykładzie, dwie daty są porównywane poprzez konwersję do dni w formacie ISO i użycie funkcji `int.compare`. Porównanie dat jest fundamentem w systemach rezerwacji, logach serwerów i aplikacjach zarządzania czasem. Alternatywy to rozwiązania zewnętrzne, jak biblioteka `chrono` w języku Rust czy klasa `DateTime` w .NET. Gleam zapewnia jednak bezpieczne operacje na datach dzięki statycznemu typowaniu i pattern matching.
 
-Porównywanie dat jest starym zagadnieniem w komputerach - początkowo to było wyzwanie, ze względu na różnice w sąsiednich strefach czasowych. W związku z tym powstało wiele alternatyw jak Unix Timestamp, który uniezależnił datę od lokalnej strefy czasowej.
-
-Jednak, w nowoczesnym kodowaniu Gleam to jest bardziej proste. `from_tuple` pozwala na tworzenie dat z uporządkowanych tuples, a `from_timestamp` pozwala na tworzenie dat z sekund od 1 stycznia 1970 roku.
-
-Kiedy daty są dostępne, możemy je porównać za pomocą metody `compare`. Faktycznie, `compare` tylko sprawdza różnice między komponentami daty, ale dla nas to jest ukryte przez bibliotekę `gleam/date`.
-
-## Zobacz także:
-
-- Dokumentacja Gleam na temat dat: https://hexdocs.pm/gleam_stdlib/date.html
-- Artykuł na temat historii czasu Unix: https://www.wikiwand.com/pl/Unix_Time
-- Artykuł na temat stref czasowych: https://www.wikiwand.com/pl/Strefa_czasowa
+## See Also (Zobacz także)
+- Oficjalna dokumentacja Gleam: [https://gleam.run](https://gleam.run)

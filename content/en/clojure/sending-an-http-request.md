@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request"
-html_title:           "Bash recipe: Sending an http request"
+date:                  2024-01-20T17:59:08.444920-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,42 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Sending an HTTP request is like asking a website server for specific information or data. Programmers do it to interact with web APIs, fetch data from a database, or post user form data, among other things.
+Sending an HTTP request is how your program asks another system for data or services over the web. Programmers do it to interact with web APIs, fetch resources, or communicate between services.
 
 ## How to:
-In Clojure, the 'clj-http.client' library is our go-to. If it's not in your project, add it to the project.clj dependencies:
-```Clojure
+In Clojure, you can send HTTP requests using the `clj-http` client.
+
+First, add the dependency to your `project.clj`:
+```clojure
 [clj-http "3.12.3"]
 ```
-For the 'GET' request, we'll use this example:
-```Clojure
+
+Now, let's send a GET request:
+```clojure
 (require '[clj-http.client :as client])
 
-(let [response (client/get "http://example.com" 
-                           {:headers {"Accept" "application/json"}})]
-  (println (:status response))
-  (println (:body response)))
+(let [response (client/get "http://httpbin.org/get")]
+  (println response))
 ```
-This will print the HTTP status code and the response body.
 
-The 'POST' request is similar but with an added payload:
-```Clojure
-(let [response (client/post "http://example.com" 
-                            {:body "my data" 
-                             :content-type :json})]
-  (println (:status response))
-  (println (:body response)))
+Output sample:
+```clojure
+{:status 200, :headers {...}, :body "..."}
 ```
-This will post "my data" to the server and print the resulting response.
+
+To post data:
+```clojure
+(let [response (client/post "http://httpbin.org/post" {:form-params {:key "value"}})]
+  (println response))
+```
 
 ## Deep Dive
-As said, we're using the Clj-http library, which emerged around 2011. One of the most loved aspects of this library is its simplicity in making HTTP requests. Logged requests and responses also makes debugging a breeze.
+Sending HTTP requests isn't new. It's as old as the web itself. Clojure, being a modern Lisp, has several libs to make HTTP requests. `clj-http` is a popular one, but others like `http-kit` or Clojure's core `clj-http.client` exist.
 
-As for alternatives, you might look into 'http-kit' if you need a full-stack HTTP client/server. However, 'clj-http' is generally more beginner-friendly.
+`clj-http` leans on the Apache HttpComponents Client for Java under the hood. It's versatile but can feel Java-heavy. An alternative, `http-kit`, is more lightweight and Clojure-idiomatic but less feature-rich.
 
-In giving you status codes and headers, among other fields, 'clj-http' thinly maps over Java's Apache HttpClient. Features sometimes depend on this underlying implementation.
+When you send HTTP requests, you're doing so over TCP/IP, which frames your requests according to a well-established protocol. This universal standard lets you interact with practically any web service out there.
 
 ## See Also
-- Clj-http on GitHub: https://github.com/dakrone/clj-http
-- Clojure Cookbook’s section on HTTP requests: https://github.com/clojure-cookbook/clojure-cookbook/blob/master/02_general-computing/2-07_send-receive-http.asciidoc
-- Http-kit as an alternative library: http://www.http-kit.org/500.html
+- `clj-http` GitHub repository: https://github.com/dakrone/clj-http
+- Official Clojure site: https://clojure.org
+- HttpComponents Client documentation: https://hc.apache.org/httpcomponents-client-ga/
+- For real-time needs, consider `http-kit`: http://www.http-kit.org

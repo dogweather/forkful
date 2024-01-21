@@ -1,7 +1,8 @@
 ---
-title:                "Estrazione di sottosequenze"
-html_title:           "Arduino: Estrazione di sottosequenze"
-simple_title:         "Estrazione di sottosequenze"
+title:                "Estrazione di sottostringhe"
+date:                  2024-01-20T17:46:05.439787-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,31 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è & Perché?
-Estrarre sottocatene (substring) significa prelevare una catena di caratteri all’interno di una più grande. I programmatori lo fanno per manipolare i dati di stringa in modo più granulare e controllato.
+## Che cosa e perché?
+Estrarre sottosequenze significa prendere pezzi di una stringa. Gli sviluppatori lo fanno per analizzare i dati, pulire input o solo per estrarre le parti rilevanti di testo.
 
 ## Come fare:
-Utilizzando il linguaggio di programmazione Kotlin, possiamo estrarre le sottocatene in vari modi. Ecco i metodi principali che Kotlin ci offre:
-
 ```Kotlin
-val s = "Benvenuti a Kotlin"
-
-// Estrarre usando gli indici
-val substr1 = s.substring(0, 9)
-println(substr1)  // Risultato: Benvenuti 
-
-// Estrarre dall’inizio alla fine
-val substr2 = s.substring(10..15)
-println(substr2)  // Risultato: a Kotle
+fun main() {
+    val frase = "Ciao mondo Kotlin!"
+    val saluto = frase.substring(0, 4)
+    val oggettoSaluto = frase.substring(5, 10)
+    
+    println(saluto) // Output: Ciao
+    println(oggettoSaluto) // Output: mondo
+}
 ```
 
-## Approfondimento:
-(1) Estrazione di sottocatene non è un concetto nuovo. È stato una componente essenziale della programmazione da quando le stringhe sono state introdotte.
+## Approfondimento
+Kotlin, come Java, ha una funzione `substring` che viene dal mondo del C e C++ con le loro funzioni `strncpy` e `substr`. I metodi alternativi includono l'uso di `split`, regex o le API di Kotlin `take` e `drop`. La funzione `substring` di Kotlin è sicura – se l'indice è fuori dai limiti, otterrai un'eccezione e in questo modo, il controllo degli errori è integrato.
 
-(2) Le alternative alla funzione substring sono slice e split. `slice` estrae una serie di caratteri da una stringa, mentre `split` divide una stringa in diverse sottocatene in base a un separatore.
-
-(3) Kotlin implementa le funzioni di estrazione di sottocatene in formato overload, questo permette all'utente di passare gli intervalli o gli indici specifici da cui estrarre la sottocatena.
-
-## Vedi anche:
-- [Documentazione Ufficiale di Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html) per ulteriori dettagli su come usare le funzioni di estrazione delle sottocatene.
-- [Discussione StackOverflow](https://stackoverflow.com/questions/36529972/how-do-i-get-a-substring-in-kotlin) su come ottenere una sottocatena in Kotlin.
+## Vedere anche
+- Documentazione ufficiale Kotlin sulla funzione [substring](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
+- Kotlin API reference per [`split`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/split.html)
+- Post sul blog su [manipolazione di stringhe in Kotlin](https://blog.kotlin-academy.com/mastering-kotlin-strings-2da3e7ccfd14)

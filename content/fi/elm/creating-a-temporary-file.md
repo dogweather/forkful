@@ -1,7 +1,8 @@
 ---
-title:                "Tilapäisen tiedoston luominen"
-html_title:           "Arduino: Tilapäisen tiedoston luominen"
-simple_title:         "Tilapäisen tiedoston luominen"
+title:                "Väliaikaistiedoston luominen"
+date:                  2024-01-20T17:40:13.191330-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Väliaikaistiedoston luominen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,60 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Luodaan Väliaikaisia Tiedostoja Elm-Ohjelmointikielessä
+## What & Why? (Mikä ja Miksi?)
+Luodaan väliaikainen tiedosto: se on tilapäinen säilytyspaikka datalle. Käytämme sitä, kun haluamme käsitellä tietoa, jota ei tarvitse säilyttää pysyvästi, tai kun teemme operaatioita, jotka saattavat kaatua, kuten tiedostojen latauksia.
 
-Elm-ohjelmointikieli on hienostunut JavaScript-korvaaja, jonka avulla voit kirjoittaa interaktiivisia käyttöliittymiä turvallisesti ja tehokkaasti. Tässä artikkelissa käydään läpi, kuinka voit luoda väliaikaisia tiedostoja Elm-ohjelmointikielessä.
-
-## Mikä & Miksi?
-
-Luodaan väliaikainen tiedosto tarkoittaa tiedoston luomista tietokoneen välimuistiin. Käytämme väliaikaisia tiedostoja, kun haluamme tallentaa joitakin tietoja vain istunnon ajaksi; nämä tiedostot voidaan turvallisesti poistaa, kun istunto päättyy.
-
-## Kuinka Toimia:
-
-Elm-ympäristössä ei ole sisäänrakennettua funktiota väliaikaisten tiedostojen luomiseen, mutta voimme toteuttaa tämän käyttämällä Web API:n Blob-objektia. Käytämme myös FileSaver.js kirjasto, joka antaa meille mahdollisuuden tallentaa tiedostoja käyttäjän laitteelle.
+## How to: (Miten Tehdään:)
+Elmissä ei ole suoraa tapaa luoda väliaikaisia tiedostoja, koska se keskittyy puhtaasti frontend-kehitykseen ja pyörii selainympäristössä, missä pääsy tiedostojärjestelmään on erittäin rajoitettua. Voit kuitenkin manipuloida väliaikaista dataa käyttäen `Web Storage API:a`, johon pääset käsiksi Elm-kielellä.
 
 ```Elm
-port module Main exposing (..)
-
+-- Elm-toteutus väliaikaisen datan tallentamiseksi Web Storageen:
 import Browser
-import Html exposing (Html, button, div, text)
-import Html.Events exposing (onClick)
+import Html
+import Json.Decode as Decode
+import Json.Encode as Encode
 
-port download : Value -> Cmd msg
+-- localStorageen tallentava komento
+storeTempData : String -> String -> Cmd msg
+storeTempData key value =
+    Browser.Dom.setStorage key (Encode.string value)
 
-type alias Model =
-    {}
+-- localStoragesta poistava komento
+removeTempData : String -> Cmd msg
+removeTempData key =
+    Browser.Dom.removeStorage key
 
-type Msg
-    = Download
-
-main =
-    Browser.sandbox { init = {}, update = update, view = view }
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        Download ->
-            ( model, download <| Encode.string "Tiedoston sisältö" )
-
-view : Model -> Html Msg
-view model =
-    div []
-        [ button [ onClick Download ] [ text "Lataa tiedosto" ] ]
+-- Käytön esimerkki tallentaen väliaikainen "tempValue"
+exampleUsage : Cmd msg
+exampleUsage =
+    storeTempData "temporaryKey" "tempValue"
 ```
 
-Huomaa, että tarvitset julkisen portaalin (`port download`) lähettämään tiedot JS:lle, ja sen jälkeen FileSaver.js hoitaa tiedoston tallennuksen.
+Huomaa, että tämä toimii vain selaimessa ja data pysyy siellä, kunnes se poistetaan tai selain tyhjentää välimuistinsa.
 
-## Syvempi Sukellus
+## Deep Dive (Sukellus Syvyyksiin)
+Ennen pilvipalveluita väliaikaiset tiedostot olivat arkipäivää tiedon väliaikaista säilytystä varten. Väliaikaiset tiedostot ovat olleet arvokkaita etenkin batch-prosessoinnissa ja suorituskykyä vaativissa sovelluksissa, kun halutaan varmistaa, ettei muistia kuormiteta liikaa.
 
-Väliaikaisten tiedostojen luonti on peräisin ajasta, jolloin etäpalvelimet tai tehokkaat työasemat tekivät laskentatehtäviä ja käyttäjät yksinkertaisesti kirjoittivat tai lukevat tiedostoja etäyhteyden avulla. 
+Elmissä ei ole sisäänrakennettuja keinoja väliaikaisten tiedostojen käsittelylle koska se on suunniteltu toimimaan selainympäristössä, missä tiedostojärjestelmän käsittely on rajoitettua. Vaihtoehtoja väliaikaiselle datan tallennukselle voivat olla esimerkiksi Web Storage API, IndexedDB tai pilvipalvelut.
 
-Sen sijaan, että Elm tarjoaisi väliaikaisten tiedostojen luontia, Elm keskittyy ennemmin puhtaan funktionaaliseen ohjelmointiin ja turvallisen ja tehokkaan käyttöliittymän luomiseen.
+Web Storage API:ssa on kaksi säilytysvaihtoehtoa: `localStorage` ja `sessionStorage`. `localStorage` säilyttää tietoja ilman vanhentumispäivää, kun taas `sessionStorage` säilyttää dataa vain selainistunnon ajan.
 
-Väliaikaisten tiedostojen luomiselle on vaihtoehtoisia lähestymistapoja, kuten käyttämällä julkaistuja rajapintoja tiedostojen käsittelyyn tai käyttämällä JavaScript-kirjastoja rajapintoina.
+Implementointi tapahtuu selain API -kutsujen kautta, jotka Elm mahdollistaa suorittaa komentojen (`Cmd`) avulla. Tätä voidaan laajentaa käyttämällä portteja (`Ports`) kommunikoida suoraan JavaScriptin kanssa, mikäli tarvitset enemmän hallintaa yli selaimen datan tallennusominaisuuksien.
 
-## Katso myös
-
-- [Elm-kielen opas, Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/Blob)
-- [FileSaver.js dokumentaatio](https://github.com/eligrey/FileSaver.js/)
-- [Elm Web API Moduuli](https://package.elm-lang.org/packages/elm/browser/latest/Browser)
+## See Also (Katso Myös)
+- Elm ohjeet Web Storage API:n käyttöön: [https://guide.elm-lang.org/effects/](https://guide.elm-lang.org/effects/)
+- MDN Web Docs Web Storage API: [https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
+- MDN Web Docs IndexedDB API: [https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
+  
+Elm ja sen ekosysteemi keskittyvät vahvasti turvalliseen ja helppokäyttöiseen frontend-kehitykseen. Tiedostojen käsittely suoraan Elm-koodista ei ole perustoiminnallisuus, mutta selaimen tarjoamat rajapinnat tarjoavat väylän väliaikaiseen datan tallennukseen ja käsittelyyn.

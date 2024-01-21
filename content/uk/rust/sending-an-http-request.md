@@ -1,7 +1,8 @@
 ---
-title:                "Відправлення HTTP-запиту"
-html_title:           "Bash: Відправлення HTTP-запиту"
-simple_title:         "Відправлення HTTP-запиту"
+title:                "Надсилання HTTP-запиту"
+date:                  2024-01-20T18:00:37.393100-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,39 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це і навіщо?
+## What & Why?
+Що таке та навіщо?
+Sending an HTTP request is how we ask the internet for data or actions. Programmers do it to interact with web services, fetch information, or send data to servers.
 
-Відправка HTTP-запиту - це процес, за допомогою якого програма взаємодіє з веб-сервером. Програмісти роблять це, щоб отримати, відправити, оновити або видалити дані на веб-сайті.
-
-## Як це зробити:
-
-Час на код! Нижче наведений приклад відправки HTTP GET запиту в Rust, за допомогою http-клієнта reqwest:
-
+## How to:
+Як це зробити:
 ```Rust
-use reqwest;
+use reqwest; // Add to Cargo.toml: reqwest = "0.11"
+use std::error::Error;
 
-#[tokio::main]
-async fn main() -> Result<(), reqwest::Error> {
-    let res = reqwest::get("https://httpbin.org/get").await?;
+#[tokio::main] // Uses async main function with Tokio runtime
+async fn main() -> Result<(), Box<dyn Error>> {
+    let response = reqwest::get("https://api.example.com/data")
+        .await?
+        .text()
+        .await?;
 
-    println!("{}", res.text().await?);
-
+    println!("Response: {}", response);
     Ok(())
 }
 ```
+Sample output:
+```
+Response: {"key": "value"}
+```
 
-Тут ми кажемо Rust виконати HTTP GET запит до `https://httpbin.org/get`, а потім надрукуйте відповідь.
+## Deep Dive:
+Поглиблений розгляд:
+HTTP requests have been fundamental to web communication since Tim Berners-Lee's first browser. Alternatives like gRPC are picking up steam for performance reasons but aren't as widespread yet. Knowing HTTP is foundational.
 
-## Поглиблено:
+Sending an HTTP request in Rust engages external crates like `reqwest`, which simplifies tasks. Libraries like `hyper` provide lower-level access and more control. Rust's async ecosystem, including `tokio`, makes handling concurrent requests efficient.
 
-HTTP-запити - основа мережевої взаємодії в Інтернеті, що складається з запиту (нижче) і відповіді. Їх використовують для взаємодії з веб-серверами з моменту створення Всесвітньої павутини. 
-
-В Rust є кілька альтернатив для роботи з HTTP, таких як hyper, isahc та Surf, але reqwest є одним з найпопулярніших, тому ми вибрали його для нашого прикладу. 
-
-HTTP-запити впроваджуються через TCP/IP, протокол, що підтримує всю мережеву активність в Інтернеті. Зверніть увагу, що полю status, яке ми доступаємося в нашому прикладі, є специфічним для HTTP.
-
-## Додатково:
-
-- [Документація по reqwest](https://docs.rs/reqwest/0.11.3/reqwest/)
-- [Курси про Rust на Codecademy](https://www.codecademy.com/learn/learn-rust)
-- [Офіційна документація Rust](https://doc.rust-lang.org/rust-by-example/)
+## See Also:
+Дивіться також:
+- [The Rust Programming Language - Async Book](https://rust-lang.github.io/async-book/)
+- [Reqwest crate documentation](https://docs.rs/reqwest/)
+- [Hyper crate documentation](https://hyper.rs/)
+- [Learning HTTP Basics](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP)

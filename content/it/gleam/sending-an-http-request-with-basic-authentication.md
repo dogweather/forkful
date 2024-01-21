@@ -1,6 +1,7 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "Bash: Inviare una richiesta http con autenticazione di base"
+date:                  2024-01-20T18:01:38.574640-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,30 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Inviare una richiesta HTTP con autenticazione di base è una delle attività di programmazione più comuni. Permette a un client di fornire un nome utente e una password durante l'interazione con un server. Questo è spesso anche usato per le API REST per permettere la sicurezza tra le operazioni del client e del server. 
+## What & Why? (Cosa & Perché?)
+Inviare una richiesta HTTP con autenticazione di base significa aggiungere le credenziali di un utente (nome utente e password) nell'intestazione della richiesta. I programmatori lo fanno per accedere a risorse protette su un server.
 
-## Come fare:
-Gleam rende relativamente semplice inviare una richiesta HTTP con autenticazione di base. Di seguito è riportato un esempio di come potrebbe essere eseguita tale azione:
+## How to: (Come fare:)
+In Gleam, useremo il pacchetto `http` per gestire le nostre richieste. Ecco un esempio:
 
-```Gleam
-import gleam/http.{Request}
+```gleam
+import gleam/http
+import gleam/http.{BasicAuth, Request}
 
-let request = Request.new("GET", "https://example.com")
-  |> Request.basic_auth("username", "password")
+fn send_authenticated_request() -> http.Result {
+  let auth = BasicAuth(
+    username: "user",
+    password: "pass",
+  )
+  let request = Request(
+    method: http.Get,
+    url: "https://api.esempio.com/dati",
+    body: http.BodyNone,
+    headers: [],
+    basic_auth: Some(auth),
+  )
 
-let _ = http.send(request)
+  http.send(request)
+}
 ```
 
-Nell'esempio, prima viene creata una nuova richiesta HTTP. Poi, con l'uso dell'operatore pipe |> (che passa il risultato della prima funzione come argomento della seconda funzione), l'autenticazione di base viene aggiunta alla richiesta HTTP. Infine, la richiesta viene inviata.
+Se funziona correttamente, avrai una risposta dal server con i dati richiesti.
 
-## Approfondimento
-Negli anni '90, quando il protocollo HTTP (Hypertext Transfer Protocol) stava guadagnando popolarità, l'autenticazione di base era l'unica modalità disponibile per autenticare le richieste. Nonostante ciò, a causa della mancanza di sicurezza, è stata sostituita da tecnologie più sicure come OAuth o token JWT.
+## Deep Dive (Approfondimento)
+L'autenticazione di base HTTP è un metodo vecchio quanto HTTP stesso. Inserisci semplicemente le credenziali codificate in Base64 nell'header `Authorization`. Nonostante la semplicità, ricorda che senza HTTPS, questo metodo è insicuro perché le credenziali possono essere facilmente intercettate.
 
-Ora, gli sviluppatori di Gleam possono sfruttare la funzione `basic_auth` per facilitare l'autenticazione di base in una richiesta HTTP. Ma ricorda, l'autenticazione di base non è sicura da sola. Le tue credenziali inviate sono codificate in base64, non criptate. Quindi, dovrebbe essere usata solo su connessioni protette, come HTTPS.
+Alternative? OAuth e i token JWT (JSON Web Token) offrono maggior sicurezza. Scegli basandoti sulle esigenze di sicurezza e sul tipo di API con cui interagisci.
 
-## Leggi Anche
-Se sei interessato ad approfondire l'autenticazione HTTP di base, ecco alcuni link utili per approfondire ulteriormente. Da notare che la documentazione ufficiale di Gleam e HTTP forniscono dettagli più tecnici:
+Dettagli implementativi? In Gleam, il tipo `BasicAuth` gestisce i dettagli dell'header dell'autenticazione. La funzione `http.send()` si occupa di eseguire la richiesta.
 
-1. [Documentazione ufficiale di Gleam](https://gleam.run/)
-2. [Specifiche HTTP](https://tools.ietf.org/html/rfc2617)
+## See Also (Vedi Anche)
+- Documentazione Gleam su HTTP: https://gleam.run/std-lib/gleam/http/
+- RFC per l'Autenticazione HTTP Base: https://tools.ietf.org/html/rfc7617
+- Tutorial su OAuth: https://oauth.net/getting-started/ 
+- JWT.io, risorse sui JSON Web Tokens: https://jwt.io/introduction/

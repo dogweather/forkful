@@ -1,7 +1,8 @@
 ---
-title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
-simple_title:         "Wyszukiwanie i zastępowanie tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+date:                  2024-01-20T17:58:30.745140-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,38 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Zamiana i wyszukiwanie tekstu to podstawowe operacje, które przeprowadza większość programistów. Ułatwiają one manipulowanie danymi i modyfikowanie informacji przetwarzanych przez program.
+Szukanie i zamiana tekstu to fundament operacji na stringach, pozwalający zamienić pewne wyrażenia czy ciągi znaków na inne. Programiści używają tego, żeby modyfikować dane, poprawiać błędy, a także przetwarzać i analizować kod czy tekst.
 
 ## Jak to zrobić:
-
-Ruby oferuje kilka sposobów na wyszukiwanie i zamianę tekstu. Najpopularniejsze to metody `gsub` i `gsub!`. Oto przykład:
+W Ruby użyjemy metody `gsub` do wyszukiwania i zastępowania tekstu. Oto jak to działa:
 
 ```Ruby
-str = "Cześć, Świecie!"
-str.gsub!('Świecie', 'Ruby')
-puts str
+tekst = "Witaj, świecie"
+tekst.gsub!("świecie", "kodowanie")
+puts tekst
 ```
 
-Wyjście:
-
+Output:
 ```
-Cześć, Ruby!
+Witaj, kodowanie
 ```
-Jak widać, `gsub!` zastępuje każde wystąpienie słowa 'Świecie' słowem 'Ruby' w oryginalnym łańcuchu.
 
-## Głębsze spojrzenie:
+A teraz przykład z użyciem wyrażeń regularnych:
 
-1. Kontekst historyczny: Ruby, stworzony w 1995 roku przez Yukihiro Matsumoto, od początku oferował potężne metody manipulowania ciągami znaków, takie jak `gsub` i `gsub!`.
+```Ruby
+tekst = "ruby jest fajny. Ruby nauczy cię programować."
+tekst.gsub!(/ruby/i, "Ruby")
+puts tekst
+```
 
-2. Alternatywy: Można również skorzystać z metody `sub` lub `sub!`, które zastąpią tylko pierwsze wystąpienie dopasowanego wzorca.
+Output:
+```
+Ruby jest fajny. Ruby nauczy cię programować.
+```
 
-3. Szczegóły implementacji: Metoda `gsub` (znaczy "global substitute") używa wyrażeń regularnych do identyfikacji wzorców w tekście, które mają zostać zastąpione. Jeśli użyjesz wariantu z wykrzyknikiem (`gsub!`), modyfikuje to bezpośrednio oryginalny ciąg zamiast zwracać nowy.
+## Głębiej w temat:
+Szukanie i zamiana w tekstach to nie tylko podstawowe operacje, ale też ważna część skryptowania i pracy z dużymi zbiorami danych. Ruby przez lata udoskonalało swoje metody, jak `gsub` i `sub`, dostosowując je do różnorakich potrzeb. Alternatywnie, można używać innych gemów jak REXML do pracy z XML czy Nokogiri do HTML.
 
-## Zobacz także:
+Metody takie jak `gsub` pozwalają nie tylko na proste zamiany tekstu, ale i na skomplikowane patyczki z użyciem tzw. wyrażeń regularnych. To potężne narzędzie do analizy i przetwarzania tekstu, które ma swoje korzenie w matematyce i teorii informacji.
 
-1. [Dokumentacja Ruby: String#gsub](https://ruby-doc.org/core-2.7.0/String.html#method-i-gsub)
-
-2. [Dokumentacja Ruby: Regexp](https://ruby-doc.org/core-2.7.0/Regexp.html)
-
-3. [Wyszukiwanie i zamiana tekstu w Rubim](https://www.rubyguides.com/2019/07/ruby-gsub-method/)
+## Zobacz również:
+- Dokumentacja `String#gsub`: https://ruby-doc.org/core-2.7.0/String.html#method-i-gsub
+- Przewodnik po wyrażeniach regularnych w Ruby: https://www.rubyguides.com/2015/06/ruby-regex/
+- REXML: https://www.gemcutter.org/gems/rexml
+- Nokogiri: https://nokogiri.org/

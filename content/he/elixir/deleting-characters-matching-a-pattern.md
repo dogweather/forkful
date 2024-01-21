@@ -1,6 +1,7 @@
 ---
 title:                "מחיקת תווים התואמים לתבנית"
-html_title:           "Elixir: מחיקת תווים התואמים לתבנית"
+date:                  2024-01-20T17:42:21.030061-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "מחיקת תווים התואמים לתבנית"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,41 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-
-מחיקת תווים התואמים לתבנית היא פעולה שבה אנו מחזירים מחרוזת שבה נמחקו כל התווים התואמים לתבנית מסוימת. מתכנתים משתמשים בכך כדי לנקות מידע או כדי לחלץ מידע מסויים ממחרוזות.
+מחיקת תווים שתואמים תבנית היא פעולה שבה אנו מסירים תווים ממחרוזת על פי כלל מסוים. תכנתים עושים את זה בדרך כלל כדי לנקות נתונים, לפרמט מחרוזות לתצורה מסוימת, או להוריד מידע לא רלוונטי.
 
 ## איך לעשות:
+```elixir
+# תחילית פשוטה להסרת כל הספרות ממחרוזת.
+String.replace("אני חי בשנת 2023", ~r/\d+/, "")
+# Output: "אני חי בשנת "
 
-נבדוק איך נעשה זאת באליקסיר:
+# להסרת תווים מיוחדים להשאר רק עם אותיות ורווחים.
+String.replace("היי! איך הולך? :)", ~r/[^א-ת ]/, "")
+# Output: "היי איך הולך "
 
-```Elixir
-defmodule Clean do
-  def remove_chars(str, pattern) do
-    String.replace(str, pattern, "")
-  end
-end
+# הסרת כל רווחי התחילית והסוף.
+String.trim("   זה בדיקה    ")
+# Output: "זה בדיקה"
 ```
 
-אם תרצו להסיר את כל האותיות 'a' מתוך מחרוזת:
-
-```Elixir
-IO.puts(Clean.remove_chars("Banana", "a"))
-```
-
-הוצאה:
-
-```Elixir
-"Bnn"
-```
-
-## מעומק חפיפה
-
-התפקוד הזה בא לידי ביטוי בשפות תכנות רבות, ומאפיין מרכזי של עיבוד מחרוזות. אלטרנטיבות לפונקצייה זו כוללות את השימוש בפונקציות regex או אולי לבנות את הפונקציה שלך משולש לבנות. באופן כללי, זהו חלק מהפעולות הבסיסיות על מחרוזות שמתכנת צריך לדעת על מנת להתמודד עם מקרים אמיתיים.
+## צלילה עמוקה
+מחיקת תווים תואמים לתבנית היא חלק מטיפול בביטויים רגולריים (Regular Expressions), שהחלו להופיע בשנות ה-50 של המאה ה-20. באליקסיר, אנו משתמשים במודול String ובפונקציות כמו `replace/3` ו-`trim/1` כדי לממש את המחיקה הזו בצורה קלה וגמישה. אלטרנטיבות כוללות תכנתים מובנים אחרים כמו `strip/1` ו-`slice/2` או שימוש במניפולציה ידנית של רשימת התווים באמצעות רקורסיה או איטראציה.
 
 ## ראה גם
-
-המשאבים הבאים מספקים פרטים נוספים והסברים בנושאים קשורים:
-
-1. [Elixir String Documentation](https://hexdocs.pm/elixir/String.html) - ההסבר הרשמי והמקיף ביותר לעבודה עם מחרוזות באליקסיר.
-2. [Elixir School String Functions](https://elixirschool.com/en/lessons/basics/strings) - מקור נוסף שמתמקד במיוחד בפונקציות מחרוזות.
-3. [Hexdocs Regular Expressions guide](https://hexdocs.pm/elixir/1.12/Regex.html) - מעבר על Regular Expressions באליקסיר, כולל איך להשתמש בהם כדי למצוא תבניות במחרוזות.
+- [Elixir's String Module](https://hexdocs.pm/elixir/String.html)
+- [Regular Expressions in Elixir](https://hexdocs.pm/elixir/Regex.html)
+- [Programming Elixir ≥ 1.6 book by Dave Thomas](http://pragprog.com/book/elixir16/programming-elixir-1-6)

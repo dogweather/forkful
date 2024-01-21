@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie zapytania http z podstawową autoryzacją"
+date:                  2024-01-20T18:03:26.817411-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,43 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-## Co i Dlaczego?
-Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem to metoda zabezpieczania transmisji cyfrowych. Programiści korzystają z niej, aby kontrolować dostęp do zasobów sieciowych, gwarantując jednocześnie prywatność danych.
+## What & Why? (Co i dlaczego?)
+Wysłanie żądania HTTP z podstawowym uwierzytelnieniem to proces dodania nagłówka uwierzytelniającego do żądania HTTP. Programiści to robią, by uzyskać dostęp do zasobów wymagających potwierdzenia tożsamości.
 
-## Jak to zrobić:
-Aby wysłać żądanie HTTP z podstawowym uwierzytelnianiem, musimy dodać nagłówek autorów `Authorization` do naszego żądania. Wykorzystajmy popularny pakiet Alamofire do wykonania żądania HTTP.
-
+## How to: (Jak to zrobić:)
 ```Swift
-import Alamofire
+import Foundation
 
-let user = "username"
-let password = "password"
-
-let credential = URLCredential(user: user, password: password, persistence: .forSession)
-
-AF.request("https://api.website.com/auth", method: .get)
-    .authenticate(with: credential)
-    .response { response in
-        debugPrint(response)
+// Tworzymy URL żądania
+guard let url = URL(string: "https://example.com/api/data") else {
+    fatalError("Invalid URL")
 }
+
+// Tworzy podstawowe dane uwierzytelniające
+let login = "myUsername"
+let password = "myPassword"
+let loginString = "\(login):\(password)"
+guard let loginData = loginString.data(using: .utf8) else { return }
+let base64LoginString = loginData.base64EncodedString()
+
+// Przygotowujemy żądanie
+var request = URLRequest(url: url)
+request.httpMethod = "GET"
+request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+
+// Wysyłamy żądanie i odbieramy odpowiedź
+let config = URLSessionConfiguration.default
+let session = URLSession(configuration: config)
+let task = session.dataTask(with: request) { data, response, error in
+    if let error = error {
+        print("Error: \(error)")
+    } else if let data = data, let stringData = String(data: data, encoding: .utf8) {
+        print("Otrzymane dane: \(stringData)")
+    }
+}
+
+task.resume()
 ```
 
-Po uruchomieniu powyższego kodu, otrzymamy odpowiedź serwera w konsoli debugowania.
+Output (Przykładowe wyjście):
+```
+Otrzymane dane: {"przykład": "wartość"}
+```
 
-## Dogłębnie:
-Historia uwierzytelniania w internecie jest długa i skomplikowana. Uwierzytelnianie Basic jest jednym z najstarszych, po raz pierwszy określonym w RFC 1945 w 1996 roku. Mimo licznych alternatyw, wciąż jest szeroko stosowany, ponieważ jest prosty i skuteczny. Jest jednak wadliwy, ponieważ wymaga transmisji hasła w formie niezaszyfrowanej.
+## Deep Dive (Dogłębna analiza):
+Podstawowe uwierzytelnienie HTTP (Basic Authentication) to stary, ale prosty sposób uwierzytelniania, gdzie login i hasło są kodowane base64 i dołączane do każdego żądania. Nie jest to najbezpieczniejsza metoda (w porównaniu np. do OAuth), ale nadal jest używana w wielu API, gdzie łatwość implementacji gra rolę. W nowoczesnych aplikacjach często stosuje się HTTPS, co minimalizuje ryzyko wycieku danych. Podstawowe uwierzytelnienie jest częścią standardu HTTP i można je stosować zarówno w requestach GET, jak i POST.
 
-Alternatywy dla Basic Auth obejmują Digest Auth, SSL Client Auth oraz różne mechanizmy uwierzytelniania tokenowego, takie jak OAuth 2.0 i JWT. Każda z nich ma swoje plusy i minusy, ale wszystkie są bezpieczniejsze niż Basic Auth.
+Alternatywnymi metodami uwierzytelnienia są tokeny (np. Bearer token), które są bardziej bezpieczne, jednakże mogą być bardziej skomplikowane w implementacji. Głównym zagrożeniem w podstawowym uwierzytelnieniu jest to, że dane użytkownika nie są szyfrowane na poziomie żądania HTTP i łatwo jest je przechwycić bez użycia HTTPS.
 
-Szczegółowa implementacja wysyłania żądań HTTP z podstawowym uwierzytelnianiem zależy od wielu czynników, takich jak rodzaj serwera, używane technologie i wymogi bezpieczeństwa. W Swift, używamy `URLCredential` do przechowywania danych uwierzytelniania i pakietu Alamofire do obsługi żądań HTTP.
+Ważne jest również, aby używać bezpiecznych sposobów przechowywania danych uwierzytelniających w aplikacji, unikać twardego kodowania loginów i haseł, a w miarę możliwości stosować metody zapewniające większe bezpieczeństwo, takie jak uwierzytelnienie dwuskładnikowe czy certyfikaty klienckie.
 
-## Zobacz też:
-1. [Dokumentacja Alamofire](https://github.com/Alamofire/Alamofire)
-2. [RFC 1945](https://tools.ietf.org/html/rfc1945)
-3. [Artkuł o uwierzytelnianiu Digest Auth](https://en.wikipedia.org/wiki/Digest_access_authentication)
-4. [Informacje o OAuth 2.0](https://oauth.net/2/)
-5. [JWT - JSON Web Tokens](https://jwt.io/introduction/)
-
----
-Zauważ, że zawsze powinieneś wybierać najbezpieczniejszy i najbardziej odpowiedni sposób uwierzytelniania dla każdego konkretnego przypadku. Bezpieczeństwo cyfrowe jest bardzo ważne.
+## See Also (Zobacz również):
+- [HTTP Basic authentication (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+- [Swift and URLSession official documentation](https://developer.apple.com/documentation/foundation/urlsession)
+- [Securing Swift applications](https://www.raywenderlich.com/7181017-securing-ios-data-at-rest)
+- [Understanding authentication with HTTP (HTTP Authentication: Basic and Digest Access Authentication, RFC 2617)](https://tools.ietf.org/html/rfc2617)

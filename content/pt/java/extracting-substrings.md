@@ -1,6 +1,7 @@
 ---
 title:                "Extraindo substrings"
-html_title:           "Bash: Extraindo substrings"
+date:                  2024-01-20T17:46:14.847777-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extraindo substrings"
 programming_language: "Java"
 category:             "Java"
@@ -10,39 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Que?
+## What & Why?
+Extrair substrings significa pegar pedaços específicos de uma string. Programadores fazem isso para manipular, analisar ou comparar partes de texto de forma eficiente.
 
-Extraindo substrings significa pegar um trecho de uma "string" ou sequência de caracteres. Os programadores fazem isso para analisar partes específicas de informações, como extrair o nome de um endereço de email.
-
-## Como Fazer:
-
-Aqui está um exemplo:
-
-```Java 
-
-String str = "Olá, Mundo!";
-String substr = str.substring(0, 5);
-System.out.println(substr);
-
+## How to:
+```Java
+public class ExtractorDeSubstring {
+    public static void main(String[] args) {
+        String texto = "O café está quente.";
+        // Extrair a palavra "café"
+        String cafe = texto.substring(2, 6);
+        System.out.println(cafe); // Saída: café
+        
+        // Extrair a palavra "quente"
+        String quente = texto.substring(12);
+        System.out.println(quente); // Saída: quente
+    }
+}
 ```
+Execute o código acima e você vai ver as partes "café" e "quente" sendo impressas na tela.
 
-A saída será:
+## Deep Dive
+A capacidade de extrair substrings existe desde as primeiras versões do Java. Originalmente, a classe `String` oferecia métodos `substring()` que funcionavam criando uma nova string com os mesmos caracteres da string original, a partir de um índice inicial até um final. Isso mudou um pouco para evitar desperdício de memória e agora cria uma nova string que compartilha o mesmo array de caracteres interno, desde que isso seja possível.
 
-```
-Olá, 
-```
+Existem alternativas para extrair substrings, como usar `String.split()`, `StringTokenizer` ou expressões regulares com a classe `Pattern`. No entanto, `substring()` é geralmente o caminho mais direto e eficiente quando você sabe exatamente os índices dos caracteres que deseja.
 
-O método substring() aceita dois parâmetros, o índice inicial e o final (exclusivo). No exemplo acima, pegamos a substring do índice 0 ao 4.
+Quanto à implementação, até Java 6, o método `substring()` compartilhava o array de caracteres da string original, o que podia levar a problemas de memória se a string original fosse muito grande e a substring muito pequena. Esse comportamento mudou a partir do Java 7 (update 6), onde a chamada de `substring()` resulta em uma cópia do range de caracteres desejado, evitando assim a retenção não intencional de grandes arrays de caracteres.
 
-## Aprofundando
-
-(1) No contexto histórico, Java sempre teve a capacidade de extrair substrings. Isso tem sido uma parte essencial do tratamento de texto na linguagem.
-
-(2) Alternativas incluem o uso de expressões regulares para casar e extrair partes mais complexas de uma string.
-
-(3) Vale a pena mencionar que a string original não é alterada quando você extrai uma substring. Isso é porque as strings em Java são imutáveis. 
-
-## Veja Também:
-
-- Documentação oficial da Oracle sobre strings: [Oracle Docs](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
-- Informações adicionais sobre expressões regulares em Java: [Java Regex Tutorial](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
+## See Also
+- Documentação oficial da classe String e método substring(): https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#substring(int,int)
+- Tutorial de Java da Oracle sobre Strings: https://docs.oracle.com/javase/tutorial/java/data/strings.html
+- Discussões sobre o uso de `substring()`: https://stackoverflow.com/questions/tagged/java+substring

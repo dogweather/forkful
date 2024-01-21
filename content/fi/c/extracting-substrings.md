@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:45:03.554099-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,59 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# **Substringien erottaminen C-ohjelmoinnissa**
+## What & Why? (Mikä & Miksi?)
+Substringit ovat jonoja, jotka on otettu isommista merkkijonoista. Ohjelmoijat käyttävät niitä, koska usein tarvitaan vain tietyt osat datasta - esimerkiksi käyttäjänimen etsiminen sähköpostiosoitteesta.
 
-## Mitä ja miksi?
-
-Substringien erottaminen on prosessi, jossa valitaan ja otetaan osa merkkijonosta. Tarvitsemme tätä erityisesti silloin, kun haluamme käsitellä vain osaa tiedosta, jonka merkkijono sisältää.
-
-## Kuinka tehdä:
-
-Alla on perusohje substringien erottamiseen C-ohjelmoinnissa. Käytämme `strncpy`-funktiota.
-
+## How to: (Kuinka tehdä:)
 ```C
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-    char source[] = "Tervetuloa Suomi!";
-    char target[10];
+    char str[] = "Tervetuloa Suomeen!";
+    char substr[10];
 
-    strncpy(target, source, 9);
-    target[9] = '\0'; // terminating null byte
+    strncpy(substr, str + 11, 7); // Kopioidaan 7 merkkiä alkaen indeksistä 11.
+    substr[7] = '\0'; // Lisätään nollamerkki loppuun.
 
-    printf("Source string: %s\n", source);
-    printf("Extracted substring: %s\n", target);
-
+    printf("Substring: '%s'\n", substr);
     return 0;
 }
 ```
 
-Tämä ohjelma palauttaa seuraavat tulosteet:
-
+Sample output:
 ```
-Source string: Tervetuloa Suomi!
-Extracted substring: Tervetuloa
+Substring: 'Suomeen'
 ```
 
-## Syvä sukellus
+## Deep Dive (Sukellus syvyyksiin):
+Substringien käsittely C:ssä ei tue äärettömän pitkiä merkkijonoja, joten pituuden hallinta on tärkeää. Historiallisesti, C:n standardikirjastoa on arvosteltu sen turvallisuuden puutteesta – strncpy-funktion kanssa pitää muistaa lisätä nollamerkki. Vaihtoehtoisesti voitaisiin käyttää memmove-funktiota, joka toimii bittitasolla, mutta sekin vaatii huolellisuutta.
 
-### Historia
-`strncpy` on ikivanha funktio, joka on tullut meille C:n standardikirjastosta. Se on ollut valtavasti hyödyllinen tekstikäsittelyn liialliseen monimutkaistamiseen liittyvissä ongelmissa.
+Modernina vaihtoehtona ovat kielet kuten Python tai JavaScript, jotka tarjoavat substringien käsittelyyn selkeämmät työkalut. C:ssä kuitenkin tämä yksinkertainen operaatio vaatii tarkkuutta erityisesti muistinhallinnassa – ole tarkkana puskurin ylivuotojen kanssa.
 
-### Vaihtoehdot
-On olemassa muita funktioita, joita voit käyttää myös substringien kanssa. Esimerkiksi:
-
-- `sscanf`
-- `strpbrk`
-- `strtok`
-
-Sopivan funktion valinta riippuu siitä, mitä tarkalleen ottaen haluat saavuttaa.
-
-### Toteutus
-`strncpy` kopioi N merkkiä alkuperäisestä merkkijonosta kohteeseen. Tämä tuo esille sen, että meidän on varmistettava, että kohdassa on tarpeeksi tilaa tietojen tallentamiseksi. Myös päättelevä null-merkki on lisättävä manuaalisesti.
-
-## Katso myös
-
-- [C Library - <string.h>](https://www.tutorialspoint.com/c_standard_library/string_h.htm) TutorialsPointissa.
-- [How to take a substring in C](https://stackoverflow.com/questions/4214314/get-a-substring-of-a-char) StackOverflow'ssa.
+## See Also (Katso myös):
+- C Standard Library, `string.h`: https://en.cppreference.com/w/c/string/byte
+- Secure coding in C: https://www.owasp.org/index.php/C-Based_Toolchain_Hardening
+- C manual: http://devdocs.io/c/

@@ -1,7 +1,8 @@
 ---
-title:                "기본 인증을 이용한 HTTP 요청 보내기"
-html_title:           "Arduino: 기본 인증을 이용한 HTTP 요청 보내기"
-simple_title:         "기본 인증을 이용한 HTTP 요청 보내기"
+title:                "기본 인증을 사용한 HTTP 요청 보내기"
+date:                  2024-01-20T18:01:28.426958-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "기본 인증을 사용한 HTTP 요청 보내기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,47 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 그렇게 하는가?
-HTTP 기본 인증을 통한 요청은 서버와 클라이언트 간의 인증을 단순하게 구현할 수 있는 방법입니다. 이 방식은 특히 API 호출에서 익명 사용자의 접근을 제한하거나 특정 권한을 가진 사용자만 API를 호출하도록 제한할 때 사용됩니다.
+## What & Why? (무엇과 왜?)
+HTTP 요청은 데이터를 주고받을 때 씁니다. 기본 인증(basic authentication)은 사용자 이름과 비밀번호를 인코딩해 서버로 보내 안전하게 로그인합니다.
 
-## 어떻게 할까?
-다음은 Elm에서 HTTP 요청을 보내는 기본적인 예제입니다.
+## How to: (어떻게:)
+Elm에서 기본 인증을 사용해 HTTP 요청을 보내려면 `Http` 모듈을 사용합니다. 아래는 기본 인증으로 `GET` 요청을 보내는 예제 코드입니다.
+
 ```Elm
 import Http
-import Json.Decode as Decoder
 import Base64
 
-basicAuth : String -> String -> Http.Header
+type Msg
+    = GotData (Result Http.Error String)
+
+basicAuth : String -> String -> List Http.Header
 basicAuth username password =
     let
-        userpass = username ++ ":" ++ password
-        encoded = Base64.encode userpass
+        credentials = username ++ ":" ++ password
+        encodedCredentials = Base64.encode credentials
     in
-    Http.header "Authorization" ("Basic " ++ encoded)
+    [ Http.header "Authorization" ("Basic " ++ encodedCredentials) ]
 
-fetch : Http.Request String
-fetch =
-    Http.request
-        { method = "GET"
-        , headers = [ basicAuth "myUsername" "myPassword" ]
-        , url = "http://my-api-endpoint.com"
-        , body = Http.emptyBody
-        , expect = Http.expectString Decoder.identity
-        , timeout = Nothing
-        , tracker = Nothing
+getProtectedResource : Cmd Msg
+getProtectedResource =
+    Http.get
+        { url = "https://yourapi.com/protected/resource"
+        , headers = basicAuth "your_username" "your_password"
+        , expect = Http.expectString GotData
         }
 
-main =
-    fetch
-    |> Http.send HandleResponse
+-- 예제 출력을 위한 update 함수
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        GotData (Ok data) ->
+            -- 성공한 경우 데이터를 처리
+            ( { model | content = data }, Cmd.none )
+
+        GotData (Err error) ->
+            -- 오류 처리
+            ( { model | content = "Failed to fetch data: " ++ Debug.toString error }, Cmd.none )
 ```
 
-## 깊은 이해
-HTTP 기본 인증이 처음 등장한 것은 1996년 RFC 1945에서였으며 당시 널리 사용되는 방식 중 하나였습니다. 하지만 이 방식은 SSL/TLS와 함께 사용해야 메시지가 허용되지 않는 자에게 노출되는 것을 방지할 수 있습니다. 대안적으로 OAuth, JWT 등의 보다 복잡하지만 보안성이 높은 인증 방식이 있습니다.
+## Deep Dive (심층 탐구)
+- Elm에서 HTTP 요청을 할 때 `Http` 모듈을 사용합니다.
+- 기본 인증은 `Authorization` 헤더에 "Basic" 다음에 Base64로 인코딩된 사용자 이름과 비밀번호를 붙여 전송합니다.
+- Base64 인코딩은 Elm에서 `Base64` 모듈을 사용하여 처리할 수 있습니다.
+- Elm 0.19 이상에서는 `elm/http` 패키지가 필요합니다. 업데이트로 인해 `elm/http`가 많이 개선되었습니다.
+- 선택적으로, 더 안전한 인증을 위해 `Http` 요청과 함께 OAuth나 토큰 기반 인증을 사용할 수도 있습니다.
+- 기본 인증 방식은 HTTPS와 함께 사용할 때 안전합니다. 그러나 보안이 중요한 경우 더 나은 방법을 고려해야 합니다.
 
-## 참고 자료
-더 많은 정보를 원한다면 다음 링크를 참조하세요:
-1. Elm의 Http 모듈 문서: https://package.elm-lang.org/packages/elm/http/latest/
-2. Base64 인코딩에 대한 정보: https://en.wikipedia.org/wiki/Base64
-3. HTTP 인증: https://developer.mozilla.org/ko/docs/Web/HTTP/Authentication 
-4. Elm에서의 API 호출에 관한 훌륭한 자료: https://korban.net/posts/elm/2018-11-28-Practical-guide-fetching-data-in-Elm-part-1/
+## See Also (참고 자료)
+- Elm HTTP 패키지: [package.elm-lang.org/packages/elm/http/latest](https://package.elm-lang.org/packages/elm/http/latest)
+- Elm Base64 모듈: [package.elm-lang.org/packages/truqu/elm-base64/latest](https://package.elm-lang.org/packages/truqu/elm-base64/latest)
+- HTTP 기본 인증에 대한 설명: [developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- Elm에서 안전한 HTTP 요청을 보내는 방법: [elmprogramming.com](https://elmprogramming.com/) (안전한 통신 부분 참고)

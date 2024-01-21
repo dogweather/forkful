@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie argumentów linii poleceń"
-html_title:           "Bash: Czytanie argumentów linii poleceń"
-simple_title:         "Czytanie argumentów linii poleceń"
+title:                "Odczytywanie argumentów linii poleceń"
+date:                  2024-01-20T17:56:03.767677-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie argumentów linii poleceń"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,40 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Czytanie argumentów wiersza poleceń to pobieranie danych od użytkownika, kiedy uruchamia on nasz program. Programiści wykorzystują je do konfiguracji programów bez potrzeby twardokodowania opcji albo do przetwarzania danych wprowadzanych przez użytkownika w czasie wykonania.
 
-Czytanie argumentów z linii poleceń to proces, dzięki któremu program może otrzymać dane wejściowe bezpośrednio podczas uruchamiania. Programiści używają tego mechanizmu do konfigurowania swoich aplikacji w czasie rzeczywistym.
+## How to (Jak to zrobić)
+W Gleam korzystanie z argumentów wiersza poleceń jest proste. Oto przykład:
 
-## Jak to zrobić:
-
-Przykłady kodowania i wyniki w blokach kodu Gleam:
-
-```Gleam
+```gleam
+import gleam/io
 import gleam/list
-import gleam/string.{from}
 
-pub fn print_args() {
-  let args = sys.args()
-  let message = String.from(args)
-  io.println(message)
-}
+pub fn main(args: List(String)) {
+  case list.head(args) {
+    Some(arg) ->
+      io.println("Pierwszy argument to: " ++ arg)
+    None ->
+      io.println("Brak argumentów.")
+  }
+} 
+```
+Jeśli uruchomisz ten program z argumentem w Terminalu, zobaczysz coś takiego:
+
+```
+$ gleam run . --example
+Pierwszy argument to: example
 ```
 
-Gdy uruchomisz ten kod z argumentami z linii poleceń, zobaczysz coś takiego:
+## Deep Dive (Wgłębienie się)
+Argumenty wiersza poleceń są tak stare, jak same systemy operacyjne z interfejsem tekstowym. Pozwalają użytkownikom na interakcję z programami w elastyczny sposób.
 
-```Sh
-$ gleam run my_program arg1 arg2 arg3
-arg1, arg2, arg3
-```
+Alternatywami dla argumentów wiersza poleceń są pliki konfiguracyjne, interaktywne CLI (Command Line Interface), czy GUI (Graphical User Interface).
 
-## Deep Dive
+Implementacja w Gleam jest prosta dzięki List modułowi, który pozwala na łatwą manipulację wejściem jako listą stringów. Każdy argument jest rozdzielony spacją i traktowany jako oddzielny element listy.
 
-Czytanie argumentów z linii poleceń nie jest nowym konceptem. Został on zapoczątkowany w latach 70. XX wieku z narodzinami języków UNIX i C. W języku Gleam jest to składowa wbudowana w moduł `sys`.
-
-Alternatywą do czytania argumentów z linii poleceń może być korzystanie z plików konfiguracyjnych. Ale ta druga technika wymaga zrozumienia, gdzie pliki te należy umieścić i jak je sformatować, co może być bardziej skomplikowane dla użytkownika.
-
-Szczegóły implementacji Gleam mogą się różnić. Argumenty z linii poleceń są przechowywane w liście, dzięki czemu można je łatwo przefiltrować lub zmapować.
-
-## Zobacz także:
-
-Możesz znaleźć więcej informacji na ten temat w oficjalnych dokumentach Gleam:
+## See Also (Zobacz także)
+- [Learn You Some Erlang for Great Good!](https://learnyousomeerlang.com/command-line-arguments) - Aby dowiedzieć się więcej o argumentach wiersza poleceń w kontekście języka Erlang, na którym Gleam jest oparty.

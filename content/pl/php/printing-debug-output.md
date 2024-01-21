@@ -1,6 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-html_title:           "Haskell: Drukowanie komunikatów debugowania"
+date:                  2024-01-20T17:53:13.121783-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,43 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Drukowanie informacji debugowych w PHP to wyświetlanie danych, które pomagają nam zrozumieć, co się dzieje w naszym skrypcie. Robimy to, żeby szybko znaleźć i rozwiązać problemy, czyli debugować.
 
-Drukowanie informacji do debugowania to proces, który pozwala programistom śledzić zmienne i eventy w ich kodzie. To pomaga nam zrozumieć logikę i zidentyfikować ewentualne błędy.
-
-## Jak to zrobić:
-
-W PHP, użyjemy funkcji `var_dump($variable);` aby wyświetlić wszelkie szczegóły o zmiennej:
-
+## How to: (Jak to zrobić:)
 ```PHP
-$x = "To jest przykład";
-var_dump($x);
+<?php
+$variable = 'Hello, World!';
+echo $variable; // Wyświetla wartość zmiennej
+
+// Można też użyć var_dump do bardziej szczegółowych informacji
+var_dump($variable);
+
+// Aby pokazać tablice lub obiekty, print_r jest bardzo użyteczny
+$array = array('jeden', 'dwa', 'trzy');
+print_r($array);
+?>
+```
+Sample output (Przykładowe wyjście):
+```
+Hello, World!
+string(13) "Hello, World!"
+Array
+(
+    [0] => jeden
+    [1] => dwa
+    [2] => trzy
+)
 ```
 
-To zwróci:
+## Deep Dive (Głębsze zanurzenie):
+W PHP drukowanie informacji debugowych to stary, ale złoty sposób na śledzenie co właściwie się dzieje w trakcie wykonywania skryptu. Tradycyjnie `echo`, `print`, `print_r`, i `var_dump` są narzędziami do tego celu. Ale czasy się zmieniają, i możemy teraz również używać `xdebug` — rozbudowanego rozszerzenia PHP, które oferuje bogatsze możliwości debugowania.
 
-```PHP
-string(17) "To jest przykład"
-```
+Alternatywy jak `var_export` czy `error_log` również istnieją. `var_export` wyświetli strukturę danych w taki sposób, że jest ona prawnożna do kodu PHP, a `error_log` pozwoli nam zapisywać błędy do pliku lub do logów systemowych zamiast wyświetlać je bezpośrednio.
 
-## Podróż w głąb tematu
+Implementacja tych funkcji może różnić się w zależności od konfiguracji PHP. Na przykład, wyniki `var_dump` mogą być bardziej rozbudowane z włączonym `xdebug`.
 
-Drukowanie informacji do debugowania jest starsze niż większość języków programowania. Pierwsze komputery używały lampek do wyświetlania wartości.
-
-Co do alternatyw, weźmy na przykład funkcję `print_r()`. Jest bardziej przyjazna dla człowieka niż `var_dump()`, ale nie pokazuje szczegółowych informacji o typach danych.
-
-```PHP
-print_r($x);
-```
-
-Zwraca:
-
-```PHP
-To jest przykład
-```
-
-W implementacji, `var_dump()` rzeczywiście korzysta z `zend_print_zval_r` w jądrze PHP. Ta funkcja jest obszernie opisana w dokumentacji PHP.
-
-## Zobacz również
-
-1. [Xdebug](https://xdebug.org/): Potężne narzędzie do debugowania PHP. Pozwala na śledzenie wykonania kodu i przechwytywanie stack trace.
+## See Also (Zobacz również):
+- [PHP Manual Debugging Section](https://www.php.net/manual/en/book.info.php)
+- [Xdebug — Debugger and Profiler Tool for PHP](https://xdebug.org/)
+- [PHP The Right Way: Debugging](https://phptherightway.com/#debugging)

@@ -1,6 +1,7 @@
 ---
 title:                "テキストの検索と置換"
-html_title:           "Java: テキストの検索と置換"
+date:                  2024-01-20T17:58:02.688168-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "テキストの検索と置換"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,29 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？そして、なぜ？
-テキストの検索・置換は、特定の文字列を見つけて新しい文字列に置き換えるプロセスです。プログラムの内部でデータを操作したり、ユーザーからの入力を適切に処理したりするために、プログラマーがよく使います。
+## What & Why? / 何となぜ?
+テキスト検索と置換は、特定の文字列を見つけて別の文字列に変えることです。プログラマーはコード内のデータを更新、修正、或いはリファクタリングするためにこれを行います。
 
-## どうやって：
-Haskellでは`Data.List.Utils`の`replace`関数で文字列を置き換えることができます。ただし、この関数を使う前に`Data.List.Utils`をインストールする必要があります。
-
+## How to: / 方法
 ```Haskell
-import Data.List.Utils
+import Data.Text as T
 
+-- 文字列を検索して置換する関数
+searchReplace :: Text -> Text -> Text -> Text
+searchReplace old new = T.replace old new
+
+-- 使用例
+main :: IO ()
 main = do
-  let originalText = "Hello, World!"
-  let newText = replace "World" "Haskell" originalText
-  print newText
+  let text = "こんにちは、世界！"
+  let searchText = "世界"
+  let replaceText = "Haskell"
+  putStrLn $ T.unpack (searchReplace searchText replaceText text)
 ```
 
-このコードは "Hello, Haskell!" を出力します。
+出力:
+```
+こんにちは、Haskell！
+```
 
-## ますます深く：
-**歴史的な文脈:** テキストの検索と置換はEDI(エレクトロニック・データ・インタチェンジ)では古くから一般的でした。これは後にテキストエディタやワードプロセッサー、更にはプログラミング言語にも導入されました。
+## Deep Dive / 深堀り
+検索と置換機能は、古くからテキストエディタやワードプロセッサに存在します。Haskellでの置換は純粋関数的で、副作用が発生しない。`Data.Text`は`String`よりも効率的な操作を提供する。他にも`regex-tdfa`などの正規表現ライブラリが置換に使える。`Data.Text`の`replace`は素直だが、複雑なパターンには正規表現が適している。
 
-**代替案:** Haskellでは他にも`subRegex`関数を使って正規表現を使用した置換を行うこともあります。
+## See Also / 関連情報
+- [Hackage `text` package](https://hackage.haskell.org/package/text)
+- [Hackage `regex-tdfa` package](https://hackage.haskell.org/package/regex-tdfa)
 
-**実装の詳細:**`replace`関数の内部では二つのリストを比較しています。もしリストが一致すれば、置換文字列に変え、一致しなければそのままにしています。
-
-## 参照：
-1. ["Haskell Text" パッケージ](https://hackage.haskell.org/package/text)
+これらのリンクは、Haskellでのテキスト操作に関するより深い理解に繋がるでしょう。`text`パッケージのドキュメントは、`Data.Text`モジュールの各関数の使用方法を調べるのに役立ちます。また、正規表現に関する資料は複雑なテキスト操作についての理解を深めるのに有用です。

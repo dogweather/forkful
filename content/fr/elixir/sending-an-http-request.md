@@ -1,7 +1,8 @@
 ---
-title:                "Envoyer une requête http"
-html_title:           "Fish Shell: Envoyer une requête http"
-simple_title:         "Envoyer une requête http"
+title:                "Envoi d'une requête HTTP"
+date:                  2024-01-20T17:59:18.647136-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Envoi d'une requête HTTP"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,16 +11,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce et Pourquoi ?
+## What & Why? (Quoi et Pourquoi ?)
+Envoyer une requête HTTP permet à votre application de communiquer avec le monde extérieur : récupérer des données, interagir avec des API, etc. Les programmeurs utilisent ça pour accéder à des ressources web et pour intégrer des fonctionnalités externe.
 
-Une requête HTTP est une requête standard que votre programme envoie à un serveur pour obtenir ou envoyer des données. Les programmeurs le font pour interagir avec des ressources Web, obtenir des données en direct, etc.
-
-## Comment faire :
-
-Dans Elixir, utiliser `HTTPoison` est un moyen populaire d'envoyer des demandes HTTP. Voici comment vous pouvez le faire :
+## How to: (Comment faire : )
+Pour envoyer une requête HTTP en Elixir, on utilise souvent la bibliothèque HTTPoison. Assurez-vous de l'avoir ajoutée à votre `mix.exs`.
 
 ```elixir
-# Assurez-vous d'ajouter httpoison à vos dépendances
 defp deps do
   [
     {:httpoison, "~> 1.8"}
@@ -27,37 +25,39 @@ defp deps do
 end
 ```
 
-Pour envoyer une requête GET :
+Puis, lancez ces commandes dans votre shell :
 
-```elixir
-defmodule MyHTTP do
-  def get(url) do
-    case HTTPoison.get(url) do
-      {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
-        IO.puts body
-      {:ok, %HTTPoison.Response{status_code: status_code}} ->
-        IO.puts "Failed with #{status_code}"
-      :error ->
-        IO.puts "Unknown error"
-    end
-  end
-end
-
-MyHTTP.get("https://api.example.com/data")
+```shell
+mix deps.get
+mix deps.compile
 ```
 
-Si tout est correct, vous verrez la réponse du serveur.
+Maintenant, envoyez une requête GET simple :
 
-## Approfondissement :
+```elixir
+response = HTTPoison.get!("https://jsonplaceholder.typicode.com/posts/1")
+IO.inspect response
+```
 
-L'envoi d'une requête HTTP est un concept fondamental de la programmation Web. Avant HTTPoison dans Elixir, il y avait d'autres bibliothèques comme `:httpc` du langage Erlang.
+Et voilà un extrait possible de la réponse :
 
-Une alternative à HTTPoison est `Tesla`, qui offre un moyen modularisé et flexible d'envoyer des requêtes HTTP. Il y a aussi `Mint`, une autre bibliothèque Elixir, qui prend en charge les connexions HTTP/2.
+```elixir
+%HTTPoison.Response{
+  body: "{ \"userId\": 1, \"id\": 1, \"title\": \"Post title ...",
+  status_code: 200,
+  ...
+}
+```
 
-La mise en œuvre de ces requêtes HTTP dans Elixir implique l'échange de messages au niveau du système d'exploitation sous-jacent pour communiquer avec le serveur Web distant.
+## Deep Dive (Plongée en profondeur)
+Historiquement, Elixir utilisait la bibliothèque HTTP standard `:httpc`. `HTTPoison` est une enveloppe autour de `hackney`, une autre bibliothèque Erlang, et est préféré pour sa simplicité d'utilisation et sa documentation claire.
 
-## Voir aussi :
+Vous avez des alternatives comme `Tesla` ou `Finch`, toutes deux avec des approches et des configurations différentes. Choisir entre elles dépend de vos besoins spécifiques en termes de performance, de middleware ou d'adaptabilité.
 
-- Documentation HTTPoison : https://hexdocs.pm/httpoison
-- Tutoriel sur Tesla : https://hexdocs.pm/tesla
-- Documentation sur Mint : https://hexdocs.pm/mint
+Au niveau de l'implémentation, lorsque vous envoyez une requête, un processus sous-jacent ouvre une connexion TCP/SSL vers le serveur cible. Les données sont ensuite sérialisées au format HTTP, envoyées, et on attend une réponse qui sera également désérialisée.
+
+## See Also (Voir aussi)
+- [HTTPoison GitHub](https://github.com/edgurgel/httpoison)
+- [Finch GitHub](https://github.com/sneako/finch)
+- [Tesla GitHub](https://github.com/teamon/tesla)
+- [jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com/) - pour tester des requêtes HTTP avec de faux endpoints.

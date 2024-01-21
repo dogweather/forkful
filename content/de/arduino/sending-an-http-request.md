@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anforderung senden"
-html_title:           "Bash: Eine HTTP-Anforderung senden"
-simple_title:         "Eine HTTP-Anforderung senden"
+title:                "Einen HTTP-Request senden"
+date:                  2024-01-20T17:58:51.582090-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Einen HTTP-Request senden"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,51 +12,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+HTTP-Anfragen senden bedeutet, mit einem Webserver zu kommunizieren – so holt man Daten oder schickt sie. Programmierer nutzen das, um ihre Arduino-Projekte mit dem Internet zu verbinden, damit sie Informationen austauschen können.
 
-HTTP-Anfragen senden bedeutet, mit einem Server zu kommunizieren, um Daten zu senden oder abzurufen. Programmiere das, wenn du mit deinem Arduino im Internet Daten austauschen willst. 
-
-## So geht's:
-
-Hier ist ein einfacher Arduino-Sketch, der eine HTTP-Anfrage an einen Server sendet. Für unser Beispiel benutzen wir die Ethernet-Bibliothek (Ethernet.h).
+## Wie geht das:
+Mit dem ESP8266/ESP32 und der entsprechenden Bibliothek sieht das so aus:
 
 ```Arduino
-#include <Ethernet.h>
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-byte server[] = { 93, 184, 216, 34 }; // example.com
-byte MyIP[] = {192, 168, 1, 177};
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
 
-EthernetClient client;
+const char* ssid = "DEIN_WIFI_NAME";
+const char* password = "DEIN_WIFI_PASSWORT";
 
 void setup() {
-Ethernet.begin(mac, MyIP);
-if (client.connect(server, 80)) {
-  client.println("GET / HTTP/1.1");
-  client.println("Host: example.com");
-  client.println("Connection: close");
-  client.println();
-} else {
-  // Failed to connect
-}
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Verbindung mit WLAN...");
+  }
+
+  if (WiFi.status() == WL_CONNECTED) { 
+    HTTPClient http;
+    http.begin("http://jsonplaceholder.typicode.com/users/1"); // Deine Ziel-URL
+    int httpCode = http.GET();
+
+    if (httpCode > 0) { 
+      String payload = http.getString();
+      Serial.println(httpCode);
+      Serial.println(payload);
+    }
+    http.end();
+  }
 }
 
 void loop() {
-if (client.available()) {
-  char c = client.read();
-  Serial.print(c);
-}
-if (!client.connected()) {
-  client.stop();
-}
+  // Hier ist nichts weil die HTTP-Anfrage nur einmal in 'setup()' gemacht wird.
 }
 ```
 
+Hier bekommst du eine Ausgabe wie:
+
+```
+200
+{
+  "id": 1,
+  "name": "Leanne Graham",
+  ...
+}
+```
+
+`200` ist der HTTP Statuscode für "OK" – deine Anfrage war erfolgreich.
+
 ## Tiefere Einblicke
+Das Senden von HTTP-Anfragen mit einem Arduino begann mit einfacheren Netzwerkmodulen, wie dem Ethernet Shield. Heute sind Boards wie der ESP8266 und der ESP32 populärer. Sie integrieren WLAN-Funktionalität, was das Ganze kompakter und kostengünstiger macht.
 
-Früher gab es keine HTTP-Anfragen. Seit der Erfindung des Internets wurde das HTTP-Protokoll entwickelt, das den Austausch von Informationen im Web standardisiert hat. Ein alternatives Protokoll zu HTTP ist HTTPS, das dieselben Funktionen bietet, aber zusätzlich eine Verschlüsselung integriert hat. Tatsächlich ist der Code, um eine HTTP-Anfrage zu senden, in der Ethernet-Bibliothek der Arduino-IDE bereits eingebaut, was den Prozess stark vereinfacht.
+Alternativen zum ESP8266/ESP32 wären etwa der Arduino MKR1000 oder Ethernet-Shields, die allerdings oft komplizierter in der Handhabung sind.
 
-## Mehr dazu
+Wichtig bei der Implementierung: Sicherheit. HTTP ohne S (`HTTPS`) ist nicht verschlüsselt. Für sensible Daten also lieber `HTTPS` verwenden. ESP8266/ESP32 unterstützen das mit der `WiFiClientSecure`-Bibliothek.
 
-Wenn du mehr über Arduinos und HTTP-Anfragen lernen möchtest, hier sind einige hilfreiche Links:
+## Siehe auch
+Für mehr Details sieh dir die offizielle ESP8266/ESP32-Dokumentation an. Hier findest du Infos zu Funktionen und Beispielen:
 
-- HTTP-Protokollspezifikationen: [Link](https://tools.ietf.org/html/rfc2616)
-- Tutorial zum Senden von HTTP-Anfragen mit Arduino: [Link](https://startingelectronics.org/tutorials/arduino/ethernet-shield-web-server-tutorial/SD-card-GET-requests/)
+- [ESP8266 Arduino Core Documentation](https://arduino-esp8266.readthedocs.io/en/latest/)
+- [ESP32 Arduino Core Documentation](https://docs.espressif.com/projects/arduino-esp32/en/latest/)
+
+Möchtest du tiefer in das Thema einsteigen, sind folgende Ressourcen hilfreich:
+
+- [HTTP-Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+- [Arduino Client for MQTT](https://pubsubclient.knolleary.net/)
+
+Einen einfachen Server, um Anfragen zu testen und Beispielausgaben zu sehen, bietet:
+
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com/)

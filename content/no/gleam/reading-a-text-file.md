@@ -1,6 +1,7 @@
 ---
 title:                "Lese en tekstfil"
-html_title:           "C#: Lese en tekstfil"
+date:                  2024-01-20T17:54:12.948729-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese en tekstfil"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,45 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why? - Hva & Hvorfor?
+Lesing av tekstfiler handler om å hente og bruke data lagret på et lesbart format. Programmerere gjør dette for å behandle informasjon og for å integrere eksterne data i applikasjonene sine.
 
-Å lese en tekstfil er prosessen med å hente data, vanligvis kodet i ASCII eller Unicode, fra en fil for bruk i et program. Programmet leser det for å få tak i informasjonen den inneholder, som kan være input for beregninger, innstillinger eller noe annet.
+## How to - Hvordan:
+I Gleam kan du lese en tekstfil med standard bibliotekfunksjoner. Her er et eksempel:
 
-## Hvordan gjør du det:
+```gleam
+import gleam/io
 
-Her er en grunnleggende kode for å lese en tekstfil i Gleam:
-
-```Gleam
-import gleam/stdio
-import gleam/bit_builder.{BitBuilder}
-import gleam/file
-
-pub fn main(file_path: String) {
-    case file.read(file_path) {
-    Ok(file_contents) ->
-        stdio.print(file_contents)
-    Error(e) ->
-        stdio.print(e)
-    }
+pub fn main() {
+  let result = io.read_file("hello.txt")
+  case result {
+    Ok(content) -> io.println(content)
+    Error(error) -> io.println("Oops! Noe gikk galt: " ++ error)
+  }
 }
 ```
 
-Hvis filen "test.txt" inneholder teksten "Hallo, Verden!", vil utgangen være:
+Dersom `hello.txt` inneholder "Hei, verden!", vil utskriften bli:
 
-```Gleam
-"Hello, Verden"
+```
+Hei, verden!
 ```
 
-## Dyp Dykk:
+## Deep Dive - Dypdykk
+Å lese tekstfiler er en grunnleggende operasjon som har eksistert siden de tidlige dagene av programmering. Alternativer includerer streaming og asynkron lesing for store eller eksterne filer. Implementasjonsdetaljer varierer mellom operativsystemer og programmeringsspråk, men de fleste moderne språk tilbyr abstraksjoner for å håndtere filsystemet.
 
-Histørisk sett har fillesing alltid vært en nøkkelkomponent i programmering. Før utbredelsen av databaser, var filer den primære måten å lagre og hente data på.
+I Gleam's tilfelle, bruker `io.read_file` en enkel synkron tilnærming, som passer for små filer og skript. For større filer kan man vurdere streaming for å unngå høyt minneforbruk.
 
-Som alternativer kan dataene leses fra andre kilder, som en database, over nettverket, eller til og med genereres dynamisk.
+## See Also - Se Også
+For videre lesing og beslektede emner, sjekk ut følgende ressurser:
 
-Fra implementeringsdetaljene er `file.read()` en blokkerende operasjon i Gleam, hvilket betyr at Gleam venter til hele filen leses før den går videre. Hvis filen er stor, kan dette føre til ytelsesproblemer.
-
-## Se også:
-
-[Gleam Dokumentasjon](https://gleam.run/docs/)
-[Gleam Eksempel Kode](https://github.com/gleam-lang/gleam)
-[Gleam Filhåndtering](https://hexdocs.pm/gleam_stdlib/gleam/file/document.html)
+- Erlang's file handling (Gleam bygger på Erlang's VM): [Erlang File Module](http://erlang.org/doc/man/file.html)

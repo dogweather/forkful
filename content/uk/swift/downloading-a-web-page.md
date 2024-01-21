@@ -1,6 +1,7 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "Gleam: Завантаження веб-сторінки"
+date:                  2024-01-20T17:45:04.756297-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,35 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why?
+## Що і Чому?
 
-Завантаження веб-сторінки - це процес отримання веб-контенту з сервера до локальної машини. Програмісти цим займаються для обробки вмісту веб-сторінки в програмі (для скрапінгу, аналітики тощо).
+Downloading a web page means fetching the HTML content of a web page from the Internet. Programmers do it to extract data, interact with web services, or test their sites.
 
+## How to:
 ## Як це зробити:
 
-Можна використовувати URLSession, вбудовану в Swift. Погляньте на приклад:
+Using `URLSession`, we can get content easily.
 
-```swift
+```Swift
 import Foundation
 
-let url = URL(string: "https://www.example.com")!
-let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-    if let data = data {
-        print(String(data: data, encoding: .utf8) ?? "")
+let url = URL(string: "https://example.com")!
+let task = URLSession.shared.dataTask(with: url) { data, response, error in
+    if let error = error {
+        print("Error downloading webpage: \(error)")
+        return
+    }
+    if let data = data, let webpageContent = String(data: data, encoding: .utf8) {
+        print(webpageContent)
     }
 }
+
 task.resume()
 ```
-Такий код буде завантажувати та виводити HTML веб-сторінки example.com.
 
-## Поглиблюємося:
+Expect something like this as output (truncated for brevity):
 
-Рано чи пізно кожен розробник стикається з завантаженням веб-сторінок. URLSession від Swift це одна із можливостей. До нього могли б використовувати NSURLConnection, але він уже застарів. URLSession підтримує http, https, із продовженнями завантажень та інше.
+```Swift
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
 
-Але є й альтернативи: Alamofire, бібліотека на Swift, що надає набагато більше можливостей, ніж URLSession (приклади: обробка JSON, перевірка стану мережі).
+## Deep Dive:
+## Детально:
 
-## Див. також:
+Back in the day, web pages were simpler, and we used libraries like `NSURLConnection`. Now, `URLSession` is the go-to in Swift, more powerful and flexible.
 
-- Офіційна документація URLSession від Apple: [тут](https://developer.apple.com/documentation/foundation/urlsession)
-- Alamofire на GitHub: [тут](https://github.com/Alamofire/Alamofire)
-- Вибір між URLSession та Alamofire: [тут](https://www.raywenderlich.com/6587213-urlsession-vs-alamofire-which-should-you-use)
+There are other ways to download content, like using `WebKit` for JavaScript-heavy pages, or third-party libraries such as Alamofire for complex networking tasks.
+
+Implementation-wise, always remember to run network calls on background threads to keep your UI snappy. Handle `Data`, `URLResponse`, and `Error` correctly to manage edge cases. Consider also HTTP status codes and MIME types to process data right.
+
+## See Also:
+## Додаткові матеріали:
+
+- Official `URLSession` documentation: https://developer.apple.com/documentation/foundation/urlsession
+- Swift API design guidelines: https://swift.org/documentation/api-design-guidelines/
+- Alamofire GitHub repository: https://github.com/Alamofire/Alamofire

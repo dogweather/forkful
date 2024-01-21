@@ -1,7 +1,8 @@
 ---
-title:                "אינטרפולציה של מחרוזת"
-html_title:           "Arduino: אינטרפולציה של מחרוזת"
-simple_title:         "אינטרפולציה של מחרוזת"
+title:                "שרבוב מחרוזת"
+date:                  2024-01-20T17:51:06.661553-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרבוב מחרוזת"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,32 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?  
-String interpolation היא תהליך שבו אנחנו משלבים משתנים או ביטויים בוליאניים בתוך מחרוזת. באמצעות הטכניקה הזאת, מאפשרים לנו ליצור מחרוזות גמישות ורב-תכליתיות ללא הצורך להתמקד בסדר המילים או קיצוניות טקסט.
+## מה ולמה?
+מילוי מחרוזת הוא שיטה להזריק תוכן מתוך משתנים או ביטויים לתוך מחרוזת קיימת. תכנתים משתמשים בזה כדי לבנות מחרוזות באופן דינמי ולשלב נתונים בקלות תוך כדי קוד.
 
-## איך להשתמש:
-ב-Elixir, נשתמש בתווים `{}` כדי לערבב משתנה או ביטוי בתוך מחרואת.
+## איך לעשות:
+באליקסיר, תשתמשו בסימני `#{}` כדי לבצע מילוי מחרוזת. דוגמאות:
 
-```Elixir
-name = "Moshe"
-IO.puts "שלום, #{name}"
-# Outputs: שלום, Moshe
+```elixir
+name = "אורי"
+age = 32
+
+# מילוי בסיסי
+greeting = "שלום, שמי הוא #{name} ואני בן #{age}."
+IO.puts greeting
+# פלט: שלום, שמי הוא אורי ואני בן 32.
+
+# מילוי עם ביטוי
+info = "עוד שנה אהיה בן #{age + 1}."
+IO.puts info
+# פלט: עוד שנה אהיה בן 33.
 ```
 
-בדוגמה הזו, אנחנו משתמשים ב-interpolation כדי להוסיף את השם של Moshe למחרוזת שלנו.
+## צלילה לעומק
+מילוי מחרוזת הוא לא המצאה חדשה וכבר קיימת בשפות כמו Ruby או Python. באליקסיר, התכנית מבצעת באופן אוטומטי את הפעולה בזמן הרצה של הקוד. המטפל בזה הוא ה-VM של Erlang, שעליו בנויה אליקסיר. פרטים נוספים: המילוי הוא חלק מה-String interpolation, והוא משתמש במודול `String` שמקבל תמיכה עמוקה בעבודה עם טקסט. אלטרנטיבה ישנה הייתה להדביק מחרוזות על ידי סימני חיבור (`++`), אבל זה פחות אלגנטי ויעיל.
 
-## צלילה עמוקה: 
-חדשות טובות - אף פעם לא אפשרי להכניס תווים מיותרים ב-interpolation של Elixir. הדקדוק שלו מופשט, כך שהוא זקוק לסוגריים מסולסלים במקרה של interpolation. פונקציות, ביטויים מתמטיים או שימוש בתנאי- אפשריים כולם! 
-
-אבל במקרה שלא צריך להשתמש ב-interpolation, מחרוזות מאוחדות יכולות להיות אלטרנטיבה נהדרת.
-```Elixir
-name = "Moshe"
-simple_greeting = "שלום, " <> name
-IO.puts simple_greeting
-# Outputs: שלום, Moshe
-```
-המחרוזת המאוחדת לא הכרחית למשלים של מילה, אבל היא טיפה יותר מהירה מאשר interpolation.
-
-## ראה גם:
-1. Elixir’s official guide on string interpolation: [Elixir Interpolation](https://elixir-lang.org/getting-started/io-and-the-file-system.html#iodots)
-2. Elixir School’s lesson on strings: [Elixir Strings](https://elixirschool.com/en/lessons/basics/strings/)
+## ראו גם:
+- איך עובד `String` מודול באליקסיר: [Elixir String module](https://hexdocs.pm/elixir/String.html)
+- מדריך למילוי מחרוזת באליקסיר: [Elixir Interpolation Guide](https://elixirschool.com/en/lessons/basics/strings/#interpolation)
+- דוקומנטציה רשמית של אליקסיר: [Official Elixir documentation](https://elixir-lang.org/docs.html)

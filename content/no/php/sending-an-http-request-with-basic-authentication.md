@@ -1,7 +1,8 @@
 ---
-title:                "Sende en http-forespørsel med grunnleggende autentisering"
-html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
+title:                "Å sende en HTTP-forespørsel med grunnleggende autentisering"
+date:                  2024-01-20T18:02:02.333303-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -12,56 +13,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Å sende en HTTP-forespørsel med grunnleggende autentisering er prosessen å overføre data over internett ved hjelp av Hypertext Transfer Protocol (HTTP) med en bruker-ID og passord. Programmerere gjør dette for å sikre sikker datatilgang og å beskytte mot uautorisert bruk.
+Sending av en HTTP-forespørsel med grunnleggende autentisering innebærer å inkludere brukernavn og passord for tilgangskontroll hos en server. Programmere gjør dette for å sikre ressurser på nettet, og la kun autoriserte brukere få tilgang.
 
-## Hvordan:
+## Hvordan gjøre det:
 
-Installer først `curl`-biblioteket:
-
-```PHP
+```php
 <?php
-$ sudo apt-get install php-curl
-?>
-```
-Her er et enkelt eksempel på å sende en GET-forespørsel med basic authentication:
+$url = 'https://eksempel.no/api/data';
+$username = 'brukeren';
+$password = 'hemmelighet';
 
-```PHP
-<?php
-$curl = curl_init();
-
-curl_setopt_array($curl, [
-  CURLOPT_URL => "http://website.com",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_USERPWD => 'user:password',
-  CURLOPT_HTTPAUTH => CURLAUTH_BASIC,
+$context = stream_context_create([
+    'http' => [
+        'header' => 'Authorization: Basic ' . base64_encode("$username:$password"),
+        'method' => 'GET',
+    ]
 ]);
 
-$response = curl_exec($curl);
+$result = file_get_contents($url, false, $context);
 
-if (curl_errno($curl)) {
-  echo 'Error:' . curl_error($curl);
+if ($result !== FALSE) {
+    echo "Suksess: " . $result;
+} else {
+    echo "Feil ved forespørsel.";
 }
-curl_close($curl);
 ?>
 ```
-
-Og dette er output av koden:
-
-```PHP
-<?php
-Output: 'Requested page HTML here...'
-?>
+Utskrift:
+```
+Suksess: { "svar": "Hei, autorisert bruker!" }
 ```
 
-## Dybdeplunge:
+## Dypdykk
 
-Mens HTTP Basic Authentication har en lang historie som begynner med sine røtter i tidlig internett, har det fått kritikk for sin manglende sikkerhetsfunksjoner sammenlignet med alternativer som OAuth.
+HTTP Basic Authentication har vært en del av HTTP-protokollen fra starten, enkel og grei for mindre sikkerhetskritiske tilfeller. Alternativer inkluderer OAuth, API-nøkler og JWT (JSON Web Tokens), som tilbyr bedre sikkerhet for mer komplekse systemer. Implementering av Basic Authentication krever forsiktighet; alltid bruke HTTPS for å beskytte legitimasjonen i transitt.
 
-Alternativene inkluderer OAuth og Digest Authentication. OAuth er en åpen standard som gir klienter en "sikker delegert tilgang" til serverressurser på vegne av en ressurseier. Digest Authentication er en metode for å bruke en hemmelig nøkkel for å autentisere en bruker, noe som gir mer sikkerhet enn Basic Authentication.
+## Se også:
 
-Når det gjelder gjennomføring av detaljer, er brukernavn og passord kodet med base64 og inkludert i `Authorization` header i HTTP-forespørselen.
-
-## Se Også:
-
-1. [PHP: HTTP authentication with PHP - Manual](https://www.php.net/manual/en/features.http-auth.php)
-3. [HTTP Authentication - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- MDN Web Docs om Basic Authentication: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- PHP Manual om `stream_context_create`: [https://www.php.net/manual/en/function.stream-context-create.php](https://www.php.net/manual/en/function.stream-context-create.php)
+- Hvordan implementere sikrere autentiseringssystemer, som OAuth: [https://oauth.net/2/](https://oauth.net/2/)

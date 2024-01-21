@@ -1,7 +1,8 @@
 ---
-title:                "Konwersja daty na ciąg znaków"
-html_title:           "Clojure: Konwersja daty na ciąg znaków"
-simple_title:         "Konwersja daty na ciąg znaków"
+title:                "Konwersja daty na łańcuch znaków"
+date:                  2024-01-20T17:37:33.589899-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Konwersja daty na łańcuch znaków"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -11,38 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i Dlaczego?
-
-Konwersja daty na łańcuch znaków (string) to proces przekształcenia daty (nieco trudnego do obsługi formatu) w tekst łatwiejszy do czytania i zrozumienia. Programiści robią to, żeby łatwiej manipulować danymi daty, np. wyświetlać je w określonym formacie.
+Zamiana daty na napis (string) pozwala na łatwe wyświetlenie i zapisanie daty w czytelnej formie tekstowej. Programiści korzystają z tej konwersji, by manipulować datami i łatwo je przedstawiać użytkownikom.
 
 ## Jak to zrobić:
-
-Załóżmy, że masz datę w formacie 'datetime'. Poniżej znajdziesz sposób, jak przekształcić ją na napis w formacie 'YYYY-MM-DD'.
-
-```Python
+```python
 from datetime import datetime
 
-# stworzenie daty
-date = datetime.now()
+# Aktualna data i czas
+teraz = datetime.now()
 
-# konwersja daty na string
-date_string = date.strftime('%Y-%m-%d')
+# Konwersja na napis w standardowym formacie
+napis1 = teraz.strftime("%Y-%m-%d %H:%M:%S")
+print(napis1)  # Wyświetli np. '2023-04-02 15:45:32'
 
-print(date_string)
+# Konwersja na napis w niestandardowym formacie
+napis2 = teraz.strftime("%d/%m/%Y")
+print(napis2)  # Wyświetli np. '02/04/2023'
 ```
-W efekcie otrzymasz na wyjściu dzisiejszą datę w formacie 'YYYY-MM-DD', np. '2022-01-22'.
 
-## Szersze spojrzenie
+## Deep Dive
+Konwersja daty na napis ma długa historię, gdzie tradycyjnie używano funkcji pokroju `sprintf` w językach takich jak C. W Pythonie, metoda `strftime` pozwala na elastyczną konwersję zgodnie z zadanym wzorcem. Alternatywą jest użycie biblioteki `arrow` lub `dateutil`, które oferują dodatkowe formy manipulacji datami i mogą być przydatne, jeśli potrzebujemy obsługi stref czasowych lub lokalizacji daty.
 
-Historia: W dawnych czasach, kiedy pamięć komputera była bardzo droga, daty często przechowywano jako ciągi znaków, aby zaoszczędzić miejsce. 
-
-Alternatywy: Istnieją różne alternatywy dla powyższego przykładu, np. można użyć funkcji `isoformat()` zamiast `strftime()`. Wybór zależy od tego, co chcesz osiągnąć.
-
-Szczegóły implementacji: Metoda `strftime()` jest częścią standardowej biblioteki Pythona i może być używana do konwertowania dat na napisy w wielu innych formatach, nie tylko 'YYYY-MM-DD'. Więcej na temat dostępnych formatów można znaleźć w dokumentacji Pythona.
+Formatowanie daty implementowane jest przez obiekty typu datetime. Zawierają one metody, jak `strftime`, która przyjmuje łańcuch formatujący składający się z dyrektyw rozpoczynających się od znaku `%`, na przykład `%Y` dla pełnego roku, `%m` dla miesiąca i `%d` dla dnia.
 
 ## Zobacz także
 
-1. Dokumentacja Python dla `strftime()` i `strptime()`: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
-
-2. Dokumentacja Python dla `isoformat()`: https://docs.python.org/3/library/datetime.html#datetime.date.isoformat
-
-Więcej na ten temat można znaleźć w odpowiednich artykułach i kursach Pythona. Praca z datami może być skomplikowana, ale Python oferuje wiele narzędzi, które ułatwiają to zadanie.
+- Dokumentacja metody `strftime`: https://docs.python.org/3/library/datetime.html#datetime.date.strftime
+- Biblioteka `arrow`: https://arrow.readthedocs.io/
+- Biblioteka `dateutil`: https://dateutil.readthedocs.io/
+- Wzorce formatowania dla `strftime`/`strptime`: https://strftime.org/

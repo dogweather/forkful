@@ -1,7 +1,8 @@
 ---
-title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Arduino: Znajdowanie długości ciągu znaków"
-simple_title:         "Znajdowanie długości ciągu znaków"
+title:                "Znalezienie długości ciągu znaków"
+date:                  2024-01-20T17:47:43.264324-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Znalezienie długości ciągu znaków"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -11,35 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Znalezienie długości ciągu to proces określania ilości znaków w tym ciągu. Programiści robią to, aby kontrolować i manipulować danymi tekstowymi w ich kodzie.
+Znalezienie długości łańcucha (stringa) to po prostu sprawdzenie, ile znaków zawiera. Programiści robią to, aby manipulować tekstami, walidować dane albo po prostu, aby wiedzieć, z czym mają do czynienia.
 
 ## Jak to zrobić:
-Znalezienie długości ciągu w Lua jest proste. Użyj wbudowanej funkcji `string.len`.
-
-Oto przykład:
+W Lua długość stringa dostaniesz błyskawicznie:
 
 ```Lua
-local moj_ciąg = "Cześć, świecie!"
-print("Długość mojego ciągu to: " .. string.len(moj_ciąg))
+local zdanie = "Witaj, świecie!"
+local dlugosc = #zdanie
+print(dlugosc)
 ```
 
-Na wyjściu zobaczysz:
+Wyjście:
 
-```Lua
-Długość mojego ciągu to: 16
+```
+15
 ```
 
-## Głębsze spojrzenie
-Funkcję `string.len` wprowadzono w Lua 5.1 i jest ona od tego czasu podstawą języka. Istnieją inne metody znalezienia długości ciągu, np `#` operator.
+## Głębiej w temat
+Długość stringa w Lua, od zawsze zwracana przez operator `#`, jest prosta i szybka. W przeciwieństwie do innych języków, nie musisz wywoływać metody czy funkcji – operator załatwi sprawę. 
 
-```Lua
-local moj_ciąg = "Cześć, świecie!"
-print("Długość mojego ciągu to: " .. #moj_ciąg)
-```
+Ale uwaga: w Lua indeksowanie zaczyna się od 1, a nie od 0 jak w wielu innych językach. To historyczne podejście ma korzenie w konwencjach używanych przez jego docelową grupę użytkowników – naukowców i inżynierów związanych z brazylijskim ropy naftową.
 
-Ta metoda jest znacznie bardziej skrótowa, ale zachowuje tę samą funkcję. W kontekście implementacji, `string.len` i `#` to po prostu aliasy tej samej funkcji języka C.
+Alternatywą dla `#` może być `string.len(zdanie)`, ale to bardziej zbędny powrót do czasów, gdy Lua była młoda i jeszcze szukała najlepszych rozwiązań.
 
-## Zobacz także
-- Dokumentacja Lua 5.1: https://www.lua.org/manual/5.1/
-- Więcej na temat operatora `#` : https://www.tutorialspoint.com/lua/lua_operators.htm
-- Więcej na temat zarządzania tekstem w Lua: https://www.tutorialspoint.com/lua/lua_strings.htm
+Operator `#` działa szybko bo Lua przechowuje długość stringów wewnętrznie, więc nie musi przeliczać jej za każdym razem. Ale pamiętaj: jeśli łączysz stringi lub inne zmienne dynamiczne, długość może się zmieniać.
+
+## Zobacz również
+Jeśli chcesz więcej informacji o stringach w Lua oraz o tym języku ogólnie, sprawdź:
+
+- [Oficjalna dokumentacja Lua](https://www.lua.org/manual/5.4/)
+- [Programming in Lua (książka)](https://www.lua.org/pil/contents.html)
+- [Lua Users wiki – string library](http://lua-users.org/wiki/StringLibraryTutorial)

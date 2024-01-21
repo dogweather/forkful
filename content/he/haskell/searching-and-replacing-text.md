@@ -1,6 +1,7 @@
 ---
 title:                "חיפוש והחלפת טקסט"
-html_title:           "Elm: חיפוש והחלפת טקסט"
+date:                  2024-01-20T17:58:41.301545-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חיפוש והחלפת טקסט"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,30 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+חיפוש והחלפת טקסט הוא התהליך שבו אנחנו מאתרים רצפים של תווים בטקסט ומחליפים אותם ברצפים אחרים. תכניתנים עושים זאת כדי לתקן שגיאות, לעדכן נתונים, או לבצע פורמטינג מחדש בקוד ובמסמכים.
 
-חיפוש והחלפת טקסט הם פעולות שבאמצעותן מתכנתים ניתן למצוא את השרשרת של אותיות מסוימת (טקסט) בתוך מחרוזת או קובץ, ולהחליף אותה במחרוזת אחרת. מתכנתים נעזרים בכך לצורך עיוות, תיקון או שיפור של קוד.
-
-## איך:
-
-נקרא למחרוזת שאנו רוצים למצוא את כל המופעים שלה בקובץ "חיפוש מחרוזת", ונקרא למחרוזת שברצוננו להחליף את כל המופעים של המחרוזת המקורית "מחרוזת החלפה". לדוגמה:
+## איך לעשות:
+ב-Haskell, אפשר לממש חיפוש והחלפה בקלות עם מודול `Data.Text`:
 
 ```Haskell
-import Data.String.Utils
+import Data.Text (Text, replace, pack, unpack)
 
-main = do
-    let text = "אני אוהב פיסיקה"
-    let newText = replace "פיסיקה" "מתמטיקה" text
-    putStrLn newText
+searchAndReplace :: String -> String -> String -> String
+searchAndReplace old new = unpack . replace (pack old) (pack new) . pack
+
+main :: IO ()
+main = putStrLn $ searchAndReplace "world" "Haskell" "Hello, world!"
 ```
 
-הפלט של הקוד הזה יהיה "אני אוהב מתמטיקה".
+פלט:
+```
+Hello, Haskell!
+```
 
-## צלילה עמוקה
+## ניחוח לעומק
+החלפת טקסט היא פעולה עתיקה ככתיבה עצמה, אבל בתכנות היא נעשית חשובה במיוחד עם העלייה בשימוש בעיבוד טקסט אוטומטי. בהקשר של Haskell, קיימים כמה מודולים חלופיים לעיבוד טקסט, כולל `Text.Regex` שמתמקד בביטויים רגולריים, אולם `Data.Text` הוא פשוט ויעיל לרוב המקרים. יתרון של `Data.Text` הוא שהוא מאוחסן בזיכרון בצורה יעילה יותר ממחרוזות רגילות (`String`), ולכן גם פעולות כמו חיפוש והחלפה רצות מהר יותר.
 
-אף שמתכנתי Haskell הם אלו שמשתמשים בהם בתדירות מרובה, בעת האמת אפשרויות של פעולות חיפוש והחלפה קיימות כבר בשפות תוכנה מאוד קדומות כמו אסמבלר ופורטרן. בכל מקרה, אנחנו משתמשים בפונקציה `replace` מהספרייה `Data.String.Utils`, שמאפשרת לנו לביצוע פעולות עיבוד טקסט בצורה פשוטה ויעילה.
-
-ניתן לערוך גם מנועי חיפוש והחלפה משלך. זה מאבק מהנה שכולל השגת יותר שליטה וייעול, אך אולי גם מאמץ רב יותר של שרשראות קריאה וחיפוש, או יכולת להתמודד עם משתנים שלא הצלחנו להחזיק לעומת יציבות ופשטות של הפונקציה `replace`.
-
-## ראה גם
-
-- [הספרייה `Data.String.Utils` בהסקל](https://hackage.haskell.org/package/MissingH-1.4.3.0/docs/Data-String-Utils.html)
+## ראו גם
+- התיעוד של `Data.Text` ב-Hackage: [Data.Text](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)
+- מדריך לביטויים רגולריים ב-Haskell: [Text.Regex](https://hackage.haskell.org/package/regex-base-0.94.0.1/docs/Text-Regex-Base.html)
+- ספר על עיבוד טקסט וביטויים רגולריים ב-Haskell: "Real World Haskell" פרק 8: [Real World Haskell](http://book.realworldhaskell.org/read/efficient-file-processing-regular-expressions-and-file-name-matching.html)

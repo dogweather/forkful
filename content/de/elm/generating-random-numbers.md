@@ -1,7 +1,8 @@
 ---
-title:                "Zufallszahlen generieren"
-html_title:           "Arduino: Zufallszahlen generieren"
-simple_title:         "Zufallszahlen generieren"
+title:                "Generierung von Zufallszahlen"
+date:                  2024-01-20T17:48:50.061545-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generierung von Zufallszahlen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Numbers"
@@ -11,30 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Die Generierung von Zufallszahlen bedeutet, im Programm nicht vorhersehbare Werte zu erzeugen, die für Spiele, Simulationen und Tests unentbehrlich sind. Programmierer nutzen sie, um ihren Code dynamisch und vielseitig zu machen.
 
-Die Generierung von Zufallszahlen ist ein Prozess, bei dem ein Computerprogramm eine Zahl generiert, die den Anschein von Zufälligkeit hat. Dies ist wichtig, weil es in vielen Bereichen der Programmierung, wie beispielsweise bei der Erstellung zufälliger Passwörter oder bei Computerspielen, erforderlich ist.
-
-## Wie machst du das:
-
-Um in Elm Zufallszahlen zu generieren, verwenden wir die `Random` Bibliothek. Hier ist ein einfaches Beispiel:
+## How to:
+In Elm nutzt man das `Random` Modul, um Zufallszahlen zu erzeugen. Hier ein einfaches Beispiel:
 
 ```Elm
+import Html exposing (Html, text)
 import Random
-import Html exposing (Html, div, text)
-import Task
 
+main : Html msg
 main =
-  Task.attempt (\_ -> Sub.none) (Task.succeed <| div [] [ text (toString <| Random.generate Random.constant 25) ])
+    let
+        seed = 42
+        (randomNumber, newSeed) = Random.step (Random.int 1 100) (Random.initialSeed seed)
+    in
+    text (String.fromInt randomNumber)
+
+-- Ausgabe: eine Zufallszahl zwischen 1 und 100
 ```
+Das `Random.step` erzeugt sowohl einen Wert als auch einen neuen Seed für zukünftige Zufallszahlen.
 
-Dieses Programm generiert beim Laden eine zufällige Zahl zwischen 0 und 25.
+## Tiefgang
+Elm behandelt Zufallszahlen ganz anders als viele Sprachen. Da Elm eine reine funktionale Sprache ist, gibt es keine direkte Möglichkeit, bei jedem Durchlauf einen anderen Wert zu erhalten. Stattdessen nutzt man einen Seed, um Reproduzierbarkeit zu gewährleisten. Historisch gesehen ist dies wichtig für die Funktionsweise von "Zufälligkeit" in der funktionalen Programmierung.
 
-## Vertiefung
+Alternative Methoden zum Erzeugen von Zufallszahlen, wie die Nutzung eines externen Services oder die Implementierung eines benutzerdefinierten pseudozufälligen Zahlengenerators, sind möglich, aber in Elm nicht üblich.
 
-Die Generierung von Zufallszahlen hat eine lange Geschichte in der Informatik und ist ein Problem, das seit den Anfängen der Computerprogrammierung besteht. Es gibt verschiedene Ansätze und Algorithmen zur Generierung von Zufallszahlen, doch viele dieser Methoden sind nicht wirklich "zufällig". In Elm verwenden wir den Mersenne Twister Algorithmus, eine Methode, die für ihre hohe Qualität an Zufallszahlen bekannt ist. Als Alternative könnten wir auch eine externe API wie RANDOM.org benutzen, die echte Zufallszahlen aus atmosphärischem Rauschen erzeugt. Für die meisten Anwendungen ist dieser Grad an Zufälligkeit jedoch unnötig und der in Elm eingebettete Ansatz ausreichend.
+In der Praxis verwendet man oft das `Random` Modul zusammen mit Subscriptions und Commands, um kontinuierlich Zufallszahlen innerhalb einer Anwendung zu generieren.
 
-## Siehe auch
+## Siehe Auch
 
-- Random Bibliothek Dokumentation: https://package.elm-lang.org/packages/elm/random/latest/
-- Mersenne Twister Algorithmus: https://de.wikipedia.org/wiki/Mersenne-Twister
-- RANDOM.org API: https://www.random.org/clients/http/
+- Elm Official Documentation on Random: [https://package.elm-lang.org/packages/elm/random/latest/](https://package.elm-lang.org/packages/elm/random/latest/)
+- Elm Guide to Effects, covering Random: [https://guide.elm-lang.org/effects/random.html](https://guide.elm-lang.org/effects/random.html)

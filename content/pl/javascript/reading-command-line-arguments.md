@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie argumentów linii poleceń"
-html_title:           "Bash: Czytanie argumentów linii poleceń"
-simple_title:         "Czytanie argumentów linii poleceń"
+title:                "Odczytywanie argumentów linii poleceń"
+date:                  2024-01-20T17:56:16.044210-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie argumentów linii poleceń"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,45 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Czytanie argumentów linii poleceń to sposob odbierania danych z zewnątrz przez twoją aplikację Node.js. Robimy to, żeby elastycznie manipulować zachowaniem programu bez potrzeby zmiany kodu.
 
-Czytając argumenty linii poleceń, możemy wpływać na działanie naszych programów bez konieczności modyfikowania kodu źródłowego. Programiści korzystają z tej techniki, aby utworzyć skrypty bardziej elastyczne i łatwiejsze w konfiguracji.
+## How to:
+Użyj `process.argv`, żeby dostać się do argumentów. Pierwsze dwa argumenty to ścieżka do środowiska Node i pliku, który wykonujesz, więc prawdziwe argumenty startują z indexu 2.
 
-## Jak to zrobić:
+```javascript
+// myscript.js
+console.log(process.argv);
 
-W Node.js, możesz uzyskać argumenty linii poleceń z właściwości `process.argv`. Oto przykład:
+// Uruchomienie w terminalu:
+// node myscript.js arg1 arg2 arg3
 
-```Javascript
-console.log(process.argv)
-```
-
-Gdy uruchomisz powyższy skrypt z argumentami, tzn:
-
-```Javascript
-node myScript.js arg1 arg2
-```
-
-Owoce Twojej pracy będą wyglądać tak:
-
-```Javascript
-[ 'C:\\Program Files\\nodejs\\node.exe',
-  'C:\\Users\\YourName\\myScript.js',
+/*
+Output:
+[
+  '/path/to/node',
+  '/path/to/your/script/myscript.js',
   'arg1',
-  'arg2' ]
+  'arg2',
+  'arg3'
+]
+*/
 ```
+Istnieją też biblioteki jak `yargs` lub `commander`, które upraszczają ten proces i dodają użyteczne funkcje.
 
-Pierwsze dwa elementy to domyślne argumenty. Faktyczne argumenty zaczynają się od trzeciego elementu.
+## Deep Dive
+Historia argumentów linii poleceń sięga początków interfejsów tekstowych - to podstawowy sposób interakcji z systemami UNIX. Wiele języków (C, Python, Node.js) używa podobnych metod do ich przetwarzania. Alternatywą może być użycie plików konfiguracyjnych lub zmiennych środowiskowych, ale te metody są mniej dynamiczne. W Node.js, `process.argv` jest prostym, acz potężnym rozwiązaniem, które można jeszcze ulepszyć przez zewnętrzne pakiety.
 
-## Deep Dive:
-
-Język Javascript nie był pierwotnie zaprojektowany do odczytywania argumentów z linii poleceń. Dopiero z pojawieniem się Node.js, argumenty z linii poleceń stały się dostępne poprzez obiekt `process`.
-
-Jest wiele alternatywnych bibliotek do obsługi argumentów linii poleceń, jak `commander.js` czy `yargs`, które oferują więcej funkcji i łatwiejsze w użyciu interfejsy.
-
-W przeglądarce, nie jest możliwe bezpośrednie odczytanie argumentów z linii poleceń. Przeważnie dane wejściowe są zbierane przez interfejs użytkownika lub zasoby sieciowe.
-
-## Zobacz także:
-
-- Node.js process.argv: https://nodejs.org/docs/latest/api/process.html#process_process_argv
-- Commander.js: https://github.com/tj/commander.js/
-- Yargs: https://yargs.js.org/
+## See Also
+- [Node.js process.argv documentation](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- [Yargs package](https://www.npmjs.com/package/yargs)
+- [Commander package](https://www.npmjs.com/package/commander)

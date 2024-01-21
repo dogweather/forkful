@@ -1,7 +1,8 @@
 ---
-title:                "एक तारीख को स्ट्रिंग में परिवर्तित करना"
-html_title:           "Java: एक तारीख को स्ट्रिंग में परिवर्तित करना"
-simple_title:         "एक तारीख को स्ट्रिंग में परिवर्तित करना"
+title:                "तारीख को स्ट्रिंग में बदलना"
+date:                  2024-01-20T17:37:37.972299-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "तारीख को स्ट्रिंग में बदलना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,40 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
+## क्या और क्यों?
 
-डेट को एक स्ट्रिंग में बदलना मतलब किसी कैलेंडर दिनांक को टेक्स्ट के रूप में प्रस्तुत करना। प्रोग्रामर इसे करते हैं क्योंकि यह उन्हें डेटा को साढ़े और पठनीय रूप में प्रस्तुत करने की अनुमति देता है। 
+तारीख को स्ट्रिंग में बदलना (converting a date into a string) से आशय है तारीख के डेटा को पठनीय पाठ फॉर्मेट में परिवर्तित करना। प्रोग्रामर्स इसे इसलिए करते हैं क्योंकि इससे तारीख को यूज़र-फ्रेंडली तरीके से डिस्प्ले किया जा सकता है और लॉग फाइल्स, मैसेजेस एवं अन्य डॉक्यूमेंटेशन्स में आसानी से समझा जा सकता है। 
 
-## कैसे करें:
-
-आंटर के कोड स्निपेट का उपयोग करके, हम एक दिनांक को किसी स्ट्रिंग में बदल सकते हैं:
+## तरीका:
 
 ```Haskell
 import Data.Time
-import System.Locale
 
+-- वर्तमान समय व तारीख प्राप्त करना
+main :: IO ()
 main = do
-now <- getZonedTime
-let formatter = formatTime defaultTimeLocale "%F" now
-print formatter
+    currentTime <- getCurrentTime
+    let currentDay = utctDay currentTime
+    print $ "Default format: " ++ show currentDay
+    -- विशिष्ट तारीख सरणी में बदलना
+    let dateString = formatTime defaultTimeLocale "%d-%m-%Y" currentDay
+    putStrLn $ "DD-MM-YYYY format: " ++ dateString
+```
+सैंपल आउटपुट:
+```
+"Default format: 2023-03-25" 
+"DD-MM-YYYY format: 25-03-2023"
 ```
 
-जब आप इस कोड को चलाते हैं, आपको निम्नलिखित आउटपुट मिलेगा (आइये, आज की तारीख है "YYYY-MM-DD"):
+## गहराई में जानकारी:
 
-```Haskell
-"YYYY-MM-DD"
-```
+तारीख को स्ट्रिंग में बदलने की प्रक्रिया को `Data.Time` लाइब्रेरी में `formatTime` फंक्शन द्वारा सम्भव किया गया है, जो Haskell के पूर्व वर्ज़न्स से शामिल है। यह प्रोग्रामर को विभिन्न तारीख स्वरूपों (formats) को चुनने का विकल्प देता है, जैसे कि दिन-महीना-वर्ष (`"%d-%m-%Y"`) या महीना-दिन-वर्ष (`"%m/%d/%Y"`)। विकल्प के तौर पर, अन्य हाई-लेवल डेट्स हैंडलिंग लाइब्रेरिज़ भी होती हैं, जैसे `time` और `calendar`.
 
-## गहराई से देखें:
+`formatTime` का प्रयोग करने से पहले, `currentTime` फंक्शन `IO` अभिकलन में वर्तमान UTC समय और तारीख प्राप्त करता है, जिसे बाद में स्ट्रिंग में बदला जा सकता है। चूँकि Haskell एक मजबूत टाइम की स्टैटिक टाइपिंग भाषा है, `show` फंक्शन का प्रयोग डिफ़ॉल्ट स्ट्रिंग नरेशन के तौर पर होता है।
 
-इस विधि का उपयोग करने के पीछे इतिहास तक पहुंचने के लिए, यह ISO 8601 दिनांक और समय विन्यास मानदंड का पालन करता है जो 1988 में स्थापित किया गया था। 
+## सी अल्सो:
 
-इसके विकल्पों में अन्य दिनांक-स्ट्रिंग प्रारूप हैं जिन्हें आप उपयोग कर सकते हैं, जैसे कि "%D" (MM/DD/YY) या "%x" (स्थानीय तारीख का प्रारूप). आपके उपयोग के लिए कौन सा प्रारूप सबसे उपयुक्त है, यह आपकी आवश्यकताओं पर निर्भर करेगा। 
-
-विवरण के लिए, `formatTime` गुण अर्जुमेंट को अपनाता है और छावनी के रुप में मान वापस करता है, जिसे हम फिर प्रिंट करते हैं। 
-
-## और भी देखें: 
-
-- ISO 8601 मानदंड: https://www.iso.org/iso-8601-date-and-time-format.html
-- Haskell द्वारा इस्तेमाल किए जाने वाले सभी प्रारूप धोरियों: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html
-- Haskell 'time' पैकेज: https://hackage.haskell.org/package/time
+- Haskell `Data.Time` लाइब्रेरी का डॉक्युमेंटेशन: [Hackage Data.Time Library](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- `formatTime` फंक्शन: [FormatTime Function](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html#v:formatTime)

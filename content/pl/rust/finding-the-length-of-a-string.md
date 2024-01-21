@@ -1,7 +1,8 @@
 ---
-title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Arduino: Znajdowanie długości ciągu znaków"
-simple_title:         "Znajdowanie długości ciągu znaków"
+title:                "Znalezienie długości ciągu znaków"
+date:                  2024-01-20T17:48:16.742453-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Znalezienie długości ciągu znaków"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,44 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why?
+Co i dlaczego? Sprawdzanie długości łańcucha znaków, to po prostu sposób, by wiedzieć ile znaków zawiera. Programiści robią to, by np. walidować dane wejściowe, ustawiać format wyświetlania, czy zarządzać pamięcią.
 
-## Co i dlaczego?
-
-Wyszukiwanie długości ciągu w języku programowania odnosi się do określenia liczby znaków w tym ciągu. Robimy to, aby wiedzieć, jak dużo miejsca zajmuje ciąg w pamięci i jak efektywnie możemy nim manipulować.
-
-## Jak to zrobić:
-
-Oto podstawowy przykład, jak to zrobić w Rust:
+## How to:
+Jak to zrobić:
 
 ```Rust
 fn main() {
-    let napis = "Witaj, Świecie!";
-    println!("Długość napisu to: {}", napis.len());
+    let greeting = "Witaj, świecie!";
+    let length = greeting.chars().count(); // Liczymy znaki, uwzględniając Unicode
+
+    println!("Długość napisu '{}': {}", greeting, length);
 }
+
+// Wyjście:
+// Długość napisu 'Witaj, świecie!': 15
 ```
-Kiedy uruchomimy ten program, otrzymamy następujący wynik:
 
-```Rust
-Długość napisu to: 15
-```
-## Głębszy wgląd
+## Deep Dive
+Pogłębiona wiedza: Funkcja `len()` w Rust dostarcza liczbę bajtów w ciągu, co jest szybkie, ale nie działa dobrze z Unicode. Dlatego `chars().count()` to lepsza metoda, gdy pracujemy z Unicode -- liczy znaki, nie bajty. Kiedyś w C, liczenie długości łańcucha polegało na iterowaniu do znaku końca (NULL terminator). W Rust, długość łańcucha w bajtach jest znana natychmiast dzięki zapamiętanej wielkości, ale z Unicode to nie wystarcza.
 
-Rust, jak wiele innych języków programowania, traktuje ciągi jako sekwencje bajtów, nie znaków. Dlatego funkcja `len()` zwraca liczbę bajtów, a nie znaków w ciągu. Ważne jest to zrozumienie, szczególnie przy pracy z ciągami zawierającymi znaki Unicode.
+## See Also
+Zobacz również:
 
-Opcją jest użycie metody `chars().count()` do policzenia faktycznej liczby znaków, ale zazwyczaj jest to wolniejsze niż użycie `len()`.
-
-```Rust
-fn main() {
-    let napis = "Witaj, Świecie!";
-    println!("Liczba znaków w ciągu to: {}", napis.chars().count());
-}
-```
-Możemy na przykład używać tej metody, gdy pracujemy z ciągami zawierającymi wielobajtowe znaki Unicode.
-
-## Zobacz także:
-
-- Dokumentacja Rust dla `str.len`: https://doc.rust-lang.org/std/primitive.str.html#method.len
-- Dokumentacja Rust dla `str.chars`: https://doc.rust-lang.org/std/primitive.str.html#method.chars
-
-Ważne jest, aby zrozumieć różnicę między liczbą bajtów a liczbą znaków w ciągu, zwłaszcza przy pracy z różnymi zestawami znaków i kodowaniem.
+- Dokumentacja Rust'a na temat typów łańcuchowych: [String and str in Rust](https://doc.rust-lang.org/book/ch08-02-strings.html)
+- Unicode w Rust: [Understanding Unicode in Rust](https://blog.rust-lang.org/2020/01/03/reducing-support-for-32-bit-apple-targets.html)

@@ -1,7 +1,8 @@
 ---
-title:                "नया प्रोजेक्ट शुरू करना"
-html_title:           "C: नया प्रोजेक्ट शुरू करना"
-simple_title:         "नया प्रोजेक्ट शुरू करना"
+title:                "नई परियोजना शुरू करना"
+date:                  2024-01-20T18:03:26.072377-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "नई परियोजना शुरू करना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Getting Started"
@@ -10,38 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-नया प्रोजेक्ट शुरू करना सॉफ्टवेयर विकास की एक प्रक्रिया है जिसमें हम एक नई सॉफ्टवेयर उत्पाद की रचना करते हैं। प्रोग्रामर इसे ताजगी, नई सीख, और समस्या का समाधान प्राप्त करने के लिए करते हैं।
+## What & Why? (क्या और क्यों?)
+नया प्रोजेक्ट शुरू करना मतलब है खाली कैनवस पर कोडिंग शुरू करना। प्रोग्रामर इसे नए विचारों को आजमाने, सीखने और नए सॉफ़्टवेयर बनाने के लिए करते हैं।
 
-## कैसे करें:
-एल्म प्रोजेक्ट शुरू करने के लिए, हमें एल्म पैकेज इंस्टॉल करने की आवश्यकता होती है।
+## How to: (कैसे करें:)
+Elm के साथ नए प्रोजेक्ट शुरू करने के लिए:
 
-```Elm
-npm install -g elm
-```
+1. Elm को इंस्टॉल करें:
+   ```sh
+   npm install -g elm
+   ```
 
-इसके बाद हम एक नया प्रोजेक्ट बना सकते हैं:
+2. नया प्रोजेक्ट बनाएँ:
+   ```sh
+   elm init
+   ```
 
-```Elm
-elm init
-```
+3. `Main.elm` फाइल में नीचे कोड लिखें:
+   ```elm
+   module Main exposing (..)
+   import Html exposing (text)
+   
+   main = 
+     text "नमस्ते, Elm दुनिया!"
+   ```
 
-नए "src" फोल्डर में, हमारा पहला कॉड होगा:
+4. प्रोजेक्ट रन करें:
+   ```sh
+   elm reactor
+   ```
+   ब्राउज़र में `http://localhost:8000` ओपन करें और `Main.elm` फाइल को चुनें।
 
-```Elm
-module Main exposing (..)
+## Deep Dive (गहराई से जानकारी):
+Elm एक फंक्शनल प्रोग्रामिंग भाषा है जो वेब ऍप्लिकेशंस को सरल और मजबूत बनाने के लिए बनी। इसकी शुरुआत 2012 में Evan Czaplicki ने की थी। Elm का मुख्य उद्देश्य है runtime errors को ना के बराबर करना। इसकी आर्किटेक्चर को Elm Architecture (TEA) कहते हैं, जो “Model-Update-View” पैटर्न पर आधारित है।
 
-import Html exposing (text)
+Elm प्रोजेक्ट शुरू करना आसान है और यह प्रोग्रामर को immutable data structures, static typing और friendly compiler messages प्रदान करता है। Elm के विकल्प में PureScript और ReasonML आते हैं, पर Elm की simplicity और त्रुटि-संदेशों की स्पष्टता इसे अनूठा बनाती है।
 
-main =
-    text "Hello, Elm!"
-```
-
-यह प्रोग्राम "Hello, Elm!" प्रिंट करेगा।
-
-## गहरा डाइव
-एल्म, फ्रंट-एंड वेब डेवलपमेंट में मदद करने के लिए 2012 में लॉन्च किया गया था। इसके विकल्प में React, Angular आदि हैं, लेकिन एल्म में एक अद्वितीय वास्तुकला API और त्रुटि की बेहतर देखभाल है। एल्म प्रोजेक्ट की स्थापना `elm init` आदेश से की जाती है, जो बुनियादी डायरेक्टरी संरचना और Elm.json फ़ाइल बनाता है।
-
-## अन्य देखें
-1. [Elm Official Guide](https://guide.elm-lang.org/)
-3. [Elm Vs Other](https://elm-lang.org/news/compilers-as-assistants)
+## See Also (संबंधित जानकारियां):
+- [Elm Official Website](https://elm-lang.org/)
+- [Elm Guide](https://guide.elm-lang.org/)
+- [Elm Architecture Tutorial](https://guide.elm-lang.org/architecture/)
+- [Awesome Elm: A curated list of useful Elm tutorials, libraries and software](https://github.com/sporto/awesome-elm)

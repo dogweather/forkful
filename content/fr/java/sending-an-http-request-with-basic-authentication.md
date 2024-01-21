@@ -1,7 +1,8 @@
 ---
-title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
-simple_title:         "Envoyer une requête http avec une authentification de base"
+title:                "Envoi d'une requête HTTP avec authentification de base"
+date:                  2024-01-20T18:01:54.481972-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Envoi d'une requête HTTP avec authentification de base"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,52 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# L'envoi de requêtes HTTP avec une authentification de base en Java
+## What & Why? (Quoi et Pourquoi ?)
+Envoyer une requête HTTP avec une authentification de base, c'est comme donner un mot de passe pour accéder à un site sécurisé. On fait ça pour protéger les infos sensibles et pour s'assurer que seul les utilisateurs autorisés y accèdent.
 
-## Quoi et Pourquoi?
-L'envoi d'une requête HTTP avec une authentification de base est une manière de sécuriser l'accès à des ressources sur le web. Les programmeurs l'utilisent pour s'assurer que seuls les utilisateurs autorisés peuvent accéder à des données précises.
-
-## Comment faire:
-Pour envoyer une requête HTTP avec une authentification de base en Java, vous avez besoin d'une URL, d'un nom d'utilisateur et d'un mot de passe. Voici un exemple de code:
-
-```Java
-import java.net.*;
-import java.io.*;
+## How to: (Comment faire :) 
+```java
+import java.io.IOException;
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
+import java.net.URL;
+import javax.net.ssl.HttpsURLConnection;
+import java.util.Base64;
 
 public class HttpBasicAuth {
+    
+    public static void main(String[] args) throws IOException {
+        String url = "https://example.com/api";
+        String username = "user";
+        String password = "pass";
+        
+        String auth = username + ":" + password;
+        String encodedAuth = Base64.getEncoder().encodeToString(auth.getBytes());
 
-    public static void main(String[] args) throws Exception {
+        URL urlObject = new URL(url);
+        HttpsURLConnection connection = (HttpsURLConnection) urlObject.openConnection();
+        connection.setRequestProperty("Authorization", "Basic " + encodedAuth);
 
-        String urlStr = "http://myurl";
-        String user = "username";
-        String password = "password";
-
-        URL url = new URL(urlStr);
-        URLConnection urlConnection = url.openConnection();
-        String authStr = user + ":" + password;
-        String authEncoded = Base64.getEncoder().encodeToString(authStr.getBytes());
-
-        urlConnection.setRequestProperty("Authorization", "Basic " + authEncoded);
-
-        BufferedReader in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-
-        String inputLine;
-        while ((inputLine = in.readLine()) != null) {
-            System.out.println(inputLine);
-        }
-        in.close();
+        int responseCode = connection.getResponseCode();
+        System.out.println("Response Code: " + responseCode);
+        // Handle input stream here to read the response
     }
 }
 ```
-Cet exemple vous donnera la sortie attendue de la ressource que vous essayez d'accéder.
+Sortie attendue :
+```
+Response Code: 200
+```
+Si autre que 200, vérifiez les identifiants et l'URL.
 
-## Plongée en profondeur
-Historiquement, l'authentification de base a été largement utilisée par les protocoles HTTP et SMTP. Cependant, elle n'est pas très sécurisée car les informations d'identification sont transmises en clair (bien que codées en Base64, ce qui est facilement décodable).
-Il existe également des alternatives à l'authentification de base, notamment l'authentification Digest, l'authentification par formulaire, l'authentification par jeton et l'authentification OAuth.
+## Deep Dive (Plongée en profondeur)
+L'authentification de base HTTP existe depuis le début du web, introduite par le RFC 2617 en 1997, et maintenant définie par le RFC 7617. C'est simple mais pas super sécurisé en solo; on l'utilise souvent avec HTTPS pour plus de sécurité. Il y a des alternatives, comme l'authentification Digest ou des tokens, qui peuvent offrir une meilleure sécurité. En Java, on a plusieurs manières de les envoyer, comme montré, ou en utilisant des bibliothèques tierces comme Apache HttpClient ou OkHttp.
 
-Dans le code ci-dessus, nous utilisons la méthode `setRequestProperty()` pour ajouter un en-tête HTTP `Authorization` contenant nos informations d'authentification codées. Cela envoie essentiellement nos informations d'identification à l'URL que nous essayons d'atteindre avec chaque requête.
-
-## Voir Aussi
-1. [Authentification HTTP sur Wikipedia](https://fr.wikipedia.org/wiki/Authentification_HTTP)
-2. [API Java pour URLConnection](https://docs.oracle.com/javase/7/docs/api/java/net/URLConnection.html)
-3. [Base64 en Java](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html)
+## See Also (Voir aussi)
+- RFC 7617 pour les détails techniques : https://tools.ietf.org/html/rfc7617
+- Apache HttpClient : https://hc.apache.org/httpcomponents-client-ga/
+- OkHttp : https://square.github.io/okhttp/

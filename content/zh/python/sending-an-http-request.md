@@ -1,7 +1,8 @@
 ---
-title:                "发送http请求"
-html_title:           "C#: 发送http请求"
-simple_title:         "发送http请求"
+title:                "发出 HTTP 请求"
+date:                  2024-01-20T18:00:34.208592-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "发出 HTTP 请求"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,40 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么?
+## What & Why?
+什么&为什么？
+发送HTTP请求就是让你的程序向网路上的服务器请求数据或触发动作。程序员这样做可以与网络服务进行交互，获取资源或提交信息。
 
-HTTP请求是您的程序向网络服务器发送内容或请求内容的手段。程序员经常要发HTTP请求来使用Web API，接收数据，或者进行网络通信。
+## How to:
+如何操作：
+使用Python的`requests`库，发送一个简单的HTTP GET请求：
 
-## 如何实施:
-
-在Python中，一个常用的库来发送HTTP请求是requests。以下是一个GET请求的简单示例：
-
-```Python
+```python
 import requests
 
-response = requests.get('http://www.baidu.com')
+response = requests.get('https://api.github.com')
 print(response.status_code)
-print(response.text)
+print(response.json())
 ```
 
-运行上述代码，您应该看到以下输出：
+样例输出：
 
-```bash
+```
 200
-<!DOCTYPE html>
-<!--STATUS OK-->
-...（此处省略了百度首页的HTML代码）
+{'current_user_url': 'https://api.github.com/user', 'current_user_authorizations_html_url':...}
 ```
 
-## 深度剖析
+发送POST请求，并传递数据：
 
-请求库背后的历史背景是，之前的库 urllib 和 httplib 都不够友好和方便，所以Kenneth Reitz制造了requests库，在Python社区获得了广泛的欢迎和应用。
+```python
+import requests
 
-当然，除了 requests 库外，Python 中还有其他一些库也可以发送HTTP请求，比如 httplib2、treq 等，你可以根据自己的需求来选择。
+data = {'key': 'value'}
+response = requests.post('https://httpbin.org/post', data=data)
+print(response.status_code)
+print(response.json())
+```
 
-在内部实现方面, 使用request库是向服务器发送请求的步骤: 首先, 我们使用`requests.get()`方法发出请求, 然后服务器会返回一个Response对象。这个对象包括了所有关于这个HTTP响应的信息。
+样例输出：
 
-## 另请参阅
+```
+200
+{
+  ...
+  'form': {
+    'key': 'value'
+  },
+  ...
+}
+```
 
-- [Requests:HTTP for Humans](https://requests.readthedocs.io/en/master/)
-- [Python官方文档](https://docs.python.org/3/library/http.client.html)
+## Deep Dive
+深入探讨：
+HTTP请求的历史可以追溯到1990年代初的网络基础设施。Python的`urllib`库是处理HTTP的早期工具，但它的使用比较复杂。后来，`requests`库出现了，因其简洁且易于使用的接口受到喜爱。
+
+替代方案包括使用`http.client`（更底层）、`aiohttp`（异步请求）以及各种HTTP客户端框架，如`Tornado`。底层实现涉及套接字编程和HTTP协议的遵从。
+
+## See Also
+查看更多：
+- 官方requests库文档：https://requests.readthedocs.io/
+- Python官方HTTP客户端库文档：https://docs.python.org/3/library/http.client.html
+- HTTP协议详细信息：https://www.ietf.org/rfc/rfc2616.txt
+- aiohttp文档：https://docs.aiohttp.org/

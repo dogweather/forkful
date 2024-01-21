@@ -1,6 +1,7 @@
 ---
 title:                "सबस्ट्रिंग्स निकालना"
-html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+date:                  2024-01-20T17:46:20.446209-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,27 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-सबस्ट्रिंग्स निकालना एक विशेष टेक्स्ट को एक बड़े टेक्स्ट से अलग करना होता है। प्रोग्रामर्स इसे तब करते हैं जब उन्हें सिर्फ एक विशेष भाग की जरूरत होती है, न कि पूरे टेक्स्ट की।  
+## क्या और क्यों? (What & Why?)
 
-## कैसे करें:
-सबस्ट्रिंग निकालने के लिए Kotlin में कुछ विशेष फंक्शन्स होते हैं। इनके प्रयोग की उदाहरण दीजिएगी:
+सबस्ट्रिंग्स निकालना मतलब मूल स्ट्रिंग से विशेष अंश को चुनकर उपयोग करना। प्रोग्रामर्स इसे डेटा का विश्लेषण करने, सूचना संसाधित करने, या यूजर की इनपुट को मान्यता देने के लिए करते हैं।
 
-```Kotlin
-// यह मूल स्ट्रिंग है:
-val str = "Hello programmers"
+## कैसे करें? (How to:)
 
-// आप सबस्ट्रिंग इस प्रकार निकाल सकते हैं:
-val sub = str.substring(6, 17)
+```kotlin
+fun main() {
+    val text = "नमस्कार, Kotlin!"
 
-println(sub) // Output: "programmers"
+    // पहले 5 characters निकालें
+    val substring1 = text.substring(0, 5)
+    println(substring1) // नमस्कार
+
+    // शब्द 'Kotlin' निकालें
+    val kotlinWordIndex = text.indexOf("Kotlin")
+    val substring2 = text.substring(kotlinWordIndex)
+    println(substring2) // Kotlin!
+}
 ```
 
-## गहरा डाइव:
-- **ऐतिहासिक प्रसंग**: Kotlin में सबस्ट्रिंग निकालने की क्षमता को खासकर डेटा प्रसंस्करण की जरूरतों को ध्यान में रखकर जोड़ा गया है।
-- **विकल्प**: 'slice' फ़ंक्शन भी सबस्ट्रिंग के लिए एक विकल्प हो सकता है। यह चारों ओर से विशिष्ट स्थान तक स्ट्रिंग प्राप्त करता है।
-- **क्रियान्वयन विवरण**: `substring` फ़ंक्शन स्वयं में एक शुरुआत और अंत मार्कर के द्वारा संदर्भित स्ट्रिंग का एक हिस्सा निकालता है। यह अक्सर समय की जटिलता O(N) होती है, जहां N स्ट्रिंग की लंबाई है।
+## गहराई में जानकारी (Deep Dive)
 
-## देखें भी:
-- [Kotlin डॉक्यूमेंटेशन: स्ट्रिंग](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Kotlin Tutorial: सबस्ट्रिंग और स्लाइसिंग](https://www.programiz.com/kotlin-programming/string)
+सबस्ट्रिंग्स की क्षमता शुरुआती प्रोग्रामिंग भाषाओं से ही रही है - यह स्ट्रिंग मेंपुलेशन का एक बुनियादी हिस्सा है। Kotlin में `substring` फंक्शन दो प्रकार से प्रयोग किये जा सकते हैं: इंडेक्स रेंज देकर या शुरू और अंतिम इंडेक्स देकर। जावा की `String` कक्षा से Kotlin में हुआ यह सुधार ज्यादा सुगम और लचीला है। अल्टरनेटिव्स में `take`, `drop`, `filter`, `removeRange` इत्यादि फंक्शन्स शामिल हैं जो कस्टम सबस्ट्रिंग्स बनाने की अनुमति देते हैं।
+
+## अन्य संसाधन (See Also)
+
+- [Kotlin Documentation - Basic Types: Strings](https://kotlinlang.org/docs/basic-types.html#strings)

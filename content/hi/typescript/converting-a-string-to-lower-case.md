@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-html_title:           "Kotlin: एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-simple_title:         "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
+title:                "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
+date:                  2024-01-20T17:39:45.937989-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,32 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+स्ट्रिंग को लोअर केस में बदलना यह है कि मूल स्ट्रिंग के सभी अक्षरों को छोटे (लोअर केस) में परिवर्तित करना। प्रोग्रामर्स यह इसलिए करते हैं ताकि विभिन्न स्ट्रिंग इनपुट्स की तुलना करते समय बड़े-छोटे अक्षर की समस्या ना हो।
 
-"string को lower case में बदलना" - इसका मतलब है की एक वाक्यांश (जिसे हम स्ट्रिंग कहते हैं) को हम कम टाइप करने के लिए बदल देते हैं। प्रोग्रामर इसका उपयोग उस समय करते हैं जब वे चाहते हैं कि उनका कोड केस-संवेदनशील न हो - अर्थात, कस्टमर्स चाहे upper case में टाइप करें या lower case, कोड सही धंग से काम करता है।
+## How to: (कैसे करें:)
+```TypeScript
+let greeting: string = "नमस्ते दुनिया!";
+let lowerCaseGreeting: string = greeting.toLowerCase();
 
-## कैसे:
-
-TypeScript का `toLowerCase()` फ़ंक्शन उपयोग करें। यहां एक उदाहरण है:
-
-```typescript
-let greet: string = "नमस्ते, DUNIYA!";
-console.log(greet.toLowerCase());
-```
-और इसका आउटपुट होगा:
-```
-नमस्ते, duniya!
+console.log(lowerCaseGreeting); // "नमस्ते दुनिया!" को छोटे अक्षरों में प्रिंट करेगा: "नमस्ते दुनिया!"
 ```
 
-## गहराई में:
+## Deep Dive (गहराई से जानकारी):
+स्ट्रिंग्स को लोअर केस में बदलना अनेक प्रोग्रामिंग भाषाओं में एक बुनियादी कार्य है। यह इंटरनेट की शुरुआत के समय से डेटा को सामंजस्यपूर्ण बनाने के लिए उपयोग में लाया जाता रहा है। TypeScript में `.toLowerCase()` विधि जावास्क्रिप्ट की स्ट्रिंग ऑब्जेक्ट से आती है और यह यूनिकोड मानक का समर्थन करता है, जिससे यह विभिन्न भाषाओं और स्क्रिप्ट्स के लिए काम करता है।
 
-1. ऐतिहासिक प्रसंग: यह विधि JavaScript (जिसके ऊपर TypeScript निर्माणित है) से सीधे उद्धृत है और उसका उपयोग केस-अनिर्भिन्न कोड को सशक्त बनाने में किया जाता है।
-   
-2. विकल्प: एक विकल्प `toLocaleLowerCase()` है जो विभिन्न भाषाओं और लोकेल पर आधारित होता है।
-   
-3. आंतर क्रियान्वित विवरण: `toLowerCase()` फ़ंक्शन प्रत्येक केस को संगणक की भाषा में पूर्वनिर्धारित "निचले केस" संपर्कों के अनुसार निर्धारित करता है।
+वैकल्पिक तरीके भी हैं, जैसे कस्टम फंक्शन लिखना या रेगुलर एक्सप्रेशन का उपयोग करना, पर `toLowerCase()` सबसे सरल और प्रभावी है। टर्बो पास्कल जैसी पुरानी भाषाओं में भी यही संकल्पना अस्तित्व में थी।
 
-## देखें भी:
-
-1. [Mozilla Developer Network - toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-2. [Microsoft TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+## See Also (अन्य जानकारियां):
+- MDN Web Docs on `.toLowerCase()`: [MDN.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- Unicode Standard: [Unicode.org](https://unicode.org/)
+- JavaScript string comparison for different locales: [MDN.localeCompare()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)

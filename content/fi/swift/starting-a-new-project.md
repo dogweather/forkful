@@ -1,7 +1,8 @@
 ---
-title:                "Aloittaminen uuden projektin"
-html_title:           "C: Aloittaminen uuden projektin"
-simple_title:         "Aloittaminen uuden projektin"
+title:                "Uuden projektin aloittaminen"
+date:                  2024-01-20T18:04:39.775647-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Getting Started"
@@ -10,66 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Swift-pohjainen uuden projektin aloittaminen
+## What & Why? (Mitä & Miksi?)
+Uuden Swift-projektin aloittaminen tarkoittaa uuden sovelluksen tai ohjelman kehityksen käynnistämistä. Ohjelmoijat tekevät tämän luodakseen ratkaisuja ongelmiin, kehittääkseen työkaluja käyttäjille tai oppiakseen uusia teknologioita.
 
-## Mikä & Miksi?
-
-Uuden projektin aloitus on sovelluksen, verkkosivun tai minkä tahansa ohjelmiston luomisen aloitusprosessi. Ohjelmoijat tekevät tämän tuottaakseen uusia digitaalisia tuotteita tai parantaakseen jo olemassa olevia.
-
-## Näin se tehdään:
-
-Aloitetaan uuden Swift-projektin luomisprosessi Xcodella.
+## How to: (Kuinka tehdä:)
+Aloita uusi projekti Swiftissä käyttämällä Xcodea, Applen kehitysympäristöä. Tässä on esimerkki.
 
 ```Swift
-// Avaa Xcode ja valitse "Uusi projekti"
-// Valitse "App" mallipohjakokoelmasta ja napsauta "Next"
-// Anna projektisi nimi kohteeseen "Product Name", esimerkiksi "HelloWorld"
-// Valitse "StoryBoard" Interface-kohdassa ja "UIKit App Delegate" Life Cycle kohdassa
-// Valitse sijainti projektillesi ja napsauta "Luo"
-```
+// 1. Avaa Xcode.
+// 2. Valitse File > New > Project... (Tai paina Command-Shift-N).
+// 3. Valitse sovelluspohja, esimerkiksi 'Single View App'.
+// 4. Anna projektillesi nimi ja valitse tallennuspaikka.
+// 5. Setup complete! Kirjoita ensimmäinen Swift-koodisi.
 
-```Swift
-import UIKit
+import SwiftUI
 
-// Tämä on "AppDelegate.swift" tiedoston koodi
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = ViewController()
-        window?.makeKeyAndVisible()
-        
-        return true
+struct ContentView: View {
+    var body: some View {
+        Text("Hello, world!")
+            .padding()
     }
 }
-```
 
-```Swift
-import UIKit
-
-// Tämä on "ViewController.swift" tiedoston koodi
-class ViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .blue
+@main
+struct MyApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
     }
 }
+
+// Käynnistä sovellus painamalla 'Run'-painiketta tai Command-R.
 ```
 
-Kun ajat tämän koodin Xcode-simulaattorilla, sinun pitäisi nähdä sininen näyttö. Se osoittaa, että olet onnistuneesti luonut uuden Swift-projektin.
+Kun olet tehnyt yllä olevat askeleet, saat näyttöön "Hello, world" -viestin.
 
-## Syvempi sukellus
+## Deep Dive (Syväsukellus)
+Swift-projektin aloittaminen juontaa juurensa ohjelmoinnin alkuaikoihin, jolloin ensimmäinen toimiva ohjelma ilmoitti "Hello, world" - maailmalle. Tämä perinne jatkuu yhä opetustarkoituksessa ja testauksessa. Vaihtoehtoina Swift projekteille voisi olla muut kielet ja kehitysympäristöt, kuten Python PyCharmilla tai JavaScript Visual Studio Codella. Swiftiä ja sen työympäristöä suositaan erityisesti iOS-, macOS-, watchOS- ja tvOS-sovellusten kehityksessä sen tehokkuuden, turvallisuuden ja Apple-alustan integraation ansiosta.
 
-Vaikka Swift on melko uusi kieli (julkaistu vuonna 2014), se on jo saavuttanut laajan suosion ohjelmoijien keskuudessa sen tehokkuuden, turvallisuuden ja helppouden ansiosta. Swiftin aloittaminen uutena projektina on suoraviivainen prosessi Xcode-kehitysympäristössä.
-
-Vaihtoehtoja Swift-projektin aloittamiseen ovat esimerkiksi Objective-C tai jopa C++, mutta Swift on moderni ja intuitiivinen. Se noudattaa LLVM-kompilaattoria ja sen ARC:n muistinhallintaa, Swift on suorituskyvyltään ja nopeudeltaan vaikuttava.
-
-## Katso myös
-
-1. [Virallinen Swift-kielen opas](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
-2. [Xcode-ohjelmiston perusteet](https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/)
-3. [Apple Developer - Swift](https://developer.apple.com/swift/)
-
----
+## See Also (Katso myös)
+- Apple's Swift Resources: [https://developer.apple.com/swift/resources/](https://developer.apple.com/swift/resources/)
+- Swift Documentation by Apple: [https://docs.swift.org/swift-book/](https://docs.swift.org/swift-book/)
+- Swift Playgrounds for iPad: [https://www.apple.com/swift/playgrounds/](https://www.apple.com/swift/playgrounds/)

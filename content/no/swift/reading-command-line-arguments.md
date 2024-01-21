@@ -1,6 +1,7 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Arduino: Lese kommandolinjeargumenter"
+date:                  2024-01-20T17:56:41.481245-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,32 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Lesing av kommandolinjeargumenter lar programmer reagere på input de får når de startes fra terminalen. Programmerere bruker dette til å tilpasse kjøringen av programmet uten å hardkode verdier.
 
-Å lese kommandolinjeargumenter handler om å hente brukerinput direkte fra systemets terminal. Dette gir oss en fleksibel og effektiv metode for å kontrollere hvordan programmet vårt skal kjøre, ved å tilpasse input basert på brukerens behov.
-
-## Hvordan:
-
-Å komme i gang med å lese kommandolinjeargumenter i Swift er enkelt. Du har tilgang til disse argumentene gjennom `CommandLine`-klassen.
+## Slik gjør du:
+I Swift er kommandolinjeargumentene tilgjengelige via `CommandLine.arguments`-arrayet. Her er et enkelt eksempel:
 
 ```Swift
-let arguments = CommandLine.arguments
-print(arguments)
+// main.swift
+
+for argument in CommandLine.arguments {
+    print(argument)
+}
 ```
 
-Hvis du kjører programmet ditt med `swift myProgram.swift arg1 arg2`, vil output se slik ut:
+Kjør programmet med `swift main.swift arg1 arg2 arg3`:
 
 ```Swift
-["myProgram.swift", "arg1", "arg2"]
+// Utdata
+/main.swift
+arg1
+arg2
+arg3
 ```
 
-## Deep Dive
+## Dypdykk
+Historisk sett har kommandolinjeargumenter vært en integrert del av mange programmeringsspråk, og Swift er ikke noe unntak. Alternativer til `CommandLine.arguments` inkluderer å bruke biblioteker som `Swift Argument Parser` for mer avansert parsing. Når det gjelder implementasjonsdetaljer: `CommandLine` er egentlig en forenklet wrapper rundt argc (argument count) og argv (argument vector), som er standard C-mekanismer for argumenthåndtering.
 
-Kommandolinjeargumenter har vært rundt siden tidlige dager av programmering, og er fortsatt sterkt brukt i dag. De gir en robust måte for brukere å interagere med programmet på. Mens det er andre alternativer, som å lage et grafisk brukergrensesnitt (GUI), gir kommandolinjeargumenter en enkel og direkte metode for input. 
-
-Implementeringdetaljer i Swift inkluderer det faktum at `CommandLine.arguments` returnerer en liste av strenger. Den første strengen vil alltid være programnavnet, og resten vil være argumentene gitt av brukeren.
-
-## Se Også
-
-Sjekk ut disse nyttige linkene for mer informasjon og eksempler:
-
-- Apple's Swift-programmeringsguide: [https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/)
+## Se også
+- [Swift Argument Parser GitHub](https://github.com/apple/swift-argument-parser)
+- [Apple's CommandLine Documentation](https://developer.apple.com/documentation/swift/commandline)

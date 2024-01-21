@@ -1,7 +1,8 @@
 ---
-title:                "Ein Datum in einen String umwandeln"
-html_title:           "Java: Ein Datum in einen String umwandeln"
-simple_title:         "Ein Datum in einen String umwandeln"
+title:                "Datum in einen String umwandeln"
+date:                  2024-01-20T17:37:24.682317-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Datum in einen String umwandeln"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,52 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why? (Was & Warum?)
+Datum in String umwandeln bedeutet, ein `Date`-Objekt in eine lesbare Zeichenkette zu verwandeln. Programmierer machen das, um Daten benutzerfreundlich anzuzeigen oder zu speichern.
 
-Die Konvertierung eines Datums in einen String ist eine Verfahren, in dem wir ein Datum in lesbare Textform bringen. Dies ermöglicht eine einfachere Darstellung und Handhabung von Daten in menschenlesenbare Formate.
+## How to (Wie geht's)
+```javascript
+const heute = new Date(); // Aktuelles Datum und Uhrzeit
 
-## So wird's gemacht:
+// Einfache Umwandlung in einen String
+const datumAlsString = heute.toString();
+console.log(datumAlsString); // z.B. "Mon Apr 03 2023 14:26:33 GMT+0200 (Central European Summer Time)"
 
-```Javascript
-let aktuellesDatum = new Date();
-let datumString = aktuellesDatum.toString();
+// In ein lokales Format umwandeln
+const lokalDatumString = heute.toLocaleDateString('de-DE');
+console.log(lokalDatumString); // "03.04.2023"
 
-console.log(datumString);
+// Uhrzeit dazu
+const lokalZeitString = heute.toLocaleTimeString('de-DE');
+console.log(lokalZeitString); // "14:26:33"
+
+// Datum und Uhrzeit zusammen in lokalem Format
+const lokalDatumZeitString = heute.toLocaleString('de-DE');
+console.log(lokalDatumZeitString); // "03.04.2023, 14:26:33"
+
+// ISO-8601-Format
+const isoString = heute.toISOString();
+console.log(isoString); // "2023-04-03T12:26:33.389Z"
 ```
 
-Die Ausgabe könnte so aussehen:
+## Deep Dive (Tieftauchen)
+Ursprünglich verwendeten Programmierer das `Date`-Objekt im ECMAScript (JavaScript-Standard) für Zeitangaben. Im Laufe der Zeit erkannte man den Bedarf für verschiedene Darstellungsformen, wie das ISO-Format oder lokalisierte Strings.
 
-```Javascript
-"Tue Mar 30 2021 14:20:58 GMT+0200 (Mitteleuropäische Sommerzeit)"
-```
+Zu den Alternativen gehört `Date.prototype.toDateString()` für nur das Datum und `Date.prototype.toTimeString()` für nur die Uhrzeit.
 
-Ebenso können wir das Datum nach gewünschtem Format konvertieren:
+Über die Implementierungsdetails: JavaScript-Engines nutzen das Internationalization API für `toLocaleString`-Methoden. Sie passen die Ausgabe an das gewählte Locale an, beispielsweise `de-DE` für Deutsch (Deutschland).
 
-```Javascript
-let aktuellesDatum = new Date();
-let datumString = aktuellesDatum.toDateString();
-
-console.log(datumString);
-```
-
-Die Ausgabe könnte so aussehen:
-
-```Javascript
-"Tue Mar 30 2021"
-```
-
-## Tiefere Eintauchen
-
-Historisch gesehen, begann die Vorstellung von Zeichenketten von Daten mit der Einführung von Hochsprachen, die menschenlesbare Codes verwenden. Ursprünglich haben Maschinensprachen nur mit Zahlen gearbeitet.
-
-Alternativen zur `toString()` Methode sind `toDateString()`, `toLocaleString()`, `toLocaleDateString()` und viele mehr, je nachdem welche Information und Format benötigt wird.
-
-Die Implementierung von Datum zu String-Konvertierung ist eine eingebaute JavaScript-Funktion und nicht in den Kern der Sprache eingebettet. Sie ruft einfach nur die Standard-Bibliotheksfunktion auf und gibt das Ergebnis zurück.
-
-## Siehe auch
-
-Weitere verwandte Ressourcen können unter diesen Links gefunden werden:
-
-1. MDN Web Docs: [Date.prototype.toString()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date/toString)
-2. JavaScript.info: [Date and time](https://javascript.info/date)
-3. Stack Overflow: [Mini-debate on toString()](https://stackoverflow.com/questions/3552461/how-to-format-a-javascript-date)
+## See Also (Siehe auch)
+- MDN Web Docs zu `Date`: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date
+- ISO 8601 Format Info: https://www.iso.org/iso-8601-date-and-time-format.html
+- ECMAScript 2022 Sprachspezifikation: http://www.ecma-international.org/publications/standards/Ecma-262.htm

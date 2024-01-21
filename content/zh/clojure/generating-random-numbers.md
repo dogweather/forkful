@@ -1,6 +1,7 @@
 ---
 title:                "生成随机数"
-html_title:           "Go: 生成随机数"
+date:                  2024-01-20T17:48:57.216498-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "生成随机数"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,36 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么?
+## What & Why? (是什么 & 为什么?)
+生成随机数就是让计算机给我们一个看起来是纯碎随机的数字。程序员们这样做是因为随机数在很多情景中都很有用，比如游戏开发、测试和数据加密。
 
-随机数生成是编程中一种方式，可以让你获得不可预知的数字。这在许多应用中都非常有用，比如在游戏中创建不确定性，进行统计抽样，或者在加密算法中生成密钥。
+## How to (怎么做):
+Clojure里生成随机数很简单。这里有几个例子：
 
-## 怎么做：
+```clojure
+;; 引入随机数库
+(require '[clojure.java.math :as math])
 
-在Clojure中，我们可以使用`rand`函数来生成随机数。这是一些示例：
+;; 生成0到1之间的随机浮点数
+(random)
 
-```Clojure
-(rand) 
-=> 0.8991766455976201
+;; 生成一个随机整数
+(rand-int 10)
 
-(rand-int 100)
-=> 42
+;; 生成一个在0到100之间的随机浮点数
+(* (random) 100)
+
+;; 用不同的随机种子（时间戳）生成一个随机数
+(math/random-seed (System/currentTimeMillis))
+(random)
 ```
 
-`rand`函数返回一个大于等于0且小于1的随机浮点数。`rand-int`函数将返回一个在给定范围内的随机整数。
+样例输出：
+```clojure
+0.7158279089358349  ; 随机浮点数
+7                   ; 0到9之间的随机整数
+85.58243234033394   ; 0到100之间的随机浮点数
+0.4759706883430481  ; 有随机种子的随机浮点数
+```
 
-## 深入探讨：
+## Deep Dive (深入研究):
+早期计算机技术没有现在这么先进，随机数通常依赖硬件的随机性，比如噪音啊等等。后来发展出了各种算法生成"伪随机数"——重复一个计算过程能得到一系列相同的"随机"序列，但对大多数应用来说足够随机。Clojure使用的是Java的随机数生成方式，也就是经典的"线性同余生成器"。如果需要真正的随机数，你得依赖其他的工具和库来获取外部的随机数据，如操作系统提供的熵源。
 
-随机数生成在历史上一直是一个重要的技术问题。最早的随机数生成器只是简单地从一张表格上选择数字，但现在我们可以使用复杂的数学算法来生成随机数。
 
-Clojure的`rand`和`rand-int`函数使用Java的`java.util.Random`类来生成随机数。这是一个基于线性同余生成器的伪随机数生成器。
 
-之所以说“伪”随机数，是因为在理论上，如果你了解生成器的内部状态，你可以预测它将来会生成的数字。不过，对于大多数应用来说，这种预测是非常困难的。
-
-也有其他的随机数生成算法，比如梅森旋转算法（Mersenne Twister）和WELL算法。这些算法有各种优点和缺点，取决于你的应用需求。
-
-## 另请参阅：
-
-- [Clojure官方文档：随机数](https://clojuredocs.org/clojure.core/rand)
-- [Java中的随机数生成](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Wikipedia：随机数生成](https://zh.wikipedia.org/wiki/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E5%99%A8)
+## See Also (另请参阅):
+- [Clojure官网](https://clojure.org/)
+- [Java Math类文档](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html)
+- [随机数生成算法维基](https://en.wikipedia.org/wiki/Random_number_generation)

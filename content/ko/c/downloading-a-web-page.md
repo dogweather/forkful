@@ -1,6 +1,7 @@
 ---
 title:                "웹 페이지 다운로드하기"
-html_title:           "Bash: 웹 페이지 다운로드하기"
+date:                  2024-01-20T17:43:28.433881-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "웹 페이지 다운로드하기"
 programming_language: "C"
 category:             "C"
@@ -10,51 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-웹 페이지 다운로드는 특정 웹 페이지의 데이터를 로컬 컴퓨터에 저장하는 것입니다. 이는 웹 스크래핑, 데이터 마이닝 또는 오프라인 브라우징 등을 위해 프로그래머들이 사용합니다.
+## What & Why? (무엇을, 왜?)
+웹 페이지 다운로드란 인터넷에서 문서나 데이터를 내 컴퓨터로 불러오는 것입니다. 프로그래머들은 자동화, 데이터 수집, 또는 테스팅을 위해 이 작업을 수행합니다.
 
-## 만들기:
-이 단순한 프로그램은 libcurl 라이브러리를 사용하여 웹 페이지를 다운로드합니다. 이 예제에서는 google.com 페이지를 다운로드합니다.
+## How to: (방법)
+C언어에서 웹 페이지를 다운로드하기 위해 libcurl 라이브러리를 사용할 수 있습니다. 아래의 예제 코드를 확인해 보세요.
 
-```C
+```c
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main(void)
-{
-	CURL *curl;
-	CURLcode res;
+size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
+    size_t written = fwrite(ptr, size, nmemb, stream);
+    return written;
+}
 
-	curl_global_init(CURL_GLOBAL_DEFAULT);
-	curl = curl_easy_init();
-
-	if(curl) {
-		curl_easy_setopt(curl, CURLOPT_URL, "https://www.google.com");
-
-		/* 요청 수행 */
-		res = curl_easy_perform(curl);
-		/* 오류 확인 */
-		if(res != CURLE_OK)
-			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-
-		/* 마지막으로 curl 사용 정리 */
-		curl_easy_cleanup(curl);
-	}
-	curl_global_cleanup();
-
-	return 0;
+int main(void) {
+    CURL *curl;
+    FILE *fp;
+    CURLcode res;
+    char *url = "http://example.com";
+    char outfilename[FILENAME_MAX] = "downloaded_page.html";
+    
+    curl = curl_easy_init();
+    if (curl) {
+        fp = fopen(outfilename,"wb");
+        curl_easy_setopt(curl, CURLOPT_URL, url);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+        res = curl_easy_perform(curl);
+        /* Check for errors */
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                    curl_easy_strerror(res));
+        }
+        /* Cleanup */
+        curl_easy_cleanup(curl);
+        fclose(fp);
+    }
+    return 0;
 }
 ```
-컴파일 및 실행 결과, 프로그램은 google.com의 소스 코드를 출력합니다.
 
-## 깊이 이해하기:
-웹 페이지 다운로드는 월드 와이드 웹의 초기 시절부터 있었습니다. 이 기술은 데이터를 분석하거나, 웹 페이지의 사본을 저장하거나, 인터넷 연결 없이 웹 페이지를 브라우징하려는 등 다양한 이유로 사용되었습니다.
+당신의 프로그램은 `downloaded_page.html`에 웹 페이지의 내용을 저장할 것입니다.
 
-다른 언어 또는 도구를 사용하여 웹 페이지를 다운로드할 수도 있습니다. 파이썬의 requests 라이브러리나 자바의 HttpUrlConnection과 같은 것들이 있습니다. C에서는 libcurl이 가장 대중적인 라이브러리입니다.
+## Deep Dive (심층 분석)
+libcurl은 전 세계적으로 널리 사용되는 멀티프로토콜 파일 전송 라이브러리입니다. 이는 2000년대 초반에 등장하였고, 다양한 프로토콜(예: HTTP, HTTPS, FTP)을 지원합니다. libcurl은 이식성이 좋아서 여러 운영 체제에서 사용할 수 있습니다. 
 
-libcurl은 다양한 인터넷 프로토콜 지원하며 쿠키 처리, 인증, 프록시 등의 기능을 제공합니다. 이 예에서는 가장 기본적인 GET 요청을 보여줍니다.
+다른 방법으로는 소켓 프로그래밍을 사용해 HTTP 프로토콜을 직접 구현하는 것도 가능합니다. 그러나 libcurl은 이미 이런 복잡한 작업을 처리해주기 때문에 여러 개발자들에게 선호됩니다. 
 
-## 참고 링크:
+구현할 때는 네트워크 연결의 성공 여부, 데이터 인코딩, 에러 처리 등을 고려해야 합니다. libcurl은 이런 세부사항들을 추상화시켜서 간단하게 웹 컨텐츠를 다운로드할 수 있게 해줍니다.
+
+## See Also (관련 정보)
 - libcurl 공식 문서: https://curl.haxx.se/libcurl/c/
-- 웹 스크래핑에 대한 위키백과 기사: https://ko.wikipedia.org/wiki/웹_스크레이핑
-- C 프로그래밍에 대한 정보: https://ko.wikipedia.org/wiki/C_(프로그래밍_언어)
+- Wikipedia libcurl 페이지: https://en.wikipedia.org/wiki/CURL
+- C언어 소켓 프로그래밍: https://www.geeksforgeeks.org/socket-programming-cc/
+
+이러한 자료들을 통해 좀 더 심층적으로 웹 페이지 다운로드에 대해 배울 수 있습니다.

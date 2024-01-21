@@ -1,7 +1,8 @@
 ---
-title:                "Tilapäisen tiedoston luominen"
-html_title:           "Arduino: Tilapäisen tiedoston luominen"
-simple_title:         "Tilapäisen tiedoston luominen"
+title:                "Väliaikaistiedoston luominen"
+date:                  2024-01-20T17:40:08.928034-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Väliaikaistiedoston luominen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,38 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Temp-tiedoston luonti on väliaikaisten, usein kertakäyttöisten tiedostojen tekemistä. Ohjelmoijat käyttävät niitä esimerkiksi datan väliaikaissäilytykseen tai testitilanteissa.
 
-Tilapäiset tiedostot ovat väliaikaisia tiedostoja, joita ohjelmoijat luovat tiedon varastoimiseksi lyhytaikaiseen käyttöön. Niitä käytetään usein, kun meillä on suuria tietomääriä, joita ei voi tai ei haluta pitää muistissa kerralla.
-
-## Miten:
-
-Katso allaolevaa Fish Shellin esimerkkikoodia muistilapputiedoston syntymisen näkemiseksi.
-
+## How to: (Kuinka tehdä:)
 ```Fish Shell
-# Luodaan väliaikainen tiedosto
-set tmpfile (mktemp)
+# Luo väliaikainen tiedosto
+set tmp_file (mktemp)
 
-# Käytetään väliaikaista tiedostoa
-echo "Hei maailma" > $tmpfile
-cat $tmpfile
+# Käytä tiedostoa
+echo 'Tämä on testi' > $tmp_file
+
+# Tulostetaan väliaikaisen tiedoston sisältö
+cat $tmp_file
+
+# Poista väliaikainen tiedosto lopuksi
+rm $tmp_file
 ```
 
-Koodin tuloste olisi jotain seuraavanlaista:
-
-```Fish Shell
-Hei maailma
+Tulostus näyttäisi tältä:
+```
+Tämä on testi
 ```
 
-## Syvempi sukellus:
+## Deep Dive (Syväsukellus)
+Fish Shell käyttää `mktemp`-ohjelmaa väliaikaisten tiedostojen luontiin. Se on UNIX-standardi ja löytyy useimmista käyttöjärjestelmistä. Vaihtoehtoisesti voitaisiin käyttää `tmpfile()`-funktiota C-ohjelmoinnissa, mutta Fishissä `mktemp` on kätevä ja nopea. Tärkeää on muistaa poistaa temp-tiedostot, etteivät ne täytä levytilaa.
 
-Väliaikaisten tiedostojen syntymisen idea on ollut käytössä pitkään, ja se on nähnyt monia toteutustapoja eri ympäristöissä. Fish Shell käyttää `mktemp`-komentoa, joka on peräisin Unix-järjestelmistä. Se on suora ja yksinkertainen tapa luoda väliaikainen tiedosto.
-
-On olemassa useita vaihtoehtoja, mukaan lukien `/dev/shm` tai muita ns. RAM-levyjä. Kaikilla on etunsa ja haittansa, riippuen tietysti käyttötarkoituksesta.
-
-Tiedostojen luonti Fish Shellissä on varsin suoraviivaista. `mktemp`-komento luo uuden väliaikaisen tiedoston ja palauttaa sen polun, jonka voimme sitten tallentaa muuttujaan.
-
-## Katso myös:
-
-- Fish Shell -käyttöopas: https://fishshell.com/docs/current/index.html
-- Väliaikaisten tiedostojen käyttö Unix-järjestelmissä: https://unix.stackexchange.com/questions/84991/benefits-of-mktemp-over-dev-shm
+## See Also (Katso Myös)
+- Fish Shell Documentation: https://fishshell.com/docs/current/index.html
+- UNIX `mktemp` Manual Page: https://man7.org/linux/man-pages/man1/mktemp.1.html
+- Bash vs. Fish Shell Differences: https://www.2daygeek.com/bash-vs-fish-shell-differences/

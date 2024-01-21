@@ -1,7 +1,8 @@
 ---
-title:                "ランダムな数字の生成"
-html_title:           "C#: ランダムな数字の生成"
-simple_title:         "ランダムな数字の生成"
+title:                "ランダム数の生成"
+date:                  2024-01-20T17:48:30.459750-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "ランダム数の生成"
 programming_language: "C"
 category:             "C"
 tag:                  "Numbers"
@@ -10,13 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何とその理由？)
+ランダム数生成とは予測不可能な数を作るプロセスだ。プログラマーはゲーム、シミュレーション、セキュリティ等で必要とするためにこの技術を使う。
 
-乱数生成とは、何らかの一貫性なく値を発生させるプロセスのことです。これは、ゲームの中で事象をランダムに発生させたり、暗号化に必要なキーを生成したりするためにプログラマーが行います。
-
-## 実施方法：
-
-以下は、Cプログラムの中で乱数を生成する基本的な方法です：
+## How to: (やり方)
+C言語でのランダム数生成例を見てみよう。まず、`stdlib.h`をインクルードし、`rand()`を使う。シード値は一般的には`time(NULL)`を`unsigned`にキャストして`unsigned`の`rand()`に容易に使用する`srand()`で設定される。
 
 ```C
 #include <stdio.h>
@@ -24,25 +23,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 #include <time.h>
 
 int main() {
-   // シード値初期化
-   srand(time(0));
+    // 初期化
+    srand((unsigned int)time(NULL));
 
-   // 生成した乱数を出力
-   printf("%d\n", rand());
-   
-   return 0;
+    // ランダムな数の生成
+    int random_number = rand() % 50;  // 0-49までの数
+    printf("Random Number: %d\n", random_number);
+
+    return 0;
 }
 ```
 
-上記コードの出力は、ある一貫性のない数値です。つまり、それは乱数です。
+サンプル出力:
+```
+Random Number: 23
+```
 
-## 深堀り：
+## Deep Dive (掘り下げ)
+最初の`rand()`は1969年のUnixの一部として出てきた。それ以来、様々な方法が開発された。`rand()`は簡単だが、予測可能なのでセキュリティが必要な場面では避けるべきだ。代わりに、POSIXで定義されているより強力な`random()`や`/dev/random`、`/dev/urandom`をLinuxで使う方法、または最新のC標準であるC11に登場した`<stdalign.h>`内の`alignof`と`<stdnoreturn.h>`内の`noreturn`のような新機能もある。
 
-乱数生成の初めての主流な方針は、1960年代に発表されました。現在、C言語の`rand()`関数と`srand()`関数を使用するのが一般的です。他方、より高度な乱数生成のニーズには、`random()`や`drand48()`関数が使用されますが、これらは`rand()`よりも少し複雑です。
-
-生成される乱数は、シーケンスを開始する「シード」値に依存します。一般に、シード値として現在の時刻を使用することが多いです。これは`time(0)`が返す値になります。
-
-## 参照資料：
-
-- C言語乱数の生成について更に学びたい方は、以下のリンクをご参照ください： https://www.ibm.com/docs/ja/i/7.4?topic=ssw_ibm_i_74/rzarg/rand.htm
-- 別のアプローチとして`random()`関数について学びたい方は、こちらのリンクが有用です： https://www.gnu.org/software/libc/manual/html_node/Simple-Random.html
+## See Also (関連情報)
+- C11標準書: http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf
+- Linux manページ (`random`について): https://linux.die.net/man/3/random
+- 疑似乱数と暗号学的に安全な乱数の違い: https://www.cse.wustl.edu/~jain/cse567-06/ftp/k_26rng.pdf

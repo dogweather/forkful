@@ -1,6 +1,7 @@
 ---
 title:                "Generowanie liczb losowych"
-html_title:           "Gleam: Generowanie liczb losowych"
+date:                  2024-01-20T17:49:28.045449-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generowanie liczb losowych"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,28 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Generowanie liczb losowych to proces tworzenia liczb, które nie mają żadnego dostrzegalnego wzorca czy przewidywalności. Programiści używają ich do tworzenia skomplikowanych algorytmów, gier, symulacji i wielu innych zastosowań, które potrzebują nieprzewidywalności.
+## What & Why? (Co i Dlaczego?)
+Generowanie losowych liczb to proces tworzenia nieprzewidywalnych wartości. Programiści wykorzystują je w kryptografii, grach, testowaniu oprogramowania i symulacjach.
 
-## Jak to zrobić:
-Tworzenie losowych liczb w Fish Shell jest proste jak bułka z masłem. Zwyczajnie użyj polecenia `random`.
+## How to: (Jak to zrobić:)
+W Fish Shell, używamy `random` do generowania losowych liczb.
 
 ```Fish Shell
-random 1 100
+echo (random)
 ```
-Zwróci losową liczbę między 1 a 100.
 
-Wyjście:
+Wygeneruje losową liczbę między 1 a 32767.
+
+Aby określić zakres:
+
 ```Fish Shell
-45
+echo (random 1 100)
 ```
-To jest tylko jeden przykład. Możesz dostosować dane wejściowe do swoich potrzeb.
 
-## Głębsze zanurzenie:
-Historia generowania liczb losowych w programowaniu jest zaskakująco bogata. Właściwie, losowość stała się kluczowym elementem w wielu dziedzinach informatyki. W przeciwieństwie do innych powłok Unixowych, takich jak bash czy zsh, Fish Shell korzysta z stosunkowo nowego systemu do generowania liczb pseudolosowych, który gwarantuje lepszą losowość. Alternatywą dla wbudowanej funkcji `random` jest użycie zewnętrznych narzędzi, takich jak /dev/random lub /dev/urandom. 
+Wygeneruje losową liczbę między 1 a 100.
 
-Szczegółowo, `random` w Fish Shell działa poprzez wykorzystanie wewnętrznej funkcji `rand()`, która zwraca liczbę pseudolosową. Ale pamiętaj, że jest to pseudolosowość, co oznacza, że nie jest to prawdziwa losowość i nie powinna być używana w przypadkach, które wymagają prawdziwej losowości, takich jak kryptografia.
+Można też generować więcej niż jedną liczbę na raz:
 
-## Zobacz również:
-- [Oficjalna dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Wikipedii na temat generowania liczb pseudolosowych](https://pl.wikipedia.org/wiki/Generator_liczb_pseudolosowych)
+```Fish Shell
+echo (random 1 100 5)
+```
+
+Wygeneruje 5 losowych liczb w zakresie od 1 do 100.
+
+## Deep Dive (Dogłębna analiza)
+Fish używa pseudolosowej generatora liczb (PRNG), który inicjalizowany jest wartością startową (seed) – zwykle bieżącym czasem. W przeszłości `random` mógł być mniej przewidywalny. W innych językach i systemach do generowania liczb losowych używa się innych narzędzi, takich jak `/dev/random` w systemach Unix czy `rand()` w języku C.
+
+Istotnym aspektem jest jakość generowanych liczb losowych – nie wszystkie PRNG są odpowiednie do każdego zastosowania. Na przykład, do zastosowań kryptograficznych potrzebne są generatory liczb losowych o wysokim stopniu nieprzewidywalności.
+
+## See Also (Zobacz również)
+- Dokumentacja Fish Shell na temat `random`: https://fishshell.com/docs/current/cmds/random.html
+- Porównanie generatorów liczb losowych: https://en.wikipedia.org/wiki/Comparison_of_hardware_random_number_generators
+- Informacje o PRNG w kontekście kryptografii: https://www.schneier.com/academic/archives/1996/01/pseudorandom_number.html

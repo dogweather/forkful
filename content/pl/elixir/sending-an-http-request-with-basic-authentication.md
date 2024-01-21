@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie zapytania http z podstawową autoryzacją"
+date:                  2024-01-20T18:01:36.128761-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -12,34 +13,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem to kwestia przesyłania identyfikatora użytkownika i hasła jako część żądania HTTP. Programiści robią to, by uzyskać dostęp do zabezpieczonych zasobów.
+Wysyłanie żądania HTTP z podstawową autentykacją to metoda zabezpieczenia, dzięki której serwer może zweryfikować tożsamość użytkownika za pomocą loginu i hasła. Programiści używają tego mechanizmu, aby ograniczyć dostęp do zasobów na serwerze tylko dla upoważnionych użytkowników.
 
 ## Jak to zrobić:
 
-W Elixir, możemy użyć takich bibliotek jak HTTPoison do wysyłania żądań HTTP. Dla podstawowego uwierzytelnienia, przygotowujemy 'header' z identyfikatora użytkownika i hasła, zakodowane w base64.
+Aby wysłać żądanie HTTP z podstawową autentykacją w Elixirze, możesz użyć biblioteki HTTP klienta, np. `HTTPoison`. Poniżej znajdziesz przykład kodu wraz z przykładową odpowiedzią serwera.
 
 ```elixir
-defmodule MyHTTPClient do
-  def get(url, username, password) do
-    headers = [{"Authorization", "Basic #{:base64.encode_to_string("#{username}:#{password}")}"}]
-    HTTPoison.get(url, headers)
-  end
+# Musisz dodać HTTPoison do twojej listy zależności w mix.exs
+defp deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
 end
 
-{:ok, response} = MyHTTPClient.get("http://example.com", "user", "pass")
-IO.inspect(response.status_code)
+def send_request_with_basic_auth do
+  auth_header = encode_credentials("username", "password")
+
+  HTTPoison.get(
+    "http://example.com/protected/resource", 
+    [{"Authorization", auth_header}]
+  )
+end
+
+defp encode_credentials(username, password) do
+  "Basic " <> Base.encode64("#{username}:#{password}")
+end
 ```
 
-## Głębsze spojrzenie:
+Po uruchomieniu `send_request_with_basic_auth/0` otrzymasz tuple z odpowiedzią lub błędem:
 
-Historia podstawowego uwierzytelnienia sięga czasów, kiedy protokół HTTP był jeszcze w początkowej fazie rozwoju. Dziś jest to jedna z najprostszych form uwierzytelnienia, ale nie jest zalecana do używania bez szyfrowania TLS/SSL ze względu na potencjalne naruszenie bezpieczeństwa.
+```elixir
+{:ok, %HTTPoison.Response{status_code: 200, body: body}} # Sukces
+{:error, %HTTPoison.Error{reason: reason}} # Błąd
+```
 
-Alternatywą dla podstawowego uwierzytelnienia jest uwierzytelnienie za pomocą tokenu, takie jak JWT (JSON Web Token), który jest bardziej bezpieczny i oferuje więcej funkcji.
+## Deep Dive
 
-Szczegóły implementacji w Elixir sprowadzają się do tworzenia 'headera' uwierzytelnienia, kodując dane uwierzytelniające do base64, a następnie dodając je do żądania HTTP.
+Podstawowa autentykacja (basic auth) jest prostym mechanizmem kontrolującym dostęp, stosowanym w protokole HTTP już od wczesnych lat jego istnienia. Alternatywnymi metodami są OAuth, API keys czy JWT (JSON Web Tokens), które oferują różne poziomy bezpieczeństwa i wygody.
 
-## Zobacz też:
+Implementacja podstawowej autentykacji w Elixirze jest bezpośrednia: zakoduj login i hasło w formacie Base64, dołącz jako nagłówek `Authorization` w twoim żądaniu HTTP. Warto zwrócić uwagę, że metoda ta przesyła dane uwierzytelniające w przesyłalnych tekstach, co nie jest rekomendowane na produkcji bez SSL/TLS.
 
-1. [HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.html): Dokumentacja biblioteki HTTPoison.
-2. [Base64](https://hexdocs.pm/elixir/Base.html): Moduł Base64 w Elixir.
-3. [Uwierzytelnianie JWT](https://jwt.io/): Informacje o JWT, alternatywie dla podstawowego uwierzytelnienia.
+Ważne jest również zrozumienie, że wiele bibliotek HTTP w Elixirze, takich jak HTTPoison czy Tesla, oferują wewnętrzne wsparcie dla autentykacji, więc nie musisz ręcznie kodować nagłówków.
+
+## Zobacz również
+
+- Dokumentacja HTTPoison: https://hexdocs.pm/httpoison/HTTPoison.html
+- OAuth 2.0 guide: https://oauth.net/2/
+- Przykład użycia JWT w Elixirze: https://github.com/joken-elixir/joken
+- Elixir School – lekcje o HTTP klientach: https://elixirschool.com/pl/lessons/libraries/http_clients/

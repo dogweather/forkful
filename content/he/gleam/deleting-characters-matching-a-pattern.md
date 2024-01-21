@@ -1,6 +1,7 @@
 ---
 title:                "מחיקת תווים התואמים לתבנית"
-html_title:           "Elixir: מחיקת תווים התואמים לתבנית"
+date:                  2024-01-20T17:42:29.483565-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "מחיקת תווים התואמים לתבנית"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,42 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-מחיקת תווים לפי תבנית היא פעולה בה מוחק המתכנת תווים מסוימים מתוך מחרוזת. זה מועיל לניקוי ועיבוד נתונים, כמו שינוי פורמט המחרוזת או הסרת תווים לא רצויים. 
+## What & Why? (מה ולמה?)
+מחיקת תווים לפי תבנית היא פשוט לסנן מחרוזת כדי להשאיר רק את התווים שאתה רוצה. תכניתנים עושים את זה כדי לנקות קלט, להסיר תווים לא רצויים, או לאחד נתונים לפורמט סטנדרטי.
 
-## איך:
-כאן יש דוגמאות לקוד שמראות איך למחוק תווים התואמים לתבנית ממחרוזת בשפת Gleam.
+## How to: (איך לעשות:)
+```gleam
+import gleam/string
 
-```Gleam
-import gleam/string.{from_tuple, fold, from}
-
-fn delete_pattern(text: String, pattern: String) -> String {
-  fold(from_tuple(String.to_tuple(text)),
-    fn(_, accumulator) {
-      case from(pattern) {
-        Ok(_) -> accumulator
-        Error(_) -> append(from_tuple(accumulator), _)
-      }
-    },
-    ""
-  )
+fn remove_pattern(text: String, pattern: String) -> String {
+  string.replace(text, pattern, "")
 }
 
-let text = "Hello, Gleam programmers!"
-let pattern = ","
-
-// remove commas
-delete_pattern(text, pattern)  //-> "Hello Gleam programmers!"
+pub fn main() {
+  let text = "הֵן כָּל-הַדְּבָרִים!"
+  let cleaned_text = remove_pattern(text, "-")
+  println(cleaned_text)  // יוצא "הֵן כָּלהַדְּבָרִים!"
+}
 ```
+זהו דוגמה פשוטה שמראה איך להסיר תבנית ממחרוזת.
 
-## צוללים לעומק
-למרות שהפונקציה `delete_pattern` שיצרנו בקוד שלנו מתאימה למחיקת תווים מסוימים, ישנם דרכים אחרות להשיג את אותו התוצאה בשפת Gleam. 
+## Deep Dive (עיון מעמיק)
+מחיקת תווים לפי תבנית היא טכניקה שבאה מהעולם של עיבוד טקסט וביטויים רגולריים שהחלו בשנות ה-60. ישנם דרכים אחרות לעבד מחרוזות, כמו חיתוך, חלוקה, או באמצעות ביטויים רגולריים מורכבים יותר. ב-Gleam, כמו בשפות תכנות אחרות, יעילות הטיפול במחרוזות תלויה באלגוריתמים של מנועי המחרוזות ואיך הם מיושמים בליבה של השפה.
 
-במקרה מסויים, ניתן לשקול להשתמש בפונקציות ושיטות אחרות כמו `filter`, `replace` ו`reduce`. בדרך כלל, הבחירה בין האפשרויות הללו מתבצעת לפי הדרישות הספציפיות של המשימה. 
+## See Also (ראה גם)
+- [Regular Expressions in Programming](https://en.wikipedia.org/wiki/Regular_expression)
+- [Effective String Processing and Manipulation in Gleam](https://gleam.run/book/tour/strings)
 
-## ראו גם
-שפת Gleam מקנה למתכנתים כמה שיטות לעבוד עם מחרוזות. ניתן למצוא מידע נוסף על השימוש במחרוזות בGleam בכתובות האינטרנט הבאות: 
-
-1. (Gleam String API)[https://docs.gleam.run/stdlib/string/]
-2. (GitHub - Gleam Cookbook)[https://github.com/gleam-lang/gleam-cookbook#string] 
-3. (Gleam String tutorial)[https://gleam.run/book/tour/strings.html]
+בסוף, חשוב לזכור שהדוגמאות כאן פשוטות ולמצבים מורכבים יותר כדאי ללמוד עוד ולהשתמש בכלים מתקדמים יותר, כמו ביטויים רגולריים.

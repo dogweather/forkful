@@ -1,6 +1,7 @@
 ---
 title:                "Ricerca e sostituzione del testo"
-html_title:           "Arduino: Ricerca e sostituzione del testo"
+date:                  2024-01-20T17:57:37.809121-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Ricerca e sostituzione del testo"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,31 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è & Perché?
-La ricerca e la sostituzione del testo sono due operazioni fondamentali nel mondo della programmazione, utilizzate per localizzare specifici segmenti di codice o dati e sostituirli con contenuti nuovi o corretti. I programmatori lo fanno per rifattorizzare il codice, correggere errori, o semplicemente per modificare l'output dei loro programmi.
+## What & Why?
+La ricerca e sostituzione di testo permette di trovare specifiche stringhe e cambiarle con altre. Programmatore lo fa per correggere errori, aggiornare dati o refactoring del codice—insomma, per risparmiare tempo.
 
-## Come fare:
-Fish Shell offre una funzione per cercare e sostituire testo, ecco un esempio:
+## How to:
+Ecco alcuni esempi su come cercare e sostituire del testo nella Fish Shell:
 
-```fish
-set frase "Ciao, mondo!"
-echo $frase | string replace -r 'mondo' 'universo'
+Cerca `vecchio` e sostituisci con `nuovo` in un file:
+
+```Fish Shell
+sed 's/vecchio/nuovo/g' file.txt > file_modificato.txt
 ```
 
-L'output sarà:
+Ricerca ricorsiva nel directory `code` e sostituzione in-place:
 
-```fish
-Ciao, universo!
+```Fish Shell
+grep -rl 'vecchio' code/ | xargs sed -i 's/vecchio/nuovo/g'
 ```
 
-Qui, abbiamo stabilito la stringa da manipolare ("Ciao, mondo!"), poi abbiamo usato 'string replace -r' per cercare il testo 'mondo' e sostituirlo con 'universo'.
+Output:
+```
+code/file1.txt: vecchio → nuovo
+code/subdir/file2.txt: vecchio → nuovo
+```
 
-## Approfondimento
-La ricerca e la sostituzione del testo sono state una parte fondamentale dell'editing del codice fin dagli albori della programmazione. Prima del Fish Shell, gli utenti Unix usavano comandi come 'sed' o 'awk' per eseguire queste operazioni.
+## Deep Dive
+La sostituzione di testo in Fish si appoggia spesso a sed e grep, comandi UNIX risalenti agli anni '70. Alternative includono strumenti come awk e perl, ma sed è il tradizionale and-to per la sua semplicità. Fish non complica troppo—bastano pochi comandi per lavori potenti.
 
-Un'alternativa a 'string replace' nel Fish Shell è 'string match'. Questo comando può essere utilizzato per trovare corrispondenze di pattern piuttosto che sostituire testo.
-
-Nel contesto di implementazione, 'string replace' nel Fish Shell è implementato come una funzione builtin. Questo significa che la funzione è incorporata nella shell stessa, rendendo il comando più veloce e più efficiente da usare.
-
-## Altro da vedere
-Per ulteriori dettagli sul comando 'string replace' e su altri comandi di manipolazione di stringhe in Fish Shell, consultare la documentazione ufficiale a [questo link](https://fishshell.com/docs/current/commands.html#string). Per una panoramica completa di Fish Shell e delle sue funzionalità, si consiglia di consultare il [manual page](https://fishshell.com/docs/current/index.html).
+## See Also
+- La pagina man di `sed`: https://www.gnu.org/software/sed/manual/sed.html
+- Fish Shell documentazione: https://fishshell.com/docs/current/index.html
+- Tutorial di `grep`: https://www.gnu.org/software/grep/manual/grep.html
+- Introduzione a `awk`: https://www.gnu.org/software/gawk/manual/gawk.html

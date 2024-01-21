@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Bash: Merkkijonon interpolointi"
+date:                  2024-01-20T17:50:39.852104-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,33 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mikä & Miksi?)
+Interpolointi yhdistää muuttujat ja tekstiä yhdeksi merkkijonoksi. Koodarit hyödyntävät tätä luodakseen dynaamista dataa tai viestejä käyttäjille.
 
-Interpoloiminen on koodauskikka, jossa muuttujan arvo sijoitetaan suoraan merkkijonoon. Se tekee ohjelmoinnista huomattavasti sujuvampaa, koska erillisiä kutsuja muuttujan arvon muuntamiseksi merkkijonoksi ei tarvita.
+## How to: (Kuinka tehdä:)
+```Fish Shell
+# Aseta muuttuja
+set name 'Maailma'
 
-## Miten Näin:
+# Interpoloi merkkijonoon
+echo "Hei, $name!"
+
+# Tulostus: Hei, Maailma!
+```
 
 ```Fish Shell
-# Muuttujan luominen
-set kala "Fish Shell"
-
-# Merkkijonon Interpolointi
-echo "Opetellaan $kala"
-
-# Tulostaa: Opetellaan Fish Shell
+# Komennon tuloksen interpolointi
+set listaa (ls)
+echo "Hakemistossa on seuraavat tiedostot: $listaa"
 ```
-Helppoa kuin heinänteko, eikö vain?
 
-## Syvempi Sukellus:
+## Deep Dive (Sukelletaan Syvemmälle)
+Fish Shell tekee interpoloinnin selkeäksi eikä vaadi lainausmerkkien kanssa jonglööraamista kuten joissakin muissa kuorissa. Historiallisesti merkkijonojen interpolointi juontaa juurensa varhaisiin ohjelmointikieliin ja skriptausympäristöihin, jotka sallivat dynaamisen tekstin koonnin ohjelman suorituksen aikana.
 
-(1) Historia: Interpoloinnin konsepti on läsnä useissa ohjelmointikielissä, kuten Pythonissa, Rubyssa ja nyt myös Fish Shellissä.
+Eräs vaihtoehto Fishissä on käyttää `string` komentoja manipuloidakseen merkkijonoja, mutta suora interpolointi on usein sujuvampaa. Fish käsittelee muuttujat ja niiden arvot intuitiivisesti, erottaen selvästi muuttujan nimen ja ympäröivän tekstin. Interpolointi tapahtuu reaaliajassa, joten jos muuttujan arvo muuttuu, myös interpoloitu teksti päivittyy.
 
-(2) Vaihtoehdot: Fish Shellissä $-symbolin avulla voidaan suorittaa interpolointi, mutta muita ohjelmointikieliä varten on erilaisia metodeja.
-
-(3) Käyttö: Käytännössä, Fish Shell sijoittaa $-symbolin sisään kirjoitetun muuttujan arvon paikalleen ja käsittelee koko lauseen tai koodirivin yhtenä yksikkönä.
-
-## Katso Myös:
-
-Fish Shell dokumentaatio: [Fish Scripting Manual](https://fishshell.com/docs/current/index.html)
-
-Opi lisää merkkijonojen interpoloinnista: [Merkkijonojen interpolointi](https://www.baeldung.com/cs/string-interpolation)
+## See Also (Katso Myös)
+- Fish Shell dokumentaatio: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- Fish Shell Tutorial: [https://fishshell.com/docs/current/tutorial.html](https://fishshell.com/docs/current/tutorial.html)
+- String manipulation in Fish: [https://fishshell.com/docs/current/commands.html#string](https://fishshell.com/docs/current/commands.html#string)

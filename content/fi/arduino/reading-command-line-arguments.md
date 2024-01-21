@@ -1,7 +1,8 @@
 ---
-title:                "Komentorivin argumenttien lukeminen"
-html_title:           "Elm: Komentorivin argumenttien lukeminen"
-simple_title:         "Komentorivin argumenttien lukeminen"
+title:                "Komennoriviparametrien lukeminen"
+date:                  2024-01-20T17:55:53.843687-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Komennoriviparametrien lukeminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,33 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja Miksi?
+## What & Why? (Mitä ja Miksi?)
+Komennon riviargumentit mahdollistavat erilaisten arvojen syöttämisen ohjelmallesi sen käynnistyessä. Tämä auttaa tekemään ohjelmasta joustavamman, sillä voit muokata ohjelman toimintaa ilman koodin muuttamista.
 
-Komentoriviparametrien lukeminen tarkoittaa tietojen vastaanottamista käyttäjältä ohjelmaan. Tämä antaa ohjelmoijille mahdollisuuden lisätä joustavuutta ohjelmiinsa, säästäen samalla aikaa kompleksisten graafisten käyttöliittymien kehittämisessä.
+## How to: (Kuinka tehdään:)
+Arduino-ympäristössä ei käytetä perinteisiä komentoriviargumentteja kuten tietokoneen ohjelmissa, koska Arduino koodi ladataan mikrokontrollerille, ja se ei käynnisty komentoriviltä. Voit kuitenkin lukea syötteitä sarjaportin kautta, mikä toimii samankaltaisena ratkaisuna.
 
-## Kuinka Tehdään:
-
-```Arduino
+```
+Arduino
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(9600); // Käynnistä sarjaportti nopeudella 9600 bittiä sekunnissa
 }
 
 void loop() {
-  while (Serial.available() > 0) {
-    char c = Serial.read();  
-    Serial.println(c);
+  if (Serial.available() > 0) {
+    String inputData = Serial.readStringUntil('\n'); // Lue rivi
+    Serial.println("Syötteesi oli: " + inputData);
   }
 }
 ```
-Yllä olevassa koodissa Arduino lukee saapuvat merkit sarjaportista ja tulostaa ne takaisin. Tätä voidaan käyttää komentoriviparametrien lukemiseen.
 
-## Sukellus Syvemmälle
+Lähetä dataa Arduinolle Serial Monitorin kautta. Näet tulosteen:
+```
+Syötteesi oli: sinun_syöttämä_arvo
+```
 
-Alun perin komentoriviparametreja lukivat vain tekstipohjaiset ohjelmat, mutta nyt monimutkaisemmat graafiset ohjelmat voivat myös lukea ja käsitellä niitä. Vaihtoehtoisesti voidaan käyttää erilaisia tietoliikenneratkaisuja, kuten esimerkiksi TCP/IP-yhteyksiä parametrien siirtämiseen. Arduinon kannalta, komentoriviparametrien lukeminen toteutetaan lähinnä sarjaportin kautta.
+## Deep Dive (Syväsukellus):
+Arduinon maailmassa komentoriviargumenttien puute johtuu laitteiston rajoitteista – Arduinot eivät käynnisty perinteisessä mielessä eikä niissä ole käyttöjärjestelmää, joka hallinnoisi argumentteja. Vaihtoehtoisesti syötteiden käsittely tapahtuu sarjaportin kautta. Historiallisesti Arduinon ympäristö on keskittynyt helppoon käyttöönottoon ja yksinkertaiseen I/O-toimintaan. Siksi sarjaportti on jäänyt pääasialliseksi tavaksi syötteen vastaanottamiselle ja prosessoinnille. 
 
-## Katso Myös
+Sarjaportti on kuitenkin tehokas työkalu datan siirtämiseen Arduinon ja tietokoneen tai muiden laitteiden välillä. Se mahdollistaa tietynlaisten argumenttien "simuloinnin" lähettämällä syötteitä ohjelman suorituksen aikana.
 
-Arduino-ohjelmointiin liittyvät linkit, mukaan lukien lisätietoja sarjaportin kautta tapahtuvasta komentoriviparametrien lukemisesta:
-
-1. [Arduino Sarjaväylän Käyttö](https://www.arduino.cc/en/Tutorial/BuiltInExamples/SerialEvent)
-2. [Komentoriviparametrit C++ -ohjelmassa](https://www.cplusplus.com/articles/DEN36Up4/)
+## See Also (Katso Myös):
+- Arduinon virallinen sarjaportti ohjeistus: https://www.arduino.cc/reference/en/language/functions/communication/serial/
+- Esimerkkejä sarjaportin käytöstä datan siirrossa: https://www.arduino.cc/en/Tutorial/BuiltInExamples/SerialEvent
+- Tietoa Arduinon I/O-toiminnoista: https://www.arduino.cc/en/Reference/BoardGPIO

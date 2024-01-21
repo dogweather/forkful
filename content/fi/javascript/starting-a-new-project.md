@@ -1,7 +1,8 @@
 ---
-title:                "Aloittaminen uuden projektin"
-html_title:           "C: Aloittaminen uuden projektin"
-simple_title:         "Aloittaminen uuden projektin"
+title:                "Uuden projektin aloittaminen"
+date:                  2024-01-20T18:03:59.534442-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Getting Started"
@@ -10,51 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mitä & Miksi?
+Aloitettaessa uusi projekti, luot pohjan koodille. Programmoijat aloittavat uusia projekteja testatakseen ideoita, ratkaistakseen ongelmia tai kehittääkseen taitojaan.
 
-Uuden projektin aloittaminen ohjelmoinnissa tarkoittaa uuden sovelluksen tai järjestelmän kehittämistä, joka voidaan toteuttaa tyhjästä tai aiemmin luotujen pohjien päälle. Ohjelmoijat aloittavat uusia projekteja tarjoamaan ratkaisuja erilaisiin ongelmiin tai luomaan uusia toiminnallisuuksia.
+## How to: - Näin teet:
+Aloita luomalla uusi kansio ja alustamalla Node-projekti:
 
-## Näin se tehdään:
-
-```Javascript
-// Luo uusi projekti Node.js:ssä: 
-
-// 1. Asenna ensin Node.js & npm (Node Package Manager) omalle tietokoneellesi.
-// 2. Avaa komentorivi ja navigoi haluamaasi kansioon
-// 3. Luo uusi projekti kirjoittamalla komento "npm init"
-
-// Tämä komento luo uuden tiedoston nimeltä "package.json", joka sisältää kaikki projektisi tarvittavat tiedot.
-
+```javascript
+mkdir my-new-project
+cd my-new-project
+npm init -y
 ```
 
-```Javascript
-// Luo uusi projekti React.js:ssä:
+Tämä luo `package.json` tiedoston. Sitten voit asentaa paketteja ja kirjoittaa ensimmäisen kooditiedoston, esim. `index.js`:
 
-// 1. Asenna ensin Node.js & npm, jos et ole vielä tehnyt niin
-// 2. Avaa komentorivi ja navigoi haluamaasi kansioon
-// 3. Luo uusi React-projekti kirjoittamalla komento "npx create-react-app projekti-nimi"
-
-// Tämä komento luo uuden kansion nimeltään "projekti-nimi", joka sisältää kaikki tarvittavat tiedostot React-sovelluksellesi.
+```javascript
+// index.js
+console.log('Projektin aloitus onnistui!');
 ```
 
-## Syvällisempi sukellus
+Suorita koodi komennolla:
 
-Node.js on avoimen lähdekoodin ohjelmistokehys, joka julkaistiin ensimmäisen kerran vuonna 2009 ja joka on suunniteltu kehittämään nopeita ja skaalautuvia verkkosovelluksia. 
+```javascript
+node index.js
+```
 
-Vaihtoehtoisesti voit käyttää muita Javascript-pohjaisia kehyksiä, kuten Express.js tai Meteor.js, tai eri ohjelmointikieliä ja niiden kehyksiä, kuten Pythonin Django tai Rubyn Ruby on Rails. 
+Näet tulosteen:
 
-Kun aloitat uuden projektin Node.js:ssä tai React.js:ssä, kehys asentaa useita oletusympäristöjä ja riippuvuuksia, jotka auttavat nopeuttamaan projektin kehitystä.
+```
+Projektin aloitus onnistui!
+```
 
-## Katso myös
+## Deep Dive - Sukellus syvälle:
+Projektin alustaminen Javascriptissa on nykyään yksinkertaista. Historiallisesti kaikki alustettiin käsin, mikä oli työlästä. Nykyään ympäristöjä kuten Node.js ja paketinhallintajärjestelmiä kuten npm ja Yarn tekevät prosessista nopeaa ja vaivatonta.
 
-[Node.js:n viralliset dokumentit](https://nodejs.org/en/docs/)
+Vaihtoehtoisia työkaluja ovat esimerkiksi Create React App tai Vue CLI, jotka alustavat projekteja spesifeille kirjastoille. Käyttäessäsi näitä, saat mukana laajemman infrastruktuurin ja hyvät oletusasetukset.
 
-[React.js:n viralliset dokumentit](https://reactjs.org/docs/getting-started.html)
+Implementoinnin yksityiskohdissa keskeinen osa on ymmärtää `package.json` tiedoston merkitys, joka hallinnoi projektisi riippuvuuksia ja skriptejä. Tiedäthän, että voit laajentaa projektiasi määrittelemällä skriptejä ja asetuksia tässä tiedostossa.
 
-[Express.js:n viralliset dokumentit](https://expressjs.com/en/starter/installing.html)
-
-[Meteor.js:n viralliset dokumentit](https://docs.meteor.com/#/full/quickstart)
-
-[Django:n viralliset dokumentit](https://www.djangoproject.com/start/)
-
-[Ruby on Rails:n viralliset dokumentit](https://guides.rubyonrails.org/getting_started.html)
+## See Also - Katso myös:
+- Node.js aloitusdokumentaatio: [Node.js Docs](https://nodejs.org/en/docs/)
+- npm:n ja Yarnin käyttöohjeet: [npm Docs](https://docs.npmjs.com/), [Yarn Docs](https://yarnpkg.com/getting-started)
+- Create React App dokumentaatio: [Create React App](https://reactjs.org/docs/create-a-new-react-app.html)
+- Vue CLI:n ohjeet: [Vue CLI](https://cli.vuejs.org/guide/)

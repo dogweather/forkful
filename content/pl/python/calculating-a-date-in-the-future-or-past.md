@@ -1,6 +1,7 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
-html_title:           "Python: Obliczanie daty w przyszłości lub przeszłości"
+date:                  2024-01-20T17:31:41.674504-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Python"
 category:             "Python"
@@ -10,39 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-
-Obliczanie daty w przyszłości lub przeszłości polega na dodawaniu lub odejmowaniu określonej liczby dni do lub od danej daty. Programiści robią to, aby manipulować danymi czasu, np. do ustalania terminów wyznaczonych lub do analizy danych historycznych.
+## Co i Dlaczego?
+Obliczanie daty w przyszłości lub przeszłości to ustalenie, jaka data będzie za kilka dni, miesięcy, lat albo jaka była. Programiści to robią, by zarządzać wydarzeniami, terminami, harmonogramami.
 
 ## Jak to zrobić:
-
-Wykorzystamy moduł `datetime` w Pythonie. Przykładowo, aby obliczyć datę 5 dni od dzisiaj:
-
 ```Python
-import datetime
+from datetime import datetime, timedelta
 
-obecna_data = datetime.date.today()
-data_przyszla = obecna_data + datetime.timedelta(days=5)
+# Aktualna data i czas
+now = datetime.now()
+print(f"Teraz: {now}")
 
-print("Obecna data :", obecna_data)
-print("Data po 5 dniach :", data_przyszla)
+# Obliczanie daty w przyszłości (za 10 dni)
+future_date = now + timedelta(days=10)
+print(f"Data za 10 dni: {future_date}")
+
+# Obliczanie daty w przeszłości (10 dni temu)
+past_date = now - timedelta(days=10)
+print(f"Data 10 dni temu: {past_date}")
+```
+Wyjście:
+```
+Teraz: 2023-04-05 14:23:01.123456
+Data za 10 dni: 2023-04-15 14:23:01.123456
+Data 10 dni temu: 2023-03-26 14:23:01.123456
 ```
 
-Uruchomienie powyższego kodu zwróci coś w stylu:
+## Pogłębione informacje:
+Moduł `datetime` w Pythonie istnieje od dawna i jest jednym z głównych sposobów na manipulację datami i czasem. Alternatywy to m.in. `dateutil`, `arrow`, czy `pendulum`, które mogą oferować dodatkową funkcjonalność. Techniczne zaplecze obliczeń dat opiera się na rozumieniu epoki (czas od określonej daty, na ogół od 1 stycznia 1970 r.) i reprezentacji czasu w sekundach od tej epoki.
 
-```
-Obecna data : 2022-10-04
-Data po 5 dniach : 2022-10-09
-```
-
-## Pod kątem szczegółowym:
-
-1. **Kontekst historyczny**: Moduł `datetime` jest częścią standardowej biblioteki Pythona i jest dostępny od wersji 2.3, wydanej w lipcu 2003 roku.
-2. **Alternatywy**: Istnieje wiele bibliotek Pythona, które oferują dodatkowe funkcje do manipulowania datami, takie jak `dateutil`, `pytz`, czy `Arrow`.
-3. **Szczegóły implementacji**: Obiekt `timedelta` z modułu `datetime` reprezentuje różnicę pomiędzy dwoma datami lub czasami. Dodając lub odejmując obiekt `timedelta` do obiektu `date` lub `datetime`, możemy łatwo obliczyć daty w przyszłości lub przeszłości.
-
-## Zobacz również:
-
-1. [Dokumentacja Pythona dla modułu `datetime`](https://docs.python.org/3/library/datetime.html)
-2. [`dateutil` - rozszerzenie biblioteki `datetime`](https://dateutil.readthedocs.io/en/stable/)
-3. [Biblioteka `Arrow` - lepsza obsługa dat i czasu](https://arrow.readthedocs.io/en/latest/)
+## Zobacz także:
+- Dokumentacja Python `datetime`: https://docs.python.org/3/library/datetime.html
+- PyPI Dateutil: https://pypi.org/project/python-dateutil/
+- PyPI Arrow: https://pypi.org/project/arrow/
+- PyPI Pendulum: https://pypi.org/project/pendulum/

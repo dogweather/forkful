@@ -1,7 +1,8 @@
 ---
-title:                "Konwersja daty na ciąg znaków"
-html_title:           "Clojure: Konwersja daty na ciąg znaków"
-simple_title:         "Konwersja daty na ciąg znaków"
+title:                "Konwersja daty na łańcuch znaków"
+date:                  2024-01-20T17:37:37.166560-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Konwersja daty na łańcuch znaków"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,36 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Konwersja daty do ciągu znaków pozwala zaprezentować informacje o czasie w zrozumiałym formacie. Programiści robią to, by ułatwić użytkownikom odczytanie daty oraz umożliwić zapisanie daty w bazie danych czy pliku.
 
-Konwersja daty na łańcuch (string) to proces zamiany formatu daty/czasu na sekwencję znaków, którą łatwo odczytać i zapisać. Programiści robią to, aby ułatwić manipulację i prezentację daty na różne sposoby.
+## How to: (Jak to zrobić?)
+Na początek, zaimportuj `chrono` – popularną bibliotekę do zarządzania czasem. Potem użyj właściwej metody do konwersji. Pokażę to na przykładzie:
 
-## Jak to zrobić:
-
-Użyjemy metody format!() do konwersji `SystemTime` na `String`. Podajemy specjalny format zamiany (%Y-%m-%d).
-
-```Rust
-use std::time::SystemTime;
+```rust
+extern crate chrono;
+use chrono::{DateTime, Utc, Local};
 
 fn main() {
-    let system_time = SystemTime::now();
-    let datetime: chrono::DateTime<chrono::Utc> = system_time.into();
-    let date_string = datetime.format("%Y-%m-%d").to_string();
-    println!("{}", date_string);
+    let now_utc: DateTime<Utc> = Utc::now();
+    let now_local: DateTime<Local> = Local::now();
+    
+    // Formatowanie do String w standardowym formacie RFC 3339
+    let utc_string = now_utc.to_rfc3339();
+    let local_string = now_local.to_rfc3339();
+    
+    println!("UTC time: {}", utc_string);
+    println!("Local time: {}", local_string);
+
+    // Dostosowanie formatu daty
+    let custom_format = now_local.format("%Y-%m-%d %H:%M:%S").to_string();
+    println!("Custom local time: {}", custom_format);
 }
 ```
-Wyjście to będzie łańcuch znaków reprezentujący dzisiejszą datę, np.: "2022-05-14"
+Wyjście z programu pokazuje daty w różnych formatach – zarówno UTC, jak i lokalny.
 
-## Dogłębne zrozumienie:
+## Deep Dive (Dogłębna analiza)
+Czas w informatyce ma długą historię. Rust używa systemu `chrono` jako de facto standardu do manipulacji czasem. Alternatywą jest wbudowany w standardową bibliotekę moduł `std::time`, ale ten jest mniej elastyczny.
 
-Metoda `format!()` pochodzi z języka C, gdzie używano funkcji `strftime()` do formatowania czasu. Metoda `format!()` w Rust jest bardziej bezpieczna typologicznie i wydajna.
+`chrono` oferuje wiele metod do transformaty, włączając w to wsparcie dla stref czasowych. Konwersja daty do stringa odbywa się przez formater, który pozwala na określenie niemal dowolnego formatu wyjściowego.
 
-Istnieją alternatywy dla metody `format!()`, takie jak `to_rfc3339()` i `to_rfc2822()`, które zwracają datę w specyfikacjach standardów internetowych. Wybór zależy od wymagań zastosowań.
+Co więcej, Rust zapewnia bezpieczeństwo typów przy konwersji, minimalizując ryzyko błędów związanych z formatem dat. To mocno ogranicza możliwe błędy związane z obsługą czasu.
 
-As for implementation details, Rust's `format!()` relies on the `Display` trait, which dictates how types are formatted. This makes the code more robust and less prone to errors.
-
-## Zobacz też:
-
-Nie zapomnij odwiedzić oficjalnej dokumentacji Rust na temat [SystemTime](https://doc.rust-lang.org/std/time/struct.SystemTime.html) oraz dokumentacji biblioteki [Chrono](https://docs.rs/chrono/0.4.19/chrono/), jeśli chcesz dowiedzieć się więcej o konwersji dat.
-
-Następnie można zapoznać się z również [Wgęszczenie kodu Rust'a](https://nnethercote.github.io/perf-book/size-bloat.html) i [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/), które zawierają wiele praktycznych przykładów i wskazówek dotyczących kodowania w Rust.
+## See Also (Zobacz również)
+- Oficjalna dokumentacja `chrono`: https://docs.rs/chrono/
+- Rust by Example, rozdział o czasie: https://doc.rust-lang.org/rust-by-example/std_misc/chrono.html
+- Tutorial o manipulacji czasem w Rust: https://stevedonovan.github.io/rustifications/2018/09/08/date-time-in-rust.html

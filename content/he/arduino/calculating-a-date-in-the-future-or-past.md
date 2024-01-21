@@ -1,6 +1,7 @@
 ---
 title:                "חישוב תאריך בעתיד או בעבר"
-html_title:           "Arduino: חישוב תאריך בעתיד או בעבר"
+date:                  2024-01-20T17:31:26.213511-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חישוב תאריך בעתיד או בעבר"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,49 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-חישוב תאריך בעתיד או בעבר הוא פעולה שמאפשרת לנו להגיע לתאריך מסוים המבוסס על מרחק זמן מוחלט מתאריך התחלתי. זה שימושי בתכנות כאשר אנו צריכים להגביל או לתזמן אירועים לפי תאריכים מסוימים.
+חישוב תאריך בעתיד או בעבר הוא פעולה שמאפשרת לדעת איזה תאריך יהיה או היה לאחר או לפני תקופה מסוימת. תכניתנים מבצעים זאת למטרות כגון תזמון אירועים, תזכורות או חישובי זמן.
 
-##  איך מבצעים:
-הנה דוגמא של קוד שמראה איך לחשב תאריך בעתיד או בעבר בארדוינו:
-
+## איך לעשות:
 ```Arduino
-#include <TimeLib.h>
-tmElements_t tm;
+#include <TimeLib.h> // ספרייה לחישובי זמן
 
 void setup() {
-  setTime(8, 29, 0, 1, 1, 2021); // Set initial date and time
+  setTime(10, 30, 0, 1, 1, 2023); // הגדרת זמן תחילתי: 01/01/2023, 10:30:00
+  Serial.begin(9600);
+  printFutureDate(30); // הדפסת תאריך לאחר 30 ימים
 }
 
 void loop() {
-  if (now() % 2 == 0) {
-    addFutureDate(5); // Add 5 days to current date
-  } else {
-    addPastDate(3); // Subtract 3 days from current date
-  }
+  // בדוגמא זו, הלולאה הראשית ריקה.
 }
 
-void addFutureDate(int daysToAdd) {
-  breakTime(now() + daysToAdd * SECS_PER_DAY, tm);
-  printDate();
-}
-
-void addPastDate(int daysToSubtract) {
-  breakTime(now() - daysToSubtract * SECS_PER_DAY, tm);
-  printDate();
-}
-
-void printDate() {
-  Serial.print(tm.Day);
-  Serial.print("/");
-  Serial.print(tm.Month);
-  Serial.println("/");
-  Serial.println(tm.Year);
+void printFutureDate(int daysInFuture) {
+  time_t future = now() + daysInFuture * SECS_PER_DAY; // חישוב הזמן בעתיד
+  Serial.print(day(future));    // יום
+  Serial.print("/");            // מפריד בין יום לחודש
+  Serial.print(month(future));  // חודש
+  Serial.print("/");            // מפריד בין חודש לשנה
+  Serial.println(year(future)); // שנה
 }
 ```
+תוצאה לדוגמא: `31/1/2023`
 
-## צלילה עמוקה
-חישוב תאריך בעתיד או בעבר היה חלק מתכנות מאז התחלתו. תוך שהזמן התפתח, ישנן אפשרויות חלופיות רבות שכוללות שימוש בסיפריות חיצוניות או שימוש בפונקציות מובנות. בארדוינו, סיפריית TimeLib מספקת דרך פשוטה וישירה לעבוד עם תאריכים וזמנים.
+## צלילה לעומק
+לחישוב תאריך בעבר, היו תכנתים בעבר כותבים אלגוריתם מורכב. היום, ספריות כמו `TimeLib` מקלות על המשימה ב-Arduino. יש אלטרנטיבות אחרות, כגון `RTC` (Real-Time Clock) מבוססי חומרה לדיוק גבוה יותר. פרטי המימוש כוללים טיפול בעקביות חישוב הזמן, קפיצות שנה וזיהוי חודשים ושנים מעוברות.
 
-## ראה גם
-[TimeLib Library Documentation](https://www.arduino.cc/en/Reference/Time)
-[Arduino Time Library](https://playground.arduino.cc/Code/Time/)
+## ראו גם
+- דוקומנטציית `TimeLib`: http://www.pjrc.com/teensy/td_libs_Time.html
+- דף התיעוד של `RTClib`: https://adafruit.github.io/RTClib/html/index.html
+- מדריך ל`DS3231 RTC` Module: https://lastminuteengineers.com/ds3231-rtc-arduino-tutorial/

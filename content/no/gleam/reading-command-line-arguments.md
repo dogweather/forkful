@@ -1,6 +1,7 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Arduino: Lese kommandolinjeargumenter"
+date:                  2024-01-20T17:56:12.774751-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,42 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Leser kommandolinje-argumenter med Gleam
+## What & Why? (Hva & Hvorfor?)
+Lesing av kommandolinjeargumenter lar programmer forstå input gitt når de kjører. Programmerere gjør dette for å la brukerne tilpasse oppførselen til et program.
 
-## Hva & Hvorfor?
-
-Kommandolinje-argumenter er informasjon gitt til et program når det startes. Programmerere bruker dette til å kontrollere oppførselen til et program fra starten, uten brukerinteraksjon.
-
-## Hvordan gjør man det:
-
-Gleam har innebygd støtte for å lese kommandolinje-argumenter ved hjelp av `os.args` funksjonen. Her er et eksempel:
-
+## How to (Slik gjør du det):
 ```gleam
-import gleam/os
+import gleam/io
+import gleam/list.{first, drop}
+import gleam/os.{args}
 
-fn main(_) {
-  let arguments = os.args()
-  case arguments {
-    [] -> io.println("Ingen argumenter ble gitt")
-    args -> io.println("Følgende argumenter ble gitt: ", args)
+pub fn main() {
+  // Hent argumenter gitt i kommandolinjen
+  let arguments = drop(args(), 1) // Fjern det første argumentet, programnavnet
+  let user_input = first(arguments)
+  
+  // En enkel sjekk for å reagere på argumenter
+  case user_input {
+    Ok("hei") -> io.println("Hei der!")
+    Ok("hade") -> io.println("Ha det bra!")
+    _ -> io.println("Hallo! Bruk 'hei' eller 'hade'.")
   }
 }
 ```
-Når du kjører dette programmet, vil output være forskjellig basert på kommandolinje-argumentene du gir. For eksempel:
+Kjør ditt program slik: `gleam run hei`.
+Forventet utskrift: `Hei der!`
 
-```bash
-$ gleam run main -- argument1 argument2
-Følgende argumenter ble gitt: ["argument1", "argument2"]
-```
+## Deep Dive (Dypdykk):
+Før i tiden, benyttet programmer seg av kommandolinjeparametere for nesten all input, ettersom grafiske brukergrensesnitt var sjeldne. Alternativer inkluderer å bruke filinput/output, miljøvariabler, eller interaktiv input.
 
-## Dypdykk
+Implementasjonen av kommandolinjelesing i Gleam er direkte og reflekterer funksjoner funnet i de fleste moderne programmeringsspråk. Gleam er opptatt av typesikkerhet, og bruker derfor 'Result'-typen for å håndtere mulig fraværende argumenter.
 
-Kommandolinjeargumenter stammer fra Unix-æraen, hvor kommandolinjestyring var den dominerende måten å betjene datamaskiner på. Gleam sin implementasjon av kommandolinjeargumenter er i tråd med andre moderne programmeringsspråk, som Ruby og Python, men med sin egen tweek for enklere bruk.
-
-Et alternativ til å bruke `os.args` kan være å legge inn konfigurasjonsinnstillinger i en fil og lese den filen ved oppstart. Denne metoden er mer vanlig for større programmer, der det antallet innstillinger kan være omfattende.
-
-Implementeringen av `os.args` i Gleam skjer ved å hente verdien av `ARGV` globalvariabelen i Erlang, behandlet som en liste av strenger, i samme rekkefølge som de ble gitt til processen.
-
-## Se også
-
-- For en dypere dykk inn i kommandolinjeargumenter og deres historie, sjekk ut [Command Line Arguments (Wikipedia)](https://en.wikipedia.org/wiki/Command-line_argument_parsing) og [Command Line Arguments in Erlang](https://erlang.org/doc/man/init.html#id226226).
+## See Also (Se også):
+- Erlang's take on command line arguments: [Erlang Command Line Arguments](http://erlang.org/doc/man/init.html)
+- Command line parsing strategies: [12 Factor CLI Apps](https://medium.com/@jdxcode/12-factor-cli-apps-dd3c227a0e46)

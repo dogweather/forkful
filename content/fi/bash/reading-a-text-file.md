@@ -1,6 +1,7 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Lua: Tekstitiedoston lukeminen"
+date:                  2024-01-20T17:53:43.015528-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,34 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## Mitä & Miksi?
+Luetaan tekstifailia, koska tarvitaan dataa siitä. Se on olennaista, kun käsitellään asetuksia, käyttäjän sisältöä tai skriptejä.
 
-Tekstitiedoston lukeminen tarkoittaa tiedoston sisällön tarkastelemista ohjelmointikielen avulla. Ohjelmoijat tekevät niin tiedon käsittelyä, analysointia tai manipulointia varten.
-
-## Miten tehdä:
-
-Lukeminen tekstiedosto Bash:ssa on helppoa `cat`, `less` tai `more` komennon avulla.
-
+## Näin teet:
 ```Bash
-# Cat komento
-cat tiedosto.txt
+# Failin lukeminen rivi riviltä
+while IFS= read -r line; do
+    echo "$line"
+done < "esimerkki.txt"
 
-# Less komento
-less tiedosto.txt
+# Tailin hyödyntäminen viimeisen rivin näyttämiseen
+tail -n 1 esimerkki.txt
 
-# More komento
-more tiedosto.txt
+# Awk:n käyttö tietyn kolumnin tulostamiseen
+awk '{print $2}' esimerkki.txt
 ```
 
-Tuloste näyttää sisällön tiedostosta `tiedosto.txt`.
+Esimerkki ulostulosta:
+```
+Tämä on ensimmäinen rivi.
+Tämä on toinen rivi.
+```
 
-## Syvällisempi tieto:
+## Syväsukellus
+Aikanaan tekstitiedostojen luku oli yksinkertaista, koska datan formaatit olivat perustietoja. Nykyään on paljon vaihtoehtoja: `cat`, `head`, `tail`, `less`, `more`, `awk`, `sed`. Bashissa tiedoston lukeminen perustuu yleensä striimeihin ja putkien käyttöön datan siirtämiseen. Tehokkuus ja työkalujen soveltuvuus datan määrään ja formaattiin kannattaa ottaa huomioon.
 
-*Bash* eli *Bourne-Again shell* on syntynyt alkujaan 1980-luvulla, ja se on otettu laajasti käyttöön sen laajan yhteensopivuuden ja käytettävyyden takia. Vaihtoehtoja Bashille ovat esimerkiksi *Korn shell* (ksh) ja *C shell* (csh). Tekstitiedostojen lukeminen Bashilla on melko yksinkertaista, mutta sen toteutuksessa on kuitenkin joitakin yksityiskohtia. Esimerkiksi `cat`, `less` ja `more` -komennot lukevat tiedoston sisällön eri tavoin. `Cat` tulostaa koko tiedoston sisällön kerralla, kun taas `less` ja `more` tulostavat sivun kerrallaan.
-
-## Katso myös:
-
-Seuraavasta hakuosumasta löytyy lisätietoa aiheesta ja aiheeseen liittyvistä asioista:
-- GNU Bash official Documentation: [https://www.gnu.org/software/bash/manual/bash.html]
-- Advanced Bash-Scripting Guide: [http://www.tldp.org/LDP/abs/html/abs-guide.html]
-- Unix Shell Programming Books: [https://www.unix.com/answers-to-frequently-asked-questions/1373-books-on-shell-programming.html]
+## Katso myös
+- GNU Coreutils: https://www.gnu.org/software/coreutils/
+- Bash-hakemisto: http://tldp.org/LDP/abs/html/
+- Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/

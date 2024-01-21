@@ -1,7 +1,8 @@
 ---
-title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
-html_title:           "Gleam: Merkkijonon muuttaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+date:                  2024-01-20T17:38:34.682991-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,36 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Stringien muuntaminen pieniksi kirjaimiksi Gleamilla
+## What & Why? (Mikä & Miksi?)
+Muunnetaan merkkijono pieniksi kirjaimiksi. Se yhdenmukaistaa käyttäjäsyötteet ja vertailut.
 
-## Mikä & Miksi?
-
-Stringien muuttaminen pieniksi kirjaimiksi on operaatio, jossa isoista kirjaimista tehdään pieniä kirjaimia. Ohjelmoijat tekevät näin, jotta he voisivat vertailla stringejä luotettavasti riippumatta kirjainkoosta. 
-
-## Kuinka:
-
-Tämä on yksinkertainen Gleam-koodiesimerkki, joka muuntaa stringin pieniksi kirjaimiksi.
-
-```Gleam
+## How to (Kuinka tehdä)
+Gleamissa merkkijonon muuttaminen pienaakkosiksi on suoraviivaista. Käytä `string.lowercase` funktiota.
+```gleam
 import gleam/string
 
-let r = string.lowercase("Hei MAailma!")
+pub fn example_to_lowercase() {
+  let greeting = "Hei Maailma!"
+  string.lowercase(greeting)
+}
+
+// Output: "hei maailma!"
 ```
 
-Ohjelman suorittaminen tulostaisi "hei maailma!".
+## Deep Dive (Syväsukellus)
+Aikoinaan ASCII-taulukko määritti kirjainkoodeja, mutta nykyaikaiset standardit, kuten Unicode, ovat monimutkaisempia. Erilaisten kielten ja kulttuurien pienaakkoset voivat poiketa toisistaan. Gleamissa `string.lowercase` funktion käyttö perustuu Elixiriin, jossa unicode-tuki on kattava.
 
-## Syvempi sukellus
+Yksi vaihtoehto on toteuttaa pienaakkosmuunnos manuaalisesti käymällä merkkijono läpi ja muuttamalla jokainen suuraakkonen vastaavaksi pienaakkoseksi. Tämä on kuitenkin työläs ja epäkäytännöllinen lähestymistapa, etenkin kun otetaan huomioon kirjainkoon kulttuurikohtaiset erot.
 
-Aikaisemmin, ennen kuin ohjelmointikielissä oli valmiit funktiot stringien muuntamiseen pieniksi kirjaimiksi, ohjelmoijat tekivät tämän matalan tason kielissä itse. 
-
-Vaihtoehtoisesti, voit luoda oman funktion, joka käyttää Unicode-taulukoita muuntamaan isoja kirjaimia pieniksi. Tämä voi olla hyödyllistä, jos sinun pitää käsitellä erikoisia merkkejä tai kieliä, joita standardi lower case -funktio ei tue.
-
-Gleamissa, `string.lowercase` on toteutettu käyttäen Erlangin `unicode:characters_to_lower` -funktiota, joka tukee kaikkia Unicode merkkejä.
-
-## Katso Myös
-
-Lisätietoa Gleamista ja sen string-funktioista voi löytyä seuraavista lähteistä:
-
-- Gleam Docs: https://hexdocs.pm/gleam_stdlib/gleam/string.html
-- Unicode in Erlang: http://erlang.org/doc/man/unicode.html
-- How to compare strings: https://www.baeldung.com/cs/string-comparison-convert-to-lowercase
+## See Also (Katso Myös)
+- [Unicode Case Mapping](https://www.unicode.org/reports/tr21/tr21-5.html)
+- [Elixir String Module](https://hexdocs.pm/elixir/String.html)

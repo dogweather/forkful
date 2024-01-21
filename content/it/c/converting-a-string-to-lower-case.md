@@ -1,7 +1,8 @@
 ---
-title:                "Convertire una stringa in minuscolo"
-html_title:           "Arduino: Convertire una stringa in minuscolo"
-simple_title:         "Convertire una stringa in minuscolo"
+title:                "Conversione di una stringa in minuscolo"
+date:                  2024-01-20T17:37:46.063383-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Conversione di una stringa in minuscolo"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,44 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
-La conversione di una stringa in minuscolo è un'operazione comune in programmazione che consiste nel cambiare tutte le lettere maiuscole in una stringa in lettere minuscole. Questo può essere utile per uniformare i dati, per esempio quando si confrontano due stringhe in modo insensibile al maiuscolo/minuscolo.
+## What & Why?
+Convertire una stringa in minuscolo significa trasformare tutti i caratteri alfabeticamente maiuscoli in minuscoli. I programmatori fanno ciò per uniformare i dati per confronti insensibili al caso, ordinamenti o per l'input utente standardizzato.
 
-## Come fare:
-La libreria delle stringhe standard in C include molte funzioni per manipolare le stringhe, tra cui `tolower()`. Di seguito è riportato un esempio:
+## How to:
+Il C standard non fornisce una funzione diretta per convertire una stringa intera in minuscolo. Dobbiamo scrivere una funzione personalizzata. Ecco un esempio:
 
 ```C
-#include <ctype.h>
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
-void strToLowerCase(char* s) {
-    for(int i = 0; s[i]; i++){
-        s[i] = tolower(s[i]);
+void toLowerCase(char *str) {
+    while(*str) {
+        *str = tolower((unsigned char) *str);
+        str++;
     }
 }
 
 int main() {
-    char str[] = "CIAO MONDO!";
-    strToLowerCase(str);
-    printf("%s\n", str);
+    char testo[] = "CIAO MONDO!";
+    toLowerCase(testo);
+    printf("Testo convertito: %s\n", testo);
     return 0;
 }
+
 ```
 
-Uscita:
+Output:
 ```
-ciao mondo!
+Testo convertito: ciao mondo!
 ```
 
-## Approfondimento
-Storicamente, la necessità di convertire le stringhe in minuscolo risale ai primi giorni della programmazione, quando l'elaborazione del testo divenne una pratica comune. Nel linguaggio C, la funzione `tolower()` è stata introdotta nella libreria standard C come uno dei metodi per la gestione delle stringhe.
+## Deep Dive
+La conversione da maiuscolo a minuscolo nel C esiste da quando il linguaggio è stato creato negli anni '70. Il C è un linguaggio povero di funzioni di alto livello per le stringhe, pertanto spesso i programmatori realizzano funzioni personalizzate.
 
-Ci sono anche altri modi per convertire le stringhe in minuscolo. Un'altra funzione popolare è `strlwr()` nella libreria `string.h`, ma non è parte dello standard ANSI C, quindi potrebbe non essere disponibile su tutte le piattaforme.
+In alternativa a `tolower`, per esempio, si potrebbe scrivere una funzione propria che manipola i codici ASCII direttamente, ma questa approccio non è portabile tra diverse codifiche caratteri.
 
-In termini di implementazione, la funzione `tolower()` lavora per caratteri. Controlla se il carattere è una lettera maiuscola attraverso la tabella ASCII. Se lo è, lo converte in minuscolo aggiungendo 32 (la differenza tra maiuscole e minuscole nella tabella ASCII).
+Il `tolower` opera su un singolo carattere. Notare l'uso di `(unsigned char)` per evitare comportamenti non definiti se `char` è firmato e ha un codice negativo. Gli standard del C definiscono il comportamento di `tolower` solo con valori `unsigned char` e `EOF`.
 
-## Vedi anche
-1. [Documentazione della funzione tolower](https://www.cplusplus.com/reference/cctype/tolower/)
-3. [Tabella ASCII](https://www.asciitable.com/)
-4. [Confronto di stringhe insensibile alla differenza tra maiuscole e minuscole in C](https://stackoverflow.com/questions/5820810/case-insensitive-string-comp-in-c)
+Le soluzioni come la funzione `strlwr()` esistono in alcune librerie, ma non fanno parte dello standard C e quindi non sono portabili.
+
+## See Also
+Consulta i seguenti per approfondire:
+- Reference di C Standard Library per `tolower`: https://en.cppreference.com/w/c/string/byte/tolower
+- Stack Overflow su come convertire una stringa in minuscolo: https://stackoverflow.com/questions/2661766/how-do-i-lowercase-a-string-in-c

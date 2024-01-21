@@ -1,7 +1,8 @@
 ---
-title:                "Знаходження довжини рядка"
-html_title:           "Arduino: Знаходження довжини рядка"
-simple_title:         "Знаходження довжини рядка"
+title:                "Визначення довжини рядка"
+date:                  2024-01-20T17:46:58.648770-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Визначення довжини рядка"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,50 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке і навіщо це потрібно?
+## Що та Чому?
+Обчислення довжини рядка — це визначення кількості символів у ньому. Програмісти роблять це для валідації вводу, обробки тексту чи управління даними.
 
-Знаходження довжини рядка - це визначення кількості символів у даному рядку. Програмісти роблять це, щоб керувати обробкою даних, оптимізувати виконання коду та перевіряти правильність вхідних даних.
-
-## Як це робити:
-
+## Як саме:
 ```Bash
-# Задаємо рядок
-str="Привіт, це тестовий рядок!"
-
-# Знаходимо його довжину
-len=${#str}
-
-# Виводимо довжину рядку
-echo $len
+# Використовуйте вбудовану змінну ${#string}
+str="Привіт, світ!"
+echo ${#str}  # Виводить довжину рядка
+```
+Вихідний код:
+```
+13
+```
+```Bash
+# Для більш складних сценаріїв можна використовувати команду 'awk'
+echo "Привіт, світ!" | awk '{print length}'
+```
+Вихідний код:
+```
+13
 ```
 
-Виходячи з цього коду, вихідні дані будуть наступними:
+## Поглиблене занурення
+Historically, the `${#string}` syntax comes from the POSIX standard for shell scripting, making it a reliable method across different systems. As for alternatives, some use `awk` with its built-in `length` function, which can be helpful in complex text processing tasks. Implementation details are simple: `${#string}` counts the characters until it reaches the end of the string, while `awk` processes the string passed to it and computes the length.
 
-```Bash
-27
-```
-
-## Поглиблений матеріал:
-
-Історично Bash використовувався для автоматизації командного рядка, але із часом почав використовуватися для багатьох інших задач. Засоби Bash для роботи з рядками в багатьох випадках були єдиним варіантом виконання задачі.
-
-Єдиний альтернативний спосіб дізнатися довжину рядка - використати команду `expr` з параметром `length`. Однак цей підхід може бути повільним у великих системах.
-
-```Bash
-# На вхід подається рядок
-str="Привіт, це тестовий рядок!" 
-
-# Використання 'expr' для визначення довжини
-len=$(expr length "$str") 
-
-# Виводимо значення довжини
-echo $len
-```
-
-## Додаткові матеріали:
-
-Для глибшого розуміння, ви можете дивитися наступні джерела:
-
-1. [Bash String Manipulation Guide](https://www.baeldung.com/linux/bash-string-manipulation)
-2. [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/index.html)
-3. [Introduction to Bash Scripting](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+## Дивіться також
+- Bash Manual for String Operations: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion
+- AWK User's Guide: https://www.gnu.org/software/gawk/manual/gawk.html
+- POSIX Specification: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html

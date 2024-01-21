@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
+date:                  2024-01-20T18:01:29.109075-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,55 +11,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Send an HTTP Request with Basic Authentication in Elixir
-
 ## What & Why?
 
-Sending an HTTP request with basic authentication in Elixir means setting up a secure communication channel between the client and the server over HTTP. Programmers do this to protect sensitive information when the client interacts with the server.
+Sending an HTTP request with basic authentication involves adding a username and password to your request to access a protected resource. Programmers do it to ensure secure data access and transfer, keeping unauthorized users out.
 
 ## How to:
 
-In Elixir, we use the [HTTPoison library](https://hexdocs.pm/httpoison/readme.html) to send HTTP requests. First, install it by adding `httpoison` to your list of dependencies in `mix.exs`:
+To send an HTTP request with basic authentication in Elixir, you can use the `HTTPoison` library:
 
-```Elixir
+```elixir
+# Add HTTPoison to your project's dependencies in mix.exs
 defp deps do
   [
     {:httpoison, "~> 1.8"}
   ]
 end
-```
 
-Now, let's send an HTTP request with Basic Authentication:
+# Now let's make a request with basic auth
 
-```Elixir
-defmodule MyModule do
+# Run `mix deps.get` to fetch the dependency
+
+# In your Elixir code
+defmodule BasicAuthRequest do
   def send_request do
-    case HTTPoison.get("https://api.example.com", ["Authorization": basic_authorization_header()]) do
-      {:ok, response} -> IO.inspect(response.status_code)
-      {:error, reason} -> IO.inspect(reason)
-    end
-  end
+    # Encode credentials "username:password" using Base64
+    basic_auth =
+      "username:password"
+      |> Base.encode64()
 
-  defp basic_authorization_header do
-    credentials = "#{System.get_env("API_USER")}:#{System.get_env("API_PASSWORD")}"
-    "Basic " <> Base.encode64(credentials)
+    # Set the Authorization header
+    headers = [{"Authorization", "Basic #{basic_auth}"}]
+
+    # Make a GET request to https://example.com/protected-resource
+    HTTPoison.get("https://example.com/protected-resource", headers)
   end
 end
+
+# Call the function
+{:ok, response} = BasicAuthRequest.send_request()
+IO.inspect(response.status_code)  # Should be 200 if authentication is successful
 ```
 
-When we run `send_request/0` function, it makes a GET request to the target URL and outputs the status code of the response.
+If basic authentication is successful, you'll get a `200` status code. Failed authentication typically results in a `401`.
 
 ## Deep Dive
 
-The basic authentication in HTTP is a method designed to allow a web browser, or other client program, to provide credentials in the form of a username and password pair. Its notoriety for its simplicity is matched by its criticisms for its lack of protection against eavesdropping or 'man-in-the-middle' attacks. 
+Basic authentication is a part of HTTP defined in RFC 7617, dating back to the very early web. It's simple but less secure than modern methods, sending credentials in every request (base64 encoded not encrypted).
 
-Alternatives include digest authentication or token-based systems like OAuth, which add an extra layer of security by minimizing raw credential exposure. 
+Alternatives include:
+- OAuth: An open standard for access delegation, used to grant websites or applications access to their information on other websites without giving them the passwords.
+- API Keys: Unique identifiers used to authenticate a user or a program in API requests.
+- Bearer Tokens/JWT: Security tokens that contain all the user data necessary to authenticate the user.
 
-In Elixir, when we make the request with HTTPoison, the `:ssl` and `:httpc` options in the request take an important role in setting up the secure connection. While the request is sent, the `Authorization` header, encoded in Base64, is included which carries the credentials.
+Implementation-wise, when using `HTTPoison`, we:
+- Base64 encode the username and password;
+- Include this encoded string in the `Authorization` header prefixed by "Basic ";
+- Send the request to the server hoping access is granted.
+
+Remember, basic auth is clear-text and can be easily decoded. It's safe only over HTTPS.
 
 ## See Also
 
-- [Official Elixir documentation](https://elixir-lang.org/docs.html)
-- [HTTPoison documentation](https://hexdocs.pm/httpoison/readme.html)
-- [Phoenix framework for Elixir](https://hexdocs.pm/phoenix/overview.html)
-- [OWASP guide to authentication](https://owasp.org/www-project-cheat-sheets/cheatsheets/Authentication_Cheat_Sheet.html)
+- HTTPoison documentation: https://hexdocs.pm/httpoison
+- Basic authentication schema (RFC 7617): https://tools.ietf.org/html/rfc7617
+- Elixir's `Base` module documentation: https://hexdocs.pm/elixir/Base.html
+- OAuth 2.0 Authorization Framework: https://oauth.net/2/

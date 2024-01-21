@@ -1,6 +1,7 @@
 ---
 title:                "Interpolera en sträng"
-html_title:           "C++: Interpolera en sträng"
+date:                  2024-01-20T17:50:26.725662-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolera en sträng"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,30 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-
-Interpolering av strängar handlar om att infoga variabelvärden direkt i en sträng. Programmerare gör det för att sätta samman dynamiska strängar på ett snyggt och lättläst sätt.
+Interpolering av sträng är processen där man sätter in uttryck eller variabler in i strängar. Programmerare gör det för att dynamiskt bygga strängar – oftast för att visa information till användaren eller för att skapa dynamisk kod.
 
 ## Så här gör du:
-
-Clojure erbjuder inte inbyggd stränginterpolering. Istället kan du använda `format`, vilket fungerar som `printf` i andra språk. Se kodexempel och utdata nedan:
-
 ```Clojure
-(def name "Stina")
-(def age 30)
+;; Använda format
+(def name "världen")
+(println (format "Hej, %s!" name))
 
-(format "Hej, jag heter %s och jag är %d år gammal." name age)
+;; Output: Hej, världen!
 ```
 
-Kodens output blir: `Hej, jag heter Stina och jag är 30 år gammal.`
+```Clojure
+;; Använda str
+(def age 30)
+(println (str "Jag är " age " år gammal."))
 
-## Djupdykning
+;; Output: Jag är 30 år gammal.
+```
+## Fördjupning
+Interpolering av strängar är inte en inbyggd funktion i Clojure på samma sätt som i vissa andra språk. Historiskt, i Lisp-dialekter var man tvungen att använda funktioner som `format` eller konkatenering med `str` för att uppnå samma resultat. Clojure håller sig till denna tradition. Trots att det inte finns inbyggd interpolering, kan bibliotek som `clojure.string` eller tillägg som `strfmt` ge ett liknande beteende med mer smidighet. Implementationsdetaljer centreras kring JVM, eftersom Clojure är en dialekt av Lisp som är utformad för att köras på Java Virtual Machine.
 
-Den här metoden för interpolering härstammar från språk som C, vilka har stöd för printf-stil av formatering. Det finns andra sätt att hantera stränginterpolation i Clojure, som att använda `str` eller concatenation med `join`, men `format` erbjuder en renare syntax för komplexa strängar. Med försiktighet kan du också använda libraries som `clojure.string/replace` för att realisera interpolering, men var försiktig med säkerhetsrisker som kan uppstå med en sådan approach.
-
-## Se även
-
-Relaterade resurser finns länkade här nedan:
-
-- Clojure Documentation: [https://clojure.org/guides/learn/functions#formatting](https://clojure.org/guides/learn/functions#formatting)
-- Clojure String library: [https://clojuredocs.org/clojure.string](https://clojuredocs.org/clojure.string)
-- "Clojure for the Brave and True": [https://www.braveclojure.com/core-functions-in-depth/](https://www.braveclojure.com/core-functions-in-depth/)
+## Se Mer
+- Officiell Clojure documentation för `str`: https://clojuredocs.org/clojure.core/str
+- Officiell Clojure documentation för `format`: https://clojuredocs.org/clojure.core/format
+- GitHub-repo för `strfmt` biblioteket: https://github.com/dbriskin/strfmt

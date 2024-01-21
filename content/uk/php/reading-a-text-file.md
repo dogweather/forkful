@@ -1,6 +1,7 @@
 ---
 title:                "Читання текстового файлу"
-html_title:           "Arduino: Читання текстового файлу"
+date:                  2024-01-20T17:54:48.745437-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Читання текстового файлу"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,35 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
+## What & Why? | Що та Навіщо?
+Читання текстових файлів у PHP - це процес здобуття даних із файлів збережених на диску. Програмісти роблять це, щоб обробити інформацію, зберегти налаштування, або імпортувати дані для веб-додатків.
 
-Читання текстового файлу - це процес отримання даних з файлу і їх використання у програмних додатках. Програмісти роблять це, щоб зберегти, аналізувати та маніпулювати великими обсягами даних з легкістю і ефективністю.
-
-## Як це робити:
-
-Код та приклад виводу вуглецю:
-
+## How to: | Як це зробити:
 ```PHP
 <?php
+// Відкриваємо файл для читання
 $file = 'example.txt';
+$handle = fopen($file, 'r');
 
-if (file_exists($file)){
-    $content = file_get_contents($file);
-    echo $content;
-} else {
-    echo "$file не існує";
+// Перевіряємо, чи файл відкрився
+if ($handle) {
+    // Читаємо файл по рядку
+    while (($line = fgets($handle)) !== false) {
+        echo $line;
+    }
+
+    // Закриваємо дескриптор файлу
+    fclose($handle);
 }
 ?>
 ```
-Цей код прочитає та виведе вміст файлу "example.txt". Якщо файлу не існує, ви отримаєте повідомлення, що "$file не існує".
+Sample Output:
+```
+Це перший рядок вашого текстового файлу.
+Це другий рядок файлу.
+```
 
-## Глибше занурення:
+## Deep Dive | Поглиблене Вивчення:
+Читання файлів у PHP почалось ще з PHP 3, і функції, такі як `fopen()` і `fgets()`, були основними засобами. Існують альтернативи, як от `file_get_contents()` і `file()` для читання вмісту цілком або масиву рядків відповідно. Під капотом, PHP використовує системні виклики операційної системи, щоб працювати з файлами, забезпечуючи абстракцію для програмістів.
 
-Історія: зазвичай в PHP для зчитування текстових файлів використовували функції `fopen`, `fread`, `fclose`. Однак, `file_get_contents` стала більш простою та зручною альтернативою.
-Альтернативи: крім `file_get_contents`, можна використовувати `fopen` з `fread` і `fclose`. Цей метод більш гнучкий, але потребує більшого коду.
-Деталі реалізації: `file_get_contents` працює швидше з великими файлами, адже вона читає весь файл в одну строку. З іншого боку, `fopen` та `fread` читають файл по частинах, що походить для контролю пам'яті.
-
-## Див. також:
-
-- [Офіційна документація PHP по file_get_contents](https://www.php.net/manual/en/function.file-get-contents.php)
-- [Офіційна документація PHP по fopen](https://www.php.net/manual/en/function.fopen.php)
+## See Also | Дивіться Також:
+- [Офіційна документація PHP по роботі з файлами](https://www.php.net/manual/en/ref.filesystem.php)
+- [Інструкція по `fopen()` на php.net](https://www.php.net/manual/en/function.fopen.php)
+- [Інструкція по `fgets()` на php.net](https://www.php.net/manual/en/function.fgets.php)
+- [Stack Overflow: Best Practices for Reading a File](https://stackoverflow.com/questions/2167079/what-is-the-best-way-in-php-to-read-a-file-for-a-streaming-response)

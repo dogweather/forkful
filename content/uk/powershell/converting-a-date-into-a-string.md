@@ -1,6 +1,7 @@
 ---
 title:                "Перетворення дати в рядок"
-html_title:           "Lua: Перетворення дати в рядок"
+date:                  2024-01-20T17:37:37.926172-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Перетворення дати в рядок"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,45 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо?
+## Що і Чому?
+Конвертація дати у рядок – це процес перетворення об’єкта дати в текстовий формат. Робимо це для відображення дат у зручному для читання форматі або для їхнього збереження та обміну даними.
 
-Перетворення дати в рядок (стрінг) - це процес встановлення формату дати в текстовий формат. Програмісти роблять це для більшої зручності при відображенні дати, відправці її в інший формат, або для запису в текстовий файл.
-
-## Як це робити:
-
+## Як це зробити:
 ```PowerShell
-# отримуємо поточну дату
-$date = Get-Date
+# Отримання поточної дати
+$currentDate = Get-Date
 
-# конвертуємо дату в рядок
-$dateString = $date.ToString()
+# Форматування дати у рядок
+$dateString = $currentDate.ToString("yyyy-MM-dd")
+Write-Host "Форматована дата: $dateString"
 
-# виводимо результат
-Write-Output $dateString
+# Вивід
+# Форматована дата: 2023-04-05
 ```
-В результаті ви отримаєте рядок, що відображає поточну дату і час у форматі за замовчуванням, наприклад, "09/16/2021 9:13:50 PM".
 
-```PowerShell
-# можемо вказати формат дати при конвертації
-$dateString = $date.ToString("dd.MM.yyyy")
-
-# виводимо результат
-Write-Output $dateString
-```
-Зазначений формат перетворить дату в рядок "16.09.2021".
-
-## Занурення в деталі:
-
-Перетворення дати в рядок у PowerShell є частиною .NET Framework, що була введена у 2002 році. Існують інші мови та фреймворки, які також надають можливість виконувати цю дію. Ви також можете використовувати специфікатори форматування дати й часу для досягнення різних форматів.
-
-```PowerShell
-# використання специфікатора форматування
-$dateString = $date.ToString("MM-dd-yyyy HH:mm:ss")
-Write-Output $dateString
-```
-Цей код перетворить дату в рядок "09-16-2021 21:13:50".
+## Поглиблено:
+Конвертування дати в рядок у PowerShell було запроваджене разом із самою мовою і є важливим для скриптів, що взаємодіють із файлами та іншими системами. Альтернативи включають використання стандартних методів .NET класу `DateTime`, таких як `ToShortDateString()` або `ToLongDateString()`, але `ToString("format")` дає більше контролю. Детальніше, PowerShell використовує клас `DateTime` з .NET Framework для роботи із датами, який дозволяє легко конвертувати їх у рядки, використовуючи задані формати.
 
 ## Дивіться також:
-
-1. [Документація по датах і часу в .Net](https://docs.microsoft.com/uk-ua/dotnet/standard/datetime/)
-3. [Функція ToString() в .Net](https://docs.microsoft.com/uk-ua/dotnet/api/system.datetime.tostring)
+- [Про DateTime на сайті Microsoft](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
+- [Custom Date and Time Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)

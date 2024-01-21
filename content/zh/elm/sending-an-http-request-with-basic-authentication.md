@@ -1,7 +1,8 @@
 ---
-title:                "使用基本身份验证发送http请求"
-html_title:           "Elm: 使用基本身份验证发送http请求"
-simple_title:         "使用基本身份验证发送http请求"
+title:                "使用基本认证发送 HTTP 请求"
+date:                  2024-01-20T18:01:28.706237-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "使用基本认证发送 HTTP 请求"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,32 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么&为什么?
+## What & Why?
+什么以及为什么？
+发送带有基本认证的HTTP请求意味着在请求中包含用户名和密码信息，以获取访问权限。程序员这样做是为了安全地从受保护的服务中获取数据或执行操作。
 
-发送HTTP请求是一种通过网络传输信息的常见方式。程序员经常使用它来与外部服务通信，从而实现更复杂的功能。
-
-## 如何:
-
+## How to:
+如何操作：
 ```Elm
-ExampleCode basicAuthRequest = 
-    Http.send BasicAuthRequest
-        { method = "GET",
-          url = "https://example.com/api/users",
-          headers = [ ("Authorization", "Basic dXNlcjpwYXNzd29yZA==") ],
-          body = Http.emptyBody,
-          expect = Http.expectJson NoOp myDecoder }
+import Http
+import Base64
+
+-- Define your endpoint and credentials
+endpoint : String
+endpoint = "https://your.api/endpoint"
+
+username : String
+username = "yourUsername"
+
+password : String
+password = "yourPassword"
+
+-- Create the Basic Auth header
+basicAuthHeader : Http.Header
+basicAuthHeader =
+    let
+        encodedCredentials =
+            Base64.encode (username ++ ":" ++ password)
+    in
+    Http.header "Authorization" ("Basic " ++ encodedCredentials)
+
+-- Make the HTTP request with Basic Authentication
+makeRequest : Http.Request String
+makeRequest =
+    Http.request
+        { method = "GET"
+        , headers = [ basicAuthHeader ]
+        , url = endpoint
+        , body = Http.emptyBody
+        , expect = Http.expectString (Result.withDefault "Request failed")
+        , timeout = Nothing
+        , tracker = Nothing
+        }
 ```
 
-发送HTTP请求需要组装一个`BasicAuthRequest`，其中包含方法、URL、头信息、请求体和预期结果的定义。在头信息中，必须包含带有base64编码的用户名和密码的`Authorization`头。完成后，使用`Http.send`函数将请求发送到指定的URL。
+## Deep Dive:
+深入了解：
+在历史上，基本认证是HTTP协议早期用于验证用户身份的简单方式。如今，虽然存在更安全的替代方案（如OAuth2和JWT），但基本认证因其简单性，在某些情况下仍被使用，特别是在内部系统或少量用户的系统中。实现时，重要的是对凭证进行编码，并在HTTP请求的头部发送。Elm中，利用 `Http` 包和 `Base64` 编码来完成这个过程。
 
-## 深入讨论:
-
-基本认证是一种最古老的身份验证机制，它可以追溯到Web的早期发展。现在，它已被先进且更安全的身份验证方法所取代，但仍然被一些服务使用。在发送HTTP请求时，有许多其他选项可供选择，例如OAuth或JWT。
-
-关于发送HTTP请求的实现细节，可以深入了解`elm/http`包的操作原理。还可以使用`elm/json`包来解析返回的JSON数据。
-
-## 查看更多:
-
-- [Elm`http`包文档](https://package.elm-lang.org/packages/elm/http/latest/)
-- [Elm`json`包文档](https://package.elm-lang.org/packages/elm/json/latest/)
-- [基础认证](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication)
+## See Also:
+参见：
+- Elm HTTP package documentation: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)
+- Elm Base64 package documentation: [https://package.elm-lang.org/packages/truqu/elm-base64/latest/](https://package.elm-lang.org/packages/truqu/elm-base64/latest/)
+- HTTP Basic Auth standard: [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)

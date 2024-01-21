@@ -1,6 +1,7 @@
 ---
 title:                "Interpolera en sträng"
-html_title:           "C++: Interpolera en sträng"
+date:                  2024-01-20T17:50:49.614551-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolera en sträng"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,34 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Interpolera en sträng innebär att infoga variabler eller uttryck i en stående textsträng. Programmerare gör detta för att enkelt skapa dynamiska meddelanden eller bearbeta data i en läsbar format.
 
-Interpolering av strängar handlar om att infoga variabler eller uttryck inom en sträng. Programmerare gör detta för att sammansätta dynamisk text på ett mer läsbart och effektivt sätt.
-
-## Hur man gör:
-
-Elm erbjuder inte inbyggd stränginterpolering som många andra språk. Men du kan åstadkomma detta genom Elm's funktioner för strängkonkatenering (sammanslutning). Kolla på följande exempel:
+## Så här gör du:
+Elm har ingen inbyggd stränginterpolering som man kanske är van vid från andra språk. Istället använder man funktioner som `String.concat` eller `++` operatören för att slå ihop strängar.
 
 ```Elm
-name = "Anna"
-greeting = "Hej " ++ name ++ ", trevligt att se dig!"
+name = "Världen"
+greeting = "Hej " ++ name ++ "!"
+
+-- Output: "Hej Världen!"
 ```
 
-Om du kör detta program kommer utskriften vara: `"Hej Anna, trevligt att se dig!"`.
+Eller för mer komplexa situationer kan man skapa en funktion:
+
+```Elm
+helloTo : String -> String
+helloTo name = 
+    "Hej " ++ name ++ "!"
+
+main = 
+    helloTo "Elm programmerare"
+
+-- Output: "Hej Elm programmerare!"
+```
 
 ## Fördjupning
+Stränginterpolering som koncept har varit runt länge, men olika språk hanterar det olika. Till exempel, JavaScript använder template literals (\`${variable}\`) och Python använder f-strängar. Elm väljer enklare sammanfogning för att behålla språket rent och funktionellt. Även om det kan kännas omständligt först, leder det till tydligare kod där alla strängmanipulationer är uttryckliga.
 
-Stränginterpolering har funnits i programmering i decennier och finns i många moderna språk som JavaScript och Python. Alternativt till		      konkatenering, kan man använda `String.concat` eller `String.join` för att sammansätta strängar.
+Till alternativen hör att bygga egna interpoleringsfunktioner eller att använda externa paket som `elm-string-interpolate` för att närma sig interpolering så som den finns i andra språk.
 
-Till exempel, här är hur du skulle göra det med `String.join`:
+Vad gäller implementering är det viktigt att komma ihåg att Elm är kompilerat, vilket betyder att alla strängoperationer måste omvandlas till effektiv JavaScript-kod under huven.
 
-```Elm
-name = "Anna"
-parts = ["Hej ", name, ", trevligt att se dig!"]
-greeting = String.join "" parts
-```
-
-Elm's filosofi prioriterar enkelhet och prediktabilitet, så det erbjuder inte direkt stränginterpolering - därmed behöver vi använda dessa metoder istället.
-
-## Se Även
-
-För mer information om strängmanipulation i Elm, se den officiella dokumenation av [`String` modulet](https://package.elm-lang.org/packages/elm/core/latest/String). För att förstå mer om varför Elm inte har inbyggd stränginterpolering, kan denna [tråd på Elm Discourse](https://discourse.elm-lang.org/t/string-interpolation/232) vara intressant.
+## Se även
+- Elm documentation om strängar: https://package.elm-lang.org/packages/elm/core/latest/String
+- 'elm-string-interpolate' paketet: https://package.elm-lang.org/packages/lattenwald/elm-string-interpolate/latest/
+- Elm-lärdomar om sammanfogning av strängar: https://elmprogramming.com/string-concatenation.html

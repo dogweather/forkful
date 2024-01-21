@@ -1,7 +1,8 @@
 ---
-title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
-simple_title:         "Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma requisição HTTP com autenticação básica"
+date:                  2024-01-20T18:02:55.001975-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Enviando uma requisição HTTP com autenticação básica"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,42 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O Que É & Porquê?
 
-Enviar uma solicitação HTTP com autenticação básica é o processo de fazer um pedido a um recurso da web que requer um nome de usuário e senha. Os programadores fazem isso para garantir que apenas usuários autorizados tenham acesso a recursos específicos.
+Enviar uma requisição HTTP com autenticação básica significa incluir as credenciais do usuário (usuário e senha) na requisição para acessar recursos protegidos. Programadores fazem isso para interagir com APIs ou serviços web que requerem autenticação para garantir que o acesso seja permitido apenas a usuários autorizados.
 
 ## Como Fazer:
 
-Aqui está um exemplo de como você pode fazer isso com TypeScript usando o módulo `axios`. 
+Antes de mais nada, instale uma biblioteca de cliente HTTP, como o Axios, com `npm install axios`. Depois, use o seguinte código TypeScript para fazer uma requisição com auth básica:
 
 ```TypeScript
 import axios from 'axios';
 
-axios({
-    method: 'get',
-    url: 'https://sua-api.com',
-    auth: {
-        username: 'seu-nome-de-usuário',
-        password: 'sua-senha'
-    }
-}).then(response => {
-    console.log(response.data);
-}).catch(error => {
-    console.error(error);
-});
+async function fetchWithBasicAuth(url: string, username: string, password: string) {
+  try {
+    const response = await axios.get(url, {
+      auth: {
+        username,
+        password,
+      },
+    });
+    console.log('Dados:', response.data);
+  } catch (error) {
+    console.error('Erro na requisição:', error);
+  }
+}
+
+// Substitua com a URL do seu recurso protegido, e as credenciais correspondentes
+fetchWithBasicAuth('https://api.exemplo.com/dados', 'meuUsuario', 'minhaSenha');
 ```
-Quando você executa esse código, uma solicitação GET será enviada para 'https://sua-api.com' com as credenciais de autenticação especificadas. A resposta será registrada no console.
 
-## Aprofundando um Pouco Mais
+Saída de exemplo (depende do recurso acessado):
 
-(1) Contexto Histórico: A autenticação básica é um método de autenticação de usuário na web amplamente usado e definido no HTTP/1.1. Ela foi criada em 1999, mas ainda é comumente usada devido à sua simplicidade.
+```
+Dados: { "resultado": "Informação protegida acessada com sucesso!" }
+```
 
-(2) Alternativas: Embora a autenticação básica seja simples e amplamente suportada, ela não é a opção mais segura porque as credenciais são codificadas em Base64, mas não são criptografadas ou hashadas de alguma forma. Por isso, pode ser mais seguro usar a autenticação de token ou OAuth.
+## Mergulho Profundo
 
-(3) Detalhes de Implementação: Quando você envia uma solicitação com autenticação básica, a informação de autenticação é colocada no cabeçalho da solicitação HTTP. O cabeçalho `Authorization` terá o valor `Basic {Base64_encode(username + ":" + password)}`.
+A autenticação básica HTTP é um método antigo e simples para enviar credenciais. Elas são codificadas em Base64 (mas não criptografadas!) e passadas no cabeçalho da requisição, o que é inseguro se não estiver sobre HTTPS. Como uma alternativa mais segura, muitos migraram para tokens mais robustos, como Bearer tokens em conjunto com OAuth. Um detalhe importante na implementação é lembrar-se de nunca expor as credenciais no cliente; elas devem ser armazenadas com segurança e usadas apenas no servidor. No TypeScript, é essencial também tipar corretamente as respostas e erros para um melhor manejo e manutenção do código.
 
-## Veja Também:
+## Veja Também
 
-- [MDN web docs: HTTP authentication](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication)
-- [NPM: axios](https://www.npmjs.com/package/axios) 
-- [OAuth 2.0](https://oauth.net/2/)
+- Documentação do Axios: https://axios-http.com/docs/intro
+- Autenticação básica na MDN Web Docs: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- Base64 Encoding explained: https://www.base64encode.org/
+- Mais sobre segurança com HTTPS: https://letsencrypt.org/getting-started/
+- Introdução a OAuth 2: https://oauth.net/2/

@@ -1,6 +1,7 @@
 ---
 title:                "Starting a new project"
-html_title:           "Bash recipe: Starting a new project"
+date:                  2024-01-20T18:03:18.567037-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Starting a new project"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,37 +12,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Starting a new project means creating a fresh, neatly organized environment, custom-tailored to solve a specific task or set of tasks. It's vital because it helps programmers stay organized, which aids in code maintenance and team collaboration.
+
+Starting a new project means setting up a fresh programming environment for your code. Programmers do it to kick off development with a clean slate and organize thoughts into tangible code.
 
 ## How to:
-Starting a new Clojure project is super simple with Leiningen tool. Here’s how:
 
-First, install Leiningen by following the official guide [here](https://leiningen.org/). 
+To bootstrap a Clojure project, we'll use Leiningen, a popular build tool for Clojure:
 
-Once Leiningen is installed, head to your terminal and type the following command:
+``` Clojure
+;; 1. Install Leiningen if you haven't (https://leiningen.org/)
+;; 2. Generate a new project skeleton:
+lein new app my-cool-app
 
-```Clojure
-lein new my-clojure-project
+;; 3. Navigate into your new project:
+cd my-cool-app
+
+;; 4. Start a REPL (Read-Eval-Print Loop):
+lein repl
+
+;; Sample output:
+;; nREPL server started on port 12345 on host 127.0.0.1 - nrepl://127.0.0.1:12345
+;; REPL-y 0.4.4, nREPL 0.6.0
+;; Clojure 1.10.1
+;; Java 1.8.0_232
+;;     Docs: (doc function-name-here)
+;;           (find-doc "part-of-name-here")
+;;   Source: (source function-name-here)
+;;  Javadoc: (javadoc java-object-or-class-here)
+;;     Exit: Control+D or (exit) or (quit)
+;;  Results: Stored in vars *1, *2, *3, an exception in *e
+
+;; 5. Create a file for your code (src/my_cool_app/core.clj) and open it in your favorite text editor.
+
+;; 6. Write some simple Clojure code:
+(ns my-cool-app.core)
+
+(defn say-hello []
+  (println "Hello, Clojure world!"))
+
+;; 7. Run your function in the REPL:
+(my-cool-app.core/say-hello)
+
+;; Sample output:
+;; Hello, Clojure world!
 ```
-
-This creates a new Clojure project directory named "my-clojure-project". Simple, right? Inside this new directory, you'll find core.clj file in the src/my_clojure_project directory. When we talk about code, this file is where all your genius ideas will be placed. 
-
-To run your new project, navigate into your project directory and type:
-
-```Clojure
-lein run
-```
-
-If done correctly, you'll see "Hello, World!" pop onto your terminal. Congrats on your new Clojure project!
 
 ## Deep Dive
-Clojure, a dialect of the Lisp programming language, was created by Rich Hickey to provide a lisp-like language that runs on modern platforms (like Java and JavaScript runtime) and caters to functional programming. 
 
-When it comes to starting a new project, there are alternatives to Leiningen, like Boot and the Clojure command-line tools, but Leiningen remains a firm favorite due to its robustness and ease of use. 
+Clojure projects often start with Leiningen or Boot for managing dependencies, building, and automating tasks. Leiningen has been around since 2010 and has become the default choice for most Clojurists. 
 
-Understanding how Leiningen works under the hood isn’t necessary for starting a new project, but knowledge can be power. Leiningen works by creating a project directory and generating a project.clj file within it. This file is what Leiningen uses to manage your project's dependencies and settings. 
+Alternative tools do exist, like `deps.edn` and Clojure CLI tools, which were introduced by Clojure/core to provide more straightforward dependency management and project configuration.
+
+Clojure itself values immutability and functional programming. Starting a project correctly emphasizes clean state management and separation of concerns across functions and namespaces.
+
+Projects typically adhere to a standard directory structure:
+- `src/` for your main code.
+- `test/` for test code.
+- `resources/` for non-code resources.
+- `project.clj` or `deps.edn` to manage dependencies and configurations.
+
+A good practice is to keep things minimal at the start. Add dependencies as you go, keeping your project light and manageable.
 
 ## See Also
-Consider exploring these additional resources to reinforce your understanding:
-- [Clojure for the Brave and True](https://www.braveclojure.com/)
-- [Getting started with Clojure](https://clojure.org/guides/getting_started)
+
+- [Leiningen's Getting Started Guide](https://leiningen.org/#getting-started)
+- [Clojure Docs](https://clojuredocs.org/)
+- [Clojure Style Guide](https://guide.clojure.style/)
+- [Clojure CLI tools](https://clojure.org/guides/getting_started)
+- [The Clojure Toolbox](https://www.clojure-toolbox.com/)

@@ -1,6 +1,7 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Bash: Rozpoczynanie nowego projektu"
+date:                  2024-01-20T18:04:10.110164-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,45 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Zaczynanie nowego projektu programistycznego to proces tworzenia unikalnej aplikacji od podstaw. Programiści robią to, aby rozwiązać specyficzne problemy lub ułatwić ludziom życie za pomocą technologii.
+Zaczynając nowy projekt, programiści tworzą grunt pod swój kod - to jak ułozenie fundamentów pod dom. Robią to, bo dobrze przygotowany start to klucz do elastycznego i efektywnego rozwoju aplikacji.
 
 ## Jak to zrobić:
-
-Zacznijmy od prostego przykładu - "witaj, świecie" w PHP.
-```PHP
-<?php
-echo "Witaj, świecie!";
-?>
-```
-Gdy uruchomisz ten kod, twoje wyjście powinno wyglądać tak:
-```PHP
-Witaj, świecie!
-```
-Teraz, zaczniemy bardziej skomplikowany projekt: prosta aplikacja do zarządzania kontaktami. Będziemy potrzebować pliku `index.php`.
+Załóżmy, że zaczynamy projekt w PHP. Oto jak możesz to zrobić:
 
 ```PHP
 <?php
-$contacts = array(
-    array("name" => "Anna", "phone" => "123-456-7890"),
-    array("name" => "Tomasz", "phone" => "098-765-4321"),
-);
+// Zamysł: prosty skrypt PHP jako punkt wyjścia dla nowego projektu
 
-foreach ($contacts as $contact) {
-    echo "Name: " . $contact["name"] . ", Phone: " . $contact["phone"] . "\n";
-}
+echo "Witaj w nowym projekcie PHP!"; // Wyświetla powitanie
+
+// Tutaj będziesz rozszerzał swoją aplikację...
 ?>
 ```
-Staraj się za każdym razem tworzyć modularne i łatwe do testowania kody.
+Po uruchomieniu kodu otrzymasz:
 
-## W głąb tematu:
+```
+Witaj w nowym projekcie PHP!
+```
 
-Zaczynanie nowego projektu programistycznego ma swoje korzenie w procesie twórczym, zdecydowanie dalej od czysto technicznego. W latach '70 i '80, programiści często musieli zaczynać nowe projekty od niczego.
+Dla bardziej skomplikowanego projektu użyjemy Composera - menadżera zależności dla PHP:
 
-Istnieje wiele alternatyw dla PHP, takich jak Python, Ruby czy JavaScript. Wybór języka zależy od celów projektu i preferencji programisty.
+```bash
+composer init
+composer require symfony/http-foundation
+```
 
-Oprócz korzystania z "gołego" PHP, innym popularnym podejściem jest korzystanie z frameworków, takich jak Laravel, Symfony lub CodeIgniter, które ułatwiają i przyspieszają proces budowy aplikacji.
+A potem twórz swoją aplikację w oparciu o te biblioteki.
 
-## Zobacz także:
+## Głębsze spojrzenie:
+Na przestrzeni lat sposób tworzenia nowych projektów w PHP ewoluował. Na początku, bez narzędzi takich jak Composer, kodowano wszystko od zera. Composer, wydany w 2012 roku, umożliwił zarządzanie bibliotekami i zależnościami projektu, co było olbrzymią zmianą.
 
-3. [Podstawy programowania w PHP](https://www.codecademy.com/learn/learn-php)
+Inne narzędzia jak PHP Frameworks (np. Symfony, Laravel), oferują gotowe komponenty podstawowe. Umożliwiają one tworzenie aplikacji w sposób bardziej zorganizowany i szybki, dzięki wykorzystaniu gotowych rozwiązań.
+
+## Zobacz również:
+- [Composer](https://getcomposer.org/doc/)
+- [Symfony](https://symfony.com/doc/current/setup.html)
+- [Laravel](https://laravel.com/docs/)

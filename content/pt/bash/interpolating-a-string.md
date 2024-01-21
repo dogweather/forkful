@@ -1,6 +1,7 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "Java: Interpolando uma string"
+date:                  2024-01-20T17:50:36.504584-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolando uma string"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,55 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Quê & Por Quê?
+## O Que & Porquê?
 
-A interpolação de strings é uma maneira de incorporar variáveis dentro de uma string. Os programadores o fazem para criar conteúdo dinâmico e facilitar a leitura e o entendimento do código.
+Interpolar uma string é o ato de inserir variáveis ou expressões dentro de uma cadeia de texto, de modo a criar um novo valor. Programadores fazem isso para construir strings dinamicamente e facilitar a manipulação e apresentação de dados.
 
 ## Como Fazer:
 
-No Bash, você pode interpolar uma string usando o caracter `$`. Veja como é fácil:
-
 ```Bash
-nome="João"
-echo "Olá, $nome"
-```
-Saída:
+# Interpolação simples com variáveis.
+nome="Mundo"
+echo "Olá, $nome!"
 
-```
-Olá, João
-```
-Você também pode usar chaves (`{}`) para interpolar uma string, o que é útil quando a variável faz parte de uma string maior:
+# Sample output: Olá, Mundo!
 
-```Bash
-nome="João"
-echo "Olá, ${nome}Smith"
-```
-Saída:
+# Utilizando chaves para delimitar o nome da variável.
+preco=20
+echo "O custo é ${preco} reais."
 
-```
-Olá, JoãoSmith
-```
+# Sample output: O custo é 20 reais.
 
-## Mergulho Profundo
+# Executando um comando dentro de uma string.
+echo "Estamos no diretório $(pwd)."
 
-Desde as suas origens na década de 1970, a interpolação de strings tem sido uma característica comum na maioria das linguagens de programação. No entanto, o Bash aborda de maneira um pouco diferente, com um estilo mais simples e conciso, eliminando a necessidade de funções de concatenação complicadas.
+# Sample output: Estamos no diretório /caminho/para/diretorio.
 
-Existem outras maneiras de interpolar uma string em Bash. Por exemplo, você pode usar a sintaxe "-e" para habilitar a interpretação de caractéres de backslash:
+# Interpolando strings com aritmética.
+a=5
+b=10
+echo "Cinco mais dez é $((a + b))."
 
-```Bash
-nome="João"
-echo -e "Olá, \n$nome"
-```
-Saída:
-
-```
-Olá, 
-João
+# Sample output: Cinco mais dez é 15.
 ```
 
-No entanto, este método precisa de cautela, pois pode abrir seu código para vulnerabilidades de injeção de código se a variável não for devidamente sanitizada.
+## Mergulho Profundo:
 
-## Veja Também
+Interpolar strings em Bash é uma prática que remonta aos primeiros dias do shell Unix. Usando essa técnica, torna-se mais fácil automatizar tarefas e personalizar mensagens sem a necessidade de concatenar strings e variáveis manualmente, o que economiza tempo e aumenta a legibilidade.
 
-- Guia de programação Bash: [https://tldp.org/LDP/abs/html/](https://tldp.org/LDP/abs/html/)
-- Saiba mais sobre a injeção de código: [https://www.owasp.org/index.php/Code_Injection](https://www.owasp.org/index.php/Code_Injection)
+Existem alternativas à interpolação direta em Bash, como a concatenação explícita ou o uso do comando `printf`, que oferece maior controle sobre a formatação.
+
+Quanto à implementação, quando o Bash encontra um `$` dentro de aspas duplas, ele sabe que precisa substituir o que segue pelo valor correspondente. Chaves são úteis para delimitar a variável, especialmente quando há texto adjacente que pode ser confundido como parte do nome da variável.
+
+## Veja Também:
+
+- [Bash String Manipulation Guide](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion)
+- [Advanced Bash-Scripting Guide: Variables and Parameters](http://www.tldp.org/LDP/abs/html/parameter-substitution.html)
+- [GNU Bash Reference Manual](https://www.gnu.org/software/bash/manual/)

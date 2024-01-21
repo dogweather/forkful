@@ -1,6 +1,7 @@
 ---
 title:                "सबस्ट्रिंग्स निकालना"
-html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+date:                  2024-01-20T17:46:26.950476-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,48 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 1. क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+तार (strings) के विशिष्ट हिस्सों को निकालना तब होता है जब हम लंबे टेक्स्ट से कुछ खास उपयोगी जानकारियां ले रहे होते हैं। यह काम डेटा पर्सिंग, खोज और डेटा प्रोसेसिंग में खासतौर पर उपयोगी होता है।
 
-Substring एक बारी में कई characters की एक सीक्वेंस होती हैं जो एक बड़ी string से निकाली जाती हैं। कई बार, हमें कुछ विशेष characters की तलाश होती है, तभी हम substring निकालते हैं। 
+## How to: (कैसे करें:)
+```haskell
+-- `take` फ़ंक्शन का इस्तेमाल करके
+takeSubstring :: Int -> String -> String
+takeSubstring n = take n
 
-## 2. कैसे करें:
+-- `drop` और `take` का इस्तेमाल कर विशिष्ट जगह से लेना
+extractSubstring :: Int -> Int -> String -> String
+extractSubstring start end = take (end - start) . drop start
 
-### substring निकालना: drop और take का प्रयोग करें
-
-```Haskell
-let s = "Haskell Programming Language"
-let subString = drop 8 . take 18 $ s
-print subString
+-- उदाहरण एवं आउटपुट
+main :: IO ()
+main = do
+  let text = "Hello, Haskell!"
+  putStrLn $ takeSubstring 5 text -- "Hello"
+  putStrLn $ extractSubstring 7 14 text -- "Haskell"
 ```
 
-आपको "Programming" मिलेगा। 
+## Deep Dive (गहन जानकारी)
+तार से उप-तार निकालने का विचार C भाषा के 'substring' कार्यों से विकसित हुआ है। Haskell में, तार को 'lists' के रूप में समझा जाता है, जिससे उप-तार का निर्माण सूची संचालनों के जरिए होता है। `take` और `drop` दो मौलिक फंक्शन हैं जो उपयोगी होते हैं। `Data.Text` मॉड्यूल अन्य विकल्प प्रदान करता है जिसमें `takeEnd`, `dropEnd`, और `splitAt` शामिल हैं जो अधिक कुशलता से काम करते हैं। लेकिन यह सभी ऑपरेशन हास्केल के लेजी इवैल्यूएशन का लाभ उठाते हैं, जिसका अर्थ है कि उप-तार तब तक नहीं बनाया जाता जब तक वह वास्तव में जरूरी न हो।
 
-### substring निकालना: splitAt का प्रयोग करें
-
-```Haskell
-let s = "Haskell Programming Language"
-let (_, temp) = splitAt 8 s
-let (subString, _) = splitAt 10 temp
-print subString
-```
-
-आपको "Programming" मिलेगा। 
-
-## 3. गहराई में:
-
-### ऐतिहासिक संदर्भ:
-
-Haskell एक pure functional programming language है और इसकी सबस्ट्रिंग निकालने की क्षमता पुराने समय से ही है।
-
-### विकल्प:
-
-Python और JavaScript जैसी programming languages में, slicing operator का उपयोग करके मानचित्रण किया जा सकता है। 
-
-### बातचीत:
-
-Haskell में Substrings को निकालने के लिए `take`, `drop और `splitAt` का इस्तेमाल किया जा सकता है। 
-
-## 4. देखें भी:
-
-- [Haskell Prelude](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html): Haskell के prelude डॉक्यूमेंटेशन की अधिक जानकारी के लिए।
-- [Hoogle](https://www.haskell.org/hoogle/): Haskell लाइब्रेरी के फंक्शंस खोजने के लिए हूगल का प्रयोग करें।
+## See Also (और भी देखें)
+- Haskell `Data.Text` पैकेज: [https://hackage.haskell.org/package/text](https://hackage.haskell.org/package/text)
+- Lazy Evaluation in Haskell: [https://wiki.haskell.org/Lazy_evaluation](https://wiki.haskell.org/Lazy_evaluation)
+- List functions in Haskell: [https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-List.html](https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-List.html)

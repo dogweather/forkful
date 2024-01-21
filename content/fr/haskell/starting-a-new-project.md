@@ -1,7 +1,8 @@
 ---
-title:                "Démarrer un nouveau projet"
-html_title:           "Elm: Démarrer un nouveau projet"
-simple_title:         "Démarrer un nouveau projet"
+title:                "Lancement d'un nouveau projet"
+date:                  2024-01-20T18:03:29.838667-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lancement d'un nouveau projet"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -10,28 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Lancement d'un nouveau projet en Haskell 
-
 ## Quoi & Pourquoi?
-Démarrer un nouveau projet est l'acte de mettre en place une base solide pour votre programme. Les programmeurs font cela pour organiser leurs pensées, définir le cadre du travail à faire, et commencer le développement avec une vision claire.
+Commencer un nouveau projet en Haskell, c'est partir de zéro pour créer un programme. Les programmeurs se lancent dans cette aventure pour concrétiser une idée, résoudre un problème précis ou par simple curiosité pour explorer un nouveau concept de programmation.
 
 ## Comment faire:
-Pour commencer un nouveau projet Haskell, vous pouvez utiliser `stack` ou `cabal`. Voici un exemple d'utilisation de `stack`:
+Pour démarrer, installez Stack, un gestionnaire de projets et de paquets Haskell. Une fois Stack installé, créez un nouveau projet : 
 
 ```Haskell
-stack new my-project simple
-cd my-project
+stack new monProjet simple
+cd monProjet
 stack setup
 stack build
-stack exec my-project-exe
 ```
 
-Vous devriez voir `hello world` comme sortie. Cela signifie que vous avez réussi à démarrer votre nouveau projet !
+Créez ensuite un fichier `Main.hs`:
 
-## Exploration en profondeur
-Historiquement, `stack` et `cabal` sont les deux principaux outils pour gérer les projets Haskell, chacun ayant ses propres avantages et inconvénients. `stack` est plus récent et est conçu pour être plus facile à utiliser, tandis que `cabal` est plus ancien et a une plus grande flexibilité. En fonction de vos besoins, vous pouvez choisir l'un ou l'autre pour gérer votre projet.
+```Haskell
+main :: IO ()
+main = putStrLn "Bienvenue dans votre nouveau projet Haskell!"
+```
 
-En ce qui concerne l'implémentation, quand vous lancez `stack new`, `stack` crée une série de fichiers et de dossiers pour votre projet, dont le plus important est le fichier `package.yaml`. Ce fichier définit tous les détails spécifiques du projet, y compris les dépendances.
+Compilez et exécutez:
 
-## Voir Aussi
-Pour plus d'informations, consultez les pages de documentation officielles pour [`stack`](https://docs.haskellstack.org/en/stable/README/) et [`cabal`](https://www.haskell.org/cabal/users-guide/). Vous pouvez également trouver utile le livre ["Haskell Programming from First Principles"](http://haskellbook.com/) qui a un excellent chapitre sur la configuration et la gestion des projets.
+```Haskell
+stack ghc -- Main.hs
+./Main
+```
+
+Sortie:
+
+```Haskell
+Bienvenue dans votre nouveau projet Haskell!
+```
+
+## Plongée en profondeur
+Historiquement, Cabal était l'outil par défaut pour gérer les projets Haskell, mais Stack, introduit en 2015, vise à simplifier le processus de développement en offrant un environnement reproductible et des configurations stables. Stack gère la compatibilité des paquets et leurs dépendances de façon isolée pour chaque projet.
+
+Alternativement, vous pouvez aussi utiliser Nix pour une approche encore plus granulaire et reproductible. Nix est un gestionnaire de paquets qui permet de construire des environnements isolés indépendamment du système d'exploitation.
+
+Concernant l'implémentation, après avoir créé votre projet, vous concentrerez vos développements dans le fichier `Main.hs`, qui peut être étendu en modules. L'utilisation de types et de fonctions pures est au cœur de Haskell, garantissant ainsi des programmes fiables et faciles à maintenir.
+
+## Voir également
+- Haskell Stack documentation: https://docs.haskellstack.org/en/stable/README/
+- The Haskell Tool Stack: https://www.fpcomplete.com/haskell/tutorial/stack-script/
+- Learn You a Haskell for Great Good!: http://learnyouahaskell.com/
+- Haskell Cabal Guide: https://downloads.haskell.org/~cabal/cabal-user-guide/
+- Nix Package Manager Guide: https://nixos.org/download.html

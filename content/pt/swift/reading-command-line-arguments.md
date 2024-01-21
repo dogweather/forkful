@@ -1,7 +1,8 @@
 ---
-title:                "Lendo argumentos de linha de comando"
-html_title:           "Arduino: Lendo argumentos de linha de comando"
-simple_title:         "Lendo argumentos de linha de comando"
+title:                "Lendo argumentos da linha de comando"
+date:                  2024-01-20T17:56:55.154514-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,47 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O quê e por quê?
+## What & Why?
+Ler argumentos da linha de comando permite que programas Swift recebam inputs externos ao serem executados. Programadores fazem isso para personalizar a execução de apps via terminal ou scripts, baseando-se em dados fornecidos por usuários ou outros programas.
 
-A leitura de argumentos da linha de comando consiste em acessar os dados inseridos em um determinado comando no console. Programadores utilizam isso para controlar como o programa irá se comportar baseado nesses argumentos.
-
-## Como fazer:
-
-Aqui está um exemplo de como ler argumentos da linha de comando:
+## How to:
+Ler argumentos em Swift é simples. A propriedade `CommandLine.arguments` retorna um array de strings com os argumentos passados. Veja o exemplo:
 
 ```Swift
-import Foundation
-
-//Acessa os argumentos da linha de comando
-let arguments = CommandLine.arguments
-
-print("Há \(arguments.count) argumentos")
-
-for (index, argument) in arguments.enumerated() {
-    print("Argumento \(index): \(argument)")
+// main.swift
+for argument in CommandLine.arguments {
+    print(argument)
 }
 ```
 
-Se você executar esse programa com o seguinte comando: `swift programa.swift primeiro_argumento segundo_argumento`, terá essa saída:
+Executando `swift main.swift olá mundo`, vai resultar em:
 
 ```
-Há 3 argumentos
-Argumento 0: ./programa.swift
-Argumento 1: primeiro_argumento
-Argumento 2: segundo_argumento
+main.swift
+olá
+mundo
 ```
 
-## Detalhando:
+Note que o primeiro argumento é sempre o caminho do script.
 
-Historicamente, argumentos de linha de comando têm sido uma maneira efetiva de dar instruções a um programa. Eles são normalmente usados para iniciar um programa com configurações específicas.
+## Deep Dive
+Historicamente, ler argumentos da linha de comando é um conceito herdado do Unix e de sistemas C-like, como C e C++. Em Swift, a classe `CommandLine` contém recursos para esta finalidade.
 
-Alternativamente, muitas linguagens de programação oferecem bibliotecas que simplificam a leitura desses argumentos. Pode-se optar por essas alternativas dependendo da complexidade do input requerido.
+Alternativas para leitura de comandos incluem o uso de bibliotecas de terceiros, como `SwiftCLI` ou `Commander`, que oferecem mais funcionalidades e uma interface mais refinada para lida com inputs complexos.
 
-Falando sobre implementação em Swift, a classe `CommandLine` fornece acesso aos argumentos de linha de comando. O primeiro argumento `CommandLine.arguments[0]` é sempre o nome do programa.
+Quando se implementa a leitura de argumentos, considere validar e parsear cada argumento para garantir que eles sejam adequados para seu uso no programa. Isso pode envolver a conversão de tipos de dados, a verificação de presença de flags e a manipulação de erros.
 
-## Veja também:
-
-Para mais detalhes, consulte:
-- [Documentação da Apple sobre a classe CommandLine](https://developer.apple.com/documentation/swift/commandline)
-- [Tutorial de Argumentos de Linha de Comando em Swift](https://www.raywenderlich.com/411-command-line-programs-on-macos-tutorial)
-- [Post no StackOverflow sobre Argumentos de Linha de Comando em Swift](https://stackoverflow.com/questions/24029633/how-do-you-use-command-line-arguments-in-swift)
+## See Also
+- Documentação Oficial da Swift: [https://swift.org/documentation/](https://swift.org/documentation/)
+- Artigo "Command-Line Argument Parsing using Swift Package Manager": [https://www.raywenderlich.com/511-command-line-programs-on-macos-tutorial](https://www.raywenderlich.com/511-command-line-programs-on-macos-tutorial)
+- SwiftCLI no GitHub: [https://github.com/jakeheis/SwiftCLI](https://github.com/jakeheis/SwiftCLI)
+- Commander no GitHub: [https://github.com/kylef/Commander](https://github.com/kylef/Commander)

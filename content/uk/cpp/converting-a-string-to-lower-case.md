@@ -1,7 +1,8 @@
 ---
-title:                "Перетворення рядка в нижній регістр"
-html_title:           "Javascript: Перетворення рядка в нижній регістр"
-simple_title:         "Перетворення рядка в нижній регістр"
+title:                "Перетворення рядка у нижній регістр"
+date:                  2024-01-20T17:38:21.773624-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Перетворення рядка у нижній регістр"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,39 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
+## What & Why?
+## Що і Чому?
 
-Перетворення рядків у нижній регістр - це процес, коли всі великі букви у рядку перетворюються на малі. Це корисно для унормовування даних і спрощення порівняння рядків.
+Приведення рядка до нижнього регістру - це процес, в якому всі великі літери в тексті замінюються на малі. Програмісти роблять це для забезпечення єдності даних, спрощення порівнянь рядків та валідації вводу.
 
-## Як це робиться:
-
-Для перетворення рядків у нижній регістр у C++, ви можете використовувати стандартну функцію 'tolower' із бібліотеки 'cctype'.
+## How to:
+## Як це зробити:
 
 ```C++
 #include <iostream>
-#include <cctype>
+#include <string>
 #include <algorithm>
 
 int main() {
-    std::string str = "Hello, World!";
-    std::transform(str.begin(), str.end(), str.begin(), ::tolower);
-    std::cout << str;
+    std::string text = "Привіт, Світе!";
+    std::transform(text.begin(), text.end(), text.begin(), 
+                   [](unsigned char c) { return std::tolower(c); });
+    
+    std::cout << text << std::endl;  // Output: привіт, світе!
     return 0;
 }
 ```
+Пам'ятайте, що в стандартній бібліотеці C++ std::tolower працює тільки з латинським алфавітом.
 
-Виходом цього коду буде `"hello, world!"`.
+## Deep Dive:
+## Детальний Розбір:
 
-## Поглиблено:
+Конвертація рядків у нижній регістр давно є стандартною операцією, корисною для пошуку тексту та збереження даних. Важливо відмітити, що історично, ще до Unicode, обмеження в технологіях призводили до конвертації лише англійського алфавіту. З появою Unicode ситуація змінилася.
 
-Перетворення рядків у нижній регістр - це відносно стара техніка, яка використовується разом зі стародавніми системами обробки тексту. Зберігання і зіставлення рядків у нижньому регістрі можуть спростити процес знаходження співпадінь.
+Існують альтернативні методи, такі як boost::to_lower_copy для підтримки Unicode. Також, в налаштуваннях локалізації можна вказати мову для правильної роботи std::tolower з нестандартними символами.
 
-Альтернативи можуть включати використання регулярних виразів або можливостей Об'єктно-Орієнтованого Програмування для створення власних функцій.
+Деталі реалізації важливі: std::tolower не перетворить символ, якщо він уже є у нижньому регістрі або не є літерою. Точність конвертації залежить від локалі, що встановлена в поточному середовищі.
 
-C++ `tolower` працює, перетворюючи юнікод-символи в їх еквіваленти нижнього регістру. Проте, вона працює тільки на окремі символи, тому для рядків ми використовуємо алгоритм `std::transform`.
+## See Also:
+## Дивіться Також:
 
-## Дивись також:
-
-- [C++ Reference: `std::transform`](http://www.cplusplus.com/reference/algorithm/transform/)
-- [C++ Reference: `std::tolower`](http://www.cplusplus.com/reference/cctype/tolower/)
-- [StackOverflow: how to implement tolower in C++](https://stackoverflow.com/questions/313970/how-to-convert-stdstring-to-lower-case)
+- [C++ reference on std::tolower](https://en.cppreference.com/w/cpp/string/byte/tolower)
+- [Boost String Algorithms Library](https://www.boost.org/doc/libs/release/libs/algorithm/string/)
+- [Unicode Case Conversion](https://www.unicode.org/reports/tr21/tr21-5.html)

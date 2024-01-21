@@ -1,7 +1,8 @@
 ---
-title:                "Estrazione di sottosequenze"
-html_title:           "Arduino: Estrazione di sottosequenze"
-simple_title:         "Estrazione di sottosequenze"
+title:                "Estrazione di sottostringhe"
+date:                  2024-01-20T17:46:08.650962-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,40 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-**## Che cos'è e perché?**
+## What & Why?
+Estrarre sottosequenze (o sottostringhe) significa prendere parti specifiche di una stringa. Questo è utile per analisi, manipolazioni, e controllo di dati testuali.
 
-L'estrazione di sottostringhe è l'operazione che permette di ottenere una parte di una stringa, partendo da una posizione e una lunghezza specificate. Questa operazione è fondamentale in programmazione per manipolare dati testuali, per esempio per dividere stringhe più grandi in parti più piccole, o per isolare informazioni specifiche all'interno di un testo.
-
-**## Come fare:**
-
-In Haskell, è possibile estrarre una sottostringa usando la funzione `drop` e `take`. `drop n` rimuove i primi `n` caratteri da una stringa, mentre `take m` preleva i primi `m` caratteri da una stringa.
+## How to:
+Ecco come si fa in Haskell:
 
 ```Haskell
-substring :: Int -> Int -> String -> String
-substring start len = take len . drop start
+import Data.List (isPrefixOf)
+
+-- Estrarre con ‘take’ e ‘drop’
+estraiSubstring :: Int -> Int -> String -> String
+estraiSubstring da quanti str = take quanti . drop da $ str
+
+-- Uso di ‘splitAt’ per dividere e prendere il secondo pezzo
+secondoPezzo :: Int -> String -> String
+secondoPezzo da str = snd . splitAt da $ str
+
+-- Filtrare con una condizione (ad esempio prefisso con 'isPrefixOf')
+filtrareConPrefisso :: String -> [String] -> [String]
+filtrareConPrefisso prefisso = filter (prefisso `isPrefixOf`)
+
 ```
 
-Ecco un esempio di utilizzo:
+Esempio di output:
 
 ```Haskell
 main = do
-  let s = "Buongiorno, mondo!"
-  print $ substring 0 9 s  -- Output: "Buongiorno"
-  print $ substring 11 5 s -- Output: "mondo"
+    let esempioString = "Questa è una stringa di esempio"
+    print $ estraiSubstring 7 9 esempioString -- "una stri"
+    print $ secondoPezzo 15 esempioString     -- "stringa di esempio"
+    print $ filtrareConPrefisso "Questa" ["Questa è", "Quella è", "Questa stringa"] -- ["Questa è", "Questa stringa"]
 ```
-Con questo codice, stiamo estraendo le sottostringhe "Buongiorno" e "mondo" dalla stringa "Buongiorno, mondo!".
 
-**## Approfondimento:**
+## Deep Dive
+La manipolazione di stringhe in Haskell, come l'estrazione di sottostringhe, si appoggia spesso a funzioni di alto livello fornite da `Data.List` e altri moduli. Piuttosto che iterare su una stringa, Haskell, essendo funzionale e pigro, tende a ragionare in termini di trasformazioni e filtri.
 
-L'estrazione delle sottostringhe è un concetto vecchio quanto il concetto di stringa stessa e viene utilizzato in quasi tutti i linguaggi di programmazione. Mentre alcuni linguaggi hanno funzioni integrate per questa operazione, in Haskell dobbiamo creare una funzione personalizzata utilizzando `drop` e `take`.
+In contesti storici, linguaggi come C mettevano l'accento su loop e puntatori per manipolare stringhe. Haskell si differenzia per il suo approccio più sicuro e dichiarativo. 
 
-Un'alternativa a questa funzione sarebbe l'utilizzo delle funzioni `splitAt` o `slice`, ma non sono tanto flessibili quanto la combinazione di `drop` e `take`.
+Alternativamente, esistono librerie come `text` e `bytestring` per lavorare con stringhe in modo più efficiente, specialmente con grandi quantità di dati o esigenze di performance.
 
-In termini di prestazioni, l'operazione `drop n` può essere costosa se `n` è grande, in quanto deve scorrere la lista fino all’`n`-esimo elemento. Per il contrario, l'operazione `take m` è effettivamente costante rispetto alla lunghezza della stringa originale.
+L'implementazione dell'estrazione di sottostringhe deve tener conto della rappresentazione di una stringa in Haskell, ovvero una lista di caratteri. Ogni operazione sulla stringa può trasformarsi in operazioni sulla lista, che è un concetto centrale nella programmazione funzionale.
 
-**## Vedi anche:**
+## See Also
+- Haskell Wiki su stringhe: https://wiki.haskell.org/Working_with_strings
+- Documentazione su `Data.Text`: https://hackage.haskell.org/package/text
+- Documentazione su `Data.ByteString`: https://hackage.haskell.org/package/bytestring
 
-Per ulteriori approfondimenti su come lavorare con le stringhe in Haskell, consulta le seguenti risorse:
-
-1. [Lavorare con le Stringhe in Haskell](http://learnyouahaskell.com/starting-out#an-intro-to-lists)
-3. [Hoogle: Una Ricerca API per Haskell](https://www.haskell.org/hoogle/)
+Queste risorse sono perfette per approfondire la manipolazione di stringhe e conoscere le alternative al tipo `String` di Haskell.

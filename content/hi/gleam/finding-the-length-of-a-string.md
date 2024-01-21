@@ -1,7 +1,8 @@
 ---
-title:                "स्ट्रिंग की लंबाई पता करना"
-html_title:           "C++: स्ट्रिंग की लंबाई पता करना"
-simple_title:         "स्ट्रिंग की लंबाई पता करना"
+title:                "स्ट्रिंग की लंबाई ज्ञात करना"
+date:                  2024-01-20T17:48:08.392334-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग की लंबाई ज्ञात करना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,25 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
+## क्या & क्यों?
+String की लंबाई पता करना यानी string में मौजूद characters की संख्या जानना। Programmers इसे इसलिए करते हैं क्योंकि data validation, text processing, या UI elements को properly display करने के लिए यह जानकारी जरूरी होती है।
 
-एक स्ट्रिंग की लंबाई का पता लगाना, इसका मतलब होता है की उसमें कितने अक्षर हैं। प्रोग्रामर्स इसे ऐसे समयों में इस्तेमाल करते हैं जब उन्हें स्ट्रिंग को संसाधित करने, उसमें साम्ग्री जोड़ने, या उसे गणितीय संचालन में इस्तेमाल करने की आवश्यकता होती है। 
+## कैसे करें:
+यहाँ Gleam कोड दिया गया है जिससे आप string की लंबाई पा सकते हैं:
 
-## कैसे करें: 
-
-ग्लीम (Gleam) में, हमें स्ट्रिंग की लंबाई पाने के लिए `string.len()` कार्य का इस्तेमाल करना पड़ता है। यहां एक उदाहरण दी गई है:
-```Gleam
-let my_string = "नमस्ते दुनिया"
-let length = string.len(my_string)
+```gleam
+fn main() {
+  let greeting = "नमस्ते!"
+  let length = string.len(greeting)
+  io.println("String length is: " ++ int.to_string(length))
+}
 ```
-`length` इसका परिणाम होगा 11, क्योंकि "नमस्ते दुनिया" में 11 अक्षर हैं। 
 
-## गहरी जांच:
+जब आप इस कोड को run करेंगे, आपको निम्न output मिलेगा:
 
-स्ट्रिंग की लंबाई के आविष्कार का इतिहास और उसका प्रयोग कम्प्यूटर विज्ञान की सबसे मूलभूत और आवश्यक संगठनात्मक सिद्धांतों में से एक माना जाता है। वैकल्पिक तरीके, जैसे कि स्वयं से काउंट करना या "नेटिव" फ़ंक्शन्स का उपयोग करना, हो सकते हैं, लेकिन `string.len()` के लाभ सबसे अधिक उजागर होते हैं। यह `O(1)` कम्प्लेक्सिटी के साथ काम करता है, जिससे यह तुरंत ही हमें स्ट्रिंग की लंबाई सूचित करता है।
+```
+String length is: 7
+```
 
-## देखने के लिए 
+## गहराई से जानकारी:
+प्राचीन समय से ही, जब भी किसी भाषा में text processing की गई है, string length की जानकारी महत्वपूर्ण रही है। Gleam में, `string.len` function का उपयोग करके आसानी से इसे प्राप्त किया जा सकता है। UTF-8 encoding के कारण, विभिन्न characters का size अलग हो सकता है, लेकिन `string.len` हमेशा सही character count देता है। अन्य भाषाओं में, इस प्रक्रिया को कभी-कभी अधिक complex algorithms की जरूरत हो सकती है, खासकर जब यह special characters या emojis की बात आती है। Gleam में, यह सब बैकएंड में होता है, इसलिए developers के लिए यह बहुत सीधा है।
 
-ग्लीम स्ट्रिंग्स के बारे में और अधिक जानने के लिए, निम्नलिखित स्रोतों का संदर्भ लें:
-
-- [Gleam Documentation: Strings](https://gleam.run/book/tour/strings.html)
+## संबंधित सूत्र:
+- Gleam language official documentation: [https://gleam.run/](https://gleam.run/)
+- Unicode string processing information: [https://unicode.org](https://unicode.org)

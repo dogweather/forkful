@@ -1,7 +1,8 @@
 ---
-title:                "Skicka en http-begäran med grundläggande autentisering"
-html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
-simple_title:         "Skicka en http-begäran med grundläggande autentisering"
+title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
+date:                  2024-01-20T18:02:18.603497-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,42 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Skicka en HTTP-begäran med grundläggande autentisering i JavaScript
 ## Vad & Varför?
-Skicka en HTTP-begäran med grundläggande autentisering handlar om att skicka data till en server med en autentiseringsheader. Programmerare gör det för att säkerställa att endast de behöriga får åtkomst till dessa data.
+Att skicka en HTTP-förfrågan med basic authentication innebär att man skickar användarnamn och lösenord i klartext, kodat med base64, för att autentisera en användare mot en server. Programmerare gör detta för att begränsa åtkomst till resurser så att endast auktoriserade användare kan nå dem.
 
-## Så här gör du:
-För att Skicka en HTTP-begäran med grundläggande autentisering kan du använda Node.js biblioteket Axios.
+## Hur man gör:
+För att skicka en HTTP-förfrågan med basic authentication i JavaScript kan du använda 'fetch' funktionen tillsammans med `headers` där du anger 'Authorization'.
 
 ```Javascript
-const axios = require('axios').default;
-const username = 'username';
-const password = 'password';
+// Din användarinfo
+const username = 'anvandarnamn';
+const password = 'losenord';
 
-axios({
-  method: 'get',
-  url: 'https://example.com/data',
-  auth: {
-    username: username,
-    password: password
-  }
-}).then(response => {
-  console.log(response.data);
-}).catch(error => {
-  console.error(error);
-});
+// Kodar användarinfo för basic authentication
+const headers = new Headers();
+headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
+
+// Skickar förfrågan
+fetch('https://example.com/data', { method: 'GET', headers: headers })
+  .then(response => {
+    if(response.ok) return response.json();
+    throw new Error('Något gick fel vid autentiseringen.');
+  })
+  .then(data => console.log(data))
+  .catch(error => console.error('Fel: ', error));
 ```
+Om allt är korrekt ska du se svaret från servern, vanligtvis i JSON-format, i konsolen.
 
-Programmet skickar en begäran till `https://example.com/data` med användarnamn och lösenord. Svaret från servern (datan) kommer att skrivas ut i konsolen.
+## Fördjupning
+HTTP Basic Authentication är en gammal men rak på sak metod för att skicka autentiseringsuppgifter. Det var en del av HTTP/1.0-specifikationen 1996. Även om det är mycket enkelt är det inte det säkraste alternativet eftersom det är lätt att dekryptera base64 och läsa klartextlösenord om inte HTTPS används.
 
-## Djupdykning
-Grundläggande autentisering har varit en del av HTTP/1.0 sedan 1996. Dess popularitet beror på dess enkelhet, men det har begränsningar, som att det är osäkert över osäkrade nätverk.
+Det finns säkrare alternativ, som OAuth och tokensbaserad autentisering som JWT (JSON Web Token), där användarinformation inte överförs över nätverket utan varje användarsession hanteras med en unik token.
 
-Alternativ till grundläggande autentisering inkluderar OAuth och JWT, som ger utökad säkerhet och funktionalitet.
+Trots dess säkerhetsbrister används Basic Authentication fortfarande i interna nätverk, scriptade uppgifter, eller enkla API-tester där bekvämlighet tar precedent över säkerhet.
 
-Vid implementering, använd alltid HTTPS för att säkerställa att dina autentiseringsuppgifter är säkra. Observera att lösenordet för grundläggande autentisering skickas som en base64-kodad sträng, vilket inte är särskilt säkert.
-
-## Se också
-- [Axios Dokumentation](https://axios-http.com/docs/intro)
-- [Bearer Authentication](http://www.ietf.org/rfc/rfc6750.txt)
-- [JWT Authenticaction](https://jwt.io/introduction/)
+## Se även
+- [MDN Web Docs - Authorization](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
+- [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+- [OWASP - Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
+- [JWT.io - Introduktion till JSON Web Tokens](https://jwt.io/introduction/)

@@ -1,7 +1,8 @@
 ---
-title:                "Convertir une date en chaîne de caractères"
-html_title:           "Gleam: Convertir une date en chaîne de caractères"
-simple_title:         "Convertir une date en chaîne de caractères"
+title:                "Conversion d'une date en chaîne de caractères"
+date:                  2024-01-20T17:36:40.493647-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Conversion d'une date en chaîne de caractères"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,31 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
-Convertir une date en chaîne signifie transformer une représentation de date en un format de texte. Les développeurs le font pour une meilleure lisibilité des données et une facilitation de stockage ou de transfert.
+## What & Why?
+En programmation, convertir une date en chaîne de caractères permet de formater et d'afficher des informations temporelles. Les développeurs le font pour des raisons de lisibilité humaine ou pour intégrer des dates dans des systèmes qui nécessitent un format spécifique.
 
-## Comment faire :
-```Gleam
-import gleam/date.{Date, format}
+## How to:
+```gleam
+import gleam/calendar.{Date, month_name}
+import gleam/io
 
-let ma_date = Date.new(2022, 12, 31)
-let ma_chaine = format(ma_date, "{YYYY}/{MM}/{DD}")
+pub fn main() {
+  let date = Date(year: 2023, month: 4, day: 12)
+  let date_string = date_to_string(date)
+  io.debug(date_string)
+}
 
-println(ma_chaine)
+fn date_to_string(date: Date) -> String {
+  "{date.year}-{month_name(date.month)}-{date.day}"
+}
 ```
-Sortie :
+Sortie exemple:
 ```
-2022/12/31
+"2023-April-12"
 ```
 
-## Plongée Plus Profonde
-Au fil des années, les langages de programmation ont inclus diverses manières de gérer les dates. Débutant avec des formats texte simples, nous avons évolué vers des types de dates richement modélisés. Gleam est inspiré par ce riche héritage. 
+## Deep Dive
+Historiquement, les dates en programmation ont été source de complexité à cause des multiples formats et fuseaux horaires. Dans Gleam, convertir une date en chaîne de caractères est simple grâce à des fonctions intégrées, mais il est important de garder à l'esprit les standards internationaux comme ISO 8601 pour l'interopérabilité. Alternativement, des bibliothèques tierces offrent plus de fonctionnalités si nécessaire. Le détail d'implémentation utilise généralement des structures pour représenter les dates et des fonctions pour formatter en chaîne de caractères.
 
-D'autres langages utilisent des approches similaires. Par exemple, en Javascript, on utilise `Date.prototype.toISOString()`. En Python, c'est `strftime()`. 
-
-Gleam utilise un format de date simple, indépendamment du fuseau horaire. Pour gérer les fuseaux horaires, vous auriez besoin d'utiliser d'autres bibliothèques ou des fonctionnalités natives du système d'exploitation.
-
-## Voir Aussi
-* Documentation officielle Gleam sur les dates : https://hexdocs.pm/gleam_stdlib/gleam/date.html
-* Python strftime guide : https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
-* Javascript Date.prototype.toISOString() : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
+## See Also
+- [ISO 8601 Date and time format](https://www.iso.org/iso-8601-date-and-time-format.html)
+- [Exemples de formatage de date dans différents langages de programmation](https://en.wikipedia.org/wiki/Date_format_by_country)

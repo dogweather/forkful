@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C#: Pobieranie strony internetowej"
+date:                  2024-01-20T17:44:26.387677-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,48 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego? 
+## What & Why? 
+Czyli po polsku: "Co i dlaczego?"
 
-Pobieranie strony internetowej oznacza po prostu ściąganie jej kodu HTML na twój komputer. Programiści robią to, aby analizować ten kod, przetwarzać dane lub monitorować zmiany na stronie. 
+Pobieranie strony internetowej to proces, w którym uzyskujemy jej dane (najczęściej w formacie HTML) bezpośrednio na nasz komputer. Programiści robią to, aby pracować z treścią strony - analizując, testując, czy integrując systemy.
 
-## Jak to zrobić:
+## How to:
+Czyli po polsku: "Jak to zrobić:"
 
-Poniżej znajduje się przykładowy kod w Haskellu, który pobiera stronę internetową.
-
-```Haskell
-import Network.HTTP 
-import Network.URI (parseURI)
-
-getURLContent :: String -> IO (Either String String)
-getURLContent url = do
-    case parseURI url of
-        Nothing -> return $ Left ("Invalid URL: " ++ url)
-        Just uri -> do
-            body <- simpleHTTP (mkRequest GET uri) >>= getResponseBody
-            return $ Right body
-```
-
-Uruchomienie tego kodu dla URL-a, na przykład "http://www.google.com", zwróci kod HTML strony:
+W Haskellu, możemy użyć biblioteki `http-conduit` do pobierania stron internetowych. Oto przykład użycia:
 
 ```Haskell
+import Network.HTTP.Simple
+
+main :: IO ()
 main = do
-    content <- getURLContent "http://www.google.com"
-    case content of
-        Left errorMsg -> print errorMsg
-        Right body -> putStrLn body
+    response <- httpLBS "http://example.com"
+    let statusCode = getResponseStatusCode response
+    let body = getResponseBody response
+    putStrLn $ "Status code: " ++ show statusCode
+    putStrLn $ "Response body: " ++ show body
 ```
 
-## Bardziej szczegółowo:
+Sample output:
 
-Pobieranie stron internetowych ma długą historię, idącą z powrotem do czasów, kiedy internet był nadal w powijakach. Haskelem można to zrobić na wiele różnych sposobów - używając różnych bibliotek, takich jak `http-conduit`, `wreq` czy `http-client`.
+```
+Status code: 200
+Response body: "<!doctype html>..."
+```
 
-Istotne jest, abyś przestrzegał zasad etycznych podczas korzystania z tych technik, przestrzegając zasady `robots.txt` na stronach internetowych i nie przeciążając serwerów.
+## Deep Dive
+Czyli po polsku: "Wgłębiamy się":
 
-Szczegóły implementacji `simpleHTTP` i `getResponseBody` zależą od wielu czynników, takich jak to, czy serwer obsługuje HTTP/2, czy strona jest zaszyfrowana, itp.
+W przeszłości, by pobrać stronę internetową, można było użyć biblioteki `http`, ale `http-conduit` jest obecnie zalecanym rozwiązaniem, oferującym większą wygodę i funkcje, jak automatyczne przechowywanie sesji czy obsługę połączeń https. Za kulisami, `http-conduit` korzysta z potoków (`conduit`), które efektywnie przetwarzają strumienie danych i mogą obsłużyć zarówno małe, jak i duże odpowiedzi.
 
-## Zobacz również:
+## See Also
+Czyli po polsku: "Zobacz również":
 
-1. Dokumentacja biblioteki Network.HTTP: <http://hackage.haskell.org/package/HTTP-4000.3.12/docs/Network-HTTP.html>.
-2. Inne biblioteki do pobierania stron w Haskellu: `http-conduit` (<https://hackage.haskell.org/package/http-conduit-2.3.7.3>), `wreq` (<https://hackage.haskell.org/package/wreq-0.5.3.2>), `http-client` (<https://hackage.haskell.org/package/http-client-0.6.4.1>).
-3. Zasady dla robotów internetowych: <https://pl.wikipedia.org/wiki/Robots.txt>.
-4. Więcej o historii Internetu: <https://pl.wikipedia.org/wiki/Historia_Internetu>.
+- Oficjalna dokumentacja `http-conduit`: https://hackage.haskell.org/package/http-conduit
+- Opis potoków w Haskellu (`conduit`): https://hackage.haskell.org/package/conduit
+- Tutorial Haskell-a: http://learnyouahaskell.com/chapters

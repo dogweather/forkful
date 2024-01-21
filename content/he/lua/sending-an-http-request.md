@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http"
-html_title:           "Bash: שליחת בקשת http"
-simple_title:         "שליחת בקשת http"
+title:                "שליחת בקשת HTTP"
+date:                  2024-01-20T18:00:16.548621-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -11,33 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-שליחת בקשת HTTP היא פרוצדורה שבה מחשב, המכונה גם "לקוח", מבקש מידע או שירות מאתר אינטרנט, המכונה גם "שרת". מתכנתים עשויים לשלוח בקשות HTTP כדי לגשת למידע מקוונת, לערוך נתונים, או לבצע ניתוח של פעולות משתמשים.
+שליחת בקשת HTTP היא דרך לתקשר עם שרתי ווב לקבלת או שליחת מידע. תכניתנים עושים זאת כדי לאסוף נתונים, לבצע אימות, או לשלוח פקודות לשרתים מתוך יישומים שלהם.
 
-## איך ל:
-בקוד Lua (גרסה הנוכחית), אנחנו יכולים לשלוח בקשת HTTP באמצעות ספריית socket.http:
+## איך לעשות:
+בקטע הזה נראה דוגמה פשוטה לשליחת בקשת HTTP GET בשפת לואה.
 
 ```Lua
--- ניתן לייבא את ספריית socket.http
-local http = require("socket.http")
+local http = require("socket.http")  -- טעינת המודול ברשת של לואה
+local body, code, headers, status = http.request("http://example.com")  -- בקשת GET לדוגמא
 
--- אז, שליחת בקשת HTTP
-
-local url = "http://example.com" -- הכתובת של האתר שאתם מעוניינים לשלוח אליו בקשה.
-local response, status, headers = http.request(url)
-
--- אפשר להדפיס את התשובה
-if status == 200 then
-    print(response) -- הפלט יהיה את הגוף של התגובה, אם התגובה היא בסדר 
+-- הדפסת תוצאות הבקשה
+print("HTTP קוד סטטוס: " .. code)  -- ידפיס, נניח, "HTTP קוד סטטוס: 200"
+if code == 200 then
+    print("תוכן התגובה: " .. body) -- ידפיס את הHTML של הדף
 end
 ```
 
-## מבחן עמוק
-ל"שליחת בקשות HTTP" יש הקשר היסטורי מעניין בעולם של התוכנה. זה תלוי בשיח של "בקשה-תגובה" שהוא קריטי לאינטרנט כפי שאנחנו מכירים היום. אפשרויות אחרות לשליחת בקשות HTTP מכלולות את שימוש בתכנות עזר אחרים, כמו `curl` או `wget`. 
+כאשר מריצים את הקוד הזה, התוצאה תהיה תשובה מהשרת של האתר שהוא ביקש, שהוא `example.com` במקרה הזה.
 
-הפרטים של הישום לשליחת בקשת HTTP בשפת Lua כוללים גם את פענוח כותרות התגובה של HTTP ואת מניפולציה של אותם נתונים, אם נדרש.
+## עומק הצלילה
+שליחת בקשות HTTP משתמשת בפרוטוקול שקיים מאז שנות ה-90 ומשמש לתקשורת ברשת האינטרנט. אף על פי שיש ספריות רבות ומגוונות לשליחת בקשות HTTP בשפות תכנות שונות, בלואה אנו לעיתים קרובות משתמשים במודול `socket.http`, החלק מהספריה `LuaSocket`. קיימות גם אלטרנטיבות כמו `curl` ו-`luasec` לבקשות מאובטחות יותר (HTTPS).
 
-## עיין גם: 
-למידע נוסף, הנה מקורות מועילים:
-- Lua HTTP שליחת בקשת: http://w3.impa.br/~diego/software/luasocket/http.html
-- RFC 2616 (HTTP/1.1): http://www.ietf.org/rfc/rfc2616.txt
-- התחלת מדריך HTTP בקובץ Markdown: https://learnxinyminutes.com/docs/http/
+כאשר שולחים בקשה, הפרוטוקול דורש שנגדיר פרטים כגון סוג הבקשה (GET, POST, וכו'), שם המארח (host name), פאת' למשאב הנדרש, ולעיתים גם פרטים נוספים כגון פרמטרים וכותרות (headers). 
+
+## ראה גם
+- LuaSocket (באנגלית) - [http://w3.impa.br/~diego/software/luasocket](http://w3.impa.br/~diego/software/luasocket)
+- LuaSec (לבקשות HTTPS, באנגלית) - [https://github.com/brunoos/luasec/wiki](https://github.com/brunoos/luasec/wiki)

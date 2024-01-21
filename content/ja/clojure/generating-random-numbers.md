@@ -1,7 +1,8 @@
 ---
-title:                "ランダムな数字の生成"
-html_title:           "C#: ランダムな数字の生成"
-simple_title:         "ランダムな数字の生成"
+title:                "ランダム数の生成"
+date:                  2024-01-20T17:48:46.017969-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "ランダム数の生成"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Numbers"
@@ -10,48 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何と何のため？(What & Why?)
+## What & Why? (何となぜ？)
+ランダムな数値生成とは、予測できない数値を生み出すプロセスです。プログラマーは、テストデータの作成、ゲームの要素のランダマイズ、セキュリティ（例えば、暗号化）などのためにこれを行います。
 
-ランダムな数値の生成は、非予測可能な値を生み出すプロセスです。これは、テストデータの生成、ゲームの結果をランダム化するためなど、多数のプログラミング状況で必要とされます。
+## How to (やり方)
+Clojureでランダムな数値を生成する基本的な方法を紹介します。
 
-## どのように行うか (How to)
+```clojure
+;; 整数のランダムな数を生成
+(rand-int 10)
 
-Clojureでは、`rand`という関数を使いランダムな数値を生成することができます。`rand`関数は0〜1の範囲内でランダムな浮動小数を生成します。
+;; 0から1までの浮動小数点数のランダムな数を生成
+(rand)
 
-```Clojure
-(println (rand))
+;; シード値を指定してランダムジェネレータを作成
+(def r (java.util.Random. 1234))
+
+;; シード値を持つジェネレータから整数を生成
+(.nextInt r 10)
 ```
 
-出力結果には、例えば以下のような値が表示されます。
+実行結果は毎回異なりますが、シード値を設定した場合は同じシードから同じ数値列が生成されます。
 
+## Deep Dive (深く掘り下げる)
+ランダム数値生成は、統計、物理学、暗号学などに根ざした長い歴史を持ちます。最初は物理的な手法（例：さいころの投げ）でしたが、アルゴリズムによる疑似ランダム数値生成が開発されました。
 
-```Clojure
-0.7346416871403713
-```
+ClojureはJavaプラットフォーム上に構築されているため、java.util.RandomクラスなどのJavaメソッドも使用可能です。疑似ランダムではなく実際のランダム性が必要な場合、java.security.SecureRandomがより安全です。
 
-特定の範囲のランダムな整数が必要な場合は、`rand-int` 関数を使います。`rand-int n`は 0（含む）からn（含まない）までのランダムな整数を生成します。
+生成のアルゴリズムは、平均的に分布する「一様分布」から、特定の分布（正規分布など）を模倣するものまで多岐にわります。Clojure（およびJava）では、これらの異なる分布を扱うためのツールが提供されています。
 
-```Clojure
-(println (rand-int 10))
-```
-
-出力は以下のようになります。
-
-```Clojure
-6
-```
-
-## 深堀り (Deep Dive)
-
-ランダムな数値の生成に関しては、歴史的な文脈や他の代替手段、そして実装詳細など、さらに深く掘り下げることができます。
-   
-1. **歴史的文脈**：初めてコンピュータでランダムな数値が生成されたのは、1950年代にIBMの研究者により始められました。それ以来、さまざまな手法が提案され、改良されてきました。
-
-2. **代替手段**：Clojureの他にも、Java、Python、Rubyなど、ほとんどのプログラミング言語にはランダム数生成のための関数またはメソッドが存在します。
-
-3. **実装詳細**：Clojureの`rand`と`rand-int`関数はJavaの`java.util.Random`クラスに基づいています。これは疑似ランダムな数値の生成器であり、シード値によって結果が決まります。
-
-## 参照資料 (See Also)
-
-- Clojure公式ドキュメント: [`rand`](https://clojuredocs.org/clojure.core/rand), [`rand-int`](https://clojuredocs.org/clojure.core/rand-int)
-- "ランダムな数値生成"についてのWikipediaの記事: [Link](https://en.wikipedia.org/wiki/Random_number_generation)
+## See Also (参考情報)
+- [Clojure Documentation](https://clojure.org/guides/learn/functions#_random_numbers)
+- [Clojureでのランダム数値生成](https://clojuredocs.org/clojure.core/rand)
+- [JavaのRandomクラス](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)

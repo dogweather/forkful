@@ -1,6 +1,7 @@
 ---
 title:                "Gerando números aleatórios"
-html_title:           "C: Gerando números aleatórios"
+date:                  2024-01-20T17:48:52.530612-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Gerando números aleatórios"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,46 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why?
+Gerar números aleatórios é o processo de criar uma sequência de números não preditíveis. Programadores fazem isso por várias razões, como para jogos, simulações ou para segurança em criptografia.
 
-## O que & Por quê?
-
-Gerar números aleatórios é a produção de uma sequência de números que não possuem nenhum padrão previsível. É uma tarefa comum na programação quando requeremos elementos de imprevisibilidade, como na simulação de eventos aleatórios ou geração de senhas seguras.
-
----
-
-## Como fazer:
-
-Vamos ver como gerar números aleatórios em Elixir. Aqui está um exemplo simples usando a função `:rand.uniform/1`:
+## How to:
+Elixir possui uma biblioteca embutida chamada `:rand` que fornece funções para números aleatórios. Aqui está como usá-la:
 
 ```elixir
-IO.inspect(:rand.uniform(10))  # gera um número aleatório entre 1 e 10
+# Para gerar um número aleatório:
+random_number = :rand.uniform()
+IO.puts(random_number)
+
+# Para gerar um número entre 1 e 10:
+random_number_1_to_10 = :rand.uniform(10)
+IO.puts(random_number_1_to_10)
 ```
 
-Este código vai retornar um número aleatório entre 1 e 10. Você pode fornecer diferentes argumentos para a função uniforme para gerar números aleatórios em um intervalo diferente. Para números aleatórios entre intervalos específicos, você pode usar:
-
-```elixir
-num = :rand.uniform(10) + 20   # gera um número aleatório entre 20 e 30
-IO.inspect(num)
+Exemplo de saída:
+```
+0.4435846175944661
+7
 ```
 
----
+## Deep Dive
+Elixir usa Erlang's `:random` e `:rand` módulos para gerar números aleatórios. No passado, `:random` era utilizado, mas foi substituído pelo mais novo e melhor `:rand`. Este possui melhor qualidade na distribuição de números e é mais eficiente. Como alternativas, existem bibliotecas de terceiros como `ex_rand` para mais funcionalidades.
 
-## Mergulho Profundo:
+O módulo `:rand` do Erlang implementa algoritmos como Mersenne Twister, que é conhecido por sua alta periodicidade e uniformidade. Importante destacar que esses números não são seguros para criptografia pois são determinísticos se a semente for conhecida. Para fins de segurança, você precisará de algo como a biblioteca `crypto`, que gera números adequados para criptografia.
 
-Historicamente, no início da programação de computadores, a geração de números aleatórios era uma tarefa complexa. Tínhamos que depender de fontes externas, como o ruído branco de um equipamento eletrônico.
-
-Elixir, como Erlang, usa o módulo `:rand` para geração de números aleatórios. Inicialmente, Erlang usava o algoritmo 'random', que era menos preciso, mas a partir do OTP 18, foi substituído pelo módulo `:rand`, fornecendo geração de números aleatórios suficientemente boa para a maioria dos propósitos.
-
-Existem alternativas à função `:rand.uniform/n`, como, por exemplo, a função `:random.uniform/n`, que foi desaprovada no OTP 18.0 para a geração de números aleatórios, mas ainda é utilizada por alguns por razões de compatibilidade para trás.
-
-Geração de números aleatórios em Elixir é baseada em semente. Isso significa que você precisa semear o gerador de números aleatórios para produzir diferentes números cada vez que seu programa é executado. Use `:rand.seed(:exsplus, {m, n, x})` para definir uma semente única.
-
----
-
-## Veja Também:
-
-1. [Documentação do Elixir](https://hexdocs.pm/elixir/String.html): Explore o poderoso e elegante Elixir, com foco em sua simplicidade e alta produtividade.
-
-
-3. [Exercism Elixir Track](https://exercism.io/tracks/elixir): Aprenda Elixir através de exercícios práticos e obtenha feedback de mentores.
+## See Also
+- [Erlang :rand documentation](http://erlang.org/doc/man/rand.html)
+- [Hex.pm para encontrar bibliotecas Elixir](https://hex.pm/)
+- [Elixir School para tutoriais básicos de Elixir](https://elixirschool.com/pt/)

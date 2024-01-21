@@ -1,7 +1,8 @@
 ---
-title:                "कमांड लाइन तर्कों को पढ़ना"
-html_title:           "Kotlin: कमांड लाइन तर्कों को पढ़ना"
-simple_title:         "कमांड लाइन तर्कों को पढ़ना"
+title:                "कमांड लाइन आर्गुमेंट्स पढ़ना"
+date:                  2024-01-20T17:56:46.662451-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "कमांड लाइन आर्गुमेंट्स पढ़ना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,46 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? ("What & Why?")
+## What & Why? (क्या और क्यों?)
 
-कमांड लाइन आर्गुमेंट्स पढ़ना एक प्रक्रिया होती है जिसके द्वारा प्रोग्राममेर्स अपने प्रोग्राम्स को कस्टमाइज़ कर पाते हैं जब उन्हें रन किया जाता है। यह उन्हें गतिशीलता देता है और हार्डकोडिंग आवश्यकताओं को कम करता है।
+Command line arguments वो पैरामीटर होते हैं जो हम Java प्रोग्राम को रन करते वक्त pass करते हैं। ये इसलिए ज़रूरी होते हैं क्योंकि इनकी मदद से हम program behavior को फ्लेक्सिबली कंट्रोल कर पाते हैं।
 
-## कैसे: ("How to:")
+## How to: (कैसे करें:)
 
-यहाँ एक आसान Java कोड है जो कमांड लाइन आर्गुमेंट्स को पढ़ता है:
+जब हम Java में मेन मेथड लिखते हैं, `String[] args` उसका पार्ट होता है। ये `args` array में command line arguments स्टोर होते हैं। नीचे देखो कैसे:
 
-```Java
-public class CommandLineArgs {
+```java
+public class CommandLineExample {
     public static void main(String[] args) {
-        for(String arg: args) {
-            System.out.println(arg);
+        if (args.length > 0) { 
+            for (String arg : args) {
+                System.out.println("Argument: " + arg);
+            }
+        } else {
+            System.out.println("No command line arguments found.");
         }
     }
 }
 ```
 
-आप इसे इस तरह से रन कर सकते हैं, जैसे की:
+अगर आप इस कोड को रन करो और arguments दो, तो output कुछ ऐसा होगा:
 
 ```
-> java CommandLineArgs यहाँ मेरा पाठ है
+Argument: Hello
+Argument: World
 ```
 
-और आपको आउटपुट इस तरह का मिलेगा :
+## Deep Dive (गहराई में जानकारी):
 
-```
-यहाँ
-मेरा
-पाठ
-है
-```
+Command line arguments इस्तेमाल करने की प्रक्रिया पुरानी है, और ये लगभग सभी programming languages में मौजूद है। इनका प्रयोग करके हम settings या फाइल के paths को dynamically specify कर सकते हैं। यह flexibility प्रोग्राम को बहुत powerful बनाती है।
 
-## गहराई में: ("Deep Dive")
+अलग methods भी हैं command line से डेटा प्राप्त करने के लिए, जैसे कि `Scanner` class या Java NIO पैकेज।
 
-1. **ऐतिहासिक प्रसंग:** उपयोगकर्ता-निर्दिष्ट आर्गुमेंट्स का कमांड लाइन पर आधारित प्रोग्रामों में काफी समय से इस्तेमाल हो रहा है, और यह Java के साथ भी आ गया था।
+लेकिन जब एप्लिकेशन को कस्टमाइज़ करना हो या किसी script के साथ इंटरफेस करना हो, command line arguments का प्रयोग बहुत आसान और एफेक्टिव होता है। 
 
-2. **विकल्प:** अगर आपके प्रोग्राम को आवश्यकता है उपयोगकर्ता प्रदत्त इनपुट की, तो आप `Scanner` क्लास भी उपयोग कर सकते हैं, लेकिन इससे सीधे तकरीबन सभी कमांड-लाइन आर्गुमेंट्स पर काम नहीं किया जा सकता।
+विशेष implementation की बात करें तो, Java `main` मेथड का `String[] args` पैरामीटर हमेशा non-null होता है। अगर कोई arguments पास नहीं किया गया, तो भी यह एक खाली `String` array होता है। 
 
-3. **कार्यान्वयन विवरण:** `args` वास्तव में एक स्ट्रिंग ऐरे होता है जिसमें कमांड-लाइन पर पाठित आर्गुमेंट्स के अलावा और कुछ नहीं होता।
+## See Also (और भी देखें):
 
-## देखें भी: ("See Also")
-1. Oracle Docs: [Command-Line Arguments](https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html)
+- [Oracle Java Documentation on Command-Line Arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- [Java 11 Docs](https://docs.oracle.com/en/java/javase/11/)
+- [Stack Overflow Discussion on Java Arguments](https://stackoverflow.com/questions/890966/what-are-command-line-arguments-in-java)

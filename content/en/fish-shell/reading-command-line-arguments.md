@@ -1,6 +1,7 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "C++ recipe: Reading command line arguments"
+date:                  2024-01-20T17:56:02.966338-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Reading command line arguments"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,42 +12,85 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Reading command line arguments is the act of acquiring data input at the program's execution command. Programmers do this to allow for dynamic behavior, customization, and control of the program's execution.
+Reading command line arguments is grabbing the extra bits you type after your script's name, like secret handshakes to customize a script's behavior. Programmers do it to make scripts flexible and interactive without a fuss.
 
 ## How to:
 
-Let's write a simple Fish function which accepts command line arguments.
+Let's say `greet.fish` is your script. You want it to take a name and spit out a greeting.
 
-```Fish
-function hello
-    set name $argv[1]
-    echo "Hello, $name!"
+```fish
+#!/usr/bin/env fish
+
+# The arguments are stored in $argv
+# $argv[1] is the first argument, $argv[2] the second, and so on.
+
+set name $argv[1]
+echo "Hello, $name!"
+```
+
+Run it:
+
+```shell
+$ fish greet.fish World
+Hello, World!
+```
+
+Now, with multiple arguments:
+
+```fish
+#!/usr/bin/env fish
+
+# Loop through all arguments
+for arg in $argv
+    echo "Hello, $arg!"
 end
 ```
 
-Save the above code as `hello.fish`, then execute it:
+Try it:
 
-```Fish
-fish hello.fish John
+```shell
+$ fish greet.fish Earth Mars Venus
+Hello, Earth!
+Hello, Mars!
+Hello, Venus!
 ```
 
-You should see:
+To handle flags (like `-u` for uppercase):
 
-```
-Hello, John!
+```fish
+#!/usr/bin/env fish
+
+# Check for a "-u" argument
+set -l uppercase_mode off
+for arg in $argv
+    if test "$arg" = "-u"
+        set uppercase_mode on
+    else if set -q uppercase_mode[1]; and string match --quiet -- "$uppercase_mode" "on"
+        echo (string upper "$arg")
+    else
+        echo $arg
+    end
+end
 ```
 
-Terrific. The `$argv` variable represents the array of arguments, with `$argv[1]` holding the first argument.
+And invoke:
+
+```shell
+$ fish greet.fish -u mercury venus
+MERCURY
+VENUS
+```
 
 ## Deep Dive
 
-Historically, command line arguments have been used since the earliest days of programming to control programs' behaviors. Even today in the interactive and GUI-driven era, they're critically important tools for refining program execution.
+Fish Shell has had command line arguments nailed down for a long time, much like other shells. What sets Fish apart is its simplicity by design. There's no `$1, $2... $n` to remember; it's an array `$argv`, familiar territory if you dabble in other programming languages.
 
-Alternatives? Sure, you could use environment variables or configuration files to determine behavior, but they are less spontaneous and immediate than command line arguments.
+There are alternatives, like bash, zsh, etc., but Fish's scripting syntax aims to be more readable and straightforward. Instead of traditional `shift` commands or dealing with `$@` for all arguments, Fish has that friendly `$argv` and lovely scripting constructs like `for` loops and `if` conditions that are less about cryptic symbols and more about clear words.
 
-In Fish, command-line arguments live in the `$argv` variable. Arguments are just raw string data until you decide what to do with them. For example, you might want to treat an argument as a number and perform arithmetic, or as a file name and read its contents. It's quite flexible.
+When implementing, it's vital to consider how your script will be used. Will it need default values? Will users know what to input? Make sure you handle cases where users forget to pass arguments or pass them in the wrong order.
 
 ## See Also
 
-- Fish Shell Official Documentation: [Command Line Arguments](https://fishshell.com/docs/current/index.html#syntax)
+- The official Fish documentation on command line arguments: [fishshell.com/docs/current/#syntax-command-line](https://fishshell.com/docs/current/#syntax-command-line)
+- For advanced scripting and creating your own functions in Fish: [fishshell.com/docs/current/#defining-functions](https://fishshell.com/docs/current/#defining-functions)
+- An introduction to Fish for users with a background in other shells: [fishshell.com/docs/current/tutorial.html](https://fishshell.com/docs/current/tutorial.html)

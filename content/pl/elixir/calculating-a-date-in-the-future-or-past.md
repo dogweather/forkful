@@ -1,6 +1,7 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
-html_title:           "Elixir: Obliczanie daty w przyszłości lub przeszłości"
+date:                  2024-01-20T17:30:55.747152-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,27 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to i dlaczego?
-Obliczanie daty w przyszłości lub przeszłości to proces ustalania konkretnej daty, dodając lub odejmując konkretne ilości dni, tygodni, miesięcy lub lat od/w danej dacie. Programiści robią to, aby manipulować i wykorzystywać daty w sposób istotny dla ich aplikacji, np. przewidywanie daty wygaśnięcia subskrypcji lub śledzenie okresu próbnego.
+## What & Why?
+Co to jest i dlaczego?
 
-## Jak to robić:
-Elixir umożliwia obliczanie dat w przyszłości lub przeszłości za pomocą wbudowanego modułu `Date`. 
-Sprawdźmy przykładowy kod:
-```elixir
-iex> d = Date.from_iso8601!("2021-04-01")      
-~D[2021-04-01]
-iex> Date.add(d, 10)                       
-~D[2021-04-11]
+Obliczanie daty w przyszłości albo przeszłości to ustalanie nowych dat na podstawie zadanej. Programiści robią to dla organizacji wydarzeń, planowania zadań, przypomnień czy też wygaśnięcia sesji.
+
+## How to:
+Jak to zrobić:
+
 ```
-Pierwsza linia kodu tworzy datę "2021-04-01". W drugiej linii dodajemy 10 dni do tej daty, a wynik to "2021-04-11".
+# Dodawanie dni
+date = ~D[2023-04-01]
+future_date = Date.add(date, 10)
+IO.puts(Date.to_string(future_date)) # 2023-04-11
 
-## Dogłębne zrozumienie:
-W historii, do Elixir 1.3 wprowadzenie modułu `Date` uproszczone były obliczenia dat. Przed tym programiści musieli polegać na zewnętrznym kodzie lub skomplikowanych obliczeniach.
+# Odejmowanie dni
+past_date = Date.add(date, -20)
+IO.puts(Date.to_string(past_date)) # 2023-03-12
+```
 
-Jeśli chodzi o alternatywy, czasami może być konieczne korzystanie z modułu `DateTime` lub `NaiveDateTime` dla bardziej złożonych manipulacji z datą i czasem.
+## Deep Dive:
+Głębsze zanurzenie:
 
-Szczegóły implementacji obejmują korzystanie z funkcji `Date.add/2`, która dodaje określoną liczbę dni do podanej daty. Jest ona zaprojektowana tak, aby poprawnie obsługiwać przestępne lata i innych skomplikowanych kalendarzowych rzeczy.
+W Elixirze, moduł `Date` jest kluczowy do pracy z datami. Historia koncepcji operacji na datach sięga kalendarzy i potrzeby śledzenia czasu. Alternatywy do `Date.add` to użycie paczek zewnętrznych jak `Timex`, które dodają dodatkową funkcjonalność. Elixir używa kalendariów, by obsłużyć różne systemy datowania, a `Date.add` operuje w kontekście kalendarza Gregoriańskiego.
 
-## Zobacz też:
-- Elixir `Date` module: https://hexdocs.pm/elixir/Date.html 
-- Elixir School lesson on `Date`, `Time` and `DateTime`: https://elixirschool.com/en/lessons/basics/date-time
+## See Also:
+Zobacz także:
+
+- [Elixir Documentation for Date](https://hexdocs.pm/elixir/Date.html)
+- [Hex.pm package for Timex](https://hex.pm/packages/timex)
+- [Elixir School: Dates and Times](https://elixirschool.com/en/lessons/basics/date-time/)

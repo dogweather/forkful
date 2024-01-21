@@ -1,7 +1,8 @@
 ---
-title:                "Skriva ut felsökningsresultat"
-html_title:           "Fish Shell: Skriva ut felsökningsresultat"
-simple_title:         "Skriva ut felsökningsresultat"
+title:                "Skriva ut felsökningsdata"
+date:                  2024-01-20T17:53:25.853827-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skriva ut felsökningsdata"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,49 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# TypeScript: Skriv Ut Debug Utdata
+## What & Why?
+Utskrift för felsökning (debugging) är när du skriver ut data till konsolen för att se vad som händer i din kod. Programmerare gör det för att snabbt identifiera och rätta till buggar.
 
-## Vad & Varför?
-
-Att skriva ut debug-utdata är metoden vi använder för att visualisera värdet på variabler och tillståndet i applikationen under körning. Vi gör detta för att spåra och lösa fel (buggar) effektivt.
-
-## Hur man gör:
-
-Här är ett par exempel på hur man kan skriva ut "debug output" i TypeScript:
-
-```TypeScript 
-// Att använda 'console.log' är det mest grundläggande sättet
-console.log("Hello, this is a debug message!");
-```
-
+## How to:
 ```TypeScript
-// Skriv ut värdet på variabel 'x'
-let x = 5;
-console.log('The value of x is: ', x);
-// Output: The value of x is: 5
+function addNumbers(a: number, b: number): number {
+  console.log(`Adding ${a} + ${b}`);
+  return a + b;
+}
+
+const result = addNumbers(5, 7);
+console.log(`Result: ${result}`);
+```
+Sample output:
+```
+Adding 5 + 7
+Result: 12
 ```
 
-## Djupt Dyk:
+## Deep Dive
+Utskrift för debuggning är lika gammalt som programmering självt. Förr i tiden kunde det betyda att skriva ut på papper. Idag använder vi `console.log()` i JavaScript och TypeScript. Alternativ till `console.log()` inkluderar mer avancerade debuggare som låter oss stega igenom kod, titta på variabelvärden och tillstånd utan att "smutsa ned" koden med utskrifter. TypeScript är ett superset av JavaScript som kompileras ner till JavaScript och ger därmed samma `console` metoder för debuggning.
 
-### Historisk Kontext:
-JavaScript och därmed TypeScript har alltid stödja `console.log` för utskrift av debug-utdata, en technik lånat från C-programmering.
-
-### Alternativ:
-Förutom `console.log`, kan du också använda `console.info`, `console.warn`, och `console.error` för att skriva ut meddelanden i olika nivåer av allvar.
-
-```TypeScript 
-console.info('This is an info message');
-console.warn('This is a warning');
-console.error('This is an error message');
-```
-
-### Implementeringsdetaljer:
-`console.log` och dess syskonmetoder är inte en del av ECMAScript (JavaScript-specifikationen) utan tillhandahålls av värdmiljön (t.ex., webbläsare eller Node.js).
-
-## Se Även:
-
-För ännu mer information, kolla in följande artiklar:
-
-- Mozilla Developer Network (MDN) om [`console`](https://developer.mozilla.org/sv-SE/docs/Web/API/Console) 
-- Node.js docs om [`console`](http://nodejs.org/api/console.html)
-- En mer genomgående guide till [JavaScript Debugging](https://javascript.info/debugging-chrome)
+## See Also
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- [Using console in MDN web docs](https://developer.mozilla.org/en-US/docs/Web/API/console)
+- [Node.js debugging guide](https://nodejs.org/en/docs/guides/debugging-getting-started/)
+- [Visual Studio Code Debugger](https://code.visualstudio.com/docs/editor/debugging)

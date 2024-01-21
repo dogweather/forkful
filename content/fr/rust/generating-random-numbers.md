@@ -1,7 +1,8 @@
 ---
-title:                "Générer des nombres aléatoires"
-html_title:           "Elixir: Générer des nombres aléatoires"
-simple_title:         "Générer des nombres aléatoires"
+title:                "Génération de nombres aléatoires"
+date:                  2024-01-20T17:50:00.056119-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Génération de nombres aléatoires"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Numbers"
@@ -10,45 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## Quoi & Pourquoi ?
+Générer des chiffres aléatoires, c'est comme lancer un dé virtuel. On le fait pour la sécurité (pensez aux clés cryptographiques), les jeux, les simulations, ou l'IA. C'est vital pour beaucoup de programmes.
 
-La génération de nombres aléatoires est le processus de création de nombres qui ne peuvent pas être prévus mieux qu'en les choisissant au hasard. Les programmeurs le font pour différents besoins tels que la simulation de données réelles, la cryptographie, les jeux, l'art et de nombreux autres domaines.
-
-## Comment faire:
-
-Créons un nombre aléatoire en Rust. D'abord, ajoutez ceci à votre `Cargo.toml` :
+## Comment faire :
 ```Rust
-[dependencies]
-rand = "0.8.3"
-```
-Puis, dans votre fichier `.rs` :
-```Rust
-use rand::Rng;
+use rand::{Rng, thread_rng};
 
 fn main() {
-    let mut rng = rand::thread_rng();
-    let number: u32 = rng.gen_range(0..10);
-    println!("Votre nombre aléatoire entre 0 et 10 est : {}", number);
+    // Créer un générateur de nombres aléatoires
+    let mut rng = thread_rng();
+    
+    // Générer un entier aléatoire
+    let random_number: i32 = rng.gen();
+    println!("Nombre aléatoire: {}", random_number);
+    
+    // Générer un flottant aléatoire entre 0 et 1
+    let random_float: f64 = rng.gen();
+    println!("Flottant aléatoire: {}", random_float);
+    
+    // Générer un booléen aléatoire
+    let random_bool: bool = rng.gen();
+    println!("Booléen aléatoire: {}", random_bool);
 }
 ```
-
-Quand vous exécutez ce programme, vous pouvez obtenir une sortie comme celle-ci :
+Sortie possible:
 ```
-Votre nombre aléatoire entre 0 et 10 est : 7
+Nombre aléatoire: 183956729
+Flottant aléatoire: 0.445634127
+Booléen aléatoire: true
 ```
+Notez: Ajoutez `rand` comme dépendance dans `Cargo.toml`.
 
-Notez que `gen_range` est utilisé pour générer un nombre entre deux bornes.
+## Exploration plus profonde :
+À l'origine, les ordinateurs étaient mauvais pour l'aléatoire, car ils sont déterministes. Mais on a conçu des méthodes, comme les générateurs de nombres pseudo-aléatoires (PRNGs). En Rust, la bibliothèque `rand` est le standard pour ces tâches. Elle utilise différentes méthodes, comme le chaînage linéaire ou les algorithmes Mersenne Twister, pour simuler l'aléatoire. Alors que `rand` couvre la plupart des besoins, on pourrait explorer `ring` ou `sodiumoxide` pour un usage cryptographique, parce qu'ils fournissent de l'aléatoire cryptographiquement sécurisé.
 
-## Plongée en profondeur
-
-Historiquement, générer des nombres aléatoires en programmation n'a pas toujours été une tâche simple. Les anciens systèmes utilisaient des techniques comme le bruit de fond de l'électronique ou le temps système. Rust utilise une bibliothèque appelée `rand`, qui utilise une combinaison de techniques modernes pour générer des nombres aléatoires.
-
-Une alternative à la bibliothèque `rand` serait d'appeler directement les API de votre système d'exploitation, mais cela peut être plus complexe et moins portable.
-
-Une chose importante à noter est que la plupart des générateurs de nombres aléatoires en informatique sont en réalité pseudo-aléatoires, ce qui signifie qu'ils utilisent un certain déterminisme mais sont suffisamment imprévisibles pour la plupart des usages.
-
-## Voir aussi
-
-- Documentation Rust `rand`: https://docs.rs/rand/
-- Wikipedia sur les nombres aléatoires : https://fr.wikipedia.org/wiki/Nombre_al%C3%A9atoire
-- Pour comprendre la pseudorandomité : https://fr.wikipedia.org/wiki/G%C3%A9n%C3%A9rateur_de_nombres_al%C3%A9atoires
+## Voir aussi :
+- La documentation de `rand`: https://docs.rs/rand
+- Un guide sur l'aléatoire en Rust : https://rust-lang-nursery.github.io/rust-cookbook/algorithms/randomness.html
+- Pour en savoir plus sur PRNGs : https://en.wikipedia.org/wiki/Pseudorandom_number_generator
+- `ring`, une bibliothèque de sécurité : https://crates.io/crates/ring
+- `sodiumoxide`, des liaisons Rust pour libsodium : https://crates.io/crates/sodiumoxide

@@ -1,6 +1,7 @@
 ---
 title:                "生成随机数"
-html_title:           "Go: 生成随机数"
+date:                  2024-01-20T17:49:24.871898-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "生成随机数"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,34 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么与为什么?
+## What & Why? 什么和为什么？
+生成随机数就是创建没有明显模式的数字序列。程序员用它们来做游戏、模拟、安全系统和测试。
 
-生成随机数就是创建不可预测的数字。程序员进行随机数字生成以增加功能的随机性，例如在游戏中随机生成元素。
+## How to: 怎么做？
+在 Gleam 中，你可以使用 `gleam_stdlib` 包来生成随机数：
 
-# 如何做：
+```gleam
+import gleam_stdlib/random as random
 
-在Gleam中，我们使用`rand`模块的`int`函数生成随机数。
-```Gleam
-import gleam/rand
-
-fn main() {
-  let _ = rand.int(1, 10)
+pub fn roll_die() -> Int {
+  random.int(1, 6)
 }
 ```
-当运行代码时，你会得到一个范围在1到10之间的随机数。
 
-# 深入研究：
+样例输出可能是 `4`。记得每次运行程序，结果可能都不一样。
 
-生成随机数的概念在计算机科学中有着悠久的历史。在早期, 计算机硬件会使用物理过程产生真随机数, 如测量核衰变。然而, 这种方法既昂贵又不妥。
+## Deep Dive 深入了解
+随机数在计算机中是个老话题了。我们不能生成真正的随机数，只能生成伪随机数。伪随机数算法的选择可以影响到数字的分布。
 
-很快，人们发现通过算法-伪随机数生成器（PRNGs）可以生成一个"看似"随机的数。在Gleam中，这种方法被应用在`rand`模块。`rand.int`实际上是一个函数调用，取一个最小值和一个最大值，返回一个介于这两者之间的随机整数。
+其他语言可能有不同的随机数生成库或函数。比如说，Python 有 `random`、JavaScript 有 `Math.random()`。
 
-然而，还存在其它方法生成随机数，例如使用`rand.float`函数，可以生成一个随机浮点数。
+Gleam 在底层是使用 Erlang 的随机数生成器。对于大多数用途来说，这些伪随机数已经足够好了。不过，如果要求很高的加密安全系统，则需要特别设计的硬件或算法。
 
-# 参见：
-
-如果你需要进一步了解Gleam的`rand`模块或随机化技术，以下链接会提供更多信息：
-
-- [A Brief History of Random Numbers](https://www.philforhumanity.com/Random_Number_History.html)
-  
-谨慎使用随机数生成功能，它可以为你的代码添加强大的随机性。
+## See Also 参考链接
+- [Gleam stdlib documentation](https://hexdocs.pm/gleam_stdlib/)
+- [Erlang random module](http://erlang.org/doc/man/rand.html)
+- [Wikipedia on Pseudorandomness](https://en.wikipedia.org/wiki/Pseudorandomness)

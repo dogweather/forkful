@@ -1,7 +1,8 @@
 ---
-title:                "Kahden päivämäärän vertaaminen"
-html_title:           "Bash: Kahden päivämäärän vertaaminen"
-simple_title:         "Kahden päivämäärän vertaaminen"
+title:                "Kahden päivämäärän vertailu"
+date:                  2024-01-20T17:32:56.677975-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,41 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+(Mitä & Miksi?)
 
-Vertaamme kahta päivämäärää selvittämään, kumpi niistä sijoittuu aikajanalla ensin. Ohjelmoijat tekevät tämän tärkeiden päivämäärien ja aikataulujen hallitsemiseksi.
+Vertaamme kahta päivämäärää tunnistaaksemme niiden eron. Ohjelmoijat tekevät tämän aikataulujen hallintaan, aikaleimojen tarkkailuun tai vanhentumispäivien tsekkaamiseen.
 
-## Kuinka tehdään:
-
->Tässä on Fish Shell -kilpikonnaohjelma, joka vertailee kahta päivämäärää:
+## How to:
+(Miten:)
 
 ```Fish Shell
-set -l date1 (date -u -j -f "%Y-%m-%d" "2022-01-01" "+%s")
-set -l date2 (date -u -j -f "%Y-%m-%d" "2022-02-01" "+%s")
+# Asenna 'dateutils' työkalut
+sudo apt install dateutils
 
-if [ $date1 -lt $date2 ]
-    echo "Date 1 is earlier than Date 2."
-else if [ $date1 -eq $date2 ]
-    echo "Date 1 is the same as Date 2."
-else
-    echo "Date 1 is later than Date 2."
-end
+# Vertaa kahta päivämäärää käyttäen dateutils-diff
+set date1 (date -ud '2023-03-01' +%s)
+set date2 (date -ud '2023-04-01' +%s)
+dateutils.ddiff $date1 $date2 -f '%ddays'
+
+# Tulostettava tulos
+31days
 ```
 
->Tämä ohjelman tuloste on:
-```
-Date 1 is earlier than Date 2.
-```
+## Deep Dive
+(Syväsukellus)
 
-## Syväsukellus
+Alun perin päivämäärien vertailussa käytettiin yksinkertaisia Unix-ajanhetkiä (epoch), jotka ilmaisevat aikaa sekunteina vuoden 1970 alusta. `dateutils` on uuden polven työkalu, joka helpottaa aikaleimojen vertailua. Se käsittää useita käskyjä, kuten `dateutils.ddiff` päivämääräerojen laskemiseen. Fish Shell sopii hyvin yhteen tämänkaltaisten apuohjelmien kanssa, koska sen syntaksi on yksinkertainen ja helposti laajennettavissa. Vaihtoehtoisesti voit käyttää myös Fishin sisäänrakennettuja aikafunktioita pienemmissä skripteissä.
 
-Fish Shell julkaistiin 12 vuotta sitten, antaen ytimekäsiä ja nopeita tapoja tehdä monimutkaisia toimintoja. Päivämäärien vertaileminen on yksityiskohtaisten prosessien sarja, jossa muunnetaan aika sekunneiksi ja vertaamalla niitä.
+## See Also
+(Katso Myös)
 
-Vaihtoehtoisesti voit käyttää 'date2nite' tai 'diff' kutsumaan ajointerfasseja. Vaikka ne voivat olla yhtä tehokkaita, Fish on yksinkertaisempi ja suoraviivaisempi.
-
-Fish Shell päivämäärien vertailussa on tärkeää muistaa, että se linjaa päivämäärät ensin UTC:hen. Sen jälkeen se olettaa, että päivämäärät ovat ilmaistu sekunneissa vuodesta 1970 (UNIX Epoch), ennen kuin ne muunnetaan päivämäärämuotoon.
-
-## Katso myös:
-
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Comparison of Shell Scripting Languages](https://www.wikibooks.org/wiki/Bourne_Shell_Scripting)
+- Fish Shell dokumentaatio: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- `dateutils` dokumentaatio: [http://www.fresse.org/dateutils/](http://www.fresse.org/dateutils/)
+- Unix-ajanhetkiä käsittelevä artikkeli: [https://en.wikipedia.org/wiki/Unix_time](https://en.wikipedia.org/wiki/Unix_time)

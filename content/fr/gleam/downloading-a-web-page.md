@@ -1,7 +1,8 @@
 ---
-title:                "Télécharger une page web"
-html_title:           "Bash: Télécharger une page web"
-simple_title:         "Télécharger une page web"
+title:                "Téléchargement d'une page web"
+date:                  2024-01-20T17:43:50.876489-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Téléchargement d'une page web"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,40 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi?
+## Quoi & Pourquoi ?
+Télécharger une page web, c'est récupérer son contenu via le réseau. Les programmeurs le font pour analyser des données, tester des sites ou automatiser des tâches web.
 
-Télécharger une page web consiste à récupérer le code HTML d'une page spécifique sur Internet pour une utilisation hors ligne ou pour une analyse ultérieure. Les programmeurs le font pour récupérer des données, pour le web scrapping, ou pour mémoriser des sites web pour une utilisation ultérieure.
-
-## Comment faire:
-
-Gleam, étant un langage fonctionnel statiquement typé, ne dispose pas encore d'une bibliothèque standard pour le téléchargement de pages web. Toutefois, nous pouvons interagir avec Erlang ou Elixir, qui ont des bibliothèques HTTP robustes, pour accomplir cette tâche. Voici un exemple de code:
-
-```Gleam
+## Comment faire :
+```gleam
+import gleam/http
 import gleam/httpc
-import gleam/uri
 
-fn download(url: String) {
-  let parsed_url = uri.parse(url)
-  case httpc.get(parsed_url) {
-    Ok(#(status_code, headers, body)) ->
-      body
-    Error(e) ->
-      e
-  }
+pub fn download_webpage(url: String) -> Result(String, Nil) {
+  httpc.send(http.Request(method: Get, url: url))
+  |> result.map(fn(response) { response.body })
 }
 ```
+Exemple de sortie :
+```
+Ok("<html>...</html>")
+```
 
-Pour tester cet exemple de code, vous pourriez utiliser un URL de test, comme `https://httpbin.org/get`, et vous devriez obtenir le corps de la page web en retour.
+## Plongée en profondeur
+Historiquement, le téléchargement de pages web a débuté avec des outils comme `wget` et `curl`. En Gleam, `httpc` est la bibliothèque standard pour les requêtes HTTP, mais il y a aussi d'autres options comme `gleam_cowboy` pour des cas d'usage plus spécifiques. Les détails d'implémentation de `httpc` incluent la gestion des erreurs de réseau et des codes de statut HTTP pour une manipulation robuste des résultats.
 
-## Deep Dive
-
-Historiquement, le téléchargement de pages web était la principale méthode par laquelle les contenus du web étaient accessibles hors ligne. Même aujourd'hui, cela reste une pratique courante pour le web scraping, l'archivage et, dans certains cas, le débogage.
-
-Il existe de nombreuses alternatives à cette méthode, notamment l'utilisation d'API (tels que RESTful ou GraphQL) pour récupérer directement les données de la source, ou bien des bibliothèques tierces spécialisées dans le téléchargement et le traitement de pages web.
-
-Le fonctionnement de cette fonction Gleam est assez simple. Il commence par analyser l'URL donnée en utilisant un parseur d'URI, puis il tente de récupérer les données à l'aide de la fonction `httpc.get`. Le corps de la réponse HTTP est ensuite retourné en cas de succès, et une erreur est retournée dans le cas contraire.
-
-## Voir Aussi
-
-4. [Autres ressources sur Erlang](https://www.erlang.org/docs)
-5. [Documentation sur Elixir](https://hexdocs.pm/elixir/Kernel.html)
+## Voir aussi
+- `httpc` module docs: [https://hexdocs.pm/gleam_httpc](https://hexdocs.pm/gleam_httpc)
+- Gleam website for more general information: [https://gleam.run](https://gleam.run)

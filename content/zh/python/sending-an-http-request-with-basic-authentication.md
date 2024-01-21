@@ -1,7 +1,8 @@
 ---
-title:                "使用基本认证发送http请求"
-html_title:           "Bash: 使用基本认证发送http请求"
-simple_title:         "使用基本认证发送http请求"
+title:                "使用基本认证发送 HTTP 请求"
+date:                  2024-01-20T18:02:21.559635-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "使用基本认证发送 HTTP 请求"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,30 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
-发送带Basic认证的HTTP请求是指用用户名和密码进行身份验证然后发送HTTP请求。程序员通过它来确保数据安全性，防止未经授权的访问。
+## 什么 & 为什么？
+在Python中发送带有基本认证的HTTP请求允许你安全地访问需要用户名和密码的网络资源。程序员这么做是因为一些网站的API要求使用基本认证来验证用户身份。
 
 ## 如何：
-在Python中，我们可以使用内置库`requests`进行HTTP请求和身份验证。以下是代码示例和输出：
-
-```Python
+```python
 import requests
 from requests.auth import HTTPBasicAuth
 
-response = requests.get('https://api.github.com/user', auth=HTTPBasicAuth('user', 'pass'))
+# 替换成你的API端点
+url = 'https://api.example.com/data'
+# 替换成实际的用户名和密码
+username = 'your_username'
+password = 'your_password'
+
+response = requests.get(url, auth=HTTPBasicAuth(username, password))
+
 print(response.status_code)
+print(response.text)
 ```
 
-程序输出将是`200`，意味着请求已成功接收并理解。
+现在运行代码，你应该看到类似这样的输出：
 
-## 深入探讨
-**历史背景**：HTTP Basic 认证是一种用于HTTP协议的简单身份认证技术。这种技术最早于1999年在RFC 2617文档中描述。
+```
+200
+{"example_key": "example_value"}
+```
 
-**替代方案**：虽然Basic认证简单易用，但并不一定安全，因为它将用户名和密码编码为Base64，易被破解。现在更安全的替代方案是使用OAuth，JWT或Bearer tokens进行身份验证。
+## 深入了解
+HTTP基本认证是一种验证HTTP用户身份的方法，由于简单，它早在HTTP/1.0就被引入了。遗憾的是，基本认证不加密密码，相对不够安全，所以HTTPS越来越多地被用来加强安全性。
 
-**实现细节**：在发送带有Basic身份验证的HTTP请求时，客户端将用户名和密码组合成一个字符串，然后用Base64对其进行编码，并将它放入HTTP header的`Authorization`字段。
+替代验证方式包括OAuth、API密钥或者像JWT（JSON Web Tokens）这样的更复杂的认证机制。
 
-## 另请参阅
-1. Python `requests`库文档：http://docs.python-requests.org/
-2. Python 所有 HTTP 请求类型： http://tools.ietf.org/html/rfc2616
-3. HTTP Basic 认证详情：https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Authorization
+实现时，'requests'库做了大量工作。HTTPBasicAuth模块把用户名和密码转化为HTTP头信息（一个Base64编码的字符串），让服务器能够验证身份。
+
+## 参见
+- Python `requests`库文档：https://docs.python-requests.org/en/master/
+- HTTP基本认证介绍：https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- 安全HTTP认证实践：https://owasp.org/www-project-cheat-sheets/cheatsheets/Authentication_Cheat_Sheet.html

@@ -1,7 +1,8 @@
 ---
-title:                "Generera slumpmässiga nummer"
-html_title:           "Arduino: Generera slumpmässiga nummer"
-simple_title:         "Generera slumpmässiga nummer"
+title:                "Generera slumpmässiga tal"
+date:                  2024-01-20T17:48:46.565455-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generera slumpmässiga tal"
 programming_language: "C"
 category:             "C"
 tag:                  "Numbers"
@@ -10,41 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## What & Why? (Vad & Varför?)
+Att generera slumpmässiga tal i C innebär att skapa tal som ser oordnade ut. Programmerare använder det för spel, simuleringar och säkerhet där förutsägbarhet är dåligt.
 
-Slumptalsgenerering är processen att skapa sekvenser av nummer som inte kan förutsägas bättre än av en slumpmässig chans. Programmers använder det för att avleda säkra lösenord, i krypteringsalgoritmer, i spel, för att simulera realistiska händelser i simuleringar och många andra tillämpningar.
+## How to: (Hur man gör:)
+För att generera ett slumpmässigt tal i C använder vi `rand()`-funktionen, men kom ihåg att sätta ett frö med `srand()` för äkta slumptal. Så här kan det se ut:
 
-## Hur man gör:
-
-Här är ett grundläggande exempel på hur man genererar ett slumptal i C.
-
-```C
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-int main()
-{
-    srand(time(0)); // initialisera slumptalsgenerator
-    int num = rand(); // generera slumptal
-    printf("%d", num);  // Skriv ut slumptalet
+int main() {
+    // Initialisera slumptalsgenereringen
+    srand((unsigned int)time(NULL));
+
+    // Skapa ett slumpmässigt tal mellan 0 och 99
+    int randomNummer = rand() % 100;
+    
+    printf("Slumpmässigt tal: %d\n", randomNummer);
+    
     return 0;
 }
 ```
 
-Output kan vara något som detta: `1234567890`
+Koden ovan genererar ett nytt slumptal varje gång programmet körs.
 
-## Fördjupning
+## Deep Dive (Djupdykning)
+Slumptalsgeneratorer i datorer är inte verkligt slumpmässiga, de är pseudoslumpmässiga. Funktionen `rand()` i C låter som om den producerar slumpmässiga tal men följer en bestämd sekvens (bestämd av startvärdet, eller fröet). Använd `srand()` för att sätta fröet baserat på klockan (`time(NULL)`) vilket ger olika sekvenser vid varje körning. Historiskt har brister i `rand()` lett till sökandet efter bättre alternativ som Mersenne Twister eller cryptografiskt säkra generatorer. I vissa säkerhetskritiska sammanhang används hårdvara för att generera verkligt slumpmässiga tal baserade på fysikaliska fenomen.
 
-För att generera ett slumptal kräver C `rand ()` funktionen, som definieras i stdlib.h biblioteket. För att säkerställa unika nummer varje gång programmet körs anropar vi `srand ()` med den nuvarande tiden som dess frö.
-
-Historiskt sett hade tidiga datorer inga inbyggda metoder för att generera slumptal så programmerare absorberade extern miljödata, som musrörelser, tangentbordsström eller diskdriftstider. C introducerade sedan rand() i sina bibliotek.
-
-Man kan också utforska andra funktioner som `random()`, `drand48()` eller bibliotek som OpenSSL för mer kryptografiskt säkra slumptal. Detta spelar en viktig roll i ställen där säkerheten är avgörande, som lösenordskopplare eller krypteringsalgoritmer.
-
-## Se även
-
-För mer läsning, besök följande länkar:
-
-- [Random number generation](https://en.wikipedia.org/wiki/Random_number_generation)
-- [OpenSSL Library](https://www.openssl.org/)
+## See Also (Se också)
+- C Standard Library documentation for `rand()` and `srand()`: https://en.cppreference.com/w/c/numeric/random/rand
+- General randomness generation techniques: https://www.random.org/
+- Cryptographic random number generators: https://csrc.nist.gov/projects/random-bit-generation

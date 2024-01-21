@@ -1,7 +1,8 @@
 ---
-title:                "Teilzeichenketten extrahieren"
-html_title:           "PowerShell: Teilzeichenketten extrahieren"
-simple_title:         "Teilzeichenketten extrahieren"
+title:                "Teilstrings extrahieren"
+date:                  2024-01-20T17:45:35.763418-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Teilstrings extrahieren"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,26 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why? (Was & Warum?)
+Das Extrahieren von Teilzeichenketten ist das Herauslösen spezifischer Teile aus einem Textstrang. Programmierer machen das, um mit Teilinformationen zu arbeiten oder Daten zu analysieren.
 
-Das Extrahieren von Unterstrings ist der Prozess, eine Unterzeichenkette (Substring) von einer Hauptzeichenkette (String) zu gewinnen. Programmierer machen das, um bestimmte Teile eines Textes isoliert zu bearbeiten oder zu analysieren.
+## How to (Wie geht das?)
+In Gleam sollst du `slice` benutzen, um Teilstrings zu extrahieren. Hier ist ein Beispiel:
 
-## Wie Macht Man Das:
-
-In Gleam könnten wir die `slice` Funktion aus dem `gleam/string` Modul benutzen, um einen Substring zu extrahieren. Hier ist ein einfaches Beispiel:
-
-```Gleam
+```gleam
 import gleam/string
 
-fn main() {
-  let meinsatz = "Ich lerne Gleam"
-  let substring = string.slice(meinsatz, 3, 9)
-  io.println(substring) // "lerne"
+pub fn main() {
+  let text = "Hallo, Welt!"
+  let welt = string.slice(text, 7, 11) // Startet bei 7, endet vor 11
+  welt
 }
 ```
 
-Führen Sie dieses Programm aus, und es gibt den Substring "lerne" aus.
+Ausgabe:
 
-## Vertiefung:
+```
+"Welt"
+```
 
-Der Umgang mit Strings und Substrings ist ein zentrales Prinzip in der Programmierung und wurde schon in den ältesten Hochsprachen wie FORTRAN implementiert. Es gibt viele Wege, wie Sie das in unterschiedlichen Sprachen machen könnten, und in Gleam, ist es natürlich auch möglich, eigene Funktionen zu schreiben, die Unterstrings extrahieren. Dennoch, die `slice` Funktion ist eine eingebaute und performante Methode zur Unterstring-Extraktion, da sie direkt auf niedrigerer Ebene mit den Bytes des Strings arbeitet.
+## Deep Dive (Tiefer Tauchgang)
+Das Herausarbeiten von Teilzeichenketten ist nichts Neues. In vielen Sprachen gibt es Funktionen wie `substring` oder `slice`, die in Gleam ihren Platz als `string.slice` gefunden haben. Gleam optimiert das Verarbeiten von Binärdaten, daher ist die Funktion effizient ohne unnötige Kopiervorgänge. Vergleichbare Alternativen in Gleam wären Rekursion oder Pattern Matching auf Strings, jedoch ist `slice` oft klarer und direkter.
+
+## See Also (Siehe auch)
+- Ein ähnliches Konzept in Elixir, einer anderen BEAM-Sprache, kannst du [hier](https://hexdocs.pm/elixir/String.html) finden.

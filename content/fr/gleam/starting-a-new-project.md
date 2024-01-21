@@ -1,7 +1,8 @@
 ---
-title:                "Démarrer un nouveau projet"
-html_title:           "Elm: Démarrer un nouveau projet"
-simple_title:         "Démarrer un nouveau projet"
+title:                "Lancement d'un nouveau projet"
+date:                  2024-01-20T18:03:39.562813-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lancement d'un nouveau projet"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Getting Started"
@@ -10,45 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## Quoi et pourquoi ?
 
-Démarrer un nouveau projet c'est lancer un voyage dans la création de code neuf, conçu pour résoudre un problème spécifique. Les programmeurs le font pour innover, résoudre des problèmes, améliorer des outils existants ou tout simplement pour le plaisir de coder.
+Commençons un nouveau projet. Un besoin ou une idée, c'est souvent comme ça que ça commence. Nous, programmeurs, on crée des projets pour transformer ces étincelles en produits fonctionnels, testables, et évolutifs.
 
-## Comment faire:
+## Comment faire :
 
-Pour commencer un nouveau projet Gleam, c'est très simple. Utilisez le code suivant:
+```gleam
+// Installez Gleam si ce n'est pas déjà fait:
+// curl https://sh.gleam.run | sh
 
-```Gleam
-rebar3 new gleam_lib mon_projet
+// Créez un nouveau projet Gleam
+$ gleam new mon_super_projet
+$ cd mon_super_projet
+
+// Examinez l'arborescence du projet
+$ tree
+.
+├── gleam.toml
+├── README.md
+├── rebar.config
+├── src
+│   └── mon_super_projet.gleam
+└── test
+    └── mon_super_projet_test.gleam
+
+// Votre monde de possibilités commence ici
 ```
 
-Cela va créer un nouveau projet Gleam dans un dossier appelé "mon_projet". Vous pouvez alors écrire votre premier module avec la commande suivante:
+## Plongée profonde
 
-```Gleam
-pub fn bonjour() {
-    "Bonjour le monde"
-}
-```
+L'outil de création de nouvelle application, intégré à Gleam depuis ses débuts, s'inspire d'outils similaires de langages plus anciens comme Ruby's `rails new` ou Elixir's `mix new`. Ces commandes permettent de créer une structure standardisée pour débuter un développement avec une base cohérente.
 
-Et pour l'exécuter, utilisez:
+L'alternative serait de tout faire à la main. Mais pourquoi réinventer la roue ? Avec Gleam, votre focus se porte sur le code, pas sur la mise en place de l'environnement.
 
-```Gleam
-rebar3 shell
-1> mon_projet:bonjour().
-"Bonjour le monde"
-```
+Gleam est jeune (première release en 2019), mais il vise l’interopérabilité avec Erlang et Elixir, donnant accès à un écosystème riche. Il tire parti de la robuste machine virtuelle Erlang (BEAM), tout en ajoutant le typage statique pour plus de sécurité.
 
-## Plongée en Profondeur:
+## Voir aussi
 
-Historiquement, commencer un nouveau projet a toujours été un moment dynamique pour un développeur. C'est une chance de partir de zéro, sans les contraintes des codes hérités. C'est l'occasion d'explorer de nouvelles approches, des technologies récentes, sans oublier de résoudre des problèmes nouveaux ou existants.
-
-En termes d'alternatives, vous pourriez choisir d'étendre un projet existant ou de contribuer à un projet open-source. Cependant, commencer un nouveau projet présente l'avantage évident de pouvoir définir vos propres règles et structures, et de contrôler entièrement le processus de développement.
-
-En outre, Gleam facilite le démarrage d'un nouveau projet grâce à son type système statique avec une inférence de type avancée, son langage propre et lisible, et son interopérabilité transparente avec la plateforme Erlang/OTP.
-
-## Voir Aussi:
-
-1. Documentation Gleam: https://hexdocs.pm/gleam/gleam_stdlib/
-2. Code source Gleam: https://github.com/gleam-lang/gleam
-3. Tutoriel Gleam: https://gleam.run/getting-started/
-4. Blog Gleam: https://gleam.run/news/
+- Documentation de Gleam : [https://gleam.run/](https://gleam.run/)
+- GitHub de Gleam pour des exemples avancés : [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)

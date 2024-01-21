@@ -1,7 +1,8 @@
 ---
-title:                "השוואה בין שני תאריכים"
-html_title:           "Arduino: השוואה בין שני תאריכים"
-simple_title:         "השוואה בין שני תאריכים"
+title:                "השוואת שתי תאריכים"
+date:                  2024-01-20T17:32:59.244730-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "השוואת שתי תאריכים"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -11,49 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+השוואת תאריכים זהו תהליך שבו משווים בין שני נתוני תאריך. מתכנתים עושים את זה כדי לקבוע מי מגיע לפני מי, לחשב פרקי זמן, או לוודא התאמה לתנאים.
 
-השוואת שני תאריכים היא פעולה שבה אנו מחליטים איזה מבין שני התאריכים קורה קודם. מתכנתים עשויים לעבוד על פרויקטים הדורשים סידור של אירועים לפי התאריך שבו הם קרו, לעיתים אף על פי השעה, הדקה או השנייה.
-
-## איך?
-
-הנה דוגמת קוד המשווה בין שני תאריכים באמצעות מחלקת `std::chrono`:
+## איך לעשות:
+שימוש בספריית `<chrono>`:
 
 ```C++
-#include <chrono>
 #include <iostream>
+#include <chrono>
+#include <ctime>
 
 int main() {
-  using namespace std::chrono;
+    // יצירת שני תאריכים לשוויון
+    std::chrono::system_clock::time_point date1 = std::chrono::system_clock::now();
+    std::chrono::system_clock::time_point date2 = date1 + std::chrono::hours(24); // תאריך שני, מחר
 
-  // Creating two different system_clock::time_point objects
-  system_clock::time_point time_point1 = system_clock::now();
-  system_clock::time_point time_point2 = system_clock::now() + hours(24);
+    // הדפסת התאריכים
+    std::time_t date1_time = std::chrono::system_clock::to_time_t(date1);
+    std::time_t date2_time = std::chrono::system_clock::to_time_t(date2);
+    std::cout << "Date 1: " << std::ctime(&date1_time);
+    std::cout << "Date 2: " << std::ctime(&date2_time);
 
-  // Comparing the two time_points
-  if (time_point2 > time_point1)
-    std::cout << "time_point2 is later than time_point1.\n";
-  else
-    std::cout << "time_point1 is later than or equal to time_point2.\n";
+    // השוואת תאריכים
+    if (date1 < date2) {
+        std::cout << "Date 1 comes before Date 2.\n";
+    } else {
+        std::cout << "Date 1 comes after or is the same as Date 2.\n";
+    }
 
-  return 0;
+    return 0;
 }
 ```
 
-פלט דוגמה:
+פלט לדוגמה:
 
 ```
-time_point2 is later than time_point1.
+Date 1: Wed Feb 23 21:46:08 2023
+Date 2: Thu Feb 24 21:46:08 2023
+Date 1 comes before Date 2.
 ```
 
-## צלילה עמוקה
-
-אם אתה חדש לתכנות ב-C++, תהיה מופתע לגלות שתאריכים מנוהלים באופן שונה לחלוטין מאשר מספרים רגילים. המטמונים של מניהול הזמן בצורה זו נובעים מהיסטוריה של השפה ומתחומי שימוש מגוונים שבהם היא מכניסה.
-
-המנייה של התאריחם שונה ממנייה של סוגים אחרים. נכנסים בניגוד של מניה התאריכים בתוך היסטוריה של איך השפה מתפתחת, אפשרויות חלופות שתוך איזה סביבות היה ניתן להשתמש, ופרטי המימוש של התאריכים בידי מימוש התוכנה עצמה.
+## עיון מעמיק
+בעבר, השוואת תאריכים נעשתה בעזרת פונקציות של מבנה `tm` או בקוד ידני שיצר השוואות על בסיס מחרוזות ומספרים. ספריית `<chrono>` שהוצגה ב-C++11 והתפתחה בהמשך הופכת את התהליך לגמיש ומדויק יותר. אפשרויות נוספות כוללות שימוש בספריות צד שלישי, כמו Boost.DateTime. לגבי שינויים וייעולים, `<chrono>` נמצא במתמטיקה רבה לשיפורים ותוספות, ולמעשה, בגרסת C++20 יש לנו את `std::chrono::calendar` שמוסיפה ממשקים נוחים גם ליצירה ולהשוואה של תאריכים בлוח השנה.
 
 ## ראו גם
-
-בלינקים המצורפות תמצאו מידע נוסף לתכנות תאריכים ב-C++:
-
-1. [C++ Date & Time](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
-2. [Chrono Library](https://en.cppreference.com/w/cpp/chrono)
+- מדריך לספריית `<chrono>`: https://en.cppreference.com/w/cpp/chrono
+- ספריית Boost.DateTime: https://www.boost.org/doc/libs/release/doc/html/date_time.html
+- ייעולים ב-C++20 לקלנדרים וזמנים: https://en.cppreference.com/w/cpp/chrono/calendar

@@ -1,6 +1,7 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "Java: Interpolando uma string"
+date:                  2024-01-20T17:50:29.443077-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolando uma string"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,43 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
+## O que é e Por quê?
+Interpolação de strings permite injetar variáveis diretamente em um pedaço de texto. Programadores fazem isso para construir strings de forma dinâmica e legível, economizando tempo e tornando o código mais limpo.
 
-Interpolar uma string é um processo para substituir placeholders por valores em uma cadeia de texto. Programadores o usam para enriquecer mensagens e melhorar a legibilidade do código.
-
-## Como Fazer:
-
-Aqui está como você pode fazer a interpolação de strings em Clojure usando `format`:
-
+## Como fazer:
 ```Clojure
-(let [nome "Ana" idade 25]
-  (format "Oi, meu nome é %s e tenho %d anos." nome idade))
+;; Usando str para concatenar strings e variáveis
+(def nome "Mundo")
+(str "Olá, " nome "!")
+
+;; Saida: "Olá, Mundo!"
+
+;; Usando um template literal com `format`
+(format "Olá, %s!" nome)
+
+;; Saida: "Olá, Mundo!"
+
+;; Usando clojure.pprint/cl-format para mais complexidade
+(require '[clojure.pprint :as pprint])
+(pprint/cl-format nil "Olá, ~A!" nome)
+
+;; Saida: "Olá, Mundo!"
 ```
 
-Isso produzirá a saída:
+## Mergulho Profundo
+Interpolação de strings não é uma funcionalidade inerente na linguagem Clojure, ao contrário de linguagens como Ruby ou JavaScript. Em Clojure, geralmente utilizamos funções como `str` e `format`. Antes do Clojure, as linguagens Lisp já utilizavam funções de formato para interpolar strings, o que influenciou a abordagem do Clojure. 
 
-```
-Oi, meu nome é Ana e tenho 25 anos.
-```
+Alternativamente, algumas bibliotecas de terceiros permitem interpolação com sintaxe mais sucinta. Por exemplo, a `clojure.string/interpolate` da biblioteca `selmer` permite interpolar com uma notação mais próxima de outras linguagens.
 
-## Imersão Profunda:
+Quanto à implementação, `str` concatena valores convertendo-os para strings, enquanto `format` e `pprint/cl-format` utilizam placeholders específicos (`%s` para string no `format`, `~A` para argumentos automáticos no `pprint/cl-format`) para substituir valores na string resultante.
 
-Na perspectiva histórica, Clojure não vem com suporte inerente para a interpolação de strings, em contraste com algumas outras linguagens de programação, como Python ou Ruby. Ao invés disso, utiliza-se o `format` (como no Java 'String.format()'), que é mais verboso mas fornece poderosas capacidades de formatação.
-
-Como alternativa, você pode usar bibliotecas adicionais como `clojure.string/replace` que podem proporcionar uma experiência de interpolação de string mais elegante.
-
-```Clojure
-(require '[clojure.string :as str])
-
-(let [nome "Ana" idade 25]
-  (str/replace "Oi, meu nome é {nome} e tenho {idade} anos." 
-               {"{nome}" nome "{idade}" idade}))
-```
-
-Em termos de detalhes de implementação, você gostaria de se familiarizar com os vários especificadores de formato no `format` do Clojure. Por exemplo, `%s` para strings, `%d` para integers e `%.nf` para números de ponto flutuante com 'n' dígitos após o ponto decimal.
-
-## Veja Também:
-
-- Documentação oficial Clojure para `format`: https://clojuredocs.org/clojure.core/format
-- Guide to Clojure Strings: https://www.learn-clojure.com/clojure-guide-to-strings
-- Biblioteca `clojure.string`: https://clojuredocs.org/clojure.string.
+## Veja também
+- [ClojureDocs para a função str](https://clojuredocs.org/clojure.core/str)
+- [ClojureDocs para a função format](https://clojuredocs.org/clojure.core/format)
+- [Repositório GitHub da biblioteca Selmer](https://github.com/yogthos/Selmer)

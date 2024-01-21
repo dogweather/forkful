@@ -1,6 +1,7 @@
 ---
 title:                "Lese en tekstfil"
-html_title:           "C#: Lese en tekstfil"
+date:                  2024-01-20T17:54:42.265959-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese en tekstfil"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,40 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-
-Å lese en tekstfil er prosessen å hente data direkte fra en fil i stedet for å skrive den inn manuelt. Programmører gjør dette for å lagre og gjenbruke store mengder data uten å gjenta koden.
+Å lese en tekstfil betyr å hente og bruke informasjon lagret i en fil på datamaskinen. Programmere gjør dette for å behandle data, konfigurere programmer, eller for å lagre resultater til videre bruk.
 
 ## Hvordan:
-Å lese en fil i Haskell er ganske enkelt. La oss se på et eksempel.
+```Haskell
+import System.IO
+
+-- Enkleste måten å lese innholdet av en tekstfil:
+main = do
+    innhold <- readFile "eksempel.txt"
+    putStr innhold
+```
+_Det forventede utdata vil være innholdet av `eksempel.txt` vist på skjermen._
+
+Eller med "lazy IO" for store filer:
 
 ```Haskell
-import System.IO   
-
-hoved :: IO ()
-hoved = gjøre
-    innhold <- readFile "test.txt"
-    putStrLn innhold
+main = do
+    withFile "storfil.txt" ReadMode (\handle -> do
+        innhold <- hGetContents handle
+        putStr innhold)
 ```
+_Forventet utdata: innholdet av `storfil.txt`._
 
-Ekte output kan være noe som ligner på følgende:
+## Dypdykk
+Historisk sett har I/O vært problematisk i funksjonelle språk som Haskell grunnet deres 'pure functions'. `readFile` og lignende funksjoner løser dette ved å bruke "lazy IO", som leser filen i blokker ved behov. Et alternativ til "lazy IO" er "strict IO" der man leser hele filen på en gang, som kan være mer forutsigbart i forhold til ressursbruk og feilhåndtering.
 
-```Haskell
-Dette er en test.
-Hei, verden!
-```
+I Haskell er det flere måter å lese filer på:
+- `readFile`: bra for små til medium størrelser.
+- `readFile` og `lines`: for lesing linje for linje.
+- `hGetContents` med `withFile`: "lazy IO" for store filer.
+- Biblioteker som `text` og `bytestring` for ytelse og minnehåndtering.
 
-Dette eksemplet leser innholdet av `test.txt` filen og deretter skriver ut innholdet til konsollen.
+Implementeringsdetaljer er viktige for å forstå hvordan Haskell håndterer filer. "Lazy IO" kan være uberegnelig når det gjelder ressurser, siden det holder filen åpen til garbage-collectoren rydder opp. Med "strict IO", vet du nøyaktig når filen lukkes.
 
-## Dypdykk:
-Historisk sett har programmeringsspråk alltid hatt nødvendigheten av å lese fra en fil, så dette er helt fra begynnelsen av informatikk. Haskell, derimot, ble etablert med en sterk vekt på funksjonell renhet, noe som gjør at operasjoner som fillesing, som er I/O-avhengige, blir håndtert litt annerledes enn andre språk.
-
-Som alternativer kan du bruke `getContents` for å lese fra standard input, eller `Interact` funksjonen for å manipulere input og output på en høyere abstraksjonsnivå.
-
-Når det gjelder implementeringsdetaljer, er `readfile` faktisk definert ved hjelp av `openFile` og `hGetContents`, som er de grunnleggende byggeklossene for fil IO i Haskell.
-
-## Se også:
-Studere disse kildene for å sakke perlefiske mer.
-
-- [Haskell's IO inside](https://www.haskell.org/tutorial/io.html)
-- [Chapter 7 - I/O](http://learnyouahaskell.com/input-and-output)
-- [Real World Haskell - Files and handles](http://book.realworldhaskell.org/read/io.html)
+## Se Også
+- [Haskell I/O Tutorial](https://wiki.haskell.org/IO_inside)
+- [Haskell bytestring library](https://hackage.haskell.org/package/bytestring)
+- [Haskell text library](https://hackage.haskell.org/package/text)
+- [Real World Haskell: Input and Output](http://book.realworldhaskell.org/read/io.html)

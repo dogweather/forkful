@@ -1,6 +1,7 @@
 ---
 title:                "Sammenslåing av strenger"
-html_title:           "Arduino: Sammenslåing av strenger"
+date:                  2024-01-20T17:34:20.118814-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sammenslåing av strenger"
 programming_language: "C"
 category:             "C"
@@ -10,48 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
+## What & Why?
+Sammenslåing av strenger er det å lime sammen to eller flere tekststykker til ett. Vi gjør dette for å bygge setninger, lage dynamiske meldinger eller behandle variabelt tekstinnhold.
 
-Sammenslåing av strenger (eller "string concatenation") er prosessen med å sette sammen to eller flere strenger til en. Som programmerere gjør vi dette for å manipulere og formatere tekstdata på en effektiv måte.
-
-## Hvordan gjør du:
-
-I C, bruker vi ofte `strcat()` funksjonen fra standardbiblioteket for å legge sammen strenger. Se hvordan det fungerer:
-
+## How to:
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char setning[100] = "Hei, ";
-    strcat(setning, "verden!");
-    printf("%s\n", setning);
+    char hello[] = "Hei, ";
+    char world[] = "verden!";
+    char combined[50]; // Stor nok til begge strenger pluss null-terminator
+
+    strcpy(combined, hello);     // Kopierer 'hello' til 'combined'
+    strcat(combined, world);     // Legger til 'world' etter 'hello' i 'combined'
+
+    printf("%s\n", combined);    // Skriver ut: Hei, verden!
     return 0;
 }
 ```
 
-Denne koden vil gi følgende utdata:
+## Deep Dive
+I gamle dager, før funksjoner som `strcpy` og `strcat` eksisterte, måtte programmerere ofte kopiere strenger manuelt. Historisk sett kunne dette lede til mange feil. 
 
-```
-Hei, verden!
-```
+I dag finnes det flere måter å sammenslå strenger på i C. Foruten standardbibliotekets `strcpy` og `strcat`, finnes det `strncat` som begrenser antall tegn og beskytter mot buffer overflyt. For C11 og nyere, `strcat_s` og `strcpy_s` er alternativer som legger ekstra vekt på sikkerhet.
 
-## Dypere dykk:
-Historisk sett har strengkonkatenering alltid vært grunnleggende for tekstbehandling i programmering. Imidlertid har håndteringen av det variert mellom forskjellige språk. C-standarden leverer `strcat()`, men det krever et destinasjonsbuffer som er tilstrekkelig stor til å holde begge strenger, ellers er overflyt en risiko.
+Når det gjelder implementasjon, er det viktig å huske på minnekapasiteten. Pass på at målstrengen har nok plass for den sammenslåtte strengen, inkludert null-terminatoren.
 
-Alternativt kan `strncat()` brukes for å sikre at ikke mer enn `n` tegn blir slått sammen for å forhindre bufferoverflyt:
-
-```C
-char setning[10] = "Hei, ";
-strncat(setning, "verden!", 5);
-printf("%s\n", setning);
-```
-
-Utgangen her vil være "Hei, verd".
-
-## Se også:
-
-For mer informasjon om sammenkobling av strenger i C, se disse nyttige ressursene:
-
-1. strcat() - [https://www.cplusplus.com/reference/cstring/strcat/](https://www.cplusplus.com/reference/cstring/strcat/)
-2. strncat() - [https://www.cplusplus.com/reference/cstring/strncat/](https://www.cplusplus.com/reference/cstring/strncat/)
+## See Also
+- C Standard Library Documentation: https://en.cppreference.com/w/c/string/byte
+- Secure C Programming Guide: https://wiki.sei.cmu.edu/confluence/display/c/SEI+CERT+C+Coding+Standard
+- Understanding Pointers in C: https://www.learn-c.org/en/Pointers

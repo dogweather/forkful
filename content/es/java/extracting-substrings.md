@@ -1,7 +1,8 @@
 ---
-title:                "Extrayendo subcadenas"
-html_title:           "C: Extrayendo subcadenas"
-simple_title:         "Extrayendo subcadenas"
+title:                "Extracción de subcadenas"
+date:                  2024-01-20T17:45:49.623457-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Extracción de subcadenas"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,46 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+## What & Why? (¿Qué y Por Qué?)
+Extraer subcadenas significa seleccionar partes específicas de una cadena de texto. Programadores lo hacen para analizar, manipular o transformar datos de manera más eficiente.
 
-Extraer subcadenas es el proceso de obtener una parte de una cadena en Java. Los programadores lo hacen para manipular datos más pequeños y útiles dentro de una cadena más grande.
+## How to:
+Para extraer subcadenas en Java usamos el método `substring()`. Ejemplos:
 
-## Cómo hacerlo
-
-Supongamos que tienes una cadena "¡Hola, mundo de la programación!" y quieres obtener la palabra "mundo". Aquí te explico cómo:
-
-```Java
-// Declarar la cadena fuente
-String str = "¡Hola, mundo de la programación!";
-// Definir los índices de inicio y fin
-int start = 7;
-int end = 12;
-// Extraer la subcadena
-String sub = str.substring(start, end);
-// Imprimir la subcadena
-System.out.print(sub);
+```java
+public class Main {
+    public static void main(String[] args) {
+        String message = "Hola, Mundo!";
+        
+        // Extraer desde el carácter en la posición 5 (inclusive) hasta el final
+        String sub = message.substring(5);
+        System.out.println(sub); // "Mundo!"
+        
+        // Extraer desde la posición 5 (inclusive) hasta la 7 (exclusive)
+        String smallSub = message.substring(5, 7);
+        System.out.println(smallSub); // "Mu"
+    }
+}
 ```
-El código anterior imprimirá:
 
+Output:
 ```
-mundo
+Mundo!
+Mu
 ```
-## Inmersión profunda
 
-La función `substring()` ha sido una parte integral de Java desde su primera versión, JDK 1.0. En Java, las cadenas son inmutables, por lo que `substring()` no altera la cadena original, sino que crea una nueva.
+## Deep Dive (Inmersión Profunda):
+La capacidad de extraer subcadenas es antigua como los propios lenguajes de programación. En Java, el método `substring(int beginIndex, int endIndex)` ha sido parte del `String` desde JDK 1.0. Antes de Java 7, cuando se ejecutaba `substring()`, se compartía el array de caracteres original para economizar memoria, pero eso cambió debido a problemas de fuga de memoria. Ahora, crea una nueva cadena, lo cual es más seguro, aunque un poco menos eficiente en memoria.
 
-Existen alternativas a `substring()`:
+Alternativas a `substring()` incluyen métodos como `split()`, `StringTokenizer` o expresiones regulares con `Pattern` y `Matcher` para casos más complejos. Cada uno tiene su ventaja dependiendo del contexto.
 
-- `split()`: Se usa para dividir una cadena en un array basándose en una expresión regular.
-- `charAt()`: Obtiene un solo carácter de la cadena. Podrías usar un bucle para obtener múltiples caracteres.
+Detalles de implementación: Internamente, `substring()` utiliza el método `Arrays.copyOfRange()` para copiar el rango relevante de caracteres, lo que garantiza que la nueva cadena sea independiente de la original.
 
-Esto es importante: en Java, el primer carácter de la cadena está en el índice 0. Hay dos versiones del método `substring()`:
-
-- `substring(int beginIndex)`: Devuelve una nueva cadena que comienza desde 'beginIndex' hasta el final de la cadena.
-- `substring(int beginIndex, int endIndex)`: Devuelve una nueva cadena que comienza desde 'beginIndex' hasta 'endIndex' (exclusivo).
-
-## Ver También
-
-- [Documentación Oficial de Java - Clase String](https://docs.oracle.com/javase/9/docs/api/java/lang/String.html)
-- [Tutorial de Java - Cadena de caracteres](https://www.w3schools.com/java/java_strings.asp)
-- [Explicación detallada del método substring()](https://www.javatpoint.com/java-string-substring)
+## See Also (Ver También):
+- Documentación oficial de Oracle para el método `substring`: [Oracle Docs - String substring](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#substring(int,int))
+- Tutorial sobre expresiones regulares en Java: [Java Regex Tutorial](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)

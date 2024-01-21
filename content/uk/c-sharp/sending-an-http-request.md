@@ -1,7 +1,8 @@
 ---
-title:                "Надсилання http-запиту"
-html_title:           "Arduino: Надсилання http-запиту"
-simple_title:         "Надсилання http-запиту"
+title:                "Надсилання HTTP-запиту"
+date:                  2024-01-20T17:59:30.128089-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,14 +11,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що і Чому?)
+Sending an HTTP request means asking another system for data or a response over the web. Programmers do it to interact with APIs, fetch web content, or communicate between services. 
 
-Надсилання HTTP-запиту - це процес комунікації між комп'ютерами через протокол HTTP, коли один комп'ютер запитує дані від іншого. Ми, програмісти, робимо це, щоб отримати доступ до різноманітних веб-ресурсів, наприклад, веб-сторінок, API, файлів тощо.
-
-## Як це робиться:
-
-Подивимося на приклад коду, який виконує HTTP-запит за допомогою C# і HttpClient.
-
+## How to: (Як зробити:)
 ```C#
 using System;
 using System.Net.Http;
@@ -25,38 +22,54 @@ using System.Threading.Tasks;
 
 class Program
 {
-    static readonly HttpClient client = new HttpClient();
-
-    static async Task Main()
+    static async Task Main(string[] args)
     {
-        try
-        {  
-            HttpResponseMessage response = await client.GetAsync("http://example.com");
-            response.EnsureSuccessStatusCode();
-            string responseBody = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(responseBody);
-        }  
-        catch(HttpRequestException e)
-        {  
-            Console.WriteLine("Exception Caught!");	
-            Console.WriteLine($"Message: {e.Message} ");
+        using (var client = new HttpClient())
+        {
+            try
+            {
+                // Sending a GET request to example.com
+                HttpResponseMessage response = await client.GetAsync("http://example.com");
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                
+                Console.WriteLine(responseBody);  // Outputs the retrieved HTML
+            }
+            catch(HttpRequestException e)
+            {
+                Console.WriteLine("\nException Caught!");
+                Console.WriteLine("Message: {0} ", e.Message);
+            }
         }
     }
 }
 ```
-При виконанні цього коду отримуємо HTML-текст веб-сторінки "http://example.com" або повідомлення про помилку, якщо запит не вдався.
+Sample output:
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+    ...
+</head>
+<body>
+    ...
+</body>
+</html>
+```
 
-## Більш глибокий занурення
+## Deep Dive (Поглиблене Вивчення):
+HTTP requests are foundational to web communication, established by Tim Berners-Lee in 1989. Alternatives like gRPC or WebSockets are used when you need real-time communication or other protocols.
 
-Надсилання HTTP-запитів було основним методом взаємодії в Інтернеті з часів його зародження. Спочатку воно використовувалося для отримання HTML-документів, але з часом було розширено для взаємодії із серверними API.
+Implementing an HTTP request in C# is straightforward thanks to the `HttpClient` class. Released with .NET Framework 4.5, `HttpClient` provides an async API for sending HTTP requests. Keep in mind to dispose of `HttpClient` instances to avoid resource leaks, or better yet, use a single instance throughout your app.
 
-Щодо альтернатив, можна користуватися іншими HTTP-клієнтами, як-от RestSharp або Flurl, які мають свої переваги і недоліки.
+Another thing to consider is handling exceptions. With proper exception handling, your app can gracefully deal with network issues or bad responses.
 
-Метод GetAsync() використовує асинхронну модель програмування Task-based, що була введена в .NET 4.5. Вона робить код більш ефективним і простим у використанні.
+In older C# versions, developers had to use `WebRequest` and `WebResponse` classes which were more cumbersome. `HttpClient` is not only easier to use but also supports modern async programming paradigms.
 
-## Див. також
-
-- Офіційна документація про HttpClient: <https://docs.microsoft.com/uk-ua/dotnet/api/system.net.http.httpclient>
-- Матеріал про асинхронне програмування в .NET: <https://docs.microsoft.com/uk-ua/dotnet/csharp/programming-guide/concepts/async/>
-- RestSharp: <https://restsharp.dev/>
-- Flurl: <https://flurl.dev/>
+## See Also (Дивіться також):
+- [HttpClient Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
+- [Understanding HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+- [API Communication with REST](https://restfulapi.net/)
+- [Alternatives to HTTP: gRPC](https://grpc.io/)
+- [Real-time Web Communication: WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)

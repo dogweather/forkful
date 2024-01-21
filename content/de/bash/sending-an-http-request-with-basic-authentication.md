@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
+date:                  2024-01-20T18:00:44.724934-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,40 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# HTTP-Anfragen mit Basisauthentifizierung in Bash senden
+## Was & Warum?
 
-## Was und Warum?
+Beim Senden einer HTTP-Anfrage mit Basic Authentication werden Benutzername und Passwort kodiert und als Teil der Anfrage übermittelt. Programmierer nutzen dies, um sichere Zugänge zu Webdiensten zu schaffen, die eine einfache Authentifizierung erfordern.
 
-Eine HTTP-Anfrage mit Basisauthentifizierung ist eine Methode, mit der Benutzeranmeldedaten in einer HTTP-Anfrage gesendet werden. Entwickler nutzen das, um auf Daten und Funktionen geschützter Webdienste zuzugreifen.
-
-## Wie geht das?
-
-In Bash wird meistens das Programm `curl` genutzt, um HTTP-Anfragen zu senden, da es direkt in den meisten Unix-basierten Systemen verfügbar ist.
+## So geht's:
 
 ```Bash
-curl -u benutzername:passwort http://example.com
+# Anfrage mit curl und Basic Authentication
+USER='benutzername'
+PASS='passwort'
+URL='https://api.deinwebdienst.com/datensatz'
+
+# Base64-Kodierung der Anmeldedaten
+ENCODED_CREDENTIALS=$(echo -n "$USER:$PASS" | base64)
+
+# Ausführen der Anfrage
+curl -H "Authorization: Basic $ENCODED_CREDENTIALS" $URL
 ```
 
-Hierbei steht `-u` für "User". Der Doppelpunkt (`:`) trennt Benutzernamen und Passwort. 
+Beispieloutput:
 
-Eine Antwort könnte programmatisch so aussehen:
-
-```Bash
-HTTP/1.1 200 OK
+```
+{"status":"Erfolg","message":"Du bist eingeloggt!"}
 ```
 
-## Tiefer Tauchen
+## Tiefgang
 
-**Historischer Kontext:** Basisauthentifizierung wurde in der anfänglichen Spezifikation von HTTP, RFC 1945 eingeführt, und in RFC 2617 erweitert. Es verwendet Base64-Codierung, um Benutzername und Passwort zu maskieren, bietet jedoch keine echte Sicherheit.
+Basic Authentication wird bereits seit den Anfängen des Webs für einfache Authentifizierungsprozesse verwendet. Zwar gilt diese Art der Authentifizierung heute nicht als die sicherste Methode, da die Anmeldedaten unverschlüsselt über das Netz versendet werden können, sie ermöglicht jedoch einen schnellen Einstieg und wird oft in internen Netzwerken oder Prototypen verwendet. Alternativen wie OAuth oder Token-Based Authentication bieten zusätzliche Sicherheitsfeatures, sind aber auch komplexer in der Umsetzung.
 
-**Alternativen:** Token-basierte Authentifizierungsmethoden wie OAuth und JWT sind heutzutage weit verbreitet, bieten aber größere Komplexität. Bei HTTPS-Übertragungen ist Basic auth jedoch ausreichend.
+Die Base64-Kodierung dient nicht der Verschlüsselung, sondern lediglich der Kodierung für die Übertragung über HTTP. Wichtig ist hierbei, dass die HTTPS verwendet wird, um die Daten auf dem Transportweg zu verschlüsseln.
 
-**Implementierung:** In `curl` nutzt die `-u` Flagge die Basic Auth-Methode. Bei ungesicherten Verbindungen kann ein Mittelsmann-Angriff ("man-in-the-middle") die Anmeldedaten abfangen.
+## Siehe auch:
 
-## Siehe auch
-
-- cURL-Befehl [Dokumentation](https://curl.haxx.se/docs/manual.html)
-- RFC 1945, [HTTP/1.0 Spezifikation](https://tools.ietf.org/html/rfc1945)
-- RFC 2617, [HTTP-Authentifizierung](https://tools.ietf.org/html/rfc2617)
-
-Bitte beachten Sie die Sicherheitsrisiken bei Verwendung der Basisauthentifizierung und überprüfen Sie die Alternativen je nach Ihren Anwendungsfällen.
+- cURL Dokumentation zu HTTP-Authentifizierung: https://curl.se/docs/http-auth.html
+- RFC 7617, The 'Basic' HTTP Authentication Scheme: https://tools.ietf.org/html/rfc7617
+- Einführung in sichere Authentifizierungsmethoden: https://www.owasp.org/index.php/Authentication_Cheat_Sheet

@@ -1,6 +1,7 @@
 ---
 title:                "Обчислення дати у майбутньому або минулому"
-html_title:           "Kotlin: Обчислення дати у майбутньому або минулому"
+date:                  2024-01-20T17:31:45.050721-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Обчислення дати у майбутньому або минулому"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,48 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
+## Що і чому?
+Розрахунок дати в майбутньому чи минулому — це просто зміщення відліку часу на певний період. Програмісти це роблять для обробки подій, резервування, моніторингу чи прогнозування.
 
-Розрахунок дати в майбутньому або минулому - це процес визначення дати, зміщеної від початкової точки на певну кількість часових періодів. Програмісти використовують це для обробки даних, що змінюються з часом, таких як терміни дії договорів, здійснення платежів, планування задач, тощо.
-
-## Як це робиться:
-
-Я використаю бібліотеку java.time для цього прикладу. За допомогою неї можна отримати дату, зміщену від початкової дати на певний часовий період.
+## Як робити:
+В Kotlin ми використовуємо клас `LocalDate` з пакету `java.time`. Ось як це працює:
 
 ```Kotlin
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
 
 fun main() {
-    val currentDate = LocalDate.now()
-    println("Сьогодні: $currentDate")
-
-    val futureDate = currentDate.plus(5, ChronoUnit.DAYS)
-    println("Прибуде майбутнього: $futureDate")
-
-    val pastDate = currentDate.minus(10, ChronoUnit.MONTHS)
-    println("Було в минулому: $pastDate")
+    val today = LocalDate.now()
+    val tenDaysLater = today.plusDays(10)
+    val twoWeeksEarlier = today.minusWeeks(2)
+  
+    println("Сьогодні: $today")
+    println("Через 10 днів: $tenDaysLater")
+    println("Дві неділі тому: $twoWeeksEarlier")
 }
 ```
 
-Цей код виведе:
+Вам покажуть поточну дату, дату через 10 днів, і дату дві неділі назад.
 
-```Kotlin
-Сьогодні: 2022-05-10
-Прибуде майбутнього: 2022-05-15
-Було в минулому: 2021-07-10
-```
+## Поглиблено:
+Раніше для роботи з датами програмісти використовували `java.util.Date` та `java.util.Calendar`. Однак, з Java 8 з'явився новий API для дати і часу - `java.time`, котрий і взяла за основу Kotlin. 
 
-## Занурення в деталі:
+Ви також можете використовувати `plus` і `minus` з різними одиницями часу, як-от `ChronoUnit.DAYS` для днів чи `ChronoUnit.WEEKS` для тижнів. Це надає гнучкості роботі з часовими періодами.
 
-Розрахунок майбутніх та минулих дат є важливою частиною практично кожного софту, що використовує часові даних. Однак, зважаючи на всі проблеми, пов'язані з часовими поясами, переходами на літній/зимовий час та календарем, це може бути дуже складним.
+Окрім того, кутлінівська бібліотека KotlinX.datetime додає додаткові функції для роботи з датою і часом, особливо корисні для cross-platform розробки.
 
-Альтернативи розрахунку зміщених дат включають використання "Calendar" або "Date" в старих версіях Java, але вони не рекомендуються через їхні відомі проблеми.
-
-Kotlin не має вбудованого способу робити це, тому ми використовуємо java.time, що було додано в Java 8, щоб зробити роботу з датами та часом більш приємною.
-
-## Додаткова інформація:
-
-1. [Kotlin Docs](https://kotlinlang.org/docs/home.html)
-2. [Java.Time](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-3. [Old Date and Time API vs. Java 8 Date and Time API](https://www.javatpoint.com/java-8-date-and-time-api)
+## Також подивіться:
+- [Документація по API java.time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [KotlinX.datetime бібліотека](https://github.com/Kotlin/kotlinx-datetime)
+- [Путівник по міграції з java.util.Date на java.time](https://www.baeldung.com/migrating-to-java-8-date-time-api)

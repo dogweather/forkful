@@ -1,6 +1,7 @@
 ---
 title:                "भविष्य या अतीत में तारीख की गणना"
-html_title:           "Python: भविष्य या अतीत में तारीख की गणना"
+date:                  2024-01-20T17:32:27.500465-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "भविष्य या अतीत में तारीख की गणना"
 programming_language: "Python"
 category:             "Python"
@@ -10,31 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-भविष्यधिक्कर या अतीत में एक तारीख की गणना सॉफ्टवेयर में कमन्ली उपयोगिता की एक प्रक्रिया है। प्रोग्रामर्स इसे समय-संबंधी कार्यवाही, माहिती छुपावने, और तारीखों के बीच के विभेद की गणना के लिए करते हैं। 
+## क्या और क्यों? (What & Why?)
+तारीख को भविष्य या अतीत में गणना करना मतलब है किसी निश्चित दिनांक से पहले या बाद की तारीख जानना। प्रोग्रामर इसे बिलिंग सिस्टम्स, इवेंट प्लानिंग, या रिमाइंडर टूल्स में इस्तेमाल करते हैं।
 
-## कैसे:
+## कैसे करें: (How to:)
 ```Python
 from datetime import datetime, timedelta
 
-# आज की तारीख
-today = datetime.now()
+# वर्तमान तारीख प्राप्त करना
+current_date = datetime.now()
 
-# 20 दिन भविष्य में की तारीख
-future_date = today + timedelta(days=20)
-print('Future Date: ', future_date)
+# भविष्य में 10 दिन जोड़ना
+future_date = current_date + timedelta(days=10)
 
-# 20 दिन अतीत में की तारीख
-past_date = today - timedelta(days=20)
-print('Past Date: ', past_date)
+# अतीत में 10 दिन घटाना
+past_date = current_date - timedelta(days=10)
+
+print("आज की तारीख:", current_date.strftime('%Y-%m-%d'))
+print("भविष्य का दिन:", future_date.strftime('%Y-%m-%d'))
+print("अतीत का दिन:", past_date.strftime('%Y-%m-%d'))
 ```
-ऊपर दिए गए कोड का आउटपुट दिए गए समय के आधार पर होगा।
+उदाहरण आउटपुट:
+```
+आज की तारीख: 2023-04-01
+भविष्य का दिन: 2023-04-11
+अतीत का दिन: 2023-03-22
+```
 
-## गहराई से:
-तारीख की गणना समय के साथ बदलती रहती है, लेकिन पायथन में `datetime` और `timedelta` फंक्शन का उपयोग करके यह आसानी से संभव होता है। वैकल्पिक तरीकों में आप python के `dateutil` लाइब्रेरी का उपयोग कर सकते हैं। लेकिन `timedelta` स्थापित पायथन के हिस्से का एक बहुत ही व्यापक, व्यापक और तात्विक उपयोग है।
+## गहराई से जानकारी (Deep Dive)
+तारीख की गणना में समय-प्रबंधन की भूमिका महत्वपूर्ण है। पुराने समय में, कैलेंडर और दिवाली चार्ट के जरिए इसे हाथ से किया जाता था। अब पायथन में `datetime` और `timedelta` के उपयोग से यह काम आसानी से हो जाता है। `datetime` वर्तमान तारीख और समय देता है, जबकि `timedelta` उसमें निश्चित समय जोड़ने या घटाने का काम करता है।
 
-## देखें भी:
-1. [Python Docs: Datetime](https://docs.python.org/3/library/datetime.html) - Python दस्तावेज़ों में डेटाइम मॉड्यूल से संबंधित अधिक जानकारी।
-2. [Dateutil Docs](https://dateutil.readthedocs.io/en/stable/) - डेटाइम मॉड्यूल के वैकल्पिक पुस्तकालय के बारे में अधिक जानकारी।
-3. [Time complexity of Python operations](https://wiki.python.org/moin/TimeComplexity) - विभिन्न पायथन ऑपरेशन के समयों की जटिलता के बारे में अधिक जानकारी।
-4. [Python Tutor](http://www.pythontutor.com/) - ऑनलाइन विजुअलेशन उपकरण जो पायथन कोड चलाता है।
+विकल्प रूप में, `dateutil` लाइब्रेरी भी मौजूद है जो और भी जटिल तारीख गणना कर सकता है। प्रोग्रामिंग में तारीख की गणना का सटीक होना जरूरी है क्योंकि लीप इयर्स, टाइम जोन्स, और डेलाइट सेविंग्स से जुड़ी जटिलताएं होती हैं।
+
+## संबंधित स्रोत (See Also)
+- Python `datetime` मॉड्यूल का डॉक्युमेंटेशन: https://docs.python.org/3/library/datetime.html
+- `dateutil` लाइब्रेरी: https://dateutil.readthedocs.io/en/stable/
+- पायथन में समय संबंधी गणना विश्लेषण: https://pymotw.com/3/datetime/

@@ -1,7 +1,8 @@
 ---
-title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
-html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
-simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+date:                  2024-01-20T18:02:12.232933-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,44 +11,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому? 
+## Що і Навіщо?
 
-Надіслати HTTP-запит із базовою аутентифікацією - це означає дозволити програмі пройти перевірку безпеки на веб-сервері. Програмісти роблять це, коли хочуть отримати доступ до захищених даних, не вимагаючи від користувача вводити логін і пароль.
+Відправка HTTP-запиту з базовою аутентифікацією — це спосіб передачі логіна і пароля на сервер для доступу до ресурсів. Програмісти виконують це для безпечного з'єднання з веб-сервісами, що вимагають авторизації.
 
 ## Як це зробити:
 
-Ось основний код, який надсилає HTTP-запит з базовою аутентифікацією за допомогою функції `fetch()`:
+```Javascript
+// Залучаємо вбудований модуль для відправки HTTP-запитів
+const https = require('https');
 
-``` Javascript
-let url = 'https://example.com/data';
-let username = 'your-username';
-let password = 'your-password';
+// Додаємо логін та пароль
+const auth = 'myUsername:myPassword';
 
-let headers = new Headers();
-headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
+// Кодуємо в base64
+const encodedAuth = Buffer.from(auth).toString('base64');
 
-fetch(url, {method:'GET', headers: headers})
-    .then(response => response.json())
-    .then(console.log)
-    .catch(console.error);
+// Задаємо параметри запиту
+const options = {
+  hostname: 'example.com',
+  port: 443,
+  path: '/api/data',
+  method: 'GET',
+  headers: {
+    'Authorization': `Basic ${encodedAuth}`
+  }
+};
+
+// Виконуємо запит
+const req = https.request(options, (res) => {
+  let responseBody = '';
+  
+  res.on('data', (chunk) => {
+    responseBody += chunk;
+  });
+
+  res.on('end', () => {
+    console.log('Отриманий відповідь: ', responseBody);
+  });
+});
+
+req.on('error', (e) => {
+  console.error('Проблема з запитом: ', e.message);
+});
+
+req.end();
+```
+Приклад виводу:
+```
+Отриманий відповідь: {"some":"data"}
 ```
 
-Код модифікує заголовки запиту, додаючи поле "Authorization" з інформацією про аутентифікацію.
+## Глибше занурення
 
+Базова аутентифікація — старий, але простий спосіб захисту. Виникла на початку вебу, в HTTP/1.0. Забезпечує мінімальну безпеку, оскільки логін і пароль кодуються, але не шифруються. Тому, важливо використовувати HTTPS.
 
-## Більш глибокий аналіз:
+Сьогодні є безпечніші альтернативи: OAuth, API ключі, токени. Проте, базова аутентифікація все ще корисна для простих випадків або внутрішніх мереж.
 
-1. **Історичний контекст** - було створено "Basic Authentication" з простої необхідності аутентифікації без великого перешикування даних.
-2. **Альтернативи** - однак, базова аутентифікація не є самим безпечним варіантом. Для більшої безпеки користуйтеся аутентифікацією OAuth або Token.
-3. **Деталі реалізації** - Основним недоліком цього методу є те, що ім'я користувача та пароль базово кодуються і можуть бути легко розшифровані. Вони надсилаються з кожним запитом, що збільшує ризик злому браузера.
+Деталі реалізації: логін і пароль передаються через заголовок `Authorization` у запиті. Кодування в base64 дозволяє передавати текст, що містить символи не з ASCII.
 
+## Дивись також
 
-## Також дивіться:
-
-1. Загальна інформація про fetch() на MDN: [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-
-2. Більше про заголовки HTTP-запитів: [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
-
-3. Детальний огляд на тему безпеки базової аутентифікації: [Basic Authentication](https://www.httpwatch.com/httpgallery/authentication/)
-
-4. MDN розширений огляд HTTP-аутентифікації: [HTTP authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [MDN Web Docs - HTTP authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+- [Node.js https documentation](https://nodejs.org/api/https.html)
+- [Buffer Node.js documentation](https://nodejs.org/api/buffer.html)

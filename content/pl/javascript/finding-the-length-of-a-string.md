@@ -1,7 +1,8 @@
 ---
-title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Arduino: Znajdowanie długości ciągu znaków"
-simple_title:         "Znajdowanie długości ciągu znaków"
+title:                "Znalezienie długości ciągu znaków"
+date:                  2024-01-20T17:47:51.342833-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Znalezienie długości ciągu znaków"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,42 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Znalezienie długości łańcucha znaków to po prostu określenie, ile znaków znajduje się w tekście. Programiści robią to, aby walidować dane wejściowe, przetwarzać tekst czy zarządzać pamięcią.
 
-Znalezienie długości ciągu polega na ustaleniu liczby znaków w tym ciągu. Programiści robią to, szczególnie kiedy muszą przetwarzać, zmieniać lub walidować dane tekstowe.
+## How to: (Jak to zrobić?)
+```javascript
+// Prosty przykład
+let greeting = "Cześć, jak się masz?";
+console.log(greeting.length); // 21
 
-## Jak to zrobić:
+// Użycie w funkcji
+function stringLength(str) {
+  return str.length;
+}
 
-Znalezienie długości ciągu w JavaScriptu jest proste. Wygląda to tak:
-
-```Javascript
-let tekst = "Programowanie w JavaScript";
-console.log(tekst.length);
+console.log(stringLength("Dzień dobry")); // 11
 ```
 
-Gdy uruchomimy powyższy kod, otrzymamy:
+## Deep Dive (Dogłębna analiza)
+Długość łańcucha znaków w JavaScript to własność `.length`, dostępna od początku istnienia języka. W przeszłości alternatywne sposoby obliczania długości stringa były rzadkością, gdyż `.length` okazało się być szybkie i niezawodne. Dziedziczenie tej właściwości od prototypu `String` gwarantuje, że jest ona dostępna dla każdego stringa. Należy pamiętać, że właściwość `.length` zwraca liczbę jednostek kodu UTF-16 w łańcuchu, a nie faktyczną liczbę znaków Unicode, co może prowadzić do nieporozumień przy pracy z emoji lub niektórymi znakami specjalnymi.
 
-```Javascript
-25
-```
-
-Co oznacza, że ciąg zawiera 25 znaków.
-
-## Dogłębna analiza
-
-Za koncept długości ciągu stoją historyczne decyzje o implementacji. Wcześniejsze języki programowania, jak C, wymagały ręcznego zliczania znaków, podczas gdy JavaScript i inne nowoczesne języki uproszczały tę operację za pomocą wbudowanych właściwości.
-
-Alternatywą do użycia `length` jest iterowanie przez ciąg i zliczanie znaków. Ale to jest dłuższe i bardziej skomplikowane, dlatego właściwość `length` jest zdecydowanie preferowana.
-
-Nie musisz się martwić szczegółami implementacji `length` w JavaScript. Jest to natywna funkcja systemu, która jest zoptymalizowana do szybkiego zliczania znaków, nawet w bardzo długich ciągach.
-
-## Zobacz także:
-
-Szczegółowe informacje na temat operacji na ciągach w JavaScript znajdziesz na stronach:
-
-- [MDN Web Docs - Ciąg znaków](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [W3Schools - JavaScript String length Property](https://www.w3schools.com/jsref/jsref_length_string.asp) 
-
-Harmonogram szkoleń oraz kursy, w których omawiane są podobne tematy znajdują się na stronach:
-
-- [Codecademy - JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
+## See Also (Zobacz również)
+- MDN Documentation on strings: [MDN - String.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- Unicode and JavaScript strings: [Understanding JavaScript Strings as a Unicode](https://mathiasbynens.be/notes/javascript-unicode)

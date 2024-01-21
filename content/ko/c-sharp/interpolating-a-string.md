@@ -1,6 +1,7 @@
 ---
 title:                "문자열 보간하기"
-html_title:           "Java: 문자열 보간하기"
+date:                  2024-01-20T17:50:26.150930-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "문자열 보간하기"
 programming_language: "C#"
 category:             "C#"
@@ -10,44 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜하고 뭐해?
+## What & Why? (무엇인가요? 왜 사용하나요?)
+문자열 보간이란, 문자열 안에 변수나 표현식의 값을 집어넣는 것입니다. 코드를 깔끔하게 유지하고 가독성을 높이기 위해 사용합니다.
 
-스트링 인터폴레이션은 문자열 내 값들을 표현하기 위한 방법으로, 이는 코드의 가독성을 향상하고 코딩 실수를 줄이는 것에 도움을 줍니다.
-
-## 어떻게?
-
-스트링 인터폴레이션을 사용하면 문자열 안에 직접 변수나 식을 삽입할 수 있습니다. C#에서 이와같이 하면:
-
+## How to: (어떻게 하나요?)
 ```C#
-int age = 10;
-string name = "Jin";
-Console.WriteLine($"Hello {name}, you are {age} years old.");
-```
+string name = "세종대왕";
+int year = 1443;
+string invention = "훈민정음";
 
-출력 결과는 이렇습니다:
-
-```Output
-Hello Jin, you are 10 years old.
-```
-
-## 깊게 알아봅시다
-
-스트링 인터폴레이션은 C# 6.0에서 처음 도입되었습니다. 이전 버전에는 `String.Format` 메소드나 차례대로 더하는 연산자 (`+`)를 이용해 문자열 내에 값을 표현했었습니다.
-
-```C#
-int age = 10;
-string name = "Jin";
-string message = String.Format("Hello {0}, you are {1} years old.", name, age);
+// 문자열 보간 사용
+string message = $"안녕하세요, {name}입니다. {year}년에 {invention}을 창제했습니다.";
 Console.WriteLine(message);
-// or
-Console.WriteLine("Hello " + name + ", you are " + age + " years old.");
 ```
+출력: 안녕하세요, 세종대왕입니다. 1443년에 훈민정음을 창제했습니다.
 
-하지만 위의 방법들은 가독성이 떨어지며, 잘못된 인덱스나 더하기 연산자의 과다 사용으로 인한 오류를 일으킬 수 있습니다. 그런 점에서 C# 6.0 이후로 도입된 스트링 인터폴레이션은 이와같은 문제를 해결해, 개발자들에게 많은 도움을 제공하고 있습니다.
+## Deep Dive (심층 분석)
+C# 6.0부터 문자열 보간이 도입되었고 `$` 기호와 중괄호 `{}`를 사용합니다. 문자열 보간 전에는 `string.Format`을 사용했지만 코드가 복잡해지기 쉽습니다. 문자열 보간은 내부적으로 `string.Format`을 호출하여 처리하지만 훨씬 직관적입니다. 컴파일러는 보간 문자열을 `FormattableString` 객체로 변환하여 컴파일 타임에 문자열을 구성하지 않고, 런타임에 평가합니다.
 
-## 참고 자료
+보간 문자열 내에서는 표현식을 직접 사용할 수도 있습니다:
+```C#
+int a = 10, b = 20;
+string sumMessage = $"10과 20의 합은 {a + b}입니다.";
+Console.WriteLine(sumMessage);
+```
+출력: 10과 20의 합은 30입니다.
 
-스트링 인터폴레이션에 대해 더 알아보려면 Microsoft가 제공하는 다음 자료를 참조할 수 있습니다:
-
-1. [String interpolation (C# reference)](https://docs.microsoft.com/ko-kr/dotnet/csharp/language-reference/tokens/interpolated)
-2. [String.Format 메소드](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.format?view=net-5.0)
+## See Also (관련 자료)
+- [Microsoft - 문자열 보간($)](https://docs.microsoft.com/ko-kr/dotnet/csharp/language-reference/tokens/interpolated)
+- [C# 문자열 포맷](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.format?view=net-6.0)
+- [C# 가이드 - 문자열 보간의 사용](https://docs.microsoft.com/ko-kr/dotnet/csharp/language-reference/keywords/interpolated-strings)

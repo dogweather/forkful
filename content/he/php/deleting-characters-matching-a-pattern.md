@@ -1,6 +1,7 @@
 ---
 title:                "מחיקת תווים התואמים לתבנית"
-html_title:           "Elixir: מחיקת תווים התואמים לתבנית"
+date:                  2024-01-20T17:42:54.760048-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "מחיקת תווים התואמים לתבנית"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,31 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-מחיקת תווים התואמים לדפוס היא תהליך שבו מסירים תווים מחרוזת תוך שמירה רק על התווים שאינם תואמים לדפוס מסוים. מתכנתים עושים זאת כדי לנקות או לחדד את הנתונים שלהם.
+עם פונקציות כמו `preg_replace`, אנחנו מוחקים תווים שמתאימים לתבנית מסוימת. זה שימושי לניקוי קלטים, אימות נתונים ועיבוד טקסט.
 
-## איך מבצעים:
-הנה קטע קוד שמדגים איך אפשר למחוק תווים שתואמים לדפוס ב-PHP:
-
+## איך לעשות:
 ```PHP
-<?php
-$string = "Hello, בעולם!";
-$pattern = '/[^א-ת ]*/u';
-$cleanedString = preg_replace($pattern, '', $string);
-echo $cleanedString;
-?>
+$text = "שלום! האם למחוק את הסימנים המיוחדים #@$?";
+$pattern = '/[#!@$%&*()]/'; // דפוס למחיקה
+$clean_text = preg_replace($pattern, '', $text);
+echo $clean_text; // תוצאה: "שלום האם למחוק את הסימנים המיוחדים "
+```
+אפשר גם למחוק תווים בתחומים של ASCII:
+```PHP
+$text = "Numbers 123, symbols @#₪!, and English abCD";
+$pattern = '/[^א-ת ]/'; // [^א-ת ] מתאים לכל דבר שלא תווים בעברית ורווחים
+$hebrew_text = preg_replace($pattern, '', $text);
+echo $hebrew_text; // תוצאה: " ו"
 ```
 
-הפלט של הקוד הוא: 
-```
-בעולם
-```
+## עיון מעמיק
+`preg_replace` מבוססת על ביטויים רגולריים, טכנולוגיה שחלק מהיסודות שלה החלו בשנות ה-50. אלטרנטיבות פשוטות יותר כמו `str_replace` מתאימות למחיקת תווים ספציפיים, אבל לא לתבניות. יש להתייחס לביטויים רגולריים בזהירות כי שגיאה קטנה יכולה לגרום לתוצאות בלתי צפויות או אפילו לתקלות ביצוע.
 
-## בחיק המידע:
-מאז ומתמיד, מתכנתים חיפשו דרכים לתמחזר חרוזות. כאשר PHP נוצרה בשנת 1994, לקוחה היתה בחסר בכלים לטיהור חרוזות. אך עם הזמן, פונקציות כמו preg_replace הוסיפו יכולת לרוב המשימות. בדר"כ, מחיקת תווים ע"פ דפוס הוא הפתרון הפשוט ביותר, אך ישנם אלטרנטיבות, כמו להשתמש בפונקציה str_replace או בפונקציה strtr. 
-
-## ראה גם:
-- ועידת PHP: https://www.php.net/manual/en/function.preg-replace.php
-- ויקי PHP - מערכת של ביטויים רגילים: https://en.wikipedia.org/wiki/Regular_expression
-- דוקומנטציה על preg_replace: https://www.php.net/manual/en/function.preg-replace.php
-- str_replace: https://www.php.net/manual/en/function.str-replace.php
-- strtr: https://www.php.net/manual/en/function.strtr.php
+## ראה גם
+- [PHP Manual on preg_replace](https://www.php.net/manual/en/function.preg-replace.php)
+- [Regular Expressions Intro](https://www.regular-expressions.info/)
+- [PHP Manual on str_replace](https://www.php.net/manual/en/function.str-replace.php)
+- [PHP The Right Way - Regular Expressions](https://phptherightway.com/#regular_expressions)

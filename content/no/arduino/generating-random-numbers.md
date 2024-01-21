@@ -1,7 +1,8 @@
 ---
-title:                "Generere tilfeldige tall"
-html_title:           "Arduino: Generere tilfeldige tall"
-simple_title:         "Generere tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+date:                  2024-01-20T17:48:29.124742-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generering av tilfeldige tall"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Numbers"
@@ -11,49 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Tilfeldige tall er numeriske verdier som ikke kan forutsees. Programmører bruker dem for å tilføre usikkerhet og variasjon i prosjekter, som spill, simuleringer og eksperimenter.
 
-Å generere tilfeldige tall er en prosess der datamaskiner produserer usystematiske tall. Dette er avgjørende for programmerere fordi det gir uforutsigbarhet - nødvendig i testing, simuleringer og generelle Sikkerhetsegenskaper som kryptering.
-
-## Hvordan:
-
-Er vi klare? La oss tilfeldigvis lage noen tall!
+## Slik gjør du:
+Generer et tilfeldig tall mellom 10 og 99:
 
 ```Arduino
-long randNumber;
-
 void setup() {
   Serial.begin(9600);
-  
-  // initialize the random number generator:
   randomSeed(analogRead(0));
 }
 
 void loop() {
-  // generate random number between 1 and 100:
-  randNumber = random(1, 101);
-  Serial.println(randNumber);
-
-  delay(1000);  // Wait for 1 second
+  int tilfeldigTall = random(10, 100); // 100 er ikke inkludert
+  Serial.println(tilfeldigTall);
+  delay(1000); // Vent i et sekund
 }
 ```
-Eksempel utdata fra ovenfor:
-```Arduino
-23
-67
-39
-89
+Eksempel på utdata: 
+```
+34
+78
+45
 ...
 ```
 
 ## Dypdykk
-Historisk sett, har vi brukt fysiske prosesser, som støy på en motstand, til å produsere tilfeldige tall. Men med moderne teknologi kan vi gjøre det programmatisk.
+Generering av tilfeldige tall på Arduino er ikke sann tilfeldighet; det er basert på algoritmer. `randomSeed()` gir et startpunkt for disse algoritmene, og uten den, vil sekvensen av tall være den samme hver gang. Historisk har tilfeldig tallgenerasjon vært en kompleks oppgave, men Arduino gjør det enkelt. Det finnes alternative metoder, som bruk av eksterne tilfeldige tallgeneratorer, men for mange hobbyprosjekter er `random()`-funksjonen tilstrekkelig.
 
-Alternativene til `random()` i Arduino inkluderer bruk av biblioteker som `TrueRandom` eller `Entropy`. Disse tilbyr mer komplekse og sikre måter å generere tilfeldige tall på.
-
-Når det gjelder gjennomføringsdetaljer, bruker Arduino en pseudotilfeldig tallgenerator. Størrelsen og kvaliteten på tallene den genererer avhenger av innledende frøverdi (`randomSeed`) som er basert på en lest analog verdi (som ofte er støy og dermed tilfeldig).
-
-## Se også
-
-1. Arduino Reference: Random Numbers (https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-2. Arduino Reference: RandomSeed (https://www.arduino.cc/reference/en/language/functions/random-numbers/randomseed/)
-3. Wikipedia: Random number generation (https://en.wikipedia.org/wiki/Random_number_generation)
+## Se også:
+- Arduino sin offisielle dokumentasjon på `random()` funksjonen: https://www.arduino.cc/reference/en/language/functions/random-numbers/random/
+- Mer om tilfeldig tallgenerering: https://en.wikipedia.org/wiki/Random_number_generation
+- Inndypning i `randomSeed()`: https://www.arduino.cc/reference/en/language/functions/random-numbers/randomseed/

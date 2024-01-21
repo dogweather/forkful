@@ -1,6 +1,7 @@
 ---
 title:                "Calculando uma data no futuro ou passado"
-html_title:           "Gleam: Calculando uma data no futuro ou passado"
+date:                  2024-01-20T17:31:25.742994-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Calculando uma data no futuro ou passado"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,49 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?  
+## O Que é & Porquê?
 
-Calcular uma data no futuro ou passado é um processo de adicionar ou subtrair dias a uma data existente. Os programadores fazem isso para manipular cronogramas, organizar eventos futuros ou analisar dados históricos.
+Calcular uma data futura ou passada é determinar uma data específica, adicionando ou subtraindo uma quantidade de tempo a partir de uma data base. Programadores fazem isso para funções como agendar eventos, gerar prazos ou verificar a validade de algum dado temporal.
 
-## Como Fazer:  
+## Como Fazer:
 
-O Gleam torna fácil trabalhar com datas. Aqui está um exemplo que subtrai dias de uma data:
+Primeiro, vamos usar as bibliotecas padrão do Gleam para lidar com datas e tempos. Eis um exemplo simples de como calcular a data de amanhã:
 
 ```gleam
-import gleam/otp.{calendar, date}
+import gleam/calendar.{Date, Duration, add_duration}
 
-fn main() {
-  let hoje = calendar.local_today()
-  let uma_semana_atras = date.subtract(hoje, date.days(7))
-  uma_semana_atras
+pub fn main() {
+  let hoje = Date(year: 2023, month: 4, day: 23)
+  let duracao = Duration(days: 1)
+  
+  let amanha = hoje
+    |> add_duration(duracao)
+  
+  amanha
 }
 ```
 
-E o resultado:
+Esse código retorna: `Date(year: 2023, month: 4, day: 24)`
 
-```s
-# (2022, 2, 10)
-```
-
-E para adicionar dias a uma data:
+Agora, se quisermos calcular uma data no passado, basta usar um valor negativo:
 
 ```gleam
-fn main() {
-  let hoje = calendar.local_today()
-  let uma_semana_depois = date.add(hoje, date.days(7))
-  uma_semana_depois
+import gleam/calendar.{Date, Duration, add_duration}
+
+pub fn main() {
+  let hoje = Date(year: 2023, month: 4, day: 23)
+  let duracao = Duration(days: -1)
+  
+  let ontem = hoje
+    |> add_duration(duracao)
+  
+  ontem
 }
 ```
+
+Esse código retorna: `Date(year: 2023, month: 4, day: 22)`
+
 ## Mergulho Profundo
 
-Historicamente, calcular a data do futuro ou passado é um desafio. Existem várias formas e calendários para marcar o tempo. E, ao lidar com datas, devemos levar em conta os anos bissextos.
+Historicamente, a manipulação de datas sempre foi complexa por causa de diferentes calendários e zonas horárias. O Gleam procura simplificar isso com uma API consistente e funções bem desenhadas.
 
-Outras maneiras de calcular datas envolvem o uso de bibliotecas, como a `date-fns` no JavaScript. Porém, o Gleam tem um bom suporte para isso na biblioteca standard OTP.
+Existem alternativas diretas como adicionar manualmente os dias ao mês e ajustar os anos, mas isso rapidamente se torna complicado por causa de meses com diferentes quantidades de dias e anos bissextos. Bibliotecas como a `calendar` em Gleam abstraem esses detalhes complicados.
 
-Internamente, ao adicionar ou subtrair dias a uma data, o Gleam converte a data para uma estrutura de timestamp, realiza a operação, e então converte de volta para o formato de data. Isso permite que o Gleam manipule datas de maneira precisa e eficiente.
+Internamente, calcular uma data futura ou passada em Gleam geralmente se baseia em Epoch time (o número de segundos desde 1 de janeiro de 1970) e operações matemáticas padrão. Contudo, a representação em alto nível através de `Date` e `Duration` mantém o código claro e fácil de ler.
 
-## Veja Mais:
+## Veja Também
 
-- Documentação Oficial do Gleam: https://gleam.run/docs/
-- Calendários e a Sua História: http://www.webexhibits.org/calendars/
-- Biblioteca JavaScript date-fns: https://date-fns.org/
+- Exemplos de código de manipulação de datas em diferentes linguagens: [rosettacode.org/wiki/Dates](https://rosettacode.org/wiki/Date_manipulation)

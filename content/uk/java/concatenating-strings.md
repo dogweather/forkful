@@ -1,7 +1,8 @@
 ---
-title:                "Конкатенація рядків"
-html_title:           "PHP: Конкатенація рядків"
-simple_title:         "Конкатенація рядків"
+title:                "Об'єднання рядків"
+date:                  2024-01-20T17:35:10.967983-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Об'єднання рядків"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,30 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Навіщо?
-Конкатенація рядків - це процес з'єднання двох або більше рядків. Програмісти роблять це, щоб виводити або обробляти більш складні рядкові структури.
+## What & Why? (Що та Чому?)
+String concatenation is the process of linking strings together. Programmers use it to combine text, like creating sentences dynamically in a program or generating complex formats.
 
-## Як зробити:
+## How to: (Як це зробити:)
 ```java
-// Створюємо два рядки
-String string1 = "Привіт, ";
-String string2 = "світе!";
-
-// Конкатенуємо рядки
-String greeting = string1 + string2;
-
-// Виводимо результат
-System.out.println(greeting);
+public class StringConcatenationExample {
+    public static void main(String[] args) {
+        String greeting = "Привіт";
+        String who = "Світ";
+        String exclamation = "!";
+        
+        String sentence = greeting + ", " + who + exclamation;
+        System.out.println(sentence); // Вивід: Привіт, Світ!
+        
+        // Alternatively, using StringBuilder for better performance with many concatenations.
+        StringBuilder sb = new StringBuilder();
+        sb.append(greeting).append(", ").append(who).append(exclamation);
+        System.out.println(sb.toString()); // Вивід: Привіт, Світ!
+    }
+}
 ```
 
-В результаті ви отримаєте рядок: "Привіт, світе!".
+## Deep Dive (Поглиблений Розгляд):
+Originally, strings in Java were concatenated using `StringBuilder` or `StringBuffer` for thread-safe operations. These classes provide methods to append strings efficiently. Directly using the `+` operator for string concatenation is actually converted by the Java compiler to a `StringBuilder` operation. 
 
-## Глибше занурення
-Конкатенація виникла ще з перших днів програмування і досі є основним способом об'єднання рядків. Однак, в Java є інші методи, такі як StringBuilder і StringBuffer. Ці класи подають собою змінні рядки, які можуть бути ефективнішими при об'єднаннi великих об'ємів даних.
+Why care about alternatives? Concatenating with `+` is fine for a few strings, but for many, it's less efficient. Each concatenation creates a new `String` object because strings are immutable in Java. `StringBuilder` is more memory-efficient for multiple concatenations and should be used in loops or when building large strings.
 
-Спосіб, яким Java реалізує конкатенацію, - через оператор "+". Але варто знати, що кожна конкатенація використовує нову пам'ять і створює новий об'єкт. Тому для великих завдань рекомендується використовувати StringBuilder або StringBuffer.
+From a performance viewpoint for complex operations, `String.format()` and `MessageFormat` offer ways to create formatted strings, which internally also optimize string creation.
 
-## Дивіться також
-1. [StringBuilder tutorial](https://docs.oracle.com/javase/tutorial/java/data/buffers.html)
-2. [StringBuffer tutorial](https://docs.oracle.com/javase/9/docs/api/java/lang/StringBuffer.html)
-3. [Метод String.concat()](https://www.tutorialspoint.com/java/java_string_concat.htm)
+Java's history has shown continuous improvements in string handling, and JDK updates often include optimizations for these operations.
+
+## See Also (Дивіться також):
+- [Oracle Docs on Strings](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)
+- [StringBuilder JavaDoc](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html)
+- [Effective Java by Joshua Bloch](https://www.oreilly.com/library/view/effective-java/9780134686097/) - See the section on strings and their performance.
+- [Java Performance Tuning Guide](http://java-performance.info/) - Go here for in-depth performance tuning with Java strings.

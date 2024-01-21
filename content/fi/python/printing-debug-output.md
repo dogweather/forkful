@@ -1,7 +1,8 @@
 ---
-title:                "Debug-tulosteen tulostaminen"
-html_title:           "Bash: Debug-tulosteen tulostaminen"
-simple_title:         "Debug-tulosteen tulostaminen"
+title:                "Virheenjäljitystulosteiden tulostaminen"
+date:                  2024-01-20T17:53:08.184251-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Virheenjäljitystulosteiden tulostaminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -10,42 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Tervetuloa Python-ohjelmoijan matkalle!
+## What & Why? (Mikä & Miksi?)
+Debug-tulostus auttaa ymmärtämään ohjelman toimintaa. Koodareita se auttaa paikkaamaan bugeja ja varmistamaan koodin toimivuuden.
 
-Python on yksi suosituimmista ohjelmointikielistä. Sen helppokäyttöisyys, selkeys ja monikäyttöisyys tekevät siitä ihanteellisen kielen aloittelijoille ja kokeneille ohjelmoijille.
-
-***
-## Mitä & Miksi?
-
-"Debug-tulosteen" (debug output) tulostaminen on tekniikka jolla näemme ohjelmakoodissamme toimivuuden reaaliajassa. Se on ohjelmoijan tehokas työkalu, sillä se auttaa löytämään ja korjaamaan virheitä helpommin ja nopeammin.
-
-## Miten:
-
-Pythonissa debug-tulosteen tulostaminen on helppoa.
-
+## How to: (Kuinka tehdä:)
 ```Python
-# Esimerkkikodeja
-def laske_summa(a, b):
-    summa = a + b
-    print(f"Lasketaan: {a} + {b} = {summa}")  # Debug-tulostus
-    return summa
+# Yksinkertainen esimerkki
+print("Hello, debug world!")
+
+# Muuttujien arvojen tulostaminen
+muuttuja = "Python on kiva!"
+print(f"Muuttujan arvo: {muuttuja}")
+
+# Virheenkäsittely ja debug-tulostus
+try:
+    rikkinäinen_koodi()
+except Exception as e:
+    print(f"Virhe: {e}")
 ```
 
-Tämä ohjelma tulostaa: "Lasketaan: 5 + 3 = 8", kun sitä kutsutaan funktiolla `laske_summa(5, 3)`.
+## Deep Dive (Sukellus syvyyksiin):
+Historiallisesti tulostus oli yksi ensimmäisistä debuggausmenetelmistä. Se on nopea ja yksinkertainen tapa saada selville, mitä ohjelmassa tapahtuu. Vaihtoehtoisia menetelmiä ovat esimerkiksi logging-moduuli tai debuggerit kuten pdb. Tulostuksen haittapuolina ovat sen vaikutus suorituskykyyn ja mahdollisuus unohtaa poistaa tulostuskäskyt.
 
-## Syvennys
-
-Debug-tulosteen tulostaminen on historiansa aikana kehittynyt huomattavasti. Alunperin debug-tieto tulostettiin purkkikoodaajien aikana suoraan näytölle tai paperille. Nykyaikana monet ohjelmointikielet, kuten Python, tukevat sisäänrakennettuja debuggaustyökaluja.
-
-Vaihtoehtoina debug-tulostuksen tulostamiselle Pythonissa on esimerkiksi `logging`-kirjasto. Se tarjoaa tarkemman hallinnan tulostukselle, kuten tason asettaminen (esim. INFO, DEBUG, ERROR) ja tulosteen ohjaaminen tiedostoihin. Käyttämällä `logging`-kirjastoa voit säilyttää debug-tietosi, vaikka tuotantoversiossa tulostukset on poistettu.
-
-Pythonin `print`-funktion kautta voidaan tulostaa debug-tekstiä lähes mihin tahansa, mukaan lukien konsoli tai tiedosto. Sen tuominen on helppoa ja nopeatapaista.
-
-## Katso myös:
-
-1. [Pythonin virallinen dokumentaatio](https://docs.python.org/3/)
-2. [Logging in Python](https://realpython.com/python-logging/)
-
-***
-
-Onnea matkaan Python-maailmassa! Muista, virheiden löytäminen on osa oppimisprosessia. Niiden korjaaminen tekee sinusta paremman ohjelmoijan.
+## See Also (Katso myös):
+- Pythonin virallinen logging-moduuli: https://docs.python.org/3/library/logging.html
+- Python Debugger (pdb): https://docs.python.org/3/library/pdb.html
+- Python-ohjelmoinnin parhaat käytännöt: https://www.python.org/dev/peps/pep-0008/

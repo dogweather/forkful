@@ -1,7 +1,8 @@
 ---
-title:                "Komentorivin argumenttien lukeminen"
-html_title:           "Bash: Komentorivin argumenttien lukeminen"
-simple_title:         "Komentorivin argumenttien lukeminen"
+title:                "Komennoriviparametrien lukeminen"
+date:                  2024-01-20T17:56:51.570171-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Komennoriviparametrien lukeminen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,35 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Rust-ohjelmointi: Komentoriviparametrien Luku
+## What & Why? (Mitä & Miksi?)
+Komennon riviltä argumenttien lukeminen mahdollistaa käyttäjän syöttämän tiedon hakemisen ohjelmallesi. Käytämme sitä, koska haluamme ohjelman toimivan joustavasti eri tilanteissa ja käyttäjän tarpeiden mukaan.
 
-## What & Why?
-
-Komentoriviparametrien luku on data-annin keino, jossa käyttäjä syöttää tiedon suoraan ohjelman ajettaessa. Se antaa ohjelmalle joustavuutta ja tarkkuutta sovellusten suorittamiseen ja datan käsittelyyn.
-
-## Miten:
-
-Rustissa käytetään std::env:n funktiota args, joka palauttaa iteroinnin, joka sisältää ohjelman argumentit. Tässä on yksinkertainen esimerkki:
-
+## How to: (Kuinka tehdä:)
 ```Rust
-fn main() {
-    let args: Vec<String> = std::env::args().collect();
+use std::env;
 
-    println!("{:?}", args);
+fn main() {
+    let args: Vec<String> = env::args().collect();
+
+    if args.len() > 1 {
+        println!("Ensimmäinen argumentti on: {}", args[1]);
+    } else {
+        println!("Argumentteja ei annettu.");
+    }
 }
 ```
+Käynnistä ohjelma komennolla `cargo run` seuraten argumentteja. Esimerkkilähtö:
 
-Suorita ohjelma komennolla `cargo run arg1 arg2`, ja saat tulokseksi: `["target/debug/program", "arg1", "arg2"]`.
+`$ cargo run terve`
+```
+Ensimmäinen argumentti on: terve
+```
 
-## Syvällisempi tarkastelu
+`$ cargo run`
+```
+Argumentteja ei annettu.
+```
 
-Historiallisesti, komentoriviparametrien luku on ollut alusta saakka osa ohjelmoinnin perustoimintoja. Näiden argumenttien avulla voidaan ohittaa oletusasetukset, määrittää tiedostopolkuja ja asettaa erilaisia suoritusparametreja.
+## Deep Dive (Syvä sukellus)
+Alkuaikoina komentoriviohjelmat olivat käytön perusta. Rustissa `std::env` moduuli tekee argumenttien käsittelystä helppoa. Vaihtoehtoisia tapoja ovat mm. `getopts`, `clap`, tai `structopt` kirjastot, jotka tarjoavat enemmän ominaisuuksia kuten automaattista ohjesivujen generointia. `env::args` luo iteraattorin, joka palauttaa argumentit `String` tyyppisinä, ja `collect` metodi kerää ne vektoriksi.
 
-Rustissa on useita erilaisia tapoja komentoriviparametrien lukemiseen. esim. käyttöön `getopts` tai `clap` kirjastoja, jotka antavat laajemmat mahdollisuudet kuten vaikkapa virheenkäsittelyyn ja lippujärjestelmän rakentamiseen.
-
-Rustin `std::env::args` funktion tekeminen on yksinkertaista: alustaa Vec<String>:n, johon kerätään argumentit suoritettavasta ohjelmasta.
-
-## Katso myös
-
-- [Rustin virallinen dokumentaatio komentoriviparametreistä](https://doc.rust-lang.org/std/env/fn.args.html)
-- [`clap`-kirjaston dokumentaatio](https://docs.rs/clap/2.33.3/clap/)
+## See Also (Katso myös)
+- Rustin standardikirjaston dokumentaatio `std::env`: https://doc.rust-lang.org/std/env/
+- `clap` kirjastoa käsittelevä ohjeistus: https://clap.rs/
+- `structopt` Crate-dokumentaatio: https://docs.rs/structopt/*/structopt/

@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request"
-html_title:           "Bash recipe: Sending an http request"
+date:                  2024-01-20T18:00:18.656983-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,30 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Sending an HTTP request is a method by which a program or software communicates with a web server, requesting access to specific data or services. As programmers, we do it because it's key to integrating external services, accessing data, or just interacting with the digital world more generally.
+Sending an HTTP request means requesting data from a resource on the web. Programmers do it to interact with APIs, scrape web content, or talk to servers.
 
 ## How to:
 
-Here's how you can send a GET request using Net::HTTP in Ruby:
+Ruby makes it pretty easy to send HTTP requests. Here's the quickest way with the Net::HTTP standard library.
 
 ```Ruby
 require 'net/http'
+require 'uri'
 
-uri = URI('http://example.com/index.html')
-res = Net::HTTP.get_response(uri)
-
-puts res.body if res.is_a?(Net::HTTPSuccess)
+uri = URI('http://example.com')
+response = Net::HTTP.get(uri)
+puts response
 ```
 
-When you run it, it sends a GET request to `http://example.com/index.html` and if the response is successful, it prints the response body to the console. Remember to replace `http://example.com/index.html` with your desired URL.
+This will output the HTML content of `http://example.com`.
 
-## Deep Dive
+You might want to post data too:
 
-Sending HTTP requests is an integral part of programming and web-development, tracing its origins back to the inception of the HTTP protocol in 1991. In Ruby, beyond the built-in Net::HTTP library, alternative libraries like `httparty` and `rest-client` are available which provide a more user-friendly interface.
+```Ruby
+require 'net/http'
+require 'uri'
 
-While sending a request is simple, some aspects take getting used to. For instance, knowing the ins and outs of HTTP request methods - GET, POST, PUT, DELETE, etc., each suitable for different scenarios, is important. Also, the need to properly handle responses can be complex, considering the variety of possible HTTP response status codes and their implications.
+uri = URI('http://example.com/api')
+res = Net::HTTP.post_form(uri, 'key1' => 'value1', 'key2' => 'value2')
+puts res.body
+```
+
+This sends a POST request with data and shows the response.
+
+## Deep Dive:
+
+In the past, sending HTTP requests was clunkier, and you may have needed to use a gem like `HTTParty`. But Ruby's built-in `Net::HTTP` library has come a long way. It now supports most things you'll need.
+
+But, `Net::HTTP` can be verbose. If your project needs more HTTP features or syntactic sugar, `HTTParty` or `Faraday` are great alternatives. These gems provide a more expressive API and can handle more complex scenarios like middleware or different adapters.
+
+Fundamentally, sending an HTTP request with Ruby involves creating an HTTP client, setting up a request object with method, headers, and body if needed, then dispatching the request to receive a response.
+
+HTTParty example:
+
+```Ruby
+require 'httparty'
+
+response = HTTParty.get('http://example.com')
+puts response.body
+```
+
+This does the same thing as `Net::HTTP.get` but with less configuration.
 
 ## See Also:
 
-For a deep dive into the HTTP protocol, [MDN's guide](https://developer.mozilla.org/en-US/docs/Web/HTTP) is a great start. For a well-rounded understanding of Ruby's Net::HTTP library, the [official Ruby documentation](https://ruby-doc.org/stdlib-2.5.1/libdoc/net/http/rdoc/Net/HTTP.html) is comprehensive. Check out the gem pages for [httparty](https://rubygems.org/gems/httparty) and [rest-client](https://rubygems.org/gems/rest-client) for more comfortable alternatives.
+For more detailed info, Ruby's docs are super helpful:
+- Net::HTTP: https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/Net/HTTP.html
+- HTTParty: https://github.com/jnunemaker/httparty
+- Faraday: https://lostisland.github.io/faraday/
+
+And if you've got a thick appetite for Ruby's HTTP networking, take a gander over at:
+- Ruby's Open URI: https://ruby-doc.org/stdlib/libdoc/open-uri/rdoc/OpenURI.html
+- WebMock for testing HTTP requests: https://github.com/bblimke/webmock

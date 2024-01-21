@@ -1,7 +1,8 @@
 ---
-title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+date:                  2024-01-20T18:01:59.400463-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,41 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Perustiedot: HTTP-pyyntö basic-autentikaatiolla tarkoittaa käyttäjänimen ja salasanan sisällyttämistä HTTP-pyyntöön tunnistautumista varten. Ohjelmoijat käyttävät tätä tapaa turvatakseen resurssien pääsy vain valtuutetuille käyttäjille.
 
-HTTP-pyynnön lähettäminen perusautentikoinnilla on menetelmä, jolla varmennetaan käyttäjän henkilöllisyys verkossa. Ohjelmoijat käyttävät sitä tietoturvan varmistamiseksi ja luvattoman pääsyn estämiseksi.
+## How to:
+Javaskriptissä basic-autentikaatio HTTP-pyynnössä onnistuu `fetch`-funktiolla tai kirjastojen (esim. Axios) avulla. Tässä esimerkki `fetch`-käytöstä:
 
-## Miten:
-
-Javascriptissa voidaan lähettää HTTP-pyyntö perusautentikoinnilla käyttämällä `fetch` funktiota. Tässä on esimerkkikoodi:
-
-```Javascript
-const username = 'kayttajatunnus';
+```javascript
+const username = 'kayttaja';
 const password = 'salasana';
+const base64Credentials = btoa(`${username}:${password}`);
 
-let headers = new Headers();
-
-headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
-
-fetch('https://example.com',{
-    method:'GET',
-    headers: headers
+fetch('https://example.com/data', {
+  method: 'GET',
+  headers: {
+    'Authorization': `Basic ${base64Credentials}`,
+  },
 })
 .then(response => response.json())
-.then(data => console.log(data));
+.then(data => console.log(data))
+.catch(error => console.error('Virhe:', error));
 ```
 
-Jos pyyntö onnistui, tulostetaan palvelimelta palautettu data konsoliin.
+Esimerkin tulostus riippuu palvelimelta saatavasta datasta.
 
-## Sukellus syvyyksiin
+## Deep Dive:
+Basic-autentikaatio liittyy alkuaikojen webin yksinkertaisiin tunnistautumismekanismeihin. Tänään sen käyttöä pidetään yksinkertaisena, mutta usein riittämättömänä suojauksen kannalta, sillä tunnukset lähetetään selkokielellä (base64-enkoodattuna) ilman salausta. Ohjelmoijat siirtyvät yhä useammin vahvempiin menetelmiin, kuten OAuth2:een tai JWT-tokensiin. 
 
-Perusautentikoinnin käyttö HTTP-pyynnöissä on käytäntö, joka juontaa juurensa www-verkon alkuaikoihin. Se on yksinkertainen, mutta tehokas tapa varmistaa, että pyynnön lähettäjällä on oikeat käyttöoikeudet. Vaikka nykymaailmassa on käytössä monimutkaisempia ja turvallisempia autentikointimenetelmiä, perusautentikointi on edelleen yleinen nopean ja yksinkertaisen autentikoinnin vuoksi.
+Kun käytät basic-autentikaatiota, varmistu aina HTTPS-yhteydestä, joka suojaa tietoja salakatselulta. Suorituskyvyn kannalta basic-autentikaation käsittely palvelimella on nopeaa, mutta lisää kuormaa toistuvilla pyynnöillä, koska tunnukset on aina lähetettävä uudelleen.
 
-JavaScriptin `fetch`-funktio on vain yksi tapa lähettää HTTP-pyyntöjä. Axios on toinen suosittu työkalu, jolla voit tehdä saman. Kuten `fetch`, Axiosilla voit lähettää pyyntöjä sekä selaimesta että Node.js-sovelluksesta.
-
-Lähettäessäsi HTTP-pyynnön perusautentikoinnilla, käyttäjänimesi ja salasanasi koodataan Base64-muotoon. Tätä autentikointitietoa ei kuitenkaan salata, joten tietoturvasyistä perusautentikointia ei tule käyttää ilman HTTPS-yhteyttä.
-
-## Katso myös:
-
-- Fetch API: [https://developer.mozilla.org/fi/docs/Web/API/Fetch_API](https://developer.mozilla.org/fi/docs/Web/API/Fetch_API)
-- Axios: [https://axios-http.com/](https://axios-http.com/)
+## See Also:
+- MDN Web Docs, Basic authentication: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- OWASP, Basic Authentication: https://owasp.org/www-community/controls/Basic_Authentication
+- Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+- Axios library: https://axios-http.com/

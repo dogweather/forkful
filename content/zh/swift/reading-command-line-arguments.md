@@ -1,6 +1,7 @@
 ---
 title:                "读取命令行参数"
-html_title:           "C: 读取命令行参数"
+date:                  2024-01-20T17:57:00.146107-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "读取命令行参数"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,34 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么?
-读取命令行参数是从用户那里接收输入数据的一种方式，这些输入数据会以命令行参数的形式在程序启动时提供。编程者这样做是为了使程序更加通用和灵活，可以根据不同的输入调整其行为。
+## What & Why? (是什么？为什么？)
+在Swift中读取命令行参数允许你的程序接受外部输入数据。程序员这样做是为了灵活地控制程序行为，而无需改变代码。
 
-## 怎样做:
-在Swift中，我们可以通过访问`CommandLine.arguments`数组来获取命令行参数。每个参数都是一个字符串，首个元素即是执行程序的路径。
+## How to: (如何操作：)
+Swift中，用`CommandLine`直接访问命令行参数。看个简单例子：
 
 ```Swift
-let arguments = CommandLine.arguments
-
-print("总共有 \(arguments.count) 个命令行参数")
-for argument in arguments {
-    print("参数: \(argument)")
+// main.swift
+for argument in CommandLine.arguments {
+    print(argument)
 }
 ```
-如果你将上述代码保存为`CommandLineArgs.swift`然后运行`swift CommandLineArgs.swift 参数1 参数2 参数3`，你将会看到：
 
-```
-总共有 4 个命令行参数
-参数: CommandLineArgs.swift
-参数: 参数1
-参数: 参数2
-参数: 参数3
+假设程序名为`app`，运行：
+
+```bash
+$ swift run app one two three
 ```
 
-## 深入挖掘
-命令行参数在UNIX和Linux系统中具有深远的历史，被广泛应用于各种脚本和工具中。当然，除了使用`CommandLine.arguments`获取命令行参数外，你还可以使用`ProcessInfo.processInfo.arguments`，效果相同。
+输出：
 
-Swift实现读取命令行参数的机制其实很简单。在程序启动时，命令行参数被以字符串数组的形式传给程序。其中第一个元素是用于启动程序的命令，剩余的元素则是各个参数，按照命令行中的顺序排列。
+```
+/path/to/app
+one
+two
+three
+```
 
-## 另请参阅
-2. Swift官方文档: [命令行参数](https://docs.swift.org/swift-book/LanguageGuide/Functions.html#ID158)
+第一个参数总是程序路径。其余的是传递给程序的参数。
+
+## Deep Dive (深入研究)
+- 历史上，像C语言这样的早期语言通过`main`函数的参数来读取命令行信息。Swift提供了更现代化的方法。
+- 除了`CommandLine`，也可使用`ProcessInfo`获得更多环境信息。
+- 实现细节：`CommandLine.arguments`是一个字符串数组(String Array)，保存所有命令行输入。
+
+例如，判断参数个数：
+
+```Swift
+if CommandLine.argc < 2 {
+    print("No arguments provided.")
+} else {
+    // Handle arguments
+}
+```
+
+## See Also (另见)
+- Swift官方文档中的[CommandLine](https://developer.apple.com/documentation/swift/commandline)类
+- [ProcessInfo](https://developer.apple.com/documentation/foundation/processinfo)类文档
+- Unix命令行教程，了解命令行基础

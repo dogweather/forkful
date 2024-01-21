@@ -1,7 +1,8 @@
 ---
-title:                "एक वेब पेज डाउनलोड करना"
-html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
-simple_title:         "एक वेब पेज डाउनलोड करना"
+title:                "वेब पेज डाउनलोड करना"
+date:                  2024-01-20T17:45:28.936517-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "वेब पेज डाउनलोड करना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,27 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
-एक वेब पेज डाउनलोड करना मतलब उसकी सामग्री को अपने कंप्यूटर पर सांचित करना। प्रोग्रामर इसे इसलिए करते हैं ताकि वे वेबसाइट की डेटा का विश्लेषण और प्रसंस्करण कर सकें। 
+## What & Why? (क्या और क्यों?)
+वेब पेज को डाउनलोड करना मतलब उसका HTML कोड अपने कंप्यूटर पर सेव करना है। कोडर्स यह इसलिए करते हैं ताकि वेब डाटा के साथ ऑफलाइन काम कर सकें, जैसे की डाटा पार्सिंग और वेब स्क्रेपिंग।
 
-## कैसे करें: 
-कोर Ruby में, आप `Net::HTTP` लाइब्रेरी का उपयोग करके वेब पेज डाउनलोड कर सकते हैं। 
+## How to: (कैसे करें:)
+Ruby में वेब पेज डाउनलोड करने के लिए `net/http` लाइब्रेरी का इस्तेमाल होता है। नीचे कोड में देखिए:
 
-```Ruby
+```ruby
 require 'net/http'
+require 'uri'
 
-http = Net::HTTP.new('www.example.com', 80)
-response = http.get('/')
+url = URI.parse('http://www.example.com/index.html')
+response = Net::HTTP.get_response(url)
 
-puts response.body
+if response.is_a?(Net::HTTPSuccess)
+  File.write('downloaded_page.html', response.body)
+  puts "Web page downloaded successfully!"
+else
+  puts "Error downloading web page."
+end
 ```
 
-यह कोड उदाहरण 'www.example.com' नामक साइट से वेब पेज प्राप्त करेगा।
+अगर सफल रहा, तो आउटपुट होगा:
 
-## गहराई में: 
-वेब पेज की डाउनलोडिंग 1990 के दशक के मध्य से ही हुई थी, जब World Wide Web का आविष्कार हुआ था। वैकल्पिक रूप से, आप `open-uri` और `nokogiri` जैसी गेम्स का उपयोग कर सकते हैं, जो वेब पेजेज को प्राप्त करने और पार्स करने में अधिक कुशल हैं। `Net::HTTP` से कम्‍प्‍लेक्‍स उपयोग के अवसरों के लिए, 302 पुनर्निर्देशन, कूकीज आदि के साथ संभालता है। 
+```
+Web page downloaded successfully!
+```
 
-## इसके अलावा देखें: 
-1. [Open URI documentation](https://ruby-doc.org/stdlib-2.5.1/libdoc/open-uri/rdoc/OpenURI.html)
-2. [Nokogiri Tutorial: Parsing HTML](https://nokogiri.org/tutorials/parsing_an_html_xml_document.html)
-3. [Net::HTTP documentation](https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html)
+## Deep Dive (गहराई से जानकारी):
+Ruby में किसी वेब पेज को डाउनलोड करने का काम `net/http` लाइब्रेरी से शुरु हुआ, जो कि HTTP प्रोटोकॉल्स को संभालती है। ये प्रोटोकॉल HTML और दूसरे वेब रिसोर्सेज को ट्रांसफर करने के लिए इंटरनेट पर मानक तरीका है। बदलते समय के साथ, कई अन्य लाइब्रेरीज जैसे कि `open-uri` और `mechanize` भी आई हैं, जो कुछ ज्यादा फंक्शनलिटी प्रोवाइड करती हैं।
+
+इन लाइब्रेरीज के इस्तेमाल से आप कोड में बस कुछ ही पंक्तियों का इस्तेमाल करके वेब पेज के डाटा को प्रोसेस कर सकते हैं, जिससे कि टाइम और एफर्ट की बचत होती है।
+
+## See Also (देखें ये भी):
+- [Ruby डॉक्यूमेंटेशन Net::HTTP](https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html)
+- [Open-URI](https://ruby-doc.org/stdlib-3.0.0/libdoc/open-uri/rdoc/OpenURI.html)
+- [Nokogiri जेम (HTML/XML डाटा को पार्स करने के लिए)](https://nokogiri.org/)
+- [Mechanize जेम (एक ऑटोमेशन लाइब्रेरी जो वेब इंटरैक्शन को सिम्पलीफाई करती है)](https://github.com/sparklemotion/mechanize)

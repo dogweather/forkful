@@ -1,6 +1,7 @@
 ---
 title:                "सबस्ट्रिंग्स निकालना"
-html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+date:                  2024-01-20T17:45:43.864009-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,38 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+उप-स्ट्रिंग निकालना मूल स्ट्रिंग से विशिष्ट भाग का चयन करना है। प्रोग्रामर डेटा को संशोधित, दिखाने, या प्रोसेस करने के लिए उप-स्ट्रिंग्स का इस्तेमाल करते हैं।
 
-उपस्ट्रिंग्स निकालना का मतलब होता है किसी विशेष विशेष धागे का हिस्सा चुनना। प्रोग्रामर्स इसका उपयोग डेटा संसाधन या उपयोगकर्ता इनपुट को विश्लेषित करने के लिए करते हैं।
-
-## कैसे करें:
-
-Elm में, आप `String.slice` फ़ंक्शन का उपयोग करके उपवर्णमाला प्राप्त कर सकते हैं। इसका एक उदाहरण नीचे दिया गया है:
+## How to: (कैसे करें:)
+Elm में उप-स्ट्रिंग निकालने के लिए `String.slice` पद्धति का इस्तेमाल करें:
 
 ```Elm
 import String
 
-main =
+-- `String.slice` का इस्तेमाल कर उप-स्ट्रिंग निकालें
+substringExample : String
+substringExample =
     let
-        str = "यहाँ हिंदी में एक उदाहरण है"
-        start = 5
-        end = 9
+        originalString = "Hello, Elm programming!"
+        startIndex = 7
+        endIndex = 10
     in
-    String.slice start end str
+    String.slice startIndex endIndex originalString
+
+-- सैंपल आउटपुट
+-- "Elm"
 ```
 
-यह उदाहरण `" हिंदी "` आउटपुट देगा। `String.slice` फ़ंक्शन का पहला प्रारम्भिक बिंदु है, दूसरा अंतिम बिंदु है, और तीसरा स्ट्रिंग है जिसमें से हम उपस्ट्रिंग निकालना चाहते हैं। 
+## Deep Dive (गहराई में जानकारी)
+Elm में `String.slice` फंक्शन वर्शन 0.19 से उपलब्ध है और यह Python और JavaScript की स्लाइस पद्धतियों से प्रेरित है। वैकल्पिक तरीके में `String.left`, `String.right`, और `String.drop` शामिल हैं। स्ट्रिंग के एक विशिष्ट भाग को निकालते समय, `String.slice` मेमोरी में कॉपी बनाता है जिससे प्रोसेसिंग का समय बढ़ सकता है. इसके बावजूद, यह छोटी स्ट्रिंग्स के लिए उपयुक्त है।
 
-## गहराई डाइव:
-
-तात्कालिक संदर्भ में, Elm प्रोग्रामिंग भाषा में `String.slice` विधि उपस्ट्रिंग्स निकालने की सर्वाधिक प्रयुक्त विधि है। इसे Elm की कोर लाइब्रेरी में पेश किया गया है और यह किसी भी विपणन में उपलब्ध होता है। बदले में, विभिन्न अन्य विधियाँ भी हैं जैसे कि `String.left` और `String.right`, लेकिन ये समग्र स्ट्रिंग के विपरीत ओर से सीमित होते हैं।
-
-यदि आप दीर्घाकार उपस्ट्रिंग निकालने की कोशिश करते हैं जो मूल स्ट्रिंग से अधिक है, तो `String.slice` केवल मूल स्ट्रिंग को ही वापस लौटाएगा। 
-
-## अन्य संसाधन:
-
-अधिक जानकारी के लिए, आप निम्न संसाधनों का उपयोग कर सकते हैं:
-
-1. [Elm String लाइब्रेरी डॉक्यूमेंटेशन](https://package.elm-lang.org/packages/elm/core/latest/String)
-2. [Elm के साथ प्रोग्रामिंग](https://elm-lang.org/docs)
-3. [String.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice) JavaScript के एक समरूप फ़ंक्शन के विवरण. Elm और JavaScript के फंक्शन का व्यवहार समान है।
+## See Also (और देखें)
+- Elm `String` पैकेज: [String package documentation](http://package.elm-lang.org/packages/elm/core/latest/String)
+- Elm गाइड बुक: [An Introduction to Elm](https://guide.elm-lang.org/)
+- Elm का `String.slice` शोध: [Exploring String.slice](https://elm-lang.org/docs/syntax#strings)

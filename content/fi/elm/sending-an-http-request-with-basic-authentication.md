@@ -1,7 +1,8 @@
 ---
-title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+date:                  2024-01-20T18:01:40.251626-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,43 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Lähettäminen HTTP-pyynnöllä perusautentikoinnilla tarkoittaa verkkopyynnön lähettämistä verkolle tunnistustietojen, kuten käyttäjänimen ja salasanan, avulla. Ohjelmoijat tekevät tämän tarkistaakseen käyttäjän oikeudet ennen kuin heille myönnetään pääsy verkkosivuston tai järjestelmän resursseihin.
+## What & Why? | Mikä & Miksi?
+Perusautentikoinnilla varustetun HTTP-pyynnön lähettäminen on prosessi, jossa käyttäjätunnus ja salasana lähetetään HTTP-otsikoissa palvelimelle. Käytämme tätä menetelmää, koska se on yksinkertainen tapa varmistaa käyttäjän identiteetti ennen palvelun käyttöoikeuksien myöntämistä.
 
-## Kuinka:
+## How to: | Kuinka:
 ```Elm
 import Http
-import Http.Headers as Headers
+import Base64
 
-...
+type alias MyModel = { ... }
 
-lähetäPyynnöllä : String -> String -> Http.Request String
-lähetäPyynnöllä käyttäjänimi salasana =
+type Msg = ...
+    | RequestFailed Http.Error
+
+-- ENCODE CREDENTIALS
+encodeCredentials : String -> String -> String
+encodeCredentials username password =
+    "Basic " ++ Base64.encode (username ++ ":" ++ password)
+
+-- SEND REQUEST WITH BASIC AUTH
+sendRequest : String -> String -> Cmd Msg
+sendRequest username password =
     let
-        auth =
-            "Basic " ++ (käyttäjänimi ++ ":" ++ salasana |> Http.harEncode)
+        headers =
+            [ Http.header "Authorization" (encodeCredentials username password) ]
     in
-    Http.request
-        { method = "GET"
-        , headers = [ Headers.authorization auth ]
-        , url = "https://example.com/authenticated-endpoint"
-        , body = Http.emptyBody
-        , expect = Http.expectString GotResponse
-        , timeout = Nothing
-        , tracker = Nothing
+    Http.get
+        { url = "https://your-api.com/data"
+        , expect = Http.expectJson ...
         }
+        |> Http.withHeaders headers
+        |> Http.send RequestFailed
 
-...
+-- SAMPLE OUTPUT (Not shown in Elm, based on Msg and update function logic)
 ```
 
-## Syvällisempi tarkastelu
-HTTP-pyynnöllä perusautentikointi on historiallisesti yksi vanhimmista verkkotunnistusmenetelmistä, joka on kehitetty aikana, jolloin turvallisuus ei ollut suuri huolenaihe. Nykypäiväisissä sovelluksissa on muiden vaihtoehtojen, kuten OAuth tai JWT, joiden avulla ohjelmoijat voivat tarjota parempaa turvallisuutta käyttäjätunnistuksen yhteydessä.
+## Deep Dive | Syväsukellus:
+Perusautentikointi (Basic Authentication) oli yksi ensimmäisistä verkkopalvelujen tunnistusmenetelmistä. Yksinkertaisuutensa vuoksi se on edelleen käytössä, mutta huomaa, että se ei ole turvallisin vaihtoehto ilman HTTPS-yhteyttä, sillä tunnukset lähetetään base64-koodattuina selkotekstinä.
 
-Elm:ssä HTTP-pyyntö on mahdollista lähettää perustietojen käsittelyllä käyttämällä "authorization" header, johon lisätään käyttäjätunnus ja salasana Base64-koodattuna merkkijonona. 
+Vaihtoehtoja perusautentikoinnille ovat Bearer-autentikointi, OAuth ja API-avaimet. Näissä metodeissa tietoturvallisuus on usein parempi.
 
-Muista olla käyttämättä HTTP-perusautentikointia yli avoimen, salaamattoman verkon - tämä lähettäisi salasanasi selkokielisenä lankaansa pitkin!
+Kun lähetämme perusautentikointia vaativan pyynnön Elm:ssä, meidän täytyy lisätä `Authorization` otsikko sisältäen base64-koodatut tunnukset HTTP-pyynnön otsikoihin. Elm käyttää moduulia `Http` HTTP-pyyntöjen käsittelyyn ja `Base64` moduulia tunnusten koodaamiseen.
 
-## Katso myös:
-- [Elm:n Http kirjasto](https://package.elm-lang.org/packages/elm/http/latest/)
-- [Elm:n Http.Headers kirjasto](https://package.elm-lang.org/packages/elm/http/latest/Http-Headers) 
-- [RFC 7617, Basic Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+## See Also | Katso Myös:
+- Elm's official HTTP package documentation: https://package.elm-lang.org/packages/elm/http/latest/
+- Base64 encoding with Elm: https://package.elm-lang.org/packages/truqu/elm-base64/latest/
+- More on HTTP Basic Authentication: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- Secure Elm applications: https://elm-lang.org/news/security-in-elm

@@ -1,6 +1,7 @@
 ---
 title:                "קריאת קובץ טקסט"
-html_title:           "Go: קריאת קובץ טקסט"
+date:                  2024-01-20T17:54:51.796405-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "קריאת קובץ טקסט"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,32 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+## מה ולמה? (What & Why?)
+קריאת קובץ טקסט ב-PowerShell זה פשוט לקחת תוכן מתוך קובץ ולהשתמש בו. מתכנתים עושים את זה כי לעיתים צריך לעבד נתונים, לקבל הגדרות או לשמור יומני רישום.
 
-קריאת קובץ טקסט היא פריט בסיסי בתכנות שמאפשר לנו לקחת מקובץ טקסט קיים נתונים. תכניתים מבצעים זאת במגוון רחב של תרחישים, כמו ניתוח קבצי לוג, קריאה של נתונים לעיבוד, ועוד.
-
-## איך לעשות?
-
-על מנת לקרוא קובץ טקסט באמצעות PowerShell, נוכל להשתמש בפקודה `Get-Content`:
-
+## איך לעשות: (How to:)
+קריאת קובץ טקסט ישר למשתנה:
 ```PowerShell
-Get-Content -Path C:\temp\yourfile.txt
+$content = Get-Content -Path "C:\example.txt"
+Write-Output $content
 ```
-אתה תראה את המידע שהתקבל מן הקובץ כפלט ישיר במסוף.
+פלט לדוגמא:
+```
+שורה ראשונה בטקסט
+שורה שנייה בטקסט
+...
+```
 
-## הצלילה הרחוקה
+קריאה של קובץ לפי שורות:
+```PowerShell
+$lines = Get-Content -Path "C:\example.txt" -ReadCount 0
+foreach ($line in $lines) {
+  Write-Output $line
+}
+```
+פלט לדוגמא:
+```
+שורה ראשונה בטקסט
+שורה שנייה בטקסט
+...
+```
 
-הפקודה `Get-Content` היא חלק מ-PowerShell מאז ההתחלה, מה שהופך אותה לכלי נוסף ואמין. יתר על כן, ישנם גם דרכים חליפיות לקרוא קובץ טקסט ב-PowerShell, כמו למשל `[System.IO.File]::ReadAllText()` או `[System.IO.File]::ReadAllLines()`. פרטי המימוש של קריאת קובץ טקסט משתנים בהתאם לרמת הפונקציונאליות של הקובץ, כמו גם לצורך הספציפי.
+## עומק הצלילה: (Deep Dive)
+פקודת `Get-Content` ב-PowerShell היא הדרך הסטנדרטית לקרוא קבצי טקסט. היסטורית, הפעולה הזו באה לקחת את מקומה של פקודות DOS כמו `type`. גישות אלטרנטיביות תואם לכלול את השימוש ב-[System.IO](System.IO) ב-.NET כדי לקבל אותן תוצאות.
 
-## ראה גם
+קריאת קובץ עם [System.IO](System.IO):
+```PowerShell
+$reader = [System.IO.File]::OpenText("C:\example.txt")
+try {
+  while ($null -ne ($line = $reader.ReadLine())) {
+    Write-Output $line
+  }
+}
+finally {
+  $reader.Close()
+}
+```
 
-ודא שאתה מבדוק קישורים נוספים שיעזרו לך להבין את המשמעות המלאה של קריאת קובץ טקסט ב-PowerShell:
-
-- הבנה עמיקה יותר של פקודת Get-Content: 
-    - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1
-
-- איך לקרוא קובץ טקסט באמצעות [System.IO.File]::ReadAllText():
-    - https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readalltext?view=net-5.0
-
-- איך לקרוא קובץ טקסט באמצעות [System.IO.File]::ReadAllLines():
-    - https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readalllines?view=net-5.0
+## ראה גם: (See Also)
+- [Get-Content documentation](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-Content)
+- [Understanding Streams, Redirection, and Write-Host in PowerShell](https://devblogs.microsoft.com/scripting/understanding-streams-redirection-and-write-host-in-powershell/)

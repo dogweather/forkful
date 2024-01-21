@@ -1,6 +1,7 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "C++: Porównywanie dwóch dat"
+date:                  2024-01-20T17:32:30.043659-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,35 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i Dlaczego?
-
-Porównywanie dwóch dat to proces, w którym sprawdzamy, czy jedna data jest wcześniejsza, późniejsza lub taka sama jak druga. Programiści robią to, aby zarządzać i manipulować danymi związanymi z czasem w swoich aplikacjach.
+Porównywanie dwóch dat to sprawdzanie, która data jest wcześniejsza, a która późniejsza lub czy są identyczne. W programowaniu robimy to, aby zarządzać terminami, wydarzeniami i harmonogramami w aplikacjach.
 
 ## Jak to zrobić:
+```Clojure
+;; Zaimportuj moduły
+(require '[clj-time.core :as t])
+(require '[clj-time.coerce :as coerce])
 
-Porównajmy dwie daty w Clojure. Użyjemy funkcji built-in.
+;; Stwórz dwie daty do porównania
+(def date1 (t/date-time 2021 3 10))  ; 2021-03-10
+(def date2 (t/date-time 2023 1 15))  ; 2023-01-15
 
-```clojure
-(require '[clj-time.core :as t]
-         '[clj-time.coerce :as c])
-
-(def date1 (c/to-local-date "2022-01-01"))
-(def date2 (c/to-local-date "2022-12-31"))
-
-(t/after? date2 date1)
+;; Porównanie dat
+(println (t/before? date1 date2))  ; Wypisze: true
+(println (t/after? date1 date2))   ; Wypisze: false
+(println (t/equal? date1 date1))   ; Wypisze: true
 ```
-Output jest: `true`. Oznacza to, że `date2` jest późniejsza niż `date1`.
+Wyjście:
+```
+true
+false
+true
+```
 
-## Głębsze Zanurzenie
+## Wgłębienie się
+Porównywanie dat w Clojure często wykonuje się z użyciem biblioteki `clj-time`, która bazuje na Joda-Time - bibliotece dla Javy do zarządzania czasem przed wprowadzeniem `java.time` w Java 8. Mimo, że `java.time` jest teraz standardem, `clj-time` jest nadal używane w wielu projektach Clojure ze względu na swoją wygodę i prostotę. Istnieje także możliwość używania natywnych klas Javy (np. `java.util.Date` i `java.time`, zdefiniowanych w Java 8), ale `clj-time` oferuje przyjaźniejszy interfejs i lepszą integrację z Clojure.
 
-(1) **Kontekst historyczny**: Clojure, dynamiczny język programowania funkcyjnego, nie miał na początku wbudowanej funkcji porównywania dat. Porównywanie dat było zatem trudniejsze i bardziej skomplikowane. Od czasu wprowadzenia biblioteki clj-time, porównywanie dat stało się znacznie prostsze.
-
-(2) **Alternatywy**: Choć clj-time jest najpopularniejszą biblioteką do manipulowania i porównywania dat, istnieją również inne opcje takie jak `java.util.Date` i `java.util.Calendar` z Javy, które można wykorzystać w Clojure.
-
-(3) **Szczegóły implementacji**: Funkcje `after?` i `before?` z clj-time porównują daty, sprawdzając, która data jest wcześniejsza lub późniejsza. Istnieje również funkcja `equal?`, która sprawdza, czy dwie daty są identyczne.
-
-## Zobacz również
-
-1. Oficjalna dokumentacja Clojure: [Link](https://clojure.org/)
-2. Biblioteka clj-time: [Link](https://github.com/clj-time/clj-time)
-3. Porównywanie dat na StackOverflow: [Link](https://stackoverflow.com/questions/39144997/clojure-date-comparison)
-4. Documentacja java.util.Date: [Link](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) and java.util.Calendar: [Link](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
+## Zobacz też
+- Dokumentacja `clj-time`: [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
+- Dokumentacja `java.time`: [https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- Poradnik Joda-Time w Javie: [http://www.joda.org/joda-time/](http://www.joda.org/joda-time/)

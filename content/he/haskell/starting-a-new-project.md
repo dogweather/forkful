@@ -1,6 +1,7 @@
 ---
 title:                "התחלת פרויקט חדש"
-html_title:           "Clojure: התחלת פרויקט חדש"
+date:                  2024-01-20T18:03:43.797601-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "התחלת פרויקט חדש"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,46 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+התחלת פרויקט חדש ב-Haskell היא יצירת סביבת עבודה חדשה לקוד שלך. תוכניתנים עושים זאת כדי לסדר את הפיתוח ולהבטיח מבנה תמיכה נכון מההתחלה.
 
-התחלת פרויקט חדש בהסקל היא תהליך שבו אנו מתכנתים את הפונקציונליות הבסיסית של האפליקציה שלנו. אנחנו עושים זאת כדי ליישב את בסיס הפרויקט שלנו, ולכן להקל על פיתוח משני ופחות ממוקד.
-
-## כיצד ל-:
-
-אתחל את הפרויקט שלך עם הפקודה הבאה:
+## איך לעשות:
+כדי להתחיל פרויקט חדש ב-Haskell, נעשה שימוש בכלים כמו `stack` או `cabal`. הנה דוגמא קצרצרה עם `stack`:
 
 ```Haskell
-stack new my-project
-```
+-- יצירת פרויקט חדש עם stack
+stack new myProject
 
-הכנס לתיקיית הפרויקט והתחל לכתוב קוד עם הפקודות האלה:
+-- נכנסים לתיקייה שנוצרה
+cd myProject
 
-```Haskell
-cd my-project
-stack setup
+-- חיבור הפרויקט ל-REPL לבדיקות מהירות
 stack ghci
-module Main where
 
-main :: IO ()
-main = putStrLn "Hello, World!"
+-- מפעילים את הקוד
+stack build
+stack exec myProject-exe
 ```
 
-כאשר אתה מריץ את הפקודה הזאת, ההודעה "Hello, World!" תודפס:
-
-```Haskell
-stack run
+פלט דוגמא:
+```
+Hello, Haskell!
 ```
 
-## הצצה מעמיקה
+## עיון מעמיק:
+התחלת פרויקט ב-Haskell לא הייתה תמיד כזו פשוטה. בעבר, התכנתנים היו צריכים להגדיר הכל מאפס. כלים כמו `stack` ו-`cabal` הקלו על התהליך על ידי אוטומציה של יצירת מבנה פרויקט ותלותיו.
+`Cabal` היה קודם ל`stack`, אבל עדיין נמצא בשימוש נרחב. `Stack` הוא חדש יותר, עם נטייה להיות פשוט יותר לשימוש ומציע ממשק ידידותי יותר למתחילים.
+לכל אחד יתרונות וחסרונות, אבל שניהם שואפים לפשט את התהליך ולעודד התקנה קונסיסטנטית של תלותי חבילות.
 
-היסטורית, פיתוח פרויקטים בהסקל הבסיסי המהיר (Quickstarting projects with Haskell) היה מורכב. אף שהשפה די לא מרובה, המערך שחייב להכון היה משאית. "Stack" אשר התנהל לא מזמן, הקל על התהליך משמעותית.
-
-אלטרנטיבות נוספות ל- Stack כוללות Cabal ו- GHC המתקנים את הסביבה שלך ומספקים לך כלים לניהול התלויות שלך, אם כי Stack הוא המשובח ביותר לחלבה עם הסקל החדש.
-
-ההתקנה הראשונית שלך תמשוך את GHC (התרגיל בהסקל), עם ספריות נלוות, אל המחשב שלך. זהו התהליך שמכונה `stack setup`.
-
-## ראה גם
-
-* [מסמכים של Stack](https://docs.haskellstack.org/en/stable/README/)
-* [הכוונה ראשונית להסקל](http://learnyouahaskell.com/chapters)
-* [Cabal](https://www.haskell.org/cabal/users-guide/quick-start.html)
-* [GHC](https://www.haskell.org/ghc/)
+## ראה גם:
+- [The Haskell Tool Stack](https://docs.haskellstack.org/en/stable/README/)
+- [Cabal User Guide](https://www.haskell.org/cabal/users-guide/)
+- [Haskell Getting Started](https://www.haskell.org/downloads/)
+- [Haskell Package Hackage](https://hackage.haskell.org/)

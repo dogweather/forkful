@@ -1,6 +1,7 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "Arduino: Inviare una richiesta http con autenticazione di base"
+date:                  2024-01-20T18:00:58.452125-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,60 +11,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Invia una richiesta HTTP con autenticazione di base in Arduino
+## Che Cosa & Perché?
+Inviare una richiesta HTTP con autenticazione di base significa inviare al server dati che necessitano di un username e password per accedere a contenuti protetti. I programmatori fanno questo per interagire con servizi web sicuri direttamente dai loro progetti Arduino.
 
-## Cos'è e Perché?
-L'invio di una richiesta HTTP con autenticazione di base è un metodo per collegare il tuo sketch Arduino ad un servizio web protetto da password. Lo usiamo per accedere in modo sicuro ai dati o alle funzionalità che desideriamo.
-
-## Come fare:
-L'exempio seguente mostra come inviare una richiesta HTTP con autenticazione di base.
-
+## Come Fare:
 
 ```Arduino
 #include <ESP8266WiFi.h>
-#include <ESP8266HTTPClient.h>
+#include <Base64.h>
 
-const char* ssid = "il_tuo_ssid";
-const char* password = "la_tua_password";
+const char* ssid = "yourSSID"; 
+const char* password = "yourPASSWORD";
+
+const char* host = "www.esempio.com";
+const int httpPort = 80;
 
 void setup() {
   Serial.begin(115200);
   WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Connettendo...");
+    delay(500);
+    Serial.print(".");
   }
+  
+  Serial.println("Connesso al WiFi");
+
+  // Autenticazione base codificata in Base64
+  String auth = "username:password";
+  String authEncoded = base64::encode(auth);
+  
+  // Connessione al server
+  WiFiClient client;
+  if (!client.connect(host, httpPort)) {
+    Serial.println("Connessione fallita");
+    return;
+  }
+  
+  // Invio della richiesta HTTP con header di autenticazione
+  client.print(String("GET ") + "/percorso/risorsa" + " HTTP/1.1\r\n" +
+               "Host: " + host + "\r\n" +
+               "Authorization: Basic " + authEncoded + "\r\n" +
+               "Connection: close\r\n\r\n");
+               
+  Serial.println("Richiesta HTTP inviata");
+
+  // Attendi la risposta del server e stampala
+  while (client.connected()) {
+    String line = client.readStringUntil('\n');
+    if (line == "\r") {
+      break; // Fine degli headers
+    }
+  }
+  
+  // Stampa la riposta del server
+  String line = client.readStringUntil('\n');
+  Serial.println(line);
 }
 
 void loop() {
-
-  if (WiFi.status() == WL_CONNECTED) {
-    HTTPClient http;
-    
-    http.begin("http://il-tuo-sito-web.com");
-    http.setAuthorization("il_tuo_utente", "la_tua_password");
-
-    int httpCode = http.GET();
-    
-    if (httpCode > 0) {
-      String payload = http.getString();
-      Serial.println(payload);
-    }
-
-    http.end();
-  }
-
-  delay(30000); 
+  // Qui si può inserire del codice per inviare periodicamente nuove richieste
 }
 ```
-Nell'output, vedrai la risposta del server al tuo sketch Arduino.
+## Approfondimenti:
+L'autenticazione HTTP di base esiste da quando l'HTTP è stato creato nei primi anni '90. È un metodo semplice ma meno sicuro rispetto a metodi più moderni come OAuth, poiché le credenziali sono codificate in Base64 e non crittografate, rendendole vulnerabili ad intercettazioni. Tuttavia, è ancora usata in contesti meno critici o in reti chiuse dove la sicurezza non è una grande preoccupazione. Un'alternativa potrebbe essere l'uso di chiavi API o tokens. A livello implementativo, è importante che l'Arduino sia connesso a una rete affidabile e che la velocità seriale (baud rate) coincida con quella impostata nell'IDE Arduino per una corretta comunicazione.
 
-## Approfondimento
-L'autenticazione di base HTTP è un protocollo antico e diffuso, ma ricorda che trasmette le credenziali in chiaro (anche se codificate in Base64). Potresti prendere in considerazione l'uso di HTTPS per una maggiore sicurezza. Inoltre, esistono alternative più sicure all'autenticazione di base HTTP, come Digest Authentication o l'uso di token JWT.
-
-Un dettaglio interessante riguardo a come inviare le richieste HTTP con autenticazione di base in Arduino: la funzione `setAuthorization` imposta l'header 'Authorization' della richiesta HTTP. È essenziale che le credenziali siano corrette, altrimenti il server restituirà un codice di stato '401 Non autorizzato'.
-
-## Vedi Anche
-- [HTTP Basic Authentication su Wikipedia](https://it.wikipedia.org/wiki/Basic_access_authentication)
-- [Autenticazione Digest su Wikipedia](https://it.wikipedia.org/wiki/Digest_access_authentication)
+## Vedi Anche:
+- Documentazione ufficiale Arduino su WiFi: https://www.arduino.cc/en/Reference/WiFi
+- Documentazione su HTTP Basic Authentication (RFC7617): https://tools.ietf.org/html/rfc7617
+- Libreria Base64 per Arduino: https://www.arduino.cc/reference/en/libraries/base64/

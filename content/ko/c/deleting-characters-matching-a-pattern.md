@@ -1,6 +1,7 @@
 ---
 title:                "패턴에 일치하는 문자 삭제"
-html_title:           "Fish Shell: 패턴에 일치하는 문자 삭제"
+date:                  2024-01-20T17:41:41.524313-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "패턴에 일치하는 문자 삭제"
 programming_language: "C"
 category:             "C"
@@ -10,41 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-패턴에 일치하는 문자 삭제는 문자열에서 특정 패턴의 문자를 제거하는 작업입니다. 이런 작업은 데이터 정제, 텍스트 분석 또는 문자열 formatting 때문에 프로그래머들이 필요로 합니다. 
+## What & Why? (무엇과 왜?)
+패턴에 맞는 문자 삭제하기란 문자열에서 특정 패턴을 찾아 그것들을 없애는 과정입니다. 프로그래머들은 불필요한 데이터를 정리하거나 입력을 필터링할 때 이 기능을 사용합니다.
 
-## 어떻게 할까?
-아래와 같이 C에서 문자열이 저장된 배열에서 패턴에 일치하는 문자의 첫 번째 인스턴스를 제거하는 방법입니다.
-
+## How to: (어떻게:)
 ```C
 #include <stdio.h>
 #include <string.h>
 
-void remove_char(char* str, char c) {
-    char* pr = str, *pw = str;
-    while (*pr) {
-        *pw = *pr++;
-        pw += (*pw != c);
+void delete_pattern(char *str, const char *pattern) {
+    char *src = str, *dest = str;
+    while (*src) {
+        const char *temp_pat = pattern;
+        while (*temp_pat && *src != *temp_pat) ++temp_pat;
+        if (!*temp_pat) *dest++ = *src;
+        src++;
     }
-    *pw = '\0'; // Terminate the resulting string
+    *dest = '\0';
 }
 
 int main() {
-    char str[] = "Hello, World!";
-    remove_char(str, 'o');
-    printf("%s\n", str);  // 출력: "Hell, Wrld!"
+    char str[] = "Hello, World! It's a brand new day!";
+    const char *pattern = "aeiou";
+    delete_pattern(str, pattern);
+    printf("After deleting vowels: %s\n", str);
     return 0;
 }
 ```
+Sample Output:
+```
+After deleting vowels: Hll, Wrld! It's  brnd nw dy!
+```
 
-## 깊게 알아보기
-패턴에 일치하는 문자 삭제는 사실 문자열 조작의 가장 기본적인 형태임에도 불구하고, C에서는 상당히 귀찮은 작업일 수 있습니다. 이는 C 언어가 문자열에 대한 기본적인 조작을 지원하지 않기 때문이지요.
+## Deep Dive (심화 학습):
+Deleting characters matching a pattern can be traced back to the early days of Unix, where utilities like `tr` and `sed` provided similar functionalities. In C, you can do it without external tools. The function above iterates through each character in the source string, checks against a pattern, and copies it to the destination if it doesn’t match.
 
-하지만 이러한 방식으로 문자 삭제는 문자열 조작을 주도하는 키 요소 중 하나입니다. C는 문자열을 쉽게 바꿀 수 없도록 설계되었으므로, 문자를 제거하려면 명시적으로 배열 요소를 복사하고 새로운 문자열을 만듭니다. 
+Alternatives include using regular expressions with libraries such as `regex.h`, but that could be overkill for simple patterns. If performance concerns arise, more sophisticated algorithms like Knuth-Morris-Pratt or Boyer-Moore could be implemented for pattern searching and deletion.
 
-비록 C에서는 이게 불편하세요만, 다른 언어에서는 이 과정이 간단합니다. 예를 들어 Python의 `replace()` 메소드를 사용하면 문자를 쉽게 삭제할 수 있습니다.
+To avoid modifying the original string, you might create a new string to store the result. Remember to allocate enough memory for the new string and to free it appropriately to prevent memory leaks.
 
-## 참고하기
-- C Programming Language, 2nd Edition (https://www.amazon.com/Programming-Language-Brian-W-Kernighan/dp/0131103628)
-- Introduction to C Programming (https://www.learn-c.org/)
-- Naver D2 C Programming (https://d2.naver.com/helloworld/13)
+## See Also (참고 자료):
+- C Standard Library documentation (http://www.cplusplus.com/reference/clibrary/)
+- Regular Expressions in C (https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+- Optimizing string algorithms (http://www-igm.univ-mlv.fr/~lecroq/string/index.html)

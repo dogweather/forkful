@@ -1,7 +1,8 @@
 ---
-title:                "Надсилання http-запиту з базовою аутентифікацією"
-html_title:           "Arduino: Надсилання http-запиту з базовою аутентифікацією"
-simple_title:         "Надсилання http-запиту з базовою аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+date:                  2024-01-20T18:02:53.946575-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,48 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це і навіщо?
+## What & Why?
+## Що і чому?
 
-Відправка HTTP-запиту з базовою аутентифікацією — процес, коли програма відправляє запит на сервер із логіном та паролем. Це робиться для перевірки прав користувача на доступ до певних ресурсів.
+Відправка HTTP-запиту з базовою автентифікацією – це спосіб передачі логіна і пароля для доступу до ресурсу. Програмісти використовують це для безпечної взаємодії з захищеними API.
 
+## How to:
 ## Як це зробити:
-
-В TypeScript це можна зробити за допомогою модуля axios. Ось приклад коду:
 
 ```TypeScript
 import axios from 'axios';
 
-let username = 'test';
-let password = 'password';
-
-let config = {
-  auth: {
-    username: username,
-    password: password
+const getProtectedData = async () => {
+  try {
+    const response = await axios.get('http://example.com/data', {
+      auth: {
+        username: 'yourUsername',
+        password: 'yourPassword'
+      }
+    });
+    console.log(response.data);
+  } catch (error) {
+    console.error('There was an error!', error);
   }
-}
+};
 
-axios.get('https://www.example.com', config)
-  .then((response) => {
-    console.log(response);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+getProtectedData();
 ```
 
-В результаті на консоль виводиться відповідь від сервера.
+Sample output:
+```json
+{
+  "protected": "data"
+}
+```
 
-## Занурення у деталі:
+## Deep Dive
+## Поглиблений аналіз
 
-Історично, HTTP Basic Authentication був одним з перших методів аутентифікації, впроваджених в HTTP-протокол. Щоправда, він не надає сильного захисту і дуже часто використовується разом із SSL/TLS.
+Базова автентифікація, це стандартний механізм в HTTP, який був введений ще в HTTP/1.0. Незважаючи на вік, досі застосовується через простоту реалізації. Існують альтернативи, наприклад, OAuth та JWT, які забезпечують більш безпечну та гнучку автентифікацію. Ключова особливість базової автентифікації – закодування логіна та пароля в Base64, але важливо пам'ятати, що без захищеного з'єднання (HTTPS) ці дані можна легко перехопити.
 
-Існують і інші методи аутентифікації, такі як Digest Access Authentication, HTTPS та використання токенів.
+## See Also
+## Дивіться також
 
-Важливо пам'ятати, що ви ніколи не повинні відправляти паролі без зашифровування.
-
-## Дивіться також:
-
-1. [Axios Documentation](https://axios-http.com/docs/intro)
-2. [HTTP Basic Authentication](https://developer.mozilla.org/uk/docs/Web/HTTP/Authentication)
-3. [HTTP Digest Access Authentication](https://en.wikipedia.org/wiki/Digest_access_authentication)
+- MDN Web Docs on HTTP authentication: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- Axios documentation: https://github.com/axios/axios
+- Understanding Base64 encoding: https://www.base64encode.org/

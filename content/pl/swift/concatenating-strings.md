@@ -1,7 +1,8 @@
 ---
-title:                "Łączenie ciągów znaków"
-html_title:           "Arduino: Łączenie ciągów znaków"
-simple_title:         "Łączenie ciągów znaków"
+title:                "Łączenie łańcuchów znaków"
+date:                  2024-01-20T17:35:51.847539-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Łączenie łańcuchów znaków"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,41 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i Dlaczego?
+Łączenie napisów to po prostu sklejanie ich w jeden. Programiści robią to, żeby tworzyć sensowne komunikaty lub dynamicznie budować tekst.
 
-Łączenie stringów to proces łączenia dwóch lub więcej ciągów znaków w jeden dłuższy. Programiści wykonują to, aby tworzyć dynamiczne wiadomości i wyniki w programach.
-
-## Jak to zrobić:
-
-W Swift, łatwo łączy się stringi za pomocą operatora "+". Poniżej przedstawiam przykładowy kod:
-```swift
-let ciag1 = "Cześć, "
-let ciag2 = "jaki jest twój numer telefonu?"
-let polaczonyCiag = ciag1 + ciag2
-print(polaczonyCiag)
+## Jak to zrobić?
+```Swift
+let greeting = "Cześć, "
+let name = "Janek!"
+let welcomeMessage = greeting + name
+print(welcomeMessage)
+// Output: Cześć, Janek!
 ```
-Po wykonaniu tego kodu na wyjściu otrzymasz:
-```swift
-"Cześć, jaki jest twój numer telefonu?"
+
+Interpolacja napisów:
+```Swift
+let apples = 3
+let summary = "Mam \(apples) jabłka."
+print(summary)
+// Output: Mam 3 jabłka.
 ```
-Możesz również interpolować stringi, co pozwala na ich łączenie na bieżąco, jak w poniższym przykładzie:
-```swift
-let imie = "Jan"
-let powitanie = "Cześć, \(imie)"
-print(powitanie)
+
+Dołączanie napisu:
+```Swift
+var order = "Chcę zamówić:"
+order += " burgera"
+print(order)
+// Output: Chcę zamówić: burgera
 ```
-Wynik:
-```swift
-"Cześć, Jan"
-```
-## Głębszy Wgląd
 
-Łączenie stringów jest koncepcją, która sięga początków programowania. Wszystkie języki mają swoje sposoby na realizację tej funkcji, ale Swift robi to w bardziej syntetyczny i czytelny sposób.
+## W Głąb Tematu
+Łączenie napisów to jedna z podstawowych operacji. W językach takich jak C musieliśmy używać funkcji typu `strcat`, co było mniej intuicyjne i bezpieczne. Swift pozwala na prostą concatenation, dzięki czemu kod jest czytelny i odporny na błędy.
 
-Alternatywą dla łączenia stringów mogłby być tworzenie kompleksowych struktur danych stringów, ale jest to zazwyczaj bardziej pracochłonne i złożone.
+Alternatywy to interpolacja napisów, która jest często wygodniejsza i umożliwia wstawianie zmiennych bezpośrednio w tekst. Swift używa znaku "\\" do interpolacji, co jest wzorem przyjętym także w innych nowoczesnych językach.
 
-Szczegół implementacji: pod spodem, kiedy łączysz stringi, Swift efektywnie tworzy nową instancję stringu, która zawiera obie łączone wartości. To jest różne od niektórych innych języków, które mogą po prostu wskazywać na oryginalne stringi.
+Szczegół implementacyjny: W Swift, napisy to struktury, nie obiekty. Dzięki temu są szybsze i bardziej przewidywalne co do wydajności niż w językach, gdzie są one obiektami (`NSString` w Objective-C).
 
-## Zobacz również
-- Oficjalna dokumentacja Swift:'String' (https://developer.apple.com/documentation/swift/string)
-- Artykuł Swifts' String Manifesto' (https://github.com/apple/swift/blob/master/docs/StringManifesto.md)
-- Interpolacja Stringów (https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID292)
+## Zobacz Również
+- [String Interpolation w Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID292)
+- [Apple’s Swift API Dla Napisów](https://developer.apple.com/documentation/swift/string)
+- [Przewodnik po Swift od Apple](https://docs.swift.org/swift-book/)

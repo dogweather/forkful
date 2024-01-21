@@ -1,7 +1,8 @@
 ---
-title:                "Ladda ner en webbsida"
-html_title:           "Bash: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Hämta en webbsida"
+date:                  2024-01-20T17:44:27.845499-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Hämta en webbsida"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -11,31 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att hämta en webbsida innebär att man skickar en förfrågan till en server för att få tillbaka HTML, CSS och Javascript för den sidan. Programmerare gör detta för att samla data, testa tjänster, övervaka webbplatser, osv.
+Att ladda ner en webbsida innebär att hämta dess innehåll över internet, typiskt HTML, CSS och ibland JavaScript. Programmerare gör detta för att bearbeta informationen, skrapa data eller testa sidors tillgänglighet.
 
-## Så gör du:
+## How to:
+För att ladda ner en webbsida i Lua använder vi biblioteket `socket.http`. Här är ett enkelt exempel:
+
 ```Lua
--- Installera Socket och HTTP-bibliotek
-http = require("socket.http")
+local http = require("socket.http")
+local body, code, headers, status = http.request("http://example.com")
 
--- URL:en till den webbsida du vill hämta
-local url = "http://www.example.com"
-
--- Hämta webbsidan
-local response, status, headers = http.request(url)
-
--- Skriv ut hämtad HTML-kod
-print(response)
+if code == 200 then
+    print(body) -- Detta är innehållet på webbsidan
+else
+    print(status)
+end
 ```
-Upprätta en anslutning med "socket.http"-biblioteket, skicka en förfrågan till en bestämd URL och skriv ut serverns svar.
 
-## Djupdykning
-Historiskt sett började nedladdning av webbsidor som en enkel GET-förfrågan över HTTP. Idag finns det många metoder att ladda ner sidor, bland annat via verktyg som curl och wget, eller med programmeringsspråk som Python, Ruby och nu Lua.
+Du borde se det HTML-innehåll som sänds tillbaka från "http://example.com" printas ut i konsolen.
 
-Alternativ kan variera. Du kan skrapa en webbsida, använda ett API, eller utföra en mängd olika kriterier för att komma åt data.
+## Deep Dive:
+Lua är inte byggt med webbnätverk i åtanke. Så, `socket.http` är en del av LuaSocket, en modul som gör nätverksoperationer möjliga. Alternativ inkluderar `luasec` för HTTPS, och `curl`-bindningar för mer avancerade förfrågningar. Implementationer skiljer sig åt: `socket.http` är ok för basuppgifter, men för HTTPS eller mer kontroll behövs andra bibliotek.
 
-Lua implementeringen är ganska grundläggande. Den använder "socket.http" biblioteket för att skicka en GET-förfrågan och hantera svaret. Koden kan förbättras genom att lägga till felhantering, hålla HTTP-huvuden och eventuellt tolka och bearbeta den mottagna HTML.
-
-## Se Även
-- [Lua socket biblioteket](http://w3.impa.br/~diego/software/luasocket/http.html)
-- [HTTP/1.1 specifikation](https://tools.ietf.org/html/rfc2616)
+## Se även:
+- [LuaSocket dokumentation](http://w3.impa.br/~diego/software/luasocket/http.html)
+- [LuaSec GitHub-repo](https://github.com/brunoos/luasec)
+- [Lua-cURL GitHub-repo](https://github.com/Lua-cURL/Lua-cURL)

@@ -1,6 +1,7 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "C++: הורדת דף אינטרנט"
+date:                  2024-01-20T17:43:59.572232-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,26 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# שלוף דף אינטרנט באמצעות Fish Shell
-
 ## מה ולמה?
-ירידת דף אינטרנט היא תהליך שבו המחשב שלכם מחליף נתונים עם שרת ומטמין את הדף. תכנתים משתמשים בו כדי לאסוף מידע, לבדוק מצב שרת, או ליצור עזרים לאוטומציה.
+הורדת דף אינטרנט זה פשוט לשלוף תוכן מתוך כתובת URL ולשמור אותו במקומי. תכניתנים עושים את זה לאיסוף נתונים, בדיקות אוטומטיות, או פשוט כדי להשיג את התוכן בלי דפדפן.
 
 ## איך לעשות:
-הנה כמה דוגמאות קוד עם פלטים משלהם:
+כדי להוריד דף אינטרנט ב-Fish, ניתן להשתמש בפקודות פשוטות כמו `curl` או `wget`. דוגמה:
 
 ```Fish Shell
-# הראשון הוא ירידת טקסט מקום עם wget
-function download_page
-  wget $argv[1] -q -O -
-end
-download_page "http://example.com"
+curl https://example.com -o example_page.html
 ```
 
-מסופק דף האינטרנט של `example.com` כטקסט.
+זה ישמור את דף האינטרנט של example.com בקובץ בשם example_page.html. אם רוצים לראות את התוכן בטרמינל:
 
-## צלילה עמוקה
-מסגרת Fish Shell משמעותית צעירה יותר מקונכיות ה-Unix הקלאסיות כמו bash, אך היא מדהימה בקלות השימוש שלה וקלות ההבנה. היום, ישנם חלופות רבות (כמו cURL) ללמידה של דפי אינטרנט, כאשר כל אחת מהן כוללת יתרונות וחסרונות משלה. במהלך תהליכי ההיורדות, התכנה סוכלת להמיר את הנתונים המחזוריים שקבלה לטקסט.
+```Fish Shell
+curl https://example.com
+```
 
-## להבין יותר
-כמה מראש: אתרי האינטרנט [Wikipedia article on web scraping](https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%99%D7%99%D7%AA%D7%AA_%D7%90%D7%AA%D7%A8%D7%99%D7%9D), מדריך הערה [Official Fish Shell Documentation](https://fishshell.com/docs/current/index.html), והמאמר [HTML, explained](https://developer.mozilla.org/he/docs/Web/Guide/HTML/HTML5).
+ותקבלו פלט בסגנון:
+
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+```
+
+## צלילה לעומק:
+בשנות ה-90', עם הופעת האינטרנט, צריך היה דרך להוריד קבצים מרחוק. אז הומצאו פקודות כמו `curl` ו־`wget`. שתיהן עושות את אותו הדבר באופן בסיסי, אבל יש להן אופציות שונות לשימושים מתקדמים. למשל, `curl` היא נפוצה לשליחת בקשות HTTP בצורות שונות, בעוד ש-`wget` ידועה ביכולתה להוריד אתרים שלמים לשימוש לא מקוון. ניתן גם לעשות כמה פעולות עיבוד כמו ניתוח מידע (parsing) של התוכן באמצעות תוכניות אחרות.
+
+## ראו גם:
+- מדריך ל-Fish Shell: https://fishshell.com/docs/current/index.html
+- מידע מעמיק על `curl`: https://curl.se/docs/
+- מידע מעמיק על `wget`: https://www.gnu.org/software/wget/manual/wget.html
+- הדרכה על ניתוח HTML ב-Fish באמצעות `pup`: https://github.com/ericchiang/pup

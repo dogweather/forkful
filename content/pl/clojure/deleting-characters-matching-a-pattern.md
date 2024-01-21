@@ -1,6 +1,7 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "C: Usuwanie znaków pasujących do wzorca"
+date:                  2024-01-20T17:41:49.365843-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,39 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Usuwanie znaków pasujących do wzoru polega na wykryciu i usunięciu specyficznych znaków z łańcucha tekstu na podstawie określonego wzoru. Programiści używają tej techniki, aby manipulować danymi tekstowymi, np. do czyszczenia danych wejściowych, usuwania niepotrzebnych spacji, etc. 
+## What & Why?
+**Co i Dlaczego?**
 
-## Jak to zrobić:
-Clojure umożliwia usuwanie znaków pasujących do wzoru za pomocą funkcji `clojure.string/replace`. Wzór to najczęściej wyrażenie regularne. 
+Usuwanie znaków pasujących do wzorca to proces eliminowania określonych znaków z ciągów tekstowych. Robimy to, by oczyścić dane, sformatować tekst lub usunąć niepożądane informacje.
+
+## How to:
+**Jak to zrobić:**
 
 ```Clojure
-(require '[clojure.string :as str])
+(defn delete-matching-chars [pattern text]
+  (clojure.string/replace text (re-pattern pattern) ""))
 
-(def text "Ala ma kota, a kot ma Alę.")
-
-(def pattern #",") ; wzór do usunięcia - przecinki 
-
-(def clean-text (str/replace text pattern "")) ; funkcja usuwająca wzór
-
-(println clean-text)
+;; Przykład użycia:
+(let [text "Cześć!## To jest 123 test."]
+  (println (delete-matching-chars "[0-9#]" text)))
+;; Wynik: "Cześć! To jest  test."
 ```
 
-Po uruchomieniu powyższego kodu, wynik jaki otrzymamy to:
+## Deep Dive
+**Wgłębienie:**
 
-```
-Ala ma kota a kot ma Alę.
-```
-Jak widać, wszystkie przecinki zostały usunięte z tekstu.
+W Clojure, tak jak w innych językach programowania, teksty możemy przetwarzać wykorzystując wyrażenia regularne (regex). Wyrażenia te istnieją od wczesnych lat '50, ale Clojure wykorzystuje Java Regex API, które jest młodsze. Usunięcie znaków pasujących do wzorca jest standardową operacją w przetwarzaniu tekstów, zwłaszcza w analizie danych i skryptach. Alternatywy to między innymi operacje filtrowania sekwencji lub użycie bibliotek zewnętrznych dla specyficznych przypadków. Warte odnotowania jest, że `clojure.string/replace` potrafi przyjąć re-pattern jako argument, co ułatwia pracę z regexami w Clojure.
 
-## Głębsze spojrzenie
-Historia technik usuwania znaków pasujących do wzoru sięga początków informatyki. Wyrażenia regularne, które są podstawą tych technik, zostały wprowadzone w latach 50-tych XX wieku.
+## See Also
+**Zobacz również:**
 
-Alternatywą dla użycia `str/replace` może być napisanie własnej funkcji, która przekształca łańcuch wejściowy na sekwencję, przetwarza ją i konwertuje z powrotem na łańcuch. Ale to już bardziej skomplikowane i mniej wydajne rozwiązanie.
-
-Implementacja `str/replace` w Clojure jest oparta o wyrażenia regularne z Javy i metody `java.lang.String.replace`.
-
-## Zobacz również
-- Dokumentacja Clojure [clojure.string/replace](https://clojuredocs.org/clojure.string/replace)
-- Wyrażenia regularne w Javie: [Java Regex](https://docs.oracle.com/javase/tutorial/essential/regex/)
-- O wyrażeniach regularnych na [Wikipedii](https://pl.wikipedia.org/wiki/Wyrażenie_regularne)
+- ClojureDocs, gdzie znajdziesz więcej na temat [`clojure.string/replace`](https://clojuredocs.org/clojure.string/replace)
+- [Java Regex API](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html) - poznaj mechanizmy używane przez Clojure
+- [Clojure from the ground up: regular expressions](https://aphyr.com/posts/305-clojure-from-the-ground-up-regular-expressions) - artykuł wprowadzający w wyrażenia regularne w Clojure

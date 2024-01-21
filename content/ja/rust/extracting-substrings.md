@@ -1,6 +1,7 @@
 ---
 title:                "部分文字列の抽出"
-html_title:           "Lua: 部分文字列の抽出"
+date:                  2024-01-20T17:46:39.826681-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "部分文字列の抽出"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,39 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となんで？
+## What & Why? (何となぜ？)
+文字列から一部を取り出すことを「サブストリング抽出」と言います。データ解析や入力整形の際に、特定の文字列の一部分だけが必要になるからです。
 
-サブストリングの抽出は、大きな文字列から特定の部分を取り出すことです。プログラマーがこれを行うのは、テキストデータの操作や特定の部分の検査・分析が必要なためです。
-
-## どうやる:
-
-以下にRustプログラミング言語でのサブストリングの抽出方法を示します。
-
+## How to: (方法)
 ```Rust
 fn main() {
-    let s = "Hello, world!";
-    let substring = &s[0..5];
-    println!("{}", substring);
+    let text = "こんにちは、Rustの世界へようこそ！";
+    let start = text.char_indices().nth(5).map(|(i, _)| i).unwrap_or(0);
+    let end = text.char_indices().nth(10).map(|(i, _)| i).unwrap_or(text.len());
+    
+    let substring = &text[start..end]; // 5番目から9番目までの文字を抽出
+    println!("{}", substring); // "、Rust"
 }
 ```
-
-出力例
-
-```Rust
-Hello
+出力:
+```
+、Rust
 ```
 
-上記は文字列 'Hello, world!'から最初の5文字 'Hello' を抽出する例です。
+## Deep Dive (深掘り)
+サブストリング抽出の前は、全文を扱うしかなかった。Rustでは`.char_indices()`, `.chars()`などのイテレータを利用してUnicode文字の正しい扱いができます。Rust以外では、異なるライブラリや関数を用いることもあります。Rustでは所有権と借用のシステムにより、サブストリングが元の文字列を参照していることを明確にできるので安全性が保たれます。
 
-## 深掘り：
-
-サブストリングの抽出はコンピューターサイエンスの初期からある概念で、テキスト操作タスクを効率的に行うのに不可欠です。Rustではスライス構文を使ってこの操作を行いますが、他の言語では異なるメソッドが使われることがよくあります。
-
-例えば、Pythonではスライスだけでなく、メソッド `substring()` や正規表現も強力な抽出ツールとして使われます。逆に、Javaでは `substring()` メソッドが主に使われます。
-
-Rustでサブストリングを抽出するためには、指定した範囲のコピーではなく、元の文字列への参照を取得することを理解するのが重要です。これにより、メモリ効率を確保しています。
-
-## 参考になる：
-
-以下に関連するリンクを示します：
-* [Rustでの文字列スライシング](https://doc.rust-lang.org/book/ch08-02-strings.html)
+## See Also (関連情報)
+- [Rust Book on Strings](https://doc.rust-lang.org/book/ch08-02-strings.html)
+- [Rust std::str API](https://doc.rust-lang.org/std/str/)
+- [Rust by Example on Strings](https://doc.rust-lang.org/rust-by-example/std/str.html)

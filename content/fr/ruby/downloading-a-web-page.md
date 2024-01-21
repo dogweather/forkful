@@ -1,7 +1,8 @@
 ---
-title:                "Télécharger une page web"
-html_title:           "Bash: Télécharger une page web"
-simple_title:         "Télécharger une page web"
+title:                "Téléchargement d'une page web"
+date:                  2024-01-20T17:44:32.863658-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Téléchargement d'une page web"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,31 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi et Pourquoi ?
-Télécharger une page web est l'acte de récupérer et de sauvegarder le contenu d'un site web localement sur votre ordinateur. Les programmeurs le font souvent pour analyser les données, tester la disponibilité d'un site, surveiller les changements, et plus encore.
+## What & Why?
+Télécharger une page web, c’est récupérer son contenu via le réseau. Les programmeurs font ça pour analyser des données, tester leur disponibilité, ou automatiser des interactions.
 
-## Comment faire :
-Voici comment télécharger une page Web en Ruby :
+## How to:
+En Ruby, on peut utiliser `net/http` pour télécharger une page web. Simple et direct. Voici un exemple:
 
 ```Ruby
-require 'open-uri'
+require 'net/http'
+require 'uri'
 
-open('https://www.google.com') do |f|
-  File.open('web_page.html', 'w') do |file|
-    file.puts(f.read)
-  end
-end
+url = URI.parse('https://www.example.com')
+response = Net::HTTP.get_response(url)
+
+puts response.body if response.is_a?(Net::HTTPSuccess)
 ```
-Vérifiez le fichier 'web_page.html' généré dans votre répertoire de travail. Vous y verrez la page d'accueil de Google.
 
-## Plongée en profondeur :
-Historiquement, la mécanique du web a été basée sur le protocole HTTP, dont une des fonctions principales est de permettre le téléchargement de pages web. Ruby, grâce à sa bibibliothèque standard 'open-uri', facilite remarquablement cette tâche.
+Et le résultat:
 
-En alternative, vous pouvez aussi utiliser des gemmes comme Nokogiri pour analyser le contenu HTML, ou Typhoeus pour gérer les requêtes HTTP de manière plus détaillée.
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
 
-Une chose à noter : 'open-uri' dans Ruby suit les redirections par défaut. Donc, si le lien que vous avez donné redirige vers une autre URL, open-uri la suivra et téléchargera le contenu de la destination finale.
+## Deep Dive
+Télécharger une page web n'est pas un concept nouveau. Depuis les premiers jours d'Internet, les programmes ont récupéré le contenu des pages pour divers usages comme le web scraping ou la surveillance de contenu.
 
-## Voir aussi:
-- La documentation officielle Ruby sur 'open-uri' : https://ruby-doc.org/stdlib-2.7.0/libdoc/open-uri/rdoc/OpenURI.html
-- Une introduction à Nokogiri : https://www.nokogiri.org/tutorials/getting_started.html
-- Documentation de Typhoeus : https://github.com/typhoeus/typhoeus
+`net/http` est le joyau standard de Ruby pour HTTP. Il est suffisant pour des tâches basiques, mais il y a des alternatives comme `open-uri` pour une interface simplifiée ou des gemmes externes comme `HTTParty` et `RestClient` qui offrent plus de fonctionnalités.
+
+Quand on implémente le téléchargement d’une page, il faut gérer les redirections, les timeouts et les erreurs de réseau. Aussi, respecter le `robots.txt` de sites est crucial si on fait du scraping.
+
+## See Also
+Pour creuser plus:
+- Ruby Doc pour Net::HTTP: [ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html)
+- Documentation pour HTTParty: [github.com/jnunemaker/httparty](https://github.com/jnunemaker/httparty)
+- Documentation pour RestClient: [github.com/rest-client/rest-client](https://github.com/rest-client/rest-client)

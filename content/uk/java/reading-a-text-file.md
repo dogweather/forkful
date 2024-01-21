@@ -1,6 +1,7 @@
 ---
 title:                "Читання текстового файлу"
-html_title:           "Arduino: Читання текстового файлу"
+date:                  2024-01-20T17:54:37.291064-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Читання текстового файлу"
 programming_language: "Java"
 category:             "Java"
@@ -10,56 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке і навіщо?
+## Що і чому?
+Читання текстових файлів — це процес забезпечення доступу до змісту файлів для маніпуляції чи вивчення. Програмісти читають файли, щоб отримати дані, налаштування, скрипти чи шаблони, як основу для подальших обчислень або як частину вводу/виводу програми.
 
-Читання текстового файлу - це процес збору інформації, що зберігається у текстовому форматі з файлу. Програмісти це роблять, щоб маніпулювати даними та використовувати їх в своїх програмах.
-
-## Як це зробити:
-
-У Java є кілька способів роботи з текстовими файлами. Ось два основні приклади:
-
-```Java
-// Метод за допомогою Files
+## Як? 
+```java
 import java.nio.file.*;
+import java.io.IOException;
 
-public class ReadFile {
-  public static void main(String[] args) {
-    Path file = Paths.get("file.txt");
-    try {
-      byte[] data = Files.readAllBytes(file);
-      System.out.println(new String(data));
-    } catch (Exception e) {
-      e.printStackTrace();
+public class FileReaderExample {
+    public static void main(String[] args) {
+        Path path = Paths.get("example.txt");
+        try {
+            String content = Files.readString(path);
+            System.out.println("Файл містить наступний текст:");
+            System.out.println(content);
+        } catch (IOException e) {
+            System.out.println("Помилка при читанні файлу: " + e.getMessage());
+        }
     }
-  }
 }
 ```
-
-```Java
-// Метод за допомогою BufferedReader
-import java.io.*;
-
-public class ReadFile {
-  public static void main(String[] args) {
-    try {
-      BufferedReader reader = new BufferedReader(new FileReader("file.txt"));
-      String line;
-      while((line = reader.readLine()) != null) {
-        System.out.println(line);
-      }
-      reader.close();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-  }
-}
+Вивід:
+```
+Файл містить наступний текст:
+Це приклад тексту у файлі.
 ```
 
-## Поглиблено:
+## Поглиблений розбір
+Читання файлів у Java відбувалось через `FileInputStream` або `BufferedReader`. З появою NIO (New Input/Output) у Java 7, з'явились класи `Path` і `Files`, що спростили процедуру. Крім методу `readString`, існує метод `readAllLines`, який повертає список рядків і корисний для роботи з багаторядковими файлами.
 
-Для читання текстових файлів, Java пропонує ряд інших методів, включаючи Scanner або FileInputStream. Ці класи були розроблені в різний час, як вдосконалення і адаптації до нових вимог та стандартів. Вибір методу залежить від конкретних потреб та вимог вашого проекту.
+Метод `Files.readString` з Java 11 зчитує увесь файл одним викликом, що є простіше і часто швидше, але може споживати більше пам'яті для великих файлів. Для величезних файлів краще використовувати `BufferedReader`, який читає файли частинами.
 
-## Дивіться також:
+Важливими також є питання безпеки та управління ресурсами. Завжди слід перевіряти підозрілі шляхи до файлів і гарантувати, що потоки закриті, щоб уникнути витоку ресурсів.
 
-- [Документація Java SE](https://docs.oracle.com/javase/tutorial/), щоб дізнатися більше про роботу з файлами та стрічками в Java.
-- [Stack Overflow](https://stackoverflow.com/questions/4716503/reading-a-plain-text-file-in-java), тут ви можете знайти корисні обговорення про читання файлів в Java.
+## Також читайте
+- [Docs.oracle.com – Path class](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html)
+- [Docs.oracle.com – Files class](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
+- [Baeldung.com – Reading a File into a String](https://www.baeldung.com/java-read-file)
+- [Stackoverflow – When to use FileReader vs BufferedReader?](https://stackoverflow.com/questions/9648811/specific-difference-between-bufferedreader-and-filereader)

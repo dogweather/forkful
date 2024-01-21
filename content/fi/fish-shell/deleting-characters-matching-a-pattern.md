@@ -1,7 +1,8 @@
 ---
-title:                "Merkkien poistaminen vastaavalla mallilla"
-html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
-simple_title:         "Merkkien poistaminen vastaavalla mallilla"
+title:                "Merkkien poistaminen hakemalla osumia kaavaan"
+date:                  2024-01-20T17:42:26.009400-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,38 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? - Mitä & Miksi?
+Poistamme merkkijonoista kuvioita vastaavat merkit, koska haluamme usein puhdistaa syötteitä, muotoilla tietoja tai tehdä merkkijonokäsittelyä. Esimerkiksi tiedostonimistä voidaan poistaa välilyönnit tai erikoismerkit järjestyksen ja yhtenäisyyden vuoksi.
 
-Poistaminen merkkien mukaan on menetelmä, jolla ohjelmointi kielellä poistetaan merkkejä, jotka vastaavat tiettyä mallia. Ohjelmoijat käyttävät sitä tiedostojen ja koodin siistimiseen tai tärkeiden tietojen erottamiseen.
-
-## Miten Näin:
-
-Voit käyttää Fish Shell -koodia merkkien poistamiseen. Katsotaanpa esimerkkiä:
+## How to: - Miten:
+Käytä `string` komentoa kuvioita vastaavien merkkien poistoon. Tässä esimerkki, jossa poistetaan kaikki pisteet merkkijonosta:
 
 ```Fish Shell
-set muuttuja "Hei, Fish Shell on hauskaa!"
-echo $muuttuja | string replace -r 'Fish Shell' ''
+set sentence "Pisteitä.on.tässä.lauseessa"
+echo $sentence | string replace -a '.' ''
 ```
 
-Tulostuu:
+Tulostus:
+```
+Pisteitäontässälauseessa
+```
+
+Voit myös poistaa useita eri merkkejä käyttämällä regex-syntaksia:
 
 ```Fish Shell
-"Hei,  on hauskaa!"
+set filename "tiedosto_nimi_v1.0.0.txt"
+echo $filename | string replace -ra '[._]' ''
 ```
 
-Tässä esimerkissä 'Fish Shell' -merkkijono poistettiin muuttujasta.
+Tulostus:
+```
+tiedostonimiv100txt
+```
 
-## Syvällisempi Sukellus:
+## Deep Dive - Syväsukellus
+Fish Shell käyttää `string`-työkalua merkkijonon käsittelyyn, mikä tuli mukaan versiossa 2.3.0 ja korvasi monia aiempia, epäjohdonmukaisia tapoja käsitellä merkkijonoja. Se on suoraviivaisempi kuin perinteiset POSIX-työkalut kuten `sed` tai `awk`, koska se on integroitu suoraan kääntäjään.
 
-Fish Shell, syntyi 2005, on yksi nuoremmista Unix-komentotulkeista. Sen ainutlaatuiset ominaisuudet, kuten tehtävien automaattinen täydentäminen ja kattavat toiminnot merkkijonojen käsittelyyn, tekivät siitä suositun.
+Vaihtoehtoja `string`-komennolle ovat `sed` ja `awk`, jotka ovat tehokkaita mutta vaativat enemmän oppimista ja ovat vähemmän selkeästi integroituja Fish-komentotulkin kanssa. Fish Shellin `string`-komennon etu on sen selkeys ja helppokäyttöisyys; ei tarvetta monimutkaisille putkille tai väliaikaistiedostoille.
 
-Vaihtoehtona voit käyttää `sed` tai `awk` Unix-työkaluja, mutta Fish Shell on erittäin mukava työkalu, erityisesti aloittelijoille.
+Suorituskyvyn osalta `string` on yleensä riittävän nopea useimmissa skriptikäyttötapauksissa, vaikkakin `sed` ja `awk` voivat olla nopeampia suurilla datamäärillä. Fish Shell tarjoaa käyttäjäystävällisemmän lähestymistavan, jonka monet arvostavat.
 
-Mallia vastaavien merkkien poistamisen toteutus perustuu säännöllisten lausekkeiden (regex) käsitteeseen. Fish Shell tukee täydellisesti regexiä, mikä tekee koodista tehokkaampaa ja joustavampaa.
-
-## Katso Myös:
-
-1. Fish Shell ohjekirja: https://fishshell.com/docs/current/index.html
-2. Unix Sed-työkalun ohjekirja: https://www.gnu.org/software/sed/manual/sed.html
-3. Unix Awk-työkalun ohjekirja: https://www.gnu.org/software/gawk/manual/gawk.html
-4. Säännöllisten lausekkeiden oppaan: https://www.rexegg.com/regex-quickstart.html
+## See Also - Katso Myös
+- Fish Shellin `string` ohjeet: [https://fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
+- Regex-pohjainen tekstin käsittely: [https://www.regular-expressions.info/](https://www.regular-expressions.info/)
+- Vertailu traditionalisen shell-ohjelmoinnin ja Fish Shellin välillä: [https://fishshell.com/docs/current/tutorial.html#tut_unix](https://fishshell.com/docs/current/tutorial.html#tut_unix)

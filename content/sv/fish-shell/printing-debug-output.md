@@ -1,7 +1,8 @@
 ---
-title:                "Skriva ut felsökningsresultat"
-html_title:           "Fish Shell: Skriva ut felsökningsresultat"
-simple_title:         "Skriva ut felsökningsresultat"
+title:                "Skriva ut felsökningsdata"
+date:                  2024-01-20T17:52:31.212975-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skriva ut felsökningsdata"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -10,32 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Vad & varför?
-Att skriva ut felsökningsdata är en teknik som hjälper programmerare att hitta fel och problem i sin kod. Det gör det möjligt för oss att se vad vårt program gör steg för steg och upptäcka var exakt saker går snett.
+## What & Why?
+Debugutskrifter är små meddelanden kodare infogar för att spåra vad ett program gör. De är superhjälpsamma för att förstå kodens flöde och fixa buggar.
 
-### Så här gör du:
-Här är några exempel på hur man använder `echo` för att skriva ut debugginformation i Fish shell:
+## How to:
+I Fish använder du `echo` eller `printf` för att skriva ut debuginfo. Enkelt och rakt på sak. Här är exempel:
 
 ```Fish Shell
-# Skriv ut en enkel meddelande
-echo "Detta är ett felsökningsmeddelande"
+# Använd echo för att skriva ut en enkel textsträng
+echo "Här börjar vi debugga"
 
-# Skriv ut en variabels värde
-set variabel "Detta är ett värde"
-echo $variabel
+# Lägg till en variabel i debugutskriften
+set var "Hemlig kod"
+echo "Variabelvärdet är: $var"
+
+# Mer avancerat, med printf för formatering
+set nummer 42
+printf "Debug: numret är %d\n" $nummer
 ```
-Och här är vad output ser ut:
+
+Exempel på utskrift:
+
 ```
-Detta är ett felsökningsmeddelande
-Detta är ett värde
+Här börjar vi debugga
+Variabelvärdet är: Hemlig kod
+Debug: numret är 42
 ```
 
-### Djupdykning
-Den `echo` kommando i Fish shell härstammar från Unix operativsystem, och har sedan dess blivit en standardfunktion i de flesta kommandotolkar. Det finns andra alternativ för att skriva ut debugginformation, till exempel `printf` och `write`, men `echo` är det mest använda på grund av sin enkelhet. I Fish shell, kommer `echo` att skriva till den standard output streamen (`stdout`), vilket innebär att utdata kan omdirigeras till filer eller andra program.
+## Deep Dive
+`echo` är det simplaste kommandot och har funnits sedan urminnes tider. Då vi snackar Fish så är syntaxen nästan identisk med andra shells. `printf` däremot är en lite nyare grej som ger mer kontroll över formatet. I Fish är styrkan att man kan göra funktioner för återkommande debugmönster - allt för att göra livet smidigare.
 
-### Se också
-För mer information om `echo`, se Fish shell dokumentation: 
-https://fishshell.com/docs/current/cmds/echo.html
+Alternativ till `echo` och `printf`? Jo, vissa kodare använder verktyg som `stderr` för att separera vanlig output från felsökningsmeddelanden. Så här:
 
-För instruktioner om hur man omdirigerar output till filer eller andra program, se: 
-https://fishshell.com/docs/current/tutorial.html#redirection
+```Fish Shell
+echo "Detta är en vanlig meddelande" 
+echo "Här kommer ett debugmeddelande" >&2
+```
+
+## See Also
+- Fish Shell's officiella dokumentation om 'echo': https://fishshell.com/docs/current/cmds/echo.html
+- En guide till 'printf' i Fish: https://fishshell.com/docs/current/cmds/printf.html
+- Felsökning och debuggens konst: https://fishshell.com/docs/current/index.html#debugging

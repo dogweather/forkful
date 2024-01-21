@@ -1,6 +1,7 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "C++: Porównywanie dwóch dat"
+date:                  2024-01-20T17:32:39.029052-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "C#"
 category:             "C#"
@@ -10,52 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Porównywanie dwóch dat w C# to sprawdzanie, która z dwóch dat jest wcześniejsza, późniejsza lub czy są identyczne. Programiści robią to, aby obsługiwać harmonogramy, terminy płatności, logowanie działalności i inne zadania związane z czasem.
 
-Porównywanie dwóch dat to sprawdzanie, która data jest wcześniejsza, późniejsza lub czy są równe. Programiści robią to na przykład, aby sortować wydarzenia w kolejności chronologicznej.
-
-## Jak to zrobić:
-
-Poniżej znajduje się składnia w języku C# do porównywania dwóch dat. 
-
-Załóżmy, że mamy dwie daty do porównania:
-
+## How to: (Jak to zrobić:)
 ```C#
-DateTime date1 = new DateTime(2021, 3, 1);
-DateTime date2 = new DateTime(2021, 4, 1);
+using System;
+
+class DateComparison
+{
+    static void Main()
+    {
+        DateTime date1 = new DateTime(2023, 3, 14);
+        DateTime date2 = new DateTime(2023, 5, 18);
+
+        int comparison = DateTime.Compare(date1, date2);
+
+        if (comparison < 0)
+            Console.WriteLine($"{date1} is earlier than {date2}");
+        else if (comparison == 0)
+            Console.WriteLine($"{date1} is the same as {date2}");
+        else
+            Console.WriteLine($"{date1} is later than {date2}");
+    }
+}
+
+// Sample output:
+// 2023-03-14 00:00:00 is earlier than 2023-05-18 00:00:00
 ```
 
-Daty porównujemy za pomocą operatorów standardowych (`<`, `<=`, `>` , `>=` , `==` , `!=`).
+## Deep Dive (Głębsze zanurzenie)
+Porównywanie dat sięga korzeni programowania – zarządzanie czasem zawsze było kluczowe. W C#, metoda `DateTime.Compare()` służy do tego celu. Możemy też użyć operatorów porównania (`<`, `>`, `==`). Alternatywą jest `TimeSpan`, jeśli interesuje nas różnica w czasie. Implementacja w .NET jest wierna ISO 8601 w obsłudze dat, co jest międzynarodowym standardem.
 
-```C# 
-if(date1 < date2)
-{
-    Console.WriteLine("date1 jest wcześniejsza niż date2.");
-}
-else if(date1 > date2)
-{
-    Console.WriteLine("date1 jest późniejsza niż date2.");
-}
-else
-{
-    Console.WriteLine("date1 i date2 są równe.");
-}
-```
-
-## Głębszy wgląd:
-
-Porównywanie dat jest podstawowym konceptem, który istnieje od dawna w językach programowania. Historycznie, było to nieco bardziej skomplikowane, ale w dzisiejszych językach, takich jak C#, jest to proste i bezpośrednie. 
-
-Jest wiele sposobów porównywania dat w C#. Poza bezpośrednim używaniem operatorów porównania, możemy również użyć metody `DateTime.Compare()`, co jest przydatne, jeśli chcemy zwrócić wartość liczbową reprezentującą wynik porównania.
-
-```C#
-int result = DateTime.Compare(date1, date2);
-```
-
-Podczas porównywania dwóch dat ważne jest pamiętanie o strefach czasowych. Jeżeli nie są uwzględnione, może to prowadzić do błędów.
-
-## Zobacz również:
-
-Możesz znaleźć więcej informacji na temat pracy z danymi `DateTime` w języku C# w oficjalnej dokumentacji Microsoft: [Dokumentacja C# DateTime](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime?view=net-5.0) 
-
-Aby dowiedzieć się więcej na temat zarządzania strefami czasowymi, zobacz [Dokumentacja C# TimeZoneInfo](https://docs.microsoft.com/pl-pl/dotnet/api/system.timezoneinfo?view=net-5.0).
+## See Also (Zobacz również)
+- MSDN Documentation on DateTime: [https://docs.microsoft.com/en-us/dotnet/api/system.datetime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
+- .NET API DateTime.Compare Method: [https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare)
+- Time Zones in .NET: [https://docs.microsoft.com/en-us/dotnet/standard/datetime/choosing-between-datetime](https://docs.microsoft.com/en-us/dotnet/standard/datetime/choosing-between-datetime)

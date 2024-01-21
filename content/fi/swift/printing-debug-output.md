@@ -1,7 +1,8 @@
 ---
-title:                "Debug-tulosteen tulostaminen"
-html_title:           "Bash: Debug-tulosteen tulostaminen"
-simple_title:         "Debug-tulosteen tulostaminen"
+title:                "Virheenjäljitystulosteiden tulostaminen"
+date:                  2024-01-20T17:53:35.735646-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Virheenjäljitystulosteiden tulostaminen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,48 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Debug-tulostuksen merkitys ja tehtävä Swiftissä
+## What & Why? (Mitä & Miksi?)
+Debug-tuloste auttaa näkemään, mitä ohjelmaasi tapahtuu ajon aikana. Ohjelmoijat käyttävät sitä virheiden etsimiseen ja ohjelman käyttäytymisen ymmärtämiseen.
 
-## Mitä & Miksi?
-
-Debug-tulostus on tietoa, jonka ohjelmanne välittää ymmärtääkseen, miten koodin eri osat suorittavat. Se auttaa nopeuttamaan ongelmanratkaisuprosessia ja tehostaa ohjelman suorituskykyä.
-
-## Kuinka:
-
-Swiftissä `print`-toimintoa käytetään yleisesti tulostamaan debug-tietoja. Alkuperäinen viesti voidaan tulostaa sekä lokiin että konsoliin.
+## How to: (Miten:)
+Swiftissä tulostaminen konsoliin käy `print`-funktiolla. Katsotaan pari esimerkkiä.
 
 ```Swift
-let name = "Jere"
-print("Hello, my name is \(name)")
+// Yksinkertainen tulostus
+print("Hei maailma!")
+
+// Muuttujien yhdistäminen merkkijonoon
+let hedelma = "omena"
+print("Minulla on \(hedelma).")
 ```
 
-Esim. koodin tuloste näyttää tältä:
+Esimerkkien tulostus konsolissa näyttää tältä:
+
+```
+Hei maailma!
+Minulla on omena.
+```
+
+## Deep Dive (Syväsukellus)
+Historiallisesti tulostaminen on ollut perusväline debuggauksessa. Swiftissä `print` on suora tapa päästä käsiksi, mutta on olemassa myös muita keinoja kuten `debugPrint` tai Unified Logging System. `debugPrint` antaa tarkemmat tiedot, ja Unified Logging System sallii eri tasoisten logien merkitsemisen. 
+
+Kun tulostat suuria tietorakenteita, `dump`-funktio voi olla avuksi, koska se näyttää enemmän sisäistä rakennetta. 
 
 ```Swift
-Hello, my name is Jere
+struct Henkilo {
+    let nimi: String
+    let ika: Int
+}
+
+let henkilo = Henkilo(nimi: "Jenna", ika: 28)
+dump(henkilo)
 ```
 
-## Syvempi tutkinta:
+Tulostus antaa sinulle tietorakenteen hierarkisen näkymän:
 
-Historiassa, debug-tulostus alkoi COBOL- ja FORTRAN-kieleillä, jotka sisälsivät löytyjen virheiden tutkintaan tarkoitetut toiminnot. Swiftissä meillä on vielä enemmän hallintaa tulosteen muodossa näkyvien tietojen mukaan.
-
-Vaihtoehtoja debug-tulostukselle ovat esimerkiksi `debugPrint()` ja `dump()`. Ne näyttävät ylimääräisiä yksityiskohtia alustettavissa olevista esineistä.
-
-```Swift
-var array = ["Apple", "Banana", "Cherry"]
-debugPrint(array)
-
-dump(array)
+```
+▿ Henkilo
+  - nimi: "Jenna"
+  - ika: 28
 ```
 
-Ensimmäinen `debugPrint()` tulostaa tutun Swift-kokoelman. Toinen `dump()` paljastaa vieläkin enemmän yksityiskohtia.
-
-## Katso myös:
-
-Lisätietoja debug-tulostuksesta Swiftissä voi löytää seuraavilta sivustoilta:
-
-* [Apple Developer Documentation](https://developer.apple.com/documentation/swift/1541053-print)
-* [Swift by Sundell](https://www.swiftbysundell.com)
-* [Stack Overflow - Swift](https://stackoverflow.com/questions/tagged/swift)
-
-Näec opettelemaan ja koodaamaan!
+## See Also (Katso Myös)
+- Apple Developer Documentation for `print`: <https://developer.apple.com/documentation/swift/1541053-print>
+- Apple's Unified Logging Documentation: <https://developer.apple.com/documentation/os/logging>
+- WWDC video about logging: "Unified Logging and Activity Tracing" <https://developer.apple.com/videos/play/wwdc2016/721/>

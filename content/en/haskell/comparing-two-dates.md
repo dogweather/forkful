@@ -1,6 +1,7 @@
 ---
 title:                "Comparing two dates"
-html_title:           "Arduino recipe: Comparing two dates"
+date:                  2024-01-20T17:32:58.239587-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Comparing two dates"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -12,42 +13,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-In a nutshell, comparing two dates is figuring out whether one given date is earlier, later, or the same as another. As programmers, we often need this to sequence events, calculate time intervals, or trigger time-based actions in software.
-  
+Comparing two dates means judging which one's earlier, later, or if they're the same moment in time. Programmers do it to sort events, figure out durations, and manage time-dependent logic.
+
 ## How to:
 
-To compare dates in Haskell, we use the `Data.Time` library. Here's a basic example:
+Haskell, quietly known for its purity, needs you to talk date-talk with the right libraries. Let's use `Data.Time`.
 
-```Haskell
-import Data.Time.Clock
-import Data.Time.Calendar
+```haskell
+import Data.Time
 
+-- Define two dates
+date1 :: UTCTime
+date1 = UTCTime (fromGregorian 2023 4 1) (secondsToDiffTime 0)
+
+date2 :: UTCTime
+date2 = UTCTime (fromGregorian 2024 4 2) (secondsToDiffTime 3600)
+
+-- Compare the dates
+compareDates :: UTCTime -> UTCTime -> Ordering
+compareDates = compare
+
+main :: IO ()
 main = do
-    let date1 = fromGregorian 2020 1 1
-        date2 = fromGregorian 2021 1 1
-    print (compare date1 date2)
+    print $ date1 `compareDates` date2 -- Output will be LT
+    print $ date2 `compareDates` date1 -- Output will be GT
+    print $ date1 `compareDates` date1 -- Output will be EQ
 ```
 
-The `compare` function will simply return a value of type `Ordering`, which can be `LT`, `EQ`, `GT` meaning less than, equal, or greater than respectively.
-
-When you run the above code, you will see: 
-
-```Haskell
-LT
-```
-
-This means `date1` (1 Jan 2020) is earlier than `date2` (1 Jan 2021).
+Straightforward, right? `LT` for less than, `GT` for greater than, and `EQ` for equal.
 
 ## Deep Dive
 
-Historically, time-and-date manipulation has been an important, though occasionally underestimated, part of programming. From the early days of UNIX timed scheduling to modern-day e-commerce sales ending at midnight, time matters.
+Back in the day, Haskell's time handling wasn't as slick. We owe our current comforts to the `Data.Time` library progression over the years. It gives us `UTCTime`, a happily unambiguous point in time.
 
-There are alternatives to the Haskell's `Data.Time` library, like the older `calendarTime`, but `Data.Time` is more comprehensive and favored in modern use.
+Alternatives? Sure. You might find `Data.Time.Calendar` and `Data.Time.Clock` useful for specific scenarios. There's also the old `time` library for those feeling nostalgic or stuck with legacy code.
 
-The `compare` function is actually part of the `Ord` class in Haskell, common to all data types that are "order-able". It's implemented by converting the dates to Julian Day Numbers (a continuous count of days since the beginning of the Julian Period). It's Haskell's under-the-hood way of conveniently telling which day came first.
+Now, the nitty-gritty: Comparing dates in Haskell hinges on `UTCTime` which pairs a day (`Day`) and a time (`DiffTime` or `NominalDiffTime`). It's the `compare` function doing the heavy lifting, a neat member of the `Ord` class, letting us use `>, <, ==` and more. Just remember Haskell loves its type safety. Ensure you're always comparing apples with apples, or in our case, `UTCTime` with `UTCTime`.
 
 ## See Also
 
-For more about the `Data.Time` library, check out the [Haskell Library Documentation](https://hackage.haskell.org/package/time). 
-
-If the default `compare` function doesn’t fit, you may want to create a custom comparison function. [Haskell Documentation on Ord](https://learn.haskell.org/doc/classes/03.html) will help. Finally, for historical perspectives, this [Computer History Page on Time](http://www.computerhistory.org/fellowawards/hall/time/) is worth a visit.
+Dive deeper or find help with these:
+- [`Data.Time` package on Hackage](https://hackage.haskell.org/package/time-1.11/docs/Data-Time.html)
+- [Learn You a Haskell for Great Good! – For a gentle introduction](http://learnyouahaskell.com/)
+- [Stack Overflow for real-world problem solving](https://stackoverflow.com/questions/tagged/haskell+time)

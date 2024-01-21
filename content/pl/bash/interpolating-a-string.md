@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:50:20.262992-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,33 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-
-Interpolacja łańcuchów to metoda wstawiania wartości zmiennych do łańcuchów tekstowych. Programiści używają jej, aby stworzyć dynamiczne wiadomości czy instrukcje.  
+## Co i Dlaczego?
+Interpolacja stringów to wstawianie wartości zmiennych do łańcucha tekstowego. Programiści robią to, żeby dynamicznie tworzyć tekst, na przykład wiadomości czy komendy.
 
 ## Jak to zrobić:
-
-W Bashu zmienną interpolujemy umieszczając ją w nawiasach klamrowych po znaku dolara. Na przykład:
-
 ```Bash
-imie="Jan"
-echo "Cześć, ${imie}"
+# Define a variable
+user="Janek"
+
+# Interpolate variable in a string
+echo "Witaj, $user!"
+
+# Sample output
+Witaj, Janek!
 ```
 
-Wyjście:
+Użyj podwójnych cudzysłowów, by interpolacja zadziałała. W pojedynczych cudzysłowach tekst zostanie wyświetlony dosłownie.
+
+## Dogłębniej:
+Interpolacja stringów w Bashu to standard od lat. Alternatywą jest składnia `printf`, która jest bardziej skomplikowana, ale oferuje większą kontrolę nad formatem:
 
 ```Bash
-Cześć, Jan
+# Using printf
+printf "Witaj, %s!\n" "$user"
 ```
 
-## Pogłębienie:
+Interpolacja wykorzystuje mechanizm nazwany "parameter expansion", co pozwala na różne operacje na zmiennych podczas interpolacji – na przykład ustawianie wartości domyślnych.
 
-Interpolacja łańcuchów jest powszechna w wielu językach programowania. Jako jedna z podstawowych operacji na łańcuchach, jest z nami od dawna. Alternatywą dla interpolacji jest konkatenacja, ale jest mniej czytelna i zależna od kontekstu.
-
-Główne różnice w implementacji między językami są składniowe. Np. Python używa f-stringi, JavaScript - template strings. Bash zaś korzysta ze znaku dolara i nawiasów klamrowych.
-
-## Zobacz także:
-
-- Bash: String Manipulations (https://tldp.org/LDP/abs/html/string-manipulation.html)
-- Practical Bash Programming (https://www.tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc7)
-- StackOverflow: What is string interpolation in Bash? (https://stackoverflow.com/questions/415677/how-to-replace-placeholders-in-a-text-file)
+## Zobacz też:
+- [Bash Parameter Expansion](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion)
+- [Bash String Manipulation](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
+- [Advanced Bash-Scripting Guide](https://www.tldp.org/LDP/abs/html/)

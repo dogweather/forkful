@@ -1,6 +1,7 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "C++: הורדת דף אינטרנט"
+date:                  2024-01-20T17:44:12.576605-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,35 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+להוריד דף אינטרנט זה פשוט לחלץ את התוכן שלו באופן תכנותי. תכניתנים עושים את זה כדי לעבד את המידע, לגרד נתונים, או לבצע בדיקות אוטומטיות.
 
-הורדת דף אינטרנט היא התהליך שבו המחשב מאחזר נתונים מהשרת ומאחסנו במקום מקומי. התכנתים מתעסקים בזה כדי לנתח נתונים, לבצע בדיקות מכנות, או לשמור עותק מקומי של הדף.
+## איך לעשות:
+אנו נשתמש בספריית HTTPoison לשליחת בקשת GET וקבלת תוכן האתר.
 
-## איך?
-
-שניתן להשתמש בHTTPoison בשפת התכנות Elixir כדי להוריד דף אינטרנט:
-
-```Elixir
-defmodule Downloader do
+```elixir
+defmodule PageDownloader do
   def download(url) do
     case HTTPoison.get(url) do
-      {:ok, response} ->
-        IO.puts("download successful")
-        {:ok, response.body}
-      {:error, reason} -> 
-        IO.puts("download failed")
+      {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
+        {:ok, body}
+      {:ok, %HTTPoison.Response{status_code: status_code}} ->
+        {:error, "Failed with status code #{status_code}"}
+      {:error, %HTTPoison.Error{reason: reason}} ->
         {:error, reason}
     end
   end
 end
+
+# שימוש במודול:
+{:ok, content} = PageDownloader.download("http://example.com")
 ```
 
-בדוגמה הזו, `HTTPoison.get(url)` יחזיר אחת משני האפשרויות- התגובה של השרת או שגיאה.
+תוצאת הדוגמה:
+```
+<i>תוכן של דף http://example.com...</i>
+```
 
-## עומק הנושא
+## צלילה לעומק:
+לפני HTTPoison, תכניתנים השתמשו ב-HTTP ספריות כמו ibrowse ו-httpc (מובנה ב-Erlang). ב-HTTPoison משתמשים בספרייה של Hackney, שמספק תמיכה טובה בהתחברויות מרובות וניתוח שגיאות. חלופות נוספות כוללות ספריות כמו Tesla ו-HTTPotion.
 
-יכול להיות ששמעת ששפת Elixir משתמשת ב-HTTPoison במקום בספרייה אחרת. זו קבלה תכליתית שהפעילה את הקהל המתכנת החדש ל־Elixir. ספריות אחרות, כמו HTTPotion או HTTPipe, קיימות אך לא פופולאריות כך שקשה יותר למצוא תמיכה או קוד דוגמה עבורן.
+בחירה ב-HTTPoison נבעת מן הפופולריות שלה, הקלות שבשימוש וההתממשקות הידידותית למתכנת. זה חשוב לזכור שעל מנת להשתמש ב-HTTPoison, צריך להוסיף אותה כתלות בקובץ `mix.exs`.
 
-## לעיון נוסף
-
-רוצה ללמוד יותר על HTTPoison? נסה את [הדוקומנטציה הרשמית](https://hexdocs.pm/httpoison/readme.html).
-נערך כבר לשפת Elixir? התחל [כאן](https://elixir-lang.org/getting-started/introduction.html). להם גם פורום תמיכה מצוין [Elixir Forum](https://elixirforum.com).
+## ראו גם:
+- מסמכי HTTPoison: https://hexdocs.pm/httpoison
+- Hackney GitHub: https://github.com/benoitc/hackney
+- רשימת ספריות שימושיות נוספות ל-Elixir: https://github.com/h4cc/awesome-elixir

@@ -1,7 +1,8 @@
 ---
-title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
-html_title:           "PowerShell: Berechnung eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "Berechnung eines zukünftigen oder vergangenen Datums"
+date:                  2024-01-20T17:31:41.411313-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -11,56 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Berechnen eines zukünftigen oder vergangenen Datums in PowerShell bedeutet einfach, bestimmte Zeitspannen zu einem existierenden Datum hinzuzufügen oder davon zu subtrahieren. Programmierer verwenden diese Funktion für Aufgaben wie Fälligkeitsberechnungen, Zeitmessungen und Planungen.
 
-Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist das Erstellen eines Datums abhängig von der aktuellen Zeit plus oder minus eine bestimmte Zeitspanne. Entwickler tun dies oft, um Zeitintervalle zu handhaben, Erinnerungen und Benachrichtigungen zu programmieren oder Terminplanungs-Tools zu erstellen.
-
-## Wie geht das:
-
-In PowerShell ist dieses Thema dank zweier Hauptbefehle recht einfach: `Get-Date` (erhalten Sie das aktuelle Datum) und `AddDays` (fügen Sie eine bestimmte Anzahl von Tagen hinzu). Hier ist ein einfaches Beispiel:
+## So geht's:
+```PowerShell
+# Datum in der Zukunft berechnen
+$heute = Get-Date
+$zukunft = $heute.AddDays(10)
+$zukunft.ToString("dd.MM.yyyy")
+```
+Ausgabe: `19.04.2023` (angenommen, heute ist der 9. April 2023)
 
 ```PowerShell
-# Aktuelles Datum bekommen
-$myDate = Get-date
-
-# 10 Tage in die Zukunft gehen
-$myFutureDate = $myDate.AddDays(10)
-
-# Ausgabe
-$myFutureDate
+# Datum in der Vergangenheit berechnen
+$vergangenheit = $heute.AddDays(-10)
+$vergangenheit.ToString("dd.MM.yyyy")
 ```
+Ausgabe: `30.03.2023`
 
-Nachdem Sie dieses Skript ausgeführt haben, würden Sie eine Ausgabe ähnlich dieser erwarten: 
+## Deep Dive:
+PowerShell verwendet das `[DateTime]`-Objekt, um mit Daten und Zeiten zu arbeiten. Diese Funktionalität gibt es schon seit den Anfangstagen von .NET. Alternativen zur `AddDays`-Methode sind zum Beispiel `AddMonths`, `AddYears`, `AddHours` usw., je nach Bedarf. 
 
-```PowerShell
-Donnerstag, 25. November 2021 10:00:00
-```
+Die Methoden sind Teil der .NET-Klassenbibliothek und wurden für PowerShell angepasst, was die Sprache besonders mächtig für solche Operationen macht. Hinter den Kulissen arbeiten diese Methoden mit Ticks, die kleinste Zeitmessung in .NET, die 100 Nanosekunden entspricht. Das macht Berechnungen sehr präzise.
 
-Für die Vergangenheit verwenden Sie einfach eine negative Zahl:
-
-```PowerShell
-# 10 Tage in die Vergangenheit gehen
-$myPastDate = $myDate.AddDays(-10)
-
-# Ausgabe
-$myPastDate
-```
-
-Das würde ähnlich aussehen:
-
-```PowerShell
-Sonntag, 5. November 2021 10:00:00
-```
-
-## Tiefer eintauchen:
-
-Diese Methode zum Berechnen von Daten ist tief in den `DateTime`-Typen von PowerShell verankert, die selbst auf den .NET Framework `DateTime`-Typen basieren. Alternativen zu `AddDays` könnten `AddHours`, `AddMinutes`, `AddMonths` etc. sein, je nach Bedarf. 
-
-Es ist wichtig zu beachten, dass diese Methoden immer eine neue `DateTime`-Instanz zurückgeben und das ursprüngliche `DateTime`-Objekt unverändert bleibt. Dies ist auf die Unveränderlichkeit der `DateTime`-Struktur im .NET Framework zurückzuführen.
-
-## Mehr dazu:
-
-Für zusätzliche Ressourcen und vertiefte Informationen könnten Sie folgende Links nützlich finden:
-
-1. Offizielle Dokumentation für `Get-Date`: https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.utility/get-date
-2. Offizielle Dokumentation für `DateTime`: https://docs.microsoft.com/de-de/dotnet/api/system.datetime
-3. Weitere Informationen zu `DateTime`-Metoden: https://docs.microsoft.com/de-de/dotnet/api/system.datetime.adddays
+## See Also:
+- [Microsoft-Dokumentation zur .NET DateTime-Klasse](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-7.0)

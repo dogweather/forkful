@@ -1,7 +1,8 @@
 ---
-title:                "Interpolando una cadena de texto"
-html_title:           "Haskell: Interpolando una cadena de texto"
-simple_title:         "Interpolando una cadena de texto"
+title:                "Interpolación de cadenas de texto"
+date:                  2024-01-20T17:51:36.864913-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolación de cadenas de texto"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,53 +11,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# La Interpolación de Cadenas en Rust: Una guía esencial
+## Qué & Por Qué?
 
-## ¿Qué y por qué?
+La interpolación de cadenas nos permite infundir variables dentro de un texto, creando así una cadena personalizada en tiempo de ejecución. Los programadores la usan para construir mensajes dinámicos, combinando datos variables con texto estático de una manera legible y eficiente.
 
-Interpolar una cadena es el proceso de insertar variables dentro de una cadena. Los programadores lo hacen para maniobrar y presentar datos de manera más organizada y intuitiva.
+## Cómo hacerlo:
 
-## ¿Cómo hacerlo?
-
-Puedes hacerlo de dos formas: directa y por formato.
-
-**Directa:**
+En Rust, interpolamos cadenas con la macros `format!`, `print!` o `println!`, donde las variables se incluyen dentro de llaves `{}`. Aquí hay un ejemplo simple:
 
 ```Rust
-let name = "Pablo";
-let greeting = format!("Hola, {}", name);
-println!("{}", greeting);   
+fn main() {
+    let animal = "gato";
+    let patas = 4;
+    let mensaje = format!("El {} tiene {} patas.", animal, patas);
+    println!("{}", mensaje);
+}
 ```
 
-**Salida:**
+Salida esperada:
 
 ```
-Hola, Pablo
+El gato tiene 4 patas.
 ```
 
-**Por formato:**
+También puedes usar interpolación directamente con `println!`:
 
 ```Rust
-let name = "Pablo";
-println!("Hola, {}", name);
+fn main() {
+    let comida = "empanadas";
+    let cantidad = 12;
+    println!("Hay {} {} en la mesa.", cantidad, comida);
+}
 ```
 
-**Salida:**
+Salida esperada:
 
 ```
-Hola, Pablo
+Hay 12 empanadas en la mesa.
 ```
 
-## Análisis en profundidad
+## Deep Dive
 
-Interpolar cadenas ha sido una característica predilecta en lenguajes de programación por su practicidad. Rust adopta una aproximación más segura, evitando concatenar cadenas de manera directa y favoreciendo el uso de `format!()` y `println!()`.
+En otros lenguajes, como Python o Ruby, la interpolación de cadenas suele ser más directa, con sintaxis incorporada como `#{variable}` o `f"{variable}"`. Rust opta por una aproximación más explícita con sus macros para evitar errores en tiempo de compilación y mantener la seguridad en el manejo de memoria que caracteriza al lenguaje.
 
-Podrías concatenar cadenas manualmente, pero no es recomendable. La eficiencia y la claridad del código pueden sufrir, además de introducir posibles errores.
+Otra alternativa en Rust es la concatenación de cadenas, pero es menos eficiente y más propensa a errores que la interpolación:
 
-Rust trata las cadenas de forma diferente a otros lenguajes. Las cadenas son tipos de datos que se almacenan en la memoria de "heap", y son inmutables.
+```Rust
+fn main() {
+    let adjetivo = "rápido";
+    let objeto = "tren";
+    let frase = "El ".to_owned() + adjetivo + " " + objeto + " va full.";
+    println!("{}", frase);
+}
+```
 
-## Ver también
+Sin embargo, la interpolación de cadenas con `format!` o `println!` es la forma recomendada porque es más limpia y fácil de leer. Además, permite formateo avanzado, como especificar ancho, precisión y alineación.
 
-- Manual de Rust para formatos en cadena: https://doc.rust-lang.org/std/fmt/
-- Discusión en profundidad sobre cadenas en Rust:  https://www.ameyalokare.com/rust/2017/10/12/rust-str-vs-String.html
-- Documentación oficial de Rust:  https://doc.rust-lang.org/book/
+## See Also
+
+- Documentación oficial de Rust sobre `std::fmt`: [https://doc.rust-lang.org/stable/std/fmt/](https://doc.rust-lang.org/stable/std/fmt/)
+- Rust by Example - Formatted print: [https://doc.rust-lang.org/rust-by-example/hello/print.html](https://doc.rust-lang.org/rust-by-example/hello/print.html)
+- The Rust Programming Language - Display and Debug: [https://doc.rust-lang.org/book/ch05-02-example-structs.html#adding-useful-functionality-with-derived-traits](https://doc.rust-lang.org/book/ch05-02-example-structs.html#adding-useful-functionality-with-derived-traits)

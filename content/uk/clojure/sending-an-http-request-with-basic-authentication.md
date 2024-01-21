@@ -1,7 +1,8 @@
 ---
-title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
-html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
-simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+date:                  2024-01-20T18:01:19.623118-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,34 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та чому?
-
-Надсилання HTTP-запиту із базовою аутентифікацією — це процес автентифікації користувача за допомогою його логіну та паролю у вигляді HTTP-запиту. Це запобігає несанкціонованому доступу до ресурсів сервера.
+## Що і Чому?
+Відправлення HTTP-запитів із базовою аутентифікацією — це спосіб передачі логіна і паролю на сервер для віріфікації. Програмісти використовують це для доступу до захищених ресурсів.
 
 ## Як це зробити:
-
-Clojure пропонує потужну бібліотеку — clj-http — для роботи з HTTP. Щоб надіслати запит із базовою аутентифікацією, скористайтеся наступним кодом:
+Clojure має бібліотеки, які спрощують HTTP запити. Ось як відправити такий запит із базовою аутентифікацією, використовуючи бібліотеку `clj-http`.
 
 ```Clojure
 (require '[clj-http.client :as client])
 
-(let [{:keys [status body]} (client/get "http://your-website.com" {:basic-auth ["username" "password"]})]
-  (println status)
-  (println body))
+(defn fetch-protected-resource [url username password]
+  (let [auth-str (str username ":" password)
+        encoded-auth-str (-> auth-str (.getBytes) java.util.Base64/getEncoder (.encodeToString))]
+    (client/get url {:headers {"Authorization" (str "Basic " encoded-auth-str)}})))
+
+;; Приклад використання:
+(println (fetch-protected-resource "http://example.com/protected" "myUsername" "myPassword"))
 ```
 
-В результаті виведеться статус та тіло відповіді сервера.
+Ця функція кодує логін і пароль в Base64 і вставляє їх у заголовок `Authorization`.
 
-## Поглиблений аналіз:
+## Глибше Занурення:
+Базова аутентифікація (`Basic Auth`) — старий, простий метод аутентифікації через HTTP. Ім'я користувача та пароль поєднують, кодують за допомогою Base64, і передають у заголовку `Authorization`. Його легко використати, але він не є найбезпечнішим методом, оскільки дані можна розкодувати. HTTPS мінімізує ризик.
 
-1. Історія: Стандарт HTTP Basic Authentication був вперше описаний в RFC 1945 у 1996 році, але з тих пір його значно модернізували.
+Альтернативи базовій аутентифікації включають OAuth, API ключі, токени тощо. Ці методи забезпечують додаткові рівні безпеки і часто використовуються для сучасних API.
 
-2. Альтернативи: OAuth — це сучасний стандарт, який надає більше гнучкості і безпеки порівняно з базовою аутентифікацією.
+У Clojure та інших мовах програмування є багато бібліотек для відправки HTTP запитів. `clj-http` проста в користуванні і добре інтегрується з Clojure проектами. Ви напряму працюєте з заголовками, вмістом запитів, і параметрами — це дає можливість гнучко налаштовувати свої HTTP запити.
 
-3. Деталі виконання: Clojure використовує Java-бібліотеку Apache HttpComponents для низькорівневої реалізації HTTP-запитів.
-
-## Додатково:
-
-1. [Документація проікту clj-http.](https://github.com/dakrone/clj-http)
-2. [Огляд різних типів аутентифікації в HTTP.](https://developer.mozilla.org/uk/docs/Web/HTTP/Authentication)
-3. [RFC 1945: Hypertext Transfer Protocol -- HTTP/1.0](https://datatracker.ietf.org/doc/html/rfc1945)
+## Дивись також:
+- [clj-http GitHub Repository](https://github.com/dakrone/clj-http) - бібліотека clj-http.
+- [HTTP Basic Auth](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme) - MDN веб-документація по базовій аутентифікації.
+- [ClojureDocs](https://clojuredocs.org/) - офіційна документація Clojure з прикладами від спільноти.

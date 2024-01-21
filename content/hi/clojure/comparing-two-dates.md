@@ -1,6 +1,7 @@
 ---
 title:                "दो तारीखों की तुलना"
-html_title:           "Elixir: दो तारीखों की तुलना"
+date:                  2024-01-20T17:33:58.113249-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "दो तारीखों की तुलना"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,34 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों? (What & Why?)
+तिथियों की तुलना यानी दो तिथियाँ का अंतर निकालना। यह जानने के लिए किया जाता है कि दो घटनाएँ कितना समय अलग हैं। यह उन मामलों में उपयोगी है जैसे कि अवधि की गणना, उम्र निर्धारण या समय-सीमा जाँच।
 
-तारीखों की तुलना उन दिनांकों को तुलनात्मक गणना के द्वारा मुद्दे पर निर्धारित करने की प्रक्रिया है। प्रोग्रामर्स इसे कार्य प्रवाह में निर्णय लेने और डेटा की मान्यता सत्यापित करने के लिए करते हैं।
-
-## कैसे (How to)
+## कैसे करें: (How to)
+Clojure में तिथियों का तुलना clj-time लाइब्रेरी का उपयोग करके करते हैं:
 
 ```Clojure
-(require '[clj-time.core :as t])
-(require '[clj-time.coerce :as c])
+(require '[clj-time.core :as time])
+(require '[clj-time.coerce :as coerce])
 
-(def d1 (t/date-time 2020 12 31)) 
-(def d2 (t/date-time 2021 1 1)) 
+; दो तिथियाँ बनाये
+(def date1 (coerce/to-date-time "2023-01-01T12:00:00.000Z"))
+(def date2 (coerce/to-date-time "2023-01-02T12:00:00.000Z"))
 
-(println (< (c/to-long d1) (c/to-long d2))) ; will print true
+; अंतर निकालें
+(def duration (time/interval date1 date2))
+
+; अंतर को दिनों में प्राप्त करें
+(time/in-days duration)
 ```
 
-इसमें, हमने पहली और दूसरी तारीख की तुलना कर रहे हैं। Output में "true" इसका परिणाम है, जिसका अर्थ है कि d1 वास्तव में d2 से पहले है। 
+उपरोक्त कोड के सैंपल आउटपुट कुछ ऐसा होगा:
+```
+1
+```
 
-## गहराई में (Deep Dive)
+## गहन जानकारी (Deep Dive)
+Clojure में तिथियों की तुलना का इतिहास JVM के जोडा-टाइम से जुड़ा हुआ है, जिसे बाद में java.time पैकेज ने ले लिया। clj-time लाइब्रेरी का उपयोग कर डेवलपर्स आसानी से तिथियों के अंतर को नाप सकते हैं। विकल्प के रूप में, java.time पैकेज को सीधे Clojure में भी इस्तेमाल किया जा सकता है। इंप्लिमेंटेशन की बात करें तो, प्रदर्शन और सटीकता के लिहाज़ से यह काफी भरोसेमंद है। तिथियों की तुलना जटिल हो सकती है क्योंकि टाइम जोन्स, डेलाइट सेविंग, और लीप वर्ष जैसे पहलुओं को संभालना पड़ता है।
 
-Clojure में दिनांकों की तुलना विभिन्न पुस्तकालयों का उपयोग करती है, जैसे कि clj-time, जो Joda-Time पुस्तकालय पर निर्भर करती है। इसका इतिहास संज्ञान जावा की तारीख और समय APIs की कोमलताओं से उत्पन्न हुआ। 
-
-विकल्प रूप में, आप java.time पुस्तकालय का उपयोग कर सकते हैं, जिसे Clojure के लिए java-time पुस्तकालय में लपेटा गया है। 
-
-तारीखों की तुलना के लोजिक के विवरण के लिए, यहाँ उपयोग हो रही है `to-long` फ़ंक्शन जो कि epoch मिलिसेकंड्स में तारीख का प्रतिनिधित्व करता है, और उसके बाद सामान्य संख्या तुलना लोजिक का उपयोग करता है।
-
-## और भी (See Also)
-
-यहां कुछ अन्य स्रोत हैं जिन्हें आप देख सकते हैं: 
-
-- [clj-time पुस्तकालय](https://github.com/clj-time/clj-time)
-- [java-time पुस्तकालय](https://github.com/dm3/clojure.java-time)
+## और भी जानें (See Also)
+- clj-time GitHub repository: [clj-time GitHub](https://github.com/clj-time/clj-time)
+- Clojure official documentation: [Clojure Docs](https://clojure.org/api/api)
+- Java.time package guide: [Java.time guide](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

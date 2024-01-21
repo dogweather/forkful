@@ -1,7 +1,8 @@
 ---
-title:                "Lendo argumentos de linha de comando"
-html_title:           "Arduino: Lendo argumentos de linha de comando"
-simple_title:         "Lendo argumentos de linha de comando"
+title:                "Lendo argumentos da linha de comando"
+date:                  2024-01-20T17:56:36.425983-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,48 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Lidando com Argumentos da Linha de Comando em PowerShell
+## O Que & Porquê?
+Argumentos de linha de comando são informações que você passa para o seu script quando o executa. Programadores usam isso para tornar os scripts mais flexíveis e adaptáveis dependendo da entrada do usuário ou de outros programas.
 
-## O Que & Por Quê?
-
-Os argumentos da linha de comando são parâmetros adicionais que você passa para um script PowerShell na linha de comando. Eles são úteis para personalizar o comportamento de um script sem ter que modificá-lo.
-
-## Como:
-
-Para capturar argumentos da linha de comando em PowerShell, você pode usar a variável automática `$args`, que é um array de argumentos não reconhecidos pelo PowerShell. Aqui está um exemplo simples:
-
+## Como Fazer:
 ```PowerShell
-#Test-Script.ps1
+# Exemplo de script.ps1 que lê argumentos de linha de comando
 param (
-  $PrimeiroNome,
-  $Sobrenome
+    [String]$nome,
+    [Int]$idade
 )
 
-Write-Output "Olá $PrimeiroNome $Sobrenome!"
-```
+Write-Host "Olá, $nome! Você tem $idade anos de idade."
 
-Você pode invocar este script usando:
+# Exemplo de uso na linha de comando:
+# .\script.ps1 -nome "João" -idade 30
 
-```PowerShell
-.\Test-Script.ps1 -PrimeiroNome "João" -Sobrenome "Silva"
-```
-
-O script irá imprimir:
-
-```PowerShell
-Olá João Silva!
+# Saída esperada no console:
+# Olá, João! Você tem 30 anos de idade.
 ```
 
 ## Mergulho Profundo
+Os argumentos de linha de comando existem desde os primeiros dias das interfaces de texto, uma forma de passar informações adicionais aos programas que estão iniciando. No PowerShell, `param` é usado para definir os parâmetros que você quer aceitar. Alternativas incluem o uso direto da variável automática `$args`, que é um array que contém todos os argumentos de linha de comando não associados a um parâmetro nomeado. Quanto à implementação, trabalhar com argumentos de linha de comando é essencial para permitir a integração e automação de scripts com sistemas mais amplos e tarefas de rotina.
 
-O uso de argumentos na linha de comando remonta à era dos sistemas operacionais baseados em texto, quando o usuário interagia com o computador principalmente por meio de comandos de texto.
-
-Os argumentos podem ser usados para passar informações tanto para o script PowerShell quanto para os comandos dentro do script. Eles também permitem scripts dinâmicos, tornando-os mais reutilizáveis.
-
-A alternativa ao uso de `$args` seria definir variáveis diretamente dentro do script, mas isso tira a flexibilidade de alterar o comportamento do script sem ter que editá-lo.
-
-Tenha isso em mente ao usar `$args`: ele ignora argumentos que são reconhecidos, ou seja, se sua função ou script tem um parâmetro chamado 'PrimeiroNome', e você passa esse parâmetro na linha de comando, ele não aparecerá no `$args`.
-
-## Veja Também
-
-* Tutorial de vídeo: [PowerShell e Argumentos da Linha de Comando](https://www.youtube.com/watch?v=8uAo8X00Q9o)
+## Ver Também
+- [Documentação oficial do PowerShell](https://docs.microsoft.com/pt-br/powershell/)
+- [Guia de scripting do PowerShell para iniciantes](https://docs.microsoft.com/pt-br/powershell/scripting/learn/ps101/00-introduction?view=powershell-7.1)

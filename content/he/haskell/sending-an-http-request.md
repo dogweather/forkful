@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http"
-html_title:           "Bash: שליחת בקשת http"
-simple_title:         "שליחת בקשת http"
+title:                "שליחת בקשת HTTP"
+date:                  2024-01-20T18:00:30.992927-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,31 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה & למה?
-שליחת בקשת HTTP היא פעולה שבה המחשב שלך מבקש מידע או שינוי משרת אינטרנט. מתכנתים עושים זאת כדי לאפשר לאפליקציה שלהם להתכתב עם שאר הרשת.
+## מה ולמה?
+שליחת בקשת HTTP היא דרך לבקש מידע או לבצע פעולה משרת באינטרנט. מתכנתים עושים זאת לשליפת נתונים, לאינטראקציה עם API, ולשורת פעולות אוטומטית בין שרתים.
 
-## כיצד ל:
-באמצעות מעטפת HTTP Simple, אתה יכול לשלוח בקשות HTTP בפשטות:
-
+## איך לעשות:
 ```Haskell
-ghci> import Network.HTTP.Simple -- ייבא את המעטפת
+-- נבצע התקנה של ספריית 'http-conduit' בעזרת cabal:
+-- cabal install http-conduit
 
-ghci> let request = "http://httpbin.org/get?key=value" -- הגדרת הבקשה
+{-# LANGUAGE OverloadedStrings #-}
+import Network.HTTP.Simple
 
-ghci> response <- httpJSON $ parseRequest_ request -- שולחת את הבקשה ומבצעת פענוח JSON
-
-ghci> print $ getResponseBody response -- הדפסת התגובה
+-- דוגמא לשליחת בקשת GET
+main :: IO ()
+main = do
+    response <- httpLBS "http://httpbin.org/get"
+    putStrLn $ "סטטוס: " ++ show (getResponseStatusCode response)
+    putStrLn $ "תוכן תשובה: " ++ show (getResponseBody response)
 ```
 
-פלט דוגמה:
+הרצת הקוד הזה תחזיר מצב תגובה (כגון 200 לתגובה מוצלחת) ואת התוכן עצמו - בדרך כלל בפורמט JSON או HTML.
 
-```Haskell
-("/{\"url\":\"http://httpbin.org/get?key=value\",\"headers\": ... ,\"args\":{\"key\":\"value\"}}")
-```
+## הבטן העמוק:
+שליחת בקשת HTTP ב-Haskell לא הייתה תמיד כל כך פשוטה. בעבר, נדרשו יותר שורות קוד והבנה טכנית גבוהה יותר. כיום, ספריות כמו `http-conduit` מספקות ממשק נקי ומקוצר לביצוע בקשות.
 
-## צלילה עמוקה:
-אחרי שחרור Haskell בשנת 1990, אנשים התחילו להשתמש בקוד HTTP המותאם אישית, אך בגלל הקשיים עם אבטחה וניהילת חיבורים, ציוד בליבות אינטראקטיביות הפך להולך ונפוץ יותר. היום, ישנם ארבעה מעטפות HTTP מרכזיים ב- Haskell: http-client, http-simple, http-conduit, ו req. כל אחד מהם מספק התממשות שונה ואפשרויות שונות, אך המדגם למעלה משתמש מטפת HTTP Simple עקב פשטות שלה.
+באופציות אחרות, ניתן לעשות שימוש בספריות כמו `wreq` או `req`, אשר מציעות תכונות נוספות ושימוש נוח. כל ספרייה מתמקדת בסט שונה של פיצ'רים והתאמה לצרכים ספציפיים.
+
+מבין הפרטים הטכניים של שליחת בקשות HTTP, תספקתי דוגמה בסיסית, אבל זיכרו שיש הרבה יכולות כמו ניהול הדר 'Headers', שימוש בשיטות שונות כמו POST או DELETE, ועבודה עם משתנים של פרמטרים ומשתני סביבה.
 
 ## ראה גם:
-וויקיפדיה: [HTTP Requests](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods)
-תיעוד Haskell: [SimpleHTTP](https://hackage.haskell.org/package/http-conduit/docs/Network-HTTP-Simple.html)
+- [http-conduit on Hackage](https://hackage.haskell.org/package/http-conduit)
+- [wreq on GitHub](https://github.com/bos/wreq)
+- [req on Hackage](https://hackage.haskell.org/package/req)
+
+המאמרים והמקורות הנ"ל יכולים להרחיב את הידע שלך על שליחת בקשות HTTP בהסקל ובכלל.
+
+גלישה מהנה! 🚀

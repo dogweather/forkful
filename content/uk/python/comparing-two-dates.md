@@ -1,6 +1,7 @@
 ---
 title:                "Порівняння двох дат"
-html_title:           "Clojure: Порівняння двох дат"
+date:                  2024-01-20T17:33:32.346766-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Порівняння двох дат"
 programming_language: "Python"
 category:             "Python"
@@ -10,44 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що і Чому?)
+Comparing two dates lets you see which is earlier or later, or if they're the same. Programmers do this to track events, handle bookings, or set up reminders.
 
-Порівняння двох дат – це процес встановлення, яка дата відбулася раніше або пізніше. Програмісти це роблять для виконання операцій на основі часу, таких як відстеження подій, сортування даних за датою тощо.
-
-## Як це зробити:
-
-Метод `datetime` модуля `datetime` в Python використовується для представлення дати та часу.
+## How to: (Як це зробити:)
+Here's a simple way to compare dates using Python:
 
 ```Python
 from datetime import datetime
 
-# Окремі дати
-date1 = datetime(2021, 5, 21)
-date2 = datetime(2022, 5, 22)
+# First date in YYYY-MM-DD format
+date_string_1 = "2023-04-01"
+# Second date in the same format
+date_string_2 = "2023-08-24"
 
-# Порівняти дати
-if date1 < date2:
-    print('date1 раніша за date2')
+# Convert strings to datetime objects
+date_1 = datetime.fromisoformat(date_string_1)
+date_2 = datetime.fromisoformat(date_string_2)
+
+# Compare the two dates
+if date_1 < date_2:
+    print(f"{date_string_1} comes before {date_string_2}")
+elif date_1 > date_2:
+    print(f"{date_string_1} comes after {date_string_2}")
 else:
-    print('date1 не раніша за date2')
+    print(f"{date_string_1} is the same as {date_string_2}")
 ```
 
-Вивід:
+Sample output for the above code:
 
-```Shell
-date1 раніша за date2
+```
+2023-04-01 comes before 2023-08-24
 ```
 
-## Поглиблено:
+## Deep Dive (Поглиблений аналіз):
+Long before Python, people compared dates using calendars and calculations. In Python, the `datetime` module became the go-to way to manage dates and times post its introduction in version 2.3.
 
-л) Історичний контекст: У ранніх версіях Python порівняння дат було більш складним та неефективним. Однак, з введенням модуля `datetime` у Python 2.3, процес став набагато простішим та ефективнішим.
+There are alternatives like using timestamps or third-party libraries (like `dateutil`). Still, `datetime` is robust and built-in, meaning fewer dependencies.
 
-2) Альтернативи: Інші методи порівняння дат включають використання `timedelta` або сторонніх бібліотек, таких як `dateutil`.
+Under the hood, `datetime` objects are compared based on their internal representation of date and time, which makes these operations reliable and fast.
 
-3) Деталі реалізації: Під час порівняння дат Python перетворює обидві дати на їхні представлення у форматі UNIX-часу (кількість секунд з полуночі 1 січня 1970 р., UTC) і порівнює ці цілочисельні значення.
-
-## Дивіться також:
-
-1) [Офіційна документація Python про модуль datetime](https://docs.python.org/3/library/datetime.html)
-2) [Python datetime - A Primer by Real Python](https://realpython.com/python-datetime/)
-3) [Python Date and Time by Programiz](https://www.programiz.com/python-programming/datetime)
+## See Also (Дивіться також):
+- `datetime` official docs: https://docs.python.org/3/library/datetime.html
+- Python datetime tutorial: https://realpython.com/python-datetime/
+- dateutil library docs: https://dateutil.readthedocs.io/en/stable/

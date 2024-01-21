@@ -1,7 +1,8 @@
 ---
-title:                "एक तारीख को स्ट्रिंग में परिवर्तित करना"
-html_title:           "Java: एक तारीख को स्ट्रिंग में परिवर्तित करना"
-simple_title:         "एक तारीख को स्ट्रिंग में परिवर्तित करना"
+title:                "तारीख को स्ट्रिंग में बदलना"
+date:                  2024-01-20T17:36:34.021356-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "तारीख को स्ट्रिंग में बदलना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,38 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-एक तारीख को स्ट्रिंग में बदलना मतलब की तारीख को पाठ तकनीकी स्वरूप में ढालना। प्रोग्रामर इसे क्योंकि तारीखों पर काम करने के लिए मनमानी तरीके और प्रारूप प्रदान करता है। 
+## What & Why? (क्या और क्यों?)
 
-## कैसे करें:
-Fish Shell में, आप `string` कमांड का उपयोग करके तारीख को स्ट्रिंग में परिवर्तित कर सकते हैं:
+तारीख को स्ट्रिंग में बदलने का मतलब उसे टेक्स्ट फॉर्मेट में बदलना है, जिससे वह पढ़ने में आसान और शेयर करने में सरल हो जाए। प्रोग्रामर्स इसे लॉग्स, यूजर इंटरफेस और डाटा स्टोर करते वक्त करते हैं।
 
-```fish shell
-fish> set date (date -u) 
-fish> echo $date 
-Mon Sep 27 14:07:34 UTC 2021
+## How to: (कैसे करें:)
 
-fish> set str_date (string replace -r ' ' '_' $date)
-fish> echo $str_date
-Mon_Sep_27_14:07:34_UTC_2021
+Fish Shell में तारीख को स्ट्रिंग में बदलने के उदाहरण:
+
+```Fish Shell
+# वर्तमान तारीख को YYYY-MM-DD फॉर्मेट में प्रिंट करें
+set date_string (date "+%Y-%m-%d")
+echo $date_string
 ```
 
-मानक प्रारूप एनवीडीए के साथ तारीख को स्ट्रिंग में बदलने के लिए:
-
-```fish shell
-fish> set date (date -u +%Y-%m-%d) 
-fish> echo $date 
-2021-09-27
+Output सैंपल:
+```
+2023-03-15
 ```
 
-## गहराई में:
-तारीखों को स्ट्रिंग में बदलने की प्राथमिकता हमें तारीखों को छापने, बचाने और कार्यान्वयन के बारे में अधिक नियंत्रण प्रदान करती है। 
+## Deep Dive (गहराई में जानकारी):
 
-इतिहासिक सन्दर्भ में, यह सिस्टम प्रोग्रामिंग का एक महत्वपूर्ण हिस्सा रहा है, जहां तारीखें और समय को अक्सर पाठ फ़ॉर्मेट में देखा जाता है। 
+तारीख को स्ट्रिंग में बदलने की प्रक्रिया में `date` कमांड का इस्तेमाल होता है, जो UNIX सिस्टम से आई है। Fish Shell, `date` को नए तरीके से इस्तेमाल करता है, जैसे कि `strftime` फंक्शन की जगह। इसके विकल्प में `python` या `awk` कमांड भी उपयोग किए जा सकते हैं। इम्प्लीमेंटेशन की बात करें तो, विभिन्न फॉर्मेट ऑप्शन्स (`%Y` के लिए साल, `%m` के लिए महीना, और `%d` के लिए दिन) का इस्तेमाल करते हुए आप तारीख को अलग-अलग फॉर्मेट्स में बदल सकते हैं।
 
-विकल्पों के रूप में, अन्य शेल स्क्रिप्टिंग भाषाओं में जैसे बाश और zsh, भी तारीख को स्ट्रिंग में बदलने की क्षमता प्रदान करते हैं। 
+## See Also (देखें भी):
 
-## और भी देखें:
-1. Fish Shell डॉक्यूमेंटेशन: https://fishshell.com/docs/current/index.html 
-2. डेट और स्ट्रिंग फ़न्क्शंस: https://fishshell.com/docs/current/cmds/string.html 
-3. डेट और स्ट्रिंग फ़न्क्शंस (Stackoverflow): https://stackoverflow.com/questions/1401482/yyyy-mm-dd-format-date-in-shell-script
+- Fish Shell के डॉक्यूमेंटेशन: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- `date` कमांड के फॉर्मेट ऑप्शन्स: [http://man7.org/linux/man-pages/man1/date.1.html](http://man7.org/linux/man-pages/man1/date.1.html)
+- अन्य शेल स्क्रिप्टिंग टुटोरियल: [https://www.shellscript.sh/](https://www.shellscript.sh/)

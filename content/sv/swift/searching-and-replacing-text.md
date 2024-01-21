@@ -1,7 +1,8 @@
 ---
-title:                "Söka och ersätta text"
-html_title:           "Bash: Söka och ersätta text"
-simple_title:         "Söka och ersätta text"
+title:                "Sökning och ersättning av text"
+date:                  2024-01-20T17:58:51.489223-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Sökning och ersättning av text"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,24 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
-Sökning och ersättning av text är en filbehandlingsteknik som används för att identifiera och byta ut specifika strängar i en text. Programmerare brukar använda den för debuggning, kodrefaktorisering eller attitydanpassning av data. 
+## Vad & Varför?
+Sök och ersätt av text är en grundläggande process där vi hittar specifika teckenkombinationer och byter ut dem mot nya. Programmerare använder det för att manipulera textdata snabbt, som att korrigera stavfel, uppdatera information eller bearbeta datafiler.
 
-## Hur du gör:
-Här kommer ett exempel på hur man söker och ersätter text i Swift:
+## Så här gör du:
+Här är ett snabbt exempel i Swift:
 
 ```Swift
-var text = "Hej världen!"
-text = text.replacingOccurrences(of: "världen", with: "Swift")
-print(text) 
+var text = "Hej, jag heter Ada!"
+let searchText = "Ada"
+let replacementText = "Lee"
+
+if let range = text.range(of: searchText) {
+    text.replaceSubrange(range, with: replacementText)
+}
+
+print(text)  // "Hej, jag heter Lee!"
 ```
-Utskriften kommer att vara: "Hej Swift!".
 
-## Fördjupning
-1. Historisk Kontext: Sökning och ersättning av text har varit en standardfunktion i textredigerare sedan tidigt 70-tal. Swift språket gör det enklare och mer intuitivt.
-2. Alternativ: Det finns andra sätt att ersätta text i Swift, som att använda "range(of:)" eller regular expressions, men "replacingOccurrences(of:)" är det mest strömlinjeformade sättet.
-3. Implementeringsdetaljer: "replacingOccurrences(of:)" -metoden kommer från Swifts utökning av NSString-klassen. Den letar igenom hela strängen, så tänk på prestanda vid arbete med stora textfiler.
+Det ska vara enkelt. Koden hittar `searchText` i `text` och byter ut det mot `replacementText`.
 
-## Se även
-2. Swift by Sundell: [Working with strings in Swift](https://www.swiftbysundell.com/basics/strings/)
-3. Hacking with Swift: [How to replace occurrences of a string within a string](https://www.hackingwithswift.com/example-code/strings/how-to-replace-occurrences-of-a-string-within-a-string)
+## Djupdykning
+Vid textbearbetning är sök och ersätt lika gammal som ordbehandlare. I programmering, har vi gått från enkla kommandon till komplexa bibliotek som hanterar allt från enkel text till reguljära uttryck.
+
+I Swift är `String` -typen rik på metoder för textmanipulering. För enklare fall som exemplet ovan använder vi `range(of:)` och `replaceSubrange(_:with:)`. För mer invecklade mönster använder vi reguljära uttryck via `NSRegularExpression`.
+
+Det finns alternativ för att arbeta med strängar i Swift. Du kan använda:
+
+- `replacingOccurrences(of:with:)` för enklare ersättningar.
+- `NSMutableString` som ger muterbara strängar om du hanterar stora datamängder.
+
+Varje metod har sina användningsområden, och det är nyckeln till att välja rätt verktyg för jobbet.
+
+## Se även:
+För vidare läsning och mer detaljerad information:
+
+- Swift documentation on Strings: [Swift String Documentation](https://developer.apple.com/documentation/swift/string)
+- Working with Regular Expressions in Swift: [NSRegularExpression Documentation](https://developer.apple.com/documentation/foundation/nsregularexpression)

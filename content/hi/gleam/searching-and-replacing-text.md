@@ -1,7 +1,8 @@
 ---
-title:                "पाठ की खोज और प्रतिस्थापन"
-html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
-simple_title:         "पाठ की खोज और प्रतिस्थापन"
+title:                "पाठ खोजना और बदलना"
+date:                  2024-01-20T17:58:18.507785-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पाठ खोजना और बदलना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,24 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-टेक्स्ट को ढूंढना और  बदलना मतलब किसी खास पाठ स्ट्रिंग को दूसरे पाठ स्ट्रिंग से बदलना। यह एक महत्वपूर्ण कार्य होता है जबकि कंप्यूटर प्रोग्रामिंग में दोहराने या अनुप्रेष्य टेक्स्ट को बदला जाना चाहिए।
+## What & Why? (क्या और क्यों?)
+सर्चिंग और रिप्लेसिंग टेक्स्ट का मतलब है, टेक्स्ट में से कुछ विशेष शब्दों या चरणों को चुनकर, उन्हें दूसरे शब्दों या चरणों से बदलना। प्रोग्रामर इसे डेटा को साफ़ करने, फिर से उपयोग में लाने, और गलतियों को सुधारने के लिए करते हैं।
 
-## कैसे करें:
-Gleam में, आप टेक्स्ट को खोजने और बदलने के लिए `replace` फ़ंक्शन का उपयोग कर सकते हैं। इसका उदाहरण निचे दिया हुआ है:
+## How to: (कैसे करें:)
+यहाँ Gleam में एक साधारण उदाहरण दिया जा रहा है:
 
 ```Gleam
-import gleam/regex
+external fn regex_replace(original: String, pattern: String, replacement: String) -> String =
+  "external_module" "regex_replace"
 
-fn replace_text() {
-   let text = "यह Gleam ट्यूटोरियल है"
-   let updated_text = regex.replace(~"ट्यूटोरियल", text, ~"गाइड")
-   assert updated_text == Ok("यह Gleam गाइड है")
+pub fn main() {
+  let text = "फूल गुलाब का, खार क्या करे?"
+  let updated_text = regex_replace(text, "गुलाब", "कमल")
+  io.println(updated_text)  // इससे आउटपुट होगा: "फूल कमल का, खार क्या करे?"
 }
 ```
 
-## गहरी जांच:
-शुरुआत में, पाठ स्थानांतरण के लिए विभिन्न अनुकूलित कार्यों का निर्माण किया गया था। लेकिन, इसे संगठनात्मक करने और त्रुटियों को कम करने के लिए, `replace` फ़ंक्शन का उपयोग किया जाता है। इसके विकल्प में `split` और `join` आदान-प्रदान का उपयोग करके पाठ को बदलना शामिल है। इसके अंतर्गत यह शोध स्ट्रिंग के आभासी प्रतिष्ठान को प्रवेश करता है और प्रत्येक मिलान को बदलने का कार्य करता है।
+## Deep Dive (गहराई से जानकारी)
+सर्चिंग और रिप्लेसिंग टेक्स्ट का इतिहास कई दशकों पुराना है, जब से हमने कंप्यूटर पर टेक्स्ट संपादन शुरू किया था। सर्च और रिप्लेस फंक्शन हमें संग्रहित जानकारी में पैटर्न की पहचान और उन्हें बदलने की सुविधा देते हैं, जैसे की रेगुलर एक्सप्रेशन्स (RegExp)। ग्लिम में, यह कार्यक्षमता ऴेक्स्टर्नल मॉड्यूल्स के जरिए लागू की जाती है। विकल्पों में स्ट्रिंग फंक्शंस और विभिन्न पैकेजेस भी शामिल हैं जो सर्च और रिप्लेस टेक्स्ट को और भी अधिक सशक्त बनाते हैं।
 
-## देखें भी:
-4. [Replace function in text processing](https://en.wikipedia.org/wiki/Text_processing)
+## See Also (यह भी देखें)
+- Regular expressions guide: [https://www.regular-expressions.info/](https://www.regular-expressions.info/)
+- External package for advanced text manipulation in Gleam: [https://hex.pm/packages?search=gleam](https://hex.pm/packages?search=gleam)

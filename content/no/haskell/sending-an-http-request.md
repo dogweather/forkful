@@ -1,7 +1,8 @@
 ---
-title:                "Å sende en http-forespørsel"
-html_title:           "C++: Å sende en http-forespørsel"
-simple_title:         "Å sende en http-forespørsel"
+title:                "Å sende en HTTP-forespørsel"
+date:                  2024-01-20T17:59:58.335257-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -11,46 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å sende en HTTP forespørsel er prosessen med å sende en melding fra en klient til en server over internett. Dette gjør programmerere for å hente eller sende data, som er essensielt i moderne webutvikling.
 
-## Hvordan til:
-Vi skal bruke biblioteket `http-conduit` for å sende HTTP-forespørsler. Først må vi installere det:
+Å sende en HTTP-forespørsel betyr å be internettserveren om data eller handling. Programmerere gjør dette for å hente informasjon, sende data, eller starte prosesser over nettet.
 
-```Haskell
-cabal install http-conduit
-```
-
-Nå kan vi lage en enkel GET-forespørsel:
+## Hvordan:
 
 ```Haskell
-import Network.HTTP.Conduit
-import Control.Monad.IO.Class (liftIO)
+import Network.HTTP.Simple
 
+main :: IO ()
 main = do
-  manager <- newManager tlsManagerSettings
-  request <- parseRequest "http://httpbin.org/get"
-  response <- httpLbs request manager
-
-  liftIO $ print (responseStatus response)
-  liftIO $ print (responseBody response)
+    response <- httpBS "http://httpbin.org/get"
+    putStrLn $ "Status code: " ++ show (getResponseStatusCode response)
+    putStrLn $ "Response body: " ++ show (getResponseBody response)
 ```
 
-Når du kjører koden, vil du se noe liknende:
+Eksempelutdata:
 
-```Haskell
-Status {statusCode = 200, statusMessage = "OK"}
-"{\"args\":{}, ... }"
+```
+Status code: 200
+Response body: "{\n  \"args\": {}, \n  \"headers\": {...}, \n  \"origin\": \"x.x.x.x\", \n  \"url\": \"https://httpbin.org/get\"\n}\n"
 ```
 
-Betydningen er at vi har fått en vellykket respons (200 = OK) fra serveren.
+## Dypdykk:
 
-## Dypdykk
-Sending av HTTP-forespørsler kommer fra behovet for kommunikasjon mellom klient-server-maskiner, en arkitektur som stammer helt tilbake til tidlig utvikling av nettverk i 1970-årene.
+I de gode gamle dager, kommuniserte programmer oftest lokalt. Internettets vekst har endret dette. Å sende en HTTP-forespørsel har blitt standarden for internettbasert kommunikasjon. Det er flere HTTP-biblioteker i Haskell, som `http-simple`, `wreq`, og `http-conduit`. Disse abstraherer bort de lavnivå detaljene i å lage HTTP-forespørsler.
 
-Alternativene til `http-conduit` inkluderer `http-client`, som også gir lavnivå tilgang til HTTP-operasjoner, og mer spesialiserte biblioteker som `wreq` og `req`, som gir mer abstraksjon og brukervennlighet på bekostning av kontroll.
+`http-simple` gir en enkel API for å sende HTTP-forespørsler og håndtere respons. Det bruker `http-client` under panseret, og håndterer mye av komplikasjonene for deg, som å arbeide med nettverksforbindelser og parsing av responsdata. Du kan også bruke `http-conduit` for en mer strømmet, minneeffektiv behandling av store responser.
 
-Når du sender en HTTP-forespørsel i Haskell, blir konseptene funksjonell programmering tydelige: hver handling du tar returnerer en ny "ting", i motsetning til å endre en eksisterende ting i stedet. Denne immutabiliteten gir forutsigbarhet og lettere feilfraing.
+## Se Også:
 
-## Se også
-[HaskellWiki HTTP](https://wiki.haskell.org/HTTP) - For mer komplekse eksempler og brukstilfeller av HTTP i Haskell.<br>
-[http-conduit på Hackage](https://hackage.haskell.org/package/http-conduit) - For dokumentasjon og mer informasjon om biblioteket vi brukte i dette eksemplet.
+- [http-simple documentation](https://hackage.haskell.org/package/http-conduit)
+- [http-conduit package](https://hackage.haskell.org/package/http-conduit)
+- [wreq package](https://hackage.haskell.org/package/wreq)
+- [Learn You a Haskell for Great Good! - an accessible introduction to Haskell](http://learnyouahaskell.com/)
+- [Real World Haskell - a book geared towards practical Haskell programming](http://book.realworldhaskell.org/)

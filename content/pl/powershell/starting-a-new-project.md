@@ -1,6 +1,7 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Bash: Rozpoczynanie nowego projektu"
+date:                  2024-01-20T18:04:20.682126-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,41 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Zaczynając Nowy Projekt w PowerShell
+## What & Why? (Co i Dlaczego?)
+Rozpoczynanie nowego projektu to tworzenie fundamentu pod przyszłe zadania programistyczne. Programiści robią to, żeby zorganizować kod, środowisko pracy i ustawić scenę dla rozwoju aplikacji.
 
-## Co i Dlaczego?
-
-Startowanie nowego projektu to tworzenie nowego, od podstaw systemu kodu, który służy rozwiązaniu określonego problemu. Programiści robią to w celu stworzenia unikalnych rozwiązań dla świeżych problemów lub zastosować nowe podejście do starych problemów.
-
-## Jak to Zrobić:
-
-Zakładając, że masz zainstalowany PowerShell, poniższy kod pokazuje, jak stworzyć nowy skrypt (`MyScript.ps1`). Niech będzie on naszym "projektem". 
+## How to: (Jak to zrobić:)
+Tworzenie nowego projektu w PowerShellu zaczyna się od struktury katalogów i plików. Użyj `New-Item` do tworzenia katalogów/projektów, a `Set-Location` do zmiany aktywnego katalogu.
 
 ```PowerShell
-# Utwórz nowy plik
-New-Item -ItemType File -Path . -Name MyScript.ps1
+# Tworzenie katalogu dla nowego projektu
+New-Item -ItemType Directory -Path 'C:\MojeProjekty\NowyProjekt'
+
+# Przechodzimy do nowoutworzonego katalogu
+Set-Location -Path 'C:\MojeProjekty\NowyProjekt'
+
+# Utworzenie pliku .ps1 dla skryptów
+New-Item -ItemType File -Path '.\Start.ps1'
+
+# Sprawdzenie zawartości katalogu projektu
+Get-ChildItem -Path .
 ```
 
-Kiedy uruchomisz ten kod, powinieneś zobaczyć coś takiego:
+Sample output (przykładowe wyniki):
+```
+    Directory: C:\MojeProjekty\NowyProjekt
 
-```PowerShell
-    Directory: C:\Users\YourUsername
-
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
--a---         10/22/2021   5:15 PM              0 MyScript.ps1
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          12/4/2023   3:30 PM              0 Start.ps1
 ```
 
-## Głębsze Zanurzenie:
+## Deep Dive (Dogłębna analiza):
+PowerShell, od czasu wersji 5.0 i wprowadzenia PowerShellGet, daje deweloperom narzędzia podobne do tych znanych z innych środowisk programistycznych. Ułatwia to zarządzanie zależnościami (np. moduły) i wdrażanie przy użyciu `New-ModuleManifest` lub `New-ScriptFileInfo`. Alternatywą są użycie IDE jak Visual Studio Code z właściwymi dodatkami poprawiającymi workflow.
 
-Historia: PowerShell powstał w 2006 roku jako projekt Microsoftu dla zarządzania systemami Windows. Od tego czasu zyskał na popularności i jest teraz stosowany do szerokiego zakresu zadań, zarówno na platformach Windows, jak i Linux.
+Dzięki wersji PowerShell Core (cross-platform), projektowanie modułów powinno być robione z myślą o kompatybilności między platformami. Historia PowerShella jest unikatowa, jako fork projektu Microsoftu, który był zainspirowany przez Unixowe powłoki jak Bash. Nowy projekt w PowerShellu może być prostym skryptem, aż po zestaw osadzonych funkcji jako moduł.
 
-Alternatywy: Alternatywami dla tworzenia nowego projektu w PowerShell są używanie innych języków skryptowych, takich jak Python lub Bash.
-
-Szczegóły implementacji: Nowy projekt w PowerShell zazwyczaj zaczyna się od tworzenia nowego skryptu, ale może również obejmować tworzenie modułów PowerShell, tworzenie funkcji, czy tworzenie procesów automatyzacji.
-
-## Zobacz Też:
-
-- [Dokumentacja PowerShell](https://docs.microsoft.com/pl-pl/powershell/)
-- [PowerShell for beginners: Scripts and loops](https://www.computerworld.com/article/2694433/powershell-for-beginners-scripts-and-loops.html)
-- [Poradnik Bash-a dla początkujących](https://ryanstutorials.net/bash-scripting-tutorial/)
+## See Also (Zobacz również):
+- [Dokumentacja PowerShell](https://docs.microsoft.com/powershell/)
+- [Narzędzia w Visual Studio Code dla PowerShell](https://code.visualstudio.com/docs/languages/powershell)
+- [PowerShell Gallery](https://www.powershellgallery.com/)

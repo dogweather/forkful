@@ -1,7 +1,8 @@
 ---
-title:                "Skriva ut felsökningsresultat"
-html_title:           "Fish Shell: Skriva ut felsökningsresultat"
-simple_title:         "Skriva ut felsökningsresultat"
+title:                "Skriva ut felsökningsdata"
+date:                  2024-01-20T17:52:50.930075-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skriva ut felsökningsdata"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -10,52 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-## Vad & Varför?
+## What & Why?
+Att printa debug-output innebär att skriva ut information till konsolen för att förstå vad som händer i koden. Programmerare gör det för att spåra buggar och monitorera programflödet.
 
-Att skriva ut debug-utdata är mekanismen att visa programmerarens tempinformation när de behöver spåra och fixa kodfel. Det hjälper till att förstå hur programkoden fungerar och får sitt jobb att fungera effektivt.
+## How to:
+För att skriva ut info i Java, använd `System.out.println()`. Här är några exempel:
 
-## Så här gör du:
-
-Här är ett exempel för att skriva ut debug-meddelanden i Java: 
-
-```Java
-public class DebugDemo {
+```java
+public class DebugExample {
     public static void main(String[] args) {
         int sum = 0;
-        for (int i = 0; i < 5; i++) {
+
+        // Loopa och beräkna summan
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Adderar: " + i);
             sum += i;
-            System.out.println("Debug: i = " + i + ", sum = " + sum);
         }
+
+        System.out.println("Total summa: " + sum);
     }
 }
 ```
-
-När du kör detta program, är output:
-
-```Java
-Debug: i = 0, sum = 0
-Debug: i = 1, sum = 1
-Debug: i = 2, sum = 3
-Debug: i = 3, sum = 6
-Debug: i = 4, sum = 10
+Output:
 ```
-På detta sätt kan vi se var exakt i loopen saker förändrades.
+Adderar: 1
+Adderar: 2
+Adderar: 3
+Adderar: 4
+Adderar: 5
+Total summa: 15
+```
 
-## Djupdykning 
+## Deep Dive
+Printa debug-output är gammalt som gatan. Förr skrevs info till pappersremsor eller loggfiler. Nu för tiden finns det sofistikerade loggrahmen som Log4j eller Javas inbyggda logging API.
 
-Historiskt sett har programmet ‘printf’-debbuging, där ‘printf’ är ett inbyggt bibliotek i många programmersspråk, varit en vanlig lösning. Detta är dock inte alltid den bästa lösningen, särskilt för större programkod där utmatningen kan bli för överväldigande.
+Alternativ till `System.out.println()` inkluderar `System.out.print()` för att undvika radbrytning, och `System.err.println()` för att skriva ut felmeddelanden. Det senare skriver till standard error stream och kan lättas skiljas från vanlig output.
 
-Alternativ innefattar att använda debuggare, som också kan ge mer detaljerad information om tillståndet för din kod vid givna punkter. Dessa verktyg kan dock vara tunga och i många fall är en enkel utskrift av debugdata den bästa lösningen.
+Implementationsdetaljer som är viktiga inkluderar att undvika för mycket debug-output i produktion eftersom det kan vara prestandakrävande och orsaka säkerhetsproblem om känslig data loggas.
 
-Implementationen av debug-utdata i Java är ganska enkel, med `System.out.println()`-metoden som används för att skriva ut meddelanden till konsolen.
-
-## Se också
-
-1. [Oracle Java Tutorial](https://docs.oracle.com/javase/tutorial/): Ursprungliga Java-tutorials som gör att du kan förstå programmeringsspråket djupt.
-
-2. [Java Debugging with Eclipse Tutorial](https://www.vogella.com/tutorials/EclipseDebugging/article.html): Detaljerad handledning om hur du använder Eclipse-verktyget för att debugga dina Java-program.
-
-3. [Introduction to Java debugging](https://stackify.com/java-debugging-tips/): Mer information om debugging i Java.
-
----
+## See Also
+- [Oracle Java Documentation](https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html)
+- [Log4j 2](https://logging.apache.org/log4j/2.x/)
+- [Java Logging Overview](https://www.baeldung.com/java-logging-intro)

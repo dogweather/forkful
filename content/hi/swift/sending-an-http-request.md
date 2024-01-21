@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:00:46.802210-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,39 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Swift में HTTP अनुरोध भेजना: एक पूर्ण गाइड
+## What & Why? (क्या और क्यों?)
+HTTP अनुरोध (request) भेजना इंटरनेट पर सर्वर से जानकारी लेने या भेजने का तरीका है। प्रोग्रामर्स इसका इस्तेमाल डेटा को पढ़ने, बदलने या अपडेट करने के लिए करते हैं।
 
-## क्या और क्यों?
+## How to: (कैसे करें:)
+```Swift
+import Foundation
 
-HTTP अनुरोध, वेब सर्वर को डेटा अनुरोध करने के लिए इस्तेमाल की जाती है। प्रोग्रामर्स इन्हें इस्तेमाल करते हैं क्योंकि वे API के माध्यम से सर्वर से डेटा मांग सकते हैं और वापसी में JSON, XML, HTML इत्यादि प्राप्त कर सकते हैं। 
-
-## कैसे:
-
-Swift में, हम एक URL और URLRequest उत्पन्न करते हैं, URLSession से एक URLSessionDataTask बनाते हैं, और अंत में task.resume() कॉल करते हैं। चलिए इसे कोड में देख लेते हैं: 
-
-```Swift 
-let url = URL(string: "https://your-api-url.com")!
-let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-    if let error = error {
-        print("Error: \(error)")
-    } else if let data = data {
-        print("Data: \(data)")
+// URL बनाएँ
+if let url = URL(string: "https://api.example.com/data") {
+    
+    // URLRequest बनाएँ
+    var request = URLRequest (url: url)
+    request.httpMethod = "GET" // या "POST", "PUT", "DELETE", etc.
+    
+    // URLSession के साथ HTTP request भेजें
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        
+        // यदि कोई त्रुटि है, तो उसे प्रिंट करें। 
+        if let error = error {
+            print("Error: \(error)")
+            return
+        }
+        
+        // सर्वर का जवाब चेक करें और डेटा को प्रिंट करें
+        if let response = response as? HTTPURLResponse, response.statusCode == 200 {
+            if let data = data, let body = String(data: data, encoding: .utf8) {
+                print("Response Body: \n\(body)")
+            }
+        } else {
+            print("HTTP Request Failed")
+        }
     }
+    
+    // टास्क शुरू करें
+    task.resume()
 }
-task.resume()
+```
+`Sample Output`:
+```
+Response Body: 
+{
+  "key": "value"
+}
 ```
 
-इससे आपको डेटा या एरर मिलेगा, जिसे आप अगले कोड में प्रिंट कर सकते हैं। 
+## Deep Dive (गहराई से जानकारी):
+HTTP अनुरोध (requests) 1990 के दशक से वेब का हिस्सा हैं। आज हम NSURLSession (Swift में URLSession) जैसे मॉडर्न API का इस्तेमाल करते हैं, जो पहले के NSURLConnection से एडवांस है। Alamofire जैसे third-party libraries भी पॉपुलर हैं।
 
-## गहराई में:
+URLSession में, आप डेटा टास्क्स, अपलोड टास्क्स, डाउनलोड टास्क्स, और स्ट्रीमिंग टास्क्स कर सकते हैं। त्रुटि हैंडलिंग और HTTP status codes का प्रोपर रेस्पॉन्स कोड के साथ प्रयोग करना महत्वपूर्ण है। आप json, xml या अन्य प्रकार के डेटा को serialize और deserialize भी कर सकते हैं ताकि सर्वर से उसे प्रोसेस कर सकें।
 
-HTTP अनुरोध और इसे Swift में कैसे उपयोग किया जाता है, इसकी खोज दकियानूसी WWW में 1990 में हुई थी। 
-
-HTTP के विकल्पों में gRPC, WebSockets और GraphQL (!) शामिल हैं। 
-
-किसी API को कॉल करने में URLSession का उपयोग करने के बजाय, आप Alamofire जैसे बाहरी पुस्तकालयों का उपयोग भी कर सकते हैं। Alamofire आपको अधिक नियंत्रण और मजबूत फ़ंक्शन प्रदान करता है, लेकिन मूल URLSession API का ज्ञान होना अच्छी बात है।
-
-## भी देखें:
-
-1. Apple Developer Documentation: [URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-3. HTTP and REST [Video Lecture](https://www.youtube.com/watch?v=1XY1L7lP_8I)
+## See Also (और देखें):
+- [Apple's URLSession Documentation](https://developer.apple.com/documentation/foundation/urlsession)
+- [Ray Wenderlich's Networking with URLSession](https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started)

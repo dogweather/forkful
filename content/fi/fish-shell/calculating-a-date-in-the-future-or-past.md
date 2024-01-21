@@ -1,7 +1,8 @@
 ---
-title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-html_title:           "Fish Shell: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+title:                "Tulevan tai menneen päivämäärän laskeminen"
+date:                  2024-01-20T17:30:54.171443-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,41 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+## What & Why? (Mitä ja miksi?)
+Lasketaan päivämäärä tulevaisuudessa tai menneisyydessä. Se on hyödyllistä, kun halutaan aikatauluttaa tapahtumia, muistuttaa deadlineista tai seurata aikavälitapahtumia.
 
-Laskeminen päivämäärä tulevaisuudessa tai menneisyydessä yksinkertaisesti tarkoittaa päivämäärän muokkaamista nykyhetkestä tietyllä määrällä päiviä tai kuukausia joko eteen- tai taaksepäin. Ohjelmoijat tekevät tämän esimerkiksi arvioimaan projektin kestoajat, määrittelmään julkaisupäivämään tai pitämään kirjaa viimeisestä päivityksestä.
-
-## Näin teet:
-
+## How to: (Miten tehdä:)
 ```Fish Shell
-# Tulevaisuuden päivämäärä
-set -l future_date (date -d "+30 days" +"%d.%m.%Y")
+# Tuleva päivämäärä 10 päivän kuluttua
+set -l future_date (date -d "+10 days" +"%Y-%m-%d")
 echo $future_date
-```
-Sampla ulostulo esimerkiksi:
 
-```28.11.2022```
-
-```Fish Shell
-# Menneisyyden päivämäärä
-set -l past_date (date -d "-30 days" +"%d.%m.%Y")
+# Menneisyyden päivämäärä 10 päivää sitten
+set -l past_date (date -d "-10 days" +"%Y-%m-%d")
 echo $past_date
 ```
-Sampla ulostulo esimerkiksi:
+Näyttää:
+```
+2023-04-21 # jos tämä on 10 päivää tulevaisuudessa
+2023-03-22 # jos tämä on 10 päivää menneisyydessä
+```
 
-```29.09.2022```
-    
+## Deep Dive (Syväsukellus)
+Ennen tietokoneiden aikaa päivämäärälaskuja tehtiin kalentereiden ja laskimien avulla. Tietokoneet ja skriptaustyökalut, kuten `date`, tekevät tämän nopeammin ja tarkemmin. `date` on klassinen UNIX-komennon, joka toimii Fish Shellissä ja muissa shelleissä. Vaihtoehtoisia työkaluja päivämäärälaskentaan ovat esimerkiksi `ntpd`, `chrony`, tai eri ohjelmointikielten kirjastot, kuten Pythonin `datetime`. Fish Shellissa `date`-komennon kanssa käytetyt vaihtoehdot ovat yhtenäiset GNU/date:n kanssa.
 
-## Syvä sukellus
-
-Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä on yksinkertainen, mutta välttämätön komento ohjelmoinnin maailmassa. Tämä päivämääräkäsittelykonsepti otettiin käyttöön jo varhaisina UNIX-aikoina ja on osa perusohjelmointia. 
-
-Fish Shell tarjoaa tehokkaan ja yksinkertaisen tavan käsitellä aikaa, mutta muita vaihtoehtoisia shell-kieliä, kuten Zsh tai Bash, voidaan myös käyttää. Implementointi määrittyy suurelta osin 'date' -komennon avulla, joka tulkitsee tekstiä aikaa kuvaaviksi tyypeiksi.
-
-## Katso myös:
-
-[Fish Shell Documentaatio:](https://fishshell.com/docs/)
-
-[UNIX ajanlaskun historia:](https://www.eecis.udel.edu/~mills/leap.html)
-
-[Käytä Bash keskustelun hallintaan:](https://www.linuxjournal.com/content/using-bash-dialogs)
+## See Also (Katso lisäksi)
+- Fish Shell dokumentaatio: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- GNU Coreutils `date`: [https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- Date manipulation in programming languages, Python `datetime`: [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html)

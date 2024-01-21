@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
-html_title:           "Gleam: Merkkijonojen yhdistäminen"
+date:                  2024-01-20T17:35:41.161529-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,36 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Merkkijonojen yhdistäminen Swift ohjelmoinnissa
+## What & Why? (Mitä & Miksi?)
+Yhdistämme merkkijonoja siksikin, että voimme luoda pitkiä tekstinpätkiä pienistä palasista. Tätä tekevät ohjelmoijat everywhere luodaakseen dynaamisia viestejä tai yhdistelläkseen käyttäjäsyötettä.
 
-## Mikä ja Miksi?
-Merkkijonojen yhdistäminen on prosessi, jossa liitetään kaksi tai useampia merkkijonoja yhdeksi. Ohjelmoijat tekevät tämän usein tiedon esittämiseksi ymmärrettävässä ja järjestetyssä muodossa.
-
-## Kuinka toteuttaa:
-Swiftin avulla voit yhdistää merkkijonoja yksinkertaisesti käyttämällä "+" -operaattoria. Katsotaan esimerkkiä:
+## How to: (Miten tehdään:)
 ```Swift
-let string1 = "Hei"
-let string2 = "Maailma"
-let tervehdys = string1 + ", " + string2
-print(tervehdys)  // Tulostus: "Hei, Maailma"
-```
-Toinen tapa yhdistää merkkijonoja on käyttämällä `append(_:)` -funktiota:
-```Swift
-var moikka = "Terve"
-moikka.append("hdys!")
-print(moikka)  // Tulostus: "Tervehdys!"
-```
+// Yksinkertainen yhdistäminen operaattorilla +
+let tervehdys = "Hei, "
+let nimi = "Matti!"
+let yhdessa = tervehdys + nimi
+print(yhdessa) // "Hei, Matti!"
 
-## Syvempi sukellus:
-Historiallisesti Swiftin aikaisemmissa versioissa "+" -operaattoria käytettiin yleisimmin merkkijonojen yhdistämiseen. Nykyään Swiftin tuoreimmissa versioissa `append(_:)` -funktiota pidetään optimaalisempana, koska se ei luo uutta merkkijonoa, kuten "+" -operaattori tekee.
+// String interpolation
+let ikä = 30
+let esittely = "Minun nimeni on \(nimi) ja olen \(ikä) vuotta vanha."
+print(esittely) // "Minun nimeni on Matti! ja olen 30 vuotta vanha."
 
-Vaihtoehtona voit käyttää `join(_:) ` -funktiota, jossa useita merkkijonoja yhdistetään tietyn erotinmerkkijonon avulla:
-```Swift
-let tervehdysLista = ["Hei", "Maailma"]
-let tervehdys = tervehdysLista.joined(separator: ", ")
-print(tervehdys)  // Tulostus: "Hei, Maailma"
+// append-metodin käyttö
+var viesti = "Kello on"
+viesti.append(" 18:00.")
+print(viesti) // "Kello on 18:00."
 ```
 
-## Katso myös:
-1. Swiftin virallinen dokumentaatio merkkijonojen käsittelystä: [Swift.org](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html) 
-2. StackOverflow-keskustelu merkkijonojen yhdistämisestä Swiftissä: [StackOverflow](https://stackoverflow.com/questions/24092884/how-to-use-string-concatenation-in-swift)
+## Deep Dive (Syväsukellus):
+Merkkijonojen yhdistely on vanha käytäntö, ja kielessä kuin kielessä löytyy siihen keinot. Ennen Swiftiä Objective-C:ssä joutui käyttämään `NSString` -luokan `stringByAppendingString`:iä, mikä ei ollut niin suoraviivaista. Swiftissä keinoja on useita, mutta kaikkein suosituinta on käyttää `+` operaattoria yksinkertaisuuden ja luettavuuden vuoksi. Interpolaatio on varteenotettava vaihtoehto, kun halutaan sisällyttää muuttujia tai laskentoja. `append`-metodi taas on hyödyllinen, kun halutaan lisätä tekstiä olemassa olevaan merkkijonoon ilman uuden luomista. Tehokkuuden kannalta merkkijonojen liittämisen voi tehdä monella tapaa, ja suorituskyvyn vaikutukset riippuvat kontekstista. 
+
+## See Also (Katso Myös):
+- [Swift Standard Library - String](https://developer.apple.com/documentation/swift/string)
+- [Apple Swift Book - String and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html) 
+- [Swift String Best Practices by Ray Wenderlich](https://www.raywenderlich.com/553-string-tutorial-for-swift-4-part-1)

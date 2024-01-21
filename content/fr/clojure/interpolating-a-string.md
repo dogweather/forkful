@@ -1,7 +1,8 @@
 ---
-title:                "Interpolation d'une chaîne de caractères"
-html_title:           "Ruby: Interpolation d'une chaîne de caractères"
-simple_title:         "Interpolation d'une chaîne de caractères"
+title:                "Interpolation de chaînes de caractères"
+date:                  2024-01-20T17:50:24.847191-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolation de chaînes de caractères"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,37 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-----
-## Quoi & Pourquoi?
-L'interpolation de chaînes en programmation permet d'insérer des valeurs de variables directement dans des chaînes de texte. Cette pratique facilite la construction et la manipulation de chaînes, en permettant d'écrire du code plus lisible et moins sujet à des erreurs.
+## Qu'est-ce que c'est et pourquoi ?
 
-## Comment faire:
-Voici comment vous pouvez utiliser l'interpolation de chaînes dans Clojure. Clojure, actuellement en version 1.10.3, ne prend pas en charge l'interpolation de chaînes en interne, mais nous pouvons utiliser la fonction `format` pour obtenir un comportement similaire.
+L'interpolation de chaînes permet d'insérer facilement des variables ou des expressions dans une chaîne de caractères. Les programmeurs l'utilisent pour construire des textes dynamiquement sans concaténer péniblement des morceaux de chaînes.
 
-```clojure
-(let [nom "John"]
-  (format "Bonjour %s, comment ça va ?" nom))
+## Comment faire :
 
-; Sortie :
-; "Bonjour John, comment ça va ?"
+```Clojure
+;; Utiliser `str` pour concaténer des chaînes et des variables
+(def name "Mundo")
+(println (str "Hola, " name "!")) ;; Output: Hola, Mundo!
+
+;; Utiliser `format` pour plus de contrôle dans la substitution
+(def age 30)
+(println (format "J'ai %d ans." age)) ;; Output: J'ai 30 ans.
 ```
 
-## Regard en profondeur:
-Bien que Clojure lui-même n'ait pas d'interpolation de chaînes native, il y a des bibliothèques tierces, comme `clojure.string`, qui fournissent cette fonctionnalité. D'autre part, la fonction `format` est une alternative viable et généralement suffisante.
+## Plongée en profondeur
 
-```clojure
-(require '[clojure.string :as str])
+Historiquement, Clojure, tout comme sa famille Lisp, n'a pas eu une fonction d'interpolation de chaînes intégrée comme dans d'autres langages modernes. Pour combler ce vide, on utilise souvent `str` ou `format`. `str` est plus simple, alors que `format` offre un contrôle de formatage semblable à `printf` en C.
 
-(let [nom "John"]
-  (str/replace "Bonjour %s, comment ça va ?" "%s" nom))
+Il existe des alternatives via des bibliothèques tierces comme `clojure.string/interpolate` ou des utilitaires personnalisés, qui peuvent rendre l'interpolation plus directe et élégante.
 
-; Sortie :
-; "Bonjour John, comment ça va ?"
-```
+Du point de vue de l'implémentation, l'interpolation consiste à évaluer des expressions ou des variables et à les transformer en chaînes avant de les assembler. Cela doit être fait de manière sûre pour éviter les injections de code malveillantes.
 
-C'est important à noter que l'interpolation de chaînes a été introduite dans d'autres langages, comme Ruby et JavaScript, pour rendre la manipulation de chaînes plus facile et le code plus lisible.
+## Voir également
 
-## Voir aussi:
-Pour plus d'informations et d'exemples sur l'interpolation de chaînes, consultez ces sources :
-
-2. [ClojureDocs - clojure.string](https://clojuredocs.org/clojure.string)
+- ClojureDocs on `str`: https://clojuredocs.org/clojure.core/str
+- ClojureDocs on `format`: https://clojuredocs.org/clojure.core/format
+- Un article sur l'interpolation de chaînes dans Clojure : https://clojurebyexample.com/examples/string-interpolation

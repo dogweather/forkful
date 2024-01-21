@@ -1,7 +1,8 @@
 ---
-title:                "Generere tilfeldige tall"
-html_title:           "Arduino: Generere tilfeldige tall"
-simple_title:         "Generere tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+date:                  2024-01-20T17:49:15.667276-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generering av tilfeldige tall"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Numbers"
@@ -10,57 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Generering av tilfeldige tall i Java
-
 ## Hva & Hvorfor?
-Generering av tilfeldige tall er prosessen med å produsere tall som ikke har noe mønster. Programvareutviklere gjør dette for å simulere usikkerhet i funksjonalitet som spill, simuleringer eller testing.
+Å generere tilfeldige tall er essensielt for simuleringer, spill, sikkerhet, og hvor ellers uforutsigbarhet er nødvendig. Programmerere bruker det for å sikre variasjon og uforutsigbarhet i programmenes oppførsel.
 
 ## Hvordan:
-Eller enkelhet, vi kan bruke `java.util.Random` eller `java.util.concurrent.ThreadLocalRandom` for enkel trådsikkerhet. Her er noen eksempler:
+For å generere et tilfeldig tall i Java, kan du bruke klassen `Random` eller `Math.random()` for enkel bruk, eller `SecureRandom` for kryptografisk sikre tall.
 
-```Java
+```java
 import java.util.Random;
 
-public class Test {
-    
+public class TilfeldigEksempel {
     public static void main(String[] args) {
-        Random rand = new Random();
-
-        int tilfeldigTall = rand.nextInt(100);
+        Random random = new Random();
+        
+        // Genererer et tilfeldig heltall mellom 0 (inkludert) og 100 (ekskludert)
+        int tilfeldigTall = random.nextInt(100);
         System.out.println(tilfeldigTall);
+
+        // Genererer et tilfeldig desimaltall mellom 0.0 og 1.0
+        double tilfeldigDouble = Math.random();
+        System.out.println(tilfeldigDouble);
     }
 }
 ```
-output:
+Eksempel på output:
 ```
-37
-```
-Trådsikker eksempel:
-```Java
-import java.util.concurrent.ThreadLocalRandom;
-
-public class Test {
-    
-    public static void main(String[] args) {
-        int tilfeldigTall = ThreadLocalRandom.current().nextInt(100);
-        System.out.println(tilfeldigTall);
-    }
-}
-```
-output:
-```
-54
+42
+0.7301587286504309
 ```
 
-## Dypdykk
-Generering av tilfeldige tall har en lang historie som strekker seg tilbake til antikken, men i moderne programmering, det kom til liv i midten av 20. århundre når datamaskinen ble skapt. 
+## Dypdykk:
+I eldre versjoner av Java var `Random` klassen standard for å generere tilfeldige tall. Med introduksjonen av `ThreadLocalRandom` i Java 7, fikk vi et bedre alternativ for flertrådede applikasjoner. For situasjoner som krever høyere grad av sikkerhet, som i kryptografi, er `SecureRandom` det foretrukne valget siden den bruker mer forutsigbare kilder for entropi.
 
-Alternativene til metodene over inkluderer `java.security.SecureRandom` for kryptografisk sikre tall, og `java.util.stream` for strøm av tilfeldige tall.
+Alternativer eksisterer også utenfor standardbiblioteket, som Apache Commons Math-biblioteket, som tilbyr ytterligere funksjonalitet.
 
-Intern for `Random` og `ThreadLocalRandom` bruker de en lineær kongruensmetode. Først initialiserer de en frøverdi. Deretter, med hver anrop til `nextInt()`, `nextFloat()`, etc., regner de ut neste frø og returnerer deler av det som det neste tilfeldige tallet.
+Implementasjonsdetaljer er viktige; `Random` bruker en lineær kongruensgenerator, mens `SecureRandom` vanligvis implementerer en entropidrevet algoritme som SHA1PRNG eller native operativsystemfunksjoner.
 
-## Se også
-For mer informasjon, er her noen gode kilder:
-- Java Dokumentasjon på `Random`: [link](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Random.html)
-- Artikkel på Baeldung om generering av tilfeldige tall i Java: [link](https://www.baeldung.com/java-generate-random-long-float-integer-double)
-- StackOverflow tråd om `Random` vs `ThreadLocalRandom`: [link](https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java).
+## Se Også:
+- [Oracle Java Documentation: Class Random](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- [Oracle Java Documentation: Math.random()](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#random--)
+- [Apache Commons Math User Guide](https://commons.apache.org/proper/commons-math/userguide/random.html)
+- [Stack Overflow: When to use SecureRandom over Random](https://stackoverflow.com/questions/11051205/when-to-use-securerandom-over-random)

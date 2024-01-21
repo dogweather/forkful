@@ -1,7 +1,8 @@
 ---
-title:                "Concaténation de chaînes"
-html_title:           "C: Concaténation de chaînes"
-simple_title:         "Concaténation de chaînes"
+title:                "Concaténation de chaînes de caractères"
+date:                  2024-01-20T17:34:38.172457-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Concaténation de chaînes de caractères"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,33 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et Pourquoi ? 
-La concaténation de chaînes c'est l'action de joindre deux chaînes de caractères pour former une seule chaîne. Les programmeurs le font pour manipuler facilement et efficacement des données textuelles.  
+## What & Why? - Quoi & Pourquoi ?
+Concaténer des chaînes de caractères, c'est les coller bout à bout pour en faire une seule. On fait ça pour assembler du texte de manière dynamique, comme construire des messages personnalisés ou générer du code.
 
-## Comment faire :
-Voici comment vous pouvez concaténer des chaînes de caractères en Gleam :
-
-```Gleam
-let bienvenue = "Bienvenue à "
-let ville = "Paris"
-let message = bienvenue <> ville
+## How to: - Comment faire :
+```gleam
+fn main() {
+  let greeting = "Bonjour"
+  let name = "Monde"
+  let message = string.concat([greeting, ", ", name, "!"])
+  io.println(message)
+}
 ```
 
-Et le résultat sera 
-
-```Gleam
-"Bienvenue à Paris"
+Sortie exemple:
 ```
-## Plongée en profondeur
-Historiquement parlant, la fonction `<>` en Gleam est inspirée de la fonction de concaténation de chaînes de caractères dans d’autres langages de programmation comme Python ou Javascript. Cependant, Gleam a simplifié cette fonction pour la rendre plus efficace.
-
-En terme d'alternatives, vous pouvez utiliser la fonction `string.concat`, qui est une manière plus formelle de concaténer les chaînes de caractères :
-
-```Gleam
-let message = string.concat([bienvenue, ville])
+Bonjour, Monde!
 ```
 
-En parlant de détails d'implémentation, la concaténation de chaînes en Gleam est bettement efficace. La concaténation de chaînes ne reconstruit pas la chaîne entière, mais crée simplement une nouvelle chaîne qui fait référence aux chaînes source, qui rend la concaténation de chaînes très efficace du point de vue de la mémoire.
+## Deep Dive - Plongée en profondeur
+Historiquement, la concaténation est essentielle en programmation pour manipuler des textes. En Gleam, on utilise souvent `string.concat(list(strings))` ou l'opérateur `++` pour fusionner des chaînes. Ça diffère des opérations arithmétiques – c'est une opération sur les données textuelles.
 
-## Voir aussi
-1. [Documentation officielle imprimante Gleam](https://gleam.run/)
+Autres méthodes:
+- Interpolation: `"Bonjour, \(name)!"`. Plus lisible, surtout pour des chaînes courtes.
+- Buffers: pour les manipulations intensives, on optimise avec des buffers.
+
+Concernant l'implémentation, Gleam fait de son mieux pour optimiser la concaténation de chaînes de caractères mais utilisez les buffers pour de meilleures performances avec de grands volumes de texte.

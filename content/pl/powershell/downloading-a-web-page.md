@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C#: Pobieranie strony internetowej"
+date:                  2024-01-20T17:44:41.242455-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,35 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pobieranie Stron Internetowych za pomocą PowerShell
+## What & Why?
+"Co to jest i po co?"
+Pobieranie strony internetowej to zapisanie jej zawartości na dysk. Programiści robią to, aby przetworzyć dane, pobrać ważne informacje lub zarchiwizować zawartość.
 
-## Co i dlaczego?
-
-Pobieranie stron internetowych to proces zapisywania ich treści lokalnie. Programiści robią to przede wszystkim dla przetwarzania danych (web scraping), testowania lub archiwizacji.
-
-## Jak to zrobić:
-
-W PowerShell możemy to zrobić bardzo prosto. Poniżej znajduje się przykładowy kod:
+## How to:
+"Jak to zrobić:"
+Uruchom poniższy skrypt, aby pobrać zawartość strony:
 
 ```PowerShell
-$url = "http://przyklad.pl"
-$response = Invoke-WebRequest -Uri $url
-$response.Content | Out-File -FilePath C:\ścieżka\do\pliku.html
+Invoke-WebRequest -Uri "http://przykladowa-strona.pl" -OutFile "strona.html"
 ```
 
-Wynik tego kodu to zapisanie całej strony http://przyklad.pl jako plik HTML na dysku lokalnym.
+Wynik to zapisany plik `strona.html` z zawartością strony.
 
-## Więcej szczegółów:
+Aby czytać zawartość jako tekst bezpośrednio w PowerShellu:
 
-Pobieranie stron internetowych to stara praktyka, która istnieje od początków internetu. PowerShell z winęłością .NET oferuje dużą elastyczność w tej materii.
+```PowerShell
+$response = Invoke-WebRequest -Uri "http://przykladowa-strona.pl"
+$response.Content
+```
 
-Alternatywą jest korzystanie z innych narzędzi, takich jak wget w Linux. Można również stosować specjalistyczne biblioteki w językach programowania, takie jak 'requests' w Python.
+Otrzymany wynik będzie surowym HTMLem strony.
 
-Podczas korzystania z PowerShell warto pamiętać o pewnych szczegółach implementacyjnych: 
-- `Invoke-WebRequest` korzysta z sesji web, co pozwala na obsługę ciasteczek i autentykacji.
-- Aby obsługiwać strony z dużą ilością treści JS, można potrzebować dodatkowych narzędzi, takich jak Selenium.
+## Deep Dive:
+"Wnikliwe spojrzenie:"
+Pobieranie stron sieciowych istnieje od początków internetu. Alternatywą dla `Invoke-WebRequest` jest użycie `curl` lub `wget` w systemie Unix. `Invoke-WebRequest` jest mocno zintegrowane z .NET Framework, co pozwala na łatwe przetwarzanie danych w PowerShellu. Korzysta z klasy `HttpClient` w tle.
 
-## Zobacz też:
-
-1. Szerokie omówienie `Invoke-WebRequest`: [Link](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
-3. Obsługa stron z dużą ilością JavaScriptu: [Link](https://stackoverflow.com/questions/46372116/powershell-invoke-webrequest-and-javascript)
+## See Also:
+"Zobacz również:"
+- [Dokumentacja PowerShell Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Invoke-WebRequest)
+- [Learn PowerShell](https://learn.microsoft.com/pl-pl/powershell/) - strona nauki PowerShell po polsku.

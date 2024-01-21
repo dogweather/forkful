@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http"
-html_title:           "Bash: שליחת בקשת http"
-simple_title:         "שליחת בקשת http"
+title:                "שליחת בקשת HTTP"
+date:                  2024-01-20T18:00:20.079942-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,34 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-שליחת בקשת HTTP היא דרך להתקשר עם שרת אינטרנט. מתכנתים שולחים בקשות HTTP כדי לגשת למידע, לצורך ביצוע פונקציות, כמו הגשת טפסים, או בדיקת מצב של שרתים.
+## What & Why? (מה ולמה?)
+HTTP requests are how we ask for stuff on the web. Programmers send them to get data, post data, and interact with web services. Essential for web development and APIs.
 
-## איך לבצע:
-לנו מספר מודולים בפייתון אשר מאפשרים לנו לשלוח בקשות HTTP. "Requests" הוא אחד הנוחים ביותר לשימוש. הראשון שנעשה זה להתקין אותו ע"י פקודת pip:
+## How to: (איך לעשות:)
+Here’s a quick code snippet using `requests` in Python:
 
-```Python
-pip install requests
-```
-
-ולאחר מכן נבצע את הבקשת HTTP GET:
-
-```Python
+```python
 import requests
 
-response = requests.get('https://www.example.com')
+# Get request
+response = requests.get('https://api.github.com')
+print(response.status_code)
+print(response.json())
 
-print(response.text)
+# Post request
+payload = {'key1': 'value1', 'key2': 'value2'}
+post_response = requests.post('https://httpbin.org/post', data=payload)
+print(post_response.text)
+```
+Sample output:
+
+```
+200
+{'current_user_url': 'https://api.github.com/user', ... etc ... }
+{
+  "args": {}, 
+  "data": "", 
+  "files": {}, 
+  "form": {
+    "key1": "value1",
+    "key2": "value2"
+  },
+  ... etc ...
+}
 ```
 
-כאשר נפעיל את הקטע הבא של הקוד, נוכל לראות את תוכן הדף של www.example.com.
+## Deep Dive (עומק השקעה)
+HTTP has been around since 1991 - Tim Berners-Lee's invention. Today, besides `requests`, you might see `http.client` or third-party packages like `httpx`. Each has its purpose. `requests` is friendly and high-level; `http.client` offers lower-level control. When sending HTTP requests, consider what data you send. With `POST`, data is in the body; `GET` goes in the URL.
 
-## התעמקות:
-אינטרנט פועל בעיקר על בקשות HTTP. בשנת 1996 הוא הפך לסטנדרט באינטרנט, ומאז אינספור שיפורים בוצעו לשפה. יתרה מכך, "Requests" היא רק אחת מהספריות שבהן פייתון נתמך, ישנן גם את urllib וhttplib2, חבילות אחרות שאפשרות שליחת הכי הרבה סוגים של בקשות HTTP.
+## See Also (ראה גם)
+Learn more from these:
 
-עם ספריית "Requests" (ומרבית ספריות פייתון המקבילות לה), התהליך די פשוט: אתה שולח בקשת HTTP ומקבל תגובה. על פי התגובה הזו, אתה יכול לנתח את הנתונים שקיבלת, לגשת למידע שאתה צריך, או לבצע פעולות נוספות.
-
-## ראה גם:
-- [התיעוד הרשמי של ביבליות ה-Requests](https://docs.python-requests.org/en/latest/)
-- [מאמר מעולה שמסביר את HTTP באופן מפורט](https://developer.mozilla.org/he/docs/Web/HTTP/Overview)
-- [איך לשלוח בקשות HTTP בפייתון באמצעות urllib](https://docs.python.org/3/library/urllib.request.html#module-urllib.request)
+- Requests documentation: [http://docs.python-requests.org](http://docs.python-requests.org)
+- HTTPX, an async alternative: [https://www.python-httpx.org](https://www.python-httpx.org)
+- Python’s own HTTP library: [https://docs.python.org/3/library/http.client.html](https://docs.python.org/3/library/http.client.html)

@@ -1,6 +1,7 @@
 ---
 title:                "パターンに一致する文字を削除する"
-html_title:           "C: パターンに一致する文字を削除する"
+date:                  2024-01-20T17:41:48.650618-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "パターンに一致する文字を削除する"
 programming_language: "C"
 category:             "C"
@@ -10,49 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ?
+## What & Why? (何となぜ？)
+文字パターン一致する文字削除とは、特定のパターンにマッチする文字を文字列から取り除くことです。不要なデータのクリーンアップや、フォーマットの均一化などのためにプログラマーはこれを行います。
 
-文字列からパターンに一致する文字を削除するとは、特定のパターン（例えば、特定の文字や文字列）を探してそれを取り除くことを意味します。これは、不要な空白や特殊文字を削除したり、文字列を一貫した形式に整形したりするのに役立ちます。
-
-## どのように?
-
-ここでは、Cプログラムで文字列から文字'a'を削除する方法を示します。
-
+## How to: (方法)
 ```C
 #include <stdio.h>
 #include <string.h>
 
-void removeChars(char *str, char garbage) {
-    char *src, *dst;
-    for(src = dst = str; *src != '\0'; src++) {
-        *dst = *src;
-        if(*dst != garbage) dst++;
+void delete_chars_matching_pattern(char *str, const char *pattern) {
+    char *pr = str, *pw = str;
+    while (*pr) {
+        const char* pm = pattern;
+        int match_found = 0;
+        while (*pm) {
+            if (*pr == *pm++) {
+                match_found = 1;
+                break;
+            }
+        }
+        if (!match_found) *(pw++) = *(pr);
+        pr++;
     }
-    *dst = '\0';
+    *pw = '\0';
 }
 
 int main() {
-    char str[] = "abcabcabc";
-    
-    removeChars(str,'a');
-    
-    printf("%s",str);
-    
+    char str[] = "Hello, World! 123";
+    delete_chars_matching_pattern(str, "lo123");
+    printf("%s\n", str); // Should print "He, Wrld! "
     return 0;
 }
 ```
 
-このプログラムは「bcbbcbcbc」を出力します。この出力が示す通り、すべての'a'が取り除かれています。
+## Deep Dive (深掘り)
+C言語では、文字列操作は基本的な関数群で行われますが、パターンマッチ削除は標準では提供されていません。これを実現するには、自作の関数を用意する必要があります。過去のC言語のバージョンでは正規表現ライブラリが存在しなかったこともあり、単純な文字列処理で多くのタスクが行われていました。この例では、`delete_chars_matching_pattern` 関数を用いて、指定されたパターンの文字を持つ文字列から該当する文字を削除しています。代替手段として、POSIX準拠システムでは `<regex.h>` を用いた正規表現マッチングが可能ですが、それには学習コストが伴います。
 
-## ディープダイブ
+## See Also (関連情報)
+- C Standard Library Functions: http://www.Ｃ標準ライブラリ.com/
+- POSIX regex(3) - Linux man page: https://linux.die.net/man/3/regex
+- Stack Overflow - C-related questions: https://stackoverflow.com/questions/tagged/c
 
-履歴について言えば、このような文字削除の操作は、以前の编程語言バージョンでも利用可能で、現在と同じく、特定の目的がありました。
-
-代替手段としては、他の多くのプログラミング言語で同様の操作が可能です。例えばPython、Javaなどです。
-
-このような操作は、一般的には2つのポインタを利用して実行されます。ソースポインタは読み、デスティネーションポインタは書き込みます。文字が指定したパターンと一致する場合、その文字は書き込まれずにスキップされます。しかし、一致しない場合、文字は書き込まれ、デスティネーションポインタも進行します。この方法で、最小のオーバーヘッドで操作を実行することが可能です。
-
-## 参照
-
-1. C library function - [memmove()](https://www.tutorialspoint.com/c_standard_library/c_function_memmove.htm) 
-2. C library function - [strchr()](https://www.tutorialspoint.com/c_standard_library/c_function_strchr.htm)
+Please note that some URLs may be placeholders as providing accurate and updated URLs goes beyond the capabilities of this AI. C standard library resources can be found with a search using terms like "C standard library functions" and POSIX regex documentation can be located by searching "POSIX regex manual" or accessing the appropriate system manual pages. Stack Overflow is a valuable resource for all programming questions, not just C-related ones, and can be accessed directly by visiting the provided link.

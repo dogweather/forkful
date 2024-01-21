@@ -1,7 +1,8 @@
 ---
-title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
-html_title:           "Gleam: Merkkijonon muuttaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+date:                  2024-01-20T17:38:45.419134-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,38 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä ja Miksi?)
+Muuttaa stringin pieniksi kirjaimiksi. Teemme näin muun muassa tiedon normalisointiin ja vertailuihin, jolloin isot kirjaimet eivät vaikuta tulokseen.
 
-Merkkijonon muuttaminen pieniksi kirjaimiksi on tehtävä, jossa muunnetaan kaikki merkkijonon kirjaimet pieniksi kirjaimiksi. Ohjelmoijat tekevät tämän usein tekstin normalisoimiseksi ja vertailun helpottamiseksi, koska järjestelmät erottelevat usein isot ja pienet kirjaimet.
+## How to (Kuinka tehdä):
+Java tarjoaa helpon tavan muuttaa merkkijonojen kirjainkoko metodia `toLowerCase()` käyttäen. Katsotaanpa koodia.
 
-## Miten se tehdään:
-
-Alla on koodiesimerkkejä Java-ohjelmointikielellä:
-
-```Java
-String isoKirjain = "Moi Moikka!";
-String pieniKirjain = isoKirjain.toLowerCase();
-System.out.println(pieniKirjain);
+```java
+public class LowerCaseExample {
+    public static void main(String[] args) {
+        String original = "Hello, World!";
+        String lowerCased = original.toLowerCase();
+        System.out.println(lowerCased);
+    }
+}
 ```
 
-Tämän koodin tuloste on:
+Esimerkin tulostus:
 
 ```
-moi moikka!
+hello, world!
 ```
 
-## Syväsukellus:
+## Deep Dive (Syväsukellus):
+Javassa `toLowerCase()` metodin käyttäminen yleistyi jo varhaisessa vaiheessa, sillä se on peräisin String-luokasta, joka on osa Java-perusympäristöä.
 
-Historiallisesti merkkijonojen pienten kirjainten käyttö on juurtunut ajatukseen, että tekstien vertaaminen olisi helpompaa ilman isoja kirjaimia. Tämä on järkevää, koska esimerkiksi käyttäjätunnukset ja salasanat ovat yleensä case-sensitive, eli otetaan huomioon isojen ja pienten kirjainten ero.
+* Historiallinen konteksti: Metodi on ollut olemassa Javan ensimmäisestä versiosta lähtien.
+* Vaihtoehdot: Voit myös käyttää `Apache Commons Lang` -kirjastoa, `StringUtils.lowerCase()` metodilla, joka voi käsitellä `null` arvoja.
+* Toteutuksen yksityiskohdat: Javan `toLowerCase()` metodi käyttää paikallisia asetuksia (locale) merkkijonoa pienentäessään. Se voi olla merkittävää kielissä, joissa on erityisiä sääntöjä kirjainkoille.
 
-Vaihtoehtoisesti, `toUpperCase()` -metodi muuttaa kaikki merkkijonon kirjaimet isoiksi kirjaimiksi. Tämä voi olla hyödyllistä joissakin tilanteissa, riippuen sovelluksen käytännöistä ja vaatimuksista.
-
-Java'n `toLowerCase()` ja `toUpperCase()` metodit käyttävät UnicodeData-tiedostoa määrittämään, onko merkki kirjain ja jos on, mikä on sen vastine isolla tai pienellä kirjaimella.
-
-## Katso myös:
-
-Jos haluat tutkia lisää merkkijonojen käsittelyä ja manipulointia Javassa, tarkista seuraavat linkit:
-
-1. Oracle Java Docs for String: [Linkki](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
-2. Java String toLowerCase() -metodi: [Linkki](https://www.javatpoint.com/java-string-tolowercase)
-3. Java String toUpperCase() -metodi: [Linkki](https://www.javatpoint.com/java-string-touppercase)
+## See Also (Katso myös):
+- [Java String toLowerCase() Method](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#toLowerCase())
+- [Apache Commons Lang StringUtils](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html#lowerCase-java.lang.String-)

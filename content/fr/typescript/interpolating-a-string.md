@@ -1,7 +1,8 @@
 ---
-title:                "Interpolation d'une chaîne de caractères"
-html_title:           "Ruby: Interpolation d'une chaîne de caractères"
-simple_title:         "Interpolation d'une chaîne de caractères"
+title:                "Interpolation de chaînes de caractères"
+date:                  2024-01-20T17:51:38.160284-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolation de chaînes de caractères"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,31 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ?
-
-L'interpolation de chaînes est le processus d'insertion de variables ou d'expressions dans une chaîne de caractères. C'est une pratique courante pour rendre le code plus propre, plus lisible et plus réutilisable.
+## Quoi et Pourquoi ?
+L'interpolation de chaînes permet d'insérer des variables ou des expressions au sein d'une chaîne de caractères. Les programmeurs l'utilisent pour dynamiser du texte et simplifier la concaténation.
 
 ## Comment faire :
+```typescript
+let utilisateur = 'Marie';
+let message = `Bonjour ${utilisateur}, comment ça va ?`;
 
-En TypeScript, nous utilisons les backticks (`) pour créer une chaîne de caractères, et nous insérons les variables avec ${}. Regardez cet exemple :
-```TypeScript
-let prenom = "Marie";
-let salutation = `Bonjour, ${prenom}!`;
-console.log(salutation);  // "Bonjour, Marie!"
+console.log(message);  // "Bonjour Marie, comment ça va ?"
 ```
-Dans cet exemple, la valeur de la variable `prenom` est insérée dans la chaîne `salutation`.
+Dans cet exemple, la syntaxe avec les backticks (``) et le signe dollar suivi des accolades (`${}`) est utilisée pour interpoler la variable `utilisateur` dans le message.
 
-## Analyse en profondeur
+## Exploration approfondie
+Historiquement, l'interpolation de chaînes était plus laborieuse en JavaScript, nécessitant d'utiliser l'opérateur `+` pour concaténer des variables et des chaînes littérales :
 
-Historiquement, en JavaScript, vous deviez construire ou concaténer des chaînes avec l'opérateur +, ce qui rendait le code encombrant et difficile à lire. L'interopération de chaîne, introduit avec ES6, a résolu ce problème.
+```javascript
+var utilisateur = 'Marie';
+var message = 'Bonjour ' + utilisateur + ', comment ça va ?';
+```
 
-Comme alternative à l'interpolation de chaînes, vous pouvez toujours utiliser la concaténation, mais cela peut conduire à un code plus verbosité et moins lisible.
+Avec ES6, TypeScript a adopté les template strings, simplifiant grandement l'interpolation. Il suffit d'utiliser des backticks et la syntaxe `${expression}` pour insérer des valeurs dans une chaîne de caractères.
 
-Au niveau de l'implémentation, l'interpolation de chaîne est mise en œuvre comme une façon de formater les chaînes à l'aide des modèles de littéraux de chaîne. La notation de la variable `${nom_variable}` est placée à l'endroit où la valeur de la variable doit apparaître dans la chaîne.
+Alternative, vous pourriez toujours utiliser la concaténation (+), mais c'est moins lisible et plus sujet aux erreurs.
+
+Du point de vue de l'implémentation, l'interpolation de chaînes dans TypeScript est convertie en appel de fonction. Par exemple, `\`Bonjour ${utilisateur}\`` devient `Bonjour ".concat(utilisateur, " ")` après transpilation en ES5, garantissant que votre code fonctionne même sur d'anciens navigateurs.
 
 ## Voir aussi
-
-Pour plus d'informations sur l'interpolation de chaînes en TypeScript, référez-vous à ces sources supplémentaires :
-
-
-- Un tutoriel complet sur l'interpolation de chaînes avec des exemples : [https://www.tutorialsteacher.com/typescript/typescript-string](https://www.tutorialsteacher.com/typescript/typescript-string)
+- [Documentation officielle de TypeScript](https://www.typescriptlang.org/docs/)
+- [MDN Web Docs sur Template Strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)

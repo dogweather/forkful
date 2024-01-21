@@ -1,6 +1,7 @@
 ---
 title:                "המרת תאריך למחרוזת"
-html_title:           "Bash: המרת תאריך למחרוזת"
+date:                  2024-01-20T17:36:12.858679-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "המרת תאריך למחרוזת"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,34 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה & למה?
-המרת תאריך למחרוזת היא פעולה שבה משנים את מבנה התאריך מאובייקט תאריך לתבנית מחרוזת של בחירתנו. מתכנתים עושים את זה, כדי להוסיף את התאריך לתצוגה למשתמש או לנתוני יומן.
+## מה ולמה?
+המרת תאריך למחרוזת היא תהליך שבו לוקחים תאריך ושומרים אותו כטקסט. זה נעשה כדי לקל על התצוגה, השמירה או הלוגיקה בקוד שלנו.
 
-## איך לעשות:
-אנו יכולים להמיר תאריך למחרוזת באמצעות המתודה `strftime`. דוגמה:
-
+## איך עושים את זה:
 ```Arduino
-#include <TimeLib.h>
+#include <RTClib.h>
+#include <Wire.h>
+
+RTC_DS3231 rtc;
+
 void setup() {
-  time_t now = now();
-  char buffer[21];
-  strftime(buffer, sizeof(buffer), "%d/%m/%Y %H:%M:%S", localtime(&now));
-  Serial.begin(115200);
-  Serial.println(buffer);
+  Serial.begin(9600);
+  if (!rtc.begin()) {
+    Serial.println("לא נמצא RTC");
+    while (1);
+  }
 }
+
 void loop() {
+  DateTime now = rtc.now();
+  
+  char dateStr[20];
+  sprintf(dateStr, "%02d/%02d/%04d", now.day(), now.month(), now.year());
+  Serial.println(dateStr);
+
+  delay(1000);
 }
 ```
-בדוגמה זו, אנו ממירים את התאריך והשעה הנוכחיים למחרוזת. פלט הקוד:
+פלט לדוגמא:
+```
+23/09/2023
+```
 
-`01/05/2023 14:30:50`
+## נפנוף טכני
+ההמרה של תאריכים למחרוזות התחילה כשהתקנים שונים נדרשו לתקשר עם כל אחד. זו דרך פשוטה ומובנת לאדם לעבד ולתאר נתוני תאריך. האלטרנטיבות כוללות את שימוש בספריות נוספות כמו `TimeLib.h`, או המרות בינאריות לאחסון יעיל יותר. לפני כן, פורמט המרה כללי כגון `sprintf` מתאים כאשר אנו רוצים לשלוט בפורמט הסופי של המחרוזת. ובנוסף, זהירות חייבת להינקט כאשר יש צורך לעבוד עם שפות ואזורים שונים כדי להבטיח שפורמט התאריך יהא מובנה למשתמש.
 
-## צלילה עמוקה
-מאז אינטרנט המקורי, מתכנתים ממירים את התאריך למחרוזת כדי להציג למשתמש. זו דרך מקובלת לטפל בתאריכים בצורה שמתכנתים רובם מכירים. החלופות להמרה כוללות את השימוש בטיפוסי מחרוזת אחרים, כולל משתנים ממונה או מערכים.
-חלק מהפרטים של הישום: מתודת `strftime` מקבלת שלושה ארגומנטים. הראשון הוא כאן להקצות זיכרון למחרוזת, השני הוא הגודל של המחרוזת, והשלישי הוא תבנית המחרוזת שאנו רוצים להפוך את התאריך לה.
-
-## ראה גם
-מאמרים למידה מקוונים אחרים ליצור ולהמיר מחרוזות ב-Arduino:
-1. [עיבוד מחרוזות ב-Arduino](https://create.arduino.cc/projecthub/project14/string-manipulation-with-arduino/overview)
-2. [המרת תאריכים ושעות](http://playground.arduino.cc/Code/Time)
-3. [מזרח קוד Arduino עם TimeLib](https://github.com/PaulStoffregen/Time)
+## ראו גם
+- [RTClib – ספריית Arduino לעבודה עם RTC](https://github.com/adafruit/RTClib)
+- מסמך ה-API של `sprintf`: [cplusplus.com – sprintf](http://www.cplusplus.com/reference/cstdio/sprintf/)
+- [Arduino Time Library](https://www.pjrc.com/teensy/td_libs_Time.html)

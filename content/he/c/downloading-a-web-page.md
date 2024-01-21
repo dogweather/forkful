@@ -1,6 +1,7 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "C++: הורדת דף אינטרנט"
+date:                  2024-01-20T17:43:43.628540-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "C"
 category:             "C"
@@ -11,48 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-הורדת דף אינטרנט משמעה קבלת גישה לתוכן ה- HTML של דף אינטרנט דרך הקוד. מתכנתים מבצעים את זה כדי לנתח נתונים, לבדוק את חווית המשתמש, לבדוק ביצועים ולראות איך עמודים אחרים מתנהגים.
 
-## איך
-התוכנית הבאה בשפת C הורדת דף אינטרנט.
+להוריד דף אינטרנט זה פשוט לקבל את התוכן שלו דרך הרשת. תכניתנים עושים את זה כדי לעבד נתונים, לאסוף מידע, או לבצע בדיקות אוטומציה.
 
-```C
+## איך לעשות:
+
+הקוד הבא משתמש בספריית libcurl להוריד דף אינטרנט:
+
+```c
 #include <stdio.h>
 #include <curl/curl.h>
 
-size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
-    size_t written = fwrite(ptr, size, nmemb, stream);
+static size_t write_data(void *ptr, size_t size, size_t nmemb, void *stream) {
+    size_t written = fwrite(ptr, size, nmemb, (FILE *)stream);
     return written;
 }
 
 int main(void) {
     CURL *curl;
-    FILE *fp;
     CURLcode res;
+    FILE *pagefile;
 
+    curl_global_init(CURL_GLOBAL_ALL);
     curl = curl_easy_init();
-
-    if (curl) {
-        fp = fopen("/tmp/test.txt","wb");
+    if(curl) {
         curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
-        res = curl_easy_perform(curl);
-
-        /* always cleanup */
+        pagefile = fopen("example.html", "wb");
+        if(pagefile) {
+            curl_easy_setopt(curl, CURLOPT_WRITEDATA, pagefile);
+            res = curl_easy_perform(curl);
+            fclose(pagefile);
+            if(res != CURLE_OK)
+                fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+        }
         curl_easy_cleanup(curl);
-        fclose(fp);
     }
+    curl_global_cleanup();
     return 0;
 }
 ```
 
-התוצאה שתראו היא דף האינטרנט שהורד מhttp://example.com שמור בקובץ /tmp/test.txt.
+תוצאת הדוגמה: קובץ בשם `example.html` יווצר עם התוכן של דף האינטרנט http://example.com.
 
-## הצלילה לעומק
-הורדת דפי אינטרנט הייתה חלק מחיפוש גוגל ובוטים הראשונים שהועלו לרשת. בתיקון מודרני, השימוש בספריות כמו CURL ב-C הופך את זה ליותר פשוט בהרבה. החלופות ל-CURL כוללות Wget ו- Requests ב-Python. לאפשרות זו יש יתרונות נוספים כמו תמיכה במודלים אסינכרוניים וממשק פשוט יותר לשימוש.
+## צלילה לעומק:
 
-## ראה גם
-1. התיעוד של [LIBCURL](https://curl.se/libcurl/c/) הוא מקור מצוין למידע נוסף על הספרייה.
-2. המדריך של [GNU Wget](https://www.gnu.org/software/wget/) מספק מבט מעמיק על קונצפטים ושימושים להורדת פרטים.
-3. מספר מדריכים רבים של [Python Requests](https://realpython.com/python-requests/) מספקים להם גם גישה לשפה ולספרייה.
+להוריד דף אינטרנט היה קשה יותר בעבר לפני שספריות כמו libcurl הפכו לנגישות. חלופות כוללות שימוש ב-sockets ישירות או בספריות אחרות כמו libhttp או WinInet בחלונות. הסיבוך בפרטים כמו ניהול חיבורים, ניתוב והצפנה הופך את ספריות כמו libcurl לאטרקטיביות למטרה זו.
+
+## ראה גם:
+
+* [מדריך libcurl](https://curl.haxx.se/libcurl/c/)
+* [RFC 7230 - Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing](https://tools.ietf.org/html/rfc7230)
+* [cURL שימושים בשורת הפקודה](https://curl.haxx.se/docs/manpage.html)
+* [HTTP Made Really Easy](http://www.jmarshall.com/easy/http/)

@@ -1,7 +1,8 @@
 ---
-title:                "Tworzenie tymczasowego pliku"
-html_title:           "C#: Tworzenie tymczasowego pliku"
-simple_title:         "Tworzenie tymczasowego pliku"
+title:                "Tworzenie pliku tymczasowego"
+date:                  2024-01-20T17:40:06.788192-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,36 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-
-Tworzenie tymczasowego pliku to prowizoryczne utworzenie okresowego magazynu danych. Programiści robią to, aby przechowywać dane, które są potrzebne tylko przez krótki czas i nie są wymagane na stałe.
+## Co i dlaczego?
+Tworzenie tymczasowego pliku to proces generowania pliku, który istnieje tylko na czas działania aplikacji. Programiści używają tej techniki, aby przechowywać dane tymczasowe bez ryzyka zakłócenia stałej struktury danych lub kiedy chcą zapewnić bezpieczeństwo informacje poprzez ich samozniszczenie po użyciu.
 
 ## Jak to zrobić:
+W Elm, bezpośrednie tworzenie plików tymczasowych nie jest możliwe, ponieważ język ten działa w przeglądarce i nie ma dostępu do systemu plików. Jednak możemy symulować ten proces. Przykład poniżej pokazuje, jak tego dokonać przez generowanie unikatowego URL-a za pomocą funkcji:
 
-Niestety, język Elm nie obsługuje bezpośrednio tworzenia plików tymczasowych, gdyż jest przeznaczony głównie do tworzenia aplikacji webowych na klienta i nie posiada natywnego API do manipulacji plikami na dysku. W takim wypadku, musimy zastosować rozwiązanie zewnętrzne. Na przykład, korzystając z serwera Node.js po stronie serwera:
+```Elm
+module Main exposing (..)
 
-```javascript
-var tmp = require('tmp');
+import Browser
+import Html exposing (Html, button, div, text)
+import Html.Events exposing (onClick)
+import Random
 
-tmp.file(function _tempFileCreated(err, path, fd, cleanupCallback) {
-  if (err) throw err;
+-- Symulacja stworzenia "tymczasowego pliku"
+type Msg = CreateTempFile | GenerateUrl String
 
-  console.log("Ścieżka pliku: ", path);
-  console.log("Deskryptor pliku: ", fd);
+type alias Model = List String
 
-  cleanupCallback();
-});
+main =
+    Browser.sandbox { init = init, update = update, view = view }
+
+init : Model
+init = []
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        CreateTempFile ->
+            (model, Random.generate GenerateUrl (Random.string 10))
+
+        GenerateUrl uniqueUrl ->
+            (uniqueUrl :: model, Cmd.none)
+
+view : Model -> Html Msg
+view model =
+    div []
+        [ button [ onClick CreateTempFile ] [ text "Stwórz tymczasowy plik" ]
+        , div [] (List.map (text >> Html.div []) model)
+        ]
+
 ```
 
-## Wgłębiając się
+Ten kod generuje losowy ciąg znaków, który można wykorzystać jako identyfikator dla "tymczasowego pliku".
 
-Tworzenie plików tymczasowych ma swoje korzenie w początkowych latach Unix’a, gdzie tempo pracy dysków twardeych w porównaniu do szybkości RAM była znacznie wolniejsza.
+## Głębsze spojrzenie:
+Tworzenie prawdziwych tymczasowych plików jest domeną języków programowania działających bezpośrednio w systemie operacyjnym, jak Python czy C. Elm, z racji bezpieczeństwa i izolacji, nie ma dostępu do dysku w sposób, w jaki mają go te języki. Historia tworzenia tymczasowych plików sięga czasów, gdy programy działały w ograniczonej pamięci i potrzebowały zewnętrznego miejsca na przechowywanie danych. Opcje alternatywne to wykorzystanie Web Storage API dla tymczasowych danych w aplikacjach webowych lub integracja z backendem obsługującym pliki na serwerze.
 
-Alternatywnie, inne rozwiązania obejmują korzystanie z Firebase lub innych baz danych NoSQL dla przechowywania tymczasowych danych. Innym rozwiązaniem jest utworzenie własnej usługi do obsługi plików tymczasowych.
-
-Szczegóły implementacji tworzenia plików tymczasowych zależą od wybranych narzędzi i technologii. 
-
-## Zobacz także:
-* Strona npm dla biblioteki 'tmp': [npmjs.com/package/tmp](https://www.npmjs.com/package/tmp)
-* Baza danych Firebase od Google: [firebase.google.com](https://firebase.google.com/)
-* Inne bazy danych NoSQL: [nosql-database.org](https://nosql-database.org/)
+## Zobacz również:
+- [MDN Web Docs: Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
+- [Elm Guide: Random](https://guide.elm-lang.org/effects/random.html)
+- [Elm Documentation: Random.String](https://package.elm-lang.org/packages/elm/random/latest/Random-String)

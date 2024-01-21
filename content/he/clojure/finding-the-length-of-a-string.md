@@ -1,7 +1,8 @@
 ---
-title:                "מציאת אורך המחרוזת"
-html_title:           "Elm: מציאת אורך המחרוזת"
-simple_title:         "מציאת אורך המחרוזת"
+title:                "מציאת אורך מחרוזת"
+date:                  2024-01-20T17:47:20.372867-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "מציאת אורך מחרוזת"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,41 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?: 
-מציאת אורך המחרוזת היא פשוטה - זה הספירה של כמה תווים יש במחרוזת. מתכנתים מציאים את אורך מחרוזת כדי לבדוק את תקינותה ולאפשר תנאים שונים בביצוע הקוד.
- 
-## איך לעשות:
+## What & Why?
+מה ולמה?
+למצוא את אורך המחרוזת זה לקבוע כמה תווים יש בה. תכניתנים עושים את זה כדי לבדוק נתונים, לעבד טקסט, ולבצע ולידציות.
 
-חלקקים אחדים של קוד אמיתי למציאת אורך המחרוזת ב-Clojure:
- 
+## How to:
+איך לעשות:
+הדרך הנפוצה בקלוז'ר למצוא אורך מחרוזת היא באמצעות הפונקציה `count`. דוגמה:
+
 ```Clojure
-(defn string-length
-  [s]
-  (count s))
-
-(println (string-length "Hello, World!"))
+(def my-string "שלום עולם")
+(count my-string) ; => 9
 ```
-יחזיר: `13` 
- 
+
+מחרוזת ריקה? קלי קלות:
+
 ```Clojure
-(defn empty-string?
-  [s]
-  (= 0 (count s)))
-
-(println (empty-string? ""))
+(count "") ; => 0
 ```
-יחזיר: `true` 
 
-## ירידה עמוקה:
-ראשית, Clojure הוא שפת תכנות פונקציונלית מבית משפחת Lisp, שמתייחסת למחרוזות כאל רשימת תווים. לכן, Count היא בעצם פונקציה שמונה את מספר התווים.
+## Deep Dive
+עמק המידע:
+בקלוז'ר, `count` יכולה לספור לא רק תווים במחרוזת, אלא גם פריטים בכל קולקציה. היסטורית, פונקציות ספירה היו בשימוש כבר בשפות תכנות מוקדמות. קיימות אלטרנטיבות ל-`count`, כמו `length` בשפות אחרות, אך בקלוז'ר `count` היא הדרך המקובלת. כשאתה קורא `count` על מחרוזת, הפונקציה סופרת באופן יעיל את התווים האוניקוד בה, ומחזירה את המספר.
 
-חלופות לפונקציה של `count` הן `size` או `length`, אבל ב-Clojure הן לא קיימות.
- 
-לאחר מכן, אם אתה רוצה להכניס את מספר התווים של מחרוזת לונקציה אחרת או לתנאי, אתה יכול להשוות אותו ישירות או לבצע את פונקציית המחרוזת.
-
-##ראה גם:
-נסה את הקישורים הבאים על מנת לבחון בפרטים נוספים את הנושא של ניתוח מחרוזות בClojure:
- 
-1. Clojure מדריך מחרוזות: https://clojuredocs.org/clojure.core/string
-2. התחלה מחרוזות ב-Clojure: https://www.learn-clojure.com/clojure-strings
-3. ספרות על Clojure: https://clojure.org/guides/readme
+## See Also
+ראו גם:
+- [Official Clojure Documentation for count](https://clojuredocs.org/clojure.core/count)
+- [Clojure from the ground up: Sequences](https://aphyr.com/posts/302-clojure-from-the-ground-up-sequences)
+- [ClojureScript Cheatsheet for count](http://cljs.info/cheatsheet/)

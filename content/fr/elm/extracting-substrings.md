@@ -1,6 +1,7 @@
 ---
 title:                "Extraction de sous-chaînes"
-html_title:           "Arduino: Extraction de sous-chaînes"
+date:                  2024-01-20T17:45:24.269969-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,35 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi ?
+## What & Why?
+Extraire des sous-chaînes, c'est récupérer des parties spécifiques d'une chaîne de caractères. On le fait pour analyser, formater ou manipuler des données textuelles.
 
-Extraire des sous-chaînes revient à prendre une partie d'une chaîne existante. Les programmeurs font cela pour manipuler et analyser les données textuelles.
-
-## Comment faire :
-
-```Elm
-import String
-
-exampleString = "Bonjour, le monde!"
-
-substring = String.slice 0 7 exampleString
-
-```
-Ce qui donne "Bonjour".
+## How to:
+En Elm, on utilise les fonctions `String.slice` pour découper une sous-chaîne. Voici comment:
 
 ```Elm
-anotherExample = String[left](7 13 exampleString)
+import String exposing (slice)
+
+-- Extrait "Monde" de "Bonjour Monde"
+substring : String -> String
+substring str =
+  slice 8 13 str
+
+-- Exemple d'utilisation
+main =
+  String.fromList (substring "Bonjour Monde") -- "Monde"
 ```
-Ce qui donne "le monde".
 
-## Plongée en profondeur
+## Deep Dive
+Historiquement, l'extraction de sous-chaînes est un outil fondamental en programmation. En Elm, `String.slice` est préféré parce qu'il gère les unicode correctement contrairement à d'autres langages où ça peut être compliqué. Il existe aussi `String.left` et `String.right` pour obtenir des sous-chaînes depuis le début ou la fin.
 
-L'extraction de sous-chaînes existe depuis que la programmation a été inventée. Dans Elm, nous utilisons la fonction `String.slice` pour cela. 
-
-Les alternatives comprennent l'utilisation de bibliothèques de manipulation de chaînes tierces qui peuvent offrir plus de flexibilité, mais avec un coût d'apprentissage supplémentaire.
-
-Le `String.slice` fonctionne en parcourant la chaîne une fois et en copiant les caractères entre les indices de début et de fin.
-
-## Voir aussi
-
-Pour plus d'informations sur les fonctions de chaîne en Elm, consultez la documentation officielle ici: [Elm string library](https://package.elm-lang.org/packages/elm/core/latest/String). Aussi, le livre ["Programmer en Elm"](https://pragprog.com/titles/jzenelm/programming-elm/) offre une excellente introduction à la programmation en Elm.
+## See Also
+- Documentation Elm sur les chaînes de caractères: [Elm String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- Bonnes pratiques sur la manipulation de chaînes: [Practical Elm](https://elmprogramming.com/)

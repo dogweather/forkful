@@ -1,7 +1,8 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:00:59.359577-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,36 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-HTTP अनुरोध के साथ मूल ग्राहक पहुँच भेजना क्या है? इससे प्रोग्रामर्स अपने सर्वर को अपनी पहचान सत्यापित करने में सहायता करते हैं। यदि आपके पास मान्य प्रमाणीकरण जानकारी नहीं है, तो सर्वर अनुरोध अस्वीकार कर सकता है। 
+## What & Why? (क्या और क्यों?)
+HTTP अनुरोध बुनियादी प्रमाणीकरण के साथ भेजना, एक वेब सर्वर को उपयोगकर्ता नाम और पासवर्ड के साथ एक अनुरोध भेजने की प्रक्रिया है। प्रोग्रामर्स इसे विश्वसनीय संसाधनों तक सुरक्षित पहुँच के लिए करते हैं।
 
-## कैसे करें:
-Bash कोड प्रयोग करके आप सरलता से HTTP अनुरोध के साथ मूल प्रमाणीकरण भेज सकते हैं। 
-
-```Bash
-#!/bin/bash
-
-USERNAME="username"
-PASSWORD="password"
-
-URL="http://your-webpage.com"
-AUTH="Authorization: Basic $(echo -n "$USERNAME:$PASSWORD" | base64)"
-
-curl -H "$AUTH" "$URL"
-```
-उपरोक्त ब्लॉक का उपयोग करें और आवश्यकतानुसार यूजरनेम, पासवर्ड और URL बदलें। Output:
+## How to (कैसे करें):
+Bash में HTTP अनुरोध बुनियादी प्रमाणीकरण के साथ भेजने के लिए `curl` कमांड का इस्तेमाल करते हैं।
 
 ```Bash
-{
-  "authenticated": true,
-  "user": "username"
-}
+# Basic HTTP अनुरोध भेजने का उदाहरण
+curl -u username:password http://example.com
+
+# सक्सेसफुल रिस्पॉन्स:
+# HTTP/1.1 200 OK
+# content-type: application/json
+# {
+#   "message": "आपने सफलतापूर्वक प्रमाणीकरण किया है!"
+# }
 ```
-## गहराई में: 
-HTTP Basic Authentication का उपयोग पहली बार RFC 2617 (जून 1999) में पेश किया गया था। ऑल्टरनेटिव्स में OAuth, Digest Access Authentication, और SCRAM-SHA-1 शामिल हैं। इसपर अमल करते समय, प्रमाणीकरण की जानकारी को Base64 encoding का उपयोग करके कोडित किया जाता है। हालांकि, ध्यान दें कि Base64 encoding आसानी से decode की जा सकती है, इसलिए HTTPS तकनीक का उपयोग करना सलाह देते हैं।
 
-## देखें भी: 
-यदि आपको इस विषय पर और अधिक जानकारी चाहिए, तो निम्नलिखित लिंक्स देखें। 
+## Deep Dive (गहराई से जानकारी):
+बुनियादी प्रमाणीकरण HTTP प्रोटोकॉल का एक सरल प्रमाणन तरीका है जो रिक्वेस्ट हेडर में 'Authorization' फील्ड में यूजरनेम और पासवर्ड को Base64 एनकोडेड फॉर्मेट में जोड़ता है। 1990 के दशक में जब HTTP 1.0 पेश किया गया था, तब से यह मौजूद है। हालांकि, यह सबसे सुरक्षित प्रमाणन विधि नहीं मानी जाती क्योंकि यह आसानी से डीकोड किया जा सकता है। इसलिए, अधिक सुरक्षित ऑल्टरनेटिव्स के तौर पर OAuth, API keys, या JWT (JSON Web Tokens) उपयोग किए जाते हैं। फिर भी, बुनियादी प्रमाणीकरण को सरल इंटरफेस और लेस सिक्योर एपीआई कॉल्स के लिए अक्सर इस्तेमाल किया जाता है।
 
-- [HTTP authentication - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [HTTP Basic Auth - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+## See Also (और देखें):
+- [cURL Documentation](https://curl.se/docs/)
+- [MDN Web Docs: Authorization](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
+- [HTTP Basic Authentication - Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication)

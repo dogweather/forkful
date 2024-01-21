@@ -1,7 +1,8 @@
 ---
-title:                "Sammenligner to datoer"
-html_title:           "Clojure: Sammenligner to datoer"
-simple_title:         "Sammenligner to datoer"
+title:                "Sammenlikning av to datoer"
+date:                  2024-01-20T17:32:15.278550-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Sammenlikning av to datoer"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,47 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why? (Hva og Hvorfor?)
+Å sammenligne to datoer innebærer å se på om de er like, hvilken som kommer før eller tiden mellom dem. Programmerere gjør dette for å håndtere frister, tidslinjer og for å synkronisere hendelser.
 
-Å sammenligne to datoer er en prosess hvor man bestemmer hvilken dato som er tidligere eller senere, eller om de er identiske. Programmerere gjør dette for å utføre funksjoner som sortering av data, beregning av tidsintervaller, eller utløse hendelser basert på dato.
+## How to: (Hvordan:)
+```arduino
+#include <Wire.h>
+#include <RTClib.h>
 
-## Hvordan:
+RTC_DS3231 rtc;
 
-Her er et eksempel på hvordan man sammenligner to datoer i Arduino ved hjelp av TimeLib biblioteket:
-
-```Arduino 
-#include <TimeLib.h>
-  
 void setup() {
   Serial.begin(9600);
-  
-  tmElements_t tm1, tm2;
+  if (!rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    while (1);
+  }
 
-  tm1.Year = 2021 - 1970; tm1.Month = 7; tm1.Day = 21;
-  tm2.Year = 2021 - 1970; tm2.Month = 8; tm2.Day = 10;
-  
-  time_t t1 = makeTime(tm1), t2 = makeTime(tm2);
-  
-  if(t1 > t2)
-    Serial.println("Dato 1 er senere enn Dato 2");
-  else if(t1 < t2)
-    Serial.println("Dato 2 er senere enn Dato 1");
-  else
-    Serial.println("Datoene er identiske");
+  DateTime now = rtc.now();
+  DateTime eventDate = DateTime(2023, 4, 15, 10, 30, 0);  // År, måned, dag, time, minutt, sekund
+
+  if (now < eventDate) {
+    Serial.println("The event is ahead.");
+  } else if (now == eventDate) {
+    Serial.println("The event is happening now!");
+  } else {
+    Serial.println("The event has passed.");
+  }
+}
+
+void loop() {
+  // Dette eksempelet krever ikke en repeterende kodeblok.
 }
 ```
 
-Dette vil skrive ut enten "Dato 1 er senere enn Dato 2", "Dato 2 er senere enn Dato 1" eller "Datoene er identiske" avhengig av datoene som er satt.
+Sample output:
+```
+The event is ahead.
+```
 
-## Dypdykk:
+## Deep Dive (Dypdykk)
+Historisk var tidshåndtering i datasystemer primitiv, ofte uten støtte for tidszoner eller skuddår. Moderne mikrokontrollere, som de som Arduino bruker, støtter ofte eksterne Real-Time Clock (RTC)-moduler som DS3231 for mer presis tidshåndtering. En alternativ metode uten RTC-modul ville være å bruke millis()-funksjonen, men dette kan være mindre nøyaktig over lengre perioder. Ved implementasjon bør man ta hensyn til tidssonejusteringer og skuddår for å sikre nøyaktig dato-sammenligning.
 
-Sammenligning av to datoer er en tidstestet programmeringsfunksjon, som har vært nødvendig siden de første kalender-applikasjonene. Det er imidlertid mange måter å utføre denne operasjonen på, avhengig av behovene til ditt spesifikke prosjekt.
-
-For eksempel, i tillegg til TimeLib biblioteket, kan man også bruke DateTime biblioteket for lignende oppgaver. Valget av bibliotek kan avhenge av flere faktorer, som minnebruk og prosessorkrav.
-
-I vår implementering bruker vi `makeTime()` funksjonen for å konvertere vår strukturdata til `time_t` format. Denne formen for tid er mer egnet for sammenligning.
-
-## Se Også:
-
-Følgende lenker inneholder mer informasjon om sammenligning av datoer og tid i Arduino:
-1. [Arduino Time Library](https://www.arduino.cc/reference/en/libraries/time/)
+## See Also (Se også)
+- [RTClib Library GitHub](https://github.com/adafruit/RTClib)
+- [Arduino's millis() function](https://www.arduino.cc/reference/en/language/functions/time/millis/)

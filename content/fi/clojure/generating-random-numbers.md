@@ -1,7 +1,8 @@
 ---
-title:                "Satunnaisten numeroiden luominen"
-html_title:           "Bash: Satunnaisten numeroiden luominen"
-simple_title:         "Satunnaisten numeroiden luominen"
+title:                "Satunnaislukujen generointi"
+date:                  2024-01-20T17:49:06.945667-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Satunnaislukujen generointi"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Numbers"
@@ -10,41 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Satunnaislukujen generointi on prosessi uusien, arvaamattomien numeroiden luomiseksi. Ohjelmoijat käyttävät niitä simulaatioissa, peleissä ja turvallisuudessa, varmistaakseen järjestelmien ennakoimattomuuden ja reiluuden.
 
-Satunnaislukujen luominen on prosessi, jossa tuotetaan luku satunnaisella periaatteella, eikä ennalta määrättyjen sääntöjen mukaan. Ohjelmoijat tarvitsevat tätä toimintoa usein monissa erilaisissa tilanteissa, kuten pelien luomisessa, tilastollisissa analyyseissa tai turvallisuussyistä.
+## How to: (Kuinka tehdään:)
+```Clojure
+;; Arvon satunnaislukuja
+(rand) ; väliltä 0.0 - 1.0
+(rand-int 10) ; kokonaisluku väliltä 0 - 9
 
-## Näin teet:
-
-Clojure tarjoaa useita tapoja luoda satunnaislukuja. Yksinkertaisin on käyttää `rand` -funktiota, kuten nähdään alla:
-
-```clojure
-(rand) 
+;; Arvon satunnaisia numeroita tietyn kokoelmasta
+(rand-nth [10 20 30 40 50]) ; esim. 30
 ```
-Tämä palauttaa satunnaisen liukuluvun väliltä 0.0 ja 1.0. Näin ollen, saatat saada jotakin tällaista:
-
-```clojure
-0.3940655398820112
-```
-
-Jos haluat satunnaisen kokonaisluvun, voit yhdistää tämän `int` -funktioon:
-
-```clojure
-(int (rand 10)) 
+Sample output (esimerkkitulo):
+```Clojure
+0.7090036868539567
+7
+30
 ```
 
-Esimerkiksi tämä palauttaa satunnaisen kokonaisluvun väliltä 0 ja 9.
+## Deep Dive (Sukellus syvyyksiin):
+Satunnaislukujen generointi on vanha konsepti, yhtä vanha kuin matematiikka itse. Algoritmeja, kuten LCG (Linear Congruential Generators), on käytetty vuosikymmenten ajan. Clojuressa `(rand)` ja `(rand-int n)` käyttävät Java-kirjastoa, joka takaa hyvän satunnaisuuden.
 
-## Syvenny:
+Vaihtoehtoisia menetelmiä ovat tiheysfunktioiden käyttö `(rand-norm)` ja sekvenssien sekottaminen `(shuffle)`. Suorituskykyä ja turvallisuutta arvioidessa kannattaa tutkia krypto-graafisesti turvalliset RNG:t, kuten Java:n `SecureRandom`.
 
-Historiallisessa yhteydessä, satunnaislukugeneraattorit ovat olleet tombstone-ohjelmoinnin pilarit, ja niitä on käytetty useissa erilaisissa sovelluksissa, peleistä simulointeihin. Nämä generaattorit perustuvat yleensä johonkin matemaattiseen algoritmiin, ja niiden laatu riippuu algoritmin valinnasta.
+Clojuren `(rand)` toimii lazy-seq:jen kanssa. Se tarkoittaa, etteivät kaikki luvut generoidu kerralla, mikä säästää muistia ja tehostaa ohjelmien suoritusta.
 
-Clojuren `rand`-funktio hyödyntää alla olevan Javan Random-luokkaa, joka on pseudo-satunnaislukugeneraattori. Niitä kutsutaan pseudoiksi, koska ne tuottavat sarjan lukuja, joka näyttää satunnaiselta mutta toistuu lopulta. 
-
-Clojuressa on lisäksi olemassa many other libraries, kuten [test.check](https://github.com/clojure/test.check) ja [java.util.concurrent.ThreadLocalRandom](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadLocalRandom.html), jotka tarjoavat erilaisia työkaluja ja tekniikoita satunnaislukujen luomiseen.
-
-## Lisätietoja:
-
-- [Clojure Docs: Random](https://clojuredocs.org/clojure.core/rand)
-- [Test Check Repo](https://github.com/clojure/test.check)
-- [Oracle Java 8 ThreadLocalRandom](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadLocalRandom.html)
+## See Also (Katso myös):
+- ClojureDocs, kattava opas Clojure-funktioille: [ClojureDocs](https://clojuredocs.org)
+- “Clojure for the Brave and True”, luku satunnaisuudesta: [Brave Clojure](https://www.braveclojure.com)
+- Java SecureRandom dokumentaatio: [Oracle SecureRandom](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html)

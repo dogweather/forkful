@@ -1,6 +1,7 @@
 ---
 title:                "Scaricare una pagina web"
-html_title:           "C++: Scaricare una pagina web"
+date:                  2024-01-20T17:43:29.330231-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Scaricare una pagina web"
 programming_language: "C"
 category:             "C"
@@ -10,53 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Scaricare una Pagina Web in C: una Guida Pratica
+## What & Why?
+Scaricare una pagina web significa prelevare i dati da remoto per utilizzarli localmente. I programmatori fanno ciò per analizzare il contenuto, monitorare cambiamenti o integrare funzionalità web nelle loro applicazioni.
 
-## Cos'è & Perché?
-Scaricare una pagina web significa recuperare il suo codice HTML attraverso la rete. I programmatori fanno ciò per analizzare i dati, automatizzare le attività o controllare le modifiche.
+## How to:
+Per scaricare una pagina web in C, usiamo libcurl, una libreria affidabile per le operazioni in rete.
 
-## Come fare:
-Per scaricare una pagina web in C, puoi usare la libreria cURL. Ecco il codice di esempio:
 ```C
 #include <stdio.h>
 #include <curl/curl.h>
 
-size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp)
-{
-   return fwrite(buffer, size, nmemb, (FILE *)userp);
+static size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp) {
+    fwrite(buffer, size, nmemb, (FILE *)userp);
+    return size * nmemb;
 }
 
-int main(void)
-{
-    CURL *curl;
-    FILE *fp;
-    CURLcode res;
-    char *url = "http://www.example.com";
-    char outfilename[FILENAME_MAX] = "baixado.html";
-    curl = curl_easy_init();
-    if (curl) {
-        fp = fopen(outfilename,"wb");
-        curl_easy_setopt(curl, CURLOPT_URL, url);
+int main(void) {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        FILE *fp = fopen("output.html", "wb");
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
-        res = curl_easy_perform(curl);
+        curl_easy_perform(curl);
         curl_easy_cleanup(curl);
         fclose(fp);
     }
     return 0;
 }
 ```
-Questo programma scarica il contenuto HTML di www.example.com in un file chiamato "baixado.html"
 
-## Scavo Profondo
-La libreria cURL, introdotta nel 1997, è diventata uno standard de facto per il download di pagine web in C. Remota HTTP, HTTPS, FTP, tra gli altri. 
+Questo codice scarica il contenuto di http://example.com e lo salva in "output.html".
 
-Nonostante cURL sia molto popolare, esistono altre librerie come libwww o libsoup che offrono funzionalità simili. Ad esempio, libwww supporta le operazioni di rete asincrone, cosa che cURL no.
+## Deep Dive:
+Usare libcurl risale agli anni '90. Prima esistevano tecniche più primitive come l'apertura di socket TCP manuali e l'invio di richieste HTTP.
 
-In termini di implementazione, cURL apre una connessione TCP al server web e invia una richiesta HTTP GET. Il server risponde con i dati della pagina web, che vengono quindi scritti nel file di output.
+Le alternative includono:
+- `sockets` API di basso livello se vuoi controllo totale.
+- `wget` e `libwget`, comandi/utilità simili.
 
-## Vedi Anche
-1. Documentazione di cURL: https://curl.se/libcurl/c/
-2. Introduzione alle richieste di rete in C: https://beej.us/guide/bgnet/
-3. Libwww: http://www.w3.org/Library/
-4. Libsoup: https://developer.gnome.org/libsoup/stable/
+Dettagli implementativi:
+- Gestisci gli errori! Il codice sopra è semplificato.
+- `curl_easy_setopt` configura le opzioni di trasferimento.
+- `write_data` è un callback per scrivere i dati ricevuti.
+- È fondamentale liberare le risorse: `curl_easy_cleanup` e `fclose`.
+
+## See Also:
+- Documentazione di libcurl: https://curl.haxx.se/libcurl/
+- Tutorial di C su sockets: https://beej.us/guide/bgnet/
+- Lista di librerie HTTP per C: https://en.wikipedia.org/wiki/Comparison_of_HTTP_library_(programming)

@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anforderung senden"
-html_title:           "Bash: Eine HTTP-Anforderung senden"
-simple_title:         "Eine HTTP-Anforderung senden"
+title:                "Einen HTTP-Request senden"
+date:                  2024-01-20T18:00:41.912840-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Einen HTTP-Request senden"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -11,54 +12,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+HTTP-Anfragen sind der Austausch von Daten über das Internet nach dem Client-Server-Modell. Programmierer verwenden sie, um mit Webdiensten zu interagieren, Daten abzurufen oder zu senden – etwa, um Web-APIs zu nutzen oder Server-Status zu überprüfen.
 
-Ein HTTP-Anforderung (HTTP Request) senden bedeutet, eine Anfrage an einen Server zu stellen, um Informationen zu empfangen oder zu senden. Programmierer tun dies, um Daten von einer Web-API zu holen oder diese zu manipulieren.
-
-## Wie geht das?
-
-Wir verwenden das `reqwest` Paket, um HTTP-Anforderungen in Rust zu senden. Fügen Sie zuerst `reqwest` zu Ihren Abhängigkeiten hinzu.
+## How to:
+Um in Rust eine HTTP-Anfrage zu senden, nutzen wir die `reqwest`-Bibliothek. Hier ist ein einfaches Beispiel, wie man eine GET-Anfrage absendet:
 
 ```Rust
-[dependencies]
-reqwest = "0.11"
-tokio = { version = "1", features = ["full"] }
-```
+use reqwest;
+use std::error::Error;
 
-Jetzt können wir eine GET-Anfrage an eine API senden.
-
-```Rust
 #[tokio::main]
-async fn main() -> Result<(), reqwest::Error> {
-    let resp = reqwest::get("https://httpbin.org/get").await?;
+async fn main() -> Result<(), Box<dyn Error>> {
+    let response = reqwest::get("https://www.rust-lang.org")
+        .await?
+        .text()
+        .await?;
 
-    println!("{}", resp.text().await?);
+    println!("Body:\n{}", response);
     Ok(())
 }
 ```
 
-Ausführung des obigen Codes produziert einen Output wie:
+Ausgabe:
+
+```
+Body:
+<!doctype html>
+...
+```
+
+Für POST-Anfragen sieht das ähnlich aus, mit zusätzlichen Daten im Body:
 
 ```Rust
-{
-  "args": {}, 
-  "headers": {
-    "Accept": "*/*", 
-    ... 
-  }, 
-  "url": "https://httpbin.org/get"
+use reqwest;
+use std::error::Error;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn Error>> {
+    let client = reqwest::Client::new();
+    let res = client.post("http://httpbin.org/post")
+        .body("key=value")
+        .send()
+        .await?;
+
+    println!("Status: {}", res.status());
+    Ok(())
 }
 ```
 
-## Vertiefung
+Ausgabe:
 
-Das Versenden einer HTTP-Anforderung ist ein grundlegender Bestandteil des Internets. Historisch gesehen hat Rust dies durch die Standardbibliothek ermöglicht. Ähnlich wie viele andere Sprachen hat Rust jedoch Pakete entwickelt, um den Prozess zu vereinfachen und mehr Funktionen zu ermöglichen.
+```
+Status: 200 OK
+```
 
-Alternativen zu `reqwest` sind unter anderem `hyper` und `surf`. Die Verwendung dieser Pakete hängt von den Anforderungen Ihres Projekts ab.
+## Deep Dive:
+Historisch gesehen basieren HTTP-Anfragen auf dem Hypertext Transfer Protocol, das 1991 eingeführt wurde. Rust bietet, wie die meisten modernen Programmiersprachen, Pakete, um diesen Prozess zu vereinfachen. Während `reqwest` für viele ein Go-to-Paket ist, gibt es Alternativen wie `hyper` für niedrigere Ebenen der Abstraktion oder `surf`, falls nur Async-STD verfügbar ist.
 
-Die Implementierung von HTTP-Anforderungen mit `reqwest` ist ziemlich einfach. `reqwest` nutzt `tokio` für asynchrone I/O, was das Senden von HTTP-Anforderungen erleichtert.
+Die Implementierung einer HTTP-Anfrage in Rust erfordert eine asynchrone Umgebung, da Netzwerkanfragen I/O-blockierend sein können. Rust's `async/await` ermöglicht effiziente, nicht-blockierende Ausführung. `reqwest` nutzt `hyper` als HTTP-Implementierung, die wiederum auf `tokio` aufbaut, einem asynchronen Runtime.
 
-## Siehe auch
-
-Weitere Informationen und Beispiele für HTTP-Anforderungen in Rust finden Sie in den offiziellen `reqwest` [Dokumentation](https://docs.rs/reqwest/) und [GitHub Repository](https://github.com/seanmonstar/reqwest).
-
-Falls Sie an den tieferen Details von asynchronem I/O in Rust interessiert sind, schauen Sie sich das `tokio` [Dokumentation](https://docs.rs/tokio/1.0.1/tokio/).
+## See Also:
+- [`reqwest` Dokumentation](https://docs.rs/reqwest/)
+- [Rust `async` Buch](https://rust-lang.github.io/async-book/)
+- [HTTP in Rust mit `hyper`](https://hyper.rs/)
+- [`surf` GitHub Repository](https://github.com/http-rs/surf)

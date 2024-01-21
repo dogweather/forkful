@@ -1,7 +1,8 @@
 ---
-title:                "开始新项目"
-html_title:           "Lua: 开始新项目"
-simple_title:         "开始新项目"
+title:                "开始一个新项目"
+date:                  2024-01-20T18:04:24.324549-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "开始一个新项目"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Getting Started"
@@ -10,49 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
+## What & Why? (是什麼？為什麼？)
+開始一個新項目就是創建一個全新的程式碼基礎。程序員這麼做是為了解決特定問題，或者開發一個有趣的想法。
 
-新项目的开始就是创建一个新的编程任务，程序员通过它可以解决特定的问题或达到一个特定的目标。程序员之所以这么做，一方面是因为编程可以使物理世界的事物数字化，另一方面也能帮助改进和优化系统。
-                                                                                                               
-## 如何?
+## How to: (怎麼做：)
+```Python
+# 建立一個新項目
 
-```python
-# 首先，创建一个新的Python文件
-# 在Python中，我们使用.py作为文件的扩展名
+# 1. 建立一個新的Python虛擬環境
+python -m venv my_project_env
 
-# 该文件中的内容可以包括变量、函数、类等
-variable = "Hello, World!"
+# 2. 啟動虛擬環境
+# 在Windows上:
+my_project_env\Scripts\activate
+# 在Unix或MacOS上:
+source my_project_env/bin/activate
 
-def function():
-    print(variable)
-    
-class MyClass:
-    def method(self):
-        print(variable)
+# 3. 安裝需要的套件
+pip install flask
+
+# 4. 創建一個app.py檔案，並寫入以下代碼
+# app.py
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+# 5. 運行應用程序
+# 設定環境變量
+export FLASK_APP=app
+# 啟動伺服器
+flask run
+
+# 瀏覽器顯示結果
+* Running on http://127.0.0.1:5000/
 ```
-此代码创建了一个新的Python文件，其中包含一个变量、一个函数和一个类。运行这段代码会得到以下结果：
 
-```python
->>> function()
-Hello, World!
+## Deep Dive (深入探討)
+開始新項目不僅限於編寫代碼。它的歷史背後包含了從版本控制的實踐（如git初始化）到專案管理工具的選擇（比如Jira或Trello）。選擇正確的框架和庫（例如Flask或Django）可以決定項目的起步速度。實現細節也關鍵，比如配置開發環境、解決依賴性問題和持續集成設置。
 
->>> obj = MyClass()
->>> obj.method()
-Hello, World!
-```
-## 深入
-
-#### 历史背景
-创建新项目在程序设计的早期阶段就已经存在。早期，程序员必须从零开始编程，现在的编程语言和工具能够更简洁有效地开启新的项目。
-
-#### 可选方法
-除了以上所述，存在许多其他创建新项目的方法。例如，很多现代的集成开发环境（IDE）包含用于创建新项目的模板和向导。
-
-#### 关于实施
-Python是一种理想的语言来开始新的项目，因为它既适合初学者，又能满足复杂项目的需求。你可以在任何支持Python的文本编辑器中开启新项目。
-
-## 参见：
-
-- [Python官方文档](https://docs.python.org/3/tutorial/index.html)
-- [创建Python项目的步骤步教程](https://realpython.com/tutorials/projects/)
-- [如何使用PyCharm开启新项目](https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html)
+## See Also (延伸閱讀)
+- [Flask 官方文檔](https://flask.palletsprojects.com/en/latest/)
+- [Python 虛擬環境指南](https://docs.python.org/3/library/venv.html)
+- [Python 官方教程](https://docs.python.org/3/tutorial/index.html)
+- [Git 版本控制入門](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)

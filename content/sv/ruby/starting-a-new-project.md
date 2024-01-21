@@ -1,7 +1,8 @@
 ---
-title:                "Att starta ett nytt projekt"
-html_title:           "Arduino: Att starta ett nytt projekt"
-simple_title:         "Att starta ett nytt projekt"
+title:                "Att påbörja ett nytt projekt"
+date:                  2024-01-20T18:04:12.083232-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -11,49 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att starta ett nytt projekt innebär att sätta upp en grundstruktur för din kod så att du kan börja skriva programmet. Programmerare gör detta för att organisera sina idéer och göra utvecklingen smidigare.
 
-Att starta ett nytt projekt handlar om att påbörja utvecklingen av en unik programvarulösning. Programmerare gör det för att lösa specifika problem, förbättra processer eller skapa nya tjänster.
-
-## Så här gör du:
-
-Innan vi börjar med något Ruby-projekt, se till att du har den senaste versionen av Ruby installerad. Använd sedan `mkdir` för att skapa en ny mapp för ditt projekt:
-
+## Hur gör man:
 ```Ruby
-#I din terminal, skriv
-mkdir my_new_project
+# Installera bundler om du inte redan har den
+gem install bundler
+
+# Skapa en ny katalog för projektet
+mkdir mitt_ruby_projekt
+cd mitt_ruby_projekt
+
+# Initiera ett nytt gem-projekt
+bundle gem mitt_program
+
+# Lägg till bibliotek (gems) i din Gemfile och installera dem
+# Gemfile:
+# source "https://rubygems.org"
+# 
+# gem "nokogiri"
+
+bundle install
+
+# Skapa en ny Ruby-fil och börja koda
+touch lib/mitt_program.rb
+
+# exempelkod i lib/mitt_program.rb
+class MittProgram
+  def say_hello
+    "Hej, världen!"
+  end
+end
+
+# Kör din kod
+ruby lib/mitt_program.rb
 ```
-
-För att skapa en ny Ruby-fil, typ `touch` följt av namnet på din fil med `.rb`-ändelsen:
-
-```Ruby
-# Skapa en ny Ruby-fil
-touch my_new_project.rb
 ```
-
-Nu kan du skapa och köra en enkel `Hello, World!` kod för att se till att allt fungerar:
-
-```Ruby
-#I din Ruby-fil, skriv
-puts 'Hello, World!'
-
-# Kör din Ruby-fil
-ruby my_new_project.rb
+# Förväntad utmatning (ingen i detta exempel eftersom vi inte har skrivit någon körbar kod)
 ```
-I din terminal bör du se: 
-```Ruby
-Hello, World!
-```
-
-Grattis, du har nu skapat och kört ditt första Ruby-projekt!
 
 ## Djupdykning
-
-Ruby startade på mitten av 1990-talet av Yukihiro "Matz" Matsumoto, med en filosofi om att programmering bör vara njutbar för utvecklaren. Alternativa språk till Ruby inkluderar Python och JavaScript, men Ruby har fördelar som dess läsbarhet och flexibilitet.
-
-När det gäller att starta ett nytt projekt, kom ihåg att en bra programmeringspraxis är att organisera ditt projekt i mappstrukturen. Tänk på att inkludera mappar för dina bibliotek (`lib`), tester (`test` eller `spec`), dokumentation (`docs`), och andra binärer (`bin`).
+Att starta ett projekt med `bundle gem` är det moderna sättet att organisera Ruby-kod. Detta skapades från RubyGems, Ruby's pakethanteringssystem, för att förenkla skapandet och delningen av bibliotek. Alternativ kan inkludera att skapa filer manuellt eller använda andra verktyg som `rails new` för Ruby on Rails-projekt. När du använder `bundle gem`, skapas en projektmapp med all nödvändig konfiguration för versionshantering, testning och dokumentation. Du får en klar struktur att följa, vilket främjar goda programmeringsvanor och underlättar samarbete.
 
 ## Se även
-
-1. The Ruby Programming Language, O'Reilly Media: [link here](https://www.oreilly.com/library/view/the-ruby-programming/9780596516178/)
-2. Ruby Documentation: [link here](https://www.ruby-lang.org/en/documentation/)
-4. The Basics of Creating a Ruby Gem: [link here](https://guides.rubygems.org/make-your-own-gem/)
+- RubyGems guides för att skapa gems: https://guides.rubygems.org/make-your-own-gem/
+- Bundler dokumentation för att hantera Ruby-projekt: https://bundler.io/
+- Officiellt Ruby språkets webbplats: https://www.ruby-lang.org/en/

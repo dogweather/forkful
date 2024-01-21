@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-html_title:           "Kotlin: एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-simple_title:         "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
+title:                "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
+date:                  2024-01-20T17:38:45.546700-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,32 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? | क्या और क्यों?
+एक स्ट्रिंग को लोअर केस में बदलने का मतलब है उसके सभी अक्षरों को छोटे अक्षर में बदलना। प्रोग्रामर्स यह तब करते हैं जब वे टेक्स्ट डेटा की तुलना करते समय मामले (case) की अनदेखी करना चाहते हैं।
 
-एक string को lower case में बदलने का मतलब होता है सभी अक्षरों को छोटे अक्षरों में बदल देना। प्रोग्रामर इसे यादृच्छिकता और त्रुटियों को रोकने के लिए करते हैं, जैसे कि जब प्रयोगकर्ताओं द्वारा इंपुट दिया गया डाटा को मिलाने या तुलना करने की आवश्यकता होती है।
-
-## कैसे करें:
-
-आप `Data.Char` module का upyog करके `toLower` function का upyog kar sakte hain. 
+## How to: | कैसे:
 ```Haskell
 import Data.Char (toLower)
 
-convertToLower :: String -> String
-convertToLower = map toLower
+-- स्ट्रिंग को लोअर केस में बदलने का फंक्शन
+lowerCaseStr :: String -> String
+lowerCaseStr = map toLower
 
-main = print $ convertToLower "HELLO WORLD"
+-- उपयोग का उदाहरण
+main :: IO ()
+main = putStrLn (lowerCaseStr "Hello नमस्ते!")
+
+-- सैंपल आउटपुट: "hello नमस्ते!"
 ```
-Output:
-```Haskell
-"hello world"
-```
 
-## गहराई में:
-* ऐतिहासिक प्रसंग: Haskell में strings को lower case में बदलने का समर्थन भाषा के अविभाज्य हिस्से के रूप में शामिल है।
-* विकल्प: Haskell में कई अन्य विधियां भी हैं जो यह कार्य कर सकती हैं, जैसे कि: `Text` टाइप का upyog करके जिसे `Data.Text` module में परिभाषित किया गया है।
-* कार्यान्वयन विवरण: `toLower` function `Char` को `Char` {'a' से 'z'} में मापता है। यदि यह पहले से ही lower case है, तो इसे बदला नहीं जाता है।
+उपरोक्त कोड `Data.Char` मॉड्यूल के `toLower` फंक्शन का उपयोग करके स्ट्रिंग को लोअर केस में बदलता है।
 
-## और भी देखें:
+## Deep Dive | गहराई में जानकारी
+स्ट्रिंग को लोअर केस में बदलना पुराने समय से प्रोग्रामिंग में एक सामान्य क्रिया है, जो टेक्स्ट प्रोसेसिंग और नॉर्मलाइजेशन के लिए उपयोग होती है। Haskell में `Data.Char` मॉड्यूल यह कार्य सरलता से करता है, पर इसमें अन्य मॉड्यूल्स जैसे `Data.Text` भी लोअरकेसिंग के लिए उपलब्ध हैं, खासकर बड़े टेक्स्ट ब्लॉक्स के लिए।
 
-* [Haskell Data.Char Module](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
-* [Haskell Data.Text Module](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)
+`toLower` फंक्शन Unicode स्टैंडर्ड का पालन करता है, जो अधिकतर भाषाओं में छोटे और बड़े अक्षरों के बीच मैपिंग करता है। कुछ भाषाओं में अक्षर केस कन्वर्जन की जटिलताएँ हो सकती हैं, जिसके लिए विशेष परिस्थितियों में विशेष लाइब्रेरीज़ या अलग लॉजिक की आवश्यकता हो सकती है।
+
+## See Also | देखें भी
+- Haskell `Data.Char` Module: [Hackage Documentation](https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Char.html)
+- Unicode Case Mapping: [Unicode Standard](https://www.unicode.org/reports/tr21/tr21-5.html)
+
+इन लिंक्स पर जाकर, आप Haskell में टेक्स्ट प्रोसेसिंग और `toLower` फंक्शन के बारे में और जान सकते हैं।

@@ -1,6 +1,7 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-html_title:           "Bash: HTTP-pyynnön lähettäminen"
+date:                  2024-01-20T17:59:32.395435-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,43 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi & Miten?
-HTTP-pyynnön lähettäminen tarkoittaa palvelimelle lähetettävää pyyntöä tiedon saamiseksi tai päivittämiseksi. Ohjelmoijat tekevät sen vuorovaikutuksessa palvelinten kanssa esimerkiksi verkkosivustoja tai mikropalveluja luodessaan.
+## What & Why?
+HTTP-pyyntö on tapa siirtää tietoa verkossa palvelimien ja asiakkaiden välillä. Ohjelmoijat käyttävät tätä toimintoa hakeakseen dataa, lähettääkseen dataa tai kommunikoidakseen etäpäätepisteiden kanssa.
 
-## Näin se tapahtuu:
-Elixirissä HTTP-pyyntöjen lähettäminen on suoraviivaista `HTTPoison`-kirjaston kanssa. Harkitse esimerkkiä:
+## How to:
+Elixirissä HTTP-pyyntöjen tekeminen käy usein `HTTPoison`-kirjaston kautta. Tässä helppo esimerkki GET-pyynnöstä:
 
-```elixir
-defmodule Kysely do
-  def req(url) do
-    HTTPoison.get!(url)
+```Elixir
+# ENSIKSI: Jos ei jo asennettu, lisää `HTTPoison` riippuvuuteen mix.exs-tiedostoosi:
+defp deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
+end
+
+# Sitten, pyynnön tekeminen:
+defmodule HTTPExample do
+  def fetch(url) do
+    HTTPoison.get(url)
   end
 end
 
-IO.inspect(Kysely.req("http://example.com"))
+# Otetaan vastaan vastaus ja tulostetaan se:
+{:ok, response} = HTTPExample.fetch("http://httpbin.org/get")
+IO.inspect(response.status_code) # Tulostaa 200
+IO.puts(response.body)           # Tulostaa pyydetyn resurssin raakadatan
 ```
 
-Yllä oleva koodi lähettää GET-pyynnön `http://example.com` -osoitteeseen ja tulostaa vastauksen. Output saattaa näyttää tältä:
+Sample output:
 
-```elixir
-%HTTPoison.Response{
-  body: "<html>...",
-  headers: [{"Content-Type", "text/html"}, ...],
-  request_url: "http://example.com",
-  status_code: 200
+```
+200
+{
+  "args": {}, 
+  "headers": {
+    "Host": "httpbin.org"
+    ...
+  }, 
+  ...
 }
 ```
 
-## Syvempi syöksy
-HTTP-pyynnöt ovat olleet olennainen osa verkkosovellusten toimintaa niiden alkuperästä lähtien. Ne ovat keino, jolla clientit, kuten selain, kommunikoivat palvelimen kanssa.
+## Deep Dive
+Elixirin suosio nousi erityisesti rinnakkaistamisen ja vikasietoisuuden vuoksi, mikä sopii hyvin moderneihin verkkosovelluksiin. Historiallisesti katsottuna, HTTP-pyyntöjen lähettäminen tapahtui Elixirissä matalamman tason kirjastojen, kuten `:httpc` (Erlangin HTTP client), kautta. `HTTPoison` on korkean tason kirjasto, joka käyttää `hackney`-kirjastoa ja tarjoaa käyttäjäystävällisen syntaksin Elixir-kehittäjille.
 
-Elixirissä on vaihtoehtoja HTTP-pyyntöjen lähettämiseen, mukaan lukien `ibrowse` ja `gun`. Kuitenkin `HTTPoison` on erityisen suosittu sen yksinkertaisen käyttöliittymän ja monipuolisten toimintojen, kuten streamingin ja hienosäätöisten pyyntöjen ansiosta.
+Vaihtoehtoisia kirjastoja `HTTPoison`ille ovat esimerkiksi `Tesla`, joka on modulaarinen HTTP-asiakaskirjasto middleware-tuella, sekä `Finch`, joka on keskittynyt suorituskykyyn Elixirin OTP-prinsiippejä noudattaen.
 
-HTTP-pyyntöjen lähettämisen ajatuksena elixirissä on, että HTTPoison.get!:n kutsu palauttaa `HTTPoison.Response` tai `HTTPoison.Error` -rakenteen. Tämä mahdollistaa virheiden käsittelyn riippuen siitä, onko pyyntö onnistunut.
+Lähetettäessä HTTP-pyyntöä tärkeää on ymmärtää eri pyyntötyypit (GET, POST, PUT, DELETE jne.), statuskoodit ja oikean HTTP-headerin määrittäminen. 
 
-## Katso myös 
-1. HTTPoison käyttöönotto: https://hexdocs.pm/httpoison/readme.html
-2. HTTP-pyyntöjen perusteet: https://developer.mozilla.org/fi/docs/Web/HTTP/Methods
-3. Elixirin virallinen dokumentaatio: https://elixir-lang.org/learning.html
-
-Huomaathan, että tämä on pintapuolinen katsaus HTTP-pyyntöjen lähettämiseen Elixirissä. Jatkuvan kehityksen ja oppimisen tueksi suositellaan aiheesta lisätutkimusta ja harjoittelua.
+## See Also
+- [HTTPoison GitHub](https://github.com/edgurgel/httpoison)
+- [Tesla GitHub](https://github.com/teamon/tesla)
+- [Finch GitHub](https://github.com/sneako/finch)

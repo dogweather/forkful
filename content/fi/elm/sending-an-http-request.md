@@ -1,6 +1,7 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-html_title:           "Bash: HTTP-pyynnön lähettäminen"
+date:                  2024-01-20T17:59:23.247905-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,61 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mikä & Miksi?
+## What & Why? (Mikä & Miksi?)
+HTTP-pyynnön lähettäminen on tiedon pyytämistä palvelimelta. Ohjelmoijat tekevät sen, koska heidän sovelluksensa tarvitsevat tietoa päivittyäkseen tai käsitelläkseen käyttäjän pyyntöjä.
 
-HTTP-pyynnön lähettäminen on tapa, jolla ohjelmamme kommunikoi ulkomaailman kanssa; se hakee tai lähettää tietoa. Ohjelmoijat tekevät tämän hoitaakseen tehtäviä kuten tiedon hakeminen API:sta tai lomakkeen lähettäminen palvelimelle.
-
-# Miten tehdä:
-
-Näin lähetät HTTP-pyynnön Elm-ohjelmointikielellä. Käyttäen `elm/http`-kirjastoa ja `Http.get`-funktiota.
-
+## How to: (Kuinka tehdä:)
 ```Elm
 import Http
 import Json.Decode as Decode
 
-getCharacters = 
-  Http.get
-    { url = "https://myapi.com/characters"
-    , expect = Http.expectJson gotCharacters (Decode.list characterDecoder)
-    }
+type alias User =
+  { id : Int
+  , name : String
+  }
 
-characterDecoder : Decode.Decoder Character
-characterDecoder =
-  Decode.map3 Character
+userDecoder : Decode.Decoder User
+userDecoder =
+  Decode.map2 User
     (Decode.field "id" Decode.int)
     (Decode.field "name" Decode.string)
-    (Decode.field "status" Decode.string)
 
-type Msg = 
-  GotCharacters (Result Http.Error (List Character))
-
-gotCharacters : Result Http.Error (List Character) -> Msg
-gotCharacters result =
-  GotCharacters result
+getUser : Cmd Msg
+getUser =
+  Http.get
+    { url = "https://api.example.com/users/1"
+    , decoder = userDecoder
+    }
 ```
+Kun suoritat tämän, saat käyttäjän tiedot, jos kaikki menee hyvin: `{ id = 1, name = "Alice" }`.
 
-Ohjelman suorituksen jälkeen saat ulos listan hahmoja:
+## Deep Dive (Syväsukellus)
+HTTP-pyynnöt ovat nettisovellusten selkäranka. Historiassa käytettiin pääasiassa vain XMLHttpReqest-objektia, mutta Elm tarjoaa yksinkertaistetun HTTP-moduulin, joka kapseloi monimutkaisuuden ja keskittyy puhtaaseen toiminnallisuuteen. Elmissä kaikki HTTP-pyynnöt käsitellään komentoina (Cmd), jotka seuraavat sovelluksen tilan puhtaiden päivitysten mallia. Vaihtoehtoisesti voit käyttää WebSocketsia reaaliaikaiseen viestintään. Elm 0.19 version myötä, Json.Decode-moduulin käyttö on tehty helpommaksi tietojen jäsentämiseksi.
 
-```Elm
-[
-  { "id": 1, "name": "Character1", "status": "active" },
-  { "id": 2, "name": "Character2", "status": "inactive" },
-  ...
-]
-```
-
-## Syvä sukellus:
-
-Jotta ymmärrättäisimme paremmin, otetaan pieni katsaus historiaan. HTTP-pyyntöjen lähettäminen on aina ollut tärkeä osa web-kehitystä. Alkuvuosina se oli hankalaa ja sotkuista, mutta modernit ohjelmointikielet, kuten Elm, ovat yksinkertaistaneet prosessia.
-
-Vaikka Elm käyttää `elm/http`-kirjastoa, on olemassa myös muita vaihtoehtoja, kuten `elm-lang/http`, joita voidaan käyttää. Valinta kirjastosta riippuu lopulta omista tarpeistasi.
-
-Lähettäessäsi HTTP-pyynnön, alimman tason yksityiskohdat hoidetaan kirjaston puolesta. Tämä mahdollistaa keskittymisen tärkeämpään - sovelluslogiikkaan.
-
-## Katso myös:
-
-Tarkista nämä linkit lisätietojen saamiseksi:
-
-- Elm:n HTTP-kirjasto: https://package.elm-lang.org/packages/elm/http/latest/
-- API-käsittely Elm:ssä: https://korban.net/posts/elm/2018-11-28-working-with-http-and-json-in-elm/
-- JSON-koodausteekniikat Elm:ssä: https://package.elm-lang.org/packages/elm/json/latest/Json-Decode
+## See Also (Katso Myös)
+- Elm HTTP package documentation: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)
+- JSON Decoding in Elm: [https://guide.elm-lang.org/effects/json.html](https://guide.elm-lang.org/effects/json.html)
+- Elm Lang Official Guide (HTTP Requests): [https://guide.elm-lang.org/effects/http.html](https://guide.elm-lang.org/effects/http.html)

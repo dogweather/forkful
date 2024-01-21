@@ -1,7 +1,8 @@
 ---
-title:                "कमांड लाइन तर्कों को पढ़ना"
-html_title:           "Kotlin: कमांड लाइन तर्कों को पढ़ना"
-simple_title:         "कमांड लाइन तर्कों को पढ़ना"
+title:                "कमांड लाइन आर्गुमेंट्स पढ़ना"
+date:                  2024-01-20T17:56:48.099644-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "कमांड लाइन आर्गुमेंट्स पढ़ना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,49 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+कमांड लाइन आर्ग्युमेंट्स पाठना मतलब है यूजर जो इनपुट टर्मिनल में दे, उसे हमारा प्रोग्राम पढ़े। इसे हम इसलिए करते हैं ताकि यूजर डायनेमिकली इनपुट दे सके, और प्रोग्राम उसे कॉन्फ़िगर या कस्टमाइज कर सके।
 
-Command line arguments वे मुद्दे हैं जो किसी प्रोग्राम को उसके प्रारंभ करने के समय पास किए जाते हैं। कार्यकर्ता इनका उपयोग अक्सर उस प्रोग्राम की कार्यक्षमता को बदलने के लिए करते हैं।
+## How to (कैसे करें):
+Go में कमांड लाइन आर्ग्युमेंट्स पढ़ने के लिए `os.Args` वेरिएबल का इस्तेमाल होता है:
 
-## कैसे करें:
-
-Go में, आप `os` पैकेज का उपयोग करके command line arguments को पढ़ सकते हैं। 
-
-```Go
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	argsWithProg := os.Args
-	argsWithoutProg := os.Args[1:]
-
-	arg := os.Args[3]
-
-	fmt.Println(argsWithProg)
-	fmt.Println(argsWithoutProg)
-	fmt.Println(arg)
+    args := os.Args[1:] // पहला आर्ग्युमेंट प्रोग्राम का नाम होता है, उसे छोड़ दें
+    fmt.Println("Command Line Arguments:", args)
 }
+
+// इसे रन करने के लिए टर्मिनल में लिखें:
+// go run main.go arg1 arg2
+// सैंपल आउटपुट:
+// Command Line Arguments: [arg1 arg2]
 ```
-इसे `go run main.go arg1 arg2 arg3` के रूप में चलाएँ और आपको निम्नलिखित आउटपुट मिलेगा 
 
-```
-[main arg1 arg2 arg3]
-[arg1 arg2 arg3]
-arg3
-``` 
-## गहरा डाइव:
+## Deep Dive (गहराई में):
+कमांड लाइन आर्ग्युमेंट्स का इतिहास UNIX सिस्टम्स से शुरू होता है। Go में `os` पैकेज के आर्ग्युमेंट्स हैंडल करने की क्षमता फ्लेक्सिबल और सिंपल है। अल्टरनेटिव्स में `flag` पैकेज आता है जो कॉम्प्लेक्स कमांड लाइन पार्सिंग सपोर्ट करता है। `os.Args` एक स्लाइस होती है जिसका फर्स्ट एलिमेंट प्रोग्राम का पाथ होता है, इसीलिए आमतौर पर इंडेक्स 1 से पाठना शुरू करते हैं।
 
-तरीखी प्रसंग में, command line arguments का उपयोग UNIX ऑपरेटिंग सिस्टम से शुरू हुआ था, जहां उन्होंने प्रोग्राम्स को उनकी विशेषताओं को तब्दील करने की अनुमति दी। Go में, इन्हें `os.Args` के माध्यम से प्राप्त किया जाता है, जो एक string की सूची होती है। 
-
-वैकल्पिक रूप से, यदि आपको अधिक नियंत्रण की आवश्यकता है, तो `flag` पैकेज का उपयोग कर सकते हैं जो अधिक उन्नत command line parsing प्रदान करता है। 
-
-## और जानिए:
-
-अधिक जानकारी के लिए, निम्नलिखित कड़ियाँ देखें:
-
-- Go द्वारा एक गाइड जो विवरण देता है कि कैसे command line arguments को पढ़ें: https://gobyexample.com/command-line-arguments
-- `flag` पैकेज द्वारा प्रदान किए गए मजबूत command line parsing की जानकारी के लिए देखें: https://golang.org/pkg/flag/
+## See Also (और भी देखें):
+- Go डॉक्युमेंटेशन `os` पैकेज: https://pkg.go.dev/os
+- Go by Example में `flag` पैकेज उपयोग: https://gobyexample.com/command-line-flags
+- कमांड लाइन आर्ग्युमेंट्स पाठने की बेस्ट प्रैक्टिस के लिए आर्टिकल: https://dave.cheney.net/2014/09/14/go-programming-cookbook-command-line-arguments

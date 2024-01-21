@@ -1,6 +1,7 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
-html_title:           "Rust: Obliczanie daty w przyszłości lub przeszłości"
+date:                  2024-01-20T17:32:10.522439-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,47 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? - "Co i dlaczego?"
+Obliczanie dat w przyszłości czy przeszłości to ustalenie dnia przed lub po określonym czasie. Programiści robią to, aby zarządzać harmonogramami, okresami ważności czy interwałami czasowymi.
 
-Obliczanie daty w przyszłości lub przeszłości polega na dodawaniu lub odejmowaniu dni, miesięcy czy lat od konkretnej daty. Programiści robią to, by przewidzieć okoliczności, np. koniec okresu próbnego, data ważności etc.
+## How to: - "Jak to zrobić:"
+W Rust korzystamy z crate'a `chrono` do łatwego obliczania dat. 
 
-## Jak to zrobić:
-
-W Rust, możemy to zrealizować za pomocą pakietu `chrono`. Oto jak wygląda w praktyce:
-
-```Rust
-extern crate chrono;
+```rust
 use chrono::{DateTime, Duration, Utc};
 
 fn main() {
-    let now: DateTime<Utc> = Utc::now();
-    println!("Teraz: {}", now);
+    let now = Utc::now();
+    println!("Aktualna data i czas: {}", now);
 
-    let future: DateTime<Utc> = now + Duration::days(5);
-    println!("Za 5 dni: {}", future);
+    let two_weeks = Duration::weeks(2);
+    let future_date = now + two_weeks;
+    println!("Data za dwa tygodnie: {}", future_date);
 
-    let past: DateTime<Utc> = now - Duration::days(5);
-    println!("5 dni temu: {}", past);
+    let past_date = now - two_weeks;
+    println!("Data sprzed dwóch tygodni: {}", past_date);
 }
 ```
 
 Przykładowe wyjście:
 
-```bash
-Teraz: 2022-08-26 11:55:06.736320 UTC
-Za 5 dni: 2022-08-31 11:55:06.736320 UTC
-5 dni temu: 2022-08-21 11:55:06.736320 UTC
+```
+Aktualna data i czas: 2023-04-04T15:30:00Z
+Data za dwa tygodnie: 2023-04-18T15:30:00Z
+Data sprzed dwóch tygodni: 2023-03-21T15:30:00Z
 ```
 
-## Głębszy Wgląd
+## Deep Dive - "Dogłębna analiza"
+W przeszłości, obliczanie dat było bardziej skomplikowane przez braki narzędzi. Crate `chrono` ułatwia pracę z datami w Rust, obsługując różnice czasowe i strefy czasowe. Alternatywą jest używanie standardowej biblioteki Rust z `std::time`, ale jest mniej wygodna dla operacji na datach. `chrono` pozwala na dokładne i elastyczne manipulowane czasem, uwzględniając przeciągniki jak lata przestępne.
 
-Obliczanie daty w przyszłości lub przeszłości jest tak starą praktyką jak sama nauka programowania. Historycznie, programiści musieli samodzielnie implementować te operacje, uwzględniając wszystkie niuanse związane z latami przestępnymi, różnymi kalendarzami, strefami czasowymi itp.
-
-Jako alternatywę, można skorzystać z wielu bibliotek języka Rust takich jak 'time' czy 'date'. Można również skorzystać z bibliotek systemowych.
-
-Niektóre szczegóły implementacji do rozważenia podczas pracy z datami i czasem: Rust używa czasu systemowego, który jest podatny na zmiany (na przykład, kiedy zmieniamy czas na urządzeniu lub synchronizujemy czas z serwerem). Może to wpłynąć na obliczenia zależne od upływu czasu.
-
-## Zobacz też:
-
-- [Chrono Documentation](https://docs.rs/chrono/): Dokumentacja paczki `chrono`, której używamy w powyższym przykładzie.
-- [Rust Programming](https://www.rust-lang.org/learn): Zarówno dla początkujących jak i zaawansowanych, strona zawiera przydatne informacje o programowaniu w Rust.
+## See Also - "Zobacz także"
+- Dokumentacja `chrono`: https://docs.rs/chrono/
+- Książka "Rust Programming by Example": https://www.rust-lang.org/learn/books
+- Forum dyskusyjne Rust użytkowników: https://users.rust-lang.org/

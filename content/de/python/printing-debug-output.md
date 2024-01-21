@@ -1,7 +1,8 @@
 ---
-title:                "Ausgabe von Debugging-Informationen drucken"
-html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
-simple_title:         "Ausgabe von Debugging-Informationen drucken"
+title:                "Debug-Ausgaben drucken"
+date:                  2024-01-20T17:53:22.791929-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Debug-Ausgaben drucken"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -10,70 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Drucken von Debugging-Ausgaben mittels Python 
+## Was & Warum?
+Druckausgabe zur Fehlersuche (engl. "debug output") wirft einen Blick unter die Motorhaube deines Codes. Programmierer nutzen sie, um zu verstehen, was im Code passiert, besonders wenn etwas unerwartet schief läuft.
 
-## Was & Warum
-
-Drucken von Debugging-Ausgaben ist die Technik, um den Fluss und den Zustand in einem Programm zu überwachen. Entwickler nutzen sie, um Fehler effizient zu finden und zu beheben.
-
-## Wie geht das?
-
-In Python wird häufig die eingebaute `print()`-Funktion genutzt, um Debugging-Ausgaben zu erzeugen.
+## How to:
+Du willst wissen, wie dein Code tickt? `print()` ist dein Freund. Platziere es neben Variablen und sieh dir die Magie an:
 
 ```python
-def summe(zahlen):
-    sum = 0
-    for num in zahlen:
-        sum += num
-        print(f"Summe bis jetzt: {sum}")
-    return sum
+def addieren(x, y):
+    ergebnis = x + y
+    print("Das Ergebnis von", x, "+", y, "ist", ergebnis)
+    return ergebnis
 
-summe([5, 10, 15])
+addieren(3, 4)
 ```
 
-Ausgabe:
-
+Beispielausgabe:
 ```
-Summe bis jetzt: 5
-Summe bis jetzt: 15
-Summe bis jetzt: 30
+Das Ergebnis von 3 + 4 ist 7
 ```
 
-Eine fortgeschrittenere Methode ist es, das `logging`-Modul zu verwenden. 
+Komplexer? Kein Problem. Schau dir `logging` an, das ist wie `print()`, aber mit Superkräften:
 
 ```python
 import logging
-
 logging.basicConfig(level=logging.DEBUG)
+def dividieren(x, y):
+    try:
+        ergebnis = x / y
+    except ZeroDivisionError:
+        logging.error("Hoppla! Division durch Null.")
+    else:
+        logging.debug("Division erfolgreich: %s / %s = %s", x, y, ergebnis)
+        return ergebnis
 
-def summe(zahlen):
-    sum = 0
-    for num in zahlen:
-        sum += num
-        logging.debug(f"Summe bis jetzt: {sum}")
-    return sum
-
-summe([5, 10, 15])
+dividieren(10, 0)
+dividieren(10, 2)
 ```
 
-Ausgabe:
- 
+Beispielausgabe:
 ```
-DEBUG:root:Summe bis jetzt: 5
-DEBUG:root:Summe bis jetzt: 15
-DEBUG:root:Summe bis jetzt: 30
+ERROR:root:Hoppla! Division durch Null.
+DEBUG:root:Division erfolgreich: 10 / 2 = 5.0
 ```
 
-## Tiefere Infos
+## Deep Dive
+Beim Debuggen gab's `print()` schon immer. Einfach, effektiv. Aber Code voller `print()`-Calls? Schwer zu managen. Deshalb haben kluge Leute `logging` eingeführt – kontrollierbar, flexibel, mächtig. Du kannst Log-Level setzen (INFO, WARNING, ERROR), Ausgaben formatieren und in Dateien schreiben. 
 
-- Historischer Kontext: Die Druckausgabe wurde von den Anfängen der Programmierung an für Debugging-Zwecke genutzt. Sie ist weit verbreitet und Sprachübergreifend.
- 
-- Alternativen: Debugging-Werkzeuge oder IDEs bieten oft fortschrittlichere Möglichkeiten zur Code-Inspektion. In Python gibt es zum Beispiel `pdb`.
+Alternativen? Klar! Debugger in Entwicklungsumgebungen, interaktive Tools wie `pdb` oder `ipdb`, und Tracking-Systeme wie Sentry geben dir noch mehr Einblick. Aber manchmal ist `print()` oder `logging` alles, was du brauchst.
 
-- Implementierungsdetails: Ein Logging-System wie das `logging`-Modul ist in der Regel flexibler als einfache `print()`-Aufrufe. Mit `logging` kann man zum Beispiel auch Informationen in Dateien schreiben, auf verschiedene Detailebenen einstellen, usw.
+Implementation? `print()` schickt Sachen auf `sys.stdout` (meist deine Konsole). `logging` macht mehr: Es bestimmt, wann, wo und wie deine Nachrichten landen. Mit `Handlers` bestimmst du Ziele: Konsole, Dateien, sogar über das Netzwerk.
 
-## Weitere Informationen
-
-- Python `print()` in die [Python docs](https://docs.python.org/3/library/functions.html#print)
-- Python `logging`-Modul in den [Python docs](https://docs.python.org/3/library/logging.html)
-- Python Debugger (`pdb`) in den [Python docs](https://docs.python.org/3/library/pdb.html)
+## See Also
+- Die offizielle Python Dokumentation zum `logging` Modul: https://docs.python.org/3/library/logging.html
+- Der Python Debugger `pdb`: https://docs.python.org/3/library/pdb.html
+- Eine Einführung in effektives Debuggen in Python: https://realpython.com/python-debugging-pdb/
+- Sentry für fortgeschrittenes Error Tracking: https://sentry.io/welcome/

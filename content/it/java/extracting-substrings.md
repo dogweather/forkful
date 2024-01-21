@@ -1,7 +1,8 @@
 ---
-title:                "Estrazione di sottosequenze"
-html_title:           "Arduino: Estrazione di sottosequenze"
-simple_title:         "Estrazione di sottosequenze"
+title:                "Estrazione di sottostringhe"
+date:                  2024-01-20T17:45:43.340594-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,37 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che Cos'è e Perché?
-Estrarre sottotringhe (substring) significa prelevare un pezzo o una sezione più piccola da una stringa più grande in Java. I programmatori lo fanno per vari motivi: ricerca di pattern, elaborazione di testi, oppure per l'isolamento di informazioni specifiche all'interno di un testo più ampio.
+## What & Why? (Cosa e Perché?)
+Estrarre sottostringhe significa selezionare parti specifiche di una stringa di testo. I programmatori lo fanno per manipolare e analizzare i dati, come estrarre nomi utente da indirizzi email o processare codici di prodotto.
 
-## Come fare:
-Ecco un esempio di codice per estrarre una substring in Java:
-
+## How to: (Come fare:)
 ```Java
-public class EsempioSubstring {
+public class EstrattoreDiSottostringhe {
     public static void main(String[] args) {
-        String frase = "Ciao mondo! Questo è un esempio.";
-        String sottostringa = frase.substring(5, 10);
-        System.out.println(sottostringa);
+        String frase = "Ciao, mondo di Java!";
+
+        // Estrai una sottostringa utilizzando substring(int beginIndex, int endIndex)
+        String parola = frase.substring(6, 11);
+        System.out.println(parola); // Output: mondo
+
+        // Ottieni il resto della stringa da un indice fino alla fine
+        String resto = frase.substring(12);
+        System.out.println(resto); // Output: di Java!
     }
 }
 ```
 
-Questo codice produrrà l'output seguente:
+## Deep Dive (Approfondimento)
+Il metodo `substring` di Java è l'evoluzione di funzioni simili esistenti dai primi giorni del linguaggio (anni '90). Altre alternative per l'estrazione di sottostringhe includono l'uso di espressioni regolari (`Pattern` e `Matcher`) o altre API come `StringUtils` di Apache Commons. Dettagli di implementazione: fare attenzione a `StringIndexOutOfBoundsException` quando gli indici sono fuori dai limiti della stringa e ricordare che `substring(int beginIndex)` va fino alla fine della stringa.
 
-```Java
-mondo
-```
-
-## Approfondimento
-1. **Contesto storico**: La funzione `substring()` è presente in diversi linguaggi di programmazione, non solo in Java. La sua implementazione in Java risale alla versione 1.0.
-2. **Alternative**: In Java, puoi anche usare `split()`, che divide la stringa in base a un delimitatore e restituisce un array di stringhe. Un'altra alternativa è la funzione `charAt()`, che ti permette di estrarre un carattere alla volta.
-3. **Dettagli di implementazione**: In Java, `substring(int beginIndex, int endIndex)` è il metodo che puoi utilizzare per estrarre una substring. Indica il carattere di inizio (incluso) e il carattere di fine (escluso) della substring che desideri estrarre. Se metti solo un indice, prenderai la substring dall'indice specificato fino alla fine.
-
-## Vedi anche
-Queste risorse possono essere utili per approfondire:
-
-1. **Documentazione ufficiale di Java per il metodo substring()**: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-
-2. **Esempi di utilizzo della funzione substring() in Java**: https://www.javatpoint.com/java-string-substring
-3. **Alternative alla funzione substring()**: https://www.geeksforgeeks.org/different-ways-for-string-to-string-conversion-in-java/ 
-4. **Tutorial sul trattamento delle stringhe in Java**: https://www.w3schools.com/java/java_strings.asp
+## See Also (Vedi Anche)
+- [String.substring(int beginIndex, int endIndex)](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#substring(int,int))
+- [Class Pattern](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html)
+- [Apache Commons StringUtils](https://commons.apache.org/proper/commons-lang/)

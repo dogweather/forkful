@@ -1,6 +1,7 @@
 ---
 title:                "下载网页"
-html_title:           "Arduino: 下载网页"
+date:                  2024-01-20T17:43:54.486958-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "下载网页"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,32 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么与为什么？
-下载网页就是从互联网将网页内容下载到本地。程序员这样做，以便分析网页内容，抓取信息，或者进行离线浏览。
+## What & Why? 什么和为什么？
+下载网页意味着从互联网上获取网页的内容。程序员这么做主要是为了处理数据、网页抓取或在线应用集成。
 
-## 如何操作：
-在Gleam中下载网页非常直观，可以使用`httpc`模块中的`send`函数。这是一个基础的示例：
-
+## How to: 如何做：
 ```Gleam
-import gleam/httpc
-import gleam/http.{Method}
+import gleam/http
+import gleam/io
 
-fn download() {
-  let request = httpc.new(Method.Get, "http://example.com")
-  case httpc.send(request) {
-    Ok(response) -> print(response.body)
-    Error(e) -> print(e)
+pub fn main() {
+  case http.get("https://example.com") {
+    Ok(response) -> io.println(response.body)
+    Error(error) -> io.println(error)
   }
 }
-
-download()
 ```
-运行以上代码，你会看到`http://example.com`页面的HTML内容。
 
-## 深度挖掘
-下载网页的背后有一段有趣的历史。最初的网页下载是通过telnet命令进行的，直到出现了HTTP协议，事情才变得更加简单。至于在Gleam中，我们有很多方式可以下载网页，比如使用`reqwest`， `hyper`等库。但是`httpc`是最简单，也是最直接的方式。你可以在Gleam的标准库中找到它。
+示例输出：
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
 
-## 另请参阅
--Gleam的HTTP客户端模块文档:[https://hexdocs.pm/gleam_stdlib/gleam/httpc](https://hexdocs.pm/gleam_stdlib/gleam/httpc)
--Gleam教程和示例：[https://gleam.run/tutorials/](https://gleam.run/tutorials/)
--更多关于Web抓取的信息：[https://en.wikipedia.org/wiki/Web_crawling](https://en.wikipedia.org/wiki/Web_crawling)
+## Deep Dive 深入探究
+在早期，下载网页通常使用命令行工具如 `curl` 或编程库比如 Python 的 `requests`。Gleam 提供了更现代、类型安全的方法访问网络资源。替代方案包括直接使用 Erlang 的 `httpc` 模块或其他语言的库。Gleam 的 `http` 模块底层实际上是封装了 `httpc`，但提供了更友好的类型安全接口。
+
+## See Also 另请参阅
+- [Gleam HTTP documentation](https://hexdocs.pm/gleam_http/)
+- [`httpc` Erlang documentation](http://erlang.org/doc/man/httpc.html)
+- [MDN Web Docs on HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)

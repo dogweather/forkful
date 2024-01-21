@@ -1,7 +1,8 @@
 ---
-title:                "स्ट्रिंग का अंतर्कलन"
-html_title:           "Arduino: स्ट्रिंग का अंतर्कलन"
-simple_title:         "स्ट्रिंग का अंतर्कलन"
+title:                "स्ट्रिंग इंटरपोलेशन"
+date:                  2024-01-20T17:50:13.812227-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग इंटरपोलेशन"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,29 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+String interpolation एक तरीका है जिसमें हम वेरिएबल्स और एक्सप्रेशंस को डायरेक्ट स्ट्रिंग में इंजेक्ट करते हैं। इससे कोड साफ और पढ़ने में आसान होता है, और डायनामिकली टेक्स्ट मैसेजेज बनाने में मदद मिलती है।
 
-स्ट्रिंग इंटरपोलेशन एक प्रक्रिया है जिसमें आप एक स्ट्रिंग में किसी अन्य मान को जोड़ सकते हैं। प्रोग्रामर इसे कोड को पढ़ने और लिखने को आसान बनाने के लिए करते हैं।
+## How to: (कैसे करें:)
+Arduino में स्ट्रिंग interpolation डायरेक्टली संभव नहीं होता जैसे कुछ दूसरे हाई-लेवल प्रोग्रामिंग लैंग्वेजेज में होता है, लेकिन हम `String` ऑब्जेक्ट्स का उपयोग करके सिमिलर आउटकम हासिल कर सकते हैं। यहां एक उदाहरण है:
 
-## कैसे करें:
+```arduino
+String name = "राहुल";
+int age = 30;
 
-```Arduino
-char name[] = "Rajan";
-char greeting[50];   
-sprintf(greeting, "नमस्ते, %s", name);
-Serial.println(greeting);
+String message = "नाम: " + name + ", उम्र: " + String(age);
+
+Serial.begin(9600);
+Serial.println(message);
 ```
 
-यह कोड "नमस्ते, Rajan" छापेगा।
+सैम्पल आउटपुट:
+```
+नाम: राहुल, उम्र: 30
+```
 
-## गहराई में:
+## Deep Dive (गहराई से जानकारी):
+स्ट्रिंग interpolation का कॉन्सेप्ट ओल्ड स्कूल प्रोग्रामिंग जैसे C के `sprintf` फंक्शन से लेकर, रूबी, पायथन, और जावास्क्रिप्ट जैसी नई लैंग्वेजेज के Template literals तक विस्तृत है। Arduino प्लेटफॉर्म पर हम PROGMEM का उपयोग करके मेमोरी की बचत कर सकते हैं, और `sprintf` या `snprintf` का उपयोग करके बिना मेमोरी के अधिक उपयोग के अधिक कॉम्पलेक्स स्ट्रिंग्स को फॉर्मेट कर सकते हैं। जबकि `String` ऑब्जेक्ट्स सुविधाजनक होते हैं, वे डायनामिक मेमोरी एलोकेशन का उपयोग करते हैं जो कि मेमोरी फ्रैग्मेन्टेशन का कारण बन सकता है।
 
-1. ऐतिहासिक संदर्भ: स्ट्रिंग इंटरपोलेशन का प्रयोग अधिक स्पष्ट और पठनीय कोड लिखने के लिए किया जाता है। यह 1960 के दशक से इस्तेमाल हो रहा है।
-
-2. विकल्प: आप इंटरपोलेशन के बिना भी स्ट्रिंग संयोजन कर सकते हैं, लेकिन यह अधिक जटिल हो सकता है।
-
-3. कार्यान्वयन विवरण: आर्डुइनो में, `sprintf()` फ़ंक्शन का उपयोग स्ट्रिंग इंटरपोलेशन के लिए किया जाता है। यह एक विशेष प्रारूप स्ट्रिंग को साधारण स्ट्रिंग में परिवर्तित करता है। 
-
-## यह भी देखें:
-
-1. [Arduino String Interpolation](https://www.arduino.cc/en/Tutorial/StringAdditionOperator)
+## See Also (यह भी देखें):
+- Arduino `String` class reference: [Arduino Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- `snprintf()` function: [Cplusplus.com Reference](http://www.cplusplus.com/reference/cstdio/snprintf/)
+- Memory management with PROGMEM: [Arduino Memory](https://www.arduino.cc/reference/en/language/variables/utilities/progmem/)

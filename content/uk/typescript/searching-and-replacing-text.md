@@ -1,6 +1,7 @@
 ---
 title:                "Пошук та заміна тексту"
-html_title:           "C++: Пошук та заміна тексту"
+date:                  2024-01-20T17:59:03.859788-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Пошук та заміна тексту"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,35 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке та чому?
+## Що це та навіщо?
+Пошук та заміна тексту - це процес знаходження фрагментів строк і їх заміни на інші. Програмісти використовують це, щоб швидко змінювати код або дані, виправляти помилки, оновлювати інформацію чи рефакторинг.
 
-Пошук та заміна тексту - це процесс, достатньо поширений у програмуванні, який дозволяє знайти специфічний шматок тексту і замінити його новим. Це простий, але могутній інструмент, який може дуже полегшити заботи програмістів.
-
-## Як це робити:
-
+## Як це зробити:
 ```TypeScript
-let str = "Hello, world!";
-let newStr = str.replace("world", "Ukraine");
-console.log(newStr);  // Prints: "Hello, Ukraine!"
-```
-А ось приклад, як можна виконати замену, використовуючи регулярний вираз:
+function searchAndReplace(text: string, searchValue: string | RegExp, replaceValue: string): string {
+  return text.replace(searchValue, replaceValue);
+}
 
-```TypeScript
-let str = "Hello, world! Hello, world!";
-let newStr = str.replace(/world/g, "Ukraine");
-console.log(newStr);  // Виведе: "Hello, Ukraine! Hello, Ukraine!"
+// Використання:
+const originalText = 'Привіт, світ!';
+const newText = searchAndReplace(originalText, 'світ', 'галактика');
+console.log(newText); // Виведе: Привіт, галактика!
 ```
 
-## Поглиблений погляд:
-
-Замена тексту була важливою частиною програмування від самого початку. У TypeScript і JavaScript, її реалізація базується на методі 'replace', сформованому ECMAScript - стандартом, на якому базується JavaScript.
-
-Альтернативою до встроєного методу 'replace' можуть стати деякі сторонні бібліотеки, такі як lodash, які надають ще більшу гнучкість при роботі з текстом.
-
-Виконуючи пошук та замену тексту, важливо розуміти, що 'replace' замінює тільки перше входження тексту. Якщо вам потрібно замінити всі входження, використовуйте глобальний флаг 'g' з регулярним виразом, як показано в прикладі вище.
+## Поглиблений аналіз:
+Пошук та заміна тексту — давня потреба, що датується періодом масового редагування текстів. В JavaScript і TypeScript, `.replace()` метод можна використовувати зі строками або регулярними виразами для гнучкості пошуку. Альтернативою є бібліотеки, як-от Lodash, що надають додаткові утиліти для роботи з текстами. Розробники повинні розуміти, як використовувати g-flag (глобальний пошук) для заміни всіх входжень, і не забувати про безпеку при роботі з динамічно вводимими регулярними виразами.
 
 ## Дивіться також:
-
-- [MDN документация по JavaScript replace](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [TypeScript Handbook: Regular Expressions](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#regexps)
-- [Lodash строкові методи](https://lodash.com/docs/#replacemethod)
+- MDN RegExp документація: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+- TypeScript Handbook String Manipulation: [https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)
+- Lodash бібліотека: [https://lodash.com/](https://lodash.com/)

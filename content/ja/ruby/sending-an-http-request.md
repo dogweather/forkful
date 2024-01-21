@@ -1,6 +1,7 @@
 ---
 title:                "HTTPリクエストの送信"
-html_title:           "Bash: HTTPリクエストの送信"
+date:                  2024-01-20T18:00:21.459666-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTPリクエストの送信"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,39 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ?
+## What & Why? (何となぜ？)
+HTTPリクエストを送るっていうのは、Webサーバーに情報を要求する方法だ。これをする理由？データを取得したり、サービスと対話したりするためだよ。
 
-HTTPリクエストの送信とは、一言で言うと、あるプログラムがインターネットを通じて他のプログラムにデータを要求することです。プログラマがこれを行う主な理由は、情報を取得したり、特定のサービスを利用したり、サービス間でデータを共有したりするためです。
+## How to: (やり方)
+RubyではNet::HTTPを使ってHTTPリクエストを送れる。こんな感じ：
 
-## どうやって:
-
-RubyでHTTPリクエストを送信するための基本的なコードは以下の通りです。
-
-```Ruby
+```ruby
 require 'net/http'
 require 'uri'
 
-uri = URI.parse("http://www.example.com/search")
-response = Net::HTTP.get_response(uri)
+uri = URI('http://example.com/index.html')
+response = Net::HTTP.get(uri)
+
+puts response
+```
+
+実行すると、サーバーのレスポンスが表示される。
+
+## Deep Dive (深掘り)
+まず、戦前からHTTPプロトコルはWebの中核だ。`Net::HTTP`はRuby標準ライブラリの一部。もしこれが物足りなければ、`httparty`や`rest-client`なんかのgemもある。`Net::HTTP`では、GET, POST, PUT, DELETEなどのリクエストが可能。SSLやプロキシの設定もできる。
+
+サンプルに加えたい詳細:
+
+```ruby
+require 'net/http'
+require 'uri'
+
+uri = URI('https://example.com/api/items')
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+
+request = Net::HTTP::Get.new(uri)
+request['Authorization'] = 'Bearer Your_Token'
+
+response = http.request(request)
 
 puts response.body
 ```
 
-上記のコードを実行すると、"http://www.example.com/search" URLに対するHTTPレスポンスボディが出力されます。
+ここで、SSLを有効にし、APIトークンで認証している。
 
-## Deep Dive
+## See Also (関連情報)
+- `httparty` gem: [httparty](https://github.com/jnunemaker/httparty)
+- `rest-client` gem: [rest-client](https://github.com/rest-client/rest-client)
 
-HTTPリクエストの送信は、初期のインターネットから存在しています。そしてその技術は、Rubyに限らず、ほぼ全ての現代のプログラミング言語で利用できます。
-
-Rubyでは 'net/http' ライブラリを使ってHTTPリクエストを送信しますが、他のライブラリやGemを用いても可能です。例えば 'httparty' や 'rest-client' といったGemがよく利用されます。
-
-上記のコード例では `GET` リクエストを行いましたが、 `POST`, `PUT` , `DELETE` など他のHTTPメソッドを利用する場合も多々あります。それぞれの方法でリクエストを送信する詳細なコードは以下の公式ドキュメンテーションを参照してください。
-
-## 参考に
-
-以下は、HTTP リクエスト、'net/http' ライブラリ、そして他の関連するリソースへのリンクです。
-
-- [Ruby公式ドキュメンテーション: Net::HTTP] (https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html)
-- [RubyGuide: HTTPリクエストの扱い] (https://www.rubyguides.com/2018/08/net-http-ruby/)
-- [HTTParty Gem] (https://github.com/jnunemaker/httparty)
-- [REST-Client Gem] (https://github.com/rest-client/rest-client)
+これらはリクエスト送信に関するより詳細なリソースだ。

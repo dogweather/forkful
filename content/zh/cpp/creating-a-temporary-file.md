@@ -1,6 +1,7 @@
 ---
 title:                "创建临时文件"
-html_title:           "Kotlin: 创建临时文件"
+date:                  2024-01-20T17:39:39.209203-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "创建临时文件"
 programming_language: "C++"
 category:             "C++"
@@ -10,38 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是临时文件，为什么要创建？
-临时文件是在运行过程中由程序创建并使用的文件，执行完毕便被删除。程序员创建临时文件主要用于存储大量数据，以节省内存，或用于不同程序间的通信。
+## What & Why? (什么以及为什么？)
+创建临时文件是程序运行时临时存储数据的过程。程序员这么做是为了处理过大的数据流，或者当数据不需要永久保存时。
 
-## 怎么做：
-以下是C++实例演示如何创建一个临时文件。
+## How to: (如何操作：)
+创建临时文件可以使用C++的 `<filesystem>` 库。下面是一个简单的例子：
 
 ```C++
-#include <cstdio>
+#include <iostream>
+#include <filesystem>
+#include <fstream>
 
 int main() {
-    char tmpname[L_tmpnam];
-    char* filename = std::tmpnam(tmpname);
+    std::filesystem::path temp_dir = std::filesystem::temp_directory_path();
+    std::filesystem::path temp_file = temp_dir / "my_temp_file.txt";
     
-    std::cout << "Temp file name is: " << filename << std::endl;
+    // 创建并使用临时文件
+    std::ofstream out(temp_file.string());
+    if (out.is_open()) {
+        out << "这是一些临时的内容。\n";
+        out.close();
+        std::cout << "临时文件已创建：" << temp_file << '\n';
+    } else {
+        std::cerr << "无法创建临时文件。\n";
+    }
 
-    std::fstream fs(filename);
-    fs << "Test text." << std::endl;
-    fs.close();
+    // 假设我们现在使用临时文件完成了工作……
+
+    // 删除临时文件
+    std::filesystem::remove(temp_file);
+    std::cout << "临时文件已删除。\n";
 
     return 0;
 }
 ```
 
-上述代码执行后将显示系统为临时文件分配的文件名，并在该文件中写入字符串 "Test text."。
+输出可能类似：
+```
+临时文件已创建：/tmp/my_temp_file.txt
+临时文件已删除。
+```
 
-## 深入阐述
-在过去的C++版本中，创建临时文件一般使用 `tmpnam()`函数。然而，由于可能的竞态条件，这个函数已不再推荐使用。替代方案是使用 `tmpfile()`函数，这无需手动删除临时文件。另一个替代方案是使用高级库如Boost.Filesystem，它提供了 `unique_path()`函数用以创建临时文件。
+## Deep Dive (深入探索)
+在过去，创建临时文件常常依赖于操作系统特定的API或者使用诸如`tmpfile()`这样的C语言标准库函数。不过，随着C++17引入`<filesystem>`库，跨平台创建临时文件变得更加简单。
 
-当创建临时文件时，需要注意文件间可能出现的竞态条件。竞态条件是指在多线程系统中，任务的执行序列依赖于任务间的相对速度。
+除了直接创建文件，`std::filesystem`也提供了`temp_directory_path`函数来找到合适的临时文件夹。用传统方式，譬如在UNIX系统中经常遇到环境变量`TMPDIR`未设置时需要手动指定临时路径。
 
-## 参考资料：
-1. https://en.cppreference.com/w/cpp/io/c/tmpnam
-2. https://www.boost.org/doc/libs/1_63_0/libs/filesystem/doc/reference.html#unique_path
-3. https://en.cppreference.com/w/cpp/utility/program/tmpfile
-4. https://www.cplusplus.com/reference/cstdio/tmpnam/
+为避免临时文件在使用后仍然占用空间，记得在不再需要时删除它们。这是通过`std::filesystem::remove`函数来实现。
+
+## See Also (另请参阅)
+- C++ Filesystem Library Documentation: https://en.cppreference.com/w/cpp/filesystem
+- C++ Input/Output Library (std::fstream): https://en.cppreference.com/w/cpp/io/basic_fstream
+
+追求更深入了解的读者，可以访问上述资料来探索C++文件系统以及输入输出库的其他高级特性。

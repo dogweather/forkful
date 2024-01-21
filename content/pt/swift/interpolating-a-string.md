@@ -1,6 +1,7 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "Java: Interpolando uma string"
+date:                  2024-01-20T17:51:37.669105-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolando uma string"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,47 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Que?
-A interpolação de strings permite que você insira variáveis ou constantes dentro de uma string. É uma prática eficaz e essencial para a exibição dinâmica de dados nas interfaces do usuário, simplificar a concatenação de strings e melhorar a legibilidade do código.
+## O Que é & Por Que?
+
+Interpolação de strings é o jeito de injetar valores dentro de uma cadeia de caracteres. Programadores fazem isso para construir strings dinâmicas de maneira fácil e legível.
 
 ## Como Fazer:
 
-Vamos inserir uma variável em uma string com Swift:
-
 ```Swift
-var nome: String = "João"
-print("Olá, \(nome)!")
+let nome = "João"
+let idade = 28
+let mensagem = "Olá, meu nome é \(nome) e eu tenho \(idade) anos."
+print(mensagem)
+// Saída: Olá, meu nome é João e eu tenho 28 anos.
 ```
 
-O resultado será:
+## Mergulho Profundo:
 
-```
-Olá, João!
-```
+A interpolação de string não é novidade. Existia em linguagens mais antigas, mas o Swift a tornou mais simples e segura. Antes, concatenar strings e variáveis era fácil de errar e às vezes inseguro, levando a bugs ou falhas de segurança. Alternativas como o `String(format:)` ainda existem, mas interpolação é geralmente mais direta e breve. 
 
-Também é possível fazer cálculos dentro das interpolações de string. Por exemplo:
+Sob o capô, o Swift converte o que está dentro dos parênteses e barras invertidas `\(valor)` numa representação textual, aplicando o protocolo `CustomStringConvertible` se disponível, para personalizar a conversão.
 
-```Swift
-var idade: Int = 30
-print("Daqui a cinco anos, \(nome) terá \(idade + 5) anos.")
-```
+## Ver Também:
 
-O resultado será:
-
-```
-Daqui a cinco anos, João terá 35 anos.
-```
-
-## Aprofundamento:
-
-A interpolação de strings não é uma inovação do Swift. Outras linguagens, como o Perl e o Ruby, também a implementam.
-
-Há alternativas à interpolação de strings, como a concatenação de strings e o formato de string, mas a interpolação de strings oferece maior legibilidade e simplicidade. Por exemplo, em vez de `"Olá " + nome + "!"`, é mais simples escrever `"Olá, \(nome)!"`.
-
-O Swift implementa a interpolação de strings convertendo tudo em uma representação de string. Mesmo números e respostas de funções podem ser convertidos e interpolados em uma string. 
-
-## Veja Também:
-
-- Documentação oficial da Apple sobre Strings e Caracteres em Swift: <a href='https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html'>https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html</a>
-- Um ótimo guia para entender a interpolação de strings: <a href='https://www.hackingwithswift.com/articles/178/super-powered-string-interpolation-in-swift-5-0'>https://www.hackingwithswift.com/articles/178/super-powered-string-interpolation-in-swift-5-0</a> 
-- Tutorial point em Swift: <a href='https://www.tutorialspoint.com/swift/swift_strings.htm'>https://www.tutorialspoint.com/swift/swift_strings.htm</a>
+- Documentação oficial da Swift sobre Strings: [Swift Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- Protocolo Swift `CustomStringConvertible`: [CustomStringConvertible](https://developer.apple.com/documentation/swift/customstringconvertible)

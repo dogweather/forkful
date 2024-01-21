@@ -1,6 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-html_title:           "Haskell: Drukowanie komunikatów debugowania"
+date:                  2024-01-20T17:52:53.764215-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,37 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Drukowanie komunikatów debugowania to wyświetlanie informacji o działaniu programu podczas jego wykonania. Programiści to robią, by łatwiej zrozumieć błędy i śledzić działanie aplikacji.
 
-Drukowanie debugowania polega na wyświetlaniu informacji związanych z działaniem programu w trakcie jego wykonywania. Programiści wykonują tę czynność, aby lepiej zrozumieć, jak ich kod działa lub wyszukać potencjalne błędy.
+## How to: (Jak to zrobić?)
+Aby wyświetlić debug, użyj standardowej funkcji `print()`. Oto przykład:
 
-## Jak to zrobić:
-
-Poniżej znajduje się przykład jak wydrukować debugowanie w Lua:
-
-```Lua
-function debugPrint(str)
-    print("[DEBUG] " .. str)
-end
-
-debugPrint("Test!")
-```
-Po uruchomieniu tego kodu, wyjście będzie wyglądać tak:
-
-```Lua 
-[DEBUG] Test!
+```lua
+local variable = 42
+print("Wartość zmiennej to:", variable)
 ```
 
-## Głębsze zrozumienie
+Wynik:
+```
+Wartość zmiennej to: 42
+```
 
-1. Kontekst historyczny: Lua, choć mało skomplikowany, posiada zrozumiałą funkcję debugowania. W przeszłości programiści używali metody `print` do wyświetlania informacji pomocniczych, jednak teraz mamy bardziej rozbudowane biblioteki do tego celu.
-   
-2. Alternatywy: `io.write` jest alternatywą dla `print`, która pozwala na bardziej złożone operacje związane z debugowaniem.
-   
-3. Szczegóły implementacji: Gdy używasz `print`, Lua dodaje znak końca linii po każdym wydruku. W przypadku `io.write`, końcówka linii nie jest dodawana automatycznie, co daje Ci większą kontrolę nad wyjściem.
+## Deep Dive (Dogłębna analiza)
+W Lua, funkcja `print()` była używana od początku jako prosty sposób na wyświetlanie wartości. Alternatywą jest `io.write()`, która służy do pisania bez automatycznego dodawania nowej linii. Implementacja `print()` może różnić się w zależności od hosta, np. w środowisku uruchomieniowym LuaJIT, `print()` może być implementowany inaczej niż w PUC-Rio Lua.
 
-## Zobacz też
+Debugowanie można też przeprowadzać używając bardziej złożonych narzędzi jak ZeroBrane Studio lub zapisywać komunikaty do pliku:
+```lua
+local file = io.open("debug_log.txt", "a")
+file:write("Wartość zmiennej to: " .. variable .. "\n")
+file:close()
+```
 
-1. [Dokumentacja Lua - print](https://www.lua.org/manual/5.4/manual.html#pdf-print)
-2. [Dokumentacja Lua - io.write](https://www.lua.org/manual/5.4/manual.html#pdf-io.write)
-3. [Biblioteka debugowania dla Lua](https://github.com/slembcke/debugger.lua)
+## See Also (Zobacz też)
+- Dokumentacja Lua na temat funkcji I/O: https://www.lua.org/pil/21.html
+- ZeroBrane Studio, IDE dla Lua z zaawansowanymi narzędziami debugowania: https://studio.zerobrane.com/
+- Lua Users Wiki, zawierające różnorodne techniki debugowania: http://lua-users.org/wiki/DebuggingLuaCode

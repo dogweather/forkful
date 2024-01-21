@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:51:04.776000-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,34 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego?
-Interpolacja łańcuchów to proces wstawiania zmiennych bezpośrednio do łańcuchów. Programiści robią to dla zwiększenia czytelności i efektywności swojego kodu.
+## What & Why?
+W interpolacji stringów chodzi o wstawianie wartości zmiennych w środek łańcucha tekstowego. Robimy to, by łatwiej budować dynamiczne wiadomości i szablony.
 
-## Jak to zrobić:
+## How to:
+**W JavaScript można interpolować stringi przy użyciu template literals, oto jak:**
 
-```Javascript
-let imie = "Jan";
-console.log(`Cześć, ${imie}!`);    // Wynik: "Cześć, Jan!"
+```javascript
+const name = 'Jan';
+const message = `Cześć, ${name}! Jak się masz?`;
+console.log(message); // "Cześć, Jan! Jak się masz?"
 ```
 
-W powyższym kodzie, `${imie}` to przykład interpolacji łańcuchów.
+**Potrzebujesz wyrażenia w środku? Żaden problem:**
 
-```Javascript
-let wiek = 25;
-console.log(`Mam ${wiek} lat.`);    // Wynik: "Mam 25 lat."
+```javascript
+const x = 5;
+const y = 10;
+console.log(`Suma ${x} i ${y} to ${x + y}.`); // "Suma 5 i 10 to 15."
 ```
 
-Na powyższym przykładzie widać, że interpolacja łańcuchów jest elastyczna i może obejmować różne typy zmiennych, takie jak numer.
+**Interpolacja działa też z funkcjami:**
 
-## Pogłębiona analiza:
+```javascript
+function formatCurrency(amount) {
+  return `${amount.toFixed(2)} zł`;
+}
 
-1. Kontekst historyczny: Interpolacja łańcuchów została wprowadzona w ES6 / ES2015 w ramach ulepszenia składni łańcuchów, które wcześniej wymagały użycia "+" do konkatenacji łańcuchów.
+const price = 29.99;
+const message = `Do zapłaty: ${formatCurrency(price)}`;
+console.log(message); // "Do zapłaty: 29.99 zł"
+```
 
-2. Alternatywy: Można użyć metody `concat()` lub operatora "+". Ale interpolacja łańcuchów jest bardziej zalecana, ponieważ jest bardziej czytelna.
+## Deep Dive
+Interpolacja stringów istnieje w JavaScript od wprowadzenia ES6 w 2015 roku. Wcześniej używaliśmy konkatenacji, czyli łączenia stringów przy użyciu `+`:
 
-3. Szczegóły implementacji: Interpolowane łańcuchy są w rzeczywistości szablonami literałów klasy `Template String`. Można je używać do wstawiania wartości zmiennych, a także do wykonania wyrażeń js wewnątrz łańcucha.
+```javascript
+var name = 'Jan';
+var message = 'Cześć, ' + name + '! Jak się masz?';
+```
 
-## Zobacz także:
+Jednakże, template literals (oznaczone przez backticks `` ` ``) uczyniły ten proces bardziej eleganckim i czytelnym.
 
-1. [MDN: Szablony literałów](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Template_literals)
-2. [Interpolacja łańcuchów w Javascript](https://www.w3schools.com/js/js_string_templates.asp)
+Ciekawostką jest, że niektóre języki mają interpolację stringów już od dłuższego czasu, przykładowo w Ruby czy Perl.
+
+Alternatywą interpolacji w JavaScript może być również stosowanie funkcji `replace` lub bibliotek zewnętrznych jak lodash, które oferują funkcję `_.template`.
+
+```javascript
+const data = { name: "Jan" };
+const compiled = _.template("Cześć, <%= name %>!");
+console.log(compiled(data)); // "Cześć, Jan!"
+```
+
+Pod względem wydajności, interpolacja stringów może mieć lekką przewagę nad konkatenacją, ponieważ JavaScript silniki zoptymalizowane są pod kątem pracy z template literals.
+
+## See Also
+- MDN Web Docs: Template literals (Template strings) - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+- You Don't Need Lodash/Underscore - https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore

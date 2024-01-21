@@ -1,7 +1,8 @@
 ---
-title:                "एक पाठ फ़ाइल पढ़ना"
-html_title:           "Bash: एक पाठ फ़ाइल पढ़ना"
-simple_title:         "एक पाठ फ़ाइल पढ़ना"
+title:                "टेक्स्ट फ़ाइल पढ़ना"
+date:                  2024-01-20T17:54:46.228894-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "टेक्स्ट फ़ाइल पढ़ना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,43 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-मूल रूप से टेक्स्ट फ़ाइल पढ़ना मतलब किसी फ़ाइल की सामग्री को ताजा करना। प्रोग्रामर्स इसे डेटा संचालन, त्रुटि रिपोर्टिंग, और लॉग रिपोर्टिंग के संदर्भ में उपयोग करते हैं।
+Text file पढ़ना, यानी की सादे टेक्स्ट की सामग्री को कोड से सीधे निकालना। Programmers इसे क्यों करते हैं? कोड में सेटिंग्स, डेटा या configurations load करने के लिए।
 
-## कैसे करें:
+## How to: (कैसे करें:)
 
-Go के आधिकारिक लाइब्ररी `os` और `bufio` का उपयोग करके चलने का उदाहरण देखें।
+Basic टेक्स्ट फ़ाइल पढ़ने के लिए Go कोड:
 
 ```Go
 package main
 
 import (
-	"bufio"
-	"fmt"
-	"os"
+    "bufio"
+    "fmt"
+    "log"
+    "os"
 )
 
 func main() {
-	file, _ := os.Open("test.txt")
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		fmt.Println(scanner.Text())
-	}
-	file.Close()
+    file, err := os.Open("example.txt")
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer file.Close()
+
+    scanner := bufio.NewScanner(file)
+    for scanner.Scan() {
+        fmt.Println(scanner.Text())
+    }
+
+    if err := scanner.Err(); err != nil {
+        log.Fatal(err)
+    }
 }
 ```
+अगर `example.txt` में लिखा है "नमस्ते Go!", तो output ऐसा होगा:
 
-इसे चलाने पर, आपको `test.txt` फाइल की सारी लाइनें मिलेंगी।
+```
+नमस्ते Go!
+```
 
-## गहरा डाइव:
+## Deep Dive (गहराई से जानकारी)
 
-1. हिस्टोरिकल कांटेक्स्ट: Go भाषा की कड़ी सुरक्षा और सरलता के कारण यह फ़ाइल पढ़ने का एक सुविधाजनक तरीका बन गया है।
-2. विकल्प: `ioutil.ReadFile` का उपयोग भी कर सकते हैं, लेकिन इसे लागती हुई मेमोरी को ध्यान में रखा जाए, क्योंकि यह पूरी फ़ाइल को एक बार में लोड करता है।
-3. आधारभूत विवरण: `os.Open` फ़ाइल को खोलता है, `bufio.NewScanner` एक नया स्कैनर बनाता है, `scanner.Scan` एक नई लाइन पर जाता है, और `scanner.Text` उस लाइन को प्रिंट करता है।
+पहले, C या UNIX जैसी पुरानी टेक्नोलॉजीज में भी text files प्रमुख डेटा एक्सचेंज का माध्यम थीं। Go में `io` और `bufio` पैकेज फ़ाइल पढ़ने को आसान और प्रभावी बनाते हैं। `os.Open` से फ़ाइल खोली जाती है, `bufio.NewScanner` से content को पढ़ा जाता है, और `defer file.Close()` से फ़ाइल को बाद में सही तरीके से बंद किया जाता है। वैकल्पिक तरीकों में `ioutil.ReadFile` और `os.ReadFile` शामिल हैं, जो पूरी फ़ाइल को एक बार में memory में लोड करते हैं।
 
-## देखने के लिए भी:
+## See Also (देखें भी)
 
-1. Go डॉक्यूमेंटेशन: https://golang.org/pkg/bufio/
-2. 파일 읽기에 대한 블로그 포스트: https://go.dev/play/p/3W69TH4nON
-3. Go प्रोग्रामिंग: https://tour.golang.org/welcome/1
+- Go by Example पर File Reading: https://gobyexample.com/reading-files
+- Go डॉक्स में `ioutil` पैकेज: https://pkg.go.dev/io/ioutil
+- Go डॉक्स में `bufio` पैकेज: https://pkg.go.dev/bufio

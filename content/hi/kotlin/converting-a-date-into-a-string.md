@@ -1,7 +1,8 @@
 ---
-title:                "एक तारीख को स्ट्रिंग में परिवर्तित करना"
-html_title:           "Java: एक तारीख को स्ट्रिंग में परिवर्तित करना"
-simple_title:         "एक तारीख को स्ट्रिंग में परिवर्तित करना"
+title:                "तारीख को स्ट्रिंग में बदलना"
+date:                  2024-01-20T17:37:35.434539-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "तारीख को स्ट्रिंग में बदलना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,38 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-दिनांक को स्ट्रिंग में बदलने से संदर्भित, हम एक विशेष तारीख को या तो कस्टम फ़ॉर्मेट में बदलते हैं या इसे इंटरनेट पर एक्सपोर्ट करते हैं। यह मानव यातायात और पठन के लिए आसान बनाने के लिए किया जाता है। 
+## What & Why? (क्या और क्यों?)
+तारीख को स्ट्रिंग में बदलने से मतलब है दिनांक को ऐसे फॉर्मेट में परिवर्तित करना जो पढ़ने में सरल हो। प्रोग्रामर इसलिए करते हैं ताकि यूजर्स को डेटा अच्छे से समझ में आए और UI में अच्छा दिखे।
 
-## कैसे:
-यहाँ एक सादा सा Kotlin कोड स्निपेट है जो करंट (current) तारीख को ISO-8601 फ़ॉर्मेट में स्ट्रिंग में बदलता है :
-
-```Kotlin
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
+## How to: (कैसे करें:)
+```kotlin
+import java.text.SimpleDateFormat
+import java.util.*
 
 fun main() {
-    val current = LocalDateTime.now()
-    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
-    val formatted = current.format(formatter)
-    
-    println("Current Date and Time is: $formatted")
+    val date: Date = Date() // आज की तारीख लें
+    val formatter = SimpleDateFormat("dd-MM-yyyy HH:mm:ss") // फॉर्मेट सेट करें
+    val dateStr = formatter.format(date) // स्ट्रिंग में बदलें
+
+    println(dateStr) // आउटपुट दिखाएँ
 }
 ```
-जब आप इसे रन(run) करेंगे, आपको इस तरह का आउटपुट(output) मिलेगा:
-
-```Kotlin
-'2022-01-01T12:34:56.789Z'
+Sample output:
+```
+05-04-2023 16:45:12
 ```
 
-## गहराई में:
-इतिहासिक संदर्भ में, जावा में तारीखों को स्ट्रिंग में बदलने का फंक्शन SimpleDateFormat class के साथ आता था। लेकिन Kotlin में, इसे कई तरह से किया जा सकता है जैसे LocalDateTime class के साथ।
+## Deep Dive (गहराई से जानकारी):
+तारीखों को स्ट्रिंग में बदलने का चलन डाटाबेस और यूजर इंटरफेस की शुरुआत से रहा है। `SimpleDateFormat` जावा में पुराना और प्रचलित तरीका है, लेकिन Kotin में `DateTimeFormatter` जैसे नए लाइब्रेरी भी हैं। जब किसी तारीख़ को स्ट्रिंग में बदलते हैं, तो टाइमज़ोन की सटीकता, लोकलाइजेशन(स्थानीकरण) और फॉर्मैटिंग पैटर्न जैसे पहलुओं को ध्यान में रखना जरूरी होता है। कई बार `Date` की बजाए `Calendar` या `LocalDateTime` क्लासेस इस्तेमाल होते हैं, जो समय क्षेत्र और लोकलाइजेशन को बेहतर संभालते हैं।
 
-विकल्पों में, आप `SimpleDateFormat` का उपयोग कर सकते हैं, जो जावा 7 में उपलब्ध था, लेकिन यह थ्रेड-सेफ(thread-safe) नहीं है। कोटलिन में, उन्होंने इसे थ्रेड-सेफ बनाने का प्रयास किया है।
-
-चूंकि अब तक हम Kotlin का उपयोग कर रहे हैं, हमें जितना संभव हो सके LocalDateTime का उपयोग करना चाहिए क्योंकि इसे कई तरह से कस्टमाइज़ किया जा सकता है, और यह भी थ्रेड-सेफ है।
-
-## देखे भी:
-ISO 8601 के बारे में अधिक जानकारी के लिए, पढ़ें: [ISO 8601 - Wikipedia](https://en.wikipedia.org/wiki/ISO_8601)
-
-Kotlin दस्तावेज़ीकरण के लिए, जाएं: [Kotlin Documentation - LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/index.html)
+## See Also (अधिक जानकारी के लिए):
+- [Kotlin Official Documentation](https://kotlinlang.org/docs/reference/)
+- [SimpleDateFormat Documentation](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)

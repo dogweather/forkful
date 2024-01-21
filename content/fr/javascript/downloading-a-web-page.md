@@ -1,7 +1,8 @@
 ---
-title:                "Télécharger une page web"
-html_title:           "Bash: Télécharger une page web"
-simple_title:         "Télécharger une page web"
+title:                "Téléchargement d'une page web"
+date:                  2024-01-20T17:44:08.743101-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Téléchargement d'une page web"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,39 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ?
+## What & Why?
+Télécharger une page web, c'est récupérer son contenu via le Net. Les programmeurs le font pour analyser des données, tester la disponibilité ou collecter des infos automatiquement.
 
-Télécharger une page Web consiste à récupérer le contenu HTML de celle-ci depuis un serveur Web. Les programmeurs font cela pour obtenir des données à partir de sites Web et les manipuler en fonction de leurs besoins.
+## How to:
 
-## Comment faire :
+Pour télécharger une page web en JavaScript, on utilise souvent la librairie `axios` ou la fonction `fetch`. Voici un exemple avec `fetch`:
 
-Télécharger une page Web en Javascript est assez simple, surtout avec l'aide de bibliothèques comme 'axios'. Voici comment vous pouvez la faire.
-
-```Javascript
-const axios = require('axios');
-
-axios.get('https://www.votresite.com')
-  .then(response => {
-    console.log(response.data);
+```javascript
+fetch('https://example.com')
+  .then(response => response.text())
+  .then(data => {
+    console.log(data); // affiche le contenu HTML de la page
   })
   .catch(error => {
-    console.error(error);
+    console.error('Erreur lors du téléchargement:', error);
   });
 ```
-Dans cet exemple, l'URL 'https://www.votresite.com' est la page Web que vous voulez télécharger. La fonction `.then()` est exécutée lorsque le téléchargement est terminé et affiche le contenu de la page. Si une erreur survient, elle est capturée et affichée grâce à la fonction `.catch()`.
 
-## Plongée en profondeur :
+Sortie d’exemple :
 
-Le téléchargement de pages Web a été facilité grâce à l'avènement des bibliothèques d'extraction de données Web telle que 'axios'. Avant cela, les développeurs devaient souvent écrire manuellement cette fonctionnalité à l'aide de méthodes natives en Javascript, comme 'XMLHttpRequest'.
+```
+<!doctype html>
+<html>
+<head>
+    <title>Exemple de titre</title>
+...
+```
 
-Il existe également des alternatives à 'axios', comme 'fetch', qui est intégré aux navigateurs modernes. Cependant, 'fetch' ne supporte pas l'ancienne version du navigateur.
+## Deep Dive:
 
-Quant à l'implémentation, il est bon de savoir que 'axios' renvoie une promesse. Cela signifie que vous pouvez utiliser `.then()` pour attendre la fin du téléchargement, ou `async/await` pour rendre votre code plus lisible.
+Historiquement, on utilisait `XMLHttpRequest` pour faire ce job. Mais c'était un peu lourd et moins intuitif. Avec l’arrivée de `fetch` dans les normes modernes, les choses se sont simplifiées. `Fetch` est basé sur les promesses, donc il est plus flexible et mieux adapté pour des opérations asynchrones.
 
-## Voir aussi :
+Il y a aussi `axios`, une librairie tierce qui offre plus de fonctionnalités comme l'annulation de requêtes, mais elle doit être incluse séparément.
 
-1. [Documentation axios](https://github.com/axios/axios)
-2. [API Fetch](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API)
-3. [Guide Async/Await](https://developer.mozilla.org/fr/docs/Learn/JavaScript/Asynchronous/Async_await)
+Pour les détails d'implémentation, `fetch` envoie une requête HTTP et renvoie une promesse qui, une fois résolue, donne accès au corps de la réponse. Il est important de vérifier le statut de la réponse pour gérer les différentes situations (succès, erreur, redirection, etc.).
 
-Voilà, avec cela vous devriez être en mesure de télécharger une page Web en JavaScript. Bonne programmation!
+## See Also:
+
+- MDN Web Docs sur `fetch`: https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch
+- Documentation de `axios`: https://axios-http.com/docs/intro
+- Comparaison entre `fetch` et `XMLHttpRequest`: https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Basic_concepts_around_fetch

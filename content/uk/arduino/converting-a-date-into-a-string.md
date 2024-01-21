@@ -1,6 +1,7 @@
 ---
 title:                "Перетворення дати в рядок"
-html_title:           "Lua: Перетворення дати в рядок"
+date:                  2024-01-20T17:35:49.262097-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Перетворення дати в рядок"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,44 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why?
+## Що і Чому?
+Date to string conversion means transforming a date (like year, month, day) into a text format. Programmers do this to display dates on screens, log events, or format data for storage.
 
-Конвертація дати у рядок означає перетворення об'єкта дати у текстові дані. Програмісти роблять це, щоб завантажити, відобразити або відправити дату в текстовому форматі.
-
-## Як зробити: 
-
-Для конвертації дати в рядок використовується функція `sprintf()`. Нижче наведено приклад коду Arduino.
+## How to:
+## Як це зробити:
+Arduino doesn't have a built-in date type, but you can use libraries like `RTClib` for real-time clocks or `TimeLib` for time functions. Here's how you do it with `TimeLib`:
 
 ```Arduino
 #include <TimeLib.h>
 
 void setup() {
   Serial.begin(9600);
-  setTime(8, 29, 0, 2, 1, 2011); 
+  setTime(23, 59, 30, 12, 31, 2020); // Set the time to December 31, 2020, 23:59:30
 }
 
 void loop() {
-  char buffer[50];
-  sprintf(buffer, "%02d/%02d/%d %02d:%02d:%02d", day(), month(), year(), hour(), minute(), second());
-  Serial.println(buffer);
-  delay(1000);
+  char buffer[20];
+  sprintf(buffer, "%02d/%02d/%04d %02d:%02d:%02d", day(), month(), year(), hour(), minute(), second());
+  Serial.println(buffer); // Outputs "31/12/2020 23:59:30"
+  delay(1000); // Wait for a second
 }
 ```
 
-В результаті виходу отримуємо:
-
-```Arduino
-02/01/2011 08:29:00
+Sample output:
 ```
-## Занурення в глибину:
+31/12/2020 23:59:30
+```
 
-1. Історичний контекст: Функція `sprintf()` вперше з'явилася в мові програмування C та потім була інтегрована в Arduino.
+## Deep Dive
+## Детальніше
+Originally, Arduino lacked time and date handling until libraries like `TimeLib` filled the gap. Alternatives like `RTClib` interface directly with real-time clock hardware. For converting date to string, `sprintf` is your go-to in C++, which Arduino uses. It formats data into a buffer. Careful with buffer sizes—they must be large enough to hold your string, including the terminating null character `\0`.
 
-2. Альтернативи: Крім `sprintf()`, можна використовувати `String()` для створення рядків в Arduino.
-
-3. Деталі реалізації: Функція `sprintf()` використовує рядок формату, щоб визначити як конвертувати дату в рядок. Символи типу '%d', '%02d' вказують формат виводу даних.
-
-## Бачте також: 
-
-- [Arduino Time Library](https://www.arduino.cc/reference/en/libraries/time/)
-- [Arduino String](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+## See Also
+## Дивіться також
+- Arduino `TimeLib` library: https://github.com/PaulStoffregen/Time
+- Arduino `RTClib` library by Adafruit: https://github.com/adafruit/RTClib
+- `sprintf` reference: http://www.cplusplus.com/reference/cstdio/sprintf/

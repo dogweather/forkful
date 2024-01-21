@@ -1,7 +1,8 @@
 ---
-title:                "Extrayendo subcadenas"
-html_title:           "C: Extrayendo subcadenas"
-simple_title:         "Extrayendo subcadenas"
+title:                "Extracción de subcadenas"
+date:                  2024-01-20T17:45:46.067719-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Extracción de subcadenas"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,39 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## Qué y Por Qué?
 
-Extracción de substrings es desglosar una cadena de caracteres en segmentos más pequeños. Es útil para obtener partes específicas de datos de texto más grandes.
+Extraer subcadenas significa seleccionar partes específicas de una cadena de texto. Los programadores lo hacen para manipular, analizar o alterar datos de manera más precisa.
 
 ## Cómo hacerlo:
-La extracción de substrings en Gleam se puede hacer usando la función `slice`. A continuación se muestra un ejemplo:
 
-```Gleam
+En Gleam, puedes extraer subcadenas utilizando la función `slice` del módulo `gleam/string`. Aquí tienes un ejemplo:
+
+```gleam
 import gleam/string
 
-let mi_cadena = "¡Hola, Mundo!"
-let substring = string.slice(0, 5, mi_cadena)
+pub fn main() {
+  let texto = "¡Hola mundo!"
+  let substring = string.slice(start: 1, end: 5, from: texto)
+  substring
+}
 ```
-En este ejemplo, el substring sería `"¡Hola"`.
 
-Otro ejemplo sería:
+Salida de muestra:
 
-```Gleam
-let otro_substring = string.slice(7, 13, mi_cadena)
 ```
-En este caso, el substring sería `"Mundo!"`.
+"ola "
+```
 
-## Inmersión Profunda:
+Este código toma la subcadena desde el índice 1 hasta el 5 de la cadena `"¡Hola mundo!"`
 
-1. Contexto Histórico: La funcionalidad de extracción de substrings ha sido una parte esencial de los lenguajes de programación desde sus primeros días.
+## Análisis Profundo:
 
-2. Alternativas: Aunque 'slice' es la principal función de extracción de substrings embedida en Gleam, también se podrían usar otras funciones como `split`, dependiendo del caso.
-
-3. Detalles de Implementación: La función `slice` en Gleam utiliza parámetros de inicio y fin para extraer substrings. Empezando desde 0, los números representan las posiciones de los caracter.
-
-## Ver También:
-
-Para más información y recursos relacionados, puede visitar los siguientes enlaces:
-
-- [Gleam Docs: Slice](https://gleam.run/documentation/)
-- [Gleam Discussion: String Functions](https://github.com/gleam-lang/gleam/discussions)
+La extracción de subcadenas no es algo nuevo y ha sido una herramienta clave en la manipulación de texto desde los primeros días de la programación. En Gleam, la extracción se maneja con cuidado para evitar errores comunes, como los índices fuera de rango. Alternativas en otros lenguajes incluyen métodos como `substring`, `substr` o el uso de operaciones de array/slides. Gleam, al mantenerse funcional y siguiendo el principio de "explícito sobre implícito", proporciona una API clara y robusta para trabajar con cadenas de forma segura.

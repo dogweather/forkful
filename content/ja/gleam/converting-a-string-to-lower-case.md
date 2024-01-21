@@ -1,7 +1,8 @@
 ---
-title:                "文字列を小文字に変換する"
-html_title:           "Arduino: 文字列を小文字に変換する"
-simple_title:         "文字列を小文字に変換する"
+title:                "文字列を小文字に変換"
+date:                  2024-01-20T17:38:22.613780-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "文字列を小文字に変換"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,31 +11,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに？なぜ？ ("What & Why?")
-文字列を小文字に変換するとは、大文字で書かれた文字や含まれる全ての大文字を小文字に置き換えることです。プログラマーはこれを行うことで、テキストの比較や整列など、ケースに引っかからない操作を保証します。
+## What & Why? (何となぜ？)
+文字列を小文字に変換するのは、大文字と小文字を区別しない比較をするためです。データの正規化や検索などで利用されます。
 
-## 使い方 ("How to:")
-Gleamの`to_lower`関数を使用して文字列を小文字に変換できます。
-
+## How to: (やり方)
 ```gleam
 import gleam/string
 
-let sentence = "HELLO, GLEAM!"
-let lower_case_sentence = string.to_lower(sentence)
-
-assert lower_case_sentence == "hello, gleam!"
+pub fn main() {
+  let greeting = "Hello, World!"
+  let lower_greeting = string.to_lower(greeting)
+  io.println(lower_greeting) // "hello, world!"
+}
 ```
 
-出力:
-```gleam
-"hello, gleam!"
-```
+## Deep Dive (深い潜水)
+文字列を小文字に変換する操作は多くのプログラミング言語に備わっています。英文字だけではなく、国際化を意識したUnicode文字にも対応することが重要です。Gleamでは`string.to_lower`を使って実現できますが、これは内部的にはRustの`.to_lowercase()`を利用しています。またこの操作の別の方法としては、ASCII限定で自分で関数を作成することもできますが、実用的ではないことが多いです。
 
-## 深掘り ("Deep Dive")
-文字列を小文字に変換することは古代から存在する操作で、現代のプログラミング言語の多くがこれをサポートしています。しかし、一部の言語やシステムでは、別の方法（例えば、全ての大文字を特定の小文字にマッピングすること）でこの操作を行うかもしれません。Gleamでは、体系的で統一感のある方法として、標準ライブラリの一部である`string.to_lower`関数を採用しています。
-
-## 参照 ("See Also")
-関連リソースは以下の通りです：
-
-- [string.to_lower function details](https://hexdocs.pm/gleam_stdlib/gleam/string.html#to_lower/1)
-- [GitHub repository](https://github.com/gleam-lang/gleam) for Gleam project and examples.
+## See Also (関連項目)
+- Unicode case mapping FAQs: [http://unicode.org/faq/casemap_charprop.html](http://unicode.org/faq/casemap_charprop.html)

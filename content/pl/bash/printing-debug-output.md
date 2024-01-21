@@ -1,6 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-html_title:           "Haskell: Drukowanie komunikatów debugowania"
+date:                  2024-01-20T17:52:16.499802-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,58 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Jak używać wydruku debugowania w Bashu
+## What & Why? (Co i dlaczego?)
+Debugowanie to sztuka wykrywania błędów. Szybko pokazujemy zmienne i komunikaty, by zrozumieć, co się dzieje w skrypcie. Dlaczego? Bo informatyk bez debugowania to jak lekarz bez stetoskopu – leci na ślepo.
 
-## Co i dlaczego?
-
-Wydruk debugowania to nasz najlepszy przyjaciel przy szukaniu błędów. Pokazuje nam wartości zmiennych, pozwala sprawdzać logikę kroku po kroku.
-
-## Jak to zrobić:
-
-W Bashu wydruk debugowania robimy tak:
-
+## How to (Jak to zrobić)
 ```Bash
 #!/bin/bash
-DEBUG=true
-if $DEBUG 
-then
-    echo "Debugowanie jest włączone"
+
+# Definiowanie zmiennej
+moj_numer=123
+
+# Prosty debug
+echo "Debug: zmienna moj_numer wynosi $moj_numer"
+
+# Warunkowy debug z użyciem zmiennej DEBUG
+DEBUG=1
+if [ "$DEBUG" -eq 1 ]; then
+    echo "Warunkowy debug: moj_numer wynosi $moj_numer"
 fi
+
+# Użyj 'set -x' by śledzić wszystkie polecenia
+set -x
+inne_zmienne=("jabłko" "banan" "cytryna")
+for owoc in "${inne_zmienne[@]}"; do
+    echo "Owoc: $owoc"
+done
+set +x
 ```
-Output:
-```
-Debugowanie jest włączone
-```
+Wpisz powyższy kod do skryptu i uruchom. Zobaczysz wartości zmiennych i przebieg pętli for.
 
-Możemy też wykorzystać funkcję do debugowania:
+## Deep Dive (Głębsze zanurzenie)
+Historia Bash sięga UNIX-a i shella jego poprzednika. Nasz prosty `echo` to tylko czubek góry lodowej. Bash ma wbudowany `set -x` dla pełnych raportów debugowania. Ale, masz również inne narzędzia jak `trap` i `set -e` dla zaawansowanej kontroli błędów. Co ważniejsze, używaj narzędzi jak `logger` czy `Systemd Journal` w zastosowaniach produkcyjnych, by nie zanieczyszczać standardowego wyjścia.
 
-```Bash
-#!/bin/bash
-DEBUG=true
-debug() {
-   if $DEBUG 
-   then
-      echo "Debug: $*"
-   fi
-}
-
-debug "Zmienna x ma wartość $x"
-```
-Output:
-```
-Debug: Zmienna x ma wartość 5
-```
-
-## Głębsze spojrzenie
-
-Historia: Bash nie miał wbudowanego debugowania. Programiści znaleźli jednak triki, jak to robić.
-
-Alternatives: Możemy użyć wbudowanych skryptów debugujących, jak `set -x` albo `set -v`.
-
-Szczegóły implementacji: W Bashu używamy wydruku debugowania na różne sposoby - przez `set`, `echo`, `printf` czy zmienną środowiskową DEBUG.
-
-## Zobacz również
-
-- Debugowanie Bashu: https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html
-- Skrypty debugujące: https://www.linuxjournal.com/content/debugging-bash-scripts
-- Przekierowanie wyjścia błędów: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Redirections
+## See Also (Zobacz również)
+- [Advanced Bash-Scripting Guide](https://www.tldp.org/LDP/abs/html/) - Przewodnik po zaawansowanym skryptowaniu w Bash, w tym debugowaniu.
+- [BashFAQ](http://mywiki.wooledge.org/BashFAQ) - Często zadawane pytania dotyczące Bash, z odpowiedziami ułatwiającymi zrozumienie jego zachowań.

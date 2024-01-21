@@ -1,7 +1,8 @@
 ---
-title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
-html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
-simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+date:                  2024-01-20T18:02:21.873727-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,35 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Відправлення HTTP-запиту з основною автентифікацією в Ruby
+## What & Why? (Що та Чому?)
 
-## Що і чому?
-Відправлення HTTP-запиту з основною автентифікацією - це процес, яким ми передаємо користувачське ім'я та пароль з запитом до сервера. Програмісти роблять це, щоб отримати доступ до захищених даних або відправити дані на сервер.
+Ruby allows sending HTTP requests with basic authentication easily. Basic authentication protects resources by requiring credentials (username, password). Programmers use it to access APIs or web services that require user verification.
 
-## Як це зробити:
-У Ruby ви можете використовувати бібліотеку `net/http` для створення HTTP-запитів з основною автентифікацією. Подивимось як це зробити:
+## How to: (Як це зробити:)
+
+Here's the simplest way to send an HTTP request with basic authentication using Ruby's `net/http` library:
 
 ```Ruby
 require 'net/http'
 require 'uri'
 
-uri = URI('http://example.com/path')
-req = Net::HTTP::Get.new(uri)
-req.basic_auth 'user', 'pass'
+uri = URI('http://example.com/resource')
+request = Net::HTTP::Get.new(uri)
+request.basic_auth('user', 'password')
 
-res = Net::HTTP.start(uri.hostname, uri.port) { |http|
-  http.request(req)
-}
+response = Net::HTTP.start(uri.hostname, uri.port) do |http|
+  http.request(request)
+end
 
-puts res.body
+puts response.body
 ```
-Вище, ми створюємо об'єкт `URI` для URL нашого запиту. Потім ми створюємо об'єкт `Get` з `Net::HTTP`, встановлюючи ім'я користувача та пароль за допомогою `basic_auth`. Наостанок, ми відправляємо запит за допомогою `HTTP.start` та виводимо тіло відповіді.
 
-## Поглиблений огляд
-- **Історичний контекст**: Коли HTTP вперше з'явився, він не мав жодної вбудованої системи автентифікації. Основна автентифікація вводилася як простий механізм для забезпечення перевірки справжності користувача. 
-- **Альтернативи**: Основна автентифікація є простою, але не самою безпечною. Ви також можете використовувати дайджест-автентифікацію, OAuth або JSON Web Tokens (JWT) в залежності від ваших потреб.
-- **Деталі реалізації**: В Ruby бібліотека `net/http` має вбудований метод `basic_auth` для створення HTTP-запиту з основною автентифікацією. Він просто кодує користувачське ім'я та пароль в base64 та додає їх в заголовок `Authorization` вашого запиту.
+Sample output might look like the content of the requested resource:
 
-## Дивись також
-- Документація `net/http` в Ruby: https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html
-- Подальше читання про HTTP-автентифікацію: https://developer.mozilla.org/uk/docs/Web/HTTP/Authentication
+```Ruby
+"Here's your protected resource content!"
+```
+
+## Deep Dive (Поглиблено):
+
+Ruby has supported HTTP requests for a long time. Basic auth isn't the latest trend (more secure alternatives exist, like OAuth), but it remains relevant for simplicity and legacy systems. Behind the scenes, Ruby encodes the credentials and adds an `Authorization` header to the HTTP request. It's not super secure (think plain text over HTTP), so use HTTPS to encrypt the transmission. Also, consider storing credentials securely and not hard-coding them.
+
+## See Also (Дивіться також):
+
+- `HTTP` gem for a more feature-rich and friendly API: [https://github.com/httprb/http](https://github.com/httprb/http)

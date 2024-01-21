@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:00:40.413448-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,48 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why? क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+HTTP अनुरोध भेजना वेब सर्वर से डेटा मांगना है। प्रोग्रामर्स इसे जानकारी लेने, फॉर्म भरने, या वेबसर्विसेज से बात करने के लिए करते हैं।
 
-HTTP संचारण अनुरोध, या सरलरूप से, HTTP request एक वेबसाइट को ब्राउज़र से जानकारी मांगने के लिए उपयोग होता है। यह वेब विकास में मुख्य तंत्र है। कार्यक्रमकर्ताओं को इसे उपयोग करने की आवश्यकता तब होती है जब उन्हें दूरस्थ सर्वर से डेटा पुल करने की जरूरत होती है।
+## How to: (कैसे करें?)
+Java में HTTP अनुरोध भेजने के लिए `java.net.http` पैकेज इस्तेमाल होता है। ये आपको आसानी से GET और POST अनुरोध करने देता है। यहाँ एक GET अनुरोध का उदाहरण है:
 
-## कैसे:
-
-जावा मे HTTP request भेजने के लिए हम java.net.http package का उपयोग करेंगे। आइए एक सरल कोड के माध्यम से समझाते हैं:
-
-```Java
+```java
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.io.IOException;
+import java.net.URISyntaxException;
 
-public class SendHTTP {
-    public static void main(String[] args) throws Exception {
+public class HttpExample {
+    public static void main(String[] args) throws IOException, InterruptedException, URISyntaxException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-              .uri(URI.create("http://example.com/"))
-              .build();
-
-        HttpResponse<String> response =
-              client.send(request, HttpResponse.BodyHandlers.ofString());
-
+                              .uri(new URI("http://httpbin.org/get"))
+                              .build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         System.out.println(response.body());
     }
 }
 ```
 
-इसमें, मैंने http://example.com/ URL पर GET अनुरोध भेजा है, और फिर उसका प्रतिसाद प्रिंट किया है। 
+यदि आप उपरोक्त कोड को चलाएंगे, तो आपको जवाब में JSON डेटा मिलेगा, जो `http://httpbin.org/get` सर्वर से आपके GET अनुरोध का डिटेल्स होगा।
 
-## गहरी दुविधा
+## Deep Dive (गहराई से जानकारी)
+जावा में HTTP अनुरोध की सुविधा पहले `HttpURLConnection` क्लास से मिलती थी, लेकिन Java 11 से `java.net.http.HttpClient` यह ज्यादा सहज और मॉडर्न विकल्प बन गया है। हम `HttpRequest.Builder` से विभिन्न प्रकार के HTTP अनुरोध तैयार कर सकते हैं, जैसे GET, POST, PUT, DELETE आदि। `HttpClient` असिंक्रोनस अनुरोध भेजने की सुविधा भी देता है, जिससे ऐप्लिकेशन के प्रदर्शन में सुधार होता है।
 
-### ऐतिहासिक संदर्भ
-HTTP अनुरोध भेजने का तरीका काफी समय से एक महत्वपूर्ण हिस्सा रहा है वेब विकास का। HTTP 1.0 और HTTP 1.1 में इसकी कार्यवाही काफी धीमी होती थी, लेकिन HTTP2 में यह प्रक्रिया समृद्ध हो गई।
+कई बार हमें तीसरे पक्ष के libraries जैसे कि Apache HttpClient, OkHttp आदि का इस्तेमाल करना पड़ता था, पर Java 11 के बाद से Java की Core API में ही यह सुविधा आ गई है। Implementation में `HttpClient` इंटरनल रूप से NIO (Non-blocking I/O) का इस्तेमाल करता है जो अनुरोधों को ज्यादा कुशलता से संभालता है।
 
-### विकल्प
-`java.net.http` package के अलावा, विकल्पी के रूप आप Apache HttpClient और OkHttp जैसी ओपन सोर्स पुस्तकालयों का उपयोग कर सकते हैं।
+## See Also (और देखें)
+और जानने के लिए, निम्नलिखित रिसोर्सेज मददगार हो सकते हैं:
 
-### क्रियानुशासन विवरण
-उपरोक्त कोड क्लिप में, हमने HttpClient object का निर्माण किया, जिसके बाद हमने HttpRequest object तैयार की। इसके बाद, हमने अनुरोध को `.send()` method के माध्यम से भेजा, और फिर उसका प्रतिसाद प्रिंट किया।
-
-## देखें भी:
-- [Apache HttpClient पुस्तकालय](https://hc.apache.org/httpcomponents-client-4.5.x/quickstart.html)
-- [OkHttp पुस्तकालय](https://square.github.io/okhttp/)
+- [Java™ SE Development Kit 11 Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
+- [HTTP अनुरोधों के लिए Official Java Tutorial](https://docs.oracle.com/javase/tutorial/networking/urls/readingWriting.html)
+- [httpbin.org](http://httpbin.org/) - HTTP अनुरोध परीक्षा करने के लिए वेबसाइट
+- [Mozila MDN Web Docs: HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) - HTTP के बारे में गहराई से समझने के लिए

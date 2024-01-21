@@ -1,6 +1,7 @@
 ---
 title:                "Пошук та заміна тексту"
-html_title:           "C++: Пошук та заміна тексту"
+date:                  2024-01-20T17:57:59.650156-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Пошук та заміна тексту"
 programming_language: "C#"
 category:             "C#"
@@ -10,32 +11,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що та Чому?)
+Searching and replacing text — це процес знаходження певного фрагмента тексту та його заміни на інший. Програмісти використовують це для автоматизації редагування коду, швидкого виправлення помилок, або заміни змінних у шаблонах.
 
-Пошук та заміна тексту - це процес виявлення певного шаблону в тексті та заміни його на інший текст. Програмісти роблять це, щоб спростити операції зі строками та підтримати чистий код.
-
-## Як це робити:
-
-Пошук та заміну тексту в C# можна виконати за допомогою методу String.Replace().
+## How to (Як це зробити)
+C# provides `String.Replace` method to replace text. Here's a simple example:
 
 ```C#
-string source = "Привіт, Світ!";
-string toFind = "Світ";
-string toReplace = "Україна";
+using System;
 
-string result = source.Replace(toFind, toReplace);
-System.Console.WriteLine(result); // Outputs "Привіт, Україна!"
+public class TextReplaceExample
+{
+    static void Main()
+    {
+        string originalText = "Привіт, як справи?";
+        string newText = originalText.Replace("справи", "життя");
+
+        Console.WriteLine(newText);
+    }
+}
 ```
 
-## Поглиблений погляд:
+Output:
+```
+Привіт, як життя?
+```
 
-Історично, пошук та заміна тексту виявився корисним інструментом для обробки тексту в галузі програмування. Незалежно від діалекту мови, функціональність пошуку та заміни тексту завжди була основою роботи зі строками.
+For more complex patterns, you can use `Regex.Replace` from the `System.Text.RegularExpressions` namespace:
 
-Як альтернатива, в C# є регулярні вирази, які можуть використовуватися для більш складних шаблонів.
+```C#
+using System;
+using System.Text.RegularExpressions;
 
-Виконуючи пошук та заміну тексту, String.Replace використовує радіус пошуку, що створює нову строку, а не модифікує поточний.
+class RegexReplaceExample
+{
+    static void Main()
+    {
+        string input = "Купи 10 апельсинів і 12 бананів.";
+        string pattern = @"\d+";
+        string replacement = "#";
 
-## Дивись також:
+        string result = Regex.Replace(input, pattern, replacement);
+        Console.WriteLine(result);
+    }
+}
+```
 
-1. [Довідка Microsoft по String.Replace](https://docs.microsoft.com/uk-ua/dotnet/api/system.string.replace?view=net-5.0)
-2. [Довідка Microsoft по регулярних виразах в C#](https://docs.microsoft.com/uk-ua/dotnet/standard/base-types/regular-expressions)
+Output:
+```
+Купи # апельсинів і # бананів.
+```
+
+## Deep Dive (Поглиблений Огляд)
+Searching and replacing text has been around since the early days of computing. Editors like `sed` in Unix made it popular in the '70s. In .NET, `String.Replace` is straightforward for simple text changes, but `Regex` is powerful for patterns.
+
+Alternatives include text-processing tools or integrated development environment (IDE) features like Visual Studio's "Find and Replace".
+
+Implementation-wise, beware of memory overhead with large strings when using `String.Replace`. `StringBuilder` can be more efficient. `Regex` has a performance cost but is optimized for complex patterns.
+
+## See Also (Дивіться Також)
+- Microsoft Docs on `String.Replace`: [https://docs.microsoft.com/en-us/dotnet/api/system.string.replace](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace)
+- Microsoft Docs on `Regex.Replace`: [https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace)
+- An intro to `StringBuilder` for C#: [https://docs.microsoft.com/en-us/dotnet/standard/base-types/stringbuilder](https://docs.microsoft.com/en-us/dotnet/standard/base-types/stringbuilder)
+- `sed` — an introduction to the stream editor: [https://www.gnu.org/software/sed/manual/sed.html](https://www.gnu.org/software/sed/manual/sed.html)

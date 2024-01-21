@@ -1,6 +1,7 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
-html_title:           "Ruby: Obliczanie daty w przyszłości lub przeszłości"
+date:                  2024-01-20T17:31:49.011035-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,42 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Przewidywanie daty w przyszłości lub przeszłości to mechanizm, który umożliwia programistom ustalanie dat poza bieżącą datą systemu. Programiści robią to, aby zarządzać zadaniami i wydarzeniami, które są czasowo zależne.
+Obliczanie daty w przyszłości lub przeszłości to wyznaczanie konkretnych punktów czasowych przed lub po danej dacie. Programiści robią to, by zarządzać terminami, planować zadania, czy wykonywać operacje zależne od czasu.
 
 ## Jak to zrobić:
+Ruby śmiga z datami jak łyżwiarz na lodzie. Użyj `Date` i `Time`, plus trochę matematyki. Zobacz na przykłady:
 
-W Ruby możemy łatwo obliczyć datę w przeszłości lub przyszłości, stosując metody `days`, `months` i `years` dla obiektów `Date` i `Time`.
-
-```ruby
+```Ruby
 require 'date'
 
-dzisiaj = Date.today
-przyszlosc = dzisiaj + 30 #30 dni do przodu
-przeszlosc = dzisiaj - 20 #20 dni do tyłu
+# Dodaj dni do aktualnej daty
+future_date = Date.today + 10
+puts future_date.to_s  # np. "2023-04-15"
 
-puts dzisiaj
-puts przyszlosc
-puts przeszlosc
+# Odejmij dni od aktualnej daty
+past_date = Date.today - 10
+puts past_date.to_s  # np. "2023-03-26"
+
+# Dodaj sekundy do aktualnego czasu
+future_time = Time.now + (60 * 60 * 24 * 10)
+puts future_time.strftime("%Y-%m-%d %H:%M:%S")  # np. "2023-04-15 14:28:36"
+
+# Odejmij sekundy od aktualnego czasu
+past_time = Time.now - (60 * 60 * 24 * 10)
+puts past_time.strftime("%Y-%m-%d %H:%M:%S")  # np. "2023-03-26 14:28:36"
 ```
 
-Kiedy uruchomisz ten skrypt, zobaczysz coś podobnego do tego:
+## Deep Dive
+Daty są tricky, ale nie w Ruby. Używa się `Date` dla dat (bez czasu) i `Time` dla dokładnej godziny. Ruby, od wersji 1.9, ma wbudowaną obsługę stref czasowych i precyzję co do milisekund.
 
-```ruby
-#2022-01-01
-#2022-01-31
-#2021-12-12
-```
-## Pogłębione informacje:
+Wcześniej był standard `Time` z 1970 roku, "epocha" nazwana Unix Time. Nie obsługiwał stref ani dat przed 1970, ale `Time` w Ruby już tak.
 
-1. **Kontekst historyczny**: Ruby od początku zawierał mechanizmy do manipulowania datami i czasem, zwracając uwagę na czytelność i łatwość użycia kodu. 
+Inne języki mają biblioteki typu DateTime w .NET lub moment.js w JavaScript, ale Ruby trzyma to prosto. Jest jeszcze `ActiveSupport::TimeWithZone` w Rails dla stref czasowych.
 
-2. **Alternatywy**: Inne języki, takie jak Python i Java, mają również własne metody do obliczania dat w przeszłości i przyszłości. W tych językach metoda może wyglądać inaczej, ale idea jest ta sama.
+Kombinowaniem z datami jest jak malowanie ogrodu - trzeba wiedzieć, co robić. Na przykład, przejście na czas letni/zimowy. Ruby sobie z tym radzi, ale musisz być uważny.
 
-3. **Szczegóły implementacji**: Ruby używa biblioteki `date`, która udostępnia zestaw klas (Date, DateTime, etc.) służących do manipulowania datami. Wywołując metodę `+` lub `-` na obiekcie Date, tworzysz nowy obiekt Date, nie modyfikując oryginalnej daty.
-
-## Zobacz także:
-
-1. Dokumentacja Ruby - Klasa Date: [https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html)
-2. Dokumentacja Ruby - Metody czasu i daty: [https://ruby-doc.org/core-2.5.1/Time.html](https://ruby-doc.org/core-2.5.1/Time.html)
-3. Tutorial Ruby - Praca z datami i czasem: [https://www.tutorialspoint.com/ruby/ruby_date_time.htm](https://www.tutorialspoint.com/ruby/ruby_date_time.htm)
+## Zobacz też
+- Ruby's Date class: https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html
+- Ruby's Time class: https://ruby-doc.org/core-3.0.0/Time.html
+- ActiveSupport::TimeWithZone documentation: https://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html
+- Time zones in Ruby on Rails: https://guides.rubyonrails.org/time_zone_awareness.html

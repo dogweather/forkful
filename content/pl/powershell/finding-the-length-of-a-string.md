@@ -1,7 +1,8 @@
 ---
-title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Arduino: Znajdowanie długości ciągu znaków"
-simple_title:         "Znajdowanie długości ciągu znaków"
+title:                "Znalezienie długości ciągu znaków"
+date:                  2024-01-20T17:47:51.492693-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Znalezienie długości ciągu znaków"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,35 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-
-Określenie długości łańcucha oznacza identyfikację liczby znaków w danym ciągu. Programiści robią to, aby efektywnie zarządzać i manipulować danymi tekstowymi.
+## Co i Dlaczego?
+Długość łańcucha znaków to ilość znaków, z których się składa. Programiści muszą to sprawdzać, aby zarządzać tekstem, np. w walidacji, ekstrakcji danych, czy manipulacji ciągami.
 
 ## Jak to zrobić:
+W PowerShell mierzenie długości łańcucha jest proste. Użyj właściwości `Length`
 
-Używamy cmdlet `Measure-Object`, aby określić długość łańcucha w PowerShell.
-
-```Powershell
-$ciagZnakow ="Powershell jest fajny"
-$ciagZnakow.Length
+```PowerShell
+$ciagZnakow = "Witaj, świecie!"
+$dlugosc = $ciagZnakow.Length
+$dlugosc
 ```
-
-Zwróci to liczbę 21, co oznacza, że łańcuch zawiera 21 znaków.
-
-## Deep Dive
-
-Historia: Pomiar długości łańcucha nie jest nową koncepcją w programowaniu. Właściwość `Length` w PowerShell istnieje od jego początków.
-
-Alternatywy: Choć `Length` jest najprostszym sposobem znalezienia długości łańcucha, można też użyć cmdlet `Measure-Object`. 
-
-```Powershell
-$ciagZnakow | Measure-Object -Character | Select-Object -Property Characters
+Wynik:
 ```
+15
+```
+Proste, prawda?
 
-Implementacja: Wewnętrznie, `Length` jest właściwością klasy string w .NET Framework, której PowerShell jest częścią. Działanie polega na zliczaniu znaków łańcucha, co jest efektywne i niezawodne.
+## W Głąb Tematu
+Historia: PowerShell wprowadzono w 2006 roku, zastępując starsze narzędzia skryptowe. Właściwość `Length` znajdziesz w wielu językach, bo pomiar długości łańcucha jest uniwersalny.
 
-## Zobacz też
+Alternatywy: Można też użyć metody `.ToCharArray()` i policzyć elementy, ale to już przesada.
 
-1. [String.Length Property in .NET](https://docs.microsoft.com/en-us/dotnet/api/system.string.length)
-3. [Guide to PowerShell String](https://www.educba.com/powershell-string/)
-4. [PowerShell Measure-Object cmdlet](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/measure-object)
+Implementacja: PowerShell, jako nakładka na .NET, używa właściwości `Length` z klasy `String`. Czyli pod spodem to samo, co w C#.
+
+## Zobacz Również
+- [Dokumentacja Microsoft dla klasy String](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-6.0)
+- [PowerShell About Properties](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_properties?view=powershell-7.1)

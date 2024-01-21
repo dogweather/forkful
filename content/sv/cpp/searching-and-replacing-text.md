@@ -1,6 +1,7 @@
 ---
 title:                "Sökning och ersättning av text"
-html_title:           "Arduino: Sökning och ersättning av text"
+date:                  2024-01-20T17:57:16.709512-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sökning och ersättning av text"
 programming_language: "C++"
 category:             "C++"
@@ -11,42 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att söka och ersätta text innebär att hitta specifika strängar i data och ändra dem till något annat. Programmerare gör detta för att snabbt korrigera, uppgradera eller ändra delar av koden.
+Sök och ersätt innebär att hitta specifik text och byta ut den mot något annat. Programmerare använder det för att snabbt ändra kod, data eller dokument, ofta för att förbättra, korrigera eller uppdatera innehåll.
 
-## Hur gör man:
-Här är hur vi gör sök och ersätt operationer med C++. Om man t.ex. vill ändra varje förekomst av ordet "katt" till "hund" i en textsträng:
+## Hur man gör:
+Sök och ersätt i C++ kan göras med hjälp av standardbiblioteket `<algorithm>` och `<string>`. Här är ett exempel:
 
 ```C++
-#include <string>
 #include <iostream>
+#include <string>
+#include <algorithm>
+
+std::string searchAndReplace(std::string text, const std::string& search, const std::string& replace) {
+    size_t pos = 0;
+    while ((pos = text.find(search, pos)) != std::string::npos) {
+        text.replace(pos, search.length(), replace);
+        pos += replace.length();
+    }
+    return text;
+}
 
 int main() {
-    std::string text = "Katten klättrar i träd. Katten är söt.";
-    std::string from = "Katten";
-    std::string to = "Hunden";
-
-    size_t pos = text.find(from);
-    while (pos != std::string::npos){
-        text.replace(pos, from.length(), to);
-		pos = text.find(from, pos + to.length());
-    }
-
-    std::cout << text;
-    return 0;
+    std::string myText = "Hej och hej igen!";
+    std::string newText = searchAndReplace(myText, "hej", "hallå");
+    std::cout << newText << std::endl; // Output: "Hallå och hallå igen!"
 }
 ```
-När du kör programmet kommer outputen att vara:  
-`Hunden klättrar i träd. Hunden är söt`.
 
 ## Djupdykning
-Historiskt sett kom behovet att söka och ersätta text från textbehandling och dataanalys. C++ erbjuder flera sätt att göra detta på, som "std::replace", "std::regex_replace" eller skapande av egen funktion som vi gjorde i vårt exempel.
+Förr, innan moderna editorer och IDE:er, var textbehandling ett gemensamt problem och sök- och ersättningsoperationer var inte så lätta att genomföra. Program som `sed` i Unix var banbrytande.
 
-Ett alternativ till att använda inbyggda metoder är att använda bibliotek som Boost som erbjuder mer robusta metoder. Man kan också skapa egen funktion om man vill ha mer kontroll över processen. Om man gör det, bör märkas att ```std::string::find``` och ```std::string::replace``` metoder ändrar originalsträngen, vilket kan vara oönskat i vissa fall.
+Nuförtiden har vi standardfunktioner som `std::string::find` och `std::string::replace` i C++, men det finns alternativ som regex-biblioteket `<regex>` för komplexa sökmönster och ersättningar.
 
-## Se även
-Det finns massor att lära sig när det gäller C++. Här är några relaterade resources:
+En viktig aspekt vid implementation är effektiviteten; stor text kan kräva optimerade algoritmer för att undvika lång exekveringstid. Mindre textsträngar är generellt inget problem.
 
-1. [C++ string library](https://en.cppreference.com/w/cpp/string)
-2. [Boost Libraries for C++](https://www.boost.org/)
-
-God programmeringslycka!
+## Se också
+- C++ referens för `std::string`: http://www.cplusplus.com/reference/string/string/
+- C++ referens för `std::regex`: http://www.cplusplus.com/reference/regex/
+- Didaktisk förklaring av reguljära uttryck: https://www.regular-expressions.info/
+- En guide till effektiv strängmanipulering: https://www.geeksforgeeks.org/string-manipulation-in-c/

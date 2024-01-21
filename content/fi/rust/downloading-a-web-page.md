@@ -1,6 +1,7 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "C#: Verkkosivun lataaminen"
+date:                  2024-01-20T17:44:53.258137-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,38 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Lataa Web-sivu Rustilla: Pikaopas
+## What & Why? (Mitä & Miksi?)
+Web-sivun lataaminen tarkoittaa sivun sisällön noutamista internetistä. Ohjelmoijat tekevät tätä esimerkiksi datan keräämiseen, sisällön analysointiin tai palveluiden automatisointiin.
 
-## Mikä & Miksi?
-Web-sivun lataaminen tarkoittaa sivun HTML-tiedoston hankkimista verkolta omalle laitteelle. Ohjelmoijat tekevät tämän syystä, esimerkiksi verkkosivun sisällön analysoinniin tai testaamiseen.
-
-## Näin sen teet:
-
-`reqwest` -kirjasto tekee web-sivun lataamisesta helppoa Rust-ohjelmointikiellolla. 
+## How to: (Kuinka tehdä:)
+Rustissa web-sivun lataaminen onnistuu usealla tavalla, mutta tässä käytämme `reqwest`-kirjastoa, joka on helppokäyttöinen ja tehokas.
 
 ```Rust
+// Lisää ensin Cargo.toml-tiedostoosi riippuvuudeksi reqwest
+reqwest = "0.11"
+
+// Sitten kirjoita koodisi:
 use reqwest;
-use std::fs;
 
 #[tokio::main]
 async fn main() -> Result<(), reqwest::Error> {
-    let response = reqwest::get("https://www.example.com").await?;
-    fs::write("example.html", response.text().await?).expect("Unable to write file");
+    let body = reqwest::get("https://www.rust-lang.org/")
+        .await?
+        .text()
+        .await?;
+
+    println!("Web-sivun sisältö:\n{}", body);
     Ok(())
 }
 ```
 
-Tämä koodi lataa HTML:n osoitteesta `https://www.example.com`, ja tallentaa sen tiedostoon `example.html`.
+Esimerkin tulosteena on ladatun sivun HTML-koodi konsolissa.
 
-## Sukellus syvyyksiin
-Vaikka web-sivun lataaminen onnistuu alla olevalla esimerkillä, sen takana on paljon enemmän. Historiallisesti lataaminen tehtiin kutsumalla suoraan alhaisen tason verkkosovittimia ja kirjoittamalla vastaanotettu data kovalevylle. Alternatiiveja, kuten `hyper`-kirjastoa, pidetään myös ajantasaisena, mutta `reqwest` tarjoaa yksinkertaisen ja modernin käyttöliittymän samaan tarkoitukseen.
+## Deep Dive (Syväsykellus):
+Historiallisesti tiedon lataamiseen verkosta käytettiin Rustissa `hyper`-kirjastoa, joka on edelleen `reqwest`-kirjaston ytimessä. Vaihtoehtoja `reqwest`ille ovat `curl` ja `hyper`, mutta näiden käyttö on monimutkaisempaa. `reqwest` käyttää sisäisesti asynkronista koodia hyödyntääkseen Rustin `async`-odotustekniikoita maksimaalisen suorituskyvyn saavuttamiseksi. Kirjasto hoitaa myös monet HTTP-protokollan nitty-grittyt, kuten yhteydenhallinnan ja virheenkäsittelyn.
 
-Käytettäessä `reqwest` kirjastoa, sinun tulisi tietää, että `reqwest::get` -kutsu palauttaa `Response` -olion, joka on yhteyden yhteydessä serveriin. `Response.text().await?` palauttaa vastauksen merkkijonona. Viimeisenä, Rustin `fs::write` kirjoittaa tiedoston levylle.
-
-## Katso myös
-1. Reqwest library: [linkki](https://docs.rs/reqwest)
-2. Async programming in Rust: [linkki](https://rust-lang.github.io/async-book)
-3. Hyper library: [linkki](https://hyper.rs/)
-4. Rust Programming Language Book FileSystem section: [linkki](https://doc.rust-lang.org/book/ch12-02-reading-a-file.html)
-
-Nämä lähteet tarjoavat laajemman ymmärryksen Rustilla ohjelmoinnista ja erityisesti web-sivun lataamisesta.
+## See Also (Katso myös):
+- [reqwest-kirjaston dokumentaatio](https://docs.rs/reqwest)
+- [Rustin asynkronisen ohjelmoinnin opas](https://rust-lang.github.io/async-book/)
+- [hyper-kirjaston GitHub-repo](https://github.com/hyperium/hyper)
+- [curl-kirjaston GitHub-repo](https://github.com/alexcrichton/curl-rust)

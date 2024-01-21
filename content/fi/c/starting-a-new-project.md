@@ -1,7 +1,8 @@
 ---
-title:                "Aloittaminen uuden projektin"
-html_title:           "C: Aloittaminen uuden projektin"
-simple_title:         "Aloittaminen uuden projektin"
+title:                "Uuden projektin aloittaminen"
+date:                  2024-01-20T18:03:10.723126-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Getting Started"
@@ -10,37 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+## What & Why? - Mikä ja Miksi?
+Aloitamme uuden projektin koodaamiseen, koska haluamme luoda jotain uutta tai ratkaista ongelman. Se on kuin tyhjän kankaan maalaamista koodilla.
 
-Uuden projektin aloittaminen tarkoittaa uuden ohjelmiston tai sovelluksen kehittämistä tyhjästä. Ohjelmoijat tekevät näitä projekteja ratkaistakseen erityisiä ongelmia tai tarpeita.
-
-## Kuinka Näin:
-
-Tässä on esimerkki uuden C-projektin luomiseen. Saatat haluta luoda "main.c" tiedoston tällä koodilla:
-
+## How to: - Kuinka:
 ```C
 #include <stdio.h>
 
 int main() {
-  printf("Hei Maailma!\n");
-  return 0;
+    printf("Hei Maailma!\n");
+    return 0;
 }
 ```
-
-Suorita `gcc main.c -o ohjelma` komennolla, niin tämä kääntää koodin. Kokeile sitä suorittamalla `./ohjelma`. Tulostuksen pitäisi olla:
-
-```C
+Kun ajat tämän, näet:
+```
 Hei Maailma!
 ```
 
-## Syvemmältä:
+## Deep Dive - Syväsukellus
+Projektin aloittaminen C-kielellä on muuttunut vuosien varrella. "Hello World" on perinteinen ensimmäinen ohjelma - se on tapa tuntea itsensä tekijäksi. Vaihtoehtoiset aloitustavat riippuvat tavoitteista: web-kehitys, systeemi ohjelmointi, ja niin edelleen. Yksinkertaisuus, kuten yllä, opettaa ohjelman rakennetta; `#include` tuodaan kirjastoja, `main()` on aloituspiste ja `printf()` ilmaisee tulosteen. Huomaa, että nykyinen C-standardi (C17/ISO/IEC 9899:2018) suosii `int main(void)` allekirjoitusta.
 
-1. _Historiallinen yhteys_: C-ohjelmointikieli on peräisin 1970-luvulta ja sitä on käytetty laajasti järjestelmä- ja sovelluskehityksessä. 
-   
-2. _Vaihtoehdot_: Voit aloittaa uuden projektin myös muilla ohjelmointikielillä, kuten Java, Python tai JavaScript, riippuen projektin tarpeista.
-   
-3. _Toteutuksen yksityiskohdat_: C-ohjelmointikielessä käytämme `#include <stdio.h>` standardikirjastoa tulostus- ja syötefunktioille. "main" on ohjelman suorituksen aloitusfunktio ja `return 0;` ilmaisee ohjelman onnistuneen päättymisen.
-
-## Katso myös:
-
-- [GeeksForGeeks: "C Programming Language"](https://www.geeksforgeeks.org/c-programming-language/)
+## See Also - Katso Myös
+- C Standard - ISO/IEC 9899: http://www.open-std.org/JTC1/sc22/wg14/www/docs/n2310.pdf
+- C Tutorial - https://www.learn-c.org/
+- Stack Overflow C questions - https://stackoverflow.com/questions/tagged/c

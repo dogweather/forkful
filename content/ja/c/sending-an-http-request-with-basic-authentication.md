@@ -1,7 +1,8 @@
 ---
-title:                "基本認証を使用してhttpリクエストを送信する"
-html_title:           "C#: 基本認証を使用してhttpリクエストを送信する"
-simple_title:         "基本認証を使用してhttpリクエストを送信する"
+title:                "基本認証を使用したHTTPリクエストの送信"
+date:                  2024-01-20T18:00:49.695917-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "基本認証を使用したHTTPリクエストの送信"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,60 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なにそれ？なんで？
+## What & Why? (なぜとは何か？)
+HTTP要求で基本認証を使用する理由とは、サーバーと安全に情報を交換する方法です。プログラマーはデータ保護のためにこれを行います。
 
-HTTPリクエストに基本認証を引き合いに出すとは、サーバーに対してユーザー名とパスワードの入力を求めるものです。プログラマーはこれを使用して、サイトにアクセスする前にユーザーの認証を行います。
-
-## 使い方：
-
-以下にC言語を用いてHTTPリクエストに基本認証を付与するコード例を示します。
+## How to: (方法)
 ```C
+#include <stdio.h>
+#include <stdlib.h>
 #include <curl/curl.h>
 
-int main()
-{
-    CURL *curl;
-    CURLcode res;
-
-    curl_global_init(CURL_GLOBAL_DEFAULT);
-
-    curl = curl_easy_init();
+int main() {
+    CURL *curl = curl_easy_init();
     if(curl) {
-        // HTTPリクエスト先を指定
-        curl_easy_setopt(curl, CURLOPT_URL, "https://api.example.com/data");
+        struct curl_slist *chunk = NULL;
+        chunk = curl_slist_append(chunk, "Authorization: Basic <encoded-credentials>");
 
-        // ユーザー名とパスワード（形式は「ユーザー名:パスワード」）
-        curl_easy_setopt(curl, CURLOPT_USERPWD, "user:password");
-
-        // HTTPリクエストを実行
-        res = curl_easy_perform(curl);
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com/data");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, chunk);
+        CURLcode res = curl_easy_perform(curl);
 
         if(res != CURLE_OK)
-            fprintf(stderr, "curl_easy_perform() failed: %s\n",
-                curl_easy_strerror(res));
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+        
+        curl_slist_free_all(chunk);
         curl_easy_cleanup(curl);
     }
-
-    curl_global_cleanup();
-
     return 0;
 }
 ```
-
-このコードを実行すると、以下のような出力結果を得ることが可能です。
-
+出力:
 ```
-HTTP/1.1 200 OK
-Date: Mon, 01 Jan 2020 00:00:00 GMT
+{ "status": "success", "data": "..." }
 ```
 
-## より深く
+## Deep Dive (深堀り)
+HTTP基本認証では、ユーザー名とパスワードがBase64でエンコードされます。1990年代初頭のHTTP 0.9以来、認証には常に用いられています。他の認証方法にはOAuthなどがありますが、基本認証は簡単で互換性が高いと評価されている。C言語でHTTPリクエストを送るには、libcurlというライブラリが必要で、基本認証のセットアップも簡潔です。
 
-基本認証はHTTP/1.0の時代から存在し、ユーザー名とパスワードのバイト列をBase64でエンコードして送信します。ただし、未暗号化の通信で使われると、パケットキャプチャー等の手段で容易に解読されてしまいます。よってHTTPS通信で利用します。
-
-基本認証の代替としては、digest認証、OAuth、JWTなどがあります。実装の詳細については、libcurlライブラリのドキュメントを参照してください。
-
-## 参考記事：
-
-- [libcurlのドキュメント](https://curl.haxx.se/libcurl/)
-- [HTTP認証について](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication)
+## See Also (参照)
+- cURL libcurl - Library for transferring data with URLs: https://curl.se/libcurl/
+- Base64 Encoding - Base64 encoding schemes: https://www.base64encode.org/
+- HTTP Authentication - Basics of HTTP authentication: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication

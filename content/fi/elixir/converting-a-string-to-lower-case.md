@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-html_title:           "Arduino: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+date:                  2024-01-20T17:38:03.153578-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,27 +12,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
-Alustetaan merkkijonot pienaakkosilla, jolloin ne standardisoidaan muotoon, joka on vertailtavissa ilman herkkyyttä kirjainkoolla. Tämä on hyödyllistä esimerkiksi salasanojen, sähköpostiosoitteiden tai URL:ien käsittelyssä.
+Muuttaminen merkkijono pienaakkosiksi tarkoittaa kirjainten muuttamista kirjainkoosta riippumattomiksi. Koodarit tekevät tämän yleensä tekstin vertailua tai järjestämistä varten, poistaen ongelmat erilaisista kirjainkoista.
 
 ## Kuinka:
-Elixiriin sisältyy funktio `String.downcase/1` jota käytetään merkkijonojen käsittelyyn:
+Elixirissä muunnat merkkijonon pienaakkosiksi `String.downcase/1` funktiolla. Tässä esimerkit ja tulosteet.
 
-```Elixir
-iex> String.downcase("Hei Maailma")
-"hei maailma"
+```elixir
+# Perusesimerkki
+pienet_kirjaimet = String.downcase("Moi Maailma!")
+IO.puts(pienet_kirjaimet)  # tulostaa "moi maailma!"
+
+# Käytä kanssa erikoismerkkejä
+erikoiset_pieniksi = String.downcase("ÅÄÖ Hei!")
+IO.puts(erikoiset_pieniksi)  # tulostaa "åäö hei!"
 ```
-Yläolevan esimerkin tulostuma on `"hei maailma"`.
 
-## Syvempi Sukellus:
-Elixirin `downcase`-tyyppinen merkkijonotunnus juontaa juurensa Erlang:iin, josta se peri iso osa funktioistaan. Merkkijonojen käsittelytapoja on lukuisia. Elixir tarjoaa myös `String.upcase/1` muuntaakseen merkkijonot isoiksi kirjaimiksi.
+## Syväsukellus
+Elixir käyttää Unicodea merkkien käsittelyyn, mikä tarkoittaa, että `String.downcase/1` käsittelee oikein myös erikoismerkkejä, kuten ääkköset. Historiallisesti merkkijonojen käsittelyn tarve pienaakkosiksi nousi esille, kun vertailut ja lajittelut piti suorittaa yhdenmukaisesti. Vaihtoehtoisesti jotkut kielet tukevat `.lower()`-metodia tai vastaavia funktioita. Elixirissä erityisesti, suorituskyky ja toiminnallisuus tulevat Erlangin perässä, mikä tekee prosessista tehokkaan ja luotettavan.
 
-On myös tärkeää huomata, että `downcase` tehdään Unicode mukaisesti, koska Elixir tukee Unicodea oletuksena. Se tarkoittaa, että erikoismerkit ja diakriittiset merkit käsitellään oikein.
-
-```Elixir
-iex> String.downcase("ÅÄÖ")
-"åäö"
-```
-## Katso Myös:
-Lisäapua Elixirin merkkijonojen käsittelystä loytyy seuraavista lähteistä:
-* Elixirin virallinen dokumentaatio: [String module](https://hexdocs.pm/elixir/String.html)
-* Joe Armstrongin kirja: [Programming Elixir](https://pragprog.com/titles/elixir16/programming-elixir-1-6/)
+## Katso Myös
+- Elixirin dokumentaatio `String.downcase/1`: https://hexdocs.pm/elixir/String.html#downcase/1
+- Unicode standardi ja Elixir: https://unicode.org
+- Elixir School, merkkijonojen käsittelyä: https://elixirschool.com/en/lessons/basics/strings

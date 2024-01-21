@@ -1,7 +1,8 @@
 ---
-title:                "开始新项目"
-html_title:           "Lua: 开始新项目"
-simple_title:         "开始新项目"
+title:                "开始一个新项目"
+date:                  2024-01-20T18:03:43.701526-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "开始一个新项目"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -10,41 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
+## What & Why? 什么与为什么？
+开始新项目，即初始化新程序结构。程序员做这个通常有两个原因：测试新思路，或开发具体应用。
 
-启动新项目是程序员编写新一轮程序以解决新问题或实现新功能的过程。程序员之所以这样做是因为他们需要创造出新的代码去满足不断变化的需求。
-
-## 如何进行：
-
-在Haskell中，我们可以从一个简陋的“Hello, World!”开始新项目。就像这样：
-
+## How to: 如何操作
 ```Haskell
-main :: IO ()
-main = putStrLn "Hello, World!"
-```
-如果你运行这段代码，它将输出字符串 `Hello, World!`。
+-- 安装Stack工具
+$ curl -sSL https://get.haskellstack.org/ | sh
 
-## 深入理解
+-- 新建项目
+$ stack new myproject
 
-Haskell由〖Miranda〗的启发，并在1987年开始开发，并于1990发布。想要深入了解Haskell是如何工作的，你需要理解它是如何处理并发和IO的。至于Haskell的替代方案，Erlang、Clojure和Scala等函数式编程语言可能是可行的选项。
+-- 切换到项目文件夹
+$ cd myproject
 
-Haskell项目一般会通过Stack或Cabal等构建工具来启动。以下是使用Stack启动新Haskell项目的方法：
+-- 构建项目
+$ stack build
 
-1.安装Stack。
-
-```
-curl -sSL https://get.haskellstack.org/ | sh
-```
-
-2.创建新项目
-
-```
-stack new my_project
+-- 运行项目
+$ stack exec myproject-exe
 ```
 
-## 相关资源
+采用这些命令后，项目应建立并运行，显示相应的输出。
 
-- Haskell官方网站：[https://www.haskell.org/](https://www.haskell.org/)
-- Stack构建工具：[https://docs.haskellstack.org/en/stable/README/](https://docs.haskellstack.org/en/stable/README/)
-- Haskell语言报告: [https://www.haskell.org/onlinereport/haskell2010/](https://www.haskell.org/onlinereport/haskell2010/)
-- 开源书籍《Learn You a Haskell for Great Good!》：[http://learnyouahaskell.com/](http://learnyouahaskell.com/)
+## Deep Dive 深入探讨
+Haskell的项目管理常使用Stack工具，它在2014年出现，使项目设置和包管理更简单。Cabal是另一选项，但Stack提供更一致的构建经验。初始项目时，文件配置应详尽，可定义依赖和项目参数。Stack使用Cabal文件但添加了自己的层，便于管理多个项目和确保构建的一致性。
+
+## See Also 参见链接
+- Stack 官方网站: [https://docs.haskellstack.org](https://docs.haskellstack.org)
+- Haskell项目构建交流论坛: [/r/haskell](https://www.reddit.com/r/haskell/)
+- “Learn You a Haskell for Great Good!” 入门指南: [http://learnyouahaskell.com/](http://learnyouahaskell.com/)

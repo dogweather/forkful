@@ -1,7 +1,8 @@
 ---
-title:                "Befehlszeilenargumente lesen"
-html_title:           "Arduino: Befehlszeilenargumente lesen"
-simple_title:         "Befehlszeilenargumente lesen"
+title:                "Lesen von Kommandozeilenargumenten"
+date:                  2024-01-20T17:56:24.504819-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lesen von Kommandozeilenargumenten"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,39 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und Warum?
+## What & Why?
+Kommandozeilenargumente sind Parameter, die ein Programm beim Start über die Konsole erhält. Sie ermöglichen es dem Benutzer, das Verhalten des Programms zu steuern und spezifische Aktionen durchzuführen.
 
-Beim Lesen von Befehlszeilenargumenten nimmt Ihr Lua-Skript Daten vom Benutzer direkt aus der Befehlszeile in der Konsole auf. Das ermöglicht eine effizientere Interaktion mit dem Benutzer und eine automatisierte Skriptausführung.
+## How to:
+Command-line arguments in Lua are pretty straightforward to handle. Here’s how you nab them:
 
-## So funktioniert's:
-
-Befehlszeilenargumente werden in Lua in die globale Tabelle `arg` gestellt. Hier ist ein einfaches Beispiel:
-
-```Lua
--- Drucken aller Argumente
-for i in ipairs(arg) do 
-    print(arg[i]) 
+```lua
+-- speichere alle Argumente in einer Tabelle namens arg
+for i = 1, #arg do
+  print("Argument " .. i .. ": " .. arg[i])
 end
 ```
 
-Führen Sie dieses Skript mit: `lua script.lua arg1 arg2 arg3`. Der Output wird so aussehen:
+Ausführung und Ausgabe, wenn das Skript `hello.lua` heißt und mit `lua hello.lua Hallo Welt` gestartet wird:
 
-```Lua
-script.lua
-arg1
-arg2
-arg3
+```lua
+Argument 1: Hallo
+Argument 2: Welt
 ```
+## Deep Dive
+Lua behandelt Kommandozeilenargumente ziemlich unkompliziert. Das `arg`-Array ist deine Schatztruhe, die alle Argumente ab Index 1 speichert. Doch hier ist ein wenig historischer Kontext: In früheren Versionen hattest du `arg[0]`, das den Skriptnamen beinhaltete; ab Lua 5.1 bekommst du das über `arg[-1]`. Es gibt Alternativen wie das `os.getenv()` für Umgebungsvariablen oder eigene Parser für komplexere Szenarien. Beachte jedoch, dass die einfache `arg`-Tabelle in den meisten Fällen genügt.
 
-Die Tabelle `arg` hat auch negative Indizes. `arg[-1]` beinhaltet z.B. den Interpreter-Namen.
+## See Also
+Für weiterführende Informationen, hier ein paar Links:
 
-## Tieferer Einblick
-
-Die Einbindung von Befehlszeilenargumenten in Lua ist relativ neu. In älteren Versionen (vor Version 5.1) mussten Sie die Bibliothek `lfs` verwenden. Alternativen zur direkten Einbindung sind das Einlesen von Benutzereingaben während der Skriptausführung oder über eine GUI. Beachten Sie jedoch, dass Befehlszeilenargumente in Lua Zeichenkettentypen sind. Sie müssen sie selbst umformen, falls Sie andere Datentypen benötigen.
-
-## Siehe auch
-
-1. Offizielle Lua-Dokumentation: https://www.lua.org/manual/5.4/manual.html
-2. Für mehr Detail zu `arg` Tabelle: https://www.lua.org/pil/16.html
-3. Eine umfangreiche Einführung in Lua: https://learnxinyminutes.com/docs/de-de/lua-de/
-5. Für Einsteiger in Lua: https://www.lua.org/start.html
+- Offizielle Lua-Programmierhandbuch: http://www.lua.org/manual/5.4/manual.html#6.1
+- Eine Sammlung nützlicher Lua-Skripte und -Tools: https://luarocks.org/
+- Lua Users Wiki, eine Ressource für Lua-Codesnippets und -bibliotheken: http://lua-users.org/wiki/ CommandLineArguments

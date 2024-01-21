@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C#: Pobieranie strony internetowej"
+date:                  2024-01-20T17:45:12.233185-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,47 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-
-Pobieranie strony internetowej polega na tym, że za pomocą pewnego kodu programu uzyskujemy dostęp do treści strony internetowej i przechowujemy ją w swoim systemie. Programiści robią to, aby analizować dane, szukać błędów, a nawet budować aplikacje opierające się na tych stronach.
+## Co i dlaczego?
+Pobieranie strony internetowej to proces ściągania jej zawartości do użycia po stronie klienta - programu lub aplikacji. Programiści robią to, aby przetwarzać dane, wyświetlać treści offline lub integrować usługi webowe z aplikacjami.
 
 ## Jak to zrobić:
-
-Zobaczmy, jak zrealizować to za pomocą Swifta. Poniżej przedstawiam prosty kod do pobrania strony internetowej.
+Aby pobrać stronę internetową w Swift, użyjemy URLSession, który jest częścią standardowej biblioteki Foundation. Poniżej znajdziesz przykładowy kod:
 
 ```Swift
 import Foundation
 
-let url = URL(string: "https://www.mojastrona.pl")!
-let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-    if let error = error {
-        print("Wystąpił błąd: \(error)")
-    } else if let data = data {
-        let str = String(data: data, encoding: .utf8)
-        print("Dane pobrane: \n\(str ?? "")")
+func downloadWebPage(url: URL) {
+    let session = URLSession(configuration: .default)
+    let task = session.dataTask(with: url) { data, response, error in
+        if let error = error {
+            print("Wystąpił błąd: \(error)")
+        } else if let data = data {
+            if let pageContent = String(data: data, encoding: .utf8) {
+                print(pageContent)
+            }
+        }
     }
+    task.resume()
 }
 
-task.resume()
+// Użyj tej funkcji tak:
+if let url = URL(string: "http://example.com") {
+    downloadWebPage(url: url)
+}
 ```
 
-Po uruchomieniu tego kodu, spodziewane wyjście powinno wyglądać tak:
+Przykładowe wyjście to zawartość strony http://example.com wydrukowana w konsoli.
 
-```Swift
-Dane pobrane: 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Moja Strona</title>
-...
-```
+## Dogłębna analiza:
+Zanim URLSession stał się standardem, programiści używali NSURLConnection, lecz URLSession wprowadził bardziej elastyczne i wydajne API. Alternatywnie, do pobierania stron można używać bibliotek trzecich, takich jak Alamofire, które zapewniają dodatkową funkcjonalność i uprośczenie kodu.
 
-## Dogłębne spojrzenie:
+Kiedy używasz URLSession, musisz pamiętać o kilku szczegółach implementacyjnych, jak obsługa błędów czy prawidłowe zarządzanie sesjami i zadania. Pobranie strony to proces asynchroniczny, więc ważne jest, aby kod, który ma wykonać po pobraniu (np. aktualizacja UI), znalazł się w odpowiednim closure’ze.
 
-Pobieranie stron internetowych ma długą historię, wynikającą z rozwoju internetu i potrzeby interakcji z istniejącymi stronami internetowymi. W Swift, używamy klasy `URLSession`, która jest częścią Foundation framework, ale są też alternatywne metody, takie jak `Alamofire` czy `Moya`, które mogą zaoferować bardziej zaawansowane funkcje. Co więcej, chociaż pokazujemy tu bardzo prosty przykład, na produkcje, musisz pamiętać o obsłudze błędów i making requests asynchronously, aby nie blokować głównego wątku użytkownika.
-
-## Zobacz także:
-
-1. Dokumentacja URLSession: [https://developer.apple.com/documentation/foundation/urlsession](https://developer.apple.com/documentation/foundation/urlsession)
-2. Alamofire: [https://github.com/Alamofire/Alamofire](https://github.com/Alamofire/Alamofire)
-3. Moya: [https://github.com/Moya/Moya](https://github.com/Moya/Moya)
+## Zobacz też:
+- [Dokumentacja URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+- [Alamofire](https://github.com/Alamofire/Alamofire)

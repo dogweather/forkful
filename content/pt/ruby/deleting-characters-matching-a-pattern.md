@@ -1,6 +1,7 @@
 ---
 title:                "Excluindo caracteres que correspondem a um padrão"
-html_title:           "Arduino: Excluindo caracteres que correspondem a um padrão"
+date:                  2024-01-20T17:43:10.438361-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,42 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Deletando Caracteres Correspondentes a um Padrão em Ruby
+## O Que & Por Quê?
 
-## O quê & Por quê?
-Deletar caracteres que correspondem a um padrão em uma string é uma tarefa comum em programação. Os programadores fazem isso para limpar dados, preparar entrada de texto para o processamento ou remover caracteres indesejados.
+Eliminar caracteres que correspondem a um padrão é simplesmente a arte de selecionar certos trechos de uma string baseado em regras e dizer adeus a eles. Programadores fazem isso para limpar e formatar strings, seja removendo caracteres desnecessários ou extraindo informação relevante.
 
-## Como Fazer:
-Em Ruby, podemos usar o método `delete` para excluir caracteres de uma string que correspondem a um padrão específico. Em seguida, temos um exemplo simples demonstrando isso.
+## Como fazer:
 
 ```Ruby
-str = "Olá, mundo! 123"
-str_limpo = str.delete "!, 123"
-puts str_limpo
-```
-Nesse caso, a saída seria:
+# Remove todos os dígitos de uma string
+string = "Preço: R$123,99."
+limpa_string = string.gsub(/[0-9]/, '')
+puts limpa_string
+# Saída: Preço: R$,.
 
-```Ruby
-Olámundo
-```
+# Remove tudo exceto letras
+string_com_caracteres = "O #Ruby é 100% incrível!"
+apenas_letras = string_com_caracteres.gsub(/[^a-zA-Záéíóúãõàç ]/, '')
+puts apenas_letras
+# Saída: O Ruby é incrível
 
-## Mergulho Profundo
-
-O método `delete` foi introduzido no Ruby 1.6.0 e tem sido mantido desde então devido à sua utilidade. Existem outras alternativas como `gsub` e `tr`, mas `delete` é mais direto quando se trata de remover caracteres que correspondem a um padrão.
-
-Vamos olhar um exemplo usando `tr`
-
-```Ruby
-str = "Olá, mundo! 123"
-str_limpo = str.tr("!, 123", "")
-puts str_limpo
+# Deleta caracteres especificos
+frase = "Olá, mundo!"
+frase_sem_vogais = frase.delete('aeiou')
+puts frase_sem_vogais
+# Saída: Ol, mnd!
 ```
 
-Com `tr`, especificamos dois argumentos onde o segundo é sempre vazio se quisermos deletar caracteres. `delete` é um pouco mais intuitivo neste caso.
+## Mergulho Profundo:
 
-O método `delete` na verdade cria uma nova string sem os caracteres especificados. Ele não modifica a string original, então se você precisa da string original inalterada, `delete` é a melhor escolha.
+A função de eliminação de caracteres remonta ao início da programação. Em Ruby, métodos como `delete` e `gsub` são comumente usados para essa tarefa. O `delete` é direto e elimina todos os caracteres listados, enquanto o `gsub` permite substituir padrões definidos por regex (expressões regulares) por outra coisa - se você substituir por uma string vazia, é equivalente a deletar.
 
-## Veja Também:
+Existem alternativas além do Ruby: linguagens como Python têm métodos como `replace` e `re.sub`, enquanto o JavaScript utiliza `replace` com regex. Em termos de desempenho e implementação, saber o que está acontecendo por baixo dos panos ajuda. No Ruby, por exemplo, `gsub` é implementado em C, o que o torna bastante rápido para strings pequenas a médias, mas sempre fique atento ao trabalhar com strings muito grandes e operações complexas de regex, pois podem ser custosas em termos de tempo de execução.
 
-- Documentação Ruby sobre `String#delete`: [https://ruby-doc.org/core-2.7.3/String.html#method-i-delete](https://ruby-doc.org/core-2.7.3/String.html#method-i-delete)
-- 'How to Remove a Character from String in Ruby' na Stack Overflow: [https://stackoverflow.com/questions/8437993/how-to-remove-a-character-from-string-in-ruby](https://stackoverflow.com/questions/8437993/how-to-remove-a-character-from-string-in-ruby)
+## Veja também:
+
+- [Ruby-doc: String](https://ruby-doc.org/core-3.1.0/String.html) - documentação oficial de Strings no Ruby.
+- [RegExr](https://regexr.com/) - ferramenta para aprender e testar expressões regulares.
+- [Rubular](http://rubular.com/) - um editor de regex Ruby para testar suas expressões regulares rapidamente.

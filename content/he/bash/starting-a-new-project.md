@@ -1,6 +1,7 @@
 ---
 title:                "התחלת פרויקט חדש"
-html_title:           "Clojure: התחלת פרויקט חדש"
+date:                  2024-01-20T18:03:15.716411-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "התחלת פרויקט חדש"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,33 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+## What & Why?
+מה זה פרויקט חדש ולמה אנחנו מתחילים אותו? זה מתחיל ברעיון שמגובש לקוד. תוכניתנים יוצרים פרויקטים חדשים כדי לפתור בעיות, ללמוד, ולבנות משהו חדש.
 
-בתחילת פרויקט חדש אנחנו מגדירים משימה ממוחשבת שאנחנו רוצים לבצע. מתכנתים עושים את זה כדי ליצור פתרון יעיל לבעיה מסוימת.
-
-## איך לעשות:
+## How to:
+כדי להתחיל פרויקט חדש ב-Bash, לרוב נרצה ליצור סקריפט בסיסי:
 
 ```Bash
-# שלב ראשון: יצירת ספרייה חדשה
-mkdir my_new_project
-cd my_new_project
-
-# שלב שני: התקנת הכלים הנדרשים
-sudo apt-get install git
-sudo apt-get install nodejs
-
-# שלב שלישי: יצירת קובץ README
-echo "# My New Project" > README.md
+#!/bin/bash
+# קובץ my_script.sh
+echo "שלום, עולם!"
 ```
 
-## צלילה מעמיקה:
+אחרי ששמרנו את הקובץ, נעשה אותו ניתן להרצה:
+```Bash
+chmod +x my_script.sh
+```
 
-1. ההיסטוריה: Bash הוא שפת תכנות שנוצרה בשנים ה-80. היא בעיקר משמשת לניהול משימות מנגנון ההפעלה.
-2. אלטרנטיבות: Python או Ruby יכולים להיות אלטרנטיבות טובות לסביבת Bash.
-3. פרטים על המימוש: "mkdir" מייצרת ספרייה חדשה, "cd" משנה את ספריית העבודה, "sudo apt-get install" מתקינה תוכנות, אילו "echo" מייצרת קובץ חדש.
+ונריץ אותו:
+```Bash
+./my_script.sh
+```
 
-## ראה גם:
+הפלט יהיה:
+```
+שלום, עולם!
+```
 
-1. מדריך Bash למתחילים: https://he.wikibooks.org/wiki/Bash
-2. קורס בינוני ב-Bash: https://www.codecademy.com/learn/learn-the-command-line
-3. Bash למתקדמים: https://tldp.org/LDP/abs/html/
+## Deep Dive
+ל-Bash יש מקום מיוחד בלב הניקס. הוא נוצר ב-1989, ומאז נחשב לכלי שורת הפקודה הסטנדרטי ברוב הגרסאות של לינוקס ו-UNIX. ישנם אלטרנטיבות כמו Zsh או Fish, שמציעות יכולות חדשות. עם זאת, Bash הוא הפופולרי ביותר משום שהוא קיים כמעט בכל מקום ותומך בסקריפטים מהפקודות של המערכת.
+
+## See Also
+- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
+- [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/)
+- [ShellCheck – tool for detecting issues in bash scripts](https://www.shellcheck.net/)

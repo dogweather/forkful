@@ -1,7 +1,8 @@
 ---
-title:                "Jämför två datum"
-html_title:           "Arduino: Jämför två datum"
-simple_title:         "Jämför två datum"
+title:                "Jämföra två datum"
+date:                  2024-01-20T17:33:31.928073-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Jämföra två datum"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -11,29 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att jämföra två datum handlar om att bestämma vilket datum som kommer före eller efter det andra. Programmerare gör det för att delvis hantera händelser och tidslinjer i applikationer.
+Att jämföra två datum innebär att kontrollera vilket datum som kommer före eller efter det andra, eller om de är samma datum. Programmerare gör detta för att hantera tidsintervall, schemaläggning, och tidsbaserade händelser i deras applikationer.
 
-## Hur man gör:
-Här är ett enkelt exempel på hur man jämför två datum i Haskell:
+## Så här gör du:
+För att jämföra datum i Haskell, kan du använda `Data.Time` biblioteket. Se exempel nedan:
 
 ```Haskell
 import Data.Time
 
-dateCompare :: IO ()
-dateCompare = do
-  let date1 = fromGregorian 2020 5 17 
-  let date2 = fromGregorian 2021 5 17
-  print (date1 < date2)
+-- Skapa två datum
+date1 :: UTCTime
+date1 = UTCTime (fromGregorian 2023 4 14) (secondsToDiffTime 0)
+
+date2 :: UTCTime
+date2 = UTCTime (fromGregorian 2023 5 18) (secondsToDiffTime 0)
+
+-- Jämför de två datumen
+compareDates :: UTCTime -> UTCTime -> Ordering
+compareDates = compare
+
+-- Exempelanvändning och utmatning
+main :: IO ()
+main = do
+    print $ date1 == date2  -- False
+    print $ date1 /= date2  -- True
+    print $ date1 < date2   -- True
+    print $ compareDates date1 date2  -- LT (Less Than)
 ```
-När du kör denna kod skulle utskriften bli `True` eftersom `date1` (17 maj 2020) är tidigare än `date2` (17 maj 2021).
 
 ## Fördjupning
-Jämförelse av datum är en fundamental operation och har funnits lika länge som programmeringsspråk. Det finns också flera alternativ för jämförelse av datum, speciellt med bibliotek som `time` eller `datetime`. Haskell använder `Data.Time` modulen för att hantera datum och tid.
+I Haskell, har `Data.Time` biblioteket blivit standard för datum- och tidsmanipulationer sedan det introducerades. Det finns alternativ, som `time-recurrence` för att hantera återkommande händelser, men `Data.Time` är mest komplett för datumjämförelser.
 
-Haskell jämför två datum med hjälp av standardsoperatörerna (>, <, ==, etc). Innan jämförelsen omvandlar Haskell datumen till den interna representationen av dagsantalet sedan början av den gregorianska kalendern. Detta gör jämförelsen både snabb och exakt.
+Jämförelsen bygger på `UTCTime`, vilket är en tidspunkt i koordinerad universell tid (UTC). Detta innebär att jämförelserna är tidszonsoberoende, vilket är praktiskt för konsistent beteende oavsett användarens plats.
+
+Implementeringen av `compare` i bakgrunden använder operatörerna `==`, `/=`, `<`, `<=`, `>`, `>=`, som är del av `Ord` typeklassen, vilket ger en kraftfull och generell jämförelsemekanism i Haskell.
 
 ## Se även
-För mer information om datumhantering i Haskell, besök följande länkar:
-
-- Haskell's [`Data.Time` module documentation](https://hackage.haskell.org/package/time-1.6.0.1/docs/Data-Time.html)
-- [A deep dive into Haskell's dates and times on StackOverflow](https://stackoverflow.com/questions/37089029/how-do-i-parse-and-format-dates-in-haskell)
+- Haskells officiella dokumentation för `Data.Time`: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html
+- Läs mer om `Ord` typeklassen: https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#t:Ord
+- Ett djupdyk i tid och datum i Haskell: https://www.schoolofhaskell.com/school/to-infinity-and-beyond/older-but-still-useful/time

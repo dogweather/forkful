@@ -1,6 +1,7 @@
 ---
 title:                "सबस्ट्रिंग्स निकालना"
-html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+date:                  2024-01-20T17:46:23.890279-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,26 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-Substring निकालना मतलब है किसी मूल स्ट्रिंग से छोटा भाग (सबस्ट्रिंग) लेना। प्रोग्रामर्स इसे डेटा में पत्तरन्स खोजने, डेटा विश्लेषण और टेक्स्ट मैनिपुलेशन के लिए उपयोग करते हैं।
+## What & Why? (क्या और क्यों?)
+जावास्क्रिप्ट में substring निकालना यानी किसी स्ट्रिंग के खास हिस्से को अलग करना. प्रोग्रामर्स ऐसा डेटा में से जरूरी जानकारी छांटने के लिए करते हैं.
 
-## कैसे:
-Javascript में सबस्ट्रिंग निकालने के लिए मुख्य रूप से तीन फ़ंक्शन्स होते हैं: `substring()`, `substr()` और `slice()`।
+## How to: (कैसे करें:)
+```javascript
+let fullString = "नमस्ते Javascript वर्ल्ड!";
+// substr(startIndex, length)
+let substr1 = fullString.substr(7, 10);
+console.log(substr1);  // Javascript
 
-```Javascript
-var str = "नमस्ते दुनिया!";
-// substring() method
-console.log(str.substring(0, 5));  // नमस्ते
-// substr() method
-console.log(str.substr(0, 5));  // नमस्ते
-// slice() method
-console.log(str.slice(0, 5));  // नमस्ते
+// substring(startIndex, endIndex)
+let substr2 = fullString.substring(7, 17);
+console.log(substr2);  // Javascript
+
+// slice(startIndex, endIndex)
+let substr3 = fullString.slice(7, 17);
+console.log(substr3);  // Javascript
 ```
-सभी उपरोक्त फ़ंक्शन्स हमें "नमस्ते" नाम का सबस्ट्रिंग देंगे।
+=> सैम्पल आउटपुट:
+```
+Javascript
+Javascript
+Javascript
+```
 
-## गहरी डाइव
-इन three फ़ंक्शन्स का इस्तेमाल हम किसी स्ट्रिंग में विशेष जानकारी खोजने के लिए करते हैं। इनका इस्तेमाल JavaScript 1.0 से शुरू हुआ था। `substring()` और `substr()` में थोड़ा अंतर होता है -`substring()` द्वितीय पैरामीटर (`end`) का उपयोग अंत स्थान को सूचित करने के लिए करता है, जबकि `substr()` द्वितीय पैरामीटर (`length`) का उपयोग सबस्ट्रिंग की लंबाई को सूचित करता है। `slice()` function का व्यवहार `substring()` के साथ समान होता है, लेकिन वह नकारात्मक indices का भी समर्थन करता है।
+## Deep Dive (गहरी जानकारी)
+पहले के जमाने में, `substr()` और `substring()` सबसे आम तरीके होते थे substring निकालने के. `substr` अपनी दूसरी argument में length मांगता है, जबकि `substring` में startIndex और endIndex मांगे जाते हैं. हालांकि ECMA ने `substr` को deprecated कर दिया है, यानी आगे चल कर ये हट जाएगा. इसीलिए `slice()` ज्यादा बढ़िया choice है - ये `substring()` की तरह ही startIndex और endIndex लेता है, और negative indices को भी support करता है.
 
-## यह भी देखें
-1. [MDN का JavaScript सबस्ट्रिंग गाइड](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-2. [W3Schools का सबस्ट्रिंग ट्यूटोरियल](https://www.w3schools.com/js/js_string_methods.asp)
+## See Also (और जानकारी के लिए)
+- MDN Web Docs पर [String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- MDN Web Docs पर [String.prototype.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- MDN Web Docs पर [String.prototype.substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr) (Deprecated)

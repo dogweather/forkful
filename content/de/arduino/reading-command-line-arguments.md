@@ -1,7 +1,8 @@
 ---
-title:                "Befehlszeilenargumente lesen"
-html_title:           "Arduino: Befehlszeilenargumente lesen"
-simple_title:         "Befehlszeilenargumente lesen"
+title:                "Lesen von Kommandozeilenargumenten"
+date:                  2024-01-20T17:55:13.479512-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lesen von Kommandozeilenargumenten"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,41 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Command Line Arguments sind Eingaben, die Sie beim Aufruf eines Programms in der Befehlszeile hinzufügen. Sie ermöglichen es Programmierern, Programmen spezifische Ausführungsparameter zu geben, was die Anpassungsfähigkeit und Effizienz erhöht.
+## Was & Warum?
+Beim Lesen von Befehlszeilenargumenten geht es darum, Parameter an ein Programm zu übergeben, wenn es gestartet wird. Programmierer nutzen das, um die Flexibilität ihrer Sketche zu erhöhen und Benutzereingaben zu ermöglichen, ohne den Code zu ändern.
 
-# Wie geht das:
-Arduino-Code akzeptiert keine Befehlszeilenargumente direkt, aber wir können eine ähnliche Funktionalität mit `Serial` Klassenmethoden simulieren. Unten ist ein einfacher Code:
+## So geht's:
+Arduino-Plattformen haben normalerweise keine traditionelle Kommandozeile, wie man sie von Desktop-Betriebssystemen kennt. Stattdessen kannst du Parameter über die serielle Schnittstelle mit `Serial.read()` oder `Serial.parseInt()` einlesen. Hier ein einfaches Beispiel:
 
-```Arduino
-String input;
-
-void setup(){
-  Serial.begin(9600);
+```arduino
+void setup() {
+  Serial.begin(9600); // Starte die serielle Verbindung
+  while (!Serial) {
+    ; // Warte auf die serielle Verbindung
+  }
+  Serial.println("Gib einen Wert ein:");
 }
 
-void loop(){
-  while(Serial.available()){
-      char inChar = (char)Serial.read();
-      input += inChar;
-  }
-
-  if(input.length() > 0){
-    Serial.println("Sie haben eingegeben: " +  input);
-    input = "";
+void loop() {
+  if (Serial.available() > 0) {
+    int receivedValue = Serial.parseInt(); // Lese den nächsten Integerwert
+    Serial.print("Empfangener Wert: ");
+    Serial.println(receivedValue);
   }
 }
 ```
-Schreiben Sie etwas im Serial Monitor und sehen Sie die Ausgabe als Echo des eingegebenen Textes.
 
-# Tiefgehende Erklärung
-Historisch gesehen war die Verwendung von Command Line Arguments in den frühen Zeiten der Datenverarbeitung weit verbreitet. Bei älteren Systemen wie CP/M und MS-DOS war dies eine grundlegende Technik zur Interaktion mit Programmen.
+Ein Test könnte so aussehen:
+```
+Gib einen Wert ein:
+> 42
+Empfangener Wert: 42
+```
 
-In Arduino sind die Dinge ein bisschen anders. Aufgrund der Natur von Mikrokontrollern akzeptiert Arduino keine Befehlszeilenargumente auf herkömmliche Weise. Aber die Serial-Klasse und ihre Methoden können dazu genutzt werden, um eine vergleichbare Funktionalität bereitzustellen.
+## Tiefgang:
+Auf einem typischen PC kannst du Argumente über die Kommandozeile übergeben; auf Mikrocontrollern wie dem Arduino ist dies nicht Standard. Historisch gesehen wurden Parameter in eingebetteten Systemen oft über Dip-Schalter oder Jumper gesetzt. Alternativen zum Lesen von Parametern auf dem Arduino sind unter anderem das Auslesen von Konfigurationsdateien von einer SD-Karte, das Einstellen von Variablen im Code selbst vor dem Hochladen oder die Verwendung von DIP-Schaltern auf der Hardware. Letztere Methode ist allerdings weniger flexibel und erfordert eine physikalische Anwesenheit am Gerät.
 
-Alternative Ansätze könnten beinhalten, einen Parser zu implementieren, der CSV- oder JSON-formatierte Daten akzeptiert, um komplexere Konfigurationen zu handhaben.
-
-# Siehe auch
-Die Dokumentation zur `Serial` Klasse finden Sie [hier](https://www.arduino.cc/reference/de/language/functions/communication/serial/).
-
-Für eine detailliertere Erklärung von Command Line Arguments, schauen Sie sich diesen [Link](https://de.wikipedia.org/wiki/Parameter_(Informatik)) an.
+## Siehe Auch:
+- Arduino Serial: https://www.arduino.cc/reference/en/language/functions/communication/serial/
+- Arduino und SD-Kartenleser: https://www.arduino.cc/en/reference/SD
+- Einführung in Arduino und serielle Kommunikation: https://www.arduino.cc/en/Tutorial/BuiltInExamples/SerialEvent

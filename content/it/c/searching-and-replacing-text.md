@@ -1,6 +1,7 @@
 ---
 title:                "Ricerca e sostituzione del testo"
-html_title:           "Arduino: Ricerca e sostituzione del testo"
+date:                  2024-01-20T17:57:10.166317-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Ricerca e sostituzione del testo"
 programming_language: "C"
 category:             "C"
@@ -10,66 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-Title: "Cerco e Sostituisco Testo in C: Una Guida Veloce ed Essenziale"
+## What & Why? (Cosa e Perché?)
+Cercare e sostituire testo è il processo di localizzare stringhe specifiche e cambiarle con altre. I programmatori lo fanno per aggiornare codici, correggere errori o per cambiamenti di massa senza smenarci le dita.
 
----
-
-## Cos'è e Perché?
-
-La ricerca e la sostituzione del testo è un'operazione fondamentale che permette a un programma di identificare specifiche stringhe di caratteri e sostituirle con altre. Questo concetto è vitale nella manipolazione dei dati, nella pulizia dei dati e negli editor di testo.
-
-## Come fare:
-
-Ecco un esempio su come implementare una funzione che ricerca e sostituisce il testo in linguaggio C.
-
+## How to: (Come fare:)
 ```C
+#include <stdio.h>
 #include <string.h>
 
-void sustitue(char *origen, char *cerco, char *sostituisco){
-   char buffer[256];
-   char *p;
-
-   if(!(p = strstr(origen, cerco)))  
-      return;
-
-   strncpy(buffer, origen, p-origen); 
-   buffer[p-origen] = '\0';
-
-   sprintf(buffer+(p-origen), "%s%s", sostituisco, p+strlen(cerco));
-
-   strcpy(origen, buffer); 
+void searchAndReplace(char *s, const char *oldW, const char *newW) {
+    char buffer[1024];
+    char *pos, *temp = s;
+    int oldWLen = strlen(oldW);
+    int newWLen = strlen(newW);
+    
+    // Il buffer inizia vuoto.
+    buffer[0] = '\0';
+    
+    // Finché ci sono occorrenze, continua.
+    while ((pos = strstr(temp, oldW)) != NULL) {
+        // Copia fino all'occorrenza trovata.
+        strncat(buffer, temp, pos - temp);
+        
+        // Aggiungi la nuova parola al buffer.
+        strcat(buffer, newW);
+        
+        // Sposta 'temp' oltre la parola vecchia.
+        temp = pos + oldWLen;
+    }
+    
+    // Assicurati di copiare anche la parte finale della stringa.
+    strcat(buffer, temp);
+    
+    // Copia il buffer sulla stringa originale.
+    strcpy(s, buffer);
 }
 
-int main(){
-    char stringa[256] = "Amo la pizza!";
-    printf("Prima: %s\n", stringa);
-    sustitue(stringa, "pizza", "gelato");
-    printf("Dopo: %s\n", stringa);
+int main() {
+    char text[] = "il vecchio testo è vecchio e noioso.";
+    const char *oldText = "vecchio";
+    const char *newText = "nuovo";
+
+    searchAndReplace(text, oldText, newText);
+    printf("Testo modificato: %s\n", text);
 
     return 0;
 }
 ```
-
 Output:
-
 ```
-Prima: Amo la pizza!
-Dopo: Amo il gelato!
+Testo modificato: il nuovo testo è nuovo e noioso.
 ```
 
-## Approfondimento: 
+## Deep Dive (Approfondimento)
+La manipolazione del testo è essenziale sin dagli albori dell'informatica. Narra la leggenda che sistemi come UNIX hanno reso queste operazioni celebri con utilità come `sed` e `awk`. In alternativa, ci sono librerie come `regex.h` in C per fare operazioni simili con espressioni regolari. In termini di implementazione, la chiave è nel garantire che il buffer sia abbastanza grande per contenere la nuova stringa. E occhio alle prestazioni quando lavori con testi giganti!
 
-La ricerca/sostituzione del testo è un concetto molto antico nella programmazione, nasce con i primi editor di testo nei primi anni '70. In linguaggio C, funzioni come `strstr()`, `strcpy()`, `sprintf()`, e `strncpy()` ci permettono di implementare questo concetto.
-
-Inoltre, esistono varie librerie, come regex.h, che offrono funzioni più avanzate e potenti per cercare e sostituire il testo, dove si può anche utilizzare le espressioni regolari.
-
-L'implementazione dettagliata della ricerca e sostituzione del testo può variare a seconda delle esigenze. L'esempio presentato qui è molto basilare, ma può essere esteso per gestire casi più complessi.
-
-## Da Vedere: 
-
-Per approfondire, consiglio questi link:
-
-1. [What does strstr do in C/C++?](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm) - Tutorials Point
-2. [How do I replace a substring in a string in C?](https://stackoverflow.com/questions/779875/what-function-is-to-replace-a-substring-from-a-string-in-c) - Stack Overflow
-3. [C Library - <string.h>](https://www.tutorialspoint.com/c_standard_library/string_h.htm) - Tutorials Point
+## See Also (Vedi Anche)
+- Manuale di `regex.h`: https://www.man7.org/linux/man-pages/man7/regex.7.html
+- Tutorial `sed`: https://www.grymoire.com/Unix/Sed.html
+- Approfondimenti sulle stringhe in C: https://www.tutorialspoint.com/cprogramming/c_strings.htm

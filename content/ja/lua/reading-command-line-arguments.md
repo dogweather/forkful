@@ -1,6 +1,7 @@
 ---
 title:                "コマンドライン引数の読み取り"
-html_title:           "Bash: コマンドライン引数の読み取り"
+date:                  2024-01-20T17:56:51.539295-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,47 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (なにとなぜ?)
+コマンドライン引数とは、プログラム起動時に外部から渡されるパラメータのこと。これを読むことで、ユーザーがプログラムの動作を動的に変えられるようになる。
 
-コマンドライン引数の読み取りは、Luaプログラムが実行時に追加情報を受け取る方法です。これにより、システムの柔軟性と動的対応能力が高まります。
-
-## やり方:
+## How to: (方法)
+Luaでコマンドライン引数を読むのは簡単。`arg`テーブルを使えばいい。
 
 ```Lua
--- コマンドライン引数を取得します。
-local args = {...}
-
---引数を表示します。
-for i,v in ipairs(args) do
-  print("引数" .. i .. "： " .. v)
-end
-```
-コマンドラインからこのプログラムを実行した場合：
-
-```bash
-$ lua test.lua 1 2 3
-```
-
-次の出力が得られます:
-
-```
-引数1： 1
-引数2： 2
-引数3： 3
-```
-
-## ディープダイブ:
-
-コマンドライン引数の読み取りは、シェルスクリプトやC言語のような古い言語からの伝統的な概念です。
-Luaでは選択肢があり、グローバルなargテーブルを使用してコマンドライン引数にアクセスすることもできます。この方法の詳細については、公式ドキュメンテーションを参照してください。
-```Lua
--- コマンドライン引数を取得します。
-for i,v in ipairs(arg) do
-  print("引数" .. i .. "： " .. v)
+-- save as read_args.lua
+for i = 1, #arg do
+  print("Argument #" .. i .. ": " .. arg[i])
 end
 ```
 
-## 参考資料：
+コマンドラインから実行:
 
-- コマンドライン引数についてのより詳細な議論: [https://learnxinyminutes.com/docs/lua/](https://learnxinyminutes.com/docs/lua/)
-- Lua言語の公式ドキュメンテーション: [http://www.lua.org/manual/5.4/manual.html](http://www.lua.org/manual/5.4/manual.html)
+```
+lua read_args.lua firstArg secondArg thirdArg
+```
+
+出力例:
+
+```
+Argument #1: firstArg
+Argument #2: secondArg
+Argument #3: thirdArg
+```
+
+## Deep Dive (掘り下げ)
+Luaでは、コマンドライン引数へアクセスするためにグローバルな`arg`テーブルが提供されている。プログラムの実行ファイル名は`arg[0]`、引数は`arg[1]`から始まる。歴史的には、Unix系OSでスクリプトに引数を渡す慣行があり、Lua言語もこの機能を取り入れている。
+
+他言語での代替手段としては、Pythonの`sys.argv`、Rubyの`ARGV`などがある。これらも似たような使い方が可能。
+
+Luaにおいて、引数を扱う際の実装の詳細は、通常は`arg`テーブルを使用することで十分だが、特定の環境ではOS固有のAPIコールを使う必要が出てくることもある。
+
+## See Also (関連情報)
+- [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/)
+- [Programming in Lua (first edition)](https://www.lua.org/pil/contents.html)
+- Unixプログラミングの教科書やシェルスクリプトガイド
+
+注意: リンク先の内容は時間とともに変わる可能性があるため、訪れた時の最新の情報に注意してください。

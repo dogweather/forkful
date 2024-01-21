@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie zapytania http z podstawową autoryzacją"
+date:                  2024-01-20T18:02:19.506035-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,43 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem polega na umieszczaniu loginu i hasła w nagłówku HTTP. Programiści robią to, aby zabezpieczyć dostęp do swoich aplikacji.
+## Co i Dlaczego?
+Wysyłanie zapytania HTTP z podstawowym uwierzytelnianiem to proces przekazywania loginu i hasła by uzyskać dostęp do zabezpieczonych zasobów. Programiści robią to, aby bezpiecznie komunikować się z serwerami i API, które wymagają autoryzacji.
 
 ## Jak to zrobić:
-Poniżej znajduje się przykład, jak można to zrobić w języku Haskell. Używamy w tym celu biblioteki `http-conduit`.
-
 ```Haskell
 import Network.HTTP.Simple
-import Network.HTTP.Client as Client (applyBasicAuth)
+import Data.ByteString.Base64
+import Data.ByteString.Char8 (pack)
 
+-- Zakodowanie loginu i hasła do formatu Base64
+createBasicAuthValue :: String -> String -> ByteString
+createBasicAuthValue login password =
+  "Basic " <> (encode . pack $ login ++ ":" ++ password)
+
+-- Przygotowanie żądania z uwierzytelnieniem
+prepareRequest :: String -> String -> String -> Request
+prepareRequest url login password =
+  setRequestMethod "GET" $
+  setRequestURL (pack url) $
+  addRequestHeader "Authorization" (createBasicAuthValue login password) $
+  defaultRequest
+
+-- Wysłanie żądania HTTP
+sendHttpRequest :: Request -> IO ()
+sendHttpRequest request = do
+  response <- httpBS request
+  putStrLn $ "Stan odpowiedzi: " ++ show (getResponseStatusCode response)
+  print $ getResponseBody response
+
+-- Przykład użycia
 main :: IO ()
 main = do
-    let request' = setRequestMethod "GET" 
-                 $ setRequestPath "/api/data" 
-                 $ setRequestHost "www.example.com"
-                 $ setRequestSecure True
-                 $ setRequestPort 443 
-                 $ defaultRequest
-    let request = Client.applyBasicAuth "username" "password" request'
-
-    response <- httpLBS request
-    putStrLn $ "Status: " ++ show (getResponseStatusCode response)
-    print $ getResponseBody response
+  let url = "http://example.com/protected"
+  let login = "user"
+  let password = "pass"
+  let request = prepareRequest url login password
+  sendHttpRequest request
 ```
-Uruchomienie powyższego programu wyśle żądanie HTTP na stronę `www.example.com/api/data`, używając uwierzytelnienia Basic Auth.
 
-## Dogłębna analiza
-Pierwotnie protokół uwierzytelnienia Basic Auth został zaprojektowany do użytku w sieciach wewnętrznych, gdzie bezpieczeństwo nie było wielkim problemem. Z biegiem czasu, w miarę jak Internet stawał się coraz bardziej popularny, protokół ten zaczął być używany w szerszym kontekście, mimo że nie był to pierwotny zamiar.
+Oczekiwana odpowiedź to kod statusu HTTP wraz z treścią odpowiedzi (jeśli jest dostępna):
 
-Alternatywą dla uwierzytelnienia Basic jest uwierzytelnienie `Digest`, które jest nieco bezpieczniejsze, ponieważ hasło jest hashowane zamiast być przesyłane w czystej postaci. Niemniej jednak, oba te metody są uważane za mniej bezpieczne niż nowoczesne metody uwierzytelnienia, takie jak `OAuth`.
+```
+Stan odpowiedzi: 200
+"Odpowiedź z zabezpieczonego zasobu"
+```
 
-W przypadku implementacji w Haskell, używamy `applyBasicAuth` z pakietu http-client, który dodaje nagłówek `Authorization` do żądania HTTP. Ten nagłówek zawiera nazwę użytkownika i hasło, zakodowane w formacie `Base64`.
+## Głębiej:
+Bazowe uwierzytelnienie HTTP (Basic Authentication) jest prostą metodą bezpieczeństwa używaną od czasów HTTP/1.0. Dziś, choć uznaje się je za mniej bezpieczne niż bardziej zaawansowane techniki jak OAuth, nadal jest powszechnie stosowane, głównie z powodu prostoty implementacji. W Haskell możemy korzystać z gotowych bibliotek jak `http-conduit` czy `http-simple` do obsługi żądań HTTP, włączając w to uwierzytelnienie. W powyższym przykładzie użyto `http-simple` do tworzenia i wysyłania żądania z nagłówkiem uwierzytelniającym `Authorization`. Kodowanie `login:password` do formatu Base64 jest konieczne, gdyż taki format jest oczekiwany przez standard Basic Authentication.
 
-## Zobacz także:
-1. [http-conduit](https://hackage.haskell.org/package/http-conduit)
-2. [http-client](https://hackage.haskell.org/package/http-client)
-3. [Auth basic RFC](https://tools.ietf.org/html/rfc7617)
-4. [OAuth](https://oauth.net/)
+Alternatywy dla Basic Authentication to m.in. Digest Authentication, TLS Client Authentication oraz wspomniany OAuth, które oferują różne poziomy złożoności i bezpieczeństwa.
 
-Przeczytaj powyższe linki, aby dowiedzieć się więcej na temat programowania HTTP w Haskellu, uwierzytelniania Basic Auth i jego alternatyw.
+## Zobacz również:
+- [Haskell Network.HTTP.Simple Documentation](https://hackage.haskell.org/package/http-conduit-2.3.8/docs/Network-HTTP-Simple.html)
+- [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+- [Haskell http-conduit Package](https://hackage.haskell.org/package/http-conduit)

@@ -1,7 +1,8 @@
 ---
-title:                "Satunnaisten numeroiden luominen"
-html_title:           "Bash: Satunnaisten numeroiden luominen"
-simple_title:         "Satunnaisten numeroiden luominen"
+title:                "Satunnaislukujen generointi"
+date:                  2024-01-20T17:50:14.838952-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Satunnaislukujen generointi"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Numbers"
@@ -10,31 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mitä & Miksi?
+Satunnaislukujen generointi tarkoittaa uusien, ennustamattomien numeroiden luomista. Ohjelmoijat käyttävät niitä simuloimaan arpajaisia, kehittämään pelejä ja toteuttamaan kryptografiaa.
 
-Satunnaislukujen luominen on prosessi, jossa tuotetaan ennalta arvaamattomia numeroita. Ohjelmoijat tekevät tämän usein luodakseen satunnaisen käyttäjäkokemuksen tai simuloimaan tapahtumaa, jolla on satunnainen lopputulos.
-
-## Miten:
-
-Tässä on esimerkki siitä, kuinka tuotat satunnaislukuja TypeScriptillä:
+## How to - Kuinka?
+TypeScriptissa satunnaislukujen generointi tapahtuu sisäänrakennetun Math-objektin avulla. Tsekkaa esimerkit:
 
 ```TypeScript
-function getRandomInt(max: number) {
-    return Math.floor(Math.random() * Math.floor(max));
+// Yksinkertainen 0 ja 1 välillä
+let randomBetween0and1 = Math.random();
+console.log(randomBetween0and1);
+
+// Satunnainen kokonaisluku väliltä 0-9
+let randomIntFrom0To9 = Math.floor(Math.random() * 10);
+console.log(randomIntFrom0To9);
+
+// Satunnainen kokonaisluku kahden arvon väliltä (min ja max)
+function getRandomInt(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-console.log(getRandomInt(10));
+console.log(getRandomInt(5, 15));
 ```
-Tämä tuottaa satunnaisen kokonaisluvun väliltä 0 ja 9. `Math.random()` palauttaa satunnaisluvun väliltä 0 (mukaan lukien) ja 1 (ei mukaan lukien), ja `Math.floor()` pyöristää alaspäin lähimpään kokonaislukuun.
 
-## Syvälliset tiedot
+Tulosteet vaihtelevat joka ajokerralla:
 
-Satunnaislukujen luonnissa on paljon historiallista kontekstia, joka ulottuu aina vanhoista roomalaisista (arpojat) digitaaliseen tietokoneaikaan. Nykyään on useita vaihtoehtoisia menetelmiä, kuten käyttöönottoon perustuva, algoritminen tai jopa kvanttisatunnainen.
-TypeScriptin satunnaislukujen luominen pohjautuu JavaScriptin Math.random():iin , joka toteuttaa pseudo-satunnaislukugeneraattorin. Se on tarpeeksi hyvä useimpiin tarkoituksiin, mutta se ei ole riittävän vahva useimpiin kryptografiaan liittyviin tarkoituksiin, joissa on parempi turvautua platformispesifiseen satunnaislukugeneraattoriin, kuten window.crypto.getRandomValues() -selaimessa.
+```
+0.437723uemvienfbv
+3
+11
+```
 
-## Katso myös: 
+## Deep Dive - Syväsukellus
+JavaScriptissä `Math.random()` -funktio on se standardi satunnaislukujeneraattori, ja koska TypeScript on JavaScriptin superset, sama pätee myös siihen. Se palauttaa kelluvan pisteluvun välillä 0 (mukaan lukien) ja 1 (ei mukaan lukien).
 
-Jos haluat laajentaa tietojasi satunnaislukujen luomisesta ja sen käytön eri  yhteyksissä, katso seuraavat linkit:
+Perinteisesti satunnaislukujen generointi on haastavaa tietokoneille, jotka ovat deterministisiä laitteita. Algoritmit kuten lineaarinen kongruenssimenetelmä ovat historian saatossa käytettyjä, mutta niiden tuottamat tulokset eivät ole loistavia. Vaikka `Math.random()` ei olekaan kryptografisesti turvallinen, se riittää useimpiin ei-kriittisiin sovelluksiin.
 
-2. [MDN Math.random() documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-3. [Mozilla Quantum Random Number Generator](https://developer.mozilla.org/en-US/docs/Web/API/Window/crypto)
+Jos taas tarvitset kryptografisesti vahvoja satunnaislukuja, voit käyttää Web Crypto API:n `crypto.getRandomValues` metodia, mikä toimii myös TypeScriptissä, mutta tarvitsee selainympäristön.
+
+```TypeScript
+const array = new Uint32Array(1);
+window.crypto.getRandomValues(array);
+console.log(array[0]);
+```
+
+## See Also - Katso Myös
+- [MDN Web Docs - Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [MDN Web Docs - Crypto.getRandomValues()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)

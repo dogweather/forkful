@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
-simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
+date:                  2024-01-20T18:02:32.647298-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -11,43 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+HTTP-Anfragen mit Basic-Authentifizierung senden Daten über Benutzername und Passwort im Header, um Zugriff auf geschützte Ressourcen zu erhalten. Programmierer nutzen das für einfache Authentifizierungsprozesse in Web-APIs.
 
-Das Senden einer HTTP-Anforderung mit grundlegender Authentifizierung ist der Prozess, einen gesicherten Datenaustausch zwischen Client und Server durchzuführen. Dies wird von Programmierern genutzt, um Daten sicher zu transportieren und einen nicht-autorisierten Zugang zu verhindern.
-
-## So geht's:
-
-Verwende die eingebauten "net/http" und "uri" Bibliotheken in Ruby:
-
+## How to:
 ```Ruby
 require 'net/http'
 require 'uri'
 
-uri = URI('http://example.com/path')
+uri = URI('http://example.com/secrets')
+username = 'foo'
+password = 'bar'
 
-req = Net::HTTP::Get.new(uri)
-req.basic_auth 'user', 'pass'
+request = Net::HTTP::Get.new(uri)
+request.basic_auth(username, password)
 
-res = Net::HTTP.start(uri.hostname, uri.port) {|http|
-  http.request(req)
-}
+response = Net::HTTP.start(uri.hostname, uri.port) { |http| http.request(request) }
 
-puts res.body
+puts response.body
+```
+Beispiel-Ausgabe:
+```
+Geheime Informationen
 ```
 
-Wenn du einen Benutzernamen und ein Passwort zu deiner Anforderung hinzufügst, werden diese Informationen im Header der Anforderung gespeichert. Beim Empfang dieser Anforderung wird der Server die Authentifizierungsangaben prüfen und entscheiden, ob er die angeforderten Daten zurückschickt oder die Anforderung ablehnt.
+## Deep Dive
+Basic Authentication ist ein Veteran unter den Authentifizierungsmethoden und Teil des HTTP/1.0-Standards (RFC 1945). Heutzutage gibt es sicherere Alternativen wie OAuth, die in modernen Anwendungen bevorzugt werden. Die Implementierung ist simpel: Der `Authorization`-Header wird mit `Basic ` und einem Base64-kodierten String von Benutzername und Passwort ergänzt. Trotz seiner Einfachheit solltest du Basic Auth über HTTPS verwenden, um die Credentials zu schützen.
 
-## Vertiefung:
-
-Die grundlegende Authentifizierung ist ein Standardmechanismus, den das HTTP-Protokoll zur Authentifizierung von Benutzern bereitstellt. Obwohl es sich um eine ältere Methode handelt (erstmals in den 90er Jahren eingeführt), ist sie immer noch weit verbreitet, vor allem wegen ihrer Einfachheit.
-
-Es existieren auch alternative Authentifizierungsmethoden, wie die "Digest"-Authentifizierung oder das modernere "OAuth". Wie bei allem hat jede Methode ihre Vor- und Nachteile und die Wahl hängt von den spezifischen Bedürfnissen deines Projekts ab.
-
-Die Implementierung dieses Features in Ruby ist unkompliziert und effizient, da die grundlegende Authentifizierung bereits von der Standardbibliothek unterstützt wird. Beachte jedoch, dass die grundlegende Authentifizierung unverschlüsselt ist und deshalb für sensible Daten das HTTPS-Protokoll verwendet werden sollte.
-
-## Weiterführende Informationen:
-
-Du kannst mehr über das http-protokoll und die grundlegende Authentifizierung auf den folgenden Websites finden:
-
-- [HTTP-Protokoll auf Wikipedia](https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
-- [Ruby 'net/http'-Dokumentation](https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Verschiedene Arten von HTTP-Authentifizierung auf MDN](https://developer.mozilla.org/de/docs/Web/HTTP/Authentication)
+## See Also
+- [RFC 7617 – The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+- [Anleitung zur sicheren Nutzung von Basic Auth](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [Alternativen zu Basic Authentication (OAuth 2.0)](https://oauth.net/2/)

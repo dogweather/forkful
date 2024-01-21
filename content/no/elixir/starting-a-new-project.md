@@ -1,6 +1,7 @@
 ---
 title:                "Å starte et nytt prosjekt"
-html_title:           "C: Å starte et nytt prosjekt"
+date:                  2024-01-20T18:03:24.852961-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,37 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Komme i Gang med Elixir: Hvordan Starter man et Nytt Prosjekt!
-
 ## Hva & Hvorfor?
-Å starte et nytt prosjekt betyr å skape en ny, frisk utviklingsarena der programmer fungere og skapes. Vi gjør dette for å organisere og adskille forskjellige applikasjoner eller komponenter vi jobber med, noe som fører til mer effektiv og mindre forvirrende programmering.
+Å starte et nytt prosjekt i Elixir innebærer å sette opp en ny mix-applikasjon. Programmerere gjør dette for å lage en organisert, modulær base for å bygge applikasjoner og biblioteker.
 
-## Hvordan Gjøre Det:
-I Elixir starter vi et nytt prosjekt med Mix, en bygningsverktøy som leveres med Elixir som hjelper deg med å lage, utvikle og teste dine prosjekter.
+## Slik gjør du:
+```
+# Installer Elixir hvis du ikke allerede har det
+# Åpne terminalen og kjør:
+mix new mitt_prosjekt
 
-Her er en kodeeksempel på hvordan opprette et helt nytt Elixir-prosjekt:
+# Du vil se noe slik som dette:
+* creating README.md
+* creating .formatter.exs
+* creating .gitignore
+* creating mix.exs
+* creating lib
+* creating lib/mitt_prosjekt.ex
+* creating test
+* creating test/test_helper.exs
+* creating test/mitt_prosjekt_test.exs
 
-```Elixir
-# Starter et nytt mix-prosjekt
-mix new my_project
+# Naviger inn i prosjektmappen:
+cd mitt_prosjekt
 
-# Navigerer til prosjektet
-cd my_project
+# Start et interaktivt Elixir-shell med prosjektet ditt lastet:
+iex -S mix
 ```
 
-Dette vil lage et nytt Elixir-prosjekt med navnet 'my_project'. Det lager også en grunnleggende mappestruktur og noen viktige filer som README.md, .formatter.exs og mix.exs filene.
-
 ## Dypdykk
-Historisk har det å begynne et nytt prosjekt i mange programmeringsspråk, inkludert eldre versjoner av Elixir, vært mye mer arbeidskrevende. Før Mix, hadde utviklere å manuelt sette opp filer og mapper, noe som kan være tidkrevende og feilfôr.
-
-Alternativer til 'mix' eksisterer, som rebar3 for Erlang, men Mix er innebygd i Elixir og er derfor det mest brukt for Elixir-prosjekter.
-
-Mix gjør ikke bare å starte nye prosjekter enklere. Det hjelper deg også med å håndtere avhengigheter, kjøre tester, og har mange andre nyttige funksjoner som er godt verdt å utforske.
+Å starte et nytt prosjekt har alltid vært en sentral del av utviklerens arbeidsflyt. I Elixir-verdenen er `mix` verktøyet for prosjektadministrasjon. Det ble utgitt sammen med Elixir og er inspirert av verktøy fra andre språk, som `bundler` fra Ruby. Alternativer som `rebar3` eksisterer i Erlang-økosystemet, men `mix` er spesielt tilpasset Elixirs behov. `mix` håndterer ikke bare prosjektoppstart, men også avhengighetsstyring og task-running. Strukturen som er opprettet er modulær, og fremmer god praksis for vedlikeholdbar kode.
 
 ## Se Også
-1. Offisielt Elixir nettsted - https://elixir-lang.org/
-2. Mix dokumentasjon - https://hexdocs.pm/mix/Mix.html
-3. Elixir School - https://elixirschool.com/ 
-4. Getting Started guide i Elixir Docs - https://elixir-lang.org/getting-started/introduction.html
-
-Elixir er et kraftig, pålitelig og skalerbart programmeringsspråk. Ved å bruke Mix for å styre prosjektene dine, kan du effektivisere arbeidsflyten din og fokusere på selve programmeringen.
+- Elixir's offisielle dokumentasjon for `mix` på https://hexdocs.pm/mix/Mix.html
+- Innføring i Elixir på https://elixir-lang.org/getting-started/introduction.html
+- Prosjektstruktur og konvensjoner på https://hexdocs.pm/mix/Mix.html#module-project-structure

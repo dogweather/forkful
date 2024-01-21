@@ -1,7 +1,8 @@
 ---
-title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
-simple_title:         "Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma requisição HTTP com autenticação básica"
+date:                  2024-01-20T18:01:00.400318-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Enviando uma requisição HTTP com autenticação básica"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,18 +11,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
+## O Que & Porquê?
+Enviar uma requisição HTTP com autenticação básica significa solicitar acesso a um recurso na web que é protegido por um username e password. Programadores fazem isso para interagir com APIs ou serviços protegidos que requiram credenciais para acesso.
 
-Enviar uma requisição HTTP com autenticação básica significa fornecer nome de usuário e senha para acessar um recurso específico. Fazemos isso para restringir o acesso a recursos sensíveis a usuários autorizados.
-
-## Como fazer:
-
+## Como Fazer:
 ```Arduino
 #include <ESP8266WiFi.h>
-#include <ESP8266HTTPClient.h>
+#include <Base64.h>
 
-const char* ssid = "your_SSID";
-const char* password = "your_PASSWORD";
+const char* ssid = "Seu_SSID";
+const char* password = "Sua_Senha";
+const char* host = "servidor.com";
+const int httpPort = 80;
+const char* user = "usuario";
+const char* pass = "senha123";
+
+WiFiClient client;
 
 void setup() {
   Serial.begin(115200);
@@ -29,44 +34,50 @@ void setup() {
 
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
-    Serial.println("Connecting...");
+    Serial.print(".");
+  }
+
+  if (client.connect(host, httpPort)) {
+    String auth = user + String(":") + pass;
+    String authEncoded = base64::encode(auth);
+
+    String request = String("GET /recurso HTTP/1.1\r\n") +
+                     "Host: " + host + "\r\n" +
+                     "Authorization: Basic " + authEncoded + "\r\n" +
+                     "Connection: close\r\n\r\n";
+
+    client.print(request);
+
+    while (client.connected()) {
+      String line = client.readStringUntil('\n');
+      if (line == "\r") {
+        break;
+      }
+    }
+
+    String response = client.readString();
+    Serial.println(response);
+  } else {
+    Serial.println("Falha na conexão");
   }
 }
 
 void loop() {
-  String auth = "user_name:password";
-  String encodedAuth = base64::encode(auth);
-  HTTPClient http;
-
-  http.begin("http://example.com");
-  http.addHeader("Authorization", "Basic " + encodedAuth); 
-
-  int httpCode = http.GET();
-
-  if(httpCode > 0) {
-    String payload = http.getString();
-    Serial.println(payload);
-  }
-  http.end();
-  delay(5000);
 }
 ```
+Saída Exemplar:
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+Connection: close
 
-Modifique o SSID e a senha da sua rede Wi-Fi e o par "usuário:senha". O código se conectará à página solicitada e imprimirá a resposta. 
+{"mensagem": "Acesso concedido."}
+```
 
-## Mergulho Fundo
-
-HTTP Basic Authentication é tão antigo quanto a internet. É um método simples de autenticação - não é criptografado, então geralmente é usado sobre HTTPS por segurança.
-
-Existem alternativas, como 'Bearer Tokens', OAuth, e outras formas mais seguras de autenticação quando a informação é sensível.
-
-Na biblioteca ESP8266 para Arduino, a autenticação é implementada adicionando um header HTTP. A string "usuário:senha" é codificada para o formato Base64.
+## Aprofundamento
+A autenticação básica HTTP é um método antigo, mas ainda em uso para proteger web services. Baseia-se na codificação das credenciais com Base64, contudo, é considerada insegura se não usada em conjunto com HTTPS, dado que pode ser facilmente decodificada. Alternativas mais seguras incluem OAuth e tokens JWT. Nessa implementação no Arduino, é essencial o uso da biblioteca Base64 para codificar o username e password. Além disso, a ESP8266WiFi library é necessária para estabelecer a conexão Wi-Fi.
 
 ## Veja Também
-
-Visite os seguintes links para mais detalhes e informações relacionadas:
-
-- Documentação da Biblioteca HTTPClient: `https://arduino-esp8266.readthedocs.io/en/latest/esp8266httpclient.html`
-- Autenticação HTTP básica explicada: `https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication`
-- Autenticação base64 em Arduino: `http://www.cplusplus.com/reference/cstdlib/atob/`
-- Alternativas de Autenticação: `https://auth0.com/docs/authorization/overview`
+- Documentação ESP8266WiFi: https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html
+- Base64 encoding e HTTP authentication: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization
+- Segurança em autenticação HTTP: https://owasp.org/www-community/controls/Basic_Authentication

@@ -1,7 +1,8 @@
 ---
-title:                "स्ट्रिंग का अंतर्कलन"
-html_title:           "Arduino: स्ट्रिंग का अंतर्कलन"
-simple_title:         "स्ट्रिंग का अंतर्कलन"
+title:                "स्ट्रिंग इंटरपोलेशन"
+date:                  2024-01-20T17:52:16.418249-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग इंटरपोलेशन"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,30 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# स्ट्रिंग इंटरपोलेशन: PowerShell प्रोग्रामिंग में असली शक्ति
+## What & Why? (क्या और क्यों?)
+इंटरपोलेशन एक ऐसी तकनीक है जिससे टेक्स्ट के बीच में वैरिएबल्स को डाल सकते हैं। इससे कोड साफ-सुथरा और आसानी से पढ़ने योग्य बनता है।
 
-## क्या और क्यों?
-स्ट्रिंग इंटरपोलेशन | स्ट्रिंग में वेरिएबल की मूल्यों को संदर्भित करना है। इसे कार्यान्वित करने का मुख्य उद्देश्य प्रोग्रामरों को कोड में आसानता और पठनीयता प्रदान करना है।
-
-## कैसे:
-
-निम्नलिखित कोड उदाहरण स्थलीय चर के संदर्भ को इंटरपोलेट करने का उपयोग करता है:
+## How to: (कैसे करें:)
+```PowerShell
+$name = "नेहा"
+$greeting = "नमस्ते, $name!"
+Write-Host $greeting
+```
+आउटपुट: नमस्ते, नेहा!
 
 ```PowerShell
-$name = "Vijay"
-"नमस्ते, $name!"
+$daysUntilDeadline = 3
+$reminder = "तुम्हारे पास केवल $daysUntilDeadline दिन बचे हैं।"
+Write-Host $reminder
 ```
+आउटपुट: तुम्हारे पास केवल 3 दिन बचे हैं।
 
-उपरोक्त स्क्रिप्ट को चलाने से आपको निम्न आउटपुट मिलेगा:
+## Deep Dive (गहराई से जानकारी)
+स्ट्रिंग इंटरपोलेशन का इस्तेमाल शुरू से प्रोग्रामिंग में हो रहा है। PowerShell में स्ट्रिंग इंटरपोलेशन के लिए डबल कोट्स (" ") का उपयोग किया जाता है। सिंगल कोट्स (' ') को यूज करने पर वैरिएबल्स एक्सपांड नहीं होते हैं। PowerShell में हाल के वर्ज़न्स में `$using:` स्कोप मॉडिफायर जोड़ा गया है जिससे remote sessions के दौरान लोकल वेरिएबल्स को इंटरपोलेट कर सकते हैं।
+
+विकल्प के रूप में, आप `-f` ऑपरेटर का उपयोग करके भी फॉर्मेटेड स्ट्रिंग्स बना सकते हैं:
 
 ```PowerShell
-नमस्ते, Vijay!
+$name = "राज"
+$greeting = "नमस्ते, {0}" -f $name
+Write-Host $greeting
 ```
 
-## गहरा डाइव
-1. इतिहास: PowerShell में स्ट्रिंग इंटरपोलेशन की क्षमता इसे अधिक लचीला और पठनीय बनाने के लिए जोडी गई थी। यह विशेष रूप से जटिल कोडिंग कार्यों को आसान बनाता है।
-2. विकल्प: `$()` वाली वर्णनीय स्थलीयता ऑपरेटर का एक अन्य उपयोग होता है, जिसे ऐसे वेरिएबल के संदर्भ के लिए इंटरपोलेशन की आवश्यकता हो सकती है जिनमें एक से अधिक शब्द हों।
-3. कार्यान्वयन विवरण: PowerShell में, डबल कोट्स " " इंटरपोलेशन का उपयोग करेंगे, जबकि सिंगल कोट्स ' ' वेरिएबल संदर्भित करने में असमर्थ रहेंगे।
+लेकिन इंटरपोलेशन ज़्यादा सरल और बेहतर माना जाता है। PowerShell स्क्रिप्ट लिखते समय परफॉरमेंस और पठनीयता में संतुलन बनाना महत्वपूर्ण है, और इंटरपोलेशन दोनों को साधता है।
 
-## और देखें
-1. [स्ट्रिंग इंटरपोलेशन में PowerShell](https://docs.microsoft.com/powershell/scripting/learn/deep-dives/everything-about-string-substitutions?view=powershell-7.1)
+## See Also (और जानकारी के लिए)
+- [about_Quoting_Rules](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules)
+- [about_Scopes](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_scopes)
+- [about_Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators)

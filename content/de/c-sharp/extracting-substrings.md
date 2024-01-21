@@ -1,7 +1,8 @@
 ---
-title:                "Teilzeichenketten extrahieren"
-html_title:           "PowerShell: Teilzeichenketten extrahieren"
-simple_title:         "Teilzeichenketten extrahieren"
+title:                "Teilstrings extrahieren"
+date:                  2024-01-20T17:45:27.032258-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Teilstrings extrahieren"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,29 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Extrahieren von Teilzeichenketten in C#
-
 ## Was & Warum?
-Extrahieren von Teilzeichenketten bedeutet, bestimmte Abschnitte einer Zeichenkette in einer neuen Zeichenkette zu isolieren. Es ist nützlich, um bestimmte Informationsblöcke zu filtern oder zu bearbeiten, ohne die gesamte Zeichenkette zu manipulieren.
 
-## Wie man:
-Nutzen Sie die `Substring` Methode in C#. Hier ist ein simples Beispiel:
+Das Extrahieren von Teilzeichenketten greift bestimmte Abschnitte aus einer längeren Zeichenkette heraus. Programmierer tun das, um Daten zu analysieren, zu verarbeiten oder spezifische Informationen darzustellen.
+
+## So geht's:
 
 ```C#
-string str = "Hallo, Welt!";
-string substr = str.Substring(7, 5);
-Console.WriteLine(substr);
+using System;
+
+class SubstringExample {
+    static void Main() {
+        string phrase = "C# macht Spaß!";
+        string sub = phrase.Substring(3, 5); // Nimmt "macht" heraus
+        
+        Console.WriteLine(sub); // Ausgabe: macht
+    }
+}
 ```
-Ausgabe des Programms wird "`Welt!`" sein.
 
-## Tiefgang
-Zum geschichtlichen Kontext, die `Substring` Methode existiert schon seit der Anfangszeit von C# und .NET, was ihre Beliebt- und Vertrautheit erklärt. Als Alternativen könnten `Split`, `IndexOf` oder reguläre Ausdrücke verwendet werden, aber diese haben tendenziell mehr Aufwand und Komplexität.
+Weitere Methoden:
 
-Beim Extrahieren einer Teilzeichenkette wird eigentlich eine ganz neue Zeichenkette erstellt. Das liegt daran, dass Zeichenketten in C# unveränderlich sind, was bedeutet, dass sie nach ihrer Erstellung nicht geändert werden können. 
+```C#
+using System;
 
-## Siehe auch
-Weitere Informationen und detailliertere Anleitungen finden Sie unter den folgenden Links:
+class MoreSubstringExamples {
+    static void Main() {
+        string text = "Hallo Welt, hier ist C#!";
+        
+        // Von Start bis Ende
+        string startToEnd = text.Substring(6); // Ergebnis: "Welt, hier ist C#!"
+        Console.WriteLine(startToEnd);
+        
+        // Manipulieren und Teilstring extrahieren
+        string replaceAndSubstring = text.Replace("Welt", "Programmierer").Substring(0, 15);
+        Console.WriteLine(replaceAndSubstring); // Ausgabe: Hallo Programmierer
+    }
+}
+```
 
-1. Microsoft Dokumentation: [Substring Methode](https://docs.microsoft.com/de-de/dotnet/api/system.string.substring?view=net-5.0)
-2. StackOverflow Diskussion: [Substring vs Split Methode](https://stackoverflow.com/questions/298830/split-string-containing-command-line-parameters-into-string-in-c-sharp)
-3. C# Station Tutorial: [Arbeiten mit Zeichenketten](https://csharp-station.com/Tutorial/CSharp/Lesson13)
+## Tiefgang:
+
+Teilzeichenketten zu extrahieren ist keine neue Idee. Schon frühe Programmiersprachen boten ähnliche Funktionen. Der `.Substring()`-Methode in C# könnte man vorhalten, dass sie nicht die modernste oder effizienteste Art ist, Teilstrings zu managen. 
+
+Es gibt Alternativen: `Span<T>` und `Memory<T>` aus C# 7.2 bieten performantere Zugriffe auf Teile einer Zeichenkette ohne zusätzliche Speicherzuweisung. Das kann besonders bei großen Textmengen oder in performancekritischen Anwendungen hilfreich sein.
+
+Bei der Implementierung ist zu beachten, dass `Substring()` bei ungültigen Indizes eine `ArgumentOutOfRangeException` wirft. Vorsicht also bei dynamischen Daten!
+
+## Siehe Auch:
+
+- Microsoft Dokumentation zu `String.Substring` Method: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
+- Performance-Überlegungen zu `Span<T>` und `Memory<T>`: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.memory-1)
+- StackOverflow Diskussionen über Substrings in C#: [stackoverflow.com](https://stackoverflow.com/questions/tagged/substring+c%23)

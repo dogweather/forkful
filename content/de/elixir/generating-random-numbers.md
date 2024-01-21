@@ -1,7 +1,8 @@
 ---
-title:                "Zufallszahlen generieren"
-html_title:           "Arduino: Zufallszahlen generieren"
-simple_title:         "Zufallszahlen generieren"
+title:                "Generierung von Zufallszahlen"
+date:                  2024-01-20T17:48:43.056843-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generierung von Zufallszahlen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Numbers"
@@ -11,34 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-
-Zufallszahlen generieren beschäftigt sich mit der Erstellung von Zahlen, die keinen Zusammenhang haben, also zufällig sind. Programmierer tun dies, um Datensätze zu simulieren, Spiele zu erzeugen oder ungeordnete Elemente anzuzeigen. 
+Zufallszahlen zu erzeugen bedeutet, nicht vorhersagbare Nummern in deinem Code zu generieren. Programmierer nutzen das für Spiele, Simulationen, Tests oder um die Sicherheit (wie in Verschlüsselungen) zu erhöhen.
 
 ## So geht's:
-
-Erzeugen Sie eine einfache Zufallszahl mit der `random`-Funktion des Erlang-Moduls wie folgt:
 ```elixir
-:rand.uniform(10) # Gibt eine Zufallszahl zwischen 1 und 10 zurück
+# Elixir nutzt das :rand Modul
+:rand.seed(:exsplus) # Seed setzen – nur einmal nötig
+zufallszahl = :rand.uniform() # Eine Zufallszahl zwischen 0 und 1
+IO.puts(zufallszahl)
+
+# Für einen Bereich – hier: 1 bis 10
+zehn_zufallszahlen = Enum.map(1..10, fn _ -> :rand.uniform(10) end)
+IO.inspect(zehn_zufallszahlen)
+```
+Beispiel Ausgabe:
+```
+0.4435837278580607
+[6, 2, 10, 4, 3, 7, 5, 8, 9, 1]
 ```
 
-Schauen wir uns einen Beispielausdruck an:
-```elixir
-IO.puts(:rand.uniform(10)) # Kann irgendeine Zahl zwischen 1 und 10 ausgeben, z.B. 3
-```
-
-## Tiefer tauchen:
-
-Historisch gesehen, nutzte Erlang (und somit Elixir) das :random-Modul zur Erzeugung von Zufallszahlen. Es wurde jedoch durch das :rand-Modul ersetzt, das bessere zufällige Verteilungen ermöglicht.
-
-Es gibt auch eine Option, den Zufallszahlengenerator zu erzeugen und zu verwalten. Zum Beispiel:
-```elixir
-{:ok, s} = :rand.make_seed(:exrop)
-```
-`make_seed/1` erzeugt einen Anfangszustand für den Zufallszahlengenerator, wobei `:exrop` das Exponential Roulette Wheel Parent Atom ist. Der Generator kann dann mit `uniform/1` verwendet werden, z.B. `:rand.uniform(100, s)`.
+## Tiefgang:
+Zufallszahlen in Elixir sind nicht wirklich "zufällig", sondern "Pseudozufallszahlen" – vom Computer generiert und daher vorhersagbar, wenn du den Seed kennst. Historisch gab’s viele Algorithmen dafür, :exsplus (Exponential Squared) ist einer der neueren und liefert eine gute Balance zwischen Geschwindigkeit und Zufälligkeit. Alternativen wie :exrop und :exsss bieten unterschiedliche Charakteristika und Distributionen. Für kryptografische Sicherheit sollte aber kein Pseudozufallsgenerator, sondern ein kryptografisch sicherer Algorithmus genutzt werden.
 
 ## Siehe auch:
-
-Weitere Informationen finden Sie unter den folgenden Links:
-Erlang :rand-Modul Dokumentation: (http://erlang.org/doc/man/rand.html)
-Elixir-Schulungszentrum: (https://elixir-lang.org/getting-started/introduction.html)
-Offizielles Forum für Elixir-Entwicklung und -Diskussionen: (https://elixirforum.com/)
+- Elixir-Dokumentation zum :rand Modul: https://hexdocs.pm/elixir/1.12/Random.html
+- Erlang-Dokumentation von :rand: http://erlang.org/doc/man/rand.html
+- Diskussion über Pseudozufallszahlen: https://stackoverflow.com/questions/27643616/elixir-random-number-generation

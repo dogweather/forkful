@@ -1,7 +1,8 @@
 ---
-title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
-html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
-simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+date:                  2024-01-20T18:01:13.307348-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,60 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Відправлення HTTP-запиту з базовою аутентифікацією в C++ 
+## Що і Навіщо?
+Відправка HTTP-запиту з базовою аутентифікацією – це процес, що дозволяє вам безпечно передавати імена користувачів і паролі через HTTP. Програмісти роблять це, щоб забезпечити доступ до захищених ресурсів.
 
-## Що це і навіщо це потрібно?
-Відправлення HTTP-запиту з базовою аутентифікацією в C++ — це процес, коли ваша програма відправляє запит до веб-сервера, авторизується, використовуючи ім'я користувача та пароль. Це роблять, щоб отримати доступ до приватних ресурсів на сервері.
+## Як це зробити:
+Використовуємо бібліотеку cURL для C++, що дозволяє легко відправляти HTTP-запити. Наведемо приклад коду:
 
-## Як це робити:
-Тут ми використовуємо бібліотеку cURL. Приклад коду C++:
 ```C++
 #include <iostream>
-#include <string>
 #include <curl/curl.h>
-
-size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* userp) {
-    userp->append((char*)contents, size * nmemb);
-    return size * nmemb;
-}
+#include <string>
 
 int main() {
-    CURL* curl;
+    CURL *curl;
     CURLcode res;
     std::string readBuffer;
 
     curl_global_init(CURL_GLOBAL_DEFAULT);
-
     curl = curl_easy_init();
+    
     if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "http://mywebsite.com/protected-resource");
-        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-        curl_easy_setopt(curl, CURLOPT_USERNAME, "myusername");
-        curl_easy_setopt(curl, CURLOPT_PASSWORD, "mypassword");
+        std::string userPwd = "user:password"; // Замініть на свої логін і пароль
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com"); // URL, до якого ви хочете отримати доступ
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
+        curl_easy_setopt(curl, CURLOPT_USERPWD, userPwd.c_str());
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
-
         res = curl_easy_perform(curl);
-
-        if(res != CURLE_OK)
+        
+        if(res != CURLE_OK) {
             fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+        } else {
+            std::cout << readBuffer << std::endl;
+        }
 
         curl_easy_cleanup(curl);
     }
-
     curl_global_cleanup();
 
     return 0;
 }
 ```
-## Пірнання вглиб: 
-HTTP Basic Authentication був впроваджений ще в 1996 році в якості частини специфікації HTTP/1.0. Хоча він і дуже простий в використанні, він не надає високого рівня безпеки, оскільки ім'я користувача та пароль передаються в нешифрованому вигляді. 
 
-Альтернативами є більш сучасні методи аутентифікації, такі як OAuth або JWT. 
+Ця програма виведе вміст веб-сторінки або помилку, якщо запит не вдасться.
 
-Враховуючи деталі реалізації, важливо згадати, що коректне використання бібліотеки cURL потребує правильної ініціалізації та очищення.
+## Глибше занурення:
+Базова аутентифікація – це старий, але простий спосіб захисту HTTP-запитів. Використовується набір імені користувача й пароля, закодований у форматі Base64, але це не найбезпечніший метод. 
 
-## Цікаві посилання:  
-1. [Документація cURL](https://curl.haxx.se/libcurl/c/)
-2. [Розділ про аутентифікацію в MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-3. [HTTP/1.0 специфікації](https://www.w3.org/Protocols/HTTP/1.0/spec.html#BasicAA)
+Альтернативи включають OAuth, tokens, або Digest Authentication, які забезпечують більш сильний захист. При використанні базової аутентифікації завжди переконуйтесь, що ваші запити здійснюються через HTTPS, а не HTTP.
+
+Коли ви використовуєте бібліотеку cURL у C++, ви можете легко включити аутентифікаційні дані з використанням опції CURLOPT_USERPWD і передати їх разом з вашим запитом. cURL догрижається за вас про кодування ваших облікових даних в Base64.
+
+## Додатково:
+- [libcurl](https://curl.se/libcurl/) – офіційний сайт бібліотеки cURL.
+- [HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication) – документація MDN Web Docs про аутентифікацію HTTP.
+- [HTTP Authentication: Basic and Digest Access Authentication (RFC 7617)](https://tools.ietf.org/html/rfc7617) – опис базової аутентифікації від IETF.

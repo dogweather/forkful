@@ -1,6 +1,7 @@
 ---
 title:                "Interpolera en sträng"
-html_title:           "C++: Interpolera en sträng"
+date:                  2024-01-20T17:50:43.251886-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolera en sträng"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,38 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
-Interpolering av en sträng i Elixir innebär att du direkt införlivar variabler eller uttryck i en sträng. Programmerare gör det för att bygga dynamiska strängar mer lätt och tydlig.
+## What & Why? (Vad & Varför?)
+I Elixir använder vi stränginterpolering för att effektivt bygga en sträng med variabler eller uttryck. Programmerare gör detta för att spara tid, öka läsbarheten och underlätta underhåll av koden.
 
-## Hur gör man:
-Här är ett enkelt exempel på interpolering. Skapa en variabel med värde och använd det sedan inom en sträng.
-```Elixir
-name = "Anna"
-IO.puts "Hej #{name}!" 
+## How to (Hur till)
+```elixir
+name = "Världen"
+greeting = "Hej, #{name}!"
+IO.puts greeting
 ```
-Det här ger utskriften:
+Output:
 ```
-Hej Anna!
-```
-Du kan också utföra uttryck inom markörerna.
-```Elixir
-a = 10
-b = 20
-IO.puts "Summan av a och b är #{a + b}."
-```
-Utskriften blir:
-```
-Summan av a och b är 30.
+Hej, Världen!
 ```
 
-## Djup Dykning
-Elixir som följer sin föregångare Erlang för dess sträng hantering, stödjer sträng interpolering sedan början. Alternativ till interpolering inkluderar strängkonkatenering eller användning av funktionsformat, men interpolering erbjuder en renare och mer läsbar syntax. Vid implementering av sträng interpolering sker processen i två steg: 
-1) kompilering och 
-2) runtime-beräkning av uttrycket i interpoleringen.
+Mer komplex användning:
+```elixir
+price = 100
+currency = "SEK"
+message = "Det totala priset är #{price * 1.25} #{currency} inklusive moms."
+IO.puts message
+```
+Output:
+```
+Det totala priset är 125.0 SEK inklusive moms.
+```
 
-## Se Även
-Om du letar efter mer detaljerad information om stränginterpolation i Elixir, kan dessa källor vara till hjälp:
+## Deep Dive (Djupdykning)
+Interpolering av strängar är inget nytt. De flesta programmeringsspråk har det och i Elixir hanteras det snyggt med #{...}. Alternativ till stränginterpolering innefattar sammanfogning av strängar med `<>` eller att använda `String.concat/1`. Implementeringsmässigt använder Elixir binärer för att representera strängar, vilket gör operationen effektiv. Att interpolera en sträng i Elixir är säkert då det inte finns någon risk för injektionsattacker som med SQL-injektioner.
 
-- Elixir Officiella dokumentation: [String interpolations](https://hexdocs.pm/elixir/String.html#module-interpolation)
-
-Vänligen notera att dessa källor är på engelska.
+## See Also (Se även)
+- [Elixir Documentation on String Interpolation](https://elixir-lang.org/getting-started/basic-types.html#interpolation)
+- [HexDocs for String Module](https://hexdocs.pm/elixir/String.html)
+- [String interpolation in Elixir](https://elixir-lang.org/getting-started/basic-types.html)

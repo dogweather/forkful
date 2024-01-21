@@ -1,6 +1,7 @@
 ---
 title:                "Pesquisando e substituindo texto"
-html_title:           "Bash: Pesquisando e substituindo texto"
+date:                  2024-01-20T17:57:27.293898-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pesquisando e substituindo texto"
 programming_language: "C"
 category:             "C"
@@ -10,40 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que é & Por Quê?
-Pesquisar e substituir texto é uma operação comum no desenvolvimento de software que permite localizar certos caracteres ou strings e alterá-los por outro(s). Programadores fazem isso para corrigir erros, modificar a funcionalidade ou simplificar o código.
+## O Que & Porquê?
+
+Procurar e substituir texto é o processo de encontrar trechos específicos de strings e trocá-los por outros. Programadores fazem isso para modificar dados, automatizar correções ou adaptar códigos quando é necessário atualizar informações ou corrigir erros de digitação.
 
 ## Como Fazer:
-Aqui está um exemplo simples sobre como você pode procurar e substituir texto em C.
 
-```C
+```c
+#include <stdio.h>
 #include <string.h>
 
-void substituir(char *s, char ch1, char ch2) {
-    for (int i = 0; s[i] != '\0'; ++i) {
-        if (s[i] == ch1) {
-            s[i] = ch2;
-        }
+void searchAndReplace(char *str, const char *search, const char *replace) {
+    char buffer[1024];
+    char *pos;
+    int index = 0;
+    int search_len = strlen(search);
+
+    while ((pos = strstr(str, search)) != NULL) {
+        strncpy(buffer + index, str, pos - str);
+        index += pos - str;
+        strcpy(buffer + index, replace);
+        index += strlen(replace);
+        str = pos + search_len;
     }
+    strcpy(buffer + index, str);
+    strcpy(str, buffer);
 }
 
 int main() {
-    char s[] = "Ola, mundo!";
-    substituir(s, 'O', 'H');
-    printf("%s\n", s);
+    char data[] = "Hello World! You are the World to me.";
+    searchAndReplace(data, "World", "Universe");
+    printf("Result: %s\n", data);
     return 0;
 }
 ```
 
-A saída será: `Hola, mundo!`
+Saída da amostra:
 
-## Mergulhando Fundo
-Historicamente, as funções de pesquisa e substituição foram implementadas pela primeira vez em editores de texto, como o `ed` e `sed` no Unix. Na programação moderna, existem várias alternativas, como o uso de funções internas de uma linguagem de programação (como `str_replace` em PHP) ou criando sua própria função personalizada, como fizemos acima. Vale a pena notar que o método acima mostrado é de padrão C simples e não eficiente para strings grandes. Métodos mais eficientes como Aho-Corasick ou Boyer–Moore-Horspool podem ser utilizados para melhor desempenho.
+```
+Result: Hello Universe! You are the Universe to me.
+```
 
-## Ver Também
-Para aprender mais sobre os algoritmos de pesquisa e substituição de texto, cheque os seguintes links:
+## Mergulho Profundo:
 
-1. "Algoritmos de String Matching no Wikipedia":
-https://pt.wikipedia.org/wiki/Categoria:Algoritmos_de_busca_de_pad%C3%A3o
-2. "Tutorial de String Matching - parte de um curso gratuito de Ciência da Computação com certificado":
-https://www.coursera.org/lecture/data-structures/lecture-36-string-matching-UzYS4
+Historicamente, a busca e substituição de texto é uma função vital em editores de texto e processamento de dados, automatizando tarefas que seriam tediosas se feitas manualmente. Em C, não há uma função da biblioteca padrão que realiza esta tarefa diretamente, então programadores costumam criar suas próprias soluções, como a função `searchAndReplace` que mostrei acima.
+
+Alternativas como expressões regulares podem ser usadas em linguagens que as suportam, fornecendo um meio mais poderoso e flexível para procurar padrões de texto. No entanto, C é uma linguagem de baixo nível e não tem suporte nativo a expressões regulares, embora bibliotecas como PCRE (Perl Compatible Regular Expressions) possam ser utilizadas.
+
+Os detalhes da implementação acima são intencionais: usamos `strstr` para localizar ocorrências, `strcpy` e `strncpy` para manipular strings e um buffer para armazenar a string resultante. A abordagem é simples, porém trata-se de um procedimento manual e exige cuidado com o gerenciamento da memória e o tamanho do buffer.
+
+## Ver Também:
+
+- [GNU C Library: String Manipulation](https://www.gnu.org/software/libc/manual/html_node/String-and-Array-Utilities.html)
+- [PCRE - Perl Compatible Regular Expressions](https://www.pcre.org/)
+- [C Stack Overflow Discussions](https://stackoverflow.com/questions/tagged/c)
+
+Lembre-se, esses são apenas pontos de partida. Cada projeto pode exigir soluções únicas, por isso explore, teste e aprimore seu código conforme necessário.

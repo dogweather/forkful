@@ -1,6 +1,7 @@
 ---
 title:                "문자열 보간하기"
-html_title:           "Clojure: 문자열 보간하기"
+date:                  2024-01-20T17:51:50.811969-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "문자열 보간하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,29 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인가요 & 왜요?
+## What & Why?
+(무엇이며 왜 사용하는가?)
+문자열 보간이란 변수나 상수를 문자열 안에 넣는 것을 말합니다. 이를 사용하면 코드를 읽고 작성하기 편리해지며, 동적으로 문자열을 생성할 수 있습니다.
 
-문자열 보간(Interpolation)이란, 변수가 선언되고 할당된 후에 이 변수를 문자열 안에 직접 넣는 것을 말합니다. 그래서 복잡한 문자열을 간편하게 만들 수 있어서 프로그래머들이 주로 사용합니다.
+## How to:
+(어떻게 사용하는가?)
+```TypeScript
+const name: string = '세계';
+const greeting: string = `안녕하세요, ${name}!`;  // '안녕하세요, 세계!' 를 출력합니다.
 
-## 어떻게 사용하나요:
+console.log(greeting);
+```
+
+다중 라인에서도 사용 가능합니다:
+```TypeScript
+const itemCount: number = 5;
+const pricePerItem: number = 2000;
+const message: string = `총 비용은 ${itemCount * pricePerItem}원 입니다.`;
+
+console.log(message);  // '총 비용은 10000원 입니다.' 를 출력합니다.
+```
+
+## Deep Dive
+(심층 분석)
+문자열 보간은 ES6(ECMAScript 2015)에서 처음 소개되었고, TypeScript에서도 지원합니다. 이전에는 문자열을 연결하기 위해 '+' 연산자를 사용했지만, 보간을 통해 좀 더 깔끔하고 직관적인 코드를 작성할 수 있게 되었습니다.
 
 ```TypeScript
-let name: string = "John";
-console.log(`Hello, ${name}!`);
-```
-위의 코드를 실행하면 다음의 출력 결과를 볼 수 있습니다:
-```
-Hello, John!
+// ES5 이전의 방식
+var oldWay: string = '안녕하세요, ' + name + '!';
 ```
 
-## 깊은 이해를 위해:
+` ` (백틱) 과 `${expression}` (식을 포함하는 중괄호)을 사용합니다.
+`${}` 안에는 모든 유형의 TypeScript 표현식을 삽입할 수 있습니다.
 
-1. **역사적 맥락**: 이전에는 JavaScript에서 문자열 연결을 위해 '+' 연산자를 사용했지만, 이 방법은 복잡하고 가독성이 떨어집니다. TypeScript의 문자열 보간 기능은 이를 개선하였습니다.
+성능에 큰 차이는 없지만, 보간이 가독성과 유지보수 측면에서 이점을 제공합니다. 보간을 사용하면 템플릿 리터럴 내에서의 복잡한 표현식도 쉽게 처리할 수 있습니다.
 
-2. **대안자**: 문자열 보간 이외에도, `concat()` 메서드, `+` 연산자 등을 이용해 문자열을 결합할 수 있습니다. 그러나 보간법이 이들보다 간편하고 가독성이 좋습니다.
-
-3. **구현상세**: TypeScript에서 문자열 보간은 변수값이 문자열 안에 포함되도록 템플릿 리터럴(``)을 사용합니다. `${}` 함수는 이 함수 안에 있는 변수들을 대신하여 그 값들을 출력합니다.
-
-## 참고 자료:
-
-- MDN Web Docs, [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+## See Also
+(추가 정보)
+- TypeScript Handbook (Official): https://www.typescriptlang.org/docs/handbook/intro.html
+- MDN Web Docs on Template Literals (영문): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+- ES6 Features (영문): http://es6-features.org/#StringInterpolation

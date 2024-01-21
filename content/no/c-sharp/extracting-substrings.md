@@ -1,7 +1,8 @@
 ---
-title:                "Utdrag av understrenger"
-html_title:           "Bash: Utdrag av understrenger"
-simple_title:         "Utdrag av understrenger"
+title:                "Uthenting av delstrenger"
+date:                  2024-01-20T17:45:29.679321-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uthenting av delstrenger"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,36 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
+## What & Why? (Hva & Hvorfor?)
+I C# er uttrekk av delstrenger det å hente ut en spesifikk del av en tekststreng. Vi gjør det for å bearbeide eller analysere visse seksjoner av data, som når vi filtrerer brukerinput eller henter ut databiter for behandling.
 
-Å splitte opp strenger er teknikken ved å hente ut mindre deler ("substrings") fra en lengre tekst ("string"), basert på gitt indeksposisjon. Programmerere gjør dette for å analysere eller bearbeide data effektivt og på en måte som gir mening i gitte kontekster.
+## How to: (Slik gjør du)
+```C#
+string fullText = "Hallo, Norge!";
+string extracted = fullText.Substring(7, 5); // Starter ved indeks 7, lengde 5
 
-## Hvordan: 
+Console.WriteLine(extracted); // Output: Norge
+```
+```C#
+string birthYear = "Fødselsår: 1984";
+string year = birthYear.Substring(11); // Starter ved indeks 11 til slutten
 
-Koden nedenfor viser hvordan man uthenter en substring i C#.
-
-```csharp
-string tekst = "Hei, Verden!";
-string delTekst = tekst.Substring(4, 6);
-
-Console.WriteLine(delTekst);
+Console.WriteLine(year); // Output: 1984
+```
+```C#
+// Får en feilmelding hvis indeksen eller lengden overskrider strengens grenser. Pass på dette!
 ```
 
-Output:
+## Deep Dive (Dypdykk)
+I C# har du hatt muligheten til å trekke ut delstrenger siden de første versjonene. Substring-metoden er en del av System.String-klassen. Alternativer inkluderer bruk av `Span<T>` for å unngå unødvendig kopiering av strenger i minnet, noe som er nyttig for ytelse. Implementeringsmessig bruker Substring interne funksjoner til .NET for å håndtere minnehåndtering og sikre sikkerhet ved tilgang til strenger.
 
-```csharp
-", Verd"
-```
-
-Her har vi tatt ut teksten som starter på den 4. posisjonen, og går 6 tegn fremover i teksten. Merk at vi teller posisjonene fra 0.
-
-## Dyp Dykk:
-
-Substring-metoden har vært tilstede i mange varianter av programmeringsspråk gjennom alle år, og er en standard virkemåte for å manipulere tekststrenger. Det fins flere alternativer, spesielt i C#, som `Remove()`, `IndexOf()` og `Split()`, og hvilken en bør velge kommer an på den spesifikke oppgaven.
-
-Implementasjonen av `Substring()`-metoden i C# er rask og effektiv, men man bør være oppmerksom på potensielle unntak som kan oppstå dersom startindeksen er utenfor tegnrekkevidden, eller hvis antall tegn som skal hentes ut overstiger den gjenværende lengden på teksten fra startindeksen.
-
-## Se også:
-
-1. MSDN String.Substring Method: [Link](https://msdn.microsoft.com/library/aka44szs.aspx)
-3. Dot Net Perls - Substring: [Link](https://www.dotnetperls.com/substring)
+## See Also (Se Også)
+- String manipulation in C# ([https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/))
+- .NET API documentation for String.Substring Method ([https://docs.microsoft.com/en-us/dotnet/api/system.string.substring](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring))
+- Performance tips for C# ([https://docs.microsoft.com/en-us/dotnet/csharp/write-safe-efficient-code](https://docs.microsoft.com/en-us/dotnet/csharp/write-safe-efficient-code))

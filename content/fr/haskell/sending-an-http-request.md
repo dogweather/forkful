@@ -1,7 +1,8 @@
 ---
-title:                "Envoyer une requête http"
-html_title:           "Bash: Envoyer une requête http"
-simple_title:         "Envoyer une requête http"
+title:                "Envoi d'une requête HTTP"
+date:                  2024-01-20T17:59:40.763419-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Envoi d'une requête HTTP"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,40 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## What & Why?
+En un clin d'oeil: une requête HTTP envoie de l'info vers ou en reçoit depuis un serveur web. Les programmeurs l'utilisent pour interagir avec des API, collecter des données, automatiser des tâches web. 
 
-Dans le développement web, l'envoi d'une requête HTTP est une étape commune. C'est une demande d'accès à des informations hébergées sur un serveur. Les programmeurs envoient ces requêtes pour récupérer, poster, mettre à jour ou supprimer des données.
+## How to:
+Haskell est élégant. Utilisons `http-client` pour envoyer une requête GET simple.
 
-## Comment faire:
-
-Haskell, grâce à `http-client` et `http-conduit`, vous permet d'envoyer des requêtes HTTP simplement. Voyons comment:
- 
 ```Haskell
-import Network.HTTP.Simple
+import Network.HTTP.Client
+import Network.HTTP.Types.Status (statusCode)
 
 main :: IO ()
 main = do
-    response <- httpLBS "http://httpbin.org/get"
-
-    putStrLn $ "Le statut de la réponse HTTP est " ++ show (getResponseStatusCode response)
-    putStrLn $ "Les en-têtes de la réponse HTTP sont " ++ show (getResponseHeaders response)
-    putStrLn $ "Le corps de la réponse HTTP est " ++ show (getResponseBody response)
+    manager <- newManager defaultManagerSettings
+    request <- parseRequest "http://httpbin.org/get"
+    response <- httpLbs request manager
+    putStrLn $ "Le statut: " ++ show (statusCode $ responseStatus response)
+    print $ responseBody response
 ```
 
-Ce code envoie une requête HTTP GET à `http://httpbin.org/get` et imprime le statut, les en-têtes, et le corps de la réponse.
+Output:
+```
+Le statut: 200
+"{\"args\":{},\"headers\":{...},\"origin\":\"...\",\"url\":\"http://httpbin.org/get\"}"
+```
+Simple, non?
 
-## Plongeon en profondeur
+## Deep Dive:
+Historiquement, `http-client` est la bibliothèque go-to pour HTTP avec Haskell, manifestant l'approche minimaliste de Haskell. Pour HTTP/2 ou des fonctions multithreading, regardez `http2-client`. Les détails comme la gestion des headers ou des cookies sont fins, mais la doc couvre ça en profondeur.
 
-Créé dans les années 1990, le protocole HTTP est devenu la fondation de toute communication de données sur le web. L'envoi de requêtes HTTP est une partie fondamentale de ce protocole.
-
-Haskell propose d'autres bibliothèques pour gérer les requêtes HTTP comme `http-streams` et `wreq`. L'utilisation dépend des besoins et préférences du projet.
-
-"Http-client" est un paquet Haskell qui recherche la simplicité et la flexibilité. Il peut fonctionner avec ou sans conduit. 
-
-## Voir Aussi
-
-Si vous souhaitez approfondir le sujet, consultez les ressources suivantes :
-
-1. Le dépôt GitHub pour `http-client` : [http-client on GitHub](https://github.com/snoyberg/http-client)
-2. Un guide approfondi pour `http-conduit` : [http-conduit Guide](https://www.stackage.org/haddock/lts-9.1/http-conduit-2.2.3.2/Network-HTTP-Conduit.html)
-3. Le site officiel du protocole HTTP: [HTTP | MDN](https://developer.mozilla.org/fr/docs/Web/HTTP)
+## See Also:
+- La documentation de `http-client`: http://hackage.haskell.org/package/http-client
+- Pour des requêtes plus complexes, `servant-client`: http://hackage.haskell.org/package/servant-client
+- Les RFCs HTTP, pour comprendre ce qui se passe sous le capot: https://tools.ietf.org/html/rfc7231

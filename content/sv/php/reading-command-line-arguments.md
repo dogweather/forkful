@@ -1,7 +1,8 @@
 ---
-title:                "Läsa kommandoradsargument"
-html_title:           "Bash: Läsa kommandoradsargument"
-simple_title:         "Läsa kommandoradsargument"
+title:                "Läsa in kommandoradsargument"
+date:                  2024-01-20T17:56:38.322726-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Läsa in kommandoradsargument"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,45 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# PHP-programmering: Läsa Kommandoradsargument
+## Vad & Varför?
+Att läsa kommandoradsargument innebär att fånga text som skickas till ett PHP-script från terminalen. Programmerare gör detta för att tillåta interaktion och dynamiskt beteende i skripten.
 
-## Vad och Varför?
-Vi talar om att läsa kommandoradsargument i PHP. Det handlar om att gripa och använda värden som anges när ett PHP-skript körs från terminalen. Vi gör det för att möjliggöra flexibla skript som kan hantera olika scenarier baserade på angivna värden.
-
-## Hur:
-PHP har ett inbyggt superglobalt array `$_SERVER` som hjälper oss att läsa kommandoradsargument. Det första elementet av `$_SERVER['argv']` representerar filnamnet. Följande element representerar argumenten.
+## How to:
+Ett enkelt PHP-script för att läsa kommandoradsargument kan se ut så här:
 
 ```PHP
-#!/usr/bin/php
 <?php
-print_r($_SERVER['argv']);
+if ($argc > 1) {
+    echo "Hej, " . $argv[1] . "!\n";
+} else {
+    echo "Hej, okänd användare!\n";
+}
 ?>
 ```
 
-Om vi sparar skriptet ovan som `script.php` och kör det från kommandoraden:
+Om du kör detta script med:
 
-```bash
-$ php script.php arg1 arg2 arg3
+```
+php script.php Johan
 ```
 
-Output:
+Skulle utmatningen bli:
 
-```bash
-Array
-(
-    [0] => script.php
-    [1] => arg1
-    [2] => arg2
-    [3] => arg3
-)
+```
+Hej, Johan!
 ```
 
-## Fördjupning
-Från PHP 4.3.0, är `register_argc_argv`-direktivet tillgängligt. Om den är inställd till "Off" skulle `$_SERVER['argv']` inte vara tillgänglig. Se till att den är "On" i php.ini. Alternativt, kan du få tillgång till kommandoradsargument via `$argv` och `$argc` som alltid är tillgängliga oavsett `register_argc_argv`-direktivet.
+## Deep Dive
+PHP har stöd för kommandoradsinteraktion sedan de tidiga versionerna. Funktionerna `$argc` och `$argv` är inbyggda variabler som automatiskt fylls med antalet argument och argumentens värden.
 
-PHP följer Unix-konventionen där argumentindex börjar med 0. Argument 0 är alltid skriptfilnamnet, följt av de valfria argumenten i antalet ordning.
+Alternativ till `$argc` och `$argv` inkluderar att använda `getopt()` för mer avancerad argumenthantering. `getopt()` tillåter flaggor och långa optioner som gör skripten mer användarvänliga.
 
-## Se Även
-1. PHP Manual: [$_SERVER](https://www.php.net/manual/en/reserved.variables.server.php)
-2. PHP Manual: [register_argc_argv directive](https://www.php.net/manual/en/ini.core.php#ini.register-argc-argv)
-3. PHP Manual: [$argv and $argc](https://www.php.net/manual/en/reserved.variables.argv.php)
+Implementationen av kommandoradsargument i PHP är ganska rak på sak. `$argc` (argument count) lagrar antalet argument och `$argv` (argument vector) är en array som innehåller själva argumenten, där `$argv[0]` alltid är skriptets namn.
+
+## See Also
+- PHP:s officiella dokumentation om kommandoradsanvändning: https://www.php.net/manual/en/features.commandline.php
+- Artiklar om `getopt()` för avancerad argumenthantering: https://www.php.net/manual/en/function.getopt.php
+- En guide till att skriva kommandoradsskript i PHP: https://www.phparch.com/2019/03/writing-command-line-scripts-with-php/

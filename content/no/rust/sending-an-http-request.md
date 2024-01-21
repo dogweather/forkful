@@ -1,7 +1,8 @@
 ---
-title:                "Å sende en http-forespørsel"
-html_title:           "C++: Å sende en http-forespørsel"
-simple_title:         "Å sende en http-forespørsel"
+title:                "Å sende en HTTP-forespørsel"
+date:                  2024-01-20T18:00:47.775010-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,43 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Rust programmering: Sende en HTTP-forespørsel
-
 ## Hva & Hvorfor?
+En HTTP-forespørsel lar oss snakke med en webserver. Vi gjør dette for å hente data, sende informasjon, eller starte handlinger på nett.
 
-En HTTP-forespørsel er en protokoll som brukes for å hente eller sende data over nettet. I programmering, brukes dette til å samhandle med andre webtjenester eller APIs.
+## Slik gjør du:
+Rust har ikke innebygget støtte for å sende HTTP-forespørsler, men `reqwest`-biblioteket gjør jobben enkel. Først, inkluder det i `Cargo.toml`:
 
-## Hvordan det fungerer:
-
-Vi skal bruke `reqwest` biblioteket i Rust for å sende en GET forespørsel. Først legger vi til `reqwest` avhengighet i `Cargo.toml` filen:
-
-```Rust
+```toml
 [dependencies]
 reqwest = "0.11"
-tokio = { version = "1", features = ["full"] }
 ```
 
-Deretter, vi skriver en enkel GET forespørsel i vår `main.rs`:
+Nå kan du sende en GET-forespørsel og håndtere responsen slik:
 
-```Rust
+```rust
+use reqwest;
+use std::error::Error;
+
 #[tokio::main]
-async fn main() -> Result<(), reqwest::Error> {
-    let res = reqwest::get("https://httpbin.org/get").await?;
-    let body = res.text().await?;
-    println!("Body:\n{}", body);
+async fn main() -> Result<(), Box<dyn Error>> {
+    let response = reqwest::get("https://www.example.com").await?;
+    
+    println!("Status for vår henvendelse: {}", response.status());
+    println!("Innholdet: {}", response.text().await?);
+
     Ok(())
 }
 ```
-Om alt gikk etter planen, bør du nå se en utskrift av responsen fra httpbin.org i konsollen.
+
+Dette vil gi deg statuskoden og innholdet fra `example.com`.
 
 ## Dypdykk
+Før i tiden, brukte vi biblioteket `hyper` for lavnivå HTTP-operasjoner i Rust. `reqwest` bygger videre på `hyper`, men gir en høyere-nivå API som er lettere å bruke. Alternativer inkluderer `ureq` eller `surf`, avhengig av behovet for asynkronitet og andre funksjoner.
 
-HTTP-forespørsler kom inn i bruk tidlig i internettets historie, og har vært en kritisk komponent i hvordan data blir sendt og mottatt. Alternativt kan noen bruker lavere nivå biblioteker som `hyper` for mer tilpasning, men `reqwest` tilbyr en mer høy-nivå og enklere å bruke API for de fleste.
+`reqwest` støtter asynkrone operasjoner med `tokio`-runtime. Dette er viktig for å skrive moderne, effektive applikasjoner som kan utføre flere oppgaver parallelt.
 
-Når det kommer til implementeringsdetaljer, bruker `reqwest` biblioteket `tokio` for asynkronitet. Dette betyr at forespørsler ikke vil blokkere din applikasjon mens du venter på svar fra serveren.
+Når du sender en HTTP-forespørsel, bygger klienten en komplett HTTP-versjon av meldingen, inkludert headers og payload, og utfører et nettverkskall for å sende den til serveren. Responsen blir deretter behandlet av klienten.
 
-## Se Også
-
-1. Rust dokumentasjon: [reqwest](https://docs.rs/reqwest/0.11.6/reqwest/)
-2. Offisiell Rust bok: [Asynkron Programmering](https://rust-lang.github.io/async-book/)
-3. HTTP-forespørsler i Rust: [En grundig introduksjon og guide](https://www.section.io/engineering-education/http-requests-in-rust/)
+## Se også:
+- [Reqwest Documentation](https://docs.rs/reqwest)
+- [Official Rust Book](https://doc.rust-lang.org/stable/book/)
+- [Async Programming in Rust with async-std](https://async.rs/)
+- [Hyper HTTP Library](https://hyper.rs/)

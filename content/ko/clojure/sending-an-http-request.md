@@ -1,6 +1,7 @@
 ---
 title:                "HTTP 요청 보내기"
-html_title:           "Clojure: HTTP 요청 보내기"
+date:                  2024-01-20T17:59:13.807782-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,27 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 필요할까요?
-HTTP 요청 전송은 서버에 정보를 요청하거나 보내는 방법을 말합니다. 프로그래머들은 다른 애플리케이션의 서비스를 이용하거나 정보를 요청하거나 수정할 때 이를 사용합니다.
+## What & Why? (무엇이며 왜?)
+HTTP 요청은 웹 서버와 정보를 교환하기 위한 방법이다. 프로그래머는 데이터를 가져오거나 웹 서비스에 작업을 요청하기 위해 이를 사용한다.
 
-## 어떻게 사용하나요?
-아래 코드 블럭은 Clojure에서 HTTP GET 요청을 보내는 예시입니다.
+## How to: (방법:)
+Clojure에서 `clj-http` 라이브러리를 사용하여 HTTP 요청을 보낸다.
 
 ```Clojure
+;; clj-http 라이브러리 추가
 (require '[clj-http.client :as client])
 
-(let [response (client/get "http://example.com")]
-  (println (:status response) (:body response)))
+;; GET 요청 보내기
+(def response (client/get "https://httpbin.org/get"))
+(println response)
+
+;; POST 요청 보내기
+(def post-response (client/post "https://httpbin.org/post" {:form-params {:key "value"}}))
+(println post-response)
 ```
 
-이것은 http://example.com으로 GET 요청을 보내고 그 응답의 상태와 본문을 출력합니다.
+예상 출력값은 다음과 같다:
 
-## 깊이 들어가 보기
-HTTP 요청보내기는 웹에서 개발을 하기 위한 기본 중의 기본입니다. 이 역사는 웹의 역사만큼이나 오래되었습니다. 대안으로는 Java나 Python과 같은 다른 언어에서의 기본적인 라이브러리나 Node.js, Go 등 다양한 언어에서 지원되는 다양한 HTTP 클라이언트 라이브러리들이 있습니다.
+```Clojure
+;; GET 요청의 응답
+{:status 200, :headers {...}, :body "..."}
+;; POST 요청의 응답
+{:status 200, :headers {...}, :body "..."}
+```
 
-Clojure에서는 가장 간단한 방법으로는 라이브러리 'clj-http'를 사용하는 것이고, 이 라이브러리에서는 'get', 'post', 'put' 등 다양한 HTTP 메서드를 지원합니다.
+## Deep Dive (심층 분석)
+HTTP 요청은 웹의 근간이며, 1991년 HTTP/0.9으로 처음 등장했다. Clojure에서는 `clj-http` 외에도 `http-kit`나 `aleph` 같은 라이브러리로 HTTP 요청을 보낼 수 있다. `clj-http`는 Java의 Apache HttpClient를 기반으로 하며, 동기/비동기 요청, 다양한 HTTP 메소드 지원, 인증과 같은 기능을 제공한다. 성능이 중요한 상황에서는 네이티브 라이브러리를 선택할 수도 있다.
 
-## 참고 목록
-- HTTP 요청에 대한 자세한 문서: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
-- 'clj-http'라이브러리 깃허브 페이지: [Github](https://github.com/dakrone/clj-http)
-- Clojure에 대한 자세한 설명: [Official Clojure Documentation](https://clojure.org/guides/getting_started)
+## See Also (참고자료)
+- clj-http GitHub 페이지: https://github.com/dakrone/clj-http
+- HTTP 요청에 대한 Clojure 가이드: https://clojure.org/guides/http_client
+- 비교: 다른 Clojure HTTP 라이브러리들: https://www.clojure-toolbox.com/

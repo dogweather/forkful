@@ -1,7 +1,8 @@
 ---
-title:                "यादृच्छिक संख्याओं का निर्माण"
-html_title:           "Clojure: यादृच्छिक संख्याओं का निर्माण"
-simple_title:         "यादृच्छिक संख्याओं का निर्माण"
+title:                "यादृच्छिक संख्याएँ उत्पन्न करना"
+date:                  2024-01-20T17:48:45.184716-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
@@ -10,36 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## व्हाट एंड वाय? 
-रैंडम नंबर जनरेशन एक प्रक्रिया होती है जिसमें हम कार्यक्रम के प्रत्येक चलन पर अद्वितीय और अनपेक्षित संख्याएं उत्पन्न करते हैं। यह गेमिंग, एन्क्रिप्शन, सिमुलेशन, आदि में उपयोग होता है जहां आकस्मिकता की आवश्यकता होती है।
+## What & Why? (क्या और क्यों?)
+Random numbers उत्पन्न करना यानी ऐसे नंबर्स बनाना जिसका कोई पैटर्न न हो। Programmers इसे games, simulations, security systems, aur data analysis में use करते हैं।
 
-## हाउ टू: 
-C# में, `Random` क्लास का उपयोग करके रैंडम नंबर उत्पन्न किए जा सकते हैं।
-
+## How to: (कैसे करें:)
 ```C#
 using System;
 
-class Program
+class RandomNumberExample
 {
-  static void Main()
-  {
-    Random randNum = new Random();
-    Console.WriteLine(randNum.Next());
-  }
+    static void Main()
+    {
+        // Random number generator instance
+        Random rand = new Random();
+        
+        // Generate a random number between 0 and 100
+        int randomNumber = rand.Next(0, 100);
+        Console.WriteLine($"Generated Random Number: {randomNumber}");
+    }
 }
 ```
-आउटपुट हर बार अलग होगा, क्योंकि हर बार एक नयी रैंडम नंबर जनित होता है।
+Sample Output ऐसा होगा:
+```
+Generated Random Number: 47
+```
 
-## डीप डाइव: 
-### ऐतिहासिक संदर्भ: 
-रैंडम नंबर जनरेशन की कड़ी अनुसंधान की साथ शुरू हुई, और इसने सूचना विज्ञान, गणित, खेल और अन्य क्षेत्रों में महत्वपूर्ण भूमिका निभाई। 
+## Deep Dive (गहराई से जानकारी)
+C# में `System.Random` class से 1990's में ही random number generators ka use शुरू हुआ। यह Pseudorandom numbers generate करता है जिसका मतलब है कि वे असल में random नहीं होते अगर आपको seed pata हो तो। True randomness के लिए, `System.Security.Cryptography` namespace का use करें जैसे `RNGCryptoServiceProvider` class, पर यह ज्यादा संसाधन खपत कर सकता है। 
 
-### विकल्प: 
-`Random` क्लास के विकल्प में `RNGCryptoServiceProvider` आता है, जो क्रिप्टोग्राफिक IPPROTO के लिए मजबूत रैंडम नंबर प्रदान करता है। 
+Randomness की quality improve करने के लिए हर बार एक नया seed value देना बेहतर होता है, जैसे कि system time। याद रखें, `Random` class thread-safe नहीं है। अगर आपको एक से ज्यादा threads में random numbers चाहिए, तो lock का use करें या `ThreadLocal<Random>` instances का प्रयोग करें।
 
-### विषयानुवादन विवरण: 
-`Random` क्लास C# में एक प्स्यूडो-रैंडम नंबर जनरेटर होता है, जिसका आधार एक आंतरिक काउंटर के उपर होता है। 
-
-## देखें भी: 
-- [Random Number Generation Tutorial in C#](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0)
-- [RNGCryptoServiceProvider Class in .Net](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0)
+## See Also (और जानकारी के लिए)
+- Microsoft Docs on `Random` Class: [Microsoft Docs Random](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netframework-4.8)
+- Random Number Generation in Cryptography: [RNGCryptoServiceProvider Class](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=netframework-4.8)

@@ -1,6 +1,7 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "C++: הורדת דף אינטרנט"
+date:                  2024-01-20T17:43:51.451728-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,56 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-הורדת דף אינטרנט היא התהליך שבו מחשב רוכש מידע מהאינטרנט ושומר אותו מקומית. מתכנתים עשויים לבצע את זה כדי לאסוף נתונים, ליישר את תצורת המערכת או לבדוק תקינות שלקוח מקומי.
+## What & Why? (מה ולמה?)
+להוריד דף אינטרנט זה לקבל את התוכן שלו דרך הרשת. תכניתנים עושים את זה כדי לאסוף נתונים, לעקוב אחרי מצבים או כדי להשתמש במידע ביישומים שלהם.
 
-## איך לעשות:
-Arduino IDE תומך בפונקציונליות WebClient, שמאפשרת ליצור קוד שיכול להוריד דפים מהאינטרנט. בלוק הקוד הבא מדגים זאת.
-
+## How to (איך לעשות את זה)
+קוד לדוגמא:
 ```Arduino
-#include <Ethernet.h>
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-IPAddress ip(192,168,1,177);
-char server[] = "www.example.com";
-EthernetClient client;
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+
+const char* ssid     = "YOUR_SSID";
+const char* password = "YOUR_PASSWORD";
 
 void setup() {
-  Ethernet.begin(mac, ip); 
-  Serial.begin(9600);
-  delay(1000);
-  Serial.println("connecting...");
+   Serial.begin(115200);
+   WiFi.begin(ssid, password);
 
-  if (client.connect(server, 80)) {
-    Serial.println("connected");
-    client.println("GET / HTTP/1.1");
-    client.println("Host: www.example.com");
-    client.println("Connection: close");
-    client.println();
-  }
-  else {
-    Serial.println("connection failed");
-  }
+   while (WiFi.status() != WL_CONNECTED) {
+     delay(1000);
+     Serial.println("Connecting to WiFi...");
+   }
+
+   Serial.println("Connected to WiFi");
 }
 
 void loop() {
-  if (client.available()) {
-    char c = client.read();
-    Serial.print(c);
-  }
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    http.begin("http://example.com"); // URL to download
+    int httpCode = http.GET();
 
-  if (!client.connected()) {
-    Serial.println();
-    Serial.println("disconnecting.");
-    client.stop();
-    for(;1;);
+    if (httpCode > 0) {
+      String payload = http.getString();
+      Serial.println(payload);
+    } else {
+      Serial.println("Error on HTTP request");
+    }
+    http.end();
   }
+  delay(10000); // Wait for 10 seconds
 }
 ```
-פלט משורת הפקודה: `connecting... connected`
+פלט לדוגמה:
+```
+Connecting to WiFi...
+Connected to WiFi
+<!doctype html>...
+```
+## Deep Dive (צלילה לעומק)
+להורדת דף אינטרנט דרך Arduino, פעם ראשונה עשו זאת בעזרת מודולים כמו ה ESP8266. אפשרויות חלופיות כוללות שימוש ב-ESP32 או מיקרו-בקרים אחרים עם יכולות WiFi. ההבנה איך HTTP עובד חשובה לביצוע בקשות יעילות והבנת תגובות מהשרת.
 
-## צלילה עמוקה:
-איסוף נתונים מהאינטרנט משמש באופן רחב בפעולות של יישומי IoT, כאשר מכשירים נחשבים באופן דינאמי עם שרתים מרוחקים. קיימות חלופות לשיטת ה-WEB Client, כולל ספריה של WifiClient, שמתמקדת בתמיכה ב- WiFi. מעבר לכך, מספר פרטי ביצוע משתנים בהתאם לסוג השרת ולאופן שבו המידע מורגש (קובץ HTML, XML, JSON וכו').
-
-## ראו גם:
-1. [מסמך עזר ל-WEB Client של Arduino](https://www.arduino.cc/en/Tutorial/LibraryExamples/WebClient)
-3. [תיעוד של שרת הרשת של Arduino](https://www.arduino.cc/en/Tutorial/WebServer)
+## See Also (ראה גם)
+- [ESP8266 NodeMCU HTTP GET and HTTP POST with Arduino IDE](https://randomnerdtutorials.com/esp8266-nodemcu-http-get-post-arduino/)
+- [ESP8266WiFi library documentation](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)
+- [HTTP Client library for the ESP8266](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266HTTPClient)

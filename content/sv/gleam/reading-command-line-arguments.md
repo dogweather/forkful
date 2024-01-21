@@ -1,7 +1,8 @@
 ---
-title:                "Läsa kommandoradsargument"
-html_title:           "Bash: Läsa kommandoradsargument"
-simple_title:         "Läsa kommandoradsargument"
+title:                "Läsa in kommandoradsargument"
+date:                  2024-01-20T17:56:04.986683-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Läsa in kommandoradsargument"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,48 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad och Varför?
+## Vad & Varför?
+Att läsa in kommandoradsargument innebär att ditt program kan ta emot input direkt när det startar. Programmerare gör detta för att göra sina program mer flexibla och användbara för olika scenarier.
 
-Att läsa kommandoradsargument är att fånga data som användaren ger vid körningen av ett program. Programmerare gör detta för att tillåta viss personalisering och flödeskontroll i programmet.
+## How to:
+I Gleam kan du hantera kommandoradsargument med `os.args()` funktionen. Här är ett enkelt exempel på hur det kan se ut:
 
-# Hur gör man:
+```gleam
+import gleam/io
+import gleam/list
+import gleam/os
 
-Här är ett enkelt exempel på Gleam-kod som visar hur du läser kommandoradsargument:
-
-```Gleam
-import gleam/list.{from_list, map, to_list}
-import gleam/option.{unwrap}
-import gleam/string.{parse_int, to_string}
-
-fn main(args: List(String)) {
-  let args = from_list(args)
-  |> map(parse_int)
-  |> to_list
-  |> map(unwrap)
-  |> unwrap
-  |> to_string
-  |> io.println
-}
-
-pub fn start() {
-  main(env.args())
+pub fn main() {
+  let args = os.args()
+  match list.drop(args, 1) { // Första argumentet är sökvägen till programmet.
+    [] -> 
+      io.println("Inga argument givna.")
+    [first_arg | _] -> 
+      io.println("Första argumentet är: " ++ first_arg)
+  }
 }
 ```
 
-Om användaren kör programmet med `gleam run . 12 24 36`, kommer outputten vara `["12","24","36"]`.
+Om du kör detta program så här `gleam run mitt_program Hej Världen`, blir utskriften:
 
-# Djupdykning
+```
+Första argumentet är: Hej
+```
 
-Historiskt sett blev konceptet med kommandoradsargument användbart för att styra beteendet hos UNIX-verktyg. Det är än idag en populär teknik för att göra ett program mer flexibelt.
+## Deep Dive
+Att läsa kommandoradsargument är ett arv från de tidiga dagarna av programmering där interaktionerna ofta var textbaserade. Modernt språk som Gleam behåller denna funktion för kompatibilitet och verktygsbyggande. Alternativ till argument på kommandoraden inkluderar konfigurationsfiler och miljövariabler, men inget är lika snabbt och enkelt för mindre uppgifter. Implementationen av argumentläsning i Gleam är en wrapper runt funktioner som erbjuds av dess host-språk (t.ex. Erlang), vilket syftar till en enkel och robust hantering av kommandoradsdata.
 
-Ett alternativ till att läsa kommandoradsargument är att använda konfigurationsfiler. Men detta kan vara överkill för små program eller skript.
+## See Also
+För vidare läsning och fördjupning, se Gleams officiella dokumentation:
 
-När du arbetar med kommandoradsargument i Gleam översätts parametrarna till en Gleam-lista. Denna lista kan sedan manipuleras med Gleam-funktioner som map, foldl etc. för att uppnå önskade resultat.
 
-# Se också
-
-För att dyka djupare in i Gleam-programmering och kommandoradsargument, konsultera följande resurser:
-
-1. [Gleam's stora bok om programmering](https://gleam.run/book/)
-2. [Erlang -- User's Guide](https://erlang.org/doc/man/erl.html)
-3. [Elixir School - Kommandoradsargument](https://elixirschool.com/en/lessons/advanced/escripts/)
+Så, nu är det bara att börja utforska och ha så skoj med din kodning i Gleam!

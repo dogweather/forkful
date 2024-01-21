@@ -1,6 +1,7 @@
 ---
 title:                "Sammenslåing av strenger"
-html_title:           "Arduino: Sammenslåing av strenger"
+date:                  2024-01-20T17:35:49.184447-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sammenslåing av strenger"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,33 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Konkatinering av strenger er prosessen med å løpe to eller flere strenger sammen til en. Dette er nyttig når man skal kombinere data fra forskjellige kilder eller for å lage komplekse strenger. 
+## What & Why?
+"Concatenating strings" betyr å lime sammen tekster for å danne nye. Programmerere gjør dette for å manipulere tekst, vise meldinger eller kombinere data dynamisk.
 
-## Hvordan gjøre: 
-Du kan konkatere strenger i TypeScript på flere måter. Her er de mest brukte:
-
-```typescript
-let hello = 'Hei';
-let world = 'verden';
-
-// Metode 1: Plussoperatør
-let greeting1 = hello + ' ' + world;
-console.log(greeting1);  // Output: "Hei verden"
-
-// Metode 2: Kombineringsoperatør
-let greeting2 = `${hello} ${world}`;
-console.log(greeting2);  // Output: "Hei verden"
+## How to:
+```TypeScript
+let hello: string = "Hei";
+let world: string = "verden";
+let greeting: string = hello + " " + world + "!";
+console.log(greeting); // Output: Hei verden!
 ```
 
-## Dypdykk
-Strengkonkatenering har en lang historie i programmering. Det har vært støttet i nesten alle programmeringsspråk, inkludert TypeScript forgjengeren JavaScript. Men i motsetning til JavaScript, lar TypeScript oss skrive type-sikkert kode, noe som er en stor fordel, spesielt når vi jobber med store kodebaser. 
+Eller med template literals:
 
-Når det kommer til alternativer, er det to populære andre metoder for å kombinere strenger i TypeScript: `concat`-metoden og `join`-metoden. Disse metodene kan være mer leselige og gir mer fleksibilitet, spesielt når du arbeider med en liste av strenger. 
+```TypeScript
+let hello: string = "Hei";
+let world: string = "verden";
+let greeting: string = `${hello} ${world}!`;
+console.log(greeting); // Output: Hei verden!
+```
 
-På implementasjonsnivå kan forskjellige nettlesere håndtere strengkonkatenering på litt forskjellige måter. Noen optimerer for kortere strenger, mens andre kan takle lange strenger bedre. Mange moderne nettlesere bruker imidlertid en balansert tilnærming som gir god ytelse uansett strengens lengde. 
+## Deep Dive
+I gamle dager brukte man ofte plussoperatoren (`+`) til å sette sammen strenger. Det fungerte greit, men kunne bli rotete med mange variabler og tekststykker.
 
-## Se også 
-- [TypeScript Dokumentasjon](https://www.typescriptlang.org/docs/)
-- [MDN String Concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Text_formatting)
-- [StackOverflow Discussion: Which is better in JavaScript? String concatenation or Array join?](https://stackoverflow.com/questions/7299010/why-is-string-concatenation-faster-than-array-join)
+ES6 introduserte "template literals" som lar deg lage mer lesbare strenger med variabler direkte inne i teksten, angitt med `${}`. I tillegg til lesbarhet, gjør dette det enklere å inkludere uttrykk og multiline strings.
+
+Det er også andre metoder som `concat()` funksjonen eller `join()` på arrays, men disse er mer aktuelle når man jobber med lister av strenger.
+
+TypeScript, som er en overbygning over JavaScript, følger disse samme metodene for strengsammensetning og legger til type-sjekking for ekstra sikkerhet.
+
+
+## See Also
+- MDN Web Docs on String concatenation: [String concatenation - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- Stack Overflow discussion on best practices: [When to use template strings in TypeScript?](https://stackoverflow.com/questions/37371364/when-to-use-template-strings-in-typescript)

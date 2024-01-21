@@ -1,7 +1,8 @@
 ---
-title:                "एक वेब पेज डाउनलोड करना"
-html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
-simple_title:         "एक वेब पेज डाउनलोड करना"
+title:                "वेब पेज डाउनलोड करना"
+date:                  2024-01-20T17:44:08.039561-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "वेब पेज डाउनलोड करना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,43 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-वेब पेज डाउनलोड करना, वेबसाइट की एक कॉपी को लोकल सिस्टम पर सहेजने की प्रक्रिया है। प्रोग्रामर इसे डाटा संग्रहित करने, विश्लेषण करने या बाद में इसे ऑफ़लाइन उपयोग करने के लिए करते हैं। 
+## What & Why? (क्या और क्यों?)
+एक वेब पेज को डाउनलोड करने का अर्थ है इंटरनेट से सूचना प्राप्त करना। प्रोग्रामर्स यह तब करते हैं जब उन्हें डाटा एकत्र करना होता है या किसी वेबसाइट से आटोमेटिक रूप से इंटरैक्ट करना होता है।
 
-## कैसे करें:
-जैसा कि आप देख सकते हैं, इसे Gleam कोड के माध्यम से आसानी से प्रदर्शित किया जा सकता है:
+## How to: (कैसे करें:)
+Gleam में, `httpc` मॉड्यूल का इस्तेमाल करके हम वेब पेज डाउनलोड कर सकते हैं:
 
-```Gleam
-import gleam/httpc
-import gleam/uri
+```gleam
+import gleam/http/httpc
+import gleam/io
 
-fn download_page(url: String) {
-  let url = uri.parse(url)
-  let response = httpc.get(url)
-
-  case response {
-    Ok(body) -> io.println(body)
-    Error(_) -> io.println("Unable to download the page")
+pub fn download_page() {
+  case httpc.get("http://example.com") {
+    Ok(response) -> io.println(response.body)
+    Error(error) -> io.println("Failed to download page: ", error)
   }
 }
 ```
-और उत्तर होता है:
-```
-{response body here if successful}
-```
-या
-```
-Unable to download the page
-```
 
-## गहरा जरीप 
-वेब पेजों को डाउनलोड करने की आवश्यकता हमेशा से ही रही है, चाहे वह मानव उपयोगकर्ता निगरानी के लिए हो या बॉट्स की स्क्रैपिंग। प्राचीन 'wget' और 'curl' जैसे उपकरण अब भी उपयोग होते हैं, लेकिन मोडर्न प्रोग्रामिंग भाषाओं ने इन प्रक्रियाओं को काफी सरल बना दिया है। 
+जब आप इस फंक्शन को चलाएँगे, आपको http://example.com का HTML कंटेंट मिल जाएगा।
 
-विकल्पाः अन्य भाषाओं में भी इसे करने का उपाय मौजूद है, जैसे कि Python के requests लाइब्रेरी या Javascript का axios लाइब्रेरी। 
+## Deep Dive (गहरी जानकारी)
+वेब पेज डाउनलोड करना काफी कॉमन टास्क है, जिसे पुराने ज़माने से `HTTP GET` रिक्वेस्ट के जरिए किया जाता है। Gleam में `httpc` एक बिल्ट-इन मॉड्यूल है जिसे इसी उद्देश्य के लिए उपयोग किया जा सकता है। वैकल्पिक तरीके में `curl` या हाई-लेवल HTTP क्लाइंट लाइब्रेरीज शामिल हैं। इम्प्लीमेंटेशन विस्तार में जाने पर, आप `HTTP` प्रोटोकॉल, `TCP/IP` स्टैक, और डीप पार्सिंग ऑफ HTML जैसे मुद्दों का पता लगा सकते हैं।
 
-आप उसे तब भी संशोधित कर सकते हैं, जैसे कि कस्टम हेडरों के साथ अनुरोध भेजें, या विभिन्न HTTP स्थितियों का उपयोग करें। 
-
-## अन्य स्रोतों के लिए लिंक 
-1. वेब स्क्रेपिंग के लिए Python रिक्वेस्ट्स: https://docs.python-requests.org/en/master/
-2. Javascript के लिए axios: https://github.com/axios/axios
-3. Gleam प्रलेखन: https://gleam.run/docs/
+## See Also (और देखें)
+- [Mozilla Developer Network - HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+- [HTML Parsing in Gleam](https://hexdocs.pm/gleam_html)

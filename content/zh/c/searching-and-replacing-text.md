@@ -1,6 +1,7 @@
 ---
 title:                "搜索和替换文本"
-html_title:           "Kotlin: 搜索和替换文本"
+date:                  2024-01-20T17:57:45.371518-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "搜索和替换文本"
 programming_language: "C"
 category:             "C"
@@ -10,56 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么?
-搜索和替换文本是计算机程序中常见的任务，可以在字符串中寻找特定模式或字词，并将其替换为新的内容。程序员这样做是为了实现数据的更新、清理和重新格式化。
+## What & Why? (是什么？为什么？)
+搜索与替换文本涉及找到特定字符串并用另一个字符串代替。程序员这样做可以快速更新代码或数据，节约时间。
 
-## 如何做:
-在C语言中，我们可以使用`strtok`, `strstr`和`sprintf`函数来搜索和替换文本。这是一段示例代码，其中搜索和替换 "dogs" 为 "cats"。
-
+## How to (如何操作)
 ```C
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
-void replace_char(char *str, char *orig, char *rep) {
-    static char buffer[4096];
-    char *p;
-
-    p = strstr(str, orig);
-    
-    if (p == NULL) {
-        printf("%s", str);
-    } else {
-        strncpy(buffer, str, p-str);
-        buffer[p-str] = '\0';
-
-        sprintf(buffer+(p-str), "%s%s", rep, p+strlen(orig));
-        printf("%s", buffer);
+void searchAndReplace(char *text, const char *search, const char *replace) {
+    char buffer[1024];
+    char *pos;
+    int index = 0;
+    int searchLen = strlen(search);
+  
+    while ((pos = strstr(text, search)) != NULL) {
+        strncpy(buffer + index, text, pos - text);
+        index += pos - text;
+        strcpy(buffer + index, replace);
+        index += strlen(replace);
+        text = pos + searchLen;
     }
+    strcpy(buffer + index, text);
+    strcpy(text, buffer);
 }
 
-int main () {
-    char string[] = "I love dogs.";
-    replace_char(string, "dogs", "cats");
+int main() {
+    char text[] = "Hello world! Hello everyone!";
+    const char search[] = "Hello";
+    const char replace[] = "Hi";
 
-    return(0);
+    searchAndReplace(text, search, replace);
+
+    printf("Updated text: %s\n", text);
+    return 0;
 }
 ```
 
-这个程序的输出将会是:
-
-```C
-I love cats.
+Sample output:
+```
+Updated text: Hi world! Hi everyone!
 ```
 
-## 深入研究
-搜索和替换文本的历史可以追溯到早期的文本处理系统，如UNIX的编辑器`sed`。它允许用户在整个文本文件中搜索并替换任何模式。
+## Deep Dive (深入了解)
+Searching and replacing text is foundational for text processing, a field that has evolved since early computing. Traditionally, Unix utilities like `sed` were used for such tasks. Today, languages like C offer library functions (`strstr`, `strcpy`, etc.) to handle these operations programmatically. When implementing a search and replace, details like buffer size, text encoding, and memory allocation need careful consideration to prevent bugs and security issues.
 
-在C语言中，我们使用标准库函数来实现搜索和替换。但是，也有更复杂的方法，如使用正则表达式。
+在文本处理领域，搜索和替换文本是基础，这个领域从早期计算机时代就在不断发展。传统上，像`sed`这样的Unix工具被用于此类任务。而现在，C语言等提供了库函数（如`strstr`、`strcpy`等）来以编程方式处理这些操作。在实施搜索和替换时，缓冲区大小、文本编码和内存分配的细节需要仔细考虑，以防止漏洞和安全问题。
 
-另一个可选择的C语言库是`PCRE(Perl Compatible Regular Expressions)`，它提供了对正则表达式的强大支持。但需要注意的是，使用PCRE可能会增加您的代码的复杂性和使用的空间。
-
-## 参考资料
-1. [`strtok` - C++ Reference](http://www.cplusplus.com/reference/cstring/strtok/)
-2. [`strstr` - C++ Reference](http://www.cplusplus.com/reference/cstring/strstr/)
-3. [`sprintf` - C++ Reference](http://www.cplusplus.com/reference/cstdio/sprintf/)
-4. [Regular Expressions in C: PCRE](https://www.pcre.org/)
+## See Also (另见)
+- C Standard Library documentation: https://en.cppreference.com/w/c/string
+- GNU `sed` manual: https://www.gnu.org/software/sed/manual/sed.html
+- Regular expressions (regex), which can be used for complex search and replace patterns, described in detail here: https://www.regular-expressions.info/
+- Practical C Programming by Steve Oualline, offering insights into text processing in C: http://shop.oreilly.com/product/9781565923065.do

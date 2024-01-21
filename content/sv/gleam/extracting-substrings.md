@@ -1,6 +1,7 @@
 ---
 title:                "Extrahera delsträngar"
-html_title:           "Arduino: Extrahera delsträngar"
+date:                  2024-01-20T17:45:53.204055-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extrahera delsträngar"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,25 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## What & Why?
+I programmering är att extrahera delsträngar processen för att plocka ut specifika bitar av text från en större sträng. Det används för att manipulera och analysera data, som att hämta användarnamn från e-postadresser eller produktkoder från en URL.
 
-Ordningsföljden av tecken inom en sträng benämns som substräng. Programmerare använder substrängar för att behandla delar av datan, utan att störa den totala informationen.
+## How to:
+Gleam erbjuder flera metoder för att extrahera delsträngar. Följande exempel visar grunderna:
 
-## Hur till:
+```gleam
+import gleam/string
 
-För att extrahera substrängar i Gleam använder vi `slice` funktionen. Låt oss testa med en exempelsträng "Hej, världen!".
+fn main() {
+  let text = "Hej, Sverige!"
+  let hello = string.slice(text, 0, 3) // "Hej"
+  let sweden = string.slice(text, 5, 13) // "Sverige"
 
-```Gleam
-let min_sträng = "Hej, världen!"
-
-let substräng = slice(min_sträng, 4, 10)
+  // visa resultaten
+  io.debug(hello)
+  io.debug(sweden)
+}
 ```
-I det här fallet kommer `substräng` att vara ", värld".
+Kör den här koden och du får:
 
-## Djup Dykning
+```
+"Hej"
+"Sverige"
+```
 
-Idén att extrahera substrängar kommer inte enbart från Gleam. Den har djupa rötter i många andra programmeringsspråk som C och JavaScript. Som alternativ kan funktionen `split_at` användas för att dela strängen på en specifik position. De interna detaljerna involverar att kopiera tecken från en startposition till en slutposition.
+## Deep Dive
+Delsträngsextrahering är inte nytt i programmeringsvärlden. I äldre språk som C var det mer komplicerat och riskabelt. Moderna språk, som Gleam, förenklar processen och ökar säkerheten genom tydlig syn på strängens begränsningar och felhantering.
 
-## Se Även
+I Gleam använder man ofta `string.slice` för att skapa delsträngar. Det finns alternativa metoder som `string.left` och `string.right` beroende på behov. Att utföra operationen effektivt kan variera beroende på strängens storlek och vilken del som ska extraheras. Gleam hanterar dessa detaljer åt dig, vilket gör det mindre felbenäget jämfört med lägre nivå språk.
 
-Se mer om substrängar och strängmanipulation på Gleam's officiella dokumentation (https://hexdocs.pm/gleam_stdlib/latest/gleam/string/). Det finns även en hel del användbara informationskällor på StackOverflow (https://stackoverflow.com/).
+## See Also
+- Rusts "slice"-koncept, något liknande i system-nivå programmering: [The Rust Programming Language - Slices](https://doc.rust-lang.org/book/ch04-03-slices.html)
+- Elixir, ett annat funktionellt programmeringsspråk på Erlang VM: [Elixir String Documentation](https://hexdocs.pm/elixir/String.html)

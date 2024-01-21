@@ -1,7 +1,8 @@
 ---
-title:                "אינטרפולציה של מחרוזת"
-html_title:           "Arduino: אינטרפולציה של מחרוזת"
-simple_title:         "אינטרפולציה של מחרוזת"
+title:                "שרבוב מחרוזת"
+date:                  2024-01-20T17:51:15.742422-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרבוב מחרוזת"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -11,22 +12,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-אינטרפולציה של מחרוזת היא תהליך בו נכנסות ערכים משתנים או יתרונות לתוך מחרוזת. מתכנתים משתמשים באינטרפולציה של מחרוזות כדי לבנות מחרוזות דינאמיות ומורכבות באופן יעיל וקריא.
+אינטרפולציה של מחרוזת היא טכניקה לשלב משתנים וביטויים בתוך מחרוזת מבלי להשתמש בקטינג והדבקה מסורבלים. זה חוסך זמן פיתוח ומקל על קריאות ותחזוקת הקוד.
 
-## כיצד נעשה:
-אפשר לקבל את התוצאות הדרושות לך על ידי שימוש במתודה `String.format()`. ישנן הרבה דרכים בהן אפשר לבצע את זה, נסו את הדוגמא ותוצאת הקוד למטה:
-
-```Java
-int age = 25;
-String name = "David";
-String intro = String.format("שמי %s ואני בן %d", name, age);
-System.out.println(intro);
+## איך לעשות:
+```java
+public class StringInterpolationExample {
+    public static void main(String[] args) {
+        String name = "דוד";
+        int age = 30;
+        String message = String.format("שלום, אני %s ואני בן %d", name, age);
+        System.out.println(message);  // פלט: שלום, אני דוד ואני בן 30
+    }
+}
 ```
 
-הקוד הזה ידפיס: `"שמי David ואני בן 25"`
-
-## שיעור מעמיק 
-אינטרפולציה של מחרוזת היא טכניקה שמרובה שימוש ברוב שפות התכנות המודרניות. בתכנת Java, חלופה לשימוש ב `String.format()` היא פשוט לשרשר את המשתנים והמחרוזות יחד עם '+'. זה מראה את שלושה אפשרויות המוצעות, אך כאשר נדרשת מחרוזת בנויה מרכיבים מרובים, `String.format()` הפך להיות האופציה המועדפת בזכות הקריאות שלה.
+## עיון נוסף:
+ב-Java, אינטרפולציה של מחרוזת אינה ישירה כמו בשפות אחרות - אין לנו סינטקס ייחודי. במקום זאת, אנחנו משתמשים ב`String.format()`. בעבר השתמשו בשרשור מחרוזות, דבר שיכול להוביל לקוד מבולגן. כיום, ישנם ספריות חיצוניות כמו Apache Commons Lang שמציעות גרסאות שונות ומתקדמות של אינטרפולציה.
 
 ## ראה גם:
-אם אתה מעוניין ללמוד יותר על אינטרפולציה של מחרוזות, ממליץ לך לקרוא את הכתבות הבאות:
+- דוקומנטציה של `String.format()`: https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)
+- Apache Commons Lang `StringUtils`: https://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/StringUtils.html
+- גישות אלטרנטיביות לאינטרפולציה ב-Java: https://www.baeldung.com/java-string-formatting

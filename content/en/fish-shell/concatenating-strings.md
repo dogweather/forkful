@@ -1,6 +1,7 @@
 ---
 title:                "Concatenating strings"
-html_title:           "PHP recipe: Concatenating strings"
+date:                  2024-01-20T17:34:46.244068-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Concatenating strings"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,63 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Welcome to the Fish of String Concatenation!
-
 ## What & Why?
-
-Concatenating strings is a way of joining two or more text strings end-to-end. Programmers do this to manipulate, format, and display data effectively.
+Concatenating strings means sticking them together end-to-end. Programmers do it to combine text, like building a full sentence from words or creating file paths.
 
 ## How to:
+In Fish, slap strings together with spaces between or use `string join`.
 
-In Fish Shell, you concatenate strings by using a command and two strings. Here's an easy cheat sheet for it:
+```fish
+# Combine 'Hello' and 'World!' with a space
+echo 'Hello' 'World!'
 
-```Fish Shell
-# Set two strings
-set string1 "Hello"
-set string2 "World"
+# Output: Hello World!
 
-# Concatenate the strings
-echo $string1$string2
+# Concatenate variables
+set greet "Howdy"
+set who "Partner"
+echo $greet $who
+
+# Output: Howdy Partner
+
+# No-spaces concatenation with string join
+set file "report"
+set ext "txt"
+string join '' $file '.' $ext
+
+# Output: report.txt
 ```
 
-When run, this will output:
+## Deep Dive
+Concatenation's been around since the dawn of programming. In Fish, `string join` is cleaner than older methods, such as using `echo` followed by string vars without quotes. This approach avoids subcommand overhead, which can be a performance win.
 
-```Fish Shell
-HelloWorld
+Alternatives include the use of `printf`, which gives more formatting control but is a touch more complex for simple joining operations. Example:
+
+```fish
+set firstName "Ada"
+set lastName "Lovelace"
+printf "%s %s\n" $firstName $lastName
 ```
 
-If you want to add a space between the strings, simply include the space within one of the strings like this:
+Fish's `string` command is part of a built-in string manipulation toolbox introduced to make text processing more straightforward. It’s not unique to Fish, but its inclusion as a built-in tool keeps things simple.
 
-```Fish Shell
-# Include space in the first string
-set string1 "Hello "
-set string2 "World"
-
-# Perform string concatenation
-echo $string1$string2
-```
-
-This give the output:
-
-```Fish Shell
-Hello World
-```
-
-## Deep Dive:
-
-While string concatenation in Fish Shell is relatively straightforward, it's worth knowing a few additional things. Fish Shell, like most UNIX shells, doesn't distinguish string variables from other types, so no special syntax is required for string concatenation compared to the likes of C or Perl.
-
-Alternatives to the `set` command used above do exist. For instance, using `printf` to concatenate strings:
-
-```Fish Shell
-printf "%s%s\n" $string1 $string2
-```
-
-While Fish Shell doesn’t require explicit declaration of variable types like some other languages do, keep in mind that Fish is case-sensitive. So, `$String1` and `$string1` would be treated as different variables.
-
-### See Also:
-
-- Official Fish Shell Documentation: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- Quick Fish Scripting Guide: [https://fishshell.com/docs/current/tutorial.html](https://fishshell.com/docs/current/tutorial.html)
-
-Dive into these resources for more wealth on string concatenation and other stellar tricks in the Fish Shell universe!
+## See Also
+- Official Fish documentation: [link](https://fishshell.com/docs/current/cmds/string.html)
+- Community tutorials: [link](https://fishshell.com/docs/current/tutorial.html#tutorial)
+- Discussion on string manipulation in shells: [link](https://unix.stackexchange.com/questions/131766/why-does-my-shell-script-choke-on-whitespace-or-other-special-characters)

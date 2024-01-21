@@ -1,6 +1,7 @@
 ---
 title:                "Читання аргументів командного рядка"
-html_title:           "Arduino: Читання аргументів командного рядка"
+date:                  2024-01-20T17:55:56.754439-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Читання аргументів командного рядка"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,42 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо? 
+## What & Why?
+## Що та Чому?
 
-Читання аргументів командного рядка - це процес отримання параметрів переданих при запуску програми. Програмісти роблять це для забезпечення гнучкості і налаштуваності їхніх програм.
+Reading command line arguments lets programs act on different inputs without changing code. We do it to make programs flexible and reusable.
 
+## How to:
 ## Як це зробити:
 
-В Gleam ви можете легко отримати аргументи командного рядка, використовуючи модуль `os`. Нижче наведено приклад коду:
-
-```Gleam
+```gleam
+import gleam/io
 import gleam/os
 
-pub fn main(args: List(String)) {
+pub fn main() {
   let args = os.args()
-  case args {
-  | [] -> 
-    "Немає аргументів"
-  | [arg] ->
-    "Аргумент: " ++ arg
-  | _ ->
-    "Багато аргументів"
+  match args {
+    [] -> io.println("No arguments provided.")
+    [first, ..] -> io.println("First argument: " ++ first)
   }
 }
 ```
 
-У цьому коді, `os.args()` викликає функцію, яка повертає список аргументів командного рядка.
+Sample Output:
+```
+First argument: example.txt
+```
 
-## Поглиблено:
+## Deep Dive
+## Поглиблений Розгляд
 
-Історично, передача аргументів через командний рядок існує від самого початку командного рядка. Це поширена практика майже в усіх мовах програмування, таких як C, Python, Java та ін.
+Gleam, a static-typed language on the BEAM, grabs command line arguments using the `os.args()` function, inherited from Erlang's powerful capabilities. Historically, command line parsing is from Unix's early days; it's common across languages. Alternatives like argument-parsing libraries exist, but `os.args()` is fine for basics. It gives a list; you handle logic and errors.
 
-Що стосується альтернатив, можна використовувати конфігураційні файли або графічні інтерфейси користувача для передачі параметрів програмі, але це часто вимагає значно більше роботи.
+## See Also:
+## Додатково:
 
-В Gleam, реалізація читання аргументів командного рядка базується на можливостях Erlang-у. Модуль `os` надає `args()`, який повертає список аргументів переданих командному рядку як список рядків.
-
-## Дивись також:
-
-1. Офіційна документація Gleam: https://gleam.run/book/tour/
-2. Документація модулю `os` Erlang/OTP: http://erlang.org/doc/man/os.html
-3. Форум Gleam: https://gleam-lang.discourse.group/
+- Gleam Book on Command Line Applications: https://gleam.run/book/tour/command-line-applications.html
+- Erlang's `init:get_args/1` documentation for broader understanding: http://erlang.org/doc/man/init.html
+- Rust language's 'Clap' crate for comparison with an argument parsing library: https://crates.io/crates/clap

@@ -1,7 +1,8 @@
 ---
-title:                "पाठ की खोज और प्रतिस्थापन"
-html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
-simple_title:         "पाठ की खोज और प्रतिस्थापन"
+title:                "पाठ खोजना और बदलना"
+date:                  2024-01-20T17:58:57.552360-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पाठ खोजना और बदलना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,31 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+सर्चिंग और रिप्लेसिंग टेक्स्ट का मतलब है, फाइलों या स्ट्रिंग्स में विशेष टेक्स्ट को ढूँढना और बदलना। प्रोग्रामर्स यह इसलिए करते हैं क्योंकि कई बार समान जानकारी को अपडेट करना होता है, गलतियों को सही करना होता है या डेटा को मानकीकृत करना होता है।
 
-*सर्च और रिप्लेस* टेक्स्ट की एक प्रक्रिया है जिसमें आप किसी विशिष्ट शब्द या वाक्यांश को विशिष्ट पाठ में खोजने की कोशिश करते हैं, और फिर उसको किसी अन्य शब्द या वाक्यांश से बदलते हैं। प्रोग्रामर्स इसका प्रयोग विशिष्ट बग्स को ठीक करने, डेटा का स्थानांतरण, और उनके कोड को अद्यतित रखने के लिए करते हैं।
+## How to: (कैसे करें:)
+```PowerShell
+# फाइल से टेक्स्ट सर्च और रिप्लेस
+(Get-Content 'example.txt').Replace('पुराना', 'नया') | Set-Content 'example.txt'
 
-## कैसे करें:
-
-इसे करने के लिए PowerShell में `replace` ऑपरेटर का उपयोग किया जा सकता है।
+# परिणाम को चेक करना
+Get-Content 'example.txt'
+```
+यह `example.txt` फाइल में हर `पुराना` शब्द को `नया` के साथ बदल देगा।
 
 ```PowerShell
-$text = "Hello, world!"
-$newText = $text -replace "world", "PowerShell"
-echo $newText
+# रेगेक्स का इस्तेमाल करके अधिक जटिल सर्च और रिप्लेस
+$content = [IO.File]::ReadAllText('example.txt')
+$pattern = 'पुराना'
+$replacement = 'नया'
+$regex = [regex]$pattern
+$updatedContent = $regex.Replace($content, $replacement)
+[IO.File]::WriteAllText('example.txt', $updatedContent)
 ```
 
-इस उदाहरण में, "world" को "PowerShell" के साथ बदल दिया जाता है, जिससे आउटपुट "Hello, PowerShell!" होता है।
+## Deep Dive (गहराई में जानकारी):
+सर्च और रिप्लेस टेक्स्ट की कला पुरानी है। पहले, लोग टाइपराइटर पर भी गलतियों को सही करने के लिए इसी तरह की क्रियाएँ करते थे। कंप्यूटरों के आने से, इसे एडिटर्स और स्क्रिप्टिंग लैंग्वेजेज ने बहुत आसान बना दिया। जैसे PowerShell में `.Replace()` और `[regex]` का इस्तेमाल। इसके अल्टरनेटिव हैं, जैसे की `sed` लिनक्स पर और `findstr` विंडोज़ CMD में। अवधारणा एक ही है, लेकिन इम्प्लीमेंटेशन अलग-अलग संभावनाएँ प्रस्तुत करती हैं।
 
-## गहरी डाइव:
-
-1. *ऐतिहासिक संदर्भ*: टेक्स्ट सर्च और रिप्लेस ऑपरेशन का उपयोग प्राचीन कंप्यूटर सिस्टम्स में भी होता था, लेकिन PowerShell में इसका उपयोग और भी सुगम और शक्तिशाली हो गया है।
-
-2. *विकल्प*: `replace` के अलावा, PowerShell में भी `regex` (रेगुलर एक्सप्रेशन) में सर्च और रिप्लेस की सुविधाएं हैं। 
-
-3. *कार्यान्वयन विवरण*: `replace` ऑपरेटर का उपयोग करके, PowerShell पहले वे सभी अवस्थान खोजता है जहां हमारा सर्च टेक्स्ट मिलता है, और फिर उन्हें रिप्लेसमेंट टेक्स्ट से बदल देता है।
-
-## देखने के लिए:
-
-1. [PowerShell का ऑफिशियल डॉक्युमेंटेशन](https://docs.microsoft.com/en-us/powershell/)
-3. [StackOverflow पर PowerShell के सम्बंधित प्रश्न](https://stackoverflow.com/questions/tagged/powershell)
+## See Also (इसे भी देखें):
+- [PowerShell स्क्रिप्टिंग गाइड](https://docs.microsoft.com/en-us/powershell/scripting/)
+- [Regex सपोर्ट इन PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)

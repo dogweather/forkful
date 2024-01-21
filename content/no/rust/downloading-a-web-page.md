@@ -1,7 +1,8 @@
 ---
-title:                "Laste ned en nettside"
-html_title:           "Elixir: Laste ned en nettside"
-simple_title:         "Laste ned en nettside"
+title:                "Nedlasting av en nettside"
+date:                  2024-01-20T17:44:50.217750-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Nedlasting av en nettside"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,55 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why? (Hva & Hvorfor?)
+Nedlasting av en nettside betyr å hente dens innhold over internett. Programmerere gjør det for å analysere data, sjekke tilgjengelighet eller integrere eksterne data i egne applikasjoner.
 
-Å laste ned en nettside betyr å hente innholdet på en nettside inn på din egen datamaskin. Programmerere gjør dette for å analysere eller manipulere dataene til senere bruk.
-
-## Hvordan:
-
-Her er et grunnleggende eksempel i Rust på hvordan du kan laste ned en nettside ved hjelp av `reqwest`, et populært http klient bibliotek for Rust.
-
+## How to: (Hvordan:)
 ```Rust
-use reqwest::Error;
+use reqwest;
+use std::error::Error;
 
-async fn hent_web_side() -> Result<(), Error> {
-   let innhold = reqwest::get("https://www.example.com")
-        .await?
-        .text()
-        .await?;
-    println!("Innhold: {}", innhold);
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn Error>> {
+    let url = "http://example.com";
+    let response = reqwest::get(url).await?;
+
+    let body = response.text().await?;
+    println!("Nettsideinnhold: {}", body);
     Ok(())
 }
 ```
+Ved kjøring vil dette skrive ut HTML-innholdet til `http://example.com`.
 
-For å kjøre funksjonen ovenfor bruker du:
+## Deep Dive (Dykk dypere)
+I de gode gamle dager, brukte vi `curl` eller `wget` fra kommandolinjen, eller HTTP-biblioteker som `libcurl` for programmering. I Rust-verdenen, er `reqwest`-biblioteket nå populært for å håndtere HTTP-forespørsler, takket være sin asynkrone støtte og enkel bruk.
 
-```Rust
-fn main() {
-    let result = tokio::runtime::Runtime::new()
-        .unwrap()
-        .block_on(hent_web_side());
-    
-    match result {
-        Ok(_) => println!("Suksess!"),
-        Err(e) => println!("Noe gikk galt: {}", e),
-    }
-}
-```
+Alternativene inkluderer `hyper` for lavnivå HTTP-operasjoner og `surf` som et annet høynivåalternativ. `reqwest` er imidlertid favoritten for mange fordi det abstraherer bort mange av de komplekse detaljene ved HTTP-forespørsler.
 
-## Dypdykk:
+For å virkelig forstå hvordan nedlasting av nettsider fungerer, bør man ha en forståelse av HTTP-protokollen, TCP/IP og DNS-oppslag.
 
-Mens vi utforsker hvordan du henter innholdet på en nettside, kan vi også utforske litt historie, alternative metoder og detaljer ved implementeringen.
-
-1. Historisk kontekst: Opprinnelig ble nettinnhold bare sett i nettlesere, men med fremveksten av web scraping, har anvendelsene av dette vokst.
-
-2. Alternativer: Det finnes mange biblioteker for å laste ned websider i Rust, som hyper og surf.
-
-3. Implementeringsdetaljer: `reqwest` er basert på hyper library, og `tokio` brukes til å håndtere asynkroniteten i Rust. Det er viktig å behandle feilene riktig, og det er der `Result` typen kommer inn i bildet, som viser enten suksess eller feil.
-
-## Se også:
-
-- [Reqwest Dokumentasjon](https://docs.rs/reqwest)
-- [Hyper Dokumentasjon](https://hyper.rs/)
-- [Surf Dokumentasjon](https://docs.rs/surf)
-- [Dybde i feilhåndtering i Rust](https://blog.burntsushi.net/rust-error-handling/)
+## See Also (Se også)
+- [reqwest crate dokumentasjon](https://docs.rs/reqwest/)
+- [Rust’s asynkrone programmeringsguide](https://rust-lang.github.io/async-book/)
+- [HTTP Made Really Easy](http://www.jmarshall.com/easy/http/) - En guide for å forstå HTTP.

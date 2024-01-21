@@ -1,7 +1,8 @@
 ---
-title:                "Konkatenacja ciągów znaków"
-html_title:           "Bash: Konkatenacja ciągów znaków"
-simple_title:         "Konkatenacja ciągów znaków"
+title:                "Łączenie łańcuchów znaków"
+date:                  2024-01-20T17:34:35.722202-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Łączenie łańcuchów znaków"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -11,41 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Konkatenacja stringów to proces łączenia dwóch lub więcej ciągów znaków w jeden ciąg. Programiści robią to, aby utworzyć nowe ciągi na podstawie już istniejących, co pomaga w manipulacji danymi.
+Konkatenacja to fancy termin na łączenie stringów, tworzenie z nich dłuższego ciągu znaków. Programiści to robią, gdy potrzebują zbudować wartości, takie jak unikalne wiadomości, adresy URL, czy też po prostu wyświetlić coś ładnie dla użytkownika.
 
 ## Jak to zrobić:
+Łączenie stringów w Fish można zrobić na kilka sposobów, oto najprostszy:
 
 ```Fish Shell
-# Deklaracja dwóch zmiennych
-set var1 "Cześć"
-set var2 ", jestem programistą FISH SHELL!"
-
-# Konkatenacja stringów
-set var3 "$var1$var2"
-
-# Wydrukowanie wyniku
-echo $var3
+set string1 "Cześć, "
+set string2 "jak się masz?"
+set concatenated $string1$string2
+echo $concatenated
 ```
 
-Wynik powyższego skryptu:
+Output:
+```
+Cześć, jak się masz?
+```
+
+Możesz też użyć polecenia `string`:
 
 ```Fish Shell
-Cześć, jestem programistą FISH SHELL!
+echo (string join '' $string1 $string2)
 ```
 
-## Głębsza analiza:
+## Głębsze zanurzenie
+Konkatenacja stringów to coś, co robiły języki programowania jeszcze przed epoką internetu. W Fish, odbywa się to bez większej ceremonii - przylep jeden string do drugiego i voilà! Alternatywnie, można użyć wbudowanej funkcji `string`, która oferuje dużo drobniejsze możliwości manipulacji stringami, w tym konkatenację.
 
-Konkatenacja stringów to koncepcja nieodłącznie związana z programowaniem komputerowym od jego początków. Historycznie, była to jedna z pierwszych funckji języków programowania, używana do tworzenia i manipulowania danymi tekstowymi.
+Fish nie wymaga specjalnych operatorów do łączenia stringów, ale niektóre języki jak Python używają `+`, a PHP `.`. Taka różnorodność wynika z historii i filozofii projektowej poszczególnych języków.
 
-Alternatywą do konkatenacji stringów mogą być funkcje budowania napisów lub formatowania, takie jak `printf` lub `sprintf`, które mogą oferować lepszą kontrolę nad formatem i prezentacją.
-
-W Fish Shell, konkatenacja stringów jest prosta i intuicyjna. Jak zauważyłeś na powyższych przykładach, wystarczy po prostu połączyć stringi bezpośrednio, bez używania dodatkowych symboli lub funkcji.
-
-## Zobacz także:
-
-Więcej informacji o Fish Shell i manipulacji stringami można znaleźć poniżej:
-
-1. Fish Shell Documentation: [Link](https://fishshell.com/docs/current/index.html)
-2. Fish Shell Tutorial: [Link](https://fishshell.com/docs/current/tutorial.html)
-3. String Manipulation in Fish Shell: [Link](https://fishshell.com/docs/current/commands.html#string)
+## Zobacz również:
+- Dokumentacja Fish `string`: https://fishshell.com/docs/current/cmds/string.html
+- Przewodnik Fish dla początkujących: https://fishshell.com/docs/current/tutorial.html
+- Wprowadzenie do Fish Shell: https://gist.github.com/krzysztofzuraw/6098499

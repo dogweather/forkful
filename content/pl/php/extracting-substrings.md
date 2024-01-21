@@ -1,7 +1,8 @@
 ---
-title:                "Wydobywanie podciągów"
-html_title:           "Python: Wydobywanie podciągów"
-simple_title:         "Wydobywanie podciągów"
+title:                "Wycinanie podłańcuchów"
+date:                  2024-01-20T17:46:14.672410-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wycinanie podłańcuchów"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,39 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i dlaczego?)
+Wyciąganie podciągów to pobieranie określonych fragmentów z całego ciągu znaków. Programiści robią to, aby manipulować danymi, weryfikować formaty lub po prostu wyświetlać użytkownikowi tylko istotne informacje.
 
-Wyodrębnianie podciągów to proces odzielenia specyficznej części ciągu znaków od reszty. Programiści robią to, aby manipulować lub analizować specyficzne segmenty danych tekstowych.
-
-## Jak to zrobić:
-
-Do wyodrębniania podciągów w PHP używamy na przykład funkcji `substr()`. Oto kilka przykładów użycia:
-
+## How to: (Jak to zrobić:)
 ```PHP
 <?php
-$tekst = "Cześć, Świecie!";
-echo substr($tekst, 0, 5);
+$text = "Witajcie w świecie PHP!";
+$fragment = substr($text, 8, 7); // pobiera "w świecie"
+
+echo $fragment; // wyświetli "w świecie"
+
+// Inny przykład użycia substr bez długości
+$koniec = substr($text, -4); // pobiera ostatnie 4 znaki "PHP!"
+
+echo $koniec; // wyświetli "PHP!"
 ?>
 ```
 
-Powinno wyświetlić "Cześć".
+## Deep Dive (W głąb tematu)
+W PHP wyciąganie podciągów robi się zazwyczaj za pomocą funkcji `substr()`. Została wprowadzona w PHP 3 i od tego czasu jest podstawową metodą manipulacji ciągami. Alternatywy to funkcje takie jak `mb_substr()`, która lepiej radzi sobie z Unicode. `substr()` działa tak, że jako pierwszy argument przyjmuje ciąg źródłowy, jako drugi indeks startowy, a jako trzeci - opcjonalną długość podciągu do wyciągnięcia. Jeśli długość nie jest określona, `substr()` zwraca wszystko do końca ciągu.
 
-```PHP
-<?php
-$tekst = "Cześć, Świecie!";
-echo substr($tekst, 7, 8);
-?>
-```
-
-Powinno wyświetlić "Świecie".
-
-## Głębsze spojrzenie
-
-Funkcja `substr()` była obecna w PHP od jego pierwszej stabilnej wersji (PHP 4). Wersja 5 funkcję rozszerzyła o obsługę znaków multibajtowych via `mb_substr()`. Choć `substr()` jest powszechnie używana, istnieją alternatywy, np. `strpos()` i `strrpos()`, które znajdują pozycję podciągu w ciągu.
-
-Warto zwrócić uwagę na sposób, w jaki PHP obsługuje indeksy - PHP zaczyna numerować od zera. Dla wartości ujemnych, PHP zaczyna od końca ciągu. Domyślnie, jeśli drugi argument przekroczy długość ciągu, `substr()` zwróci cały ciąg od punktu startowego.
-
-## Zobacz także:
-
-1. Szczegółowy opis funkcji `substr()`: [PHP: substr - Manual](https://www.php.net/manual/en/function.substr.php)
-2. Więcej na temat `strpos()` i `strrpos()`: [PHP: strpos - Manual](https://www.php.net/manual/en/function.strpos.php) oraz [PHP: strrpos - Manual](https://www.php.net/manual/en/function.strrpos.php)
+## See Also (Zobacz również)
+- Oficjalna dokumentacja PHP na temat funkcji `substr()`: [php.net/manual/en/function.substr.php](https://www.php.net/manual/en/function.substr.php)
+- Porównanie `substr()` i `mb_substr()`: [www.php.net/manual/en/function.mb-substr.php](https://www.php.net/manual/en/function.mb-substr.php)
+- Tutorial na temat manipulacji ciągami w PHP: [www.w3schools.com/php/php_ref_string.asp](https://www.w3schools.com/php/php_ref_string.asp)

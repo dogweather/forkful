@@ -1,7 +1,8 @@
 ---
-title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Arduino: Znajdowanie długości ciągu znaków"
-simple_title:         "Znajdowanie długości ciągu znaków"
+title:                "Znalezienie długości ciągu znaków"
+date:                  2024-01-20T17:48:39.567063-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Znalezienie długości ciągu znaków"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,31 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Długość łańcucha w TypeScript: Co, Dlaczego i Jak?
+## What & Why?
+Co i dlaczego? Znalezienie długości łańcucha znaków to nic innego, jak ustalenie, ile znaków zawiera dana fraza lub zdanie. Programiści robią to, by weryfikować wpisy użytkowników, dostosować wyświetlanie tekstu, bądź po prostu operować danymi tekstowymi efektywnie.
 
-## Co i Dlaczego?
-Znajomość długości łańcucha, czyli ilości znaków w ciągu, jest kluczowym elementem dla wielu operacji w programowaniu. Pozwala na kontrolowanie wprowadzonych danych, przycinanie długich tekstu czy tworzenie pętli, które przeszukują poszczególne znaki łańcucha.
-
-## Jak to zrobić:
-W TypeScript, aby znaleźć długość łańcucha, korzystamy z właściwości `length`. Zobacz przykład poniżej:
+## How to:
+Poniżej znajdziesz przykładowy kod w TypeScript, który pokazuje, jak sprawdzić długość stringa:
 
 ```TypeScript
-let napis: string = "Dzień dobry, Polsko!";
-let długośćNapisu: number = napis.length;
-console.log(długośćNapisu); // Wydrukuje: 20
+let greeting: string = "Cześć, jak się masz?";
+console.log(greeting.length); // Wyświetla długość napisu
 ```
-Ten kod wyznacza długość łańcucha "Dzień dobry, Polsko!", a następnie wydrukuje rezultat: 20.
+
+Sample output:
+```
+21
+```
+
+Możesz też użyć tej właściwości do warunków:
+```TypeScript
+if (greeting.length > 10) {
+    console.log("To dość długi tekst!");
+} else {
+    console.log("Tekst jest krótki.");
+}
+```
+
+Sample output:
+```
+To dość długi tekst!
+```
 
 ## Deep Dive
-Ale skąd właściwość 'length' wzięła się w JavaScript / TypeScript?
+Zagłębiając się w temat, `.length` jest właściwością obiektów `String` w JavaScript, odziedziczoną przez TypeScript. Nie od zawsze było to takie łatwe – w przeszłości, w niektórych językach programowania, musiałeś przechodzić przez tekst znak po znaku, by policzyć długość. 
 
-Właściwość 'length' pochodzi z JavaScript, z którym TypeScript jest ściśle powiązany. Ta właściwość od zawsze istniała w JavaScript dla manipulowania ciągami znaków i tablicami.
+Inną metodą była rozbudowana funkcja, która zajmowała więcej czasu i pamięci. TypeScript (i JavaScript) robi to za Ciebie, przechowując długość jako oddzielne pole w obiekcie string.
 
-Nie zawsze musisz korzystać z metody `length` do znalezienia długości łańcucha. Przykładowo, w Pythonie używamy funkcji `len()`. Ale TypeScript, jak JavaScript, preferuje używanie właściwości `length`.
+Warto pamiętać, że JavaScript używa modelu UTF-16 do reprezentacji stringów. To oznacza, że niektóre "złożone" znaki mogą być postrzegane jako dwie "jednostki kodu" i podwójnie liczone w długości.
 
-Ponadto, warto wiedzieć, że liczba wynikowa uwzględnia również spacje i znaki specjalne.
+Przykład z "złożonymi" znakami:
+```TypeScript
+let fancyString: string = "𩷶";
+console.log(fancyString.length); // Możesz się spodziewać 1, ale wynik to:
+```
 
-## Zobacz także:
-1. [TypeScript - String length Property - Tutorialspoint](https://www.tutorialspoint.com/typescript/typescript_string_length.htm)
-2. [JavaScript String length Property - W3Schools](https://www.w3schools.com/jsref/jsref_length_string.asp)
-3. [Mozilla Developer Network (MDN) - String.length ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+Sample output:
+```
+2
+```
+
+Zaskoczony? To dlatego, że niektóre znaki wymagają więcej niż jednego kodu UTF-16.
+
+## See Also
+Szukasz więcej informacji? Zajrzyj tutaj:
+- [Mozilla Developer Network - String.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
+- [Unicode - a deep dive into characters in JS](https://dmitripavlutin.com/what-every-javascript-developer-should-know-about-unicode/)

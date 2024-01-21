@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie zapytania http z podstawową autoryzacją"
+date:                  2024-01-20T18:02:11.980303-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,45 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Wysłanie żądania HTTP z podstawową autentykacją to proces zdalnego zapytania serwera z logowaniem (nazwa użytkownika i hasło). Programiści robią to, by uzyskać dostęp do chronionych zasobów lub usług webowych.
 
-Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem polega na przesyłaniu nazwy użytkownika i hasła w formie zakodowanej za pomocą base64 w nagłówku `Authorization` żądania HTTP. Programiści robią to, aby uzyskać dostęp do chronionych zasobów na serwerze.
-
-## Jak to zrobić:
-
-Aby wysłać żądanie HTTP z podstawowym uwierzytelnianiem w PowerShell, możemy skorzystać z polecenia `Invoke-RestMethod`. W poniższym przykładzie wysyłamy żądanie GET na adres URL `https://api.github.com`.
-
+## How to: (Jak to zrobić:)
 ```PowerShell
-$User = 'Username'
-$Pass = 'Password'
+# Przykład żądania GET z użyciem podstawowej autentykacji
+$User = 'jan_kowalski'
+$Password = 'tajneHaslo123'
+$Pair = "$($User):$($Password)"
+$EncodedCredentials = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($Pair))
+$Headers = @{ Authorization = "Basic $EncodedCredentials" }
 
-$pair = "$($User):$($Pass)"
-$encodedCreds = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($pair))
+$response = Invoke-RestMethod -Uri 'https://example.com/api/data' -Method Get -Headers $Headers
 
-$basicAuthValue = "Basic $encodedCreds"
-$Headers = @{
-    Authorization = $basicAuthValue
-}
-
-$response = Invoke-RestMethod -Uri 'https://api.github.com' -Method Get -Headers $Headers
-```
-A oto jak wygląda przykładowy wynik:
-
-```PowerShell
-$current_rate_limit = $response.rate.limit
-write-host "Current rate limit: $current_rate_limit"
+# Wynik
+$response | ConvertTo-Json
 ```
 
-## Głębszy Wgląd
+## Deep Dive (Głębsze spojrzenie):
+Podstawowa autentykacja HTTP to prosty mechanizm bezpieczeństwa, znany od czasów wczesnych wersji protokołu HTTP. Zakłada ona zakodowanie nazwy użytkownika i hasła w Base64 i ich przesyłanie w nagłówku żądania.
 
-Kiedy wysyłamy żądanie HTTP z podstawowym uwierzytelnianiem, jesteśmy odpowiedzialni za przekazanie naszych danych uwierzytelniających serwerowi. Powstało to w latach 90-tych i jestprostą metoda uwierzytelniania, ale nie jest idealnym rozwiązaniem, jeśli chodzi o bezpieczeństwo.
+Alternatywą jest na przykład autentykacja oparta o tokeny (np. OAuth), która jest bezpieczniejsza, ale bardziej skomplikowana w implementacji.
 
-Alternatywą jest korzystanie z uwierzytelniania typu `Bearer`, które jest bardziej bezpieczne, albo `Digest`, które wymaga więcej wymian między klientem a serwerem.
+Ważne jest, aby pamiętać, że wykorzystanie podstawowej autentykacji bez szyfrowania połączenia (HTTPS) jest niebezpieczne i naraża dane na przechwycenie.
 
-Detale implementacyjne zależą przede wszystkim od serwisu, z którym pracujemy. W przypadku GitHuba, na przykład, musisz przekazać swoje uwierzytelnianie tak, jak to zrobiliśmy w powyższym przykładzie, inaczej dostaniemy błąd.
-
-## Zobacz Też
-
-- [Dokumentacja PowerShell Invoke-RestMethod](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1)
-- [RFC 7617](https://tools.ietf.org/html/rfc7617) (The 'Basic' HTTP Authentication Scheme)
-- [Dokumentacja GitHub API](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api)
+## See Also (Zobacz również):
+- [About HTTP authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [Invoke-RestMethod documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod)

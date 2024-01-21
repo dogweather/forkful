@@ -1,7 +1,8 @@
 ---
-title:                "使用基本认证发送http请求"
-html_title:           "Bash: 使用基本认证发送http请求"
-simple_title:         "使用基本认证发送http请求"
+title:                "使用基本认证发送 HTTP 请求"
+date:                  2024-01-20T18:02:47.845181-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "使用基本认证发送 HTTP 请求"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,41 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么与为何？
+## 什么 & 为什么？
+发送带有基本认证的HTTP请求就是用用户名和密码向服务器请求数据。程序员这么做是为了保护敏感接口的安全，只让验证过的用户访问。
 
-HTTP基本身份认证请求是一种利用用户名和密码为HTTP请求提供授权的方式。程序员常常会使用此方式来处理那些需要验证用户身份的敏感请求。
-
-## 如何使用：
-
-使用Rust发送一个带有基本认证的HTTP请求并不复杂，我们可以利用 reqwest 这个库，这就是相关的代步：
-
+## 怎么做：
 ```Rust
-use reqwest::blocking::Client;
+use reqwest;
+use base64;
+use std::error::Error;
 
-fn main() {
-   let client = Client::new();
-   let res = client.get("http://httpbin.org/basic-auth/user/passwd")
-      .basic_auth("user", Some("passwd"))
-      .send();
-   match res {
-      Ok(_) => println!("成功获取请求！"),
-      Err(_) => println!("出现了错误。"),
-   };
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn Error>> {
+    // 用户名和密码
+    let username = "user";
+    let password = "pass";
+
+    // 编码认证信息
+    let auth = format!("{}:{}", username, password);
+    let encoded_auth = format!("Basic {}", base64::encode(auth));
+
+    // 创建请求客户端
+    let client = reqwest::Client::new();
+
+    // 发送带有基本认证的GET请求
+    let response = client.get("http://example.com/resource")
+        .header(reqwest::header::AUTHORIZATION, encoded_auth)
+        .send()
+        .await?;
+
+    // 解析响应
+    let status = response.status();
+    let body = response.text().await?;
+
+    println!("Status: {}", status);
+    println!("Body:\n{}", body);
+
+    Ok(())
 }
 ```
+执行上面的代码，如果认证成功，会打印如下输出：
+```
+Status: 200 OK
+Body:
+这是受保护的资源内容。
+```
 
-在这个代码中，我们使用 `.basic_auth("user", Some("passwd"))` 设置了基本认证的用户名及密码。函数的执行结果会通过 Rust 的 `match` 结构体进行处理。如果请求成功，将会打印 "成功获取请求！"，若请求失败，则打印 "出现了错误。"
+## 深入了解：
+发送带有基本认证的HTTP请求是一种很古老的认证方式，基于HTTP/1.0。比起现代方法（如OAuth 2.0），它简单直接但不够安全，因为用户名和密码是以Base64编码发送的，但未加密。
 
-## 深入剖析：
+这个认证方法的替代方案有很多，其中最常见的是令牌 (token) 基础的认证如Bearer认证。在一些更加安全的场合，可能会用到更复杂的认证机制，例如OAuth2。
 
-历史背景中，HTTP基本认证是 HTTP/1.0 标准中定义的一部分，用于提供用户与密码的验证方式。然而，这种方式并不安全，因为传输中的数据没有经过加密，并且服务器端将密码存入明文，因此现在已被更为安全的方式所替代。
+在Rust中实现时，我们通常用像`reqwest`这样的库，因为它提供了丰富的功能来简化HTTP请求过程。在通过HTTP发送认证信息前，使用`base64`库对其编码是标准做法。
 
-尽管如此，基本认证仍被广泛用于各种需要验证用户身份的场合，比如API测试等。不过在生产环境中使用时，必须经过SSL/TLS 的安全连接。
-
-Rust的reqwest库为HTTP基本认证提供了简单明了的实现。有别于直接操作headers，reqwest可以透明地处理base64编码及必要的头部信息。
-
-## 参考资料：
-
-- Rust reqwest 库的官方文档： [https://docs.rs/reqwest](https://docs.rs/reqwest)
-- HTTP基本认证的定义和概念： [https://zh.wikipedia.org/wiki/HTTP%E5%9F%BA%E6%9C%AC%E8%AE%A4%E8%AF%81](https://zh.wikipedia.org/wiki/HTTP%E5%9F%BA%E6%9C%AC%E8%AE%A4%E8%AF%81)
-- 更多有关HTTP认证的细节： [https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication)
+## 另请参阅：
+- Rust `reqwest` 库官方文档: [https://docs.rs/reqwest](https://docs.rs/reqwest)
+- HTTP认证基础: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- Rust `base64` 库官方文档: [https://docs.rs/base64](https://docs.rs/base64)

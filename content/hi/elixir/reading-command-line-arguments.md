@@ -1,7 +1,8 @@
 ---
-title:                "कमांड लाइन तर्कों को पढ़ना"
-html_title:           "Kotlin: कमांड लाइन तर्कों को पढ़ना"
-simple_title:         "कमांड लाइन तर्कों को पढ़ना"
+title:                "कमांड लाइन आर्गुमेंट्स पढ़ना"
+date:                  2024-01-20T17:56:06.239138-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "कमांड लाइन आर्गुमेंट्स पढ़ना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,40 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+Command line arguments वह जानकारी होती हैं जो हम एक प्रोग्राम को उसे चलाते समय देते हैं। ये इसलिए महत्वपूर्ण हैं क्योंकि इससे प्रोग्रामर्स को विभिन्न उपयोगकर्ता इनपुट्स पर आधारित परिणाम चलाने का मौका मिलता है।
 
-Command line arguments वो इनपुट होते हैं जो हम अपने प्रोग्राम को CLI (Command Line Interface) के माध्यम से देते हैं। प्रोग्रामर्स इसे use करते हैं क्योंकि इससे प्रोग्राम को फ्लेक्सिबल और रीयूसेबल बनाया जा सकता है।
+## How to: (कैसे:)
+Elixir में command line arguments पढ़ने के लिए `System.argv/0` का उपयोग किया जाता है। आइए एक साधारण उदाहरण के साथ देखते हैं।
 
-## कैसे करें:
-
-आप निम्नलिखित Elixir कोड का उपयोग करके command line arguments पढ़ सकते हैं। 
-
-```Elixir
-defmodule MyProgram do
+```elixir
+# greet.exs
+defmodule Greeter do
   def main(args) do
-    IO.inspect(args)
+    IO.puts "नमस्ते, #{Enum.join(args, " ")}!"
   end
 end
+
+Greeter.main(System.argv())
 ```
 
-आपके या उनके आउटपुट कुछ इस तरह का होगा:
+उपयोग करते हुए:
 
-```Elixir
-~$ elixir my_program.exs arg1 arg2 arg3
-["arg1", "arg2", "arg3"]
+```
+$ elixir greet.exs John Doe
+नमस्ते, John Doe!
 ```
 
-## गहराई में:
+## Deep Dive (गहराई में जानकारी)
+Command line arguments की सुविधा प्रोग्रामिंग के शुरुआती दिनों से है। Elixir में `System.argv/0` के अलावा `OptionParser` मॉड्यूल है जो अधिक जटिल ऑप्शन्स और flags को पार्स करने के काम आता है। Implementation के दौरान, यह ध्यान रखें कि command line arguments हमेशा string के रूप में पास होती हैं, इसलिए कभी-कभी आपको उन्हें उपयुक्त डेटा टाइप में बदलना पड़ सकता है।
 
-**ऐतिहासिक संदर्भ:** Command line arguments का उपयोग एक्सेक्यूटेबल प्रोग्रामों के लिए shell scripting के दिनों से होता आ रहा है। Elixir के पाठ्यक्रम में भी इसे बड़े महत्व के साथ स्थान दिया गया है।
-
-**विकल्प:** कमांड लाइन आर्गुमेंट्स के अलावा, आप फ़ाइल इनपुट, पर्यावरण चर, और स्टैंडर्ड इनपुट का भी उपयोग कर सकते हैं।
-
-**व्याख्यान विवरण:** Elixir में, `System.argv/0` फ़ंक्शन का उपयोग करके कमांड लाइन आर्गुमेंट्स पढ़े जा सकते हैं।
-
-## देखिए भी:
-
-अधिक जानकारी के लिए, आप निम्नलिखित स्रोतों से जुड़ सकते हैं:
-
-Elixir School ([https://elixirschool.com/hi/lessons/basics/otp-applications/#command-line-args](https://elixirschool.com/hi/lessons/basics/otp-applications/#command-line-args))
-Elixir Documentation ([https://hexdocs.pm/elixir/System.html](https://hexdocs.pm/elixir/System.html))
+## See Also (देखने योग्य स्रोत)
+- [Elixir's Official Documentation for System.argv/0](https://hexdocs.pm/elixir/System.html#argv/0)
+- [OptionParser Module Documentation](https://hexdocs.pm/elixir/OptionParser.html)

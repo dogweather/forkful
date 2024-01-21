@@ -1,6 +1,7 @@
 ---
 title:                "दो तारीखों की तुलना"
-html_title:           "Elixir: दो तारीखों की तुलना"
+date:                  2024-01-20T17:33:57.298481-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "दो तारीखों की तुलना"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,41 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या औऱ क्यों?
+## What & Why? (क्या और क्यों?)
+तिथियों की तुलना मतलब है दो तारीखों को एक-दूसरे के संबंध में देखना - कौन सी पहले है, बाद में है, या क्या दोनों समान हैं। प्रोग्रामर्स इसे शेड्यूलिंग, टाइम-ट्रैकिंग, या वैलिडेशन उद्देश्यों के लिए करते हैं।
 
-दो तारीखों की तुलना करना मतलब होता है समझना कि कौन सी तारीख पहली है और कौन सी दूसरी। प्रोग्रामर्स यह करते हैं ताकि उन्हें निर्धारित करने में मदद मिले कि कौन सी घटना पहले हुई थी और कौन सी बाद में।
-
-## कैसे करें:
-
-```Kotlin
+## How to: (कैसे करें:)
+```kotlin
 import java.time.LocalDate
 
 fun main() {
-    val date1 = LocalDate.of(2020, 1, 1)
-    val date2 = LocalDate.of(2021, 1, 1)
+    val date1 = LocalDate.of(2023, 3, 15)
+    val date2 = LocalDate.now()
+
+    println("Date 1: $date1")
+    println("Date 2: $date2")
 
     when {
-        date1.isBefore(date2) -> println("तारीख 1 पहले है।")
-        date1.isAfter(date2) -> println("तारीख 2 पहले है।")
-        else -> println("दोनों तारीखें समान हैं।")
+        date1.isBefore(date2) -> println("Date1 पहले हैं Date2 से.")
+        date1.isAfter(date2) -> println("Date1 बाद में है Date2 से.")
+        else -> println("Date1 और Date2 समान हैं.")
     }
 }
 ```
+सैंपल आउटपुट:
+```
+Date 1: 2023-03-15
+Date 2: 2023-04-05
+Date1 पहले हैं Date2 से.
+```
 
-उत्पादन: "तारीख 1 पहले है।"
+## Deep Dive (गहराई से जानकारी)
+तारीखों की तुलना करना प्रोग्रामिंग में एक सामान्य कार्य है और इतिहास में विभिन्न लाइब्रेरी और फंक्शंस इसके लिए बनाई गई हैं। Kotlin में, `java.time.LocalDate` जैसी नई जावा टाइम API का उपयोग अधिक सुरक्षित और सहज है, इसमें `isBefore()`, `isAfter()`, और `isEqual()` जैसे मेथ
 
-## गहराई में
+ड्स हैं जो ज़्यादा पठनीय और त्रुटि-मुक्त कोडिंग के दिशा में एक कदम है। इससे पहले, जावा में `java.util.Date` और `java.util.Calendar` थे, पर हाल की API में सुधारों से तिथियों की तुलना सरल और अधिक निश्चित होती जा रही है।
 
-**ऐतिहासिक संदर्भ:** जब जावा 8 ने LocalDate श्रेणी का परिचय दिया, Kotlin में तारीखों की तुलना करने का सबसे आम और सरल तरीका बन गया।
-
-**विकल्प:** हालांकि, यदि आपके पास LocalDate के इस्तेमाल का विकल्प नहीं है, तो आप compareTo फ़ंक्शन का इस्तेमाल कर सकते हैं, जो कि किसी अन्य तारीख के सापेक्ष एक तारीख की पूर्वता, उत्तरता या समानता पर आधारित एक इंटेजर यानी संख्या देता है।
-
-**विवरण:** LocalDate वर्ग के गुण `isBefore` और `isAfter` तारीखों की तुलना करने के लिए उपयोग होते हैं। `isBefore` तब true (सच) देता है जब वर्तमान तारीख पेसेड तारीख से पहली होती है, और `isAfter` दूसरी तारीख से बाद में होने पर true देता है। 
-
-## देखने के लिए 
-
-[Kotlin official Documentation](https://kotlinlang.org/docs/home.html)
-
-[Java 8 LocalDate API Docs](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-
-[Good resource for learning Kotlin](https://developer.android.com/kotlin/learn)
+## See Also (इसे भी देखें)
+- [Oracle's JavaDocs on LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)

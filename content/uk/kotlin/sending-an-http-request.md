@@ -1,7 +1,8 @@
 ---
-title:                "Надсилання http-запиту"
-html_title:           "Arduino: Надсилання http-запиту"
-simple_title:         "Надсилання http-запиту"
+title:                "Надсилання HTTP-запиту"
+date:                  2024-01-20T18:00:24.897375-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,37 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та Навіщо?
+## Що це таке & Навіщо?
+Надсилання HTTP запиту - це спосіб спілкування вашої програми з веб-сервісами, щоб отримати або відправити дані. Програмісти роблять це для інтеграції з API, а також для взаємодії з вебом.
 
-Відправлення HTTP-запиту - це процес, за допомогою якого програма встановлює зв'язок з веб-сервером, щоб отримати або відправити дані. Програмісти роблять це, щоб взаємодіяти з веб-ресурсами, наприклад, для отримання даних з API.
-
-## Як це робити:
+## Як це зробити:
+Запит HTTP у Kotlin можна виконати декількома способами. Один із популярних - використання бібліотеки ktor. Давайте спробуємо:
 
 ```Kotlin
-import java.net.URL
-import java.net.HttpURLConnection
+import io.ktor.client.*
+import io.ktor.client.engine.cio.*
+import io.ktor.client.request.*
+import io.ktor.client.statement.*
 
-fun main() {
-    val connection = URL("http://example.com").openConnection() as HttpURLConnection
-    connection.requestMethod = "GET"
+suspend fun main() {
+    val client = HttpClient(CIO)
     
-    val response = connection.inputStream.bufferedReader().use { it.readText() }  
-    println(response) // виводимо відповідь сервера
+    try {
+        val response: HttpResponse = client.get("https://ktor.io/")
+        println(response.status)
+        println(response.readText())
+    } finally {
+        client.close()
+    }
 }
 ```
-У цьому коді ми відкриваємо з'єднання з URL "http://example.com", встановлюємо метод запиту як "GET", а потім читаємо та виводимо відповідь сервера.
 
-## Поглиблений погляд:
+В результаті вас вітатиме статус відповіді та HTML вміст сторінки.
 
-Відправлення HTTP-запитів було ключовою частиною веб-програмування з моменту створення HTTP у 1991 році. У Kotlin це ще простіше за допомогою вбудованих бібліотек Java.
+## Поглиблений Розгляд:
+Написання HTTP запитів стало загальним завданням у програмуванні про повсякчасному зростанні мережевих сервісів та API. У давніші часи, це було більш складно та вимагало більше коду. Тепер, з бібліотеками як ktor або OkHttpClient, завдання стало набагато легшим.
 
-Ви також можете використовувати альтернативи, як-то OkHttp чи Ktor, для більш складних задач, таких як асинхронні запити або автоматичне обробка JSON. Однак у більшості випадків базові засоби Java будуть достатніми.
+Альтернативи ktor - це HttpClient з Java, Retrofit чи Apache HttpComponents. Кожна має свої особливості: Retrofit оптимізований під REST API, а HttpClient з Java - це більш низькорівневий інструмент.
 
-Використовуючи HttpURLConnection, ви вручну керуєте всіма аспектами відправки запитів, такими як встановлення заголовків, управління відповідями тощо.
+ktor використовує корутини Kotlin для асинхронних викликів, роблячи код чистим і легким для читання. Більше того, ktor дозволяє налаштовувати запити, додавати проміжне програмне забезпечення та обробляти відповіді з допомогою DSL.
 
-## Див. також:
-
-- OkHttp: https://square.github.io/okhttp
-- Ktor: https://ktor.io/clients/http-client.html
-- Більше інформації про HTTP-запити: https://developer.mozilla.org/uk/docs/Web/HTTP/Overview
-- HttpURLConnection: https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html
+## Дивись Також:
+- [OkHttp](https://square.github.io/okhttp/)
+- [Apache HttpComponents](https://hc.apache.org/)
+- [Retrofit](https://square.github.io/retrofit/)

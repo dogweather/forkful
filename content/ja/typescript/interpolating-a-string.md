@@ -1,6 +1,7 @@
 ---
 title:                "文字列の補間"
-html_title:           "Arduino: 文字列の補間"
+date:                  2024-01-20T17:52:10.250916-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "文字列の補間"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,42 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 文字列の補間とは何ですか? - TypeScriptの視点から見る
+## What & Why? (何となぜ？)
+文字列補間とは、文字列の中に変数や計算式の結果を埋め込むことです。これにより、動的なデータを使うメッセージやSQLのクエリなどを柔軟に作成することが可能になります。
 
-## なぜ&何のために？
+## How to: (やり方)
+```typescript
+let user = 'Yamada';
+let message = `こんにちは、${user}さん！`;
+console.log(message); // "こんにちは、Yamadaさん！"
 
-文字列の補間（String Interpolation）は、文字列の中に変数や式を埋め込む処理を指します。プログラマーがこれを行う理由は、動的な文字列の作成が容易になるからです。
-
-## どうやって行いますか？
-
-TypeScriptではバッククオート(``)を用いて、変数や式を${...}内に書くことで文字列補間を行えます。
-
-以下に例を示します：
-
-```TypeScript
-let name = "Yamada";
-console.log(`Hello, ${name}`);  
+let price = 1500;
+let taxRate = 0.1;
+let total = `合計: ${price * (1 + taxRate)}円`;
+console.log(total); // "合計: 1650円"
 ```
+上のコードはテンプレートリテラル（バッククォートで囲む）を使っています。変数や式を`${}`で囲むとその値が文字列に挿入されます。
 
-出力結果：
-
+## Deep Dive (探求)
+文字列補間はECMAScript 2015 (ES6)で導入されました。それ以前は、プラス記号を使用して文字列を連結する必要がありました。
+```typescript
+// ES5以前の例
+let user = 'Yamada';
+let message = 'こんにちは、' + user + 'さん！';
+console.log(message);
 ```
-Hello, Yamada
+テンプレートリテラルの利点は可読性が高く、複数行の文字列も簡単に扱える点です。また、関数を埋め込むこともできます。
+```typescript
+function totalPrice(price: number, taxRate: number): string {
+  return `合計: ${price * (1 + taxRate)}円`;
+}
+
+console.log(totalPrice(1500, 0.1)); // "合計: 1650円"
 ```
-このように、文字列内に直接値を展開することができます。
+さらに、タグ付きテンプレートリテラルを使えば、補間される値の処理方法をカスタマイズすることもできます。
 
-## 詳細な情報
-
-補間という概念は古いものであり、多くのプログラミング言語で既に採用されています。TypeScript以外にもPerlやRubyなどではすでに使われています。
-
-替わりに、伝統的な連結操作子+を使用することもできますが、補間は可読性と書きやすさで勝ると考えられています。
-
-TypeScriptでは、内部的にはテンプレートリテラルを使用して文字列補間が実装されています。
-
-## 参考になる情報
-
-以下に、文字列補間の詳細な情報についてのリンクを添付します：
-
-1. [MDN Web Docs - テンプレートリテラル](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Template_literals)
-
-2. [Stack Overflow - 文字列の補間(TypeScript)](https://stackoverflow.com/questions/31079081/typescript-string-interpolation)
+## See Also (関連する情報)
+- [Template literals (Template strings)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) - MDN Web Docs
+- [TypeScript Handbook: Template Strings](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html) - 公式TypeScriptハンドブック

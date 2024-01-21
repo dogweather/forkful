@@ -1,7 +1,8 @@
 ---
-title:                "디버그 출력을 인쇄하기"
-html_title:           "Clojure: 디버그 출력을 인쇄하기"
-simple_title:         "디버그 출력을 인쇄하기"
+title:                "디버그 출력을 찍어보기"
+date:                  2024-01-20T17:53:54.326117-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "디버그 출력을 찍어보기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,43 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜?
+## What & Why? (무엇 그리고 왜?)
+디버그 출력은 코드가 뭘 하고 있는지 보여줍니다. 프로그래머들이 이를 사용하는 건, 버그를 찾고 이해하기 쉽게 만들기 위해서죠.
 
-디버그 출력은 컴퓨터 프로그램에서 현재 상태나 변수 값을 출력하는 것을 말합니다. 이는 프로그래머들이 버그를 찾고 해결하기 위한 핵심적인 도구입니다.
-
-## 어떻게:
+## How to:
+TypeScript에서 디버그 출력하는 법은 간단합니다. 콘솔을 사용하세요.
 
 ```TypeScript
-// Simple console.log
-let a: number = 5;
-console.log('value of a:', a); // 출력: "value of a: 5"
-
-// Using console.dir to display object properties
-let obj = {name: 'Kim', age: 30};
-console.dir(obj); // 출력: "{ name: 'Kim', age: 30 }"
-
-// Debugging with console.trace 
-function foo() {
-    function bar() {
-        console.trace("trace"); // 스택 추적: bar, foo
-    }
-    bar();
+function debugExample() {
+    let debugMessage = "이 메시지 찍히면 내 코드가 여기 도달했다는 거지!";
+    console.log(debugMessage);
 }
 
-foo();
+debugExample();
+```
+출력 결과:
+```
+이 메시지 찍히면 내 코드가 여기 도달했다는 거지!
 ```
 
-## 심층 탐색
+에러 발견할 때 `console.error`를 써서 눈에 띄게 할 수도 있어요.
 
-디버그 출력은 프로그래밍의 역사와 거의 동일하게 오래 전부터 사용되어왔습니다. 굉장히 단순한 도구이지만, 효과적으로 사용하면 매우 강력합니다.
+```TypeScript
+if(somethingWentWrong) {
+    console.error("이런, 뭔가 잘못됐어!");
+}
+```
+출력 결과:
+```
+이런, 뭔가 잘못됐어!
+```
 
-디버그 출력의 대안으로는 디버거 도구 사용이 있습니다. 대부분의 IDE나 코드 에디터에서는 브레이크 포인트를 사용한 디버깅 도구를 제공하지만, 디버그 출력은 이러한 도구를 사용할 수 없는 상황이나, 로그 기록을 남기는데 걸맞습니다.
+## Deep Dive (심층 분석)
+디버그 출력의 역사는 프로그래밍의 역사만큼이나 길죠. 처음엔 조명 신호 나 프린터 출력이 전부였어요. 지금은 `console.log`가 일반적이고, 복잡한 디버거가 그 자리를 차지하고 있죠.
 
-구현 세부 사항은 출력 도구에 따라 다르지만 일반적으로 맨 아래 스택 프레임을 출력하는 console.trace 나 객체의 속성 검사에 이상적인 console.dir 같은 내장된 메소드를 사용합니다.
+`console.log` 외에도 `console.warn`, `console.error`, `console.info` 등 다양한 레벨의 로깅 메소드가 있습니다. 각각은 다른 목적과 중요도를 가지고 있어요.
 
-## 관련 자료
+타입스크립트에서도 자바스크립트와 같은 `console` 객체를 사용합니다. 그런데, 타입스크립트는 컴파일 타임에 추가적인 정보를 제공할 수 있어요. 예를 들어, 타입 에러가 발생한다면, 타입스크립트는 컴파일 시 에러 메시지를 출력할 것입니다.
 
-JavaScript 및 TypeScript의 콘솔 API에 대한 더 깊은 이해를 위해 아래 링크를 참고하세요.
+디버그 출력을 남발하면 코드를 읽기 어렵게 만들 수 있습니다. 그래서 출력을 꼭 필요한 곳에만 쓰는 게 좋아요. 또, 실제 운영 환경에선 불필요한 출력을 제거하거나 최소화하는 게 중요합니다.
 
-* MDN web docs: Console - [https://developer.mozilla.org/ko/docs/Web/API/Console](https://developer.mozilla.org/ko/docs/Web/API/Console)
-* Microsoft TypeScript Handbook: JavaScript interop - [https://www.typescriptlang.org/docs/handbook/2/objects.html](https://www.typescriptlang.org/docs/handbook/2/objects.html)
+## See Also (참고 자료)
+- [MDN Web Docs Console](https://developer.mozilla.org/en-US/docs/Web/API/Console)
+- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)

@@ -1,7 +1,8 @@
 ---
-title:                "Generera slumpmässiga nummer"
-html_title:           "Arduino: Generera slumpmässiga nummer"
-simple_title:         "Generera slumpmässiga nummer"
+title:                "Generera slumpmässiga tal"
+date:                  2024-01-20T17:49:31.324458-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generera slumpmässiga tal"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Numbers"
@@ -11,51 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att generera slumpmässiga tal handlar om att skapa ett tal som inte är förutsägbart. Programmerare gör det för att simulera chansprocesser, testa algoritmer under varierande förhållanden eller till exempel tilldela unika ID:n.
 
-Att generera slumptal är en process för att skapa nummer som inte kan förutsägas bättre än av ren slump. Programmerare gör detta för att skapa slumpmässighet i sina program, vilket är användbart i spel, simuleringar och testning.
+## Hur gör man:
+Du kan använda `Math.random()` för att generera ett basalt slumpmässigt tal mellan 0 (inkluderat) och 1 (exkluderat). Så här kör du:
 
-## Hur man gör:
+```Javascript
+// Skapar ett grundläggande slumpmässigt tal:
+let randomNum = Math.random();
+console.log(randomNum);
 
-Du kan generera ett slumptal i Javascript genom att använda Math.random-funktionen. Här är ett exempel:
+// För ett tal mellan 0 och 10:
+let randomNumToTen = Math.floor(Math.random() * 10);
+console.log(randomNumToTen);
 
-``` Javascript
-var slumpNummer = Math.random();
-console.log(slumpNummer);
+// För ett tal mellan 1 och 100:
+let randomNumOneToHundred = Math.floor(Math.random() * 100) + 1;
+console.log(randomNumOneToHundred);
 ```
-
-Detta kommer att spotta ut ett slumptal mellan 0 (inkluderat) och 1 (exkluderat). Till exempel:
-
-``` Javascript
-0.23710482585866
+Exempelutdata:
 ```
-
-Du kan även få ett slumptal mellan två specifika värden, som så:
-
-``` Javascript 
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-console.log(getRandomInt(5, 15));
-```
-
-Detta kan producera ett nummer mellan 5 och 15:
-
-``` Javascript
-7
+0.439857376102
+4
+57
 ```
 
 ## Djupdykning:
-
-Att generera slumptal är ett gammalt matematiskt och datavetenskapligt problem. Historiskt sett, förlitade sig tidig datorprogrammering på externa slumpgeneratorer, som kastning av tärningar eller radioaktivt nedfall.
-
-Det finns andra sätt att generera slumptal i Javascript, till exempel förlita sig på tredjepartsbibliotek som `lodash` eller `chance`. 
-
-Det är viktigt att notera att Math.random() inte genererar kryptografiskt säkra slumptal. Om du behöver kryptografiskt säkra slumptal bör du istället använda funktionen `window.crypto.getRandomValues()`.
+Slumpmässiga nummergenerering har en lång historia och är avgörande för kryptografi. JavaScripts `Math.random()` är egentligen inte helt slumpmässig, utan pseudoslumpmässig – tillräckligt för många ändamål men inte för kryptografisk säkerhet. Vill du ha kryptografisk säkerhet, använd `crypto.getRandomValues()`. Det kan vara intressant att veta att algoritmen bakom `Math.random()` kan variera mellan olika JavaScript-motorer, vilket betyder att dess resultat inte är helt konsekventa över olika plattformar.
 
 ## Se även:
-
-1. [MDN Web Docs: Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-3. [NPM: Lodash](https://www.npmjs.com/package/lodash), [NPM: Chance](https://www.npmjs.com/package/chance)
-4. [Säkerhet.stackexchange: Använda Math.random() för kryptografiska ändamål](https://security.stackexchange.com/questions/14357/is-javascripts-math-random-cryptographically-secure)
+- MDN Web Docs för `Math.random()`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+- MDN Web Docs för `crypto.getRandomValues()`: https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues
+- En djupgående artikel om slumpmässighet och dess användning i datorprogrammering från 2ality: http://2ality.com/2017/05/seeding-rng.html

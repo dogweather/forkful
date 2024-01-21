@@ -1,6 +1,7 @@
 ---
 title:                "웹 페이지 다운로드하기"
-html_title:           "Bash: 웹 페이지 다운로드하기"
+date:                  2024-01-20T17:45:05.246525-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "웹 페이지 다운로드하기"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,40 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+웹 페이지 다운로드는 인터넷에서 HTML 문서를 로컬 장치로 가져오는 것입니다. 프로그래머들은 데이터를 수집하거나 웹 콘텐츠를 분석하기 위해 이 작업을 합니다.
 
-웹페이지 다운로드란 서버로부터 HTML, CSS, 이미지 등 웹 페이지 구성 요소를 로컬에 받아오는 것입니다. 이는 웹 데이터 크롤링, 테스트 데이터 수집 등 프로그래밍 작업에 익살스럽게 활용됩니다.
-
-## 어떻게 하는가:
-
-Rust를 이용해 웹페이지를 다운로드하는 가장 간단한 예시는 `reqwest` 패키지를 이용하는 것입니다.
+## How to: (방법)
+Rust에서는 `reqwest` 크레이트를 사용해 웹 페이지를 다운로드할 수 있습니다. 비동기 코드 예제를 포함해 간단하게 시작해보겠습니다.
 
 ```rust
-use reqwest;
+// Cargo.toml 파일에 의존성 추가
+// [dependencies]
+// reqwest = "0.11"
+// tokio = { version = "1", features = ["full"] }
 
 #[tokio::main]
 async fn main() -> Result<(), reqwest::Error> {
-    let content = reqwest::get("https://www.google.com")
-        .await?
-        .text()
-        .await?;
-    println!("{}", content);
+    let url = "http://example.com";
+    let response = reqwest::get(url).await?;
 
+    let contents = response.text().await?;
+    println!("웹 페이지 내용: {}", contents);
     Ok(())
 }
 ```
 
-이 코드를 실행하면 google.com의 HTML 페이지를 다운로드 받아 콘솔에 출력할 수 있습니다.
+이 코드를 실행하면 `http://example.com` 웹 페이지의 HTML 내용이 출력됩니다.
 
-## 심층 탐구:
+## Deep Dive (심층 분석)
+웹 페이지를 다운로드하는 것은 웹 크롤링의 기초입니다. 초기 웹에서는 `wget`과 `curl` 같은 도구를 사용했습니다. Rust에서는 `reqwest`와 같은 라이브러리가 네트워크 요청을 처리하고 `tokio`는 비동기 작업을 다룹니다.
 
-웹페이지 다운로드는 월드 와이드 웹이 폭발적으로 성장하면서 중요한 개념으로 자리잡았습니다. 다양한 언어와 라이브러리가 이를 쉽게 구현할 수 있도록 도와줍니다. Rust에서는 위에서 살펴본 `reqwest` 외에도 `hyper`, `isahc`와 같은 패키지들이 있습니다. 
+`reqwest`는 기본적으로 비동기 입니다. Rust의 비동기 패턴은 효율적인 I/O 작업을 가능하게 해 서버 또는 고성능 애플리케이션에 적합합니다. `tokio`는 Rust의 비동기 런타임이며, `await` 키워드로 비동기 작업을 쉽게 처리할 수 있습니다.
 
-이런 라이브러리들은 대부분 내부적으로 HTTP/HTTPS 프로토콜을 통한 요청-응답 모델을 구현하고 있습니다. 자세한 분석과 개인화를 위해 이런 라이브러리들의 소스 코드를 확인하는 것도 좋은 학습 방법입니다.
+다른 언어의 `requests`나 `http` 라이브러리처럼, `reqwest`도 쿠키, 리다이렉션, JSON 등 흔히 필요로 하는 HTTP 기능들을 지원합니다.
 
-## 참고 문헌:
-
-- Rust `reqwest`: https://docs.rs/reqwest/
-- Rust `hyper`: https://docs.rs/hyper/
-- Rust `isahc`: https://docs.rs/isahc/
-- HTTP/HTTPS 프로토콜: https://developer.mozilla.org/ko/docs/Web/HTTP/Overview
+## See Also (참고 자료)
+- [Rust `reqwest` documentation](https://docs.rs/reqwest/)
+- [Rust `tokio` project](https://tokio.rs/)
+- [Mozilla Developer Network (MDN) - HTTP overview](https://developer.mozilla.org/docs/Web/HTTP/Overview)
+- [`curl` command line tool](https://curl.se/)
+- [`wget` command line tool](https://www.gnu.org/software/wget/)

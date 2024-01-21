@@ -1,6 +1,7 @@
 ---
 title:                "Пошук та заміна тексту"
-html_title:           "C++: Пошук та заміна тексту"
+date:                  2024-01-20T17:57:48.897118-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Пошук та заміна тексту"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,36 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
-
-Пошук та заміна тексту - це процес виявлення певного шаблону або фрази у тексті та його заміна. Програмісти роблять це для автоматизації та оптимізації процесів редагування коду.
+## Що і чому?
+Searching and replacing text means finding specific sequences of characters in a string and swapping them with something else. Programmers do this for tasks like correcting errors, changing variable names, or updating data across multiple files.
 
 ## Як це зробити:
-
-Ось простий приклад, як це можна реалізувати в Elixir за допомогою функції `String.replace/3`.
-
 ```elixir
-original_string = "Hello, World"
-new_string = String.replace(original_string, "World", "Elixir")
-IO.puts new_string
+original_text = "The quick brown fox jumps over the lazy dog"
+search_pattern = "lazy"
+replacement = "energetic"
+
+fixed_text = String.replace(original_text, search_pattern, replacement)
+
+IO.puts fixed_text
+```
+Output:
+```
+The quick brown fox jumps over the energetic dog
 ```
 
-В результаті ви отримаєте:
+## Занурення у глибину
+Originally, searching and replacing text was a feature in text editors, evolving as a handy tool for programming. Elixir's `String.replace/3` function makes it straightforward, but Regex can be used when more complex patterns are involved. Alternatives include `String.replace_leading/3` or `String.replace_trailing/3` for more specific use cases. Under the hood, the `String` module handles Unicode-compliant character data, which means your search and replace operations are reliable across various languages and special characters.
 
-```
-"Hello, Elixir"
-```
-
-## Поглиблений огляд:
-
-1. Історичний контекст: Пошук та заміна тексту є основним функционалом, що присутній у більшості мов програмування з самого початку.
-
-2. Альтернативи: Elixir також представляє функцію `String.split/1`, яка розділяє рядок за певним шаблоном, а потім об’єднує його назад з використанням `Enum.join/1` і новим значенням.
-
-3. Роз'яснення деталей реалізації: Функція `String.replace/3` у Elixir працює шляхом перетворення рядка на список символів, пошуку шаблону, його заміни та об'єднання списоку назад у рядок.
-
-## Дивіться також:
-
-- Офіційна документація Elixir: https://hexdocs.pm/elixir/String.html
-- Практичний підхід до рядків у Elixir: https://joaquimadraz.com/elixir/command-lines-string-manipulation/
-- Руководство по регулярних виразах в Elixir: https://elixir-lang.org/getting-started/regexes-and-pattern-matching.html
+## Див. також
+- Elixir's official documentation for the `String` module: [hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
+- Regular Expressions in Elixir: [hexdocs.pm/elixir/Regex.html](https://hexdocs.pm/elixir/Regex.html)
+- Practical Elixir programming tips: [elixirschool.com/en](https://elixirschool.com/en)

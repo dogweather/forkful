@@ -1,7 +1,8 @@
 ---
-title:                "Teilzeichenketten extrahieren"
-html_title:           "PowerShell: Teilzeichenketten extrahieren"
-simple_title:         "Teilzeichenketten extrahieren"
+title:                "Teilstrings extrahieren"
+date:                  2024-01-20T17:45:17.466899-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Teilstrings extrahieren"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,38 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und Warum?
-
-Das Extrahieren von Teilstrings (substrings) bedeutet, bestimmte Teile einer Zeichenkette auszuwählen und zu isolieren. Programmierer machen dies, um Informationen zu analysieren, zu filtern oder zu manipulieren.
+## Was & Warum?
+Das Extrahieren von Teilstrings bedeutet, spezifische Abschnitte eines Strings zu isolieren. Programmierer machen das, um Daten zu manipulieren, zu analysieren oder zu validieren.
 
 ## So geht's:
-
-In Elixir können wir die Funktion `String.slice/3` verwenden, um Teilstrings zu extrahieren. Hier ist ein einfaches Beispiel:
-
 ```elixir
-str = "Elixir ist toll"
-substring = String.slice(str, 0, 6)
-IO.puts substring # Ausgabe: "Elixir"
+string = "Hallo, Welt!"
+
+# Extrahiere einen Teilstring mit einer Startposition und einer Länge
+teil = String.slice(string, 7, 5)
+IO.puts(teil) # Ausgabe: "Welt!"
+
+# Benutze einen Bereich, um den Teilstring zu bekommen
+teil_bereich = String.slice(string, 7..11)
+IO.puts(teil_bereich) # Ausgabe: "Welt!"
 ```
 
-Ein weiteres Beispiel zeigt, wie man den letzten Teil einer Zeichenkette extrahiert:
+## Tiefgang
+Teilstrings in Elixir zu extrahieren, ist dank des `String`-Moduls ein Kinderspiel. Früher, in Sprachen wie C, musste man Zeichen für Zeichen verarbeiten – langsam und fehleranfällig. Elixir hingegen nutzt die binäre Musterabgleichsfunktion von Erlang, was den Vorgang schnell und zuverlässig macht. Du hast Alternativen: `binary_part/3` für Binärdaten oder sogar Regex, wenn's komplizierter wird. Unter der Haube konvertiert Elixir Strings in Binärdaten und arbeitet mit Bytes, nicht mit Zeichen, was mit UTF-8 ein bisschen tricky sein kann.
 
-```elixir
-str = "Elixir ist toll"
-substring = String.slice(str, -4, 4)
-IO.puts substring # Ausgabe: "toll"
-```
-
-## Deep Dive
-
-Die Extraktion von Teilstrings ist eine grundlegende Funktion jedes modernen Programmiersprachen. In Elixir wird sie durch das `:binary` Modul ermöglicht, das die binäre Datenstruktur der erlang Maschine nutzt.
-
-Alternativ zur `String.slice/3` Methode, können Sie auch die `:binary.part/2` Funktion verwenden. Sie kann etwas flexibler sein, erfordert aber ein bisschen mehr Code.
-
-In Sachen Implementierung wird das Extrahieren von Teilstrings in Elixir tatsächlich sehr effizient ausgeführt. Dies liegt größtenteils an der Art und Weise, wie erlang Binärdateien handhabt. Statt eine Kopie des Teilstrings zu erstellen, behält es einfach einen Verweis auf den ursprünglichen String und verschiebt die Start- und/oder Endzeiger.
-
-## Siehe auch
-
-- Elixir offizielle Dokumentation: [String](https://hexdocs.pm/elixir/String.html) und [:binary](http://erlang.org/doc/man/binary.html) Modul
-- Erlang Dokumentation: [Einführung in Binärdateien](http://erlang.org/doc/programming_examples/bit_syntax.html)
-- Artikel: [Effiziente Zeichenkettenmanipulation in Erlang](https://medium.com/@jlouis666/efficient-string-handling-in-erlang-2d7e65ab0143)
+## Siehe Auch
+- Elixir-Dokumentation zu `String.slice/3`: https://hexdocs.pm/elixir/String.html#slice/3
+- Erlang's Funktionen für Binärdaten: http://erlang.org/doc/man/binary.html
+- Ruby's `String#slice` Methode zum Vergleich: https://ruby-doc.org/core/String.html#method-i-slice

@@ -1,7 +1,8 @@
 ---
-title:                "स्ट्रिंग का अंतर्कलन"
-html_title:           "Arduino: स्ट्रिंग का अंतर्कलन"
-simple_title:         "स्ट्रिंग का अंतर्कलन"
+title:                "स्ट्रिंग इंटरपोलेशन"
+date:                  2024-01-20T17:50:38.283930-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग इंटरपोलेशन"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,31 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+स्ट्रिंग इंटरपोलेशन से आशय वेरिएबल्स और एक्सप्रेशन्स को स्ट्रिंग के अंदर सीधे डालने से है. ये तकनीक प्रोग्रामर्स को कोड को और पठनीय और मेंटेन करने में आसान बनाती है.
 
-स्ट्रिंग इंटरपोलेशन मतलब किसी स्ट्रिंग के भीतर वेरियेबल का मूल्य सम्मिलित करना। प्रोग्रामर्स इसे कोड को पठनीय और संवादात्मक बनाने के लिए करते हैं।
-
-## कैसे करें:
-
-Clojure में, आप `str` फ़ंक्शन का उपयोग करके स्ट्रिंग इंटरपोलेशन कर सकते हैं। नीचे उदाहरण देखें:
-
+## How to: (कैसे करें)
 ```Clojure
-(def my-name "Raju")
-(def my-message (str "नमस्ते, " my-name))
+;; स्ट्रिंग इंटरपोलेशन का उपयोग कैसे करें
+
+;; clojure.core/str का उपयोग करके
+(def name "विश्वजीत")
+(def message (str "Hello, " name "! कैसे हैं आप?"))
+(println message) ; आउटपुट: Hello, विश्वजीत! कैसे हैं आप?
+
+;; format फंक्शन का उपयोग करके
+(def message (format "Hello, %s! कैसे हैं आप?" name))
+(println message) ; आउटपुट: Hello, विश्वजीत! कैसे हैं आप?
 ```
-ऊपर के कोड का आउटपुट ऐसा होगा:
-```
-नमस्ते, Raju
-```
 
-## गहराई में:
+## Deep Dive (गहराई से जानकारी)
+स्ट्रिंग इंटरपोलेशन का विचार नया नहीं है; यह कई प्रोग्रामिंग भाषाओं में सदियों से उपयोग हो रहा है. इसके विपरीत, Clojure में अन्य भाषाओं की तरह बिल्ट-इन स्ट्रिंग इंटरपोलेशन नहीं होता है. हम clojure.core/str या format जैसे फंक्शन्स का उपयोग करके इसे हासिल कर सकते हैं.
 
-1. ऐतिहासिक संदर्भ: Clojure का पहला संस्करण 2007 में आया था और तब से यह स्ट्रिंग इंटरपोलेशन का समर्थन करता आ रहा है।
-2. वैकल्पिक: क्लोज़र में, आप `format` फ़ंक्शन का भी उपयोग कर सकते हैं, लेकिन `str` फ़ंक्शन का उपयोग करना अधिक सीधा होता है।
-3. कार्यान्वयन विवरण: `str` फ़ंक्शन Clojure के आंतर्निक आरक्षित शब्दों में से एक है और इसे स्थानांतरित करने के लिए `StringBuilder` का उपयोग करता है।
+Clojure में एक और विकल्प `clojure.pprint/cl-format` होता है, जो अधिक जटिल फॉर्मेटिंग ऑपरेशन्स को सपोर्ट करता है, लेकिन यह शुरुआती के लिए कठिन हो सकता है.
 
-## भी देखें:
+कई क्लोजर लाइब्रेरीज जैसे कि `hiccup` वेब टेम्प्लेटिंग में स्ट्रिंग इंटरपोलेशन का उपयोग करती हैं. 
 
-और अधिक जानने के लिए, आप निम्नलिखित स्रोतों पर जा सकते हैं:
-1. Clojure के आधिकारिक पुस्तकालय [str function](https://clojuredocs.org/clojure.core/str)
-3. [Format function](https://clojuredocs.org/clojure.core/format) के उपयोग के बारे में पढ़ें।
+## See Also (और देखें)
+- Clojure `str` documentation: [str | Clojure Docs](https://clojuredocs.org/clojure.core/str)
+- Clojure `format` documentation: [format | Clojure Docs](https://clojuredocs.org/clojure.core/format)
+- `clojure.pprint/cl-format` for advanced formatting: [cl-format | Clojure Pretty Print](https://clojuredocs.org/clojure.pprint/cl-format)

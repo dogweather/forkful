@@ -1,6 +1,7 @@
 ---
 title:                "Lecture des arguments de ligne de commande"
-html_title:           "Ruby: Lecture des arguments de ligne de commande"
+date:                  2024-01-20T17:55:49.759452-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,36 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce & Pourquoi?
-Lecture d'arguments de ligne de commande signifie que notre programme récupère des données directement saisies par l'utilisateur lors de l'exécution. Les programmeurs le font pour rendre le programme plus interactif, et peuvent modifier le comportement du programme sans modifier le code source.
+## What & Why?
+Lire les arguments de la ligne de commande, ça consiste à récupérer ce que l'utilisateur tape après le nom de ton script. On fait ça pour rendre nos scripts flexibles et interactifs.
 
-## Comment faire:
-La façon la plus simple d'accéder aux arguments de ligne de commande en Fish Shell est d'utiliser la variable préétablie `argv`. Voyons comment ça fonctionne.
+## How to:
 ```Fish Shell
-function afficher_args
-    for arg in $argv
-        echo "L'argument est: $arg"
-    end
+# Script: greet.fish
+for arg in $argv
+    echo "Salut, $arg !"
 end
 ```
-Appelons notre fonction avec quelques arguments:
-```Fish Shell
-afficher_args ceci est un test
+Exécution et sortie :
 ```
-Cela produit la sortie:
-```Fish Shell
-L'argument est: ceci
-L'argument est: est
-L'argument est: un
-L'argument est: test
+> fish greet.fish Monde Utilisateur
+Salut, Monde !
+Salut, Utilisateur !
 ```
-## Plongée en profondeur
-Historiquement, les arguments de ligne de commande sont une fonctionnalité présente dans les premiers systèmes Unix, offrant une manière simple d'interagir directement avec des scripts et des programmes. Dans Fish Shell, nous avons `argv` comme alternative. C'est une variable globale, accessible partout dans votre script.
+Utilisez `$argv` pour accéder aux arguments. C'est simple et efficace.
 
-Se familiariser avec les arguments de ligne de commande en Fish Shell est crucial, surtout si vous envisagez de créer des scripts interactifs et personnalisables. 
+## Deep Dive
+Historiquement, les shells ont toujours permis de passer des arguments pour des scripts shell, et Fish suit cette tradition. En comparaison, les anciens shells comme Bash utilisent `$1`, `$2`, etc., pour accéder aux arguments; Fish a choisi un tableau `$argv` pour plus de clarté. Côté implémentation, Fish gère les arguments comme des chaînes de caractères dans le tableau `$argv`, qu'on peut ensuite manipuler comme on veut avec les commandes et fonctions Fish.
 
-## Voir aussi
-Pour plus d'informations sur la programmation en Fish Shell:
-- La page de manuel officielle de Fish Shell: [Link](https://fishshell.com/docs/current/index.html)
-- Un tutoriel complet sur la lecture des arguments de ligne de commande en Fish Shell :
-[Link](https://fishshell.com/docs/current/tutorial.html#tut_scripting)
+## See Also
+- Documentation officielle de Fish sur les variables spéciales : [fishshell.com/docs/current/index.html#variables-special](https://fishshell.com/docs/current/index.html#variables-special)
+- Tutoriel Fish pour débutants : [learnxinyminutes.com/docs/fish/](https://learnxinyminutes.com/docs/fish/)

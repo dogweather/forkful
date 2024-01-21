@@ -1,7 +1,8 @@
 ---
-title:                "Ladda ner en webbsida"
-html_title:           "Bash: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Hämta en webbsida"
+date:                  2024-01-20T17:44:09.685386-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Hämta en webbsida"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,35 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# En snabb introduktion till att ladda ner webbsidor med Haskell
-
 ## Vad & Varför?
-Att ladda ner en webbsida innebär att hämta HTML-koden som webbläsaren renderar till webbsidans visuella format. Programmerare gör detta ofta för att analysera webbplatsers innehåll eller skrapa data.
+Att ladda ner en webbsida innebär att hämta dess HTML-kod från servern till din dator. Programmerare gör detta för att analysera innehållet, testa servrar eller automatisera datainsamling.
 
-## Så här gör du:
-Låt oss använda `http-conduit`-biblioteket i Haskell för att ladda ner en webbsida. Installera biblioteket med kommandot:
-```haskell
-cabal install http-conduit
-```
-och här är ett enkelt exempel på hur man använder det:
-```haskell
-import Network.HTTP.Conduit (simpleHttp)
+## Hur man gör:
+För att ladda ner en webbsida i Haskell kan vi använda `http-conduit`-paketen. Se till att du har GHC installerad och att du har konfigurerat ett nytt stack-projekt. Lägg till `http-conduit` i dina `build-depends` i `package.yaml` eller ditt `.cabal`-fil.
 
+```Haskell
+import qualified Data.ByteString.Lazy as LBS
+import Network.HTTP.Simple
+
+main :: IO ()
 main = do
-    body <- simpleHttp "http://example.com"
-    putStrLn $ take 100 body
+    response <- httpLBS "http://example.com"
+    let body = getResponseBody response
+    LBS.putStr body
 ```
-När du kör det här programmet laddar det ner webbsidan `http://example.com` och skriver ut de första 100 tecknen av dess innehåll.
 
-## Fördjupning
-Att ladda ner webbsidor är något som programmerare har behövt göra sedan webbens födelse. Ett flertal bibliotek och verktyg finns tillgängliga för Haskell, till exempel `http-client`, `http-streams` och `Wreq`. 
+Kör ditt program och du borde se HTML-koden för "http://example.com" skrivas ut i terminalen.
 
-Det historiska kontextet för detta gäller att förstå hur HTTP-protokollet fungerar, vilket är den underliggande tekniken för hur webbläsare laddar ner webbsidor. Det är en bra idé att ha en viss förståelse för HTTP när du utför den här typen av programmering.
+## Fördjupning:
+När Tim Berners-Lee uppfann webben på 1990-talet, blev nedladdning av webbsidor grundläggande för att navigera på internet. I Haskell finns det flera bibliotek för att göra detta men `http-conduit` är populär tack vare sin enkelhet och effektivitet. Det använder sig av conduits för att hantera dataströmmar, vilket hjälper till att hantera stora responsstorlekar.
 
-När det kommer till implementering, ger `http-conduit`-biblioteket oss en högnivå-API för att göra HTTP-förfrågningar. Funktionen `simpleHttp` tar en URL som sträng och returnerar en `IO ByteString` som innehåller webbsidans innehåll. Vi använder `putStrLn`-funktionen för att skriva ut det till konsolen.
+Som alternativ till `http-conduit` kan du använda `wget` eller `curl` i ett shell-skript eller via `System.Process` i Haskell. För ännu enklare fall där felhantering och prestanda inte är lika kritiska, kan även `Network.HTTP.simpleHTTP` och `urlDownloadToFile` vara tillräckliga.
 
-## Referenser
-För mer information om ämnet, se följande källor:
+När det gäller implementeringsdetaljer, så hanterar `http-conduit` detaljer som omdirigeringar och skapar `Request`-objekt för dig. All data som mottas är i `ByteString`, och du kan använda funktioner från `Data.ByteString.Lazy` för att hantera den.
 
-1. [Haskell http-conduit bibliotek](https://hackage.haskell.org/package/http-conduit)
-2. [HTTP protokollet](https://sv.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+## Se även:
+- The `http-conduit` package on Hackage: https://hackage.haskell.org/package/http-conduit
+- Haskell documentation for `http-conduit`: http://hackage.haskell.org/package/http-conduit-2.3.7.3/docs/Network-HTTP-Simple.html
+- Real World Haskell (bok) som går igenom nätverksprogrammering: http://book.realworldhaskell.org/
+- Haskell Wiki för nätverksrelaterade ämnen: https://wiki.haskell.org/Network_programming

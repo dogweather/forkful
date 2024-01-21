@@ -1,6 +1,7 @@
 ---
 title:                "HTTP 요청 보내기"
-html_title:           "Clojure: HTTP 요청 보내기"
+date:                  2024-01-20T17:59:56.970285-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,35 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 필요할까?
-HTTP 요청을 보내는 것은 서버에게 정보를 요청하거나 전송하는 프로세스입니다. 프로그래머들은 이를 통해 웹 사이트 또는 API로부터 데이터를 가져오거나 데이터를 보낼 수 있습니다.
+## What & Why? (무엇이며, 왜?)
+HTTP 요청 보내기는 서버에 정보를 요청하거나 데이터를 전송하는 통신 방식입니다. 프로그래머들은 API와 상호작용하거나 웹 서비스에 데이터를 가져오고 보내기 위해 이 방법을 사용합니다.
 
-## 사용 방법
-Kotlin에서 HTTP 요청을 보내려면 Ktor 라이브러리를 이용하는 방법이 있습니다. 간단한 HTTP GET 요청 보내는 코드를 살펴봅시다.
+## How to: (방법)
+Kotlin에서 HTTP 요청을 보내는 기본적인 예제로, 여기에 `HttpURLConnection`을 사용한 코드가 있습니다.
 
-```Kotlin
-import io.ktor.client.*
-import io.ktor.client.request.*
+```kotlin
+import java.net.HttpURLConnection
+import java.net.URL
 
-suspend fun main() {
-    val client = HttpClient()
+fun sendGetRequest() {
+    val url = URL("http://example.com/api/items")
+    with(url.openConnection() as HttpURLConnection) {
+        requestMethod = "GET"  // 요청 방식 설정
+        
+        println("Response Code: $responseCode") // 응답 코드 출력
+        
+        inputStream.bufferedReader().use {
+            it.lines().forEach { line ->
+                println(line)
+            }
+        }
+    }
+}
 
-    val response: String = client.get("https://jsonplaceholder.typicode.com/posts/1")
-
-    println(response)
-    client.close()
+fun main() {
+    sendGetRequest()
 }
 ```
-위의 예제에서는 JSONPlaceholder라는 테스트용 API로부터 정보를 가져오고 있습니다.
 
-## 본문
-웹에 연결할 수 있는 기능을 가진 언어 중 하나로, Kotlin은 HTTP 요청 작업에 적합합니다. 초기에는 Java를 기반으로 개발되었기 때문에, 이전의 Java 라이브러리를 활용하거나, 더 현대적인 방식으로 Ktor 또는 Fuel과 같은 라이브러리를 사용할 수 있습니다.
+실행하면 서버의 응답 코드와 응답 본문이 출력됩니다.
 
-HTTP 요청은 다양한 방식으로 보낼 수 있으며 GET, POST, PUT, DELETE 등의 메소드가 있습니다. 이를 통해, 프로그래머는 서버와의 데이터 교환을 유연하게 관리할 수 있습니다.
+## Deep Dive (심층 분석)
+HTTP 요청은 인터넷의 기본적인 구성 요소입니다. 원래 1991년에 HTTP/0.9가 도입되었습니다. 오늘날에는 다양한 라이브러리들로 이 작업을 더 쉽게 할 수 있습니다. 예를 들어, `OkHttp`, `Retrofit`, `Ktor` 등이 있습니다. 이들은 `HttpURLConnection`보다 더 많은 기능을 제공하고 코틀린과 잘 맞는 현대적인 API를 사용합니다.
 
-Kotlin에서 사용하는 라이브러리는 내부적으로 소켓을 사용하여 서버와 통신합니다. 이 과정에서 생기는 다양한 에러를 잘 처리하여 안전하고 안정적인 데이터 요청과 전송이 가능합니다.
-
-## 참고 자료
-- Ktor 공식 문서: [https://ktor.io/clients/http-client.html]
-- HTTP 메소드에 대한 자세한 설명: [https://developer.mozilla.org/ko/docs/Web/HTTP/Methods]
-- 서버와 클라이언트 통신에 대한 이해: [https://developer.mozilla.org/ko/docs/Learn/Server-side/First_steps/Client-Server_overview]
+## See Also (더보기)
+- [OkHttp GitHub Repository](https://github.com/square/okhttp)
+- [Retrofit GitHub Repository](https://github.com/square/retrofit)
+- [Ktor Documentation](https://ktor.io/)
+- [HTTP 요청에 대한 MDN 설명](https://developer.mozilla.org/ko/docs/Web/HTTP/Methods)

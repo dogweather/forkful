@@ -1,7 +1,8 @@
 ---
-title:                "אינטרפולציה של מחרוזת"
-html_title:           "Arduino: אינטרפולציה של מחרוזת"
-simple_title:         "אינטרפולציה של מחרוזת"
+title:                "שרבוב מחרוזת"
+date:                  2024-01-20T17:50:23.913812-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרבוב מחרוזת"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,22 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-אינטרפולציה של מחרוזת היא ההכנסה של משתנים לתוך מחרוזת. זה מאפשר למתכנתים ליצור מחרוזות מעורבות באופן יעיל ונוח יותר.
+## What & Why? מה ולמה?
 
-## איך לעשות?
-חתיכת קוד שמדגימה אינטרפולציה של מחרוזת ב-Arduino:
+מילוי תבנית עם מחרוזות הוא שיטה להכניס משתנים לתוך מחרוזת טקסט. תכנתי עושים את זה כדי לעשות קוד גמיש יותר ולייצר מידע דינמי למשתמש.
+
+## How to: איך לעשות:
 
 ```Arduino
-char temp[100];
-int sensorVal = analogRead(A0);
-sprintf(temp, "ערך החיישן הוא %d", sensorVal);
-Serial.println(temp);
+char name[] = "דני";
+int age = 30;
+char buffer[50];
+
+// פורמטים ומילוי תבנית
+sprintf(buffer, "שלום, קוראים לי %s ואני בן %d.", name, age);
+
+// הדפסת התוכן למסוף הסיריאלי
+Serial.begin(9600);
+Serial.println(buffer);
+
+// הדפסת התוצאה:
+// שלום, קוראים לי דני ואני בן 30.
 ```
-הפלט הצפוי הוא: "ערך החיישן הוא x" כאשר "x" הוא הערך שהוחזר מהקריאה ל-analogRead(A0).
+זכרו להתחיל תקשורת סיריאלית לפני הדפסה למסוף.
 
-## צלילה עמוקה
-אינטרפולציה של מחרוזות היא שיטה שלה השפעות עמוקות בתחום התכנות מאז שנולדה.  על פי מקורות, האינטרפולציה של מחרוזות התפתחה מתחילה בשפת התכנות Perl. בשפות תכנות אחרות, כמו Python וJavaScript, ישנם גם תחליפים לsprintf. עם זאת, בארדואינו, הפונקציה sprintf מהווה את הגישה הנפוצה ביותר לאינטרפולציה של מחרוזות.
+## Deep Dive צלילה עמוקה:
 
-## ראה גם
-עיינו במקורות הבאים למידע נוסף:
+מילוי תבנית מתמצאת בשפות רבות ונולדה מצורך לערבב טקסטים ומשתנים בצורה נוחה. ב-Arduino, `sprintf` היא הפונקציה המאפשרת זאת. חלופות כוללות שימוש במחלקת `String` עם אופרטורים כמו `+` לחיבור מחרוזות, אבל זו גישה יקרה יותר בזיכרון. `sprintf` אמנם יציבה, אבל דורשת זהירות כדי למנוע חריגה מגבולות המערך.
+
+## See Also ראה גם:
+
+- מדריך לפונקציית `sprintf`: [CPlusPlus.com](http://www.cplusplus.com/reference/cstdio/sprintf/)
+- מידע נוסף על מחלקת `String` ב-Arduino: [Arduino Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)

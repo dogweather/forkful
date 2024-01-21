@@ -1,6 +1,7 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Lua: Tekstitiedoston lukeminen"
+date:                  2024-01-20T17:53:58.254534-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "C#"
 category:             "C#"
@@ -10,38 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Lukeminen tekstitiedosto tarkoittaa tekstin sisällön siirtämistä tiedostosta ohjelmaan. Ohjelmoijat tekevät tämän yleensä tietojen käsittelyä tai analysointia varten.
+## What & Why? (Mitä ja miksi?)
+Lukemalla tekstitiedoston C#:ssa voit hakea dataa tiedostoista ohjelmasi käyttöön. Tämä on välttämätön taito tiedon käsittelyä, säilytystä ja analysointia varten.
 
-## Kuinka Tehdä:
-Voit lukea tekstitiedoston C#-kielellä seuraavalla tavalla:
-
+## How to: (Kuinka?)
 ```C#
 using System;
 using System.IO;
 
-class Program
+class ReadTextFileExample
 {
     static void Main()
     {
-        string text = System.IO.File.ReadAllText(@"C:\testi.txt");
-        System.Console.WriteLine("Tiedoston sisältö: \n\n{0}", text);
+        string filePath = @"C:\example\tekstitiedosto.txt";
+
+        if (File.Exists(filePath))
+        {
+            string content = File.ReadAllText(filePath);
+            Console.WriteLine(content);
+        }
+        else
+        {
+            Console.WriteLine("Tiedostoa ei löydy.");
+        }
     }
 }
 ```
+**Esimerkkituloste:**
+```
+Hei, tässä on esimerkkitiedoston tekstiä!
+```
 
-Edellisessä koodissa, `ReadAllText`-metodi lukee koko tiedoston sisällön kerralla. Suorittaessasi tätä, näet tulosteen, joka vastaa tiedostosi sisältöä.
+## Deep Dive (Syväluotaus)
+### Historiallinen konteksti
+Alkujaan tekstiedostojen lukeminen oli lähellä käyttöjärjestelmän toimintoja. C# tekee siitä helpompaa abstraktoimalla monimutkaiset asiat.
 
-## Syvä Sukellus:
-Historiallisesti, tekstitiedostojen luku on ollut keskeinen osa ohjelmoinnin perusteita, sillä se mahdollistaa tiedon jakamisen ja tallentamisen. Mutta C# tarjoaa useita muitakin tapoja tekstin lukuun. Vaihtoehtoina ovat esimerkiksi `StreamReader` ja `File.ReadLines()`.
+### Vaihtoehdot
+Voit lukea tiedostoja rivittäin `File.ReadLines`-metodilla tai käyttää `StreamReader`-työkalua suurempiin tiedostoihin.
 
-Ensimmäinen, eli `StreamReader`, on hyödyllinen, kun tiedostosi on erityisen suuri, sillä se lukee tiedon vähitellen eikä tarvitse ladata koko tiedostoa muistiin kerralla. Toinen tapa, `File.ReadLines()`, lukee tiedoston osissa ja on siksi tehokas myös suurissa tiedostoissa.
+### Implementaation yksityiskohdat
+`File.ReadAllText` lataa koko tiedoston muistiin, joten muista varovaisuus suurten tiedostojen kanssa. `StreamReader` lukee rivejä lennossa, joten muistin käyttö pysyy hallinnassa.
 
-Haluat valita näistä menetelmistä sopivimman sovelluksesi tarpeiden mukaan, tarvittaessa myös yhdistellen niitä.
-
-## Katso Myös:
-Lisää tietoa ja ohjeita tekstitiedostojen lukemisesta C#-kielellä:
-
-- Microsoftin ohjeet: https://docs.microsoft.com/fi-fi/dotnet/csharp/programming-guide/file-system/how-to-read-from-a-text-file
-- Stack Overflow keskustelut: https://stackoverflow.com/questions/4966476/c-sharp-read-file-line-by-line
-- Tutorialspoint C# opas: https://www.tutorialspoint.com/csharp/csharp_file_io.htm
+## See Also (Katso Myös)
+- [Microsoft Docs: File.ReadAllText Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readalltext)
+- [Microsoft Docs: StreamReader Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)
+- [Microsoft Docs: File and Stream I/O](https://docs.microsoft.com/en-us/dotnet/standard/io/)

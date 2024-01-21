@@ -1,6 +1,7 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-html_title:           "Bash: HTTP-pyynnön lähettäminen"
+date:                  2024-01-20T18:00:48.287281-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,36 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+HTTP-pyyntö on tapa puhua verkon yli palvelimille. Ohjelmoijat lähettävät niitä datan noutamiseen, lähettämiseen ja web-sovellusten kanssa kommunikoimiseen.
 
-HTTP-pyynnön lähettäminen on prosessi, jossa tietokoneesi pyytää tietoa tai toimintoja verkkosivustolta. Ohjelmoijat tekevät tämän hakeakseen tai manipuloidakseen verkkosisältöä, kuten esimerkiksi noutaakseen tiedot API:sta tai lähettääkseen tiedot palvelimeen.
+## How to:
+Rubyssä HTTP-pyyntöjen lähettäminen on suoraviivaista. Tässä esimerkki käyttäen `net/http`-kirjastoa:
 
-## Miten se toimii:
-
-Saadaksemme HTTP-pyynnön toimimaan Rubyssa, tarvitsemme `net/http` -kirjaston. Tässä on yksinkertainen esimerkki HTTP GET -pyynnöstä.
-
-```Ruby
+```ruby
 require 'net/http'
 require 'uri'
 
-uri = URI.parse("http://www.example.com/search")
+uri = URI('https://reqres.in/api/users')
 response = Net::HTTP.get_response(uri)
+
+puts response.body if response.is_a?(Net::HTTPSuccess)
+```
+
+Sample output:
+
+```
+{
+    "page":1,
+    "per_page":6,
+    "total":12,
+    "total_pages":2,
+    "data":[ ... ]
+}
+```
+
+Jos tarvitset enemmän toimintaa, käytä `Net::HTTP.start`. Esimerkiksi POST-pyynnölle:
+
+```ruby
+require 'net/http'
+require 'uri'
+require 'json'
+
+uri = URI('https://reqres.in/api/users')
+header = {'Content-Type': 'application/json'}
+user = {name: 'Mikki Hiiri', job: 'Seikkailija'}
+
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = (uri.scheme == 'https')
+request = Net::HTTP::Post.new(uri.request_uri, header)
+request.body = user.to_json
+
+response = http.request(request)
 
 puts response.body
 ```
 
-Tässä esimerkissä luomme URI-olion ja käytämme sitä `Net::HTTP.get_response` -metodin argumenttina. Tämän jälkeen tulostetaan pyynnön vastauksen sisältö.
+## Deep Dive
+`net/http` on Ruby-kirjasto, joka on ollut osa kieltä melkein alusta alkaen. Se tarjoaa monipuolisen tapahtumakäsittelyn HTTP-pyyntöjä varten.
 
-## Tarkempi tutkinta:
+Vaihtoehtoja on. `HTTParty` ja `Faraday` ovat suosittuja helppokäyttöisyytensä ja monipuolisuutensa vuoksi. Rails-sovelluksissa `ActionDispatch::Integration::RequestHelpers` tarjoaa testaustarkoituksiin metodeja HTTP-pyyntöjen tekemiseen.
 
-HTTP-pyynnön lähettäminen on olennainen osa web-ohjelmointia ja se kehitettiin osana HTTP-protokollaa 1990-luvun alussa. Rubyssa sisäänrakennettu `net/http` -kirjasto on yleisin tapa lähettää pyyntöjä, mutta on olemassa muitakin vaihtoehtoja, kuten `httparty` tai `rest-client`.
+HTTP-pyyntöjä lähetettäessä kannattaa huomioida SSL-sertifikaatit (turvallinen yhteys) ja aikakatkaisut, etenkin tuotanto-sovelluksissa.
 
-`Net/http` toimii tekemällä TCP-yhteyden ja lähettämällä raakapyynnön palvelimelle. Voit hallita myös muita HTTP-ominaisuuksia, kuten yhteyden aikakatkaisua tai ohjata pyyntösi proxy-palvelimen kautta.
-
-## Lue lisää:
-
-Jos haluat syventää osaamistasi HTTP-pyynnöissä Rubyn kanssa, seuraavat linkit voivat olla hyödyllisiä:
-
-- Ruby Documentation: Net::HTTP (https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
-- HTTParty Gem (https://github.com/jnunemaker/httparty)
-- RestClient Gem (https://github.com/rest-client/rest-client)
+## See Also
+* [HTTParty GitHub repository](https://github.com/jnunemaker/httparty)
+* [Faraday GitHub repository](https://github.com/lostisland/faraday)
+* Reqres, simuloitu API testi- ja kehitystarkoituksiin: [Reqres](https://reqres.in/)

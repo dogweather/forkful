@@ -1,7 +1,8 @@
 ---
-title:                "Strings verketten"
-html_title:           "Bash: Strings verketten"
-simple_title:         "Strings verketten"
+title:                "Zeichenketten verknüpfen"
+date:                  2024-01-20T17:34:47.349514-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Zeichenketten verknüpfen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -12,38 +13,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Die Verkettung von Zeichenketten ist das Aneinanderfügen von zwei oder mehr Strings. Programmierer tun dies um komplexe Nachrichten zu erstellen, Dateinamen zu erstellen oder um Daten zu formatieren.
+Beim Verketten von Strings geht es darum, sie aneinanderzureihen, um einen längeren String zu bilden. Programmierer machen das, um dynamische Texte zu erzeugen, Eingaben zu formatieren oder einfach Informationen zusammenzuführen.
 
-## Wie geht's:
+## So geht’s:
 
-Im Fish Shell verwenden wir das "echo" Kommando um Zeichenketten zu verketten. Hier ist ein einfacher Code:
-
-```Fish Shell
-set string1 "Hallo"
-set string2 ", Welt"
-echo $string1$string2
-```
-Das Ergebnis wäre:
+Im Fish Shell fügt man Strings mit einfachem Nebeneinanderstellen zusammen:
 
 ```Fish Shell
-Hallo, Welt
+set str1 "Hallo, "
+set str2 "wie geht's?"
+echo $str1$str2
 ```
 
-## Tiefere Einblicke
+Ausgabe: `Hallo, wie geht's?`
 
-Die Verkettung von Strings hat einen historischen Kontext, der bis in die Anfänge der Programmierung zurückreicht. In Fish Shell, im Gegensatz zu anderen Shells wie BASH, gibt es keine spezielle Syntax für eine Zeichenkettenverkettung. Sie wird einfach durch das direkte Schreiben von Variablen nebenläufig erreicht.
-
-Alternativ können Sie auch den "string join" Befehl verwenden, aber das ist in der Praxis weniger üblich. Es sieht so aus:
+Variablen und Literale kann man genauso leicht kombinieren:
 
 ```Fish Shell
-string join "" $string1 $string2
+set name "Anja"
+echo "Guten Tag, "$name"!"
 ```
 
-In Bezug auf die Implementierungsdetails, Fish Shell interpretiert einfach die direkte Nebeneinanderstellung von Zeichenketten als Anforderung zur Verkettung.
+Ausgabe: `Guten Tag, Anja!`
 
-## Siehe Auch
+Auch das Anhängen mit der `string` Funktion ist möglich:
 
-Um mehr über Verkettung von Zeichenketten zu lernen, schauen Sie sich diese Ressourcen an:
+```Fish Shell
+set greeting "Herzlich Willkommen, "
+set user "Tobias"
+string join '' $greeting$user
+```
 
-1. [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
-2. [String Join Doku](https://fishshell.com/docs/current/cmds/string-join.html)
+Ausgabe: `Herzlich Willkommen, Tobias`
+
+## Deep Dive
+
+Historisch gesehen ist das Verketten von Strings eine Standardfunktion in den meisten Programmiersprachen und Shell-Skripts. Im Gegensatz zu manchen anderen Shells, die Operatoren wie `+` oder `.`, oder Funktionen wie `concat()` benötigen, macht Fish es sehr intuitiv – durch einfaches Aneinanderreihen der Strings.
+
+Alternativen im Fish Shell sind die direkte Verwendung der `echo`- oder `printf`-Befehle zum Zusammenführen der Strings:
+
+```Fish Shell
+echo "Hallo" "Welt" # Standardausgabe ist bereits verknüpft
+printf "%s%s\n" "Hallo" "Welt" # printf für formatierte Ausgabe
+```
+
+Hinsichtlich der Implementierung, durch den Wegfall von Konkatenierungsoperatoren, vermeidet Fish potenzielle Fehlerquellen und erhöht die Lesbarkeit des Codes.
+
+## Siehe auch
+
+- Die offizielle Fish-Shell-Dokumentation: [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- Fish Shell Tutorial für Anfänger: [Fish Shell für Anfänger](https://fishshell.com/docs/current/tutorial.html)
+- Ein umfassender Leitfaden zu `string` Befehlen in Fish: [Fish Shell String Commands](https://fishshell.com/docs/current/cmds/string.html)

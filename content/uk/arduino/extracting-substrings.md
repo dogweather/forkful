@@ -1,7 +1,8 @@
 ---
-title:                "Видобування підрядків"
-html_title:           "C++: Видобування підрядків"
-simple_title:         "Видобування підрядків"
+title:                "Виділення підрядків"
+date:                  2024-01-20T17:45:23.756554-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Виділення підрядків"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,24 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це та навіщо це потрібно?
-Діставання підрядків - це процес видобутку структурованих фрагментів з великого рядка. Програмісти роблять це, щоб працювати з менше складними даними чи виконувати пошук у рядку.
+## What & Why? / Що й Навіщо?
 
-## Як це зробити:
+Витягування підрядків - це процес виділення частин з більшого рядка. Програмісти роблять це для аналізу даних, валідації введення чи формування нових рядків.
+
+## How to / Як це зробити:
+
 ```Arduino
-String name = "Programming with Arduino"; 
-String substringName = name.substring(0, 11); 
-Serial.println(substringName);
-```
-Скопіювавши та виконавши даний код, ви побачите на виході:
-```Arduino
-Programming
-```
-На першому рядку ми оголосили рядок "Programming with Arduino". На другому рядку ми створили підрядок від індексу 0 до 11. На третьому рядку ми виводимо цей підрядок.
+String data = "Привіт, Arduino!";
 
-## Пірнемо глибше
-Екстракція підрядків - це просто та дієвий спосіб обробки рядків, що використовується з самого зародження мов програмування. В Arduino є альтернативи, особливо при роботі з символьними масивами (char arrays), але метод substring() є найпростішим для розуміння та використання. Щойно викликано метод substring(), Arduino створює новий об'єкт String, копіює витрібний фрагмент в цей об'єкт, та повертає його. 
+// Витяг 7 символів, починаючи з 8-ї позиції
+String greeting = data.substring(7, 14);
 
-## Дивіться також:
-[Arduino String Objects](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/) - детальна документація про рядкові об'єкти в Arduino.
-[String Manipulation](https://learn.adafruit.com/adafruit-arduino-lesson-22-string-manipulation/overview) - основи роботи з рядками на Arduino. Робота з підрядками тут є частиною більшої картини.
+// Витягнути до кінця рядка, починаючи з 8-ї позиції
+String arduinoPart = data.substring(7);
+
+void setup() {
+  Serial.begin(9600);
+  
+  Serial.println(greeting);   // Output: Arduino
+  Serial.println(arduinoPart); // Output: Arduino!
+}
+
+void loop() {
+  // тут коду не потрібно
+}
+```
+Обгортання коду `data.substring(7, 14)` та `data.substring(7)` забезпечують витягування підрядків.
+
+## Deep Dive / Занурення:
+
+Історично, робота з рядками завжди була ключовою частиною програмування, так як обробка текстової інформації є дуже частою задачею. Функція `substring` існує у багатьох мовах програмування, і в Arduino вона дозволяє легко маніпулювати `String` об'єктами. 
+
+Альтернативи в Arduino — це використання char масивів і функцій як `strncpy` з бібліотеки `<cstring>`, але це вимагає більш глибокого розуміння C++ і управління пам'яттю.
+
+Внутрішні механізми використання `substring` на Arduino схожі на інші мови: метод працює шляхом копіювання обраної частини рядка у новий об'єкт `String`. Важливо знати, що створення багатьох `String` може призвести до фрагментації пам'яті, особливо на пристроях з обмеженим ресурсом пам’яті як Arduino.
+
+## See Also / Дивіться також:
+
+- [String Object in Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Arduino String Manipulation](https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringAdditionOperator)

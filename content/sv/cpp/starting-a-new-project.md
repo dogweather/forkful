@@ -1,7 +1,8 @@
 ---
-title:                "Att starta ett nytt projekt"
-html_title:           "Arduino: Att starta ett nytt projekt"
-simple_title:         "Att starta ett nytt projekt"
+title:                "Att påbörja ett nytt projekt"
+date:                  2024-01-20T18:03:03.368814-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Getting Started"
@@ -10,49 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-# ATTYA STARTA ETT NYTT C++-PROJEKT
+## Vad & Varför?
+Starta ett nytt projekt betyder att kicka igång en helt fräsch kodkodbas från nollpunkt. Programmerare gör detta för att förverkliga nya idéer, lösa unika problem eller utforska ny teknik.
 
-## Vad och Varför?
-
-Att starta ett nytt projekt är grunden för varje ny kodupplevelse. Det är hur programmerare skapar ny funktionalitet, löser problem och uttrycker kreativa idéer i kod.
-
-## Hur till:
-
-För att starta ett nytt C++ projekt, börja med att ställa in din arbetsmiljö och skapa en ny källkodsfil med ".cpp"-ändelsen.
+## How to:
+Börja ett nytt C++-projekt i modern stil kan vara så enkelt som följande:
 
 ```C++
-// main.cpp
 #include <iostream>
 
 int main() {
-    std::cout << "Hej, Världen!";
+    std::cout << "Hej, nytt projekt!" << std::endl;
     return 0;
 }
 ```
 
-Kör din källkod för att se den utgångna utdata.
+Kör detta och din konsol borde visa:
 
-```C++
-$ g++ main.cpp
-$ ./a.out
-Hej, Världen!
+```
+Hej, nytt projekt!
 ```
 
-## Fördjupning
+Men för större projekt, använd ett byggsystem, exempelvis CMake:
 
-Historiskt sett har C++ programmerare skapat och arbetat med nya projekt för att bygga applikationer, utveckla spel, programvara för inbyggda system och mer.
+```CMake
+cmake_minimum_required(VERSION 3.10)
+project(HejProjekt)
 
-Alternativt till C++, finns det andra programmeringsspråk som Python, Java, JavaScript, och Ruby. Valet av språk beror på projektets behov.
+set(CMAKE_CXX_STANDARD 17)
 
-Implementation av ett nytt projekt i C++ innebär indelning av problemet i mindre delar (funktioner eller objekt), kodning av dessa delar separat och sedan sammansättning dem för att lösa det större problemet. Sådan modulär kod är lättare att underhålla och felsöka.
+add_executable(HejProjekt main.cpp)
+```
 
-## Se Även
+Din `main.cpp` kan vara densamma som ovan. Skapa sedan en byggkatalog, kör `cmake` och `make` kommandon:
 
-För mer information och kodexempel på C++:
+```
+mkdir build && cd build
+cmake ..
+make
+./HejProjekt
+```
 
-- [Cplusplus.com](http://www.cplusplus.com)
-- [Learn C++](https://www.learn-cpp.org/)
-- [C++ Reference](https://en.cppreference.com/w/)
+Du får samma utskrift, nu med ett ordentligt byggsystem på plats.
 
----
+## Deep Dive:
+C++ har kommit en lång väg sedan det skapades av Bjarne Stroustrup på 1980-talet. Tidigare handlade det om manuella makefiler, men moderna verktyg som CMake och pakethanterare som Conan förenklar projektstart och underhåll.
+
+För att skriva modern C++-kod använd `#include <iostream>` för in-/utmatning. Användningen av `std::endl` istället för `\n` spolar bufferten, vilket kan vara långsammare men också säkrare.
+
+Alternativ för att starta projekt inkluderar att använda IDE:er som Visual Studio, Qt Creator eller CLion som erbjuder grafiska gränssnitt och projektguider.
+
+## See Also:
+- CMake dokumentation: https://cmake.org/documentation/
+- Conan, C/C++ pakethanterare: https://conan.io/
+- Modern C++ features guide: https://github.com/AnthonyCalandra/modern-cpp-features
+- Bjarne Stroustrups hemsida för djupare C++ historia: http://www.stroustrup.com/

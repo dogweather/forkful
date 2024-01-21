@@ -1,6 +1,7 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "C#: Verkkosivun lataaminen"
+date:                  2024-01-20T17:44:23.735953-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,28 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Verkkosivun lataamisella tarkoitetaan sen tietosisällön hakemista internetistä. Ohjelmoijat lataavat verkkosivuja päästäkseen käsiksi sen dataan ja käsittelemään sitä.
+## What & Why?
+Verkkosivun lataaminen tarkoittaa sivun sisällön hakemista internetistä omalle laitteelle. Koodarit lataavat sivuja data-analyysiin, sisällön varmuuskopiointiin, tai sovellusten rakentamiseen joka hyödyntää sivujen tietoja.
 
-## Näin teet: 
+## How to:
+Kotlinissa verkkosivun voi ladata käyttäen `URL`-luokkaa ja `readText`-metodia. Tässä helppo esimerkki:
+
 ```Kotlin
 import java.net.URL
 
-fun main(args: Array<String>) {
-    println(URL("https://www.example.com").readText())
-}```
+fun downloadWebPage(pageUrl: String): String {
+    return URL(pageUrl).readText(Charsets.UTF_8)
+}
 
-Tämä esimerkki näyttää kuinka ladataan verkkosivun teksti. Koodi luo URL-olion, joka osoittaa tiettyyn verkkosivuun, ja käyttää 'readText'-metodia hakeakseen verkkosivun sisällön. Tulosteessa näet sivun HTML-koodin.
+fun main() {
+    val webContent = downloadWebPage("http://example.com")
+    println(webContent)
+}
+```
 
-## Syvä Sukellus
-Verkkosivujen lataaminen juontaa juurensa WWW:n alkutaipaleelle, jolloin verkkosivujen sisältöä käytettiin pääasiassa staattisen tiedon esittämiseen. Nykypäivänä sen avulla voidaan esimerkiksi hakea API:en kautta ajantasaisia tietoja, tai analysoida ja helpottaa digitaalista tiedon keruuta.
+Jos kokeilet koodia ja sivusto on kunnossa, saat tulosteena sivun HTML-sisältöä.
 
-Vaihtoehtoisesti, tausta- tai palvelinohjelma voisi tehdä saman työn, mutta Kotlinin käyttö on suosittu valinta monestakin syystä. Sen tiiviys, tehokkuus ja yhteensopivuus Java-pohjaisten ohjelmistojen kanssa tekevät siitä houkuttelevan vaihtoehdon.
+## Deep Dive
+Verkkosivun lataaminen on vanha käytäntö, joka alkoi, kun web ensi kerran keksittiin. Alkujaan tehdyt käsityönä, mutta nykyisin prosessit ovat automatisoituja ja integroituja.
 
-Kotlinin sisäänrakennettu `readText`-metodi tekee verkkosivun lataamisesta helppoa, mutta monimutkaisimmissa sovelluksissa saatetaan tarvita lisäkirjastoja, kuten JSoup, joka mahdollistaa tarkemman HTML-koodin käsittelyn.
+Vaihtoehtoina yksinkertaiselle `URL`-luokan käytölle on erilaisia kirjastoja, kuten OkHttp ja kjsoup. OkHttp tarjoaa täyden HTTP-clientin, kun taas jsoup soveltuu HTML:n jäsentämiseen ja käsittelyyn.
 
-## Katso Myös
-- [Kotlinin verkkosivu](https://kotlinlang.org/)
-- [JSoup-dokumentaatio](https://jsoup.org/)
+`readText` toimii hyvin pienille sivuille, mutta suuriin datajoukkoihin tai monimutkaisiin pyyntöihin kannattaa käyttää välineitä, jotka käsittelevät virheet ja striimauksen paremmin.
 
-Hyödynnä näitä resursseja syventyäksesi aiheeseen tai selvittääksesi mahdollisesti eteen tulevia ongelmia.
+## See Also
+- OkHttp: https://square.github.io/okhttp/
+- jsoup: https://jsoup.org/
+- Kotlin Networking Tutorial: https://kotlinlang.org/docs/networking.html

@@ -1,7 +1,8 @@
 ---
-title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
-simple_title:         "Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma requisição HTTP com autenticação básica"
+date:                  2024-01-20T18:01:51.365019-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Enviando uma requisição HTTP com autenticação básica"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,38 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## O Que & Por Quê?
 
-Enviar um pedido HTTP com autenticação básica permite que os programadores solicitem dados de uma API de servidor remoto, mantendo as informações de autenticação dos usuários seguras. Isso é crucial para manter a integridade das contas do usuário e evitar acessos não autorizados.
+Enviar uma requisição HTTP com autenticação básica significa passar um usuário e senha para acessar um recurso protegido na web. Programadores fazem isso para interagir com APIs que requerem uma forma simples de identificação.
 
 ## Como Fazer:
 
-```Gleam
-import gleam/http.@{get, RequestBuilder}
+```gleam
+import gleam/http
+import gleam/http/cowboy
 import gleam/string
 
-fn make_request() {
-  let url = Uri.parse("http://api.exemplo.com/dados")
+fn autentica_requisicao(req: http.Request(_)) {
+  let base64_credenciais = string.base64_encode("usuario:senha")
+  req
+  |> http.request_header("Authorization", "Basic " ++ base64_credenciais)
+}
 
-  url
-  |> http.get()
-  |> http.prepend_to_header("Authorization", "Basic " <> string.base64_encode("usuario:senha"))
-  |> http.send()
+pub fn exemplo_requisicao() {
+  let req = http.default_request("https://exemplo.com/api")
+            |> autentica_requisicao()
+
+  case http.send(req) {
+    Ok(resp) -> io.println("Sucesso: " ++ resp.body)
+    Error(err) -> io.println("Erro ao enviar a requisição: " ++ error.to_string(err))
+  }
 }
 ```
 
-O código acima gera e envia uma solicitação GET HTTP para "http://api.exemplo.com/dados". A linha 9 aqui adiciona um cabeçalho de Autorização com os detalhes do usuário codificados em Base64.
+_Saída de Amostra:_
 
-## Mergulho Profundo:
+```
+Sucesso: {"dados": "Conteúdo Protegido Acessado"}
+```
 
-Historicamente, a autenticação básica HTTP é usada há bastante tempo na programação web devido à sua simplicidade. No entanto, é importante notar que, sem uma conexão HTTPS segura, as informações de autenticação base64 podem ser decodificadas facilmente.
+## Aprofundamento
 
-Existem várias alternativas à autenticação básica HTTP, incluindo a autenticação baseada em token e a autenticação OAuth. Esses métodos oferecem maior segurança, mas também são mais complexos para implementar.
+Antes do HTTPS se tornar padrão, a autenticação básica HTTP era uma maneira direta de controlar o acesso. Hoje, com a preocupação crescente sobre segurança, ela é considerada menos segura se não for usada através de HTTPS, que criptografa as credenciais. Alternativas incluem tokens de acesso e autenticação OAuth, que fornecem métodos mais seguros e flexíveis para controle de acesso. A implementação em Gleam é direta e utiliza a codificação em Base64 das credenciais, necessária pela especificação da autenticação básica HTTP.
 
-Em Gleam, estamos usando o módulo `http` para construir nossa solicitação HTTP e enviar. Isso mantém nossa implementação limpa e simples, sem a necessidade de manipular detalhes de baixo nível como a criação da conexão de rede.
+## Veja Também
 
-## Veja Também:
-
-Para mais informações sobre a autenticação HTTP e outras opções de segurança do Gleam, você pode achar útil as seguintes leituras:
-
-- [Tutorial de Autenticação HTTP da MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [MDN Web Docs on HTTP Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
+- [RFC 7617 'The 'Basic' HTTP Authentication Scheme'](https://tools.ietf.org/html/rfc7617)

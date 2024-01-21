@@ -1,7 +1,8 @@
 ---
-title:                "Ladda ner en webbsida"
-html_title:           "Bash: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Hämta en webbsida"
+date:                  2024-01-20T17:43:50.851285-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Hämta en webbsida"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -11,45 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att ladda ner en webbsida innebär att hämta dess innehåll över internet. Programmerare gör detta för att extrahera data, automatisera testning av webbsidor eller för att påbörja webbskrapning.
 
-Nedladdning av en webbsida innebär hämtning av data från ett specifikt URL och sparande av det på din dator. Det används av programmerare för att hämta realtidsdata, skrapa webbdata, övervaka ändringar på webbsidor, bland andra användningsområden.
-
-## Hur man gör:
-
-C# erbjuder `HttpClient` för att ladda ner en webbsida. Vid basisk användning:
+## How to:
+Använd `HttpClient` för att begära och få en webbsidas innehåll. Se exempel nedan:
 
 ```C#
 using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 class Program
 {
     static async Task Main()
     {
-        using HttpClient client = new HttpClient();
-        string html = await client.GetStringAsync("http://example.com");
-        Console.WriteLine(html);
+        using (HttpClient client = new HttpClient())
+        {
+            try
+            {
+                string url = "https://example.com";
+                string responseBody = await client.GetStringAsync(url);
+                Console.WriteLine(responseBody);
+            }
+            catch (HttpRequestException e)
+            {
+                Console.WriteLine("\nException Caught!");
+                Console.WriteLine("Message :{0} ", e.Message);
+            }
+        }
     }
 }
 ```
 
-Kör programmet, det visar HTML-innehållet på "example.com".
+Exempel utskrift (förkortat för tydlighet):
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+```
 
-## Djupdykning
+## Deep Dive
+Historiskt sett har `WebClient` och `HttpWebRequest` använts i C# för att ladda ner webbsidor, men `HttpClient` är nu det moderna valet. Med `HttpClient`, kan du även dra nytta av asynkron programmering vilket gör din applikation mer responsiv. För alternativ, tänk på tredjepartsbibliotek som `HtmlAgilityPack` för att hantera HTML-parsing, om du behöver mer än bara det råa innehållet.
 
-Historiskt sett har vi sett utvecklingen från `WebClient` till `HttpWebRequest` till nuvarande `HttpClient`. `HttpClient` är mer flexibel och effektiv för modern webbsida nedladdning.
-
-Vi har också alternativ som `RestSharp`, en populär open-source HTTP-klientbibliotek. 
-
-Vad gäller nedladdning av en webbsida i C#, sker det i flera steg: skapa en förfrågan, sänd förfrågan, få Svaret, läs data. Genom att använda `HttpClient`, förenklas dessa steg till en enda metod: `GetStringAsync`.
-
-## Se även
-
-För mer detaljerade information och exempel, se följande resurser:
-
-- [HttpClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-5.0)
-- [Making HTTP Requests](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/console-webapiclient)
-
-För att läsa om alternativ till HttpClient:
-
-- [RestSharp](http://restsharp.org/)
+## See Also
+- Microsoft Docs om `HttpClient`: https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient
+- Tutorial om asynkron programmering i C#: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/
+- HtmlAgilityPack på GitHub: https://github.com/zzzprojects/html-agility-pack

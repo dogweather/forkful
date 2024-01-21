@@ -1,7 +1,8 @@
 ---
-title:                "קריאה של ארגומנטים משורת הפקודה"
-html_title:           "C#: קריאה של ארגומנטים משורת הפקודה"
-simple_title:         "קריאה של ארגומנטים משורת הפקודה"
+title:                "קריאת פרמטרים משורת הפקודה"
+date:                  2024-01-20T17:56:56.401057-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "קריאת פרמטרים משורת הפקודה"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -11,23 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-קריאת ארגומנטים משורת הפקודה היא דרך שבה קוד ב-Javascript יכול לקבל בעת ריצה מידע מבחוץ. זה מאוד שימושי כאשר אנחנו רוצים להריץ את הקובץ איתו מידע שונה, כדי להראות תוצאות שונות.
+קריאת ארגומנטים משורת הפקודה היא התהליך שבו הסקריפט שלנו מקבל מידע מבחוץ דרך הטרמינל. תכניתנים עושים זאת כדי להגדיר פרמטרים ולשלוט בהתנהגות התוכנית בעת הרצתה.
 
-## איך לעשות
-הנה קטע קוד שמדגים את הקנייה בארגומנטים מקו הפקודה:
-```Javascript
-// index.js
-const commandArgs = process.argv.slice(2);
-console.log(commandArgs);
+## איך לעשות:
+בואו נדבר על `process.argv`, הערה שמאפשרת לך לקלוט ארגומנטים משורת הפקודה בNode.js.
+
+```javascript
+// script.js
+
+// הדפס את כל הארגומנטים שהועברו לסקריפט (כולל נתיב לnode ולסקריפט)
+console.log(process.argv);
+
+// השתמש בארגומנטים שהועברו מתוך שורת הפקודה (ללא השניים הראשונים)
+const args = process.argv.slice(2);
+console.log(args);
 ```
-אם אתה מריץ את הקוד הזה עם `node index.js arg1 arg2 arg3`, התוצאה תהיה: `['arg1', 'arg2', 'arg3']`.
 
-## צלילה עמוקה
-(1) מהשיח ההיסטורי, ראשית קטעי הקוד המקובלים בארגומנטים משורת הפקודה הייתה מוגבלת לשפות הקוד הנמוך. עם הזמן, המאפיינים האלה התפשטו לשפות נוספות, כולל Javascript.
-(2) למעשה, ישנם מודולים כמו commander and yargs מנותן את האופציה לקריאה של ארגומנטים מהקונסולה עם תמיכה בתסריטים מורכבים עם אפשרויות מגוונות.
-(3) ביצועים של process.argv הם קצת מורכבים. בעצם, כשאנחנו מפעילים מאפליקציה בנוד, ה-API של V8 של הנוד מוסיף ארגומנטים למערך argv. 
+הרץ את הסקריפט כך: `node script.js hello world`
 
-## ראה גם
-מעלים אחדים שמתייחסים לקריאה של ארגומנטים משורת הפקודה:
-- מודעה של StackOverflow, שמתאר כיצד להשתמש ב-process.argv: https://stackoverflow.com/questions/4351521/how-do-i-pass-command-line-arguments-to-a-node-js-program
-- מודול נאוד commander.js, שמקל על ניהול ארגומנטים: https://www.npmjs.com/package/commander
+תוצאה:
+```
+[
+  '/usr/local/bin/node',
+  '/path/to/your/script.js',
+  'hello',
+  'world'
+]
+['hello', 'world']
+```
+
+## נסיון עמוק:
+השימוש ב־`process.argv` הוא די בסיסי ומיושן, אך עדיין מאוד פופולרי. בעבר, לפני שהיו ספריות עשירות, זו הייתה הדרך העיקרית להעביר מידע לסקריפטים. היום יש אופציות אחרות כמו ספריות `minimist`, `commander`, או `yargs` שכל אחת מהן מציעה פרסינג רב יותר עוצמתי ופשוט לשימוש. ביישומים מורכבים, ניתן להשתמש בסביבות הגדרת המשתמש (dotenv) וקבצי תצורה לניהול הגדרות.
+
+## ראה גם:
+- [Node.js process.argv documentation](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- [Minimist npm package](https://www.npmjs.com/package/minimist)
+- [Commander npm package](https://www.npmjs.com/package/commander)
+- [Yargs npm package](https://www.npmjs.com/package/yargs)
+- [dotenv npm package](https://www.npmjs.com/package/dotenv)

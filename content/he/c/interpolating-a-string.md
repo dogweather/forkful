@@ -1,7 +1,8 @@
 ---
-title:                "אינטרפולציה של מחרוזת"
-html_title:           "Arduino: אינטרפולציה של מחרוזת"
-simple_title:         "אינטרפולציה של מחרוזת"
+title:                "שרבוב מחרוזת"
+date:                  2024-01-20T17:50:43.794160-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרבוב מחרוזת"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,31 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה? 
+## מה ולמה?
+מילוי מחרוזת הוא שילוב נתונים דינמיים עם טקסט קבוע. תכניתנים משתמשים בזה כדי ליצור מחרוזות דינמיות לצרכי תצוגה, לוגים, וממשק משתמש.
 
-אינטרפולציה של מחרוזת היא החלפת משתנים או ערכים במחרוזת באופן דינאמי. מתכנתים משתמשים בכך כדי ליצור מחרוזות שאינן קבועות, ולשנות אותן בהתאם למידע שהם מקבלים בזמן ריצה.
+## איך לעשות:
+ב-C, אין תמיכה ישירה במילוי מחרוזת כמו בשפות אחרות. אבל עוד אפשר להשיג את התוצאה הזו עם `sprintf`, `snprintf`, או משפחת הפונקציות `printf`. דוגמה:
 
-## איך?
-```C
+```c
 #include <stdio.h>
 
-int main()
-{
-    char name[] = "Yosef";
-    printf("Shalom, %s!\n", name); 
+int main() {
+    char name[] = "שלמה";
+    int age = 28;
+    char message[50];
+
+    snprintf(message, sizeof(message), "שלום, קוראים לי %s ואני בן %d.", name, age);
+
+    printf("%s\n", message);
     return 0;
 }
 ```
-פלט דוגמה:
+
+פלט:
 ```
-Shalom, Yosef!
+שלום, קוראים לי שלמה ואני בן 28.
 ```
 
-## יותר לעומק
-1. אינטרפולציה של מחרוזת הגיעה לאחרונה לשפת C, אך היא מהותית בשפות תכנות אחרות כמו ג'אווהסקריפט ופייתון.
-2. כשאתם צריכים להדפיס מחרוזת מורכבת, אתם יכולים להשתמש ב- sprintf - זו שיטה חלופית אך זהירים! זו תהיה רגישה להפצצת מטמון.
-3. ב-C, הפונקציה printf משנה את המחרוזת. כאשר אנחנו מניחים %s בתוך המחרוזות, רק אז, בזמן ריצה, printf תחליף את %s עם הערך של המשתנה.
+## עיון מעמיק
+מילוי מחרוזת ב-C מורכב יותר מאשר בשפות כמו Python או JavaScript. ההיסטוריה של זה חוזרת למקורות של השפה, שבה כל דבר נבנה לקרבה למערכת ההפעלה והחומרה. אלטרנטיבות כוללות פונקציות כמו `sprintf` ו`snprintf`, אבל יש להיזהר מבעיות בטיחות וכדאי להשתמש ב`snprintf` כדי למנוע גודש זיכרון. לפרטים נוספים על יישום, תמיד בדוק את גודל הבאפר שלך לפני השימוש בפונקציות אלו.
 
-## לעיון נוסף
-1. הסבר על אינטרפולציה של מחרוזת ב- Java: `https://www.vogella.com/tutorials/JavaIntroduction/article.html#stringinterpolation`
-2. הסבר על אינטרפולציה של מחרוזת ב- JavaScript: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#string_operators`
+## ראה גם
+- [C++ : ראה גם את std::format (C+20)](https://en.cppreference.com/w/cpp/utility/format/format)
+- [Python : קריאה על f-strings למילוי פשוט יותר של מחרוזות](https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings)
+- [GNU libc manual on printf - לעומק על`printf`](https://www.gnu.org/software/libc/manual/html_node/Formatted-Output-Functions.html)
+- [C Secure Coding - למידע על בטיחות כאשר משתמשים בפונקציות מילוי מחרוזת](https://wiki.sei.cmu.edu/confluence/display/c/STR31-C.+Guarantee+that+storage+for+strings+has+sufficient+space+for+character+data+and+the+null+terminator)

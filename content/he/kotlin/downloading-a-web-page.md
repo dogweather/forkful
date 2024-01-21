@@ -1,6 +1,7 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "C++: הורדת דף אינטרנט"
+date:                  2024-01-20T17:44:19.535732-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,32 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-הורדת עמוד אינטרנט היא תהליך שבו מורידים את כל המידע מעמוד אינטרנט מאותו שרת למכונתך. תכניתאים בוחרים להוריד את הדף כדי לנתח את המידע, לבנות עליו כלים או לשפר את מהירות העבודה שלהם.
 
-## איך עושים את זה:
+להוריד דף אינטרנט זה פשוט להשיג את התוכן של אתר מהרשת. תכנתים עושים את זה כדי לעבד נתונים, לבדוק אתרים, או לאחסן מידע מקוון לשימוש מקומי.
 
-הקוד הבא ב-Kotlin מראה איך להוריד דף אינטרנט:
-```Kotlin
+## איך לעשות:
+
+בקוטלין, אתה יכול להוריד דף אינטרנט בקלות עם `URL.readText()`. הנה דוגמה:
+
+```kotlin
 import java.net.URL
 
+fun downloadWebPage(pageUrl: String): String {
+    return URL(pageUrl).readText()
+}
+
 fun main() {
-    val response = URL("http://example.com").readText()
-    println(response)
+    val content = downloadWebPage("https://example.com")
+    println(content)
 }
 ```
-אם נריץ את הקוד הזה, הפלט שלנו יהיה:
 
-לדוגמא, קטע טקסט מדף אינטרנט של Example.com 
+תוצאה (חלקית):
 
-## עומק השקיעה
-הורדת דף אינטרנט התפתחה במהלך השנים. בעבר, לפני שהעולם של האינטרנט התפתח, הכותבים לא היו מסוגלים לגשת בקלות אל המידע של אתרים אחרים.
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+```
 
-היו גם כמה כלים חלופיים להורדת דפי אינטרנט, אבל טכנולוגיית ה-HTTP המקורית של Java עודנה משמשת אותנו היום.
+## צלילה עמוקה:
 
-חלקים מסוימים מהתהליך יכולים להשתנות בהתאם לשרת שמאחסן את האתר ולנתיב разазвати הייחודי של העמוד. עם זאת, ההבנה הכללית של התהליך לא משתנה.
+בעבר, הייתם צריכים להשתמש ב`HttpURLConnection` או בספריות חיצוניות כמו Apache HttpClient להורדת תוכן מהאינטרנט. כיום, יש אפשרויות יותר נוחות כמו `kotlinx.coroutines` עם `async` לעבודה עם רשתות, או כלי חיצוניים כמו OkHttp או Retrofit לנתיני ה-API. רק זכרו, כשאתם מורידים דף אינטרנט, נתחו את תנאי השירות וה-robots.txt של האתר כדי לא להפר את הכללים.
 
-## המשך קריאה:
-אם אתם מעוניינים ללמוד עוד, עיינו במקורות הבאים:
+## ראה גם:
 
-* [המדריך הרשמי של תכנות ב-Kotlin](https://kotlinlang.org/docs/home.html) מחזיק במון מידע על שפת התכנות.
-* [המרכז למידע של Java](https://docs.oracle.com/javase/tutorial/) יעזור לכם ללמוד עוד על HTTP באמצעות Java.
+- [kotlinx.coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html)
+- [OkHttp](https://square.github.io/okhttp/)
+- [Retrofit](https://square.github.io/retrofit/)
+- [Robots exclusion standard](https://en.wikipedia.org/wiki/Robots_exclusion_standard)

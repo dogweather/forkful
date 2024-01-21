@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
+date:                  2024-01-20T18:01:23.805540-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -12,34 +13,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Programmers send HTTP requests with basic authentication to access protected data from a server. It's a simple way to limit access to certain data over the internet.
+Sending an HTTP request with basic authentication involves transmitting a username and password over the web to access protected resources. Programmers use this for simplicity when interacting with APIs or services requiring login creds.
 
-## How To:
+## How to:
 
-Supply username and password with `-u` flag using `curl` command in Fish Shell.
+In Fish Shell, use `curl` to make an HTTP request with basic auth. Replace `username`, `password`, and `the_url`:
 
 ```Fish Shell
-set url "http://your.site.com/protected"
-set username "your_username"
-set password "your_password"
-
-curl -u $username:$password $url
+set -x AUTH (echo -n "username:password" | base64)
+curl -H "Authorization: Basic $AUTH" the_url
 ```
-This will respond with the accessed content or an error message in case of failure.
 
-## Deep Dive:
+Or, let `curl` handle the encoding:
 
-The use of basic authentication via HTTP requests is as old as the internet itself. It's a built-in feature of the HTTP protocol that allows a client (you) to supply a username/password pair to access server-side protected content.
+```Fish Shell
+curl -u username:password the_url
+```
 
-Alternatively, you can opt for other forms like Digest Authentication, OAuth, OpenID, etc. based on your security requirements. Basic Authentication doesn't encrypt your credentials, so using it over HTTPS is recommended.
+Sample output might look like this:
 
-In the Fish Shell example above, your credentials are stored in plain text variables before passing to the `curl` command. Do note, sensitive data like passwords should be handled with utmost care, consider storing them in environment variables or other secure ways if you're dealing with real-world projects.
+```Fish Shell
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+  "message": "Authenticated successfully."
+}
+```
+
+## Deep Dive
+
+Basic authentication is part of HTTP's protocol, existing since the early 90s. While easy to implement, it's less secure due to credentials being only base64 encoded, not encrypted. HTTPS helps, but it's not foolproof.
+
+Alternatives include OAuth, which uses tokens instead of credentials, adding security layers. For added security, consider using API keys or JWT (JSON Web Tokens).
+
+With Fish Shell, we're interfacing with `curl`, a powerful tool that supports various protocols and authentication methods. The `-u` flag is convenient, but avoid hardcoding creds; instead, use environment variables or config files with proper permissions.
 
 ## See Also:
 
-1. Fish Shell Documentation (https://fishshell.com/docs/current/index.html)
-2. cURL man page (https://curl.se/docs/manpage.html)
-3. HTTP Authentication (https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-4. Digest Authentication (https://tools.ietf.org/html/rfc2617)
-5. OAuth 2.0 (https://oauth.net/2/)
-6. OpenID Connect (https://openid.net/connect/)
+- cURL Documentation: https://curl.se/docs/httpscripting.html
+- HTTP Basic Auth RFC: https://tools.ietf.org/html/rfc7617
+- Fish Shell Documentation: https://fishshell.com/docs/current/index.html
+- Understanding JWT: https://jwt.io/introduction/

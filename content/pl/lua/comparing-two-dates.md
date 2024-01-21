@@ -1,6 +1,7 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "C++: Porównywanie dwóch dat"
+date:                  2024-01-20T17:33:27.241791-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,41 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+W skrócie, porównywanie dwóch dat to sprawdzenie, która z nich jest wcześniejsza, późniejsza, czy też czy są identyczne. Programiści robią to często, aby zarządzać deadline'ami, sortować dane chronologicznie, czy też weryfikować ważność certyfikatów.
 
-Porównywanie dwóch dat to proces sprawdzania, która data jest wcześniejsza, późniejsza lub czy są identyczne. Programiści robią to np. do sortowania wydarzeń w chronologicznym porządku, sprawdzania terminów ważności czy logowania działań systemowych.
-
-## W jaki sposób:
-
-W Lua istnieje wiele sposobów porównywania dat, tutaj pokażę ci jeden z najprostszych, wykorzystując wbudowane funkcje `os.time` i `os.date`. Poniższy kod pokazuje porównanie dzisiejszej daty z konkretną datą (2023 rok, styczeń, 1 dzień):
-
+## How to:
 ```Lua
--- Aktualna data
-local currentDate = os.time()
+local os_time = os.time
 
--- Konkretna data
-local someDate = os.time{ year=2023, month=1, day=1 }
+-- Tworzenie dwóch dat
+local date1 = os_time{year=2023, month=3, day=15}
+local date2 = os_time{year=2023, month=4, day=15}
 
--- Porównanie dat
-if currentDate > someDate then
-     print("Aktualna data jest późniejsza.")
-elseif currentDate < someDate then
-     print("Aktualna data jest wcześniejsza.")
+-- Porównywanie dat
+if date1 < date2 then
+    print('Date1 jest wcześniejsza niż Date2.')
+elseif date1 > date2 then
+    print('Date1 jest późniejsza niż Date2.')
 else
-     print("Daty są identyczne.")
+    print('Date1 i Date2 są dokładnie takie same.')
 end
+
+-- Formatowanie i porównywanie dat jako stringi
+local date1_str = os.date('%Y-%m-%d', date1)
+local date2_str = os.date('%Y-%m-%d', date2)
+print('Date1:', date1_str)
+print('Date2:', date2_str)
+```
+Przykładowy output:
+```
+Date1 jest wcześniejsza niż Date2.
+Date1: 2023-03-15
+Date2: 2023-04-15
 ```
 
-## Głębokie zanurzenie:
+## Deep Dive
+Historia Lua sięga początku lat 90. i od tego czasu sposób porównywania dat ewoluował. Możemy porównywać czasy UNIX używając `os.time()`, która zwraca sekundy od tzw. "Unix epoch". Alternatywnie, by porównać daty z czasami, należy użyć funkcji `os.date()`.
 
-Historia porównywania dat w Lua jest już dość stara. Lua, z wykorzystaniem biblioteki `os`, dostarcza funkcje do manipulacji datą i czasem, które są proste, a jednocześnie potężne.
+Porównywanie dat w Lua jest dość prostolinijne. Daty zwykle przechowuje się jako liczby całkowite (np. sekundy od Unix epoch, czyli 1 stycznia 1970) lub jako tablice ze znacznikami czasowymi. O ile liczby można porównywać bezpośrednio, format string wymaga użycia funkcji do konwersji lub porównania.
 
-Innym sposobem porównywania dat w Lua jest wykorzystanie zewnętrznej biblioteki, takiej jak `Penlight` czy `Date.lua`. Te biblioteki oferują bardziej zaawansowane funkcje do manipulacji i porównywania dat.
+Implementacja wykorzystująca `os.time()` jest wydajna i uniwersalna, bo opiera się na wbudowanych funkcjach Lua do obsługi czasu. Natileż, kiedy porównujemy daty jako stringi, musimy mieć na uwadze format – różne ustawienia regionalne i preferencje mogą wymagać innych schematów formatowania.
 
-Podsumowując, Lua porównuje dwie daty poprzez konwersję ich na format liczby sekund od pewnej ery (tzw. timestamp), co pozwala na proste i wydajne porównanie.
+## See Also
+- Dokumentacja Lua `os` library: https://www.lua.org/manual/5.4/manual.html#6.9
+- Wprowadzenie do Unix Time: https://en.wikipedia.org/wiki/Unix_time
+- Porównywanie stringów z datami w Lua: https://stackoverflow.com/questions/35543114/how-to-compare-date-strings-in-lua
 
-## Zobacz także:
-
-- Dokumentacja Lua: [https://www.lua.org/manual/5.1/](https://www.lua.org/manual/5.1/)
-- Biblioteka Penlight: [https://stevedonovan.github.io/Penlight/api/](https://stevedonovan.github.io/Penlight/api/)
-- Biblioteka Date.lua: [https://github.com/Tieske/date](https://github.com/Tieske/date)
+Pamiętaj, że informacje w sekcji "See Also" mogą zmieniać się z upływem czasu, dlatego warto sprawdzać aktualność źródeł.

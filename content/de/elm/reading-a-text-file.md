@@ -1,7 +1,8 @@
 ---
-title:                "Eine Textdatei lesen"
-html_title:           "Bash: Eine Textdatei lesen"
-simple_title:         "Eine Textdatei lesen"
+title:                "Textdatei einlesen"
+date:                  2024-01-20T17:54:16.074143-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Textdatei einlesen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -11,51 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Einlesen einer Textdatei ermöglicht es Programmen, Textinformationen zu verarbeiten – vom simplen Konfigurationsfile bis zur großen Datenanalyse. Programmierer nutzen das Einlesen von Textdaten, um interaktive Anwendungen zu gestalten, die auf Benutzereingaben oder Persistenz setzen.
 
-Das Lesen einer Textdatei bedeutet, die darin gespeicherten Daten auszulesen und für das Programm verfügbar zu machen. Programmierer machen das, um Zugang zu externen Informationen zu haben und diese innerhalb ihrer Anwendungen zu verwenden.
-
-## So geht’s:
-
-Elm (Version 0.19.1 und höher) ist eine funktionale Sprache, die noch keine direkten Möglichkeiten bietet, Dateien zu lesen. Aber sie interagiert gut mit JavaScript. Daher könnten wir die JavaScript-Funktion für das Lesen einer Datei verwenden und dann die Daten an Elm übergeben. 
-
-Erstens, fügen wir einige JavaScript-Code hinzu:
-
-```JavaScript
-var app = Elm.Main.init(); 
-var reader = new FileReader();
-
-reader.onload = function(){
-  app.ports.readFile.send(reader.result); 
-};
-
-function readfile(e) {
-  var file = e.target.files[0];
-  if(!file) return;
-  reader.readAsText(file);
-}
-```
-
-Der obige JS-Code ermöglicht das Lesen von Dateien und sendet dann die Daten über einen Port an unser Elm-Programm. Dann fügen wir den Port zu unserem Elm-Programm hinzu:
+## How to:
+Elm macht direktes Einlesen von Dateien etwas anders – es verwendet hauptsächlich Ports und Subscriptions, um Dateien über JavaScript zu verarbeiten. Hier ist ein kleines Beispiel mit einem Port:
 
 ```Elm
 port module Main exposing (..)
 
-type alias Model = 
-     { file : Maybe String 
-     }
-     
-port readFile : (String -> msg) -> Sub msg
+import Html exposing (Html, button, div, text)
+import Html.Events exposing (onClick)
+
+port readFile : String -> Cmd msg
+port fileRead : (String -> msg) -> Sub msg
+
+type Msg = ReadFile | FileRead String
+
+main =
+    Html.program
+        { init = ( "Click to read file", Cmd.none )
+        , view = view
+        , update = update
+        , subscriptions = \_ -> fileRead FileRead
+        }
+
+view model =
+    div []
+        [ button [ onClick ReadFile ] [ text "Read File" ]
+        , div [] [ text model ]
+        ]
+
+update msg model =
+    case msg of
+        ReadFile ->
+            ( model, readFile "filename.txt" )
+            
+        FileRead contents ->
+            ( contents, Cmd.none )
 ```
-Jetzt erhält die Anwendung alle Dateidaten auf der Elm-Seite.
 
-## Vertiefung:
+## Deep Dive:
+Historisch gesehen ist Elm stark auf Web-Anwendungen ausgerichtet, weshalb direkter Zugriff auf das Dateisystem nicht Teil des Sprachdesigns ist. Alternativ kommt man über JavaScript-Interoperabilität ans Ziel: Mit Ports sendet man Signale an JavaScript, das dann die Dateioperationen handhabt. Der Umgang mit Ports ist für side-effect-behaftete Operationen wie Dateizugriffe typisch. Das stellt sicher, dass Eure pure Funktionen rein bleiben.
 
-Historisch gesehen waren die Möglichkeiten zum Ein- und Auslesen von Dateien in funktionalen Programmiersprachen wie Elm immer etwas komplizierter. Das liegt daran, dass die meisten funktionalen Sprachen versuchen, Nebenwirkungen wie Dateioperationen zu vermeiden.
-
-Es gibt auch andere Möglichkeiten, Dateien in Elm zu lesen, wie zum Beispiel das Einbetten der Dateidaten zur Kompilierzeit durch Webpack oder ähnliche Werkzeuge. Letztendlich interessieren uns jedoch die Daten, die wir aus der Datei erhalten können, und durch welches Medium wir auf sie zugreifen, ist nebensächlich.
-
-## Siehe auch:
-
-- Elm Ports Tutorial: https://guide.elm-lang.org/interop/ports.html
-- FileReader API-Methode in JavaScript: https://developer.mozilla.org/de/docs/Web/API/FileReader
-- Einbetten von Assets mit Webpack: https://webpack.js.org/guides/asset-management/
+## See Also:
+- Elm Ports Dokumentation: [Elm Ports](https://guide.elm-lang.org/interop/ports.html)
+- Ein einführender Blogpost zu Elm und Dateien: [Elm & Files Blogpost](https://elm-lang.org/news/)

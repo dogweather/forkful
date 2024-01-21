@@ -1,7 +1,8 @@
 ---
-title:                "Enviando uma solicitação http"
-html_title:           "Bash: Enviando uma solicitação http"
-simple_title:         "Enviando uma solicitação http"
+title:                "Enviando uma requisição HTTP"
+date:                  2024-01-20T17:59:19.422312-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Enviando uma requisição HTTP"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,42 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
-
-Enviar uma solicitação HTTP é como o seu programa comunica com outros sistemas para buscar ou enviar dados. Programadores usam isso para integrar seu software com serviços web, APIs, ou para interagir com outros programas remotamente.
+## O Que é & Porquê?
+Enviar uma requisição HTTP significa pedir informação ou enviar dados para um servidor web usando o protocolo HTTP. Programadores fazem isso para interagir com APIs web, acessar serviços remotos e trocar informações com outras aplicações.
 
 ## Como Fazer:
-
-Aqui está um exemplo de como enviar uma requisição GET usando a biblioteca HTTPoison no Elixir.
-
-```elixir
-HTTPoison.start
-
-{:ok, response} = HTTPoison.get("http://example.com")
-IO.puts response.body
-```
-Quando executa este código, ele pegará os dados do `http://example.com`, e imprimirá o corpo da resposta no console.
-
-E aqui está um exemplo de um POST request, onde estamos enviando dados JSON para o servidor:
+Para enviar requisições HTTP em Elixir, você pode usar a biblioteca HTTPoison. Primeiro, adicione ao seu `mix.exs`:
 
 ```elixir
-headers = ["Content-Type": "application/json"]
-body = Poison.encode!(%{"chave": "valor"})
-
-{:ok, response} = HTTPoison.post("http://example.com", body, headers)
-IO.puts response.body
+defp deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
+end
 ```
 
-## Aprofundamento:
+Depois, execute `mix deps.get` para baixar a biblioteca. Agora, você pode fazer uma requisição GET simples com:
 
-No contexto histórico, o protocolo HTTP foi criado para permitir a comunicação entre servidores web e clientes. Mais tarde, ele começou a ser amplamente utilizado para permitir a comunicação entre programas.
+```elixir
+HTTPoison.get("https://jsonplaceholder.typicode.com/posts/1")
+```
 
-Existem muitas alternativas para enviar solicitações HTTP em Elixir, incluindo o HTTPoison mencionado, Tesla e o built-in Erlang httpc. Cada um destes tem suas próprias vantagens e desvantagens dependendo das necessidades específicas do seu projeto.
+E o exemplo de resposta seria algo assim:
 
-A mágica por trás de enviar uma solicitação HTTP está na implementação do protocolo TCP/IP que está embutida no sistema operacional. Elixir, em seguida, usa a biblioteca Erlang :httpc para fazer chamadas HTTP na maior parte do tempo.
+```elixir
+{:ok, %HTTPoison.Response{
+  status_code: 200,
+  body: "{...json body...}",
+  headers: [{...headers...}]
+}}
+```
 
-## Ver Também:
+## Aprofundando:
+Historicamente, em Elixir, a biblioteca padrão para fazer requisições HTTP era a `HTTPotion`, mas com o tempo, a `HTTPoison` se tornou mais popular por sua simplicidade e uma API mais amigável. Utilizando o adapter `hackney`, `HTTPoison` fornece um conjunto de funções para fazer requisições de forma síncrona e assíncrona. Existem alternativas, como a `Tesla`, que é mais extensível com middleware customizável, ou a recém chagada `Mint`, que é uma biblioteca de baixo nível que oferece um controle mais granular sobre as conexões HTTP. Na implementação, ao enviar uma requisição, você geralmente lidará com respostas e erros, parseamento de JSON e tratamento de timeouts e retries.
 
-- HTTPoison no Hex: https://hex.pm/packages/httpoison
-- Tesla no Hex: https://hex.pm/packages/tesla
-- Documentação oficial da biblioteca Erlang :httpc: http://erlang.org/doc/man/httpc.html
+## Veja Também:
+- Documentação oficial do HTTPoison: https://hexdocs.pm/httpoison/
+- Repositório da biblioteca Tesla: https://github.com/teamon/tesla
+- Documentação da biblioteca Mint: https://hexdocs.pm/mint/
+- JSONPlaceholder para testar requisições: https://jsonplaceholder.typicode.com/

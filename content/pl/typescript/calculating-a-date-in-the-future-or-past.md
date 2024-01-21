@@ -1,6 +1,7 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
-html_title:           "TypeScript: Obliczanie daty w przyszłości lub przeszłości"
+date:                  2024-01-20T17:32:01.932467-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,42 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Co to jest obliczanie daty w przyszłości lub przeszłości? To po prostu sposób na ustalenie, jaka data będzie za kilka dni, miesięcy czy lat, lub jaka była. Programiści to robią, by obsługiwać rezerwacje, harmonogramy, przypomnienia – cokolwiek, co związane jest z czasem.
 
-Obliczanie daty w przyszłości lub przeszłości to prosta koncepcja polegająca na dodawaniu do obecnej daty określonej ilości dni, miesięcy czy lat w celu uzyskania nowej daty. Programiści robią to bardzo często, na przykład do tworzenia harmonogramów lub prognoz.
-
-## Jak to zrobić:
-
+## How to:
 ```TypeScript
-let teraz: Date = new Date();
+const calculateDate = (startingDate: Date, daysDelta: number): Date => {
+  const resultDate = new Date(startingDate);
+  resultDate.setDate(resultDate.getDate() + daysDelta);
+  return resultDate;
+};
 
-// Obliczanie daty 5 dni do przodu
-let przyszlosc: Date = new Date();
-przyszlosc.setDate(teraz.getDate() + 5);
-console.log(przyszlosc);
+const today = new Date();
+const nextWeek = calculateDate(today, 7);
+const lastMonth = calculateDate(today, -30);
 
-// Obliczanie daty 5 dni wstecz
-let przeszlosc: Date = new Date();
-przeszlosc.setDate(teraz.getDate() - 5);
-console.log(przeszlosc);
+console.log(`Next week: ${nextWeek.toLocaleDateString()}`);
+console.log(`Last month: ${lastMonth.toLocaleDateString()}`);
 ```
-
-### Wyjście
-```TypeScript
-2022-03-21T00:00:00.000Z 
-2022-03-11T00:00:00.000Z
+Output:
 ```
-Za pomocą metody setDate natychmiastowe dodanie lub odjęcie dni jest proste i wydajne.
+Next week: 04/14/2023
+Last month: 03/11/2023
+```
 
 ## Deep Dive
+Data i czas to fundamentalne pojęcia, z którymi programiści muszą się zmagać od początku ery komputerów. JavaScript (a więc i TypeScript) używają obiektu `Date` do manipulacji datami. Można dodawać lub odejmować dni używając metody `setDate` i `getDate`.
 
-Concept obliczania daty w przyszłości lub przeszłości to nie jest nową ideą i jest powszechnie stosowany w różnych dziedzinach programowania. W TypeScript, modyfikując wartość getDate(), możemy łatwo manipulować datami w przyszłości i przeszłości.
+Istnieją alternatywy takie jak biblioteki `moment.js` czy `date-fns`, które oferują bardziej zaawansowane operacje i formatowanie dat, ale mogą być nadmiarem dla prostych operacji. TypeScript pozwala na strukturę i typowanie, co czyni operacje na datach bardziej przewidywalne.
 
-Alternatywnie, dla bardziej złożonych operacji na datach, możemy skorzystać z bibliotek takich jak Moment.js, które oferują bardziej zaawansowane funkcje manipulacji datą.
+Kolejnym ważnym kwestią jest strefa czasowa. Praca na obiektach `Date` w JS bez uwzględniania stref czasowych może prowadzić do nieoczekiwanych wyników. Domyślnie `Date` używa strefy czasowej ustawionej w systemie użytkownika, co trzeba mieć na uwadze podczas operacji na datach.
 
-Co do szczegółów implementacyjnych, metoda setDate() działa zarówno dla przyszłych, jak i przeszłych dat i jest dostępna we wszystkich współczesnych przeglądarkach, co czyni ją bardzo użyteczną dla większości programistów TypeScript.
-
-## Zobacz też
-
-- [Podręcznik TypeScript: Data](https://www.typescriptlang.org/docs/handbook/basic-types.html#date)
-- [Przewodnik po manipulacji datami w JavaScript](https://flaviocopes.com/how-to-date-javascript/)
+## See Also
+- MDN Web Docs for Date: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+- date-fns: https://date-fns.org/
+- moment.js: https://momentjs.com/
+- Luxon: https://moment.github.io/luxon/#/

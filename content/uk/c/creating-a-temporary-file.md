@@ -1,6 +1,7 @@
 ---
 title:                "Створення тимчасового файлу"
-html_title:           "C: Створення тимчасового файлу"
+date:                  2024-01-20T17:39:54.127652-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Створення тимчасового файлу"
 programming_language: "C"
 category:             "C"
@@ -10,44 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Як створити тимчасовий файл в C
+## What & Why? (Що таке та навіщо?)
+Створення тимчасового файлу - це процес, коли ваша програма створює файл, що існуватиме тільки під час її роботи. Програмісти роблять це для безпеки даних, уникнення конфліктів і зменшення нагрузки на оперативну пам'ять.
 
-## Що це і навіщо?
-
-Створення тимчасових файлів - це процес створення файлів, які можна використовувати для короткочасного зберігання інформації в ході виконання програми. Це корисно, коли вам потрібно обробляти великі об'єми даних, які не повинні або не можуть зберігатися в ОЗУ.
-
-## Як це робити:
-
-Створимо тимчасовий файл за допомогою функції `tmpfile()`
-
+## How to (Як це зробити):
 ```C
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
-    FILE* temp = tmpfile();
-    fputs("Код: 123", temp);
+    char temp_filename[] = "tmpfile_XXXXXX";
+    int file_descriptor = mkstemp(temp_filename);
     
-    rewind(temp); // Повертаемо курсор для читання з початку
-    
-    char buf[20];
-    fgets(buf, sizeof(buf), temp);
-    printf("%s\n", buf); // Виводимо "Код: 123"
-    
-    // tmpfile() автоматично видаляє файл при закритті
-    return 0;
+    if (file_descriptor == -1) {
+        perror("Error creating temporary file");
+        return EXIT_FAILURE;
+    }
+
+    write(file_descriptor, "Hello, temporary world!", 23);
+
+    // Remember to close the file descriptor
+    close(file_descriptor);
+
+    // Optionally delete the file if it's no longer needed
+    unlink(temp_filename);
+
+    printf("Temporary file '%s' created.\n", temp_filename);
+
+    return EXIT_SUCCESS;
 }
 ```
+Sample Output:
+```
+Temporary file 'tmpfile_a1b2c3' created.
+```
 
-## Глибше занурення
+## Deep Dive (Поглиблений огляд):
+Процес створення тимчасових файлів бере свій початок із ранніх днів UNIX систем, де було критично важливо зберігати надійність і атомарність операцій. Функція `mkstemp` створює тимчасовий файл з унікальним ім'ям, що мінімізує ризик перезапису файлів. Існують альтернативи, як `tmpfile()`, яка створює анонімний тимчасовий файл, що автоматично вилучається при закритті. Проте `mkstemp` дає більше контролю, наприклад, підтримує встановлення прав доступу до файлу. Важливо вчасно закривати тимчасові файли та видаляти їх, коли вони більше не потрібні, щоб уникнути витоку ресурсів.
 
-Тимчасові файли використовувалися ще в часи, коли ОЗУ було дорогим і обмеженим ресурсом. Сьогодні вони все ще винятково корисні для роботи з великими об'ємами даних або коли вам потрібне постійне місце для зберігання даних між сеансами.
-
-Альтернативою є використання вбудованих структур даних, таких як списки та масиви, але вони не використовуються, коли дані надто великі або коли їх потрібно зберігати поза програмою.
-
-Функція `tmpfile()` створює унікальний тимчасовий файл, відкриває його для читання та запису (`w+`) і повертає файловий дескриптор. Файл автоматично видаляється, коли програма завершує роботу або файл закривається.
-
-## Див. також
-
-- [Докладніше про файлові операції в C](https://www.cplusplus.com/reference/cstdio/)
-- [Деталі про заголовочний файл stdio.h](https://www.tutorialspoint.com/c_standard_library/stdio_h.htm)
-- [Більше про tmpfile()](http://www.cplusplus.com/reference/cstdio/tmpfile/)
+## See Also (Дивіться також):
+- [The Open Group Base Specifications Issue 7, 2018 edition - mkstemp(3)](https://pubs.opengroup.org/onlinepubs/9699919799/functions/mkstemp.html)
+- [GNU C Library Reference Manual - Temporary Files](https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html)
+- [stackoverflow - What is the difference between mkstemp() and tmpfile()?](https://stackoverflow.com/questions/41542960/what-is-the-difference-between-mkstemp-and-tmpfile)

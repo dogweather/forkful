@@ -1,6 +1,7 @@
 ---
 title:                "डीबग आउटपुट प्रिंट करना"
-html_title:           "Gleam: डीबग आउटपुट प्रिंट करना"
+date:                  2024-01-20T17:52:44.419154-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "डीबग आउटपुट प्रिंट करना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,31 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+डीबग आउटपुट प्रिंटिंग, कोड में क्या चल रहा है इसे जानने का एक तरीका है। प्रोग्रामर्स इसे इसलिए करते हैं ताकि वे बग्स को खोज और ठीक कर सकें।
 
-"डिबग आउटपुट" प्रिंट करना मतलब है कोड के विषम पहलुओं को समझने के लिए आवश्यक जानकारी दिखाने की क्रिया। प्रोग्रामर्स इसे करते हैं क्योंकि यह उन्हें बग की खोज और समस्या का समाधान करने में मदद करता है।
-
-## कैसे:
-
-Fish Shell में डिबग आउटपुट को मुद्रित करने के लिए, `echo` कमाँड का उपयोग करें।
+## How to: (कैसे करें:)
+Fish Shell में डीबग आउटपुट को प्रिंट करना आसान है। यहां एक उदाहरण दिया गया है:
 
 ```Fish Shell
-function debug
-    echo "Debug: $argv"
+function my_debug_function
+    set -l message $argv
+    echo "Debug: $message"
 end
+
+my_debug_function "नमस्ते, दुनिया!"
+```
+उदाहरण के आउटपुट:
+```
+Debug: नमस्ते, दुनिया!
 ```
 
-जब आप इसे `debug "Hello World"` के साथ कॉल करते हैं, तो यह "Debug: Hello World" मुद्रित करता है।
+## Deep Dive (गहराई में जानकारी):
+डीबग आउटपुट प्रिंटिंग की परंपरा कंप्यूटर प्रोग्रामिंग के शुरुआती दिनों से चली आ रही है। Fish Shell के प्रतिद्वंद्वियों, जैसे की bash और zsh, में भी इसी तरह की सुविधाएँ होती हैं, लेकिन Fish अपने सरल सिंटैक्स और user-friendly डिजाइन के लिए जाना जाता है। डीबग आउटपुट को फिश में प्रिंट करते समय, आप stderr का उपयोग करके या `status --is-interactive` कमांड का उपयोग करके अधिक गहराई में जा सकते हैं।
 
-## गहरा डाइव
-
-1) हिस्टॉरिकल कॉंटेक्स्ट: डिबग आउटपुट प्रिंट करना, प्रोग्राम की एक्सिक्यूशन फ्लो को समझने का एक प्राचीन तरीका है, जिसने अपनी सार्थकता यहां तक बनाई रखी है।
-
-2) विकल्प: अन्य शेलल जैसे ki Bash, `echo` के विकल्प के रूप में `printf` का उपयोग कर सकते हैं।
-
-3) विधान विवरण: Fish Shell में, `echo` कमाँड आर्ग्युमेंट को एक newline के साथ मुद्रित करता है। जेस्ट नियंत्रण संकेतम का इस्तेमाल करके आप न्यूलाइन को मिलाने का नियंत्रण कर सकते हैं। 
-
-## अनुशासित:
-
-- [Fish-Shell स्वीकार्य विचारनीय प्रक्रिया](https://fishshell.com/docs/current/tutorial.html)
-- [Fish-Shell के साथ डिबगिंग](https://fishshell.com/docs/current/faq.html#faq-debugging)
+## See Also (यह भी देखें):
+- Fish Shell ऑफिसियल डाक्यूमेंटेशन: https://fishshell.com/docs/current/index.html
+- Stack Overflow: पर Fish Shell से संबंधित सामान्य प्रश्न और उत्तर https://stackoverflow.com/questions/tagged/fish

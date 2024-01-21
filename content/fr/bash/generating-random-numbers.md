@@ -1,7 +1,8 @@
 ---
-title:                "Générer des nombres aléatoires"
-html_title:           "Elixir: Générer des nombres aléatoires"
-simple_title:         "Générer des nombres aléatoires"
+title:                "Génération de nombres aléatoires"
+date:                  2024-01-20T17:48:27.195511-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Génération de nombres aléatoires"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Numbers"
@@ -10,25 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-La génération de nombres aléatoires est une fonction codée qui produit une suite de nombres sans motif apparent. Les programmeurs l'utilisent pour diverses raisons comme les simulations, les jeux et les tests.
+## What & Why? (Quoi & Pourquoi ?)
+Générer des nombres aléatoires, c'est créer des chiffres imprévisibles. Les programmeurs s'en servent pour tout, des jeux aux simulations, en passant par la sécurité informatique.
 
-## Comment faire:
-Voici un cas simple de génération d'un nombre aléatoire dans Bash:
+## How to: (Comment faire :)
 ```Bash
-# Un nombre aléatoire entre 0 et 32767
-echo $RANDOM
-```
-Et pour générer un nombre aléatoire dans un intervalle spécifique, par exemple entre 1 et 100:
-```Bash
-# Un nombre aléatoire entre 1 et 100
+# Générer un nombre aléatoire entre 1 et 100
 echo $((RANDOM%100+1))
+
+# Générer un nombre aléatoire avec openssl pour une meilleure entropie
+echo $(openssl rand -hex 3 | od -An -N3 -i)
+```
+Exemple de sortie :
+```
+42
+789456
 ```
 
-## Plus en détail
-Historiquement, la génération de nombres aléatoires était basée sur des phénomènes physiques, comme le lancé de dés. Aujourd'hui, de nombreux langages de programmation offrent des moyens plus sophistiqués et prévisibles pour générer des nombres aléatoires. Pour alternatives, vous pouvez utiliser `openssl` ou `/dev/urandom` pour générer des nombres aléatoires de haute qualité. Cependant, keep in mind, la génération de nombres aléatoires dans Bash se fait via une fonction pseudo-aléatoire, ce qui signifie qu'elle n'est pas idéale pour les situations où une grande sécurité est requise.
+## Deep Dive (Plongée en profondeur)
+Avant `$RANDOM`, il fallait bricoler avec des dates ou des fichiers pour de l'aléatoire. `$RANDOM` est simple mais imparfait, notamment pour la cryptographie. Si vous avez besoin de plus sûr, utilisez `openssl` ou `/dev/urandom`. L'implémentation du générateur dépend du système et sa qualité varie.
 
-## Pour aller plus loin
-[Pseudo-random number generation in Bash](https://www.linuxjournal.com/content/pseudo-random-number-generation-bash)
-[Generating random data in Bash with OpenSSL and /dev/urandom](https://www.howtoforge.com/tutorial/generating-random-data-in-linux-with-openssl-and-dev-urandom/)
-[Bash $RANDOM built-in Bash function](https://tldp.org/LDP/abs/html/randomvar.html)
+## See Also (Voir aussi)
+- Man page de Bash pour `$RANDOM`: https://man7.org/linux/man-pages/man1/bash.1.html#Shell_Variables
+- Article de Red Hat sur la génération de nombres aléatoires : https://www.redhat.com/sysadmin/random-numbers-bash
+- OpenSSL Documentation : https://www.openssl.org/docs/manmaster/man1/openssl-rand.html

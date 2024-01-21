@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http"
-html_title:           "Bash: שליחת בקשת http"
-simple_title:         "שליחת בקשת http"
+title:                "שליחת בקשת HTTP"
+date:                  2024-01-20T17:59:32.313695-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,60 +11,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-שליחת בקשה HTTP היא שיטה בה מחשב שולח בקשה לשרת ובחזרה מקבל מידע. מתכנתים משתמשים בזה כדי לגשת ולשלוט במידע מרחוק, כמו מציאת מזג האוויר או שליטה בחכמה הביתית.
+## What & Why? (מה ולמה?)
+שליחת בקשת HTTP היא דרך לתקשר עם שרתים באינטרנט ישירות מה-Arduino. תכניתנים עושים זאת כדי לשלוח או לקבל נתונים, לגשת ל-APIs או לשלוט במכשירים מרחוק.
 
-## איך לעשות:
-ראשית, אנחנו צריכים להגדיר את הספריה הנדרשת:
+## How to: (איך לעשות:)
+הנה קוד פשוט לשליחת בקשת GET:
+
 ```Arduino
-#include <ESP8266WiFi.h>
-#include <ESP8266HTTPClient.h>
-```
+#include <WiFi.h>
 
-הגדר את פרטי ה-WiFi שלך:
-```Arduino
-const char* ssid = "שם הרשת שלך";
-const char* password = "סיסמה";
-```
+const char* ssid     = "yourSSID";
+const char* password = "yourPASSWORD";
+const char* serverName = "http://example.com/api";
 
-התחבר ל-WiFi:
-```Arduino
-WiFi.begin(ssid, password);
+WiFiClient client;
 
-while (WiFi.status() != WL_CONNECTED) {
-  delay(1000);
-  Serial.println("מתחבר ל-WiFi..");
-}
-
-Serial.println("מחובר ל-WiFi");
-```
-
-שלח בקשת HTTP:
-```Arduino
-if (WiFi.status() == WL_CONNECTED) {
-  HTTPClient http;
-
-  http.begin("http://example.com"); //Specify destination
-  int httpCode = http.GET(); //השג את הקוד של התגובה
-
-  if (httpCode > 0) { //בדוק שהקוד תקני
-    String payload = http.getString(); //השתמש בפקודה הזאת כדי לקבל תגובה
-    Serial.println(payload);
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.println("Connecting to WiFi...");
   }
+  Serial.println("Connected to WiFi");
+  httpGETRequest(serverName);
+}
 
-  http.end(); //סגור את החיבור
+void loop() {
+  // Nothing here for this simple example
+}
+
+void httpGETRequest(const char* serverName) {
+  client.setTimeout(5000);
+  if (client.connect(serverName, 80)) {
+    client.println("GET /api HTTP/1.1");
+    client.println("Host: example.com");
+    client.println("Connection: close");
+    client.println(); // Important: end the header section with an empty line!
+
+    while (client.connected()) {
+      String line = client.readStringUntil('\n');
+      if (line == "\r") {
+        Serial.println("Headers received, reply:");
+        break;
+      }
+    }
+    // Read response
+    String response = client.readStringUntil('\n');
+    Serial.println(response);
+  } else {
+    Serial.println("Connection failed.");
+  }
 }
 ```
 
-## צלילה עמוקה
-הבקשות HTTP מרכזיות בשימוש המחשב, בלי קשר לשפה או למערכת ההפעלה. טכנולוגיה זו משמשת באינטרנט הגלובלי מאז שנות ה-90.
+הקוד מחבר ל-WiFi ושולח בקשת GET. פלט הדוגמה:
 
-אלטרנטיבות? תכנית MQTT היא אלטרנטיבה נפוצה לשליחת בקשות HTTP, שמתאימה במיוחד למכשירים עם ממשקים מוגבלים.
+```
+Connecting to WiFi...
+Connected to WiFi
+Headers received, reply:
+{"example":"response"}
+```
 
-נשאר לנו לשקול שבקשה HTTP רגילה מחייבת חיבור ישיר לאינטרנט. במחשבים רגילים זה לא בעיה, אבל במיקרוקונטרולרים הדבר מהווה בעיה שצריך לטפל בה.
+## Deep Dive (נסיון עמוק):
+בעבר, שליחת בקשות HTTP מ-Arduino הייתה מורכבת יותר בגלל מגבלות החומרה של הפלטפורמה. כיום, עם התפתחות הטכנולוגיה ומודולים כמו ESP8266 ו-ESP32, התקשורת הפכה לקלה ונגישה יותר. ישנן גם חלופות לבקשות HTTP כגון MQTT, שמתאים לאינטרנט של הדברים (IoT). לבקשת HTTP יתרונות בזכות תקן אינטרנט רחב ותמיכה רחבה ב-APIs.
 
-## גם אתה יכול לראות
-הנה כמה משאבים שיכולים לעזור לך להעמיק את הידע שלך:
-- [HTTP - Wikipedia](https://he.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
-- [Arduino - HTTPClient Library](https://www.arduino.cc/en/Tutorial/LibraryExamples/HttpClient)
-- [Arduino - MQTT](https://www.arduino.cc/reference/en/libraries/mqtt/)
+## See Also (ראה גם):
+- דוקומנטציה של קליינט WiFi ל-ESP8266 ו-ESP32: [ESP8266WiFi library](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html), [ESP32 WiFi library](https://docs.espressif.com/projects/arduino-esp32/en/latest/esp-idf/api-reference/network/esp_wifi.html)
+- לקרוא על פרוטוקול MQTT: [MQTT.org](http://mqtt.org/)
+- איך להשתמש ב-Arduino עם שירותי ענן IoT: [Arduino Cloud](https://create.arduino.cc/cloud)

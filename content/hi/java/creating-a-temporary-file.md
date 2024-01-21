@@ -1,7 +1,8 @@
 ---
-title:                "एक अस्थायी फ़ाइल बनाना"
-html_title:           "Arduino: एक अस्थायी फ़ाइल बनाना"
-simple_title:         "एक अस्थायी फ़ाइल बनाना"
+title:                "अस्थायी फाइल बनाना"
+date:                  2024-01-20T17:41:15.789247-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "अस्थायी फाइल बनाना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -11,43 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों? (What & Why?)
+जावा में अस्थाई फाइल बनाने का मतलब है ऐसी फाइलें जिन्हें हम अस्थायी डेटा संग्रहण के लिए इस्तेमाल करते हैं। प्रोग्रामर्स तब अस्थाई फाइलें बनाते हैं, जब उन्हें ऐसे डेटा को स्टोर करने की जरूरत होती है जो केवल चालू सेशन के लिए महत्वपूर्ण है।
 
-अस्थायी फ़ाइल बनाना, यह एक ऐसी फ़ाइल होती है जिसे सिस्टम के इस्तेमाल के बाद आप स्वतः हटा सकते हैं। प्रोग्रामर इसे डाटा को अल्पकालिन रूप से स्टोर करने के लिए बनाते हैं, जैसे कि: लॉग जानकारी, कैशेड डाटा, अथवा किसी बड़ी कार्यवाही की मध्यवर्ती परिणाम।
-
-## कैसे (How to)
-
-```Java
+## कैसे करें: (How to:)
+```java
+import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
-public class Main {
+public class TemporaryFileExample {
     public static void main(String[] args) {
         try {
-            Path tempFile = Files.createTempFile(null, ".mytemp");
-            System.out.println("Temporary file path is: "+ tempFile.toAbsolutePath());
-        
+            // एक अस्थाई फाइल बनाइए
+            File tempFile = File.createTempFile("my_temp_file", ".txt");
+
+            // अस्थाई फाइल का पथ प्रिंट करिए
+            System.out.println("अस्थाई फाइल का पथ: " + tempFile.getAbsolutePath());
+
+            // काम खत्म होने पर अस्थाई फाइल को डिलीट कर दीजिए
+            tempFile.deleteOnExit();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 }
 ```
-
-ऊपर दी गई Java प्रोग्राम एक अस्थायी फ़ाइल बनाती है। संभावित आउटपुट होता है:
-
-```shell
-Temporary file path is: /tmp/1234567890.mytemp
+सैंपल आउटपुट:
+```
+अस्थाई फाइल का पथ: C:\Users\YourUsername\AppData\Local\Temp\my_temp_file1234567890.txt
 ```
 
-## गहराी की जानकारी (Deep Dive)
+## गहराई से जानकारी: (Deep Dive)
+जावा में अस्थाई फाइलों का कंसेप्ट सिस्टम के टेम्प फोल्डर का इस्तेमाल करके शुरू हुआ। इसका उपयोग होता है डाटा को इंटरमीडिएट प्रोसेसिंग के लिए स्टोर करने और फिर सुरक्षित रूप से डिस्कार्ड करने में। कुछ विकल्प हैं `java.nio.file` पैकेज की `Files.createTempFile` मेथड, जहां आपको और अधिक कंट्रोल मिलता है फाइल क्रिएशन पर। यह मेथड आपको डायरेक्टरी का चुनाव करने, फाइल नाम की प्रीफिक्स और सफिक्स सेट करने, और फाइल के एट्रीब्यूट को कॉन्फिगर करने की सुविधा देता है।
 
-Java में अस्थायी फ़ाइलें बनाने का तरीका JDK 1.2 से उपलब्ध है और यह आवश्यक सुरक्षा के मानकों का पालन करती है। वैकल्पिक रूप से, कस्टम निर्देशिका और प्रारम्भिक नाम उपयोग करके अस्थायी फ़ाइलें बनाई जा सकती हैं। Java निम्न स्तर में अस्थायी फ़ाइलें उत्पन्न करने में सक्षम होता है, जो प्रणाली-निर्भर होती है और इससे फ़ाइलों की योग्यता और सुरक्षा बढ़ती है।
-
-## और भी देखें (See Also)
-
-[Oracle: The Java Tutorials - File I/O (Featuring NIO.2)](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)
-
-[Geeks for Geeks: How to create a temporary file in Java](https://www.geeksforgeeks.org/create-temporary-file-java/)
-
-[Jenkov.com: Java Temp File (java.io)](http://tutorials.jenkov.com/java-io/temporary-files.html)
+## सम्बंधित जानकारी: (See Also)
+- [Class File Documentation](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
+- [Files (Java NIO)](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html)

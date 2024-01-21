@@ -1,7 +1,8 @@
 ---
-title:                "Aloittaminen uuden projektin"
-html_title:           "C: Aloittaminen uuden projektin"
-simple_title:         "Aloittaminen uuden projektin"
+title:                "Uuden projektin aloittaminen"
+date:                  2024-01-20T18:03:15.293824-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Getting Started"
@@ -10,45 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Uusi projekti C++:sta: Mikä ja Miksi?
+## What & Why? ("Mitä & Miksi?")
+Uuden projektin aloittaminen tarkoittaa tyhjältä pöydältä alkamista, koodipohjan rakentamista. Ohjelmoijat tekevät tämän uusien ideoiden testailuun, ongelmanratkaisuun tai oppiakseen jotain uutta.
 
-## Mikä & Miksi?
+## How to: ("Kuinka se tehdään:")
+Aloitetaan yksinkertaisella "Hello, World!" esimerkillä C++:ssa. Tämä asettaa perustan uudelle projektille.
 
-Uuden projektin aloittaminen tarkoittaa uuden ohjelman, sovelluksen tai toiminnon kehittämisen aloittamista tyhjältä pöydältä. Ohjelmoijat tekevät tämän uuden idean tai ratkaisun toteuttamiseksi, tai uuden oppimisen ja kokeilun mahdollistamiseksi.
-
-## Miten tehdä:
 ```C++
-// Aloita luomalla uusi .cpp-tiedosto
 #include <iostream>
-using namespace std;
 
-// Määritä pääfunktio
 int main() {
-    // Tulosta "Hei, maailma!"
-    cout << "Hei, maailma!" << endl;
-    
-    // Palauta 0 merkitsemään onnistunutta suoritusta
+    std::cout << "Hello, World!" << std::endl;
     return 0;
 }
 ```
-Kun tätä koodia ajetaan, tuloste on:
-```C++
-Hei, maailma!
+
+Kun suoritat yllä olevan koodin, näet seuraavan tulosteen:
 ```
-## Syvempi sukellus:
+Hello, World!
+```
 
-1. **Historiallinen konteksti**: C++ on Bjarne Stroustrupin kehittämä ohjelmointikieli, joka sai alkunsa 1980-luvulla. Uuden projektin aloittaminen C++:ssa antaa käyttäjälle mahdollisuuden hyödyntää sen tehokkaita luokkia, funktioita ja perintöominaisuuksia.
+## Deep Dive ("Sukellus syvään päätyyn")
+Ennen C++11 standardia, C++ -koodit alkoivat yksinkertaisemmilla otsikkotiedostoilla ja usein käyttivät `printf` tyylisiä funktioita C:n perinnön vuoksi. C++11 toi mukanaan tyypin päättelyn (`auto`), alustajalistoja ja muita parannuksia, jotka tekevät projektin aloittamisesta nopeampaa ja mielekkäämpää.
 
-2. **Vaihtoehdot**: Uuden projektin voi aloittaa myös muilla ohjelmointikielillä, kuten Pythonilla, Javalla tai JavaScriptillä, riippuen projektin vaatimuksista ja kehittäjän mieltymyksistä.
+Vaihtoehtoina perinteisen pääohjelman kirjoittamiselle, voit myös käyttää erilaisia C++ kirjastoja ja frameworkkeja, kuten Qt työpöytäsovellusten kehittämiseen tai Boost kirjastoa monimutkaisempiin algoritmeihin.
 
-3. **Toteutuksen yksityiskohdat**: Uuden projektin aloittaminen C++:ssa vaatii ymmärrystä funktioista, luokista, olioista, poikkeuksista ja muista C++:n peruskäsitteistä. Uusi projekti voidaan rakentaa luomalla uusi .cpp-tiedosto ja kirjoittamalla koodi käyttäen C++:n syntaksia.
+Projektin aloittamisen yksityiskohdissa on tärkeää miettiä, mitä rakennustyökaluja käytät, esimerkiksi CMake tai Makefile, ja miten projektin rakenne jäsennellään. Tämä sisältää kansiorakenteet, modulaarisuuden ja riippuvuuksien hallinnan.
 
-## Katso myös:
-
-1. [C++ Ohjelmointi](https://www.learncpp.com/): Opi C++ ohjelmointi perusteista.
-
-2. [C++ Standard Library](http://www.cplusplus.com/reference/): Hyödyllinen lähde C++ Standard Library -luokista, -funktioista ja -malleista.
-
-3. [Stack Overflow](https://stackoverflow.com/questions/tagged/c%2B%2B): Apua C++ ohjelmoinnin ongelmiin muilta kehittäjiltä.
-
-Remember, aloittaminen on aina vaikeinta. Mutta kun pääset vauhtiin, C++ tarjoaa mahdollisuuksia rajattomiin projekteihin. Joten, aloita rohkeasti!
+## See Also ("Katso myös")
+- [C++ Standards Committee Papers](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/)
+- [cppreference.com](https://en.cppreference.com/w/)
+- [The C++ Resources Network](https://isocpp.org/)
+- [Boost C++ Libraries](https://www.boost.org/)

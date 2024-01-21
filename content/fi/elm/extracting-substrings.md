@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:45:23.694495-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,38 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mika & Miksi?
+## What & Why? - Mikä & Miksi?
+Substringien poiminta on prosessi, jossa valitaan osajono isommasta jonosta. Ohjelmoijat käyttävät tätä esimerkiksi datan siistimiseen ja tietojen erotteluun.
 
-Alimerkkijonojen poiminta on prosessi, jossa valitaan osa merkkijonosta sen sijainnin perusteella. Ohjelmoijat tarvitsevat tätä toimintoa esimerkiksi silloin, kun he haluavat analysoida tai muokata olemassa olevaa tekstiä.
-
-## Kuinka:
-
-Alla on esimerkkikoodi, joka näyttää, kuinka erottaa alimerkkijonot Elm-ohjelmoinnissa:
-
+## How to: - Kuinka tehdä:
 ```Elm
 import String
 
-main = 
-  let
-    teksti = "Tervetuloa Elm -ohjelmointiin"
-    alku = 0
-    loppu = 10
-  in
-    String.slice alku loppu teksti
+-- Ota osajono merkkijonosta ‘hello world’ indeksistä 0 merkkien määrällä 5.
+substringExample : String
+substringExample =
+    String.slice 0 5 "hello world"
+-- Tämä antaa tulokseksi “hello”
+
+-- Ota osajono ‘programming is fun’ indekseistä 0 to 11.
+anotherExample : String
+anotherExample =
+    String.slice 0 11 "programming is fun"
+-- Tämä antaa tulokseksi "programming"
 ```
-Tämä koodi palauttaa alimerkkijonon "Tervetuloa ", mikä on merkkijonon alusta alkaen kymmenes merkki.
+Nämä esimerkit käyttävät `String.slice` funktiota, joka ottaa alku- ja loppuindeksit sekä merkkijonon ja palauttaa osajonon.
 
-## Syvällinen tarkastelu:
+## Deep Dive - Syväsukellus:
+Substringien poiminnan tarve tuli alkuaikoina, kun tiedon käsittely ja tekstin manipulointi olivat ohjelmoinnin ydintehtäviä. Elm:ssä `String.slice` on moderni tapa käsitellä osajonoja, mutta kielessä on muitakin tapoja, kuten `String.left` ja `String.right`, joilla voidaan ottaa osajonoja kiinteiden indeksien mukaan. Elm:ssä osajonon poiminnan suorituskyky riippuu kohdejonojen koosta ja käytetystä selaimesta, koska Elm käyttää selaimen JavaScript-ympäristön String-objektia prosessoinnissa.
 
-Historiallinen tausta: Alimerkkijonojen erottelu on peruskäsite monissa ohjelmointikielissä. Elm-ohjelmointikieli on suunniteltu korkealaatuiseksi, ja se on hyvä merkkijonojen käsittelyjärjestelmä.
-
-Vaihtoehtoja: Elm tarjoaa myös muita merkkijonojen käsittelyyn liittyviä toimintoja, kuten String.left ja String.right, jotka palauttavat merkkijonon vasemman tai oikean osan määritellyn merkkimäärän mukaan.
-
-Yksityiskohtia toteutuksesta: String.slice -funktio Elm:ssä hyödyntää JavaScript-toteutusta, ja nojaa vahvasti JavaScriptin sisäisten toimintojen tehokkuuteen.
-
-## Katso Lisää:
-
-1. Elm ohjeet: http://guide.elm-lang.org/
-2. Alkuperäinen Elm dokumentaatio: https://elm-lang.org/docs
-3. Elm String API: https://package.elm-lang.org/packages/elm/core/latest/String
-4. JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+## See Also - Lisäksi:
+- Elm String dokumentaatio: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- Interaktiivinen Elm repl kokeiluihin: [https://elm-lang.org/try](https://elm-lang.org/try)
+- Elm opetusta: [https://guide.elm-lang.org/](https://guide.elm-lang.org/)

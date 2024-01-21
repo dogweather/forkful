@@ -1,6 +1,7 @@
 ---
 title:                "डीबग आउटपुट प्रिंट करना"
-html_title:           "Gleam: डीबग आउटपुट प्रिंट करना"
+date:                  2024-01-20T17:52:31.810614-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "डीबग आउटपुट प्रिंट करना"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,37 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+Debug output मतलब कोड से त्वरित संदेश निकालना, जैसे वैरिएबल की वैल्यू या कोड की स्थिति। Programmers इसका इस्तेमाल करते हैं ताकि कोड कैसे काम कर रहा है ये समझ सकें और गलतियाँ तलाश सकें।
 
-Debug output का प्रिंट करना मतलब कठिनाईयों (bugs) को देखने के लिए कोड में अस्थाई मूल्यों का उपयोग करना। यह प्रोग्रामर्स को कोड कैसे काम कर रहा है, इसकी समझ देता है।
-
-## कैसे करें:
-
-Gleam में आप `gleam/io` के `debug` function का उपयोग करके debug output को print कर सकते हैं।
+## How to: (कैसे करें:)
+Gleam में debug output प्रिंट करना सीधा है. आइए देखें कैसे:
 
 ```gleam
 import gleam/io
 
-fn main() {
-  let x = "Debug Data"
-  io.debug(x)
+pub fn main() {
+  let my_variable = 42
+  io.debug("Debug message: my_variable's value is")
+  io.debug(my_variable)
 }
 ```
 
-इसे चलाने पर, आपको terminal में "Debug Data" मिलेगा।
+जब आप यह कोड चलाएँगे, आपको console में यह output दिखाई देगा:
 
-```output
-Debug Data
+```
+Debug message: my_variable's value is
+42
 ```
 
-## Deep Dive:
+## Deep Dive (गहराई से जानकारी):
+पहले, log messages बहुत सामान्य थे, लेकिन अब debug libraries का इस्तेमाल होता है जैसे `gleam/io`. इससे कोड साफ़ रहता है और messages को manage करना आसान होता है। Alternatives में structured logging या remote debugging जैसे tools शामिल हैं। जब आप `io.debug` का इस्तेमाल करते हैं, तो Gleam runtime वो messages आपके console या configured logging system में भेजता है।
 
-**ऐतिहासिक सन्दर्भ:** Debugging तकनीक प्राचीन प्रोग्रामिंग के इतने ही पुराने हैं जितनी कंप्यूटर। यह हमेशा से प्रोग्रामर्स के उपकरण किट का हिस्सा रहा है।
-
-**विकल्प:** कुछ विकल्प `print` statements हो सकते हैं, लेकिन `io.debug` function का उपयोग करना अधिक structured और मानकीकृत रूप से डेटा को लॉग करने का एक बेहतर दर्शाता है।
-
-**कार्यान्वयन विवरण:** Gleam में `io.debug` function, डिबग्गिंग जानकारी को आउटपुट करता है, और यह Erlang/OTP के निविदान पर आधारित है।
-
-## See Also:
-
-- [Debugging Techniques](https://en.wikipedia.org/wiki/Debugging)
+## See Also (और जानकारी के लिए):
+- Gleam official documentation: [Gleam language](https://gleam.run/documentation/)
+- Rust-based logging: [env_logger crate](https://docs.rs/env_logger/)
+- Structured logging in Elixir: [telemetry](https://hexdocs.pm/telemetry/)

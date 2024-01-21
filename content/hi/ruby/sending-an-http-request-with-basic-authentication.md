@@ -1,7 +1,8 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:03:07.977295-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,34 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## क्या और क्यों? (What & Why?)
 
-## क्या और क्यों?
-HTTP अनुरोध के साथ बेसिक प्रमाणीकरण भेजने का मतलब क्या है? इसका मतलब है कि आप HTTP सर्वर से प्रतिसाद प्राप्त करने के लिए एक "अनुरोध" भेजने के साथ, एक क्रिप्टिक "क्रेडेंशियल" (आपकी पहचान का एक प्रकार) भी भेजते हैं। का उपयोग करके आपके अनुरोध को प्रमाणित करते हैं। कम्प्यूटर प्रोग्रामर्स इसे इसलिए करते हैं क्योंकि ये क्रेडेंशियल्स कई प्रकार की वेब सेवाओं के लिए उपयोगी होते हैं, जिनमें से अधिकांश HTTP के माध्यम से प्राप्त होते हैं।
+HTTP अनुरोध जब बेसिक प्रमाणीकरण के साथ भेजा जाता है, तब प्रोग्राम एक सुरक्षित तरीके से यूज़रनेम और पासवर्ड का इस्तेमाल करके सर्वर से डेटा का आदान-प्रदान करता है। डेवलपर्स इस प्रक्रिया का इस्तेमाल तब करते हैं जब वे सिक्योर एपीआई या वेब सर्विसेज़ से जुड़ना चाहते हों।
 
-## कैसे करें:
-नीचे Ruby के कोड की उदाहरण दिए गए हैं:
+## कैसे करें? (How to:)
 
-```ruby
+```Ruby
 require 'net/http'
 require 'uri'
 
-uri = URI.parse("http://example.com/")
-request = Net::HTTP::Get.new(uri)
-request.basic_auth("user", "pass")
+uri = URI('http://example.com/posts')
+username = 'me'
+password = 'mypassword'
 
-response = Net::HTTP.start(uri.hostname, uri.port) do |http|
-  http.request(request)
+Net::HTTP.start(uri.host, uri.port) do |http|
+  request = Net::HTTP::Get.new(uri)
+  request.basic_auth(username, password)
+
+  response = http.request(request)
+  puts response.body
 end
-
-puts response.body
 ```
-आपका संदेश जो समर्पित करना चाहते हैं, उन्हें `"user"` और `"pass"` में बदलें। इस कोड को चलाने पर, आपको सर्वर से प्रत्युत्तर मिलेगा, जिसे आप ```put response.body``` के द्वारा देख सकते हैं।
 
-## गहरा डाइव
-HTTP प्रमाणीकरण की अनुरोध की प्रक्रिया का विकास 1990 के दशक के शुरुआती दिनों में हुआ था, जब इंटरनेट इंजनियरिंग टास्क फोर्स (IETF) ने इसे RFC 1945 के रूप में परिभाषित किया। औरतर्किक विधाएँ जैसे कि OAuth और डाइजेस्ट प्रमाणीकरण, HTTP प्रमाणीकरण की योजनाओं के विस्तार के रूप में आती हैं। Ruby का `Net::HTTP` कक्षा HTTP अनुरोधों और प्रतिसाद को प्रमाणित करने के लिए बेसिक और डाइजेस्ट प्रमाणीकरण का समर्थन करती हैं। 
+सैंपल आउटपुट:
+```
+[{"id": 1, "title": "हेल्लो वर्ल्ड!", "description": "यह एक परिचय है..."}, ...और रिकॉर्ड्स...]
+```
 
-## और देखें
-[Hindi में Ruby मैन्युअल](https://www.ruby-lang.org/hi/documentation/)
-[HTTP प्रमाणीकरण](https://tools.ietf.org/html/rfc7617)
-[रूबी नेट एचटीटीपी डॉक्स](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
+## विस्तार से जानकारी (Deep Dive)
+
+HTTP बेसिक प्रमाणीकरण में 'Authorization' हैडर का इस्तेमाल होता है, जो बेस-64 कोडिंग का प्रयोग करता है। यह तकनीक वेब की शुरुआत के दिनों से है और अभी भी सरल और फटाफट ऑथेंटिकेशन के लिए प्रयोग होती है। वैसे तो यह बहुत सिक्योर नहीं है, इसलिए आमतौर पर इसे SSL/TLS के साथ इस्तेमाल किया जाता है। इसके अलावा, ज्यादा सुरक्षित विकल्प जैसे कि OAuth, Digest प्रमाणीकरण और API कीज भी मौजूद हैं।
+
+## संबंधित स्रोत (See Also)
+
+- Ruby's Net::HTTP documentation: [Ruby-Doc.org](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
+- Base64 encoding in Ruby: [apidock.com](https://apidock.com/ruby/Base64)
+- More about HTTP Basic Authentication: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

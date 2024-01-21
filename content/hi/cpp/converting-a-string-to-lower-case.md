@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-html_title:           "Kotlin: एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-simple_title:         "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
+title:                "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
+date:                  2024-01-20T17:38:53.997156-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,37 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# एक स्ट्रिंग को लोअर केस में बदलना: एक सी ++ (वर्तमान संस्करण) प्रोग्रामिंग मार्गदर्शिका (C++ Programming Guide)
+## What & Why? (क्या और क्यों?)
+स्ट्रिंग को लोअर केस में बदलने से मतलब है हर अक्षर को छोटे (लोअरकेस) अक्षरों में परिवर्तित करना। प्रोग्रामर्स यह इसलिए करते हैं ताकि स्ट्रिंग प्रोसेसिंग में सामान्यीकरण हो सके और तुलना करना आसान हो जाए।
 
-## क्या और क्यों ?
-स्ट्रिंग को लोअर केस में बदलने का अर्थ होता है उसमें मौजूद सभी कैपिटल अक्षरों को छोटे अक्षरों में बदलना। इसे प्रोग्रामर्स इसलिए करते हैं ताकि वे कोड के संवेदनशीलता को कम कर सकें और डाटा मिलान और मिलाप सरल बना सके।
-
-## कैसे :
-
-लोअर केस के लिए स्ट्रिंग को कन्वर्ट करने के लिए कोडिंग उदाहरण।
-
+## How to: (कैसे करें:)
 ```C++
-#include <iostream> 
+#include <iostream>
 #include <algorithm>
 #include <cctype>
 
-int main()
-{
-	std::string s = "Hello World";
-	std::transform(s.begin(), s.end(), s.begin(),
-		[](unsigned char c) { return std::tolower(c); });
-	std::cout << s;
+int main() {
+    std::string str = "नमस्ते World!";
+    std::transform(str.begin(), str.end(), str.begin(), 
+    [](unsigned char c){ return std::tolower(c); });
+    
+    std::cout << str << std::endl;
+    return 0;
 }
-``` 
-इस कोड के निष्पादन पर आपको "hello world" प्राप्त होगा।
+```
+उदाहरण का आउटपुट: `नमस्ते world!`
 
-## गहराई में :
-हम जब दो स्ट्रिंग्स को मिलाते हैं हमें यह सुनिश्चित करना पड़ता है कि उनका केस (कैप्स या स्मॉल) समान हो। यदि यह लोअर केस में है, तो हमें डाटा को मिलाने और खोजने में आसानी होती है। एल्टर्नेटिवली, आप `boost::algorithm::to_lower(str)` का उपयोग भी कर सकते हैं, जो `Boost` लाइब्रेरी का एक हिस्सा है। 
+## Deep Dive (गहराई से जानकारी)
+पहले के जमाने में स्ट्रिंग को manipulate करने के लिए C-style functions जैसे `tolower()` use होते थे, और स्ट्रिंग्स C arrays की तरह होती थीं। C++ में `std::string` class और algorithms library के आगमन के बाद, स्ट्रिंग ऑपरेशंस को और भी सरल और अधिक शक्तिशाली बनाया गया। `std::transform` एक standard algorithm है जिसका use करके हम आसानी से string characters को इटरेट कर सकते हैं और किसी भी प्रकार का बदलाव कर सकते हैं। इसके अलावा, `boost` और `locale` जैसी libraries भी हैं जो कि विभिन्न भाषाओं और एन्कोडिंग्स के साथ बेहतर काम करती हैं। हालांकि, जब विशेष characters का प्रयोग होता है, तो लोकलाइज़ेशन और एन्कोडिंग अधिक महत्वपूर्ण हो जाते हैं।
 
-## भी देखें :
-
-1. [std::transform](http://www.cplusplus.com/reference/algorithm/transform/)
-2. [std::tolower](http://www.cplusplus.com/reference/cctype/tolower/)
-3. [boost::algorithm::to_lower](https://www.boost.org/doc/libs/1_71_0/doc/html/boost/algorithm/to_lower.html)
-   
-तो बस यही कारण है जिसके कारण स्ट्रिंग को लोअर केस में बदलना महत्वपूर्ण होता है और सी ++ (वर्तमान संस्करण) में इसे कैसे बदलने का तरीका भी। आशा करता हूँ आपको इस लेख का अनुवाद पसंद आया होगा!
+## See Also (और जानकारी)
+- `std::tolower`: http://www.cplusplus.com/reference/cctype/tolower/
+- `std::transform`: http://www.cplusplus.com/reference/algorithm/transform/
+- `std::string`: http://www.cplusplus.com/reference/string/string/

@@ -1,6 +1,7 @@
 ---
 title:                "提取子字符串"
-html_title:           "Arduino: 提取子字符串"
+date:                  2024-01-20T17:45:48.313888-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "提取子字符串"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,32 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是子字符串提取，为什么要用？
-子字符串提取是从字符串中获取指定部分内容的操作。程序员们用它来分析和操作字符串数据。
+## What & Why? (是什么？为什么？)
 
-## 如何使用：
-```Gleam
-let substring = string.slice(start: 3, length: 4)
-let () = io.println(substring)  // 输出 "lo W"
-```
-我们创建了一个新字符串，其中包含从第三个字符开始的四个字符。
+提取子字符串就是从一个字符串中抓取一部分内容。程序员这么做是为了分析或操作数据的片段，比如从一个日期中抓取年份。
 
-## 深入了解：
-子字符串提取起源于计算机科学早期的编程语言。无论在古老的Fortran，还是在现代的Python，你总能看到它的身影。提取子字符串是操作字符串的基本方式之一。
+## How to (如何操作)
 
-用Gleam提取子字符串有很多方式，我们上面展示的是其中之一。另一种常见的做法是使用函数`string.split_at`，它会将字符串一分为二，然后返回两个新的字符串。
+在Gleam中提取子字符串使用的是`slice`函数。下面是如何使用的示例：
 
-```Gleam
-let (first_half, second_half) = string.split_at(index: 7)
-let () = io.println(first_half) // 输出 "Hello, "
-let () = io.println(second_half) // 输出 "World!"
+```gleam
+import gleam/string
+
+fn main() {
+  let text = "Hello, world!"
+  let world = string.slice(text, 7, 12)
+  world
+}
 ```
 
-这样我们就可以得到两个新的子字符串，每个都包含原字符串的一部分。
+输出将是：
 
-## 参考资料：
-你可以查看[Tutorialspoint](https://www.tutorialspoint.com/programming_languages/gleam_string_types.htm)上关于Gleam String Types的更多信息。
+```
+Ok("world")
+```
 
-Gleam的[官方文档](https://gleam.run/documentation/)是更深入了解字符串操作和其他Gleam功能的好地方。
+## Deep Dive (深入了解)
 
-你也可以在[Gleam Cookbook](https://github.com/gleam-lang/stdlib/tree/main/src/gleam/string.gleam)中找到更多关于字符串操作的实用示例。
+历史上，提取子字符串这一需求促进了许多语言（包括Gleam）的字符串处理功能的发展。与其他语言相比，Gleam提供的`slice`函数返回的是`Result(String, String)`类型，确保了更安全的错误处理。除了`slice`，有时候其他函数如`split`或正则表达式也能完成相似的任务，但在不同的场景和用例中，每种方法的效率和便利程度都有所不同。在Gleam中关注安全和数据类型的严格性，可以借助错误处理的好处来减少运行时的问题。
+
+## See Also (请参阅)
+
+- Gleam官方文档关于字符串处理的部分：[https://gleam.run/book/tour/strings.html](https://gleam.run/book/tour/strings.html)

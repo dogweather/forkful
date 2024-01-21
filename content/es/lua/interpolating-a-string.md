@@ -1,7 +1,8 @@
 ---
-title:                "Interpolando una cadena de texto"
-html_title:           "Haskell: Interpolando una cadena de texto"
-simple_title:         "Interpolando una cadena de texto"
+title:                "Interpolación de cadenas de texto"
+date:                  2024-01-20T17:51:21.906454-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolación de cadenas de texto"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,24 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
-La interpolación de strings en Lua nos permite insertar variables en cadenas de texto. Los programadores la utilizan para simplificar la programación y hacerlo más legible y fácil de mantener.
+## ¿Qué y Por Qué?
 
-## Cómo:
-En Lua, usamos la función `format` de la biblioteca `string` para   interpolación. Veamos un ejemplo:
+La interpolación de cadenas permite insertar variables o expresiones dentro de una cadena de texto. Los programadores la utilizan para crear strings dinámicos que incluyan valores cambiantes sin tener que concatenar explícitamente.
+
+## Cómo se hace:
 
 ```Lua
-nombre = "Juan"
-print(string.format("Hola, %s!", nombre)) 
--- Salida: Hola, Juan!
+local nombre = "Mundo"
+local mensaje = ("Hola, %s!"):format(nombre)
+print(mensaje)  -- Salida: Hola, Mundo!
 ```
-En este código, `%s` es un marcador de posición que se sustituye por la variable `nombre`.
 
-## Buceo Profundo
-Históricamente, Lua no ofrecía la función `format` en sus primeras versiones, haciendo que la concatenación de strings fuera más tediosa. Con la implementación de `format`, poder introducir variables en las cadenas de texto se volvió mucho más sencillo.
-Alternativamente, puedes usar concatenación de strings para lograr el mismo resultado, pero carece de la simplicidad y limpieza que proporciona la interpolación.
-El detalle de implementación específico de `format` en Lua implica la sustitución de las especificaciones de formato (por ejemplo, `%s` para strings) en la cadena original por los argumentos especificados.
+Otra forma es con la función `string.format()`:
 
-## Ver también
-El [Manual de Referencia de Lua](https://www.lua.org/manual/5.4/manual.html) proporciona una visión más detallada de la función `format` y las especificaciones de formato.
-Aquí puedes leer mas articulos sobre programación en Lua [http://www.lua.org/articles.html](http://www.lua.org/articles.html).
+```Lua
+local temperatura = 25
+local info = string.format("La temperatura actual es de %d grados.", temperatura)
+print(info)  -- Salida: La temperatura actual es de 25 grados.
+```
+
+En Lua 5.4, se puede hacer de manera más directa:
+
+```Lua
+local usuario = "Ana"
+local puntos = 30
+print(f"Hola {usuario}, tienes {puntos} puntos.")  -- Salida: Hola Ana, tienes 30 puntos.
+```
+
+## Profundización
+
+Históricamente, en Lua se usaba la concatenación con `..` o la función `string.format()` para incorporar variables en cadenas. A diferencia de otros lenguajes que ofrecen interpolación de cadenas de forma nativa con una sintaxis más simplificada, Lua ha añadido esta funcionalidad recientemente, en la versión 5.4, con una sintaxis similar a la de Python y JavaScript.
+
+Como alternativa a la interpolación, se podía hacer uso de `table.concat()` para unir piezas de un array en una cadena, pero esto no es muy práctico para la inserción de variables simples.
+
+En la implementación, la interpolación nativa en Lua utiliza 'f-strings', que deben ser precedidos por una `f` antes de las comillas de la cadena. Las expresiones dentro de las llaves `{}` son evaluadas y convertidas en cadenas, siendo luego insertadas en el lugar correspondiente.
+
+## Ver También
+
+- Referencia oficial de Lua 5.4: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
+- "Programming in Lua" (cuarta edición) para profundizar en el lenguaje: [https://www.lua.org/pil/contents.html](https://www.lua.org/pil/contents.html)
+- Tutorial de Lua para principiantes: [http://lua-users.org/wiki/TutorialDirectory](http://lua-users.org/wiki/TutorialDirectory)

@@ -1,7 +1,8 @@
 ---
-title:                "Tilapäisen tiedoston luominen"
-html_title:           "Arduino: Tilapäisen tiedoston luominen"
-simple_title:         "Tilapäisen tiedoston luominen"
+title:                "Väliaikaistiedoston luominen"
+date:                  2024-01-20T17:39:56.983997-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Väliaikaistiedoston luominen"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,39 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? - Mikä & Miksi?
+Luodaan väliaikainen tiedosto - tilapäistä dataa varten, joka ei tarvitse pysyvää tallennusta. Ohjelmoijat käyttävät näitä tiedostoja esimerkiksi datan väliaikaistallennukseen, kun halutaan välttää konflikteja tai kun tehdään turvallista tiedostojen käsittelyä.
 
-Väliaikaistiedostojen luominen on prosessi, jossa ohjelmisto tallentaa tiedot väliaikaisesti tiedostoon, jonka se myöhemmin poistaa. Tämä on hyödyllistä, kun käsitellään suuria tietoja, joiden tallennusta pysyvästi ei tarvita.
-
-## Miten Tehdä:
-
-Tässä on yksinkertainen esimerkkikoodi väliaikaisen tiedoston luomiseksi C-ohjelmoinnissa.
-
+## How to: - Miten:
 ```C
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
-    FILE * tmpf = tmpfile();
-    fprintf(tmpf, "Hei, Suomi!\n");
-    rewind(tmpf);
-    char buf[20];
-    fgets(buf, sizeof(buf), tmpf);
-    printf("%s", buf); // Tulostaa: Hei, Suomi!
-    return 0;
+    char temp_filename[] = "tmpfileXXXXXX"; // Luo "template" tiedostonimelle
+    int result;
+
+    // mkstemp luo uniikin väliaikaisen tiedoston ja avaa sen
+    int fd = mkstemp(temp_filename);
+    
+    if (fd == -1) {
+        perror("mkstemp");
+        return EXIT_FAILURE;
+    }
+
+    // Käytä tiedostokahvaa (file descriptor) haluamallasi tavalla
+    // ...
+
+    // Kun olet valmis, sulje tiedosto ja poista se
+    close(fd);
+    result = remove(temp_filename);
+    
+    if (result == 0) {
+        printf("Temporary file deleted successfully.\n");
+    } else {
+        perror("remove");
+        return EXIT_FAILURE;
+    }
+
+    return EXIT_SUCCESS;
 }
 ```
-Kun tämän ohjelman suoritus päättyy, se myös automaattisesti poistaa luomansa väliaikaisen tiedoston.
 
-## Syvä Sukellus:
+## Deep Dive - Syväsukellus:
+Väliaikaisia tiedostoja on käytetty jo varhaisissa Unix-järjestelmissä tiedon väliaikaiseen tallennukseen. Väliaikaistiedoston luominen C-ohjelmoinnissa voi tapahtua funktioiden `tmpfile()` tai `mkstemp()` kautta. `tmpfile()` luo anonyymin väliaikaisen tiedoston, joka tuhoutuu ohjelman suorituksen päättyessä, kun taas `mkstemp()` luo väliaikaisen tiedoston käyttäjän määrittelemällä nimellä, joka täytyy manuaalisesti poistaa.
 
-Väliaikaisten tiedostojen luomiskäytäntö on peräisin ajalta, jolloin tietokoneen muisti oli rajallinen. Ohjelmat käyttävät sitä yhä tänään, erityisesti suurien tiedostojen käsittelyssä tai tiedostojen luonnissa, joita ei tarvitse säilyttää pitkään.
+`mkstemp()` on turvallisempi vaihtoehto verrattuna `tmpnam()` tai `mktemp()` funktioihin, jotka ovat herkkiä erilaisille turvallisuuksiin liittyville ongelmille, kuten kilpailutilanteille (race conditions). Turvallisuus on eräs syy, miksi `mkstemp()` on nykyaikainen vaihtoehto.
 
-Myös muita vaihtoehtoja on olemassa. In-memory -tiedostojärjestelmät, kuten `/dev/shm` Linuxissa, ovat yksi esimerkki.
+Implementation details: Väliaikaisten tiedostojen käytön yhteydessä on tärkeää ottaa huomioon järjestelmän resurssirajat ja varmistaa, että tiedosto poistetaan viimeistään ohjelman suorituksen päättyessä, jotta ei synny "orpoja" tiedostoja, jotka voivat kuluttaa levytilaa tarpeettomasti. 
 
-Suurten tiedostojen käsittelyssä väliaikaistiedostoa tulisi käyttää joko luomalla ainutlaatuisia tiedostonimiä `mkstemp` -funktiolla tai käyttämällä `tmpfile` -funktiota, joka luo anonyymin väliaikaistiedoston, kuten ylläolevassa esimerkissämme.
+## See Also - Katso Myös:
+- C standard library documentation on `tmpfile()`: https://en.cppreference.com/w/c/io/tmpfile
+- C standard library documentation on `mkstemp()`: https://en.cppreference.com/w/c/io/mkstemp
+- Linux manual page for `mkstemp()`: http://man7.org/linux/man-pages/man3/mkstemp.3.html
+- GNU C Library manual: https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html
 
-## Katso Myös:
-
-1. [ISO C -standardin dokumentaatio tmpfile](https://www.cplusplus.com/reference/cstdio/tmpfile/)
-2. [Man-sivut: tmpfile (3) - Linux-manuaalinen sivu](https://man7.org/linux/man-pages/man3/tmpfile.3.html)
-3. [C Standard Library](https://en.wikipedia.org/wiki/C_standard_library)
+Nämä lähteet tarjoavat laajempaa tietoa väliaikaistiedostojen käsittelystä, ja sisältävät syvällisemmät tekniset yksityiskohdat niitä tarvitseville.

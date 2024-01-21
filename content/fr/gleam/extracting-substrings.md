@@ -1,6 +1,7 @@
 ---
 title:                "Extraction de sous-chaînes"
-html_title:           "Arduino: Extraction de sous-chaînes"
+date:                  2024-01-20T17:45:27.310911-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,30 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ? 
+## What & Why? (Quoi et Pourquoi ?)
+Extraire des sous-chaînes, c'est récupérer des parties spécifiques d'une chaîne de caractères. On le fait pour analyser, transformer, ou valider des données textuelles.
 
-Extraire des sous-chaînes signifie obtenir une portion spécifique d'une chaîne de caractères. Les programmeurs le font pour manipuler des données textuelles en fonction de leurs besoins, comme l'analyse de textes ou la mise en forme des données.
+## How to: (Comment faire :)
+```gleam
+import gleam/string
 
-## Comment Faire :
-
-Voici comment extraire des sous-chaînes en Gleam :
-
-```Gleam
-let str = "Bonjour le monde"
-let sous_chaine = str.slice(0, 7)
+pub fn main() {
+  let text = "Bonjour, monde!"
+  let hello = string.slice(text, 0, 7) // On récupère "Bonjour"
+  let world = string.slice(text, 9, 14) // Et puis "monde"
+  io.debug(hello) // Affiche "Bonjour"
+  io.debug(world) // Affiche "monde"
+}
 ```
 
-L'exemple de code ci-dessus extrait la sous-chaîne "Bonjour " de la chaîne "Bonjour le monde".
+## Deep Dive (Plongée Profonde)
+L'extraction de sous-chaînes existe depuis les premiers langages de programmation pour manipuler les données textuelles. En Gleam, elle est sûre et prévoit les erreurs de dépassement grâce au typage statique fort. À côté, les langages comme Python ou JavaScript offrent des fonctions similaires mais avec des comportements différents en cas d'erreurs, comme des exceptions ou des résultats inattendus. Gleam, avec sa conception délibérée, évite ces pièges potentiels.
 
-## Plongée Profonde :
-
-Historiquement, l'extraction de sous-chaînes est un concept introduit avec les langages de programmation de bas niveau comme le C. Dans Gleam, on utilise la fonction `slice(start, end)` pour extraire une sous-chaîne de la chaîne d'origine. C'est une alternative aux méthodes de découpage de chaînes présentes dans d'autres langages de programmation.
-
-Les méthodes du type `substring()` ou `slice()` sont différentes des méthodes comme `split()`, qui divise une chaîne globale selon un délimiteur spécifié. Ces différences sont importantes car elles affectent la manière dont les données textuelles sont manipulées et utilisées.
-
-## Voir Aussi :
-
-Pour plus d'informations sur le traitement des chaînes en Gleam, consultez les liens suivants:
-
-- Documentation officielle de Gleam : [https://gleam.run/documentation](https://gleam.run/documentation)
-- Le guide rapide de Gleam: [https://gleam.run/getting-started](https://gleam.run/getting-started)
+## See Also (Voir aussi)
+- Documentation Gleam sur les chaînes: https://hexdocs.pm/gleam_stdlib/gleam/string/
+- Tutoriel Gleam: https://gleam.run/book/tour/
+- Forum de Gleam pour poser vos questions: https://github.com/gleam-lang/gleam/discussions

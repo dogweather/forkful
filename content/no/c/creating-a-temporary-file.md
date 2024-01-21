@@ -1,6 +1,7 @@
 ---
 title:                "Opprette en midlertidig fil"
-html_title:           "C#: Opprette en midlertidig fil"
+date:                  2024-01-20T17:39:44.897112-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Opprette en midlertidig fil"
 programming_language: "C"
 category:             "C"
@@ -11,35 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å opprette en midlertidig fil er en metode for å lagre data midlertidig under programutførelse. Progammerere gjør dette for å behandle store data, dele data mellom prosesser, eller bevare tilstanden til data hvis programmet avbrytes.
+Å opprette en midlertidig fil er prosessen med å lage en fil som kun eksisterer for varigheten av et program eller en sesjon, og som ofte slettes automatisk etterpå. Programmerere gjør dette for å håndtere data midlertidig uten å påvirke permanent lagring eller for å unngå kollisjon ved samtidige prosessers tilgang.
 
 ## Hvordan:
-Her er et grunnleggende eksempel på C koden for å lage en midlertidig fil:
-
 ```C
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 int main() {
-   char tmpname[L_tmpnam];
-   char* filename = tmpnam(tmpname);
+    char temp_filename[] = "tempfileXXXXXX";
+    int descriptor = mkstemp(temp_filename);
+    
+    if (descriptor == -1) {
+        perror("Kan ikke opprette midlertidig fil");
+        exit(EXIT_FAILURE);
+    }
+    
+    printf("Midlertidig fil opprettet: %s\n", temp_filename);
+    
+    // Bruk filen for noe her ...
 
-   printf("Temporary file name is: %s\n", filename);
-   return 0;
+    // Lukk og slett midlertidig fil
+    close(descriptor);
+    unlink(temp_filename);
+    
+    return 0;
 }
 ```
-Når koden kjører, vil output se slik ut:
+Output:
 ```
-Temporary file name is: /tmp/a1b2c3
+Midlertidig fil opprettet: tempfilec3rXWz
 ```
-Dette er navnet på den midlertidige filen som programmene dine kan bruke til å lagre data.
 
-## Dypdykk
-Oppretting av midlertidige filer har en lang historie i programmering. De ble først brukt da minne og lagringsplass var dyrebare ressurser og har fortsatt å være nyttige for mange moderne brukstilfeller.
+## Dypdykk:
+Opprettelse av midlertidige filer i C har en historisk bakgrunn i UNIX-systemer, der filer ofte ble brukt til inter-prosess kommunikasjon og for å lagre state midlertidig. `mkstemp()` er en sikker funksjon fordi den garanterer at filnavnet er unikt, og at det ikke vil være noen filnavnkollisjon, som kan føre til sikkerhetsproblemer. Tidligere brukte noen funksjonen `tmpnam()`, men denne er utrygg fordi det er en sjanse for filnavnkollisjoner og potensielle race conditions. Det finnes alternativer som `tmpfile()`, som skaper en midlertidig fil som automatisk slettes ved programslutt, men denne gir ikke tilgang til filnavnet, som kan være nødvendig i noen situasjoner.
 
-Alternativer inkluderer bruk av midlertidige tabeller i databaser, eller minnebasert lagring, som RAM-disker. Valget avhenger av dine spesifikke behov og begrensninger.
-
-Når du oppretter en midlertidig fil i C, bruker du funksjonen `tmpnam()`. Denne funksjonen genererer et unikt filnavn som kan brukes til å opprette filen. Filen er ikke faktisk opprettet når du ringer `tmpnam()`. Du må opprette og åpne den med funksjonen `fopen()` hvis du faktisk vil lagre data i den.
-
-## Se også
-- [tmpfile function in C](https://www.cplusplus.com/reference/cstdio/tmpfile/) 
-- [The C library function tmpnam()](https://www.tutorialspoint.com/c_standard_library/c_function_tmpnam.htm)
+## Se Også:
+- POSIX standarden for `mkstemp()`: https://pubs.opengroup.org/onlinepubs/9699919799/functions/mkstemp.html
+- C Standardbiblioteket dokumentasjon for `tmpfile()`: https://en.cppreference.com/w/c/io/tmpfile
+- Sikkerhetshensyn ved bruk av midlertidige filer: https://owasp.org/www-community/vulnerabilities/Insecure_Temporary_File

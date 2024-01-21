@@ -1,7 +1,8 @@
 ---
-title:                "Ein Datum in einen String umwandeln"
-html_title:           "Java: Ein Datum in einen String umwandeln"
-simple_title:         "Ein Datum in einen String umwandeln"
+title:                "Datum in einen String umwandeln"
+date:                  2024-01-20T17:36:13.718754-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Datum in einen String umwandeln"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -11,36 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Datum zu String-Konversion ist der Prozess der Umwandlung eines Datumsobjekts in eine lesbare Zeichenkette. Programmierer machen das, um Daten benutzerfreundlich anzuzeigen oder für den Export und die Weiterverarbeitung zu formatieren.
 
-Die Umwandlung eines Datums in einen String besteht darin, ein Datenformat in einen lesbaren Text umzuwandeln. Programmierer tun dies, um Daten in Benutzeroberflächen oder zur Speicherung und Übertragung zu präsentieren.
-
-## So geht's:
-
-Einfache Umwandlung eines Datums in einen String in C++ mit der Bibliothek `<chrono>` und `<iomanip>`:
-
+## So geht’s:
 ```C++
-#include <chrono>
 #include <iostream>
 #include <iomanip>
+#include <sstream>
+#include <ctime>
 
-int main(){
-    auto jetzt = std::chrono::system_clock::now();
-    std::time_t zeitpunkt = std::chrono::system_clock::to_time_t(jetzt);
-    std::cout << std::put_time(std::localtime(&zeitpunkt), "%Y-%m-%d %X") << '\n';
+int main() {
+    // Aktuelles Datum und Uhrzeit erhalten
+    std::time_t t = std::time(nullptr);
+    std::tm *tm_ptr = std::localtime(&t);
+
+    // Mit stringstream in String konvertieren
+    std::stringstream ss;
+    ss << std::put_time(tm_ptr, "%d.%m.%Y");
+
+    // String ausgeben
+    std::string date_as_string = ss.str();
+    std::cout << "Heutiges Datum: " << date_as_string << std::endl;
+
+    // Alternative mit C++20
+    // std::format wird in zukünftigen Versionen verfügbar
+    // std::string date_formatted = std::format("{:%d.%m.%Y}", *tm_ptr);
+    // std::cout << "Heutiges Datum: " << date_formatted << std::endl;
+
     return 0;
 }
 ```
+**Ausgabebeispiel:**
+```
+Heutiges Datum: 01.04.2023
+```
 
-Der obige Code wird das aktuelle Datum und die Zeit im Format "YYYY-MM-DD hh:mm:ss" ausgeben.
+## Deep Dive
+Die Konversion von Datum zu String ist nicht neu und hat sich mit der Zeit entwickelt. Ursprünglich nutzte man `strftime()`, eine Funktion aus der C Standardbibliothek. Mit C++ wurde das `std::put_time` und der `stringstream` eingeführt, die eine Objekt-orientiertere Herangehensweise bieten. In C++20 kam `std::format`, eine sicherere und flexiblere Alternative, die momentan aber noch nicht breit unterstützt ist.
 
-## Tiefgehende Analyse:
+Man muss auch Zeitzonen beachten. `std::localtime` berücksichtigt die lokale Zeitzone, während `std::gmtime` die GMT/UTC Zeit liefert.
 
-Die Umwandlung von Daten in Zeichenfolgen in C++ ist ein Prozess, der durch die Anforderungen des digitalen Zeitalters eingeführt wurde, da Text als das menschenlesbare Medium gilt. Es gibt Alternativen zur `<chrono>` und `<iomanip>` Bibliothek zum Beispiel, die `<ctime>` Bibliothek. Mit der Bibliothek, kann man das mit der Funktion `asctime()` tun. Betreffend der Implementierungsdetails ist zu beachten, dass die Funktion `std::put_time()` nur die Lokalzeit und nicht die UTC-Zeit zurück gibt. 
+Alternativen sind Bibliotheken wie `boost::date_time` oder `fmt` für ältere C++ Versionen sowie `std::chrono` aus C++11 und später für hochpräzise Zeitmessungen.
 
-## Siehe auch:
-
-Es gibt verschiedene Online-Ressourcen, die weiteres Wissen zu diesem Thema vermitteln:
-
-- [cppreference.com: Chrono-Library](https://en.cppreference.com/w/cpp/chrono)
-- [cppreference.com: Iomanip-Library](https://en.cppreference.com/w/cpp/io/manip)
-- [stackoverflow.com: How to convert time to string in C++?](https://stackoverflow.com/questions/16357999/current-date-and-time-as-string-using-c)
+## Siehe Auch
+- [cppreference.com, std::put_time](https://en.cppreference.com/w/cpp/io/manip/put_time)
+- [cppreference.com, std::format (C++20)](https://en.cppreference.com/w/cpp/utility/format/format)
+- [Boost.Date_Time Dokumentation](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
+- [fmtlib Dokumentation](https://fmt.dev/latest/index.html)

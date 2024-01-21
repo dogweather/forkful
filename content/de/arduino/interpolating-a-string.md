@@ -1,7 +1,8 @@
 ---
-title:                "Eine Zeichenkette interpolieren"
-html_title:           "Arduino: Eine Zeichenkette interpolieren"
-simple_title:         "Eine Zeichenkette interpolieren"
+title:                "Zeichenketten interpolieren"
+date:                  2024-01-20T17:49:59.973310-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Zeichenketten interpolieren"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -11,39 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+String-Interpolation ermöglicht es, Variablenwerte in einen String "einzubetten". Das erleichtert die dynamische Erzeugung von Text und die Datenanzeige während des Programmablaufes.
 
-String-Interpolation ermöglicht das Einbetten von Ausdrücken oder Variablenwerten direkt in Zeichenketten. Programmierer setzen sie ein, weil es das Erstellen komplexer Zeichenketten vereinfacht und für bessere Lesbarkeit und Wartbarkeit sorgt.
-
-## Wie geht das:
-
-Nun, Arduino unterstützt nicht direkt die String-Interpolation, aber wir können etwas Ähnliches erreichen. Sehen wir uns ein simples Beispiel an:
-
+## How to:
 ```Arduino
-String name = "Hans";
-int age = 32;
+char temperaturMsg[50];
+int temperatur = 23;
 
-Serial.begin(9600);
-Serial.println("Name: " + name + ", Alter: " + age);
+void setup() {
+  Serial.begin(9600);
+}
 
+void loop() {
+  sprintf(temperaturMsg, "Die aktuelle Temperatur ist: %d Grad Celsius", temperatur);
+  Serial.println(temperaturMsg);
+  delay(2000); // Update alle 2 Sekunden
+}
 ```
+Ausgabe: `Die aktuelle Temperatur ist: 23 Grad Celsius`
 
-Ausgabe wird sein:
+## Deep Dive:
+String-Interpolation ist kein neues Konzept und wurde in früheren Programmiersprachen wie Perl und Python populär. 
 
-```Arduino
-Name: Hans, Alter: 32
-```
+In Arduino wird keine direkte Interpolation wie in einigen modernen Sprachen unterstützt. Stattdessen verwendet man `sprintf()`, eine Standard-C-Funktion, um Variablen in Strings einzufügen.
 
+Der `%d` im `sprintf` ist ein Platzhalter für Ganzzahlwerte. Für andere Datentypen gibt es andere Platzhalter, wie `%f` für Fließkommazahlen oder `%s` für Strings.
 
-## Vertiefung:
+Beachte aber, dass Arduino's `sprintf` nicht mit Gleitkommazahlen (`float`, `double`) arbeitet. Man muss zuerst in eine ganzzahlige Darstellung umwandeln, wenn Fließkomma erforderlich ist.
 
-Historisch gesehen gab es in Sprachen, die String-Interpolation unterstützten (wie Perl oder Ruby), immer eine Methode, diese Funktion zu nutzen. Bei Arduino kann man bisher nur durch string concatenation ein ähnlicher Effekt erreichen.
+Alternativen sind die Verwendung der `String`-Klasse mit dem `+` Operator oder `String`-Methoden wie `concat()`. Diese Methoden sind aber weniger effizient im Speicherverbrauch.
 
-Alternativ könnten Sie für komplizierte Formate die sprintf-Funktion verwenden, die aber in einem eingeschränkten Format zur Verfügung steht.
-
-Zu Einzelheiten einer Implementierung - Die String "Addition" in Arduino ruft die concat() Funktion der String-Klasse auf. 
-
-## Siehe auch:
-
-- [Arduino String Reference (Englisch)](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [Arduino sprintf-Funktion (Englisch)](http://www.cplusplus.com/reference/cstdio/sprintf/)
-- [Arduino-Datenblätter und Handbücher (Deutsch)](https://www.arduino.cc/en/Main/Documentation)
+## See Also:
+- Arduino-Referenz für `sprintf`: https://www.arduino.cc/reference/en/language/functions/characters/printf/
+- `String`-Klasse in Arduino: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/

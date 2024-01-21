@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:51:40.464485-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,31 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to i dlaczego?
+## What & Why?
+Interpolacja to wplecenie zmiennej w ciąg tekstowy, co ułatwia tworzenie dynamicznego tekstu. Programiści używają interpolacji, aby łatwo łączyć stałe fragmenty tekstu z zmiennymi danymi, co czyni kod bardziej czytelnym i elastycznym.
 
-Interpolacja łańcuchów to sprytne wstawianie wartości zmiennych bezpośrednio do tekstu w naszych programach. Ten trik pozwala nam uniknąć skomplikowanych operacji łączenia stringów i sprawia, że nasz kod jest bardziej czytelny.
-
-## Jak to zrobić:
-
-Interpolację stringów w TypeScript można wykonać używając znaku backtick (\`). To jest przykład:
-
+## How to:
 ```TypeScript
-let imie = 'Jan';
-let powitanie = `Cześć, ${imie}!`;
-console.log(powitanie);  // wyświetla: Cześć, Jan!
+let user = 'Jan Kowalski';
+let age = 28;
+
+// Standardowy sposób interpolacji w TypeScript:
+let greeting = `Cześć, mam na imię ${user} i mam ${age} lata.`;
+
+console.log(greeting); // Wydruk: Cześć, mam na imię Jan Kowalski i mam 28 lata.
 ```
-Tutaj `${imie}` to miejsce interpolacji. TypeScript zamienia to na wartość zmiennej `imie`.
 
-## Głębsze spojrzenie:
+## Deep Dive
+Historia interpolacji stringów sięga języków programowania, które używały operatorów konkatenacji do łączenia ciągów znaków. W nowoczesnym JavaScript i TypeScript, template strings (ciągi szablonowe) ułatwiły ten proces dzięki użyciu backticków (``) oraz zapisu `${expression}`.
 
-Historia interpolacji stringów sięga języka Perl, ale technika ta zyskała na popularności dzięki Ruby. W TypeScript, jest to natywne rozwiązanie, które jest dużo prostsze i czytelniejsze niż klasyczne łączenie stringów używając dodatkowej operatora (+).
+Oprócz czytelności, interpolacja umożliwia wstawianie wyników wywołań funkcji czy obliczeń bezpośrednio w string. Jest wydajniejsza niż klasyczna konkatenacja, gdyż nie tworzy wielu tymczasowych stringów w pamięci.
 
-Inne rozwiązania, jak na przykład metoda `concat()`, również mogą być używane do łączenia stringów, ale nie są tak intuicyjne jak interpolacja stringów.
+Alternatywy to konkatenacja przy pomocy `+` i funkcja `concat()`, ale są mniej wygodne i intuicyjne.
 
-Interpolacja stringów jest realizowana poprzez funkcję `String.raw` w TypeScript. `String.raw` jest domyślną metodą dla literałów szablonów i służy do obróbki surowych ciągów znaków z literałów szablonów.
+Implementacja w TypeScript jest prawie identyczna jak w ES6 (ECMAScript 2015), ponieważ TypeScript jest supersetem JavaScript.
 
-## Zobacz także:
-
-Garść przydatnych źródeł na temat interpolacji stringów:
-
-- Artykuł na [Stack Overflow na temat interpolacji stringów](https://stackoverflow.com/questions/3304014/how-to-interpolate-variables-in-strings-in-javascript-without-concatenation)
+## See Also
+- MDN Web Docs na temat template strings: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+- Dokumentacja TypeScript – String: https://www.typescriptlang.org/docs/handbook/basic-types.html#string
+- TypeScript Deep Dive o stringach i interpolacji: https://basarat.gitbook.io/typescript/type-system#string

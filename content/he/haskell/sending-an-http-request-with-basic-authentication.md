@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http עם אימות בסיסי"
-html_title:           "C: שליחת בקשת http עם אימות בסיסי"
-simple_title:         "שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת HTTP עם אימות בסיסי"
+date:                  2024-01-20T18:01:58.956717-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP עם אימות בסיסי"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -11,30 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+שליחת בקשת HTTP עם אימות בסיסי מאפשרת גישה מאובטחת למשאבים ברשת. תוכניתנים משתמשים בזה כדי להבטיח שרק משתמשים עם הרשאות נכונות יכולים לגשת למידע רגיש.
 
-שליחת בקשת HTTP עם אימות בסיסי הוא מנגנון שמאפשר לנו לשלוח בקשות אל שרת אינטרנט, תוך שניםן מספקות פרטים לזיהוי המשתמש. מתכנתים משתמשים בכך כדי לגבול גישה למשאבים חשיפים יותר, או כאשר מדובר במשאבים שדורשים הרשאה מיוחדת.
+## איך לעשות:
+כדי לשלוח בקשה עם אימות בסיסי ב-Haskell, ניתן להשתמש בחבילה `http-conduit` ביחד עם `Network.HTTP.Simple`.
 
-## איך לעשות זאת:
-בהנחה שיש לך מותקנת הספרייה `http-conduit`, הנה דרך אחת לשליחת בקשת HTTP עם אימות בסיסי:
 ```Haskell
 import Network.HTTP.Simple
-import Network.HTTP.Client ()  -- for the orphan instance
+import Network.HTTP.Types.Header (hAuthorization)
+import Data.ByteString.Char8 (pack)
+import Data.ByteString.Base64 (encode)
 
-main :: IO ()
-main = do
-    request' <- parseRequest "http://httpbin.org/get"
-    let request = setRequestBasicAuth "username" "password" request'
+-- יצירת כותרת אימות בסיסית
+basicAuth :: String -> String -> Header
+basicAuth username password = (hAuthorization, "Basic " <> encode (pack (username <> ":" <> password)))
+
+-- פונקציה לביצוע בקשת GET עם אימות בסיסי
+makeRequest :: String -> String -> String -> IO ()
+makeRequest url username password = do
+    let request = setRequestMethod "GET"
+                  $ setRequestHeaders [basicAuth username password]
+                  $ defaultRequest
+                  { getUri = Just (URI.parseURI url) }
     response <- httpLBS request
-
     putStrLn $ "Status code: " ++ show (getResponseStatusCode response)
-    print $ getResponseHeader "Content-Type" response
-    putStrLn $ B.unpack $ getResponseBody response
+    print $ getResponseBody response
+
+-- שימוש בפונקציה
+main :: IO ()
+main = makeRequest "http://example.com/protected" "user" "pass"
 ```
-ספריית ה `http-conduit` תאפשר לך לעבוד עם בקשות HTTP בצורה פשוטה יותר.
 
-## הצצה עמוקה
-שליחת בקשת HTTP עם אימות בסיסי היא מנגנון שנמצא בשימוש מאז התחלת שנות ה-90, והוא מתבצע על ידי הוספת כותרת `Authorization` לבקשה. למרות שישנן כמה אלטרנטיבות (כמו אימות מרובה גורמים), השימוש באימות בסיסי הוא עדיין שיטה נפוצה במיוחד במקרים שבהם שימוש בשיטות אימות מתקדמות יותר בלתי אפשרית.
+תוצאת הדוגמה:
+```
+Status code: [קוד המצב שהתקבל מהשרת]
+[תגובת הגוף שהתקבלה מהשרת]
+```
 
-## ראו גם
-תוכל למצוא מידע נוסף בעמודים הבאים:
-- [Haskell ספריית http-conduit](https://hackage.haskell.org/package/http-conduit)
+## עיון עמוק:
+שליחת בקשות עם אימות בסיסי היא טכניקה כבר קיימת מאז הימים הראשונים של האינטרנט. אימות בסיסי אינו הכי בטוח כיוון שהוא מצפין את שם המשתמש והסיסמה ב-base64, שאינה הצפנה חזקה. ישנם שיטות אימות מתקדמות יותר כמו OAuth, אבל לפעמים אימות בסיסי מספיק.
+
+בעת ביצוע בקשת אימות בסיסי ב-Haskell, נחוץ להתמודד עם חבילות חיצוניות ולהבין כיצד מתבצעת קידוד ל-base64. כאשר יוצרים את כותרת האימות, יש לשים לב לכך ששם המשתמש והסיסמה מחוברים עם נקודותיים ולאחר מכן מקודדים ל-base64 ומוספים את המילה "Basic" לפני הטקסט המקודד.
+
+## ראה גם:
+- המדריך ל-HTTP במסמכי MDN: [MDN HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- תיעוד החבילה `http-conduit`: [http-conduit on Hackage](https://hackage.haskell.org/package/http-conduit)
+- תיעוד חבילת `base64-bytestring`: [base64-bytestring on Hackage](https://hackage.haskell.org/package/base64-bytestring)

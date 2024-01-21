@@ -1,7 +1,8 @@
 ---
-title:                "Надсилання http-запиту"
-html_title:           "Arduino: Надсилання http-запиту"
-simple_title:         "Надсилання http-запиту"
+title:                "Надсилання HTTP-запиту"
+date:                  2024-01-20T17:59:33.464886-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,40 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
+## What & Why? (Що та Чому?)
 
-Надсилання HTTP-запиту - це процес надсилання запиту від клієнта до сервера через протокол HTTP. Програмісти роблять це для отримання або відправлення даних на веб-сервер або API.
+Відправлення HTTP запиту – це спосіб "поговорити" з веб-сайтом чи сервісом. Програмісти роблять це, щоб отримати дані, відправити інформацію або керувати веб-ресурсами.
 
-## Як це зробити:
+## How to: (Як це зробити:)
 
 ```Fish Shell
-# Встановлення програми curl
-sudo apt-get install curl
+# Встановлення httpie для відправлення HTTP запитів
+fisher install httpie
 
-# Надсилання GET-запиту
-curl "http://example.com"
+# Відправлення GET запиту
+http GET example.com
 
-# Надсилання POST-запиту з JSON-даними
-curl -d '{"key1":"value1", "key2":"value2"}' -H "Content-Type: application/json" -X POST http://localhost:3000/data
+# Відправлення POST запиту з даними
+http POST example.com name=Ivan age=34
+
+# Результат виконання:
+# HTTP/1.1 200 OK
+# ...
+# {
+#     "json": {
+#         "age": "34",
+#         "name": "Ivan"
+#     }
+# }
 ```
 
-**Вивід:**
-```Fish Shell
-<html>
-<head>
-<title>Example Domain</title>
-...
-</html>
-```
+## Deep Dive (Поглиблений Розгляд)
 
-## Поглиблений огляд:
+Ще у ранніх днях інтернету, відправлення HTTP запитів було ключовою частиною веб-розробки. Сьогодні, зручні інструменти як `httpie` сильно спростили процес. Альтернативи `httpie` включають `curl` та бібліотеку `requests` для Python. У Fish Shell, `httpie` є інтуїтивним завдяки своїй простоті та читабельності команд. При відправленні запитів ми маємо справу з методами HTTP як GET для отримання даних та POST для відправки. Ми можемо також встановлювати заголовки запиту, передавати параметри та управляти відповідями сервера через наші команди.
 
-(1) Історичний контекст: HTTP-запити були винайдені в 1991 році як основний метод передачі даних в World Wide Web.
-(2) Альтернативи: Деякі альтернативи HTTP-запитів включають WebSocket або документи GraphQL.
-(3) Деталі реалізації: У Fish Shell можна використовувати утиліту curl або wget для відправлення HTTP-запитів. Ви можете налаштувати деталі запиту, такі як заголовки, методи (GET, POST, DELETE тощо) і дані запиту.
+## See Also (Дивіться також)
 
-## Дивись також:
-
-- Документація про HTTP-запити: [ссылка](https://developer.mozilla.org/uk/docs/Web/HTTP/Overview)
-- Fish Shell scripting tutorial: [ссылка](https://fishshell.com/docs/current/tutorial.html)
-- Curl manual: [ссылка](https://curl.se/docs/manual.html)
+- Документація Fish Shell: https://fishshell.com/docs/current/index.html
+- httpie GitHub Repository: https://github.com/httpie/httpie
+- HTTP протокол: https://developer.mozilla.org/en-US/docs/Web/HTTP
+- Огляд основ HTTP запитів з `curl`: https://curl.se/docs/manual.html

@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http"
-html_title:           "Arduino: Wysyłanie żądania http"
-simple_title:         "Wysyłanie żądania http"
+title:                "Wysyłanie żądania HTTP"
+date:                  2024-01-20T17:59:45.964361-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie żądania HTTP"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,49 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? | Co i Dlaczego?
+Wysyłanie żądania HTTP to proces komunikacji z serwerem internetowym, by uzyskać dane lub wykonać operację. Programiści to robią, by współdziałać z API, pobierać treści stron, przesyłać dane formularzy lub testować aplikacje webowe.
 
-Wysyłanie żądania HTTP to proces, w którym twój komputer prosi o dane z serwera internetowego. Programiści robią to, żeby komunikować się z zasobami internetowymi, takimi jak strony internetowe, API, czy bazy danych.
-
-## Jak to zrobić:
-
-Przykład jak wysłać żądanie GET używając curl w Fish Shell:
+## How to: | Jak to zrobić:
+W Fish Shell możemy użyć programów jak `curl` lub `httpie`. Prosty przykład z `curl`:
 
 ```Fish Shell
-function wyslij_get
-  set url $argv[1]
-  curl $url
+curl https://api.example.com/posts
+```
+
+Zwraca odpowiedź od API. Jeśli chcesz, żeby było bardziej 'fishy', możesz zrobić funkcję:
+
+```Fish Shell
+function fetch_posts
+    curl https://api.example.com/posts
 end
+
+fetch_posts
 ```
 
-Teraz możemy wywołać tę funkcję z dowolnym adresem URL, np.:
+I przykład z `httpie`:
 
 ```Fish Shell
-> wyslij_get https://example.com
+http GET https://api.example.com/posts
 ```
 
-Przykład wyjścia mogłoby wyglądać tak:
+Sample output:
 
-```Fish Shell
-<!doctype html>
-<html>
-<head>
-    <title>Example Domain</title>
-...
+```sh
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+    {
+        "id": 1,
+        "title": "Fish Shell dla początkujących",
+        "content": "..."
+    },
+    ...
+]
 ```
 
-## Głębsze Zanurzenie 
+## Deep Dive | Do Rzeczy
+Zanim pojawił się Fish Shell, programiści używali Bash, Zsh i inne shelle Unixowe do pracy z HTTP. Teraz, mamy więcej wygodnych narzędzi. `curl` jest standardem, lecz `httpie` oferuje przyjazne dla człowieka formatowanie. Fish Shell nie ma wbudowanej obsługi HTTP, ale świetnie komponuje się z zewnętrznymi narzędziami.
 
-Wysyłanie żądań HTTP było podstawową częścią internetu od połowy lat 90-tych. Przede wszystkim używane jest do pobierania zasobów z internetu, ale także do komunikacji z usługami API.
+Kluczowe jest, że Fish Shell automatyzuje wspólne zadania i skrypty, które mogą zawierać wysyłanie żądań HTTP jako część większego procesu. Możesz tworzyć funkcje w Fish, które zintegrują się z `curl` lub `httpie`, i używać je jak własne polecenia.
 
-Jest wiele alternatyw dla curl, takie jak wget, httpie czy Postman. Każde narzędzie ma swoje unikalne cechy i przewagi.
-
-Szczegóły implementacji wysyłania żądań HTTP mogą się różnić w zależności od narzędzia używanego do tego celu. W powyższym przykładzie, curl tworzy TCP połączenie do serwera określonego przez URL, a następnie wysyła żądanie HTTP.
-
-## Zobacz również
-
-HTTP: [https://pl.wikipedia.org/wiki/Hypertext_Transfer_Protocol](https://pl.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
-
-Curl: [https://curl.se/](https://curl.se/)
-
-Fish Shell: [https://fishshell.com/](https://fishshell.com/)
+## See Also | Zobacz również
+- [Dokumentacja `curl`](https://curl.se/docs/)
+- [Dokumentacja `httpie`](https://httpie.io/docs)
+- [Fish Shell Tutorial](https://fishshell.com/docs/current/tutorial.html)
+- [Bardziej zaawansowane skrypty w Fish](https://fishshell.com/docs/current/index.html#scripting)

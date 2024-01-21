@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
+date:                  2024-01-20T18:01:47.270757-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Go"
 category:             "Go"
@@ -10,53 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Send HTTP Request with Basic Auth in Go
-
 ## What & Why?
-
-Sending an HTTP request with basic authentication is a way to secure and grant access to certain parts of a web service. Programmers do this to protect sensitive data from unauthorized use while providing controlled access to legit users.
+HTTP requests with basic authentication add a simple security layer to an API call. Programmers use it to access resources requiring credentials, like user-specific data.
 
 ## How to:
-
-Here's an example of sending a GET HTTP request with basic authentication:
+Sending an authenticated HTTP request is straightforward in Go:
 
 ```Go
 package main
 
 import (
+	"encoding/base64"
 	"fmt"
+	"io/ioutil"
 	"net/http"
 )
 
 func main() {
-	req, err := http.NewRequest("GET", "https://api.github.com/user", nil)
-	if err != nil {
-		fmt.Printf("http.NewRequest() error: %v\n", err)
-		return
-	}
-	req.SetBasicAuth("username", "password")
-
 	client := &http.Client{}
+	req, err := http.NewRequest("GET", "https://api.example.com/data", nil)
+	if err != nil {
+		panic(err)
+	}
+
+	username := "user"
+	password := "pass"
+	credentials := base64.StdEncoding.EncodeToString([]byte(username + ":" + password))
+	req.Header.Add("Authorization", "Basic "+credentials)
+
 	resp, err := client.Do(req)
 	if err != nil {
-		fmt.Printf("http.Do() error: %v\n", err)
-		return
+		panic(err)
 	}
 	defer resp.Body.Close()
-  
-	// ... read resp.Body here...
+
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("%s\n", body)
 }
 ```
-In the above code, replace 'username' and 'password' with your own credentials.
+
+Sample output (with fictional API URL and credentials):
+```plaintext
+{"status":"success","data":"some private data"}
+```
 
 ## Deep Dive
+Basic authentication is part of the HTTP/1.0 spec and has been around since the early days of the web. It's not the most secure (credentials are just base64 encoded, not encrypted), so it's often swapped for OAuth or JWT in more sensitive applications.
 
-Historically, basic authentication was a simple protocol, where user credentials were encoded and transmitted with each HTTP request. It's still widely used due to its simplicity, despite this method's potential vulnerability, as credentials can be intercepted easily.
+Implementation-wise, Go includes built-in support for HTTP clients and requests, with package `net/http` enabling developers to handle web traffic. When using basic authentication, we need to ensure the credentials are appropriately encoded, and the `Authorization` header is added to the HTTP request.
 
-Alternatives include OAuth and Token-based auth. They work by issuing tokens which are sent as headers in the HTTP request, and are generally more secure compared to Basic Auth.
-
-In Go, an `http.Request` object's method `SetBasicAuth(username, password string)` is used to add the Authorization header to the HTTP request. It encodes the username and password in base64 and prepends `Basic ` to it.
+Though simple, you should avoid using basic authentication over plain HTTP since it's susceptible to man-in-the-middle attacks. Always use HTTPS when you're sending credentials.
 
 ## See Also
-
-To build upon this, checkout [Go's full documentation on net/http](https://golang.org/pkg/net/http/) package. For secure alternatives, [OAuth 2.0](https://oauth.net/2/), or [JWT](https://jwt.io/) can be good starting points. Learn more about basic authentication from the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication).
+- Go `net/http` package documentation: https://pkg.go.dev/net/http
+- Go `encoding/base64` package documentation: https://pkg.go.dev/encoding/base64
+- Info on HTTP Basic Authentication: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- For more secure authentication methods: https://oauth.net/ and https://jwt.io/

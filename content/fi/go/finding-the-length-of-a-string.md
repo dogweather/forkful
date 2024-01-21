@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon pituuden selvittäminen"
-html_title:           "Go: Merkkijonon pituuden selvittäminen"
+date:                  2024-01-20T17:47:45.231792-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Go"
 category:             "Go"
@@ -10,32 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Merkkijonon pituuden selvittäminen Go-ohjelmointikielessä
+## What & Why?
+Mittaus on avainymmärrys. Ohjelmoinnissa merkkijonon pituuden selvittäminen kertoo meille, kuinka monta merkkiä jono sisältää. Tällä tiedolla säädämme logiikkaamme - oli kyseessä sitten datan validointi, käyttöliittymän asettelut, tai tekstin käsittely.
 
-## Miksi & miksi?
-Merkkijonon pituuden selvittäminen on tapa saada selville, kuinka monta merkkiä on määritetyssä merkkijonossa (tekstissä). Ohjelmoijat tekevät tämän usein esimerkiksi datan validointiin tai tulosten käsittelyyn.
-
-## Kuinka:
-Tässä on esimerkkikoodi Go-kielellä. Kokeile sitä.
+## How to:
+Go:n standardikirjasto tekee merkkijonon pituuden selvittämisen helpoksi. Käytä `len`-funktiota:
 
 ```Go
 package main
-import "fmt"
+
+import (
+	"fmt"
+)
 
 func main() {
-    str1 := "Ohjelmointi"
-    fmt.Println(len(str1))
+	str := "moikka"
+	fmt.Println("The length of the string is:", len(str))
 }
 ```
-Kun suoritat yllä olevan koodin, se tulostaa lukuarvon 12, joka on "Ohjelmointi"-merkkijonon pituus.
 
-## Syvä sukellus
-Go-kielessä merkkijonojen pituus lasketaan käyttämällä built-in len()-funktiota. Tämä funktio, joka on ollut alusta alkaen mukana Go:ssa, palauttaa merkkijonon pituuden tavuina, ei merkkeinä, mikä on tärkeää ottaa huomioon, jos käsittelet usean tavun merkkejä.
+Tulostus:
 
-Vaihtoehtoisesti voit laskea merkkijonon pituuden manuaalisesti käymällä läpi merkkijonon merkit, mutta yleensä len()-funktio on mukavampi ja tehokkaampi tapa.
+```
+The length of the string is: 6
+```
 
-Merkkijonon pituuden selvittäminen Go:ssa on hyvin tehokasta verrattuna joihinkin muihin ohjelmointikieliin, koska Go tallentaa merkkijonon pituuden merkkijonon alussa, jolloin sen hakeminen on nopeaa.
+## Deep Dive
+Merkkijonon pituuden selvittäminen ei ole aina suoraan verrannollista merkin määrään. Historiallisesti merkkijonojen pituuden laskeminen on ollut yksinkertaisempaa, kun käytössä oli vain ASCII-merkistö. Go:ssa merkkijonot on koodattu UTF-8-muodossa, joka mahdollistaa monien eri kirjoitusjärjestelmien koodaamisen. UTF-8 merkistökoodauksessa merkki voi viedä 1–4 tavua.
 
-## Katso myös
-1. [Go:n virallinen dokumentaatio Strings-paketista](https://golang.org/pkg/strings/)
-2. [Blogikirjoitus merkkijonojen käsittelystä Go:ssa](https://blog.golang.org/strings)
+Jos haluat selvittää Unicode-koodipisteiden määrän (todellisen "merkkien" määrän), sinun tulee käyttää `utf8`-pakettia:
+
+```Go
+package main
+
+import (
+	"fmt"
+	"unicode/utf8"
+)
+
+func main() {
+	str := "hei"
+	fmt.Println("Number of bytes:", len(str))
+	fmt.Println("Number of runes:", utf8.RuneCountInString(str))
+}
+```
+
+Tämä on tärkeää, kun työstät Unicode-merkkejä sisältäviä merkkijonoja, kuten "你好", "Hello", tai "مرحبا".
+
+## See Also
+Ohjelmoinnin sävyttämä ymmärrys kasvaa syventymällä. Alla muutamia hyödyllisiä lähteitä:
+
+- Go:n viralliset dokumentit merkkijonoista: https://golang.org/pkg/strings/
+- Unicode standardi: http://www.unicode.org/standard/standard.html
+- UTF-8 merkistökoodauksesta Wikipediassa: https://fi.wikipedia.org/wiki/UTF-8

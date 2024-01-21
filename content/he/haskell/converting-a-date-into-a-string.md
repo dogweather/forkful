@@ -1,6 +1,7 @@
 ---
 title:                "המרת תאריך למחרוזת"
-html_title:           "Bash: המרת תאריך למחרוזת"
+date:                  2024-01-20T17:37:12.822110-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "המרת תאריך למחרוזת"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,27 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-המרת תאריך למחרוזת היא תהליך בו מומר תאריך למחרוזת המייצגת אותו. מתכנתים מבצעים זאת כדי להציג תאריכים בצורה קריאה להושט למשתמש.
+## מה ולמה?
+המרת תאריך למחרוזת זה תהליך שבו משנים את פורמט התאריך לטקסט. מתכנתים עושים את זה לתצוגה נוחה למשתמש או לעיבוד נתונים.
 
-# איך ל:
-כאן כמה דוגמאות להמרת תאריך למחרוזת בעזרת פונקציות של Haskell:
+## איך לעשות:
+בואו נראה כיצד ממירים תאריך למחרוזת בהסקל:
+
 ```Haskell
-import Data.Time.Format (formatTime, defaultTimeLocale)
+import Data.Time
 
-let date = UTCTime (fromGregorian 2022 3 20) (secondsToDiffTime 0)
-formatTime defaultTimeLocale "%B %d, %Y" date
+-- אנו נוצרים תאריך ייצוגי
+let sampleDate = UTCTime (fromGregorian 2023 4 1) (secondsToDiffTime 0)
+
+-- פורמטירת התאריך למחרוזת
+let dateString = formatTime defaultTimeLocale "%Y-%m-%d" sampleDate
+
+-- הדפסת התאריך המתוך טה"ע
+print dateString
 ```
-פלט:
-```Haskell
-"March 20, 2022"
+
+פלט דוגמה:
 ```
-בדוגמה זו, השתמשתי בפונקציות `formatTime` ו-`defaultTimeLocale` מתוך המודול `Data.Time.Format` ובפונקציות `UTCTime` ו-`fromGregorian` מתוך `Data.Time.Clock` ו-`Data.Time.Calendar` בהתאמה.
+"2023-04-01"
+```
 
-# Deep Dive:
-- היסטוריה: במהלך שנים של התפתחות שפות תכנות, נוצרו מגוון שיטות וכלים לטיפול בתאריכים ושעות, כולל המרתם למחרוזות. Haskell הציגה מתכן עגול של פונקציות לתאריך/זמן ב-`Data.Time`.
-- חלופות: ישנם מספר דרכים אחרות להמיר תאריך למחרוזת. לדוגמה, היית יכול להשתמש בסיפריית StringTemplate במקום formatTime.
-- פרטי ישום: הסיפריה `Data.Time` משתמשת בשיטת התאריך הגרגוריאני, אשר הוטמעה בחומרה רוב מחשבי האיש המודרניים.
+## צלילה לעומק
+המרת תאריכים למחרוזות היא חלק מובנה ברוב שפות התכנות. בהסקל, פריסת פורמט התאריך (Date Formatting) נעשית דרך המודול Data.Time, שהוצג בגרסה 1.5 של הפקג"ל time. המרה מאפשרת גמישות בהצגת התאריך למגוון רחב של פורמטים.
 
-# ראה גם:
-- [https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html) - המסמך הראשי לסיפריה `Data.Time.Format`.
+חלופות כוללות את שימוש בספריות חיצוניות כמו time-format או הטמעת פונקציה מותאמת אישית לפורמט המיוחד. 
+
+ברמת היישום, חשוב לזכור שההמרה מתבצעת בהתאם לאזור הזמן הנתון והגדרות התרבות (Locale). בתקנים בינלאומיים כמו ISO 8601, פורמט התאריך נפוץ הוא YYYY-MM-DD, אך בפועל יש מגוון רחב של אפשרויות.
+
+## ראה גם
+- מסמכי המודול `Data.Time` ב-Hackage: [https://hackage.haskell.org/package/time-1.11.1.2/docs/Data-Time.html](https://hackage.haskell.org/package/time-1.11.1.2/docs/Data-Time.html)
+- תיעוד פונקציית `formatTime`: [https://hackage.haskell.org/package/time-1.11.1.2/docs/Data-Time-Format.html#v:formatTime](https://hackage.haskell.org/package/time-1.11.1.2/docs/Data-Time-Format.html#v:formatTime)

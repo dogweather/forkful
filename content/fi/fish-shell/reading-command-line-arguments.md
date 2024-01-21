@@ -1,7 +1,8 @@
 ---
-title:                "Komentorivin argumenttien lukeminen"
-html_title:           "Bash: Komentorivin argumenttien lukeminen"
-simple_title:         "Komentorivin argumenttien lukeminen"
+title:                "Komennoriviparametrien lukeminen"
+date:                  2024-01-20T17:56:17.063143-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Komennoriviparametrien lukeminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,33 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mitä ja Miksi?)
 
-Komennon riviparametrien lukeminen on tapa, jolla ohjelmoijat hyödyntävät ulkoista tietoa koodissaan. Se on tärkeää, koska se mahdollistaa dynaamisen vuorovaikutuksen ohjelman ja käyttäjän välillä.
+Komennon rivin argumentit ovat ohjelmallesi syötettyjä tietoja. Ne mahdollistavat joustavuuden ja mukautettavuuden, jolloin ohjelmasi voi käyttäytyä eri tavoin käyttäjän antamien parametrien mukaan.
 
-## Miten:
+## How to: (Kuinka tehdä:)
 
-Syöttämällä komennon riviparametreja Fish Shellissä, voit muuttaa ohjelman toimintaa suoraan. Katso esimerkki alla:
+Fish Shellissa argumenttien lukeminen on suoraviivaista. Tässä on esimerkki siitä, miten luet ja käytät argumentteja.
 
 ```Fish Shell
 function greet
-    echo "Hei, "$argv[1]
+  for arg in $argv
+    echo "Hei, $arg!"
+  end
 end
 
-greet Maailma
+greet Maailma Kaunis
 ```
 
-Tämä tulostaa ``"Hei, Maailma"``. Kuten näet, $argv[1] korvataan ensimmäisellä komennon riviparametrilla.
+Odota näkeväsi:
 
-## Sukellus syvemmälle:
+```
+Hei, Maailma!
+Hei, Kaunis!
+```
 
-Komennon riviparametrien lukemisella on pitkä historia ohjelmoinnissa ja se on osa jokaisen kehittäjän perustyökalupakkia. On olemassa monia vaihtoehtoja, kuten flagit ja vaihtoehdot, jotka mahdollistavat ohjelmien monimutkaisemman ohjaamisen komentorivillä.
+## Deep Dive (Syväsukellus)
 
-Fish Shell käyttää $argv-muuttujaa komennon riviparametrien tallentamiseen, mutta tämä on vain yksi tapa toteuttaa tämä. Muissa ohjelmointikielissä saattaa käyttää eri syntaksia tai rakenteita.
+Fish Shell tuli alun perin vuonna 2005, tarjoten selkeämmän ja yksinkertaisemman skriptauksen vaihtoehdon. Toisin kuin muut kuoret, kuten Bash tai Zsh, Fishin syntaksi on ytimekäs eikä vaadi $-merkkiä muuttujien edessä. Historiallinen konteksti on tärkeää, sillä se selittää Fishin erilaisia valintoja, joita se käyttää argumenttien käsittelyssä. Verrattuna Bashin `"$@"` tai `"$1"`, Fish käyttää `$argv` listaa, joka toimii kuten Pythonin `sys.argv`.
 
-## Katso myös:
+Vaikka Fish onkin tehty käyttäjäystävällisemmäksi, jotkut skriptit vaativat silti syvempää ymmärrystä siitä, miten `$argv` toimii. Esimerkiksi, voit tarkistaa argumenttien lukumäärän `count $argv` komennolla. Voit myös käyttää `argparse`-toimintoa, kun tarvitaan monimutkaisempia komentosyötteiden käsittelyjä.
 
-1. [Fish Shell Komennon Riviparametrien ohje](https://fishshell.com/docs/current/tutorial.html#tut_cmd_args)
-2. [Yleiset käytännöt komennon riviparametrien käsittelyssä](https://www.gnu.org/prep/standards/html_node/Command_002dLine-Interfaces.html)
+## See Also (Katso Myös)
 
-Opiskelemalla näitä lähteitä voit syventää ymmärrystäsi siitä, kuinka komennon riviparametreja käytetään tehokkaasti ohjelmoinnissa.
+Fish Shell viralliset ohjeet: [docs.fishshell.com](https://fishshell.com/docs/current/index.html)
+
+Argumenttien käsittely Fishissä: [docs.fishshell.com/docs/current/tutorial.html#variables](https://fishshell.com/docs/current/tutorial.html#variables)
+
+Argparse käyttöoikeudet: [docs.fishshell.com/docs/current/cmds/argparse.html](https://fishshell.com/docs/current/cmds/argparse.html)

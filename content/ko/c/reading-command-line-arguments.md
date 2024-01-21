@@ -1,6 +1,7 @@
 ---
 title:                "명령줄 인수 읽기"
-html_title:           "Arduino: 명령줄 인수 읽기"
+date:                  2024-01-20T17:55:32.127016-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "명령줄 인수 읽기"
 programming_language: "C"
 category:             "C"
@@ -10,33 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜?
-커맨드 라인 인자 읽기는 프로그램이 사용자 입력을 받는 한 가지 기법입니다. 프로그래머들은 매개변수를 여러가지로 사용하거나, 프로그램 행동을 변경하도록 할 수 있게 해줍니다.
+## What & Why? (무엇과 왜?)
+명령줄 인자를 읽는 것은 사용자가 프로그램을 실행할 때 주는 입력 값들을 처리하는 것입니다. 이를 통해 프로그램은 더 다양하고 동적으로 작업을 할 수 있습니다.
 
-## 어떻게?
+## How to: (어떻게 하나요?)
 ```C
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-  for(int i = 0; i < argc; i++) {
-    printf("Argument %d: %s\n", i, argv[i]);
-  }
-  return 0;
+    printf("프로그램 이름: %s\n", argv[0]);
+    printf("인자 개수: %d\n", argc - 1);
+
+    for (int i = 1; i < argc; i++) {
+        printf("인자 %d: %s\n", i, argv[i]);
+    }
+    return 0;
 }
 ```
-이 코드의 출력은 다음과 같습니다.
-```C
-> ./program Foo Bar
-> Argument 0: ./program
-> Argument 1: Foo
-> Argument 2: Bar
+
+```bash
+$ gcc program.c -o program
+$ ./program 사과 바나나 체리
+프로그램 이름: ./program
+인자 개수: 3
+인자 1: 사과
+인자 2: 바나나
+인자 3: 체리
 ```
 
-## 깊이있게 알아보기
-일반적인 `main()` 함수의 시그니쳐인 `int main(int argc, char *argv[])`는 UNIX 시스템의 초기 부터 있었습니다. 이것의 대안으로는 환경 변수에 접근하는 것이 있습니다. `char *envp[]`를 `main()` 함수의 세 번째 인자로 추가하는 것으로 가능합니다.
-`argc`는 'argument count'의 약자로, 커맨드 라인 인자의 수를 나타냅니다. `argv[]`는 'argument vector'의 약자로, 인자들의 리스트를 나타냅니다.
+## Deep Dive (심층적 이해)
+명령줄 인자는 UNIX의 초기부터 사용되어 온 기능입니다. `argc`는 Argument Count의 약자로, 인자의 수를 나타냅니다. `argv`는 Argument Vector의 약자로, 실제 인자들의 목록을 가리킵니다. 각 인자는 문자열 배열에 저장되며, `argv[0]`은 보통 프로그램 자신의 이름입니다.
 
-## 참고자료
-1. [Command Line Arguments in C/C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-2. [C - Command Line Arguments](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)
-3. [How Command Line Parameters Are Parsed](https://docs.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-commandlinetoargvw)
+기본 구문 외에도, 라이브러리 (예를 들어, GNU의 `getopt`)를 사용하여 복잡한 명령줄 인자를 더 쉽게 처리할 수 있습니다. 환경 변수와 파일 입출력을 활용하는 방법도 있지만, 대화형 인터페이스가 아닌 스크립트나 배치 작업에 주로 명령줄 인자가 활용됩니다.
+
+## See Also (참고 자료)
+- GNU C 라이브러리 매뉴얼의 명령줄 인자 부분: https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html
+- `getopt` 함수 사용 방법: http://man7.org/linux/man-pages/man3/getopt.3.html
+- `getopt` 함수를 사용하는 C 프로그래밍 예제: https://www.gnu.org/software/libc/manual/html_node/Example-of-Getopt.html

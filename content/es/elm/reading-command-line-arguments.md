@@ -1,7 +1,8 @@
 ---
-title:                "Leyendo argumentos de la línea de comandos"
-html_title:           "Bash: Leyendo argumentos de la línea de comandos"
-simple_title:         "Leyendo argumentos de la línea de comandos"
+title:                "Lectura de argumentos de línea de comandos"
+date:                  2024-01-20T17:56:21.227350-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lectura de argumentos de línea de comandos"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,37 +11,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+## Qué y Por Qué?
+Leer argumentos de línea de comandos significa obtener datos directamente cuando ejecutas un programa. Los programadores hacen esto para personalizar la ejecución del programa sin cambiar el código.
 
-Leer argumentos de lineas de comando permite a los programas recibir datos desde la terminal directamente. Los programadores lo usan para personalizar comportamientos de programas y pruebas, así como para facilitar la interacción entre programas.
+## Cómo:
+Elm está diseñado para aplicaciones web, por lo tanto, no lee directamente los argumentos de la línea de comandos como lo hacen otros lenguajes. Pero si necesitas trabajar con Elm y usar datos al inicio, tendrás que pasarlos a través de flags cuando inicialices tu programa Elm desde JavaScript.
 
-## Cómo hacerlo:
+```Elm
+port module Main exposing (..)
 
-Lamentablemente, la arquitectura actual de Elm (0.19.1) no soporta la lectura de argumentos de la línea de comando directamente. Elm se enfoca principalmente en el desarrollo de aplicaciones web en lugar de aplicaciones de consola. Sin embargo, para fines de ilustración, aquí hay un ejemplo de cómo se haría en un lenguaje que lo permita, como Node.js :
+import Browser
+import Json.Decode exposing (Value)
 
-```Node.js
-// Proceso para obtener argumentos de la linea de comando
-process.argv.forEach((valor, index) => {
-    console.log(`${index}: ${valor}`);
+-- Define un tipo de mensaje para recibir los flags
+type Msg
+    = ReceiveFlags Value
+
+-- Inicia la aplicación con flags
+main =
+    Browser.element
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = subscriptions
+        }
+
+init : Value -> (Model, Cmd Msg)
+init flags =
+    -- Aquí manejarías los flags y los convertirías en tu modelo
+    -- ...
+
+view : Model -> Html Msg
+view model =
+    -- Código para mostrar tu vista
+    -- ...
+
+-- ...
+
+-- Recuerda definir un puerto para enviar los flags desde JS
+port flags : (Value -> msg) -> Sub msg
+```
+
+Y en tu código JavaScript al cargar tu aplicación Elm:
+```javascript
+const app = Elm.Main.init({
+  node: document.getElementById('my-elm-app'),
+  flags: { /* Tus argumentos aquí */ }
 });
 ```
 
-Si se ejecuta este programa con el comando `node program.js uno dos tres`, la salida será:
-```
-0: node
-1: /ruta/a/program.js
-2: uno
-3: dos
-4: tres
-```
+## Inmersión Profunda
+Elm se centra en la seguridad y facilidad, por lo que no tiene acceso directo al sistema de archivos o a los argumentos de línea de comandos como Node.js o Python. Su arquitectura se orienta para correr en el navegador y no en servidores o scripts de línea de comandos.
 
-## Inmersión profunda:
+Las "flags" son el mecanismo de Elm para recibir datos desde fuera al inicio del programa. Antes, en Elm 0.18 y anteriores, podías recibir mensajes arbitrarios del mundo exterior, no solo al inicio. Pero la versión 0.19 cambió esto para reforzar la fiabilidad de los programas Elm, eliminando el acceso directo a los argumentos de línea de comandos.
 
-Aunque Elm no soporta la lectura de argumentos de la línea de comando, siempre se puede usar junto con lenguajes que sí lo hacen, como JavaScript. Esta limitación es una decisión de diseño para mantener la simplicidad y seguridad de Elm. Los argumentos de la línea de comando suelen usarse en scripts y aplicaciones de la consola, mientras que Elm está diseñado para aplicaciones web.
+Otras opciones para lidiar con la configuración externa en aplicaciones de Elm son:
 
-Históricamente, muchos lenguajes de programación permiten leer argumentos de línea de comando para la interacción de programas. En Elm, esta interactividad se maneja principalmente en el front end a través de funciones de entrada y salida.
+1. Utilizar `LocalStorage` o `SessionStorage` para persistir configuraciones.
+2. Las API REST o GraphQL que el frontend consume inicialmente.
+3. WebSockets para comunicación en tiempo real con el servidor.
 
-## Ver También:
+## Ver También
+Para más información sobre Elm y su interacción con JavaScript, puedes ver:
 
-- [Documentación Oficial de Elm](https://elm-lang.org/docs)
-- [Parámetros y argumentos de la línea de comandos en bash](https://www.gnu.org/software/bash/manual/)
+- Documentación oficial sobre interop con JavaScript: [Elm Ports](https://guide.elm-lang.org/interop/ports.html)
+- [Elm Guide](https://guide.elm-lang.org/) para una introducción completa a Elm.
+- [JSON Decode](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode) para entender cómo decodificar los valores de los flags al modelo de Elm.
+- [Elm Town](https://elmtown.simplecast.com/) - un podcast con noticias y discusiones sobre Elm.
+
+Recuerda que Elm y JavaScript son compañeros de equipo y cada uno tiene sus fortalezas. Usarlos juntos te dará mayor flexibilidad y potencia en tus proyectos web.

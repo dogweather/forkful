@@ -1,6 +1,7 @@
 ---
 title:                "部分文字列の抽出"
-html_title:           "Lua: 部分文字列の抽出"
+date:                  2024-01-20T17:45:32.735831-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "部分文字列の抽出"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,36 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ?
+## What & Why? (何となぜ？)
+文字列から特定の一部を取り出すことを、部分文字列を抽出すると言います。これは、データを操作したり、特定の情報を取得・表示したりするためにプログラマーがよく行います。
 
-部分文字列を抽出するとは、文字列の一部を取り出すことを意味します。プログラマーがこれを行う主な理由は、大きなデータから特定の情報を検索し、それを利用または解析するためです。
+## How to: (やり方)
+```Elixir
+# 文字列を定義する
+original_string = "こんにちは、エリクサーの世界！"
 
-## 方法:
+# 部分文字列を取り出す
+substring = String.slice(original_string, 6, 5)
 
-Elixirでは、多くの方法で部分文字列を抽出することができます。以下になんのちゃんがElixirで部分文字列を抽出するための一例を示します。
-
-```elixir
-String.slice("プログラミング", 0..4)
+# 結果を表示する
+IO.puts(substring)
 ```
+このコードの出力は `エリクサー` になるでしょう。
 
-出力:
+## Deep Dive (深く掘り下げる)
+Elixirでは`String`モジュールを使って文字列を操作します。`String.slice/3`はElixirの初期バージョンから使われてきました。他の言語にも同様の機能がありますが、Elixir特有の並行処理や不変性の文脈で利用されます。また、Elixirの文字列はバイナリとして表現され、UTF-8エンコーディングで扱われるため、バイトサイズが文字数と一致しないことがあります。それを考慮して、`String.slice/3`は文字の境界を正しく扱えるようになっています。
 
-```elixir
-"プログラ"
-```
-
-この例では、文字列"プログラミング"からインデックス0から4の部分文字列を抽出しています。
-
-## 深堀り
-
-部分文字列を抽出する方法は古くから存在しており、使われてきた多くのプログラミング言語にその概念があります。Elixirでは、その操作は `String.slice/2` 関数を利用して行います。
-
-代わりに `binary_part/3` 関数を用いることもでき、これはバイト単位で部分文字列を抽出します。こちらはエンコーディングに関係なく動作しますが、文字列操作では`String.slice/2`の使用が推奨されています。
-
-`String.slice/2`の実装では、Elixirはビーム(エーリングのVM)上での文字列表現を利用し、部分文字列の効率的な抽出を可能にしています。
-
-## 参照
-
-部分文字列の抽出以外にもElixirは多くの文字列操作をサポートしています。詳細はElixir公式ドキュメントの[String module](https://hexdocs.pm/elixir/String.html)をご覧ください。
-
-また、部分文字列の抽出と類似の操作である文字列の分割について知りたい方は、[String.split/1](https://hexdocs.pm/elixir/String.html#split/1)をご覧ください。
+## See Also (関連情報)
+- Elixir公式ドキュメント: [String module](https://hexdocs.pm/elixir/String.html)
+- Learn Elixir: [文字列とバイナリ](https://elixirschool.com/ja/lessons/basics/strings/)

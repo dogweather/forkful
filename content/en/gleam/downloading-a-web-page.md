@@ -1,6 +1,7 @@
 ---
 title:                "Downloading a web page"
-html_title:           "Bash recipe: Downloading a web page"
+date:                  2024-01-20T17:44:01.019284-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Downloading a web page"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -12,40 +13,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Downloading a web page refers to retrieving data from a specific URL and saving the resulting HTML file for later use. This lets programmers analyze, manipulate, or replicate the page's structure and content.
+Downloading a web page means fetching its content via HTTP. Programmers do this for web scraping, data analysis, or to interact with web services.
 
 ## How to:
 
-While Gleam itself does not support HTTP requests natively, it can utilize the power of Elixir or even Erlang within its environment to do so. Below is an example using Erlang's 'httpc' module:
+Let's grab a web page using Gleam with the `gleam_http` package. Assume `gleam_http` and `gleam_otp` are already in your project dependencies.
 
-```Gleam
-import gleam/erlang
+```gleam
+import gleam/http
+import gleam/httpc
+import gleam/should
 
-pub fn download_page(url: String) -> Result(BitString, Nil) {
-  let response = erlang.apply(
-    "httpc",
-    "request",
-    [tuple("get", url)
-  ])
-
-  case response {
-    Ok(tuple(_, tuple(_, _, body))) -> Ok(body)
-    Error(err) -> Error(Nil)
-  }
+pub fn main() -> Result(String, Nil) {
+  let response = httpc.send(http.Request(to: "http://example.com")) // Make the GET request
+  should.equal(response.status, 200) // Confirm the status code is OK
+  Ok(response.body) // Return the body of the response
 }
+
 ```
 
-If you run this function with a valid URL, it will return the HTML contents of that page, or Error(Nil) if something went wrong.
+Sample output after running your code might look like this:
+
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+```
 
 ## Deep Dive
 
-In early days of the web, downloading the raw HTML of a page was a common way to parse data from the web. Modern solutions often use a combination of APIs and JSON to accomplish the same tasks, but in certain cases, or where an API doesn't exist, downloading a web page can still be necessary.
+Way back when, in the early days of the web, downloading a page was as simple as telnetting to port 80. Today, you have libraries and languages, like Gleam, that take care of the nitty-gritty HTTP details.
 
-The code in Gleam is doing the heavy lifting using Erlang's httpc module underneath the hood, as Gleam runs on the Erlang virtual machine (BEAM). It is important to note that 'httpc' isn't necessarily the best HTTP client available, but it comes packaged with Erlang, and for simple GET requests like this, it's perfectly fine!
+Alternatives to `gleam_http` include lower-level libraries or interfacing with other Erlang/Elixir libraries using Gleam's interoperability features.
 
-## See Also:
+The `gleam_http` function `httpc.send()` is doing the heavy lifting in our example. It's crafted atop the Erlang `httpc` module, providing a straightforward API with a smattering of Gleam's type safety and pattern matching.
 
-- Gleam Documentation: https://hexdocs.pm/gleam_erlang/gleam/erlang/index.html
-- Erlang's 'httpc' HTTP client documentation: http://erlang.org/doc/man/httpc.html
-- 'httpotion' - another popular HTTP client which can be used in Gleam: https://hexdocs.pm/httpotion/readme.html
-- JSON Parsing in Gleam: https://hexdocs.pm/gleam_erlang/gleam/erlang/index.html#json_decode/1
+## See Also
+
+- Gleam documentation: https://hexdocs.pm/gleam/gleam_http/
+- `gleam_http` GitHub repo: https://github.com/gleam-lang/http
+- A primer on HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP
+- For an in-depth look at web scraping, check out Beautiful Soup for Python: https://www.crummy.com/software/BeautifulSoup/

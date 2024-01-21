@@ -1,7 +1,8 @@
 ---
-title:                "Søking og erstatning av tekst"
-html_title:           "Lua: Søking og erstatning av tekst"
-simple_title:         "Søking og erstatning av tekst"
+title:                "Søking og erstatting av tekst"
+date:                  2024-01-20T17:58:45.246700-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Søking og erstatting av tekst"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,40 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Søk og Erstatt Tekst med Ruby
+## What & Why?
+("Hva & Hvorfor?")
+Tekstsøk og -erstattning lar oss finne og bytte ut spesifikke ord eller fraser i en streng. Programmerere bruker dette til å endre kode, manipulere data, og automatisere redigering.
 
-## Hva & Hvorfor?
-"Søk og erstatt" er en prosess der spesifikke strenger i en blokk med tekst blir identifisert (søk) og deretter endret til noe annet (erstatt). Dette er nyttig for programmerere for å manipulere data, fikse feil, og tilpasse output.
-
-## Hvordan:
-Her viser vi typiske bruksområder med [Rubys innebygde metoder](https://ruby-doc.org/core-2.7.0/String.html):
-
-Så, for å søke og erstatte tekst i Ruby, kan vi bruke `gsub` metode. Se på dette eksempelet:
+## How to:
+("Slik gjør du:")
+Ruby gjør det enkelt med `gsub` metoden. `gsub` står for "global substitution" og bytter alle treff.
 
 ```Ruby
-tekst = "Hei, Hvordan går det?"
-print tekst.gsub('Hvordan', 'Hva')
+original_text = "Gledelig jul og et godt nyttår!"
+replacement_text = original_text.gsub('jul', 'påske')
+puts replacement_text
 ```
 
-Output vil være: `"Hei, Hva går det?"`
+Output:
+```
+Gledelig påske og et godt nyttår!
+```
 
-Du kan også bruke et regulært uttrykk (regex) med `gsub` for mer avanserte søk. La oss søke etter hvert ord på 5 bokstaver og erstatte det med '####':
+Ønsker du kun å erstatte det første treffet, bruk `sub` istedenfor `gsub`.
 
 ```Ruby
-tekst = "Hello world from the other side"
-print tekst.gsub(/\b\w{5}\b/, '####')
+original_text = "Jul, søte jul ikke vekk dette forvirrende jul!"
+replacement_text = original_text.sub('jul', 'påske')
+puts replacement_text
 ```
 
-Output vil være: `"Hello world from the #### side"`
+Output:
+```
+Påske, søte jul ikke vekk dette forvirrende jul!
+```
 
-## Dypdykk
-Historisk sett har søk og erstatt alltid vært en grunnleggende funksjon i tekstbehandling og programmering. Dens utførelse og implementering har variert fra språk til språk, men essensen har forblitt den samme.
+## Deep Dive
+("Dypdykk")
+I gamle dager måtte tekstendringer gjøres manuelt eller med komplekse skript. `gsub` og `sub` i Ruby er inspirert av tidligere tekstbehandlingsverktøy som 'sed' i Unix.
 
-I Ruby, `gsub` (hvilken står for Global Substitution) er en av de mest brukte metodene for denne jobben. Ut over `gsub`, kan vi også bruke `gsub!`, som endrer strengen direkte i stedet for å returnere en ny.
+Alternativer til `gsub` inkluderer regex literals for komplekse søkemønstre:
 
-Det finnes flere alternativer for å søke og erstatte tekst i Ruby, inkludert `tr`, `tr_s`, og `delete`. Valget mellom disse avhenger av dine behov og preferanser.
+```Ruby
+replacement_text = original_text.gsub(/jul/i, 'påske')
+```
 
-## Se Også
-- Ruby Docs String Methods: [https://ruby-doc.org/core-2.7.0/String.html](https://ruby-doc.org/core-2.7.0/String.html)
-- Tutorial: [https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm](https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm)
-- In-Depth LevelUp Article on gsub: [https://www.rubyguides.com/2019/07/ruby-gsub-method/](https://www.rubyguides.com/2019/07/ruby-gsub-method/)
+Her ignorerer `/i` store/små bokstaver. Implementasjonsdetaljer som disse tilbyr fleksibilitet og kraft.
+
+## See Also
+("Se også")
+- Ruby-doc for `String#gsub` og `String#sub`: [https://ruby-doc.org/core](https://ruby-doc.org/core)
+- Regex-basert søk: [https://ruby-doc.org/core-2.7.0/Regexp.html](https://ruby-doc.org/core-2.7.0/Regexp.html)
+- 'sed' kommandoorientert tekstbehandler: [https://www.gnu.org/software/sed/manual/sed.html](https://www.gnu.org/software/sed/manual/sed.html)

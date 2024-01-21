@@ -1,7 +1,8 @@
 ---
-title:                "Tworzenie tymczasowego pliku"
-html_title:           "C#: Tworzenie tymczasowego pliku"
-simple_title:         "Tworzenie tymczasowego pliku"
+title:                "Tworzenie pliku tymczasowego"
+date:                  2024-01-20T17:39:39.412613-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,38 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+("Co i dlaczego?")
+Tworzenie pliku tymczasowego daje ci miejsce do przechowywania danych, które są ważne w trakcie wykonywania programu, ale nie po jego zakończeniu. Programiści używają ich, żeby nie zaśmiecać dysku trwałymi plikami, których wkrótce nie będą potrzebować.
 
-Tworzenie pliku tymczasowego oznacza stworzenie pliku, który jest używany tylko do przechowywania danych w trakcie wykonywania programu. Programiści robią to po to, aby przechować dane, które nie są niezbędne po zakończeniu programu.
-
-## Jak to zrobić:
-
-Tworzenie tymczasowego pliku w C++ jest proste i niewielokrotne. Oto jak:
-
+## How to:
+("Jak to zrobić:")
 ```C++
-#include <cstdio>
+#include <iostream>
+#include <filesystem>
+#include <fstream>
 
 int main() {
-    char tempname[L_tmpnam];
-    std::tmpnam(tempname);
-    
-    printf("Temporary file name: %s\n", tempname);
+    // Stwórz unikalną ścieżkę pliku tymczasowego
+    std::filesystem::path tempPath = std::filesystem::temp_directory_path() / "myapp_XXXXXX";
 
-    // Zastosuj plik tymczasowy jak chcesz
+    // Utwórz i otwórz plik tymczasowy
+    std::ofstream tempFile(tempPath);
+    
+    // Sprawdź, czy plik został pomyślnie utworzony
+    if (tempFile.is_open()) {
+        std::cout << "Plik tymczasowy został utworzony: " << tempPath << std::endl;
+        
+        // Użycie pliku...
+        
+        tempFile.close(); // Zamknij plik
+    } else {
+        std::cerr << "Nie udało się utworzyć pliku tymczasowego!" << std::endl;
+    }
+    
+    // Usuń plik tymczasowy
+    std::filesystem::remove(tempPath);
+    return 0;
 }
 ```
+W powyższym przykładzie, stworzyliśmy plik tymczasowy w katalogu dla plików tymczasowych i wykorzystaliśmy go do jakiegoś zadania, a następnie go usunęliśmy.
 
-Po uruchomieniu programu zostanie wygenerowany unikalny plik tymczasowy i wyświetlony na ekranie.
+## Deep Dive:
+("Dogłębna analiza:")
+W dawnych czasach programiści musieli ręcznie zarządzać tworzeniem i usuwaniem plików tymczasowych. C++17 wprowadziło `std::filesystem`, co uprościło zarządzanie plikami i folderami. Możemy wykorzystać `std::filesystem::temp_directory_path()` do znalezienia bezpiecznego miejsca dla plików tymczasowych różnych systemów operacyjnych, co czyni nasz kod przenośnym. Inne sposoby to m.in. użycie `tmpfile()` dla C lub `mkstemp()` dla systemów POSIX, które również tworzą i otwierają plik tymczasowy, ale są mniej elastyczne niż podejście C++17 z `std::filesystem`.
 
-## Deep Dive 
-
-Tworzenie plików tymczasowych było częścią programowania od zamierzchłych czasów. Chociaż C++ nie ma oczywistych alternatyw dla tworzenia plików tymczasowych, inne języki, takie jak Python, oferują różne metody do osiągnięcia tego samego celu.
-
-Co więcej, warto pamiętać, że podczas tworzenia plików tymczasowych istnieje duże ryzyko konfliktów z równoczesnym dostępem do tych samych plików. Dlatego tak ważne jest korzystanie z funkcji generujących unikalne nazwy pliku, takich jak `std::tmpnam`.
-
-## Zobacz także 
-
-Dla szczegółów i przykładów z innych języków programowania, odwiedź:
-
-1. [Tworzenie i usuwanie plików tymczasowych w Pythonie](https://docs.python.org/3/library/tempfile.html)
-3. [Tworzenie plików tymczasowych w Node.js](https://www.npmjs.com/package/tmp)
+## See Also:
+("Zobacz również:")
+- Dokumentacja `std::filesystem`: https://en.cppreference.com/w/cpp/filesystem
+- Porównanie `std::filesystem` i C POSIX functions: https://arne-mertz.de/2017/03/filesystem-convenience-posix/
+- Wykorzystanie `std::tmpfile`: https://www.cplusplus.com/reference/cstdio/tmpfile/

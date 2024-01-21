@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http"
-html_title:           "Bash: שליחת בקשת http"
-simple_title:         "שליחת בקשת http"
+title:                "שליחת בקשת HTTP"
+date:                  2024-01-20T18:01:12.600716-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,44 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה & למה?
+## מה ולמה?
+שליחת בקשות HTTP היא דרך לתקשר עם שרתים ברשת - בעיקר לשלוף או לשלוח מידע. תכניתנים עושים זאת כי זהו היסוד לכל אינטראקציה עם שירותי ווב.
 
-שליחת בקשת HTTP היא דרך להעביר מידע מהמחשב שלך לשרת. מתכנתים שולחים בקשות HTTP לגשת למידע חיצוני, כמו API, או לשנות מידע בבסיסי נתונים דרך שרתי אינטרנט.
+## איך לעשות:
+ב־Ruby, שליחת בקשת HTTP יכולה להיות פשוטה. נבחן את הגמ"ח `Net::HTTP`.
 
-## איך ל:
-
-קוד ב Ruby לשליחת בקשת HTTP:
-
-```Ruby
+```ruby
 require 'net/http'
 require 'uri'
 
-uri = URI.parse("http://example.com/search")
+# יצירת URI מהמחרוזת
+uri = URI('http://www.example.com/index.html')
 
-http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Get.new(uri.request_uri)
+# שליחת בקשת GET
+response = Net::HTTP.get_response(uri)
 
-response = http.request(request)
-
-puts response.body
+# הדפסת קוד המצב ותוכן התשובה
+puts response.code         # לדוגמא: "200"
+puts response.body         # תוכן העמוד שבURL המבוקש
+```
+תוצאת הדוגמא:
+```
+200
+<html>...</html>  # יתכן שיהיה כאן תוכן HTML
 ```
 
-אם תריצו את הקוד תוך הוספת URL של אתר אמתי, התגובה תהיה HTML של הדף.
+## עיון מעמיק
+לפני שהיו ספריות כמו `Net::HTTP`, תכניתנים נאלצו להשתמש בסקריפטים עם פקודות תחתית-מערכת כדי לבצע פעולות רשת. כיום, יש אלטרנטיבות נוחות יותר כמו `HTTParty` ו`Faraday`. `Net::HTTP` עצמו הוא חלק מהסטנדרט של מתודולוגיות תוכנה של Ruby ומאפשר שליחה תקנית וישירה של בקשות HTTP.
 
-## הסוף העמוק
+הבנת העבודה מאחורי קלעים של השליחה וקבלת תשובות HTTP מחייבת ידע בפרוטוקולים כמו TCP/IP ו-DNS. קוד התגובה, שנקרא גם קוד סטטוס, חשוב לניתוח המצב של הבקשה - לדוגמא, 200 שהיא הצלחה, 404 שזה לא נמצא, ו-500 שזו טעות של השרת.
 
-### הקשר ההיסטורי
-למדתי שפה שמקודמת ל Ruby להתמודד עם רשת האינטרנט, שפת C, השתמשה בספריות רשת מורכבות. כאשר מתכנתים בנו Ruby, הם רצו ליצור דרך קלה יותר לעבוד עם בקשות HTTP.
-
-### חלופות
-ישנן גם ספריות חיצוניות עזר שמספקות דרכים נוספות לשליחת בקשות HTTP, כמו `Rest-Client` ו` HTTParty`. אלה מציעות אפשרויות נוספות אך הן אינן חייבות.
-
-### פרטי ביצוע
-בקשת HTTP מתנהלת כאשר המחשב שלך שולח מידע לשרת ובהמשך מקבל תגובה ממנו. הפרוטוקול HTTP מגדיר את הצורה שבה מתבצעת התקשורת הזו.
-
-## ראו גם
-
-"http://www.ruby-lang.org/": האתר הרשמי ל Ruby.
-"http://ruby-doc.org/stdlib-2.5.1/libdoc/net/http/rdoc/Net/HTTP.html": מסמך המתיחס ל Net::HTTP ב Ruby.
-"https://github.com/rest-client/rest-client": Rest-Client ב GitHub.
-"https://github.com/jnunemaker/httparty": HTTParty ב GitHub.
+## ראה גם
+- [Net::HTTP documentation](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
+- [מדריך לHTTParty](https://github.com/jnunemaker/httparty)
+- [מדריך לFaraday](https://lostisland.github.io/faraday/)
+- [מבוא לפרוטוקול HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)

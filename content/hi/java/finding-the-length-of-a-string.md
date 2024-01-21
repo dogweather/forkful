@@ -1,7 +1,8 @@
 ---
-title:                "स्ट्रिंग की लंबाई पता करना"
-html_title:           "C++: स्ट्रिंग की लंबाई पता करना"
-simple_title:         "स्ट्रिंग की लंबाई पता करना"
+title:                "स्ट्रिंग की लंबाई ज्ञात करना"
+date:                  2024-01-20T17:48:03.089308-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग की लंबाई ज्ञात करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,35 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-'String की लंबाई को खोजना' शब्दों की संख्या या किसी शब्द संग्रह की लंबाई जानने की प्रक्रिया है। इसकी सहायता से, प्रोग्रामर कोड की कार्यक्षमता को अनुकूलित कर सकते हैं, जैसे कि इनपुट आंकड़ों की जांच करना।
+## What & Why? (क्या और क्यों?)
+स्ट्रिंग की लंबाई जानना मतलब है स्ट्रिंग में कितने कैरेक्टर्स हैं। प्रोग्रामर्स इसे इसलिए करते हैं ताकि वे डाटा को मैनेज कर सकें, वैलिडेशन चेक कर सकें, और लूप्स को सही से चला सकें।
 
-## कैसे करें:
-Java में, हम `length()` method का उपयोग करके String की लंबाई मिटाते हैं। यहां एक उदाहरण है:
-
-```Java
-public class Main {
+## How to: (कैसे करें:)
+```java
+public class StringLengthExample {
     public static void main(String[] args) {
-        String str = "नमस्ते दुनिया";
-        int len = str.length();
-        System.out.println("String की लंबाई: " + len);
+        String greeting = "नमस्ते दुनिया!";
+        int length = greeting.length();
+        System.out.println("स्ट्रिंग की लंबाई: " + length);
     }
 }
 ```
-
-यहां, सबसे पहले हमने एक String बनाया "नमस्ते दुनिया", फिर हमने `length()` method का उपयोग किया, जिसने शब्दों की संख्या को दिया। जवा कन्सोल पर आउटपुट यह होगा: 
-
-```Java
-"String की लंबाई: 12"
+आउटपुट:
+```
+स्ट्रिंग की लंबाई: 14
 ```
 
-## गहरी जांच:
-जबसे Java का पहला संस्करण 1996 में आया था, `length()` method वहां था। यह विशेषता बहुत महत्वपूर्ण है क्योंकि यह एक ऐसी जरूरत को पूरा करता है जो प्रोग्रामर्स को अक्सर आती है। 
+## Deep Dive (गहराई से समझें)
+पहले के जावा वर्जन्स में `length()` मेथड `String` ऑब्जेक्ट के लिए बहुत महत्वपूर्ण था क्योंकि वह ही बताता था की स्ट्रिंग में कितने कैरेक्टर्स हैं। अब भी यह महत्वपूर्ण है, पर नए फंक्शंस और एपीआईस भी हैं जैसे कि `codePoints()` जो Unicode कोड पॉइंट्स को सही तरीके से गिनता है।
 
-`length()` के विकल्प के रूप में, आप `toCharArray()` function का उपयोग कर सकते हैं, यह शब्द संग्रह को अक्षरों की सूची में परिवर्तित करेगा और फिर आपको उसकी लंबाई मिलेगी। हालांकि, यह तरीका `length()` function से अधिक संसाधन उपयोगी हो सकता है। 
+स्ट्रिंग की लंबाई निकालने की इम्प्लीमेंटेशन की बात करें तो, JVM (Java Virtual Machine) स्ट्रिंग की इंटर्नल एरे की `length` प्रॉपर्टी का इस्तेमाल करती है। सिर्फ ASCII कैरेक्टर्स के लिए स्ट्रिंग की लंबाई और उनकी संख्या एक समान होती है, लेकिन यूनिकोड के लिए, वास्तविक कैरेक्टर काउंट अलग हो सकता है।
 
-`length()` method के आंतरिक विवरण के अनुसार, यह Java के `java.lang.String` वर्ग का एक member function है, जिसे संग्रह की लंबाई जानने के लिए call किया जा सकता है।
-
-## और भी देखें:
-- [Java String वर्ग (जवा ट्यूटोरियल) (अंग्रेजी)](https://www.w3schools.com/java/java_strings.asp)
-- [String length() Method और उसका इस्तेमाल कैसे करें (अंग्रेजी)](https://www.javatpoint.com/java-string-length)
+## See Also (देखें भी)
+- [Java String documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
+- [Oracle Java Tutorials](https://docs.oracle.com/javase/tutorial/)

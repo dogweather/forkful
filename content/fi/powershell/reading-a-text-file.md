@@ -1,6 +1,7 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Lua: Tekstitiedoston lukeminen"
+date:                  2024-01-20T17:54:49.027823-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,28 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
-Tekstitiedoston lukeminen tarkoittaa tiedostosta tiedon, esimerkiksi asetusten tai käyttäjän syötteiden, hakemista. Ohjelmoijat lukevat näitä tiedostoja, koska sieltä saadaan arvokasta tietoa, jota voidaan käyttää ohjelman tai skriptin logiikassa.
+## What & Why? (Mitä ja Miksi?)
+Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tavallisen tekstimuotoisen tiedoston sisältä. Ohjelmoijat lukevat tekstitiedostoja, koska monet sovellukset tallentavat dataa näihin tiedostoihin, ja niitä on helppo muokata sekä lukea ilman erikoisohjelmia.
 
-# Kuinka:
-PowerShellin avulla tekstitiedostoja voidaan lukea seuraavasti:
+## How to: (Kuinka tehdään:)
+PowerShellissa tekstitiedoston lukeminen on suoraviivaista. Tässä pari esimerkkiä:
 
+Tiedoston lukeminen kokonaisuudessaan:
 ```PowerShell
-$teksti = Get-Content -Path "C:\polku\tiedosto.txt"
-$x = 0
-foreach($rivi in $teksti){
-    $x++
-    Write-Output "Rivi $x : $rivi"
+$content = Get-Content -Path 'example.txt'
+Write-Output $content
+```
+
+Rivi riviltä lukeminen:
+```PowerShell
+Get-Content -Path 'example.txt' | ForEach-Object {
+    Write-Output $_
 }
 ```
-Yllä oleva koodi lukee tekstitiedoston rivit ja tulostaa ne numerojärjestyksessä konsoliin.
 
-# Syvällinen tieto:
-Tiedostojen lukeminen PowerShellissa on suoraviivaista, mutta sen takana on pitkä historia. Tämä toiminnallisuus periytyy DOS-järjestelmän `TYPE`-komennosta. PowerShellissa on muitakin vaihtoehtoja tiedoston lukemiseen, esimerkiksi `Import-Csv`- ja `ConvertFrom-Json`-komennot, jotka on suunniteltu erityisesti tietyntyyppisten tiedostojen lukemiseen.
+Tuloste näyttää tiedoston sisällön konsolissa.
 
-Tiedostojen lukemisen toteutus PowerShellissa on äärimmäisen tehokas. `Get-Content`-komento kykenee käsittelemään suuriakin tiedostoja, koska se lukee tiedoston rivi kerrallaan muistin säästämiseksi.
+## Deep Dive (Syväsukellus)
+History: PowerShellin edeltäjä oli Command Prompt ja sen batch-skriptaus, mutta PowerShell toi mukanaan tehokkaamman ja objekti-pohjaisen lähestymistavan automatisointiin ja hallintaan Windowsissa.
 
-# Katso lisää:
-- Get-Content-komennon virallinen dokumentaatio: [https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content)
-- PowerShellin perusteet: [https://docs.microsoft.com/en-us/powershell/scripting/overview](https://docs.microsoft.com/en-us/powershell/scripting/overview)
-- PowerShell-oppaat: [https://www.tutorialspoint.com/powershell/index.htm](https://www.tutorialspoint.com/powershell/index.htm)
+Vaihtoehdot: PowerShellin lisäksi tiedostoja voi lukea erilaisilla ohjelmointikielillä kuten Pythonilla, Javalla, tai vaikkapa Bash-skriptillä Linuxissa. Jokaisella on omat hyvät ja huonot puolensa.
+
+Toteutuksen yksityiskohdat: `Get-Content` cmdlet lukee tiedoston sisällön ja palauttaa sen joko merkkijonona tai merkkijonojen taulukkona. ISOissa tiedostoissa on suositeltavaa lukea tiedoston sisältö riveittäin muistinkäytön tehostamiseksi.
+
+## See Also (Katso myös)
+- [PowerShellin skriptausohjeet Microsoftin sivuilla](https://docs.microsoft.com/en-us/powershell/scripting/overview)
+- [Get-Content cmdletin käyttöohje](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content)
+- [about_Automatic_Variables, PowerShell-dokumentaatio (esim. `$_` käytöstä)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables)

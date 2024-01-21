@@ -1,7 +1,8 @@
 ---
-title:                "미래 또는 과거의 날짜 계산하기"
-html_title:           "Go: 미래 또는 과거의 날짜 계산하기"
-simple_title:         "미래 또는 과거의 날짜 계산하기"
+title:                "미래나 과거의 날짜 계산하기"
+date:                  2024-01-20T17:31:36.788434-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "미래나 과거의 날짜 계산하기"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,50 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇과 왜?
+날짜 계산이란 현재로부터 과거나 미래의 날짜를 구하는 것을 말합니다. 프로그램 내에서 예약 시스템을 구축하거나 기한을 계산할 때 많이 사용합니다.
 
-날짜 계산은 특정 날짜 기준으로 미래나 과거의 날짜를 찾는 것을 말합니다. 예약 시스템, 더미 데이터 생성, 날짜 기반 쿼리 등 프로그래머가 여러 이유로 이를 실행할 수 있습니다.
+## 실행 방법:
+Go에서 `time` 패키지를 사용하면 쉽게 날짜 계산을 할 수 있습니다.
 
-## 어떻게:
-
-먼저, `time` 패키지를 import 한 다음, `Now` 함수를 사용하여 현재 시간을 가져옵니다. 그런 다음, `AddDate` 메서드를 사용하여 특정 연도, 월, 날짜를 더하거나 빼면 됩니다.
-
-```Go
+```go
 package main
+
 import (
-    "fmt"
-    "time"
+	"fmt"
+	"time"
 )
 
 func main() {
-    t := time.Now()
-    fmt.Println("Current Date:", t.Format("2006-01-02"))
+	// 현재 시각
+	now := time.Now()
+	fmt.Println("지금 시각:", now)
 
-    futureDate := t.AddDate(1, 2, 3)
-    fmt.Println("Future Date: ", futureDate.Format("2006-01-02"))
+	// 2주 뒤
+	twoWeeksLater := now.Add(time.Hour * 24 * 14)
+	fmt.Println("2주 후:", twoWeeksLater)
 
-    pastDate := t.AddDate(-1, -2, -3)
-    fmt.Println("Past Date: ", pastDate.Format("2006-01-02"))
+	// 3일 전
+	threeDaysBefore := now.Add(-time.Hour * 24 * 3)
+	fmt.Println("3일 전:", threeDaysBefore)
 }
 ```
-
-이 코드 블록을 실행하면 다음과 같은 출력결과가 나옵니다:
-
-```Go
-Current Date: 2021-08-31
-Future Date:  2022-11-03
-Past Date:    2020-06-28
+출력 예시:
+```
+지금 시각: 2023-04-12 15:04:05.999999 +0900 KST
+2주 후: 2023-04-26 15:04:05.999999 +0900 KST
+3일 전: 2023-04-09 15:04:05.999999 +0900 KST
 ```
 
-## 딥 다이브
+## 심층 탐구:
+날짜 계산은 율리우스 달력과 그레고리오 달력의 도입 이후로 중요했습니다. 그럼에도 불구하고 기계와 컴퓨터를 이용한 정확한 계산은 20세기에 들어서야 가능해졌어요. Go 언어에서는 `time` 패키지를 사용하여 시간과 날짜를 다룹니다. `Add` 메서드 외에도 `AddDate`를 사용해 년, 월, 일 단위로 계산할 수 있습니다. 표준 라이브러리 외에, 대안으로 `github.com/rickar/cal` 같은 타사 라이브러리를 사용해서 휴일이나 다양한 공휴일 처리를 할 수도 있습니다.
 
-초기에 날짜 계산은 어렵고 복잡한 작업이었습니다. 통상적으로 용어를 계산하고 천문학적 이벤트를 예측하는 데 필요한 천문학자가 직접 실행했습니다. 하지만 Go 외의 여러 프로그래밍 언어와 도구들이 현대 컴퓨터에서는 이 작업을 간단하게 만들어 가게 되었습니다.
-
-대안으로는 `time` 패키지 외에 `date`, `now` 등의 날짜 및 시간 처리 라이브러리도 있습니다.
-
-날짜 계산의 구현 세부 사항이 다소 복잡할 수 있는 이유는 서로 다른 시간대, 윤년, 윤초, 그리고 기타 역사적인 조정에 대한 지속적인 계산 뿐만 아니라 다양한 표준이 존재하기 때문입니다.
-
-## 참고 자료
-
-- [Go 문서](https://golang.org/pkg/time/)
-- [`time` 패키지에 대한 Go 블로그](https://blog.golang.org/toward-go2)
+## 참고 자료:
+- [Go 공식 문서의 time 패키지](https://golang.org/pkg/time/)
+- [github.com/rickar/cal: Go 휴일 패키지](https://github.com/rickar/cal)
+- [위키피디아의 "율리우스 달력"](https://ko.wikipedia.org/wiki/%EC%9C%A8%EB%A6%AC%EC%9A%B0%EC%8A%A4_%EB%8B%AC%EB%A0%A5)

@@ -1,6 +1,7 @@
 ---
 title:                "Convertendo uma string para minúsculas"
-html_title:           "Fish Shell: Convertendo uma string para minúsculas"
+date:                  2024-01-20T17:38:17.272472-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,34 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Convertendo uma string para minúsculas em Gleam
-
-## O que & Por quê?
-
-Converter uma string para minúsculas significa transformar todas as letras maiúsculas presentes na string em minúsculas. Isso auxilia na uniformização dos dados, facilitando a comparação e a busca de strings.
+## O que é & Porquê?
+Converter uma string para minúsculas significa transformar todos os caracteres alfabéticos da string para a sua forma minúscula correspondente. Programadores fazem isso para padronizar os dados de entrada, facilitar comparações consistentes e atender a certos requisitos do sistema ou domínio de aplicação.
 
 ## Como fazer:
-
-Aqui está um exemplo de como você pode converter uma string para minúsculas em Gleam:
+Gleam torna a conversão de string para minúsculas direta e fácil. Confira o exemplo:
 
 ```gleam
 import gleam/string
 
-let minha_string = "Olá Mundo!"
-let string_minuscula = string.to_lower(minha_string)
-
-assert string_minuscula == "olá mundo!"
+pub fn main() {
+  let greeting = "Olá, Mundo!"
+  let lowercased_greeting = string.lowercase(greeting)
+  lowercased_greeting
+}
 ```
-Basta importar o módulo `gleam/string` e usar a função `to_lower`. No exemplo acima, a variável `string_minuscula` receberá o valor "olá mundo!".
+
+Saída esperada:
+```
+"olá, mundo!"
+```
 
 ## Mergulho Profundo
+Historicamente, converter strings para minúsculas é um conceito que transcende linguagens de programação específicas, tendo raízes nas práticas de catalogação e indexação de dados, onde a consistência é chave. Em Gleam, além da função `string.lowercase`, podemos considerar a utilização de alternativas como o mapeamento manual de caracteres para suas formas minúsculas, mas isso não é recomendado pois é trabalhoso e propenso a erros. A implementação de conversão de string para minúsculas em Gleam considera as especificidades de codificação Unicode, garantindo que a transformação de caracteres seja feita de maneira correta e segura em diferentes idiomas e conjuntos de caracteres.
 
-A função `to_lower` do módulo `gleam/string` existe desde a primeira versão da linguagem Gleam, demonstrando seu papel fundamental no trabalho com strings. Existem alternativas, como implementar sua própria função para converter strings em minúsculas, mas estas geralmente não são tão eficientes ou diretas quanto o método integrado.
+## Veja Também
+Confira mais sobre operações de strings e tratamentos de caracteres em Gleam:
 
-Tecnicamente, a função `to_lower` examina cada caractere na string e, se for uma letra maiúscula, substitui pelo seu equivalente em minúscula. Este processo é baseado na tabela ASCII, que atribui números distintos a letras maiúsculas e minúsculas.
-
-## Veja também:
-
-Para obter mais informações sobre o trabalho com strings em Gleam, confira a documentação oficial [aqui](https://gleam.run/book/tour/strings.html).
-
-Para aprender mais sobre a tabela ASCII e como as letras maiúsculas e minúsculas são representadas, veja [este link](http://www.asciitable.com/).
+- [Unicode Standard](http://www.unicode.org/standard/standard.html)
+- [Práticas de normalização de dados](https://en.wikipedia.org/wiki/Text_normalization)

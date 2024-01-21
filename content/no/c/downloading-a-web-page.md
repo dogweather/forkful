@@ -1,7 +1,8 @@
 ---
-title:                "Laste ned en nettside"
-html_title:           "Elixir: Laste ned en nettside"
-simple_title:         "Laste ned en nettside"
+title:                "Nedlasting av en nettside"
+date:                  2024-01-20T17:43:52.920220-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Nedlasting av en nettside"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,48 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Å Laste Ned en Webside i C
-
 ## Hva & Hvorfor?
-Når man laster ned en webside, henter PCen HTML-koden til siden fra serveren, og lagrer den lokalt. Denne operasjonen er brukt av programmerere for å skrape data, teste nettsider, eller for å ha en offline kopi av innholdet.
+Å laste ned en nettside betyr å hente HTML og andre ressurser over Internett for å lagre eller behandle lokalt. Programmerere gjør dette for å automatisere datainnhenting, teste nettsider eller skrape innhold.
 
-## Hvordan Gjøre Det:
-Her er en enkel måte å laste ned en webside ved hjelp av biblioteket cURL i C. Det er nødvendig å ha cURL biblioteket installert for å kjøre koden.
+## Hvordan:
+For å laste ned en nettside i C, kan du bruke `libcurl` som et bibliotek for å gjøre HTTP-forespørsler. Her er et enkelt eksempel:
 
-```C
+```c
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main(void)
-{
+size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
+    size_t written = fwrite(ptr, size, nmemb, stream);
+    return written;
+}
+
+int main(void) {
     CURL *curl;
+    FILE *fp;
     CURLcode res;
-
-    curl_global_init(CURL_GLOBAL_DEFAULT);
-    curl = curl_easy_init();
-    if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
-
-        // Utfør forespørselen, res vil få returkoden
-        res = curl_easy_perform(curl);
-        
-        // Sjekk for feil
-        if(res != CURLE_OK)
-            fprintf(stderr, "curl_easy_perform() mislyktes: %s\n",
-                    curl_easy_strerror(res));
+    char *url = "http://example.com";
+    char outfilename[FILENAME_MAX] = "downloaded_page.html";
     
-        // Alltid rydd opp
+    curl = curl_easy_init();
+    if (curl) {
+        fp = fopen(outfilename, "wb");
+        if (fp == NULL) {
+            perror("Kan ikke åpne fil");
+            return 1;
+        }
+        
+        curl_easy_setopt(curl, CURLOPT_URL, url);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+        
+        res = curl_easy_perform(curl);
+        if (res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() feilet: %s\n", curl_easy_strerror(res));
+        }
+        
+        fclose(fp);
         curl_easy_cleanup(curl);
     }
-    curl_global_cleanup();
     return 0;
 }
 ```
-## Dypdykk
-Henting av en webside har endret seg betydelig siden internett sine spede begynnelse. Fra å hente HTML utelukkende, til nå, med moderne webskraping teknikker, henter vi ikke bare HTML, men også CSS og Javascript. 
 
-Alternativer til cURL inkluderer biblioteker som libcurl i C, og Requests i Python. En implementeringsdetalj å merke seg er at cURL følger HTTP-omdirigeringer som standard, men du kan endre denne oppførselen ved bruk av riktig alternativ i cURL. 
+Eksempelutdata:
 
-## Se Også 
-1. [cURL Official Documentation](https://curl.haxx.se/libcurl/c/)
-3. [A complete tutorial on Web Scraping](https://www.datacamp.com/community/tutorials/web-scraping-using-python)
+```
+downloaded_page.html lagret.
+```
+
+## Dybdeanalyse:
+Tilbake på 90-tallet, var det enklere nettsider og få verktøy for å laste dem ned. Programmene `wget` og `curl` er eldre løsninger som fortsatt brukes. Alternativer til C inkluderer scripting i Python med `requests`, men med C får du ytelse og detaljkontroll.
+
+Når du bruker `libcurl` i C, håndterer du direkte nettverkskall og datastrømmer. Det gir deg kraften til å tilpasse nøyaktig hvordan nedlastingen håndteres, feilsøking på et lavt nivå og optimalisere ytelsen.
+
+## Se Også:
+* [libcurl Tutorial](https://curl.haxx.se/libcurl/c/)
+* [C Standard Library](https://en.cppreference.com/w/c/header)
+* [HTTP Made Really Easy](http://www.jmarshall.com/easy/http/) - En grunnleggende forståelse av HTTP.
+* [GNU Wget Manual](https://www.gnu.org/software/wget/manual/wget.html) - For sammenligning av kommandolinjealternativer.

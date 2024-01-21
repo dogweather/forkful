@@ -1,7 +1,8 @@
 ---
-title:                "Interpolando una cadena de texto"
-html_title:           "Haskell: Interpolando una cadena de texto"
-simple_title:         "Interpolando una cadena de texto"
+title:                "Interpolación de cadenas de texto"
+date:                  2024-01-20T17:50:44.578302-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolación de cadenas de texto"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,39 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## ¿Qué & Por Qué?
 
-La interpolación de cadenas es simplemente la inserción de datos en una cadena de texto para ayudarnos a componer cuerdas de manera más lógica y expresiva. Los programadores lo hacen para inyectar variables en una cadena para una mejor legibilidad y para hacer el código más limpio y fácil de mantener.
+Interpolar una cadena consiste en insertar variables o expresiones dentro de una cadena de texto. Los programadores lo hacen para construir cadenas de manera dinámica y eficiente, facilitando la manipulación de datos y la interacción con el usuario.
 
-## ¿Cómo hacerlo?
+## Cómo:
 
-A continuación, se muestran algunos ejemplos de cómo utilizar la interpolación de cadenas en Gleam:
+En Gleam, usamos la función `string.concat` o la interpolación directa usando `#{}` para combinar textos y variables. Ejemplos:
 
-```Gleam
-let nombre = "Amigo"
-let saludo = "¡Hola, \(nombre)!"
-io.println(saludo) // mostrará "¡Hola, Amigo!"
+```gleam
+// Concatenación simple usando `string.concat`
+let nombre = "Mundo"
+let saludo = string.concat(["Hola, ", nombre, "!"])
+// saludo es "Hola, Mundo!"
+
+// Interpolación usando #{}
+let precio = 9.99
+let mensaje = "El total a pagar es: #{precio} euros."
+// mensaje es "El total a pagar es: 9.99 euros."
 ```
 
-En este ejemplo, la cadena "Amigo" es interpolada en la cadena "¡Hola, \(nombre)!". El resultado de la interpolación se almacena en la variable "saludo", que luego se imprime en la pantalla.
+## Profundización:
 
-## Buceo Profundo
+Históricamente, la interpolación de cadenas proviene de lenguajes como Perl y se ha propagado a muchos otros, incluidos los modernos como Ruby o JavaScript. En Gleam, que es un lenguaje funcional fuertemente tipado, la interpolación es más segura en cuanto a tipos, evitando algunos errores comunes en otros lenguajes. Alternativas a la interpolación pueden ser la concatenación manual (menos legible) o el uso de plantillas de texto externas (más complejas). Detalle de implementación: la interpolación en Gleam es eficiente y garantiza que el valor interpolado siempre será una cadena o será convertido a una de forma segura.
 
-En términos de contexto histórico, la interpolación de cadenas ha estado presente en lenguajes de programación por bastante tiempo. En Gleam, la interpolación de cadenas es una forma más conveniente de formatear cadenas en comparación con la concatenación tradicional.
+## Ver También:
 
-Alternativamente, puedes optar por usar la concatenación regular en lugar de la interpolación de cadenas:
-
-```Gleam
-let nombre = "Amigo"
-let saludo = "¡Hola, " ++ nombre ++ "!"
-io.println(saludo) // mostrará "¡Hola, Amigo!"
-```
-
-La implementación de la interpolación de cadena en Gleam se basa, en última instancia, en una serie de funciones de concatenación, admitiendo un código más legible y de aspecto más limpio.
-
-## Ver También
-
-Echa un vistazo a estas fuentes relacionadas para aprender más sobre la interpolación de cadenas en Gleam:
-
-* [Documentación Oficial de Gleam: Interpolación de Cadenas](https://gleam.run/book/tour/strings.html)
-* [StackOverflow: ¿Cómo hacer Interpolación de Cadenas en Gleam?](https://stackoverflow.com/questions/tagged/gleam)
+- Comparación de métodos de interpolación en diferentes lenguajes: [String Interpolation in Programming Languages](https://en.wikipedia.org/wiki/String_interpolation#In_programming_languages)

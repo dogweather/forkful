@@ -1,7 +1,8 @@
 ---
-title:                "Befehlszeilenargumente lesen"
-html_title:           "Arduino: Befehlszeilenargumente lesen"
-simple_title:         "Befehlszeilenargumente lesen"
+title:                "Lesen von Kommandozeilenargumenten"
+date:                  2024-01-20T17:56:12.750245-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lesen von Kommandozeilenargumenten"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -11,36 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Kommandozeilenargumente sind Infos, die du deinem Elixir-Programm beim Start übergibst. Wir nutzen sie, um das Verhalten unserer Programme dynamisch anzupassen, ohne den Code zu ändern.
 
-Das Lesen von Kommandozeilenargumenten ermöglicht die Interaktion des Benutzers mit deinem Programm über die Kommandozeile. Entwickler nutzen diese Funktion, um flexible Programme zu erstellen, die unterschiedliche Aktionen basierend auf den eingegebenen Argumenten ausführen.
+## How to:
+In Elixir greifst du mit `System.argv()` auf die Argumente zu. Einfaches Beispiel:
 
-## Wie macht man das:
-
-Es ist sehr einfach, Kommandozeilenargumenten in Elixir zu verwenden. Betrachten wir die folgenden Codeschnipsel:
-
-```Elixir
-defmodule Hello do
-  def main(args) do
-    args
-    |> Enum.join(" ")
-    |> IO.puts()
+```elixir
+defmodule CLIExample do
+  def main do
+    args = System.argv()
+    IO.inspect(args)
   end
 end
 
-System.argv |> Hello.main
+CLIExample.main()
 ```
-Wenn Sie das obige Programm mit Argumenten aus der Befehlszeile ausführen, z. B. `elixir hello.exs Hallo Welt`, gibt es `Hallo Welt` auf dem Bildschirm aus.
 
-## Vertiefung 
+Führe das Programm so aus: `elixir script.exs arg1 arg2 arg3`
+Ausgabe: `["arg1", "arg2", "arg3"]`
 
-Elixir basiert auf der Erlang-VM, einem System, das ursprünglich für robuste Telekommunikationssysteme entwickelt wurde. Daher bietet es starken Support für Kommandozeilenanwendungen, einschließlich des Zugriffs auf Kommandozeilenargumente.
+Möchtest du Argumente umwandeln oder Default-Werte setzen? Schau dir `OptionParser.parse/2` an:
 
-Ein Alternativansatz zum Lesen von Befehlszeilenargumenten ist die Verwendung der Funktion `:init.get_plain_arguments/0`. Diese Funktion gibt Ihnen direkten Zugriff auf die Argumentenliste, die der Erlang-VM beim Start übergeben wird.
+```elixir
+defmodule CLIExample do
+  def main do
+    {options, _, _} = OptionParser.parse(System.argv(), switches: [name: :string])
 
-Die Implementierung der Argumentenlesung in Elixir erfolgt durch das `System.argv` Modul. Dieses Modul bietet Funktionen zum Abrufen und Ändern der aktuellen Argumentenliste des Prozesses.
+    case options do
+      [name: name] -> IO.puts("Hallo, #{name}!")
+      _ -> IO.puts("Kein Name angegeben.")
+    end
+  end
+end
 
-## Siehe auch
+CLIExample.main()
+```
 
-- [Elixir School: Command line](https://elixirschool.com/de/lessons/basics/mix/#command-line)
-- [Official Elixir docs: System.argv](https://hexdocs.pm/elixir/System.html#argv/0)
-- [Erlang docs: init.get_plain_arguments](http://erlang.org/doc/man/init.html#get_plain_arguments-0)
+Führe das Programm so aus: `elixir script.exs --name Hans`
+Ausgabe: `Hallo, Hans!`
+
+## Deep Dive
+Elixir's Kommandozeilenargumente sind nicht revolutionär. Sie machen, was sie sollen - ähnlich wie in anderen Sprachen. Doch mit Pattern Matching und der robusten `OptionParser`-Modul bietet Elixir einen eleganten Weg, Argumente zu handhaben.
+
+Früher, in Sprachen wie C, musstest du oft mühsam die `argv` Variable manuell parsen. Aber heutzutage bieten die meisten Sprachen, auch Elixir, komfortable Lösungen für so alltägliche Aufgaben.
+
+Es gibt Alternativen zu `System.argv()` und `OptionParser.parse/2`, wie z. B. das Einbinden von externen Bibliotheken für komplexere CLI-Anwendungen. Diese bieten oft zusätzliche Features wie automatische Hilfe-Seiten oder Befehlsvalidierungen.
+
+Elixir selbst kommt mit mächtigen Werkzeugen für Kommandozeilenoptionen, die in vielen Fällen völlig ausreichen. Und dank Elixir's konsequentem Functional-Programming-Ansatz sind diese Werkzeuge oft überraschend einfach in der Anwendung.
+
+## See Also
+- Elixir Dokumentation zu `System.argv()`: https://hexdocs.pm/elixir/System.html#argv/0
+- Elixir Dokumentation zu `OptionParser`: https://hexdocs.pm/elixir/OptionParser.html
+- Mix Dokumentation für eigene Tasks: https://hexdocs.pm/mix/Mix.Task.html
+
+Mit diesen Ressourcen kannst du tiefer in die Materie eintauchen und deine Skills im Umgang mit Kommandozeilenargumenten in Elixir verbessern.

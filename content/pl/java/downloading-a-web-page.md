@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C#: Pobieranie strony internetowej"
+date:                  2024-01-20T17:44:19.501168-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Java"
 category:             "Java"
@@ -10,44 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Pobieranie strony internetowej to proces, dzięki któremu możemy uzyskać jej zawartość w formacie tekstowym. Programiści robią to, by analizować dane, monitorować zmiany lub wydobywać informacje automatycznie.
 
-Pobieranie strony internetowej to proces zapisywania jej zawartości lokalnie na naszym komputerze. Programiści robią to, aby analizować zawartość strony, przetwarzać dane, monitorować zmiany i tworzyć aplikacje web scraping.
+## How to:
+W Java można to zrobić za pomocą `java.net.HttpURLConnection` albo popularnych bibliotek takich jak `Jsoup`. Oto prosty przykład użycia `HttpURLConnection`:
 
-## Jak to zrobić:
-
-Użyjemy klasy `java.net.URL` i `java.nio.file`. Oto jak to zrobisz:
-
-```Java
-import java.io.InputStream;
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
-public class WebDownloader {
-    public static void main(String[] args) throws Exception {
-        URL website = new URL("http://www.example.com");
-        try (InputStream in = website.openStream()) {
-            Files.copy(in, Paths.get("downloaded.html"));
+public class WebPageDownloader {
+    public static void main(String[] args) throws IOException {
+        String urlString = "http://example.com";
+        URL url = new URL(urlString);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(connection.getInputStream()))) {
+            String inputLine;
+            while ((inputLine = reader.readLine()) != null) {
+                System.out.println(inputLine);
+            }
+        } finally {
+            connection.disconnect();
         }
     }
 }
 ```
 
-Gdy uruchomisz ten program, pobierze on stronę www.example.com i zapisze ją jako "downloaded.html" w katalogu projektu.
+Output będzie zawierał HTML pobranej strony.
 
-## Głębsze spojrzenie:
+## Deep Dive:
+Pobieranie stron internetowych w Javie ma długą historię. Wcześniejsze wersje Javy korzystały z `URLConnection`, ale w praktyce częściej używa się `HttpURLConnection`, która obsługuje specyfikę HTTP. Alternatywą jest biblioteka Apache HttpClient czy wspomniane `Jsoup`, które oferują więcej funkcji i łatwość użycia. Apache HttpClient jest robustnym rozwianiem, odpowiednim do skomplikowanych zadań. Z kolei `Jsoup` jest idealny do parsowania HTML, co sprawia, że jest wygodny w ekstrakcji konkretnych danych ze stron.
 
-1. Historyczny kontekst: Początkowo różne biblioteki, takie jak Apache HttpClient, były używane do pobierania stron internetowych w Javie. Ale od Java 7, możemy wykorzystać wbudowane API, takie jak `java.net.URL`.
-
-2. Alternatywy: Inne biblioteki, takie jak Jsoup lub HtmlUnit, oferują bardziej zaawansowane narzędzia do przetwarzania pobranych stron.
-
-3. Szczegóły implementacyjne: Powyższy kod otwiera połączenie do URL, tworzy strumień wejściowy, zapisuje zawartość strony do pliku za pośrednictwem `Files.copy()`. Pamiętaj, aby zawsze zamykać strumienie wejściowe, co tutaj gwarantuje konstrukcja try-with-resources.
-
-## Zobacz również:
-
-1. Dokumentacja Java `java.net.URL`: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/net/URL.html
-
-2. Przewodnik po składnikach `java.nio`: https://docs.oracle.com/javase/tutorial/essential/io/fileio.html
-
-3. Biblioteka Jsoup: https://jsoup.org/
+## See Also:
+- [Jsoup Official Site](https://jsoup.org/)
+- [Oracle's Java Networking Tutorial](https://docs.oracle.com/javase/tutorial/networking/urls/index.html)

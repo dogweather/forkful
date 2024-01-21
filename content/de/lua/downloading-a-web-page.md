@@ -1,7 +1,8 @@
 ---
-title:                "Eine Webseite herunterladen"
-html_title:           "Arduino: Eine Webseite herunterladen"
-simple_title:         "Eine Webseite herunterladen"
+title:                "Webseite herunterladen"
+date:                  2024-01-20T17:44:30.451147-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Webseite herunterladen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -11,42 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Webseiten herunterladen bedeutet, den Inhalt einer Webseite über das Internet auf deinen Computer zu übertragen. Programmierer tun dies, um Daten zu extrahieren, automatisch zu verarbeiten oder Software-Tests durchzuführen.
 
-Das Herunterladen einer Webseite bedeutet, deren Inhalt auf Ihrem Rechner zu speichern. So testen Programmierer z.B. ihre Tools in einer kontrollierten Umgebung oder sammeln Daten für die Bearbeitung.
-
-## So geht's:
-
-Mit Lua und der Bibliothek "luasocket" sowie dem Modul "http" kann man eine Webseite herunterladen:
+## Vorgehensweise:
+Um eine Webseite in Lua herunterzuladen, verwendest du die `socket.http`-Bibliothek. Im Beispiel unten siehst du, wie man den Inhalt einer Webseite anfragt und erhält:
 
 ```Lua
--- Pakete importieren
-http = require("socket.http")
-ltn12 = require("ltn12")
+local http = require("socket.http")
+local url = "http://www.beispielwebseite.de"
 
--- Datei zum Speichern öffnen
-file = io.open("webInhalt.txt", "w")
+local body, statusCode, headers, statusText = http.request(url)
 
--- Anfrage, Seite herunterladen
-http.request{
-  url = "http://example.com",
-  sink = ltn12.sink.file(file)
-}
+if statusCode == 200 then
+    print("Webseite erfolgreich heruntergeladen!")
+    print(body)  -- Gibt den Inhalt der Webseite aus.
+else
+    print("Fehler beim Herunterladen der Webseite: " .. statusText)
+end
 ```
+Wenn alles klappt, gibt `body` den HTML-Code der Seite zurück.
 
-Der Inhalt von "http://example.com" wird in "webInhalt.txt" gespeichert.
+## Tiefgang:
+Zurück in den 2000ern waren HTTP-Anfragen in Lua eher mühsam und benötigten externe Werkzeuge wie `curl` oder `wget`. Mit dem Aufkommen von `LuaSocket` wurde das Herunterladen von Webseiten direkt in Lua umsetzbar. Es gibt auch Alternativen wie `LuaSec` für HTTPS-Verbindungen. Wichtig ist die Behandlung von Header-Informationen und Statuscodes, um auf Ereignisse wie Umleitungen oder Serverfehler reagieren zu können.
 
-## Tiefere Einblicke
-
-Lua und Luasocket sind 1993 bzw. 2003 veröffentlicht worden. "luasocket" gilt als Standardnetzwerkbibliothek von Lua. Es bieten sich auch Alternativen wie "lua-http" oder "luacurl" an, je nach Anforderung und Umgebung.
-
-Das Herunterladen einer Webseite mit Lua besteht aus einer HTTP-Anfrage an den Server, welcher die Seite hostet. Diese Anfrage wird von der "http.request"-Funktion verarbeitet. Die Pufferung der Antwort, um sie in eine Datei zu schreiben, wird durch "ltn12.sink.file" geleistet.
-
-## Siehe auch
-
-Um Lua und das Web-Scraping besser zu verstehen, gibt es hilfreiche Quellen im Internet:
-
-Lua Handbuch: (https://www.lua.org/manual/5.4/) 
-
-Luasocket Dokumentation: (https://github.com/diegonehab/luasocket)
-
-Tutorial zu ltn12: (http://lua-users.org/wiki/FiltersSourcesAndSinks)
+## Siehe Auch:
+- LuaSocket Dokumentation: http://w3.impa.br/~diego/software/luasocket/http.html
+- LuaSec (für HTTPS) GitHub-Seite: https://github.com/brunoos/luasec/wiki
+- HTTP-Statuscodes: https://de.wikipedia.org/wiki/HTTP-Statuscode

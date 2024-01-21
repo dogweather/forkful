@@ -1,6 +1,7 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "C++ recipe: Reading command line arguments"
+date:                  2024-01-20T17:55:55.048803-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Reading command line arguments"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -12,39 +13,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Reading command line arguments is when your program fetches input directly from the terminal command you used to run the program. You'd do this to make your program's behavior customizable without altering the source code.
+Reading command line arguments in Haskell lets you snatch user inputs when they run your program. Why? To customize program behavior on the fly, without altering the code itself.
 
 ## How to:
 
-Let's dive right in. We'll use `System.Environment`'s `getArgs` function. Here's a simple program that echoes the command line arguments:
+```haskell
+import System.Environment (getArgs)
 
-```Haskell
-import System.Environment
 main :: IO ()
 main = do
   args <- getArgs
-  print args
+  putStrLn ("Hello, " ++ show args ++ "!")
 ```
-Run the code with arguments, and they'll get printed:
 
-```Haskell
-$ runghc Test.hs arg1 arg2 arg3
-["arg1","arg2","arg3"]
+Run it passing "world" as an argument:
+
+```bash
+$ runhaskell yourprogram.hs world
+Hello, ["world"]!
 ```
-Simple as that. We're grabbing command line arguments and printing them, and they come as a list of strings.
 
 ## Deep Dive
 
-Historically, command line arguments in functional languages were an early form of parameterization, hailing back to times when UIs were terminal-based.
+Haskell's a neat language, with roots in the 80s, favoring purity and static typing. It's had a way to handle command line arguments since the early days. In other languages, this might be pretty procedural stuff, but here, we're in the realm of IO monads to deal with the wild outside world.
 
-Alternatives to `getArgs` include `getProgName` and `getEnv`. The former fetches the name of the running program, and the latter lets you access the system's environmental variables.
+Alternatives? You can go nuts with libraries like `optparse-applicative` for complex stuff, but for simple cases, `getArgs` does the trick.
 
-`getArgs` employs lazy IO internally, so it can handle huge amounts of command line input without bloating memory usage.
+Under the hood? `getArgs` is a function that dives into your system, fetches whatever followed the program name in the terminal, and hands you a list of strings. It's implemented in Haskell's base library, leaning on lower-level C functions to do the grunt work. Neat, right?
 
 ## See Also
 
-Official GHC documentation on `System.Environment`: https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html
-
-Learn about lazy IO: https://wiki.haskell.org/Lazy_IO
-
-How CLI argument parsing looks in bash to compare: https://ryanstutorials.net/bash-scripting-tutorial/bash-input.php
+- Going deeper with `getArgs`: [Hoogle on System.Environment](https://hoogle.haskell.org/?hoogle=System.Environment.getArgs)
+- Levels up in argument parsing: [optparse-applicative on Hackage](https://hackage.haskell.org/package/optparse-applicative)

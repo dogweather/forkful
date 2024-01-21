@@ -1,7 +1,8 @@
 ---
-title:                "Einen String in Kleinbuchstaben umwandeln"
-html_title:           "Elm: Einen String in Kleinbuchstaben umwandeln"
-simple_title:         "Einen String in Kleinbuchstaben umwandeln"
+title:                "Umformung eines Strings in Kleinbuchstaben"
+date:                  2024-01-20T17:37:51.458605-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Umformung eines Strings in Kleinbuchstaben"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -11,23 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Die Konvertierung von Zeichenketten (Strings) in Kleinbuchstaben ist eine gängige Operation in der Programmierung. Sie ermöglicht es, irrelevante Unterschiede im Schriftbild zu eliminieren und vereinfacht z. B. den Textvergleich.
+Das Umwandeln eines Strings in Kleinbuchstaben macht alle Buchstaben klein. Das ist wichtig für einheitliche Datenverarbeitung, beispielsweise beim Vergleichen von Eingaben.
 
-## Wie es geht:
+## So geht's:
 ```C#
-string originalText = "Hallo Welt!";
-string lowercaseText = originalText.ToLower();
+string original = "Hallo Welt!";
+string klein = original.ToLowerInvariant();
 
-Console.WriteLine(lowercaseText);
+Console.WriteLine(klein);  // Ausgabe: hallo welt!
 ```
-Bei Ausführung gibt dieses Programm "hallo welt!" aus.
+Das `ToLowerInvariant()` berücksichtigt keine lokale kulturelle Unterschiede. Es gibt aber auch `ToLower()`, das die Kultur des aktuellen Threads berücksichtigt. Hier ein Beispiel:
+
+```C#
+string original = "Straße";
+string kleinInvariant = original.ToLowerInvariant();
+string klein = original.ToLower();
+
+Console.WriteLine(kleinInvariant); // Ausgabe: strasse
+Console.WriteLine(klein); // Ausgabe: straße (in deutscher Kultur)
+```
 
 ## Tiefgang:
-Die Funktion ToLower() hat eine lange Geschichte, die bis in die Anfänge der C#-Sprache zurückreicht. Es gibt Alternativen wie `ToLowerInvariant()`, die jedoch subtile Unterschiede in der Handhabung von Sprachspezifikationen aufweisen. Für die meisten Anwendungsfälle ist `ToLower()` jedoch die richtige Wahl. 
+Früher, als die internationale Softwareentwicklung nicht so verbreitet war, gab es meist nur `ToLower()`, das abhängig von der Kultur des Betriebssystems war. Heute ist die invariante Methode wichtig, weil Software global genutzt wird.
 
-Bei der Umsetzung speichert die Methode `ToLower()` zuerst die ursprüngliche Zeichenkette und wandelt dann jeden Buchstaben einzeln in einen Kleinbuchstaben um. Dies macht sie zu einer sicheren, wenn auch nicht sehr effizienten, Methode für diese Umwandlung.
+Alternativen: Neben `.ToLower()` und `.ToLowerInvariant()` kann man mit `String.Compare()` und `String.Equals()` mit dem Parameter `StringComparison.OrdinalIgnoreCase` vergleichen, ohne den String zu verändern.
+
+Implementierungsdetails: `.ToLowerInvariant()` und `.ToLower()` benutzen beide die Unicode-Regeln für die Kleinbuchstaben-Umwandlung. Sie durchlaufen den String und ersetzen jeden Großbuchstaben durch seinen kleinbuchstabigen Gegenpart.
 
 ## Siehe auch:
-1. [Microsoft Dokumentation zur ToLower()-Methode](https://docs.microsoft.com/de-de/dotnet/api/system.string.tolower?view=net-5.0)
-2. [Diskussion über ToLower() vs ToLowerInvariant()](https://stackoverflow.com/questions/2801508/string-tolowerstring-tolowerinvariant)
-3. [Detaillierte Analyse der ToLower()-Implementierung](https://referencesource.microsoft.com/#mscorlib/system/string.cs,1975)
+- [Microsoft Dokumentation zu ToLowerInvariant](https://docs.microsoft.com/dotnet/api/system.string.tolowerinvariant)
+- [Microsoft Dokumentation zu ToLower](https://docs.microsoft.com/dotnet/api/system.string.tolower)
+- [Unicode Standard zur Groß- und Kleinschreibung](https://unicode.org/reports/tr21/tr21-5.html)

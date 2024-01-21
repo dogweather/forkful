@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:51:28.612652-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,30 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Interpolacja stringów to proces wstawiania dynamicznie wyliczanych wartości do łańcuchów znakowych. Programiści używają tego, aby ułatwić sobie budowanie dynamicznych tekstów bez potrzeby sklejania ich części.
 
-Interpolacja ciągów w Kotlinie polega na wstawianiu wartości zmiennych bezpośrednio do ciągów. Programiści używają jej, aby zwiększyć czytelność i utrzymanie kodu.
-
-## Jak to zrobić:
-
+## How to:
 ```Kotlin
 fun main() {
-   val imie = "Jan"
-   val wiek = "22"
-   
-   println("Moje imię to $imie, a mój wiek to $wiek lat.")
+    val name = "Ania"
+    val age = 25
+    val greeting = "Cześć, jestem $name i mam $age lat."
+
+    println(greeting) // Wyświetla: Cześć, jestem Ania i mam 25 lat.
+
+    // Można też wstawiać wyrażenia:
+    val farewell = "Za rok będę miał ${age + 1} lat."
+    println(farewell) // Wyświetla: Za rok będę miał 26 lat.
 }
 ```
-Wyjście to: "Moje imię to Jan, a mój wiek to 22 lat."
 
-## Głębsza analiza
+## Deep Dive
+Interpolację stringów wprowadzono, aby ułatwić razem pracę z tekstami. W przeszłości programiści musieli ręcznie sklejać stringi przy użyciu operatorów plus (+), co było nie tylko uciążliwe, ale i mogło prowadzić do błędów. W Kotlinie interpolacja używa znaku dolara ($) do identyfikowania zmiennych oraz wyrażeń w nawiasach klamrowych do obliczeń.
 
-Interpolacja ciągów jest funkcją dostępną w wielu językach programowania, choć z różnym składnią. W Kotlinie korzystamy ze znaku `$` do interpolacji. Alternatywą dla interpolacji jest konkatenacja ciągów, ale jest to mniej czytelne i może być bardziej kosztowne pod względem wydajności. Co do szczegółów implementacji, Kotlin konwertuje interpolowane ciągi na konkatenację ciągów podczas kompilacji.
+Alternatywą dla interpolacji jest użycie metody `format` dostępnej w Javie i Kotlinie lub budowanie stringów przy pomocy klas `StringBuilder` czy `StringBuffer`. Te techniki są nadal używane tam, gdzie interpolacja jest niemożliwa lub niepraktyczna.
 
-## Zobacz też
+Implementacja interpolacji stringów w Kotlinie jest zoptymalizowana, aby minimalizować narzut związany z operacjami na stringach - kompilator zamienia interpolację na połączenie `StringBuilder` i jego metod.
 
-[Interpolacja ciągów w Kotlinie - Dokumentacja Oficjalna](https://kotlinlang.org/docs/whatsnew12.html#string-interpolation)
-
-[Tekst ciągów - Kotlin Programming Language](https://kotlinlang.org/docs/reference/basic-types.html#string-literals)
-
-[Porównanie wydajności interpolacji ciągów i konkatenacji w Kotlinie](https://medium.com/@krpiotrek/string-interpolation-vs-concatenation-3ae7922b491e)
+## See Also
+- [Kotlin Documentation on String Templates](https://kotlinlang.org/docs/basic-syntax.html#string-templates)
+- [Kotlin Playground](https://play.kotlinlang.org/) - Interactive site to test Kotlin code snippets.

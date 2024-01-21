@@ -1,7 +1,8 @@
 ---
-title:                "Відправлення HTTP-запиту"
-html_title:           "Bash: Відправлення HTTP-запиту"
-simple_title:         "Відправлення HTTP-запиту"
+title:                "Надсилання HTTP-запиту"
+date:                  2024-01-20T18:00:23.697041-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,46 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Для чого?
+## Що це таке & навіщо?
+HTTP-запит дозволяє вашому PHP-скрипту спілкуватися з іншими серверами. Ми робимо це для отримання та відправки даних, інтеграції з API, взаємодії із веб-сервісами.
 
-Надсилання HTTP-запиту - це процес, під час якого ваша програма просить веб-сервер надати певні дані. Програмісти роблять це, щоб взаємодіяти з API, робити web scraping, перевіряти статуси веб-сайтів і багато іншого.
-
-## Як це зробити:
-
-Тут є шматки коду PHP для надсилання HTTP-запиту, використовуючи `file_get_contents` і cURL.
-
-З `file_get_contents`:
+## Як це робити:
+В PHP для відправлення HTTP-запитів можна використовувати cURL або file_get_contents(). Ось приклади обох:
 
 ```PHP
-$website = 'http://example.com';
-$response = file_get_contents($website);
-echo $response;
-```
-Результат буде HTML код головної сторінки `example.com`.
-
-Потім cURL:
-
-```PHP
-$website = 'http://example.com';
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $website);
+// Використання cURL
+$ch = curl_init('http://example.com/api');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 curl_close($ch);
 echo $response;
+
+// Використання file_get_contents()
+$response = file_get_contents('http://example.com/api');
+echo $response;
 ```
-Результат буде такий же: HTML код головної сторінки `example.com`.
+Обидва відображають відповідь від http://example.com/api.
 
-## Поглиблений погляд:
+## Поглиблений огляд
+cURL у PHP — потужна бібліотека для відправлення HTTP-запитів, підтримує багато опцій. file_get_contents() простіший, але менш гнучкий.
 
-На ранніх стадіях інтернету для доступу до веб-серверів використовувались лише програми-браузери. Але з розширенням можливостей веб-додатків, стало необхідним надсилати HTTP-запити прямо з програмного коду. Це привело до появи CURL і бібліотек подібних до PHP Streams (`file_get_contents`). 
-
-Альтернативи, такі як GuzzleHTTP і PHP HTTP є більш сучасніми і гнучкими, але cURL і `file_get_contents`ще широко використовуються. 
-
-Ключ до розуміння надіслання HTTP-запитів полягає в тому, що ви взаємодієте з сервером на інший кінець. Ви просите інформацію (GET запит) або відправляєте дані (POST, PUT, DELETE я т.д), і сервер реагує на відповідний спосіб.
+cURL з’явився у 1997 році, і з тих пір став стандартом для веб-запитів в PHP. file_get_contents() добре підходить для простих GET-запитів. Є й інші бібліотеки, наприклад, Guzzle, які надають більше можливостей та кращу обробку помилок.
 
 ## Див. також:
-
-1. [Документація PHP по `file_get_contents`](https://www.php.net/manual/en/function.file-get-contents.php)
-2. [Документація PHP по `cURL`](https://www.php.net/manual/en/book.curl.php)
-3. [Guzzle, PHP HTTP client](https://docs.guzzlephp.org/en/stable/)
+- [PHP cURL](http://php.net/manual/en/book.curl.php) - офіційна документація по cURL в PHP.
+- [PHP Streams](http://php.net/manual/en/book.stream.php) - офіційна документація по потоках в PHP.
+- [Guzzle](http://docs.guzzlephp.org/) - сучасний HTTP-клієнт для PHP.

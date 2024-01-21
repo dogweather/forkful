@@ -1,6 +1,7 @@
 ---
 title:                "HTTP 요청 보내기"
-html_title:           "Clojure: HTTP 요청 보내기"
+date:                  2024-01-20T17:59:12.645808-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,55 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 하는가?
-HTTP 요청을 보내는 것은 웹 서버와 상호작용하기 위한 방법입니다. 프로그래머들은 서버로부터 데이터를 가져오거나 상태를 확인하기 위해 HTTP 요청을 사용합니다.
+## What & Why? (무엇 그리고 왜?)
+HTTP 요청을 보내는 것은 웹 서버에 데이터를 요청하거나 전송하는 방법입니다. 프로그래머들은 데이터를 주고받아 정보를 업데이트하거나 원격 제어를 위해 이를 사용합니다.
 
-## 이렇게 사용하세요:
-Arduino를 이용해 HTTP GET 요청을 보내는 예제 코드와 결과를 확인해봅시다. 
+## How to: (방법)
+HTTP 요청을 보내려면 `ESP8266` 또는 `ESP32`와 같은 인터넷이 가능한 Arduino 호환 보드가 필요합니다. 아래는 간단한 HTTP GET 요청 예제입니다:
 
 ```Arduino
 #include <ESP8266WiFi.h>
- 
-WiFiClient client;
- 
+#include <ESP8266HTTPClient.h>
+
+const char* ssid = "yourSSID";
+const char* password = "yourPASSWORD";
+
 void setup() {
   Serial.begin(115200);
-  
-  // Wi-Fi 연결 설정
-  WiFi.begin("your_ssid", "your_password");
+  WiFi.begin(ssid, password);
+
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
-    Serial.println("WiFi에 연결 중...");
+    Serial.println("Connecting to WiFi...");
   }
 
-  // HTTP 요청
-  if (client.connect("example.com", 80)) {
-    client.println("GET / HTTP/1.1");
-    client.println("Host: example.com");
-    client.println("Connection: close");
-    client.println();
+  HTTPClient http;
+  http.begin("http://yourserver.com/api/data");
+  int httpCode = http.GET();
+
+  if (httpCode > 0) {
+    String payload = http.getString();
+    Serial.println(httpCode);
+    Serial.println(payload);
+  } else {
+    Serial.println("Error in HTTP request");
   }
+  http.end();
 }
- 
+
 void loop() {
-  while(client.available()) {
-    char c = client.read();
-    Serial.write(c);
-  }
+  // nothing here
 }
 ```
-위 코드는 웹 서버에 HTTP GET 요청을 보내고, 응답을 받아 출력합니다.
 
-## 깊이 이해하기
-장치가 처음 생성될 때부터 HTTP는 웹 통신의 핵심이었습니다. Arduino와 같은 하드웨어에서 이를 구현하는 것은 대부분의 프로그래밍 언어가 제공하는 HTTP 라이브러리를 이용하는 것보다 복잡하지만, 그 어려움을 감수하면 웹 서버와 손쉽게 데이터를 교환할 수 있습니다. 
+샘플 출력:
+```
+200
+{"name":"Arduino","message":"Hello World"}
+```
 
-대안으로는 MQTT, CoAP와 같은 프로토콜이 있습니다. 이들은 더 적은 데이터를 사용하며, 실시간 통신에 더 적합하긴 하지만, 설치 및 설정이 더 복잡합니다. 
+## Deep Dive (심층 분석)
+HTTP 요청을 보내는 방법은 릴리즈된 초기 인터넷 시작부터 있어왔습니다. 이는 웹의 기본 통신 규약으로, `GET`, `POST`, `PUT` 등 다양한 메서드를 이용합니다. `ESP8266`과 `ESP32` 보드는 WiFi 기능 내장 및 HTTP 통신을 손쉽게 처리하는 것으로 인기가 높습니다. 대안으로 `Ethernet Shield`를 사용해 유선 연결을 통한 HTTP 요청도 가능합니다. 핵심은 `HTTPClient` 라이브러리를 사용하여 요청을 구성하고 응답을 처리하는 것입니다.
 
-해당 코드에서는 ESP8266WiFi 라이브러리를 사용합니다. 이 라이브러리는 ESP8266 Wi-Fi 모듈을 쉽게 사용할 수 있게 도와줍니다.
-
-## 참고 자료
-더 자세한 정보를 위해 아래 링크들을 확인해보세요.
-
-1. [Arduino 공식 홈페이지](https://www.arduino.cc/)
-2. [HTTP - MDN Web Docs](https://developer.mozilla.org/ko/docs/Web/HTTP)
-3. [ESP8266WiFi 라이브러리](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)
+## See Also (추가 자료)
+- Arduino 공식 도움말: https://www.arduino.cc/en/Guide
+- ESP8266HTTPClient 라이브러리: https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266HTTPClient
+- WiFi 관련 문제 해결하기: https://arduino-esp8266.readthedocs.io/en/latest/faq/a02-my-esp-crashes.html
+- HTTP 메서드 이해하기: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods

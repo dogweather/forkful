@@ -1,7 +1,8 @@
 ---
-title:                "Aloittaminen uuden projektin"
-html_title:           "C: Aloittaminen uuden projektin"
-simple_title:         "Aloittaminen uuden projektin"
+title:                "Uuden projektin aloittaminen"
+date:                  2024-01-20T18:04:28.565315-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -10,43 +11,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+Mitä ja miksi? Uuden projektin aloittaminen on tyhjältä pöydältä alkavan sovelluskehyksen rakentamista. Koodarit aloittavat uusia projekteja testatakseen ideoita, ratkaistakseen ongelmia tai luodakseen jotain uniikkia.
 
-Uuden projektin aloittaminen tarkoittaa uuden ohjelman tai ohjelmiston kehittämisen aloittamista tyhjästä. Ohjelmoijat tekevät tämän ratkaistakseen uuden ongelman tai luodakseen jotakin uutta.
-
-## Kuinka:
-
-Aloitetaan luomalla uusi tiedosto ja määritellään funktio Rubyssa seuraavasti:
+## How to:
+Kuinka tehdään:
 
 ```Ruby
-# luo uusi tiedosto 'hello.rb'
-$ touch hello.rb
+# Asenna Ruby, jos sitä ei vielä ole
+# Asennusohjeet: https://www.ruby-lang.org/fi/documentation/installation/
 
-# avaa tiedosto ja kirjoita seuraava funktio:
-def tervehdi(nimi)
-  puts "Hei, #{nimi}!"
+# Luo projekti-kansio
+Dir.mkdir("uusi_projekti")
+
+# Siirry luotuun kansioon
+Dir.chdir("uusi_projekti")
+
+# Alusta Git-repositorio (vaatii Gitin asennuksen)
+`git init`
+
+# Luo tarvittavat tiedostot ja hakemistot. Esimerkiksi:
+File.write('Gemfile', <<~GEMFILE)
+  source 'https://rubygems.org'
+  gem 'rspec' # Testikehys
 end
+GEMFILE
+
+# Asenna bundler, jos sitä ei vielä ole, ja hae projektin riippuvuudet
+`gem install bundler`
+`bundle install`
+
+# Alusta RSpec (testikehys)
+`rspec --init`
+
+# Kirjoita ensimmäinen testi `spec/hello_spec.rb`
+File.write('spec/hello_spec.rb', <<~SPEC)
+  RSpec.describe 'Hello world' do
+    it 'greets the world' do
+      expect('Hello, world!').to eq('Hello, world!')
+    end
+  end
+SPEC
+
+# Suorita testit
+puts `rspec`
+# => .
+# => Finished in 0.00246 seconds (files took 0.11743 seconds to load)
+# => 1 example, 0 failures
 ```
 
-Suoritetaan funktio komentoriviltä:
+## Deep Dive:
+Sukellus syvyyksiin:
 
-```Ruby
-# suorita funktio
-$ ruby -e 'require "./hello"; tervehdi("Maailma")'
-```
+Projektit alkoivat joskus paperilla ja lehtiöillä, mutta Ruby-ohjelmointia varten tarvitsemme vain tietokoneen ja idean. Historiassa kirjoitettiin paljon manuaalisesti; nykyään käytämme rakennustyökaluja, kuten Rake ja Bundler, tehokkaaseen työskentelyyn. Vaihtoehtoisesti voit käyttää Ruby on Rails -kehystä web-sovelluksille tai Sinatraa pienemmille projekteille. Käynnistämällä projekti oikeilla työkaluilla – kuten versiohallinta ja riippuvuuksien hallintajärjestelmät – saat hyvän alkuun turvalliselle ja järjestelmälliselle ohjelmistokehitykselle.
 
-Tulostuu "Hei, Maailma!"
+## See Also:
+Katso myös:
 
-## Syventävä osuus:
-
-Aivan ensimmäiset ohjelmat tehtiin suoraan konekielellä, joka on erittäin työlästä ja virhealtista. Sittemmin on kehitetty erilaisia ohjelmointikieliä, kuten Ruby, jotka mahdollistavat ohjelmointitehtävien suorittamisen helpommin ja nopeammin.
-
-Uuden projektin aloittamiseen on muitakin vaihtoehtoja. Voit esimerkiksi käyttää Ruby on Rails -kehystä, joka automatisoi monia tehtäviä ja nopeuttaa kehitystä.
-
-Aloitimme projektin luomalla uuden tiedoston ja määrittämällä yksinkertaisen funktion. Tämä on yksinkertaisin tapa aloittaa. Suuremmissa projekteissa tarvitset todennäköisesti useita tiedostoja ja luokkia.
-
-## Katso myös:
-
-1. [Ruby-ohjelmointiopas](http://ruby-doc.org/)
-2. [Ruby on Rails -opas](https://guides.rubyonrails.org/)
-3. [GitHub-sivusto, jossa on Ruby-esimerkkejä](https://github.com/ruby/ruby)
+- Ruby-dokumentaatio: https://www.ruby-lang.org/fi/documentation/
+- Gitin aloitusopas: https://git-scm.com/book/fi/v2/Aloittaminen-Gitin-perusteet
+- Bundler: https://bundler.io/
+- RSpec: https://rspec.info/
+- Rails-ohjeet: https://guides.rubyonrails.org/
+- Sinatra: http://sinatrarb.com/

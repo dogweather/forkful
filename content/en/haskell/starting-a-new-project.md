@@ -1,6 +1,7 @@
 ---
 title:                "Starting a new project"
-html_title:           "Bash recipe: Starting a new project"
+date:                  2024-01-20T18:03:42.182088-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Starting a new project"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,46 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Starting a new project in Haskell involves initiating a fresh, practical context for software development. This process is essential as it paves the way for structured and efficient code-making, streamlining the execution of ideas.
+Every project starts with a single step. For programmers, that means setting up the initial structure and writing kick-off code. We do this to transform ideas into a concrete foundation, ready for expansion and innovation.
 
 ## How to:
-
-To start with, let's initiate a new project using Stack. Stack is a cross-platform Haskell development tool.
-
 ```Haskell
-stack new myProject
+-- 1. Initializing a new Haskell project using Stack
+$ stack new myproject
+
+-- The above command creates a new directory `myproject` with some files:
+-- myproject/
+-- ├── app/
+-- │   └── Main.hs        # Your Main application file
+-- ├── src/               # Source files for the library
+-- ├── test/              # Test files
+-- ├── myproject.cabal    # Package description file
+-- ├── stack.yaml         # Stack configuration
+-- └── Setup.hs           # Build setup script
+
+-- 2. Building the project
+$ cd myproject
+$ stack build
+
+-- 3. Running your new Haskell project
+$ stack exec myproject-exe
+
+-- Sample output:
+Hello, Haskell!
 ```
-
-This command builds a new project named `myProject`. When you run this in your terminal, Stack will create a folder with the same name, containing default source files and other necessary configurations.
-
-To build the project, navigate into the created directory and use this command:
-
-```Haskell
-cd myProject
-stack build
-```
-
-And, to run the project:
-
-```Haskell
-stack exec myProject-exe
-```
-
-You should see the phrase `someFunc` in your console. `someFunc` is the main function run by the `Main.hs` file created by the `stack new` command.
 
 ## Deep Dive
+Haskell projects often rely on tools like Stack or Cabal. Stack manages dependencies, ensuring consistent builds. In 2008, Stack was a game-changer for Haskell, addressing Cabal's shortcomings with package conflicts. 
 
-Haskell, being an advanced purely-functional programming language, has a sound historic lineage, inspired by the mathematics of the Lambda Calculus. Starting a new project in Haskell is a thoughtful choice as it allows for efficient, clean, and predictable coding.
+Alternatives include using Cabal alone or newer tools like Nix for reproducible builds. You might choose Cabal for simplicity or Nix when your work demands reproducibility, but Stack strikes a happy balance for many.
 
-While 'stack' is an excellent choice for Haskell, there are alternatives like Cabal and Nix to consider. Cabal is versatile and older but comes with a learning curve. Nix provides a more advanced, reliable, and reproducible environment for Haskell projects but may come across as complex for beginners.
-
-Staring a new project with Stack in Haskell is about setting up an isolated environment that carries its dependencies, promoting reproducible builds. It creates a basic directory structure: an application directory, a test directory, and a `package.yaml` along with other files. The directory and file structures play a significant role in organizing your code development and maintenance.
+Under the hood, `stack new` leverages a template to scaffold a project. It includes not just your source code but also configurations for building and dependencies. The `.cabal` file is pivotal, containing metadata and build instructions.
 
 ## See Also
-
-1. [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters): A great online resource to get started with Haskell.
-2. [Real World Haskell](http://book.realworldhaskell.org/): A comprehensive book on Haskell with real-world examples.
-3. [Stack Documentation](https://docs.haskellstack.org/): For a deeper dive into Stack.
-4. [Nix Documentation](https://nixos.wiki/wiki/Nix): To get started with Nix.
-5. [The Cabal User Guide](https://cabal.readthedocs.io/): To understand more about Cabal.
+- Learn more about Stack: [The Haskell Tool Stack](https://docs.haskellstack.org/en/stable/README/)
+- Dive into Cabal: [The Haskell Cabal](https://www.haskell.org/cabal/users-guide/)

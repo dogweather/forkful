@@ -1,6 +1,7 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "C#: Verkkosivun lataaminen"
+date:                  2024-01-20T17:44:24.694553-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,34 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# "Mitä & Miksi?"
+## What & Why? (Mikä & Miksi?)
+Ladataan verkkosivu tarkoittaa sen sisällön kopioimista paikallisesti. Ohjelmoijat tekevät sen datan jalostukseen, automatisointiin tai backupointiin.
 
-Lataat verkkosivun kun tuot sen sisältöä tietokoneellesi nähtäväksi ilman jatkuvaa internet-yhteyttä. Ohjelmoijat tekevät tämän mm. tietojen keräämisen, verkkosivujen testaamisen tai offline-lukemiseen.
-
-# "Näin se tehdään:"
-
+## How to: (Kuinka tehdään:)
 ```Lua
--- tarvitsemme socketin http-moduuli
-http = require("socket.http")
+-- Tarvitaan luotettava HTTP-kirjasto
+local http = require("socket.http")
 
--- Haetaan sivu
-sivun_tiedot = http.request("http://www.example.com")
+-- Verkkosivun URL-osoitteen määrittely
+local url = "http://esimerkki.fi"
 
--- Tulostetaan sivun tiedot
-print(sivun_tiedot)
+-- Sivun lataaminen ja virheiden käsittely
+local body, statusCode, headers, statusText = http.request(url)
+
+if statusCode == 200 then
+    print("Sivu ladattu onnistuneesti!")
+    print(body)  -- Näytä koko sivun sisältö
+else
+    print("Virhe latauksessa: " .. statusText)
+end
 ```
-Tämä koodipätkä lataisi sivun www.example.com sisällön ja tulostaisi sen merkkijonona. 
 
-# "Syvempi sukellus":
+Output esimerkki:
+```
+Sivu ladattu onnistuneesti!
+<!DOCTYPE html>...
+```
 
-Lua tarjoaa luonnollisen syntaksin verkkoyhteyksien käsittelyyn socket-kirjaston avustuksella, jonka http-moduuli auttaa erityisesti HTTP-pyyntöjen tekemisessä. Tämän tilalle voit harkita esim. wget-ohjelmaa tai curl-kirjastoa, jos tarvitset enemmän mukautettavuutta tai suoritusnopeutta.
+## Deep Dive (Sukellus syvyyksiin):
+Verkkosivujen lataus muistuttaa selaimen toimintaa, mutta ohjelmoijana voit tehdä sen ilman graafista käyttöliittymää. Historiallisesti ohjelmoijat käyttivät monimutkaisia komentorivityökaluja, kuten "curl" tai "wget". Lua-kielessä on käytettävissä useita HTTP-kirjastoja, kuten "socket.http", joka on osa LuaSocket-moduulia - se on suosittu vaihtoehto verkkoliikenteen käsittelyyn. Vaihtoehtoisesti "luasec" tarjoaa HTTPS-tuen.
 
-Verkkosivujen lataus Lua:lla on yksinkertaista: http.request funktio ottaa URL:n argumenttina, lähettää GET-pyynnön ja palauttaa vastauksen sisällön merkkijonona. Kuitenkin tässä voi olla haitallista se, että koko sivun sisältö ladataan kerralla muistiin. Suuret sivut voivat näin syödä muistia nopeasti, joten muista aina olla varovainen, kun luet tuntemattomia URL:ja.
+Toisin kuin staattisten sivujen lataus, nykyaikaiset dynaamiset sivut voivat vaatia lisää työtä, esimerkiksi ajamista JavaScriptillä tai session hallintaa. Tällaisten tapausten käsittelyyn on tarjolla esimerkiksi "selenium" kirjasto tai siihen rinnastettavat työkalut.
 
-# "Lue myös":
+Tärkeää on myös ymmärtää HTTP-protokollan toiminta: statukset (esim. 200 on onnistunut vastaus), otsikot (headers), jotka voivat sisältää hyödyllistä tietoa, ja tietenkin pyyntöjen ja vastausten rakenne.
 
-Lua socket-kirjaston dokumentaatio (http://w3.impa.br/~diego/software/luasocket/http.html)
-
-Tutorial Lua:n http-moduulin käyttöön (https://www.tutorialspoint.com/lua/lua_http_requests.htm)
-
-Curl-kirjaston dokumentaatio (https://curl.haxx.se/libcurl/c/)
+## See Also (Katso myös):
+- LuaSocket dokumentaatio: http://w3.impa.br/~diego/software/luasocket/http.html
+- LuaSec, turvallinen verkkoyhteys: https://github.com/brunoos/luasec/wiki
+- "curl" komentorivityökalu: https://curl.se/
+- "wget" komentorivityökalu: https://www.gnu.org/software/wget/
+- HTTP-protokollan ymmärtäminen: https://developer.mozilla.org/en-US/docs/Web/HTTP

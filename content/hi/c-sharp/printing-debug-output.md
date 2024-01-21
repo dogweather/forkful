@@ -1,6 +1,7 @@
 ---
 title:                "डीबग आउटपुट प्रिंट करना"
-html_title:           "Gleam: डीबग आउटपुट प्रिंट करना"
+date:                  2024-01-20T17:52:10.739230-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "डीबग आउटपुट प्रिंट करना"
 programming_language: "C#"
 category:             "C#"
@@ -10,44 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या & क्यों?
+## What & Why? (क्या और क्यों?)
+Debug output का मतलब होता है कोड में से सूचना (information) प्रिंट करना ताकि आप समझ पाएं कि क्या हो रहा है। प्रोग्रामर्स इसे इसलिए करते हैं क्योंकि यह पता करने का एक सरल तरीका है कि कहां और क्या समस्या (bug) है।
 
-Debug आउटपुट प्रिंट करना एक प्रोग्रामिंग कार्य है जिसमें हम लॉग और डिबग मेसेजों को कंसोल में प्रिंट करते हैं। यह डेवलपर्स के द्वारा उनके कोड के व्यवहार की जांच करने के लिए किया जाता है।
-
-## कैसे करें:
-
-तहत कुछ प्रमुख कोडिंग उदाहरण दी गई हैं।
+## How to: (कैसे करें:)
+C# में debug messages को print करने का सबसे सामान्य तरीका `Console.WriteLine()` है। यहाँ एक साधारण उदाहरण है:
 
 ```C#
 using System;
-using System.Diagnostics;
 
-public class DebugExample 
+class DebugExample
 {
-    public static void Main() 
+    static void Main()
     {
-        Debug.WriteLine("Debug information");
-        Debug.Indent();
-        Debug.WriteLine("Inside the Indent");
-        Debug.Unindent();
-        Debug.WriteLine("Outside the Indent");
+        Console.WriteLine("Debugging starts here.");
+        
+        // कुछ कोड जिसे debug करना है
+        int result = Sum(5, 3);
+        Console.WriteLine($"The result is: {result}");
+
+        // Debug ends
+        Console.WriteLine("Debugging ends here.");
+    }
+
+    static int Sum(int a, int b)
+    {
+        // Sum करते वक्त debug information
+        Console.WriteLine($"Adding {a} and {b}");
+        return a + b;
     }
 }
 ```
-यहां पर `Debug.WriteLine` डीबगिंग संदेश को कंसोल पर प्रिंट करेगा। `Debug.Indent` और `Debug.Unindent` की मदद से हम समझ सकते हैं कि कोड का कौन सा हिस्सा कौन से स्कोप में है।
 
-## गहरा दौरा:
+Sample Output:
+```
+Debugging starts here.
+Adding 5 and 3
+The result is: 8
+Debugging ends here.
+```
 
-प्रिंटिंग डीबग आउटपुट कैसे काम करता है और इसका इतिहास किस प्रकार है, इसकी जांच करने का समय है। 
+## Deep Dive (गहराई से जानकारी):
+Debug output प्रिंट करने का चलन शुरुआती दिनों से ही है जब लोग पंच-कार्ड पर कोड लिखते थे। आज, प्रोग्रामर्स के पास सिस्टम कंसोल से लेकर advanced debugging tools तक बहुत सारे विकल्प होते हैं। C# में आप `Debug.WriteLine()` (सिस्टम डायग्नोस्टिक्स नेमस्पेस का भाग) का भी इस्तेमाल कर सकते हैं, जो कि डेवलपमेंट के दौरान हेल्पफुल होता है लेकिन प्रोडक्शन कोड में इसे नहीं दिखाया जाता।
 
-डीबग लाइनें केवल डीबग बिल्ड संस्करण में दिखती हैं, इसलिए ये आपकी प्रोडक्शन कोड के प्रदर्शन को प्रभावित नहीं करतीं। 
-
-इसका विकल्प `Trace` हो सकता है जो डीबग और रिलीज संस्करण में दोनों प्रिंट होता है। 
-
-हम बदल सकते हैं की डीबग संदेश आउटपुट कहाँ जाएगा विशेष trace listeners की मदद से।.
-
-## और देखें:
-
-- Microsoft Documentation: Debug Class (https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug)
-- Microsoft Documentation: Trace Listeners (https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.tracelistener)
-- StackOverflow: Debugging & Tracing in C# (https://stackoverflow.com/questions/577411/how-can-i-debug-and-trace-in-c-sharp)
+## See Also (देखें भी):
+- Microsoft C# documentation: [https://docs.microsoft.com/dotnet/csharp/](https://docs.microsoft.com/dotnet/csharp/)
+- Debugging in Visual Studio: [https://docs.microsoft.com/visualstudio/debugger/](https://docs.microsoft.com/visualstudio/debugger/)
+- .NET API for Debug: [https://docs.microsoft.com/dotnet/api/system.diagnostics.debug](https://docs.microsoft.com/dotnet/api/system.diagnostics.debug)

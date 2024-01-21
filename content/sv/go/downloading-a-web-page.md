@@ -1,7 +1,8 @@
 ---
-title:                "Ladda ner en webbsida"
-html_title:           "Bash: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Hämta en webbsida"
+date:                  2024-01-20T17:44:12.782716-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Hämta en webbsida"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,49 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
+## Vad & Varför?
+Nedladdning av en webbsida handlar om att hämta dess innehåll från internet till din dator. Programmerare gör detta för att analysera innehållet, testa tillgänglighet eller samla information.
 
-Att ladda ner en webbsida innebär att hämta HTML-koden bakom en webbsida till din dator. Programmerare gör detta för att kunna bearbeta webbsidans innehåll, exempelvis för att skrapa data eller testa webbsidor.
-
-## Så här gör du:
-
-I Go kan du hämta och läsa in en webbsida med hjälp av paketen `net/http` och `io/ioutil`.
-
-```Go
+## Hur man gör:
+```go
 package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
+	"os"
 )
 
 func main() {
-	resp, err := http.Get("http://example.com/")
+	response, err := http.Get("http://example.com")
 	if err != nil {
-		panic(err)
+		fmt.Println("Fel uppstod:", err)
+		return
 	}
-	defer resp.Body.Close()
+	defer response.Body.Close()
 
-	body, err := ioutil.ReadAll(resp.Body)
+	file, err := os.Create("example.html")
 	if err != nil {
-		panic(err)
+		fmt.Println("Fel uppstod vid skapande av fil:", err)
+		return
 	}
-	fmt.Println(string(body))
+	defer file.Close()
+
+	_, err = io.Copy(file, response.Body)
+	if err != nil {
+		fmt.Println("Fel uppstod vid skrivning till fil:", err)
+		return
+	}
+
+	fmt.Println("Webbsida nedladdad som example.html")
 }
 ```
-När du kör koden ovan kommer du att se HTML-innehållet i webbsidan http://example.com/ skrivas ut i konsolen.
+*Sample output:*
+```
+Webbsida nedladdad som example.html
+```
 
 ## Fördjupning
+Förr användes ofta kommandot `wget` eller `curl` i terminalen för att ladda ner webbsidor. I Go använder vi `net/http`-paketet, vilket ger oss mer kontroll och möjlighet att integrera nedladdningen i större applikationer. Överföringen sker via HTTP (eller HTTPS för säkra anslutningar). Implementationen hanterar låg-nivå detaljer som att upprätta TCP/IP-anslutningar och tolka HTTP-protokollet.
 
-Hämtning av webbsidor har ägt rum ända sedan webbens begynnelse och metoder för att göra detta har utvecklats och förfinats över tid. Alternativ till Go's inbyggda paket `net/http` och `io/ioutil` inkluderar tredjepartspaket som `colly` och `goquery` som kan underlätta och förbättra prestandan.
+Alternativ för nedladdning inkluderar paket som `colly` för webbskrapning eller `http.Client` för mer anpassade förfrågningar, som hantering av cookies och timeouts.
 
-Vid implementation är det viktigt att vara medveten om resurshantering. I Go-koden ovan kommer `defer resp.Body.Close()` att se till att nätverksresurserna släpps när funktionen `main` är klar, även om ett fel skulle inträffa. Detta är avgörande för att inte läcka resurser.
-
-## Se mer:
-
-Du kan läsa mer om Go och nedladdningar på dessa länkar:
-
-- Go's officiella dokumentation: https://golang.org/pkg/
-- Paketet 'colly': https://github.com/gocolly/colly
-- Paketet 'goquery': https://github.com/PuerkitoBio/goquery
+## Se även
+- [Go's `net/http` package documentation](https://pkg.go.dev/net/http)
+- [The Go Programming Language Specification](https://go.dev/ref/spec)
+- [Using `http.Client` for more advanced HTTP requests](https://pkg.go.dev/net/http#Client)

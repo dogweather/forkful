@@ -1,7 +1,8 @@
 ---
-title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Arduino: Znajdowanie długości ciągu znaków"
-simple_title:         "Znajdowanie długości ciągu znaków"
+title:                "Znalezienie długości ciągu znaków"
+date:                  2024-01-20T17:47:33.452863-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Znalezienie długości ciągu znaków"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,39 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Znalezienie długości łańcucha znaków to sposób na określenie, ile znaków zawiera dany tekst. Programiści robią to, aby manipulować tekstami, walidować dane wejściowe lub po prostu określić potrzebne zasoby.
 
-Długość ciągu to liczba znaków, które go tworzą. Programiści potrzebują tej informacji, na przykład, do alokacji pamięci, porównywania ciągów, czy iterowania po zawartości ciągu.
-
-## Jak to zrobić:
+## How to: (Jak to zrobić:)
+W C++ długość łańcucha znaków możesz znaleźć używając funkcji `length()` lub `size()` na obiekcie `std::string`, jak poniżej:
 
 ```C++
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 
 int main() {
-    std::string mojString = "C++ dla Polaków";
-    std::cout << "Długość ciągu: "<< mojString.length() << "\n";
+    std::string text = "Cześć, jak się masz?";
+    std::cout << "Długość tekstu: " << text.length() << std::endl;
+    // Lub używając size()
+    std::cout << "Długość tekstu (size): " << text.size() << std::endl;
+
     return 0;
 }
 ```
 
-Działa to tak:
-
+Sample output:
 ```
-Długość ciągu: 14
+Długość tekstu: 22
+Długość tekstu (size): 22
 ```
 
-## Głębsze spojrzenie
+## Deep Dive (Wgłębienie się)
+Historia metody znalezienia długości łańcucha znaków sięga wczesnych języków programowania, gdzie operacje na tekstach były podstawowe. W C tradycyjne łańcuchy C-style kończą się znakiem `'\0'`, więc długość można było znaleźć iterując przez łańcuch aż do napotkania tego znaku. W C++ obiekt `std::string` już zawiera informacje o długości, co upraszcza sprawę.
 
-Dawniej w C, aby znaleźć długość ciągu, używano funkcji `strlen()`, która skanowała ciąg aż do znaku końca oznaczonego przez '\0'. Teraz w C++, używa się metody `length()` klasy `std::string`, która zwraca długość ciągu w sposób bardziej efektywny i bezpieczny.
+Jako alternatywę w C++17 wprowadzono `std::string_view`, które umożliwia operacje na tekstach bez kopiiowania danych, co może być wydajniejsze. Obiekt `std::string_view` również posiada metody `length()` i `size()`.
 
-Alternatywą dla `length()` jest metoda `size()`, która zwraca dokładnie to samo. Wybór między nimi to kwestia stylistyczna.
+W żadnym z przypadków wywołania `size()` czy `length()` nie są operacjami o złożoności większej niż O(1), ponieważ długość jest trzymana wewnątrz obiektu `std::string` jako wartość.
 
-Pod kątem implementacji, `std::string` to klasa, która przechowuje długość ciągu i zwraca ją podczas wywoływania `length()`. Nie ma więc potrzeby skanowania ciągu, co czyni operację szybką i o stałym czasie.
-
-## Zobacz także
-
-- Dokumentacja `std::string::length`: http://www.cplusplus.com/reference/string/string/length/
-- Dokumentacja `std::string::size`: http://www.cplusplus.com/reference/string/string/size/
-- Jak działa `strlen`: https://stackoverflow.com/questions/29200635/compare-strlen-and-string-length-in-c
+## See Also (Zobacz także)
+- [http://www.cplusplus.com/reference/string/string/length/](http://www.cplusplus.com/reference/string/string/length/) - Dokumentacja `std::string::length()`.
+- [http://www.cplusplus.com/reference/string/string/size/](http://www.cplusplus.com/reference/string/string/size/) - Dokumentacja `std::string::size()`.
+- [https://en.cppreference.com/w/cpp/string/basic_string_view](https://en.cppreference.com/w/cpp/string/basic_string_view) - Dokumentacja `std::string_view`.

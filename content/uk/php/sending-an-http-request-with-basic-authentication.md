@@ -1,7 +1,8 @@
 ---
-title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
-html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
-simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+date:                  2024-01-20T18:02:47.980333-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,39 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Відправлення HTTP-запиту з базовою аутентифікацією - це процес подання імені користувача і пароля в заголовках HTTP для отримання доступу до захищених ресурсів. Програмісти це роблять, щоб забезпечити безпеку та контроль доступу до своїх веб-служб або API.
+## Що це таке & Навіщо?
+Відправлення HTTP-запиту з базовою аутентифікацією дозволяє вам передавати ім'я користувача та пароль для доступу до захищеного ресурсу. Програмісти роблять це, щоб забезпечити безпечний обмін даними між клієнтом та сервером.
 
-## Зробити так:
-Перевірте наступний код, що демонструє, як відправити HTTP-запит з базовою аутентифікацією в PHP:
+## Як це зробити:
+У PHP, `curl` є потужним способом відправлення HTTP-запитів. Ось як відправити GET-запит з базовою аутентифікацією:
 
 ```PHP
 <?php
-$url = 'https://your-api-url.com';
-$username = 'your-username';
-$password = 'your-password';
+$ch = curl_init();
 
-$context = stream_context_create(array(
-    'http' => array(
-        'header'  => "Authorization: Basic " . base64_encode("$username:$password")
-    )
-));
-$response = file_get_contents($url, false, $context);
+curl_setopt($ch, CURLOPT_URL, "http://your-protected-resource.com");
+curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+curl_setopt($ch, CURLOPT_USERPWD, "username:password");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-if ($response) {
-    echo $response;
+$response = curl_exec($ch);
+$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+curl_close($ch);
+
+if ($status_code == 200) {
+    echo 'Response: ' . $response;
 } else {
-    echo "HTTP request failed!";
+    echo 'Error: ' . $status_code;
 }
 ?>
 ```
-У виводі ви побачите відповідь сервера або повідомлення про помилку, якщо запит не вдався.
 
-## На глибше:
-Як історичний контекст, основна аутентифікація HTTP була однією з перших методів захисту веб-ресурсів, використану в HTTP/1.0 з 1996 року. Інші альтернативи включають Digest Access Authentication, OAuth, та JWT, які надають більший рівень безпеки.
+Вищенаведений код ініціює сеанс `curl`, налаштовує URL, додає облікові дані для базової аутентифікації, запускає запит, а потім закриває сеанс `curl`. Він також виводить відповідь або код помилки.
 
-Під час відправлення HTTP-запиту з основною аутентифікацією, ім'я користувача та пароль, кодовані в Base64, вставляються в заголовок "Authorization", який відправляється до сервера. 
+## Поглиблений огляд
+Базова аутентифікація (Basic Auth) — це метод, за допомогою якого веб-сервери можуть запитувати від користувачів логін і пароль. Вона базується на стандарті HTTP і була одним із перших методів верифікації.
+
+Як альтернативу базовій аутентифікації варто розглянути OAuth і токени доступу, особливо якщо потрібен вищий рівень безпеки.
+
+Реалізація базової аутентифікації в PHP через `curl` - це прямий спосіб маніпулювати HTTP-запитами. `curl_setopt()` використовується для задання параметрів сеансу, в тому числі для включення аутентифікації, встановлення URL-адреси та повернення відповіді. У відповідь, сервер кодує ці облікові дані в `Base64` і передає їх у заголовку `Authorization`.
 
 ## Додатково:
-1. [Основна аутентифікація HTTP (MDN)](https://developer.mozilla.org/uk/docs/Web/HTTP/Authentication)
-2. [HTTP-аутентифікація в PHP (PHP.net)](https://www.php.net/manual/en/features.http-auth.php)
+- Документація по PHP CURL: https://www.php.net/manual/en/book.curl.php
+- Більше про HTTP-аутентифікацію: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- OAuth 2.0: https://oauth.net/2/
+- Стаття про безпеку токенів доступу: https://auth0.com/docs/tokens

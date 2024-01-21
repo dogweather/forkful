@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:50:38.903551-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,36 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Interpolacja stringów pozwala nam wplatać wartości zmiennych w ciągi tekstowe, ułatwiając dynamiczne tworzenie treści. Programiści używają interpolacji, by kod był bardziej elastyczny i czytelny.
 
-Interpolacja ciągu polega na wstawianiu zmiennych bezpośrednio do tekstu. Programiści robią to, by zwiększyć czytelność kodu i uniknąć powtarzalności.
-
-## Jak to zrobić:
-
-Interpolacji ciągów w Elm nie robi się tak jak w innych językach. W jego przypadku musimy skorzystać z funkcji `++` do łączenia ciągów. Zobacz poniższy przykład:
+## How to:
+W Elm nie ma bezpośredniego mechanizmu interpolacji stringów, jak w innych językach. Używamy funkcji `String.concat` lub operatora `++`, by osiągnąć podobny efekt.
 
 ```Elm
-name = "Jan"
-hello = "Cześć, " ++ name ++ ", jak się masz?"
+name = "Alicja"
+greeting = "Cześć, " ++ name ++ "!"
 
--- Wynikiem będzie: "Cześć, Jan, jak się masz?"
+-- Rezultat: "Cześć, Alicja!"
 ```
-Interpolację można również zrealizować za pomocą funkcji `String.concat`:
+
+Możesz też użyć funkcji `String.concat` dla listy części:
 
 ```Elm
-name = "Jan"
-hello = String.concat ["Cześć, ", name, ", jak się masz?"]
+name = "Alicja"
+age = "25"
 
--- Wynikiem będzie: "Cześć, Jan, jak się masz?"
+greeting = String.concat ["Cześć, ", name, "! Masz ", age, " lata."]
+
+-- Rezultat: "Cześć, Alicja! Masz 25 lata."
 ```
-## Głębsza wiedza
 
-Elm oferuje bezpieczne łączenie ciągów, różni się od innych języków, gdzie interpolacja ciągów mogłaby prowadzić do podatności na ataki. Interpolację w Elm zaimplementowano w taki sposób, by zapewnić bezpieczeństwo.
+## Deep Dive
+Elm kładzie duży nacisk na czytelność i bezpieczeństwo typów, co tłumaczy brak klasycznej interpolacji stringów. W przeszłości, programiści polegali na szablonach lub konkatenacji, aby "wplatać" dane do stringów. W Elm, musimy zawsze jawnie przekształcić wartości na stringi (używając na przykład `String.fromInt` dla intów) zanim połączymy je z innymi stringami.
 
-Alternatywą dla interpolacji w Elm jest korzystanie z `String.concat` lub funkcji `++`. Wybór między tymi dwoma zależy od preferencji twórcy kodu.
+Oto alternatywy:
 
-## Zobacz także:
+- Funkcje pomocnicze, które DBają o konwersję i łączenie.
+- Funkcje formatujące, takie jak printf w innych językach, choć wymagają one pakietów zewnętrznych w Elm, np. `elm-format-string`.
 
-- Dokumentacja Elm (https://elm-lang.org/docs)
-- Przewodnik po String.concat (https://package.elm-lang.org/packages/elm/core/latest/String#concat)
-- Dyskusja na forum Elm na temat interpolacji ciągów (https://discourse.elm-lang.org/t/string-interpolation-in-elm/638/6)
+Przykład funkcji pomocniczej:
+
+```Elm
+helloPerson : String -> Int -> String
+helloPerson name age =
+    "Cześć, " ++ name ++ "! Masz " ++ String.fromInt(age) ++ " lata."
+
+-- Użycie funkcji:
+greeting = helloPerson "Alicja" 25
+
+-- Rezultat: "Cześć, Alicja! Masz 25 lata."
+```
+
+Interpolacja stringów w innych językach, jak JavaScript czy Python, jest bardziej bezpośrednia, ale Elm zachowuje prostotę dzięki unikaniu dodatkowej składni.
+
+## See Also
+- Elm `String` moduł: https://package.elm-lang.org/packages/elm/core/latest/String
+- Pakiet `elm-format-string` do bardziej zaawansowanego formatowania: https://package.elm-lang.org/packages/lukewestby/elm-string-interpolate/latest/
+- Wprowadzenie do Elm (PL): https://elm-lang.org/docs

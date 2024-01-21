@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Bash: Merkkijonon interpolointi"
+date:                  2024-01-20T17:50:14.918678-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,48 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
+## What & Why? - Mikä & Miksi?
+Stringien interpolointi tarkoittaa muuttujien ja lausekkeiden sisällyttämistä osaksi merkkijonoja. Koodarit käyttävät tätä, koska se tekee koodista selkeämpää ja muokattavuuden joustavammaksi.
 
-Merkkijonon interpolointi tarkoittaa muuttujan sijoittamista suoraan merkkijonoon. Koodarit tekevät tämän työn tehokkuuden ja luettavuuden parantamiseksi.
-
-## Kuinka:
-
-Seuraavassa on esimerkki siitä, kuinka Bashissa merkkijonon interpolointi tehdään:
-
+## How to: - Kuinka:
 ```Bash
-nimi="Linus"
-echo "Hei, olen $nimi"
+# Muuttujien käyttö merkkijonon sisällä
+kayttaja="Maija"
+tervehdys="Hei, $kayttaja!"
+echo $tervehdys  # Tulostaa: Hei, Maija!
+
+# Komennon suorittaminen ja tuloksen sijoittaminen merkkijonoon
+tiedosto_lista=$(ls)
+echo "Tiedostot: $tiedosto_lista"
+
+# Uutta riviä ('\n') käyttävä esimerkki
+echo -e "Ensimmäinen rivi\nToinen rivi"
 ```
 
-Tämä tulostaa:
+## Deep Dive - Syväsukellus:
+Alun perin käytettiin kovakoodattuja merkkijonoja, mutta interpolointi otettiin käyttöön, jotta koodi mukautuisi eri tilanteisiin. Alternatiiveja ovat erityisesti kiinteät merkkijonot ja merkkijonojen yhdistäminen. Bashissa interpoloinnin voi toteuttaa käyttämällä kaksoispisteitä ympäröiviä muuttujia tai käyttämällä `command substitution` -ominaisuutta käsittämällä komennon backticks (`) tai $( ) sisään. Implementointi perustuu, että Bash korvaa muuttujan tai lausekkeen arvon oikealla arvolla suorituksenaikana.
 
-```Bash
-Hei, olen Linus
-```
-
-Voit myös käyttää kierteitä arpakuutioiden heittämisessä:
-
-```Bash
-arpa=$((RANDOM % 6 + 1))
-echo "Arpakuutiosi numero on $arpa"
-```
-
-Tämä voi tuottaa esimerkiksi:
-
-```Bash
-Arpakuutiosi numero on 4
-```
-
-## Deep Dive
-
-Merkkijonon interpolointi on ollut osa Unix shell skriptausta sen varhaisista päivistä lähtien ja on levinnyt muihin kieliiin. Sen vastineena, voit käyttää `printf`-toimintoa, joka on peräisin C-kielestä. Kuten Pythonissa, Bashissa myös merkkijonon interpoloinnin voi tehdä useammalla tavoin, kuten "Halo ${nimi}, mitä kuuluu?".
-
-## See Also
-
-Merkkijonon käsittelystä saadaksesi lisätietoa, tutustu seuraaviin linkkeihin:
-
-1. Bash-ohjelmointiopas: Merkkijonojen interpolointi: 
-https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion
-
-2. Stack Overflow: Kuinka interpoloida merkkijonoja Bashissa:
-https://stackoverflow.com/questions/4181703/how-can-i-concatenate-string-variables-in-bash
+## See Also - Katso Myös:
+- Bash-harjoituksia: https://www.learnshell.org/
+- Bash-skriptauksen opas: https://mywiki.wooledge.org/BashGuide
+- Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/

@@ -1,7 +1,8 @@
 ---
-title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+date:                  2024-01-20T18:00:50.771459-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,76 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mikä ja Miksi?)
+HTTP-pyyntö perusautentikoinnilla lähettää tietoa palvelimelle suojattuna. Se on turvallinen tapa päästä käsiksi API:hin tai palveluun, joka vaatii käyttäjätunnistusta.
 
-HTTP-pyyntö perusautentikoinnilla on web-sovellusten tapa siirtää tietoja verkossa turvallisesti. Ohjelmoijat käyttävät sitä, jotta tiedot eivät eksyisi ulkopuolisille.
-
-## Näin se tehdään:
-
-HTTP-pyynnön lähettäminen Arduino-levyltä vaatii Ethernet-kirjaston. 
-
-Aloitamme määrittämällä verkon asetukset:
-
+## How to: (Kuinka tehdä:)
 ```Arduino
-#include <Ethernet.h>
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
 
-byte mac[] = {  
-  0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED
-};
+const char* ssid = "yourSSID";
+const char* password = "yourPASSWORD";
+const char* serverName = "http://yourserver.com";
+const char* httpUsername = "user";
+const char* httpPassword = "pass";
 
-IPAddress server(74,125,232,128); // Google
+void setup() {
+    Serial.begin(115200);
+    WiFi.begin(ssid, password);
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(1000);
+        Serial.println("Connecting to WiFi...");
+    }
 
-EthernetClient client;
-```
-Seuraavaksi luomme `setup()`-funktion, jossa aloitamme Ethernet-yhteyden ja tulostamme Ethernet-asetukset:
+    HTTPClient http;
+    http.begin(serverName);
+    http.setAuthorization(httpUsername, httpPassword);
+    int httpResponseCode = http.GET();
 
-```Arduino
-void setup()
-{
-  Ethernet.begin(mac);
-  Serial.begin(9600);
-
-  while (!Serial) {
-    ;
-  }
-
-  delay(1000);
-  
-  Serial.println(Ethernet.localIP());
+    if (httpResponseCode > 0) {
+        String response = http.getString();
+        Serial.println(httpResponseCode);
+        Serial.println(response);
+    } else {
+        Serial.print("Error on sending request: ");
+        Serial.println(httpResponseCode);
+    }
+    http.end();
 }
 
-```
-Lopuksi luomme `loop()`-funktion, jossa lähetämme HTTP-pyynnön:
-
-```Arduino
-void loop()
-{
-  if (client.connect(server, 80)) {
-    client.println("GET /search?q=arduino HTTP/1.1");
-    client.println("Host: www.google.com");
-    client.println("Authorization: Basic ");
-    client.println("Connection: close");
-    client.println();
-  } 
-  else {
-    Serial.println("connection failed");
-  }
-
-  delay(10000);
+void loop() {
+    // nothing here
 }
 ```
-## Syvällisempi sukellus
+Tulostaa vastauskoodin ja palvelimen vastauksen, tai virhekoodin jos pyyntö epäonnistuu.
 
-HTTP-pyynnön perusautentikointi on ollut järjestelmien sisäänkirjautumisen selkäranka jo vuosikymmenten ajan. Se on vanha, mutta edelleen suosittu tapa siirtää tietoja verkossa auktorisoidun käyttäjän toimesta. Vaikka monitahoisemmat autentikointiin perustuvat järjestelmät, kuten OAuth, ovat näinä päivänä enemmän normi, perusautentikointi pysyy edelleen yksinkertaisena ja tehokkaana vaihtoehtona.
+## Deep Dive (Syväsukellus)
+Perusautentikointi on HTTP-protokollan mekanismi, jossa käyttäjätunnus ja salasana lähetetään Base64-koodattuna. Se on yksinkertainen ja melko vanha, mutta yhä käytössä pienten projektien turvallisuutta parantamaan. Vaihtoehtona on esimerkiksi OAuth, mutta perusautentikointi on nopea ja kätevä pienille projekteille. Kun lähetät HTTP-pyyntöä Arduinolla, käytät usein ESP8266/ESP32-kaltaisia moduuleja, jotka hoitavat WiFi-yhteyden ja HTTP-asiakaslogiikan.
 
-HTTP-pyynnöt perusautentikoinneilla on helppo toteuttaa Arduino-laitteissa kämin Ethernet-kirjastoa. Kun se on määritelty, voit ohjata verkkoliikennettä helposti. Vaikka on tärkeää huomata, että perusautentikointi lähetetään Base64-koodauksessa eikä se ole salattu. Siksi se ei ole ihanteellinen ratkaisu herkkien tietojen käsittelyyn.
-
-## Katso myös:
-
-Jos haluat lukea lisää HTTP-pyynnöstä perusautentikointia ja muita tapoja käsitellä verkkoliikennettä Arduinolla, voit tutustua seuraaviin resursseihin:
-
-1. Arduino Ethernet Library: https://www.arduino.cc/en/Reference/Ethernet
-2. HTTP Basic Authentication: https://tools.ietf.org/html/rfc7617
-3. Miten käyttää Arduinon Ethernet Shield: http://www.circuitbasics.com/how-to-set-up-the-dht11-humidity-sensor-on-an-arduino/
-4. Miten salata HTTP-pyynnöt: https://www.arduino.cc/en/Tutorial/WebClientRepeating
-5. Arduino Ethernet Shieldin ohjelmointi: https://www.instructables.com/Programming-the-Arduino-Ethernet-Shield
+## See Also (Katso Myös)
+- ESP8266HTTPClient-kirjaston dokumentaatio: https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/http-client.html
+- HTTP-autentikoinnin yleiskatsaus: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- Base64-koodauksen selitys: https://en.wikipedia.org/wiki/Base64

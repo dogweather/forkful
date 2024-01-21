@@ -1,7 +1,8 @@
 ---
-title:                "Sende en http-forespørsel med grunnleggende autentisering"
-html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
+title:                "Å sende en HTTP-forespørsel med grunnleggende autentisering"
+date:                  2024-01-20T18:01:25.904701-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,33 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+HTTP-forespørsler med grunnleggende autentisering innebærer å sende brukernavn og passord i en header for tilgang. Programmerere bruker dette for å sikre endepunkter og begrense tilgangen til autoriserte brukere.
 
-Å sende en HTTP-forespørsel med grunnleggende autentisering innebærer å sende brukernavn og passord som en del av HTTP-overskriften for å få tilgang til beskyttede data. Dette gjøres for å sørge for sikker kommunikasjon mellom klient og server.
-
-## Hvordan Gjør Man Det:
-
-Clojure gjør oppgaven enkel ved å bruke `clj-http` biblioteket. Her er en enkel kodeeksempel for å sende en GET forespørsel med grunnleggende autentisering.
+## Hvordan gjøre det:
+For å sende en HTTP-forespørsel med grunnleggende autentisering i Clojure, kan vi bruke `clj-http` biblioteket. Her er et eksempel:
 
 ```Clojure
 (require '[clj-http.client :as client])
 
-(let [response (client/get "http://example.com" {:basic-auth ["username" "password"]})]
-  (println (:status response)))
+(let [credentials (str "Basic " (.encode (java.util.Base64/getEncoder) (.getBytes "brukernavn:passord")))]
+  (client/get "https://eksempel.com/ressurs"
+              {:headers {"Authorization" credentials}}))
 ```
-Etter at forespørselen er sendt, vil statuskoden bli skrevet ut.
 
-## Dypdykk:
+Eksempel på svar:
 
-Historisk sett har HTTP-forespørsler med grunnleggende autentisering vært brukt siden webens tidlige dager som en enkel måte å beskytte nettressurser på.
+```Clojure
+{:status 200
+ :headers {"Content-Type" "application/json"}
+ :body "{\"data\":\"verdi\"}"}
+```
 
-En populær alternativ til grunnleggende autentisering er Bearer Token autentisering, som er mer sikker og fleksibel. For å implementere det i Clojure, kan du simpelthen erstatte `:basic-auth` med `:oauth-token` i koden ovenfor.
+## Dypdykk
+Grunnleggende autentisering har vært en enkel HTTP-autentiseringsmekanisme siden tidlig på internettet. Sikkerhetsrisikoen inkluderer at legitimasjon i klartekst kan avlyttes hvis ikke HTTPS brukes.
 
-Når det kommer til implementeringsdetaljer, konverterer `clj-http` brukernavnet og passordet til en Base64-encodet string og inkluderer den i 'Authorization'-overskriften i HTTP-forespørselen.
+Alternativer til grunnleggende autentisering inkluderer OAuth, API-nøkler og JWT (JSON Web Tokens), som alle kan tilby en høyere sikkerhetsnivå.
 
-## Se Også:
+Implementeringsdetaljer i Clojure kan kreve ekstra oppsett for HTTPS og håndtering av ulike autentiseringsflyter, basert på hvilke sikkerhetstiltak som er på plass på serveren du kommuniserer med.
 
-For mer informasjon, sjekk ut disse nyttige ressursene:
-- `clj-http` GitHub Repo: https://github.com/dakrone/clj-http
-- Official Clojure Docs: https://clojure.org/reference/reader
-- Basic Authentication on Wikipedia: https://en.wikipedia.org/wiki/Basic_access_authentication
-- Bearer Token Authentication on Wikipedia: https://en.wikipedia.org/wiki/Bearer_token
+## Se også
+
+- `clj-http` dokumentasjon: [https://github.com/dakrone/clj-http](https://github.com/dakrone/clj-http)
+- ClojureDocs, en Clojure-samfunnsdrevet dokumentasjonsressurs: [https://clojuredocs.org/](https://clojuredocs.org/)
+- IETF HTTP Basic Authentication standard: [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)

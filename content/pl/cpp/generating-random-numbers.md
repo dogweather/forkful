@@ -1,6 +1,7 @@
 ---
 title:                "Generowanie liczb losowych"
-html_title:           "Gleam: Generowanie liczb losowych"
+date:                  2024-01-20T17:48:49.051040-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generowanie liczb losowych"
 programming_language: "C++"
 category:             "C++"
@@ -10,41 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Generowanie liczb losowych to proces tworzenia ciągu liczb lub symboli nieprzewidywalnych dla obserwatorów. Programiści wykorzystują to, by dodać element przypadkowości: od gier, przez symulacje, aż po bezpieczeństwo aplikacji.
 
-Generowanie losowych liczb jest procesem tworzenia serii liczb, które nie mają żadnej logicznej sekwencji czy wzorca. Programiści stosują to w różnych celach - od symulacji złożonych scenariuszy, przez tworzenie gier, aż do zabezpieczania danych.
-
-## Jak to zrobić:
-
-Generowanie losowych liczb w C++ jest proste dzięki bibliotece <random>. Oto przykładowe użycie:
-
+## How to: (Jak to zrobić?)
 ```C++
-#include <random>
 #include <iostream>
+#include <random>
 
 int main() {
-    std::random_device rd;  
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> distr(1, 6);
+    std::random_device rd; // Inicjalizacja generatora
+    std::mt19937 gen(rd()); // Seed generatora z urządzenia losowego
+    std::uniform_int_distribution<> distr(1, 100); // Zakres losowania
 
-    for(int n=0; n<10; ++n)
-        std::cout << distr(gen) << ' ';
+    // Wygenerowanie i wypisanie losowej liczby
+    std::cout << "Losowa liczba: " << distr(gen) << std::endl;
+
     return 0;
 }
 ```
+Sample output (Przykładowy wynik):
+```
+Losowa liczba: 42
+```
 
-W tym kodzie generujemy 10 liczb z zakresu 1-6 (jak losowanie kostki do gry).
+## Deep Dive (Dogłębna analiza)
+Początki generatorów liczb losowych sięgają teorii i praktyki statystycznej. Pierwotne metody, jak np. rzuty monetą, były niewystarczające dla potrzeb nauki i techniki. W XX wieku wprowadzono algorytmy generujące sekwencje liczb, które wyglądają na losowe, ale są w istocie deterministyczne — tzw. pseudolosowe.
 
-## W głąb tematu:
+Alternatywy to np. `std::default_random_engine`, który jest mniej złożony niż `std::mt19937`, ale też z reguły mniej nieprzewidywalny. Istnieje też pojęcie true randomness (prawdziwej losowości), którą można uzyskać z zewnętrznych zdarzeń niezwiązanych z programem, lecz jest to rzadziej używane.
 
-Generowanie losowych liczb ma długą historię w informatyce. W starszych wersjach C++, używano funkcji rand() do generowania losowych liczb, ale ta funkcja ma pewne ograniczenia.
+Implementacja w C++ korzysta z nowoczesnej biblioteki `<random>`, która oferuje wiele rodzajów generatorów i rozkładów. `std::mt19937` to generator Mersenne Twister zapewniający wysoką jakość liczb pseudolosowych. Używa się go ze "seedem" z `std::random_device`, by zwiększyć nieregularność generowanych sekwencji.
 
-Alternatywą dla metody prezentowanej w sekcji "Jak to zrobić" jest użycie narzędzi dostępnych w Boost.Random, które oferują bardziej rozbudowane możliwości.
-
-Przy generowaniu liczby losowej, musimy zawsze brać pod uwagę dwa elementy: generator (np. std::mt19937) oraz dystrybucję (np. std::uniform_int_distribution<>). Generator tworzy ciąg losowych wartości bezpośrednio, a dystrybucja transformuje te wartości tak, aby pasowały do naszych potrzeb.
-
-## Zobacz też:
-
-- Dokumentacja C++ na temat <random>: https://en.cppreference.com/w/cpp/numeric/random
-- Porównanie różnych generatorów liczb losowych: https://www.pcg-random.org/other-rngs.html
-- Biblioteka Boost.Random: https://www.boost.org/doc/libs/1_75_0/doc/html/boost_random.html
+## See Also (Zobacz także)
+- C++ Reference on `<random>`: https://en.cppreference.com/w/cpp/header/random
+- Tutorial on random numbers by cplusplus.com: http://www.cplusplus.com/reference/random/
+- Insights into Mersenne Twister Algorithm: https://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html

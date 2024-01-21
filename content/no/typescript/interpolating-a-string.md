@@ -1,6 +1,7 @@
 ---
 title:                "Interpolering av en streng"
-html_title:           "Bash: Interpolering av en streng"
+date:                  2024-01-20T17:51:50.797922-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolering av en streng"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,42 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Strenginterpolasjon er en metode for å injisere variable verdier inn i en tekststreng. Programmerere bruker denne teknikken for å gjøre koden mer lesbar og vedlikeholdbar.
+Strenginterpolasjon er det å sette sammen en streng med variabler eller uttrykk. Programmerere bruker det for å lage dynamisk tekst og forbedre kodelesbarheten.
 
-## Hvordan:
-
-Her er et eksempel på hvordan du bruker strenginterpolasjon i TypeScript. 
-
+## Slik gjør du:
 ```TypeScript
-let navn = 'Ola';
-console.log(`Hei, ${navn}!`);
+let bruker = 'Ola';
+let hilsen = `Hei, ${bruker}! Hvordan går det?`;
+console.log(hilsen); // Output: Hei, Ola! Hvordan går det?
 ```
 
-Output vil være:
-
-``` 
-Hei, Ola!
-```
-
-## Dyp Dykk
-
-Strenginterpolasjon, også kjent som streng substitusjon, har blitt brukt innen programmering i mange år, og det kan bli funnet i mange språk ettersom det gjør koden klar og forståelig. 
-
-I TypeScript, som er en supersett av JavaScript, er det en mulighet å bruke bak-tick (`) for å definere en streng og ${} for å interpolere variabler.
-
-Et alternativ til strenginterpolasjon kan være '+' eller konkatenasjon operator:
-
+Et mer komplekst eksempel med uttrykk:
 ```TypeScript
-let navn = 'Ola';
-console.log('Hei, ' + navn + '!');
+let timer = 9;
+let hilsen = `God ${timer < 12 ? 'morgen' : 'ettermiddag'}, verden!`;
+console.log(hilsen); // Output: God morgen, verden!
 ```
 
-Selv om det fungerer, så kan det bli forvirrende hvis det er mange variable eller hvis tekststrengen er lang.
+## Dykk dypere
+Før ES6 (ECMAScript 2015), måtte programmere klargjøre strenger med pluss-operatoren, som var rotete. Etter hvert som JavaScript-evolusjonen fortsatte, introduserte ES6 strengmaler (template literals), som tillater interpolasjon og flerlinjestrenger.
+
+Alternativer til interpolasjon omfatter konkatenere strenger med `+` eller `.concat()` metoden, men disse metodene blir mindre brukt på grunn av deres verbositet.
+
+Interpolering i TypeScript fungerer likt som i moderne JavaScript, siden TypeScript er et over-sett av JS. Interpolasjon evaluerer uttrykkene inne i `${...}` og konverterer resultatene til en streng verdi inne i den omliggende strengen.
 
 ## Se Også
-
-For mer informasjon om strenginterpolasjon og andre relaterte konsepter, sjekk ut disse linkene:
-
-1. [Mozilla Developer Network (MDN) - Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-
-2. [TypeScript Official Documentation - String Interpolation](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)
+- MDN Web Docs på Template literals: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+- TypeScript Handbook om strenger: https://www.typescriptlang.org/docs/handbook/basic-types.html#string

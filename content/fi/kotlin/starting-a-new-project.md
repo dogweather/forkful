@@ -1,7 +1,8 @@
 ---
-title:                "Aloittaminen uuden projektin"
-html_title:           "C: Aloittaminen uuden projektin"
-simple_title:         "Aloittaminen uuden projektin"
+title:                "Uuden projektin aloittaminen"
+date:                  2024-01-20T18:03:55.666775-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Getting Started"
@@ -10,27 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi? 
-Uuden projektin aloittaminen tarkoittaa uuden ohjelmointitehtävän luomista tyhjästä. Ohjelmoijat tekevät tämän tarpeiden mukaan, oli kyseessä sitten uuden sovelluksen kehittäminen tai vanhan päivittäminen.
+## What & Why? (Mitä & Miksi?)
+Uuden projektin aloittaminen on kuin puhtaan paperin ottaminen – mahdollisuus luoda jotakin uutta. Koodarit tekevät sen ratkaistakseen ongelmia, kokeillakseen ideoita tai oppiakseen uusia asioita.
 
-## Kuinka:
+## How to: (Kuinka tehdään:)
+Aloita uusi Kotlin-projekti. Asenna ensin IntelliJ IDEA. Käynnistä se, ja luo uusi projekti:
+
 ```Kotlin
-// Uuden projektin aloittaminen Kotlinilla:
-
-fun main() {
-    print("Hei Kotlin!")
-} 
+// Valitse tiedostovalikosta "New Project"
+// Valitse Kotlin/JVM ja määritä projektillesi nimi ja sijainti
+// Paina "Finish"
 ```
-Kun ajat tämän koodipätkän, näet tulostuksen: "Hei Kotlin!".
 
+Luo ensimmäinen tiedosto `Main.kt`:
 
-## Syvempi tarkastelu
-Historiallisen kontekstin kannalta Kotlin on suhteellisen nuori kieli, joka on kehitetty vuonna 2011. Vaihtoehtoina uuden projektin aloittamiselle voivat olla esimerkiksi Java tai Python, mutta Kotlin tarjoaa monia parannuksia näihin verrattuna, kuten vähemmän kirjoitettavaa koodia, null-safety ja integraation Android Studion kanssa.
+```Kotlin
+fun main() {
+    println("Hello, new Kotlin project!")
+}
+```
 
-Kun aloitat uuden projektin Kotlinissa, luot uuden kokonaisuuden, joka koostuu luokista, funktioista ja muuttujista. Tämä kokonaisuus voidaan sitten suorittaa, jolloin se tulostaa koodissa määritellyn tehtävän tai tehtävät.
+Suorita se:
 
-## Katso myös
-[Viralliset Kotlin-dokumentit](https://kotlinlang.org/docs/home.html)
-[Aloittelijan opas Kotlinin kanssa](https://developer.android.com/kotlin/learn)
+```Kotlin
+// Näet konsolissa:
+Hello, new Kotlin project!
+```
 
-Käy nämä lähteet läpi saadaksesi hyvän ymmärryksen Kotlinista ja sen käytöstä uusien projektien aloittamiseen.
+## Deep Dive (Sukellus syvyyksiin):
+Kotlin ilmestyi vuonna 2011, ja JetBrains kehitti sen selkeämpänä ja turvallisempana Java-alternatiivina. Kotlin sopii Android-sovelluskehitykseen ja palvelinpuolen sovelluksiin. Projektia luodessa voit valita tyypin kuten JVM, Android, JS tai Native. Vaaka- ja pystyprojektien rakenne auttaa pitämään koodin järjestyksessä. Gradle tai Maven hoitaa riippuvuudet, ja useimmat projektit käyttävät niitä.
+
+## See Also (Katso myös):
+- Kotlinin virallinen dokumentaatio (kattaa projektialoituksesta kaikkeen): [Kotlin Documentation](https://kotlinlang.org/docs/home.html)
+- Gradlen dokumentaatio Kotlin-projekteille: [Gradle Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html)

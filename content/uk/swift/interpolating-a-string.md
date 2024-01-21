@@ -1,7 +1,8 @@
 ---
-title:                "Інтерполяція рядка"
-html_title:           "Java: Інтерполяція рядка"
-simple_title:         "Інтерполяція рядка"
+title:                "Інтерполяція рядків"
+date:                  2024-01-20T17:51:37.457758-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Інтерполяція рядків"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,34 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це і навіщо?
+## What & Why? (Що та Чому?)
+String interpolation allows us to insert variables into strings. It's a swift, clean way to construct strings - essentials in coding.
 
-Інтерполяція рядків - це техніка, що дозволяє вставляти значення змінних прямо в текстові рядки. Програмісти використовують її для будівництва найбільш читабельних і динамічних рядків.
-
-## Як це працює:
-
+## How to: (Як це зробити:)
 ```Swift
-var name = "Віктор"
-print("Привіт, \(name)")
+let name = "Олексій"
+let age = 29
+let greeting = "Привіт, мене звати \(name) і мені \(age) років."
+print(greeting) // Виводить: Привіт, мене звати Олексій і мені 29 років.
 ```
 
-Це виведе "Привіт, Віктор"
-
-А якщо ми змінимо значення змінної `name`, рядок автоматично оновиться:
-
+With this, you can also do calculations or call functions within the placeholders:
 ```Swift
-name = "Наташа"
-print("Привіт, \(name)")
+let price = 1299.99
+let taxRate = 0.2
+let priceWithTax = "Ціна з ПДВ: \(price * (1 + taxRate))"
+print(priceWithTax) // Виводить: Ціна з ПДВ: 1559.988
 ```
 
-Це виведе "Привіт, Наташа"
+## Deep Dive (Поглиблений Розбір):
+Initially, programmers concatenated strings using `+`, but this got unwieldy. Swift's string interpolation is more intuitive. Interpolation is more than just variables—it's any valid expression, including function calls or calculations.
 
-## Більше деталей
+Alternatives like `String(format:)` exist, used mostly for formatting strings comprehensively (similar to `printf` in C).
 
-Інтерполяція рядків була запозичена у Swift з інших мов програмування, таких як Perl і Ruby. Альтернативами цьому є синтаксис форматування рядків (як і в Python) або конкатенація рядків, але інтерполяція рядків є більш компактноюта зручною.
+How the interpolation works: Swift compiles your interpolated string into a series of appends to `String`. This is efficient, but there's a performance consideration with very large strings or intense use.
 
-Що стосується деталей імплементації, інтерполяція рядків в Swift використовує функцію `description` протоколу `CustomStringConvertible`, що дозволяє вставляти різні типи даних без необхідності перетворення їх на рядки.
-
-## Більше інформації
-
-Можна знайти на [офіційному сайті Swift](https://swift.org/documentation/#the-swift-programming-language), [документації Apple про інтерполяцію рядків](https://developer.apple.com/documentation/swift/string_interpolation) та на [Swift by Sundell](https://www.swiftbysundell.com/posts/string-interpolation-in-swift)
+## See Also (Дивіться також):
+- Swift Documentation on String Interpolation: [Strings and Characters — The Swift Programming Language (Swift 5.7)](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- Tutorial on Swift’s String Interpolation: [RW Tutorials](https://www.raywenderlich.com/)
+- Swift API for `String`: [Apple Developer Documentation](https://developer.apple.com/documentation/swift/string)

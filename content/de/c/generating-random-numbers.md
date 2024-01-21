@@ -1,7 +1,8 @@
 ---
-title:                "Zufallszahlen generieren"
-html_title:           "Arduino: Zufallszahlen generieren"
-simple_title:         "Zufallszahlen generieren"
+title:                "Generierung von Zufallszahlen"
+date:                  2024-01-20T17:48:40.449315-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generierung von Zufallszahlen"
 programming_language: "C"
 category:             "C"
 tag:                  "Numbers"
@@ -11,41 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-
-Die Erzeugung zufälliger Zahlen in C bedeutet, eine Reihe, die nicht vorhersagbar ist, zu produzieren. Dies ist nützlich für viele Anwendungen, wie Spiele, Verschlüsselung oder Simulationen.
-
+Zufallszahlen erzeugen in C bedeute, Werte zu generieren, die nicht vorhersagbar sind. Programmierer nutzen sie für alles Mögliche – von Spielentwicklung bis zu Simulationen.
 
 ## So geht's:
+Generiere eine Zufallszahl zwischen 0 und 99 in C:
 
-Zum Erzeugen von Zufallszahlen in C verwenden wir die Funktion `rand()`. Hier ist ein einfacher Weg, wie das gemacht wird:
-
-```C 
-#include <stdlib.h> //Funktionen für Zufallszahlen
-#include <time.h>   //um die Zeit für srand() zu nutzen
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main() {
-    srand(time(0));  //Initialisierung des Zufallsgenerators
-    int zufallszahl = rand();  //Erzeugt eine zufällige Zahl
-    
-    printf("Zufallszahl: %d\n", zufallszahl);
+    // Initialisiere den Zufallszahlengenerator mit der aktuellen Zeit
+    srand(time(NULL));
 
+    // Generiere eine Zufallszahl zwischen 0 und 99
+    int zufallszahl = rand() % 100;
+
+    printf("Zufallszahl: %d\n", zufallszahl);
     return 0;
 }
-``` 
-In diesem Code erzeugt die Funktion `rand()` eine Zufallszahl. Die Funktion `srand(time(0))` wird genutzt, um den Zufallsgenerator anders zu initialisieren bei jedem Start des Programms.
+```
 
+Beispiel-Ausgabe:
+```
+Zufallszahl: 42
+```
 
-## Tiefgang:
+## Deep Dive:
+`rand()` ist eine Standardfunktion in C, die Zufallszahlen generiert. Allerdings, seit ihre Einführung in den 70er Jahren, wissen wir, dass `rand()` einige Einschränkungen hat – die erzeugten Zahlen sind nicht wirklich zufällig. Sie folgen einer vorbestimmten Sequenz, die mit `srand()` initialisiert wird. Für höhere Anforderungen an die Zufälligkeit gibt es bessere Methoden wie die Nutzung von `/dev/random` auf Unix-Systemen oder die Verwendung von speziellen Bibliotheken wie `pcg` oder `mtrand`.
 
-Obwohl der Wunsch nach Zufallszahlen so alt ist wie das Spielen selbst, entstanden Computer-basierte Methoden zur Erzeugung von Zufallszahlen erst im 20. Jahrhundert. Die Funktion `rand()` und `srand()` gehören zur Bibliothek stdlib.h, welche Teil der Standard-C-Bibliothek ist und wurde eingeführt in der Norm ANSI C.
+Alternativen zu `rand()` und `srand()` wären Funktionen aus diesen Bibliotheken oder hardwarebasierte Zufallszahlengeneratoren, die echte Zufallswerte liefern.
 
-Es gibt viele alternative Methoden zur Zufallsgenerierung, wie die Mersenne Twister oder die Linear kongruenze Methode, die in bestimmten Anwendungsgebieten Vorteile haben können.
-
-Die `rand()` Funktion erzeugt deterministische Zufallszahlen, was bedeutet dass sie eigentlich nicht wirklich "zufällig" sind, sondern dieselbe Sequenz von Zahlen erzeugen, wenn sie mit demselben Saatwert (Seed) initialisiert werden. Daher wird `srand(time(0))` verwendet, um einen dynamischen Saatwert bereitzustellen.
-
+Implementationsdetails: `rand()` verwendet typischerweise einen linearen Kongruenzgenerator (LCG), bei dem jedes neue Ergebnis von seinem Vorgänger abhängt. Das macht die Ergebnisse vorhersagbar, sobald der Startwert bekannt ist.
 
 ## Siehe auch:
-
-1. [C Standard Library - stdlib.h](http://www.cplusplus.com/reference/cstdlib/)
-2. [Dokumentation zu rand() und srand()](https://docs.microsoft.com/de-de/cpp/c-runtime-library/reference/rand?view=msvc-160)
-3. [Wikipedia über Zufallszahlen](https://de.wikipedia.org/wiki/Zufallszahl)
+- C Standard Library: `rand()` und `srand()` - http://en.cppreference.com/w/c/numeric/random/rand
+- PCG, eine Familie von besserer Zufallszahlengeneratoren - http://www.pcg-random.org/
+- mtrand, eine Implementierung des Mersenne Twister-Algorithmus - https://github.com/ESultanik/mtwister

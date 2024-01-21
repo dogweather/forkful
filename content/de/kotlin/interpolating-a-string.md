@@ -1,7 +1,8 @@
 ---
-title:                "Eine Zeichenkette interpolieren"
-html_title:           "Arduino: Eine Zeichenkette interpolieren"
-simple_title:         "Eine Zeichenkette interpolieren"
+title:                "Zeichenketten interpolieren"
+date:                  2024-01-20T17:51:09.625047-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Zeichenketten interpolieren"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -11,40 +12,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-
-String-Interpolation bedeutet, variable Werte direkt in String-Literale einzubinden. Es erleichtert das Erstellen und Verwalten von Strings indem es die Benutzung von Operatoren wie + oder .concat() vermiedet.
+String-Interpolation ermöglicht es, Variablen und Ausdrücke direkt in Strings einzufügen, was den Code lesbarer und die String-Konstruktion einfacher macht. Programmierer nutzen diese Technik zur dynamischen Erstellung von Textinhalten.
 
 ## So geht's:
-
-In Kotlin erfolgt die String-Interpolation mit dem Dollarzeichen ($). Hier sind ein paar Beispiele:
-
 ```kotlin
 fun main() {
-    val name = "Kotlin"
-    println("Hallo $name!") // Ausgabe: Hallo Kotlin!
+    val name = "Welt"
+    val greeting = "Hallo, $name!"
+    println(greeting)  // Gibt aus: Hallo, Welt!
+
+    val eins = 1
+    val meldung = "Eins plus eins ergibt ${eins + eins}"
+    println(meldung)  // Gibt aus: Eins plus eins ergibt 2
 }
 ```
 
-Man kann auch Ausdrücke evaluieren, indem man sie in geschweifte Klammern einschließt:
+## Tiefgang:
+Historisch gesehen entstanden viele Programmiersprachen ohne String-Interpolation, was zur Verwendung von umständlichen Methoden wie String-Konkatenation führte. Kotlin, inspiriert von modernen Sprachen wie Ruby und Swift, hat String-Interpolation von Anfang an eingebunden. Diese erleichtert nicht nur die String-Verwaltung, sondern macht den Code auch sicherer, da es weniger Fehlerquellen, wie falsch gesetzte Leerzeichen oder Vergessen von Variablen, gibt. Man kann zwar alternativ StringBuilder oder String.format verwenden, aber Interpolation ist oft klarer und effizienter.
 
-```kotlin
-fun main() {
-    val language = "Kotlin"
-    val version = 1.5
-    println("$language hat die Version ${version + 0.1}.") // Ausgabe: Kotlin hat die Version 1.6.
-}
-```
-
-## Tiefere Einblicke
-
-String-Interpolation ist ein Konzept, das in vielen Sprachen, einschließlich Kotlin und modernem Javascript, existiert. Es hilft Codern, lesbaren und sauberen Code zu schreiben.
-
-Eine Alternative zur String-Interpolation kann die Verwendung von String.format sein, das jedoch weniger intuitiv und anfälliger für Fehler ist.
-
-Die Implementierung in Kotlin erfolgt im Hintergrund durch den StringBuilder, wodurch die Effizienz gegenüber String-Konkatenierung erhöht wird.
-
-## Siehe auch
-
-- Kotlin Dokumentation zu Zeichenketten: https://kotlinlang.org/docs/strings.html
-- Kotlin-Grundlagen zur Interpolation: https://kotlinlang.org/docs/basic-types.html
-- StackOverflow Antworten zum Thema String-Interpolation: https://stackoverflow.com/questions/42438263/string-interpolation-in-kotlin
+## Siehe auch:
+- [Kotlin Dokumentation zur String-Interpolation](https://kotlinlang.org/docs/basic-syntax.html#string-templates)
+- [Kotlin Style Guide](https://developer.android.com/kotlin/style-guide)
+- [Kotlin Playground](https://play.kotlinlang.org/) – zum Experimentieren mit Kotlin Code.

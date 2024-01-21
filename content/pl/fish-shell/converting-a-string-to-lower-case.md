@@ -1,6 +1,7 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+date:                  2024-01-20T17:38:28.705676-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,38 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego? 
-
-Konwersja ciągu na małe litery to proces zamiany wszystkich liter wielkich na małe w danym ciągu. Programiści robią to, aby porównywać ciągi tekstu niezależnie od wielkości liter.
+## Co i Dlaczego?
+Konwersja ciągu znaków na małe litery polega na zmianie wszystkich wielkich liter w napisie na ich małe odpowiedniki. Programiści robią to, by ujednolicić dane, np. przy porównywaniu ciągów bez uwzględniania wielkości liter.
 
 ## Jak to zrobić:
-
-Poniżej znajduje się przykładowy kod Fish Shell, który konwertuje napis na małe litery:
-
-```Fish Shell
-function małe_litery -a string
-    echo (string lower $string)
-end
-
-set wielkie "WIELKIE LITERY"
-małe_litery $wielkie
-```
-
-Po wykonaniu powyższego skryptu, wynikiem powinny być wszystkie małe litery, jak pokazano poniżej:
+W Fish, przekształcanie tekstu na małe litery jest takie proste, jak użycie wbudowanej funkcji `string`. Oto jak to działa:
 
 ```Fish Shell
-> wielkie litery
+echo "WITAJ ŚWIECIE!" | string lower
 ```
 
-## Deep Dive:
+Wynik:
+```
+witaj świecie!
+```
 
-W kontekście historycznym, różne języki programowania implementują tę funkcję na różne sposoby. Na przykład, w Pythonie używamy metody `.lower()`, a w JavaScript - metody `.toLowerCase()`. 
+## Zanurkujmy głębiej
+Dawniej mogłeś potrzebować narzędzi zewnętrznych jak `tr` albo `awk` do manipulacji tekstem. Na przykład w Bashu mógłbyś napisać `tr '[:upper:]' '[:lower:]'`, by zmienić wielkie litery na małe. W Fish, funkcja `string` pojawiła się w wersji 2.3.0, dodając proste narzędzia do manipulacji ciągami. Alternatywnie, możesz używać starszych poleceń Unix, ale `string` jest szybsze i bardziej wygodne w używaniu.
 
-Alternatywnie, niektóre języki, takie jak C, wymagają ręcznego przepisania ciągu i konwersji każdej litery osobno. Wybór metody zależy od języka, który używasz, i od specyfiki zadania.
+Dlaczego używać wbudowanej funkcji Fish `string`? To pisane specjalnie pod Fish Shell narzędzie jest nie tylko szybsze, ale też bardziej czytelne i mniej podatne na błędy. Dzięki temu twój kod jest bardziej przystępny i łatwiejszy w utrzymaniu.
 
-W Fish Shell, 'string lower' jest wbudowaną funkcją, która nie tylko konwertuje ciąg na małe litery, ale także obsługuje różne zestawy znaków, takie jak UTF-8.
+Jeśli chodzi o implementację, `string` jest funkcją wbudowaną, więc wykonuje się szybko i efektywnie. Działa bezproblemowo z innymi komendami Fish Shell, jak pętle czy operatory warunkowe, pozwalając na łatwą integrację z kodem.
 
 ## Zobacz również:
+- Oficjalna dokumentacja `string`: https://fishshell.com/docs/current/cmds/string.html
+- Poradnik do Fish Shell: https://fishshell.com/docs/current/tutorial.html
+- Ogólna dokumentacja fish shell: https://fishshell.com/docs/current/index.html
 
-1. Oficjalna dokumentacja Fish Shell - String: https://fishshell.com/docs/current/cmds/string.html
-2. Stack Overflow dla Fish Shell: https://stackoverflow.com/questions/tagged/fish
+Pamiętaj, by sprawdzić dokumentację Fish dla najnowszych informacji i praktyk.

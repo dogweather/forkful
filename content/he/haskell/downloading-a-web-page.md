@@ -1,6 +1,7 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "C++: הורדת דף אינטרנט"
+date:                  2024-01-20T17:44:07.426520-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,30 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-הורדת דף אינטרנט היא הפעולה של משיכת מידע מתוך אתר אינטרנט ושמירתו על המחשב שלנו. מתכנתים משתמשים בכך בדרך כלל לצורך איסוף ועיבוד מידע אוטומטי מאתרי אינטרנט או API.
+## מה ולמה?
+הורדת דף אינטרנט זה פשוט לשלוף תכנים מהרשת. תכנתים עושים את זה כדי לנתח נתונים, לבדוק שרתים, ולאוטומט תהליכים.
 
-## שיטת מפעל
+## איך לעשות:
+Haskell מאוד מתאים לסקריפטים קצרים ומתוחכמים. נשתמש בחבילת `http-conduit` כדי להוריד דף אינטרנט:
+
 ```Haskell
-import Network.HTTP
-import Network.URI (parseURI)
+import Network.HTTP.Simple
 
-downloadURL :: String -> IO (Either String String)
-downloadURL url = case parseURI url of
-    Nothing -> return $ Left ("Invalid URL " ++ url)
-    Just u  -> do
-        eresp <- simpleHTTP (mkRequest GET u)
-        return $ case eresp of
-          Left err -> Left (show err)
-          Right resp -> Right (rspBody resp)
+-- קוד להורדת דף אינטרנט
+downloadPage :: String -> IO ()
+downloadPage url = do
+    response <- httpBS url
+    putStrLn $ "Status Code: " ++ show (getResponseStatusCode response)
+    putStrLn $ "Body: " ++ show (getResponseBody response)
+
+main :: IO ()
+main = downloadPage "http://example.com"
+
+-- תוצאה:
+-- Status Code: 200
+-- Body: "...(תוכן הדף)..."
 ```
-הפעלת הפונקציה תחזיר את התכנים של האתר, או הודעת שגיאה במקרה שהאתר לא יכול להשתלשל.
 
-## עומק שם
-הרעיון להורדת דפים של אינטרנט התפתח לכנותה של האינטרנט כמקור עצום ומתעדכן של מידע. ישנם אלטרנטיבות אחרות ל-Haskell למשימה זו, כולל Python (עם BeautifulSoup) ו-JavaScript (עם Node.js). לעיתים מתכנתים משתמשים בסיפריות מיוחדות שמאפשרות להתממשק ישירות עם ה-API של אתר אינטרנט ולא להוריד את הדף שלם, ומאפשרות התממשקות הרבה יותר מהירה ויעילה.
+הרצה פשוטה בקונסול תשיג את תוצאות הדף.
 
-## ראה גם
-דוקומנטציה רשמית של Network.HTTP: https://hackage.haskell.org/package/HTTP
-ספר עיון ל-Bash scripting: https://www.gnu.org/software/bash/manual/bash.html
-Python Beautiful Soup Documentation: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-Node.js Request Documentation: https://www.npmjs.com/package/request
+## עיון נוסף
+הורדת דפי אינטרנט היא טכניקה עתיקה כמו האינטרנט עצמו. בשנים הראשונות, שימשו כלים כמו `wget` ו`curl`. ב-Haskell, חבילות כמו `http-conduit` ו`wreq` הן נפוצות, אך דורשות הבנה של מונדות ו-IO. יתרון של `http-conduit` הוא הטיפול המובנה ב-connections pool והניהול של זרימת הנתונים.
+
+## ראו גם
+- [`http-conduit` on Hackage](https://hackage.haskell.org/package/http-conduit)
+- [The `wget` Manual](https://www.gnu.org/software/wget/manual/wget.html)
+- [The `curl` Project](https://curl.se/docs/manual.html)

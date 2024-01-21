@@ -1,6 +1,7 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-html_title:           "Bash: HTTP-pyynnön lähettäminen"
+date:                  2024-01-20T17:59:28.885700-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,53 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+HTTP-pyynnön lähettäminen on tapa saada tai lähettää tietoa verkossa toimivien palvelimien välillä. Ohjelmoijat käyttävät sitä dataa vaihtaakseen, API:hin kytkeytyäkseen tai verkkopalveluja kuluttaakseen.
 
-HTTP-pyyntö lähettäminen on prosessi, jolla verkkosovellus kommunikoi toisen palvelimen kanssa. Koodarit tekevät näin hakeakseen tai lähettääkseen tietoja.
-
-## Kuinka:
-
-Clojurella voit lähettää HTTP-pyyntöjä `clj-http` -kirjaston avulla. Aloitetaan asentamalla se Leiningen tai Boot avulla:
+## How to:
+Clojuren HTTP-kirjastot, kuten `clj-http`, tekevät pyyntöjen lähettämisen vaivattomaksi. Esimerkiksi GET-pyynnön tekeminen:
 
 ```Clojure
-[clj-http "3.12.0"]
+(require '[clj-http.client :as client])
+
+(let [response (client/get "http://httpbin.org/get")]
+  (println response))
 ```
 
-Tämän jälkeen voimme lähettää GET-pyynnön seuraavasti:
+Sample output:
+```
+{:status 200, :headers { ... }, :body "..."}
+```
+
+POST-pyynnön lähettäminen:
 
 ```Clojure
-(ns my-app.main
-  (:require [clj-http.client :as client]))
-
-(defn get-request []
-  (client/get "http://example.com"))
+(let [response (client/post "http://httpbin.org/post" {:form-params {:key "value"}})]
+  (println response))
 ```
 
-Laajemmin, POST-pyynnön kanssa:
+## Deep Dive
+Clojure ei tule sisäänrakennetuilla HTTP-ominaisuuksilla, toisin kuin jotkut muut kielet. Sen sijaan, Clojure-koodarit turvautuvat kirjastoihin, kuten `clj-http`. Tämä kirjasto nojaa Java's HttpURLConnectioniin tehden pyyntöjen lähettämisestä helppoa ja joustavaa.
 
-```Clojure
-(defn post-request []
-  (client/post "http://example.com" {:body "test data"}))
-```
+Ennen `clj-http`:ia, yleinen tapa oli käyttää Java-kirjastoja suoraan Clojuresta. Vaikka tämä on yhä vaihtoehto, `clj-http` vapauttaa Clojure-kehittäjät monista alhaan tason yksityiskohdista.
 
-Output saattaa näyttää tältä:
+Yksi Clojuristien käyttämä vaihtoehtoinen kirjasto on `http-kit`, joka on kevyempi ja tarkoitettu asynkronisten pyyntöjen käsittelyyn.
 
-```Clojure
-{:status 200
- :headers {"content-type" "text/html"}
- :body "<html>..."}
-```
-
-## Syvä Sukellus:
-
-Clojuren HTTP-pyynnön lähettäminen on peräisin alhaisen tason TCP/IP-protokollasta. Se on nykyään välttämätöntä kaikille verkkosovelluksille.
-
-On olemassa myös muita kirjastoja, kuten `http-kit` ja Apache HttpClient, mutta `clj-http` tarjoaa parasta tukea ja helppokäyttöisyyttä Clojure-kehittäjille.
-
-HTTP-pyynnön lähettämisen toteutus pitää sisällään lukuisia yksityiskohtia. Se käsittää mm. protokollan päättelyn, lähettäjän ja vastaanottajan IP-osoitteiden selvittämisen sekä itse datan lähettämisen.
-
-## Katso Myös:
-
-- clj-http GitHub Repo: https://github.com/dakrone/clj-http
-- http-kit GitHub Repo: https://github.com/http-kit/http-kit
-- Apache HttpClient: https://hc.apache.org/httpcomponents-client-ga/
+## See Also
+- `clj-http` dokumentaatio: https://github.com/dakrone/clj-http
+- `http-kit` projekti: http://www.http-kit.org/
+- Clojuren oman `java.net.http` käyttöesimerkit: https://clojure.org/guides/deps_and_cli

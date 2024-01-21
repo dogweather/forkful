@@ -1,6 +1,7 @@
 ---
 title:                "Recherche et remplacement de texte"
-html_title:           "Arduino: Recherche et remplacement de texte"
+date:                  2024-01-20T17:57:44.611243-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Recherche et remplacement de texte"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,25 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi et Quoi?
+## What & Why? / Quoi et pourquoi ?
+Chercher et remplacer du texte, c'est modifier une chaîne en trouvant une partie spécifique et en la substituant. Les programmeurs utilisent cette technique pour corriger des erreurs, mettre à jour des données ou automatiser des éditions de masse.
 
-La recherche et le remplacement de texte sont des opérations couramment effectuées pour modifier des chaînes de caractères. Les programmeurs utilisent ces techniques pour réduire les erreurs et améliorer l'efficacité du code.
+## How to / Comment faire :
+```gleam
+import gleam/string
 
-## Comment faire:
-
-Gleam rend ces tâches simples. Voici un exemple de recherche et remplacement d'un texte:
-```Gleam
-let phrase = "J'aime la programmation en Gleam."
-let nouvelle_phrase = string.replace(phrase, "Gleam", "Python")
-
-io.println(nouvelle_phrase) // "J'aime la programmation en Python."
+pub fn main() {
+  let text = "Bonjour Paris, la ville lumière!"
+  let new_text = string.replace(text, "Paris", "Lyon")
+  new_text
+  // "Bonjour Lyon, la ville lumière!"
+}
 ```
-Dans cet exemple, le texte "Gleam" est recherché et remplacé par "Python" dans la chaîne donnée.
 
-## En Profondeur:
+## Deep Dive / Plongée profonde
+Remplacer du texte est un besoin de base en programmation. Dans les années 70, des outils comme `sed` (stream editor) pour Unix sont nés, permettant ces opérations via des lignes de commande. En Gleam, le module `string` fournit des fonctions pour manipuler des chaînes de caractères. Des langages comme Python ou JavaScript ont des fonctions similaires.
 
-Historiquement, la recherche et le remplacement de textes sont des opérations fondamentales dans le traitement des chaînes de caractères. Beaucoup de langages, comme Perl, Python et même Gleam en sont fortement influencés.
+Alternative : l'utilisation d'expressions régulières pour des besoins plus complexes.
 
-En ce qui concerne les alternatives, vous pouvez également utiliser des expressions régulières pour rechercher et remplacer du texte. Gleam ne supporte pas nativement les expressions régulières, mais il existe des bibliothèques tierces pour cela.
+Détails d'implémentation : `string.replace` parcourt la chaîne source, trouve les occurrences et les remplace. La complexité dépend de l'algorithme utilisé par le langage.
 
-Dans Gleam, `string.replace` est implémenté en utilisant la fonction `string.split` suivie par `list.join`, ce qui n'est pas le moyen le plus efficace. Toutefois, pour la plupart des cas d'utilisation courants, cela devrait suffire.
+## See Also / Voir aussi
+- Unix `sed` command for stream editing: [https://www.gnu.org/software/sed/manual/sed.html](https://www.gnu.org/software/sed/manual/sed.html)

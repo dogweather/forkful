@@ -1,6 +1,7 @@
 ---
 title:                "יצירת קובץ זמני"
-html_title:           "C#: יצירת קובץ זמני"
+date:                  2024-01-20T17:40:16.437770-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "יצירת קובץ זמני"
 programming_language: "C++"
 category:             "C++"
@@ -11,30 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-יצירת קובץ זמני היא תהליך שבו מריצים קוד שיוצר קובץ נוסף המכיל מידע זמני או מרצה תהליך שנמשך בזמן ריצת התכנית. מתכנתים לעתים משתמשים בזה לשמור מידע שיוזר בתהליך מדויק ונדרש לתהליכים בעתיד.
 
-## איך ליצור:
-נהוג לנצל את הספרייה `stdlib.h` ליצירת קובץ זמני. הקוד למטה מוצג דוגמה להגדרת קובץ זמני:
+יצירת קובץ זמני בקוד מאפשרת שמירה של נתונים באופן זמני ללא השפעה על המערכת הקיימת. תכניתנים עושים זאת לצורך בדיקות, חישובים ביניים, ואחסנת מידע בטוחה שתימחק לאחר שימוש.
+
+## איך לעשות:
+
+הנה דוגמא קצרצרה ליצירת קובץ זמני ב-C++ עם שימוש בספרייה `<filesystem>`:
 
 ```C++
-#include <stdlib.h>
+#include <iostream>
+#include <filesystem>
+#include <fstream>
 
-void create_temp_file() {
-    char temp_filename[L_tmpnam] = "";
-    tmpnam(temp_filename); 
-    FILE *temp = fopen(temp_filename, "w");
-    fputs("some content", temp);
-    fclose(temp);
+int main() {
+    std::filesystem::path temp = std::filesystem::temp_directory_path() / "my_temp_file.txt";
+    std::ofstream temp_file(temp);
+    temp_file << "This is some temporary data.";
+    temp_file.close();
+    
+    // Use the file...
+
+    // When done, delete the temporary file
+    std::filesystem::remove(temp);
+    
+    return 0;
 }
 ```
 
-בדוגמה זו, המפתח `tmpnam` מייצר שם קובץ על פי ההגדרות של המחשב, ו־`fopen` משתמש בשם הקובץ הזה ליצירת קובץ חדש עם ההגדרות שנתת.
+תוצאת דוגמא: המשך זה יצור קובץ זמני במערכת, יכתוב נתונים אליו, ואז ימחק אותו.
 
-## צלילה עמוקה:
-דרך זו של יצירת קובצים זמניים מוכרת גם בשפות תכנות אחרות והופקה מהגרסה המקורית של שפת Unix C. למרבה הצער, היא מעט פגיעה במסוף עצמה. הרבה סיבוכים יכולים להופיע, למשל בדיקות הרשאות, מערכות הפעלה שונות, ועומסים מרובים.
+## צלילה לעומק:
 
-אלטרנטיבה נהדרת לפונקציה `tmpnam` היא הפונקציה `mkstemp`, שגם נותנת שם וולידי ייחודי לקובץ זמני וגם מפתחת את הקובץ מיד לכתיבה. זוהי אופציה מצוינת, אם אתה עובד במערכת Unix או Linux.
+בעבר, יצירת קובץ זמני עלולה הייתה להיות עניין פחות ישיר ומשולב עם סיכוני אבטחת מידע, כי על התכניתן עצמו נדרש לדאוג לניקוי הקבצים. כיום, ספריות רבות מעניקות פתרונות פחות פגיעים. ישנם גם חלופות כגון שימוש ב-memory-mapped files או במאגרי נתונים לעיבוד אסינכרוני של נתונים. בדרך כלל, קבצים זמניים ייצרו בספריית הפעלה (operating system) או בתיקיית משתמש ספציפית, כאשר ניתן לציין זאת באופן מדויק באמצעות ה-C++ וה-API שלו.
 
-## ראו גם:
-- [הדרכת C++ ב-Chip Pearson](http://www.cplusplus.com/reference/cstdio/tmpnam/)
-- [דיון במנות C++ ב-Stack Overflow](https://stackoverflow.com/questions/6303147/what-are-the-differences-between-tmpnam-and-mkstemp)
+## גם זה כדאי:
+
+- [cppreference/std::filesystem](https://en.cppreference.com/w/cpp/filesystem)
+- [C++17 Filesystem Tutorial](https://www.youtube.com/watch?v=8kZBszfTzi4)
+- [ISO C++ - Filesystem](https://isocpp.org/wiki/faq/cpp17-library#filesystem)
+
+חוץ ממדריכים והסברים, הסתכלות על התיעוד של הסטנדרט עצמו יכולה לעזור להבין את התשתית ואת האפשרויות המלאות הזמינות.

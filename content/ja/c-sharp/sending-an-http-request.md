@@ -1,6 +1,7 @@
 ---
 title:                "HTTPリクエストの送信"
-html_title:           "Bash: HTTPリクエストの送信"
+date:                  2024-01-20T17:59:20.196218-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTPリクエストの送信"
 programming_language: "C#"
 category:             "C#"
@@ -10,48 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+HTTPリクエストを送るって、サーバにデータを要求したり送信したりすること。なぜか？ウェブの情報を取得したり、アプリ間で情報をやり取りする必要があるから。
 
-HTTPリクエストの送信は、あるコンピュータがWebサーバーにデータを要求することを意味します。プログラマーは、情報を取得したり、サービスと対話したりするためにこれを行います。
-
-## 方法:
-
-以下に、C#でHTTPリクエストを送信する一例を示します。 
-
+## How to: (方法)
 ```C#
+// HttpClientを使ってみよう。必要なのはusingディレクティブだけ。
 using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 class Program
 {
-    static readonly HttpClient client = new HttpClient();
-    
-    static async Task Main()
+    static async Task Main(string[] args)
     {
-        HttpResponseMessage response = await client.GetAsync("http://example.com");
+        using (HttpClient client = new HttpClient())
+        {
+            // GETリクエストを送信。
+            HttpResponseMessage response = await client.GetAsync("http://example.com");
+            response.EnsureSuccessStatusCode();
+            string responseBody = await response.Content.ReadAsStringAsync();
 
-        response.EnsureSuccessStatusCode();
-        string responseBody = await response.Content.ReadAsStringAsync();
-
-        Console.WriteLine(responseBody);
+            // 結果をコンソールに表示。
+            Console.WriteLine(responseBody);
+        }
     }
 }
 ```
+出力 (sample output):
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+    ...
+</html>
+```
 
-このコードは`http://example.com`にHTTPリクエストを送信し、応答をコンソールに表示します。
+## Deep Dive (深掘り)
+昔ながらのWebClientやHttpWebRequestもあるけど、今はHttpClientが主流。HttpClientは非同期操作に最適化されていて、接続の再利用も賢い。他の方法には、RestSharpやFlurlなどのライブラリがある。選択は用途による。内部的には、HTTPリクエストはTCP/IPプロトコルを使ってデータをサーバに送り、レスポンスを受け取る仕組み。HTTP/1.1プロトコルではコネクションの再利用が可能だけど、新しいHTTP/2ではさらに効率的な通信が可能になっている。
 
-## ディープダイブ:
-
-HTTPリクエストの送信は、1980年代からweb通信の基礎となってきました。C#では额許多なアプローチがありますが、最も現代的なアプローチは`HttpClient`を使用することです。
-
-代替手段としては、`WebRequest`や`WebClient`クラスを使用する方法もありますが、これらは非推奨とされています。
-
-また、非同期メソッドによる実装が推奨されます。これにより、アプリケーションがHTTPリクエストの応答を待つ間に他のタスクを処理することができます。
-
-## 参考情報:
-
-以下は、HTTPリクエストとC#の詳細についての追加情報が得られるリンク集です:
-
-- [HttpClient Class (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
-
-- [HTTP (Wikipedia)](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+## See Also (関連情報)
+- Microsoft Docs – HttpClient Class: https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient
+- Introduction to REST and .NET Core: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api
+- HTTP/2 Explained: https://http2.github.io/faq/

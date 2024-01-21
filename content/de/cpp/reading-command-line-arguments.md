@@ -1,7 +1,8 @@
 ---
-title:                "Befehlszeilenargumente lesen"
-html_title:           "Arduino: Befehlszeilenargumente lesen"
-simple_title:         "Befehlszeilenargumente lesen"
+title:                "Lesen von Kommandozeilenargumenten"
+date:                  2024-01-20T17:55:27.603434-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lesen von Kommandozeilenargumenten"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -11,37 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Lesen von Kommandozeilenargumenten in C++ bezeichnet den Prozess der Annahme von Werten von der Kommandozeile während der Ausführung einer Anwendung. Diese Technik ermöglicht es Programmierern, flexibler auf Benutzereingaben zu reagieren und interaktive Programme zu erstellen.
-  
-## Wie zu:
-In C++ können Sie Kommandozeilenargumente durch zwei Funktionsparameter im Hauptteil eines Programms (in der Funktion `main()`) erfassen: `int main(int argc, char *argv[])`. Hier ist `argc` eine Integer-Variable, die die Anzahl der über die Kommandozeile übergebenen Argumente speichert, während `argv` ein Zeiger auf ein Zeichenarray ist, der die eigentlichen Argumente enthält. Hier ist ein einfaches Beispiel:
+Kommandozeilenargumente ermöglichen es einem Programm, beim Start Eingaben zu empfangen. Das ist praktisch, um dem Programm zu sagen, was es tun soll, ohne dass der Benutzer das Programm selbst ändern muss.
+
+## So geht's:
+In C++ kannst du mit `int argc` und `char *argv[]` arbeiten, die im Hauptfunktionsheader stehen. `argc` zählt die Argumente, `argv` ist ein Array der Argumentwerte.
 
 ```C++
 #include <iostream>
 
 int main(int argc, char *argv[]) {
-    std::cout << "Programmname: " << argv[0] << std::endl;
-    for (int i = 1; i < argc; ++i) {
-      std::cout << "Argument " << i << ": " << argv[i] << std::endl;
+    std::cout << "Anzahl Argumente: " << argc << std::endl;
+    for (int i = 0; i < argc; i++) {
+        std::cout << "Argument " << i << ": " << argv[i] << std::endl;
     }
     return 0;
 }
 ```
 
-Wenn Sie dieses Programm als `myProgram` kompilieren und dann z.B. mit `./myProgram GutenTag` ausführen, erhalten Sie folgende Ausgabe:
-
+Ausgabe könnte sein für `./programm Hallo Welt`:
 ```
-Programmname: ./myProgram
-Argument 1: GutenTag
+Anzahl Argumente: 3
+Argument 0: ./programm
+Argument 1: Hallo
+Argument 2: Welt
 ```
 
-## Tiefer Tauchen
-Historisch gesehen ist das Lesen von Kommandozeilenargumenten ein Standardverfahren, das sowohl in UNIX- als auch in Windows-Umgebungen weit verbreitet ist. Es gibt jedoch Alternativen, insbesondere für komplexere Anwendungen. Dazu gehören die Einbettung von Argumenten in Dateien oder das Lesen von Eingaben von Standard-Eingaben oder GUI-Formularen.
+## Tiefgang:
+Kommandozeilenargumente sind ein Langzeitstandard. Sie gehen zurück auf C und UNIX. In modernen C++ Projekten nutzen einige Entwickler Bibliotheken wie `boost::program_options` oder `TCLAP` für mehr Flexibilität und leichtere Syntax.
 
-Für den Fall der C++-Programmierung verweisen `argc` und `argv` auf Daten, die vom Umgebungs-Betriebssystem zur Verfügung gestellt werden. Ihr genauer Speicherort und Inhalt können je nach System und verwendeter Sprachimplementierung variieren.
+Die Standardimplementierung (`argc` und `argv`) hält Dinge einfach, kann aber knifflig werden, wenn Argumente zusätzliche Verarbeitung erfordern oder nicht nur Strings sind.
 
-## Siehe Auch
-Für weiterführende Informationen und erweiterte Nutzungsszenarien besuchen Sie bitte:
-* [C++ Dokumentation für Kommandozeilenargumente](http://www.cplusplus.com/articles/DEN36Up4/)
-* [Stackoverflow Diskussionen zu C++ Kommandozeilenargumenten](https://stackoverflow.com/questions/3024197/what-does-int-argc-char-argv-mean)
-* [Weiterführende Lektüre mit Beispielen](https://www.learncpp.com/cpp-tutorial/command-line-arguments/)
+Eine Alternative für einfache Fälle könnte die Environment Variable sein, aber das ist weniger direkt und nutzerfreundlich.
+
+## Siehe auch:
+- CppReference über `main()`: https://en.cppreference.com/w/cpp/language/main_function
+- Boost Program Options Bibliothek: https://www.boost.org/doc/libs/release/libs/program_options/
+- TCLAP, eine templatelastige Bibliothek: http://tclap.sourceforge.net/
+- POSIX-Standard für Argumente: https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap12.html

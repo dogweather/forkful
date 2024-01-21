@@ -1,7 +1,8 @@
 ---
-title:                "מציאת אורך המחרוזת"
-html_title:           "Elm: מציאת אורך המחרוזת"
-simple_title:         "מציאת אורך המחרוזת"
+title:                "מציאת אורך מחרוזת"
+date:                  2024-01-20T17:48:00.098169-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "מציאת אורך מחרוזת"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,37 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
+## מה ולמה?
 
-מציאת אורך של מחרוזת היא פעולה שבה אנו מספרים האם כמה תווים יש במחרוזת. מתכנתים יעשו זאת כדי, לדוגמה, לקבוע האם מחרוזת היא ריקה או איננה ריקה, או לבצע ניתוח טקסט.
+מציאת אורך של מחרוזת היא פעולה שמחזירה את מספר התווים שבה. תוכניתנים עושים זאת כדי לבדוק גודל, לאמת קלט, או לבצע חיתוך והרחבה של נתונים.
 
-## איך ל:
+## איך לעשות:
 
-ב-Haskell, אנו משתמשים בפונקציה `length` כדי למצוא את אורך מחרוזת. נסתכל על דוגמה:
-
-```Haskell
-let str = "שלום עולם"
-print(length str)
+```haskell
+main :: IO ()
+main = do
+    let myString = "שלום עולם"
+    print $ length myString
 ```
 
-הפלט של the הקוד הזה יהיה `9`.
+פלט דוגמא: 
 
-## שיעור מעמיק: 
-(הקשר היסטורי, אלטרנטיבות, ופרטי מימוש)
-
-על אף שאורך מחרוזת שמעורר התלהבות מינימלית, ההגדרה שלה משחקת תפקיד מרכזי בתיאוריה של מחרוזות ובהגדרת האלגוריתמים שעובדים עמ' הן.
-
-מה בנוגע לאלטרנטיבות? בעצם אפשר לכתוב פונקציה שלך למציאת אורך של מחרוזת:
-
-```Haskell
-stringLength :: String -> Int
-stringLength [] = 0
-stringLength (_:xs) = 1 + stringLength xs
+```haskell
+10
 ```
 
-פעולת המימוש של `length` היא win-loss - היא יעילה מבחינת זיכרון כי היא לא צריכה לעמוד על המחרוזת, אך זו קטסטרופה במחשבה אם הערך כבר נמדד, כי הפונקציה זקוקה לרוץ שוב כדי למצוא מחדש את התוצאה.
+מערכת הספירה כוללת גם רווחים ותווי בקרה, ולא רק אותיות וספרות.
 
-## קרא גם: 
+## עיון מעמיק
 
-- [Haskell Wiki - Strings](https://wiki.haskell.org/Strings)
-- [StackOverflow - How is the length function implemented in Haskell?](https://stackoverflow.com/questions/23222472/how-is-the-length-function-implemented-in-haskell) - For a discussion on implementation details.
+אורך המחרוזת, בימים של שפות תכנות מודרניות כמו Haskell, הוא פשוט למדי. אבל בשפות ישנות יותר או בסביבות נמוכות יותר, כמו C, זה היה יכול לדרוש סריקה לאורך כל המחרוזת כדי למצוא את סוף המחרוזת (נקודת העצירה הייתה התו '\0'). ב-Haskell, `length` היא פונקציה סטנדרטית בספריה Prelude שמחזירה את אורך כל רשימה, כולל מחרוזת שהיא רשימת תווים. פרטי מימוש - `length` מבצעת ספירה רקורסיבית של התווים במחרוזת. החסרון הוא שלפעולה יש סיבוכיות ליניארית - O(n).
+
+בנוסף לפונקציית `length`, יש גם פונקציות אחרות שיכולות למדוד גדלים של נתחים מहמחרוזת או לבצע פעולות יעילות יותר עם סטרקטורות נתונים אחרות, כמו סידרה בתוך ספריה Data.Sequence, שיכולים לתת גישה לאורך בזמן קבוע – O(1).
+
+## ראה גם
+
+- [Haskell Documentation for Prelude](https://hackage.haskell.org/package/base-4.16.0.0/docs/Prelude.html)
+- [Haskell Wiki Book](https://en.wikibooks.org/wiki/Haskell)
+- [Learn You a Haskell for Great Good](http://learnyouahaskell.com/)

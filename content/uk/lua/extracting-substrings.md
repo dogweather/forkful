@@ -1,7 +1,8 @@
 ---
-title:                "Видобування підрядків"
-html_title:           "C++: Видобування підрядків"
-simple_title:         "Видобування підрядків"
+title:                "Виділення підрядків"
+date:                  2024-01-20T17:46:22.962303-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Виділення підрядків"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,31 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це і навіщо?
-Виділення підрядків - це процес ізоляції конкретного рядка з більшого текстового контексту. Програмісти роблять це, щоб працювати з конкретними частинами даних.
+## What & Why? (Що та Чому?)
 
-## Як це робити:
-Lua надає нам функцію `string.sub()`. Давайте подивимось, як вона працює на наступних прикладах:
+Extracting substrings means pulling out specific parts of a string based on their position. Programmers do it to analyze, manipulate, or validate pieces of data within a larger string.
+
+## How to: (Як це зробити:)
+
+In Lua, you can extract substrings using the `string.sub` function.
 
 ```Lua
-str = "Привіт, Світ"
-
--- Виділіть частину рядка з позиції 1 до 6
-print(string.sub(str, 1, 6))  -- Привіт
+local text = "Привіт, як справи?"
+local part = string.sub(text, 1, 7)
+print(part)  -- Outputs: Привіт,
 ```
+
+Sample output:
+```
+Привіт,
+```
+
+You can also work with negative indices to count from the end of the string.
+
 ```Lua
-str = "Привіт, Світ"
-
--- Виділіть частину рядка з позиції 9 до кінця
-print(string.sub(str, 9))  -- Світ
+local text = "Привіт, як справи?"
+local part = string.sub(text, -6, -2)
+print(part)  -- Outputs: справ
 ```
 
-## Пірнання глибше
-Lua - досить стара мова, вона має декілька шляхів виділення підрядків, включаючи використання `string.match()`, `string.find()`. З історичної точки зору, `string.sub()` - новіший варіант, але його зазвичай використовують для простіших випадків, наприклад, коли вам відомі точні позиції.
+Sample output:
+```
+справ
+```
 
-Використання `string.sub()` досить просте, але це ефективний інструмент. Ця функція фактично шукає індекси, які ви вводите, а потім призначає новий рядок між цими индексами.
+## Deep Dive (Поглиблений Аналіз)
 
-## Дивіться також
-1. [Офіційна документація Lua про рядки](https://www.lua.org/manual/5.3/manual.html#6.4)
-2. [Детальний перегляд функції string.sub](https://www.tutorialspoint.com/lua/lua_strings.htm)
-3. [Стековерфлоу: як виділити підрядок в Lua](https://stackoverflow.com/questions/13007927/lua-extract-string-by-pattern)
+Lua supports various string manipulation functions; `string.sub` is one among them and has been a part of the language from its early versions. It's a straightforward and efficient way to interact with strings.
+
+Alternatives include using `string.match` with patterns. This method offers more flexibility for complex substring extractions.
+
+```Lua
+local text = "Привіт, як справи?"
+local part = string.match(text, "як")
+print(part)  -- Outputs: як
+```
+
+Implementation-wise, Lua strings are immutable, meaning once created, they can't be changed. When you extract a substring, Lua creates a new string rather than altering the original.
+
+## See Also (Додатково)
+
+- Lua `string` library reference: [Programming in Lua](https://www.lua.org/pil/20.1.html)
+- Lua patterns guide: [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/manual.html#6.4.1)

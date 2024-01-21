@@ -1,6 +1,7 @@
 ---
 title:                "Перетворення дати в рядок"
-html_title:           "Lua: Перетворення дати в рядок"
+date:                  2024-01-20T17:36:55.748956-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Перетворення дати в рядок"
 programming_language: "Java"
 category:             "Java"
@@ -10,40 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це і навіщо?
+## What & Why? (Що та Чому?)
 
-Перетворення дати в рядок - це перетворення об'єкта `java.util.Date` на рядок у форматі, що розуміє людина, використовуючи `java.text.SimpleDateFormat`. Навіщо? Щоб зобразити дату у більш зручному для нас фомраті, або зберегти у файл чи в базу даних.
+Преобразування дати у рядок дозволяє зберігати дату в текстовому форматі, який легко читати й обмінюватися ним. Програмісти роблять це для логування, відображення дат користувачам чи збереження у базах даних.
 
-## Як це зробити:
+## How to: (Як зробити:)
 
-Нижче наведений приклад коду та результат його виконання:
+```java
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
-```Java
-import java.text.SimpleDateFormat;
-import java.util.Date;
+public class DateToStringExample {
+    public static void main(String[] args) {
+        // Створення екземпляру LocalDateTime
+        LocalDateTime now = LocalDateTime.now();
 
-public class Main {
-public static void main(String[] args) {
-        Date date = new Date();
-        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-        String dateAsString = format.format(date);
-        System.out.println(dateAsString);
+        // Форматування дати у строку
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = now.format(formatter);
+
+        // Вивід строки
+        System.out.println(formattedDate);
     }
 }
 ```
 
-Виконання цього коду виведе поточну дату та час, наприклад: `23-05-2022 10:20:30`.
+Sample Output:
 
-## Детальніше:
+```
+2023-03-15 12:45:30
+```
 
-У минулому, коли ми працювали з датами у `java.util.Date`, ми здебільшого використовували `java.text.DateFormat`, що має простіше інтерфейс. Але, через його малу гнучкість та можливість виникнення помилок потоків, був розроблений `java.text.SimpleDateFormat`. Його можна налаштувати так, як вам потрібно, але він дещо повільніший через більш складну реалізацію.
+## Deep Dive (Глибоке Занурення)
 
-В якості альтернативи, ви можете використати `java.time.format.DateTimeFormatter` з `java.time.LocalDateTime`, який був доданий у Java 8. Він належить до нової бібліотеки часу та дати, що є більш потужною та надійною ніж старі `java.util.Date` та `java.text.SimpleDateFormat`.
+Converting dates to strings isn't new. With Java's development, historic classes like `java.util.Date` were superseded by the `java.time` package from Java 8 for better time-zone handling and immutability. Alternatives? Sure. You've got `SimpleDateFormat` (now less used due to thread safety issues), third-party libraries like Joda-Time (inspiration for `java.time`), and database-specific formats (watch out for SQL injection!). Implementation wise, `DateTimeFormatter` is king now, with its thread-safe, immutable objects.
 
-## Також дивіться:
+## See Also (Дивіться також)
 
-Для докладнішої інформації та прикладів, дивіться:
-
-- [Oracle Java Documentation](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [Java 8 DateTime API Guide](https://www.baeldung.com/java-8-date-time-intro)
-- [SimpleDateFormat Example](https://mkyong.com/java/java-date-and-calendar-examples/)
+For more, hover through the Java API docs and some well-versed articles:
+- Official Java documentation on `LocalDateTime`: https://docs.oracle.com/javase/10/docs/api/java/time/LocalDateTime.html
+- Oracle tutorial on `DateTimeFormatter`: https://docs.oracle.com/javase/tutorial/datetime/iso/format.html
+- More about thread safety and date-time classes: https://www.baeldung.com/java-thread-safety
+- If curious about Joda-Time: https://www.joda.org/joda-time/

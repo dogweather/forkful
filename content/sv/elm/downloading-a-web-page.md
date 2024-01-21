@@ -1,7 +1,8 @@
 ---
-title:                "Ladda ner en webbsida"
-html_title:           "Bash: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Hämta en webbsida"
+date:                  2024-01-20T17:43:53.139302-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Hämta en webbsida"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,53 +11,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & varför?
-
-Som programmerare kan du behöva ladda ner en webbsida för att bearbeta eller analysera dess innehåll. Detta kan vara användbart för att skrapa data, testa webbdesigner eller kontrollera webbsidans funktionalitet.
+## Vad & Varför?
+Att ladda ner en webbsida betyder att hämta dess innehåll via internet. Programmerare gör detta för att bearbeta information, fylla appar med data eller spara sidor för offline-användning.
 
 ## Hur man gör:
-
-Här är ett exempel på hur du kan ladda ner en webbsida i Elm:
-
 ```Elm
 import Http
-import Html exposing (Html, button, div, text)
-import Html.Events exposing (onClick)
+import Html exposing (Html, text)
+import Json.Decode as Decode
 
-main =
-  Html.beginnerProgram { model = "", view = view, update = update }
+type Msg = GotPageContent (Result Http.Error String)
 
-type Msg = MorePlease | NewJoke String
+type alias Model = Maybe String
 
-update msg model =
-  case msg of
-    MorePlease ->
-      ( model
-      , Http.send NewJoke (Http.getString "http://api.icndb.com/jokes/random")
-      )
+init : Model
+init = Nothing
 
-    NewJoke newJoke ->
-      ( newJoke, Cmd.none )
+update : Msg -> Model -> (Model, Cmd Msg)
+update (GotPageContent result) _ =
+    case result of
+        Ok pageContent ->
+            (Just pageContent, Cmd.none)
+        
+        Err _ ->
+            (Just "Could not load the page.", Cmd.none)
 
+view : Model -> Html Msg
 view model =
-  div []
-    [ div [] [ text model ]
-    , button [ onClick MorePlease ] [ text "More Please!" ]
-    ]
+    case model of
+        Just content ->
+            text content
+        
+        Nothing ->
+            text "Loading..."
+
+subscription : Model -> Sub Msg
+subscription _ =
+    Sub.none
+
+main : Program () Model Msg
+main =
+    Html.program
+        { init = (init, fetchPage "http://example.com")
+        , view = view
+        , update = update
+        , subscriptions = subscription
+        }
+
+fetchPage : String -> Cmd Msg
+fetchPage url =
+    Http.get
+        { url = url
+        , expect = Http.expectString GotPageContent
+        }
+
+decoder : Decode.Decoder String
+decoder = 
+    Decode.string
 ```
 
-När du trycker på knappen "More Please!" kommer en ny skämt att laddas från API:t och visas på webbsidan.
-
 ## Fördjupning
+Historiskt sett har webbsidor hämtats med många olika tekniker, från enkla HTTP-anrop till komplexa webbskrapningsverktyg. Elm är en funktionell programmeringsspråk designad för webbutveckling, fokuserad på säkerhet och underhållbarhet. I Elm hanterar vi sidhämtning genom `Http`-modulen. Alternativ till Elm för att ladda ner webbsidor inkluderar JavaScript med XMLHttpRequest eller Fetch API, eller serversidespråk som Python med requests-biblioteket.
 
-Att ladda ner webbsidor i programmering har en lång historia, från tidiga webbskrapare till moderna APIs. Alternativ till Elm för att hämta webbsidor inkluderar andra webbbaserade programmeringsspråk som JavaScript och Python, men Elm utmärker sig för dess robusthet och tydlighet.
-
-Utförandet av webbsidan i Elm är enkel och direkt. Elm använder Http paketet för att skicka en GET begäran till webbsidan och tar sedan emot svaret som en sträng.
+Elms Http-paket använder "tasks", vilket är Elm-specifika asynkrona operationer. Det är skräddarsytt för att jobba med Elm Runtime för att hantera sidoeffekter som nätverksanrop. Http.get-definierar hur du hämtar innehållet och vad du förväntar dig som svar - i vårt fall, en sträng. Felet hanteras i update-funktionen, där användaren antingen får innehållet eller ett felmeddelande. 
 
 ## Se även
-
-Om du vill fördjupa dina kunskaper om Elm-programmering kan du kolla in följande källor:
-
-1. [Elm's offical guide](https://guide.elm-lang.org/)
-2. [Elm's Github repository](https://github.com/elm)
-3. [Elm's package documentation](https://package.elm-lang.org/packages/elm/http/latest/Http)
+- Elm's officiella [Http-paket dokumentation](https://package.elm-lang.org/packages/elm/http/latest/)
+- En guide till [Elms arkitektur](https://guide.elm-lang.org/architecture/)
+- [Json.Decode](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode) för att hantera JSON i Elm

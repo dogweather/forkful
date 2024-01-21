@@ -1,6 +1,7 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "C#: Verkkosivun lataaminen"
+date:                  2024-01-20T17:43:52.850732-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,38 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why? - Mitä & Miksi?
+Ladataan nettisivu tarkoittaa sivun sisällön tallentamista paikallisesti. Ohjelmoijat tekevät sitä datan analysointia, skrapausta tai varmuuskopiointia varten.
 
-## Mitä & Miksi?
+## How to: - Näin teet sen:
+Clojuren avulla voit ladata webbisivun sisällön käyttämällä `clj-http`-kirjastoa. Tässä yksinkertainen esimerkki:
 
-Web-sivun lataaminen tarkoittaa sen sisällön noutamista verkosta. Ohjelmoijat tekevät niin esimerkiksi web-sisällön analysointia tai datan keräämistä varten.
-
-## Näin Se Tehtiin:
-
-Clojure-lisäosassa `clj-http` on funktio `client/get` jota voimme käyttää. Asenna se Clojure-projektiisi lisäämällä `:dependencies` osioon `[clj-http "3.12.3"]`.
-
-Koodi-osa näyttää tältä:
-
-```clojure 
+```clojure
 (require '[clj-http.client :as client])
 
 (defn download-page [url]
-  (let [response (client/get url)]
-    (:body response)))
+  (client/get url))
+
+;; Käyttö esimerkki:
+(println (download-page "http://example.com"))
 ```
 
-Kun ajat koodia näin: `(download-page "https://www.example.com")`, saat tulokseksi koko sivun HTML-koodin.
+Vastaanotettu tieto näyttää suunnilleen tältä:
 
-## Syvällinen Tutkimus:
+```clojure
+{:status 200,
+ :headers {"Content-Type" "text/html; charset=UTF-8", ...},
+ :body "<!doctype html>..."}
+```
 
-Historiallisesti ottaen, web-sivujen lataaminen on ollut tärkeä osa web-skarppausta ja data-analytiikkaa. 
+## Deep Dive - Syvä sukellus:
+Alkujaan, web-sivujen lataaminen perustui pelkkiin HTTP GET -pyyntöihin. Nykyisin, dynaamiset sivut vaativat monimutkaisempia tekniikoita kuten AJAX. Clojuren `clj-http`-kirjasto yksinkertaistaa tämän prosessin. 
 
-Alternatiivisesti, voit käyttää muita Clojure-kirjastoja tai API-rajapintoja lataamiseen. Esim. `clj-http` lisäosan sijasta voit käyttää `http-kit` lisäosaa. 
+Vaihtoehtoisia työkaluja ovat esim. `http-kit` tai `Aleph`. Niitä voidaan käyttää monenlaisten HTTP-pyyntöjen tekemiseen ja ne tulevat erilaisilla suorituskykyetuja.
 
-Lisätietoja pystyy löytämään `clj-http` dokumentaation [täältä](https://clj-http.org/).
+Kun lataat sivua, huomioi oikeudet ja rajoitukset - esimerkiksi `robots.txt` tiedosto voi rajoittaa skrapausta.
 
-## Katso Lisää:
-
-- clj-http dokumentaatio: https://clj-http.org/
-- HTTP-protokollasta: https://fi.wikipedia.org/wiki/HTTP
-- Web-skarppauksesta ja data-analytiikasta: https://www.datacamp.com/community/tutorials/web-scraping-clojure
+## See Also - Katso myös:
+- clj-http GitHub: https://github.com/dakrone/clj-http
+- http-kit kotisivu: http://www.http-kit.org/
+- Aleph GitHub: https://github.com/ztellman/aleph
+- Clojure virallinen sivu: https://clojure.org
+- Web scraping ohjeet: https://www.dataquest.io/blog/web-scraping-tutorial-clojure/

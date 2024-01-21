@@ -1,6 +1,7 @@
 ---
 title:                "Concatenating strings"
-html_title:           "PHP recipe: Concatenating strings"
+date:                  2024-01-20T17:34:09.900750-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Concatenating strings"
 programming_language: "C++"
 category:             "C++"
@@ -11,57 +12,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-In C++, concatenating strings simply refers to gluing two or more strings together in order to generate a new string. Programmers do this to form dynamic messages, build text content, or format data for output.
+String concatenation is stitching together two or more strings end-to-end. Programmers do it to build sentences, create messages, or combine input data for processing or display.
 
 ## How to:
-Here is a basic example of how to concatenate strings in C++. We'll take two strings and glue them together using the `+` operator.
+In C++, we’ve got a few ways to concatenate strings. Here's a taste using `std::string` and the plus (`+`) operator:
 
-```C++
+```cpp
 #include <iostream>
 #include <string>
 
 int main() {
-    std::string str1 = "Hello, ";
-    std::string str2 = "World!";
-    std::string str3 = str1 + str2;
-    std::cout << str3;
+    std::string hello = "Hello, ";
+    std::string world = "World!";
+    
+    std::string greeting = hello + world;
+    
+    std::cout << greeting << std::endl; // Outputs: Hello, World!
     return 0;
 }
 ```
 
-This code will output:
+Quick and simple, yeah? But, we can also use `append()`:
 
-```C++
-Hello, World!
+```cpp
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string hello = "Hello, ";
+    hello.append("World!");
+    
+    std::cout << hello << std::endl; // Outputs: Hello, World!
+    return 0;
+}
+```
+
+Or even `operator+=` if you feel like it:
+
+```cpp
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string hello = "Hello, ";
+    hello += "World!";
+    
+    std::cout << hello << std::endl; // Outputs: Hello, World!
+    return 0;
+}
 ```
 
 ## Deep Dive
-## Historical Context:
-Historically, C++ is derived from the C language which did not have a native string type. In C, strings were arrays of characters, and concatenation was a little bit more complex. But with the advent of C++, string manipulation got simpler with the `std::string` class and the `+` operator for concatenation.
+Historically, C++ took over from C, which used character arrays and functions like `strcat()` for string work. It was messier and more error-prone.
 
-## Alternatives:
-If you're more comfortable with C-style char arrays, or dealing with something where you can't use `std::string`, you can use `strcat()` function from cstring header.
+Modern C++ improved the scene with `std::string`. It's safer, easier to read, and gives you options. If `std::string` isn't your jam, there’s `std::stringstream` or even `std::format` (from C++20) for the formatting fans.
 
-```C++
-#include <cstring>
-#include <iostream>
+Under the hood, concatenating strings involves memory allocation and copying. Done carelessly, it can hit your program’s performance like a brick. Smart pointers and move semantics alleviate some pain here.
 
-int main() {
-    char str1[50] = "Hello, ";
-    char str2[] = "World!";
-    strcat(str1, str2);
-    std::cout << str1;
-    return 0;
-}
-```
-Bear in mind using `strcat` can lead to security issues if not handled properly, as it does not perform bounds checking.
-
-## Implementation Details:
-The C++ `std::string` class overloads the `+` operator for string concatenation. When you use `+` to concatenate two strings, C++ creates a new `std::string` object to hold the result. This involves a dynamic memory allocation, which can be a bit of a performance concern in a hot loop.
+Let's not forget about the alternatives - libraries like Boost, or handling UTF-8 with `std::string_view` for zero-copy operations on modern C++.
 
 ## See Also
-Want to dive deeper into C++ string manipulation? Here are some resources that might help. 
-
-- [Cplusplus.com String Library Documentation](http://www.cplusplus.com/reference/string/string/)
-- [C++ Super-FAQ String Operations](https://isocpp.org/wiki/faq/strings)
-- [Modifying strings in C++ - Stack Overflow](https://stackoverflow.com/questions/3899900/c-modifying-string-in-function)
+- C++ reference for `std::string`: https://cplusplus.com/reference/string/string/
+- C++ Working Draft, Standard for Programming Language C++: http://www.open-std.org/JTC1/SC22/WG21/docs/papers/2020/n4861.pdf
+- Learn more about `std::format`: https://en.cppreference.com/w/cpp/utility/format
+- Boost library documentation: https://www.boost.org/doc/libs/1_75_0/libs/string_algo/doc/html/index.html

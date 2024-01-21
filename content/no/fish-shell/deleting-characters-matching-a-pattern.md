@@ -1,7 +1,8 @@
 ---
-title:                "Slette tegn som samsvarer med et mønster"
-html_title:           "Arduino: Slette tegn som samsvarer med et mønster"
-simple_title:         "Slette tegn som samsvarer med et mønster"
+title:                "Slette tegn som matcher et mønster"
+date:                  2024-01-20T17:42:13.744614-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Slette tegn som matcher et mønster"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,32 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
+## Hva & Hvorfor?
+Å slette tegn som matcher et mønster betyr å fjerne bestemte sekvenser fra tekststrenger. Programmerere gjør dette for å rense data, ekstrahere informasjon eller formatere output.
 
-Sletting av karakterer som samsvarer med et mønster (pattern matching) er en metode for å filtrere ut spesifikke deler fra en tekst. Det brukes ofte i programmering for å manipulere data, for eksempel for å manipulere tekststrenger, rense data eller hente ut informasjon.
-
-## Hvordan gjøre det:
-
-For å slette en karakter fra en streng med custonm ops match, kan du bruke `string`-kommandoen i Fish Shell som følger:
+## How to:
+For å slette tegn i Fish Shell, bruk `string replace`. Eksempel fjerner alle 'a'-er fra en streng:
 
 ```Fish Shell
-set tekst "Hello, world!"
-string replace -r -a ',' '' $tekst
+echo "bananarama" | string replace -a "a" ""
 ```
 
-Utførelsen av koden gir oss følgende resultat:
+Output:
+```
+bnnrm
+```
+
+For å slette mønstre, bruk wildcards (stjernetegn):
 
 ```Fish Shell
-Hello world!
+echo "b123a456xyz789" | string replace -ar "[0-9]" ""
 ```
 
-## Dyp Dykking
+Output:
+```
+baxyz
+```
 
-Funksjonaliteten for pattern matching har vært en del av Shell-skript og Unix-verktøy i flere tiår. I Fish, er `string`-kommandoen brukt i stedet for det eldre `sed` eller `awk`-verktøyene for å gi en enklere og mer intuitiv opplevelse.
+Interaktivt, slett 'xyz' fra en variabel:
 
-Et alternativ til å bruke `string`-kommandoen for å slette karakterer, er å bruke `awk` eller `sed`-verktøyene for mer komplekse operasjoner. Samtidig er forskjellige programmeringsspråk også utstyrt med lignende funksjoner for patern matching.
+```Fish Shell
+set myvar "helloxyzworld"
+string replace -r "xyz" "" -- $myvar
+echo $myvar
+```
 
-Når det gjelder implementeringen i Fish, har `string replace`-kommandoen flere alternativer for styring av hvilke strenger som skal erstattes, for eksempel `-r` for å bruke regular expressions, og `-a` for å erstatte alle forekomster.
+Output:
+```
+helloworld
+```
 
-## Se også:
-3. Unix for Poets: [https://www.cs.upc.edu/~padro/Unixforpoets.pdf](https://www.cs.upc.edu/~padro/Unixforpoets.pdf)
+## Deep Dive
+Pattern matching har vært en del av programmering siden tidlige dager. Det er andre måter å gjøre det på i Unix-lignende systemer, som `sed` eller `grep`. Men Fish Shell forenkler prosessen med `string`-kommandoer.
+
+Fish's `string` kommandoer ble introdusert for lesbarhet og enkel bruk. Ulik tradisjonell 'sed', trenger du ikke å huske komplekse syntakser for vanlige oppgaver.
+
+Implementasjonsdetaljer:
+
+- `string replace` er bygd inn i Fish.
+- `-a` flagget står for "all" - erstatt alle instanser.
+- `-r` aktiverer regex eller regulære uttrykk for avanserte mønstre.
+
+## See Also
+- [Fish Shell Documentation on String](https://fishshell.com/docs/current/cmds/string.html)
+- [Regular Expressions Basics](https://en.wikipedia.org/wiki/Regular_expression)
+- [Unix sed command](https://www.gnu.org/software/sed/manual/sed.html)

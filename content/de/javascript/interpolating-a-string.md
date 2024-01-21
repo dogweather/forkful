@@ -1,7 +1,8 @@
 ---
-title:                "Eine Zeichenkette interpolieren"
-html_title:           "Arduino: Eine Zeichenkette interpolieren"
-simple_title:         "Eine Zeichenkette interpolieren"
+title:                "Zeichenketten interpolieren"
+date:                  2024-01-20T17:51:09.315513-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Zeichenketten interpolieren"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -11,33 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+String-Interpolation ermöglicht es, Variablenwerte direkt in einen String einzufügen. Sie erleichtert das Erstellen von dynamischen Strings und verbessert die Lesbarkeit des Codes.
 
-Die String-Interpolation in Javascript ist eine Technik, bei der Werte dynamisch in einen String eingefügt werden. Es ermöglicht einen saubereren, lesbareren Code und erleichtert die Manipulation von Zeichenketten.
+## How to:
+```javascript
+// Template Literals nutzen
+const name = 'Welt';
+const greeting = `Hallo, ${name}!`;
+console.log(greeting); // "Hallo, Welt!"
 
-## So geht's:
+// Mit Bedingungen
+const user = { name: 'Felix', isLoggedIn: true };
+const welcomeMessage = `Willkommen ${user.isLoggedIn ? user.name : 'Gast'}!`;
+console.log(welcomeMessage); // "Willkommen Felix!"
 
-Mit den Template Literalen, bietet Javascript eine einfache Art der String-Interpolation. Hier ein Beispiel:
-
-```Javascript
-let name = 'Max';
-let begruessung = `Hallo ${name}!`;
-console.log(begruessung);  // Ausgabe: "Hallo Max!"
+// Mit Funktionen
+function getPreis(nettoPreis, steuer) {
+  return nettoPreis * (1 + steuer);
+}
+const preis = getPreis(100, 0.19);
+const rechnung = `Der Gesamtpreis beträgt: ${preis.toFixed(2)}€.`;
+console.log(rechnung); // "Der Gesamtpreis beträgt: 119.00€."
 ```
-In diesem Code wird der Wert der Variablen `name` dynamisch in den String `begruessung` eingefügt.
 
+## Deep Dive
+Früher wurden Strings in JavaScript mit Konkatenation gebaut – durch das Verknüpfen von Variablen mit statischen Strings mittels des `+` Operators. Mit ECMAScript 2015 (auch bekannt als ES6) kamen Template Literals, welche die String-Interpolation deutlich vereinfachen. 
 
-## Vertiefung:
+Statt der herkömmlichen Anführungszeichen nutzt man Backticks (\`) und fügt Variablen oder Ausdrücke mit `${}` ein. Dadurch entfallen die vielen `+` Zeichen, was den Code sauberer macht.
 
-Die String-Interpolation wurde erst mit ES2015/ES6 eingeführt. Vorher musste man noch umständlich "+" verwenden um Strings und Variablen zu verknüpfen, was leicht zu Fehlern führen kann.
+Alternativen wie `sprintf()` aus anderen Sprachen oder das Zusammenbauen von Strings mittels Array-Joining sind in JavaScript weniger gebräuchlich. 
 
-Alternativen zur String-Interpolation sind die bereits genannte Methode mit "+", oder Funktionen wie `.concat()`, oder `.join()`, die allerdings weniger intuitiv und schwerer zu lesen sind.
+Besonders praktisch wird es, wenn Funktionen oder Bedingungen in die Interpolation eingesetzt werden. So entstehen kompakte, leserliche One-Liner, die ansonsten mit mehreren Zeilen Code auskommen müssten.
 
-Bei der Umsetzung der String-Interpolation ist zu beachten, dass nur innerhalb der Backticks (` `) Variablen und Ausdrücke verwendet werden können. Diese werden dann in den String interpoliert. Weiterhin sind auch Ausdrücke wie `Hallo ${1+1}!` möglich, was "Hallo 2!" ausgeben würde.
-
-## Siehe auch:
-
-[MDN Web Docs - Template Literale](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Template_literals)
-
-[Javascript.info - Template Literale](https://javascript.info/string#template-literals)
-
-[Freecodecamp - A Deep Dive Into ES6 Template Literals](https://www.freecodecamp.org/news/template-literals-in-es6-new-features-and-polymorphic-strings-84129283d377/)
+## See Also
+- MDN zu Template Literals: [MDN Web Docs: Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)

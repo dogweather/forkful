@@ -1,7 +1,8 @@
 ---
-title:                "Finne lengden på en streng"
-html_title:           "Arduino: Finne lengden på en streng"
-simple_title:         "Finne lengden på en streng"
+title:                "Finn lengden på en streng"
+date:                  2024-01-20T17:47:05.257203-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Finn lengden på en streng"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,34 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Å finne lengden på en streng handler om å telle antall karakterer i en tekststreng. Programmerere gjør dette for å manipulere, validere eller sammenligne strenger effektivt.
+## What & Why?
+Å finne lengden på en streng betyr å telle antall tegn den inneholder. Programmerere trenger å vite dette for å manipulere tekstdata effektivt.
 
-## Hvordan Du Gjør Det:
-I C programmering, bruker vi ofte `strlen()` funksjonen for å finne lengden på en streng. Her er et enkelt eksempel:
+## How to:
+I C bruker vi `strlen()` fra `string.h` biblioteket for å få lengden på en streng. Her er et eksempel:
 
 ```C
 #include <stdio.h>
 #include <string.h>
-  
+
 int main() {
-    char string[] = "Programmering";
-    printf("Lengden av strengen er: %lu", strlen(string));
+    char greeting[] = "Hei Verden!";
+    int length = strlen(greeting);
+
+    printf("Lengden av '%s' er %d.\n", greeting, length);
+
     return 0;
 }
 ```
 
-Når det kjøres, vil det utspytte: 
+Kjører du dette, får du:
 ```
-Lengden av strengen er: 13
+Lengden av 'Hei Verden!' er 11.
 ```
 
-## Dypdykk:
-C standardbiblioteket har gitt `strlen()` funksjonen siden det gamle C89 standard. Funksjonen teller antall karakterer i en C-streng før den treffer den avsluttende null byte (`\0`).
-Alternativer til `strlen()` vil være å iterere gjennom strengen manuelt med en løkke, selv om dette kan være mindre effektivt og mer feilutsatt.
-Hoveddetaljen å merke seg er at `strlen()` ikke teller den avsluttende null-byte når den returnerer lengden, så alltid ta dette til betraktning i din kode.
+## Deep Dive
+I de gamle C-dagene (før `string.h`), måtte man selv loope gjennom en streng for å finne lengden. Slik ser en manuell funksjon for å telle tegn ut:
 
-## Se Også:
-1. [C Library - `strlen()`](http://www.cplusplus.com/reference/cstring/strlen/)
-2. [C String Handling](https://en.wikipedia.org/wiki/C_string_handling)
-3. [C Programming/String manipulation](https://en.wikibooks.org/wiki/C_Programming/String_manipulation)
+```C
+int stringLength(const char* str) {
+    const char* ptr = str;
+    while (*ptr) ++ptr;
+    return ptr - str;
+}
+```
+
+`strlen()` er enklere men vit at den teller til den treffer null-tegnet (`'\0'`). Det betyr at det ikke fungerer for strenger som ikke er null-terminerte. Alternativer inkluderer å bruke `std::string` i C++, som holder styr på lengden internt, eller å ha en tilpasset datastruktur som lagrer lengden.
+
+## See Also
+- C Standard Library Reference: https://en.cppreference.com/w/c/string/byte/strlen
+- Discussion on `strlen()` vs `sizeof`: https://stackoverflow.com/questions/37538/how-do-i-determine-the-size-of-my-array-in-c
+- About `std::string` in C++ (if you're curious about the neighbor): https://en.cppreference.com/w/cpp/string/basic_string

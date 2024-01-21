@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
+date:                  2024-01-20T18:02:01.895683-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Java"
 category:             "Java"
@@ -11,54 +12,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Sending an HTTP request with basic authentication is a method of accessing web resources that requires credentials - a username and password. Its primary use is to protect sensitive data by making sure requests are legitimate, hence preventing unauthorized access.
+Sending an HTTP request with basic authentication involves adding a header with a username and password to access a protected resource. Programmers use it for simple authorization in web services when more advanced methods aren't necessary.
 
 ## How to:
-
-Here's how to send an HTTP request with basic authentication in Java using the `HttpURLConnection` class.
+Java makes it pretty straightforward to send HTTP requests with basic authentication using the `HttpURLConnection` class. Here's a quick example:
 
 ```java
 import java.io.BufferedReader;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
-public class Main {
-    public static void main(String[] args) throws Exception {
-        String userCredentials = "username:password";
-        String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
+public class BasicAuthRequest {
 
-        URL url = new URL("http://example.com");
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+    public static void main(String[] args) {
+        try {
+            URL url = new URL("http://example.com/resource");
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            
+            String userCredentials = "user:password";
+            String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes(StandardCharsets.UTF_8)));
+            connection.setRequestProperty("Authorization", basicAuth);
 
-        connection.setRequestProperty("Authorization", basicAuth);
-        connection.setRequestMethod("GET");
-        connection.setDoOutput(true);
+            int responseCode = connection.getResponseCode();
+            System.out.println("Response Code: " + responseCode);
 
-        InputStream content = (InputStream)connection.getInputStream();
-        BufferedReader in = new BufferedReader(new InputStreamReader(content));
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
 
-        in.lines().forEach(System.out::println);
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                in.close();
+
+                System.out.println(response.toString());
+            } else {
+                System.out.println("GET request not worked");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 ```
-
-This code sends a GET request to `http://example.com` using a username and password set in `userCredentials`. The server's response is then printed line by line.
+Sample Output:
+```
+Response Code: 200
+{ "message": "This is a response from a protected resource!" }
+```
 
 ## Deep Dive
+Basic authentication has been around since the early days of HTTP. It works by transmitting base64-encoded credentials in the header, making it simple but not very secure without HTTPS, as credentials can be easily decoded. 
 
-The basic HTTP authentication we're using here is as old as the internet. First defined in 1999 by the Internet Engineering Task Force, it's made to be simple and fast for resources that don't need high-level security.
+Alternatives like OAuth add another layer of security by using tokens instead. Token-based authentication is preferred nowadays, particularly for RESTful APIs.
 
-One alternative is Digest Authentication, which is a tad more secure as it involves hashing and doesn't send passwords in plaintext. However, it's slower due to the added complexity.
-
-The `Base64.getEncoder().encode(userCredentials.getBytes())` line in the code means we're not sending our login details in plaintext. The encoder transforms the text to a format that can be reliably sent over networks.
-
-Also, it's worth noting the downside of basic authentication: It's not as safe for high-security needs since the encoded username and password can be decoded quite easily. That's why for very secure needs, it's best to use stronger methods like OAuth, which also handles permissions between applications.
+When implementing basic access authentication in Java, the recommended way since Java 11 is using the new `HttpClient` class. It's more versatile and supports HTTP/2 out of the box. Still, for basic requirements or legacy systems, `HttpURLConnection` remains a viable option.
 
 ## See Also
-
-- Overview of HTTP Authentication Schemes: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- More authentication options (OAuth, Bearer JWT, etc.): [https://auth0.com/docs/authorization/flows](https://auth0.com/docs/authorization/flows)
+- [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+- [Oracle Java 11 HTTP Client API Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
+- [Baeldung guide on Java HTTP requests](https://www.baeldung.com/java-http-request)

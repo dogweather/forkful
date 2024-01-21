@@ -1,6 +1,7 @@
 ---
 title:                "Enviando una solicitud http"
-html_title:           "Bash: Enviando una solicitud http"
+date:                  2024-01-20T17:59:36.162588-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Enviando una solicitud http"
 programming_language: "C++"
 category:             "C++"
@@ -10,53 +11,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué y Por Qué?
+Enviar una solicitud HTTP es comunicarse con un servidor web, pidiendo información o enviando datos. Los programadores lo hacen para integrar funciones de red, como consumir APIs o servicios web en sus aplicaciones.
 
-Un 'HTTP Request' es una solicitud que tu programa envía a un servidor web. Los programadores lo utilizan para interactuar con APIs de terceros, descargar contenido de internet, enviar datos de formulario, entre otras cosas.
+## Cómo hacerlo:
+Aquí utilizaremos la biblioteca [C++ Requests](https://github.com/libcpr/cpr), una envoltura simple y moderna para hacer solicitudes HTTP en C++ inspirada por la biblioteca Python requests. Primero, instálala:
 
-## Cómo hacer:
+```bash
+git clone https://github.com/libcpr/cpr.git
+cd cpr
+mkdir build && cd build
+cmake ..
+make
+sudo make install
+```
 
-Para enviar una solicitud HTTP en C++, puedes usar la biblioteca cURL, así:
+Ejemplo de solicitud GET:
 
 ```C++
-#include <curl/curl.h>
+#include <cpr/cpr.h>
+#include <iostream>
 
 int main() {
-    CURL *curl;
-    CURLcode res;
-
-    curl_global_init(CURL_GLOBAL_DEFAULT);
-
-    curl = curl_easy_init();
-    if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-
-        res = curl_easy_perform(curl);
-
-        if(res != CURLE_OK) {
-            fprintf(stderr, "curl_easy_perform() falló: %s\n", curl_easy_strerror(res));
-        }
-
-        curl_easy_cleanup(curl);
-    }
-
-    curl_global_cleanup();
-
-    return 0;
+    cpr::Response r = cpr::Get(cpr::Url{"http://httpbin.org/get"});
+    std::cout << "Estatus: " << r.status_code << std::endl;
+    std::cout << "Cuerpo: " << r.text << std::endl;
 }
 ```
-Este código solicita el contenido del sitio "http://example.com". Si la solicitud se realiza con éxito, el contenido se imprimirá en la salida estándar.
 
-## En profundidad:
+Ejemplo de solicitud POST:
 
-Las solicitudes HTTP datan de la creación del protocolo HTTP en 1991. En C++, cURL ha sido la biblioteca estándar para manejar solicitudes HTTP desde su lanzamiento en 1997.
+```C++
+#include <cpr/cpr.h>
+#include <iostream>
 
-Se puede usar otras bibliotecas como Boost.Asio or POCO para enviar solicitudes HTTP en C++, pero cURL es la más común debido a su simplicidad y amplio soporte.
+int main() {
+    cpr::Response r = cpr::Post(cpr::Url{"http://httpbin.org/post"},
+                                cpr::Body{"Este es el cuerpo del mensaje"},
+                                cpr::Header{{"Content-Type", "text/plain"}});
+    std::cout << "Estatus: " << r.status_code << std::endl;
+    std::cout << "Cuerpo: " << r.text << std::endl;
+}
+```
 
-Cuando envías una solicitud HTTP usando cURL, en realidad estás creando una conexión TCP con el servidor, enviando los datos de la solicitud y esperando la respuesta. Los detalles de este proceso son manejados por la biblioteca cURL, pero es útil entender lo que ocurre a bajo nivel.
+Salida para ambos, respectivamente, podría ser:
 
-## Ver también:
+```
+Estatus: 200
+Cuerpo: {
+  "args": {}, 
+  ...
+}
+```
 
-- Documentación de cURL: https://curl.haxx.se/libcurl/c/
-- Tutorial de Boost.Asio: https://www.boost.org/doc/libs/1_70_0/doc/html/boost_asio/tutorial.html
-- Tutorial de POCO HTTP: https://pocoproject.org/docs/00200-HTTPUserGuide.html
+```
+Estatus: 200
+Cuerpo: {
+  "data": "Este es el cuerpo del mensaje",
+  ...
+}
+```
+
+## Análisis Detallado:
+Historia: El protocolo HTTP se define en el RFC 2616. Desde su aparición en 1991, ha sido fundamental en la web.
+
+Alternativas: Aparte de `libcpr`, hay otras bibliotecas como `libcurl` y `Boost.Beast`. `libcurl` es más antigua y completa, mientras que `Boost.Beast` es parte de Boost, así que puede ser más compleja.
+
+Detalles de implementación: Al enviar una solicitud HTTP, típicamente necesitas un verbo HTTP (GET, POST, PUT, DELETE...), una URL, encabezados opcionales y, para algunos verbos, un cuerpo de mensaje. Las respuestas contienen un código de estado (como 200 para éxito) y, normalmente, un cuerpo de mensaje.
+
+## Ver También:
+1. [C++ Requests GitHub](https://github.com/libcpr/cpr)
+2. [libcurl](https://curl.se/libcurl/)
+3. [Boost.Beast](https://www.boost.org/doc/libs/1_75_0/libs/beast/doc/html/index.html)
+4. [RFC 2616 - Protocolo HTTP 1.1](https://www.ietf.org/rfc/rfc2616.txt)

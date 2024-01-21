@@ -1,6 +1,7 @@
 ---
 title:                "Читання аргументів командного рядка"
-html_title:           "Arduino: Читання аргументів командного рядка"
+date:                  2024-01-20T17:57:50.314976-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Читання аргументів командного рядка"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,27 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Прочитаємо аргументи командного рядка в TypeScript!
+## Що це таке та навіщо?
 
-## Що й навіщо?
-Читання аргументів командного рядка - це процес, коли ваша програма збирає ввід користувача при виклику команди, тобто переде вашею програмою. Це робить ваш код більш гнучким і більш реактивним на дії користувача.
+Читання аргументів командного рядка дозволяє вашій програмі отримувати вхідні дані при її запуску. Програмісти роблять це, щоб зробити свої програми гнучкішими та керованими без зміни коду.
 
-## Як це робити:
-Більшість програм в Node.js отримує аргументи командного рядка через об'єкт `process.argv`. В TypeScript це може виглядати так:
+## Як це зробити:
+
+Щоб прочитати аргументи командного рядка в TypeScript, вам знадобиться Node.js та пара рядків коду. Ось приклад:
+
 ```TypeScript
-const args = process.argv.slice(2); // Відрізаємо перші два аргументи
-console.log(args)
-```
-Запустіть цей код із додатковими параметрами, щоб побачити результат:
-```
-$ node yourscript.ts firstArg secondArg thirdArg
-[ 'firstArg', 'secondArg', 'thirdArg' ]
+// У файлі index.ts
+
+// Отримуємо аргументи командного рядка, починаючи з третього елементу масиву,
+// оскільки перші два - це шлях до runtime та виконуваного файлу.
+const args = process.argv.slice(2);
+
+console.log('Отримані аргументи командного рядка:', args);
+
+// Запуск програми: 
+// node index.ts hello world
+// Виведення:
+// Отримані аргументи командного рядка: [ 'hello', 'world' ]
 ```
 
-## Занурення глибше:
-Історично мови, такі як C і Perl, використовували хитру специфікацію "argv" для передачі аргументів командного рядка. Node.js схожий на ці мови. Багато модулей Node.js, як-от `minimist` і `yargs`, виходять за рамки базового `process.argv` для створення більш зручного аналізу аргументів.
+## Поглиблений огляд
 
-## Дивись також:
-- [модуль Node.js `yargs`](https://www.npmjs.com/package/yargs)
-- [модуль Node.js `minimist`](https://www.npmjs.com/package/minimist)
-- [Аргументи командного рядка в C (EN)](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html#Program-Arguments)
+Читання аргументів командного рядка - стара добра техніка з часів, коли інтерфейси командного рядка були найпоширенішим способом взаємодії з комп'ютерами. Щодо альтернатив, можна використовувати бібліотеки як `commander` або `yargs` для парсингу керованих аргументів та флагів. Вони забезпечують потужні функції, такі як валідація, задання аргументів за умовчанням, та автоматичну генерацію довідки. У TypeScript можна прочитати аргументи за допомогою `process.argv`, яке вбудоване в Node.js, для прямого отримання вхідних даних без додаткових залежностей.
+
+## Додаткові ресурси
+
+- Node.js `process.argv` документація: [https://nodejs.org/docs/latest/api/process.html#process_process_argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- `commander` NPM пакет: [https://www.npmjs.com/package/commander](https://www.npmjs.com/package/commander)
+- `yargs` NPM пакет: [https://www.npmjs.com/package/yargs](https://www.npmjs.com/package/yargs)
+- Гайд по використанню командного рядка: [https://www.codecademy.com/articles/command-line-commands](https://www.codecademy.com/articles/command-line-commands)

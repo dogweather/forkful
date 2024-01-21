@@ -1,7 +1,8 @@
 ---
-title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+date:                  2024-01-20T18:02:46.712294-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,44 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# TypeScriptilla HTTP-pyynnön lähettäminen Basic Authenticationin kanssa
-
 ## Mitä & Miksi?
-Basic Authentication on yksinkertainen tapa suojata HTTP-pyynnöt salasanalla. Se on yksinkertainen ja laajasti tuettu tapa varmistaa, etteivät tuntemattomat pysty lukemaan tai muokkaamaan tietojasi.
+Lähettäessäsi HTTP-pyyntöä perusautentikoinnilla lisäät käyttäjätunnuksen ja salasanan pyyntöösi. Ohjelmoijat tekevät tämän varmistaakseen käyttöoikeudet ennen tietojen vastaanottamista tai lähettämistä.
 
-## Näin tehdään:
-Käytämme `axios`-kirjastoa, joka on lupaava HTTP-asiakas JavaScriptille ja TypeScriptille. Lähetämme GET-pyynnön suojattuun endpointiin.
-
+## Kuinka:
 ```TypeScript
 import axios from 'axios';
 
-const sendRequest = async () => {
-  const options = {
-    url: 'https://your-endpoint.com',
-    method: 'GET',
-    headers: {
-      'Authorization': 'Basic ' + btoa('username:password')
-    }
-  };
+// Käytäjätunnuksesi ja salasanasi
+const username: string = 'kayttaja';
+const password: string = 'salasana';
 
-  const response = await axios(options);
-  console.log(response.data); 
-}
+// Perusautentikaation tokenin luonti
+const basicAuth: string = 'Basic ' + Buffer.from(username + ':' + password).toString('base64');
 
-sendRequest();
+// HTTP-pyyntö
+axios.get('https://api.esimerkki.fi/data', {
+  headers: { Authorization: basicAuth }
+})
+.then(response => {
+  console.log(response.data);
+})
+.catch(error => {
+  console.error('Virhe pyynnön aikana:', error);
+});
 ```
 
-## Syvemmälle sukeltaminen
+Sample output:
+```
+{ tiedot: "Tässä on vastauksesi data." }
+```
 
-Basic Authentication on ollut olemassa jo vuosikymmenten ajan, ja se on edelleen yksi helpoimmista tavoista suojata verkkopyynnöt. Se ei ole täydellinen - etenkin kun käytetään yhdessä https:n kanssa, se voi olla hyökkäysten kohde - mutta se on edelleen hyödyllinen monissa tapauksissa.
+## Syväsukellus
+Perusautentikaatio HTTP:ssä on vanha menetelmä, jossa käyttäjätunnus ja salasana lähetetään Base64-koodattuina. Turvallisempi vaihtoehto moderniin API-viestintään on OAuth tai JWT (JSON Web Tokens), jotka tarjoavat vahvemman salauksen ja lisäominaisuuksia. Perusautentikaatiota käytettäessä transmissiosuojaus on olennaista (käytä HTTPS), jotta tietojen urkinta estetään.
 
-On myös vaihtoehtoja, kuten bearer token -autentikointi tai digest-access-autentikointi, jotka saattavat olla parempia joissain tilanteissa. Minkä lähestymistavan valitset, riippuu tarpeista, teknisistä vaatimuksista ja turvallisuusnäkökohdista.
+Toteutuksessa on tärkeää käsitellä myös virhevastauksia HTTP-pyynnöissä. Esimerkkikoodissa käytetään axios-kirjastoa, joka on suosittu vaihtoehto HTTP-pyyntöjen tekemiseen, ja se tukee lupauksiin (promises) perustuvaa asynkronista käsittelyä virheiden hallintaan.
 
-Implementaatiossa kannattaa huomata, miten käytämme 'btoa'-funktiota muuttamaan käyttäjätunnus ja salasana base64-muotoon. Tämä on tärkeä osa Basic Authentication -protokollaa.
-
-## Katso myös:
-
-1. [Axios-kirjaston dokumentaatio](https://axios-http.com/)
-2. [Basic Authentication: formal definition](https://datatracker.ietf.org/doc/html/rfc7617)
-3. [MDN web docs: HTTP authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-4. [HTTP Authentication Schemes](https://www.iana.org/assignments/http-authschemes/http-authschemes.xhtml)
+## Katso Myös
+- MDN Web Docs, Basic authentication: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme
+- Axios GitHub repository: https://github.com/axios/axios
+- OAuth 2.0 authorization framework: https://oauth.net/2/
+- JWT (JSON Web Tokens): https://jwt.io/

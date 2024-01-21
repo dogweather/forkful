@@ -1,7 +1,8 @@
 ---
-title:                "Strings verketten"
-html_title:           "Bash: Strings verketten"
-simple_title:         "Strings verketten"
+title:                "Zeichenketten verknüpfen"
+date:                  2024-01-20T17:34:24.365843-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Zeichenketten verknüpfen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,47 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und Warum?
+## What & Why?
+String-Konkatenation ist das Verbinden von zwei oder mehreren Strings. Programmierer nutzen dies, um Textdynamisch zusammenzusetzen oder Daten zu formatieren.
 
-Zusammenfügen von Zeichenketten (englisch "string concatenation") bedeutet, zwei oder mehrere Zeichenketten zu einer einzigen Zeichenkette zu vereinen. Es ist eine grundlegende Operation in der Programmierung, um dynamische Inhalte zu erstellen, Meldungen zu formatieren oder Daten zu speichern und auszugeben.
-
-## Wie es geht:
-
-In Elixir verwenden wir das `<>` Operator, um Zeichenketten zu verbinden. Hier sind einige Beispiele:
-
-Wir können zwei Zeichenketten so zusammenfügen:
-
+## How to:
+In Elixir erfolgt die Konkatenation mit dem `<>` Operator. Hier sind ein paar Beispiele:
 ```Elixir
-name = "Max"
-greeting = "Hallo, " <> name
-IO.puts greeting
-```
-Dies wird auf der Konsole ausgeben:
-`Hallo, Max`
-
-Wenn wir Inhalte dynamisch generieren, sieht das zum Beispiel so aus:
-
-```Elixir
-count = 3
-message = "Sie haben " <> Integer.to_string(count) <> " neue Nachrichten."
-IO.puts message
-```
-Dies gibt aus: `Sie haben 3 neue Nachrichten.`
-
-## Tiefer einsteigen:
-
-Historisch gesehen gibt es in vielen Programmiersprachen Methoden, um Zeichenketten zu verbinden. In früheren Versionen von Elixir verknüpften wir Zeichenketten mit der plus-Operator, aber seit Version 1.0 verwenden wir `<>` dafür.
-
-Es gibt auch alternative Möglichkeiten, um Zeichenketten in Elixir zu verbinden, etwa mit Interpolation:
-
-```Elixir
-count = 3
-message = "Sie haben #{count} neue Nachrichten."
-IO.puts message
+string1 = "Hallo"
+string2 = "Welt"
+ergebnis = string1 <> " " <> string2
+IO.puts(ergebnis) # Gibt aus: Hallo Welt
 ```
 
-Das vereinfacht oft den Code und macht ihn leichter lesbar, ist aber nicht immer die beste Lösche - etwa dann, wenn Performance in Spiel ist, da `<>` schneller als die Interpolation sein kann.
+Und mit Variablen:
+```Elixir
+name = "Hans"
+begrüßung = "Guten Tag, " <> name <> "!"
+IO.puts(begrüßung) # Gibt aus: Guten Tag, Hans!
+```
 
-## Siehe auch:
+Auch mit Listen von Strings:
+```Elixir
+teile = ["Anfang-", "und", "-Ende"]
+vollständig = Enum.join(teile, " ")
+IO.puts(vollständig) # Gibt aus: Anfang- und -Ende
+```
 
-Für weiterführende Lektüren, schauen Sie bitte die offizielle Elixir Dokumentation hier: https://hexdocs.pm/elixir/String.html. Es hat viele Informationen und Beispiele für die Arbeit mit Zeichenketten und andere Datenformate in Elixir.
+## Deep Dive
+In Elixir sind Strings binäre Daten und UTF-8-kodiert. Historisch gesehen war die Verarbeitung von Zeichenketten in den meisten Programmiersprachen ein Kernfeature, aber die Art und Weise, wie es in Elixir gehandhabt wird, erlaubt es effizient mit Binärdaten zu arbeiten.
+
+Alternativ zur Konkatenation gibt es auch Interpolation in Elixir, welche manchmal klarer sein kann:
+```Elixir
+name = "Ingrid"
+nachricht = "Hallo #{name}!"
+IO.puts(nachricht) # Gibt aus: Hallo Ingrid!
+```
+
+Die String-Interpolation ist oft schneller als die Konkatenation für komplexe Zusammenstellungen, weil der Erlang VM einmalig einen neuen Binärblock alloziieren kann, anstatt viele kleine zusammenzufügen.
+
+Elixir verwendet Binärdaten unter der Haube und behandelt Unicode-Sequenzen mit voller Genauigkeit, sodass Zeichen aller Sprachen sicher verbunden werden können.
+
+## See Also
+- Offizielle Elixir Dokumentation zu Strings: https://hexdocs.pm/elixir/String.html
+- Erlang's Handling von Binärdaten: https://erlang.org/doc/efficiency_guide/binaryhandling.html
+- Elixir School für mehr über Strings und Interpolation: https://elixirschool.com/de/lessons/basics/strings/

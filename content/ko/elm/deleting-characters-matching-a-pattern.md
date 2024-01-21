@@ -1,6 +1,7 @@
 ---
 title:                "패턴에 일치하는 문자 삭제"
-html_title:           "Fish Shell: 패턴에 일치하는 문자 삭제"
+date:                  2024-01-20T17:42:21.544655-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "패턴에 일치하는 문자 삭제"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,37 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 필요한가?
+## What & Why? (무엇 & 왜?)
+문자 패턴에 일치하는 문자들을 지운다는 것은, 특정 규칙을 가진 문자들을 문자열에서 제거하는 것입니다. 프로그래머들은 데이터 정제, 특수문자 제거 또는 입력값 형식화 같은 이유로 이 작업을 실행합니다.
 
-문자열에서 특정 패턴에 일치하는 문자들을 제거하는 것은 마치 한 문서에서 특정 단어들을 빼내는 것과 같습니다. 시스템이 더 깔끔한 상태를 유지할 수 있으며, 사용자가 쉽게 데이터를 이해하고 조작할 수 있게 해 줌으로써 프로그래머들이 이것을 흔히 사용합니다.
-
-## 어떻게 사용하는가:
-
-Elm에서는 String 모듈의 `replaceAll` 함수를 사용하여 특정 패턴에 일치하는 모든 문자들을 제거합니다.
+## How to (실제 구현 방법):
+Elm에서 문자 패턴에 맞는 문자를 삭제하려면, 정규표현식을 사용할 수 있습니다. 다음은 간단한 사용 예입니다:
 
 ```Elm
-import String
+import Regex exposing (replace, regex)
 
-str : String
-str = "안녕하세요, Elm 프로그래밍을 배워봅시다"
-
-removePattern : String -> String -> String
-removePattern str pattern = 
-    String.replaceAll pattern "" str
+deletePattern : String -> String -> String
+deletePattern pattern input =
+    replace (regex pattern) (\_ -> "") input
 
 main =
-    removePattern str "안녕"
+    deletePattern "[0-9]" "Elm 0.19 is the current version in 2023!" 
+    -- 결과: "Elm . is the current version in !"
 ```
-위의 코드의 결과로 `"하세요, Elm 프로그래밍을 배워봅시다"`가 출력됩니다.
 
-## 깊이 들여다보기:
+데이터가 정해진 형태로 가공되야 할 때 이 방법이 유용합니다.
 
-문자열에서 특정 패턴을 제거하는 것은 Unix의 `sed` 장치에서 시작되었습니다. 이는 문자열 조작에 필요한 매우 강력한 도구로 간주되었습니다. 오늘날, 거의 모든 프로그래밍 언어에서는 이 기능의 변형을 구현하고 있습니다. Elm에서는 `replaceAll` 함수 제공하며, 이는 문자열 내 패턴을 특정 문자열로 교체하는 기능을 가지고 있습니다. 이 함수에 빈 문자열("")을 입력하면 원하는 패턴의 모든 인스턴스가 제거됩니다.
+## Deep Dive (신중한 파악):
+문자 패턴을 지우는 기능은 정규표현식을 기반으로 합니다. 정규표현식은 1950년대 수학자 스티븐 클리니가 만든 개념에서 비롯되었습니다. Elm에서는 `Regex` 모듈을 통해 이 기능을 사용할 수 있는데, 이 모듈은 내부적으로 JavaScript의 정규표현식 엔진을 사용합니다.
 
-## 그 밖에 참고할 만한 자료:
+대안으로, 만약 단순한 문자만을 제거하기 원한다면, Elm의 `String` 모듈에 있는 `filter` 함수를 사용할 수도 있습니다:
 
-[Elm 공식 문서: String 패키지](https://package.elm-lang.org/packages/elm/core/latest/String)
+```Elm
+import String exposing (filter)
 
-[stackoverflow: 문자열에서 패턴 제거](https://stackoverflow.com/questions/25421366/how-to-remove-the-first-character-of-a-string)
+deleteDigits : String -> String
+deleteDigits = 
+    filter (\char -> not (char >= '0' && char <= '9'))
 
-[Elm 기본 문자열 관련 함수들에 대한 설명](https://korhner.github.io/elm/cheat-sheets/elm-string/)
+main =
+    deleteDigits "Elm 0.19 is the current version in 2023!" 
+    -- 결과: "Elm . is the current version in !"
+```
+
+`filter` 함수는 더 읽기 쉽고 이해하기 쉬운 코드를 작성하게 해줍니다. 하지만, 정규표현식은 복잡한 패턴을 다룰 때 더 강력합니다.
+
+## See Also (함께 보기):
+- Elm `Regex` module documentation: [Elm Regex Documentation](https://package.elm-lang.org/packages/elm/regex/latest/)
+- Elm `String` module documentation: [Elm String Documentation](https://package.elm-lang.org/packages/elm/core/latest/String)
+- 정규표현식에 대한 기본 가이드: [Regular Expressions Info](https://www.regular-expressions.info/)
+- Regex101, 정규표현식을 테스트하고 연습할 수 있는 웹사이트: [Regex101](https://regex101.com/)

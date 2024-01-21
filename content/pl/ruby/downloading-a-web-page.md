@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C#: Pobieranie strony internetowej"
+date:                  2024-01-20T17:44:36.361540-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,51 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why?
+## Co i dlaczego?
 
-Pobieranie strony internetowej to technika pozyskiwania i zapisywania danych z określonego URL. Programiści robią to, aby przetworzyć, analizować lub wykorzystać treści stron internetowych w swoich projektach.
+Pobieranie strony internetowej to proces ściągania jej zawartości do analizy lub przetwarzania. Programiści robią to, by np. zbierać dane (web scraping), monitorować zmiany czy testować aplikacje.
 
+## How to:
 ## Jak to zrobić:
 
-Aby pobrać stronę internetową za pomocą języka programowania Ruby, możemy użyć biblioteki `open-uri`. Oto prosty kod, który to robi:
+Przykład w Ruby wykorzystuje gem `net/http` do pobrania strony:
 
-```ruby
-require 'open-uri'
-
-url = 'http://example.com'
-
-open(url) do |webpage|
-  File.open('my_local_file.html', 'w') do |file|
-    file.write(webpage.read)
-  end
-end
-```
-
-Jako wynik, dane ze strony `http://example.com` zostaną pobrane i zapisane lokalnie w pliku `my_local_file.html`.
-
-## Pogłębienie:
-
-Pobieranie stron internetowych ma swoje korzenie w początkach internetu, kiedy HTML był jedynym językiem odpowiedzialnym za wygląd i zawartość strony. Przy użyciu niewielkiego fragmentu kodu, programiści mogą pobierać i analizować te dane, jakkolwiek chcą.
-
-Warto jednak pamiętać o innym popularnym narzędziu jakim jest `Net::HTTP` z biblioteki standardowej Ruby.
-
-```ruby
+```Ruby
 require 'net/http'
+require 'uri'
 
-url = 'http://example.com'
-response = Net::HTTP.get_response(URI(url))
-
-File.open('my_second_local_file.html', 'w') do |file|
-  file.write(response.body)
+def download_webpage(url)
+  uri = URI(url)
+  response = Net::HTTP.get(uri)
+  puts response
 end
+
+download_webpage('http://example.com')
 ```
 
-Wiadomość `HTTP GET` jest wysyłana do serwera, a korpus odpowiedzi (stronę internetową) zapisujemy w pliku. Metoda `Net::HTTP#get_response` jest bardziej skomplikowana, ale daje nam pełną kontrolę nad żądaniami i odpowiedziami HTTP, co jest przydatne w przypadku bardziej złożonych operacji.
+Sample output (wyjście próbkowe):
 
-## Zobacz także:
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+    ...
+</head>
+<body>
+...
+</body>
+</html>
+```
 
-1. Dokumentacja open-uri: [https://www.rubydoc.info/stdlib/open-uri](https://www.rubydoc.info/stdlib/open-uri)
+## Deep Dive
+## W głąb tematu
 
-2. Dokumentacja Net::HTTP: [https://ruby-doc.org/stdlib-3.0.1/libdoc/net/http/rdoc/Net/HTTP.html](https://ruby-doc.org/stdlib-3.0.1/libdoc/net/http/rdoc/Net/HTTP.html)
+W Ruby, klasy z modułu `net/http` są używane od lat do interakcji z HTTP. Alternatywą jest `open-uri` dla prostych zastosowań lub gem `httparty` dla większej kontroli nad żądaniami. Głębsze szczegóły implementacji `net/http` obejmują obsługę różnych metod HTTP, szyfrowanie SSL/TLS i możliwość pracy z proxy.
 
-3. Artykuł o przetwarzaniu HTML w Ruby: [https://nokogiri.org](https://nokogiri.org)
+## See Also
+## Zobacz również
+
+- Ruby `Net::HTTP` dokumentacja: https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/Net/HTTP.html
+- `httparty` gem: https://github.com/jnunemaker/httparty
+- Przewodnik po web scraping w Ruby: https://www.rubyguides.com/2012/01/web-scraping-tutorial-ruby/

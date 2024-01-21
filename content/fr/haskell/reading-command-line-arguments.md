@@ -1,6 +1,7 @@
 ---
 title:                "Lecture des arguments de ligne de commande"
-html_title:           "Ruby: Lecture des arguments de ligne de commande"
+date:                  2024-01-20T17:56:11.514412-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,40 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## What & Why?
+Lire les arguments de la ligne de commande, c'est récupérer les données que l'utilisateur passe à votre programme lors de son exécution. On le fait pour personnaliser le comportement du programme sans changer le code.
 
-La lecture des arguments de ligne de commande est une pratique que les programmeurs utilisent pour obtenir des informations de l'utilisateur. Cela permet à l'utilisateur de diriger le comportement du programme en entrant des valeurs spécifiques lors de l'exécution.
+## How to:
+Haskell rend la lecture des arguments de la ligne de commande assez simple avec le module `System.Environment`.
 
-## Comment faire :
-
-Voici un exemple simple. Utilisons le module `System.Environment`.
-
-```Haskell
+```haskell
 import System.Environment
 
+main :: IO ()
 main = do
     args <- getArgs
-    print args
+    case args of
+        [name, age] -> putStrLn $ "Bonjour, " ++ name ++ "! Vous avez " ++ age ++ " ans."
+        _           -> putStrLn "Usage: ./your_program <name> <age>"
 ```
 
-Quand vous exécutez un programme avec des arguments comme `./program arg1 arg2`, `args` devient une liste de chaînes de caractères : `["arg1","arg2"]`.
+Si vous compilez ce code et que vous l'exécutez avec des arguments, voici ce que cela donne :
 
-## Plongée en profondeur
-
-Historiquement, la lecture des arguments de ligne de commande est une pratique commune depuis l'aube de l'informatique, où les interfaces de ligne de commande étaient la norme.
-
-Pour affiner votre contrôle, vous pouvez utiliser la fonction `getProgName` du même module, qui retourne le nom du programme.
-
-```Haskell
-name <- getProgName 
+```bash
+$ ./your_program Jean 30
+Bonjour, Jean! Vous avez 30 ans.
 ```
 
-Dans Haskell, il existe aussi des bibliothèques plus sophistiquées pour la gestion des arguments de ligne de commande, comme `optparse-applicative` et `cmdargs`.
+## Deep Dive
+La fonction `getArgs` fait partie de `System.Environment` et existe depuis les premières versions de Haskell. C'est la méthode de base pour accéder aux arguments de la ligne de commande, mais il existe des bibliothèques plus sophistiquées, comme `optparse-applicative`, qui offrent un parsing plus élaboré et des messages d'aide automatiques.
 
-## Voir aussi
+Sous le capot, `getArgs` appelle le code de votre système d'exploitation pour obtenir les arguments. Haskell repose sur une abstraction IO monad qui rend les effets secondaires comme la lecture des arguments explicitement gérés dans les types.
 
-Pour plus d'information, consultez les documents officiels sur `System.Environment`: http://hackage.haskell.org/package/base-4.12.0.0/docs/System-Environment.html 
+Par rapport aux autres langages, Haskell est unique avec ses fonctions pures et l'IO monad. Cette séparation renforce la fiabilité du code, mais peut être inhabituelle pour les nouveaux venus.
 
-Pour un guide sur `optparse-applicative`, voir ici: https://github.com/pcapriotti/optparse-applicative 
-
-Pour `cmdargs`, consultez: https://github.com/ndmitchell/cmdargs
+## See Also
+- Documentation de `System.Environment`: http://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html
+- `optparse-applicative` pour des options de ligne de commande avancées : https://hackage.haskell.org/package/optparse-applicative
+- Tutoriel sur l'IO monad pour une compréhension approfondie de la gestion des effets en Haskell : https://wiki.haskell.org/IO_inside

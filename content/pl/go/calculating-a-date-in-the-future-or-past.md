@@ -1,6 +1,7 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
-html_title:           "Go: Obliczanie daty w przyszłości lub przeszłości"
+date:                  2024-01-20T17:31:10.130470-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Go"
 category:             "Go"
@@ -10,16 +11,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-
-Obliczanie daty w przyszłości lub przeszłości polega na dodawaniu lub odejmowaniu dni, miesięcy i lat od konkretnej daty. Programiści robią to, na przykład, aby ustalić, kiedy wygasa określony termin albo aby sprawdzić jak długo coś trwało.
+## Co i Dlaczego?
+Obliczanie dat przyszłych lub minionych to po prostu znajdowanie daty, która jest określonym odstępem czasu od daty bazowej. Programiści robią to do obsługi ważności, planowania zadań, czy też przewidywania czasu wydarzeń przyszłych.
 
 ## Jak to zrobić:
-
-W języku Go, możemy skorzystać z pakietu `time` aby obliczyć datę w przyszłości lub przeszłości. Wystarczy wywołać metodę `AddDate` na obiekcie `time.Time`, podając ilość lat, miesięcy i dni jako parametry.
-
-Zobaczmy przykład:
-
 ```Go
 package main
 
@@ -29,29 +24,28 @@ import (
 )
 
 func main() {
-	t := time.Now()
-	fmt.Println("Dzisiaj:", t.Format("2006-01-02"))
+	today := time.Now()
+	fmt.Println("Dzisiaj:", today.Format("02-01-2006"))
 
-	future := t.AddDate(0, 0, 10)
-	fmt.Println("Za 10 dni:", future.Format("2006-01-02"))
+	nextWeek := today.AddDate(0, 0, 7)
+	fmt.Println("Za tydzień:", nextWeek.Format("02-01-2006"))
 
-	past := t.AddDate(0, -1, 0)
-	fmt.Println("Miesiąc temu:", past.Format("2006-01-02"))
+	lastMonth := today.AddDate(0, -1, 0)
+	fmt.Println("Miesiąc temu:", lastMonth.Format("02-01-2006"))
 }
 ```
 
-Po uruchomieniu powyższego kodu zobaczysz wydrukowane dzisiejszą datę, datę za 10 dni oraz datę miesiąca temu.
+Przykładowe wyjście:
+```
+Dzisiaj: 15-04-2023
+Za tydzień: 22-04-2023
+Miesiąc temu: 15-03-2023
+```
 
-## Głębsze spojrzenie
+## Dogłębna analiza:
+Kalkulacje na datach są tak stare, jak konieczność mierzenia czasu. Historia liczenia czasu sięga starożytnego Sumeru. W Go używamy pakietu `time` do operacji na datach. Alternatywnie, można korzystać z bibliotek zewnętrznych jak `dateparse` czy `carbon` dla specyficznych zastosowań. Go już w standardzie oferuje funkcję `AddDate()`, która pozwala na zmianę daty o określoną liczbę lat, miesięcy i dni, a `time.Duration` pozwala na dokładniejsze obliczenia, takie jak godziny, minuty i sekundy.
 
-Częste obliczanie daty w przyszłości lub przeszłości jest powszechne w programowaniu, a różne języki programowania mają różne metody na tego typu operacje. W Go jest to relatywnie proste dzięki wbudowanemu typowi `time.Time`. Z perspektywy historycznej, można powiedzieć że Go zaimplementowało to w bardziej prostej i zwięzłej formie niż wiele innych języków.
-
-W Go, wartości `time.Time` są niezmienne, co oznacza, że kiedy dodajesz lub odejmujesz czas do danego obiektu `time.Time`, zwracany jest nowy obiekt a nie modyfikowany istniejący.
-
-Jeśli potrzebujesz alternatywy do metody `AddDate`, możesz zastosować metodę `Add`, podając jako parametr obiekt `time.Duration`.
-
-## Zobacz także
-
-- Dokumentacja pakietu time w Go: https://pkg.go.dev/time
-- Poradnik do stosowania czasu i daty w Go: https://yourbasic.org/golang/time-date-difference-format-parse
-- Wprowadzenie do date i time w Go na blogu Go: https://blog.golang.org/time
+## Zobacz również:
+- Dokumentacja Go na temat pakietu `time`: https://golang.org/pkg/time/
+- Biblioteka `dateparse` dla Go: https://github.com/araddon/dateparse
+- Biblioteka `carbon` dla Go: https://github.com/golang-module/carbon

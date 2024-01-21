@@ -1,6 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-html_title:           "Haskell: Drukowanie komunikatów debugowania"
+date:                  2024-01-20T17:51:59.830377-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "C"
 category:             "C"
@@ -10,34 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-
-Drukowanie wyjścia debugowego to technika programistyczna polegająca na wyświetlaniu informacji o działaniu programu na ekranie. Programiści robią to, żeby zrozumieć, co się dzieje w ich skryptach - to pomaga nam znaleźć i naprawić błędy (bugi).
+## Co i dlaczego?
+Debugowanie to nasz detektywistyczny proces mapowania problemów do rozwiązań. Printowanie outputu w trakcie debugowania pozwala na podglądanie stanu programu w danym punkcie – jak mały światło rzucający światło na nasze kodowe mroki.
 
 ## Jak to zrobić:
-
-Oto podstawowy kod w C, który pokazuje, jak wydrukować wiadomości debugowe:
-
-``` C
+```C
 #include <stdio.h>
 
 int main() {
-   int a = 5;
-
-   printf("Debug: a = %d\n", a);
-
-   return 0;
+    int a = 5;
+    int b = 10;
+    int sum = a + b;
+    // Poniżej prosty print debugujący
+    printf("Debug: a=%d, b=%d, sum=%d\n", a, b, sum);
+    
+    //...kod kontynuuje
+    
+    return 0;
 }
 ```
-Powyższy kod wyświetli: „Debug: a = 5” na ekranie. Użyliśmy standardowej funkcji „printf” do wydrukowania wartości zmiennej „a”.
+Wyjście:
+```
+Debug: a=5, b=10, sum=15
+```
 
-## Deep Dive:
+## Światło w mroku:
+Już w latach 70., programiści używali prostych komunikatów, by zrozumieć, co się dzieje w ich programach. Dziś `printf` to klasyk, ale istnieją alternatywy jak np. `stderr` dla błędów, czy loggera z biblioteki `<syslog.h>` dla systemu Unix. Implementacja outputu debugowego ogólnie zależy od potrzeb: poziomy logowania, formaty, zapis do pliku… różnorodność jest spora, warto ją wykorzystać.
 
-Z historii wiesz, że drukowanie debugowania jest jedną z najstarszych technik debugowania. Ale dzisiaj mamy wiele alternatyw - takie jak debugowanie interaktywne za pomocą debuggerów, logowanie do plików itp.
-
-Jednym z ciekawych aspektów drukowania debugowania w C jest fakt, że funkcja „printf” w rzeczywistości przyjmuje dowolną liczbę argumentów. To jest możliwe dzięki mechanizmom w języku C znanym jako "funkcje o zmiennej liczbie argumentów".
-
-## Zobacz też:
-
-
-Pamiętaj, że drukowanie debugowe jest potężnym narzędziem, ale używaj go mądrze! Nadmierne drukowanie może zaszkodzić wydajności Twojego kodu, a także utrudnić zrozumienie, co się dzieje.
+## Zobacz również:
+- GNU Debugger (GDB): https://www.gnu.org/software/gdb/
+- Manual `printf`: https://en.cppreference.com/w/c/io/fprintf
+- Logging w C: https://www.gnu.org/software/libc/manual/html_node/Logging-Messages.html

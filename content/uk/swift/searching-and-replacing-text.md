@@ -1,6 +1,7 @@
 ---
 title:                "Пошук та заміна тексту"
-html_title:           "C++: Пошук та заміна тексту"
+date:                  2024-01-20T17:58:47.455822-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Пошук та заміна тексту"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,25 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що і Чому?)
+Searching and replacing text lets you find strings within strings and swap them with something else. Programmers do it for tasks like editing user input, processing data, or manipulating text files – basically, to make life easier when dealing with lots of text.
 
-Пошук та заміна тексту - це процедура, коли одну частину коду перетворюють на іншу. Програмісти цим користуються для виправлення помилок, оптимізації коду, або модифікації функціональності.
-
-## Як це робити:
-
-Щоб виконати пошук та заміну в Swift, використовуйте `replacingOccurrences(of:with:)`. Перевірте цей приклад:
+## How to: (Як робити:)
 ```Swift
-var myStr = "Hello, World!"
-myStr = myStr.replacingOccurrences(of: "World", with: "Swift")
-print(myStr) // Outputs: "Hello, Swift!"
+let originalText = "Hello, World!"
+let searchText = "World"
+let replaceText = "Ukraine"
+
+if let range = originalText.range(of: searchText) {
+    let replacedText = originalText.replacingCharacters(in: range, with: replaceText)
+    print(replacedText) // Output: Hello, Ukraine!
+} else {
+    print("Search text not found.")
+}
 ```
 
-## Пікірський огляд:
+## Deep Dive (Глибше Занурення)
+Back in the day, text operations were cumbersome in programming languages, but Swift made them a breeze. Swift's String class has rich functionality for search and replace, using methods like `range(of:)` and `replacingCharacters(in:with:)`. Alternatives? Sure – regular expressions are powerful for complex patterns, and text frameworks provide more features. As for details – Swift's strings are Unicode-compliant, so search-and-replace works smoothly even with diverse alphabets and emojis.
 
-Пошук та заміна тексту - основоположний метод в програмуванні, що виник ще з часів ранніх мов програмування. В Swift ви можете використовувати `replacingOccurrences(of:with:)` вже від версії 2.2. Варто зазначити, що цей метод повертає нову стрічку, а оригінал залишається незмінним. Інша альтернатива - регулярні вирази, але вони можуть бути складні для новачків.
-
-## Дивіться також:
-
-Якщо ви хочете докладніше дізнатися про `replacingOccurrences(of:with:)`, подивіться [офіційну документацію Apple](https://developer.apple.com/documentation/swift/string/2893961-replacingoccurrences).
-Для повного вивчення роботи з рядками в Swift перегляньте цей [підручник](https://www.hackingwithswift.com/read/0/5).
-Також ви можете вивчити використання регулярних виразів в Swift з [цієї статті](https://benscheirman.com/2014/06/regex-in-swift/).
+## See Also (Дивіться також):
+- Swift's String documentation: [https://developer.apple.com/documentation/swift/string](https://developer.apple.com/documentation/swift/string)
+- Regular Expressions in Swift: [https://nshipster.com/swift-regular-expressions/](https://nshipster.com/swift-regular-expressions/)
+- Working with Strings in Swift: [https://www.hackingwithswift.com/articles/108/how-to-use-strings-in-swift](https://www.hackingwithswift.com/articles/108/how-to-use-strings-in-swift)

@@ -1,7 +1,8 @@
 ---
-title:                "Видалення символів, що відповідають патерну"
-html_title:           "C: Видалення символів, що відповідають патерну"
-simple_title:         "Видалення символів, що відповідають патерну"
+title:                "Видалення символів за візерунком"
+date:                  2024-01-20T17:42:23.594076-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Видалення символів за візерунком"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,36 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це та навіщо це потрібно?
+## What & Why? / Що і Чому?
 
-Видалення символів за відповідним їм зразком - це техніка, яка дозволяє програмістам вилучати з рядка певні символи, які відповідають зазначеному зразку. Використовуючи це, програмісти можуть спростити текст для обробки або вилучити не потрібні символи.
+У програмуванні, видалення символів за патерном означає фільтрацію тексту, грунтуючись на визначених критеріях. Програмісти роблять це, щоб очистити дані, видаливши непотрібні символи чи форматування.
 
-## Як це зробити:
+## How to: / Як це зробити:
 
 ```Elm
-import Regex
+module Main exposing (..)
+import Regex exposing (Regex, find, regex, replace)
+import String
 
-removePattern : String -> String -> String
-removePattern pattern text =
-    Regex.replace Regex.All (Regex.regex pattern) (\_ -> "") text 
+cleanText : String -> String
+cleanText text =
+    let
+        pattern : Regex
+        pattern =
+            regex "[^a-zA-Zа-яА-Я0-9 ]"
+    in
+    replace pattern (\_ -> "") text
 
-main = 
-    let text = "Elm - це крута мова програмування!"
-        pattern = "[^A-Za-z0-9 ]"
-    in removePattern pattern text
--- Вивід: "Elm - це крута мова програмування"
+main =
+    String.split "\n" "123abcАБВ!@#\nHello+*/-World\nДоброго%%^&&дня"
+    |> List.map cleanText
+    |> String.join "\n"
+    |> Html.text
+    
+-- Output:
+-- 123abcАБВ
+-- HelloWorld
+-- Доброгодня
 ```
+Просто скопіюйте цей код в ваш Elm проєкт, та він видалить усе, що не є літерами, цифрами чи пробілами.
 
-У цьому коді ми створюємо функцію `removePattern`, яка видаляє всі символи, що відповідають певному зразку, в даному випадку всі символи, які не є англомовними буквами, цифрами або пробілами.
+## Deep Dive / Глибоке Занурення:
 
-## Поглиблений занурення :
+У видаленні символів за паттерном часто використовують регулярні вирази (regex). Elm використовує бібліотеку `elm/regex` для роботи з ними. Рідше, можна використовувати `String` функції без regex, але це менш гнучко. Регулярні вирази мають історію з 1950-х, і сьогодні є стандартом для операцій з текстом.
 
-Історично техніка видалення символів за зразком є частиною регулярних виразів, які були розроблені в 1950-х роках. 
+## See Also / Дивіться Також:
 
-Альтернативами можуть бути інші підходи до обробки тексту, наприклад, функції String.split та String.join. Проте, видалення символів за зразком зазвичай є більш ефективним та гнучким способом обробки тексту.
-
-Видалення символів за відповідністю дійсно відбувається за допомогою регулярних виразів. В Elm зразок регулярного виразу вводиться у функцію Regex.regex. Згодом цей зразок використовується в методі Regex.replace, щоб замінити всі посилання на зразок порожньою ланкою, тим самим ефективно "видаляючи" їх з рядка.
-
-## Корисні посилання :
-
-- [Elm Regex : Документація](https://package.elm-lang.org/packages/elm/regex/latest/)
+- Elm Regex package documentation: [https://package.elm-lang.org/packages/elm/regex/latest](https://package.elm-lang.org/packages/elm/regex/latest)
+- Elm String module documentation: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- Regular expressions in-depth: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

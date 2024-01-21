@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C#: Pobieranie strony internetowej"
+date:                  2024-01-20T17:44:52.012652-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,37 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Pobieranie strony internetowej to proces ściągania jej zawartości. Programiści robią to, by analizować dane, monitorować zmiany, czy integrować usługi.
 
-Pobieranie strony internetowej to proste jak bulka z masłem - oznacza to zapisanie jej kopii na twoim lokalnym systemie. Programiści robią to, aby analizować, przetwarzać struktury na stronie, lub po prostu dla offline-owego używania.
-
-## Jak to zrobić:
-
-```Rust
+## How to: (Jak to zrobić:)
+```rust
+// Dołącz bibliotekę "reqwest" do Cargo.toml
 use reqwest;
 
 #[tokio::main]
 async fn main() -> Result<(), reqwest::Error> {
-    let response = reqwest::get("https://www.example.com").await?;
+    // Pobieranie strony
+    let url = "http://example.com";
+    let response = reqwest::get(url).await?;
 
-    let content = response.text().await?;
+    // Weryfikacja czy żądanie się powiodło
+    println!("Status: {}", response.status());
 
-    println!("{}", content);
+    // Wypisanie zawartości strony
+    let body = response.text().await?;
+    println!("Body:\n{}", body);
 
     Ok(())
 }
 ```
+Wyjście:
+```
+Status: 200 OK
+Body:
+Contents of the web page
+```
 
-Powinieneś zobaczyć wydruk zawartości strony `https://www.example.com`.
+## Deep Dive (Głębsze spojrzenie)
+Pobieranie stron webowych to nic nowego. W dawnych czasach używano `wget` lub `curl` w terminalu. W Rust, wykorzystujemy bardziej rustykalne podejście. `reqwest` to popularna, asynchroniczna biblioteka do wykonywania żądań HTTP. Alternatywną opcją jest `hyper`, bardziej niskopoziomowa, która daje więcej kontroli, ale jest też bardziej skomplikowana w użyciu. Kiedy używasz `reqwest`, ważne jest, aby obsłużyć błędy oraz ewentualnie zgłosić je w przyszłości.
 
-## Deep Dive
-
-Początki pobierania stron internetowych sięgają epoki korzeni HTTP w latach 90-tych. Alternatywą dla Reqwest używanego tutaj jest Hyper, który jest również doskonałym pakietem Rust, ale jest bardziej skomplikowany w czystym użyciu.
-
-Pobieranie strony polega na wysłaniu zapytania GET do serwera docelowego. Twoje zapytanie jest przekazywane od jednego routera do drugiego, aż dotrze do serwera docelowego, który zwraca odpowiedź, którą następnie przeglądasz.
-
-## Zobacz także:
-
-- [Dokumentacja biblioteki `reqwest`](https://docs.rs/reqwest)
-- [Dokumentacja biblioteki `hyper`](https://hyper.rs)
-- [Jak działa HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+## See Also (Zobacz również)
+- Oficjalna dokumentacja `reqwest`: https://docs.rs/reqwest/
+- Asynchroniczność w Rust: https://rust-lang.github.io/async-book/
+- Porównanie bibliotek HTTP dla Rust: https://www.arewewebyet.org/topics/libraries/#http-clients

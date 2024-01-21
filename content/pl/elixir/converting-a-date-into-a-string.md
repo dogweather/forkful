@@ -1,7 +1,8 @@
 ---
-title:                "Konwersja daty na ciąg znaków"
-html_title:           "Clojure: Konwersja daty na ciąg znaków"
-simple_title:         "Konwersja daty na ciąg znaków"
+title:                "Konwersja daty na łańcuch znaków"
+date:                  2024-01-20T17:36:19.672607-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Konwersja daty na łańcuch znaków"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,39 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Konwersja daty na łańcuch znaków pozwala na łatwą prezentację i archiwizację danych czasowych. Programiści robią to, aby ułatwić ludziom czytanie i interpretację dat, jak również umożliwić ich przetwarzanie przez inne systemy.
 
-Konwersja daty na łańcuch znakowy to proces zamiany obiektu daty na czytelny dla człowieka format tekstowy. Programiści wykonują tę operację, aby łatwiej wyświetlać daty użytkownikom lub zapisywać je w bazach danych.
+## How to (Jak to zrobić):
+```Elixir
+# Przykład konwersji daty na łańcuch znaków w Elixirie
+date = ~N[2023-04-12 08:30:00]
+date_string = NaiveDateTime.to_string(date)
 
-## Jak to zrobić:
-
-W Języku Elixir wykonamy to przy pomocy paczki modułów `Date` i `DateTime`.
-Oto przykładowy kod:
-
-```elixir
-data = Date.new(2022, 1, 1)
-IO.puts Date.to_string(data)
+# Wynik:
+# "2023-04-12 08:30:00"
 ```
 
-Dajmy przykład z `DateTime`:
+## Deep Dive (Dogłębna analiza):
+Historia obsługi dat w językach programowania zawsze była powiązana z koniecznością łatwej wymiany i prezentacji danych. W Elixirze, konwersja daty na string jest obsługiwana przez moduł `NaiveDateTime`, co wskazuje na nieuwzględnianie strefy czasowej. Alternatywy to m.in. `DateTime` z obsługą stref czasowych dla bardziej złożonych przypadków. Implementacja w Elixirie korzysta z wzorców ISO 8601 dla formatowania dat, ułatwiając ich międzynarodową wymienność.
 
-```elixir
-data_i_czas = DateTime.utc_now()
-IO.puts DateTime.to_string(data_i_czas)
-```
-
-Podczas wykonania powyższego kodu, wypisane zostaną aktualne data i czas w czytelnym formacie tekstowym.
-
-## Dogłębniej
-
-Moduły `Date` i `DateTime` są integralną częścią języka Elixir od wersji 1.3, wydanej w 2016 roku. Przed ich wprowadzeniem, konwersje dat musiały być realizowane za pomocą zewnętrznych bibliotek.
-
-Alternatywą może być bezpośrednie formatowanie łańcuchów tekstowych, choć jest to technika zalecana raczej przy mniej skomplikowanych przypadkach, głównie ze względu na wydajność i potencjalne problemy z lokalizacją.
-
-Pod spodem, konwersja `Date.to_string/1` i `DateTime.to_string/1` działa poprzez skonstruowanie łańcuchów znakowych reprezentujących poszczególne składowe daty (rok, miesiąc, dzień, godzina, itd.), a następnie złączenie ich w odpowiednim formacie.
-
-## Zobacz także
-
-1. Dokumentacja modułu `Date` w Elixirze: https://hexdocs.pm/elixir/Date.html
-2. Dokumentacja modułu `DateTime` w Elixirze: https://hexdocs.pm/elixir/DateTime.html
-3. Poradnik na temat formatowania łańcucha znaków w Elixirze: https://hexdocs.pm/elixir/String.html
+## See Also (Zobacz też):
+- Dokumentacja modułu `NaiveDateTime`: https://hexdocs.pm/elixir/NaiveDateTime.html
+- ISO 8601 Wikipedia: https://pl.wikipedia.org/wiki/ISO_8601
+- Poradnik do modułu `DateTime` w Elixirze: https://hexdocs.pm/elixir/DateTime.html

@@ -1,7 +1,8 @@
 ---
-title:                "Slette tegn som samsvarer med et mønster"
-html_title:           "Arduino: Slette tegn som samsvarer med et mønster"
-simple_title:         "Slette tegn som samsvarer med et mønster"
+title:                "Slette tegn som matcher et mønster"
+date:                  2024-01-20T17:41:52.999628-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Slette tegn som matcher et mønster"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,44 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Sletting av tegn som samsvarer med et mønster, også kjent som mønstertilpasning, er en teknikk som brukes til å manipulere tekst. Programmerere bruker det for å effektivisere og forenkle arbeid med strenger.
+Sletting av tegn etter mønster er å fjerne spesifikke tegn fra en streng som matcher et gitt kriterium. Programmerere gjør dette for å rense data, forberede tekst for behandling eller for å formatere utdata.
 
-## Slik Gjør Du Det:
-Hvis du ønsker å slette tegn fra en streng som samsvarer med et gitt mønster i C, kan du bruke følgende kode:
+## Slik gjør du:
 ```C
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
-void DeleteMatchingChars(char *str, char *to_remove) {
-  int src_index = 0, dest_index = 0;
-  while (str[src_index]) {
-    if (!strchr(to_remove, str[src_index])) {
-      str[dest_index] = str[src_index];
-      dest_index++;
+void delete_pattern(char *str, const char *pattern) {
+    char *src = str, *dst = str;
+    while (*src) {
+        const char *temp_pat = pattern;
+        while (*temp_pat && *src != *temp_pat) 
+            ++temp_pat;
+        if (!(*temp_pat))
+            *dst++ = *src;
+        src++;
     }
-    src_index++;
-  }
-  str[dest_index] = '\0';
+    *dst = '\0';
 }
 
 int main() {
-  char str[] = "Hei verden!";
-  DeleteMatchingChars(str, "e");
-  printf("%s\n", str);
-  return 0;
+    char str[] = "Hei, Norge! 123";
+    delete_pattern(str, "123");
+    printf("Resultat: %s\n", str); // Skriver ut: Hei, Norge! 
 }
 ```
-I dette eksemplet vil alle 'e'-tegn i strengen "Hei verden!" bli fjernet, og resultatet vil være: "Hi vrden!".
 
-## Dypdykk
-Metoden vi brukte over, ble utviklet i en tid da programmeringsspråk var mer begrenset. I dag finnes det mange alternativer for å oppnå det samme, som vanlige uttrykk (regular expressions) i språk som Python.
+## Deep Dive
+Tidligere ble karakterbehandling ofte gjort med funksjoner som `strtok()` og `strspn()`. Fordelen med vår funksjon `delete_pattern()` er at den er direkte og lett å tilpasse. 
 
-Imidlertid, gir C oss muligheten til å manipulere strenger på lavt nivå. I eksemplet ovenfor, gikk vi gjennom hver karakter og kopierte den tilbake til originalstrengen så lenge den ikke matchet mønsteret - en effektiv og direkte tilnærming.
+Under panseret jobber vi direkte med pekere. Vi beveger ikke faktisk tegnene fysisk; vi flytter bare hva pekerne 'src' og 'dst' peker på. Dette holder ting raskt og effektivt.
 
-Husk at hver gang du manipulerer en streng på denne måten, endrer du faktisk den opprinnelige dataen. Hvis du trenger originalstrengen, bør du ta vare på en kopi.
+Som alternativ til egenimplementasjon kan regulære uttrykk via biblioteket `regex.h` brukes. Men for mange oppgaver er en enkel funksjon som `delete_pattern` alt du trenger.
+
+Historisk sett har håndtering av strenger i C vært en kilde til mange bugs. Det å skrive sikker og effektiv kode krever forståelse av både minnebehandling og pekeraritmetikk.
 
 ## Se Også
-For mer informasjon, sjekk ut følgende kilder:
-
-- C Programming på TutorialsPoint: [Link](https://www.tutorialspoint.com/cprogramming/index.htm)
-- Stack Overflow for C programmeringsspørsmål: [Link](https://stackoverflow.com/questions/tagged/c)
+- `strtok()` og `strspn()` i C-biblioteket for inndeling og søk i strenger.
+- POSIX biblioteket 'regex.h' for regulære uttrykk.
+- Online C-standard dokumentasjon for dypere innsikt i funksjonen til biblioteksfunksjonene: http://www.open-std.org/jtc1/sc22/wg14/

@@ -1,7 +1,8 @@
 ---
-title:                "Знаходження довжини рядка"
-html_title:           "Arduino: Знаходження довжини рядка"
-simple_title:         "Знаходження довжини рядка"
+title:                "Визначення довжини рядка"
+date:                  2024-01-20T17:46:55.844354-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Визначення довжини рядка"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,37 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що та Чому?)
+Finding the length of a string means determining how many characters it contains. Programmers often need this to validate input, loop through characters, or for string manipulation.
 
-Пошук довжини рядка - це процес визначення кількості символів у даному рядку. Програмісти роблять це, щоб керувати процесами обробки даних та валідації.
-
-## Як це зробити:
-
-В C# для підрахунку символів у рядку використовується властивість `Length`:
-
+## How to: (Як робити:)
 ```C#
-string str = "Привіт, світ!";
-int len = str.Length;
-Console.WriteLine(len);
+string example = "Привіт, світ!";
+int length = example.Length;
+
+Console.WriteLine(length); // Outputs: 13
 ```
-В результаті виводу команди ми отримаємо "13", оскільки рядок "Привіт, світ!" містить 13 символів.
-
-## Поглиблений розгляд:
-
-Історично властивість `Length` була визначена у зв'язку з потребами в обробці рядків даних. Ця особливість присутня в багатьох мовах програмування, не лише в C#.
-
-Альтернативний спосіб визначення довжини рядка в C# - це використовувати метод `.Count()` з бібліотеки System.Linq:
-
 ```C#
-string str = "Привіт, світ!";
-int len = str.Count();
-Console.WriteLine(len);
+string emptyString = String.Empty;
+int emptyLength = emptyString.Length;
+
+Console.WriteLine(emptyLength); // Outputs: 0
 ```
-Але будьте обережні, цей метод повертає правильну довжину лише для рядків без спеціальних символів, таких як `\r\n`. В іншому випадку він зарахує їх за два символи.
 
-Використовуючи `Length` для рядків в C#, насправді ми звертаємось до довжини масиву `char`, що є базовим представленням рядка в пам'яті. 
+## Deep Dive (Занурення у глибину)
+In C#, strings are immutable and represented by the `System.String` class. The `Length` property is integral to this class and returns the number of `Char` objects in the string, which is essentially the count of UTF-16 code units. Historically, as programming languages evolved, various methods to measure strings were developed, but in C#, `.Length` has been the go-to since its inception.
 
-## Також дивіться:
+Other methods, like `StringInfo.LengthInTextElements`, can handle strings with combined characters (like emojis or accented characters) more accurately when counting user-perceived characters, as opposed to code units.
 
-1. [Microsoft Docs: рядкові властивості](https://docs.microsoft.com/uk-ua/dotnet/api/system.string.length?view=net-5.0)
-2. [StackOverflow: розуміння властивості Length](https://stackoverflow.com/questions/1580786/length-of-string-in-c-sharp)
+Under the hood, `Length` property is a simple and fast operation, retrieving a value pre-stored in the string object without actually iterating through it.
+
+## See Also (Дивись також)
+- [String.Length Property on Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.string.length)
+- [Understanding Strings in C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
+- [StringInfo Class for Text Element Handling](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.stringinfo)

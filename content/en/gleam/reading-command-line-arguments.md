@@ -1,6 +1,7 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "C++ recipe: Reading command line arguments"
+date:                  2024-01-20T17:55:52.760230-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Reading command line arguments"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -12,37 +13,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Reading command line arguments is the process of extracting parameters provided to your application by the user. This allows you to change your program's behavior based on user's inputs.
+Reading command line arguments lets programs act on data passed during launch. Programmers use it for customizing behavior without altering code.
 
 ## How to:
 
-In Gleam, we utilize the `gleam/otp` library to read command line arguments from inside a `start` function. Here's a simple example:
+Gleam's `main` function can access command line arguments through a list of strings. Iterate, pattern match, and do as needed.
 
-```Gleam
-import gleam/otp.{Application}
+```gleam
+import gleam/io
 
-fn start() {
-    let args = Application.get_args() // Fetch the command line arguments
-    case args {
-        Ok(arg_values) -> 
-          // Extracts the list of argument values
-          io.println(arg_values)
-        Error ->
-          io.println("No arguments found")
-    }
+fn main(args: List(String)) {
+  let message = match args {
+    [] -> 
+      "No arguments found."
+    [single] -> 
+      single
+    _ -> 
+      "Too many arguments!"
+  }
+  io.println(message)
 }
 ```
 
-This will print out the command line arguments used on starting the application. If there's no command line arguments, it will print "No arguments found". 
+Running the program:
+
+```
+$ my_program
+No arguments found.
+
+$ my_program "Hello, Gleam!"
+Hello, Gleam!
+
+$ my_program Too many arguments given
+Too many arguments!
+```
 
 ## Deep Dive
 
-Back in the days of UNIX systems, command line arguments were the first and easiest way to allow interactivity with programs. That's why they're a staple in most modern programming languages.
-
-There are some alternatives to command line arguments. You can use standard input, which lets your program accept user input while it is running. Or you could use environment variables to have a set of inputs that are present throughout the program's execution.
-
-In Gleam, the `Application.get_args()` function fetches command line arguments as a Result type. If no command line arguments are given, the Result type will be an `Error`. It's your job to handle this error gracefully! 
+Reading command line arguments has been a staple in programming since the early days. UNIX utilities excel here. Gleam, while rooted in the Erlang VM, offers a modern touch to this functionality. Alternatives include parsing libraries for complex cases, like options flags. Gleam does this without the verbosity of Erlang or the obscurity of C.
 
 ## See Also
 
-To learn more about Gleam, visit its [official website](https://gleam.run/). For more detailed information about the `gleam/otp` library, check out [their documentation](https://hexdocs.pm/gleam_otp/readme.html). To see examples of how command line arguments can be used in real-world programs, check out this [Gleam Cookbook](https://github.com/gleam-lang/otp).
+For further exploration:
+
+- Gleam's official documentation: https://gleam.run/book
+- Erlang's `escript`: http://erlang.org/doc/man/escript.html
+- Command-line parsing libraries: See Gleam's package repository at https://hex.pm/packages?search=gleam

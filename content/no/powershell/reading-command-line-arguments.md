@@ -1,6 +1,7 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Arduino: Lese kommandolinjeargumenter"
+date:                  2024-01-20T17:56:27.305696-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,37 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# PowerShell: Lesing av kommandolinjeargumenter 
-
 ## Hva & Hvorfor?
-Kommandolinjeargumenter tillater interaksjon mellom brukeren og koden, hvor brukeren kan kontrollere kjøringen eller funksjonen av programmet. Utviklere bruker dette for å øke fleksibiliteten og tilpasningsdyktigheten i sine skript.
+Kommandolinjeargumenter lar brukere gi input til et skript når de kjører det. Programmerere bruker dette for å lage fleksible og tilpassbare scripts.
 
-## Hvordan?
-Her er et grunnleggende eksempel på hvordan man leser command-linjeargumenter i PowerShell. 
-
+## Hvordan:
 ```PowerShell
-Param(
-  [Parameter(Mandatory=$true)]
-  $Argument1,
-  
-  [Parameter(Mandatory=$false)]
-  [Alias("V")]
-  $Verbose=$false
+# script.ps1
+param(
+    [string]$name,
+    [int]$age
 )
 
-# Resten av koden kommer her...
-Write-Host "Argument funnet: $Argument1. Detaljert modus er $Verbose"
+Write-Host "Hei, $name! Du er $age år gammel."
 ```
-Noen eksempler på kjøring: 
-```PowerShell 
-> .\myScript.ps1 -Argument1 "Hei"
-Argument funnet: Hei. Detaljert modus er False
-
-> .\myScript.ps1 -Argument1 "Hei" -Verbose $true
-Argument funnet: Hei. Detaljert modus er True
+Kjør scriptet:
+```PowerShell
+PS > .\script.ps1 -name "Ola" -age 28
 ```
-## Dyp Dykk
-PowerShell sin handling av kommandolinjeargumenter har likheter til UNIX-baserte shell-script. Det finnes også alternativer til  `Param` nøkkelordet, som `$args` array variabelen, men de gir ikke like mye kontroll over hvilke argumenter som godtas. Gjennom deklarasjonen av spesifikke parametere kan vi håndtere input på en kontrollert og definert måte.
+Forventet output:
+```
+Hei, Ola! Du er 28 år gammel.
+```
 
-## Se Også 
-2. [Detaljert Stack Overflow tråd om PowerShell argumenthåndtering](https://stackoverflow.com/questions/2157554/how-to-handle-command-line-arguments-in-powershell)
+## Dypdykk
+Kommandolinjeargumenter har vært en standard for brukerinput siden tidlige dager av programmering. I PowerShell, spesifiseres de ved å bruke `param`-blokken øverst i skriptene. Alternativer til `param` inkluderer `$args`-arrayet for en mer dynamisk, men mindre eksplisitt tilnærming. PowerShell-script kan også samhandle direkte med brukeren under kjøring gjennom cmdlets som `Read-Host`. Men å lese kommandolinjeargumenter fører til mindre brukerinteraksjon og kan lett integreres i automatiserte prosesser.
+
+## Se Også
+- Offisielle PowerShell dokumentasjonen på argumenter: [about_Functions_CmdletBindingAttribute](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Functions_CmdletBindingAttribute)
+- En grundig guide om PowerShell parametre: [about_Functions_Advanced_Parameters](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters)

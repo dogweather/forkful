@@ -1,6 +1,7 @@
 ---
 title:                "Skicka en http-förfrågan"
-html_title:           "Javascript: Skicka en http-förfrågan"
+date:                  2024-01-20T17:59:30.011559-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Skicka en http-förfrågan"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,24 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att skicka en HTTP-begäran innebär att be en webbserver om data eller en annan resurs. Programmerare gör detta för att integrera olika webbtjänster, hämta information eller interagera med API:er.
 
-Att skicka en HTTP-förfrågan är en metod för att kommunicera data mellan klienten (datorn som ber om information) och servern (datorn som lagrar informationen). Programmerare gör detta för att hämta, skicka eller manipulera data på webbservern.
+## Hur man gör:
+I Elixir använder vi ofta `HTTPoison` för HTTP-begäran. Så här ser en grundläggande GET-begäran ut:
 
-## Hur gör man:
+```elixir
+# Lägg först till HTTPoison i dina dependencies i mix.exs
+{:httpoison, "~> 1.8"}
 
-```Elixir
-{:ok, response} = HTTPoison.get("http://httpbin.org/get")
-IO.inspect(response.status_code)  # Visar statuskoden för HTTP-svaret, t.ex. 200
+# Starta ett iex session med `iex -S mix` och kör:
+HTTPoison.start()
+
+# Exempel på att skicka en GET-begäran
+{:ok, response} = HTTPoison.get("https://jsonplaceholder.typicode.com/posts/1")
+
+# Inspektera svaret
+IO.inspect(response)
 ```
-Denna kod skickar en GET-förfrågan till httpbin.org och visar statuskoden för svaret.
 
-## Djupdykning
+Svarsexempel:
 
-Historiskt sett är metoden för att skicka HTTP-förfrågningar ett grundläggande koncept som utvecklats från det tidiga internets dagar. Alternativ till HTTPoison inkluderar andra bibliotek som Hackney eller HTTPotion. Implementeringsdetaljer omfattar sättet att sätta ihop och sända begäran, såväl som tolkningen av det mottagna svaret.
+```elixir
+%HTTPoison.Response{
+  body: "{...}",
+  status_code: 200,
+  ...
+}
+```
 
-## Se även:
+## Fördjupning
+HTTP-begäran är sprungen ur HTTP-protokollet, standarden för kommunikation på webben sedan början av 90-talet. Alternativ till `HTTPoison` inkluderar `Tesla` och Elixirs inbyggda `HTTP`-klient ` :httpc`. Hur vi hanterar HTTP-begäran i Elixir bygger på Erlangs robusta `:inet` och `:ssl` applikationer, vilket innebär att prestanda och säkerhet är inbäddade från start.
 
-För mer information om HTTP-begäran, HTTPoison och liknande ämnen, besök följande källor:
-- Elixir officiella dokumentation: [https://hexdocs.pm/elixir/1.12/Kernel.html](https://hexdocs.pm/elixir/1.12/Kernel.html)
-- HTTPoison GitHub Repo: [https://github.com/edgurgel/httpoison](https://github.com/edgurgel/httpoison)
-- Hackney GitHub Repo: [https://github.com/benoitc/hackney](https://github.com/benoitc/hackney)
+## Se också
+- Elixir's officiella dokumentation för HTTP-klienten `:httpc`: https://hexdocs.pm/elixir/1.13/HTTP.html
+- HTTPoison GitHub-repo: https://github.com/edgurgel/httpoison
+- Tesla GitHub-repo: https://github.com/teamon/tesla

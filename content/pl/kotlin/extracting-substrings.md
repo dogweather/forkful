@@ -1,7 +1,8 @@
 ---
-title:                "Wydobywanie podciągów"
-html_title:           "Python: Wydobywanie podciągów"
-simple_title:         "Wydobywanie podciągów"
+title:                "Wycinanie podłańcuchów"
+date:                  2024-01-20T17:46:16.521177-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wycinanie podłańcuchów"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,36 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Wyodrębnianie podciągów to proces wycinania mniejszych ciągów znaków z większego. Programiści robią to, by manipulować danymi tekstowymi – weryfikować, analizować, czy formatować je według potrzeb.
 
-Wyciąganie podciągów to działanie polegające na pobieraniu części tekstu z większego ciągu znaków. Programiści robią to, aby manipulować wystarczająco małymi częściami danych tekstowych, które są istotne dla konkretnej operacji.
-
-## Jak to zrobić:
-
-Dzięki Kotlin, łatwo jest to zrobić. Oto przykładowy kod:
-
+## How to: (Jak to zrobić:)
 ```kotlin
-val str = "Witaj, świecie Kotlin!"
-val substr = str.substring(0, 5)
-println(substr) // Wydrukuje: Witaj
+fun main() {
+    val text = "Witaj, Kotlin!"
+
+    val sub1 = text.substring(7)       // Wyodrębni od znaku na pozycji 7: "Kotlin!"
+    val sub2 = text.substring(0, 6)    // Wyodrębni zakres od 0 do 5 włącznie: "Witaj"
+
+    println(sub1)
+    println(sub2)
+}
+
+// Output:
+// Kotlin!
+// Witaj
 ```
 
-Tutaj mamy funkcję `substring`, która przyjmuje dwa argumenty: indeks początkowy i końcowy. Działa ona poprzez wyodrębnienie fragmentu tekstu od indeksu początkowego do końcowego (końcowy indeks jest wyłączony).
-
-## Deep Dive
-
-Doszło do tego, że "wyciąganie podciągów" to koncept, który znajduje się w prawie każdym języku programowania, oznacza to, że jest to podstawowe działanie przy manipulowaniu tekstem. Alternatywnie, w Kotlinie można również korzystać z funkcji `slice`:
-
 ```kotlin
-val str = "Witaj, świecie Kotlin!"
-val substr = str.slice(0..4)
-println(substr) // Wydrukuje: Witaj
+fun main() {
+    val quote = "Być, albo nie być, oto jest pytanie."
+
+    val toBeOrNotToBe = quote.substring(0..2) + quote.substring(7..9) // "Być, nie być"
+    println(toBeOrNotToBe)
+}
+
+// Output:
+// Być, nie być
 ```
 
-Implementacja `substring` i `slice` jest prawie identyczna, rozwijająca się w taki sam sposób. Różnica polega na tym, że `slice` zwraca listę znaków, podczas gdy `substring` zwraca ciąg znaków.
+## Deep Dive (Solidne nurkowanie):
+W Kotlinie i wielu innych językach programowania, wyodrębnianie podciągów to podstawowe narzędzie do pracy z tekstem. Historycznie rzecz biorąc, pochodzi z języków jak C, gdzie obsługa ciągów była bardziej manualna.
 
-## Zobacz także:
+Alternatywą dla `substring` może być użycie wyrażeń regularnych (`Regex`), które są mocnym narzędziem, jeśli potrzeba bardziej złożonych operacji na tekstach.
 
-1. Dokumentacja Kotlin na temat manipulacji tekstami: [Kotlin Text](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/)
-2. Porównanie między `substring` a `slice`: [Kotlin slice vs substring](https://stackoverflow.com/questions/57094803/what-is-the-difference-between-substring-and-slice-in-kotlin)
-3. Sprawdzenie i poczęcie otrzymywania podciągów: [Tutorial: Konwersja, suma, odbić i porównać ciągi, uzyskiwać podciągi](https://kotlinlang.org/docs/idioms.html#strings)
+Jeżeli chodzi o implementację, `substring` w Kotlinie (i w JVM) jest zazwyczaj efektywny - nowy ciąg dzieli tablicę znaków z oryginalnym ciągiem, nie tworząc niepotrzebnie nowej kopii każdego znaku.
+
+## See Also (Zobacz również):
+- [Dokumentacja Kotlin - Substring](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
+- [Dokumentacja Kotlin - Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)

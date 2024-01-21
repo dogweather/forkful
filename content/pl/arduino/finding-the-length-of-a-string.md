@@ -1,7 +1,8 @@
 ---
-title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Arduino: Znajdowanie długości ciągu znaków"
-simple_title:         "Znajdowanie długości ciągu znaków"
+title:                "Znalezienie długości ciągu znaków"
+date:                  2024-01-20T17:46:38.846670-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Znalezienie długości ciągu znaków"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -11,26 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i Dlaczego?
-
-Sprawdzanie długości ciągu oznacza po prostu liczenie liczby znaków w tym ciągu. Programiści robili to z różnych powodów, jak na przykład do kontrolowania wielkości danych wejściowych lub do sterowania iteracją pętli.
+Znalezienie długości ciągu znaków to sprawdzenie, ile znaków zawiera. Programiści robią to, by zarządzać danymi tekstowymi, walidować wejścia lub oszacować miejsce potrzebne do przechowywania informacji.
 
 ## Jak to zrobić:
+```Arduino
+void setup() {
+  Serial.begin(9600);
+  
+  String mojTekst = "Czesć Świecie!";
+  int dlugoscTekstu = mojTekst.length();
+  
+  Serial.print("Długość tekstu: ");
+  Serial.println(dlugoscTekstu);
+}
 
-```Arduino 
-String mojCiąg = "Cześć, świecie!";
-int dlugosc = mojCiąg.length();
-Serial.begin(9600);
-Serial.println(dlugosc);
+void loop() {
+  // nic nie robimy w pętli
+}
 ```
-W tym przykładzie, wpisane wyjście wyniesie "16", co jest długością ciągu "Cześć, świecie!".
+W Sample Output widzimy:
+```
+Długość tekstu: 14
+```
 
-## Głębsze Perspektywy
-
-Znalezienie długości ciągu jest jednym z najstarszych tricków w książce programistycznym, sięgającym czasów, gdy pamięć była kosztowna i trzeba było uważnie nią zarządzać. Alternatywą dla metody ".length()" jest stworzenie własnej funkcji, która iteruje przez ciąg do momentu napotkania "null" (terminatora ciągu). Nawiasem mówiąc, to właśnie metoda ".length()" robi pod spodem. Ta metoda kompatybilna jest całkowicie z obecną wersją Arduino.
+## W Głębi Tematu
+Kiedyś, w C, do długości stringów używalibyśmy `strlen` z biblioteki `string.h`. W Arduino, `String` to klasa ułatwiająca zarządzanie tekstami. Jednak używanie `String` może prowadzić do fragmentacji pamięci, więc czasem lepiej użyć `char` arrays wraz z `strlen`. `String.length()` jest prostsze, ale dobrze zastanowić się nad jej użyciem w projektach gdzie stabilność jest kluczowa.
 
 ## Zobacz Również
-
-Zaleca się zapoznanie z poniższymi źródłami:
-
-- [Dokumentacja Arduino na temat klasy String](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [Różnice między C string i Arduino String](https://arduino.stackexchange.com/questions/556/what-exactly-does-this-thing-refer-to)
+- [Arduino Reference for String.length()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/length/)

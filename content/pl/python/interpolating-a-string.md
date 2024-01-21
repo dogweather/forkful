@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:51:23.294723-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,52 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i dlaczego?
 
-Interpolacja napisów w Pythonie polega na wstawianiu wartości zmiennych bezpośrednio do napisów. Programiści korzystają z interpolacji napisów, aby utworzyć dynamiczne napisy, które ułatwiają debugowanie i tworzenie czytelnych wiadomości dla użytkowników.
+Interpolacja napisów to wplecenie zmiennych czy też wartości bezpośrednio do ciągu tekstowego. Programiści używają tego, żeby ułatwić formatowanie i składanie komunikatów, zwłaszcza gdy dynamika danych jest na pierwszym planie.
 
 ## Jak to zrobić:
 
-Python oferuje kilka metod na interpolację napisów, ale skupmy się na dwóch najpopularniejszych: f-stringi (od Pythona 3.6) i metodzie `.format()`.
-
-Pierwszy sposób, f-stringi:
-
 ```Python
-imie = "Jan"
-powitanie = f"Cześć, {imie}!"
-print(powitanie)
+# Przykład użycia f-string do interpolacji napisów.
+imie = "Anna"
+wiek = 30
+
+# Tradycyjnie z użyciem .format()
+wypowiedz_format = "Nazywam się {} i mam {} lat.".format(imie, wiek)
+print(wypowiedz_format)
+# Wynik: Nazywam się Anna i mam 30 lat.
+
+# Nowocześniej: f-string
+wypowiedz_fstring = f"Nazywam się {imie} i mam {wiek} lat."
+print(wypowiedz_fstring)
+# Wynik: Nazywam się Anna i mam 30 lat.
 ```
 
-W wyniku otrzymujemy:
+## Głębsze spojrzenie
 
-```
-Cześć, Jan!
-```
+Interpolacja napisów istnieje w Pythonie od dawna – najpierw były to operator `%`, później metoda `.format()`, a od Pythona 3.6 mamy f-stringi. F-stringi są szybsze niż poprzednie metody i pozwalają na bezpośrednie wstawianie wyrażeń Pythona w nawiasach klamrowych. Za kulisami Python przetwarza taki napis na wyrażenie formatujące i wykonuje je w locie.
 
-Drugim sposobem jest metoda `.format()`:
+Innymi sposobami interpolacji są template strings (`string.Template`), które mogą być użyteczne dla prostych przypadków i kiedy chcesz unikać ewaluacji wyrażeń wewnątrz napisów.
 
-```Python
-imie = "Jan"
-powitanie = "Cześć, {}!".format(imie)
-print(powitanie)
-```
+## Zobacz również
 
-Wynik jest taki sam:
-
-```
-Cześć, Jan!
-```
-
-## Pogłębione info:
-
-Interpolacja napisów istnieje od dawna w innych językach programowania, takich jak Perl czy Ruby. W Pythonie interpolacja napisów została wprowadzona w wersji 2.6 za pomocą metody `.format()`. Dopiero w wersji 3.6 dodano f-stringi, które są szybsze i bardziej czytelne.
-
-Istnieją też inne metody, takie jak stary sposób z użyciem operatora `%`, ale jest on rzadko stosowany i nie zalecamy go do nowych projektów. Co więcej, f-stringi oferują wiele zaawansowanych opcji, takich jak możliwość wykonywania wyrażeń w środku placeholderów.
-
-## Zobacz też:
-
-[Official Python Documentation on String Interpolation](https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting)
-
-[Python String Formatting Best Practices](https://realpython.com/python-string-formatting/) 
-
-[The f-Strings in Python](https://realpython.com/python-f-strings/)
+- [Standardowa dokumentacja Pythona o f-stringach](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
+- [PEP 498 – wprowadzenie f-stringów](https://www.python.org/dev/peps/pep-0498/)
+- [Python Software Foundation: PyFormat](https://pyformat.info/) – Porównanie metod formatowania napisów w Pythonie.

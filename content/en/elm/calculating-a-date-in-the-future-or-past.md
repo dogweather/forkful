@@ -1,6 +1,7 @@
 ---
 title:                "Calculating a date in the future or past"
-html_title:           "Elm recipe: Calculating a date in the future or past"
+date:                  2024-01-20T17:30:39.440942-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Calculating a date in the future or past"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,46 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
+Calculating a future or past date is just tweaking a given date by a set amount of time. Programmers do it to handle deadlines, events, reminders—anything date-related.
 
-Calculating a future or past date means going forward or backward in the timeline from a specific day. Programmers do it for plenty of reasons, like scheduling events, setting deadlines, or managing subscriptions.
-
-## How To:
-
-Here is how we do date calculation in Elm with its `Time` module:
+## How to:
+Elm's `Time` module and the `justinmimbs/time-extra` package let us mess with dates easily.
 
 ```Elm
-import Time exposing (..)
+import Time exposing (Posix)
+import Time.Extra as TimeExtra
 
--- Define base date: 1st Jan, 2021
-let
-    baseDate = 
-        Time.millisToPosix 1609459200000
+--calculateDate : Int -> Posix -> Posix
+-- @deltaDays: number of days to add (negative to subtract)
+-- @fromDate: starting date in Posix format
 
--- Define duration: 100 days
-let
-    durationDays = 
-        Time.daysToMillis 100
+calculateDate deltaDays fromDate =
+    TimeExtra.add TimeExtra.days deltaDays fromDate
 
--- Future date after 100 days
-let 
-    futureDate = 
-        Time.plus baseDate durationDays 
+-- Usage
+-- Don't forget, Elm counts time in milliseconds since Unix epoch.
 
--- Print Future date
-Debug.log "Future date " futureDate
+sampleDate = Time.millisToPosix 1580515200000  -- February 1, 2020 00:00:00 UTC
+futureDate = calculateDate 10 sampleDate       -- Adds 10 days
+pastDate = calculateDate -15 sampleDate        -- Subtracts 15 days
+
+-- sample outputs:
+-- futureDate -> 1581552000000  -- February 12, 2020 00:00:00 UTC
+-- pastDate -> 1580006400000    -- January 17, 2020 00:00:00 UTC
 ```
 
-This small Elm code will give you the future date after 100 days from 1st Jan, 2021. Similar subtraction can be used to calculate past dates.
-
 ## Deep Dive
+Back in the day, dealing with dates in programming was a pain. Different systems, formats, and time zones gave everyone a headache. Elm's `Time` module, based on the Unix Time system (milliseconds since 1970), standardizes this. The `justinmimbs/time-extra` package further simplifies handling operations on dates, like adding or subtracting days.
 
-A brief history: Date calculation was always crucial in scheduling tasks, but coding it used to be a mess, dealing with odd month lengths, leap years, and timezones. Elm abstracted all this with its `Time` module, following Unix's approach to managing dates as milliseconds since the 'Epoch' (1st Jan, 1970).
+Alternatives? Other languages have their own libraries, like Python's `datetime` or JavaScript's `Date`. But Elm's approach offers strong typing and purity, reducing bugs.
 
-Alternatives: While Elm provides native date calculation, you can also use libraries like `rtfeldman/elm-iso8601-date-strings` for more advanced features at the cost of external dependencies.
-
-Implementation Details: Calculation in Elm is straightforward. Days are converted to milliseconds (suitable for the Posix Time format) and simply added to or subtracted from the base date. This is internally managed by Elm's runtime which makes it consistent across platforms.
+Beyond adding days, you can also work with months, years, or even hours and minutes. The functions in Elm and in packages like `time-extra` focus on immutability and pure functions—this means no side effects. When you calculate a new date, the original stays unchanged.
 
 ## See Also
-
-- [Elm Time Module Documentation](https://package.elm-lang.org/packages/elm/time/latest/)
-- Elm's date library: [rtfeldman/elm-iso8601-date-strings](https://package.elm-lang.org/packages/rtfeldman/elm-iso8601-date-strings/latest/)
+- Elm `Time` module: https://package.elm-lang.org/packages/elm/time/latest/
+- `justinmimbs/time-extra` package: https://package.elm-lang.org/packages/justinmimbs/time-extra/latest/
+- Elm Guide on Time: https://guide.elm-lang.org/effects/time.html

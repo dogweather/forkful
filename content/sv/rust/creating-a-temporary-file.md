@@ -1,7 +1,8 @@
 ---
-title:                "Att skapa en tillfällig fil"
-html_title:           "Bash: Att skapa en tillfällig fil"
-simple_title:         "Att skapa en tillfällig fil"
+title:                "Skapa en temporär fil"
+date:                  2024-01-20T17:41:17.890266-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skapa en temporär fil"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,34 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & varför?
-Att skapa en tillfällig fil innebär att man tillfälligt lagrar data på disken istället för i programminnet. Det är användbart när du hanterar stora datamängder, vill dela data mellan olika programprocesser eller när du behöver överleva programkrascher.
+## Vad & Varför?
+Att skapa en temporär fil innebär att man temporärt lagrar data på disken under programmets körning. Programutvecklare gör detta för att hantera stora datamängder, dela data mellan olika processer, eller för att undvika att hålla data i minnet.
 
-## Hur man gör:
-Här är en exempelkod av hur man skapar en tillfällig fil i Rust:
-
+## Hur gör man:
 ```Rust
 use std::fs::File;
-use std::io::Write;
-use tempfile::tempfile;
+use std::io::{self, Write};
+use tempfile::Builder;
 
-fn main() {
-    let mut file = tempfile().unwrap();
+fn main() -> io::Result<()> {
+    let mut temp_file = Builder::new().suffix(".tmp").tempfile()?;
     
-    write!(file, "Hej världen").unwrap();
+    writeln!(temp_file, "Hej, det här är en temporär fil!")?;
+    
+    println!("Temporär fil skapad: {:?}", temp_file.path());
+    Ok(())
 }
 ```
+Sample output:
+```
+Temporär fil skapad: Some("/tmp/.tmpQ2v4Z.tmp")
+```
 
-När du kör detta kommer "Hej världen" att skrivas till en tillfällig fil. Filen är automatiskt borttagen efter att `file` faller ur räckvidd (dvs. när programmet är klart).
+## Djupdykning:
+Skapandet av temporära filer är vanligt inom Unix-traditionen och andra operativsystem från tidigt 70-tal. I Rust använder vi ofta crates som `tempfile` för att göra detta arbete smidigare och säkrare. Att använda temporära filer hjälper till att minska minnesanvändning, och är ofta snabbare än att arbeta helt i minnet för stora datamängder. `tempfile`-craten skapar en unik fil för varje instans och ser till att filen ofta tas bort automatiskt när den inte längre används. Alternativa sätt att hantera temporära data kan vara att använda in-memory datastrukturer, som till exempel en `Vec<u8>`, men detta är inte alltid lämpligt beroende på användningsfall och minnesförbrukning.
 
-## Djupdykning
-Tillfälliga filer har använts sedan de tidiga dagarna av programmering, då minnesresurser var begränsade. I Rust erbjuder `tempfile`-biblioteket ett säkert och bekvämt sätt att hantera tillfälliga filer.
-
-Alternativen till att skapa en tillfällig fil innefattar att skapa vanliga filer och sedan manuellt ta bort dem. Men detta tillvägagångssätt kräver mer kod och kan eventuellt lämna kvar filer om programmet kraschar.
-
-När du skapar en tillfällig fil med `tempfile()`, skapas den faktiskt i systemets standardkatalog för tillfälliga filer - vanligtvis `/tmp` på Unix-liknande system eller `C:\Windows\Temp` på Windows.
-
-## Se även
-Kolla in dessa resurser om du vill lära dig mer:
-- Rusts officiella dokumentation på tempfile: https://docs.rs/tempfile
-- Råd för filhantering i Rust: https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html
+## Se även:
+- [tempfile crate documentation](https://docs.rs/tempfile/)
+- [The Rust Programming Language – Managing Files](https://doc.rust-lang.org/book/ch12-00-an-io-project.html)
+- [Rust by Example – Std::io::Write](https://doc.rust-lang.org/rust-by-example/std_misc/file/create.html)

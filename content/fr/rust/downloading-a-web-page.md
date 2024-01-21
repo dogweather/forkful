@@ -1,7 +1,8 @@
 ---
-title:                "Télécharger une page web"
-html_title:           "Bash: Télécharger une page web"
-simple_title:         "Télécharger une page web"
+title:                "Téléchargement d'une page web"
+date:                  2024-01-20T17:44:54.734905-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Téléchargement d'une page web"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,42 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why?
+Télécharger une page web, c'est récupérer son contenu via le réseau. Les développeurs font ça pour analyser des données, tester la disponibilité, ou intégrer des infos externes.
 
-Télécharger une page Web signifie récupérer son contenu à travers le réseau. Les programmateurs le font pour analyser les données, collecter des informations ou sauvegarder du contenu pour un usage ultérieur.
-
-## Comment faire :
-
-Voici un exemple simple de la façon dont vous pouvez télécharger une page Web en utilisant la bibliothèque `reqwest` en Rust.
+## How to:
+On utilise `reqwest`, une crate Rust populaire pour les requêtes HTTP.
 
 ```Rust
+// Ajoutez d'abord `reqwest` et `tokio` à votre Cargo.toml
 use reqwest;
-use std::io::Read;
 
 #[tokio::main]
 async fn main() -> Result<(), reqwest::Error> {
-    let mut response = reqwest::get("http://example.com").await?;
-    let mut body = String::new();
-    response.read_to_string(&mut body);
-    println!("{}", body);
+    let url = "http://example.com";
+    let response = reqwest::get(url).await?;
+    
+    let contents = response.text().await?;
+    println!("Le contenu de la page : {}", contents);
+    
     Ok(())
 }
 ```
+Sortie (extrait) :
+```
+Le contenu de la page : <!doctype html> ...
+```
 
-Dans cet exemple, nous demandons simplement à la bibliothèque `reqwest` de télécharger le contenu de "http://example.com", puis nous lisons la réponse dans une chaîne et l'affichons.
+## Deep Dive
+Historiquement, télécharger une page web était un processus plus verbeux en Rust, souvent réalisé avec `hyper`, une autre crate HTTP. `reqwest` simplifie ça en encapsulant `hyper` et d'autres dépendances comme `tokio` pour l'asynchronisme.
 
-## Approfondissement
+Alternativement, `curl`, `wget`, ou `httpie` pourraient être utilisés en ligne de commande. Mais en Rust, `reqwest` offre un contrôle programmable et une intégration facile dans le code existant.
 
-Lorsque nous parlons de télécharger une page Web, nous parlons en réalité de la requête HTTP GET. C'est une norme qui a été établie au début du web par le protocole HTTP, et qui est utilisée pour récupérer des informations à partir d'un serveur.
+Concernant l'implémentation, `reqwest` utilise `async/await` de Rust pour traiter les requêtes en non-blocant, ce qui est essentiel pour la performance et l'efficacité lors du traitement simultané de multiples téléchargements.
 
-Il existe d'autres moyens d'obtenir le contenu d'une page Web. Un exemple populaire serait le `Web Scraping`, qui ne se contente pas de télécharger la page, mais tente également d'interpréter le HTML et de collecter spécifiquement les données qui intéressent le programmeur.
-
-Au niveau de l'implémentation, notre exemple est assez simpliste. En réalité, le téléchargement d'une page Web peut impliquer une gestion plus complexe des erreurs, le respect du taux limite du serveur, l'exécution de JavaScript sur la page, ou encore le contournement des mesures de protection contre les robots.
-
-## Voir aussi 
-
-Pour plus d'informations, consultez les liens suivants :
-
-1. Documentation `reqwest` : https://docs.rs/reqwest/
-2. Wikipédia sur la Requête HTTP GET : https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Requête_GET
-3. Tutoriel Rust (en anglais) : https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html
+## See Also
+- Documentation `reqwest`: https://docs.rs/reqwest/
+- Tutoriel `tokio` pour le traitement asynchrone: https://tokio.rs/tokio/tutorial
+- Comparaison des crates pour les requêtes HTTP: https://www.arewewebyet.org/topics/http/

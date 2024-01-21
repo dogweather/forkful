@@ -1,7 +1,8 @@
 ---
-title:                "开始新项目"
-html_title:           "Lua: 开始新项目"
-simple_title:         "开始新项目"
+title:                "开始一个新项目"
+date:                  2024-01-20T18:03:48.729941-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "开始一个新项目"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Getting Started"
@@ -10,37 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
-新建一个项目，就是用编程语言和工具，从零开始构建一个完全新的软件应用。程序员新建项目，可以由此实现创新的想法，解决问题，甚至创造业界新的标准。
+## What & Why? 什么与为什么？
+开始一个新项目就是从零启动你的软件创作过程。程序员这么做是为了解决问题，制作工具，或者表现创意。
 
-## 如何操作：
-我们以使用 Kotlin 以及它的构建工具 Gradle 来创建一个新的项目为例。首先你得安装好 Kotlin 编译器和 Gradle。
-
+## How to: 怎样做？
 ```Kotlin
-// 1. 创建一个新的目录
-mkdir MyNewProject
+// 使用你喜欢的IDE创建一个新的Kotlin项目 或 使用命令行:
+// 1. 安装Kotlin编译器：https://kotlinlang.org/docs/command-line.html
+// 2. 创建文件 HelloWorld.kt ，然后添加:
+fun main() {
+    println("你好，世界！")
+}
 
-// 2. 使用 Gradle 进行初始化
-cd MyNewProject
-gradle init --dsl kotlin --type basic
-
-// 3. 使用 Kotlin 创建一个新的 Hello World 程序
-echo 'fun main() { println("Hello world!") }' > src/main/kotlin/Main.kt
-
-// 4. 使用 Gradle 构建并运行该项目
-gradle run
+// 3. 命令行运行: kotlinc HelloWorld.kt -include-runtime -d HelloWorld.jar
+// 4. 运行Jar文件: java -jar HelloWorld.jar
 ```
 
-上述代码执行后，终端中应该会打印出 "Hello world!"。
+样本输出：
+```
+你好，世界！
+```
 
-## 深入探讨：
-我们通常从新建一个项目开始，是因为这样可以确保我们有完全的控制权，以及能完全理解项目的每一个部分。新建项目也是理解和学习新的编程语言的好方法。
+## Deep Dive 深入探究
+Kotlin 由JetBrains创建，首次亮相是在2011年。受Java语言和其他现代编程语言启发而打造。与Java相比，Kotlin更简洁，解决了很多常见的编程问题。Kotlin可以编译成Java字节码，意味着它既可以运行在JVM上，也可以跟Java代码无缝集成。使用IntelliJ IDEA或Android Studio的内建工具、命令行或Gradle插件创建新项目，都是很常见的选择。
 
-Kotlin 是由 JetBrains 开发的一种静态类型编程语言，运行在 Java 虚拟机上，并且可以完全兼容 Java 语言。 Kotlin 版的 Hello World 程序包含了一个包含 main 函数的对象。它可以直接被运行，而不需要像 Java 一样打包成一个类库。
-
-最后，你也许会想，为什么我们选择 Gradle 而不是其他构建工具呢？事实上，虽然 Maven 和 Ant 等其他工具也都十分强大，但是 Gradle 的灵活性以及它的 Kotlin DSL，使得我们可以更加容易地配置和构建我们的 Kotlin 项目。
-
-## 参考：
-- [Installation guide for Kotlin compiler](https://kotlinlang.org/docs/command-line.html)
-- [Gradle tutorial for Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html)
-- [Kotlin and Java interoperability](https://kotlinlang.org/docs/java-interop.html)
+## See Also 另请参阅
+- Kotlin官方文档: [https://kotlinlang.org/docs/home.html](https://kotlinlang.org/docs/home.html)
+- IntelliJ IDEA: [https://www.jetbrains.com/idea/](https://www.jetbrains.com/idea/)
+- Android Studio: [https://developer.android.com/studio](https://developer.android.com/studio)

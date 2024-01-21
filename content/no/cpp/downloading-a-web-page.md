@@ -1,7 +1,8 @@
 ---
-title:                "Laste ned en nettside"
-html_title:           "Elixir: Laste ned en nettside"
-simple_title:         "Laste ned en nettside"
+title:                "Nedlasting av en nettside"
+date:                  2024-01-20T17:44:02.326346-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Nedlasting av en nettside"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,66 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Å laste ned en nettside innebærer å hente ned all HTML-koden som danner selve siden du ser i nettleseren. Programmere gjør dette for å hente data, sjekke for innholdsendringer, eller skrape nettstedet for spesifikk informasjon.
 
-Å laste ned en webside er en prosess for å hente innholdet fra en spesifikk URL til din lokale maskin. Programmerere gjør dette for å analysere webdata, eller "scrape" informasjon for videre behandling og analyse.
-
-## Hvordan gjør vi det:
-
-Her kommer vi til å bruke `libcurl`, et gratis, klient-side URL overføring bibliotek. Installer `libcurl` før du fortsetter. 
+## How to:
+For å laste ned en nettside i C++, kan du bruke biblioteket `libcurl`. Her er et enkelt eksempel:
 
 ```C++
 #include <iostream>
-#include <string>
 #include <curl/curl.h>
 
-size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* userp) {
-    userp->append((char*)contents, size * nmemb);
+static size_t write_callback(void *contents, size_t size, size_t nmemb, void *userp) {
+    ((std::string*)userp)->append((char*)contents, size * nmemb);
     return size * nmemb;
 }
 
-int main() {
-    CURL* curl;
-    CURLcode res;
-    std::string readBuffer;
-
-    curl_global_init(CURL_GLOBAL_DEFAULT);
-    curl = curl_easy_init();
+void download_webpage(const std::string &url) {
+    CURL *curl = curl_easy_init();
     if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
-        res = curl_easy_perform(curl); 
-
+        std::string response_string;
+        curl_easy_setopt(curl, CURLOPT_URL, url.c_str()); // Setter URL
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback); // Callback for datamottak
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response_string); // Data for å skrive til
+        
+        CURLcode res = curl_easy_perform(curl); // Utfør request
         if(res != CURLE_OK) {
-        fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-        } 
-      else {
-         std::cout << readBuffer << std::endl;
-      }
-
-    curl_easy_cleanup(curl);
+            std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res) << std::endl;
+        } else {
+            std::cout << response_string << std::endl; // Printer HTML
+        }
+        curl_easy_cleanup(curl);
     }
+}
 
-  curl_global_cleanup();
-
-  return 0;
+int main() {
+    const std::string url = "http://example.com";
+    download_webpage(url);
+    return 0;
 }
 ```
 
-Eksempel utdata er innholdet på "http://example.com"
+Forventet output er HTML-innholdet til `example.com`.
 
-## Dyp Dykk:
+## Deep Dive:
+Før `libcurl`, måtte programmerere på Unix systemer gjerne stole på systemkall for å gjøre `HTTP`-requests via verktøy som `wget` eller `curl` i kommandolinjen. `libcurl` gir en programmeringsgrensesnitt (API) for flere språk, inkludert C++, noe som gjør det mulig å implementere nedlasting av websider på en mer bærbar og integrert måte.
 
-Historisk sett er nedlasting av websider vanlig praksis for webcrawling og datascraping. Ved hjelp av avanserte programmeringsspråk, kan utviklere nå skrive script for å automatisk laste ned og behandle data.
+There are alternatives, such as `Boost.Asio` for asynchronous network programming, or `Poco` libraries that offer more than just network capabilities. It all depends on the needs and constraints of your project.
 
-Andre metoder for å laste ned sider inkluderer bruk av `wget` eller `httrack`, som er kommandolinjeverktøy for å laste ned hele nettsteder. Deretter har du også bibliotek som `BeautifulSoup` og `Scrapy` i Python.
+Hoveddetaljer til å tenke på inkluderer håndtering av HTTP-protokoller, SSL/TLS for sikre forbindelser, og foutbehandling. C++ gir ingen innebygde nettverks biblioteker i standardbiblioteket (per Knowledge Cut-off, Januar 2023), så tredjepartsbiblioteker blir ofte brukt.
 
-Når det kommer til implementering, fungerer `libcurl` ved å initialisere en CURL økt, sette nødvendige alternativer (URL, write function, write data) og til slutt utføre økten. Når økten er ferdig, blir den ryddet opp. Denne koden gjør en HTTP GET forespørsel til serveren, som returnerer en respons som er lagret i `readBuffer`.
+## See Also:
+For further reading and resources, you may check the following:
 
-## Se Også
-
-1. Libcurl dokumentasjon: https://curl.haxx.se/libcurl/c/
-2. Tutorial for å laste ned sider med Python og BeautifulSoup: https://realpython.com/beautiful-soup-web-scraper-python/
-3. HTTrack website copier: https://www.httrack.com/
-4. Wget manual: https://www.gnu.org/software/wget/manual/wget.html
+- cURL's official website for documentation and guides: https://curl.haxx.se/
+- CPP Reference for C++ standard library documentation: https://en.cppreference.com/
+- Boost.Asio for asynchronous networking: https://www.boost.org/doc/libs/1_75_0/doc/html/boost_asio.html
+- Poco Project for the Poco C++ Libraries: https://pocoproject.org/

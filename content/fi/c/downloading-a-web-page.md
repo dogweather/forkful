@@ -1,6 +1,7 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "C#: Verkkosivun lataaminen"
+date:                  2024-01-20T17:43:21.931431-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "C"
 category:             "C"
@@ -10,51 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Lataa Webbisivu C:llä
+## What & Why? (Mitä & Miksi?)
+Ladataan nettisivu tarkoittaa sivun sisällön hakemista verkosta. Ohjelmoijat tekevät tämän datan käsittelyä, sisällön analysointia tai automaattista toimintaa varten.
 
-## Mikä & Miksi?
-
-Webbisivun lataus on prosessi, jossa otetaan kopio verkkosivusta laadukkaaseen tallennusmuotoon. Ohjelmoijat tarvitsevat tätä toimintoa datan keräämiseksi, palvelimen tilan tarkistamiseksi tai offline-käyttöä varten.
-
-## Kuinka toimii:
-
-Esimerkkikoodi siitä, kuinka voit ladata web-sivun käyttämällä `libcurl` -kirjastoa:
+## How to: (Kuinka tehdä:)
 
 ```C
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
+static size_t write_data(void *ptr, size_t size, size_t nmemb, void *stream) {
+    size_t written = fwrite(ptr, size, nmemb, (FILE *)stream);
+    return written;
+}
 
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+int main(void) {
+    CURL *curl;
+    FILE *fp;
+    CURLcode res;
+    char *url = "http://example.com";
+    char outfilename[FILENAME_MAX] = "downloaded_page.html";
 
-    res = curl_easy_perform(curl);
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
-
-    curl_easy_cleanup(curl);
-  }
-  return 0;
+    curl = curl_easy_init();
+    if (curl) {
+        fp = fopen(outfilename,"wb");
+        curl_easy_setopt(curl, CURLOPT_URL, url);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+        res = curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+        fclose(fp);
+        
+        if (CURLE_OK == res) {
+            printf("Page downloaded successfully to '%s'.\n", outfilename);
+        } else {
+            printf("Error: %s\n", curl_easy_strerror(res));
+        }
+    }
+    
+    return 0;
 }
 ```
-Käännä ja aja ohjelma. Näkyvissä tulisi olla `example.com` sivun HTML-koodi.
 
-## Syvällisempi tutkiskelu:
+## Deep Dive (Sukellus syvyyksiin):
 
-Lataaminen webbisivu on ollut keskeinen osa verkon vuorovaikutusta siitä lähtien, kun HTTP-protokolla otettiin käyttöön 1990-luvun alussa. Kirjastoja, kuten `libcurl` tai `wget`, on kehitetty täyttämään tarve nopeasti ja tehokkaasti.
+Historiaa: Web-sivun lataaminen ohjelmallisesti on ollut tarpeen lähes internetin alkuajoista lähtien. Ennen `libcurl`-kirjastoa käytettiin matalan tason verkko-ohjelmointia kuten socketteja.
 
-Vaihtoehtoisia tapoja ladata webbisivun ovat esimerkiksi `wget` tai `httrack`. Mutta `libcurl` on erittäin joustava ja monipuolinen, ja se tukee useita protokollia, mukaan lukien HTTP, HTTPS, FTP.
+Vaihtoehtoja: `libcurl` on yksi suosituimmista kirjastoista, mutta muita työkaluja ja kirjastoja löytyy, kuten `wget`, `httpclient` ja `libwww`.
 
-`libcurl` vastaanottaa datan palvelimelta ja tallentaa sen muistiin. Se pyytää, suorittaa ja hallitsee verkkotoimintoja, jotka johtavat lataukseen. 
+Toteutusyksityiskohtia: `libcurl` tarjoaa monipuolisen API:n useille protokollille kuten HTTP, HTTPS ja FTP. Koodissa `write_data` funktio määrittää, miten ladattu data kirjoitetaan levylle. `CURLOPT_WRITEFUNCTION` ja `CURLOPT_WRITEDATA` curl-optiot ovat tässä keskeisessä roolissa.
 
-## Katso myös:
+## See Also (Katso myös):
 
-Libcurl-kirjaston virallinen dokumentaatio on saatavilla [täältä](https://curl.haxx.se/libcurl/c/).
-
-Muita tapoja ladata verkkosivuja voit löytää [täältä](https://stackoverflow.com/questions/1636333/download-and-save-a-file-from-the-web-using-c).
+- cURL Projektin viralliset sivut: [https://curl.se/](https://curl.se/)
+- C-kielen verkkokoodaus: [http://beej.us/guide/bgnet/](http://beej.us/guide/bgnet/)
+- Stack Overflow -keskustelut: [https://stackoverflow.com/](https://stackoverflow.com/) (hakusanalla "C programming download webpage")

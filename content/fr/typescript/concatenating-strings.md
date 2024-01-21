@@ -1,7 +1,8 @@
 ---
-title:                "Concaténation de chaînes"
-html_title:           "C: Concaténation de chaînes"
-simple_title:         "Concaténation de chaînes"
+title:                "Concaténation de chaînes de caractères"
+date:                  2024-01-20T17:35:36.428529-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Concaténation de chaînes de caractères"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,38 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce et Pourquoi ?
+## What & Why?
+La concaténation de chaînes de caractères, c'est comme coller des mots ensemble pour former des phrases. On la fait pour construire des messages dynamiques, des requêtes, ou simplement pour afficher du texte de manière logique.
 
-Concaténer des chaînes signifie simplement combiner deux ou plusieurs chaînes de caractères en une seule. Les programmeurs le font pour manipuler et former efficacement les textes selon leurs besoins.
-
-## Comment faire :
-
-En TypeScript, vous pouvez concaténer des chaînes de caractères en utilisant l'opérateur `+` ou la méthode `concat()`, ou même utiliser les templates de chaînes avec `${}`. Jetez un œil à ces exemples :
+## How to:
+Concaténer avec le signe `+` :
 
 ```TypeScript
-// Utilisation de l'opérateur +
-let str1 = "Bonjour, ";
-let str2 = "monde !";
-let res = str1 + str2;
-console.log(res);  // "Bonjour, monde !"
-
-// Utilisation de la méthode concat()
-let res2 = str1.concat(str2);
-console.log(res2);  // "Bonjour, monde !"
-
-// Utilisation des templates de chaînes
-let res3 = `${str1}${str2}`;
-console.log(res3);  // "Bonjour, monde !"
+let bonjour: string = "Bonjour";
+let monde: string = "monde!";
+let salutation: string = bonjour + " " + monde; // "Bonjour monde!"
 ```
 
-## Plongée en profondeur :
+Utiliser les littéraux de gabarits (template literals) avec les backticks ``` ` ``` :
 
-Historiquement, l'opérateur `+` est employé dans les langages de programmation depuis les débuts pour concaténer des chaînes. Cependant, à mesure que les langages évoluent, des alternatives, comme la méthode `concat()` et les templates de chaînes, sont apparues pour offrir plus de flexibilité et de lisibilité.
+```TypeScript
+let prenom: string = "Jean";
+let nom: string = "Dupont";
+let fullName: string = `${prenom} ${nom}`; // "Jean Dupont"
+```
 
-En termes d'implémentation, l'opérateur `+` et la méthode `concat()` fonctionnent fondamentalement de la même manière. Ils créent une nouvelle chaîne tout en laissant les chaînes originales intactes. En revanche, les templates de chaînes, introduits avec ES6, permettent non seulement la concaténation, mais aussi l'interpolation de variables, rendant le code beaucoup plus lisible.
+Résultats :
 
-## Voir aussi :
+```TypeScript
+console.log(salutation); // Affiche "Bonjour monde!"
+console.log(fullName);   // Affiche "Jean Dupont"
+```
 
-TypeScript Documentation: [String](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-Mozilla Developer Network: [String concatenation](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Text_formatting_with_%60_%60)
-Ecma International: [Template Literals](https://www.ecma-international.org/ecma-262/6.0/#sec-template-literals)
+## Deep Dive
+Historiquement, la concaténation de chaînes était réalisée principalement avec l'opérateur `+`. Mais cela pouvait devenir lourd avec l'ajout de variables et de chaînes complexes.
+
+Avec l'ES6, TypeScript a hérité des littéraux de gabarits qui rendent le code plus lisible. Ils permettent aussi l'interpolation et le multiligne, ce qui était auparavant plus compliqué.
+
+Il faut noter que sous le capot, lorsque vous utilisez l'opérateur `+`, TypeScript (et JavaScript) convertit les opérandes en chaînes si l'un d'eux est une chaîne de caractères, pouvant conduire à des comportements inattendus si vous n'êtes pas prudent.
+
+Alternatives? Vous pouvez aussi concaténer avec les méthodes `concat()` ou des fonctions plus évoluées comme les tableaux et la méthode `join()`, mais pour commencer, `+` et les littéraux de gabarits sont vos meilleurs alliés.
+
+## See Also
+- [MDN Web Docs: Template literals](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Template_literals)
+- [TypeScript Documentation: String](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [ECMAScript 6 Features: Template Strings](http://es6-features.org/#StringInterpolation)

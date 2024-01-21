@@ -1,7 +1,8 @@
 ---
-title:                "Перетворення рядка в нижній регістр"
-html_title:           "Javascript: Перетворення рядка в нижній регістр"
-simple_title:         "Перетворення рядка в нижній регістр"
+title:                "Перетворення рядка у нижній регістр"
+date:                  2024-01-20T17:38:52.480864-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Перетворення рядка у нижній регістр"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,34 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке і навіщо?
+## What & Why?
+## Що і чому?
 
-Перетворення рядка в нижній регістр - це процес виконання всіх букв рядка маленькими. Програмісти роблять це, щоб полегшити порівняння рядків і створити єдиний формат вводу/виводу.
+Converting a string to lower case means changing all uppercase letters in a text to their lowercase counterparts. Programmers do this for consistency in text processing, such as case-insensitive comparisons or search.
 
+## How to:
 ## Як це зробити:
 
-Lua має вбудовану функцію string.lower() для перетворення рядка в нижній регістр. Ось приклад використання:
-
 ```Lua
-local text = "Hello, WORLD!"
-lowercase_text = string.lower(text)
-print(lowercase_text)
+local text = "Привіт, Як Справи?"
+local lowercased_text = text:lower()
+
+print(lowercased_text)  -- outputs: "привіт, як справи?"
 ```
 
-Цей код виведе: "hello, world!"
+## Deep Dive
+## Занурення
 
-## Глибше занурення:
+Lua uses the function `:lower()` to convert text. Introduced in early versions, it's been a straightforward feature without major changes. Alternatives include manually iterating over characters and converting them, but this is needlessly complex given Lua's built-in function. Underneath, Lua taps into the C language's character handling functions, ensuring speed and reliability across different systems. Note, however, Lua's string manipulation doesn't account for locale-specific rules. It works fine with basic Latin characters, but be cautious with Unicode strings, as results may vary.
 
-1. **Історичний контекст**: Володіти методами перетворення рядків є фундаментальною частиною будь-якої мови програмування. Lua, наче багато інших мов, включає в себе цю функцію.
+## See Also
+## Дивіться також
 
-2. **Альтернативи**: Якщо ви за якихось причин не хочете користуватися string.lower(), ви можете створити свою власну функцію. Очевидно, це буде менш ефективно і менш зручно.
-
-3. **Деталі реалізації**: string.lower() в Lua працює так, що проходить по кожному символу в рядку і переводить його в нижній регістр, якщо це можливо. Якщо символ уже є в нижньому регістрі або не є буквою, він лишається таким, яким є.
-
-## Дивіться також:
-
-1. Офіційна документація Lua по рядкам: [http://www.lua.org/manual/5.3/manual.html#6.4](http://www.lua.org/manual/5.3/manual.html#6.4)
-
-2. Глибше занурення в Lua рядки на Tutorialspoint: [https://www.tutorialspoint.com/lua/lua_strings.htm](https://www.tutorialspoint.com/lua/lua_strings.htm)
-
-3. FAQ по Lua: [http://lua-users.org/wiki/LuaFaq](http://lua-users.org/wiki/LuaFaq)
+- Lua 5.4 Reference Manual: https://www.lua.org/manual/5.4/manual.html#6.4
+- Lua string manipulation: https://www.lua.org/pil/20.html
+- Unicode considerations in Lua: https://www.lua.org/manual/5.4/manual.html#6.5

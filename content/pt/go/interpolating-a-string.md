@@ -1,6 +1,7 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "Java: Interpolando uma string"
+date:                  2024-01-20T17:50:54.394818-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolando uma string"
 programming_language: "Go"
 category:             "Go"
@@ -10,15 +11,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## O que é & Porquê?
+Interpolação de strings é o jeito de encaixar valores de variáveis diretamente dentro de uma string. Programadores fazem isso para construir strings de maneira dinâmica e legível, facilitando a inclusão de dados variáveis em mensagens, logs ou qualquer outra saída de texto.
 
-## O Que é & Por Quê?
-
-Interpolação de string é a inclusão de variáveis ou expressões dentro de uma string. Programadores o fazem para criar strings dinâmicas ou formatar a saída de strings convenientemente.
-
-## Como Fazer:
-
-Aqui está um exemplo básico de interpolação de string em Go:
+## Como fazer:
 ```Go
 package main
 
@@ -27,28 +23,26 @@ import (
 )
 
 func main() {
-  nome := "João"
-  msg := fmt.Sprintf("Olá, %s!", nome)
-  fmt.Println(msg)
+	nome := "José"
+	idade := 29
+	// Interpolação usando Sprintf
+	mensagem := fmt.Sprintf("Olá, meu nome é %s e eu tenho %d anos.", nome, idade)
+	fmt.Println(mensagem)
 }
 ```
-E a saída será:
-```Go
-Olá, João!
+Saída da amostra:
+```
+Olá, meu nome é José e eu tenho 29 anos.
 ```
 
-## Aprofundamento
+## Mergulho Profundo
+Antes do Go, as linguagens como PHP e Ruby já suportavam interpolação de strings de uma forma ainda mais direta. Go não tem interpolação de string incorporada de forma pura, mas a função `fmt.Sprintf` é a ferramenta padrão para isso.
 
-A interpolação de strings tem sido uma parte essencial da programação desde seus primeiros dias. Em Go, a função `fmt.Sprintf` é usada para a interpolação de strings. Ela retorna a string formatada de acordo com um formato especificado. Ela é semelhante a `printf`, mas retorna a string em vez de a imprimir.
+Alternativas incluem a concatenação direta com o operador `+`, mas isso pode ser verboso e menos eficiente. Outra opção é o uso de `strings.Builder` para montagens complexas de strings, que é mais eficiente para strings com múltiplas operações.
 
-Alternativas para interpolação de string em Go incluem `fmt.Printf` e `fmt.Fprintf`. `fmt.Printf` imprime a string formatada para a saída padrão. `fmt.Fprintf` grava para uma saída especificada, como um arquivo ou stream de rede.
-
-A implementação da interpolação de strings em Go é bastante performática. Go converte a string e as variáveis em bytes para fins de processamento. Devido ao otimizado sistema de gerenciamento de memória de Go, isto é muito rápido e eficiente.
+Na implementação, `fmt.Sprintf` faz uso de verbos de formatação (`%s` para strings, `%d` para números inteiros, etc.) que direcionam como a variável será formatada na string final. Isso dá flexibilidade e controle ao programador sobre a apresentação dos dados.
 
 ## Veja Também
-
-A documentação oficial do pacote fmt: https://pkg.go.dev/fmt
-
-Um guia excelente sobre a interpolação de string em Go: https://yourbasic.org/golang/string-format/
-
-Uma discussão útil sobre interpolação de string vs concatenação em Go: https://stackoverflow.com/questions/1760757/how-to-efficiently-concatenate-strings-in-go
+- Documentação oficial do pacote `fmt`: https://pkg.go.dev/fmt
+- Artigo sobre `strings.Builder`: https://pkg.go.dev/strings#Builder
+- Tutorial sobre `fmt.Sprintf`: https://gobyexample.com/string-formatting

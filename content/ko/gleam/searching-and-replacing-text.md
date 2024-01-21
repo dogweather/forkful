@@ -1,6 +1,7 @@
 ---
 title:                "텍스트 검색 및 교체"
-html_title:           "Elixir: 텍스트 검색 및 교체"
+date:                  2024-01-20T17:57:47.033002-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "텍스트 검색 및 교체"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,22 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-텍스트 검색과 교체는, 특정 문자열을 찾아 다른 문자열로 대체하는 프로그래밍 기법입니다. 이는 데이터 정제, 탐색, 변환 등 다양한 작업을 수행하기 위해 프로그래머들이 사용합니다.
+## What & Why? (무엇인가요? 왜 사용하나요?)
+텍스트 검색 및 교체는 문자열 내에서 특정 단어나 패턴을 찾아 다른 것으로 바꾸는 작업입니다. 프로그래머는 코드 정리, 데이터 변환, 자동화된 수정을 위해 이 기능을 자주 사용합니다.
 
-## 어떻게:
-아래에 Gleam 언어로 텍스트를 검색하고 교체하는 방법이 나와 있습니다.
+## How to: (방법)
+Gleam에서 문자열 검색 및 교체를 간단하게 할 수 있는 예제입니다. 코드가 짧아서 좋죠.
 
-```Gleam
+```gleam
 import gleam/string
 
-fn main(args: List(String)) {
-  let replaced_string = string.replace("Hello, World!", "World", "Gleam")
-  assert("Hello, Gleam!" == replaced_string)
-  replaced_string
+pub fn main() {
+  let text = "Hello, World! Programming is fun in Gleam."
+  let new_text = string.replace(text, "Hello", "안녕하세요")
+  new_text
+  |> string.replace("fun", "재밌어요")
+  |> string.replace("Gleam", "글리암")
+  |> io.debug
 }
-```
-위의 코드는 "Hello, World!" 문자열에서 "World"를 "Gleam"으로 교체합니다. 따라서 결과는 "Hello, Gleam!"가 됩니다.
 
-## 깊이 들여다보기
-텍스트 검색 및 교체는 컴퓨터 과학의 초기 단계부터 존재했습니다. 원시 코드에 존재하는 특정 문자열을 변경하려는 프로그래머의 요구로부터 시작되었습니다. 상기 코드 예제에서는 기본 string.replace 함수를 사용했습니다. 이는 간단한 예제에서는 효과적이지만, 정규식을 사용하여 더 복잡한 패턴을 검색하거나 교체하는 경우도 많습니다. Gleam에서는 이를 위해 [gleam/regex](https://hexdocs.pm/gleam_stdlib/gleam/regex/) 라이브러리를 사용할 수 있습니다.
+// 출력: 안녕하세요, World! Programming is 재밌어요 in 글리암.
+```
+
+## Deep Dive (심층 분석)
+예전에는 정규 표현식이나 특수 라이브러리 없이 문자열을 검색하고 교체하는 것이 복잡했습니다. Gleam은 Rust처럼 엄격한 타입 시스템을 사용하며, Erlang의 BEAM 가상 머신 위에서 실행되는 함수형 언어입니다. 간단한 기능이지만, 텍스트 처리를 위한 강력한 도구가 됩니다.
+
+Gleam의 `string.replace` 함수는 Rust의 `str.replace`나 Python의 `str.replace`와 같이 간단히 작동합니다. 성능이 중요한 경우, 내부적으로는 더 효율적인 로우-레벨 알고리즘을 사용할 수도 있습니다. 
+
+다른 옵션으로는 `regex` 라이브러리가 있어 복잡한 패턴 매칭이 필요할 때 사용할 수 있습니다. 하지만 대부분의 일반적인 사용 사례에는 기본 제공 함수가 충분합니다.
+
+## See Also (더보기)
+- Gleam 공식 문서: https://gleam.run
+- String 모듈 문서: https://hexdocs.pm/gleam_stdlib/gleam/string/
+- Regex 라이브러리: https://github.com/gleam-lang/regex
+- BEAM 가상 머신 정보: https://www.erlang.org/docs
+- Rust 프로그래밍 언어: https://www.rust-lang.org/

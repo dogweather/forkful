@@ -1,7 +1,8 @@
 ---
-title:                "Конкатенація рядків"
-html_title:           "PHP: Конкатенація рядків"
-simple_title:         "Конкатенація рядків"
+title:                "Об'єднання рядків"
+date:                  2024-01-20T17:35:52.823564-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Об'єднання рядків"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,50 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це та навіщо це потрібно?
+## Що і Чому?
+Конкатенація рядків - це процес їх з'єднання в один. Програмісти конкатенують рядки, щоб створювати повідомлення, зліплювати дані, формувати динамічний контент.
 
-Стрічкове конкатенацию - це об'єднання двох або більше рядків. Програмісти роблять це для створення динамічного контенту або форматування виводу.
-
-## Як це робиться:
-
-У Swift основний спосіб конкатенувати рядки - використовувати оператора "+".
-
+## Як це робити:
 ```Swift
-let firstName = "John"
-let lastName = "Doe"
-let fullName = firstName + " " + lastName
+let hello = "Привіт"
+let world = "Світ"
+let greeting = hello + ", " + world + "!"
+// Вивід: Привіт, Світ!
 
-print(fullName) // Outputs: John Doe
+// Через інтерполяцію рядків
+let anotherGreeting = "\(hello), \(world)!"
+// Вивід: Привіт, Світ!
 ```
-Але можна також використовувати властивість "appending" або інтерполяцію рядків:
 
-```Swift
-let message = "Hello, ".appending(fullName)
-print(message) // Outputs: Hello, John Doe
-```
-```Swift
-let intro = "My name is \(fullName)"
-print(intro) // Outputs: My name is John Doe
-```
-## Поглиблена інформація
+## Поглиблено:
+Конкатенація рядків існує від самого народження мов програмування. У Swift, з ефективною системою рядків, конкатенація - це швидкий та простий процес. Але не завжди оптимальний при великій кількості даних, тому з’явився тип `String`, який оптимізований для змін. Для більших об'єднань краще використовувати `join`.
 
-1. **Історичний контекст**: Основа конкатенування рядків бере витоки з перших мов програмування, коли було потрібно об'єднувати символи за допомогою кодів ASCII.
+Альтернативи конкатенації включають використання `+`, `+=` операцій, а також інтерполяцію рядків, яку ви бачили вище. Інтерполяція зазвичай чистіша та швидша, особливо коли потрібно вставити багато змінних.
 
-2. **Альтернативи**: Окрім конкатенування, в Swift можна використовувати форматовані рядки або багаторядкові рядки.
-
-```Swift
-let formattedString = String(format: "Hello, %@. I am %@", arguments: [lastName, firstName])
-```
-```Swift
-let multilineString = """
-  This is line 1.
-  This is line 2.
-  This is line \(3).
-  """ 
-```
-3. **Деталі реалізації**: Коли ви конкатенуєте рядки, Swift створює новий об'єкт рядка. Це важливо, якщо ви збираєтесь об'єднати декілька рядків в циклі, оскільки це може вплинути на продуктивність вашого коду.
-
-## Дивіться також
-
-1. [Документація Swift: Strings and Characters](https://developer.apple.com/documentation/swift/string)
-2. [Stack Overflow: String concatenation vs. interpolation in Swift](https://stackoverflow.com/questions/24092884/get-nth-character-of-a-string-in-swift-programming-language)
+## Дивись також:
+- [Swift String Interpolation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Swift API Reference for String](https://developer.apple.com/documentation/swift/string)
+- [Using Swift’s join() method for string concatenation](https://www.hackingwithswift.com/example-code/strings/using-join-to-combine-strings)

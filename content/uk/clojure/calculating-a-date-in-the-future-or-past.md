@@ -1,7 +1,8 @@
 ---
-title:                "Обчислення дати в майбутньому або минулому"
-html_title:           "Clojure: Обчислення дати в майбутньому або минулому"
-simple_title:         "Обчислення дати в майбутньому або минулому"
+title:                "Обчислення дати у майбутньому або минулому"
+date:                  2024-01-20T17:31:06.725550-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Обчислення дати у майбутньому або минулому"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,35 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Обчислення дати у майбутньому або минулому - це знаходження точної дати, перейшовши певну кількість днів вперед чи назад від вказаної дати. Програмісти роблять це для розрахунку термінів, планування задач та обробки часових рамок.
+## Що це таке та навіщо?
+Визначення дати у майбутньому чи минулому — це процес обчислення дат на основі поданих термінів. Програмісти виконують цю задачу для розрахунку термінів, планування завдань, чи відслідковування часу подій.
 
 ## Як це зробити:
-Тут ми використовуємо функцію `plus` від бібліотеки clj-time:
+Clojure включає бібліотеку `clj-time`, яку можна використовувати для маніпуляцій із датами. Для прикладу додамо 5 днів до поточної дати:
 
 ```Clojure
-(ns example.core
-  (:require [clj-time.core :as t]
-            [clj-time.coerce :as c]
-            [clj-time.periodic :as p]))
+(require '[clj-time.core :as t])
+(require '[clj-time.coerce :as c])
 
-;; Розрахунок дати на 10 днів у майбутнє
-(defn future-date [days]
-  (t/plus (t/now) (t/days days)))
+;; Створення поточної дати
+(def today (t/now))
 
-(future-date 10)
-;; => #object[org.joda.time.DateTime 2914 "..."]
+;; Додавання 5 днів до поточної дати
+(def future-date (t/plus today (t/days 5)))
+
+;; Виведення в форматі yyyy-MM-dd
+(println (c/to-string future-date))
+```
+А тепер віднімемо 10 днів від конкретної дати:
+
+```Clojure
+;; Визначення конкретної дати
+(def some-date (t/date-time 2023 4 1))
+
+;; Віднімання 10 днів від визначеної дати
+(def past-date (t/minus some-date (t/days 10)))
+
+;; Виведення в форматі yyyy-MM-dd
+(println (c/to-string past-date))
 ```
 
-Цей код вираховує дату, яка буде через десять днів від сьогодні.
-
 ## Поглиблено:
-1. Історичний контекст: Clojure - це діалект мови Lisp, і вона має багатий історичний фон обчислення дати. Мови Lisp вперше були створені в 1958 році.
-2. Альтернативи: В Clojure є багато способів обчислення дати в майбутнє або минуле, з різними бібліотеками, як-от clj-time та java-time.
-3. Імплементація: Функція `plus` в clj-time використовує Joda-Time бібліотеку, яка базується на стандартах ISO, що гарантує точність та широкий функціонал.
+У минулому програмісти використовували стандартні Java бібліотеки для роботи з датами. Втім, `clj-time`, бібліотека заснована на Joda-Time, зробила маніпуляцію з датами в Clojure легшою та інтуітивно зрозумілою. Іншим вибором є новіший Java Time API (JSR-310), який також доступний у Clojure через Java інтероперабельність, але `clj-time` часто вибирають за зручний Clojure-інтерфейс. При обчисленні дат важливо враховувати часові зони та літній час, щоб уникнути помилок у розрахунках.
 
-## Додаткові матеріали:
-1. Офіційна документація clj-time: https://github.com/clj-time/clj-time
-2. Інформація про обчислення дати в Clojure: https://practicalli.github.io/clojure/alternative-to-java-time.html
-3. Руководство Joda-Time: http://joda-time.sourceforge.net/
-4. Більше про Clojure: https://clojure.org/
+## Див. також:
+- Більше про бібліотеку clj-time: [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
+- Посібник з Joda-Time: [http://www.joda.org/joda-time/quickstart.html](http://www.joda.org/joda-time/quickstart.html)

@@ -1,7 +1,8 @@
 ---
-title:                "Ladda ner en webbsida"
-html_title:           "Bash: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Hämta en webbsida"
+date:                  2024-01-20T17:43:46.150282-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Hämta en webbsida"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -11,36 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att ladda ner en webbsida innebär att du hämtar dess HTML-kod. Programmerare gör detta för att analysera innehållet, skrapa data eller testa webbintegration.
+Att ladda ned en webbsida innebär att hämta allt innehåll från en webbsida till din lokala enhet. Programmerare gör detta för att analysera webbinnehållet, skapa säkerhetskopior eller för att arbeta offline.
 
-## Hur man gör:
-
-Nedan är ett grundläggande exempel på att använda curl för att ladda ner en webbsida i Bash:
-
-```Bash 
-# Ladda ner en webbsida
-curl http://www.example.com -o example.html
+## Så här gör du:
+Enkel nedladdning med `curl`:
+```Bash
+curl https://www.example.com -o example_page.html
 ```
-
-Efter detta kommando kommer `example.html` att innehålla HTML-koden för sidan `www.example.com`.
+Så här ser resultatet ut:
+```Bash
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                              Dload  Upload   Total   Spent    Left  Speed
+100  1270  100  1270    0     0   6350      0 --:--:-- --:--:-- --:--:--  6350
+```
+För att tysta output använd `-s` flaggan:
+```Bash
+curl -s https://www.example.com -o example_page.html
+```
+För att använda `wget`:
+```Bash
+wget https://www.example.com
+```
+Filen sparas som `index.html` av default.
 
 ## Djupdykning
+Historiskt sett har `wget` varit standardverktyget för att ladda ned och spegla hela webbsidor eller webbplatser, medan `curl` växte fram som det flexiblare verktyget för dataöverföringar av alla slag. `wget` är rekursiv, vilket betyder att den kan ladda ned hela webbplatser genom att följa länkar, medan `curl` hanterar enstaka filer effektivt.
 
-Historiskt sett har `wget` varit standardvalet för nedladdning av webbsidor i Linux-miljöer, men `curl` har blivit allt populärare på grund av dess flexibilitet och kraftfulla funktioner. Ett alternativ till dessa klassiska verktyg är att skriva skript i högre programmeringsspråk som Python eller JavaScript.
+Alternativ till dessa inkluderar mer specialiserade verktyg som `HTTrack` eller att skriva anpassade skript med hjälp av `Python` och bibliotek som `Requests` och `BeautifulSoup` för webbskrapning.
 
-Implementeringen av nedladdning av webbsida i Bash är rakt fram. `curl` eller `wget` skickar en HTTP GET-förfrågan till den angivna URL:en och sparar svaret till den angivna filen.
+Implementationen av filnedladdning i Bash kan variera beroende på operativsystemet. MacOS till exempel levereras med `curl`, men inte `wget` som default. Såväl `curl` som `wget` hanterar HTTP-protokollet, men `curl` stöder även ett stor antal andra protokoll som FTP, SMTP och LDAP.
 
-Här är ett exempel med `wget`:
-
-```Bash
-# Ladda ner en webbsida med wget
-wget http://www.example.com -O example.html
-```
-
-Den nedladdade webbsidan kommer att finnas i `example.html` i din nuvarande katalog.
-
-## Se Även
-
-För mer detaljerad information och fler exempel kan du kolla dokumentationen för `curl` (https://curl.se/docs/) och `wget` (https://www.gnu.org/software/wget/manual/wget.html). 
-
-För ett bredare perspektiv på webbskrapning och datainsamling kan du läsa denna guiden: https://www.freecodecamp.org/news/the-ultimate-guide-to-web-scraping-with-node-js-daa2027dcd3/
+## Se även
+- Curl projektets officiella webbplats: [https://curl.se/](https://curl.se/)
+- Wget manualen: [https://www.gnu.org/software/wget/manual/wget.html](https://www.gnu.org/software/wget/manual/wget.html)
+- Web scraping med Python: [https://docs.python-requests.org/en/latest/](https://docs.python-requests.org/en/latest/) samt [https://www.crummy.com/software/BeautifulSoup/](https://www.crummy.com/software/BeautifulSoup/)

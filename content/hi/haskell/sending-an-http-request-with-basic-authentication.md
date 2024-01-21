@@ -1,7 +1,8 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:02:48.027702-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,40 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? (What & Why?)
+## What & Why? (क्या और क्यों?)
+HTTP अनुरोध बेसिक प्रमाणीकरण के साथ एक सर्वर से संसाधन को एक्सेस करने के लिए credentials (उपयोगकर्ता नाम और पासवर्ड) भेजता है। प्रोग्रामर इसे सुरक्षित एपीआई या वेब सेवाओं तक प्राधिकृत पहुँच प्राप्त करने के लिए करते हैं।
 
-HTTP अनुरोध के साथ बुनियादी प्रमाणीकरण भेजना क्या है? यह एक विशेष तरीका है जिसमें एक प्रोग्राम सर्वर से जानकारी मांगता है, लेकिन उससे पहले उसे खुद को प्रमाणित करता है। प्रोग्रामर इसे क्यों करते हैं? यह सुरक्षित और प्रामाणिक डाटा एक्सेस की आवश्यकता होती है। 
-
-## कैसे करें (How to)
-
-यहां है कि आप Haskell में इसे कैसे कर सकते हैं। 
-
+## How to (कैसे करें):
 ```Haskell
-import Network.HTTP
-import Network.Browser
-import Network.URI
+{-# LANGUAGE OverloadedStrings #-}
 
-main = do
- resp <- Network.Browser.browse $ do
- setAllowBasicAuth True
- request $ Request {rqURI = uri, rqMethod = GET, rqHeaders = [], rqBody = ""}
- print resp
- where uri = fromJust $ parseURI "http://username:password@mysite.com"
+import Network.HTTP.Client
+import Network.HTTP.Types.Header (hAuthorization)
+import Network.HTTP.Base (encodeBase64)
+import Data.ByteString.Char8 (pack)
+
+-- | बेसिक प्रमाणीकरण के साथ HTTP GET अनुरोध भेजना
+sendRequestWithBasicAuth :: IO ()
+sendRequestWithBasicAuth = do
+  manager <- newManager defaultManagerSettings
+  let credentials = "username:password" -- यहाँ अपना उपयोगकर्ता नाम और पासवर्ड डालें
+      authHeader = ("Authorization", "Basic " <> encodeBase64 (pack credentials))
+      request = "http://example.com" -- अपना अनुरोध URL यहाँ डालें
+  initialRequest <- parseRequest request
+  let requestWithAuth = initialRequest { requestHeaders = [authHeader] }
+  response <- httpLbs requestWithAuth manager
+  putStrLn $ "Response status code: " ++ show (statusCode $ responseStatus response)
+  print $ responseBody response
+
+main :: IO ()
+main = sendRequestWithBasicAuth
 ```
-उपयोगकर्तानाम और पासवर्ड को आपके प्रमाणीकरण की जरूरतों के साथ बदलें।
+*उदाहरण आउटपुट:*
+```
+Response status code: 200
+"सामग्री..."
+```
 
-## गहन अध्ययन (Deep Dive)
+## Deep Dive (गहन जानकारी):
+HTTP बेसिक प्रमाणीकरण वेब के प्रारंभिक दिनों से है और सबसे सरल प्रमाणीकरण मेकानिज़म में से एक है। आप यूजरनेम और पासवर्ड को Base64 में एन्कोड करके मैनेजर कॉल के साथ अनुरोध हेडर में भेजते हैं। इसका विकल्प ओघ (OAuth) या एपीआई कुंजियों का उपयोग हो सकता है जो अधिक सुरक्षित होते हैं। फिर भी, बेसिक प्रमाणीकरण का उपयोग आंतरिक और कम सुरक्षा चिंता वाली सेवाओं में जारी है। Haskell में, http-client पैकेज नेटवर्क कॉल्स की आसानी से हैंडलिंग के लिए एक अधिक स्थूल तरीका प्रस्तुत करता है।
 
-1. ऐतिहासिक संदर्भ: इसमें HTTP Basic Authentication भेजने की विधि शामिल है जो 1990 के दशक में W3C द्वारा विकसित की गई थी। 
-2. विकल्प: इससे अधिक सुरक्षित ओएसआईएमएल और Digest Access Authentication प्रमाणीकरण विधाएं भी हैं।
-3. कार्यान्वयन विवरण: यह कार्यान्वयन पुनः प्रयोग करने योग्य क्लास तत्व तैयार करता है जिसे आप ब्राउज़र सेटिंग्स में प्रयोग कर सकते हैं। यह सुनिश्चित करता है कि प्रमाणीकरण हमेशा सेट किया जाता है जब भी आवश्यक हो।
-
-## अधिक देखें (See Also)
-
-अधिक आपके संदर्भ के लिए, निम्नलिखित संसाधनों की जांच करें:
-
- हैस्कल HTTP पैकेज डॉक्यूमेंटेशन: http://hackage.haskell.org/package/HTTP
- 
- हैस्कल नेटवर्क ब्राउज़र पैकेज डॉक्यूमेंटेशन: http://hackage.haskell.org/package/network-browser
-
-वेब प्राधिकरण के तकनीकी विवरण के लिए, आप W3C की मानकों की जांच कर सकते हैं।
+## See Also (देखें भी):
+- [HTTP client package](https://hackage.haskell.org/package/http-client)
+- [HTTP types for Haskell](https://hackage.haskell.org/package/http-types)
+- [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+- [Hackage: Haskell package repository](https://hackage.haskell.org/)

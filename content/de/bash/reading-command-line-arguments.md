@@ -1,7 +1,8 @@
 ---
-title:                "Befehlszeilenargumente lesen"
-html_title:           "Arduino: Befehlszeilenargumente lesen"
-simple_title:         "Befehlszeilenargumente lesen"
+title:                "Lesen von Kommandozeilenargumenten"
+date:                  2024-01-20T17:55:17.336418-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lesen von Kommandozeilenargumenten"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,35 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Lesen von Befehlszeilenargumenten in Bash 
-
 ## Was & Warum?
-Das Lesen von Befehlszeilenargumenten ist der Prozess, durch den ein Bash-Skript Eingaben vom Benutzer erhält. Programmierer tun dies, um die Funktionalität ihrer Skripte zu erhöhen und eine interaktive Benutzererfahrung zu ermöglichen.
+Kommandozeilenargumente sind Parameter, die einem Bash-Skript übergeben werden, um sein Verhalten dynamisch anzupassen. Programmierer nutzen dies, um Skripte flexibler und wiederverwendbar zu machen – ganz ohne manuelle Änderungen im Skript selbst.
 
-## Wie:
-Um Argumente in einem Bash-Skript zu lesen, verwenden wir spezielle Variablen, die als Positionspunkte bezeichnet werden.
-```Bash
+## Wie geht das?
+```
 #!/bin/bash
+# script.sh
 
-# Das erste Argument anzeigen
-echo $1 
-
-# Das zweite Argument anzeigen
-echo $2
+echo "Das erste Argument ist: $1"
+echo "Das zweite Argument ist: $2"
+echo "Alle Argumente: $@"
+echo "Anzahl der Argumente: $#"
 ```
-Wenn wir dieses Skript nun mit den Argumenten "Hallo" und "Welt" ausführen, erhalten wir:
-```Bash
-$ ./meinSkript.sh Hallo Welt
-Hallo
-Welt
+Ausführen des Skripts:
+```
+$ bash script.sh Apfel Birne
+Das erste Argument ist: Apfel
+Das zweite Argument ist: Birne
+Alle Argumente: Apfel Birne
+Anzahl der Argumente: 2
 ```
 
-## Vertiefung
-Die Verwendung von Befehlszeilenargumenten reicht bis in die Anfänge der Unix-Shell zurück und ist ein zentraler Bestandteil der Bash-Programmierung. Alternativen dazu sind die Verwendung von Eingaben/Tastatureingaben während der Programmausführung oder die Lektüre aus einer Datei. 
+## Tiefgang
+Die `$1`, `$2`... Variablen sind Positionalparameter, die Bash direkt zur Verfügung stellt. `$@` ist eine spezielle Variable, die alle Argumente als Liste enthält. `$#` gibt die Anzahl der übergebenen Argumente an.
 
-Die Implementierung des Lesens dieser Argumente in Bash ist relativ einfach, da die Positionspunkte (z.B. `$1`, `$2`, ...) direkt auf die entsprechenden Argumente verweisen. Der spezielle Parameter `$#` gibt die Anzahl der gelieferten Argumente zurück, und `$0` bezieht sich oft auf den Namen des Skripts selbst.
+In den frühen Unix-Tagen wurden Skriptargumente für die Anpassung an verschiedene Kontexte und Aufgaben verwendet. Heute sind sie genauso relevant, da sie die Skripte vielseitig und interaktiv machen.
+
+Alternativen umfassen `getopts` und `getopt` für komplexere Szenarien mit benannten Argumenten und Optionen.
+
+Im Kern ermöglicht Bash, dass Argumente unterschiedlichen Positionen zugeordnet und separat oder zusammen abgefragt werden können.
 
 ## Siehe auch
-Für weitere Informationen verweisen wir auf folgende Quellen: 
-- [Bash Guide for Beginners: Chapter 3. The Bash environment](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html)
-- [Bash Handbook: Command Line Arguments](https://github.com/denysdovhan/bash-handbook/blob/master/README.md#command-line-arguments)
+- Bash 5.0 Referenzhandbuch: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html
+- Advanced Bash-Scripting Guide zu Kommandozeilenargumenten: https://tldp.org/LDP/abs/html/internalvariables.html#ARGLIST
+- Ein Artikel über die Verwendung von `getopts`: https://linuxconfig.org/bash-script-getopts-with-command-line-options-arguments

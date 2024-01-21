@@ -1,6 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-html_title:           "Haskell: Drukowanie komunikatów debugowania"
+date:                  2024-01-20T17:53:24.527406-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,39 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i dlaczego?
+Wypisywanie debugowania to wyświetlanie informacji o działaniu programu – pomaga to programistom łapać błędy. Wykorzystujemy to, aby zobaczyć, co się dzieje w naszym kodzie, zanim coś pójdzie nie tak.
 
-Drukowanie informacji debugujących to sposób na wyświetlanie krok po kroku stanu programu podczas jego działania. Programiści robią to, aby łatwiej zidentyfikować i naprawić błędy w kodzie.
-
-## Jak zrobić:
-
-Proste drukowanie informacji debugujących w Rust jest tak proste jak użycie funkcji `println!` z formatem `{:?}`. 
-
+## Jak to zrobić:
 ```Rust
-struct ProstyStruct {
-    a: i32,
-    b: f32,
-}
-
 fn main() {
-    let s = ProstyStruct { a: 3, b: 4.0 };
-    println!("{:?}", s);
+    let debug_variable = "Hello, Rust!";
+    println!("Debug info: {:?}", debug_variable);
 }
 ```
+Wynik:
+```
+Debug info: "Hello, Rust!"
+```
+Użyj `{:?}` w makrze `println!` dla prostego debugowania.
 
-Efekt będzie taki, gdzie mamy `ProstyStruct { a: 3, b: 4.0 }`.
+## Deep Dive
+Debugowanie wywodzi się z czasów wcześniejszych komputeryzacji, gdy "debugowanie" dosłownie oznaczało usuwanie owadów z maszyn. W Rust, wykorzystujemy `println!` z różnymi formatterami (`{}`, `{:?}`, `{:#?}` itp.) dla różnych celów. Alternatywy to logowanie i używanie narzędzi jak `gdb` czy `lldb`.
 
-## Głębsze Zanurzenie: 
+Implementacyjnie, Rust używa derive macro `Debug` dzięki `#[derive(Debug)]`, by automatycznie generować implementację formatowania dla dowolnego typu strukturalnego. Jest to zgodne z ideami zero-cost abstractions i kompilacji warunkowej.
 
-1. Kontekst historyczny: Debugowanie zostało wprowadzone w latach 50-tych i od tamtego czasu ewoluowało, stając się integralną częścią programowania.
-
-2. Alternatywy: W Rust, możemy również używać funkcji `dbg!` do drukowania informacji debugujących, które zwracają wartość dla dalszego użycia w kodzie.
-
-3. Szczegóły implementacji: Wydruk debugujący z `{:?}` wykorzystuje trait `std::fmt::Debug` do formatowania wyjścia. Musi on być zaimplementowany dla typu struktury.
-
-## Zobacz również: 
-
-1. Dokumentacja Rust na temat Debugowania: https://doc.rust-lang.org/rust-by-example/std/marker/trait.debug.html
-2. Dokumentacja Rust na temat funkcji println!: https://doc.rust-lang.org/std/macro.println.html
-3. Szczegóły na temat Debug Trait: https://doc.rust-lang.org/std/fmt/fn.debug_struct.html
-4. Przewodnik Rust o debugowaniu: https://rust-lang.github.io/rustc-guide/print.html
+## Zobacz także:
+- Dokumentacja Rust: https://doc.rust-lang.org/std/fmt/
+- Guide to Rustc's diagnostics: https://rustc-dev-guide.rust-lang.org/diagnostics.html
+- The Rust Programming Language – Printing Debug Info: https://doc.rust-lang.org/book/ch5-02-example-structs.html

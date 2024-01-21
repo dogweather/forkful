@@ -1,6 +1,7 @@
 ---
 title:                "Interpolazione di una stringa"
-html_title:           "Clojure: Interpolazione di una stringa"
+date:                  2024-01-20T17:51:13.626791-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolazione di una stringa"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,31 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e Perché?
-L'interpolazione delle stringhe è una tecnica che permette di inserire variabili o espressioni direttamente all'interno di una stringa. Programmatori lo fanno per rendere il codice più leggibile e fluido.
+## What & Why? (Cosa & Perché?)
+L'interpolazione di stringhe permette di inserire variabili o espressioni all'interno di una stringa di testo. Lo facciamo per costruire dinamicamente stringhe, facilitando l'output personalizzato e la manipolazione dei dati.
 
-## Come fare:
-Ecco come si può interpolare una stringa in Fish Shell:
+## How to: (Come fare:)
+Ecco come interpolare una stringa in Fish Shell.
 
 ```Fish Shell
-set name "Mario"
-echo "Ciao, $name"
+set nome "Mondo"
+echo "Ciao, $nome!"
 ```
+
 Output:
-```Fish Shell
-Ciao, Mario
 ```
-Facile, no? Puoi inserire qualsiasi variabile desideri tra i `$`.
+Ciao, Mondo!
+```
 
-## Immersione Profonda
-La pratica dell'interpolazione è antica quanto la programmazione stessa. Perl era noto per il suo supporto all'interpolazione, che in seguito è stata adottata da molti altri linguaggi come php, javascript e python. Fish Shell è uno di questi linguaggi che ha adottato questa pratica.
+Più complesso:
+```Fish Shell
+set prezzo 100
+echo "Il costo totale è $(math $prezzo * 1.22) euro, IVA inclusa."
+```
 
-Esistono approcci alternativi all'interpolazione delle stringhe, come la concatenazione, tuttavia, l'interpolazione tende a rendere il codice più pulito e leggibile. 
+Output:
+```
+Il costo totale è 122 euro, IVA inclusa.
+```
 
-Nella shell di Fish, l'interpolazione delle stringhe viene realizzata utilizzando una combinazione di parsing del linguaggio e sostituzione di stringhe.
+## Deep Dive (Approfondimento)
+L'interpolazione di stringhe risale ai giorni del telegrafo. Il principio dietro rimane: sostituire un segnaposto con un valore specifico. In Fish Shell, usi il simbolo `$` seguito dal nome della variabile. È diretto e meno prolisso di altri linguaggi che richiedono funzioni o metodi aggiuntivi.
 
-## Guarda Anche
-Per ulteriori informazioni su come utilizzare l'interpolazione delle stringhe in Fish Shell, consulta i seguenti collegamenti:
+Alcune shell alternative, come Bash o Zsh, hanno approcci leggermente diversi per l'interpolazione di stringhe, che possono comprendere notazioni come `"${var}"` o manipolazioni più complesse. Fish è stato progettato per essere più leggibile e semplice, mirando a evitare errori comuni e rendere lo script più pulito.
 
-- [Documentazione ufficiale Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Guida di stringhe Fish Shell](https://fishshell.com/docs/current/commands.html#string)
+Fish implementa l'interpolazione di stringhe nel suo parsing della linea di comando. Quando Fish incontra il carattere `$`, cerca di espandere ciò che segue come variabile. Se esiste, sostituisce il segnaposto con il suo valore.
+
+## See Also (Vedi Anche)
+- La documentazione ufficiale di Fish per le stringhe: [Fish Shell String Docs](https://fishshell.com/docs/current/index.html#variables-string)
+- Una guida alla sintassi di scripting in Fish: [Fish Scripting Tutorial](https://fishshell.com/docs/current/tutorial.html)
+- Confronto tra shell e pratiche comuni: [Awesome Fish](https://github.com/jorgebucaran/awesome-fish)

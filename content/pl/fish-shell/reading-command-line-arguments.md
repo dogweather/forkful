@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie argumentów linii poleceń"
-html_title:           "Bash: Czytanie argumentów linii poleceń"
-simple_title:         "Czytanie argumentów linii poleceń"
+title:                "Odczytywanie argumentów linii poleceń"
+date:                  2024-01-20T17:55:47.932341-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie argumentów linii poleceń"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,50 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Czytanie argumentów z linii poleceń to metoda, dzięki której programy mogą przyjmować parametry bezpośrednio po uruchomieniu. Programiści robią to, aby rozbudować funkcjonalność i elastyczność swojego kodu, umożliwiając użytkownikowi dostosowanie działania programu.
+## What & Why? (Co i dlaczego?)
+Czytanie argumentów linii poleceń to sposób na podanie danych programowi, kiedy go uruchamiasz. Programiści korzystają z tego, aby uczynić swoje skrypty elastycznymi i bardziej użytecznymi.
 
-## Jak to zrobić:
-Pisać w Fish Shell jest wyjątkowo proste. Przykład czytania argumentów z linii poleceń prezentuje się następująco:
+## How to: (Jak to zrobić?)
+Podawanie argumentów i odczytywanie ich w Fish jest banalnie proste. Oto jak:
 
-```fish
-function powitanie
-    echo Witaj, $argv[1]
+```Fish Shell
+# wywołanie skryptu z argumentami
+fish my_script.fish arg1 arg2
+
+# my_script.fish
+for arg in $argv
+    echo "Argument: $arg"
 end
 ```
 
-A teraz uruchom powyższą funkcję:
-
-```shell
-$ powitanie Jan
-Witaj, Jan
+Output:
+```
+Argument: arg1
+Argument: arg2
 ```
 
-## Głębsze zanurzenie:
-Czytanie argumentów z linii poleceń istnieje od początków informatyki, zapewniając elastyczność w interakcji z programami.
+Możesz też łatwo dostać się do konkretnych argumentów:
 
-Alternatywą dla Fish jest Bash, lecz Fish oferuje bardziej nowoczesne i uproszczone podejście do składni.
+```Fish Shell
+# Pierwszy argument
+echo $argv[1]
 
-W Fish możemy przechodzić przez wszystkie argumenty przy użyciu pętli:
-
-```fish
-function powitanie
-    for imie in $argv
-        echo Witaj, $imie
-    end
-end
+# Drugi argument
+echo $argv[2]
 ```
 
-Załóżmy, że mamy więcej niż jedną osobę:
+## Deep Dive (Głębsze spojrzenie)
+Fish Shell ma prostą i przejrzystą składnię, a obsługa argumentów linii komend nie jest wyjątkiem. Kiedy UNIX powstał, argumenty wywołania pozwoliły użytkownikom na interaktywną manipulację działaniem programów. W Bashu, innym popularnym shellowi, używa się `$1`, `$2` dla kolejnych argumentów – w Fish, lista `$argv` ułatwia pracę z wieloma argumentami. Alternatywą dla argumentów są pliki konfiguracyjne lub interaktywne wprowadzanie danych, ale to może być mniej wydajne przy automatyzacji zadań.
 
-```shell
-$ powitanie Jan Anna Michał
-Witaj, Jan
-Witaj, Anna
-Witaj, Michał
-```
-
-## Zobacz również:
-Dodatkowe źródła, które mogą Ci pomóc:
-1. Dokumentacja Fish Shell: https://fishshell.com/docs/current/
-2. Stackoverflow - Fish: https://stackoverflow.com/questions/tagged/fish
+## See Also (Zobacz także)
+- [Dokumentacja Fish Shell o zmiennej argv](https://fishshell.com/docs/current/language.html#variables)
+- [Poradnik komend Fish](https://fishshell.com/docs/current/tutorial.html#tut_scripting)
+- [Unix Programming Environment](https://en.wikipedia.org/wiki/The_Unix_Programming_Environment) – książka wprowadzająca w kontekst historyczny
+- [Bash Scripting Tutorial](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/) – w przypadku potrzeby porównania z Bashem

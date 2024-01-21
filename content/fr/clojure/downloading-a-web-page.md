@@ -1,7 +1,8 @@
 ---
-title:                "Télécharger une page web"
-html_title:           "Bash: Télécharger une page web"
-simple_title:         "Télécharger une page web"
+title:                "Téléchargement d'une page web"
+date:                  2024-01-20T17:43:30.126068-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Téléchargement d'une page web"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,39 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Télécharger une page Web en utilisant Clojure
-
 ## Quoi & Pourquoi ?
-
-"Télécharger une page Web" est l'action d'extraire le contenu d'une page Web vers votre ordinateur pour un usage ultérieur. Les programmeurs le font généralement pour récupérer et analyser des données.
+Télécharger une page web, c'est récupérer son contenu via Internet. Les programmeurs le font pour analyser des données, automatiser des tâches ou agréger du contenu.
 
 ## Comment faire :
-
-L'exemple suivant montre comment utiliser la bibliothèque `clj-http` pour télécharger une page web.
-
 ```Clojure
-(ns web-download.core
-  (:require [clj-http.client :as client]))
+(require '[clj-http.client :as client])
 
-(defn get-web-page [url]
+(defn download-page [url]
   (let [response (client/get url)]
     (:body response)))
 
-(defn main []
-  (println (get-web-page "https://www.google.com")))
-
-(main)
+;; Utilisation
+(println (download-page "https://www.example.com"))
 ```
 
-Le code ci-dessus récupère le contenu de Google's main page.
+Sortie d'échantillon :
+```
+<!doctype html>
+<html>
+<head>
+    <title>Exemple de Titre</title>
+...
+```
 
-## Deep Dive 
+## Exploration:
+Historiquement, télécharger des pages web était plus laborieux, souvent fait avec de grosses bibliothèques Java ou par des commandes comme `wget`. Maintenant, en Clojure, des libs comme `clj-http` simplifient la tâche. Alternativement, on pourrait utiliser `http-kit` ou `aleph` pour des fonctionnalités asynchrones. Quand on télécharge une page web, il faut s’occuper de la gestion des erreurs réseau et de l’encodage - clj-http gère ça pour vous.
 
-1. **Contexte historique**: Le téléchargement de pages Web a commencé lorsque le monde s'est rendu compte de l'immense quantité de données disponibles sur Internet.
-2. **Alternatives**: D'autres bibliothèques comme `java.net.URL`, `java.nio.file` peuvent être utilisées pour télécharger une page Web. Chacune a ses propres avantages et inconvénients.
-3. **Détails d'implémentation**: `clj-http` envoie une requête HTTP GET à l'URL spécifiée et renvoie la réponse. `:body` contient le contenu HTML de la page Web.
-
-## Voir Aussi 
-
-1. Documentation clj-http : [https://github.com/dakrone/clj-http](https://github.com/dakrone/clj-http)
-2. Pour analyser le HTML : [https://github.com/cgrand/enlive](https://github.com/cgrand/enlive)
+## Voir aussi :
+- Documentation de `clj-http` : [https://github.com/dakrone/clj-http](https://github.com/dakrone/clj-http)
+- Documentation de `http-kit` : [http://www.http-kit.org/](http://www.http-kit.org/)
+- Documentation de `aleph` : [https://github.com/clj-commons/aleph](https://github.com/clj-commons/aleph)

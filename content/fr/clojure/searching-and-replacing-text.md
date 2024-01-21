@@ -1,6 +1,7 @@
 ---
 title:                "Recherche et remplacement de texte"
-html_title:           "Arduino: Recherche et remplacement de texte"
+date:                  2024-01-20T17:57:46.519593-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Recherche et remplacement de texte"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,32 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# La recherche et le remplacement de textes dans Clojure
+## What & Why?
+Rechercher et remplacer du texte, c'est comme jouer à cache-cache avec des mots pour les troquer contre d'autres. Les programmeurs le font pour corriger des erreurs, mettre à jour des données ou transformer du code.
 
-## Quoi et Pourquoi?
-La recherche et le remplacement de texte sont des opérations fondamentales dans la programmation. Elles permettent aux développeurs d'ajuster le contenu textuel et de manipuler les données d'une manière flexible et efficace.
-
-## Comment faire:
-Dans Clojure, nous utilisons la fonction `clojure.string/replace` pour chercher et remplacer du texte. Voici comment l'utiliser :
-
+## How to:
 ```Clojure
+;; Recherche et remplacement simple avec `clojure.string/replace`
 (require '[clojure.string :as str])
 
-(defn replace-text [s old new]
-  (str/replace s old new))
+;; Exemple: Remplacer "chien" par "chat"
+(str/replace "J'ai un chien et un chien." "chien" "chat")
+;; => "J'ai un chat et un chat."
 
-(replace-text "Bonjour tout le monde!" "monde" "France")
-;; "Bonjour tout le France!"
+;; Utilisation d'une expression régulière (regex) pour remplacer toutes les occurrences d'une chiffre par un '#'
+(str/replace "Les numéros 12345 sont importants." #"\d" "#")
+;; => "Les numéros ##### sont importants."
+
+;; Remplacer avec une fonction de correspondance
+(str/replace "Je veux XXL et non L" #"\b[X]+\b" (fn [match] (clojure.string/lower-case match)))
+;; => "Je veux xxl et non L"
 ```
 
-## Approfondissement
-Historiquement, la recherche et le remplacement de texte ont été des opérations inhérentes à la programmation depuis ses tout débuts. Elles sont essentielles dans les tâches telles que la transformation de données et la localisation de bugs.
+## Deep Dive
+Avant, on manipulait de gros blocs de texte manuellement, fatiguant, n’est-ce pas ? Aujourd'hui, avec les langages de programmation comme Clojure, on utilise des fonctions ou des regex. 
 
-En Clojure, `clojure.string/replace` utilise des expressions régulières (regex), qui constituent une fonctionnalité puissante disponible dans la plupart des langages de programmation. Les regex permettent de rechercher des schémas de texte complexes, offrant une grande flexibilité.
+Pourquoi regex ? Ils sont puissants, précis, mais peuvent être complexes. Clojure simplifie la tâche avec `clojure.string/replace`, qui cache la complexité des regex.
 
-Il existe des alternatives à `clojure.string/replace`, telles que `clojure.string/replace-first`, qui ne remplace que la première occurrence du texte de recherche.
+D'autres options existent, comme `sed` en ligne de commande ou des bibliothèques spécialisées. Clojure même fournit plus de contrôle avec des librairies telles que `re-find`, `re-seq`, `re-matches` pour des cas plus avancés.
 
-## Voir aussi
-- Documentation officielle de `clojure.string/replace`: https://clojuredocs.org/clojure.string/replace
-- Tutoriel sur les expressions régulières dans Clojure: https://www.regular-expressions.info/clojure.html
-- Guide pour la manipulation de texte dans Clojure : http://clojure-cookbook.com/chapters/13_strings_and_characters/
+L'implémentation dans Clojure est efficace grâce à l'interopérabilité avec Java et sa `java.util.regex` API. Cela rend les opérations de texte robustes et performantes.
+
+## See Also
+- [Clojure Docs - `clojure.string/replace`](https://clojuredocs.org/clojure.string/replace)
+- [Clojure from the ground up - Regular expressions](https://aphyr.com/posts/305-clojure-from-the-ground-up-regular-expressions)
+- [Java Pattern class](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)

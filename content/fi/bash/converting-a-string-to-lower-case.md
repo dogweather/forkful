@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-html_title:           "Arduino: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+date:                  2024-01-20T17:37:54.363733-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,44 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
+Muuttaa kirjaimet pieniksi tekstissä. Auttaa vertailemaan sisältöä huomiottaen kirjainkoon.
 
-Muuttaminen merkkijono pieniksi kirjaimiksi tarkoittaa sisällön käsittelyä siten, että kaikki merkkijonon suuret kirjaimet muuttuvat pieniksi kirjaimiksi. Ohjelmoijat tekevät tämän muodostaakseen yhtenäisyyttä ja välttääkseen tietojen väärinkäsitykset, koska Bash on kirjainkoosta riippuvainen.
-
-## Näin tehdään:
-
-Bash-ohjelmassa voit tuoda esille pienet kirjaimet käyttämällä tr-komentoa seuraavasti:
-
+## Miten:
 ```Bash
-echo 'Hei, Suomi!' | tr '[:upper:]' '[:lower:]'
+# Yksinkertainen tapa
+teksti="Moi kaikki!"
+pienet_kirjaimet=${teksti,,}
+echo $pienet_kirjaimet
+```
+```
+moi kaikki!
 ```
 
-Edellä oleva käskee Bashin tulostamaan 'Hei, Suomi!' jossa kaikki suuret kirjaimet muutetaan pieniksi kirjaimiksi. Tämä tuottaa seuraavan tuloksen:
+## Syväsukellus
+Bashissa on alunperin käytetty tr-komentoa tai awk-ohjelmaa muuntamaan kirjaimet pieniksi. Vuoden 2000 jälkeen Bash versio 4.0 toi mukanaan sisäänrakennetut string-toiminnot, kuten yllä olevan lowercase-muunnoksen. Vaihtoehtoina voidaan mainita `tr`, `awk` ja modernit työkalut kuten `sed` ja Perl-skriptit.
 
 ```Bash
-hei, suomi!
+# tr-komennon käyttö
+echo "Moi Kaikki!" | tr '[:upper:]' '[:lower:]'
 ```
 
-## Syvä Sukellus:
+Komento `tr` käsittelee merkkijonovirtoja, ja suorittaa annettujen joukkojen (`[:upper:]` ja `[:lower:]`) korvauksia tai poistoja.
 
-Historiallisesta näkökulmasta, tr-komento on peräisin Unix-järjestelmän varhaisista päivistä ja on ollut osa POSIX-standardia vuodesta 1993 alkaen.
+Käyttöjärjestelmän ja ympäristöjen eroista johtuen, käytä Bashin sisäisiä toimintoja portabiliteetin vuoksi. Esimerkiksi Mac OS X:n ja vanhempien Linux-järjestelmien Bash-versiot eivät välttämättä tue yllä mainittuja sisäänrakennettuja string-toimintoja.
 
-Tärkeä vaihtoehto sisällytetty Bash-ohjelmaan on `${variable,,}` syntaksi, jossa 'variable' on muuttuja, jonka arvo haluat muuttaa:
-
-```Bash
-variable='Hei, Suomi!'
-echo "${variable,,}"
-```
-
-Tämä tulostaa saman tuloksen kuin tr-komento:
-
-```Bash
-hei, suomi!
-```
-
-Muistutus: bash-ohjelman `${variable,,}` syntaksi tuli käyttöön version 4.0 julkaisussa, joten se ei välttämättä ole saatavilla vanhemmissa järjestelmissä.
-
-## Katso myös:
-
-1. Bash-kielen käsikirja: https://www.gnu.org/software/bash/manual/bash.html
-2. Yksityiskohtainen opas TR-komentoon: https://www.geekhideout.com/dir/2011/09/19/unix-tr-command-examples/
-3. Alkuperäinen POSIX-standardi: https://pubs.opengroup.org/onlinepubs/9699919799/
+## Katso Myös
+- Bash manual: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion
+- Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/
+- An Introduction to String Manipulation in Bash: https://linuxconfig.org/bash-scripting-tutorial-for-beginners

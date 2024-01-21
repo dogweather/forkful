@@ -1,7 +1,8 @@
 ---
-title:                "גירוד מספרים אקראיים"
-html_title:           "Haskell: גירוד מספרים אקראיים"
-simple_title:         "גירוד מספרים אקראיים"
+title:                "גילוי מספרים אקראיים"
+date:                  2024-01-20T17:50:11.490621-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "גילוי מספרים אקראיים"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Numbers"
@@ -11,32 +12,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-
-הייצור של מספרים אקראיים הוא תהליך בו נוצרים מספרים באופן שאינו ניתן לחיזוי. מתכנתים משתמשים בכך לתסריטים שונים, כמו יצירת מידע מדגם, בחינת קוד, משחקים או אסימולציות.
+יצירת מספרים אקראיים זה תהליך שבו המחשב מייצר ערכים באופן שלא ניתן לחזות אותם מראש. תכניתנים משתמשים בזה למגוון מטרות, כולל בדיקות, משחקים ואבטחת מידע.
 
 ## איך לעשות:
-
-על ידי משתמש בפונקציה Get-Random, אפשר ליצור מספר אקראי.
-
 ```PowerShell
 # יצירת מספר אקראי בין 1 ל-100
-מספר_אקראי = Get-Random -Minimum 1 -Maximum 100
-Write-Output $מספר_אקראי
+$randomNumber = Get-Random -Minimum 1 -Maximum 101
+Write-Output $randomNumber
 ```
-
-בהרצה תוצאה כזאת או דומה לה תתקבל:
+פלט לדוגמה: `57`
 
 ```PowerShell
-58
+# יצירת סדרת מספרים אקראיים
+1..10 | ForEach-Object { Get-Random -Minimum 1 -Maximum 101 }
 ```
+פלט לדוגמה: `23 67 45 89 12 37 50 74 91 16`
 
-## צלילה עמוקה:
+## טבילה עמוקה
+בעבר, כאשר מחשבים עוד לא היו קיימים, מספרים אקראיים היו מופקים באמצעות טבלאות נייר או אמצעים פיזיים אחרים כמו קוביות. היום, אנחנו משתמשים באלגוריתמים כדי לייצר מספרים אקראיים (ולמרבה הפלא, הם לא באמת 'אקראיים' אלא 'פסאודו-אקראיים'). חלופות ל-`Get-Random` כוללות שימוש ב-[RNGCryptoServiceProvider] שמיועד לספק אבטחה גבוהה יותר עם אקראיות טובה יותר. פרטי היישום של יצירת מספרים אקראיים ב-PowerShell מתבססים על .NET ה-[System.Random] קלאס.
 
-מאז האינטרנט הקדומה, הייצור של מספרים אקראיים נפוץ במחשבים. ישן, וכעת לא משמש, הגישה ל-COM ותוסף ה-Scriptlet, אך הגישה הנוכחית של PowerShell הרבה יותר יעילה.
-
-שים לב, Get-Random מניב מספר אקראי בין ה- Minimum ו- Maximum, לא כולל ה- Maximum. זהו היבט של המנגנון .NET שעליו מתבסס PowerShell.
-
-## ראה גם:
-
-1. [Microsoft Docs: Get-Random](https://docs.microsoft.com/he-il/powershell/module/microsoft.powershell.utility/get-random)
-2. [Stack Overflow: Generating Random Numbers in PowerShell](https://stackoverflow.com/questions/4753702/generating-random-numbers-in-powershell)
+## ראה גם
+- [מסמך העזרה הרשמי של `Get-Random`](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Get-Random)
+- [מידע נוסף על `RNGCryptoServiceProvider`](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider)

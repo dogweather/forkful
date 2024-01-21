@@ -1,7 +1,8 @@
 ---
-title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
-html_title:           "Gleam: Merkkijonon muuttaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+date:                  2024-01-20T17:38:52.466993-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,38 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa sen kirjainsarjan konvertoimista vastaaviin pieniin kirjaimiin. Tämä on hyödyllistä, kun halutaan vertailla sanoja riippumatta alkuperäisestä kirjoitusasuista tai tehdä tekstihaku herkäksi kirjainkoosta.
 
-Lauseen muuntaminen pienaakkosiksi tarkoittaa sitä, että kaikki lauseen isot kirjaimet muutetaan pieniksi kirjaimiksi. Ohjelmoijat tekevät tämän usein helpottaakseen tekstin käsittelyä ja vertailua, koska koneet pitävät erikokoisia kirjaimia eri merkkeinä.
+## How to:
+Haskellissa saat merkkijonon muutettua pieniksi kirjaimiksi käyttämällä `Data.Char` moduulin `toLower` funktiota yhdessä listankäsittelyn kanssa. Tässä on miten se tehdään:
 
-## Miten näin tehdään:
-
-Haskellin standardikirjastossa on `Data.Char` moduuli, joka tarjoaa toLower-funktion. Se muuntaa merkin pieniksi kirjaimiksi. Tässä on esimerkki sen käytöstä:
-
-```Haskell
+```haskell
 import Data.Char (toLower)
 
-lowerCaseString :: String -> String
-lowerCaseString str = map toLower str
+lowercaseStr :: String -> String
+lowercaseStr str = map toLower str
 
+-- Esimerkkikäyttö
 main :: IO ()
-main = putStrLn $ lowerCaseString "Hei SUOMI!"
+main = putStrLn (lowercaseStr "Moikka Maailma!")
 ```
 
-Tämä ohjelma tulostaa `"hei suomi!"`.
+Esimerkkikäyttö tulostaa:
 
-## Syvempi sukellus:
+```
+moikka maailma!
+```
 
-Näyttää siltä, että yksinkertainen toiminto, kuten merkkijonon muuttaminen pieniksi kirjaimiksi, ei vaadi paljon historiallista kontekstia tai syvempää ymmärrystä. Kuitenkin, kuten monissa ohjelmointikysymyksissä, se liittyy suoraan tietokoneiden ja ohjelmointikielten ongelmiin tekstin, numeroiden ja binääridatan käsittelyssä.
+## Deep Dive
+Muuntaessa merkkijonoja pieniin kirjaimiin Haskellissa käytetään yleisesti `Data.Char`-moduulia, joka sisältää `toLower` funktion. Tämä lähestymistapa on tehty mahdolliseksi vuodesta 2003, kun Haskell 98-standardi laajennettiin includeamaan `Data.Char`.
 
-- Historiallinen konteksti: `toLower`-funktion kaltaisten toimintojen tarve johtuu siitä, että eri kirjaimet (iso ja pieni) on koodattu eri numeroiksi ASCII-taulukossa, jota tietokoneet ja ohjelmointikielet käyttävät merkkijonojen käsittelyyn.
+Alternativeina, voit käyttää ulkopuolisia kirjastoja kuten `text` tai `bytestring`, jos työskentelet spesifisten tekstityyppien kanssa. Nämä kirjastot tarjoavat omat funktionsa merkkijonojen muuntamiseen, jotka voivat olla tehokkaampia suurille datamassoille.
 
-- Vaihtoehdot: Voit ensin tarkistaa, onko merkki iso kirjain, ja sitten muuttaa sen pieneksi kirjaimiksi. Tämä ei kuitenkaan ole tehokasta, kun voit suoraan käyttää `toLower`-muunnosta.
+Implementointi yksityiskohtana, `toLower`-funktio itse on yksinkertainen. Se ottää yhden merkin ja palauttaa vastaavan pienikirjaimisen merkin. Listankäsittelykeinona `map` soveltuvasti ajaa `toLower` jokaiselle merkille jonossa.
 
-- Toteutuksen yksityiskohdat: `toLower`-muunnos toteutetaan tavallisesti yksinkertaisena numeroiden siirtona. ASCII-kooditaulukossa pienet kirjaimet ovat samat kuin isot kirjaimet, mutta ne on siirretty 32 yksikköä. Joten `toLower`-muunnos vain lisää 32 numeroon, joka vastaa isoa kirjainta.
+## See Also
+Haskellin dokumentaatio `Data.Char`-moduulille: https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html
 
-## Katso myös:
+`text`-kirjasto: https://hackage.haskell.org/package/text
 
-Lisätietoja Haskellin merkkijonojen käsittelystä ja `Data.Char`-moduulista löydät seuraavista lähteistä:
+`bytestring`-kirjasto: https://hackage.haskell.org/package/bytestring
 
-- Haskell Library: [Data.Char](http://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
+Haskell oppaita ja tutoriaaleja: https://www.haskell.org/documentation/

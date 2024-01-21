@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:50:40.544914-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,37 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Interpolacja Stringów w Elixir
+## What & Why? (Co i dlaczego?)
+Interpolacja łańcuchów znaków to wstawianie wartości zmiennych wewnątrz stringa. Programiści używają jej do tworzenia elastycznych wiadomości i dynamicznego kodu bez konieczności ciągłego łączenia ciągów znaków.
 
-## Co i Dlaczego?
-
-Interpolacja stringów to proces modyfikowania stringów poprzez wstawianie wyrażeń, które są dynamicznie przekształcane na tekst. Programiści używają tego, aby efektywnie tworzyć i manipulować stringami, co jest przydatne np. przy logowaniu danych.
-
-## Jak to zrobić:
-
-W Elixir możliwe jest stosowanie wyrażeń wewnątrz ciągów, dzięki czemu tworzenie dynamicznych stringów jest łatwe. Wystarczy umieścić wyrażenie w nawiasach klamrowych `{}` i poprzedzić go symbolem `#`.
-
+## How to: (Jak to zrobić:)
 ```elixir
-imie = "Kamil"
-IO.puts "Cześć, #{imie}!"
+name = "Łukasz"
+age = 28
+
+# Standard interpolation
+greeting = "Cześć, mam na imię #{name} i mam #{age} lata."
+IO.puts greeting
+# Output: Cześć, mam na imię Łukasz i mam 28 lata.
+
+# With expressions
+info = "Za rok będę miał #{age + 1} lat."
+IO.puts info
+# Output: Za rok będę miał 29 lat.
 ```
 
-Gdy uruchomisz powyższy kod, otrzymasz komunikat:
+## Deep Dive (Dogłębna analiza)
+W Elixirze, interpolacja stringów jest implementowana za pomocą znaku `#` i nawiasów klamrowych `{}`. Została zapożyczona z języka Ruby i jest wygodniejsza niż ciągłe łączenie łańcuchów za pomocą operatora `<>`. Pod maską, Elixir przekształca interpolację w konkatenację, dzięki czemu jest również wydajna.
 
-```
-Cześć, Kamil!
-```
+Alternatywnie możesz użyć funkcji `String.concat/2` albo operatora `<>`, ale to zazwyczaj prowadzi do bardziej rozwlekłego i mniej czytelnego kodu, zwłaszcza gdy łączy się wiele wartości.
 
-## Deep Dive
-
-Interpolacja ciągów znaków ma swoje korzenie w językach takich jak Perl i Ruby. Istotne jest, że Elixir, będąc językiem dynamicznym, wykonuje interpolację w czasie wykonania.
-
-W Elixir jest wiele sposobów na konkatenację ciągów znaków, ale interpolacja jest jedną z najprostszych i najbardziej wydajnych opcji.
-
-Pod spodem, interpolacja w Elixir jest zaimplementowana przez jądro języka, które tworzy listę binarną. Jest to efektywniejsze niż konkatenacja stringów, która wymaga kopiowania i łączenia danych.
-
-## Zobacz także:
-
-1. [Documentacja Elixir](https://elixir-lang.org/getting-started/basic-types.html#strings): Sprawdź oficjalną dokumentację Elixir na temat stringów i manipulacji danymi.
-2. [Przewodnik HexDocs](https://hexdocs.pm/elixir/String.html): Szczegółowy przewodnik po modułach String w Elixir.
-3. [StackOverflow](https://stackoverflow.com/questions/31384963/string-interpolation-vs-concatenation/): Dyskusja na temat porównania interpolacji stringów i złączeń w Elixir.
+## See Also (Zobacz również)
+- [Elixir - String Docs](https://hexdocs.pm/elixir/String.html)
+- [Programming Elixir by Dave Thomas](https://pragprog.com/titles/elixir16/programming-elixir-1-6/)
+- [Elixir School - Strings](https://elixirschool.com/en/lessons/basics/strings/)

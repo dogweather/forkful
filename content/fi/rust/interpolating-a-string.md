@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Bash: Merkkijonon interpolointi"
+date:                  2024-01-20T17:51:32.803090-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,39 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Stringien interpolaatio Rust-ohjelmointikielessä
-
 ## Mikä & Miksi?
-Stringien interpolaatio tarkoittaa muuttujien tai lausekkeiden asettamista suoraan merkkijonojen sisään. Ohjelmoijat käyttävät sitä välttääkseen pitkät ja monimutkaiset merkkijonojen yhdistelmät.
+String-interpolointi tarkoittaa muuttujien yhdistämistä merkkijonoon. Se tekee koodista luettavampaa ja dynaamista, koska voit muodostaa merkkijonon lennosta arvojen perusteella.
 
-## Kuinka:
-Rust-kielisissä ohjelmissa, `format!`-makroa käytetään usein stringien interpolaatioon. Katsotaanpa esimerkkiä:
-
+## Kuinka tehdä:
 ```Rust
-let nimi = "Matti";
-let tervehdys = format!("Hei, {}!", nimi);
-println!("{}", tervehdys);
+fn main() {
+    let muuttuja = "maailma";
+    let viesti = format!("Hei, {}!", muuttuja);
+    println!("{}", viesti); // Tulostaa: Hei, maailma!
+}
 ```
 
-Tämä tulostaa: `"Hei, Matti!"`.
-
-## Syvällisempi katsaus
-Stringien interpolaatiolla on pitkä historia. Se on ollut osa ohjelmointikieliä jo ennen Rustin olemassaoloa, kuten Perlissä ja PHP:ssa.
-
-Vaihtoehtoisesti Rustissa voidaan käyttää `println!`-makroa suoraan:
-
 ```Rust
-let nimi = "Matti";
-println!("Hei, {}!", nimi);
+fn main() {
+    let vuosi = 2023;
+    println!("On vuosi {} ja Rust on edelleen mahtava!", vuosi); // Tulostaa: On vuosi 2023 ja Rust on edelleen mahtava!
+}
 ```
 
-Tämä tulostaa saman kuin aiempi esimerkki.
+## Syväsukellus:
+Historiallisesti string-interpolointi on ollut ominaisuus monissa ohjelmointikielissä ennen Rustia, kuten Perl, Python ja Ruby. Rustissa `format!` makro ottaa käyttöön interpoloinnin, mikä on turvallinen tapa yhdistellä merkkijonoja, sillä se estää muistivirheet ja pistesijoitusvirheet. Vaihtoehtona `format!`, `println!` makroa voi käyttää suoraan merkkijonojen tulostukseen interpoloinnin kanssa. Toisin kuin jotkut muut kielet, Rustissa ei käytetä erityistä merkintää, kuten `$` string-interpoloinnissa, mikä voi vähentää sekaannusta.
 
-Rust käyttää makroja stringien interpolaatiota varten, toisin kuin jotkut muut kielet, jotka sisältävät syntaksin suoraan kielen rakenteeseen. 
+Suorituskyvyn kannalta, koska Rust on alhaisen tason kieli, interpolointi `format!` makrolla voi olla hitaampi kuin konkatenaatio käytettäessä pieniä kiinteitä merkkijonoja, mutta ero ei yleensä ole merkittävä. Käyttö `format!` makroa tekee koodin selvemmin ymmärrettäväksi ja ylläpidettäväksi, joten se on hyvä käytäntö.
 
-Sen lisäksi että `format!` ja `println!`-makroja voidaan käyttää muuttujien arvojen sisällyttämiseen merkkijonojen sisään, ne tukevat myös monia formatointiasetuksia. Esimerkiksi, voit määrittää numeroiden tarkkuuden tai merkkijonojen leveyden.
-
-## Katso myös
-- [Rust-dokumentaatio: format!](https://doc.rust-lang.org/std/macro.format.html)
-- [Rust-dokumentaatio: println!](https://doc.rust-lang.org/std/macro.println.html)
-- [Rust by Example: Formatted print](https://doc.rust-lang.org/rust-by-example/hello/print.html)
+## Katso myös:
+- Rustin virallinen dokumentaatio string-formaateista: [https://doc.rust-lang.org/std/fmt/](https://doc.rust-lang.org/std/fmt/)
+- Rust book, jossa käsitellään stringejä ja niiden manipulointia: [https://doc.rust-lang.org/book/ch08-02-strings.html](https://doc.rust-lang.org/book/ch08-02-strings.html)
+- Rust by Example, formatointi-osio: [https://doc.rust-lang.org/rust-by-example/hello/print/fmt.html](https://doc.rust-lang.org/rust-by-example/hello/print/fmt.html)

@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Bash: Merkkijonon interpolointi"
+date:                  2024-01-20T17:51:28.257230-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,37 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Stringin interpolointi tarkoittaa muuttujien tai lausekkeiden arvojen syöttämistä suoraan merkkijonoon. Koodaajat tekevät tätä, koska se tekee koodista selkeämpää ja dynaamisempaa – ei enää yhteenkasattuja merkkijonoja.
 
-Interpoloiva merkkijono on Ruby-ohjelmoinnin tekniikka, joka sallii muuttujien tai tulosten sisällyttämisen suoraan merkkijonojen sisään. Se tehdään sujuvampaan ja helpommin luettavaan koodiin.
-
-## Näin se tehdään:
-
-Koodissa ympäröimme halutun muuttujan tai lausekkeen `#{}` sisään merkkijonon sisällä.
-
+## How to (Kuinka tehdä):
 ```Ruby
-nimi = "Markus"
-tervehdys = "Hei, #{nimi}!"
-puts tervehdys 
+# Muuttujan interpolointi
+kayttaja = 'Pekka'
+tervehdys = "Hei, #{kayttaja}!"
+puts tervehdys
+# Output: Hei, Pekka!
+
+# Lausekkeen interpolointi
+pisteet = 55
+viesti = "Sinulla on #{pisteet / 10.0} tähteä!"
+puts viesti
+# Output: Sinulla on 5.5 tähteä!
 ```
 
-Edellä oleva koodi tulostaa "Hei, Markus!", sillä interpoloimme `nimi`-muuttujan suoraan `tervehdys`-merkkijonoon.
+## Deep Dive (Sukellus syvemmälle):
+Stringin interpolointissa #{...} sisällä oleva koodi suoritetaan, ja sen arvo muunnetaan merkkijonoksi. Tämä tapahtui Rubyssa ensi kertaa version 1.8 myötä ja on siitä lähtien ollut suosittu tapa yhdistää tietoa merkkijonoihin.
 
-## Syventävä sukellus
+Vaihtoehtoina ovat `+`-merkin käyttö tai `sprintf`-metodi, mutta ne voivat olla kömpelömpiä ja vähemmän suoraviivaisia. Esimerkiksi:
+```Ruby
+# Stringin yhdistäminen + merkin avulla
+tervehdys = 'Hei, ' + kayttaja + '!'
 
-Interpolointi on ollut osa Ruby-kieltä sen alkuperäisestä versiosta lähtien. Toinen tapa tehdä sama asia on käyttää `+` tai `.concat` -menetelmää, mutta merkkijonojen interpoloinnin katsotaan olevan puhtaampaa ja tehokkaampaa. 
+# sprintf-metodin käyttäminen
+tervehdys = sprintf('Hei, %s!', kayttaja)
+```
 
-Interpolointi käyttää sisäisesti Ruby'n `to_s`-metodia muuttaakseen muuttujat merkkijonoiksi, joten vaikka yritetäänkin interpoloida jotakin, joka ei ole merkkijono, Ruby hoitaa sen puolestasi.
+Interpoloinnissa merkkijonoon voi sijoittaa minkä tahansa Ruby-lausekkeen, joka palauttaa arvon. Järjestelmä kutsuu automaattisesti objektin `to_s`-metodia sen muuntamiseksi merkkijonoksi, joten voit interpoloida myös muita kuin merkkijonoja.
 
-## Katso myös
-
-1. Ruby'n virallinen dokumentaatio merkkijonojen interpoloinnista:
-   http://ruby-doc.org/core/String.html#method-i-percent
-
-2. Kattava opas merkkijonojen interpoloinnista Rubyssa:
-  https://www.rubyguides.com/2018/11/ruby-string-interpolation/
-
-3. Erikoistapaukset ja syvällinen sukellus Ruby'n merkkijonojen interpolointiin:
-   https://launchschool.com/books/ruby/read/strings
-
-Hauskaa ohjelmointia!
+## See Also (Katso myös):
+- Ruby-dokumentaatio: [String#%](https://ruby-doc.org/core/String.html#method-i-25) kertoo sprintf-metodin käytöstä.
+- Ruby-doc.org: [String luku](https://ruby-doc.org/core/String.html), jossa on eritelty muita merkkijonojen käsittelytapoja.
+- [Why's (Poignant) Guide to Ruby](http://poignant.guide/), hauska ja informatiivinen opas Ruby-ohjelmoinnin alkeisiin.

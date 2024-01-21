@@ -1,7 +1,8 @@
 ---
-title:                "Alimerkkijonojen poiminta"
-html_title:           "Gleam: Alimerkkijonojen poiminta"
-simple_title:         "Alimerkkijonojen poiminta"
+title:                "Merkkijonojen osien poimiminen"
+date:                  2024-01-20T17:45:03.252593-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkijonojen osien poimiminen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,33 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why - Mitä ja Miksi?
+Substringien erottelu tarkoittaa isomman merkkijonon osan leikkaamista ja käyttämistä. Ohjelmoijat tekevät tätä, kun tarvitsevat töihin vain osan datasta.
 
-Alimerkkijonon purkaminen on prosessi, jossa otetaan osa merkkijonosta käyttämällä sen indeksejä. Ohjelmoijat tekevät tämän tiedon erottamiseksi tai muokkaamiseksi.
-
-## Kuinka tehdään:
-
-Tässä on esimerkki siitä, miten alimerkkijono voidaan hakea Bash:lla:
-
+## How to - Kuinka tehdään
 ```Bash
-string="Tervetuloa Bash ohjelmointiin."
-substring=${string:11:4}
-echo $substring
+#!/bin/bash
+# Määritellään merkkijono
+koko_jono="Hello, Terve Maailma!"
+
+# Erotetaan alijono käyttäen leikkausparametrejä
+ali_jono="${koko_jono:7:6}"
+
+# Tulostetaan alijono
+echo "$ali_jono"
 ```
 
-Tässä, `string:11:4` ottaa 4 merkkiä merkkijonosta alkaen 11. indeksistä. Tuloste:
-
-```Bash
-Bash
+Sample output:
+```
+Terve
 ```
 
-## Syvempi tarkastelu:
+## Deep Dive - Syväsukellus
+Bash on ollut käytössä jo vuosikymmeniä. Alkuaikoina, merkkijonojen käsittely oli rajoitetumpaa, mutta nykyisin Bash tukee monipuolisesti substrings. Vaihtoehtona voi käyttää `awk`, `sed`, tai `cut`. Tarkasti katsottuna, Bash-tekniset yksityiskohdat riippuvat siitä, mitä shell-versiota käytetään. Uusimmissa versioissa käyttäjät voivat leikata alijonoja suoraan ilman ulkopuolisia ohjelmia.
 
-Historiallisesti Unix-komentorivikielet, kuten Bash, sisälsivät alimerkkijonokäsittelyn jo varhain. Vaihtoehtoja alimerkkijonojen käsittelyyn ovat esimerkiksi `cut`, `awk` ja `perl`-komentoriviohjelmat. Bashin alimerkkijonojen purkamisen implementointi on tehty C-koodauksella, joten se on suoraviivaista ja nopeaa.
-
-## Lisätietoja:
-
-Bash-programmoinnin syvällisempään oppimiseen suosittelemme seuraavia lähteitä:
-
-1. GNU Bash-ohje: [http://www.gnu.org/software/bash/manual/bash.html](http://www.gnu.org/software/bash/manual/bash.html)
-3. Bash String Manipulations: [https://tldp.org/LDP/abs/html/string-manipulation.html](https://tldp.org/LDP/abs/html/string-manipulation.html)
+## See Also - Katso Myös
+1. Bash-hahmomuunnokset – `man bash` ja etsi "Parameter Expansion".
+2. Linux `cut` komento – hyvä vertailupiste Bashin omille toiminnoille.
+3. Advanced Bash-Scripting Guide – syvällisempää tietoa skriptauksesta.

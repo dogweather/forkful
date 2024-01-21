@@ -1,6 +1,7 @@
 ---
 title:                "Läsa en textfil"
-html_title:           "Fish Shell: Läsa en textfil"
+date:                  2024-01-20T17:54:11.794529-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Läsa en textfil"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,34 +12,90 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att läsa en textfil innebär att programmet hämtar data från en fil som är lagrad på disken. Programmerare gör detta för att hantera konfigurationer, läsa användardata eller importera externa data till sitt program.
 
-Att läsa en textfil är en process där programmerare extraherar information lagrad i en fil. Det gör vi för att modifiera, analysera eller använda den informationen i våra program. 
-
-## Så här gör du:
-
-Tyvärr, i dagens version av Elm (0.19.1) har du inte direkt åtkomst till filsystemet. Du kan dock använda `ports` för att kommunicera med JavaScript.
+## Hur gör man:
+Elm har ingen inbyggd filsystemsfunktionalitet på klient-sidan av en webbapplikation p.g.a. webbsäkerhetsrestriktioner. Istället, använder du en `File`-modul som möjliggör att användaren kan välja filer som sedan kan läsas. Här är ett grundläggande exempel:
 
 ```Elm
-port module Main exposing (..)
+module Main exposing (main)
+import Browser
+import File exposing (File)
+import Html exposing (Html, button, div, input)
+import Html.Events exposing (onClick)
+import Task
 
-port readFile : String -> Cmd msg
+type Msg
+    = SelectFile (List File)
+    | ReadFile (Result String String)
 
-port fileRead : (String -> msg) -> Sub msg
+type alias Model =
+    { fileContent : Maybe String }
+
+main =
+    Browser.element
+        { init = init
+        , update = update
+        , view = view
+        , subscriptions = \_ -> Sub.none
+        }
+
+init : () -> (Model, Cmd Msg)
+init _ =
+    ( { fileContent = Nothing }
+    , Cmd.none
+    )
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        SelectFile files ->
+            let
+                file = List.head files
+            in
+            case file of
+                Just selectedFile ->
+                    ( model
+                    , selectedFile
+                        |> File.stringReader
+                        |> Task.perform ReadFile
+                    )
+
+                Nothing ->
+                    (model, Cmd.none)
+
+        ReadFile result ->
+            case result of
+                Ok content ->
+                    ( { model | fileContent = Just content }, Cmd.none )
+
+                Err _ ->
+                    ( { model | fileContent = Nothing }, Cmd.none )
+
+view : Model -> Html Msg
+view model =
+    div []
+        [ input [ Html.Attributes.type_ "file", Html.Events.onInput (SelectFile << File.selectMultiple) ] []
+        , div []
+            (case model.fileContent of
+                Just content ->
+                    [ div [] [ Html.text content ] ]
+
+                Nothing ->
+                    []
+            )
+        ]
 ```
-I Elm kan du skicka efterfrågningen till JavaScript med `readFile` och lyssna på svaren med `fileRead`.
 
-## Fördjupad Infomation:
+Här använder vi `File`-modulen för att läsa innehållet av en användarvald textfil och sedan visa innehållet på skärmen.
 
-Historiskt sett i Elm har direkt tillgång till filsystemet inte varit en prioritet då Elm primärt är utformat för webbapplikationer. 
+## Djupdykning:
+I Elm, som i många funktionella språk, hanterar vi inte filsystemet direkt som i andra språk som Python eller JavaScript på serversidan. Historiskt sett är Elm skapat för att köras i webbläsaren där filsystemet är otillgängligt av säkerhetsskäl. 
 
-Alternativ till Elm för filåtkomst kan vara Node.js eller Python, båda välkända för sina omfattande IO-funktioner. 
+Elm's filhantering på webben är begränsad till att användarna själva väljer vilken fil de vill att applikationen ska bearbeta. Detta sker genom en `input` av typen "file", som sedan kan läsas som en sträng eller omvandlas till andra format via filmodulen.
 
-Om du vill tillhandahålla denna funktionalitet inom en Elm-applikation kan du implementera den genom JavaScript interop via “ports” vilket vi nämnde i hur-sektionen. 
+Som alternativ när det behövs server-side filhantering, kan man använda server-side Elm, vilket är mindre vanligt, eller integrera Elm-framsidan med ett backend i ett annat språk (t.ex. Node.js, Go, Ruby) som sköter filsystem-relaterade uppgifter.
 
-## Se Även:
-
-För att läsa mer om filhantering i Elm och JavaScript rekommenderar vi följande resurser:
-
-1. [Elm Ports Dokumentation](https://guide.elm-lang.org/interop/ports.html)
-2. [Node.js fs modul](https://nodejs.org/api/fs.html)
-3. [JavaScript File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications)
+## Se även:
+- Elm File Module Documentation: [package.elm-lang.org/packages/elm/file/latest/](https://package.elm-lang.org/packages/elm/file/latest/)
+- Discussions about file reading in Elm on Elm Discourse: [discourse.elm-lang.org/](https://discourse.elm-lang.org/)

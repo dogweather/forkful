@@ -1,7 +1,8 @@
 ---
-title:                "Søking og erstatning av tekst"
-html_title:           "Lua: Søking og erstatning av tekst"
-simple_title:         "Søking og erstatning av tekst"
+title:                "Søking og erstatting av tekst"
+date:                  2024-01-20T17:58:16.756907-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Søking og erstatting av tekst"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,46 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Søke og erstatte tekst refererer til å finne et bestemt mønster i en tekststreng og å erstatte det med en annen tekststreng. Programmerere gjør dette hovedsakelig for data manipulasjon og automatisering.
+## What & Why?
+Søking og erstatting av tekst lar oss finne spesifikke ord eller mønstre og bytte dem ut med noe annet. Det sparer tid, unngår feil og automatiserer endel kjedelig jobb.
 
-## Hvordan:
-Her er noen kodingseksempler: 
-
-1. Bruke `String.prototype.replace()` metoden.
+## How to:
+```Javascript
+let tekst = "Katter er flinke, katter er søte.";
+let endretTekst = tekst.replace(/katter/gi, "hunder");
+console.log(endretTekst); // Output: Hunder er flinke, hunder er søte.
+```
+Bruk `replace()` for enkel søk-og-erstatt. Regulære uttrykk (regex) gir mer kontroll.
 
 ```Javascript
-// Eksisterende tekststreng.
-let txt = "Hello, world!";
-
-// Erstatt 'world' med 'Norge'.
-let replacedTxt = txt.replace("world", "Norge");
-
-console.log(replacedTxt);
-// Output: "Hello, Norge!"
+let historie = "I 1991 ble JavaScript laget. JavaScript ble oppdatert i 2015.";
+let oppdaterHistorie = historie.replace(/\d{4}/g, (år) => {
+  return år == "1991" ? "1995" : (parseInt(år) + 1).toString();
+});
+console.log(oppdaterHistorie); // Output: I 1995 ble JavaScript laget. JavaScript ble oppdatert i 2016.
 ```
 
-2. Søke og erstatte flere tilfeller med RegExp (+ 'g' flag).
+## Deep Dive:
+Søk-og-erstatt i JavaScript benytter gjerne `.replace()` metoden. Historisk sett kommer teknikkene for tekstmanipulasjon fra tidlige programmeringsspråk som Perl.
 
-```Javascript
-// Eksisterende tekststreng. 
-let txt = "Hei, verden! Verden, hei!";
+Det finnes andre metoder som `.replaceAll()` og biblioteker som Lodash, men `.replace()` med regex er fleksibelt. 
 
-// Erstatt alle tilfeller av 'verden' med 'Norge'.
-let replacedTxt = txt.replace(/verden/g, "Norge");
+Når du bruker regulære uttrykk (regex), kan du spesifisere globale (`g`) søk, ignorere store/små bokstaver (`i`), og bruke callback-funksjoner for mer dynamiske erstatninger. Vær obs på tunge regex operasjoner – de kan senke ytelsen.
 
-console.log(replacedTxt);
-// Output: "Hei, Norge! Norge, hei!"
-```
-
-## Dyp Dykk:
-Historisk sett har søking og erstatting av tekst vært en viktig funksjon fra de tidligste dagene av programmering, med det første kjente bruk fra 1956-tallets strengmanipulasjon algoritmer.
-
-Alternativt kan du søke etter og erstatte tekst ved hjelp av avanserte algoritmer som KMP (Knuth-Morris-Pratt), Boyer-Moore, og mange flere, men JavaScripts innebygde metoder er mer enn tilstrekkelige for de fleste bruk.
-
-Når det gjelder implementering, bruker Javascripts `String.prototype.replace()` metoden en grei tilnærming - det leter gjennom teksten streng etter streng, og erstatter tekstbasert på parametrene du angir.
-
-## Se Også:
-1. [MDN Web Docs: String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-2. [JavaScript RegExp Objects](https://www.w3schools.com/js/js_regexp.asp)
-3. [Advanced string search and replace methods](https://stackoverflow.com/questions/441018/replacing-strin)
+## See Also:
+- MDN Web Docs om `.replace()`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+- Regex tester og tutorials: https://regexr.com/
+- Lodash bibliotek: https://lodash.com/

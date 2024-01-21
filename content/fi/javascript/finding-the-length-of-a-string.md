@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon pituuden selvittäminen"
-html_title:           "Go: Merkkijonon pituuden selvittäminen"
+date:                  2024-01-20T17:47:44.087795-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,32 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Sidan pituus: Mitä ja Miksi?
+## What & Why? - Mitä ja Miksi?
+Selvitetään merkkijonon pituutta (`length`-ominaisuus) tietääksemme, montako merkkiä jono sisältää. Sitä tarvitaan esimerkiksi silloin, kun validoidaan käyttäjän syötteitä tai manipuloidaan tekstidataa.
 
-Jousen pituuden selvittäminen tarkoittaa sen merkkien lukumäärän laskemista. Tätä tietoa tarvitaan esimerkiksi silloin, kun halutaan tietää, sisältääkö merkkijono tietyn määrän merkkejä tai kun halutaan käydä läpi merkkijonon jokainen merkki.
+## How to: - Kuinka tehdään:
+```javascript
+let greeting = "Hei maailma!";
+console.log(greeting.length); // Tulostaa 12
 
-## Näin se tehdään:
+let emptyString = "";
+console.log(emptyString.length); // Tulostaa 0
 
-Tämä on kuinka voit selvittää merkkijonon pituuden JavaScriptillä:
+let emojiString = "😊";
+console.log(emojiString.length); // Tulostaa 2, koska Unicode-emotikonit voivat olla monimerkkisiä
+```
 
- ```Javascript...
-let str = "Hei maailma!";
-let length = str.length;
-console.log(length); // tulostaa: 12
-``` 
+## Deep Dive - Syväsukellus:
+Merkkijonon pituuden selvittäminen JavaScriptillä on helppoa ja suoraviivaista: käytä `length`-ominaisuutta. Historiallisesti tämä ominaisuus on ollut osa JavaScriptiä alusta asti, eli ECMAScript 1 -versiosta lähtien.
 
-Joten, meillä on merkkijono "Hei maailma!", jonka pituus on 12 merkkiä (sisältäen huutomerkki).
+Ennen ES6:ta, jos halusi luoda uuden merkkijonon pituuden perusteella, ainoa tapa oli käyttää silmukoita tai funktioita. ES6 toi mukanaan `String.prototype.repeat`-metodin, joka helpottaa tätä tehtävää.
 
-## Syvempi sukellus
+Unicode-merkkijonojen kanssa pitää olla tarkkana, koska JavaScript käsittelee Unicode-merkkejä erikoisesti. Esimerkiksi jotkut emotikonit voivat koostua useammasta Unicode-skaalan merkistä, mikä tarkoittaa että `length`-ominaisuus voi antaa hämäävän arvon.
 
-Sadan pituuden selvittämisen JavaScriptissä on melko suoraviivaista, kuten olemme nähneet. Mutta onko olemassa muita tapoja?
-
-Syvämmällä tasolla JavaScript tallentaa merkkijonot UTF-16-koodauksena, jossa jokainen merkki vie joko kaksi tai neljä tavua tilaa. Tämä tarkoittaa, että jos kyseessä on =unicode merkkijono, .length ei välttämättä palauta odotettua tulosta. Silloin on käytettävä toista toimintoa, kuten Array.from(str).length .
-
-Historiallisesti, ennen ECMAScript 2015, merkkijonon pituuden selvittämiseksi täytyi käydä läpi koko merkkijono käyttäen silmukkaa ja kasvattaa laskuria jokaisella kierroksella. 
-
-## Katso myös
-
-1. [MDN Web Docs: String.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-2. [ECMAScript 2015 specs](http://www.ecma-international.org/ecma-262/6.0/#sec-properties-of-string-instances-length)
-3. [JavaScript Info: String](https://javascript.info/string)
+## See Also - Katso Myös:
+- MDN Web Docs - String.length: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- JavaScript Unicode pitfalls: [http://mathiasbynens.be/notes/javascript-unicode](http://mathiasbynens.be/notes/javascript-unicode)
+- Understanding ES6: [https://leanpub.com/understandinges6/read](https://leanpub.com/understandinges6/read)

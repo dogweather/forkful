@@ -1,6 +1,7 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
+date:                  2024-01-20T17:57:30.534575-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,31 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mikä ja Miksi?)
+Tekstin etsiminen ja korvaaminen on prosessi, jossa löydät tiettyä tekstiä ja vaihdat sen toiseen. Ohjelmoijat käyttävät sitä koodin virheiden korjaamiseen, asetusten päivittämiseen ja tylsän toistotyön välttämiseen.
 
-Tekstin etsintä ja sen korvaaminen tarkoittaa esiintymien löytämistä merkkijonoista ja niiden korvaamista toisella merkkijonolla. Ohjelmoijat tekevät tämän tyypillisesti datan muokkaamiseksi tai virheiden korjaamiseksi.
-
-## Näin se tehdään:
-
-Seuraavassa näet miten voit etsiä ja korvata tekstiä käyttäen `sed` työkalua Bashissa.
-
+## How to: (Kuinka tehdä:)
 ```Bash
-$ echo "Moi Maailma" | sed 's/Maailma/World/'
-Moi World
+# Etsi ja korvaa kertakäyttöisesti tiedostossa käyttäen sed-komentoa
+sed 's/vanha/uusi/g' tiedosto.txt
+
+# In-place korvaaminen (tiedosto muuttuu)
+sed -i 's/vanha/uusi/g' tiedosto.txt
+
+# Etsi kaikki esiintymät hakemistosta rekursiivisesti ja korvaa ne käyttäen grep ja sed
+grep -rl 'vanha' ./hakemisto/ | xargs sed -i 's/vanha/uusi/g'
 ```
 
-Tässä esimerkissä `sed` etsii sanaa 'Maailma' ja korvaa sen sanalla 'World'.
+Esimerkki tuloste:
+```
+$ echo "Hei maailma" | sed 's/maailma/world/'
+Hei world
+```
 
-## Syvällisemmin:
+## Deep Dive (Syväsukellus)
+Tekstin etsiminen ja korvaaminen on vanha konsepti, joka on ollut tietokoneohjelmoinnissa jo sen alkuaikoina. Se perustuu säännöllisiin lausekkeisiin (regular expressions, regex), jotka mahdollistavat monimutkaistenkin kuvioiden löytämisen teksteistä. Vaihtoehtoina ovat modernit työkalut kuten `ack`, `ag`, tai `rg` (ripgrep), jotka ovat nopeampia ja monipuolisempia. Sed-komennon ('stream editor') toteutus yksinkertaisille korvauksille on yksi Unix-pohjaisten järjestelmien vanhimpia työkaluja ja se käyttää suoraviivaista luku-, korvaus- ja tulostusprosessia.
 
-Etsintä ja korvaus on ollut osa UNIX-järjestelmiä vuosikymmenien ajan ja `sed` on vain yksi monista Unix-pohjaisista työkaluista, jotka tarjoavat tämän toiminnallisuuden. On olemassa monia muitakin työkaluja, kuten AWK ja Perl, mutta `sed` on usein suosittu sen yksinkertaisuuden vuoksi.
-
-Vaikka Bash itse ei tarjoa suoraa tavalla etsiä ja korvata tekstiä, se tarjoaa kuitenkin mahdollisuuden hyödyntää näitä ulkoisia työkaluja tehdäkseen niin. Käyttäen näitä työkaluja, Bash-ohjelmoijat voivat muokata tiedostoja ja datavirtoja yksinkertaisilla ja tehokkailla tavoilla.
-
-## Katso myös:
-
-Jotta voisit oppia lisää, kannattaa tutustua seuraaviin lähteisiin:
-- [GNU Sed - Manual](https://www.gnu.org/software/sed/manual/sed.html)
-- [Using Bash's 'string operations' for substrings](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
-- [AWK - A Tutorial by Example](https://www.grymoire.com/Unix/Awk.html)
-- [Perl - Mother of Regex](https://www.perl.org/)
+## See Also (Katso Myös)
+- GNU sed manual: https://www.gnu.org/software/sed/manual/sed.html
+- Regular Expressions Info: https://www.regular-expressions.info/
+- The Silver Searcher (`ag`): https://github.com/ggreer/the_silver_searcher
+- ripgrep (`rg`): https://github.com/BurntSushi/ripgrep

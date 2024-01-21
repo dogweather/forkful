@@ -1,7 +1,8 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:02:57.483838-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,56 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+HTTP अनुरोध के साथ बेसिक प्रमाणीकरण यूजर-नेम और पासवर्ड को कोड कर के सर्वर को भेजने की प्रक्रिया है। प्रोग्रामर्स इसे सुरक्षित API एंडपॉइंट्स से जुड़ने के लिए इस्तेमाल करते हैं।
 
-HTTP अनुरोध भेजना साथ में मौलिक सत्यापन का अर्थ है कि एक क्लाइंट एक सर्वर से कुछ जानकारी मांगता है, साथ ही एक प्रमाणीकरण हैडर भेजता है जिसे सर्वर बालीधान कर सके। प्रोग्रामर्स इसे तभी करते हैं जब वे एक HTTP अनुरोध के साथ सुरक्षित जानकारी भेजते हैं जैसे कि यूजरनेम और पासवर्ड। 
+## How to (कैसे करें):
+TypeScript का उपयोग करके HTTP अनुरोध भेजने के लिए, हम axios जैसे लायब्रेरी का उपयोग करेंगे। पहले, आपको इसे इन्स्टॉल करना होगा:
 
-## कैसे: 
-
-```TypeScript 
-// हमें `http` और `Buffer` मॉड्यूल की आवश्यकता होती है: 
-import { request } from 'http'; 
-import { Buffer } from 'buffer'; 
-
-// यूजरनेम और पासवर्ड का प्रयोग 
-let username = 'यूजरनेम'; 
-let password = 'पासवर्ड'; 
-
-// हमें यूज़रनेम और पासवर्ड को Base64 में एन्कोड करना है
-let authString = `${username}:${password}`;
-let authEncoded = Buffer.from(authString).toString('base64'); 
-
-// HTTP अनुरोध की स्थापना 
-let options = { 
-  host: 'example.com', 
-  port: 80, 
-  path: '/auth-endpoint', 
-  method: 'GET', 
-  headers: { 
-    'Authorization': `Basic ${authEncoded}` 
-  } 
-}; 
-
-// HTTP अनुरोध का प्रयोग 
-let req = request(options, (res) => { 
-  res.on('data', (data) => { 
-    console.log(`Response: ${data.toString()}`); 
-  }); 
-}); 
-
-req.end(); 
+```sh
+npm install axios
 ```
 
-## गहराई में: 
+फिर, हम बेसिक प्रमाणीकरण के साथ एक अनुरोध भेज सकते हैं:
 
-**ऐतिहासिक प्रसंग:** मौलिक प्रमाणीकरण HTTP का एक बहुत पुराना भाग है, RFC 2617 (1999) में परिभाषित किया गया था। 
+```typescript
+import axios from 'axios';
 
-**विकल्प:** मौलिक प्रमाणीकरण कुछ विशेष स्थितियों में उपयोगी है, लेकिन आधुनिक एप्लिकेशन में आमतौर पर टोकन आधारित प्रमाणीकरण (जैसे JWT) का उपयोग किया जाता है। 
+async function sendRequest() {
+  const url = 'https://api.example.com/data';
+  const username = 'yourUsername';
+  const password = 'yourPassword';
 
-**कार्यान्वयन विवरण:** मौलिक प्रमाणीकरण विवरण को बेस64 में एन्कोड करता है, जो आसानी से डिकोड किया जा सकता है। इसलिए, इसका उपयोग केवल HTTPS संचार में ही किया जाना चाहिए।
+  const response = await axios.get(url, {
+    auth: {
+      username,
+      password
+    }
+  });
 
-## देखें भी: 
+  console.log(response.data);
+}
 
-1. [HTTP प्रमाणीकरण (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-2. [TypeScript संदर्भ मैन्युअल](https://www.typescriptlang.org/docs/handbook/intro.html)
-3. [Buffer वर्ग (Node.js डॉक्स)](https://nodejs.org/api/buffer.html)
+sendRequest();
+```
+
+सैंपल आउटपुट:
+
+```json
+{
+  "data": "some secured data"
+}
+```
+
+## Deep Dive (गहराई से जानकारी):
+बेसिक प्रमाणीकरण, जिसे Basic Access Authentication भी कहा जाता है, HTTP प्रोटोकॉल में एक पुराना तरीका है। इसमें `Authorization` हेडर में `username:password` को Base64 इनकोडिंग में भेजा जाता है। 
+
+हालांकि यह बहुत आसान है, इसमें कमजोरियां होती हैं क्योंकि Base64 इनकोडेड स्ट्रिंग आसानी से डीकोड की जा सकती है। इसलिए, HTTPS का इस्तेमाल जरूरी है, जो कि डाटा को एनक्रिप्ट करता है।
+
+वर्तमान में, अधिक सुरक्षित प्रमाणीकरण विधियां जैसे OAuth 2.0 और JWT (JSON Web Tokens) पसंद की जा रही है। वे टोकन बेस्ड प्रमाणीकरण प्रदान करते हैं जो सत्र-प्रमाणीकरण से ज्यादा सुरक्षित और लचीला हैं।
+
+जब आप TypeScript में axios का इस्तेमाल करते हैं, तो टाइप सुरक्षा का भी लाभ मिलता है। आप अपने अनुरोध और प्रतिक्रिया संरचनाओं को स्पष्ट करके बग्स से बच सकते हैं और code को बेहतर संरचना दे सकते हैं।
+
+## See Also (और देखें):
+- MDN Web Docs का Basic authentication गाइड: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme
+- Axios डॉक्यूमेंटेशन: https://axios-http.com/docs/intro
+- JWT और OAuth 2.0 के बारे में जानकारी: https://auth0.com/docs/authentication
+- TypeScript हैंडबुक: https://www.typescriptlang.org/docs/

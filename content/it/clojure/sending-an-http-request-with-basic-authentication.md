@@ -1,6 +1,7 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "Bash: Inviare una richiesta http con autenticazione di base"
+date:                  2024-01-20T18:01:17.444016-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,44 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mandare una Richiesta HTTP con Autenticazione di Base in Clojure
-
-## Cos'è e perché? 
-Mandare una richiesta HTTP con autenticazione di base è il processo di invio di richieste a un API/server web e di verifica dell'identità dell'utente. I programmatori la usano per gestire e garantire la sicurezza delle informazioni sensibili tra client e server.
+## Che cosa & perché?
+Inviare una richiesta HTTP con autenticazione di base significa passare username e password in modo sicuro per accedere a una risorsa protetta. I programmatori lo fanno per interagire con servizi web che richiedono un livello di autorizzazione.
 
 ## Come fare:
-Ecco come puoi implementare questa funzionalità con `clj-http`, un popolare cliente HTTP per Clojure. Aggiungi `clj-http` al tuo `project.clj`:
-
 ```Clojure
-[clj-http "3.12.2"]
+(require '[clj-http.client :as client])
+
+(defn fetch-protected-resource [url username password]
+  (let [credentials (str username ":" password)
+        encoded-credentials (-> credentials (.getBytes) java.util.Base64/getEncoder (.encodeToString))]
+    (client/get url {:headers {"Authorization" (str "Basic " encoded-credentials)}})))
+
+;; Uso:
+(fetch-protected-resource "http://example.com" "mario.rossi" "password123")
 ```
-
-Ecco come effettuare una richiesta GET con autenticazione di base:
-
+Sample output:
 ```Clojure
-(ns myclient.http
-  (:require [clj-http.client :as client]))
-
-(defn get-request []
-  (client/get "http://example.com/api/resource" {:basic-auth ["username" "password"]}))
-```
-
-Il codice di stato e il corpo della risposta si possono recuperare così:
-
-```Clojure
-(defn get-response []
-  (let [response (get-request)]
-    {:status (get response :status)
-     :body (get response :body)}))
+{:status 200, :headers {...}, :body "..."}
 ```
 
 ## Approfondimento
-In passato, si utilizzava la libreria Java `java.net` per effettuare richieste HTTP ma forniva un livello d'astrazione molto basso rispetto alle moderne librerie Clojure come `clj-http`. 
+L’autenticazione HTTP di base è un metodo antico ma semplice, incluso nello standard HTTP. Sostituita da soluzioni più moderne come OAuth, rimane utilizzata per la semplicità o legacy systems. Bisogna mandare le credenziali codificate in Base64, ma attenzione: senza HTTPS è insicuro. Nei progetti Clojure, `clj-http` è una scelta comune per fare richieste HTTP, con opzioni facili per l’autenticazione.
 
-Una alternativa è `httpkit`, che è un client molto leggero. Pero` non supporta l'autenticazione di base nativamente e dovrebbe essere implementata manualmente. 
-
-L'implementazione in `clj-http` converte username e password in un header "Authorization". Questo header contiene "Basic" seguito da un codice base64 di username:password. 
-
-## Per Approfondire
-Per maggiori informazioni, consulta le seguenti risorse:
-- Specifica dell'autenticazione HTTP: [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)
+## Vedi anche
+- Documentazione di `clj-http`: [https://github.com/dakrone/clj-http](https://github.com/dakrone/clj-http)
+- Autenticazione HTTP di base su MDN: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme)

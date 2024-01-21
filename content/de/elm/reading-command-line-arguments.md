@@ -1,7 +1,8 @@
 ---
-title:                "Befehlszeilenargumente lesen"
-html_title:           "Arduino: Befehlszeilenargumente lesen"
-simple_title:         "Befehlszeilenargumente lesen"
+title:                "Lesen von Kommandozeilenargumenten"
+date:                  2024-01-20T17:55:47.164635-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lesen von Kommandozeilenargumenten"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -12,51 +13,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Command Line Arguments (Kommandozeilenargumente) sind Informationen, die einem Programm beim Start übergeben werden. Sie sind besonders hilfreich, wenn wir den Ablauf eines Programms basierend auf diesen Eingaben steuern wollen.
+Kommandozeilenargumente lesen bedeutet, Parameter von der Shell ins Programm zu übertragen. Programmierer nutzen es, um Einstellungen zu steuern oder Eingaben zu verarbeiten, ohne das Programm interaktiv anzupassen.
 
 ## Wie geht das:
 
-Elm erlaubt es uns nicht direkt, Kommandozeilenargumente zu lesen. Um diese Funktionalität zu erreichen, müssen wir eine JavaScript-Brücke verwenden, die als Port bezeichnet wird. Unten ist ein einfaches Beispiel dafür:
+Elm ist primär für Webanwendungen gedacht, daher gibt es keine eingebaute Funktionalität für das Lesen von Kommandozeilenargumenten wie in Node.js oder Python. Stattdessen würde man auf Ports zurückgreifen, um mit JavaScript zu interagieren.
 
 ```Elm
 port module Main exposing (..)
 
-port toJavascript : String -> Cmd msg
-port fromJavascript : (String -> msg) -> Sub msg
+-- Definiere einen Port, um Kommandozeilenargumente zu empfangen
+port cmdArgs : (String -> msg) -> Sub msg
 
-type Msg = NewMessage String 
-
-main =
-    programWithFlags
-        { init = init
-        , update = update
-        , subscriptions = subscriptions
-        , view = \_ -> Html.none
-        }
-
-init : String -> ( (), Cmd Msg )
+-- Init-Funktion, die das Modell mit den Argumenten initialisiert
+init : Flags -> ( Model, Cmd Msg )
 init flags =
-    ( (), fromJavascript NewMessage )
+    ( { cmdLineArgs = flags.args }
+    , Cmd.none
+    )
 
-update : Msg -> model -> ( model, Cmd Msg )
-update msg model =
-    case msg of
-        NewMessage newMessage ->
-            ...
+-- Elm Flags für den Empfang der Startargumente
+type alias Flags =
+    { args : List String }
+
+-- JavaScript Interop, um die Kommandozeilenargumente an Elm zu senden
+// JavaScript Code
+const app = Elm.Main.init({
+  node: document.getElementById('elm'),
+  flags: { args: process.argv.slice(2) }
+});
+
+app.ports.cmdArgs.subscribe(function(args) {
+  // Handle the command line arguments from Elm
+});
 ```
 
-## Vertiefung:
+## Tiefgang:
 
-Elm nutzt eine reine, funktionale Sprache und erlaubt keine Seiteneffekte - deshalb kann es nicht direkt auf die Kommandozeile zugreifen. Stattdessen verwenden wir Ports, um mit JavaScript zu kommunizieren. Historisch gesehen sind Kommandozeilenargumente seit den frühen Tagen der Programmierung vorhanden, sie bieten eine einfache Art, die Ausführung eines Programms zu steuern.
+Historisch gesehen ist Elm nicht für Skripting oder Kommandozeilenaufgaben entworfen worden, sondern für interaktive Webanwendungen mit einer starken Betonung auf Zuverlässigkeit und Sicherheit. Für Kommandozeilen-Aufgaben bietet sich eher Node.js an, welches das V8 JavaScript-Backend nutzt. Alternativ kann man Elm auch in Verbindung mit einer Hülle wie Electron verwenden, um mit dem Dateisystem zu interagieren.
 
-Ein alternativer Ansatz wäre, die benötigten Daten irgendwie in die Umgebung zu laden, bevor Elm startet. Denn was Elm gut kann, ist der Umgang mit User-Inputs in einer Web-Umgebung.
+Die Kommunikation zwischen Elm und JavaScript (für Aufgaben außerhalb des Kernbereichs von Elm) erfolgt über Ports, welche einen Weg bieten, Nachrichten sicher und zuverlässig auszutauschen. Obwohl dies zusätzliche Arbeit bedeutet, hält es die Elm-Architektur sauber und prädictable.
 
-Es ist wichtig zu verstehen, dass Ports nicht in `elm reactor` funktionieren. Sie erfordern eine HTML-Hülle, die das Elm-Programm hält. Das macht sie für Projekte geeignet, die bereits eine gemischte Codebasis haben oder wo eine reine Elm-Lösung nicht ausreicht.
+## Weiterführendes:
 
-## Siehe auch:
-
-- Elm Ports Dokumentation: https://guide.elm-lang.org/interop/ports.html
-- Elm Command Line Arguments Diskussion auf Discourse: https://discourse.elm-lang.org/t/command-line-arguments/6387
-- Elm-Programm mit Flags: https://package.elm-lang.org/packages/elm/browser/latest/Browser-Application#programWithFlags 
-
-Es gibt keine "Fazit"-Sektion in diesem Artikel. Ihr solltet nun eine Vorstellung davon haben, wie man Kommandozeilenargumente in Elm handhabt.
+- Elm Ports Dokumentation: [https://guide.elm-lang.org/interop/ports.html](https://guide.elm-lang.org/interop/ports.html)

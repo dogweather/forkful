@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:21:45.486699-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,44 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Rust में HTTP अनुरोध भेजना: साइनसे के पिछे
+## What & Why? (क्या और क्यों?)
+HTTP अनुरोध भेजना सर्वर से डेटा लेने या भेजने का एक तरीका है। प्रोग्रामर्स इसे API कॉल्स करने, वेबसाइट्स की जानकारी प्राप्त करने, या रिमोट सर्वर्स से संवाद स्थापित करने के लिए करते हैं।
 
-## क्या और क्यों?
+## How to: (कैसे करें:)
+Rust में HTTP अनुरोध भेजने के लिए `reqwest` क्रेट का उपयोग करें।
 
-HTTP अनुरोध भेजना, इसका अर्थ होता है कि हम इंटरनेट पर एक सर्वर से जानकारी मांग रहे हैं। प्रोग्रामर्स इसे इसलिए करते हैं ताकि वे डाटा को खोज सकें और मशीन्स को संवादित कर सकें।
+```rust
+use reqwest;
+use std::error::Error;
 
-## कैसे करें:
-
-Rust में, हम `reqwest` crate का उपयोग करके एक HTTP अनुरोध भेज सकते हैं। यहां एक उदाहरण है:
-
-```Rust
-use reqwest::Error;
-
-async fn get_data() -> Result<(), Error> {
-    let res = reqwest::get("https://httpbin.org/ip").await?;
-
-    let body = res.text().await?;
-    println!("बॉडी:\n{}", body);
-
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn Error>> {
+    let resp = reqwest::get("https://api.github.com/users/github").await?;
+    println!("Status: {}", resp.status());
+    let body = resp.text().await?;
+    println!("Body:\n{}", body);
     Ok(())
 }
 ```
 
-यह कोड सर्वर से डाटा के प्राप्त करने की कोशिश करता है और इसे कंसोल पर प्रिंट करता है। ऐसा करने पर, आपको निम्नलिखित आउटपुट मिलेगा:
+सैम्पल आउटपुट:
 
-```Rust
-बॉडी:
+```
+Status: 200 OK
+Body:
 {
-  "origin": "58.87.32.100"
+  "login": "github",
+  ...
 }
 ```
 
-## गहरी गोता
+## Deep Dive (गहराई में):
+HTTP अनुरोध इंटरनेट के आरंभ से ही वेब कम्युनिकेशन का आधार रहे हैं। Rust में `reqwest` लोकप्रिय है, पर `hyper` और `curl` जैसे क्रेट्स भी उपलब्ध हैं। `reqwest` वैसे तो `hyper` पर आधारित है, लेकिन यह अधिक उच्च-स्तरीय एबीआई प्रदान करता है। Rust में एसिंक्रोनस कोड हैंडलिंग के लिए `tokio` या `async-std` रनटाइम की आवश्यकता होती है, जो फाइबर/ग्रीन थ्रेड्स के बिना एफिशिएंट कोड का प्रबंधन करते हैं।
 
-HTTP अनुरोधों का प्रयोग 90 के दशक के मध्य से हो रहा है, जब वेब स्टार्ट हुआ था। अल्ट्रनेटिवली, Rust में `hyper` और `http` जैसे अन्य crates भी हैं जो HTTP अनुरोधों को सहयोग देते हैं, लेकिन `reqwest` क्रेट का सरलता और क्षमता का मिश्रण उन्हें एक अच्छा विकल्प बनाता है।
-
-जब आप `reqwest::get` कॉल करते हैं, तो यह एक GET HTTP अनुरोध को विनिर्माण करता है और वो अनुरोध सर्वर के पास भेजता है।
-
-## और देखें
-
-अधिक जानकारी के लिए, Rust का आधिकारिक [reqwest crate documentation](https://docs.rs/reqwest) देखें। HTTP के इतिहास और विलेखन के बारे में जानने के लिए, [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP) की छाँव में पढ़ें।
+## See Also (और देखें):
+- [Reqwest Crate Documentation](https://docs.rs/reqwest/)
+- [Hyper Crate Documentation](https://docs.rs/hyper/)
+- [Curl Crate Documentation](https://docs.rs/curl/)
+- [Async Programming in Rust with async-std](https://async.rs/)
+- [The Rust Asynchronous Book](https://rust-lang.github.io/async-book/)

@@ -1,6 +1,7 @@
 ---
 title:                "Eliminando caracteres que coinciden con un patrón"
-html_title:           "Elixir: Eliminando caracteres que coinciden con un patrón"
+date:                  2024-01-20T17:42:03.924425-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,40 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+# Borrando caracteres por patrón en Gleam
 
-Eliminar caracteres que coinciden con un patrón implica borrar secuencias especificas de caracteres dentro de un texto o cadena. Los programadores hacen esto para manejar mejor y manipular los datos textuales.
+## ¿Qué & Por qué?
+Eliminar caracteres que coinciden con un patrón es como filtrar las partes indeseadas de un texto. Los programadores hacen esto para limpiar datos, validar entradas, o simplificar cadenas antes de procesarlas.
 
 ## Cómo hacerlo:
+```gleam
+import gleam/regex.{replace}
 
-Aquí está un ejemplo de cómo puedes utilizar Gleam para eliminar caracteres que coinciden con un patrón.
+// Vamos a eliminar números de una cadena
+fn delete_pattern(text: String) -> String {
+  let pattern = regex.from_string("\\d")?
+  replace(pattern, text, "")
+}
 
-```Gleam
-import gleam/string
-
-pub fn main(args: List(String)) {
-  let texto_original = "Comandante en Jefe de la flota estelar"
-  let texto_limpio = string.replace(texto_original, " ", "")
-  texto_limpio
+// Ejemplo de uso
+fn main() {
+  let my_text = "Año 2021, mes 05."
+  let cleaned_text = delete_pattern(my_text)
+  io.debug(cleaned_text)  // Salida: "Año , mes ."
 }
 ```
 
-Salida de muestra:
+## Profundización
+Históricamente, manipular cadenas ha sido crucial en la informática. En otros lenguajes se usan funciones similares como `replace` en JavaScript o `re.sub` en Python. En Gleam, la biblioteca `gleam/regex` nos permite realizar acciones similares.
 
-```Gleam
-"ComandanteenJefedelaflotaestelar"
-```
+Eliminar caracteres por patrón puede implementarse de diversas formas. Gleam, siendo un lenguaje de tipado estático, nos garantiza seguridad en las operaciones con expresiones regulares. Aunque las bibliotecas pueden variar, el concepto de buscar y reemplazar en cadena sigue siendo una herramienta fundamental para procesamiento de texto.
 
-En este ejemplo, eliminamos todos los espacios en blanco de la cadena `texto_original`, dejando intactos el resto de caracteres.
+Alternativamente, si buscas velocidad y no necesitas la complejidad de las expresiones regulares, podrías utilizar funciones de cadena nativas que son más rápidas, pero menos poderosas.
 
-## Viaje Profundo:
-
-Historicamente, eliminar caracteres es un truco comúnmente utilizado para procesar datos textuales y preparar entradas para aplicaciones como motores de búsqueda o análisis de texto. Como alternativa, podría usar expresiones regulares para abordar patrones más complejos o usar métodos como `slice` o `substring` si se conocen las posiciones exactas de los caracteres a eliminar. Implementar esto en Gleam es bastante sencillo gracias a su enfoque funcional y su énfasis en la tipificación estática y robusta.
-
-## Ver También:
-
-1. Documentación oficial de Gleam: https://gleam.run/docs/
-2. API de Strings en Gleam: https://hexdocs.pm/gleam_stdlib/gleam/string.html
-3. Expresiones regulares en Gleam: https://gleam.run/tour/pattern-matching/
-
-Recuerda que la mejor forma de aprender es experimentando. Así que explora estas funciones y ve qué más puedes hacer!
+## Ver además
+- Documentación oficial de Gleam sobre expresiones regulares: https://hexdocs.pm/gleam_stdlib/gleam/regex/
+- Tutorial interactivo de Regex para profundizar en patrones: https://regexone.com/
+- Comparación de funciones de cadena en diferentes lenguajes: https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/String_searching

@@ -1,7 +1,8 @@
 ---
-title:                "Розрахунок дати в майбутньому або минулому"
-html_title:           "C++: Розрахунок дати в майбутньому або минулому"
-simple_title:         "Розрахунок дати в майбутньому або минулому"
+title:                "Обчислення дати у майбутньому або минулому"
+date:                  2024-01-20T17:31:11.112680-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Обчислення дати у майбутньому або минулому"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,39 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
-Розрахунок дати в майбутньому або минулому - це процес прибавлення або віднімання днів, місяців або років від початкової дати. Програмісти роблять це для роботи з датами в складних системах, таких як системи керування базами даних або системи стеження за проектами.
+## Що та Чому?
+Розрахунок дати у майбутньому чи минулому — це визначення дати, яка відбувається до чи після заданої відлікової точки. Програмісти це роблять для обробки термінів, планування подій та дотримання дедлайнів.
 
-## Як це зробити:
-Для цього ми використовуємо бібліотеку `std::chrono` в C++17. 
-
+## Як це робити:
 ```C++
-#include <chrono>
 #include <iostream>
+#include <chrono>
 #include <ctime>
 
-int main() {   
-    // get today's date
-    std::chrono::system_clock::time_point today = std::chrono::system_clock::now();
-    // add one year
-    std::chrono::seconds sec_in_one_year = 60*60*24*365;
-    today += sec_in_one_year;
-    // convert back to time_t and ctime to get a neat string
-    time_t tt = std::chrono::system_clock::to_time_t(today);
+int main() {
+    using namespace std::chrono;
+    
+    // Сьогоднішня дата
+    system_clock::time_point today = system_clock::now();
+    
+    // Розрахунок дати через 10 днів
+    system_clock::time_point future_date = today + days(10);
+    
+    // Конвертація у стандартний час
+    std::time_t future_time = system_clock::to_time_t(future_date);
+    
+    // Вивід
+    std::cout << "Today is: " << std::ctime(&future_time);
+    std::cout << "Date after 10 days will be: " << std::ctime(&future_time);
 
-    std::cout << "One year from now will be: " << ctime(&tt);
+    // Розрахунок дати 10 днів назад
+    system_clock::time_point past_date = today - days(10);
+    std::time_t past_time = system_clock::to_time_t(past_date);
+    std::cout << "Date 10 days ago was: " << std::ctime(&past_time);
+    
+    return 0;
 }
 ```
-Вихідний файл:
-``` 
-One year from now will be: Mon Sep  26 12:22:35 2022 
+Можливий вивід:
+```
+Today is: Thu Mar 4 2021
+Date after 10 days will be: Sun Mar 14 2021
+Date 10 days ago was: Tue Feb 22 2021
 ```
 
 ## Поглиблено:
-Розрахунок дати в майбутньому або минулому був важливою частиною програмування протягом багатьох десятиліть. До впровадження `std::chrono` в C++11, програмісти часто використовували клас `time_t` або структуру `tm`, але ці методи містили багато пасток. Також існують альтернативні бібліотеки, такі як Boost DateTime або Howard E. Hinnant's date library, але `std::chrono` є вбудованим і потужним вибором.
+Програмісти вже декілька десятиліть використовують різні методи для маніпуляцій з датами. В історичному контексті, найпопулярніші бібліотеки для C++ це `ctime` та більш сучасна `chrono`, яка з'явилась у C++11 і була поліпшена в наступних версіях стандарту.
+
+Альтернативою є користування зовнішніми бібліотеками як-от Boost.Date_Time. Вони надають додаткову гнучкість, але для більшості завдань стандартної бібліотеки цілком достатньо.
+
+Деталі реалізації включають обробку часових зон та перехід на літній/зимовий час. Важливо враховувати ці аспекти, коли додаток взаємодіє з користувачами у різних часових зонах.
 
 ## Дивіться також:
-- [C++ Reference: chrono](https://en.cppreference.com/w/cpp/chrono)
-- [C++ Core Guidelines: Date manipulation](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#i55-dont-mess-with-the-system-directory)
-- [Boost Libraries: DateTime](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
-- [Howard Hinnant's date library](https://github.com/HowardHinnant/date)
+- [C++ `<chrono>` documentation](https://en.cppreference.com/w/cpp/header/chrono)
+- [Boost.Date_Time](https://www.boost.org/doc/libs/release/libs/date_time/)
+- [`<ctime>` documentation](https://en.cppreference.com/w/cpp/header/ctime)

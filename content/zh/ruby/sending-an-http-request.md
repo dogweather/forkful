@@ -1,7 +1,8 @@
 ---
-title:                "发送http请求"
-html_title:           "C#: 发送http请求"
-simple_title:         "发送http请求"
+title:                "发出 HTTP 请求"
+date:                  2024-01-20T18:00:19.569910-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "发出 HTTP 请求"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,39 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么?
+## What & Why? (是什么 & 为什么?)
+发送HTTP请求就是让你的代码和网上的服务器"聊天"。程序员这么做是因为他们需要从互联网获取或发送数据。
 
-发送HTTP请求是一种让计算机向服务器发送特定请求并获取响应的方式。程序员需要这样做以从远程服务器获取数据，或者影响服务器的状态。
-
-## 如何操作:
-
-在 Ruby 中发送 HTTP 请求很简单。假设我们想要从 "httpbin.org" 获取 IP 地址, Ruby 代码可能如下:
+## How to: (怎么做)
+在Ruby中，发送HTTP请求可以用几个不同的库。这里我们用`net/http`，这是Ruby标准库的一部分。
 
 ```Ruby
 require 'net/http'
 require 'uri'
 
-uri = URI.parse("http://httpbin.org/ip")
+uri = URI('http://example.com/some_path?query=string')
 response = Net::HTTP.get_response(uri)
 
-puts response.body
+puts "Response code: #{response.code}"
+puts "Headers: #{response.to_hash}"
+puts "Body: #{response.body}"
+
+# 示例输出：
+# Response code: 200
+# Headers: { "content-type": ["text/html; charset=UTF-8"], ... }
+# Body: <!doctype html>...
 ```
 
-运行代码之后, 返回值将是类似下面这样的字符串:
+## Deep Dive (深入了解)
+### 历史背景
+Ruby最早的HTTP库可能不够强大，但随着时间的推移，像`net/http`这样的库变得越来越稳定、灵活。
 
-```Ruby
-{
-  "origin": "123.456.789.10"
-}
-```
-## 深入研究:
+### 替代品
+`net/http` 是内建的，但不一定是最好用的。流行的替代品有 `httparty` 和 `faraday`。
 
-发送HTTP请求的方法有很多种。我们选用了Ruby的 `Net::HTTP`库，主要因为它在Ruby标准库中并且易于上手。然而，有其他的HTTP客户端库例如 Rest-Client 和 Faraday，它们提供更高级的功能，如中间件支持和异步请求。
+### 实现细节
+`net/http` 里，`Net::HTTP.get_response(uri)` 是一个方便方法，一步获取响应。不过你可能需要手动管理连接、设置超时等。
 
-发送HTTP请求通常涉及创建一个有特定请求方法（如 GET、POST 或 DELETE）的请求对象，并传递给远程服务器。请求的发出和相应的接收都是用TCP/IP协议完成的。
-
-## 参考文献:
-
-- Ruby 文档中的 `Net::HTTP`: https://ruby-doc.org/stdlib-3.1.0/libdoc/net/http/rdoc/Net/HTTP.html
-- 更先进的 HTTP 客户端库, 如 Rest-Client: https://github.com/rest-client/rest-client
-- 关于 TCP/IP 的详细信息: https://www.ibm.com/docs/en/zos/2.3.0?topic=protocols-tcpip
+## See Also (另请参阅)
+- Ruby `net/http` 文档: [https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html)
+- `httparty` gem: [https://github.com/jnunemaker/httparty](https://github.com/jnunemaker/httparty)
+- `faraday` gem: [https://github.com/lostisland/faraday](https://github.com/lostisland/faraday)

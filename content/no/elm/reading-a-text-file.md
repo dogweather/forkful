@@ -1,6 +1,7 @@
 ---
 title:                "Lese en tekstfil"
-html_title:           "C#: Lese en tekstfil"
+date:                  2024-01-20T17:54:24.222556-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese en tekstfil"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,32 +12,93 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å lese en tekstfil betyr å hente den lagrede tekstdataen fra en fil. Programmerere gjør dette for å behandle, vise eller manipulere innhold som konfigurasjoner eller brukerdata.
 
-Å lese en tekstfil betyr å programmere programvaren for å hente og tolke data fra en ekstern fil. Dette er nødvendig for å lagre, hente og manipulere data effektivt.
-
-## Hvordan gjør man det:
-
-Desverre og det er et resultat av Elm's filosofi om renhet og enkelhet, den tillater ikke lesing fra filsystemet direkte. Dette er fordi Elm er ment å brukes hovedsakelig i nettlesermiljøer, der direkte filsystemtilgang er begrenset av sikkerhetshensyn. Men for å lese tekstfiler, kan du bruke en omvei ved å bruke Elm med NPM pakker som inneholder andre Elm biblioteker.
+## Hvordan:
+Elm har ikke innebygd støtte for å lese filer direkte fra filsystemet, da det primært kjøres i nettlesere og fokuserer på sikkerhet. Men, du kan bruke en filopplastningsinput for å be brukere velge en tekstfil, og så lese innholdet med fil-API-et i JavaScript. Her er en enkel måte å gjøre det på:
 
 ```Elm
--- Forutsatt at du har lastet ned og importert 'elm/file' via NPM
+module Main exposing (main)
+
+import Browser
 import File exposing (File)
+import File.Select as Select
+import Html exposing (Html, button, div, text)
+import Html.Events exposing (onClick)
+import Ports
+
+-- SUBSCRIPTIONS --
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    Select.files (List.head model.files)
+
+-- MODEL --
+
+type alias Model =
+    { files : List File
+    , content : Maybe String
+    }
+
+initialModel : Model
+initialModel =
+    { files = []
+    , content = Nothing
+    }
+
+-- UPDATE --
 
 type Msg
-    = GotFile (Result File.Error String)
+    = FilesSelected (List File)
+    | FileContentRead String
 
-selectFile : Cmd Msg
-selectFile =
-    File.Select.text GotFile
+update : Msg -> Model -> Model
+update msg model =
+    case msg of
+        FilesSelected files ->
+            { model | files = files }
+
+        FileContentRead content ->
+            { model | content = Just content }
+
+-- VIEW --
+
+view : Model -> Html Msg
+view model =
+    div []
+        [ button [ onClick (Select.filesSelect "text/*") ] [ text "Velg en fil" ]
+        , div [] (maybeToList (text << Maybe.withDefault "Ingen fil valgt" model.content))
+        ]
+        
+-- PORTS --
+
+port module Ports exposing (..)
+
+port readFile : File -> Cmd msg
+
+-- INTEROP --
+
+fileReader : Sub Msg
+fileReader =
+    Ports.readFile <|
+        Select.single <| \file ->
+            FilesSelected [file]
+            
+-- MAIN --
+
+main : Program () Model Msg
+main =
+    Browser.element
+        { init = \_ -> (initialModel, Cmd.none)
+        , view = view
+        , update = update
+        , subscriptions = \_ -> fileReader
+        }
 ```
 
-## Dyp Dykk:
+## Dykke dypere:
+Historisk sett har nettleser-baserte språk som Elm unngått direkte filsystem-tilgang for sikkerhet. Elm henter filer gjennom interaksjoner som fildialoger eller dra-og-slipp. I mer server-orienterte omgivelser brukes programmeringsspråk med direkte filsystemtilgang, som Node.js eller Python. Elm bruker JavaScript-interoperabilitet (Ports) for å håndtere fillesing.
 
-Historisk sett har Elm lagt vekt på renhet og enkelhet, hvilket har ført til at mange tradisjonelle operasjoner (eksempelvis fillesing) utelates eller begrenses. Alternativer til Elm for lesing av tekstfiler inkluderer andre programmeringsspråk som har full tilgang til filsystemet, som Python eller JavaScript.
-
-Når det gjelder implementeringsdetaljer, er Elm's manglende filsystemfunksjonalitet utformet for å øke robustheten mot sikkerhetstrusler. I nettlesermiljøer er direkte filsystemtilgang begrenset for å hindre at skadelig kode får tilgang til sensitive data.
-
-## Se Også:
-
-- [Python File I/O](https://docs.python.org/3/tutorial/inputoutput.html)
-- [Node.js Filesystem Modul](https://nodejs.org/api/fs.html)
+## Se også:
+- Elm File API dokumentasjon: [Elm File](https://package.elm-lang.org/packages/elm/file/latest/)
+- Elm Ports for interoperabilitet: [Elm Ports](https://guide.elm-lang.org/interop/ports.html)

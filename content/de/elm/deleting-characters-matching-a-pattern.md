@@ -1,7 +1,8 @@
 ---
-title:                "Zeichen löschen, die einem Muster entsprechen"
-html_title:           "C#: Zeichen löschen, die einem Muster entsprechen"
-simple_title:         "Zeichen löschen, die einem Muster entsprechen"
+title:                "Löschen von Zeichen, die einem Muster entsprechen"
+date:                  2024-01-20T17:42:06.648614-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,30 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Löschen von Zeichen, die einem Muster entsprechen, ist das Entfernen bestimmter Teile eines Strings, die ein definiertes Muster erfüllen. Programmierer nutzen dies, um Daten zu bereinigen oder zu formatieren, unnötiges Rauschen zu entfernen oder Eingaben zu validieren.
 
-Musterlöschung ist das Löschen von Zeichen, die einer bestimmten Regel oder einem Muster entsprechen. Programmierer nutzen diese Technik, um unnötige oder störende Daten aus Texten zu entfernen.
+## Vorgehensweise:
+In Elm gibt es keine eingebaute RegEx-Bibliothek wie in anderen Sprachen. Zum Musterabgleich und Löschen von Zeichen können wir mit `String`-Funktionen arbeiten oder externe Pakete nutzen.
 
-## So geht's:
-
-Um Zeichen in Elm zu entfernen, die einem Muster entsprechen, verwenden wir die Funktion `String.replace`. Hier sehen Sie, wie Sie alle Vorkommen des Buchstabens 'a' aus einer Zeichenkette entfernen:
+Hier ein einfaches Beispiel, um Ziffern aus einem String zu entfernen:
 
 ```Elm
 import String
 
-removeCharacter : String -> String
-removeCharacter s = 
-    String.replace "a" "" s
+removeDigits : String -> String
+removeDigits text =
+    String.filter (\char -> not (Char.isDigit char)) text
 
-main = 
-    removeCharacter "Banana" |> Debug.toString
-    -- Output: "Bnn"
+main =
+    String.filter (\char -> not (Char.isDigit char)) "Elm12345"
+    -- Ergebnis: "Elm"
 ```
 
-## Tiefer Einblick
+Falls komplexere Muster benötigt werden, kann das paket `elm/regex` verwendet werden:
 
-Die Möglichkeit, Muster in einer Zeichenkette zu löschen, reicht bis in die frühesten Tage der Textverarbeitung zurück, als es wichtig war, maschinell lesbare Daten von Rauschen zu trennen. Es gibt mehrere Alternativen zum Löschen von Mustern, einschließlich regulärer Ausdrücke, die jedoch von Elm bewusst nicht unterstützt werden, um die einfache Arbeitsweise und Ausführungsgeschwindigkeit des Codes zu verbessern. Bei der Implementierung beachten Sie, dass `String.replace` in Elm jedes Vorkommnis des Musters in der Zeichenkette ersetzt.
+```Elm
+import Regex
 
-## Siehe auch
+removePattern : String -> String -> String
+removePattern pattern text =
+    Regex.replace Regex.All (Regex.regex pattern) (\_ -> "") text
 
-- [Offizielle Elm-Dokumentation über String.replace](https://package.elm-lang.org/packages/elm/core/latest/String#replace)
-- [Elm-Diskussionsforum zur Bearbeitung von Zeichenketten](https://discourse.elm-lang.org/t/simple-string-manipulation/6478)
+main = 
+    removePattern "[0-9]+" "Elm12345"
+    -- Ergebnis: "Elm"
+```
+
+## Tiefere Einblicke:
+Historisch gesehen hatten funktionale Sprachen wie Elm weniger Fokus auf reguläre Ausdrücke, weil sie oft schwer zu lesen und zu warten sind. Stattdessen ermutigt Elm zur Nutzung von präziseren String-Funktionen. Mit `elm/regex` bietet die Sprache jedoch auch die Möglichkeit, komplexere Musterabfragen durchzuführen, wenn benötigt. Alternative Methoden zum Löschen von Zeichen aus Strings könnten benutzerdefinierte Parser oder das Durchlaufen des Strings mit Zustandslogik sein.
+
+## Siehe auch:
+- Elm `String` Dokumentation: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- `elm/regex` Paket: [https://package.elm-lang.org/packages/elm/regex/latest](https://package.elm-lang.org/packages/elm/regex/latest)

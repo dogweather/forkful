@@ -1,7 +1,8 @@
 ---
-title:                "קריאה של ארגומנטים משורת הפקודה"
-html_title:           "C#: קריאה של ארגומנטים משורת הפקודה"
-simple_title:         "קריאה של ארגומנטים משורת הפקודה"
+title:                "קריאת פרמטרים משורת הפקודה"
+date:                  2024-01-20T17:55:59.791801-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "קריאת פרמטרים משורת הפקודה"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,37 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה & למה?
-קריאת פרמטרים מהשורה של הפקודה היא דרך לקבל קלט מהמשתמש כאשר הוא מריץ את האפליקציה. מתכנתים משתמשים בזה כדי ליצור אפליקציות גמישות ותורמת לאפיקות עיבוד מניחות.
+## מה ולמה?
+קריאת ארגומנטים משורת הפקודה מאפשרת לתכנית לקבל מידע או הנחיות מהמשתמש בעת ריצתה. תכניתאים משתמשים בזה לגמישות ולאפשר שליטה דינאמית בתוכנה.
 
-## איך:
-הנה דוגמא של קריאת ארגומנטים משורת הפקודה פשוטה ב-C#:
-
-```C
-class Program
+## איך לעשות:
+```C#
+// מקבל ארגומנטים משורת הפקודה
+static void Main(string[] args)
 {
-    static void Main(string[] args)
+    if(args.Length > 0)
     {
-        for (int i = 0; i < args.Length; i++)
+        Console.WriteLine("הנה הארגומנטים שקיבלת:");
+        foreach (var arg in args)
         {
-            Console.WriteLine($"Argument[{i}] = {args[i]}");
+            Console.WriteLine(arg);
         }
+    }
+    else
+    {
+        Console.WriteLine("לא קיבלתי ארגומנטים כלל. תנסה שוב.");
     }
 }
 ```
-אם נרוץ את הפקודה `dotnet run arg1 arg2 arg3`, שורת הפלט תהיה
+
+פלט לדוגמא (הפקודה הורצה עם ארגומנטים 'אחד', 'שתיים', 'שלוש'):
 ```
-Argument[0] = arg1
-Argument[1] = arg2
-Argument[2] = arg3
+הנה הארגומנטים שקיבלת:
+אחד
+שתיים
+שלוש
 ```
 
-## בעומק:
-קריאת פרמטרים מהשורה של הפקודה היא תהליך שהתפתח עם השפה של C, דרך CLR (Common Language Runtime). בC#, תזרים זה משתמש בטיפוס נתונים string[], אבל בשפות פרודיה אחרת יכולות להיות בחירות שונות.
-חלופה נוספת לקריאה של ארגומנטים משורת הפקודה היא שימוש בספריית קוד פתוח כמו CommandLineParser. ספריות אלה מעניקות גמישות נוספת בטיפול בארגומנטים.
-במהלך הריצה, יד ה-CLR ב-C# מועברת אל "Main" כאשר האפליקציה מתחילה, וכל הארגומנטים משורת הפקודה מועברים כארגומנטים ל- "Main".
+## טבילה עמוקה
+בימים הראשונים, תכניות רצו משורת פקודה והיו תלויות בארגומנטים אלה לשליטה בהתנהגות. יש גם אלטרנטיבות, כמו קריאת קבצי קונפיגורציה או ממשק משתמש גרפי, אבל ארגומנטים משורת הפקודה עדיין נפוצים בגלל פשטות ואוטומציה. ב-C# גרסה 8.0 ומעלה, ניתן גם להשתמש ב Top-Level Statements כדי לפשט את הקוד עוד יותר.
 
-## ראה גם:
-- [קריאת ארגומנטים משורת הפקודה ב-C# Microsoft Docs](https://docs.microsoft.com/he-il/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
-- [CommandLineParser GitHub](https://github.com/commandlineparser/commandline)
-- [Common Language Runtime (CLR) Microsoft Docs](https://docs.microsoft.com/he-il/dotnet/standard/clr)
+## ראו גם:
+- [Documentation for Command Line Arguments in .NET](https://docs.microsoft.com/en-us/dotnet/core/tools/)
+- [Top-Level Statements in C#](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements)
+- [Using Environment.GetCommandLineArgs()](https://docs.microsoft.com/en-us/dotnet/api/system.environment.getcommandlineargs?view=netframework-4.8)

@@ -1,6 +1,7 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "Gleam: Завантаження веб-сторінки"
+date:                  2024-01-20T17:44:51.808510-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,38 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке і навіщо це потрібно?
+## What & Why? (Що та Чому?)
 
-Завантаження веб-сторінки - це процес отримання даних від сервера до комп'ютера користувача. Програмісти роблять це, щоб аналізувати й обробляти цей вміст, здійснювати веб-скрапінг або автоматизувати деякі тести.
+Downloading a web page means fetching its contents over the Internet. Programmers do this to interact with web content, automate tasks, or extract information.
 
-## Як це зробити:
+## How to (Як це зробити):
 
-Цей код TypeScript показує, як ви можете завантажити веб-сторінку за допомогою бібліотеки axios. 
+To download a web page in TypeScript, you'll need `node-fetch`. Install it with `npm install node-fetch`. Here's how you use it:
 
-```TypeScript
-import axios from 'axios';
+```typescript
+import fetch from 'node-fetch';
 
-axios.get('http://example.com')
-  .then((response) => {
-    console.log(response.data);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+async function downloadPage(url: string): Promise<string> {
+    try {
+        const response = await fetch(url);
+        return response.ok ? await response.text() : 'Failed to load page';
+    } catch (error) {
+        return 'Error: ' + error;
+    }
+}
+
+downloadPage('https://www.example.com').then(console.log);
 ```
 
-Коли ви запустите цей код, ви побачите вміст сторінки example.com у консолі.
+Sample output for a successful page load might be the HTML contents, and for an error, 'Error: TypeError: Failed to fetch'.
 
-## Поглиблений аналіз:
+## Deep Dive (Поглиблене Вивчення):
 
-Завантаження веб-сторінок є старим як сам Інтернет. З вихідом першого браузера, було необхідно отримати дані з сервера. З того часу методи та технології дещо змінились.
-Є декілька альтернатив axios для завантаження веб-сторінки, включаючи fetch() API або бібліотеку request у Node.js.
-Axios відрізняється тим, що вона працює і в браузері, і в Node.js, підтримує обіцянки (Promises) і може перехоплювати запроси та відповіді.
+Historically, downloading a web page was often done with XMLHttpRequest in the browser, or with modules like `http` or `https` in Node.js. `fetch` API provides a cleaner, promise-based way to make web requests, and `node-fetch` is essentially node's implementation of what `fetch` does in the browser.
 
-## Дивіться також:
+Alternatives to `node-fetch` include `axios` or libraries like `got`. Each has its pros and cons in terms of features, syntax, and performance.
 
-- [Axios документація](https://axios-http.com/docs/intro)
-- [Fetch API документація](https://developer.mozilla.org/uk/docs/Web/API/Fetch_API/Using_Fetch)
-- [Request бібліотека у Node.js](https://www.npmjs.com/package/request)
-  
-Нагадую, що завжди важливо знати, як і куди використовувати необхідні інструменти. Продовжуйте вчитися та розвиватися в своїх програмістських навиках!
+Understanding HTTP status codes and headers is crucial. They tell you if your request was successful (`200` series), redirected (`300` series), had client errors (`400` series), or server errors (`500` series).
+
+## See Also (Див. також):
+
+- MDN Web Docs on Fetch API: [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- Comparison of HTTP request libraries: [https://www.npmjs.com/package/node-fetch#fetch-vs-axios-vs-other-http-libraries](https://www.npmjs.com/package/node-fetch#fetch-vs-axios-vs-other-http-libraries)
+- HTTP Status Codes: [https://httpstatuses.com/](https://httpstatuses.com/)

@@ -1,7 +1,8 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:02:07.504252-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,52 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-HTTP अनुरोध वितारण जिसमे बेसिक प्रमाणन (basic authentication) होता है एक मूलभूत क्रिया है । इसका प्रयोग वेब सर्वरसे डेटा लेने या डेटा गुजारने के लिए किया जाता है। यह सुरक्षित तरीका होता है APIs से जुड़ने का।
+## क्या और क्यों? (What & Why?)
+HTTP रिक्वेस्ट बेसिक ऑथेंटिकेशन के साथ भेजना एक प्रक्रिया है जहां सर्वर को यूजरनेम और पासवर्ड कोडित फॉर्म में भेजा जाता है। प्रोग्रामर्स इसे डाटा एक्सेस करने या सेंसिटिव एक्शन्स को ऑथराइज़ करने के लिए करते हैं।
 
-## कैसे करें:
-```Java
-import java.net.http.HttpClient;
-import java.net.http.HttpHeaders;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.nio.charset.StandardCharsets;
+## कैसे करें? (How to:)
+```java
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Base64;
 
-public class HttpBasicAuth {
+public class BasicAuthRequest {
 
-    public static void sendRequest() throws Exception {
+    public static void main(String[] args) throws IOException {
+        URL url = new URL("http://your-api-endpoint.com/data");
+        String credentials = "username:password";
+        String basicAuthPayload = "Basic " + Base64.getEncoder().encodeToString(credentials.getBytes());
 
-        HttpClient client = HttpClient.newHttpClient();
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.setRequestProperty("Authorization", basicAuthPayload);
 
-        String auth = "user:password";
-        String encodedAuth = Base64.getEncoder()
-          .encodeToString(auth.getBytes(StandardCharsets.UTF_8));
-
-        HttpRequest request = HttpRequest.newBuilder()
-          .uri(new URI("http://your-url.com"))
-          .header("Authorization", "Basic " + encodedAuth)
-          .build();
-
-        HttpResponse<String> response = client.send(request,
-          HttpResponse.BodyHandlers.ofString());
-
-        System.out.println(response.statusCode());
-        System.out.println(response.body());
-    }
-
-    public static void main(String[] args) throws Exception {
-        sendRequest();
+        int responseCode = connection.getResponseCode();
+        System.out.println("Response Code : " + responseCode);
+        // Output will depend on your API's response. E.g., "Response Code : 200" indicates success.
     }
 }
 ```
-उपरोक्त कोड सारी आवश्यकताओं को पूरा करेगा और सर्वर से प्रतिक्रिया आने पर इसे छाप देगा।
 
-## गहराई में:
-HTTP और Basic Authentication की जोड़ी का इतिहास वेब के आरम्भिक दिनों से ही जुड़ी हुई है। बेसिक प्रमाणन (Basic Authentication) के विकल्प OAuth और Digest Access Authentication होते हैं। हालांकि, बेसिक प्रमाणन सबसे आसान होता है लेकिन इसे HTTPS के साथ उपयोग करना चाहिए क्योंकि यह क्रेडेंशियल्स को एन्कोड करता है, न कि एन्क्रिप्ट। 
+## गहन अध्ययन (Deep Dive)
+HTTP बेसिक ऑथेंटिकेशन सबसे सरल ऑथेंटिकेशन तकनीकों में से एक है और इसकी शुरुआत 1990 के दशक में हुई थी। यह एक तटस्थ तकनीक है, जो HTTPS के उपयोग के बिना असुरक्षित हो सकती है, क्योंकि क्रेडेंशियल्स बेस64 कोडेड फॉर्म में होते हैं, जिन्हें आसानी से डिकोड किया जा सकता है। अधिक सुरक्षित विकल्पों में OAuth और API keys शामिल हैं। जहां तक विवरण की बात है, Java नेटवर्किंग के माध्यम से HttpURLConnection क्लास का उपयोग करते हुए बेसिक ऑथेंटिकेशन हेडर सेट करता है।
 
-## See Also:
-1. जावा नेटवर्किंग (भाग 1) - Socket, ServerSocket, और InetAdress ट्यूटोरियल: https://www.guru99.com/java-networking.html 
-2. जावा के साथ HTTP सर्वर तक पहुंचना: https://www.baeldung.com/java-http-request 
-3. ऑथोराइज़ेशन हेडर्स और एचटीटीपी अनुरोध: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization
-4. Basic और Digest Access Authentication का RFC: https://tools.ietf.org/html/rfc2617
+## सम्बंधित स्रोत (See Also)
+- [HTTP बेसिक ऑथेंटिकेशन (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [Java HttpURLConnection डॉक्यूमेंटेशन](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/HttpURLConnection.html)
+- [Base64 Encoding और Decoding इन Java](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Base64.html)

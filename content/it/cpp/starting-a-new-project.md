@@ -1,7 +1,8 @@
 ---
-title:                "Iniziare un nuovo progetto"
-html_title:           "Arduino: Iniziare un nuovo progetto"
-simple_title:         "Iniziare un nuovo progetto"
+title:                "Avvio di un nuovo progetto"
+date:                  2024-01-20T18:03:10.369678-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Avvio di un nuovo progetto"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Getting Started"
@@ -10,40 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Come Iniziare un Nuovo Progetto in C++
+## Cosa & Perché?
+Iniziamo un nuovo progetto per trasformare le idee in codice funzionante. I programmatori lo fanno per risolvere problemi, esplorare nuove tecnologie o semplicemente per imparare.
 
-## Cosa e Perché?
-Iniziare un nuovo progetto significa creare un nuovo ambiente di sviluppo per programmare da zero. Gli sviluppatori fanno questo per implementare idee uniche, risolvere problemi o semplicemente come esercizio di apprendimento.
-
-## Come Fare:
-Ecco un esempio basico di come iniziare un nuovo progetto in C++.
+## Come fare:
+Creare un nuovo progetto in C++ con CMake, uno strumento di build standard. Immaginiamo di voler creare un'app "Hello, World!".
 
 ```C++
-// Il tuo primo programma C++
-
+// File: main.cpp
 #include <iostream>
 
 int main() {
-    std::cout << "Ciao, mondo!";
+    std::cout << "Ciao, Mondo!" << std::endl;
     return 0;
 }
 ```
 
-Il codice sopra stampa "Ciao, mondo!" sulla console.
+Ecco il CMakeLists.txt minimo necessario:
 
-## Approfondimento:
-Storicamente, i programmatori iniziano nuovi progetti per sperimentare idee o esigenze aziendali. Oggigiorno, oltre all'uso di un editor di codice, si utilizzano sistemi di controllo di versione come Git e strumenti di sviluppo integrati (IDE) come Visual Studio per gestire e organizzare i progetti.
+```C++
+// CMakeLists.txt
+cmake_minimum_required(VERSION 3.10)
+project(MioProgetto)
 
-Alcune alternative a C++ includono linguaggi come Java, Python o JavaScript, ciascuno con i propri punti di forza.
+set(CMAKE_CXX_STANDARD 17)
+add_executable(MioProgetto main.cpp)
+```
 
-Quando inizi un nuovo progetto in C++, crei file con estensione .cpp, che contengono il tuo codice sorgente, e file di intestazione .h, che definiscono le interfacce per le tue classi e funzioni.
+Compilare e eseguire:
 
-## Vedi Anche:
-Per approfondire il tuo apprendimento, guarda le seguenti risorse:
+```bash
+mkdir build && cd build
+cmake ..
+make
+./MioProgetto
+```
 
-1.   [Documentazione ufficiale C++](https://en.cppreference.com/w/)
-2.   [Tutorial C++ di GeeksforGeeks](https://www.geeksforgeeks.org/c-plus-plus/)
-3.   [Guida alla programmazione C++ su W3Schools](https://www.w3schools.com/cpp/)
-4.   [Tutorial C++ su Tutorialspoint](https://www.tutorialspoint.com/cplusplus/index.htm)
+Output:
 
-Determinare il migliore punto di partenza per un nuovo progetto dipende dal tipo di progetto, dalle competenze e preferenze del programmatore e dalle specifiche esigenze aziendali o del cliente. L'apprendimento continua su sistemi di gestione di versione come Git e strumenti come gli IDE non solo migliora la tua efficienza, ma rende anche il tuo codice più gestibile per altri programmatori.
+```
+Ciao, Mondo!
+```
+
+## Approfondimento
+Il C++ continua a evolversi. L'uso di CMake è diventato popolare perché standardizza il processo di build su diverse piattaforme. Prima di CMake, gli sviluppatori scrivevano makefile complessi o utilizzavano strumenti specifici per il sistema operativo. CMake astrae queste complessità.
+
+Conformarsi allo standard C++ più recente (ad esempio, C++20) assicura l'uso delle ultime funzionalità come i concept per la programmazione generica più semplice e i moduli per migliorare i tempi di compilazione.
+
+È anche possibile usare altri strumenti di build come Meson o Bazel, o creare un progetto all'interno di un IDE che gestisca la configurazione per te, come Visual Studio o CLion. Tuttavia, imparare CMake è utile per la sua portabilità e ampio uso.
+
+## Vedi Anche
+- [CMake Documentation](https://cmake.org/documentation/)
+- [Modern CMake](https://cliutils.gitlab.io/modern-cmake/)
+- [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
+- [cppreference.com](https://en.cppreference.com/w/) per la documentazione standard del C++.

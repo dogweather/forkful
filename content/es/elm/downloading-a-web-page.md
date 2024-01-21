@@ -1,6 +1,7 @@
 ---
 title:                "Descargando una página web"
-html_title:           "Arduino: Descargando una página web"
+date:                  2024-01-20T17:44:06.008784-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Descargando una página web"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,57 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por Qué?
+## What & Why?
+Bajar una página web es el proceso de obtener su contenido HTML a través de internet. Los programadores lo hacen para procesar datos, mostrar contenido en sus aplicaciones o interactuar con servicios web.
 
-Descargar una página web se refiere a obtener su código fuente y guardarla en el disco duro. Los programadores suelen hacerlo para analizar la estructura de la página, probar su funcionalidad offline, o para recopilar datos y contenido en su propio proyecto.
-
-## Cómo se hace:
-
-Usando Elm, el módulo `Http` permite hacer este tipo de tareas fácilmente. Aquí tienes un ejemplo simple:
+## How to:
+Para descargar una web en Elm, usamos el módulo `Http`. Aquí hay un ejemplo simple que muestra cómo hacer una petición GET:
 
 ```Elm
-import Html exposing (Html, text)
 import Http
-import Json.Decode as Decode
-
-descargaUrl : String
-descargaUrl =
-    "http://miweb.com"
-
-fetchUrl : Cmd Msg
-fetchUrl =
-    Http.get { url = descargaUrl, expect = Http.expectString GotResponse }
+import Json.Decode exposing (string)
 
 type Msg
-    = GotResponse (Result Http.Error String)
+    = GotText (Result Http.Error String)
 
-update : Msg -> Model -> ( Model, Cmd Msg )
+getText : Cmd Msg
+getText =
+    Http.get
+        { url = "https://example.com"
+        , expect = Http.expectString GotText
+        }
+
+-- Código para la inicialización y suscripciones aquí
+
+update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
     case msg of
-        GotResponse result ->
-            case result of
-                Err _ ->
-                    ( model, fetchUrl )
+        GotText (Ok data) ->
+            ( { model | content = data }, Cmd.none )
 
-                Ok respuesta ->
-                    ( respuesta, Cmd.none )
+        GotText (Err _) ->
+            ( model, Cmd.none )
 
-view : Model -> Html Msg
-view respuesta =
-    text respuesta
+-- Resto del modelo, view, y funciones auxiliares
 ```
 
-Este código va a obtener la página web en "http://miweb.com". El resultado se almacenará en la variable `respuesta`.
+Si ejecutas este código en una aplicación Elm, harás una petición a `example.com` y manejarás el resultado.
 
-## Un poco más profundo
+## Deep Dive
+Elm nació para hacer aplicaciones web confiables. Con Elm, evitas errores en tiempo de ejecución usando un sistema de tipos fuerte.
 
-Historia: La capacidad de descargar páginas web comenzó a tener importancia después del nacimiento del internet. Como las páginas web comenzaron a ser más interactivas y dinámicas, las técnicas para descargar estas evolucionaron.
+Para bajar páginas web, Elm proporciona el módulo `Http`. Es funcional y usa `Commands` para efectuar operaciones de lado, como peticiones HTTP, que no encajan en Elm's mundo puramente funcional.
 
-Alternativas: En Elm, la forma más simple (como la mencionada anteriormente) es suficiente para muchos casos. Sin embargo, otras herramientas y lenguajes en otras plataformas pueden ofrecer funcionalidad más avanzada, como Python con su módulo `BeautifulSoup` o Node.js con `Puppeteer`.
+Hay alternativas como `XmlHttpRequest` en JavaScript, pero Elm maneja efectos de lado de una manera más segura y predecible.
 
-Detalles de implementación: En Elm, las solicitudes HTTP son un poco diferentes ya que son inmutables y usan el modelo de arquitectura Elm (TEA). Todo se maneja a través de mensajes y comandos asíncronos, lo que nos lleva a tener código más seguro y predecible.
+Detalles de implementación: Elm usa comandos (`Cmd`) para peticiones asíncronas, que retornan mensajes (`Msg`) que tu programa maneja. Necesitas decodificadores (`Decoder`) para manejar el contenido de la respuesta ya que Elm es fuertemente tipado.
 
-## Vea también.
-
-- [Documentación oficial de Elm](https://guide.elm-lang.org/)
-- [Documentación de Puppeteer en Node.js](https://developers.google.com/web/tools/puppeteer)
+## See Also
+- [Elm Guide – HTTP](https://guide.elm-lang.org/effects/http.html)
+- [Elm Http Package](http://package.elm-lang.org/packages/elm/http/latest)
+- [Json.Decode](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode)

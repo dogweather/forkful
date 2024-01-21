@@ -1,7 +1,8 @@
 ---
-title:                "http अनुरोध भेजना"
-html_title:           "Elixir: http अनुरोध भेजना"
-simple_title:         "http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+date:                  2024-01-20T18:00:33.756561-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -11,31 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-HTTP अनुरोध भेजना का मतलब है कि आप किसी नेटवर्क सर्वर से जानकारी मांग रहे हैं या उसे भेज रहे हैं। कार्यक्रम के लिए यह आवश्यक है क्योंकि यह वेब पेजेस, डेटाबेस, और अन्य नेटवर्क संसाधनों से डाटा प्राप्त करने की क्षमता प्रदान करता है।
+HTTP अनुरोध भेजने का मतलब है वेब सर्वर से जानकारी मांगना या उसे डेटा भेजना। प्रोग्रामर्स ऐसा तब करते हैं जब उनके एप्लिकेशन को इंटरनेट पर डेटा एक्सेस करना होता है या शेयर करना होता है।
 
 ## कैसे करें:
-Kotlin में HTTP अनुरोध भेजने के लिए, कोिटलिन के Ktor क्लाइंट का उपयोग करें। निम्नलिखित कोड देखें:
-
 ```Kotlin
-import io.ktor.client.*
-import io.ktor.client.request.*
+import java.net.HttpURLConnection
+import java.net.URL
 
-suspend fun main() {
-   val client = HttpClient()
-   val content: String = client.get("https://ktor.io/")
-   print(content)
-   client.close()
+fun main() {
+    val url = URL("http://example.com") // अपना URL डालें
+    with(url.openConnection() as HttpURLConnection) {
+        requestMethod = "GET"  // या "POST", "PUT", "DELETE", आदि
+        
+        println("Response Code: $responseCode")
+        inputStream.bufferedReader().use {
+            it.lines().forEach { line ->
+                println(line)
+            }
+        }
+    }
 }
 ```
-ऊपर दिए गए कोड का निष्पादन करते समय, आपको "https://ktor.io/" URL की सामग्री प्रिंट होगी।
+सैंपल आउटपुट:
+```
+Response Code: 200
+<!doctype html>
+<html>
+<head>
+...
+</head>
+<body>
+...
+</body>
+</html>
+```
 
-## गहरे डाइव
-HTTP अनुरोध वेब संचार का मुख्य तत्व है और 1990 में टिम बर्नर्स-ली द्वारा विकसित किया गया था। कोई भी मशीन, जैसे कि ब्राउज़र, या आपका कोटलिन कोड, जो HTTP प्रोटोकॉल का उपयोग कर सकती है, वे अन्य मशिनों (जैसे कि वेबसाइट) से जानकारी मांग सकती हैं। 
+## गहराई में:
+HTTP अनुरोध भेजना इंटरनेट के माध्यम से संवाद करने का एक मौलिक तरीका है जिसे 1990 के दशक से प्रयोग किया जा रहा है। जहां Java में `HttpURLConnection` उपयोग किया जाता था, वहीं Kotlin में हम इसे अधिक सरलता से कर सकते हैं और बेहतर सिंटैक्स के साथ। कुछ विकल्पों में लाइब्रेरीज जैसे कि OkHttp, Retrofit, या Ktor होती हैं, जो और अधिक सुविधाजनक एपीआई प्रदान करती हैं और जटिलताओं को सरल बनाती हैं। इन्हें उपयोग करते हुए आप प्राप्ती, परिचीती, और प्रबंधन को बेहतर तरीके से संचालित कर सकते हैं।
 
-वैकल्पिक रूप से, आप कंडलिट में ऑक्टोकिट, फ्यूल, आदि का भी उपयोग कर सकते हैं। 
+## इसे भी देखें:
+- [OkHttp GitHub Repository](https://github.com/square/okhttp)
+- [Kotlin के लिए Ktor](https://ktor.io/)
+- [Retrofit GitHub Repository](https://github.com/square/retrofit)
 
-हर अनुरोध के बाद, आपको यह देखना चाहिए कि अनुरोध ने उचित उत्तर दिया है या नहीं। जांचने के लिए आप `HttpResponseValidator` का उपयोग कर सकते हैं।
-
-## यह भी देखें
-- HTTP रिक्वेस्ट बनाने और प्रबंधित करने के लिए Kotlin के मार्जरेास्ट लाइब्रेरी [https://github.com/ktorio/ktor](https://github.com/ktorio/ktor)
-- HTTP प्रोटोकॉल के बारे में अधिक जानकारी [https://developer.mozilla.org/en-US/docs/Web/HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+नोट: जिन भारतीय पाठकों के लिए यह आर्टिकल लिखा गया है, वे ऊपर दिए गए लिंक्स पर जाकर कोडिंग में इस्तेमाल होने वाली लाइब्रेरीज के बारे में और जान सकते हैं।

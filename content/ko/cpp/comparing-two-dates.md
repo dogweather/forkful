@@ -1,6 +1,7 @@
 ---
 title:                "두 날짜 비교하기"
-html_title:           "C#: 두 날짜 비교하기"
+date:                  2024-01-20T17:32:41.599744-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "두 날짜 비교하기"
 programming_language: "C++"
 category:             "C++"
@@ -10,45 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 하는가?
+## What & Why?
+(무엇과 왜?)
+두 날짜를 비교한다는 것은 날짜 A가 B보다 이전, 동일, 또는 이후인지를 확인하는 과정입니다. 프로그래머들이 이를 수행하는 이유는 유효성 검사, 시간차 계산, 일정 관리 등을 위해서입니다.
 
-두 날짜를 비교하는 것은 특정 시점이 다른 특정 시점보다 앞서거나 뒤에 있는지 판단하는 작업입니다. 이는 일정 관리, 예약 시스템, 파일의 타임스탬프 비교 등에 프로그래머들이 활용합니다.
-
-## 어떻게 하는가:
-
-일반적인 C++을 이용해 두 날짜를 비교하는 방법은 다음 처럼 합니다:
-
+## How to:
+(어떻게:)
 ```C++
-#include <ctime>
+#include <iostream>
+#include <chrono>
 
 int main() {
-    struct tm a = {0,0,0,30,7,2021-1900}; 
-    struct tm b = {0,0,0,15,7,2021-1900};
+    using namespace std::chrono;
 
-    time_t x = mktime(&a);
-    time_t y = mktime(&b);
+    // 오늘 날짜와 임의의 날짜 두 개를 system_clock을 활용하여 정의합니다.
+    system_clock::time_point today = system_clock::now();
+    system_clock::time_point arbitrary_date1 = system_clock::now() - hours(24); // 하루 전
+    system_clock::time_point arbitrary_date2 = system_clock::now() + hours(24); // 하루 후
 
-    double difference = difftime(y, x) / (60 * 60 * 24);
-    cout << "Difference is: " << difference << " days\n";
-    return 0;
+    // 오늘과 비교
+    if (arbitrary_date1 < today) {
+        std::cout << "arbitrary_date1은 오늘보다 이전입니다." << std::endl;
+    }
+    if (arbitrary_date2 > today) {
+        std::cout << "arbitrary_date2는 오늘보다 이후입니다." << std::endl;
+    }
 }
 ```
 
-이 코드의 출력은 다음과 같습니다:
-
-```bash
-Difference is: -15 days
+Sample Output:
+```
+arbitrary_date1은 오늘보다 이전입니다.
+arbitrary_date2는 오늘보다 이후입니다.
 ```
 
-## 깊은 이해:
+## Deep Dive:
+(심층 탐구)
+과거에는 `ctime` 라이브러리의 `tm` 구조체를 이용하여 날짜를 비교했습니다. 현재는 C++11부터 도입된 `<chrono>` 라이브러리가 시간 관련 작업에 새로운 표준으로 자리잡았습니다. `<chrono>`는 더 정확하고 현대적인 시간 계산을 가능케 하며, 타임 존이나 DST(Daylight Saving Time) 같은 복잡한 문제를 다루기 좋습니다. 하지만 아직 장점들이 활용되지 않는 코드를 보는 것도 흔합니다. 다른 방법으로는 타임스탬프를 비교하는 방식이 있지만, `<chrono>`가 더 직관적이고 세련된 방법을 제공합니다.
 
-날짜의 비교는 컴퓨터 프로그래밍의 오래된 문제입니다. 초기에는 간단히 두 날짜를 숫자로 바꾸어 비교하는 방식이 일반적이었습니다. 하지만 비교를 위해서는 날짜 포맷에 따른 변환을 감당해야 했으므로 복잡성이 일정 수준 유지되었습니다.
-
-표준 C++ 라이브러리는 `struct tm`, `mktime`, `difftime`을 통해 날짜 비교를 보다 쉽게하기 위한 도구를 제공합니다. C++ 20 버전에서는 새로운 날짜와 시간 라이브러리가 추가되어 애플리케이션 개발자들에게 더 유연하고 강력한 도구를 제공하게 되었습니다.
-
-번호를 부여하는 대신 시간을 나타내는 방식에는 Unix 타임스탬프, Julian Date, TAI 등 다양한 대안이 있습니다. 각 방식은 특정 상황에서 장단점을 가집니다.
-
-## 참고 자료:
-
-- [cppreference의 C++ 날짜/시간 라이브러리](http://en.cppreference.com/w/cpp/chrono)
-- [StackOverflow 날짜 비교에 대한 토론](https://stackoverflow.com/questions/14218892/compare-two-dates-in-c)
+## See Also:
+(더보기)
+- [cppreference.com: <chrono>](https://en.cppreference.com/w/cpp/header/chrono)
+- [cppreference.com: Time point comparisons](https://en.cppreference.com/w/cpp/chrono/time_point)
+- [ISO C++: Date and time utilities](https://isocpp.org/wiki/faq/cpp-library#chrono)
+- [Stack Overflow: Comparing dates in C++](https://stackoverflow.com/questions/tagged/c%2b%2b+date+comparison)

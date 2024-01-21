@@ -1,6 +1,7 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Bash: Rozpoczynanie nowego projektu"
+date:                  2024-01-20T18:03:53.543060-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Java"
 category:             "Java"
@@ -10,37 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Rozpoczynanie nowego projektu to jak stawianie pierwszych cegiełek – wymaga jasnego planu i narzędzi. Programiści tworzą nowe projekty, aby rozwiązywać problemy, uczyć się czy też testować pomysły.
 
-Zaczynanie nowego projektu to pierwszy krok w tworzeniu dowolnej aplikacji czy usługi programistycznej. Programiści robią to aby stworzyć coś nowego, rozwiązać problem lub ulepszyć istniejące narzędzia.
+## How to (Jak to zrobić):
+Aby rozpocząć nowy projekt w Java, potrzebujesz narzędzi jak JDK i środowiska programistycznego, np. IntelliJ IDEA czy Eclipse. Po ich zainstalowaniu, tworzysz nowy projekt i piszesz swój kod. Spójrz na poniższy przykład:
 
-## Jak to zrobić: 
-
-```Java
-// Tworzę nowy projekt w Java
-
-public class NowyProjekt {
+```java
+public class HelloPoland {
     public static void main(String[] args) {
-        System.out.println("Witaj, świecie!”);  
+        System.out.println("Witaj, świecie!");
     }
 }
 ```
-Po skompilowaniu i uruchomieniu kodu wyżej, otrzymasz następujący wynik:
 
-``` 
+Po uruchomieniu, otrzymasz prosty output:
+
+```
 Witaj, świecie!
 ```
 
-## Głębsze Zagadnienie
+## Deep Dive (Dogłębna analiza):
+Historia Javy sięga 1995 roku, gdy Sun Microsystems wypuścił język. Wcześniejsze środowiska były bardziej złożone, ale z czasem powstały IDEs, ułatwiając tworzenie projektów. Alternatywy dla IDE to np. Maven czy Gradle, które także zarządzają projektami, ale przez linię komend. Wybór zależy od celów i stylu pracy. W projektach używa się struktury katalogów i pakietów, które pomagają w organizacji kodu.
 
-(1) Kontekst historyczny: Zaczynanie nowego projektu jest podstawą programowania odkąd powstał pierwszy język programowania. Historia jest pełna przykładów innowacyjnych projektów, które rozpoczęły się od pustego pliku.
-
-(2) Alternatywy: Można także sklonować istniejący projekt i dostosować go do własnych potrzeb lub korzystać z gotowych szablonów projektowych.
-
-(3) Szczegóły implementacji: Tworzenie nowego projektu w Java zaczyna się zazwyczaj od utworzenia nowej klasy z metodą `main()`. Jest to punkt wejścia do twojej aplikacji.
-
-## Zobacz także
-
-3. [Samouczek Java dla początkujących](https://www.learnjavaonline.org/)
-4. [Tworzenie pierwszego projektu w Javie korzystając z IntelliJ IDEA](https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html)
+## See Also (Zobacz też):
+- [Official Java Documentation](https://docs.oracle.com/en/java/)
+- [IntelliJ IDEA Documentation](https://www.jetbrains.com/idea/documentation/)
+- [Eclipse IDE Documentation](https://help.eclipse.org/latest/index.jsp)
+- [Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/)
+- [Gradle Guides](https://gradle.org/guides/)

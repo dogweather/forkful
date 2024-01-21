@@ -1,7 +1,8 @@
 ---
-title:                "发送http请求"
-html_title:           "C#: 发送http请求"
-simple_title:         "发送http请求"
+title:                "发出 HTTP 请求"
+date:                  2024-01-20T17:59:38.345815-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "发出 HTTP 请求"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,46 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
-HTTP请求是一个让程序与互联网上的其他服务器进行数据交互的方式。程序员之所以发送HTTP请求，是因为这是他们获取、制作、更新或删除网络上数据的主要手段。
+## What & Why? (是什么？为什么？)
+发送HTTP请求就是让你的程序能向服务器问问题或者发送信息。程序员这么做通常是为了获取数据，更新数据，或者和其他服务交互。
 
-## 如何操作
-以下是一段简单的在Go中发送HTTP GET请求的代码：
-
+## How to: (怎么做：)
 ```Go
 package main
 
 import (
-	"io/ioutil"
-	"log"
-	"net/http"
+    "fmt"
+    "io/ioutil"
+    "net/http"
 )
 
 func main() {
-	response, err := http.Get("http://webcode.me")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer response.Body.Close()
-
-	data, err := ioutil.ReadAll(response.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(string(data))
+    response, err := http.Get("http://example.com")
+    if err != nil {
+        fmt.Printf("The HTTP request failed with error %s\n", err)
+    } else {
+        data, _ := ioutil.ReadAll(response.Body)
+        fmt.Println(string(data))
+    }
 }
 ```
-运行上述程序，你将看到从`http://webcode.me`获取的HTML内容输出。
+样本输出：
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
 
-## 深入探讨
-在HTTP兴起之初，大多数程序员需要手动在TCP层建立连接，这是一个颇为复杂且易出错的过程。随着HTTP请求的普及，如今我们可以便捷安全地获取或发送数据。
+## Deep Dive (深入探究)
+HTTP请求是万维网的基础。1990年代早期，HTTP/0.9被发明出来。现在用的是HTTP/2，HTTP/3也在路上了。发送HTTP请求有多种方式，`net/http` 是Go提供的官方库。它简洁，强大，适合多数情况。也可以用第三方库，比如 `gorequest` 和 `resty`，提供更多特性，更简便的API。但他们不是官方支持的。
 
-除了使用核心`net/http`包外，你也可以选择第三方的HTTP请求库，例如`gorilla/mux`，这些库可能提供了一些额外的功能和优化。
+掌握发送请求的细节很重要。头信息、请求方法(GET, POST等)、处理响应和错误都得考虑。比如，处理JSON，可能需要 `encoding/json` 库来解析。
 
-就实现细节来说，HTTP请求包括将请求信息装入特定的数据格式，通过TCP/IP协议将其发送到服务器，最后接收并解码服务器的回应。
-
-## 另请参阅
-- Go官方文档对`net/http`包的说明：https://golang.org/pkg/net/http/
-- 第三方HTTP请求库‘gorilla/mux’的Github页面：https://github.com/gorilla/mux
-- 更深入的了解HTTP请求的文章：https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview
+## See Also (参见)
+- Go net/http包文档: [https://pkg.go.dev/net/http](https://pkg.go.dev/net/http)
+- 用Go发送HTTP请求: [https://golang.org/doc/articles/wiki/](https://golang.org/doc/articles/wiki/)
+- 第三方库gorequest: [https://github.com/parnurzeal/gorequest](https://github.com/parnurzeal/gorequest)
+- 第三方库resty: [https://github.com/go-resty/resty](https://github.com/go-resty/resty)

@@ -1,6 +1,7 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "C++: Porównywanie dwóch dat"
+date:                  2024-01-20T17:33:55.488996-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,39 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to i dlaczego?
+## What & Why? (Co i dlaczego?)
+Porównywanie dat to sprawdzanie, która z nich jest wcześniejsza, późniejsza lub czy są identyczne. Programiści robią to, by obsługiwać rezerwacje, terminy, ważność czytel, i wiele innych.
 
-Porównywanie dwóch dat to proces ustalania, która data jest wcześniejsza, a która późniejsza. Programiści robią to, gdy potrzebują operować na danych związanych z czasem i datą, na przykład do sortowania wydarzeń wg daty, terminach ważności sesji użytkownika, itp.
-
-## Jak zrobić:
-
-Aby porównać dwie daty w TypeScript, tworzymy dwa obiekty `Date` i wykorzystujemy metodę `getTime()`, która zwraca czas w milisekundach, liczone od 1 stycznia 1970 roku.
-
+## How to: (Jak to zrobić:)
 ```TypeScript
-let data1: Date = new Date('2021-03-01');
-let data2: Date = new Date('2021-03-02');
+const date1: Date = new Date('2023-09-01');
+const date2: Date = new Date('2023-10-01');
 
-if(data1.getTime() < data2.getTime()) {
-    console.log("Data1 jest wcześniejsza niż Data2");
-} else if(data1.getTime() > data2.getTime()) {
-    console.log("Data1 jest późniejsza niż Data2");
+// Sprawdź, która data jest wcześniejsza
+if(date1 < date2) {
+  console.log('date1 jest wcześniejsza niż date2.');
+} else if(date1 > date2) {
+  console.log('date1 jest późniejsza niż date2.');
 } else {
-    console.log("Data1 i Data2 są równe");
+  console.log('date1 i date2 są takie same.');
 }
+
+// Wyniki w konsoli:
+// "date1 jest wcześniejsza niż date2."
 ```
-Sample output:
 
-```TypeScript
-"Data1 jest wcześniejsza niż Data2"
-```
-## Pogłębione omówienie:
+## Deep Dive (Dogłębna analiza)
+Początkowo JavaScript (i tym samym TypeScript) wykorzystywał obiekty `Date` do pracy z datami. Istnieje wiele metod do manipulowania i porównywania dat, jednak operacje te mogą być niestandardowe w różnych strefach czasowych.
 
-Porównywanie dat jest dość prostym procesem, jednak ważne jest zrozumienie, jak jest zaimplementowane w TypeScript. Mamy dwie daty, które porównujemy używając metody `getTime()`. Metoda ta zwraca wartość czasu w milisekundach, dzięki czemu możemy łatwo porównać daty.
+Alternatywnie, biblioteki jak `moment.js` lub `date-fns` oferują zaawansowane funkcje do porównywania dat, ale od TypeScript 2.1 można to zrobić natywnie przy pomocy operatorów `<`, `>` i `==`.
 
-Dodatkowo, warto wiedzieć, że istnieją alternatywne metody porównywania dat. Na przykład, zamiast konwertować do milisekund, można porównać rok, miesiąc i dzień separatystycznie. Choć może to być bardziej skomplikowane, czasami może być preferowane w zależności od scenerio.
+Przy porównywaniu dat warto pamiętać o strefach czasowych i przejściu na czas letni/zimowy. TypeScript nie rozwiązuje tych problemów bezpośrednio, więc czasami warto skorzystać z zewnętrznych bibliotek do zaawansowanych zastosowań.
 
-## Zobacz także:
-
-1. Dokumentacja MDN na temat obiektu Date: https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date
-2. Wizualizator JavaScript Date: https://www.w3schools.com/js/js_dates.asp
-3. Artykuł na temat porównywania dat w TypeScript: https://www.freecodecamp.org/news/how-to-compare-dates-in-typescript/
+## See Also (Zobacz także)
+- MDN Web Docs na temat obiektu `Date`: [MDN Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- Dokumentacja TypeScript: [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- Porównanie bibliotek do obsługi dat: [You Don't Need Moment.js](https://github.com/you-dont-need/You-Dont-Need-Momentjs)
+- Porady dotyczące stref czasowych w JavaScript: [JavaScript Date Object: The Complete Guide](https://www.toptal.com/software/definitive-guide-to-datetime-manipulation)

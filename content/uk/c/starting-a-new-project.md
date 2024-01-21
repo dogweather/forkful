@@ -1,7 +1,8 @@
 ---
-title:                "Початок нового проєкту"
-html_title:           "Elm: Початок нового проєкту"
-simple_title:         "Початок нового проєкту"
+title:                "Починаємо новий проект"
+date:                  2024-01-20T18:02:57.287813-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Починаємо новий проект"
 programming_language: "C"
 category:             "C"
 tag:                  "Getting Started"
@@ -10,41 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що та Чому?)
+Every now and then, a coder gets to kick off a new project. It's fresh, exciting, and often starts with a simple "Hello, World!". We do it to solve problems, to learn, or sometimes just for the fun of tinkering with ideas.
 
-Створення нового проекту, це процес, при якому програмісти від початку пишуть код, маючи конкретну ціль або задачу. Ми робимо це, щоб приймати нові виклики, вирішувати проблеми або просто для вивчення нових технологій.
+## How to: (Як це зробити:)
+Let's spin up a new C project. Here's a basic but mighty 'Hello, World!' in C, the mother tongue of programming:
 
-## Як це робити:
-
-Ось базовий приклад створення нового проекту в C.
-
-```C
-// імпортуємо потрібні бібліотеки
+```c
 #include <stdio.h>
 
-// наша головна функція
 int main() {
-  printf("Привіт, світ!\n");
-  return 0;
+    printf("Привіт, світ!\n");
+    return 0;
 }
 ```
 
-Виведіть цей текст. Вам покажуть "Привіт, світ!". Це основа для будь-якого нового проекту на C.
+Compile and run. Your terminal should greet you:
 
-## Поглиблене погруження
+```
+Привіт, світ!
+```
 
-Новий проект в C важко ототожнити з конкретним контекстом, адже можна створити проект для будь-чого, від системного програмування до веб-додатків. Впродовж років C розвивається, але його синтаксис залишається незмінним.
+## Deep Dive (Занурення у глибину)
+Starting a new project hasn't always been this simple. In ancient times (think 1970s), programming meant punch cards and time-sharing systems. Today, we've got Integrated Development Environments (IDEs) and powerful tools like `gcc` for compiling C.
 
-Є схожі або альтернативні мови, такі як C++, які розширюють функціональність C, але зберігають його різкий синтаксис та ефективність.
+Alternatives? Other languages, sure. But often the right tool for the job is a fast, compiled language like C. It deals closely with system hardware and is great for performance-critical apps.
 
-Коли починаєте новий проект, важливо визначитись з архітектурою та плануванням. Глибоке розуміння, як ваш код взаємодіє з операційною системою і бібліотеками, може допомогти уникнути проблем в майбутньому.
+Implementation means setting the project up properly. Structuring your files, choosing a build system (like `make`), and considering version control (git is your friend here) from the get-go can save headaches later.
 
-## Див. також
-
-**K&R:** "The C Programming Language" - класичний посібник за авторством Кернігана та Рітчі https://www.amazon.com/C-Programming-Language-2nd/dp/0131103628
-
-**Learn C:** Інтерактивний туторіал для навчання мови C https://www.learn-c.org/
-
-**C FAQ:** Часто задавані питання та відповіді про мову C http://www.c-faq.com/
-
-**IDE Clan:** Мультиплатформове середовище розробки для C/C++ http://www.codeblocks.org/
+## See Also (Дивіться також)
+- C Standard Library documentation: http://www.cplusplus.com/reference/clibrary/
+- GCC, the GNU Compiler Collection: https://gcc.gnu.org/
+- Make manual: https://www.gnu.org/software/make/manual/make.html
+- Git version control system: https://git-scm.com/

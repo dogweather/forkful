@@ -1,7 +1,8 @@
 ---
-title:                "发送http请求"
-html_title:           "C#: 发送http请求"
-simple_title:         "发送http请求"
+title:                "发出 HTTP 请求"
+date:                  2024-01-20T18:00:27.162829-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "发出 HTTP 请求"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,47 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
+## 什么及为什么？
+在编程中，发送HTTP请求是与Web服务进行交互的方式。（1）这能让你的应用获取数据、发送数据，或与远程服务器通信。（2）程序员这么做是为了让应用能与互联网上的其他服务集成。
 
-HTTP请求是网络编程中的一种通信方式，通常用于获取网络服务器的数据。程序员之所以使用HTTP请求，主要是为了实现客户端与服务器的数据交换。
-
-## 如何做：
-
-我们将使用`reqwest`库来示例如何在Rust发送HTTP请求。首先，添加`reqwest`和`tokio`以支持异步操作：
-
+## 如何：
 ```Rust
-[dependencies]
-reqwest = "0.11"
-tokio = { version = "1", features = ["full"] }
-```
-
-然后编写一个简单的函数来发送GET请求：
-
-```Rust
-use reqwest::Error;
+// 引入依赖库
+use reqwest;
 
 #[tokio::main]
-async fn main() -> Result<(), Error> {
-    let res = reqwest::get("http://www.example.com").await?;
-    println!("{}", res.text().await?);
+async fn main() -> Result<(), reqwest::Error> {
+    // 发送GET请求
+    let response = reqwest::get("https://httpbin.org/get").await?;
+
+    // 确认我们得到了成功的状态码
+    assert!(response.status().is_success());
+
+    // 解析响应体为文本
+    let body = response.text().await?;
+
+    println!("响应体: {}", body);
     Ok(())
 }
 ```
-
-运行你的程序，你将看到来自"http://www.example.com"的响应内容。
+输出样例：
+```
+响应体: {
+  "args": {}, 
+  "headers": {
+    ...
+  }, 
+  "origin": "your.ip", 
+  "url": "https://httpbin.org/get"
+}
+```
 
 ## 深入探索
+发送HTTP请求的能力在Rust中通常需要外部库，`reqwest`库在社区中广受欢迎，因为它异步、安全并易于使用。请求之前，Internet通信的基础是诸如Telnet和FTP之类的协议的。当Web蓬勃发展，HTTP成为标志性协议。现如今，你还可以通过像`hyper`这样的底层库来发送HTTP请求，它给你更多控制但编码更复杂。底层，HTTP请求由客户端向服务器发送一个格式化的文本消息构成，然后服务器以一个格式化的消息回复。
 
-发送HTTP请求的需求在早期网络应用发展中就已经出现。在那时，LINEMODE和TELNET等底层协议被广泛使用，复杂且不易使用。后来随着Web的诞生，HTTP协议成为了标准，为网络编程带来了重大革新。
-
-在Rust中，你也可以选择其他方案，例如`hyper`和`surf`等库。它们都有其优缺点，你可以根据具体用途选择最合适的。
-
-上面的示例很简单，适合入门，但在实际应用中，我们可能需要设置请求头、使用POST方法发送数据等，这就需要深入了解`reqwest`库的API。
-
-## 另请参阅
-
-1. [reqwest库官方文档](https://docs.rs/reqwest/0.11.7/reqwest/)
-2. [HTTP协议详解](https://developer.mozilla.org/zh-CN/docs/Web/HTTP)
-3. [Rust异步编程简介](https://rust-lang.github.io/async-book/)
-4. [其他HTTP客户端库：hyper](https://hyper.rs/)
-5. [其他HTTP客户端库：surf](https://docs.rs/surf/2.3.1/surf/)
+## 另见
+- [reqwest库文档](https://docs.rs/reqwest/)
+- [异步Rust图书](https://rust-lang.github.io/async-book/)
+- [HTTP官方规范](https://httpwg.org/specs/rfc7231.html)

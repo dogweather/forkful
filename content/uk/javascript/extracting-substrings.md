@@ -1,7 +1,8 @@
 ---
-title:                "Видобування підрядків"
-html_title:           "C++: Видобування підрядків"
-simple_title:         "Видобування підрядків"
+title:                "Виділення підрядків"
+date:                  2024-01-20T17:46:33.121019-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Виділення підрядків"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,38 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке й навіщо це потрібно?
-Витягування підрядка, це процес отримання частини рядка з існуючого рядка в JavaScript. Програмісти роблять це, щоб зробити код більш читабельним і легким для розуміння, видаляючи зайві і непотрібні частини.
+## What & Why? (Що та Навіщо?)
+Екстракція підрядків у JavaScript — це процес вибірки специфічних частин з рядка. Програмісти роблять це, щоб маніпулювати текстом, валідувати вхідні дані, або просто для видобування інформації.
 
-## Як це робити:
-В JavaScript є два зручних методи для витягування підрядків: `slice` і `substring`.
+## How to: (Як Робити:)
+```javascript
+// Використання методу substr()
+let text = "Привіт, мої друзі";
+let slice = text.substr(7, 2); // "мо"
 
-```Javascript
-let str = "Привіт, це ваш JavaScript код";
-let substr = str.slice(8, 10); 
-console.log(substr);
+console.log(slice); // Виводить: мо
+
+// Використання методу substring()
+let subString = text.substring(7, 9);
+console.log(subString); // Виводить: мо
+
+// Використання методу slice()
+let slicedText = text.slice(7, 9);
+console.log(slicedText); // Виводить: мо
 ```
 
-Цей кусок коду виведе `це` в консолі.
+## Deep Dive (Поглиблений Розгляд)
+Екстракція підрядків - стара як світ тема в програмуванні. JavaScript надає кілька методів: `substr()`, `substring()`, і `slice()`. Хоча `substr()` застарілий, його все ще можна зустріти у старому коді. `slice()` і `substring()` схожі, але `slice()` може приймати від'ємні індекси, які вказують позиції від кінця рядка. Обираючи метод, звертайте увагу на семантику та сумісність у вашому юз-кейсі.
 
-```Javascript
-let str = "Привіт, це ваш JavaScript код";
-let substr = str.substring(8, 10); 
-console.log(substr);
-```
-
-Тут також виведеться `це`.
-
-Різниця між `slice` і `substring` полягає в поведінці при введенні від'ємних значень або значень, що перевищують довжину рядка.
-
-## Поглиблено
-Витягування підрядків, як і багато інших речей в JavaScript, історично базується на C-подібних мовах програмування. Ці мови вплинули на дизайн і семантику JavaScript. 
-
-Щодо альтернатив, ви також можете використовувати метод `substr`, хоча він вважається застарілим і не рекомендується для використання в новому коді.
-
-Щодо виконання: як `slice`, так і `substring` виконують майже однаково. Основна різниця полягає в тому, як вони поводяться з від'ємними індексами або індексами, які перевищують довжину рядка.
-
-## Дивіться також
-- [Документація Mozilla про slice](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [Документація Mozilla про substring](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [Документація Mozilla про substr](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
+## See Also (Дивіться Також)
+- [MDN Web Docs: String.prototype.substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
+- [MDN Web Docs: String.prototype.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [MDN Web Docs: String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [Stack Overflow: What is the difference between String.slice and String.substring?](https://stackoverflow.com/questions/2243824/what-is-the-difference-between-string-slice-and-string-substring-in-javascript)

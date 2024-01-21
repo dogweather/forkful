@@ -1,6 +1,7 @@
 ---
 title:                "Читання аргументів командного рядка"
-html_title:           "Arduino: Читання аргументів командного рядка"
+date:                  2024-01-20T17:55:44.296246-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Читання аргументів командного рядка"
 programming_language: "C"
 category:             "C"
@@ -10,47 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
+## What & Why? (Що та Чому?)
+Читання аргументів командного рядка дає програмам гнучкість. Ви використовуєте це, щоб передавати дані в програму при її запуску, встановлювати опції або напряму комунікувати з виконавчою логікою.
 
-Читання аргументів командного рядка - це можливість обробляти вхідні параметри, які передаються у вашу програму через командний рядок. Це полегшує тестування та збільшує гнучкість вашого коду.
-
-## Як це зробити:
-
-Ось базовий приклад того, як читати аргументи командного рядка в C:
-
+## How to (Як це зробити):
 ```C
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-  int count;
-
-  printf("Лічильник аргументів: %d\n", argc);
-
-  for (count = 0; count < argc; count++) {
-    printf("argv[%d] = %s\n", count, argv[count]);
-  }
-
-  return 0;
+    printf("You have entered %d command-line argument(s):\n", argc - 1);
+    for (int i = 1; i < argc; i++) {
+        printf("%s\n", argv[i]);
+    }
+    return 0;
 }
 ```
-Якщо ви запустите програму з аргументами, наприклад `./prog a b c`, виходом буде:
-
-```C
-Лічильник аргументів: 4
-argv[0] = ./prog
-argv[1] = a
-argv[2] = b
-argv[3] = c
+Запустіть так: `./your_program arg1 arg2`.
+Вивід буде:
+```
+You have entered 2 command-line argument(s):
+arg1
+arg2
 ```
 
-## Занурення в деталі
+## Deep Dive (Поглиблений Розбір):
+Командні аргументи — стара ідея. З ранніх днів UNIX, вони дозволяли взаємодію з програмами через shell. `argc` (argument count) — це кількість аргументів, а `argv` (argument vector) — масив рядків, що містить самі аргументи. В `argv[0]` зазвичай ім'я програми, тому ваш код читає аргументи, починаючи з `argv[1]`.
 
-Читання вхідних аргументів з командного рядка - надзвичайно важлива ознака мови C, яка була наявна практично з самого її створення. Альтернативою є вживання вводу/виводу файлів, але це може бути слабший варіант, особливо для цілей тестування.
+Альтернативи? Модулі як `getopt()` чи бібліотеки, наприклад, Argp або Boost.Program_options в С++ для складніших завдань.
 
-`argc` (argument count) містить число аргументів, переданих програмі, тоді як `argv` (argument vector) - це масив `char` покажчиків, які вказують на рядки, що представляють кожен окремий аргумент.
+Реалізація? Шелл або операційна система передає аргументи в вашу програму. C стандарт не визначає, як це робити, тому відповідальність лежить на компіляторі або системі.
 
-## Дивись також
-
-1. У [GNU libc documentation](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html) ви знайдете подробиці про цю тему.
-2. Погляньте на офіційний [C Standard](http://www.open-std.org/JTC1/SC22/wg14/www/standards.html) для глибшого розуміння мови C.
-3. Курс [Learn C](https://www.learn-c.org/) надає детальну інформацію про інші аспекти мови C.
+## See Also (Дивись також):
+- [GNU C Library Manual - Program Arguments](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html)
+- [C Standard - ISO/IEC 9899:2018](https://www.iso.org/standard/74528.html)
+- [POSIX standard for command line arguments](https://pubs.opengroup.org/onlinepubs/9699919799/)

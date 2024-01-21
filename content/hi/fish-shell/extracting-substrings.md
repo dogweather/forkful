@@ -1,6 +1,7 @@
 ---
 title:                "सबस्ट्रिंग्स निकालना"
-html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+date:                  2024-01-20T17:45:37.296694-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,27 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-Substring उत्खनन एक programming तकनीक है, जहाँ हम एक लम्बे स्ट्रिंग को छोटे भागों में विभाजित करते हैं। Programmers इसे उन संदेशों को पाठ्य रूप में पर्स करने के लिए उपयोग करते हैं, जिन्हें उपयोगकर्ता ने दर्ज किया है, या वेबपेजेस से डाटा खींचने के लिए।
+सबस्ट्रिंग एक्सट्रैक्शन यानी मुख्य स्ट्रिंग से छोटे टुकड़े को निकालना। प्रोग्रामर लॉग्स पढ़ने, डेटा पर्सिंग या कंटेंट में से खास जानकारी निकालने के लिए यह करते हैं।
 
-## कैसे करें:
+## How to: (कैसे करें:)
 
-नीचे Fish Shell में substring उत्खनन का उदाहरण दिया गया है।
+Fish Shell में सबस्ट्रिंग निकालने के उदाहरण:
 
 ```Fish Shell
-set string "हैलो, वर्ल्ड"
-echo $string[1..5]
+# मान लो $txt एक स्ट्रिंग वेरिएबल है जिसमें 'नमस्ते दुनिया' स्टोर है
+set txt "नमस्ते दुनिया"
+
+# पहले 6 कैरेक्टर्स निकालें
+echo $txt[1..6]
+# Output: नमस्ते
+
+# 8वें कैरेक्टर से आखिर तक निकालें
+echo $txt[8..-1]
+# Output: दुनिया
 ```
 
-ऊपरी कोड अनुभाग "हैलो" को प्रिंट करेगा। यहां, '[1..5]' एक range operator है जो पहले पांच characters को चुनता है।
+## Deep Dive (गहराई में जानकारी):
 
-## गहरी डाइव:
+सबस्ट्रिंग एक्सट्रैक्शन की कुछ इतिहास और विस्तार से जानकारी:
 
-Fish Shell, जिसे 2005 में रिलीज़ किया गया था, का उद्देश्य उपयोगकर्ता प्रवेश को सरल और स्पष्ट बनाना है। यह बाकी स्क्रिप्टिंग भाषाओं से विभिन्न है जिनमे substring उत्खनन को छोटे और अधिक कम्पलेक्स कोड्स में किया जा सकता है।
+1. इतिहास: स्ट्रिंग मैनिपुलेशन हमेशा से प्रोग्रामिंग का हिस्सा रहा है और समय के साथ इसमें लगातार सुधार हुआ है।
 
-Bash और Zsh जैसी अन्य शेल्स से तुलना में, Fish अपनी सरलता के लिए लोकप्रिय है, लेकिन इसकी कम्पटिबलिटी इन अन्य शेल्स के मुकाबले कुछ कम हो सकती है। 
+2. विकल्प: `awk`, `sed`, `cut` जैसे कमांड्स का इस्तेमाल करके भी UNIX शेल्स में सबस्ट्रिंग पाया जा सकता है। 
 
-## देखें भी:
+3. लागू करने की डिटेल्स: Fish Shell तरीके बताता है कि कैसे सिंपल इंडेक्स सिंटेक्स का इस्तेमाल करके आसानी से और इफेक्टिवली सबस्ट्रिंग्स निकाले जा सकते हैं।
 
-- Fish Shell डॉक्यूमेंटेशन: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+## See Also (इसे भी देखें):
+
+1. Fish Shell Documentation: [https://fishshell.com/docs/current/index.html#syntax](https://fishshell.com/docs/current/index.html#syntax)
+2. String Manipulation in Fish Shell: [https://fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
+3. Community Tutorials and Guides: [https://github.com/fish-shell/fish-shell/wiki/Tutorial](https://github.com/fish-shell/fish-shell/wiki/Tutorial)

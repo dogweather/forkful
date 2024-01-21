@@ -1,7 +1,8 @@
 ---
-title:                "Att skicka en http-begäran"
-html_title:           "Go: Att skicka en http-begäran"
-simple_title:         "Att skicka en http-begäran"
+title:                "Skicka en http-förfrågan"
+date:                  2024-01-20T18:00:53.738891-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skicka en http-förfrågan"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -11,38 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skicka en HTTP-begäran är att be om bestämd data från en server genom Internet. Programmerare gör detta för att hämta, uppdatera eller radera information på andra system utan att behöva återskapa den på egen hand. 
+Att skicka en HTTP-begäran innebär att din kod begär data från, eller skickar data till, en server på internet. Programmerare gör detta för att interagera med webbtjänster, hämta webbinnehåll eller kommunicera mellan klient och server.
 
-## Så här gör du:
-Här är ett exempel på hur man skickar en HTTP GET-begäran i Rust med hjälp av `reqwest` crate.
-
+## Hur gör man:
 ```Rust
-extern crate reqwest;
+// Lägg till biblioteket reqwest i Cargo.toml
+// reqwest = "0.11"
+
+use reqwest;
+use std::error::Error;
 
 #[tokio::main]
-async fn main() -> Result<(), reqwest::Error> {
-    let response = reqwest::get("https://www.rust-lang.org").await?;
+async fn main() -> Result<(), Box<dyn Error>> {
+    let url = "http://httpbin.org/get";
+    
+    // Skicka GET-förfrågan och få ett svar
+    let res = reqwest::get(url).await?;
+    
+    // Skriv ut statuskoden och svaret
+    println!("Status: {}", res.status());
+    println!("Headers:\n{:#?}", res.headers());
+    
+    // Omvandla svaret till text
+    let body = res.text().await?;
+    println!("Body:\n{}", body);
 
-    println!("{}", response.status());
     Ok(())
 }
 ```
-
-Om allt fungerar som det ska, bör utmatningen se ut så här:
-
+Exempel på output:
 ```
-200 OK
+Status: 200 OK
+Headers:
+{
+    "content-type": "application/json",
+    ...
+}
+Body:
+{
+    "args": {},
+    "headers": {
+        ...
+    },
+    ...
+}
 ```
 
-## Djupdykning
-Historisk sett har programmerare skickat HTTP-begäran länge, redan innan Rust fanns. Det finns alternativ till `reqwest` som `hyper` och `surf`, men `reqwest` är populär för sitt enkla, hög-nivå API.
-
-Vad gäller implementeringen omvandlar Rust's typsystem HTTP-begäran till ett säkert och enkelt format.
-Vad mer? Rusts asynkrona egenskaper göra det möjligt för begäran att ske parallellt, vilket förbättrar prestandan.
+## Fordjupning
+Historiskt sett har HTTP-förfrågningar varit själva grunden för webben, möjliggörande kommunikation mellan klienter och servrar sedan tidigt 90-tal. Alternativ till Rusts `reqwest`-bibliotek inkluderar `hyper`, som är en lägre nivås HTTP-implementation, och `surf`, en annan enkel, minimalistisk klient. `reqwest` använder `hyper` under huven och är synkroniserad med `tokio`, vilket ger asynkron I/O och tillåter skalbar och icke-blockerande kommunikation, lämplig i moderna applikationer som kräver hög prestanda.
 
 ## Se även
-- [Rusts officiella webbplats](https://www.rust-lang.org)
-- [reqwest API-dokumentation på docs.rs](https://docs.rs/reqwest)
-- [Mer om HTTP-statuskoder](https://developer.mozilla.org/sv-SE/docs/Web/HTTP/Status)
-- [Alternativ till reqwest: `Hyper` biblioteket](https://hyper.rs/)
-- [Alternativ till reqwest: `Surf` biblioteket](https://docs.rs/surf)
+- Reqwest dokumentation: https://docs.rs/reqwest/
+- Tokio projektet (asynkron programmering i Rust): https://tokio.rs/
+- Rusts officiella dokumentation för asynkron programmering: https://doc.rust-lang.org/book/ch16-00-concurrency.html
+- HTTP specifikationen av IETF: https://tools.ietf.org/html/rfc2616

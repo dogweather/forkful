@@ -1,7 +1,8 @@
 ---
-title:                "Genererer tilfeldige tall"
-html_title:           "PHP: Genererer tilfeldige tall"
-simple_title:         "Genererer tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+date:                  2024-01-20T17:50:03.732384-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generering av tilfeldige tall"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Numbers"
@@ -11,32 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å generere tilfeldige tall handler om å produsere tall innenfor en viss rekkevidde som ikke er forutsigbare. Programmerere gjør dette for å sikre variasjon i beregninger og simuleringer, og for kryptografi og sikkerhetsformål.
+Generering av tilfeldige tall er å skape et tall som ikke kan forutsies logisk. Programmerere gjør dette for spill, sikkerhet, simuleringer og steder hvor uforutsigbarhet gir verdi. 
 
-## Slik gjør du det:
-
+## Hvordan:
+Her er eksempler på hvordan du genererer tilfeldige tall i Ruby. 
 
 ```Ruby
-# For å generere et tilfeldig tall mellom 0 og 1
-tilfeldig = rand()              
-puts tilfeldig                   
+# Enkel tilfeldig heltall generering
+tilfeldig_tall = rand(10) # Gir et tall mellom 0 og 9
+puts tilfeldig_tall
 
-# For å generere et tilfeldig tall mellom 0 og 100
-tilfeldig = rand(100)           
-puts tilfeldig                   
+# Tilfeldig float mellom 0 og 1
+tilfeldig_float = rand
+puts tilfeldig_float
 
-# For å generere et tilfeldig tall mellom 20 og 30
-tilfeldig = rand(20..30)       
-puts tilfeldig                   
+# Tilfeldig tall i et intervall
+tilfeldig_range_tall = rand(5..10) # Gir et tall mellom 5 og 10
+puts tilfeldig_range_tall
 ```
-Hvis du kjører ovenstående kode, vil du se forskjellige tall hver gang fordi tallene er tilfeldig generert.
+
+Eksempel på kjøring:
+
+```
+7
+0.4376284928336724
+9
+```
 
 ## Dypdykk
-Historisk sett, før datamaskinene, brukte vi mekaniske enheter som terninger, mynter og rouletthjul for å generere tilfeldige tall. Med adventen til datamaskiner og programmeringsspråk som Ruby, kan vi generere tilfeldige tall elektronisk.
+Generering av tilfeldige tall er ikke egentlig "tilfeldig" i informatikk; det kalles pseudotilfeldigheter. Historisk sett har metoder variert fra fysiske enheter til matematiske algoritmer. I Ruby, bruker vi `rand`-metoden tilbudt av `Random` klassen, som implementerer en Mersenne Twister-generator, kjent for sin hurtighet og lange periode.
 
-Alternativene til `rand` -metoden i Ruby inkluderer metoder fra Gem `Faker` som lar deg generere tilfeldige nummerdata innenfor bestemte kriterier og mengder.
+I stedet for `rand`, kan du også bruke `SecureRandom` biblioteket for kryptografisk sikre tilfeldige tall, noe som er viktig for sikkerhetsrelaterte oppgaver.
 
-Implementeringen av tilfeldige tall i Ruby bruker en metode kjent som Mersenne Twister, en pseudorandom number generator (PRNG). Det er en 'pseudorandom' fordi tallene generert er uforutsigbare under normale forhold, men hvis du kjenner algoritmen og tilstanden den er i, kan du forutsi tallene.
+```Ruby
+require 'securerandom'
 
-## Se også
-1. Stabling av seddel: [Ruby-dokumentasjon på Random Numbers](https://ruby-doc.org/core-2.5.1/Random.html)
+# Tilfeldig hex-verdi
+tilfeldig_hex = SecureRandom.hex(10)
+puts tilfeldig_hex
+
+# Tilfeldig base64-verdi
+tilfeldig_base64 = SecureRandom.base64(10)
+puts tilfeldig_base64
+```
+
+## Se Også
+- [Ruby-Dokumentasjon: Random Class](https://ruby-doc.org/core-3.1.0/Random.html)
+- [Ruby-Dokumentasjon: SecureRandom](https://ruby-doc.org/stdlib-3.1.0/libdoc/securerandom/rdoc/SecureRandom.html)
+- [Ruby-Dokumentasjon: Kernel#rand](https://ruby-doc.org/core-3.1.0/Kernel.html#method-i-rand)
+- [Artikkel om pseudotilfeldighetsgeneratorer](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)

@@ -1,6 +1,7 @@
 ---
 title:                "ウェブページのダウンロード"
-html_title:           "Bash: ウェブページのダウンロード"
+date:                  2024-01-20T17:43:43.384524-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "ウェブページのダウンロード"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,60 +11,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 何となぜ？ (What & Why?)
-ウェブページをダウンロードするとは、ウェブサーバーから情報を取得し、自分のデバイスに保存することです。プログラマーはこれを行うことで、オフラインでアクセス可能なデータを提供したり、特定の情報を取得したりします。
+## What & Why? (何となぜ？)
+Webページをダウンロードするって？Web上の情報を手元のデバイスに取り込むことさ。なぜやるのか？データを分析したり、リアルタイムの情報を活用するためだよ。
 
-# どうやって：(How To:)
-以下は、Arduinoでウェブページをダウンロードするための基本的なコードです。
+## How to: (方法)
+ArduinoでWebページをダウンロードするには、EthernetかWiFiシールドが必要だ。以下の例では、WiFiを使って簡潔に実現しているよ。
 
 ```Arduino
-#include <Ethernet.h>
-#include <SPI.h>
+#include <WiFi.h>
 
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-char server[] = "www.example.com";
+const char* ssid     = "yourNetworkName";  // WiFiネットワーク名
+const char* password = "yourNetworkPass";  // WiFiパスワード
+const char* host     = "example.com";      // ダウンロードするサイトのドメイン
 
-EthernetClient client;
-
-void setup()
-{
-  Ethernet.begin(mac);
-  Serial.begin(9600);
-
-  if (client.connect(server, 80)) {
-    Serial.println("connected");
-    client.println("GET / HTTP/1.1");
-    client.println("Host: www.example.com");
-    client.println("Connection: close");
-    client.println();
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+  
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting to WiFi...");
   }
-  else {
-    Serial.println("connection failed");
-  }
-}
 
-void loop()
-{
-  if (client.available()) {
-    char c = client.read();
-    Serial.print(c);
+  Serial.println("Connected to WiFi");
+  
+  WiFiClient client;
+  if (!client.connect(host, 80)) {
+    Serial.println("Connection failed");
+    return;
   }
   
-  if (!client.connected()) {
-    client.stop();
-    for(;;)
-      ;
+  String url = "/";  // ダウンロードするページのパス
+  client.println("GET " + url + " HTTP/1.1");
+  client.println("Host: " + String(host));
+  client.println("Connection: close");
+  client.println();
+}
+
+void loop() {
+  delay(10000);  // 10秒おきに実行
+  
+  WiFiClient client;
+  if (client.connect(host, 80)) {
+    client.println("GET / HTTP/1.1");
+    client.println("Host: " + String(host));
+    client.println("Connection: close");
+    client.println();
+    
+    while (client.connected()) {
+      String line = client.readStringUntil('\n');
+      if (line == "\r") {
+        break;
+      }
+    }
+
+    // Webページの中身を読み取る
+    String line = client.readStringUntil('\n');
+    Serial.println(line);
+    Serial.println();
   }
 }
 ```
-このコードはwww.example.comのホームページをHTTP GETリクエストを使ってダウンロードします。
 
-# ディープダイブ (Deep Dive)
-インターネットの初期段階では、ウェブページのダウンロードはFTPを使用して行われていた代わりに、今日ではHTTPが主流となっています。Arduinoでは、今上記で説明したEthernetライブラリのほか、WiFiライブラリも利用可能で、具体的なライブラリの選択はプロジェクトのニーズや使用しているハードウェアによります。
+## Deep Dive (深掘り)
+過去、Webページのダウンロードは主にPC上で行われた。しかし、IoTの発展により、Arduinoのようなマイコンでもよく使われるようになったね。Ethernetシールドを使う方法もあるけど、WiFiの方が手軽だよ。実装にはHTTPプロトコルを利用して、GETリクエストをWebサーバに送り、応答を受け取る。落としたページをどう使うかはプログラマの創造性にかかっている。
 
-データの読み取り方も重要です。上記の方法は大量のデータに対しては非効率的で、実際にはデータの流れを管理しながらページをダウンロードするための追加コードが必要です。
-
-# さらに見るべきもの (See Also)
-1. Arduino Ethernet ライブラリ: https://www.arduino.cc/en/Tutorial/LibraryExamples/Ethernet 
-2. Arduino WiFi ライブラリ: https://www.arduino.cc/en/Reference/WiFi 
-3. HTTPの概要: https://www.w3.org/Protocols/
+## See Also (関連情報)
+- Arduino公式サイトのWiFiライブラリについてのドキュメント: [https://www.arduino.cc/en/Reference/WiFi](https://www.arduino.cc/en/Reference/WiFi)
+- HTTPリクエストの基礎: [https://www.w3schools.com/tags/ref_httpmethods.asp](https://www.w3schools.com/tags/ref_httpmethods.asp)
+- Arduinoを使ったIoTプロジェクト例: [https://create.arduino.cc/projecthub](https://create.arduino.cc/projecthub)

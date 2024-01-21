@@ -1,7 +1,8 @@
 ---
-title:                "Läsa kommandoradsargument"
-html_title:           "Bash: Läsa kommandoradsargument"
-simple_title:         "Läsa kommandoradsargument"
+title:                "Läsa in kommandoradsargument"
+date:                  2024-01-20T17:55:19.417068-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Läsa in kommandoradsargument"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -11,44 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att läsa kommandoradsargument är att fånga de värden som används när du kör ett script. Det låter dig anpassa scriptets beteende utan att ändra koden.
 
-Kommandoradsargument är input som skrivs in direkt i terminalen när man startar ett script eller program. Detta gör det möjligt för programmerare att manövrera och styra programmet på en dynamisk, användardriven sätt.
-
-## Hur man gör:
-
-För att läsa kommandoradsargument i Bash använder vi speciella variabler. Se exempel nedan:
-
+## Så här gör du:
 ```Bash
 #!/bin/bash
+# script.sh
 
-# Skriv ut det första argumentet
-echo "Första argumentet: $1"
+echo "Argument nummer ett: $1"
+echo "Argument nummer två: $2"
 
-# Skriv ut det andra argumentet
-echo "Andra argumentet: $2"
-
-# Skriv ut alla argument
-echo "Alla argument: $@"
+if [ $# -eq 0 ]; then
+    echo "Inga argument gavs."
+else
+    echo "Antalet givna argument är: $#"
+fi
 ```
-
-Körning och output:
-
+Körning och utskrift:
 ```Bash
-$ ./myscript.sh Hej Världen
-Första argumentet: Hej
-Andra argumentet: Världen
-Alla argument: Hej Världen
+$ bash script.sh Älg Ost
+Argument nummer ett: Älg
+Argument nummer två: Ost
+Antalet givna argument är: 2
 ```
 
 ## Djupdykning
+Argument på kommandoraden har funnits sedan de tidiga dagarna av Unix. De tillåter skript att vara flexibla och återanvändbara. Man brukar hantera argument med `$1`, `$2`,..., där `$1` är det första argumentet. För att fånga alla argument använder man `$@` eller `$*`, medan `$#` ger antalet argument.
 
-Kommandoradsargument är en av grunderna för Unix-stilen på datorgränssnitt, och det har funnits sedan 1970-talet. Alternativen inkluderar att läsa input under körning eller från filer, men argument är ofta det enklaste och mest direkt.
+Det finns mer avancerade alternativ som `getopts` eller `getopt` som stödjer switchar (som `-h` eller `--help`). Med dessa kan du skapa robusta och användarvänliga gränssnitt för dina skript.
 
-Bash-hanteringen av argument är lite annorlunda än andra språk. Till exempel kan `$0` användas för att visa namnet på själva scriptet. `$#` ger antalet argument och `$*` listar alla argument som en enda sträng.
+Implementationen av dessa är standardiserade via POSIX, vilket betyder att din kod kan flyttas mellan olika system utan problem.
 
-## Se även 
-
-För mer information om kommandoradsargument i bash, se dessa länkar:
-
-- [Bash Programming Introduction by Mike G](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
-- [Linux Shell Scripting Tutorial (LSST) v2.0](https://bash.cyberciti.biz/guide/Pass_arguments_into_a_function)
+## Se även:
+- Bash Manual: https://www.gnu.org/software/bash/manual/
+- Advanced Bash-Scripting Guide: http://www.tldp.org/LDP/abs/html/
+- POSIX standarden: https://pubs.opengroup.org/onlinepubs/009695399/utilities/getopts.html

@@ -1,7 +1,8 @@
 ---
-title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
-simple_title:         "Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma requisição HTTP com autenticação básica"
+date:                  2024-01-20T18:01:42.714322-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Enviando uma requisição HTTP com autenticação básica"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,51 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Enviando uma Solicitação HTTP com Autenticação Básica no Fish Shell
+## What & Why?
+Enviar uma requisição HTTP com autenticação básica significa incluir credenciais de username e password no cabeçalho da requisição. Programadores fazem isso para acessar recursos protegidos em servidores web.
 
-## O que é e por quê?
-
-O envio de uma solicitação HTTP com autenticação básica é quando você faz uma requisição para um servidor web com um nome de usuário e senha para obter acesso a um recurso protegido. É frequentemente usado por programadores para acessar APIs ou outras áreas protegidas de um site.
-
-## Como Fazer:
-
-No Fish Shell, você pode usar o comando `curl` para enviar essa requisição. Aqui está um exemplo básico:
+## How to:
+### Enviando uma requisição com autenticação básica usando `curl`:
 
 ```Fish Shell
-set user 'usuario'
-set pass 'senha'
-curl -u $user:$pass http://exemplo.com
+set user "seu_usuario"
+set pass "sua_senha"
+
+# Codifica as credenciais em base64
+set credentials (echo -n "$user:$pass" | base64)
+
+# Faz a requisição com o cabeçalho de Autorização
+curl -H "Authorization: Basic $credentials" [URL_do_Recurso]
+
+# Comando alternativo que já inclui o cabeçalho de autenticação
+curl -u "$user:$pass" [URL_do_Recurso]
 ```
 
-E aqui está como parece a saída:
+### Exemplo de saída esperada:
 
-```Fish Shell
-<html>
-   <head>
-      <title>Exemplo</title>
-   </head>
-   <body>
-      Bem-vindo ao exemplo.com!
-   </body>
-</html>
+```plaintext
+{
+  "data": "Informações protegidas"
+}
 ```
 
-## Mergulho Profundo
+## Deep Dive
+A autenticação básica HTTP existe desde o início dos protocolos web, mas é simples e não tão segura quanto métodos modernos, como tokens e OAuth, pois transmite credenciais em texto claro codificado em base64, que pode ser facilmente decodificado. Alternativas incluem JWT (JSON Web Tokens) ou autenticação Digest, que oferecem maior segurança. Quando se usa a autenticação básica, é importante que a comunicação seja feita através de HTTPS para adicionar uma camada de segurança com criptografia SSL/TLS.
 
-O Fish Shell foi criado em 2005 como uma alternativa mais amigável e ponderada para os shells UNIX tradicionais. Ele tem uma sintaxe simples e clara que o torna ideal para tarefas de scripting como enviar uma solicitação HTTP.
+Detalhes sobre a implementação:
 
-Quanto às alternativas para o envio de solicitações HTTP no Fish Shell, você também pode usar o `wget`. O `wget` é uma ferramenta de linha de comando não interativa para recuperar arquivos da web.
-
-```Fish Shell
-wget --user=$user --password=$pass http://exemplo.com
-```
-
-A formação da autenticação básica HTTP no Fish Shell, é assim; primeiramente, a string "$user:$pass" é codificada em Base64. Em seguida, essa string codificada é incluída no cabeçalho da requisição HTTP. O servidor, então, decodifica a string para validar o nome de usuário e a senha.
-
-## Veja também
-
-Para mais informações sobre como enviar solicitações HTTP com autenticação básica, dê uma olhada nos seguintes recursos:
-
-- Documentação do Fish Shell: https://fishshell.com/docs/current/index.html
-- Documentação do cURL: https://curl.haxx.se/docs/manpage.html
-- Página da Wikipédia sobre Autenticação básica de acesso: https://pt.wikipedia.org/wiki/Autentica%C3%A7%C3%A3o_b%C3%A1sica_de_acesso
+1. Codificar as credenciais em base64 não as criptografa, apenas as codifica para transmissão.
+2. O cabeçalho de autorização `Authorization: Basic [credenciais]` é o que o servidor utiliza para validar a autenticação.
+3. A ferramenta `curl` é poderosa e versátil para fazer requisições HTTP direto do terminal.
+   
+## See Also
+- Documentação oficial do `curl`: https://curl.se/docs/manpage.html
+- Autenticação HTTP na MDN Web Docs: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication
+- Segurança em autenticação HTTP: https://owasp.org/www-community/attacks/Basic_access_authentication

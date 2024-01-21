@@ -1,6 +1,7 @@
 ---
 title:                "Deleting characters matching a pattern"
-html_title:           "Lua recipe: Deleting characters matching a pattern"
+date:                  2024-01-20T17:42:30.351248-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,45 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Deleting Characters Matching a Pattern in Haskell
-
 ## What & Why?
 
-Deleting characters matching a pattern is a method to cleanse the data or modify text. Whether it's for preprocessing, removing noise data, or ensuring data privacy, programmers often need to delete specific characters from strings.
+Deleting characters that match a specific pattern is about sifting through text and removing bits you don't need. Programmers do this to cleanse data, simplify strings, or prep data for something more important down the line, like parsing or analysis.
 
 ## How to:
 
-Here's an example, deleting all vowels in a string:
+```haskell
+import Data.List (isInfixOf)
+import Data.Char (isSpace)
 
-```Haskell
-import Data.Char
-import Data.List
+-- Simple function to remove a pattern from a string
+removePattern :: Eq a => [a] -> [a] -> [a]
+removePattern [] _ = []
+removePattern string@(x:xs) pattern
+  | pattern `isInfixOf` string = removePattern (drop (length pattern) string) pattern
+  | otherwise = x : removePattern xs pattern
 
-deleteVowels :: String -> String
-deleteVowels = filter (`notElem` ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'])
+-- Use predefined functions to trim spaces from a string
+trim :: String -> String
+trim = f . f
+   where f = reverse . dropWhile isSpace
 
 main :: IO ()
 main = do
-    let str = "Hello, World!"
-    putStrLn $ deleteVowels str
-```
-
-When run, this spits out:
-
-```Haskell
-"Hll, Wrld!"
+  let text = "Haskell is super cool, super cool indeed."
+  let cleanedText = removePattern text "super "
+  putStrLn cleanedText  -- "Haskell is cool, cool indeed."
+  putStrLn $ trim "   Trimmed whitespace   " -- "Trimmed whitespace"
 ```
 
 ## Deep Dive
 
-The idea of pattern matching is rooted in the symbolic manipulation of the Lisp language family. Haskell's implementation, however, is strongly influenced by the pattern matching of the ML language family. The `filter` function is the basic building block to accomplish our goal. It's one of the numerous high-order functions has Haskell offers.
+Haskell's rich set of libraries, such as 'Data.List', provides various tools for manipulating lists, which strings are essentially a special case of. Historically, Haskell's pattern matching is a concept borrowed from older functional languages like ML.
 
-For more complex patterns, you could use regular expressions, but the use of `filter` and `notElem` illustrates a powerful, idiomatic Haskell technique. If performance is a concern, consider using `Data.Text` instead of `String`, as the former is more optimized.
+There're different ways of pattern matching in Haskell. Our simple `removePattern` utilizes `isInfixOf` to check for the pattern. There're also regex libraries for complex patterns, but they add dependencies and sometimes overcomplicate things.
+
+Speaking of dependencies, for trimming whitespaces, you could import a third-party library, but our 'trim' function does the job natively.
+
+Lastly, performance-wise, always be cautious with recursive functions in Haskell; they can be inefficient if not properly optimized by the compiler. Thunks could pile up, causing space leaks. For better performance, you might explore Haskell's `Text` module for manipulation of large or numerous strings.
 
 ## See Also
 
-For further reading:
-
-- [Learn You a Haskell for Great Good](http://learnyouahaskell.com/)
-- [Real World Haskell](http://book.realworldhaskell.org/)
-- [Haskell Wiki](https://wiki.haskell.org/Main_Page) for in-depth developer resources.
+- Real World Haskell: http://book.realworldhaskell.org/
+- Haskell `Data.List` documentation: https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-List.html
+- Haskell Wiki on Performance: https://wiki.haskell.org/Performance

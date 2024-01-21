@@ -1,7 +1,8 @@
 ---
-title:                "使用基本认证发送http请求"
-html_title:           "Bash: 使用基本认证发送http请求"
-simple_title:         "使用基本认证发送http请求"
+title:                "使用基本认证发送 HTTP 请求"
+date:                  2024-01-20T18:02:03.881772-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "使用基本认证发送 HTTP 请求"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,46 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么&为什么?
+## What & Why?
+发送带有基本认证的HTTP请求，是通过网络传输用户名和密码来认证用户的方式。开发者用它来保证数据交换的安全。
 
-HTTP请求的基本认证是发送HTTP请求时附带用户凭证过程。程序员之所以使用，主要是为了验证用户身份，保护网站数据。
+## How to:
+Kotlin中使用HttpURLConnection和Base64编码来实现带基本认证的HTTP请求。
 
-## 如何实现：
+```kotlin
+import java.net.HttpURLConnection
+import java.net.URL
+import java.util.Base64
 
-在Kotlin中，我们可以使用Ktor库来发送带有基本认证的HTTP请求。以下是一个示例代码：
-
-```Kotlin
-import io.ktor.client.*
-import io.ktor.client.engine.cio.*
-import io.ktor.client.features.auth.*
-import io.ktor.client.features.auth.providers.*
-import io.ktor.client.request.*
-
-suspend fun main() {
-    val client = HttpClient(CIO) {
-        install(Auth) {
-            basic {
-                this.credentials {
-                    BasicAuthCredentials(username = "user", password = "password")
-                }
-            }
+fun sendGetRequestWithBasicAuth(url: String, username: String, password: String) {
+    val connection = URL(url).openConnection() as HttpURLConnection
+    val auth = Base64.getEncoder().encodeToString("$username:$password".toByteArray())
+    
+    connection.apply {
+        requestMethod = "GET"
+        setRequestProperty("Authorization", "Basic $auth")
+        inputStream.bufferedReader().use { reader ->
+            println(reader.readText())
         }
     }
-
-    val response: String = client.get("http://httpbin.org/headers")
-    println(response)
-
-    client.close()
 }
+
+fun main() {
+    val url = "https://api.example.com/data"
+    val username = "user"
+    val password = "pass"
+    
+    sendGetRequestWithBasicAuth(url, username, password)
+}
+// Sample Output:
+// {"data": "some secure data"}
 ```
 
-## 深入研究：
+## Deep Dive
+基本认证（Basic Authentication）是1990年代初就出现的一种HTTP认证方式。虽然有更安全的方法，如OAuth2，它依然在APIs中常被用于内部或低安全要求的场合。这种认证方式将用户名和密码用冒号连接后进行Base64编码，附加在请求头的Authorization字段中发送给服务器。虽简单，但Base64不是加密方式，所以通信应始终在HTTPS协议下进行，保证传输的安全性。
 
-1) 历史背景：基本认证是HTTP/1.0的时代最早的认证机制之一，至今仍广泛使用。
-2) 替代方案：除了基础认证，还有比如OAuth、JWT等更复杂且更安全的认证方式。
-3) 实现细节：基本认证过程是将用户名和密码以"username:password"格式的字符串进行Base64编码后，放入HTTP头的'Authorization'字段。
-
-## 参考资料：
-
-1) [Ktor的官方文档](https://ktor.io/)
-2) [HTTP Authentication的MDN文档](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+## See Also
+- HTTP基本认证介绍: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- Kotlin 编程语言官网: [Kotlin](https://kotlinlang.org/)
+- 安全的HTTP认证方式介绍: [OWASP](https://owasp.org/www-project-cheat-sheets/cheatsheets/Authentication_Cheat_Sheet.html)

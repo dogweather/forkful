@@ -1,6 +1,7 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
-html_title:           "Go: המרת מחרוזת לאותיות קטנות"
+date:                  2024-01-20T17:38:30.407049-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "C"
 category:             "C"
@@ -10,40 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה? 
-המרת מחרוזת לאותיות קטנות מתארת את פעולת שינוי כל אותיות הגדולות במחרוזת לאותיות קטנות. תכנתים מבצעים זאת כדי להפוך את השוואת המחרוזות לאינסוניטיבית.
+## מה ולמה? (What & Why?)
+המרת מחרוזת לאותיות קטנות זהו תהליך שבו כל אותיות גדולות במחרוזת הופכות לקטנות. תכניתנים עושים זאת לשם עקביות, השוואות קלות יותר, ועיבוד טקסט.
 
-## איך לעשות:
-נשתמש בפקודה tolower מהספרייה ctype.h. הנה דוגמה:
-```C
+## איך לעשות: (How to:)
+קוד C פשוט להמרת מחרוזת לאותיות קטנות:
+
+```c
 #include <stdio.h>
 #include <ctype.h>
 
-void stringToLower(char str[]) {
-    for(int i = 0; str[i]; i++){
-        str[i] = tolower(str[i]);
+void toLowerCase(char *str) {
+    while (*str) {
+        *str = tolower((unsigned char) *str);
+        str++;
     }
 }
 
 int main() {
-    char myString[] = "Hello, World!";
-    stringToLower(myString);
-    printf("%s", myString);
+    char myString[] = "Shalom, Olam!";
+    toLowerCase(myString);
+    printf("%s\n", myString); // ידפיס "shalom, olam!"
     return 0;
 }
 ```
-הפלט של קטע הקוד הזה יהיה:
-```C
-hello, world!
-```
-זהו.
 
-## עומק 
-הפקודה tolower של הספרייה ctype.h שייכת ל שפת תכנות C המוקדמת ביותר. ישנן שפות תכנות אחרות שמציעות בנאים מורכבים יותר להמרת מחרוזות לאותיות קטנות, אך הפונקציה tolower מהספרייה ctype.h עדיין האופציה הפשטנית ביותר לשפת C.
+## עיון מעמיק: (Deep Dive)
+המרת מחרוזת לאותיות קטנות היא שיטה נפוצה שהייתה קיימת מאז הימים הראשונים של מעבדי טקסט. קיימות שיטות חלופיות כמו שימוש בפונקציות מובנות בשפות תכנות מודרניות, אבל ב-C אנחנו משתמשים ב-loop וב-func `tolower()` מהספריה `<ctype.h>`. יש לשים לב לשימוש ב-(unsigned char) על מנת למנוע שגיאות במידה ומשתמשים באופיינים שתוכנתם אינן ASCII.
 
-לגבי פרטי ביצוע למונחים מתקדמים יותר, tolower מבזבז O(n) זמן ביצוע (n מייצג את אורך המחרוזת), אך זה לא הבעיה ברוב המקרים.
-
-## ראה גם:
-[תיעוד הספרייה ctype.h](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)
-[מדריך שפת C](https://www.learn-c.org/)
-[המרת מחרוזת לאותיות קטנות בשפות תכנות אחרות](https://stackoverflow.com/questions/2667838/how-do-i-lowercase-a-string-in-c)
+## ראו גם: (See Also)
+- [ASCII Table and Description](http://www.asciitable.com/)
+- [GNU C Library - Character Handling](https://www.gnu.org/software/libc/manual/html_node/Character-Handling.html)

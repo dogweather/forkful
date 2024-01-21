@@ -1,6 +1,7 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "C++: הורדת דף אינטרנט"
+date:                  2024-01-20T17:44:58.833335-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "Java"
 category:             "Java"
@@ -11,43 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-הורדת דף אינטרנט היא התהליך שבו אנו מקבלים את הנתונים של דף אינטרנט או HTML מהשרת. מתכנתים עשויים לרצות לעצב מחדש את הנתונים לשימושים משלהם, לדוג, עיבוד מידע, ניתוח דאטה, בדיקות אוטומטיות.
+
+הורדת דף אינטרנט היא תהליך שבו אנו שולפים את התוכן של דף אינטרנט למחשב שלנו. תכניתנים עושים את זה כדי לעבד נתונים, לבצע בדיקות או לאגור את התוכן.
 
 ## איך לעשות:
-באמצעות הספרייה `java.net` של Java, אנו יכולים להוריד דף אינטרנט כך:
 
-**קוד דוגמה**
+במאמר זה, נשתמש ב-Java כדי להוריד דף אינטרנט. אנחנו מוסיפים תלות בספריית `java.net.*` כדי לבצע את המשימה.
+
 ```Java
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.URLConnection;
+import java.io.*;
+import java.net.*;
 
-public class Main {
-    public static void main(String[] args) throws Exception {
-
-        URL url = new URL("http://www.example.com");
-        URLConnection conn = url.openConnection();
-        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-
-        String line;
-        while ((line = br.readLine()) != null)
-            System.out.println(line);
+public class WebPageDownloader {
+    public static void main(String[] args) {
+        String webPageUrl = "http://example.com";
+        try {
+            URL url = new URL(webPageUrl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
             
-        br.close();
+            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String inputLine;
+            StringBuilder content = new StringBuilder();
+            
+            while ((inputLine = in.readLine()) != null) {
+                content.append(inputLine);
+            }
+            
+            in.close();
+            System.out.println("דף האינטרנט הורד בהצלחה");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("הורדת דף האינטרנט נכשלה");
+        }
     }
 }
 ```
-הקוד מעלה יוציא את כל ה HTML של דף האינטרנט www.example.com. 
 
-## טיול עמוק
-1. **הקשר היסטורי**: בעבר, לפני המבוסס-אינטרנט, היו צורכים לקבל נתונים משרתים באופן מדובר עם פרוטוקולים מיוחדים. היום, אנו משתמשים ב HTTP ו- HTTPS, ואפילו תכנות מאוד מוכרות כמו לוחות יד-שנייה או IMDb משתמשות באותה טכניקה שאנו למדנו כאן.
- 
-2. **אלטרנטיבות**: ישנן ספריות אחרות כמו Jsoup או HttpClient שיכולות להקל עלינו את החיים עם כמה פיצ'רים מגניבים, אך באופן כללי, הן משתמשות באותה הטכניקה שהוצגה למעלה.
+זה רק דוגמא סטטית פשוטה. לרוב, תרצו לאחסן את התוכן בקובץ או במאגר נתונים.
 
-3. **פרטים על המימוש**: כאשר אנו מבצעים את החיבור אל המען URL, ואז קוראים מהזרם הקלט - אנו בעצם מקבלים את הנתונים בצורת מחרוזת String של HTML. בנקודה זו, אנו יכולים לעבוד עם הנתונים הללו כך שנראה לנחות לנו.
+## צלילה לעומק:
 
-## לקריאה נוספת:
-- [Java SE Documentation](https://docs.oracle.com/en/java/javase/index.html)
-- [Java Networking Tutorial](https://www.tutorialspoint.com/java/java_networking.htm)
-- [Jsoup, a Java library for working with real-world HTML](https://jsoup.org/)
+היסטורית, הורדת דפי אינטרנט הייתה מורכבת יותר. בעבר היינו צריכים להתמודד עם הגדרות פרוקסי ותעבורה מוצפנת במאמצים רבים יותר. כיום, ספריות כמו Apache HttpClient ו-okhttp מקלות על התהליך. ישנם אלטרנטיבות ל-Java כמו cURL ב-PHP או Requests ב-Python.
+
+בפירוט, כאשר אנו מורידים דף אינטרנט, אנו עושים בקשה מסוג GET לשרת. זה מחזיר לנו את תכני ה-HTML, שבהם יכולות להיות קישורים לתמונות, גיליונות סגנון (CSS), וסקריפטים. החיבור שיצרנו בדוגמא למעלה יכול גם להתמודד עם שגיאות שרת ולהחזיר את הקוד המתאים (לדוגמא, 404 לדף לא נמצא).
+
+## ראו גם:
+
+- [Java HttpURLConnection Documentation](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
+- [Apache HttpClient](https://hc.apache.org/httpcomponents-client-ga/)
+- [okhttp](https://square.github.io/okhttp/)
+- [JSoup for HTML Parsing in Java](https://jsoup.org/)

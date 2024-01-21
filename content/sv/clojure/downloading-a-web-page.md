@@ -1,7 +1,8 @@
 ---
-title:                "Ladda ner en webbsida"
-html_title:           "Bash: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Hämta en webbsida"
+date:                  2024-01-20T17:43:48.053314-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Hämta en webbsida"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,36 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Ladda ner en webbsida innebär att hämta dess kod och resurser från servern. Programmerare gör det för att analysera innehållet, för att skrapa data, eller för att testa sidans prestanda.
+Att ladda ner en webbsida innebär att hämta dess innehåll över internet. Programmerare gör detta för att samla data, automatisera tester eller övervaka tillgänglighet.
 
-## Hur till:
-Här är ett enkelt sätt att ladda ner en webbsida med Clojure:
+## How to:
+I Clojure kan du använda `clj-http` biblioteket för att enkelt ladda ner innehållet på en webbsida. Här är ett exempel:
+
 ```clojure
 (require '[clj-http.client :as client])
 
-(defn download-web-page [url]
+(defn download-page [url]
   (let [response (client/get url)]
     (:body response)))
+
+;; Använd funktionen
+(println (download-page "http://example.com"))
 ```
-För att ladda ner exempelsidan "https://www.example.com", använd bara:
-```clojure
-(download-web-page "https://www.example.com")
-```
-Och sidans HTML kommer att visas i din terminal.
 
-## Djupdykning
-Historiskt sett har webbskrapning - det vill säga processen att ladda ner och analysera webbsidor - varit en avgörande metod för webbdatainsamling.
+Kör ovan kod och du skulle se HTML-innehållet i `http://example.com` som output.
 
-Alternativa metoder till att ladda ner en webbsida i Clojure kan innefatta användning av andra bibliotek, till exempel `Jsoup` eller `HtmlUnit`. Dessa erbjuder ytterligare funktionaliteter, som JavaScript-support och förmåga att interagera med sidan.
+## Deep Dive:
+Att ladda ner webbsidor är inte nytt. Från kommandoradsverktyg som `wget` till olika bibliotek i många programmeringsspråk, har utvecklare gjort detta sedan internet blev mainstream. Alternativ till `clj-http` i Clojure inkluderar `http-kit` och Java-biblioteket `Jsoup` som också kan hantera parsing.
 
-Om vi dyker djupare in i implementeringen, använder koden ovan clj-http, ett Clojure-bibliotek för att göra HTTP-förfrågningar. `client/get` funktionen skickar en GET-förfrågan till den angivna URL:en och returnerar ett svar som innehåller en body, vilket är HTML-koden av sidan.
+När du använder `clj-http`, händer kommunikationen över Apache HttpComponents, vilket är en mogen Java-bibliotek för HTTP-kommunikation. Det ger dig en hög kontroll över HTTP-förfrågningar, som att hantera headers, cookies, och timeouts.
 
-## Se också
-För mer information och resurser om att ladda ner webbsidor med Clojure, se följande länkar:
-
-
-- Web scraping med Clojure: [https://kimh.github.io/clojure-by-example/](https://kimh.github.io/clojure-by-example/)
-
-- Jsoup dokumentation: [https://jsoup.org/](https://jsoup.org/) 
-
-- HtmlUnit dokumentation:  [http://htmlunit.sourceforge.net/](http://htmlunit.sourceforge.net/)
+## See Also:
+- [clj-http GitHub page](https://github.com/dakrone/clj-http)
+- [HttpComponents](https://hc.apache.org/)
+- [ClojureDocs](https://clojuredocs.org/) - en bra källa för Clojure dokumentation och exempel.

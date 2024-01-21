@@ -1,6 +1,7 @@
 ---
 title:                "Excluindo caracteres que correspondem a um padrão"
-html_title:           "Arduino: Excluindo caracteres que correspondem a um padrão"
+date:                  2024-01-20T17:42:17.469328-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,48 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Quê & Por quê?
+## O Que & Porquê?
 
-Eliminar caracteres que combinam com um padrão é uma tarefa comum em programação. Permite-nos manipular e limpar dados, e é frequentemente usado em tarefas como a extração de dados importantes de grandes blocos de texto.
+Eliminar caracteres que correspondem a um padrão é o processo de remover seletivamente certos caracteres de uma string com base em critérios definidos. Por exemplo, podem-se remover todos os dígitos ou espaços de uma string. Programadores fazem isso para limpar dados, validar input, ou para preparar strings para processamento adicional.
 
 ## Como fazer:
 
-No Haskell, você pode usar Data.Text para manipular strings. Aqui está um exemplo códigos de como deletar caracteres que correspondem a um padrão:
-
 ```Haskell
-import Data.Text as T
+import Data.Char (isSpace, isDigit)
+import Data.List (partition)
 
--- remover espaços de uma string
-removerEspaco :: Text -> Text
-removerEspaco = T.filter (/= ' ')
+-- Remove caracteres que são dígitos
+removeDigitos :: String -> String
+removeDigitos = filter (not . isDigit)
 
+-- Remove espaços em branco
+removeEspacos :: String -> String
+removeEspacos = filter (not . isSpace)
+
+-- Exemplo de uso
+main :: IO ()
+main = do
+    let texto = "Haskell 2023, a linguagem funcional!"
+    putStrLn $ removeDigitos texto
+    putStrLn $ removeEspacos texto
 ```
-Exemplo de uso:
 
-```Haskell
-removerEspaco "Haskell é incrível"
+Saída de exemplo:
+```
+Haskell , a linguagem funcional!
+Haskell2023,alinguagemfuncional!
 ```
 
-Que resultará na saída: `"Haskelléincrível"`
+## Aprofundamento
 
-Note que a função `filter` foi utilizada. Ela percorre cada caractere e remove os que atendem ao critério especificado (' ' neste caso).
+Historicamente, operar em strings sempre foi parte essencial das tarefas de computação, desde a criação de mecanismos de busca a linguagens como Perl que são famosas pelo seu poderoso suporte a expressões regulares. Em Haskell, embora não haja um suporte tão imediato para regex quanto em Perl, a linguagem oferece funções puras e de alta ordem, como `filter`, para manipulação de strings de maneira concisa e expressiva.
 
-## Aprofundando
+Alternativas incluem o uso de expressões regulares com o pacote `regex-tdfa`, que oferece uma maior flexibilidade e potência para padrões mais complexos. Porém, isso adiciona complexidade e pode ser exagero para tarefas simples.
 
-Eliminar caracteres é algo que os programadores têm feito há décadas. A necessidade surgiu desde os primeiros dias da programação, quando o armazenamento de dados era limitado e era crucial remover informações desnecessárias.
-
-No Haskell, a abordagem padrão para tal tarefa é usando "Data.Text". No entanto, se você estiver lidando com arquivos enormes, pode considerar outras bibliotecas Haskell, como "Data.Text.Lazy" ou "Data.ByteString.Lazy" para melhor desempenho.
-
-Internamente, a função filter é implementada como uma recursão de cauda, que é uma técnica comum em Haskell e outras linguagens funcionais. Ela examina cada caractere da string um por um, decidindo se deve manter ou excluir com base no critério fornecido.
+Implementar a remoção de caracteres é direto usando `filter`, particionando a string original com `partition` ou utilizando list comprehensions. Haskell oferece uma vantagem através de suas funções de ordem superior, tornando essas operações simples e com performance otimizada devido à preguiça inerente da linguagem, que avalia expressões somente quando necessárias.
 
 ## Veja Também
 
-Links úteis para aprofundar neste tópico:
-
-[Haskell: Data.Text Documentation](https://hackage.haskell.org/package/text-1.2.3.1/docs/Data-Text.html)
-
-[Haskell: Data.Text.Lazy Documentation](https://hackage.haskell.org/package/text-1.2.3.1/docs/Data-Text-Lazy.html)
-
-[Haskell: Data.ByteString.Lazy Documentation](https://hackage.haskell.org/package/bytestring-0.10.10.0/docs/Data-ByteString-Lazy.html)
-
-[Stack Overflow: filter function in Haskell](https://stackoverflow.com/questions/2851683)
+- [Haskell docs on filter](https://hackage.haskell.org/package/base-4.16.1.0/docs/Prelude.html#v:filter)
+- [Learn You a Haskell for Great Good! - Functors, Applicative Functors and Monoids](http://learnyouahaskell.com/functors-applicative-functors-and-monoids)
+- [Haddock Documentation for regex-tdfa](https://hackage.haskell.org/package/regex-tdfa)

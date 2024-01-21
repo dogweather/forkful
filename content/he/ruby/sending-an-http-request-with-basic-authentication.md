@@ -1,7 +1,8 @@
 ---
-title:                "שליחת בקשת http עם אימות בסיסי"
-html_title:           "C: שליחת בקשת http עם אימות בסיסי"
-simple_title:         "שליחת בקשת http עם אימות בסיסי"
+title:                "שליחת בקשת HTTP עם אימות בסיסי"
+date:                  2024-01-20T18:02:47.126422-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שליחת בקשת HTTP עם אימות בסיסי"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -11,39 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-קודם כל, נפעיל בקשה HTTP עם אימות בסיסי הוא  העברת נתונים עם בעזרת ה-API HTTP בעזרת שם משתמש וסיסמה. מתכנתים בדרך כלל משתמשים בעזרת אימות HTTP בסיסי כאשר יש להם API שגורסאות משתמשים מאובטחים. 
+שליחת בקשת HTTP עם אוטנטיקציה בסיסית מאפשרת לנו לאמת משתמשים באינטרנט באופן פשוט ומאובטח. מתכנתים משתמשים בזה כדי להבטיח גישה אישית למידע רגיש או מוגבל.
 
-## מדריך שלב בשלב:
-קודים המציגים את העקרון ברובי:
+## איך לעשות:
+קטע זה יכיל דוגמה של שליחת בקשת HTTP עם אוטנטיקציה בסיסית ב-Ruby:
 
 ```Ruby
 require 'net/http'
 require 'uri'
 
-uri = URI('http://example.com/index.html')
+uri = URI('http://example.com/secret-page')
 req = Net::HTTP::Get.new(uri)
-req.basic_auth 'user', 'pass'
+req.basic_auth 'user', 'password'
 
-res = Net::HTTP.start(uri.hostname, uri.port) {|http|
+response = Net::HTTP.start(uri.hostname, uri.port) do |http|
   http.request(req)
-}
+end
 
-puts res.body
+puts response.body
 ```
-כלולים שבו:
-- הגדרת ה-URI שלך.
-- יצירת בקשה `Get` חדשה.
-- הגדרת שם המשתמש והסיסמה על הבקשה.
-- פתיחת חיבור HTTP ושליחת הבקשה.
-- הדפסת תוצאת התגובה.
 
-## ירידה לעומק
-אימות HTTP בסיסי הוא פתרון אימות שהוצג ב-1996, ומכונה כ"בסיסי" מאחר והוא סופק עם כל ממשקי ה-API HTTP. יתרונו הוא שהוא פשוט וקל לשימוש, אך מהצד השני, האימות לא מאובטח במיוחד.
+אם האימות עבר בהצלחה, התגובה תכיל את גוף הדף הסודי:
 
-החלופות לאימות בסיסי כוללות אימות הדבק ואימות Bearer Token, שהם מאובטחים יותר, אך יכולות להיות מעט מורכבות יותר.
+```
+<secret content here>
+```
 
-כאשר אנחנו משתמשים באימות HTTP בסיסי, השם משתמש והסיסמה נשלחים לשרת כקודלק בבסיס64, ניכר. אימות זה לא מבצע הצפנה, לכן אינו מומלץ כאשר אתה שולח מידע רגיש.
+## צלילה לעומק:
+שליחת בקשות עם אוטנטיקציה בסיסית היא פרקטיקה מתחילת ימי האינטרנט. זה סוג של אוטנטיקציה שבו שם המשתמש והסיסמה נשלחים בראש הבקשה (header), מקודדים ב-base64. כיום, יש אלטרנטיבות יותר בטוחות כמו OAuth, אבל basic auth עדיין נפוץ בגלל פשטותו. צריך לזכור להשתמש ב-HTTPS כדי להבטיח את סודיות הנתונים שנשלחים.
 
-## קישורים רלוונטיים
-- [מדריך Net::HTTP של Ruby](https://ruby-doc.org/stdlib-2.6.3/libdoc/net/http/rdoc/Net/HTTP.html)
-- [מסמך IETF של HTTP Basic Authentication](https://tools.ietf.org/html/rfc7617)
+## ראו גם:
+- [RFC 7617 – The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+- [Net::HTTP Documentation](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html) - מידע על ניהול בקשות HTTP בRuby.

@@ -1,7 +1,8 @@
 ---
-title:                "एक वेब पेज डाउनलोड करना"
-html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
-simple_title:         "एक वेब पेज डाउनलोड करना"
+title:                "वेब पेज डाउनलोड करना"
+date:                  2024-01-20T17:44:53.834304-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "वेब पेज डाउनलोड करना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,23 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-वेब पेज को डाउनलोड करना मतलब उसे अपने कंप्यूटर पर स्थानीय रूप से सहेजना। प्रोग्रामर्स इसे ऐसे स्थितियों में करते हैं जब उन्हें वेबसाइट की सामग्री का विश्लेषण करना होता है या वेब पेज की बैकअप करनी होती है।
+## What & Why? (क्या और क्यों?)
+वेब पेज को डाउनलोड करना मतलब है इंटरनेट से उस पेज की सामग्री को संग्रहित करना। प्रोग्रामर ऐसा डाटा विश्लेषण, बैकअप या ऑफ़लाइन पढ़ने के लिए करते हैं।
 
-## कैसे करें:
-Fish Shell कोड ब्लॉक में कोडिंग उदाहरण और नमूना आउटपुट है।
+## How to: (कैसे करें:)
+Fish Shell में वेब पेज डाउनलोड करने के लिए `curl` कमांड का इस्तेमाल करें:
 
 ```Fish Shell
-# `curl` कमांड उपयोग करके वेब पेज डाउनलोड करें
-curl -O http://example.com/index.html
+# वेब पेज डाउनलोड करना
+curl http://example.com -o saved_page.html
+
+# डाउनलोड की गई फाइल की सामग्री देखना
+cat saved_page.html
 ```
 
-यहां, `curl` कमांड http://example.com/index.html को डाउनलोड करेगा और इसे स्थानीय फ़ाइल `index.html` में सहेजेगा।
+उपरोक्त कमांड से सरवर से page की HTML फ़ाइल saved_page.html के नाम से आपके सिस्टम पर सेव हो जाएगी। आपको कुछ इस तरह का आउटपुट मिलेगा:
 
-## गहरी डाइव:
-"curl" का उपयोग वेब पेज को डाउनलोड करने में करने का इतिहास सन 1996 से है। वैकल्पिक उपकरण में "wget" और "HTTPie" शामिल हैं जो भी वेब पेज को डाउनलोड करने के लिए प्रयुक्त होते हैं। `curl` इसे ऐसे करता है कि यह HTTP GET अनुरोध भेजता है, जिसे वेब सर्वर द्वारा प्रतिक्रिया के रूप में HTML कोड भेजा जाता है।
+```html
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</head>
 
-## देखें भी:
-1. curl मैन संस्करण - https://curl.se/docs/manpage.html
-2. HTTPie गाइड - https://httpie.io/docs
-3. "wget" का उपयोग कैसे करें - https://www.gnu.org/software/wget/manual/wget.html
+<body>
+<div>
+    ...
+</div>
+</body>
+</html>
+```
+
+## Deep Dive (गहराई में जानकारी)
+वेब पेज डाउनलोडिंग का काम `wget` और `curl` जैसे टूल्स से हो सकता है। `wget` पूरी वेबसाइट्स डाउनलोड करने में मजबूत माना जाता है, वहीं `curl` एक्सटेंसिबिलिटी में बेहतर है। Fish Shell, जो फ्रेंडली और यूजर सेंट्रिक है, ने भी इन टूल्स को सपोर्ट किया है जिससे Automation और Scripting में आसानी हो। HTTP/HTTPS, FTP, और अन्य प्रोटोकॉल्स का इस्तेमाल करते हुए, आप फ़ाइलें और डेटा जल्दी से डाउनलोड कर सकते हैं।
+
+## See Also (और भी जानकारी)
+- Fish Shell Documentation: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- cURL Documentation: [https://curl.se/docs/](https://curl.se/docs/)
+- Wget Documentation: [https://www.gnu.org/software/wget/manual/wget.html](https://www.gnu.org/software/wget/manual/wget.html)

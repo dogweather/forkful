@@ -1,7 +1,8 @@
 ---
-title:                "भविष्य या अतीत में एक तारीख की गणना"
-html_title:           "TypeScript: भविष्य या अतीत में एक तारीख की गणना"
-simple_title:         "भविष्य या अतीत में एक तारीख की गणना"
+title:                "भविष्य या अतीत में तारीख की गणना"
+date:                  2024-01-20T17:32:13.363763-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "भविष्य या अतीत में तारीख की गणना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -12,32 +13,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्या और क्यों?
 
-भविष्य या अतीत में तारीख की गणना करना यह समझाना है कि किसी विशेष दिनांक के बाद या उससे पहले कितने दिन होंगे। कार्यक्रमकर्ता इसे इवेंट, मीटिंग, उत्पाद लॉन्च आदि की तारीखों की निगरानी करने के लिए करते हैं।
+किसी भविष्य या अतीत की तारीख की गणना से मतलब है कि हम एक निश्चित तारीख से पहले या बाद की तारीख को निकालें। प्रोग्रामर्स इसका इस्तेमाल किसी इवेंट्स, डेडलाइंस, या अन्य महत्वपूर्ण समय-संबंधी गणनाओं के लिए करते हैं।
 
 ## कैसे करें:
 
-Date object का उपयोग करके भविष्य या अतीत की तारीख की गणना कर सकते हैं।
+```typescript
+// आज की तारीख को प्राप्त करें
+const today: Date = new Date();
 
-```TypeScript
-let baseDate = new Date();
+// 10 दिन बाद की तारीख कैलकुलेट करें
+const tenDaysLater: Date = new Date(today);
+tenDaysLater.setDate(today.getDate() + 10);
 
-let futureDate = new Date();
-futureDate.setDate(baseDate.getDate() + 5);
+console.log(`10 दिन बाद की तारीख: ${tenDaysLater.toLocaleDateString()}`);
 
-console.log("Future date is: ", futureDate);
+// 5 वर्ष पहले की तारीख कैलकुलेट करें
+const fiveYearsEarlier: Date = new Date(today);
+fiveYearsEarlier.setFullYear(today.getFullYear() - 5);
+
+console.log(`5 वर्ष पहले की तारीख: ${fiveYearsEarlier.toLocaleDateString()}`);
 ```
 
-ऊपरी कोड स्निपेट में, हमने पांच दिनों बाद की तारीख की गणना की है।
+## गहराई से जानकारी:
 
-## गहराई से जाने:
+तारीखों की गणना JavaScript के प्राचीन समय से होती आ रही है और यह TypeScript में भी समान है, क्योंकि TypeScript JavaScript का ही एक सुधारित रूप है। आप `Date` ऑब्जेक्ट का इस्तेमाल करके तारीखों को मैनेज कर सकते हैं। एक अल्टरनेटिव `moment.js` लाइब्रेरी है, पर `Date` हल्का और बिना किसी अतिरिक्त डिपेंडेंसी के होता है। हालांकि, टाइमजोन और लीप ईयर्स जैसी जटिलताओं को हैंडल करते समय, आपको इन जटिलताओं को समझने की जरूरत हो सकती है।
 
-1. ऐतिहासिक संदर्भ: जावास्क्रिप्ट में तारीख और समय को मैनेज करने के लिए Date object का इस्तेमाल किया जाता है, जो 1970 से उस तारीख और समय तक की मिलीसेकंड की संख्या स्टोर करता है।
+## संबंधित सूत्र:
 
-2. विकल्प: Moment.js पुस्तक एक शक्तिशाली विकल्प हो सकती है, जिसे तारीखों और समय के साथ काम करने के लिए विकसित किया गया है।
-
-3. कार्यान्वयन विवरण: 'setDate' और 'getDate' मेथड का उपयोग करके हम वर्तमान दिनांक से भविष्य या अतीत की तारीख की गणना कर सकते हैं।
-
-## अन्य स्रोत:
-
-1. [MDN Web Docs: Date - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-2. [Moment.js](https://momentjs.com/)
+- मोमेंट जेएस के डॉक्यूमेंटेशन: [Moment.js Docs](https://momentjs.com/docs/)
+- MDN Web Docs, JavaScript Date ऑब्जेक्ट पर: [MDN JavaScript Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)

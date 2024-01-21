@@ -1,7 +1,8 @@
 ---
-title:                "Télécharger une page web"
-html_title:           "Bash: Télécharger une page web"
-simple_title:         "Télécharger une page web"
+title:                "Téléchargement d'une page web"
+date:                  2024-01-20T17:44:00.759347-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Téléchargement d'une page web"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,50 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
+## What & Why?
+Télécharger une page web, c'est récupérer son contenu via Internet. Les programmeurs font cela pour analyser des données, tester des services en ligne, ou automatiser des interactions.
 
-Télécharger une page Web signifie récupérer son contenu HTML. Les programmeurs le font pour analyser, tester ou utiliser ultérieurement ses données.
+## How to:
+La librairie standard de Go est superbe pour ce boulot. Voici un exemple simple:
 
-## Comment faire :
-
-Voici un exemple de code pour télécharger une page Web avec Go. Le code utilise le package `net/http` pour envoyer une requête GET, puis enregistre la réponse.
-
-```go
+```Go
 package main
 
 import (
-   "io/ioutil"
-   "net/http"
+    "fmt"
+    "io"
+    "net/http"
+    "os"
 )
 
 func main() {
-    resp, err := http.Get("http://example.com")
+    response, err := http.Get("http://example.com")
     if err != nil {
-        panic(err)
+        fmt.Println(err)
+        os.Exit(1)
     }
-    defer resp.Body.Close()
+    defer response.Body.Close()
 
-    body, err := ioutil.ReadAll(resp.Body)
-    if err != nil {
-        panic(err)
+    if response.StatusCode == http.StatusOK {
+        _, err := io.Copy(os.Stdout, response.Body)
+        if err != nil {
+            fmt.Println(err)
+        }
+    } else {
+        fmt.Println("Erreur lors du téléchargement:", response.Status)
     }
-    ioutil.WriteFile("example.html", body, 0644)
 }
 ```
 
-Lorsque vous exécutez ce programme, un fichier "example.html" est créé contenant le contenu de la page Web.
+Sortie attendue (les premières lignes de http://example.com):
 
-## Plongée Profonde :
+```plaintext
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+    ...
+</html>
+```
 
-Historiquement, le téléchargement de pages Web était surtout utilisé pour l'exploration de données ou le "scraping".  Aujourd'hui, c'est un outil essentiel pour les tests automatiques, l'analyse des performances et bien plus encore.
+## Deep Dive
+Avant Go, on utilisait des outils comme `curl` ou des libraries telles que `libcurl` pour différentes langues de programmation. Go simplifie le processus avec `http.Get`, qui gère tous les détails sous-jacents des requêtes HTTP.
 
-Si `net/http` ne répond pas à vos besoins, vous pouvez essayer des bibliothèques telles que `GoQuery` ou `Colly`. Ces outils offrent des fonctionnalités supplémentaires, comme le parcours du DOM ou le support des sites Web dynamiques.
+Il existe d'autres moyens de télécharger du contenu web en Go, par exemple, les librairies tierces comme `Colly` pour le scraping web plus avancé.
 
-Quant au fonctionnement interne, lorsque vous envoyez une requête GET, le serveur Web renvoie le code HTML de la page. Ce code est ensuite sauvegardé dans un fichier sur votre disque dur.
+Au niveau de l'implémentation, la méthode `http.Get` utilise le `Client` par défaut de la librairie `http`, qui convient pour des cas d'usage simples. Pour des besoins plus complexes, créez une instance de `Client` où vous pourrez personnaliser les timeouts, les headers, et d'autres paramètres.
 
-## Voir Aussi :
-
-Pour plus d'informations sur ce sujet, consultez les liens suivants :
-- Documentation officielle Go net/http: https://golang.org/pkg/net/http/
-- GoQuery pour l'analyse de HTML : https://github.com/PuerkitoBio/goquery
-- Colly, un cadre de scraping en Go : http://go-colly.org/
+## See Also
+- Documentation officielle de Go net/http: https://golang.org/pkg/net/http/
+- Colly, un framework Go pour le scraping web: http://go-colly.org/
+- Apprentissage du http en Go : https://golang.org/doc/articles/wiki/

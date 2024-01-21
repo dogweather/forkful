@@ -1,6 +1,7 @@
 ---
 title:                "Sending an http request"
-html_title:           "Bash recipe: Sending an http request"
+date:                  2024-01-20T17:59:24.222044-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Sending an http request"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,52 +12,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-HTTP requests allow programs to talk to the outside world, grabbing content like web pages or API data. Programmers use them to fetch data from external sources or interact with web services.
+
+In Elm, sending an HTTP request is how your app talks to other web services to exchange data. Programmers do this to fetch or send info to servers, fueling app dynamics like user accounts, scores, or news updates.
 
 ## How to:
-In Elm, we mainly use the `Http` package for creating and sending an HTTP request. Instal the Http package:
 
-```Elm
-elm install elm/http
-```
-
-Import the Http module in your code:
+Alright, code time. Elm makes HTTP requests using the `Http` module. Here's a quick example to fetch some JSON:
 
 ```Elm
 import Http
-```
-  
-A simple HTTP GET request in Elm:
+import Json.Decode as Decode
 
-```Elm
-get : String -> Task Http.Error String
-get url =
+type alias User =
+    { id : Int
+    , username : String
+    }
+
+userDecoder : Decode.Decoder User
+userDecoder =
+    Decode.map2 User
+        (Decode.field "id" Decode.int)
+        (Decode.field "username" Decode.string)
+
+fetchUser : Cmd Msg
+fetchUser =
     Http.get
-        {
-            url = url,
-            expect = Http.expectString
+        { url = "https://api.example.com/user/1"
+        , decoder = userDecoder
         }
+        |> Http.send UserFetched
+
+type Msg
+    = UserFetched (Result Http.Error User)
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        UserFetched (Ok user) ->
+            ({ model | user = Just user }, Cmd.none)
+
+        UserFetched (Err _) ->
+            (model, Cmd.none)
 ```
 
-The `get` function requests a URL and expects a response as a string.
-
-For execution of the HTTP task and handling of the HTTP result:
+Sample output when `UserFetched` is an `Ok user`:
 
 ```Elm
-main =
-    get "https://api.github.com/users/elm"
-        |> Task.attempt HandleResponse
+{ id = 1, username = "ElmerFudd" }
 ```
-Here, "https://api.github.com/users/elm" is the URL we're requesting. The `get` function returns a task, which we attempt with a `HandleResponse` function that we'd define elsewhere. 
 
 ## Deep Dive
-HTTP requests have been integral to web development since Tim Berners-Lee cemented HTTP as the core protocol of the web. In the Elm language, sending HTTP requests is usually done using the `Http` library, but other libraries, like `elm-http-builder` or `elm-ajax`, can be used for more complex cases. 
 
-Under the hood, Elm's `Http` library uses JavaScript's Fetch API (or XMLHttpRequest for older browsers) for sending HTTP requests. The result is then channeled back into the Elm world as a `Task`, which is a model for asynchronous operations that can succeed or fail. 
-
-However, unlike in JavaScript where an HTTP request runs automatically once created, Elm chooses to make HTTP requests “cold”. This means HTTP requests don't do anything until they're given explicit permission. This reflects Elm's overall philosophy of having no side effects by default, ensuring a consistent and predictable behavior.
+Sending HTTP requests isn't new; it's been the backbone of web communication since the 90s. Elm wraps up the complexity in the user-friendly `Http` module, focusing on safety and simplicity. Unlike the early days, Elm abstracts away the messy bits like XMLHttprequest and JSON parsing. Alternatives like using JavaScript's Fetch API or XMLHttpRequest directly are possible with ports, but Elm's built-in way keeps your code type-safe and pure. It handles side-effects through its powerful architecture without compromising your app's reliability.
 
 ## See Also
-- [Elm Guide: The Http package](https://guide.elm-lang.org/effects/http.html) 
-- [MDN: Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-- [GitHub: elm-http-builder](https://github.com/lukewestby/elm-http-builder)
+
+For more detailed explanations and troubleshooting, check out these resources:
+
+- Elm package documentation for HTTP: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)
+- JSON Decoding in Elm: [https://package.elm-lang.org/packages/elm/json/latest/](https://package.elm-lang.org/packages/elm/json/latest/)
+- Elm Guide on HTTP requests: [https://guide.elm-lang.org/effects/http.html](https://guide.elm-lang.org/effects/http.html)
+- Elm Discuss for community insights: [https://discourse.elm-lang.org/](https://discourse.elm-lang.org/)

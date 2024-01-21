@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-html_title:           "Kotlin: एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-simple_title:         "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
+title:                "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
+date:                  2024-01-20T17:39:43.342011-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,29 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? (What & Why?)
+## What & Why? (क्या और क्यों?)
+String को lower case में बदलना मतलब अक्षरों को छोटा करना। Programmers इसे तब करते हैं जब case sensitivity महत्वपूर्ण हो, जैसे यूजर इनपुट को साफ करना या डेटा की consistency बनाए रखना।
 
-मामला क्या है? - स्ट्रिंग को लोअर केस (निम्न मामले) में बदलने का मतलब है, जिसे हम प्रोग्रामिंग में करते हैं। हम यह क्यों करें? - कम्पारिजन के लिए। ध्यान दें, कंप्यूटर 'A' और 'a' को अलग मानते हैं, इसलिए हम अक्सर सभी अक्षरों को लोअरकेस में बदलते हैं, ताकि हम उन्हें सही तरीके से तुलना कर सकें।
-
-## कैसे (How to):
-
-आप PowerShell में स्ट्रिंग को निम्नमामले में बदल सकते हैं जैसे कि नीचे दिखाया गया है:
-
+## How to: (कैसे करें:)
 ```PowerShell
-$string = "Hello, PowerShell"
+# एक सिंपल स्ट्रिंग को Lower Case में कन्वर्ट करना
+$string = "HELLO World"
 $lowerCaseString = $string.ToLower()
-Write-Host $lowerCaseString
+Write-Output $lowerCaseString
 ```
-इसे चलाने पर, आपको निम्नलिखित आउटपुट मिलेगी:
+Output:
+```
+hello world
+```
 
 ```PowerShell
-hello, powershell
+# एक एरे में सभी स्ट्रिंग्स को Lower Case में बदलना
+$stringsArray = "FIRST", "Second", "THIRD"
+$lowerCaseArray = $stringsArray | ForEach-Object { $_.ToLower() }
+$lowerCaseArray
+```
+Output:
+```
+first
+second
+third
 ```
 
-## गहरा अध्ययन (Deep Dive):
+## Deep Dive (विस्तार से जानकारी)
+PowerShell में स्ट्रिंग को lower case में बदलने के लिए `.ToLower()` मेथड का इस्तेमाल आम है। यह मेथड .NET Framework से आता है और इसे सभी पावरशेल वर्जन्स में इस्तेमाल किया जा सकता है। हिस्टोरिकल कॉन्टेक्स्ट में, इस तरह के कन्वर्जन की जरूरत पहली बार तब आई जब यूजर्स से मिलने वाले इनपुट को सामान्य करने की नीड हुई। 
 
-PowerShell स्ट्रिंग्स के लिए `.ToLower()` विधि का उपयोग करने का इतिहास भले ही नया हो, लेकिन यह जावास्क्रिप्ट और पायथन जैसी भाषाओं से प्रभावित है। वैकल्पिक विधियाँ `.ToLowerInvariant()` और `.ToLower(culture)` हैं, जो विशेष कल्चर के साथ-साथ इंटरनेशनलाइजेशन के मुद्दों को भी समाधान कर सकती हैं। आपने देखा होगा कि `.ToLower()` मेमोरी में नया लोअर केस स्ट्रिंग क्रिएट करता है और किसी भी मूल स्ट्रिंग को बदलता नहीं है जो इसकी प्रोग्रामिंग व्यवहार में एक महत्वपूर्ण तत्व है। 
+Alternatives के तौर पर, `ToLowerInvariant()` का यूज़ करना भी मुमकिन है, जो कल्चर-इनसेंसिटिव कन्वर्जन देता है। PowerShell Core में `ToLowerInvariant()` अक्सर प्रेफर किया जाता है, क्योंकि यह क्रॉस-प्लेटफॉर्म है। 
 
-## यह भी देखें (See Also):
+परफॉर्मेंस के लिहाज से, `.ToLower()` और `.ToLowerInvariant()` दोनों ही फास्ट हैं और लार्ज डेटा पर भी अच्छे रिजल्ट्स देते हैं। 
 
-- [Microsoft PowerShell Documentation in Hindi](https://docs.microsoft.com/hi-in/powershell/)
+## See Also (अधिक जानकारी के लिए)
+- [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
+- [.NET String.ToLower Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=net-6.0)
+- [.NET String.ToLowerInvariant Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolowerinvariant?view=net-6.0)

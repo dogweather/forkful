@@ -1,7 +1,8 @@
 ---
-title:                "एक वेब पेज डाउनलोड करना"
-html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
-simple_title:         "एक वेब पेज डाउनलोड करना"
+title:                "वेब पेज डाउनलोड करना"
+date:                  2024-01-20T17:45:31.623785-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "वेब पेज डाउनलोड करना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,35 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या एवं क्यों?
-वेब पेज डाउनलोड करना का मतलब है कि उसे इंटरनेट से अपने कंप्यूटर में स्थानांतरित करना। प्रोग्रामर्स इसे डेटा विश्लेषण, स्क्रेपिंग या बैकअप के लिए करते हैं। 
+## What & Why? (क्या और क्यों?)
 
-## कैसे करें:
+वेब पेज डाउनलोड करना मतलब उस पेज की सामग्री को इंटरनेट से आपके कंप्यूटर पर ले आना है। प्रोग्रामर्स इसे डेटा निकालने, टेस्टिंग और ऑफलाइन ब्राउजिंग के लिए करते हैं।
+
+## How to: (कैसे करें:)
+
+Node.js और एक लोकप्रिय लाइब्रेरी Axios का उपयोग करके TypeScript में वेब पेज डाउनलोड करना सरल है। पहले `axios` और `@types/axios` को इंस्टॉल करें:
+
+```sh
+npm install axios @types/axios
+```
+
+अब TypeScript में कोड लिखें:
+
 ```TypeScript
-import * as https from 'https';
+import axios from 'axios';
 
-function downloadWebPage(url: string): void {
-  https.get(url, (res) => {
-    let data = '';
-    res.on('data', (chunk) => {
-      data += chunk;
-    });
-    res.on('end', () => {
-      console.log(data);
-    });
-  }).on('error', (err) => {
-    console.error("Error: " + err.message);
-  });
+async function downloadWebPage(url: string): Promise<void> {
+  try {
+    const response = await axios.get(url);
+    console.log(response.data);
+  } catch (error) {
+    console.error('Error downloading the page:', error);
+  }
 }
 
-downloadWebPage("https://example.com");
+downloadWebPage('https://www.example.com');
 ```
-ऊपर दिए गए कोड का उदाहरण एक वेब पेज को डाउनलोड करने का है। https://example.com वेब पेज की जानकारी हमारी कंसोल में दिखाई देगी।
 
-## गहरी जानकारी
-वेब पेज डाउनलोड करने की संकल्पना का निर्माण WWW (World Wide Web) के उदय के साथ हुआ। इसके विकल्प के रूप में, कुछ डेवलपर्स ब्राउज़र एक्सटेंशन्स या वेब स्क्रेपिंग डेक्सटॉप ऐप्स का उपयोग करते हैं। ताईयारी जानकारी को अपने स्वयं के सर्वर पर स्थानांतरित करने की विधि, आपकी आवश्यकताओं पर निर्भर करेगी। 
+आउटपुट (`response.data`) वह HTML होगा जो उस वेब पेज पर मौजूद है।
 
-## अन्य उपयोगी स्रोत 
-1. [Node.js डॉक्यूमेंटेशन](https://nodejs.org/dist/latest-v14.x/docs/api/)
-2. [TypeScript डॉक्यूमेंटेशन](https://www.typescriptlang.org/docs/)
-3. [वेब स्क्रेपिंग](https://en.wikipedia.org/wiki/Web_scraping) पर विकिपीडिया
+## Deep Dive (गहराई से जानकारी):
+
+जब से वेब का आविष्कार हुआ, पेज डाउनलोड करने की जरुरत पड़ी। पहले `wget` और `curl` जैसे टूल काम में लाए जाते थे, अब प्रोग्रामिंग भाषाओं में लाइब्रेरीज़ उपलब्ध हैं। Axios विश्वसनीयता और मल्टीपल फीचर्स की वजह से पसंद की जाती है। Node.js के `http` मॉड्यूल जैसे नेटिव विकल्प भी हैं, पर Axios अधिक सुविधाजनक है।
+
+Axios HTTP client serverside और clientside JavaScript में काम आती है, Promises पर आधारित है और error handling शानदार है। यह JSON data के साथ अच्छे से काम करती है और configuration आसान है।
+
+## See Also (और देखें):
+
+- Axios GitHub repository: [https://github.com/axios/axios](https://github.com/axios/axios)
+- Node.js `http` module documentation: [https://nodejs.org/api/http.html](https://nodejs.org/api/http.html)
+- MDN Web Docs - Fetch API: [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- `wget` command guide: [https://www.gnu.org/software/wget/](https://www.gnu.org/software/wget/)
+- `curl` command tutorial: [https://curl.se/docs/manual.html](https://curl.se/docs/manual.html)

@@ -1,6 +1,7 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "C++: Porównywanie dwóch dat"
+date:                  2024-01-20T17:32:35.319928-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "C"
 category:             "C"
@@ -10,47 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Porównywanie dwóch dat to ustalenie, która jest wcześniejsza, późniejsza lub czy są identyczne. Programiści robią to, by zarządzać wydarzeniami, ważnością dokumentów czy okresami promocji.
 
-Porównywanie dwóch dat to sposób sprawdzenia, która data jest wcześniejsza, późniejsza lub czy są takie same. Programiści robią to, aby umożliwić aplikacjom przetwarzanie danych w odpowiedni sposób w zależności od wyniku tej porównania.
-
-## Jak to zrobić:
-
-Metoda porównania dwóch dat w języku C polega na użyciu struktury `tm` oraz funkcji `mktime()`, `difftime()` i `localtime()`. Oto przykładowy kod:
-
+## How to: (Jak to zrobić:)
 ```C
 #include <stdio.h>
 #include <time.h>
 
+int compare_dates(struct tm d1, struct tm d2) {
+    if (d1.tm_year > d2.tm_year) return 1;
+    if (d1.tm_year < d2.tm_year) return -1;
+    if (d1.tm_mon > d2.tm_mon) return 1;
+    if (d1.tm_mon < d2.tm_mon) return -1;
+    if (d1.tm_mday > d2.tm_mday) return 1;
+    if (d1.tm_mday < d2.tm_mday) return -1;
+    return 0;
+}
+
 int main() {
-    // inicjalizujemy dwie struktury tm
-    struct tm a = {0,0,0,2,1,112};   // 2 Luty, 2012
-    struct tm b = {0,0,0,1,2,113};   // 1 Marzec, 2013
+    struct tm date1 = {.tm_year=123, .tm_mon=4, .tm_mday=5}; // Year is year-1900
+    struct tm date2 = {.tm_year=123, .tm_mon=4, .tm_mday=6};
 
-    // konwersja czasu do typu time_t
-    time_t x = mktime(&a);
-    time_t y = mktime(&b);
-
-    // porównujemy dwie daty
-    if (difftime(y, x) < 0)
-        printf("Data a jest późniejsza od daty b\n");
-    else
-        printf("Data b jest późniejsza od daty a\n");
+    int result = compare_dates(date1, date2);
+    if(result > 0) {
+        printf("Date1 is later than Date2\n");
+    } else if(result < 0) {
+        printf("Date1 is earlier than Date2\n");
+    } else {
+        printf("Date1 is the same as Date2\n");
+    }
 
     return 0;
-} 
+}
 ```
-## Dogłębna analiza
+Output:
+```
+Date1 is earlier than Date2
+```
 
-Porównanie dat w C nie jest tak proste jak w niektórych innych językach, które mają wbudowane daty i funkcje porównawcze. To jednak nie oznacza, że jest to trudne, wymaga tylko zrozumienia kilku funkcji i struktur języka C.
+## Deep Dive (Dogłębna analiza)
+Porównywanie dat ma długą historię, zwłaszcza w aplikacjach bankowych i rezerwacyjnych. Alternatywą dla ręcznego porównywania jest użycie funkcji `difftime()` dla wartości `time_t` lub bibliotek zewnętrznych jak `date.h` w C++ lub `datetime` w Pythonie. Implementacja zależy od precyzji i zakresu dat, a także strefy czasowej, w której mają być interpretowane.
 
-Alternatywą do powyższego kodu mogłoby być sparsowanie dwóch ciągów dat do struktury `tm` przy użyciu `strptime()`, a następnie porównanie ich jak powyżej.
-
-Szczegółowo, funkcja `mktime()` konwertuje strukturę `tm` na `time_t`, `difftime()` porównuje dwa momenty w formacie `time_t`, a `localtime()` konwertuje `time_t` z powrotem na `tm`, jeśli potrzebujesz daty i czasu w czytelnej formie.
-
-## Zobacz także
-
-Spójrz na te linki dla więcej informacji:
-- Dokumentacja dla [mktime()](https://www.cplusplus.com/reference/ctime/mktime/)
-- Dokumentacja dla [difftime()](https://www.cplusplus.com/reference/ctime/difftime/)
-- Więcej informacji o strukturze [tm](https://www.cplusplus.com/reference/ctime/tm/).
+## See Also (Zobacz także)
+- ISO 8601: Standard formatowania dat ([Wikipedia](https://en.wikipedia.org/wiki/ISO_8601))
+- Funkcja difftime() w C ([cplusplus.com](http://www.cplusplus.com/reference/ctime/difftime/))
+- Biblioteka `time.h` w C ([cplusplus.com](http://www.cplusplus.com/reference/ctime/))
+- Książka "C Programming Language" Autorzy: Brian W. Kernighan, Dennis M. Ritchie

@@ -1,6 +1,7 @@
 ---
 title:                "חיפוש והחלפת טקסט"
-html_title:           "Elm: חיפוש והחלפת טקסט"
+date:                  2024-01-20T17:57:56.444200-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "חיפוש והחלפת טקסט"
 programming_language: "C"
 category:             "C"
@@ -10,54 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה? 
+## מה ולמה?
+חיפוש והחלפת טקסט היא תכנות בסיסי שבו אנחנו מחפשים תווים או מחרוזות בטקסט ומחליפים אותם באחרים. תכניתנים עושים את זה לתיקון מהיר של שגיאות, עידכון נתונים או שינוי פורמטים.
 
-חיפוש והחלפה של טקסט הוא פעולת עיבוד מידע שלמה, שבה אנו מחפשים מחרוזת מסוימת בקטע טקסט ומחליפים אותה במחרוזת אחרת. מתכנתים נדרשים לבצע פעולות אלה כדי לעבד נתונים, לשפר את התאמת הטקסט ולשפר את הקריאות.
+## איך לעשות:
+ב-C, אנחנו משתמשים בפונקציות כמו `strstr()` לחיפוש מחרוזת בתוך מחרוזת אחרת ו`strcpy()` או `strncpy()` להחלפה. דוגמא פשוטה:
 
-## איך לעשות את זה: 
-
-קוד בסיסי של חיפוש והחלפה של מחרוזת ב-C:
-
-```C
-#include <string.h>
+```c
 #include <stdio.h>
+#include <string.h>
 
-void search_and_replace(char* str, char* find, char* replace){
+void search_and_replace(char *source, const char *search, const char *replace) {
     char buffer[1024];
     char *p;
 
-    p = strstr(str, find);
-    strncpy(buffer, str, p-str); 
-    buffer[p-str] = '\0';
-
-    sprintf(buffer+(p-str), "%s%s", replace, p+strlen(find));
+    if ((p = strstr(source, search)) == NULL) {
+        printf("המחרוזת לא נמצאה.\n");
+        return;
+    }
     
-    printf("%s\n", buffer);
+    strncpy(buffer, source, p - source);
+    buffer[p - source] = '\0';
+
+    sprintf(buffer+(p - source), "%s%s", replace, p + strlen(search));
+    strcpy(source, buffer);
+
+    printf("התוצאה החדשה: %s\n", source);
 }
 
 int main() {
-    char str[] = "Hello World!";
-	char find[] = "World";
-	char replace[] = "Programmers!";
-	search_and_replace(str, find, replace);
+    char text[] = "שלום עולם, זה סתם דוגמא!";
+    search_and_replace(text, "סתם", "מדהימה");
     return 0;
 }
 ```
 
-הפלט:
-
-```C
-"Hello Programmers!"
+תצאה:
+```
+התוצאה החדשה: שלום עולם, זה מדהימה דוגמא!
 ```
 
-## Deep Dive:
+## צלילה לעומק
+מאז שנוצר ה-C בשנות ה-70, חיפוש והחלפת טקסט הפך לכלי רב עוצמה. פונקציות כמו `strstr()` ו`strchr()` עוזרות בחיפוש תווים או מחרוזות. עוד דרכים כוללות רגולר אקספרשנס ואת כלי קו הפקודה `sed` בלינוקס. במימוש, תקפידו לשים לב ל-overflow ושימוש בזיכרון בטוח, במיוחד כאשר מתעסקים עם מחרוזות ב-C.
 
-1. **היסטוריה:** חיפוש והחלפה של מחרוזות הוא מרכיב מרכזי בעיבוד טקסט מאז ימי המחשבים הראשונים. הוא ממומש במערכות הפעלה, שפות תכנות, וכחלק מאפליקציות תוכנה.
- 
-2. **אלטרנטיבות:** ניתן להוסיף חלופות יותר מורכבות, כמו חיפוש של ביטויים רגולריים, תוך שימוש בשיטות שהוזכרו למעלה.
-  
-3. **פרטי ביצוע:** מנהלי הזיכרון הם מנגנונים מרכזיים בהחלפה של מחרוזות בשפת C. חשוב לנהל את המחסנים כראוי כדי למנוע עיוותים ושגיאות בזמן הריצה.
-
-## ראה גם: 
-
-2. [פונקציות של מנהל זיכרון ב-C](http://www.cplusplus.com/reference/cstring/)
+## ראה גם
+- התיעוד הרשמי של C99, C11, ו-C18 עבור פונקציות מחרוזות: https://en.cppreference.com/w/c/string/byte
+- למידע על רגולר אקספרשנס: https://regexone.com/
+- `sed` - עורך טקסט שורת פקודה ל-UNIX: https://www.gnu.org/software/sed/manual/sed.html

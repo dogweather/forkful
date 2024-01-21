@@ -1,7 +1,8 @@
 ---
-title:                "Видалення символів, що відповідають патерну"
-html_title:           "C: Видалення символів, що відповідають патерну"
-simple_title:         "Видалення символів, що відповідають патерну"
+title:                "Видалення символів за візерунком"
+date:                  2024-01-20T17:42:26.627043-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Видалення символів за візерунком"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,49 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Навіщо?
-Видалення символів за шаблоном - це процес позбуття від окремих символів на основі певних критеріїв. Це часто використовується у програмуванні для очищення вводу або форматування даних.
+## What & Why? (Що і чому?)
+Видалення символів, що відповідають патерну, це процес фільтрації рядка за певними правилами. Програмісти це роблять для очистки тексту, валідації вводу користувача або підготовки даних для обробки.
 
-## Як це зробити:
-Ось приклад коду Go, який видаляє всі цифри зі стрічки:
+## How to: (Як це зробити:)
 ```Go
 package main
 
 import (
 	"fmt"
-	"strings"
-	"unicode"
+	"regexp"
 )
 
 func main() {
-	str := "abc123def456"
-	fmt.Println(str)
+	originalString := "Hello, друзі! This is a 123 test."
+	pattern := "[0-9]+"  // Видалення усіх цифр
 
-	result := strings.Map(func(r rune) rune {
-		if unicode.IsDigit(r) {
-			return -1
-		}
-		// return the rune if it's not a digit
-		return r
-	}, str)
+	re := regexp.MustCompile(pattern)
+	cleanedString := re.ReplaceAllString(originalString, "")
 
-	fmt.Println(result)  
+	fmt.Println("Before:", originalString)
+	fmt.Println("After: ", cleanedString)
 }
 ```
-При виконанні цього коду виведе наступне:
+
+Sample output:
 ```
-abc123def456
-abcdef
+Before: Hello, друзі! This is a 123 test.
+After:  Hello, друзі! This is a  test.
 ```
 
-## Поглиблений аналіз
-Видалення символів за шаблоном - це загальна концепція, яка присутня не тільки в Go. Це важлива техніка, яка була використана у багатьох мовах програмування з часів C і Perl.
+## Deep Dive (Поглиблений аналіз):
+Видалення символів з рядка — класична проблема. Виникла разом з потребою обробки тексту. Регулярні вирази (regex) — потужний механізм для цього з 1950-х.
 
-Є кілька альтернатив вбудованому методу strings.Map(). Одним з них є regex.ReplaceAllStringFunc(), який пропонує більше гнучкості, але може бути повільнішим у виконанні.
+Альтернативи regex включають видалення символів через цикли або використання функцій обробки рядків, проте regex дає більше гнучкості.
 
-Неважливо, який метод вибрати, важливо знати, що видалення символів за шаблоном відбувається через генерацію нової стрічки, а не модифікацію оригіналу. 
+В Go робота з regex відбувається через пакет `regexp`. Важливо використовувати `MustCompile` для валідації патернів під час компіляції. Метод `ReplaceAllString` використовується для заміни.
 
-## Див. також
-- [Стрічки в Go](https://blog.golang.org/strings)
-- [Розуміння Unicode в Go](https://blog.golang.org/strings)
-- [Документація Go по strings](https://golang.org/pkg/strings/)
+## See Also (Дивіться також):
+- [Package regexp](https://pkg.go.dev/regexp)
+- [Go by Example: Regular Expressions](https://gobyexample.com/regular-expressions)
+- [Regular Expressions: a complete guide](https://www.regular-expressions.info/tutorial.html) (може бути англомовним ресурсом)
+- [A Tour of Go - Regular Expressions](https://tour.golang.org/moretypes/19)

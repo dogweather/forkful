@@ -1,6 +1,7 @@
 ---
 title:                "Interpolering av en streng"
-html_title:           "Bash: Interpolering av en streng"
+date:                  2024-01-20T17:50:39.324365-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Interpolering av en streng"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,31 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Interpolering av en streng i Elixir er prosessen der vi ekspanderer en gitt strengverdi ved å inkludere variable data. Dette er en vanlig praksis i programmering for å gjøre koden mer lesbar og effektiv ved å eliminere eksplisitt concatenation.
+## What & Why?
+Strenginterpolering lar oss sette variabler eller beregnede verdier inn i tekst. Vi bruker det for å bygge dynamiske strenger enkelt.
 
-## Hvordan:
-Her er et enkelt eksempel på Elixir-kode som demonstrerer strenginterpolering:
-```Elixir
-navn = "Ola"
-IO.puts "Hei, #{navn}!"
-```
-Dette programmet vil skrive ut:
-```
-Hei, Ola!
+## How to:
+Elixir bruker `#{}` for å interpolere uttrykk i strenger:
+
+```elixir
+name = "Verden"
+message = "Hei, #{name}!"
+IO.puts message
 ```
 
-## Dypere Dykk
-Elixir er et dynamisk, funksjonelt språk designet for å bygge skalerbare og vedlikeholdbare applikasjoner. Strenginterpolering har vært en del av språket siden det ble utgitt i 2011 av José Valim.
+Output:
+```
+Hei, Verden!
+```
 
-Alternativer til strenginterpolering kan omfatte bruk av "Kernel.concat/2" eller "IO.iodata_to_binary/1" funksjoner som er innebygd i Elixir.
+For beregninger inne i en streng:
 
-Implementeringsdetaljene for strenginterpolering i Elixir er faktisk ganske enkle. Når du bruker "#{}" inne i en streng, erstattes den med hvilken som helst verdi som er inne i krøllparentesene - så lenge det er en gyldig Elixir-uttrykk.
+```elixir
+hours = 24
+message = "En dag har #{hours * 60} minutter."
+IO.puts message
+```
 
-## Se Også
-For mer informasjon om Elixir og strenginterpolering, sjekk ut følgende ressurser:
+Output:
+```
+En dag har 1440 minutter.
+```
 
-1. Elixir's Offisiell Dokumentasjon: [https://elixir-lang.org/docs.html](https://elixir-lang.org/docs.html)
-2. Elixir School: [https://elixirschool.com/no](https://elixirschool.com/no)
+## Deep Dive
+I Elixir implementeres strenginterpolering ved hjelp av binær-operatoren `<>` som fletter sammen bitstrengelementer. Interpolering er en syntaktisk bekvemmelighet som forvandles til denne operatøren under kjøring.
 
-Husk, uansett om du bare lærer Elixir eller er en erfaren pro, å forstå praksis som strenginterpolering er avgjørende for å skrive effektiv kode.
+Historisk sett arver Elixir denne funksjonen fra Ruby, der den er også mye brukt. Alternativer til interpolering inkluderer sammenkjeding med `<>` eller bruk av `String.concat/2`. Men interpolering er mer leselig og foretrukket i de fleste tilfeller.
+
+Elixir kompilerer strenger til UTF-8 kodete binærer. Når du interpolerer, slår Elixirkompilatoren sammen disse binærene i én sammenhengende rekkefølge, slik at det er effektivt selv med store strenger.
+
+## See Also
+- [Elixir's String module documentation](https://hexdocs.pm/elixir/String.html)
+- [Introduction to Elixir's binary type](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
+- [Splicing binaries with `<>`](https://hexdocs.pm/elixir/String.html#<>/2)

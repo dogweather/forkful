@@ -1,7 +1,8 @@
 ---
-title:                "Supprimer les caractères correspondant à un modèle"
-html_title:           "Ruby: Supprimer les caractères correspondant à un modèle"
-simple_title:         "Supprimer les caractères correspondant à un modèle"
+title:                "Suppression de caractères correspondant à un motif"
+date:                  2024-01-20T17:43:19.399530-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Suppression de caractères correspondant à un motif"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,32 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
+## What & Why?
+(Suppression de caractères correspondant à un motif)
 
-Supprimer les caractères correspondant à un motif (pattern matching) est un moyen d'éliminer spécifiquement cet ensemble de caractères d'une chaîne dans la programmation Swift. Les programmeurs le font pour nettoyer les données, préserver l'exactitude des calculs ou faciliter le traitement et l'analyse des données.
+Dans la programmation, lorsque nous parlons de supprimer des caractères selon un motif, on fait référence à l'élimination sélective de certains caractères dans une chaîne de texte qui correspondent à un modèle spécifique. Les programmeurs font cela pour nettoyer les données, par exemple, en supprimant des balises HTML d'une chaîne ou en assurant qu'un numéro de téléphone respecte un format particulier.
 
-## Comment faire:
+## How to:
+(Comment faire : )
 
-Pour supprimer les caractères correspondant à un motif, nous utilisons la fonction `filter`. Par exemple:
-```Swift
-let str = "Salut, mon ami!"
-let filtreStr = str.filter { !" ,!".contains($0) }
-print(filtreStr)
+En Swift, on peut utiliser les expressions régulières (regex) pour identifier et supprimer les caractères correspondant à un motif. Voici comment on procède :
+
+```swift
+import Foundation
+
+func deleteMatchingCharacters(from string: String, pattern: String) -> String {
+    let regex = try! NSRegularExpression(pattern: pattern, options: [])
+    let range = NSRange(string.startIndex..., in: string)
+    return regex.stringByReplacingMatches(in: string, options: [], range: range, withTemplate: "")
+}
+
+// Exemple : Supprimer les chiffres
+let originalString = "Appeler au 123-456-7890."
+let pattern = "[0-9]"
+let cleanString = deleteMatchingCharacters(from: originalString, pattern: pattern)
+
+print(cleanString) // Affiche: "Appeler au -.-"
 ```
-Cela va supprimer les espaces, les virgules et les points d'exclamation et produira le résultat suivant:
-```Swift
-Salutmonami
-```
-## Plongeons Profondément
+Notez que l'exemple ci-dessus utilise la classe NSRegularExpression, qui fait partie du framework Foundation. Dans ce contexte, "[0-9]" est le modèle (ou pattern) représentant tous les chiffres, et on les remplace par rien, ce qui les supprime.
 
-Historiquement, il a toujours été crucial pour les programmeurs de manipuler et de contrôler les chaînes. Swift fournit une manipulation de chaînes puissante et flexible. 
+## Deep Dive:
+(Plongée en profondeur)
 
-Une alternative à la fonction `filter` pourrait être d'utiliser une boucle `for-in` pour itérer sur la chaîne et construire une nouvelle chaîne sans les caractères indésirables. Cependant, cela demande plus de lignes de code.
+La suppression de caractères par motif existe depuis longtemps en programmation; elle devient cruciale pour le traitement de texte et la manipulation de données. En Swift, `NSRegularExpression` est une classe inspirée de la bibliothèque ICU qui est utilisée largement à travers différents langages pour les opérations avec les expressions régulières.
 
-En ce qui concerne les détails de l'implémentation, `filter` en Swift retourne un nouvel array contenant des éléments pour lesquels un fournisseur de conditions booléennes indique true. Dans notre cas, elle retourne une nouvelle chaîne sans les caractères correspondant à notre motif.
+En dehors de `NSRegularExpression`, les développeurs Swift peuvent aussi utiliser des méthodes de String comme `replacingOccurrences(of:with:)` pour des remplacements simples, qui ne nécessitent pas des motifs complexes.
 
-## Voir Aussi:
+Le détail crucial de l'implémentation avec les regex en Swift, c'est la gestion des erreurs. Dans l'exemple donné, on utilise `try!` pour dire que l'expression régulière est correcte et ne causera pas d'erreur. Cependant, dans une application réelle, il est préférable d'utiliser `try?` ou `do-catch` pour gérer les erreurs potentielles.
 
-Pour plus d'information, visitez ces liens:
+## See Also:
+(Voir aussi)
 
-1. Le Guide de la Programmation Swift par Apple (Disponible gratuitement sur l'Apple Store): [Guide Swift](https://developer.apple.com/swift/)
+- Documentation Swift sur les expressions régulières : [NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- Tutorial Swift sur le traitement de textes : [Ray Wenderlich's Text Processing](https://www.raywenderlich.com/116-an-nsregularexpression-tutorial-in-swift)
+- ICU Library, d'où NSRegularExpression tire ses origines : [ICU User Guide](http://userguide.icu-project.org/strings/regexp)

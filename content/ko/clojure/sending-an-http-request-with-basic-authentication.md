@@ -1,7 +1,8 @@
 ---
-title:                "기본 인증을 이용한 HTTP 요청 보내기"
-html_title:           "Arduino: 기본 인증을 이용한 HTTP 요청 보내기"
-simple_title:         "기본 인증을 이용한 HTTP 요청 보내기"
+title:                "기본 인증을 사용한 HTTP 요청 보내기"
+date:                  2024-01-20T18:01:38.746165-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "기본 인증을 사용한 HTTP 요청 보내기"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,42 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 & 왜?
+## What & Why? (무엇이며 왜?)
+HTTP 요청을 기본 인증과 함께 보내기는 사용자 이름과 비밀번호로 보호된 리소스에 접근할 때 사용합니다. 프로그래머들은 개인 정보를 안전하게 전송하고 검증된 사용자만이 접근할 수 있도록 하기 위해 이 방법을 사용합니다.
 
-HTTP 인증 요청을 보내는 것은 사용자 인증 정보를 포함한 HTTP 요청을 보내는 것을 말합니다. 이를 통해 프로그래머는 보안적으로 보호된 곳에 접근할 수 있습니다.
-
-## 이곳에서:
-
-Clojure에서 기본 인증을 사용하여 HTTP 요청을 보내는 가장 일반적인 방법은 `clj-http` 라이브러리를 사용하는 것입니다. 이 라이브러리를 사용하려면 먼저 프로젝트에 추가해야합니다.
-
-```Clojure
-(defproject yourproject "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
-  :license {:name "EPL-2.0 OR Apache-2.0"
-            :url "https://www.eclipse.org/legal/epl-2.0/"}
-  :dependencies [[org.clojure/clojure "1.10.0"]
-                 [clj-http "3.10.0"]])
-```
-
-이제 기본 인증을 사용하여 HTTP 요청을 보낼 수 있습니다.
-
+## How to: (어떻게 하나요?)
 ```Clojure
 (require '[clj-http.client :as client])
 
-(let [response (client/get "http://example.com"
-                          {:basic-auth ["username" "password"]})]
-  (println (:status response) (:body response)))
+(let [credentials "username:password"
+      encoded-credentials (-> credentials .getBytes "UTF-8" java.util.Base64/getEncoder .encodeToString)
+      headers {"Authorization" (str "Basic " encoded-credentials)}]
+  (client/get "http://protected-resource.com" {:headers headers}))
 ```
 
-## 깊이있게 이해하기:
+Sample output:
 
-HTTP 인증은 웹의 초기 단계부터 있었으며, 사용자 이름과 비밀번호를 이용한 보안 방식을 제공하는 방법 중 하나입니다. 비록 오늘날 OAuth 같은 보다 강력한 방법이있지만, 기본 인증은 그 간결함과 적용의 용이성 때문에 여전히 사용됩니다.
+```Clojure
+{:status 200
+ :headers ...
+ :body "..."}
+```
 
-Clojure에서는 `clj-http` 이외에도 `http-kit` 또는 `aleph` 같은 여러 라이브러리들이 제공되어 HTTP 요청을 처리할 수 있습니다. 선택은 당신의 특정 요구사항에 달려 있습니다.
+## Deep Dive (깊이 이해하기)
+HTTP 기본 인증(Basic Authentication)은 'RFC 7617'에 정의되어 있으며, 웹에서 가장 간단하고 오래되었지만 꾸준히 사용되는 인증 방식입니다. Base64 인코딩의 사용자 이름과 비밀번호를 HTTP 헤더에 포함시켜 보내는 방식이죠. 
 
-## 관련자료:
+클로저(Clojure) 커뮤니티에서는 `clj-http` 라이브러리를 주로 사용하여 HTTP 요청을 처리하는데, 이 라이브러리는 기본 인증을 비롯한 다양한 HTTP 기능을 추상화하여 제공합니다. `clj-http` 이외에도, `http-kit`이나 `aleph` 같은 다른 HTTP 라이브러리를 사용할 수도 있습니다.
 
-- `clj-http` 라이브러리 사이트: https://github.com/dakrone/clj-http
-- `http-kit` 라이브러리 사이트: http://http-kit.org/
-- `aleph` 라이브러리 사이트: https://github.com/ztellman/aleph
+이와 같은 라이브러리들은 내부적으로 Java의 `HttpURLConnection` 클래스나 Apache의 `HttpClient` 등을 사용하여 인증 프로세스를 간소화합니다. 중요한 것은, 기본 인증의 취약점을 알고 있어야 한다는 점입니다. 예를 들어, HTTPS를 사용하지 않으면, Base64 인코딩된 자격 증명이 네트워크 스니핑에 의해 드러날 수 있습니다.
+
+## See Also (더 보기)
+- [clj-http GitHub Repository](https://github.com/dakrone/clj-http)
+- [RFC 7617: The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)

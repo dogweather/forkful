@@ -1,7 +1,8 @@
 ---
-title:                "Merkkien poistaminen vastaavalla mallilla"
-html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
-simple_title:         "Merkkien poistaminen vastaavalla mallilla"
+title:                "Merkkien poistaminen hakemalla osumia kaavaan"
+date:                  2024-01-20T17:42:20.211619-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,50 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? | Mikä & Miksi?
+Tietyn kaavan mukaisesti merkkien poistaminen tekstistä on datan siivoamista. Ohjelmoijat tekevät sen siksi, että se auttaa pitämään tiedot selkeinä ja kohdennettuina.
 
-Pattern matching - tai kuvion sovittaminen – on ohjelmoinnissa käytetty tekniikka havaita ja poistaa merkkejä, jotka vastaavat jonkinlaista sääntöä tai kuviota. Ohjelmoijat tekevät tämän siistikseen dataa, esimerkiksi poistaakseen ei-toivotut tai turhat merkit.
-
-## Miten näin:
+## How to | Kuinka tehdä:
+Gleam-kielinen esimerkki merkkien poistosta tietyllä kaavalla ja esimerkkitulosteet.
 
 ```Gleam
-import gleam/regex
+import gleam/string
 
-fn delete_chars_matching_pattern(s: String, pattern: String) {
-  let re = regex.from_string(pattern)
-  case re {
-    Ok(re) -> 
-      let s = regex.replace(re, s, "", global: True)
-      case s {
-        Ok(s_filled) -> s_filled
-        Error(e) -> e
-      }
-    Error(e) -> e
-  } 
+pub fn delete_pattern(text: String, pattern: String) -> String {
+  string.replace(text, pattern, "")
 }
 
 fn main() {
-  let text = "Hei maailma 123 !!!"
-  let pattern = "[^A-Za-z ]"
-  
-  let result = delete_chars_matching_pattern(text, pattern)
-  io.println(result)
+  let original = "Tässä on esimerkkitextiä, josta poistetaan kaikki e-kirjaimet."
+  let cleaned = delete_pattern(original, "e")
+  println(cleaned)  // Tulostetaan puhdistettu teksti
 }
 ```
-Esimerkin tuloste:
 
-```Gleam
-"Hei maailma     "
+Esimerkkituloste:
+
 ```
-## Deep Dive
+Tässä on simrkkitxtiä, josta poisttaan kaikki -kirjaimt.
+```
 
-Pattern matching -tekniikan kehitys juontaa juurensa 1950-luvun algoritmeihin ja se on ollut tärkeä osa useimpia ohjelmointikieliä. Gleamissa käytetään Erlangin rakentamaa regex-kirjastoa.
+## Deep Dive | Syvä Sukellus
+Merkkijonoista kaavojen mukaista dataa poistettiin jo ennen moderneja ohjelmointikieliä. Gleamissa, joka on tyypitetty ja toiminnallinen kieli, voimme käyttää `string.replace` funktiota poistamaan kaavojen mukaisia merkkejä tehokkaasti ja luotettavasti.
 
-Vaihtoehtoiseen tapaan kuuluvat string-menetelmät, kuten `replace` tai `remove`. Kuitenkin, pattern matching on joustavampi ja tehokkaampi erilaisten ja monimutkaisten kuvioasettelujen käytössä. 
+Vaihtoehtoisena menetelmänä voidaan käyttää säännöllisiä lausekkeita, jos tarvitaan enemmän monimutkaisia kaavoja. Toisin kuin jotkut muut kielet, kuten JavaScript tai Python, Gleam tarjoaa sisäänrakennetun `string` -moduulin ilman, että olisi tarvetta ylimääräisille kirjastoille.
 
-Teknisesti, pattern matching toimii vertaamalla merkkijonoja säännölliseen ilmaisuun. Käyttämällä regex-kirjastoa ja regex.replace-metodia, voit poistaa kuviota vastaavat merkit.
+Tärkeää on huomioida, että aina kun manipuloidaan merkkijonoja, erityisesti suuria datamääriä, suorituskyky voi olla huolenaihe. Gleam on suunniteltu olemaan tehokas, mutta algoritmin tehokkuuteen vaikuttaa kaavan monimutkaisuus ja tekstin pituus.
 
-## Katso myös:
-
-* Regular Expressions guide: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-* Erlang Regex library: [https://erlang.org/doc/man/re.html](https://erlang.org/doc/man/re.html)
+## See Also | Katso Myös
+- A Gleam language introduction: [Gleam introduction](https://gleam.run/book/tour/)
+- Regular expression basics for text pattern matching: [Regular Expressions](https://www.regular-expressions.info/)

@@ -1,6 +1,7 @@
 ---
 title:                "Читання аргументів командного рядка"
-html_title:           "Arduino: Читання аргументів командного рядка"
+date:                  2024-01-20T17:55:34.179201-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Читання аргументів командного рядка"
 programming_language: "C#"
 category:             "C#"
@@ -10,40 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що та Чому?)
+Reading command line arguments means grabbing the extra bits of data you pass to a program when you start it in a console. Programmers do it to let users tailor the program's behavior without changing the code.
 
-Считування аргументів командного рядка це процес, де програма отримує дані прямо при старті з командного рядка. Програмісти це роблять для підготовки програмного забезпечення до гнучкого використання, щоб налаштувати його поведінку або вхідні дані.
-
-## Як це робити:
+## How to: (Як це зробити:)
+Here's a simple code snippet for grabbing command line arguments in C#. Compile, run it via the console with some arguments, and see what happens.
 
 ```C#
-static void Main(string[] args)
+using System;
+
+class Program
 {
-    Console.WriteLine("Arg Count: " + args.Length);
-    for (int i = 0; i < args.Length; i++)
+    static void Main(string[] args)
     {
-        Console.WriteLine("Arg[" + i + "]: " + args[i]);
+        Console.WriteLine("Arguments count: " + args.Length);
+        for (int i = 0; i < args.Length; i++)
+        {
+            Console.WriteLine($"Argument[{i}]: {args[i]}");
+        }
     }
 }
 ```
 
-Якщо ви спробуєте запустити цю програму з командного рядка (наприклад, `program.exe arg1 arg2 arg3`), вона виведе:
+If you run `myapp.exe arg1 arg2 arg3`, expect output like this:
 
-```C#
-Arg Count: 3
-Arg[0]: arg1
-Arg[1]: arg2
-Arg[2]: arg3
+```
+Arguments count: 3
+Argument[0]: arg1
+Argument[1]: arg2
+Argument[2]: arg3
 ```
 
-## Поглиблений погляд
+## Deep Dive (Поглиблений Розділ):
+Historically, command line arguments stem from the early days of computing when GUIs were a luxury. They're all about efficiency; why click through dialogs when a simple text command does the trick?
 
-Спочатку, считування аргументів командного рядка було основним способом, щоб програма могла взаємодіяти з користувачем або іншими програмами. Цей метод використовувався в Unix-like системах.
+Alternatives exist, like reading from a config file or a database, but command line arguments are unbeatable for simplicity. Sometimes you'll use libraries like CommandLineParser for fancier argument parsing.
 
-Як альтернативу, можна використовувати конфгураційні файли або GUI, але вони не надають такої гнучкості для автоматизації.
+The `Main` method's `args` parameter is an array of strings, each element holding an argument. In .NET 5 and onward, you can also use top-level statements, making things even more succinct, though the principle remains the same.
 
-У C#, аргументи командного рядка передаються в метод `Main()` як масив рядків, де кожний елемент масиву - це віддільний аргумент.
-
-## Скористайтесь також
-
-1. Документація Microsoft з аргументами командного рядка: [https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/)
+## See Also (Дивіться також):
+- [Official Microsoft Docs on Command-Line Args](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/)
+- [.NET Core CommandLineParser Library](https://github.com/commandlineparser/commandline)
+- [Stack Overflow: How to parse command line arguments](https://stackoverflow.com/questions/491595/best-way-to-parse-command-line-arguments-in-c)

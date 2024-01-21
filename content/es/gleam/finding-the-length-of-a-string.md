@@ -1,7 +1,8 @@
 ---
-title:                "Encontrando la longitud de una cadena"
-html_title:           "Arduino: Encontrando la longitud de una cadena"
-simple_title:         "Encontrando la longitud de una cadena"
+title:                "Calculando la longitud de una cadena"
+date:                  2024-01-20T17:47:23.522063-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Calculando la longitud de una cadena"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,38 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
-
-Encontrar la longitud de una cadena ('string') significa contar cuántos caracteres tiene la cadena. Los programadores lo hacen para manipular datos y controlar el flujo de un programa, por ejemplo, validar la entrada del usuario.
+## Qué y Por Qué?
+Encontrar la longitud de un string significa saber cuántos caracteres contiene. Los programadores lo hacen para validar entradas, recorrer strings o para operaciones de formateo.
 
 ## Cómo hacerlo:
-
-En Gleam, podemos usar la función `size` para encontrar la longitud de una cadena. Aquí está el código y la salida esperada:
-
 ```gleam
-import gleam/string 
-
 fn main() {
-    let cadena = "Hola Mundo"
-    string.size(cadena)
+  let saludo = "¡Hola, Mundo!"
+  let longitud = string.length(saludo)
+  io.println(longitud) // Imprime: 13
 }
-// Output: 10
 ```
+El código usa la función `string.length`, que te da el número exacto de caracteres del string.
 
-En este caso, "Hola Mundo" tiene 10 caracteres, por lo que la salida será 10.
+## Profundización
+Antes, en otros lenguajes, medir strings podía ser complicado por cómo almacenaban los caracteres (piensa en C con los terminadores nulos). En Gleam, como en muchos lenguajes modernos, contar la longitud de un string es directo y maneja Unicode correctamente, evitando malentendidos con caracteres que puedan ocupar más de un byte.
 
-## Análisis Detallado:
+Alternativas a `string.length` podrían incluir funciones que recorren el string y cuentan caracteres, pero aparte de ser innecesario en Gleam, también serían menos eficientes.
 
-Históricamente, la funcion `size` se utiliza en muchos lenguajes de programación, como Gleam. Este puede variar en nombre y funcionalidad, pero la idea básica es la misma: contar caracteres en una cadena. 
+En cuanto a la implementación, la función `string.length` tipicamente cuenta los "code points" en el string, que es una representación más acertada para textos Unicode.
 
-Alternativa a `size`, podríamos escribir nuestra propia función para calcular la longitud de una cadena. Sin embargo, `size` es más eficiente ya que está optimizado en el nivel del lenguaje de programación.
-
-La implementación de `size` en Gleam simplemente recorre la cadena y cuenta cada carácter. Tenga en cuenta que algunos caracteres, como emojis, se consideran un solo carácter a pesar de que pueden consistir en más de un byte.
-
-## Ver También:
-
-Para más información sobre cadenas en Gleam, puedes visitar los siguientes enlaces:
-
-2. [Gleam Programming Language Overview](https://gleam.run/)
-
-Recuerda que la programación es un viaje de aprendizaje constante. ¡No tengas miedo de experimentar con nuevas funciones y enfoques!
+## Ver También
+- Documentación oficial de Gleam en strings: [Gleam String Docs](https://gleam.run/book/tour/strings.html)
+- Guía Unicode para entender caracteres en strings: [Unicode String Guide](http://unicode.org/standard/principles.html)

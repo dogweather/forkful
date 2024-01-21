@@ -1,7 +1,8 @@
 ---
-title:                "Надсилання http-запиту з базовою аутентифікацією"
-html_title:           "Arduino: Надсилання http-запиту з базовою аутентифікацією"
-simple_title:         "Надсилання http-запиту з базовою аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+date:                  2024-01-20T18:00:58.993152-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,48 +11,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та Навіщо?
-Відправка HTTP-запиту з базовою автентифікацією – це процес відправки інформації на сервер із верифікацією отримувача. Програмісти використовують це для забезпечення того, що дані спілкуються тільки з хто має на це право.
+## Що і чому?
+Спрощено кажучи, відправлення HTTP запиту з базовою автентифікацією - це процес використання імені користувача та паролю для доступу до захищеного ресурсу. Програмісти роблять це, щоб забезпечити безпечний обмін даними між пристроєм та сервером.
 
-## Як це зробити:
-Ось простий приклад коду для Arduino, який відправляє HTTP-запит з базовою автентифікацією.
+## Як робити:
+Ось приклад коду для відправлення HTTP запиту з Arduino з використанням базової автентифікації:
+
 ```Arduino
-#include <ArduinoHttpClient.h>
-#include <WiFi101.h>
+#include <ESP8266WiFi.h>
+#include <Base64.h>
 
-char ssid[] = "your network";     
-char pass[] = "secret password";
+const char* ssid = "YOUR_WIFI_SSID";
+const char* password = "YOUR_WIFI_PASSWORD";
+const char* host = "your.server.com";
+const int httpPort = 80;
 
-int status = WL_IDLE_STATUS;
-WiFiClient wifiClient;             
-HttpClient client = HttpClient(wifiClient, serverAddress, serverPort);
+// Замініть на свої облікові дані
+const char* httpUsername = "admin";
+const char* httpPassword = "admin";
 
 void setup() {
-    WiFi.begin(ssid, pass);
-    while (WiFi.status() != WL_CONNECTED) {
-        delay(1000);
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.println("Connecting to WiFi...");
+  }
+
+  Serial.println("Connected to WiFi");
+  // Створення автентифікації у вигляді base64
+  String authHeader = "Basic " + base64::encode(String(httpUsername) + ":" + String(httpPassword));
+
+  // Підключення до сервера
+  WiFiClient client;
+  if (!client.connect(host, httpPort)) {
+    Serial.println("Connection failed");
+    return;
+  }
+
+  // Відправлення HTTP запиту
+  client.println("GET /protected/resource HTTP/1.1");
+  client.println("Host: " + String(host));
+  client.println("Authorization: " + authHeader);
+  client.println("Connection: close");
+  client.println();
+
+  while (client.connected()) {
+    String line = client.readStringUntil('\n');
+    if (line == "\r") {
+      Serial.println("Headers received, body started");
+      break;
     }
+  }
+
+  // Читання відповіді сервера
+  String serverResponse = client.readString();
+  Serial.println("Server response: ");
+  Serial.println(serverResponse);
 }
 
 void loop() {
-    client.beginRequest();
-    client.post("/your/endpoint/here");
-    client.sendBasicAuth("username", "password");
-    client.endRequest();
-    delay(10000);
+  // nothing here
 }
 ```
 
-Тут ми встановлюємо WiFi-з'єднання, створюємо клієнтський об'єкт HttpClient і відправляємо запит кожні 10 секунд.
+## Поглиблено:
+Відправлення запитів з базовою автентифікацією коріннями сягає донапінтернетової епохи, коли користувачів потрібно було аутентифікувати простим і безпечним шляхом. Хоча базова автентифікація не є найбезпечнішим методом (адже облікові дані кодуються у вигляді Base64, що легко розшифровується), вона проста у використанні та підходить для прототипів та проектів з обмеженим ризиком. Альтернативами є OAuth, токени API та інше. Специфічно в контексті Arduino, важливо зважати на обмежений ресурс пристрою, коли вибираєте метод автентифікації.
 
-
-## Поглиблений Огляд:
-Основна автентифікація HTTP виникла на зарі вебу, коли було потрібне просте та легко впроваджуване рішення для захисту ресурсів. Втім, через недоліки з безпекою, багато веб-сервісів переходять на більш безпечні форми автентифікації, наприклад, OAuth2.
-
-Як альтернатива, ви також можете використати HTTPS, який об'єднує HTTP і SSL/TLS протоколи для захищеного з'єднання.
-
-При відправленні HTTP-запиту з базовою автентифікацією, ваші обчислювальні дані (логіни і паролі) кодуються в Base64 без шифрування, що робить їх вразливими для перехоплення.
-
-## Дивіться Також:
-1. [Аутентифікація HTTP на Arduino](https://www.arduino.cc/en/Tutorial/LibraryExamples/HttpClient)
-3. [Base64 шифрування на Arduino](https://create.arduino.cc/projecthub/arjun/encoding-decoding-base64-strings-with-arduino-4fad9e)
+## Дивіться також:
+- [ESP8266WiFi documentation](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html) - документація по бібліотеці, яку ми використовуємо для підключення до WiFi.
+- [Base64 Arduino Library](https://www.arduino.cc/reference/en/libraries/base64) - бібліотека для кодування та декодування даних у форматі Base64.
+- [HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication) - ресурс для заглиблення у принципи HTTP автентифікації.

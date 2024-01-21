@@ -1,6 +1,7 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Lua: Tekstitiedoston lukeminen"
+date:                  2024-01-20T17:54:40.917056-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,15 +11,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+Tekstitiedoston lukeminen tarkoittaa tiedon hakua tekstipohjaisesta tiedostosta. Ohjelmoijat tekevät tätä esimerkiksi datan analysoinnin, konfiguraatioiden hallinnan tai käyttäjien syötteiden käsittelyn vuoksi.
 
-Luemme tekstitiedostoja ohjelmassa, jotta voimme käsitellä tiedoston sisältämää tietoa tehtävämme mukaan. Tämä on välttämätöntä datan käsittelyssä, esimerkiksi koneoppimisessa tai datatutkimuksissa.
+## How to:
+Lue tiedosto `readText()`-funktioilla:
 
-## Miten näin:
-
-Kotlin tarjoaa natiivin tuen tiedostojen lukemiselle `readText()`-funktion avulla. Katso esimerkki alla:
-
-```kotlin
+```Kotlin
 import java.io.File
 
 fun main() {
@@ -26,32 +25,29 @@ fun main() {
     println(content)
 }
 ```
-Jos tiedostossamme `example.txt` on teksti "Hei Suomi!", ohjelma tulostaa:
 
-```
-Hei Suomi!
-```
+Tai turvallisempi tapa `useLines()`-funktiolla, joka sulkee tiedoston automaattisesti:
 
-## Syvällisemmin: 
-
-Historiallisesti Java-koodia käytettiin tiedostojen käsittelyyn, mutta Kotlin tarjoaa paljon puhtaamman ja seän tiiviimmän syntaksin. Voit myös valita lukemisen riveittäin `readLines()`-funktiolla:
-
-```kotlin
+```Kotlin
 import java.io.File
 
 fun main() {
-    val lines = File("example.txt").readLines()
-    lines.forEach { line -> println(line) }
+    File("example.txt").useLines { lines ->
+        lines.forEach { println(it) }
+    }
 }
 ```
 
-Jos tiedostomme sisältää useita rivejä, jokainen rivi tulostetaan omalle rivilleen.
+Esimerkkitiedoston sisältö tulostuu näin:
 
-Vaihtoehtoisesti, voit käyttää `BufferedReader`-luokkaa suurten tiedostojen lukemiseen, jotta vältätäisimme muistiongelmat:
-```kotlin
-val bufferedReader: BufferedReader = File("largefile.txt").bufferedReader()
+```
+Hei maailma!
+Tämä on esimerkkitiedosto.
 ```
 
-## Katso myös: 
+## Deep Dive
+Tekstitiedoston lukeminen on perustoiminta ohjelmoinnissa, alkaen C-kielen `fopen`- ja `fgets`-funktioista. Kotlin tarjoaa useita helppokäyttöisiä funktioita jotka ovat turvallisia ja suorituskykyisiä. `readText()` on yksinkertainen tapa lukea pieni tiedosto, mutta ei sovi suurille tiedostoille muistinrajoituksien vuoksi. `useLines()` taas käsittelee joka rivin sitä mukaa kun lukee, säästäen muistia.
 
-Kotlinin dokumentoinnista löytyy lisää tietoa tiedostojen käsittelystä tässä linkissä: [Kotlin File Reading](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/read-text.html). Jos haluat lukea suurista tiedostoista optimoidusti, kannattaa tutustua tämän linkin opastukseen: [Reading Large Files Efficiently](https://www.baeldung.com/java-reading-large-files).
+## See Also
+- Kotlin API:n referenssi: [Kotlin API Reference](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/)
+- Virallinen Kotlin-oppaita ja -tutoriaaleja: [Kotlin Tutorials](https://kotlinlang.org/docs/tutorials/)

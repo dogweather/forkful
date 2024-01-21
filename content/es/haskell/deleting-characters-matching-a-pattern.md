@@ -1,6 +1,7 @@
 ---
 title:                "Eliminando caracteres que coinciden con un patrón"
-html_title:           "Elixir: Eliminando caracteres que coinciden con un patrón"
+date:                  2024-01-20T17:42:17.063324-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,54 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
 
-Eliminar caracteres que coinciden con un patrón es el proceso de buscar y quitar caracteres específicos de una cadena. Los programadores realizan esta tarea para limpiar los datos, mejorar el formato o filtrar información innecesaria.
+Eliminar caracteres que coinciden con un patrón es, simplemente, filtrar nuestro texto para quitar ciertas secuencias de caracteres. Los programadores hacen esto para limpiar datos, preparar cadenas para procesamiento o eliminar información innecesaria.
 
-## Cómo:
-
-En Haskell, utilizamos la función `filter` junto con las funciones `notElem` y `delete` del módulo `Data.List` para eliminar caracteres que coinciden con un patrón. Aquí tienes un ejemplo:
+## Cómo hacerlo:
 
 ```Haskell
-import Data.List
+import Data.Char (isSpace)
+import Text.Regex (mkRegex, subRegex)
 
-eliminarCaracteres :: String -> String -> String
-eliminarCaracteres patrones texto = filter (`notElem` patrones) texto
-```
+-- Elimina todos los dígitos de una cadena
+eliminarDigitos :: String -> String
+eliminarDigitos = filter (not . isDigit)
 
-Y así es como se ve en acción:
+-- Usa expresiones regulares para eliminar cualquier "a" o "e"
+eliminarAe :: String -> String
+eliminarAe = subRegex (mkRegex "[ae]") "_"
 
-```Haskell
+-- Ejemplos
+main :: IO ()
 main = do
-    let texto = "Desarrollo de Software en Haskell"
-    let patrones = "aeiouAEIOU"
-    putStrLn (eliminarCaracteres patrones texto)
+    putStrLn $ eliminarDigitos "H4sk3ll 3s f4nt4st1c0"
+    putStrLn $ eliminarAe "Haskell es fantastico"
+
+-- Salida:
+-- Hskll s fntstc
+-- H_sk_ll _s f_nt_stico
 ```
 
-La salida sería:
+## Profundización
 
-```Haskell
-"Dsrll d Sftwr n Hskll"
-```
+La eliminación de caracteres por coincidencia de patrones no es algo nuevo. Desde los primeros días de Unix, herramientas como `sed` o lenguajes como Perl se especializaban en este tipo de tareas gracias a las expresiones regulares. En Haskell, utilizamos bibliotecas como `Text.Regex` para manipulaciones de texto robustas y expresivas. 
 
-## Inmersión profunda
+Las alternativas en Haskell incluyen usar funciones como `filter` para casos sencillos o incluso escribir parsers más complejos con herramientas como `parsec` o `megaparsec` cuando las necesidades son más específicas. 
 
-Históricamente, el concepto de 'patrones de coincidencia' tiene sus raíces en el mundo de las expresiones regulares, con uso muy frecuente en lenguajes de programación como Perl y Ruby.
+La implementación puede variar desde funciones puras hasta monadas de entrada/salida (IO) dependiendo de si los datos se procesan en tiempo de ejecución o se leen desde un archivo, por ejemplo.
 
-Alternativamente, puedes usar una comprensión de lista para conseguir el mismo resultado, aunque la legibilidad del código puede ser debatible:
+## Ver También
 
-```Haskell
-eliminarCaracteres :: String -> String -> String
-eliminarCaracteres patrones texto = [ c | c <- texto, c `notElem` patrones ]
-```
-
-La implementación de nuestra función es directa, usamos funciones de alto orden que aceptan funciones como argumentos. De esta manera, `filter` acepta la función `notElem`, la cual comprueba que un elemento no está contenido en la lista `patrones`.
-
-## Ver también
-
-Aquí tienes algunos recursos útiles para profundizar:
-
-* [Introducción a Haskell](http://learnyouahaskell.com/chapters)
-* [Documentación de la Biblioteca estándar de Haskell](https://www.haskell.org/onlinereport/standard-prelude.html)
-* [Expresiones Regulares en Haskell](https://wiki.haskell.org/Regular_expressions)
-* [El módulo Data.List de Haskell](http://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html)
+- Paquete `regex-base`: [Hackage - regex-base](https://hackage.haskell.org/package/regex-base)
+- Paquete `regex-posix`, que permite expresiones regulares POSIX: [Hackage - regex-posix](https://hackage.haskell.org/package/regex-posix)
+- Documentación de Haskell sobre listas y funciones como `filter`: [Learn You a Haskell for Great Good! - Starting Out](http://learnyouahaskell.com/starting-out#texas-ranges)
+- Una introducción más exhaustiva a `parsec`: [Hackage - parsec](https://hackage.haskell.org/package/parsec)

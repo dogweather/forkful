@@ -1,7 +1,8 @@
 ---
-title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
-simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+date:                  2024-01-20T18:02:56.304409-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,42 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Lähetämme HTTP-pyynnön perustodennuksella kun haluamme käyttäjätietojen turvaamisen webservissä istunnon aikana. Ohjelmoijat tekevät tämän, koska se on yleinen tapa suojata käyttäjän tietoja verkkopalveluissa.
+## What & Why? (Mikä ja Miksi?)
+HTTP-pyyntö perusautentikaatiolla on tapa lähettää käyttäjänimi ja salasana verkon yli turvallisesti. Ohjelmoijat käyttävät tätä tapaa, kun heidän täytyy varmistaa käyttäjän oikeudet palvelimiin tai API:hin pääsyssä.
 
-## Kuinka:
-Tässä on esimerkkikoodi, jolla lähetetään HTTP-pyyntö perustodennuksella Swiftissä. Siinä asetetaan käyttäjänimi ja salasana koodattuna `Authorization`-otsikkoon.
+## How to: (Kuinka tehdä:)
+Swiftissä perusautentikaatio tapahtuu lisäämällä base64-koodattu "Authorization" header HTTP-pyyntöön. Tässä yksinkertainen esimerkki.
 
 ```Swift
 import Foundation
 
-let username = "kayttajatunnus"
+// Käyttäjänimi ja salasana
+let username = "kayttaja"
 let password = "salasana"
 
-let loginString = String(format: "%@:%@", username, password)
-let loginData = loginString.data(using: String.Encoding.utf8)!
-let base64LoginString = loginData.base64EncodedString()
+// Luodaan autentikaatio-merkkijono
+if let loginData = "\(username):\(password)".data(using: .utf8) {
+    let base64LoginString = loginData.base64EncodedString()
 
-var request = URLRequest(url: URL(string: "https://www.esimerkki.fi")!)
-request.httpMethod = "POST"
-request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+    // Luodaan url ja url-pyyntö
+    if let url = URL(string: "https://example.com/api/data") {
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
 
-let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-    // tässä käsitellään vastaus
+        // Lähetetään pyyntö
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            // Käsitellään vastaus
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "Ei vastausta")
+                return
+            }
+
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode == 200 {
+                // Onnistunut pyyntö
+                if let responseString = String(data: data, encoding: .utf8) {
+                    print("Vastaus: \(responseString)")
+                }
+            } else {
+                // Virhekäsittely
+                print("HTTP Status: \((response as? HTTPURLResponse)?.statusCode ?? 0)")
+            }
+        }
+        task.resume()
+    }
 }
-
-task.resume()
 ```
-## Syväsukellus
-HTTP Basic Authentication on menetelmä, jossa käyttäjänimi ja salasana lähetetään HTTP-otsikoissa. Se on perinteisesti yksi yleisimmistä verkkotodennustapoja, mutta se ei ole turvallisin. Nykyään voidaan käyttää muitakin menetelmiä, kuten digitaalista allekirjoitusta tai OAuth-tokenien käyttöä.
 
-Basic Authentication puutteellisuuksiin kuuluu, että jos verkkoistunto on salattu, käyttäjänimeä ja salasanaa ei lähetetä suojaamattomana tekstinä. Tämä tarkoittaa, että salauksen rikkoutuminen voi paljastaa käyttäjätietoja.
+## Deep Dive (Syväsukellus)
+Perusautentikaation käyttö HTTP-pyynnöissä juontaa juurensa webin alkuvaiheisiin. Se on yksinkertainen mekanismi, mutta ei turvallisin tapa lähettää arkaluonteisia tietoja, sillä base64-koodaus ei salaa tietoja. Moderni suositus käyttää HTTPS-protokollaa turvatakseen tietoja. Vaihtoehtoisia menetelmiä ovat OAuth ja API-avaimet, jotka tarjoavat lisää turvallisuutta.
 
-Jos tarvitset lisää suojautumista, harkitse jotain näistä vaihtoehdoista, mutta muista, että ne voivat olla enemmän aikaa vieviä toteuttaa.
+Kun käytät perusautentikaatiota, tärkeää on muistaa:
 
-## Katso myös
-[ATP:n artikkeli Basic Authenticationista](https://linktoarticle)
+1. Käytä aina HTTPS-yhteyttä, estääksesi tietojen kaappausta.
+2. Säilytä käyttäjänimi ja salasana turvallisesti, esimerkiksi Keychainissa.
+3. Ota huomioon palvelimen asettamat rajoitukset autentikaatiomerkkijonojen pituudelle.
 
-[Stack Overflow: How to add basic authentication parameters in HTTP Header in Swift](https://stackoverflow.com/questions/24379601/how-to-add-basic-authentication-parameters-in-http-header-in-swift)
-
-[Apple: URL Loading System in Swift](https://developer.apple.com/documentation/foundation/url_loading_system)
+## See Also (Lisätietoja)
+- [Apple Developer Documentation: URL Loading System](https://developer.apple.com/documentation/foundation/url_loading_system)
+- [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+- [HTTP Authentication: Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)
+- [OWASP Guide to Authentication](https://owasp.org/www-project-cheat-sheets/cheatsheets/Authentication_Cheat_Sheet.html)

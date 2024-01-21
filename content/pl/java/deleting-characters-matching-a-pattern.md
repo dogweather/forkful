@@ -1,6 +1,7 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "C: Usuwanie znaków pasujących do wzorca"
+date:                  2024-01-20T17:42:19.378194-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Java"
 category:             "Java"
@@ -10,37 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co i Dlaczego?
+Usuwanie znaków pasujących do wzorca to filtracja stringów, żeby pasowały do naszych danych lub były praktyczne. Robimy to, by oczyścić tekst z niepotrzebnych treści, jak znaki specjalne czy białe znaki.
 
-Kasowanie znaków pasujących do wzorca to operacja, która pozwala usunąć konkretne znaki z ciągu znaków (stringa). Programiści robią to, aby uporządkować dane wejściowe lub usunąć niepotrzebne informacje.
+## Jak to zrobić:
+```java
+import java.util.regex.Pattern;
 
-## Jak to zrobić?
-
-Aby usunąć konkretne znaki pasujące do wzorca, możemy użyć metody `replaceAll()` z klasy String w Java.
-
-```Java
-public class Main {
+public class PatternDeletionDemo {
     public static void main(String[] args) {
-        String text = "To jest przykładowy tekst do usunięcia.";
-        // usuwamy wszystkie wystąpienia litery 'e'
-        String modifiedText = text.replaceAll("e", "");
-        System.out.println(modifiedText);
+        String text = "Jabłka, gruszki & 33 banany";
+        String pattern = "[^\\w\\s]+"; // Wzorzec do usunięcia wszystkiego oprócz liter, cyfr i białych znaków
+        
+        String cleanedText = text.replaceAll(pattern, "");
+        System.out.println(cleanedText); // Wyświetla: Jabłka gruszki  33 banany
     }
 }
 ```
 
-Wynik:
+## Deep Dive
+Usuwanie znaków pasujących do wzorca sięga początków programowania, gdzie oszczędność pamięci była kluczowa. Język Java ułatwia to zadanie dzięki klasie `Pattern` z pakietu `java.util.regex`, która implementuje wyrażenia regularne. Alternatywy to inne języki jak Perl, znany z potężnego systemu wyrażeń regularnych. Dodatkowo, mamy metody jak `String.replace()` dla prostych podmian bez wzorców. Pamiętajmy, że kompilacja wzorca może być kosztowna. W takim przypadku użycie `Pattern.compile()` do wielokrotnego wykorzystania wzorca jest efektywniejsze.
 
-```bash
-To jst przykładowy tkst do usunięcia.
-```
-
-## Pogłębione informacje
-
-Operacja usuwania znaków pasujących do wzorca pojawiła się już we wczesnych językach programowania i jest ona często wykorzystywana do czyszczenia danych. Alternatywami dla metody `replaceAll()` mogą być metody `replace()` i `replaceFirst()`, które również pozwalają na usuwanie konkretnej sekwencji znaków. W kontekście implementacji, metoda `replaceAll()` w Javie korzysta z mechanizmu wyrażeń regularnych, co umożliwia usuwanie bardziej skomplikowanych wzorców znaków.
-
-## Zobacz także
-
-1. Dokumentacja klasy String w Java: https://docs.oracle.com/javase/10/docs/api/java/lang/String.html
-2. Przewodnik po wyrażeniach regularnych w Java: https://www.vogella.com/tutorials/JavaRegularExpressions/article.html
-3. Powiązane pytanie na StackOverFlow: https://stackoverflow.com/questions/8726648/remove-specific-char-from-a-string-in-java
+## Zobacz też
+- Dokumentacja klasy `Pattern` w Java: [https://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html](https://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html)
+- Poradnik Oracle o wyrażeniach regularnych: [https://docs.oracle.com/javase/tutorial/essential/regex/](https://docs.oracle.com/javase/tutorial/essential/regex/)
+- Strona do testowania wyrażeń regularnych: [https://regexr.com/](https://regexr.com/)

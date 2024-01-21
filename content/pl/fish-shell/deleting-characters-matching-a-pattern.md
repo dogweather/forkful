@@ -1,6 +1,7 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "C: Usuwanie znaków pasujących do wzorca"
+date:                  2024-01-20T17:41:59.426400-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,30 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Usunięcie znaków zgodnych z wzorcem to metoda pozbycia się określonego typu danych z ciągu. Programiści robią to, aby uporządkować dane, na przykład kiedy chcą usunąć niepotrzebne przecinki lub spacje.
+Usuwanie znaków pasujących do wzorca to sposób na pozbycie się niechcianych fragmentów tekstu — szybkie cięcie w danych. Programiści robią to, gdy chcą oczyścić dane wejściowe, uszczuplić logi lub szykować dane do dalszego przetwarzania.
 
-## Jak to zrobić?
-Podstawowym sposobem usunięcia znaków zgodnych z wzorcem w Fish Shell jest użycie komendy `string replace`. Na przykład, jeśli chcemy usunąć wszystkie wystąpienia znaku '#' z napisu, użylibyśmy poniższego kodu:
-
-```fish
-set string '#To jest przykładowy # łańcuch.'
-set new_string (string replace -r -a '#' '' -- $string)
-echo $new_string
+## Jak to zrobić:
 ```
-To polecenie zmienia pierwotny ciąg, zamieniając wszystkie znaki '#' na pusty ciąg, co skutkuje usunięciem ich. Wyjście z tego kodu będzie wyglądało tak:
+Fish Shell
+# Usuń wszystkie wystąpienia litery 'a' z tekstu
+echo "banana" | string replace -a "a" ""
+# Wynik: bnn
 
-```fish
-To jest przykładowy  łańcuch.
+# Usuń cyfry z ciągu znaków
+echo "f1sh 1s c00l" | string replace -ar "[0-9]" ""
+# Wynik: fsh s cl
+
+# Usuń wszystko od pierwszego wystąpienia 't' do końca
+echo "important text to remove" | string match -r -- ".*?(t.*)"
+# Wynik: important 
 ```
 
-## Głębsze spojrzenie
-Pożądanie usunięcia znaków zgodnych z wzorcem nie jest niczym nowym w programowaniu. Wiele starszych języków programowania, takich jak sed i awk, już to miało. Fish Shell nabiera na popularności dzięki łatwości z jaką pozwala na wykonywanie tego typu operacji. Alternatywą dla metody `string replace` jest użycie komend `tr` or `sed` w połączeniu z `pipe`.
+## Wnikliwe spojrzenie:
+Fish Shell, który zadebiutował w 2005 roku, jest wygodnym interpreterem z automatycznym uzupełnianiem i kolorowym wyświetlaniem, skupiającym się na użyteczności. Alternatywą jest użycie tradycyjnego Bash czy Zsh z `sed` lub `awk`, ale Fish z jego `string` jest prostrzy w obsłudze. Podczas usuwania znaków, `string replace` oferuje elastyczność dzięki użyciu regexów. 
 
-Pamiętaj, że "string replace" w Fish Shell został zaimplementowany w taki sposób, aby elastycznie obsługiwać dopasowanie wzorców. Możesz użyć wyrażeń regularnych do dopasowania bardziej złożonych wzorców i usuwania ich.
-
-## Zobacz również
-Polecamy przejrzenie oficjalnej dokumentacji Fish Shell do zapoznania się z innymi metodami manipulacji ciągami:
-
-- Dokumentacja Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- Wprowadzenie do języka Fish: [https://fishshell.com/docs/current/tutorial.html](https://fishshell.com/docs/current/tutorial.html)
-- Rosetta Code: Przykłady kodu Fish Shell: [https://rosettacode.org/wiki/Category:Fish](https://rosettacode.org/wiki/Category:Fish)
+## Zobacz również:
+- Oficjalna dokumentacja `string`: https://fishshell.com/docs/current/cmds/string.html
+- Tutorial regex w Fish: https://fishshell.com/docs/current/tutorial.html#tut_regexes
+- Porównanie powłok: https://fishshell.com/docs/current/design.html

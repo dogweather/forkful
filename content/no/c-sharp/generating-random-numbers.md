@@ -1,7 +1,8 @@
 ---
-title:                "Generere tilfeldige tall"
-html_title:           "Arduino: Generere tilfeldige tall"
-simple_title:         "Generere tilfeldige tall"
+title:                "Generering av tilfeldige tall"
+date:                  2024-01-20T17:48:44.191510-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Generering av tilfeldige tall"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
@@ -10,43 +11,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Generer tilfeldige tall i C# 
+## Hva & Hvorfor?
+Å generere tilfeldige tall er å lage nummer som ikke har noe forutsigbart mønster. Programmere bruker dette for alt fra spill til sikkerhet, hvor upålitelighet er viktig.
 
-## Hva og hvorfor?
-
-Å generere tilfeldige tall betyr at man lager et tall som ikke kan forutsies rasjonalet, i en viss definert rekkevidde. Dette er viktig for mange aspekter i programmering, slike som spill, sikkerhet, håndtering av data, og mye mer.
-
-## Slik gjør du:
-
-Her er et enkelt eksempel på hvordan du kan generere tilfeldige tall i C#.
+## Hvordan:
+La oss kaste oss uti. For å generere et tilfeldig tall:
 
 ```C#
 using System;
 
-class Program
+public class RandomNumberGenerator
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        Random rand = new Random();
-        int tilfeldigTall = rand.Next(1, 100); // generer et tall mellom 1 og 100
-        Console.WriteLine(tilfeldigTall);
+        Random random = new Random();
+        int randomNumber = random.Next(1, 100); // fra 1 til 99
+        Console.WriteLine(randomNumber);
     }
 }
 ```
 
-Når du kjører dette programmet, vil det skrive ut et tilfeldig tall mellom 1 og 100 hver gang.
+Kjører du dette, får du et nytt tall mellom 1 og 99 hver gang.
 
+Det blir mer interessant hvis vi ønsker et desimaltall:
 
-## Dypdykk
+```C#
+double randomDouble = random.NextDouble(); // fra 0.0 til 1.0
+Console.WriteLine(randomDouble);
+```
 
-I tidligere versjoner av programmeringsspråk, var det mer komplisert å generere tilfeldige tall, og man måtte ofte bruke algoritmer som f.eks. Middle-square metoden. 
+Eller kanskje et tilfeldig tall i et større intervall? Slik gjør du det:
 
-I C# har vi klassen `Random` som brukes for å generere tilfeldige tall. Den genererer et pseudo-tilfeldige tall, det vil si at tallene ser tilfeldige ut, men vil følge samme rekkefølge hvis du bruker samme startverdi (eller seed).
+```C#
+int randomRange = random.Next(1000, 10000); // fra 1000 til 9999
+Console.WriteLine(randomRange);
+```
 
-Alternativt, hvis du trenger sikkerhetssensitive tilfeldige tall (som for eksempel ved generering av kryptografiske nøkler), bør du bruke klassen `RNGCryptoServiceProvider` istedenfor. Dette er en klasse som er laget for å generere tilfeldige tall som er sterke nok for kryptografi.
+## Dypdykk:
+Historisk sett har Ekte Tilfeldighet vært vanskelig å få til i programmering. Hva vi ofte kaller "tilfeldig" er egentlig "pseudotilfeldig", generert gjennom forutsigbare algoritmer. Men for de fleste bruksområder er pseudotilfeldighet godt nok.
 
-## Se også
+Alternativer? `System.Random` er fin for grunnleggende behov, men det er ikke kryptografisk sterkt. Hvis du trenger noe sikrere, se på `System.Security.Cryptography.RandomNumberGenerator`. Det er litt mer tungvint å bruke, men mye sikrere:
 
-For mer informasjon om generering av tilfeldige tall, kan du se på følgende ressurser:
-* [.NET API Dokumentasjon - Random](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0)
-* [.NET API Dokumentasjon - RNGCryptoServiceProvider](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0)
+```C#
+using System.Security.Cryptography;
+
+public class SecureRandomNumberGenerator
+{
+    static void Main(string[] args)
+    {
+        byte[] numbers = new byte[4];
+        using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
+        {
+            rng.GetBytes(numbers);
+            int secureRandomNumber = BitConverter.ToInt32(numbers, 0);
+            Console.WriteLine(secureRandomNumber);
+        }
+    }
+}
+```
+
+Implementasjonsdetaljer å merke seg – `System.Random` er ikke trådsikker. Hvis flere tråder trenger tilfeldige tall samtidig, bør du synkronisere tilgangen eller bruke en trådsikker tilnærming.
+
+## Se Også:
+- Microsoft Docs for [`Random`](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-6.0) klassen.
+- Microsoft Docs for [`RandomNumberGenerator`](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator?view=net-6.0) klassen for kryptografisk bruk.
+- En god forklaring på pseudotilfeldige tall vs. ekte tilfeldighet: [Random.org](https://www.random.org/randomness/).
+
+Glem ikke, hva "tilfeldig" betyr i din kode avhenger av bruksscenariet ditt. Velg smart!

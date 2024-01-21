@@ -1,6 +1,7 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "C++: הורדת דף אינטרנט"
+date:                  2024-01-20T17:44:20.114688-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,36 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-
-הורדת דף באינטרנט היא תהליך של שליפת קובץ HTML של דף אינטרנט. מתכנתים עושים את זה בדרך כלל כדי לנתח נתונים מהדף או לשמור עותק מקומי.
+כאשר אנחנו 'מורידים' (downloading) דף אינטרנט, אנו שולפים תוכן מאתר כלשהו ושומרים אותו לשימוש מקומי. מתכנתים עושים זאת כדי לעבד נתונים, לתפוס מידע חיוני, או ליצור גיבוי לנתונים.
 
 ## איך לעשות:
+קוד ב-JavaScript להורדת דף אינטרנט:
 
-```JavaScript
-// דוגמא ב-Javascript 
+```javascript
 const https = require('https');
 const fs = require('fs');
-const url = 'https://www.example.com';
 
-https.get(url, res => {
-  res.pipe(fs.createWriteStream('example.html'));
-});
+const downloadPage = (url, filename) => {
+  https.get(url, (response) => {
+    let data = '';
+    response.on('data', (chunk) => {
+      data += chunk;
+    });
+    response.on('end', () => {
+      fs.writeFile(filename, data, (error) => {
+        if (error) {
+          console.error('Error writing to file:', error);
+        } else {
+          console.log('Page downloaded to', filename);
+        }
+      });
+    });
+  }).on('error', (error) => {
+    console.error('Error downloading page:', error);
+  });
+};
+
+downloadPage('https://example.com', 'local_page.html');
 ```
-זה ישמור את הדף המתואר ב- 'https://www.example.com' לקובץ 'example.html' בספרייה הנוכחית.
 
-## צלילה עמוקה:
+פלט (Sample Output):
 
-### היסטוריה: 
-הורדת דפי אינטרנט הייתה חלק מתכנות המחשבים מאז ימי האינטרנט הראשונים.
+```
+Page downloaded to local_page.html
+```
 
-### אלטרנטיבות: 
-ישנן ספריות JavaScript אחרות, כמו `axios` ו-`request`, שיכולות להוריד דפים מהאינטרנט.
+## עיון בעומק
+הורדת דף אינטרנט היא חלק מהשגת נתונים ברשת, מושג שקיים מאז שהאינטרנט פוצל לשימוש רחב. בזמן ש-HTTP GET הוא השיטה הנפוצה לבצע זאת, ישנן שיטות נוספות כגון אמצעי של API או אף מנועי חיפוש מותאמים אישית. במקרה שלנו, שימוש במודול ה-'https' של Node.js הוא דרך יעילה וישירה. חשוב לזכור שהורדת תכנים צריכה להתבצע בהתאם למדיניות השימוש ותקנון האתר ממנו מורידים.
 
-### הרחבה: 
-ההבנה של מה שקורה מאחורי הקלעים (כמו שליחת בקשות HTTP וקבלת תגובות) חשובה כדי למנוע בעיות ולשמן את הריצה של הקוד.
-
-## ראה גם:
-
-- [Node.js הסברים](https://nodejs.org/api/https.html)
-- [MDN Web Docs - HTTP](https://developer.mozilla.org/he/docs/Web/HTTP)
-- [השוואת ביבליות Node.js HTTP Request](https://www.npmtrends.com/axios-vs-download-vs-request-vs-superagent)
+## למידע נוסף:
+- [Node.js Documentation for the HTTPS module](https://nodejs.org/api/https.html)
+- [MDN Web Docs on the Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)

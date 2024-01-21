@@ -1,7 +1,8 @@
 ---
-title:                "Eine Zeichenkette interpolieren"
-html_title:           "Arduino: Eine Zeichenkette interpolieren"
-simple_title:         "Eine Zeichenkette interpolieren"
+title:                "Zeichenketten interpolieren"
+date:                  2024-01-20T17:51:35.946663-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Zeichenketten interpolieren"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,35 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+String-Interpolation ermöglicht es, Variable und Ausdrücke innerhalb eines Strings einzufügen, um dynamische Textinhalte zu erzeugen. Programmierer nutzen das, um flexibel Daten in Strings für Ausgaben und Log-Messages zu integrieren.
 
-Die String-Interpolation in Rust ermöglicht es, Variablen direkt in Zeichenketten einzubetten. Sie macht den Code lesbarer und die Formatierungsaufgaben einfacher.
-
-## So geht's:
-
-Hier ist ein einfacher Code-Abschnitt, der zeigt, wie Sie in Rust String-Interpolation durchführen:
-
+## How to:
 ```Rust
-let name = "Fritz";
-let greeting = format!("Hallo, {}!", name);
-println!("{}", greeting);
+fn main() {
+    let planet = "Erde";
+    let population = 7_753_000_000;
+
+    // Direkte Interpolation mit format! Makro
+    let message = format!("Willkommen auf der {}, Bevölkerung: {}.", planet, population);
+    println!("{}", message);
+
+    // Interpolation mit Platzhaltern
+    println!("{} hat etwa {} Einwohner.", planet, population);
+}
+```
+Ausgabe:
+```
+Willkommen auf der Erde, Bevölkerung: 7753000000.
+Erde hat etwa 7753000000 Einwohner.
 ```
 
-Die Ausgabe wird sein: 
+## Deep Dive
+Die String-Interpolation in Rust wird hauptsächlich durch das `format!` Makro ermöglicht, ähnlich zu Sprachen wie Python oder Ruby. Rust benutzt jedoch keine eingebauten String-Methoden dafür. Historisch gesehen war Rust strenger, um zur Kompilierzeit sicherzustellen, dass die Typen übereinstimmen und die Ausführung sicher ist.
 
-```
-Hallo, Fritz!
-```
+Alternativen zur Interpolation sind String-Konkatenation mit dem `+` Operator oder dem `format!` ähnliche Makros wie `write!` oder `writeln!`, für Ausgaben direkt in `io::Write`-Traits.
 
-## Vertiefung
+In Rust erfolgt die Interpolation nicht direkt im String, da es keinen speziellen Syntax wie in anderen Sprachen gibt. Es ist eine sichere und kontrollierte Form, die Rust's Fokus auf Sicherheit und Performanz reflektiert.
 
-Erstens historischer Kontext: obwohl Rust eine relativ neue Sprache ist, wurde das Konzept der String-Interpolation von älteren Sprachen wie Perl und PHP übernommen. Es verbessert die Lesbarkeit des Codes massiv und erleichtert die Arbeit mit dynamischen Strings.
-
-Zweitens Alternativen: Rust bietet auch die Methode `push_str()` für das Anhängen von Strings und die Methode `+` für das Verknüpfen von Strings. Beide erfordern jedoch mehr Code und sind weniger lesbar als die String-Interpolation.
-
-Drittens Implementierungsdetails: Die Funktion `format!()` in Rust wird zur String-Interpolation verwendet. Sie funktioniert ähnlich wie `println!()`, gibt aber einen String zurück, anstatt ihn auszudrucken.
-
-## Weiterführende Links
-
-Einige hilfreiche Links zu diesem Thema:
-- Die offizielle [Rust Dokumentation](https://doc.rust-lang.org/stable/rust-by-example/std/str.html) über Zeichenketten.
-- Eine [StackOverflow-Diskussion](https://stackoverflow.com/questions/29483365/what-is-the-format-macro-in-rust) über die `format!()` Funktion in Rust.
+## See Also
+- Rust's format! syntax: https://doc.rust-lang.org/stable/std/fmt/
+- Rust by Example – Formatted print: https://doc.rust-lang.org/rust-by-example/hello/print.html
+- The Rust Programming Language – String Type: https://doc.rust-lang.org/book/ch08-02-strings.html

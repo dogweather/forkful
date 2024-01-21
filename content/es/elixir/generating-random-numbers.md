@@ -1,6 +1,7 @@
 ---
 title:                "Generando números aleatorios"
-html_title:           "Arduino: Generando números aleatorios"
+date:                  2024-01-20T17:48:48.862845-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generando números aleatorios"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,39 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Generar números aleatorios se trata de producir números sin un patrón predecible, esenciales para numerosas aplicaciones, como juegos y criptografía.
+## Qué & Por Qué?
+Generar números aleatorios es una forma de producir valores sin un patrón predecible. Los programamos para pruebas, simulaciones, juegos y todo lo que requiera elementos de incertidumbre.
 
-## ¿Cómo hacerlo?
-Aquí te muestro cómo generar un número aleatorio en Elixir (la versión actual), utilizando el módulo `:rand`.
-
-```elixir
-:rand.uniform() 
-```
-Esto genera un número aleatorio flotante entre 0.0 y 1.0. Si necesitas un número entero, puedes hacer esto:
+## Cómo:
+En Elixir, puedes generar números aleatorios con la función `Enum.random/1`. Vamos a ver cómo usarla.
 
 ```elixir
-:rand.uniform(100) 
+# Para obtener un número aleatorio entre 0 y 10:
+rand_num = Enum.random(0..10)
+IO.puts(rand_num)
 ```
-Esto te dará un número entero aleatorio entre 1 y 100. Ejemplo de la salida que genera este código:
+
+Sample output: `5` (Tu resultado puede variar)
+
+Ahora, si necesitas una semilla para la generación pseudoaleatoria, puedes usar `:rand.uniform/1`.
 
 ```elixir
-iex> :rand.uniform()
-0.5018473922908166
-
-iex> :rand.uniform(100)
-35
+# Primero, inicializa la semilla
+:rand.seed(:exs1024, {1234, 5678, 12345})
+# Luego, genera un número aleatorio entre 1 y 10
+rand_num = :rand.uniform(10)
+IO.puts(rand_num)
 ```
 
-## Análisis Profundo
+Sample output: `8` (El resultado puede cambiar si modificas la semilla)
 
-1. **Contexto histórico**: El módulo `:rand` en Erlang (y por lo tanto Elixir que se ejecuta en la máquina virtual de Erlang) se implementó originalmente utilizando el algoritmo de generación de números aleatorios `random`, que ha sido depreciado en favor a `'rand'` que proporciona una mejor calidad de aleatoriedad.
+## Profundización
+Los números aleatorios en Elixir y muchos otros lenguajes de programación no son realmente "aleatorios", sino pseudoaleatorios. Esto significa que derivan de algoritmos determinísticos. Para situaciones críticas donde se necesita aleatoriedad real, como criptografía, es mejor recurrir a fuentes de entropía externas.
 
-2. **Alternativas**: Existen muchos otros algoritmos, cada uno con sus ventajas dependiendo de tus requerimientos. Por ejemplo, puedes utilizar el algoritmo Xorshift si necesitas generar números aleatorios muy rápido.
+Antes de Elixir 1.7, la generación de números aleatorios se realizaba con `:random`, que desde entonces ha quedado obsoleta y reemplazada por `:rand`, una API más robusta y eficiente.
 
-3. **Detalles de implementación**: En Elixir, el módulo `:rand` genera números aleatorios a través del algoritmo de mezcla multiplicativa `exrop128`. Este módulo provee una interfaz limpia para numerosas operaciones de número aleatorio, como seleccionar un número aleatorio de un rango y seleccionar un elemento aleatorio de una lista.
+Alternativas de generación de números aleatorios fuera del estándar de Elixir involucran dependencias externas como bibliotecas de criptografía que pueden ofrecer una mejor aleatoriedad, sobre todo para aplicaciones de seguridad.
 
 ## Ver También
-1. [Elixir :rand module documentation](https://erlang.org/doc/man/rand.html): ofrece una visión detallada del módulo `:rand`.
-2. [Random number generation Wikipedia](https://en.wikipedia.org/wiki/Random_number_generation): proporciona un panorama general y una visión más profunda sobre la generación de números aleatorios en la computación.
-3. [Xorshift RNGs paper](https://www.jstatsoft.org/article/view/v008i14/xorshift.pdf): detalles del algoritmo Xorshift.
+- [Elixir doc for Enum.random/1](https://hexdocs.pm/elixir/Enum.html#random/1)
+- [Una mirada a los algoritmos PRNG](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)

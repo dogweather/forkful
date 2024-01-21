@@ -1,6 +1,7 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Arduino recipe: Generating random numbers"
+date:                  2024-01-20T17:48:33.921460-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generating random numbers"
 programming_language: "C#"
 category:             "C#"
@@ -10,44 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Random Numbers in C#: Make Your Code Unpredictable
-
 ## What & Why?
-Generating random numbers refers to producing a sequence of numbers that lack any pattern. Programmers employ this to introduce unpredictability where needed—think games, simulations, and even security systems.
+
+Random numbers are crucial for anything unpredictable, from gaming to simulations. Coders use them to inject variety and model randomness in programs.
 
 ## How to:
-C# makes it pretty straightforward to create random numbers through its built-in `Random` class.
 
-Here's a basic example.
-```C#
-Random rand = new Random();
-int randNum = rand.Next(); // Generates a non-negative random integer
-Console.WriteLine(randNum);
-```
-When you run this code, you'll see a different random integer every time.
+Let's roll. To whip up a random number in C#, you'll need `System;` and a `Random` object.
 
-If you want your random number within a certain range, you just need to specify the min (inclusive) and max values (exclusive).
 ```C#
-Random rand = new Random();
-int randNum = rand.Next(1, 101); // Generates a random integer from 1 to 100
-Console.WriteLine(randNum);
+using System;
+
+public class RandomExample
+{
+    static void Main()
+    {
+        Random rnd = new Random();
+        int randomInt = rnd.Next(1, 101); // 1 to 100
+        Console.WriteLine(randomInt);
+    }
+}
 ```
-Again, running this you'll get a different number between 1 and 100 each time.
+
+Output:
+```
+// A number between 1 and 100, like: 47
+```
+
+For a double, it's like this:
+
+```C#
+double randomDouble = rnd.NextDouble();
+Console.WriteLine(randomDouble);
+```
+
+Output:
+```
+// A number between 0.0 and 1.0, such as: 0.730943215
+```
 
 ## Deep Dive
-You may wonder why C# provides a `Random` class and not just a simple random function like some other languages (hint: JavaScript). That's largely historical - `Random` first appeared in .NET Framework 1.1 and has been part of C# since its inception.
 
-As for alternatives, well, your options are vast. Other classes like `RNGCryptoServiceProvider` can be a better choice for scenarios requiring more robust randomness such as in cryptography. However, it's more complex and slower—so it's all about finding the right tool for your use case.
+Historically, getting randomness on a computer, which loves predictability, was tough. Early methods were basic and pattern-prone. C# simplifies it with the `System.Random` class but remember it's pseudo-random, based on algorithms.
 
-In terms of implementation, the `Random` class in C# uses a time-dependent seed value—more specifically, the current system time. This is why you should avoid creating multiple `Random` instances too quickly or at the same time. Because they'd all be seeded with the same system time, you'd end up with the same "random" numbers—a situation that is decidedly un-random!
+Alternatives? For cryptographically secure numbers, meet `System.Security.Cryptography.RNGCryptoServiceProvider`. It's heavyweight but random as it gets in C#.
+
+Implementation? `System.Random` uses a seed. The default is the system clock, which can lead to similar numbers if instantiated rapidly. Go for custom seeds if you need.
 
 ## See Also
-For more details and discussions, feel free to dive into the official Microsoft documentation pages: 
 
-- [Random Class](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0)
-- [RNGCryptoServiceProvider Class](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0)
-
-Also, StackOverflow has some great threads around best practices when working with random numbers in C#: 
-
-- [C# Random Number Generation](https://stackoverflow.com/questions/1785744/how-do-i-seed-a-random-class-to-avoid-getting-duplicate-random-values)
-- [Cryptography StackOverflow](https://stackoverflow.com/q/1499269)
+- Microsoft's docs on `Random`: [Random Class (System)](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netframework-4.8)
+- Serious randomness with `[RNGCryptoServiceProvider](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=netframework-4.8)

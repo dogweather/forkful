@@ -1,6 +1,7 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Arduino: Lese kommandolinjeargumenter"
+date:                  2024-01-20T17:55:37.060608-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,36 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
-
-Å lese kommandolinjeargumenter er et hjelpsomt triks for å tillate brukerinteraksjon utenfor selve programmet. Programmerere gjør dette for å tillate dynamisk innhold endringer basert på brukerens valg.
+## Hva & Hvorfor?
+Å lese kommandolinjeargumenter betyr å hente input direkte fra terminalen når du starter et program. Programmerere gjør dette for å tillate brukerinnstillinger og dynamisk oppførsel uten å endre koden.
 
 ## Hvordan:
-
-Her presenteres hvordan du kan lese kommandolinjeargumenter i Clojure:
+Bruk `*command-line-args*` i Clojure for å snappe opp argumenter. Her er et enkelt eksempel:
 
 ```Clojure
-(defn -main
-   "Dette leser argumenter fra kommandolinja"
-   [& args]
-   (println "Du ga disse argumentene:" args))
-
-```
-Hvis du kjører dette programmet med: 
-```
-lein run hei hallo
-```
-Det vil skrive ut:
-```
-Du ga disse argumentene: [hei hallo]
+;; Hovedfunksjonen som printer alle kommandolinjeargumenter
+(defn -main [& args]
+  (doseq [arg args]
+    (println arg)))
 ```
 
-## Dypdykk
+Når du kjører programmet:
+```
+$ clojure mitt_program.clj Hei Verden
+Hei
+Verden
+```
 
-Å kunne lese argumenter fra kommandolinjen er en eldgammel teknikk, og eksisterte til og med i gamle dager av å skrive direkte på maskinkoden. Det finnes alternative måter å håndtere dette på, for eksempel å lese fra en konfigurasjonsfil, bruke miljøvariabler, eller til og med gjøre nettverkskall. Imidlertid er hver av disse metodene mer komplekse og krever mer kode. Clojure håndterer dette på en veldig funksjonell måte, og tillater en liste med argumenter å bli behandlet akkurat som en hvilken som helst annen funksjonell sekvens.
+Du kan også prosessere dem for spesifikk logikk:
+```Clojure
+(defn -main [& args]
+  (let [greeting (first args)
+        name (second args)]
+    (println (str greeting ", " name "!"))))
+```
+
+Med dette programmet:
+```
+$ clojure mitt_program.clj Hei Clojure
+Hei, Clojure!
+```
+
+## Deep Dive
+Clojure, et moderne Lisp-dialekt, behandler command-line-argumenter som en liste. Dette kom fra dens Lisp-arv, hvor listehåndtering er kjernefunksjonaliteten.
+
+Alternativer? Biblioteker som `tools.cli` tilbyr robust parsing for mer komplekse behov. Disse kan håndtere flagg, valg og validere argumenter.
+
+Implementasjonsdetaljer? Clojure ligger på JVM (Java Virtual Machine) og setter `*command-line-args*` til en sekvens basert på Java sitt `String[] args`.
 
 ## Se Også
-
-- [Kommandolinjeargumenter i Clojure - Stack Overflow](https://stackoverflow.com/questions/3960063/clojure-command-line-arguments)
-- [Clojure - offisiell dokumentasjon](https://clojure.org/guides/getting_started)
-- [Begynn å skrive Clojure - læringstur](https://learnxinyminutes.com/docs/clojure/)
+- Clojure's `tools.cli`: [https://github.com/clojure/tools.cli](https://github.com/clojure/tools.cli)
+- Offisiell Clojure Dokumentasjon om script: [https://clojure.org/guides/deps_and_cli](https://clojure.org/guides/deps_and_cli)
+- Inngående guide til Clojure: [https://clojure.org/guides/getting_started](https://clojure.org/guides/getting_started)

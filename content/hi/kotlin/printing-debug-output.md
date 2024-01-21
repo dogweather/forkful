@@ -1,6 +1,7 @@
 ---
 title:                "डीबग आउटपुट प्रिंट करना"
-html_title:           "Gleam: डीबग आउटपुट प्रिंट करना"
+date:                  2024-01-20T17:53:22.125175-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "डीबग आउटपुट प्रिंट करना"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,33 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# डीबग आउटपुट को कोटलिन में प्रिंट करें (Print Debug Output in Kotlin)
+## What & Why? (क्या और क्यों?)
+Debug output print करना एक ऐसा तरीका है जिससे कोड में क्या हो रहा है यह हमें पता चलता है। Programmers इसे इसलिए करते हैं ताकि वे bugs को पहचान सकें और कोड की जानकारी आसानी से समझ सकें।
 
-## क्या और क्यों?
-डीबग आउटपुट प्रिंट करना का मतलब है की आप प्रोग्राम के चलाने के दौरान कार्रवाई को ट्रैक करने केलिए डाटा दिखाते हैं। हम इसे करने के लिए अपनी कोड की समस्याओं को जल्दी से खोजने और समझने के लिए प्रयोग करते हैं।
-
-## कैसे करें:
-```Kotlin
+## How to: (कैसे करें:)
+```kotlin
 fun main() {
-    val str = "Debug output"
+    val name = "दुनिया"
+    println("नमस्ते, $name!")  // Console पर मैसेज प्रिंट करने के लिए
 
-    println(str) 
+    val error = Exception("कुछ गड़बड़ हो गई")
+    System.err.println("एरर: $error")  // Error stream में मैसेज प्रिंट करने के लिए
 }
 ```
-सैंपल आउटपुट:
+Sample output:
 ```
-Debug output
+नमस्ते, दुनिया!
+एरर: java.lang.Exception: कुछ गड़बड़ हो गई
 ```
-## गहराई में:
-प्रिंट डीबग का इतिहास उन दिनों से शुरू हुआ जब कंप्यूटर कोडिंग और डीबगिंग की दुनिया में नई-नई खोज हो रही थी। आज भी, यह एक बहुत ही उपयोगी उपकरण हैं जब बात कोड की समस्याओ की पहचाने और समझने की आती हैं।
 
-एल्टरनेटिव्स में डीबगर लाइब्रेरी जैसे `Log4j` और `SLF4J` का उपयोग कर सकते हैं जो अधिक फीचर्स देते हैं।
+## Deep Dive (गहराई में जानकारी):
+Debugging से पहले, programmers लॉग फाइल्स या कंसोल में प्रिंट करके अपना कोड चेक करते थे। जब IDEs का उदय हुआ, तो debuggers का इस्तेमाल भी बढ़ गया जिससे कोड को step by step चलाकर देखा जा सकता है। फिर भी, print statements आज भी महत्वपूर्ण हैं क्योंकि वे simple हैं और कभी-कभी debuggers से ज्यादा जल्दी समस्या को सामने ला देते हैं। Kotlin में `println()` और `print()` स्टैंडर्ड आउटपुट स्ट्रीम के लिए हैं, जबकि `System.err.println()` स्टैंडर्ड एरर स्ट्रीम के लिए है।
 
-`println` स्टैंडर्ड आउटपुट स्ट्रीम में प्रिंट करता है, जो की डीफॉल्ट रूप से कांसोल में होता है। यह `System.out.print()` का उपयोग करके इसे करता हैं।
-
-## और देखें:
-कोटलिन के अधिकारिक दस्तावेज़ : https://kotlinlang.org/docs/reference/basic-syntax.html#printing-to-the-console
-
-Log4j : https://logging.apache.org/log4j/2.x/
-
-SLF4J: http://www.slf4j.org/
+## See Also (और जानकारी के लिए):
+- [Stack Overflow Discussions on Kotlin Debug Techniques](https://stackoverflow.com/questions/tagged/kotlin+debugging)
+- [JetBrains' IntelliJ IDEA Debugger](https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html)

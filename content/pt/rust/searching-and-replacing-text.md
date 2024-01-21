@@ -1,6 +1,7 @@
 ---
 title:                "Pesquisando e substituindo texto"
-html_title:           "Bash: Pesquisando e substituindo texto"
+date:                  2024-01-20T17:58:46.368494-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pesquisando e substituindo texto"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,51 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Artigo de Programação Rust: Pesquisando e Substituindo o Texto
+## O Que & Porquê?
 
-## O Que é e Porquê?
-
-A pesquisa e substituição de texto são operações usadas para localizar sequências de caractere num dado texto e eventualmente substituir por outras sequências. É algo crucial para os programadores por diversas razões, tais como refatoração de código e manipulação de dados.
-
+Substituir texto numa string é como trocar peças de roupa; você pega uma palavra ou frase e troca por outra. Programadores fazem isso para atualizar dados, corrigir erros, ou formatar informação de maneira mais digerível.
 
 ## Como fazer:
 
-Aqui está um exemplo de como fazer pesquisa e substituição de texto com Rust:
+Usaremos a biblioteca `regex` para procurar e substituir texto, garantindo mais potência e flexibilidade do que métodos padrão:
 
 ```Rust
-let mut mensagem = String::from("Olá, Universo");
-mensagem = mensagem.replace("Universo", "Mundo");
-println!("{}", mensagem);
+use regex::Regex;
+
+fn main() {
+    let texto = "Ferrugem é o futuro da programação de sistemas.";
+    let regex = Regex::new("Ferrugem").unwrap();
+    let novo_texto = regex.replace(texto, "Rust");
+    println!("{}", novo_texto);
+}
 ```
 
 Saída:
 
 ```
-Olá, Mundo
+Rust é o futuro da programação de sistemas.
 ```
 
-Neste exemplo, o `.replace` faz o trabalho de pesquisar por "Universo", substituindo-o por "Mundo" e então imprime a nova string.
+## Aprofundando:
 
-## Um Mergulho Profundo:
+A substituição de texto é algo prático desde os primórdios da computação, onde editar arquivos batch e scripts era essencial. Hoje, em Rust, além da `regex`, temos métodos nativos como `replace()` para trocas simples.
 
-A pesquisa e substituição de texto não são algo novo. Desde os primeiros editores de texto, tal operação existe. Na linguagem Rust, pode-se usar métodos como `.replace` e `.replacen`.
+Alternativas incluem bibliotecas como `strsim` para comparação de strings e `aho_corasick` para múltiplas substituições eficientes. A implementação usando `regex` é poderosa por usar expressões regulares, permitindo substituições complexas e padrões dinâmicos.
 
-A `.replace` é uma função de alto nível bastante direta. No entanto, você pode querer mais controle sobre a operação de pesquisa e substituição. Para isso, você pode usar as expressões regulares do Rust:
+## Veja também:
 
-```Rust
-use regex::Regex;
-
-let re = Regex::new("Universo").unwrap();
-let resultado = re.replace_all("Olá, Universo", "Mundo");
-println!("{}", resultado);
-```
-
-Isto permite maior flexibilidade ao corresponder strings que sejam mais complexas do que a correspondência direta simples.
-
-## Veja Também:
-
-Aqui estão alguns links úteis se você desejar se aprofundar no assunto:
-
-1. [Documentação oficial da Rust](https://doc.rust-lang.org/book/) - Um excelente ponto de partida.
-2. [Biblioteca Regex em Rust](https://docs.rs/regex/1.5.4/regex/) - Documentação oficial para expressões regulares em Rust.
-3. [Livro de Receitas de Rust](https://rust-lang-nursery.github.io/rust-cookbook/) - Várias soluções para problemas comuns em Rust, incluindo pesquisas de texto e substituição.
+- Documentação oficial do Rust sobre manipulação de strings: https://doc.rust-lang.org/book/ch08-02-strings.html
+- Crate `regex`: https://crates.io/crates/regex
+- Crate `strsim`: https://crates.io/crates/strsim
+- Crate `aho_corasick`: https://crates.io/crates/aho_corasick

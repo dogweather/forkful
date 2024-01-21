@@ -1,7 +1,8 @@
 ---
-title:                "स्ट्रिंग्स को जोड़ना"
-html_title:           "Bash: स्ट्रिंग्स को जोड़ना"
-simple_title:         "स्ट्रिंग्स को जोड़ना"
+title:                "स्ट्रिंग को जोड़ना"
+date:                  2024-01-20T17:36:01.110154-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग को जोड़ना"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,33 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? (What & Why?)
+## What & Why? (क्या और क्यों?)
+String concatenation से मतलब है कि दो या ज्यादा strings को जोड़कर एक बड़ी string बनाना। Programmers इसे इसलिए करते हैं क्योंकि ऐसे वे वेरिएबल्स, यूज़र इनपुट, और टेक्स्ट मैसेजेस को आसानी से जोड़कर मीनिंगफुल आउटपुट प्रदर्शित कर सकते हैं।
 
-स्ट्रिंग जोड़ना (concatenating strings) दो या दो से अधिक स्ट्रिंगों को एक साथ जोड़ने का एक तरीका है। कार्यक्रमकर्ता इसे तब करते हैं जब उन्हें एक साथ कई सांग्रहित डाटा को प्रस्तुत करना होता है।
-
-## कैसे करें (How to)
-
+## How to: (कैसे करें:)
 ```Lua
--- स्ट्रिंग को जोड़ने का उदाहरण
-str1 = "नमस्ते, "
-str2 = "दुनिया!"
-print(str1 .. str2)  -- दो स्ट्रिंगों को जोड़ना
-```
-रन कराने पर आउटपुट आएगा:
-```Lua
-नमस्ते, दुनिया!
+-- सिंपल कोड एक्जाम्पल
+local welcome = "Namaste"
+local name = "Duniya"
+local message = welcome .. ", " .. name .. "!"
+print(message) -- Namaste, Duniya!
 ```
 
-## गहरी छानबीन (Deep Dive)
+```Lua
+-- वेरिएबल्स और लूप्स के साथ कोड एक्जाम्पल
+local fruits = {"seb", "kela", "aam"}
+local list = "Fruit List: "
+for i, fruit in ipairs(fruits) do
+    list = list .. fruit
+    if i < #fruits then
+        list = list .. ", "
+    end
+end
+print(list) -- Fruit List: seb, kela, aam
+```
 
-1. ऐतिहासिक संदर्भ: Lua में स्ट्रिंग को कन्काटिनेट करने के लिए `..` ऑपरेटर का उपयोग किया जाता है, जो भाषा के पहले ही संस्करण में उपलब्ध था।
-2. विकल्प: आप `table.concat` फ़ंक्शन का भी उपयोग कर सकते हैं, मुख्यतः बड़ी स्ट्रिंगों के लिए।
-3. विवरण: Lua में `..` ऑपरेटर स्ट्रिंग को कन्काटिनेट करने के लिए सबसे साधारण तरीका है, लेकिन यदि आपको बहुत सारी स्ट्रिंग को जोड़ना हो, तो `table.concat` फ़ंक्शन अधिक कार्यक्षम हो सकता है।
+```Lua
+-- string.format का उपयोग करना
+local temp = 25
+local weather = string.format("Aaj ka taapman: %d degree Celsius hai.", temp)
+print(weather) -- Aaj ka taapman: 25 degree Celsius hai.
+```
 
-## यह भी देखें (See Also)
+## Deep Dive (गहराई में जानकारी)
+String concatenation का कॉन्सेप्ट बहुत पुराना है और लगभग सभी प्रोग्रामिंग लैंग्वेजेस में मिलता है। Lua में, सबसे सरल तरीका है `..` ऑपरेटर का उपयोग करके स्ट्रिंग्स को जोड़ना। इस तरीके के अल्टरनेटिव्स में `table.concat` और `string.format` जैसे फंक्शन्स आते हैं, जो अधिक जटिल केसेस में उपयोगी होते हैं।
 
-"Programming in Lua" इस संदर्भ पुस्तक में स्ट्रिंग जोड़ने एवं Lua के अन्य विशेषताओं के बारे में वर्णन है: 
-(https://www.lua.org/pil/)
+Lua कंकेटेनेशन में इंटरनली Lua optimizer छोटे strings को efficiently मर्ज करता है, लेकिन बड़े strings जोड़ते समय यह ऑपरेशन slow हो सकता है। जब बहुत सारे strings को जोड़ना हो, तो `table.concat` ज्यादा तेज़ और मेमोरी-इफेक्टिव होता है।
 
-Lua के अधिकारिक डॉक्युमेंटेशन में स्ट्रिंग कन्काटिनेशन का उल्लेख है: 
-(https://www.lua.org/manual/)
+## See Also (देखें भी)
+- Lua 5.4 reference manual on string concatenation: [https://www.lua.org/manual/5.4/manual.html#3.4.6](https://www.lua.org/manual/5.4/manual.html#3.4.6)
+- Lua string library for advanced operations: [https://www.lua.org/manual/5.4/manual.html#6.4](https://www.lua.org/manual/5.4/manual.html#6.4)
+- Lua optimization tips for working with strings: [http://lua-users.org/wiki/OptimisingUsingLocalVars](http://lua-users.org/wiki/OptimisingUsingLocalVars)

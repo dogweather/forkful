@@ -1,7 +1,8 @@
 ---
-title:                "Друк відлагоджувального виводу"
-html_title:           "Arduino: Друк відлагоджувального виводу"
-simple_title:         "Друк відлагоджувального виводу"
+title:                "Виведення налагоджувальної інформації"
+date:                  2024-01-20T17:52:08.541804-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Виведення налагоджувальної інформації"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,54 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке і навіщо?
+## Що це таке & Навіщо?
+Виведення налагоджувальної інформації – це спосіб бачити, що відбувається у вашому коді під час виконання. Програмісти роблять це, щоб розуміти процеси в системі і швидко знаходити помилки.
 
-Друк тестового виводу - це спосіб, яким програмісти визначають та виправляють помилки у своєму коді. Він дозволяє відстежувати хід виконання коду, а також значення змінних на різних стадіях.
-
-## Як це зробити:
-
+## Як це робити:
 ```Bash
-#!/bin/bash
+# Echo command for simple debugging
+echo "Debug: The value of variable 'x' is $x."
 
-DEBUG="true"
+# Redirecting standard and error output to a file
+ls -l /nonexistent/directory 2>&1 | tee debug_output.txt
 
-if [ "$DEBUG" == "true" ]; then
-    echo "Debug mode is ON."
-else
-    echo "Debug mode is OFF."
-fi
+# Using set -x to trace what gets executed
+set -x
+cp /source/file.txt /destination/
+set +x
+```
+Output Sample:
+```
+Debug: The value of variable 'x' is 7.
+ls: cannot access '/nonexistent/directory': No such file or directory
++ cp /source/file.txt /destination/
 ```
 
-Коли ви запустите цей скрипт, ви побачите:
-```Bash
-Debug mode is ON.
-```
-Відстежуйте значення змінних, використовуючи власні повідомлення про відладку:
-```Bash
-#!/bin/bash
+## Поглиблене вивчення
+Historically, Bash didn't have advanced debugging tools. Simple `echo` statements were a primary way to output variable values and flow of control. As Bash developed, more options emerged. The `set -x` command outputs each command and its arguments as the script executes, which can be invaluable. 
 
-DEBUG="true"
-test_var="Test Variable"
+There are alternatives to Bash for debugging, such as using a formal debugger like `bashdb` or writing scripts in languages with better debugging support.
 
-if [ "$DEBUG" == "true" ]; then
-    echo "Debug mode is ON. Test_var is $test_var"
-else
-    echo "Debug mode is OFF."
-fi
-```
-Після запуску скрипта:
-```Bash
-Debug mode is ON. Test_var is Test Variable
-```
-## Тематичне погруження:
+For implementation, note that using `echo` can interfere with actual output, so consider directing debug output to files or using `stderr`. The `tee` command is handy to watch the output in real-time while preserving it in a file. 
 
-Створення такого чистого виводу відладки зазвичай неазбідне в Bash, оскільки він вже забезпечує вбудовані засоби відлагодження. Інтерактивний режим (`bash -i`) є одним із них. Проте, форматування власних повідомлень про відлагодження може бути корисним.
-
-Варто відмітити, що в Bash є можливість перенаправляти вивід відлагодження в окремий файл за допомогою команди `exec` і дескрипторів файлів.
-
-У іншіх мовах програмування, таких як Python або JavaScript, для виведення даних використовуються подібні концепції.
-
-## Дивіться також:
-
-1. [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/debugging.html): Подробиці про відлагодження у Bash.
-2. [Google Shell Style Guide](https://google.github.io/styleguide/shellguide.html): Рекомендації щодо стилів у Bash.
+## Дивись також
+- Bash Hackers Wiki on Debugging (https://wiki.bash-hackers.org/scripting/debuggingtips)
+- Advanced Bash-Scripting Guide: Chapter 37. Debugging (https://tldp.org/LDP/abs/html/debugging.html)
+- `bashdb`, the Bash Debugger (https://bashdb.sourceforge.io/)

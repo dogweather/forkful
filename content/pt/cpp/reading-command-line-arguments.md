@@ -1,7 +1,8 @@
 ---
-title:                "Lendo argumentos de linha de comando"
-html_title:           "Arduino: Lendo argumentos de linha de comando"
-simple_title:         "Lendo argumentos de linha de comando"
+title:                "Lendo argumentos da linha de comando"
+date:                  2024-01-20T17:55:35.705173-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,36 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Que?
-Comandos de linha (Command line arguments em inglês) são especificações que um programa recebe quando ele é iniciado, ou seja, informações adicionais que orientam o comportamento do programa. Programadores usam isso para adicionar flexibilidade aos programas, permitindo aos usuários especificar comportamentos personalizados no momento da execução.
+## O Quê & Porquê?
+Ler argumentos da linha de comando é capturar as entradas que usuários passam ao iniciar um programa. Programadores fazem isso para permitir customização e flexibilidade sem alterar o código-fonte.
 
 ## Como Fazer:
 ```C++
 #include <iostream>
-using namespace std;
 
-int main(int argc, char** argv) {
-    cout << "Número de argumentos: " << argc << endl;
-    for(int i = 0; i < argc; ++i) {
-        cout << "Argumento " << i << ": " << argv[i] << endl;
+int main(int argc, char *argv[]) {
+    std::cout << "Você passou " << argc - 1 << " argumentos:\n";
+    for (int i = 1; i < argc; ++i) {
+        std::cout << i << ": " << argv[i] << '\n';
     }
     return 0;
 }
-```
-A execução desse código com argumentos "arg1 arg2 arg3" na linha de comando produziria:
-```
-Número de argumentos: 4
-Argumento 0: ./programa
-Argumento 1: arg1
-Argumento 2: arg2
-Argumento 3: arg3
+
+/*
+Compila o código e o executa com alguns argumentos:
+> g++ programa.cpp -o programa && ./programa arg1 arg2 arg3
+
+Saída esperada:
+Você passou 3 argumentos:
+1: arg1
+2: arg2
+3: arg3
+*/
 ```
 
-## Mais Detalhes:
-Os argumentos da linha de comando são uma prática antiga, vinda dos primórdios do UNIX. Alternativas atuais para passar informações para programas incluem o uso de um arquivo de configurações ou entrada interativa do usuário durante a execução.
+## Mergulho Profundo
+Os argumentos da linha de comando são uma prática antiga, remontando aos primeiros dias dos sistemas operacionais tipo Unix. Uma alternativa é usar arquivos de configuração ou variáveis de ambiente, mas isso pode ser mais complexo e menos direto. A função `main` possui dois parâmetros opcionais: `argc` (argument count) conta quantos argumentos foram passados, e `argv` (argument vector) é um array dos argumentos propriamente ditos. O primeiro argumento `argv[0]` é, por convenção, o nome do programa.
 
-Em C++, os argumentos da linha de comando são passados para a função 'main' como um array de strings. O primeiro argumento, argv[0], normalmente é o nome do programa. 'argc' é o número de argumentos passados, incluindo o próprio nome do programa.
-
-## Veja Também:
-- Tutorial do cplusplus.com sobre argumentos da linha de comando: http://www.cplusplus.com/articles/DEN36Up4/
-- StackOverflow discute quando usar argumentos da linha de comando: https://stackoverflow.com/questions/3024317/when-should-i-use-the-command-line-arguments
+## Veja Também
+- Documentação C++ sobre a função `main`: https://en.cppreference.com/w/cpp/language/main_function
+- Tutorial sobre argumentos da linha de comando: https://www.cplusplus.com/articles/DEN36Up4/
+- Guia para argumentos de linha de comando POSIX: http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap12.html

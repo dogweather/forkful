@@ -1,7 +1,8 @@
 ---
-title:                "Interpolacja ciągu znaków"
-html_title:           "C++: Interpolacja ciągu znaków"
-simple_title:         "Interpolacja ciągu znaków"
+title:                "Interpolacja łańcuchów znaków"
+date:                  2024-01-20T17:51:42.804314-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolacja łańcuchów znaków"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,48 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Interpolacja łańcuchów pozwala wpleść wartości zmiennych do tekstu. Programiści używają jej dla czytelności i wygody, eliminując potrzebę ciągłego łączenia ciągów za pomocą konkatenacji.
 
-Interpolacja łańcuchów to proces, który pozwala wstawiać zmienne i wyrażenia bezpośrednio w łańcuchy. Programiści to robią, aby pisać bardziej czytelny, zwięzły i elastyczny kod.
-
-## Jak to zrobić:
-
-Lua nie posiada wbudowanej funkcji do interpolacji łańcuchów. Możesz to jednak zrobić za pomocą funkcji `string.format`.
+## How to: (Jak to zrobić:)
+Lua nie ma wbudowanej funkcji interpolacji łańcuchów, ale można osiągnąć podobny efekt wykorzystując `string.format` lub grawisów (w wersji 5.3+).
 
 ```Lua
-name = "Jan"
-greet = string.format("Cześć, %s", name)
-print(greet) -- "Cześć, Jan"
+-- Użycie string.format
+local name = "Łukasz"
+local age = 28
+local greeting = string.format("Cześć, nazywam się %s i mam %d lat.", name, age)
+print(greeting)  -- Cześć, nazywam się Łukasz i mam 28 lat.
+
+-- Użycie grawisów
+local temperature = 23.5
+local weather = "Temperatura dzisiaj to: `${tempC}°C`."
+weather = weather:gsub('`', ''):gsub("%${(.-)}", {tempC = temperature})
+print(weather)  -- Temperatura dzisiaj to: 23.5°C.
 ```
 
-Podobnie możemy robić operacje na zmiennych, które chcemy wstawić do łańcucha.
+## Deep Dive (Dogłębna analiza):
+Lua nie ma wbudowanej interpolacji łańcuchów jak w niektórych innych językach (np. Ruby czy Python). Musimy używać funkcji `string.format`, która działa podobnie do printf w C, lub pisać własne rozwiązania.
 
-```Lua
-x = 7
-y = 8
-msg = string.format("Suma %d i %d wynosi %d", x, y, x+y)
-print(msg) -- "Suma 7 i 8 wynosi 15"
-```
+Wersja 5.3+ wprowadziła mechanizm do obsługi UTF-8, co umożliwia lepszą manipulację polskimi znakami w stringach. Warto zdawać sobie sprawę, że każde niestandardowe rozwiązanie może wprowadzać dodatkowe złożoności, jak różnicowanie wydajności czy czytelności.
 
-## Głębsze spojrzenie:
+Alternatywnie, możemy zaimplementować własną funkcję interpolującą, używając `gsub` do zamiany określonych wzorców w tekście przez wartości z tabeli.
 
-Interpolacja łańcuchów pochodzi z Pascala i została wprowadzona do większości języków programowania. W Pythonie i Ruby, interpolacja łańcuchów jest wbudowana, ale Lua wymaga ręcznego formatowania.
-
-Alternatywą dla `string.format` jest stworzenie własnej funkcji, która wykonuje interpolację łańcuchów.
-
-```Lua
-function interp(s, tab)
-    return (s:gsub('($%b{})', function(w) return tab[w:sub(3, -2)] end))
-end
-
-tab = { name = "Jan", age = 22 }
-s = "Mam na imię ${name} i mam ${age} lata."
-print(interp(s, tab)) -- "Mam na imię Jan i mam 22 lata."
-```
-
-Ta metoda korzysta z przekazywania tablicy do funkcji i wyszukuje odpowiednich wartości.
-
-## Zobacz też:
-
-1. [Tutorial Lua](http://tylerneylon.com/a/learn-lua/) - dla nauki podstaw Lua.
-2. [Dokumentacja Lua](https://www.lua.org/manual/5.4/) - aby uzyskać więcej informacji o funkcji `string.format` i innych funkcjach Lua.
+## See Also (Zobacz również):
+- Oficjalna dokumentacja Lua 'string' library: https://www.lua.org/manual/5.4/manual.html#6.4
+- Informacje o UTF-8 w Lua: https://www.lua.org/manual/5.3/manual.html#6.5
+- Wprowadzenie do Lua: https://www.lua.org/pil/

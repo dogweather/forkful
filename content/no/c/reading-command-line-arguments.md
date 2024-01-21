@@ -1,6 +1,7 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Arduino: Lese kommandolinjeargumenter"
+date:                  2024-01-20T17:55:23.626710-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "C"
 category:             "C"
@@ -11,40 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å lese kommandolinjeargumenter er prosessen med å hente data gitt til ditt C-program via kommandolinjen. Det er en typisk måte for programmererne å parametere og konfigurere programmer på.
+Kommandolinjeargumenter lar brukere sende data direkte til et program når de starter det. Programmerere bruker dette for å gjøre applikasjoner fleksible og for tilpasning av oppførsel uten å endre koden.
 
-## Hvordan gjøre det:
-Her er et grunnleggende eksempel på hvordan du leser kommandolinjeargumentene i C:
+## Hvordan:
+Hvert C-program får `argc` og `argv` som parametre i `main()`-funksjonen – `argc` teller argumenter, mens `argv` er en liste med argumentene.
 
 ```C
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    int tel = 0;
-    printf("Program navn er %s\n", argv[0]);
-    for(tel = 1; tel < argc; tel++) {
-       printf("Argument nummer %d er %s\n", tel, argv[tel]);
+    printf("Det er %d kommandolinjeargument(er):\n", argc);
+    for (int i = 0; i < argc; i++) {
+        printf("Argument %d er: %s\n", i, argv[i]);
     }
     return 0;
 }
 ```
-Når du kjører programmet med argumenter (for eksempel `./programmet ditt Hei alle sammen`), vil output være:
+
+Kjører du programmet slik: `./program navn`, blir utskriften:
 
 ```
-Program navn er ./programmet ditt
-Argument nummer 1 er Hei
-Argument nummer 2 er alle
-Argument nummer 3 er sammen
+Det er 2 kommandolinjeargument(er):
+Argument 0 er: ./program
+Argument 1 er: navn
 ```
 
-## Dyp Dykk
-Historisk sett har kommandolinjeargumenter blitt brukt siden de tidligste dagene av programmering, spesielt i Unix- og Linux-baserte systemer, for å manipulere programmet på kjøretid.
+## Deep Dive
+Kommandolinjeargumenter har vært en del av C siden starten på 70-tallet. Alternativer inkluderer å bruke miljøvariabler, interaktive prompts, eller konfigurasjonsfiler. Mange biblioteker forenkler parsing og håndtering av argumenter, slik som `getopt`. I `argv[]` er indeks 0 alltid programnavnet, og de ekte argumentene starter på indeks 1.
 
-Alternativene inkluderer bruk av filer for inn- og utdata, interaktiv brukerinput og data hentet fra nettverket. Kommandolinjeargumenter kan være en effektiv måte å sende informasjon til et program, men de er ikke alltid den mest praktiske eller sikreste metoden.
-
-Den grunnleggende implementeringen av kommandolinjeargumenter i C er gjennom bruk av to funksjonsparametere i `main()`: `int argc` og `char *argv[]`. `argc` teller antall argumenter, og `argv` er en peker til peker-array som holder argumentene selv.
-
-## Se også
-For mer detaljert informasjon, sjekk ut disse nyttige lenkene:
-1. [Command Line Arguments in C](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html)
-3. [Command Line Arguments in Unix](https://www.ibm.com/docs/en/aix/7.2?topic=applications-command-line-arguments)
+## See Also
+- [GNU C Library: Program Argument Handling](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html)
+- [cplusplus.com: Command line arguments](http://www.cplusplus.com/articles/DEN36Up4/)
+- [POSIX standard: getopt](https://pubs.opengroup.org/onlinepubs/9699919799/functions/getopt.html)

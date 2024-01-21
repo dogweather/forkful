@@ -1,7 +1,8 @@
 ---
-title:                "Видалення символів, що відповідають патерну"
-html_title:           "C: Видалення символів, що відповідають патерну"
-simple_title:         "Видалення символів, що відповідають патерну"
+title:                "Видалення символів за візерунком"
+date:                  2024-01-20T17:42:25.903096-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Видалення символів за візерунком"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,25 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Видалення символів, які відповідають паттерну - це процес, при якому з рядка усуваються певні символи, згідно з заданим шаблоном. Програмісти це роблять, щоб маніпулювати даними, очищуючи їх від непотрібної інформації.
+## What & Why? | Що і Чому?
+Видалення символів за шаблоном — це процес відбору і видалення певних символів із рядка. Програмісти роблять це, аби очистити дані, відсіяти непотрібне або змінити форматування.
 
-## Як це робити:
+## How to: | Як зробити:
 ```Haskell
-import Data.Char
-import Data.List
+import Data.List (delete)
 
-deleteMatchingChars :: String -> String -> String
-deleteMatchingChars pattern = filter (`notElem` pattern)
+-- Видалення конкретного символу
+removeChar :: Char -> String -> String
+removeChar _ ""     = ""
+removeChar c (x:xs) 
+  | c == x    = removeChar c xs
+  | otherwise = x : removeChar c xs
 
+-- Використання функції
+main :: IO ()
 main = do
-  print $ deleteMatchingChars "ao" "hello world"
+  let result = removeChar 'a' "banana"
+  putStrLn result
 ```
-У цьому прикладі ми видаляємо символи 'a' і 'o' з рядка "hello world". Результат буде "hell wrld".
+Output:
+```
+bnn
+```
+Нащадок на `Data.List`, тепер видалимо список символів:
 
-## Занурення у тему
-Історично, операції над рядками були важливою складовою програмування. У Haskell підхід до роботи з рядками спрощений, але все ж потужний. Ще одним способом видалення символів є використання функції delete, але вона видаляє лише один екземпляр символу. Наступним кроком може бути створення більш складного паттерну, який використовує регулярні вирази. Пам'ятайте, на Haskell важливо розуміти час виконання та кількість пам'яті, яку використовує ваше рішення.
+```Haskell
+import Data.List (delete)
 
-## Додатково
-2. Real World Haskell: [Розділ про рядки та символи](http://book.realworldhaskell.org/read/efficient-file-processing-regular-expressions-and-file-name-matching.html)
-3. Haskell Guidelines: [Рекомендації щодо обробки рядків](https://wiki.haskell.org/Performance/Strings)
+-- Видалення множини символів
+removeChars :: [Char] -> String -> String
+removeChars [] str = str
+removeChars (c:cs) str = removeChars cs (removeChar c str)
+
+-- Де removeChar визначено як раніше
+
+-- Використання функції
+main :: IO ()
+main = do
+  let result = removeChars "aeiou" "banana"
+  putStrLn result
+```
+Output:
+```
+bnn
+```
+
+## Deep Dive | Поглиблений Аналіз:
+У Haskell видалення символів за шаблоном не має вбудованої функції, як у деяких інших мовах. Замість цього пишемо свої функції, як `removeChar` та `removeChars`. Функціональна природа Haskell заохочує до складання менших функцій у більш складні. `removeChar` і `removeChars` використовують рекурсію – типовий підхід у Haskell для ітерації.
+
+Альтернативи включають використання регулярних виразів з бібліотекою `regex` або вбудовані функції високого рівня, як `filter` (дія протилежна до видалення). Видалення за шаблном можна реалізувати і з більшою ефективністю, наприклад, використовуючи структури даних, оптимізовані для цього завдання, як перетворювачі рядків (string transformers).
+
+## See Also | Дивіться Також:
+- [Haskell.org Book](http://haskellbook.com/) – глибоке занурення у мову Haskell.
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/) – доступний ресурс для вивчення Haskell.
+- [Hoogle](https://hoogle.haskell.org/) – пошукова система для Haskell бібліотек.
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/haskell) – спільнота з відповідями на питання з програмування на Haskell.

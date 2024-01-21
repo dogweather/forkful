@@ -1,7 +1,8 @@
 ---
-title:                "Befehlszeilenargumente lesen"
-html_title:           "Arduino: Befehlszeilenargumente lesen"
-simple_title:         "Befehlszeilenargumente lesen"
+title:                "Lesen von Kommandozeilenargumenten"
+date:                  2024-01-20T17:55:26.544284-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Lesen von Kommandozeilenargumenten"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,43 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# C# Befehlszeilenargumente lesen: Ein Leitfaden
-
 ## Was & Warum?
+Die Lektüre von Kommandozeilenargumenten ermöglicht es, dass ein C#-Programm beim Start Zusatzinformationen erhält. So passen Programmierer das Verhalten der Anwendung dynamisch an, ohne den Code zu ändern.
 
-Die Befehlszeilenargumente sind Parameter, die einem Programm beim Start übergeben werden. Sie sind nützlich, um das Verhalten des Programms zu personalisieren oder ihm Daten zu übermitteln, ohne eine Benutzereingabe zu erfordern.
-
-## So macht man das:
-
-Wenn du Befehlszeilenargumente in einem C#-Programm lesen willst, musst du auf die `args`-Parameter des `Main`-Verfahrens zugreifen.
-
+## Los geht's:
 ```C#
-static void Main(string[] args)
+using System;
+
+class Program
 {
-    Console.WriteLine($"Es gibt {args.Length} Argument(e).");
-    for (int i = 0; i < args.Length; i++)
+    static void Main(string[] args)
     {
-        Console.WriteLine($"Argument {i + 1}: {args[i]}");
+        foreach (string arg in args)
+        {
+            Console.WriteLine($"Argument: {arg}");
+        }
     }
 }
 ```
-
-Wenn du dieses Programm mit den Argumenten `Erstes Zweites Drittes` startest, würde es so aussehen:
-
+Ausführungsbeispiel:
 ```
-Es gibt 3 Argument(e).
-Argument 1: Erstes
-Argument 2: Zweites
-Argument 3: Drittes
+> myapp.exe Hallo Welt
+Argument: Hallo
+Argument: Welt
 ```
 
-## Deep Dive
+## Tiefgang:
+Die Verarbeitung von Kommandozeilenargumenten stammt aus den Tagen der Text-basierten Benutzerschnittstellen und ist heute noch relevant für Skripte oder Konsolenanwendungen. Eine Alternative ist die Nutzung von Konfigurationsdateien, Umgebungsvariablen oder Benutzeroberflächen für die Eingabe. Wesentlich in C# ist die `string[] args` im `Main()`-Methode, wodurch Argumente als Array von Strings übergeben werden. Aufmerksamkeit erfordert die Sicherheit, besonders bei der Verarbeitung von ungeprüften Eingaben.
 
-Befehlszeilenargumente sind ein Konzept, das von den Anfängen der Programmierung stammt, als jedes Programm über eine Kommandozeile gestartet wurde. Heutzutage gibt es in C# auch alternative Möglichkeiten, wie die Verwendung von Konfigurationsdateien oder Umgebungsvariablen, die jedoch von den Projekterfordernissen abhängen.
-
-Die `args`-Parameter im `Main`-Verfahren sind eine Mischung von `string`-Array, die durch Leerzeichen getrennte Elemente des Befehls enthält, dem das Programm gestartet wurde.
-
-## Siehe auch
-
-- ["Main" und die Befehlszeilenargumente (C#-Programmierhandbuch)](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/main-and-command-args/)
-- [Umgebungsvariablen in C# nutzen](https://docs.microsoft.com/de-de/dotnet/api/system.environment.getenvironmentvariable)
+## Siehe auch:
+- Microsoft-Dokumentation zu `Main()` und Kommandozeilenargumenten: [docs.microsoft.com](https://docs.microsoft.com/dotnet/csharp/programming-guide/main-and-command-args/)
+- Artikel über Sicherheitsaspekte: [owasp.org](https://owasp.org/www-project-top-ten/)
+- Ein Guide zur argparse-Bibliothek für komplexe Argument-Verarbeitung: [CommandLineParser auf GitHub](https://github.com/commandlineparser/commandline)

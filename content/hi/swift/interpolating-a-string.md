@@ -1,7 +1,8 @@
 ---
-title:                "स्ट्रिंग का अंतर्कलन"
-html_title:           "Arduino: स्ट्रिंग का अंतर्कलन"
-simple_title:         "स्ट्रिंग का अंतर्कलन"
+title:                "स्ट्रिंग इंटरपोलेशन"
+date:                  2024-01-20T17:52:24.027404-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग इंटरपोलेशन"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,36 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? (What & Why?)
+## What & Why? (क्या और क्यों?)
+स्ट्रिंग इंटरपोलेशन का मतलब है किसी स्ट्रिंग के भीतर वैरिएबल या कॉन्स्टेंट को डालना। प्रोग्रामर्स इसका इस्तेमाल डायनैमिक संदेश बनाने या यूज़र को स्पष्ट जानकारी देने के लिए करते हैं।
 
-स्ट्रिंग इंटरपोलेशन (String Interpolation) Swift में एक तरीका है जिसका उपयोग हम किसी वैरिएबल, कॉन्स्टेंट या अन्य एक्स्प्रेशन के माध्यम से स्ट्रिंग के अंदर कुछ जोड़ने के लिए करते हैं। यह कार्यक्रमकर्ता के लिए संवाद और जानकारी साझा करने का एक आसान तरीका है। 
-
-## कैसे करें: (How to)
-
-आइए स्विफ्ट में string interpolation का उपयोग कैसे करें, देखते हैं:
-
+## How to: (कैसे करें:)
 ```Swift
-let name = "Rajesh"
-let age = 25
-let greeting = "नमस्ते, मेरा नाम \(name) है और मैं \(age) साल का हूँ।"
-print(greeting)
+// साधारण इंटरपोलेशन
+let name = "रोहित"
+let greeting = "नमस्ते, \(name)!"
+print(greeting) // आउटपुट: नमस्ते, रोहित!
+
+// गणना के साथ इंटरपोलेशन
+let apples = 3
+let oranges = 5
+let fruitSummary = "मेरे पास \(apples + oranges) फल हैं।"
+print(fruitSummary) // आउटपुट: मेरे पास 8 फल हैं।
+
+// दशमलव संख्या को फॉर्मेट करना
+let temperature = 36.6
+let weatherMessage = "आज का तापमान \(temperature)°C है।"
+print(weatherMessage) // आउटपुट: आज का तापमान 36.6°C है।
 ```
 
-और जब आप इसे रन करेंगे, यह उत्तर होगा:
+## Deep Dive (गहराई में जानकारी)
+स्ट्रिंग इंटरपोलेशन Swift भाषा में शुरुआत से ही था। इससे पहले, C लैंग्वेज में `printf` या Objective-C में `NSString` के `stringWithFormat:` का इस्तेमाल होता था। Swift ने इसे आसान बनाया है, साफ़ सिंटैक्स के साथ।
 
-```Swift
-नमस्ते, मेरा नाम Rajesh है और मैं 25 साल का हूँ।
-```
+जब आप स्ट्रिंग में इंटरपोलेशन का इस्तेमाल करते हैं, Swift कंपाइलर उसे `String` के `init(stringInterpolation:)` इनिशियलाइजर का इस्तेमाल करके बनाता है। आप कस्टम `StringInterpolation` बना सकते हैं अगर आप अपनी स्ट्रिंग्स को और भी अनुकूलित करना चाहते हों।
 
-## गहराई में जानें (Deep Dive)
+वैकल्पिक तरीकों में `+` ऑपरेटर, स्ट्रिंग्स के लिए आर्रे का इस्तेमाल या `String` फंक्शन जैसे `appending(_:)` हैं, लेकिन ये इंटरपोलेशन से ज्यादा कोड लिखना पड़ता है और साफ सिंटैक्स नहीं होता।
 
-String Interpolation का विधान Swift भाषा के साथ ही शुरुआत में किया गया था। यह प्रोग्रामरों को मानव पठनीय स्ट्रिंग्स बनाने में राहत देता था, जिसमें वरिएबल्स और एक्स्प्रेशन्स शामिल थे। 
-
-वैकल्पिक रूप से, आप "+ ऑपरेटर" का उपयोग कर सकते हैं स्ट्रिंग्स को जोड़ने के लिए, लेकिन यह Interpolation की तरह स्पष्ट और सीधे नहीं होता है।
-
-## देखने का भी: (See Also)
-
-अधिक जानकारी के लिए, आपको निम्नलिखित स्रोतों पर जाना चाहिए:
-
-1. [Swift Documentation: String Interpolation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-3. [Hacking with Swift: String Interpolation](https://www.hackingwithswift.com/read/0/5/string-interpolation)
+## See Also (अधिक जानकारी के लिए)
+- [The Swift Programming Language - String Interpolation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID292)

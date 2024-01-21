@@ -1,7 +1,8 @@
 ---
-title:                "Konwersja daty na ciąg znaków"
-html_title:           "Clojure: Konwersja daty na ciąg znaków"
-simple_title:         "Konwersja daty na ciąg znaków"
+title:                "Konwersja daty na łańcuch znaków"
+date:                  2024-01-20T17:37:36.027522-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Konwersja daty na łańcuch znaków"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,39 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Zamieniamy Datę na Ciąg w TypeScript: Krótkie Wprowadzenie
+## What & Why? (Co i Dlaczego?)
+Zamiana daty na ciąg znaków to proces przekształcania obiektów daty w tekst. Robimy to, by łatwiej było przechowywać, wyświetlać oraz współdzielić informacje o dacie i czasie.
 
-## Dlaczego i po co?
-Zamiana daty na ciąg znaków to proces, podczas którego obiekt daty jest konwertowany na ciąg znaków. Programiści robią to, aby łatwiej przechowywać, wyświetlać i manipulować datami w sposób dla ludzi zrozumiały.
-
-## Jak to zrobić:
-Podstawowym narzędziem jest metoda `toISOString()`. Sprawdź poniższy kod.
+## How to: (Jak to zrobić:)
 ```TypeScript
-let data: Date = new Date();
-let ciag: string = data.toISOString();
-console.log(ciag);
-```
-Po uruchomieniu kodu zobaczysz coś podobnego do tego: `2022-03-14T17:00:00.000Z`. To znaczy, że nasza data została poprawnie skonwertowana na ciąg znaków.
+const currentDate: Date = new Date();
+// Zamiana na lokalny format daty i czasu
+const localDateString: string = currentDate.toLocaleString("pl-PL");
+console.log(localDateString); // 'dd.mm.yyyy, HH:MM:SS'
 
-Jeśli chcesz to zrobić ręcznie, możesz użyć metod `getDay()`, `getMonth()`, `getFullYear()`, itp.
+// Zamiana na format ISO
+const isoDateString: string = currentDate.toISOString();
+console.log(isoDateString); // 'yyyy-mm-ddTHH:MM:SS.mmmZ'
 
-```TypeScript
-let data: Date = new Date();
-let ciag: string = `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`;
-console.log(ciag);
+// Wykorzystanie metody toString()
+const simpleDateString: string = currentDate.toString();
+console.log(simpleDateString); // 'Wed Apr 05 2023 14:56:17 GMT+0200 (czas środkowoeuropejski letni)'
 ```
 
-Wyjście będzie miało postać: `14/3/2022`.
+## Deep Dive (Dogłębna analiza)
+Wczesne systemy komputerowe, przez ograniczenia pamięci i moc obliczeniową, używały różnych sposobów reprezentacji czasu – najczęściej jako liczby całkowite. Metody konwersji dat na string w TypeScript (dziedziczące po JavaScript) wynikają stąd, ale też z późniejszej potrzeby obsługi formatów zrozumiałych dla ludzi. Alternatywy obejmują ręczną konstrukcję ciągów znaków z elementów daty, lub użycie bibliotek zewnętrznych jak moment.js (obecnie często zastępowane przez nowsze rozwiązania jak date-fns lub luxon).
 
-## Pogłębione informacje
-Metoda `toISOString()` jest częścią standardu ECMAScript od jego 5. edycji, opublikowanej w 2009 roku. Jest to sposób na konwersję daty do ciągu znaków zgodnie z formatem ISO 8601.
+Implementacja `Date.prototype.toString()` daje czytelny, ale maszynowo różnie interpretowany ciąg znaków. `Date.prototype.toISOString()` zwraca datę w standardzie ISO 8601, poprawnie odbieranym przez różne systemy i przeglądarki. Wykorzystanie `toLocaleString()` pozwala przedstawić datę w formacie lokalnym, idealnym do wyświetlenia end-userom. Ważne, by pamiętać o strefach czasowych podczas pracy z datami w aplikacjach międzynarodowych.
 
-Alternatywą jest użycie bibliotek zewnętrznych, takich jak Moment.js, które oferują bardziej rozbudowane i konfigurowalne opcje konwersji dat.
-
-W praktyce, metoda `toISOString()` polega na wywołaniu natywnych funkcji JavaScript do pobrania wartości dni, miesięcy i lat, a następnie sklejeniu ich razem w odpowiednim formacie.
-
-## Zobacz też
-1. [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-2. [ECMAScript Specifications](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
-3. [Moment.js library](https://momentjs.com/)
-4. [ISO 8601 Date Formats](https://www.iso.org/iso-8601-date-and-time-format.html)
+## See Also (Zobacz również)
+- MDN Web Docs Date reference: [MDN Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- Luxon documentation for modern date handling: [Luxon](https://moment.github.io/luxon/#/)
+- Date-fns library as a modern alternative: [date-fns](https://date-fns.org/)
+- About ISO 8601 standard: [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)

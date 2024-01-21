@@ -1,7 +1,8 @@
 ---
-title:                "Komentorivin argumenttien lukeminen"
-html_title:           "Bash: Komentorivin argumenttien lukeminen"
-simple_title:         "Komentorivin argumenttien lukeminen"
+title:                "Komennoriviparametrien lukeminen"
+date:                  2024-01-20T17:56:57.094075-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Komennoriviparametrien lukeminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,40 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä ja Miksi?)
+Komennorivin argumentit ovat ohjelmalle annettuja syötteitä, jotka määritellään ohjelman käynnistyksen yhteydessä. Ohjelmoijat käyttävät niitä, jotta voivat räätälöidä ohjelman suoritusta lennossa ilman koodin muokkaamista.
 
-Komentoriviargumentit ovat tietoja, joita ohjelma ottaa vastaan suoritettaessa. Niiden avulla ohjelmoijat voivat ohjata ja hallita ohjelman suorittamista käynnistyksen yhteydessä.
+## How to: (Kuinka Tehdään:)
+JavaScriptissä Node.js- ympäristössä komennorivin argumenttien lukeminen tapahtuu `process.argv`-objektilla. Perus käyttötapa näyttää tältä:
 
-## Kuinka:
+```javascript
+// process_args.js
+process.argv.forEach((val, index) => {
+  console.log(`${index}: ${val}`);
+});
 
-Voit lukea komentoriviargumentteja `process.argv`-objektin avulla. Tästä on esimerkki:
-
-```Javascript
-// prosessi.argv-testi.js
-console.log(process.argv);
+// Käynnistä komennolla:
+// node process_args.js moikka maailma
 ```
 
-Kun suoritat tämän skriptin käyttämällä `node prosessi.argv-testi.js`, tulostuu seuraava:
+Esimerkin tulostus:
 
-```Javascript
-[ '/usr/local/bin/node',
-  '/home/user/prosessi.argv-testi.js' ]
+```
+0: /path/to/node
+1: /path/to/process_args.js
+2: moikka
+3: maailma
 ```
 
-Ne kaksi ensimmäistä arvoa ovat vakiot: Node.js-flgmentin polku ja polku skriptiin, jota suoritetaan. Kaikki argumentit, jotka lisätään skriptin suorituksen yhteydessä, tulevat näiden jälkeen.
+Argumentit alkavat indeksistä 2, koska Node.js asettaa prosessin ja tiedostopolun ensimmäisiin paikkoihin.
 
-## Deep Dive
+## Deep Dive: (Syväsukellus:)
+Komennorivin argumenttien lukeminen onnistuu periaatteessa kaikissa ohjelmointikielissä, mutta tapa ja yksityiskohdat vaihtelevat. Historiallisesti tämä oli yksi varhaisimmista tavoista välittää tietoa ohjelmalle. Nykyään on olemassa vaihtoehtoisia menetelmiä, kuten ympäristömuuttujat ja erilliset konfiguraatiotiedostot. Node.js:ssä `process.argv` on yksinkertainen ja suoraviivainen, mutta isommissa sovelluksissa yleensä käytetään kirjastoja kuten `yargs` tai `commander` tarkemman syntaksin ja virheenkäsittelyn tarjoamiseksi. Argumenttien alkiot ovat aina merkkijonoja, joten niiden käsittelyyn voi kuulua muuntamista toisentyyppisiksi arvoiksi.
 
-Komentoriviargumenttien lukeminen on ollut osa ohjelmistokehitystä kauan ennen JavaScriptin ja Node.js:n tuloa. Se tarjoaa ohjelmoijalle suoran reitin ohjelman suoritusvirran kontrollointiin.
-
-Vaihtoehtoinen tapa on käyttää yksittäisiä paketteja, kuten `commander` tai `yargs`, jotka auttavat argumenttien jäsentämisessä ja validoinnissa. 
-
-Käytännön toteutuksessa `process.argv` on taulukko, jonka alkioita ovat suorituskomennon merkkijonot. Tämän ansiosta on mahdollista työskennellä argumenttien kanssa helposti ja joustavasti, kuten missä tahansa taulukossa.
-
-## Katso Myös
-
-Jos haluat oppia lisää komentoriviargumenttien käsittelystä, tutustu seuraaviin resursseihin:
-
-- Node.js:n viralliset dokumentit: [process.argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
-- Opas komentoriviargumenttien työstämiseen [Stack Abuse](https://stackabuse.com/command-line-arguments-in-node-js/)
-- Lisätietoja paketeista [commander](https://www.npmjs.com/package/commander) ja [yargs](https://www.npmjs.com/package/yargs) niiden NPM-sivuilta.
+## See Also: (Katso Myös:)
+- [Node.js documentation for process.argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- [Yargs GitHub repository](https://github.com/yargs/yargs)
+- [Commander.js GitHub repository](https://github.com/tj/commander.js)
+- [12 Factor App's take on Config](https://12factor.net/config)

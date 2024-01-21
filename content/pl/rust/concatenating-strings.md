@@ -1,7 +1,8 @@
 ---
-title:                "Łączenie ciągów znaków"
-html_title:           "Arduino: Łączenie ciągów znaków"
-simple_title:         "Łączenie ciągów znaków"
+title:                "Łączenie łańcuchów znaków"
+date:                  2024-01-20T17:35:40.191452-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Łączenie łańcuchów znaków"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,47 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Łączenie łańcuchów znaków to proces, w którym dwie lub więcej wartości tekstowych łączy się w jeden dłuższy ciąg. Programiści przeprowadzają to między innymi dla łatwiejszego formatowania i prezentowania danych.
+## What & Why? (Co i dlaczego?)
+Łączenie stringów to po prostu sposób, by z dwóch czy więcej osobnych tekstów zrobić jeden ciągły. Programiści robią to, gdy potrzebują stworzyć wiadomości, złożone dane czy po prostu wyświetlić coś spójnie.
 
-## Jak to zrobić:
-Rust oferuje kilka sposobów na łączenie ciągów znaków. Najpopularniejsze z nich to użycie operatora `+` lub funkcji `format!`.
+## How to: (Jak to zrobić:)
+Rust używa różnych metod do łączenia stringów. Oto kilka przykładów:
 
 ```Rust
-let hello = "Cześć";
-let world = "świecie";
-let message = hello.to_string() + " " + world;
-println!("{}", message); 
-```
-Wyjście:
-```
-Cześć świecie
-```
-Alternatywnie, można użyć funkcji `format!`, która umożliwia składnię podobną do `printf` w języku C.
-```Rust
-let hello = "Cześć";
-let world = "świecie";
-let message = format!("{} {}", hello, world);
-println!("{}", message);
-```
-Wyjście:
-```
-Cześć świecie
+fn main() {
+    // Użycie operatora `+`
+    let hello = "Cześć".to_string();
+    let world = "świat!";
+    let hello_world = hello + " " + world;
+    println!("{}", hello_world);  // Wypisze "Cześć świat!"
+
+    // Użycie makra `format!`
+    let new_hello_world = format!("{} {}", "Cześć", "świat!");
+    println!("{}", new_hello_world);  // Wypisze "Cześć świat!"
+
+    // Użycie metody `push_str` do dołączenia stringa do istniejącego String
+    let mut hello = "Cześć".to_string();
+    hello.push_str(" świat!");
+    println!("{}", hello);  // Wypisze "Cześć świat!"
+
+    // Użycie metody `push` do dodania pojedynczego znaku
+    let mut exclamation = String::from("!");
+    exclamation.push('!');
+    println!("{}", exclamation);  // Wypisze "!!"
+}
 ```
 
-## Deep Dive
-Historia: Operator `+` jest obecny w wielu językach programowania, a Rust go przyjął dla spójności i łatwości zrozumienia. Funkcja `format!` pochodzi z rodziny języków C, w której `printf` pełni tę samą rolę.
+## Deep Dive (Głębsze zanurzenie)
+Concatenating strings – to dość nowa historia w Rust, zmieniającą się wraz z ewolucją języka. Początkowo Rust bazował na zasadach podobnych do języka C, ale z czasem wprowadzono nowe metody, takie jak `push_str` i `format!`, ułatwiające życie programistów.
 
-Alternatywy: Oprócz operatora `+` i `format!` Rust oferuje również metody `push_str` i `push`, które są wydajniejsze, szczególnie, gdy łączy się wiele ciągów.
+Alternatywy jak `.join()` pozwalają na szybkie łączenie kolekcji stringów z separatorem. Implementacja tych funkcji wykorzystuje cechy alokacji pamięci i może być bardziej wydajna niż ciągłe używanie `+`.
 
-Szczegóły implementacji: Łączenie ciągów w Rust jest kosztowne pod kątem wydajności, podobnie jak w innych językach. Rust kładzie duży nacisk na bezpieczeństwo i zasoby, dlatego nie pozwala na modyfikację ciągów, co z kolei prowadzi do tworzenia nowego ciągu przy połączeniu.
+Kluczowym aspektem jest to, jak Rust radzi sobie z pamięcią przy łączeniu stringów. Nie ma tutaj automatycznego zarządzania pamięcią jak w niektórych językach wyższego poziomu. Właśnie dlatego Rust wymaga od deweloperów, by świadomie decydować o alokacji i życiu danych, co przy łączeniu stringów często kończy się zabawą z własnością (`ownership`) i wypożyczaniem (`borrowing`).
 
-## Zobacz także
-Check the Rust documentation for more examples and usage:
-Sprawdź dokumentację Rust, aby uzyskać więcej przykładów i zastosowań:
-- [`std::string::String`](https://doc.rust-lang.org/std/string/struct.String.html) 
-- [`std::fmt`](https://doc.rust-lang.org/std/fmt/) 
-
-Możesz również konsultować te źródła dla dogłębnej analizy:
-- [The Rust Book](https://doc.rust-lang.org/book/ch08-02-strings.html) 
-- [Efficient String Concatenation in Rust](https://fasterthanli.me/series/efficient-string-concatenation-in-rust)
+## See Also (Zobacz również)
+- [The Rust Programming Language – Chapter 8.2: Strings](https://doc.rust-lang.org/book/ch08-02-strings.html) - Oficjalna dokumentacja o stringach w Rust.
+- [Rust By Example – 2.5 Strings](https://doc.rust-lang.org/rust-by-example/std/str.html) - Interaktywne przykłady zarządzania stringami.

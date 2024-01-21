@@ -1,7 +1,8 @@
 ---
-title:                "Läsa kommandoradsargument"
-html_title:           "Bash: Läsa kommandoradsargument"
-simple_title:         "Läsa kommandoradsargument"
+title:                "Läsa in kommandoradsargument"
+date:                  2024-01-20T17:55:54.764022-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Läsa in kommandoradsargument"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -11,37 +12,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Kommandoradsargument är indata som ges till ett skript vid exekvering. Programmerare användar detta för att styra skriptets beteende utan att ändra själva koden.
+Att läsa kommandoradsargument handlar om att extrahera användarinput direkt från terminalen. Programmerare gör detta för att göra sina skript interaktiva och flexibla.
 
-## Så här gör du:
-Med Fish Shell är det superenkel att läsa kommandoradsargument med speciellt variabeln argv. Här är det grundläggande mönstret:
-
+## How to:
 ```Fish Shell
-#!/usr/bin/env fish
-for arg in $argv
-    echo $arg
-end
+# Argumenten tillgängliga via $argv
+echo "Hej, $argv!"
 ```
 
-Kör skriptet med några argument:
-
-```Fish Shell
-> ./myscript.fish ett två tre
+Körning:
+```bash
+> fish greeting.fish Världen
+Hej, Världen!
 ```
 
-Det ger följande utdata:
+## Deep Dive
+I historiens början var terminalen det primära gränssnittet mellan användare och dator. Fish Shell moderniserar detta koncept med enkel syntax och kraftfulla funktioner. Alternativ till `$argv` inkluderar att läsa från fil eller standard input. Implementationen bakom `$argv` är associerad med arrayer, där varje argument är en element i denna array, tillgänglig via dess index.
 
-```Fish Shell
-ett
-två
-tre
-```
-
-## Fördjupning
-Kommandoradsargument har använts i Unix-baserade system sedan 1970-talet. Det finns andra sätt att ge indata till ett skript, till exempel via standard input eller konfigurationsfiler, men kommandoradsargument används fortfarande eftersom det är enkelt och flexibelt. I Fish Shell, lagras argumenten i en lista av strängar i $argv som kan indexeras och skivna, liknande att arbeta med en lista i Python.
-
-## Se även
-För ytterligare läsning och exempel på hur du arbetar med kommandoradsargument i Fish Shell, se följande:
-- [Fish docs: Commandline arguments](https://fishshell.com/docs/current/tutorial.html#tut_commandline_args)
-- [StackOverflow: How to handle command-line arguments in Fish](https://stackoverflow.com/questions/7306962/fish-shell-how-to-set-multi-word-variable-from-argv)
-- [GitHub Fish Script examples](https://github.com/jorgebucaran/fish-shell-cookbook#commandline-arguments)
+## See Also
+- Fish dokumentation om arguments: [https://fishshell.com/docs/current/index.html#variables](https://fishshell.com/docs/current/index.html#variables)
+- Tutorial om att skriva skript i Fish: [https://fishshell.com/docs/current/tutorial.html](https://fishshell.com/docs/current/tutorial.html)

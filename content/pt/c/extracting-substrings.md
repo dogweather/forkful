@@ -1,6 +1,7 @@
 ---
 title:                "Extraindo substrings"
-html_title:           "Bash: Extraindo substrings"
+date:                  2024-01-20T17:45:07.704512-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extraindo substrings"
 programming_language: "C"
 category:             "C"
@@ -10,40 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Quê & Por Quê?
-
-Extrair substring é a ação de selecionar um grupo de caracteres contínuos de uma string (texto) maior - tipo pegar um pedaço de um bolo. Programadores fazem isso pra simplificar e otimizar o tratamento de dados textuais.
+## O Que & Porquê?
+Extrair substrings significa pegar partes específicas de uma string — como cortar um pedaço de uma fita ao tamanho que precisamos. Programadores fazem isso para manipular e analisar dados de texto de forma mais precisa e eficiente.
 
 ## Como Fazer:
-
-Para exemplificar, vamos usar a função `strncpy` de `string.h` que copia uma quantidade específica de caracteres de uma string pra outra:
+Para extrair uma substring em C, geralmente usamos a função `strncpy`. Atenção para adicionar o caractere nulo no final.
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-  char texto[13] = "bom dia mundo";
-  char substring[5];
-  
-  strncpy(substring, &texto[4], 4);
-  substring[4] = '\0';
+    char texto[] = "Programar é arte!";
+    char sub[7]; // Substring + caractere nulo
 
-  printf("%s\n", substring);
-  return 0;
+    strncpy(sub, texto + 5, 6); // Copia 6 caracteres a partir da posição 5
+    sub[6] = '\0'; // Não esqueça do caractere nulo
+
+    printf("Substring: %s\n", sub);
+
+    return 0;
 }
 ```
+Saída:
+```
+Substring: amar é
+```
 
-Nesse exemplo, a saída será `dia `.
+## Deep Dive
+Extrair substrings é uma operação básica, mas essencial. Originou-se na manipulação de strings nas primeiras linguagens de programação e persiste até hoje devido à sua utilidade. Existem várias alternativas para fazer isso em C. Além de `strncpy`, funções como `sscanf` e `strchr` podem ser utilizadas para casos específicos. Implementar sua própria lógica de extração pode ser necessário quando você busca eficiência e um controle fino sobre o gerenciamento de memória.
 
-## Deep Dive:
-
-A estratégia de extração de substrings vem da época dos primeiros sistemas de computação, quando o armazenamento de dados era limitado e caro - por isso era importante manusear apenas o necessário.
-
-Alternativamente, pode-se usar a função `sscanf`, que tem mais flexibilidade mas exige mais memória. Aqui também é válido atentar que a função `strncpy` não adiciona um nulo ('\0') ao final da nova string, então é importante não esquecer de inserir manualmente pra evitar problemas.
-
-O jeitinho de extrair substrings pode variar de linguagem pra linguagem. No C, os dados de strings são manipulados diretamente na memória, o que deixa o código rápido, mas pede cuidado extra.
-
-## Veja Também:
-
-Dá uma olhada no manual das funções pra entender melhor [strncpy()](https://www.cplusplus.com/reference/cstring/strncpy/?kw=strncpy) e [sscanf()](https://www.cplusplus.com/reference/cstdio/sscanf/). E aqui o artigo sobre [string handling](https://www.learn-c.org/en/String_Handling) no C.
+## Ver Também
+Para aprofundar seu conhecimento sobre manipulação de strings em C, confira:
+- C Standard Library: https://en.cppreference.com/w/c/string/byte
+- Programação C Moderna com Técnicas Avançadas: https://pt.wikibooks.org/wiki/Programar_em_C
+- Manipulação de strings: https://www.cprogramming.com/tutorial/c/lesson9.html

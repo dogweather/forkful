@@ -1,7 +1,8 @@
 ---
-title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
-html_title:           "Java: Berechnung eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "Berechnung eines zukünftigen oder vergangenen Datums"
+date:                  2024-01-20T17:31:15.687933-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -11,37 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Berechnen eines zukünftigen oder vergangenen Datums ist eine häufig benötigte Aktion in der Programmierung, der sog. "Datumsumrechnung". Ob in Buchhaltungsprogrammen oder in Fitness-Apps, wir müssen häufig Daten in der Zukunft oder der Vergangenheit bestimmen.
 
-## So geht's:
-Java stellt uns mit der Klasse `java.time.LocalDate` ein mächtiges Werkzeug zur Verfügung. Zum Beispiel:
+Das Berechnen eines zukünftigen oder vergangenen Datums erlaubt es uns, Zeitabstände zu handhaben. Programmierer nutzen diese Funktion für Erinnerungen, Planungen oder Zeitvergleiche.
 
-```Java
+## Anleitung:
+
+```java
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
-public class FutureDate {
-    public static void main(String[] args){
-        LocalDate today = LocalDate.now();
-        LocalDate futureDate = today.plusDays(5);
-        System.out.println("Das Datum in fünf Tagen ist: " + futureDate);
+public class DateCalculator {
+
+    public static void main(String[] args) {
+        LocalDate heute = LocalDate.now();
+        LocalDate zukunft = heute.plusWeeks(2);
+        LocalDate vergangenheit = heute.minusMonths(3);
+
+        System.out.println("Heute: " + heute);
+        System.out.println("Datum in 2 Wochen: " + zukunft);
+        System.out.println("Datum vor 3 Monaten: " + vergangenheit);
     }
 }
 ```
-Wird obiges Code-Schnipsel ausgeführt, erhalten wir folgende Ausgabe:
+
+Beispiel-Ausgabe:
 
 ```
-Das Datum in fünf Tagen ist: 2022-08-31
+Heute: 2023-04-14
+Datum in 2 Wochen: 2023-04-28
+Datum vor 3 Monaten: 2023-01-14
 ```
-Ebenso einfach lässt sich ein Datum in der Vergangenheit berechnen, indem man die Methode `minusDays(int days)` anstatt `plusDays(int days)` verwendet.
 
-## Deep Dive
-Historisch gesehen war die Arbeit mit Datumsangaben in Java vor der Einführung von `LocalDate` in Java 8 eine holprige Angelegenheit - die `java.util.Date`- und `java.util.Calendar`-Klassen waren unhandlich und fehleranfällig.
+## Tiefgang:
 
-Eine mögliche Alternative zu `LocalDate` ist Joda-Time, eine Drittanbieter-Bibliothek, die ähnliche Funktionalitäten bereitstellt. Allerdings bevorzugen die meisten Java-Entwickler `LocalDate` wegen seiner Einfachheit und direkten Integration in die Java Standard-Bibliothek.
+Historisch gesehen wurde das Datum-Handling in Java mit `java.util.Date` und `java.util.Calendar` erledigt, was nicht ohne Tücken war. `java.time` - auch bekannt als JSR-310 - löst viele dieser Probleme und ist seit Java 8 Standard.
 
-## Siehe Auch
-Weiterführende Informationen und alternative Möglichkeiten zur Datumsumrechnung finden Sie unter folgenden Links:
+Abseits der Standardbibliothek gibt es Libraries wie Joda-Time, die heute weitgehend durch `java.time` ersetzt wurden.
 
-- [Java LocalDate Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Arbeiten mit Zeit und Datum in Java](https://www.baeldung.com/java-8-date-time-intro)
-- [Joda-Time Dokumentation](https://www.joda.org/joda-time/)
+Zu den Details: `LocalDate` ist unveränderlich und thread-safe. Methoden wie `plus` und `minus` erstellen jeweils neue Instanzen. Sie vermeiden Probleme der mutierenden Zustandsveränderungen, die mit `java.util.Date` zu Kopfschmerzen führen konnten.
+
+## Siehe auch:
+
+- Oracle Tutorial zu `java.time`: https://docs.oracle.com/javase/tutorial/datetime/
+- JSR-310 User Guide: https://www.oracle.com/technical-resources/articles/java/joda.html
+- Java-Dokumentation für `LocalDate`: https://docs.oracle.com/javase/10/docs/api/java/time/LocalDate.html
+
+Durch die Links bekommt ihr tiefere Einblicke in die Möglichkeiten von `java.time`.

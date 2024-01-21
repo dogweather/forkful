@@ -1,6 +1,7 @@
 ---
 title:                "Hitta längden på en sträng"
-html_title:           "Arduino: Hitta längden på en sträng"
+date:                  2024-01-20T17:47:04.577607-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Hitta längden på en sträng"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,35 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att hitta längden på en sträng innebär att räkna antalet tecken i den. Programmerare gör detta för validering, formatering eller andra beräkningar som kräver att veta storleken på indata.
 
-Att hitta längden på en sträng innebär att räkna antalet tecken det innehåller. Som programmerare gör vi detta för att hantera data mer effektivt och göra korrekthetskontroll av input.
-
-## Hur man gör:
-
-Använd `String.length/1`-funktionen så här:
+## Så här gör du:
+Elixir använder `String.length/1` för att hitta längden på en sträng. Här är ett exempel:
 
 ```elixir
-IO.puts String.length("Hej, världen") 
+sträng = "Hej, Sverige!"
+längd = String.length(sträng)
+IO.puts längd
 ```
 
-Koden ovan kommer att skriva ut `12`, som är antalet tecken i strängen `"Hej, världen"`.
+Sample output:
 
-## Djupdykning
-
-Historiskt sett använder många programmeringsspråk en approach där varje tecken representeras av ett fast antal bytes. Men Elixir, en Unicode-kompatibel språk, tar en annan approach.
-
-Alternativt kan grafemfunktionen `String.graphemes/1` användas för att räkna antalet grafemer istället för kodpunkter. Notera dock att det tar längre tid än `String.length/1`:
-
-```elixir
-IO.puts String.length("hejä") 
+```
+13
 ```
 
-Resultatet kommer att bli `4`, medan det blir `5` om du använder `byte_size/1` eftersom "ä" tar upp två bytes i UTF-8. 
-
-Funktionen `String.length/1` i Elixir är baserat på UTF-8 kodade binärer och fungerar genom att iterera över den binära representationen av strängen och räkna kodpunkter, inte den faktiska bytestorleken.
+## Fördjupning
+Stränglängd går tillbaka till de första programmeringsspråken – det är grundläggande. I Elixir, som använder Unicode-teckenuppsättningen, räknar `String.length/1` graferna (bokstavsrepresentationer) och inte de råa bytesen. Det betyder att det hanterar olika språk och tecken korrekt. Alternativ? `byte_size/1` ger råa bytes men använd det inte för stränglängd om du bryr dig om rätt teckenetal.
 
 ## Se också
-
-1. Officiellt dokument för [String-modul](https://hexdocs.pm/elixir/String.html).
-
-2. Djupare förståelse för [UTF-8 kodning](https://unicode.org/faq/utf_bom.html).
+- Elixir's officiella dokumentation för `String.length/1`: https://hexdocs.pm/elixir/String.html#length/1
+- Unicode-standarden, för förståelse av grafer: http://www.unicode.org/standard/standard.html
+- Elixir School för mer om strängar och binärer i Elixir: https://elixirschool.com/en/lessons/basics/strings/

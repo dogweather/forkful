@@ -1,7 +1,8 @@
 ---
-title:                "Друк відлагоджувального виводу"
-html_title:           "Arduino: Друк відлагоджувального виводу"
-simple_title:         "Друк відлагоджувального виводу"
+title:                "Виведення налагоджувальної інформації"
+date:                  2024-01-20T17:53:16.117047-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Виведення налагоджувальної інформації"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,32 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке & Навіщо це потрібно?
+## What & Why? (Що і Чому?)
+Printing debug output is displaying temporary messages in the console to check if the code works right. Programmers do it to track variables, understand the flow, and catch bugs.
 
-Друк відлагоджувального виводу - це процес відображення внутрішніх даних програми, покликаний допомагти розробникам краще розуміти, як працює їх код. Це неоціненний інструмент для пошуку і виправлення помилок, а також відлагодження сложних алгоритмів.
- 
-## Як це зробити: 
+## How to: (Як це зробити:)
+```Swift
+// Basic output
+print("Hello, Ukraine!")
 
-У Swift це можна зробити декількома способами, але найпопулярнішим є використання команди `print()`. 
+// Interpolating variables
+var greeting = "Вітаю"
+print("\(greeting), reader!")
 
-```swift
-let name = "Kyiv"
-print("City name is \(name)")
+// Printing multiple items
+let apples = 5
+let oranges = 3
+print("Apples: \(apples), Oranges: \(oranges)")
+
+// Sample Output:
+// Hello, Ukraine!
+// Вітаю, reader!
+// Apples: 5, Oranges: 3
 ```
 
-Вивід:
-```
-City name is Kyiv
-```
+## Deep Dive (Поглиблений Розбір)
+Print debugging has been a developer's quick tool since early programming. It's simple yet effective, often helping catch culprits fast. While print statements are handy, use logging tools (like `os_log` in iOS) when you need more control and options. Logging can filter messages, set importance levels, and work better for released apps. Swift also differentiates between print (stdout) and debugPrint (stderr), the latter being more detailed.
 
-## Поглиблений аналіз
-
-`print()` - це найпростіший спосіб використання друку відлагоджувального виводу в Swift, але не єдиний. В історичному контексті, `print()` прийшов з мови Objective-C, де використовувався `NSLog()`. 
-
-Альтернативи включають використання `debugPrint()`, яке подає більше інформації про типи даних, а також `dump()`, для виводу структурованої інформації про складні об'єкти і структури даних.
-
-Але важливо враховувати, що незалежно від методу, вивід відлагоджувального друку треба використовувати з обережністю, особливо в ситуаціях, коли він може впливати на продуктивність програми або на її бажану функціональність.
-
-## Дивіться також:
-
-- [Apple Developer Documentation](https://developer.apple.com/documentation/swift/1541053-print)
+## See Also (Дивіться також)
+- Swift Documentation on print: https://developer.apple.com/documentation/swift/1541053-print
+- Effective logging in Swift: https://www.swiftbysundell.com/articles/logging-in-swift/
+- Apple’s Unified Logging System overview: https://developer.apple.com/documentation/os/logging

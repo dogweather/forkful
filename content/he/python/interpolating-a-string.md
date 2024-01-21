@@ -1,7 +1,8 @@
 ---
-title:                "אינטרפולציה של מחרוזת"
-html_title:           "Arduino: אינטרפולציה של מחרוזת"
-simple_title:         "אינטרפולציה של מחרוזת"
+title:                "שרבוב מחרוזת"
+date:                  2024-01-20T17:51:37.214529-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "שרבוב מחרוזת"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -11,42 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-אינטרפולציה של מחרוזת בתכנות היא שיטה לשם צירוף של משתנים או ביטויים בתוך מחרוזת. מתכנתים משתמשים בה כדי ליצור מחרוזות גמישות ונקיות יותר לכל מטרה אפשרית.
 
-## כיצד לכתוב:
-```Python
-name = "David"
-print(f"Shalom, {name}!")  # Output: Shalom, David!
-```
+עיבוד מחרוזות (String interpolation) זה הדרך לשלב משתנים וביטויים בתוך מחרוזת. פיתוחי תוכנה עושים את זה כדי לדינמיות טקסט, להתאים תוצאות, ולקרוא קוד קל יותר.
+
+## איך לעשות:
 
 ```Python
+# דוגמא עם f-string
+name = "יונתן"
 age = 30
-print(f"I am {age} years old.")  # Output: I am 30 years old.
+greeting = f"שלום, קוראים לי {name} ואני בן {age}."
+print(greeting)
+
+# דוגמא עם .format()
+welcome_message = "ברוך הבא, {}! היום הינו ביום {} בחודש."
+print(welcome_message.format("דני", "עשירי"))
+
+# תוצאה
+שלום, קוראים לי יונתן ואני בן 30.
+ברוך הבא, דני! היום הינו ביום עשירי בחודש.
 ```
 
-```Python
-num = 5
-print(f"The square of {num} is {num**2}.")  # Output: The square of 5 is 25.
-```
-## צלילה עמוקה 
-### הקשר ההיסטורי
-האינטרפולציה של מחרוזות היא לא רעיון חדש והייתה חלק משפות תכנות אחרות כמו Perl וRuby לפני שהוכנסה ל-Python 3.6. 
+## עיון נוסף:
 
-### חלופות 
-כדי לצרף משתנים למחרוזת, ניתן להשתמש גם במתודות ישנות יותר של Python כמו הפורמט של מחרוזות או השילוב של מחרוזות:
-```Python
-name = "David"
-print("Shalom, %s!" % name) 
-```
+לפני f-strings היו `%` ו-`.format()`. f-strings, מוצגים ב-Python 3.6+, מאיצים ומקלים על עיבוד מחרוזות. ולמרות ש `%` ו-`.format()` עדיין פעילים, f-strings הם הדרך המועדפת כיום. למעשה, f-strings מבצעים עיבוד מחרוזות בצורה יותר יעילה מבחינת מהירות הריצה.
 
-```Python
-age = 30
-print("I am {}. years old.".format(age))  
-```
+## ראו גם:
 
-### פרטי היישום
-המאפיין העיקרי של תוכנה לאינטרפולציה של מחרוזות הוא תוספת 'f' או 'F' לפני המחרוזת. הסימן קיצון 'f' או 'F' אומר שהמחרוזת היא פורמט תוך שמירה על משתנים כמו שהם.
-
-## ראה גם
-1. [מדריך Python - מחרוזות מעוצבות](https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting)
-3. [אינטרפולציה של מחרוזות נכונה ב-Python - Real Python](https://realpython.com/python-f-strings/)
+- [תיעוד Python על f-strings](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
+- [השוואה בין שיטות לעיבוד מחרוזות](https://realpython.com/python-string-formatting/)
+- [מדריך ל-`.format()`](https://pyformat.info/)

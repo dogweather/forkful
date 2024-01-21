@@ -1,6 +1,7 @@
 ---
 title:                "Comparing two dates"
-html_title:           "Arduino recipe: Comparing two dates"
+date:                  2024-01-20T17:32:19.461654-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Comparing two dates"
 programming_language: "C"
 category:             "C"
@@ -10,56 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
+## What & Why?
 
-Comparing two dates entails evaluating whether a date is earlier, later, or equal to another, enabling us to create time-sensitive functionalities. It's essential in tasks like sorting events by date, calculating elapsed time, or scheduling.
+Comparing two dates is all about figuring out their chronology—are they the same, is one earlier, or is one later? Programmers do this for stuff like sorting events, validating time periods, and handling reservations. It's everyday time-keeping in code.
 
-# How To:
+## How to:
 
-Below, a simple method to compare two dates in C using the `time.h` library. 
+In C, we often use the `time.h` library to deal with dates. Here's a quick example:
 
 ```C
-#include<stdio.h>
-#include<time.h>
+#include <stdio.h>
+#include <time.h>
 
-int main()
-{
-    struct tm date1 = {0, 0, 0, 15, 10, 2021 - 1900}; 
-    struct tm date2 = {0, 0, 0, 25, 10, 2021 - 1900};
-    
-    time_t time1 = mktime(&date1);
-    time_t time2 = mktime(&date2);
-    
-    if (time1 < time2)
-        printf("Date1 is earlier than Date2\n");
-    else if (time1 > time2)
-        printf("Date2 is earlier than Date1\n");
-    else
-        printf("Dates are equal\n");
-        
+int compare_dates(struct tm date1, struct tm date2) {
+    // Convert to time_t for easy comparison
+    time_t t1 = mktime(&date1);
+    time_t t2 = mktime(&date2);
+
+    // Compare
+    if (t1 < t2) return -1; // date1 is earlier
+    if (t1 > t2) return 1;  // date1 is later
+    return 0;               // dates are the same
+}
+
+int main() {
+    // Two dates to compare
+    struct tm date1 = { .tm_year = 120, .tm_mon = 5, .tm_mday = 14 }; // 2020-06-14
+    struct tm date2 = { .tm_year = 122, .tm_mon = 11, .tm_mday = 3 };  // 2022-12-03
+
+    int result = compare_dates(date1, date2);
+
+    if (result < 0) {
+        printf("Date1 is earlier than Date2.\n");
+    } else if (result > 0) {
+        printf("Date1 is later than Date2.\n");
+    } else {
+        printf("Date1 is the same as Date2.\n");
+    }
+
     return 0;
 }
 ```
 
-Output:
-
-```C
-Date1 is earlier than Date2
+Sample output:
+```
+Date1 is earlier than Date2.
 ```
 
-This program first creates two `struct tm` instances, representing two dates. We convert these into `time_t` values using `mktime()`, which we can compare using standard relational operators.
+## Deep Dive
 
-# Deep Dive 
+Before `time.h` blessed C with standardized time functions, you'd roll your own date comparisons—risky business with leap years and all. Now, `mktime()` and `time_t` are the go-to. They handle the quirks of calendars so you don't have to.
 
-The C library's `time.h` has been handling date and time since its inception. Before C99, it only had `time_t` for date/time representation. C99 added `struct timespec` for higher precision. 
+`mktime()` takes your `struct tm` date, with all its human-friendly fields, and squashes it into a `time_t` value. This value represents seconds since the epoch (00:00, Jan 1, 1970, UTC). Once your dates are in `time_t`, it's just number comparison.
 
-Several other alternatives to `time.h` exist. For instance, `chrono` library in C++ supplies in-depth time functions. Third-party libraries like Boost or ICU offer richer, though more complex, solutions.
+There are fancier alternatives, like `difftime()` for finding the time difference or using third-party libraries. They can offer more features but for a straightforward "Which date is earlier?" question, the standard library usually has you covered.
 
-The magic value '1900' in the struct initialization is due to `tm_year`'s definition: it's the number of years since 1900. The instances of `struct tm` are then converted to `time_t` using `mktime()` which accounts for leap years, variable month lengths, and time zones.
+Implementation depends on system time settings—timezones and Daylight Saving Time can trip you up. `mktime()` interprets the `struct tm` as local time, so be mindful when comparing dates from different time zones.
 
-# See Also 
+## See Also
 
-Check these for more:
-- Manual pages for time: https://man7.org/linux/man-pages/man7/time.7.html
-- StackOverflow post on date comparison: https://stackoverflow.com/questions/3556323/comparing-two-dates-in-c 
-- POSIX timers overview: http://man7.org/linux/man-pages/man7/time.7.html
+- C `time.h` reference: https://en.cppreference.com/w/c/chrono
+- `time(7)` - overview of time and date in Unix systems: http://man7.org/linux/man-pages/man7/time.7.html
+- GNU C Library (glibc) manual on Time: https://www.gnu.org/software/libc/manual/html_node/Time.html

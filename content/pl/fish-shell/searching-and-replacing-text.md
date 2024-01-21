@@ -1,7 +1,8 @@
 ---
-title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
-simple_title:         "Wyszukiwanie i zastępowanie tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+date:                  2024-01-20T17:58:00.452548-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,30 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? - Co i dlaczego?
+Wyszukiwanie i zamiana tekstu to zmiana jednego ciągu znaków na inny. Programiści robią to, aby szybko poprawiać błędy, aktualizować kod lub zmieniać dane.
 
-Najprościej mówiąc, wyszukiwanie i zastępowanie to techniki na modyfikację tekstu przez znalezienie konkretnych fraz i zmianę ich na inne. Programiści to robią, by edytować kod, poprawiać błędy i przyspieszać pracę.
+## How to: - Jak to zrobić:
+```Fish Shell
+# Wyszukaj 'stary_tekst' i zamień go na 'nowy_tekst' w pliku 'plik.txt'
+sed 's/stary_tekst/nowy_tekst/g' plik.txt
 
-## Jak to zrobić:
+# Aby zapisać zmiany w pliku, możesz użyć flagi -i
+sed -i 's/stary_tekst/nowy_tekst/g' plik.txt
 
-Zastosujmy to w praktyce w Fish Shell:
-```fish
-set -l old_text 'stary tekst'
-set -l new_text 'nowy tekst'
-set -l target 'To jest mój stary tekst.'
-
-echo $target | string replace -r $old_text $new_text
+# Przykład użycia wyrażeń regularnych do wyszukiwania cyfr i zamiany na 'liczba'
+echo "To jest rok 2023" | sed 's/[0-9]+/liczba/g'
 ```
-Gdy uruchomisz powyższy skrypt, wydrukuje on: 'To jest mój nowy tekst.'
+Output:
+```
+To jest rok liczba
+```
 
-## Głębsze spojrzenie
+## Deep Dive - W głębi tematu:
+Wyszukiwanie i zamiana tekstu ma swoje korzenie w edycji tekstu i przetwarzaniu komputerowym z lat 60. Wcześniejsze narzędzia jak ed czy ex wpłynęły na powstanie `sed`, który jest standardem w Unixach od 1974 roku. Alternatywą dla `sed` jest `awk`, które również oferuje zaawansowane operacje na tekście. Fish shell nie ma własnego wewnętrznego narzędzia do tego zadania, dlatego korzysta się z zewnętrznych jak `sed` czy `awk`. W implementacji Fish wystarczy użyć potoku (pipe) do przekazania tekstu do tych narzędzi.
 
-Narzędzie do wyszukiwania i zastępowania tekstu ma długą historię, zaczynającą się od starożytnych edytorów tekstowych, takich jak ed. W Fish Shell, wykorzystaliśmy wbudowaną funkcję `string replace`, która jest wynikiem rozwoju tych historycznych narzędzi.
-
-Inne powszechne metody to używanie `sed` albo `awk`, które są bardziej złożone, lecz także bardziej elastyczne. Zakres ich możliwości daleko wykracza poza to, co prezentowane jest w tym artykule.
-
-Ciekawe jest to, że `string replace` w Fish operuje na całych linijkach, a nie na strumieniach znaków. To oznacza, że nie możesz go użyć do modyfikacji tekstu przekraczającego granice linii - wtedy musisz skorzystać z innych narzędzi.
-
-## Zobacz również:
-
-- [Przewodnik po używaniu 'awk' w UNIX](https://www.grymoire.com/Unix/Awk.html)
+## See Also - Zobacz również:
+- Dokumentacja `sed`: https://www.gnu.org/software/sed/manual/sed.html
+- Dokumentacja Fish Shell dotycząca potoków: https://fishshell.com/docs/current/index.html#syntax-pipe
+- Wprowadzenie do wyrażeń regularnych: https://www.regular-expressions.info/

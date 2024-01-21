@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie zapytania http z podstawową autoryzacją"
+date:                  2024-01-20T18:02:37.871553-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,38 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to i dlaczego?
+## What & Why? (Co i Dlaczego?)
 
-Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem to proces, w którym programista przesyła dane logowania (takie jak nazwa użytkownika i hasło) w nagłówku żądania HTTP, aby uzyskać dostęp do zasobów po stronie serwera. Robi się to głównie po to, aby zdobyć uprawnienia do wykonywania pewnych operacji na stronie internetowej lub w aplikacji.
+Wysyłanie żądania HTTP z podstawową autoryzacją to proces dodawania nagłówka autoryzacyjnego do żądania HTTP, aby potwierdzić, że mamy dostęp. Programiści robią to, by bezpiecznie komunikować się z chronionymi zasobami API.
 
-## Jak to zrobić:
+## How to: (Jak to zrobić:)
 
-To jest przykładowy kod w Ruby, który ilustruje, jak wysłać żądanie HTTP z podstawowym uwierzytelnieniem:
+Ruby używa `net/http` do wysyłania żądań HTTP. Dołączanie podstawowej autoryzacji jest proste:
 
 ```Ruby
 require 'net/http'
 require 'uri'
 
-uri = URI.parse('http://example.com/path')
-http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Get.new(uri.request_uri)
-request.basic_auth('username', 'password')
-response = http.request(request)
+uri = URI('http://example.com/secrets')
+username = 'foo'
+password = 'bar'
+
+request = Net::HTTP::Get.new(uri)
+request.basic_auth(username, password)
+
+response = Net::HTTP.start(uri.hostname, uri.port) do |http|
+  http.request(request)
+end
+
 puts response.body
 ```
 
-Gdzie 'username' to nazwa użytkownika, a 'password' to hasło zasobu, do którego chcesz uzyskać dostęp. Po uruchomieniu tego kodu, wydrukowany zostanie odpowiedź ciała żądania.
+Jeśli wszystko jest poprawne, odpowiedź będzie zawierać dane, do których dostęp uzyskaliśmy.
 
-## Głębsze zanurzenie:
+## Deep Dive (W Głębi Tematu)
 
-Pomysł wysyłania żądań HTTP z uwierzytelnieniem sięga początków internetu. Na początku uwierzytelnianie było prostym sposobem sprawdzenia, czy użytkownik posiada prawidłowe konto i hasło należące do aplikacji.
+Podstawowa autoryzacja HTTP to stara metoda (RFC 7617), niezbyt bezpieczna – używa base64, a nie szyfrowania. Alternatywy to Digest Access Authentication lub bardziej bezpieczne tokeny, jak OAuth.
 
-Alternatywą dla podstawowego uwierzytelnienia może być uwierzytelnianie typu Digest lub uwierzytelnianie przez token Bearer. Oba zapewniają wyższy poziom bezpieczeństwa, jednak są bardziej skomplikowane do implementacji.
+Podstawowa autoryzacja w Ruby jest prosta – dodaje zakodowany login i hasło do nagłówka żądania. W realnych aplikacjach zaleca się użycie HTTPS, by zabezpieczyć dane uwierzytelniające.
 
-Rzecz, którą warto zauważyć podczas wysyłania żądań HTTP z podstawowym uwierzytelnieniem, jest to, że informacje o logowaniu są przesyłane jako tekst jawny w nagłówku żądania. To oznacza, że jeśli połączenie nie jest zabezpieczone (tj. nie jest to połączenie HTTPS), te informacje mogą być łatwo przechwycone i odczytane przez osoby postronne.
+## See Also (Zobacz również)
 
-## Zobacz też:
-
-1. [Dokumentacja Ruby Net::HTTP](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
-2. [HTTP Authentication: Basic and Digest Access Authentication (IETF)](https://tools.ietf.org/html/rfc2617)
-3. [Uwierzytelnianie bearer token w Ruby](https://www.devglan.com/ruby-on-rails/ruby-http-client-get-post).
+- Dokumentacja Basic Authentication w RFC 7617: [The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+- Wprowadzenie do autoryzacji HTTP: [HTTP Authentication: Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)

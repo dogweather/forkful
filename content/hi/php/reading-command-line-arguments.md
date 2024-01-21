@@ -1,7 +1,8 @@
 ---
-title:                "कमांड लाइन तर्कों को पढ़ना"
-html_title:           "Kotlin: कमांड लाइन तर्कों को पढ़ना"
-simple_title:         "कमांड लाइन तर्कों को पढ़ना"
+title:                "कमांड लाइन आर्गुमेंट्स पढ़ना"
+date:                  2024-01-20T17:57:11.728944-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "कमांड लाइन आर्गुमेंट्स पढ़ना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,45 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+PHP में कमांड लाइन आर्ग्युमेंट्स पढ़ना एक तरीका है जिससे स्क्रिप्ट को बाहरी इनपुट मिलते हैं। प्रोग्रामर इसे इसलिए करते हैं ताकि वे अपने प्रोग्राम को लचीला बना सकें और उपयोगकर्ताओं से डायनेमिक इनपुट्स ले सकें।
 
-Command line arguments कुछ पैस के तरह होते हैं जो आपके PHP script को दिए जाते हैं। ये आपके प्रोग्राम को मोडिफाई करने में मदद करते हैं। आमतौर पर, विशेष विकल्पों, उपयोगकर्ता मापदंड, या फ़ाइल पथ के साथ-साथ इसे उपयोग किया जाता है।
-
-## कैसे:
-
+## How to: (कैसे करें:)
 ```PHP
-// PHP script to read command line arguments
-// Get arguments
-$options = getopt(null, ["user:", "path:"]);
+<?php
+// यह छोटी स्क्रिप्ट कमांड लाइन से आर्ग्युमेंट्स को पढ़ती है।
 
-// Print arguments
-foreach ($options as $key => $value) {
-    echo "Key: $key; Value: $value\n";
+if ($argc > 1) {
+    echo "हैलो, " . $argv[1] . "!\n";
+} else {
+    echo "हैलो, अनजान व्यक्ति!\n";
 }
+
+?>
+```
+ध्यान दें कि `$argc` यह दर्शाता है कि कितने आर्ग्युमेंट्स दिए गए हैं, और `$argv` एक ऐरे है जिसमें उन आर्ग्युमेंट्स को स्टोर किया जाता है।
+Sample Output कुछ ऐसा होगा:
+```
+$ php your_script.php Ramesh
+हैलो, Ramesh!
+```
+अगर आप कोई आर्ग्युमेंट पास नहीं करते, तो आउटपुट होगा:
+```
+$ php your_script.php
+हैलो, अनजान व्यक्ति!
 ```
 
-यदि यह script को "--user=test --path=/tmp" परमिटर के साथ चलाया जाता है, तो यह output देगा:
+## Deep Dive (गहराई से जानकारी):
+PHP स्क्रिप्ट्स पहले मुख्यत: वेब डेवलपमेंट के लिए इस्तेमाल होती थीं, लेकिन समय के साथ उसका उपयोग क्लाइंट-साइड स्क्रिप्टिंग और कमांड लाइन टूल्स में भी बड़ा हो गया है। `$_SERVER['argv']` या `getopt()` फंक्शन का उपयोग कर आप और भी जटिल कमांड लाइन ऑप्शन्स और आर्ग्युमेंट्स हैंडल कर सकते हैं। इसे आप प्रोग्राम की फ्लेक्सिबिलिटी और डायनेमिक कॉन्फिगरेशन बढ़ाने के लिए इस्तेमाल कर सकते हैं।
 
-```PHP
-Key: user; Value: test
-Key: path; Value: /tmp
-```
+## See Also (अधिक जानकारी के लिए):
+- PHP के दस्तावेज़ीकरण पर कमांड लाइन उपयोग: https://www.php.net/manual/en/features.commandline.php
+- PHP कमांड लाइन इंटरफेस (CLI) की सिक्यूरिटी: https://www.php.net/manual/en/features.commandline.security.php
+- getopt() फंक्शन के उदाहरण: https://www.php.net/manual/en/function.getopt.php
 
-## गहरी जांच:
-
-PHP में command line arguments को पढ़ना बहुत साधारण होता है, फिर भी बिते समय में कुछ विभिन्न तरीकों का निर्माण हुआ है। उपयोगकर्ता मापदंडों में ``getopt()`` का उपयोग परमिटर्स को सीधे कैप्चर करने के लिए होता है।
-
-विकल्प रूप में, आप ``$_SERVER['argv']`` में पाए जाने वाले command line arguments का उपयोग कर सकते हैं। यह अधिक flexible विकल्प हो सकता है, लेकिन यह परमिटर्स को manual parse करने की आवश्यकता हो सकती है।
-
-```PHP
-// Manually parsing command line parameters
-$args = $_SERVER['argv'];
-foreach ($args as $key => $value) {
-    echo "Key: $key; Value: $value\n";
-}
-```
-
-## देखें भी:
-
-- [PHP Command line usage](https://www.php.net/manual/en/features.commandline.usage.php) - PHP Manual
-- [PHP getopt](https://www.php.net/manual/en/function.getopt.php) - PHP Manual
+इस जानकारी के साथ, आप कमांड लाइन से PHP स्क्रिप्ट्स को आर्ग्युमेंट्स पास करने के प्रकार और उसके उपयोगों को बेहतर समझ सकते हैं।

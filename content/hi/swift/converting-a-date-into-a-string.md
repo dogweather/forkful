@@ -1,7 +1,8 @@
 ---
-title:                "एक तारीख को स्ट्रिंग में परिवर्तित करना"
-html_title:           "Java: एक तारीख को स्ट्रिंग में परिवर्तित करना"
-simple_title:         "एक तारीख को स्ट्रिंग में परिवर्तित करना"
+title:                "तारीख को स्ट्रिंग में बदलना"
+date:                  2024-01-20T17:37:58.061310-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "तारीख को स्ट्रिंग में बदलना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,36 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? (What & Why?)
+## क्या और क्यों?
 
-व्यापार क्रियाओं, टाइम-स्टैम्प, एप्लिकेशन के लग और डेटा यात्रा के लिए, हमें आमतौर पर दिनांक को विभिन्न स्वरूपों में बदलने की आवश्यकता होती है। इसलिए कोडर्स को स्विफ्ट में दिनांक को स्ट्रिंग में बदलने का विधान जानना चाहिए।
+डेट को स्ट्रिंग में बदलना मतलब है तारीख और समय को पठनीय फॉर्मेट में परिवर्तित करना। प्रोग्रामर्स इसे इसलिए करते हैं ताकि एप्लिकेशन यूजर्स आसानी से तारीख और समय को समझ सकें और स्क्रीन पर सही तरीके से प्रदर्शित हो।
 
-## कैसे (How To)
+## कैसे करें:
 
-यहां स्विफ्ट के DateFormatter का उपयोग करके दिनांक को स्ट्रींग में कनवर्ट करने का एक उदाहरण है:
+Swift में `DateFormatter` का इस्तेमाल करते हुए डेट को स्ट्रिंग में बदल सकते हैं। नीचे कोड दिया गया है:
 
-```swift
+```Swift
 import Foundation
 
-let date = Date()
+let currentDate = Date()
+
 let formatter = DateFormatter()
-formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-let result = formatter.string(from: date)
+formatter.dateFormat = "dd/MM/yyyy"
 
-print(result)
+let dateString = formatter.string(from: currentDate)
+print(dateString)
 ```
-जब आप इसे चलाते हैं, आपको वर्तमान दिनांक और समय यथा, "2022-05-07 15:40:50" प्राप्त होगा।
 
-## गहरी जानकारी (Deep Dive)
+अगर आज 12 अप्रैल 2023 है, आउटपुट होगा: 
+```
+12/04/2023
+```
 
-DateFormatter वर्ग स्विफ्ट की Foundation फ्रेमवर्क का हिस्सा है और दिनांक और समय को मौखिक और लिखित रूप में प्राप्त करने या बदलने के लिए क्रियाओं को सज्जित करता है।
+## गहराई में जानकारी:
 
-विकल्प रूप में, आप ISO8601DateFormatter वर्ग का उपयोग कर सकते हैं, यह एक और ISO 8601 दिनांक और समय के लिये स्वरूपक है।
+`DateFormatter` में `dateFormat` का इस्तेमाल करके डेट को विभिन्न प्रकार के स्ट्रिंग फॉर्मेट्स में प्रदर्शित किया जा सकता है। `DateFormatter` कौन्सेप्ट 1980s से है, जब आईबीएम के सिस्टम/३८ में समान उपकरण थे। वैकल्पिक रूप से, `ISO8601DateFormatter` का उपयोग करके ISO-8601 मानक तारीखें बनाई जा सकती हैं। Swift में `Date` और `String` के बीच परिवर्तन कई तरीकों से किया जा सकता है, जिसमें `.timeIntervalSince1970` या कस्टम पैर्टन्स जैसे `"EEEE, MMM d, yyyy"` भी शामिल हैं।
 
-डेटा को स्ट्रिंग में बदलने का विधान से उच्च प्रदर्शन का अनुमान नहीं किया जाना चाहिए क्योंकि यह भारी भरकम और महंगा हो सकता है। जहां संभव हो, इसे कम से कम उपयोग करना चाहिए।
+## संबंधित सूत्रों की जानकारी:
 
-## और भी देखें (See Also)
-
-1. [Apple Documentation: DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-2. [Apple Documentation: ISO8601DateFormatter](https://developer.apple.com/documentation/foundation/iso8601dateformatter)
-3. [Stackoverflow: How to convert a Date into a string in Swift?](https://stackoverflow.com/questions/35700281/date-format-in-swift)
+- [Apple's Date Formatting Guide](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Swift Documentation: DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)

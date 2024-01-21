@@ -1,7 +1,8 @@
 ---
-title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie zapytania http z podstawową autoryzacją"
+date:                  2024-01-20T18:02:15.229784-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,50 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Wysyłanie żądania HTTP z podstawową autentykacją to proces, w którym nasza aplikacja rozmawia z serwerem sieciowym, przekazując dane za pomocą protokołu HTTP i jednocześnie udowadniając swoją tożsamość serwerowi. Programiści robią to, aby uzyskać dostęp do zasobów serwera, które są chronione przed anonimowym dostępem. 
+Wysyłanie zapytania HTTP z podstawową autentykacją to proces uwierzytelniania użytkownika przez serwer przy użyciu loginu i hasła zakodowanych w base64. Programiści stosują tę metodę, by zapewnić bezpieczny dostęp do API lub zasobów webowych.
 
 ## Jak to zrobić:
-
-```Java
-import java.net.URL;
+```java
+import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Base64;
 
-public class Main {
-    public static void main(String[] args) throws Exception {
-        
-        String urlStr = "http://example.com";
-        String name = "user";
-        String password = "password";
+public class BasicAuthRequest {
 
-        URL url = new URL(urlStr);
+    public static void main(String[] args) throws IOException {
+        String apiUrl = "http://example.com/api/data"; // Zamień na odpowiedni URL
+        String username = "user";
+        String password = "pass";
+
+        URL url = new URL(apiUrl);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-        String authStr = name + ":" + password;
-        String authEncoded = Base64.getEncoder().encodeToString(authStr.getBytes());
+        // Dodajemy nagłówek z autentykacją podstawową
+        String encoded = Base64.getEncoder().encodeToString((username + ":" + password).getBytes());
+        connection.setRequestProperty("Authorization", "Basic " + encoded);
 
-        connection.setRequestMethod("GET");
-        connection.setRequestProperty("Authorization", "Basic " + authEncoded);
-
+        // Odpowiedź serwera
         int responseCode = connection.getResponseCode();
-        System.out.println("Response Code : " + responseCode);
+        System.out.println("Response Code: " + responseCode);
+
+        // Tu wstaw obsługę strumienia danych z odpowiedzi...
     }
 }
 ```
+Wynik:
+```
+Response Code: 200
+```
 
-Kiedy uruchomisz ten kod, wydrukuje on kod odpowiedzi z serwera, który może informować Cię o powodzeniu lub niepowodzeniu.
+## Szersza perspektywa
+HTTP Basic Authentication jest prostym mechanizmem kontroli dostępu do zasobów sieciowych. Wprowadzony w 1996 roku w HTTP/1.0, do dziś jest powszechnie stosowany ze względu na swoją prostotę. Alternatywami są bardziej złożone metody jak OAuth, tokeny JWT czy systemy oparte na certyfikatach SSL/TLS. Implementując podstawową autentykację, ważne jest użycie połączenia szyfrowanego (HTTPS), aby zapobiec potencjalnemu przechwyceniu danych uwierzytelniających.
 
-## Wgłębna analiza
-
-Wysyłanie żądań HTTP z podstawową autentykacją było popularne, gdy internet był młodszy i mniej złożony. Na przestrzeni lat powstało wiele alternatyw dla tej metody, na przykład autentykacja Digest, OAuth czy tokeny JWT. Każda z nich ma swoje mocne i słabe strony.
-
-Podczas korzystania z podstawowej autentykacji ważne jest, aby pamiętać, że Twoje dane logowania są kodowane, a nie szyfrowane. Oznacza to, że jeśli ktoś przechwyci te dane, może je dekodować i użyć. Dlatego zaleca się stosowanie protokołu HTTPS zamiast HTTP, gdy korzystasz z podstawowej autentykacji.
-
-Za przykładem kodu, który przedstawiliśmy, kryje się wiele szczegółów implementacyjnych. Na przykład metoda `setRequestProperty` ustawia nagłówek HTTP `Authorization` na skonkatenowany ciąg `Basic ` i zakodowany ciąg zawierający Twoje dane logowania.
-
-## Zobacz też
-
-1. [Przewodnik Oracle na temat połączeń HTTP](https://docs.oracle.com/javase/tutorial/networking/urls/index.html)
-3. [Dokumentacja JDK na temat klasy Base64](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html)
-4. [Dokumentacja JDK na temat klasy HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
+## Zobacz również
+- [Specyfikacja HTTP Basic Authentication](https://tools.ietf.org/html/rfc7617)
+- [Przewodnik po uwierzytelnianiu w Javie](https://www.baeldung.com/java-http-request)

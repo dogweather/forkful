@@ -1,6 +1,7 @@
 ---
 title:                "Excluindo caracteres que correspondem a um padrão"
-html_title:           "Arduino: Excluindo caracteres que correspondem a um padrão"
+date:                  2024-01-20T17:42:37.886022-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Java"
 category:             "Java"
@@ -10,42 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## What & Why?
+Deletar caracteres que correspondem a um padrão é basicamente tirar do texto tudo o que a gente não quer ou não precisa. Programadores fazem isso para limpar dados, validar inputs ou simplificar strings para processamento.
 
-Deletar caracteres com um padrão específico é uma técnica utilizada para eliminar ou modificar pedaços de texto (strings) que correspondam a um determinado critério. É muito utilizada em programação para limpar dados, validar entrada do usuário, entre outros.
-
-## Como Fazer:
-Aqui está um breve exemplo de como remover caracteres que correspondem a um determinado padrão em Java:
+## How to:
+Em Java, podemos usar a classe `Pattern` e a classe `Matcher` para localizar e deletar os trechinhos específicos dentro de uma string. Vamos ver como isso funciona.
 
 ```java
-import java.util.regex.*;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
-public class Main {
+public class DeletePatternExample {
     public static void main(String[] args) {
-        String str = "ABC123XYZ";
-        String padrao = "[0-9]";  // Vamos remover todos os números
+        String originalString = "abacaxi99 é uma fruta100 deliciosa";
+        String patternString = "\\d+"; // padrão regex para encontrar números
 
-        Pattern p = Pattern.compile(padrao);
-        Matcher m = p.matcher(str);
+        Pattern pattern = Pattern.compile(patternString);
+        Matcher matcher = pattern.matcher(originalString);
 
-        String resultado = m.replaceAll("");
-
-        System.out.println(resultado);  // Vai imprimir "ABCXYZ"
+        String cleanedString = matcher.replaceAll("");
+        System.out.println(cleanedString);
     }
 }
 ```
+Saída do exemplo:
+```
+abacaxi é uma fruta deliciosa
+```
+Repare que todos os números foram removidos da string original.
 
-Neste exemplo, removemos todos os números da string "ABC123XYZ", resultando em "ABCXYZ".
+## Deep Dive
+Deletar caracteres seguindo um padrão não é uma tecnologia nova; isso já está em diversas linguagens de programação há décadas, através de expressões regulares, ou regex. Regex é poderoso, mas pode ser complicadinho no começo. Existem alternativas, como usar o método `replace()` ou `replaceAll()` de `String` para substituir sem regex, mas são menos flexíveis. Quanto à implementação, o Java compila o padrão regex numa série de instruções que procuram correspondências na string — se liga que isso pode ser menos eficiente se usado indevidamente, especialmente em loops.
 
-## Mergulho Profundo
-
-O suporte a expressões regulares foi adicionado no Java 1.4, permitindo aos programadores pesquisar e manipular strings de maneira poderosa e flexível. Antes disso, a remoção de caracteres que correspondem a um padrão geralmente exigia loops e lógica condicional personalizada.
-
-Existem várias outras maneiras de remover caracteres que correspondem a um padrão em Java, dependendo de suas necessidades específicas. Por exemplo, você pode usar o método `.replace()` ou `.replaceFirst()` de uma string se souber exatamente o que deseja remover.
-
-No entanto, esse método `replaceAll()` em combinação com expressões regulares é o mais poderoso e flexível. Ele permite que você defina um padrão complexo que os caracteres devem corresponder e pode substituir todas as ocorrências desse padrão por uma string de substituição, tudo em uma única linha de código.
-
-## Veja Também
-
-* Tutorial de Regex em Java: https://www.vogella.com/tutorials/JavaRegularExpressions/article.html
-* Manipulação de Strings em Java: https://www.geeksforgeeks.org/string-handling-java/
+## See Also
+- [Classe Pattern na documentação oficial do Java](https://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html)
+- [Tutorial de Expressões Regulares em Java](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)

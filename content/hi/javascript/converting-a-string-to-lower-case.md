@@ -1,7 +1,8 @@
 ---
-title:                "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-html_title:           "Kotlin: एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
-simple_title:         "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
+title:                "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
+date:                  2024-01-20T17:38:48.521086-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,33 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+JavaScript में किसी string को lower case में बदलना मतलब उस string के सभी अक्षरों को छोटे (small letters) में परिवर्तित करना है। ऐसा तब किया जाता है जब हमें case sensitivity से बचना होता है, जैसे यूजर इनपुट को सामान्यीकृत करना या डेटा की comparison और sorting करते समय।
 
-एक स्ट्रिंग को लोअर केस में कन्वर्ट करना मतलब उसके सभी अक्षरों को छोटे अक्षर में परिवर्तित करना। प्रोग्रामर्स इसे करते हैं ताकि आनेवाली इनपुट को संवेदनशीलता से मुक्त करने के लिए, जैसे कि खोज और तुलना कार्यकित्रियाँ।
-
-## कैसे करें:
-
+## How to: (कैसे करें:)
 ```Javascript
-let str = 'Hello World!';
-// Convert it to lower case using toLowerCase() function
-let lowerCaseStr = str.toLowerCase();
-console.log(lowerCaseStr);  // prints: 'hello world!'
+// स्ट्रिंग को lower case में बदलने के लिए JavaScript में toLowerCase() मेथड का प्रयोग करते हैं।
+
+let originalString = "नमस्ते JavaScript!";
+let lowerCaseString = originalString.toLowerCase();
+
+console.log(lowerCaseString); // Output: "नमस्ते javascript!"
 ```
 
-इस उदाहरण में, हमने `toLowerCase()` फ़ंक्शन का उपयोग करके एक स्ट्रिंग को लोअर केस में कन्वर्ट किया है।
+## Deep Dive (गहराई में जानकारी)
+समय के साथ JavaScript में strings को handle करने के तरीके बदलते रहे हैं। `toLowerCase()` मेथड लंबे समय से मौजूद है और यह बहुत ही विश्वसनीय है। ध्यान देने वाली बात है कि `toLowerCase()` यूनिकोड (Unicode) characters का भी समर्थन करता है, जिससे विभिन्न भाषाओं के strings सही तरीके से lower case में बदले जाते हैं।
 
-## गहराई से समझना:
+विकल्प के तौर पर, आप `toLocaleLowerCase()` मेथड भी देख सकते हैं जो स्पेसिफिक लकेल (locale) के हिसाब से lower case conversion करता है। जैसे कि तुर्की भाषा में `I` का lower case `ı` होता है, ना कि `i`।
 
-- ऐतिहासिक प्रसंग:
-  `toLowerCase()` फ़ंक्शन का उपयोग सेPएकाडिश JavaScript version में संभव हुआ। इसे स्ट्रिंग प्रोटोटाइप में जोड़ा गया था, जिसका मतलब है कि हम इसे किसी भी स्ट्रिंग पर लागू कर सकते हैं। 
+हालांकि, कभी-कभी यह मेथड कुछ सीमाओं का सामना कर सकता है, जैसे विशेष टेक्स्ट फॉर्मेटिंग या कैसिंग शैलियों के साथ। इसलिए हमेशा अपने एप्लीकेशन की जरूरतों के हिसाब से सही मेथड का चुनाव करना चाहिए।
 
-- विकल्प:
-  `toLowerCase()` का प्रमुख वैकल्पिक उपयोग `toLocaleLowerCase()` है, जो क्षेत्रीय नियमों (locale rules) को मानता है। अगर आपको क्षेत्रीय नियम का समर्थन करना है, तो यह एक बेहतर विकल्प हो सकता है। 
-
-- कार्यान्वयन विवरण:
-  `toLowerCase()` function का कार्यान्वयन पट्टी पर नमूने को संग्रहीत करने और नया स्ट्रिंग बनाने के लिए इतरेशन का उपयोग करता है। 
-
-## भी देखें:
-
-- [Mozilla डेवलपर नेटवर्क गाइड](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) पर `toLowerCase()` function का विवरण।
-- [W3Schools ट्यूटोरियल](https://www.w3schools.com/jsref/jsref_tolowercase.asp) जो इस विषय को और अधिक विस्तार से लेकर आती है।
+## See Also (और भी जानकारियाँ)
+- MDN Web Docs पर `toLowerCase()` और `toLocaleLowerCase()`: [String.prototype.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- w3schools की ट्यूटोरियल: [JavaScript String toLowerCase() Method](https://www.w3schools.com/jsref/jsref_tolowercase.asp)

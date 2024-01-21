@@ -1,7 +1,8 @@
 ---
-title:                "קריאה של ארגומנטים משורת הפקודה"
-html_title:           "C#: קריאה של ארגומנטים משורת הפקודה"
-simple_title:         "קריאה של ארגומנטים משורת הפקודה"
+title:                "קריאת פרמטרים משורת הפקודה"
+date:                  2024-01-20T17:55:52.048879-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "קריאת פרמטרים משורת הפקודה"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,35 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-קריאת פרמטרים מהשורה הפקודה היא האופן שבו תוכנה מקבלת נתונים מהמשתמש. זה מאפשר למתכנתים למנות על הדרך בה התוכנה שלהם תשתמש באינפוט.
+## What & Why?
+מה זה קריאת ארגומנטים משורת הפקודה? זה התהליך שבו תוכנית מקבלת נתונים מהמשתמש דרך הטרמינל. למה זה חשוב? כדי לאפשר אינטראקציה גמישה עם התוכנה שלך וקבלת קלט דינאמי.
 
-## איך נעשה:
-הנה מספר דוגמאות לקוד שמראה איך לקרוא פרמטרים מהשורה הפקודה ב-Fish Shell:
+## How to:
+קוד לדוגמה ופלט דוגמתי תוך שימוש בבלוקי קוד של Fish Shell.
 
 ```Fish Shell
-# הדפסת פרמטרים אחד אחרי השני
-for param in $argv
-    echo $param
+function greet
+    set name $argv[1]
+    echo "שלום, $name"
 end
+
+greet אורח
 ```
 
-אם נריץ את האסך הזה עם הפרמטרים "אחד", "שני", "שלוש", ההדפסה תהיה:
+פלט:
 ```
-אחד
-שני
-שלוש
+שלום, אורח
 ```
 
-## צלילה עמוקה:
-השפה Fish Shell מגיעה להשלמה אחרי שנים של התפתחות של שפות סקריפט ל-shell. השפה פותחה בתכלית להיות יעילה ולהכיל תכונות שימושיות.
+בדוגמה זו, הפונקציה `greet` מקבלת פרמטר אחד ומדפיסה ברכה.
 
-כאופציה אחרת, אפשר להשתמש גם ב- Bash או Zsh לקריאת פרמטרים מהשורה הפקודה. למשל, ב-Bash אפשר להשתמש ב- "$@" או ב- "$1", "$2", וכו'.
+## Deep Dive
+בעבר, קריאת ארגומנטים בקוד לינוקס התבצעה בעיקר ב-Shell Scripts כמו Bash. Fish Shell הקל על התהליך על ידי הצגת פקודות ותחביר פשוט יותר. חלופות כוללות Bash, Zsh ו-Perl, אבל Fish נתפס כיותר קריא ואינטואיטיבי. ב-Fish, ניתן לגשת לארגומנטים דרך המשתנה `$argv`, שהוא רשימה של כל הארגומנטים הנתונים.
 
-ב-Fish Shell, אם נעבור יותר מ-100 פרמטרים, המערכת יכולה להיות לא מדויקת בגלל ההבדלים במהלך קריאת המערכת.
-
-## ראה גם:
-* [תיעוד Fish Shell](https://fishshell.com/docs/current/index.html)
-* [Fish Shell בגיטהאב](https://github.com/fish-shell/fish-shell)
-* [שפת סקריפט של Bash](https://www.gnu.org/software/bash/)
-* [Zsh](http://zsh.sourceforge.net/Doc/Release/zsh_toc.html)
+## See Also
+- [תיעוד Fish Shell](https://fishshell.com/docs/current/index.html)
+- [מדריך למתחילים ב-Fish](https://fishshell.com/docs/current/tutorial.html)
+- [Stack Overflow: דיונים על Fish Shell](https://stackoverflow.com/questions/tagged/fish)

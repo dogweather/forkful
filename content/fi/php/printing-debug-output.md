@@ -1,7 +1,8 @@
 ---
-title:                "Debug-tulosteen tulostaminen"
-html_title:           "Bash: Debug-tulosteen tulostaminen"
-simple_title:         "Debug-tulosteen tulostaminen"
+title:                "Virheenjäljitystulosteiden tulostaminen"
+date:                  2024-01-20T17:53:07.984803-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Virheenjäljitystulosteiden tulostaminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -10,61 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why? - Mitä & Miksi?
 
-## Mitä & Miksi?
+PHP-koodauksessa debug-tulostus auttaa löytämään ja ymmärtämään ongelmia. Koodarit käyttävät sitä, koska näkee suoraan, mitä koodi tekee (tai ei tee).
 
-Tulostusvälineet tekevät ohjelmistoon syötteitä ja tulosteita näkyviksi, mitä kutsutaan debug-tulostukseksi. Ne ovat kriittisen tärkeitä ohjelmointi-virheiden löytämisessä ja korjaamisessa.
+## How to: - Kuinka:
 
----
+Debug-tulostusta voi tehdä `echo` ja `print_r` avulla. Tässä pari esimerkkiä:
 
-## Näin se tehdään:
-
-PHP:n käyttöön on saatavilla useita debug-tulostuksen työkaluja. Yksinkertaisin niistä on `echo` ja `print` funktiot.
-
-```PHP
+```php
 <?php
-$muuttuja = "Moi Suomi!";
-echo $muuttuja; // Tulostaa: Moi Suomi!
-?>
+// Yksinkertainen echo-komento
+$muuttuja = "Hei maailma!";
+echo $muuttuja; // Tulostaa: Hei maailma!
+
+// Array ja print_r
+$array = array('yksi', 'kaksi', 'kolme');
+print_r($array);
+/* Tulostaa:
+Array
+(
+    [0] => yksi
+    [1] => kaksi
+    [2] => kolme
+)
+*/
 ```
 
-Voimme myös käyttää `var_dump` funktiota tarkastellaksemme muuttujan tietoja.
+## Deep Dive - Syväsukellus:
 
-```PHP
-<?php
-$muuttuja = array("Helsinki", "Espoo", "Vantaa");
-var_dump($muuttuja);
-?>
-// Tulostaa: array(3) { [0]=> string(8) "Helsinki" [1]=> string(5) "Espoo" [2]=> string(6) "Vantaa" }
-```
+Historiallisesti PHP on tarjonnut useita built-in funktioita debug-tulostusta varten. `print_r`, `var_dump` ja `var_export` ovat tyypillisiä työkaluja. Ne eroavat tiedon esittämisessä: `var_dump` näyttää tyypit ja pituudet, `var_export` taas palauttaa validin PHP-koodin.
 
-Konsoliin voi tulostaa myös `print_r` funktiolla:
+PHP:n error_log-funktio mahdollistaa virhetietojen kirjoittamisen lokiin, mikä on välttämätöntä tuotantoympäristössä. Xdebug-laajennus tuo kehittyneitä debuggausominaisuuksia, kuten stack trace.
 
-```PHP
-<?php
-$muuttuja = array("Jyväskylä", "Turku", "Oulu");
-print_r($muuttuja);
-?>
-// Tulostaa: Array ( [0] => Jyväskylä [1] => Turku [2] => Oulu )
-```
+Viimeisimpänä huomiona, debug-tulostusta ei pitäisi jättää tuotantokoodiin suorituskyvyn ja tietoturvan vuoksi.
 
----
+## See Also - Katso Myös:
 
-## Syvempi sukellus
-
-PHP:n debug-tulostuksen työkalut ovat tulleet pitkän matkan. Ensimmäisissä PHP-versioissa `echo` ja `print` olivat yleisimmin käytössä. Saatavilla on monia muita työkaluja, kuten Xdebug ja PHP_Debug, jotka tarjoavat monipuolisia toimintoja ja ovat tehokkaita isojen projektien debuggauksessa.
-
-On olemassa myös muita PHP debug -teknologioita kuin printtaus. Esimerkiksi Interactive PHP Debugging (`php -a`) antaa sinun suorittaa koodia komentoriviltä, hyödyllinen esimerkiksi silloin kun haluat testata pienen koodinpätkän toimivuutta nopeasti. 
-
----
-
-## Katso myös
-
-[Xdebug](https://xdebug.org/): Tehokas ja monipuolinen PHP debuggaustyökalu.
-
-[PHP_Debug](https://pear.php.net/package/PHP_Debug): PEAR paketin PHP debuggaustyökalu.
-
-[PHP virallinen dokumentaatio](https://www.php.net/manual/en/debugger.php): Lue lisää PHP:n sisäänrakennetuista debug-työkaluista.
-
-[PHPUnit](https://phpunit.de/): Yksikkötestaus on usein paras tapa debugata. PHPUnit on standardi Työkalu PHP:ssä.
+- PHP:n virallinen dokumentaatio `print_r`: https://www.php.net/manual/en/function.print-r.php
+- PHP Documentation on `var_dump`: https://www.php.net/manual/en/function.var-dump.php
+- Xdebug, PHP debugger: https://xdebug.org/
+- Error logging in PHP: https://www.php.net/manual/en/function.error-log.php

@@ -1,7 +1,8 @@
 ---
-title:                "文字列の長さを見つける"
-html_title:           "Elm: 文字列の長さを見つける"
-simple_title:         "文字列の長さを見つける"
+title:                "文字列の長さを求める"
+date:                  2024-01-20T17:47:22.198873-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "文字列の長さを求める"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,22 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-文字列の長さを探すとは、文字列の中にある文字の数を数えることです。プログラマーがそれを行う理由は、データ操作を制御し、エラーを回避するためです。
+## What & Why? (なにとなぜ？)
+文字列の長さを調べるのは、その文字数を数えることです。プログラマーはデータ処理や入力の検証にこの情報を使用します。
 
-## 方法：
+## How to: (やり方)
 ```Fish Shell
-# 文字列の定義
-set str 'こんにちは、世界'
-
-# 文字列長の計算
-echo (string length $str)
+# 文字列の長さを取得する
+set string "こんにちは"
+echo (string length $string)
 ```
-出力結果：`10`
+```
+5
+```
 
-## ディープダイブ
-歴史的な文脈で見ると、文字列の長さを見つける操作は古くからあります。他にも方法はある（例えばバイト単位での長さ計測）が、文字単位での長さ計測は最も一般的です。この実装において、Fish Shellは内部で文字列を配列として扱い、その要素数を数えることで文字列の長さを見つけます。
+## Deep Dive (深堀り)
+Fish Shellの `string length` コマンドは文字列の文字数を返す。これはUnicode文字を正しく数える。以前では、文字列の長さを数えるのは `wc -m` などの外部コマンドに依存していたが、内部コマンドを使うことで速度が向上する。他のシェルスクリプト言語では、例えば Bash では `${#string}` 構文を使うが、Fishはよりシンプルで直感的な `string length` を提供する。
 
-## 参考情報
-- Fish Shellの公式ドキュメント : [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- `string length`についての詳細な説明 : [https://fishshell.com/docs/current/cmds/string-length.html](https://fishshell.com/docs/current/cmds/string-length.html)
+## See Also (参照)
+- Fish documentation on string manipulation: [https://fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
+- Fish tutorial for beginners: [https://fishshell.com/docs/current/tutorial.html](https://fishshell.com/docs/current/tutorial.html)
+- Unicode Standard: [https://unicode.org/standard/standard.html](https://unicode.org/standard/standard.html)

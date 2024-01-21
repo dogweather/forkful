@@ -1,7 +1,8 @@
 ---
-title:                "Interpolation d'une chaîne de caractères"
-html_title:           "Ruby: Interpolation d'une chaîne de caractères"
-simple_title:         "Interpolation d'une chaîne de caractères"
+title:                "Interpolation de chaînes de caractères"
+date:                  2024-01-20T17:51:00.270311-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Interpolation de chaînes de caractères"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,45 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce et Pourquoi ?
+## What & Why?
+L'interpolation de chaînes, c'est injecter des variables dans du texte. On le fait pour faciliter la formation de messages dynamiques et la lecture du code.
 
-L'interpolation de chaînes en Kotlin est la technique d'insérer des variables au sein d'une chaîne de caractères. Elle rend le code non seulement plus lisible, mais aussi plus efficace lorsqu'on souhaite concaténer des variables et des chaînes de caractères.
+## How to:
+Kotlin rend l'interpolation de chaînes simple comme bonjour. Tu as juste à placer un dollar `$` suivi par le nom de la variable.
 
-## Comment faire :
+```kotlin
+fun main() {
+    val prénom = "Claude"
+    println("Salut, $prénom ! Comment ça va ?")
+    // Affiche: Salut, Claude ! Comment ça va ?
 
-Utiliser le dollar (`$`) pour insérer une variable dans une chaîne. Si vous souhaitez inclure une expression entière, encadrez-la avec des accolades (`{}`). 
-
-En Kotlin, cela ressemble à ça :
-
-```Kotlin
-val nom = "Pierre"
-println("Bonjour, $nom")  // Affiche : Bonjour, Pierre
-
-val age = 30
-println("Bonjour, $nom. Vous avez $age ans.")  // Affiche : Bonjour, Pierre. Vous avez 30 ans.
-
-println("Dans dix ans, vous aurez ${age + 10} ans.")  // Affiche : Dans dix ans, vous aurez 40 ans.
+    val age = 30
+    println("Tu as $age ans, donc tu es né en ${2023 - age}.")
+    // Affiche: Tu as 30 ans, donc tu es né en 1993.
+}
 ```
+## Deep Dive
+L'interpolation de chaînes n'est pas nouvelle. Elle date des premiers langages de script comme Perl ou Bash. En Kotlin, elle est propre et intégrée directement dans le langage, évitant la concaténation fastidieuse avec `+`. Kotlin compile ces interpolations en code bytecode efficace, tout comme s'il s'agissait d'une concaténation simple. Mais attention, abuser des interpolations complexes peut réduire la lisibilité. Le bon usage est la clé.
 
-## Plongée profonde :
+## See Also
+Si tu veux creuser un peu plus, voilà des ressources utiles :
 
-Historiquement, l'interpolation de chaînes a été introduite pour la première fois dans le langage de programmation ALGOL 68. C'est une fonctionnalité que l'on retrouve dans beaucoup de langages modernes dont Kotlin, bien sûr.
-
-Il existe de nombreuses manières alternativas de concaténer des chaînes et des variables, par exemple avec l'opération `+`. Cependant, ce n'est pas recommandé car il peut créer de nombreux objets String inutiles, surtout dans les boucles.
-
-Par exemple, évitez cela :
-
-```Kotlin
-val nom = "Pierre"
-val age = 30
-println("Bonjour, " + nom + ". Vous avez " + age + " ans.")
-```
-
-En pratique, l'interpolation de chaînes en Kotlin est mise en œuvre en traduisant les expressions `${expression}` en appels à `expression.toString()` lors de la compilation. 
-
-## Voir aussi :
-
-Pour en savoir plus, considérez ces ressources :
-
-1. [Documentation officielle sur l'interpolation des chaînes en Kotlin](https://kotlinlang.org/docs/basic-syntax.html#string-templates)
-3. [Discussion StackOverflow sur l'interpolation des chaînes en Kotlin](https://stackoverflow.com/questions/46450220/when-should-i-use-string-interpolation-in-kotlin)
+- La documentation officielle Kotlin sur les chaînes de caractères : [Documentation Kotlin](https://kotlinlang.org/docs/basic-types.html#strings)
+- Un guide complet pour maîtriser l'interpolation de chaînes en Kotlin : [Baeldung Kotlin String Interpolation](https://www.baeldung.com/kotlin/string-interpolation)

@@ -1,7 +1,8 @@
 ---
-title:                "Ladda ner en webbsida"
-html_title:           "Bash: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Hämta en webbsida"
+date:                  2024-01-20T17:44:42.308118-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Hämta en webbsida"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -12,43 +13,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att ladda ner en webbsida innebär att hämta sidans HTML-kod och andra data. Programmerare gör detta för att analysera innehållet, spara det för senare, eller bearbeta det på olika sätt.
+Att ladda ner en webbsida innebär att hämta data från internet till din lokal dator. Programmörer gör detta för att bearbeta information, skrapa data, eller testa webbsidor.
 
 ## Hur man gör:
 
-Här visar vi ett enkelt sätt att ladda ner en webbsida med Rust, specifikt med `reqwest`-biblioteket. Vi skapar en asynkron funktion som gör en GET-förfrågan till en angiven URL och skickar tillbaka innehållet som en sträng.
+```rust
+use reqwest; // Lägg till `reqwest` i dina dependencies i Cargo.toml
 
-```Rust
-use reqwest;
-
-async fn ladda_ner_webbsida(url: &str) -> Result<String, reqwest::Error> {
-    let innehall = reqwest::get(url).await?.text().await?;
-    Ok(innehall)
-}
-```
-
-Du kan nu använda den här funktionen för att hämta HTML-innehåll från en webbsida. Exemplen nedan visar hur du kan göra för att prova detta.
-
-```Rust
 #[tokio::main]
 async fn main() -> Result<(), reqwest::Error> {
-    let url = "https://www.exemple.se";
-    let resultat = ladda_ner_webbsida(url).await?;
-    println!("{}", resultat);
+    // Adress till webbsidan du vill ladda ner
+    let url = "http://example.com";
+
+    // Skicka en GET-förfrågan och vänta på svaret
+    let response = reqwest::get(url).await?;
+
+    // Skriv ut rådata som ett strängresultat
+    let body = response.text().await?;
+    println!("Webbsidans innehåll:\n{}", body);
+
     Ok(())
 }
 ```
+_Utfall: Webbsidans HTML-innehåll visas i terminalen._
 
-## Fördjupning 
+## Fördjupning:
 
-Att ladda ner webbsidor är inte något nytt - det är basfunktionalitet i webbläsare och det har länge varit ett nyckelverktyg för webbskrapning. Alternativ till `reqwest` inkluderar andra bibliotek som `hyper` och `curl`.
+Historiskt har webbskrapning och nedladdning av webbsidor varit en utmaning då det krävde hantering av lågnivå nätverksanslutningar och HTTP-protokollet. Nu för tiden finns bibliotek som `reqwest` som förenklar denna process genom att abstrahera komplexa nätverksoperationer.
 
-Den fullständiga processen för att ladda ner en webbsida innefattar att skapa en HTTP-förfrågan, skicka den till servern som webbsidan ligger på, och sedan ta emot och tolka serverns svar - vilket vanligtvis är webbsidans HTML-kod.
+Det finns andra bibliotek som `curl` och `hyper`, vilka kan lämpa sig bättre för vissa scenarion, men `reqwest` är känt för att vara användarvänligt för de flesta tillämpningar.
 
-## Se också
+I detalj handlar att ladda ner en webbsida om att skicka en HTTP GET-begäran till servern som hostar sidan, ta emot svaret, som ofta är HTML-kod, och sedan använda den datan som behövs. Asynkron kod i Rust med bibliotek som `tokio` är nyckeln för att hantera flera begäranden effektivt.
 
-För mer information om webbskrapning och HTTP-förfrågningar med Rust, se följande källor:
+## Se även:
 
-- [Rust reqwest dokumentation](https://docs.rs/reqwest/0.10.10/reqwest/)
-- [Rust hyper bibliotek](https://hyper.rs/)
-- [Rust curl bibliotek](https://docs.rs/curl/0.4.38/curl/)
+- Reqwest-dokumentation: https://docs.rs/reqwest/
+- Tokio-dokumentation: https://tokio.rs/
+- Rust async book: https://rust-lang.github.io/async-book/
+- Webb skrapning med Rust: https://rust-lang-nursery.github.io/rust-cookbook/web/scraping.html

@@ -1,7 +1,8 @@
 ---
-title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
-html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
-simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+date:                  2024-01-20T18:01:47.290024-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,49 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-При відправленні HTTP-запиту з основною аутентифікацією, ми надаємо перевірені дані (логін та пароль) для доступу до ресурсів. Це зазвичай використовують програмісти, щоб обмежувати доступ до веб-служб та серверів.
+## Що це таке і навіщо?
+HTTP-запит з базовою аутентифікацією — це спосіб передавання логіна і пароля серверу для перевірки прав доступу. Програмісти роблять це для безпечної взаємодії з API, які вимагають авторизації.
 
 ## Як це зробити:
-Виконаємо простий запит GET з базовою аутентифікацією. Для цього використовуємо стандартну бібліотеку net/http.
-
 ```Go
 package main
 
 import (
-	"fmt"
-	"net/http"
+    "encoding/base64"
+    "fmt"
+    "net/http"
+    "io/ioutil"
 )
 
 func main() {
-	// Створюємо клієнт HTTP
-	client := &http.Client{}
+    client := &http.Client{}
+    req, err := http.NewRequest("GET", "http://example.com/data", nil)
+    if err != nil {
+        panic(err)
+    }
 
-	// Генеруємо запит
-	req, err := http.NewRequest("GET", "http://example.com", nil)
-	if err != nil {
-		log.Fatalln(err)
-	}
+    username := "user"
+    password := "pass"
+    req.Header.Set("Authorization", "Basic " + base64.StdEncoding.EncodeToString([]byte(username+":"+password)))
 
-	// Встановлюємо аутентифікацію
-	req.SetBasicAuth("username", "password")
-
-	// Відправляємо запит
-	resp, err := client.Do(req)
-	if err != nil {
-		log.Fatalln(err)
-	}
-
-	// Виводимо код статусу
-	fmt.Println("Status code:", resp.StatusCode)
+    resp, err := client.Do(req)
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
+    
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(string(body))
 }
 ```
+У коді вище створюється HTTP-запит із заголовком `Authorization`, що містить облікові дані у форматі Base64.
 
-## Поглиблений занурення
-У минулому, базова аутентифікація вважалась цілком прийнятною, але тепер вона більше не вважається достатньою з точки зору безпеки, особливо при використанні через незахищені протоколи.
-Однією з альтернатив є аутентифікація Bearer, яка часто використовується разом з OAuth2. У реалізації на Go немає нічого особливого, ви просто встановлюєте заголовок "Authorization" зі значенням "Basic " + base64("username:password").
+## Поглиблений розбір:
+Базова HTTP-аутентифікація з'явилася на самому початку існування HTTP протоколу і іноді критикується за відсутність шифрування облікових даних. Альтернативи, такі як OAuth, набагато безпечніші в цьому плані. Те, що базова аутентифікація передає логін та пароль у нешифрованому вигляді (лише кодування Base64), робить її вразливою до перехоплення третім особами, особливо через незахищені з'єднання.
 
-## Дивіться також:
-1. [Go HTTP client example](https://golang.org/pkg/net/http/#Client)
-2. [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
-3. [Understanding HTTP Basic Authentication](https://betterprogramming.pub/understanding-http-authentication-schemes-bearer-vs-basic-c2567dd4588d)
+Використовуйте HTTPS для захисту даних під час транзиту. Go стандартна бібліотека http підтримує методи автоматичного додавання заголовків авторизації без необхідності ручного кодування Base64.
+
+## Також рекомендується:
+- [RFC 7617, 'The 'Basic' HTTP Authentication Scheme'](https://datatracker.ietf.org/doc/html/rfc7617)
+- [Go by Example: HTTP Clients](https://gobyexample.com/http-clients)
+- [Secure Your Data with HTTP Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
+- [OAuth 2.0](https://oauth.net/2/)

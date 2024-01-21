@@ -1,6 +1,7 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "C++: הורדת דף אינטרנט"
+date:                  2024-01-20T17:44:41.639212-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,39 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-הורדת עמוד אינטרנט היא תהליך שבו הורדת את תוכן עמוד אינטרנט מהשרת אל המחשב המקומי שלך. מתכנתים עשויים לרצות לעשות זאת כדי לנתח את התוכן, לאחסן את המידע כגיבוי, או לאפשר קריאה בלתי מחוברת לאינטרנט.
+## What & Why? (מה ולמה?)
+מורידים דף אינטרנט כדי לקבל את התוכן שלו בתור קובץ טקסט. תכנתים עושים זאת לעיבוד נתונים, בדיקת נגישות או למטרות ניטור.
 
-## כיצד לעשות זאת:
-נהיה מנומסים אל השרת ונבקש את התוכן שאנחנו רוצים, באמצעות ביבליות ראשוניות של Ruby . הנה דוגמה:
-
+## How to: (איך לעשות:)
 ```Ruby
 require 'net/http'
+require 'uri'
 
-url = URI('http://example.com')
-response = Net::HTTP.get(url)
-puts response
+def download_webpage(url)
+  uri = URI(url)
+  response = Net::HTTP.get(uri)
+  File.write('page.html', response)
+  puts "Webpage downloaded!"
+end
+
+download_webpage('http://www.example.com')
+
+# Output:
+# Webpage downloaded!
 ```
 
-אם אתם רצים להוריד עמוד שנמצא תחת HTTPS, יש לשנות את הקוד קצת:
+## Deep Dive (עומק השיחה)
+בעבר, רובי השתמשה בספריה open-uri להורדת דפי אינטרנט, אבל Net::HTTP היא אופציה יותר נקית לאורך זמן. ישנן אלטרנטיבות כמו RestClient או HTTParty שמספקות ממשקי שימוש קלים יותר אך דורשות התקנת גמס (gem) חיצוני. בבחירת כלי, חשוב לשקול את ענייני האבטחה, נוחות השימוש, ותמיכה בפרויקטים. Net::HTTP מובנית ברובי ולכן לא מחייבת תלות נוספת.
 
-```Ruby
-require 'net/http'
-
-url = URI('https://secure.example.com')
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-response = http.get(url)
-puts response.body
-```
-
-לאחר שהרצת את הקוד, תוכן העמוד יהא בהדפסה.
-
-## הצצה לעומק:
-למרות שספריות המוסד של Ruby כוללות כלים להורדת דפי אינטרנט, ישנם ספריות של צד שלישי, כמו `open-uri` ו־ `httparty`, שמקלות על התהליך ומציעות יכולת ניתוח משוגרת.
-
-במשך שנים, חלפו שיטות רבות להורדת האינטרנט. מספר השינויים המרכזיים הם התנהלות עם אתרי HTTPS והתלת מבנים XML/HTML של תוכן העמוד. 
-
-## ראה גם:
-2. [HTTParty - ספרייה של צד שלישי לשליחת בקשות HTTP בRuby](https://github.com/jnunemaker/httparty)
-3. [Open-URI - ספרייה בנויה לתוך Ruby לפתיחת URIs](https://ruby-doc.org/stdlib-2.7.0/libdoc/open-uri/rdoc/OpenURI.html)
+## See Also (ראה גם)
+- [HTTParty Gem](https://github.com/jnunemaker/httparty)
+- [RestClient Gem](https://github.com/rest-client/rest-client)

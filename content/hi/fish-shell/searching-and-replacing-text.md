@@ -1,7 +1,8 @@
 ---
-title:                "पाठ की खोज और प्रतिस्थापन"
-html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
-simple_title:         "पाठ की खोज और प्रतिस्थापन"
+title:                "पाठ खोजना और बदलना"
+date:                  2024-01-20T17:58:24.730163-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पाठ खोजना और बदलना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,30 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## क्या और क्यों? (What & Why?)
 
-टेक्स्ट की खोज और बदलाव से मेरा तात्पर्य है, संगठनात्मक और संयात डेटा में किसी विशेष शब्द या वाक्यांश को पहचानना और उसे बदलना। प्रोग्रामर्स इसे हाई लेवल फ़ंक्शन और डाटा संस्थापन को सुनिश्चित करने के लिए करते हैं।
+टेक्स्ट खोजना और बदलना (search and replace) कंप्यूटर में शब्दों या वाक्यों की तलाश करके उन्हें नए से बदलने की प्रक्रिया है। प्रोग्रामर्स इसे बग्स ठीक करने, कोड अपडेट करने या डेटा संशोधन के लिए करते हैं।
 
-## कैसे करें:
+## कैसे करें? (How to:)
 
-लेखक को Fish Shell में टेक्स्ट खोजने और बदलने के लिए निम्नलिखित सीधे कोड उदाहरण देखें:
+Fish Shell में टेक्स्ट खोजने और बदलने के लिए `string` कमांड का इस्तेमाल होता है:
 
 ```Fish Shell
-set v 'Hello, world!'
-echo $v | string replace -r 'world' 'Fish Shell'
+# मूल स्ट्रिंग बनाएँ.
+set original "मैं Fish Shell सीख रहा हूँ।"
+
+# 'सीख' को 'इस्तेमाल' से बदलें.
+echo $original | string replace "सीख" "इस्तेमाल"
+
+# आउटपुट: मैं Fish Shell इस्तेमाल रहा हूँ।
 ```
 
-उसे निष्पादित करने पर, आपको निम्नलिखित आउटपुट मिलेगा:
+आगे, आपको एक फाइल में टेक्स्ट बदलने की जरूरत हो सकती है:
 
+```Fish Shell
+# 'example.txt' फाइल में हर 'Fish' को 'हिंदी Fish' से बदलें.
+string replace -a "Fish" "हिंदी Fish" < example.txt > temp.txt; and mv temp.txt example.txt
 ```
-Hello, Fish Shell!
-```
 
-## गहन अध्ययन
+## गहरी जानकारी (Deep Dive)
 
-टेक्स्ट की खोज और बदलाव की क्रियाएँ कंप्यूटर विज्ञान के प्रारम्भ से ही हमारे साथ रही हैं। Fish Shell इस कौशल को अद्वितीयता, तार्किक संरचना, और सुविधाजनक सिंटैक्स के साथ जोड़ता है। वैकल्पिक तकनीकों में sed और awk का उपयोग किया जा सकता है, लेकिन Fish Shell के string replace द्वारा खोज और बदलाव सबसे सीधा और आसान है।
+Fish Shell की `string` कमांड 2015 में रिलीज Fish 2.3.0 में आई थी। पहले, टेक्स्ट खोजने/बदलने के लिए `sed` और `awk` जैसे यूनिक्स उपकरणों पर निर्भर थे। `string` इस्तेमाल करने का फायदा इसकी सादगी और स्पष्टता में है। इसमें नियमित अभिव्यक्तियों (regexes) का समर्थन भी है जो कि जटिल पैटर्न के साथ भी खोजने/बदलने को सक्षम बनाता है।
 
-## और भी देखें:
+## संबंधित स्रोत (See Also)
 
-1. सामान्य खोज और बदलाव तकनीकों के बारे में अधिक जानकारी के लिए, देखें [https://www.gnu.org/software/sed/manual/sed.html](https://www.gnu.org/software/sed/manual/sed.html).
-2. Fish Shell के और टेक्स्ट मैनिपुलेशन कार्यों के बारे में, देखें [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html).
+- Fish Shell डॉक्यूमेंटेशन: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- RegEx testing: [https://regex101.com/](https://regex101.com/)
+- स्ट्रिंग ऑपरेशंस ट्यूटोरियल: [https://fishshell.com/docs/current/commands.html#string](https://fishshell.com/docs/current/commands.html#string)

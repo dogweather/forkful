@@ -1,6 +1,7 @@
 ---
 title:                "HTTPリクエストの送信"
-html_title:           "Bash: HTTPリクエストの送信"
+date:                  2024-01-20T18:00:24.427296-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTPリクエストの送信"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,35 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+HTTPリクエストはWebサーバーに情報を求める方法です。データを取得したり、ウェブサービスと交信するためにプログラマーはこれを使います。
 
-HTTPリクエストの送信は、サーバーにアクセスし情報を取得するための一般的な働きをすることです。プログラマーはこれを用いることで、ウェブサイトからデータを取得したり、APIにインタラクションをしたりすることが可能になります。
-
-## 方法：
-
-PowerShellを使用してHTTPリクエストを送信するには、Invoke-WebRequestコマンドを使用します。
+## How to: (方法)
+PowerShellでHTTPリクエストを送るには、`Invoke-WebRequest` や `Invoke-RestMethod` コマンドレットを使います。簡単な例を見てみましょう。
 
 ```PowerShell
-# Get webpage content
-$res = Invoke-WebRequest -Uri "https://www.example.com"
+# シンプルなGETリクエスト
+$response = Invoke-WebRequest -Uri "http://example.com"
+$response.StatusCode
+$response.Content
 
-# Printing status code
-$res.StatusCode
+# JSON形式でPOSTリクエストを送信
+$body = @{
+    name = 'Taro'
+    email = 'taro@example.com'
+} | ConvertTo-Json
+$response = Invoke-RestMethod -Method Post -Uri "http://example.com/api/users" -ContentType "application/json" -Body $body
+$response
 ```
-このコードは、指定したURLからページの内容を取得し、Httpステータスコードを表示します。
 
-## より深く：
+これらのコードはウェブサーバーからのレスポンスステータスコードや内容を表示します。
 
-HTTPリクエストの送信は、1980年代から存在しているが、シンプル化され、一般的に使用されるようになったのは最近のことです。PowerShell、Python、Javaなど、ほとんどのプログラミング言語はこの機能をサポートしています。一方、それぞれのシナリオにより適した異なる方法が存在します。例えば、非同期のリクエストを送信する場合や特定のヘッダーを使用する必要がある場合などは、他のコマンドを使用することがあります。
+## Deep Dive (深掘り)
+HTTPリクエストの送信は、ウェブの初期からの基本的な操作です。`Invoke-WebRequest` と `Invoke-RestMethod` は PowerShell 3.0 から導入されました。これらは、`curl` や `wget` のような伝統的なUNIXコマンドラインツールと似た動作をしますが、PowerShell 環境に統合されており、オブジェクトとして結果を操作できます。
 
-## 参考：
+代替として、.NET の `HttpClient` や `WebRequest` クラスを利用することも可能ですが、コードが増える傾向にあります。`Invoke-RestMethod` は主にREST APIとの交信に役立ち、JSON処理が自動化されている点が特徴です。
 
-以下は、HTTPリクエストの送信についてさらに学ぶためのリンク集です：
-
-- PowerShell Documentation: 
-  [https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
-
-- Microsoft API usage guide: 
-  [https://docs.microsoft.com/ja-jp/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow](https://docs.microsoft.com/ja-jp/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow)
-
-PowerShellでHTTPリクエストを活用することで、繰り返し手作業を行う代わりに自動化できるため、作業をより効率的に行えます。これは、今日のデータドリブンな世界において非常に重要なスキルとなっています。
+## See Also (関連項目)
+- [Invoke-WebRequest公式ドキュメント](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest)
+- [Invoke-RestMethod公式ドキュメント](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod)

@@ -1,7 +1,8 @@
 ---
-title:                "Päivämäärän muuttaminen merkkijonoksi"
-html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+date:                  2024-01-20T17:38:05.623499-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,49 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+"Mikä ja Miksi?"  
+Muunnamme päivämäärän merkkijonoksi hallitaksemme sen esitysmuotoa. Tämä tekee päivämäärien kanssa työskentelystä helpompaa, kuten aikavyöhykkeiden käsittely tai käyttäjäystävällisen formaatin näyttäminen.
 
-Muunnetaan päiväys merkkijonoksi tarkoittaa, että ohjelmointikielellämme koodataan päiväys formaattiin, jota voidaan käsitellä tekstinä. Tätä tekniikkaa käytetään usein dataa jäsennetttäessä tai käytettäessä menetelmiä, jotka hyväksyvät vain merkkejä.
-
-## Kuinka tehdä:
-
-```TypeScript
-let pvm = new Date();
-let pvmMerkkijono = pvm.toString();
-console.log(pvmMerkkijono);
-```
-
-Esimerkkejä tulosteista voidaan olla:
-```
-Wed Sep 15 2021 16:25:47 GMT+0300 (Itä-Euroopan kesäaika)
-```
-
-Voit myös muotoilla päivämäärän haluamasi mukaisesti.
+## How to:
+"Kuinka tehdä se:"
 
 ```TypeScript
-let pvm = new Date();
-let dd = String(pvm.getDate()).padStart(2, '0');
-let mm = String(pvm.getMonth() + 1).padStart(2, '0'); //Tammikuu on 0!
-let yyyy = pvm.getFullYear();
-let pvmMerkkijono = dd + '/' + mm + '/' + yyyy;
-console.log(pvmMerkkijono);
+const date: Date = new Date();
+
+// ISO-stringiksi (ISO 8601 -muotoinen päivämäärä ja aika UTC:ssä)
+const isoString: string = date.toISOString();
+console.log(isoString); // Esim. "2023-03-15T12:34:56.789Z"
+
+// Paikallinen aikavyöhyke, lyhyt muoto
+const shortLocaleString: string = date.toLocaleDateString('fi-FI');
+console.log(shortLocaleString); // Esim. "15.3.2023"
+
+// Paikallinen aikavyöhyke, kokonainen muoto
+const longLocaleString: string = date.toLocaleString('fi-FI');
+console.log(longLocaleString); // Esim. "15.3.2023 klo 14.34.56"
+
+// Määritellyt optiot
+const customString: string = date.toLocaleString('fi-FI', {
+  weekday: 'long', 
+  year: 'numeric', 
+  month: 'long', 
+  day: 'numeric'
+});
+console.log(customString); // Esim. "keskiviikkona 15. maaliskuuta 2023"
 ```
 
-Esimerkkejä tulosteista voidaan olla:
-```
-15/09/2021
-```
+## Deep Dive
+"Syväsukellus":
 
-## Syvä sukellus
+Päivämäärien muunto merkkijonoksi on ollut tarpeen, kun tiedot on haluttu esittää käyttäjälle ymmärrettävässä muodossa tai lähetettäessä päivämääriä eri järjestelmien välillä. JavaScriptin `Date`-olio tarjoaa perustan, jonka päälle TypeScript rakentuu. Vaihtoehtoina ovat mm. kirjastot kuten Moment.js tai Date-fns, jotka tarjoavat lisäominaisuuksia ja formaatteja. 
 
-Historiallisessa kontekstissa, päivämäärien muuttaminen merkkijonoiksi on ollut käytössä melkein yhtä kauan kuin ohjelmointi itse. Tämä johtuu luultavasti siitä, että monet vanhat tietokonejärjestelmät ja ohjelmointikielet eivät olleet erityisen hyviä päivämäärien ja aikojen käsittelyssä.
+TypeScriptissä käytetään yleensä JavaScriptin `Date`-oliota, koska TypeScript on JavaScriptin superset ja kirjoitusten tyypitys tuo lisäturvaa. Kun käytät `toLocaleString`-metodia, saat muunnettua päivämäärän helposti alueelliseen esitysmuotoon. Muuttujia voit muuttaa antamalla erilaisia argumentteja, kuten `locales` ja `options`. `toISOString` puolestaan luo yleisesti käytetyn, standardin UTC-aikaan perustuvan merkkijonon.
 
-Vaihtoehtoisesti, toiset formaatit, kuten JSON, voivat automaattisesti eritellä päiväysolion merkkijonoksi, kun päiväys lähetetään JSON-muodossa.
+## See Also
+"Katso myös":
 
-TypeScript, kuten useimmat modernit ohjelmointikielet, tekee tämän prosessin suhteellisen mutkattomaksi. `toString()` funktio on osa JavaScriptin `Date` objektia, joten kun TypeScript-koodi muunnetaan JavaScriptiksi, `Date.toString()` toimii samalla tavalla molemmissa.
+- MDN Web Docs Date reference: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- TypeScript official documentation: [https://www.typescriptlang.org/docs/](https://www.typescriptlang.org/docs/)
+- Date-fns documentation: [https://date-fns.org/](https://date-fns.org/) 
+- Moment.js home page: [https://momentjs.com/](https://momentjs.com/) 
 
-## Katso myös:
-
-- MDN Web Docs, Date.prototype.toString(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toString 
-- Stack Overflow, Convert JS date time to YYYY-MM-DD HH:MM:SS: https://stackoverflow.com/questions/3605214/convert-js-date-time-to-yyyy-mm-dd-hhmmss
-- TypeScript HandBook, Date Object: https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html
+Muista, että käytänteet ja työkalut kehittyvät, joten pidä taitosi ajantasalla tutustumalla uusiin resursseihin ja päivitettyyn dokumentaatioon.

@@ -1,7 +1,8 @@
 ---
-title:                "Eine Zeichenkette interpolieren"
-html_title:           "Arduino: Eine Zeichenkette interpolieren"
-simple_title:         "Eine Zeichenkette interpolieren"
+title:                "Zeichenketten interpolieren"
+date:                  2024-01-20T17:51:57.174846-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Zeichenketten interpolieren"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,48 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Stringinterpolation in Swift
-
 ## Was & Warum?
+String-Interpolation ermöglicht es, Variablen, Konstanten und Ausdrücke in Strings einzubetten, indem man ihren Wert in eine Zeichenkette einbettet. Programmierer nutzen dies, um dynamische und leicht zu lesende Strings zu erzeugen, ohne sie manuell zusammensetzen zu müssen.
 
-Stringinterpolation ist ein Weg, um Variablen, Konstanten, Literale und Ausdrücke in einen String einzufügen, der dann vollständig ausgewertet und zu einem neuen String konvertiert wird. Sie ermöglicht es, dynamische Strings auf eine einfache und lesbare Weise zu erstellen.
-
-## Anleitung
-
-Sehen Sie, wie einfach es ist, die Stringinterpolation in Swift zu nutzen. 
-
+## So geht's:
 ```Swift
-var name = "Florian"
-print("Hallo, \(name)!")
+let name = "Anna"
+let age = 28
+let greeting = "Hallo, ich bin \(name) und ich bin \(age) Jahre alt."
+print(greeting)
+```
+Output:
+```
+Hallo, ich bin Anna und ich bin 28 Jahre alt.
 ```
 
-Das wird folgendes angezeigt:
-
+Erweitertes Beispiel mit Berechnungen:
 ```Swift
-Hallo, Florian!
+let apples = 3
+let oranges = 5
+let fruitSummary = "Ich habe \(apples + oranges) Früchte insgesamt."
+print(fruitSummary)
+```
+Output:
+```
+Ich habe 8 Früchte insgesamt.
 ```
 
-Willst du eine Zahl verwenden? Kein Problem.
+## Tiefgang
+In der Geschichte von Swift wurde String-Interpolation mit der ersten Version des Sprache eingeführt und ist seitdem eine Grundfunktion. Es unterscheidet sich von älteren Methoden wie Printf- oder Format-Strings, die in Sprachen wie C oder Java genutzt werden, indem es eine einfachere und sicherere Syntax bietet. Alternativ könnte man Strings durch Verkettung von Teilen mit dem `+` Operator zusammenstellen, was aber meist unübersichtlicher und fehleranfälliger ist.
 
-```Swift
-var hours = 24
-print("Ein Tag hat \(hours) Stunden.")
-```
+Die String-Interpolation in Swift verwendet die Syntax `\(ausdruck)`, wobei `ausdruck` eine Variable, eine Konstante oder sogar eine Berechnung sein kann. Bei der Kompilierung setzt Swift den Wert des Ausdrucks in den String ein. Interessanterweise ist die Funktionalität von "\(…)" tatsächlich durch das Protokoll `CustomStringConvertible` implementiert, das die `description`-Eigenschaft für den Ausdruck liefert, den man interpolieren möchte.
 
-Die Ausgabe wird folgendes sein:
-
-```Swift
-Ein Tag hat 24 Stunden.
-```
-
-## Tiefer eintauchen
-
-Stringinterpolation ist nicht nur in Swift, sondern auch in anderen Programmiersprachen wie Perl und Ruby seit einiger Zeit üblich und wird für ihre Einfachheit und Lesbarkeit geschätzt. Alternativen zu Stringinterpolation können die Konkatenation von Strings oder die Formatierung von Strings sein, aber beide Methoden erzeugen in der Regel mehr Code und sind weniger lesbar.
-
-Die Implementierungsdetails der Stringinterpolation in Swift sind eigentlich ziemlich interessant. Swift verwendet eine `String Interpolation Type` Klasse, um Interpolation durchzuführen und Sie können diese Klasse erweitern und anpassen, um benutzerdefinierte Interpolationsverhalten in Ihren eigenen Typen bereitzustellen.
-
-## Siehe auch
-
-Für weitere Informationen über Stringinterpolation in Swift, schauen Sie bitte in die offizielle Swift-Dokumentation. Hier ein paar nützliche Links zu verwandten Themen:
-
-- [Apple's Swift Programming Language Guide - Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+## Siehe Auch
+- Swift Documentation on Strings: [docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

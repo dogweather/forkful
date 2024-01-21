@@ -1,7 +1,8 @@
 ---
-title:                "Générer des nombres aléatoires"
-html_title:           "Elixir: Générer des nombres aléatoires"
-simple_title:         "Générer des nombres aléatoires"
+title:                "Génération de nombres aléatoires"
+date:                  2024-01-20T17:49:12.837083-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Génération de nombres aléatoires"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Numbers"
@@ -10,41 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Générer des nombres aléatoires est une tâche commune en programmation. Cela permet d'ajouter de l'incertitude dans nos programmes, nécessaire pour les jeux, la simulation, le chiffrement et bien plus.
+## What & Why? 
+Générer des nombres aléatoires, c'est comme lancer des dés avec votre ordinateur. Les programmeurs utilisent l'aléatoire pour tout, de la simulation à la sélection d'éléments en passant par la sécurité informatique.
 
-## Comment faire
-Voici un exemple de code pour générer des nombres aléatoires en Go.
+## How to:
+Pour générer un nombre aléatoire en Go, on utilise le package `math/rand`. Voici les bases :
 
-```Go
+```go
 package main
 
 import (
-  "fmt"
-  "math/rand"
-  "time"
+	"fmt"
+    "math/rand"
+    "time"
 )
 
 func main() {
-  rand.Seed(time.Now().UnixNano())
-  num := rand.Intn(100) // génère un nombre entre 0 et 99
-
-  fmt.Println(num)
+    rand.Seed(time.Now().UnixNano()) // Initialisation avec une graine variable
+    randomNumber := rand.Intn(100)   // Génère un nombre aléatoire entre 0 et 99
+    fmt.Println(randomNumber)
 }
 ```
 
-La sortie sera un nombre aléatoire entre 0 et 99.
+Si vous exécutez ce code, vous aurez un nombre différent à chaque fois. Essayez !
 
-## Plongée profonde
-Historiquement, générer de l'incertitude en programmation n'était pas si simple qu'aujourd'hui, impliquant l'utilisation de générateurs de nombres pseudo-aléatoires qui ont besoin d'être "semés" pour éviter les répétitions.
+## Deep Dive
+Historiquement, générer de l'aléatoire était un vrai casse-tête. Les premiers ordinateurs utilisaient des phénomènes physiques pour produire de l'aléatoire. Aujourd'hui, on utilise des algorithmes dits pseudo-aléatoires, parce qu'ils peuvent être reproduits si on connaît la graine (seed).
 
-En Go, `math/rand` est utilisé pour générer des nombres pseudo-aléatoires. Il utilise le temps actuel, en nano-secondes depuis 1970, comme graine pour `Rand.Seed()`. Toutefois, il faut noter que ces nombres ne sont pas adaptés à la cryptographie pour laquelle on utilisera `crypto/rand` à la place.
+Il y a des alternatives à `math/rand` pour plus d'exigences, comme `crypto/rand` pour de la cryptographie plus sécurisée. Cependant, ces nombres sont générés différemment et sont difficilement prédictibles.
 
-Une alternative est d'utiliser l'API de cryptographie pour générer des nombres aléatoires cryptographiquement sécurisés, mais cela peut être excessif pour certaines applications.
+En ayant une graine basée sur l'heure (`time.Now().UnixNano()`), on introduit de l'incertitude car cette valeur change constamment. Sans graine, votre générateur produirait toujours la même séquence de nombres aléatoires. 
 
-## Voir aussi
-Pour approfondir, voici quelques liens utiles:
+## See Also
+Envie d'approfondir le sujet ? Jetez un œil à ces liens :
 
-- Documentation de math/rand: https://golang.org/pkg/math/rand/
-- Guide complet sur les nombres aléatoires en Go: https://yourbasic.org/golang/generate-random-number/
-- Sécurité de la cryptographie et génération de nombres aléatoires: https://arxiv.org/pdf/2001.00939.pdf
+- Documentation officielle de Go sur `math/rand`: https://golang.org/pkg/math/rand/
+- La notion de graine (seed) en génération de nombres aléatoires: https://en.wikipedia.org/wiki/Random_seed
+- Une discussion approfondie sur les générateurs pseudo-aléatoires: https://en.wikipedia.org/wiki/Pseudorandom_number_generator
+- `crypto/rand` pour la cryptographie: https://golang.org/pkg/crypto/rand/

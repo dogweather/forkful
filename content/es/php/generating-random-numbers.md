@@ -1,6 +1,7 @@
 ---
 title:                "Generando números aleatorios"
-html_title:           "Arduino: Generando números aleatorios"
+date:                  2024-01-20T17:49:37.922677-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Generando números aleatorios"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,69 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
-
-La generación de números aleatorios es la creación de números en un proceso no predecible ni repetible. Los programadores la utilizan para varias funciones como la generación de identificadores únicos, datos de prueba y la creación de comportamientos impredecibles en los juegos.
+## Qué y Por Qué?
+La generación de números aleatorios es simplemente crear valores que no se pueden predecir. Los programadores lo hacen para cosas como juegos, simulaciones y seguridad.
 
 ## Cómo hacerlo:
-
-Existen varias formas de generar números aleatorios en PHP. Aquí te mostramos dos formas comunes usando la función `rand()`. 
-
-```PHP
-<?php
-// Genera un número aleatorio entre 0 y 32767
-$numeroAleatorio = rand();
-echo $numeroAleatorio;
-?>
-```
+Aquí tienes unos ejemplos para generar números aleatorios en PHP:
 
 ```PHP
 <?php
-// Genera un número aleatorio entre 1 y 10
-$numeroAleatorio = rand(1, 10);
-echo $numeroAleatorio;
+// Generar un número aleatorio entre 1 y 100
+echo rand(1, 100);
 ?>
 ```
+Resultado posible: `25`
+
+```PHP
+<?php
+// Generar un entero aleatorio seguro para criptografía entre 0 y 255
+echo random_int(0, 255);
+?>
+```
+Resultado posible: `162`
+
+```PHP
+<?php
+// Generar un número decimal aleatorio con mt_rand()
+echo mt_rand(1, 100) / 10;
+?>
+```
+Resultado posible: `7.3`
 
 ## Inmersión Profunda:
-
-(1) **Contexto histórico** 
-
-PHP ha tenido la función rand() desde su versión 4. La función `rand()` utiliza el algoritmo 'Mersenne Twister', introducido en PHP 7.1, que ofrece un mejor generador de números pseudo-aleatorios.
-
-(2) **Alternativas** 
-
-Además de `rand()`, también puedes usar `mt_rand()`, `random_int()`, entre otras, dependiendo de tus necesidades. `mt_rand()` es cuatro veces más rápido pero va a ser menos criptográficamente seguro que `random_int()`.
-
-```PHP
-<?php
-// Usando mt_rand()
-$numeroAleatorio = mt_rand(1, 10);
-echo $numeroAleatorio;
-
-// Usando random_int()
-$numeroAleatorio = random_int(1, 10);
-echo $numeroAleatorio;
-?>
-```
-
-(3) **Detalles de implementación** 
-
-Para asegurar que tus números aleatorios son verdaderamente impredecibles, considera sembrar el generador con `mt_srand()`. 
-
-```PHP
-<?php
-// Sembrando el generador con el tiempo actual
-mt_srand(time());
-
-$numeroAleatorio = mt_rand();
-echo $numeroAleatorio;
-?>
-```
+Antes, la función `rand()` era la usual para generar números aleatorios, pero no era la mejor para criptografía por no ser suficientemente impredecible. Por eso apareció `random_int()`, que es mejor para criptografía. `mt_rand()` es una versión más rápida y con una mejor distribución que `rand()`, aunque para números que necesitan alta seguridad, sigue siendo mejor `random_int()`. Algunas alternativas fuera de PHP incluyen el uso de librerías específicas de otros lenguajes o dispositivos de hardware dedicados a la generación de aleatoriedad.
 
 ## Ver También:
-
-- [PHP Manual: rand()](https://www.php.net/manual/es/function.rand.php)
-- [PHP Manual: mt_rand()](https://www.php.net/manual/es/function.mt-rand.php)
-- [PHP Manual: random_int()](https://www.php.net/manual/es/function.random-int.php)
-- [PHP Manual: mt_srand()](https://www.php.net/manual/es/function.mt-srand.php)
+- Documentación oficial de PHP sobre generación de números aleatorios: [PHP: Random Number Generation](https://www.php.net/manual/en/book.math.php)
+- Para entender mejor la criptografía y los números aleatorios: Ferguson, Niels; Schneier, Bruce (2003). "Practical Cryptography".
+- Si estás interesado en cómo los números aleatorios son usados en juegos, puedes ver: Adams, Ernest; Rollings, Andrew (2006). "Fundamentals of Game Design".

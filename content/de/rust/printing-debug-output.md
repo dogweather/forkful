@@ -1,7 +1,8 @@
 ---
-title:                "Ausgabe von Debugging-Informationen drucken"
-html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
-simple_title:         "Ausgabe von Debugging-Informationen drucken"
+title:                "Debug-Ausgaben drucken"
+date:                  2024-01-20T17:53:09.841237-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Debug-Ausgaben drucken"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -11,51 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Printen von Debug-Ausgaben ermöglicht das gezielte Untersuchen des Programmzustands während der Laufzeit. Programmierer tun dies, um Fehler aufzuspüren oder um das Verhalten des Codes besser zu verstehen.
+Debug-Ausgabe zu drucken bedeutet, Zwischenergebnisse und Variablenwerte während der Laufzeit in die Konsole zu schreiben. Programmierer nutzen das, um Fehler zu finden und den Programmfluss nachzuvollziehen.
 
-## Wie es funktioniert:
-
-Das Printen von Debug-Ausgaben in Rust ist denkbar einfach. Die wichtigsten Befehle dafür sind `println!` und `dbg!`. Hier sind sie in Aktion:
-
+## So geht’s:
 ```Rust
 fn main() {
-    let a = 3;
-    let b = 4;
-    println!("Summe = {}", a + b);
-    dbg!(a, b);
+    let lebenswichtige_variable = 42;
+    println!("Die Antwort ist: {}", lebenswichtige_variable);
+    dbg!(&lebenswichtige_variable);
 }
 ```
-
-Dieser Code liefert die Ausgabe:
-
+Ausgabe:
 ```
-Summe = 7
-[a.rs:5] a = 3
-[b.rs:5] b = 4
+Die Antwort ist: 42
+[src/main.rs:4] lebenswichtige_variable = 42
 ```
+`println!` zeigt einfache Nachrichten. `dbg!` gibt den Wert, den Dateinamen und die Zeilennummer aus.
 
-## Hintergrundinfos:
+## Vertiefung:
+Debugging-Ausdrucke gibt es, seit Programmierer Bugs jagen. `println!` ist einfach, aber roh. `dbg!` kam in Rust 1.32.0 und ist handlicher: Automatisches Spacing, Datei und Zeilenangaben. Weitere Tools für komplexere Fälle sind `log` und `env_logger`.
 
-Die `dbg!`-Makro wurde in Rust 1.32 eingeführt und ermöglicht einfaches Debuggen. Alternativ können wir auch `println!` mit dem `{:?}`-Platzhalter für Debug-Ausgaben verwenden. Der Unterschied liegt darin, dass `dbg!` zusätzliche Informationen wie den Dateinamen und die Zeilenzahl liefert.
-
-```Rust
-println!("{:?}", a);  // Ausgabe: 3
-```
-
-Es ist aber anzumerken, dass nicht alle Typen mit `{:?}` ausgegeben werden können. Sie müssen das Trait `std::fmt::Debug` implementieren. Für eingebaute Typen ist das meistens kein Problem, aber eigene Strukturen müssen das explizit bekanntgeben:
-
-```Rust
-#[derive(Debug)]
-struct Punkt {
-    x: i32,
-    y: i32,
-}
-```
-
-Nun kann man `Punkt`-Instanzen mit `println!` ausgeben.
-
-## Weiterführende Links:
-
-- Rust-Dokumentation zur `println!`-Makro: https://doc.rust-lang.org/std/macro.println.html
-- Rust-Dokumentation zur `dbg!`-Makro: https://doc.rust-lang.org/std/macro.dbg.html
-- Rust-Format-Dokumentation: https://doc.rust-lang.org/std/fmt/
+## Siehe auch:
+- Rust by Example über `println!`: https://doc.rust-lang.org/rust-by-example/hello/print.html
+- Rust Docs zu `dbg!`: https://doc.rust-lang.org/std/macro.dbg.html
+- Für umfangreicheres Logging: https://crates.io/crates/env_logger

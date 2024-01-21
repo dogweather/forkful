@@ -1,6 +1,7 @@
 ---
 title:                "Starting a new project"
-html_title:           "Bash recipe: Starting a new project"
+date:                  2024-01-20T18:02:46.581279-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Starting a new project"
 programming_language: "C"
 category:             "C"
@@ -10,48 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Starting a New C Project: A Programmer's Guide
-
 ## What & Why?
-Starting a new project is the process of setting up the foundations for fresh code. It's the blank canvas for programmers, allowing them to structure and organize their work as they bring their ideas to life.
+Starting a new project in C means setting up a basic structure for your app. Programmers do this to lay a foundation, making sure everything that follows has a tidy place to live.
 
 ## How to:
-To start a new project in C, you will need a source file and a makefile to manage the build. Here's a quick example:
-
-1. Your source file (`main.c`):
 ```C
-#include<stdio.h>
+#include <stdio.h>
 
 int main() {
-    printf("Hello, World!\n");
+    printf("Hello, new project!\n");
     return 0;
 }
 ```
 
-2. Your makefile:
-```C
-myProgram: main.c
-	gcc -o myProgram main.c
+Run it, and you should see:
 ```
-3. To compile and run it, open your terminal, navigate to your project directory and enter:
-```bash
-make myProgram
-./myProgram
-```
-4. The output should be:
-```bash
-Hello, World!
+Hello, new project!
 ```
 
 ## Deep Dive
-Starting a new C project has roots in the early 70s when the language was born in Bell Labs. Setting up your project is generally done manually, but alternatives exist. 
+Back in the 1970s, C was born. Dennis Ritchie started something big at Bell Labs. C's simplicity makes it a go-to even now for system software, embedded systems, and high-performance applications.
 
-IDEs like Eclipse or CodeBlocks offer automated project setup. Using an Integrated Development Environment can simplify the initial process, arranging necessary files into a predefined structure. However, manual setup provides the flexibility to tailor the project to specific requirements.
+When starting out, choose between procedural or modular styles. Procedural is straightforward, akin to following a recipe. Modular lets you organize code in chunks – think ingredients sorted into bowls. Both work, but modular scales better for complex projects.
 
-When starting a project manually, implementation details vary based on your plan. Factors to consider include project type, whether you'll be using third-party libraries, and how to handle version control. A properly structured project is easier to debug, modify, and maintain.
+Under the hood, when you compile, your setup is turned into an executable. The compiler (like GCC) reads your `main()` function as the entry point. But there's more: linking libraries, setting up makefiles for bigger projects, and maybe sprinkling in some preprocessor directives for flavor.
 
 ## See Also
-- Basics of makefiles: [GNU Make](https://www.gnu.org/software/make/manual/make.html)
-- Info on C language: [C Programming Wiki](https://en.wikibooks.org/wiki/C_Programming)
-- IDEs : [Eclipse](https://www.eclipse.org/ide/), [CodeBlocks](http://www.codeblocks.org/)
-- More about Version Control Systems: [Git Tutorial](https://git-scm.com/docs/gittutorial)
+- [GNU GCC Compiler](https://gcc.gnu.org/)
+- [Makefile Tutorial](https://makefiletutorial.com/)

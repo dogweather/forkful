@@ -1,6 +1,7 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-html_title:           "Bash: HTTP-pyynnön lähettäminen"
+date:                  2024-01-20T17:59:56.180525-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,43 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mitä & Miksi?
+Lähettämään HTTP-pyynnön tarkoittaa, että pyydetään tietoja verkossa olevasta palvelimesta tai lähetetään dataa sille. Ohjelmoijat tekevät tämän, koska se on tapa hakea, lähettää ja vaihtaa tietoa eri järjestelmien välillä.
 
-HTTP-pyynnön lähettäminen on prosessi, jossa sovelluksemme pyytää tietoja tai tekee toimintoja web-palvelimelle. Ohjelmoijat tekevät sen vuorovaikutuksessa verkkoresurssien kanssa, kuten API:iden tai webbisivustojen kanssa.
+## How to: - Kuinka:
+Haskellissa HTTP-pyyntöjen lähettämiseen käytetään kirjastoja, kuten `http-conduit`. Esimerkiksi näin:
 
-## Miten se tehdään:
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
 
-Haskellin palveluntarjoajia varten voit käyttää `http-client` -pakettia. Tässä on esimerkki yksinkertaisesta GET-pyynnöstä:
-
-```Haskell
-import Network.HTTP.Client
-import Network.HTTP.Types.Status (statusCode)
+import Network.HTTP.Simple
 
 main :: IO ()
 main = do
-    manager <- newManager defaultManagerSettings
-    request <- parseRequest "http://httpbin.org/get"
-    response <- httpLbs request manager
-    putStrLn $ "The status code was: " ++ show (statusCode $ responseStatus response)
-    print $ responseBody response
+  response <- httpLBS "http://httpbin.org/get"
+  putStrLn $ "The status code was: " ++ show (getResponseStatusCode response)
+  putStrLn $ "The response body was: " ++ show (getResponseBody response)
 ```
-Kun koodi suoritetaan, se saa HTTP-pyynnön httpbin.org/getista ja tulostaa sekä paluukoodin että vastauksen sisällön.
 
-## Syvempi sukellus:
+Aja ja odota tuloste:
 
-Haskellissa HTTP-pyynnön lähettämisen mahdollistaa `http-client`-kirjaston takana oleva alhainen verkko-IO. Se on suunniteltu olemisen yhtenäinen ja joustava, jonka avulla voit mukauttaa pyyntösi tarpeidesi mukaan.
+```
+The status code was: 200
+The response body was: "{\"args\":{},\"headers\":{...},\"origin\":\"...\",\"url\":\"http://httpbin.org/get\"}"
+```
 
-Historia tekee mielenkiintoista lukemista: Elonatan Roodo teki ensimmäisen Haskell HTTP-kirjaston julkaisun vuonna 2004. Sen jälkeen `http-client` on ottanut johtoaseman, tarjoten vahvan ja joustavan HTTP-clientin haskell-yhteisölle.
+## Deep Dive - Syväsukellus:
+HTTP-pyynnöt ovat olleet osa webin rakennetta alusta lähtien, 1990-luvun alusta. Vaihtoehtoja `http-conduit`:lle ovat esimerkiksi `wreq` ja `req`, jotka tarjoavat eri tasoja abstraktiosta. `http-conduit`:ssa pyynnöt rakentuvat `ByteString`-tyypin varaan, joka on tehokas binääridatan käsittelyssä.
 
-Vaihtoehtona on myös `http-conduit`-paketti, joka on rakennettu päälle `http-client` ja tarjoaa korkeamman tason abstraktiot verkkoyhteyksille.
+Sisäisesti, Haskellin HTTP-kirjastot käyttävät monadiittista IO:tä operoidakseen side-effektien kanssa, kuten verkko-operaatiot. Joustavuus tulee korkean tason abstraktioista, kuten functioista, jotka kääntelevät HTTP-pyyntöjä ja -vastauksia, samaan aikaan kun kielen laiskuus mahdollistaa tehokkaan datan käsittelyn.
 
-Rakenteissa on useita vaiheita, mukaan lukien URL:n jäsentäminen, oikean HTTP-menetelmän valinta ja tietyntyyppisten pyyntöjen eriyttäminen.
+## See Also - Katso Myös:
+Täydentäviä resursseja ja dokumentaatioita:
 
-## Katso myös:
-
-Lisätietoja Haskellin HTTP-asiakaskirjastoista löydät seuraavista lähteistä:
-
-1. http-client: https://hackage.haskell.org/package/http-client
-2. http-conduit: https://hackage.haskell.org/package/http-conduit
-3. Network.HTTP.Client: https://hackage.haskell.org/package/http-client/docs/Network-HTTP-Client.html
-4. Haskell Wiki - HTTP: https://wiki.haskell.org/HTTP
+- http-conduit kirjaston ohjeet: https://www.stackage.org/package/http-conduit
+- Wreq-kirjasto: http://www.serpentine.com/wreq/
+- Req-kirjasto: https://hackage.haskell.org/package/req
+- Real World Haskell -kirjan luku HTTP:stä: http://book.realworldhaskell.org/read/programming-with-monads.html

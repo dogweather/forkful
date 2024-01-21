@@ -1,6 +1,7 @@
 ---
 title:                "HTTP 요청 보내기"
-html_title:           "Clojure: HTTP 요청 보내기"
+date:                  2024-01-20T17:59:21.959952-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,42 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜?
+## What & Why? (무엇이며 왜?)
+HTTP 요청을 보내는 것은 웹 서버에 정보를 요청하거나 전송하는 방법입니다. 프로그래머들은 데이터를 주고받거나, 웹 API와 상호 작용하기 위해 이를 사용합니다.
 
-HTTP 요청 전송은 서버로 정보를 공유하거나 서버에서 정보를 얻기 위한 방법입니다. 개발자가 이를 사용하여 웹 서비스와 상호 작용합니다.
-
-## 사용 방법:
-Elixir에서는 보통 `:httpc.request` 함수를 사용하여 HTTP 요청을 전송합니다. 여기서는 GET 요청을 어떻게 보내는지 간단하게 보여드릴게요:
-
-```elixir
-{:ok, {{'HTTP/1.1', 200, 'OK'}, headers, body}} = :httpc.request('http://example.com')
-IO.inspect(body)
-
-# output
-"<html>...</html>"
-```
-
-POST 요청도 쉽게 보낼 수 있습니다:
+## How to:
+Elixir에서 HTTP 요청을 보내려면, `HTTPoison` 라이브러리를 사용하는 것이 일반적입니다. `mix.exs` 파일에 의존성을 추가하고, 예시로 간단한 GET 요청을 보내 봅시다.
 
 ```elixir
-{:ok, {{'HTTP/1.1', 200, 'OK'}, headers, body}} =
-  :httpc.request(:post, {'http://example.com', [], 'application/x-www-form-urlencoded', 'key1=value1&key2=value2'})
+# mix.exs에 dependency 추가
+defp deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
+end
 
-IO.inspect(body)
+# iex에서 다음을 실행합니다
+HTTPoison.start()
 
-# output
-"{\"key1\":\"value1\",\"key2\":\"value2\"}"
+# GET 요청을 보냅니다
+response = HTTPoison.get!("https://jsonplaceholder.typicode.com/posts/1")
+
+# 응답 내용을 출력합니다
+IO.inspect(response)
 ```
 
-## 깊은 이해
+샘플 출력:
 
-- **역사적 맥락**: HTTP 요청은 1991년에 처음 소개된 이후로 웹의 핵심 역할을 해왔습니다. Elixir는 Erlang 표준 라이브러리(HTTP client)를 채택하여 HTTP 요청을 처리합니다.
+```elixir
+%HTTPoison.Response{
+  body: "{ ... }",
+  headers: [
+    {"Content-Type", "application/json; charset=utf-8"},
+    ...
+  ],
+  status_code: 200
+}
+```
 
-- **대안**: Elixir에는 HTTPoison과 같은 다른 HTTP 클라이언트 라이브러리도 있습니다. HTTPoison은 간단하고 직관적인 API를 제공합니다.
+## Deep Dive
+HTTP 요청은 인터넷의 핵심을 이루는 행위입니다. 1990년대 초 웹의 출현과 함께 HTTP는 표준 통신 규약으로 자리잡았습니다. `HTTPoison`은 Elixir용 인기 HTTP 클라이언트 라이브러리입니다. Erlang의 `hackney` 라이브러리를 기반으로 하며, Elixir에서 쉽게 HTTP 요청을 보낼 수 있게 해줍니다.
 
-- **구현 세부 정보**: `:httpc.request` 함수를 호출할 때, `:httpc` 모듈은 주어진 매개변수를 바탕으로 HTTP 요청을 생성하고 요청을 보냅니다. 응답이 오면 함수는 `{:ok, response}` 형식의 튜플을 반환합니다.
+선택 사항으로 `Tesla`나 `HTTPotion`과 같은 다른 라이브러리도 있습니다. 이러한 라이브러리들은 각기 독특한 구문과 기능을 제공합니다. HTTPoison은 요청을 보내고, 응답을 동기적으로 또는 비동기적으로 처리하는 강력한 기능들을 갖추고 있어 실제 개발 작업에서 유연하게 활용할 수 있습니다.
 
-## 참고 자료
-- Elixir 공식 문서: [http://elixir-lang.org/docs.html](http://elixir-lang.org/docs.html)
-- Erlang `:httpc` Module 문서: [https://erlang.org/doc/man/httpc.html](https://erlang.org/doc/man/httpc.html)
-- 보다 강력한 HTTP 클라이언트 라이브러리, HTTPoison: [https://hexdocs.pm/httpoison/readme.html](https://hexdocs.pm/httpoison/readme.html)
+## See Also
+- 공식 HTTPoison GitHub 페이지: https://github.com/edgurgel/httpoison
+- Elixir에서 다른 HTTP 클라이언트인 Tesla 사용하기: https://github.com/teamon/tesla
+- Erlang `hackney` 라이브러리에 대한 자세한 정보: https://github.com/benoitc/hackney

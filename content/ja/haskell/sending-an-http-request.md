@@ -1,6 +1,7 @@
 ---
 title:                "HTTPリクエストの送信"
-html_title:           "Bash: HTTPリクエストの送信"
+date:                  2024-01-20T17:59:44.386247-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTPリクエストの送信"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,49 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+プログラマーがHTTPリクエストを送ると、ウェブサーバーとデータを交換できます。APIとの通信や情報取得のためによく使われます。
 
-HTTPリクエストを送信するとは、ネットワークを介して特定のウェブページまたはサービスに情報を要求するプロセスのことです。プログラマはこれを行う理由は主に2つあります。1つはデータを取得するため、もう1つは特定の操作をウェブサービース上で依頼するためです。
-
-## 使い方
-
-HTTPリクエストを送信するための基本的なHaskellコードは以下の通りです：
-
+## How to: (やり方)
 ```Haskell
+-- 'http-conduit' パッケージを利用
 import Network.HTTP.Simple
 
+-- 簡単なGETリクエストの例
 main :: IO ()
 main = do
-    response <- httpLBS "http://httpbin.org/get"
-
-    putStrLn $ "The status code was: " ++
-               show (getResponseStatusCode response)
-    print (getResponseBody response)
+    response <- httpBS "http://httpbin.org/get"
+    putStrLn $ "The status code was: " ++ show (getResponseStatusCode response)
+    print $ getResponseHeader "Content-Type" response
+    putStrLn $ "The response body was: " ++ show (getResponseBody response)
 ```
-
-このコードを実行すると以下の出力が得られます：
-
-```Haskell
+実行結果のサンプル:
+```
 The status code was: 200
-"OK"
+["application/json"]
+The response body was: "{\"args\":{},\"headers\":{...},\"url\":\"http://httpbin.org/get\"}"
 ```
 
-このコードは "http://httpbin.org/get" にHTTPリクエストを送信し、ステータスコードとレスポンスボディを表示します。
+## Deep Dive (深く掘り下げる)
+HTTPリクエストを送る機能はHaskellの始まりから重視されています。ウェブ開発やウェブサービスの中核的な部分だからです。選択肢はいくつかあります：`http-conduit`、`wreq`、`req` などが有名です。`http-conduit` はストリーミングに対応し、大きなデータも扱いやすいです。内部では、パフォーマンス重視でHTTP/1.1プロトコルを使っています。
 
-##深掘り
-
-HTTPリクエストの送信は、1980年代からのWebコミュニケーションの基本的なプロセスであり、時代と共にバリエーションと改良が加わりました。 
-
-HaskellでHTTPリクエストを送信する代替手段としては、`http-client`や`wreq`などのライブラリがあります。
-
-HaskellのHTTPリクエスト送信について深く掘り下げると、上記のコードの背後には`http-client`ライブラリが使用されています。これは、リクエストを構築し、サーバーに送信し、応答を解析するための底辺のインターフェースを提供します。
-
-## 関連情報
-
-以下のリンクは、このトピックについての追加情報を提供します。
-
-- HaskellのHTTPリクエスト：http://haskell-lang.org/library/http-client
-
-- HTTPプロトコルについての詳細：https://developer.mozilla.org/ja/docs/Web/HTTP
-
-以上がHaskellでHTTPリクエストを行うことの基本になります。データを取得したり、サービスに対する特定の操作を呼び出したりするために、この情報が役立ちます。
+## See Also (参照)
+- [`http-conduit` パッケージ](https://www.stackage.org/package/http-conduit)
+- [`wreq` パッケージ](https://www.stackage.org/package/wreq)
+- [`req` パッケージ](https://www.stackage.org/package/req)

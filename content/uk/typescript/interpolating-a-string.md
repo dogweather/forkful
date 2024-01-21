@@ -1,7 +1,8 @@
 ---
-title:                "Інтерполяція рядка"
-html_title:           "Java: Інтерполяція рядка"
-simple_title:         "Інтерполяція рядка"
+title:                "Інтерполяція рядків"
+date:                  2024-01-20T17:52:37.287113-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Інтерполяція рядків"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,38 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та чому?
+## What & Why?
+(Що і Чому?)
 
-Інтерполяція стрічок - це процес вставки значень змінних або виразів прямо в текстову стрічку. Програмісти це роблять, щоб створювати динамічний контент або форматувати повідомлення, замість нудних конкатенацій.
+String interpolation allows embedding expressions within string literals. Programmers use it to concatenate strings and expressions neatly and readably.
 
-## Як таке зробити:
+(Інтерполяція рядків дозволяє вбудовувати вирази всередину строкових літералів. Програмісти використовують її для зручного і читабельного об'єднання рядків та виразів.)
 
-```TypeScript
-let name = "Вася";
-console.log(`Привіт, ${name}!`);
-```
-Виводить: "Привіт, Вася!"
+## How to:
+(Як це зробити:)
 
 ```TypeScript
-let apples = 5;
-console.log(`У мене є ${apples} яблук.`);
+let userName: string = 'Viktor';
+let itemsPurchased: number = 3;
+let purchaseMessage: string = `Hello, ${userName}! You've purchased ${itemsPurchased} items.`;
+
+console.log(purchaseMessage);
 ```
-Виводить: "У мене є 5 яблук."
 
-```TypeScript
-let x = 10;
-let y = 20;
-console.log(`Сума чисел ${x} та ${y} є ${x + y}.`);
+Output will be:
+
+(Вивід буде наступним:)
+
 ```
-Виводить: "Сума чисел 10 та 20 дорівнює 30."
+Hello, Viktor! You've purchased 3 items.
+```
 
-## Поглиблений огляд
+## Deep Dive
+(Поглиблений Огляд)
 
-Інтерполяцію стрічок можна знайти по всьому програмниому світі, від Perl і PHP в 90-х, до нинішнього JavaScript і TypeScript. Це альтернатива старій методиці конкатенації або використанню форматів подібних до printf(), яка є суттєво більш читабельним.
-Головна ціль інтерполяції стрічок в TypeScript полягає в упрощенні синтаксису і зробити його більш зрозумілим.
+Before ES6, string concatenation relied on the '+' operator, often leading to clunky code. String interpolation in TypeScript, as in modern JavaScript, uses backticks (`` ` ``) and `${expression}` syntax to simplify this process. Beyond the basic `${variable}`, you can run any expression, like `${1 + 1}` or `${fullName.toUpperCase()}`. This interpolation is evaluated at runtime, meaning your expressions are calculated when the code runs.
 
-## Дивіться також:
+(До ES6 для конкатенації рядків застосовувався оператор '+', що часто призводило до незручного коду. Інтерполяція рядків у TypeScript, як і в сучасному JavaScript, використовує зворотні лапки (`` ` ``) та синтаксис `${вираз}`, щоб спростити цей процес. Крім основного `${змінна}`, можна використовувати будь-який вираз, наприклад, `${1 + 1}` або `${fullName.toUpperCase()}`. Ця інтерполяція обчислюється у рантаймі, тобто ваші вирази розраховуються, коли код виконується.)
 
-1. [Офіційна документація по TypeScript](https://www.typescriptlang.org/docs/)
-2. [MDN: Інтерполяція собственної стрічки](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Template_literals)
-3. [StackOverflow: Інтерполяція стрічки в TypeScript](https://stackoverflow.com/questions/3304014)
+Alternatives include string concatenation, template libraries, or even manual creation of string expressions. Yet, for most TypeScript or JavaScript jobs, string interpolation remains the go-to for clean and efficient code.
+
+(Альтернативами можуть бути конкатенація рядків, бібліотеки шаблонів або навіть ручне створення строкових виразів. Однак для більшості завдань у TypeScript або JavaScript інтерполяція рядків залишається найкращим рішенням для чистого та ефективного коду.)
+
+## See Also
+(Дивись Також)
+
+- MDN Web Docs on Template Literals: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+- TypeScript Official Documentation: https://www.typescriptlang.org/docs/handbook/basic-types.html#string
+- String interpolation in modern JS frameworks (React, Angular): https://blog.logrocket.com/a-guide-to-component-rendering-and-string-interpolation-in-react-and-angular/
+
+MDN Web Docs or TypeScript documentation provide solid groundwork, while the blog post on LogRocket dives into how frameworks like React and Angular handle string interpolation within their ecosystems.
+
+(MDN Web Docs та офіційна документація TypeScript надають міцну основу, тоді як стаття на LogRocket детально розглядає, як фреймворки на кшталт React та Angular обробляють інтерполяцію рядків у своїх екосистемах.)

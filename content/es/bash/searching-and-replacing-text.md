@@ -1,6 +1,7 @@
 ---
 title:                "Buscando y reemplazando texto"
-html_title:           "C: Buscando y reemplazando texto"
+date:                  2024-01-20T17:57:11.106535-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Buscando y reemplazando texto"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,44 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Búsqueda y reemplazo de texto con Bash
+## Qué y Por Qué?
+Buscar y reemplazar texto es cambiar una cadena por otra en un archivo o conjunto de archivos. Los programadores lo hacen para corregir errores, actualizar datos o modificar código de manera eficiente.
 
-## ¿Qué & Por qué?
-
-La búsqueda y el reemplazo de texto implican encontrar cadenas de caracteres específicas en un texto y cambiarlas por otras. Los programadores lo hacen para modificar código rápidamente, corregir errores y adaptar scripts a diferentes contextos.
-
-## ¿Cómo hacerlo?
-
-Aquí te muestro cómo buscar y reemplazar texto en Bash. 
-
-Reemplazaremos la palabra "hola" por "adiós" en nuestro archivo de texto.
-
+## Cómo:
 ```Bash
-sed 's/hola/adiós/g' tu_archivo.txt
+# Buscar y reemplazar "hola" por "adiós" en 'archivo.txt'
+sed 's/hola/adiós/g' archivo.txt
+
+# Cambios permanentes con la opción -i
+sed -i 's/viejo/nuevo/g' archivo.txt
+
+# Múltiples archivos con globbing
+sed -i 's/error/corrección/g' *.log
+
+# Mostrar solo las líneas modificadas
+sed -n 's/texto1/texto2/p' archivo.txt
 ```
 
-Aquí, `s` significa 'substituir'. `g` al final indica que queremos reemplazar todas las ocurrencias, no solo la primera. 
+Ejemplo de salida:
+```
+# Antes de reemplazo en 'archivo.txt':
+Una línea con hola y otra información.
 
-Este es solo un ejemplo básico. Bash ofrece muchas formas de afinar tus búsquedas y reemplazos para adaptarse a las necesidades del proyecto.
-
-## Más a fondo
-
-El comando `sed` viene del editor de flujos (stream editor) que es una herramienta estandarizada en Unix desde los años 70. 
-
-Existen alternativas a `sed`, como `awk` o `perl`, que a veces pueden ser más aptas o cómodas según el caso.
-
- Los detalles de implementación de `sed` son profundos, pero aquí destacamos que `sed` no modifica el archivo original, hace la operación en su copia cargada en memoria. Si quieres que los cambios se guarden en el archivo original, utiliza el flag `-i`:
-
-```Bash
-sed -i 's/hola/adiós/g' tu_archivo.txt
+# Después de reemplazo:
+Una línea con adiós y otra información.
 ```
 
-## Ver también: 
+## Deep Dive
+Originalmente, `sed` (stream editor) fue parte del proyecto de software de Unix desarrollado en los 70s. Es estupendo para scripts y para trabajar en archivos muy grandes porque procesa el texto línea por línea. Alternativas como `awk` y `perl` también son poderosas para manipular texto pero con enfoques y sintaxis diferentes. En la implementación, `sed` trabaja con patrones y expresiones regulares, lo que le permite realizar operaciones complejas de buscar y reemplazar.
 
-Para profundizar en `sed` y sus alternativas:
-- `sed` - Tutorial y referencia completa: https://www.grymoire.com/Unix/Sed.html
-- `awk` - Tutorial y referencia completa: https://www.grymoire.com/Unix/Awk.html
-- `perl` – Tutorial y referencia completa: https://perldoc.perl.org/ 
-- Bash Scripting Guide: https://tldp.org/LDP/abs/html/textmanipulation.html 
-
-Recuerda, la práctica hace al maestro. ¡Feliz programación!
+## Ver También
+- GNU sed manual: https://www.gnu.org/software/sed/manual/sed.html
+- Expresiones regulares en profundidad: https://www.regular-expressions.info/
+- Ejemplos de uso de `awk`: https://www.gnu.org/software/gawk/manual/gawk.html

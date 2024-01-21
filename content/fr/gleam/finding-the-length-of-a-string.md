@@ -1,7 +1,8 @@
 ---
-title:                "Trouver la longueur d'une chaîne"
-html_title:           "Go: Trouver la longueur d'une chaîne"
-simple_title:         "Trouver la longueur d'une chaîne"
+title:                "Trouver la longueur d'une chaîne de caractères"
+date:                  2024-01-20T17:47:18.230891-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Trouver la longueur d'une chaîne de caractères"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,29 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi?
-Trouver la longueur d'une chaîne consiste à déterminer le nombre de caractères qu'elle contient. Les programmeurs le font pour gérer précisément la manipulation et le traitement des données textuelles.
+## Quoi et Pourquoi ?
+Trouver la longueur d'une chaîne de caractères, c'est simplement compter le nombre de caractères qu'elle contient. Les programmeurs le font pour valider des entrées, optimiser le stockage, ou contrôler la mise en forme.
 
-## Comment faire:
-Voici comment vous pouvez trouver la longueur d'une chaîne en Gleam:
-
+## Comment faire :
 ```gleam
-import gleam/string.{length}
-let ma_chaine = "Programmation Gleam"
-let longueur = length(ma_chaine)
+import gleam/io
+
+pub fn main() {
+  let my_string = "Bonjour!"
+  let length = string.len(my_string)
+  io.println(length)
+}
 ```
+Sortie : `8`
 
-Lors de l'exécution de ce code, la variable `longueur` obtiendra une valeur de `19`, qui est le nombre de caractères dans "Programmation Gleam".
+## Plongée en profondeur
+Historiquement, la fonction de longueur fait partie des opérations de base sur les chaînes de caractères dans presque tous les langages de programmation. À l'époque des terminaux et des connexions lentes, savoir la taille de la chaîne pouvait être crucial pour la performance. En Gleam, `string.len` est la fonction dédiée pour obtenir cette information. Bien qu'elle soit simple en surface, la complexité peut survenir avec des caractères Unicode, où un seul caractère visuel peut être composé de plusieurs unités de code. Il est important de noter que Gleam manipule les chaînes en UTF-8, ce qui signifie que le nombre renvoyé par `string.len` est le nombre d'unités de code UTF-8, pas nécessairement le nombre de caractères "graphème". Par exemple, un émoji peut compter pour plus d'une unité de code.
 
-## Plongée Profonde
-Historiquement, l'opération de calcul de la longueur d'une chaîne est une nécessité fondamentale dans la programmation. Elle permet de faire de nombreuses choses comme le découpage de chaînes, la vérification des saisies utilisateur, et bien plus encore.
-
-En Gleam, une alternative pour trouver la longueur d'une chaîne serait d'implémenter manuellement une fonction qui utilise une boucle pour compter les caractères. Cependant, l'utilisation de la fonction intégrée `length` est beaucoup plus efficace et rapide.
-
-### Détails de mise en œuvre
-En interne, Gleam stocke les chaînes en tant que liste de caractères. La fonction `length` compte simplement ces caractères. C'est une opération O(1), ce qui signifie qu'elle s'exécute en temps constant, peu importe la longueur de la chaîne.
-
-## Aussi Voir:
-1. Documentation officielle de Gleam: <a href='https://gleam.run/documentation/'>https://gleam.run/documentation/</a>
-2. Fonctions de chaîne en Gleam: <a href='https://hexdocs.pm/gleam_stdlib/gleam/string.html'>https://hexdocs.pm/gleam_stdlib/gleam/string.html</a>
-3. Introduction à la programmation Gleam: <a href='https://gleam.run/getting-started/'>https://gleam.run/getting-started/</a>
+## Voir aussi
+- Tutoriel sur l'encodage Unicode et UTF-8 : [Understanding Unicode and UTF-8](https://unicode.org/standard/standard.html)

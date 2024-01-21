@@ -1,6 +1,7 @@
 ---
 title:                "Imprimiendo salida de depuración"
-html_title:           "Arduino: Imprimiendo salida de depuración"
+date:                  2024-01-20T17:52:53.552439-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,54 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Imprimir Información de Depuración en Haskell
+## Qué & Por Qué?
 
-## ¿Qué & Por Qué?
-Una salida de depuración es información de diagnóstico impresa por un programa para entender su comportamiento. Los programadores usan esta técnica para identificar y resolver problemas en su código más eficientemente.
+La impresión de mensajes de depuración es simplemente mostrar información en la consola para entender qué está pasando en tu código. Los programadores lo hacen para rastrear errores o verificar el flujo del programa.
 
 ## Cómo Hacerlo:
 
-La función `print` en Haskell permite imprimir la salida de depuración. Aquí hay un ejemplo simple:
+Para imprimir algo en Haskell, usualmente usamos la función `print` o `putStrLn`.
 
-```Haskell
+```haskell
 main :: IO ()
-main = do 
-   print "Hello, Debugging!"
+main = do
+  putStrLn "Este es un mensaje de depuración"
+  print $ 1 + 2
 ```
 
-El comando anterior imprimirá en la consola: `"Hello, Debugging!"`
+Salida:
 
-Para imprimir el estado interno de una instancia, podemos usar la función `show`.
-
-```Haskell
-data Persona = Persona { nombre :: String, edad :: Int }
-
-main = print $ Persona "Juan" 30
+```
+Este es un mensaje de depuración
+3
 ```
 
-Este comando imprimirá en la consola: `Persona {nombre = "Juan", edad = 30}`
+Si quieres depurar dentro de una expresión, puedes usar `Debug.Trace`:
 
-## Inmersión Profunda:
+```haskell
+import Debug.Trace (trace)
 
-La función `print` tiene una larga historia en Haskell, ya que es parte fundamental del sistema IO característico de este lenguaje. Sin embargo, existen alternativas como las funciones `trace` y `traceShow` del módulo `Debug.Trace`, que permiten imprimir datos para depuración sin romper la pureza de una función.
+sumaDebug :: Int -> Int -> Int
+sumaDebug x y = trace ("sumando " ++ show x ++ " y " ++ show y) $ x + y
 
-```Haskell
-import Debug.Trace
-sum' :: [Int] -> Int
-sum' xs = sum'' xs 0
-  where
-    sum'' []     t = traceShow t t
-    sum'' (x:xs) t = sum'' xs (x+t)
+main :: IO ()
+main = print $ sumaDebug 3 4
 ```
 
-El código anterior imprimirá el total acumulado en cada llamada recursiva.
+Salida:
 
-Los métodos `print`, `trace`, y `traceShow` son implementados utilizando la mónada IO. Esta es una característica única de Haskell que le permite manejar operaciones con efectos secundarios como los IO en un marco seguro y predecible.
+```
+sumando 3 y 4
+7
+```
 
-## Ver También:
+## Profundización
 
-Para profundizar en la depuración en Haskell, lee las siguientes fuentes:
+Historicamente, los programas de Haskell no imprimían directamente a la consola, debido a su naturaleza puramente funcional. `Debug.Trace` permite añadir impurezas para la depuración. Como alternativa, puedes usar herramientas más avanzadas como depuradores o profilers para hacer un análisis más detallado.
 
-1. Learn You a Haskell for Great Good: Una guía introductoria gratuita a Haskell. [Link](http://learnyouahaskell.com/)
-2. Real World Haskell: Un libro de texto más avanzado en funciones IO y depuración. [Link](http://book.realworldhaskell.org/)
-3. Documentación de Debug.Trace para más funciones de traza y detalles. [Link](https://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html)
+Haskell define operaciones de impresión en el módulo `System.IO`, y el uso de `print` es realmente un atajo para `putStrLn . show`. `Debug.Trace` es poderoso pero debería usarse con precaución, ya que puede romper la naturaleza perezosa y pura del código, llevando a resultados inesperados si no se retira después de la depuración.
+
+## Ver También
+
+- Haskell Documentation for `Debug.Trace`: https://hackage.haskell.org/package/base-4.15.0.0/docs/Debug-Trace.html
+- GHC Documentation, para entender más sobre depuración en Haskell: https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html
+- "Real World Haskell", capítulo de depuración y optimización: http://book.realworldhaskell.org/read/profiling-and-optimization.html

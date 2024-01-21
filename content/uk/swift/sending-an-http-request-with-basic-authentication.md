@@ -1,7 +1,8 @@
 ---
-title:                "Надсилання http-запиту з базовою аутентифікацією"
-html_title:           "Arduino: Надсилання http-запиту з базовою аутентифікацією"
-simple_title:         "Надсилання http-запиту з базовою аутентифікацією"
+title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+date:                  2024-01-20T18:02:46.083949-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,45 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та чому?
-Надсилання HTTP-запиту з базовою аутентифікацією - це процес, де користувач ідентифікує себе перед сервером за допомогою логіна та пароля. Програмісти роблять це, щоб забезпечити доступ до захищених ресурсів.
+## Що це та навіщо?
+HTTP-запити з базовою аутентифікацією — це техніка захисту, яка вимагає від користувача ввести логін і пароль, щоб отримати доступ до ресурсу. Розробники використовують це, щоб забезпечити контроль доступу до серверних ресурсів.
 
 ## Як це зробити:
-```Swift
+```swift
 import Foundation
 
-let username = "yourUsername"
-let password = "yourPassword"
-let loginString = String(format: "%@:%@", username, password)
-let loginData = loginString.data(using: String.Encoding.utf8)!
+// Встановлення URL та вашого логіна/пароля
+let url = URL(string: "https://yourapiendpoint.com/data")!
+let login = "your_login"
+let password = "your_password"
+
+// Підготовка закодованого рядка авторизації
+let loginString = "\(login):\(password)"
+guard let loginData = loginString.data(using: .utf8) else {
+    fatalError("Unable to encode login data")
+}
 let base64LoginString = loginData.base64EncodedString()
 
-let url = URL(string: "https://your-api.com")!
+// Створення запиту
 var request = URLRequest(url: url)
-request.httpMethod = "GET"
+request.httpMethod = "GET" // або "POST", "PUT", "DELETE" в залежності від потреби
 request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
 
-let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-    if let error = error {
-        print("Error: \(error)")
-    } else if let data = data {
-        let str = String(data: data, encoding: .utf8)
-        print("Received data:\n\(str ?? "")")
+// Відправка запиту
+let session = URLSession.shared
+let task = session.dataTask(with: request) { data, response, error in
+    guard let httpResponse = response as? HTTPURLResponse,
+          (200...299).contains(httpResponse.statusCode) else {
+        print("Authorization failed")
+        return
+    }
+    if let data = data {
+        // Тут ваш код для обробки отриманих даних
+        print("Data received")
     }
 }
 task.resume()
 ```
-У відповідь ви отримаєте дані від серверу або повідомлення про помилку, якщо щось пішло не так.
 
-## Поглиблений розбір
-1. Історичний контекст: Базова аутентифікація HTTP - це стандартний метод для передачі вхідних даних для аутентифікації. Єдність цього методу полягає в його широкій сумісності з різними системами.
+## Поглиблений розгляд
+Базова аутентифікація в HTTP — це метод аутентифікації, що був введений ще у HTTP/1.0. Але з огляду на її слабкі сторони, особливо небезпеку перехоплення логіна та пароля, зараз часто використовують більш безпечні методи, як OAuth. Тим не менш, для закритих мереж або систем, де високий рівень безпеки не є критичним, базова аутентифікація все ще популярна через простоту використання. Перед відправкою логіна та пароля вони кодуються у base64, але зверніть увагу, що це не є надійним шифруванням, і такі дані можуть бути легко розкодовані. Рекомендується використовувати HTTPS, щоб захистити дані під час передачі.
 
-2. Альтернативи: Несмотря на простоту базовой аутентифікації HTTP, є інші, більш безпечні варіанти, такі як OAuth та JWT. Вони зазвичай використовуються для веб-додатків з вищим рівнем безпеки.
-
-3. Деталі реалізації: В Swift, для надсилання HTTP-запиту з базовою аутентифікацією, використовується `URLRequest` і `URLSession`. `URLRequest` формує ваш запит, а `URLSession` виконує його.
-
-## Див. також
-1. [URLSession - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/urlsession)
-2. [URLRequest - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/urlrequest)
-3. [OAuth - Official Website](https://oauth.net)
-4. [JWT - Official Website](https://jwt.io)
+## Додаткові ресурси
+- [Apple Developer - URL Loading System](https://developer.apple.com/documentation/foundation/url_loading_system)
+- [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+- [OWASP - Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)

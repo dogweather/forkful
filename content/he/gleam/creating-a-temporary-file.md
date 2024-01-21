@@ -1,6 +1,7 @@
 ---
 title:                "יצירת קובץ זמני"
-html_title:           "C#: יצירת קובץ זמני"
+date:                  2024-01-20T17:40:23.365767-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "יצירת קובץ זמני"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,50 +12,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+יצירת קובץ זמני היא תהליך בו נוצר קובץ לשימוש אחת ולתמיד, או לתקופה קצרה במקום לשימוש מתמשך. תוכניתנים עושים את זה לשם טיפול בנתונים בצורה בטוחה ובלי להעמיס על מערכת הקבצים הראשית.
 
-יצירת קובץ זמני היא פעולה שבה מפותח מיצר קובץ שאמור להישאר לזמן מוגבל בלבד. זה שימושי בעיקר כאשר מפתחים צריכים לשמור על נתונים מאוד גדולים או חששיבים בזמן רץ של יישום, או לשמירת מצב ביניים של פעולה מסוימת.
-
-## איך ל:
-
-באמצעות תכנית Gleam ביכולתנו ליצור, לכתוב ולקרוא קבצים. 
-המשוואה באה עם הפונקציה `create_temporary_file`.
+## איך לעשות:
+בגלים, יצירת קובץ זמני עדיין אינה תומכת כחלק מהסטנדרט, אז תצטרך לעבוד עם המערכת שלך כדי ליצור זמניים. זה יכול להיראות כך:
 
 ```gleam
-import gleam/io.{write, create_temporary_file, read_all}
+external fn mkstemp(template: String) -> Result(Int, Nil) =
+  "stdlib.h" "mkstemp"
 
-fn main() {
-  let path = create_temporary_file()
-  let data = "זהו קובץ זמני"
-  let _ = write(path, data)
-  let file_data = read_all(path)
-
-  io.println(file_data)  // זהו קובץ זמני
+pub fn create_temp_file() -> Result(Int, Nil) {
+  mkstemp("temp.XXXXXX")
 }
 ```
-הקוד מעלה מייצר קובץ זמני, כותב אליו מחרוזת, ואז מקריא אותו בחזרה.
 
-## צניחה לעומק
+כאשר הפונקציה `mkstemp()` נקראת, היא מחזירה ערך המייצג את מקטע הקובץ, או שגיאה במקרה של כשל. הסטרינג "temp.XXXXXX" מסמל את התבנית שהשם של הקובץ הזמני יורכב ממנה, עם ה-Xים המוחלפים במספרים ואותיות כדי ליצור שם ייחודי.
 
-יצירת קבצים זמניים היא עיקרונית באה מעליה של שפת התכנות C, שבה נוצר הפונקציה `tmpfile()`. 
-
-במקרים מסוימים, יתכן ונרצה לשלוט את המקום שבו מיוצרים שלנו קבצים זמניים; במקרה כזה, אנו מבצעים שימוש בפונקציה `create_temporary_file_in`.
-
-```gleam
-import gleam/io.{write, create_temporary_file_in, read_all}
-
-fn main() {
-  let path = create_temporary_file_in("/my/dir")
-  let data = "זהו קובץ זמני"
-  let _ = write(path, data)
-  let file_data = read_all(path)
-
-  io.println(file_data)  // זהו קובץ זמני
-}
-```
-שימו לב שבמקום החדש שהגדרנו, אנחנו יוצרים קובץ זמני, כותבים לתוכו, ואז מקריאים אותו.
+## עמוק יותר
+יום אחד, בעבר, כל הניהול של קבצים זמניים היה על המתכנת. מאז, נולדו פונקציות כמו `mkstemp` שמאבטחות את התהליך וממנעות קונפליקטים ופגיעות בבטיחות. אם Gleam לא יוכל לעזור, שפות כמו C יכולים להיקרא בחיצוניות כדי לבצע זאת. חשוב לזכור שאחריות למחיקת הקובץ הזמני לאחר שסיימת איתו נופלת על המתכנת.
 
 ## ראה גם
-
-ניתן למצוא מידע נוסף בנושאים חשובים במרגעי ביקורת:
-* [שימוש בקבצים בשפת התכנות C](https://en.wikipedia.org/wiki/C_file_input/output) 
-* [פונקציות מערכת הקבצים של Erlang](http://erlang.org/doc/man/file.html)
+- המסמך הרשמי של פונקציות ליצירת קבצים זמניים ב-C: [mkstemp](https://man7.org/linux/man-pages/man3/mkstemp.3.html)
+- דוקומנטציה של Gleam על פונקציות חיצוניות: [Gleam External Functions](https://gleam.run/book/tour/external-functions.html)

@@ -1,6 +1,7 @@
 ---
 title:                "डीबग आउटपुट प्रिंट करना"
-html_title:           "Gleam: डीबग आउटपुट प्रिंट करना"
+date:                  2024-01-20T17:51:56.406104-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "डीबग आउटपुट प्रिंट करना"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,27 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+Debugging के दौरान प्रोग्राम से सूचना प्रिंट करना होता है जिससे पहचान सकें कि क्या चल रहा है। यह त्रुटियों की जांच और उन्हें ठीक करने के लिए कारगर है।
 
-प्रिंटिंग डीबगग आउटपुट से यह समझा जाता है कि किस तरह की प्रक्रिया कोड में कार्यरत है और इसका उपयोग करके, हमने किसी समस्या की पहचान करने में मदद की है। 
-
-## कैसे करें:
-
-पृष्ठभूमि कार्यों में यह सामान्य तरीका होता है।
-
+## How to: (कैसे करें)
 ```Bash
-#!/bin/bash
-echo "Debugging start" >&2
-command1
-command2
-echo "Debugging end" >&2
+# साधारण प्रिंट उदाहरण
+echo "Hello, Debugging World!"
+
+# वेरिएबल के मान के साथ
+VAR="Debugging value"
+echo "Variable value: $VAR"
+
+# कंडिशनल डीबग मैसेज
+DEBUG=true
+if [ "$DEBUG" = true ]; then
+  echo "Debug Mode is ON."
+fi
 ```
-इसमें `echo` कमांड्स Debugging की प्रक्रिया को मार्क करने के लिए उपयोग होती हैं। `>&2` यह सुनिश्चित करता है कि यह मैंन स्ट्रीम पर साझा नहीं किया जा रहा है।
+सैम्पल आउटपुट:
+```
+Hello, Debugging World!
+Variable value: Debugging value
+Debug Mode is ON.
+```
 
-## गहन अध्ययन:
+## Deep Dive (गहराई से समझें)
+Debugging output का इस्तेमाल 1970s से हो रहा है, जब सॉफ्टवेयर की जटिलता बढ़ने लगी। Bash में `echo` और `printf` जैसे कमांड्स का उपयोग होता है। अलग-अलग लेवल के लिए `set -x`, `trap`, और functions का उपयोग करके ज्यादा granular debugging सेट किया जा सकता है। बेहतर एक्सपीरियंस के लिए log files में डीबग इंफॉर्मेशन लिखना और external टूल्स जैसे ki `bashdb` का इस्तेमाल होता है।
 
-Bash शेल स्क्रिप्टिंग के प्रारंभिक दिनों से ही डीबग आउटपुट का उपयोग किया जा रहा है। इसका मुख्य विकल्प `set -x` और `set +x` होता हैं, जिसे टर्न ऑन और टर्न ऑफ करने के लिए उपयोग किया जाता है। इसके अलावा, डीबगिंग के अन्य उपकरण भी हैं, जैसे `DShellCheck`, `BATS` और `shfmt`। किंतु, इन्हें उपयोग करने का तरीका और संम्भवतः इनपुट को प्राप्त करने का तरीका अधिक जटिलतमापूर्ण हो सकता है।
-
-## अन्य स्रोत:
-
-1. [Bash Debugging Guide](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_02_03.html) - यह गाइड उन लोगों के लिए है जो Bash Debugging की गहरी समझ प्राप्त करना चाहते हैं।
+## See Also (इसे भी देखें)
+- Bash Manual: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html
+- Advanced Bash-Scripting Guide: http://tldp.org/LDP/abs/html/debugging.html
+- Stack Overflow Debugging Techniques: https://stackoverflow.com/questions/tagged/bash+debugging

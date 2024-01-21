@@ -1,7 +1,8 @@
 ---
-title:                "पैटर्न से मिलते जुलते वर्णों को हटाना"
-html_title:           "Elixir: पैटर्न से मिलते जुलते वर्णों को हटाना"
-simple_title:         "पैटर्न से मिलते जुलते वर्णों को हटाना"
+title:                "पैटर्न से मेल खाते अक्षरों को हटाना"
+date:                  2024-01-20T17:42:00.907489-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "पैटर्न से मेल खाते अक्षरों को हटाना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,35 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? | What & Why?
+## क्या और क्यों? (What & Why?)
+पैटर्न से मिलते कैरेक्टर्स को डिलीट करना (deleting characters matching a pattern) इसका मतलब है, किसी टेक्स्ट में से खास तरह के कैरेक्टर्स को हटाना। प्रोग्रामर्स अक्सर ऐसा करते हैं ताकि डेटा साफ-सुथरा हो जाए और जरूरी जानकारी आसानी से मिल सके।
 
-पैटर्न मैचिंग करके अक्षरों को हटाने का मतलब होता है कि हम एक विशेष रीति के अनुसार अक्षरों को पहचानते हैं और उन्हें डिलीट करते हैं। प्रोग्रामर्स इसे मुख्य रूप से अनवांछित डेटा को हटाने के लिए करते हैं, जो जरूरी प्रसंस्करण को बाधित कर सकता है।
-
-## कैसे करे | How to:
+## कैसे करें: (How to)
+Arduino में स्ट्रिंग्स से पैटर्न मैच करने वाले कैरेक्टर्स को हटाने के लिए कुछ डायरेक्ट फंक्शन्स नहीं होते, तो हमें मैन्युअली ऐसा करना पड़ता है। नीचे एक सिंपल कोड दिया गया है:
 
 ```Arduino
 void setup() {
-  // Serial Monitor Open
   Serial.begin(9600);
+  String data = "Hello123World456";
+  String pattern = "0123456789";
+  data = deletePattern(data, pattern);
+  Serial.println(data);
 }
 
 void loop() {
-  String str = "Hello, Arduino!";
-  String patternToRemove = "ll";
+  //Nothing to do here
+}
 
-  str.replace(patternToRemove, ""); // remove pattern
-  Serial.println(str); // Output: "Heo, Arduino!"
-  delay(1000);
+String deletePattern(String str, String pattern) {
+  for (int i = 0; i < pattern.length(); i++) {
+    str.replace(String(pattern[i]), "");
+  }
+  return str;
 }
 ```
 
-उपर्युक्त कोड में, हमने "ll" पैटर्नवाले अक्षरों को हटाया है। सीरियल मोनिटर पर प्रिंट होने वाला आउटपुट "Heo, Arduino!" होगा।
+जब ऊपर वाला कोड Arduino पर चलेगा, तो सीरियल मॉनिटर पर यह दिखेगा:
 
-## गहराई में समझें | Deep Dive
+```
+HelloWorld
+```
 
-पैटर्न मैचिंग को हटाना किसी भी भाषा में महत्वपूर्ण होता है - चाहे वो टेक्स्ट प्रोसेसिंग हो या डाटा क्लीनिंग। इसका इतिहास कंप्यूटर प्रोग्रामिंग के प्रारंभिक दिनों से जुड़ा हुआ है। इसे करने के लिए अन्य विकल्प शामिल हैं Python, R, और Java, लेकिन Arduino इसे एक स्पष्ट मार्ग में करने का एक आसान तरीका प्रदान करता है। अधिकांश प्रोग्रामिंग भाषाओं में, जैसे की `str.replace(patternToRemove, "")` इस्तेमाल करके, हम इसे आसानी से लागू कर सकते हैं।
+## गहराई में: (Deep Dive)
+Arduino में स्ट्रिंग्स से किसी पैटर्न को हटाने का काम आमतौर पर `replace()` फंक्शन से किया जाता है, जैसा कि हमने हमारे उदाहरण में किया है। चूंकि MCU (Microcontroller Units) जैसे Arduino में सीमित मेमोरी और प्रोसेसिंग पावर होती है, यहाँ डेटा मैनिपुलेशन का काम बहुत ही सावधानी से करना पड़ता है। इतिहास में, Text editing और Pattern matching (regex) के लिए माइक्रोकंट्रोलर्स बहुत कम इस्तेमाल होते थे, लेकिन आज एम्बेडेड सिस्टम्स में स्मार्ट प्रोसेसिंग की बढ़ती जरूरत के कारण ये ऑपरेशन्स ज्यादा सामान्य होते जा रहे हैं। 
 
-## और भी देखें | See Also
+कुछ मामलों में, प्रोग्रामर्स ने अपने खुद के फंक्शन्स का निर्माण किया होता है जो एफिशिएंट और सिस्टम के रिसोर्स के अनुसार होते हैं। 
 
-* [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
-* [Arduino Characters Reference](https://www.arduino.cc/reference/en/language/variables/data-types/char/)
+## यह भी देखें: (See Also)
+- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Arduino Official Forum](https://forum.arduino.cc/)
+- [Arduino Regex Library](https://github.com/nickgammon/Regexp) - Pattern matching with regular expressions in Arduino sketches.

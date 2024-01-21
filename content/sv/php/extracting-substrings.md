@@ -1,6 +1,7 @@
 ---
 title:                "Extrahera delsträngar"
-html_title:           "Arduino: Extrahera delsträngar"
+date:                  2024-01-20T17:46:35.113330-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Extrahera delsträngar"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,48 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & varför?
-Att extrahera delstränger innebär att plocka ut en specifik del av en sträng baserad på givna positioner. Programmerare gör detta för att behandla särskilda delar av data, exempelvis för att samla emails från text eller specifika datum från en loggfil.
+## What & Why?
+Att extrahera substrängar innebär att plocka ut specifika delar från en sträng. Programmerare gör detta för att manipulera text, validera input, eller dela upp data.
 
-# Så här gör man:
-I PHP kan man använda flera funktioner för att extrahera delstränger, däribland substr() och strstr(). Här är några exempel:
+## How to:
+PHP erbjuder olika funktioner för att hantera substrängar. `substr()` är mest använd:
 
-Hämta de första fyra tecknen från en sträng:
-
-```PHP
-<?php
-$string = 'Programmering i PHP';
-$substring = substr($string, 0, 4);
-echo $substring;
-?>
+```php
+$str = "Hej, världen!";
+echo substr($str, 4, 7); // output: "världen"
 ```
-Output: `Prog` 
 
-Strstr() returnerar allt efter det första uppträdandet av ett visst karaktär eller ord:
+En till funktion är `mb_substr()`, vilket är bättre för multibyte(strängar i UTF-8 till exempel):
 
-```PHP
-<?php
-$string = 'Programmering i PHP';
-$substring = strstr($string, 'i');
-echo $substring;
-?>
+```php
+$str = "Färgglad sträng";
+echo mb_substr($str, 0, 9); // output: "Färgglad"
 ```
-Output: `i PHP`
 
-# Djupdykning:
+Man kan även använda `strpos()` och `substr()` tillsammans för att hitta och extrahera en del av en sträng:
 
-Historiska sammanhang: PHP's substr() och strstr() funktioner har funnits med sedan de första versionerna av PHP. Dessa tillhandahåller grunden för att manipulera strängar i PHP.
+```php
+$str = "Hitta en nål i en höstack";
+$needle = "nål";
+$pos = strpos($str, $needle);
 
-Alternativ: Bortsett från substr() och strstr() funktionerna, erbjuder PHP också en funktion som kallas substr_count() för att hitta antalet gånger en substring förekommer inom en sträng.
+if ($pos !== false) {
+    echo substr($str, $pos, strlen($needle)); // output: "nål"
+}
+```
 
-Funktionsdetaljer: substr() och strstr() är båda case-sensitive. Om du behöver icke-känsliga alternativ, överväg användning av strtolower() eller strtoupper() för att konvertera strängar till gemena eller versala bokstäver respektive innan extraktion.
+## Deep Dive:
+Extraktion av substrängar är en grundläggande strängoperation och har varit en del av PHP sedan de tidiga versionerna. Det är en del av nästan varje programmeringsspråks standardbibliotek.
 
-# Se även: 
+Alternativ till `substr()` och `mb_substr()` inkluderar `strstr()`, `strchr()`, och reguljära uttryck med `preg_match()` eller `preg_match_all()`. Dessa kan användas när mer komplexa matchningsmönster behövs.
 
-För mer information om hantering av strängar i PHP, se följande länkar:
+I utförandet använder PHPs strängfunktioner `zend_string`-strukturen internt, som hanterar minnesallokering och kapacitetsförändringar när substrängar tas bort från eller läggs till i strängar.
 
-- PHP Manual: substr() - http://www.php.net/manual/en/function.substr.php
-- PHP Manual: strstr() - http://www.php.net/manual/en/function.strstr.php 
-- PHP Manual: substr_count() - http://php.net/manual/en/function.substr-count.php 
-- PHP Manual: strtolower() - http://php.net/manual/en/function.strtolower.php 
-- PHP Manual: strtoupper() - http://php.net/manual/en/function.strtoupper.php
+## See Also:
+- PHP Manual on String Functions: https://www.php.net/manual/en/ref.strings.php
+- PHP Manual on `substr()`: https://www.php.net/manual/en/function.substr.php
+- PHP Manual on `mb_substr()`: https://www.php.net/manual/en/function.mb-substr.php
+- PHP Manual on `strstr()`: https://www.php.net/manual/en/function.strstr.php
+- Regular Expressions (PCRE) in PHP: https://www.php.net/manual/en/book.pcre.php

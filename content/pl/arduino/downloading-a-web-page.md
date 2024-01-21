@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C#: Pobieranie strony internetowej"
+date:                  2024-01-20T17:43:37.177840-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,56 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Pobieranie strony internetowej to proces ściągania jej danych na nasze urządzenie. Programiści robią to, by pozyskiwać informacje w czasie rzeczywistym lub integrować różne usługi.
 
-Ściąganie strony internetowej polega na pobieraniu kodu HTML danej strony, przez co programiści mogą analizować i manipulować te dane. Robimy to, aby zautomatyzować procesy, takie jak zbieranie danych (web scraping) lub monitorowanie zmian na stronach internetowych.
-
-## Jak to zrobic:
-
-Poniżej znajduje się przykład wykorzystania biblioteki Ethernet do pobrania strony internetowej za pomocą Arduino. 
+## How to:
+Do pobierania stron potrzebujesz modułu sieciowego, np. ESP8266. Poniżej znajdziesz prosty kod, który łączy się z Wi-Fi, pobiera dane ze strony i wyświetla je w Serial Monitor.
 
 ```Arduino
-#include <Ethernet.h>
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
 
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-EthernetClient client;
+const char* ssid = "TwojaNazwaSieci";
+const char* password = "TwojeHaslo";
 
 void setup() {
-  Ethernet.begin(mac);
-  delay(1000);
-  
-  if (client.connect("www.przykladowastrona.pl", 80)) {
-    client.println("GET / HTTP/1.1");
-    client.println("Host: www.przykladowastrona.pl");
-    client.println("Connection: close");
-    client.println();
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Łączenie z WiFi...");
   }
+
+  HTTPClient http;
+  http.begin("http://example.com"); // Adres strony do pobrania
+  int httpCode = http.GET();
+
+  if (httpCode > 0) {
+    String payload = http.getString();
+    Serial.println(payload);
+  } else {
+    Serial.println("Błąd pobierania strony.");
+  }
+
+  http.end();
 }
 
 void loop() {
-  if (client.available()) {
-    char c = client.read();
-    Serial.print(c);
-  }
-  if (!client.connected()) {
-    client.stop();
-    for(;;);
-  }
+  // Tutaj nic nie robimy
 }
 ```
 
-Po zagłębieniu się w proces, obejrzyj wynik na podłączonym monitorze szeregowej. Zobaczysz pełną zawartość strony internetowej.
+## Deep Dive
+Początki pobierania stron sięgają lat 90., gdy internet przeszedł do użytku publicznego. Od tamtego czasu protokoły jak HTTP ewoluowały, a biblioteki i moduły hardware'owe upraszczają dziś ten proces. Alternatywnie, można użyć Ethernet Shield, ale ESP8266 jest tańsze i ma Wi-Fi. Ważne jest, by pamiętać o bezpieczeństwie danych i korzystać z protokołu HTTPS, zwłaszcza przy wrażliwych danych.
 
-## Głębsze spojrzenie:
-
-Pobieranie stron internetowych na Arduino ma swój początek wraz ze wsparciem dla Ethernetu. Są też inne alternatywy - Wi-Fi (biblioteka WiFiNINA), GSM (biblioteka GSM). Wybór zależy od rodzaju dostępnego sprzętu i wymagań projektu.
-
-Implementacja pobierania strony web poprzez Arduino jest całkiem prosta, ale ma swoje ograniczenia. Arduino ma ograniczoną pamięć, dlatego musimy dbać o to, aby nie przekroczyć dostępnej ilości podczas pracy z dużymi stronami.
-
-## Zobacz także:
-
-Dla głębszego zrozumienia, przejrzyj następujące źródła:
-
-- Więcej o bibliotece Ethernet: [oficjalna dokumentacja](https://www.arduino.cc/en/Reference/Ethernet)
-- Więcej o bibliotece WiFiNINA: [oficjalna dokumentacja](https://www.arduino.cc/en/Reference/WiFiNINA)
-- Więcej o bibliotece GSM: [oficjalna dokumentacja](https://www.arduino.cc/en/Reference/GSM)
+## See Also
+- Dokumentacja ESP8266: https://arduino-esp8266.readthedocs.io/en/latest/
+- Arduino Network Library: https://www.arduino.cc/en/Reference/WiFi
+- Wprowadzenie do HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview

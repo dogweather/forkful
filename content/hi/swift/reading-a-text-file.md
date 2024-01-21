@@ -1,7 +1,8 @@
 ---
-title:                "एक पाठ फ़ाइल पढ़ना"
-html_title:           "Bash: एक पाठ फ़ाइल पढ़ना"
-simple_title:         "एक पाठ फ़ाइल पढ़ना"
+title:                "टेक्स्ट फ़ाइल पढ़ना"
+date:                  2024-01-20T17:55:38.417647-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "टेक्स्ट फ़ाइल पढ़ना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,43 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
+## What & Why? (क्या और क्यों?)
+पाठ फाइल को पढ़ना मतलब है कि हम फाइल में लिखे हुए टेक्स्ट को सिस्टम में ला रहे हैं। प्रोग्रामर्स यह इसलिए करते हैं क्योंकि अक्सर डेटा प्रोसेसिंग, कॉन्फ़िगरेशन, या फाइलों से इनपुट पढ़ने की ज़रुरत पड़ती है।
 
-टेक्स्ट फ़ाइल पढ़ना मतलब किसी मौजूदा टेक्स्ट फ़ाइल से डेटा खोजना और उसे पढ़ना। प्रोग्रामर इसे मौजूदा डेटा को संशोधित करने, ऐनालाइस करने या उस पर काम करने के लिए करते हैं।
-
-## कैसे करें:
-
-यहाँ आपकी Swift में टेक्स्ट फ़ाइल पढ़ने की उदाहरण कोड है:
+## How to: (कैसे करें:)
+Swift में टेक्स्ट फाइल पढ़ने के लिए नीचे दिए गए कोड का इस्तेमाल करें:
 
 ```Swift
 import Foundation
 
-if let path = Bundle.main.path(forResource: "example", ofType: "txt") {
-    do {
-        let text = try String(contentsOfFile: path, encoding: .utf8)
-        print(text)
-    } catch {
-        print("Error: \(error)")
+func readTextFromFile(fileName: String) {
+    if let path = Bundle.main.path(forResource: fileName, ofType: "txt") {
+        do {
+            let text = try String(contentsOfFile: path, encoding: .utf8)
+            print(text)
+        } catch {
+            print("Error reading file.")
+        }
+    } else {
+        print("File Not Found.")
     }
 }
+
+// फ़ंक्शन कॉल करें
+readTextFromFile(fileName: "example")
 ```
 
-इस कोड का उद्देश्य 'example.txt' नामक फ़ाइल को पढ़ने और उसकी सामग्री को प्रिंट करना है।
+अगर फाइल `example.txt` में "नमस्ते स्विफ्ट!" हो, तो आउटपुट होगा:
+```
+नमस्ते स्विफ्ट!
+```
 
-## गहरा अध्ययन:
+## Deep Dive (गहराई में जानकारी)
+पहले, फाइलों को पढ़ने के लिए C जैसी भाषाओं में कम्प्लेक्स कोडिंग की जाती थी। Swift ने यह काम आसान बना दिया है। विकल्प के रूप में, `FileManager` या नेटवर्किंग के जरिए `URLSession` का इस्तेमाल भी किया जा सकता है। `String(contentsOfFile:)` सिंपल फाइलों के लिए आदर्श है, लेकिन बड़ी फाइलों के लिए `InputStream` बेहतर रहेगा।
 
-स्विफ्ट में टेक्स्ट फ़ाइल पढ़ने का कोई सीधा तरीका नहीं है। हमें इसे Foundation फ़्रेमवर्क से import करके String वर्ग का उपयोग करना पड़ता है, जो विभिन्न फ़ाइल पठन मेथड उपलब्ध कराता है। 
-
-वैकल्पिक रूप से, हम NSData और InputStream का भी उपयोग कर सकते हैं, पर इनका इस्तेमाल जटिल हो सकता है और ये विशेष परिस्थितियों के लिए ही होते हैं।
-
-यदि आपकी फ़ाइल बहुत बड़ी है, तो इसे छोटे टुकड़ों में पढ़ने पर विचार करें, जिससे प्रोग्राम की प्रदर्शन क्षमता पर नहीं पड़ेगा।
-
-## एवं देखें: 
-
-[Swift Documentation: Working with Files and Directories](https://developer.apple.com/documentation/foundation/filemanager)
-
-[Reading & writing to a text file in Swift](https://www.hackingwithswift.com/example-code/system/how-to-read-and-write-a-string-from-text-file)
-
-[Handling text files in Swift](https://www.andyibanez.com/posts/handling-text-files-in-swift/)
-
-उम्मीद है की आपको यह टूटोरियल स्विफ्ट में फ़ाइल पठन की मूल जानकारी प्रदान कर सकता है। प्रत्येक परिस्थिति के लिए योग्यताओं के बारे में अधिक जानने के लिए ऊपर दी गई अतिरिक्त स्रोतों की जांच करें।
+## See Also (और जानकारी के लिए)
+- Swift की बुक: [The Swift Programming Language](https://docs.swift.org/swift-book)
+- फाइल हैंडलिंग और `FileManager` का उपयोग: [File System Programming Guide](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/Introduction/Introduction.html)

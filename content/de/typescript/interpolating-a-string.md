@@ -1,7 +1,8 @@
 ---
-title:                "Eine Zeichenkette interpolieren"
-html_title:           "Arduino: Eine Zeichenkette interpolieren"
-simple_title:         "Eine Zeichenkette interpolieren"
+title:                "Zeichenketten interpolieren"
+date:                  2024-01-20T17:51:43.090036-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Zeichenketten interpolieren"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,42 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Stichwortartige Formate in TypeScript: Eine unkomplizierte Anleitung
+## What & Why?
+String-Interpolation ermöglicht das Einfügen von Variablenwerten in einen String. Das macht den Code lesbarer und die String-Manipulation effizienter.
 
-## Was & Warum?
+## How to:
 
-Stichwortartige Formatierungen, die in TypeScript als Template Strings bekannt sind, ermöglichen es Programmierern, Variablen in Zeichenketten einzufügen. Sie werden verwendet, um den Code lesbarer zu machen und String-Konkatenationen zu vereinfachen.
+In TypeScript kannst du mit Template Literals arbeiten, um Interpolation zu nutzen. Sie werden mit Backticks (`) gekennzeichnet und können Platzhalter, die `${expression}` Struktur nutzen, enthalten.
 
-## So funktioniert's:
-
-In TypeScript verwenden wir Backticks (`` ` ``) anstatt Anführungszeichen, um Template Strings zu definieren. Hier sind einige Beispiele:
-
-```TypeScript
-let name = "Friedrich";
-let greeting = `Hallo, ${name}!`;
-console.log(greeting);  // Ausgabe: "Hallo, Friedrich!"
+```typescript
+let user = "Mona";
+let greeting = `Hallo ${user}, herzlich willkommen!`;
+console.log(greeting);  // "Hallo Mona, herzlich willkommen!"
 ```
 
-Sehen wir uns einen komplexeren Fall an:
+Mit Template Literals kannst du auch mehrzeilige Strings einfach erstellen:
 
-```TypeScript
-let x = 5;
-let y = 10;
-let result = `Das Produkt von ${x} und ${y} ist ${x*y}.`;
-console.log(result);  // Ausgabe: "Das Produkt von 5 und 10 ist 50."
+```typescript
+let item = "Kaffee";
+let price = 2.99;
+let multiLineString = `Artikel: ${item}
+Preis: ${price}€
+Guten Einkauf!`;
+
+console.log(multiLineString);
+/* 
+Ausgabe:
+Artikel: Kaffee
+Preis: 2.99€
+Guten Einkauf!
+*/
 ```
 
-## Tiefgehende Information:
+## Deep Dive
 
-- **Historischer Kontext:** Template Strings wurden mit ES6 (ECMAScript 2015) eingeführt, der sechsten Ausgabe der ECMAScript-Spezifikation, die als Grundlage für JavaScript dient.
-  
-- **Alternativen:** Vor der Einführung des Template-Strings mussten Programmierer die alte '+'-Methode zur Konkatenation verwenden: `let greeting = "Hallo, " + name + "!";`
+String-Interpolation in TypeScript bedient sich der Template Literals, die mit ES6 eingeführt wurden. Vor ES6 waren Konkatenation mit dem `+` Operator Standard, oft unübersichtlich bei mehreren Variablen.
 
-- **Implementierungsdetails:** Intern verwendet JavaScript die Funktion `.toString()` um die Ausdrücke innerhalb der geschweiften Klammern (`${expression}`) zu evaluieren.
+Alternativ zur Interpolation können auch Template-Funktionen genutzt werden, meist für komplexere Szenarien oder Lokalisierung. Sie nehmen einen Template String und geben eine Funktion zurück, die die Daten interpoliert:
 
-## Siehe auch:
+```typescript
+function templ(strings, ...keys) {
+  return (function(...values) {
+    let result = [strings[0]];
+    keys.forEach((key, i) => {
+      result.push(values[key], strings[i + 1]);
+    });
+    return result.join('');
+  });
+}
 
-- [Mozilla Developer Network (MDN)Template Strings Dokumentation](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/template_strings)
-  
+const template = templ`Hallo ${0}, du hast ${1} neue Nachrichten.`;
+console.log(template("Mona", 5));  // "Hallo Mona, du hast 5 neue Nachrichten."
+```
 
-Mit Template Strings und ihrer interpolation in TypeScript können Sie Ihren Code effizienter und einfacher lesbar gestalten. Fangen Sie an, sie noch heute in Ihre Codebasis zu integrieren!
+Durch die Verwendung von Template-Funktionen können auch komplexe Logiken bei der Interpolation stattfinden, was durch einfache Template Literals nicht möglich wäre.
+
+## See Also
+
+- TypeScript Dokumentation zu Literal Types: [https://www.typescriptlang.org/docs/handbook/literal-types.html](https://www.typescriptlang.org/docs/handbook/literal-types.html)
+- MDN-Dokumentation zu Template Literals: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+- Weitere Infos zu Tagged Template Literals: [https://www.typescriptlang.org/docs/handbook/advanced-types.html#tagged-template-literals](https://www.typescriptlang.org/docs/handbook/advanced-types.html#tagged-template-literals)

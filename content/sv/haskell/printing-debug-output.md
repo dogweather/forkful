@@ -1,7 +1,8 @@
 ---
-title:                "Skriva ut felsökningsresultat"
-html_title:           "Fish Shell: Skriva ut felsökningsresultat"
-simple_title:         "Skriva ut felsökningsresultat"
+title:                "Skriva ut felsökningsdata"
+date:                  2024-01-20T17:52:59.681210-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skriva ut felsökningsdata"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -11,35 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Skriva ut debug-utdata är handlingen att skicka information om ditt program till en utdataström, såsom en konsol, för att spåra programmet under drift. Detta gör det möjligt för programmerare att effektivt hitta och fixa eventuella fel i koden.
+Debug-utskrifter hjälper programmerare att förstå vad deras kod gör genom att visa mellanliggande värden och processflöden. De används för att snabbt lokalisera och rätta till fel i koden.
 
-## Hur man gör det:
-Här är ett enkelt exempel som visar hur du kan skriva ut debug-utdata i Haskell:
+## How to:
+Att skriva ut debug-meddelanden i Haskell kan göras med `print` eller `putStrLn`. Här kommer några exempel:
 
 ```Haskell
-import Debug.Trace
-
 main :: IO ()
-main = print (debug "Hej världen!")
+main = do
+  putStrLn "This is a debug message"
 
-debug :: String -> String
-debug msg = trace msg msg
+  let number = 42
+  print number  -- print kan hantera alla typer som är en instans av Show
+```
+Kör du detta får du följande utskrift:
+
+```
+This is a debug message
+42
 ```
 
-Kör denna kod och den kommer att skriva ut "Hej världen!" på din konsol. `trace` funktionen tar två argument, första argumentet är meddelandet du vill skriva ut och det andra argumentet är värdet du vill returnera från funktionen. Här returnerar den samma meddelande som den skriver ut.
+## Deep Dive
+I Haskell's tidiga dagar var I/O, inklusive enkel utskrift, omständlig på grund av språkets rena funktionsnatur. Nu har vi `IO` monaden som hanterar effekter. För debug-ändamål kan `Debug.Trace` också användas, men den bör undvikas i produktionskod eftersom den får sidoeffekter i vad som ser ut att vara ren kod. Vi har också `printf` från `Text.Printf` för formaterad text, som är lik `printf` i C.
 
-## Djupdykning
+```Haskell
+import Debug.Trace (trace)
 
-`trace` funktionen i Haskell kommer från `Debug.Trace` modulen. Historiskt sett har den använts som en snabb-och-smutsig lösning för att skriva ut debug-meddelanden. Samtidigt är det dock inte den enda lösningen—`Debug.Trace` modulen innehåller flera andra funktioner som `traceShow`, `traceShowId`, och `traceStack` för mer detaljerade utskrifter.
+traceExample :: Int -> Int -> Int
+traceExample x y = trace ("Adding " ++ show x ++ " and " ++ show y) (x + y)
+```
 
-En viktig sak att notera är att `trace` och liknande funktioner strider mot Haskells rena natur, eftersom de skapar sidoeffekter. De bör därför användas sparsamt och bara för felsökning. Kom ihåg att ta bort dem innan du skjuter upp koden.
+Användning av `trace` ska dock användas med försiktighet då det kan orsaka svåråtkomliga buggar. Andra verktyg för debugging, som GHCi's debugger och mer specialiserade bibliotek finns, som kan vara lämpligare för avancerade behov.
 
-## Se vidare
-
-För ytterligare läsning kan du kolla in dokumentationen för `Debug.Trace` modulen:
-https://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html
-
-Eller denna bloggpost som diskuterar olika metoder för felsökning i Haskell:
-https://wiki.haskell.org/Debugging
-
-Hoppas att detta hjälper dig att förstå better utskrift av debug-utdata i Haskell. Lycka till med felsökningen!
+## See Also
+- The GHC User's Guide on debugging: https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html
+- `Debug.Trace` module: http://hackage.haskell.org/package/base-4.16.0.0/docs/Debug-Trace.html
+- `Text.Printf` module: http://hackage.haskell.org/package/base-4.16.0.0/docs/Text-Printf.html

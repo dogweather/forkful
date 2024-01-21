@@ -1,6 +1,7 @@
 ---
 title:                "Enviando una solicitud http con autenticación básica"
-html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
+date:                  2024-01-20T18:01:17.534269-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "C++"
 category:             "C++"
@@ -10,32 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+## What & Why?
+Enviar una solicitud HTTP con autenticación básica significa incluir credenciales de usuario y contraseña codificadas en base64 en el encabezado de la solicitud. Los programadores lo hacen para acceder a recursos protegidos en un servidor web de manera simple y directa.
 
-Enviar una solicitud HTTP con autenticación básica implica la utilización de un protocolo de red simétrica para la autenticación de los datos. Los programadores lo hacen para restringir los recursos sólo a usuarios válidos, garantizando seguridad y privacidad.
-
-## Cómo hacerlo:
-
-Utilizando la librería cURL en C++, puedes enviar una solicitud HTTP con autenticación básica:
+## How to:
+Para enviar una solicitud HTTP con autenticación básica en C++, necesitarás alguna biblioteca como `Curl` o `Boost.Beast`. Aquí hay un ejemplo usando `Curl`:
 
 ```C++
+#include <iostream>
+#include <string>
 #include <curl/curl.h>
 
 int main() {
-    CURL *curl;
-    curl = curl_easy_init();
-    
+    CURL *curl = curl_easy_init();
     if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "https://api.example.com/data");
-        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_ANY);
-        curl_easy_setopt(curl, CURLOPT_USERNAME, "usuario");
-        curl_easy_setopt(curl, CURLOPT_PASSWORD, "contraseña");
+        std::string userPwd = "usuario:contraseña"; // Reemplaza con tus credenciales
+        curl_easy_setopt(curl, CURLOPT_URL, "http://tu-sitio.com/api");
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
+        curl_easy_setopt(curl, CURLOPT_USERPWD, userPwd.c_str());
         
         CURLcode res = curl_easy_perform(curl);
-        
-        if(res != CURLE_OK)
-            fprintf(stderr, "curl_easy_perform() falló: %s\n",
-            curl_easy_strerror(res));
+        if(res != CURLE_OK) {
+            std::cerr << "Error en curl_easy_perform(): " << curl_easy_strerror(res) << std::endl;
+        }
         
         curl_easy_cleanup(curl);
     }
@@ -43,19 +41,17 @@ int main() {
 }
 ```
 
-La salida sería simplemente si la autenticación funcionó o no.
+La salida será dependiente del servidor y lo que responda a la solicitud con las credenciales proporcionadas.
 
-## Análisis Profundo:
+## Deep Dive
+La autenticación básica HTTP es un método que ha estado en uso desde los primeros días de la web. Envía el nombre de usuario y la contraseña en texto claro, codificados en base64, lo que no es seguro sobre conexiones no cifradas. Es recomendable usar HTTPS al implementar autenticación básica para evitar la exposición de credenciales.
 
-La autenticación HTTP básica es un método para un cliente HTTP proporcionar un nombre de usuario y una contraseña cuando realiza una solicitud. Inventado en los primeros días de la web, proporciona un mecanismo de seguridad rudimentario para controlar el acceso a los recursos web.
+Alternativas a la autenticación básica incluyen OAuth, tokens JWT y claves API, cada una con sus propios contextos de uso y niveles de seguridad. 
 
-Aunque simple, no es la opción más segura ya que las credenciales se pasan en texto plano. Alternativas más seguras son OAuth y JWT.
+Implementar este tipo de autenticación en C++ con bibliotecas como `Curl` facilita el proceso, ya que estas bibliotecas gestionan los detalles del protocolo HTTP y la codificación en base64.
 
-La implementación en C++ requiere el uso de librerías como cURL o Boost. En particular, cURL proporciona una API fácil de utilizar para el manejo de credenciales y la transmisión de datos.
-
-## Véase también:
-
-1. [Documentación de cURL](https://curl.se/libcurl/c/)
-3. [Librería Boost.Asio](https://www.boost.org/doc/libs/1_77_0/doc/html/boost_asio.html)
-4. [OAuth](https://oauth.net/)
-5. [JWT (JSON Web Tokens)](https://jwt.io/)
+## See Also
+- Documentación de libcurl: https://curl.haxx.se/libcurl/c/
+- Documentación de Boost.Beast: https://www.boost.org/doc/libs/release/libs/beast/
+- Wikipedia HTTP Basic Authentication: https://es.wikipedia.org/wiki/Autenticación_básica_en_HTTP
+- Understanding HTTP Authentication: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication

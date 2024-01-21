@@ -1,6 +1,7 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-html_title:           "Bash: HTTP-pyynnön lähettäminen"
+date:                  2024-01-20T18:00:33.683038-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Python"
 category:             "Python"
@@ -10,32 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä se on & Miksi?
-HTTP-pyynnön lähettäminen tarkoittaa tiedonpyynnön tarjoamista palvelimelle, jotta tämä toimittaa tietoja selaimeen. Ohjelmoijat tekevät tämän kommunikoidakseen verkkopalvelinten kanssa ja hakea tai lähetä tietoa.
+## What & Why? (Mitä & Miksi?)
+Lähetämme HTTP-pyyntöjä kommunikoidaksemme web-palvelimien kanssa. Koodarit tekevät sen hakeakseen tietoa, lähettääkseen dataa ja interaktoidakseen verkkopalveluiden kanssa.
 
-## Näin teet:
-Pythonin requests-kirjasto tekee HTTP-pyyntöjen lähettämisestä helppoa. Tarkastele alla olevaa koodia:
-
+## How to: (Kuinka tehdä:)
 ```Python
+# Tarvittavat kirjastot
 import requests
 
-# GET-pyyntö
-response = requests.get("https://jsonplaceholder.typicode.com/posts")
+# Lähetetään GET-pyyntö
+vastaus = requests.get('https://api.github.com')
 
-# Tulosta vastaus
-print(response.text)
+# Tulostetaan statuskoodi
+print(vastaus.status_code)  # 200
+
+# Lähetetään POST-pyyntö
+data = {'key': 'value'}
+vastaus = requests.post('https://httpbin.org/post', json=data)
+
+# Tulostetaan vastaus JSON-muodossa
+print(vastaus.json())
 ```
-Kun suoritat tämän koodin, saat JSON-muodossa olevan vastauksen.
 
-## Syvempi sukellus
-HTTP-pyynnön lähettäminen juontaa juurensa HTML-kielen ja internetin alkumetreiltä. Se on tärkeä osa "asiakas-palvelin"-mallin ymmärtämistä. 
+## Deep Dive (Sukellus syvyyksiin):
+HTTP-pyynnöt ovat perusta web-kommunikaatiolle, ja ne ovat olleet siitä lähtien, kun Tim Berners-Lee kehitti ensimmäisen HTTP-version vuonna 1989. Vaihtoehtoja `requests`-kirjastolle ovat esimerkiksi `http.client` vakio Python-kirjastossa sekä ulkoiset kirjastot kuten `aiohttp` asynkroniseen kommunikaatioon. Implementoinnin yksityiskohdat riippuvat pyynnön tyypistä (GET, POST, PUT, DELETE...) ja joskus tarvitaan lisäparametreja, kuten headers tai cookies.
 
-Vaikka Pythonin `requests`-kirjasto on suosittu, on myös muita tapoja lähettää HTTP-pyyntöjä. Esimerkiksi `http.client`-moduuli tarjoaa alhaisemman tason käyttöliittymän, joka saattaa olla hyödyllinen erityistapauksissa.
-
-On hyvä ymmärtää, että HTTP-pyyntö voi sisältää useita osia: menetelmän (GET, POST, jne.), URL:n, otsakkeita ja joissakin tapauksissa tietojenkäsittelyn (kuten JSON).
-
-## Katso myös:
-Seuraavista lähteistä saat lisätietoa:
-- Python requests -kirjaston dokumentaatio: https://requests.readthedocs.io/
-- HTTP:n yleinen johdatus: https://developer.mozilla.org/fi/docs/Web/HTTP/Overview
-- Pythonin http.client-moduulin dokumentaatio: https://docs.python.org/3/library/http.client.html
+## See Also (Katso myös):
+- Requests-kirjaston dokumentaatio: https://requests.readthedocs.io/
+- Pythonin virallinen HTTP-client ohjeistus: https://docs.python.org/3/library/http.client.html
+- HTTP-protokollan RFC: https://tools.ietf.org/html/rfc2616
+- RESTful API-opas: https://restfulapi.net/

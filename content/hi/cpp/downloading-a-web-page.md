@@ -1,7 +1,8 @@
 ---
-title:                "एक वेब पेज डाउनलोड करना"
-html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
-simple_title:         "एक वेब पेज डाउनलोड करना"
+title:                "वेब पेज डाउनलोड करना"
+date:                  2024-01-20T17:43:48.184494-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "वेब पेज डाउनलोड करना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,65 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## क्या और क्यों? (What & Why?)
+वेब पेज डाउनलोड करना मतलब इंटरनेट से सूचना लाना और उसे अपने कंप्यूटर पर सेव करना। प्रोग्रामर्स यह काम ऑटोमेटिक डेटा कलेक्शन, टेस्टिंग वेब ऐप्लिकेशन्स या वेब सर्वर्स की मॉनिटरिंग के लिए करते हैं।
 
-(What & Why?)
+## कैसे करे? (How to)
+C++ में वेब पेज डाउनलोड करने के लिए, हमें एक थर्ड-पार्टी लाइब्रेरी जैसे कि `CURL` की जरूरत होती है। `libcurl` एक मुफ्त, ओपन-सोर्स लाइब्रेरी है जो डेटा ट्रांसफर के लिए इस्तेमाल होती है।
 
-वेब पेज डाउनलोड करना मतलब किसी स्पेसिफिक URL से डाटा लेना. प्रोग्रामर्स इसे वेब कन्टेंट की स्क्रेपिंग, डाटा एनालिसिस, अथवा ऑटोमेटिड टेस्टिंग के लिए करते हैं।
-
-## कैसे:
-
-(How To:)
-
-यहाँ एक C++ कोड दर्ज है जो [Curl](https://curl.haxx.se/libcurl/c/) लाइब्ररी का इस्तेमाल करके वेब पेज डाउनलोड करता है:
-
-```C++
-#define CURL_STATICLIB
+```cpp
+#include <iostream>
 #include <curl/curl.h>
-   
-size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* s) {
-    size_t newLength = size*nmemb;
-    s->append((char*)contents, newLength);
-    return newLength;
+
+size_t callback(void *contents, size_t size, size_t nmemb, void *userp) {
+    ((std::string*)userp)->append((char*)contents, size * nmemb);
+    return size * nmemb;
 }
 
 int main() {
-    CURL* curl;
+    CURL *curl;
     CURLcode res;
-    std::string s;
+    std::string response_data;
 
     curl_global_init(CURL_GLOBAL_DEFAULT);
-
     curl = curl_easy_init();
+    
     if(curl) {
         curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &s);
-
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, callback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response_data);
+        
         res = curl_easy_perform(curl);
-
-        if(res != CURLE_OK) {
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+        if(CURLE_OK == res) {
+            std::cout << response_data;
+        } else {
+            std::cerr << "CURL failed: " << curl_easy_strerror(res) << std::endl;
         }
+
         curl_easy_cleanup(curl);
     }
+    
     curl_global_cleanup();
+
     return 0;
 }
 ```
-यह कोड `http://example.com` वेबपेज की सामग्री लोड करता है और उसे string `s` में सहेजता है। यदि कोई त्रुटि होती है, तो यह त्रुटि मैसेज दिखाता है।
 
-## गहराई में :
+यह कोड उदाहरण `http://example.com` वेब पेज को डाउनलोड करके टर्मिनल में प्रिन्ट कर देता है।
 
-(Deep Dive:)
+## गहराई से जानकारी (Deep Dive)
+वेब पेजेज को डाउनलोड करने के तरीके काफी समय से विकसित हो रहे हैं। पुराने जमाने में `telnet` या फिर कमांड-लाइन टूल `wget` का इस्तेमाल होता था। `CURL` का प्रयोग सबसे आम है, लेकिन अन्य विकल्प जैसे कि `http/https` क्लाइंट्स होते हैं।
 
-ये कॉड एक C++ लाइब्ररी, Curl, का उपयोग करता है । Curl एक मुफ्त और open-source लाइब्ररी है, जिसे पहली बार १९९७ में जारी किया गया था।  इसके विकल्प में POCO और Beast जैसे लाइब्रेरियाँ हैं|
+`CURL` की मदद से HTTP गेट, पोस्ट, और मल्टीपार्ट फॉर्म डेटा रिक्वेस्ट्स को आसानी से बनाया जा सकता है। यह विभिन्न प्रोटोकॉल्स को सपोर्ट करता है और SSL/TLS एन्क्रिप्शन के साथ सुरक्षित कनेक्शन की सुविधा देता है। इसके एपीआई सेट को समझना और लागू करना रिलेटिवली सरल है।
 
-## यदि देखना चाहें :
+`libcurl` कई प्लेटफार्म्स पर उपलब्ध है, और इसे सीधे सिस्टम के पैकेज मैनेजर (जैसे कि `apt` या `brew`) से इंस्टॉल किया जा सकता है। 
 
-(See Also:)
-
-- Curl C++ के लिए डाक्यूमेंटेशन [Curl C++ Documentation](https://curl.haxx.se/libcurl/c/)
-- SO सवाल - "How to Download a Webpage in C++" [StackOverflow Question](https://stackoverflow.com/questions/6292332/what-really-is-a-curl-in-terms-of-programming)
-- वेब स्क्रेपिंग के बारे में अधिक: [Web Scraping](https://en.wikipedia.org/wiki/Web_scraping)
+## और भी जानकारी के लिए (See Also)
+- CURL Official Website: [https://curl.haxx.se/](https://curl.haxx.se/)
+- libcurl Programming Tutorial: [https://curl.haxx.se/libcurl/c/libcurl-tutorial.html](https://curl.haxx.se/libcurl/c/libcurl-tutorial.html)
+- cURL Command Line Usage: [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
+- C++ Network Programming with Boost.Asio: [https://www.boost.org/doc/libs/1_65_1/doc/html/boost_asio.html](https://www.boost.org/doc/libs/1_65_1/doc/html/boost_asio.html)

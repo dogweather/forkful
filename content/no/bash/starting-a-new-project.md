@@ -1,6 +1,7 @@
 ---
 title:                "Å starte et nytt prosjekt"
-html_title:           "C: Å starte et nytt prosjekt"
+date:                  2024-01-20T18:02:58.554797-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,50 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å starte et nytt prosjekt betyr å opprette grunnmuren for softwareutvikling. Programmerere gjør dette for å organisere kode, dele arbeid med andre, og for å sette opp et gjennomtenkt rammeverk for applikasjonen de utvikler.
 
-Å starte et nytt prosjekt er å lage et unikt arbeidsområde hvor programmerarbeid kan utføres - tenk på det som en ny skisseblokk. Programmerere gjør dette for å organisere og isolere ulike prosjekter for effektivitets skyld.
-
-## Hvordan man:
-
-Å starte et nytt Bash-prosjekt er enkelt. Du kan opprette en ny mappe og deretter en bash-scriptfil med `.sh`-utvidelsen:
-
+## Hvordan:
 ```Bash
-mkdir MyProject
-cd MyProject
-touch script.sh
+# Opprett et nytt katalog for prosjektet ditt
+mkdir my_new_project
+cd my_new_project
+
+# Initialiser Git for versjonskontroll
+git init
+
+# Opprett en README-fil for prosjektbeskrivelse
+echo "# Mitt Nye Prosjekt" > README.md
+git add README.md
+git commit -m "Initial commit with README"
+
+# Lag en ny oppstartsfiler for koding
+touch main.sh
+chmod +x main.sh
 ```
-
-Nå kan du begynne å skrive ditt script! Si hei til verden med:
-
+Output for `tree`:
 ```Bash
-echo "#!/bin/sh" > script.sh
-echo "echo Hei Verden!" >> script.sh
-```
-
-Kjør scriptet med:
-
-```Bash
-chmod +x script.sh
-./script.sh
-```
-
-Utskriften vil være:
-
-```Bash
-Hei Verden!
+.
+├── .git
+└── README.md
+└── main.sh
 ```
 
 ## Dypdykk
+Start av nye prosjekter har endret seg mye. Før, ville man kanskje bare åpne en teksteditor og begynne å kode. Nå legger vi vekt på versjonskontroll fra start med verktøy som Git, og det settes ofte opp linter og automatiske tester tidlig. Det finnes alternativer til Git, som Mercurial eller SVN, men Git er bransjestandard. Et viktig aspekt ved oppsett er reproduserbarhet; verktøy som Docker kan være nyttige for å sikre at prosjektet ditt fungerer likt overalt.
 
-Tidlig i Bash sin historie var prosjektseparasjon ikke så formell. Tidligere versjoner manglet funksjonaliteter for effektiv prosjektseparasjon. I dag, med moderne versjoner kan vi lage egne miljøer for hvert prosjekt.
-
-Når det gjelder alternativer, er det mange andre shell scripting-språk som også støtter prosjektorganisering, inkludert Zsh, Fish, og flere andre.
-
-Når det kommer til implementeringsdetaljer, så inkluderer et typisk Bash-prosjekt flere filer, inkludert koden, en README-fil for dokumentering, og noen ganger en installasjons- eller konfigureringsfil.
-
-## Se også
-
-Hvis du ønsker å fordype deg mer kan du sjekke ut disse ressursene:
-
-- [The Bash Guide](http://guide.bash.academy/): En omfattende guide for å lære Bash fra grunnen av. 
-- [Bash scripting cheatsheet](https://devhints.io/bash): Oppslagstavle for vanlige bash-kommandoer og konsepter.
+## Se Også
+- Git dokumentasjon: https://git-scm.com/doc
+- Bash scripting tutorial: https://www.gnu.org/software/bash/manual/
+- Docker's "Getting Started" guide: https://docs.docker.com/get-started/

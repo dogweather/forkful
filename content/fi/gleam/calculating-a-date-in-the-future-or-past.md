@@ -1,7 +1,8 @@
 ---
-title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-html_title:           "Gleam: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+title:                "Tulevan tai menneen päivämäärän laskeminen"
+date:                  2024-01-20T17:30:46.524499-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,36 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen on operaatio, johon liittyy nykyisen päivämäärän ja tietyn ajanvälin yhdistäminen. Ohjelmoijat tekevät tämän usein tapahtumien ajoittamiseen tai päätöksentekoprosessien aikatauluttamiseen.
+## What & Why?
+Mitä & Miksi?
 
-## Miten Tehdään:
-Tässä on Gleam-esimerkki siitä, kuinka laskea päivämäärä tulevaisuudessa:
+Laskemme tulevaisuuden tai menneisyyden päivämääriä pitääksemme kirjaa tapahtuma-ajankohdista. Ohjelmoijat tekevät sen aikatauluttaakseen toimintoja ja tehtäviä, vertaillakseen päivämääriä ja käsitelläkseen aikavälejä.
 
-```Gleam
-import gleam/otp/erlang
-import gleam/calendar.{Time}
+## How to:
+Ohjeet:
+
+```gleam
+import gleam/calendar.{ Date, Duration, add }
+import gleam/io
 
 fn main() {
-    let nykyinen_aika = erlang.utc_time()
-    let tuleva_aika = calendar.add_days(nykyinen_aika, 7)
-    erlang.io.format("~p\n", [tuleva_aika])
+  // Nykyinen päivämäärä
+  let today = Date(year: 2023, month: 4, day: 1)
+  
+  // Lisätään tulevaisuuden päivämäärää
+  let future_date = today
+    |> add(Duration(days: 30)) // 30 päivää nykyisestä
+  io.println(future_date)
+
+  // Menneisyyteen
+  let past_date = today
+    |> add(Duration(days: -15)) // 15 päivää taaksepäin
+  io.println(past_date)
 }
 ```
 
-Tämä ohjelma palauttaa nykyisen päivämäärän lisättynä seitsemällä päivällä:
-
-```Gleam
-"2022-12-10"
+Esimerkki tulostus:
+```
+Date(year: 2023, month: 5, day: 1)
+Date(year: 2023, month: 3, day: 17)
 ```
 
-## Sukellus Syvään:
-Historiallisesti päivän laskeminen tulevaisuuteen tai menneisyyteen oli monimutkainen prosessi, joka vaati monia ajopäiviä ja usein käsillä olevia kalentereita. Nykyään, Gleam ohjelmointikieli tekee siitä helppoa.
+## Deep Dive:
+Syväsukellus:
 
-Vaihtoehtona on käyttää ohjelmointikielen sisäänrakennettua date-metodia, mutta Gleamin kalenterin lisäysmetodit tarjoavat paremman tavan.
+Aikojen laskeminen ohjelmoinnissa on peräisin tarpeesta seurata ja hallinnoida ajan kulua tietokonejärjestelmissä. Käytössä on useita menetelmiä, kuten kalenterifunktiot ja ajanhetkien leimat (timestamps). Gleam kieli käsittelee tätä kalenteri-moduulinsa kautta, joka tarjoaa intuitiivisen tavan päivämäärien lisäämiseen ja vähentämiseen käyttäen kestoja. Vaihtoehtoisesti käytetään ulkoisia kirjastoja kuten 'chrono' Rust-kielellä tai Jodan aikakirjastoa Javassa. Gleamissa päivämäärätietojen hallinta on suunniteltu olemaan turvallista ja virheiden ehkäisyä silmällä pitäen, mikä vähentää bugien ja aikaan liittyvien virheiden riskiä.
 
-Päivämäärän laskemista varten Gleam hyödyntää tp:n (Tuple Protocol) dynaamisesti tyypitettyä ominaisuutta. Se mahdollistaa tiedon säilyttämisen monimutkaisissa rakenteissa, joka on hyödyllistä päivämäärälaskennassa.
-    
-## Katso Myös:
-Tutustu Gleam-dokumentaatioon tietääksesi enemmän Gleamin päivämäärä- ja aikafunktioista:
-- [Erlang-otp](https://erlang.org/doc/man/erlang.html#type-time)
+## See Also:
+Katso myös:
+
+- Comparative analysis of date-time libraries: [Comparing Date-Time Libraries Article](https://medium.com/code-zen/comparing-date-time-libraries-a1b1e5f88b8f)

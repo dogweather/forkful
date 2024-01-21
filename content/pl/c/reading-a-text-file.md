@@ -1,7 +1,8 @@
 ---
-title:                "Czytanie pliku tekstowego"
-html_title:           "C: Czytanie pliku tekstowego"
-simple_title:         "Czytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+date:                  2024-01-20T17:53:40.062744-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,42 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Czytanie pliku tekstowego to proces, w którym program komputerowy otwiera i odczytuje dane z pliku. Programiści robią to, żeby manipulować danymi, przetwarzać informacje, czy wczytywać ustawienia użytkownika.
+## What & Why?
+Czytanie pliku tekstowego to proces pozyskiwania danych zapisanych na dysku. Programiści robią to, aby manipulować, analizować i wykorzystywać zawarte informacje.
 
-## Jak to zrobić:
-W C możemy użyć biblioteki `stdio.h`, aby otworzyć i przeczytać plik tekstowy. Przykładowy kod:
+## How to:
+Otwieranie pliku, czytanie linia po linii, i zamknięcie pliku – oto prosty przykład:
 
-```C
+```c
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
-   char ch;
-   FILE *fp;
-   fp = fopen("example.txt", "r");
+    FILE *plik = fopen("przyklad.txt", "r");
+    if (plik == NULL) {
+        perror("Blad przy otwieraniu pliku");
+        return EXIT_FAILURE;
+    }
 
-   if (fp == NULL) {
-      perror("Błąd podczas otwierania pliku.\n");
-      return(-1);
-   }
+    char bufor[256];
+    while (fgets(bufor, sizeof(bufor), plik)) {
+        printf("%s", bufor);
+    }
 
-   while((ch = fgetc(fp)) != EOF)
-      printf("%c", ch);
-
-   fclose(fp);
-
-   return 0;
+    fclose(plik);
+    return EXIT_SUCCESS;
 }
 ```
-Podczas uruchomienia powyższy kod otworzy plik `example.txt` i wypisze jego zawartość na konsoli.
 
-## W głąb tematu
-Początkowo, wczesne wersje języka C nie miały łatwego dostępu do plików. Dopiero po wielu latach powstała biblioteka `stdio.h`.
-Alternatywą dla `fopen` i `fclose` są funkcje `open` i `close` z biblioteki `unistd.h`, które dają większą kontrolę nad plikiem, ale są mniej proste w użyciu.
-Funkcja `fopen` otwiera plik i zwraca wskaźnik na strukturę reprezentującą ten plik, natomiast `fgetc` zwraca kolejne znaki z pliku, aż do końca pliku (EOF).
+Przykładowe wyjście dla pliku `przyklad.txt` z treścią "Witaj w C!":
+```
+Witaj w C!
+```
 
-## Zobacz także
-Dokładniejsze wyjaśnienia oraz większa liczba przykładów do poczytania na:
-- http://www.cplusplus.com/reference/cstdio/
-- https://www.learn-c.org/en/File_Input/Output
-- https://pl.wikibooks.org/wiki/C/Pliki
+## Deep Dive
+Czytanie plików tekstowych w C było możliwe od początków języka w latach 70. Alternatywne podejścia obejmują użycie funkcji `fread` dla większej kontroli nad procesem czytania. Ważne szczegóły: otwarcie pliku w odpowiednim trybie, obsługa błędów oraz zarządzanie zasobami poprzez zamknięcie pliku.
+
+## See Also
+- Manual dla funkcji fopen, fgets, fclose: https://man7.org/linux/man-pages/man3/fopen.3.html
+- Dokumentacja C Standard Library: https://www.gnu.org/software/libc/manual/
+- Wprowadzenie do obsługi plików: https://pl.wikibooks.org/wiki/C/Pliki

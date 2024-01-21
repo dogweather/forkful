@@ -1,6 +1,7 @@
 ---
 title:                "テキストの検索と置換"
-html_title:           "Java: テキストの検索と置換"
+date:                  2024-01-20T17:58:52.589498-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "テキストの検索と置換"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,32 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何であり、なぜ? (WHAT & WHY?)
+## What & Why? (何となぜ？)
+プログラムでテキストを検索・置換するのは、ある文字列を別の文字列に変更する処理です。データの正規化、不要な情報の削除、またはコードのリファクタリングなど、様々な状況でこの処理が必要です。
 
-テキストの検索および置換とは、特定の文字列を見つけてそれを別のものに変えることです。プログラマがこれを行う理由は、大量のデータを迅速に処理するため、または特定種類のエラーを直すために通常です。
-
-## どうやって (HOW TO)
-
-以下にSwiftでのテキスト検索と置換の基本的なやり方を示します。これはあくまで基本的なやり方ですが、一般的なユースケースで十分に使えます。
-
+## How to (方法)
 ```Swift
-var string = "Hello, Swift"
-string = string.replacingOccurrences(of: "Swift", with: "World")
-print(string)  // prints "Hello, World"
+var greeting = "Hello, world!"
+
+// 文字列を置換する - replaceOccurrences(of:with:)
+greeting = greeting.replacingOccurrences(of: "Hello", with: "Goodbye")
+print(greeting)  // "Goodbye, world!"
+
+// 正規表現を使って置換する
+let htmlString = "<p>This is a paragraph.</p>"
+let strippedString = htmlString.replacingOccurrences(of: "<.*?>", with: "", options: .regularExpression)
+print(strippedString) // "This is a paragraph."
 ```
 
-上記のコードは、"Swift"という文字列を"World"に置換して出力します。
+## Deep Dive (詳細情報)
+テキストの検索と置換は、初期のコンピューターシステムから存在します。UNIXのsedコマンドやPerl言語は、この営為をよりパワフルで使いやすくしました。Swiftでは、`String`の`replacingOccurrences(of:with:)`メソッドを通じて簡単に置換ができます。正規表現を使えば、より複雑なパターン検索も可能です。ただし、正規表現は読みにくい、書きにくいという側面もあるため、単純な置換では通常の文字列メソッドを使った方が良いでしょう。
 
-## ディープダイブ (DEEP DIVE)
-
-テキストの検索および置換は計算の歴史と密接に関連しています。なぜなら、初期のコンピュータシステムがテキスト操作が中心だったからです。
-
-Swiftでは、`replacingOccurrences(of: with:)`がもっとも一般的な方法ですが、ある特定の条件に合うものだけを置換したい場合などには、正規表現を使う方法もあります。詳しくは、Swiftのドキュメンテーションを参照してください。
-
-この`replacingOccurrences`メソッドは、内部的には全体の文字列をスキャンすることで実現しています。つまり、このメソッドの時間複雑度はO(n)で、nは文字列の長さを表します。
-
-## 関連資料 (SEE ALSO)
-
-- Swiftの公式ドキュメンテーション: [Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Regular Expressions in Swift](https://benscheirman.com/2014/06/regex-in-swift/)
-- [WWDC 2019](https://developer.apple.com/videos/play/wwdc2019/265/)
+## See Also (関連情報)
+- [Swift Standard Library - String](https://developer.apple.com/documentation/swift/string)
+- [NSRegularExpression - Apple Developer](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Using Regular Expressions in Swift](https://www.raywenderlich.com/5765-regular-expressions-tutorial-getting-started)

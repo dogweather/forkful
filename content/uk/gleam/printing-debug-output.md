@@ -1,7 +1,8 @@
 ---
-title:                "Друк відлагоджувального виводу"
-html_title:           "Arduino: Друк відлагоджувального виводу"
-simple_title:         "Друк відлагоджувального виводу"
+title:                "Виведення налагоджувальної інформації"
+date:                  2024-01-20T17:52:24.969495-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Виведення налагоджувальної інформації"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,38 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## What & Why? (Що таке та навіщо?)
+Вивід дебаг-інформації дозволяє бачити, що відбувається всередині програми під час її виконання. Програмісти це роблять, щоб легше виявити і виправити помилки.
 
-Друк відлагоджувального виводу - це метод виводу даних на консоль або в файл для подальшого розбору. Програмісти використовують його для відстеження і усунення помилок, моніторингу роботи програми в реальному часі.
+## How to: (Як це робити:)
+```gleam
+// Вивести до консолі просте повідомлення
+io.debug("Something happened here")
 
-## Як це зробити:
+// Вивести змінну з її значенням
+let value = "тестове значення"
+io.debug(value)
 
-Зразок коду на Gleam та очікуваний вивід:
-
-```Gleam
-import gleam/io
-
-fn main() {
-    io.debug("Це повідомлення для відлагодження")
-}
+// Зразок виводу:
+// > "Something happened here"
+// > "тестове значення"
 ```
 
-При виконанні цього коду у вашому терміналі або виводі ви побачите:
+## Deep Dive (Поглиблений огляд)
+Printing debug output isn't unique to Gleam. It's a time-honored tradition in programming, dating back to when debugging meant literal bugs in the hardware. Gleam's `io.debug` is convenient for simple debugging but it's not ideal for production environments. Alternatives like structured logging, using external libraries such as `gleam_log` are preferred, where one can scale the verbosity levels and direct logs to various destinations, not just the console.
 
-```Gleam
-"Це повідомлення для відлагодження"
-```
-
-## Занурення у деталі
-
-Відлагоджувальний вивід сягає коренів ще до днів карткових машин, коли середа виводу була друкувальною машиною. З тих пір його застосування та використання значно розширився.
-
-Альтернативами для відлагодження можуть бути логування, використання спеціальних тулів для відлагодження, і встановлення контрольних точок в коді.
-
-Оскільки Gleam - це молода мова, її особливості з відлагоджувального виводу ще розвиваються. Однак вона наслідує багато своїх відлагоджувальних структур від Erlang, на якому вона побудована, включаючи здатність виводити дані в реальному часі без зупинки програми.
-
-## Додатково
-
-- Офіційна документація Gleam: https://gleam.run/docs/
-- Порівняння відлагодження в різних мовах: https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(debugging)
-- Історія відлагоджувального виводу: https://en.wikipedia.org/wiki/Debugging
+## See Also (Дивіться також)
+- Gleam's `io` module documentation: https://hexdocs.pm/gleam_stdlib/gleam/io/
+- A guide to error handling in Gleam: https://gleam.run/book/tour/error-handling.html
+- The `gleam_log` library on Hex: https://hex.pm/packages/gleam_log

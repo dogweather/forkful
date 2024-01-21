@@ -1,6 +1,7 @@
 ---
 title:                "打印调试输出"
-html_title:           "Clojure: 打印调试输出"
+date:                  2024-01-20T17:52:36.903405-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "打印调试输出"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,33 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-打印调试输出是用于解决问题和优化代码的工具，它可以显示您的程序在运行过程中的详细信息，提供有助于修复错误或提升性能的数据。
+## What & Why? / 什么以及为什么？
 
-## 怎么做：
+打印调试输出就是让程序在运行时显示信息，帮助开发者理解发生了什么。程序员这么做是为了找出代码中的错误和性能瓶颈。
 
-在Gleam中打印调试输出是有点不同的，因为Gleam是一种静态类型语言，并且更强调不改变状态。但是您可以使用 `println` 函数，完整代码应该像这样：
+## How to: / 如何操作：
 
-```Gleam
-import gleam/io.{println}
+```gleam
+import gleam/io
 
-pub fn main(args: List(String)) {
-   let _ = println("Hello, Gleam!")
+pub fn main() {
+  let my_data = "Gleam shines bright!"
+  io.debug(my_data) // Prints debug information to the console
 }
 ```
 
-当运行这个程序时，它将在控制台输出 "Hello, Gleam!"。
+输出样例：
 
-## 深入研究：
+```plaintext
+DEBUG: Gleam shines bright!
+```
 
-打印调试输出已经存在很长时间，其中一些早期程序员在没有先进的调试工具可用时，只能依赖它解决问题。在许多动态类型的语言中，例如JavaScript，可以直接打印任何变量。但在静态类型的语言中，如Gleam，这可能更复杂一点，因为需要知道需要打印的数据的具体类型。除了Gleam中的 `println` 函数之外，您还可以使用诸如 `log` 或 `debug` 等库来提供更多的日志和报告选项。
+## Deep Dive / 深入探究
 
-## 另请参阅：
+历史上，打印调试输出是了解程序内部运行的简便方法。它比起使用调试器来得直接，但没有调试器那么强大。Gleam的`io.debug`函数可以打印任何可以转变为字符串的值。其他语言也有类似的方法，比如Python的`print`或者JavaScript的`console.log`。在Gleam中，`debug`输出的信息前会自动添加`DEBUG:` 前缀，这有助于在日志中区分调试信息。
 
-如果您希望深入了解Gleam中如何打印调试输出的更多详细信息，可以参阅下面的链接：
+## See Also / 另见
 
-[Gleam官方文档](https://gleam.run/book/tour/basics.html)
-
-[Gleam中的日志库](https://hex.pm/packages/log)
-
-这些资源可以为您提供丰富的信息并让你更好的理解如何在Gleam中实施调试输出。
+- Programming languages comparison on debug techniques: [https://en.wikipedia.org/wiki/Debugging](https://en.wikipedia.org/wiki/Debugging)
+- "Effective Debugging" - book by Diomidis Spinellis: [https://www.spinellis.gr/](https://www.spinellis.gr/)

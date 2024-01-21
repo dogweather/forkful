@@ -1,6 +1,7 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Bash: Merkkijonon interpolointi"
+date:                  2024-01-20T17:49:59.839884-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,34 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Stringien interpolointi tarkoittaa muuttujien ja lausekkeiden upottamista suoraan merkkijonoihin. Ohjelmoijat käyttävät sitä koodin selkeyttämiseen ja dynaamisten tekstisisältöjen luomiseen.
 
-Ojennus termi tarkoittaa merkkijonoon arvoksi muuttamista, usein muuttujia, suoraan. Ohjelmoijat käyttävät sitä koodin mukautettavuuden ja luettavuuden parantamiseksi varmistaen, että koodi on tehokas ja helppo lukea.
-
-## Miten:
+## How to: (Kuinka tehdä:)
+Arduino ei suoraan tue stringien interpolointia, mutta voit saavuttaa saman vaikutuksen `sprintf`-funktiolla tai liittämällä merkkijonoja yhteen.
 
 ```Arduino
-String nimi = "Pekka";
-String tervehdys = "Hei, " + nimi + "!";
-Serial.begin(9600);
-Serial.println(tervehdys);
+char buffer[50];
+int sensorValue = analogRead(A0);
+sprintf(buffer, "Sensorin arvo: %d", sensorValue);
+Serial.println(buffer);
 ```
 
-*Näytteen ulostulo*: 
-
+Esimerkin tuloste:
 ```
-Hei, Pekka!
+Sensorin arvo: 345
 ```
-## Syvä sukellus:
 
-Historiallinen tieto: Merkkijonojen ojennus on ollut kehitysympäristöissä jo pitkään. Sen käyttö on levinnyt yleisesti, koska se tekee koodista helpommin ymmärrettävän ja luettavamman.
+## Deep Dive (Syväsukellus)
+Stringien interpolointi on yleinen ominaisuus monissa moderneissa kielissä, kuten Python tai JavaScript. Arduino C++:ssa käytetään toimintoja, kuten `printf` tai `sprintf`, joissa yhdistelmä merkki `%` ja kirjain määrittelee muuttujan tyypin. Vaihtoehtoisesti voit käyttää `String`-luokkaa ja `+` operaattoria yksinkertaiseen yhdistämiseen, mutta dynaamisten `String`-olioiden jatkuva luominen voi johtaa muistiongelmiin, joten `sprintf` on usein suositumpi vaihtoehto tehopiirien kanssa työskenneltäessä.
 
-Vaihtoehdot: Arduino ei tarjoa kovinkaan monia sisäänrakennettuja vaihtoehtoja merkkijonojen ojennukseen kuten modernit ohjelmointikielet tekevät. Joissakin tapauksissa merkkijonojen yhdistäminen '+'-operaattorilla voi toimia.
-
-Toteutus: Merkkijonojen ojennus edellyttää, että muuttujat ovat String-tyyppejä. Tämä mahdollistaa muuttujan arvon liittämisen suoraan lähdekoodin merkkijonoon.
-
-## Katso myös:
-
-[Arduino String Ojennus](http://www.arduino.cc/en/Tutorial/StringAppendOperator) - Lisätietoa merkkijonojen ojennuksesta Arduinossa.
-[String Concatenation](https://www.arduino.cc/en/Tutorial/Strings) - Laajempi katsaus merkkijonoihin Arduinossa, mukaan lukien ojennus.
-[Kokoelma käyttökelpoisia merkkijonofunktioita](http://playground.arduino.cc/Main/StringFunctions) - Toimintojen kokoelma merkkijonokäsittelyn tehokkuuden parantamiseksi-
+## See Also (Katso Myös)
+- Arduino `sprintf` reference: https://www.cplusplus.com/reference/cstdio/sprintf/
+- Arduino `String` class reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- Memory management with Arduino: https://learn.arduino.cc/learning-paths/ways-into-arduino/memory-management

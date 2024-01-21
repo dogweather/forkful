@@ -1,7 +1,8 @@
 ---
-title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
-simple_title:         "Wyszukiwanie i zastępowanie tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+date:                  2024-01-20T17:58:09.251172-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,39 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why?
+Wyszukiwanie i zamiana tekstu to podstawa edycji: zmieniasz jedno przez drugie, proste. Programiści to robią, by szybko poprawiać kody i aktualizować dane.
 
-Wyszukiwanie i zamiana tekstu to proces lokalizowania i modifikowania określonego ciągu znaków w tekście. Programiści dokonują tego, przede wszystkim, aby pozbyć się niechcianych znaków lub zastąpić je innymi.
-
-## Jak to zrobić?
-
-W Haskellu, możemy skorzystać z funkcji `subRegex` z biblioteki `Text.Regex`, aby przeprowadzić wyszukiwanie i zastąpić text. Oto jak to zrobić:
+## How to:
 ```Haskell
-import Text.Regex
+import Data.List (isInfixOf, intercalate)
 
-replaceText :: String -> String -> String -> String
-replaceText old new = subRegex (mkRegex old) new
+searchReplace :: String -> String -> String -> String
+searchReplace searchStr replaceStr text = 
+    intercalate replaceStr . splitOn searchStr $ text
 
-main = print $ replaceText "Haskell" "Python" "I love Haskell!" -- Wyjście: "I love Python!"
+splitOn :: Eq a => [a] -> [a] -> [[a]]
+splitOn [] _ = error "Delimiter cannot be an empty list"
+splitOn _ [] = [[]]
+splitOn delim list
+    | delim `isInfixOf` list = let (start, rest) = breakOn delim list
+                               in start : splitOn delim (drop (length delim) rest)
+    | otherwise = [list]
+
+breakOn :: Eq a => [a] -> [a] -> ([a], [a])
+breakOn _ [] = ([], [])
+breakOn delim list@(x:xs)
+   | delim `isPrefixOf` list = ([], drop (length delim) list)
+   | otherwise = let (ys, zs) = breakOn delim xs in (x:ys, zs)
+
+main = putStrLn $ searchReplace "world" "Haskell" "hello world!"
 ```
-Jako pierwszy argument wprowadzamy wartość, którą chcemy zastąpić, jako drugi - tekst, którym chcemy zastąpić, a trzeci to tekst, w którym wykonujemy operację.
 
-## Dokładne zrozumienie
-
-Haskell może nie być pierwszym językiem, który przychodzi na myśl, gdy myślimy o operacjach na tekście, ale jest on niezwykle potężny dzięki swoim funkcjom i bibliotekom. Przykładem jest funkcja `subRegex`, która wykorzystuje wyrażenia regularne do wyszukiwania i zamieniania tekstu.
-
-Alternatywą jest wykorzystanie biblioteki `Data.Text`, która posiada funkcje `replace`. Ważnym jest, że nie korzysta ona z wyrażeń regularnych, ale może być pomocna w prostszych przypadkach.
-
-```Haskell
-import Data.Text as T
-
-replaceText :: String -> String -> String -> String
-replaceText old new txt  = T.unpack $ T.replace (T.pack old) (T.pack new) (T.pack txt)
-
-main = print $ replaceText "Haskell" "Python" "I love Haskell!" -- Wyjście: "I love Python!"
+Output:
 ```
-Chodź `Data.Text.replace` nie obsługuje wzorców, jest ona znacznie szybsza i efektywniejsza niż `subRegex`, szczególnie dla dużych tekstów.
+hello Haskell!
+```
 
-## Zobacz także
+## Deep Dive
+Pod koniec lat 60. pojawiły się pierwsze narzędzia do przetwarzania tekstu, jak `sed`. W Haskellu można to robić elegancko, korzystając z funkcji wyższego rzędu i leniwego przetwarzania. Alternatywą jest regex, ale wzorce szukamyz `Data.Text` i `Data.ByteString` są często szybsze. Immutability w Haskellu oznacza, że każde "zamiany" to tak naprawdę tworzenie nowego ciągu znaków.
 
-- ["Data.Text Documentation"](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html): Dokumentacja biblioteki `Data.Text`.
+## See Also
+- Hoogle dla `Data.List`: https://hoogle.haskell.org/?hoogle=Data.List
+- Regex w Haskellu: https://hackage.haskell.org/package/regex-base
+- Haskell `text` package: https://hackage.haskell.org/package/text

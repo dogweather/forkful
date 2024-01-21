@@ -1,6 +1,7 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Bash: Rozpoczynanie nowego projektu"
+date:                  2024-01-20T18:03:10.356180-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "C++"
 category:             "C++"
@@ -10,44 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Rozpoczynanie nowego projektu to jak otwieranie pustej książki — miejsce, gdzie zaczyna się snuć nową opowieść kodowania, wprowadzając pomysły w życie. Programiści biorą się za to, aby rozwiązywać problemy, nauczyć się nowych technologii, lub zrealizować unikatowy pomysł.
 
-Zaczynając nowy projekt w programowaniu, tworzysz zarys, na którym będziesz budować swoje oprogramowanie. Robimy to, aby zapewnić strukturę, która pozwoli nam zarządzać zadaniami i kodem.
-
-## Jak to zrobić:
-
-Aby rozpocząć nowy projekt, uruchom nową aplikację przy użyciu poniższego kodu:
-
+## How to: (Jak to zrobić:)
 ```C++
-// Plik: main.cpp
-#include<iostream>
-using namespace std;
+#include <iostream>
 
-int main()
-{
-    cout<<"Witaj, świecie!";
+int main() {
+    std::cout << "Hello, New Project!" << std::endl;
     return 0;
 }
 ```
-
-Po skompilowaniu i uruchomieniu powyższego kodu, otrzymasz następujący wyjście:
-
-```C++
-Witaj, świecie!
+Sample output:
 ```
+Hello, New Project!
+```
+To prosty początek. Teraz stwórz folder, zapisz kod w pliku `main.cpp`, użyj kompilatora (np. g++), by stworzyć plik wykonywalny, a potem... uruchom go!
 
-## Wgląd
+## Deep Dive (Głębsze spojrzenie)
+Uruchomienie nowego programu w C++ historycznie rzecz biorąc kiedyś wymagało więcej kodu. Wczesne kompilatory i systemy mogły wymagać deklaracji funkcji głównych inaczej niż teraz. Obecnie, z `#include <iostream>` i standardową funkcją `main()`, jesteśmy w stanie szybko rozpocząć pracę.
 
-Zaczęcie nowego projektu jest jak rozpoczęcie nowej podróży. Początkowo może to być przerwa pobudzająca do działania, ale będzie to miało sens, gdy zrozumiesz, jak możesz strukturę wykorzystać do swojej korzyści.
+Inne środowiska jak .NET czy Java mają swoje własne "Hello World" konwencje, ale w C++ ważne jest zrozumienie zarządzania plikami źródłowymi i kompilacji.
 
-1. **Kontekst historyczny**: Koncepcja tworzenia nowych projektów była ważna od początku istnienia programowania. Pomaga to w jasnym zdefiniowaniu celów oraz ścieżki prowadzącej do ich realizacji.
+C++ ewoluuje. Nowe standardy, jak C++20, wprowadzają udogodnienia (np. coroutines, moduły), które mogą zmienić sposób, w jaki inicjujemy projekty. Oczywiście, do tworzenia dużych aplikacji używamy narzędzi takich jak IDE (Integrated Development Environment), systemy budowania jak CMake, i menedżery pakietów, np. Conan. Ale zrozumienie, jak to zrobić "od zera", jest kluczowe.
 
-2. **Alternatywy**: Inne języki programowania, takie jak Python czy Java, mają swoje własne metody startowania nowych projektów, które różnią się od C++. Ale idea pozostaje taka sama: tworząc strukturę, która zwielokrotni naszą efektywność.
-
-3. **Szczegóły implementacji**: W C++, powiększanie nowego projektu polega na dodawaniu kolejnych plików *.cpp* i *.h*, które są odpowiednio używane do definicji funkcji oraz deklaracji klas i zmiennych.
-
-## Zobacz również:
-
-1. **C++ dla początkujących**: http://cpp.com/beginners
-2. **Rozpoczęcie nowego projektu C++**: https://cpp.com/new-project
-3. **Struktura projektu C++**: https://cpp.com/project-structure
+## See Also (Zobacz też)
+- [cppreference.com](https://en.cppreference.com/w/) - dokumentacja C++
+- [learncpp.com](https://www.learncpp.com/) - samouczki C++
+- [cmake.org](https://cmake.org/) - o CMake, narzędziu budowania projektów
+- [conan.io](https://conan.io/) - o Conan, systemie zarządzania pakietami w C++

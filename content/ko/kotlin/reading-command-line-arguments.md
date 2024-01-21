@@ -1,6 +1,7 @@
 ---
 title:                "명령줄 인수 읽기"
-html_title:           "Arduino: 명령줄 인수 읽기"
+date:                  2024-01-20T17:56:46.061732-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "명령줄 인수 읽기"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,39 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 그런가? 
+## What & Why? (무엇인가요? 왜 사용하나요?)
+커맨드 라인 인수 읽기는 사용자가 프로그램을 실행할 때 옵션을 전달하는 방법입니다. 프로그래머는 다양한 시나리오에 대응하고 유연성을 제공하기 위해 이를 사용합니다.
 
-명령 줄 인수를 읽는 것은 사용자가 프로그램을 시작할 때 추가로 제공하는 입력 값을 프로그램에서 사용할 수 있게 처리하는 과정입니다. 이는 특정 작업에 대한 세부 정보를 사용자에게부터 제공받거나, 프로그램 작동 방식을 쉽게 수정하려는 프로그래머들에게 굉장히 유용합니다.
-
-## 어떻게 해야 할까?
-
-다음은 코틀린 프로그램에서 명령 줄 인수를 읽는 방법에 대한 간단한 예입니다.
+## How to: (어떻게 사용하나요?)
+간단히, `Array<String>` 타입의 `args`를 메인 함수로 받아 사용합니다. 코드 예시와 결과를 보여드리죠.
 
 ```Kotlin
 fun main(args: Array<String>) {
-    args.forEach { arg ->
-        println(arg)
+    if (args.isNotEmpty()) {
+        println("첫 번째 인자: ${args[0]}")
+    } else {
+        println("인자가 제공되지 않았습니다.")
     }
 }
 ```
 
-이 코드를 실행하면서 명령 줄 인수를 추가하면, 그 인수들이 모두 출력됩니다. 예를 들어, 프로그램을 `kotlin MainKt arg1 arg2 arg3`와 같은 방식으로 시작하면, 출력은 다음과 같이 될 것입니다:
-
+커맨드 라인에서 다음과 같이 실행하세요:
 ```
-arg1
-arg2
-arg3
+kotlinc Main.kt -include-runtime -d Main.jar
+java -jar Main.jar 첫번째인자
 ```
 
-## 깊이있게 살펴보기 
+출력 예시:
+```
+첫 번째 인자: 첫번째인자
+```
 
-명령 줄 인수는 운영 체제가 프로그램을 시작할 때 해당 프로그램으로 전달하는 설정 정보입니다. 이 전통은 유닉스의 초기 버전에서 시작되었으며, 현재도 널리 사용되고 있습니다.
+## Deep Dive (심층 분석)
+커맨드 라인 인수 읽기는 오래된 개념이며 Unix와 같은 초기 운영 체제에서부터 사용되어 왔습니다. Kotlin에서는 그 흔적을 따르고 있죠. `args` 배열을 통해 접근하는 것이 기본 방식이지만, 라이브러리를 사용하면 더 편리하게 인수를 파싱하고 사용할 수 있습니다. 예를 들어, `kotlinx-cli` 라는 라이브러리는 선언적 DSL을 통해 인수를 정의하고 처리하는 것을 도와줍니다.
 
-대안으로는 환경 변수나 구성 파일을 사용하는 것이 있습니다. 하지만, 명령 줄 인수는 프로그램을 시작할 때 한 번에 그 설정을 전달하는 데에 가장 적합합니다.
+Kotlin은 자바 플랫폼 위에서 동작하므로, `args` 배열을 처리하는 방식도 사실상 Java와 동일합니다. 그럼에도 Kotlin은 코틀린스러운 문법을 통해 더 풍부하고 간결한 표현이 가능하게 해줍니다. 람다 표현식이나 확장 함수 같은 기능을 통해, 커맨드 라인 인수를 더욱 쉽고 강력하게 다룰 수 있습니다.
 
-코틀린에서 명령 줄 인수를 읽는 방법은 Java와 매우 비슷합니다. 코틀린의 `main` 함수의 첫 번째 매개변수는 `args: Array<String>`인데, 이는 프로그램에 전달된 모든 명령 줄 인수를 담고 있는 문자열 배열입니다.
-
-## 참고 자료 
-
-- 코틀린 공식 문서 (https://kotlinlang.org/docs/command-line.html)
-- 코틀린에서의 명령 줄 인수 사용 (https://www.baeldung.com/kotlin-command-line-arguments)
+## See Also (더 보기)
+- Kotlin 공식 문서: [Kotlin Args](https://kotlinlang.org/docs/faq.html#how-do-i-pass-parameters-to-the-main-function)
+- 커맨드 라인 인수를 위한 Kotlinx-cli 라이브러리: [Kotlinx-cli GitHub](https://github.com/Kotlin/kotlinx-cli)

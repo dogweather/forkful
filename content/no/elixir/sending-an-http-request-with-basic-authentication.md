@@ -1,7 +1,8 @@
 ---
-title:                "Sende en http-forespørsel med grunnleggende autentisering"
-html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
+title:                "Å sende en HTTP-forespørsel med grunnleggende autentisering"
+date:                  2024-01-20T18:01:15.649768-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,28 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Send en HTTP-forespørsel med grunnleggende autentisering med Elixir
-
 ## Hva & Hvorfor?
-En HTTP-forespørsel med grunnleggende autentisering er når du sender data over HTTP-protokollen med innloggingdetaljer som brukernavn og passord. Programmører gjør dette for å tilby sikker kommunikasjon med webservere.
 
-## Hvordan gjøre det:
-Her er et eksempel på hvordan man sender en HTTP GET-forespørsel med grunnleggende autentisering i Elixir ved bruk av HTTPoisons `basic_auth`-metode:
+Å sende en HTTP-forespørsel med grunnleggende autentisering betyr å inkludere brukernavn og passord i en forespørsels header for å tilgangskontrollere. Programmerere gjør dette for å sikre beskyttede ressurser på nettet.
 
-```Elixir
-{:ok, response} = HTTPoison.get("http://example.com", [], basic_auth: {"username", "password"})
-IO.inspect(response.body)
+## Hvordan:
+
+I Elixir kan `HTTPoison` benyttes for HTTP-forespørsler med grunnleggende autentisering. Her er et eksempel:
+
+```elixir
+# Først, legg til HTTPoison i deps i mix.exs:
+defp deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
+end
+
+# Så, utfør en forespørsel med Basic Auth:
+def send_basic_auth_request do
+  auth = :base64.encode("bruker:passord")
+  headers = [{"Authorization", "Basic #{auth}"}]
+
+  HTTPoison.get("https://eksempel.com/beskyttet", headers)
+end
 ```
-Du bør se den forespurte ressursen til output. Pass bare på at du erstatter "http://example.com", "username" og "password" med dine egentlige verdier.
 
-## Dyp dykk
-Grunnleggende autentisering er et gammelt konsept i webverdenen, som er definert i RFC 7617. Det tilbyr en enkel måte å beskytte ressurser på en webserver på. Alternativt kunne du også brukt Digest-autentisering, OAuth, eller Bearer Tokens avhengig av hva API-en støtter. Elixir bruker Erlang's :httpc modul under panseret for å håndtere HTTP-forespørsler, så egenskapene og begrensningene til :httpc gjelder også her.
+Kjører du denne funksjonen får du et svar som dette:
 
-## Se også
-For flere detaljer om å jobbe med HTTP i Elixir, sjekk ut følgende ressurser:
+```elixir
+%HTTPoison.Response{
+  status_code: 200,
+  body: "...",
+  headers: [...]
+}
+```
 
-- [HTTPoison GitHub repo](https://github.com/edgurgel/httpoison)
-- [Elixir's :httpc Doc](https://erlang.org/doc/man/httpc.html)
-- [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+## Dypdykk
 
-Merk: Sørg for å ha ferskste versjon av Elixir samt HTTPoison biblioteket for å unngå eventuelle kompatibilitetsproblemer.
+Grunnleggende autentisering har eksistert siden tidlig i HTTPs historie, spesifisert i RFC 7617. Enkelt, men mindre sikker enn moderne metoder, da det sender bruker-info i klar tekst (base64-kodet, ikke kryptert). 
+
+Alternativer inkluderer OAuth og API-nøkler. Ved å bruke en egnet bibliotek som `HTTPoison` eller `Tesla`, blir implementering av disse autentiseringsmetodene mer håndterbar i Elixir.
+
+For å forsterke sikkerheten, bør grunnleggende autentisering alltid brukes over HTTPS. Elixir's støtte for SSL gjør dette enkelt i både `HTTPoison` og `Tesla`. Potensielle feil i koden kan føre til lekkasje av sensitiv info; god håndtering av auth headeren er essensielt.
+
+## Se Også
+
+- Elixir's HTTPoison dokumentasjon: https://hexdocs.pm/httpoison
+- RFC 7617, "The 'Basic' HTTP Authentication Scheme": https://tools.ietf.org/html/rfc7617
+- Elixir's Tesla dokumentasjon: https://github.com/teamon/tesla
+- En introduksjon til nettverkssikkerhet og HTTPS: https://www.ssl.com/faqs/faq-what-is-https/

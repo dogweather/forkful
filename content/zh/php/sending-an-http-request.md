@@ -1,7 +1,8 @@
 ---
-title:                "发送http请求"
-html_title:           "C#: 发送http请求"
-simple_title:         "发送http请求"
+title:                "发出 HTTP 请求"
+date:                  2024-01-20T18:00:15.768089-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "发出 HTTP 请求"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,38 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么与为什么？
+## What & Why? (是什么 & 为什么？)
+发送HTTP请求让你的PHP代码能和其他服务器聊天。程序员这么做通常是为了获取数据或触发远程服务的动作。
 
-HTTP请求是一种让您的程序与网络服务交互的方式。程序员利用此实现如用户登录验证，取回和发送数据等功能。
+## How to: (怎么做：)
+PHP自带了几种发送HTTP请求的方法。这里我们用`curl`扩展示范：
 
-## 如何做：
-
-在PHP中，使用cURL的方法可以发送HTTP请求。下面是一个简单的示例：
-
-```PHP
+```php
 <?php
- $ch = curl_init();
+// 初始化cURL会话
+$curl = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, "http://example.com");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$result = curl_exec($ch);
+// 设置要获取的URL
+curl_setopt($curl, CURLOPT_URL, "https://api.example.com/data");
 
-curl_close ($ch);
+// 返回响应而非直接输出
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+// 执行cURL请求
+$response = curl_exec($curl);
+
+// 关闭cURL资源，并且释放系统资源
+curl_close($curl);
+
+// 输出获取到的数据
+echo $response;
 ?>
 ```
 
-在此例中，你将看到"http://example.com"的返回结果。
+这段代码运行后会打印从`https://api.example.com/data`获取到的数据。
 
-## 深入研究：
+## Deep Dive (深入探讨)
+发送HTTP请求的能力从PHP的早期版本就开始支持。过去用的是`fsockopen`或者`stream_context_create`，但这些方法比较复杂。现代PHP里，cURL和`file_get_contents`是最常见的做法，cURL支持更多复杂的选项和安全特性。一个更现代的选择是使用诸如Guzzle这样的第三方库，它提供了一个更优雅的API。
 
-早期的PHP版本并未内建支持HTTP请求，但自从PHP 4.0.2版起，cURL便成为了PHP的标准库之一。另一种可行的选择是fsockopen()函数，它更直接，更灵活，但使用复杂度更高。在发送HTTP请求时，你不仅可以设定目标URL，还可以设置请求的方法（例如GET或POST），提交的数据，以及其他诸如超时，重定向及SSL认证等参数。
+当使用cURL的时候，重要的是要设置正确的选项，比如：
 
-## 更多信息：
+- `CURLOPT_RETURNTRANSFER`：确保请求结果以字符串返回而不是直接输出。
+- `CURLOPT_POST`和`CURLOPT_POSTFIELDS`：当需要发送POST请求和数据时使用。
 
-如果你希望探索更多，以下链接可能有所帮助：
+正确关闭cURL资源也很重要，以避免内存泄露。
 
-- PHP官方文档：[cURL](http://php.net/manual/en/book.curl.php)、[fsockopen()](http://php.net/manual/en/function.fsockopen.php)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/php): 这里有大量有关PHP和HTTP请求的讨论和解答。
-- [PHP中文网](http://www.php.cn/)：提供丰富的PHP学习资源和问答社区。
-
-这只是开始，探索PHP的世界还有很多未知的乐趣等待你去发现！
+## See Also (另见)
+- [PHP cURL Documentation](https://www.php.net/manual/en/book.curl.php)
+- [Guzzle, PHP HTTP Client](http://docs.guzzlephp.org/en/stable/)
+- [PHP Stream Contexts](https://www.php.net/manual/en/context.php)

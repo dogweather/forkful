@@ -1,6 +1,7 @@
 ---
 title:                "Starting a new project"
-html_title:           "Bash recipe: Starting a new project"
+date:                  2024-01-20T18:04:06.901675-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Starting a new project"
 programming_language: "Python"
 category:             "Python"
@@ -12,57 +13,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Starting a new Python project is basically setting up the building blocks and structures you need for your codebase. Why? It's about keeping things clean, organized, and easy-to-update.
+Starting a new project is all about creating a fresh directory with files set up for your new code adventure. It's like breaking ground on a building site but for programmers. We do this to transform ideas into working software, organize our code, and manage complexity from the get-go.
 
 ## How to:
 
-Here's a simple way to kickstart your Python project. 
+Let's start a Python project. First up, make a new directory:
 
-```Python
-# Create new project directory 
-mkdir new_project
-cd new_project
-
-# Initiate Python virtual environment
-python3 -m venv env
-
-# Activation
-source env/bin/activate
+```bash
+mkdir my_new_project
+cd my_new_project
 ```
-What you'll see is this:
 
-```Output
-(new_project) $
+Now, set up a virtual environment - this keeps our project's dependencies nice and tidy:
+
+```bash
+python -m venv venv
+source venv/bin/activate # On Windows, use `venv\Scripts\activate`
 ```
-The prefix indicates that you're in the Python virtual environment. Now let's create the main script:
 
-```Python
-# Create new Python script
+With our virtual land prepped, sow the seeds of your project with a `main.py` file:
+
+```bash
 touch main.py
-
-# Write simple Hello World code
-echo "print('Hello, World!')" > main.py
-
-# Run the Python script
+echo "print('Hello, new project!')" > main.py
 python main.py
 ```
 
-Here's your result:
-
-```Output
-Hello, World!
+Output:
+```plaintext
+Hello, new project!
 ```
 
-Great work! Your Python environment and project is up and running.
+For good measure, let’s pin down the dependencies early. Even if none exist yet:
+
+```bash
+pip freeze > requirements.txt
+```
+
+And that's the embryo of your project. From here, it grows.
 
 ## Deep Dive
 
-In the late 2000s, the Python community realized the need for project isolation. This led to the creation of virtual environments. There are alternatives like Docker and Pipenv, but Python's venv is lightweight and built-in, making it the first pick for many.
+In the past, many a programmer would just wing it, starting code in a solitary file. Chaos would often ensue as the project grew. Nowadays, we've got better practices.
 
-When initiating the project with venv, Python creates an isolated environment for your project, cloning your Python interpreter, pip, and other binaries into your project directory. This isolation helps manage dependencies and avoid version conflicts between different projects.
+For Python, we've got conventions like PEP 8 for style guidelines. There are also tools like `cookiecutter` which create projects from templates. Want a web app? There's a template for that. It's set up to save you time.
+
+On the other hand, you might like to do it manually, as we showed above. This method gives you total control, building your project from scratch. Just remember to keep track of dependencies with `requirements.txt`. It's crucial for when you share your project or deploy it.
 
 ## See Also
 
-1. Python's venv documentation: https://docs.python.org/3/library/venv.html
-2. Docker: https://www.docker.com/what-docker
-3. Pipenv: https://pipenv.pypa.io/en/latest/
+- [The Hitchhiker's Guide to Python](https://docs.python-guide.org/) - An opinionated guide on best practices in Python.
+- [PEP 8 -- Style Guide for Python Code](https://peps.python.org/pep-0008/) - The style Bible for Python developers.
+- [Cookiecutter](https://github.com/cookiecutter/cookiecutter) - A command-line utility to create projects from templates.

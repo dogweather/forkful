@@ -1,6 +1,7 @@
 ---
 title:                "भविष्य या अतीत में तारीख की गणना"
-html_title:           "C#: भविष्य या अतीत में तारीख की गणना"
+date:                  2024-01-20T17:31:54.625688-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "भविष्य या अतीत में तारीख की गणना"
 programming_language: "C#"
 category:             "C#"
@@ -11,25 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-दिनांक की गणना करना मतलब भूतकाल या भविष्य की तारीख का आकलन करना  होता है। यह उन समयों में होता है जब प्रोग्रामर्स को समय का प्रवाह ट्रैक करना पड़ता है, जैसे कि उत्पाद प्रलंबन की अवधि, या स्थायी उपयोगकर्ता बनाने के बाद कितना समय बीत गया। 
+तारीख का भविष्य या अतीत में हिसाब करना यानी वर्तमान तिथि से कुछ दिन, महिने या साल जोड़ना या घटाना। प्रोग्रामर्स यह इसलिए करते हैं क्योंकि कई एप्लीकेशन्स में समय-सीमा, कार्यकाल और रिमाइंडर्स के प्रबंधन की ज़रुरत होती है।
 
-## कैसे:
-यहाँ C# में भविष्य का दिन गणना करने का उदाहरण है:
+## कैसे करें:
 ```C#
-DateTime today = DateTime.Today;// वर्तमान दिन 
-DateTime futureDate = today.AddDays(5); //5 दिन अग्रिम
-Console.WriteLine("आज की तारीख: {0}", today);
-Console.WriteLine("भविष्य की तारीख: {0}", futureDate);
-```
-आउटपुट:
-```
-आज की तारीख: 2022-01-01
-भविष्य की तारीख: 2022-01-06
-```
-## गहरा डाइव
-(1) प्रोग्रामिंग भाषाओं ने समय और तारीख का ध्यान रखने वाली विशेषताएं बहुत पहले जोड़ दी थीं हालांकि C # का आगमन इसे और आसान बना देता है। (2) भविष्य या पिछले में तारीख की संगणना के विकल्प में DateTime और TimeSpan जैसी C# प्रकार शामिल हैं। (3) DateTime.Add विधियां हमें समय और तारीखों के निर्देशांकों को संशोधित करने की अनुमति देती है, बिना किसी स्थिर संख्या के संविधानीय अनुपात का पालन किए।
+using System;
 
-## अन्य स्रोतों का अवलोकन:
-1. [Microsoft: DateTime Structure](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-2. [Microsoft: TimeSpan Structure](https://docs.microsoft.com/en-us/dotnet/api/system.timespan?view=net-5.0)
-3. [Stack Overflow: Calculate future dates](https://stackoverflow.com/questions/3784150/calculate-future-dates)
+class Program {
+    static void Main() {
+        DateTime today = DateTime.Now;
+        // 10 दिन भविष्य में
+        DateTime tenDaysLater = today.AddDays(10);
+        // 10 दिन अतीत में
+        DateTime tenDaysBefore = today.AddDays(-10);
+
+        Console.WriteLine("आज की तारीख: " + today.ToShortDateString());
+        Console.WriteLine("10 दिन बाद की तारीख: " + tenDaysLater.ToShortDateString());
+        Console.WriteLine("10 दिन पहले की तारीख: " + tenDaysBefore.ToShortDateString());
+    }
+}
+```
+उदाहरण आउटपुट:
+```
+आज की तारीख: 12/3/2023
+10 दिन बाद की तारीख: 22/3/2023
+10 दिन पहले की तारीख: 2/3/2023
+```
+
+## गहराई से जानकारी:
+`.NET` फ्रेमवर्क का उपयोग करते हुए तारीखों का प्रबंधन आसान हो जाता है। `DateTime` क्लास 1 जनवरी 0001 से 31 दिसम्बर 9999 तक की तारीखें संभाल सकती है। प्रोग्रामर्स `AddDays`, `AddMonths`, `AddYears`, जैसे मेथड्स का उपयोग कर तारीखों को मैनेज करते हैं। 
+
+अल्टरनेटिव्स के रूप में `NodaTime` जैसे लाइब्रेरीज भी मौजूद हैं जो अधिक जटिल समय परिप्रेक्ष्यों को संभालते हैं। इनका उपयोग करके, टाइम ज़ोन्स और डेलाइट सेविंग्स से जुड़े मुद्दों को बेहतर तरीके से हल किया जा सकता है।
+
+बेशक, किसी भी तिथि गणित में लीप साल और टाइम ज़ोन्स जैसे मुद्दे होते हैं जिनको संजीदगी से सोच-समझकर संभालना पड़ता है। `DateTimeOffset` और `TimeZoneInfo` क्लासेस इन मुद्दों का ध्यान रखते हैं।
+
+## संबंधित सूत्र (See Also):
+- Microsoft Docs पर `DateTime` संरचना: [https://docs.microsoft.com/en-us/dotnet/api/system.datetime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
+- `NodaTime` लाइब्रेरी: [https://nodatime.org](https://nodatime.org)
+- टाइम ज़ोन्स का हैंडलिंग: [https://docs.microsoft.com/en-us/dotnet/standard/datetime/choosing-between-datetime](https://docs.microsoft.com/en-us/dotnet/standard/datetime/choosing-between-datetime)

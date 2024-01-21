@@ -1,7 +1,8 @@
 ---
-title:                "Imprimindo saída de debug"
-html_title:           "C#: Imprimindo saída de debug"
-simple_title:         "Imprimindo saída de debug"
+title:                "Exibindo saídas de depuração"
+date:                  2024-01-20T17:53:24.489868-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Exibindo saídas de depuração"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
@@ -10,41 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## O Que é e Por Que?
 
-A impressão de debug é uma técnica usada para controlar o fluxo do programa. Os programadores utilizam-na para identificar problemas ou verificar se o código funciona conforme esperado.
+Depurar é como procurar uma agulha no palheiro: você precisa ver o que seu código está realmente fazendo. Programadores imprimem mensagens de depuração para entender o funcionamento interno ou encontrar o ponto onde as coisas vão mal.
 
 ## Como Fazer:
 
-Aqui está um exemplo simples de como imprimir debug no PowerShell:
+Imprimir no PowerShell é simples. Use `Write-Host` para enviar texto para a tela, ou `Write-Debug` para mensagens de debug que podem ser ativadas ou desativadas. Aqui estão alguns exemplos:
 
 ```PowerShell
-Write-Verbose "Início do script" -Verbose
-$variavel = "PowerShell"
-Write-Verbose "A variável está definida como: $variavel" -Verbose
-Write-Verbose "Fim do script" -Verbose
+# Imprime simples no console
+Write-Host "Estou aqui!"
+
+# Saída de depuração (não aparecerá a menos que o debug esteja ativado)
+Write-Debug "Está é uma mensagem de depuração."
+
+# Ativando mensagens de depuração
+$DebugPreference = 'Continue'
+Write-Debug "Agora você me vê."
 ```
 
-A saída aparecerá assim:
+Ao rodar com `$DebugPreference` desabilitado, você só verá "Estou aqui!". Quando habilitado, verá ambas mensagens.
 
-```Shell
-VERBOSE: Início do script
-VERBOSE: A variável está definida como: PowerShell
-VERBOSE: Fim do script
-```
+## Aprofundamento:
 
-O parâmetro `-Verbose` permite a visualização das mensagens de debug. 
-
-## Mergulho Profundo:
-
-A impressão de debug possui uma longa história em programação que remonta ao primeiro software de computador. No contexto do PowerShell, o cmdlet `Write-Verbose` é geralmente utilizado para debug. Além disso, existe o `Write-Debug`, porém sua saída só é exibida se a preferência `$DebugPreference` estiver definida como 'Continue' ou 'Inquire'.
-
-Uma alternativa ao uso de `Write-Verbose` para debug com a impressão seria a utilização do Interactive PowerShell Debugger. Oferece funcionalidades mais sofisticadas, mas também tem uma maior curva de aprendizagem.
-
-No que diz respeito à implementação, `Write-Verbose` envia objetos para o pipeline de mensagem detalhada de comando, recomendado para mensagens que ajudam a compreender o comportamento de um comando sem modificar seu objecto de saída.
+Historicamente, imprimir saídas para depuração é uma das técnicas mais antigas e diretas. Alternativas no PowerShell incluem `Write-Verbose` e `Write-Information` para mais granularidade no controle de saída. Implementar saída de depuração é mais sobre o que você quer ver do que como você faz isso. Pensar cuidadosamente sobre *o que* imprimir é tão importante quanto saber *como* imprimir.
 
 ## Veja Também:
 
-Para saber mais sobre o assunto, veja os seguintes recursos:
-
-2. [Write-Verbose](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.1): Saiba mais sobre o cmdlet Write-Verbose.
+- Mais sobre preferências do PowerShell: [about_Preference_Variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_preference_variables)

@@ -1,7 +1,8 @@
 ---
-title:                "Skicka en http-begäran med grundläggande autentisering"
-html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
-simple_title:         "Skicka en http-begäran med grundläggande autentisering"
+title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
+date:                  2024-01-20T18:02:39.753224-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -11,41 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-
-Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att vi ber om resurser från en webbserver med användarnamn och lösenord. Programmerare gör detta för att åtkomst till vissa resurser endast borde ges till auktoriserade individer.
+Att skicka en HTTP-förfrågan med grundläggande autentisering betyder att du förmedlar användarnamn och lösenord säkert för att få tillgång till en resurs på webben. Programmerare gör detta för att interagera med webbtjänster som kräver inloggning.
 
 ## Hur man gör:
-
-Här visar vi hur man skickar en HTTP-begäran med grundläggande autentisering i Ruby med hjälp av `net/http`-biblioteket:
-
-```Ruby
+```ruby
 require 'net/http'
 require 'uri'
 
-uri = URI('http://example.com')
-req = Net::HTTP::Get.new(uri)
-req.basic_auth 'user', 'pass'
+uri = URI('http://example.com/secured/resource')
+username = 'anvandare'
+password = 'lösenord'
 
-res = Net::HTTP.start(uri.hostname, uri.port) {|http|
-  http.request(req)
-}
-puts res.body
+# Skapar ett HTTP-objekt och begär med grundläggande autentisering
+Net::HTTP.start(uri.host, uri.port) do |http|
+  request = Net::HTTP::Get.new(uri)
+  request.basic_auth(username, password)
+
+  response = http.request(request)
+  puts response.body
+end
+```
+Om svarskoden är `200`, blev förfrågan framgångsrik: 
+```
+Välkommen, du är nu inloggad.
+```
+Om `401`, misslyckades autentisering:
+```
+Ogiltig autentisering.
 ```
 
-I koden ovan skapar vi först en `URI`-instans. Sedan bygger vi en HTTP GET-förfrågan med grundläggande autentisering, sätter kontoinformationen till 'user' och 'pass'. Till sist skickar vi begäran och skriver ut responskroppen.
+## Fördjupning:
+Skicka HTTP-förfrågan med grundläggande autentisering har sitt ursprung i HTTP/1.0 och har följt med till HTTP/1.1. Det är standard men anses inte super-säkert, eftersom användarnamn och lösenord kodas med base64, vilket är lätt att dekoda. I modern tid används ofta robustare autentiseringssystem som OAuth. För grundläggande autentisering i Ruby, Net::HTTP-biblioteket kan hantera förfrågningar men för mer avancerade saker, överväg att använda bibliotek som RestClient eller HTTParty som smidigarbetet.
 
-## Djupdykning
-
-Grundläggande autentisering är en äldsta metod som används för att skydda webbresurser. Men det ger inte stark säkerhet och bör endast användas med HTTPS för att förhindra att autentiseringsuppgifter fångas upp.
-
-Som alternativ till `net / http`, finns det andra bibliotek såsom Faraday och HTTParty, som erbjuder mer funktionella gränssnitt för att skicka HTTP-förfrågningar. För komplicerade användsfall kan du också överväga att använda OAuth.
-
-När du skickar en förfrågan med grundläggande autentisering, läggs en `Authorization`-rubrik till HTTP-förfrågan med 'Basic' följt av bas64-kodade kontoinformationen.
-
-## Se också
-
-- [Ruby Basic Authentication](https://ruby-doc.org/stdlib-3.1.0/libdoc/net/http/rdoc/Net/HTTP.html#class-Net::HTTP-label-Basic+Authentication)
-- [Faraday](https://lostisland.github.io/faraday)
-- [HTTParty](https://github.com/jnunemaker/httparty)
-- [OAuth](https://oauth.net/)
-- [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) på Wikipedia.
+## Se Även:
+- Ruby's Net::HTTP dokumentation: https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html
+- HTTParty GitHub-resurs: https://github.com/jnunemaker/httparty
+- RestClient dokumentation: https://github.com/rest-client/rest-client

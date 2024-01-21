@@ -1,6 +1,7 @@
 ---
 title:                "Buscando y reemplazando texto"
-html_title:           "C: Buscando y reemplazando texto"
+date:                  2024-01-20T17:57:51.293126-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Buscando y reemplazando texto"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,32 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por Qué?
-La búsqueda y reemplazo de texto son acciones fundamentales en programación. Los programadores las hacen para modificar el texto de una forma controlada, por ejemplo, cambiar nombres de variables, eliminar espacios en blanco, o corregir errores tipográficos.
+## Qué y Por Qué?
 
-## Cómo hacer:
-A continuación, un ejemplo simple de cómo buscar y reemplazar texto en Gleam.
+Buscar y reemplazar texto es una tarea de edición común que permite cambiar una cadena de texto específica por otra. Los programadores la utilizan frecuentemente para corregir errores, actualizar nombres de variables o modificar datos en masa.
 
-```Gleam
+## Cómo:
+
+```gleam
 import gleam/string
 
-let mi_cadena = "Hola Mundo!"
-let nuevo_texto = string.replace(mi_cadena, "Hola", "Adiós")
-```
-La salida sería:
-
-```Gleam
-"Adiós Mundo!"
+fn main() {
+  let texto = "Hola, mundo! El mundo es amplio y vasto."
+  let nuevo_texto = string.replace(texto, "mundo", "universo")
+  nuevo_texto
+}
 ```
 
-## Inmersión Profunda
-La búsqueda y reemplazo de texto han sido parte integral de la programación desde su inicio. En el contexto histórico, la capacidad de buscar y reemplazar texto fue una mejora significativa en la eficiencia de la codificación.
+Salida esperada:
 
-Existen alternativas a la función `string.replace`, como utilizar expresiones regulares para un reemplazo más complejo.
+```
+"Hola, universo! El universo es amplio y vasto."
+```
 
-En cuanto a la implementación, básicamente, `string.replace` busca todas las ocurrencias de una subcadena y las reemplaza con una nueva subcadena.
+## Profundización
+
+Históricamente, la necesidad de buscar y reemplazar texto proviene de la edición de documentos y ha sido adaptada a la programación dada su versatilidad. En Gleam, la función `replace` de la biblioteca `string` es suficiente para casos simples. Alternativas incluyen expresiones regulares para patrones complejos y la manipulación de otros tipos de datos, como listas o registros. El rendimiento varía dependiendo del algoritmo y la estructura de datos subyacentes, pero en la mayoría de los casos, es una operación rápida y eficiente.
 
 ## Ver También
-Para más información acerca de la búsqueda y reemplazo de texto en Gleam, y usos más complejos de `string.replace`, consulte estos enlaces:
-- Documentación oficial de Gleam: [link](https://gleam.run/)
-- Manual de la biblioteca de cadenas Gleam: [link](https://github.com/gleam-lang/stdlib/tree/main/src/gleam/string.gleam)
+
+- Tutoriales de expresiones regulares en Gleam: insert_urls_to_relevant_tutorials
+- Artículo sobre la eficiencia del algoritmo de búsqueda y reemplazo: insert_relevant_article_url

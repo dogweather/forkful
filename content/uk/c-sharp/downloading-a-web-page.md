@@ -1,6 +1,7 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "Gleam: Завантаження веб-сторінки"
+date:                  2024-01-20T17:44:13.096766-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "C#"
 category:             "C#"
@@ -10,13 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та для чого?
-
-Завантаження веб-сторінки - це процес отримання даних веб-сторінки і запису їх на локальний пристрій. Програмісти це роблять, щоб аналізувати вміст веб-сторінки або використовувати контент веб-сайту в їх програмах.
+## Що це таке та навіщо?
+Завантаження веб-сторінки — це процес отримання її даних через інтернет. Програмісти це роблять, аби автоматизувати збір інформації, тестувати веб-служби чи створювати кеші сторінок.
 
 ## Як це зробити:
-
-Ось приклад коду, що використовує HttpClient, щоб завантажити вміст веб-сторінки:
+Отже, вам треба завантажити веб-сторінку в C#. Давайте скористаємося класом `HttpClient`. Це простий приклад:
 
 ```C#
 using System;
@@ -25,35 +24,40 @@ using System.Threading.Tasks;
 
 class Program
 {
-    static readonly HttpClient client = new HttpClient();
-
-    static async Task Main()
+    static async Task Main(string[] args)
     {
-        try
+        using (HttpClient client = new HttpClient())
         {
-            string responseBody = await client.GetStringAsync("http://www.example.com");
-
-            Console.WriteLine(responseBody);
-        }
-        catch (HttpRequestException e)
-        {
-            Console.WriteLine("Error: {0}", e.Message);
+            try
+            {
+                string url = "http://example.com";
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                
+                Console.WriteLine(responseBody);
+            }
+            catch (HttpRequestException e)
+            {
+                Console.WriteLine("\nException Caught!");
+                Console.WriteLine("Message :{0} ", e.Message);
+            }
         }
     }
 }
 ```
-Цей код у виводі надає HTML-код завантаженої веб-сторінки.
+Після запуску ви отримаєте HTML веб-сторінки на вашу консоль.
 
-## Глибше занурення:
+## Пірнання на глибину:
+У минулому програмісти часто використовували `WebClient` або `HttpWebRequest` для завантаження веб-сторінок, але `HttpClient` став кращим вибором через свою ефективність і простоту у використанні. `HttpClient` дозволяє легко обробляти запити і відповіді JSON, що робить його ідеальним для спілкування з REST API.
 
-Подібно до створення HTTP-клієнта, бібліотеки, такі як HtmlAgilityPack або ScrapySharp, були створені щоб допомогти програмістам легко аналізувати вміст HTML. З тих пір, як було створено HttpClient в .NET 4.5, він став основою для встановлення HTTP-з'єднань в більшості програм C#.
+Є альтернативи, наприклад, сторонні бібліотеки, як `RestSharp` чи `Flurl`, які надають додаткові функції і більш простий синтаксис. Тим не менш, для більшості базових завдань `HttpClient` - це все, що вам потрібно.
 
-В залежності від ваших потреб, є інші методи для завантаження веб-сторінок, такі як використання WebClient або HttpWebRequest.
+Ключеві моменти роботи з `HttpClient` включають управління життєвим циклом об'єкта, правильне використання асинхронного програмування для запобігання блокуванню потоків і використання `HttpResponseMessage` для перевірки результатів запитів.
 
-HttpClient був створений з метою поліпшення процесу встановлення з'єднань за допомогою HTTP. Висока продуктивність і швидкість справили свою справу, і він став стандартом в програмуванні на C#.
-
-## Див. також:
-
-1. [MSDN HttpClient Class](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient)
-3. [ScrapySharp](https://github.com/rflechner/ScrapySharp)
-4. [HtmlAgilityPack](https://html-agility-pack.net/)
+## Ось також:
+- [HttpClient Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
+- [Async Programming in C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)
+- [`HttpResponseMessage` Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpresponsemessage)
+- [RestSharp GitHub](https://github.com/restsharp/RestSharp)
+- [Flurl GitHub](https://github.com/tmenier/Flurl)

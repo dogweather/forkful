@@ -1,7 +1,8 @@
 ---
-title:                "Laste ned en nettside"
-html_title:           "Elixir: Laste ned en nettside"
-simple_title:         "Laste ned en nettside"
+title:                "Nedlasting av en nettside"
+date:                  2024-01-20T17:44:36.351315-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Nedlasting av en nettside"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -11,41 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å laste ned en webside betyr å hente HTML-innholdet fra en URL og lagre det på din egen datamaskin. Programmerere gjør dette for å analysere innholdet, lage backups eller jobbe med data uten nettforbindelse.
 
-Nedlasting av en webside er prosessen med å kopiere og bevare innholdet på en side, fra serveren til din lokale maskin. Dette vil ofte bli gjort for å analysere eller behandle dataen på siden, for eksempel snarveier, priser, tekst og mer.
+## Slik gjør du:
+Ruby gjør det enkelt å laste ned en nettside. Her er et kort eksempel ved bruk av `net/http`-biblioteket:
 
-## Hvordan?
+```ruby
+require 'net/http'
+require 'uri'
 
-Her viser vi hvordan benytte biblioteket 'open-uri' for Ruby.
+uri = URI('https://www.example.com')
+response = Net::HTTP.get(uri)
 
-```Ruby
-require 'open-uri'
-
-URL = 'https://www.example.com'
-
-begin
-  web_content = URI.open(URL).read
-  puts web_content
-rescue => e
-  puts "Feil oppstod: #{e}"
-end
+puts response # Skriver ut HTML-innholdet til konsollen
 ```
 
-Når du kjører denne koden, vil den laste ned og skrive ut innholdet på siden www.example.com. Hvis den finner på feil i processen, vil den skrive ut en feilmelding.
+Sample output:
+```
+<!doctype html>
+<html>
+<head>
+    <title>Eksempel Domene</title>
+...
+</html>
+```
 
-## Dypdykk
+## Dypdykk:
+Tidligere var det vanlig å bruke biblioteker som `open-uri` for å laste ned nettsider, men `net/http` har blitt standard for å håndtere HTTP-forespørsler i Ruby. Alternativer inkluderer eksterne gems som `httparty` eller `rest-client` for de som ønsker ekstra funksjonalitet eller et mer forenklet API.
 
-Historisk har programmerere lastet ned websider ved hjelp av HTTP forespørsler. Selv om dette fortsatt er en gyldig metode, gjør biblioteker som 'open-uri' i Ruby det lettere ved å håndtere detaljene for oss.
+Implementering med `net/http` gir god kontroll over HTTP-forespørsler, men kan virke overveldende for nye brukere. Det er grunnen til populariteten til alternativene som tilbyr en høyere abstraksjonsnivå.
 
-Alternative metoder inkluderer bruk av andre biblioteker som 'Net::HTTP' eller 'HTTParty', som gir flere alternativer for tilpasning. 
-
-Skulle du ha behov for å laste ned store deler av en nettside, bør du benytte 'robots.txt' for å respektere nettsidens regler. Og husk å alltid respektere opphavsretten til innholdet du laster ned.
-
-## Se også:
-
-For mer informasjon, se følgende lenker:
-
-- Dokumentasjon for 'open-uri': https://ruby-doc.org/stdlib-3.0.2/libdoc/open-uri/rdoc/OpenURI.html
-- Blogginnlegg om bruk av 'Net::HTTP': https://www.rubyguides.com/2012/01/nethttp-tutorial/
-- Dokumentasjon for 'HTTParty': https://www.rubydoc.info/github/jnunemaker/httparty
-- Guide for 'robots.txt': https://developers.google.com/search/docs/advanced/robots/intro
+## Se Også:
+- Ruby's Net::HTTP dokumentasjon: https://ruby-doc.org/stdlib-3.1.0/libdoc/net/http/rdoc/Net/HTTP.html
+- HTTParty gem: https://github.com/jnunemaker/httparty
+- RestClient gem: https://github.com/rest-client/rest-client
+- Web scraping guide for Ruby: https://www.nokogiri.org/tutorials/parsing_an_html_xml_document.html

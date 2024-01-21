@@ -1,7 +1,8 @@
 ---
-title:                "Générer des nombres aléatoires"
-html_title:           "Elixir: Générer des nombres aléatoires"
-simple_title:         "Générer des nombres aléatoires"
+title:                "Génération de nombres aléatoires"
+date:                  2024-01-20T17:49:15.650570-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Génération de nombres aléatoires"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Numbers"
@@ -10,33 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi et Qu'est-ce que c'est?
-
-Générer des nombres aléatoires c'est créer des nombres qui n'ont aucune connexion ou prédiction logique avec le nombre précédent. Les programmes qui nécessitent une certaine imprévisibilité ou des variations, comme les jeux ou les simulations, l'utilisent.
+## Quoi & Pourquoi ?
+Les nombres aléatoires en JavaScript, c'est comme jeter des dés en ligne de code. On en a besoin pour tout ce qui doit être imprévisible : jeux, simulations, tests ou sécurité informatique.
 
 ## Comment faire :
+Pour tirer un nombre au hasard entre 0 (inclus) et 1 (exclus) :
 
-Voici comment générer un nombre aléatoire entre 1 et 100 en JavaScript:
-
-```JavaScript 
-let numAleatoire = Math.floor(Math.random() * 100) + 1;
-console.log(numAleatoire);
+```Javascript
+let random = Math.random();
+console.log(random); // 0.54321 par exemple
 ```
 
-Cela affichera un nombre aléatoire entre 1 et 100 chaque fois que vous exécutez le code.
+Pour obtenir un nombre aléatoire entre deux valeurs, min et max :
 
-## Plongée en profondeur 
+```Javascript
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+console.log(getRandomArbitrary(1, 10)); // 6.4321 par exemple
+```
 
-Historiquement, générer des nombres vraiment aléatoires était un défi pour les premiers programmes informatiques. Aujourd'hui, JavaScript fournit une méthode intégrée `Math.random()` pour ce faire.
+Si tu veux un entier, pas des décimales :
 
-En termes d'alternatives, si vous avez besoin de nombres aléatoires suivant une certaine distribution (comme la distribution normale), vous devrez utiliser des bibliothèques supplémentaires ou écrire votre propre fonction.
+```Javascript
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+console.log(getRandomInt(1, 10)); // 4 par exemple
+```
 
-Le `Math.random()` en JavaScript produit une suite de données pseudo-aléatoires et utilise un algorithme qui démarre à partir de la 'graine' initiale. Le changement de cette graine produira une pagination différente des nombres aléatoires. Sans graine spécifiée, JavaScript utilise la date et l'heure actuelles.
+## Immersion :
+Historiquement, la génération de nombres aléatoires en informatique a involu dès les premiers ordinateurs. Le vrai "aléatoire" est quasi-impossible à obtenir par des machines, donc on utilise des algorithmes pour des approximations.
 
-## Voir Aussi 
+Les méthodes changent selon les besoins. Parfois, tu veux du vrai aléa, dit "cryptographiquement sécurisé". Pour ça, en JavaScript, tu peux utiliser `crypto.getRandomValues()`. C'est plus complexe, surtout si tu débutes, mais bon à savoir.
 
-Here are some useful articles and references to experiment with random numbers:
+Détail d'implémentation : `Math.random()` utilise un générateur de nombres pseudo-aléatoires. Ce n'est pas idéal pour la sécurité car le processus est en fait prévisible avec assez d'infos. Mais pour la plupart des usages, c'est suffisant.
 
-1. [`Math.random()` MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-2. [Generating Random Numbers in JavaScript](https://medium.com/@josephcardillo/generating-random-numbers-in-javascript-1173526d498b)
-3. [JavaScript Random game-projects](https://www.w3schools.com/js/js_random.asp)
+## Voir aussi :
+- [MDN Web Docs - Math.random()](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [MDN Web Docs - crypto.getRandomValues()](https://developer.mozilla.org/fr/docs/Web/API/Crypto/getRandomValues)

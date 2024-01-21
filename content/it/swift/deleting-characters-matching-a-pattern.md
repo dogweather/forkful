@@ -1,7 +1,8 @@
 ---
-title:                "Eliminazione dei caratteri corrispondenti a un modello"
-html_title:           "PowerShell: Eliminazione dei caratteri corrispondenti a un modello"
-simple_title:         "Eliminazione dei caratteri corrispondenti a un modello"
+title:                "Eliminazione di caratteri che corrispondono a un pattern"
+date:                  2024-01-20T17:43:00.924306-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,35 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Cancellare i caratteri corrispondenti a un modello in Swift
+## What & Why?
+Rimuovere caratteri corrispondenti a un pattern significa filtrare una stringa eliminando tutti i caratteri o gruppi di caratteri che rientrano in un criterio specifico. I programmatori lo fanno per pulire i dati, per validazione o per formattare l'output in modo coerente.
 
-## Che cosa e perché?
-
-Cancellare caratteri corrispondenti a un modello significa eliminare specifici caratteri da una stringa basandosi su una regola o un "modello". I programmatori lo fanno per pulire o manipolare i dati.
-
-## Come fare:
-
-Ecco un esempio di come cancellare i caratteri corrispondenti a un modello in Swift:
+## How to:
+Utilizzeremo `NSRegularExpression` per trovare pattern nei caratteri e `String` methods per eliminarli:
 
 ```Swift
-let string = "Ciao Mondo123"
-let modello = "[0-9]" // vogliamo eliminare tutti i numeri
-let risultato = string.replacingOccurrences(of: modello, with: "", options: .regularExpression)
-print(risultato) // Stampa: "Ciao Mondo"
+import Foundation
+
+func deleteMatchingCharacters(from string: String, pattern: String) -> String {
+    let regex = try! NSRegularExpression(pattern: pattern)
+    let range = NSRange(location: 0, length: string.utf16.count)
+    return regex.stringByReplacingMatches(in: string, options: [], range: range, withTemplate: "")
+}
+
+let originalString = "Ciao, io sono il Developer123!"
+let cleanedString = deleteMatchingCharacters(from: originalString, pattern: "\\d")
+
+print(cleanedString) // Output: "Ciao, io sono il Developer!"
 ```
 
-In questo caso, il modello sta cercando qualsiasi numero da 0 a 9 nella stringa. Quindi, tutti i numeri vengono eliminati dalla stringa.
+Ecco, caratteri indesiderati spariti. Ricorda di gestire gli errori nella vita reale, non usare `try!`.
 
-## Approfondimento
+## Deep Dive
+In Swift, `NSRegularExpression` ha ereditato il suo posto dalla suite di strumenti di Objective-C. Le regex sono un modo potente ma complesso per cercare pattern nei testi, e abusarne può portare a prestazioni lente. 
 
-**Contesto storico**: la possibilità di eliminare caratteri corrispondenti a un modello è una funzione che esiste da molto tempo nei linguaggi di programmazione, derivata dal concetto di espressioni regolari (o regex).
+Un'alternativa? `String` methods come `filter` o `replacingOccurrences`. Sono più semplici da usare ma meno potenti. Il context storico ci mostra che la scelta dipendeva dal linguaggio: le regex dominavano in Perl, meno in C. Oggi, in Swift, abbiamo scelte.
 
-**Alternative**: Swift fornisce altre funzioni per la manipolazione delle stringhe, come `removeAll(where:)` che può essere usato per ottenere un risultato simile se non è necessario un pattern specifico.
+Dettagli di implementazione? Le regex utilizzano automi e espressioni regolari teoriche. Capirli richiede tempo ma ti rende un mago delle stringhe!
 
-**Dettagli implementativi**: La funzione `replacingOccurrences(of:with:options:)` ricerca tutte le occorrenze del modello e le sostituisce con la stringa fornita. Se non si desidera sostituire con nulla, è possibile fornire una stringa vuota "".
-
-## Vedere anche:
-
-- Espressioni regolari in Swift: [NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- Funzioni di manipolazione delle stringhe in Swift: [String](https://developer.apple.com/documentation/swift/string)
-- Modelli di caratteri in regex: [Character Classes in Regular Expressions](https://www.regular-expressions.info/charclass.html)
+## See Also
+- [NSRegularExpression Documentation](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Swift String Documentation](https://developer.apple.com/documentation/swift/string)
+- [Lezione sulle Regular Expressions](https://www.raywenderlich.com/5765-regular-expressions-tutorial-getting-started)

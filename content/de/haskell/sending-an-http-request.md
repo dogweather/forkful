@@ -1,7 +1,8 @@
 ---
-title:                "Eine HTTP-Anforderung senden"
-html_title:           "Bash: Eine HTTP-Anforderung senden"
-simple_title:         "Eine HTTP-Anforderung senden"
+title:                "Einen HTTP-Request senden"
+date:                  2024-01-20T17:59:49.199568-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Einen HTTP-Request senden"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -11,27 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Ein HTTP-Anfrage ist die Art und Weise, wie wir Informationen von Webservern abrufen oder dorthin senden. Programmierer machen das, um Daten aus APIs zu extrahieren, Formulare zu senden, Webseiten zu crawlen und noch viel mehr.
+HTTP-Anfragen ermöglichen die Kommunikation mit Web-Servern: Daten anfragen oder senden. Programmierer brauchen das für Web-Interaktionen, APIs und Services.
 
-## Wie geht das?
-Zur Demonstration verwenden wir `http-conduit`, eine einfache und leistungsfähige Haskell-Bibliothek für HTTP-Anfragen.
+## So geht's:
+In Haskell benutzt man oft die Bibliothek `http-client` für HTTP-Anfragen. Hier ein einfaches Beispiel:
 
-```Haskell 
-import Network.HTTP.Conduit
-import qualified Data.ByteString.Lazy as L
+```Haskell
+import Network.HTTP.Client
+import Network.HTTP.Types.Status (statusCode)
 
+main :: IO ()
 main = do
-  simpleHttp "http://example.com" >>= L.writeFile "example.html"
+    manager <- newManager defaultManagerSettings
+    request <- parseRequest "http://httpbin.org/get"
+    response <- httpLbs request manager
+    putStrLn $ "Statuscode: " ++ (show . statusCode . responseStatus $ response)
+    putStrLn $ "Antwortkopf: " ++ (show . responseHeaders $ response)
+    print $ responseBody response
 ```
-Hierbei erstellen und senden wir eine einfache GET-Anfrage zu `http://example.com` und speichern die Antwort als `example.html`.
 
-## Tiefere Einblicke
-**1. Historischer Kontext:**  HTTP-Anfragen sind ein fundamentales Konzept des Internets und wurden in den frühen 90er Jahren mit der Entwicklung des World Wide Web populär.
+Ausgabe könnte so aussehen:
 
-**2. Alternativen:** Es gibt mehrere Bibliotheken, die Sie in Haskell für HTTP-Anfragen verwenden könnten, wie `http-client`, `wreq` und `req`.
+```
+Statuscode: 200
+Antwortkopf: [("Content-Type", "application/json"), ...]
+{ "args": {}, ... }
+```
 
-**3. Implementierungsdetails:** Der Code „http-conduit“ führt viele Dinge im Hintergrund durch, einschließlich der Verwaltung von Verbindungen, Redirections und SSL/TLS-Verschlüsselung.
+## Deep Dive:
+`http-client` ist praktisch der Standard in Haskell für HTTP. Früher gab es `HTTP`. `http-client` ist moderner, flexibler. Es unterstützt auch HTTPS, automatisches Handling von Cookies und umfassende Konfigurationsmöglichkeiten.
 
-## Mehr Informationen
-- [http-conduit auf Stackage](https://www.stackage.org/package/http-conduit) 
-- [HTTP-Anfrage/Response in Haskell](https://wiki.haskell.org/Web/Libraries)
+Funktionell gesehen, sendet `httpLbs` eine "lazy" ByteString Antwort zurück – praktisch für große Daten. Alternative Libraries wie `Wreq` oder `Req` bieten ähnliche Funktionalitäten mit etwas anderen API-Designs.
+
+Um nur zu schießen und zu vergessen, gibt es `httpNoBody` – keine Antwortdaten, nur der Status-Code. Für umfangreichere Interaktionen kann man `Request`-Objekte anpassen: Headers setzen, Request-Methode ändern usw.
+
+## Siehe Auch:
+- `http-client` Dokumentation: https://www.stackage.org/package/http-client
+- `Wreq`: http://www.serpentine.com/wreq/
+- `Req`: https://hackage.haskell.org/package/req
+- Real World Haskell Buch, HTTP Kapitel: http://book.realworldhaskell.org/read/programming-with-monads.html#id664176

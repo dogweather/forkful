@@ -1,7 +1,8 @@
 ---
-title:                "기본 인증을 이용한 HTTP 요청 보내기"
-html_title:           "Arduino: 기본 인증을 이용한 HTTP 요청 보내기"
-simple_title:         "기본 인증을 이용한 HTTP 요청 보내기"
+title:                "기본 인증을 사용한 HTTP 요청 보내기"
+date:                  2024-01-20T18:02:13.640998-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "기본 인증을 사용한 HTTP 요청 보내기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,35 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜필요한가?
-기본 인증이 포함된 HTTP 요청 전송은 서버에 보안성이 요구되는 정보를 전달하는 도구입니다. 프로그래머는 이를 통해 시스템 보안에 기여하며, 인증된 사용자만 선택된 자원에 액세스하도록 할 수 있습니다.
+## What & Why? (무엇과 왜?)
+HTTP 요청을 Basic 인증과 함께 보내는 것은 사용자 이름과 비밀번호를 사용하여 서버에 안전하게 인증하는 과정입니다. 개발자들은 일반적으로 보안이 필요한 데이터에 접근할 때 이 방법을 사용합니다.
 
-## 어떻게 하는가:
-Haskell에서는 "http-client" 및 "http-conduit" 라이브러리를 사용하여 HTTP 요청을 전송합니다. 기본 인증을 위해 "applyBasicAuth" 함수를 사용합니다. 아래에 기본 인증과 함께 GET요청을 전송하는 코드 예시를 보여주겠습니다.
+## How to: (방법)
+Haskell에서 HTTP 요청을 보내고 Basic 인증을 처리하는 간단한 예시입니다:
 
 ```Haskell
 import Network.HTTP.Simple
-import Network.HTTP.Client (applyBasicAuth)
+import Data.ByteString.Base64 (encode)
 
-getWithBasicAuth :: IO ()
-getWithBasicAuth= do
-    req <- parseRequest "http://example.com"
-    let req' = applyBasicAuth "username" "password" req
-    response <- httpLBS req'
-    print $ getResponseStatus response
+-- 사용자 이름과 비밀번호로 Basic 인증 헤더 생성
+createBasicAuth :: String -> String -> String
+createBasicAuth username password =
+    "Basic " ++ (decodeUtf8 . encode . encodeUtf8) (username ++ ":" ++ password)
+
+-- HTTP 요청을 보내고 결과를 출력
+makeRequest :: IO ()
+makeRequest = do
+    let authHeader = createBasicAuth "your_username" "your_password"
+    let request = setRequestHeader "Authorization" [encodeUtf8 . pack $ authHeader]
+                $ "http://example.com/protected"
+    response <- httpBS request
+    print $ getResponseBody response
+
+-- 함수 호출
+main :: IO ()
+main = makeRequest
 ```
-위 코드를 실행하면, 인증 후 서버의 응답 상태 코드가 출력됩니다.
 
-## 깊이 있는 이해:
-기본 인증은 웹의 초기 단계에서 시작되었습니다. 이 기술은 사용자 이름과 비밀번호를 Base64 인코딩하여 "Authorization" 헤더에 추가하는 방식으로 동작합니다. 단순함에도 불구하고, 네트워크상에서 패킷을 가로챌 수 있는 위험 때문에 이미 SSL/TLS와 같은 보안 계층과 함께 사용되는 것이 일반적입니다.
+이 코드를 실행하면, 서버로부터의 응답이 프린트됩니다.
 
-Haskell의 "http-client"와 "http-conduit"는 HTTP 통신작업을 쉽게 해주는 라이브러리입니다. "applyBasicAuth"는 이를 더욱 쉽게 돕는 함수로, 인증처리를 위해 요청에 필요한 헤더를 적절히 추가해줍니다. 대안으로는 JWT, OAuth가 있는데, 이들은 각각 JSON 기반의 열람 권한 발급 및 사이트 간 권한 부여를 위한 개방형 표준입니다.
+## Deep Dive (심층 분석)
+Basic 인증은 HTTP 프로토콜의 가장 오래된 인증 메커니즘 중 하나입니다. 명백한 간결함에도 불구하고, SSL/TLS 암호화와 결합되지 않으면 취약점이 있으므로 주의해야 합니다. 대안으로는 OAuth, API 키, 또는 토큰 기반 인증 방법들이 있습니다.
 
-## 관련 자료:
-Haskell에 대한 추가 학습이 필요하다면 다음 자료를 참고하십시오.
+Basic 인증 구현은 `Authorization` 헤더에 `Basic` 후에 Base64로 인코딩된 `username:password` 문자열을 추가함으로써 수행됩니다. Haskell에서는 `Data.ByteString.Base64` 모듈을 활용하여 인코딩할 수 있으며, `Network.HTTP.Simple` 라이브러리를 통해 HTTP 요청을 쉽게 조작할 수 있습니다.
 
-[Haskell 공식 사이트](https://www.haskell.org/)
-
-[http-conduit Github](https://github.com/snoyberg/http-client)
-
-[인증에 대한 Mozilla 개발자 네트워크 문서](https://developer.mozilla.org/ko/docs/Web/HTTP/Authentication)
+## See Also (참고 자료)
+- HTTP 프로토콜에 대한 RFC 7235: https://tools.ietf.org/html/rfc7235
+- The Haskell `http-conduit` package documentation: https://hackage.haskell.org/package/http-conduit
+- Basic 인증에 대한 MDN 설명: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication

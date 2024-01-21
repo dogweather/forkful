@@ -1,6 +1,7 @@
 ---
 title:                "Concatenating strings"
-html_title:           "PHP recipe: Concatenating strings"
+date:                  2024-01-20T17:35:08.769721-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Concatenating strings"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,39 +12,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Concatenating strings involves connecting two or more strings into one, akin to joining sentences. It is essential for programmers to make informative outputs, weave together sentences, format data, or build command strings.
+Concatenating strings means sticking them together end-to-end to make a new one. Programmers do it to build up text dynamically, like creating messages or generating code.
 
 ## How to:
+In Lua, you concatenate strings with the `..` operator. Let's see it in action:
 
-String concatenation in Lua uses the `..` operator. Here's a straightforward example.
+```lua
+local hello = "Hello, "
+local world = "world!"
+local greeting = hello .. world
 
-```Lua
-string1 = "Hello, "
-string2 = "world!"
-concatenated_string = string1 .. string2
-print(concatenated_string)
+print(greeting)  -- Output: Hello, world!
 ```
 
-The output will be:
+You can even tack on numbers with a little coercion:
 
-```Lua
-Hello, world!
+```lua
+local base = "I have "
+local itemCount = 3
+local message = base .. itemCount .. " apples"
+
+print(message)  -- Output: I have 3 apples
 ```
 
-Notice that we had to include a space after "Hello," in the string1 to get the right output format. Otherwise, there would be no space between "Hello," and "world!".
+Remember, conversion of non-string types is manual:
+
+```lua
+local score = 9001
+local displayScore = "Your score is: " .. tostring(score)
+
+print(displayScore)  -- Output: Your score is: 9001
+```
 
 ## Deep Dive
+String concatenation might seem mundane, but it's vital. In Lua's early days, it was intended for embedded systems, which meant keeping things light. That's why `..` was chosen for strings - it's simple yet effective.
 
-Historically, Lua's simplicity was geared for embedding in applications. It's still the case with its '..' operator for concatenation, providing an alternative to '+' which usually means addition in most programming languages.
+Alternatives to `..` include:
 
-Alternatives to concatenation in Lua are functions like 'string.format' and 'table.concat'. 'string.format' is similar to printf in C, and 'table.concat' deals with concatenation of table elements.
+- `table.concat` function for arrays of strings, more efficient for concatenating many strings.
+- String library functions like `string.format`, offering more control over formatting.
 
-From an implementation perspective, string concatenation can be slightly costly, especially when done in large volumes. Lua creates a new string when two strings are concatenated, as Lua strings are immutable, similar to Python and Java. Efficient concatenation can be achieved through StringBuffer pattern (like in Java) or table-structured strings to avoid constantly creating new strings.
+Lua's string concatenation performance was a concern, specifically with `..` because each use creates a new string, which can be costly in loops. To mitigate this, when concatenating in a loop, use tables:
+
+```lua
+local parts = {}
+for i = 1, 10 do
+    parts[i] = "Part " .. i
+end
+local combined = table.concat(parts, ", ")
+
+print(combined)  -- Output: Part 1, Part 2, ... Part 10
+```
+
+Internally, Lua manages strings in a hash table to optimize memory usage, so identical strings share the same storage. But, concatenation breaks this sharing because of the new strings it creates.
 
 ## See Also
-
-For more in-depth knowledge, refer to the official Lua documentation:
-- String usage: https://www.lua.org/pil/2.5.html
-- Lua's functions: https://www.lua.org/pil/2.4.html
-- Efficient string concatenation: https://www.lua.org/gems/sample.pdf
+- Lua's official documentation on strings: https://www.lua.org/manual/5.4/manual.html#6.4
+- Programming in Lua (Book): https://www.lua.org/pil/contents.html
+- String manipulation tips: https://lua-users.org/wiki/StringLibraryTutorial

@@ -1,6 +1,7 @@
 ---
 title:                "Enviando una solicitud http con autenticación básica"
-html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
+date:                  2024-01-20T18:01:22.390881-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,27 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-El envío de un pedido HTTP con autenticación básica es un proceso en el que un cliente solicita un recurso protegido al proporcionar credenciales. Los programadores lo hacen para acceder a recursos de manera segura en la web, evitando accesos no autorizados.
+## Qué y por qué?
 
-## ¿Cómo hacerlo?
-La Fish Shell facilita el envío de solicitudes HTTP con autenticación básica. Veamos cómo se hace:
+Enviar una solicitud HTTP con autenticación básica es cuando accedemos a recursos protegidos en la web usando un nombre de usuario y contraseña. Programadores lo hacen para interactuar con APIs seguras o acceder a contenido restringido automáticamente.
 
-```Fish Shell
-set cURLUser 'usuario'
-set cURLPassword 'contraseña'
-set URL 'https://unrecursoseguro.com'
+## Cómo hacerlo:
 
-curl -u $cURLUser:$cURLPassword $URL
+### Enviar solicitud básica usando `curl` en Fish:
+
+```fish
+set -x AUTH (echo -n "usuario:contraseña" | base64)
+curl -H "Authorization: Basic $AUTH" https://ejemplo.com/recurso
 ```
-Este comando intentará recuperar los recursos de la URL ingresada utilizando las credenciales especificadas.
 
-## Profundizando
-Históricamente, la autenticación básica ha sido una de las formas más simples de implementar la autenticación en HTTP. Sin embargo, seguramente habrás escuchado de alternativas más seguras, como OAuth y JWT, ya que la autenticación básica expone las contraseñas en texto plano sobre el tráfico de red.
+### Salida de muestra:
 
-En Fish Shell, el envío de solicitudes HTTP con autenticación básica se implementa utilizando el comando `curl`. Aquí, las credenciales se pasan mediante el argumento `-u`, seguido del nombre de usuario y la contraseña separados por dos puntos.
+```fish
+{
+  "id": 123,
+  "content": "Datos protegidos"
+}
+```
 
-## Ver también
-Para aprender más sobre el uso de Fish Shell y el envío de solicitudes HTTP con autenticación básica, puedes visitar las siguientes fuentes:
+## Profundización
 
-- [Guía de cURL para solicitudes HTTP](https://ec.haxx.se/http/http-auth)
+La autenticación básica en HTTP es un método de acceso a servicios web desde los principios del internet. No es la más segura, ya que las credenciales se envían en base64, fácil de decodificar. Alternativas modernas incluyen OAuth y tokens de portador (Bearer tokens), que son más robustos.
+
+Implementar autenticación básica en Fish no difiere mucho de otros shells. Usa `curl` con encabezados HTTP para pasar credenciales codificadas. Fish ofrece un enfoque limpio y script-friendly, favoreciendo la claridad sobre la verbosidad.
+
+## Véase también
+
+- Documentación de `curl`: https://curl.se/docs/
+- RFC 7617, 'The 'Basic' HTTP Authentication Scheme': https://tools.ietf.org/html/rfc7617
+- Guía de Autenticación HTTP: https://developer.mozilla.org/es/docs/Web/HTTP/Authentication

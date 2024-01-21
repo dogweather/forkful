@@ -1,6 +1,7 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Arduino: Lese kommandolinjeargumenter"
+date:                  2024-01-20T17:55:58.007157-07:00
+model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,39 +12,81 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Kommandolinjeargumenter lar brukere påvirke et programs oppførsel ved oppstart. Vi bruker det for å tilpasse kjøringen av koden uten å endre selve programmet.
 
-Kommandolinje argumenter er innspill som blir gitt til et program når det kjøres, som brukes til å tilpasse programmets oppførsel. Programmerere bruker det for å gjøre programmer fleksible og enkle å tilpasse forskjellige bruksområder.
-
-## Hvordan å:
-
-Elm (nåværende versjon) støtter dessverre ikke kommandolinje-argumenter direkte. Men du kan bruke JavaScript interopp for å lese argumentene i stedet.
+## Slik gjør du:
+Elm er primært en språk for webapplikasjoner og det kjører i nettleseren, ikke direkte i terminalen. Men du kan bruke JavaScript interoperability, kjent som ports, for å bygge en Elm-applikasjon som kommuniserer med Node.js for å håndtere kommandolinjeargumenter:
 
 ```Elm
 port module Main exposing (..)
 
-port sendFlags : List String -> Cmd msg
+import Json.Decode as Decode
+import Html
+
+-- Definerer en port for å sende kommandolinjeargumentene til Elm fra JavaScript
+port cmdArgs : (List String -> msg) -> Sub msg
+
+-- Applikasjonsmodel
+type alias Model =
+    { args : List String }
+
+-- Initialiserer modellen med en tom liste
+init : Model
+init =
+    { args = [] }
+
+-- Abonnerer på kommandolinjeargumenter
+subscriptions : Model -> Sub msg
+subscriptions model =
+    cmdArgs NewArgs
+
+-- Oppdaterer modell med argumentene
+type Msg
+    = NewArgs (List String)
+
+update : Msg -> Model -> Model
+update msg model =
+    case msg of
+        NewArgs args ->
+            { model | args = args }
+
+-- Viser argumentene
+view : Model -> Html.Html Msg
+view model =
+    Html.text (String.join ", " model.args)
+
+-- Enkel Elm-hovedfunksjon
+main : Program () Model Msg
+main =
+    Html.program
+        { init = (init, Cmd.none)
+        , view = view
+        , update = update
+        , subscriptions = subscriptions
+        }
 ```
-
-Ovenstående kodeeksempel definerer en interfond til JavaScript-verdenen for å sende argumenter som en liste med strenger.
-
-Du ville deretter kalle "sendFlags" fra JavaScript, noe slik:
+For JavaScript-koden som interopererer med Elm og Node.js, kan du bruke noe som dette:
 
 ```JavaScript
+const { Elm } = require('./elm.js');
+
 const app = Elm.Main.init();
 
-app.ports.sendFlags.send(process.argv);
+// Sender kommandolinjeargumentene til Elm
+const args = process.argv.slice(2);
+app.ports.cmdArgs.send(args);
 ```
 
-## Dypere Dykk
+## Dypdykk
+Å lese kommandolinjeargumenter i Elm direkte er ikke mulig fordi Elm kjører i nettleseren. I tidlige stadier handlet Elm hovedsakelig om ren funksjonell programmering for frontend-utvikling. Den tradisjonelle måten å håndtere kommandolinjeargumenter på skrivebordet ville vært terminalbaserte språk som Python eller Bash.
 
-Historisk sett har ikke Elm-støtte for kommandolinje-argumenter vært et prioritert trekk. Dette skyldes hovedsakelig at Elm er ment for frontend-utvikling, hvor kommandolinje-argumenter er mindre relevante.
+Men med Elm og Node.js kan du omgå denne begrensningen. Ports i Elm tillater toveis kommunikasjon med JavaScript, som igjen kan håndtere kommandolinjeargumentene i Node.js. Dette er et kraftfullt mønster som lar Elm-applikasjoner dra nytte av Node.js' server-side evner, inkludert lesing av kommandolinjeargumenter.
 
-Som et alternativ kan programmerere bruke Elm sin interop-funksjonalitet for å koble til JavaScript, som har full støtte for kommandolinje-argumenter.
+Et annet alternativ for å nå utenfor nettleseren med Elm har vært å bruke "elm-serverless", som lar utviklere deploye Elm kode som serverless funksjoner på infrastrukturer som AWS Lambda. Dette gir en spennende blanding av funksjonell renhet og sky-muligheter.
 
-Selv om det er mulig å bruke kommandolinje-argumenter i Elm via JavaScript, er det viktig å merke seg at dette kan føre til en mer kompleks kodebase. Dette skyldes at man må administrere kommunikasjonen mellom Elm og JavaScript, og også ta hånd om eventuelle feil og unntak som kan oppstå i prosessen.
+Implementasjonsdetaljer innebærer vanligvis å bruke `Node.js` sammen med Elm, hvor `Node.js` håndterer kommandolinjen og Elm kjører webapplogikken. Elm-koden og Node.js-snippeten må kobles sammen med en port-definisjon som vet hvordan den skal oversette informasjonen mellom de to miljøene.
 
-## Se Også:
-
-- Elm dokumentasjon: samsyn med JavaScript: https://guide.elm-lang.org/interop/
-- Forstå Javascript og Node.js kommandolinje-argumenter: https://flaviocopes.com/node-command-line-args/
-- Alternativer for å klare argumenter i JavaScript: https://www.npmjs.com/package/commander
+## Se også
+- Elm Ports dokumentasjon: https://guide.elm-lang.org/interop/ports.html
+- Node.js prosessdokumentasjon: https://nodejs.org/api/process.html#process_process_argv
+- "elm-serverless" for å lage serverless applikasjoner med Elm: https://www.elm-serverless.com/

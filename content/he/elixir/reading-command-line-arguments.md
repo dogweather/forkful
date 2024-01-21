@@ -1,7 +1,8 @@
 ---
-title:                "קריאה של ארגומנטים משורת הפקודה"
-html_title:           "C#: קריאה של ארגומנטים משורת הפקודה"
-simple_title:         "קריאה של ארגומנטים משורת הפקודה"
+title:                "קריאת פרמטרים משורת הפקודה"
+date:                  2024-01-20T17:55:44.496655-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "קריאת פרמטרים משורת הפקודה"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -11,29 +12,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-ערכים של command line הם מידע אותו המשתמש מעביר לתוכנה דרך ה CLI (Command Line Interface). מתכנתים נוהגים לשלב קריאת ערכים של command line כדי להציג תוצאות מבוססות-אינפוט ולשלוט על תהליכים פנימיים של התוכנה.
+קריאת ארגומנטים מקו הפקודה היא הדרך שבה תוכנית קולטת קלט מהמשתמש בעת הפעלתה. תכניתאים עושים זאת כדי להתאים את התוכנית לצרכים ספציפיים בכל הפעלה, בלי לשנות את הקוד עצמו.
 
-## איך לקרוא:
-הנה משל לקוד של Elixir שקורא ערכי command line:
+## איך לעשות:
 ```Elixir
- defmodule MyApp do
+# קובץ main.exs
+defmodule CLIApp do
   def main(args) do
     IO.inspect(args)
   end
- end
-```
-אם ניקח לדוגמא את הפלט:
-```bash
-$ elixir my_app.exs arg1 arg2 arg3
+end
+
+# בשורת הפקודה:
+elixir main.exs arg1 arg2 arg3
+# פלט
 ["arg1", "arg2", "arg3"]
 ```
-הקוד הפשוט לעיל מדפיס את כל הארגומנטים שהמשתמש האריך.
 
-## צלילה עמוקה
-בעבר, פרוטוקולים שונים נמנעו למנות את נתוני ה-CLI, ביניהם FORTRAN ו-Cobol. אך בעם הגאולה של שפות מודרניות יותר כמו Perl ו-Python, מיצאה את דרך האינפוט שלה שלמדנו להכיר. אליקסיר, שפה מודרנית שיוצאת משפת Erlang, נקייה ויעילה מדי כדי לא לטמון למשתמש אפשרות האינפוט.
-
-אלטרנטיבות לקריאת ארגומנטים מן ה-command line כוללות קריאת מידע מקבצים או בהמתנה לקלט ממשתמש במהלך הריצה, אך שיטות אילו מורכבות יותר ואינן תמיד מתאימות לצרכים. בנוסף לכך, קיימות ספריות חיצוניות שמספקות אפשרויות לניהול ארגומנטים נוספות.
+## צלילה לעומק
+בעבר, שפות כמו C השתמשו ב`argc` ו`argv` כדי לקרוא ארגומנטים. Elixir, שמגיעה עם OTP (Open Telecom Platform), מבצעת את זה באופן שונה. הפונקציה `System.argv/0` מחזירה רשימה של ארגומנטים. אפשר גם לשנות את הארגומנטים לאחר הפעלת התוכנית באמצעות `System.argv/1`. בנוסף, בעזרת ספריות חיצוניות כמו `OptionParser`, אפשר לנתח פלגים ולהקל על פרסור ארגומנטים מורכבים יותר.
 
 ## ראה גם
-תוכל ללמוד עוד על ערכי command line באליקסיר בקישורים הבאים:
-- [מסמכי האליקסיר הרשמיים](https://elixir-lang.org/getting-started/io-and-the-file-system.html#command-line-arguments)
+- [מסמכי המשתמש של Elixir לקריאת ארגומנטים](https://hexdocs.pm/elixir/System.html#argv/0)
+- [דוקומנטציה של OptionParser](https://hexdocs.pm/elixir/OptionParser.html)
+- [מדריך למתחילים ב Elixir](https://elixir-lang.org/getting-started/introduction.html)

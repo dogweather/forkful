@@ -1,7 +1,8 @@
 ---
-title:                "Skicka en http-begäran med grundläggande autentisering"
-html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
-simple_title:         "Skicka en http-begäran med grundläggande autentisering"
+title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
+date:                  2024-01-20T18:01:24.664117-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -11,10 +12,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att skicka data via HTTP protokollet, men skyddar data genom att kräva autentiseringsuppgifter. Programmerare gör detta för att skydda känsliga data och begränsa åtkomsten till en webbresurs.
+I C# skickar vi HTTP-begäran med grundläggande autentisering för att säkert överföra användarnamn och lösenord till servern. Detta används för att bevisa användarens identitet och få tillgång till skyddade resurser.
 
-## Hur gör man det:
-Här är ett enkelt exempel på en C#-kodsnutt som visar hur man skickar en HTTP-förfrågan med grundläggande autentisering.
+## Steg för Steg:
+Vi använder klassen `HttpClient` och lägger till en header för autentisering. Lägg märke till hur enkelt det är:
 
 ```C#
 using System;
@@ -24,32 +25,31 @@ using System.Threading.Tasks;
 
 class Program
 {
-    private static async Task Main()
+    static async Task Main()
     {
-        var client = new HttpClient();
+        var credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes("användarnamn:lösenord"));
+        using (var client = new HttpClient())
+        {
+            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", credentials);
 
-        var byteArray = Encoding.ASCII.GetBytes("username:password");
-        client.DefaultRequestHeaders.Authorization = 
-            new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
-
-        var result = await client.GetAsync("http://example.com");
-
-        Console.WriteLine(result.StatusCode);
+            var response = await client.GetAsync("http://exempel.se/data");
+            var content = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(content);
+        }
     }
 }
 ```
 
-När du kör programmet, ska du se statuskoden för din GET-förfrågan skrivna ut i konsolen.
+Om servern accepterar dina referenser, får du tillbaka svaret, annars ett 401 Unauthorized fel.
 
-## Djupdykning
-Grundläggande autentisering är en av de första autentiseringsmetoderna som har använts inom webbutveckling. Det är en okomplicerad metod, men det har vissa svagheter. Det är till exempel inte krypterat, vilket betyder att det inte är säkert mot avlyssningsattacker.
+## Djupdykning:
+Grundläggande autentisering har använts sedan HTTP/1.0 och är en enkel metod för att skicka användarnamn och lösenord, kodat i Base64. Det anses inte som särskilt säkert eftersom Base64 är lätt att avkoda om inte en säker förbindelse som HTTPS används.
 
-Alternativ till grundläggande autentisering inkluderar Digest autentisering, token-baserad autentisering och OAuth. Dessa metoder är mer komplexa att implementera men erbjuder bättre säkerhet.
+Alternativ till grundläggande autentisering inkluderar OAuth, Token-baserad autentisering, och API-nycklar, vilka alla erbjuder mer säkra och flexibla lösningar.
 
-Under huven konverterar HttpClient klassen i C# först 'username:password' strängen till en ASCII-byte array. Detta konverteras sedan till en Base64-sträng och kopplas med 'Basic' för att skapa 'Authorization' headern i HTTP-förfrågan.
+En viktig implementationsdetalj är att se till att använda HTTPS när du skickar känslig information. För att ytterligare öka säkerheten kan du implementera mer avancerade autentiseringssystem som nämnts ovan.
 
-## Se även
-För mer information om HTTP och autentisering, se dessa källor:
-
-1. [Mozilla Developer Network: HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-3. [Microsoft Docs: HttpClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
+## Se även:
+- [HttpClient-klassen på Microsofts Dokumentation](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
+- [HTTP-autentisering på MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [En säkerhetsguide till grundläggande autentisering med C#](https://www.codeproject.com/Articles/1768/Basic-Authentication-on-a-WCF-REST-Service)
