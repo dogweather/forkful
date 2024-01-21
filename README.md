@@ -7,7 +7,7 @@ A special programming cookbook:
 **Collaborative**:
 1. A capybara (me)
 2. Open source contributors (you)
-3. AI
+3. AI (OpenAI GPT-4 Turbo)
  
 **Multilingual**: 16 world languages
 
