@@ -4,10 +4,11 @@
 
 **A Responsible AI Project:** AI writes the draft text, and then people review and error-correct. Site visitors are provided full transparency.
 
-Potentially, we'll also implement a workflow the other way around: people write the initial content and then AI points out possible errors and style issues.
+We may also implement a workflow the other way around: people write the initial content and then AI points out possible errors and style issues.
+
 In a nutshell, a sort of pair-programmer for technical documentation. This seems to be the best way to use AI for content generation, circa January 2024.
 
-A special programming cookbook:
+**This is a special programming cookbook:**
 
 **Collaborative**:
 1. A capybara (me)
