@@ -2,7 +2,10 @@
 
 <img align="right" width="45%" src="https://github.com/dogweather/forkful/assets/150670/7c9b58b3-019e-4708-b341-7a4110ddde5a">
 
-**A Responsible AI Project:** AI writes the draft text, and then people review and error-correct. Potentially, also the other way around: people write the initial content and then AI points out possible errors and style issues. A sort of pair-programmer for technical documentation. This is the best way to use AI for content generation, circa January 2024.
+**A Responsible AI Project:** AI writes the draft text, and then people review and error-correct. Sites visitors are provided full transparency.
+
+Potentially, we'll also implement a workflow the other way around: people write the initial content and then AI points out possible errors and style issues.
+In a nutshell, a sort of pair-programmer for technical documentation. This seems to be the best way to use AI for content generation, circa January 2024.
 
 A special programming cookbook:
 
