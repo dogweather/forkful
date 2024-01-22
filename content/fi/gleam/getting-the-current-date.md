@@ -39,4 +39,3 @@ Ensimmäisen kerran päivämäärän hakeminen ohjelmallisesti tuli mahdolliseks
 ## See Also
 "Lisätietoja"
 - Official Gleam language website: [Gleam Language](https://gleam.run)
-- World Clock API for real-time applications: [World Clock API](http://worldclockapi.com)

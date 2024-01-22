@@ -50,7 +50,6 @@ RubyのDateライブラリは、多くの日付管理機能を提供していま
 
 ## See Also (関連する情報)
 
-- [Time - Ruby-Doc.org](https://ruby-doc.org/core/Time.html)
 - [strftime Directive - apidock.com](https://apidock.com/ruby/DateTime/strftime)
 
 これらのリンクは日付と時刻を扱うRubyの様々な側面とメソッドについて詳細な情報を提供します。

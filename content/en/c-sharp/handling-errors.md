@@ -66,4 +66,3 @@ Implementation details—akin to the fine print—matter. Exceptions can be cost
 
 - [Official documentation on Exceptions in C#](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/exception-handling)
 - [Best practices in C# exception handling](https://docs.microsoft.com/en-us/dotnet/standard/exceptions/best-practices-for-exceptions)
-- [C# Exception Handling Tutorial with Examples](https://www.guru99.com/c-sharp-exception-handling.html)

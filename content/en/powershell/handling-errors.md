@@ -47,5 +47,3 @@ Alternatively, there's the old school `-ErrorVariable` parameter to capture erro
 
 ## See Also
 - [about_Try_Catch_Finally](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_try_catch_finally?view=powershell-7.2)
-- [about_ErrorHandling](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_errorhandling?view=powershell-7.2)
-- [Effective Error Handling in PowerShell Scripting](https://devblogs.microsoft.com/scripting/effective-error-handling-in-powershell-scripting/)

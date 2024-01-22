@@ -59,4 +59,3 @@ Dive deeper with:
 
 - Haskell's own docs: [Haskell](https://haskell.org/documentation)
 - Great for beginners: ["Learn You a Haskell for Great Good!"](http://learnyouahaskell.com/)
-- For a deep dive into types and error handling: [Haskell Wiki](https://wiki.haskell.org/Error_handling)

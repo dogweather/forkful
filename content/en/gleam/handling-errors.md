@@ -48,6 +48,4 @@ Alternatives to using `Result` include using the `Option` type for cases where s
 Gleam's error handling reflects a functional programming style, where side-effects (like errors) are managed with types and pattern-matching, providing clarity and predictability in error management.
 
 ## See Also
-- [Gleam's Official Error Handling Guide](https://gleam.run/book/tour/error-handling.html)
 - [Erlang's Error Handling](http://erlang.org/doc/reference_manual/errors.html)
-- [Gleam's Standard Library Result Module](https://hexdocs.pm/gleam_stdlib/gleam/result/)

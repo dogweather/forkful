@@ -72,6 +72,5 @@ Interested in diving deeper? Here's where to go:
 
 - [Rust Book on Error Handling](https://doc.rust-lang.org/book/ch09-00-error-handling.html) - A great place to understand Rust's error handling philosophy.
 - [Rust by Example: Error handling](https://doc.rust-lang.org/rust-by-example/error.html) - Interactive examples to get your hands dirty.
-- [`anyhow` crate](https://crates.io/crates/anyhow) and [`thiserror` crate](https://crates.io/crates/thiserror) - For when you want to explore beyond the standard library.
 
 Remember, good error handling isn't just coding; it's caring for your code's users. Happy coding!

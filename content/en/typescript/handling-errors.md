@@ -77,7 +77,6 @@ An alternative to `try/catch` in TypeScript is using error boundaries provided b
 Implementation-wise, TypeScript doesn't have its own error handling mechanism but relies on JavaScript's. Custom error classes can extend the `Error` class to offer more descriptive error information.
 
 ## See Also
-- [TypeScript Handbook on Error Handling](https://www.typescriptlang.org/docs/handbook/error-handling.html)
 - [MDN on try/catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
 - [Async/Await on MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await)
 - [Using Error Boundaries in React](https://reactjs.org/docs/error-boundaries.html)

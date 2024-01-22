@@ -7,6 +7,8 @@ programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/starting-a-new-project.md"
+reviewed_for_accuracy:
+  - dogweather, 2024-01-21
 ---
 
 {{< edit_this_page >}}
@@ -43,7 +45,7 @@ someFunc
 ## Deep Dive
 Haskell projects often rely on tools like Stack or Cabal. Stack manages dependencies, ensuring consistent builds. In 2008, Stack was a game-changer for Haskell, addressing Cabal's shortcomings with package conflicts. 
 
-Alternatives include using Cabal alone or newer tools like Nix for reproducible builds. You might choose Cabal for simplicity or Nix when your work demands reproducibility, but Stack strikes a happy balance for many.
+Alternatives include using Cabal alone or newer tools like GHCup or Nix for reproducible builds. You might choose Cabal for simplicity or Nix when your work demands reproducibility, but Stack strikes a happy balance for many.
 
 Under the hood, `stack new` leverages a template to scaffold a project. It includes not just your source code but also configurations for building and dependencies. The `.cabal` file is pivotal, containing metadata and build instructions.
 

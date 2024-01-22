@@ -49,4 +49,3 @@ main = compareDates
 
 ## Додатково:
 - Офіційна документація `time`: [https://hackage.haskell.org/package/time](https://hackage.haskell.org/package/time)
-- Tutorial з порівняння дат на Stack Overflow: [https://stackoverflow.com/questions/how-to-compare-dates-in-haskell](https://stackoverflow.com/questions/how-to-compare-dates-in-haskell)

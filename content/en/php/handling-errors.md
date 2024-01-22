@@ -57,4 +57,3 @@ Implementation detail: When an exception is thrown, PHP stops executing the curr
 
 - The PHP Manual on Exceptions: [php.net/manual/en/language.exceptions.php](https://www.php.net/manual/en/language.exceptions.php)
 - PHP The Right Way on Error Reporting: [phptherightway.com/#error_reporting](https://phptherightway.com/#error_reporting)
-- A deep dive into Exceptions in PHP: [web.dev/php-exceptions/](https://web.dev/php-exceptions/)

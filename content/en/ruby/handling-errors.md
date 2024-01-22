@@ -48,4 +48,3 @@ One interesting detail: Ruby's exceptions are objects (instances of `Exception` 
 
 - The Ruby documentation on exceptions and error handling: [ruby-doc.org](https://ruby-doc.org/core-3.1.0/doc/syntax/exceptions_rdoc.html)
 - A detailed guide on Ruby error handling best practices: [thoughtbot.com](https://thoughtbot.com/blog/rescue-standarderror-not-exception)
-- Blog post on the history of error handling in programming languages: [exceptionnotfound.net](https://exceptionnotfound.net/a-brief-incomplete-history-of-programming-languages-and-their-error-handling)
