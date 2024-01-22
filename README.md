@@ -2,6 +2,8 @@
 
 <img align="right" width="45%" src="https://github.com/dogweather/forkful/assets/150670/7c9b58b3-019e-4708-b341-7a4110ddde5a">
 
+**A Responsible AI Project:** AI writes the draft text, and then people review and error-correct. Potentially, also the other way around: people write the initial content and then AI points out possible errors and style issues. A sort of pair-programmer for technical documentation. This is the best way to use AI for content generation, circa January 2024.
+
 A special programming cookbook:
 
 **Collaborative**:
@@ -9,11 +11,10 @@ A special programming cookbook:
 2. Open source contributors (you)
 3. AI (OpenAI GPT-4 Turbo)
  
-**Multilingual**: *16* world languages
+**Multilingual**: **16** world languages
 
-**Polyglot**: *23* programming languages
+**Polyglot**: **23** programming languages
 
-**My idea is to create a hybrid resource**: AI writes the draft text, and then people review and error-correct. Or, potentially, the other way around: people write the initial content and then AI points out possible errors and style issues. A sort of pair-programmer for technical documentation. IMO this is the best way to use AI for content generation, circa January 2024.
 
 ---
 
