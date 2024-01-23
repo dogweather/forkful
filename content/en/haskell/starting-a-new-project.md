@@ -8,7 +8,7 @@ category:             "Haskell"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/starting-a-new-project.md"
 changelog:
-  - dogweather, 2024-01-21
+  - 2024-01-21, dogweather, Reviewed for accuracy
 ---
 
 {{< edit_this_page >}}
