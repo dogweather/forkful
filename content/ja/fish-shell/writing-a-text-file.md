@@ -5,6 +5,7 @@ simple_title:         "テキストファイルの書き込み"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/writing-a-text-file.md"
 ---
 

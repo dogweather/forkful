@@ -6,6 +6,7 @@ simple_title:         "比较两个日期"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/comparing-two-dates.md"
 ---
 

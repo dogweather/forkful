@@ -6,6 +6,7 @@ simple_title:         "匹配模式删除字符"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/deleting-characters-matching-a-pattern.md"
 ---
 

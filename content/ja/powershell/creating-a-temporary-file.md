@@ -6,6 +6,7 @@ simple_title:         "一時ファイルの作成"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/creating-a-temporary-file.md"
 ---
 

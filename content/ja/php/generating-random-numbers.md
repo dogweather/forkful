@@ -6,6 +6,7 @@ simple_title:         "ランダム数の生成"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Numbers"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/generating-random-numbers.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "从字符串解析日期"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/parsing-a-date-from-a-string.md"
 ---
 

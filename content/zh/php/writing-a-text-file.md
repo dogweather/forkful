@@ -5,6 +5,7 @@ simple_title:         "编写文本文件"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/writing-a-text-file.md"
 ---
 

@@ -5,6 +5,7 @@ simple_title:         "텍스트 파일 작성하기"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/writing-a-text-file.md"
 ---
 

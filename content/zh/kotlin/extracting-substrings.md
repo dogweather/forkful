@@ -6,6 +6,7 @@ simple_title:         "提取子字符串"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/extracting-substrings.md"
 ---
 

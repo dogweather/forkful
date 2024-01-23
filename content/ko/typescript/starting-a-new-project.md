@@ -6,6 +6,7 @@ simple_title:         "새 프로젝트 시작하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Getting Started"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/starting-a-new-project.md"
 ---
 

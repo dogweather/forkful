@@ -6,6 +6,7 @@ simple_title:         "下载网页"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/downloading-a-web-page.md"
 ---
 

@@ -5,6 +5,7 @@ simple_title:         "正規表現の使用"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/using-regular-expressions.md"
 ---
 

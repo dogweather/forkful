@@ -6,6 +6,7 @@ simple_title:         "임시 파일 생성하기"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/creating-a-temporary-file.md"
 ---
 

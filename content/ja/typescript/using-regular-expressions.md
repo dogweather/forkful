@@ -5,6 +5,7 @@ simple_title:         "正規表現の使用"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/using-regular-expressions.md"
 ---
 

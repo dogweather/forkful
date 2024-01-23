@@ -5,6 +5,7 @@ simple_title:         "写入标准错误"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/writing-to-standard-error.md"
 ---
 

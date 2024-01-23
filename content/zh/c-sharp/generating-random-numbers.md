@@ -6,6 +6,7 @@ simple_title:         "生成随机数"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/generating-random-numbers.md"
 ---
 

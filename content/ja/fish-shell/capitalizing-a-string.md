@@ -5,6 +5,7 @@ simple_title:         "文字列の先頭を大文字にする"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/capitalizing-a-string.md"
 ---
 

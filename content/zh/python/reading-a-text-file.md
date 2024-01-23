@@ -6,6 +6,7 @@ simple_title:         "阅读文本文件"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/reading-a-text-file.md"
 ---
 

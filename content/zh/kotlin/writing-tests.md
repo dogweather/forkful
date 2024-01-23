@@ -5,6 +5,7 @@ simple_title:         "编写测试代码"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/writing-tests.md"
 ---
 

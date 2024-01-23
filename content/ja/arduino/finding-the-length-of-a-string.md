@@ -6,6 +6,7 @@ simple_title:         "文字列の長さを求める"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/finding-the-length-of-a-string.md"
 ---
 

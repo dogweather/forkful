@@ -5,6 +5,7 @@ simple_title:         "テストの作成"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/writing-tests.md"
 ---
 

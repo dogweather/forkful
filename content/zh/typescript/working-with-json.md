@@ -5,6 +5,7 @@ simple_title:         "处理JSON数据"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/working-with-json.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "生成随机数"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Numbers"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/generating-random-numbers.md"
 ---
 

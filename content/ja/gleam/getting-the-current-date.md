@@ -6,6 +6,7 @@ simple_title:         "現在の日付を取得する"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/getting-the-current-date.md"
 ---
 

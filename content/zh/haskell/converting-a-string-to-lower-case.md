@@ -6,6 +6,7 @@ simple_title:         "将字符串转换为小写"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/converting-a-string-to-lower-case.md"
 ---
 

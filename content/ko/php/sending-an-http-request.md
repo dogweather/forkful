@@ -6,6 +6,7 @@ simple_title:         "HTTP 요청 보내기"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/sending-an-http-request.md"
 ---
 

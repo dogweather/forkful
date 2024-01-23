@@ -5,6 +5,7 @@ simple_title:         "정규 표현식 활용하기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/using-regular-expressions.md"
 ---
 

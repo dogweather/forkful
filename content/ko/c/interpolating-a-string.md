@@ -6,6 +6,7 @@ simple_title:         "문자열 보간하기"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/interpolating-a-string.md"
 ---
 

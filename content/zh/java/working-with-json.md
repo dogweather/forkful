@@ -5,6 +5,7 @@ simple_title:         "处理JSON数据"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/working-with-json.md"
 ---
 

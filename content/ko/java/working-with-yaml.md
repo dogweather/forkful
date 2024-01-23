@@ -5,6 +5,7 @@ simple_title:         "YAML 다루기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/working-with-yaml.md"
 ---
 

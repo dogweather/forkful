@@ -6,6 +6,7 @@ simple_title:         "デバッグ出力を表示する"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/printing-debug-output.md"
 ---
 

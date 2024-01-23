@@ -6,6 +6,7 @@ simple_title:         "读取命令行参数"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/reading-command-line-arguments.md"
 ---
 

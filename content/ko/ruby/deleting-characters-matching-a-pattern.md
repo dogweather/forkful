@@ -6,6 +6,7 @@ simple_title:         "패턴에 일치하는 문자 삭제"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/deleting-characters-matching-a-pattern.md"
 ---
 

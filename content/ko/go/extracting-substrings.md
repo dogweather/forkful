@@ -6,6 +6,7 @@ simple_title:         "부분 문자열 추출"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/extracting-substrings.md"
 ---
 

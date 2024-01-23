@@ -6,6 +6,7 @@ simple_title:         "日付を文字列に変換する"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/converting-a-date-into-a-string.md"
 ---
 

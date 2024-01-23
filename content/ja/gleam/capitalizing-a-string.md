@@ -5,6 +5,7 @@ simple_title:         "文字列の先頭を大文字にする"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/capitalizing-a-string.md"
 ---
 

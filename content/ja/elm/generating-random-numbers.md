@@ -6,6 +6,7 @@ simple_title:         "ランダム数の生成"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Numbers"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/generating-random-numbers.md"
 ---
 

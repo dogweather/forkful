@@ -6,6 +6,7 @@ simple_title:         "将日期转换为字符串"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/converting-a-date-into-a-string.md"
 ---
 

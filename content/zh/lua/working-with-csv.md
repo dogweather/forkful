@@ -5,6 +5,7 @@ simple_title:         "处理 CSV 文件"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/working-with-csv.md"
 ---
 

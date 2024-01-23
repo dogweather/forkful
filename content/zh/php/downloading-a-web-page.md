@@ -6,6 +6,7 @@ simple_title:         "下载网页"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/downloading-a-web-page.md"
 ---
 

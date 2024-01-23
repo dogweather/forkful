@@ -6,6 +6,7 @@ simple_title:         "新しいプロジェクトを始める"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Getting Started"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/starting-a-new-project.md"
 ---
 

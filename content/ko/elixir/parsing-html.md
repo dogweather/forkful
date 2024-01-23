@@ -6,6 +6,7 @@ simple_title:         "HTML 파싱"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/parsing-html.md"
 ---
 

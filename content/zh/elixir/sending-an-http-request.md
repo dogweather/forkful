@@ -6,6 +6,7 @@ simple_title:         "发出 HTTP 请求"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/sending-an-http-request.md"
 ---
 

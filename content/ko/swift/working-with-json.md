@@ -5,6 +5,7 @@ simple_title:         "JSON 다루기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/working-with-json.md"
 ---
 

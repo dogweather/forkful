@@ -6,6 +6,7 @@ simple_title:         "日付を比較する"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/comparing-two-dates.md"
 ---
 

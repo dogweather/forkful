@@ -6,6 +6,7 @@ simple_title:         "一時ファイルの作成"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/creating-a-temporary-file.md"
 ---
 

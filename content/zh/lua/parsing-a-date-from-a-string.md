@@ -6,6 +6,7 @@ simple_title:         "从字符串解析日期"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/parsing-a-date-from-a-string.md"
 ---
 

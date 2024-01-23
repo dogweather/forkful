@@ -5,6 +5,7 @@ simple_title:         "编写测试代码"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/writing-tests.md"
 ---
 

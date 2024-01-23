@@ -5,6 +5,7 @@ simple_title:         "正規表現の使用"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/using-regular-expressions.md"
 ---
 

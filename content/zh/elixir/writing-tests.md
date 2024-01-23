@@ -5,6 +5,7 @@ simple_title:         "编写测试代码"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/writing-tests.md"
 ---
 

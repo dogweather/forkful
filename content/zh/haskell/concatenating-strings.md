@@ -6,6 +6,7 @@ simple_title:         "字符串拼接"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/concatenating-strings.md"
 ---
 

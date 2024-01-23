@@ -6,6 +6,7 @@ simple_title:         "デバッグ出力を表示する"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/printing-debug-output.md"
 ---
 

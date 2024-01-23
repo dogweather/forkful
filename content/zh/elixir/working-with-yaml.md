@@ -5,6 +5,7 @@ simple_title:         "处理 YAML 文件"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/working-with-yaml.md"
 ---
 

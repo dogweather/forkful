@@ -6,6 +6,7 @@ simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/deleting-characters-matching-a-pattern.md"
 ---
 

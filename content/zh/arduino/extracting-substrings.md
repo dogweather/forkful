@@ -6,6 +6,7 @@ simple_title:         "提取子字符串"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/extracting-substrings.md"
 ---
 

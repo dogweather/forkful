@@ -5,6 +5,7 @@ simple_title:         "写入标准错误"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/writing-to-standard-error.md"
 ---
 

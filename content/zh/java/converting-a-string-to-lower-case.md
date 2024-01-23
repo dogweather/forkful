@@ -6,6 +6,7 @@ simple_title:         "将字符串转换为小写"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/converting-a-string-to-lower-case.md"
 ---
 

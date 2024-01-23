@@ -6,6 +6,7 @@ simple_title:         "字符串插值"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/interpolating-a-string.md"
 ---
 

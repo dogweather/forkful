@@ -6,6 +6,7 @@ simple_title:         "テキストファイルの読み込み"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/reading-a-text-file.md"
 ---
 

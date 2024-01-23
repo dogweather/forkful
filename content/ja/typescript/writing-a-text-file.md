@@ -5,6 +5,7 @@ simple_title:         "テキストファイルの書き込み"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/writing-a-text-file.md"
 ---
 

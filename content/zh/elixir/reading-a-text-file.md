@@ -6,6 +6,7 @@ simple_title:         "阅读文本文件"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/reading-a-text-file.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "문자열의 길이 찾기"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/finding-the-length-of-a-string.md"
 ---
 

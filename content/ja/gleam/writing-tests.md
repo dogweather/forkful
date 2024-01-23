@@ -5,6 +5,7 @@ simple_title:         "テストの作成"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/writing-tests.md"
 ---
 

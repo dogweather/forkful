@@ -6,6 +6,7 @@ simple_title:         "패턴에 일치하는 문자 삭제"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/deleting-characters-matching-a-pattern.md"
 ---
 

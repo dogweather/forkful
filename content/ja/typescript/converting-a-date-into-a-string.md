@@ -6,6 +6,7 @@ simple_title:         "日付を文字列に変換する"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/converting-a-date-into-a-string.md"
 ---
 

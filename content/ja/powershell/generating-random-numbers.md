@@ -6,6 +6,7 @@ simple_title:         "ランダム数の生成"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Numbers"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/generating-random-numbers.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "搜索和替换文本"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/searching-and-replacing-text.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/deleting-characters-matching-a-pattern.md"
 ---
 

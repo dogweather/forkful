@@ -6,6 +6,7 @@ simple_title:         "文字列を小文字に変換"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/converting-a-string-to-lower-case.md"
 ---
 

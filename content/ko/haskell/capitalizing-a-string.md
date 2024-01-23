@@ -5,6 +5,7 @@ simple_title:         "문자열 대문자로 변환하기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/capitalizing-a-string.md"
 ---
 

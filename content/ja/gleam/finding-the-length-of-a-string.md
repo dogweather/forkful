@@ -6,6 +6,7 @@ simple_title:         "文字列の長さを求める"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/finding-the-length-of-a-string.md"
 ---
 

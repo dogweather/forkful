@@ -5,6 +5,7 @@ simple_title:         "디렉토리의 존재 여부 확인하기"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/checking-if-a-directory-exists.md"
 ---
 

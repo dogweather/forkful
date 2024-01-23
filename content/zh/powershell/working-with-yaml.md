@@ -5,6 +5,7 @@ simple_title:         "处理 YAML 文件"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/working-with-yaml.md"
 ---
 

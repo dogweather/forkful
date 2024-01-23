@@ -5,6 +5,7 @@ simple_title:         "编写文本文件"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/writing-a-text-file.md"
 ---
 

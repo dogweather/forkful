@@ -5,6 +5,7 @@ simple_title:         "標準エラーへの書き込み"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/writing-to-standard-error.md"
 ---
 

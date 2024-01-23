@@ -6,6 +6,7 @@ simple_title:         "HTMLの解析"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/parsing-html.md"
 ---
 

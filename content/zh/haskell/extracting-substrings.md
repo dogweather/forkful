@@ -6,6 +6,7 @@ simple_title:         "提取子字符串"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/extracting-substrings.md"
 ---
 

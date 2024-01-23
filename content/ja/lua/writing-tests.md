@@ -5,6 +5,7 @@ simple_title:         "テストの作成"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/writing-tests.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "HTTPリクエストの送信"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/sending-an-http-request.md"
 ---
 

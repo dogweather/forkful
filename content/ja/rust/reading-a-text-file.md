@@ -6,6 +6,7 @@ simple_title:         "テキストファイルの読み込み"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/reading-a-text-file.md"
 ---
 

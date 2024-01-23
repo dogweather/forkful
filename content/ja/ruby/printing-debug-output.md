@@ -6,6 +6,7 @@ simple_title:         "デバッグ出力を表示する"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/printing-debug-output.md"
 ---
 

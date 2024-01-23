@@ -6,6 +6,7 @@ simple_title:         "テキストの検索と置換"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/searching-and-replacing-text.md"
 ---
 

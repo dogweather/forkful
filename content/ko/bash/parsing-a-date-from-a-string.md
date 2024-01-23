@@ -6,6 +6,7 @@ simple_title:         "문자열에서 날짜 파싱하기"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/parsing-a-date-from-a-string.md"
 ---
 
@@ -54,3 +55,4 @@ echo $weekday
 - Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/
 - Bash Reference Manual: https://www.gnu.org/software/bash/manual/bash.html
 - Stack Overflow - Bash tag: https://stackoverflow.com/questions/tagged/bash
+isCJKLanguage:        true

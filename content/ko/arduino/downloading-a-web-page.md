@@ -6,6 +6,7 @@ simple_title:         "웹 페이지 다운로드하기"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/downloading-a-web-page.md"
 ---
 

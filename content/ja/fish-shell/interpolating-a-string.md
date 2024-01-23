@@ -6,6 +6,7 @@ simple_title:         "文字列の補間"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/interpolating-a-string.md"
 ---
 

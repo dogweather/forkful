@@ -5,6 +5,7 @@ simple_title:         "테스트 작성하기"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/writing-tests.md"
 ---
 

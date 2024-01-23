@@ -5,6 +5,7 @@ simple_title:         "JSON 다루기"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/working-with-json.md"
 ---
 

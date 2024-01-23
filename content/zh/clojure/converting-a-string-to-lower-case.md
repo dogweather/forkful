@@ -6,6 +6,7 @@ simple_title:         "将字符串转换为小写"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/converting-a-string-to-lower-case.md"
 ---
 

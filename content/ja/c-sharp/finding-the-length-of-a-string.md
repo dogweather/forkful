@@ -6,6 +6,7 @@ simple_title:         "文字列の長さを求める"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/finding-the-length-of-a-string.md"
 ---
 

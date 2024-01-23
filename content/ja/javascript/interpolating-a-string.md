@@ -6,6 +6,7 @@ simple_title:         "文字列の補間"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/interpolating-a-string.md"
 ---
 

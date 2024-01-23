@@ -6,6 +6,7 @@ simple_title:         "新しいプロジェクトを始める"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Getting Started"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/starting-a-new-project.md"
 ---
 

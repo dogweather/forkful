@@ -6,6 +6,7 @@ simple_title:         "阅读文本文件"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/reading-a-text-file.md"
 ---
 

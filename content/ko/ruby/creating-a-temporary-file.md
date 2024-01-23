@@ -6,6 +6,7 @@ simple_title:         "임시 파일 생성하기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/creating-a-temporary-file.md"
 ---
 

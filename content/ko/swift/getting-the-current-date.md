@@ -6,6 +6,7 @@ simple_title:         "현재 날짜 가져오기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/getting-the-current-date.md"
 ---
 

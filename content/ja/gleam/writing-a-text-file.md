@@ -5,6 +5,7 @@ simple_title:         "テキストファイルの書き込み"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/writing-a-text-file.md"
 ---
 

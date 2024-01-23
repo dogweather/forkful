@@ -6,6 +6,7 @@ simple_title:         "字符串插值"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/interpolating-a-string.md"
 ---
 

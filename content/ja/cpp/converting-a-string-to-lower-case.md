@@ -6,6 +6,7 @@ simple_title:         "文字列を小文字に変換"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/converting-a-string-to-lower-case.md"
 ---
 

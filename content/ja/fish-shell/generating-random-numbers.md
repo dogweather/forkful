@@ -6,6 +6,7 @@ simple_title:         "ランダム数の生成"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/generating-random-numbers.md"
 ---
 

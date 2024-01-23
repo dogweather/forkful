@@ -6,6 +6,7 @@ simple_title:         "デバッグ出力を表示する"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/printing-debug-output.md"
 ---
 

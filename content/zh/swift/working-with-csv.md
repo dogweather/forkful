@@ -5,6 +5,7 @@ simple_title:         "处理 CSV 文件"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/working-with-csv.md"
 ---
 

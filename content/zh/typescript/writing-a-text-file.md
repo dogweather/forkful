@@ -5,6 +5,7 @@ simple_title:         "编写文本文件"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/writing-a-text-file.md"
 ---
 

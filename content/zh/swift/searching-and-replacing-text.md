@@ -6,6 +6,7 @@ simple_title:         "搜索和替换文本"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/searching-and-replacing-text.md"
 ---
 

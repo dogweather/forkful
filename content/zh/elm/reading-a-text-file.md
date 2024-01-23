@@ -6,6 +6,7 @@ simple_title:         "阅读文本文件"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/reading-a-text-file.md"
 ---
 

@@ -5,6 +5,7 @@ simple_title:         "JSONを扱う方法"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/working-with-json.md"
 ---
 

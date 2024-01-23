@@ -6,6 +6,7 @@ simple_title:         "HTTPリクエストの送信"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/sending-an-http-request.md"
 ---
 

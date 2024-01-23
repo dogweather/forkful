@@ -6,6 +6,7 @@ simple_title:         "下载网页"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/downloading-a-web-page.md"
 ---
 

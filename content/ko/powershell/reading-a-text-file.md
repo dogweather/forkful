@@ -6,6 +6,7 @@ simple_title:         "텍스트 파일 읽기"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/reading-a-text-file.md"
 ---
 

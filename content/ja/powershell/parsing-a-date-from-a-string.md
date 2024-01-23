@@ -6,6 +6,7 @@ simple_title:         "文字列から日付を解析する"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/parsing-a-date-from-a-string.md"
 ---
 

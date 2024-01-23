@@ -6,6 +6,7 @@ simple_title:         "打印调试输出"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/printing-debug-output.md"
 ---
 

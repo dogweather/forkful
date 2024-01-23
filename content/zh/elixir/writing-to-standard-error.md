@@ -5,6 +5,7 @@ simple_title:         "写入标准错误"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/writing-to-standard-error.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "テキストファイルの読み込み"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/reading-a-text-file.md"
 ---
 

@@ -5,6 +5,7 @@ simple_title:         "处理 CSV 文件"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/working-with-csv.md"
 ---
 

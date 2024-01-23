@@ -6,6 +6,7 @@ simple_title:         "日付を比較する"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/comparing-two-dates.md"
 ---
 

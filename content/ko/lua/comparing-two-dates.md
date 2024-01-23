@@ -6,6 +6,7 @@ simple_title:         "두 날짜 비교하기"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/comparing-two-dates.md"
 ---
 

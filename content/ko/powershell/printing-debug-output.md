@@ -6,6 +6,7 @@ simple_title:         "디버그 출력을 찍어보기"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/printing-debug-output.md"
 ---
 

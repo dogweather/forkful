@@ -6,6 +6,7 @@ simple_title:         "字符串拼接"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/concatenating-strings.md"
 ---
 

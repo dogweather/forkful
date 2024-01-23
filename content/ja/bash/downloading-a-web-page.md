@@ -6,6 +6,7 @@ simple_title:         "ウェブページのダウンロード"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/downloading-a-web-page.md"
 ---
 

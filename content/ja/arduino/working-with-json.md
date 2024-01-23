@@ -5,6 +5,7 @@ simple_title:         "JSONを扱う方法"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/working-with-json.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "搜索和替换文本"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/searching-and-replacing-text.md"
 ---
 

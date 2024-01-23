@@ -5,6 +5,7 @@ simple_title:         "文字列の先頭を大文字にする"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/capitalizing-a-string.md"
 ---
 

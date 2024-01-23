@@ -6,6 +6,7 @@ simple_title:         "新しいプロジェクトを始める"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/starting-a-new-project.md"
 ---
 

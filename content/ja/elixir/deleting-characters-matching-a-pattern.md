@@ -6,6 +6,7 @@ simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/deleting-characters-matching-a-pattern.md"
 ---
 

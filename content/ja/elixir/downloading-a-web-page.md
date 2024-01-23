@@ -6,6 +6,7 @@ simple_title:         "ウェブページのダウンロード"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/downloading-a-web-page.md"
 ---
 

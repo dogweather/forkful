@@ -6,6 +6,7 @@ simple_title:         "将日期转换为字符串"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/converting-a-date-into-a-string.md"
 ---
 

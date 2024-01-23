@@ -6,6 +6,7 @@ simple_title:         "文字列の長さを求める"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/finding-the-length-of-a-string.md"
 ---
 

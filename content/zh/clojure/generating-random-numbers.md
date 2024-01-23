@@ -6,6 +6,7 @@ simple_title:         "生成随机数"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Numbers"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/generating-random-numbers.md"
 ---
 

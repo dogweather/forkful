@@ -6,6 +6,7 @@ simple_title:         "匹配模式删除字符"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/deleting-characters-matching-a-pattern.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "임시 파일 생성하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/creating-a-temporary-file.md"
 ---
 

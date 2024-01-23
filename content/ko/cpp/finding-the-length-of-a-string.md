@@ -6,6 +6,7 @@ simple_title:         "문자열의 길이 찾기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/finding-the-length-of-a-string.md"
 ---
 

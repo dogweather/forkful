@@ -5,6 +5,7 @@ simple_title:         "CSV 파일 다루기"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/working-with-csv.md"
 ---
 

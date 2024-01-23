@@ -6,6 +6,7 @@ simple_title:         "HTMLの解析"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/parsing-html.md"
 ---
 

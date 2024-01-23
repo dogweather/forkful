@@ -6,6 +6,7 @@ simple_title:         "新しいプロジェクトを始める"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Getting Started"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/starting-a-new-project.md"
 ---
 

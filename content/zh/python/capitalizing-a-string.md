@@ -5,6 +5,7 @@ simple_title:         "字符串首字母大写"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/capitalizing-a-string.md"
 ---
 

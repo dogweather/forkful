@@ -6,6 +6,7 @@ simple_title:         "ランダム数の生成"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Numbers"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/generating-random-numbers.md"
 ---
 

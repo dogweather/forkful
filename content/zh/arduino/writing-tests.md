@@ -5,6 +5,7 @@ simple_title:         "编写测试代码"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/writing-tests.md"
 ---
 

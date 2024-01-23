@@ -6,6 +6,7 @@ simple_title:         "ディレクトリが存在するかどうかの確認"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/checking-if-a-directory-exists.md"
 ---
 

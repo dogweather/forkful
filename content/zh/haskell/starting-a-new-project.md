@@ -6,6 +6,7 @@ simple_title:         "开始一个新项目"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/starting-a-new-project.md"
 ---
 

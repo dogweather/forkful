@@ -5,6 +5,7 @@ simple_title:         "標準エラーへの書き込み"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/writing-to-standard-error.md"
 ---
 

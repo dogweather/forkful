@@ -5,6 +5,7 @@ simple_title:         "编写文本文件"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/writing-a-text-file.md"
 ---
 

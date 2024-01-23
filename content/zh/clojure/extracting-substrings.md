@@ -6,6 +6,7 @@ simple_title:         "提取子字符串"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/extracting-substrings.md"
 ---
 

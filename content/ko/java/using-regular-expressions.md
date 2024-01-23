@@ -5,6 +5,7 @@ simple_title:         "정규 표현식 활용하기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/using-regular-expressions.md"
 ---
 

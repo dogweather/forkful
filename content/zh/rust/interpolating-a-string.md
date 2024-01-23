@@ -6,6 +6,7 @@ simple_title:         "字符串插值"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/interpolating-a-string.md"
 ---
 

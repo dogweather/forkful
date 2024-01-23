@@ -5,6 +5,7 @@ simple_title:         "표준 오류로 쓰기"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/writing-to-standard-error.md"
 ---
 

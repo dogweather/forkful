@@ -6,6 +6,7 @@ simple_title:         "난수 생성하기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Numbers"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/generating-random-numbers.md"
 ---
 

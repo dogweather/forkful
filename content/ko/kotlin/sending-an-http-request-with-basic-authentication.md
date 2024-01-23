@@ -6,6 +6,7 @@ simple_title:         "기본 인증을 사용한 HTTP 요청 보내기"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/sending-an-http-request-with-basic-authentication.md"
 ---
 

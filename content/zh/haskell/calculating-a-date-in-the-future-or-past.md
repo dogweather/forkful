@@ -6,6 +6,7 @@ simple_title:         "计算未来或过去的日期"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 

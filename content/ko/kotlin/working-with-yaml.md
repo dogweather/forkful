@@ -5,6 +5,7 @@ simple_title:         "YAML 다루기"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/working-with-yaml.md"
 ---
 

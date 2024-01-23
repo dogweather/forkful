@@ -5,6 +5,7 @@ simple_title:         "문자열 대문자로 변환하기"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/capitalizing-a-string.md"
 ---
 

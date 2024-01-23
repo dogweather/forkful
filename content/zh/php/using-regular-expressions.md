@@ -5,6 +5,7 @@ simple_title:         "使用正则表达式"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/using-regular-expressions.md"
 ---
 

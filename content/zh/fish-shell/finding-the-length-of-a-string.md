@@ -6,6 +6,7 @@ simple_title:         "获取字符串的长度"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/finding-the-length-of-a-string.md"
 ---
 
