@@ -6,6 +6,7 @@ simple_title:         "現在の日付を取得する"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/getting-the-current-date.md"
 ---
 

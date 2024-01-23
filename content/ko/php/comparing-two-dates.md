@@ -6,6 +6,7 @@ simple_title:         "두 날짜 비교하기"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/comparing-two-dates.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "部分文字列の抽出"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/extracting-substrings.md"
 ---
 

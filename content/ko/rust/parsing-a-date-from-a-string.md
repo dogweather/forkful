@@ -6,6 +6,7 @@ simple_title:         "문자열에서 날짜 파싱하기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/parsing-a-date-from-a-string.md"
 ---
 

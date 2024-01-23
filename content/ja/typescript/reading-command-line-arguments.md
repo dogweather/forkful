@@ -6,6 +6,7 @@ simple_title:         "コマンドライン引数の読み取り"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/reading-command-line-arguments.md"
 ---
 

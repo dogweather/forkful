@@ -6,6 +6,7 @@ simple_title:         "문자열 보간하기"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/interpolating-a-string.md"
 ---
 

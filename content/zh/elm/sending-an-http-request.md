@@ -6,6 +6,7 @@ simple_title:         "发出 HTTP 请求"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/sending-an-http-request.md"
 ---
 

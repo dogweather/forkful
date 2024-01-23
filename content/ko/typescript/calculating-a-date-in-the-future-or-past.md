@@ -6,6 +6,7 @@ simple_title:         "미래나 과거의 날짜 계산하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 

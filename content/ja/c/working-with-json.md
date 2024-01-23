@@ -5,6 +5,7 @@ simple_title:         "JSONを扱う方法"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/working-with-json.md"
 ---
 

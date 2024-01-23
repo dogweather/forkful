@@ -6,6 +6,7 @@ simple_title:         "将日期转换为字符串"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/converting-a-date-into-a-string.md"
 ---
 

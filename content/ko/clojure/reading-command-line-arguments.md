@@ -6,6 +6,7 @@ simple_title:         "명령줄 인수 읽기"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/reading-command-line-arguments.md"
 ---
 

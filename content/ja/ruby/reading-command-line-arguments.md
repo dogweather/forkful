@@ -6,6 +6,7 @@ simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/reading-command-line-arguments.md"
 ---
 

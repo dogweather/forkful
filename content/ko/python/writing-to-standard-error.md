@@ -5,6 +5,7 @@ simple_title:         "표준 오류로 쓰기"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/writing-to-standard-error.md"
 ---
 

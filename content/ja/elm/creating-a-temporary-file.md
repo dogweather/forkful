@@ -6,6 +6,7 @@ simple_title:         "一時ファイルの作成"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/creating-a-temporary-file.md"
 ---
 

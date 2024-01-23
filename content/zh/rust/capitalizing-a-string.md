@@ -5,6 +5,7 @@ simple_title:         "字符串首字母大写"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/capitalizing-a-string.md"
 ---
 

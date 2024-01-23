@@ -6,6 +6,7 @@ simple_title:         "生成随机数"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Numbers"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/generating-random-numbers.md"
 ---
 

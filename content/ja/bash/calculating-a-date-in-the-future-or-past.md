@@ -6,6 +6,7 @@ simple_title:         "将来または過去の日付を計算する"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 

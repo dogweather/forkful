@@ -6,6 +6,7 @@ simple_title:         "ウェブページのダウンロード"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/downloading-a-web-page.md"
 ---
 

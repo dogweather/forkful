@@ -6,6 +6,7 @@ simple_title:         "문자열 연결하기"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/concatenating-strings.md"
 ---
 

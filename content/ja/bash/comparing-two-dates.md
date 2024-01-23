@@ -6,6 +6,7 @@ simple_title:         "日付を比較する"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/comparing-two-dates.md"
 ---
 

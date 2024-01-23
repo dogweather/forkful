@@ -6,6 +6,7 @@ simple_title:         "创建临时文件"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/creating-a-temporary-file.md"
 ---
 

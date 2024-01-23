@@ -5,6 +5,7 @@ simple_title:         "표준 오류로 쓰기"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/writing-to-standard-error.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "ランダム数の生成"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Numbers"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/generating-random-numbers.md"
 ---
 

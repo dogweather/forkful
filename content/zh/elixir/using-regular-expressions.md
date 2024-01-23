@@ -5,6 +5,7 @@ simple_title:         "使用正则表达式"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/using-regular-expressions.md"
 ---
 

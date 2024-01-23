@@ -6,6 +6,7 @@ simple_title:         "检查目录是否存在"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/checking-if-a-directory-exists.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "匹配模式删除字符"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/deleting-characters-matching-a-pattern.md"
 ---
 

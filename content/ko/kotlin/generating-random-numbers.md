@@ -6,6 +6,7 @@ simple_title:         "난수 생성하기"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Numbers"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/generating-random-numbers.md"
 ---
 

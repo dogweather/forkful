@@ -6,6 +6,7 @@ simple_title:         "디렉토리 존재 여부 확인하기"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/checking-if-a-directory-exists.md"
 ---
 

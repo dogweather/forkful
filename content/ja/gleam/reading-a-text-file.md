@@ -6,6 +6,7 @@ simple_title:         "テキストファイルの読み込み"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/reading-a-text-file.md"
 ---
 

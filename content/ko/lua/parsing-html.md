@@ -6,6 +6,7 @@ simple_title:         "HTML 파싱"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/parsing-html.md"
 ---
 
@@ -38,8 +39,10 @@ local parser = lxsh.parse.html()
 for kind, text in parser:match(html) do
   if kind == 'start-tag' then
     print('Start tag:', text)
+isCJKLanguage:        true
   elseif kind == 'end-tag' then
     print('End tag:', text)
+isCJKLanguage:        true
   elseif kind == 'text' then
     print('Text:', text)
   end

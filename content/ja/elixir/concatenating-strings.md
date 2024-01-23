@@ -6,6 +6,7 @@ simple_title:         "文字列の連結"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/concatenating-strings.md"
 ---
 

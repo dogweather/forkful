@@ -6,6 +6,7 @@ simple_title:         "現在の日付を取得する"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/getting-the-current-date.md"
 ---
 

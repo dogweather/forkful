@@ -6,6 +6,7 @@ simple_title:         "部分文字列の抽出"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/extracting-substrings.md"
 ---
 

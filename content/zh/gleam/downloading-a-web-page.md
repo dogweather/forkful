@@ -6,6 +6,7 @@ simple_title:         "下载网页"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/downloading-a-web-page.md"
 ---
 

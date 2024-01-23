@@ -5,6 +5,7 @@ simple_title:         "正規表現の使用"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/using-regular-expressions.md"
 ---
 

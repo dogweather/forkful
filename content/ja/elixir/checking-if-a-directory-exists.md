@@ -5,6 +5,7 @@ simple_title:         "ディレクトリが存在するかどうかを確認す
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/checking-if-a-directory-exists.md"
 ---
 

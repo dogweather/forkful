@@ -6,6 +6,7 @@ simple_title:         "字符串拼接"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/concatenating-strings.md"
 ---
 

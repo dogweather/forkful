@@ -5,6 +5,7 @@ simple_title:         "写入标准错误"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/writing-to-standard-error.md"
 ---
 

@@ -5,6 +5,7 @@ simple_title:         "正規表現の使用"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/using-regular-expressions.md"
 ---
 

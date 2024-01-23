@@ -6,6 +6,7 @@ simple_title:         "匹配模式删除字符"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/deleting-characters-matching-a-pattern.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "部分文字列の抽出"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/extracting-substrings.md"
 ---
 

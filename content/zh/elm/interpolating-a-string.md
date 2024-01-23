@@ -6,6 +6,7 @@ simple_title:         "字符串插值"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/interpolating-a-string.md"
 ---
 

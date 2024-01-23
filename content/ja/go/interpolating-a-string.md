@@ -6,6 +6,7 @@ simple_title:         "文字列の補間"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/interpolating-a-string.md"
 ---
 

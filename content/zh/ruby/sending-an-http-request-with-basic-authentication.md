@@ -6,6 +6,7 @@ simple_title:         "使用基本认证发送 HTTP 请求"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/sending-an-http-request-with-basic-authentication.md"
 ---
 

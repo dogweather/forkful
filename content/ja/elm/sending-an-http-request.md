@@ -6,6 +6,7 @@ simple_title:         "HTTPリクエストの送信"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/sending-an-http-request.md"
 ---
 

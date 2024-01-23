@@ -6,6 +6,7 @@ simple_title:         "난수 생성하기"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Numbers"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/generating-random-numbers.md"
 ---
 

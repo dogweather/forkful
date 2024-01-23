@@ -6,6 +6,7 @@ simple_title:         "打印调试输出"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/printing-debug-output.md"
 ---
 

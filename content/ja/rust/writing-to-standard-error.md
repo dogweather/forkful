@@ -5,6 +5,7 @@ simple_title:         "標準エラーへの書き込み"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/writing-to-standard-error.md"
 ---
 

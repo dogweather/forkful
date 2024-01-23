@@ -6,6 +6,7 @@ simple_title:         "난수 생성하기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/generating-random-numbers.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "文字列の補間"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/interpolating-a-string.md"
 ---
 

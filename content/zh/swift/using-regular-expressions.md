@@ -5,6 +5,7 @@ simple_title:         "使用正则表达式"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/using-regular-expressions.md"
 ---
 

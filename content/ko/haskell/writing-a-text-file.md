@@ -5,6 +5,7 @@ simple_title:         "텍스트 파일 작성하기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/writing-a-text-file.md"
 ---
 

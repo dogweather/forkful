@@ -6,6 +6,7 @@ simple_title:         "打印调试信息"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/printing-debug-output.md"
 ---
 

@@ -5,6 +5,7 @@ simple_title:         "標準エラーへの書き込み"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/writing-to-standard-error.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "一時ファイルの作成"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/creating-a-temporary-file.md"
 ---
 

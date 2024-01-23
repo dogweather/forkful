@@ -6,6 +6,7 @@ simple_title:         "提取子字符串"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/extracting-substrings.md"
 ---
 

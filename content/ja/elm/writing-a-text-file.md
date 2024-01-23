@@ -5,6 +5,7 @@ simple_title:         "テキストファイルの書き込み"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/writing-a-text-file.md"
 ---
 

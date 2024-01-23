@@ -6,6 +6,7 @@ simple_title:         "文字列の補間"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/interpolating-a-string.md"
 ---
 

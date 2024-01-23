@@ -6,6 +6,7 @@ simple_title:         "开始一个新项目"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/starting-a-new-project.md"
 ---
 

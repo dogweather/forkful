@@ -6,6 +6,7 @@ simple_title:         "새 프로젝트 시작하기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/starting-a-new-project.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "새 프로젝트 시작하기"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/starting-a-new-project.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "テキストの検索と置換"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/searching-and-replacing-text.md"
 ---
 

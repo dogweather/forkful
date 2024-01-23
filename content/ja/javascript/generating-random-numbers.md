@@ -6,6 +6,7 @@ simple_title:         "ランダム数の生成"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Numbers"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/generating-random-numbers.md"
 ---
 

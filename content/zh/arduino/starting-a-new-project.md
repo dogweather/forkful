@@ -6,6 +6,7 @@ simple_title:         "开始一个新项目"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Getting Started"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/starting-a-new-project.md"
 ---
 

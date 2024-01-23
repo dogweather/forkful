@@ -6,6 +6,7 @@ simple_title:         "开始一个新项目"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Getting Started"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/starting-a-new-project.md"
 ---
 

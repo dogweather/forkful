@@ -6,6 +6,7 @@ simple_title:         "字符串插值"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/interpolating-a-string.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "HTMLの解析"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/parsing-html.md"
 ---
 

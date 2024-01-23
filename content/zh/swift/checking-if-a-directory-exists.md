@@ -6,6 +6,7 @@ simple_title:         "检查目录是否存在"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/checking-if-a-directory-exists.md"
 ---
 

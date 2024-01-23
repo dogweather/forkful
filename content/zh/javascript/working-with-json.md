@@ -5,6 +5,7 @@ simple_title:         "处理JSON数据"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/working-with-json.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "텍스트 검색 및 교체"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/searching-and-replacing-text.md"
 ---
 

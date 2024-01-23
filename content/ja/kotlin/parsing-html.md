@@ -6,6 +6,7 @@ simple_title:         "HTMLの解析"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/parsing-html.md"
 ---
 

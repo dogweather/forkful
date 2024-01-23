@@ -6,6 +6,7 @@ simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/reading-command-line-arguments.md"
 ---
 

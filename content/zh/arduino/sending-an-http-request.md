@@ -6,6 +6,7 @@ simple_title:         "发出 HTTP 请求"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/sending-an-http-request.md"
 ---
 

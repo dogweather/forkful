@@ -5,6 +5,7 @@ simple_title:         "YAMLを扱う"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/working-with-yaml.md"
 ---
 

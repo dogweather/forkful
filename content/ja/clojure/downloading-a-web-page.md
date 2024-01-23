@@ -6,6 +6,7 @@ simple_title:         "ウェブページのダウンロード"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/downloading-a-web-page.md"
 ---
 

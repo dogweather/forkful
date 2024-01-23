@@ -5,6 +5,7 @@ simple_title:         "JSONを扱う方法"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/working-with-json.md"
 ---
 

@@ -5,6 +5,7 @@ simple_title:         "テキストファイルの書き込み"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/writing-a-text-file.md"
 ---
 

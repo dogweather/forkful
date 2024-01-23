@@ -6,6 +6,7 @@ simple_title:         "解析HTML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/parsing-html.md"
 ---
 

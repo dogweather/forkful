@@ -5,6 +5,7 @@ simple_title:         "標準エラーへの書き込み"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/writing-to-standard-error.md"
 ---
 

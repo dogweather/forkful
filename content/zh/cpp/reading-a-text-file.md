@@ -6,6 +6,7 @@ simple_title:         "阅读文本文件"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/reading-a-text-file.md"
 ---
 

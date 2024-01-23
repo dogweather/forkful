@@ -6,6 +6,7 @@ simple_title:         "基本認証を使用したHTTPリクエストの送信"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/sending-an-http-request-with-basic-authentication.md"
 ---
 

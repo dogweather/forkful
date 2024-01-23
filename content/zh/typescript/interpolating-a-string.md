@@ -6,6 +6,7 @@ simple_title:         "字符串插值"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/interpolating-a-string.md"
 ---
 

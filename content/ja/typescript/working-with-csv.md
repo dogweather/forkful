@@ -5,6 +5,7 @@ simple_title:         "CSVファイルの操作"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/working-with-csv.md"
 ---
 

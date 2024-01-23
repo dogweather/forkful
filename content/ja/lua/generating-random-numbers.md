@@ -6,6 +6,7 @@ simple_title:         "ランダム数の生成"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Numbers"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/generating-random-numbers.md"
 ---
 

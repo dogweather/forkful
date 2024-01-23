@@ -6,6 +6,7 @@ simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/converting-a-string-to-lower-case.md"
 ---
 

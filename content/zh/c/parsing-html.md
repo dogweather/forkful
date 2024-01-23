@@ -6,6 +6,7 @@ simple_title:         "解析HTML"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/parsing-html.md"
 ---
 

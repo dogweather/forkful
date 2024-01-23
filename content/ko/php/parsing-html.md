@@ -6,6 +6,7 @@ simple_title:         "HTML 파싱"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/parsing-html.md"
 ---
 

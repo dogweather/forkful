@@ -6,6 +6,7 @@ simple_title:         "명령줄 인수 읽기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/reading-command-line-arguments.md"
 ---
 

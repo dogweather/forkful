@@ -6,6 +6,7 @@ simple_title:         "获取当前日期"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/getting-the-current-date.md"
 ---
 

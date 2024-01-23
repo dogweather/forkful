@@ -5,6 +5,7 @@ simple_title:         "编写测试代码"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/writing-tests.md"
 ---
 

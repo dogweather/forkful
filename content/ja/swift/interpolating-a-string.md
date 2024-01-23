@@ -6,6 +6,7 @@ simple_title:         "文字列の補間"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/interpolating-a-string.md"
 ---
 

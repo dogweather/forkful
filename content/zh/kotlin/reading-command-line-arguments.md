@@ -6,6 +6,7 @@ simple_title:         "读取命令行参数"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/reading-command-line-arguments.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "ランダム数の生成"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Numbers"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/generating-random-numbers.md"
 ---
 

@@ -6,6 +6,7 @@ simple_title:         "匹配模式删除字符"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/deleting-characters-matching-a-pattern.md"
 ---
 

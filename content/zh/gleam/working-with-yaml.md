@@ -5,6 +5,7 @@ simple_title:         "处理 YAML 文件"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/working-with-yaml.md"
 ---
 

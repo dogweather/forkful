@@ -5,6 +5,7 @@ simple_title:         "문자열 대문자로 변환하기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/capitalizing-a-string.md"
 ---
 

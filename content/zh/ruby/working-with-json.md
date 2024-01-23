@@ -5,6 +5,7 @@ simple_title:         "处理JSON数据"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/working-with-json.md"
 ---
 

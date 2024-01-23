@@ -6,6 +6,7 @@ simple_title:         "HTMLの解析"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/parsing-html.md"
 ---
 

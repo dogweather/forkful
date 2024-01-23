@@ -5,6 +5,7 @@ simple_title:         "检查目录是否存在"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/checking-if-a-directory-exists.md"
 ---
 

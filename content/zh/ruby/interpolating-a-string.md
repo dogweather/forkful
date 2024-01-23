@@ -6,6 +6,7 @@ simple_title:         "字符串插值"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/interpolating-a-string.md"
 ---
 

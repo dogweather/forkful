@@ -6,6 +6,7 @@ simple_title:         "テキストの検索と置換"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/searching-and-replacing-text.md"
 ---
 

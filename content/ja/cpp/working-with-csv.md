@@ -5,6 +5,7 @@ simple_title:         "CSVファイルの操作"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/working-with-csv.md"
 ---
 

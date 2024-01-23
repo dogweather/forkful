@@ -6,6 +6,7 @@ simple_title:         "디렉토리 존재 여부 확인하기"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/checking-if-a-directory-exists.md"
 ---
 

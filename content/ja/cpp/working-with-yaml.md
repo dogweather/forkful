@@ -5,6 +5,7 @@ simple_title:         "YAMLを扱う"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/working-with-yaml.md"
 ---
 

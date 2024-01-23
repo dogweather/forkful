@@ -6,6 +6,7 @@ simple_title:         "テキストファイルの読み込み"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/reading-a-text-file.md"
 ---
 

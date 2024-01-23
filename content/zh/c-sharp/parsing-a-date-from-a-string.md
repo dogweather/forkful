@@ -6,6 +6,7 @@ simple_title:         "从字符串解析日期"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/parsing-a-date-from-a-string.md"
 ---
 

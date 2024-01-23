@@ -5,6 +5,7 @@ simple_title:         "テストの作成"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/writing-tests.md"
 ---
 

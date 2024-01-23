@@ -6,6 +6,7 @@ simple_title:         "기본 인증을 사용한 HTTP 요청 보내기"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
+isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/sending-an-http-request-with-basic-authentication.md"
 ---
 
