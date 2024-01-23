@@ -7,7 +7,7 @@ programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/handling-errors.md"
-reviewed_for_accuracy:
+changelog:
   - dogweather, 2024-01-22
 ---
 

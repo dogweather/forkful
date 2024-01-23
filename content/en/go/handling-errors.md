@@ -7,7 +7,7 @@ programming_language: "Go"
 category:             "Go"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/handling-errors.md"
-reviewed_for_accuracy:
+changelog:
   - dogweather, 2024-01-21
 ---
 
