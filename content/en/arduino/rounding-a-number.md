@@ -60,8 +60,5 @@ When choosing which function to use, consider the direction of rounding you need
 ## See Also
 For further reading and resources related to rounding numbers and precision in programming, you might want to check out the following:
 
-- [Arduino Reference: round() function](https://www.arduino.cc/reference/en/language/functions/math/round/)
-- [Arduino Reference: ceil() function](https://www.arduino.cc/reference/en/language/functions/math/ceil/)
-- [Arduino Reference: floor() function](https://www.arduino.cc/reference/en/language/functions/math/floor/)
 - [IEEE Standard for Floating-Point Arithmetic (IEEE 754)](https://ieeexplore.ieee.org/document/4610935)
 - [A Guide to Numeric Types in Arduino](https://create.arduino.cc/projecthub/arduino_genuino/an-introduction-to-arduino-numeric-types-decimals-eea5f2)

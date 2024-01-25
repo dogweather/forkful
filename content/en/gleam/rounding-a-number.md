@@ -43,6 +43,5 @@ The implementation of rounding in GLEAM is part of its float module. It uses the
 
 ## See Also
 
-- GLEAM documentation on Floats: [Official Gleam float documentation](https://gleam.run/stdlib/float/)
 - Wikipedia on Rounding: [Rounding - Wikipedia](https://en.wikipedia.org/wiki/Rounding)
 - IEEE Standard for Floating-Point Arithmetic (IEEE 754): [IEEE 754-2008](https://ieeexplore.ieee.org/document/4610935)

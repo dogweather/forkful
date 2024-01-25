@@ -72,5 +72,3 @@ PowerShell's rounding capabilities allow for precision in an array of contexts, 
 ## See Also
 
 - Microsoft's official documentation on the Math class: [docs.microsoft](https://docs.microsoft.com/en-us/dotnet/api/system.math?view=net-6.0)
-- Decimal rounding in .NET: [docs.microsoft](https://docs.microsoft.com/en-us/dotnet/standard/base-types/rounding-and-precision)
-- PowerShell string formatting: [Microsoft PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-string-data-type?view=powershell-7.1#string-formatting)

@@ -46,5 +46,4 @@ Alternative methods can include manual rounding by using math operations or writ
 You can look into more detailed explanations about floating-point arithmetic and rounding functions in the Java standard library documentation, as this will closely reflect how Clojure operates as well. Here are a few resources to check out:
 
 - [Oracle's Java Math.round() documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#round-float-)
-- [A Clojure documentation on numbers](https://clojure.org/reference/numbers)
 - [IEEE Standards Association's floating-point standard](https://standards.ieee.org/standard/754-2019.html), which underpins how floating-point numbers are handled in modern computing.

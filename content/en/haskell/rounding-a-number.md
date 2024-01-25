@@ -46,6 +46,4 @@ As for implementation details, the rounding functions use mathematical operation
 ## See Also
 
 - [Haskell Prelude Documentation](https://hackage.haskell.org/package/base-4.16.0.0/docs/Prelude.html): Official documentation for the Prelude module where rounding functions are found.
-- [HaskellWiki on Rounding](https://wiki.haskell.org/How_to_round_a_number): More about rounding methods in Haskell.
 - [Data.Fixed Module](https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Fixed.html): Documentation for the Data.Fixed module for fixed-point arithmetic.
-- [Haskell Numeric Types](https://en.wikibooks.org/wiki/Haskell/Understanding_arithmetic): An article discussing numeric types in Haskell, relevant for understanding the return types of rounding functions.

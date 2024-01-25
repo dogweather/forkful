@@ -51,4 +51,3 @@ The actual implementation details for how rounding works relate to the IEEE floa
 
 - Microsoft's documentation on `Math.Round`: [MSDN Math.Round](https://docs.microsoft.com/en-us/dotnet/api/system.math.round)
 - IEEE Standard for Floating-Point Arithmetic (IEEE 754): [IEEE 754-2019](https://ieeexplore.ieee.org/document/8766229)
-- More about number representation and arithmetic in C#: [Understanding Floating Point Precision, aka ‘Why does Math.Round(2.5) return 2 instead of 3?’](https://devblogs.microsoft.com/premier-developer/understanding-floating-point-precision-aka-why-does-math-round2-5-return-2-instead-of-3/)
