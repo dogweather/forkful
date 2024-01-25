@@ -49,10 +49,8 @@ Each Ruby logging library has its own way of doing things, but under the hood, t
 
 ## See Also
 For a deep dive into Ruby's built-in logging module, check out the official docs:
-- [Ruby Logger Documentation](https://ruby-doc.org/stdlib/libdoc/logger/rdoc/Logger.html)
 
 If you're interested in more advanced logging or want to explore third-party gems:
-- [Semantic Logger](http://rocketjob.github.io/semantic_logger/)
 - [Lograge](https://github.com/roidrage/lograge)
 
 For general logging practices and philosophy (not Ruby-specific), these articles are timeless reads:

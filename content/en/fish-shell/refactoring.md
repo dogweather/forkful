@@ -62,4 +62,3 @@ When refactoring in Fish Shell, you’re mostly dealing with functions and comma
 ## See Also
 - Martin Fowler's Refactoring website: [https://refactoring.com/](https://refactoring.com/)
 - Official Fish Shell documentation: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- Greg Hurrell's videos on Fish Shell scripting: [https://www.youtube.com/user/greghurrell](https://www.youtube.com/user/greghurrell)

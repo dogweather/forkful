@@ -61,6 +61,4 @@ In the context of Elm, refactoring taps into the language's strengths, like its 
 
 ## See Also
 - ["Refactoring: Improving the Design of Existing Code" by Martin Fowler](https://martinfowler.com/books/refactoring.html)
-- [Elm's Official Guide on Refactor to Patterns](https://guide.elm-lang.org/architecture/reuse/)
-- [Elm Package for code quality and refactoring tools](http://package.elm-lang.org/packages/elm-community/elm-review/latest/)
 - [Elm Discourse - Topics on Refactoring](https://discourse.elm-lang.org/search?q=refactoring)

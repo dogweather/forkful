@@ -43,6 +43,5 @@ Refactoring isn't a modern concept; it evolved with programming, becoming more f
 
 ## See Also
 - [The book "Refactoring: Improving the Design of Existing Code" by Martin Fowler](https://martinfowler.com/books/refactoring.html)
-- [TypeScript Handbook on Refactoring](https://www.typescriptlang.org/docs/handbook/refactoring.html)
 - [TSLint for static code analysis](https://palantir.github.io/tslint/)
 - [Understanding Code Smells](https://refactoring.guru/refactoring/smells)

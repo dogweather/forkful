@@ -78,4 +78,3 @@ When implementing refactoring, it's crucial to have a comprehensive test suite t
 - Martin Fowler's seminal work on Refactoring: [Refactoring: Improving the Design of Existing Code](https://martinfowler.com/books/refactoring.html)
 - Microsoft's guide on Refactoring in Visual Studio: [Refactoring (C#)](https://docs.microsoft.com/en-us/visualstudio/ide/refactoring-in-visual-studio?view=vs-2022)
 - A detailed look into Refactoring patterns with examples: [SourceMaking Refactoring](https://sourcemaking.com/refactoring)
-- Utilize ReSharper for automated Refactoring in C#: [ReSharper Features](https://www.jetbrains.com/resharper/features/refactorings.html)

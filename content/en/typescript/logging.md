@@ -68,6 +68,5 @@ Implementation-wise, log messages typically contain a timestamp, a severity leve
 
 - [Winston - A logger for just about everything](https://www.npmjs.com/package/winston)
 - [Pino - Very low overhead Node.js logger](https://www.npmjs.com/package/pino)
-- [Node Loggly - A client for the Loggly cloud logging service](https://www.npmjs.com/package/node-loggly)
 - [Node.js Logging Best Practices](https://thisdavej.com/using-winston-a-versatile-logging-library-for-node-js/)
 - [The 12 Factor App - Logs](https://12factor.net/logs)

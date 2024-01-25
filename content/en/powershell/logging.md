@@ -54,7 +54,3 @@ Alternatives? Sure, if you're rolling enterprise, you might look at Windows Even
 
 ## See Also:
 Check out these to get a handle on all things logging in PowerShell:
-
-- [About_Logging Windows Docs](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-transcript?view=powershell-7.1)
-- [Understand the Out-File Cmdlet](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Out-File)
-- For some best practices and patterns, the [Powershell Logging Best Practices by Kaseya](https://www.kaseya.com/resources/best-practices/powershell-scripting-logging-best-practices) is golden.

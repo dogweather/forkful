@@ -67,5 +67,4 @@ For those of you who like to go the extra mile with your logging practices, chec
 
 And for a bit of background reading on the whys and hows of logging, dive into:
 
-- Martin Fowler's take on [Logging Levels](https://martinfowler.com/articles/patterns-of-distributed-systems/log-level.html), a fantastic resource on why you need different log levels and how to use them.
 - This Stack Overflow thread on [logging best practices](https://stackoverflow.com/questions/783956/logging-best-practices) will give you a peer-reviewed deep dive into the subject.

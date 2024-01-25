@@ -79,7 +79,5 @@ Additionally, implementation of refactoring can involve more systemic changes li
 To dive deeper, here are some resources:
 
 - Martin Fowler's Refactoring Book: [_Refactoring: Improving the Design of Existing Code_](https://martinfowler.com/books/refactoring.html)
-- PowerShell scripting guidance: [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/scripting/overview)
-- Visual Studio Code - PowerShell extension: [VSCode PowerShell Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)
 - Testing refactored code with Pester: [Pester Testing Framework](https://pester.dev/)
 - PowerShell Best Practices: [The PowerShell Best Practices and Style Guide](https://poshcode.gitbooks.io/powershell-practice-and-style/)

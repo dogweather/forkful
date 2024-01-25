@@ -60,7 +60,6 @@ Implementation details in Elixir specifically include understanding the function
 ## See Also
 For more on Elixir-specific refactoring techniques:
 
-- [Elixir School's lessons on refactoring](https://elixirschool.com/en/lessons/refactoring/)
 - [Elixir's official guides](https://elixir-lang.org/getting-started/)
 - ["Refactoring: Improving the Design of Existing Code" by Martin Fowler](https://martinfowler.com/books/refactoring.html), for general principles that can be applied to Elixir.
 - [Credo, a static code analysis tool for Elixir](https://github.com/rrrene/credo) that encourages best practices.

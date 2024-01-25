@@ -75,4 +75,3 @@ Bash-specific refactoring is more about adhering to best practices, such as quot
 - [Google's Shell Style Guide](https://google.github.io/styleguide/shellguide.html)
 - [ShellCheck, a static analysis tool for shell scripts](https://www.shellcheck.net/)
 - [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line)
-- [Bash Hackers Wiki](https://wiki.bash-hackers.org/)

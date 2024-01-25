@@ -82,6 +82,5 @@ You can dive deeper into refactoring with Martin Fowler's seminal book *Refactor
 
 - [Arduino Forum - Programming Questions](https://forum.arduino.cc/index.php?board=4.0)
 - [Refactoring Guru](https://refactoring.guru/refactoring)
-- [Test-Driven Development for Embedded C by James W. Grenning](http://www.wingman-sw.com/books/test-driven-development-for-embedded-c)
 
 Remember, the goal is clean, comprehensible code that future you, and others, will thank you for. Keep hacking, and keep it tidy!
