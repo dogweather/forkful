@@ -67,5 +67,4 @@ When working with XML in Swift, `XMLParser` is a stream-based parser which means
 
 ## See Also
 - [Apple's XML Parsing Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/XMLParsing/XMLParsing.html)
-- [Swift Documentation - XML Processing](https://developer.apple.com/documentation/foundation/xml_processing)
 - [W3Schools XML Tutorial](https://www.w3schools.com/xml/)

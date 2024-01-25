@@ -41,6 +41,5 @@ Without native complex number operations, languages like Rust rely on third-part
 It's worth mentioning that some languages (like Python) have built-in support for complex numbers, while others (like C++, with the `<complex>` header) provide them as part of the standard library. In Rust, the decision to keep the standard library small means you'll often reach for community-created crates for additional functionality.
 
 ## See Also
-- [num-complex crate](https://crates.io/crates/num-complex): For all your complex number needs in Rust.
 - [Rust Book](https://doc.rust-lang.org/book/): To learn more about Rust and how to work with external crates.
 - [Complex Number Wikipedia](https://en.wikipedia.org/wiki/Complex_number): For a deeper understanding of complex numbers.

@@ -51,6 +51,4 @@ Be aware of the `Decimal` type for precise financial calculations, which avoids 
 
 ## See Also
 
-- Swift's official documentation on number rounding: [Swift Docs](https://docs.swift.org/swift-book/LanguageGuide/NumbersAndStrings.html)
 - IEEE Standard for Floating-Point Arithmetic (IEEE 754): [IEEE 754](https://ieeexplore.ieee.org/document/4610935)
-- In-depth rounding strategies for Swift: [NSHipster Article](https://nshipster.com/swift-stdlib/)

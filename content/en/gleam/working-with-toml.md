@@ -60,4 +60,3 @@ TOML was released in 2013 by Tom Preston-Werner. Its goal: to be more readable a
 - TOML language specs: [https://toml.io/en/](https://toml.io/en/)
 - An Erlang TOML parser: [https://hex.pm/packages/toml](https://hex.pm/packages/toml)
 - TOML on GitHub: [https://github.com/toml-lang/toml](https://github.com/toml-lang/toml)
-- toml_parser, an Elixir TOML parser which could be used from Gleam: [https://hex.pm/packages/toml_parser](https://hex.pm/packages/toml_parser)

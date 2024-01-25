@@ -63,7 +63,6 @@ XML, or Extensible Markup Language, is a markup language that defines a set of r
 
 ## See Also
 - [TinyXML-2 Library Documentation](https://leethomason.github.io/tinyxml2/)
-- [XMLWriter Library](https://github.com/f_su/xml_writer)
 - [Arduino JSON Library](https://arduinojson.org/) for an alternative when working with JSON data.
 - [W3Schools XML Tutorial](https://www.w3schools.com/xml/) for general XML learning.
 - [W3C XML Specification](https://www.w3.org/XML/) for the official XML standards and recommendations.

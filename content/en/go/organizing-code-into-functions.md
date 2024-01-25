@@ -72,4 +72,3 @@ Alternatives to functions include inline code (messy for complex tasks) and obje
 ## See Also
 - [Go by Example: Functions](https://gobyexample.com/functions)
 - [Effective Go: Function](https://golang.org/doc/effective_go#functions)
-- [The Go Blog: First-Class Functions in Go](https://blog.golang.org/first-class-functions-in-go)

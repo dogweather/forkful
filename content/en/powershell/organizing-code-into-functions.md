@@ -43,6 +43,5 @@ Functions in PowerShell, like in most languages, are old news. We’ve been comp
 Implementation? Functions can be basic like our example or complex with scopes, pipeline input, and more. Take `Advanced Functions`. They mimic cmdlets with parameters that have attributes, like `[Parameter(Mandatory=$true)]`. That's a taste of PowerShell's flexibility.
 
 ## See Also
-- [about_Functions](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-functions?view=powershell-7.1)
 - [about_Functions_Advanced_Parameters](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.1)
 - [about_Script_Blocks](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_script_blocks?view=powershell-7.1)

@@ -49,4 +49,3 @@ PowerShell's reliance on .NET for complex number support means performance is so
 ## See Also
 - [System.Numerics.Complex Structure](https://docs.microsoft.com/en-us/dotnet/api/system.numerics.complex)
 - [Complex Number Arithmetic in Python](https://docs.python.org/3/library/cmath.html)
-- [Introduction to Complex Numbers in Mathematics](https://www.khanacademy.org/math/algebra2/introduction-to-complex-numbers-algebra-2)

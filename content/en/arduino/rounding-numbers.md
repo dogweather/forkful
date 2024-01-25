@@ -54,6 +54,5 @@ Arduino's implementation of these functions is straightforward; they don't handl
 Round-off errors can accumulate, significantly impacting long calculations or iterative processes. Programmers need to be cautious when running numerous operations on rounded values.
 
 ## See Also:
-1. Arduino's official reference on math functions: [Arduino Math](https://www.arduino.cc/reference/en/language/functions/math/)
 2. In-depth look at the pitfalls and strategies for rounding: [Floating Point Guide](https://floating-point-gui.de/)
 3. For advanced techniques, including custom rounding functions and handling round-off error, you might check academic resources or detailed programming guides.

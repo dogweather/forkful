@@ -46,4 +46,3 @@ Implementation in Rust is pretty straightforward. Functions declare their parame
 Check out these for more info:
 - The Rust Programming Language Book: [Functions](https://doc.rust-lang.org/book/ch03-03-how-functions-work.html)
 - Rust by Example on [Functions](https://doc.rust-lang.org/rust-by-example/fn.html)
-- Refactoring to functions in Rust: [Rust Refactoring](https://hoverbear.org/blog/refactoring-to-rust-functions/)

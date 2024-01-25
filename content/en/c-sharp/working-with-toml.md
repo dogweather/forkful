@@ -80,4 +80,3 @@ Implementation-wise, TOML focuses on mapping cleanly to a hash table, making dat
 ## See Also:
 - Official TOML GitHub Repo & Spec: [github.com/toml-lang/toml](https://github.com/toml-lang/toml)
 - Tomlyn, the .NET library: [github.com/xoofx/Tomlyn](https://github.com/xoofx/Tomlyn)
-- TOML vs. Other Formats: [https://www.baeldung.com/ops/toml-vs-yaml-vs-json-vs-env](https://www.baeldung.com/ops/toml-vs-yaml-vs-json-vs-env)

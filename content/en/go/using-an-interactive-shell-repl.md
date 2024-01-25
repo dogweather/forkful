@@ -37,4 +37,3 @@ Originally developed for Lisp, REPLs are common in dynamic languages like Python
 - `gore`: [https://github.com/motemen/gore](https://github.com/motemen/gore)
 - `go-pry`: [https://github.com/d4l3k/go-pry](https://github.com/d4l3k/go-pry) 
 - `yaegi`: [https://github.com/traefik/yaegi](https://github.com/traefik/yaegi)
-- An article on REPLs in Go: [https://blog.gopheracademy.com/advent-2017/repl-in-go/](https://blog.gopheracademy.com/advent-2017/repl-in-go/)

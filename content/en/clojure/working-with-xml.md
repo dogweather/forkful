@@ -52,6 +52,5 @@ Keep in mind, the performance and memory overhead when dealing with very large X
 
 ## See Also
 - [clojure.data.xml GitHub](https://github.com/clojure/data.xml)
-- [ClojureDocs XML parsing examples](https://clojuredocs.org/clojure.data.xml/parse)
 - [Java API for XML Processing (JAXP)](https://docs.oracle.com/javase/tutorial/jaxp/index.html)
 - [StAX](https://docs.oracle.com/javase/tutorial/jaxp/stax/index.html)

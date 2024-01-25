@@ -75,6 +75,5 @@ Under the hood, Rust's XML parsing leans on iterator patterns, keeping memory us
 
 ## See Also:
 For more on Rust and XML: 
-- The `xml-rs` crate docs: [https://crates.io/crates/xml-rs](https://crates.io/crates/xml-rs)
 - `serde-xml-rs` for Rust's serde compatibility: [https://github.com/RReverser/serde-xml-rs](https://github.com/RReverser/serde-xml-rs)
 - Official Rust documentation (because it never hurts to brush up): [https://doc.rust-lang.org/stable/book/](https://doc.rust-lang.org/stable/book/)

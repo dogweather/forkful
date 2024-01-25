@@ -31,5 +31,4 @@ Introduced in Ruby 1.8, IRB is a staple for Rubyists. It's inspired by the inter
 
 ## See Also
 - [Ruby's IRB](https://ruby-doc.org/stdlib-2.7.0/libdoc/irb/rdoc/IRB.html)
-- [Pry, an alternative to IRB](http://pryrepl.org/)
 - [The irbtools gem](https://github.com/janlelis/irbtools)

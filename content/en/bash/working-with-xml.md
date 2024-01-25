@@ -46,6 +46,5 @@ Under the hood, xmllint uses libxml2 – the XML C parser. It's fast, but the er
 
 ## See Also
 - [xmlsoft.org](http://xmlsoft.org/): Libxml2 and xmllint stuff.
-- [xmlstarlet.sourceforge.net](http://xmlstarlet.sourceforge.net/): xmlstarlet's home.
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/xml+bash): Real-world problems and solutions.
 - [W3Schools XML Tutorial](https://www.w3schools.com/xml/): Basics of XML.

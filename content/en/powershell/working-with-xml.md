@@ -47,6 +47,5 @@ Alternatives to XML include JSON, YAML, or custom data formats. JSON, for instan
 PowerShell uses the .NET Framework's XML capabilities for its XML handling. This means it's not just about simple read-write operations; you can also work with XML schemas for validation, use XPath for queries, and employ XSLT transformations, all through PowerShell.
 
 ## See Also
-- [PowerShell's XML capabilities](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/working-with-xml-data?view=powershell-7.1)
 - [W3Schools XML tutorial](https://www.w3schools.com/xml/)
 - [XML vs. JSON](https://www.json.org/json-en.html)

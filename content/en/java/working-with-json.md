@@ -100,5 +100,4 @@ When implementing JSON, remember to handle your exceptions properly - your code 
 - [Jackson Project](https://github.com/FasterXML/jackson)
 - [Gson Project](https://github.com/google/gson)
 - [JSON Specification](https://www.json.org/json-en.html)
-- [Comparison of JSON and XML](https://en.wikipedia.org/wiki/Comparison_of_JSON_and_XML)
 - [JsonB Specification](https://jakarta.ee/specifications/jsonb/)

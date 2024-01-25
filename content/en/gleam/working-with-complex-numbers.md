@@ -58,5 +58,4 @@ Remember to test thoroughly, especially edge cases! Handling complex infinity an
 ## See Also
 For more goodies, here's where you can dive in:
 - [Gleam's Official Docs](https://gleam.run/documentation/)
-- [Complex number arithmetic guide](https://tutorial.math.lamar.edu/classes/calcii/polarcomplexnumbers.aspx)
 - Dig into other language's libraries for inspiration, like Rust's [num-complex](https://crates.io/crates/num-complex) or Python's [cmath module](https://docs.python.org/3/library/cmath.html).

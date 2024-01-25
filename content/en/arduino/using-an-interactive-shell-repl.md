@@ -43,6 +43,4 @@ REPL isn't built-in in Arduino's default IDE, but creative programmers can simul
 
 ## See Also
 - [Arduino Serial Documentation](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Bitlash: A command shell for Arduino](https://bitlash.net)
-- [PlatformIO Advanced Serial Monitor](https://docs.platformio.org/en/latest/plus/pio-unity.html#serial-monitor)
 - [Interactive Development Environment (IDE) Comparison](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments)

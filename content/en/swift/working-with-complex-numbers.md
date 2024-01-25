@@ -41,4 +41,3 @@ Complex numbers popped up in the 16th century in algebraic equations. They're es
 
 ## See Also
 - Swift Numerics: [https://github.com/apple/swift-numerics](https://github.com/apple/swift-numerics)
-- Swift and C++ interoperability: [https://swift.org/blog/swift-cpp-interop/](https://swift.org/blog/swift-cpp-interop/)

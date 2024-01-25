@@ -55,4 +55,3 @@ As an alternative, for applications that don't inherently need complex number ar
 ## See Also
 - The [Complex.h](https://github.com/RobTillaart/Complex) library by Rob Tillaart.
 - A deeper dive into the [math behind complex numbers](https://mathworld.wolfram.com/ComplexNumber.html).
-- Applications of [complex numbers in signal processing](https://www.allaboutcircuits.com/textbook/alternating-current/chpt-5/complex-numbers-ac-circuit-analysis/).

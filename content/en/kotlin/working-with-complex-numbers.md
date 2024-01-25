@@ -51,9 +51,7 @@ Operations on complex numbers mirror real numbers, but with attention to the ima
 Kotlin Math libraries:
 
 - [koma](https://koma.kyonifer.com/): A scientific computing library for Kotlin.
-- [ejml](https://ejml.org/): A library for dense and sparse real/complex matrices.
 
 Further reading on Complex Numbers:
 
-- [Khan Academy: Complex Numbers](https://www.khanacademy.org/math/algebra2/complex-numbers-algebra-2)
 - [Wikipedia: Complex Numbers](https://en.wikipedia.org/wiki/Complex_number)

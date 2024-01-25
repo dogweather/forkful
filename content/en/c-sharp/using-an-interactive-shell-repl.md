@@ -34,6 +34,4 @@ Visual Studio's C# Interactive window is a REPL powered by Roslyn. It has Intell
 For alternative languages, Python uses `IDLE`, JavaScript has Node.js's REPL, and F# ships with `F# Interactive`. Each fosters instant feedback loops, invaluable for testing small code snippets or understanding language features.
 
 ## See Also
-- [Roslyn C# Interactive](https://github.com/dotnet/roslyn/blob/main/docs/wiki/C%23-Interactive-Window.md)
 - [.NET Core `dotnet-script` REPL](https://github.com/filipw/dotnet-script)
-- [Microsoft Docs on C# Interactive](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/exploration/interactive)

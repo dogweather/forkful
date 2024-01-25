@@ -43,4 +43,3 @@ Alternatives to organizing code can be using macros or processes in Elixir for r
 ## See Also
 - [Elixir's official documentation on functions](https://hexdocs.pm/elixir/Kernel.html#functions)
 - [Dave Thomas' "Programming Elixir"](https://pragprog.com/titles/elixir16/programming-elixir-1-6/)
-- [Erlang's influence on Elixir](http://erlang.org/doc/apps/inets/HTTP_Clients.html)

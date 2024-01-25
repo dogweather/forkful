@@ -69,6 +69,5 @@ The `elm/xml` decode functions hinge on mapping XML nodes to Elm types. You buil
 Generation of XML is less common in Elm but can be achieved with `elm/xml`'s counterpart `Xml.Encode`.
 
 ## See Also
-- Elm XML package: [https://package.elm-lang.org/packages/elm/xml/latest/](https://package.elm-lang.org/packages/elm/xml/latest/)
 - Elm Guide on JSON which also applies to XML mindset: [https://guide.elm-lang.org/interop/json.html](https://guide.elm-lang.org/interop/json.html)
 - XML standard by W3C for a deeper understanding of XML itself: [https://www.w3.org/XML/](https://www.w3.org/XML/)

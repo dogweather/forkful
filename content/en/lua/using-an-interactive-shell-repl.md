@@ -37,6 +37,5 @@ Lua’s lightweight nature makes its REPL ideal for prototyping. It's been aroun
 
 ## See Also
 - [Lua 5.4 Reference Manual - The Standalone Lua Interpreter](https://www.lua.org/manual/5.4/manual.html#6)
-- [Learn Lua](https://www.learn-lua.org/)
 - [ZeroBrane Studio](https://studio.zerobrane.com/)
 - [LuaRocks](https://luarocks.org/)

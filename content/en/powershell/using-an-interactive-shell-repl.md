@@ -44,5 +44,4 @@ PowerShell's implementation uses a host application to run the shell. While Powe
 
 ## See Also
 - [About PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview)
-- [Learn PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-powershell)
 - [StackOverflow: PowerShell](https://stackoverflow.com/questions/tagged/powershell)
