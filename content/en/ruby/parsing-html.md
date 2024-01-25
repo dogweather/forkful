@@ -1,8 +1,8 @@
 ---
-title:                "Parsing html"
+title:                "Parsing HTML"
 date:                  2024-01-20T15:33:38.456428-07:00
-html_title:           "Bash recipe: Parsing html"
-simple_title:         "Parsing html"
+html_title:           "Bash recipe: Parsing HTML"
+simple_title:         "Parsing HTML"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"

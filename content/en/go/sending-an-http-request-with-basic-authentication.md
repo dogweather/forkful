@@ -1,8 +1,8 @@
 ---
-title:                "Sending an http request with basic authentication"
+title:                "Sending an HTTP request with basic authentication"
 date:                  2024-01-20T18:01:47.270757-07:00
 model:                 gpt-4-1106-preview
-simple_title:         "Sending an http request with basic authentication"
+simple_title:         "Sending an HTTP request with basic authentication"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"

@@ -1,7 +1,7 @@
 ---
-title:                "Working with csv"
-html_title:           "C recipe: Working with csv"
-simple_title:         "Working with csv"
+title:                "Working with CSV"
+html_title:           "C recipe: Working with CSV"
+simple_title:         "Working with CSV"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"

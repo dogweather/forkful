@@ -1,8 +1,8 @@
 ---
-title:                "Sending an http request"
+title:                "Sending an HTTP request"
 date:                  2024-01-20T17:59:42.892380-07:00
 model:                 gpt-4-1106-preview
-simple_title:         "Sending an http request"
+simple_title:         "Sending an HTTP request"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"

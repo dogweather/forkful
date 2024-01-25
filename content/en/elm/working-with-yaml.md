@@ -1,7 +1,7 @@
 ---
-title:                "Working with yaml"
-html_title:           "Arduino recipe: Working with yaml"
-simple_title:         "Working with yaml"
+title:                "Working with YAML"
+html_title:           "Arduino recipe: Working with YAML"
+simple_title:         "Working with YAML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"

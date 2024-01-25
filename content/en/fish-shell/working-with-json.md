@@ -1,7 +1,7 @@
 ---
-title:                "Working with json"
-html_title:           "Arduino recipe: Working with json"
-simple_title:         "Working with json"
+title:                "Working with JSON"
+html_title:           "Arduino recipe: Working with JSON"
+simple_title:         "Working with JSON"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"

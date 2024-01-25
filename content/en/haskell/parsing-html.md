@@ -1,8 +1,8 @@
 ---
-title:                "Parsing html"
+title:                "Parsing HTML"
 date:                  2024-01-20T15:31:49.800254-07:00
-html_title:           "Bash recipe: Parsing html"
-simple_title:         "Parsing html"
+html_title:           "Bash recipe: Parsing HTML"
+simple_title:         "Parsing HTML"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
