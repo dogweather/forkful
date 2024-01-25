@@ -1,6 +1,6 @@
 ---
 title:                "Handling errors"
-date:                  2024-01-21T21:19:31.877074-07:00
+date:                  2024-01-25T02:51:32.393618-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Handling errors"
 programming_language: "PHP"
@@ -12,48 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Handling errors in PHP is about managing the unexpected—think typos, bad data, or network issues. Programmers do this to prevent crashes and give users helpful feedback.
+Error handling in PHP is about managing and responding to conditions that disrupt the normal flow of a program, like missing files or bad data input. Programmers handle errors to prevent crashes and to give users a smoother experience.
 
 ## How to:
-
-PHP offers a simple way to handle errors with `try`, `catch`, and `finally` blocks. Here's a quick look:
+In PHP, you can manage errors using `try-catch` blocks, and you can customize the process with custom error handlers and exceptions.
 
 ```php
-<?php
-function divide($dividend, $divisor) {
-    if ($divisor == 0) {
-        throw new Exception("Division by zero.");
-    }
-    return $dividend / $divisor;
+// Basic try-catch example
+try {
+  // Do something risky
+  $file = fopen("nonexistentfile.txt", "r");
+} catch (Exception $e) {
+  // Handle the error
+  echo "Error: " . $e->getMessage();
 }
+
+// Setting a custom error handler
+set_error_handler(function($severity, $message, $file, $line) {
+  throw new ErrorException($message, 0, $severity, $file, $line);
+});
+
+// Using exceptions
+class MyException extends Exception {}
 
 try {
-    echo divide(5, 0);
-} catch (Exception $e) {
-    echo "Caught exception: " . $e->getMessage();
-} finally {
-    echo "\nAlways executed.";
+  // Do something and throw a custom exception
+  throw new MyException("Custom error!");
+} catch (MyException $e) {
+  // Handle the custom exception
+  echo $e->getMessage();
 }
-?>
-```
 
-Sample Output:
-```
-Caught exception: Division by zero.
-Always executed.
+// Sample output:
+// Error: fopen(nonexistentfile.txt): failed to open stream: No such file or directory
+// Custom error!
 ```
 
 ## Deep Dive
+Back in the day, PHP errors were more about warnings and notices that didn't stop script execution. As the language matured, it adopted more robust object-oriented error handling via the Exception class introduced in PHP 5. Later, PHP 7 came out with Error classes that finally differentiated between errors and exceptions.
 
-Before PHP 7, error handling was a bit of a wild ride with `set_error_handler()` and the `@` operator to suppress errors. PHP 7 introduced throwable exceptions and errors, unifying the way we manage problems.
+Before `try-catch` blocks, PHP used `set_error_handler()` to deal with errors. `try-catch` is cleaner, more modern. But custom error handlers still have a place, especially for legacy code or when you need to catch what would normally be non-exception errors.
 
-Alternatives to exceptions include returning special values like `false` or `null`, but this could get messy if you forget to check these return values.
+The `Throwable` interface in PHP 7+ means whether it's an Error or Exception, you can catch both. This is handy because now you don't miss critical runtime errors, which were harder to track before.
 
-An exciting part about error handling in PHP 7 and later is the introduction of typed exceptions, allowing for more specific catch blocks. A `try` block can have multiple `catch` blocks to handle different types of Exceptions separately.
-
-Implementation detail: When an exception is thrown, PHP stops executing the current script at that point and jumps to the first matching `catch` block. If there is no matching catch, or if the exception is not caught, PHP throws a fatal error—so catch with care!
+Alternatives outside PHP’s built-in mechanisms include libraries and frameworks that come with their own error handling systems, offering more features like error logging to files or displaying user-friendly error pages.
 
 ## See Also
-
-- The PHP Manual on Exceptions: [php.net/manual/en/language.exceptions.php](https://www.php.net/manual/en/language.exceptions.php)
-- PHP The Right Way on Error Reporting: [phptherightway.com/#error_reporting](https://phptherightway.com/#error_reporting)
+- Official PHP documentation on Exceptions: https://www.php.net/manual/en/language.exceptions.php
+- PHP The Right Way on error reporting: https://phptherightway.com/#error_reporting
+- PHP Manual on Error Handling: https://www.php.net/manual/en/book.errorfunc.php
