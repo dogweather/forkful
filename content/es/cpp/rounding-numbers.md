@@ -1,0 +1,52 @@
+---
+title:                "Redondeo de números"
+date:                  2024-01-26T03:43:20.393265-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Redondeo de números"
+programming_language: "C++"
+category:             "C++"
+tag:                  "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/rounding-numbers.md"
+---
+
+{{< edit_this_page >}}
+
+## Qué y Por Qué?
+Redondear números significa ajustar un valor a su entero más cercano o precisión especificada. Los desarrolladores lo hacen para simplificar, cumplir con restricciones del mundo real o mejorar el rendimiento al descartar precisión excesiva.
+
+## Cómo hacerlo:
+C++ ofrece varias maneras de redondear números, como `floor()`, `ceil()` y `round()`:
+
+```C++
+#include <iostream>
+#include <cmath> // para funciones de redondeo
+
+int main() {
+    double num = 3.14;
+
+    std::cout << "floor: " << std::floor(num) << "\n"; // Salida: floor: 3
+    std::cout << "ceil: " << std::ceil(num) << "\n";   // Salida: ceil: 4
+    std::cout << "round: " << std::round(num) << "\n"; // Salida: round: 3
+
+    // Para precisión fija, como redondear a dos decimales:
+    double precise_num = 3.146;
+    double multiplicador = 100.0;
+    double redondeado = std::round(precise_num * multiplicador) / multiplicador;
+
+    std::cout << "redondeado a dos decimales: " << redondeado << "\n"; // Salida: redondeado a dos decimales: 3.15
+
+    return 0;
+}
+```
+
+## Análisis Profundo
+Antes de C++11, el redondeo dependía de técnicas manuales o bibliotecas no estándar. Hoy en día, `<cmath>` proporciona métodos robustos. `floor()` redondea hacia abajo, `ceil()` redondea hacia arriba, mientras que `round()` va al entero más cercano, incluso maneja desempates (casos de 0.5) redondeando al número par.
+
+Entender el comportamiento de estas funciones es crucial; por ejemplo, los números negativos podrían confundirte (`std::round(-2.5)` da como resultado `-2.0`).
+
+¿Alternativas? Convertir a un entero después de añadir 0.5 para números positivos fue un truco clásico pero falla con los negativos y no es agnóstico del tipo. Bibliotecas como Boost pueden ofrecer enfoques más matizados, mientras que extensiones de lenguaje o intrínsecos del compilador pueden optimizar para hardware específico.
+
+## Ver También
+- Referencia de C++ para `<cmath>`: https://en.cppreference.com/w/cpp/header/cmath
+- Estándar IEEE para Aritmética de Punto Flotante (IEEE 754): https://ieeexplore.ieee.org/document/4610935
+- Biblioteca de Conversión Numérica de Boost: https://www.boost.org/doc/libs/release/libs/numeric/conversion/

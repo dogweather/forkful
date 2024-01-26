@@ -1,0 +1,62 @@
+---
+title:                "Utilizzo di un debugger"
+date:                  2024-01-26T03:50:03.184815-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Utilizzo di un debugger"
+programming_language: "Kotlin"
+category:             "Kotlin"
+tag:                  "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/using-a-debugger.md"
+---
+
+{{< edit_this_page >}}
+
+## Cosa & Perché?
+Immergersi in un debugger consiste nel passare attraverso il proprio codice, osservare gli ingranaggi in azione e catturare quei fastidiosi bug con le mani nel sacco. I programmatori usano i debugger perché sono gli strumenti di indagine che ci aiutano a scoprire dove le cose vanno storte senza strapparci i capelli.
+
+## Come fare:
+Ecco un assaggio del debugging in Kotlin con IntelliJ IDEA - lo Sherlock Holmes degli IDE:
+
+```kotlin
+fun main() {
+    val mysteryNumber = 42
+    var guess = 0
+
+    while (guess != mysteryNumber) {
+        println("Indovina il numero: ")
+        guess = readLine()?.toIntOrNull() ?: continue // Ignora gli input non validi
+
+        // Imposta un breakpoint qui per osservare 'guess' in azione
+        if (guess < mysteryNumber) {
+            println("Troppo basso!")
+        } else if (guess > mysteryNumber) {
+            println("Troppo alto!")
+        }
+    }
+
+    println("Hai indovinato! Il numero misterioso era $mysteryNumber")
+}
+```
+
+Output del debugger:
+```
+Indovina il numero: 
+10
+Troppo basso!
+Indovina il numero: 
+50
+Troppo alto!
+Indovina il numero: 
+42
+Hai indovinato! Il numero misterioso era 42
+```
+
+## Approfondimento
+I debugger sono in gioco dagli anni '50. All'epoca erano piuttosto primitivi e il debugging poteva riguardare più l'hardware che il software. Oggi, un debugger come quello in IntelliJ IDEA ci permette di impostare breakpoint, passare attraverso il codice linea per linea e ispezionare lo stato delle variabili a nostro piacimento.
+
+Sebbene il debugger di IntelliJ sia super utile per Kotlin, non è l'unico pesce nell'oceano. Esiste una gamma di alternative come Logcat per lo sviluppo Android, o strumenti da linea di comando come jdb per i minimalisti. La magia sottostante riguarda per lo più l'Interfaccia degli Strumenti della JVM (JVMTI), che consente ai debugger di interagire con la Java Virtual Machine, tenendo i programmatori Kotlin nel loop.
+
+## Vedi Anche
+- Documentazione del debugger di IntelliJ IDEA: [https://jetbrains.com/idea/](https://www.jetbrains.com/idea/features/debugger.html)
+- Documentazione di Kotlin sul Debugging: [https://kotlinlang.org/docs/debugging.html](https://kotlinlang.org/docs/debugging.html)
+- Le radici del debugging nella storia: [http://history-computer.com/Internet/Maturing/Debugging.html](http://history-computer.com/Internet/Maturing/Debugging.html)
