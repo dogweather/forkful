@@ -1,5 +1,6 @@
 ---
 title:                "テキストファイルの書き込み"
+date:                  2024-01-19
 html_title:           "Bash: テキストファイルの書き込み"
 simple_title:         "テキストファイルの書き込み"
 programming_language: "Gleam"

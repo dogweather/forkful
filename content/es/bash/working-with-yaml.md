@@ -1,5 +1,6 @@
 ---
 title:                "Trabajando con YAML"
+date:                  2024-01-19
 html_title:           "Arduino: Trabajando con YAML"
 simple_title:         "Trabajando con YAML"
 programming_language: "Bash"

@@ -1,5 +1,6 @@
 ---
 title:                "Trabajando con JSON"
+date:                  2024-01-19
 html_title:           "Bash: Trabajando con JSON"
 simple_title:         "Trabajando con JSON"
 programming_language: "Fish Shell"

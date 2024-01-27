@@ -1,5 +1,6 @@
 ---
 title:                "CSV 파일 다루기"
+date:                  2024-01-19
 html_title:           "Arduino: CSV 파일 다루기"
 simple_title:         "CSV 파일 다루기"
 programming_language: "Elm"

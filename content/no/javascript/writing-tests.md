@@ -1,5 +1,6 @@
 ---
 title:                "Skriving av tester"
+date:                  2024-01-19
 html_title:           "Arduino: Skriving av tester"
 simple_title:         "Skriving av tester"
 programming_language: "Javascript"

@@ -1,5 +1,6 @@
 ---
 title:                "Lavorare con i file CSV"
+date:                  2024-01-19
 html_title:           "Bash: Lavorare con i file CSV"
 simple_title:         "Lavorare con i file CSV"
 programming_language: "Javascript"

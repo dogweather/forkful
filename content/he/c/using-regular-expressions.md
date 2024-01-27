@@ -1,5 +1,6 @@
 ---
 title:                "שימוש בביטויים רגולריים"
+date:                  2024-01-19
 html_title:           "Arduino: שימוש בביטויים רגולריים"
 simple_title:         "שימוש בביטויים רגולריים"
 programming_language: "C"

@@ -1,5 +1,6 @@
 ---
 title:                "Робота з JSON"
+date:                  2024-01-19
 html_title:           "Arduino: Робота з JSON"
 simple_title:         "Робота з JSON"
 programming_language: "Rust"

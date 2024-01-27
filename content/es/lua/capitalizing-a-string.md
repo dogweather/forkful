@@ -1,5 +1,6 @@
 ---
 title:                "Capitalizando una cadena de texto"
+date:                  2024-01-19
 html_title:           "Arduino: Capitalizando una cadena de texto"
 simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Lua"

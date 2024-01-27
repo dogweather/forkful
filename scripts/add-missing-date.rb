@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# This script will add a date to the frontmatter of all files in a list.
+
 require 'date'
 
 # Check for proper usage
@@ -8,17 +10,19 @@ if ARGV.length != 1
   exit 1
 end
 
-files = ARGV[0]
+file_list = ARGV[0]
 
 # Ensure the file exists
-unless File.file?(files)
-  puts "File not found: #{files}"
+unless File.file?(file_list)
+  puts "File not found: #{file_list}"
   exit 1
 end
 
 begin
-  open(files, 'r').readlines.each do |filename|
+  open(file_list, 'r').readlines.each do |raw_filename|
     # Read the file content
+    filename = raw_filename.strip
+    puts "Processing #{filename}"
     content = File.read(filename)
 
     # Define your regex pattern and replacement text

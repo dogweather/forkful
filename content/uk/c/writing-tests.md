@@ -1,5 +1,6 @@
 ---
 title:                "Написання тестів"
+date:                  2024-01-19
 html_title:           "Arduino: Написання тестів"
 simple_title:         "Написання тестів"
 programming_language: "C"

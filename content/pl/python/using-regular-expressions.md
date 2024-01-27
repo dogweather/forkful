@@ -1,5 +1,6 @@
 ---
 title:                "Wykorzystanie wyrażeń regularnych"
+date:                  2024-01-19
 html_title:           "Arduino: Wykorzystanie wyrażeń regularnych"
 simple_title:         "Wykorzystanie wyrażeń regularnych"
 programming_language: "Python"

@@ -1,5 +1,6 @@
 ---
 title:                "Arbeiten mit JSON"
+date:                  2024-01-19
 html_title:           "Arduino: Arbeiten mit JSON"
 simple_title:         "Arbeiten mit JSON"
 programming_language: "Java"

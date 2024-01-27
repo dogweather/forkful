@@ -1,5 +1,6 @@
 ---
 title:                "Escribiendo pruebas"
+date:                  2024-01-19
 html_title:           "Arduino: Escribiendo pruebas"
 simple_title:         "Escribiendo pruebas"
 programming_language: "Javascript"

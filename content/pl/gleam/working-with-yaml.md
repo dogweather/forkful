@@ -1,5 +1,6 @@
 ---
 title:                "Praca z yaml"
+date:                  2024-01-19
 html_title:           "Arduino: Praca z yaml"
 simple_title:         "Praca z yaml"
 programming_language: "Gleam"

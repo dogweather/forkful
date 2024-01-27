@@ -1,5 +1,6 @@
 ---
 title:                "Schreiben auf Standardfehler"
+date:                  2024-01-19
 html_title:           "Arduino: Schreiben auf Standardfehler"
 simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Gleam"

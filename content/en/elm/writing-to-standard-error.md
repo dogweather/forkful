@@ -1,5 +1,6 @@
 ---
 title:                "Writing to standard error"
+date:                  2024-01-19
 html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 programming_language: "Elm"

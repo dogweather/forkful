@@ -1,5 +1,6 @@
 ---
 title:                "Arbeta med csv"
+date:                  2024-01-19
 html_title:           "Arduino: Arbeta med csv"
 simple_title:         "Arbeta med csv"
 programming_language: "Javascript"

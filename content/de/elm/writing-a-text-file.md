@@ -1,5 +1,6 @@
 ---
 title:                "Eine Textdatei schreiben"
+date:                  2024-01-19
 html_title:           "Arduino: Eine Textdatei schreiben"
 simple_title:         "Eine Textdatei schreiben"
 programming_language: "Elm"

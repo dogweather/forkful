@@ -1,5 +1,6 @@
 ---
 title:                "Scrivere sull'errore standard"
+date:                  2024-01-19
 html_title:           "Arduino: Scrivere sull'errore standard"
 simple_title:         "Scrivere sull'errore standard"
 programming_language: "Lua"
