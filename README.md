@@ -2,7 +2,7 @@
 
 <img align="right" width="45%" src="https://github.com/dogweather/forkful/assets/150670/7c9b58b3-019e-4708-b341-7a4110ddde5a">
 
-**A Responsible AI Project:** AI writes the draft text, then people review and error-correct. Site visitors are provided full transparency.
+**A Responsible AI Project:** AI writes the draft text, then people review. Site visitors see full transparency.
 
 We may also implement a workflow the other way around: people write the initial content and then AI points out possible errors and style issues.
 
