@@ -22,8 +22,8 @@ begin
 
   # Define your regex pattern and replacement text
   # Example: Replace 'old_text' with 'new_text'
-  pattern     = /^---\n/m
-  replacement = "---\ndate:                  #{Date.today.strftime('%Y-%m-%d')}\n"
+  pattern     = /(title:.+?\n)/m
+  replacement = "\\1date:                  2024-01-19\n"
 
   # Perform the regex replacement
   new_content = content.sub(pattern, replacement)
