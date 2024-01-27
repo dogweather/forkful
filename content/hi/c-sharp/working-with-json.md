@@ -1,5 +1,6 @@
 ---
 title:                "JSON के साथ काम करना"
+date:                  2024-01-19
 html_title:           "Arduino: JSON के साथ काम करना"
 simple_title:         "JSON के साथ काम करना"
 programming_language: "C#"

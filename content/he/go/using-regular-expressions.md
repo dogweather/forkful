@@ -1,5 +1,6 @@
 ---
 title:                "שימוש בביטויים רגולריים"
+date:                  2024-01-19
 html_title:           "Bash: שימוש בביטויים רגולריים"
 simple_title:         "שימוש בביטויים רגולריים"
 programming_language: "Go"

@@ -1,5 +1,6 @@
 ---
 title:                "Testien kirjoittaminen"
+date:                  2024-01-19
 html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 programming_language: "Fish Shell"

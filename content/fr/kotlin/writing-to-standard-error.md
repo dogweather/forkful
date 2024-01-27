@@ -1,5 +1,6 @@
 ---
 title:                "Écrire dans l'erreur standard"
+date:                  2024-01-19
 html_title:           "Arduino: Écrire dans l'erreur standard"
 simple_title:         "Écrire dans l'erreur standard"
 programming_language: "Kotlin"

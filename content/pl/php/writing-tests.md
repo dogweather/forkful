@@ -1,5 +1,6 @@
 ---
 title:                "Pisanie testów"
+date:                  2024-01-19
 html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
 programming_language: "PHP"

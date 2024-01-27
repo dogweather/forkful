@@ -1,5 +1,6 @@
 ---
 title:                "Maiuscolizzare una stringa"
+date:                  2024-01-19
 html_title:           "Bash: Maiuscolizzare una stringa"
 simple_title:         "Maiuscolizzare una stringa"
 programming_language: "Javascript"

@@ -1,5 +1,6 @@
 ---
 title:                "Kirjoittaminen vakiovirheeseen"
+date:                  2024-01-19
 html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
 simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "Haskell"

@@ -1,5 +1,6 @@
 ---
 title:                "כתיבת בדיקות"
+date:                  2024-01-19
 html_title:           "Bash: כתיבת בדיקות"
 simple_title:         "כתיבת בדיקות"
 programming_language: "PowerShell"

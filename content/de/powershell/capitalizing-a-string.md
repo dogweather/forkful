@@ -1,5 +1,6 @@
 ---
 title:                "String in Großbuchstaben umwandeln"
+date:                  2024-01-19
 html_title:           "C: String in Großbuchstaben umwandeln"
 simple_title:         "String in Großbuchstaben umwandeln"
 programming_language: "PowerShell"

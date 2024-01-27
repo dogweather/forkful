@@ -1,5 +1,6 @@
 ---
 title:                "Writing a text file"
+date:                  2024-01-19
 html_title:           "Arduino recipe: Writing a text file"
 simple_title:         "Writing a text file"
 programming_language: "Bash"

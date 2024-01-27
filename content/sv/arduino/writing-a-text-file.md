@@ -1,5 +1,6 @@
 ---
 title:                "Skriva en textfil"
+date:                  2024-01-19
 html_title:           "Arduino: Skriva en textfil"
 simple_title:         "Skriva en textfil"
 programming_language: "Arduino"

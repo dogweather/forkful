@@ -1,5 +1,6 @@
 ---
 title:                "Робота з YAML"
+date:                  2024-01-19
 html_title:           "Arduino: Робота з YAML"
 simple_title:         "Робота з YAML"
 programming_language: "Ruby"

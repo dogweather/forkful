@@ -1,5 +1,6 @@
 ---
 title:                "Using regular expressions"
+date:                  2024-01-19
 html_title:           "Arduino recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Arduino"

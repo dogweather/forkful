@@ -1,5 +1,6 @@
 ---
 title:                "표준 오류로 쓰기"
+date:                  2024-01-19
 html_title:           "Bash: 표준 오류로 쓰기"
 simple_title:         "표준 오류로 쓰기"
 programming_language: "Ruby"

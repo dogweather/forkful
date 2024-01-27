@@ -1,5 +1,6 @@
 ---
 title:                "Zapisywanie pliku tekstowego"
+date:                  2024-01-19
 html_title:           "Arduino: Zapisywanie pliku tekstowego"
 simple_title:         "Zapisywanie pliku tekstowego"
 programming_language: "C++"

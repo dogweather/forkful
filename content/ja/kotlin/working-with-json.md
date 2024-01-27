@@ -1,5 +1,6 @@
 ---
 title:                "JSONを扱う方法"
+date:                  2024-01-19
 html_title:           "Arduino: JSONを扱う方法"
 simple_title:         "JSONを扱う方法"
 programming_language: "Kotlin"

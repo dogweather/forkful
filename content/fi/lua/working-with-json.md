@@ -1,5 +1,6 @@
 ---
 title:                "JSON-tiedostojen käsittely"
+date:                  2024-01-19
 html_title:           "Arduino: JSON-tiedostojen käsittely"
 simple_title:         "JSON-tiedostojen käsittely"
 programming_language: "Lua"

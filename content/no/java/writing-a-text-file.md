@@ -1,5 +1,6 @@
 ---
 title:                "Skriving av en tekstfil"
+date:                  2024-01-19
 html_title:           "Arduino: Skriving av en tekstfil"
 simple_title:         "Skriving av en tekstfil"
 programming_language: "Java"

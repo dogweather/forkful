@@ -1,5 +1,6 @@
 ---
 title:                "Manipulation des fichiers YAML"
+date:                  2024-01-19
 html_title:           "Arduino: Manipulation des fichiers YAML"
 simple_title:         "Manipulation des fichiers YAML"
 programming_language: "Arduino"

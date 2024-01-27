@@ -1,5 +1,6 @@
 ---
 title:                "테스트 작성하기"
+date:                  2024-01-19
 html_title:           "Arduino: 테스트 작성하기"
 simple_title:         "테스트 작성하기"
 programming_language: "Fish Shell"

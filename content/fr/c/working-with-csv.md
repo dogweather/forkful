@@ -1,5 +1,6 @@
 ---
 title:                "Manipulation de fichiers CSV"
+date:                  2024-01-19
 html_title:           "C: Manipulation de fichiers CSV"
 simple_title:         "Manipulation de fichiers CSV"
 programming_language: "C"
