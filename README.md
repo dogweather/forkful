@@ -4,7 +4,7 @@
 
 **A Responsible AI Project:** AI writes the draft text, then people review. Site visitors see full transparency.
 
-Planned: a workflow the other way around: people write the initial content and then AI points out possible errors and style issues.
+Planned: Add the reverse workflow. People write the initial content and then AI points out possible errors and style issues.
 
 In a nutshell, a sort of pair-programmer for technical documentation. This seems to be the best way to use AI for content generation, circa January 2024.
 
