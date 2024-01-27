@@ -3,6 +3,14 @@ title: About Forkful
 type:  page
 ---
 
+## A Responsible AI Project
+
+AI writes the draft text, then people review. Site visitors see full transparency.
+
+**In planning:** to add the reverse workflow. People write the initial content and then AI points out possible errors and style issues.
+
+In a nutshell, a sort of pair-programmer for technical documentation. This seems to be the best way to use AI for content generation, circa January 2024.
+
 {{< figure src="/robert-at-work.jpeg" rel="me" link="https://dogweather.dev" alt="The author at work" caption="_The author at work_" >}}
 
 I always liked "Cookbook"-style documentation the most.
