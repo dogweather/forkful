@@ -47,4 +47,3 @@ Używając debugera, możesz ustawić punkty przerwania, aby zatrzymać wykonani
 Gotowy by zagłębić się głębiej? Zanurz się w tych:
 - Przewodnik debugowania Arduino na [Arduino Debugging](https://www.arduino.cc/en/Guide/Environment#toc7)
 - Podręcznik referencyjny AVR Libc do konfiguracji avr-gdb: [Strona domowa AVR Libc](http://www.nongnu.org/avr-libc/)
-- Głębsze zanurzenie w używanie Atmel-ICE: [Używanie Atmel-ICE do programowania AVR w Atmel Studio](https://microchipdeveloper.com/atmel-ice:atmel-ice)

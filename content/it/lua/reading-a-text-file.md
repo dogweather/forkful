@@ -44,4 +44,3 @@ Prima delle recenti versioni di Lua, lavorare con i file poteva essere più comp
 ## See Also (Vedi Anche)
 - [Documentazione ufficiale Lua: Input and Output Facilities](http://www.lua.org/manual/5.4/manual.html#6.8)
 - [Tutorial Lua: Lettura di File](https://www.tutorialspoint.com/lua/lua_file_io.htm)
-- [Lua-users wiki: File input/output](http://lua-users.org/wiki/FileInputOutput)

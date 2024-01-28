@@ -45,5 +45,4 @@ Når det gjelder implementasjon, bruker `removeQuotes`-funksjonen over et lambda
 
 ## Se også:
 - For regex-elskere: [Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
-- Dykk inn i parser med: [Parsec: A Practical Parser Library](https://research.microsoft.com/en-us/um/people/daan/download/parsec/parsec.pdf)
 - En vennlig introduksjon til Haskell-strenger: [Learn You a Haskell for Great Good! - Starting Out](http://learnyouahaskell.com/starting-out#strings)

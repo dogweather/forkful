@@ -56,5 +56,3 @@ Videre, med overgangen til PowerShell Core (plattformuavhengig PowerShell), har 
 ## Se også
 For mer om feilsøking i PowerShell:
 - [about_Debuggers](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Debuggers)
-- [PowerShell-dokumentasjon om feilsøking](https://docs.microsoft.com/en-us/powershell/scripting/debugging/debugging-in-powershell?view=powershell-7.2)
-- [Visual Studio Code PowerShell-utvidelse](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)

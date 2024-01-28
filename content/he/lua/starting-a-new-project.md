@@ -46,4 +46,3 @@ Lua נוצרה ב-1993 בברזיל. היא נועדה להיות פשוטה ל�
 ## See Also
 - [מדריך התחלתי ב-Lua](https://www.lua.org/start.html) - אתר הבית של Lua מכיל מידע והדרכות.
 - [למד Lua ב-X דקות](https://learnxinyminutes.com/docs/lua/) - מבוא קצר ועשיר לשפת Lua.
-- [Lua Users Wiki](http://lua-users.org/wiki/) - מקור עשיר לקוד דוגמה ומידע על טכניקות תכנות ב-Lua.

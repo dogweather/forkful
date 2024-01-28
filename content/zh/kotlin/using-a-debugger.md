@@ -58,5 +58,3 @@ fun main() {
 
 ## 参见
 - IntelliJ IDEA 调试器文档: [https://jetbrains.com/idea/](https://www.jetbrains.com/idea/features/debugger.html)
-- Kotlin 调试文档: [https://kotlinlang.org/docs/debugging.html](https://kotlinlang.org/docs/debugging.html)
-- 调试在历史中的根源: [http://history-computer.com/Internet/Maturing/Debugging.html](http://history-computer.com/Internet/Maturing/Debugging.html)

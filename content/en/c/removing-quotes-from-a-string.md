@@ -65,4 +65,3 @@ The implementation above simply scans through each character in the string, copy
 - [C Standard Library Functions](http://www.cplusplus.com/reference/clibrary/)
 - [PCRE - Perl Compatible Regular Expressions](https://www.pcre.org/)
 - [Understanding Pointers in C](https://www.learn-c.org/en/Pointers)
-- [Secure Coding in C](https://owasp.org/www-project-secure-coding-in-c)

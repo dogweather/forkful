@@ -56,5 +56,3 @@ PowerShell的原生调试工具的替代方案包括像 PowerGUI 这样的第三
 ## 另请参阅
 有关 PowerShell 中的调试的更多信息：
 - [关于_Debuggers](https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_Debuggers)
-- [PowerShell 文档中的调试](https://docs.microsoft.com/zh-cn/powershell/scripting/debugging/debugging-in-powershell?view=powershell-7.2)
-- [Visual Studio Code PowerShell 扩展](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)

@@ -45,5 +45,4 @@ npm init -y
 ## See Also (另请参阅)
 - Node.js官网：[https://nodejs.org/](https://nodejs.org/)
 - npm官方文档：[https://docs.npmjs.com/](https://docs.npmjs.com/)
-- 关于Deno的介绍：[https://deno.land/](https://deno.land/)
 - create-react-app官方文档：[https://create-react-app.dev/](https://create-react-app.dev/)

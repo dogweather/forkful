@@ -42,4 +42,3 @@ Quando ti immergi nell'implementazione di un debugger, stai guardando un program
 ## Vedi Anche
 - [Documentazione del Debugger di Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/)
 - [Strategie di Debugging](https://www.codeproject.com/Articles/79508/Effective-Exception-Handling-in-Visual-C)
-- [Funzionalità del Debugger di JetBrains Rider](https://www.jetbrains.com/rider/features/debugger.html)

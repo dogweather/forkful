@@ -56,4 +56,3 @@ Luaの内部で、時刻はエポックタイム（1970年1月1日からの秒�
 - Luaの公式マニュアル: [https://www.lua.org/manual/](https://www.lua.org/manual/)
 - `luatz` GitHubページ: [https://github.com/daurnimator/luatz](https://github.com/daurnimator/luatz)
 - `penlight` GitHubページ: [https://github.com/stevedonovan/Penlight](https://github.com/stevedonovan/Penlight)
-- Luaの日付と時間処理に関するチュートリアル: [http://lua-users.org/wiki/DateTimeTutorial](http://lua-users.org/wiki/DateTimeTutorial)

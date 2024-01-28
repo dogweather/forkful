@@ -49,6 +49,5 @@ Lorsque vous implémentez un débogueur, rappelez-vous que vous ne devriez jamai
 ## Voir aussi :
 - [Documentation Xdebug](https://xdebug.org/docs/)
 - [Guide de débogage PhpStorm](https://www.jetbrains.com/help/phpstorm/debugging.html)
-- [Adaptateur de débogage PHP pour VsCode](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
 - [PHP.net sur phpdbg](https://www.php.net/manual/fr/book.phpdbg.php)
 - [pcov sur GitHub](https://github.com/krakjoe/pcov)

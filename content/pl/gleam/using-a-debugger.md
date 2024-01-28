@@ -42,4 +42,3 @@ Aby rozszerzyć swój zestaw narzędzi do debugowania, sprawdź:
 
 - Dokumentację debugera Erlanga: [https://erlang.org/doc/apps/debugger/debugger_chapter.html](https://erlang.org/doc/apps/debugger/debugger_chapter.html)
 - Bibliotekę `recon` dla Erlanga: [https://ferd.github.io/recon/](https://ferd.github.io/recon/)
-- O śledzeniu w BEAM: [https://adoptingerlang.org/docs/development/tracing/](https://adoptingerlang.org/docs/development/tracing/)

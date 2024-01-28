@@ -44,7 +44,6 @@ Librerías como `date` de LuaRocks ofrecen más opciones: diferencias entre fech
 Detalles de implementación: Ten en cuenta las zonas horarias. `os.time()` usa la hora local del sistema. Trabaja con UTC si necesitas consistencia global.
 
 ## Ver También
-- [Lua Users Wiki – os.date y os.time](http://lua-users.org/wiki/OsLibraryTutorial)
 - [Manual de referencia de Lua 5.4](http://www.lua.org/manual/5.4/)
 - [LuaRocks – Módulos y librerías de Lua](https://luarocks.org/)
 - [GitHub – Librería 'date'](https://github.com/Tieske/date)

@@ -49,6 +49,5 @@ Przy wdrażaniu debugera pamiętaj, że nigdy nie powinieneś zostawiać włącz
 ## Zobacz również:
 - [Dokumentacja Xdebuga](https://xdebug.org/docs/)
 - [Przewodnik po debugowaniu PhpStorm](https://www.jetbrains.com/help/phpstorm/debugging.html)
-- [Adapter debugowania PHP w VsCode](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
 - [PHP.net o phpdbg](https://www.php.net/manual/en/book.phpdbg.php)
 - [pcov na GitHubie](https://github.com/krakjoe/pcov)

@@ -32,4 +32,3 @@ print(lowerString)  -- תוצאה: shalom, olam!
 ## See Also
 - Lua 5.4 Reference Manual: [www.lua.org/manual/5.4/manual.html#pdf-string.lower](https://www.lua.org/manual/5.4/manual.html#pdf-string.lower)
 - UniCode Standard: [www.unicode.org](https://www.unicode.org/)
-- Lua Users Wiki on Strings: [lua-users.org/wiki/StringLibraryTutorial](http://lua-users.org/wiki/StringLibraryTutorial)

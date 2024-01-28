@@ -58,4 +58,3 @@ När det gäller implementeringen kan loggning antingen vara synkron, där varje
 - [Log4j 2](https://logging.apache.org/log4j/2.x/)
 - [SLF4J](http://www.slf4j.org/)
 - [Oracles officiella översikt över loggning](https://docs.oracle.com/javase/8/docs/technotes/guides/logging/overview.html)
-- [Handledning om java.util.logging](https://www.vogella.com/tutorials/Logging/article.html)

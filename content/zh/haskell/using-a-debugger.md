@@ -60,6 +60,4 @@ Prelude> :main
 
 ## 参见：
 - [GHC 用户指南 - 调试器](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
-- [商业 Haskell - 调试工具](https://commercialhaskell.github.io/intermediate/docs/debugging-tools/)
-- [Visual Studio Code - Haskell 扩展](https://marketplace.visualstudio.com/items?itemName=haskell.haskell)
 - [IntelliJ Haskell 插件](https://plugins.jetbrains.com/plugin/8258-intellij-haskell)

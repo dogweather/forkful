@@ -45,5 +45,4 @@ Dal punto di vista dell'implementazione, la funzione `removeQuotes` sopra utiliz
 
 ## Vedi Anche:
 - Per gli amanti delle regex: [Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
-- Immergiti nei parser con: [Parsec: A Practical Parser Library](https://research.microsoft.com/en-us/um/people/daan/download/parsec/parsec.pdf)
 - Un'introduzione dolce alle stringhe di Haskell: [Learn You a Haskell for Great Good! - Starting Out](http://learnyouahaskell.com/starting-out#strings)

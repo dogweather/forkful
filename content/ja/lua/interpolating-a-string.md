@@ -42,4 +42,3 @@ print(message)  -- 出力: 現在の気温は23度です。
 
 - [Lua 5.4 Reference Manual (文字列)](https://www.lua.org/manual/5.4/manual.html#6.4)
 - [Programming in Lua (文字列操作)](https://www.lua.org/pil/20.1.html)
-- [Lua-users Wiki (文字列補間)](http://lua-users.org/wiki/StringInterpolation)

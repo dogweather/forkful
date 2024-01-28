@@ -47,4 +47,3 @@ Using a debugger, you can set breakpoints to stop execution at certain points. Y
 Ready to go deeper? Dive into these:
 - The Arduino debugging guide at [Arduino Debugging](https://www.arduino.cc/en/Guide/Environment#toc7)
 - The AVR Libc reference manual for setting up avr-gdb: [AVR Libc Home Page](http://www.nongnu.org/avr-libc/)
-- A deeper dive into using Atmel-ICE: [Using Atmel-ICE for AVR Programming In Atmel Studio](https://microchipdeveloper.com/atmel-ice:atmel-ice)

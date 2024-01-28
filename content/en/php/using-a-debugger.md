@@ -49,6 +49,5 @@ When implementing a debugger, remember that you should never leave the debugger 
 ## See Also:
 - [Xdebug Documentation](https://xdebug.org/docs/)
 - [PhpStorm Debugging Guide](https://www.jetbrains.com/help/phpstorm/debugging.html)
-- [VsCode PHP Debug Adapter](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
 - [PHP.net on phpdbg](https://www.php.net/manual/en/book.phpdbg.php)
 - [pcov on GitHub](https://github.com/krakjoe/pcov)

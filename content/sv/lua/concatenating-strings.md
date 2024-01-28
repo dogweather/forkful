@@ -40,4 +40,3 @@ Str채ngar i Lua 채r immutable, vilket inneb채r att en ny str채ng skapas varje g�
 ## Se 채ven
 - [Lua 5.4 Reference Manual: Strings](https://www.lua.org/manual/5.4/manual.html#6.4)
 - [Programming in Lua: Manipulating Strings](https://www.lua.org/pil/11.6.html)
-- [Lua-users wiki: Strings Tutorial](http://lua-users.org/wiki/StringsTutorial)

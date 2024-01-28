@@ -58,5 +58,4 @@ A implementação se torna complicada quando você precisa arredondar números d
 
 ## Veja Também
 - Documentação de [`<math.h>`](https://en.cppreference.com/w/c/numeric/math)
-- [Aritmética de ponto flutuante](https://pt.wikipedia.org/wiki/Aritm%C3%A9tica_de_ponto_flutuante)
 - [As armadilhas da verificação de cálculos de ponto flutuante](https://dl.acm.org/doi/10.1145/1186736.1186737)

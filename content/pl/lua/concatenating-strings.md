@@ -43,4 +43,3 @@ Szczegóły implementacji w języku Lua zależą od wersji. Lua 5.3 i nowsze uż
 ## See Also ("Zobacz także")
 - Lua 5.4 Reference Manual (Manual odniesienia Lua 5.4) - [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
 - Programming in Lua (Programowanie w Lua) - [https://www.lua.org/pil/](https://www.lua.org/pil/)
-- Lua-users wiki (Wiki użytkowników Lua), String Recipes section (sekcja przepisów napisowych) - [http://lua-users.org/wiki/StringRecipes](http://lua-users.org/wiki/StringRecipes)

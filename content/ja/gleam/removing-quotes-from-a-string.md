@@ -45,5 +45,4 @@ Gleamでは、引用符を削除するために`string.trim`関数を使用し�
 ## 参照
 もっと探求したい好奇心旺盛な方々のために：
 - [GleamのStringモジュールのドキュメント](https://gleam.run/stdlib/string/)
-- [Gleamでのパターンマッチングについての詳細](https://gleam.run/book/tour/pattern-matching)
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/text-processing)でのプログラミングにおけるテキスト処理に関する議論

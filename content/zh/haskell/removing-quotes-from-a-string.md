@@ -45,5 +45,4 @@ Haskell said, Lets learn some functions!
 
 ## 另见：
 - 对于正则表达式爱好者：[Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
-- 深入解析器：[Parsec: A Practical Parser Library](https://research.microsoft.com/en-us/um/people/daan/download/parsec/parsec.pdf)
 - Haskell字符串的温和介绍：[Learn You a Haskell for Great Good! - Starting Out](http://learnyouahaskell.com/starting-out#strings)

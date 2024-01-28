@@ -61,5 +61,4 @@ Notera, `-replace` använder regex bakom kulisserna, så när du arbetar med det
 
 ## Se också
 - För mer om regex i PowerShell, se de officiella dokumenten: [about_Regular_Expressions](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)
-- Utforska strängmanipulation på djupet: [about_String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
 - Upptäck andra strängmetoder: [Trim(), TrimStart(), TrimEnd()](https://docs.microsoft.com/en-us/dotnet/api/system.string.trim?view=net-6.0)

@@ -65,4 +65,3 @@ Implementeringen ovan skannar helt enkelt igenom varje tecken i strängen, kopie
 - [C Standardbiblioteksfunktioner](http://www.cplusplus.com/reference/clibrary/)
 - [PCRE - Perl Compatible Regular Expressions](https://www.pcre.org/)
 - [Förstå pekare i C](https://www.learn-c.org/en/Pointers)
-- [Säker kodning i C](https://owasp.org/www-project-secure-coding-in-c)

@@ -49,6 +49,5 @@ Når du implementerer en debugger, husk at du aldri bør la debuggeren være på
 ## Se Også:
 - [Xdebug Dokumentasjon](https://xdebug.org/docs/)
 - [PhpStorm Debugging Guide](https://www.jetbrains.com/help/phpstorm/debugging.html)
-- [VsCode PHP Debug Adapter](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
 - [PHP.net om phpdbg](https://www.php.net/manual/en/book.phpdbg.php)
 - [pcov på GitHub](https://github.com/krakjoe/pcov)

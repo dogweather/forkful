@@ -47,4 +47,3 @@ Debuggerin avulla voit asettaa katkaisupisteitä pysäyttämään suorituksen ti
 Valmiina syventymään? Sukella näihin:
 - Arduinon virheenetsintäopas osoitteessa [Arduino Debugging](https://www.arduino.cc/en/Guide/Environment#toc7)
 - AVR Libc -viitekäsikirja avr-gdb:n asettamiseksi: [AVR Libc -etusivu](http://www.nongnu.org/avr-libc/)
-- Syvempi sukellus Atmel-ICE:n käyttöön: [Käyttäen Atmel-ICE:a AVR-ohjelmoinnissa Atmel Studiossa](https://microchipdeveloper.com/atmel-ice:atmel-ice)

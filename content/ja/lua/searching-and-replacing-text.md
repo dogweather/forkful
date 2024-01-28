@@ -32,4 +32,3 @@ Luaでは`string.gsub`関数を使って簡単にテキスト検索と置換が�
 
 ## See Also (関連情報)
 - Lua 5.4 Reference Manual: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
-- Lua-users wiki: String Library Tutorial: [http://lua-users.org/wiki/StringLibraryTutorial](http://lua-users.org/wiki/StringLibraryTutorial)

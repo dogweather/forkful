@@ -42,4 +42,3 @@ Laajentaaksesi debuggaustyökalupakettiasi, tutustu:
 
 - Erlangin debugger-dokumentaatioon: [https://erlang.org/doc/apps/debugger/debugger_chapter.html](https://erlang.org/doc/apps/debugger/debugger_chapter.html)
 - Erlangin `recon`-kirjastoon: [https://ferd.github.io/recon/](https://ferd.github.io/recon/)
-- Jäljitykseen BEAM:ssa: [https://adoptingerlang.org/docs/development/tracing/](https://adoptingerlang.org/docs/development/tracing/)

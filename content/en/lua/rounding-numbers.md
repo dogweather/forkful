@@ -45,5 +45,4 @@ Internally, these functions normally work by exploiting the way computers store 
 
 ## See Also
 - [Lua 5.4 Reference Manual: The Mathematical Functions](https://www.lua.org/manual/5.4/manual.html#6.7)
-- [lua-users wiki: Round](http://lua-users.org/wiki/SimpleRound)
 - [Penlight Lua Libraries: Math](https://github.com/lunarmodules/Penlight)

@@ -52,5 +52,4 @@ En debugger fungerer ved å tillate programmereren å pause utførelsen (brytepu
 
 ## Se også
 - Den offisielle Oracle-dokumentasjonen om feilsøking: [Oracle Java SE Feilsøking](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jdb.html)
-- Eclipses veiledning om feilsøking: [Eclipse Feilsøkingstips](https://www.eclipse.org/community/eclipse_newsletter/2017/juni/article4.php)
 - VisualVM, et visuelt verktøy som integrerer flere kommandolinje JDK-verktøy og lette profileringsegenskaper: [VisualVM](https://visualvm.github.io/)

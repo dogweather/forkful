@@ -42,4 +42,3 @@ När du dyker ned i en debuggers implementation, tittar du på ett program som f
 ## Se även
 - [Dokumentation för Visual Studio Debugger](https://docs.microsoft.com/en-us/visualstudio/debugger/)
 - [Strategier för felsökning](https://www.codeproject.com/Articles/79508/Effective-Exception-Handling-in-Visual-C)
-- [Funktioner för debugger i JetBrains Rider](https://www.jetbrains.com/rider/features/debugger.html)

@@ -58,5 +58,3 @@ Sebbene il debugger di IntelliJ sia super utile per Kotlin, non è l'unico pesce
 
 ## Vedi Anche
 - Documentazione del debugger di IntelliJ IDEA: [https://jetbrains.com/idea/](https://www.jetbrains.com/idea/features/debugger.html)
-- Documentazione di Kotlin sul Debugging: [https://kotlinlang.org/docs/debugging.html](https://kotlinlang.org/docs/debugging.html)
-- Le radici del debugging nella storia: [http://history-computer.com/Internet/Maturing/Debugging.html](http://history-computer.com/Internet/Maturing/Debugging.html)

@@ -45,5 +45,4 @@ Implementierungsweise verwendet die Funktion `removeQuotes` oben eine Lambda-Fun
 
 ## Siehe auch:
 - Für Regex-Liebhaber: [Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
-- Tauchen Sie ein in Parser mit: [Parsec: A Practical Parser Library](https://research.microsoft.com/en-us/um/people/daan/download/parsec/parsec.pdf)
 - Eine sanfte Einführung in Haskell-Strings: [Learn You a Haskell for Great Good! - Starting Out](http://learnyouahaskell.com/starting-out#strings)

@@ -62,9 +62,7 @@ fun main() {
 Kotlin에서 문자열을 다루는 더 많은 컨텍스트를 위해서는 공식 문서를 확인하세요:
 
 - [Kotlin의 문자열 문서](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Kotlin에서 문자열 작업하기](https://play.kotlinlang.org/byExample/02_control_flow/06_String%20Templates)
 
 Kotlin에서 정규 표현식과 파싱을 더 깊이 다루기 위해서:
 
 - [Kotlin 정규 표현식 문서](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Kotlin에서 텍스트 파싱하기](https://typealias.com/start/parsing-in-kotlin/)

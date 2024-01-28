@@ -65,4 +65,3 @@ Sanitized: He said, Hello, world!
 - [C 표준 라이브러리 함수](http://www.cplusplus.com/reference/clibrary/)
 - [PCRE - Perl 호환 정규 표현식](https://www.pcre.org/)
 - [C에서의 포인터 이해하기](https://www.learn-c.org/en/Pointers)
-- [C에서의 안전한 코딩](https://owasp.org/www-project-secure-coding-in-c)

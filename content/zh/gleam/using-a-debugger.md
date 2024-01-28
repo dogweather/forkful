@@ -42,4 +42,3 @@ Gleam 是一门年轻的语言，因此尽管它依赖于 Erlang 生态系统，
 
 - Erlang 的调试文档：[https://erlang.org/doc/apps/debugger/debugger_chapter.html](https://erlang.org/doc/apps/debugger/debugger_chapter.html)
 - Erlang 的 `recon` 库：[https://ferd.github.io/recon/](https://ferd.github.io/recon/)
-- 关于 BEAM 中的跟踪：[https://adoptingerlang.org/docs/development/tracing/](https://adoptingerlang.org/docs/development/tracing/)

@@ -39,4 +39,3 @@ Lua, créé en 1993, est idéal pour les débutants et les projets intégrés. A
 
 ## See Also (Voir également)
 - [Documentation officielle Lua](https://www.lua.org/manual/5.4/)
-- [Lua-users wiki](http://lua-users.org/wiki/)

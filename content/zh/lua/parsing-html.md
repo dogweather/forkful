@@ -51,5 +51,4 @@ end
 
 ## 参见
 - [Lua html-parser GitHub](https://github.com/msva/lua-htmlparser)
-- [lua-users wiki: Parsing Xml](http://lua-users.org/wiki/ParsingXml)
 - [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/)

@@ -45,4 +45,3 @@ Para explorar más sobre manejo de fechas en Lua y sus librerías:
 
 - [Lua 5.4 Reference Manual para os.date y os.time](http://www.lua.org/manual/5.4/manual.html#6.9)
 - [date.lua en GitHub para una librería avanzada de manejo de fechas](https://github.com/Tieske/date)
-- [Lua-Users Wiki sobre fechas y tiempos para ejemplos y discusiones](http://lua-users.org/wiki/DateTime)

@@ -62,9 +62,7 @@ Toteutuksen kannalta on mainitsemisen arvoista, että Kotlin on yhteensopiva Jav
 Lisätietoa merkkijonojen käsittelystä Kotlinissa, voit tarkistaa viralliset dokumentaatiot:
 
 - [Kotlinin String dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Merkkijonojen käsittely Kotlinissa](https://play.kotlinlang.org/byExample/02_control_flow/06_String%20Templates)
 
 Syvempiin sukelluksiin säännöllisistä lausekkeista ja jäsentämisestä Kotlinissa:
 
 - [Kotlin Regex dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Tekstin jäsentäminen Kotlinissa](https://typealias.com/start/parsing-in-kotlin/)

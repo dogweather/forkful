@@ -45,5 +45,4 @@ Luaは他の言語と違い、最初から丸め関数を含んでいません�
 
 ## 参照
 - [Lua 5.4 リファレンスマニュアル: 数学関数](https://www.lua.org/manual/5.4/manual.html#6.7)
-- [lua-users wiki: Round](http://lua-users.org/wiki/SimpleRound)
 - [Penlight Luaライブラリ: Math](https://github.com/lunarmodules/Penlight)

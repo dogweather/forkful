@@ -62,9 +62,7 @@ Pod względem implementacji warto wspomnieć, że Kotlin jest interoperacyjny z 
 Aby uzyskać więcej kontekstu na temat obsługi stringów w Kotlinie, możesz sprawdzić oficjalną dokumentację:
 
 - [Dokumentacja Stringów w Kotlinie](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Praca ze Stringami w Kotlinie](https://play.kotlinlang.org/byExample/02_control_flow/06_String%20Templates)
 
 Aby zagłębić się w wyrażenia regularne i parsowanie w Kotlinie:
 
 - [Dokumentacja Kotlin Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Parsowanie tekstu w Kotlinie](https://typealias.com/start/parsing-in-kotlin/)

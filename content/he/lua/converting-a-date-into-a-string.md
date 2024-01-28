@@ -39,4 +39,3 @@ print(date_time_string)
 ## ראו גם
 - [Lua 5.4 Reference Manual - os.date](https://www.lua.org/manual/5.4/manual.html#pdf-os.date)
 - [Programming in Lua (first edition) - Date and Time](https://www.lua.org/pil/22.1.html)
-- [Lua Users Wiki - Dates and Time](http://lua-users.org/wiki/DatesAndTime)

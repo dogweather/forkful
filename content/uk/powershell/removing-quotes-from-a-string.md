@@ -61,5 +61,4 @@ Write-Output $cleanString  # Вивід: Привіт, Світ!
 
 ## Також дивіться
 - Для більшої інформації про регулярні вирази в PowerShell, перегляньте офіційні документи: [about_Regular_Expressions](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)
-- Вивчіть маніпуляції з рядками глибше: [about_String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
 - Відкрийте для себе інші методи рядків: [Trim(), TrimStart(), TrimEnd()](https://docs.microsoft.com/en-us/dotnet/api/system.string.trim?view=net-6.0)

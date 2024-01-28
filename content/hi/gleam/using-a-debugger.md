@@ -42,4 +42,3 @@ Gleam लिखने और एरलांग में डिबग करन
 
 - एरलांग का डीबगर दस्तावेज़ीकरण: [https://erlang.org/doc/apps/debugger/debugger_chapter.html](https://erlang.org/doc/apps/debugger/debugger_chapter.html)
 - एरलांग के लिए `recon` लाइब्रेरी: [https://ferd.github.io/recon/](https://ferd.github.io/recon/)
-- बीम में ट्रेसिंग पर: [https://adoptingerlang.org/docs/development/tracing/](https://adoptingerlang.org/docs/development/tracing/)

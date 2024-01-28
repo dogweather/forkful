@@ -47,4 +47,3 @@ void loop() {
 Готові піти глибше? Зануртесь у наступне:
 - Посібник з дебагінгу Arduino на [Arduino Debugging](https://www.arduino.cc/en/Guide/Environment#toc7)
 - Референсний мануал AVR Libc для налаштування avr-gdb: [Домашня сторінка AVR Libc](http://www.nongnu.org/avr-libc/)
-- Більш поглиблене використання Atmel-ICE: [Використання Atmel-ICE для програмування AVR у Atmel Studio](https://microchipdeveloper.com/atmel-ice:atmel-ice)

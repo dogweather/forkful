@@ -62,9 +62,7 @@ fun main() {
 Щоб отримати більше контексту про роботу з рядками в Kotlin, можна переглянути офіційну документацію:
 
 - [Документація по String в Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Робота з рядками в Kotlin](https://play.kotlinlang.org/byExample/02_control_flow/06_String%20Templates)
 
 Для глибшого занурення в регулярні вирази та парсинг в Kotlin:
 
 - [Документація Kotlin Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Парсинг тексту в Kotlin](https://typealias.com/start/parsing-in-kotlin/)

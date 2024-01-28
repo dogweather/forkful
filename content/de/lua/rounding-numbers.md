@@ -45,5 +45,4 @@ Intern arbeiten diese Funktionen normalerweise, indem sie die Art und Weise ausn
 
 ## Siehe auch
 - [Lua 5.4 Referenzhandbuch: Die mathematischen Funktionen](https://www.lua.org/manual/5.4/manual.html#6.7)
-- [lua-users wiki: Runden](http://lua-users.org/wiki/SimpleRound)
 - [Penlight Lua-Bibliotheken: Mathematik](https://github.com/lunarmodules/Penlight)

@@ -59,5 +59,3 @@ Lua powstała w 1993 roku w Brazylii. Ceniona za prostotę, wydajność i elasty
 ## See Also (Zobacz Również):
 - Oficjalna strona Lua: [https://www.lua.org](https://www.lua.org)
 - Dokumentacja Lua 5.4 (aktualna wersja): [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
-- Poradniki Lua: [http://lua-users.org/wiki/TutorialDirectory](http://lua-users.org/wiki/TutorialDirectory)
-- Grupy dyskusyjne o Lua: [http://lua-users.org/lists/lua-l/](http://lua-users.org/lists/lua-l/)

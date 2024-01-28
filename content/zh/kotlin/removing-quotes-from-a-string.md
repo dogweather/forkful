@@ -62,9 +62,7 @@ fun main() {
 想要了解更多关于Kotlin中处理字符串的上下文，你可以查看官方文档：
 
 - [Kotlin 的字符串文档](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [在 Kotlin 中处理字符串](https://play.kotlinlang.org/byExample/02_control_flow/06_String%20Templates)
 
 深入了解Kotlin中的正则表达式和解析：
 
 - [Kotlin Regex 文档](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [在 Kotlin 中解析文本](https://typealias.com/start/parsing-in-kotlin/)

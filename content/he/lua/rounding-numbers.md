@@ -45,5 +45,4 @@ print(round(1.98765, 3))  -- 1.988
 
 ## ראה גם
 - [Lua 5.4 מדריך ייחוס: הפונקציות המתמטיות](https://www.lua.org/manual/5.4/manual.html#6.7)
-- [lua-users wiki: Round](http://lua-users.org/wiki/SimpleRound)
 - [Penlight Lua Libraries: Math](https://github.com/lunarmodules/Penlight)

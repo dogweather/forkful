@@ -60,6 +60,4 @@ Jeśli chodzi o szczegóły implementacji, debugger Haskella współpracuje z sy
 
 ## Zobacz również:
 - [Przewodnik użytkownika GHC - Debugger](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
-- [Commercial Haskell - Narzędzia do debugowania](https://commercialhaskell.github.io/intermediate/docs/debugging-tools/)
-- [Visual Studio Code - Rozszerzenie Haskell](https://marketplace.visualstudio.com/items?itemName=haskell.haskell)
 - [Wtyczka IntelliJ Haskell](https://plugins.jetbrains.com/plugin/8258-intellij-haskell)

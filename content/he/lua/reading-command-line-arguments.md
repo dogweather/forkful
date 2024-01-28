@@ -39,4 +39,3 @@ Argument 2: secondArg
 ## ראה גם
 - [Lua 5.4 Reference Manual - The Command Line](https://www.lua.org/manual/5.4/manual.html#6.1)
 - [Programming in Lua (first edition)](https://www.lua.org/pil/22.1.html)
-- [Lua-users wiki: CommandLineArgs](http://lua-users.org/wiki/CommandLineArgs)

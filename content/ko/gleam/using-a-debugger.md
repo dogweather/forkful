@@ -42,4 +42,3 @@ Gleam을 작성하는 것과 Erlang에서 디버깅하는 것 사이를 전환�
 
 - Erlang의 디버거 문서: [https://erlang.org/doc/apps/debugger/debugger_chapter.html](https://erlang.org/doc/apps/debugger/debugger_chapter.html)
 - Erlang을 위한 `recon` 라이브러리: [https://ferd.github.io/recon/](https://ferd.github.io/recon/)
-- BEAM에서의 추적에 대해: [https://adoptingerlang.org/docs/development/tracing/](https://adoptingerlang.org/docs/development/tracing/)

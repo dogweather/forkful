@@ -42,4 +42,3 @@ For å utvide feilsøkingsverktøykassen din, sjekk ut:
 
 - Erlangs debugger-dokumentasjon: [https://erlang.org/doc/apps/debugger/debugger_chapter.html](https://erlang.org/doc/apps/debugger/debugger_chapter.html)
 - `Recon`-biblioteket for Erlang: [https://ferd.github.io/recon/](https://ferd.github.io/recon/)
-- Om sporing i BEAM: [https://adoptingerlang.org/docs/development/tracing/](https://adoptingerlang.org/docs/development/tracing/)

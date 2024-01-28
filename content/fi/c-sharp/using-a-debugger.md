@@ -42,4 +42,3 @@ Kun sukellat debuggerin toteutukseen, kyse on ohjelmasta, joka liittyy sovelluks
 ## Katso myös
 - [Visual Studio Debugger -dokumentaatio](https://docs.microsoft.com/en-us/visualstudio/debugger/)
 - [Debuggausstrategiat](https://www.codeproject.com/Articles/79508/Effective-Exception-Handling-in-Visual-C)
-- [JetBrains Rider Debugger -ominaisuudet](https://www.jetbrains.com/rider/features/debugger.html)

@@ -58,5 +58,3 @@ Bien que le débogueur d'IntelliJ soit très pratique pour Kotlin, ce n'est pas 
 
 ## Voir aussi
 - Documentation du débogueur IntelliJ IDEA : [https://jetbrains.com/idea/](https://www.jetbrains.com/idea/features/debugger.html)
-- Documentation Kotlin sur le débogage : [https://kotlinlang.org/docs/debugging.html](https://kotlinlang.org/docs/debugging.html)
-- Les racines du débogage dans l'histoire : [http://history-computer.com/Internet/Maturing/Debugging.html](http://history-computer.com/Internet/Maturing/Debugging.html)

@@ -47,5 +47,4 @@ Luaでは、`os.date`は日付を変換する標準的な方法です。歴史�
 ## 関連情報：
 
 - Lua's `os` library documentation: [www.lua.org/manual/5.4/manual.html#6.9](https://www.lua.org/manual/5.4/manual.html#6.9)
-- Lua-users wiki, os library: [lua-users.org/wiki/OsLibraryTutorial](http://lua-users.org/wiki/OsLibraryTutorial)
 - strftime format specifiers reference: [man7.org/linux/man-pages/man3/strftime.3.html](https://man7.org/linux/man-pages/man3/strftime.3.html)

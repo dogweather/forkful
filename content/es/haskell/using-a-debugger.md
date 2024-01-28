@@ -60,6 +60,4 @@ En cuanto a los detalles de implementación, el depurador de Haskell trabaja con
 
 ## Ver También:
 - [Guía del Usuario de GHC - Depurador](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
-- [Haskell Comercial - Herramientas de Depuración](https://commercialhaskell.github.io/intermediate/docs/debugging-tools/)
-- [Visual Studio Code - Extensión de Haskell](https://marketplace.visualstudio.com/items?itemName=haskell.haskell)
 - [Plugin de Haskell en IntelliJ](https://plugins.jetbrains.com/plugin/8258-intellij-haskell)

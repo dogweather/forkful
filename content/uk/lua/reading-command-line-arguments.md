@@ -35,4 +35,3 @@ end
 ## Дивись Також
 - [Programming in Lua (Fourth edition)](https://www.lua.org/pil/contents.html)
 - [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/)
-- [Lua Users Wiki - Command Line Arguments](http://lua-users.org/wiki/CommandLineArguments)

@@ -68,4 +68,3 @@ This snippet will uppercase words longer than four characters.
 ## See Also
 - The [Programming in Lua book](https://www.lua.org/pil/), provides in-depth knowledge of Lua's programming concepts.
 - For Lua's full string pattern capabilities, check the [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/manual.html#6.4.1).
-- To explore text processing in depth, you may look into the [Lua String Patterns Explained](http://lua-users.org/wiki/PatternsTutorial) tutorial.

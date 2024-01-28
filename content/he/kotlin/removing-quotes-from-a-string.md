@@ -62,9 +62,7 @@ fun main() {
 למידע נוסף על טיפול במחרוזות בKotlin, ניתן לבדוק את התיעוד הרשמי:
 
 - [תיעוד הString של Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [עבודה עם מחרוזות בKotlin](https://play.kotlinlang.org/byExample/02_control_flow/06_String%20Templates)
 
 לעיונים עמוקים יותר בביטויים רגולריים וניתוח בKotlin:
 
 - [תיעוד Kotlin Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [ניתוח טקסט בKotlin](https://typealias.com/start/parsing-in-kotlin/)

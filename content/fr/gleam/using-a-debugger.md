@@ -42,4 +42,3 @@ Pour élargir votre boîte à outils de débogage, consultez :
 
 - La documentation du débogueur d'Erlang : [https://erlang.org/doc/apps/debugger/debugger_chapter.html](https://erlang.org/doc/apps/debugger/debugger_chapter.html)
 - La bibliothèque `recon` pour Erlang : [https://ferd.github.io/recon/](https://ferd.github.io/recon/)
-- Sur le traçage dans BEAM : [https://adoptingerlang.org/docs/development/tracing/](https://adoptingerlang.org/docs/development/tracing/)

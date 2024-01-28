@@ -41,4 +41,3 @@ Concernant les caractères Unicode, attention. Lua compte les octets, pas les ca
 ## See Also
 Pour approfondir vos connaissances en Lua :
 - Documentation officielle sur les chaînes : [String Manipulation](http://www.lua.org/manual/5.4/manual.html#6.4)
-- Pour les nuances avec les caractères Unicode : [Lua Users Wiki: Unicode](http://lua-users.org/wiki/LuaUnicode)

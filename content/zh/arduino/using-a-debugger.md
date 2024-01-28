@@ -47,4 +47,3 @@ void loop() {
 准备好深入了解吗？请查阅以下内容：
 - Arduino调试指南：[Arduino Debugging](https://www.arduino.cc/en/Guide/Environment#toc7)
 - 设置avr-gdb的AVR Libc参考手册：[AVR Libc主页](http://www.nongnu.org/avr-libc/)
-- 更深入地使用Atmel-ICE：[在Atmel Studio中使用Atmel-ICE进行AVR编程](https://microchipdeveloper.com/atmel-ice:atmel-ice)

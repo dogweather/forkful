@@ -58,5 +58,4 @@ print(nachricht)  -- Ausgabe: Die aktuelle Temperatur beträgt 23.4 Grad Celsius
 ## See Also
 Interessante Ressourcen für tiefergehende Informationen:
 
-- Lua-Users Wiki über Strings: [http://lua-users.org/wiki/StringsTutorial](http://lua-users.org/wiki/StringsTutorial)
 - String Manipulation in Lua: [http://www.lua.org/pil/20.1.html](http://www.lua.org/pil/20.1.html)

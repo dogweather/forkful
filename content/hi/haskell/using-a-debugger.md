@@ -60,6 +60,4 @@ Prelude> :main
 
 ## और देखें:
 - [GHC उपयोगकर्ता गाइड - डीबगर](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
-- [वाणिज्यिक Haskell - डीबगिंग उपकरण](https://commercialhaskell.github.io/intermediate/docs/debugging-tools/)
-- [Visual Studio Code - Haskell एक्सटेंशन](https://marketplace.visualstudio.com/items?itemName=haskell.haskell)
 - [IntelliJ Haskell प्लगइन](https://plugins.jetbrains.com/plugin/8258-intellij-haskell)

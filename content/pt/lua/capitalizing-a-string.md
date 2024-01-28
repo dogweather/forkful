@@ -32,5 +32,4 @@ A capitalização de uma string deve considerar também casos especiais, como ab
 
 ## Veja Também:
 - Documentação oficial do Lua `string` library: [http://www.lua.org/manual/5.4/manual.html#6.4](http://www.lua.org/manual/5.4/manual.html#6.4)
-- Tutorial LuaStrings na lua-users wiki: [http://lua-users.org/wiki/LuaStrings](http://lua-users.org/wiki/LuaStrings)
 - LuaJIT, uma implementação Just-In-Time Compiler do Lua que oferece expressões regulares: [http://luajit.org/](http://luajit.org/)

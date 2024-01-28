@@ -43,5 +43,4 @@ Using native Lua functions ensures compatibility and simplicity. Timestamps are 
 
 ## See Also (Дивіться також):
 - Lua 5.4 Reference Manual: [os.date](http://www.lua.org/manual/5.4/manual.html#pdf-os.date) and [os.time](http://www.lua.org/manual/5.4/manual.html#pdf-os.time)
-- Lua-users Wiki: Working with Dates: [http://lua-users.org/wiki/DateTime](http://lua-users.org/wiki/DateTime)
 - GitHub: Lua Date Libraries (e.g., lua-date): [https://github.com/Tieske/date](https://github.com/Tieske/date)

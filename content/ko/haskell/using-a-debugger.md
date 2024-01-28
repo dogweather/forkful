@@ -60,6 +60,4 @@ Hey, what's your name?
 
 ## 참고 자료:
 - [GHC 사용자 가이드 - 디버거](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
-- [커머셜 Haskell - 디버깅 도구](https://commercialhaskell.github.io/intermediate/docs/debugging-tools/)
-- [Visual Studio Code - Haskell 확장](https://marketplace.visualstudio.com/items?itemName=haskell.haskell)
 - [IntelliJ Haskell 플러그인](https://plugins.jetbrains.com/plugin/8258-intellij-haskell)

@@ -37,5 +37,4 @@ Lua的`os.date`函数源自C语言的`strftime`函数，用于日期和时间的
 
 ## See Also (另请参阅)
 - [Lua 5.4 参考手册: os.date](https://www.lua.org/manual/5.4/manual.html#pdf-os.date)
-- [lua-users wiki: Dates and Time](http://lua-users.org/wiki/DatesAndTime)
 - [GitHub: luadate - 一个第三方日期和时间操作库](https://github.com/Tieske/date)

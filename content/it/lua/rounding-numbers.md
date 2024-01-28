@@ -45,5 +45,4 @@ Internamente, queste funzioni lavorano normalmente sfruttando il modo in cui i c
 
 ## Vedere Anche
 - [Manuale di Riferimento Lua 5.4: Le Funzioni Matematiche](https://www.lua.org/manual/5.4/manual.html#6.7)
-- [wiki degli utenti lua: Round](http://lua-users.org/wiki/SimpleRound)
 - [Librerie Lua Penlight: Math](https://github.com/lunarmodules/Penlight)

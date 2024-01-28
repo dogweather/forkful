@@ -45,5 +45,4 @@ print("10 दिन पहले की तारीख: " .. os.date("%Y-%m-%d"
 
 ## यह भी देखें:
 
-- Lua आधिकारिक मैन्युअल: [http://www.lua.org/manual/](http://www.lua.org/manual/) 
-- os.date और os.time पर Lua कम्युनिटी का विकिपीडिया: [http://lua-users.org/wiki/OsLibraryTutorial](http://lua-users.org/wiki/OsLibraryTutorial)
+- Lua आधिकारिक मैन्युअल: [http://www.lua.org/manual/](http://www.lua.org/manual/)

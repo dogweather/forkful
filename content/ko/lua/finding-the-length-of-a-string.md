@@ -41,4 +41,3 @@ print(#utf8String)           -- 출력: 18 (올바르지 않은 길이)
 ## 참고할만한 것들
 - Lua 5.4 Reference Manual: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
 - Programming in Lua (first edition): [https://www.lua.org/pil/contents.html](https://www.lua.org/pil/contents.html)
-- Lua Users Wiki for string manipulation: [http://lua-users.org/wiki/StringLibraryTutorial](http://lua-users.org/wiki/StringLibraryTutorial)

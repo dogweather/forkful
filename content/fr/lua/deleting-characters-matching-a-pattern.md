@@ -39,4 +39,3 @@ La suppression de caractères selon un motif est possible grâce aux expressions
 ## Voir Aussi :
 - [Lua 5.4 Reference Manual: Patterns](https://www.lua.org/manual/5.4/manual.html#6.4.1)
 - [Programming in Lua (4th edition)](https://www.lua.org/pil/contents.html)
-- [Lua-users wiki: Patterns Tutorial](http://lua-users.org/wiki/PatternsTutorial)

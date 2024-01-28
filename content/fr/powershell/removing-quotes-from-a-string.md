@@ -61,5 +61,4 @@ Notez que `-replace` utilise les regex en arrière-plan, alors lorsque vous trav
 
 ## Voir également
 - Pour en savoir plus sur les regex dans PowerShell, consultez les docs officiels : [about_Regular_Expressions](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)
-- Explorez la manipulation de chaînes en profondeur : [about_String](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
 - Découvrez d'autres méthodes de chaînes : [Trim(), TrimStart(), TrimEnd()](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.trim?view=net-6.0)

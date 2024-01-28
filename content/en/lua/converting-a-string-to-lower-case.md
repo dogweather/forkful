@@ -44,4 +44,3 @@ But really, why row your boat when you've got an outboard motor (read: `string.l
 Dig deeper into Lua's string manipulation with these goodies:
 - [Programming in Lua (4th edition)](https://www.lua.org/pil/contents.html) for the ins, outs, and in-betweens of strings.
 - [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/manual.html#6.4) for all the string functions when you're ready to go beyond lowercase.
-- [Lua Users Wiki: Strings Tutorial](http://lua-users.org/wiki/StringTutorial) for practical examples and string wizardry.

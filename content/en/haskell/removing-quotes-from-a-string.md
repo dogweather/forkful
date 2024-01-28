@@ -45,5 +45,4 @@ Implementation-wise, the `removeQuotes` function above uses a lambda to check ea
 
 ## See Also:
 - For regex lovers: [Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
-- Dive into parsers with: [Parsec: A Practical Parser Library](https://research.microsoft.com/en-us/um/people/daan/download/parsec/parsec.pdf)
 - A gentle intro to Haskell strings: [Learn You a Haskell for Great Good! - Starting Out](http://learnyouahaskell.com/starting-out#strings)

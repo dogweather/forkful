@@ -45,5 +45,4 @@ Jeśli chodzi o implementację, funkcja `removeQuotes` wyżej używa lambdy do s
 
 ## Zobacz również:
 - Dla miłośników regex: [Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
-- Zanurz się w parserach z: [Parsec: A Practical Parser Library](https://research.microsoft.com/en-us/um/people/daan/download/parsec/parsec.pdf)
 - Przyjazne wprowadzenie do ciągów znaków w Haskellu: [Learn You a Haskell for Great Good! - Zacznijmy](http://learnyouahaskell.com/starting-out#strings)

@@ -56,5 +56,3 @@ PowerShell의 네이티브 디버깅 도구에 대한 대안으로는 PowerGUI�
 ## 참고자료
 PowerShell에서 디버깅에 대한 자세한 내용은:
 - [about_Debuggers](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Debuggers)
-- [PowerShell 문서 디버깅](https://docs.microsoft.com/en-us/powershell/scripting/debugging/debugging-in-powershell?view=powershell-7.2)
-- [Visual Studio Code PowerShell 확장 기능](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)

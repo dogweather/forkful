@@ -42,4 +42,3 @@ Quando você mergulha na implementação de um depurador, está olhando para um 
 ## Veja Também
 - [Documentação do Depurador do Visual Studio](https://docs.microsoft.com/pt-br/visualstudio/debugger/)
 - [Estratégias de Depuração](https://www.codeproject.com/Articles/79508/Effective-Exception-Handling-in-Visual-C)
-- [Recursos do Depurador do JetBrains Rider](https://www.jetbrains.com/rider/features/debugger.html)

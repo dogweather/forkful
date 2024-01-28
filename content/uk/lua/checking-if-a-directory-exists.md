@@ -46,4 +46,3 @@ end
 
 - [LuaFileSystem офіційний репозиторій GitHub](https://github.com/keplerproject/luafilesystem)
 - [Документація Lua 5.4](https://www.lua.org/manual/5.4/)
-- [Lua користувацький вікі](http://lua-users.org/wiki/) - Чудове місце для вчитися більше про Lua та обміну знаннями з іншими розробниками.

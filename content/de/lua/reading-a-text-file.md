@@ -44,5 +44,4 @@ Implementierungsdetails? Nun, `io.open` gibt dir ein Dateiobjekt, mit dem du arb
 
 ## Weiterführendes
 - Lua-Filereferenz: [http://www.lua.org/manual/5.4/manual.html#6.8](http://www.lua.org/manual/5.4/manual.html#6.8)
-- Lua-Users Wiki zu Dateioperationen: [http://lua-users.org/wiki/IoLibraryTutorial](http://lua-users.org/wiki/IoLibraryTutorial)
 - Ein detailliertes Lua-Tutorial: [https://www.tutorialspoint.com/lua/](https://www.tutorialspoint.com/lua/)

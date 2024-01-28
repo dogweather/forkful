@@ -62,9 +62,7 @@ Når det gjelder implementering, er det verdt å nevne at Kotlin er samvirkebar 
 For mer kontekst om håndtering av strenger i Kotlin, kan du sjekke ut den offisielle dokumentasjonen:
 
 - [Kotlins strengdokumentasjon](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Arbeide med strenger i Kotlin](https://play.kotlinlang.org/byExample/02_control_flow/06_String%20Templates)
 
 For dypere dykk i regulære uttrykk og parsing i Kotlin:
 
 - [Kotlin Regex-dokumentasjon](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Parsing av tekst i Kotlin](https://typealias.com/start/parsing-in-kotlin/)

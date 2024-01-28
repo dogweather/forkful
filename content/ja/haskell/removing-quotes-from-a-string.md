@@ -45,5 +45,4 @@ Haskell said, Lets learn some functions!
 
 ## 参照：
 - 正規表現好きのために：[Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
-- パーサーに関する詳細は：[Parsec: A Practical Parser Library](https://research.microsoft.com/en-us/um/people/daan/download/parsec/parsec.pdf)
 - Haskell文字列への優しい入門：[Learn You a Haskell for Great Good! - Starting Out](http://learnyouahaskell.com/starting-out#strings)

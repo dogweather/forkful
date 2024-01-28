@@ -35,4 +35,3 @@ Python이나 JavaScript와 같은 다른 언어들도 비슷한 기능을 제공
 ## 관련 참고자료:
 - Lua 5.4 Reference Manual: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
 - Programming in Lua (first edition): [https://www.lua.org/pil/contents.html](https://www.lua.org/pil/contents.html)
-- Lua-users wiki: String Library Tutorial: [http://lua-users.org/wiki/StringLibraryTutorial](http://lua-users.org/wiki/StringLibraryTutorial)

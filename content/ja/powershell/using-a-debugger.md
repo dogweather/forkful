@@ -56,5 +56,3 @@ PowerShellのネイティブデバッグツールの代替には、PowerGUIの�
 ## 参照
 PowerShellでのデバッグについての詳細は：
 - [about_Debuggers](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_Debuggers)
-- [PowerShellドキュメント上のデバッグ](https://docs.microsoft.com/ja-jp/powershell/scripting/debugging/debugging-in-powershell?view=powershell-7.2)
-- [Visual Studio Code PowerShell 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)

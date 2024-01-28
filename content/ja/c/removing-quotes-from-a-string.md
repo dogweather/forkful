@@ -65,4 +65,3 @@ Sanitized: He said, Hello, world!
 - [C標準ライブラリ関数](http://www.cplusplus.com/reference/clibrary/)
 - [PCRE - Perl互換正規表現](https://www.pcre.org/)
 - [Cにおけるポインターの理解](https://www.learn-c.org/en/Pointers)
-- [Cにおけるセキュアコーディング](https://owasp.org/www-project-secure-coding-in-c)

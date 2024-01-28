@@ -65,4 +65,3 @@ Yllä oleva toteutus yksinkertaisesti skannaa läpi jokaisen merkin merkkijonoss
 - [C Standardikirjaston Funktiot](http://www.cplusplus.com/reference/clibrary/)
 - [PCRE - Perl-yhteensopivat säännölliset lausekkeet](https://www.pcre.org/)
 - [Pointereiden ymmärtäminen C:ssä](https://www.learn-c.org/en/Pointers)
-- [Turvallinen koodaus C:ssä](https://owasp.org/www-project-secure-coding-in-c)

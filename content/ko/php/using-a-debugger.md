@@ -49,6 +49,5 @@ Xdebug의 대안으로는 pcov와 phpdbg가 있습니다. 이들은 다양한 �
 ## 또한 보십시오:
 - [Xdebug 문서](https://xdebug.org/docs/)
 - [PhpStorm 디버깅 가이드](https://www.jetbrains.com/help/phpstorm/debugging.html)
-- [VsCode PHP 디버그 어댑터](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
 - [PHP.net의 phpdbg](https://www.php.net/manual/en/book.phpdbg.php)
 - [GitHub의 pcov](https://github.com/krakjoe/pcov)

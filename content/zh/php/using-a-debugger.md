@@ -49,6 +49,5 @@ Xdebug的替代品包括pcov和phpdbg。这些提供了各种功能，但可能�
 ## 另请参阅：
 - [Xdebug文档](https://xdebug.org/docs/)
 - [PhpStorm调试指南](https://www.jetbrains.com/help/phpstorm/debugging.html)
-- [VsCode PHP调试适配器](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
 - [PHP.net上的phpdbg](https://www.php.net/manual/en/book.phpdbg.php)
 - [pcov在GitHub上](https://github.com/krakjoe/pcov)

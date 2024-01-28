@@ -50,5 +50,4 @@ print(soup:select('p')[1]:text())  -- Output: HTML-parsinta Lualla on sujuvaa.
 Ennen luasoupia ja muita kirjastoja Lua-ohjelmoijat joutuivat turvautumaan säännöllisiin lausekkeisiin (regex), jotka ovat virhealttiita ja hankalia monimutkaisessa HTML:n käsittelyssä. Luasoup tarjoaa DOM-pohjaista lähestymistapaa, joka on luotettavampi ja luettavampi. Vaihtoehtoisesti voi käyttää LuaXML-kirjastoa XML:n ja HTML:n käsittelyyn, mutta se on vähemmän suosittu. Luasoup käyttää sisäisesti lxml parseria, joka perustuu libxml2-kirjastoon.
 
 ## See Also (Katso myös)
-- [Lua-users Wiki: Handling XML with Lua](http://lua-users.org/wiki/LuaXml)
 - [luaxml GitHub repository](https://github.com/LuaDist/luaxml)

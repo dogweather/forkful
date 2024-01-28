@@ -48,5 +48,3 @@ Expressões regulares surgiram na década de 1950, com base nos trabalhos de teo
 ## Ver Também
 - [Lua 5.4 Reference Manual (Patterns)](https://www.lua.org/manual/5.4/manual.html#6.4.1)
 - [Lrexlib](https://github.com/rrthomas/lrexlib): Uma coleção de binding para diferentes bibliotecas de expressões regulares.
-- [LPeg](http://www.inf.puc-rio.br/~roberto/lpeg/): Uma biblioteca para análise de padrões (patterns) com gramáticas de Parsing Expression.
-- [Lua-users wiki: Patterns Tutorial](http://lua-users.org/wiki/PatternsTutorial): Um tutorial sobre o uso de padrões em Lua.

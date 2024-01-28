@@ -47,4 +47,3 @@ Usando un depurador, puedes establecer puntos de interrupción para detener la e
 ¿Listo para profundizar? Sumérgete en estos:
 - La guía de depuración de Arduino en [Depuración de Arduino](https://www.arduino.cc/en/Guide/Environment#toc7)
 - El manual de referencia de AVR Libc para configurar avr-gdb: [Página Principal de AVR Libc](http://www.nongnu.org/avr-libc/)
-- Una inmersión más profunda en el uso de Atmel-ICE: [Usando Atmel-ICE para la Programación AVR en Atmel Studio](https://microchipdeveloper.com/atmel-ice:atmel-ice)

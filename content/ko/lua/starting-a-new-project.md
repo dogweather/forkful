@@ -41,4 +41,3 @@ Lua는 1993년에 브라질에서 탄생했습니다. 게임 개발, 웹 서버 
 ## See Also (더 보기)
 - Lua 공식 홈페이지: [https://www.lua.org](https://www.lua.org)
 - Lua 프로그래밍에 대한 튜토리얼: [http://www.lua.org/pil/contents.html](http://www.lua.org/pil/contents.html)
-- Lua 사용자 위키: [http://lua-users.org/wiki/](http://lua-users.org/wiki/)

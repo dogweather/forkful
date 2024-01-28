@@ -61,5 +61,4 @@ Huomaa, että `-replace` käyttää regexiä taustalla, joten kun työskentelet 
 
 ## Katso myös
 - Lisätietoja regexistä PowerShellissä, tarkista viralliset dokumentit: [about_Regular_Expressions](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)
-- Tutustu merkkijonon käsittelyn syvyyksiin: [about_String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
 - Löydä muita merkkijonometodeja: [Trim(), TrimStart(), TrimEnd()](https://docs.microsoft.com/en-us/dotnet/api/system.string.trim?view=net-6.0)

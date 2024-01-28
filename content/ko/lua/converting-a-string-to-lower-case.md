@@ -47,7 +47,6 @@ print(lowerUtf8String)  -- 출력: 안녕하세요!
 
 ## See Also (더보기)
 - Lua 5.4 Reference Manual: [String Manipulation](https://www.lua.org/manual/5.4/manual.html#6.4)
-- Lua Users Wiki: [StringsTutorial](http://lua-users.org/wiki/StringsTutorial)
 - GitHub Lua: [Lua Source](https://github.com/lua/lua)
 
 이 글을 읽으신 후에 해당 매뉴얼과 튜토리얼을 참고하시면 Lua에서 문자열을 다루는 더 많은 정보를 얻을 수 있습니다.

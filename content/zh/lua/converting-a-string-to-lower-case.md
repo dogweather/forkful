@@ -36,4 +36,3 @@ print(utf8.lower(utf8String))  -- 输出: âbçd
 
 ## See Also | 另请参阅:
 - Lua 5.4参考手册: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
-- Lua用户维基，关于字符串操作: [http://lua-users.org/wiki/StringLibraryTutorial](http://lua-users.org/wiki/StringLibraryTutorial)

@@ -69,4 +69,3 @@ Un détail important lors du parsing HTML est de gérer correctement l'encodage 
 - Lua Expat (lxp) : [https://github.com/lunarmodules/luaexpat](https://github.com/lunarmodules/luaexpat)
 - Htmlparser Lua : [https://github.com/msva/lua-htmlparser](https://github.com/msva/lua-htmlparser)
 - Gumbo parser : [https://github.com/craigbarnes/lua-gumbo](https://github.com/craigbarnes/lua-gumbo)
-- Lua Users Wiki sur le parsing XML : [http://lua-users.org/wiki/LuaXml](http://lua-users.org/wiki/LuaXml)

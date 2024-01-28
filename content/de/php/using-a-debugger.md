@@ -49,6 +49,5 @@ Wenn Sie einen Debugger implementieren, denken Sie daran, dass Sie den Debugger 
 ## Siehe auch:
 - [Xdebug Dokumentation](https://xdebug.org/docs/)
 - [PhpStorm Debugging Guide](https://www.jetbrains.com/help/phpstorm/debugging.html)
-- [VsCode PHP Debug Adapter](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
 - [PHP.net über phpdbg](https://www.php.net/manual/en/book.phpdbg.php)
 - [pcov auf GitHub](https://github.com/krakjoe/pcov)

@@ -43,4 +43,3 @@ Jeśli chcesz więcej informacji o stringach w Lua oraz o tym języku ogólnie, 
 
 - [Oficjalna dokumentacja Lua](https://www.lua.org/manual/5.4/)
 - [Programming in Lua (książka)](https://www.lua.org/pil/contents.html)
-- [Lua Users wiki – string library](http://lua-users.org/wiki/StringLibraryTutorial)

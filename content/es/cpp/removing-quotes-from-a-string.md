@@ -53,4 +53,3 @@ En cuanto a la implementación, recuerda que `std::remove` en realidad no elimin
 ## Ver También
 - Referencia de C++ `std::remove`: [cppreference.com](https://en.cppreference.com/w/cpp/algorithm/remove)
 - Más sobre manipulación de `std::string`: [cplusplus.com](http://www.cplusplus.com/reference/string/string/)
-- Un primer sobre expresiones regulares en C++: [learncpp.com](https://www.learncpp.com/cpp-tutorial/regular-expressions-with-std-regex/)

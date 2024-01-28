@@ -42,5 +42,4 @@ end
 
 ## See Also
 - Ruby-dokumentaatio virheiden käsittelystä: [https://ruby-doc.org/core-2.7.0/IO.html#method-c-new-label-IO+Open+Mode](https://ruby-doc.org/core-2.7.0/IO.html#method-c-new-label-IO+Open+Mode)
-- Stack Overflow -keskusteluja Ruby `stderr`: [https://stackoverflow.com/search?q=ruby+stderr](https://stackoverflow.com/search?q=ruby+stderr)
 - UNIX-ohjeet ohjaukseen: [https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr))

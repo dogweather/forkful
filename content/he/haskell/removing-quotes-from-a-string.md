@@ -45,5 +45,4 @@ Haskell טען, בואו נלמד כמה פונקציות!
 
 ## ראו גם:
 - לאוהבי regex: [Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
-- צלילה לתוך פרסרים עם: [Parsec: A Practical Parser Library](https://research.microsoft.com/en-us/um/people/daan/download/parsec/parsec.pdf)
 - הקדמה עדינה למחרוזות ב-Haskell: [Learn You a Haskell for Great Good! - התחלה](http://learnyouahaskell.com/starting-out#strings)

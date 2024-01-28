@@ -50,4 +50,3 @@ Ran 1 tests in 0.001 seconds, 1 success, 0 failures
 
 ## Veja Também
 - [LuaUnit no GitHub](https://github.com/bluebird75/luaunit)
-- [Lua TestMore](https://fperrad.frama.io/lua-TestMore/)

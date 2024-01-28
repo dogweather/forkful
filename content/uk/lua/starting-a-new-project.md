@@ -59,5 +59,4 @@ Lua — це легка і гнучка мова програмування. Р�
 ## Дивіться також:
 
 - Офіційний сайт Lua: [https://www.lua.org/](https://www.lua.org/)
-- Lua-керівництво для початківців: [http://lua-users.org/wiki/LuaTutorial](http://lua-users.org/wiki/LuaTutorial)
 - Проєкти на GitHub, які використовують Lua: [https://github.com/trending/lua](https://github.com/trending/lua)

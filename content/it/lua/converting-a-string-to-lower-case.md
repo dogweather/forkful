@@ -32,4 +32,3 @@ La funzione `lower()` in Lua fa parte del repertorio standard dal suo debutto; Ã
 ## Vedi Anche
 - [String Manipulation - Programming in Lua](https://www.lua.org/pil/20.1.html)
 - [Lua 5.4 Reference Manual - Strings](https://www.lua.org/manual/5.4/manual.html#6.4)
-- [Lua-users Wiki: Strings Tutorial](http://lua-users.org/wiki/StringsTutorial)

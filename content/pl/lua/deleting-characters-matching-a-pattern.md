@@ -48,4 +48,3 @@ Implementacja potraktowania wzorców w Lua różni się od typowych wyrażeń re
 ## See Also - Zobacz również:
 - [Programming in Lua (4th edition)](https://www.lua.org/pil/contents.html) - oficjalny przewodnik po języku Lua.
 - [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/) - dokumentacja wzorców w Lua.
-- [Lua-users wiki: Patterns Tutorial](http://lua-users.org/wiki/PatternsTutorial) - poradnik użytkowników Lua na temat wzorców.

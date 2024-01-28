@@ -61,5 +61,4 @@ Write-Output $cleanString  # 出力：Hello, World!
 
 ## 関連情報
 - PowerShellでの正規表現についての詳細は、公式ドキュメントを参照してください：[about_Regular_Expressions](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)
-- 文字列操作に関する詳細情報：[about_String](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
 - 他の文字列メソッドを発見する：[Trim(), TrimStart(), TrimEnd()](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.trim?view=net-6.0)

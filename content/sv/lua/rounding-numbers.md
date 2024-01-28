@@ -45,5 +45,4 @@ Internt fungerar dessa funktioner normalt genom att utnyttja hur datorer lagrar 
 
 ## Se även
 - [Lua 5.4 Referensmanual: De matematiska funktionerna](https://www.lua.org/manual/5.4/manual.html#6.7)
-- [lua-users wiki: Round](http://lua-users.org/wiki/SimpleRound)
 - [Penlight Lua Bibliotek: Math](https://github.com/lunarmodules/Penlight)

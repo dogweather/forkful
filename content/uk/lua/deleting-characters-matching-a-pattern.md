@@ -33,4 +33,3 @@ print(no_cyrillic) -- Виводить: 213,  language?
 ## Дивись Також
 - [Programming in Lua (Fourth edition)](https://www.lua.org/pil/contents.html) - книга для глибшого занурення у мову програмування Lua.
 - [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/) - офіційний референс Lua, розділ про рядки і шаблони.
-- [Lua Users Wiki: Patterns Tutorial](http://lua-users.org/wiki/PatternsTutorial) - навчальний матеріал по шаблонах у Lua.

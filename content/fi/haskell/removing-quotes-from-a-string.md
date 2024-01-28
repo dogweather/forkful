@@ -45,5 +45,4 @@ Toteutuksen osalta yllä oleva `removeQuotes`-funktio käyttää lambdalla jokai
 
 ## Katso myös:
 - Regex-rakastajille: [Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
-- Sukella jäsentimiin: [Parsec: A Practical Parser Library](https://research.microsoft.com/en-us/um/people/daan/download/parsec/parsec.pdf)
 - Hellävarainen johdatus Haskellin merkkijonoihin: [Learn You a Haskell for Great Good! - Starting Out](http://learnyouahaskell.com/starting-out#strings)

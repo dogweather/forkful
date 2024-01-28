@@ -60,6 +60,4 @@ Hey, what's your name?
 
 ## 参照：
 - [GHCユーザーズガイド - デバッガ](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
-- [コマーシャルHaskell - デバッグツール](https://commercialhaskell.github.io/intermediate/docs/debugging-tools/)
-- [Visual Studio Code - Haskell拡張機能](https://marketplace.visualstudio.com/items?itemName=haskell.haskell)
 - [IntelliJ Haskellプラグイン](https://plugins.jetbrains.com/plugin/8258-intellij-haskell)

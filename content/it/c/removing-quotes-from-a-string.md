@@ -65,4 +65,3 @@ L'implementazione sopra si limita semplicemente a scandire ogni carattere nella 
 - [Funzioni della Libreria Standard C](http://www.cplusplus.com/reference/clibrary/)
 - [PCRE - Espressioni regolari compatibili con Perl](https://www.pcre.org/)
 - [Comprensione dei puntatori in C](https://www.learn-c.org/en/Pointers)
-- [Programmazione Sicura in C](https://owasp.org/www-project-secure-coding-in-c)

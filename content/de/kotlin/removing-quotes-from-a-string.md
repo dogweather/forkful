@@ -62,9 +62,7 @@ In Bezug auf die Implementierung ist es erwähnenswert, dass Kotlin mit Java int
 Für mehr Kontext zum Umgang mit Strings in Kotlin können Sie die offizielle Dokumentation einsehen:
 
 - [Kotlin's String-Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Arbeiten mit Strings in Kotlin](https://play.kotlinlang.org/byExample/02_control_flow/06_String%20Templates)
 
 Für tiefergehende Einblicke in reguläre Ausdrücke und das Parsen in Kotlin:
 
 - [Kotlin Regex-Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Text parsen in Kotlin](https://typealias.com/start/parsing-in-kotlin/)

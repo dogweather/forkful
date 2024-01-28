@@ -61,5 +61,4 @@ Należy zauważyć, że `-replace` używa regex w tle, więc kiedy pracujesz z n
 
 ## Zobacz także
 - Aby dowiedzieć się więcej o regex w PowerShell, sprawdź oficjalną dokumentację: [about_Regular_Expressions](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)
-- Zgłębiaj manipulację stringami bardziej dogłębnie: [about_String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
 - Odkryj inne metody stringów: [Trim(), TrimStart(), TrimEnd()](https://docs.microsoft.com/en-us/dotnet/api/system.string.trim?view=net-6.0)

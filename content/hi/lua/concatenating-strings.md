@@ -51,4 +51,3 @@ Lua कंकेटेनेशन में इंटरनली Lua optimizer
 ## See Also (देखें भी)
 - Lua 5.4 reference manual on string concatenation: [https://www.lua.org/manual/5.4/manual.html#3.4.6](https://www.lua.org/manual/5.4/manual.html#3.4.6)
 - Lua string library for advanced operations: [https://www.lua.org/manual/5.4/manual.html#6.4](https://www.lua.org/manual/5.4/manual.html#6.4)
-- Lua optimization tips for working with strings: [http://lua-users.org/wiki/OptimisingUsingLocalVars](http://lua-users.org/wiki/OptimisingUsingLocalVars)

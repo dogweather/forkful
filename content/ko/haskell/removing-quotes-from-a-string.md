@@ -45,5 +45,4 @@ Haskell said, Lets learn some functions!
 
 ## 참고 자료:
 - 정규 표현식을 좋아하는 분들을 위해: [Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
-- 파서에 대한 입문: [Parsec: A Practical Parser Library](https://research.microsoft.com/en-us/um/people/daan/download/parsec/parsec.pdf)
 - Haskell 문자열에 대한 친절한 소개: [Learn You a Haskell for Great Good! - 시작하기](http://learnyouahaskell.com/starting-out#strings)

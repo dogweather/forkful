@@ -50,4 +50,3 @@ Bnn
 ## See Also (더보기)
 - Lua 5.4의 공식 문자열 패턴 매칭 문서: [http://www.lua.org/manual/5.4/manual.html#6.4.1](http://www.lua.org/manual/5.4/manual.html#6.4.1)
 - Lua 문자열 함수들에 대한 더 깊은 이해를 위한 튜토리얼: [https://www.tutorialspoint.com/lua/lua_strings.htm](https://www.tutorialspoint.com/lua/lua_strings.htm)
-- Lua에 대한 정규 표현식과의 차이점에 대한 설명: [http://lua-users.org/wiki/PatternsTutorial](http://lua-users.org/wiki/PatternsTutorial)

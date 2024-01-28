@@ -58,5 +58,4 @@ L'implementazione diventa complicata quando è necessario arrotondare numeri con
 
 ## Vedi Anche
 - Documentazione di [`<math.h>`](https://en.cppreference.com/w/c/numeric/math)
-- [Aritmetica in virgola mobile](https://it.wikipedia.org/wiki/Aritmetica_in_virgola_mobile)
 - [Le insidie della verifica dei calcoli in virgola mobile](https://dl.acm.org/doi/10.1145/1186736.1186737)

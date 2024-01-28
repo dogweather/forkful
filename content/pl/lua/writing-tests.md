@@ -37,4 +37,3 @@ Lua nie zawsze miała narzędzia do testowania. Wcześniej programiści używali
 ## See Also:
 - [Luassert - Assertion library for Lua](https://github.com/Olivine-Labs/luassert)
 - [LuaUnit - xUnit for Lua](https://luaunit.readthedocs.io/en/latest/)
-- [TestMore Lua - Inspired by Perl's Test::More module](https://fperrad.frama.io/lua-TestMore/)

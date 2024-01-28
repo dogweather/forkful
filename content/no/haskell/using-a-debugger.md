@@ -60,6 +60,4 @@ Når det gjelder implementeringsdetaljer, fungerer Haskells feilsøker med kjør
 
 ## Se Også:
 - [GHC Brukerhåndbok - Feilsøker](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
-- [Commercial Haskell - Feilsøkingsverktøy](https://commercialhaskell.github.io/intermediate/docs/debugging-tools/)
-- [Visual Studio Code - Haskell-utvidelse](https://marketplace.visualstudio.com/items?itemName=haskell.haskell)
 - [IntelliJ Haskell-plugin](https://plugins.jetbrains.com/plugin/8258-intellij-haskell)

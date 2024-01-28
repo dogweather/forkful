@@ -52,5 +52,4 @@ En debugger fungerar genom att tillåta programmeraren att pausa exekveringen (b
 
 ## Se även
 - Den officiella Oracle-dokumentationen om debugging: [Oracle Java SE Debugging](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jdb.html)
-- Eclipse guide om felsökning: [Eclipse Debugging Tips](https://www.eclipse.org/community/eclipse_newsletter/2017/juni/article4.php)
 - VisualVM, ett visuellt verktyg som integrerar flera kommandoradsverktyg från JDK och lättviktsprofilering: [VisualVM](https://visualvm.github.io/)

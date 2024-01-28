@@ -65,4 +65,3 @@ Sanitized: He said, Hello, world!
 - [פונקציות ספרייה סטנדרטיות של C](http://www.cplusplus.com/reference/clibrary/)
 - [PCRE - Perl Compatible Regular Expressions](https://www.pcre.org/)
 - [הבנת מצביעים ב-C](https://www.learn-c.org/en/Pointers)
-- [כתיבת קוד בטוח ב-C](https://owasp.org/www-project-secure-coding-in-c)

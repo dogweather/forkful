@@ -56,5 +56,3 @@ Continue
 ## ראה גם
 למידע נוסף על דיבאג ב-PowerShell:
 - [about_Debuggers](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Debuggers)
-- [תיעוד של PowerShell על דיבאג](https://docs.microsoft.com/en-us/powershell/scripting/debugging/debugging-in-powershell?view=powershell-7.2)
-- [הרחבת PowerShell של Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)

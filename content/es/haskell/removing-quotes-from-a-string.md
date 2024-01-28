@@ -45,5 +45,4 @@ En términos de implementación, la función `removeQuotes` usa una lambda para 
 
 ## Ver También:
 - Para los amantes de regex: [Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
-- Sumérgete en los analizadores sintácticos con: [Parsec: Una Biblioteca de Análisis Sintáctico Práctica](https://research.microsoft.com/en-us/um/people/daan/download/parsec/parsec.pdf)
 - Una introducción gentil a las cadenas de Haskell: [¡Aprende You a Haskell por el Bien Mayor! - Comenzando](http://learnyouahaskell.com/starting-out#strings)

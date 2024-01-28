@@ -67,5 +67,4 @@ Zrozumienie tych leżących u podstaw koncepcji i narzędzi może znacznie popra
 Aby uzyskać bardziej szczegółowe informacje na temat ciągów znaków i wydajności w Elixirze, następujące zasoby będą pomocne:
 
 - [Oficjalny przewodnik po Elixirze na temat binarnych, ciągów znaków i list charów](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
-- [IOList: Szwajcarski scyzoryk Elixira dla wydajności](https://dockyard.com/blog/2019/05/23/optimizing-elixir-and-phoenix-with-iolist)
 - [Przewodnik po efektywności Erlanga](http://erlang.org/doc/efficiency_guide/listHandling.html) - Mimo że dostosowany do Erlanga, wiele z tych informacji ma zastosowanie do Elixira ze względu na jego podstawę na wirtualnej maszynie Erlanga.

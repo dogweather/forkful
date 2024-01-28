@@ -69,7 +69,6 @@ age: 32
 ## Докладніше:
 
 - [Офіційний сайт Lua](https://www.lua.org/)
-- [Lua Users Wiki](http://lua-users.org/wiki/)
 - [Введення в Lua](http://tylerneylon.com/a/learn-lua/)
 
 Прочитаєте про основи, поглибите знання і знайдете інструменти, які покращать вашу роботу з Lua.

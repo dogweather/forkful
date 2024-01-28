@@ -45,5 +45,4 @@ Sisäisesti nämä funktiot toimivat yleensä hyödyntämällä sitä, miten tie
 
 ## Katso myös
 - [Lua 5.4 Referenssiopas: Matemaattiset funktiot](https://www.lua.org/manual/5.4/manual.html#6.7)
-- [lua-users wiki: Pyöristys](http://lua-users.org/wiki/SimpleRound)
 - [Penlight Lua Kirjastot: Matematiikka](https://github.com/lunarmodules/Penlight)

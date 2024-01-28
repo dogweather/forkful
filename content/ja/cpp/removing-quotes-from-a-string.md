@@ -53,4 +53,3 @@ Hello, World!
 ## 参照
 - C++ `std::remove` リファレンス：[cppreference.com](https://en.cppreference.com/w/cpp/algorithm/remove)
 - `std::string` 操作についての詳細：[cplusplus.com](http://www.cplusplus.com/reference/string/string/)
-- C++用Regex入門：[learncpp.com](https://www.learncpp.com/cpp-tutorial/regular-expressions-with-std-regex/)

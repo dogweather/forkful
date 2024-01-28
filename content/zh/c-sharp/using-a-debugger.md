@@ -42,4 +42,3 @@ Visual Studio 调试器的替代品包括用于 C 风格语言的开源选项如
 ## 另见
 - [Visual Studio 调试器文档](https://docs.microsoft.com/en-us/visualstudio/debugger/)
 - [调试策略](https://www.codeproject.com/Articles/79508/Effective-Exception-Handling-in-Visual-C)
-- [JetBrains Rider 调试器功能](https://www.jetbrains.com/rider/features/debugger.html)

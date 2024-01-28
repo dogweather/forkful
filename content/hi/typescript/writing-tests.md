@@ -35,5 +35,4 @@ Deno.test('sum कार्य का परीक्षण', () => {
 
 ## और भी:
 - टाइपस्क्रिप्ट के साथ जेस्ट का प्रयोग: [Jest with TypeScript](https://jestjs.io/docs/en/getting-started#using-typescript)
-- डेनोके साथ टेस्टिंग: [Testing with Deno](https://deno.land/manual/testing)
 - मोचा का परिचय: [Mocha - the fun, simple, flexible JavaScript test framework](https://mochajs.org/)

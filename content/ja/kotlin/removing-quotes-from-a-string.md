@@ -62,9 +62,7 @@ fun main() {
 Kotlinにおける文字列の扱いについて更に理解するためには、公式ドキュメントをご覧ください：
 
 - [KotlinのStringドキュメント](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Kotlinでの文字列の操作](https://play.kotlinlang.org/byExample/02_control_flow/06_String%20Templates)
 
 Kotlinでの正規表現と解析に関するより深いダイブについては：
 
 - [Kotlin Regexドキュメント](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Kotlinでのテキスト解析](https://typealias.com/start/parsing-in-kotlin/)

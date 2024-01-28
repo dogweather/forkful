@@ -46,5 +46,4 @@ No mundo Lua, é essencial entender que arquivos devem ser fechados para evitar 
 ## See Also
 - [Referência oficial do Lua (em inglês)](https://www.lua.org/manual/5.4/)
 - [Livro de programação em Lua (em inglês)](https://www.lua.org/pil/contents.html)
-- [Lua-users wiki (em inglês)](http://lua-users.org/wiki/IoLibraryTutorial) - tutoriais e dicas sobre a biblioteca io.
 - [Fórum Stack Overflow para dúvidas comuns de Lua](https://stackoverflow.com/questions/tagged/lua) - busque por questões sobre leitura de arquivos para encontrar problemas e soluções comuns.
