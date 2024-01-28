@@ -1,44 +1,62 @@
 ---
-title:                "ניתוח תאריך ממחרוזת"
-date:                  2024-01-20T15:35:52.485236-07:00
-html_title:           "Arduino: ניתוח תאריך ממחרוזת"
-simple_title:         "ניתוח תאריך ממחרוזת"
+title:                "פיענוח תאריך ממחרוזת"
+date:                  2024-01-28T02:05:48.977230-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פיענוח תאריך ממחרוזת"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed
+  - 2024-01-28, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-פירסונג תאריך ממחרוזת הוא תהליך שבו מתרגמים נתונים מטקסטואליים למבנה נתונים מתאריך. תכנתים עושים זאת כדי לאפשר מניפולציה והשוואות עם נתוני תאריכים בתוך התוכנה.
+
+לנתח תאריך ממחרוזת זה אומר לקחת טקסט, כמו "2023-04-05", ולהמירו לפורמט תאריך שהתוכנית שלך יכולה להבין ולעבוד איתו. מתכנתים עושים זאת מכיוון שתאריכים מגיעים בשפע של פורמטים, והם זקוקים לעקביות כדי להשוות, למיין או לאחסן אותם כהלכה.
 
 ## איך לעשות:
-אייליקסיר מציעה כמה אופציות לפירסונג תאריכים. הנה דוגמא:
+
+ב-Elixir, ניתן לנתח תאריכים באמצעות המודול `Date`. הנה איך להפוך מחרוזת לתאריך:
 
 ```elixir
-defmodule DateParser do
-  def parse_date(string) do
-    {:ok, date} = NaiveDateTime.from_iso8601(string)
-    date
-  end
-end
-
-# דוגמא לשימוש
-parsed_date = DateParser.parse_date("2025-03-14T11:52:39.123Z")
-IO.inspect(parsed_date)
+date_string = "2023-04-05"
+{:ok, date} = Date.from_iso8601(date_string)
+IO.inspect(date)
 ```
 
-פלט דוגמא:
+דוגמה לפלט:
 
 ```elixir
-~N[2025-03-14 11:52:39.123]
+~D[2023-04-05]
+```
+
+כדי להתמודד עם פורמטים שונים, ניתן להשתמש בספריית `Timex`:
+
+```elixir
+{:ok, datetime} = Timex.parse("05-04-2023", "{D}-{0M}-{YYYY}")
+IO.inspect(datetime)
+```
+
+דוגמה לפלט:
+
+```elixir
+#DateTime<2023-04-05 00:00:00Z>
 ```
 
 ## צלילה עמוקה
-פירסונג תאריכים היה חלק מתכנות מאז שנות ה-60. כל שפה מציגה ספריה סטנדרטית לעבודה עם תאריכים וזמנים. באייליקסיר, `NaiveDateTime` מספק המרה ממחרוזת בפורמט ISO8601 - סטנדרט בינלאומי לתאריכים וזמנים. חלופות כוללות ספריות כמו `Timex`, אשר מציעה יותר גמישות ופונקציות נוספות. בעבודה עם פורמטים אחרים שאינם ISO8601, יש לבחור בספריה המתאימה או ליצור פונקציית פירסונג מותאמת אישית.
+
+הפונקציה `Date.from_iso8601/1` היא חלק מספריית התקנים של Elixir, שהוצגה כדי להבטיח ניתוח פשוט של תקן התאריך ISO8601 - פורמט תאריך נפוץ. אך החיים לא כל כך פשוטים; תאריכים מגיעים בטונות של פורמטים. זה המקום שבו `Timex`, ספרייה צד שלישי של Elixir, מתמקמת. היא עשירה יותר מפונקציות התאריך המובנות של Elixir ועוזרת להתמודד עם מגוון רחב של פורמטי תאריך.
+
+Elixir עצמה היא בלתי משתנה, מה שאומר שתאריכים שננתחו אינם יכולים להשתנות לאחר יצירתם. תכונה זו חוזרת לשורשי התכנות הפונקציונאלי של Elixir, מבטיחה צפיות וניפוי באגים קל יותר.
+
+מבחינה היסטורית, ניתוח תאריכים היה משימה קשה בשל התקנים משתנים. עם זאת, בעזרת ספריות כמו `Timex` ותכונות שפה ב-Elixir, המורכבות הזו מוסתרת, מה שהופך את חיי המפתחים לפשוטים יותר.
 
 ## ראה גם
-- [Elixir's NaiveDateTime documentation](https://hexdocs.pm/elixir/NaiveDateTime.html)
-- [Timex - Elixir date/time library](https://hexdocs.pm/timex/Timex.html)
+
+- [Elixir Date](https://hexdocs.pm/elixir/Date.html)
+- [תיעוד Timex](https://hexdocs.pm/timex/Timex.html)
+- [התקן ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html)
