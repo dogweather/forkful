@@ -1,7 +1,7 @@
 ---
 title:                "Generating random numbers"
-date:                  2024-01-20T17:48:48.973634-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-01-27T19:45:00.562859-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Generating random numbers"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -12,48 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Generating random numbers is creating numbers that cannot be reasonably predicted. Programmers use them for tasks like security protocols, games, simulations, or anything that needs unpredictability.
+
+Generating random numbers in programming is about creating numbers that are unpredictable by human standards. Programmers use random numbers for tasks such as generating unique identifiers, selecting random elements from a list, or for simulations and gaming logic where unpredictability is essential.
 
 ## How to:
-In Fish, you can generate random numbers easily:
+
+Fish Shell offers a straightforward way to generate random numbers using the `random` function. This function can generate random integers within a specified range.
 
 ```Fish Shell
-# Generate a random number between 1 and 10
-set -l rand_num (random 1 10)
-echo $rand_num
+# Generate a random number between 1 and 100
+set random_number (random 1 100)
+echo $random_number
 ```
 
-Sample output could be: `7`
-
-To get a series of random numbers:
+You can also use it without specifying a range, in which case it defaults to generating a random number between 1 and 32767.
 
 ```Fish Shell
-# Generate 5 random numbers between 1 and 100
-for i in (seq 5)
-    echo (random 1 100)
-end
+# Generate a random number with default range
+set random_number_default (random)
+echo $random_number_default
 ```
 
-Sample output might be:
+For scenarios requiring a random selection from an array, you can integrate `random` with other commands:
 
-```
-84
-22
-67
-99
-30
+```Fish Shell
+# Create an array
+set animals (cat dog bird fish)
+
+# Select a random index, arrays in Fish start at index 1
+set random_index (random 1 (count $animals))
+
+# Use the random index to select a random animal
+echo $animals[$random_index]
 ```
 
 ## Deep Dive
-Fish Shell's random number generator has a simple interface but an intricate underlying mechanism. Before Fish Shell 3.0, random functionality was notable for lacking compared to other shells, prompting scripts to leverage external utilities like `awk`.
 
-Today's `random` is a built-in and relies on pseudorandom number generators (PRNGs), which are algorithms that produce sequences of numbers approximating randomness. Despite their deterministic nature, for most purposes, the numbers are "random enough".
+The `random` function in Fish Shell is an internal built-in function, which means it's executed within the shell itself without calling external programs. This approach enhances the efficiency and speed of generating random numbers compared to shells that might rely on external utilities like `awk` or `shuf`.
 
-Alternatives to `random` include calling external commands like `shuf`, `awk`, or using the `$RANDOM` environment variable in bash for scripts that need to remain cross-shell.
+Historically, generating random numbers in shell scripts often involved using external commands or delving into device files like `/dev/random` or `/dev/urandom`, which could introduce complexity or portability issues. Fish's inclusion of a native `random` function simplifies scripts and ensures consistency across different environments.
 
-Regarding cryptographic security, you shouldn't use Fish's `random` for that. Instead, use a language or tool designed with cryptography in mind, like OpenSSL. Fish's `random` is more about convenience and quick, simple use cases that don't require cryptographically secure randomness.
+While Fish's `random` function is sufficient for most scripting needs, it's important to note that it may not be suitable for cryptographic purposes, where stronger, more unpredictable sources of randomness are required. In those cases, programmers might turn to external cryptographic tools or libraries designed specifically for security contexts.
 
-## See Also
-- [Fish Shell Documentation on `random`](https://fishshell.com/docs/current/cmds/random.html)
-- [OpenSSL Random Numbers Generation](https://www.openssl.org/)
-- [Wikipedia article on Pseudorandom Number Generators](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+In comparison to some other shells that lack built-in randomness functions, Fish's `random` offers a convenient and efficient way to incorporate randomness into scripts but always evaluate the suitability based on the task's specific requirements, especially where security is a concern.
+
+## See also
+
+### Official Fish Shell Documentation
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+
+### Blog Posts and Tutorials
+- **Stack Overflow Discussion**: [Generate a random number in Fish Shell](https://stackoverflow.com/questions/24815956/generate-a-random-number-in-fish-shell)
+- **Command Line Tips**: [Using Math in Fish Shell](https://www.mankier.com/1/fish#Expressions-Using_Math_in_fish)
