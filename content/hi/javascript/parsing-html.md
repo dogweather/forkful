@@ -1,39 +1,52 @@
 ---
 title:                "HTML पार्स करना"
-date:                  2024-01-20T15:32:25.202418-07:00
-html_title:           "Bash: HTML पार्स करना"
+date:                  2024-01-28T03:01:10.007560-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML पार्स करना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/parsing-html.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed
+  - 2024-01-28, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-HTML पार्स करना क्या है और क्यों करते हैं? यह एक ऐसी प्रक्रिया है जिसके ज़रिये हम HTML से डाटा निकालते हैं या उसे मॉडिफाई करते हैं। यह जरूरी है वेबसाइट्स की स्ट्रक्चर को समझने और वेब डाटा एनालिसिस और मैनेजमेंट के लिए।
+## क्या और क्यों?
+HTML का पार्सिंग का मतलब है HTML दस्तावेज़ से डेटा निकालना। प्रोग्रामर इसे वेब सामग्री के साथ इंटरैक्ट या हेरफेर करने, डेटा निकासी को स्वचालित करने, या वेब स्क्रेपिंग के उद्देश्यों के लिए करते हैं।
 
-## How to:
+## कैसे करें:
+चलिए `DOMParser` API का उपयोग करते हुए JavaScript में HTML का पार्स करें।
+
 ```Javascript
-// Example: Parsing an HTML string using DOMParser
-const htmlString = '<div id="greeting">नमस्ते, दुनिया!</div>';
-
-// DOMParser का उपयोग करके HTML स्ट्रिंग को पार्स करना
 const parser = new DOMParser();
+const htmlString = `<p>Hello, world!</p>`;
 const doc = parser.parseFromString(htmlString, 'text/html');
-
-// id "greeting" वाले एलिमेंट को ढूंढना और उसका टेक्स्ट प्राप्त करना
-const greetingText = doc.querySelector('#greeting').textContent;
-console.log(greetingText);  // "नमस्ते, दुनिया!"
+console.log(doc.body.textContent); // आउटपुट: Hello, world!
 ```
 
-## Deep Dive
-HTML पार्सिंग एक पुरानी अवधारणा है और इसका इतिहास वेब की शुरुआत के साथ ही जुड़ा है। `DOMParser` वर्तमान में ब्राउज़र में पार्सिंग के लिए एक स्टैंडर्ड तरीका है, पर वैकल्पिक लाइब्रेरीज जैसे `jQuery`, `cheerio` (node.js पर) भी मौजूद हैं। ये लाइब्रेरीज इस काम को आसान बनाती हैं, खासकर जब जटिल HTML संरचनाओं का सामना हो।
+अब, चलिए कुछ और विशिष्ट चीज़ को पकड़ते हैं, जैसे एक क्लास के साथ एक तत्त्व:
 
-परफॉरमेंस की बात करें तो `DOMParser` तेज़ी से और सुरक्षित रूप से पार्स करता है, क्योंकि यह ब्राउज़र द्वारा नेटिवली सपोर्टेड होता है। इसके उपयोग में सिक्योरिटी पर विशेष ध्यान दिया जाता है, ताकि किसी भी खतरनाक स्क्रिप्ट्स से बचा जा सके जो XSS (Cross-Site Scripting) हमले का कारण बन सकती हैं।
+```Javascript
+const htmlString = `<div><p class="greeting">Hello, again!</p></div>`;
+const doc = parser.parseFromString(htmlString, 'text/html');
+const greeting = doc.querySelector('.greeting').textContent;
+console.log(greeting); // आउटपुट: Hello, again!
+```
 
-## See Also
-- MDN Web Docs on DOMParser: [DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
-- jQuery पर HTML पार्सिंग के लिए गाइड: [jQuery.parseHTML()](https://api.jquery.com/jquery.parsehtml/)
-- Node.js के लिए `cheerio` लाइब्रेरी: [Cheerio](https://cheerio.js.org/)
+## गहराई से जानकारी
+HTML का पार्सिंग वेब जितना पुराना है। शुरू में, यह एक ब्राउज़र चीज थी—ब्राउज़र्स HTML का पार्सिंग करते थे ताकि वेब पृष्ठों को प्रदर्शित किया जा सके। समय के साथ, प्रोग्रामर इस प्रक्रिया में दखल देना चाहते थे, जिससे `DOMParser` जैसे API तक पहुँच प्राप्त हुई।
+
+विकल्प? बिलकुल। हमारे पास `jQuery` जैसी लाइब्रेरीज और `BeautifulSoup` जैसे उपकरण Python के लिए हैं। लेकिन JavaScript का मूल `DOMParser` तेज और बिना किसी अतिरिक्त लाइब्रेरी के मौजूद है।
+
+कार्यान्वयन के दृष्टिकोण से, जब आप `DOMParser` के साथ HTML का पार्सिंग करते हैं, यह एक `Document` ऑब्जेक्ट बनाता है। इसे अपने HTML का एक पदानुक्रमिक मॉडल समझें। एक बार जब आप इसे प्राप्त कर लेते हैं, तो आप इसे नेविगेट और हेरफेर कर सकते हैं, ठीक उसी तरह जैसे आप एक सामान्य वेब पृष्ठ के DOM के साथ करेंगे।
+
+यहां बात यह है—पार्सिंग खराब बनाई गई HTML पर ठोकर खा सकती है। ब्राउज़र्स क्षमाशील होते हैं, लेकिन `DOMParser` नहीं हो सकता। इसलिए, जटिल कार्यों या गड़बड़ी वाले HTML के लिए, तीसरे पक्ष की लाइब्रेरी बेहतर सफाई कार्य कर सकती है।
+
+## साथ में देखें
+- `DOMParser` API पर MDN वेब डॉक्स: [MDN DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- jQuery की पार्सिंग क्षमताएं: [jQuery.parseHTML()](https://api.jquery.com/jquery.parsehtml/)
+- Cheerio, सर्वर के लिए कोर jQuery का एक तेज़, लचीला और लीन कार्यान्वयन: [Cheerio.js](https://cheerio.js.org/)
+- गैर-JS पार्सिंग के लिए: Python की BeautifulSoup लाइब्रेरी: [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)

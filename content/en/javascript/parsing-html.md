@@ -7,6 +7,8 @@ programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/parsing-html.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed
 ---
 
 {{< edit_this_page >}}

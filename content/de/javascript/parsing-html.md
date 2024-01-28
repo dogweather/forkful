@@ -1,43 +1,52 @@
 ---
 title:                "HTML parsen"
-date:                  2024-01-20T15:32:30.731816-07:00
-html_title:           "Arduino: HTML parsen"
+date:                  2024-01-28T03:00:44.405534-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML parsen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/parsing-html.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed
+  - 2024-01-28, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
+HTML zu parsen bedeutet, Daten aus HTML-Dokumenten zu extrahieren. Programmierer tun dies, um mit Webinhalten zu interagieren oder diese zu manipulieren, die Datenextraktion zu automatisieren oder für Web-Scraping-Zwecke.
 
-HTML-Parsing ist der Prozess, bei dem man HTML-Code liest und dessen Struktur und Inhalt versteht. Programmierer machen das, um Daten aus Webseiten zu extrahieren, Inhalte zu manipulieren oder die Struktur für eigene Zwecke zu nutzen.
+## Wie:
+Lassen Sie uns HTML mit der `DOMParser`-API in JavaScript parsen.
 
-## How to:
-
-Beispiel: HTML mit JavaScript parsen und Elemente auswählen:
-
-```javascript
+```Javascript
 const parser = new DOMParser();
-const htmlString = `
-  <div>
-    <p id="first">Hallo, Welt!</p>
-    <p id="second">Parsing ist spaßig.</p>
-  </div>
-`;
-const doc = parser.parseFromString(htmlString, "text/html");
-const firstParagraph = doc.getElementById("first").textContent;
-console.log(firstParagraph); // Gibt aus: "Hallo, Welt!"
+const htmlString = `<p>Hallo, Welt!</p>`;
+const doc = parser.parseFromString(htmlString, 'text/html');
+console.log(doc.body.textContent); // Ausgabe: Hallo, Welt!
 ```
 
-## Deep Dive
+Nun, greifen wir etwas Spezifischeres ab, wie ein Element mit einer Klasse:
 
-Historisch gesehen war das Parsen von HTML oft kompliziert und fehleranfällig, besonders wegen schlecht strukturierten Codes und Browser-Inkonsistenzen. Alternativen zu `DOMParser` wie `jQuery.parseHTML()` haben die Aufgabe vereinfacht. Allerdings liefern moderne Web-APIs wie `DOMParser` eine saubere und standards-konforme Methode, die mit guten Performance-Ergebnissen überzeugt. Beim Implementieren ist darauf zu achten, dass der HTML-Code, den man parst, vertrauenswürdig ist, um Cross-Site-Scripting (XSS) Angriffe zu vermeiden.
+```Javascript
+const htmlString = `<div><p class="greeting">Hallo, nochmal!</p></div>`;
+const doc = parser.parseFromString(htmlString, 'text/html');
+const greeting = doc.querySelector('.greeting').textContent;
+console.log(greeting); // Ausgabe: Hallo, nochmal!
+```
 
-## See Also
+## Vertiefung
+HTML zu parsen ist so alt wie das Web selbst. Anfangs war es eine Sache der Browser – Browser parsten HTML, um Webseiten anzuzeigen. Mit der Zeit wollten Programmierer in diesen Prozess eingreifen, was zu APIs wie `DOMParser` führte.
 
-- MDN-Dokumentation zu `DOMParser`: https://developer.mozilla.org/en-US/docs/Web/API/DOMParser
-- XSS-Angriffe und wie man sie verhindert: https://owasp.org/www-community/attacks/xss/
-- Eine Einführung in Web-Scraping mit JavaScript: https://javascript.info/parsing-html
+Alternativen? Sicher. Wir haben Bibliotheken wie `jQuery` und Werkzeuge wie `BeautifulSoup` für Python. Aber der native `DOMParser` von JavaScript ist schnell und eingebaut, ohne Bedarf für zusätzliche Bibliotheken.
+
+Was die Umsetzung betrifft, wenn Sie HTML mit `DOMParser` parsen, wird ein `Document`-Objekt erstellt. Denken Sie daran als ein hierarchisches Modell Ihres HTML. Sobald Sie es haben, können Sie es navigieren und manipulieren, genau wie Sie es mit dem DOM einer normalen Webseite tun würden.
+
+Hier ist die Sache – Parsen kann bei fehlerhaftem HTML ins Straucheln geraten. Browser sind nachsichtig, aber `DOMParser` ist es möglicherweise nicht. Deshalb könnten Bibliotheken von Drittanbietern bei komplexen Aufgaben oder unordentlichem HTML eine bessere Reinigungsarbeit leisten.
+
+## Siehe auch
+- MDN Web Docs zur `DOMParser`-API: [MDN DOMParser](https://developer.mozilla.org/de/docs/Web/API/DOMParser)
+- jQuery’s Parsing-Fähigkeiten: [jQuery.parseHTML()](https://api.jquery.com/jquery.parsehtml/)
+- Cheerio, eine schnelle, flexible und schlanke Implementierung des Kerns von jQuery für den Server: [Cheerio.js](https://cheerio.js.org/)
+- Für das Nicht-JS-Parsing: Pythons BeautifulSoup-Bibliothek: [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)

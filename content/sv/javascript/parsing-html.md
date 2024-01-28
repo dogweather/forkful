@@ -1,48 +1,52 @@
 ---
-title:                "Tolka HTML"
-date:                  2024-01-20T15:32:27.921799-07:00
-html_title:           "Arduino: Tolka HTML"
-simple_title:         "Tolka HTML"
+title:                "Analysera HTML"
+date:                  2024-01-28T03:01:14.207115-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analysera HTML"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/parsing-html.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed
+  - 2024-01-28, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att parsa HTML innebär att omvandla den till något som JavaScript kan förstå och manipulera. Detta görs för att kunna extrahera data, manipulera innehåll eller för att automatiskt generera dokumentstruktur.
+Att tolka HTML innebär att extrahera data från HTML-dokument. Programmerare gör detta för att interagera med eller manipulera webbinnehåll, automatisera dataextraktion eller för webbskrapningsändamål.
 
-## Hur gör man?
-Du kan använda `DOMParser` för att parsa en sträng av HTML. Här är ett enkelt exempel:
-
-```Javascript
-let parser = new DOMParser();
-let doc = parser.parseFromString('<p>Hej Sverige!</p>', 'text/html');
-console.log(doc.body.textContent); // Skriver ut "Hej Sverige!"
-```
-
-Sample output:
-```
-Hej Sverige!
-```
-
-För att interagera med de parsade elementen använd `querySelector` eller `getElementById`:
+## Hur man gör:
+Låt oss tolka HTML med hjälp av `DOMParser`-API i JavaScript.
 
 ```Javascript
-let pElement = doc.querySelector('p');
-console.log(pElement.textContent); // Skriver ut "Hej Sverige!"
+const parser = new DOMParser();
+const htmlString = `<p>Hello, world!</p>`;
+const doc = parser.parseFromString(htmlString, 'text/html');
+console.log(doc.body.textContent); // Utmatning: Hello, world!
 ```
 
-## Fördjupning
-Historiskt sett har webb-utvecklare använt olika tekniker för att parsa HTML, inklusive reguljära uttryck och tredjepartsbibliotek som jQuery. Men `DOMParser` är en webbstandard, vilket gör den till en pålitlig och konsistent lösning.
+Nu, låt oss ta något mer specifikt, som ett element med en klass:
 
-Alternativ till `DOMParser` inkluderar `innerHTML` och olika bibliotek som Cheerio (för Node.js) eller Beautiful Soup (för Python). Dessa är bra när `DOMParser` inte är tillräckligt, som vid server-side rendering eller när du jobbar i miljöer utan en DOM.
+```Javascript
+const htmlString = `<div><p class="greeting">Hello, again!</p></div>`;
+const doc = parser.parseFromString(htmlString, 'text/html');
+const greeting = doc.querySelector('.greeting').textContent;
+console.log(greeting); // Utmatning: Hello, again!
+```
 
-Implementation av HTML-parsing handlar oftast om effektivitet och säkerhet. Se till att den HTML du parsa inte innehåller skadlig kod, särskilt vid användning av `innerHTML`.
+## Djupdykning
+Att tolka HTML är lika gammalt som webben. Inledningsvis var det en webbläsargrej - webbläsare tolkade HTML för att visa webbsidor. Över tid ville programmerare delta i denna process, vilket ledde till API:er som `DOMParser`.
+
+Alternativ? Visst. Vi har bibliotek som `jQuery` och verktyg som `BeautifulSoup` för Python. Men JavaScripts inbyggda `DOMParser` är snabb och inbyggd, inget behov av extra bibliotek.
+
+När det gäller implementering, när du tolkar HTML med `DOMParser`, skapas ett `Document`-objekt. Tänk på det som en hierarkisk modell av ditt HTML. När du har den kan du navigera och manipulera den precis som du skulle med en vanlig webbsidas DOM.
+
+Här är grejen—tolkning kan snubbla på dåligt formaterad HTML. Webbläsare är förlåtande, men `DOMParser` kanske inte är det. Därför kan tredjepartsbibliotek göra ett bättre jobb med att städa upp i komplexa uppgifter eller rörigt HTML.
 
 ## Se även
-- MDN Web Docs om `DOMParser`: https://developer.mozilla.org/en-US/docs/Web/API/DOMParser
-- CheerioJS documentation: https://cheerio.js.org/
-- Beautiful Soup dokumentation (för Python utvecklare): https://www.crummy.com/software/BeautifulSoup/
+- MDN Web Docs om `DOMParser`-API: [MDN DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- jQuery:s tolkningskapaciteter: [jQuery.parseHTML()](https://api.jquery.com/jquery.parsehtml/)
+- Cheerio, en snabb, flexibel och smal implementering av kärnjQuery för servern: [Cheerio.js](https://cheerio.js.org/)
+- För icke-JS-tolkning: Pythons BeautifulSoup-bibliotek: [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)

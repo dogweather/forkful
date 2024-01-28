@@ -1,40 +1,52 @@
 ---
-title:                "Przetwarzanie HTML"
-date:                  2024-01-20T15:32:32.334541-07:00
-html_title:           "Bash: Przetwarzanie HTML"
-simple_title:         "Przetwarzanie HTML"
+title:                "Analiza składniowa HTML"
+date:                  2024-01-28T03:00:48.718434-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa HTML"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/parsing-html.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed
+  - 2024-01-28, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-Parsing HTML, czyli analiza struktury HTML, to proces przekształcania kodu HTML na dane, które można łatwo przetworzyć w JavaScript. Programiści robią to, aby manipulować zawartością stron, wydobywać informacje, a nawet testować aplikacje webowe.
+## Co i Dlaczego?
+Parsowanie HTML oznacza ekstrakcję danych z dokumentów HTML. Programiści robią to, aby oddziaływać na zawartość sieciową lub ją modyfikować, automatyzować wydobywanie danych lub w celu web scrapingu.
 
-## How to: (Jak to zrobić?)
-Do parsowania HTML w JavaScript często wykorzystuje się `DOMParser`. Oto przykład użycia:
+## Jak to zrobić:
+Parsujmy HTML za pomocą API `DOMParser` w JavaScript.
 
-```javascript
+```Javascript
 const parser = new DOMParser();
-const htmlString = '<div>Hello, World!</div>';
+const htmlString = `<p>Witaj, świecie!</p>`;
 const doc = parser.parseFromString(htmlString, 'text/html');
-console.log(doc.body.firstChild.textContent);  // Output: Hello, World!
+console.log(doc.body.textContent); // Wynik: Witaj, świecie!
 ```
 
-Powyższy kod przekształca string HTML na dokument DOM, który pozwala na dostęp do treści wewnątrz elementu `div`.
+Teraz spróbujmy wyłuskać coś bardziej specyficznego, jak element z klasą:
 
-## Deep Dive (Dogłębna analiza)
-Parsing HTML w JavaScript sięga początków interaktywnych stron internetowych. Historycznie, korzystano z `innerHTML`, ale to było pełne pułapek ze względu na bezpieczeństwo i wydajność. DOMParser, wprowadzony w HTML5, to nowsze i bezpieczniejsze rozwiązanie. Alternatywy jak jQuery (`$.parseHTML`) pomagały w poprzednich dekadach, choć obecnie ich użycie maleje.
+```Javascript
+const htmlString = `<div><p class="greeting">Cześć, znowu!</p></div>`;
+const doc = parser.parseFromString(htmlString, 'text/html');
+const greeting = doc.querySelector('.greeting').textContent;
+console.log(greeting); // Wynik: Cześć, znowu!
+```
 
-Przy implementacji warto zwrócić uwagę na:
-- Wydajność: DOMParser jest szybszy i mniej podatny na błędy niż inne metody.
-- Bezpieczeństwo: unikaj `innerHTML` ze względu na potencjalne ataki XSS.
-- Kompatybilność: DOMParser jest dobrze wspierany w nowoczesnych przeglądarkach.
+## Dogłębna analiza
+Parsowanie HTML istnieje tak długo, jak sieć. Początkowo było to zadanie przeglądarek—parsowały one HTML, aby wyświetlić strony internetowe. Z czasem programiści chcieli mieć dostęp do tego procesu, co doprowadziło do powstania API takich jak `DOMParser`.
 
-## See Also (Zobacz również)
-- MDN Web Docs na temat `DOMParser`: [developer.mozilla.org/en-US/docs/Web/API/DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
-- Specyfikacja WHATWG dla HTML Living Standard (parser): [html.spec.whatwg.org/multipage/parsing.html](https://html.spec.whatwg.org/multipage/parsing.html)
-- Informacje o bezpieczeństwie i `innerHTML`: [developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML#security_considerations](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML#security_considerations)
+Alternatywy? Jasne. Mamy biblioteki takie jak `jQuery` i narzędzia jak `BeautifulSoup` dla Pythona. Ale natywny `DOMParser` JavaScriptu jest szybki i wbudowany, nie potrzeba dodatkowych bibliotek.
+
+Jeśli chodzi o implementację, kiedy parsujesz HTML za pomocą `DOMParser`, tworzony jest obiekt `Document`. Możesz myśleć o nim jako o hierarchicznym modelu twojego HTML. Gdy go masz, możesz nim nawigować i manipulować tak samo jak z normalnym DOM strony internetowej.
+
+Oto rzecz—parsowanie może napotkać problemy na źle sformułowanym HTML. Przeglądarki są wyrozumiałe, ale `DOMParser` już niekoniecznie. Dlatego dla skomplikowanych zadań lub niechlujnego HTML, biblioteki stron trzecich mogą zrobić lepszą robotę przy sprzątaniu.
+
+## Zobacz również
+- Dokumentacja MDN na temat API `DOMParser`: [MDN DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- Możliwości parsowania w jQuery: [jQuery.parseHTML()](https://api.jquery.com/jquery.parsehtml/)
+- Cheerio, szybka, elastyczna i oszczędna implementacja podstawowego jQuery dla serwera: [Cheerio.js](https://cheerio.js.org/)
+- Dla parsowania poza JS: biblioteka BeautifulSoup dla Pythona: [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)

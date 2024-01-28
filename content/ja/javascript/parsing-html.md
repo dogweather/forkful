@@ -1,49 +1,52 @@
 ---
-title:                "HTMLの解析"
-date:                  2024-01-20T15:32:51.787275-07:00
-html_title:           "Arduino: HTMLの解析"
-simple_title:         "HTMLの解析"
+title:                "HTMLのパース"
+date:                  2024-01-28T03:00:57.304411-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "HTMLのパース"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/parsing-html.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed
+  - 2024-01-28, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (なにを？ なぜ？)
+## 何となぜ？
+HTMLの解析とは、HTMLドキュメントからデータを抽出することを意味します。プログラマーは、ウェブコンテンツとの対話や操作、データ抽出の自動化、またはウェブスクレイピング目的でこれを行います。
 
-HTMLを解析するとは、ウェブページのHTMLからデータを抽出し操作するプロセスです。プログラマーはこの技術を使って、DOM操作、スクレイピング、データマイニングなどを行いデータを有効活用します。
+## 方法：
+JavaScriptの`DOMParser` APIを使用してHTMLを解析しましょう。
 
-## How to (やり方)
-
-### HTMLの断片をDOM要素に変換する
-
-```javascript
+```Javascript
 const parser = new DOMParser();
-const htmlString = '<div>Hello, <b>world!</b></div>';
+const htmlString = `<p>Hello, world!</p>`;
 const doc = parser.parseFromString(htmlString, 'text/html');
-console.log(doc.body.firstChild);  // <div>Hello, <b>world!</b></div>
+console.log(doc.body.textContent); // 出力：Hello, world!
 ```
 
-### セレクタを使って要素を検索する
+次に、クラスを持つような特定のものを取得しましょう：
 
-```javascript
-const element = doc.querySelector('b');
-console.log(element.textContent);  // world!
+```Javascript
+const htmlString = `<div><p class="greeting">Hello, again!</p></div>`;
+const doc = parser.parseFromString(htmlString, 'text/html');
+const greeting = doc.querySelector('.greeting').textContent;
+console.log(greeting); // 出力：Hello, again!
 ```
 
-## Deep Dive (深掘り)
+## 詳細解説
+HTMLの解析はウェブが誕生した時からあります。当初はブラウザの仕事でした—ブラウザがHTMLを解析してウェブページを表示しました。時間が経つにつれ、プログラマーはこのプロセスを利用したいと思うようになり、`DOMParser`のようなAPIが生まれました。
 
-かつてはHTMLを解析するためには正規表現が一般的に使われていましたが、これには多くの問題がありました。例えば、複雑なHTMLや壊れたタグに対処するのが難しいです。それに比べ、現代のJavaScript標準ライブラリにはDOMParserやquerySelectorといった強力なAPIが含まれています。これらはブラウザ環境で安全かつ効率的にHTMLを解析することを可能にします。
+代替案は？もちろんあります。`jQuery`やPythonの`BeautifulSoup`のようなライブラリやツールがあります。しかし、JavaScriptのネイティブ`DOMParser`は速くて組み込まれているので、追加のライブラリは必要ありません。
 
-他の方法としては、Node.js環境で「jsdom」ライブラリがよく利用されます。これにより、サーバーサイドでのHTML解析が行え、DOM APIの利用も可能となります。
+実装面では、`DOMParser`でHTMLを解析すると、`Document`オブジェクトが作られます。これをあなたのHTMLの階層モデルと考えてください。それが手に入れば、通常のウェブページのDOMと同じようにナビゲートや操作が可能になります。
 
-実装の詳細においては、文書を解析する際にはSEL (Standards Efficiency Leadership) のガイドラインに従い、パフォーマンスと可読性のバランスを保ちます。また、セキュリティの観点からXSS（クロスサイトスクリプティング）攻撃を防止するためにも、信頼できるHTMLコンテンツのみを解析することが重要です。
+ここでのポイント—解析処理は不正なHTMLに引っかかることがあります。ブラウザは寛容ですが、`DOMParser`はそうではないかもしれません。したがって、複雑なタスクや乱雑なHTMLに対しては、サードパーティのライブラリの方がより良いクリーンアップ作業を行うかもしれません。
 
-## See Also (関連情報)
-
-- [DOMParser - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
-- [Document.querySelector() - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
-- [jsdom | npm](https://www.npmjs.com/package/jsdom)
+## 参照
+- `DOMParser` APIについてのMDNウェブドキュメント: [MDN DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- jQueryの解析機能: [jQuery.parseHTML()](https://api.jquery.com/jquery.parsehtml/)
+- サーバー用の高速で柔軟かつ軽量なjQueryのコア実装であるCheerio: [Cheerio.js](https://cheerio.js.org/)
+- JS非対応の解析について：PythonのBeautifulSoupライブラリ: [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)

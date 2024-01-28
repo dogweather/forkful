@@ -1,35 +1,52 @@
 ---
 title:                "HTML 파싱"
-date:                  2024-01-20T15:32:28.765238-07:00
-html_title:           "Arduino: HTML 파싱"
+date:                  2024-01-28T03:00:40.517504-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML 파싱"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/parsing-html.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed
+  - 2024-01-28, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇이며, 왜?)
-HTML 파싱은 HTML 데이터를 읽고 그 구조를 이해하는 과정이다. 개발자들은 데이터를 추출, 조작, 저장하기 위해 이 작업을 한다.
+## 무엇과 왜?
+HTML 파싱은 HTML 문서에서 데이터를 추출하는 것을 의미합니다. 프로그래머들은 웹 콘텐츠와 상호 작용하거나 조작, 자동 데이터 추출 또는 웹 스크래핑 목적으로 이를 수행합니다.
 
-## How to: (어떻게 하나요?)
-```javascript
+## 방법:
+자바스크립트에서 `DOMParser` API를 사용해서 HTML을 파싱해봅시다.
+
+```Javascript
 const parser = new DOMParser();
-const htmlString = `<div>Hello, <b>World!</b></div>`;
+const htmlString = `<p>Hello, world!</p>`;
 const doc = parser.parseFromString(htmlString, 'text/html');
-
-// 요소 접근 및 데이터 추출
-const div = doc.querySelector('div');
-console.log(div.innerHTML); // 출력: Hello, <b>World!</b>
+console.log(doc.body.textContent); // 출력: Hello, world!
 ```
 
-## Deep Dive (심층 분석)
-웹 초기에는 HTML 파싱이 주로 서버에서 이루어졌다. Node.js 등장으로 자바스크립트도 서버사이드 파싱이 가능해졌다. 돔파서(DOMParser), 뷰티풀 수프(Beautiful Soup; 파이썬) 같은 도구가 있으며, 이들은 성능과 사용 편의성이 각자 다르다. DOMParser는 브라우저에 내장된 API로, HTML/XML 문서를 파싱한다. 내부적으로는 DOM 트리를 만들며, 결과는 문서 객체로 반환된다. 이해하기 쉽고 빠르다는 장점이 있다.
+이제 클래스가 있는 특정 요소를 가져와 보겠습니다:
 
-## See Also (참고 자료)
-- MDN Web Docs의 [DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
-- [Node.js cheerio](https://cheerio.js.org/) – 서버사이드에서 사용하는 jQuery식 파서
-- W3C의 [HTML5 파싱 규격](https://www.w3.org/TR/html5/syntax.html#parsing)
+```Javascript
+const htmlString = `<div><p class="greeting">Hello, again!</p></div>`;
+const doc = parser.parseFromString(htmlString, 'text/html');
+const greeting = doc.querySelector('.greeting').textContent;
+console.log(greeting); // 출력: Hello, again!
+```
+
+## 심층 탐구
+HTML 파싱은 웹만큼이나 오래되었습니다. 처음에는 브라우저가 웹 페이지를 표시하기 위해 HTML을 파싱하는 것이었습니다. 시간이 지나면서 프로그래머들은 이 과정에 접근하고자 했고, 이로 인해 `DOMParser`와 같은 API가 생겨났습니다.
+
+대안이 있나요? 물론입니다. 우리는 `jQuery`나 파이썬용 `BeautifulSoup` 같은 라이브러리가 있습니다. 하지만 자바스크립트의 네이티브 `DOMParser`는 빠르고 내장되어 있어, 추가 라이브러리가 필요 없습니다.
+
+실행 측면에서 볼 때, `DOMParser`로 HTML을 파싱하면 `Document` 객체를 생성합니다. 이를 HTML의 계층적 모델로 생각할 수 있습니다. 한 번 가지게 되면, 일반 웹 페이지의 DOM처럼 이를 탐색하고 조작할 수 있습니다.
+
+여기서 중요한 점—파싱은 잘못된 HTML에서 문제를 일으킬 수 있습니다. 브라우저는 관대하지만, `DOMParser`는 그렇지 않을 수 있습니다. 따라서 복잡한 작업이나 지저분한 HTML의 경우, 타사 라이브러리가 더 나은 정리 작업을 수행할 수 있습니다.
+
+## 참고 자료
+- `DOMParser` API에 관한 MDN 웹 문서: [MDN DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- jQuery의 파싱 기능: [jQuery.parseHTML()](https://api.jquery.com/jquery.parsehtml/)
+- 서버용 코어 jQuery의 빠르고 유연하며 간결한 구현인 Cheerio: [Cheerio.js](https://cheerio.js.org/)
+- JS가 아닌 파싱을 위해: 파이썬의 BeautifulSoup 라이브러리: [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)
