@@ -41,3 +41,4 @@ Históricamente, el almacenamiento de datos en archivos es una de las formas má
 ## Ver También
 - [Referencia de la Biblioteca IO Lua](https://www.lua.org/manual/5.4/manual.html#6.8)
 - [Tutorial Lua de File I/O](https://www.tutorialspoint.com/lua/lua_file_io.htm)
+- [Lua Users Wiki - File I/O](http://lua-users.org/wiki/IoLibraryTutorial)

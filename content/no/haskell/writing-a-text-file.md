@@ -36,4 +36,5 @@ main = do
 ## Se Også:
 
 - [Haskell Dokumentasjon for `writeFile`](https://hackage.haskell.org/package/base-4.16.0.0/docs/Prelude.html#v:writeFile)
+- [Haskell IO Tutorial](http://learnyouahaskell.com/input-and-output)
 - ["Real World Haskell" Bok](http://book.realworldhaskell.org/)

@@ -48,5 +48,6 @@ main = do
 
 - Haskell `Data.Char` Module Documentation: [Hackage Data.Char](https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html)
 - Haskell Text Processing with the `text` Package: [Hackage Text](https://hackage.haskell.org/package/text)
+- "Learn You a Haskell for Great Good!" कैपिटलाइज़ेशन संबंधित अध्याय: [Learn You a Haskell](http://learnyouahaskell.com/)
 
 **नोट:** आउटपुट में बदलाव हो सकता है यदि हास्केल संस्करण या पर्यावरण विभिन्न हो।

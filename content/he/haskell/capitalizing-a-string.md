@@ -32,3 +32,4 @@ main = putStrLn (capitalize "שלום עולם!")
 ## ראה גם
 - [Haskell `Data.Char` documentation](http://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html)
 - [Unicode Character Database](https://www.unicode.org/ucd/)
+- מדריך למתחילים בהאסקל: [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)

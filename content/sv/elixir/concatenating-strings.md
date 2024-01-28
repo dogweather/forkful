@@ -67,4 +67,5 @@ Att förstå dessa underliggande koncept och verktyg kan avsevärt förbättra d
 För mer fördjupad läsning om strängar och prestanda i Elixir kommer följande resurser att vara till nytta:
 
 - [Elixirs officiella guide om Binärer, Strängar och Charlists](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
+- [IOList: Elixirs schweiziska armékniv för prestanda](https://dockyard.com/blog/2019/05/23/optimizing-elixir-and-phoenix-with-iolist)
 - [Erlang Effektivitetsguide](http://erlang.org/doc/efficiency_guide/listHandling.html) - Även om den är anpassad till Erlang, gäller mycket av detta för Elixir på grund av dess grund i Erlang VM.

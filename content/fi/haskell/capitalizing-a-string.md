@@ -39,3 +39,4 @@ Ohjelmoijat käyttävät joskus `toUpper`-funktioon vastinparina `toLower`-funkt
 
 ## See Also / Lisätietoja:
 - Haskell Documentation for `Data.Char`: [Haskell Data.Char](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html)
+- Functional Programming Basics: [Learn You a Haskell for Great Good](http://learnyouahaskell.com/)

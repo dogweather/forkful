@@ -52,3 +52,4 @@ Elixir's Testkultur stammt aus Erlang und der funktionalen Programmierung. Alter
 
 - [Elixir School's Guide to ExUnit](https://elixirschool.com/en/lessons/basics/testing/)
 - [ExUnit Documentation](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Intro to Property Based Testing in Elixir](https://elixir-lang.org/blog/2017/10/31/stream-data-property-based-testing-and-data-generation-for-elixir/)

@@ -37,3 +37,4 @@ JSON wurde Anfang der 2000er als Teil von JavaScript entworfen, doch seine Einfa
 ## See Also
 - [dkjson Dokumentation](http://dkolf.de/src/dkjson-lua.fsl/home)
 - [JSON.org](https://www.json.org/json-de.html) – Informationen über JSON
+- [Lua-users Wiki: JSON Modules](http://lua-users.org/wiki/JsonModules) – Übersicht verschiedener Lua JSON-Module

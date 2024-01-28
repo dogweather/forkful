@@ -67,4 +67,5 @@ content = ["Header", "\n", "Body text", "\n", "Footer"]
 Elixirにおける文字列とパフォーマンスの詳細な読み物には、以下のリソースが役立ちます：
 
 - [Elixirの公式ガイドのBinaries, Strings, and Charlists](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
+- [IOList: パフォーマンスのためのElixirのスイスアーミーナイフ](https://dockyard.com/blog/2019/05/23/optimizing-elixir-and-phoenix-with-iolist)
 - [Erlang効率ガイド](http://erlang.org/doc/efficiency_guide/listHandling.html) - Erlangに特化していますが、Erlang VMの基盤上にあるElixirにも多くが当てはまります。

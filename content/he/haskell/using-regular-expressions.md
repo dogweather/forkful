@@ -40,3 +40,4 @@ let replaced = subRegex (mkRegex "האסקל") example "Haskell"
 
 - [Real World Haskell Chapter 8](http://book.realworldhaskell.org/read/efficient-file-processing-regular-expressions-and-file-name-matching.html) - פרק על עיבוד קבצים וביטויים רגולריים בהאסקל.
 - [Hackage: regex-tdfa](https://hackage.haskell.org/package/regex-tdfa) - המסמכים הרשמיים של המודול `regex-tdfa`.
+- [Learn You a Haskell for Great Good! - Understanding monads](http://learnyouahaskell.com/a-fistful-of-monads) - פירוש שימושי למונדים בהאסקל, שיכול לעזור בהבנת תוצאות כשעובדים עם regex.

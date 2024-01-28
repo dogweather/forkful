@@ -50,3 +50,4 @@ Alternative ways to output include using libraries like `System.Log.Logger` for 
 ## See Also
 
 - [Haskell System.IO library](https://hackage.haskell.org/package/base-4.16.0.0/docs/System-IO.html): Detailed docs on System.IO.
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/): An introductory Haskell book that covers I/O.

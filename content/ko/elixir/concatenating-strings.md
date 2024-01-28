@@ -67,4 +67,5 @@ content = ["Header", "\n", "Body text", "\n", "Footer"]
 엘릭서에서 문자열 및 성능에 대한 더 심층적인 읽기 자료는 다음과 같습니다:
 
 - [엘릭서 공식 가이드 - 이진수, 문자열 및 Char 리스트](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
+- [IOList: 성능을 위한 엘릭서의 스위스 아미 나이프](https://dockyard.com/blog/2019/05/23/optimizing-elixir-and-phoenix-with-iolist)
 - [Erlang 효율성 가이드](http://erlang.org/doc/efficiency_guide/listHandling.html) - Erlang에 특화되어 있지만, 엘릭서가 Erlang VM 위에 구축되어 있기 때문에 많은 부분이 엘릭서에도 적용됩니다.

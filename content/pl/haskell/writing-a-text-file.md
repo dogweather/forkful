@@ -49,4 +49,5 @@ Szczegóły implementacji: 'writeFile' używa 'lazy I/O', zapisując dane częś
 ("Zobacz Także:")
 
 - [Haskell.org dokumentacja System.IO](https://hackage.haskell.org/package/base/docs/System-IO.html)
+- [Learn You a Haskell for Great Good! - Input and Output](http://learnyouahaskell.com/input-and-output)
 - [Real World Haskell - Working with Files](http://book.realworldhaskell.org/read/io.html)

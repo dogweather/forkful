@@ -49,3 +49,4 @@ public class TextFileWriter {
 
 - [Oracle Java Docs for java.io.BufferedWriter](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html)
 - [Oracle Java Docs for java.nio.file.Files](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Files.html)
+- [Stack Overflow: When to use java.io vs java.nio](https://stackoverflow.com/questions/866830/when-to-use-java-io-vs-java-nio)

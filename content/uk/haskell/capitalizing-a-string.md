@@ -35,3 +35,4 @@ main = putStrLn (capitalize "привіт, як справи?")
 
 ## Дивіться ще
 - [Haskell `Data.Char` documentation](https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html)
+- [Learn You a Haskell for Great Good! on `maps` and `filters`](http://learnyouahaskell.com/higher-order-functions#maps-and-filters)

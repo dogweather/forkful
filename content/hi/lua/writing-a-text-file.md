@@ -32,3 +32,4 @@ file:close()
 ## संबंधित सूत्र:
 - [Lua 5.4 Reference Manual for I/O](https://www.lua.org/manual/5.4/manual.html#6.8)
 - [Lua File Tutorial on TutorialsPoint](https://www.tutorialspoint.com/lua/lua_file_io.htm)
+- [IO Library Overview on Lua-users wiki](http://lua-users.org/wiki/IoLibraryTutorial)

@@ -53,4 +53,5 @@ Testing i Haskell startet med `QuickCheck`, en pioner for property-baserte teste
 
 ## Se Også:
 - Hspec dokumentasjon: [http://hspec.github.io/](http://hspec.github.io/)
+- Learn You a Haskell for Great Good! (testing chapter): [http://learnyouahaskell.com/](http://learnyouahaskell.com/)
 - Stackage Server, for å finne biblioteker: [https://www.stackage.org/](https://www.stackage.org/)

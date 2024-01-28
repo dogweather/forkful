@@ -52,4 +52,5 @@ Lua
 
 ## See Also (関連情報)
 - Luaマニュアル (パターンマッチングについて): [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/manual.html#6.4.1)
+- Luaユーザーズwiki (正規表現ライブラリ): [Lua-Users Wiki: Patterns Tutorial](http://lua-users.org/wiki/PatternsTutorial)
 - 正規表現に関してより広範な情報: [Regular-Expressions.info](https://www.regular-expressions.info/)

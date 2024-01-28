@@ -39,3 +39,4 @@ main = print $ matches text pattern
 ## Більше Інформації
 - Haskell [`regex-tdfa` documentation](https://hackage.haskell.org/package/regex-tdfa)
 - [The Haskell Wiki on regular expressions](https://wiki.haskell.org/Regular_expressions)
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/) - для загального навчання Haskell.

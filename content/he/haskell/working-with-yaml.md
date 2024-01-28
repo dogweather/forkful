@@ -43,3 +43,4 @@ YAML (יש לקרוא “יאמל”), שפירושו "YAML Ain't Markup Languag
 - [The official YAML website](https://yaml.org)
 - [YAML package on Hackage](https://hackage.haskell.org/package/yaml)
 - [Aeson package for JSON in Haskell](https://hackage.haskell.org/package/aeson)
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)

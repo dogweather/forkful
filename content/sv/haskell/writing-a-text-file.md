@@ -41,3 +41,4 @@ Den aktuella versionen av Haskell använder `System.IO` biblioteket för filoper
 ## Se Även
 - [Haskell `System.IO` Documentation](https://hackage.haskell.org/package/base-4.16.0.0/docs/System-IO.html)
 - [Haskell Wiki on I/O](https://wiki.haskell.org/IO_inside)
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)

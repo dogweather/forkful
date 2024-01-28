@@ -35,4 +35,5 @@ O erro padrão é um canal de output que existe desde os primórdios dos sistema
 
 ## Veja Também:
 - [Haskell Documentation on System.IO](https://hackage.haskell.org/package/base-4.16.0.0/docs/System-IO.html)
+- [Learn You a Haskell for Great Good! on Input and Output](http://learnyouahaskell.com/input-and-output)
 - [Real World Haskell – Chapter 7: I/O](http://book.realworldhaskell.org/read/io.html)

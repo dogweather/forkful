@@ -40,3 +40,5 @@ print(new_text)
 
 ## See Also (参见)
 - Lua在线手册：[Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/)
+- Lua正则表达式教程：[Lua Patterns Tutorial](http://lua-users.org/wiki/PatternsTutorial)
+- Lua社区讨论论坛：[Lua-Users](http://lua-users.org/)

@@ -33,3 +33,4 @@ JSON juontuu JavaScript-maailmasta 2000-luvun alusta, mutta nykyään se on itse
 ## See Also (Katso myös)
 - Mozilla Developer Networkin JSON-ohjeet: [MDN JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
 - JSON-syntaksin yleiskatsaus: [JSON.org](http://json.org/)
+- JSON vs. XML syvällisempi vertailu: [Stack Overflow](https://stackoverflow.com/questions/3536893/what-are-the-differences-between-json-and-xml)

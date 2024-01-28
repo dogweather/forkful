@@ -34,3 +34,4 @@ Lua में, `io.stderr` का इस्तेमाल कर standard error
 ## See Also (और जानकारी के लिए)
 - [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/)
 - [Programming in Lua (first edition)](https://www.lua.org/pil/contents.html)
+- [Lua-users wiki: I/O Library Tutorial](http://lua-users.org/wiki/IoLibraryTutorial)

@@ -34,6 +34,7 @@ main = do
 הפונקציה `writeFile` בHaskell כותבת טקסט לקובץ במרבית המערכות הפעלה. היא חלק מהסטנדרט של השפה מתקופת ה-90's. ישנם אלטרנטיבות כגון `appendFile` להוספת טקסט לקובץ קיים ו-streaming ספריות כמו `conduit` או `pipes` לעבודה עם קבצים גדולים. פרטי היישום של פונקציות אלו מסתמכים על מנגנון קלט/פלט (I/O) של הסביבה בה הקוד רץ.
 
 ## ראה גם:
+- [Haskell IO tutorial](http://learnyouahaskell.com/input-and-output)
 - [Haskell `writeFile` documentation](https://hackage.haskell.org/package/base-4.16.0.0/docs/Prelude.html#v:writeFile)
 - [Haskell `pipes` library](https://hackage.haskell.org/package/pipes)
 - [Haskell `conduit` library](https://hackage.haskell.org/package/conduit)

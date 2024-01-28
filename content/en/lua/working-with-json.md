@@ -62,5 +62,6 @@ JSON became the de facto standard for APIs, outgrowing XML because it's less ver
 ## See Also
 
 - [dkjson library on GitHub](https://github.com/LuaDist/dkjson)
+- [Lua Users JSON Modules comparison](http://lua-users.org/wiki/JsonModules)
 - [JSON official website](https://www.json.org/json-en.html)
 - [Programming in Lua (first edition)](https://www.lua.org/pil/contents.html) for learning Lua basics.

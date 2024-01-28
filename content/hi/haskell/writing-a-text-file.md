@@ -48,6 +48,7 @@ main = do
 
 ## See Also (और जानकारी के लिए):
 
+- Learn You a Haskell for Great Good! - An accessible guide to Haskell: [Learn You a Haskell](http://learnyouahaskell.com/)
 - Real World Haskell - A resource for practical Haskell programming: [Real World Haskell](http://book.realworldhaskell.org/)
 
 इन स्रोतों से आप Haskell में और अधिक फ़ाइल I/O के बारे में जान सकते हैं और अपनी Haskell प्रोग्रामिंग कौशल को सुधार सकते हैं।

@@ -38,3 +38,4 @@ main = do
 ## See Also (関連情報)
 - [Haskell Text.Regex.Posix Documentation](https://hackage.haskell.org/package/regex-posix-0.96.0.0/docs/Text-Regex-Posix.html)
 - [Wiki: Regular Expression](https://en.wikipedia.org/wiki/Regular_expression)
+- [Learn You a Haskell for Great Good! (Haskellチュートリアル)](http://learnyouahaskell.com/)

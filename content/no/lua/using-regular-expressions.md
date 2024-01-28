@@ -36,4 +36,5 @@ print(match == email) -- Output: true
 Historisk sett kommer regulære uttrykk fra teoretisk informatikk og var blant de første automatiseringsverktøyene i databehandling. I Lua er det begrensede, innebygde støtten sammenlignet med språk som Perl eller Python. Man kan bruke biblioteker som `lpeg` eller `rex` for mer komplekse behov. Lua bruker egne mønstre som er lik, men ikke identisk med standard POSIX- eller Perl-kompatible regulære uttrykk.
 
 ## Se Også:
+- [Lua Users Wiki: Patterns](http://lua-users.org/wiki/Patterns)
 - [Stack Overflow: Lua Pattern Matching vs. Regular Expressions](https://stackoverflow.com/questions/2925159/lua-pattern-matching-vs-regular-expressions)

@@ -42,3 +42,4 @@ OK
 
 ## See Also (参照)
 - [`luaunit`](https://github.com/bluebird75/luaunit) – luaunitのGitHubリポジトリ。
+- [Lua-users Wiki: UnitTesting](http://lua-users.org/wiki/UnitTesting) – Luaのユニットテストに関するリソースのコレクション。

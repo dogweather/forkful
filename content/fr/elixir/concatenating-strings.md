@@ -67,4 +67,5 @@ Comprendre ces concepts sous-jacents et outils peut significativement améliorer
 Pour une lecture plus approfondie sur les chaînes et la performance dans Elixir, les ressources suivantes seront bénéfiques :
 
 - [Guide Officiel d'Elixir sur les Binaires, Chaînes de caractères et Listes de caractères](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
+- [IOList : le Couteau suisse d'Elixir pour la Performance](https://dockyard.com/blog/2019/05/23/optimizing-elixir-and-phoenix-with-iolist)
 - [Guide d'Efficiency d'Erlang](http://erlang.org/doc/efficiency_guide/listHandling.html) - Bien que conçu pour Erlang, beaucoup de ces informations s'appliquent à Elixir car il est basé sur la VM d'Erlang.

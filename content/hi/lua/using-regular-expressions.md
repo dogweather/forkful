@@ -42,3 +42,4 @@ print(extract)
 ## इसे भी देखें:
 - [Lua 5.4 रेफरेंस मैनुअल](https://www.lua.org/manual/5.4/)
 - [Pattern Matching in Lua - Stack Overflow](https://stackoverflow.com/questions/tagged/lua+pattern-matching)
+- [Lua Users Wiki: Patterns Tutorial](http://lua-users.org/wiki/PatternsTutorial)

@@ -53,3 +53,4 @@ main = do
 ## See Also
 - [Haskell Documentation for IO](https://hackage.haskell.org/package/base/docs/Prelude.html#g:25)
 - [Real World Haskell, Chapter 7: I/O](http://book.realworldhaskell.org/read/io.html)
+- [Learn You a Haskell for Great Good! - Chapter 9: Input and Output](http://learnyouahaskell.com/input-and-output)
