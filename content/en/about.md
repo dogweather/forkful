@@ -52,4 +52,5 @@ Robert
 
 * https://dogweather.dev
 * https://github.com/dogweather
-* https://www.linkedin.com/in/robbshecter/
+* https://fosstodon.org/@dogweather
+* https://www.linkedin.com/in/robbshecter
