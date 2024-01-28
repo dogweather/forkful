@@ -55,4 +55,3 @@ print(introduction)  -- Виведення: Мене звуть Іван і ме
 ## Додаткові ресурси
 - [Документація Lua `string.format`](https://www.lua.org/manual/5.4/manual.html#pdf-string.format)
 - [Робота з рядками в Lua](https://www.lua.org/pil/20.html)
-- [Lua вікі про рядкові операції](http://lua-users.org/wiki/StringLibraryTutorial)

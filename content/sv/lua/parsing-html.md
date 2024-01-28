@@ -53,5 +53,3 @@ HTML-parsing har funnits ända sedan webben blev populär. Tidiga verktyg var of
 ## Se även:
 
 För mer om Lua och HTML-parsing, kolla in följande resurser:
-
-- Lua Users Wiki om webbprogrammering: [http://lua-users.org/wiki/ProgrammingInLuaWebProgramming](http://lua-users.org/wiki/ProgrammingInLuaWebProgramming)

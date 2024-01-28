@@ -53,4 +53,3 @@ Detalles de implementación son simples: `print()` en Lua convierte todos sus ar
 ## Véase También:
 
 - [Referencia Oficial de Lua del `print()`](https://www.lua.org/manual/5.4/manual.html#pdf-print)
-- [Tutorial de Lua](http://lua-users.org/wiki/TutorialDirectory)

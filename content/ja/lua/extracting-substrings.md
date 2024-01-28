@@ -41,4 +41,3 @@ Luaの`string.sub`関数は、バージョン5.1から利用できます。他�
 
 ## See Also (関連項目)
 - Lua マニュアル: [string.sub](https://www.lua.org/manual/5.4/manual.html#pdf-string.sub)
-- LuaユーザーズWiki: [StringsTutorial](http://lua-users.org/wiki/StringsTutorial)

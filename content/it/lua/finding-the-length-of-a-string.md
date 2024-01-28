@@ -44,6 +44,5 @@ Ricorda: `#` conta i byte, `utf8.len()` conta i caratteri.
 ## See Also
 - [Programming in Lua (Official Book)](https://www.lua.org/pil/contents.html)
 - [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/)
-- [Lua Users Wiki on Strings](http://lua-users.org/wiki/StringsTutorial)
 
 Puoi approfondire attraverso la documentazione ufficiale e le risorse comunitarie per dominare la gestione delle stringhe in Lua. Buona programmazione!
