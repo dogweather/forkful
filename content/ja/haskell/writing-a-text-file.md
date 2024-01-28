@@ -41,5 +41,4 @@ Haskellでは、テキストファイルに書き込む標準的な方法は `wr
 
 ## See Also (関連情報)
 - [Haskell Documentation on System.IO](https://hackage.haskell.org/package/base-4.16.1.0/docs/System-IO.html)
-- [LYAHFGG: Input and Output](http://learnyouahaskell.com/input-and-output)
 - [Real World Haskell: Working with Files](http://book.realworldhaskell.org/read/io.html)

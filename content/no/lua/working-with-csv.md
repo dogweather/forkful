@@ -60,5 +60,4 @@ CSV er ikke nytt, det stammer fra 1972. Mens enkelhet er styrken, mangler det st
 
 ## See Also
 - [Lua.org](https://www.lua.org) – Offisielt nettsted for Lua.
-- [Lua-users wiki](http://lua-users.org/wiki) – Et community-drevet informasjonssenter for Lua.
 - [Programming in Lua](https://www.lua.org/pil/contents.html) – En detaljert bok om hvordan du programmerer i Lua.

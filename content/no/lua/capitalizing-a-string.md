@@ -34,4 +34,3 @@ Selv om 'capitalization' av strenger virker enkelt, er det ingen innebygd metode
 ## Se Også:
 - [Lua's offisielle nettsted](https://www.lua.org)
 - [String manipulation in Lua (PIL)](https://www.lua.org/pil/20.html)
-- [Lua-users wiki: Patterns Tutorial](http://lua-users.org/wiki/PatternsTutorial)

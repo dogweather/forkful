@@ -50,4 +50,3 @@ Las expresiones regulares tienen sus raíces en la teoría de autómatas y lengu
 
 - [Hackage: regex-posix](https://hackage.haskell.org/package/regex-posix)
 - [Haskell Wiki: Regular Expressions](https://wiki.haskell.org/Regular_expressions)
-- [Learn You a Haskell for Great Good! - Using regex with Haskell](http://learnyouahaskell.com/input-and-output#files-and-streams)

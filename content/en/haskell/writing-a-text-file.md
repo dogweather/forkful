@@ -54,5 +54,4 @@ Details:
 For more info and best practices:
 
 - [Haskell Documentation on IO](https://haskell.org/documentation)
-- [Learn You a Haskell for Great Good! - IO](http://learnyouahaskell.com/input-and-output)
 - [Real World Haskell - Working with Files](http://book.realworldhaskell.org/read/io.html)

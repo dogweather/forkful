@@ -55,4 +55,3 @@ Lua's pattern-matching functions, like `string.find`, `string.match`, `string.gm
 ## See Also
 - [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/manual.html#6.4.1)
 - [LPEG Library](http://www.inf.puc-rio.br/~roberto/lpeg/)
-- [Lua-users Wiki: Patterns Tutorial](http://lua-users.org/wiki/PatternsTutorial)

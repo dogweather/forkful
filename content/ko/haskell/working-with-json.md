@@ -50,4 +50,3 @@ JSON은 JavaScript에 기반을 둔 데이터 포맷으로, 2001년도에 도입
 ## See Also (참고 자료)
 - Aeson GitHub 페이지: [https://github.com/haskell/aeson](https://github.com/haskell/aeson)
 - JSON 공식 웹사이트: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)
-- Learn You a Haskell for Great Good!, JSON 챕터: [http://learnyouahaskell.com](http://learnyouahaskell.com)

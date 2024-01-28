@@ -67,5 +67,4 @@ Understanding these underlying concepts and tools can significantly improve your
 For more in-depth reading on strings and performance in Elixir, the following resources will be beneficial:
 
 - [Elixir's Official Guide on Binaries, Strings, and Charlists](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
-- [IOList: Elixir's Swiss Army Knife for Performance](https://dockyard.com/blog/2019/05/23/optimizing-elixir-and-phoenix-with-iolist)
 - [Erlang Efficiency Guide](http://erlang.org/doc/efficiency_guide/listHandling.html) - While tailored to Erlang, much of this applies to Elixir due to its foundation on the Erlang VM.

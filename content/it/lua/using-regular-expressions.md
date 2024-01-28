@@ -34,4 +34,3 @@ Le espressioni regolari, o regex, nascono negli anni '50 e si sono evolute in di
 ## See Also
 - [Lua 5.4 Reference Manual - Patterns](https://www.lua.org/manual/5.4/manual.html#6.4.1)
 - [LPeg Library](http://www.inf.puc-rio.br/~roberto/lpeg/)
-- [Lua-users wiki: Patterns tutorial](http://lua-users.org/wiki/PatternsTutorial)

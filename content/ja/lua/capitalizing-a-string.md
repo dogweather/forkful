@@ -33,6 +33,5 @@ print(capitalize("luaは楽しい！")) -- 期待される出力: Luaは楽し�
 
 ## See Also (関連項目)
 
-- Lua Users Wiki - [StringsTutorial](http://lua-users.org/wiki/StringsTutorial)
 - Lua 5.4 Reference Manual - [string library](https://www.lua.org/manual/5.4/manual.html#6.4)
 - Roberto Ierusalimschy's book, "Programming in Lua" - [Available online](https://www.lua.org/pil/contents.html)

@@ -34,4 +34,3 @@ Historicamente, la lectura y escritura de archivos en Haskell necesitaba manejar
 
 ## Ver También
 - [Haskell `System.IO` documentation](https://hackage.haskell.org/package/base-4.16.1.0/docs/System-IO.html)
-- [LYAHFGG: Input and Output](http://learnyouahaskell.com/input-and-output)

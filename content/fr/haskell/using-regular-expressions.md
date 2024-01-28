@@ -59,4 +59,3 @@ Les regex en Haskell reposent sur les paquets tels que `regex-tdfa`, inspirés p
 
 ## See Also
 - [Hackage - regex-tdfa package](https://hackage.haskell.org/package/regex-tdfa)
-- [Learn You a Haskell for Great Good! - Understanding monads](http://learnyouahaskell.com/a-fistful-of-monads)

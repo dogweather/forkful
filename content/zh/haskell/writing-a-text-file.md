@@ -38,4 +38,3 @@ writeFileExample = do
 
 ## 另见
 - [Haskell官方文档](https://www.haskell.org/documentation/)
-- [Learn You a Haskell for Great Good!文件和流](http://learnyouahaskell.com/input-and-output#files-and-streams)

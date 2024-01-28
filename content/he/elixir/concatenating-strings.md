@@ -67,5 +67,4 @@ content = ["כותרת", "\n", "טקסט הגוף", "\n", "תחתית"]
 לקריאה מעמיקה יותר על מחרוזות וביצועים באליקסיר, המשאבים הבאים יהיו שימושיים:
 
 - [המדריך הרשמי של אליקסיר על בינארים, מחרוזות, ורשימות תווים](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
-- [IOList: הסכין השוויצרי של אליקסיר לביצועים](https://dockyard.com/blog/2019/05/23/optimizing-elixir-and-phoenix-with-iolist)
 - [מדריך ליעילות בארלנג](http://erlang.org/doc/efficiency_guide/listHandling.html) - אף על פי שהוא מותאם לארלנג, הרבה מזה חל גם על אליקסיר בשל היסוד המשותף על מכונת הווירטואלית של ארלנג.

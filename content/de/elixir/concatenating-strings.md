@@ -67,5 +67,4 @@ Das Verständnis dieser zugrundeliegenden Konzepte und Werkzeuge kann deine Effi
 Für weiterführende Lektüre über Strings und Leistung in Elixir werden die folgenden Ressourcen hilfreich sein:
 
 - [Elixirs offizielle Anleitung zu Binärdateien, Strings und Charlisten](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
-- [IOList: Elixirs Schweizer Taschenmesser für Leistung](https://dockyard.com/blog/2019/05/23/optimizing-elixir-and-phoenix-with-iolist)
 - [Erlang Effizienzführer](http://erlang.org/doc/efficiency_guide/listHandling.html) - Obwohl auf Erlang zugeschnitten, trifft vieles davon aufgrund seiner Grundlage auf der Erlang VM auch auf Elixir zu.

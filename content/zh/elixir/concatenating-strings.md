@@ -67,5 +67,4 @@ content = ["Header", "\n", "Body text", "\n", "Footer"]
 想要深入阅读有关Elixir中字符串和性能的更多信息，以下资源将非常有用：
 
 - [Elixir的官方指南：二进制文件、字符串和字符列表](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
-- [IOList：Elixir的瑞士军刀，用于性能优化](https://dockyard.com/blog/2019/05/23/optimizing-elixir-and-phoenix-with-iolist)
 - [Erlang效率指南](http://erlang.org/doc/efficiency_guide/listHandling.html) - 虽然这是为Erlang定制的，但由于它建立在Erlang VM上，因此许多内容同样适用于Elixir。
