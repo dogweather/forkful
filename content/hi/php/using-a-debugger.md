@@ -49,6 +49,5 @@ Xdebug के विकल्पों में pcov और phpdbg शामि
 ## देखें भी:
 - [Xdebug डॉक्यूमेंटेशन](https://xdebug.org/docs/)
 - [PhpStorm डिबगिंग गाइड](https://www.jetbrains.com/help/phpstorm/debugging.html)
-- [VsCode PHP डिबग एडैप्टर](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
 - [PHP.net पर phpdbg](https://www.php.net/manual/en/book.phpdbg.php)
 - [GitHub पर pcov](https://github.com/krakjoe/pcov)

@@ -49,6 +49,5 @@ Debuggerin käyttöönotossa muista, että et ikinä jätä debuggeria päälle 
 ## Katso Myös:
 - [Xdebug Dokumentaatio](https://xdebug.org/docs/)
 - [PhpStormin Virheenkorjausopas](https://www.jetbrains.com/help/phpstorm/debugging.html)
-- [VsCode PHP Debug Adapter](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
 - [PHP.net phpdbg:st](https://www.php.net/manual/en/book.phpdbg.php)
 - [pcov GitHubissa](https://github.com/krakjoe/pcov)

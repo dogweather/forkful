@@ -62,9 +62,7 @@ Implementation-wise, it's worth mentioning that Kotlin is interoperable with Jav
 For more context on handling strings in Kotlin, you can check out the official documentation:
 
 - [Kotlin's String documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Working with Strings in Kotlin](https://play.kotlinlang.org/byExample/02_control_flow/06_String%20Templates)
 
 For deeper dives into regular expressions and parsing in Kotlin:
 
 - [Kotlin Regex documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Parsing text in Kotlin](https://typealias.com/start/parsing-in-kotlin/)

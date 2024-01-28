@@ -44,4 +44,3 @@ print(filtered_text)  -- 出力: フィルター後のテキスト: 123456
 ## See Also (関連情報)
 - Lua 5.4 Reference Manual (英語): [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
 - Lua パターンマッチングについての解説 (日本語): [https://www.lua.org/pil/20.2.html](https://www.lua.org/pil/20.2.html)
-- Luaコミュニティのフォーラム (英語と日本語): [http://lua-users.org/](http://lua-users.org/)

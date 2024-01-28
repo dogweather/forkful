@@ -42,4 +42,3 @@ Visual Studioのデバッガーに代わるオプションには、Cスタイル
 ## 参照
 - [Visual Studio デバッガー ドキュメント](https://docs.microsoft.com/en-us/visualstudio/debugger/)
 - [デバッグ戦略](https://www.codeproject.com/Articles/79508/Effective-Exception-Handling-in-Visual-C)
-- [JetBrains Rider デバッガー機能](https://www.jetbrains.com/rider/features/debugger.html)

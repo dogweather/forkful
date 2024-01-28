@@ -47,5 +47,4 @@ Haskell ने कहा, आइए कुछ फ़ंक्शन्स सी
 
 ## देखें भी:
 - रेगेक्स प्रेमियों के लिए: [Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
-- पार्सर्स के साथ गोता लगाएं: [Parsec: एक प्रैक्टिकल पार्सर लाइब्रेरी](https://research.microsoft.com/en-us/um/people/daan/download/parsec/parsec.pdf)
 - हैस्केल स्ट्रिंग्स के लिए एक सौम्य परिचय: [Learn You a Haskell for Great Good! - शुरुआत](http://learnyouahaskell.com/starting-out#strings)

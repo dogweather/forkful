@@ -53,4 +53,3 @@ Hello, World!
 ## Дивіться Також
 - Довідник C++ `std::remove`: [cppreference.com](https://en.cppreference.com/w/cpp/algorithm/remove)
 - Більше про маніпуляції з `std::string`: [cplusplus.com](http://www.cplusplus.com/reference/string/string/)
-- Основи регулярних виразів для C++: [learncpp.com](https://www.learncpp.com/cpp-tutorial/regular-expressions-with-std-regex/)

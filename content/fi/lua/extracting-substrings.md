@@ -40,4 +40,3 @@ Substring-funktioita käytettäessä indeksit alkavat ykkösestä, ei nollasta, 
 ## See Also / Katso Myös:
 - [Programming in Lua (Fourth Edition)](https://www.lua.org/pil/contents.html) – Luotettava kirja perusteista syvällisiin tekniikoihin.
 - [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/) – Virallinen dokumentaatio ja käyttöopas.
-- [Lua Users Wiki: Strings Tutorial](http://lua-users.org/wiki/StringsTutorial) – Käytännön esimerkkejä ja ohjeita stringien käsittelyyn.

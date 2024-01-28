@@ -51,5 +51,4 @@ Luaは1993年にブラジルで誕生した。テーブルという柔軟なデ�
 ## See Also (関連リンク)
 - 公式Luaウェブサイト: [https://www.lua.org/](https://www.lua.org/)
 - Lua リファレンスマニュアル: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
-- Luaユーザーズ Wiki: [http://lua-users.org/wiki/](http://lua-users.org/wiki/)
 - Lua コミュニティのフォーラム: [http://www.lua.org/community.html](http://www.lua.org/community.html)

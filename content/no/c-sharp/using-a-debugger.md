@@ -42,4 +42,3 @@ Når du dykker inn i en feilsøkers implementering, ser du på et program som ko
 ## Se Også
 - [Visual Studio Feilsøker Dokumentasjon](https://docs.microsoft.com/en-us/visualstudio/debugger/)
 - [Feilsøkingsstrategier](https://www.codeproject.com/Articles/79508/Effective-Exception-Handling-in-Visual-C)
-- [JetBrains Rider Feilsøker Funksjoner](https://www.jetbrains.com/rider/features/debugger.html)

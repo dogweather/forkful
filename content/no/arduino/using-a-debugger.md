@@ -47,4 +47,3 @@ Ved å bruke en feilsøker, kan du sette brytepunkter for å stoppe utførelsen 
 Klar til å dykke dypere? Utforsk disse:
 - Arduino-feilsøkingsguiden på [Arduino Debugging](https://www.arduino.cc/en/Guide/Environment#toc7)
 - AVR Libc referansemanualen for å sette opp avr-gdb: [AVR Libc hjemmeside](http://www.nongnu.org/avr-libc/)
-- Et dypdykk i bruk av Atmel-ICE: [Bruk av Atmel-ICE for AVR-programmering i Atmel Studio](https://microchipdeveloper.com/atmel-ice:atmel-ice)

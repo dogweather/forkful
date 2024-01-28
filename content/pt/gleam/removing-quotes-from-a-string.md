@@ -45,5 +45,4 @@ Se mergulharmos nos detalhes da implementação, `string.trim` funciona removend
 ## Veja também
 Para as mentes curiosas lá fora que querem explorar mais:
 - [Documentação do módulo String do Gleam](https://gleam.run/stdlib/string/)
-- [Mais sobre correspondência de padrões em Gleam](https://gleam.run/book/tour/pattern-matching)
 - Discussões sobre processamento de texto em programação no [Stack Overflow](https://stackoverflow.com/questions/tagged/text-processing)

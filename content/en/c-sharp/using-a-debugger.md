@@ -42,4 +42,3 @@ When you dive into a debugger's implementation, you're looking at a program that
 ## See Also
 - [Visual Studio Debugger Documentation](https://docs.microsoft.com/en-us/visualstudio/debugger/)
 - [Debugging Strategies](https://www.codeproject.com/Articles/79508/Effective-Exception-Handling-in-Visual-C)
-- [JetBrains Rider Debugger Features](https://www.jetbrains.com/rider/features/debugger.html)

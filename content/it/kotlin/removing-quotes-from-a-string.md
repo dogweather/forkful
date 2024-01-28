@@ -62,9 +62,7 @@ Dal punto di vista dell'implementazione, vale la pena menzionare che Kotlin è i
 Per maggiori contesti sulla gestione delle stringhe in Kotlin, puoi consultare la documentazione ufficiale:
 
 - [Documentazione delle Stringhe di Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Lavorare con le Stringhe in Kotlin](https://play.kotlinlang.org/byExample/02_control_flow/06_String%20Templates)
 
 Per approfondimenti sulle espressioni regolari e l'analisi in Kotlin:
 
 - [Documentazione delle Regex di Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Analisi del testo in Kotlin](https://typealias.com/start/parsing-in-kotlin/)

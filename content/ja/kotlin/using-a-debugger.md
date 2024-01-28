@@ -58,5 +58,3 @@ IntelliJのデバッガーはKotlinにとって非常に便利ですが、それ
 
 ## 参照
 - IntelliJ IDEAデバッガーのドキュメント: [https://jetbrains.com/idea/](https://www.jetbrains.com/idea/features/debugger.html)
-- デバッグに関するKotlinドキュメント: [https://kotlinlang.org/docs/debugging.html](https://kotlinlang.org/docs/debugging.html)
-- デバッグの歴史の起源: [http://history-computer.com/Internet/Maturing/Debugging.html](http://history-computer.com/Internet/Maturing/Debugging.html)

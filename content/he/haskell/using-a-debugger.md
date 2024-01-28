@@ -60,6 +60,4 @@ Prelude> :main
 
 ## ראו גם:
 - [מדריך המשתמש של GHC - מנפה תקלות](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
-- [האסקל המסחרית - כלים לניפוי תקלות](https://commercialhaskell.github.io/intermediate/docs/debugging-tools/)
-- [Visual Studio Code - הרחבת Haskell](https://marketplace.visualstudio.com/items?itemName=haskell.haskell)
 - [תוסף ה-Haskell של IntelliJ](https://plugins.jetbrains.com/plugin/8258-intellij-haskell)

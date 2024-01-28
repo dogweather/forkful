@@ -64,5 +64,4 @@ Lua, birthed in 1993, kept it sweet and simple. It's lightweight, easy to embed,
 ## See Also
 - [Official Lua Documentation](https://www.lua.org/manual/5.4/)
 - [Programming in Lua (First edition)](https://www.lua.org/pil/contents.html)
-- [Lua-Users Tutorials](http://lua-users.org/wiki/TutorialDirectory)
 - [Learn Lua in Y minutes](https://learnxinyminutes.com/docs/lua/)

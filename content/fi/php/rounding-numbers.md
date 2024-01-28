@@ -33,7 +33,6 @@ Vaihtoehtoja sisäänrakennetuille funktioille ovat mukautetut pyöristysmenetel
 
 ## Katso myös
 Tutustu lisää PHP:n käsikirjassa:
-- [PHP `round` -funktio](https://php.net/manual/en/function.round.php)
 - [PHP `ceil` -funktio](https://php.net/manual/en/function.ceil.php)
 - [PHP `floor` -funktio](https://php.net/manual/en/function.floor.php)
 - [BC Math mielivaltaisen tarkkuuden aritmetiikka](https://php.net/manual/en/book.bc.php)

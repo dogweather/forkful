@@ -44,4 +44,3 @@ Output:
 
 - Lua 5.4 Reference Manual: [https://www.lua.org/manual/5.4/manual.html#6.9](https://www.lua.org/manual/5.4/manual.html#6.9)
 - GitHub `luadate` Library: [https://github.com/Tieske/date](https://github.com/Tieske/date)
-- Lua-users wiki: Working with Time: [http://lua-users.org/wiki/DateTime](http://lua-users.org/wiki/DateTime)

@@ -52,4 +52,3 @@ Lua의 문자열 처리에 더 깊이 알고 싶다면, 다음 자료들을 참�
 
 - [Lua 5.4 Reference Manual: string library](https://www.lua.org/manual/5.4/manual.html#6.4)
 - [Programming in Lua: Patterns](https://www.lua.org/pil/20.2.html)
-- [Lua-users Wiki: String Library Tutorial](http://lua-users.org/wiki/StringLibraryTutorial)

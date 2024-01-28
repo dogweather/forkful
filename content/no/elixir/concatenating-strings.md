@@ -67,5 +67,4 @@ I dette utdraget er `content` en IOList, og vi skriver den direkte til en fil. D
 For mer fordypende lesing om strenger og ytelse i Elixir, vil følgende ressurser være nyttige:
 
 - [Elixirs offisielle guide om binærer, strenger og tegnlistene](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
-- [IOList: Elixirs Sveitsiske lommekniv for ytelse](https://dockyard.com/blog/2019/05/23/optimizing-elixir-and-phoenix-with-iolist)
 - [Erlang Effektivitetsguide](http://erlang.org/doc/efficiency_guide/listHandling.html) - Selv om den er skreddersydd for Erlang, gjelder mye av dette for Elixir på grunn av dets fundament på Erlang VM.

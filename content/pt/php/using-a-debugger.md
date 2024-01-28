@@ -49,6 +49,5 @@ Ao implementar um depurador, lembre-se de que você nunca deve deixar o depurado
 ## Veja Também:
 - [Documentação do Xdebug](https://xdebug.org/docs/)
 - [Guia de Depuração do PhpStorm](https://www.jetbrains.com/help/phpstorm/debugging.html)
-- [Adaptador de Depuração PHP do VsCode](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
 - [PHP.net sobre phpdbg](https://www.php.net/manual/pt_BR/book.phpdbg.php)
 - [pcov no GitHub](https://github.com/krakjoe/pcov)

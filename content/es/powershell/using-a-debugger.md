@@ -56,5 +56,3 @@ Además, con la transición a PowerShell Core (PowerShell multiplataforma), la d
 ## Ver También
 Para más información sobre depuración en PowerShell:
 - [about_Debuggers](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Debuggers)
-- [Documentación de PowerShell sobre la depuración](https://docs.microsoft.com/en-us/powershell/scripting/debugging/debugging-in-powershell?view=powershell-7.2)
-- [Extensión de PowerShell para Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)

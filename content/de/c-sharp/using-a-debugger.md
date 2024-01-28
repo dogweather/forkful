@@ -42,4 +42,3 @@ Wenn Sie in die Implementierung eines Debuggers eintauchen, sehen Sie ein Progra
 ## Siehe auch
 - [Visual Studio Debugger-Dokumentation](https://docs.microsoft.com/en-us/visualstudio/debugger/)
 - [Debugging-Strategien](https://www.codeproject.com/Articles/79508/Effective-Exception-Handling-in-Visual-C)
-- [JetBrains Rider Debugger-Funktionen](https://www.jetbrains.com/rider/features/debugger.html)

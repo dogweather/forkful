@@ -45,5 +45,4 @@ Om vi dyker ner i implementeringsdetaljerna arbetar `string.trim` genom att ta b
 ## Se Också
 För de nyfikna själarna där ute som vill utforska mer:
 - [Dokumentation för Gleams String-modul](https://gleam.run/stdlib/string/)
-- [Mer om mönstermatchning i Gleam](https://gleam.run/book/tour/pattern-matching)
 - Diskussioner om textbearbetning i programmering på [Stack Overflow](https://stackoverflow.com/questions/tagged/text-processing)

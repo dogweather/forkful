@@ -47,4 +47,3 @@ Mit einem Debugger können Sie Haltepunkte setzen, um die Ausführung an bestimm
 Bereit für einen tieferen Tauchgang? Tauchen Sie ein in diese:
 - Der Arduino-Debugging-Leitfaden unter [Arduino Debugging](https://www.arduino.cc/en/Guide/Environment#toc7)
 - Das AVR Libc-Referenzhandbuch zur Einrichtung von avr-gdb: [AVR Libc-Startseite](http://www.nongnu.org/avr-libc/)
-- Ein tiefergehender Einblick in die Verwendung von Atmel-ICE: [Using Atmel-ICE for AVR Programming In Atmel Studio](https://microchipdeveloper.com/atmel-ice:atmel-ice)

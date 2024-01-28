@@ -53,4 +53,3 @@ Når det gjelder implementeringen, husk at `std::remove` faktisk ikke fjerner el
 ## Se også
 - C++ `std::remove` referanse: [cppreference.com](https://en.cppreference.com/w/cpp/algorithm/remove)
 - Mer om `std::string` manipulasjon: [cplusplus.com](http://www.cplusplus.com/reference/string/string/)
-- En Regex primer for C++: [learncpp.com](https://www.learncpp.com/cpp-tutorial/regular-expressions-with-std-regex/)

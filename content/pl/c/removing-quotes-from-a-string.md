@@ -65,4 +65,3 @@ Implementacja powyżej po prostu przeszukuje każdy znak w ciągu, kopiując tyl
 - [Funkcje biblioteki standardowej C](http://www.cplusplus.com/reference/clibrary/)
 - [PCRE - Perl Compatible Regular Expressions](https://www.pcre.org/)
 - [Zrozumienie wskaźników w C](https://www.learn-c.org/en/Pointers)
-- [Bezpieczne programowanie w C](https://owasp.org/www-project-secure-coding-in-c)

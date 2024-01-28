@@ -56,5 +56,3 @@ Lisäksi siirtyessä PowerShell Coreen (alustojen välinen PowerShell), debuggau
 ## Katso myös
 Lisätietoa PowerShellin debuggauksesta:
 - [about_Debuggers](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Debuggers)
-- [PowerShellin dokumentaatio debuggauksesta](https://docs.microsoft.com/en-us/powershell/scripting/debugging/debugging-in-powershell?view=powershell-7.2)
-- [Visual Studio Code PowerShell-laajennus](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)

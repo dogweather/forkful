@@ -45,5 +45,4 @@ Gleam에서는 `string.trim` 함수를 사용하여 따옴표를 제거합니다
 ## 또한 보기
 더 탐구하고 싶은 호기심 많은 분들을 위해:
 - [Gleam의 문자열 모듈 문서](https://gleam.run/stdlib/string/)
-- [Gleam에서 패턴 매칭에 대해 더 알아보기](https://gleam.run/book/tour/pattern-matching)
 - 프로그래밍의 텍스트 처리에 대한 토론 [Stack Overflow](https://stackoverflow.com/questions/tagged/text-processing)

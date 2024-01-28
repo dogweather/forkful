@@ -60,6 +60,4 @@ As for implementation details, Haskell's debugger works with the runtime system.
 
 ## See Also:
 - [GHC User's Guide - Debugger](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
-- [Commercial Haskell - Debugging Tools](https://commercialhaskell.github.io/intermediate/docs/debugging-tools/)
-- [Visual Studio Code - Haskell Extension](https://marketplace.visualstudio.com/items?itemName=haskell.haskell)
 - [IntelliJ Haskell Plugin](https://plugins.jetbrains.com/plugin/8258-intellij-haskell)

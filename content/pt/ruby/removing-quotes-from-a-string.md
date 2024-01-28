@@ -50,4 +50,3 @@ Lembre-se, cada um desses métodos tem seus casos de uso. `gsub` é mais poderos
 Para leitura adicional, e para ver esses métodos em ação dentro de bases de código maiores, confira:
 - A documentação do Ruby para [String#gsub](https://ruby-doc.org/core-3.1.2/String.html#method-i-gsub), [String#delete](https://ruby-doc.org/core-3.1.2/String.html#method-i-delete) e [String#tr](https://ruby-doc.org/core-3.1.2/String.html#method-i-tr).
 - Ruby Monstas tem um ótimo [conjunto de exercícios de String](http://ruby-for-beginners.rubymonstas.org/built_in_classes/strings.html), que inclui trabalhar com aspas.
-- Discussões no Stack Overflow sobre [manipulação de strings](https://stackoverflow.com/search?q=ruby+remove+quotes+from+string) fornecem problemas e soluções do mundo real de outros Rubyistas.

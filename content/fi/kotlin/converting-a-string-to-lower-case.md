@@ -42,4 +42,3 @@ Merkkijonojen muuttamiseen liittyvät funktiot käyttävät `Char`-tyypin metode
 "Näytä lisäksi"
 
 - Java-kirjallisuus Unicode-merkkien käsittelystä, joka voi valaista Kotlininkin taustoja: [Unicode Standard](http://unicode.org/standard/standard.html)
-- Stack Overflow -keskustelut aiheesta, kuten [How to convert a Kotlin String to Lowercase](https://stackoverflow.com/questions/51451853/how-to-convert-a-kotlin-string-to-lowercase)

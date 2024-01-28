@@ -54,5 +54,3 @@ Lua的`os.tmpfile`函数建立并打开一个新的临时文件用于读写，�
 
 ## 参考资料：
 1. Lua 5.4参考手册：[https://www.lua.org/manual/5.4/manual.html#pdf-os.tmpfile](https://www.lua.org/manual/5.4/manual.html#pdf-os.tmpfile)
-2. Lua文件操作：[http://lua-users.org/wiki/FileInputOutput](http://lua-users.org/wiki/FileInputOutput)
-3. 关于临时文件的讨论：[http://lua-users.org/lists/lua-l/2010-03/msg00370.html](http://lua-users.org/lists/lua-l/2010-03/msg00370.html)

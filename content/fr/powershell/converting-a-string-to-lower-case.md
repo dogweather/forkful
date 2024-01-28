@@ -36,6 +36,5 @@ En termes d'implémentation, considerer les variations linguistiques peut être 
 ## See Also / Voir Aussi
 - [Documentation officielle de PowerShell](https://docs.microsoft.com/powershell/)
 - [CultureInfo Class in .NET](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo)
-- [String Comparison in PowerShell](https://ss64.com/ps/syntax-compare.html)
 
 N'oubliez pas de valider votre code dans plusieurs scénarios et cultures!

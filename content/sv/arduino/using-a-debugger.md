@@ -47,4 +47,3 @@ Med en debugger kan du sätta brytpunkter för att stoppa utförandet vid vissa 
 Redo att dyka djupare? Utforska dessa:
 - Arduino-debuggningsguiden på [Arduino Debugging](https://www.arduino.cc/en/Guide/Environment#toc7)
 - AVR Libc referensmanualen för att ställa in avr-gdb: [AVR Libc Hemside](http://www.nongnu.org/avr-libc/)
-- Ett djupare djupdyk i användningen av Atmel-ICE: [Använda Atmel-ICE för AVR-programmering i Atmel Studio](https://microchipdeveloper.com/atmel-ice:atmel-ice)

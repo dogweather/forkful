@@ -53,4 +53,3 @@ Hello, World!
 ## यह भी देखें
 - C++ `std::remove` संदर्भ: [cppreference.com](https://en.cppreference.com/w/cpp/algorithm/remove)
 - `std::string` मैनिपुलेशन पर अधिक: [cplusplus.com](http://www.cplusplus.com/reference/string/string/)
-- C++ के लिए एक रेगुलर एक्सप्रेशन प्राइमर: [learncpp.com](https://www.learncpp.com/cpp-tutorial/regular-expressions-with-std-regex/)

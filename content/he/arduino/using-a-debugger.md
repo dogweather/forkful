@@ -47,4 +47,3 @@ void loop() {
 רוצים לעמוק יותר? צללו לתוך אלו:
 - המדריך לדיבאג של Arduino שבכתובת [Arduino Debugging](https://www.arduino.cc/en/Guide/Environment#toc7)
 - מדריך ההתייחסות של AVR Libc להגדרה של avr-gdb: [דף הבית של AVR Libc](http://www.nongnu.org/avr-libc/)
-- צלילה עמוקה יותר בשימוש ב-Atmel-ICE: [שימוש ב-Atmel-ICE לתכנות AVR ב-Atmel Studio](https://microchipdeveloper.com/atmel-ice:atmel-ice)

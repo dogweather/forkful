@@ -45,5 +45,4 @@ En interne, ces fonctions fonctionnent normalement en exploitant la manière don
 
 ## Voir aussi
 - [Manuel de référence Lua 5.4 : Les fonctions mathématiques](https://www.lua.org/manual/5.4/manual.html#6.7)
-- [lua-users wiki : Round](http://lua-users.org/wiki/SimpleRound)
 - [Bibliothèques Lua Penlight : Math](https://github.com/lunarmodules/Penlight)

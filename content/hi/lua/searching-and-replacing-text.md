@@ -35,4 +35,3 @@ Lua में string मॉड्यूल का उपयोग करने �
 ## See Also (अधिक जानकारी के लिए)
 - Lua 5.4 Reference Manual: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
 - Online Lua Compiler / Web-based Lua playground for testing: [https://repl.it/languages/lua](https://repl.it/languages/lua)
-- Regular Expressions in Lua: [http://lua-users.org/wiki/PatternsTutorial](http://lua-users.org/wiki/PatternsTutorial)

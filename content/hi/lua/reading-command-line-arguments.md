@@ -46,4 +46,3 @@ end
 - Lua ऑफिसियल डॉक्यूमेंटेशन: [https://www.lua.org/pil/contents.html](https://www.lua.org/pil/contents.html)
 - एक्सटर्नल आर्गुमेंट प्रोसेसिंग लाइब्रेरी `Penlight`: [https://github.com/lunarmodules/Penlight](https://github.com/lunarmodules/Penlight)
 - लुआ `lapp` लाइब्रेरी फॉर आर्गुमेंट पार्सिंग: [https://stevedonovan.github.io/Penlight/api/libraries/pl.lapp.html](https://stevedonovan.github.io/Penlight/api/libraries/pl.lapp.html)
-- लुआ संबंधित ट्यूटोरियल्स और गाइड्स: [http://lua-users.org/wiki/TutorialDirectory](http://lua-users.org/wiki/TutorialDirectory)

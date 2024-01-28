@@ -42,4 +42,3 @@ För att utöka din felsökningsverktygslåda, kolla in:
 
 - Erlangs debuggerdokumentation: [https://erlang.org/doc/apps/debugger/debugger_chapter.html](https://erlang.org/doc/apps/debugger/debugger_chapter.html)
 - `Recon`-biblioteket för Erlang: [https://ferd.github.io/recon/](https://ferd.github.io/recon/)
-- Om spårning i BEAM: [https://adoptingerlang.org/docs/development/tracing/](https://adoptingerlang.org/docs/development/tracing/)

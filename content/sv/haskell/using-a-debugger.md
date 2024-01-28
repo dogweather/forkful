@@ -60,6 +60,4 @@ När det gäller genomförandedetaljer, fungerar Haskell's felsökare med körti
 
 ## Se även:
 - [GHC Användarhandbok - Felsökare](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
-- [Kommersiell Haskell - Felsökningsverktyg](https://commercialhaskell.github.io/intermediate/docs/debugging-tools/)
-- [Visual Studio Code - Haskell-tillägg](https://marketplace.visualstudio.com/items?itemName=haskell.haskell)
 - [IntelliJ Haskell-plugin](https://plugins.jetbrains.com/plugin/8258-intellij-haskell)

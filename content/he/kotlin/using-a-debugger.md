@@ -58,5 +58,3 @@ fun main() {
 
 ## ראו גם
 - תיעוד מנתח IntelliJ IDEA: [https://jetbrains.com/idea/](https://www.jetbrains.com/idea/features/debugger.html)
-- תיעוד Kotlin על ניתוח באגים: [https://kotlinlang.org/docs/debugging.html](https://kotlinlang.org/docs/debugging.html)
-- שורשי ניתוח הבאגים בהיסטוריה: [http://history-computer.com/Internet/Maturing/Debugging.html](http://history-computer.com/Internet/Maturing/Debugging.html)

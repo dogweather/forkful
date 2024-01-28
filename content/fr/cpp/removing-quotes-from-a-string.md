@@ -53,4 +53,3 @@ En termes d'implémentation, souvenez-vous que `std::remove` n'élimine pas rée
 ## Voir aussi
 - Référence C++ `std::remove` : [cppreference.com](https://en.cppreference.com/w/cpp/algorithm/remove)
 - Plus sur la manipulation de `std::string` : [cplusplus.com](http://www.cplusplus.com/reference/string/string/)
-- Un guide sur les expressions régulières en C++ : [learncpp.com](https://www.learncpp.com/cpp-tutorial/regular-expressions-with-std-regex/)

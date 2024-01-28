@@ -65,4 +65,3 @@ A implementação acima simplesmente verifica cada caractere na string, copiando
 - [Funções da Biblioteca Padrão C](http://www.cplusplus.com/reference/clibrary/)
 - [PCRE - Expressões Regulares Compatíveis com Perl](https://www.pcre.org/)
 - [Entendendo Ponteiros em C](https://www.learn-c.org/en/Pointers)
-- [Programação Segura em C](https://owasp.org/www-project-secure-coding-in-c)

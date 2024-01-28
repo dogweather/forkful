@@ -42,4 +42,3 @@ Does the directory exist? true
 
 ## See Also (추가 자료):
 - Java NIO 파일 API 공식 문서: [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
-- Java 파일 및 디렉토리 작업: [Jenkov Tutorials](http://tutorials.jenkov.com/java-io/files.html#directory-exists)

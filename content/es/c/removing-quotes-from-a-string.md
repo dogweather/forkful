@@ -65,4 +65,3 @@ La implementación anterior simplemente escanea cada carácter en la cadena, cop
 - [Funciones de la Biblioteca Estándar de C](http://www.cplusplus.com/reference/clibrary/)
 - [PCRE - Expresiones Regulares Compatibles con Perl](https://www.pcre.org/)
 - [Entendiendo los Punteros en C](https://www.learn-c.org/en/Pointers)
-- [Programación Segura en C](https://owasp.org/www-project-secure-coding-in-c)

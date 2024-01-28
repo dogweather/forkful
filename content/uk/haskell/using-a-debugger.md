@@ -60,6 +60,4 @@ Prelude> :main
 
 ## Дивіться також:
 - [Посібник користувача GHC - Дебагер](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
-- [Комерційний Haskell - Інструменти дебагінга](https://commercialhaskell.github.io/intermediate/docs/debugging-tools/)
-- [Visual Studio Code - Розширення для Haskell](https://marketplace.visualstudio.com/items?itemName=haskell.haskell)
 - [Плагін Haskell для IntelliJ](https://plugins.jetbrains.com/plugin/8258-intellij-haskell)

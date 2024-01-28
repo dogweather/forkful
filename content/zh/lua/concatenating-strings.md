@@ -46,4 +46,3 @@ print(list) -- 输出: 苹果, 香蕉, 橙子
 ## See Also (另请参阅)
 - [Lua 5.4参考手册](https://www.lua.org/manual/5.4/)
 - [Programming in Lua (第四版)](https://www.lua.org/pil/contents.html)
-- [Lua-users Wiki: StringsTutorial](http://lua-users.org/wiki/StringsTutorial)

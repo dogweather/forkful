@@ -53,4 +53,3 @@ Per quanto riguarda l'implementazione, ricorda che `std::remove` non rimuove eff
 ## Vedi Anche
 - Riferimento per C++ `std::remove`: [cppreference.com](https://en.cppreference.com/w/cpp/algorithm/remove)
 - Ulteriori informazioni sulla manipolazione di `std::string`: [cplusplus.com](http://www.cplusplus.com/reference/string/string/)
-- Un primo approccio alle espressioni regolari in C++: [learncpp.com](https://www.learncpp.com/cpp-tutorial/regular-expressions-with-std-regex/)

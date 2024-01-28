@@ -49,4 +49,3 @@ The `string.sub` and pattern matching are based on C functions due to Lua's C ro
 ## See Also
 - Lua 5.4 Reference Manual on Strings: [www.lua.org/manual/5.4/manual.html#6.4](https://www.lua.org/manual/5.4/manual.html#6.4)
 - 'Programming in Lua' (4th edition), especially the chapter on strings: [www.lua.org/pil/contents.html](https://www.lua.org/pil/contents.html)
-- Lua-users wiki on string recipes: [lua-users.org/wiki/StringRecipes](http://lua-users.org/wiki/StringRecipes)

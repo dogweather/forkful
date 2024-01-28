@@ -62,6 +62,5 @@ Here are some resources that might help you deepen your understanding and effici
 
 - [Lua 5.4 Reference Manual - Strings](https://www.lua.org/manual/5.4/manual.html#6.4)
 - [Programming in Lua (4th edition) - Section 20.1, String Library](https://www.lua.org/pil/20.1.html)
-- [Lua-Users Wiki - Strings Tutorial](http://lua-users.org/wiki/StringsTutorial)
 
 Using these sources, you'll solidify the concepts and get inventive with your solutions. Happy coding!

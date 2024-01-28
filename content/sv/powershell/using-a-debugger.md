@@ -56,5 +56,3 @@ Dessutom, med övergången till PowerShell Core (plattformsoberoende PowerShell)
 ## Se även
 För mer om felsökning i PowerShell:
 - [about_Debuggers](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Debuggers)
-- [PowerShell-dokumentation om felsökning](https://docs.microsoft.com/en-us/powershell/scripting/debugging/debugging-in-powershell?view=powershell-7.2)
-- [Visual Studio Code PowerShell-tillägg](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)

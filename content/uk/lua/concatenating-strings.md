@@ -50,4 +50,3 @@ print(sentence)  -- Виводить: Lua легка у використанні
 
 ## Дивись також:
 - Офіційна документація Lua про рядки: [Programming in Lua: Strings](https://www.lua.org/pil/2.4.html)
-- Lua Users Wiki про оптимізацію рядків: [Lua Users Wiki: Optimising Using Strings](http://lua-users.org/wiki/OptimisingUsingStrings)

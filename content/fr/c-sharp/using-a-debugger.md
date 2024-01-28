@@ -42,4 +42,3 @@ Lorsque vous plongez dans l'implémentation d'un débogueur, vous examinez un pr
 ## Voir également
 - [Documentation du débogueur Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/)
 - [Stratégies de débogage](https://www.codeproject.com/Articles/79508/Effective-Exception-Handling-in-Visual-C)
-- [Fonctionnalités du débogueur JetBrains Rider](https://www.jetbrains.com/rider/features/debugger.html)

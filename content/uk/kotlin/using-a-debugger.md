@@ -58,5 +58,3 @@ fun main() {
 
 ## Дивіться також
 - Документація дебаггера IntelliJ IDEA: [https://jetbrains.com/idea/](https://www.jetbrains.com/idea/features/debugger.html)
-- Документація Kotlin щодо відлагодження: [https://kotlinlang.org/docs/debugging.html](https://kotlinlang.org/docs/debugging.html)
-- Корені відлагодження у історії: [http://history-computer.com/Internet/Maturing/Debugging.html](http://history-computer.com/Internet/Maturing/Debugging.html)

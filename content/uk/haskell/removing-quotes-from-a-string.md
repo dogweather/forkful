@@ -45,5 +45,4 @@ Haskell said, Lets learn some functions!
 
 ## Див. також:
 - Для любителів регулярних виразів: [Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
-- Занурюємось в парсери з: [Parsec: Практична бібліотека парсерів](https://research.microsoft.com/en-us/um/people/daan/download/parsec/parsec.pdf)
 - Легке введення в рядки Haskell: [Learn You a Haskell for Great Good! - Початок](http://learnyouahaskell.com/starting-out#strings)

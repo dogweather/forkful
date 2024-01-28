@@ -58,5 +58,3 @@ Medan IntellJs debugger är superpraktisk för Kotlin, är den inte den enda fis
 
 ## Se också
 - Dokumentation för IntelliJ IDEA Debugger: [https://jetbrains.com/idea/](https://www.jetbrains.com/idea/features/debugger.html)
-- Kotlin-dokumentation om felsökning: [https://kotlinlang.org/docs/debugging.html](https://kotlinlang.org/docs/debugging.html)
-- Rötterna till felsökning i historien: [http://history-computer.com/Internet/Maturing/Debugging.html](http://history-computer.com/Internet/Maturing/Debugging.html)

@@ -58,5 +58,4 @@ L'implémentation devient délicate lorsque vous devez arrondir des nombres de p
 
 ## Voir Aussi
 - [Documentation de `<math.h>`](https://en.cppreference.com/w/c/numeric/math)
-- [Arithmétique à virgule flottante](https://fr.wikipedia.org/wiki/Arithm%C3%A9tique_%C3%A0_virgule_flottante)
 - [Les pièges de la vérification des calculs à virgule flottante](https://dl.acm.org/doi/10.1145/1186736.1186737)

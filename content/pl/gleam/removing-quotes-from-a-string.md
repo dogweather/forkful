@@ -45,5 +45,4 @@ Gdy zagłębimy się w szczegóły implementacji, funkcja `string.trim` działa 
 ## Zobacz również
 Dla ciekawych umysłów, które chcą zbadać więcej:
 - [Dokumentacja modułu String Gleam](https://gleam.run/stdlib/string/)
-- [Więcej na temat dopasowania wzorców w Gleam](https://gleam.run/book/tour/pattern-matching)
 - Dyskusje na temat przetwarzania tekstu w programowaniu na [Stack Overflow](https://stackoverflow.com/questions/tagged/text-processing)

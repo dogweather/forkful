@@ -56,5 +56,3 @@ Além disso, com a transição para o PowerShell Core (PowerShell multiplataform
 ## Veja Também
 Para mais informações sobre depuração no PowerShell:
 - [about_Debuggers](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Debuggers)
-- [Documentação do PowerShell sobre depuração](https://docs.microsoft.com/en-us/powershell/scripting/debugging/debugging-in-powershell?view=powershell-7.2)
-- [Extensão do PowerShell para Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)

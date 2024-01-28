@@ -62,9 +62,7 @@ Du point de vue de l'implémentation, il est important de mentionner que Kotlin 
 Pour plus de contexte sur la manipulation de chaînes en Kotlin, vous pouvez consulter la documentation officielle :
 
 - [Documentation sur String de Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Travailler avec des chaînes en Kotlin](https://play.kotlinlang.org/byExample/02_control_flow/06_String%20Templates)
 
 Pour des plongées plus profondes dans les expressions régulières et l'analyse en Kotlin :
 
 - [Documentation Regex de Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Analyser du texte en Kotlin](https://typealias.com/start/parsing-in-kotlin/)

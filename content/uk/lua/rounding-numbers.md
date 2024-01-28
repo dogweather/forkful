@@ -45,5 +45,4 @@ Lua не містить функції округлення "з коробки",
 
 ## Дивіться Також
 - [Lua 5.4 Довідник з Математичних Функцій](https://www.lua.org/manual/5.4/manual.html#6.7)
-- [lua-users wiki: Okруглення](http://lua-users.org/wiki/SimpleRound)
 - [Математичні Бібліотеки Penlight Lua](https://github.com/lunarmodules/Penlight)

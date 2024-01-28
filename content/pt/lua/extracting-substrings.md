@@ -36,7 +36,3 @@ Historicamente, no mundo da programação, extrair substrings se mostrou essenci
 Alternativas para funções de extração existem. Você pode encontrar a função `string.match`, que permite extrair substrings usando padrões (pattern matching). Já a função `string.gmatch` é um gerador, perfeita para iterar sobre todas as partes que correspondem ao padrão dentro da string.
 
 Detalhes de implementação são relevantes, como saber que a extração de strings no Lua é uma operação segura. Se você especificar um índice que está fora da string, `string.sub` ajustará automaticamente para o tamanho correto. Essa é uma camada extra de segurança para evitar erros durante o corte de suas strings.
-
-## Veja Também:
-- [Tutorial de Strings no Lua](http://lua-users.org/wiki/StringLibraryTutorial)
-- [Pattern Matching no Lua](http://lua-users.org/wiki/PatternsTutorial)

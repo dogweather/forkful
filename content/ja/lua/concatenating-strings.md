@@ -38,4 +38,3 @@ Luaはメタメソッド`__concat`もサポートしており、カスタムオ�
 
 ## See Also (関連する情報)
 - [Lua 5.4リファレンスマニュアル: 文字列](https://www.lua.org/manual/5.4/manual.html#3.4.6)
-- [LuaユーザーズWiki: 文字列操作](http://lua-users.org/wiki/StringLibraryTutorial)

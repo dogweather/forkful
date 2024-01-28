@@ -50,4 +50,3 @@ Luaでは、文字列の長さはシャープ（`#`）記号で簡単に求め�
 - [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/)
 - [Programming in Lua (first edition)](https://www.lua.org/pil/contents.html)
 - [`utf8.len` in the Lua 5.3 Reference Manual](https://www.lua.org/manual/5.3/manual.html#6.5)
-- [Lua-users Wiki: StringsTutorial](http://lua-users.org/wiki/StringsTutorial)

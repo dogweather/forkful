@@ -47,4 +47,3 @@ Usando um depurador, você pode definir pontos de interrupção para parar a exe
 Pronto para aprofundar? Mergulhe nestes:
 - O guia de depuração do Arduino em [Depuração Arduino](https://www.arduino.cc/en/Guide/Environment#toc7)
 - O manual de referência AVR Libc para configurar avr-gdb: [Página Inicial AVR Libc](http://www.nongnu.org/avr-libc/)
-- Um mergulho profundo usando Atmel-ICE: [Usando Atmel-ICE para Programação AVR no Atmel Studio](https://microchipdeveloper.com/atmel-ice:atmel-ice)

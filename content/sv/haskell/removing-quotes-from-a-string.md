@@ -45,5 +45,4 @@ När det gäller implementeringen använder `removeQuotes`-funktionen ovan en la
 
 ## Se också:
 - För regex-älskare: [Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
-- Dyk in i parsers med: [Parsec: A Practical Parser Library](https://research.microsoft.com/en-us/um/people/daan/download/parsec/parsec.pdf)
 - En mjuk introduktion till Haskell-strängar: [Learn You a Haskell for Great Good! - Starting Out](http://learnyouahaskell.com/starting-out#strings)

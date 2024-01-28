@@ -29,4 +29,3 @@ Luaでは、文字列操作は基本的で必要な作業です。`string.lower`
 
 ## See Also (関連情報)
 - Lua 5.4リファレンスマニュアル: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
-- Lua-users wiki, 文字列ライブラリ: [http://lua-users.org/wiki/StringLibraryTutorial](http://lua-users.org/wiki/StringLibraryTutorial)

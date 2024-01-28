@@ -45,5 +45,4 @@ Lua में बॉक्स के बाहर एक राउंड फं�
 
 ## यह भी देखें
 - [Lua 5.4 संदर्भ मैनुअल: गणितीय फ़ंक्शन](https://www.lua.org/manual/5.4/manual.html#6.7)
-- [lua-users wiki: Round](http://lua-users.org/wiki/SimpleRound)
 - [Penlight Lua पुस्तकालय: गणित](https://github.com/lunarmodules/Penlight)

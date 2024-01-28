@@ -53,4 +53,3 @@ När det gäller implementation, kom ihåg att `std::remove` faktiskt inte tar b
 ## Se Också
 - C++ `std::remove` referens: [cppreference.com](https://en.cppreference.com/w/cpp/algorithm/remove)
 - Mer om `std::string`-manipulering: [cplusplus.com](http://www.cplusplus.com/reference/string/string/)
-- En Regex-guide för C++: [learncpp.com](https://www.learncpp.com/cpp-tutorial/regular-expressions-with-std-regex/)

@@ -38,5 +38,4 @@ Detalhes de implementação: `os.date("*t")` devolve uma tabela contendo todos o
 
 ## Veja Também
 - [Documentação Oficial do Lua `os.date`](https://www.lua.org/manual/5.4/manual.html#pdf-os.date)
-- [Tutorial sobre datetime em Lua](http://lua-users.org/wiki/DateTime)
 - [Repositório LuaDate no GitHub](https://github.com/Tieske/date)

@@ -47,4 +47,3 @@ Atmel-ICE와 같은 인-서킷 에뮬레이터에 대한 대안으로는 `avr-gd
 더 깊이 탐구하고 싶으신가요? 다음을 참고하세요:
 - [Arduino 디버깅 가이드](https://www.arduino.cc/en/Guide/Environment#toc7)
 - avr-gdb 설정을 위한 AVR Libc 참조 매뉴얼: [AVR Libc 홈페이지](http://www.nongnu.org/avr-libc/)
-- Atmel-ICE 사용에 대한 심층 탐구: [Atmel Studio에서 Atmel-ICE를 사용한 AVR 프로그래밍](https://microchipdeveloper.com/atmel-ice:atmel-ice)

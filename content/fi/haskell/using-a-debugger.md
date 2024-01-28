@@ -60,6 +60,4 @@ Mitä toteutuksen yksityiskohtiin tulee, Haskellin debuggeri toimii suoritusaika
 
 ## Katso myös:
 - [GHC:n käyttäjän opas - Debugger](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
-- [Kaupallinen Haskell - Debuggaustyökalut](https://commercialhaskell.github.io/intermediate/docs/debugging-tools/)
-- [Visual Studio Code - Haskell-laajennus](https://marketplace.visualstudio.com/items?itemName=haskell.haskell)
 - [IntelliJ Haskell -liitännäinen](https://plugins.jetbrains.com/plugin/8258-intellij-haskell)

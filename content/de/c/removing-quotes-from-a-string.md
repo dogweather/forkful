@@ -65,4 +65,3 @@ Die obige Implementierung scannt einfach jeden Charakter im String und kopiert n
 - [C-Standardbibliotheksfunktionen](http://www.cplusplus.com/reference/clibrary/)
 - [PCRE - Perl Compatible Regular Expressions](https://www.pcre.org/)
 - [Verstehen von Zeigern in C](https://www.learn-c.org/en/Pointers)
-- [Sicheres Programmieren in C](https://owasp.org/www-project-secure-coding-in-c)

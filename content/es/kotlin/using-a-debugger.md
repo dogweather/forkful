@@ -58,5 +58,3 @@ Aunque el depurador de IntelliJ es súper útil para Kotlin, no es el único pez
 
 ## Ver También
 - Documentación del depurador de IntelliJ IDEA: [https://jetbrains.com/idea/](https://www.jetbrains.com/idea/features/debugger.html)
-- Documentación de Kotlin sobre Depuración: [https://kotlinlang.org/docs/debugging.html](https://kotlinlang.org/docs/debugging.html)
-- Las raíces de la depuración en la historia: [http://history-computer.com/Internet/Maturing/Debugging.html](http://history-computer.com/Internet/Maturing/Debugging.html)

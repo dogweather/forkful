@@ -45,5 +45,4 @@ En termes d'implémentation, la fonction `removeQuotes` ci-dessus utilise une la
 
 ## Voir Aussi :
 - Pour les amateurs de regex : [Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
-- Plongée dans les analyseurs avec : [Parsec : une bibliothèque d'analyseur pratique](https://research.microsoft.com/en-us/um/people/daan/download/parsec/parsec.pdf)
 - Une introduction douce aux chaînes de caractères en Haskell : [Apprenez-vous un Haskell pour un grand bien ! - Commencer](http://learnyouahaskell.com/starting-out#strings)

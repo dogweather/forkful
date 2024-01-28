@@ -47,4 +47,3 @@ Usando un debugger, puoi impostare dei breakpoint per fermare l'esecuzione in ce
 Pronto per approfondire? Tuffati in questi:
 - La guida al debugging di Arduino su [Arduino Debugging](https://www.arduino.cc/en/Guide/Environment#toc7)
 - Il manuale di riferimento AVR Libc per configurare avr-gdb: [Pagina Iniziale di AVR Libc](http://www.nongnu.org/avr-libc/)
-- Un approfondimento sull'uso dell'Atmel-ICE: [Usare Atmel-ICE per la Programmazione AVR In Atmel Studio](https://microchipdeveloper.com/atmel-ice:atmel-ice)

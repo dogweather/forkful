@@ -65,4 +65,3 @@ L'implémentation ci-dessus scanne simplement chaque caractère dans la chaîne,
 - [Fonctions de la bibliothèque standard C](http://www.cplusplus.com/reference/clibrary/)
 - [PCRE - Perl Compatible Regular Expressions](https://www.pcre.org/)
 - [Comprendre les pointeurs en C](https://www.learn-c.org/en/Pointers)
-- [Programmation sécurisée en C](https://owasp.org/www-project-secure-coding-in-c)

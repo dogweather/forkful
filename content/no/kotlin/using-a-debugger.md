@@ -58,5 +58,3 @@ Mens Intellij's feilsøker er super hendig for Kotlin, er det ikke den eneste fi
 
 ## Se også
 - IntelliJ IDEA Feilsøkerdokumentasjon: [https://jetbrains.com/idea/](https://www.jetbrains.com/idea/features/debugger.html)
-- Kotlin Dokumentasjon om Feilsøking: [https://kotlinlang.org/docs/debugging.html](https://kotlinlang.org/docs/debugging.html)
-- Røttene til feilsøking i historien: [http://history-computer.com/Internet/Maturing/Debugging.html](http://history-computer.com/Internet/Maturing/Debugging.html)

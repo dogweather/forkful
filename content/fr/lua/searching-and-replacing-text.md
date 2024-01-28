@@ -48,5 +48,4 @@ La quête de chercher et remplacer existe depuis que les gens ont commencé à b
 Pour devenir un pro, regarde par ici :
 - [Lua 5.4 Reference Manual - string.gsub](http://www.lua.org/manual/5.4/manual.html#pdf-string.gsub)
 - [Programming in Lua (4th edition) - Strings](https://www.lua.org/pil/21.1.html)
-- [Lua-users wiki: Patterns Tutorial](http://lua-users.org/wiki/PatternsTutorial)
 - Pour des cas généraux en programmation : [Regular-Expressions.info](https://www.regular-expressions.info/)

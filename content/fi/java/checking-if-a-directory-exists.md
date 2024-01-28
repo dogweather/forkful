@@ -49,4 +49,3 @@ Aikaisemmin, ennen `java.nio.file` -pakettia, `File`-luokkaa käytettiin tiedost
 ## See Also (Katso myös)
 
 - [Official Java Documentation for `Files.exists`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Files.html#exists(java.nio.file.Path,java.nio.file.LinkOption...))
-- [Stack Overflow discussion on checking for file existence in Java](https://stackoverflow.com/questions/ Files.exists-vs-Files.notExists)

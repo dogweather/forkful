@@ -58,5 +58,3 @@ Mimo że debugger IntelliJ jest bardzo przydatny dla Kotlina, to nie jest jedyn�
 
 ## Zobacz też
 - Dokumentacja debuggera IntelliJ IDEA: [https://jetbrains.com/idea/](https://www.jetbrains.com/idea/features/debugger.html)
-- Dokumentacja Kotlina na temat debugowania: [https://kotlinlang.org/docs/debugging.html](https://kotlinlang.org/docs/debugging.html)
-- Korzenie debugowania w historii: [http://history-computer.com/Internet/Maturing/Debugging.html](http://history-computer.com/Internet/Maturing/Debugging.html)

@@ -42,4 +42,3 @@ Para expandir tu conjunto de herramientas de depuración, consulta:
 
 - Documentación del depurador de Erlang: [https://erlang.org/doc/apps/debugger/debugger_chapter.html](https://erlang.org/doc/apps/debugger/debugger_chapter.html)
 - La biblioteca `recon` para Erlang: [https://ferd.github.io/recon/](https://ferd.github.io/recon/)
-- Sobre el rastreo en el BEAM: [https://adoptingerlang.org/docs/development/tracing/](https://adoptingerlang.org/docs/development/tracing/)

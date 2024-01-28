@@ -50,4 +50,3 @@ fun buildGreeting(name: String): String {
 - מסמכי קוטלין על פונקציות: [kotlinlang.org/docs/functions.html](https://kotlinlang.org/docs/functions.html)
 - "קוד נקי" מאת רוברט סי. מרטין, במיוחד החלקים על פונקציות.
 - מושגי FP בקוטלין: [kotlinlang.org/docs/fun-interfaces.html](https://kotlinlang.org/docs/fun-interfaces.html)
-- מבט אל תוך OOP בקוטלין: [kotlinlang.org/docs/object-oriented-programming.html](https://kotlinlang.org/docs/object-oriented-programming.html)

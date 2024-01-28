@@ -42,5 +42,4 @@ Czytanie plików w Lua, języku powstałym w Brazylii w 1993 roku, jest podobne 
 
 ## Zobacz również
 - [Oficjalny manual Lua](https://www.lua.org/manual/5.4/)
-- [Tutorial dotyczący IO w Lua](http://lua-users.org/wiki/IoLibraryTutorial)
 - [Dyskusje na Stack Overflow](https://stackoverflow.com/questions/tagged/lua+file-io)

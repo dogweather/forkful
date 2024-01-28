@@ -45,5 +45,4 @@ print(round(1.98765, 3))  -- 1.988
 
 ## 参见
 - [Lua 5.4 参考手册：数学函数](https://www.lua.org/manual/5.4/manual.html#6.7)
-- [lua-users wiki: Round](http://lua-users.org/wiki/SimpleRound)
 - [Penlight Lua库：数学](https://github.com/lunarmodules/Penlight)

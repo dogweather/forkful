@@ -34,4 +34,3 @@ La función `os.date` en Lua viene del lenguaje C, donde manipular fechas y tiem
 
 ## Ver También
 - [Documentación oficial de Lua sobre la función os.date](https://www.lua.org/manual/5.4/manual.html#pdf-os.date)
-- [Lua Users Wiki sobre trabajando con fechas y tiempos](http://lua-users.org/wiki/DateTime)

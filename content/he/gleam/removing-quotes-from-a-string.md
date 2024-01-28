@@ -45,5 +45,4 @@ Hello, World!
 ראה גם
 לנפשות הסקרניות שבינינו שרוצות לחקור עוד:
 - [תיעוד מודול המחרוזת של Gleam](https://gleam.run/stdlib/string/)
-- [עוד על התאמת תבניות בGleam](https://gleam.run/book/tour/pattern-matching)
 - דיונים על עיבוד טקסט בתכנות ב[Stack Overflow](https://stackoverflow.com/questions/tagged/text-processing)

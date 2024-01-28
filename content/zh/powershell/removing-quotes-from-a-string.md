@@ -61,5 +61,4 @@ Write-Output $cleanString  # 输出：你好，世界！
 
 ## 另请参阅
 - 有关PowerShell中正则表达式的更多信息，请查看官方文档：[about_Regular_Expressions](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)
-- 深入探索字符串操作：[about_String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
 - 探索其他字符串方法：[Trim(), TrimStart(), TrimEnd()](https://docs.microsoft.com/en-us/dotnet/api/system.string.trim?view=net-6.0)

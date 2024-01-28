@@ -49,6 +49,5 @@ echo "Результат: $result"; // Виведення має бути 3, а 
 ## Дивіться також:
 - [Документація Xdebug](https://xdebug.org/docs/)
 - [Посібник по налагодженню PhpStorm](https://www.jetbrains.com/help/phpstorm/debugging.html)
-- [VsCode PHP Debug Adapter](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
 - [PHP.net про phpdbg](https://www.php.net/manual/en/book.phpdbg.php)
 - [pcov на GitHub](https://github.com/krakjoe/pcov)

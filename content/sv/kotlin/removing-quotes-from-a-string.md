@@ -62,9 +62,7 @@ När det gäller implementering är det värt att nämna att Kotlin är interope
 För mer kontext om hantering av strängar i Kotlin, kan du kolla in den officiella dokumentationen:
 
 - [Kotlins String-dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Att arbeta med strängar i Kotlin](https://play.kotlinlang.org/byExample/02_control_flow/06_String%20Templates)
 
 För djupare dykningar i reguljära uttryck och tolkning i Kotlin:
 
 - [Kotlin Regex-dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Texttolkning i Kotlin](https://typealias.com/start/parsing-in-kotlin/)

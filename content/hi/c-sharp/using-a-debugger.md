@@ -42,4 +42,3 @@ static int Sum(int a, int b)
 ## देखें भी
 - [विजुअल स्टूडियो डीबगर दस्तावेज़ीकरण](https://docs.microsoft.com/en-us/visualstudio/debugger/)
 - [डीबगिंग रणनीतियाँ](https://www.codeproject.com/Articles/79508/Effective-Exception-Handling-in-Visual-C)
-- [JetBrains Rider डीबगर सुविधाएँ](https://www.jetbrains.com/rider/features/debugger.html)

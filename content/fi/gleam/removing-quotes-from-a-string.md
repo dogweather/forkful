@@ -45,5 +45,4 @@ Jos sukellamme toteutuksen yksityiskohtiin, `string.trim` toimii poistamalla mer
 ## Katso Myös
 Uteliaisille mielille, jotka haluavat tutkia lisää:
 - [Gleamin String-moduulin dokumentaatio](https://gleam.run/stdlib/string/)
-- [Lisää mallintunnistuksesta Gleamissa](https://gleam.run/book/tour/pattern-matching)
 - Keskustelut tekstinkäsittelystä ohjelmoinnissa [Stack Overflow'ssa](https://stackoverflow.com/questions/tagged/text-processing)

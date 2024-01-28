@@ -58,5 +58,3 @@ IntelliJ의 디버거는 Kotlin에 매우 유용하지만, 유일한 선택지�
 
 ## 참고 자료
 - IntelliJ IDEA 디버거 문서: [https://jetbrains.com/idea/](https://www.jetbrains.com/idea/features/debugger.html)
-- Kotlin 디버깅에 관한 문서: [https://kotlinlang.org/docs/debugging.html](https://kotlinlang.org/docs/debugging.html)
-- 디버깅의 역사적 뿌리: [http://history-computer.com/Internet/Maturing/Debugging.html](http://history-computer.com/Internet/Maturing/Debugging.html)

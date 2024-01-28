@@ -61,5 +61,4 @@ Write-Output $cleanString  # 출력: Hello, World!
 
 ## 참고
 - PowerShell에서 regex에 대한 자세한 정보는 공식 문서를 확인하세요: [about_Regular_Expressions](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)
-- 문자열 조작을 깊이 탐구하세요: [about_String](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
 - 다른 문자열 메소드를 알아보세요: [Trim(), TrimStart(), TrimEnd()](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.trim?view=net-6.0)

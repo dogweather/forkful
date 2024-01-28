@@ -42,4 +42,3 @@ JSON 2001 में वेब डेटा के लिए एक आसान�
 - [JSON.org](https://www.json.org/json-en.html): JSON के बारे में और जानकारी।
 - [GitHub - dkjson](https://github.com/LuaDist/dkjson): Lua के लिए `dkjson` लाइब्रेरी।
 - [Programming in Lua](https://www.lua.org/pil/): Lua भाषा सीखने के लिए आधिकारिक किताब।
-- [Lua Users Wiki - JSON Modules](http://lua-users.org/wiki/JsonModules): JSON प्रोसेसिंग के लिए Lua मॉड्यूल्स।

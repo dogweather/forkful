@@ -60,6 +60,4 @@ En ce qui concerne les détails d'implémentation, le débogueur de Haskell fonc
 
 ## Voir aussi :
 - [Guide de l'utilisateur GHC - Débogueur](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
-- [Haskell Commercial - Outils de Débogage](https://commercialhaskell.github.io/intermediate/docs/debugging-tools/)
-- [Visual Studio Code - Extension Haskell](https://marketplace.visualstudio.com/items?itemName=haskell.haskell)
 - [Plugin Haskell IntelliJ](https://plugins.jetbrains.com/plugin/8258-intellij-haskell)

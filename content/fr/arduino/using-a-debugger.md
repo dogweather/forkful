@@ -47,4 +47,3 @@ En utilisant un débogueur, vous pouvez définir des points d'arrêt pour arrêt
 Prêt à aller plus loin ? Plongez dans ceux-ci :
 - Le guide de débogage Arduino sur [Arduino Debugging](https://www.arduino.cc/en/Guide/Environment#toc7)
 - Le manuel de référence AVR Libc pour configurer avr-gdb : [Page d'accueil AVR Libc](http://www.nongnu.org/avr-libc/)
-- Une plongée plus profonde dans l'utilisation d'Atmel-ICE : [Utiliser Atmel-ICE pour la programmation AVR dans Atmel Studio](https://microchipdeveloper.com/atmel-ice:atmel-ice)

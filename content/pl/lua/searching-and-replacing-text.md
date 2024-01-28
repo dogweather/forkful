@@ -40,4 +40,3 @@ Wyszukiwanie i zamiana tekstu w Lua jest niezwykle wygodne dzięki funkcjom wbud
 ## See Also (Zobacz również):
 - [String Patterns in Lua](https://www.lua.org/pil/20.2.html) – informacje o wzorcach w Lua.
 - [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/) – oficjalny podręcznik referencyjny Lua.
-- [Lua-users wiki](http://lua-users.org/wiki/StringLibraryTutorial) – samouczek na temat używania biblioteki stringów.

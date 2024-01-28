@@ -42,4 +42,3 @@ Gleam — молода мова, тому, поки що вона спираєт
 
 - Документація дебагера Erlang: [https://erlang.org/doc/apps/debugger/debugger_chapter.html](https://erlang.org/doc/apps/debugger/debugger_chapter.html)
 - Бібліотека `recon` для Erlang: [https://ferd.github.io/recon/](https://ferd.github.io/recon/)
-- Про трасування в BEAM: [https://adoptingerlang.org/docs/development/tracing/](https://adoptingerlang.org/docs/development/tracing/)

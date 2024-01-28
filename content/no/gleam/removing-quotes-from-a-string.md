@@ -45,5 +45,4 @@ Hvis vi dykker ned i implementeringsdetaljer, fungerer `string.trim` ved å fjer
 ## Se Også
 For nysgjerrige sinn der ute som ønsker å utforske mer:
 - [Gleams Strengemodul-dokumentasjon](https://gleam.run/stdlib/string/)
-- [Mer om mønstermatching i Gleam](https://gleam.run/book/tour/pattern-matching)
 - Diskusjoner om tekstbehandling i programmering på [Stack Overflow](https://stackoverflow.com/questions/tagged/text-processing)

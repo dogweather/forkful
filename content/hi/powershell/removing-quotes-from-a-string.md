@@ -61,5 +61,4 @@ Write-Output $cleanString  # आउटपुट: Hello, World!
 
 ## भी देखें
 - PowerShell में रेगेक्स के बारे में अधिक जानने के लिए, ऑफिशल डॉक्स चेक करें: [about_Regular_Expressions](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)
-- स्ट्रिंग मैनिपुलेशन की गहराई में जांच करें: [about_String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
 - अन्य स्ट्रिंग मेथड्स की खोज करें: [Trim(), TrimStart(), TrimEnd()](https://docs.microsoft.com/en-us/dotnet/api/system.string.trim?view=net-6.0)

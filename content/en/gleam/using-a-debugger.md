@@ -42,4 +42,3 @@ To expand your debugging toolkit, check out:
 
 - Erlang's debugger documentation: [https://erlang.org/doc/apps/debugger/debugger_chapter.html](https://erlang.org/doc/apps/debugger/debugger_chapter.html)
 - The `recon` library for Erlang: [https://ferd.github.io/recon/](https://ferd.github.io/recon/)
-- On tracing in the BEAM: [https://adoptingerlang.org/docs/development/tracing/](https://adoptingerlang.org/docs/development/tracing/)

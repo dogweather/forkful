@@ -1,6 +1,6 @@
 ---
 title:                "Generating random numbers"
-date:                  2024-01-27T19:45:04.716214-07:00
+date:                  2024-01-27T20:26:19.358617-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generating random numbers"
 programming_language: "Elm"
@@ -12,63 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Generating random numbers in Elm is about creating unpredictable values that can be used for various purposes such as simulations, games, or any application that requires an element of unpredictability. Programmers do it to introduce variability and make their applications more dynamic and engaging.
+Generating random numbers in Elm involves creating unpredictable numerical values that are essential for applications like games, simulations, and security algorithms. Programmers use randomness to simulate real-world variability, enhance user experience, or secure data with encryption techniques.
 
 ## How to:
-
-Elm handles randomness differently than many programming languages. Instead of directly returning a random number, Elm uses a system of commands and subscriptions to ensure that your program remains pure and predictable. Here's a basic guide on generating random numbers.
-
-First, add the `Random` module import to your Elm file:
+Elm handles randomness differently than many programming languages, utilizing a system that keeps functions pure. To generate random numbers, you must work with Elm's `Random` module. Here's a basic example of generating a random number between 1 and 100:
 
 ```Elm
+import Html exposing (Html, text)
 import Random
+
+main : Html msg
+main =
+    Random.generate NewRandomNumber (Random.int 1 100)
+    |> Html.map (text << toString)
+
+type Msg = NewRandomNumber Int
 ```
 
-Then, define a command to generate a random number. Let's create a random integer between 1 and 100:
+This snippet uses `Random.generate` to create a command that, when executed, produces a random number within the specified range. The `type Msg` declaration is used to handle the generated number in your Elm application's update function.
+
+For a more interactive example, let's look at a scenario where users trigger random number generation through a click:
 
 ```Elm
-randomIntCmd : Cmd Msg
-randomIntCmd =
-    Random.generate NewRandomInt (Random.int 1 100)
-```
+import Html exposing (Html, button, div, text)
+import Html.Events exposing (onClick)
+import Random
 
-Here, `Random.generate` creates a command that, when executed, sends a message of type `Msg` with the random integer. `NewRandomInt` is a custom message type you must define in your `Msg` type. For example:
+type alias Model = Int
 
-```Elm
-type Msg
-    = NewRandomInt Int
-```
+type Msg = Generate
 
-In your `update` function, handle the `NewRandomInt` message to process the random integer:
-
-```Elm
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
     case msg of
-        NewRandomInt n ->
-            ({ model | randomNumber = n }, Cmd.none)
+        Generate ->
+            (model, Random.generate NewRandomNumber (Random.int 1 100))
+
+view : Model -> Html Msg
+view model =
+    div []
+        [ text ("Generated number: " ++ String.fromInt model)
+        , button [ onClick Generate ] [ text "Generate new number" ]
+        ]
+
+type Msg = NewRandomNumber Int
 ```
 
-This merely updates the model with the new random number. Remember to define `randomNumber` in your model.
-
-Finally, to trigger the generation, you can call `randomIntCmd` as a command in response to some user action or lifecycle event.
-
-Sample output cannot be directly shown because each execution generates a random number.
+This Elm application introduces interactivity, updating the display with a new random number each time the user clicks the button.
 
 ## Deep Dive
+The design of Elm's random number generation system stems from the language's commitment to purity and predictability. Instead of direct, impure functions that return different values on each call, Elm encapsulates randomness in a `Cmd` structure, aligning with its architecture that separates side effects from pure functions.
 
-Elm's approach to randomness, rooted in its architecture, respects the language's emphasis on purity and predictability. Unlike imperative languages, where a function like `rand()` might return a new random number on each call, Elm encapsulates effects such as random number generation within its architecture of commands and subscriptions. This ensures that Elm programs remain easy to test and debug, as their behavior is more predictable and less dependent on external state.
+While this approach guarantees consistency in application behavior and facilitates debugging, it introduces a learning curve for those accustomed to the imperative generation of random numbers. However, the benefits of maintaining application purity and the ease of testing often outweigh the initial complexity.
 
-This model is inspired by the Elm Architecture and borrows concepts from functional reactive programming (FRP). While it may seem cumbersome compared to direct method calls in languages like JavaScript or Python, this design guarantees that Elm applications maintain a predictable flow of data, making them easier to maintain and evolve.
+Elm's method also contrasts with languages that offer global random number generators, which can lead to subtle bugs due to shared state. By requiring explicit handling of random number generation and its effects, Elm encourages developers to think more critically about where and how randomness affects their applications, leading to more robust and predictable code.
 
-Critics might argue that this architecture introduces boilerplate and complexity for simple tasks like generating a random number. However, the benefits of maintainability, testability, and predictability generally outweigh these concerns. For use cases requiring extensive random number generation or more direct control over randomness, external libraries or ports to JavaScript could be considered as alternatives, although they may compromise some of the guarantees provided by Elm's architecture.
-
-## See also
-
-### Official Elm Documentation
-- [elm/random Package](https://package.elm-lang.org/packages/elm/random/latest/)
-
-### Tutorials and Guides
-- **Medium Articles**: [Introduction to Random Generators in Elm](https://medium.com/@_rchaves_/introduction-to-random-generators-in-elm-2b112b7fcd34)
-- **Practical Examples**: [Elm Random Example on Ellie](https://ellie-app.com/new) *(Note: Search for "Random" examples after navigating to the link)*
+For alternatives, other functional languages offer similar functionalities but may implement them differently. Haskell, for example, also maintains purity in random number generation but through the use of monads, a concept that Elm deliberately avoids to simplify its model. Comparatively, Elm's approach is more accessible to newcomers and emphasizes a straightforward application architecture without sacrificing the power of functional programming principles.

@@ -61,5 +61,4 @@ Da notare, `-replace` utilizza regex dietro le quinte, quindi, quando lo usi, ti
 
 ## Vedi anche
 - Per saperne di più su regex in PowerShell, consulta la documentazione ufficiale: [about_Regular_Expressions](https://docs.microsoft.com/it-it/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)
-- Esplora in profondità la manipolazione delle stringhe: [about_String](https://docs.microsoft.com/it-it/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
 - Scopri altri metodi delle stringhe: [Trim(), TrimStart(), TrimEnd()](https://docs.microsoft.com/it-it/dotnet/api/system.string.trim?view=net-6.0)

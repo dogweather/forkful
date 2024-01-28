@@ -42,4 +42,3 @@ Visual Studio의 디버거 대안에는 C 스타일 언어용 GDB나 Python용 p
 ## 참고 자료
 - [Visual Studio 디버거 문서](https://docs.microsoft.com/ko-kr/visualstudio/debugger/)
 - [디버깅 전략](https://www.codeproject.com/Articles/79508/Effective-Exception-Handling-in-Visual-C)
-- [JetBrains Rider 디버거 기능](https://www.jetbrains.com/rider/features/debugger.html)

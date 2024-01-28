@@ -45,5 +45,4 @@ Lua는 다른 언어들과 달리 기본적으로 round 함수를 포함하고 �
 
 ## 참고 자료
 - [Lua 5.4 참조 매뉴얼: 수학 함수](https://www.lua.org/manual/5.4/manual.html#6.7)
-- [lua-users wiki: Round](http://lua-users.org/wiki/SimpleRound)
 - [Penlight Lua 라이브러리: 수학](https://github.com/lunarmodules/Penlight)

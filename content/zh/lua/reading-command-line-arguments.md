@@ -43,4 +43,3 @@ end
 ## See Also 参考资料
 - [Lua 5.4 参考手册](https://www.lua.org/manual/5.4/)
 - [Programming in Lua](https://www.lua.org/pil/contents.html)
-- [Lua-users Wiki: Command line arguments](http://lua-users.org/wiki/CommandLineArguments)

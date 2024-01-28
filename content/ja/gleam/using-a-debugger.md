@@ -42,4 +42,3 @@ Gleamの記述とErlangでのデバッグの間の切り替えは、あたかも
 
 - Erlangのデバッガドキュメント：[https://erlang.org/doc/apps/debugger/debugger_chapter.html](https://erlang.org/doc/apps/debugger/debugger_chapter.html)
 - Erlang用の`recon`ライブラリ：[https://ferd.github.io/recon/](https://ferd.github.io/recon/)
-- BEAMでのトレーシングについて：[https://adoptingerlang.org/docs/development/tracing/](https://adoptingerlang.org/docs/development/tracing/)

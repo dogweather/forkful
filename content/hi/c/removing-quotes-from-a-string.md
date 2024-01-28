@@ -65,4 +65,3 @@ int main() {
 - [C स्टैंडर्ड लाइब्रेरी फंक्शन्स](http://www.cplusplus.com/reference/clibrary/)
 - [PCRE - पर्ल कम्पेटिबल रेगुलर एक्सप्रेशंस](https://www.pcre.org/)
 - [C में पॉइंटर्स को समझना](https://www.learn-c.org/en/Pointers)
-- [C में सिक्योर कोडिंग](https://owasp.org/www-project-secure-coding-in-c)

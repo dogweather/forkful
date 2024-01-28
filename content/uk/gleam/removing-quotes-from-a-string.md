@@ -45,5 +45,4 @@ Hello, World!
 ## Дивіться також
 Для цікавих розумів тут, хто хоче дослідити більше:
 - [Документація модулю рядків Gleam](https://gleam.run/stdlib/string/)
-- [Більше про зіставлення взірців у Gleam](https://gleam.run/book/tour/pattern-matching)
 - Обговорення процесу обробки тексту в програмуванні на [Stack Overflow](https://stackoverflow.com/questions/tagged/text-processing)

@@ -51,4 +51,3 @@ For implementeringsdetaljer, `string.format`-funksjonen støtter ulike formateri
 ## Se Også
 - [Programming in Lua](https://www.lua.org/pil/contents.html): Den offisielle boken for å lære Lua.
 - [Lua 5.4 Reference Manual: string library](https://www.lua.org/manual/5.4/manual.html#6.4): Dokumentasjon for strengbiblioteket i Lua 5.4.
-- [Lua Users Wiki: StringsTutorial](http://lua-users.org/wiki/StringsTutorial): Eksempler og praksis for strengmanipulering.

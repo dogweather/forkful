@@ -42,4 +42,3 @@ ruby example.rb 이것은 테스트입니다
 ## 참고자료:
 - [Ruby-Doc: ARGV](https://ruby-doc.org/core-2.7.0/ARGF.html)
 - [Ruby-Doc: OptionParser](https://ruby-doc.org/stdlib-2.7.0/libdoc/optparse/rdoc/OptionParser.html)
-- [Stack Overflow: How to get and use command line arguments?](https://stackoverflow.com/questions/11774743/how-to-get-and-use-command-line-arguments)

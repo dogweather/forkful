@@ -62,9 +62,7 @@ fun main() {
 Kotlin में स्ट्रिंग्स को हैंडल करने पर अधिक संदर्भ के लिए, आधिकारिक दस्तावेज़ीकरण देख सकते हैं:
 
 - [Kotlin का स्ट्रिंग दस्तावेज़ीकरण](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Kotlin में स्ट्रिंग्स के साथ काम करना](https://play.kotlinlang.org/byExample/02_control_flow/06_String%20Templates)
 
 Kotlin में नियमित अभिव्यक्तियों और पार्सिंग में गहराई से उतरने के लिए:
 
 - [Kotlin Regex दस्तावेज़ीकरण](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Kotlin में टेक्स्ट पार्सिंग](https://typealias.com/start/parsing-in-kotlin/)

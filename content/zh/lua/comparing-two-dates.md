@@ -49,4 +49,3 @@ end
 
 - [Lua 5.4 参考手册](https://www.lua.org/manual/5.4/)
 - [luadate — 一个日期和时间的 Lua 库](https://github.com/Tieske/date)
-- [Lua 用户维基上的日期和时间](http://lua-users.org/wiki/DateTime)

@@ -56,5 +56,3 @@ Ponadto, z przejściem na PowerShell Core (PowerShell wieloplatformowy), debugow
 ## Zobacz również
 Aby dowiedzieć się więcej o debugowaniu w PowerShell:
 - [about_Debuggers](https://docs.microsoft.com/pl-pl/powershell/module/microsoft.powershell.core/about/about_Debuggers)
-- [Dokumentacja PowerShell na temat debugowania](https://docs.microsoft.com/pl-pl/powershell/scripting/debugging/debugging-in-powershell?view=powershell-7.2)
-- [Rozszerzenie PowerShell do Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)

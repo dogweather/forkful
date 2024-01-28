@@ -58,5 +58,4 @@ Toteutus muuttuu haastavaksi, kun on tarve pyöristää mielivaltaisen tarkkuude
 
 ## Katso myös
 - [`<math.h>` dokumentaatio](https://en.cppreference.com/w/c/numeric/math)
-- [Liukulukuaritmeetiikka](https://fi.wikipedia.org/wiki/Liukulukuaritmetiikka)
 - [Liukulukulaskentojen varmentamisen ansoja](https://dl.acm.org/doi/10.1145/1186736.1186737)

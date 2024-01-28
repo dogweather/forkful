@@ -53,4 +53,3 @@ Hello, World!
 ## 참조
 - C++ `std::remove` 참조: [cppreference.com](https://en.cppreference.com/w/cpp/algorithm/remove)
 - `std::string` 조작에 대한 자세한 내용: [cplusplus.com](http://www.cplusplus.com/reference/string/string/)
-- C++용 정규 표현식 입문: [learncpp.com](https://www.learncpp.com/cpp-tutorial/regular-expressions-with-std-regex/)

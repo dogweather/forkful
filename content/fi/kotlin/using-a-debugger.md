@@ -58,5 +58,3 @@ Vaikka IntelliJ:n debuggeri on erittäin kätevä Kotlinille, se ei ole ainoa ka
 
 ## Katso myös
 - IntelliJ IDEA Debugger -dokumentaatio: [https://jetbrains.com/idea/](https://www.jetbrains.com/idea/features/debugger.html)
-- Kotlin-dokumentaatio debuggaamisesta: [https://kotlinlang.org/docs/debugging.html](https://kotlinlang.org/docs/debugging.html)
-- Debuggauksen juuret historiassa: [http://history-computer.com/Internet/Maturing/Debugging.html](http://history-computer.com/Internet/Maturing/Debugging.html)

@@ -61,5 +61,4 @@ Write-Output $cleanString  # פלט: שלום, עולם!
 
 ## ראו גם
 - למידע נוסף על regex ב-PowerShell, בדקו את התיעוד הרשמי: [about_Regular_Expressions](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)
-- חקרו את מניפולציית המחרוזת לעומק: [about_String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
 - גלו שיטות נוספות למחרוזת: [Trim(), TrimStart(), TrimEnd()](https://docs.microsoft.com/en-us/dotnet/api/system.string.trim?view=net-6.0)

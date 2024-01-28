@@ -41,5 +41,4 @@ Historiquement, Lua n'a pas été conçu avec le téléchargement de pages web e
 
 ## See Also (Voir Aussi)
 - La documentation de 'luasocket' : [http://w3.impa.br/~diego/software/luasocket/](http://w3.impa.br/~diego/software/luasocket/)
-- Tutoriels Lua : [http://lua-users.org/wiki/TutorialDirectory](http://lua-users.org/wiki/TutorialDirectory)
 - Documentation de Lua : [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)

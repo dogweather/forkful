@@ -53,4 +53,3 @@ Implementierungstechnisch betrachtet, entfernt `std::remove` tatsächlich keine 
 ## Siehe auch
 - C++ `std::remove` Referenz: [cppreference.com](https://de.cppreference.com/w/cpp/algorithm/remove)
 - Mehr über `std::string` Manipulation: [cplusplus.com](http://www.cplusplus.com/reference/string/string/)
-- Ein Regex-Primer für C++: [learncpp.com](https://www.learncpp.com/cpp-tutorial/regular-expressions-with-std-regex/)

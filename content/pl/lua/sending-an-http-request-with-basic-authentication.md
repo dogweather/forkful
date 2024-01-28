@@ -57,6 +57,4 @@ Wysyłanie żądania HTTP z uwierzytelnianiem podstawowym nie jest nowością. W
 
 ## See Also (Zobacz również)
 - [LuaSec](https://github.com/brunoos/luasec) – biblioteka do bezpiecznych połączeń SSL dla Lua.
-- [HTTP libraries for Lua](http://lua-users.org/wiki/HttpLibrary) – przegląd bibliotek HTTP dla Lua.
 - [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617) – dokumentacja techniczna opisująca standard uwierzytelniania podstawowego.
-- [Base64 Encoding with Lua](http://lua-users.org/wiki/BaseSixtyFour) – dodatkowe informacje na temat kodowania Base64 w Lua.

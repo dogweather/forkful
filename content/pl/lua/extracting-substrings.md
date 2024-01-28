@@ -43,4 +43,3 @@ Lua indeksuje znaki od 1, a nie od 0 jak większość języków programowania. I
 ## See Also (Zobacz także)
 - [String Manipulation](https://www.lua.org/manual/5.4/manual.html#6.4) - Oficjalne informacje o manipulacji ciągami w Lua.
 - [Programming in Lua (Edition 4)](https://www.lua.org/pil/contents.html) - Książka oferująca rozległą wiedzę o programowaniu w Lua, w tym o ciągach znaków.
-- [Lua Users Wiki: Strings Tutorial](http://lua-users.org/wiki/StringTutorial) - Praktyczny poradnik i przykłady manipulacji ciągami w Lua.

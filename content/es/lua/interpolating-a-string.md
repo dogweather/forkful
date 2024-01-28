@@ -51,4 +51,3 @@ En la implementación, la interpolación nativa en Lua utiliza 'f-strings', que 
 
 - Referencia oficial de Lua 5.4: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
 - "Programming in Lua" (cuarta edición) para profundizar en el lenguaje: [https://www.lua.org/pil/contents.html](https://www.lua.org/pil/contents.html)
-- Tutorial de Lua para principiantes: [http://lua-users.org/wiki/TutorialDirectory](http://lua-users.org/wiki/TutorialDirectory)

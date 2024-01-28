@@ -45,5 +45,4 @@ If we dive into implementation details, `string.trim` works by removing characte
 ## See Also
 For the curious minds out there who want to explore more:
 - [Gleam's String module documentation](https://gleam.run/stdlib/string/)
-- [More on pattern matching in Gleam](https://gleam.run/book/tour/pattern-matching)
 - Discussions on text processing in programming on [Stack Overflow](https://stackoverflow.com/questions/tagged/text-processing)

@@ -45,4 +45,3 @@ Tag: 12
 ## Siehe Auch:
 - Lua-Handbuch: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
 - os.date() Referenz: [https://www.lua.org/manual/5.4/manual.html#pdf-os.date](https://www.lua.org/manual/5.4/manual.html#pdf-os.date)
-- Lua Users Wiki zu Datums- und Zeitfunktionen: [http://lua-users.org/wiki/DateTime](http://lua-users.org/wiki/DateTime)

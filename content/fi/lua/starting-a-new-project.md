@@ -38,5 +38,4 @@ Projektin aloittamiseen ei ole monimutkaisia alustoja. Tiedoston nimeäminen `.l
 ## See Also - Katso Myös
 - Lua's official site for documentation: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
 - Learn Lua in Y Minutes: [https://learnxinyminutes.com/docs/lua/](https://learnxinyminutes.com/docs/lua/)
-- Lua style guide for good coding practices: [http://lua-users.org/wiki/LuaStyleGuide](http://lua-users.org/wiki/LuaStyleGuide)
 - Online Lua compiler for fast experiments: [https://repl.it/languages/lua](https://repl.it/languages/lua)

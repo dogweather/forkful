@@ -46,5 +46,4 @@ Détails d'implémentation :
 
 ## See Also
 - [Lua 5.4 Reference Manual: os.date](https://www.lua.org/manual/5.4/manual.html#6.9)
-- [Lua-users Wiki: Date and Time](http://lua-users.org/wiki/DateTime)
 - [GitHub: luadate – A more robust date library for Lua](https://github.com/Tieske/date)

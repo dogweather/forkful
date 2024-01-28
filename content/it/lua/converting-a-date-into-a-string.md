@@ -44,4 +44,3 @@ La funzionalità di gestione della data e ora in Lua è diretta, offrendo essenz
 
 ## See Also:
 - [La documentazione ufficiale di Lua su os.date](https://www.lua.org/manual/5.4/manual.html#pdf-os.date)
-- [LuaUsers wiki per esempi e spiegazioni](http://lua-users.org/wiki/OsLibraryTutorial)

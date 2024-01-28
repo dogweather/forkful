@@ -62,9 +62,7 @@ En cuanto a la implementación, vale la pena mencionar que Kotlin es interoperab
 Para más contexto sobre el manejo de cadenas en Kotlin, puedes consultar la documentación oficial:
 
 - [Documentación de String de Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Trabajando con Cadenas en Kotlin](https://play.kotlinlang.org/byExample/02_control_flow/06_String%20Templates)
 
 Para análisis más profundos sobre expresiones regulares y análisis en Kotlin:
 
 - [Documentación de Kotlin Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Análisis de texto en Kotlin](https://typealias.com/start/parsing-in-kotlin/)

@@ -46,5 +46,4 @@ Lua는 플랫폼 간 차이를 처리하기 위해 내부적으로 시간 관련
 
 ## See Also (더 보기)
 - Lua 5.4 Reference Manual: `os.date`에 대한 자세한 내용은 [Lua 5.4 Manual](https://www.lua.org/manual/5.4/manual.html#pdf-os.date)을 참조하세요.
-- Lua-users Wiki: 다양한 날짜와 시간 처리 방법에 대해 더 배우고 싶으시면 [Lua-users Wiki](http://lua-users.org/wiki/DateTime)를 방문해보세요.
 - Programming in Lua: Lua 프로그래밍의 기본을 배우기 위한 책 [Programming in Lua](https://www.lua.org/pil/)를 읽어보세요.

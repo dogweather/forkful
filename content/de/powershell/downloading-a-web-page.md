@@ -46,5 +46,4 @@ Anders als `curl`, das mit Command-Line-Optionen arbeitet, nutzt PowerShell's `I
 
 ## See Also:
 - [PowerShell Dokumentation für Invoke-WebRequest](https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.utility/invoke-webrequest)
-- [Vergleich zwischen curl und Invoke-RestMethod](https://stackoverflow.com/questions/32798864/compare-curl-and-invoke-restmethod)
 - [Mehr zu REST-APIs mit Invoke-RestMethod](https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.utility/invoke-restmethod)

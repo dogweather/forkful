@@ -47,4 +47,3 @@ Atmel-ICEのような回路内エミュレータの代わりになるものと�
 もっと深く掘り下げる準備はできましたか？以下を探検してください：
 - [Arduinoデバッグガイド](https://www.arduino.cc/en/Guide/Environment#toc7)（Arduinoのデバッグガイド）
 - avr-gdbの設定に関するAVR Libcリファレンスマニュアル：[AVR Libcホームページ](http://www.nongnu.org/avr-libc/)
-- Atmel-ICEの使用に関するさらなる深い掘り下げ：[Atmel StudioでのAVRプログラミングにおけるAtmel-ICEの使用](https://microchipdeveloper.com/atmel-ice:atmel-ice)

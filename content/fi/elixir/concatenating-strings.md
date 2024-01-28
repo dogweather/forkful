@@ -67,5 +67,4 @@ Ymmärtämällä nämä taustalla olevat käsitteet ja työkalut, voit merkittä
 Lisätietoja merkkijonoista ja suorituskyvystä Elixirissä, seuraavat resurssit ovat hyödyllisiä:
 
 - [Elixirin virallinen opas binääritiedoista, merkkijonoista ja merkkilistoista](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
-- [IOList: Elixirin sveitsiläinen armeijanveitsi suorituskyvylle](https://dockyard.com/blog/2019/05/23/optimizing-elixir-and-phoenix-with-iolist)
 - [Erlangin tehokkuusopas](http://erlang.org/doc/efficiency_guide/listHandling.html) - Vaikka räätälöity Erlangille, paljon tästä pätee Elixiriin sen perustana olevan Erlang VM:n ansiosta.

@@ -67,5 +67,4 @@ content = ["Header", "\n", "Body text", "\n", "Footer"]
 स्ट्रिंग्स और प्रदर्शन पर एलिक्सिर में गहराई से पढ़ाई के लिए, निम्नलिखित संसाधन लाभकारी होंगे:
 
 - [एलिक्सिर का आधिकारिक गाइड बाइनरीज़, स्ट्रिंग्स, और चारलिस्ट्स पर](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
-- [IOList: प्रदर्शन के लिए एलिक्सिर का स्विस आर्मी चाकू](https://dockyard.com/blog/2019/05/23/optimizing-elixir-and-phoenix-with-iolist)
 - [एरलंग दक्षता गाइड](http://erlang.org/doc/efficiency_guide/listHandling.html) - यद्यपि एरलैंग के लिए तैयार किया गया है, इसकी बहुत सी बातें एलिक्सिर के लिए लागू होती हैं क्योंकि यह एरलंग वीएम पर आधारित है।

@@ -61,4 +61,3 @@ Detalles de implementación:
 
 - Documentación de Lua: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
 - LuaFileSystem (lfs) en GitHub: [https://github.com/keplerproject/luafilesystem](https://github.com/keplerproject/luafilesystem)
-- Tutorial de Lua File System: [http://lua-users.org/wiki/LuaFileSystemTutorial](http://lua-users.org/wiki/LuaFileSystemTutorial)

@@ -40,4 +40,3 @@ main = print $ lengthOfString "안녕하세요!"
 - Haskell Wiki: [https://wiki.haskell.org](https://wiki.haskell.org/String)
 - Hackage `Data.Text` Documentation: [https://hackage.haskell.org/package/text](https://hackage.haskell.org/package/text)
 - Hackage `Data.ByteString` Documentation: [https://hackage.haskell.org/package/bytestring](https://hackage.haskell.org/package/bytestring)
-- Learn You a Haskell for Great Good! – 문자열 처리: [http://learnyouahaskell.com](http://learnyouahaskell.com/chapters/starting-out)

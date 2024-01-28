@@ -53,4 +53,3 @@ Hello, World!
 ## ראה גם
 - הפניה ל־C++ `std::remove`: [cppreference.com](https://en.cppreference.com/w/cpp/algorithm/remove)
 - עוד על עיבוד `std::string`: [cplusplus.com](http://www.cplusplus.com/reference/string/string/)
-- מבוא לביטויים רגולריים ב־C++: [learncpp.com](https://www.learncpp.com/cpp-tutorial/regular-expressions-with-std-regex/)

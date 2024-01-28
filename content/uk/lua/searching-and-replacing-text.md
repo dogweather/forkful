@@ -47,4 +47,3 @@ print(result)  -- Виведе: "Ідентифікатори: #124, #457, #790"
 ## Ще кілька ресурсів
 - [Lua 5.4 Reference Manual - Patterns](https://www.lua.org/manual/5.4/manual.html#6.4.1) - Офіційна документація по шаблонах у Lua.
 - [Programming in Lua (first edition)](https://www.lua.org/pil/20.2.html) - Розділ про шаблони з книги "Програмування на Lua".
-- [Lua Users Wiki - Patterns Tutorial](http://lua-users.org/wiki/PatternsTutorial) - Поглиблений туторіал по шаблонах Lua.

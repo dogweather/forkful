@@ -42,4 +42,3 @@ Gleam הוא שפה צעירה, אז בעוד שהיא עומדת על כתפי�
 
 - תיעוד הדיבאגר של Erlang: [https://erlang.org/doc/apps/debugger/debugger_chapter.html](https://erlang.org/doc/apps/debugger/debugger_chapter.html)
 - הספריה `recon` עבור Erlang: [https://ferd.github.io/recon/](https://ferd.github.io/recon/)
-- על איתור ב-BEAM: [https://adoptingerlang.org/docs/development/tracing/](https://adoptingerlang.org/docs/development/tracing/)

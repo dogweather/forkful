@@ -65,4 +65,3 @@ int main() {
 - [Функції стандартної бібліотеки C](http://www.cplusplus.com/reference/clibrary/)
 - [PCRE - Perl Compatible Regular Expressions](https://www.pcre.org/)
 - [Розуміння вказівників у C](https://www.learn-c.org/en/Pointers)
-- [Безпечне програмування на C](https://owasp.org/www-project-secure-coding-in-c)

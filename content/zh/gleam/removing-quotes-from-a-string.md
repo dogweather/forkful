@@ -45,5 +45,4 @@ Hello, World!
 ## 另请参阅
 对于那些想要探索更多的好奇心强的人：
 - [Gleam的String模块文档](https://gleam.run/stdlib/string/)
-- [在Gleam中有关模式匹配的更多信息](https://gleam.run/book/tour/pattern-matching)
 - 关于编程中文本处理的讨论在[Stack Overflow](https://stackoverflow.com/questions/tagged/text-processing)上

@@ -44,4 +44,3 @@ Suorituskyvyn kannalta, vaikka Lua ei tarjoa regexin täyttä tehoa, sen kuviora
 Lisätietoja:
 - [Lua 5.4 Reference Manual: Patterns](https://www.lua.org/manual/5.4/manual.html#6.4.1)
 - [Programming in Lua (first edition): Strings](https://www.lua.org/pil/20.2.html)
-- [Lua Users Wiki: Patterns Tutorial](http://lua-users.org/wiki/PatternsTutorial)

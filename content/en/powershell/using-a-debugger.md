@@ -56,5 +56,3 @@ Moreover, with the transition to PowerShell Core (cross-platform PowerShell), de
 ## See Also
 For more on debugging in PowerShell:
 - [about_Debuggers](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Debuggers)
-- [PowerShell documentation on debugging](https://docs.microsoft.com/en-us/powershell/scripting/debugging/debugging-in-powershell?view=powershell-7.2)
-- [Visual Studio Code PowerShell Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)

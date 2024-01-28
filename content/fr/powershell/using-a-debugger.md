@@ -56,5 +56,3 @@ De plus, avec la transition vers PowerShell Core (PowerShell multiplateforme), l
 ## Voir Aussi
 Pour en savoir plus sur le débogage dans PowerShell :
 - [about_Debuggers](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Debuggers)
-- [Documentation PowerShell sur le débogage](https://docs.microsoft.com/en-us/powershell/scripting/debugging/debugging-in-powershell?view=powershell-7.2)
-- [Extension PowerShell de Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)

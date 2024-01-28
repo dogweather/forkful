@@ -55,4 +55,3 @@ Lua 文件API简单，但强大。它使用了底层的C标准I/O库，所以效
 
 - [Lua 5.4 参考手册](https://www.lua.org/manual/5.4/)
 - [Programming in Lua（第四版）](https://www.lua.org/pil/contents.html)
-- [Lua-users Wiki: io库](http://lua-users.org/wiki/IoLibraryTutorial)

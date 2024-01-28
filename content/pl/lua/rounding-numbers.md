@@ -45,5 +45,4 @@ Wewnętrznie, te funkcje zazwyczaj działają, wykorzystując sposób, w jaki ko
 
 ## Zobacz też
 - [Lua 5.4 Referencyjny Podręcznik: Funkcje matematyczne](https://www.lua.org/manual/5.4/manual.html#6.7)
-- [lua-users wiki: Round](http://lua-users.org/wiki/SimpleRound)
 - [Biblioteki Lua Penlight: Matematyka](https://github.com/lunarmodules/Penlight)

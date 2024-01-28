@@ -38,5 +38,4 @@ print(formatted) -- הדפסה: עולם, אתה בן 30 שנים.
 
 ## ראה גם
 - [תיעוד ה-Lua על מחרוזות](https://www.lua.org/manual/5.4/manual.html#6.4)
-- [פוסטים בבלוג של Lua על טיפים לצירוף מחרוזות](http://lua-users.org/wiki/StringLibraryTutorial)
 - [מדריך לימוד Lua](http://tylerneylon.com/a/learn-lua/)

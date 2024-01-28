@@ -42,4 +42,3 @@ end
 
 ## קישורים נוספים
 - [תיעוד לואה הרשמי](https://www.lua.org/manual/5.4/)
-- [מדריך למיתור בעיות במחרוזות יוניקוד בלואה](http://lua-users.org/wiki/LuaUnicode)

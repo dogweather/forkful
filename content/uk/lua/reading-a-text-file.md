@@ -37,4 +37,3 @@ file:close()
 ## See Also / Дивіться Також:
 - [Programming in Lua (official book)](https://www.lua.org/pil/)
 - [Lua 5.4 Reference Manual – I/O library](https://www.lua.org/manual/5.4/manual.html#6.8)
-- [Lua-users wiki: FileInputOutput](http://lua-users.org/wiki/FileInputOutput)

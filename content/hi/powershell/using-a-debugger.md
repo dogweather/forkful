@@ -56,5 +56,3 @@ PowerShell के मूल डीबगिंग टूल्स के लि�
 ## और देखें
 PowerShell में डीबगिंग पर अधिक के लिए:
 - [about_Debuggers](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Debuggers)
-- [PowerShell डॉक्यूमेंटेशन ऑन डीबगिंग](https://docs.microsoft.com/en-us/powershell/scripting/debugging/debugging-in-powershell?view=powershell-7.2)
-- [Visual Studio Code PowerShell एक्सटेंशन](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)

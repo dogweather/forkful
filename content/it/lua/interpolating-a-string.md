@@ -51,4 +51,3 @@ A livello di implementazione, l'uso delle funzioni di stringa può rallentare le
 ## See Also
 - [Programming in Lua (official book)](https://www.lua.org/pil/contents.html)
 - [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/)
-- [Lua-users wiki: String Interpolation](http://lua-users.org/wiki/StringInterpolation)

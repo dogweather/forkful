@@ -60,6 +60,4 @@ Was die Implementierungsdetails angeht, so arbeitet der Debugger von Haskell mit
 
 ## Siehe auch:
 - [GHC Benutzerhandbuch - Debugger](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
-- [Commercial Haskell - Debugging-Werkzeuge](https://commercialhaskell.github.io/intermediate/docs/debugging-tools/)
-- [Visual Studio Code - Haskell Erweiterung](https://marketplace.visualstudio.com/items?itemName=haskell.haskell)
 - [IntelliJ Haskell Plugin](https://plugins.jetbrains.com/plugin/8258-intellij-haskell)

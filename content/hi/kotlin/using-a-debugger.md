@@ -58,5 +58,3 @@ You've got it! The mystery number was 42
 
 ## देखें भी
 - IntelliJ IDEA डीबगर डॉक्यूमेंटेशन: [https://jetbrains.com/idea/](https://www.jetbrains.com/idea/features/debugger.html)
-- डिबगिंग पर Kotlin डॉक्यूमेंटेशन: [https://kotlinlang.org/docs/debugging.html](https://kotlinlang.org/docs/debugging.html)
-- इतिहास में डीबगिंग की जड़ें: [http://history-computer.com/Internet/Maturing/Debugging.html](http://history-computer.com/Internet/Maturing/Debugging.html)

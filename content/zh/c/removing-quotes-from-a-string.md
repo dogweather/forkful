@@ -65,4 +65,3 @@ Sanitized: He said, Hello, world!
 - [C 标准库函数](http://www.cplusplus.com/reference/clibrary/)
 - [PCRE - 与 Perl 兼容的正则表达式](https://www.pcre.org/)
 - [理解 C 语言中的指针](https://www.learn-c.org/en/Pointers)
-- [C 语言安全编码](https://owasp.org/www-project-secure-coding-in-c)

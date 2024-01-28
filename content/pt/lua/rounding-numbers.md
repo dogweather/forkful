@@ -45,5 +45,4 @@ Internamente, essas funções normalmente funcionam explorando a maneira como os
 
 ## Veja Também
 - [Lua 5.4 Manual de Referência: As Funções Matemáticas](https://www.lua.org/manual/5.4/manual.html#6.7)
-- [lua-users wiki: Arredondar](http://lua-users.org/wiki/SimpleRound)
 - [Bibliotecas Lua Penlight: Matemática](https://github.com/lunarmodules/Penlight)

@@ -49,6 +49,5 @@ echo "התוצאה היא: $result"; // התוצאה אמורה להיות 3, ל
 ## ראה גם:
 - [תיעוד Xdebug](https://xdebug.org/docs/)
 - [מדריך לדיבאג ב-PhpStorm](https://www.jetbrains.com/help/phpstorm/debugging.html)
-- [מתאם דיבאג PHP ב-VsCode](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
 - [PHP.net על phpdbg](https://www.php.net/manual/en/book.phpdbg.php)
 - [pcov ב-GitHub](https://github.com/krakjoe/pcov)

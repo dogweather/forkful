@@ -55,4 +55,3 @@ Para públicos mais exigentes, como aplicações sérias de matemática ou finan
 ## Veja Também
 - [Documentação Oficial do C# sobre `Math.Round`](https://docs.microsoft.com/en-us/dotnet/api/system.math.round)
 - [Stack Overflow: Quando devo usar Double em vez de Decimal?](https://stackoverflow.com/questions/1165761/decimal-vs-double-which-one-should-i-use-and-when)
-- [Padrão IEEE para Aritmética de Ponto Flutuante (IEEE 754)](https://pt.wikipedia.org/wiki/IEEE_754)

@@ -52,4 +52,3 @@ print(year, month, day)  -- 2023 04 01
 ## See Also (관련 자료)
 - Lua 5.4 참조 매뉴얼: [string.sub](https://www.lua.org/manual/5.4/manual.html#pdf-string.sub)
 - 복잡한 패턴 매칭 예제: [string.match](https://www.lua.org/manual/5.4/manual.html#pdf-string.match)
-- Lua-users wiki 문자열 튜토리얼: [Lua-Users String Tutorial](http://lua-users.org/wiki/StringLibraryTutorial)

@@ -44,5 +44,4 @@ Ved implementasjon, tenk på ytelsen ved å fjerne tegn. Store tekster og komple
 ## Se også
 - Lua's offisielle dokumentasjon om mønstertilpasning: [https://www.lua.org/manual/5.4/manual.html#6.4.1](https://www.lua.org/manual/5.4/manual.html#6.4.1)
 - 'Programming in Lua', for en grundig gjennomgang av strengmønstre: [https://www.lua.org/pil/20.2.html](https://www.lua.org/pil/20.2.html)
-- Lpeg bibliotek for mønster matching: [http://www.inf.puc-rio.br/~roberto/lpeg/](http://www.inf.puc-rio.br/~roberto/lpeg/)
 - RexLib: [http://rrthomas.github.io/lrexlib/](http://rrthomas.github.io/lrexlib/)

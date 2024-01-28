@@ -46,4 +46,3 @@ Lua에서 파일을 다루는 것은 io 라이브러리를 통해 이루어집�
 
 ## See Also (참고 자료)
 - [Lua 5.4 Reference Manual - io library](https://www.lua.org/manual/5.4/manual.html#6.8)
-- [Lua-users wiki: File input/output](http://lua-users.org/wiki/FileInputOutput)

@@ -38,4 +38,3 @@ Dal punto di vista dell'implementazione, `gsub` crea una nuova stringa anziché 
 ## See Also
 - [Programming in Lua (book)](https://www.lua.org/pil/contents.html) per un'introduzione completa.
 - [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/) per i dettagli sulla funzione `gsub` e pattern matching.
-- [Lua Users Wiki](http://lua-users.org/wiki/) per esempi pratici e guide dalla community.
