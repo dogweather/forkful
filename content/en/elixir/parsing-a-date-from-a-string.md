@@ -7,6 +7,8 @@ programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/parsing-a-date-from-a-string.md"
+changelog:
+  2024-01-28, @dogweather, reviewed
 ---
 
 {{< edit_this_page >}}
