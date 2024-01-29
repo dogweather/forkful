@@ -1,21 +1,24 @@
 ---
-title:                "Code in Funktionen organisieren"
-date:                  2024-01-26T01:10:10.229509-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Code in Funktionen organisieren"
+title:                "Organisation von Code in Funktionen"
+date:                  2024-01-28T23:01:48.206450-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Organisation von Code in Funktionen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/organizing-code-into-functions.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed and added links
+  - 2024-01-28, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Organisieren von Code in Funktionen bedeutet, Teile eines Skripts zusammenzufassen, um spezifische Aufgaben auszuführen. Wir machen dies, da es den Code leichter lesbar, testbar und wiederverwendbar macht — niemand möchte sich durch einen Sumpf aus Codespaghetti wühlen.
+Code in Funktionen zu organisieren bedeutet, Teile eines Skripts zu bündeln, um spezifische Aufgaben zu erledigen. Wir tun dies, da es den Code leichter lesbar, testbar und wiederverwendbar macht – niemand möchte durch einen Sumpf von Codespaghetti waten.
 
 ## Wie geht das:
-In Fish schreibt man eine Funktion mit dem Schlüsselwort `function`, gibt ihr einen Namen und beendet sie mit `end`. Hier ist eine einfache:
+In Fish schreibst du eine Funktion mit dem Schlüsselwort `function`, gibst ihr einen Namen und beendest sie mit `end`. Hier ist eine einfache:
 
 ```fish
 function hello
@@ -30,7 +33,7 @@ Ausgabe:
 Hallo, Welt!
 ```
 
-Nun lassen Sie uns eine Begrüßung für einen Benutzer machen:
+Jetzt lassen wir sie einen Benutzer begrüßen:
 
 ```fish
 function greet
@@ -46,16 +49,22 @@ Ausgabe:
 Hey da, dein_benutzername!
 ```
 
-Um es über Sitzungen hinweg zu speichern, verwenden Sie `funcsave greet`.
+Um sie über Sitzungen hinweg zu speichern, verwende `funcsave greet`.
 
-## Tiefergehend
-Fish-Shell-Funktionen sind wie Mini-Skripte – man kann so ziemlich alles hineinstecken. Historisch gesehen hat das Konzept der Funktionen in Skriptsprachen unzählige Stunden wiederholender Eingaben und Fehlersuche gespart. Im Gegensatz zu Programmiersprachen wie Python geht es bei Shell-Funktionen mehr um Bequemlichkeit als um Struktur.
+## Tiefer Eintauchen
+Fish Shell Funktionen sind wie Mini-Skripte – du kannst so ziemlich alles hineinpacken. Historisch gesehen hat das Konzept von Funktionen in Shell-Skripten unzählige Stunden wiederholender Eingaben und Debugging gespart. Anders als Programmiersprachen wie Python, sind Shell-Funktionen mehr auf Bequemlichkeit als auf Struktur ausgerichtet.
 
-Einige Shells, wie Bash, verwenden `function` oder einfach gerade Klammern. Fish bleibt bei `function ... end` – klar und lesbar. Innerhalb von Fish-Funktionen haben Sie alle Extras: Parameter, lokale Variablen mit `set -l`, und Sie können sogar eine Funktion innerhalb einer anderen Funktion definieren.
+Manche Shells, wie Bash, verwenden `function` oder einfach direkte Klammern. Fish hält sich an `function ... end`— klar und lesbar. Innerhalb von Fish-Funktionen hast du alle Funktionen: Parameter, lokale Variablen mit `set -l`, und du kannst sogar eine Funktion innerhalb einer anderen Funktion definieren.
 
-Sie benötigen keinen `return`-Wert, weil Fish darauf nicht großen Wert legt; die Ausgabe Ihrer Funktion ist ihr Rückgabewert. Und wenn Sie dauerhafte Funktionen für zukünftige Sitzungen verfügbar machen möchten, denken Sie an `funcsave`.
+Du benötigst keinen `return` Wert, da Fish darauf nicht großen Wert legt; die Ausgabe deiner Funktion ist ihre Rückgabe. Und wenn du persistente Funktionen für zukünftige Sitzungen haben möchtest, erinnere dich an `funcsave`.
 
 ## Siehe auch
-- Das Fish-Tutorial zu Funktionen: https://fishshell.com/docs/current/tutorial.html#tut_functions
-- Die Fish-Dokumentation für `function`: https://fishshell.com/docs/current/cmds/function.html
-- Ein umfangreicher Leitfaden zum Schreiben von Funktionen in Fish: https://fishshell.com/docs/current/index.html#syntax-function
+
+- Das Fish-Tutorial zu Funktionen: [https://fishshell.com/docs/current/tutorial.html#tut_functions](https://fishshell.com/docs/current/tutorial.html#functions)
+
+### Funktionsbefehle
+
+- [function](https://fishshell.com/docs/current/cmds/function.html) — Eine Funktion erstellen
+- [functions](https://fishshell.com/docs/current/cmds/functions.html) — Funktionen anzeigen oder löschen
+- [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — Die Definition einer Funktion im Autoload-Verzeichnis des Benutzers speichern
+- [funced](https://fishshell.com/docs/current/cmds/funced.html) — Eine Funktion interaktiv bearbeiten

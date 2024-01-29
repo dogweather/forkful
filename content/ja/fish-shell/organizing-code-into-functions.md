@@ -1,21 +1,24 @@
 ---
 title:                "コードを関数に整理する"
-date:                  2024-01-26T01:10:06.080317-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-01-28T23:01:54.914439-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "コードを関数に整理する"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/organizing-code-into-functions.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed and added links
+  - 2024-01-28, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## 何となぜ？
-コードを関数にまとめるというのは、特定のタスクを実行するスクリプトのビットをまとめることを意味します。それを行う理由は、コードを読みやすく、テストしやすく、再利用しやすくするためです。誰もがコードのスパゲティの沼を渡り歩きたいとは思いません。
+コードを関数にまとめることは、特定のタスクを実行するためのスクリプトのビットを束ねることについてです。これを行う理由は、コードを読みやすく、テストしやすく、再利用しやすくするためです。誰もがコードスパゲッティの沼を歩きたいと思っているわけではありません。
 
-## 方法:
-Fishでは、`function`キーワードで関数を書き、名前を付けて、`end`で終わります。こちらがシンプルな例です:
+## 方法：
+Fishで関数を書くには、`function`キーワードを使い、名前を付け、`end`で終了します。こちらが簡単なものです：
 
 ```fish
 function hello
@@ -25,12 +28,12 @@ end
 hello
 ```
 
-出力:
+出力：
 ```
 Hello, World!
 ```
 
-次に、ユーザーにあいさつするようにしてみましょう:
+では、ユーザーにあいさつするようにしましょう：
 
 ```fish
 function greet
@@ -41,21 +44,27 @@ end
 greet
 ```
 
-出力:
+出力：
 ```
 Hey there, your_username!
 ```
 
-セッション間で保存するには、`funcsave greet`を使います。
+セッションを跨いで保存するには、`funcsave greet`を使用します。
 
-## 詳細解説
-Fish Shellの関数はミニスクリプトのようなものです。ほぼどんなものでもそこに入れることができます。歴史的には、シェルスクリプティングにおける関数の概念は、繰り返しのタイピングやデバッグにかける時間を数えきれないほど節約してくれています。Pythonのようなプログラミング言語とは異なり、シェル関数は構造よりも便宜についてです。
+## 深掘り
+Fish Shellの関数はミニスクリプトのようなものです。あらゆるものを詰め込むことができます。歴史的に、シェルスクリプティングの関数の概念は、繰り返しのタイピングとデバッグの何千時間も節約してきました。Pythonのようなプログラミング言語とは異なり、Shellの関数は構造よりも便利さについてです。
 
-Bashのようなシェルでは、`function`や単純な中括弧を使います。Fishは`function ... end`を採用しています — クリアで読みやすいです。Fish関数の内部では、引数や、`set -l`でのローカル変数、さらには別の関数の中で関数を定義することも可能です。
+一部のシェル、例えばBashは、`function`または単に中括弧を使用します。Fishは`function ... end`に固執しています。明確で読みやすいです。Fish関数の内部では、パラメーター、`set -l`でのローカル変数、さらには別の関数内で関数を定義することさえできます。
 
-`return`値は必要ないです、なぜならFishではそれに大きく依存していないからです; 関数の出力がそのリターン値です。そして、将来のセッションでも利用可能な永続的な関数を作りたい場合は、`funcsave`を覚えておいてください。
+`return`値は必要ありません。Fishはそれを重視していないからです。関数の出力がその返り値です。そして、将来のセッションで利用可能な永続的な関数を望むならば、`funcsave`を覚えておいてください。
 
-## 参考
-- 関数に関するFishチュートリアル: https://fishshell.com/docs/current/tutorial.html#tut_functions
-- `function`に関するFishドキュメンテーション: https://fishshell.com/docs/current/cmds/function.html
-- Fishで関数を書くための広範なガイド: https://fishshell.com/docs/current/index.html#syntax-function
+## 参照
+
+- 関数に関するfishチュートリアル: [https://fishshell.com/docs/current/tutorial.html#tut_functions](https://fishshell.com/docs/current/tutorial.html#functions)
+
+### 関数コマンド
+
+- [function](https://fishshell.com/docs/current/cmds/function.html) — 関数を作成
+- [functions](https://fishshell.com/docs/current/cmds/functions.html) — 関数を表示または消去
+- [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — 関数の定義をユーザーの自動読み込みディレクトリに保存
+- [funced](https://fishshell.com/docs/current/cmds/funced.html) — 関数を対話的に編集
