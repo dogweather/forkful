@@ -7,6 +7,8 @@ programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/organizing-code-into-functions.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed and added links
 ---
 
 {{< edit_this_page >}}
@@ -56,6 +58,12 @@ Some shells, like Bash, use `function` or just straight braces. Fish sticks to `
 You won't need a `return` value because Fish isn't big on that; your function's output is its return. And if you want persistent functions available for future sessions, remember `funcsave`.
 
 ## See Also
-- The fish tutorial on functions: https://fishshell.com/docs/current/tutorial.html#tut_functions
-- The fish documentation for `function`: https://fishshell.com/docs/current/cmds/function.html
-- An extensive guide on writing functions in fish: https://fishshell.com/docs/current/index.html#syntax-function
+
+- The fish tutorial on functions: [https://fishshell.com/docs/current/tutorial.html#tut_functions](https://fishshell.com/docs/current/tutorial.html#functions)
+
+### Function commands
+
+- [function](https://fishshell.com/docs/current/cmds/function.html) — Create a function.
+- [functions](https://fishshell.com/docs/current/cmds/functions.html) — Print or erase functions
+- [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — Save the definition of a function to the user’s autoload directory
+- [funced](https://fishshell.com/docs/current/cmds/funced.html) — Edit a function interactively
