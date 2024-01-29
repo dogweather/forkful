@@ -15,10 +15,8 @@ In a nutshell, a sort of pair-programmer for technical documentation. This seems
 2. Open source contributors (you)
 3. AI (OpenAI GPT-4 Turbo)
  
-**Multilingual**: **16** world languages
-
-**Polyglot**: **23** programming languages
-
+* **Multilingual**: **18** world languages
+* **Polyglot**: **23** programming languages
 
 ---
 
@@ -31,6 +29,7 @@ Is there a language we should add? [Post a message in the forum](https://github.
 * [English](https://forkful.ai/en)
 * [Finnish](https://forkful.ai/fi)
 * [French](https://forkful.ai/fr)
+* [Dutch](https://forkful.ai/nl)
 * [German](https://forkful.ai/de)
 * [Hebrew](https://forkful.ai/he)
 * [Hindi](https://forkful.ai/hi)
@@ -44,4 +43,5 @@ Is there a language we should add? [Post a message in the forum](https://github.
 * [Spanish](https://forkful.ai/es)
 * [Swedish](https://forkful.ai/sv)
 * [Ukrainian](https://forkful.ai/uk)
+* [Vietnamese](https://forkful.ai/vi)
 
