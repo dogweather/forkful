@@ -11,7 +11,7 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 changelog:
   - 2024-01-28, dogweather, reviewed
   - 2024-01-28, gpt-4-0125-preview, translated from English
-  - 2024-01-29, dogweather, überprüft nochmal
+  - 2024-01-29, dogweather, nochmal überprüft
 ---
 
 {{< edit_this_page >}}
