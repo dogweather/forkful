@@ -1,6 +1,7 @@
 ---
 title:                "Organizing code into functions"
 date:                  2024-01-25T03:00:10.607473-07:00
+lastmod:               2024-01-28
 model:                 gpt-4-1106-preview
 simple_title:         "Organizing code into functions"
 programming_language: "Fish Shell"
@@ -63,7 +64,7 @@ You won't need a `return` value because Fish isn't big on that; your function's 
 
 ### Function commands
 
-- [function](https://fishshell.com/docs/current/cmds/function.html) — Create a function.
+- [function](https://fishshell.com/docs/current/cmds/function.html) — Create a function
 - [functions](https://fishshell.com/docs/current/cmds/functions.html) — Print or erase functions
 - [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — Save the definition of a function to the user’s autoload directory
 - [funced](https://fishshell.com/docs/current/cmds/funced.html) — Edit a function interactively
