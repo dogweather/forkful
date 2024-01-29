@@ -1,6 +1,7 @@
 ---
 title:                "Interpolation eines Strings"
 date:                  2024-01-28T21:23:41.871760-07:00
+lastmod:               2024-01-29
 model:                 gpt-4-0125-preview
 simple_title:         "Interpolation eines Strings"
 programming_language: "Python"
@@ -10,7 +11,7 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 changelog:
   - 2024-01-28, dogweather, reviewed
   - 2024-01-28, gpt-4-0125-preview, translated from English
-  - 2024-01-29, dogwaether, überprüft nochmal
+  - 2024-01-29, dogweather, überprüft nochmal
 ---
 
 {{< edit_this_page >}}
