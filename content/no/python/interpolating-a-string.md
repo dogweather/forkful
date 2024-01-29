@@ -1,47 +1,77 @@
 ---
 title:                "Interpolering av en streng"
-date:                  2024-01-20T17:51:30.319586-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-01-28T21:23:40.105231-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Interpolering av en streng"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/interpolating-a-string.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed
+  - 2024-01-28, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-String-interpolering lar deg sette inn variabler direkte inn i strenger. Det gjør koden mer lesbar og skriveren raskere.
+Strenginterpolasjon er metoden for å bygge inn uttrykk i strenglitteraler. Programmerere bruker det for å dynamisk sette inn verdier i strenger, noe som gjør koden mer lesbar og ryddigere enn tradisjonell strengkonkatenering.
 
-## Hvordan gjøre det:
-```python
-navn = "Ola"
-alder = 25
-print(f"Hei, jeg heter {navn} og jeg er {alder} år gammel.")
-# Output: Hei, jeg heter Ola og jeg er 25 år gammel.
+## Hvordan:
+I Python 3.6 og nyere, kan du interpolere strenger ved å bruke f-strenger. Slik gjør du:
 
-# Med mer komplekse uttrykk:
-print(f"{navn} vil være {alder + 5} om fem år.")
-# Output: Ola vil være 30 om fem år.
+```Python
+name = 'Alice'
+age = 30
+greeting = f"Hei, {name}. Du er {age} år gammel."
+
+print(greeting)
+```
+
+Output:
+```
+Hei, Alice. Du er 30 år gammel.
+```
+
+Du kan også bruke uttrykk inne i krøllparentesene:
+
+```Python
+a = 5
+b = 10
+info = f"Fem pluss ti er {a + b}, ikke {2 * (a + b)}."
+
+print(info)
+```
+
+Output:
+```
+Fem pluss ti er 15, ikke 30.
 ```
 
 ## Dypdykk
-String-interpolering i Python kom virkelig med version 3.6, gjennom "f-strings". Før det brukte vi `%`-operatoren eller `format()`-funksjonen. I `format()` setter du `{}` i strengen og fyller inn med `format(var)`. I en f-string setter du bare et `f` foran og skriver Python-uttrykk inne i `{}`.
+Før Python 3.6, var `.format()` metoden å bruke for strenginterpolasjon:
 
-Med `%`:
-```python
-print("Hei, jeg heter %s og jeg er %d år gammel." % (navn, alder))
+```Python
+name = 'Bob'
+age = 25
+greeting = "Hei, {}. Du er {} år gammel.".format(name, age)
+
+print(greeting)
 ```
 
-Med `format()`:
-```python
-print("Hei, jeg heter {} og jeg er {} år gammel.".format(navn, alder))
+Gammeldags Python (versjoner < 2.6) brukte `%`-operatoren for interpolasjon, som er mindre intuitiv og kan bli rotete med flere variabler:
+
+```Python
+name = 'Carol'
+age = 35
+greeting = "Hei, %s. Du er %d år gammel." % (name, age)
+
+print(greeting)
 ```
 
-F-strings er ikke bare kortere, de er også raskere fordi de blir omsatt direkte til kode som lager den endelige strengen, mens `format()` gjør en del ekstra arbeid i bakgrunnen.
+Bortsett fra renere syntaks, er f-strenger raskere fordi de blir evaluert i kjøretid og deretter konvertert direkte til en effektiv strengformatoperasjon. `.format()`-metoden og `%`-operatoren involverer flere trinn og er tregere.
 
-## Se Også
-- PEP 498, som introduserte f-strings: https://www.python.org/dev/peps/pep-0498/
-- Python-dokumentasjon om formaterte streng-litteraler: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
-- Python-dokumentasjon om den gamle `%`-formattingen: https://docs.python.org/3/library/stdtypes.html#old-string-formatting
+## Se også
+- [PEP 498 – Literal String Interpolation](https://www.python.org/dev/peps/pep-0498/) for offisiell dokumentasjon om f-strenger.
+- [Python f-strenger](https://realpython.com/python-f-strings/) av Real Python for en veiledning om bruk av f-strenger.
+- [.format() Metoden](https://docs.python.org/3/library/stdtypes.html#str.format) i Python-dokumentasjonen for å forstå den eldre `.format()`-metoden for strengformatering.

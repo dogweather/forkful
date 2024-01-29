@@ -1,59 +1,77 @@
 ---
-title:                "Interpolation de chaînes de caractères"
-date:                  2024-01-20T17:51:27.661886-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolation de chaînes de caractères"
+title:                "Interpolation d'une chaîne de caractères"
+date:                  2024-01-28T21:23:54.078755-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Interpolation d'une chaîne de caractères"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/interpolating-a-string.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed
+  - 2024-01-28, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi et Pourquoi ?)
+## Quoi et Pourquoi ?
+L'interpolation de chaînes est la méthode permettant d'insérer des expressions au sein de littéraux de chaîne de caractères. Les programmeurs l'utilisent pour insérer dynamiquement des valeurs dans des chaînes, ce qui rend le code plus lisible et plus propre que la concaténation traditionnelle de chaînes.
 
-L'interpolation de chaînes permet d'insérer des valeurs au sein d'une chaîne de caractères. Les programmeurs l'utilisent pour créer du texte dynamique facile à lire et à maintenir.
+## Comment faire :
+Dans Python 3.6 et versions ultérieures, vous pouvez interpoler des chaînes en utilisant les f-strings. Voici comment :
 
-## How to: (Comment faire :)
+```Python
+name = 'Alice'
+age = 30
+greeting = f"Bonjour, {name}. Vous avez {age} ans."
 
-```python
-# Utilisation de f-strings pour l'interpolation
-nom = "Amélie"
-age = 27
-message = f"Bonjour, je suis {nom} et j'ai {age} ans."
-print(message)
+print(greeting)
 ```
 
 Sortie :
 ```
-Bonjour, je suis Amélie et j'ai 27 ans.
+Bonjour, Alice. Vous avez 30 ans.
 ```
 
-## Deep Dive (Plongée en Profondeur)
+Vous pouvez également utiliser des expressions à l'intérieur des accolades :
 
-Historiquement, Python a connu plusieurs méthodes d'interpolation. `%` a été les premiers outils d'interpolation, appelés opérateurs de formatage. Avec `.format()`, introduit en Python 2.6, le code devenait plus clair. Python 3.6 a amené les f-strings, qui sont à la fois plus concis et plus rapides.
+```Python
+a = 5
+b = 10
+info = f"Cinq plus dix égale {a + b}, pas {2 * (a + b)}."
 
-Alternatives : Vous pouvez utiliser `.format()` ou `%` pour l'interpolation, mais les f-strings sont généralement préférées pour leur lisibilité et leur efficacité.
-
-Détails d'implémentation : Les f-strings évaluent au moment de l'exécution les expressions entre `{}` ce qui permet de passer des variables mais aussi d'effectuer des opérations.
-
-```python
-# Exemples avec .format() et %
-score = 93.5
-status = "réussite"
-print("Votre score est de {:.1f} et votre statut est : {}".format(score, status))
-print("Votre score est de %.1f et votre statut est : %s" % (score, status))
+print(info)
 ```
 
 Sortie :
 ```
-Votre score est de 93.5 et votre statut est : réussite
-Votre score est de 93.5 et votre statut est : réussite
+Cinq plus dix égale 15, pas 30.
 ```
 
-## See Also (Voir Aussi)
+## Approfondissement
+Avant Python 3.6, `.format()` était la méthode privilégiée pour l'interpolation de chaînes :
 
-- [PyFormat](https://pyformat.info/) - Bonnes pratiques sur l'ancienne méthode `.format()`.
-- [PEP 498](https://www.python.org/dev/peps/pep-0498/) - Proposition d'amélioration de Python qui a introduit les f-strings.
-- [Real Python - f-Strings](https://realpython.com/python-f-strings/) - Guide approfondi sur l'utilisation des f-strings en Python.
+```Python
+name = 'Bob'
+age = 25
+greeting = "Bonjour, {}. Vous avez {} ans.".format(name, age)
+
+print(greeting)
+```
+
+Le vieux Python (versions < 2.6) utilisait l'opérateur `%` pour l'interpolation, qui est moins intuitif et peut devenir compliqué avec plusieurs variables :
+
+```Python
+name = 'Carol'
+age = 35
+greeting = "Bonjour, %s. Vous avez %d ans." % (name, age)
+
+print(greeting)
+```
+
+En plus d'une syntaxe plus propre, les f-strings sont plus rapides car ils sont évalués à l'exécution puis convertis directement en une opération de formatage de chaîne efficace. Les méthodes `.format()` et l'opérateur `%` impliquent plus d'étapes et sont plus lentes.
+
+## Voir également
+- [PEP 498 – Interpolation de Chaîne de Caractères Littéraux](https://www.python.org/dev/peps/pep-0498/) pour la documentation officielle sur les f-strings.
+- [Les f-strings Python](https://realpython.com/python-f-strings/) par Real Python pour un tutoriel sur l'utilisation des f-strings.
+- [La méthode .format()](https://docs.python.org/3/library/stdtypes.html#str.format) dans la documentation Python pour comprendre la méthode de formatage de chaînes `.format()` plus ancienne.

@@ -1,65 +1,77 @@
 ---
-title:                "Zeichenketten interpolieren"
-date:                  2024-01-20T17:51:19.050843-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Zeichenketten interpolieren"
+title:                "Interpolation eines Strings"
+date:                  2024-01-28T21:23:41.871760-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Interpolation eines Strings"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/interpolating-a-string.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed
+  - 2024-01-28, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
+String-Interpolation ist die Methode, Ausdrücke in String-Literale einzubetten. Programmierer verwenden sie, um dynamisch Werte in Strings einzufügen, was den Code lesbarer und sauberer macht als die traditionelle String-Konkatenation.
 
-String-Interpolation ist das Einbetten von Variablen in Strings. Programmierer nutzen das, weil's den Code lesbarer und das Zusammenbauen von Nachrichten flexibler macht.
-
-## Anleitung:
-
-String-Interpolation in Python kann schnell und schmerzlos sein. Hier ist, wie's geht:
+## Wie geht das:
+In Python 3.6 und höher können Sie Strings mit f-Strings interpolieren. So geht's:
 
 ```Python
-name = "Welt"
-begrüßung = f"Hallo, {name}!"
-print(begrüßung)
+name = 'Alice'
+alter = 30
+gruß = f"Hallo, {name}. Du bist {alter} Jahre alt."
+
+print(gruß)
 ```
 
 Ausgabe:
 ```
-Hallo, Welt!
+Hallo, Alice. Du bist 30 Jahre alt.
 ```
 
-Und noch ein Beispiel mit einer Zahl:
+Sie können auch Ausdrücke innerhalb der geschweiften Klammern verwenden:
 
 ```Python
+a = 5
+b = 10
+info = f"Fünf plus zehn ist {a + b}, nicht {2 * (a + b)}."
+
+print(info)
+```
+
+Ausgabe:
+```
+Fünf plus zehn ist 15, nicht 30.
+```
+
+## Tiefer Eintauchen
+Vor Python 3.6 war `.format()` der Weg, um Strings zu interpolieren:
+
+```Python
+name = 'Bob'
 alter = 25
-nachricht = f"Ich bin {alter} Jahre alt."
-print(nachricht)
+gruß = "Hallo, {}. Du bist {} Jahre alt.".format(name, alter)
+
+print(gruß)
 ```
 
-Ausgabe:
-```
-Ich bin 25 Jahre alt.
-```
-
-## Tiefer Tauchen
-
-Früher war das Leben ohne die f-Strings (seit Python 3.6) ein bisschen komplizierter. Man musste `"{}".format(variable)` oder gar `%`-Operatoren verwenden, um eine String-Interpolation zu bewerkstelligen. Heutzutage verwenden viele Sprachen ähnliche Features, wie `${variable}` in JavaScript.
-
-In Python kannst du auch Ausdrücke in die Klammern packen, das macht's noch mächtiger:
+Alte Schule Python (Versionen < 2.6) verwendete den `%`-Operator für die Interpolation, was weniger intuitiv ist und mit mehreren Variablen unübersichtlich werden kann:
 
 ```Python
-preis = 19.99
-anzahl = 3
-rechnung = f"Gesamtpreis: {anzahl * preis:.2f}€"
-print(rechnung)
+name = 'Carol'
+alter = 35
+gruß = "Hallo, %s. Du bist %d Jahre alt." % (name, alter)
+
+print(gruß)
 ```
 
-Das `.2f` ist dabei ein Format-Specifier, der die Float-Zahl auf zwei Dezimalstellen rundet.
+Neben einer saubereren Syntax sind f-Strings schneller, weil sie zur Laufzeit ausgewertet und dann direkt in eine effiziente String-Format-Operation umgewandelt werden. Die `.format()`-Methode und der `%`-Operator beinhalten mehr Schritte und sind langsamer.
 
-## Siehe Auch:
-
-- Die Python-Dokumentation zur String-Interpolation: https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting
-- PEP 498, beschreibt die f-Strings: https://www.python.org/dev/peps/pep-0498/
-- Ein Tutorial zu `.format()`: https://realpython.com/python-string-formatting/#2-new-style-string-formatting-strformat
+## Siehe auch
+- [PEP 498 – Literal String Interpolation](https://www.python.org/dev/peps/pep-0498/) für die offizielle Dokumentation zu f-Strings.
+- [Python f-Strings](https://realpython.com/python-f-strings/) von Real Python für ein Tutorial zur Verwendung von f-Strings.
+- [Die .format()-Methode](https://docs.python.org/3/library/stdtypes.html#str.format) in der Python-Dokumentation, um die ältere `.format()`-Methode der String-Formatierung zu verstehen.

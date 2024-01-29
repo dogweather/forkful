@@ -1,46 +1,77 @@
 ---
-title:                "Interpolacja łańcuchów znaków"
-date:                  2024-01-20T17:51:23.294723-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolacja łańcuchów znaków"
+title:                "Interpolacja łańcucha znaków"
+date:                  2024-01-28T21:23:59.921095-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Interpolacja łańcucha znaków"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/interpolating-a-string.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed
+  - 2024-01-28, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-
-Interpolacja napisów to wplecenie zmiennych czy też wartości bezpośrednio do ciągu tekstowego. Programiści używają tego, żeby ułatwić formatowanie i składanie komunikatów, zwłaszcza gdy dynamika danych jest na pierwszym planie.
+## Co i Dlaczego?
+Interpolacja ciągów znaków to metoda osadzania wyrażeń wewnątrz literałów napisów. Programiści używają jej do dynamicznego wstawiania wartości do ciągów znaków, co sprawia, że kod jest bardziej czytelny i czystszy niż tradycyjna konkatenacja ciągów znaków.
 
 ## Jak to zrobić:
+W Pythonie 3.6 i nowszych można interpolować ciągi znaków używając f-stringów. Oto jak:
 
 ```Python
-# Przykład użycia f-string do interpolacji napisów.
-imie = "Anna"
-wiek = 30
+name = 'Alice'
+age = 30
+greeting = f"Witaj, {name}. Masz {age} lat."
 
-# Tradycyjnie z użyciem .format()
-wypowiedz_format = "Nazywam się {} i mam {} lat.".format(imie, wiek)
-print(wypowiedz_format)
-# Wynik: Nazywam się Anna i mam 30 lat.
-
-# Nowocześniej: f-string
-wypowiedz_fstring = f"Nazywam się {imie} i mam {wiek} lat."
-print(wypowiedz_fstring)
-# Wynik: Nazywam się Anna i mam 30 lat.
+print(greeting)
 ```
 
-## Głębsze spojrzenie
+Wynik:
+```
+Witaj, Alice. Masz 30 lat.
+```
 
-Interpolacja napisów istnieje w Pythonie od dawna – najpierw były to operator `%`, później metoda `.format()`, a od Pythona 3.6 mamy f-stringi. F-stringi są szybsze niż poprzednie metody i pozwalają na bezpośrednie wstawianie wyrażeń Pythona w nawiasach klamrowych. Za kulisami Python przetwarza taki napis na wyrażenie formatujące i wykonuje je w locie.
+Możesz również użyć wyrażeń wewnątrz nawiasów klamrowych:
 
-Innymi sposobami interpolacji są template strings (`string.Template`), które mogą być użyteczne dla prostych przypadków i kiedy chcesz unikać ewaluacji wyrażeń wewnątrz napisów.
+```Python
+a = 5
+b = 10
+info = f"Pięć plus dziesięć to {a + b}, a nie {2 * (a + b)}."
 
-## Zobacz również
+print(info)
+```
 
-- [Standardowa dokumentacja Pythona o f-stringach](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
-- [PEP 498 – wprowadzenie f-stringów](https://www.python.org/dev/peps/pep-0498/)
-- [Python Software Foundation: PyFormat](https://pyformat.info/) – Porównanie metod formatowania napisów w Pythonie.
+Wynik:
+```
+Pięć plus dziesięć to 15, a nie 30.
+```
+
+## Dogłębna analiza
+Przed Pythonem 3.6, do interpolacji ciągów znaków używano metody `.format()`:
+
+```Python
+name = 'Bob'
+age = 25
+greeting = "Witaj, {}. Masz {} lat.".format(name, age)
+
+print(greeting)
+```
+
+Stary Python (wersje < 2.6) używał operatora `%` do interpolacji, co jest mniej intuicyjne i może stać się bałaganem przy wielu zmiennych:
+
+```Python
+name = 'Carol'
+age = 35
+greeting = "Witaj, %s. Masz %d lat." % (name, age)
+
+print(greeting)
+```
+
+Oprócz czystszej składni, f-stringi są szybsze, ponieważ są oceniane w czasie wykonania, a następnie bezpośrednio przekształcane w efektywną operację formatowania ciągu znaków. Metoda `.format()` i operator `%` wiążą się z większą liczbą kroków i są wolniejsze.
+
+## Zobacz także
+- [PEP 498 – Interpolacja Literałów Napisów](https://www.python.org/dev/peps/pep-0498/) dla oficjalnej dokumentacji f-stringów.
+- [Python f-stringi](https://realpython.com/python-f-strings/) na Real Python dla tutorialu o używaniu f-stringów.
+- [Metoda .format()](https://docs.python.org/3/library/stdtypes.html#str.format) w dokumentacji Pythona, aby zrozumieć starszą metodę formatowania napisów.

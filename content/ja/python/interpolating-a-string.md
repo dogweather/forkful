@@ -1,52 +1,77 @@
 ---
 title:                "文字列の補間"
-date:                  2024-01-20T17:52:01.036499-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-01-28T21:24:03.388408-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "文字列の補間"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/interpolating-a-string.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed
+  - 2024-01-28, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-文字列補間は、変数や計算結果を直接文字列に埋め込むプロセスです。プログラマはこれを使って、コードをより読みやすく、メンテナンスしやすくするために行います。
+## 何となぜ？
+文字列補間とは、文字列リテラル内に式を埋め込む方法です。プログラマーは動的に文字列に値を挿入するためにこれを使用し、これによりコードが従来の文字列連結よりも読みやすく、清潔になります。
 
-## How to: (方法)
-```python
-# 基本的な文字列補間
-name = "世界"
-message = f"こんにちは、{name}！"
-print(message) # 出力: こんにちは、世界！
+## 方法：
+Python 3.6以上では、f-stringsを使用して文字列を補間できます。以下の方法です：
 
-# 計算を埋め込む
-a, b = 5, 10
-print(f"{a} + {b} は {a + b} です。") # 出力: 5 + 10 は 15 です。
+```Python
+name = 'Alice'
+age = 30
+greeting = f"こんにちは、{name}さん。あなたは{age}歳です。"
 
-# フォーマットを指定
-temperature = 30.4444
-print(f"温度は {temperature:.2f}度です。") # 出力: 温度は 30.44度です。
+print(greeting)
 ```
 
-## Deep Dive (深い潜水)
-文字列補間は Python 3.6 の時点で導入された `f-string` によって大きく改善されました。それ以前は `%` オペレーターや `str.format()` メソッドがよく使われていましたが、f-string はこれらよりも読みやすく、速いです。
-
-古いメソッド:
-```python
-name = "世界"
-message = "こんにちは、%s！" % name
-print(message) # 出力: こんにちは、世界！
-
-message = "こんにちは、{}！".format(name)
-print(message) # 出力: こんにちは、世界！
+出力：
+```
+こんにちは、Aliceさん。あなたは30歳です。
 ```
 
-f-string の内部的には、`FORMAT_VALUE` と `BUILD_STRING` という２つの命令で実行されます。文字列の各部分が評価され、最終的な文字列へと結合されるプロセスは Python インタプリタにより効率的に行われます。
+中括弧内に式を使用することもできます：
 
-## See Also (参照)
-- [PEP 498 -- Literal String Interpolation](https://www.python.org/dev/peps/pep-0498/)
-- [Python 3.x documentation for f-strings](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
-- [The Python Formatter class](https://docs.python.org/3/library/string.html#string.Formatter)
+```Python
+a = 5
+b = 10
+info = f"五加十は{a + b}です、{2 * (a + b)}ではありません。"
+
+print(info)
+```
+
+出力：
+```
+五加十は15です、30ではありません。
+```
+
+## ディープダイブ
+Python 3.6より前では、`.format()`が文字列を補間する方法でした：
+
+```Python
+name = 'Bob'
+age = 25
+greeting = "こんにちは、{}さん。あなたは{}歳です。".format(name, age)
+
+print(greeting)
+```
+
+古い学校のPython（バージョン < 2.6）では、補間に`%`演算子を使用していました。これは直感的ではなく、複数の変数を使っているときにはごちゃごちゃになりがちです：
+
+```Python
+name = 'Carol'
+age = 35
+greeting = "こんにちは、%sさん。あなたは%d歳です。" % (name, age)
+
+print(greeting)
+```
+
+より清潔な構文の他に、f-stringsは実行時に評価され、効率的な文字列形式の操作に直接変換されるため、より速いです。 `.format()`と`%`演算子はより多くのステップを含み、遅いです。
+
+## 参照
+- [PEP 498 – リテラル文字列補間](https://www.python.org/dev/peps/pep-0498/) f-stringsの公式ドキュメント。
+- [Python f-strings](https://realpython.com/python-f-strings/) by Real Pythonでのf-stringsのチュートリアル。
+- [Python documentationの.format()メソッド](https://docs.python.org/3/library/stdtypes.html#str.format) 古い`.format()`メソッドによる文字列フォーマッティングを理解するため。

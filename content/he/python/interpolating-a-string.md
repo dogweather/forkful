@@ -1,44 +1,77 @@
 ---
-title:                "שרבוב מחרוזת"
-date:                  2024-01-20T17:51:37.214529-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "שרבוב מחרוזת"
+title:                "אינטרפולציה של מחרוזת"
+date:                  2024-01-28T21:24:55.866722-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "אינטרפולציה של מחרוזת"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/interpolating-a-string.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed
+  - 2024-01-28, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
+אינטרפולציה של מחרוזות היא השיטה של שילוב ביטויים בתוך מחרוזות קבועות. תוכנים משתמשים בה כדי להכניס ערכים דינמית למחרוזות, מה שהופך את הקוד לקריא ונקי יותר מאשר שרשור מחרוזות מסורתי.
 
-עיבוד מחרוזות (String interpolation) זה הדרך לשלב משתנים וביטויים בתוך מחרוזת. פיתוחי תוכנה עושים את זה כדי לדינמיות טקסט, להתאים תוצאות, ולקרוא קוד קל יותר.
-
-## איך לעשות:
+## איך לעשות זאת:
+בפייתון בגרסה 3.6 ומעלה, ניתן לאינטרפולט מחרוזות באמצעות f-strings. הנה איך:
 
 ```Python
-# דוגמא עם f-string
-name = "יונתן"
+name = 'אליס'
 age = 30
-greeting = f"שלום, קוראים לי {name} ואני בן {age}."
+greeting = f"שלום, {name}. אתה בן {age} שנים."
+
 print(greeting)
-
-# דוגמא עם .format()
-welcome_message = "ברוך הבא, {}! היום הינו ביום {} בחודש."
-print(welcome_message.format("דני", "עשירי"))
-
-# תוצאה
-שלום, קוראים לי יונתן ואני בן 30.
-ברוך הבא, דני! היום הינו ביום עשירי בחודש.
 ```
 
-## עיון נוסף:
+פלט:
+```
+שלום, אליס. אתה בן 30 שנים.
+```
 
-לפני f-strings היו `%` ו-`.format()`. f-strings, מוצגים ב-Python 3.6+, מאיצים ומקלים על עיבוד מחרוזות. ולמרות ש `%` ו-`.format()` עדיין פעילים, f-strings הם הדרך המועדפת כיום. למעשה, f-strings מבצעים עיבוד מחרוזות בצורה יותר יעילה מבחינת מהירות הריצה.
+ניתן גם להשתמש בביטויים בתוך הסוגריים המסולסלים:
 
-## ראו גם:
+```Python
+a = 5
+b = 10
+info = f"חמישה ועשרה זה {a + b}, לא {2 * (a + b)}."
 
-- [תיעוד Python על f-strings](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
-- [השוואה בין שיטות לעיבוד מחרוזות](https://realpython.com/python-string-formatting/)
-- [מדריך ל-`.format()`](https://pyformat.info/)
+print(info)
+```
+
+פלט:
+```
+חמישה ועשרה זה 15, לא 30.
+```
+
+## טבילה עמוקה
+לפני פייתון 3.6, השימוש ב-`.format()` היה הדרך לאינטרפולציה של מחרוזות:
+
+```Python
+name = 'בוב'
+age = 25
+greeting = "שלום, {}. אתה בן {} שנים.".format(name, age)
+
+print(greeting)
+```
+
+פייתון מבית ספר ישן (גרסאות < 2.6) השתמשו באופרטור `%` לאינטרפולציה, שהוא פחות אינטואיטיבי ויכול להיות מבולגן עם משתנים מרובים:
+
+```Python
+name = 'קרול'
+age = 35
+greeting = "שלום, %s. אתה בן %d שנים." % (name, age)
+
+print(greeting)
+```
+
+מעבר לתחביר נקי יותר, f-strings הם מהירים יותר מפני שהם מוערכים בזמן ריצה ואז מומרים ישירות לפעולת פרמט מחרוזת יעילה. השימוש ב-`.format()` ובאופרטור `%` כרוך ביותר שלבים והוא איטי יותר.
+
+## ראה גם
+- [PEP 498 – Literal String Interpolation](https://www.python.org/dev/peps/pep-0498/) לתיעוד הרשמי על f-strings.
+- [Python f-strings](https://realpython.com/python-f-strings/) מאת Real Python למדריך על שימוש ב-f-strings.
+- [The .format() Method](https://docs.python.org/3/library/stdtypes.html#str.format) בתיעוד הפייתון להבנת שיטת הפרמוט `.format()` הקודמת של עיצוב מחרוזות.

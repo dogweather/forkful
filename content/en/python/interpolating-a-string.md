@@ -7,6 +7,8 @@ programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/interpolating-a-string.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed
 ---
 
 {{< edit_this_page >}}

@@ -1,38 +1,77 @@
 ---
 title:                "Merkkijonon interpolointi"
-date:                  2024-01-20T17:51:41.128538-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-01-28T21:24:07.519332-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/interpolating-a-string.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed
+  - 2024-01-28, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Stringin interpolointi tarkoittaa muuttujien ja lausekkeiden upottamista merkkijonoihin. Se tekee koodista luettavampaa ja dynaamisempaa, helpottaen muuttuvan datan esittämistä.
+## Mikä & Miksi?
+Merkkijonon interpolaatio on menetelmä, jossa lausekkeita sisällytetään osaksi merkkijonoliteraaleja. Ohjelmoijat käyttävät sitä dynaamisesti arvojen lisäämiseen merkkijonoihin, mikä tekee koodista luettavampaa ja siistimpää kuin perinteinen merkkijonojen yhdistäminen.
 
 ## Miten:
+Python 3.6:ssa ja sitä uudemmissa versioissa voit interpoloida merkkijonoja käyttämällä f-merkkijonoja. Näin se tehdään:
+
 ```Python
-# Python 3.6+
-nimi = "Pekka"
-ikä = 42
-print(f"Hei, nimeni on {nimi} ja olen {ikä} vuotta vanha.")
+name = 'Alice'
+age = 30
+greeting = f"Hei, {name}. Olet {age} vuotta vanha."
 
-# Tuloste:
-# Hei, nimeni on Pekka ja olen 42 vuotta vanha.
-
-# Vanhemmissa versioissa:
-print("Hei, nimeni on {} ja olen {} vuotta vanha.".format(nimi, ikä))
+print(greeting)
 ```
 
-## Syväsukellus:
-Interpolointi on ollut käytössä vanhemmissa ohjelmointikielissä, esim. Perl ja PHP. Pythonissa `.format()` metodi tuli käyttöön ensin, f-merkkijonot (formatted string literals) tulivat Python 3.6:ssa. Muita tapoja ovat %-formatointi ja template strings, mutta f-merkkijonot ovat suositumpia selkeyden ja lyhyyden vuoksi. Teknisenä yksityiskohtana, f-merkkijonot käsitellään suoritusajassa, mahdollistaen lausekkeiden dynaamisen arvioinnin merkkijonon sisällä.
+Tuloste:
+```
+Hei, Alice. Olet 30 vuotta vanha.
+```
 
-## Katso Myös:
-- Pythonin virallinen dokumentaatio f-merkkijonoista: https://docs.python.org/3/reference/lexical_analysis.html#f-strings
-- PEP 498, joka esittelee f-merkkijonot: https://www.python.org/dev/peps/pep-0498/
-- Pythonin `.format()` metodi: https://docs.python.org/3/library/stdtypes.html#str.format
-- String Template Class: https://docs.python.org/3/library/string.html#template-strings
+Voit myös käyttää lausekkeita aaltosulkujen sisällä:
+
+```Python
+a = 5
+b = 10
+info = f"Viisi plus kymmenen on {a + b}, ei {2 * (a + b)}."
+
+print(info)
+```
+
+Tuloste:
+```
+Viisi plus kymmenen on 15, ei 30.
+```
+
+## Syväluotaus
+Ennen Python 3.6:a `.format()` oli tapa tehdä merkkijonon interpolaatiota:
+
+```Python
+name = 'Bob'
+age = 25
+greeting = "Hei, {}. Olet {} vuotta vanha.".format(name, age)
+
+print(greeting)
+```
+
+Vanhan koulukunnan Pythonissa (versiot < 2.6) käytettiin `%`-operaattoria interpolaatioon, mikä on vähemmän intuitiivista ja voi muuttua sekavaksi useiden muuttujien kanssa:
+
+```Python
+name = 'Carol'
+age = 35
+greeting = "Hei, %s. Olet %d vuotta vanha." % (name, age)
+
+print(greeting)
+```
+
+Siistimmän syntaksin lisäksi f-merkkijonot ovat nopeampia, koska ne arvioidaan suoritusaikana ja muunnetaan sitten suoraan tehokkaaseen merkkijonoformaattitoimintoon. `.format()`-metodi ja `%`-operaattori sisältävät useampia vaiheita ja ovat hitaampia.
+
+## Katso Myös
+- [PEP 498 – Kirjaimellinen merkkijonon interpolaatio](https://www.python.org/dev/peps/pep-0498/) virallisessa dokumentaatiossa f-merkkijonoista.
+- [Python f-merkkijonot](https://realpython.com/python-f-strings/) Real Pythonin opastuksessa f-merkkijonojen käyttöön.
+- [.format()-Metodi](https://docs.python.org/3/library/stdtypes.html#str.format) Pythonin dokumentaatiossa ymmärtämään vanhempaa `.format()`-menetelmää merkkijonojen muotoiluun.

@@ -1,66 +1,77 @@
 ---
 title:                "字符串插值"
-date:                  2024-01-20T17:51:41.916147-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-01-28T21:23:54.472553-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "字符串插值"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/interpolating-a-string.md"
+changelog:
+  - 2024-01-28, dogweather, reviewed
+  - 2024-01-28, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么和为什么？)
-字符串插值指的是在字符串中嵌入变量或表达式的过程。程序员这么做是为了使输出内容动态、灵活，更加地方便阅读和维护。
+## 什么和为什么？
+字符串内插是一种在字符串常量中嵌入表达式的方法。程序员使用它来动态地将值插入到字符串中，这使得代码比传统的字符串连接更加易读和清洁。
 
-## How to: (怎么做：)
-在Python中，可以使用f-string来实现字符串插值：
+## 如何做：
+在Python 3.6及以上版本中，你可以使用f-string来插值字符串。以下是如何做的：
 
 ```Python
-name = "张三"
-age = 28
-greeting = f"你好，{name}。你今年{age}岁。"
+name = 'Alice'
+age = 30
+greeting = f"Hello, {name}. You are {age} years old."
+
 print(greeting)
 ```
 
-输出结果：
-
+输出：
 ```
-你好，张三。你今年28岁。
+Hello, Alice. You are 30 years old.
 ```
 
-还可以在花括号中直接进行计算：
+你也可以在花括号内使用表达式：
 
 ```Python
-item = "苹果"
-quantity = 5
-price_per_item = 3
-message = f"总价是：{quantity * price_per_item}元。"
-print(message)
+a = 5
+b = 10
+info = f"五加十等于{a + b}，不是{2 * (a + b)}."
+
+print(info)
 ```
 
-输出结果：
-
+输出：
 ```
-总价是：15元。
+五加十等于15，不是30。
 ```
 
-## Deep Dive (深入研究)
-字符串插值在Python的历史中有几个阶段。早期，使用`%`操作符或者`.format()`方法是常见的方法。例如：
+## 深入探索
+在Python 3.6之前，`.format()`是字符串插值的方式：
 
 ```Python
-name = "李四"
-age = 30
-greeting = "你好，%s。你今年%d岁。" % (name, age)
-# 或者
-greeting = "你好，{}。你今年{}岁。".format(name, age)
+name = 'Bob'
+age = 25
+greeting = "Hello, {}. You are {} years old.".format(name, age)
+
+print(greeting)
 ```
 
-但是，从Python 3.6起，推出了f-string，官方名称为Formatted String Literals，因为它更简洁且运行效率高于前者。在内部实现上，f-string在运行时会被转换为一个字符串格式化操作。值得注意的是，f-string内的表达式在运行时被评估，使得嵌入动态表达式变得很直接。
+老式Python（版本 < 2.6）使用`%`运算符进行插值，这种方式不够直观，并且在处理多个变量时会变得混乱：
 
-## See Also (另请参阅)
-- [官方文档关于Formatted String Literals](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
-- [PEP 498 -- Literal String Interpolation](https://www.python.org/dev/peps/pep-0498/): 提案详细说明了f-string的引入。
-- [Python字符串格式化教程](https://realpython.com/python-f-strings/): 对字符串格式化的实际应用进行了深入讲解。
+```Python
+name = 'Carol'
+age = 35
+greeting = "Hello, %s. You are %d years old." % (name, age)
+
+print(greeting)
+```
+
+除了语法更清晰外，f-string还因为它们在运行时被评估然后直接转换成高效的字符串格式操作而更快。`.format()`方法和`%`运算符涉及更多步骤，因此更慢。
+
+## 另请参阅
+- [PEP 498 - 字面字符串内插](https://www.python.org/dev/peps/pep-0498/) 了解f-string的官方文档。
+- [Python f字符串](https://realpython.com/python-f-strings/) 由Real Python提供的f-string使用教程。
+- [Python文档中的.format()方法](https://docs.python.org/3/library/stdtypes.html#str.format) 以了解旧的`.format()`字符串格式化方法。
