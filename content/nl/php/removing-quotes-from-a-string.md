@@ -43,7 +43,7 @@ Voor JSON-gegevens, zou je `json_encode()` kunnen gebruiken met opties zoals `JS
 Bij implementatie, overweeg randgevallen. Wat als je string bepaalde aanhalingstekens moet hebben, zoals dialoog in een verhaal of inches in metingen? Context doet ertoe, dus pas je aanhalingsteken-verwijdering aan op het beoogde gebruik van de gegevens.
 
 ## Zie Ook
-- [PHP: str_replace](https://www.php.net/manual/nl/function.str-replace.php)
-- [PHP: preg_replace](https://www.php.net/manual/nl/function.preg-replace.php)
-- [PHP: json_encode](https://www.php.net/manual/nl/function.json-encode.php)
+- [PHP: str_replace](https://www.php.net/manual/en/function.str-replace.php)
+- [PHP: preg_replace](https://www.php.net/manual/en/function.preg-replace.php)
+- [PHP: json_encode](https://www.php.net/manual/en/function.json-encode.php)
 - [OWASP: SQL Injectie Preventie](https://owasp.org/www-community/attacks/SQL_Injection)

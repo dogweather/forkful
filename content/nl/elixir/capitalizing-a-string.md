@@ -55,5 +55,4 @@ Als alternatief kun je je eigen kapitalisatiefunctie maken, maar in de meeste ge
 ## Zie Ook
 
 - De officiële `String` documentatie van Elixir: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
-- Elixir School voor het leren over strings en andere basiszaken: [https://elixirschool.com/nl/lessons/basics/strings/](https://elixirschool.com/nl/lessons/basics/strings/)
 - ExCldr-bibliotheek voor internationaliseringsondersteuning: [https://hex.pm/packages/ex_cldr](https://hex.pm/packages/ex_cldr)

@@ -68,6 +68,6 @@ Onthoud het beleid van beleefdheid: bestook een site niet met snelle verzoeken, 
 ## Zie ook
 
 - De [Jsoup bibliotheek](https://jsoup.org/) voor HTML-parsing en -extractie.
-- De [Selenium WebDriver](https://www.selenium.dev/documentation/nl/webdriver/) voor complexere taken inclusief JavaScript-uitvoering.
+- De [Selenium WebDriver](https://www.selenium.dev/documentation/en/webdriver/) voor complexere taken inclusief JavaScript-uitvoering.
 - Een gids voor [HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html) voor degenen die de details willen weten over Java's ingebouwde manier om HTTP te hanteren.
 - [HtmlUnit](http://htmlunit.sourceforge.net/), een "GUI-loze browser voor Java-programma's", geweldig voor pagina's zwaar beladen met JavaScript.

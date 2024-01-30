@@ -67,5 +67,5 @@ Er zijn alternatieven, zoals Digest Access Authentication of OAuth, die veiliger
 Voor implementatie, houd er rekening mee dat base64-codering de grootte van de inloggegevens met ongeveer 33% verhoogt en het geheugen van Arduino is beperkt. Zorg er ook voor dat je server SSL/TLS (HTTPS) gebruikt als je inloggegevens over het internet verzendt om blootstelling te voorkomen.
 
 ## Zie ook
-- [Wikipedia over Basis toegangsauthenticatie](https://nl.wikipedia.org/wiki/Basic_access_authentication)
+- [Wikipedia over Basis toegangsauthenticatie](https://en.wikipedia.org/wiki/Basic_access_authentication)
 - [Beveilig je HTTP-verzoek](https://arduino.cc/en/Tutorial/WebClientRepeating)

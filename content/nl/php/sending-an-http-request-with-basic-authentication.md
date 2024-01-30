@@ -76,7 +76,6 @@ Het kiezen van het juiste hulpmiddel hangt af van de behoeften van je project en
 
 Om dieper te duiken en je kennis uit te breiden, bekijk deze:
 
-- [cURL documentatie](https://www.php.net/manual/nl/book.curl.php)
-- [Guzzle documentatie](http://docs.guzzlephp.org/nl/stable/)
-- [PHP `file_get_contents` functie](https://www.php.net/manual/nl/function.file-get-contents.php)
-- [HTTP-authenticatie met PHP](https://www.php.net/manual/nl/features.http-auth.php)
+- [cURL documentatie](https://www.php.net/manual/en/book.curl.php)
+- [PHP `file_get_contents` functie](https://www.php.net/manual/en/function.file-get-contents.php)
+- [HTTP-authenticatie met PHP](https://www.php.net/manual/en/features.http-auth.php)

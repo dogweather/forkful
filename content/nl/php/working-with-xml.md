@@ -75,7 +75,7 @@ XML, of EXtensible Markup Language, is sinds de W3C-aanbeveling in 1998 een vast
 Programmeurs kiezen vaak voor XML wanneer ze documentvalidatie nodig hebben die wordt geboden door XML-schema's of wanneer ze werken binnen ecosystemen die er al zwaar op vertrouwen (zoals Microsoft Office-bestandsformaten). Het hanteren van XML in PHP is eenvoudig met de SimpleXML-extensie voor basisbewerkingen. Voor complexere manipulatie biedt DOMDocument een robuust scala aan functies die meer controle mogelijk maken, zoals omgaan met namespaces en schema-validatie.
 
 ## Zie ook
-- [PHP: SimpleXML](https://www.php.net/manual/nl/book.simplexml.php)
-- [PHP: DOMDocument](https://www.php.net/manual/nl/class.domdocument.php)
+- [PHP: SimpleXML](https://www.php.net/manual/en/book.simplexml.php)
+- [PHP: DOMDocument](https://www.php.net/manual/en/class.domdocument.php)
 - [W3Schools: PHP XML Parsers](https://www.w3schools.com/php/php_xml_parsers.asp)
 - [W3C XML Schema](https://www.w3.org/XML/Schema)

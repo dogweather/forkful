@@ -78,5 +78,4 @@ echo implode(' ', $array);
 
 - Официальная документация PHP по операторам строк - отличное место, чтобы ознакомиться с инструментами: [Операторы строк PHP](https://www.php.net/manual/en/language.operators.string.php)
 - Чтобы лучше разобраться в более сложном форматировании строк, изучите функции `sprintf()` и `printf()`: [PHP sprintf()](https://www.php.net/manual/en/function.sprintf.php)
-- Если вы хотите собрать элементы массива вместе, прочтите о `implode()`: [PHP implode()](https://www.php.net/manual/en/function.implode.php)
 - Для тех, кто стремится к производительности, этот разговор о конкатенации по сравнению с другими методами весьма познавателен: [Stack Overflow: Эффективная конкатенация строк в PHP](https://stackoverflow.com/questions/3349753/efficient-string-concatenation-in-php)

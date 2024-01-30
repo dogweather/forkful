@@ -50,4 +50,3 @@ Jeśli chodzi o alternatywy, istnieje także crate `regex` dla przypadków wymag
 ## See Also (Zobacz także):
 
 - Oficjalna dokumentacja String i str w Rust: [std::string](https://doc.rust-lang.org/std/string/index.html), [std::str](https://doc.rust-lang.org/std/str/)
-- Unicode i Rust: [Understanding Strings in Rust](https://fasterthanli.me/articles/understanding-strings-in-rust)

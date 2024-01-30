@@ -41,7 +41,7 @@ Per i dati JSON, si potrebbe usare `json_encode()` con opzioni come `JSON_UNESCA
 Quando implementate, considerate i casi limite. Cosa succede se la vostra stringa deve avere certe virgolette, come i dialoghi in una storia o le misure in pollici? Il contesto conta, quindi adattate la rimozione delle virgolette all'uso previsto dei dati.
 
 ## Vedi Anche
-- [PHP: str_replace](https://www.php.net/manual/it/function.str-replace.php)
-- [PHP: preg_replace](https://www.php.net/manual/it/function.preg-replace.php)
-- [PHP: json_encode](https://www.php.net/manual/it/function.json-encode.php)
+- [PHP: str_replace](https://www.php.net/manual/en/function.str-replace.php)
+- [PHP: preg_replace](https://www.php.net/manual/en/function.preg-replace.php)
+- [PHP: json_encode](https://www.php.net/manual/en/function.json-encode.php)
 - [OWASP: Prevenzione SQL Injection](https://owasp.org/www-community/attacks/SQL_Injection)

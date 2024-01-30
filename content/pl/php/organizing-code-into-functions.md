@@ -68,6 +68,6 @@ Array
 ```
 
 ## Zobacz również
-- [Podręcznik PHP na temat funkcji](https://www.php.net/manual/pl/functions.user-defined.php)
+- [Podręcznik PHP na temat funkcji](https://www.php.net/manual/en/functions.user-defined.php)
 - [PHP: The Right Way - Funkcje](https://phptherightway.com/#functions)
 - [Dowiedz się więcej o funkcjach strzałkowych w PHP 7.4](https://stitcher.io/blog/short-closures-in-php)

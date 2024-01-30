@@ -75,6 +75,6 @@ Een nadeel? Foutafhandeling kan lastiger zijn. Als iets misgaat, zijn deze funct
 
 ## Zie Ook
 
-- cURL's officiële PHP documentatie: [https://www.php.net/manual/nl/book.curl.php](https://www.php.net/manual/nl/book.curl.php)
-- PHP streamcontexten: [https://www.php.net/manual/nl/context.php](https://www.php.net/manual/nl/context.php)
-- HTTP-contextopties: [https://www.php.net/manual/nl/context.http.php](https://www.php.net/manual/nl/context.http.php)
+- cURL's officiële PHP documentatie: [https://www.php.net/manual/en/book.curl.php](https://www.php.net/manual/en/book.curl.php)
+- PHP streamcontexten: [https://www.php.net/manual/en/context.php](https://www.php.net/manual/en/context.php)
+- HTTP-contextopties: [https://www.php.net/manual/en/context.http.php](https://www.php.net/manual/en/context.http.php)

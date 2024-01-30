@@ -51,5 +51,4 @@ Onder de motorkap gebruikt `sed` reguliere expressies, die zijn als wildcards op
 ## Zie Ook
 - `man sed` voor de handleiding over `sed`
 - [Een introductie tot `sed`](https://www.gnu.org/software/sed/manual/sed.html)
-- [Reguliere Expressies voor Beginners](https://www.reguliere-expressies.info/tutorial.html)
 - De Kunst van de Command Line voor meer bash trucjes (https://github.com/jlevy/the-art-of-command-line)

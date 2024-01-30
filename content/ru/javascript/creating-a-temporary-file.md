@@ -57,4 +57,3 @@ tmp.file((err, path, fd, cleanupCallback) => {
 - [Модуль fs в Node.js](https://nodejs.org/api/fs.html) - для ручной работы с файлами.
 - [Пакет `tmp` на npm](https://www.npmjs.com/package/tmp) - утилита для временных файлов и каталогов.
 - [Пакет `tempfile` на npm](https://www.npmjs.com/package/tempfile) - для создания пути к случайному временному файлу.
-- [Временные каталоги операционной системы](https://ru.wikipedia.org/wiki/Временная_папка) - страница на Википедии о временных папках в различных ОС.

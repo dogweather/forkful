@@ -64,6 +64,6 @@ Let op de valkuilen bij het parsen:
 
 ## Zie Ook
 
-- [PHP Handleiding over DateTime](https://www.php.net/manual/nl/class.datetime.php)
-- [PHP Datum- en Tijdfuncties](https://www.php.net/manual/nl/ref.datetime.php)
+- [PHP Handleiding over DateTime](https://www.php.net/manual/en/class.datetime.php)
+- [PHP Datum- en Tijdfuncties](https://www.php.net/manual/en/ref.datetime.php)
 - [Carbon: Een eenvoudige PHP API-extensie voor DateTime](https://carbon.nesbot.com/)

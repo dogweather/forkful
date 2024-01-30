@@ -47,4 +47,3 @@ Alternatieven omvatten regex-bibliotheken voor complexe patronen of handmatig lu
 
 ## Zie Ook
 - [C Stringbibliotheekfuncties](https://www.cplusplus.com/reference/cstring/)
-- [Reguliere expressies in C](https://www.reguliere-expressies.info/posix.html)

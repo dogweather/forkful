@@ -48,6 +48,6 @@ Tässä mitä saatat nähdä debug-alueella:
 Debuggerit ovat olleet osa ohjelmointimaisemaa 1940-luvulta lähtien, kehittyen yksinkertaisista keskeytysjärjestelmistä monimutkaisiin, käyttöliittymävetoisiin kokemuksiin. Xcoden sisäänrakennettua debuggeria lukuun ottamatta muita vaihtoehtoja sisältävät kolmannen osapuolen työkalut, kuten LLDB (Low Level Debugger), jota Xcode käyttää konepellin alla. Jotkut jopa debuggaavat `print()`-lauseilla (leikkisästi kutsuttu "luolamies-debuggaukseksi"), mutta tämä on vähemmän tehokas suurille projekteille tai monimutkaisille bugeille. Kun käytät debuggeria, jonglööraat suorituksen hallinnan, suoritusaikaisen introspektioinnin ja datamanipulaation kanssa. Syvällinen näiden periaatteiden ymmärtäminen on pitkällä matkalla tehokkaaseen debuggaukseen.
 
 ## Katso myös:
-- [Applen Xcode Debugging -opas](https://developer.apple.com/documentation/xcode/debugging-your-app)
+- [Applen Xcode Debugging -opas](https://developer.apple.com/documentation/xcode/debugging/)
 - [LLDB Pikakäynnistysopas](https://lldb.llvm.org/use/tutorial.html)
 - [Ray Wenderlichin Swift Debugging -opas](https://www.raywenderlich.com/966538-arc-and-memory-management-in-swift)

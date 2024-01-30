@@ -57,9 +57,9 @@ Onthoud dat verkeerd gebruik van reguliere expressies kan leiden tot inefficiën
 ## Zie Ook
 
 Voor meer over PHP's stringfuncties en patroonmatching:
-- [PHP Handleiding — preg_replace](https://www.php.net/manual/nl/function.preg-replace.php)
-- [PHP Handleiding — Reguliere Expressies (Perl-Compatibel)](https://www.php.net/manual/nl/book.pcre.php)
-- [PHP Handleiding — str_replace](https://www.php.net/manual/nl/function.str-replace.php)
-- [PHP Handleiding — Stringfuncties](https://www.php.net/manual/nl/ref.strings.php)
+- [PHP Handleiding — preg_replace](https://www.php.net/manual/en/function.preg-replace.php)
+- [PHP Handleiding — Reguliere Expressies (Perl-Compatibel)](https://www.php.net/manual/en/book.pcre.php)
+- [PHP Handleiding — str_replace](https://www.php.net/manual/en/function.str-replace.php)
+- [PHP Handleiding — Stringfuncties](https://www.php.net/manual/en/ref.strings.php)
 
 Deze links leiden naar de officiële PHP-documentatie waar je je kunt verdiepen in de details van stringmanipulatie en patroonmatching.

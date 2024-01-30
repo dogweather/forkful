@@ -48,6 +48,6 @@ Ecco cosa potresti vedere nell'area di debug:
 I debugger fanno parte del panorama della programmazione dagli anni '40, evolvendo da semplici sistemi di breakpoint a complesse esperienze guidate dall'interfaccia utente. Altre opzioni oltre al debugger integrato di Xcode includono strumenti di terze parti come LLDB (Low Level Debugger), che Xcode utilizza sotto il cofano. Alcuni addirittura fanno debug con istruzioni `print()` (affettuosamente noto come "debugging da cavernicolo"), ma questo risulta meno efficiente per grandi progetti o bug complessi. Quando usi un debugger, stai gestendo il controllo dell'esecuzione, l'introspezione in tempo reale e la manipolazione dei dati. Una profonda comprensione di questi principi contribuisce molto a un debugging efficiente.
 
 ## Vedi Anche:
-- [Guida al Debugging di Xcode di Apple](https://developer.apple.com/documentation/xcode/debugging-your-app)
+- [Guida al Debugging di Xcode di Apple](https://developer.apple.com/documentation/xcode/debugging/)
 - [Guida Rapida a LLDB](https://lldb.llvm.org/use/tutorial.html)
 - [Tutorial sul Debugging di Swift di Ray Wenderlich](https://www.raywenderlich.com/966538-arc-and-memory-management-in-swift)

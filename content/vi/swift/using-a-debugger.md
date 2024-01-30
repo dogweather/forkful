@@ -50,6 +50,6 @@ Dưới đây là những gì bạn có thể thấy trong khu vực debug:
 Debugger đã là một phần của cảnh quan lập trình từ những năm 1940, phát triển từ hệ thống điểm dừng đơn giản đến các trải nghiệm phức tạp, được điều khiển bằng giao diện người dùng. Các lựa chọn khác bên cạnh debugger tích hợp của Xcode bao gồm các công cụ bên thứ ba như LLDB (Low Level Debugger) mà Xcode sử dụng phía sau hậu trường. Một số người thậm chí còn debug bằng cách sử dụng lệnh `print()` (thường được biết đến với tên gọi "debug kiểu người nguyên thủy"), nhưng điều này kém hiệu quả hơn cho các dự án lớn hoặc lỗi phức tạp. Khi bạn sử dụng debugger, bạn đang thao túng điều khiển thực thi, kiểm tra runtime và thao tác dữ liệu. Một hiểu biết sâu sắc về những nguyên tắc này giúp rất nhiều trong việc debug hiệu quả.
 
 ## Xem thêm:
-- [Hướng dẫn Debug Xcode của Apple](https://developer.apple.com/documentation/xcode/debugging-your-app)
+- [Hướng dẫn Debug Xcode của Apple](https://developer.apple.com/documentation/xcode/debugging/)
 - [Hướng dẫn Nhanh LLDB](https://lldb.llvm.org/use/tutorial.html)
 - [Hướng dẫn Debug Swift của Ray Wenderlich](https://www.raywenderlich.com/966538-arc-and-memory-management-in-swift)

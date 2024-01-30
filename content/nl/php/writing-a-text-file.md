@@ -51,8 +51,8 @@ Alternatieven omvatten het gebruik van `fputcsv()` voor het genereren van CSV-be
 
 ## Zie Ook
 
-- [PHP file_put_contents()](https://www.php.net/manual/nl/function.file-put-contents.php)
-- [PHP fopen()](https://www.php.net/manual/nl/function.fopen.php)
-- [PHP fwrite()](https://www.php.net/manual/nl/function.fwrite.php)
-- [PHP-bestandsafhandeling](https://www.php.net/manual/nl/book.filesystem.php)
-- [Bestandsrechten begrijpen](https://www.php.net/manual/nl/function.chmod.php)
+- [PHP file_put_contents()](https://www.php.net/manual/en/function.file-put-contents.php)
+- [PHP fopen()](https://www.php.net/manual/en/function.fopen.php)
+- [PHP fwrite()](https://www.php.net/manual/en/function.fwrite.php)
+- [PHP-bestandsafhandeling](https://www.php.net/manual/en/book.filesystem.php)
+- [Bestandsrechten begrijpen](https://www.php.net/manual/en/function.chmod.php)

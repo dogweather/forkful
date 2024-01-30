@@ -68,6 +68,6 @@ Array
 ```
 
 ## Vedi Anche
-- [Manuale di PHP sulle Funzioni](https://www.php.net/manual/it/functions.user-defined.php)
+- [Manuale di PHP sulle Funzioni](https://www.php.net/manual/en/functions.user-defined.php)
 - [PHP: Il Modo Giusto - Funzioni](https://phptherightway.com/#functions)
 - [Scopri le Funzioni Arrow di PHP 7.4](https://stitcher.io/blog/short-closures-in-php)

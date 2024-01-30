@@ -38,4 +38,3 @@ Lisätietoja. Kattavampaa tietoa löydät:
 
 - Kotlinin virallinen dokumentaatio: [https://kotlinlang.org/docs/home.html](https://kotlinlang.org/docs/home.html)
 - SLF4J-projekti: [http://www.slf4j.org/](http://www.slf4j.org/)
-- Logback-projekti: [https://logback.qos.ch/](https://logback.qos.ch/)

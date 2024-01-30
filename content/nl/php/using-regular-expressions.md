@@ -42,6 +42,6 @@ echo $vervangenString;
 Reguliere expressies bestaan al sinds de jaren 1950 en werden uitvoerig geïmplementeerd in Perl, wat veel andere talen, waaronder PHP, beïnvloedde. Alternatieven voor regex in PHP omvatten functies zoals `strpos()` voor het vinden van substrings of `str_replace()` voor het vervangen van tekst. De PCRE (Perl Compatible Regular Expressions) bibliotheek is wat PHP onder de motorkap gebruikt voor regex-functies, en biedt rijke en krachtige mogelijkheden voor patroonmatching.
 
 ## Zie Ook
-- [PHP Officiële Documentatie over PCRE](https://www.php.net/manual/nl/book.pcre.php)
+- [PHP Officiële Documentatie over PCRE](https://www.php.net/manual/en/book.pcre.php)
 - [Regular-Expressions.info](https://www.regular-expressions.info/) - voor een grondig begrip van regex.
 - [Regex101](https://regex101.com/) - voor het testen en debuggen van je regex-patronen.

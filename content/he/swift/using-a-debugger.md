@@ -48,6 +48,6 @@ print(result)
 מנפי תקלות היו חלק מנוף התכנות מאז שנות ה-40, והתפתחו ממערכות נקודת עצירה פשוטות לחוויות מורכבות המונעות על ידי ממשק משתמש. אופציות נוספות למעבר למנפה המובנה של Xcode כוללות כלים צד שלישי כמו LLDB (Low Level Debugger) ש-Xcode משתמש בו מאחורי הקלעים. ישנם אנשים שאף מנפים באמצעות הודעות `print()` (המכונה בחיבה "נפית תקלות האדם הקדמון"), אך זה פחות יעיל עבור פרויקטים גדולים או באגים מורכבים. כאשר אתם משתמשים במנפה תקלות, אתם מתמודדים עם שליטה בביצוע, פריסה רגעית בזמן ריצה, וניהול נתונים. הבנה עמוקה של העקרונות הללו תורמת רבות לנפית תקלות יעילה.
 
 ## ראו גם:
-- [מדריך לנפית תקלות של Xcode מבית אפל](https://developer.apple.com/documentation/xcode/debugging-your-app)
+- [מדריך לנפית תקלות של Xcode מבית אפל](https://developer.apple.com/documentation/xcode/debugging/)
 - [מדריך התחלה מהירה של LLDB](https://lldb.llvm.org/use/tutorial.html)
 - [מדריך לנפית תקלות ב-Swift מבית Ray Wenderlich](https://www.raywenderlich.com/966538-arc-and-memory-management-in-swift)

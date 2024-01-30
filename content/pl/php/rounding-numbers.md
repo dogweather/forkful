@@ -33,7 +33,7 @@ Alternatywy dla wbudowanych funkcji obejmują niestandardowe metody zaokrąglani
 
 ## Zobacz także
 Odkryj więcej w podręczniku PHP:
-- [Funkcja `round` w PHP](https://php.net/manual/pl/function.round.php)
-- [Funkcja `ceil` w PHP](https://php.net/manual/pl/function.ceil.php)
-- [Funkcja `floor` w PHP](https://php.net/manual/pl/function.floor.php)
-- [BC Math dla arytmetyki o dowolnej precyzji](https://php.net/manual/pl/book.bc.php)
+- [Funkcja `round` w PHP](https://www.php.net/manual/en/function.round.php)
+- [Funkcja `ceil` w PHP](https://www.php.net/manual/en/function.ceil.php)
+- [Funkcja `floor` w PHP](https://www.php.net/manual/en/function.floor.php)
+- [BC Math dla arytmetyki o dowolnej precyzji](https://www.php.net/manual/en/book.bc.php)

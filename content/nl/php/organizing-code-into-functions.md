@@ -70,6 +70,6 @@ Array
 ```
 
 ## Zie Ook
-- [PHP Handboek over Functies](https://www.php.net/manual/nl/functions.user-defined.php)
+- [PHP Handboek over Functies](https://www.php.net/manual/en/functions.user-defined.php)
 - [PHP: De Juiste Manier - Functies](https://phptherightway.com/#functions)
 - [Leer over PHP 7.4 Arrow Functies](https://stitcher.io/blog/short-closures-in-php)

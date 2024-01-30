@@ -73,7 +73,7 @@ XML, o eXtensible Markup Language, è un pilastro nella serializzazione dei dati
 I programmatori spesso scelgono XML quando necessitano della validazione dei documenti fornita dagli Schemi XML o quando lavorano all'interno di ecosistemi che si affidano già pesantemente ad esso (come i formati di file di Microsoft Office). Gestire XML in PHP è semplice con l'estensione SimpleXML per le operazioni di base. Per manipolazioni più complesse, DOMDocument fornisce un robusto insieme di funzionalità che permettono un maggiore controllo, come la gestione degli spazi dei nomi e la validazione degli schemi.
 
 ## Vedi Anche
-- [PHP: SimpleXML](https://www.php.net/manual/it/book.simplexml.php)
-- [PHP: DOMDocument](https://www.php.net/manual/it/class.domdocument.php)
+- [PHP: SimpleXML](https://www.php.net/manual/en/book.simplexml.php)
+- [PHP: DOMDocument](https://www.php.net/manual/en/class.domdocument.php)
 - [W3Schools: PHP XML Parsers](https://www.w3schools.com/php/php_xml_parsers.asp)
 - [W3C XML Schema](https://www.w3.org/XML/Schema)

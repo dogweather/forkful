@@ -69,4 +69,3 @@ Pour en apprendre plus :
 
 - Document officiel Ruby sur la classe File : [Ruby-Doc.org File Class](https://www.ruby-doc.org/core/File.html)
 - Didacticiel sur la manipulation de fichiers en Ruby : [RubyGuides - File IO](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
-- Apprendre l'API IO de Ruby pour les opérations d'entrée/sortie : [IO Class](https://www.ruby-doc.org/core/IO.html)

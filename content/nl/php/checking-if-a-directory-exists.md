@@ -64,7 +64,7 @@ Een alternatief, vooral relevant in Unix-achtige systemen, is het gebruik van `e
 
 ## Zie ook
 
-- [PHP Handleiding: `is_dir()`](https://www.php.net/manual/nl/function.is-dir.php)
-- [PHP Handleiding: `file_exists()`](https://www.php.net/manual/nl/function.file-exists.php)
+- [PHP Handleiding: `is_dir()`](https://www.php.net/manual/en/function.is-dir.php)
+- [PHP Handleiding: `file_exists()`](https://www.php.net/manual/en/function.file-exists.php)
 - [Bestandssysteem best practices in PHP](https://www.php-fig.org/psr/psr-4/)
-- [PHP bestandssysteem functies](https://www.php.net/manual/nl/ref.filesystem.php)
+- [PHP bestandssysteem functies](https://www.php.net/manual/en/ref.filesystem.php)

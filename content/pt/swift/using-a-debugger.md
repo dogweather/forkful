@@ -48,6 +48,6 @@ Aqui está o que você pode ver na área de depuração:
 Depuradores fazem parte da paisagem da programação desde a década de 1940, evoluindo de sistemas simples de ponto de interrupção para experiências complexas e guiadas por UI. Outras opções além do depurador integrado ao Xcode incluem ferramentas de terceiros como o LLDB (Low Level Debugger), que o Xcode utiliza por baixo dos panos. Algumas pessoas até depuram com declarações de `print()` (carinhosamente conhecidas como "depuração das cavernas"), mas isso é menos eficiente para projetos grandes ou bugs complexos. Ao usar um depurador, você está manipulando o controle de execução, a introspecção em tempo de execução e a manipulação de dados. Uma compreensão profunda desses princípios contribui muito para uma depuração eficiente.
 
 ## Veja Também:
-- [Guia de Depuração do Xcode da Apple](https://developer.apple.com/documentation/xcode/debugging-your-app)
+- [Guia de Depuração do Xcode da Apple](https://developer.apple.com/documentation/xcode/debugging/)
 - [Guia Rápido do LLDB](https://lldb.llvm.org/use/tutorial.html)
 - [Tutorial de Depuração Swift do Ray Wenderlich](https://www.raywenderlich.com/966538-arc-and-memory-management-in-swift)

@@ -35,5 +35,4 @@ Console.WriteLine(substring2.ToString()); // Output: सीखना सुख�
 
 ## See Also (और देखें)
 - Microsoft's documentation on String.Substring Method: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
-- Microsoft's documentation on Span<T>: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.span-1) 
-- A tutorial on string manipulation in C#: [csharp-tutorials](https://www.csharp-tutorials.com/Data-Types/string-manipulation/)
+- Microsoft's documentation on Span<T>: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.span-1)

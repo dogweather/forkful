@@ -48,6 +48,6 @@ print(result)
 调试器自1940年代以来一直是编程领域的一部分，从简单的断点系统演变到复杂的、UI驱动的体验。除了Xcode内置的调试器，其他选项包括第三方工具，比如Xcode在底层使用的LLDB（低级调试器）。有些人甚至使用`print()`语句进行调试（亲切地称为“原始调试”），但对于大型项目或复杂错误来说，这种方法效率较低。当你使用调试器时，你在处理执行控制、运行时内省和数据操作。深刻理解这些原则对于高效调试来说非常重要。
 
 ## 另请参阅：
-- [苹果的Xcode调试指南](https://developer.apple.com/documentation/xcode/debugging-your-app)
+- [苹果的Xcode调试指南](https://developer.apple.com/documentation/xcode/debugging/)
 - [LLDB快速入门指南](https://lldb.llvm.org/use/tutorial.html)
 - [Ray Wenderlich的Swift调试教程](https://www.raywenderlich.com/966538-arc-and-memory-management-in-swift)

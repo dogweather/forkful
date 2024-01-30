@@ -48,6 +48,6 @@ Dette er hva du kan se i feilsøkerområdet:
 Feilsøkere har vært en del av programmeringslandskapet siden 1940-tallet, og har utviklet seg fra enkle brytepunktsystemer til komplekse, UI-drevne opplevelser. Andre alternativer enn Xcodes innebygde feilsøker inkluderer tredjepartsverktøy som LLDB (Low Level Debugger), som Xcode bruker under panseret. Noen feilsøker til og med med `print()`-påstander (kjærlig kjent som "hulemannsdebugging"), men dette er mindre effektivt for store prosjekter eller komplekse feil. Når du bruker en feilsøker, balanserer du utførelseskontroll, kjøretidsintrospeksjon og datamanipulasjon. En dyp forståelse av disse prinsippene kommer langt i effektiv feilsøking.
 
 ## Se også:
-- [Apples Xcode-feilsøkingsguide](https://developer.apple.com/documentation/xcode/debugging-your-app)
+- [Apples Xcode-feilsøkingsguide](https://developer.apple.com/documentation/xcode/debugging/)
 - [LLDB Rask startguide](https://lldb.llvm.org/use/tutorial.html)
 - [Ray Wenderlichs Swift-feilsøkingstutorial](https://www.raywenderlich.com/966538-arc-and-memory-management-in-swift)

@@ -41,4 +41,3 @@ Historicamente, a manipulação de strings sempre foi uma habilidade crucial na 
 
 ## Veja Também:
 - [Documentação oficial do .NET sobre a classe Regex](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex)
-- [Guia para iniciantes em LINQ e suas operações com strings](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)

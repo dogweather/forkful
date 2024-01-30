@@ -62,7 +62,7 @@ Je moet de [PSR-3 Logger Interface](https://www.php-fig.org/psr/psr-3/) in gedac
 
 - [Monolog GitHub Repository](https://github.com/Seldaek/monolog)
 - [PSR-3 Logger Interface Specificatie](https://www.php-fig.org/psr/psr-3/)
-- [PHP Foutenlog Documentatie](https://www.php.net/manual/nl/function.error-log.php)
+- [PHP Foutenlog Documentatie](https://www.php.net/manual/en/function.error-log.php)
 - [KLogger: Een Eenvoudige Logklasse Voor PHP](https://github.com/katzgrau/KLogger)
 - [Log4php: Een veelzijdig logkader voor PHP](https://logging.apache.org/log4php/)
 

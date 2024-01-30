@@ -48,6 +48,6 @@ Xcode에서 줄 번호 왼쪽을 클릭하여 중단점을 설정하고, 프로�
 디버거는 1940년대 이래 프로그래밍 환경의 일부였으며, 단순한 중단점 시스템에서 복잡한 UI 기반 경험까지 발전했습니다. Xcode의 내장 디버거 이외에도, Xcode가 내부적으로 사용하는 LLDB(저수준 디버거)와 같은 타사 도구도 있습니다. 어떤 이들은 `print()` 문을 사용하여 디버깅하는 경우도 있으나(애정을 담아 "원시적 디버깅"이라고도 함), 이는 대규모 프로젝트나 복잡한 버그에 대해서는 덜 효율적입니다. 디버거를 사용할 때, 실행 제어, 런타임 내부 조사, 데이터 조작을 다루고 있습니다. 이 원칙들에 대한 깊은 이해는 효율적인 디버깅에 큰 도움이 됩니다.
 
 ## 참고 자료:
-- [애플의 Xcode 디버깅 가이드](https://developer.apple.com/documentation/xcode/debugging-your-app)
+- [애플의 Xcode 디버깅 가이드](https://developer.apple.com/documentation/xcode/debugging/)
 - [LLDB 빠른 시작 가이드](https://lldb.llvm.org/use/tutorial.html)
 - [레이 웬더리히의 스위프트 디버깅 튜토리얼](https://www.raywenderlich.com/966538-arc-and-memory-management-in-swift)

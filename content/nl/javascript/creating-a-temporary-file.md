@@ -57,4 +57,3 @@ Wanneer je met tijdelijke bestanden omgaat, onthoud dan dat terwijl ze "tijdelij
 - [Node.js fs module](https://nodejs.org/api/fs.html) - voor handmatige bestandsbewerkingen.
 - [`tmp` pakket op npm](https://www.npmjs.com/package/tmp) - een hulpprogramma voor tijdelijke bestanden en mappen.
 - [`tempfile` pakket op npm](https://www.npmjs.com/package/tempfile) - voor het maken van een willekeurig tijdelijk bestandspad.
-- [Besturingssysteem tijdelijke mappen](https://nl.wikipedia.org/wiki/Tijdelijke_map) - Wikipedia-pagina over tijdelijke mappen in verschillende besturingssystemen.

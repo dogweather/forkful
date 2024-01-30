@@ -41,7 +41,7 @@ echo $unquotedString;
 При реалізації враховуйте крайові випадки. Що, якщо ваш рядок призначений мати певні лапки, як діалог у розповіді або дюйми в мірках? Контекст має значення, отже, налаштуйте своє видалення лапок згідно з передбачуваним використанням даних.
 
 ## Див. також
-- [PHP: str_replace](https://www.php.net/manual/uk/function.str-replace.php)
-- [PHP: preg_replace](https://www.php.net/manual/uk/function.preg-replace.php)
-- [PHP: json_encode](https://www.php.net/manual/uk/function.json-encode.php)
+- [PHP: str_replace](https://www.php.net/manual/en/function.str-replace.php)
+- [PHP: preg_replace](https://www.php.net/manual/en/function.preg-replace.php)
+- [PHP: json_encode](https://www.php.net/manual/en/function.json-encode.php)
 - [OWASP: Профілактика SQL ін'єкцій](https://owasp.org/www-community/attacks/SQL_Injection)

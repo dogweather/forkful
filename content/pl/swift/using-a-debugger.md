@@ -48,6 +48,6 @@ Oto co możesz zobaczyć w obszarze debugowania:
 Debugery są częścią krajobrazu programistycznego od lat 40. XX wieku, ewoluując od prostych systemów przerwania do złożonych, sterowanych UI doświadczeń. Inne opcje poza wbudowanym debuggerem Xcode obejmują narzędzia stron trzecich, jak LLDB (Low Level Debugger), który Xcode wykorzystuje pod maską. Niektórzy debugują nawet używając instrukcji `print()` (nazywane czule "debugowaniem jaskiniowca"), ale jest to mniej efektywne dla dużych projektów lub złożonych błędów. Używając debugera, masz do czynienia z kontrolowaniem wykonania, introspekcją czasu wykonania i manipulacją danymi. Głębokie zrozumienie tych zasad znacznie ułatwia efektywne debugowanie.
 
 ## Zobacz również:
-- [Przewodnik po debugowaniu Xcode od Apple](https://developer.apple.com/documentation/xcode/debugging-your-app)
+- [Przewodnik po debugowaniu Xcode od Apple](https://developer.apple.com/documentation/xcode/debugging/)
 - [Szybki start LLDB](https://lldb.llvm.org/use/tutorial.html)
 - [Poradnik debugowania Swift od Ray'a Wenderlicha](https://www.raywenderlich.com/966538-arc-and-memory-management-in-swift)

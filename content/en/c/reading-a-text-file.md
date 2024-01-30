@@ -68,4 +68,3 @@ To dive deeper, check out these:
 - C Standard Library documentation: [https://en.cppreference.com/w/c/io](https://en.cppreference.com/w/c/io)
 - GNU C Library Reference Manual: [https://www.gnu.org/software/libc/manual/html_node/I_002fO-Overview.html](https://www.gnu.org/software/libc/manual/html_node/I_002fO-Overview.html)
 - Learn more about different reading functions: [https://www.tutorialspoint.com/c_standard_library/c_function_fread.htm](https://www.tutorialspoint.com/c_standard_library/c_function_fread.htm)
-- For the truly curious, a deep dive into the Linux system calls: [https://man7.org/linux/man-pages/man2/read.2.html](https://man7.org/linux/man-pages/man2/read.2.html)

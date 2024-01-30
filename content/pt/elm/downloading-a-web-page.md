@@ -61,4 +61,3 @@ Quanto aos detalhes de implementação, Elm trata downloads de página web de ma
 ## Veja também
 - Documentação oficial de Elm para o pacote `Http`: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)
 - Um guia prático de Elm: [https://guide.elm-lang.org/](https://guide.elm-lang.org/)
-- Comunidade Elm em Português: [https://t.me/elmbrasil](https://t.me/elmbrasil)

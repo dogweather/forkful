@@ -48,6 +48,6 @@ Xcodeで行番号の左をクリックしてブレークポイントを設定し
 デバッガは、1940年代からプログラミングの風景の一部となっており、単純なブレークポイントシステムから複雑なUI操作体験まで進化してきました。Xcodeの組み込みデバッガ以外の選択肢には、Xcodeが内部で使用しているLLDB（Low Level Debugger）のようなサードパーティツールが含まれます。一部の人々は、`print()`ステートメントを使用してデバッグを行います（俗に「洞窟人デバッギング」と呼ばれますが）、これは大規模なプロジェクトや複雑なバグには効率的ではありません。デバッガを使用するとき、実行制御、ランタイムの内省、およびデータ操作を扱っています。これらの原則を深く理解することは、効率的なデバッグに大きく寄与します。
 
 ## 参照：
-- [AppleのXcodeデバッグガイド](https://developer.apple.com/documentation/xcode/debugging-your-app)
+- [AppleのXcodeデバッグガイド](https://developer.apple.com/documentation/xcode/debugging/)
 - [LLDBクイックスタートガイド](https://lldb.llvm.org/use/tutorial.html)
 - [Ray WenderlichのSwiftデバッグチュートリアル](https://www.raywenderlich.com/966538-arc-and-memory-management-in-swift)

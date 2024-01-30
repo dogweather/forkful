@@ -33,7 +33,7 @@ Alternativas às funções integradas incluem métodos de arredondamento persona
 
 ## Veja Também
 Explore mais no manual do PHP:
-- [Função `round` do PHP](https://php.net/manual/pt/function.round.php)
-- [Função `ceil` do PHP](https://php.net/manual/pt/function.ceil.php)
-- [Função `floor` do PHP](https://php.net/manual/pt/function.floor.php)
-- [Matemática BC para aritmética de precisão arbitrária](https://php.net/manual/pt/book.bc.php)
+- [Função `round` do PHP](https://www.php.net/manual/en/function.round.php)
+- [Função `ceil` do PHP](https://www.php.net/manual/en/function.ceil.php)
+- [Função `floor` do PHP](https://www.php.net/manual/en/function.floor.php)
+- [Matemática BC para aritmética de precisão arbitrária](https://www.php.net/manual/en/book.bc.php)

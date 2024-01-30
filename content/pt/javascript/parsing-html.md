@@ -46,7 +46,7 @@ Em termos de implementação, quando você analisa HTML com `DOMParser`, ele cri
 Aqui está a coisa—o processo de análise pode tropeçar em HTML malformado. Os navegadores são tolerantes, mas o `DOMParser` pode não ser. Portanto, para tarefas complexas ou HTML bagunçado, bibliotecas de terceiros podem fazer um trabalho de limpeza melhor.
 
 ## Veja Também
-- Documentação da MDN sobre a API `DOMParser`: [MDN DOMParser](https://developer.mozilla.org/pt-BR/docs/Web/API/DOMParser)
+- Documentação da MDN sobre a API `DOMParser`: [MDN DOMParser](https://developer.mozilla.org/en/docs/Web/API/DOMParser)
 - Capacidades de análise do jQuery: [jQuery.parseHTML()](https://api.jquery.com/jquery.parsehtml/)
 - Cheerio, uma implementação rápida, flexível e enxuta do núcleo do jQuery para o servidor: [Cheerio.js](https://cheerio.js.org/)
 - Para análise fora do JS: Biblioteca BeautifulSoup do Python: [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)

@@ -59,4 +59,3 @@ Wat betreft details? `tempfile` maakt bestanden in de door het besturingssysteem
 
 - Rust `tempfile` documentatie: [https://docs.rs/tempfile/](https://docs.rs/tempfile/)
 - Rust standaardbibliotheek I/O: [https://doc.rust-lang.org/std/io/](https://doc.rust-lang.org/std/io/)
-- Algemeen concept van tijdelijke bestanden: [https://nl.wikipedia.org/wiki/Tijdelijk_bestand](https://nl.wikipedia.org/wiki/Tijdelijk_bestand)
