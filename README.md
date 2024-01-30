@@ -15,7 +15,7 @@ In a nutshell, a sort of pair-programmer for technical documentation. This seems
 2. Open source contributors (you)
 3. AI (OpenAI GPT-4 Turbo)
  
-* **Multilingual**: **18** world languages
+* **Multilingual**: **20** world languages
 * **Polyglot**: **23** programming languages
 
 ---
