@@ -40,6 +40,7 @@ Is there a language we should add? [Post a message in the forum](https://github.
 * [Norwegian](https://forkful.ai/no)
 * [Polish](https://forkful.ai/pl)
 * [Portuguese](https://forkful.ai/pt)
+* [Russian](https://forkful.ai/ru)
 * [Spanish](https://forkful.ai/es)
 * [Swedish](https://forkful.ai/sv)
 * [Ukrainian](https://forkful.ai/uk)
