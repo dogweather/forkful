@@ -3,8 +3,7 @@ title:                "Twee datums vergelijken"
 date:                  2024-01-28T21:56:36.527678-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Twee datums vergelijken"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/comparing-two-dates.md"
 changelog:

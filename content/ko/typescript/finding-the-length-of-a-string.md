@@ -3,8 +3,7 @@ title:                "문자열의 길이 찾기"
 date:                  2024-01-20T17:48:20.987307-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "문자열의 길이 찾기"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/finding-the-length-of-a-string.md"

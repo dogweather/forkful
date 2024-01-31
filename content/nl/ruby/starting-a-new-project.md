@@ -3,8 +3,7 @@ title:                "Een nieuw project starten"
 date:                  2024-01-28T22:08:49.479567-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een nieuw project starten"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/starting-a-new-project.md"
 changelog:

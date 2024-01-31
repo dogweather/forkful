@@ -3,8 +3,7 @@ title:                "Extraction de sous-chaînes"
 date:                  2024-01-20T17:46:16.710501-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extraction de sous-chaînes"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/extracting-substrings.md"
 ---

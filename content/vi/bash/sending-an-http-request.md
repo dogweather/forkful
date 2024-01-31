@@ -3,8 +3,7 @@ title:                "Gửi một yêu cầu HTTP"
 date:                  2024-01-28T22:07:30.762761-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gửi một yêu cầu HTTP"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/sending-an-http-request.md"
 changelog:

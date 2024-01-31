@@ -3,8 +3,7 @@ title:                "कोड सुधार"
 date:                  2024-01-26T01:18:19.851253-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड सुधार"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/refactoring.md"
 ---

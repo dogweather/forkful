@@ -1,10 +1,8 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
 date:                  2024-01-20T15:15:48.518024-07:00
-html_title:           "C: वर्तमान तारीख प्राप्त करना"
 simple_title:         "वर्तमान तारीख प्राप्त करना"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/getting-the-current-date.md"
 ---

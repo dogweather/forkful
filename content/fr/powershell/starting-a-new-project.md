@@ -3,8 +3,7 @@ title:                "Lancement d'un nouveau projet"
 date:                  2024-01-20T18:04:00.011521-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lancement d'un nouveau projet"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/starting-a-new-project.md"
 ---

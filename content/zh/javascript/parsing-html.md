@@ -3,8 +3,7 @@ title:                "解析HTML"
 date:                  2024-01-28T03:01:15.913826-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "解析HTML"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/parsing-html.md"
 changelog:

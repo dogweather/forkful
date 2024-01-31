@@ -1,10 +1,8 @@
 ---
 title:                "Writing tests"
 date:                  2024-01-19
-html_title:           "Arduino recipe: Writing tests"
 simple_title:         "Writing tests"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/writing-tests.md"
 ---

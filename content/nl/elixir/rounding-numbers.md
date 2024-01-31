@@ -3,8 +3,7 @@ title:                "Afronden van getallen"
 date:                  2024-01-28T22:06:51.460870-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Afronden van getallen"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/rounding-numbers.md"
 changelog:

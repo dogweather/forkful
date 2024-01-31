@@ -3,8 +3,7 @@ title:                "שימוש במנפה שגיאות"
 date:                  2024-01-26T03:49:35.922289-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במנפה שגיאות"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/using-a-debugger.md"
 ---

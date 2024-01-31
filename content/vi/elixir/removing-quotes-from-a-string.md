@@ -3,8 +3,7 @@ title:                "Loại bỏ dấu ngoặc kép khỏi chuỗi"
 date:                  2024-01-28T22:06:15.305111-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Loại bỏ dấu ngoặc kép khỏi chuỗi"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/removing-quotes-from-a-string.md"
 changelog:

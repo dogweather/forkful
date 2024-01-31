@@ -3,8 +3,7 @@ title:                "Inviare una richiesta http"
 date:                  2024-01-20T17:59:37.240438-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/sending-an-http-request.md"
 ---

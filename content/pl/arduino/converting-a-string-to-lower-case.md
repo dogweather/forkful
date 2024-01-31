@@ -3,8 +3,7 @@ title:                "Konwersja ciągu znaków na małe litery"
 date:                  2024-01-20T17:37:48.703655-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/converting-a-string-to-lower-case.md"
 ---

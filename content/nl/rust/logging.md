@@ -3,8 +3,7 @@ title:                "Logboekregistratie"
 date:                  2024-01-28T22:03:29.151930-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Logboekregistratie"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/logging.md"
 changelog:

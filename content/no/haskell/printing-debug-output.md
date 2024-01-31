@@ -3,8 +3,7 @@ title:                "Skrive ut feilsøkingsdata"
 date:                  2024-01-20T17:52:39.063029-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Skrive ut feilsøkingsdata"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/printing-debug-output.md"
 ---

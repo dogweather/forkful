@@ -3,8 +3,7 @@ title:                "Làm tròn số"
 date:                  2024-01-28T22:06:52.640869-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm tròn số"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/rounding-numbers.md"
 changelog:

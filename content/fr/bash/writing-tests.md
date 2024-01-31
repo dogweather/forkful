@@ -1,10 +1,8 @@
 ---
 title:                "Rédaction de tests"
 date:                  2024-01-19
-html_title:           "Arduino: Rédaction de tests"
 simple_title:         "Rédaction de tests"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/writing-tests.md"
 ---

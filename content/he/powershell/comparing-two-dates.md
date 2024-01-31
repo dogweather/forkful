@@ -3,8 +3,7 @@ title:                "השוואת שתי תאריכים"
 date:                  2024-01-20T17:33:52.411583-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "השוואת שתי תאריכים"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/powershell/comparing-two-dates.md"
 ---

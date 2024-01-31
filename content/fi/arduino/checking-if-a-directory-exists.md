@@ -1,10 +1,8 @@
 ---
 title:                "Tarkistetaan, onko hakemisto olemassa"
 date:                  2024-01-19
-html_title:           "C: Tarkistetaan, onko hakemisto olemassa"
 simple_title:         "Tarkistetaan, onko hakemisto olemassa"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/checking-if-a-directory-exists.md"
 ---

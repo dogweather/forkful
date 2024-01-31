@@ -3,8 +3,7 @@ title:                "基本認証を使用したHTTPリクエストの送信"
 date:                  2024-01-20T18:01:33.326186-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "基本認証を使用したHTTPリクエストの送信"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/sending-an-http-request-with-basic-authentication.md"

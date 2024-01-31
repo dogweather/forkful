@@ -3,8 +3,7 @@ title:                "Removendo aspas de uma string"
 date:                  2024-01-26T03:38:48.693893-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Removendo aspas de uma string"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/removing-quotes-from-a-string.md"
 ---

@@ -3,8 +3,7 @@ title:                "एरर्स को हैंडल करना"
 date:                  2024-01-26T00:55:36.802706-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "एरर्स को हैंडल करना"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/handling-errors.md"
 ---

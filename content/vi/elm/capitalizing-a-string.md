@@ -3,8 +3,7 @@ title:                "Viết hoa một chuỗi"
 date:                  2024-01-28T21:56:36.114907-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết hoa một chuỗi"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elm/capitalizing-a-string.md"
 changelog:

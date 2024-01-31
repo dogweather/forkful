@@ -3,8 +3,7 @@ title:                "Het huidige datum ophalen"
 date:                  2024-01-28T22:00:50.479562-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Het huidige datum ophalen"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/getting-the-current-date.md"
 changelog:

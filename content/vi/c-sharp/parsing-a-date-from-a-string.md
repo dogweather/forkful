@@ -3,8 +3,7 @@ title:                "Phân tích ngày từ chuỗi kí tự"
 date:                  2024-01-28T22:04:14.987291-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Phân tích ngày từ chuỗi kí tự"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/parsing-a-date-from-a-string.md"
 changelog:

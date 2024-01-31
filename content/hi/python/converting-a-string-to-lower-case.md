@@ -3,8 +3,7 @@ title:                "स्ट्रिंग को छोटे अक्ष
 date:                  2024-01-20T17:39:50.200154-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/python/converting-a-string-to-lower-case.md"
 ---

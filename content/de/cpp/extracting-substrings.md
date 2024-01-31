@@ -3,8 +3,7 @@ title:                "Teilstrings extrahieren"
 date:                  2024-01-20T17:45:04.577701-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Teilstrings extrahieren"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/extracting-substrings.md"
 ---

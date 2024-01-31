@@ -3,8 +3,7 @@ title:                "리팩토링"
 date:                  2024-01-26T01:18:14.609352-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "리팩토링"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/refactoring.md"
 ---

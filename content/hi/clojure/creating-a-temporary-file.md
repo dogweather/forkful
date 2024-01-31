@@ -3,8 +3,7 @@ title:                "अस्थायी फाइल बनाना"
 date:                  2024-01-20T17:40:24.989823-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "अस्थायी फाइल बनाना"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/creating-a-temporary-file.md"
 ---

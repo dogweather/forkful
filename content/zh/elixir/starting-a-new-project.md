@@ -3,8 +3,7 @@ title:                "开始一个新项目"
 date:                  2024-01-20T18:03:08.445990-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "开始一个新项目"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Getting Started"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/starting-a-new-project.md"

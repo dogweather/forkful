@@ -1,10 +1,8 @@
 ---
 title:                "Merkkijonosta päivämäärän jäsentäminen"
 date:                  2024-01-20T15:37:03.742990-07:00
-html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
 simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/parsing-a-date-from-a-string.md"
 ---

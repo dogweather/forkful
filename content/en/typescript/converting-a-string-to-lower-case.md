@@ -3,8 +3,7 @@ title:                "Converting a string to lower case"
 date:                  2024-01-20T17:39:11.241380-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Converting a string to lower case"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/converting-a-string-to-lower-case.md"
 ---

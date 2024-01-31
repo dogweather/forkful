@@ -1,10 +1,8 @@
 ---
 title:                "Написання тестів"
 date:                  2024-01-19
-html_title:           "Arduino: Написання тестів"
 simple_title:         "Написання тестів"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/python/writing-tests.md"
 ---

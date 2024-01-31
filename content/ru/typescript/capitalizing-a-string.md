@@ -3,8 +3,7 @@ title:                "Преобразование строки в верхни
 date:                  2024-01-28T23:55:48.049592-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в верхний регистр"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/typescript/capitalizing-a-string.md"
 changelog:

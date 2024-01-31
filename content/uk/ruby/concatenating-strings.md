@@ -3,8 +3,7 @@ title:                "Об'єднання рядків"
 date:                  2024-01-20T17:35:52.366511-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Об'єднання рядків"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/ruby/concatenating-strings.md"
 ---

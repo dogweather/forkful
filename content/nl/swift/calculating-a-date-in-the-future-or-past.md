@@ -3,8 +3,7 @@ title:                "Een datum in de toekomst of het verleden berekenen"
 date:                  2024-01-28T21:55:15.099636-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een datum in de toekomst of het verleden berekenen"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/calculating-a-date-in-the-future-or-past.md"
 changelog:

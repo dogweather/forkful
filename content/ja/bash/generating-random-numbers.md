@@ -3,8 +3,7 @@ title:                "乱数の生成"
 date:                  2024-01-27T20:33:13.527981-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "乱数の生成"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/generating-random-numbers.md"
 ---

@@ -3,8 +3,7 @@ title:                "Склеивание строк"
 date:                  2024-01-28T23:55:40.781180-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Склеивание строк"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/cpp/concatenating-strings.md"
 changelog:

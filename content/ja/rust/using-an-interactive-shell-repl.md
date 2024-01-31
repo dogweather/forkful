@@ -3,8 +3,7 @@ title:                "インタラクティブシェル（REPL）の使用"
 date:                  2024-01-26T04:18:24.997511-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "インタラクティブシェル（REPL）の使用"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/using-an-interactive-shell-repl.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "Skrive til standardfeil"
 date:                  2024-01-19
-html_title:           "Arduino: Skrive til standardfeil"
 simple_title:         "Skrive til standardfeil"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/writing-to-standard-error.md"
 ---

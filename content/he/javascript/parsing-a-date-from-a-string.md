@@ -1,10 +1,8 @@
 ---
 title:                "ניתוח תאריך ממחרוזת"
 date:                  2024-01-20T15:37:21.211596-07:00
-html_title:           "Arduino: ניתוח תאריך ממחרוזת"
 simple_title:         "ניתוח תאריך ממחרוזת"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/javascript/parsing-a-date-from-a-string.md"
 ---

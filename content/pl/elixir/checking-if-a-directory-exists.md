@@ -1,10 +1,8 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
 date:                  2024-01-19
-html_title:           "Bash: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/checking-if-a-directory-exists.md"
 ---

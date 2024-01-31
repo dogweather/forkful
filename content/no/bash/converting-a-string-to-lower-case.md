@@ -3,8 +3,7 @@ title:                "Konvertere en streng til små bokstaver"
 date:                  2024-01-20T17:37:45.872161-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konvertere en streng til små bokstaver"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/converting-a-string-to-lower-case.md"
 ---

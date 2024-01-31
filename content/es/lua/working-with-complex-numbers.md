@@ -3,8 +3,7 @@ title:                "Trabajando con números complejos"
 date:                  2024-01-26T04:43:19.175257-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con números complejos"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/working-with-complex-numbers.md"
 ---

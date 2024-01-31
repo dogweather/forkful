@@ -1,10 +1,8 @@
 ---
 title:                "HTMLの解析"
 date:                  2024-01-20T15:31:18.851109-07:00
-html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/parsing-html.md"

@@ -3,8 +3,7 @@ title:                "Поиск и замена текста"
 date:                  2024-01-29T00:01:55.674069-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск и замена текста"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/go/searching-and-replacing-text.md"
 changelog:

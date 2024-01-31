@@ -1,10 +1,8 @@
 ---
 title:                "编写测试代码"
 date:                  2024-01-19
-html_title:           "Arduino: 编写测试代码"
 simple_title:         "编写测试代码"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Testing and Debugging"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/writing-tests.md"

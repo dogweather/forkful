@@ -3,8 +3,7 @@ title:                "Läsa en textfil"
 date:                  2024-01-20T17:54:11.794529-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Läsa en textfil"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/reading-a-text-file.md"
 ---

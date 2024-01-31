@@ -1,10 +1,8 @@
 ---
 title:                "Kontrollera om en katalog finns"
 date:                  2024-01-20T14:58:48.142757-07:00
-html_title:           "Fish Shell: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/checking-if-a-directory-exists.md"
 ---

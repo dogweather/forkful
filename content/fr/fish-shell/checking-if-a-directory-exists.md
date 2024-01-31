@@ -1,10 +1,8 @@
 ---
 title:                "Vérification de l'existence d'un répertoire"
 date:                  2024-01-19
-html_title:           "Bash: Vérification de l'existence d'un répertoire"
 simple_title:         "Vérification de l'existence d'un répertoire"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/checking-if-a-directory-exists.md"
 ---

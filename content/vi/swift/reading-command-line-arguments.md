@@ -3,8 +3,7 @@ title:                "Đọc các đối số dòng lệnh"
 date:                  2024-01-28T22:06:23.370038-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc các đối số dòng lệnh"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/swift/reading-command-line-arguments.md"
 changelog:

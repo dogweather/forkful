@@ -1,10 +1,8 @@
 ---
 title:                "JSONを扱う方法"
 date:                  2024-01-19
-html_title:           "Arduino: JSONを扱う方法"
 simple_title:         "JSONを扱う方法"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/working-with-json.md"

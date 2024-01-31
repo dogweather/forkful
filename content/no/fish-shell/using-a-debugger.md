@@ -3,8 +3,7 @@ title:                "Å bruke en feilsøker"
 date:                  2024-01-26T03:48:56.075823-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å bruke en feilsøker"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/using-a-debugger.md"
 ---

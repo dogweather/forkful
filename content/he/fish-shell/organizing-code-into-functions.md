@@ -3,8 +3,7 @@ title:                "ארגון הקוד לתוך פונקציות"
 date:                  2024-01-28T23:03:56.102558-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "ארגון הקוד לתוך פונקציות"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/organizing-code-into-functions.md"
 changelog:

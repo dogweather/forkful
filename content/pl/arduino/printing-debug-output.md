@@ -3,8 +3,7 @@ title:                "Drukowanie komunikatów debugowania"
 date:                  2024-01-20T17:51:48.082105-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/printing-debug-output.md"
 ---

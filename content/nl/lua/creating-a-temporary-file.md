@@ -3,8 +3,7 @@ title:                "Een tijdelijk bestand aanmaken"
 date:                  2024-01-28T21:59:06.481668-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tijdelijk bestand aanmaken"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/creating-a-temporary-file.md"
 changelog:

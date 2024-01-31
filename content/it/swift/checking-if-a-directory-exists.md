@@ -1,10 +1,8 @@
 ---
 title:                "Verifica dell'esistenza di una directory"
 date:                  2024-01-20T14:58:48.746645-07:00
-html_title:           "Gleam: Verifica dell'esistenza di una directory"
 simple_title:         "Verifica dell'esistenza di una directory"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/checking-if-a-directory-exists.md"
 ---

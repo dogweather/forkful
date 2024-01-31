@@ -1,10 +1,8 @@
 ---
 title:                "Arbeid med JSON"
 date:                  2024-01-19
-html_title:           "Arduino: Arbeid med JSON"
 simple_title:         "Arbeid med JSON"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/working-with-json.md"
 ---

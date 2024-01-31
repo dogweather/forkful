@@ -3,8 +3,7 @@ title:                "Работа с CSV"
 date:                  2024-01-29T00:03:39.403467-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с CSV"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/arduino/working-with-csv.md"
 changelog:

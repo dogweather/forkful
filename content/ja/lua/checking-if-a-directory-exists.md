@@ -1,10 +1,8 @@
 ---
 title:                "ディレクトリが存在するかどうかの確認"
 date:                  2024-01-20T14:57:49.664638-07:00
-html_title:           "Gleam: ディレクトリが存在するかどうかの確認"
 simple_title:         "ディレクトリが存在するかどうかの確認"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/checking-if-a-directory-exists.md"

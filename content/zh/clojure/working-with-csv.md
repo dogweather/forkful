@@ -1,10 +1,8 @@
 ---
 title:                "处理 CSV 文件"
 date:                  2024-01-19
-html_title:           "Bash: 处理 CSV 文件"
 simple_title:         "处理 CSV 文件"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/working-with-csv.md"

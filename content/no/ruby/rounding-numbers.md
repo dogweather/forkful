@@ -3,8 +3,7 @@ title:                "Avrunding av tall"
 date:                  2024-01-26T03:46:37.321292-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrunding av tall"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/rounding-numbers.md"
 ---

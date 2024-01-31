@@ -1,10 +1,8 @@
 ---
 title:                "डायरेक्टरी का अस्तित्व जाँचना"
 date:                  2024-01-20T14:57:37.843258-07:00
-html_title:           "Elm: डायरेक्टरी का अस्तित्व जाँचना"
 simple_title:         "डायरेक्टरी का अस्तित्व जाँचना"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/checking-if-a-directory-exists.md"
 ---

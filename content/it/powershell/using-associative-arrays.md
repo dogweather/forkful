@@ -3,8 +3,7 @@ title:                "Utilizzo di array associativi"
 date:                  2024-01-30T19:12:32.706927-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di array associativi"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/using-associative-arrays.md"
 changelog:

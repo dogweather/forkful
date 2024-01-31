@@ -3,8 +3,7 @@ title:                "Excluindo caracteres que correspondem a um padrão"
 date:                  2024-01-20T17:42:47.654872-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/deleting-characters-matching-a-pattern.md"
 ---

@@ -3,8 +3,7 @@ title:                "המרת תאריך למחרוזת"
 date:                  2024-01-20T17:37:01.515222-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "המרת תאריך למחרוזת"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/go/converting-a-date-into-a-string.md"
 ---

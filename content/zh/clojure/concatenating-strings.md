@@ -3,8 +3,7 @@ title:                "字符串拼接"
 date:                  2024-01-20T17:34:35.178711-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "字符串拼接"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/concatenating-strings.md"

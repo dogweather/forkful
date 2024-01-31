@@ -3,8 +3,7 @@ title:                "Bruke associative tabeller"
 date:                  2024-01-30T19:10:11.601710-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bruke associative tabeller"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/using-associative-arrays.md"
 changelog:

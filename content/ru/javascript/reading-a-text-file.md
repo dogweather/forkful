@@ -3,8 +3,7 @@ title:                "Чтение текстового файла"
 date:                  2024-01-29T00:01:04.212895-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Чтение текстового файла"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/javascript/reading-a-text-file.md"
 changelog:

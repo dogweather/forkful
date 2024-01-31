@@ -1,10 +1,8 @@
 ---
 title:                "Tolke en dato fra en streng"
 date:                  2024-01-20T15:37:09.396873-07:00
-html_title:           "Arduino: Tolke en dato fra en streng"
 simple_title:         "Tolke en dato fra en streng"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/parsing-a-date-from-a-string.md"
 ---

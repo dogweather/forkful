@@ -3,8 +3,7 @@ title:                "Wycinanie podłańcuchów"
 date:                  2024-01-20T17:46:46.874122-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wycinanie podłańcuchów"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/extracting-substrings.md"
 ---

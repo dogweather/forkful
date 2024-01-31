@@ -3,8 +3,7 @@ title:                "Konvertere en streng til små bokstaver"
 date:                  2024-01-20T17:38:55.294913-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konvertere en streng til små bokstaver"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/converting-a-string-to-lower-case.md"
 ---

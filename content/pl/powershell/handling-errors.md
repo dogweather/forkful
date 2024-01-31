@@ -3,8 +3,7 @@ title:                "Obsługa błędów"
 date:                  2024-01-26T00:56:36.064244-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Obsługa błędów"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/handling-errors.md"
 ---

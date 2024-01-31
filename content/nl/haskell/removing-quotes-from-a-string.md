@@ -3,8 +3,7 @@ title:                "Quotes verwijderen uit een string"
 date:                  2024-01-28T22:06:10.607518-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Quotes verwijderen uit een string"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/removing-quotes-from-a-string.md"
 changelog:

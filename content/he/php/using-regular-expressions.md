@@ -1,10 +1,8 @@
 ---
 title:                "שימוש בביטויים רגולריים"
 date:                  2024-01-19
-html_title:           "Bash: שימוש בביטויים רגולריים"
 simple_title:         "שימוש בביטויים רגולריים"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/php/using-regular-expressions.md"
 ---

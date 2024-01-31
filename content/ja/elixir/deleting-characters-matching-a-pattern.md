@@ -3,8 +3,7 @@ title:                "パターンに一致する文字を削除する"
 date:                  2024-01-20T17:41:57.063406-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "パターンに一致する文字を削除する"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/deleting-characters-matching-a-pattern.md"

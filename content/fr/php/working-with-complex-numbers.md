@@ -3,8 +3,7 @@ title:                "Manipulation des nombres complexes"
 date:                  2024-01-26T04:43:48.006327-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulation des nombres complexes"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/working-with-complex-numbers.md"
 ---

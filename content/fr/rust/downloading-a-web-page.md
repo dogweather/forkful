@@ -3,8 +3,7 @@ title:                "Téléchargement d'une page web"
 date:                  2024-01-20T17:44:54.734905-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Téléchargement d'une page web"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/downloading-a-web-page.md"
 ---

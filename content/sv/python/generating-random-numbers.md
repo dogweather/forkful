@@ -3,8 +3,7 @@ title:                "Generera slumptal"
 date:                  2024-01-27T20:35:11.764879-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generera slumptal"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/generating-random-numbers.md"
 ---

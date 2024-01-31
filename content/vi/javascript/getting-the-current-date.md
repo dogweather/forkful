@@ -3,8 +3,7 @@ title:                "Lấy ngày hiện tại"
 date:                  2024-01-28T22:01:14.804051-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lấy ngày hiện tại"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/getting-the-current-date.md"
 changelog:

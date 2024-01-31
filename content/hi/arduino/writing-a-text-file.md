@@ -1,10 +1,8 @@
 ---
 title:                "टेक्स्ट फाइल लिखना"
 date:                  2024-01-19
-html_title:           "Bash: टेक्स्ट फाइल लिखना"
 simple_title:         "टेक्स्ट फाइल लिखना"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/writing-a-text-file.md"
 ---

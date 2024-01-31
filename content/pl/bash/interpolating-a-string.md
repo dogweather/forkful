@@ -3,8 +3,7 @@ title:                "Interpolacja łańcuchów znaków"
 date:                  2024-01-20T17:50:20.262992-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolacja łańcuchów znaków"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/interpolating-a-string.md"
 ---

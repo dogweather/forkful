@@ -3,8 +3,7 @@ title:                "Analisi sintattica HTML"
 date:                  2024-01-28T03:00:42.922727-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analisi sintattica HTML"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/parsing-html.md"
 changelog:

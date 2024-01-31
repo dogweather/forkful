@@ -3,8 +3,7 @@ title:                "Lectura de un archivo de texto"
 date:                  2024-01-20T17:53:50.132238-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lectura de un archivo de texto"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/reading-a-text-file.md"
 ---

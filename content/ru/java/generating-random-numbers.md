@@ -3,8 +3,7 @@ title:                "Генерация случайных чисел"
 date:                  2024-01-28T23:59:03.457019-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Генерация случайных чисел"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/java/generating-random-numbers.md"
 changelog:

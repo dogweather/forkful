@@ -1,10 +1,8 @@
 ---
 title:                "Working with JSON"
 date:                  2024-01-19
-html_title:           "Arduino recipe: Working with JSON"
 simple_title:         "Working with JSON"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/working-with-json.md"
 ---

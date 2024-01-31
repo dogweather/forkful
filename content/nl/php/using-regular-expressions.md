@@ -3,8 +3,7 @@ title:                "Reguliere expressies gebruiken"
 date:                  2024-01-28T22:09:50.445044-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reguliere expressies gebruiken"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/using-regular-expressions.md"
 changelog:

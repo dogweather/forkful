@@ -3,8 +3,7 @@ title:                "Lesen von Kommandozeilenargumenten"
 date:                  2024-01-20T17:55:38.396030-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lesen von Kommandozeilenargumenten"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/reading-command-line-arguments.md"
 ---

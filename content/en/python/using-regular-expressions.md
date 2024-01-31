@@ -1,10 +1,8 @@
 ---
 title:                "Using regular expressions"
 date:                  2024-01-19
-html_title:           "Bash recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/using-regular-expressions.md"
 ---

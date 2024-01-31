@@ -3,8 +3,7 @@ title:                "Textdatei einlesen"
 date:                  2024-01-20T17:54:03.339646-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Textdatei einlesen"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/reading-a-text-file.md"
 ---

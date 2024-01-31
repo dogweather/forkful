@@ -3,8 +3,7 @@ title:                "Usando um depurador"
 date:                  2024-01-26T03:50:20.611670-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando um depurador"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/using-a-debugger.md"
 ---

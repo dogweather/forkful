@@ -3,8 +3,7 @@ title:                "Refatoração"
 date:                  2024-01-26T01:40:18.637946-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refatoração"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/refactoring.md"
 ---

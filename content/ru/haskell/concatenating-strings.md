@@ -3,8 +3,7 @@ title:                "Склеивание строк"
 date:                  2024-01-28T23:56:49.696024-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Склеивание строк"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/haskell/concatenating-strings.md"
 changelog:

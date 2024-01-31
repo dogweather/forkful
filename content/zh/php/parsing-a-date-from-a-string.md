@@ -1,10 +1,8 @@
 ---
 title:                "从字符串解析日期"
 date:                  2024-01-20T15:37:37.370767-07:00
-html_title:           "Arduino: 从字符串解析日期"
 simple_title:         "从字符串解析日期"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/parsing-a-date-from-a-string.md"

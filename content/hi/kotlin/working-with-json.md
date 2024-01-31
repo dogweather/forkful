@@ -1,10 +1,8 @@
 ---
 title:                "JSON के साथ काम करना"
 date:                  2024-01-19
-html_title:           "Arduino: JSON के साथ काम करना"
 simple_title:         "JSON के साथ काम करना"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/working-with-json.md"
 ---

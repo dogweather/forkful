@@ -3,8 +3,7 @@ title:                "Willekeurige getallen genereren"
 date:                  2024-01-28T22:01:11.478472-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Willekeurige getallen genereren"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/generating-random-numbers.md"
 changelog:

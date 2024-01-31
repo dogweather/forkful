@@ -1,10 +1,8 @@
 ---
 title:                "現在の日付を取得する"
 date:                  2024-01-20T15:14:02.807869-07:00
-html_title:           "Bash: 現在の日付を取得する"
 simple_title:         "現在の日付を取得する"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/getting-the-current-date.md"

@@ -1,10 +1,8 @@
 ---
 title:                "Tolka ett datum från en sträng"
 date:                  2024-01-20T15:36:09.622844-07:00
-html_title:           "Bash: Tolka ett datum från en sträng"
 simple_title:         "Tolka ett datum från en sträng"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/parsing-a-date-from-a-string.md"
 ---

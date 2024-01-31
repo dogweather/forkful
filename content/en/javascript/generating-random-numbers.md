@@ -3,8 +3,7 @@ title:                "Generating random numbers"
 date:                  2024-01-27T20:26:13.875616-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generating random numbers"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/generating-random-numbers.md"
 ---

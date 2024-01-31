@@ -3,8 +3,7 @@ title:                "Trabalhando com números complexos"
 date:                  2024-01-26T04:37:35.536982-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com números complexos"
-programming_language: "C"
-category:             "C"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/working-with-complex-numbers.md"
 ---

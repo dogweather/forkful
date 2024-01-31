@@ -3,8 +3,7 @@ title:                "Praca z TOML"
 date:                  2024-01-26T04:25:05.427429-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z TOML"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/working-with-toml.md"
 ---

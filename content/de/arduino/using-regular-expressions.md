@@ -1,10 +1,8 @@
 ---
 title:                "Verwendung von regulären Ausdrücken"
 date:                  2024-01-19
-html_title:           "Arduino: Verwendung von regulären Ausdrücken"
 simple_title:         "Verwendung von regulären Ausdrücken"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/using-regular-expressions.md"
 ---

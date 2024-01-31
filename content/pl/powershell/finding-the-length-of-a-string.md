@@ -3,8 +3,7 @@ title:                "Znalezienie długości ciągu znaków"
 date:                  2024-01-20T17:47:51.492693-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Znalezienie długości ciągu znaków"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/finding-the-length-of-a-string.md"
 ---

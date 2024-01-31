@@ -3,8 +3,7 @@ title:                "Koodin refaktorointi"
 date:                  2024-01-26T01:17:19.709166-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Koodin refaktorointi"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/refactoring.md"
 ---

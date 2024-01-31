@@ -1,10 +1,8 @@
 ---
 title:                "Writing to standard error"
 date:                  2024-01-19
-html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/writing-to-standard-error.md"
 ---

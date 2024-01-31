@@ -3,8 +3,7 @@ title:                "디버거 사용하기"
 date:                  2024-01-26T03:48:36.682300-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "디버거 사용하기"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/using-a-debugger.md"
 ---

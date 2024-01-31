@@ -3,8 +3,7 @@ title:                "Bruke associative tabeller"
 date:                  2024-01-30T19:12:43.911652-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bruke associative tabeller"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/using-associative-arrays.md"
 changelog:

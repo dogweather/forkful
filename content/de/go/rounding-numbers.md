@@ -3,8 +3,7 @@ title:                "Zahlen runden"
 date:                  2024-01-26T03:44:46.837319-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zahlen runden"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/rounding-numbers.md"
 ---

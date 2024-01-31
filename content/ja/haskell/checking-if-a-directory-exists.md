@@ -1,10 +1,8 @@
 ---
 title:                "ディレクトリが存在するかどうかの確認"
 date:                  2024-01-20T14:56:52.424504-07:00
-html_title:           "Gleam: ディレクトリが存在するかどうかの確認"
 simple_title:         "ディレクトリが存在するかどうかの確認"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/checking-if-a-directory-exists.md"

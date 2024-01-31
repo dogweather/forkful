@@ -3,8 +3,7 @@ title:                "Interpolando uma string"
 date:                  2024-01-20T17:50:54.364457-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolando uma string"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/interpolating-a-string.md"
 ---

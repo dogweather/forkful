@@ -3,8 +3,7 @@ title:                "Anführungszeichen aus einem String entfernen"
 date:                  2024-01-26T03:42:24.697049-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Anführungszeichen aus einem String entfernen"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/removing-quotes-from-a-string.md"
 ---

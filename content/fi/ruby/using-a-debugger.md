@@ -3,8 +3,7 @@ title:                "Debuggerin käyttö"
 date:                  2024-01-26T04:09:50.159908-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debuggerin käyttö"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/using-a-debugger.md"
 ---

@@ -3,8 +3,7 @@ title:                "Inviare una richiesta http"
 date:                  2024-01-20T18:00:10.630040-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/sending-an-http-request.md"
 ---

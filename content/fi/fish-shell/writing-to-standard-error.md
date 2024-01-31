@@ -1,10 +1,8 @@
 ---
 title:                "Kirjoittaminen vakiovirheeseen"
 date:                  2024-01-19
-html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
 simple_title:         "Kirjoittaminen vakiovirheeseen"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/writing-to-standard-error.md"
 ---

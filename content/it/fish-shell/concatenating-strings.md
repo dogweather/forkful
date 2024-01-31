@@ -3,8 +3,7 @@ title:                "Concatenazione di stringhe"
 date:                  2024-01-20T17:34:54.029043-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Concatenazione di stringhe"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/concatenating-strings.md"
 ---

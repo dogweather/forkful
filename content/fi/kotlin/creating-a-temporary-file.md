@@ -3,8 +3,7 @@ title:                "Väliaikaistiedoston luominen"
 date:                  2024-01-20T17:40:53.145710-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Väliaikaistiedoston luominen"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/creating-a-temporary-file.md"
 ---

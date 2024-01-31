@@ -3,8 +3,7 @@ title:                "טיפול בשגיאות"
 date:                  2024-01-26T00:56:43.028870-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "טיפול בשגיאות"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/handling-errors.md"
 ---

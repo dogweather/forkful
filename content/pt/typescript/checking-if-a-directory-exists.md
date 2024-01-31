@@ -1,10 +1,8 @@
 ---
 title:                "Verificando se um diretório existe"
 date:                  2024-01-20T14:59:04.110037-07:00
-html_title:           "Fish Shell: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/checking-if-a-directory-exists.md"
 ---

@@ -3,8 +3,7 @@ title:                "बेसिक प्रमाणीकरण के स
 date:                  2024-01-20T18:01:51.536840-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/sending-an-http-request-with-basic-authentication.md"
 ---

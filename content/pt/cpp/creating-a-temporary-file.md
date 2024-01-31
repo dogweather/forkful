@@ -3,8 +3,7 @@ title:                "Criando um arquivo temporário"
 date:                  2024-01-20T17:40:13.916001-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Criando um arquivo temporário"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/creating-a-temporary-file.md"
 ---

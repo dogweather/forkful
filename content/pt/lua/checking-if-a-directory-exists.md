@@ -1,10 +1,8 @@
 ---
 title:                "Verificando se um diretório existe"
 date:                  2024-01-20T14:57:30.897224-07:00
-html_title:           "Fish Shell: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/checking-if-a-directory-exists.md"
 ---

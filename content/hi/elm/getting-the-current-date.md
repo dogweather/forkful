@@ -1,10 +1,8 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
 date:                  2024-01-20T15:14:41.409871-07:00
-html_title:           "C: वर्तमान तारीख प्राप्त करना"
 simple_title:         "वर्तमान तारीख प्राप्त करना"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elm/getting-the-current-date.md"
 ---

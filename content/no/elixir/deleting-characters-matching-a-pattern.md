@@ -3,8 +3,7 @@ title:                "Slette tegn som matcher et mønster"
 date:                  2024-01-20T17:42:13.446821-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Slette tegn som matcher et mønster"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/deleting-characters-matching-a-pattern.md"
 ---

@@ -3,8 +3,7 @@ title:                "Usando una shell interactiva (REPL)"
 date:                  2024-01-26T04:12:44.751038-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando una shell interactiva (REPL)"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/using-an-interactive-shell-repl.md"
 ---

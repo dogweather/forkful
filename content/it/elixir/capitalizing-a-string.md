@@ -1,10 +1,8 @@
 ---
 title:                "Maiuscolizzare una stringa"
 date:                  2024-01-19
-html_title:           "Bash: Maiuscolizzare una stringa"
 simple_title:         "Maiuscolizzare una stringa"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/capitalizing-a-string.md"
 ---

@@ -3,8 +3,7 @@ title:                "Att påbörja ett nytt projekt"
 date:                  2024-01-20T18:02:45.085294-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Att påbörja ett nytt projekt"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/starting-a-new-project.md"
 ---

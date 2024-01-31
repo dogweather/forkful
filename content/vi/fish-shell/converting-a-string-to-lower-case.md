@@ -3,8 +3,7 @@ title:                "Chuyển đổi chuỗi thành chữ thường"
 date:                  2024-01-28T21:57:56.307963-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi chuỗi thành chữ thường"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/converting-a-string-to-lower-case.md"
 changelog:

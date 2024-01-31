@@ -1,10 +1,8 @@
 ---
 title:                "HTML:n jäsentäminen"
 date:                  2024-01-20T15:31:56.573125-07:00
-html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/parsing-html.md"
 ---

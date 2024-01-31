@@ -3,8 +3,7 @@ title:                "Trovare la lunghezza di una stringa"
 date:                  2024-01-20T17:47:59.713760-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Trovare la lunghezza di una stringa"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/lua/finding-the-length-of-a-string.md"
 ---

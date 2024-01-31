@@ -3,8 +3,7 @@ title:                "Wysyłanie żądania HTTP"
 date:                  2024-01-20T18:00:17.565958-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wysyłanie żądania HTTP"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/sending-an-http-request.md"
 ---

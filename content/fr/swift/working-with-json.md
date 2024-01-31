@@ -1,10 +1,8 @@
 ---
 title:                "Manipulation de JSON"
 date:                  2024-01-19
-html_title:           "Arduino: Manipulation de JSON"
 simple_title:         "Manipulation de JSON"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/working-with-json.md"
 ---

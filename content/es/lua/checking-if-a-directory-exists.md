@@ -1,10 +1,8 @@
 ---
 title:                "Comprobando si existe un directorio"
 date:                  2024-01-20T14:57:46.159427-07:00
-html_title:           "Gleam: Comprobando si existe un directorio"
 simple_title:         "Comprobando si existe un directorio"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/checking-if-a-directory-exists.md"
 ---

@@ -3,8 +3,7 @@ title:                "Werken met complexe getallen"
 date:                  2024-01-28T22:11:57.320260-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met complexe getallen"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/working-with-complex-numbers.md"
 changelog:

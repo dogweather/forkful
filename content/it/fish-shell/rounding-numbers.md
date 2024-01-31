@@ -3,8 +3,7 @@ title:                "Arrotondamento dei numeri"
 date:                  2024-01-26T03:44:11.397648-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arrotondamento dei numeri"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/rounding-numbers.md"
 ---

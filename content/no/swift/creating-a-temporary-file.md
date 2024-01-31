@@ -3,8 +3,7 @@ title:                "Opprette en midlertidig fil"
 date:                  2024-01-20T17:41:34.124319-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Opprette en midlertidig fil"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/creating-a-temporary-file.md"
 ---

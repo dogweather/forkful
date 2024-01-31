@@ -1,10 +1,8 @@
 ---
 title:                "डायरेक्टरी का अस्तित्व जाँचना"
 date:                  2024-01-20T14:57:21.300599-07:00
-html_title:           "Elm: डायरेक्टरी का अस्तित्व जाँचना"
 simple_title:         "डायरेक्टरी का अस्तित्व जाँचना"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/go/checking-if-a-directory-exists.md"
 ---

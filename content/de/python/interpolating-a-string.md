@@ -4,8 +4,7 @@ date:                  2024-01-28T21:23:41.871760-07:00
 lastmod:               2024-01-29
 model:                 gpt-4-0125-preview
 simple_title:         "Interpolation eines Strings"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/interpolating-a-string.md"
 changelog:

@@ -1,10 +1,8 @@
 ---
 title:                "Working with YAML"
 date:                  2024-01-19
-html_title:           "Arduino recipe: Working with YAML"
 simple_title:         "Working with YAML"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/working-with-yaml.md"
 ---

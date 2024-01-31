@@ -3,8 +3,7 @@ title:                "Refaktorisering"
 date:                  2024-01-26T01:18:41.615149-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktorisering"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/refactoring.md"
 ---

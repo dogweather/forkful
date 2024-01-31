@@ -3,8 +3,7 @@ title:                "רפקטורינג"
 date:                  2024-01-26T03:37:51.833753-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "רפקטורינג"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/refactoring.md"
 ---

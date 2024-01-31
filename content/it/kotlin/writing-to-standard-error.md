@@ -1,10 +1,8 @@
 ---
 title:                "Scrivere sull'errore standard"
 date:                  2024-01-19
-html_title:           "Arduino: Scrivere sull'errore standard"
 simple_title:         "Scrivere sull'errore standard"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/writing-to-standard-error.md"
 ---

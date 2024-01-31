@@ -3,8 +3,7 @@ title:                "Чтение текстового файла"
 date:                  2024-01-29T00:01:17.172600-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Чтение текстового файла"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/typescript/reading-a-text-file.md"
 changelog:

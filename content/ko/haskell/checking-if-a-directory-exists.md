@@ -1,10 +1,8 @@
 ---
 title:                "디렉토리 존재 여부 확인하기"
 date:                  2024-01-20T14:57:03.277269-07:00
-html_title:           "Fish Shell: 디렉토리 존재 여부 확인하기"
 simple_title:         "디렉토리 존재 여부 확인하기"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/checking-if-a-directory-exists.md"

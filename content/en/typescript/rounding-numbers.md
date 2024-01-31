@@ -3,8 +3,7 @@ title:                "Rounding numbers"
 date:                  2024-01-25T02:59:42.587583-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Rounding numbers"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/rounding-numbers.md"
 ---

@@ -3,8 +3,7 @@ title:                "新しいプロジェクトを始める"
 date:                  2024-01-20T18:03:52.346565-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "新しいプロジェクトを始める"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Getting Started"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/starting-a-new-project.md"

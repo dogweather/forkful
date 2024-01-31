@@ -3,8 +3,7 @@ title:                "Tái cấu trúc mã"
 date:                  2024-01-28T22:06:18.485189-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tái cấu trúc mã"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elm/refactoring.md"
 changelog:

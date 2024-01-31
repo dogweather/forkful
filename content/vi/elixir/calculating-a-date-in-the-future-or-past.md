@@ -3,8 +3,7 @@ title:                "Tính toán ngày trong tương lai hoặc quá khứ"
 date:                  2024-01-28T21:55:57.356751-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tính toán ngày trong tương lai hoặc quá khứ"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/calculating-a-date-in-the-future-or-past.md"
 changelog:

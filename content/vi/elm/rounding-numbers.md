@@ -3,8 +3,7 @@ title:                "Làm tròn số"
 date:                  2024-01-28T22:07:18.069462-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm tròn số"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elm/rounding-numbers.md"
 changelog:

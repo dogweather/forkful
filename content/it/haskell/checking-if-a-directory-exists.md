@@ -1,10 +1,8 @@
 ---
 title:                "Verifica dell'esistenza di una directory"
 date:                  2024-01-20T14:56:48.730114-07:00
-html_title:           "Gleam: Verifica dell'esistenza di una directory"
 simple_title:         "Verifica dell'esistenza di una directory"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/checking-if-a-directory-exists.md"
 ---

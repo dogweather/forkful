@@ -1,10 +1,8 @@
 ---
 title:                "Verificando se um diretório existe"
 date:                  2024-01-20T14:57:29.903585-07:00
-html_title:           "Fish Shell: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/checking-if-a-directory-exists.md"
 ---

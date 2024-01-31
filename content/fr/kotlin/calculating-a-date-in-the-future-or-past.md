@@ -3,8 +3,7 @@ title:                "Calcul d'une date future ou passée"
 date:                  2024-01-20T17:31:43.646671-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Calcul d'une date future ou passée"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/calculating-a-date-in-the-future-or-past.md"
 ---

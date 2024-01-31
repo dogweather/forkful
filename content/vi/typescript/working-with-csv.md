@@ -3,8 +3,7 @@ title:                "Làm việc với CSV"
 date:                  2024-01-28T22:11:38.942403-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với CSV"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/typescript/working-with-csv.md"
 changelog:

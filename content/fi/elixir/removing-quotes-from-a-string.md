@@ -3,8 +3,7 @@ title:                "Merkkijonosta lainausmerkkien poistaminen"
 date:                  2024-01-26T03:38:44.138035-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonosta lainausmerkkien poistaminen"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/removing-quotes-from-a-string.md"
 ---

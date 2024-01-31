@@ -3,8 +3,7 @@ title:                "Работа с комплексными числами"
 date:                  2024-01-29T00:06:07.675510-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с комплексными числами"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/java/working-with-complex-numbers.md"
 changelog:

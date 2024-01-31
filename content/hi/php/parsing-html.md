@@ -1,10 +1,8 @@
 ---
 title:                "HTML पार्स करना"
 date:                  2024-01-20T15:33:44.616910-07:00
-html_title:           "Bash: HTML पार्स करना"
 simple_title:         "HTML पार्स करना"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/parsing-html.md"
 ---

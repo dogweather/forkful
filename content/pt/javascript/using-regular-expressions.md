@@ -1,10 +1,8 @@
 ---
 title:                "Utilizando expressões regulares"
 date:                  2024-01-19
-html_title:           "Bash: Utilizando expressões regulares"
 simple_title:         "Utilizando expressões regulares"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/using-regular-expressions.md"
 ---

@@ -3,8 +3,7 @@ title:                "Eliminazione di caratteri che corrispondono a un pattern"
 date:                  2024-01-20T17:42:25.353191-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/deleting-characters-matching-a-pattern.md"
 ---

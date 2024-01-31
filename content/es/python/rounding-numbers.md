@@ -3,8 +3,7 @@ title:                "Redondeo de números"
 date:                  2024-01-26T03:46:17.495175-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redondeo de números"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/rounding-numbers.md"
 ---

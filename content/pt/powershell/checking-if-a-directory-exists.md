@@ -1,10 +1,8 @@
 ---
 title:                "Verificando se um diretório existe"
 date:                  2024-01-20T14:57:52.289392-07:00
-html_title:           "Fish Shell: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/checking-if-a-directory-exists.md"
 ---

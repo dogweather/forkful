@@ -3,8 +3,7 @@ title:                "Chuyển đổi chuỗi thành chữ thường"
 date:                  2024-01-28T21:58:38.219026-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi chuỗi thành chữ thường"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/converting-a-string-to-lower-case.md"
 changelog:

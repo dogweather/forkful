@@ -1,10 +1,8 @@
 ---
 title:                "Sjekke om en mappe eksisterer"
 date:                  2024-01-20T14:57:14.227289-07:00
-html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
 simple_title:         "Sjekke om en mappe eksisterer"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/checking-if-a-directory-exists.md"
 ---

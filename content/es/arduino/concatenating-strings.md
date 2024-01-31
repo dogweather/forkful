@@ -3,8 +3,7 @@ title:                "Concatenación de cadenas de texto"
 date:                  2024-01-20T17:34:06.997156-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Concatenación de cadenas de texto"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/concatenating-strings.md"
 ---

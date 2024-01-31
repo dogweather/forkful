@@ -3,8 +3,7 @@ title:                "Edycja plików w miejscu przy użyciu jednolinijkowców C
 date:                  2024-01-27T16:21:39.062889-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Edycja plików w miejscu przy użyciu jednolinijkowców CLI"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/editing-files-in-place-with-cli-one-liners.md"
 ---

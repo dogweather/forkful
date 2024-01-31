@@ -3,8 +3,7 @@ title:                "Đọc một tệp văn bản"
 date:                  2024-01-28T22:05:14.586805-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc một tệp văn bản"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/reading-a-text-file.md"
 changelog:

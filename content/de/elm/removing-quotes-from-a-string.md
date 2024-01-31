@@ -3,8 +3,7 @@ title:                "Anführungszeichen aus einem String entfernen"
 date:                  2024-01-26T03:39:28.145482-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Anführungszeichen aus einem String entfernen"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/removing-quotes-from-a-string.md"
 ---

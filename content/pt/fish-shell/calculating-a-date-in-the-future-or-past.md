@@ -3,8 +3,7 @@ title:                "Calculando uma data no futuro ou passado"
 date:                  2024-01-20T17:31:01.614346-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Calculando uma data no futuro ou passado"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/calculating-a-date-in-the-future-or-past.md"
 ---

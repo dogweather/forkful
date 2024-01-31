@@ -1,10 +1,8 @@
 ---
 title:                "使用正则表达式"
 date:                  2024-01-19
-html_title:           "C: 使用正则表达式"
 simple_title:         "使用正则表达式"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/using-regular-expressions.md"

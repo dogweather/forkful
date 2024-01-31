@@ -3,8 +3,7 @@ title:                "使用基本认证发送 HTTP 请求"
 date:                  2024-01-20T18:01:27.623147-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "使用基本认证发送 HTTP 请求"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/sending-an-http-request-with-basic-authentication.md"

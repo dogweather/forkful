@@ -3,8 +3,7 @@ title:                "Arredondamento de números"
 date:                  2024-01-26T03:46:17.864731-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arredondamento de números"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/rounding-numbers.md"
 ---

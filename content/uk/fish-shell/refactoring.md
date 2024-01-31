@@ -3,8 +3,7 @@ title:                "Рефакторинг"
 date:                  2024-01-26T01:18:58.484186-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Рефакторинг"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/fish-shell/refactoring.md"
 ---

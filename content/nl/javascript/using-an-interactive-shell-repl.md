@@ -3,8 +3,7 @@ title:                "Het gebruik van een interactieve shell (REPL)"
 date:                  2024-01-28T22:09:10.503262-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Het gebruik van een interactieve shell (REPL)"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/using-an-interactive-shell-repl.md"
 changelog:

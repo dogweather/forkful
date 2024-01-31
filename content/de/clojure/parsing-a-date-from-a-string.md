@@ -1,10 +1,8 @@
 ---
 title:                "Datum aus einem String parsen"
 date:                  2024-01-20T15:35:34.925179-07:00
-html_title:           "Arduino: Datum aus einem String parsen"
 simple_title:         "Datum aus einem String parsen"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/parsing-a-date-from-a-string.md"
 ---

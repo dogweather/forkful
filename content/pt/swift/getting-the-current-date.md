@@ -1,10 +1,8 @@
 ---
 title:                "Obtendo a data atual"
 date:                  2024-01-20T15:16:44.897402-07:00
-html_title:           "Bash: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/getting-the-current-date.md"
 ---

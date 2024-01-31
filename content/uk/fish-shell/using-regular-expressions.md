@@ -1,10 +1,8 @@
 ---
 title:                "Використання регулярних виразів"
 date:                  2024-01-19
-html_title:           "Bash: Використання регулярних виразів"
 simple_title:         "Використання регулярних виразів"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/fish-shell/using-regular-expressions.md"
 ---

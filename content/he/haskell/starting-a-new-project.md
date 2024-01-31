@@ -3,8 +3,7 @@ title:                "התחלת פרויקט חדש"
 date:                  2024-01-20T18:03:43.797601-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "התחלת פרויקט חדש"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/starting-a-new-project.md"
 ---

@@ -3,8 +3,7 @@ title:                "Sử dụng mảng liên kết"
 date:                  2024-01-30T19:10:23.190674-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng mảng liên kết"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/using-associative-arrays.md"
 changelog:

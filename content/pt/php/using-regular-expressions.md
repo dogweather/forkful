@@ -1,10 +1,8 @@
 ---
 title:                "Utilizando expressões regulares"
 date:                  2024-01-19
-html_title:           "Bash: Utilizando expressões regulares"
 simple_title:         "Utilizando expressões regulares"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/using-regular-expressions.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "Kontrollera om en katalog finns"
 date:                  2024-01-20T14:58:38.891686-07:00
-html_title:           "Fish Shell: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/checking-if-a-directory-exists.md"
 ---

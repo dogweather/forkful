@@ -1,10 +1,8 @@
 ---
 title:                "YAMLを扱う"
 date:                  2024-01-19
-html_title:           "Bash: YAMLを扱う"
 simple_title:         "YAMLを扱う"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/working-with-yaml.md"

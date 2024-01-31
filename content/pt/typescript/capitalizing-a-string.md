@@ -1,10 +1,8 @@
 ---
 title:                "Capitalizando uma string"
 date:                  2024-01-19
-html_title:           "Bash: Capitalizando uma string"
 simple_title:         "Capitalizando uma string"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/capitalizing-a-string.md"
 ---

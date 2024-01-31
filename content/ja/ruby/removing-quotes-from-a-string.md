@@ -3,8 +3,7 @@ title:                "文字列から引用符を削除する"
 date:                  2024-01-26T03:41:45.369820-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "文字列から引用符を削除する"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/removing-quotes-from-a-string.md"
 ---

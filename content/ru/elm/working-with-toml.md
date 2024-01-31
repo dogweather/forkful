@@ -3,8 +3,7 @@ title:                "Работа с TOML"
 date:                  2024-01-29T00:04:50.801338-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с TOML"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elm/working-with-toml.md"
 changelog:

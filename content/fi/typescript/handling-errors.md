@@ -3,8 +3,7 @@ title:                "Virheiden käsittely"
 date:                  2024-01-26T00:58:43.438968-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Virheiden käsittely"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/handling-errors.md"
 ---

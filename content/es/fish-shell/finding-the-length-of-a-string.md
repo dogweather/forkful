@@ -3,8 +3,7 @@ title:                "Calculando la longitud de una cadena"
 date:                  2024-01-20T17:47:26.335499-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Calculando la longitud de una cadena"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/finding-the-length-of-a-string.md"
 ---

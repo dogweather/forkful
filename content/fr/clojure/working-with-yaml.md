@@ -1,10 +1,8 @@
 ---
 title:                "Travailler avec YAML"
 date:                  2024-01-19
-html_title:           "Bash: Travailler avec YAML"
 simple_title:         "Travailler avec YAML"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/working-with-yaml.md"
 ---

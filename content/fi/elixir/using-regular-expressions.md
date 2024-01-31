@@ -1,10 +1,8 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
 date:                  2024-01-19
-html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/using-regular-expressions.md"
 ---

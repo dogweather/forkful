@@ -3,8 +3,7 @@ title:                "获取字符串的长度"
 date:                  2024-01-20T17:47:33.555524-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "获取字符串的长度"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/finding-the-length-of-a-string.md"

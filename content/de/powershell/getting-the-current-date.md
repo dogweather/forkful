@@ -1,10 +1,8 @@
 ---
 title:                "Aktuelles Datum abrufen"
 date:                  2024-01-20T15:15:47.984087-07:00
-html_title:           "C: Aktuelles Datum abrufen"
 simple_title:         "Aktuelles Datum abrufen"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/getting-the-current-date.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "Obteniendo la fecha actual"
 date:                  2024-01-20T15:13:02.391780-07:00
-html_title:           "Bash: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/getting-the-current-date.md"
 ---

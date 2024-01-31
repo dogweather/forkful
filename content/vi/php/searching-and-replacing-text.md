@@ -3,8 +3,7 @@ title:                "Tìm kiếm và thay thế văn bản"
 date:                  2024-01-28T22:07:52.171316-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tìm kiếm và thay thế văn bản"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/php/searching-and-replacing-text.md"
 changelog:

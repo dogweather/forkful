@@ -1,10 +1,8 @@
 ---
 title:                "Onko hakemisto olemassa? Tarkistaminen"
 date:                  2024-01-20T14:58:03.283462-07:00
-html_title:           "Gleam: Onko hakemisto olemassa? Tarkistaminen"
 simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/checking-if-a-directory-exists.md"
 ---

@@ -3,8 +3,7 @@ title:                "Trích xuất chuỗi con"
 date:                  2024-01-28T22:00:17.861084-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trích xuất chuỗi con"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/powershell/extracting-substrings.md"
 changelog:

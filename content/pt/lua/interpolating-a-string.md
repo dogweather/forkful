@@ -3,8 +3,7 @@ title:                "Interpolando uma string"
 date:                  2024-01-20T17:51:08.674992-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolando uma string"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/interpolating-a-string.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "Sette streng til store bokstaver"
 date:                  2024-01-19
-html_title:           "Arduino: Sette streng til store bokstaver"
 simple_title:         "Sette streng til store bokstaver"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/capitalizing-a-string.md"
 ---

@@ -3,8 +3,7 @@ title:                "Utilisation des tableaux associatifs"
 date:                  2024-01-30T19:10:04.506211-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des tableaux associatifs"
-programming_language: "C"
-category:             "C"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/using-associative-arrays.md"
 changelog:

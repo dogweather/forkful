@@ -3,8 +3,7 @@ title:                "Вывод отладочной информации"
 date:                  2024-01-29T00:00:37.651518-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Вывод отладочной информации"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/lua/printing-debug-output.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "Koodin refaktorointi"
 date:                  2024-01-26T01:48:02.366899-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Koodin refaktorointi"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/refactoring.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
 date:                  2024-01-19
-html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/writing-a-text-file.md"
 ---

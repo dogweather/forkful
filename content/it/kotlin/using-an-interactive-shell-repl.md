@@ -3,8 +3,7 @@ title:                "Utilizzo di un interprete interattivo (REPL)"
 date:                  2024-01-26T04:15:51.383596-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di un interprete interattivo (REPL)"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/using-an-interactive-shell-repl.md"
 ---

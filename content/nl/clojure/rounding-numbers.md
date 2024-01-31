@@ -3,8 +3,7 @@ title:                "Afronden van getallen"
 date:                  2024-01-28T22:06:42.589811-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Afronden van getallen"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/rounding-numbers.md"
 changelog:

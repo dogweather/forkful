@@ -3,8 +3,7 @@ title:                "コードを関数に整理する"
 date:                  2024-01-28T23:01:54.914439-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "コードを関数に整理する"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/organizing-code-into-functions.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "Enviando uma requisição HTTP"
 date:                  2024-01-20T18:00:20.331192-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Enviando uma requisição HTTP"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/sending-an-http-request.md"
 ---

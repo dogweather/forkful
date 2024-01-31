@@ -3,8 +3,7 @@ title:                "יצירת קובץ זמני"
 date:                  2024-01-20T17:41:00.623223-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "יצירת קובץ זמני"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/javascript/creating-a-temporary-file.md"
 ---

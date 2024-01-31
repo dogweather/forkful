@@ -3,8 +3,7 @@ title:                "Organizando o código em funções"
 date:                  2024-01-26T01:11:40.816201-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organizando o código em funções"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/organizing-code-into-functions.md"
 ---

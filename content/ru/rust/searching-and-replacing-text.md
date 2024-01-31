@@ -3,8 +3,7 @@ title:                "Поиск и замена текста"
 date:                  2024-01-29T00:02:12.872168-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск и замена текста"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/rust/searching-and-replacing-text.md"
 changelog:

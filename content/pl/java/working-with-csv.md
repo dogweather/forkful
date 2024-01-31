@@ -1,10 +1,8 @@
 ---
 title:                "Praca z plikami CSV"
 date:                  2024-01-19
-html_title:           "Bash: Praca z plikami CSV"
 simple_title:         "Praca z plikami CSV"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/working-with-csv.md"
 ---

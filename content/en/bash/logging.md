@@ -3,8 +3,7 @@ title:                "Logging"
 date:                  2024-01-25T02:03:56.995806-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Logging"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/logging.md"
 ---

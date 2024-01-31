@@ -1,10 +1,8 @@
 ---
 title:                "Skrive til standardfeil"
 date:                  2024-01-19
-html_title:           "Arduino: Skrive til standardfeil"
 simple_title:         "Skrive til standardfeil"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/writing-to-standard-error.md"
 ---

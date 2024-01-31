@@ -3,8 +3,7 @@ title:                "Avrundning av tal"
 date:                  2024-01-26T03:43:40.997551-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrundning av tal"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/rounding-numbers.md"
 ---

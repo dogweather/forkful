@@ -3,8 +3,7 @@ title:                "Преобразование строки в верхни
 date:                  2024-01-28T23:55:59.142168-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в верхний регистр"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/clojure/capitalizing-a-string.md"
 changelog:

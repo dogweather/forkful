@@ -3,8 +3,7 @@ title:                "הדפסת פלט לניפוי באגים"
 date:                  2024-01-20T17:52:58.721337-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "הדפסת פלט לניפוי באגים"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/printing-debug-output.md"
 ---

@@ -3,8 +3,7 @@ title:                "Tính toán ngày trong tương lai hoặc quá khứ"
 date:                  2024-01-28T21:56:00.183070-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tính toán ngày trong tương lai hoặc quá khứ"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/calculating-a-date-in-the-future-or-past.md"
 changelog:

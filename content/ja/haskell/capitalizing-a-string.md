@@ -1,10 +1,8 @@
 ---
 title:                "文字列の先頭を大文字にする"
 date:                  2024-01-19
-html_title:           "C: 文字列の先頭を大文字にする"
 simple_title:         "文字列の先頭を大文字にする"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/capitalizing-a-string.md"

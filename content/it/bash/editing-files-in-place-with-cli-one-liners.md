@@ -3,8 +3,7 @@ title:                "Modifica dei file sul posto con righe di comando CLI"
 date:                  2024-01-27T16:20:54.067706-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Modifica dei file sul posto con righe di comando CLI"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/editing-files-in-place-with-cli-one-liners.md"
 ---

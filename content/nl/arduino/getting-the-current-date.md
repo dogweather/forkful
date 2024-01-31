@@ -3,8 +3,7 @@ title:                "Het huidige datum ophalen"
 date:                  2024-01-28T22:01:15.574406-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Het huidige datum ophalen"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/getting-the-current-date.md"
 changelog:

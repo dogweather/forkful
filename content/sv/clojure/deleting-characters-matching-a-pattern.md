@@ -3,8 +3,7 @@ title:                "Ta bort tecken som matchar ett mönster"
 date:                  2024-01-20T17:41:53.096448-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Ta bort tecken som matchar ett mönster"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/deleting-characters-matching-a-pattern.md"
 ---

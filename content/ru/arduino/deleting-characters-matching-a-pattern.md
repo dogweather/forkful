@@ -3,8 +3,7 @@ title:                "Удаление символов, соответству
 date:                  2024-01-28T23:57:30.146933-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление символов, соответствующих шаблону"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/arduino/deleting-characters-matching-a-pattern.md"
 changelog:

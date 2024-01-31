@@ -3,8 +3,7 @@ title:                "Het gebruik van een interactieve shell (REPL)"
 date:                  2024-01-28T22:09:18.215910-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Het gebruik van een interactieve shell (REPL)"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/using-an-interactive-shell-repl.md"
 changelog:

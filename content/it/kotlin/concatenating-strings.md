@@ -3,8 +3,7 @@ title:                "Concatenazione di stringhe"
 date:                  2024-01-20T17:35:29.229748-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Concatenazione di stringhe"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/concatenating-strings.md"
 ---

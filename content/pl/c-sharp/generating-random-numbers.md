@@ -3,8 +3,7 @@ title:                "Generowanie liczb losowych"
 date:                  2024-01-27T20:33:06.460666-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generowanie liczb losowych"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/generating-random-numbers.md"
 ---

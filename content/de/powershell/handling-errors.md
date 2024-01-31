@@ -3,8 +3,7 @@ title:                "Fehlerbehandlung"
 date:                  2024-01-26T00:55:37.846233-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Fehlerbehandlung"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/handling-errors.md"
 ---

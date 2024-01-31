@@ -3,8 +3,7 @@ title:                "Numerojen pyöristäminen"
 date:                  2024-01-26T03:42:55.761671-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Numerojen pyöristäminen"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/rounding-numbers.md"
 ---

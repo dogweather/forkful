@@ -3,8 +3,7 @@ title:                "Utilisation des tableaux associatifs"
 date:                  2024-01-30T19:11:55.873352-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des tableaux associatifs"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/using-associative-arrays.md"
 changelog:

@@ -1,10 +1,8 @@
 ---
 title:                "HTML:n jäsentäminen"
 date:                  2024-01-20T15:30:11.823505-07:00
-html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/parsing-html.md"
 ---

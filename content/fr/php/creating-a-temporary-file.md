@@ -3,8 +3,7 @@ title:                "Création d'un fichier temporaire"
 date:                  2024-01-20T17:41:04.515571-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Création d'un fichier temporaire"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/creating-a-temporary-file.md"
 ---

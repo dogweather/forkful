@@ -3,8 +3,7 @@ title:                "数字取整"
 date:                  2024-01-26T03:46:35.865150-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "数字取整"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/rounding-numbers.md"
 ---

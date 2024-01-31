@@ -1,10 +1,8 @@
 ---
 title:                "YAML 다루기"
 date:                  2024-01-19
-html_title:           "Arduino: YAML 다루기"
 simple_title:         "YAML 다루기"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/working-with-yaml.md"

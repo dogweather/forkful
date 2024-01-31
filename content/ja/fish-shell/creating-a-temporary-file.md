@@ -3,8 +3,7 @@ title:                "一時ファイルの作成"
 date:                  2024-01-20T17:40:22.423277-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "一時ファイルの作成"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/creating-a-temporary-file.md"

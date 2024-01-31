@@ -1,10 +1,8 @@
 ---
 title:                "Pisanie do standardowego błędu"
 date:                  2024-01-19
-html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
-programming_language: "C"
-category:             "C"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/writing-to-standard-error.md"
 ---

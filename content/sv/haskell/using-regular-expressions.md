@@ -1,10 +1,8 @@
 ---
 title:                "Använda reguljära uttryck"
 date:                  2024-01-19
-html_title:           "Bash: Använda reguljära uttryck"
 simple_title:         "Använda reguljära uttryck"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/using-regular-expressions.md"
 ---

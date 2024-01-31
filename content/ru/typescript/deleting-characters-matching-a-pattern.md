@@ -3,8 +3,7 @@ title:                "Удаление символов, соответству
 date:                  2024-01-28T23:57:29.500781-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление символов, соответствующих шаблону"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/typescript/deleting-characters-matching-a-pattern.md"
 changelog:

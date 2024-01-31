@@ -3,8 +3,7 @@ title:                "Удаление кавычек из строки"
 date:                  2024-01-29T00:01:58.840612-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление кавычек из строки"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/clojure/removing-quotes-from-a-string.md"
 changelog:

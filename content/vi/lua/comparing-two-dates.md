@@ -3,8 +3,7 @@ title:                "So sánh hai ngày"
 date:                  2024-01-28T21:56:40.735201-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "So sánh hai ngày"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/lua/comparing-two-dates.md"
 changelog:

@@ -1,10 +1,8 @@
 ---
 title:                "Obtenir la date actuelle"
 date:                  2024-01-20T15:16:28.153378-07:00
-html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/getting-the-current-date.md"
 ---

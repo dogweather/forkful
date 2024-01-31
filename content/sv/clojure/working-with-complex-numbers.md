@@ -3,8 +3,7 @@ title:                "Att arbeta med komplexa tal"
 date:                  2024-01-26T04:38:46.696347-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att arbeta med komplexa tal"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/working-with-complex-numbers.md"
 ---

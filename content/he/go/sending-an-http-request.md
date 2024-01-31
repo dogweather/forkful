@@ -3,8 +3,7 @@ title:                "שליחת בקשת HTTP"
 date:                  2024-01-20T18:00:06.509220-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "שליחת בקשת HTTP"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/go/sending-an-http-request.md"
 ---

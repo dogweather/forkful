@@ -3,8 +3,7 @@ title:                "文字列を小文字に変換"
 date:                  2024-01-20T17:38:02.826242-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "文字列を小文字に変換"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/converting-a-string-to-lower-case.md"

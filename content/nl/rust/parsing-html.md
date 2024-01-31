@@ -3,8 +3,7 @@ title:                "HTML Parsen"
 date:                  2024-01-28T22:04:02.260111-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML Parsen"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/parsing-html.md"
 changelog:

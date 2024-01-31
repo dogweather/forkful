@@ -1,10 +1,8 @@
 ---
 title:                "Ottenere la data corrente"
 date:                  2024-01-20T15:12:52.139468-07:00
-html_title:           "Arduino: Ottenere la data corrente"
 simple_title:         "Ottenere la data corrente"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/getting-the-current-date.md"
 ---

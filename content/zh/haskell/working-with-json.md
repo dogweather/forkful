@@ -1,10 +1,8 @@
 ---
 title:                "处理JSON数据"
 date:                  2024-01-19
-html_title:           "Arduino: 处理JSON数据"
 simple_title:         "处理JSON数据"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/working-with-json.md"

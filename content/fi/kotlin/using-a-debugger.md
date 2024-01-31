@@ -3,8 +3,7 @@ title:                "Debuggerin käyttö"
 date:                  2024-01-26T03:50:23.101377-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debuggerin käyttö"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/using-a-debugger.md"
 ---

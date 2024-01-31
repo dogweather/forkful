@@ -3,8 +3,7 @@ title:                "Ghi vào lỗi chuẩn"
 date:                  2024-01-28T22:13:21.392593-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi vào lỗi chuẩn"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/writing-to-standard-error.md"
 changelog:

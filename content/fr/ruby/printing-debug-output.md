@@ -3,8 +3,7 @@ title:                "Affichage des sorties de débogage"
 date:                  2024-01-20T17:53:30.417519-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Affichage des sorties de débogage"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/printing-debug-output.md"
 ---

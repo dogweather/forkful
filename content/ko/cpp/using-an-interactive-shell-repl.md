@@ -3,8 +3,7 @@ title:                "인터랙티브 셸 (REPL) 사용하기"
 date:                  2024-01-26T04:12:39.726981-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "인터랙티브 셸 (REPL) 사용하기"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/using-an-interactive-shell-repl.md"
 ---

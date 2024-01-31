@@ -3,8 +3,7 @@ title:                "कोड को फ़ंक्शन्स में �
 date:                  2024-01-26T01:17:13.342775-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड को फ़ंक्शन्स में व्यवस्थित करना"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/organizing-code-into-functions.md"
 ---

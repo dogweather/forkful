@@ -3,8 +3,7 @@ title:                "Conversión de una cadena de texto a minúsculas"
 date:                  2024-01-20T17:38:42.083039-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Conversión de una cadena de texto a minúsculas"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/converting-a-string-to-lower-case.md"
 ---

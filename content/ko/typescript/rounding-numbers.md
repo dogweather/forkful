@@ -3,8 +3,7 @@ title:                "숫자 반올림하기"
 date:                  2024-01-26T03:47:37.251219-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "숫자 반올림하기"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/rounding-numbers.md"
 ---

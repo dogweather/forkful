@@ -3,8 +3,7 @@ title:                "Samenvoegen van strings"
 date:                  2024-01-28T21:57:05.750794-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Samenvoegen van strings"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c-sharp/concatenating-strings.md"
 changelog:

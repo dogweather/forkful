@@ -3,8 +3,7 @@ title:                "日志记录"
 date:                  2024-01-26T01:09:07.650691-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日志记录"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/logging.md"
 ---

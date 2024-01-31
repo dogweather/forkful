@@ -3,8 +3,7 @@ title:                "שימוש בדיבאגר"
 date:                  2024-01-26T04:12:00.757314-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש בדיבאגר"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/using-a-debugger.md"
 ---

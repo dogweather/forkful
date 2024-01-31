@@ -1,10 +1,8 @@
 ---
 title:                "Zamiana liter na wielkie w ciągu znaków"
 date:                  2024-01-19
-html_title:           "Arduino: Zamiana liter na wielkie w ciągu znaków"
 simple_title:         "Zamiana liter na wielkie w ciągu znaków"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/capitalizing-a-string.md"
 ---

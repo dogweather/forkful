@@ -3,8 +3,7 @@ title:                "Retirer les guillemets d'une chaîne"
 date:                  2024-01-26T03:37:53.629879-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Retirer les guillemets d'une chaîne"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/removing-quotes-from-a-string.md"
 ---

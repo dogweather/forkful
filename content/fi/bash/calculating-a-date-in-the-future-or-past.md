@@ -3,8 +3,7 @@ title:                "Tulevan tai menneen päivämäärän laskeminen"
 date:                  2024-01-20T17:30:51.285777-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/calculating-a-date-in-the-future-or-past.md"
 ---

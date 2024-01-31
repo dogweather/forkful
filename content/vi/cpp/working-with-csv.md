@@ -3,8 +3,7 @@ title:                "Làm việc với CSV"
 date:                  2024-01-28T22:10:16.965826-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với CSV"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/cpp/working-with-csv.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "Korzystanie z debugera"
 date:                  2024-01-26T03:50:42.497718-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z debugera"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/using-a-debugger.md"
 ---

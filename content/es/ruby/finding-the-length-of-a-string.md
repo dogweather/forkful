@@ -3,8 +3,7 @@ title:                "Calculando la longitud de una cadena"
 date:                  2024-01-20T17:48:28.337633-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Calculando la longitud de una cadena"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/finding-the-length-of-a-string.md"
 ---

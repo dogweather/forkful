@@ -3,8 +3,7 @@ title:                "यादृच्छिक संख्याएँ उ�
 date:                  2024-01-27T20:37:00.161572-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/generating-random-numbers.md"
 ---

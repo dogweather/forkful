@@ -3,8 +3,7 @@ title:                "इंटरैक्टिव शेल (REPL) का �
 date:                  2024-01-26T04:12:04.632744-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "इंटरैक्टिव शेल (REPL) का उपयोग"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/bash/using-an-interactive-shell-repl.md"
 ---

@@ -3,8 +3,7 @@ title:                "Sammenslåing av strenger"
 date:                  2024-01-27T10:42:41.231494-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sammenslåing av strenger"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/concatenating-strings.md"
 ---

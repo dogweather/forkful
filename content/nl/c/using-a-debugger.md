@@ -3,8 +3,7 @@ title:                "Een debugger gebruiken"
 date:                  2024-01-28T22:08:32.208523-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een debugger gebruiken"
-programming_language: "C"
-category:             "C"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/using-a-debugger.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "Anführungszeichen aus einem String entfernen"
 date:                  2024-01-26T03:41:21.535715-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Anführungszeichen aus einem String entfernen"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/removing-quotes-from-a-string.md"
 ---

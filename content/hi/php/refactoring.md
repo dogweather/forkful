@@ -3,8 +3,7 @@ title:                "कोड संशोधन"
 date:                  2024-01-26T01:54:15.109007-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड संशोधन"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/refactoring.md"
 ---

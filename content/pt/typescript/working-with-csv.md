@@ -1,10 +1,8 @@
 ---
 title:                "Trabalhando com CSV"
 date:                  2024-01-19
-html_title:           "Bash: Trabalhando com CSV"
 simple_title:         "Trabalhando com CSV"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/working-with-csv.md"
 ---

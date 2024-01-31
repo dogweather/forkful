@@ -3,8 +3,7 @@ title:                "Opprette en midlertidig fil"
 date:                  2024-01-20T17:41:48.721078-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Opprette en midlertidig fil"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/creating-a-temporary-file.md"
 ---

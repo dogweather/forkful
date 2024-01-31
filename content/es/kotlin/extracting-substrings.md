@@ -3,8 +3,7 @@ title:                "Extracción de subcadenas"
 date:                  2024-01-20T17:46:00.519134-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extracción de subcadenas"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/extracting-substrings.md"
 ---

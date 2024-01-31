@@ -3,8 +3,7 @@ title:                "Ta bort tecken som matchar ett mönster"
 date:                  2024-01-20T17:41:27.816931-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Ta bort tecken som matchar ett mönster"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/deleting-characters-matching-a-pattern.md"
 ---

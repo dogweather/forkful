@@ -3,8 +3,7 @@ title:                "Преобразование даты в строку"
 date:                  2024-01-28T23:56:54.614000-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование даты в строку"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/python/converting-a-date-into-a-string.md"
 changelog:

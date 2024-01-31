@@ -3,8 +3,7 @@ title:                "Маніпулювання файлами за допом
 date:                  2024-01-27T16:22:14.192243-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Маніпулювання файлами за допомогою однорядкових команд CLI"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/ruby/manipulating-files-with-cli-one-liners.md"
 ---

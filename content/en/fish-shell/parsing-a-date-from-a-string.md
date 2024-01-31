@@ -1,10 +1,8 @@
 ---
 title:                "Parsing a date from a string"
 date:                  2024-01-20T15:36:14.617111-07:00
-html_title:           "Arduino recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/parsing-a-date-from-a-string.md"
 ---

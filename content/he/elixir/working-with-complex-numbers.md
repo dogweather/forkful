@@ -3,8 +3,7 @@ title:                "עבודה עם מספרים מרוכבים"
 date:                  2024-01-26T04:39:39.675578-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם מספרים מרוכבים"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/working-with-complex-numbers.md"
 ---

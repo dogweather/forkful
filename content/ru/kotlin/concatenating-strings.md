@@ -3,8 +3,7 @@ title:                "Склеивание строк"
 date:                  2024-01-28T23:56:06.074846-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Склеивание строк"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/kotlin/concatenating-strings.md"
 changelog:

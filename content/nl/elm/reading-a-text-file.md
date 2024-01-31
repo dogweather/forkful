@@ -3,8 +3,7 @@ title:                "Een tekstbestand lezen"
 date:                  2024-01-28T22:05:07.045759-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand lezen"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/reading-a-text-file.md"
 changelog:

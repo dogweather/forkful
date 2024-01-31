@@ -3,8 +3,7 @@ title:                "一時ファイルの作成"
 date:                  2024-01-20T17:40:57.036124-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "一時ファイルの作成"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/creating-a-temporary-file.md"

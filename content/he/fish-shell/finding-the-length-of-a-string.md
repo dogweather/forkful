@@ -3,8 +3,7 @@ title:                "מציאת אורך מחרוזת"
 date:                  2024-01-20T17:47:21.504480-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "מציאת אורך מחרוזת"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/finding-the-length-of-a-string.md"
 ---

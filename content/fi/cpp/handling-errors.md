@@ -3,8 +3,7 @@ title:                "Virheiden käsittely"
 date:                  2024-01-26T00:50:13.044951-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Virheiden käsittely"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/handling-errors.md"
 ---

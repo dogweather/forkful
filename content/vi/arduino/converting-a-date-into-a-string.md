@@ -3,8 +3,7 @@ title:                "Chuyển đổi một ngày thành chuỗi"
 date:                  2024-01-28T21:57:24.957930-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi một ngày thành chuỗi"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/converting-a-date-into-a-string.md"
 changelog:

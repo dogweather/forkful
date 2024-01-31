@@ -1,10 +1,8 @@
 ---
 title:                "Überprüfen, ob ein Verzeichnis existiert"
 date:                  2024-01-19
-html_title:           "Arduino: Überprüfen, ob ein Verzeichnis existiert"
 simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/checking-if-a-directory-exists.md"
 ---

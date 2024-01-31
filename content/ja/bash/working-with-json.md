@@ -1,10 +1,8 @@
 ---
 title:                "JSONを扱う方法"
 date:                  2024-01-19
-html_title:           "Arduino: JSONを扱う方法"
 simple_title:         "JSONを扱う方法"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/working-with-json.md"

@@ -3,8 +3,7 @@ title:                "新しいプロジェクトを始める"
 date:                  2024-01-20T18:02:41.124500-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "新しいプロジェクトを始める"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Getting Started"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/starting-a-new-project.md"

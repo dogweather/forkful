@@ -1,10 +1,8 @@
 ---
 title:                "בדיקה האם תיקייה קיימת"
 date:                  2024-01-20T14:58:24.795119-07:00
-html_title:           "Gleam: בדיקה האם תיקייה קיימת"
 simple_title:         "בדיקה האם תיקייה קיימת"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/powershell/checking-if-a-directory-exists.md"
 ---

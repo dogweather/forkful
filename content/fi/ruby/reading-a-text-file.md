@@ -3,8 +3,7 @@ title:                "Tekstitiedoston lukeminen"
 date:                  2024-01-20T17:55:16.685821-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/reading-a-text-file.md"
 ---

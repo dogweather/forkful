@@ -3,8 +3,7 @@ title:                "Ermittlung der Zeichenkettenlänge"
 date:                  2024-01-20T17:48:05.160031-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Ermittlung der Zeichenkettenlänge"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/finding-the-length-of-a-string.md"
 ---

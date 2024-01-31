@@ -3,8 +3,7 @@ title:                "भविष्य या अतीत में ता�
 date:                  2024-01-20T17:31:42.290069-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "भविष्य या अतीत में तारीख की गणना"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/calculating-a-date-in-the-future-or-past.md"
 ---

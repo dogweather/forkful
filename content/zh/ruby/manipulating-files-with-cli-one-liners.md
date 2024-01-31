@@ -3,8 +3,7 @@ title:                "使用命令行一行命令操作文件"
 date:                  2024-01-27T16:21:19.551750-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用命令行一行命令操作文件"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/manipulating-files-with-cli-one-liners.md"
 ---

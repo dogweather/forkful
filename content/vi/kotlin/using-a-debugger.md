@@ -3,8 +3,7 @@ title:                "Sử dụng bộ gỡ lỗi"
 date:                  2024-01-28T22:09:13.471868-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng bộ gỡ lỗi"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/using-a-debugger.md"
 changelog:

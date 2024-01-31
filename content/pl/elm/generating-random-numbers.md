@@ -3,8 +3,7 @@ title:                "Generowanie liczb losowych"
 date:                  2024-01-27T20:33:38.719502-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generowanie liczb losowych"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/generating-random-numbers.md"
 ---

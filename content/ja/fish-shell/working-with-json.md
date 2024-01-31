@@ -1,10 +1,8 @@
 ---
 title:                "JSONを扱う方法"
 date:                  2024-01-19
-html_title:           "Arduino: JSONを扱う方法"
 simple_title:         "JSONを扱う方法"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/working-with-json.md"

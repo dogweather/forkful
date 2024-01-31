@@ -1,10 +1,8 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
 date:                  2024-01-19
-html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/writing-a-text-file.md"
 ---

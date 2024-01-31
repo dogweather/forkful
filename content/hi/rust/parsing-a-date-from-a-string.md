@@ -1,10 +1,8 @@
 ---
 title:                "स्ट्रिंग से दिनांक पार्स करना"
 date:                  2024-01-20T15:38:34.457898-07:00
-html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
 simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/rust/parsing-a-date-from-a-string.md"
 ---

@@ -3,8 +3,7 @@ title:                "Extrahera delsträngar"
 date:                  2024-01-20T17:45:54.936622-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extrahera delsträngar"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/extracting-substrings.md"
 ---

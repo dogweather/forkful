@@ -3,8 +3,7 @@ title:                "날짜를 문자열로 변환하기"
 date:                  2024-01-20T17:38:13.581223-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "날짜를 문자열로 변환하기"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/converting-a-date-into-a-string.md"

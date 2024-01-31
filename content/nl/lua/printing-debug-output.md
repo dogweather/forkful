@@ -3,8 +3,7 @@ title:                "Debug-output afdrukken"
 date:                  2024-01-28T22:04:33.558533-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debug-output afdrukken"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/printing-debug-output.md"
 changelog:

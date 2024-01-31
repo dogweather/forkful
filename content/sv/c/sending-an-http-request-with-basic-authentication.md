@@ -3,8 +3,7 @@ title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
 date:                  2024-01-20T18:01:11.748898-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"
-programming_language: "C"
-category:             "C"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/sending-an-http-request-with-basic-authentication.md"
 ---

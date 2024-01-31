@@ -3,8 +3,7 @@ title:                "Een tekstbestand schrijven"
 date:                  2024-01-28T22:13:08.890775-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand schrijven"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/writing-a-text-file.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "Utilizzo di un interprete interattivo (REPL)"
 date:                  2024-01-26T04:14:54.755233-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di un interprete interattivo (REPL)"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/using-an-interactive-shell-repl.md"
 ---

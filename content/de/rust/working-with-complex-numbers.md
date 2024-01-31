@@ -3,8 +3,7 @@ title:                "Umgang mit komplexen Zahlen"
 date:                  2024-01-26T04:45:10.090048-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Umgang mit komplexen Zahlen"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/working-with-complex-numbers.md"
 ---

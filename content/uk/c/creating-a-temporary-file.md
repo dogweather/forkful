@@ -3,8 +3,7 @@ title:                "Створення тимчасового файлу"
 date:                  2024-01-20T17:39:54.127652-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Створення тимчасового файлу"
-programming_language: "C"
-category:             "C"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c/creating-a-temporary-file.md"
 ---

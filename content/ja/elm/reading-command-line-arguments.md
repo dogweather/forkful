@@ -3,8 +3,7 @@ title:                "コマンドライン引数の読み取り"
 date:                  2024-01-20T17:56:02.362360-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "コマンドライン引数の読み取り"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/reading-command-line-arguments.md"

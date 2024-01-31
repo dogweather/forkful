@@ -3,8 +3,7 @@ title:                "तारीख को स्ट्रिंग में
 date:                  2024-01-20T17:36:40.470161-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "तारीख को स्ट्रिंग में बदलना"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elm/converting-a-date-into-a-string.md"
 ---

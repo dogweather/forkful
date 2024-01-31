@@ -3,8 +3,7 @@ title:                "डीबगर का उपयोग करना"
 date:                  2024-01-26T04:09:40.205281-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डीबगर का उपयोग करना"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/using-a-debugger.md"
 ---

@@ -3,8 +3,7 @@ title:                "המרת תאריך למחרוזת"
 date:                  2024-01-20T17:38:07.483588-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "המרת תאריך למחרוזת"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/converting-a-date-into-a-string.md"
 ---

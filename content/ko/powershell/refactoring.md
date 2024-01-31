@@ -3,8 +3,7 @@ title:                "리팩토링"
 date:                  2024-01-26T03:37:55.537553-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "리팩토링"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/refactoring.md"
 ---

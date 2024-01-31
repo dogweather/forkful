@@ -1,10 +1,8 @@
 ---
 title:                "Testien kirjoittaminen"
 date:                  2024-01-19
-html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/writing-tests.md"
 ---

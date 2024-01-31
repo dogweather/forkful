@@ -1,10 +1,8 @@
 ---
 title:                "בדיקה האם תיקייה קיימת"
 date:                  2024-01-20T14:56:35.865395-07:00
-html_title:           "Gleam: בדיקה האם תיקייה קיימת"
 simple_title:         "בדיקה האם תיקייה קיימת"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/checking-if-a-directory-exists.md"
 ---

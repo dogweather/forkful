@@ -3,8 +3,7 @@ title:                "Envoi d'une requête HTTP"
 date:                  2024-01-20T18:00:31.642041-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Envoi d'une requête HTTP"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/sending-an-http-request.md"
 ---

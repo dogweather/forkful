@@ -3,8 +3,7 @@ title:                "Karakters verwijderen die overeenkomen met een patroon"
 date:                  2024-01-28T21:58:55.091359-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Karakters verwijderen die overeenkomen met een patroon"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/java/deleting-characters-matching-a-pattern.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "Sinh số ngẫu nhiên"
 date:                  2024-01-28T22:01:46.496413-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sinh số ngẫu nhiên"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/kotlin/generating-random-numbers.md"
 changelog:

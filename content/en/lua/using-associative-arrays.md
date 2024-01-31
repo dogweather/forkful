@@ -3,8 +3,7 @@ title:                "Using associative arrays"
 date:                  2024-01-30T18:57:14.533924-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Using associative arrays"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/using-associative-arrays.md"
 ---

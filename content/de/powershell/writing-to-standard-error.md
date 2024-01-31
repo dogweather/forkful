@@ -1,10 +1,8 @@
 ---
 title:                "Schreiben auf Standardfehler"
 date:                  2024-01-19
-html_title:           "Arduino: Schreiben auf Standardfehler"
 simple_title:         "Schreiben auf Standardfehler"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/writing-to-standard-error.md"
 ---

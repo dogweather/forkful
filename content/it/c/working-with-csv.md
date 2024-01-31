@@ -1,10 +1,8 @@
 ---
 title:                "Lavorare con i file CSV"
 date:                  2024-01-19
-html_title:           "Bash: Lavorare con i file CSV"
 simple_title:         "Lavorare con i file CSV"
-programming_language: "C"
-category:             "C"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/working-with-csv.md"
 ---

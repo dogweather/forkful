@@ -3,8 +3,7 @@ title:                "Sinh số ngẫu nhiên"
 date:                  2024-01-28T22:01:15.268075-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sinh số ngẫu nhiên"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/generating-random-numbers.md"
 changelog:

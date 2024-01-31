@@ -3,8 +3,7 @@ title:                "Обработка ошибок"
 date:                  2024-01-28T23:58:44.804146-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Обработка ошибок"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elm/handling-errors.md"
 changelog:

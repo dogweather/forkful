@@ -3,8 +3,7 @@ title:                "פיענוח תאריך ממחרוזת"
 date:                  2024-01-28T02:05:48.977230-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "פיענוח תאריך ממחרוזת"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/parsing-a-date-from-a-string.md"
 changelog:

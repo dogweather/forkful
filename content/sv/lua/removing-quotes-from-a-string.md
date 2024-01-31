@@ -3,8 +3,7 @@ title:                "Ta bort citattecken från en sträng"
 date:                  2024-01-26T03:40:56.982492-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ta bort citattecken från en sträng"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/removing-quotes-from-a-string.md"
 ---

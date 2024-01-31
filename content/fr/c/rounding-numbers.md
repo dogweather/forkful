@@ -3,8 +3,7 @@ title:                "Arrondir les nombres"
 date:                  2024-01-26T03:42:50.960333-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arrondir les nombres"
-programming_language: "C"
-category:             "C"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/rounding-numbers.md"
 ---

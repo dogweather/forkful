@@ -1,10 +1,8 @@
 ---
 title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 date:                  2024-01-19
-html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
 simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/capitalizing-a-string.md"
 ---

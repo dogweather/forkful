@@ -1,10 +1,8 @@
 ---
 title:                "הפיכת מחרוזת לאותיות רישיות"
 date:                  2024-01-19
-html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
 simple_title:         "הפיכת מחרוזת לאותיות רישיות"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/capitalizing-a-string.md"
 ---

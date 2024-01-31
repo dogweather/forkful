@@ -1,10 +1,8 @@
 ---
 title:                "Перевірка наявності директорії"
 date:                  2024-01-20T14:58:56.478251-07:00
-html_title:           "C#: Перевірка наявності директорії"
 simple_title:         "Перевірка наявності директорії"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/checking-if-a-directory-exists.md"
 ---

@@ -3,8 +3,7 @@ title:                "数値の丸め処理"
 date:                  2024-01-26T03:45:11.696714-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "数値の丸め処理"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/rounding-numbers.md"
 ---

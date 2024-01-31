@@ -3,8 +3,7 @@ title:                "Reading a text file"
 date:                  2024-01-20T17:54:55.075228-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Reading a text file"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/reading-a-text-file.md"
 ---

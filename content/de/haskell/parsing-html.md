@@ -1,10 +1,8 @@
 ---
 title:                "HTML parsen"
 date:                  2024-01-20T15:31:58.563713-07:00
-html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/parsing-html.md"
 ---

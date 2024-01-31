@@ -3,8 +3,7 @@ title:                "Lettura degli argomenti della riga di comando"
 date:                  2024-01-20T17:56:56.793539-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lettura degli argomenti della riga di comando"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/reading-command-line-arguments.md"
 ---

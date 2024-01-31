@@ -3,8 +3,7 @@ title:                "Отправка HTTP-запроса"
 date:                  2024-01-29T00:02:22.089157-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Отправка HTTP-запроса"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/bash/sending-an-http-request.md"
 changelog:

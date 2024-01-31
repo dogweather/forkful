@@ -1,10 +1,8 @@
 ---
 title:                "JSON-tiedostojen käsittely"
 date:                  2024-01-19
-html_title:           "Arduino: JSON-tiedostojen käsittely"
 simple_title:         "JSON-tiedostojen käsittely"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/working-with-json.md"
 ---

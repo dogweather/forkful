@@ -3,8 +3,7 @@ title:                "インタラクティブシェル（REPL）の使用"
 date:                  2024-01-26T04:15:30.686721-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "インタラクティブシェル（REPL）の使用"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/using-an-interactive-shell-repl.md"
 ---

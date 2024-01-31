@@ -1,10 +1,8 @@
 ---
 title:                "Отримання поточної дати"
 date:                  2024-01-20T15:15:38.114271-07:00
-html_title:           "Bash: Отримання поточної дати"
 simple_title:         "Отримання поточної дати"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/getting-the-current-date.md"
 ---

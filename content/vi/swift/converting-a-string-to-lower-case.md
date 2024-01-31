@@ -3,8 +3,7 @@ title:                "Chuyển đổi chuỗi thành chữ thường"
 date:                  2024-01-28T21:58:59.871868-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi chuỗi thành chữ thường"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/swift/converting-a-string-to-lower-case.md"
 changelog:

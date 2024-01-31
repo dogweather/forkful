@@ -3,8 +3,7 @@ title:                "Sắp xếp mã thành các hàm"
 date:                  2024-01-28T22:03:42.258157-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sắp xếp mã thành các hàm"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/organizing-code-into-functions.md"
 changelog:

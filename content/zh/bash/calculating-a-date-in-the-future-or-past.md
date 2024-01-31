@@ -2,10 +2,8 @@
 title:                "计算未来或过去的日期"
 date:                  2024-01-20T17:28:43.272076-07:00
 model:                 gpt-4-1106-preview
-html_title:           "Clojure: 计算未来或过去的日期"
 simple_title:         "计算未来或过去的日期"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/calculating-a-date-in-the-future-or-past.md"

@@ -3,8 +3,7 @@ title:                "Comparer deux dates"
 date:                  2024-01-20T17:32:36.906136-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Comparer deux dates"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/comparing-two-dates.md"
 ---

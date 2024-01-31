@@ -1,10 +1,8 @@
 ---
 title:                "Отримання поточної дати"
 date:                  2024-01-20T15:16:14.385753-07:00
-html_title:           "Bash: Отримання поточної дати"
 simple_title:         "Отримання поточної дати"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/php/getting-the-current-date.md"
 ---

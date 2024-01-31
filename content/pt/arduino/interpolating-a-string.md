@@ -3,8 +3,7 @@ title:                "Interpolando uma string"
 date:                  2024-01-20T17:50:05.803938-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolando uma string"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/interpolating-a-string.md"
 ---

@@ -3,8 +3,7 @@ title:                "Using associative arrays"
 date:                  2024-01-30T18:57:14.735713-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Using associative arrays"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/using-associative-arrays.md"
 changelog:

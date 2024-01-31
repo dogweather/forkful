@@ -3,8 +3,7 @@ title:                "Concaténation de chaînes de caractères"
 date:                  2024-01-20T17:35:25.023138-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Concaténation de chaînes de caractères"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/concatenating-strings.md"
 ---

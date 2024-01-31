@@ -3,8 +3,7 @@ title:                "Округление чисел"
 date:                  2024-01-29T00:01:57.436595-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округление чисел"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/fish-shell/rounding-numbers.md"
 changelog:

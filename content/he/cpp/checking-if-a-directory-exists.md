@@ -1,10 +1,8 @@
 ---
 title:                "בדיקה האם ספרייה קיימת"
 date:                  2024-01-19
-html_title:           "Arduino: בדיקה האם ספרייה קיימת"
 simple_title:         "בדיקה האם ספרייה קיימת"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/checking-if-a-directory-exists.md"
 ---

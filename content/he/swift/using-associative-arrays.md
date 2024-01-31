@@ -3,8 +3,7 @@ title:                "שימוש במערכים אסוציאטיביים"
 date:                  2024-01-30T19:14:01.687390-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במערכים אסוציאטיביים"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/using-associative-arrays.md"
 changelog:

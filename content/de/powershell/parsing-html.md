@@ -1,10 +1,8 @@
 ---
 title:                "HTML parsen"
 date:                  2024-01-20T15:33:14.141709-07:00
-html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/parsing-html.md"
 ---

@@ -3,8 +3,7 @@ title:                "Склеивание строк"
 date:                  2024-01-28T23:56:42.172767-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Склеивание строк"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/lua/concatenating-strings.md"
 changelog:

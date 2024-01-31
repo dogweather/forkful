@@ -3,8 +3,7 @@ title:                "Het huidige datum ophalen"
 date:                  2024-01-28T22:01:06.215032-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Het huidige datum ophalen"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/getting-the-current-date.md"
 changelog:

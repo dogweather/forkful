@@ -3,8 +3,7 @@ title:                "Generowanie liczb losowych"
 date:                  2024-01-27T20:34:12.340976-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generowanie liczb losowych"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/generating-random-numbers.md"
 ---

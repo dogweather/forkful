@@ -3,8 +3,7 @@ title:                "Merkkijonon pituuden selvittäminen"
 date:                  2024-01-20T17:47:34.339380-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon pituuden selvittäminen"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/finding-the-length-of-a-string.md"
 ---

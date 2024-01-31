@@ -3,8 +3,7 @@ title:                "Читання аргументів командного 
 date:                  2024-01-20T17:57:38.772371-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Читання аргументів командного рядка"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/reading-command-line-arguments.md"
 ---

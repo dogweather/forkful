@@ -1,10 +1,8 @@
 ---
 title:                "Utilisation des expressions régulières"
 date:                  2024-01-19
-html_title:           "Arduino: Utilisation des expressions régulières"
 simple_title:         "Utilisation des expressions régulières"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/using-regular-expressions.md"
 ---

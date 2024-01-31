@@ -3,8 +3,7 @@ title:                "Werken met CSV"
 date:                  2024-01-28T22:10:52.501639-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met CSV"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/working-with-csv.md"
 changelog:

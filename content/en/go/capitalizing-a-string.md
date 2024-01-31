@@ -1,10 +1,8 @@
 ---
 title:                "Capitalizing a string"
 date:                  2024-01-19
-html_title:           "C recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/capitalizing-a-string.md"
 ---

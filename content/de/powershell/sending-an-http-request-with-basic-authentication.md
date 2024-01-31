@@ -3,8 +3,7 @@ title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
 date:                  2024-01-20T18:02:16.318571-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/sending-an-http-request-with-basic-authentication.md"
 ---

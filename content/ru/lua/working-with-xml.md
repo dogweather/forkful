@@ -3,8 +3,7 @@ title:                "Работа с XML"
 date:                  2024-01-29T00:05:22.343016-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с XML"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/lua/working-with-xml.md"
 changelog:

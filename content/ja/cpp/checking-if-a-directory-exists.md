@@ -1,10 +1,8 @@
 ---
 title:                "ディレクトリが存在するかどうかを確認する"
 date:                  2024-01-19
-html_title:           "Bash: ディレクトリが存在するかどうかを確認する"
 simple_title:         "ディレクトリが存在するかどうかを確認する"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/checking-if-a-directory-exists.md"

@@ -1,10 +1,8 @@
 ---
 title:                "Aktuelles Datum abrufen"
 date:                  2024-01-20T15:14:50.122659-07:00
-html_title:           "C: Aktuelles Datum abrufen"
 simple_title:         "Aktuelles Datum abrufen"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/getting-the-current-date.md"
 ---

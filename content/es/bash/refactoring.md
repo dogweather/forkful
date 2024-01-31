@@ -3,8 +3,7 @@ title:                "Refactorización"
 date:                  2024-01-26T01:16:25.729033-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactorización"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/refactoring.md"
 ---

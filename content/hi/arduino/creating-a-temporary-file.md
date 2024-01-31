@@ -3,8 +3,7 @@ title:                "अस्थायी फाइल बनाना"
 date:                  2024-01-20T17:40:19.202241-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "अस्थायी फाइल बनाना"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/creating-a-temporary-file.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "Obtendo a data atual"
 date:                  2024-01-20T15:16:14.450368-07:00
-html_title:           "Bash: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/getting-the-current-date.md"
 ---

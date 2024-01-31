@@ -1,10 +1,8 @@
 ---
 title:                "Análise de HTML"
 date:                  2024-01-20T15:30:39.412208-07:00
-html_title:           "Bash: Análise de HTML"
 simple_title:         "Análise de HTML"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/parsing-html.md"
 ---

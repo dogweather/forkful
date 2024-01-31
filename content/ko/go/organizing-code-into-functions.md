@@ -3,8 +3,7 @@ title:                "코드를 함수로 구성하기"
 date:                  2024-01-26T01:11:01.082844-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "코드를 함수로 구성하기"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/organizing-code-into-functions.md"
 ---

@@ -3,8 +3,7 @@ title:                "字符串插值"
 date:                  2024-01-20T17:51:11.914702-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "字符串插值"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/interpolating-a-string.md"

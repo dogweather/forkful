@@ -3,8 +3,7 @@ title:                "Satunnaislukujen generointi"
 date:                  2024-01-27T20:32:57.432945-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Satunnaislukujen generointi"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/generating-random-numbers.md"
 ---

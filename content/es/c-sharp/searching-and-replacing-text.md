@@ -3,8 +3,7 @@ title:                "Buscando y reemplazando texto"
 date:                  2024-01-20T17:57:36.001656-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Buscando y reemplazando texto"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/searching-and-replacing-text.md"
 ---

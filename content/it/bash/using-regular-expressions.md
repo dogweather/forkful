@@ -1,10 +1,8 @@
 ---
 title:                "Utilizzo delle espressioni regolari"
 date:                  2024-01-19
-html_title:           "Arduino: Utilizzo delle espressioni regolari"
 simple_title:         "Utilizzo delle espressioni regolari"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/using-regular-expressions.md"
 ---

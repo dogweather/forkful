@@ -3,8 +3,7 @@ title:                "עיגול מספרים"
 date:                  2024-01-26T03:45:52.423776-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עיגול מספרים"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/go/rounding-numbers.md"
 ---

@@ -3,8 +3,7 @@ title:                "Logboekregistratie"
 date:                  2024-01-28T22:03:06.655131-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Logboekregistratie"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/logging.md"
 changelog:

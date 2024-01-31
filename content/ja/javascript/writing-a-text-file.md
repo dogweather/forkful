@@ -1,10 +1,8 @@
 ---
 title:                "テキストファイルの書き込み"
 date:                  2024-01-19
-html_title:           "Bash: テキストファイルの書き込み"
 simple_title:         "テキストファイルの書き込み"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/writing-a-text-file.md"

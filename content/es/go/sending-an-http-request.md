@@ -3,8 +3,7 @@ title:                "Enviando una solicitud http"
 date:                  2024-01-20T17:59:51.360954-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Enviando una solicitud http"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/sending-an-http-request.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "Przetwarzanie daty ze łańcucha znaków"
 date:                  2024-01-20T15:37:32.661143-07:00
-html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
 simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/parsing-a-date-from-a-string.md"
 ---

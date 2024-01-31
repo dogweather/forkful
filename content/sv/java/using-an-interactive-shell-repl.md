@@ -3,8 +3,7 @@ title:                "Använda en interaktiv skal (REPL)"
 date:                  2024-01-26T04:15:25.843954-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Använda en interaktiv skal (REPL)"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/using-an-interactive-shell-repl.md"
 ---

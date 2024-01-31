@@ -3,8 +3,7 @@ title:                "Rounding numbers"
 date:                  2024-01-25T03:00:00.122618-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Rounding numbers"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/rounding-numbers.md"
 ---

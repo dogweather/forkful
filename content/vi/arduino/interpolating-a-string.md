@@ -3,8 +3,7 @@ title:                "Nội suy chuỗi ký tự"
 date:                  2024-01-28T22:02:20.293035-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nội suy chuỗi ký tự"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/interpolating-a-string.md"
 changelog:

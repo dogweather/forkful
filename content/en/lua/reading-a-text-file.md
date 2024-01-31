@@ -3,8 +3,7 @@ title:                "Reading a text file"
 date:                  2024-01-20T17:54:48.071374-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Reading a text file"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/reading-a-text-file.md"
 ---

@@ -3,8 +3,7 @@ title:                "Praca z liczbami zespolonymi"
 date:                  2024-01-26T04:43:03.728446-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z liczbami zespolonymi"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/working-with-complex-numbers.md"
 ---

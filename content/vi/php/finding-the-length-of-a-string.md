@@ -3,8 +3,7 @@ title:                "Tìm chiều dài của một chuỗi ký tự"
 date:                  2024-01-28T22:00:38.813328-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tìm chiều dài của một chuỗi ký tự"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/php/finding-the-length-of-a-string.md"
 changelog:

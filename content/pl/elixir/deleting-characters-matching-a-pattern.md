@@ -3,8 +3,7 @@ title:                "Usuwanie znaków pasujących do wzorca"
 date:                  2024-01-20T17:42:13.604867-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/deleting-characters-matching-a-pattern.md"
 ---

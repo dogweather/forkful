@@ -3,8 +3,7 @@ title:                "Werken met CSV"
 date:                  2024-01-28T22:09:56.281791-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met CSV"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/working-with-csv.md"
 changelog:

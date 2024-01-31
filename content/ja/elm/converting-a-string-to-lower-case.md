@@ -3,8 +3,7 @@ title:                "文字列を小文字に変換"
 date:                  2024-01-20T17:38:34.726068-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "文字列を小文字に変換"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/converting-a-string-to-lower-case.md"

@@ -1,10 +1,8 @@
 ---
 title:                "Testien kirjoittaminen"
 date:                  2024-01-19
-html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/writing-tests.md"
 ---

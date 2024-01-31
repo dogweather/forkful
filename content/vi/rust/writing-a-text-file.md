@@ -3,8 +3,7 @@ title:                "Viết một tệp văn bản"
 date:                  2024-01-28T22:12:49.606141-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết một tệp văn bản"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/writing-a-text-file.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "Omvandla ett datum till en sträng"
 date:                  2024-01-20T17:37:04.615224-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Omvandla ett datum till en sträng"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/converting-a-date-into-a-string.md"
 ---

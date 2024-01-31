@@ -1,10 +1,8 @@
 ---
 title:                "Praca z JSON"
 date:                  2024-01-19
-html_title:           "Bash: Praca z JSON"
 simple_title:         "Praca z JSON"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/working-with-json.md"
 ---

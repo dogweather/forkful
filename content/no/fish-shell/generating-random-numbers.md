@@ -3,8 +3,7 @@ title:                "Generering av tilfeldige tall"
 date:                  2024-01-27T20:33:33.544070-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generering av tilfeldige tall"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/generating-random-numbers.md"
 ---

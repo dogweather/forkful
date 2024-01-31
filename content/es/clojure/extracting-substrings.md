@@ -3,8 +3,7 @@ title:                "Extracción de subcadenas"
 date:                  2024-01-20T17:45:25.032817-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extracción de subcadenas"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/extracting-substrings.md"
 ---

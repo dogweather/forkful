@@ -3,8 +3,7 @@ title:                "Làm việc với số phức"
 date:                  2024-01-28T22:13:20.424454-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với số phức"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/working-with-complex-numbers.md"
 changelog:

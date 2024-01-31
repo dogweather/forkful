@@ -3,8 +3,7 @@ title:                "Nội suy chuỗi ký tự"
 date:                  2024-01-28T22:01:57.934346-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nội suy chuỗi ký tự"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/clojure/interpolating-a-string.md"
 changelog:

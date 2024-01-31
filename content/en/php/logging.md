@@ -3,8 +3,7 @@ title:                "Logging"
 date:                  2024-01-25T02:03:11.630198-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Logging"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/logging.md"
 ---

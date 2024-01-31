@@ -3,8 +3,7 @@ title:                "Reguliere expressies gebruiken"
 date:                  2024-01-28T22:09:28.945295-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reguliere expressies gebruiken"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/using-regular-expressions.md"
 changelog:

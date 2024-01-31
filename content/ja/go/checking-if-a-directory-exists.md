@@ -1,10 +1,8 @@
 ---
 title:                "ディレクトリが存在するかどうかの確認"
 date:                  2024-01-20T14:56:36.795576-07:00
-html_title:           "Gleam: ディレクトリが存在するかどうかの確認"
 simple_title:         "ディレクトリが存在するかどうかの確認"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/checking-if-a-directory-exists.md"

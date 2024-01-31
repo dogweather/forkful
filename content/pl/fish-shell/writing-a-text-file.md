@@ -1,10 +1,8 @@
 ---
 title:                "Zapisywanie pliku tekstowego"
 date:                  2024-01-19
-html_title:           "Arduino: Zapisywanie pliku tekstowego"
 simple_title:         "Zapisywanie pliku tekstowego"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/writing-a-text-file.md"
 ---

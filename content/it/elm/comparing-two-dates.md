@@ -3,8 +3,7 @@ title:                "Confronto tra due date"
 date:                  2024-01-20T17:32:54.394997-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Confronto tra due date"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/comparing-two-dates.md"
 ---

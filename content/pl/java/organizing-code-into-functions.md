@@ -3,8 +3,7 @@ title:                "Organizacja kodu w funkcje"
 date:                  2024-01-26T01:10:53.222145-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organizacja kodu w funkcje"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/organizing-code-into-functions.md"
 ---

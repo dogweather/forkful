@@ -1,10 +1,8 @@
 ---
 title:                "Verifica dell'esistenza di una directory"
 date:                  2024-01-19
-html_title:           "Arduino: Verifica dell'esistenza di una directory"
 simple_title:         "Verifica dell'esistenza di una directory"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/checking-if-a-directory-exists.md"
 ---

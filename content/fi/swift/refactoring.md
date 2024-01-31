@@ -3,8 +3,7 @@ title:                "Koodin refaktorointi"
 date:                  2024-01-26T03:36:56.295531-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Koodin refaktorointi"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/refactoring.md"
 ---

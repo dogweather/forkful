@@ -1,10 +1,8 @@
 ---
 title:                "Arbete med YAML"
 date:                  2024-01-19
-html_title:           "Arduino: Arbete med YAML"
 simple_title:         "Arbete med YAML"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/working-with-yaml.md"
 ---

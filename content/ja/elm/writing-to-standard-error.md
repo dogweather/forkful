@@ -1,10 +1,8 @@
 ---
 title:                "標準エラーへの書き込み"
 date:                  2024-01-19
-html_title:           "Arduino: 標準エラーへの書き込み"
 simple_title:         "標準エラーへの書き込み"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/writing-to-standard-error.md"

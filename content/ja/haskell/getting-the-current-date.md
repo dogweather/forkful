@@ -1,10 +1,8 @@
 ---
 title:                "現在の日付を取得する"
 date:                  2024-01-20T15:14:40.231948-07:00
-html_title:           "Bash: 現在の日付を取得する"
 simple_title:         "現在の日付を取得する"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/getting-the-current-date.md"

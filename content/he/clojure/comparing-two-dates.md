@@ -3,8 +3,7 @@ title:                "השוואת שתי תאריכים"
 date:                  2024-01-20T17:32:40.272017-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "השוואת שתי תאריכים"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/comparing-two-dates.md"
 ---

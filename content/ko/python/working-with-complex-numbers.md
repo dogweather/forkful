@@ -3,8 +3,7 @@ title:                "복소수 다루기"
 date:                  2024-01-26T04:45:45.487380-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "복소수 다루기"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/working-with-complex-numbers.md"
 ---

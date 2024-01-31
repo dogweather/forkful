@@ -3,8 +3,7 @@ title:                "Eliminazione di caratteri che corrispondono a un pattern"
 date:                  2024-01-20T17:41:19.599089-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/deleting-characters-matching-a-pattern.md"
 ---

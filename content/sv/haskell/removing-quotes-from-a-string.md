@@ -3,8 +3,7 @@ title:                "Ta bort citattecken från en sträng"
 date:                  2024-01-26T03:39:54.534616-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ta bort citattecken från en sträng"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/removing-quotes-from-a-string.md"
 ---

@@ -3,8 +3,7 @@ title:                "Assosiatiivisten taulukoiden käyttö"
 date:                  2024-01-30T19:12:26.930476-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Assosiatiivisten taulukoiden käyttö"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/using-associative-arrays.md"
 changelog:

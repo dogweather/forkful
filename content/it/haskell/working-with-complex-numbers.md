@@ -3,8 +3,7 @@ title:                "Lavorare con i numeri complessi"
 date:                  2024-01-26T04:41:33.584454-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con i numeri complessi"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/working-with-complex-numbers.md"
 ---

@@ -3,8 +3,7 @@ title:                "Интерполяция строки"
 date:                  2024-01-28T23:59:04.138867-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Интерполяция строки"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/ruby/interpolating-a-string.md"
 changelog:

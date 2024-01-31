@@ -3,8 +3,7 @@ title:                "Lokitus"
 date:                  2024-01-26T00:59:29.574352-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lokitus"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/logging.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "Écrire dans l'erreur standard"
 date:                  2024-01-19
-html_title:           "Arduino: Écrire dans l'erreur standard"
 simple_title:         "Écrire dans l'erreur standard"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/writing-to-standard-error.md"
 ---

@@ -3,8 +3,7 @@ title:                "Konvertera en sträng till gemener"
 date:                  2024-01-20T17:38:27.555063-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konvertera en sträng till gemener"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/converting-a-string-to-lower-case.md"
 ---

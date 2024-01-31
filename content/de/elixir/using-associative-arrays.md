@@ -3,8 +3,7 @@ title:                "Verwendung von assoziativen Arrays"
 date:                  2024-01-30T19:10:32.042983-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Verwendung von assoziativen Arrays"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/using-associative-arrays.md"
 changelog:

@@ -1,10 +1,8 @@
 ---
 title:                "כתיבה לקובץ טקסט"
 date:                  2024-01-19
-html_title:           "Bash: כתיבה לקובץ טקסט"
 simple_title:         "כתיבה לקובץ טקסט"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/writing-a-text-file.md"
 ---

@@ -3,8 +3,7 @@ title:                "匹配模式删除字符"
 date:                  2024-01-20T17:42:24.449490-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "匹配模式删除字符"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/deleting-characters-matching-a-pattern.md"

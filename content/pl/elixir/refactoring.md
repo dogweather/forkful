@@ -3,8 +3,7 @@ title:                "Refaktoryzacja"
 date:                  2024-01-26T01:18:37.714491-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktoryzacja"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/refactoring.md"
 ---

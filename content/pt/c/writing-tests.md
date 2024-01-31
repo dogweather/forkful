@@ -1,10 +1,8 @@
 ---
 title:                "Escrevendo testes"
 date:                  2024-01-19
-html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
-programming_language: "C"
-category:             "C"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/writing-tests.md"
 ---

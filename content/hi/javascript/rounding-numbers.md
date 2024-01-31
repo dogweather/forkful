@@ -3,8 +3,7 @@ title:                "संख्याओं को पूर्णांक 
 date:                  2024-01-26T03:46:26.325656-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "संख्याओं को पूर्णांक बनाना"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/rounding-numbers.md"
 ---

@@ -3,8 +3,7 @@ title:                "Använda en interaktiv skal (REPL)"
 date:                  2024-01-26T04:15:46.863850-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Använda en interaktiv skal (REPL)"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/using-an-interactive-shell-repl.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "עבודה עם קבצי CSV"
 date:                  2024-01-19
-html_title:           "Arduino: עבודה עם קבצי CSV"
 simple_title:         "עבודה עם קבצי CSV"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/working-with-csv.md"
 ---

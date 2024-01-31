@@ -1,10 +1,8 @@
 ---
 title:                "Comprobando si existe un directorio"
 date:                  2024-01-19
-html_title:           "Bash: Comprobando si existe un directorio"
 simple_title:         "Comprobando si existe un directorio"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/checking-if-a-directory-exists.md"
 ---

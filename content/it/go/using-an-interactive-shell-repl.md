@@ -3,8 +3,7 @@ title:                "Utilizzo di un interprete interattivo (REPL)"
 date:                  2024-01-26T04:14:27.687168-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di un interprete interattivo (REPL)"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/using-an-interactive-shell-repl.md"
 ---

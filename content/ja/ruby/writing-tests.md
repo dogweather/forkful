@@ -1,10 +1,8 @@
 ---
 title:                "テストの作成"
 date:                  2024-01-19
-html_title:           "Bash: テストの作成"
 simple_title:         "テストの作成"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Testing and Debugging"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/writing-tests.md"

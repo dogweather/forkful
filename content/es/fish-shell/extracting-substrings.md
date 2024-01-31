@@ -3,8 +3,7 @@ title:                "Extracción de subcadenas"
 date:                  2024-01-20T17:45:47.010937-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extracción de subcadenas"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/extracting-substrings.md"
 ---

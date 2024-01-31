@@ -3,8 +3,7 @@ title:                "Een string omzetten naar kleine letters"
 date:                  2024-01-28T21:58:07.543270-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string omzetten naar kleine letters"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/converting-a-string-to-lower-case.md"
 changelog:

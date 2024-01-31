@@ -3,8 +3,7 @@ title:                "Eliminando comillas de una cadena"
 date:                  2024-01-26T03:39:27.610722-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eliminando comillas de una cadena"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/removing-quotes-from-a-string.md"
 ---

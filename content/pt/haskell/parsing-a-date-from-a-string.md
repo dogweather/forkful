@@ -1,10 +1,8 @@
 ---
 title:                "Analisando uma data a partir de uma string"
 date:                  2024-01-20T15:36:43.185321-07:00
-html_title:           "Arduino: Analisando uma data a partir de uma string"
 simple_title:         "Analisando uma data a partir de uma string"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/parsing-a-date-from-a-string.md"
 ---

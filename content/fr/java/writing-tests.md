@@ -1,10 +1,8 @@
 ---
 title:                "Rédaction de tests"
 date:                  2024-01-19
-html_title:           "Arduino: Rédaction de tests"
 simple_title:         "Rédaction de tests"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/writing-tests.md"
 ---

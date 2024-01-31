@@ -3,8 +3,7 @@ title:                "Redigering av filer på stedet med CLI-enlinjerskommandoe
 date:                  2024-01-27T16:20:46.270942-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redigering av filer på stedet med CLI-enlinjerskommandoer"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/editing-files-in-place-with-cli-one-liners.md"
 ---

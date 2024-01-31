@@ -3,8 +3,7 @@ title:                "Génération de nombres aléatoires"
 date:                  2024-01-27T20:33:12.760185-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Génération de nombres aléatoires"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/generating-random-numbers.md"
 ---

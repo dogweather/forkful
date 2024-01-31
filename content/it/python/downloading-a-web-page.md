@@ -3,8 +3,7 @@ title:                "Scaricare una pagina web"
 date:                  2024-01-20T17:44:42.541235-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Scaricare una pagina web"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/python/downloading-a-web-page.md"
 ---

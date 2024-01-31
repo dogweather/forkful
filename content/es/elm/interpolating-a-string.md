@@ -3,8 +3,7 @@ title:                "Interpolación de cadenas de texto"
 date:                  2024-01-20T17:50:48.939595-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolación de cadenas de texto"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/interpolating-a-string.md"
 ---

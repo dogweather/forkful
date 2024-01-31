@@ -3,8 +3,7 @@ title:                "Trích xuất chuỗi con"
 date:                  2024-01-28T21:59:57.591829-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trích xuất chuỗi con"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/extracting-substrings.md"
 changelog:

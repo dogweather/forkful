@@ -3,8 +3,7 @@ title:                "开始一个新项目"
 date:                  2024-01-20T18:03:55.959393-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "开始一个新项目"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Getting Started"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/starting-a-new-project.md"

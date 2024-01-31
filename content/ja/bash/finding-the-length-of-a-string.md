@@ -3,8 +3,7 @@ title:                "文字列の長さを求める"
 date:                  2024-01-20T17:47:00.284359-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "文字列の長さを求める"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/finding-the-length-of-a-string.md"

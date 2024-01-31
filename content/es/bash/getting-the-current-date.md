@@ -1,10 +1,8 @@
 ---
 title:                "Obteniendo la fecha actual"
 date:                  2024-01-20T15:12:57.985215-07:00
-html_title:           "Bash: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/getting-the-current-date.md"
 ---

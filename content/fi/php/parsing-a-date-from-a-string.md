@@ -1,10 +1,8 @@
 ---
 title:                "Merkkijonosta päivämäärän jäsentäminen"
 date:                  2024-01-20T15:38:00.446876-07:00
-html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
 simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/parsing-a-date-from-a-string.md"
 ---

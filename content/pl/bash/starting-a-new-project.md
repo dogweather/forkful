@@ -3,8 +3,7 @@ title:                "Rozpoczynanie nowego projektu"
 date:                  2024-01-20T18:03:11.298366-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/starting-a-new-project.md"
 ---

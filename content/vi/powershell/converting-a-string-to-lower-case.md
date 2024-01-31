@@ -3,8 +3,7 @@ title:                "Chuyển đổi chuỗi thành chữ thường"
 date:                  2024-01-28T21:58:12.626522-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi chuỗi thành chữ thường"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/powershell/converting-a-string-to-lower-case.md"
 changelog:

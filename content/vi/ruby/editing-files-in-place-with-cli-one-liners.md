@@ -3,8 +3,7 @@ title:                "Chỉnh sửa file tại chỗ với câu lệnh CLI ng�
 date:                  2024-01-28T22:00:51.728102-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chỉnh sửa file tại chỗ với câu lệnh CLI ngắn gọn"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/editing-files-in-place-with-cli-one-liners.md"
 changelog:

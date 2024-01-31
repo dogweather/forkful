@@ -3,8 +3,7 @@ title:                "使用关联数组"
 date:                  2024-01-30T19:12:20.790331-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用关联数组"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/using-associative-arrays.md"
 changelog:

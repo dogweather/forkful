@@ -3,8 +3,7 @@ title:                "Interaktiivisen komentotulkin (REPL) käyttö"
 date:                  2024-01-26T04:16:36.469903-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interaktiivisen komentotulkin (REPL) käyttö"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/using-an-interactive-shell-repl.md"
 ---

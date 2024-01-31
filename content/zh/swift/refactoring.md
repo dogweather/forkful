@@ -3,8 +3,7 @@ title:                "重构"
 date:                  2024-01-26T03:36:39.058429-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "重构"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/refactoring.md"
 ---

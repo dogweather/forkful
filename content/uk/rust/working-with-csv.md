@@ -1,10 +1,8 @@
 ---
 title:                "Робота з CSV файлами"
 date:                  2024-01-19
-html_title:           "Arduino: Робота з CSV файлами"
 simple_title:         "Робота з CSV файлами"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/rust/working-with-csv.md"
 ---

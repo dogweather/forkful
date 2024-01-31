@@ -1,10 +1,8 @@
 ---
 title:                "Створення текстового файлу"
 date:                  2024-01-19
-html_title:           "Arduino: Створення текстового файлу"
 simple_title:         "Створення текстового файлу"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/python/writing-a-text-file.md"
 ---

@@ -3,8 +3,7 @@ title:                "Округлення чисел"
 date:                  2024-01-26T03:45:38.810394-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округлення чисел"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/haskell/rounding-numbers.md"
 ---

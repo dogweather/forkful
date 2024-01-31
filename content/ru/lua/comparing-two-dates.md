@@ -3,8 +3,7 @@ title:                "Сравнение двух дат"
 date:                  2024-01-28T23:55:22.961132-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Сравнение двух дат"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/lua/comparing-two-dates.md"
 changelog:

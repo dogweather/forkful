@@ -3,8 +3,7 @@ title:                "Removendo aspas de uma string"
 date:                  2024-01-26T03:39:54.009709-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Removendo aspas de uma string"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/removing-quotes-from-a-string.md"
 ---

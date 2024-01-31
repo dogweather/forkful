@@ -3,8 +3,7 @@ title:                "Å bruke en feilsøker"
 date:                  2024-01-26T03:50:05.803260-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å bruke en feilsøker"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/using-a-debugger.md"
 ---

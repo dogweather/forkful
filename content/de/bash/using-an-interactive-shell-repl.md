@@ -3,8 +3,7 @@ title:                "Nutzung einer interaktiven Shell (REPL)"
 date:                  2024-01-26T04:11:02.113709-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nutzung einer interaktiven Shell (REPL)"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/using-an-interactive-shell-repl.md"
 ---

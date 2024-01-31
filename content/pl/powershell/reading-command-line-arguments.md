@@ -3,8 +3,7 @@ title:                "Odczytywanie argumentów linii poleceń"
 date:                  2024-01-20T17:56:38.076474-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Odczytywanie argumentów linii poleceń"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/reading-command-line-arguments.md"
 ---

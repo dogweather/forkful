@@ -1,10 +1,8 @@
 ---
 title:                "כתיבת בדיקות"
 date:                  2024-01-19
-html_title:           "Bash: כתיבת בדיקות"
 simple_title:         "כתיבת בדיקות"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/writing-tests.md"
 ---

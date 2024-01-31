@@ -3,8 +3,7 @@ title:                "Написание тестов"
 date:                  2024-01-29T00:06:17.811754-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Написание тестов"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/ruby/writing-tests.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "Использование отладчика"
 date:                  2024-01-29T00:03:32.237200-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование отладчика"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/lua/using-a-debugger.md"
 changelog:

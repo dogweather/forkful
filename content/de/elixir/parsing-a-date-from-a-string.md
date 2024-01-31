@@ -3,8 +3,7 @@ title:                "Eine Datumsauswertung aus einem String"
 date:                  2024-01-28T01:59:23.503759-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eine Datumsauswertung aus einem String"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/parsing-a-date-from-a-string.md"
 changelog:

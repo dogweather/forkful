@@ -3,8 +3,7 @@ title:                "Odczytywanie pliku tekstowego"
 date:                  2024-01-20T17:54:28.202213-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Odczytywanie pliku tekstowego"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/reading-a-text-file.md"
 ---

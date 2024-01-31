@@ -3,8 +3,7 @@ title:                "比较两个日期"
 date:                  2024-01-20T17:33:41.390453-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "比较两个日期"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/comparing-two-dates.md"

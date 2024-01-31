@@ -1,10 +1,8 @@
 ---
 title:                "Використання регулярних виразів"
 date:                  2024-01-19
-html_title:           "Bash: Використання регулярних виразів"
 simple_title:         "Використання регулярних виразів"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/python/using-regular-expressions.md"
 ---

@@ -3,8 +3,7 @@ title:                "Округлення чисел"
 date:                  2024-01-26T03:48:23.365221-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округлення чисел"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/rust/rounding-numbers.md"
 ---

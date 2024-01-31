@@ -3,8 +3,7 @@ title:                "Extracción de subcadenas"
 date:                  2024-01-20T17:45:06.718289-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extracción de subcadenas"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/extracting-substrings.md"
 ---

@@ -3,8 +3,7 @@ title:                "CLI 한 줄 명령어로 파일을 제자리에서 편집
 date:                  2024-01-27T16:21:02.007821-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CLI 한 줄 명령어로 파일을 제자리에서 편집하기"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/editing-files-in-place-with-cli-one-liners.md"
 ---

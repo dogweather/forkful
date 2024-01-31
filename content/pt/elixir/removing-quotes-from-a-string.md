@@ -3,8 +3,7 @@ title:                "Removendo aspas de uma string"
 date:                  2024-01-26T03:38:34.822289-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Removendo aspas de uma string"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/removing-quotes-from-a-string.md"
 ---

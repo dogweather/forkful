@@ -3,8 +3,7 @@ title:                "Calculando la longitud de una cadena"
 date:                  2024-01-20T17:47:36.641919-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Calculando la longitud de una cadena"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/finding-the-length-of-a-string.md"
 ---

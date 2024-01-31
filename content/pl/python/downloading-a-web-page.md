@@ -3,8 +3,7 @@ title:                "Pobieranie strony internetowej"
 date:                  2024-01-20T17:44:33.849526-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/downloading-a-web-page.md"
 ---

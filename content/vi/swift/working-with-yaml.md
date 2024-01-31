@@ -3,8 +3,7 @@ title:                "Làm việc với YAML"
 date:                  2024-01-28T22:12:43.606792-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với YAML"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/swift/working-with-yaml.md"
 changelog:

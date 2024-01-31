@@ -3,8 +3,7 @@ title:                "Removing quotes from a string"
 date:                  2024-01-25T20:50:15.639523-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Removing quotes from a string"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/removing-quotes-from-a-string.md"
 ---

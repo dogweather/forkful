@@ -3,8 +3,7 @@ title:                "Controleren of een directory bestaat"
 date:                  2024-01-28T21:56:25.856269-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Controleren of een directory bestaat"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/checking-if-a-directory-exists.md"
 changelog:

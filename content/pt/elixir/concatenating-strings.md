@@ -3,8 +3,7 @@ title:                "Concatenando strings"
 date:                  2024-01-27T10:43:11.660520-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Concatenando strings"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/concatenating-strings.md"
 ---

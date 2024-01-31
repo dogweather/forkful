@@ -3,8 +3,7 @@ title:                "Использование регулярных выра�
 date:                  2024-01-29T00:05:00.998951-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование регулярных выражений"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/c-sharp/using-regular-expressions.md"
 changelog:

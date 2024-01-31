@@ -3,8 +3,7 @@ title:                "Округление чисел"
 date:                  2024-01-29T00:02:57.418152-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округление чисел"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/powershell/rounding-numbers.md"
 changelog:

@@ -1,10 +1,8 @@
 ---
 title:                "YAMLを扱う"
 date:                  2024-01-19
-html_title:           "Bash: YAMLを扱う"
 simple_title:         "YAMLを扱う"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/working-with-yaml.md"

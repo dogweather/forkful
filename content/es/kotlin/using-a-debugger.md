@@ -3,8 +3,7 @@ title:                "Usando un depurador"
 date:                  2024-01-26T03:49:55.315463-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando un depurador"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/using-a-debugger.md"
 ---

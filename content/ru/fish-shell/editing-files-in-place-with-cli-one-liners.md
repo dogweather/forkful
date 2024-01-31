@@ -3,8 +3,7 @@ title:                "Редактирование файлов на месте
 date:                  2024-01-28T23:58:09.483883-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Редактирование файлов на месте с помощью однострочников CLI"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/fish-shell/editing-files-in-place-with-cli-one-liners.md"
 changelog:

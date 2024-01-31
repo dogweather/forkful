@@ -3,8 +3,7 @@ title:                "सहयोगी अरेज़ का उपयोग
 date:                  2024-01-30T19:13:24.477387-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "सहयोगी अरेज़ का उपयोग करना"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/using-associative-arrays.md"
 changelog:

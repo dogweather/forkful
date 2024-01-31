@@ -3,8 +3,7 @@ title:                "Praca z liczbami zespolonymi"
 date:                  2024-01-26T04:41:13.953959-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z liczbami zespolonymi"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/working-with-complex-numbers.md"
 ---

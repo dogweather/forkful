@@ -1,10 +1,8 @@
 ---
 title:                "Estrarre una data da una stringa"
 date:                  2024-01-20T15:37:10.073857-07:00
-html_title:           "Arduino: Estrarre una data da una stringa"
 simple_title:         "Estrarre una data da una stringa"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/parsing-a-date-from-a-string.md"
 ---

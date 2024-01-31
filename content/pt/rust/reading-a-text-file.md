@@ -3,8 +3,7 @@ title:                "Lendo um arquivo de texto"
 date:                  2024-01-20T17:55:11.546794-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lendo um arquivo de texto"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/reading-a-text-file.md"
 ---

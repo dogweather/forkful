@@ -3,8 +3,7 @@ title:                "Att organisera kod i funktioner"
 date:                  2024-01-26T01:11:18.380176-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Att organisera kod i funktioner"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/organizing-code-into-functions.md"
 ---

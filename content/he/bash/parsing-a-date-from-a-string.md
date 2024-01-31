@@ -1,10 +1,8 @@
 ---
 title:                "ניתוח תאריך ממחרוזת"
 date:                  2024-01-20T15:34:56.799166-07:00
-html_title:           "Arduino: ניתוח תאריך ממחרוזת"
 simple_title:         "ניתוח תאריך ממחרוזת"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/bash/parsing-a-date-from-a-string.md"
 ---

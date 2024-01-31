@@ -3,8 +3,7 @@ title:                "Lendo argumentos da linha de comando"
 date:                  2024-01-20T17:56:31.746095-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lendo argumentos da linha de comando"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/reading-command-line-arguments.md"
 ---

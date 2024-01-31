@@ -1,10 +1,8 @@
 ---
 title:                "HTML:n jäsentäminen"
 date:                  2024-01-20T15:34:04.466148-07:00
-html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/parsing-html.md"
 ---

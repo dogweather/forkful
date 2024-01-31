@@ -3,8 +3,7 @@ title:                "Sử dụng mảng liên kết"
 date:                  2024-01-30T19:10:32.698227-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng mảng liên kết"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/using-associative-arrays.md"
 changelog:

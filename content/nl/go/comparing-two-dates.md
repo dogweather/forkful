@@ -3,8 +3,7 @@ title:                "Twee datums vergelijken"
 date:                  2024-01-28T21:56:32.692797-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Twee datums vergelijken"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/comparing-two-dates.md"
 changelog:

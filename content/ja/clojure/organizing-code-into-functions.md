@@ -3,8 +3,7 @@ title:                "コードを関数に整理する"
 date:                  2024-01-26T01:10:20.783890-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "コードを関数に整理する"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/organizing-code-into-functions.md"
 ---

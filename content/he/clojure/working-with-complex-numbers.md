@@ -3,8 +3,7 @@ title:                "עבודה עם מספרים מרוכבים"
 date:                  2024-01-26T04:39:52.080315-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם מספרים מרוכבים"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/working-with-complex-numbers.md"
 ---

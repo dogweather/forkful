@@ -3,8 +3,7 @@ title:                "使用命令行一行命令就地编辑文件"
 date:                  2024-01-27T16:20:39.385824-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用命令行一行命令就地编辑文件"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/editing-files-in-place-with-cli-one-liners.md"
 ---

@@ -3,8 +3,7 @@ title:                "Een nieuw project starten"
 date:                  2024-01-28T22:08:28.764235-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een nieuw project starten"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/starting-a-new-project.md"
 changelog:

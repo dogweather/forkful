@@ -3,8 +3,7 @@ title:                "Перетворення рядка у нижній ре�
 date:                  2024-01-20T17:39:16.854172-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Перетворення рядка у нижній регістр"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/php/converting-a-string-to-lower-case.md"
 ---

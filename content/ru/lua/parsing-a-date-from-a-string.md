@@ -3,8 +3,7 @@ title:                "Анализ даты из строки"
 date:                  2024-01-29T00:00:22.422446-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Анализ даты из строки"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/lua/parsing-a-date-from-a-string.md"
 changelog:

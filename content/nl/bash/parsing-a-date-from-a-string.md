@@ -3,8 +3,7 @@ title:                "Een datum uit een string parsen"
 date:                  2024-01-28T22:03:46.618527-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een datum uit een string parsen"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/parsing-a-date-from-a-string.md"
 changelog:

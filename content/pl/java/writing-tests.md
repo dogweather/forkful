@@ -1,10 +1,8 @@
 ---
 title:                "Pisanie testów"
 date:                  2024-01-19
-html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/writing-tests.md"
 ---

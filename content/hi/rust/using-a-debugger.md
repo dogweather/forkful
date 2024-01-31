@@ -3,8 +3,7 @@ title:                "डीबगर का उपयोग करना"
 date:                  2024-01-26T04:11:24.009774-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डीबगर का उपयोग करना"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/rust/using-a-debugger.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "Отримання поточної дати"
 date:                  2024-01-20T15:13:51.661872-07:00
-html_title:           "Bash: Отримання поточної дати"
 simple_title:         "Отримання поточної дати"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/getting-the-current-date.md"
 ---

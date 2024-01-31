@@ -3,8 +3,7 @@ title:                "Xử lý lỗi"
 date:                  2024-01-28T22:01:32.984541-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xử lý lỗi"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elm/handling-errors.md"
 changelog:

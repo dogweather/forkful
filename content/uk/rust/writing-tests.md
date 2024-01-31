@@ -1,10 +1,8 @@
 ---
 title:                "Написання тестів"
 date:                  2024-01-19
-html_title:           "Arduino: Написання тестів"
 simple_title:         "Написання тестів"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/rust/writing-tests.md"
 ---

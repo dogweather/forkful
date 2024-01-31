@@ -3,8 +3,7 @@ title:                "Erstellung einer temporären Datei"
 date:                  2024-01-20T17:40:19.353913-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Erstellung einer temporären Datei"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/creating-a-temporary-file.md"
 ---

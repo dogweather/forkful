@@ -3,8 +3,7 @@ title:                "Schrijven naar standaardfout"
 date:                  2024-01-28T22:13:41.666380-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Schrijven naar standaardfout"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/writing-to-standard-error.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "Sử dụng mảng liên kết"
 date:                  2024-01-30T19:11:58.574591-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng mảng liên kết"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/using-associative-arrays.md"
 changelog:

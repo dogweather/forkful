@@ -3,8 +3,7 @@ title:                "Создание временного файла"
 date:                  2024-01-28T23:57:11.404211-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Создание временного файла"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/rust/creating-a-temporary-file.md"
 changelog:

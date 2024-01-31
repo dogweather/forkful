@@ -3,8 +3,7 @@ title:                "Extrahera delsträngar"
 date:                  2024-01-20T17:45:18.425262-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extrahera delsträngar"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/extracting-substrings.md"
 ---

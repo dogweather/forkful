@@ -3,8 +3,7 @@ title:                "Tính toán ngày trong tương lai hoặc quá khứ"
 date:                  2024-01-28T21:55:49.202160-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tính toán ngày trong tương lai hoặc quá khứ"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/calculating-a-date-in-the-future-or-past.md"
 changelog:

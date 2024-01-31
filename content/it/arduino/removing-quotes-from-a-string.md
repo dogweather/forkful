@@ -3,8 +3,7 @@ title:                "Rimuovere le virgolette da una stringa"
 date:                  2024-01-26T03:36:36.524473-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rimuovere le virgolette da una stringa"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/removing-quotes-from-a-string.md"
 ---

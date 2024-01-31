@@ -3,8 +3,7 @@ title:                "डीबगर का उपयोग करना"
 date:                  2024-01-26T04:09:59.081928-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डीबगर का उपयोग करना"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/using-a-debugger.md"
 ---

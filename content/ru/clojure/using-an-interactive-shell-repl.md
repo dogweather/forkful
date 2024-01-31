@@ -3,8 +3,7 @@ title:                "Использование интерактивной о�
 date:                  2024-01-29T00:04:01.113664-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование интерактивной оболочки (REPL)"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/clojure/using-an-interactive-shell-repl.md"
 changelog:

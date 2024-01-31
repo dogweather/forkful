@@ -3,8 +3,7 @@ title:                "XMLの扱い方"
 date:                  2024-01-26T04:33:31.251792-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XMLの扱い方"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/working-with-xml.md"
 ---

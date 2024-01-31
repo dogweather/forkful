@@ -3,8 +3,7 @@ title:                "文字列の長さを求める"
 date:                  2024-01-20T17:47:35.512595-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "文字列の長さを求める"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/finding-the-length-of-a-string.md"

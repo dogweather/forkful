@@ -3,8 +3,7 @@ title:                "Надсилання HTTP-запиту з базовою 
 date:                  2024-01-20T18:02:18.266685-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/haskell/sending-an-http-request-with-basic-authentication.md"
 ---

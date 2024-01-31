@@ -3,8 +3,7 @@ title:                "Redigering av filer på stedet med CLI-enlinjerskommandoe
 date:                  2024-01-27T16:21:06.558328-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redigering av filer på stedet med CLI-enlinjerskommandoer"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/editing-files-in-place-with-cli-one-liners.md"
 ---

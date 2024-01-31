@@ -3,8 +3,7 @@ title:                "生成随机数"
 date:                  2024-01-27T20:35:00.754987-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "生成随机数"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/generating-random-numbers.md"
 ---

@@ -3,8 +3,7 @@ title:                "Tạo một tập tin tạm thời"
 date:                  2024-01-28T21:58:38.093395-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tạo một tập tin tạm thời"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/creating-a-temporary-file.md"
 changelog:

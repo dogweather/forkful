@@ -1,10 +1,8 @@
 ---
 title:                "현재 날짜 가져오기"
 date:                  2024-01-20T15:13:20.529518-07:00
-html_title:           "Bash: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/getting-the-current-date.md"

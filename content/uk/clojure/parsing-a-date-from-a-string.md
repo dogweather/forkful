@@ -1,10 +1,8 @@
 ---
 title:                "Аналіз дати з рядка"
 date:                  2024-01-20T15:35:46.863428-07:00
-html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/parsing-a-date-from-a-string.md"
 ---

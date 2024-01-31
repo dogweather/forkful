@@ -3,8 +3,7 @@ title:                "Kiểm tra xem thư mục có tồn tại không"
 date:                  2024-01-28T21:56:06.602766-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kiểm tra xem thư mục có tồn tại không"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/checking-if-a-directory-exists.md"
 changelog:

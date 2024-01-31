@@ -3,8 +3,7 @@ title:                "Att påbörja ett nytt projekt"
 date:                  2024-01-20T18:03:50.128202-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Att påbörja ett nytt projekt"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/starting-a-new-project.md"
 ---

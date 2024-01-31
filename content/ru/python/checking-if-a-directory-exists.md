@@ -3,8 +3,7 @@ title:                "Проверка существования директ�
 date:                  2024-01-28T23:55:36.990680-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Проверка существования директории"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/python/checking-if-a-directory-exists.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "Een debugger gebruiken"
 date:                  2024-01-28T22:08:51.052696-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een debugger gebruiken"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/typescript/using-a-debugger.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "Komennoriviparametrien lukeminen"
 date:                  2024-01-20T17:56:57.094075-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Komennoriviparametrien lukeminen"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/reading-command-line-arguments.md"
 ---

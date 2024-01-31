@@ -3,8 +3,7 @@ title:                "Eliminando comillas de una cadena"
 date:                  2024-01-26T03:40:48.816606-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eliminando comillas de una cadena"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/powershell/removing-quotes-from-a-string.md"
 ---

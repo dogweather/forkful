@@ -1,10 +1,8 @@
 ---
 title:                "文字列から日付を解析する"
 date:                  2024-01-20T15:35:08.433577-07:00
-html_title:           "Arduino: 文字列から日付を解析する"
 simple_title:         "文字列から日付を解析する"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/parsing-a-date-from-a-string.md"

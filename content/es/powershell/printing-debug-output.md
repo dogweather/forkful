@@ -3,8 +3,7 @@ title:                "Imprimiendo salida de depuración"
 date:                  2024-01-20T17:53:13.935415-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Imprimiendo salida de depuración"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/powershell/printing-debug-output.md"
 ---

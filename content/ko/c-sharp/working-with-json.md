@@ -1,10 +1,8 @@
 ---
 title:                "JSON 다루기"
 date:                  2024-01-19
-html_title:           "Arduino: JSON 다루기"
 simple_title:         "JSON 다루기"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/working-with-json.md"

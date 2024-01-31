@@ -3,8 +3,7 @@ title:                "Utilizzo di array associativi"
 date:                  2024-01-30T19:10:03.795226-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di array associativi"
-programming_language: "C"
-category:             "C"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/using-associative-arrays.md"
 changelog:

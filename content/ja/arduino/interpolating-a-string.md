@@ -3,8 +3,7 @@ title:                "文字列の補間"
 date:                  2024-01-20T17:50:11.861299-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "文字列の補間"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/interpolating-a-string.md"

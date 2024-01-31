@@ -1,10 +1,8 @@
 ---
 title:                "从字符串解析日期"
 date:                  2024-01-20T15:37:15.535832-07:00
-html_title:           "Arduino: 从字符串解析日期"
 simple_title:         "从字符串解析日期"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/parsing-a-date-from-a-string.md"

@@ -1,10 +1,8 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
 date:                  2024-01-19
-html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
-programming_language: "C"
-category:             "C"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/writing-a-text-file.md"
 ---

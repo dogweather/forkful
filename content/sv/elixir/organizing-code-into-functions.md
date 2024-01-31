@@ -3,8 +3,7 @@ title:                "Att organisera kod i funktioner"
 date:                  2024-01-26T01:10:03.726106-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Att organisera kod i funktioner"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/organizing-code-into-functions.md"
 ---

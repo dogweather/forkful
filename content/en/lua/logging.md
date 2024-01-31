@@ -3,8 +3,7 @@ title:                "Logging"
 date:                  2024-01-25T02:35:15.240906-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Logging"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/logging.md"
 ---

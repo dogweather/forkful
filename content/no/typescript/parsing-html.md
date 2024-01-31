@@ -1,10 +1,8 @@
 ---
 title:                "Analyse av HTML"
 date:                  2024-01-20T15:34:26.946021-07:00
-html_title:           "Arduino: Analyse av HTML"
 simple_title:         "Analyse av HTML"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/parsing-html.md"
 ---

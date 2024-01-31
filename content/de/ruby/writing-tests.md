@@ -1,10 +1,8 @@
 ---
 title:                "Tests schreiben"
 date:                  2024-01-19
-html_title:           "Arduino: Tests schreiben"
 simple_title:         "Tests schreiben"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/writing-tests.md"
 ---

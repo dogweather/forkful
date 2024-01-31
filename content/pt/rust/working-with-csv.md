@@ -1,10 +1,8 @@
 ---
 title:                "Trabalhando com CSV"
 date:                  2024-01-19
-html_title:           "Bash: Trabalhando com CSV"
 simple_title:         "Trabalhando com CSV"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/working-with-csv.md"
 ---

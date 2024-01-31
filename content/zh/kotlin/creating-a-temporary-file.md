@@ -3,8 +3,7 @@ title:                "创建临时文件"
 date:                  2024-01-20T17:40:43.744453-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "创建临时文件"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/creating-a-temporary-file.md"

@@ -1,10 +1,8 @@
 ---
 title:                "Skriva en textfil"
 date:                  2024-01-19
-html_title:           "Arduino: Skriva en textfil"
 simple_title:         "Skriva en textfil"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/writing-a-text-file.md"
 ---

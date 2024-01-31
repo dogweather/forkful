@@ -3,8 +3,7 @@ title:                "Использование отладчика"
 date:                  2024-01-29T00:03:28.765724-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование отладчика"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/bash/using-a-debugger.md"
 changelog:

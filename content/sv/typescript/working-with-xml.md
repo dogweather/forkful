@@ -3,8 +3,7 @@ title:                "Att arbeta med XML"
 date:                  2024-01-26T04:36:30.238170-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att arbeta med XML"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/working-with-xml.md"
 ---

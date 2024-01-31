@@ -1,10 +1,8 @@
 ---
 title:                "שימוש בביטויים רגולריים"
 date:                  2024-01-19
-html_title:           "Bash: שימוש בביטויים רגולריים"
 simple_title:         "שימוש בביטויים רגולריים"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/using-regular-expressions.md"
 ---

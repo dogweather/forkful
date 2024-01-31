@@ -3,8 +3,7 @@ title:                "Bruke associative tabeller"
 date:                  2024-01-30T19:11:44.863192-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bruke associative tabeller"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/using-associative-arrays.md"
 changelog:

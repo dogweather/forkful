@@ -3,8 +3,7 @@ title:                "Bruke associative tabeller"
 date:                  2024-01-30T19:11:50.991805-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bruke associative tabeller"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/using-associative-arrays.md"
 changelog:

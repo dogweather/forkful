@@ -3,8 +3,7 @@ title:                "Å sende en HTTP-forespørsel med grunnleggende autentise
 date:                  2024-01-20T18:01:06.420449-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/sending-an-http-request-with-basic-authentication.md"
 ---

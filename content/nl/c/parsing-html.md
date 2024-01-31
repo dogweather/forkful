@@ -3,8 +3,7 @@ title:                "HTML Parsen"
 date:                  2024-01-28T22:04:08.495825-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML Parsen"
-programming_language: "C"
-category:             "C"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/parsing-html.md"
 changelog:

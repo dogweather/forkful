@@ -1,10 +1,8 @@
 ---
 title:                "Bruk av regulære uttrykk"
 date:                  2024-01-19
-html_title:           "Bash: Bruk av regulære uttrykk"
 simple_title:         "Bruk av regulære uttrykk"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/using-regular-expressions.md"
 ---

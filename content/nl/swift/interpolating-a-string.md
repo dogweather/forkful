@@ -3,8 +3,7 @@ title:                "Een string interpoleren"
 date:                  2024-01-28T22:02:44.359274-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string interpoleren"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/interpolating-a-string.md"
 changelog:

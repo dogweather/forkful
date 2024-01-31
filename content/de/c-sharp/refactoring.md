@@ -3,8 +3,7 @@ title:                "Refactoring"
 date:                  2024-01-26T01:17:36.958004-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactoring"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/refactoring.md"
 ---

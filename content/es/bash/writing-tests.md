@@ -1,10 +1,8 @@
 ---
 title:                "Escribiendo pruebas"
 date:                  2024-01-19
-html_title:           "Arduino: Escribiendo pruebas"
 simple_title:         "Escribiendo pruebas"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/writing-tests.md"
 ---

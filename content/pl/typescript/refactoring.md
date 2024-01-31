@@ -3,8 +3,7 @@ title:                "Refaktoryzacja"
 date:                  2024-01-26T03:36:38.728545-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktoryzacja"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/refactoring.md"
 ---

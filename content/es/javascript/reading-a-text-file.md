@@ -3,8 +3,7 @@ title:                "Lectura de un archivo de texto"
 date:                  2024-01-20T17:54:48.661598-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lectura de un archivo de texto"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/reading-a-text-file.md"
 ---

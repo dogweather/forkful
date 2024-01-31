@@ -3,8 +3,7 @@ title:                "जटिल संख्याओं के साथ �
 date:                  2024-01-26T04:46:14.988378-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "जटिल संख्याओं के साथ काम करना"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/python/working-with-complex-numbers.md"
 ---

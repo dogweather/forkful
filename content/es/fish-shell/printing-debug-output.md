@@ -3,8 +3,7 @@ title:                "Imprimiendo salida de depuración"
 date:                  2024-01-20T17:52:51.328411-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Imprimiendo salida de depuración"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/printing-debug-output.md"
 ---

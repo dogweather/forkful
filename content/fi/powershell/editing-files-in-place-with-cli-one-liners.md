@@ -3,8 +3,7 @@ title:                "Tiedostojen muokkaaminen paikan päällä komentorivin yh
 date:                  2024-01-27T16:20:56.096811-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tiedostojen muokkaaminen paikan päällä komentorivin yhden rivin komennoilla"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/editing-files-in-place-with-cli-one-liners.md"
 ---

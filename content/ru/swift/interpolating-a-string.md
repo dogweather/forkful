@@ -3,8 +3,7 @@ title:                "Интерполяция строки"
 date:                  2024-01-28T23:59:02.258044-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Интерполяция строки"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/swift/interpolating-a-string.md"
 changelog:

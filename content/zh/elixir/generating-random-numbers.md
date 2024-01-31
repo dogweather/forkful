@@ -3,8 +3,7 @@ title:                "生成随机数"
 date:                  2024-01-27T20:33:18.564542-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "生成随机数"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/generating-random-numbers.md"
 ---

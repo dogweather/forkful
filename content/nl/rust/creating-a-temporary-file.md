@@ -3,8 +3,7 @@ title:                "Een tijdelijk bestand aanmaken"
 date:                  2024-01-28T21:58:46.856500-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tijdelijk bestand aanmaken"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/creating-a-temporary-file.md"
 changelog:

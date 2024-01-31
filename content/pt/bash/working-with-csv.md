@@ -1,10 +1,8 @@
 ---
 title:                "Trabalhando com CSV"
 date:                  2024-01-19
-html_title:           "Bash: Trabalhando com CSV"
 simple_title:         "Trabalhando com CSV"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/working-with-csv.md"
 ---

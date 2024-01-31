@@ -3,8 +3,7 @@ title:                "Praca z XML"
 date:                  2024-01-26T04:33:18.961514-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z XML"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/working-with-xml.md"
 ---

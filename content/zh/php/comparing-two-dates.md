@@ -3,8 +3,7 @@ title:                "比较两个日期"
 date:                  2024-01-20T17:33:31.497244-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "比较两个日期"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/comparing-two-dates.md"

@@ -3,8 +3,7 @@ title:                "Sử dụng bộ gỡ lỗi"
 date:                  2024-01-28T22:08:45.057558-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng bộ gỡ lỗi"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/using-a-debugger.md"
 changelog:

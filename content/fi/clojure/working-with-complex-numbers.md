@@ -3,8 +3,7 @@ title:                "Kompleksilukujen käsittely"
 date:                  2024-01-26T04:39:00.704047-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kompleksilukujen käsittely"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/working-with-complex-numbers.md"
 ---

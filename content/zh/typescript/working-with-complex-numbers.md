@@ -3,8 +3,7 @@ title:                "处理复数"
 date:                  2024-01-26T04:46:30.687808-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理复数"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/working-with-complex-numbers.md"
 ---

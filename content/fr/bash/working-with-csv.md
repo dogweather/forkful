@@ -1,10 +1,8 @@
 ---
 title:                "Manipulation des fichiers CSV"
 date:                  2024-01-19
-html_title:           "Bash: Manipulation des fichiers CSV"
 simple_title:         "Manipulation des fichiers CSV"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/working-with-csv.md"
 ---

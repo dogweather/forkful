@@ -3,8 +3,7 @@ title:                "Editando archivos directamente con líneas de comandos"
 date:                  2024-01-27T16:20:49.785598-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Editando archivos directamente con líneas de comandos"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/powershell/editing-files-in-place-with-cli-one-liners.md"
 ---

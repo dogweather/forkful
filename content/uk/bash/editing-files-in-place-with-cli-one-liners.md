@@ -3,8 +3,7 @@ title:                "Редагування файлів безпосеред�
 date:                  2024-01-27T16:22:15.888483-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Редагування файлів безпосередньо за допомогою командного рядка одним рядком"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/bash/editing-files-in-place-with-cli-one-liners.md"
 ---

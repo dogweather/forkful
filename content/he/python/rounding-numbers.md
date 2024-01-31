@@ -3,8 +3,7 @@ title:                "עיגול מספרים"
 date:                  2024-01-26T03:46:59.695763-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עיגול מספרים"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/rounding-numbers.md"
 ---

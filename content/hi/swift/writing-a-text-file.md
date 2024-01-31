@@ -1,10 +1,8 @@
 ---
 title:                "टेक्स्ट फाइल लिखना"
 date:                  2024-01-19
-html_title:           "Bash: टेक्स्ट फाइल लिखना"
 simple_title:         "टेक्स्ट फाइल लिखना"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/writing-a-text-file.md"
 ---

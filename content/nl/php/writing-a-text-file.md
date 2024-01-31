@@ -3,8 +3,7 @@ title:                "Een tekstbestand schrijven"
 date:                  2024-01-28T22:12:56.370471-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand schrijven"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/writing-a-text-file.md"
 changelog:

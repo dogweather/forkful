@@ -1,10 +1,8 @@
 ---
 title:                "Att hämta aktuellt datum"
 date:                  2024-01-20T15:16:21.038391-07:00
-html_title:           "Bash: Att hämta aktuellt datum"
 simple_title:         "Att hämta aktuellt datum"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/getting-the-current-date.md"
 ---

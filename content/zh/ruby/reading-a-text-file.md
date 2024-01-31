@@ -3,8 +3,7 @@ title:                "阅读文本文件"
 date:                  2024-01-20T17:55:04.913708-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "阅读文本文件"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/reading-a-text-file.md"

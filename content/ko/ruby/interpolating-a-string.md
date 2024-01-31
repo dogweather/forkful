@@ -3,8 +3,7 @@ title:                "문자열 보간하기"
 date:                  2024-01-20T17:51:35.050185-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "문자열 보간하기"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/interpolating-a-string.md"

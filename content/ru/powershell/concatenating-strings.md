@@ -3,8 +3,7 @@ title:                "Склеивание строк"
 date:                  2024-01-28T23:56:40.395297-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Склеивание строк"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/powershell/concatenating-strings.md"
 changelog:

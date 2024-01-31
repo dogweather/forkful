@@ -1,10 +1,8 @@
 ---
 title:                "Przetwarzanie HTML"
 date:                  2024-01-20T15:32:18.276505-07:00
-html_title:           "Bash: Przetwarzanie HTML"
 simple_title:         "Przetwarzanie HTML"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/parsing-html.md"
 ---

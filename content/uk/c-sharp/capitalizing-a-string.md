@@ -1,10 +1,8 @@
 ---
 title:                "Перетворення рядка на великі літери"
 date:                  2024-01-19
-html_title:           "Arduino: Перетворення рядка на великі літери"
 simple_title:         "Перетворення рядка на великі літери"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/capitalizing-a-string.md"
 ---

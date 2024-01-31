@@ -1,10 +1,8 @@
 ---
 title:                "Przetwarzanie daty ze łańcucha znaków"
 date:                  2024-01-20T15:36:52.987498-07:00
-html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
 simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/parsing-a-date-from-a-string.md"
 ---

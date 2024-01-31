@@ -3,8 +3,7 @@ title:                "Манипулирование файлами с помо
 date:                  2024-01-29T00:00:02.642618-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Манипулирование файлами с помощью однострочников CLI"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/powershell/manipulating-files-with-cli-one-liners.md"
 changelog:

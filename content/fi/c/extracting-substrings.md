@@ -3,8 +3,7 @@ title:                "Merkkijonojen osien poimiminen"
 date:                  2024-01-20T17:45:03.554099-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonojen osien poimiminen"
-programming_language: "C"
-category:             "C"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/extracting-substrings.md"
 ---

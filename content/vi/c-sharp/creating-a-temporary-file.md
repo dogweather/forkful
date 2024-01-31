@@ -3,8 +3,7 @@ title:                "Tạo một tập tin tạm thời"
 date:                  2024-01-28T21:58:50.077397-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tạo một tập tin tạm thời"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/creating-a-temporary-file.md"
 changelog:

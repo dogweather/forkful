@@ -3,8 +3,7 @@ title:                "Zaokrąglanie liczb"
 date:                  2024-01-26T03:43:23.940610-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zaokrąglanie liczb"
-programming_language: "C"
-category:             "C"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/rounding-numbers.md"
 ---

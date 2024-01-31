@@ -3,8 +3,7 @@ title:                "Refatoração"
 date:                  2024-01-26T03:37:07.353581-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refatoração"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/refactoring.md"
 ---

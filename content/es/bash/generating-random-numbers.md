@@ -3,8 +3,7 @@ title:                "Generación de números aleatorios"
 date:                  2024-01-27T20:32:33.969953-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generación de números aleatorios"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/generating-random-numbers.md"
 ---

@@ -3,8 +3,7 @@ title:                "미래나 과거의 날짜 계산하기"
 date:                  2024-01-20T17:31:30.549584-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "미래나 과거의 날짜 계산하기"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/calculating-a-date-in-the-future-or-past.md"

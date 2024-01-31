@@ -1,10 +1,8 @@
 ---
 title:                "डायरेक्टरी का अस्तित्व जाँचना"
 date:                  2024-01-20T14:57:54.507285-07:00
-html_title:           "Elm: डायरेक्टरी का अस्तित्व जाँचना"
 simple_title:         "डायरेक्टरी का अस्तित्व जाँचना"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/checking-if-a-directory-exists.md"
 ---

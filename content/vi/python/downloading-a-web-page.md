@@ -3,8 +3,7 @@ title:                "Tải trang web"
 date:                  2024-01-28T21:59:40.674565-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tải trang web"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/downloading-a-web-page.md"
 changelog:

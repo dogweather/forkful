@@ -3,8 +3,7 @@ title:                "インタラクティブシェル（REPL）の使用"
 date:                  2024-01-26T04:17:08.156608-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "インタラクティブシェル（REPL）の使用"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/using-an-interactive-shell-repl.md"
 ---

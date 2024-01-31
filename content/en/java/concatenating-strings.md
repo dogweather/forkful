@@ -3,8 +3,7 @@ title:                "Concatenating strings"
 date:                  2024-01-20T17:34:55.675076-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Concatenating strings"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/concatenating-strings.md"
 ---

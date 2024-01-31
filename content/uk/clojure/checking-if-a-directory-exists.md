@@ -1,10 +1,8 @@
 ---
 title:                "Перевірка наявності директорії"
 date:                  2024-01-19
-html_title:           "Bash: Перевірка наявності директорії"
 simple_title:         "Перевірка наявності директорії"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/checking-if-a-directory-exists.md"
 ---

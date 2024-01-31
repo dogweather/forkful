@@ -1,10 +1,8 @@
 ---
 title:                "Parsing HTML"
 date:                  2024-01-20T15:32:27.978327-07:00
-html_title:           "Bash recipe: Parsing HTML"
 simple_title:         "Parsing HTML"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/parsing-html.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "Робота з YAML"
 date:                  2024-01-19
-html_title:           "Arduino: Робота з YAML"
 simple_title:         "Робота з YAML"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/arduino/working-with-yaml.md"
 ---

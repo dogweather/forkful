@@ -3,8 +3,7 @@ title:                "Ghi log"
 date:                  2024-01-28T22:02:59.316679-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi log"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/logging.md"
 changelog:

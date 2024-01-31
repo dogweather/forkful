@@ -3,8 +3,7 @@ title:                "Kompleksilukujen käsittely"
 date:                  2024-01-26T04:38:05.270263-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kompleksilukujen käsittely"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/working-with-complex-numbers.md"
 ---

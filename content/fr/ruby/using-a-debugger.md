@@ -3,8 +3,7 @@ title:                "Utilisation d'un débogueur"
 date:                  2024-01-26T03:51:00.690249-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation d'un débogueur"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/using-a-debugger.md"
 ---

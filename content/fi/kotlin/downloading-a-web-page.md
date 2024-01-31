@@ -3,8 +3,7 @@ title:                "Verkkosivun lataaminen"
 date:                  2024-01-20T17:44:23.735953-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Verkkosivun lataaminen"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/downloading-a-web-page.md"
 ---

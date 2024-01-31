@@ -3,8 +3,7 @@ title:                "עיגול מספרים"
 date:                  2024-01-26T03:46:03.704471-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עיגול מספרים"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/lua/rounding-numbers.md"
 ---

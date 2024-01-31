@@ -3,8 +3,7 @@ title:                "Generierung von Zufallszahlen"
 date:                  2024-01-27T20:35:22.828334-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generierung von Zufallszahlen"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/generating-random-numbers.md"
 ---

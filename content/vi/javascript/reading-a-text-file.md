@@ -3,8 +3,7 @@ title:                "Đọc một tệp văn bản"
 date:                  2024-01-28T22:05:47.450584-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc một tệp văn bản"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/reading-a-text-file.md"
 changelog:

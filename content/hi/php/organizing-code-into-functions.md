@@ -3,8 +3,7 @@ title:                "कोड को फ़ंक्शन्स में �
 date:                  2024-01-26T01:17:12.402265-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड को फ़ंक्शन्स में व्यवस्थित करना"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/organizing-code-into-functions.md"
 ---

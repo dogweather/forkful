@@ -3,8 +3,7 @@ title:                "Generating random numbers"
 date:                  2024-01-27T20:26:07.386846-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generating random numbers"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/generating-random-numbers.md"
 ---

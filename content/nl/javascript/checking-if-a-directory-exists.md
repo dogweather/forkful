@@ -3,8 +3,7 @@ title:                "Controleren of een directory bestaat"
 date:                  2024-01-28T21:56:08.961002-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Controleren of een directory bestaat"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/checking-if-a-directory-exists.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "שרשור מחרוזות"
 date:                  2024-01-20T17:34:56.643868-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "שרשור מחרוזות"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/concatenating-strings.md"
 ---

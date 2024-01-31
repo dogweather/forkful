@@ -3,8 +3,7 @@ title:                "创建临时文件"
 date:                  2024-01-20T17:40:36.260115-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "创建临时文件"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/creating-a-temporary-file.md"

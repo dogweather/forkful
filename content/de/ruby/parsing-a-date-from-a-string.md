@@ -1,10 +1,8 @@
 ---
 title:                "Datum aus einem String parsen"
 date:                  2024-01-20T15:38:06.043009-07:00
-html_title:           "Arduino: Datum aus einem String parsen"
 simple_title:         "Datum aus einem String parsen"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/parsing-a-date-from-a-string.md"
 ---

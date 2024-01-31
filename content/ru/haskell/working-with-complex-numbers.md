@@ -3,8 +3,7 @@ title:                "Работа с комплексными числами"
 date:                  2024-01-29T00:06:02.461615-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с комплексными числами"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/haskell/working-with-complex-numbers.md"
 changelog:

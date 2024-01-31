@@ -3,8 +3,7 @@ title:                "Interaktiivisen komentotulkin (REPL) käyttö"
 date:                  2024-01-26T04:15:52.276625-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interaktiivisen komentotulkin (REPL) käyttö"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/using-an-interactive-shell-repl.md"
 ---

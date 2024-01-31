@@ -3,8 +3,7 @@ title:                "קריאת קובץ טקסט"
 date:                  2024-01-20T17:55:11.280066-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "קריאת קובץ טקסט"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/reading-a-text-file.md"
 ---

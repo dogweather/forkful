@@ -3,8 +3,7 @@ title:                "Usando um depurador"
 date:                  2024-01-26T04:08:54.084302-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando um depurador"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/using-a-debugger.md"
 ---

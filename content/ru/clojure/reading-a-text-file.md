@@ -3,8 +3,7 @@ title:                "Чтение текстового файла"
 date:                  2024-01-29T00:01:08.787484-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Чтение текстового файла"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/clojure/reading-a-text-file.md"
 changelog:

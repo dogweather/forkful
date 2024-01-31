@@ -3,8 +3,7 @@ title:                "Gestion des erreurs"
 date:                  2024-01-26T00:50:48.669695-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Gestion des erreurs"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/handling-errors.md"
 ---

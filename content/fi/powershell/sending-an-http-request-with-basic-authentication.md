@@ -3,8 +3,7 @@ title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 date:                  2024-01-20T18:02:44.035172-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/sending-an-http-request-with-basic-authentication.md"
 ---

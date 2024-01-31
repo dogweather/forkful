@@ -3,8 +3,7 @@ title:                "Debug-output afdrukken"
 date:                  2024-01-28T22:04:31.991461-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debug-output afdrukken"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/printing-debug-output.md"
 changelog:

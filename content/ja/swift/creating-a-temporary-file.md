@@ -3,8 +3,7 @@ title:                "一時ファイルの作成"
 date:                  2024-01-20T17:41:31.126940-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "一時ファイルの作成"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/creating-a-temporary-file.md"

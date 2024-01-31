@@ -3,8 +3,7 @@ title:                "Interaktiivisen komentotulkin (REPL) käyttö"
 date:                  2024-01-26T04:12:22.205288-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interaktiivisen komentotulkin (REPL) käyttö"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/using-an-interactive-shell-repl.md"
 ---

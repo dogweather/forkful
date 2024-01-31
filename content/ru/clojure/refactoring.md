@@ -3,8 +3,7 @@ title:                "Рефакторинг"
 date:                  2024-01-29T00:01:22.086969-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Рефакторинг"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/clojure/refactoring.md"
 changelog:

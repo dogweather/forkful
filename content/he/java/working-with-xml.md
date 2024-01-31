@@ -3,8 +3,7 @@ title:                "עבודה עם XML"
 date:                  2024-01-26T04:33:09.066933-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם XML"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/working-with-xml.md"
 ---

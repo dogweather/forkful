@@ -1,10 +1,8 @@
 ---
 title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 date:                  2024-01-19
-html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
 simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/capitalizing-a-string.md"
 ---

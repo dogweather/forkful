@@ -1,10 +1,8 @@
 ---
 title:                "Kirjoittaminen vakiovirheeseen"
 date:                  2024-01-19
-html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
 simple_title:         "Kirjoittaminen vakiovirheeseen"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/writing-to-standard-error.md"
 ---

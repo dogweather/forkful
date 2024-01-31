@@ -1,10 +1,8 @@
 ---
 title:                "문자열 대문자로 변환하기"
 date:                  2024-01-19
-html_title:           "Arduino: 문자열 대문자로 변환하기"
 simple_title:         "문자열 대문자로 변환하기"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/capitalizing-a-string.md"

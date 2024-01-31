@@ -3,8 +3,7 @@ title:                "Estrazione di sottostringhe"
 date:                  2024-01-20T17:46:13.912591-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Estrazione di sottostringhe"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/extracting-substrings.md"
 ---

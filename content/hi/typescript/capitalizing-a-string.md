@@ -1,10 +1,8 @@
 ---
 title:                "स्ट्रिंग को कैपिटलाइज़ करना"
 date:                  2024-01-19
-html_title:           "C: स्ट्रिंग को कैपिटलाइज़ करना"
 simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/capitalizing-a-string.md"
 ---

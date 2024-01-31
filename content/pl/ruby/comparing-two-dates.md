@@ -3,8 +3,7 @@ title:                "Porównywanie dwóch dat"
 date:                  2024-01-20T17:33:37.504423-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Porównywanie dwóch dat"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/comparing-two-dates.md"
 ---

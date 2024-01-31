@@ -1,10 +1,8 @@
 ---
 title:                "כתיבה לקובץ טקסט"
 date:                  2024-01-19
-html_title:           "Bash: כתיבה לקובץ טקסט"
 simple_title:         "כתיבה לקובץ טקסט"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/writing-a-text-file.md"
 ---

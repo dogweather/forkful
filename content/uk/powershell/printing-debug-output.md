@@ -3,8 +3,7 @@ title:                "Виведення налагоджувальної ін�
 date:                  2024-01-20T17:53:05.849971-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Виведення налагоджувальної інформації"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/powershell/printing-debug-output.md"
 ---

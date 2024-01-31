@@ -3,8 +3,7 @@ title:                "Descobrindo o comprimento de uma string"
 date:                  2024-01-20T17:47:09.986891-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Descobrindo o comprimento de uma string"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/finding-the-length-of-a-string.md"
 ---

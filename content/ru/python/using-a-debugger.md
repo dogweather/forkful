@@ -3,8 +3,7 @@ title:                "Использование отладчика"
 date:                  2024-01-29T00:03:45.340351-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование отладчика"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/python/using-a-debugger.md"
 changelog:

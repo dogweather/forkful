@@ -1,10 +1,8 @@
 ---
 title:                "Написання тестів"
 date:                  2024-01-19
-html_title:           "Arduino: Написання тестів"
 simple_title:         "Написання тестів"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elm/writing-tests.md"
 ---

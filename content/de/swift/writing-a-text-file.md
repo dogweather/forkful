@@ -1,10 +1,8 @@
 ---
 title:                "Eine Textdatei schreiben"
 date:                  2024-01-19
-html_title:           "Arduino: Eine Textdatei schreiben"
 simple_title:         "Eine Textdatei schreiben"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/writing-a-text-file.md"
 ---

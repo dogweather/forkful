@@ -3,8 +3,7 @@ title:                "부분 문자열 추출"
 date:                  2024-01-20T17:46:24.192808-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "부분 문자열 추출"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/extracting-substrings.md"

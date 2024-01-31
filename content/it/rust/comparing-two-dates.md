@@ -3,8 +3,7 @@ title:                "Confronto tra due date"
 date:                  2024-01-20T17:33:55.888336-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Confronto tra due date"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/comparing-two-dates.md"
 ---

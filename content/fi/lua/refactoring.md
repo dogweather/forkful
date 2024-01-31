@@ -3,8 +3,7 @@ title:                "Koodin refaktorointi"
 date:                  2024-01-26T01:46:03.973591-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Koodin refaktorointi"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/refactoring.md"
 ---

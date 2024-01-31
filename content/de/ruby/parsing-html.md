@@ -1,10 +1,8 @@
 ---
 title:                "HTML parsen"
 date:                  2024-01-20T15:33:23.863017-07:00
-html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/parsing-html.md"
 ---

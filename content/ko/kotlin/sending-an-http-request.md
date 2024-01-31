@@ -3,8 +3,7 @@ title:                "HTTP 요청 보내기"
 date:                  2024-01-20T17:59:56.970285-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP 요청 보내기"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/sending-an-http-request.md"

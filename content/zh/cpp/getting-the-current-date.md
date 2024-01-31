@@ -1,10 +1,8 @@
 ---
 title:                "获取当前日期"
 date:                  2024-01-20T15:13:23.870695-07:00
-html_title:           "Bash: 获取当前日期"
 simple_title:         "获取当前日期"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/getting-the-current-date.md"

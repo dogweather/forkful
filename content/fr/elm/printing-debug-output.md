@@ -3,8 +3,7 @@ title:                "Affichage des sorties de débogage"
 date:                  2024-01-20T17:52:19.416586-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Affichage des sorties de débogage"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/printing-debug-output.md"
 ---

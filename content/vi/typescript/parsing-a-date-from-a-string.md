@@ -3,8 +3,7 @@ title:                "Phân tích ngày từ chuỗi kí tự"
 date:                  2024-01-28T22:04:42.665806-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Phân tích ngày từ chuỗi kí tự"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/typescript/parsing-a-date-from-a-string.md"
 changelog:

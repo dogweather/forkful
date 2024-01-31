@@ -3,8 +3,7 @@ title:                "기본 인증을 사용한 HTTP 요청 보내기"
 date:                  2024-01-20T18:02:38.285126-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "기본 인증을 사용한 HTTP 요청 보내기"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/sending-an-http-request-with-basic-authentication.md"

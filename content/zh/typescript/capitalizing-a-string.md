@@ -1,10 +1,8 @@
 ---
 title:                "字符串首字母大写"
 date:                  2024-01-19
-html_title:           "Arduino: 字符串首字母大写"
 simple_title:         "字符串首字母大写"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/capitalizing-a-string.md"

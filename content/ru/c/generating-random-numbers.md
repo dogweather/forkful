@@ -3,8 +3,7 @@ title:                "Генерация случайных чисел"
 date:                  2024-01-28T23:58:51.972867-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Генерация случайных чисел"
-programming_language: "C"
-category:             "C"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/c/generating-random-numbers.md"
 changelog:

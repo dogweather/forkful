@@ -3,8 +3,7 @@ title:                "HTTP 요청 보내기"
 date:                  2024-01-20T18:00:49.211256-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP 요청 보내기"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/sending-an-http-request.md"

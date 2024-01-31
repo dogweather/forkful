@@ -3,8 +3,7 @@ title:                "पाठ खोजना और बदलना"
 date:                  2024-01-20T17:58:24.730163-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "पाठ खोजना और बदलना"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/searching-and-replacing-text.md"
 ---

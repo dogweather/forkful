@@ -3,8 +3,7 @@ title:                "오류 처리"
 date:                  2024-01-26T00:36:55.453723-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "오류 처리"
-programming_language: "C"
-category:             "C"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/handling-errors.md"
 ---

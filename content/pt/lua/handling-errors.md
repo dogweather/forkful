@@ -3,8 +3,7 @@ title:                "Tratamento de erros"
 date:                  2024-01-26T00:55:27.883879-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tratamento de erros"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/handling-errors.md"
 ---

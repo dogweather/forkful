@@ -3,8 +3,7 @@ title:                "Utilizzo di array associativi"
 date:                  2024-01-30T19:11:51.421733-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di array associativi"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/using-associative-arrays.md"
 changelog:

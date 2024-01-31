@@ -3,8 +3,7 @@ title:                "Завантаження веб-сторінки"
 date:                  2024-01-20T17:45:16.745942-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Завантаження веб-сторінки"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/powershell/downloading-a-web-page.md"
 ---

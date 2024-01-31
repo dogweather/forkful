@@ -3,8 +3,7 @@ title:                "Отправка HTTP-запроса"
 date:                  2024-01-29T00:02:34.910390-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Отправка HTTP-запроса"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/kotlin/sending-an-http-request.md"
 changelog:

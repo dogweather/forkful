@@ -1,10 +1,8 @@
 ---
 title:                "בדיקה האם תיקייה קיימת"
 date:                  2024-01-20T14:56:47.834393-07:00
-html_title:           "Gleam: בדיקה האם תיקייה קיימת"
 simple_title:         "בדיקה האם תיקייה קיימת"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/checking-if-a-directory-exists.md"
 ---

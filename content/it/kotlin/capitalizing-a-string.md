@@ -1,10 +1,8 @@
 ---
 title:                "Maiuscolizzare una stringa"
 date:                  2024-01-19
-html_title:           "Bash: Maiuscolizzare una stringa"
 simple_title:         "Maiuscolizzare una stringa"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/capitalizing-a-string.md"
 ---

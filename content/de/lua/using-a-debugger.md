@@ -3,8 +3,7 @@ title:                "Einsatz eines Debuggers"
 date:                  2024-01-26T03:50:09.085077-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Einsatz eines Debuggers"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/using-a-debugger.md"
 ---

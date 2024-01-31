@@ -3,8 +3,7 @@ title:                "Enviando una solicitud http con autenticación básica"
 date:                  2024-01-20T18:02:10.780940-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Enviando una solicitud http con autenticación básica"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/sending-an-http-request-with-basic-authentication.md"
 ---

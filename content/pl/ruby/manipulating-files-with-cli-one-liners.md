@@ -3,8 +3,7 @@ title:                "Manipulowanie plikami za pomocą jednolinijkowców CLI"
 date:                  2024-01-27T16:21:38.017624-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulowanie plikami za pomocą jednolinijkowców CLI"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/manipulating-files-with-cli-one-liners.md"
 ---

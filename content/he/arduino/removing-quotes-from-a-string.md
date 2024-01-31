@@ -3,8 +3,7 @@ title:                "הסרת מרכאות ממחרוזת"
 date:                  2024-01-26T03:37:34.898451-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "הסרת מרכאות ממחרוזת"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/arduino/removing-quotes-from-a-string.md"
 ---

@@ -3,8 +3,7 @@ title:                "Een string interpoleren"
 date:                  2024-01-28T22:01:58.233934-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string interpoleren"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/interpolating-a-string.md"
 changelog:

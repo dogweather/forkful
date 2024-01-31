@@ -1,10 +1,8 @@
 ---
 title:                "Onko hakemisto olemassa? Tarkistaminen"
 date:                  2024-01-20T14:57:30.415272-07:00
-html_title:           "Gleam: Onko hakemisto olemassa? Tarkistaminen"
 simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/checking-if-a-directory-exists.md"
 ---

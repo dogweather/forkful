@@ -3,8 +3,7 @@ title:                "Sinh số ngẫu nhiên"
 date:                  2024-01-28T22:01:08.213766-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sinh số ngẫu nhiên"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/generating-random-numbers.md"
 changelog:

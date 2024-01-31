@@ -1,10 +1,8 @@
 ---
 title:                "Análise de HTML"
 date:                  2024-01-20T15:33:36.493263-07:00
-html_title:           "Bash: Análise de HTML"
 simple_title:         "Análise de HTML"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/parsing-html.md"
 ---

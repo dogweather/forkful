@@ -1,10 +1,8 @@
 ---
 title:                "写入标准错误"
 date:                  2024-01-19
-html_title:           "Arduino: 写入标准错误"
 simple_title:         "写入标准错误"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/writing-to-standard-error.md"

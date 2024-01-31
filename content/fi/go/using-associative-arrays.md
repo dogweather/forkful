@@ -3,8 +3,7 @@ title:                "Assosiatiivisten taulukoiden käyttö"
 date:                  2024-01-30T19:11:23.062500-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Assosiatiivisten taulukoiden käyttö"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/using-associative-arrays.md"
 changelog:

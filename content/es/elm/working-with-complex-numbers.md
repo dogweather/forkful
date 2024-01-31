@@ -3,8 +3,7 @@ title:                "Trabajando con números complejos"
 date:                  2024-01-26T04:39:38.640596-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con números complejos"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/working-with-complex-numbers.md"
 ---

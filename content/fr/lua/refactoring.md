@@ -3,8 +3,7 @@ title:                "Refactoring : Mode d'emploi"
 date:                  2024-01-26T01:45:47.099488-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactoring : Mode d'emploi"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/refactoring.md"
 ---

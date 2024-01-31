@@ -1,10 +1,8 @@
 ---
 title:                "Analyse syntaxique de HTML"
 date:                  2024-01-20T15:31:40.077072-07:00
-html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/parsing-html.md"
 ---

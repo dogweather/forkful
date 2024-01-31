@@ -3,8 +3,7 @@ title:                "Lecture des arguments de ligne de commande"
 date:                  2024-01-20T17:56:09.361779-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lecture des arguments de ligne de commande"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/reading-command-line-arguments.md"
 ---

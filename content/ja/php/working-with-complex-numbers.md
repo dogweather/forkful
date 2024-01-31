@@ -3,8 +3,7 @@ title:                "複素数の扱い方"
 date:                  2024-01-26T04:44:06.947667-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "複素数の扱い方"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/working-with-complex-numbers.md"
 ---

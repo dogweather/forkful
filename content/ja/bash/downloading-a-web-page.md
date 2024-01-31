@@ -3,8 +3,7 @@ title:                "ウェブページのダウンロード"
 date:                  2024-01-20T17:43:47.614029-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "ウェブページのダウンロード"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/downloading-a-web-page.md"

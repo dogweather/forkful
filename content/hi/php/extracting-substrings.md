@@ -3,8 +3,7 @@ title:                "सबस्ट्रिंग्स निकालन�
 date:                  2024-01-20T17:46:32.158676-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "सबस्ट्रिंग्स निकालना"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/extracting-substrings.md"
 ---

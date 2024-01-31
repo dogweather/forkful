@@ -3,8 +3,7 @@ title:                "स्ट्रिंग की लंबाई ज्ञ
 date:                  2024-01-20T17:48:04.161359-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "स्ट्रिंग की लंबाई ज्ञात करना"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/finding-the-length-of-a-string.md"
 ---

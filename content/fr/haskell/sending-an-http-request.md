@@ -3,8 +3,7 @@ title:                "Envoi d'une requête HTTP"
 date:                  2024-01-20T17:59:40.763419-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Envoi d'une requête HTTP"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/sending-an-http-request.md"
 ---

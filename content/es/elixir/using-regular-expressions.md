@@ -1,10 +1,8 @@
 ---
 title:                "Uso de expresiones regulares"
 date:                  2024-01-19
-html_title:           "Arduino: Uso de expresiones regulares"
 simple_title:         "Uso de expresiones regulares"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/using-regular-expressions.md"
 ---

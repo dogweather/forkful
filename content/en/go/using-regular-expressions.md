@@ -1,10 +1,8 @@
 ---
 title:                "Using regular expressions"
 date:                  2024-01-19
-html_title:           "Bash recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/using-regular-expressions.md"
 ---

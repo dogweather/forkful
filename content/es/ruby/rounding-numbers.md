@@ -3,8 +3,7 @@ title:                "Redondeo de números"
 date:                  2024-01-26T03:46:45.605535-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redondeo de números"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/rounding-numbers.md"
 ---

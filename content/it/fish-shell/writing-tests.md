@@ -1,10 +1,8 @@
 ---
 title:                "Scrivere test"
 date:                  2024-01-19
-html_title:           "Arduino: Scrivere test"
 simple_title:         "Scrivere test"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/writing-tests.md"
 ---

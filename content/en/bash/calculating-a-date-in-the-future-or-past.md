@@ -2,10 +2,8 @@
 title:                "Calculating a date in the future or past"
 date:                  2024-01-20T17:28:37.573159-07:00
 model:                 gpt-4-1106-preview
-html_title:           "C# recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/calculating-a-date-in-the-future-or-past.md"
 ---

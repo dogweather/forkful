@@ -3,8 +3,7 @@ title:                "Avrunding av tall"
 date:                  2024-01-26T03:43:46.757764-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrunding av tall"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/rounding-numbers.md"
 ---

@@ -3,8 +3,7 @@ title:                "Rifattorizzazione"
 date:                  2024-01-26T01:17:36.174365-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rifattorizzazione"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/refactoring.md"
 ---

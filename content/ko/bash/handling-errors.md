@@ -3,8 +3,7 @@ title:                "에러 처리하기"
 date:                  2024-01-26T00:50:36.954903-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "에러 처리하기"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/handling-errors.md"
 ---

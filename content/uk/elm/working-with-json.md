@@ -1,10 +1,8 @@
 ---
 title:                "Робота з JSON"
 date:                  2024-01-19
-html_title:           "Arduino: Робота з JSON"
 simple_title:         "Робота з JSON"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elm/working-with-json.md"
 ---

@@ -3,8 +3,7 @@ title:                "Een tekstbestand lezen"
 date:                  2024-01-28T22:04:48.712798-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand lezen"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/reading-a-text-file.md"
 changelog:

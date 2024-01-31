@@ -3,8 +3,7 @@ title:                "Extracting substrings"
 date:                  2024-01-20T17:46:21.805021-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extracting substrings"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/extracting-substrings.md"
 ---

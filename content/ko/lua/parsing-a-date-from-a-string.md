@@ -1,10 +1,8 @@
 ---
 title:                "문자열에서 날짜 파싱하기"
 date:                  2024-01-20T15:37:22.659357-07:00
-html_title:           "Arduino: 문자열에서 날짜 파싱하기"
 simple_title:         "문자열에서 날짜 파싱하기"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/parsing-a-date-from-a-string.md"

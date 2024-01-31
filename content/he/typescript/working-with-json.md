@@ -1,10 +1,8 @@
 ---
 title:                "עבודה עם JSON"
 date:                  2024-01-19
-html_title:           "Arduino: עבודה עם JSON"
 simple_title:         "עבודה עם JSON"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/working-with-json.md"
 ---

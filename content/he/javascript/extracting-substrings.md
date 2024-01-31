@@ -3,8 +3,7 @@ title:                "חילוץ תת-מחרוזות"
 date:                  2024-01-20T17:46:15.934882-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "חילוץ תת-מחרוזות"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/javascript/extracting-substrings.md"
 ---

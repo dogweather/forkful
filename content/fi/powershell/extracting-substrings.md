@@ -3,8 +3,7 @@ title:                "Merkkijonojen osien poimiminen"
 date:                  2024-01-20T17:46:32.838555-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonojen osien poimiminen"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/extracting-substrings.md"
 ---

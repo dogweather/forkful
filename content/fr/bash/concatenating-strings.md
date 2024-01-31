@@ -3,8 +3,7 @@ title:                "Concaténation de chaînes de caractères"
 date:                  2024-01-20T17:34:00.218205-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Concaténation de chaînes de caractères"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/concatenating-strings.md"
 ---

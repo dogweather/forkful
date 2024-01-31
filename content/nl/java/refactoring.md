@@ -3,8 +3,7 @@ title:                "Refactoring"
 date:                  2024-01-28T22:05:39.775246-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactoring"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/java/refactoring.md"
 changelog:

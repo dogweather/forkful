@@ -3,8 +3,7 @@ title:                "Searching and replacing text"
 date:                  2024-01-20T17:57:33.332118-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Searching and replacing text"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/searching-and-replacing-text.md"
 ---

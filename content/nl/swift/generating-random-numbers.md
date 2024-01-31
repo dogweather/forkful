@@ -3,8 +3,7 @@ title:                "Willekeurige getallen genereren"
 date:                  2024-01-28T22:01:10.866748-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Willekeurige getallen genereren"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/generating-random-numbers.md"
 changelog:

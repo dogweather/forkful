@@ -1,10 +1,8 @@
 ---
 title:                "Estrarre una data da una stringa"
 date:                  2024-01-20T15:37:49.507862-07:00
-html_title:           "Arduino: Estrarre una data da una stringa"
 simple_title:         "Estrarre una data da una stringa"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/parsing-a-date-from-a-string.md"
 ---

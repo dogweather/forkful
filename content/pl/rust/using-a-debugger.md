@@ -3,8 +3,7 @@ title:                "Korzystanie z debugera"
 date:                  2024-01-26T04:10:21.316599-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z debugera"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/using-a-debugger.md"
 ---

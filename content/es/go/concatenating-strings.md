@@ -3,8 +3,7 @@ title:                "Concatenación de cadenas de texto"
 date:                  2024-01-20T17:34:48.009170-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Concatenación de cadenas de texto"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/concatenating-strings.md"
 ---

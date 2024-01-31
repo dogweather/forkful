@@ -3,8 +3,7 @@ title:                "Tái cấu trúc mã"
 date:                  2024-01-28T22:05:54.229591-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tái cấu trúc mã"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/refactoring.md"
 changelog:

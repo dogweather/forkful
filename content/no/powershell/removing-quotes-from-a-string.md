@@ -3,8 +3,7 @@ title:                "Fjerne anførselstegn fra en streng"
 date:                  2024-01-26T03:41:37.397621-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fjerne anførselstegn fra en streng"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/removing-quotes-from-a-string.md"
 ---

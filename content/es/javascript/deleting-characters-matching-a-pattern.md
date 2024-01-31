@@ -3,8 +3,7 @@ title:                "Eliminando caracteres que coinciden con un patrón"
 date:                  2024-01-20T17:42:50.226398-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Eliminando caracteres que coinciden con un patrón"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/deleting-characters-matching-a-pattern.md"
 ---

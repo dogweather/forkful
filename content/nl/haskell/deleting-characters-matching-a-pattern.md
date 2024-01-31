@@ -3,8 +3,7 @@ title:                "Karakters verwijderen die overeenkomen met een patroon"
 date:                  2024-01-28T21:58:45.201706-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Karakters verwijderen die overeenkomen met een patroon"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/deleting-characters-matching-a-pattern.md"
 changelog:

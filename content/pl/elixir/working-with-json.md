@@ -1,10 +1,8 @@
 ---
 title:                "Praca z JSON"
 date:                  2024-01-19
-html_title:           "Bash: Praca z JSON"
 simple_title:         "Praca z JSON"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/working-with-json.md"
 ---

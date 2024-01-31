@@ -3,8 +3,7 @@ title:                "डीबग आउटपुट प्रिंट कर
 date:                  2024-01-20T17:53:34.037793-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "डीबग आउटपुट प्रिंट करना"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/rust/printing-debug-output.md"
 ---

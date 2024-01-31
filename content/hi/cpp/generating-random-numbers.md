@@ -3,8 +3,7 @@ title:                "यादृच्छिक संख्याएँ उ�
 date:                  2024-01-27T20:34:36.781702-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/generating-random-numbers.md"
 ---

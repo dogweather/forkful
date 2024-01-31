@@ -1,10 +1,8 @@
 ---
 title:                "Przetwarzanie HTML"
 date:                  2024-01-20T15:31:53.098220-07:00
-html_title:           "Bash: Przetwarzanie HTML"
 simple_title:         "Przetwarzanie HTML"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/parsing-html.md"
 ---

@@ -3,8 +3,7 @@ title:                "Avrundning av tal"
 date:                  2024-01-26T03:45:27.213128-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrundning av tal"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/rounding-numbers.md"
 ---

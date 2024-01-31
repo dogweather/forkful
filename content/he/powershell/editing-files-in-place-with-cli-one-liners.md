@@ -3,8 +3,7 @@ title:                "עריכת קבצים במקום עם שורות פקוד
 date:                  2024-01-27T16:21:14.937863-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עריכת קבצים במקום עם שורות פקודה חד-שורתיות"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/powershell/editing-files-in-place-with-cli-one-liners.md"
 ---

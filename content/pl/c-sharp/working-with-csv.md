@@ -1,10 +1,8 @@
 ---
 title:                "Praca z plikami CSV"
 date:                  2024-01-19
-html_title:           "Bash: Praca z plikami CSV"
 simple_title:         "Praca z plikami CSV"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/working-with-csv.md"
 ---

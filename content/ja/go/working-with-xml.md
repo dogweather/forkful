@@ -3,8 +3,7 @@ title:                "XMLの扱い方"
 date:                  2024-01-26T04:31:54.487444-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XMLの扱い方"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/working-with-xml.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "Überprüfung, ob ein Verzeichnis existiert"
 date:                  2024-01-20T14:56:44.812703-07:00
-html_title:           "Fish Shell: Überprüfung, ob ein Verzeichnis existiert"
 simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/checking-if-a-directory-exists.md"
 ---

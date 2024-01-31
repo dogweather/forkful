@@ -3,8 +3,7 @@ title:                "Een tekstbestand schrijven"
 date:                  2024-01-28T22:12:45.292662-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand schrijven"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/writing-a-text-file.md"
 changelog:

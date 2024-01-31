@@ -3,8 +3,7 @@ title:                "Wycinanie podłańcuchów"
 date:                  2024-01-20T17:45:06.864031-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wycinanie podłańcuchów"
-programming_language: "C"
-category:             "C"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/extracting-substrings.md"
 ---

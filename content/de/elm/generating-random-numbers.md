@@ -3,8 +3,7 @@ title:                "Generierung von Zufallszahlen"
 date:                  2024-01-27T20:33:44.745303-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generierung von Zufallszahlen"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/generating-random-numbers.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
 date:                  2024-01-20T14:57:52.389179-07:00
-html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/checking-if-a-directory-exists.md"
 ---

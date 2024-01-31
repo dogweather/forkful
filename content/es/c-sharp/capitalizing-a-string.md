@@ -1,10 +1,8 @@
 ---
 title:                "Capitalizando una cadena de texto"
 date:                  2024-01-19
-html_title:           "Arduino: Capitalizando una cadena de texto"
 simple_title:         "Capitalizando una cadena de texto"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/capitalizing-a-string.md"
 ---

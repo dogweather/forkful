@@ -3,8 +3,7 @@ title:                "Geração de números aleatórios"
 date:                  2024-01-27T20:33:37.400261-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Geração de números aleatórios"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/generating-random-numbers.md"
 ---

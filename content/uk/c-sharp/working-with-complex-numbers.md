@@ -3,8 +3,7 @@ title:                "Робота з комплексними числами"
 date:                  2024-01-26T04:39:33.635552-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з комплексними числами"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/working-with-complex-numbers.md"
 ---

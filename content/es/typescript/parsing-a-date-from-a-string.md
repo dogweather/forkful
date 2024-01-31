@@ -1,10 +1,8 @@
 ---
 title:                "Análisis de una fecha a partir de una cadena"
 date:                  2024-01-20T15:39:00.569584-07:00
-html_title:           "Arduino: Análisis de una fecha a partir de una cadena"
 simple_title:         "Análisis de una fecha a partir de una cadena"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/parsing-a-date-from-a-string.md"
 ---

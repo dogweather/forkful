@@ -3,8 +3,7 @@ title:                "Att arbeta med TOML"
 date:                  2024-01-26T04:26:22.278021-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att arbeta med TOML"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/working-with-toml.md"
 ---

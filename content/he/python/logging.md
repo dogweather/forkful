@@ -3,8 +3,7 @@ title:                "רישום פעולות (לוגים)"
 date:                  2024-01-26T01:09:11.378900-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "רישום פעולות (לוגים)"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/logging.md"
 ---

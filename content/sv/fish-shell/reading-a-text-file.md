@@ -3,8 +3,7 @@ title:                "Läsa en textfil"
 date:                  2024-01-20T17:54:27.664942-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Läsa en textfil"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/reading-a-text-file.md"
 ---

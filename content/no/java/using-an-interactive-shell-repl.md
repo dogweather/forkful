@@ -3,8 +3,7 @@ title:                "Bruke et interaktivt skall (REPL)"
 date:                  2024-01-26T04:15:16.492351-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bruke et interaktivt skall (REPL)"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/using-an-interactive-shell-repl.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "Obtendo a data atual"
 date:                  2024-01-20T15:13:28.458325-07:00
-html_title:           "Bash: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/getting-the-current-date.md"
 ---

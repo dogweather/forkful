@@ -3,8 +3,7 @@ title:                "Usando arrays associativos"
 date:                  2024-01-30T19:12:53.310736-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando arrays associativos"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/using-associative-arrays.md"
 changelog:

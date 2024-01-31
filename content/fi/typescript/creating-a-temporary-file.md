@@ -3,8 +3,7 @@ title:                "Väliaikaistiedoston luominen"
 date:                  2024-01-20T17:41:42.172042-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Väliaikaistiedoston luominen"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/creating-a-temporary-file.md"
 ---

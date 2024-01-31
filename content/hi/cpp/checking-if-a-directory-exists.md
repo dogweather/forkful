@@ -1,10 +1,8 @@
 ---
 title:                "यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
 date:                  2024-01-19
-html_title:           "Arduino: यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
 simple_title:         "यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/checking-if-a-directory-exists.md"
 ---

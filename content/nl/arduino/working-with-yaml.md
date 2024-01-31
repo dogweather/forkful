@@ -3,8 +3,7 @@ title:                "Werken met YAML"
 date:                  2024-01-28T22:11:24.039567-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met YAML"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/working-with-yaml.md"
 changelog:

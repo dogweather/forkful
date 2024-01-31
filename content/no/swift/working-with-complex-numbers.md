@@ -3,8 +3,7 @@ title:                "Å jobbe med komplekse tall"
 date:                  2024-01-26T04:45:56.437962-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å jobbe med komplekse tall"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/working-with-complex-numbers.md"
 ---

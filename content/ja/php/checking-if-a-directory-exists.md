@@ -1,10 +1,8 @@
 ---
 title:                "ディレクトリが存在するかどうかの確認"
 date:                  2024-01-20T14:57:42.723071-07:00
-html_title:           "Gleam: ディレクトリが存在するかどうかの確認"
 simple_title:         "ディレクトリが存在するかどうかの確認"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/checking-if-a-directory-exists.md"

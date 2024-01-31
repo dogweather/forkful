@@ -3,8 +3,7 @@ title:                "HTML:n jäsentäminen"
 date:                  2024-01-28T03:00:49.630402-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML:n jäsentäminen"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/parsing-html.md"
 changelog:

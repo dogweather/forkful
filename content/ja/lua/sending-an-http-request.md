@@ -3,8 +3,7 @@ title:                "HTTPリクエストの送信"
 date:                  2024-01-20T18:00:09.335708-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTPリクエストの送信"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/sending-an-http-request.md"

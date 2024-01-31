@@ -1,10 +1,8 @@
 ---
 title:                "Capitalizando una cadena de texto"
 date:                  2024-01-19
-html_title:           "Arduino: Capitalizando una cadena de texto"
 simple_title:         "Capitalizando una cadena de texto"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/capitalizing-a-string.md"
 ---

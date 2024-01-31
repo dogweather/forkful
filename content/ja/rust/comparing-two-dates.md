@@ -3,8 +3,7 @@ title:                "日付を比較する"
 date:                  2024-01-20T17:33:55.262410-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日付を比較する"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/comparing-two-dates.md"

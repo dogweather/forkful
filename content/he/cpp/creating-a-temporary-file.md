@@ -3,8 +3,7 @@ title:                "יצירת קובץ זמני"
 date:                  2024-01-20T17:40:16.437770-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "יצירת קובץ זמני"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/creating-a-temporary-file.md"
 ---

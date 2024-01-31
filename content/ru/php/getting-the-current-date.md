@@ -3,8 +3,7 @@ title:                "Получение текущей даты"
 date:                  2024-01-28T23:59:15.616654-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Получение текущей даты"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/php/getting-the-current-date.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "Bắt đầu một dự án mới"
 date:                  2024-01-28T22:08:48.186954-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bắt đầu một dự án mới"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/starting-a-new-project.md"
 changelog:

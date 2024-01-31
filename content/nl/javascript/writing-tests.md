@@ -3,8 +3,7 @@ title:                "Tests Schrijven"
 date:                  2024-01-28T22:12:58.054077-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tests Schrijven"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/writing-tests.md"
 changelog:

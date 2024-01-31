@@ -3,8 +3,7 @@ title:                "Видалення лапок зі строки"
 date:                  2024-01-26T03:43:21.708049-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Видалення лапок зі строки"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/rust/removing-quotes-from-a-string.md"
 ---

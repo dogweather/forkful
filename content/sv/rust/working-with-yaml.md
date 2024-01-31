@@ -1,10 +1,8 @@
 ---
 title:                "Arbete med YAML"
 date:                  2024-01-19
-html_title:           "Arduino: Arbete med YAML"
 simple_title:         "Arbete med YAML"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/working-with-yaml.md"
 ---

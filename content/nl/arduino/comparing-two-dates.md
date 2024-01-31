@@ -3,8 +3,7 @@ title:                "Twee data vergelijken"
 date:                  2024-01-28T21:56:17.895644-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Twee data vergelijken"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/comparing-two-dates.md"
 changelog:

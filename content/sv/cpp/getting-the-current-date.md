@@ -1,10 +1,8 @@
 ---
 title:                "Att hämta aktuellt datum"
 date:                  2024-01-20T15:13:21.731953-07:00
-html_title:           "Bash: Att hämta aktuellt datum"
 simple_title:         "Att hämta aktuellt datum"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/getting-the-current-date.md"
 ---

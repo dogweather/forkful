@@ -3,8 +3,7 @@ title:                "Merkkijonosta lainausmerkkien poistaminen"
 date:                  2024-01-26T03:39:32.588595-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonosta lainausmerkkien poistaminen"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/removing-quotes-from-a-string.md"
 ---

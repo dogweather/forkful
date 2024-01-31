@@ -3,8 +3,7 @@ title:                "Написание тестов"
 date:                  2024-01-29T00:06:06.701140-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Написание тестов"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/rust/writing-tests.md"
 changelog:

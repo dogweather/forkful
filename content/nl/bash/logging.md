@@ -3,8 +3,7 @@ title:                "Logboekregistratie"
 date:                  2024-01-28T22:02:39.138761-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Logboekregistratie"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/logging.md"
 changelog:

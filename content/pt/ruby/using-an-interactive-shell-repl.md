@@ -3,8 +3,7 @@ title:                "Usando um shell interativo (REPL)"
 date:                  2024-01-26T04:17:26.260591-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando um shell interativo (REPL)"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/using-an-interactive-shell-repl.md"
 ---

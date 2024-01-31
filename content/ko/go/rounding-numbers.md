@@ -3,8 +3,7 @@ title:                "숫자 반올림하기"
 date:                  2024-01-26T03:44:54.757753-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "숫자 반올림하기"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/rounding-numbers.md"
 ---

@@ -3,8 +3,7 @@ title:                "Работа с YAML"
 date:                  2024-01-29T00:04:39.003385-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с YAML"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/cpp/working-with-yaml.md"
 changelog:

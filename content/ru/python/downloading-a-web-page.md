@@ -3,8 +3,7 @@ title:                "Загрузка веб-страницы"
 date:                  2024-01-28T23:57:45.981416-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Загрузка веб-страницы"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/python/downloading-a-web-page.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "Gestion des erreurs"
 date:                  2024-01-26T00:56:07.758527-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Gestion des erreurs"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/handling-errors.md"
 ---

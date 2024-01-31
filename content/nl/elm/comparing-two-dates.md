@@ -3,8 +3,7 @@ title:                "Twee datums vergelijken"
 date:                  2024-01-28T21:56:22.275534-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Twee datums vergelijken"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/comparing-two-dates.md"
 changelog:

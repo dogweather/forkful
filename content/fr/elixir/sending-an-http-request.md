@@ -3,8 +3,7 @@ title:                "Envoi d'une requête HTTP"
 date:                  2024-01-20T17:59:18.647136-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Envoi d'une requête HTTP"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/sending-an-http-request.md"
 ---

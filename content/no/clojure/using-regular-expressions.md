@@ -1,10 +1,8 @@
 ---
 title:                "Bruk av regulære uttrykk"
 date:                  2024-01-19
-html_title:           "Bash: Bruk av regulære uttrykk"
 simple_title:         "Bruk av regulære uttrykk"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/using-regular-expressions.md"
 ---

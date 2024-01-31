@@ -1,10 +1,8 @@
 ---
 title:                "כתיבת בדיקות"
 date:                  2024-01-19
-html_title:           "Bash: כתיבת בדיקות"
 simple_title:         "כתיבת בדיקות"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/writing-tests.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "Отримання поточної дати"
 date:                  2024-01-20T15:17:10.385560-07:00
-html_title:           "Bash: Отримання поточної дати"
 simple_title:         "Отримання поточної дати"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/getting-the-current-date.md"
 ---

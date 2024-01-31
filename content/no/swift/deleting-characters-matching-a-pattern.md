@@ -3,8 +3,7 @@ title:                "Slette tegn som matcher et mønster"
 date:                  2024-01-20T17:43:02.287182-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Slette tegn som matcher et mønster"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/deleting-characters-matching-a-pattern.md"
 ---

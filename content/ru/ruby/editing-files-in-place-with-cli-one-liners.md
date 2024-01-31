@@ -3,8 +3,7 @@ title:                "Редактирование файлов на месте
 date:                  2024-01-28T23:58:24.320722-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Редактирование файлов на месте с помощью однострочников CLI"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/ruby/editing-files-in-place-with-cli-one-liners.md"
 changelog:

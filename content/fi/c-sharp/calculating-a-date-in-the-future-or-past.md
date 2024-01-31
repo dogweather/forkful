@@ -2,10 +2,8 @@
 title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 date:                  2024-01-20T17:28:32.773700-07:00
 model:                 gpt-4-1106-preview
-html_title:           "C#: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/calculating-a-date-in-the-future-or-past.md"
 ---

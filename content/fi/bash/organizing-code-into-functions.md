@@ -3,8 +3,7 @@ title:                "Koodin järjestäminen funktioihin"
 date:                  2024-01-26T01:09:12.560901-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Koodin järjestäminen funktioihin"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/organizing-code-into-functions.md"
 ---

@@ -3,8 +3,7 @@ title:                "Generación de números aleatorios"
 date:                  2024-01-27T20:35:03.378023-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generación de números aleatorios"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/generating-random-numbers.md"
 ---

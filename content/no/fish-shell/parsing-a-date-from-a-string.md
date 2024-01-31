@@ -1,10 +1,8 @@
 ---
 title:                "Tolke en dato fra en streng"
 date:                  2024-01-20T15:36:03.246644-07:00
-html_title:           "Arduino: Tolke en dato fra en streng"
 simple_title:         "Tolke en dato fra en streng"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/parsing-a-date-from-a-string.md"
 ---

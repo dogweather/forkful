@@ -3,8 +3,7 @@ title:                "Utilisation des tableaux associatifs"
 date:                  2024-01-30T19:11:21.885033-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des tableaux associatifs"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/using-associative-arrays.md"
 changelog:

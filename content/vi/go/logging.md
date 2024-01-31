@@ -3,8 +3,7 @@ title:                "Ghi log"
 date:                  2024-01-28T22:03:43.230633-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi log"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/logging.md"
 changelog:

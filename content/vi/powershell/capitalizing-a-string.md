@@ -3,8 +3,7 @@ title:                "Viết hoa một chuỗi"
 date:                  2024-01-28T21:55:48.998599-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết hoa một chuỗi"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/powershell/capitalizing-a-string.md"
 changelog:

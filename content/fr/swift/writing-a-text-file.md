@@ -1,10 +1,8 @@
 ---
 title:                "Écriture d'un fichier texte"
 date:                  2024-01-19
-html_title:           "Arduino: Écriture d'un fichier texte"
 simple_title:         "Écriture d'un fichier texte"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/writing-a-text-file.md"
 ---

@@ -3,8 +3,7 @@ title:                "Organizacja kodu w funkcje"
 date:                  2024-01-26T01:08:39.068763-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organizacja kodu w funkcje"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/organizing-code-into-functions.md"
 ---

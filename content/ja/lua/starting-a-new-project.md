@@ -3,8 +3,7 @@ title:                "新しいプロジェクトを始める"
 date:                  2024-01-20T18:04:15.091573-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "新しいプロジェクトを始める"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Getting Started"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/starting-a-new-project.md"

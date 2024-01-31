@@ -1,10 +1,8 @@
 ---
 title:                "Slik får du tak i dagens dato"
 date:                  2024-01-20T15:14:02.082285-07:00
-html_title:           "C: Slik får du tak i dagens dato"
 simple_title:         "Slik får du tak i dagens dato"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/getting-the-current-date.md"
 ---

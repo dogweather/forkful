@@ -1,10 +1,8 @@
 ---
 title:                "現在の日付を取得する"
 date:                  2024-01-20T15:16:14.768293-07:00
-html_title:           "Bash: 現在の日付を取得する"
 simple_title:         "現在の日付を取得する"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/getting-the-current-date.md"

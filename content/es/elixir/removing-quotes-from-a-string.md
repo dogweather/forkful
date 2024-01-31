@@ -3,8 +3,7 @@ title:                "Eliminando comillas de una cadena"
 date:                  2024-01-26T03:39:01.152430-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eliminando comillas de una cadena"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/removing-quotes-from-a-string.md"
 ---

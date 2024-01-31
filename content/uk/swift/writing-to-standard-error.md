@@ -1,10 +1,8 @@
 ---
 title:                "Запис в стандартний потік помилок"
 date:                  2024-01-19
-html_title:           "Arduino: Запис в стандартний потік помилок"
 simple_title:         "Запис в стандартний потік помилок"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/writing-to-standard-error.md"
 ---

@@ -3,8 +3,7 @@ title:                "Å jobbe med komplekse tall"
 date:                  2024-01-26T04:45:10.825948-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å jobbe med komplekse tall"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/working-with-complex-numbers.md"
 ---

@@ -3,8 +3,7 @@ title:                "将来または過去の日付を計算する"
 date:                  2024-01-20T17:32:01.174863-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "将来または過去の日付を計算する"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/calculating-a-date-in-the-future-or-past.md"

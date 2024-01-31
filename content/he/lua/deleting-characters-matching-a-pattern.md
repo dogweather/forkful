@@ -3,8 +3,7 @@ title:                "מחיקת תווים התואמים לתבנית"
 date:                  2024-01-20T17:43:05.997988-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "מחיקת תווים התואמים לתבנית"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/lua/deleting-characters-matching-a-pattern.md"
 ---

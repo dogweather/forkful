@@ -3,8 +3,7 @@ title:                "स्ट्रिंग से उद्धरण चि
 date:                  2024-01-26T03:40:00.040775-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग से उद्धरण चिह्न हटाना"
-programming_language: "C"
-category:             "C"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c/removing-quotes-from-a-string.md"
 ---

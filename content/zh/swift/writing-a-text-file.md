@@ -1,10 +1,8 @@
 ---
 title:                "编写文本文件"
 date:                  2024-01-19
-html_title:           "Arduino: 编写文本文件"
 simple_title:         "编写文本文件"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/writing-a-text-file.md"

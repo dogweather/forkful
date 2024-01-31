@@ -1,10 +1,8 @@
 ---
 title:                "Écrire dans l'erreur standard"
 date:                  2024-01-19
-html_title:           "Arduino: Écrire dans l'erreur standard"
 simple_title:         "Écrire dans l'erreur standard"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/writing-to-standard-error.md"
 ---

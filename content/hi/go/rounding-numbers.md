@@ -3,8 +3,7 @@ title:                "संख्याओं को पूर्णांक 
 date:                  2024-01-26T03:46:53.210793-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "संख्याओं को पूर्णांक बनाना"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/go/rounding-numbers.md"
 ---

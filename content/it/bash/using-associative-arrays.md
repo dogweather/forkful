@@ -3,8 +3,7 @@ title:                "Utilizzo di array associativi"
 date:                  2024-01-30T19:09:59.352003-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di array associativi"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/using-associative-arrays.md"
 changelog:

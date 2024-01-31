@@ -3,8 +3,7 @@ title:                "Работа с JSON"
 date:                  2024-01-29T00:04:06.974422-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с JSON"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/javascript/working-with-json.md"
 changelog:

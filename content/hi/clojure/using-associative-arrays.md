@@ -3,8 +3,7 @@ title:                "सहयोगी अरेज़ का उपयोग
 date:                  2024-01-30T19:11:13.822841-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "सहयोगी अरेज़ का उपयोग करना"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/using-associative-arrays.md"
 changelog:

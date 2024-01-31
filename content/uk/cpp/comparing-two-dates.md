@@ -3,8 +3,7 @@ title:                "Порівняння двох дат"
 date:                  2024-01-20T17:32:31.054040-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Порівняння двох дат"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/cpp/comparing-two-dates.md"
 ---

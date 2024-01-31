@@ -1,10 +1,8 @@
 ---
 title:                "표준 오류로 쓰기"
 date:                  2024-01-19
-html_title:           "Bash: 표준 오류로 쓰기"
 simple_title:         "표준 오류로 쓰기"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/writing-to-standard-error.md"

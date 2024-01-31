@@ -3,8 +3,7 @@ title:                "Generazione di numeri casuali"
 date:                  2024-01-27T20:32:40.947289-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generazione di numeri casuali"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/generating-random-numbers.md"
 ---

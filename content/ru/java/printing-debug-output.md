@@ -3,8 +3,7 @@ title:                "Вывод отладочной информации"
 date:                  2024-01-29T00:01:05.932576-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Вывод отладочной информации"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/java/printing-debug-output.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "Protokollierung"
 date:                  2024-01-26T01:06:24.265245-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Protokollierung"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/logging.md"
 ---

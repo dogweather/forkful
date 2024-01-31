@@ -3,8 +3,7 @@ title:                "Преобразование строки в нижний
 date:                  2024-01-28T23:56:23.073108-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в нижний регистр"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/powershell/converting-a-string-to-lower-case.md"
 changelog:

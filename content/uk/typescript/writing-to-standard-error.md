@@ -1,10 +1,8 @@
 ---
 title:                "Запис в стандартний потік помилок"
 date:                  2024-01-19
-html_title:           "Arduino: Запис в стандартний потік помилок"
 simple_title:         "Запис в стандартний потік помилок"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/writing-to-standard-error.md"
 ---

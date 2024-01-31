@@ -3,8 +3,7 @@ title:                "Використання дебагера"
 date:                  2024-01-26T03:49:23.341924-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання дебагера"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/using-a-debugger.md"
 ---

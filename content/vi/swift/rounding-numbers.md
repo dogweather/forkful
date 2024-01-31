@@ -3,8 +3,7 @@ title:                "Làm tròn số"
 date:                  2024-01-28T22:07:00.685277-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm tròn số"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/swift/rounding-numbers.md"
 changelog:

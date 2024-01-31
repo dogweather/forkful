@@ -3,8 +3,7 @@ title:                "Using a debugger"
 date:                  2024-01-25T20:50:12.035385-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Using a debugger"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/using-a-debugger.md"
 ---

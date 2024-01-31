@@ -1,10 +1,8 @@
 ---
 title:                "Trabajando con JSON"
 date:                  2024-01-19
-html_title:           "Bash: Trabajando con JSON"
 simple_title:         "Trabajando con JSON"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/working-with-json.md"
 ---

@@ -3,8 +3,7 @@ title:                "Использование ассоциативных м�
 date:                  2024-01-30T19:10:54.246101-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование ассоциативных массивов"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/clojure/using-associative-arrays.md"
 changelog:

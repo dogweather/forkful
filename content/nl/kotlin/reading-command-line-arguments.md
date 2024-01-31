@@ -3,8 +3,7 @@ title:                "Commandoregelargumenten lezen"
 date:                  2024-01-28T22:05:34.623876-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Commandoregelargumenten lezen"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/reading-command-line-arguments.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "日付を文字列に変換する"
 date:                  2024-01-20T17:37:48.752006-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日付を文字列に変換する"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/converting-a-date-into-a-string.md"

@@ -3,8 +3,7 @@ title:                "Wyszukiwanie i zamiana tekstu"
 date:                  2024-01-20T17:57:44.333418-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wyszukiwanie i zamiana tekstu"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/searching-and-replacing-text.md"
 ---

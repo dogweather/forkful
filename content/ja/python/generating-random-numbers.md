@@ -3,8 +3,7 @@ title:                "乱数の生成"
 date:                  2024-01-27T20:35:24.495195-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "乱数の生成"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/generating-random-numbers.md"
 ---

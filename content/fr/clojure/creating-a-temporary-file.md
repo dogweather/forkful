@@ -3,8 +3,7 @@ title:                "Création d'un fichier temporaire"
 date:                  2024-01-20T17:39:59.029938-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Création d'un fichier temporaire"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/creating-a-temporary-file.md"
 ---

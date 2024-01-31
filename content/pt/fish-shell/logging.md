@@ -3,8 +3,7 @@ title:                "Registro de Logs"
 date:                  2024-01-26T01:03:41.839293-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Registro de Logs"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/logging.md"
 ---

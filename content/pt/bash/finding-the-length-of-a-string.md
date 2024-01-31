@@ -3,8 +3,7 @@ title:                "Descobrindo o comprimento de uma string"
 date:                  2024-01-20T17:47:02.285702-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Descobrindo o comprimento de uma string"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/finding-the-length-of-a-string.md"
 ---

@@ -3,8 +3,7 @@ title:                "Loại bỏ dấu ngoặc kép khỏi chuỗi"
 date:                  2024-01-28T22:07:03.253987-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Loại bỏ dấu ngoặc kép khỏi chuỗi"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/swift/removing-quotes-from-a-string.md"
 changelog:

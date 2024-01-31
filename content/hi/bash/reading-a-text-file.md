@@ -3,8 +3,7 @@ title:                "टेक्स्ट फ़ाइल पढ़ना"
 date:                  2024-01-20T17:54:04.693553-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "टेक्स्ट फ़ाइल पढ़ना"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/bash/reading-a-text-file.md"
 ---

@@ -3,8 +3,7 @@ title:                "Usuwanie cudzysłowów z ciągu znaków"
 date:                  2024-01-26T03:39:55.639047-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/removing-quotes-from-a-string.md"
 ---

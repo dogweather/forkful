@@ -3,8 +3,7 @@ title:                "Korzystanie z debugera"
 date:                  2024-01-26T03:49:18.798157-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z debugera"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/using-a-debugger.md"
 ---

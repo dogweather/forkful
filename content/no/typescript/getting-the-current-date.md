@@ -1,10 +1,8 @@
 ---
 title:                "Slik får du tak i dagens dato"
 date:                  2024-01-20T15:16:56.148048-07:00
-html_title:           "C: Slik får du tak i dagens dato"
 simple_title:         "Slik får du tak i dagens dato"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/getting-the-current-date.md"
 ---

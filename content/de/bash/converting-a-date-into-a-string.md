@@ -3,8 +3,7 @@ title:                "Datum in einen String umwandeln"
 date:                  2024-01-20T17:35:51.195648-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Datum in einen String umwandeln"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/converting-a-date-into-a-string.md"
 ---

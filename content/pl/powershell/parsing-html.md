@@ -1,10 +1,8 @@
 ---
 title:                "Przetwarzanie HTML"
 date:                  2024-01-20T15:33:26.727780-07:00
-html_title:           "Bash: Przetwarzanie HTML"
 simple_title:         "Przetwarzanie HTML"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/parsing-html.md"
 ---

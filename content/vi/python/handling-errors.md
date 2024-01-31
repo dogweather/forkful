@@ -3,8 +3,7 @@ title:                "Xử lý lỗi"
 date:                  2024-01-28T22:02:42.394946-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xử lý lỗi"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/handling-errors.md"
 changelog:

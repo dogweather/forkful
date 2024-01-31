@@ -1,10 +1,8 @@
 ---
 title:                "检查目录是否存在"
 date:                  2024-01-19
-html_title:           "Bash: 检查目录是否存在"
 simple_title:         "检查目录是否存在"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/checking-if-a-directory-exists.md"

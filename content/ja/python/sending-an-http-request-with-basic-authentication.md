@@ -3,8 +3,7 @@ title:                "基本認証を使用したHTTPリクエストの送信"
 date:                  2024-01-20T18:02:49.440428-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "基本認証を使用したHTTPリクエストの送信"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/sending-an-http-request-with-basic-authentication.md"

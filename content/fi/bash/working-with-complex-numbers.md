@@ -3,8 +3,7 @@ title:                "Kompleksilukujen käsittely"
 date:                  2024-01-26T04:37:01.168827-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kompleksilukujen käsittely"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/working-with-complex-numbers.md"
 ---

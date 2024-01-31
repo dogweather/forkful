@@ -3,8 +3,7 @@ title:                "הדפסת פלט לניפוי באגים"
 date:                  2024-01-20T17:52:42.624029-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "הדפסת פלט לניפוי באגים"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/printing-debug-output.md"
 ---

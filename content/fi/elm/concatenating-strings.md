@@ -3,8 +3,7 @@ title:                "Merkkijonojen yhdistäminen"
 date:                  2024-01-20T17:34:44.990911-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonojen yhdistäminen"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/concatenating-strings.md"
 ---

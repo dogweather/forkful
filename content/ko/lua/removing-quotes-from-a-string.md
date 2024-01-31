@@ -3,8 +3,7 @@ title:                "문자열에서 따옴표 제거하기"
 date:                  2024-01-26T03:40:54.800432-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열에서 따옴표 제거하기"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/removing-quotes-from-a-string.md"
 ---

@@ -3,8 +3,7 @@ title:                "Gestion des erreurs"
 date:                  2024-01-26T00:52:48.799728-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Gestion des erreurs"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/handling-errors.md"
 ---

@@ -3,8 +3,7 @@ title:                "הסרת מרכאות ממחרוזת"
 date:                  2024-01-26T03:40:31.547865-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "הסרת מרכאות ממחרוזת"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/removing-quotes-from-a-string.md"
 ---

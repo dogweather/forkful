@@ -3,8 +3,7 @@ title:                "Excluindo caracteres que correspondem a um padrão"
 date:                  2024-01-20T17:41:59.623503-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/deleting-characters-matching-a-pattern.md"
 ---

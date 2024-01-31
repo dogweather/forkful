@@ -1,10 +1,8 @@
 ---
 title:                "Uso de expresiones regulares"
 date:                  2024-01-19
-html_title:           "Arduino: Uso de expresiones regulares"
 simple_title:         "Uso de expresiones regulares"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/using-regular-expressions.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "Escribiendo en el error estándar"
 date:                  2024-01-19
-html_title:           "Arduino: Escribiendo en el error estándar"
 simple_title:         "Escribiendo en el error estándar"
-programming_language: "C#"
-category:             "C#"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/writing-to-standard-error.md"
 ---

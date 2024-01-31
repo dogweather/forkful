@@ -3,8 +3,7 @@ title:                "Konvertera en sträng till gemener"
 date:                  2024-01-20T17:38:15.675697-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konvertera en sträng till gemener"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/converting-a-string-to-lower-case.md"
 ---

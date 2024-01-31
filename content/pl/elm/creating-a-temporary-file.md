@@ -3,8 +3,7 @@ title:                "Tworzenie pliku tymczasowego"
 date:                  2024-01-20T17:40:06.788192-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tworzenie pliku tymczasowego"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/creating-a-temporary-file.md"
 ---

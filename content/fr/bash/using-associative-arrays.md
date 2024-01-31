@@ -3,8 +3,7 @@ title:                "Utilisation des tableaux associatifs"
 date:                  2024-01-30T19:10:07.783175-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des tableaux associatifs"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/using-associative-arrays.md"
 changelog:

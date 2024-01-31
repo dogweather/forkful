@@ -3,8 +3,7 @@ title:                "パターンに一致する文字を削除する"
 date:                  2024-01-20T17:41:38.938465-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "パターンに一致する文字を削除する"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/deleting-characters-matching-a-pattern.md"

@@ -3,8 +3,7 @@ title:                "Använda en interaktiv skal (REPL)"
 date:                  2024-01-26T04:14:55.960533-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Använda en interaktiv skal (REPL)"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/using-an-interactive-shell-repl.md"
 ---

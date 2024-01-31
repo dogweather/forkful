@@ -1,10 +1,8 @@
 ---
 title:                "Analisi dell'HTML"
 date:                  2024-01-20T15:30:04.186097-07:00
-html_title:           "Bash: Analisi dell'HTML"
 simple_title:         "Analisi dell'HTML"
-programming_language: "C"
-category:             "C"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/parsing-html.md"
 ---

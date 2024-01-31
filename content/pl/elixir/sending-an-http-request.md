@@ -3,8 +3,7 @@ title:                "Wysyłanie żądania HTTP"
 date:                  2024-01-20T17:59:34.471348-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wysyłanie żądania HTTP"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/sending-an-http-request.md"
 ---

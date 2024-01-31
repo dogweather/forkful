@@ -3,8 +3,7 @@ title:                "Lendo argumentos da linha de comando"
 date:                  2024-01-20T17:56:27.077350-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lendo argumentos da linha de comando"
-programming_language: "Kotlin"
-category:             "Kotlin"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/reading-command-line-arguments.md"
 ---

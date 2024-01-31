@@ -3,8 +3,7 @@ title:                "Baixando uma página da web"
 date:                  2024-01-20T17:44:44.354413-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Baixando uma página da web"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/downloading-a-web-page.md"
 ---

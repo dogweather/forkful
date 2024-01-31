@@ -3,8 +3,7 @@ title:                "Editando archivos directamente con líneas de comandos"
 date:                  2024-01-27T16:20:43.381394-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Editando archivos directamente con líneas de comandos"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/editing-files-in-place-with-cli-one-liners.md"
 ---

@@ -3,8 +3,7 @@ title:                "वेब पेज डाउनलोड करना"
 date:                  2024-01-20T17:43:39.881581-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "वेब पेज डाउनलोड करना"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/bash/downloading-a-web-page.md"
 ---

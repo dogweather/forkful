@@ -3,8 +3,7 @@ title:                "Quotes verwijderen uit een string"
 date:                  2024-01-28T22:06:05.605156-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Quotes verwijderen uit een string"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/removing-quotes-from-a-string.md"
 changelog:

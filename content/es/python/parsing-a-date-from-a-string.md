@@ -1,10 +1,8 @@
 ---
 title:                "Análisis de una fecha a partir de una cadena"
 date:                  2024-01-20T15:38:03.658744-07:00
-html_title:           "Arduino: Análisis de una fecha a partir de una cadena"
 simple_title:         "Análisis de una fecha a partir de una cadena"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/parsing-a-date-from-a-string.md"
 ---

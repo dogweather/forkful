@@ -3,8 +3,7 @@ title:                "将来または過去の日付を計算する"
 date:                  2024-01-20T17:32:05.219397-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "将来または過去の日付を計算する"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/calculating-a-date-in-the-future-or-past.md"

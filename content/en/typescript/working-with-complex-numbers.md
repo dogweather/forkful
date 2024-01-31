@@ -3,8 +3,7 @@ title:                "Working with complex numbers"
 date:                  2024-01-25T02:59:56.973374-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Working with complex numbers"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/working-with-complex-numbers.md"
 ---

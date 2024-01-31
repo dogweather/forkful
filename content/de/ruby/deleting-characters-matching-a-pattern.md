@@ -3,8 +3,7 @@ title:                "Löschen von Zeichen, die einem Muster entsprechen"
 date:                  2024-01-20T17:43:02.508790-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/deleting-characters-matching-a-pattern.md"
 ---

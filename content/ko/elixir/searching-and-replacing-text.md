@@ -3,8 +3,7 @@ title:                "텍스트 검색 및 교체"
 date:                  2024-01-20T17:57:56.570894-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "텍스트 검색 및 교체"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/searching-and-replacing-text.md"

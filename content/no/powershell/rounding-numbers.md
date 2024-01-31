@@ -3,8 +3,7 @@ title:                "Avrunding av tall"
 date:                  2024-01-26T03:46:24.910441-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrunding av tall"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/rounding-numbers.md"
 ---

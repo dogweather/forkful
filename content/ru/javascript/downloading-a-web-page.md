@@ -3,8 +3,7 @@ title:                "Загрузка веб-страницы"
 date:                  2024-01-28T23:57:22.477685-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Загрузка веб-страницы"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/javascript/downloading-a-web-page.md"
 changelog:

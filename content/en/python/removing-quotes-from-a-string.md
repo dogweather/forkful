@@ -3,8 +3,7 @@ title:                "Removing quotes from a string"
 date:                  2024-01-25T20:49:59.300234-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Removing quotes from a string"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/removing-quotes-from-a-string.md"
 ---

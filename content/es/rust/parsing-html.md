@@ -1,10 +1,8 @@
 ---
 title:                "Análisis de HTML"
 date:                  2024-01-20T15:33:45.778168-07:00
-html_title:           "Arduino: Análisis de HTML"
 simple_title:         "Análisis de HTML"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/parsing-html.md"
 ---

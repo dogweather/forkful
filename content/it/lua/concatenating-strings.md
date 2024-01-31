@@ -3,8 +3,7 @@ title:                "Concatenazione di stringhe"
 date:                  2024-01-20T17:35:06.425337-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Concatenazione di stringhe"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/lua/concatenating-strings.md"
 ---

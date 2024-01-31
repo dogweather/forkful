@@ -3,8 +3,7 @@ title:                "文字列の長さを求める"
 date:                  2024-01-20T17:47:22.194435-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "文字列の長さを求める"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/finding-the-length-of-a-string.md"

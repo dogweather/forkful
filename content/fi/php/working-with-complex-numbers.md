@@ -3,8 +3,7 @@ title:                "Kompleksilukujen käsittely"
 date:                  2024-01-26T04:43:38.562956-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kompleksilukujen käsittely"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/working-with-complex-numbers.md"
 ---

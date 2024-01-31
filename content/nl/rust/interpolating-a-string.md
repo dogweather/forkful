@@ -3,8 +3,7 @@ title:                "Een string interpoleren"
 date:                  2024-01-28T22:02:10.904229-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string interpoleren"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/interpolating-a-string.md"
 changelog:

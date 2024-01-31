@@ -3,8 +3,7 @@ title:                "Extrahera delsträngar"
 date:                  2024-01-20T17:45:12.247581-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extrahera delsträngar"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/extracting-substrings.md"
 ---

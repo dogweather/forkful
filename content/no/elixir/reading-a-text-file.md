@@ -3,8 +3,7 @@ title:                "Lese en tekstfil"
 date:                  2024-01-20T17:53:55.205184-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lese en tekstfil"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/reading-a-text-file.md"
 ---

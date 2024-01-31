@@ -3,8 +3,7 @@ title:                "Lecture des arguments de ligne de commande"
 date:                  2024-01-20T17:55:49.759452-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lecture des arguments de ligne de commande"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/reading-command-line-arguments.md"
 ---

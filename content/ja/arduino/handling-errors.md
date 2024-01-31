@@ -3,8 +3,7 @@ title:                "エラー処理"
 date:                  2024-01-26T00:50:49.537900-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "エラー処理"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/handling-errors.md"
 ---

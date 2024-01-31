@@ -3,8 +3,7 @@ title:                "Arbeiten mit XML"
 date:                  2024-01-26T04:33:24.900880-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeiten mit XML"
-programming_language: "Lua"
-category:             "Lua"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/working-with-xml.md"
 ---

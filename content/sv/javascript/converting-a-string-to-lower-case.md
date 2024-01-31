@@ -3,8 +3,7 @@ title:                "Konvertera en sträng till gemener"
 date:                  2024-01-20T17:38:54.468711-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konvertera en sträng till gemener"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/converting-a-string-to-lower-case.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "Kontrollera om en katalog finns"
 date:                  2024-01-20T14:56:10.320092-07:00
-html_title:           "Fish Shell: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/checking-if-a-directory-exists.md"
 ---

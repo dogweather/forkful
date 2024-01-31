@@ -1,10 +1,8 @@
 ---
 title:                "Arbeid med YAML"
 date:                  2024-01-19
-html_title:           "Arduino: Arbeid med YAML"
 simple_title:         "Arbeid med YAML"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/working-with-yaml.md"
 ---

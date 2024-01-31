@@ -3,8 +3,7 @@ title:                "Att använda associativa arrayer"
 date:                  2024-01-30T19:09:55.187301-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda associativa arrayer"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/using-associative-arrays.md"
 changelog:

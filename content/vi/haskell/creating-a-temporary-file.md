@@ -3,8 +3,7 @@ title:                "Tạo một tập tin tạm thời"
 date:                  2024-01-28T21:58:32.606922-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tạo một tập tin tạm thời"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/creating-a-temporary-file.md"
 changelog:

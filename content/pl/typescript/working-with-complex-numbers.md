@@ -3,8 +3,7 @@ title:                "Praca z liczbami zespolonymi"
 date:                  2024-01-26T04:46:27.960189-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z liczbami zespolonymi"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/working-with-complex-numbers.md"
 ---

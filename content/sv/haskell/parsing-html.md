@@ -1,10 +1,8 @@
 ---
 title:                "Tolka HTML"
 date:                  2024-01-20T15:31:59.808672-07:00
-html_title:           "Arduino: Tolka HTML"
 simple_title:         "Tolka HTML"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/parsing-html.md"
 ---

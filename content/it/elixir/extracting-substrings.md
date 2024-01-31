@@ -3,8 +3,7 @@ title:                "Estrazione di sottostringhe"
 date:                  2024-01-20T17:45:38.190012-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Estrazione di sottostringhe"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/extracting-substrings.md"
 ---

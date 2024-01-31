@@ -3,8 +3,7 @@ title:                "Chuyển đổi một ngày thành chuỗi"
 date:                  2024-01-28T21:58:16.249441-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi một ngày thành chuỗi"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/converting-a-date-into-a-string.md"
 changelog:

@@ -1,10 +1,8 @@
 ---
 title:                "Pisanie do standardowego błędu"
 date:                  2024-01-19
-html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/writing-to-standard-error.md"
 ---

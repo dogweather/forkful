@@ -3,8 +3,7 @@ title:                "שימוש בדיבאגר"
 date:                  2024-01-26T04:10:48.890213-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש בדיבאגר"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/using-a-debugger.md"
 ---

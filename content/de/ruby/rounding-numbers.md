@@ -3,8 +3,7 @@ title:                "Zahlen runden"
 date:                  2024-01-26T03:46:56.837698-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zahlen runden"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/rounding-numbers.md"
 ---

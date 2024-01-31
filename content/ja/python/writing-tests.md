@@ -1,10 +1,8 @@
 ---
 title:                "テストの作成"
 date:                  2024-01-19
-html_title:           "Bash: テストの作成"
 simple_title:         "テストの作成"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Testing and Debugging"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/writing-tests.md"

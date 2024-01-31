@@ -3,8 +3,7 @@ title:                "Xử lý lỗi"
 date:                  2024-01-28T22:02:22.327505-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xử lý lỗi"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/handling-errors.md"
 changelog:

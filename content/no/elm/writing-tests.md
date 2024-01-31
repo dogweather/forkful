@@ -1,10 +1,8 @@
 ---
 title:                "Skriving av tester"
 date:                  2024-01-19
-html_title:           "Arduino: Skriving av tester"
 simple_title:         "Skriving av tester"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/writing-tests.md"
 ---

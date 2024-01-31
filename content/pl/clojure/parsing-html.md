@@ -1,10 +1,8 @@
 ---
 title:                "Przetwarzanie HTML"
 date:                  2024-01-20T15:30:58.339960-07:00
-html_title:           "Bash: Przetwarzanie HTML"
 simple_title:         "Przetwarzanie HTML"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/parsing-html.md"
 ---

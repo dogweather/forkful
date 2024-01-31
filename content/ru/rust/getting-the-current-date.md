@@ -3,8 +3,7 @@ title:                "Получение текущей даты"
 date:                  2024-01-28T23:58:45.712003-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Получение текущей даты"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/rust/getting-the-current-date.md"
 changelog:

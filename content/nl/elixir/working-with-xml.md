@@ -3,8 +3,7 @@ title:                "Werken met XML"
 date:                  2024-01-28T22:11:15.639804-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met XML"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/working-with-xml.md"
 changelog:

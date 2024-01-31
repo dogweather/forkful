@@ -3,8 +3,7 @@ title:                "Tekstitiedoston lukeminen"
 date:                  2024-01-20T17:53:58.185761-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/reading-a-text-file.md"
 ---

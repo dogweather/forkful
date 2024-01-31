@@ -3,8 +3,7 @@ title:                "Використання інтерактивної об�
 date:                  2024-01-26T04:14:57.388028-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання інтерактивної оболонки (REPL)"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/fish-shell/using-an-interactive-shell-repl.md"
 ---

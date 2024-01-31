@@ -1,10 +1,8 @@
 ---
 title:                "处理 JSON 数据"
 date:                  2024-01-19
-html_title:           "Bash: 处理 JSON 数据"
 simple_title:         "处理 JSON 数据"
-programming_language: "Bash"
-category:             "Bash"
+
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/working-with-json.md"

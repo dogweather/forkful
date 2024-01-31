@@ -3,8 +3,7 @@ title:                "Å sende en HTTP-forespørsel"
 date:                  2024-01-20T17:59:04.057114-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Å sende en HTTP-forespørsel"
-programming_language: "C"
-category:             "C"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/sending-an-http-request.md"
 ---

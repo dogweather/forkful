@@ -3,8 +3,7 @@ title:                "Видалення лапок зі строки"
 date:                  2024-01-26T03:41:47.101019-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Видалення лапок зі строки"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/python/removing-quotes-from-a-string.md"
 ---

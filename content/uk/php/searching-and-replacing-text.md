@@ -3,8 +3,7 @@ title:                "Пошук та заміна тексту"
 date:                  2024-01-20T17:58:56.565243-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Пошук та заміна тексту"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/php/searching-and-replacing-text.md"
 ---

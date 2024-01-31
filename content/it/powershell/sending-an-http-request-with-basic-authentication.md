@@ -3,8 +3,7 @@ title:                "Inviare una richiesta http con autenticazione di base"
 date:                  2024-01-20T18:02:18.264751-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http con autenticazione di base"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/sending-an-http-request-with-basic-authentication.md"
 ---

@@ -3,8 +3,7 @@ title:                "Att arbeta med komplexa tal"
 date:                  2024-01-26T04:39:35.364350-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att arbeta med komplexa tal"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/working-with-complex-numbers.md"
 ---

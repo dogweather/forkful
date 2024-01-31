@@ -1,10 +1,8 @@
 ---
 title:                "Analyse d'une date à partir d'une chaîne de caractères"
 date:                  2024-01-20T15:38:39.167182-07:00
-html_title:           "Arduino: Analyse d'une date à partir d'une chaîne de caractères"
 simple_title:         "Analyse d'une date à partir d'une chaîne de caractères"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/parsing-a-date-from-a-string.md"
 ---

@@ -3,8 +3,7 @@ title:                "Получение текущей даты"
 date:                  2024-01-28T23:58:48.430346-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Получение текущей даты"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/swift/getting-the-current-date.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "Använda en interaktiv skal (REPL)"
 date:                  2024-01-26T04:17:11.879919-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Använda en interaktiv skal (REPL)"
-programming_language: "Python"
-category:             "Python"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/using-an-interactive-shell-repl.md"
 ---

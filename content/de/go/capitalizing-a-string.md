@@ -1,10 +1,8 @@
 ---
 title:                "String in Großbuchstaben umwandeln"
 date:                  2024-01-19
-html_title:           "C: String in Großbuchstaben umwandeln"
 simple_title:         "String in Großbuchstaben umwandeln"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/capitalizing-a-string.md"
 ---

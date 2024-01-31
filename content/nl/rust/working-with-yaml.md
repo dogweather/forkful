@@ -3,8 +3,7 @@ title:                "Werken met YAML"
 date:                  2024-01-28T22:12:27.393493-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met YAML"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/working-with-yaml.md"
 changelog:

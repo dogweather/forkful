@@ -1,10 +1,8 @@
 ---
 title:                "Wykorzystanie wyrażeń regularnych"
 date:                  2024-01-19
-html_title:           "Arduino: Wykorzystanie wyrażeń regularnych"
 simple_title:         "Wykorzystanie wyrażeń regularnych"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/using-regular-expressions.md"
 ---

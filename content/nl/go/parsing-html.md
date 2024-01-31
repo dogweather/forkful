@@ -3,8 +3,7 @@ title:                "HTML Parsen"
 date:                  2024-01-28T22:03:40.671443-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML Parsen"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/parsing-html.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "Lavorare con i numeri complessi"
 date:                  2024-01-26T04:36:58.626099-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con i numeri complessi"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/working-with-complex-numbers.md"
 ---

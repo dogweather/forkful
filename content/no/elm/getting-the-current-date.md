@@ -1,10 +1,8 @@
 ---
 title:                "Slik får du tak i dagens dato"
 date:                  2024-01-20T15:14:18.979784-07:00
-html_title:           "C: Slik får du tak i dagens dato"
 simple_title:         "Slik får du tak i dagens dato"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/getting-the-current-date.md"
 ---

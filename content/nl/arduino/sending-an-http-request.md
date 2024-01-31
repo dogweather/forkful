@@ -3,8 +3,7 @@ title:                "Een HTTP-verzoek verzenden"
 date:                  2024-01-28T22:07:47.606435-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een HTTP-verzoek verzenden"
-programming_language: "Arduino"
-category:             "Arduino"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/sending-an-http-request.md"
 changelog:

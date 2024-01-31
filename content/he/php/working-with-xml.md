@@ -3,8 +3,7 @@ title:                "עבודה עם XML"
 date:                  2024-01-26T04:34:24.619293-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם XML"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/php/working-with-xml.md"
 ---

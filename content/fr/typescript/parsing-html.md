@@ -1,10 +1,8 @@
 ---
 title:                "Analyse syntaxique de HTML"
 date:                  2024-01-20T15:34:24.432021-07:00
-html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/parsing-html.md"
 ---

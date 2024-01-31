@@ -3,8 +3,7 @@ title:                "Làm việc với YAML"
 date:                  2024-01-28T22:12:11.479201-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với YAML"
-programming_language: "Javascript"
-category:             "Javascript"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/working-with-yaml.md"
 changelog:

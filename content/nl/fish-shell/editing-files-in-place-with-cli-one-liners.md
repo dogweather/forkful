@@ -3,8 +3,7 @@ title:                "Bestanden ter plekke bewerken met CLI one-liners"
 date:                  2024-01-28T21:59:49.211927-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bestanden ter plekke bewerken met CLI one-liners"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/editing-files-in-place-with-cli-one-liners.md"
 changelog:

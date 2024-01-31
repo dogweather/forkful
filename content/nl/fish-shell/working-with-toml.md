@@ -3,8 +3,7 @@ title:                "Werken met TOML"
 date:                  2024-01-28T22:10:44.692781-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met TOML"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/working-with-toml.md"
 changelog:

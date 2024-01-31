@@ -3,8 +3,7 @@ title:                "Å jobbe med XML"
 date:                  2024-01-26T04:28:25.436705-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å jobbe med XML"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/working-with-xml.md"
 ---

@@ -1,10 +1,8 @@
 ---
 title:                "Skriva tester"
 date:                  2024-01-19
-html_title:           "Arduino: Skriva tester"
 simple_title:         "Skriva tester"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/writing-tests.md"
 ---

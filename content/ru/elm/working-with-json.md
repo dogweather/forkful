@@ -3,8 +3,7 @@ title:                "Работа с JSON"
 date:                  2024-01-29T00:04:33.669891-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с JSON"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elm/working-with-json.md"
 changelog:

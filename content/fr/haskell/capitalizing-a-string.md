@@ -1,10 +1,8 @@
 ---
 title:                "Mettre une chaîne de caractères en majuscules"
 date:                  2024-01-19
-html_title:           "C: Mettre une chaîne de caractères en majuscules"
 simple_title:         "Mettre une chaîne de caractères en majuscules"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/capitalizing-a-string.md"
 ---

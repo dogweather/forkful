@@ -3,8 +3,7 @@ title:                "Làm việc với JSON"
 date:                  2024-01-28T22:10:44.003807-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với JSON"
-programming_language: "PHP"
-category:             "PHP"
+
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/php/working-with-json.md"
 changelog:

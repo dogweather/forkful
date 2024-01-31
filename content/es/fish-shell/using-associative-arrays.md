@@ -3,8 +3,7 @@ title:                "Uso de matrices asociativas"
 date:                  2024-01-30T19:10:53.655418-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Uso de matrices asociativas"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/using-associative-arrays.md"
 changelog:

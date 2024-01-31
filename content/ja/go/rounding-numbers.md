@@ -3,8 +3,7 @@ title:                "数値の丸め処理"
 date:                  2024-01-26T03:45:25.359702-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "数値の丸め処理"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/rounding-numbers.md"
 ---

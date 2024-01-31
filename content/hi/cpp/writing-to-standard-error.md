@@ -1,10 +1,8 @@
 ---
 title:                "मानक त्रुटि में लिखना"
 date:                  2024-01-19
-html_title:           "Arduino: मानक त्रुटि में लिखना"
 simple_title:         "मानक त्रुटि में लिखना"
-programming_language: "C++"
-category:             "C++"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/writing-to-standard-error.md"
 ---

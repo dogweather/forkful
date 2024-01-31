@@ -3,8 +3,7 @@ title:                "Merkkijonosta lainausmerkkien poistaminen"
 date:                  2024-01-26T03:41:34.515772-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonosta lainausmerkkien poistaminen"
-programming_language: "Ruby"
-category:             "Ruby"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/removing-quotes-from-a-string.md"
 ---

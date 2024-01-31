@@ -3,8 +3,7 @@ title:                "Phân Tích Cú Pháp HTML"
 date:                  2024-01-28T22:03:59.620711-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Phân Tích Cú Pháp HTML"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/clojure/parsing-html.md"
 changelog:

@@ -3,8 +3,7 @@ title:                "Een webpagina downloaden"
 date:                  2024-01-28T21:58:55.981178-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een webpagina downloaden"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/downloading-a-web-page.md"
 changelog:

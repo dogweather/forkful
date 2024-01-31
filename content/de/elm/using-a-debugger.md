@@ -3,8 +3,7 @@ title:                "Einsatz eines Debuggers"
 date:                  2024-01-26T03:48:50.858891-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Einsatz eines Debuggers"
-programming_language: "Elm"
-category:             "Elm"
+
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/using-a-debugger.md"
 ---

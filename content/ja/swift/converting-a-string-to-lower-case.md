@@ -3,8 +3,7 @@ title:                "文字列を小文字に変換"
 date:                  2024-01-20T17:39:18.661902-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "文字列を小文字に変換"
-programming_language: "Swift"
-category:             "Swift"
+
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/converting-a-string-to-lower-case.md"

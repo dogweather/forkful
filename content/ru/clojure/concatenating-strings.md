@@ -3,8 +3,7 @@ title:                "Склеивание строк"
 date:                  2024-01-28T23:55:58.881059-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Склеивание строк"
-programming_language: "Clojure"
-category:             "Clojure"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/clojure/concatenating-strings.md"
 changelog:

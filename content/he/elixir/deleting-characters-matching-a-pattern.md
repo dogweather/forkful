@@ -3,8 +3,7 @@ title:                "מחיקת תווים התואמים לתבנית"
 date:                  2024-01-20T17:42:21.030061-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "מחיקת תווים התואמים לתבנית"
-programming_language: "Elixir"
-category:             "Elixir"
+
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/deleting-characters-matching-a-pattern.md"
 ---

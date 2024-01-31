@@ -3,8 +3,7 @@ title:                "कमांड लाइन आर्गुमेंट�
 date:                  2024-01-20T17:57:23.878537-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "कमांड लाइन आर्गुमेंट्स पढ़ना"
-programming_language: "Rust"
-category:             "Rust"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/rust/reading-command-line-arguments.md"
 ---

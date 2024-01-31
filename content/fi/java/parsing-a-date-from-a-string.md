@@ -1,10 +1,8 @@
 ---
 title:                "Merkkijonosta päivämäärän jäsentäminen"
 date:                  2024-01-20T15:36:51.341190-07:00
-html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
 simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
-programming_language: "Java"
-category:             "Java"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/parsing-a-date-from-a-string.md"
 ---

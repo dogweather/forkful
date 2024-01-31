@@ -3,8 +3,7 @@ title:                "עיגול מספרים"
 date:                  2024-01-26T03:46:36.922010-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עיגול מספרים"
-programming_language: "PowerShell"
-category:             "PowerShell"
+
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/powershell/rounding-numbers.md"
 ---

@@ -3,8 +3,7 @@ title:                "Converting a date into a string"
 date:                  2024-01-20T17:37:38.018725-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Converting a date into a string"
-programming_language: "TypeScript"
-category:             "TypeScript"
+
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/converting-a-date-into-a-string.md"
 ---

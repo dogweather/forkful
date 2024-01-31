@@ -1,10 +1,8 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
 date:                  2024-01-20T14:56:57.726025-07:00
-html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/checking-if-a-directory-exists.md"
 ---

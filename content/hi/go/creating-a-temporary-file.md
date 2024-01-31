@@ -3,8 +3,7 @@ title:                "अस्थायी फाइल बनाना"
 date:                  2024-01-20T17:40:43.730002-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "अस्थायी फाइल बनाना"
-programming_language: "Go"
-category:             "Go"
+
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/go/creating-a-temporary-file.md"
 ---

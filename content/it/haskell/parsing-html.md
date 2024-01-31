@@ -1,10 +1,8 @@
 ---
 title:                "Analisi dell'HTML"
 date:                  2024-01-20T15:32:12.868016-07:00
-html_title:           "Bash: Analisi dell'HTML"
 simple_title:         "Analisi dell'HTML"
-programming_language: "Haskell"
-category:             "Haskell"
+
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/parsing-html.md"
 ---

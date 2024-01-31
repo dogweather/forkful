@@ -3,8 +3,7 @@ title:                "Manipulation de fichiers avec des commandes en une ligne 
 date:                  2024-01-27T16:20:52.565808-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulation de fichiers avec des commandes en une ligne en CLI"
-programming_language: "Fish Shell"
-category:             "Fish Shell"
+
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/manipulating-files-with-cli-one-liners.md"
 ---
