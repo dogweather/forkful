@@ -3,7 +3,7 @@ title:                "HTML:n jäsentäminen"
 date:                  2024-01-20T15:31:27.791692-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/parsing-html.md"

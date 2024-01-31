@@ -3,7 +3,7 @@ title:                "Lavorare con XML"
 date:                  2024-01-26T04:31:45.867045-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con XML"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/working-with-xml.md"

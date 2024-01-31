@@ -3,7 +3,7 @@ title:                "Generering av tilfeldige tall"
 date:                  2024-01-27T20:34:57.089310-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generering av tilfeldige tall"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/generating-random-numbers.md"

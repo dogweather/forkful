@@ -3,7 +3,7 @@ title:                "Kirjoittaminen vakiovirheeseen"
 date:                  2024-01-19
 html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
 simple_title:         "Kirjoittaminen vakiovirheeseen"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/writing-to-standard-error.md"

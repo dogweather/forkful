@@ -3,7 +3,7 @@ title:                "Análisis de HTML"
 date:                  2024-01-20T15:30:14.375462-07:00
 html_title:           "Arduino: Análisis de HTML"
 simple_title:         "Análisis de HTML"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/parsing-html.md"

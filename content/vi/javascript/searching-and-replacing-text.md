@@ -3,7 +3,7 @@ title:                "Tìm kiếm và thay thế văn bản"
 date:                  2024-01-28T22:07:25.860378-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tìm kiếm và thay thế văn bản"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/searching-and-replacing-text.md"

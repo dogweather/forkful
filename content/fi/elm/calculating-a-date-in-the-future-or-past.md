@@ -3,7 +3,7 @@ title:                "Tulevan tai menneen päivämäärän laskeminen"
 date:                  2024-01-20T17:31:03.533254-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/calculating-a-date-in-the-future-or-past.md"

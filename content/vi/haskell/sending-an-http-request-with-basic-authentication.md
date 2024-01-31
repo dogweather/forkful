@@ -3,7 +3,7 @@ title:                "Gửi một yêu cầu HTTP với xác thực cơ bản"
 date:                  2024-01-28T22:08:20.542826-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gửi một yêu cầu HTTP với xác thực cơ bản"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/sending-an-http-request-with-basic-authentication.md"

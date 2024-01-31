@@ -3,7 +3,7 @@ title:                "텍스트 파일 읽기"
 date:                  2024-01-20T17:54:42.623259-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "텍스트 파일 읽기"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

@@ -3,7 +3,7 @@ title:                "使用基本认证发送 HTTP 请求"
 date:                  2024-01-20T18:02:11.484220-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "使用基本认证发送 HTTP 请求"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true

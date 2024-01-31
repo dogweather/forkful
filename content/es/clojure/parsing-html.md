@@ -3,7 +3,7 @@ title:                "Análisis de HTML"
 date:                  2024-01-20T15:30:57.210334-07:00
 html_title:           "Arduino: Análisis de HTML"
 simple_title:         "Análisis de HTML"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/parsing-html.md"

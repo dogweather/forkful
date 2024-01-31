@@ -3,7 +3,7 @@ title:                "Arbeiten mit TOML"
 date:                  2024-01-26T04:20:34.391271-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeiten mit TOML"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/working-with-toml.md"

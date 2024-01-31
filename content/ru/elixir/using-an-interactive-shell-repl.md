@@ -3,7 +3,7 @@ title:                "Использование интерактивной о�
 date:                  2024-01-29T00:03:18.928512-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование интерактивной оболочки (REPL)"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elixir/using-an-interactive-shell-repl.md"

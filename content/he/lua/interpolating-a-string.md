@@ -3,7 +3,7 @@ title:                "שרבוב מחרוזת"
 date:                  2024-01-20T17:51:52.514123-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "שרבוב מחרוזת"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/lua/interpolating-a-string.md"

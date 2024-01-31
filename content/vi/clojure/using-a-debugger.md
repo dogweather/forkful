@@ -3,7 +3,7 @@ title:                "Sử dụng bộ gỡ lỗi"
 date:                  2024-01-28T22:08:49.513048-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng bộ gỡ lỗi"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/clojure/using-a-debugger.md"

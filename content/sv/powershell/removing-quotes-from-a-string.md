@@ -3,7 +3,7 @@ title:                "Ta bort citattecken från en sträng"
 date:                  2024-01-26T03:41:15.660312-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ta bort citattecken från en sträng"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/removing-quotes-from-a-string.md"

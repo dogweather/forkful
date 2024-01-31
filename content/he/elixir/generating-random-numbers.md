@@ -3,7 +3,7 @@ title:                "גילוי מספרים אקראיים"
 date:                  2024-01-27T20:33:56.820995-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "גילוי מספרים אקראיים"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/generating-random-numbers.md"

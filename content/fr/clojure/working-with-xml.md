@@ -3,7 +3,7 @@ title:                "Travailler avec XML"
 date:                  2024-01-26T04:29:03.622343-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec XML"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/working-with-xml.md"

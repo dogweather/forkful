@@ -3,7 +3,7 @@ title:                "Väliaikaistiedoston luominen"
 date:                  2024-01-20T17:39:47.594551-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Väliaikaistiedoston luominen"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/creating-a-temporary-file.md"

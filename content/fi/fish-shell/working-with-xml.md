@@ -3,7 +3,7 @@ title:                "XML:n käsittely"
 date:                  2024-01-26T04:30:26.617499-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML:n käsittely"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/working-with-xml.md"

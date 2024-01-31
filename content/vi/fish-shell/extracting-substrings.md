@@ -3,7 +3,7 @@ title:                "Trích xuất chuỗi con"
 date:                  2024-01-28T21:59:55.919454-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trích xuất chuỗi con"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/extracting-substrings.md"

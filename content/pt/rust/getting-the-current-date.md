@@ -3,7 +3,7 @@ title:                "Obtendo a data atual"
 date:                  2024-01-20T15:16:26.369794-07:00
 html_title:           "Bash: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/getting-the-current-date.md"

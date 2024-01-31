@@ -3,7 +3,7 @@ title:                "Organizing code into functions"
 date:                  2024-01-25T02:59:30.238639-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organizing code into functions"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/organizing-code-into-functions.md"

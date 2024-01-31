@@ -3,7 +3,7 @@ title:                "डीबगर का उपयोग करना"
 date:                  2024-01-26T04:10:36.345711-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डीबगर का उपयोग करना"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/powershell/using-a-debugger.md"

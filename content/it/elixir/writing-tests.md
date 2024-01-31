@@ -3,7 +3,7 @@ title:                "Scrivere test"
 date:                  2024-01-19
 html_title:           "Arduino: Scrivere test"
 simple_title:         "Scrivere test"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/writing-tests.md"

@@ -3,7 +3,7 @@ title:                "Работа с комплексными числами"
 date:                  2024-01-29T00:05:40.982398-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с комплексными числами"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/fish-shell/working-with-complex-numbers.md"

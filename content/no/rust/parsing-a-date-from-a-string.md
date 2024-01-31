@@ -3,7 +3,7 @@ title:                "Tolke en dato fra en streng"
 date:                  2024-01-20T15:38:35.532488-07:00
 html_title:           "Arduino: Tolke en dato fra en streng"
 simple_title:         "Tolke en dato fra en streng"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/parsing-a-date-from-a-string.md"

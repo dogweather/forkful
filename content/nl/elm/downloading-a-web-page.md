@@ -3,7 +3,7 @@ title:                "Een webpagina downloaden"
 date:                  2024-01-28T21:59:32.971871-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een webpagina downloaden"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/downloading-a-web-page.md"

@@ -3,7 +3,7 @@ title:                "Downloading a web page"
 date:                  2024-01-20T17:43:30.213686-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Downloading a web page"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/downloading-a-web-page.md"

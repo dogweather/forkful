@@ -3,7 +3,7 @@ title:                "解析HTML"
 date:                  2024-01-20T15:31:46.681732-07:00
 html_title:           "Bash: 解析HTML"
 simple_title:         "解析HTML"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true

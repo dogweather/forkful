@@ -3,7 +3,7 @@ title:                "Преобразование строки в нижний
 date:                  2024-01-28T23:56:42.352629-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в нижний регистр"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/typescript/converting-a-string-to-lower-case.md"

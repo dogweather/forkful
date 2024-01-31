@@ -3,7 +3,7 @@ title:                "Att göra en sträng versal"
 date:                  2024-01-19
 html_title:           "Bash: Att göra en sträng versal"
 simple_title:         "Att göra en sträng versal"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/capitalizing-a-string.md"

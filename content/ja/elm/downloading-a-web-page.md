@@ -3,7 +3,7 @@ title:                "ウェブページのダウンロード"
 date:                  2024-01-20T17:44:10.659167-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "ウェブページのダウンロード"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true

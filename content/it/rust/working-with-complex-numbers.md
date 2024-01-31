@@ -3,7 +3,7 @@ title:                "Lavorare con i numeri complessi"
 date:                  2024-01-26T04:45:19.054577-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con i numeri complessi"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/working-with-complex-numbers.md"

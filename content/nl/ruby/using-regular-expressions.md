@@ -3,7 +3,7 @@ title:                "Reguliere expressies gebruiken"
 date:                  2024-01-28T22:09:40.202043-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reguliere expressies gebruiken"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/using-regular-expressions.md"

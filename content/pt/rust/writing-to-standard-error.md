@@ -3,7 +3,7 @@ title:                "Escrevendo no erro padrão"
 date:                  2024-01-19
 html_title:           "Arduino: Escrevendo no erro padrão"
 simple_title:         "Escrevendo no erro padrão"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/writing-to-standard-error.md"

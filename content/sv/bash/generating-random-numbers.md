@@ -3,7 +3,7 @@ title:                "Generera slumptal"
 date:                  2024-01-27T20:32:40.897209-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generera slumptal"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/generating-random-numbers.md"

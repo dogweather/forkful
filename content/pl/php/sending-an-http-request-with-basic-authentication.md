@@ -3,7 +3,7 @@ title:                "Wysyłanie zapytania http z podstawową autoryzacją"
 date:                  2024-01-20T18:02:09.811628-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/sending-an-http-request-with-basic-authentication.md"

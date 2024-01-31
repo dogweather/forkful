@@ -3,7 +3,7 @@ title:                "עבודה עם מספרים מרוכבים"
 date:                  2024-01-26T04:42:20.057984-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם מספרים מרוכבים"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/working-with-complex-numbers.md"

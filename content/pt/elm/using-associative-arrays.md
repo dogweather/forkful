@@ -3,7 +3,7 @@ title:                "Usando arrays associativos"
 date:                  2024-01-30T19:10:53.839837-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando arrays associativos"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/using-associative-arrays.md"

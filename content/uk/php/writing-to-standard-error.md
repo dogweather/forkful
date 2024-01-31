@@ -3,7 +3,7 @@ title:                "Запис в стандартний потік поми�
 date:                  2024-01-19
 html_title:           "Arduino: Запис в стандартний потік помилок"
 simple_title:         "Запис в стандартний потік помилок"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/php/writing-to-standard-error.md"

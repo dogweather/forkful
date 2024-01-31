@@ -3,7 +3,7 @@ title:                "Capitalizando uma string"
 date:                  2024-01-19
 html_title:           "Bash: Capitalizando uma string"
 simple_title:         "Capitalizando uma string"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/capitalizing-a-string.md"

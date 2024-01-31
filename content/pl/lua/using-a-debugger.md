@@ -3,7 +3,7 @@ title:                "Korzystanie z debugera"
 date:                  2024-01-26T03:50:31.284215-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z debugera"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/using-a-debugger.md"

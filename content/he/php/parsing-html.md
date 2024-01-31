@@ -3,7 +3,7 @@ title:                "ניתוח HTML"
 date:                  2024-01-20T15:33:09.939096-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/php/parsing-html.md"

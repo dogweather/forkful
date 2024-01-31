@@ -3,7 +3,7 @@ title:                "कोड सुधार"
 date:                  2024-01-26T03:38:14.042386-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड सुधार"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/python/refactoring.md"

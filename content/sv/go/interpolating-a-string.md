@@ -3,7 +3,7 @@ title:                "Interpolera en sträng"
 date:                  2024-01-20T17:50:45.986434-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolera en sträng"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/interpolating-a-string.md"

@@ -3,7 +3,7 @@ title:                "テストの作成"
 date:                  2024-01-19
 html_title:           "Bash: テストの作成"
 simple_title:         "テストの作成"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Testing and Debugging"
 isCJKLanguage:        true

@@ -3,7 +3,7 @@ title:                "Registrazione Eventi (Logging)"
 date:                  2024-01-26T01:01:11.287933-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Registrazione Eventi (Logging)"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/logging.md"

@@ -3,7 +3,7 @@ title:                "Een debugger gebruiken"
 date:                  2024-01-28T22:09:44.760902-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een debugger gebruiken"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/python/using-a-debugger.md"

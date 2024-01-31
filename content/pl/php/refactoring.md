@@ -3,7 +3,7 @@ title:                "Refaktoryzacja"
 date:                  2024-01-26T01:50:00.602784-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktoryzacja"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/refactoring.md"

@@ -3,7 +3,7 @@ title:                "Concatenación de cadenas"
 date:                  2024-01-27T10:42:28.298638-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Concatenación de cadenas"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/concatenating-strings.md"

@@ -3,7 +3,7 @@ title:                "Manipulando archivos con comandos de línea de una sola l
 date:                  2024-01-27T16:21:07.606182-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulando archivos con comandos de línea de una sola línea"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/manipulating-files-with-cli-one-liners.md"

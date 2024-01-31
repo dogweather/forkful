@@ -3,7 +3,7 @@ title:                "Разбор HTML"
 date:                  2024-01-29T00:00:16.868192-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Разбор HTML"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/ruby/parsing-html.md"

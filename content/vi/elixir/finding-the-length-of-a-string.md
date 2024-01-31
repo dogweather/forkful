@@ -3,7 +3,7 @@ title:                "Tìm chiều dài của một chuỗi ký tự"
 date:                  2024-01-28T22:00:14.870016-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tìm chiều dài của một chuỗi ký tự"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/finding-the-length-of-a-string.md"

@@ -3,7 +3,7 @@ title:                "Rounding numbers"
 date:                  2024-01-25T02:59:57.763595-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Rounding numbers"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/rounding-numbers.md"

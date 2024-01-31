@@ -3,7 +3,7 @@ title:                "Extrahera delsträngar"
 date:                  2024-01-20T17:46:35.844550-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extrahera delsträngar"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/extracting-substrings.md"

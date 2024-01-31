@@ -3,7 +3,7 @@ title:                "Debug-output afdrukken"
 date:                  2024-01-28T22:04:31.776699-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debug-output afdrukken"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/printing-debug-output.md"

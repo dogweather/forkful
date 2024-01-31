@@ -3,7 +3,7 @@ title:                "Code organiseren in functies"
 date:                  2024-01-28T22:02:53.682990-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Code organiseren in functies"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/organizing-code-into-functions.md"

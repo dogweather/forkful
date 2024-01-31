@@ -3,7 +3,7 @@ title:                "Aktuelles Datum abrufen"
 date:                  2024-01-20T15:14:50.316266-07:00
 html_title:           "C: Aktuelles Datum abrufen"
 simple_title:         "Aktuelles Datum abrufen"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/getting-the-current-date.md"

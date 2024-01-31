@@ -3,7 +3,7 @@ title:                "Redondeo de números"
 date:                  2024-01-26T03:45:33.904575-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redondeo de números"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/rounding-numbers.md"

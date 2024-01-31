@@ -3,7 +3,7 @@ title:                "Uso de matrices asociativas"
 date:                  2024-01-30T19:10:05.523071-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Uso de matrices asociativas"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/using-associative-arrays.md"

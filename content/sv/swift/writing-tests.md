@@ -3,7 +3,7 @@ title:                "Skriva tester"
 date:                  2024-01-19
 html_title:           "Arduino: Skriva tester"
 simple_title:         "Skriva tester"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/writing-tests.md"

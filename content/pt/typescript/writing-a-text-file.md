@@ -3,7 +3,7 @@ title:                "Escrevendo um arquivo de texto"
 date:                  2024-01-19
 html_title:           "Arduino: Escrevendo um arquivo de texto"
 simple_title:         "Escrevendo um arquivo de texto"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/writing-a-text-file.md"

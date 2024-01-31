@@ -3,7 +3,7 @@ title:                "Nội suy chuỗi ký tự"
 date:                  2024-01-28T22:02:20.990610-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nội suy chuỗi ký tự"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/interpolating-a-string.md"

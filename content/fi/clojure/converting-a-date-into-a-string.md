@@ -3,7 +3,7 @@ title:                "Päivämäärän muuntaminen merkkijonoksi"
 date:                  2024-01-20T17:36:19.612974-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/converting-a-date-into-a-string.md"

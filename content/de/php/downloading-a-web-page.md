@@ -3,7 +3,7 @@ title:                "Webseite herunterladen"
 date:                  2024-01-20T17:44:57.086864-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Webseite herunterladen"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/downloading-a-web-page.md"

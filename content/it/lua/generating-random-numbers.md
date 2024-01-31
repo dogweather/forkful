@@ -3,7 +3,7 @@ title:                "Generazione di numeri casuali"
 date:                  2024-01-27T20:34:40.838596-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generazione di numeri casuali"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/lua/generating-random-numbers.md"

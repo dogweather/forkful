@@ -3,7 +3,7 @@ title:                "ניתוח HTML"
 date:                  2024-01-20T15:32:04.939461-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/go/parsing-html.md"

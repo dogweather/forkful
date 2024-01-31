@@ -3,7 +3,7 @@ title:                "डीबगर का उपयोग करना"
 date:                  2024-01-26T04:12:02.818778-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डीबगर का उपयोग करना"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/using-a-debugger.md"

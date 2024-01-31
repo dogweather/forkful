@@ -3,7 +3,7 @@ title:                "Beregning av en dato i fremtiden eller fortiden"
 date:                  2024-01-20T17:31:28.575657-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Beregning av en dato i fremtiden eller fortiden"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/calculating-a-date-in-the-future-or-past.md"

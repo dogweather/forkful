@@ -3,7 +3,7 @@ title:                "HTML Parsen"
 date:                  2024-01-28T22:03:29.110491-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML Parsen"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/parsing-html.md"

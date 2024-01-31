@@ -3,7 +3,7 @@ title:                "Arredondamento de números"
 date:                  2024-01-26T03:46:57.107413-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arredondamento de números"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/rounding-numbers.md"

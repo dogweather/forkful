@@ -3,7 +3,7 @@ title:                "Debug-output afdrukken"
 date:                  2024-01-28T22:05:04.743713-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debug-output afdrukken"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/python/printing-debug-output.md"

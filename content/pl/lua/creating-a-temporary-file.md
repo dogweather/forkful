@@ -3,7 +3,7 @@ title:                "Tworzenie pliku tymczasowego"
 date:                  2024-01-20T17:40:43.619873-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tworzenie pliku tymczasowego"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/creating-a-temporary-file.md"

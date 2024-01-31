@@ -3,7 +3,7 @@ title:                "שימוש במערכים אסוציאטיביים"
 date:                  2024-01-30T19:11:56.467450-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במערכים אסוציאטיביים"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/go/using-associative-arrays.md"

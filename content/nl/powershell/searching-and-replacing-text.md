@@ -3,7 +3,7 @@ title:                "Tekst zoeken en vervangen"
 date:                  2024-01-28T22:07:14.191039-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tekst zoeken en vervangen"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/searching-and-replacing-text.md"

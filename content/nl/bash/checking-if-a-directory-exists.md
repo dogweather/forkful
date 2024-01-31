@@ -3,7 +3,7 @@ title:                "Controleren of een directory bestaat"
 date:                  2024-01-28T21:55:36.294188-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Controleren of een directory bestaat"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/checking-if-a-directory-exists.md"

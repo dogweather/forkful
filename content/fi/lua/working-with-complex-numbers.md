@@ -3,7 +3,7 @@ title:                "Kompleksilukujen käsittely"
 date:                  2024-01-26T04:43:17.953657-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kompleksilukujen käsittely"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/working-with-complex-numbers.md"

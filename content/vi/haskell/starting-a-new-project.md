@@ -3,7 +3,7 @@ title:                "Bắt đầu một dự án mới"
 date:                  2024-01-28T22:08:50.147581-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bắt đầu một dự án mới"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/starting-a-new-project.md"

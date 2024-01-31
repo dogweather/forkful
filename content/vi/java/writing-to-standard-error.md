@@ -3,7 +3,7 @@ title:                "Ghi vào lỗi chuẩn"
 date:                  2024-01-28T22:13:36.287951-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi vào lỗi chuẩn"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/writing-to-standard-error.md"

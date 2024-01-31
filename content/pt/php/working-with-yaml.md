@@ -3,7 +3,7 @@ title:                "Trabalhando com YAML"
 date:                  2024-01-19
 html_title:           "Arduino: Trabalhando com YAML"
 simple_title:         "Trabalhando com YAML"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/working-with-yaml.md"

@@ -3,7 +3,7 @@ title:                "Làm việc với số phức"
 date:                  2024-01-28T22:12:20.770940-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với số phức"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/working-with-complex-numbers.md"

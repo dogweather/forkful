@@ -3,7 +3,7 @@ title:                "השוואת שתי תאריכים"
 date:                  2024-01-20T17:33:24.757370-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "השוואת שתי תאריכים"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/go/comparing-two-dates.md"

@@ -3,7 +3,7 @@ title:                "Sprawdzanie, czy katalog istnieje"
 date:                  2024-01-20T14:58:45.979575-07:00
 html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/checking-if-a-directory-exists.md"

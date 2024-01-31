@@ -3,7 +3,7 @@ title:                "עבודה עם קבצי CSV"
 date:                  2024-01-19
 html_title:           "Arduino: עבודה עם קבצי CSV"
 simple_title:         "עבודה עם קבצי CSV"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/working-with-csv.md"

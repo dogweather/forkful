@@ -3,7 +3,7 @@ title:                "生成随机数"
 date:                  2024-01-27T20:34:39.627992-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "生成随机数"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/generating-random-numbers.md"

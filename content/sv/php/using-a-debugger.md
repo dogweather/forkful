@@ -3,7 +3,7 @@ title:                "Att använda en debugger"
 date:                  2024-01-26T03:50:37.644178-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda en debugger"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/using-a-debugger.md"

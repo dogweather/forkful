@@ -3,7 +3,7 @@ title:                "Organizing code into functions"
 date:                  2024-01-25T02:59:51.265561-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organizing code into functions"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/organizing-code-into-functions.md"

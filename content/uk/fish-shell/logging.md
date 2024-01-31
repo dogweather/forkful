@@ -3,7 +3,7 @@ title:                "Логування"
 date:                  2024-01-26T01:04:24.560784-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Логування"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/fish-shell/logging.md"

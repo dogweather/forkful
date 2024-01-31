@@ -3,7 +3,7 @@ title:                "HTTP अनुरोध भेजना"
 date:                  2024-01-20T18:00:46.802210-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP अनुरोध भेजना"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/sending-an-http-request.md"

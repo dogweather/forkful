@@ -3,7 +3,7 @@ title:                "Handling errors"
 date:                  2024-01-21T21:19:52.546193-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Handling errors"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/handling-errors.md"

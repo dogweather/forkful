@@ -3,7 +3,7 @@ title:                "获取当前日期"
 date:                  2024-01-20T15:15:00.629379-07:00
 html_title:           "Bash: 获取当前日期"
 simple_title:         "获取当前日期"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

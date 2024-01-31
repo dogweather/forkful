@@ -3,7 +3,7 @@ title:                "Att hämta aktuellt datum"
 date:                  2024-01-20T15:14:02.745154-07:00
 html_title:           "Bash: Att hämta aktuellt datum"
 simple_title:         "Att hämta aktuellt datum"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/getting-the-current-date.md"

@@ -3,7 +3,7 @@ title:                "生成随机数"
 date:                  2024-01-27T20:32:43.522821-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "生成随机数"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/generating-random-numbers.md"

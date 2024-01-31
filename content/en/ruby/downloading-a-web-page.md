@@ -3,7 +3,7 @@ title:                "Downloading a web page"
 date:                  2024-01-20T17:45:05.202346-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Downloading a web page"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/downloading-a-web-page.md"

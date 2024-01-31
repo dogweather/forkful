@@ -3,7 +3,7 @@ title:                "正規表現の使用"
 date:                  2024-01-19
 html_title:           "C: 正規表現の使用"
 simple_title:         "正規表現の使用"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Strings"
 isCJKLanguage:        true

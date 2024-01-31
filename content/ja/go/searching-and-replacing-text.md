@@ -3,7 +3,7 @@ title:                "テキストの検索と置換"
 date:                  2024-01-20T17:57:50.547183-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "テキストの検索と置換"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Strings"
 isCJKLanguage:        true

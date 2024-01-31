@@ -3,7 +3,7 @@ title:                "Obtenir la date actuelle"
 date:                  2024-01-20T15:13:58.836125-07:00
 html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/getting-the-current-date.md"

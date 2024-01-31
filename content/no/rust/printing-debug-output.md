@@ -3,7 +3,7 @@ title:                "Skrive ut feilsøkingsdata"
 date:                  2024-01-20T17:53:16.537521-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Skrive ut feilsøkingsdata"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/printing-debug-output.md"

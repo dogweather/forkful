@@ -3,7 +3,7 @@ title:                "Working with complex numbers"
 date:                  2024-01-25T02:59:38.100386-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Working with complex numbers"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/working-with-complex-numbers.md"

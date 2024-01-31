@@ -3,7 +3,7 @@ title:                "Commandoregelargumenten lezen"
 date:                  2024-01-28T22:05:24.412933-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Commandoregelargumenten lezen"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/reading-command-line-arguments.md"

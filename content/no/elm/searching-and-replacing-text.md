@@ -3,7 +3,7 @@ title:                "Søking og erstatting av tekst"
 date:                  2024-01-20T17:57:29.802344-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Søking og erstatting av tekst"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/searching-and-replacing-text.md"

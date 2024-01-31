@@ -3,7 +3,7 @@ title:                "स्ट्रिंग को छोटे अक्ष
 date:                  2024-01-20T17:38:45.546700-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "स्ट्रिंग को छोटे अक्षरों में परिवर्तित करना"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/converting-a-string-to-lower-case.md"

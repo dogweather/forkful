@@ -3,7 +3,7 @@ title:                "Извлечение подстрок"
 date:                  2024-01-28T23:57:41.308859-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Извлечение подстрок"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/fish-shell/extracting-substrings.md"

@@ -3,7 +3,7 @@ title:                "从字符串中移除引号"
 date:                  2024-01-26T03:38:11.130876-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "从字符串中移除引号"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/removing-quotes-from-a-string.md"

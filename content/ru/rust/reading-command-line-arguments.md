@@ -3,7 +3,7 @@ title:                "Чтение аргументов командной ст
 date:                  2024-01-29T00:00:50.643948-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Чтение аргументов командной строки"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/rust/reading-command-line-arguments.md"

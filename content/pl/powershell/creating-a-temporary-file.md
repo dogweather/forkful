@@ -3,7 +3,7 @@ title:                "Tworzenie pliku tymczasowego"
 date:                  2024-01-20T17:41:13.845892-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tworzenie pliku tymczasowego"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/creating-a-temporary-file.md"

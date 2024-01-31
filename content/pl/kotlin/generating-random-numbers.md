@@ -3,7 +3,7 @@ title:                "Generowanie liczb losowych"
 date:                  2024-01-27T20:34:17.772647-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generowanie liczb losowych"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/generating-random-numbers.md"

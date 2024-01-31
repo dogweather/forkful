@@ -3,7 +3,7 @@ title:                "Aktuelles Datum abrufen"
 date:                  2024-01-20T15:15:24.945568-07:00
 html_title:           "C: Aktuelles Datum abrufen"
 simple_title:         "Aktuelles Datum abrufen"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/getting-the-current-date.md"

@@ -3,7 +3,7 @@ title:                "Het huidige datum ophalen"
 date:                  2024-01-28T22:01:26.486727-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Het huidige datum ophalen"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/python/getting-the-current-date.md"

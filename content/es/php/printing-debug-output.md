@@ -3,7 +3,7 @@ title:                "Imprimiendo salida de depuración"
 date:                  2024-01-20T17:53:09.336681-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Imprimiendo salida de depuración"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/printing-debug-output.md"

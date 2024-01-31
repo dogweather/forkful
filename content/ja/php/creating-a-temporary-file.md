@@ -3,7 +3,7 @@ title:                "一時ファイルの作成"
 date:                  2024-01-20T17:41:07.485039-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "一時ファイルの作成"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

@@ -3,7 +3,7 @@ title:                "Generación de números aleatorios"
 date:                  2024-01-27T20:35:03.047403-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generación de números aleatorios"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/generating-random-numbers.md"

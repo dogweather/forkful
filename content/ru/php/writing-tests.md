@@ -3,7 +3,7 @@ title:                "Написание тестов"
 date:                  2024-01-29T00:06:02.594220-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Написание тестов"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/php/writing-tests.md"

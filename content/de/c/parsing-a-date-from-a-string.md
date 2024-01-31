@@ -3,7 +3,7 @@ title:                "Datum aus einem String parsen"
 date:                  2024-01-20T15:34:51.467497-07:00
 html_title:           "Arduino: Datum aus einem String parsen"
 simple_title:         "Datum aus einem String parsen"
-programming_language: "C"
+
 category:             "C"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/parsing-a-date-from-a-string.md"

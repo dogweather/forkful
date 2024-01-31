@@ -3,7 +3,7 @@ title:                "Drukowanie komunikatów debugowania"
 date:                  2024-01-20T17:52:50.182752-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/printing-debug-output.md"

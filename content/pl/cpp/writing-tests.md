@@ -3,7 +3,7 @@ title:                "Pisanie testów"
 date:                  2024-01-19
 html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/writing-tests.md"

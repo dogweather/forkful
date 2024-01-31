@@ -3,7 +3,7 @@ title:                "匹配模式删除字符"
 date:                  2024-01-20T17:42:52.901786-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "匹配模式删除字符"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Strings"
 isCJKLanguage:        true

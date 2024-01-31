@@ -3,7 +3,7 @@ title:                "HTTPリクエストの送信"
 date:                  2024-01-20T17:59:56.465443-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTPリクエストの送信"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true

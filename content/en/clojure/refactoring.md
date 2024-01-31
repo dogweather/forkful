@@ -3,7 +3,7 @@ title:                "Refactoring"
 date:                  2024-01-25T02:12:13.409305-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Refactoring"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/refactoring.md"

@@ -3,7 +3,7 @@ title:                "Aktuelles Datum abrufen"
 date:                  2024-01-20T15:16:23.293433-07:00
 html_title:           "C: Aktuelles Datum abrufen"
 simple_title:         "Aktuelles Datum abrufen"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/getting-the-current-date.md"

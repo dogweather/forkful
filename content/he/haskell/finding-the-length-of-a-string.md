@@ -3,7 +3,7 @@ title:                "מציאת אורך מחרוזת"
 date:                  2024-01-20T17:48:00.098169-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "מציאת אורך מחרוזת"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/finding-the-length-of-a-string.md"

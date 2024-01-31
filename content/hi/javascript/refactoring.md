@@ -3,7 +3,7 @@ title:                "कोड की सफाई"
 date:                  2024-01-26T01:43:45.127882-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड की सफाई"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/refactoring.md"

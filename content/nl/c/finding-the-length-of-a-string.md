@@ -3,7 +3,7 @@ title:                "De lengte van een string vinden"
 date:                  2024-01-28T22:00:04.372016-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "De lengte van een string vinden"
-programming_language: "C"
+
 category:             "C"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/finding-the-length-of-a-string.md"

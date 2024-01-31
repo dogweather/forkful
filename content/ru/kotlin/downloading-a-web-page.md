@@ -3,7 +3,7 @@ title:                "Загрузка веб-страницы"
 date:                  2024-01-28T23:57:43.879031-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Загрузка веб-страницы"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/kotlin/downloading-a-web-page.md"

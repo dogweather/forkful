@@ -3,7 +3,7 @@ title:                "Przetwarzanie HTML"
 date:                  2024-01-20T15:30:37.482508-07:00
 html_title:           "Bash: Przetwarzanie HTML"
 simple_title:         "Przetwarzanie HTML"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/parsing-html.md"

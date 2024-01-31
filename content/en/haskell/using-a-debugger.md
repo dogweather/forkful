@@ -3,7 +3,7 @@ title:                "Using a debugger"
 date:                  2024-01-25T20:50:03.292712-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Using a debugger"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/using-a-debugger.md"

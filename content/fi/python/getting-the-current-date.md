@@ -3,7 +3,7 @@ title:                "Nykyisen päivämäärän hankkiminen"
 date:                  2024-01-20T15:16:47.798350-07:00
 html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/getting-the-current-date.md"

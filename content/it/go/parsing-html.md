@@ -3,7 +3,7 @@ title:                "Analisi dell'HTML"
 date:                  2024-01-20T15:31:53.362727-07:00
 html_title:           "Bash: Analisi dell'HTML"
 simple_title:         "Analisi dell'HTML"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/parsing-html.md"

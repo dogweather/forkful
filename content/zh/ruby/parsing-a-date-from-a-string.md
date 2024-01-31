@@ -3,7 +3,7 @@ title:                "从字符串解析日期"
 date:                  2024-01-20T15:38:05.662543-07:00
 html_title:           "Arduino: 从字符串解析日期"
 simple_title:         "从字符串解析日期"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

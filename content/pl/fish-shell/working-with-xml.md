@@ -3,7 +3,7 @@ title:                "Praca z XML"
 date:                  2024-01-26T04:30:57.863462-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z XML"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/working-with-xml.md"

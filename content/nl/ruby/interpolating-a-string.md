@@ -3,7 +3,7 @@ title:                "Een string interpoleren"
 date:                  2024-01-28T22:02:12.715245-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string interpoleren"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/interpolating-a-string.md"

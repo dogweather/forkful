@@ -3,7 +3,7 @@ title:                "난수 생성"
 date:                  2024-01-27T20:33:56.346802-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "난수 생성"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/generating-random-numbers.md"

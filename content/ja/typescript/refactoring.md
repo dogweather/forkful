@@ -3,7 +3,7 @@ title:                "リファクタリング"
 date:                  2024-01-26T03:36:51.624724-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "リファクタリング"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/refactoring.md"

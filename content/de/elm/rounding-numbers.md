@@ -3,7 +3,7 @@ title:                "Zahlen runden"
 date:                  2024-01-26T03:44:03.220410-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zahlen runden"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/rounding-numbers.md"

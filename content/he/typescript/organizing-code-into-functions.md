@@ -3,7 +3,7 @@ title:                "ארגון קוד לתוך פונקציות"
 date:                  2024-01-26T01:16:58.084185-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "ארגון קוד לתוך פונקציות"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/organizing-code-into-functions.md"

@@ -3,7 +3,7 @@ title:                "문자열에서 따옴표 제거하기"
 date:                  2024-01-26T03:39:03.849892-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열에서 따옴표 제거하기"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/removing-quotes-from-a-string.md"

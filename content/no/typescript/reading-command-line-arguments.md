@@ -3,7 +3,7 @@ title:                "Lese kommandolinjeargumenter"
 date:                  2024-01-20T17:56:57.680744-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/reading-command-line-arguments.md"

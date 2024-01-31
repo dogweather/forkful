@@ -3,7 +3,7 @@ title:                "Tạo một tệp tạm thời"
 date:                  2024-01-28T21:58:24.959713-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tạo một tệp tạm thời"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/creating-a-temporary-file.md"

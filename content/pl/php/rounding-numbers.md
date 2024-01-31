@@ -3,7 +3,7 @@ title:                "Zaokrąglanie liczb"
 date:                  2024-01-26T03:46:10.530588-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zaokrąglanie liczb"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/rounding-numbers.md"

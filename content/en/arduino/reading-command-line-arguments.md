@@ -3,7 +3,7 @@ title:                "Reading command line arguments"
 date:                  2024-01-20T17:55:35.017411-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Reading command line arguments"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/reading-command-line-arguments.md"

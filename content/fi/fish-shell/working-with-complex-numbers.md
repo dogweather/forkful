@@ -3,7 +3,7 @@ title:                "Kompleksilukujen käsittely"
 date:                  2024-01-26T04:40:01.518867-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kompleksilukujen käsittely"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/working-with-complex-numbers.md"

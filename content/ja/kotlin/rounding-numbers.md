@@ -3,7 +3,7 @@ title:                "数値の丸め処理"
 date:                  2024-01-26T03:46:01.009833-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "数値の丸め処理"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/rounding-numbers.md"

@@ -3,7 +3,7 @@ title:                "Sammenlikning av to datoer"
 date:                  2024-01-20T17:32:30.657457-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Sammenlikning av to datoer"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/comparing-two-dates.md"

@@ -3,7 +3,7 @@ title:                "Registro de Logs"
 date:                  2024-01-26T01:08:57.899332-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Registro de Logs"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/logging.md"

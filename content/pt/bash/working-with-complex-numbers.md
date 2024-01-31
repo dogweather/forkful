@@ -3,7 +3,7 @@ title:                "Trabalhando com números complexos"
 date:                  2024-01-26T04:36:59.125319-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com números complexos"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/working-with-complex-numbers.md"

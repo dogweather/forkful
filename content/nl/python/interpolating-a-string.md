@@ -3,7 +3,7 @@ title:                "Een string interpoleren"
 date:                  2024-01-28T22:02:10.265074-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string interpoleren"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/python/interpolating-a-string.md"

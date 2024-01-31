@@ -3,7 +3,7 @@ title:                "Trabajando con TOML"
 date:                  2024-01-26T04:25:32.271561-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con TOML"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/working-with-toml.md"

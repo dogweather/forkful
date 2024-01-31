@@ -3,7 +3,7 @@ title:                "Sử dụng bộ gỡ lỗi"
 date:                  2024-01-28T22:10:07.139945-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng bộ gỡ lỗi"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elm/using-a-debugger.md"

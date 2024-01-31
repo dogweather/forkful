@@ -3,7 +3,7 @@ title:                "디버거 사용하기"
 date:                  2024-01-26T03:50:20.531961-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "디버거 사용하기"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/using-a-debugger.md"

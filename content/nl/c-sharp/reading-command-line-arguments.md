@@ -3,7 +3,7 @@ title:                "Commandoregelargumenten lezen"
 date:                  2024-01-28T22:05:06.952604-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Commandoregelargumenten lezen"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c-sharp/reading-command-line-arguments.md"

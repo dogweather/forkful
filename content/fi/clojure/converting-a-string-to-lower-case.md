@@ -3,7 +3,7 @@ title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 date:                  2024-01-20T17:38:08.381675-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/converting-a-string-to-lower-case.md"

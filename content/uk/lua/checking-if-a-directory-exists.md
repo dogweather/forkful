@@ -3,7 +3,7 @@ title:                "Перевірка наявності директорі�
 date:                  2024-01-20T14:57:50.685945-07:00
 html_title:           "C#: Перевірка наявності директорії"
 simple_title:         "Перевірка наявності директорії"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/lua/checking-if-a-directory-exists.md"

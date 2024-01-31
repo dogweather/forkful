@@ -3,7 +3,7 @@ title:                "Verificando se um diretório existe"
 date:                  2024-01-20T14:58:50.860876-07:00
 html_title:           "Fish Shell: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/checking-if-a-directory-exists.md"

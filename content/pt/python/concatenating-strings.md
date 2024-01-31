@@ -3,7 +3,7 @@ title:                "Concatenando strings"
 date:                  2024-01-20T17:35:33.067603-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Concatenando strings"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/concatenating-strings.md"

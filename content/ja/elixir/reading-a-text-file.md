@@ -3,7 +3,7 @@ title:                "テキストファイルの読み込み"
 date:                  2024-01-20T17:54:11.107931-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "テキストファイルの読み込み"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

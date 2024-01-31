@@ -3,7 +3,7 @@ title:                "在编程中使用交互式Shell（REPL）"
 date:                  2024-01-26T04:16:13.165277-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "在编程中使用交互式Shell（REPL）"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/using-an-interactive-shell-repl.md"

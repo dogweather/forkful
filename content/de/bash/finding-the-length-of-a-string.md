@@ -3,7 +3,7 @@ title:                "Ermittlung der Zeichenkettenlänge"
 date:                  2024-01-20T17:46:44.611603-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Ermittlung der Zeichenkettenlänge"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/finding-the-length-of-a-string.md"

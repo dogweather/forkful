@@ -3,7 +3,7 @@ title:                "CSV-tiedostojen käsittely"
 date:                  2024-01-19
 html_title:           "Bash: CSV-tiedostojen käsittely"
 simple_title:         "CSV-tiedostojen käsittely"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/working-with-csv.md"

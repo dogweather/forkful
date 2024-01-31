@@ -3,7 +3,7 @@ title:                "Đọc các đối số dòng lệnh"
 date:                  2024-01-28T22:05:42.810861-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc các đối số dòng lệnh"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/reading-command-line-arguments.md"

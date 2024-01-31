@@ -3,7 +3,7 @@ title:                "Removing quotes from a string"
 date:                  2024-01-25T20:50:41.306697-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Removing quotes from a string"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/removing-quotes-from-a-string.md"

@@ -3,7 +3,7 @@ title:                "Debug-output afdrukken"
 date:                  2024-01-28T22:04:25.365706-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debug-output afdrukken"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/printing-debug-output.md"

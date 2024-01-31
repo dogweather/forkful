@@ -3,7 +3,7 @@ title:                "Використання асоціативних мас�
 date:                  2024-01-30T19:13:12.642660-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання асоціативних масивів"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/rust/using-associative-arrays.md"

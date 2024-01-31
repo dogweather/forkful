@@ -3,7 +3,7 @@ title:                "Korzystanie z wyrażeń regularnych"
 date:                  2024-01-19
 html_title:           "Bash: Korzystanie z wyrażeń regularnych"
 simple_title:         "Korzystanie z wyrażeń regularnych"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/using-regular-expressions.md"

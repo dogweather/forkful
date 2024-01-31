@@ -3,7 +3,7 @@ title:                "Sökning och ersättning av text"
 date:                  2024-01-20T17:58:07.467950-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Sökning och ersättning av text"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/searching-and-replacing-text.md"

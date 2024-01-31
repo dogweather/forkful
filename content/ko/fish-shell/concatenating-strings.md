@@ -3,7 +3,7 @@ title:                "문자열 연결하기"
 date:                  2024-01-20T17:35:09.370596-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "문자열 연결하기"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Strings"
 isCJKLanguage:        true

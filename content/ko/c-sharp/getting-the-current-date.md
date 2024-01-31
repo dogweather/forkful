@@ -3,7 +3,7 @@ title:                "현재 날짜 가져오기"
 date:                  2024-01-20T15:13:47.561772-07:00
 html_title:           "Bash: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

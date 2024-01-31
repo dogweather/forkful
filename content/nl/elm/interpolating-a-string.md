@@ -3,7 +3,7 @@ title:                "Een string interpoleren"
 date:                  2024-01-28T22:02:01.239378-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string interpoleren"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/interpolating-a-string.md"

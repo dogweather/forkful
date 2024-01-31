@@ -3,7 +3,7 @@ title:                "Organizing code into functions"
 date:                  2024-01-25T02:59:58.939306-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organizing code into functions"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/organizing-code-into-functions.md"

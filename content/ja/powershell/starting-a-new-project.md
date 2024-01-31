@@ -3,7 +3,7 @@ title:                "新しいプロジェクトを始める"
 date:                  2024-01-20T18:04:54.839651-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "新しいプロジェクトを始める"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Getting Started"
 isCJKLanguage:        true

@@ -3,7 +3,7 @@ title:                "Conversion d'une date en chaîne de caractères"
 date:                  2024-01-20T17:35:48.126759-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Conversion d'une date en chaîne de caractères"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/converting-a-date-into-a-string.md"

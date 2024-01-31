@@ -3,7 +3,7 @@ title:                "מניפולציה של קבצים באמצעות שור�
 date:                  2024-01-27T16:21:50.074498-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "מניפולציה של קבצים באמצעות שורת פקודה חד-שורתית"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/bash/manipulating-files-with-cli-one-liners.md"

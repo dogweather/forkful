@@ -3,7 +3,7 @@ title:                "新しいプロジェクトを始める"
 date:                  2024-01-20T18:04:41.464737-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "新しいプロジェクトを始める"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Getting Started"
 isCJKLanguage:        true

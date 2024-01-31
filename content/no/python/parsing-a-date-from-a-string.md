@@ -3,7 +3,7 @@ title:                "Tolke en dato fra en streng"
 date:                  2024-01-20T15:38:14.080456-07:00
 html_title:           "Arduino: Tolke en dato fra en streng"
 simple_title:         "Tolke en dato fra en streng"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/parsing-a-date-from-a-string.md"

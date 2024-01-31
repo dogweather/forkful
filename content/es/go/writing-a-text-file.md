@@ -3,7 +3,7 @@ title:                "Escritura de un archivo de texto"
 date:                  2024-01-19
 html_title:           "Bash: Escritura de un archivo de texto"
 simple_title:         "Escritura de un archivo de texto"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/writing-a-text-file.md"

@@ -3,7 +3,7 @@ title:                "Koodin järjestäminen funktioihin"
 date:                  2024-01-26T01:10:14.589334-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Koodin järjestäminen funktioihin"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/organizing-code-into-functions.md"

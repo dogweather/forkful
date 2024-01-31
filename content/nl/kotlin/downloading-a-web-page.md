@@ -3,7 +3,7 @@ title:                "Een webpagina downloaden"
 date:                  2024-01-28T21:59:25.519893-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een webpagina downloaden"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/downloading-a-web-page.md"

@@ -3,7 +3,7 @@ title:                "TOMLを扱う方法"
 date:                  2024-01-26T04:19:59.012426-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "TOMLを扱う方法"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/working-with-toml.md"

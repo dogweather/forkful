@@ -3,7 +3,7 @@ title:                "Chuyển đổi một ngày thành chuỗi"
 date:                  2024-01-28T21:57:58.895154-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi một ngày thành chuỗi"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/swift/converting-a-date-into-a-string.md"

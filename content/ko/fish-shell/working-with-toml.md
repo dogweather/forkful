@@ -3,7 +3,7 @@ title:                "프로그래머를 위한 TOML 다루기"
 date:                  2024-01-26T04:21:43.926203-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "프로그래머를 위한 TOML 다루기"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/working-with-toml.md"

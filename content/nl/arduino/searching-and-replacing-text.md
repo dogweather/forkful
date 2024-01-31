@@ -3,7 +3,7 @@ title:                "Tekst zoeken en vervangen"
 date:                  2024-01-28T22:07:04.294119-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tekst zoeken en vervangen"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/searching-and-replacing-text.md"

@@ -4,7 +4,7 @@ date:                  2024-01-20T17:28:37.329543-07:00
 model:                 gpt-4-1106-preview
 html_title:           "Clojure: 未来または過去の日付の計算"
 simple_title:         "未来または過去の日付の計算"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

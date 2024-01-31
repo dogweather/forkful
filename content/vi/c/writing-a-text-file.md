@@ -3,7 +3,7 @@ title:                "Viết một tệp văn bản"
 date:                  2024-01-28T22:12:52.452140-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết một tệp văn bản"
-programming_language: "C"
+
 category:             "C"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/writing-a-text-file.md"

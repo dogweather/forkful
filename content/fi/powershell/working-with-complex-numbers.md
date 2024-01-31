@@ -3,7 +3,7 @@ title:                "Kompleksilukujen käsittely"
 date:                  2024-01-26T04:44:03.285383-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kompleksilukujen käsittely"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/working-with-complex-numbers.md"

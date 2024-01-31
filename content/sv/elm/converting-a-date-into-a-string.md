@@ -3,7 +3,7 @@ title:                "Omvandla ett datum till en sträng"
 date:                  2024-01-20T17:36:16.894762-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Omvandla ett datum till en sträng"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/converting-a-date-into-a-string.md"

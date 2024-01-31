@@ -3,7 +3,7 @@ title:                "पाठ खोजना और बदलना"
 date:                  2024-01-20T17:58:57.552360-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "पाठ खोजना और बदलना"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/powershell/searching-and-replacing-text.md"

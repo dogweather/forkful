@@ -3,7 +3,7 @@ title:                "Извлечение подстрок"
 date:                  2024-01-28T23:57:51.658921-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Извлечение подстрок"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/arduino/extracting-substrings.md"

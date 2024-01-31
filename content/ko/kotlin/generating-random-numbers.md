@@ -3,7 +3,7 @@ title:                "난수 생성"
 date:                  2024-01-27T20:35:03.380419-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "난수 생성"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/generating-random-numbers.md"

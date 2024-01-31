@@ -3,7 +3,7 @@ title:                "デバッガーの使い方"
 date:                  2024-01-26T04:10:56.786043-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "デバッガーの使い方"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/using-a-debugger.md"

@@ -3,7 +3,7 @@ title:                "Análisis de una fecha a partir de una cadena"
 date:                  2024-01-20T15:37:00.947093-07:00
 html_title:           "Arduino: Análisis de una fecha a partir de una cadena"
 simple_title:         "Análisis de una fecha a partir de una cadena"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/parsing-a-date-from-a-string.md"

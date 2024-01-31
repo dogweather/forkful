@@ -3,7 +3,7 @@ title:                "Tolka ett datum från en sträng"
 date:                  2024-01-20T15:38:34.877429-07:00
 html_title:           "Bash: Tolka ett datum från en sträng"
 simple_title:         "Tolka ett datum från en sträng"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/parsing-a-date-from-a-string.md"

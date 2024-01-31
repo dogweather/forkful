@@ -3,7 +3,7 @@ title:                "Sending an HTTP request"
 date:                  2024-01-20T18:00:29.345916-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Sending an HTTP request"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/sending-an-http-request.md"

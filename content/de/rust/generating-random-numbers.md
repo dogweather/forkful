@@ -3,7 +3,7 @@ title:                "Generierung von Zufallszahlen"
 date:                  2024-01-27T20:35:04.953061-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generierung von Zufallszahlen"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/generating-random-numbers.md"

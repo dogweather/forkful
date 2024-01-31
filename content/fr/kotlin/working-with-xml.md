@@ -3,7 +3,7 @@ title:                "Travailler avec XML"
 date:                  2024-01-26T04:32:58.739123-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec XML"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/working-with-xml.md"

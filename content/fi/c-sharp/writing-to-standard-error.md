@@ -3,7 +3,7 @@ title:                "Kirjoittaminen vakiovirheeseen"
 date:                  2024-01-19
 html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
 simple_title:         "Kirjoittaminen vakiovirheeseen"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/writing-to-standard-error.md"

@@ -3,7 +3,7 @@ title:                "Escritura de un archivo de texto"
 date:                  2024-01-19
 html_title:           "Bash: Escritura de un archivo de texto"
 simple_title:         "Escritura de un archivo de texto"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/writing-a-text-file.md"

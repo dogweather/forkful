@@ -3,7 +3,7 @@ title:                "Làm việc với XML"
 date:                  2024-01-28T22:12:18.913976-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với XML"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/lua/working-with-xml.md"

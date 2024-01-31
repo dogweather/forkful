@@ -3,7 +3,7 @@ title:                "Написание тестов"
 date:                  2024-01-29T00:06:31.949291-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Написание тестов"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/powershell/writing-tests.md"

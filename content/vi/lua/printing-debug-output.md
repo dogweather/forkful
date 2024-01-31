@@ -3,7 +3,7 @@ title:                "In ra thông tin gỡ lỗi"
 date:                  2024-01-28T22:04:57.212861-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "In ra thông tin gỡ lỗi"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/lua/printing-debug-output.md"

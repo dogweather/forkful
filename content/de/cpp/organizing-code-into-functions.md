@@ -3,7 +3,7 @@ title:                "Code in Funktionen organisieren"
 date:                  2024-01-26T01:09:29.131365-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Code in Funktionen organisieren"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/organizing-code-into-functions.md"

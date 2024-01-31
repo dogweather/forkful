@@ -3,7 +3,7 @@ title:                "Написання тестів"
 date:                  2024-01-19
 html_title:           "Arduino: Написання тестів"
 simple_title:         "Написання тестів"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/kotlin/writing-tests.md"

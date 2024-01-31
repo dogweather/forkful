@@ -3,7 +3,7 @@ title:                "כתיבה לקובץ טקסט"
 date:                  2024-01-19
 html_title:           "Bash: כתיבה לקובץ טקסט"
 simple_title:         "כתיבה לקובץ טקסט"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/writing-a-text-file.md"

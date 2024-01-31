@@ -3,7 +3,7 @@ title:                "Tekstitiedoston lukeminen"
 date:                  2024-01-20T17:54:49.027823-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/reading-a-text-file.md"

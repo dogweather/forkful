@@ -3,7 +3,7 @@ title:                "数値の丸め処理"
 date:                  2024-01-26T03:46:13.135047-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "数値の丸め処理"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/rounding-numbers.md"

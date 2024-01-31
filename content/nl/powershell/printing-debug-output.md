@@ -3,7 +3,7 @@ title:                "Debug-output afdrukken"
 date:                  2024-01-28T22:05:06.976620-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debug-output afdrukken"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/printing-debug-output.md"

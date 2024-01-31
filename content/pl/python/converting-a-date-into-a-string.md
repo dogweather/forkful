@@ -3,7 +3,7 @@ title:                "Konwersja daty na łańcuch znaków"
 date:                  2024-01-20T17:37:33.589899-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konwersja daty na łańcuch znaków"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/converting-a-date-into-a-string.md"

@@ -3,7 +3,7 @@ title:                "Använda en interaktiv skal (REPL)"
 date:                  2024-01-26T04:12:00.184335-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Använda en interaktiv skal (REPL)"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/using-an-interactive-shell-repl.md"

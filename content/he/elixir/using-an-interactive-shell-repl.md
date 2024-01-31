@@ -3,7 +3,7 @@ title:                "שימוש במעטפת אינטראקטיבית (REPL)"
 date:                  2024-01-26T04:13:33.725768-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במעטפת אינטראקטיבית (REPL)"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/using-an-interactive-shell-repl.md"

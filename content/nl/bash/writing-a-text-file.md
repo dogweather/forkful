@@ -3,7 +3,7 @@ title:                "Een tekstbestand schrijven"
 date:                  2024-01-28T22:12:22.944482-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand schrijven"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/writing-a-text-file.md"

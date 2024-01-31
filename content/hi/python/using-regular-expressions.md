@@ -3,7 +3,7 @@ title:                "रेगुलर एक्सप्रेशन का 
 date:                  2024-01-19
 html_title:           "Bash: रेगुलर एक्सप्रेशन का उपयोग"
 simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/python/using-regular-expressions.md"

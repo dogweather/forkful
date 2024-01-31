@@ -3,7 +3,7 @@ title:                "Разбор HTML"
 date:                  2024-01-28T23:59:58.072801-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Разбор HTML"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/go/parsing-html.md"

@@ -3,7 +3,7 @@ title:                "Рефакторинг"
 date:                  2024-01-29T00:01:24.486279-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Рефакторинг"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/php/refactoring.md"

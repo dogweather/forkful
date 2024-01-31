@@ -3,7 +3,7 @@ title:                "Інтерполяція рядків"
 date:                  2024-01-20T17:50:34.130133-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Інтерполяція рядків"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elixir/interpolating-a-string.md"

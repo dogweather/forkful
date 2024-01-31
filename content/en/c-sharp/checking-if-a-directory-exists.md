@@ -3,7 +3,7 @@ title:                "Checking if a directory exists"
 date:                  2024-01-19
 html_title:           "C recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/checking-if-a-directory-exists.md"

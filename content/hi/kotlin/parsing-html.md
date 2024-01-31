@@ -3,7 +3,7 @@ title:                "HTML पार्स करना"
 date:                  2024-01-20T15:34:17.028152-07:00
 html_title:           "Bash: HTML पार्स करना"
 simple_title:         "HTML पार्स करना"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/parsing-html.md"

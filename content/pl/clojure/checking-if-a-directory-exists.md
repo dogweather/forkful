@@ -3,7 +3,7 @@ title:                "Sprawdzanie, czy katalog istnieje"
 date:                  2024-01-19
 html_title:           "Bash: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/checking-if-a-directory-exists.md"

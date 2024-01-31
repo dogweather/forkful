@@ -3,7 +3,7 @@ title:                "创建临时文件"
 date:                  2024-01-20T17:40:22.904938-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "创建临时文件"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

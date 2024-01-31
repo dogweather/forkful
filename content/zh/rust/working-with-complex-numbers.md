@@ -3,7 +3,7 @@ title:                "处理复数"
 date:                  2024-01-26T04:45:35.990806-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理复数"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/working-with-complex-numbers.md"

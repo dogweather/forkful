@@ -3,7 +3,7 @@ title:                "Einen neuen Projekt starten"
 date:                  2024-01-20T18:03:56.067560-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Einen neuen Projekt starten"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/starting-a-new-project.md"

@@ -3,7 +3,7 @@ title:                "发出 HTTP 请求"
 date:                  2024-01-20T18:00:30.701796-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "发出 HTTP 请求"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true

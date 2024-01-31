@@ -3,7 +3,7 @@ title:                "Работа с комплексными числами"
 date:                  2024-01-29T00:05:29.497525-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с комплексными числами"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/powershell/working-with-complex-numbers.md"

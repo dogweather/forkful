@@ -3,7 +3,7 @@ title:                "Obtenir la date actuelle"
 date:                  2024-01-20T15:13:15.485885-07:00
 html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/getting-the-current-date.md"

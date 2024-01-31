@@ -3,7 +3,7 @@ title:                "Phân tích ngày từ chuỗi kí tự"
 date:                  2024-01-28T22:03:55.216372-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Phân tích ngày từ chuỗi kí tự"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/parsing-a-date-from-a-string.md"

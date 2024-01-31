@@ -3,7 +3,7 @@ title:                "Skriving av en tekstfil"
 date:                  2024-01-19
 html_title:           "Arduino: Skriving av en tekstfil"
 simple_title:         "Skriving av en tekstfil"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/writing-a-text-file.md"

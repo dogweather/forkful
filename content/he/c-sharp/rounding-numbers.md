@@ -3,7 +3,7 @@ title:                "עיגול מספרים"
 date:                  2024-01-26T03:43:55.155738-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עיגול מספרים"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/rounding-numbers.md"

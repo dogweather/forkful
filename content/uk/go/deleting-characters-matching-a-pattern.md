@@ -3,7 +3,7 @@ title:                "Видалення символів за візерунк
 date:                  2024-01-20T17:42:26.627043-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Видалення символів за візерунком"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/go/deleting-characters-matching-a-pattern.md"

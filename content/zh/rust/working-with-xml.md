@@ -3,7 +3,7 @@ title:                "处理XML"
 date:                  2024-01-26T04:36:09.565903-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理XML"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/working-with-xml.md"

@@ -3,7 +3,7 @@ title:                "Manipulation des nombres complexes"
 date:                  2024-01-26T04:46:20.814984-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulation des nombres complexes"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/working-with-complex-numbers.md"

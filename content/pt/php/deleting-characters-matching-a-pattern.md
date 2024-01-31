@@ -3,7 +3,7 @@ title:                "Excluindo caracteres que correspondem a um padrão"
 date:                  2024-01-20T17:42:56.934986-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/deleting-characters-matching-a-pattern.md"

@@ -3,7 +3,7 @@ title:                "Creating a temporary file"
 date:                  2024-01-20T17:40:06.955802-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Creating a temporary file"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/creating-a-temporary-file.md"

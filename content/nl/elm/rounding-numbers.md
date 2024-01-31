@@ -3,7 +3,7 @@ title:                "Afronden van getallen"
 date:                  2024-01-28T22:06:40.580332-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Afronden van getallen"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/rounding-numbers.md"

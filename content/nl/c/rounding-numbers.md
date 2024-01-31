@@ -3,7 +3,7 @@ title:                "Afronden van getallen"
 date:                  2024-01-28T22:06:27.284728-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Afronden van getallen"
-programming_language: "C"
+
 category:             "C"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/rounding-numbers.md"

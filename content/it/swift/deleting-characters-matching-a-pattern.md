@@ -3,7 +3,7 @@ title:                "Eliminazione di caratteri che corrispondono a un pattern"
 date:                  2024-01-20T17:43:00.924306-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/deleting-characters-matching-a-pattern.md"

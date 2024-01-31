@@ -3,7 +3,7 @@ title:                "Extracción de subcadenas"
 date:                  2024-01-20T17:46:00.771951-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extracción de subcadenas"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/extracting-substrings.md"

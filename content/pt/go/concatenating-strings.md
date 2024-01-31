@@ -3,7 +3,7 @@ title:                "Concatenando strings"
 date:                  2024-01-20T17:34:45.142236-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Concatenando strings"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/concatenating-strings.md"

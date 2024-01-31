@@ -3,7 +3,7 @@ title:                "新しいプロジェクトを始める"
 date:                  2024-01-20T18:05:15.767433-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "新しいプロジェクトを始める"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Getting Started"
 isCJKLanguage:        true

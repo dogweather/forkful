@@ -3,7 +3,7 @@ title:                "Edycja plików w miejscu przy użyciu jednolinijkowców C
 date:                  2024-01-27T16:20:55.275241-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Edycja plików w miejscu przy użyciu jednolinijkowców CLI"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/editing-files-in-place-with-cli-one-liners.md"

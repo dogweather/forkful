@@ -3,7 +3,7 @@ title:                "Substrings extraheren"
 date:                  2024-01-28T21:59:55.102019-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Substrings extraheren"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/typescript/extracting-substrings.md"

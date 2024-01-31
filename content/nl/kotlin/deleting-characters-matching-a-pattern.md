@@ -3,7 +3,7 @@ title:                "Karakters verwijderen die overeenkomen met een patroon"
 date:                  2024-01-28T21:58:56.185111-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Karakters verwijderen die overeenkomen met een patroon"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/deleting-characters-matching-a-pattern.md"

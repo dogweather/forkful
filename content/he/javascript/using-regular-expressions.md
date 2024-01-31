@@ -3,7 +3,7 @@ title:                "שימוש בביטויים רגולריים"
 date:                  2024-01-19
 html_title:           "Bash: שימוש בביטויים רגולריים"
 simple_title:         "שימוש בביטויים רגולריים"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/javascript/using-regular-expressions.md"

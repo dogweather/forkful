@@ -3,7 +3,7 @@ title:                "Merkkijonosta päivämäärän jäsentäminen"
 date:                  2024-01-20T15:34:28.271230-07:00
 html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
 simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/parsing-a-date-from-a-string.md"

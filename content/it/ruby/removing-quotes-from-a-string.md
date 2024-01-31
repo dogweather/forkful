@@ -3,7 +3,7 @@ title:                "Rimuovere le virgolette da una stringa"
 date:                  2024-01-26T03:41:36.744547-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rimuovere le virgolette da una stringa"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/removing-quotes-from-a-string.md"

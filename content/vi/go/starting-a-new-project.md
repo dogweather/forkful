@@ -3,7 +3,7 @@ title:                "Bắt đầu một dự án mới"
 date:                  2024-01-28T22:08:22.690438-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bắt đầu một dự án mới"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/starting-a-new-project.md"

@@ -3,7 +3,7 @@ title:                "创建临时文件"
 date:                  2024-01-20T17:41:06.260220-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "创建临时文件"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

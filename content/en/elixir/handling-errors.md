@@ -3,7 +3,7 @@ title:                "Handling errors"
 date:                  2024-01-21T21:19:08.204031-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Handling errors"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/handling-errors.md"

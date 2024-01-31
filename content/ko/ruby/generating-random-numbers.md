@@ -3,7 +3,7 @@ title:                "난수 생성"
 date:                  2024-01-27T20:35:20.440436-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "난수 생성"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/generating-random-numbers.md"

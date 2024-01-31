@@ -3,7 +3,7 @@ title:                "JSON के साथ काम करना"
 date:                  2024-01-19
 html_title:           "Arduino: JSON के साथ काम करना"
 simple_title:         "JSON के साथ काम करना"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/python/working-with-json.md"

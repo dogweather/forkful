@@ -3,7 +3,7 @@ title:                "开始一个新项目"
 date:                  2024-01-20T18:04:07.953599-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "开始一个新项目"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Getting Started"
 isCJKLanguage:        true

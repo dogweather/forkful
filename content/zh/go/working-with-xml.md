@@ -3,7 +3,7 @@ title:                "处理XML"
 date:                  2024-01-26T04:31:58.139845-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理XML"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/working-with-xml.md"

@@ -3,7 +3,7 @@ title:                "Отправка HTTP-запроса с базовой а
 date:                  2024-01-29T00:02:59.592358-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Отправка HTTP-запроса с базовой аутентификацией"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/haskell/sending-an-http-request-with-basic-authentication.md"

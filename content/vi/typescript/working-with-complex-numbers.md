@@ -3,7 +3,7 @@ title:                "Làm việc với số phức"
 date:                  2024-01-28T22:12:51.456967-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với số phức"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/typescript/working-with-complex-numbers.md"

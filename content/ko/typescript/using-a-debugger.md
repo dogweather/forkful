@@ -3,7 +3,7 @@ title:                "디버거 사용하기"
 date:                  2024-01-26T04:11:23.665698-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "디버거 사용하기"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/using-a-debugger.md"

@@ -3,7 +3,7 @@ title:                "Capitalizando uma string"
 date:                  2024-01-19
 html_title:           "Bash: Capitalizando uma string"
 simple_title:         "Capitalizando uma string"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/capitalizing-a-string.md"

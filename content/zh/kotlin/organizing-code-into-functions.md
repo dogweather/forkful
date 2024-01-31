@@ -3,7 +3,7 @@ title:                "将代码组织成函数"
 date:                  2024-01-26T01:11:10.741168-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "将代码组织成函数"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/organizing-code-into-functions.md"

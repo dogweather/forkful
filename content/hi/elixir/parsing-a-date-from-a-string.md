@@ -3,7 +3,7 @@ title:                "स्ट्रिंग से दिनांक पा
 date:                  2024-01-28T02:06:08.275477-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/parsing-a-date-from-a-string.md"

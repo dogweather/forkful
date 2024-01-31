@@ -3,7 +3,7 @@ title:                "Читання текстового файлу"
 date:                  2024-01-20T17:53:55.673514-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Читання текстового файлу"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/bash/reading-a-text-file.md"

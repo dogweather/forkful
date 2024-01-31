@@ -3,7 +3,7 @@ title:                "संख्याओं को पूर्णांक 
 date:                  2024-01-26T03:44:01.998615-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "संख्याओं को पूर्णांक बनाना"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/rounding-numbers.md"

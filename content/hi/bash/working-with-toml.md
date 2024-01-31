@@ -3,7 +3,7 @@ title:                "TOML के साथ काम करना"
 date:                  2024-01-26T04:19:46.774834-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "TOML के साथ काम करना"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/bash/working-with-toml.md"

@@ -3,7 +3,7 @@ title:                "डीबगर का उपयोग करना"
 date:                  2024-01-26T04:09:45.882113-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डीबगर का उपयोग करना"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/go/using-a-debugger.md"

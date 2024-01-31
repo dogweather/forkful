@@ -3,7 +3,7 @@ title:                "创建临时文件"
 date:                  2024-01-20T17:40:18.174686-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "创建临时文件"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

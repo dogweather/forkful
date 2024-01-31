@@ -3,7 +3,7 @@ title:                "Anführungszeichen aus einem String entfernen"
 date:                  2024-01-26T03:41:10.240763-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Anführungszeichen aus einem String entfernen"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/removing-quotes-from-a-string.md"

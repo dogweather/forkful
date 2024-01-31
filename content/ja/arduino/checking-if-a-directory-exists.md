@@ -3,7 +3,7 @@ title:                "ディレクトリが存在するかどうかを確認す
 date:                  2024-01-19
 html_title:           "Bash: ディレクトリが存在するかどうかを確認する"
 simple_title:         "ディレクトリが存在するかどうかを確認する"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

@@ -3,7 +3,7 @@ title:                "रेगुलर एक्सप्रेशन का 
 date:                  2024-01-19
 html_title:           "Bash: रेगुलर एक्सप्रेशन का उपयोग"
 simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/using-regular-expressions.md"

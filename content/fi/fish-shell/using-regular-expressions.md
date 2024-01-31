@@ -3,7 +3,7 @@ title:                "Säännöllisten lausekkeiden käyttö"
 date:                  2024-01-19
 html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/using-regular-expressions.md"

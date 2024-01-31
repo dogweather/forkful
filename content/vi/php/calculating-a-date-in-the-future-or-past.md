@@ -3,7 +3,7 @@ title:                "Tính toán ngày trong tương lai hoặc quá khứ"
 date:                  2024-01-28T21:56:05.941217-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tính toán ngày trong tương lai hoặc quá khứ"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/php/calculating-a-date-in-the-future-or-past.md"

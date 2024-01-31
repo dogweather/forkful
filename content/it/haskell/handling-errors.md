@@ -3,7 +3,7 @@ title:                "Gestione degli errori"
 date:                  2024-01-26T00:54:10.457494-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Gestione degli errori"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/handling-errors.md"

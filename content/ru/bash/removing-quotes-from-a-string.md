@@ -3,7 +3,7 @@ title:                "Удаление кавычек из строки"
 date:                  2024-01-29T00:01:33.979532-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление кавычек из строки"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/bash/removing-quotes-from-a-string.md"

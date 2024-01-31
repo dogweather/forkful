@@ -3,7 +3,7 @@ title:                "Arrotondamento dei numeri"
 date:                  2024-01-26T03:44:15.371988-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arrotondamento dei numeri"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/rounding-numbers.md"

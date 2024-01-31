@@ -3,7 +3,7 @@ title:                "Utilisation des tableaux associatifs"
 date:                  2024-01-30T19:11:48.058066-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des tableaux associatifs"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/using-associative-arrays.md"

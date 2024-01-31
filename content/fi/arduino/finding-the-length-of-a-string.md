@@ -3,7 +3,7 @@ title:                "Merkkijonon pituuden selvittäminen"
 date:                  2024-01-20T17:46:48.693442-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon pituuden selvittäminen"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/finding-the-length-of-a-string.md"

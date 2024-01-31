@@ -3,7 +3,7 @@ title:                "Comparando duas datas"
 date:                  2024-01-20T17:33:16.539600-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Comparando duas datas"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/comparing-two-dates.md"

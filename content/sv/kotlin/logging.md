@@ -3,7 +3,7 @@ title:                "Loggning"
 date:                  2024-01-26T01:07:55.264754-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Loggning"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/logging.md"

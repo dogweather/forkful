@@ -3,7 +3,7 @@ title:                "Fjerne anførselstegn fra en streng"
 date:                  2024-01-26T03:40:20.768954-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fjerne anførselstegn fra en streng"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/removing-quotes-from-a-string.md"

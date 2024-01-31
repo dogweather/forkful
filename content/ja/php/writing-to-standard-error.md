@@ -3,7 +3,7 @@ title:                "標準エラーへの書き込み"
 date:                  2024-01-19
 html_title:           "Arduino: 標準エラーへの書き込み"
 simple_title:         "標準エラーへの書き込み"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

@@ -3,7 +3,7 @@ title:                "Erstellung einer temporären Datei"
 date:                  2024-01-20T17:41:00.642193-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Erstellung einer temporären Datei"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/creating-a-temporary-file.md"

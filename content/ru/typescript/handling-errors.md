@@ -3,7 +3,7 @@ title:                "Обработка ошибок"
 date:                  2024-01-28T23:59:16.445777-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Обработка ошибок"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/typescript/handling-errors.md"

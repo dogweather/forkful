@@ -3,7 +3,7 @@ title:                "Merkkijonosta päivämäärän jäsentäminen"
 date:                  2024-01-20T15:37:23.868183-07:00
 html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
 simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/parsing-a-date-from-a-string.md"

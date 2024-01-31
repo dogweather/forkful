@@ -3,7 +3,7 @@ title:                "将字符串转换为小写"
 date:                  2024-01-20T17:38:31.760089-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "将字符串转换为小写"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Strings"
 isCJKLanguage:        true

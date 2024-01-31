@@ -3,7 +3,7 @@ title:                "Trabalhando com CSV"
 date:                  2024-01-19
 html_title:           "Bash: Trabalhando com CSV"
 simple_title:         "Trabalhando com CSV"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/working-with-csv.md"

@@ -3,7 +3,7 @@ title:                "Склеивание строк"
 date:                  2024-01-28T23:56:24.401571-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Склеивание строк"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/fish-shell/concatenating-strings.md"

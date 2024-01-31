@@ -3,7 +3,7 @@ title:                "Eliminando comillas de una cadena"
 date:                  2024-01-26T03:37:40.514761-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eliminando comillas de una cadena"
-programming_language: "C"
+
 category:             "C"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/removing-quotes-from-a-string.md"

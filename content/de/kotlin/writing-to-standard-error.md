@@ -3,7 +3,7 @@ title:                "Schreiben auf Standardfehler"
 date:                  2024-01-19
 html_title:           "Arduino: Schreiben auf Standardfehler"
 simple_title:         "Schreiben auf Standardfehler"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/writing-to-standard-error.md"

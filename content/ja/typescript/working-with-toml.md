@@ -3,7 +3,7 @@ title:                "TOMLを扱う方法"
 date:                  2024-01-26T04:27:31.888438-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "TOMLを扱う方法"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/working-with-toml.md"

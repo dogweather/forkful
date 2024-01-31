@@ -3,7 +3,7 @@ title:                "इंटरैक्टिव शेल (REPL) का �
 date:                  2024-01-26T04:15:17.339441-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "इंटरैक्टिव शेल (REPL) का उपयोग"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/using-an-interactive-shell-repl.md"

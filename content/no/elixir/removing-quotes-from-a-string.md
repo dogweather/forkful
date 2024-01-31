@@ -3,7 +3,7 @@ title:                "Fjerne anførselstegn fra en streng"
 date:                  2024-01-26T03:38:39.543946-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fjerne anførselstegn fra en streng"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/removing-quotes-from-a-string.md"

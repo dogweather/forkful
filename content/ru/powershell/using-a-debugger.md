@@ -3,7 +3,7 @@ title:                "Использование отладчика"
 date:                  2024-01-29T00:03:21.171364-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование отладчика"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/powershell/using-a-debugger.md"

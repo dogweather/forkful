@@ -3,7 +3,7 @@ title:                "문자열에서 날짜 파싱하기"
 date:                  2024-01-20T15:36:12.424219-07:00
 html_title:           "Arduino: 문자열에서 날짜 파싱하기"
 simple_title:         "문자열에서 날짜 파싱하기"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

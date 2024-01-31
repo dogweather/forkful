@@ -3,7 +3,7 @@ title:                "Lavorare con TOML"
 date:                  2024-01-26T04:19:29.537802-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con TOML"
-programming_language: "C"
+
 category:             "C"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/working-with-toml.md"

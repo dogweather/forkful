@@ -3,7 +3,7 @@ title:                "Écriture d'un fichier texte"
 date:                  2024-01-19
 html_title:           "Arduino: Écriture d'un fichier texte"
 simple_title:         "Écriture d'un fichier texte"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/writing-a-text-file.md"

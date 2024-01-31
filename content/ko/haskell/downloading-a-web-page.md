@@ -3,7 +3,7 @@ title:                "웹 페이지 다운로드하기"
 date:                  2024-01-20T17:44:30.523884-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "웹 페이지 다운로드하기"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true

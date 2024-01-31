@@ -3,7 +3,7 @@ title:                "स्ट्रिंग्स को जोड़ना"
 date:                  2024-01-27T10:44:27.973738-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग्स को जोड़ना"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/concatenating-strings.md"

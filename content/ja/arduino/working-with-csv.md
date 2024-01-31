@@ -3,7 +3,7 @@ title:                "CSVファイルの操作"
 date:                  2024-01-19
 html_title:           "Arduino: CSVファイルの操作"
 simple_title:         "CSVファイルの操作"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true

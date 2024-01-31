@@ -3,7 +3,7 @@ title:                "Refaktorisering"
 date:                  2024-01-26T03:36:57.429410-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktorisering"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/refactoring.md"

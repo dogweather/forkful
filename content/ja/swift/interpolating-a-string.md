@@ -3,7 +3,7 @@ title:                "文字列の補間"
 date:                  2024-01-20T17:51:44.817858-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "文字列の補間"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Strings"
 isCJKLanguage:        true

@@ -3,7 +3,7 @@ title:                "ディレクトリが存在するかどうかの確認"
 date:                  2024-01-20T14:57:14.650350-07:00
 html_title:           "Gleam: ディレクトリが存在するかどうかの確認"
 simple_title:         "ディレクトリが存在するかどうかの確認"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

@@ -3,7 +3,7 @@ title:                "HTMLの解析"
 date:                  2024-01-20T15:32:06.809864-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true

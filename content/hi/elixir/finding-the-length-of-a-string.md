@@ -3,7 +3,7 @@ title:                "स्ट्रिंग की लंबाई ज्ञ
 date:                  2024-01-20T17:47:52.502347-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "स्ट्रिंग की लंबाई ज्ञात करना"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/finding-the-length-of-a-string.md"

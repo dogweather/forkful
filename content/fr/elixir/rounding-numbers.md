@@ -3,7 +3,7 @@ title:                "Arrondir les nombres"
 date:                  2024-01-26T03:43:52.819457-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arrondir les nombres"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/rounding-numbers.md"

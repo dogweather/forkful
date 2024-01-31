@@ -3,7 +3,7 @@ title:                "Numerojen pyöristäminen"
 date:                  2024-01-26T03:45:20.356222-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Numerojen pyöristäminen"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/rounding-numbers.md"

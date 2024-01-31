@@ -3,7 +3,7 @@ title:                "디렉토리의 존재 여부 확인하기"
 date:                  2024-01-19
 html_title:           "Arduino: 디렉토리의 존재 여부 확인하기"
 simple_title:         "디렉토리의 존재 여부 확인하기"
-programming_language: "C"
+
 category:             "C"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

@@ -3,7 +3,7 @@ title:                "Tạo một tập tin tạm thời"
 date:                  2024-01-28T21:58:37.854650-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tạo một tập tin tạm thời"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/creating-a-temporary-file.md"

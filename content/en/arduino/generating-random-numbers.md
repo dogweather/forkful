@@ -3,7 +3,7 @@ title:                "Generating random numbers"
 date:                  2024-01-27T20:26:03.679950-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generating random numbers"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/generating-random-numbers.md"

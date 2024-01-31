@@ -3,7 +3,7 @@ title:                "디렉토리 존재 여부 확인하기"
 date:                  2024-01-20T14:57:17.493419-07:00
 html_title:           "Fish Shell: 디렉토리 존재 여부 확인하기"
 simple_title:         "디렉토리 존재 여부 확인하기"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

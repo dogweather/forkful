@@ -3,7 +3,7 @@ title:                "Łączenie łańcuchów znaków"
 date:                  2024-01-20T17:35:51.847539-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Łączenie łańcuchów znaków"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/concatenating-strings.md"

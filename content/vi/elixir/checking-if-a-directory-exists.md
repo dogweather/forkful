@@ -3,7 +3,7 @@ title:                "Kiểm tra xem thư mục có tồn tại không"
 date:                  2024-01-28T21:56:17.449571-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kiểm tra xem thư mục có tồn tại không"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/checking-if-a-directory-exists.md"

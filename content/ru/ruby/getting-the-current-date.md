@@ -3,7 +3,7 @@ title:                "Получение текущей даты"
 date:                  2024-01-28T23:58:57.261385-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Получение текущей даты"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/ruby/getting-the-current-date.md"

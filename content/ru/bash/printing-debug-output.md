@@ -3,7 +3,7 @@ title:                "Вывод отладочной информации"
 date:                  2024-01-29T00:00:59.245979-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Вывод отладочной информации"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/bash/printing-debug-output.md"

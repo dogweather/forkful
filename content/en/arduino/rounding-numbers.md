@@ -3,7 +3,7 @@ title:                "Rounding numbers"
 date:                  2024-01-25T03:00:01.439059-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Rounding numbers"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/rounding-numbers.md"

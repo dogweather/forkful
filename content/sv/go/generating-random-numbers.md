@@ -3,7 +3,7 @@ title:                "Generera slumptal"
 date:                  2024-01-27T20:34:09.911243-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generera slumptal"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/generating-random-numbers.md"

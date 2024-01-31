@@ -3,7 +3,7 @@ title:                "Jobbe med TOML"
 date:                  2024-01-26T04:20:53.540368-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Jobbe med TOML"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/working-with-toml.md"

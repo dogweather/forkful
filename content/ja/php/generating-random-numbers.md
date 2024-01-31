@@ -3,7 +3,7 @@ title:                "乱数の生成"
 date:                  2024-01-27T20:34:40.108159-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "乱数の生成"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/generating-random-numbers.md"

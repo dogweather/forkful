@@ -3,7 +3,7 @@ title:                "YAML-tiedostojen käsittely"
 date:                  2024-01-19
 html_title:           "Arduino: YAML-tiedostojen käsittely"
 simple_title:         "YAML-tiedostojen käsittely"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/working-with-yaml.md"

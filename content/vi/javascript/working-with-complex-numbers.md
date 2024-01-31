@@ -3,7 +3,7 @@ title:                "Làm việc với số phức"
 date:                  2024-01-28T22:12:27.522819-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với số phức"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/working-with-complex-numbers.md"

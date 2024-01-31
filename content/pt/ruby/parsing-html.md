@@ -3,7 +3,7 @@ title:                "Análise de HTML"
 date:                  2024-01-20T15:33:28.439903-07:00
 html_title:           "Bash: Análise de HTML"
 simple_title:         "Análise de HTML"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/parsing-html.md"

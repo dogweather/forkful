@@ -3,7 +3,7 @@ title:                "अस्थायी फाइल बनाना"
 date:                  2024-01-20T17:41:54.819424-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "अस्थायी फाइल बनाना"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/creating-a-temporary-file.md"

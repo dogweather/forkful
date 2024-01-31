@@ -3,7 +3,7 @@ title:                "Att arbeta med komplexa tal"
 date:                  2024-01-26T04:41:45.423847-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att arbeta med komplexa tal"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/working-with-complex-numbers.md"

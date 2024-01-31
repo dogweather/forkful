@@ -3,7 +3,7 @@ title:                "Werken met JSON"
 date:                  2024-01-28T22:10:33.252305-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met JSON"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/working-with-json.md"

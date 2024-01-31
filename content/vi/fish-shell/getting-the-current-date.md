@@ -3,7 +3,7 @@ title:                "Lấy ngày hiện tại"
 date:                  2024-01-28T22:01:24.785388-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lấy ngày hiện tại"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/getting-the-current-date.md"

@@ -3,7 +3,7 @@ title:                "Tolka HTML"
 date:                  2024-01-20T15:34:13.889327-07:00
 html_title:           "Arduino: Tolka HTML"
 simple_title:         "Tolka HTML"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/parsing-html.md"

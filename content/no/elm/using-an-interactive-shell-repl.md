@@ -3,7 +3,7 @@ title:                "Bruke et interaktivt skall (REPL)"
 date:                  2024-01-26T04:13:36.263906-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bruke et interaktivt skall (REPL)"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/using-an-interactive-shell-repl.md"

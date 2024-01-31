@@ -3,7 +3,7 @@ title:                "Utilisation d'un débogueur"
 date:                  2024-01-26T03:49:24.423829-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation d'un débogueur"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/using-a-debugger.md"

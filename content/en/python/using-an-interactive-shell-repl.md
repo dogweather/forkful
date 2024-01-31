@@ -3,7 +3,7 @@ title:                "Using an interactive shell (REPL)"
 date:                  2024-01-25T03:39:28.325958-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Using an interactive shell (REPL)"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/using-an-interactive-shell-repl.md"

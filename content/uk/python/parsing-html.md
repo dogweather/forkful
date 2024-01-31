@@ -3,7 +3,7 @@ title:                "Парсинг HTML"
 date:                  2024-01-20T15:33:35.284486-07:00
 html_title:           "Arduino: Парсинг HTML"
 simple_title:         "Парсинг HTML"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/python/parsing-html.md"

@@ -3,7 +3,7 @@ title:                "Nykyisen päivämäärän hankkiminen"
 date:                  2024-01-20T15:15:20.285590-07:00
 html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/getting-the-current-date.md"

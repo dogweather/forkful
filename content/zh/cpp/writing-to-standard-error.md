@@ -3,7 +3,7 @@ title:                "写入标准错误"
 date:                  2024-01-19
 html_title:           "Arduino: 写入标准错误"
 simple_title:         "写入标准错误"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

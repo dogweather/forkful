@@ -3,7 +3,7 @@ title:                "एरर्स को हैंडल करना"
 date:                  2024-01-26T01:00:27.363006-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "एरर्स को हैंडल करना"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/handling-errors.md"

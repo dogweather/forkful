@@ -3,7 +3,7 @@ title:                "Przetwarzanie HTML"
 date:                  2024-01-20T15:34:03.643944-07:00
 html_title:           "Bash: Przetwarzanie HTML"
 simple_title:         "Przetwarzanie HTML"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/parsing-html.md"

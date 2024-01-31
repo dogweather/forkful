@@ -3,7 +3,7 @@ title:                "Fouten afhandelen"
 date:                  2024-01-28T22:01:58.414702-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fouten afhandelen"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/handling-errors.md"

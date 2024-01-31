@@ -3,7 +3,7 @@ title:                "Tolka HTML"
 date:                  2024-01-20T15:30:35.875822-07:00
 html_title:           "Arduino: Tolka HTML"
 simple_title:         "Tolka HTML"
-programming_language: "C"
+
 category:             "C"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/parsing-html.md"

@@ -3,7 +3,7 @@ title:                "Schrijven naar standaardfout"
 date:                  2024-01-28T22:13:42.540861-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Schrijven naar standaardfout"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/writing-to-standard-error.md"

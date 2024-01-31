@@ -3,7 +3,7 @@ title:                "Usando una shell interactiva (REPL)"
 date:                  2024-01-26T04:15:34.725538-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando una shell interactiva (REPL)"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/using-an-interactive-shell-repl.md"

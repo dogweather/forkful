@@ -3,7 +3,7 @@ title:                "Konwersja ciągu znaków na małe litery"
 date:                  2024-01-20T17:39:30.330469-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/converting-a-string-to-lower-case.md"

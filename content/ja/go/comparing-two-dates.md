@@ -3,7 +3,7 @@ title:                "日付を比較する"
 date:                  2024-01-20T17:33:11.904625-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日付を比較する"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

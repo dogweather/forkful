@@ -3,7 +3,7 @@ title:                "Rozpoczynanie nowego projektu"
 date:                  2024-01-20T18:03:05.413806-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/starting-a-new-project.md"

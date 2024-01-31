@@ -3,7 +3,7 @@ title:                "Een datum uit een string parsen"
 date:                  2024-01-28T22:04:03.966091-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een datum uit een string parsen"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/python/parsing-a-date-from-a-string.md"

@@ -3,7 +3,7 @@ title:                "Przetwarzanie daty ze łańcucha znaków"
 date:                  2024-01-20T15:36:32.151862-07:00
 html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
 simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/parsing-a-date-from-a-string.md"

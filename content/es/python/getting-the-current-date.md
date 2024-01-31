@@ -3,7 +3,7 @@ title:                "Obteniendo la fecha actual"
 date:                  2024-01-20T15:16:15.345637-07:00
 html_title:           "Bash: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/getting-the-current-date.md"

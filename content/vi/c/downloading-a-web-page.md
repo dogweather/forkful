@@ -3,7 +3,7 @@ title:                "Tải trang web"
 date:                  2024-01-28T21:59:04.920590-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tải trang web"
-programming_language: "C"
+
 category:             "C"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/downloading-a-web-page.md"

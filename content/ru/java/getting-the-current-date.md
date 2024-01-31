@@ -3,7 +3,7 @@ title:                "Получение текущей даты"
 date:                  2024-01-28T23:59:19.919139-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Получение текущей даты"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/java/getting-the-current-date.md"

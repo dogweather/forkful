@@ -3,7 +3,7 @@ title:                "Znalezienie długości ciągu znaków"
 date:                  2024-01-20T17:48:16.742453-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Znalezienie długości ciągu znaków"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/finding-the-length-of-a-string.md"

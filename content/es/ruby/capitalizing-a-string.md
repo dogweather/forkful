@@ -3,7 +3,7 @@ title:                "Capitalizando una cadena de texto"
 date:                  2024-01-19
 html_title:           "Arduino: Capitalizando una cadena de texto"
 simple_title:         "Capitalizando una cadena de texto"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/capitalizing-a-string.md"

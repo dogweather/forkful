@@ -3,7 +3,7 @@ title:                "עבודה עם קבצי CSV"
 date:                  2024-01-19
 html_title:           "Arduino: עבודה עם קבצי CSV"
 simple_title:         "עבודה עם קבצי CSV"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/php/working-with-csv.md"

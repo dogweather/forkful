@@ -3,7 +3,7 @@ title:                "Skriva till standardfel"
 date:                  2024-01-19
 html_title:           "Arduino: Skriva till standardfel"
 simple_title:         "Skriva till standardfel"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/writing-to-standard-error.md"

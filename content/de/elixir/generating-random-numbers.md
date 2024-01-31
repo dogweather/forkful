@@ -3,7 +3,7 @@ title:                "Generierung von Zufallszahlen"
 date:                  2024-01-27T20:32:58.266653-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generierung von Zufallszahlen"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/generating-random-numbers.md"

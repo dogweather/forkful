@@ -3,7 +3,7 @@ title:                "HTML Parsen"
 date:                  2024-01-28T22:03:49.408510-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML Parsen"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/parsing-html.md"

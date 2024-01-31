@@ -3,7 +3,7 @@ title:                "Tìm chiều dài của một chuỗi ký tự"
 date:                  2024-01-28T22:00:48.474692-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tìm chiều dài của một chuỗi ký tự"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/finding-the-length-of-a-string.md"

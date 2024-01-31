@@ -3,7 +3,7 @@ title:                "HTMLの解析"
 date:                  2024-01-20T15:30:46.054042-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true

@@ -3,7 +3,7 @@ title:                "מציאת אורך מחרוזת"
 date:                  2024-01-20T17:48:30.706885-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "מציאת אורך מחרוזת"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/finding-the-length-of-a-string.md"

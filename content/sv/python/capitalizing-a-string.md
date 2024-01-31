@@ -3,7 +3,7 @@ title:                "Att göra en sträng versal"
 date:                  2024-01-19
 html_title:           "Bash: Att göra en sträng versal"
 simple_title:         "Att göra en sträng versal"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/capitalizing-a-string.md"

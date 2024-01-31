@@ -3,7 +3,7 @@ title:                "Перетворення рядка на великі л�
 date:                  2024-01-19
 html_title:           "Arduino: Перетворення рядка на великі літери"
 simple_title:         "Перетворення рядка на великі літери"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/php/capitalizing-a-string.md"

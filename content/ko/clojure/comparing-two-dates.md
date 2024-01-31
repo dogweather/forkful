@@ -3,7 +3,7 @@ title:                "두 날짜 비교하기"
 date:                  2024-01-20T17:33:00.488558-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "두 날짜 비교하기"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

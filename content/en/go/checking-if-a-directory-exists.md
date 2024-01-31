@@ -3,7 +3,7 @@ title:                "Checking if a directory exists"
 date:                  2024-01-20T14:56:28.011050-07:00
 html_title:           "Gleam recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/checking-if-a-directory-exists.md"

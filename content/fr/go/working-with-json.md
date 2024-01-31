@@ -3,7 +3,7 @@ title:                "Manipulation de JSON"
 date:                  2024-01-19
 html_title:           "Arduino: Manipulation de JSON"
 simple_title:         "Manipulation de JSON"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/working-with-json.md"

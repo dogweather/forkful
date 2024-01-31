@@ -3,7 +3,7 @@ title:                "Видалення лапок зі строки"
 date:                  2024-01-26T03:41:07.390357-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Видалення лапок зі строки"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/removing-quotes-from-a-string.md"

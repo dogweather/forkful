@@ -3,7 +3,7 @@ title:                "Datum in einen String umwandeln"
 date:                  2024-01-20T17:35:55.888844-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Datum in einen String umwandeln"
-programming_language: "C"
+
 category:             "C"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/converting-a-date-into-a-string.md"

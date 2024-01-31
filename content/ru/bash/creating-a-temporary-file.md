@@ -3,7 +3,7 @@ title:                "Создание временного файла"
 date:                  2024-01-28T23:56:52.259717-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Создание временного файла"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/bash/creating-a-temporary-file.md"

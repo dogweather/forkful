@@ -3,7 +3,7 @@ title:                "Het huidige datum ophalen"
 date:                  2024-01-28T22:01:06.052192-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Het huidige datum ophalen"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/getting-the-current-date.md"

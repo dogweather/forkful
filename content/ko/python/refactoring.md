@@ -3,7 +3,7 @@ title:                "리팩토링"
 date:                  2024-01-26T03:37:28.543847-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "리팩토링"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/refactoring.md"

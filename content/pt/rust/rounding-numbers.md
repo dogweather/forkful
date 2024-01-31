@@ -3,7 +3,7 @@ title:                "Arredondamento de números"
 date:                  2024-01-26T03:46:43.435815-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arredondamento de números"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/rounding-numbers.md"

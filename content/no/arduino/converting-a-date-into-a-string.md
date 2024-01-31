@@ -3,7 +3,7 @@ title:                "Konvertere en dato til en streng"
 date:                  2024-01-20T17:35:49.791070-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konvertere en dato til en streng"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/converting-a-date-into-a-string.md"

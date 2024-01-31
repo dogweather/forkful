@@ -3,7 +3,7 @@ title:                "XMLの扱い方"
 date:                  2024-01-26T04:35:00.424244-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XMLの扱い方"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/working-with-xml.md"

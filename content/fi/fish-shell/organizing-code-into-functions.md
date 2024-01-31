@@ -3,7 +3,7 @@ title:                "Koodin järjestäminen funktioiksi"
 date:                  2024-01-28T23:02:32.082544-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Koodin järjestäminen funktioiksi"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/organizing-code-into-functions.md"

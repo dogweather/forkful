@@ -4,7 +4,7 @@ date:                  2024-01-20T17:28:31.922931-07:00
 model:                 gpt-4-1106-preview
 html_title:           "C#: Обчислення дати у майбутньому чи минулому"
 simple_title:         "Обчислення дати у майбутньому чи минулому"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/bash/calculating-a-date-in-the-future-or-past.md"

@@ -3,7 +3,7 @@ title:                "Praca z liczbami zespolonymi"
 date:                  2024-01-26T04:39:42.119694-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z liczbami zespolonymi"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/working-with-complex-numbers.md"

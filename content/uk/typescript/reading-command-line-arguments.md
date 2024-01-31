@@ -3,7 +3,7 @@ title:                "Читання аргументів командного 
 date:                  2024-01-20T17:57:50.314976-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Читання аргументів командного рядка"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/reading-command-line-arguments.md"

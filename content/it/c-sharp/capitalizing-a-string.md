@@ -3,7 +3,7 @@ title:                "Maiuscolizzare una stringa"
 date:                  2024-01-19
 html_title:           "Bash: Maiuscolizzare una stringa"
 simple_title:         "Maiuscolizzare una stringa"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/capitalizing-a-string.md"

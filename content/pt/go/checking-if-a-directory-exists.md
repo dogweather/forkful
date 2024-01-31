@@ -3,7 +3,7 @@ title:                "Verificando se um diretório existe"
 date:                  2024-01-20T14:56:44.758073-07:00
 html_title:           "Fish Shell: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/checking-if-a-directory-exists.md"

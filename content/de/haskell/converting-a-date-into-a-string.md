@@ -3,7 +3,7 @@ title:                "Datum in einen String umwandeln"
 date:                  2024-01-20T17:36:30.516509-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Datum in einen String umwandeln"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/converting-a-date-into-a-string.md"

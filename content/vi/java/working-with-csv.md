@@ -3,7 +3,7 @@ title:                "Làm việc với CSV"
 date:                  2024-01-28T22:10:41.039120-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với CSV"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/working-with-csv.md"

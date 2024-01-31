@@ -3,7 +3,7 @@ title:                "ディレクトリが存在するかどうかの確認"
 date:                  2024-01-20T14:57:28.212098-07:00
 html_title:           "Gleam: ディレクトリが存在するかどうかの確認"
 simple_title:         "ディレクトリが存在するかどうかの確認"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

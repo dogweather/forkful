@@ -3,7 +3,7 @@ title:                "리팩토링"
 date:                  2024-01-26T01:18:48.891605-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "리팩토링"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/refactoring.md"

@@ -3,7 +3,7 @@ title:                "Manipulation de fichiers avec des commandes en une ligne 
 date:                  2024-01-27T16:20:55.315479-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulation de fichiers avec des commandes en une ligne en CLI"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/manipulating-files-with-cli-one-liners.md"

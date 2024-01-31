@@ -3,7 +3,7 @@ title:                "Sammenslåing av strenger"
 date:                  2024-01-20T17:35:00.273360-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Sammenslåing av strenger"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/concatenating-strings.md"

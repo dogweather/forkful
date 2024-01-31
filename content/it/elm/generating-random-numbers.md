@@ -3,7 +3,7 @@ title:                "Generazione di numeri casuali"
 date:                  2024-01-27T20:34:09.675101-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generazione di numeri casuali"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/generating-random-numbers.md"

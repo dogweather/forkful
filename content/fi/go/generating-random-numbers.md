@@ -3,7 +3,7 @@ title:                "Satunnaislukujen generointi"
 date:                  2024-01-27T20:34:04.185254-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Satunnaislukujen generointi"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/generating-random-numbers.md"

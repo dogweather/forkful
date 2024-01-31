@@ -3,7 +3,7 @@ title:                "文字列の連結"
 date:                  2024-01-27T10:43:13.642297-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "文字列の連結"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/concatenating-strings.md"

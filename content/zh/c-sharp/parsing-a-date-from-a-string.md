@@ -3,7 +3,7 @@ title:                "从字符串解析日期"
 date:                  2024-01-20T15:35:19.033574-07:00
 html_title:           "Arduino: 从字符串解析日期"
 simple_title:         "从字符串解析日期"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

@@ -3,7 +3,7 @@ title:                "Reguliere expressies gebruiken"
 date:                  2024-01-28T22:10:08.774994-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reguliere expressies gebruiken"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/typescript/using-regular-expressions.md"

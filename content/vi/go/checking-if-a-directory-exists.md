@@ -3,7 +3,7 @@ title:                "Kiểm tra xem thư mục có tồn tại không"
 date:                  2024-01-28T21:56:10.194727-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kiểm tra xem thư mục có tồn tại không"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/checking-if-a-directory-exists.md"

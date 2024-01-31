@@ -3,7 +3,7 @@ title:                "Läsa en textfil"
 date:                  2024-01-20T17:55:08.929178-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Läsa en textfil"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/reading-a-text-file.md"

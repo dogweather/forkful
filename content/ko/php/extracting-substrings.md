@@ -3,7 +3,7 @@ title:                "부분 문자열 추출"
 date:                  2024-01-20T17:46:22.019039-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "부분 문자열 추출"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Strings"
 isCJKLanguage:        true

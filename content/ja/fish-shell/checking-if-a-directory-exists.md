@@ -3,7 +3,7 @@ title:                "ディレクトリが存在するかどうかの確認"
 date:                  2024-01-20T14:56:25.489175-07:00
 html_title:           "Gleam: ディレクトリが存在するかどうかの確認"
 simple_title:         "ディレクトリが存在するかどうかの確認"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

@@ -3,7 +3,7 @@ title:                "디버거 사용하기"
 date:                  2024-01-26T04:10:15.859766-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "디버거 사용하기"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/using-a-debugger.md"

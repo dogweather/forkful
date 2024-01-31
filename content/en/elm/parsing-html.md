@@ -3,7 +3,7 @@ title:                "Parsing HTML"
 date:                  2024-01-20T15:31:27.703931-07:00
 html_title:           "Bash recipe: Parsing HTML"
 simple_title:         "Parsing HTML"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/parsing-html.md"

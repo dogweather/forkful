@@ -3,7 +3,7 @@ title:                "Recherche et remplacement de texte"
 date:                  2024-01-20T17:58:52.674229-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Recherche et remplacement de texte"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/searching-and-replacing-text.md"

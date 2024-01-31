@@ -3,7 +3,7 @@ title:                "Een tekstbestand lezen"
 date:                  2024-01-28T22:04:54.195018-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand lezen"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/reading-a-text-file.md"

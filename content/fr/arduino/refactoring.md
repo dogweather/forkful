@@ -3,7 +3,7 @@ title:                "Refactoring"
 date:                  2024-01-26T01:16:36.374873-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactoring"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/refactoring.md"

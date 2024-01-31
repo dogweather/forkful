@@ -3,7 +3,7 @@ title:                "Obtendo a data atual"
 date:                  2024-01-20T15:14:58.394027-07:00
 html_title:           "Bash: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/getting-the-current-date.md"

@@ -3,7 +3,7 @@ title:                "Generierung von Zufallszahlen"
 date:                  2024-01-27T20:35:26.203969-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generierung von Zufallszahlen"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/generating-random-numbers.md"

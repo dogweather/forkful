@@ -3,7 +3,7 @@ title:                "लॉगिंग"
 date:                  2024-01-26T01:10:02.380840-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "लॉगिंग"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/go/logging.md"

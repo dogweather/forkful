@@ -3,7 +3,7 @@ title:                "Визначення довжини рядка"
 date:                  2024-01-20T17:47:45.249636-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Визначення довжини рядка"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/fish-shell/finding-the-length-of-a-string.md"

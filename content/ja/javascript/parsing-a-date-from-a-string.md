@@ -3,7 +3,7 @@ title:                "文字列から日付を解析する"
 date:                  2024-01-20T15:36:57.389008-07:00
 html_title:           "Arduino: 文字列から日付を解析する"
 simple_title:         "文字列から日付を解析する"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

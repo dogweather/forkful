@@ -3,7 +3,7 @@ title:                "Odczytywanie argumentów linii poleceń"
 date:                  2024-01-20T17:55:28.350388-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Odczytywanie argumentów linii poleceń"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/reading-command-line-arguments.md"

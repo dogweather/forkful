@@ -3,7 +3,7 @@ title:                "处理 YAML 文件"
 date:                  2024-01-19
 html_title:           "Bash: 处理 YAML 文件"
 simple_title:         "处理 YAML 文件"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true

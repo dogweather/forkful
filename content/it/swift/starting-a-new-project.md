@@ -3,7 +3,7 @@ title:                "Avvio di un nuovo progetto"
 date:                  2024-01-20T18:04:27.108532-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Avvio di un nuovo progetto"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/starting-a-new-project.md"

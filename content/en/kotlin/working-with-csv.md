@@ -3,7 +3,7 @@ title:                "Working with CSV"
 date:                  2024-01-19
 html_title:           "C recipe: Working with CSV"
 simple_title:         "Working with CSV"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/working-with-csv.md"

@@ -3,7 +3,7 @@ title:                "Sprawdzanie, czy katalog istnieje"
 date:                  2024-01-20T14:57:10.650048-07:00
 html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/checking-if-a-directory-exists.md"

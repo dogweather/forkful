@@ -3,7 +3,7 @@ title:                "Pisanie testów"
 date:                  2024-01-19
 html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/writing-tests.md"

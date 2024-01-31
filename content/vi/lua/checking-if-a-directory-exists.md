@@ -3,7 +3,7 @@ title:                "Kiểm tra xem thư mục có tồn tại không"
 date:                  2024-01-28T21:57:02.314867-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kiểm tra xem thư mục có tồn tại không"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/lua/checking-if-a-directory-exists.md"

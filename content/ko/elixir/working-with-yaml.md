@@ -3,7 +3,7 @@ title:                "YAML 다루기"
 date:                  2024-01-19
 html_title:           "Arduino: YAML 다루기"
 simple_title:         "YAML 다루기"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true

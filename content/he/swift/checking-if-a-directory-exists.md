@@ -3,7 +3,7 @@ title:                "בדיקה האם תיקייה קיימת"
 date:                  2024-01-20T14:59:10.090576-07:00
 html_title:           "Gleam: בדיקה האם תיקייה קיימת"
 simple_title:         "בדיקה האם תיקייה קיימת"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/checking-if-a-directory-exists.md"

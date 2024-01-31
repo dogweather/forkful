@@ -3,7 +3,7 @@ title:                "Ghi log"
 date:                  2024-01-28T22:03:30.606305-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi log"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/logging.md"

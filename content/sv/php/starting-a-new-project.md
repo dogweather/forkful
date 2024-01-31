@@ -3,7 +3,7 @@ title:                "Att påbörja ett nytt projekt"
 date:                  2024-01-20T18:04:32.791008-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Att påbörja ett nytt projekt"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/starting-a-new-project.md"

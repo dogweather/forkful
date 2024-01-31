@@ -3,7 +3,7 @@ title:                "Samenvoegen van strings"
 date:                  2024-01-28T21:57:00.105512-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Samenvoegen van strings"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/concatenating-strings.md"

@@ -3,7 +3,7 @@ title:                "עבודה עם מספרים מרוכבים"
 date:                  2024-01-26T04:44:41.545811-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם מספרים מרוכבים"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/php/working-with-complex-numbers.md"

@@ -3,7 +3,7 @@ title:                "Textdatei einlesen"
 date:                  2024-01-20T17:54:43.621305-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Textdatei einlesen"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/reading-a-text-file.md"

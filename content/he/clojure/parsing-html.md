@@ -3,7 +3,7 @@ title:                "ניתוח HTML"
 date:                  2024-01-20T15:31:12.689295-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/parsing-html.md"

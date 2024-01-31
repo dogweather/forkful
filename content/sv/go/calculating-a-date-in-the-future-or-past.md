@@ -3,7 +3,7 @@ title:                "Beräkna ett datum i framtiden eller förflutenheten"
 date:                  2024-01-20T17:31:01.933634-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Beräkna ett datum i framtiden eller förflutenheten"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/calculating-a-date-in-the-future-or-past.md"

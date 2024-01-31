@@ -3,7 +3,7 @@ title:                "문자열 보간하기"
 date:                  2024-01-20T17:50:26.150930-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "문자열 보간하기"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Strings"
 isCJKLanguage:        true

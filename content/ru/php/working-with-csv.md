@@ -3,7 +3,7 @@ title:                "Работа с CSV"
 date:                  2024-01-29T00:04:39.841012-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с CSV"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/php/working-with-csv.md"

@@ -3,7 +3,7 @@ title:                "Склеивание строк"
 date:                  2024-01-28T23:56:37.012178-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Склеивание строк"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/python/concatenating-strings.md"

@@ -3,7 +3,7 @@ title:                "גילוי מספרים אקראיים"
 date:                  2024-01-27T20:33:52.671190-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "גילוי מספרים אקראיים"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/generating-random-numbers.md"

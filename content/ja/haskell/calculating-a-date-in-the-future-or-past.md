@@ -3,7 +3,7 @@ title:                "将来または過去の日付を計算する"
 date:                  2024-01-20T17:31:11.255401-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "将来または過去の日付を計算する"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

@@ -3,7 +3,7 @@ title:                "Парсинг HTML"
 date:                  2024-01-20T15:31:16.696494-07:00
 html_title:           "Arduino: Парсинг HTML"
 simple_title:         "Парсинг HTML"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elm/parsing-html.md"

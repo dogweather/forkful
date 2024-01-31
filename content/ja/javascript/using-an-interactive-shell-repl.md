@@ -3,7 +3,7 @@ title:                "インタラクティブシェル（REPL）の使用"
 date:                  2024-01-26T04:15:54.366658-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "インタラクティブシェル（REPL）の使用"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/using-an-interactive-shell-repl.md"

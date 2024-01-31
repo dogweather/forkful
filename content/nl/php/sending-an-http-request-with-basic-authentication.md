@@ -3,7 +3,7 @@ title:                "Een HTTP-verzoek verzenden met basisauthenticatie"
 date:                  2024-01-28T22:08:10.826723-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een HTTP-verzoek verzenden met basisauthenticatie"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/sending-an-http-request-with-basic-authentication.md"

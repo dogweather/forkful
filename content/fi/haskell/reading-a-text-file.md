@@ -3,7 +3,7 @@ title:                "Tekstitiedoston lukeminen"
 date:                  2024-01-20T17:54:20.714393-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/reading-a-text-file.md"

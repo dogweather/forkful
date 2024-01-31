@@ -3,7 +3,7 @@ title:                "Zaokrąglanie liczb"
 date:                  2024-01-26T03:45:54.975555-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zaokrąglanie liczb"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/rounding-numbers.md"

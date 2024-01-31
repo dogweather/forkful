@@ -3,7 +3,7 @@ title:                "Korzystanie z tablic asocjacyjnych"
 date:                  2024-01-30T19:12:05.976217-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z tablic asocjacyjnych"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/using-associative-arrays.md"

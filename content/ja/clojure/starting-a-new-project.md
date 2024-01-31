@@ -3,7 +3,7 @@ title:                "新しいプロジェクトを始める"
 date:                  2024-01-20T18:03:09.223830-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "新しいプロジェクトを始める"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Getting Started"
 isCJKLanguage:        true

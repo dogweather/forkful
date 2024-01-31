@@ -3,7 +3,7 @@ title:                "Willekeurige getallen genereren"
 date:                  2024-01-28T22:01:28.172432-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Willekeurige getallen genereren"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/java/generating-random-numbers.md"

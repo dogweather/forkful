@@ -3,7 +3,7 @@ title:                "Làm việc với YAML"
 date:                  2024-01-28T22:11:44.337175-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với YAML"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/working-with-yaml.md"

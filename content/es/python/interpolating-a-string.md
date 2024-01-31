@@ -3,7 +3,7 @@ title:                "Interpolando una cadena de caracteres"
 date:                  2024-01-28T21:23:50.789079-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interpolando una cadena de caracteres"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/interpolating-a-string.md"

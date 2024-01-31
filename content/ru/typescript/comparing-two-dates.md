@@ -3,7 +3,7 @@ title:                "Сравнение двух дат"
 date:                  2024-01-28T23:55:31.059585-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Сравнение двух дат"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/typescript/comparing-two-dates.md"

@@ -3,7 +3,7 @@ title:                "Fouten afhandelen"
 date:                  2024-01-28T22:01:59.158090-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fouten afhandelen"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/handling-errors.md"

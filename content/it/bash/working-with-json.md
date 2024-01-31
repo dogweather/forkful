@@ -3,7 +3,7 @@ title:                "Lavorare con JSON"
 date:                  2024-01-19
 html_title:           "Arduino: Lavorare con JSON"
 simple_title:         "Lavorare con JSON"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/working-with-json.md"

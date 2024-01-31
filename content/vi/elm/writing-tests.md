@@ -3,7 +3,7 @@ title:                "Viết kiểm thử"
 date:                  2024-01-28T22:12:53.129827-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết kiểm thử"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elm/writing-tests.md"

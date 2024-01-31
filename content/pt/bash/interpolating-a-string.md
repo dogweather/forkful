@@ -3,7 +3,7 @@ title:                "Interpolando uma string"
 date:                  2024-01-20T17:50:36.504584-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolando uma string"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/interpolating-a-string.md"

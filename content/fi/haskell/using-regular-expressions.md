@@ -3,7 +3,7 @@ title:                "Säännöllisten lausekkeiden käyttö"
 date:                  2024-01-19
 html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/using-regular-expressions.md"

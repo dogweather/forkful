@@ -3,7 +3,7 @@ title:                "XML:n käsittely"
 date:                  2024-01-26T04:30:19.095585-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML:n käsittely"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/working-with-xml.md"

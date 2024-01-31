@@ -3,7 +3,7 @@ title:                "Створення текстового файлу"
 date:                  2024-01-19
 html_title:           "Arduino: Створення текстового файлу"
 simple_title:         "Створення текстового файлу"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/go/writing-a-text-file.md"

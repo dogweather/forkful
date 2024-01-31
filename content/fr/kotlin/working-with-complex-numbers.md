@@ -3,7 +3,7 @@ title:                "Manipulation des nombres complexes"
 date:                  2024-01-26T04:43:36.185998-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulation des nombres complexes"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/working-with-complex-numbers.md"

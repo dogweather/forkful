@@ -3,7 +3,7 @@ title:                "Geração de números aleatórios"
 date:                  2024-01-27T20:34:51.317962-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Geração de números aleatórios"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/generating-random-numbers.md"

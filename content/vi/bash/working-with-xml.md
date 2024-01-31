@@ -3,7 +3,7 @@ title:                "Làm việc với XML"
 date:                  2024-01-28T22:11:20.254458-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với XML"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/working-with-xml.md"

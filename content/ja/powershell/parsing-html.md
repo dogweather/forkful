@@ -3,7 +3,7 @@ title:                "HTMLの解析"
 date:                  2024-01-20T15:33:28.465931-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true

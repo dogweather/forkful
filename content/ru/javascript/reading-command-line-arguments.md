@@ -3,7 +3,7 @@ title:                "Чтение аргументов командной ст
 date:                  2024-01-29T00:01:33.958327-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Чтение аргументов командной строки"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/javascript/reading-command-line-arguments.md"

@@ -3,7 +3,7 @@ title:                "Iniciando um novo projeto"
 date:                  2024-01-20T18:02:53.307576-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Iniciando um novo projeto"
-programming_language: "C"
+
 category:             "C"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/starting-a-new-project.md"

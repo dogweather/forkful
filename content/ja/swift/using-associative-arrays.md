@@ -3,7 +3,7 @@ title:                "連想配列の使用"
 date:                  2024-01-30T19:13:26.553571-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "連想配列の使用"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/using-associative-arrays.md"

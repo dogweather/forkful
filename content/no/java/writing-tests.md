@@ -3,7 +3,7 @@ title:                "Skriving av tester"
 date:                  2024-01-19
 html_title:           "Arduino: Skriving av tester"
 simple_title:         "Skriving av tester"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/writing-tests.md"

@@ -3,7 +3,7 @@ title:                "Een webpagina downloaden"
 date:                  2024-01-28T21:59:22.915498-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een webpagina downloaden"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/downloading-a-web-page.md"

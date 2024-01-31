@@ -3,7 +3,7 @@ title:                "Een string met hoofdletters maken"
 date:                  2024-01-28T21:56:09.093862-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string met hoofdletters maken"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/capitalizing-a-string.md"

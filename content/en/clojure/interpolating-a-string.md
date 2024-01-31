@@ -3,7 +3,7 @@ title:                "Interpolating a string"
 date:                  2024-01-20T17:50:29.119372-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolating a string"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/interpolating-a-string.md"

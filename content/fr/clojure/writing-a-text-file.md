@@ -3,7 +3,7 @@ title:                "Écriture d'un fichier texte"
 date:                  2024-01-19
 html_title:           "Arduino: Écriture d'un fichier texte"
 simple_title:         "Écriture d'un fichier texte"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/writing-a-text-file.md"

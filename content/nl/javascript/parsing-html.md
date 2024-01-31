@@ -3,7 +3,7 @@ title:                "HTML Parsen"
 date:                  2024-01-28T22:04:01.587235-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML Parsen"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/parsing-html.md"

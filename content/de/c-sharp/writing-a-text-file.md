@@ -3,7 +3,7 @@ title:                "Eine Textdatei schreiben"
 date:                  2024-01-19
 html_title:           "Arduino: Eine Textdatei schreiben"
 simple_title:         "Eine Textdatei schreiben"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/writing-a-text-file.md"

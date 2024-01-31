@@ -3,7 +3,7 @@ title:                "Datum in einen String umwandeln"
 date:                  2024-01-20T17:35:56.069444-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Datum in einen String umwandeln"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/converting-a-date-into-a-string.md"

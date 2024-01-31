@@ -3,7 +3,7 @@ title:                "Een tijdelijk bestand aanmaken"
 date:                  2024-01-28T21:58:16.745822-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tijdelijk bestand aanmaken"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/creating-a-temporary-file.md"

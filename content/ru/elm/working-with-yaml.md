@@ -3,7 +3,7 @@ title:                "Работа с YAML"
 date:                  2024-01-29T00:04:55.075875-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с YAML"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elm/working-with-yaml.md"

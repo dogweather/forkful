@@ -3,7 +3,7 @@ title:                "下载网页"
 date:                  2024-01-20T17:44:02.359647-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "下载网页"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true

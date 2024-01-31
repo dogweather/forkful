@@ -3,7 +3,7 @@ title:                "Writing to standard error"
 date:                  2024-01-19
 html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/writing-to-standard-error.md"

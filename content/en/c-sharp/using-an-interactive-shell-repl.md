@@ -3,7 +3,7 @@ title:                "Using an interactive shell (REPL)"
 date:                  2024-01-25T03:39:45.126377-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Using an interactive shell (REPL)"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/using-an-interactive-shell-repl.md"

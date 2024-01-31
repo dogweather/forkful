@@ -3,7 +3,7 @@ title:                "Bruke associative tabeller"
 date:                  2024-01-30T19:13:36.962345-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bruke associative tabeller"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/using-associative-arrays.md"

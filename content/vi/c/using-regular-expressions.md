@@ -3,7 +3,7 @@ title:                "Sử dụng biểu thức chính quy"
 date:                  2024-01-28T22:09:20.499379-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng biểu thức chính quy"
-programming_language: "C"
+
 category:             "C"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/using-regular-expressions.md"

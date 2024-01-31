@@ -3,7 +3,7 @@ title:                "미래나 과거의 날짜 계산하기"
 date:                  2024-01-20T17:31:36.788434-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "미래나 과거의 날짜 계산하기"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

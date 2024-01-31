@@ -3,7 +3,7 @@ title:                "Починаємо новий проект"
 date:                  2024-01-20T18:03:21.486767-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Починаємо новий проект"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elm/starting-a-new-project.md"

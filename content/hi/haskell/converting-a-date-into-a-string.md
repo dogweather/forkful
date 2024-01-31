@@ -3,7 +3,7 @@ title:                "तारीख को स्ट्रिंग में
 date:                  2024-01-20T17:37:37.972299-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "तारीख को स्ट्रिंग में बदलना"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/converting-a-date-into-a-string.md"

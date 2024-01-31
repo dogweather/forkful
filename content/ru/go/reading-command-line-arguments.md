@@ -3,7 +3,7 @@ title:                "Чтение аргументов командной ст
 date:                  2024-01-29T00:01:37.849792-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Чтение аргументов командной строки"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/go/reading-command-line-arguments.md"

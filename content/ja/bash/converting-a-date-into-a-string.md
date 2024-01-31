@@ -3,7 +3,7 @@ title:                "日付を文字列に変換する"
 date:                  2024-01-20T17:35:54.654331-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日付を文字列に変換する"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

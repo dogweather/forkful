@@ -3,7 +3,7 @@ title:                "使用基本认证发送 HTTP 请求"
 date:                  2024-01-20T18:01:28.706237-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "使用基本认证发送 HTTP 请求"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true

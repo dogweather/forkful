@@ -3,7 +3,7 @@ title:                "Преобразование строки в нижний
 date:                  2024-01-28T23:57:23.287345-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в нижний регистр"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/lua/converting-a-string-to-lower-case.md"

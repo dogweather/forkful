@@ -3,7 +3,7 @@ title:                "Viết hoa một chuỗi"
 date:                  2024-01-28T21:55:51.532865-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết hoa một chuỗi"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/capitalizing-a-string.md"

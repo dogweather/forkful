@@ -3,7 +3,7 @@ title:                "Удаление кавычек из строки"
 date:                  2024-01-29T00:02:32.785328-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление кавычек из строки"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/swift/removing-quotes-from-a-string.md"

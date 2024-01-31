@@ -3,7 +3,7 @@ title:                "स्ट्रिंग को जोड़ना"
 date:                  2024-01-20T17:34:46.247002-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "स्ट्रिंग को जोड़ना"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/go/concatenating-strings.md"

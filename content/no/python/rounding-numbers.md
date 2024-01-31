@@ -3,7 +3,7 @@ title:                "Avrunding av tall"
 date:                  2024-01-26T03:46:12.942714-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrunding av tall"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/rounding-numbers.md"

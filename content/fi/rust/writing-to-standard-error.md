@@ -3,7 +3,7 @@ title:                "Kirjoittaminen vakiovirheeseen"
 date:                  2024-01-19
 html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
 simple_title:         "Kirjoittaminen vakiovirheeseen"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/writing-to-standard-error.md"

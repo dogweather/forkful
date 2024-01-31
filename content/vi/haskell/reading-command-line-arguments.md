@@ -3,7 +3,7 @@ title:                "Đọc các đối số dòng lệnh"
 date:                  2024-01-28T22:05:47.994790-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc các đối số dòng lệnh"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/reading-command-line-arguments.md"

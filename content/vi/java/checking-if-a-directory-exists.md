@@ -3,7 +3,7 @@ title:                "Kiểm tra xem thư mục có tồn tại không"
 date:                  2024-01-28T21:56:56.679602-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kiểm tra xem thư mục có tồn tại không"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/checking-if-a-directory-exists.md"

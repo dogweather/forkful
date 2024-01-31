@@ -3,7 +3,7 @@ title:                "日付を比較する"
 date:                  2024-01-20T17:33:08.244570-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日付を比較する"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

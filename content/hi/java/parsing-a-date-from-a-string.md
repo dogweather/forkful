@@ -3,7 +3,7 @@ title:                "स्ट्रिंग से दिनांक पा
 date:                  2024-01-20T15:37:20.040481-07:00
 html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
 simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/parsing-a-date-from-a-string.md"

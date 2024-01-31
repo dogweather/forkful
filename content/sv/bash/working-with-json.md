@@ -3,7 +3,7 @@ title:                "Arbeta med JSON"
 date:                  2024-01-19
 html_title:           "Arduino: Arbeta med JSON"
 simple_title:         "Arbeta med JSON"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/working-with-json.md"

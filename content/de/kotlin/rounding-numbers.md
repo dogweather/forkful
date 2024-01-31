@@ -3,7 +3,7 @@ title:                "Zahlen runden"
 date:                  2024-01-26T03:45:20.807570-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zahlen runden"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/rounding-numbers.md"

@@ -3,7 +3,7 @@ title:                "Modification de fichiers sur place avec des lignes de com
 date:                  2024-01-27T16:20:47.160074-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Modification de fichiers sur place avec des lignes de commande en une seule étape"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/editing-files-in-place-with-cli-one-liners.md"

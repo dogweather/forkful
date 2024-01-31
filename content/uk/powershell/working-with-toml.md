@@ -3,7 +3,7 @@ title:                "Робота з TOML"
 date:                  2024-01-26T04:25:44.198830-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з TOML"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/powershell/working-with-toml.md"

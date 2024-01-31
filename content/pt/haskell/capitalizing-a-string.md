@@ -3,7 +3,7 @@ title:                "Capitalizando uma string"
 date:                  2024-01-19
 html_title:           "Bash: Capitalizando uma string"
 simple_title:         "Capitalizando uma string"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/capitalizing-a-string.md"

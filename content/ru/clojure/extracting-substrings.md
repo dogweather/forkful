@@ -3,7 +3,7 @@ title:                "Извлечение подстрок"
 date:                  2024-01-28T23:57:45.616582-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Извлечение подстрок"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/clojure/extracting-substrings.md"

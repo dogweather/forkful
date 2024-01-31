@@ -3,7 +3,7 @@ title:                "Handling errors"
 date:                  2024-01-21T21:20:11.687655-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Handling errors"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/handling-errors.md"

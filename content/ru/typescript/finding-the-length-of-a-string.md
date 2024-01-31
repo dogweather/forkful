@@ -3,7 +3,7 @@ title:                "Поиск длины строки"
 date:                  2024-01-28T23:58:30.252931-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск длины строки"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/typescript/finding-the-length-of-a-string.md"

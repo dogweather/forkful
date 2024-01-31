@@ -3,7 +3,7 @@ title:                "Извлечение подстрок"
 date:                  2024-01-28T23:57:34.707930-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Извлечение подстрок"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/php/extracting-substrings.md"

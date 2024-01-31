@@ -3,7 +3,7 @@ title:                "Сравнение двух дат"
 date:                  2024-01-28T23:56:06.785009-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Сравнение двух дат"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/arduino/comparing-two-dates.md"

@@ -3,7 +3,7 @@ title:                "Porównywanie dwóch dat"
 date:                  2024-01-20T17:33:31.971848-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Porównywanie dwóch dat"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/comparing-two-dates.md"

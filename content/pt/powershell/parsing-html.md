@@ -3,7 +3,7 @@ title:                "Análise de HTML"
 date:                  2024-01-20T15:33:43.017909-07:00
 html_title:           "Bash: Análise de HTML"
 simple_title:         "Análise de HTML"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/parsing-html.md"

@@ -3,7 +3,7 @@ title:                "Trabalhando com JSON"
 date:                  2024-01-19
 html_title:           "Arduino: Trabalhando com JSON"
 simple_title:         "Trabalhando com JSON"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/working-with-json.md"

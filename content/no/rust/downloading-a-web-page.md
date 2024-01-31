@@ -3,7 +3,7 @@ title:                "Nedlasting av en nettside"
 date:                  2024-01-20T17:44:50.217750-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Nedlasting av en nettside"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/downloading-a-web-page.md"

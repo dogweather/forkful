@@ -3,7 +3,7 @@ title:                "エラー処理"
 date:                  2024-01-26T00:56:32.413531-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "エラー処理"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/handling-errors.md"

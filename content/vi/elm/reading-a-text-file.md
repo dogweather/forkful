@@ -3,7 +3,7 @@ title:                "Đọc một tệp văn bản"
 date:                  2024-01-28T22:04:59.326658-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc một tệp văn bản"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elm/reading-a-text-file.md"

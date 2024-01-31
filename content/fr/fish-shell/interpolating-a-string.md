@@ -3,7 +3,7 @@ title:                "Interpolation de chaînes de caractères"
 date:                  2024-01-20T17:50:35.027186-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolation de chaînes de caractères"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/interpolating-a-string.md"

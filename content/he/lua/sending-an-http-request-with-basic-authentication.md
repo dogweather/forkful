@@ -3,7 +3,7 @@ title:                "שליחת בקשת HTTP עם אימות בסיסי"
 date:                  2024-01-20T18:02:10.472033-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "שליחת בקשת HTTP עם אימות בסיסי"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/lua/sending-an-http-request-with-basic-authentication.md"

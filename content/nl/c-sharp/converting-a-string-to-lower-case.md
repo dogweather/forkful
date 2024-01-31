@@ -3,7 +3,7 @@ title:                "Een string omzetten naar kleine letters"
 date:                  2024-01-28T21:57:46.445048-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string omzetten naar kleine letters"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c-sharp/converting-a-string-to-lower-case.md"

@@ -3,7 +3,7 @@ title:                "Fouten afhandelen"
 date:                  2024-01-28T22:02:17.426859-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fouten afhandelen"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/handling-errors.md"

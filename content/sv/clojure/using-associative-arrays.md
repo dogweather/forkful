@@ -3,7 +3,7 @@ title:                "Att använda associativa arrayer"
 date:                  2024-01-30T19:10:49.449509-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda associativa arrayer"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/using-associative-arrays.md"

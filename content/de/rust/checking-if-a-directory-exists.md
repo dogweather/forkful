@@ -3,7 +3,7 @@ title:                "Überprüfung, ob ein Verzeichnis existiert"
 date:                  2024-01-20T14:58:45.579307-07:00
 html_title:           "Fish Shell: Überprüfung, ob ein Verzeichnis existiert"
 simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/checking-if-a-directory-exists.md"

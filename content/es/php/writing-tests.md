@@ -3,7 +3,7 @@ title:                "Escribiendo pruebas"
 date:                  2024-01-19
 html_title:           "Arduino: Escribiendo pruebas"
 simple_title:         "Escribiendo pruebas"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/writing-tests.md"

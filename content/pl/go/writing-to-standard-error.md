@@ -3,7 +3,7 @@ title:                "Pisanie do standardowego błędu"
 date:                  2024-01-19
 html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/writing-to-standard-error.md"

@@ -3,7 +3,7 @@ title:                "字符串插值"
 date:                  2024-01-20T17:51:05.859557-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "字符串插值"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Strings"
 isCJKLanguage:        true

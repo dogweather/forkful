@@ -3,7 +3,7 @@ title:                "Tarkistetaan, onko hakemisto olemassa"
 date:                  2024-01-19
 html_title:           "C: Tarkistetaan, onko hakemisto olemassa"
 simple_title:         "Tarkistetaan, onko hakemisto olemassa"
-programming_language: "C"
+
 category:             "C"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/checking-if-a-directory-exists.md"

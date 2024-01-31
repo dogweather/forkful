@@ -3,7 +3,7 @@ title:                "Editing files in-place with CLI one-liners"
 date:                  2024-01-27T16:14:16.677583-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Editing files in-place with CLI one-liners"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/editing-files-in-place-with-cli-one-liners.md"

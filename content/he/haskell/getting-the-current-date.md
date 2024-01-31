@@ -3,7 +3,7 @@ title:                "קבלת התאריך הנוכחי"
 date:                  2024-01-20T15:15:11.575044-07:00
 html_title:           "C: קבלת התאריך הנוכחי"
 simple_title:         "קבלת התאריך הנוכחי"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/getting-the-current-date.md"

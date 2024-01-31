@@ -3,7 +3,7 @@ title:                "Kontrollera om en katalog finns"
 date:                  2024-01-20T14:56:20.679011-07:00
 html_title:           "Fish Shell: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/checking-if-a-directory-exists.md"

@@ -3,7 +3,7 @@ title:                "Преобразование строки в верхни
 date:                  2024-01-28T23:55:50.106550-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в верхний регистр"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elixir/capitalizing-a-string.md"

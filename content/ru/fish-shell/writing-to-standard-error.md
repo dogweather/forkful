@@ -3,7 +3,7 @@ title:                "Запись в стандартный поток оши�
 date:                  2024-01-29T00:05:50.163575-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Запись в стандартный поток ошибок"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/fish-shell/writing-to-standard-error.md"

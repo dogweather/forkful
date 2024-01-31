@@ -3,7 +3,7 @@ title:                "Werken met complexe getallen"
 date:                  2024-01-28T22:12:35.460269-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met complexe getallen"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/python/working-with-complex-numbers.md"

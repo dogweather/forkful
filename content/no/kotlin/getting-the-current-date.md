@@ -3,7 +3,7 @@ title:                "Slik får du tak i dagens dato"
 date:                  2024-01-20T15:15:27.201950-07:00
 html_title:           "C: Slik får du tak i dagens dato"
 simple_title:         "Slik får du tak i dagens dato"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/getting-the-current-date.md"

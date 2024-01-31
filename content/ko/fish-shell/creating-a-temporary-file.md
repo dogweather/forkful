@@ -3,7 +3,7 @@ title:                "임시 파일 생성하기"
 date:                  2024-01-20T17:40:13.226799-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "임시 파일 생성하기"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

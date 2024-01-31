@@ -3,7 +3,7 @@ title:                "Generierung von Zufallszahlen"
 date:                  2024-01-27T20:32:44.592579-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generierung von Zufallszahlen"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/generating-random-numbers.md"

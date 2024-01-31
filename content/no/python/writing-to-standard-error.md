@@ -3,7 +3,7 @@ title:                "Skrive til standardfeil"
 date:                  2024-01-19
 html_title:           "Arduino: Skrive til standardfeil"
 simple_title:         "Skrive til standardfeil"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/writing-to-standard-error.md"

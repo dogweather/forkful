@@ -3,7 +3,7 @@ title:                "Een string met hoofdletters maken"
 date:                  2024-01-28T21:55:33.244840-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string met hoofdletters maken"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/typescript/capitalizing-a-string.md"

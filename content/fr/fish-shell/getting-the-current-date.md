@@ -3,7 +3,7 @@ title:                "Obtenir la date actuelle"
 date:                  2024-01-20T15:14:06.719855-07:00
 html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/getting-the-current-date.md"

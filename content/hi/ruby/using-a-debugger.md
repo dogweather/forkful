@@ -3,7 +3,7 @@ title:                "डीबगर का उपयोग करना"
 date:                  2024-01-26T04:10:48.130720-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डीबगर का उपयोग करना"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/using-a-debugger.md"

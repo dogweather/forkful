@@ -3,7 +3,7 @@ title:                "Обработка ошибок"
 date:                  2024-01-28T23:58:59.242416-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Обработка ошибок"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/clojure/handling-errors.md"

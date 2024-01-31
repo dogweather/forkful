@@ -3,7 +3,7 @@ title:                "打印调试输出"
 date:                  2024-01-20T17:52:29.845754-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "打印调试输出"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Testing and Debugging"
 isCJKLanguage:        true

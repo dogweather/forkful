@@ -3,7 +3,7 @@ title:                "Vérifier si un répertoire existe"
 date:                  2024-01-20T14:57:17.645319-07:00
 html_title:           "Go: Vérifier si un répertoire existe"
 simple_title:         "Vérifier si un répertoire existe"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/checking-if-a-directory-exists.md"

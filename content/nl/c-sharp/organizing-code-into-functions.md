@@ -3,7 +3,7 @@ title:                "Code organiseren in functies"
 date:                  2024-01-28T22:02:51.565220-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Code organiseren in functies"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c-sharp/organizing-code-into-functions.md"

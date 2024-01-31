@@ -3,7 +3,7 @@ title:                "获取当前日期"
 date:                  2024-01-20T15:14:13.918507-07:00
 html_title:           "Bash: 获取当前日期"
 simple_title:         "获取当前日期"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

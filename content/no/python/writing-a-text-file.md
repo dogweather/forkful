@@ -3,7 +3,7 @@ title:                "Skriving av en tekstfil"
 date:                  2024-01-19
 html_title:           "Arduino: Skriving av en tekstfil"
 simple_title:         "Skriving av en tekstfil"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/writing-a-text-file.md"

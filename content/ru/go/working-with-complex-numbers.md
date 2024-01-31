@@ -3,7 +3,7 @@ title:                "Работа с комплексными числами"
 date:                  2024-01-29T00:05:53.650380-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с комплексными числами"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/go/working-with-complex-numbers.md"

@@ -3,7 +3,7 @@ title:                "Finn lengden på en streng"
 date:                  2024-01-20T17:47:59.338866-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Finn lengden på en streng"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/finding-the-length-of-a-string.md"

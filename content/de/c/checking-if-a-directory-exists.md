@@ -3,7 +3,7 @@ title:                "Überprüfen, ob ein Verzeichnis existiert"
 date:                  2024-01-19
 html_title:           "Arduino: Überprüfen, ob ein Verzeichnis existiert"
 simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
-programming_language: "C"
+
 category:             "C"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/checking-if-a-directory-exists.md"

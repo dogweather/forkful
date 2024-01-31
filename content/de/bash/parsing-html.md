@@ -3,7 +3,7 @@ title:                "HTML parsen"
 date:                  2024-01-20T15:30:22.729991-07:00
 html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/parsing-html.md"

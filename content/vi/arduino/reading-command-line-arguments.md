@@ -3,7 +3,7 @@ title:                "Đọc các đối số dòng lệnh"
 date:                  2024-01-28T22:06:21.080939-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc các đối số dòng lệnh"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/reading-command-line-arguments.md"

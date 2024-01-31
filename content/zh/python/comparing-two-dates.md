@@ -3,7 +3,7 @@ title:                "比较两个日期"
 date:                  2024-01-20T17:34:01.083116-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "比较两个日期"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

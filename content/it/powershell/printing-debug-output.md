@@ -3,7 +3,7 @@ title:                "Stampa dell'output di debug"
 date:                  2024-01-20T17:53:05.863059-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Stampa dell'output di debug"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/printing-debug-output.md"

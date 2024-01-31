@@ -3,7 +3,7 @@ title:                "Zahlen runden"
 date:                  2024-01-26T03:44:54.593241-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zahlen runden"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/rounding-numbers.md"

@@ -3,7 +3,7 @@ title:                "Mettre une chaîne de caractères en majuscules"
 date:                  2024-01-19
 html_title:           "C: Mettre une chaîne de caractères en majuscules"
 simple_title:         "Mettre une chaîne de caractères en majuscules"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/capitalizing-a-string.md"

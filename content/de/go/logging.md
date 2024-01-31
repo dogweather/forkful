@@ -3,7 +3,7 @@ title:                "Protokollierung"
 date:                  2024-01-26T01:07:41.332387-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Protokollierung"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/logging.md"

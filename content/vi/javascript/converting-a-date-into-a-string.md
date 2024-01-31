@@ -3,7 +3,7 @@ title:                "Chuyển đổi một ngày thành chuỗi"
 date:                  2024-01-28T21:57:32.458591-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi một ngày thành chuỗi"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/converting-a-date-into-a-string.md"

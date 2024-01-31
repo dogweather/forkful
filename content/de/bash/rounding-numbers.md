@@ -3,7 +3,7 @@ title:                "Zahlen runden"
 date:                  2024-01-26T03:42:24.752922-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zahlen runden"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/rounding-numbers.md"

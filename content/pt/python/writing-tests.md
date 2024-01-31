@@ -3,7 +3,7 @@ title:                "Escrevendo testes"
 date:                  2024-01-19
 html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/writing-tests.md"

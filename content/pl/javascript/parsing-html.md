@@ -3,7 +3,7 @@ title:                "Analiza składniowa HTML"
 date:                  2024-01-28T03:00:48.718434-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analiza składniowa HTML"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/parsing-html.md"

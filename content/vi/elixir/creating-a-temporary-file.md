@@ -3,7 +3,7 @@ title:                "Tạo một tập tin tạm thời"
 date:                  2024-01-28T21:58:41.538253-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tạo một tập tin tạm thời"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/creating-a-temporary-file.md"

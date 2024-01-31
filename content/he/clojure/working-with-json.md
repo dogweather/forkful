@@ -3,7 +3,7 @@ title:                "עבודה עם JSON"
 date:                  2024-01-19
 html_title:           "Arduino: עבודה עם JSON"
 simple_title:         "עבודה עם JSON"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/working-with-json.md"

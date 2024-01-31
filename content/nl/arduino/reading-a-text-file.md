@@ -3,7 +3,7 @@ title:                "Een tekstbestand lezen"
 date:                  2024-01-28T22:04:52.626293-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand lezen"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/reading-a-text-file.md"

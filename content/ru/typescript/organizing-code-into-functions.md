@@ -3,7 +3,7 @@ title:                "Организация кода в функции"
 date:                  2024-01-29T00:00:01.801717-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Организация кода в функции"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/typescript/organizing-code-into-functions.md"

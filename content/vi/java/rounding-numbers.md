@@ -3,7 +3,7 @@ title:                "Làm tròn số"
 date:                  2024-01-28T22:06:53.206409-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm tròn số"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/rounding-numbers.md"

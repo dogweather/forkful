@@ -3,7 +3,7 @@ title:                "Att organisera kod i funktioner"
 date:                  2024-01-26T01:09:28.447292-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Att organisera kod i funktioner"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/organizing-code-into-functions.md"

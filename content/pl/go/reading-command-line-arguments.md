@@ -3,7 +3,7 @@ title:                "Odczytywanie argumentów linii poleceń"
 date:                  2024-01-20T17:56:26.887981-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Odczytywanie argumentów linii poleceń"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/reading-command-line-arguments.md"

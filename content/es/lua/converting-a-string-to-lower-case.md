@@ -3,7 +3,7 @@ title:                "Conversión de una cadena de texto a minúsculas"
 date:                  2024-01-20T17:38:46.715421-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Conversión de una cadena de texto a minúsculas"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/converting-a-string-to-lower-case.md"

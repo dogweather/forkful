@@ -3,7 +3,7 @@ title:                "Organizando o código em funções"
 date:                  2024-01-26T01:11:18.285792-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organizando o código em funções"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/organizing-code-into-functions.md"

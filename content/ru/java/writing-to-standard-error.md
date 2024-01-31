@@ -3,7 +3,7 @@ title:                "Запись в стандартный вывод оши�
 date:                  2024-01-29T00:22:22.361858-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Запись в стандартный вывод ошибок"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/java/writing-to-standard-error.md"

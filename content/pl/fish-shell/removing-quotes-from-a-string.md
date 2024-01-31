@@ -3,7 +3,7 @@ title:                "Usuwanie cudzysłowów z ciągu znaków"
 date:                  2024-01-26T03:39:16.776497-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/removing-quotes-from-a-string.md"

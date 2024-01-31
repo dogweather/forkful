@@ -3,7 +3,7 @@ title:                "Wysyłanie zapytania http z podstawową autoryzacją"
 date:                  2024-01-20T18:01:28.277583-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/sending-an-http-request-with-basic-authentication.md"

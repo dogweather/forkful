@@ -3,7 +3,7 @@ title:                "处理复数"
 date:                  2024-01-26T04:40:13.230518-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理复数"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/working-with-complex-numbers.md"

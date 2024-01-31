@@ -3,7 +3,7 @@ title:                "Å sende en HTTP-forespørsel med grunnleggende autentise
 date:                  2024-01-20T18:01:15.649768-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/sending-an-http-request-with-basic-authentication.md"

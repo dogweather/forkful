@@ -3,7 +3,7 @@ title:                "Arrotondamento dei numeri"
 date:                  2024-01-26T03:42:36.246438-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arrotondamento dei numeri"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/rounding-numbers.md"

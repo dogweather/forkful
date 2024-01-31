@@ -3,7 +3,7 @@ title:                "Skriva till standardfel"
 date:                  2024-01-19
 html_title:           "Arduino: Skriva till standardfel"
 simple_title:         "Skriva till standardfel"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/writing-to-standard-error.md"

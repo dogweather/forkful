@@ -3,7 +3,7 @@ title:                "리팩터링"
 date:                  2024-01-26T01:44:27.447475-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "리팩터링"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/refactoring.md"

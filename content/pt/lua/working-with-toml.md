@@ -3,7 +3,7 @@ title:                "Trabalhando com TOML"
 date:                  2024-01-26T04:24:56.829367-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com TOML"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/working-with-toml.md"

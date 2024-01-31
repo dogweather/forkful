@@ -3,7 +3,7 @@ title:                "Uso de matrices asociativas"
 date:                  2024-01-30T19:11:39.547055-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Uso de matrices asociativas"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/using-associative-arrays.md"

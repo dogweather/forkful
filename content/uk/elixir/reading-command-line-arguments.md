@@ -3,7 +3,7 @@ title:                "Читання аргументів командного 
 date:                  2024-01-20T17:56:13.427266-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Читання аргументів командного рядка"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elixir/reading-command-line-arguments.md"

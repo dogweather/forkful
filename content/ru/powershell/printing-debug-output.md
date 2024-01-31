@@ -3,7 +3,7 @@ title:                "Вывод отладочной информации"
 date:                  2024-01-29T00:01:18.805661-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Вывод отладочной информации"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/powershell/printing-debug-output.md"

@@ -3,7 +3,7 @@ title:                "Lettura di un file di testo"
 date:                  2024-01-20T17:53:43.985233-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lettura di un file di testo"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/reading-a-text-file.md"

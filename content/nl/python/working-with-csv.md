@@ -3,7 +3,7 @@ title:                "Werken met CSV"
 date:                  2024-01-28T22:10:19.938921-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met CSV"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/python/working-with-csv.md"

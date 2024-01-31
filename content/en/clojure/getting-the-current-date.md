@@ -3,7 +3,7 @@ title:                "Getting the current date"
 date:                  2024-01-20T15:13:50.618682-07:00
 html_title:           "Arduino recipe: Getting the current date"
 simple_title:         "Getting the current date"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/getting-the-current-date.md"

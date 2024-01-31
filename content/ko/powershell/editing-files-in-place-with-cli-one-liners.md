@@ -3,7 +3,7 @@ title:                "CLI 한 줄 명령어로 파일을 제자리에서 편집
 date:                  2024-01-27T16:21:09.846719-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CLI 한 줄 명령어로 파일을 제자리에서 편집하기"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/editing-files-in-place-with-cli-one-liners.md"

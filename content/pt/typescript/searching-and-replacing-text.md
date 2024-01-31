@@ -3,7 +3,7 @@ title:                "Pesquisando e substituindo texto"
 date:                  2024-01-20T17:58:49.278091-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Pesquisando e substituindo texto"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/searching-and-replacing-text.md"

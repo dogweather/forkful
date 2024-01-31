@@ -3,7 +3,7 @@ title:                "JSON 다루기"
 date:                  2024-01-19
 html_title:           "Arduino: JSON 다루기"
 simple_title:         "JSON 다루기"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true

@@ -3,7 +3,7 @@ title:                "Numerojen pyöristäminen"
 date:                  2024-01-26T03:44:01.585967-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Numerojen pyöristäminen"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/rounding-numbers.md"

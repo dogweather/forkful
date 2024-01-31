@@ -3,7 +3,7 @@ title:                "使用正则表达式"
 date:                  2024-01-19
 html_title:           "C: 使用正则表达式"
 simple_title:         "使用正则表达式"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Strings"
 isCJKLanguage:        true

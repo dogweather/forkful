@@ -3,7 +3,7 @@ title:                "Редагування файлів безпосеред�
 date:                  2024-01-27T16:21:30.675541-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Редагування файлів безпосередньо за допомогою командного рядка одним рядком"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/fish-shell/editing-files-in-place-with-cli-one-liners.md"

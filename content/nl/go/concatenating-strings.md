@@ -3,7 +3,7 @@ title:                "Samenvoegen van strings"
 date:                  2024-01-28T21:56:54.839163-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Samenvoegen van strings"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/concatenating-strings.md"

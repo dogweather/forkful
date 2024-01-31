@@ -3,7 +3,7 @@ title:                "Erstellung einer temporären Datei"
 date:                  2024-01-20T17:40:55.011294-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Erstellung einer temporären Datei"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/creating-a-temporary-file.md"

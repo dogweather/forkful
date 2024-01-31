@@ -3,7 +3,7 @@ title:                "使用关联数组"
 date:                  2024-01-30T19:10:21.466650-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用关联数组"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/using-associative-arrays.md"

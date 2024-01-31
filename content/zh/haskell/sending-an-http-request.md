@@ -3,7 +3,7 @@ title:                "发出 HTTP 请求"
 date:                  2024-01-20T17:59:50.035462-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "发出 HTTP 请求"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true

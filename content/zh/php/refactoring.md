@@ -3,7 +3,7 @@ title:                "重构代码"
 date:                  2024-01-26T01:57:55.872748-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "重构代码"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/refactoring.md"

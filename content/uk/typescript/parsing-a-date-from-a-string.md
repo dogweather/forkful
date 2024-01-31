@@ -3,7 +3,7 @@ title:                "Аналіз дати з рядка"
 date:                  2024-01-20T15:39:01.048697-07:00
 html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/parsing-a-date-from-a-string.md"

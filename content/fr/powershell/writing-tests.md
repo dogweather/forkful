@@ -3,7 +3,7 @@ title:                "Rédaction de tests"
 date:                  2024-01-19
 html_title:           "Arduino: Rédaction de tests"
 simple_title:         "Rédaction de tests"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/writing-tests.md"

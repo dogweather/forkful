@@ -3,7 +3,7 @@ title:                "Génération de nombres aléatoires"
 date:                  2024-01-27T20:33:30.222539-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Génération de nombres aléatoires"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/generating-random-numbers.md"

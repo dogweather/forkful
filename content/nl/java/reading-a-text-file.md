@@ -3,7 +3,7 @@ title:                "Een tekstbestand lezen"
 date:                  2024-01-28T22:05:03.445937-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand lezen"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/java/reading-a-text-file.md"

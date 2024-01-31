@@ -3,7 +3,7 @@ title:                "Scaricare una pagina web"
 date:                  2024-01-20T17:44:15.122165-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Scaricare una pagina web"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/lua/downloading-a-web-page.md"

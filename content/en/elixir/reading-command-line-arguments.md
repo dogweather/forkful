@@ -3,7 +3,7 @@ title:                "Reading command line arguments"
 date:                  2024-01-20T17:55:46.387430-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Reading command line arguments"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/reading-command-line-arguments.md"

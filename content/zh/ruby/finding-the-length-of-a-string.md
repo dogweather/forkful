@@ -3,7 +3,7 @@ title:                "获取字符串的长度"
 date:                  2024-01-20T17:48:07.807150-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "获取字符串的长度"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Strings"
 isCJKLanguage:        true

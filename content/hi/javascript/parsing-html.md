@@ -3,7 +3,7 @@ title:                "HTML पार्स करना"
 date:                  2024-01-28T03:01:10.007560-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML पार्स करना"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/parsing-html.md"

@@ -3,7 +3,7 @@ title:                "Extracting substrings"
 date:                  2024-01-20T17:46:15.524985-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extracting substrings"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/extracting-substrings.md"

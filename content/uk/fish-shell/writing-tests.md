@@ -3,7 +3,7 @@ title:                "Написання тестів"
 date:                  2024-01-19
 html_title:           "Arduino: Написання тестів"
 simple_title:         "Написання тестів"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/fish-shell/writing-tests.md"

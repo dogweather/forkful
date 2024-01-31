@@ -3,7 +3,7 @@ title:                "Чтение текстового файла"
 date:                  2024-01-29T00:00:32.300081-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Чтение текстового файла"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elixir/reading-a-text-file.md"

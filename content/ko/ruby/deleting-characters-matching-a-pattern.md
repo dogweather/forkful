@@ -3,7 +3,7 @@ title:                "패턴에 일치하는 문자 삭제"
 date:                  2024-01-20T17:42:57.851509-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "패턴에 일치하는 문자 삭제"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Strings"
 isCJKLanguage:        true

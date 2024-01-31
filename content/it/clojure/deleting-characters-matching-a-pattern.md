@@ -3,7 +3,7 @@ title:                "Eliminazione di caratteri che corrispondono a un pattern"
 date:                  2024-01-20T17:41:51.982600-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/deleting-characters-matching-a-pattern.md"

@@ -3,7 +3,7 @@ title:                "Reguliere expressies gebruiken"
 date:                  2024-01-28T22:09:33.004354-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reguliere expressies gebruiken"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/using-regular-expressions.md"

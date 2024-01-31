@@ -3,7 +3,7 @@ title:                "Een datum in de toekomst of het verleden berekenen"
 date:                  2024-01-28T21:56:01.807548-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een datum in de toekomst of het verleden berekenen"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/typescript/calculating-a-date-in-the-future-or-past.md"

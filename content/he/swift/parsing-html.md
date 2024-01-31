@@ -3,7 +3,7 @@ title:                "ניתוח HTML"
 date:                  2024-01-20T15:34:06.809775-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/parsing-html.md"

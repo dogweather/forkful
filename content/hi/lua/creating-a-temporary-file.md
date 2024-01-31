@@ -3,7 +3,7 @@ title:                "अस्थायी फाइल बनाना"
 date:                  2024-01-20T17:40:49.543621-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "अस्थायी फाइल बनाना"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/lua/creating-a-temporary-file.md"

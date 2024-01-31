@@ -3,7 +3,7 @@ title:                "Przetwarzanie daty ze łańcucha znaków"
 date:                  2024-01-20T15:39:09.168946-07:00
 html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
 simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/parsing-a-date-from-a-string.md"

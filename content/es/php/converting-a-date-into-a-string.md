@@ -3,7 +3,7 @@ title:                "Convirtiendo una fecha en una cadena de texto"
 date:                  2024-01-20T17:36:58.611362-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Convirtiendo una fecha en una cadena de texto"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/converting-a-date-into-a-string.md"

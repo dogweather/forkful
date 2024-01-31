@@ -3,7 +3,7 @@ title:                "Een string met hoofdletters maken"
 date:                  2024-01-28T21:56:19.373119-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string met hoofdletters maken"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/capitalizing-a-string.md"

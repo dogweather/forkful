@@ -3,7 +3,7 @@ title:                "Numerojen pyöristäminen"
 date:                  2024-01-26T03:46:43.145043-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Numerojen pyöristäminen"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/rounding-numbers.md"

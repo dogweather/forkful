@@ -3,7 +3,7 @@ title:                "Checking if a directory exists"
 date:                  2024-01-20T14:58:01.879406-07:00
 html_title:           "Gleam recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/checking-if-a-directory-exists.md"

@@ -3,7 +3,7 @@ title:                "Starting a new project"
 date:                  2024-01-20T18:03:14.094776-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Starting a new project"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/starting-a-new-project.md"

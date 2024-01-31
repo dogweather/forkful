@@ -3,7 +3,7 @@ title:                "יצירת קובץ זמני"
 date:                  2024-01-20T17:39:50.013296-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "יצירת קובץ זמני"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/arduino/creating-a-temporary-file.md"

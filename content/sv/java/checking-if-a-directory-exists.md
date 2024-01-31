@@ -3,7 +3,7 @@ title:                "Kontrollera om en katalog finns"
 date:                  2024-01-20T14:57:10.764261-07:00
 html_title:           "Fish Shell: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/checking-if-a-directory-exists.md"

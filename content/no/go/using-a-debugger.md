@@ -3,7 +3,7 @@ title:                "Å bruke en feilsøker"
 date:                  2024-01-26T03:50:11.345297-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å bruke en feilsøker"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/using-a-debugger.md"

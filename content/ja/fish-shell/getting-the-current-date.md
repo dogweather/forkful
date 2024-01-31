@@ -3,7 +3,7 @@ title:                "現在の日付を取得する"
 date:                  2024-01-20T15:14:11.533361-07:00
 html_title:           "Bash: 現在の日付を取得する"
 simple_title:         "現在の日付を取得する"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

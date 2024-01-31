@@ -3,7 +3,7 @@ title:                "Å jobbe med XML"
 date:                  2024-01-26T04:35:18.429329-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å jobbe med XML"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/working-with-xml.md"

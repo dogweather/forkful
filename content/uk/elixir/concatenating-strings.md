@@ -3,7 +3,7 @@ title:                "Об'єднання рядків"
 date:                  2024-01-27T10:44:25.762569-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Об'єднання рядків"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elixir/concatenating-strings.md"

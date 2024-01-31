@@ -3,7 +3,7 @@ title:                "Viết hoa một chuỗi"
 date:                  2024-01-28T21:56:04.331367-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết hoa một chuỗi"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/php/capitalizing-a-string.md"

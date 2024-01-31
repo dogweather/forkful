@@ -3,7 +3,7 @@ title:                "עבודה עם YAML"
 date:                  2024-01-19
 html_title:           "Bash: עבודה עם YAML"
 simple_title:         "עבודה עם YAML"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/working-with-yaml.md"

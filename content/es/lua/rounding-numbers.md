@@ -3,7 +3,7 @@ title:                "Redondeo de números"
 date:                  2024-01-26T03:45:47.962019-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redondeo de números"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/rounding-numbers.md"

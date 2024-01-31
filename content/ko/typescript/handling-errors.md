@@ -3,7 +3,7 @@ title:                "에러 처리하기"
 date:                  2024-01-26T00:58:30.861944-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "에러 처리하기"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/handling-errors.md"

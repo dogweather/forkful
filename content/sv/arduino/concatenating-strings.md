@@ -3,7 +3,7 @@ title:                "Sammanslagning av strängar"
 date:                  2024-01-20T17:34:05.297220-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Sammanslagning av strängar"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/concatenating-strings.md"

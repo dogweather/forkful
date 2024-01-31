@@ -3,7 +3,7 @@ title:                "Modification de fichiers sur place avec des lignes de com
 date:                  2024-01-27T16:20:44.363202-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Modification de fichiers sur place avec des lignes de commande en une seule étape"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/editing-files-in-place-with-cli-one-liners.md"

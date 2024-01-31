@@ -3,7 +3,7 @@ title:                "Redondeo de números"
 date:                  2024-01-26T03:44:44.321885-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redondeo de números"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/rounding-numbers.md"

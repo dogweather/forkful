@@ -3,7 +3,7 @@ title:                "Utilisation des expressions régulières"
 date:                  2024-01-19
 html_title:           "Bash: Utilisation des expressions régulières"
 simple_title:         "Utilisation des expressions régulières"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/using-regular-expressions.md"

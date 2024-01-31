@@ -3,7 +3,7 @@ title:                "コードを関数に整理する"
 date:                  2024-01-26T01:16:25.459420-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "コードを関数に整理する"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/organizing-code-into-functions.md"

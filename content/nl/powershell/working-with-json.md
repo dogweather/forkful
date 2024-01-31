@@ -3,7 +3,7 @@ title:                "Werken met JSON"
 date:                  2024-01-28T22:10:30.305703-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met JSON"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/working-with-json.md"

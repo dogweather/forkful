@@ -3,7 +3,7 @@ title:                "Een HTTP-verzoek verzenden"
 date:                  2024-01-28T22:08:04.920468-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een HTTP-verzoek verzenden"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/sending-an-http-request.md"

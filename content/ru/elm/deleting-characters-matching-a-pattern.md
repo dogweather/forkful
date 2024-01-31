@@ -3,7 +3,7 @@ title:                "Удаление символов, соответству
 date:                  2024-01-28T23:57:02.605682-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление символов, соответствующих шаблону"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elm/deleting-characters-matching-a-pattern.md"

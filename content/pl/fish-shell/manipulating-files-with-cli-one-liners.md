@@ -3,7 +3,7 @@ title:                "Manipulowanie plikami za pomocą jednolinijkowców CLI"
 date:                  2024-01-27T16:21:07.968693-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulowanie plikami za pomocą jednolinijkowców CLI"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/manipulating-files-with-cli-one-liners.md"

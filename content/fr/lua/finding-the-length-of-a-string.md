@@ -3,7 +3,7 @@ title:                "Trouver la longueur d'une chaîne de caractères"
 date:                  2024-01-20T17:47:40.951067-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Trouver la longueur d'une chaîne de caractères"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/finding-the-length-of-a-string.md"

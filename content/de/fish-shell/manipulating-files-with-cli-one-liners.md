@@ -3,7 +3,7 @@ title:                "Dateimanipulation mit CLI-One-Linern"
 date:                  2024-01-27T16:21:03.416741-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Dateimanipulation mit CLI-One-Linern"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/manipulating-files-with-cli-one-liners.md"

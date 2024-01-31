@@ -3,7 +3,7 @@ title:                "Преобразование даты в строку"
 date:                  2024-01-28T23:57:21.238525-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование даты в строку"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/powershell/converting-a-date-into-a-string.md"

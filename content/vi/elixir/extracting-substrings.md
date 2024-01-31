@@ -3,7 +3,7 @@ title:                "Trích xuất chuỗi con"
 date:                  2024-01-28T22:00:30.181918-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trích xuất chuỗi con"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/extracting-substrings.md"

@@ -3,7 +3,7 @@ title:                "Registro de Logs"
 date:                  2024-01-26T01:09:09.404601-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Registro de Logs"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/logging.md"

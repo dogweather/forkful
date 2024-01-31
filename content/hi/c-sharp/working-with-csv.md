@@ -3,7 +3,7 @@ title:                "CSV के साथ काम करना"
 date:                  2024-01-19
 html_title:           "Bash: CSV के साथ काम करना"
 simple_title:         "CSV के साथ काम करना"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/working-with-csv.md"

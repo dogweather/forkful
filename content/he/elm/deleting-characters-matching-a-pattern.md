@@ -3,7 +3,7 @@ title:                "מחיקת תווים התואמים לתבנית"
 date:                  2024-01-20T17:43:16.629611-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "מחיקת תווים התואמים לתבנית"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/deleting-characters-matching-a-pattern.md"

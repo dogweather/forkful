@@ -3,7 +3,7 @@ title:                "Skapa en temporär fil"
 date:                  2024-01-20T17:39:46.650442-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Skapa en temporär fil"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/creating-a-temporary-file.md"

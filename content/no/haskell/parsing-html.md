@@ -3,7 +3,7 @@ title:                "Analyse av HTML"
 date:                  2024-01-20T15:32:21.911835-07:00
 html_title:           "Arduino: Analyse av HTML"
 simple_title:         "Analyse av HTML"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/parsing-html.md"

@@ -3,7 +3,7 @@ title:                "Reading a text file"
 date:                  2024-01-20T17:54:15.050746-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Reading a text file"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/reading-a-text-file.md"

@@ -3,7 +3,7 @@ title:                "현재 날짜 가져오기"
 date:                  2024-01-20T15:14:04.720398-07:00
 html_title:           "Bash: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

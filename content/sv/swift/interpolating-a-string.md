@@ -3,7 +3,7 @@ title:                "Interpolera en sträng"
 date:                  2024-01-20T17:51:35.717719-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolera en sträng"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/interpolating-a-string.md"

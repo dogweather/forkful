@@ -3,7 +3,7 @@ title:                "Jämföra två datum"
 date:                  2024-01-20T17:33:30.575466-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Jämföra två datum"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/comparing-two-dates.md"

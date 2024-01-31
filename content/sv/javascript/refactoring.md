@@ -3,7 +3,7 @@ title:                "Omskrivning av kod"
 date:                  2024-01-26T01:42:10.939875-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Omskrivning av kod"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/refactoring.md"

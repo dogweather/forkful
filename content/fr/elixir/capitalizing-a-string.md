@@ -3,7 +3,7 @@ title:                "Mettre une chaîne de caractères en majuscules"
 date:                  2024-01-19
 html_title:           "C: Mettre une chaîne de caractères en majuscules"
 simple_title:         "Mettre une chaîne de caractères en majuscules"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/capitalizing-a-string.md"

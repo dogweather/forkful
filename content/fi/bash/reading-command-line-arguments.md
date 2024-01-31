@@ -3,7 +3,7 @@ title:                "Komennoriviparametrien lukeminen"
 date:                  2024-01-20T17:55:32.343899-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Komennoriviparametrien lukeminen"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/reading-command-line-arguments.md"

@@ -3,7 +3,7 @@ title:                "Refaktoryzacja"
 date:                  2024-01-26T01:17:24.119447-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktoryzacja"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/refactoring.md"

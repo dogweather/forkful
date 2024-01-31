@@ -3,7 +3,7 @@ title:                "שימוש במנפה שגיאות"
 date:                  2024-01-26T03:50:13.791180-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במנפה שגיאות"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/using-a-debugger.md"

@@ -3,7 +3,7 @@ title:                "Utilisation des tableaux associatifs"
 date:                  2024-01-30T19:12:54.615524-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des tableaux associatifs"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/using-associative-arrays.md"

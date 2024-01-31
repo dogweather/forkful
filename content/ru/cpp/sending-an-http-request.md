@@ -3,7 +3,7 @@ title:                "Отправка HTTP-запроса"
 date:                  2024-01-29T00:02:33.254442-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Отправка HTTP-запроса"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/cpp/sending-an-http-request.md"

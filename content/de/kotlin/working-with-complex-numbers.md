@@ -3,7 +3,7 @@ title:                "Umgang mit komplexen Zahlen"
 date:                  2024-01-26T04:42:36.965924-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Umgang mit komplexen Zahlen"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/working-with-complex-numbers.md"

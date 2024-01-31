@@ -3,7 +3,7 @@ title:                "Tests Schrijven"
 date:                  2024-01-28T22:13:06.039009-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tests Schrijven"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/writing-tests.md"

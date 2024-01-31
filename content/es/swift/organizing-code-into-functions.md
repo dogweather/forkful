@@ -3,7 +3,7 @@ title:                "Organizando código en funciones"
 date:                  2024-01-26T01:11:47.870517-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organizando código en funciones"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/organizing-code-into-functions.md"

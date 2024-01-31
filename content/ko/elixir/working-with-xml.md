@@ -3,7 +3,7 @@ title:                "XML 다루기"
 date:                  2024-01-26T04:30:04.375123-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML 다루기"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/working-with-xml.md"

@@ -3,7 +3,7 @@ title:                "Nối chuỗi ký tự"
 date:                  2024-01-28T21:56:51.764009-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nối chuỗi ký tự"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/concatenating-strings.md"

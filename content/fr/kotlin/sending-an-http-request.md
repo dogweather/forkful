@@ -3,7 +3,7 @@ title:                "Envoi d'une requête HTTP"
 date:                  2024-01-20T18:00:12.137575-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Envoi d'une requête HTTP"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/sending-an-http-request.md"

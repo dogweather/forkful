@@ -3,7 +3,7 @@ title:                "Reguliere expressies gebruiken"
 date:                  2024-01-28T22:09:48.711581-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reguliere expressies gebruiken"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/using-regular-expressions.md"

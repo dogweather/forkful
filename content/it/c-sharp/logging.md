@@ -3,7 +3,7 @@ title:                "Registrazione Eventi (Logging)"
 date:                  2024-01-26T01:01:04.480318-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Registrazione Eventi (Logging)"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/logging.md"

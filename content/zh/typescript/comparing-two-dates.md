@@ -3,7 +3,7 @@ title:                "比较两个日期"
 date:                  2024-01-20T17:34:45.050108-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "比较两个日期"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

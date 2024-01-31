@@ -3,7 +3,7 @@ title:                "ロギング"
 date:                  2024-01-26T01:01:47.469501-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "ロギング"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/logging.md"

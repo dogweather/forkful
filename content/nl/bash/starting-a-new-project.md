@@ -3,7 +3,7 @@ title:                "Een nieuw project starten"
 date:                  2024-01-28T22:08:20.857753-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een nieuw project starten"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/starting-a-new-project.md"

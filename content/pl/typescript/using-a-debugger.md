@@ -3,7 +3,7 @@ title:                "Korzystanie z debugera"
 date:                  2024-01-26T04:11:28.219967-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z debugera"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/using-a-debugger.md"

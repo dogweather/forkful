@@ -3,7 +3,7 @@ title:                "난수 생성"
 date:                  2024-01-27T20:34:44.763011-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "난수 생성"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/generating-random-numbers.md"

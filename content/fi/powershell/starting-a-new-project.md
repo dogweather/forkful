@@ -3,7 +3,7 @@ title:                "Uuden projektin aloittaminen"
 date:                  2024-01-20T18:04:37.576833-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Uuden projektin aloittaminen"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/starting-a-new-project.md"

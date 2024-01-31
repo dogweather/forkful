@@ -3,7 +3,7 @@ title:                "Avrunding av tall"
 date:                  2024-01-26T03:44:05.968619-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrunding av tall"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/rounding-numbers.md"

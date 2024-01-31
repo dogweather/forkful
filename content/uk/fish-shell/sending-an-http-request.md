@@ -3,7 +3,7 @@ title:                "Надсилання HTTP-запиту"
 date:                  2024-01-20T17:59:33.464886-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Надсилання HTTP-запиту"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/fish-shell/sending-an-http-request.md"

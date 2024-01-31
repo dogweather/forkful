@@ -3,7 +3,7 @@ title:                "परीक्षण लिखना"
 date:                  2024-01-19
 html_title:           "Arduino: परीक्षण लिखना"
 simple_title:         "परीक्षण लिखना"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/writing-tests.md"

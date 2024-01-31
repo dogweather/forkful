@@ -3,7 +3,7 @@ title:                "חישוב תאריך בעתיד או בעבר"
 date:                  2024-01-20T17:32:11.038626-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "חישוב תאריך בעתיד או בעבר"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/calculating-a-date-in-the-future-or-past.md"

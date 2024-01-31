@@ -3,7 +3,7 @@ title:                "Fouten afhandelen"
 date:                  2024-01-28T22:01:39.786275-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fouten afhandelen"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/handling-errors.md"

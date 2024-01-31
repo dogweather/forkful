@@ -3,7 +3,7 @@ title:                "숫자 반올림하기"
 date:                  2024-01-26T03:45:44.979286-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "숫자 반올림하기"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/rounding-numbers.md"

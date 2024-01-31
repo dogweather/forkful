@@ -3,7 +3,7 @@ title:                "Fouten afhandelen"
 date:                  2024-01-28T22:01:46.229217-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fouten afhandelen"
-programming_language: "C"
+
 category:             "C"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/handling-errors.md"

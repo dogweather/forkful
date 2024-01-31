@@ -3,7 +3,7 @@ title:                "HTML 파싱"
 date:                  2024-01-20T15:32:11.778839-07:00
 html_title:           "Arduino: HTML 파싱"
 simple_title:         "HTML 파싱"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true

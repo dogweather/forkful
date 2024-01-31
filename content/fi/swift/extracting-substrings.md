@@ -3,7 +3,7 @@ title:                "Merkkijonojen osien poimiminen"
 date:                  2024-01-20T17:46:46.561603-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonojen osien poimiminen"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/extracting-substrings.md"

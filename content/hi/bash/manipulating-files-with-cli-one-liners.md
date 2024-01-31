@@ -3,7 +3,7 @@ title:                "CLI वन-लाइनर्स के साथ फा�
 date:                  2024-01-27T16:22:48.998856-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CLI वन-लाइनर्स के साथ फाइलों का संचालन"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/bash/manipulating-files-with-cli-one-liners.md"

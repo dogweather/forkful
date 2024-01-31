@@ -3,7 +3,7 @@ title:                "Eliminando comillas de una cadena"
 date:                  2024-01-26T03:39:03.752315-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eliminando comillas de una cadena"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/removing-quotes-from-a-string.md"

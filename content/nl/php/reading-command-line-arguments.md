@@ -3,7 +3,7 @@ title:                "Commandoregelargumenten lezen"
 date:                  2024-01-28T22:05:28.327560-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Commandoregelargumenten lezen"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/reading-command-line-arguments.md"

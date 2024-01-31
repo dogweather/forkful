@@ -3,7 +3,7 @@ title:                "Округлення чисел"
 date:                  2024-01-26T03:46:42.622653-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округлення чисел"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/python/rounding-numbers.md"

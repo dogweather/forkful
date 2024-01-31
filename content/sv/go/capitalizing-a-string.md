@@ -3,7 +3,7 @@ title:                "Att göra en sträng versal"
 date:                  2024-01-19
 html_title:           "Bash: Att göra en sträng versal"
 simple_title:         "Att göra en sträng versal"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/capitalizing-a-string.md"

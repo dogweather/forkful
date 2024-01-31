@@ -3,7 +3,7 @@ title:                "Arbeta med JSON"
 date:                  2024-01-19
 html_title:           "Arduino: Arbeta med JSON"
 simple_title:         "Arbeta med JSON"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/working-with-json.md"

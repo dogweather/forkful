@@ -3,7 +3,7 @@ title:                "שימוש במעטפת אינטראקטיבית (REPL)"
 date:                  2024-01-26T04:17:45.529924-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במעטפת אינטראקטיבית (REPL)"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/ruby/using-an-interactive-shell-repl.md"

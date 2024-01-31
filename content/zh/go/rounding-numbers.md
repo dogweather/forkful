@@ -3,7 +3,7 @@ title:                "数字取整"
 date:                  2024-01-26T03:44:59.366989-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "数字取整"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/rounding-numbers.md"

@@ -3,7 +3,7 @@ title:                "Omskrivning av kod"
 date:                  2024-01-26T01:44:16.511826-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Omskrivning av kod"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/refactoring.md"

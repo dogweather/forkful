@@ -3,7 +3,7 @@ title:                "स्ट्रिंग इंटरपोलेशन"
 date:                  2024-01-20T17:51:44.974787-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "स्ट्रिंग इंटरपोलेशन"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/interpolating-a-string.md"

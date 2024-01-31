@@ -3,7 +3,7 @@ title:                "הפיכת מחרוזת לאותיות רישיות"
 date:                  2024-01-19
 html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
 simple_title:         "הפיכת מחרוזת לאותיות רישיות"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/capitalizing-a-string.md"

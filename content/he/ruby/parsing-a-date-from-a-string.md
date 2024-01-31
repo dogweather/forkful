@@ -3,7 +3,7 @@ title:                "ניתוח תאריך ממחרוזת"
 date:                  2024-01-20T15:38:41.574445-07:00
 html_title:           "Arduino: ניתוח תאריך ממחרוזת"
 simple_title:         "ניתוח תאריך ממחרוזת"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/ruby/parsing-a-date-from-a-string.md"

@@ -3,7 +3,7 @@ title:                "Nykyisen päivämäärän hankkiminen"
 date:                  2024-01-20T15:13:41.303102-07:00
 html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/getting-the-current-date.md"

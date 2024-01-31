@@ -3,7 +3,7 @@ title:                "התחלת פרויקט חדש"
 date:                  2024-01-20T18:05:01.538412-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "התחלת פרויקט חדש"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/starting-a-new-project.md"

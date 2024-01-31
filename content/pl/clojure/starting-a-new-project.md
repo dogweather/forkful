@@ -3,7 +3,7 @@ title:                "Rozpoczynanie nowego projektu"
 date:                  2024-01-20T18:03:18.761321-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/starting-a-new-project.md"

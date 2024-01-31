@@ -3,7 +3,7 @@ title:                "搜索和替换文本"
 date:                  2024-01-20T17:57:51.646112-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "搜索和替换文本"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Strings"
 isCJKLanguage:        true

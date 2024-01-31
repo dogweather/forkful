@@ -3,7 +3,7 @@ title:                "Viết một tệp văn bản"
 date:                  2024-01-28T22:12:22.004834-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết một tệp văn bản"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/writing-a-text-file.md"

@@ -3,7 +3,7 @@ title:                "Envoi d'une requête HTTP"
 date:                  2024-01-20T17:59:13.470592-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Envoi d'une requête HTTP"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/sending-an-http-request.md"

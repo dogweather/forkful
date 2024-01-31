@@ -3,7 +3,7 @@ title:                "Робота з комплексними числами"
 date:                  2024-01-26T04:45:35.568134-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з комплексними числами"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/python/working-with-complex-numbers.md"

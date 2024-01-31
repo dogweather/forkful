@@ -3,7 +3,7 @@ title:                "Avrundning av tal"
 date:                  2024-01-26T03:44:12.702706-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrundning av tal"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/rounding-numbers.md"

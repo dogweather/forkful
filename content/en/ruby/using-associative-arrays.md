@@ -3,7 +3,7 @@ title:                "Using associative arrays"
 date:                  2024-01-30T18:57:15.091679-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Using associative arrays"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/using-associative-arrays.md"

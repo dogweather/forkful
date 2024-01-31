@@ -3,7 +3,7 @@ title:                "Lese en tekstfil"
 date:                  2024-01-20T17:54:47.012585-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lese en tekstfil"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/reading-a-text-file.md"

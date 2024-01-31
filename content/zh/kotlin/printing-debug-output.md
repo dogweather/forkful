@@ -3,7 +3,7 @@ title:                "打印调试输出"
 date:                  2024-01-20T17:53:05.659075-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "打印调试输出"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
 isCJKLanguage:        true

@@ -3,7 +3,7 @@ title:                "Verifica dell'esistenza di una directory"
 date:                  2024-01-20T14:58:50.954414-07:00
 html_title:           "Gleam: Verifica dell'esistenza di una directory"
 simple_title:         "Verifica dell'esistenza di una directory"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/checking-if-a-directory-exists.md"

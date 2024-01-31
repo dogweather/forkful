@@ -3,7 +3,7 @@ title:                "Konvertere en streng til små bokstaver"
 date:                  2024-01-20T17:39:08.912979-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konvertere en streng til små bokstaver"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/converting-a-string-to-lower-case.md"

@@ -3,7 +3,7 @@ title:                "Avrunding av tall"
 date:                  2024-01-26T03:42:41.564841-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrunding av tall"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/rounding-numbers.md"

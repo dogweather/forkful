@@ -3,7 +3,7 @@ title:                "处理JSON数据"
 date:                  2024-01-19
 html_title:           "Arduino: 处理JSON数据"
 simple_title:         "处理JSON数据"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true

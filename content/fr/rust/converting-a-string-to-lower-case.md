@@ -3,7 +3,7 @@ title:                "Conversion d'une chaîne de caractères en minuscules"
 date:                  2024-01-20T17:39:05.509124-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Conversion d'une chaîne de caractères en minuscules"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/converting-a-string-to-lower-case.md"

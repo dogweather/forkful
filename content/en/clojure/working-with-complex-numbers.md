@@ -3,7 +3,7 @@ title:                "Working with complex numbers"
 date:                  2024-01-25T03:00:07.667826-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Working with complex numbers"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/working-with-complex-numbers.md"

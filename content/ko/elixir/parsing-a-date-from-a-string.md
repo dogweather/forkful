@@ -3,7 +3,7 @@ title:                "문자열에서 날짜 파싱하기"
 date:                  2024-01-28T02:05:42.717732-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열에서 날짜 파싱하기"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/parsing-a-date-from-a-string.md"

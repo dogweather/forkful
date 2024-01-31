@@ -3,7 +3,7 @@ title:                "Interpolation de chaînes de caractères"
 date:                  2024-01-20T17:50:32.680269-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolation de chaînes de caractères"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/interpolating-a-string.md"

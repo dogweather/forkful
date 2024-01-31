@@ -3,7 +3,7 @@ title:                "Wysyłanie żądania HTTP"
 date:                  2024-01-20T17:59:45.964361-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wysyłanie żądania HTTP"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/sending-an-http-request.md"

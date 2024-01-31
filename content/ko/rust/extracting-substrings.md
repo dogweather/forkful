@@ -3,7 +3,7 @@ title:                "부분 문자열 추출"
 date:                  2024-01-20T17:46:44.355079-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "부분 문자열 추출"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Strings"
 isCJKLanguage:        true

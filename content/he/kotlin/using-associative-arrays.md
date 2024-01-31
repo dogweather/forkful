@@ -3,7 +3,7 @@ title:                "שימוש במערכים אסוציאטיביים"
 date:                  2024-01-30T19:12:34.142007-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במערכים אסוציאטיביים"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/using-associative-arrays.md"

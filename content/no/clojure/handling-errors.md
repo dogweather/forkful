@@ -3,7 +3,7 @@ title:                "Feilhåndtering"
 date:                  2024-01-26T00:51:08.699993-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Feilhåndtering"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/handling-errors.md"

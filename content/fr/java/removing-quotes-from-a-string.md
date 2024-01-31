@@ -3,7 +3,7 @@ title:                "Retirer les guillemets d'une chaîne"
 date:                  2024-01-26T03:39:40.437962-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Retirer les guillemets d'une chaîne"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/removing-quotes-from-a-string.md"

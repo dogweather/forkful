@@ -3,7 +3,7 @@ title:                "Getting the current date"
 date:                  2024-01-20T15:12:54.604939-07:00
 html_title:           "Arduino recipe: Getting the current date"
 simple_title:         "Getting the current date"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/getting-the-current-date.md"

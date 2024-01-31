@@ -3,7 +3,7 @@ title:                "הסרת מרכאות ממחרוזת"
 date:                  2024-01-26T03:40:19.549145-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "הסרת מרכאות ממחרוזת"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/removing-quotes-from-a-string.md"

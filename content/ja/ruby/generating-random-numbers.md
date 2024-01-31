@@ -3,7 +3,7 @@ title:                "乱数の生成"
 date:                  2024-01-27T20:35:02.052332-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "乱数の生成"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/generating-random-numbers.md"

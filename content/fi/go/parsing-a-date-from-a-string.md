@@ -3,7 +3,7 @@ title:                "Merkkijonosta päivämäärän jäsentäminen"
 date:                  2024-01-20T15:36:42.823473-07:00
 html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
 simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/parsing-a-date-from-a-string.md"

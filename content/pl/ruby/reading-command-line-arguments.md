@@ -3,7 +3,7 @@ title:                "Odczytywanie argumentów linii poleceń"
 date:                  2024-01-20T17:56:41.522154-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Odczytywanie argumentów linii poleceń"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/reading-command-line-arguments.md"

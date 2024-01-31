@@ -3,7 +3,7 @@ title:                "Trabalhando com XML"
 date:                  2024-01-26T04:35:59.971439-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com XML"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/working-with-xml.md"

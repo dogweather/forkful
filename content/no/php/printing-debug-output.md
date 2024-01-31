@@ -3,7 +3,7 @@ title:                "Skrive ut feilsøkingsdata"
 date:                  2024-01-20T17:53:00.335081-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Skrive ut feilsøkingsdata"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/printing-debug-output.md"

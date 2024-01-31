@@ -3,7 +3,7 @@ title:                "デバッガーの使い方"
 date:                  2024-01-26T03:50:27.824306-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "デバッガーの使い方"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/using-a-debugger.md"

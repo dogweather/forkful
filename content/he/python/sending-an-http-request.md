@@ -3,7 +3,7 @@ title:                "שליחת בקשת HTTP"
 date:                  2024-01-20T18:00:20.079942-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "שליחת בקשת HTTP"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/sending-an-http-request.md"

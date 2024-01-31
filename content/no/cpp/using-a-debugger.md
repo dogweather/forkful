@@ -3,7 +3,7 @@ title:                "Å bruke en feilsøker"
 date:                  2024-01-26T03:48:08.619722-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å bruke en feilsøker"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/using-a-debugger.md"

@@ -3,7 +3,7 @@ title:                "Sammanslagning av strängar"
 date:                  2024-01-20T17:35:32.461820-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Sammanslagning av strängar"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/concatenating-strings.md"

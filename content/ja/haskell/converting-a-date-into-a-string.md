@@ -3,7 +3,7 @@ title:                "日付を文字列に変換する"
 date:                  2024-01-20T17:36:42.666800-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日付を文字列に変換する"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "Dates and Times"
 isCJKLanguage:        true

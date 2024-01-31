@@ -3,7 +3,7 @@ title:                "Tests Schrijven"
 date:                  2024-01-28T22:12:46.885806-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tests Schrijven"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c-sharp/writing-tests.md"

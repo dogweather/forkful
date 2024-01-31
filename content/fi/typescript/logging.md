@@ -3,7 +3,7 @@ title:                "Lokitus"
 date:                  2024-01-26T01:09:21.008477-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lokitus"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/logging.md"

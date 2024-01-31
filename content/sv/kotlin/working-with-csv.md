@@ -3,7 +3,7 @@ title:                "Arbeta med csv"
 date:                  2024-01-19
 html_title:           "Arduino: Arbeta med csv"
 simple_title:         "Arbeta med csv"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/working-with-csv.md"

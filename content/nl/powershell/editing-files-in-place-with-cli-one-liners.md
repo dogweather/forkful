@@ -3,7 +3,7 @@ title:                "Bestanden ter plekke bewerken met CLI one-liners"
 date:                  2024-01-28T21:59:41.441612-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bestanden ter plekke bewerken met CLI one-liners"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/editing-files-in-place-with-cli-one-liners.md"

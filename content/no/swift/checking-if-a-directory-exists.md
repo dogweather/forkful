@@ -3,7 +3,7 @@ title:                "Sjekke om en mappe eksisterer"
 date:                  2024-01-20T14:58:53.833421-07:00
 html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
 simple_title:         "Sjekke om en mappe eksisterer"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/checking-if-a-directory-exists.md"

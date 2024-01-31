@@ -3,7 +3,7 @@ title:                "ניתוח תאריך ממחרוזת"
 date:                  2024-01-20T15:35:40.157966-07:00
 html_title:           "Arduino: ניתוח תאריך ממחרוזת"
 simple_title:         "ניתוח תאריך ממחרוזת"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/parsing-a-date-from-a-string.md"

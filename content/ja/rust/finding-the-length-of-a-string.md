@@ -3,7 +3,7 @@ title:                "文字列の長さを求める"
 date:                  2024-01-20T17:48:04.583222-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "文字列の長さを求める"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Strings"
 isCJKLanguage:        true

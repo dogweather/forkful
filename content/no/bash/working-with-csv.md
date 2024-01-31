@@ -3,7 +3,7 @@ title:                "Arbeid med CSV"
 date:                  2024-01-19
 html_title:           "Bash: Arbeid med CSV"
 simple_title:         "Arbeid med CSV"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/working-with-csv.md"

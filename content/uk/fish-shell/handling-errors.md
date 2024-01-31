@@ -3,7 +3,7 @@ title:                "Обробка помилок"
 date:                  2024-01-26T00:54:09.316606-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Обробка помилок"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/fish-shell/handling-errors.md"

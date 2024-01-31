@@ -3,7 +3,7 @@ title:                "Создание временного файла"
 date:                  2024-01-28T23:57:23.310646-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Создание временного файла"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/php/creating-a-temporary-file.md"

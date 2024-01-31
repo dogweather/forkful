@@ -3,7 +3,7 @@ title:                "Parsing HTML"
 date:                  2024-01-20T15:33:53.407056-07:00
 html_title:           "Bash recipe: Parsing HTML"
 simple_title:         "Parsing HTML"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/parsing-html.md"

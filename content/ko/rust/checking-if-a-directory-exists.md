@@ -3,7 +3,7 @@ title:                "디렉토리 존재 여부 확인하기"
 date:                  2024-01-20T14:58:54.484754-07:00
 html_title:           "Fish Shell: 디렉토리 존재 여부 확인하기"
 simple_title:         "디렉토리 존재 여부 확인하기"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

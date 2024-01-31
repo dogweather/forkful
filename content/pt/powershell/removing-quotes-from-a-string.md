@@ -3,7 +3,7 @@ title:                "Removendo aspas de uma string"
 date:                  2024-01-26T03:41:37.946398-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Removendo aspas de uma string"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/removing-quotes-from-a-string.md"

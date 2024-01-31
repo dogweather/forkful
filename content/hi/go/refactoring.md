@@ -3,7 +3,7 @@ title:                "कोड की सफाई"
 date:                  2024-01-26T01:36:13.075897-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड की सफाई"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/go/refactoring.md"

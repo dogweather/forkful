@@ -3,7 +3,7 @@ title:                "Округлення чисел"
 date:                  2024-01-26T03:43:29.064990-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округлення чисел"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/bash/rounding-numbers.md"

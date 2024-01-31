@@ -3,7 +3,7 @@ title:                "Проверка существования директ�
 date:                  2024-01-28T23:55:40.935707-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Проверка существования директории"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/bash/checking-if-a-directory-exists.md"

@@ -3,7 +3,7 @@ title:                "Pisanie do standardowego błędu"
 date:                  2024-01-19
 html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/writing-to-standard-error.md"

@@ -3,7 +3,7 @@ title:                "CLIワンライナーでのファイル操作"
 date:                  2024-01-27T16:21:06.029921-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CLIワンライナーでのファイル操作"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/manipulating-files-with-cli-one-liners.md"

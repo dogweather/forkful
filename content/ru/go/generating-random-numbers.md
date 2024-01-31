@@ -3,7 +3,7 @@ title:                "Генерация случайных чисел"
 date:                  2024-01-28T23:58:36.597484-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Генерация случайных чисел"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/go/generating-random-numbers.md"

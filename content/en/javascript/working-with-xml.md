@@ -3,7 +3,7 @@ title:                "Working with XML"
 date:                  2024-01-25T03:39:52.099678-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Working with XML"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/working-with-xml.md"

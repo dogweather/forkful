@@ -3,7 +3,7 @@ title:                "Baixando uma página da web"
 date:                  2024-01-20T17:44:23.159645-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Baixando uma página da web"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/downloading-a-web-page.md"

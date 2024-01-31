@@ -3,7 +3,7 @@ title:                "Vérifier si un répertoire existe"
 date:                  2024-01-20T14:56:59.241864-07:00
 html_title:           "Go: Vérifier si un répertoire existe"
 simple_title:         "Vérifier si un répertoire existe"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/checking-if-a-directory-exists.md"

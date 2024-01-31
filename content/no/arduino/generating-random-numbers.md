@@ -3,7 +3,7 @@ title:                "Generering av tilfeldige tall"
 date:                  2024-01-27T20:32:47.071157-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generering av tilfeldige tall"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/generating-random-numbers.md"

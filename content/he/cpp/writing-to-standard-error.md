@@ -3,7 +3,7 @@ title:                "כתיבה לפלט השגיאה הסטנדרטי"
 date:                  2024-01-19
 html_title:           "Arduino: כתיבה לפלט השגיאה הסטנדרטי"
 simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/writing-to-standard-error.md"

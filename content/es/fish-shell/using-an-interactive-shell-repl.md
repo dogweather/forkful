@@ -3,7 +3,7 @@ title:                "Usando una shell interactiva (REPL)"
 date:                  2024-01-26T04:13:55.129760-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando una shell interactiva (REPL)"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/using-an-interactive-shell-repl.md"

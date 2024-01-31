@@ -3,7 +3,7 @@ title:                "Проверка существования директ�
 date:                  2024-01-28T23:55:43.356366-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Проверка существования директории"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/ruby/checking-if-a-directory-exists.md"

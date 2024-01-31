@@ -3,7 +3,7 @@ title:                "복소수 다루기"
 date:                  2024-01-26T04:38:11.480265-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "복소수 다루기"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/working-with-complex-numbers.md"

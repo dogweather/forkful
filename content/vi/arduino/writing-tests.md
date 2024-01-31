@@ -3,7 +3,7 @@ title:                "Viết kiểm thử"
 date:                  2024-01-28T22:12:53.850550-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết kiểm thử"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/writing-tests.md"

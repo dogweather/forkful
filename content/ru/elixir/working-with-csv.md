@@ -3,7 +3,7 @@ title:                "Работа с CSV"
 date:                  2024-01-29T00:03:40.658115-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с CSV"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elixir/working-with-csv.md"

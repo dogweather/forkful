@@ -3,7 +3,7 @@ title:                "Drukowanie komunikatów debugowania"
 date:                  2024-01-20T17:53:24.494309-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/printing-debug-output.md"

@@ -3,7 +3,7 @@ title:                "Een tekstbestand lezen"
 date:                  2024-01-28T22:04:53.438951-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand lezen"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/cpp/reading-a-text-file.md"

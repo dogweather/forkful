@@ -3,7 +3,7 @@ title:                "Praca z yaml"
 date:                  2024-01-19
 html_title:           "Arduino: Praca z yaml"
 simple_title:         "Praca z yaml"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/working-with-yaml.md"

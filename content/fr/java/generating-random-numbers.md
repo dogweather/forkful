@@ -3,7 +3,7 @@ title:                "Génération de nombres aléatoires"
 date:                  2024-01-27T20:33:54.928487-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Génération de nombres aléatoires"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/generating-random-numbers.md"

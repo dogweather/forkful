@@ -3,7 +3,7 @@ title:                "जटिल संख्याओं के साथ �
 date:                  2024-01-26T04:46:40.832280-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "जटिल संख्याओं के साथ काम करना"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/rust/working-with-complex-numbers.md"

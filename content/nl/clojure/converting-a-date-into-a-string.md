@@ -3,7 +3,7 @@ title:                "Een datum converteren naar een string"
 date:                  2024-01-28T21:57:24.658761-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een datum converteren naar een string"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/converting-a-date-into-a-string.md"

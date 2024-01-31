@@ -3,7 +3,7 @@ title:                "Utilisation d'un débogueur"
 date:                  2024-01-26T03:47:52.752100-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation d'un débogueur"
-programming_language: "C"
+
 category:             "C"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/using-a-debugger.md"

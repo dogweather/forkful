@@ -3,7 +3,7 @@ title:                "Обчислення дати у майбутньому �
 date:                  2024-01-20T17:31:05.491601-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Обчислення дати у майбутньому або минулому"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/go/calculating-a-date-in-the-future-or-past.md"

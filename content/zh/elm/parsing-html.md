@@ -3,7 +3,7 @@ title:                "解析HTML"
 date:                  2024-01-20T15:31:06.437242-07:00
 html_title:           "Bash: 解析HTML"
 simple_title:         "解析HTML"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true

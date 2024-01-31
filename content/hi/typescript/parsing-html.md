@@ -3,7 +3,7 @@ title:                "HTML पार्स करना"
 date:                  2024-01-20T15:35:07.424069-07:00
 html_title:           "Bash: HTML पार्स करना"
 simple_title:         "HTML पार्स करना"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/parsing-html.md"

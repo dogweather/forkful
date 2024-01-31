@@ -3,7 +3,7 @@ title:                "Working with JSON"
 date:                  2024-01-19
 html_title:           "Arduino recipe: Working with JSON"
 simple_title:         "Working with JSON"
-programming_language: "C++"
+
 category:             "C++"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/working-with-json.md"

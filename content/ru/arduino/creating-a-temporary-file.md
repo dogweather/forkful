@@ -3,7 +3,7 @@ title:                "Создание временного файла"
 date:                  2024-01-28T23:57:40.809167-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Создание временного файла"
-programming_language: "Arduino"
+
 category:             "Arduino"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/arduino/creating-a-temporary-file.md"

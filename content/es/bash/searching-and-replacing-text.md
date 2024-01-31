@@ -3,7 +3,7 @@ title:                "Buscando y reemplazando texto"
 date:                  2024-01-20T17:57:11.106535-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Buscando y reemplazando texto"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/searching-and-replacing-text.md"

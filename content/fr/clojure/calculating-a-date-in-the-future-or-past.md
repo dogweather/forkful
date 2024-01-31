@@ -3,7 +3,7 @@ title:                "Calcul d'une date future ou passée"
 date:                  2024-01-20T17:30:43.570334-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Calcul d'une date future ou passée"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/calculating-a-date-in-the-future-or-past.md"

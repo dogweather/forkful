@@ -3,7 +3,7 @@ title:                "Usuwanie znaków pasujących do wzorca"
 date:                  2024-01-20T17:41:59.426400-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/deleting-characters-matching-a-pattern.md"

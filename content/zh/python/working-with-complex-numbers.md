@@ -3,7 +3,7 @@ title:                "处理复数"
 date:                  2024-01-26T04:44:54.740864-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理复数"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/working-with-complex-numbers.md"

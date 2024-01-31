@@ -3,7 +3,7 @@ title:                "In ra thông tin gỡ lỗi"
 date:                  2024-01-28T22:04:29.522030-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "In ra thông tin gỡ lỗi"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/printing-debug-output.md"

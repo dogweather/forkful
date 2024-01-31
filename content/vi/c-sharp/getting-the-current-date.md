@@ -3,7 +3,7 @@ title:                "Lấy ngày hiện tại"
 date:                  2024-01-28T22:01:30.803332-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lấy ngày hiện tại"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/getting-the-current-date.md"

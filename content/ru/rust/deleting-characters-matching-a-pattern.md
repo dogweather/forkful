@@ -3,7 +3,7 @@ title:                "Удаление символов, соответству
 date:                  2024-01-28T23:57:06.764332-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление символов, соответствующих шаблону"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/rust/deleting-characters-matching-a-pattern.md"

@@ -3,7 +3,7 @@ title:                "Przetwarzanie daty ze łańcucha znaków"
 date:                  2024-01-20T15:35:44.372902-07:00
 html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
 simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/parsing-a-date-from-a-string.md"

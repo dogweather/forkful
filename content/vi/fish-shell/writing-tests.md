@@ -3,7 +3,7 @@ title:                "Viết các bài kiểm tra"
 date:                  2024-01-28T22:13:46.216228-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết các bài kiểm tra"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/writing-tests.md"

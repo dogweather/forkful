@@ -3,7 +3,7 @@ title:                "Tái cấu trúc mã"
 date:                  2024-01-28T22:06:23.960228-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tái cấu trúc mã"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/refactoring.md"

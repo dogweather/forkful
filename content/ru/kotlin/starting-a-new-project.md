@@ -3,7 +3,7 @@ title:                "Начало нового проекта"
 date:                  2024-01-29T00:04:02.353890-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Начало нового проекта"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/kotlin/starting-a-new-project.md"

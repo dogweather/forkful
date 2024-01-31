@@ -3,7 +3,7 @@ title:                "एरर्स को हैंडल करना"
 date:                  2024-01-26T00:59:33.539499-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "एरर्स को हैंडल करना"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/handling-errors.md"

@@ -3,7 +3,7 @@ title:                "CLI 명령어로 파일 다루기"
 date:                  2024-01-27T16:20:49.525493-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CLI 명령어로 파일 다루기"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/manipulating-files-with-cli-one-liners.md"

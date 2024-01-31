@@ -3,7 +3,7 @@ title:                "בדיקה האם תיקייה קיימת"
 date:                  2024-01-20T14:57:34.512034-07:00
 html_title:           "Gleam: בדיקה האם תיקייה קיימת"
 simple_title:         "בדיקה האם תיקייה קיימת"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/javascript/checking-if-a-directory-exists.md"

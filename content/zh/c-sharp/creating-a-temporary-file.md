@@ -3,7 +3,7 @@ title:                "创建临时文件"
 date:                  2024-01-20T17:39:43.862970-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "创建临时文件"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

@@ -3,7 +3,7 @@ title:                "גילוי מספרים אקראיים"
 date:                  2024-01-27T20:34:25.106641-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "גילוי מספרים אקראיים"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/go/generating-random-numbers.md"

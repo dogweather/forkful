@@ -3,7 +3,7 @@ title:                "Wycinanie podłańcuchów"
 date:                  2024-01-20T17:46:09.645550-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wycinanie podłańcuchów"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/extracting-substrings.md"

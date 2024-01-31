@@ -3,7 +3,7 @@ title:                "Creando un archivo temporal"
 date:                  2024-01-20T17:40:52.000386-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Creando un archivo temporal"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/creating-a-temporary-file.md"

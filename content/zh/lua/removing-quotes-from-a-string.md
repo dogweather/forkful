@@ -3,7 +3,7 @@ title:                "从字符串中移除引号"
 date:                  2024-01-26T03:40:35.068220-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "从字符串中移除引号"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/removing-quotes-from-a-string.md"

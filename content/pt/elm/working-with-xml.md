@@ -3,7 +3,7 @@ title:                "Trabalhando com XML"
 date:                  2024-01-26T04:30:38.291480-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com XML"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/working-with-xml.md"

@@ -3,7 +3,7 @@ title:                "解析HTML"
 date:                  2024-01-20T15:34:11.629696-07:00
 html_title:           "Bash: 解析HTML"
 simple_title:         "解析HTML"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true

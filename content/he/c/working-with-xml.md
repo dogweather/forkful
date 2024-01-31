@@ -3,7 +3,7 @@ title:                "עבודה עם XML"
 date:                  2024-01-26T04:28:51.789142-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם XML"
-programming_language: "C"
+
 category:             "C"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c/working-with-xml.md"

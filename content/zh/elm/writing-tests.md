@@ -3,7 +3,7 @@ title:                "编写测试代码"
 date:                  2024-01-19
 html_title:           "Arduino: 编写测试代码"
 simple_title:         "编写测试代码"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Testing and Debugging"
 isCJKLanguage:        true

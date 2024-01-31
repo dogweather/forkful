@@ -3,7 +3,7 @@ title:                "Wykorzystanie wyrażeń regularnych"
 date:                  2024-01-19
 html_title:           "Arduino: Wykorzystanie wyrażeń regularnych"
 simple_title:         "Wykorzystanie wyrażeń regularnych"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/using-regular-expressions.md"

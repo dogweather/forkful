@@ -3,7 +3,7 @@ title:                "Å sende en HTTP-forespørsel"
 date:                  2024-01-20T17:59:58.335257-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Å sende en HTTP-forespørsel"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/sending-an-http-request.md"

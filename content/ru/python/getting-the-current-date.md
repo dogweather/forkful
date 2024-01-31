@@ -3,7 +3,7 @@ title:                "Получение текущей даты"
 date:                  2024-01-28T23:58:45.784295-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Получение текущей даты"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/python/getting-the-current-date.md"

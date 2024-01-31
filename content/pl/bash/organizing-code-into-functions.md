@@ -3,7 +3,7 @@ title:                "Organizacja kodu w funkcje"
 date:                  2024-01-26T01:08:48.444438-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organizacja kodu w funkcje"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/organizing-code-into-functions.md"

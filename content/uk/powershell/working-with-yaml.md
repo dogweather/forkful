@@ -3,7 +3,7 @@ title:                "Робота з YAML"
 date:                  2024-01-19
 html_title:           "Arduino: Робота з YAML"
 simple_title:         "Робота з YAML"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/powershell/working-with-yaml.md"

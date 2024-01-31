@@ -3,7 +3,7 @@ title:                "Obteniendo la fecha actual"
 date:                  2024-01-20T15:14:43.712352-07:00
 html_title:           "Bash: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
-programming_language: "Go"
+
 category:             "Go"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/getting-the-current-date.md"

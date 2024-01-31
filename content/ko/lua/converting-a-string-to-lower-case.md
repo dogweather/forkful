@@ -3,7 +3,7 @@ title:                "문자열을 소문자로 변환하기"
 date:                  2024-01-20T17:38:49.461120-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "문자열을 소문자로 변환하기"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Strings"
 isCJKLanguage:        true

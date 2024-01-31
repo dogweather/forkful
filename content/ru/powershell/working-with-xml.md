@@ -3,7 +3,7 @@ title:                "Работа с XML"
 date:                  2024-01-29T00:05:18.829737-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с XML"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/powershell/working-with-xml.md"

@@ -3,7 +3,7 @@ title:                "Remaniement de code"
 date:                  2024-01-26T03:37:28.774572-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Remaniement de code"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/refactoring.md"

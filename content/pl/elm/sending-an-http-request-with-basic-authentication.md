@@ -3,7 +3,7 @@ title:                "Wysyłanie zapytania http z podstawową autoryzacją"
 date:                  2024-01-20T18:01:47.790947-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/sending-an-http-request-with-basic-authentication.md"

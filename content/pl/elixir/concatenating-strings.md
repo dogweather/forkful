@@ -3,7 +3,7 @@ title:                "Łączenie łańcuchów znaków"
 date:                  2024-01-27T10:42:57.388533-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Łączenie łańcuchów znaków"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/concatenating-strings.md"

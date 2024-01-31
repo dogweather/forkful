@@ -3,7 +3,7 @@ title:                "עבודה עם מספרים מרוכבים"
 date:                  2024-01-26T04:44:13.831306-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם מספרים מרוכבים"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/lua/working-with-complex-numbers.md"

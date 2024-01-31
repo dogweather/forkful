@@ -3,7 +3,7 @@ title:                "Att använda en debugger"
 date:                  2024-01-26T03:50:11.716359-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda en debugger"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/using-a-debugger.md"

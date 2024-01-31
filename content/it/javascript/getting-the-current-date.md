@@ -3,7 +3,7 @@ title:                "Ottenere la data corrente"
 date:                  2024-01-20T15:15:12.786870-07:00
 html_title:           "Arduino: Ottenere la data corrente"
 simple_title:         "Ottenere la data corrente"
-programming_language: "Javascript"
+
 category:             "Javascript"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/getting-the-current-date.md"

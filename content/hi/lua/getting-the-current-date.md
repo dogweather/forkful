@@ -3,7 +3,7 @@ title:                "वर्तमान तारीख प्राप्�
 date:                  2024-01-20T15:15:54.830781-07:00
 html_title:           "C: वर्तमान तारीख प्राप्त करना"
 simple_title:         "वर्तमान तारीख प्राप्त करना"
-programming_language: "Lua"
+
 category:             "Lua"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/lua/getting-the-current-date.md"

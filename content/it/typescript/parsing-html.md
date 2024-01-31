@@ -3,7 +3,7 @@ title:                "Analisi dell'HTML"
 date:                  2024-01-20T15:34:17.663870-07:00
 html_title:           "Bash: Analisi dell'HTML"
 simple_title:         "Analisi dell'HTML"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/parsing-html.md"

@@ -3,7 +3,7 @@ title:                "Анализ даты из строки"
 date:                  2024-01-28T23:59:51.773727-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Анализ даты из строки"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/bash/parsing-a-date-from-a-string.md"

@@ -3,7 +3,7 @@ title:                "检查目录是否存在"
 date:                  2024-01-20T14:58:13.382528-07:00
 html_title:           "Elixir: 检查目录是否存在"
 simple_title:         "检查目录是否存在"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Files and I/O"
 isCJKLanguage:        true

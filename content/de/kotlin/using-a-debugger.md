@@ -3,7 +3,7 @@ title:                "Einsatz eines Debuggers"
 date:                  2024-01-26T03:49:54.318756-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Einsatz eines Debuggers"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/using-a-debugger.md"

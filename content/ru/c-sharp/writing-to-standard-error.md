@@ -3,7 +3,7 @@ title:                "Запись в стандартный поток оши�
 date:                  2024-01-29T00:05:54.775306-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Запись в стандартный поток ошибок"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/c-sharp/writing-to-standard-error.md"

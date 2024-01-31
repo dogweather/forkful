@@ -3,7 +3,7 @@ title:                "Schrijven naar standaardfout"
 date:                  2024-01-28T22:13:55.510883-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Schrijven naar standaardfout"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/writing-to-standard-error.md"

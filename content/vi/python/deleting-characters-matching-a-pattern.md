@@ -3,7 +3,7 @@ title:                "Xóa các ký tự phù hợp với một mẫu"
 date:                  2024-01-28T21:59:16.125781-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xóa các ký tự phù hợp với một mẫu"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/deleting-characters-matching-a-pattern.md"

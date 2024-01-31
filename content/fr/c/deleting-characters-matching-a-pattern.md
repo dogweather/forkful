@@ -3,7 +3,7 @@ title:                "Suppression de caractères correspondant à un motif"
 date:                  2024-01-20T17:41:38.623870-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Suppression de caractères correspondant à un motif"
-programming_language: "C"
+
 category:             "C"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/deleting-characters-matching-a-pattern.md"

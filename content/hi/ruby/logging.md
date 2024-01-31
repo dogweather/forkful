@@ -3,7 +3,7 @@ title:                "लॉगिंग"
 date:                  2024-01-26T01:10:34.405905-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "लॉगिंग"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/logging.md"

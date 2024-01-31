@@ -3,7 +3,7 @@ title:                "Scaricare una pagina web"
 date:                  2024-01-20T17:44:10.661467-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Scaricare una pagina web"
-programming_language: "Haskell"
+
 category:             "Haskell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/downloading-a-web-page.md"

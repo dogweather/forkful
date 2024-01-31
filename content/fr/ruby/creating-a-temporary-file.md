@@ -3,7 +3,7 @@ title:                "Création d'un fichier temporaire"
 date:                  2024-01-20T17:41:11.313304-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Création d'un fichier temporaire"
-programming_language: "Ruby"
+
 category:             "Ruby"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/creating-a-temporary-file.md"

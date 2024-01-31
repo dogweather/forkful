@@ -3,7 +3,7 @@ title:                "Logging"
 date:                  2024-01-25T02:03:41.790707-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Logging"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/logging.md"

@@ -3,7 +3,7 @@ title:                "Використання асоціативних мас�
 date:                  2024-01-30T19:12:20.245077-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання асоціативних масивів"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/kotlin/using-associative-arrays.md"

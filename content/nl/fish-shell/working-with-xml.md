@@ -3,7 +3,7 @@ title:                "Werken met XML"
 date:                  2024-01-28T22:11:21.181022-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met XML"
-programming_language: "Fish Shell"
+
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/working-with-xml.md"

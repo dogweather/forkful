@@ -3,7 +3,7 @@ title:                "Att arbeta med TOML"
 date:                  2024-01-26T04:20:23.253733-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att arbeta med TOML"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/working-with-toml.md"

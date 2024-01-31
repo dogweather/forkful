@@ -3,7 +3,7 @@ title:                "Zaokrąglanie liczb"
 date:                  2024-01-26T03:46:23.296325-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zaokrąglanie liczb"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/rounding-numbers.md"

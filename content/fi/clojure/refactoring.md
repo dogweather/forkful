@@ -3,7 +3,7 @@ title:                "Koodin refaktorointi"
 date:                  2024-01-26T01:17:35.514927-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Koodin refaktorointi"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/refactoring.md"

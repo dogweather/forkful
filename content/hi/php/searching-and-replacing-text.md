@@ -3,7 +3,7 @@ title:                "पाठ खोजना और बदलना"
 date:                  2024-01-20T17:58:20.903771-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "पाठ खोजना और बदलना"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/searching-and-replacing-text.md"

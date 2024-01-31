@@ -3,7 +3,7 @@ title:                "Trabajando con YAML"
 date:                  2024-01-19
 html_title:           "Arduino: Trabajando con YAML"
 simple_title:         "Trabajando con YAML"
-programming_language: "TypeScript"
+
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/working-with-yaml.md"

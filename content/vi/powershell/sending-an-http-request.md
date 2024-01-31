@@ -3,7 +3,7 @@ title:                "Gửi một yêu cầu HTTP"
 date:                  2024-01-28T22:07:46.649591-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gửi một yêu cầu HTTP"
-programming_language: "PowerShell"
+
 category:             "PowerShell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/powershell/sending-an-http-request.md"

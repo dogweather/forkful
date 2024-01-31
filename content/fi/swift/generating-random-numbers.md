@@ -3,7 +3,7 @@ title:                "Satunnaislukujen generointi"
 date:                  2024-01-27T20:35:24.712662-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Satunnaislukujen generointi"
-programming_language: "Swift"
+
 category:             "Swift"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/generating-random-numbers.md"

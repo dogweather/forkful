@@ -3,7 +3,7 @@ title:                "Testien kirjoittaminen"
 date:                  2024-01-19
 html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/writing-tests.md"

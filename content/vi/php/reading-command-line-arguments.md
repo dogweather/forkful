@@ -3,7 +3,7 @@ title:                "Đọc các đối số dòng lệnh"
 date:                  2024-01-28T22:05:54.561842-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc các đối số dòng lệnh"
-programming_language: "PHP"
+
 category:             "PHP"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/php/reading-command-line-arguments.md"

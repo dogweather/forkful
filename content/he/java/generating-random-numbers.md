@@ -3,7 +3,7 @@ title:                "פיקוח על מספרים אקראיים"
 date:                  2024-01-27T20:50:32.362776-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "פיקוח על מספרים אקראיים"
-programming_language: "Java"
+
 category:             "Java"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/generating-random-numbers.md"

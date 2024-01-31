@@ -3,7 +3,7 @@ title:                "Capitalizando uma string"
 date:                  2024-01-19
 html_title:           "Bash: Capitalizando uma string"
 simple_title:         "Capitalizando uma string"
-programming_language: "Kotlin"
+
 category:             "Kotlin"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/capitalizing-a-string.md"

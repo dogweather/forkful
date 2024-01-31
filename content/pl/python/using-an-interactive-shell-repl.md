@@ -3,7 +3,7 @@ title:                "Korzystanie z interaktywnego shella (REPL)"
 date:                  2024-01-26T04:17:14.218478-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z interaktywnego shella (REPL)"
-programming_language: "Python"
+
 category:             "Python"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/using-an-interactive-shell-repl.md"

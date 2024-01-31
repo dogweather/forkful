@@ -3,7 +3,7 @@ title:                "Een tijdelijk bestand aanmaken"
 date:                  2024-01-28T21:58:16.929377-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tijdelijk bestand aanmaken"
-programming_language: "C#"
+
 category:             "C#"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c-sharp/creating-a-temporary-file.md"

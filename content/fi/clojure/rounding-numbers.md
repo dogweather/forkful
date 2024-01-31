@@ -3,7 +3,7 @@ title:                "Numerojen pyöristäminen"
 date:                  2024-01-26T03:43:33.205790-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Numerojen pyöristäminen"
-programming_language: "Clojure"
+
 category:             "Clojure"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/rounding-numbers.md"

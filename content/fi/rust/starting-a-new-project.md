@@ -3,7 +3,7 @@ title:                "Uuden projektin aloittaminen"
 date:                  2024-01-20T18:04:56.012937-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Uuden projektin aloittaminen"
-programming_language: "Rust"
+
 category:             "Rust"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/starting-a-new-project.md"

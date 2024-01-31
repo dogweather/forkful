@@ -3,7 +3,7 @@ title:                "打印调试信息"
 date:                  2024-01-20T17:51:59.364265-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "打印调试信息"
-programming_language: "Bash"
+
 category:             "Bash"
 tag:                  "Testing and Debugging"
 isCJKLanguage:        true

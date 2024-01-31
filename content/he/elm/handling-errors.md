@@ -3,7 +3,7 @@ title:                "טיפול בשגיאות"
 date:                  2024-01-26T00:52:44.938146-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "טיפול בשגיאות"
-programming_language: "Elm"
+
 category:             "Elm"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/handling-errors.md"

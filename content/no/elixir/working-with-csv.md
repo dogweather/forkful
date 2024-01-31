@@ -3,7 +3,7 @@ title:                "Arbeid med CSV"
 date:                  2024-01-19
 html_title:           "Bash: Arbeid med CSV"
 simple_title:         "Arbeid med CSV"
-programming_language: "Elixir"
+
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/working-with-csv.md"
