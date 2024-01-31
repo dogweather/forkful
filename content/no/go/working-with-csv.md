@@ -1,7 +1,6 @@
 ---
 title:                "Arbeid med CSV"
 date:                  2024-01-19
-html_title:           "Bash: Arbeid med CSV"
 simple_title:         "Arbeid med CSV"
 
 tag:                  "Data Formats and Serialization"

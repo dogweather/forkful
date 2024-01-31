@@ -1,7 +1,6 @@
 ---
 title:                "Getting the current date"
 date:                  2024-01-20T15:16:14.743709-07:00
-html_title:           "Arduino recipe: Getting the current date"
 simple_title:         "Getting the current date"
 
 tag:                  "Dates and Times"

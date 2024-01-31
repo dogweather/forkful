@@ -1,7 +1,6 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
 date:                  2024-01-19
-html_title:           "Bash: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 
 tag:                  "Files and I/O"

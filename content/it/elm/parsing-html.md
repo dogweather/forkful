@@ -1,7 +1,6 @@
 ---
 title:                "Analisi dell'HTML"
 date:                  2024-01-20T15:31:05.298225-07:00
-html_title:           "Bash: Analisi dell'HTML"
 simple_title:         "Analisi dell'HTML"
 
 tag:                  "HTML and the Web"

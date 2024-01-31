@@ -1,7 +1,6 @@
 ---
 title:                "处理 CSV 文件"
 date:                  2024-01-19
-html_title:           "Bash: 处理 CSV 文件"
 simple_title:         "处理 CSV 文件"
 
 tag:                  "Data Formats and Serialization"

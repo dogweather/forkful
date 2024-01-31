@@ -1,7 +1,6 @@
 ---
 title:                "디렉토리 존재 여부 확인하기"
 date:                  2024-01-20T14:58:11.957446-07:00
-html_title:           "Fish Shell: 디렉토리 존재 여부 확인하기"
 simple_title:         "디렉토리 존재 여부 확인하기"
 
 tag:                  "Files and I/O"

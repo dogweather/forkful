@@ -2,7 +2,6 @@
 title:                "Obliczanie daty w przyszłości lub przeszłości"
 date:                  2024-01-20T17:28:42.892523-07:00
 model:                 gpt-4-1106-preview
-html_title:           "Clojure: Obliczanie daty w przyszłości lub przeszłości"
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 
 tag:                  "Dates and Times"

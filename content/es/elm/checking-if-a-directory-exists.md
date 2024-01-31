@@ -1,7 +1,6 @@
 ---
 title:                "Comprobando si existe un directorio"
 date:                  2024-01-20T14:56:12.879034-07:00
-html_title:           "Gleam: Comprobando si existe un directorio"
 simple_title:         "Comprobando si existe un directorio"
 
 tag:                  "Files and I/O"

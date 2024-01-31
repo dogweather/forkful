@@ -1,7 +1,6 @@
 ---
 title:                "Lavorare con JSON"
 date:                  2024-01-19
-html_title:           "Arduino: Lavorare con JSON"
 simple_title:         "Lavorare con JSON"
 
 tag:                  "Data Formats and Serialization"

@@ -1,7 +1,6 @@
 ---
 title:                "Skriva tester"
 date:                  2024-01-19
-html_title:           "Arduino: Skriva tester"
 simple_title:         "Skriva tester"
 
 tag:                  "Testing and Debugging"

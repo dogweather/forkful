@@ -1,7 +1,6 @@
 ---
 title:                "HTMLの解析"
 date:                  2024-01-20T15:32:59.987359-07:00
-html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 
 tag:                  "HTML and the Web"

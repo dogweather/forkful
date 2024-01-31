@@ -1,7 +1,6 @@
 ---
 title:                "Analyse av HTML"
 date:                  2024-01-20T15:34:06.387643-07:00
-html_title:           "Arduino: Analyse av HTML"
 simple_title:         "Analyse av HTML"
 
 tag:                  "HTML and the Web"

@@ -1,7 +1,6 @@
 ---
 title:                "Przetwarzanie HTML"
 date:                  2024-01-20T15:31:53.098220-07:00
-html_title:           "Bash: Przetwarzanie HTML"
 simple_title:         "Przetwarzanie HTML"
 
 tag:                  "HTML and the Web"

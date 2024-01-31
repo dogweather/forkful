@@ -1,7 +1,6 @@
 ---
 title:                "Analyse syntaxique de HTML"
 date:                  2024-01-20T15:30:05.528819-07:00
-html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
 
 tag:                  "HTML and the Web"

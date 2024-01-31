@@ -1,7 +1,6 @@
 ---
 title:                "Escrevendo testes"
 date:                  2024-01-19
-html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 
 tag:                  "Testing and Debugging"

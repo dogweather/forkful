@@ -2,7 +2,6 @@
 title:                "חישוב תאריך בעתיד או בעבר"
 date:                  2024-01-20T17:28:42.633877-07:00
 model:                 gpt-4-1106-preview
-html_title:           "Bash: חישוב תאריך בעתיד או בעבר"
 simple_title:         "חישוב תאריך בעתיד או בעבר"
 
 tag:                  "Dates and Times"

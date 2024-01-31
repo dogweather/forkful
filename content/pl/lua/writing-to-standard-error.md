@@ -1,7 +1,6 @@
 ---
 title:                "Pisanie do standardowego błędu"
 date:                  2024-01-19
-html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 
 tag:                  "Files and I/O"

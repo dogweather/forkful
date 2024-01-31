@@ -1,7 +1,6 @@
 ---
 title:                "Tolka ett datum från en sträng"
 date:                  2024-01-20T15:37:34.216456-07:00
-html_title:           "Bash: Tolka ett datum från en sträng"
 simple_title:         "Tolka ett datum från en sträng"
 
 tag:                  "Dates and Times"

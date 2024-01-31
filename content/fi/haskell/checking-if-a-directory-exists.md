@@ -1,7 +1,6 @@
 ---
 title:                "Onko hakemisto olemassa? Tarkistaminen"
 date:                  2024-01-20T14:56:26.752490-07:00
-html_title:           "Gleam: Onko hakemisto olemassa? Tarkistaminen"
 simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
 
 tag:                  "Files and I/O"

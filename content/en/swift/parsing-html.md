@@ -1,7 +1,6 @@
 ---
 title:                "Parsing HTML"
 date:                  2024-01-20T15:34:11.799596-07:00
-html_title:           "Bash recipe: Parsing HTML"
 simple_title:         "Parsing HTML"
 
 tag:                  "HTML and the Web"

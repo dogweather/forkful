@@ -2,7 +2,6 @@
 title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 date:                  2024-01-20T17:28:36.793597-07:00
 model:                 gpt-4-1106-preview
-html_title:           "C#: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 
 tag:                  "Dates and Times"

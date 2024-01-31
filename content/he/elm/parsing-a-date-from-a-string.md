@@ -1,7 +1,6 @@
 ---
 title:                "ניתוח תאריך ממחרוזת"
 date:                  2024-01-20T15:36:05.444026-07:00
-html_title:           "Arduino: ניתוח תאריך ממחרוזת"
 simple_title:         "ניתוח תאריך ממחרוזת"
 
 tag:                  "Dates and Times"

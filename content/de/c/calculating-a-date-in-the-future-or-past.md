@@ -2,7 +2,6 @@
 title:                "Berechnung eines zukünftigen oder vergangenen Datums"
 date:                  2024-01-20T17:28:42.961673-07:00
 model:                 gpt-4-1106-preview
-html_title:           "Elixir: Berechnung eines zukünftigen oder vergangenen Datums"
 simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
 
 tag:                  "Dates and Times"

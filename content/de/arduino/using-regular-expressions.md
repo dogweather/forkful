@@ -1,7 +1,6 @@
 ---
 title:                "Verwendung von regulären Ausdrücken"
 date:                  2024-01-19
-html_title:           "Arduino: Verwendung von regulären Ausdrücken"
 simple_title:         "Verwendung von regulären Ausdrücken"
 
 tag:                  "Strings"

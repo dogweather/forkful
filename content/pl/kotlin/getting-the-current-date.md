@@ -1,7 +1,6 @@
 ---
 title:                "Pobieranie aktualnej daty"
 date:                  2024-01-20T15:15:47.216633-07:00
-html_title:           "Bash: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 
 tag:                  "Dates and Times"

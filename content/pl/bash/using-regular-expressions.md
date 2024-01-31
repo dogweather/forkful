@@ -1,7 +1,6 @@
 ---
 title:                "Korzystanie z wyrażeń regularnych"
 date:                  2024-01-19
-html_title:           "Bash: Korzystanie z wyrażeń regularnych"
 simple_title:         "Korzystanie z wyrażeń regularnych"
 
 tag:                  "Strings"

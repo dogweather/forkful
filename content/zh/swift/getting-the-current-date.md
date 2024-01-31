@@ -1,7 +1,6 @@
 ---
 title:                "获取当前日期"
 date:                  2024-01-20T15:16:38.082247-07:00
-html_title:           "Bash: 获取当前日期"
 simple_title:         "获取当前日期"
 
 tag:                  "Dates and Times"

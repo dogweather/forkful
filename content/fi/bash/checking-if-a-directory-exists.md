@@ -1,7 +1,6 @@
 ---
 title:                "Onko hakemisto olemassa? Tarkistaminen"
 date:                  2024-01-19
-html_title:           "Bash: Onko hakemisto olemassa? Tarkistaminen"
 simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
 
 tag:                  "Files and I/O"

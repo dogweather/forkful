@@ -1,7 +1,6 @@
 ---
 title:                "Datum aus einem String parsen"
 date:                  2024-01-20T15:35:51.070035-07:00
-html_title:           "Arduino: Datum aus einem String parsen"
 simple_title:         "Datum aus einem String parsen"
 
 tag:                  "Dates and Times"

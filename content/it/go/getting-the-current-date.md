@@ -1,7 +1,6 @@
 ---
 title:                "Ottenere la data corrente"
 date:                  2024-01-20T15:14:49.705773-07:00
-html_title:           "Arduino: Ottenere la data corrente"
 simple_title:         "Ottenere la data corrente"
 
 tag:                  "Dates and Times"

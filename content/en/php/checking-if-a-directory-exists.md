@@ -1,7 +1,6 @@
 ---
 title:                "Checking if a directory exists"
 date:                  2024-01-20T14:57:32.050677-07:00
-html_title:           "Gleam recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 
 tag:                  "Files and I/O"

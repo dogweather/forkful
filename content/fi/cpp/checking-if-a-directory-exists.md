@@ -1,7 +1,6 @@
 ---
 title:                "Tarkistetaan, onko hakemisto olemassa"
 date:                  2024-01-19
-html_title:           "C: Tarkistetaan, onko hakemisto olemassa"
 simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 
 tag:                  "Files and I/O"

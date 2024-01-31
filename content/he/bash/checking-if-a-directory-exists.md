@@ -1,7 +1,6 @@
 ---
 title:                "בדיקה האם ספרייה קיימת"
 date:                  2024-01-19
-html_title:           "Arduino: בדיקה האם ספרייה קיימת"
 simple_title:         "בדיקה האם ספרייה קיימת"
 
 tag:                  "Files and I/O"

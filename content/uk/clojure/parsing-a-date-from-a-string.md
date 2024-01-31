@@ -1,7 +1,6 @@
 ---
 title:                "Аналіз дати з рядка"
 date:                  2024-01-20T15:35:46.863428-07:00
-html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 
 tag:                  "Dates and Times"

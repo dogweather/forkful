@@ -1,7 +1,6 @@
 ---
 title:                "Scrivere un file di testo"
 date:                  2024-01-19
-html_title:           "Arduino: Scrivere un file di testo"
 simple_title:         "Scrivere un file di testo"
 
 tag:                  "Files and I/O"

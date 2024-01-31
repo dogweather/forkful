@@ -1,7 +1,6 @@
 ---
 title:                "解析HTML"
 date:                  2024-01-20T15:31:05.043680-07:00
-html_title:           "Bash: 解析HTML"
 simple_title:         "解析HTML"
 
 tag:                  "HTML and the Web"

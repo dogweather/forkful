@@ -1,7 +1,6 @@
 ---
 title:                "Merkkijonosta päivämäärän jäsentäminen"
 date:                  2024-01-20T15:35:23.466682-07:00
-html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
 simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 
 tag:                  "Dates and Times"

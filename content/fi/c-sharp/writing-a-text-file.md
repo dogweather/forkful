@@ -1,7 +1,6 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
 date:                  2024-01-19
-html_title:           "Arduino: Tekstitiedoston kirjoittaminen"
 simple_title:         "Tekstitiedoston kirjoittaminen"
 
 tag:                  "Files and I/O"

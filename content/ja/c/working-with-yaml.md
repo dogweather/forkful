@@ -1,7 +1,6 @@
 ---
 title:                "YAMLを扱う"
 date:                  2024-01-19
-html_title:           "Bash: YAMLを扱う"
 simple_title:         "YAMLを扱う"
 
 tag:                  "Data Formats and Serialization"

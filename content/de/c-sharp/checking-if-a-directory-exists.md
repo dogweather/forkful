@@ -1,7 +1,6 @@
 ---
 title:                "Überprüfen, ob ein Verzeichnis existiert"
 date:                  2024-01-19
-html_title:           "Arduino: Überprüfen, ob ein Verzeichnis existiert"
 simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
 
 tag:                  "Files and I/O"

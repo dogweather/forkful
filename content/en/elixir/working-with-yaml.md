@@ -1,7 +1,6 @@
 ---
 title:                "Working with YAML"
 date:                  2024-01-19
-html_title:           "Arduino recipe: Working with YAML"
 simple_title:         "Working with YAML"
 
 tag:                  "Data Formats and Serialization"

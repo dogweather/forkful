@@ -1,7 +1,6 @@
 ---
 title:                "Tolke en dato fra en streng"
 date:                  2024-01-20T15:38:35.532488-07:00
-html_title:           "Arduino: Tolke en dato fra en streng"
 simple_title:         "Tolke en dato fra en streng"
 
 tag:                  "Dates and Times"

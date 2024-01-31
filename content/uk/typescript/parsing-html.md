@@ -1,7 +1,6 @@
 ---
 title:                "Парсинг HTML"
 date:                  2024-01-20T15:35:04.325863-07:00
-html_title:           "Arduino: Парсинг HTML"
 simple_title:         "Парсинг HTML"
 
 tag:                  "HTML and the Web"

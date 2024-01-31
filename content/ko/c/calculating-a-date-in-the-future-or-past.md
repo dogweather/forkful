@@ -2,7 +2,6 @@
 title:                "미래 혹은 과거의 날짜 계산하기"
 date:                  2024-01-20T17:28:39.554249-07:00
 model:                 gpt-4-1106-preview
-html_title:           "Bash: 미래 혹은 과거의 날짜 계산하기"
 simple_title:         "미래 혹은 과거의 날짜 계산하기"
 
 tag:                  "Dates and Times"

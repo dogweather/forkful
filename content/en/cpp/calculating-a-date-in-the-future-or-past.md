@@ -2,7 +2,6 @@
 title:                "Calculating a date in the future or past"
 date:                  2024-01-20T17:28:31.987934-07:00
 model:                 gpt-4-1106-preview
-html_title:           "C# recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
 
 tag:                  "Dates and Times"

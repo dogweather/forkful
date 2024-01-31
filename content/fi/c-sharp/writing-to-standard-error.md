@@ -1,7 +1,6 @@
 ---
 title:                "Kirjoittaminen vakiovirheeseen"
 date:                  2024-01-19
-html_title:           "Bash: Kirjoittaminen vakiovirheeseen"
 simple_title:         "Kirjoittaminen vakiovirheeseen"
 
 tag:                  "Files and I/O"

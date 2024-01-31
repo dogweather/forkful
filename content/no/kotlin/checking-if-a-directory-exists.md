@@ -1,7 +1,6 @@
 ---
 title:                "Sjekke om en mappe eksisterer"
 date:                  2024-01-20T14:57:16.974551-07:00
-html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
 simple_title:         "Sjekke om en mappe eksisterer"
 
 tag:                  "Files and I/O"

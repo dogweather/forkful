@@ -1,7 +1,6 @@
 ---
 title:                "Vérification de l'existence d'un répertoire"
 date:                  2024-01-19
-html_title:           "Bash: Vérification de l'existence d'un répertoire"
 simple_title:         "Vérification de l'existence d'un répertoire"
 
 tag:                  "Files and I/O"

@@ -1,7 +1,6 @@
 ---
 title:                "Arbeta med JSON"
 date:                  2024-01-19
-html_title:           "Arduino: Arbeta med JSON"
 simple_title:         "Arbeta med JSON"
 
 tag:                  "Data Formats and Serialization"

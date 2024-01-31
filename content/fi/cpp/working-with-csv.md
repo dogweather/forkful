@@ -1,7 +1,6 @@
 ---
 title:                "CSV-tiedostojen käsittely"
 date:                  2024-01-19
-html_title:           "Bash: CSV-tiedostojen käsittely"
 simple_title:         "CSV-tiedostojen käsittely"
 
 tag:                  "Data Formats and Serialization"

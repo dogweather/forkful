@@ -1,7 +1,6 @@
 ---
 title:                "Analisando uma data a partir de uma string"
 date:                  2024-01-20T15:36:18.197132-07:00
-html_title:           "Arduino: Analisando uma data a partir de uma string"
 simple_title:         "Analisando uma data a partir de uma string"
 
 tag:                  "Dates and Times"

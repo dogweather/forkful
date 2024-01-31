@@ -1,7 +1,6 @@
 ---
 title:                "Zamiana liter na wielkie w ciągu znaków"
 date:                  2024-01-19
-html_title:           "Arduino: Zamiana liter na wielkie w ciągu znaków"
 simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 
 tag:                  "Strings"

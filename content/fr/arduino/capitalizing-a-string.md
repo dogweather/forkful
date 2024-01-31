@@ -1,7 +1,6 @@
 ---
 title:                "Mise en majuscule d'une chaîne de caractères"
 date:                  2024-01-19
-html_title:           "Arduino: Mise en majuscule d'une chaîne de caractères"
 simple_title:         "Mise en majuscule d'une chaîne de caractères"
 
 tag:                  "Strings"

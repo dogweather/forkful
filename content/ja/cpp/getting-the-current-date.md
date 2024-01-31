@@ -1,7 +1,6 @@
 ---
 title:                "現在の日付を取得する"
 date:                  2024-01-20T15:13:26.902050-07:00
-html_title:           "Bash: 現在の日付を取得する"
 simple_title:         "現在の日付を取得する"
 
 tag:                  "Dates and Times"

@@ -1,7 +1,6 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
 date:                  2024-01-20T15:15:54.631758-07:00
-html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 
 tag:                  "Dates and Times"

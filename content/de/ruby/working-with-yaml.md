@@ -1,7 +1,6 @@
 ---
 title:                "Arbeiten mit YAML"
 date:                  2024-01-19
-html_title:           "Bash: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 
 tag:                  "Data Formats and Serialization"

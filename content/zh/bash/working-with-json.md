@@ -1,7 +1,6 @@
 ---
 title:                "处理 JSON 数据"
 date:                  2024-01-19
-html_title:           "Bash: 处理 JSON 数据"
 simple_title:         "处理 JSON 数据"
 
 tag:                  "Data Formats and Serialization"

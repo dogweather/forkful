@@ -1,7 +1,6 @@
 ---
 title:                "Trabajando con archivos CSV"
 date:                  2024-01-19
-html_title:           "Bash: Trabajando con archivos CSV"
 simple_title:         "Trabajando con archivos CSV"
 
 tag:                  "Data Formats and Serialization"

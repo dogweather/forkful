@@ -1,7 +1,6 @@
 ---
 title:                "Escribiendo en el error estándar"
 date:                  2024-01-19
-html_title:           "Arduino: Escribiendo en el error estándar"
 simple_title:         "Escribiendo en el error estándar"
 
 tag:                  "Files and I/O"

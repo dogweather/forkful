@@ -1,7 +1,6 @@
 ---
 title:                "Att hämta aktuellt datum"
 date:                  2024-01-20T15:15:57.481453-07:00
-html_title:           "Bash: Att hämta aktuellt datum"
 simple_title:         "Att hämta aktuellt datum"
 
 tag:                  "Dates and Times"

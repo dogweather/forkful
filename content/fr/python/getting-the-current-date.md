@@ -1,7 +1,6 @@
 ---
 title:                "Obtenir la date actuelle"
 date:                  2024-01-20T15:15:54.584159-07:00
-html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 
 tag:                  "Dates and Times"

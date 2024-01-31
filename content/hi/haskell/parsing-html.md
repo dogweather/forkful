@@ -1,7 +1,6 @@
 ---
 title:                "HTML पार्स करना"
 date:                  2024-01-20T15:32:12.746622-07:00
-html_title:           "Bash: HTML पार्स करना"
 simple_title:         "HTML पार्स करना"
 
 tag:                  "HTML and the Web"

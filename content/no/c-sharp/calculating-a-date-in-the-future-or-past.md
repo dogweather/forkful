@@ -2,7 +2,6 @@
 title:                "Beregning av en dato i fremtiden eller fortiden"
 date:                  2024-01-20T17:28:34.621911-07:00
 model:                 gpt-4-1106-preview
-html_title:           "Bash: Beregning av en dato i fremtiden eller fortiden"
 simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 
 tag:                  "Dates and Times"

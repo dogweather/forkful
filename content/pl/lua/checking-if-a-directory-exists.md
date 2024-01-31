@@ -1,7 +1,6 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
 date:                  2024-01-20T14:57:52.389179-07:00
-html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 
 tag:                  "Files and I/O"

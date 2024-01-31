@@ -1,7 +1,6 @@
 ---
 title:                "Skriva till standardfel"
 date:                  2024-01-19
-html_title:           "Arduino: Skriva till standardfel"
 simple_title:         "Skriva till standardfel"
 
 tag:                  "Files and I/O"

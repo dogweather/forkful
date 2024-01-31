@@ -1,7 +1,6 @@
 ---
 title:                "Working with CSV"
 date:                  2024-01-19
-html_title:           "C recipe: Working with CSV"
 simple_title:         "Working with CSV"
 
 tag:                  "Data Formats and Serialization"

@@ -1,7 +1,6 @@
 ---
 title:                "Parsing a date from a string"
 date:                  2024-01-20T15:38:08.957602-07:00
-html_title:           "Arduino recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 
 tag:                  "Dates and Times"

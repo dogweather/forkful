@@ -1,7 +1,6 @@
 ---
 title:                "עבודה עם קבצי CSV"
 date:                  2024-01-19
-html_title:           "Arduino: עבודה עם קבצי CSV"
 simple_title:         "עבודה עם קבצי CSV"
 
 tag:                  "Data Formats and Serialization"

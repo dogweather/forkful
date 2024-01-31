@@ -1,7 +1,6 @@
 ---
 title:                "Comprobando si existe un directorio"
 date:                  2024-01-19
-html_title:           "Bash: Comprobando si existe un directorio"
 simple_title:         "Comprobando si existe un directorio"
 
 tag:                  "Files and I/O"

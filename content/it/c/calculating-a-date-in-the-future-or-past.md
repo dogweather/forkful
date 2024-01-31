@@ -2,7 +2,6 @@
 title:                "Calcolo di una data futura o passata"
 date:                  2024-01-20T17:28:36.325353-07:00
 model:                 gpt-4-1106-preview
-html_title:           "C++: Calcolo di una data futura o passata"
 simple_title:         "Calcolo di una data futura o passata"
 
 tag:                  "Dates and Times"

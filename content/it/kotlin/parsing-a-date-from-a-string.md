@@ -1,7 +1,6 @@
 ---
 title:                "Estrarre una data da una stringa"
 date:                  2024-01-20T15:37:10.073857-07:00
-html_title:           "Arduino: Estrarre una data da una stringa"
 simple_title:         "Estrarre una data da una stringa"
 
 tag:                  "Dates and Times"

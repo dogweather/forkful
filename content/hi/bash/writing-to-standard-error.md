@@ -1,7 +1,6 @@
 ---
 title:                "मानक त्रुटि में लिखना"
 date:                  2024-01-19
-html_title:           "Bash: मानक त्रुटि में लिखना"
 simple_title:         "मानक त्रुटि में लिखना"
 
 tag:                  "Files and I/O"

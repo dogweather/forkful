@@ -2,7 +2,6 @@
 title:                "Cálculo de una fecha en el futuro o el pasado"
 date:                  2024-01-20T17:28:37.396858-07:00
 model:                 gpt-4-1106-preview
-html_title:           "Arduino: Cálculo de una fecha en el futuro o el pasado"
 simple_title:         "Cálculo de una fecha en el futuro o el pasado"
 
 tag:                  "Dates and Times"

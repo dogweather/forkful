@@ -1,7 +1,6 @@
 ---
 title:                "Análisis de una fecha a partir de una cadena"
 date:                  2024-01-20T15:38:06.808605-07:00
-html_title:           "Arduino: Análisis de una fecha a partir de una cadena"
 simple_title:         "Análisis de una fecha a partir de una cadena"
 
 tag:                  "Dates and Times"

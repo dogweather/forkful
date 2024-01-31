@@ -1,7 +1,6 @@
 ---
 title:                "Verifica dell'esistenza di una directory"
 date:                  2024-01-20T14:58:27.461406-07:00
-html_title:           "Gleam: Verifica dell'esistenza di una directory"
 simple_title:         "Verifica dell'esistenza di una directory"
 
 tag:                  "Files and I/O"

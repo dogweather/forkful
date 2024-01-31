@@ -1,7 +1,6 @@
 ---
 title:                "Arbeid med YAML"
 date:                  2024-01-19
-html_title:           "Arduino: Arbeid med YAML"
 simple_title:         "Arbeid med YAML"
 
 tag:                  "Data Formats and Serialization"

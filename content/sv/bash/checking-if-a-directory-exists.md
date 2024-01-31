@@ -1,7 +1,6 @@
 ---
 title:                "Kontrollera om en katalog finns"
 date:                  2024-01-19
-html_title:           "Arduino: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
 
 tag:                  "Files and I/O"

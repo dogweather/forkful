@@ -1,7 +1,6 @@
 ---
 title:                "Escritura de un archivo de texto"
 date:                  2024-01-19
-html_title:           "Bash: Escritura de un archivo de texto"
 simple_title:         "Escritura de un archivo de texto"
 
 tag:                  "Files and I/O"

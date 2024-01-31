@@ -1,7 +1,6 @@
 ---
 title:                "Przetwarzanie daty ze łańcucha znaków"
 date:                  2024-01-20T15:38:50.753970-07:00
-html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
 simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 
 tag:                  "Dates and Times"

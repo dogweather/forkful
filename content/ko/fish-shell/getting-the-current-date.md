@@ -1,7 +1,6 @@
 ---
 title:                "현재 날짜 가져오기"
 date:                  2024-01-20T15:14:39.201720-07:00
-html_title:           "Bash: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 
 tag:                  "Dates and Times"

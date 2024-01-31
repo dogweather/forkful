@@ -1,7 +1,6 @@
 ---
 title:                "Testien kirjoittaminen"
 date:                  2024-01-19
-html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 
 tag:                  "Testing and Debugging"

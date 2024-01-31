@@ -1,7 +1,6 @@
 ---
 title:                "YAML के साथ काम करना"
 date:                  2024-01-19
-html_title:           "C: YAML के साथ काम करना"
 simple_title:         "YAML के साथ काम करना"
 
 tag:                  "Data Formats and Serialization"
