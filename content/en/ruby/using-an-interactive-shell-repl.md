@@ -4,7 +4,6 @@ date:                  2024-01-25T03:39:37.470710-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Using an interactive shell (REPL)"
 
-category:             "Ruby"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/using-an-interactive-shell-repl.md"
 ---

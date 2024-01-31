@@ -4,7 +4,6 @@ date:                  2024-01-20T14:57:06.766831-07:00
 html_title:           "Go: Vérifier si un répertoire existe"
 simple_title:         "Vérifier si un répertoire existe"
 
-category:             "Javascript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/checking-if-a-directory-exists.md"
 ---

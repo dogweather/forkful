@@ -4,7 +4,6 @@ date:                  2024-01-27T16:21:20.706969-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tiedostojen käsittely yhden rivin komentorivikomennoilla"
 
-category:             "PowerShell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/manipulating-files-with-cli-one-liners.md"
 ---

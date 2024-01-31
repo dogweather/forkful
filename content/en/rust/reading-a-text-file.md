@@ -4,7 +4,6 @@ date:                  2024-01-20T17:55:01.799033-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Reading a text file"
 
-category:             "Rust"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/reading-a-text-file.md"
 ---

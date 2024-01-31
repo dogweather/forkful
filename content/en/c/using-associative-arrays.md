@@ -4,7 +4,6 @@ date:                  2024-01-30T18:57:27.487177-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Using associative arrays"
 
-category:             "C"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/using-associative-arrays.md"
 ---

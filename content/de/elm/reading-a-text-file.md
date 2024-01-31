@@ -4,7 +4,6 @@ date:                  2024-01-20T17:54:16.074143-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Textdatei einlesen"
 
-category:             "Elm"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/reading-a-text-file.md"
 ---

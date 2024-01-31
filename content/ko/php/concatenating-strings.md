@@ -4,7 +4,6 @@ date:                  2024-01-20T17:35:36.432972-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "문자열 연결하기"
 
-category:             "PHP"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/concatenating-strings.md"

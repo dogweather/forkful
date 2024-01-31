@@ -4,7 +4,6 @@ date:                  2024-01-20T17:42:54.760048-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "מחיקת תווים התואמים לתבנית"
 
-category:             "PHP"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/php/deleting-characters-matching-a-pattern.md"
 ---

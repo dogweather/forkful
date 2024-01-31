@@ -4,7 +4,6 @@ date:                  2024-01-20T17:38:52.067135-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Conversione di una stringa in minuscolo"
 
-category:             "PHP"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/converting-a-string-to-lower-case.md"
 ---

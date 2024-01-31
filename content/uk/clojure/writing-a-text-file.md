@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Створення текстового файлу"
 simple_title:         "Створення текстового файлу"
 
-category:             "Clojure"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/writing-a-text-file.md"
 ---

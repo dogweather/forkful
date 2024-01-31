@@ -4,7 +4,6 @@ date:                  2024-01-20T18:03:55.102231-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Iniciando un nuevo proyecto"
 
-category:             "Java"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/starting-a-new-project.md"
 ---

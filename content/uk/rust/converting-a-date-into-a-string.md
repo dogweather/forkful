@@ -4,7 +4,6 @@ date:                  2024-01-20T17:37:30.523361-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Перетворення дати в рядок"
 
-category:             "Rust"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/rust/converting-a-date-into-a-string.md"
 ---

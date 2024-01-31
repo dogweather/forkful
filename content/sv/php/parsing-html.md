@@ -4,7 +4,6 @@ date:                  2024-01-20T15:33:11.862316-07:00
 html_title:           "Arduino: Tolka HTML"
 simple_title:         "Tolka HTML"
 
-category:             "PHP"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/parsing-html.md"
 ---

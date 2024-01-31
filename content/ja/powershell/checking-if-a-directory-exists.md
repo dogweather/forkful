@@ -4,7 +4,6 @@ date:                  2024-01-20T14:58:18.934788-07:00
 html_title:           "Gleam: ディレクトリが存在するかどうかの確認"
 simple_title:         "ディレクトリが存在するかどうかの確認"
 
-category:             "PowerShell"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/checking-if-a-directory-exists.md"

@@ -4,7 +4,6 @@ date:                  2024-01-26T01:11:04.332171-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "コードを関数に整理する"
 
-category:             "Elm"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/organizing-code-into-functions.md"
 ---

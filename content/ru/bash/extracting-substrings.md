@@ -4,7 +4,6 @@ date:                  2024-01-28T23:57:54.059259-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Извлечение подстрок"
 
-category:             "Bash"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/bash/extracting-substrings.md"
 changelog:

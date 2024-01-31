@@ -4,7 +4,6 @@ date:                  2024-01-27T20:33:45.268028-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generering av tilfeldige tall"
 
-category:             "Go"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/generating-random-numbers.md"
 ---

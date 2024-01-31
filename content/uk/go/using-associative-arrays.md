@@ -4,7 +4,6 @@ date:                  2024-01-30T19:12:49.693272-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання асоціативних масивів"
 
-category:             "Go"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/go/using-associative-arrays.md"
 changelog:

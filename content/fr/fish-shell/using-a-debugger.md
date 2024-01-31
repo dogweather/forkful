@@ -4,7 +4,6 @@ date:                  2024-01-26T03:48:39.304563-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation d'un débogueur"
 
-category:             "Fish Shell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/using-a-debugger.md"
 ---

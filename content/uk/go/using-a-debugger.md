@@ -4,7 +4,6 @@ date:                  2024-01-26T03:50:21.853428-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання дебагера"
 
-category:             "Go"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/go/using-a-debugger.md"
 ---

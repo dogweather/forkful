@@ -4,7 +4,6 @@ date:                  2024-01-26T00:57:21.388571-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "एरर्स को हैंडल करना"
 
-category:             "Go"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/go/handling-errors.md"
 ---

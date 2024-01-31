@@ -4,7 +4,6 @@ date:                  2024-01-26T03:39:29.529255-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rimuovere le virgolette da una stringa"
 
-category:             "Go"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/removing-quotes-from-a-string.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T15:35:04.325863-07:00
 html_title:           "Arduino: Парсинг HTML"
 simple_title:         "Парсинг HTML"
 
-category:             "TypeScript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/parsing-html.md"
 ---

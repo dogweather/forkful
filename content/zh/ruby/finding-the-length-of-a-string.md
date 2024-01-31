@@ -4,7 +4,6 @@ date:                  2024-01-20T17:48:07.807150-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "获取字符串的长度"
 
-category:             "Ruby"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/finding-the-length-of-a-string.md"

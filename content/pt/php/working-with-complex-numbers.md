@@ -4,7 +4,6 @@ date:                  2024-01-26T04:44:06.874603-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com números complexos"
 
-category:             "PHP"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/working-with-complex-numbers.md"
 ---

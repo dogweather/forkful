@@ -4,7 +4,6 @@ date:                  2024-01-20T15:33:59.167358-07:00
 html_title:           "Arduino: Парсинг HTML"
 simple_title:         "Парсинг HTML"
 
-category:             "Rust"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/rust/parsing-html.md"
 ---

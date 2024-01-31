@@ -4,7 +4,6 @@ date:                  2024-01-20T17:48:12.431292-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Trouver la longueur d'une chaîne de caractères"
 
-category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/finding-the-length-of-a-string.md"
 ---

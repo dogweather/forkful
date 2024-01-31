@@ -4,7 +4,6 @@ date:                  2024-01-28T23:01:27.107827-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Code organiseren in functies"
 
-category:             "Fish Shell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/organizing-code-into-functions.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:56:04.013527-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "कमांड लाइन आर्गुमेंट्स पढ़ना"
 
-category:             "C"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c/reading-command-line-arguments.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T01:38:10.191009-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "重构代码"
 
-category:             "Haskell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/refactoring.md"
 ---

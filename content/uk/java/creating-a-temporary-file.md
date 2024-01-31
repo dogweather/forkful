@@ -4,7 +4,6 @@ date:                  2024-01-20T17:40:58.468857-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Створення тимчасового файлу"
 
-category:             "Java"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/creating-a-temporary-file.md"
 ---

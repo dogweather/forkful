@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Trabalhando com YAML"
 simple_title:         "Trabalhando com YAML"
 
-category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/working-with-yaml.md"
 ---

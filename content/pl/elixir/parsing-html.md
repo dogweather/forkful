@@ -4,7 +4,6 @@ date:                  2024-01-20T15:31:02.072462-07:00
 html_title:           "Bash: Przetwarzanie HTML"
 simple_title:         "Przetwarzanie HTML"
 
-category:             "Elixir"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/parsing-html.md"
 ---

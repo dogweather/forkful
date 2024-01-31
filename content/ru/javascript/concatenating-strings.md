@@ -4,7 +4,6 @@ date:                  2024-01-28T23:56:32.590605-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Склеивание строк"
 
-category:             "Javascript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/javascript/concatenating-strings.md"
 changelog:

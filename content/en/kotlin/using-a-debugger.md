@@ -4,7 +4,6 @@ date:                  2024-01-25T20:50:19.224696-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Using a debugger"
 
-category:             "Kotlin"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/using-a-debugger.md"
 ---

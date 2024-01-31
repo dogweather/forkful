@@ -4,7 +4,6 @@ date:                  2024-01-26T03:47:59.489645-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debuggerin käyttö"
 
-category:             "C#"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/using-a-debugger.md"
 ---

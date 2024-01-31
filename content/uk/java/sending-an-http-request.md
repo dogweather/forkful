@@ -4,7 +4,6 @@ date:                  2024-01-20T18:00:23.801248-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Надсилання HTTP-запиту"
 
-category:             "Java"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/sending-an-http-request.md"
 ---

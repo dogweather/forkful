@@ -4,7 +4,6 @@ date:                  2024-01-29T00:02:59.569299-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Начало нового проекта"
 
-category:             "C#"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/c-sharp/starting-a-new-project.md"
 changelog:

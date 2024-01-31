@@ -4,7 +4,6 @@ date:                  2024-01-26T03:48:29.507864-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "デバッガーの使い方"
 
-category:             "Clojure"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/using-a-debugger.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-28T21:57:50.692502-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi một ngày thành chuỗi"
 
-category:             "Clojure"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/clojure/converting-a-date-into-a-string.md"
 changelog:

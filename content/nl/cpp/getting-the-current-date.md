@@ -4,7 +4,6 @@ date:                  2024-01-28T22:00:56.160251-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Het huidige datum ophalen"
 
-category:             "C++"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/cpp/getting-the-current-date.md"
 changelog:

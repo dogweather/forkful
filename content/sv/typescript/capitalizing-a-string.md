@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Att göra en sträng versal"
 simple_title:         "Att göra en sträng versal"
 
-category:             "TypeScript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/capitalizing-a-string.md"
 ---

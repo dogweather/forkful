@@ -4,7 +4,6 @@ date:                  2024-01-28T23:57:28.166201-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Извлечение подстрок"
 
-category:             "C++"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/cpp/extracting-substrings.md"
 changelog:

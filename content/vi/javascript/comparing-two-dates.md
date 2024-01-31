@@ -4,7 +4,6 @@ date:                  2024-01-28T21:56:36.658702-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "So sánh hai ngày"
 
-category:             "Javascript"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/comparing-two-dates.md"
 changelog:

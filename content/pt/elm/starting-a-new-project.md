@@ -4,7 +4,6 @@ date:                  2024-01-20T18:03:21.775298-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Iniciando um novo projeto"
 
-category:             "Elm"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/starting-a-new-project.md"
 ---

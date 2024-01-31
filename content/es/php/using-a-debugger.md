@@ -4,7 +4,6 @@ date:                  2024-01-26T03:50:35.687650-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando un depurador"
 
-category:             "PHP"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/using-a-debugger.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T03:41:00.042059-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "文字列から引用符を削除する"
 
-category:             "PHP"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/removing-quotes-from-a-string.md"
 ---

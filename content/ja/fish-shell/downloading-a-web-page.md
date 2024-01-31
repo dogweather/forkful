@@ -4,7 +4,6 @@ date:                  2024-01-20T17:44:16.844371-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "ウェブページのダウンロード"
 
-category:             "Fish Shell"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/downloading-a-web-page.md"

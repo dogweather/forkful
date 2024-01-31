@@ -4,7 +4,6 @@ date:                  2024-01-20T17:40:28.428129-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Skapa en temporär fil"
 
-category:             "Go"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/creating-a-temporary-file.md"
 ---

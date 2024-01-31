@@ -4,7 +4,6 @@ date:                  2024-01-28T23:57:43.382143-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск длины строки"
 
-category:             "Bash"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/bash/finding-the-length-of-a-string.md"
 changelog:

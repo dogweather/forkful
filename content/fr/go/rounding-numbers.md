@@ -4,7 +4,6 @@ date:                  2024-01-26T03:44:38.380010-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arrondir les nombres"
 
-category:             "Go"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/rounding-numbers.md"
 ---

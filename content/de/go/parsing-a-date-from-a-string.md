@@ -4,7 +4,6 @@ date:                  2024-01-20T15:36:21.324606-07:00
 html_title:           "Arduino: Datum aus einem String parsen"
 simple_title:         "Datum aus einem String parsen"
 
-category:             "Go"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/parsing-a-date-from-a-string.md"
 ---

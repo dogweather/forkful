@@ -4,7 +4,6 @@ date:                  2024-01-28T02:05:05.416869-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analizando una fecha a partir de una cadena de texto"
 
-category:             "Elixir"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/parsing-a-date-from-a-string.md"
 changelog:

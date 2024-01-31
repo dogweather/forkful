@@ -4,7 +4,6 @@ date:                  2024-01-29T00:02:26.578077-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск и замена текста"
 
-category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/clojure/searching-and-replacing-text.md"
 changelog:

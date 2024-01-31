@@ -4,7 +4,6 @@ date:                  2024-01-26T04:36:52.254965-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "複素数の扱い方"
 
-category:             "Bash"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/working-with-complex-numbers.md"
 ---

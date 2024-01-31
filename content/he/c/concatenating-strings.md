@@ -4,7 +4,6 @@ date:                  2024-01-20T17:34:08.352217-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "שרשור מחרוזות"
 
-category:             "C"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c/concatenating-strings.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-28T23:57:29.935956-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Создание временного файла"
 
-category:             "Lua"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/lua/creating-a-temporary-file.md"
 changelog:

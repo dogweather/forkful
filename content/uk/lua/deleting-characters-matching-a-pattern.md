@@ -4,7 +4,6 @@ date:                  2024-01-20T17:42:40.168586-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Видалення символів за візерунком"
 
-category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/lua/deleting-characters-matching-a-pattern.md"
 ---

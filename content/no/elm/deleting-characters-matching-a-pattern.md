@@ -4,7 +4,6 @@ date:                  2024-01-20T17:41:58.077726-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Slette tegn som matcher et mønster"
 
-category:             "Elm"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/deleting-characters-matching-a-pattern.md"
 ---

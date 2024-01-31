@@ -4,7 +4,6 @@ date:                  2024-01-30T19:12:29.931349-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di array associativi"
 
-category:             "Ruby"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/using-associative-arrays.md"
 changelog:

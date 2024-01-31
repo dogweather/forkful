@@ -4,7 +4,6 @@ date:                  2024-01-28T23:58:26.359053-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Получение текущей даты"
 
-category:             "Elm"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elm/getting-the-current-date.md"
 changelog:

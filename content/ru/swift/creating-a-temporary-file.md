@@ -4,7 +4,6 @@ date:                  2024-01-28T23:57:22.679901-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Создание временного файла"
 
-category:             "Swift"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/swift/creating-a-temporary-file.md"
 changelog:

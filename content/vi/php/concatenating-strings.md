@@ -4,7 +4,6 @@ date:                  2024-01-28T21:58:19.680601-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nối chuỗi ký tự"
 
-category:             "PHP"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/php/concatenating-strings.md"
 changelog:

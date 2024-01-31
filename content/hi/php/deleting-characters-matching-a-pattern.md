@@ -4,7 +4,6 @@ date:                  2024-01-20T17:43:09.475446-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "पैटर्न से मेल खाते अक्षरों को हटाना"
 
-category:             "PHP"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/deleting-characters-matching-a-pattern.md"
 ---

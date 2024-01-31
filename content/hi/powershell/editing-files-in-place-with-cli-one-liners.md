@@ -4,7 +4,6 @@ date:                  2024-01-27T16:21:33.335508-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CLI वन-लाइनर्स के साथ फाइलों में स्थल पर संपादन"
 
-category:             "PowerShell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/powershell/editing-files-in-place-with-cli-one-liners.md"
 ---

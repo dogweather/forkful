@@ -4,7 +4,6 @@ date:                  2024-01-20T17:56:56.473029-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "명령줄 인수 읽기"
 
-category:             "TypeScript"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/reading-command-line-arguments.md"

@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: रेगुलर एक्सप्रेशन का उपयोग"
 simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
 
-category:             "C#"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/using-regular-expressions.md"
 ---

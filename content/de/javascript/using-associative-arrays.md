@@ -4,7 +4,6 @@ date:                  2024-01-30T19:11:23.817917-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Verwendung von assoziativen Arrays"
 
-category:             "Javascript"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/using-associative-arrays.md"
 changelog:

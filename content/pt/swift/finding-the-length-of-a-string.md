@@ -4,7 +4,6 @@ date:                  2024-01-20T17:48:25.782262-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Descobrindo o comprimento de uma string"
 
-category:             "Swift"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/finding-the-length-of-a-string.md"
 ---

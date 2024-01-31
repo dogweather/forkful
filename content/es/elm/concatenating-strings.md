@@ -4,7 +4,6 @@ date:                  2024-01-20T17:34:38.305832-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Concatenación de cadenas de texto"
 
-category:             "Elm"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/concatenating-strings.md"
 ---

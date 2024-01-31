@@ -4,7 +4,6 @@ date:                  2024-01-20T17:42:55.145944-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "匹配模式删除字符"
 
-category:             "Python"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/deleting-characters-matching-a-pattern.md"

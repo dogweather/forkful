@@ -4,7 +4,6 @@ date:                  2024-01-26T01:03:48.598860-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日志记录"
 
-category:             "Fish Shell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/logging.md"
 ---

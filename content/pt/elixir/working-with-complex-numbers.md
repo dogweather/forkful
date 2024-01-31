@@ -4,7 +4,6 @@ date:                  2024-01-26T04:39:14.856685-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com números complexos"
 
-category:             "Elixir"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/working-with-complex-numbers.md"
 ---

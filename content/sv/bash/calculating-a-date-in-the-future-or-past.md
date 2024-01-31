@@ -5,7 +5,6 @@ model:                 gpt-4-1106-preview
 html_title:           "Bash: Beräkna ett datum i framtiden eller förflutet"
 simple_title:         "Beräkna ett datum i framtiden eller förflutet"
 
-category:             "Bash"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/calculating-a-date-in-the-future-or-past.md"
 ---

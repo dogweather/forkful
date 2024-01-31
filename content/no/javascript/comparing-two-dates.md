@@ -4,7 +4,6 @@ date:                  2024-01-20T17:33:25.243945-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Sammenlikning av to datoer"
 
-category:             "Javascript"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/comparing-two-dates.md"
 ---

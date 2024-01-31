@@ -4,7 +4,6 @@ date:                  2024-01-30T19:12:54.611767-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda associativa arrayer"
 
-category:             "Rust"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/using-associative-arrays.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Écriture d'un fichier texte"
 simple_title:         "Écriture d'un fichier texte"
 
-category:             "Kotlin"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/writing-a-text-file.md"
 ---

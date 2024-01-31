@@ -4,7 +4,6 @@ date:                  2024-01-20T17:42:43.869063-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "パターンに一致する文字を削除する"
 
-category:             "PHP"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/deleting-characters-matching-a-pattern.md"

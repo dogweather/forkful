@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Створення текстового файлу"
 simple_title:         "Створення текстового файлу"
 
-category:             "Fish Shell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/fish-shell/writing-a-text-file.md"
 ---

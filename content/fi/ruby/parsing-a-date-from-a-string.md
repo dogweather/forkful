@@ -4,7 +4,6 @@ date:                  2024-01-20T15:38:09.249421-07:00
 html_title:           "Bash: Merkkijonosta päivämäärän jäsentäminen"
 simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
 
-category:             "Ruby"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/parsing-a-date-from-a-string.md"
 ---

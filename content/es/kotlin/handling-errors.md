@@ -4,7 +4,6 @@ date:                  2024-01-26T00:54:30.500222-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Manejo de errores"
 
-category:             "Kotlin"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/handling-errors.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T15:14:24.774415-07:00
 html_title:           "C: קבלת התאריך הנוכחי"
 simple_title:         "קבלת התאריך הנוכחי"
 
-category:             "Fish Shell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/getting-the-current-date.md"
 ---

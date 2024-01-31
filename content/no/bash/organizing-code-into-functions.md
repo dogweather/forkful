@@ -4,7 +4,6 @@ date:                  2024-01-26T01:09:40.462112-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organisering av kode i funksjoner"
 
-category:             "Bash"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/organizing-code-into-functions.md"
 ---

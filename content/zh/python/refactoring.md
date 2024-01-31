@@ -4,7 +4,6 @@ date:                  2024-01-26T03:36:59.087763-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "重构"
 
-category:             "Python"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/refactoring.md"
 ---

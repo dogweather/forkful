@@ -4,7 +4,6 @@ date:                  2024-01-28T22:02:01.075148-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string interpoleren"
 
-category:             "Arduino"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/interpolating-a-string.md"
 changelog:

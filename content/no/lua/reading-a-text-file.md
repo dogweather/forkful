@@ -4,7 +4,6 @@ date:                  2024-01-20T17:54:40.303376-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lese en tekstfil"
 
-category:             "Lua"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/reading-a-text-file.md"
 ---

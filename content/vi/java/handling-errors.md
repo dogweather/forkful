@@ -4,7 +4,6 @@ date:                  2024-01-28T22:02:01.561908-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xử lý lỗi"
 
-category:             "Java"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/handling-errors.md"
 changelog:

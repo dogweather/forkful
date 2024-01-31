@@ -4,7 +4,6 @@ date:                  2024-01-20T17:42:28.059879-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Видалення символів за візерунком"
 
-category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elixir/deleting-characters-matching-a-pattern.md"
 ---

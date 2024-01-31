@@ -4,7 +4,6 @@ date:                  2024-01-20T18:03:25.691789-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Att påbörja ett nytt projekt"
 
-category:             "Fish Shell"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/starting-a-new-project.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T15:16:30.982528-07:00
 html_title:           "Bash: Отримання поточної дати"
 simple_title:         "Отримання поточної дати"
 
-category:             "PowerShell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/powershell/getting-the-current-date.md"
 ---

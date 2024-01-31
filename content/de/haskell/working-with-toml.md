@@ -4,7 +4,6 @@ date:                  2024-01-26T04:22:32.011377-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeiten mit TOML"
 
-category:             "Haskell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/working-with-toml.md"
 ---

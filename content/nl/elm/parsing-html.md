@@ -4,7 +4,6 @@ date:                  2024-01-28T22:03:54.095470-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML Parsen"
 
-category:             "Elm"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/parsing-html.md"
 changelog:

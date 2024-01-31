@@ -4,7 +4,6 @@ date:                  2024-01-26T03:47:31.296164-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation d'un débogueur"
 
-category:             "Bash"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/using-a-debugger.md"
 ---

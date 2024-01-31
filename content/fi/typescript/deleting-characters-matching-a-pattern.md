@@ -4,7 +4,6 @@ date:                  2024-01-20T17:43:24.689964-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
 
-category:             "TypeScript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/deleting-characters-matching-a-pattern.md"
 ---

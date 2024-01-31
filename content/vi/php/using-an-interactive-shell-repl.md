@@ -4,7 +4,6 @@ date:                  2024-01-28T22:10:15.227701-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng vỏ tương tác (REPL)"
 
-category:             "PHP"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/php/using-an-interactive-shell-repl.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:58:37.382514-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Søking og erstatting av tekst"
 
-category:             "PowerShell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/searching-and-replacing-text.md"
 ---

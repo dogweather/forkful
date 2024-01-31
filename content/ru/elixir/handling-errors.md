@@ -4,7 +4,6 @@ date:                  2024-01-29T00:08:50.701587-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Обработка ошибок"
 
-category:             "Elixir"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elixir/handling-errors.md"
 changelog:

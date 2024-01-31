@@ -4,7 +4,6 @@ date:                  2024-01-27T20:34:24.070103-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "生成随机数"
 
-category:             "Javascript"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/generating-random-numbers.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T04:20:39.508304-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att arbeta med TOML"
 
-category:             "Clojure"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/working-with-toml.md"
 ---

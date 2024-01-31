@@ -4,7 +4,6 @@ date:                  2024-01-20T17:43:53.139302-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Hämta en webbsida"
 
-category:             "Elm"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/downloading-a-web-page.md"
 ---

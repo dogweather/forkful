@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: JSON-tiedostojen käsittely"
 simple_title:         "JSON-tiedostojen käsittely"
 
-category:             "Bash"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/working-with-json.md"
 ---

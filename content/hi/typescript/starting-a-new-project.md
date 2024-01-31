@@ -4,7 +4,6 @@ date:                  2024-01-20T18:05:07.580200-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "नई परियोजना शुरू करना"
 
-category:             "TypeScript"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/starting-a-new-project.md"
 ---

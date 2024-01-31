@@ -4,7 +4,6 @@ date:                  2024-01-26T03:38:48.593669-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड सुधार"
 
-category:             "Ruby"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/refactoring.md"
 ---

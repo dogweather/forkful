@@ -4,7 +4,6 @@ date:                  2024-01-28T21:58:05.926269-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tijdelijk bestand aanmaken"
 
-category:             "Elixir"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/creating-a-temporary-file.md"
 changelog:

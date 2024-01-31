@@ -4,7 +4,6 @@ date:                  2024-01-29T00:00:34.510794-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Вывод отладочной информации"
 
-category:             "Arduino"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/arduino/printing-debug-output.md"
 changelog:

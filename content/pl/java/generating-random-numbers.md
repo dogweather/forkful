@@ -4,7 +4,6 @@ date:                  2024-01-27T20:34:07.947459-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generowanie liczb losowych"
 
-category:             "Java"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/generating-random-numbers.md"
 ---

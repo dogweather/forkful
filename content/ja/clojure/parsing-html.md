@@ -4,7 +4,6 @@ date:                  2024-01-20T15:30:46.054042-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 
-category:             "Clojure"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/parsing-html.md"

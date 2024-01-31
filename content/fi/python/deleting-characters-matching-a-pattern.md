@@ -4,7 +4,6 @@ date:                  2024-01-20T17:43:08.648776-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
 
-category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/deleting-characters-matching-a-pattern.md"
 ---

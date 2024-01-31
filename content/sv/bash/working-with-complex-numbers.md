@@ -4,7 +4,6 @@ date:                  2024-01-26T04:37:10.079707-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att arbeta med komplexa tal"
 
-category:             "Bash"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/working-with-complex-numbers.md"
 ---

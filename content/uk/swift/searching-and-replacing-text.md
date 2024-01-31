@@ -4,7 +4,6 @@ date:                  2024-01-20T17:58:47.455822-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Пошук та заміна тексту"
 
-category:             "Swift"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/searching-and-replacing-text.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:46:39.785379-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Teilstrings extrahieren"
 
-category:             "Swift"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/extracting-substrings.md"
 ---

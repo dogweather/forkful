@@ -4,7 +4,6 @@ date:                  2024-01-27T16:21:26.234338-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CLI 한 줄 명령어로 파일을 제자리에서 편집하기"
 
-category:             "Fish Shell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/editing-files-in-place-with-cli-one-liners.md"
 ---

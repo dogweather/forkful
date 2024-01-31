@@ -4,7 +4,6 @@ date:                  2024-01-26T04:41:18.585735-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "複素数の扱い方"
 
-category:             "Go"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/working-with-complex-numbers.md"
 ---

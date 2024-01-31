@@ -4,7 +4,6 @@ date:                  2024-01-28T22:13:06.685688-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Schrijven naar standaardfout"
 
-category:             "Bash"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/writing-to-standard-error.md"
 changelog:

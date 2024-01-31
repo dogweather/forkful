@@ -4,7 +4,6 @@ date:                  2024-01-26T04:40:52.395495-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם מספרים מרוכבים"
 
-category:             "Fish Shell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/working-with-complex-numbers.md"
 ---

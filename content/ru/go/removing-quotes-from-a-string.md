@@ -4,7 +4,6 @@ date:                  2024-01-29T00:01:29.045272-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление кавычек из строки"
 
-category:             "Go"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/go/removing-quotes-from-a-string.md"
 changelog:

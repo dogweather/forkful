@@ -4,7 +4,6 @@ date:                  2024-01-28T21:55:32.708602-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kiểm tra xem thư mục có tồn tại không"
 
-category:             "Arduino"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/checking-if-a-directory-exists.md"
 changelog:

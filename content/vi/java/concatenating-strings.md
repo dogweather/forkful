@@ -4,7 +4,6 @@ date:                  2024-01-28T21:57:35.229393-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nối chuỗi ký tự"
 
-category:             "Java"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/concatenating-strings.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: 테스트 작성하기"
 simple_title:         "테스트 작성하기"
 
-category:             "Lua"
 tag:                  "Testing and Debugging"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/writing-tests.md"

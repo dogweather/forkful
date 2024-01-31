@@ -4,7 +4,6 @@ date:                  2024-01-28T21:24:55.866722-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "אינטרפולציה של מחרוזת"
 
-category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/interpolating-a-string.md"
 changelog:

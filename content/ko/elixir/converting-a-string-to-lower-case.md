@@ -4,7 +4,6 @@ date:                  2024-01-20T17:38:29.462365-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "문자열을 소문자로 변환하기"
 
-category:             "Elixir"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/converting-a-string-to-lower-case.md"

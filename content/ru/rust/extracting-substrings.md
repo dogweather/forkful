@@ -4,7 +4,6 @@ date:                  2024-01-28T23:58:02.089797-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Извлечение подстрок"
 
-category:             "Rust"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/rust/extracting-substrings.md"
 changelog:

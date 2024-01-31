@@ -4,7 +4,6 @@ date:                  2024-01-20T17:58:52.106224-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Søking og erstatting av tekst"
 
-category:             "Rust"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/searching-and-replacing-text.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:02:52.756221-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi log"
 
-category:             "Bash"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/logging.md"
 changelog:

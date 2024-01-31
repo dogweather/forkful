@@ -4,7 +4,6 @@ date:                  2024-01-28T22:05:04.813260-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand lezen"
 
-category:             "Swift"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/reading-a-text-file.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-28T21:58:44.751962-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tạo một tập tin tạm thời"
 
-category:             "Ruby"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/creating-a-temporary-file.md"
 changelog:

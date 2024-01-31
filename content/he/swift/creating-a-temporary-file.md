@@ -4,7 +4,6 @@ date:                  2024-01-20T17:42:00.122642-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "יצירת קובץ זמני"
 
-category:             "Swift"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/creating-a-temporary-file.md"
 ---

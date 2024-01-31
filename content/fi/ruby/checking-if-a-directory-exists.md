@@ -4,7 +4,6 @@ date:                  2024-01-20T14:58:11.792989-07:00
 html_title:           "Gleam: Onko hakemisto olemassa? Tarkistaminen"
 simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
 
-category:             "Ruby"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/checking-if-a-directory-exists.md"
 ---

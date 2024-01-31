@@ -4,7 +4,6 @@ date:                  2024-01-20T18:01:57.938512-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Sending an HTTP request with basic authentication"
 
-category:             "Javascript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/sending-an-http-request-with-basic-authentication.md"
 ---

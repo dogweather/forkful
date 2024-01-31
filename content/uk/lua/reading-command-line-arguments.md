@@ -4,7 +4,6 @@ date:                  2024-01-20T17:56:48.117139-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Читання аргументів командного рядка"
 
-category:             "Lua"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/lua/reading-command-line-arguments.md"
 ---

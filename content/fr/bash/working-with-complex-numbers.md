@@ -4,7 +4,6 @@ date:                  2024-01-26T04:36:39.816396-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulation des nombres complexes"
 
-category:             "Bash"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/working-with-complex-numbers.md"
 ---

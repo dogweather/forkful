@@ -4,7 +4,6 @@ date:                  2024-01-26T04:39:26.918818-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kompleksilukujen käsittely"
 
-category:             "Elm"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/working-with-complex-numbers.md"
 ---

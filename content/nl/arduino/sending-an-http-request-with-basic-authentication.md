@@ -4,7 +4,6 @@ date:                  2024-01-28T22:07:53.636093-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een HTTP-verzoek verzenden met basisauthenticatie"
 
-category:             "Arduino"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/sending-an-http-request-with-basic-authentication.md"
 changelog:

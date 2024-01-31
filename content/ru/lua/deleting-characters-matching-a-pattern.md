@@ -4,7 +4,6 @@ date:                  2024-01-28T23:58:05.296449-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление символов, соответствующих шаблону"
 
-category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/lua/deleting-characters-matching-a-pattern.md"
 changelog:

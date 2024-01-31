@@ -4,7 +4,6 @@ date:                  2024-01-20T14:57:16.974551-07:00
 html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
 simple_title:         "Sjekke om en mappe eksisterer"
 
-category:             "Kotlin"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/checking-if-a-directory-exists.md"
 ---

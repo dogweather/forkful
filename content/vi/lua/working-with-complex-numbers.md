@@ -4,7 +4,6 @@ date:                  2024-01-28T22:12:25.695703-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với số phức"
 
-category:             "Lua"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/lua/working-with-complex-numbers.md"
 changelog:

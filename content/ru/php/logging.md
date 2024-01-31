@@ -4,7 +4,6 @@ date:                  2024-01-28T23:59:50.021987-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Журналирование"
 
-category:             "PHP"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/php/logging.md"
 changelog:

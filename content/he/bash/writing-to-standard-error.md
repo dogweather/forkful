@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: כתיבה לפלט השגיאה הסטנדרטי"
 simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
 
-category:             "Bash"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/bash/writing-to-standard-error.md"
 ---

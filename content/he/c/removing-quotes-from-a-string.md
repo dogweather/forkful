@@ -4,7 +4,6 @@ date:                  2024-01-26T03:40:20.267388-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "הסרת מרכאות ממחרוזת"
 
-category:             "C"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c/removing-quotes-from-a-string.md"
 ---

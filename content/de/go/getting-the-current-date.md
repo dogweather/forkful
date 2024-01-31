@@ -4,7 +4,6 @@ date:                  2024-01-20T15:14:24.358066-07:00
 html_title:           "C: Aktuelles Datum abrufen"
 simple_title:         "Aktuelles Datum abrufen"
 
-category:             "Go"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/getting-the-current-date.md"
 ---

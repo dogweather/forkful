@@ -4,7 +4,6 @@ date:                  2024-01-27T20:35:17.135400-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generering av tilfeldige tall"
 
-category:             "Ruby"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/generating-random-numbers.md"
 ---

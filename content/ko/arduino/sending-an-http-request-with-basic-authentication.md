@@ -4,7 +4,6 @@ date:                  2024-01-20T18:00:45.154112-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "기본 인증을 사용한 HTTP 요청 보내기"
 
-category:             "Arduino"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/sending-an-http-request-with-basic-authentication.md"

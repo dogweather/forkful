@@ -4,7 +4,6 @@ date:                  2024-01-20T15:31:20.356433-07:00
 html_title:           "Arduino: Análisis de HTML"
 simple_title:         "Análisis de HTML"
 
-category:             "Elm"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/parsing-html.md"
 ---

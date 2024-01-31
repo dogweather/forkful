@@ -4,7 +4,6 @@ date:                  2024-01-20T17:50:47.280284-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Zeichenketten interpolieren"
 
-category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/interpolating-a-string.md"
 ---

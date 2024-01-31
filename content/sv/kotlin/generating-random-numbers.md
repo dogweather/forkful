@@ -4,7 +4,6 @@ date:                  2024-01-27T20:34:39.591257-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generera slumptal"
 
-category:             "Kotlin"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/generating-random-numbers.md"
 ---

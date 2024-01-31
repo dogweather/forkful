@@ -4,7 +4,6 @@ date:                  2024-01-20T17:39:08.230036-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 
-category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/converting-a-string-to-lower-case.md"
 ---

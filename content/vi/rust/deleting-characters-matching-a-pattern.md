@@ -4,7 +4,6 @@ date:                  2024-01-28T21:58:56.237931-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xóa các ký tự phù hợp với một mẫu"
 
-category:             "Rust"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/deleting-characters-matching-a-pattern.md"
 changelog:

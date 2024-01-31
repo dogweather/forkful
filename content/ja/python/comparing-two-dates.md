@@ -4,7 +4,6 @@ date:                  2024-01-20T17:33:33.436783-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日付を比較する"
 
-category:             "Python"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/comparing-two-dates.md"

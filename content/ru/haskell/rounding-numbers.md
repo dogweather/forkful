@@ -4,7 +4,6 @@ date:                  2024-01-29T00:02:14.612534-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округление чисел"
 
-category:             "Haskell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/haskell/rounding-numbers.md"
 changelog:

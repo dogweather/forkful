@@ -4,7 +4,6 @@ date:                  2024-01-20T18:03:03.373907-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "新しいプロジェクトを始める"
 
-category:             "C"
 tag:                  "Getting Started"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/starting-a-new-project.md"

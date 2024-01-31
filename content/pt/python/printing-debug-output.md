@@ -4,7 +4,6 @@ date:                  2024-01-20T17:53:25.222977-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Exibindo saídas de depuração"
 
-category:             "Python"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/printing-debug-output.md"
 ---

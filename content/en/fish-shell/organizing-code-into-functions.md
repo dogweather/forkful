@@ -5,7 +5,6 @@ lastmod:               2024-01-28
 model:                 gpt-4-1106-preview
 simple_title:         "Organizing code into functions"
 
-category:             "Fish Shell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/organizing-code-into-functions.md"
 changelog:

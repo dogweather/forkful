@@ -4,7 +4,6 @@ date:                  2024-01-28T22:05:59.034464-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactoring"
 
-category:             "C"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/refactoring.md"
 changelog:

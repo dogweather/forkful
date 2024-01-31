@@ -4,7 +4,6 @@ date:                  2024-01-20T17:51:59.288699-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "打印调试信息"
 
-category:             "C++"
 tag:                  "Testing and Debugging"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/printing-debug-output.md"

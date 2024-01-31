@@ -4,7 +4,6 @@ date:                  2024-01-29T00:04:59.587071-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с XML"
 
-category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/fish-shell/working-with-xml.md"
 changelog:

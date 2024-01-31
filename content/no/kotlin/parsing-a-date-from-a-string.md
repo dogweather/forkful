@@ -4,7 +4,6 @@ date:                  2024-01-20T15:37:14.737512-07:00
 html_title:           "Arduino: Tolke en dato fra en streng"
 simple_title:         "Tolke en dato fra en streng"
 
-category:             "Kotlin"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/parsing-a-date-from-a-string.md"
 ---

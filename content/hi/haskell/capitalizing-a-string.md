@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "C: स्ट्रिंग को कैपिटलाइज़ करना"
 simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 
-category:             "Haskell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/capitalizing-a-string.md"
 ---

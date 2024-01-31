@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Bruk av regulære uttrykk"
 simple_title:         "Bruk av regulære uttrykk"
 
-category:             "Go"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/using-regular-expressions.md"
 ---

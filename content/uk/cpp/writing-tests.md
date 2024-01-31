@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Написання тестів"
 simple_title:         "Написання тестів"
 
-category:             "C++"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/cpp/writing-tests.md"
 ---

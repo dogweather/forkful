@@ -4,7 +4,6 @@ date:                  2024-01-20T17:46:14.847777-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extraindo substrings"
 
-category:             "Java"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/extracting-substrings.md"
 ---

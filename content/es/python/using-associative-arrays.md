@@ -4,7 +4,6 @@ date:                  2024-01-30T19:13:18.473156-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Uso de matrices asociativas"
 
-category:             "Python"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/using-associative-arrays.md"
 changelog:

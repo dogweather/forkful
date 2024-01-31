@@ -4,7 +4,6 @@ date:                  2024-01-26T03:42:59.130157-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrunding av tall"
 
-category:             "Bash"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/rounding-numbers.md"
 ---

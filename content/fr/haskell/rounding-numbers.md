@@ -4,7 +4,6 @@ date:                  2024-01-26T03:44:46.720954-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arrondir les nombres"
 
-category:             "Haskell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/rounding-numbers.md"
 ---

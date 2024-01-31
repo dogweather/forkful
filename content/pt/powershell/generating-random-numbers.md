@@ -4,7 +4,6 @@ date:                  2024-01-27T20:34:56.226763-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Geração de números aleatórios"
 
-category:             "PowerShell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/generating-random-numbers.md"
 ---

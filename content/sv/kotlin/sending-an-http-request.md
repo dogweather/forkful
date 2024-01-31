@@ -4,7 +4,6 @@ date:                  2024-01-20T18:00:08.985285-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Skicka en http-förfrågan"
 
-category:             "Kotlin"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/sending-an-http-request.md"
 ---

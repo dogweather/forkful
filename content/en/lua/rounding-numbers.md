@@ -4,7 +4,6 @@ date:                  2024-01-25T03:00:08.560012-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Rounding numbers"
 
-category:             "Lua"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/rounding-numbers.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T03:48:19.590829-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Einsatz eines Debuggers"
 
-category:             "Clojure"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/using-a-debugger.md"
 ---

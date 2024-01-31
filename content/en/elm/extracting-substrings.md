@@ -4,7 +4,6 @@ date:                  2024-01-20T17:45:34.263238-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extracting substrings"
 
-category:             "Elm"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/extracting-substrings.md"
 ---

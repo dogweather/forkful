@@ -4,7 +4,6 @@ date:                  2024-01-30T19:11:06.584128-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z tablic asocjacyjnych"
 
-category:             "Elm"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/using-associative-arrays.md"
 changelog:

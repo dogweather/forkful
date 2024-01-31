@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Eine Textdatei schreiben"
 simple_title:         "Eine Textdatei schreiben"
 
-category:             "Elixir"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/writing-a-text-file.md"
 ---

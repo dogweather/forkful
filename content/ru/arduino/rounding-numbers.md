@@ -4,7 +4,6 @@ date:                  2024-01-29T00:02:13.916938-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округление чисел"
 
-category:             "Arduino"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/arduino/rounding-numbers.md"
 changelog:

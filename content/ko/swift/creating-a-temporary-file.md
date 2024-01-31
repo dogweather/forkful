@@ -4,7 +4,6 @@ date:                  2024-01-20T17:41:27.432757-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "임시 파일 생성하기"
 
-category:             "Swift"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/creating-a-temporary-file.md"

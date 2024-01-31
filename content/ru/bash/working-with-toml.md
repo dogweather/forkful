@@ -4,7 +4,6 @@ date:                  2024-01-29T00:04:18.312024-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с TOML"
 
-category:             "Bash"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/bash/working-with-toml.md"
 changelog:

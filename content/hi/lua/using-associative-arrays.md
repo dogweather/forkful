@@ -4,7 +4,6 @@ date:                  2024-01-30T19:13:14.174143-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "सहयोगी अरेज़ का उपयोग करना"
 
-category:             "Lua"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/lua/using-associative-arrays.md"
 changelog:

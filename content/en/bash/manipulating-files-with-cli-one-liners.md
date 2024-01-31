@@ -4,7 +4,6 @@ date:                  2024-01-27T16:10:06.588131-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulating files with CLI one-liners"
 
-category:             "Bash"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/manipulating-files-with-cli-one-liners.md"
 ---

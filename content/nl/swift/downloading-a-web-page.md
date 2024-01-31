@@ -4,7 +4,6 @@ date:                  2024-01-28T21:59:29.357441-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een webpagina downloaden"
 
-category:             "Swift"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/downloading-a-web-page.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Praca z plikami CSV"
 simple_title:         "Praca z plikami CSV"
 
-category:             "Elm"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/working-with-csv.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:00:58.275029-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lấy ngày hiện tại"
 
-category:             "Haskell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/getting-the-current-date.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-29T00:02:44.251900-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление кавычек из строки"
 
-category:             "TypeScript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/typescript/removing-quotes-from-a-string.md"
 changelog:

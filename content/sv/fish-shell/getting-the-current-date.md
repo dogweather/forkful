@@ -4,7 +4,6 @@ date:                  2024-01-20T15:14:19.459122-07:00
 html_title:           "Bash: Att hämta aktuellt datum"
 simple_title:         "Att hämta aktuellt datum"
 
-category:             "Fish Shell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/getting-the-current-date.md"
 ---

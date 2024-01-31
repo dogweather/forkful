@@ -4,7 +4,6 @@ date:                  2024-01-20T17:34:09.350680-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Comparer deux dates"
 
-category:             "Swift"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/comparing-two-dates.md"
 ---

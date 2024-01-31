@@ -4,7 +4,6 @@ date:                  2024-01-28T21:57:44.811590-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string omzetten naar kleine letters"
 
-category:             "C"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/converting-a-string-to-lower-case.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:13:05.089114-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met complexe getallen"
 
-category:             "C#"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c-sharp/working-with-complex-numbers.md"
 changelog:

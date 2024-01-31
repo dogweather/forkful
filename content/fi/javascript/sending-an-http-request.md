@@ -4,7 +4,6 @@ date:                  2024-01-20T18:00:11.937066-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen"
 
-category:             "Javascript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/sending-an-http-request.md"
 ---

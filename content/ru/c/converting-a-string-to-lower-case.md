@@ -4,7 +4,6 @@ date:                  2024-01-28T23:56:51.130093-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в нижний регистр"
 
-category:             "C"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/c/converting-a-string-to-lower-case.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:00:20.368435-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "De lengte van een string vinden"
 
-category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/python/finding-the-length-of-a-string.md"
 changelog:

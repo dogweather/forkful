@@ -4,7 +4,6 @@ date:                  2024-01-20T15:33:06.941973-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 
-category:             "PHP"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/parsing-html.md"
 ---

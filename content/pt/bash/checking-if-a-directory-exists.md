@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
 
-category:             "Bash"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/checking-if-a-directory-exists.md"
 ---

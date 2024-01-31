@@ -4,7 +4,6 @@ date:                  2024-01-20T15:39:01.916041-07:00
 html_title:           "Arduino: Tolke en dato fra en streng"
 simple_title:         "Tolke en dato fra en streng"
 
-category:             "TypeScript"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/parsing-a-date-from-a-string.md"
 ---

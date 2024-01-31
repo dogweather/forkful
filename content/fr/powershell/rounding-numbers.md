@@ -4,7 +4,6 @@ date:                  2024-01-26T03:46:19.473332-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arrondir les nombres"
 
-category:             "PowerShell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/rounding-numbers.md"
 ---

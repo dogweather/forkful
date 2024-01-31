@@ -4,7 +4,6 @@ date:                  2024-01-28T22:10:06.780424-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met CSV"
 
-category:             "Javascript"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/working-with-csv.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:37:49.354835-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "तारीख को स्ट्रिंग में बदलना"
 
-category:             "Ruby"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/converting-a-date-into-a-string.md"
 ---

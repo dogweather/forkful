@@ -4,7 +4,6 @@ date:                  2024-01-20T17:36:48.404326-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Omvandla ett datum till en sträng"
 
-category:             "Go"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/converting-a-date-into-a-string.md"
 ---

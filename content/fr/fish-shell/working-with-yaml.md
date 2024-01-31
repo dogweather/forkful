@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Travailler avec YAML"
 simple_title:         "Travailler avec YAML"
 
-category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/working-with-yaml.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T01:10:54.086677-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organisering av kode i funksjoner"
 
-category:             "Java"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/organizing-code-into-functions.md"
 ---

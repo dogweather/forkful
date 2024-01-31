@@ -4,7 +4,6 @@ date:                  2024-01-28T21:59:09.575384-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een webpagina downloaden"
 
-category:             "C#"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c-sharp/downloading-a-web-page.md"
 changelog:

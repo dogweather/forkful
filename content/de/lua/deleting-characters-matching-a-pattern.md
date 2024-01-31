@@ -4,7 +4,6 @@ date:                  2024-01-20T17:42:51.027534-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 
-category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/deleting-characters-matching-a-pattern.md"
 ---

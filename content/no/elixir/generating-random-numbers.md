@@ -4,7 +4,6 @@ date:                  2024-01-27T20:32:54.806121-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generering av tilfeldige tall"
 
-category:             "Elixir"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/generating-random-numbers.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: עבודה עם JSON"
 simple_title:         "עבודה עם JSON"
 
-category:             "Haskell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/working-with-json.md"
 ---

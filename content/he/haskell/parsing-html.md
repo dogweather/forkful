@@ -4,7 +4,6 @@ date:                  2024-01-20T15:32:57.537478-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 
-category:             "Haskell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/parsing-html.md"
 ---

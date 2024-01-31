@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Arbeiten mit YAML"
 simple_title:         "Arbeiten mit YAML"
 
-category:             "Go"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/working-with-yaml.md"
 ---

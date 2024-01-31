@@ -4,7 +4,6 @@ date:                  2024-01-26T03:42:30.128781-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ta bort citattecken från en sträng"
 
-category:             "TypeScript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/removing-quotes-from-a-string.md"
 ---

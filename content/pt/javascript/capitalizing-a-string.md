@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Capitalizando uma string"
 simple_title:         "Capitalizando uma string"
 
-category:             "Javascript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/capitalizing-a-string.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:02:23.369031-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nội suy chuỗi ký tự"
 
-category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/interpolating-a-string.md"
 changelog:

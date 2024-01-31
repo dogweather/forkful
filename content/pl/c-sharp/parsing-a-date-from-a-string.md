@@ -4,7 +4,6 @@ date:                  2024-01-20T15:35:48.173074-07:00
 html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
 simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 
-category:             "C#"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/parsing-a-date-from-a-string.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:59:11.431152-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Envoi d'une requête HTTP"
 
-category:             "Clojure"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/sending-an-http-request.md"
 ---

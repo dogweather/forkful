@@ -4,7 +4,6 @@ date:                  2024-01-27T20:33:56.805549-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "乱数の生成"
 
-category:             "Go"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/generating-random-numbers.md"
 ---

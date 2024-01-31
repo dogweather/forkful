@@ -4,7 +4,6 @@ date:                  2024-01-26T03:45:37.482349-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עיגול מספרים"
 
-category:             "Bash"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/bash/rounding-numbers.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:30:47.141416-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "未来または過去の日付の計算"
 
-category:             "C++"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/calculating-a-date-in-the-future-or-past.md"

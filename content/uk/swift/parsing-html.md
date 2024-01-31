@@ -4,7 +4,6 @@ date:                  2024-01-20T15:34:17.519705-07:00
 html_title:           "Arduino: Парсинг HTML"
 simple_title:         "Парсинг HTML"
 
-category:             "Swift"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/parsing-html.md"
 ---

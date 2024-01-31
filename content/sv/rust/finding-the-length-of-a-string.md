@@ -4,7 +4,6 @@ date:                  2024-01-20T17:48:17.820823-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Hitta längden på en sträng"
 
-category:             "Rust"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/finding-the-length-of-a-string.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T04:10:45.849699-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando um depurador"
 
-category:             "Swift"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/using-a-debugger.md"
 ---

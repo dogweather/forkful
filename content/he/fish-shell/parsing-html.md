@@ -4,7 +4,6 @@ date:                  2024-01-20T15:31:09.974537-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 
-category:             "Fish Shell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/parsing-html.md"
 ---

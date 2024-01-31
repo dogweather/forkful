@@ -4,7 +4,6 @@ date:                  2024-01-26T04:09:01.050958-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debuggerin käyttö"
 
-category:             "PowerShell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/using-a-debugger.md"
 ---

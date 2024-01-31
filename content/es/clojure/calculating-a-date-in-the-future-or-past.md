@@ -5,7 +5,6 @@ model:                 gpt-4-1106-preview
 html_title:           "Arduino: Cálculo de una fecha en el futuro o el pasado"
 simple_title:         "Cálculo de una fecha en el futuro o el pasado"
 
-category:             "Clojure"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/calculating-a-date-in-the-future-or-past.md"
 ---

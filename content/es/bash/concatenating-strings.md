@@ -4,7 +4,6 @@ date:                  2024-01-20T17:34:16.433471-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Concatenación de cadenas de texto"
 
-category:             "Bash"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/concatenating-strings.md"
 ---

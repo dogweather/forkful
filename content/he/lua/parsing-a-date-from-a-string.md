@@ -4,7 +4,6 @@ date:                  2024-01-20T15:37:24.948794-07:00
 html_title:           "Arduino: ניתוח תאריך ממחרוזת"
 simple_title:         "ניתוח תאריך ממחרוזת"
 
-category:             "Lua"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/lua/parsing-a-date-from-a-string.md"
 ---

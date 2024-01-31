@@ -4,7 +4,6 @@ date:                  2024-01-28T22:04:23.718409-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Phân tích ngày từ chuỗi kí tự"
 
-category:             "Elixir"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/parsing-a-date-from-a-string.md"
 changelog:

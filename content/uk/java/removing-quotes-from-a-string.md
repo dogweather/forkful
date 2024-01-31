@@ -4,7 +4,6 @@ date:                  2024-01-26T03:40:12.198845-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Видалення лапок зі строки"
 
-category:             "Java"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/removing-quotes-from-a-string.md"
 ---

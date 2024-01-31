@@ -4,7 +4,6 @@ date:                  2024-01-28T22:12:33.778109-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand schrijven"
 
-category:             "Ruby"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/writing-a-text-file.md"
 changelog:

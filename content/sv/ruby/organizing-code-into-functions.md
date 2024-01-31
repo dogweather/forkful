@@ -4,7 +4,6 @@ date:                  2024-01-26T01:11:38.584754-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Att organisera kod i funktioner"
 
-category:             "Ruby"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/organizing-code-into-functions.md"
 ---

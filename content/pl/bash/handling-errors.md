@@ -4,7 +4,6 @@ date:                  2024-01-26T00:36:59.711946-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Obsługa błędów"
 
-category:             "Bash"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/handling-errors.md"
 ---

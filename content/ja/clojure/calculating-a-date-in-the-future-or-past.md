@@ -5,7 +5,6 @@ model:                 gpt-4-1106-preview
 html_title:           "Clojure: 未来または過去の日付の計算"
 simple_title:         "未来または過去の日付の計算"
 
-category:             "Clojure"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/calculating-a-date-in-the-future-or-past.md"

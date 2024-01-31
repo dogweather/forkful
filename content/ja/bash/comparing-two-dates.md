@@ -4,7 +4,6 @@ date:                  2024-01-20T17:32:11.634469-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日付を比較する"
 
-category:             "Bash"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/comparing-two-dates.md"

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:42:49.423628-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
 
-category:             "Haskell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/deleting-characters-matching-a-pattern.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-29T00:04:19.748144-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с CSV"
 
-category:             "Rust"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/rust/working-with-csv.md"
 changelog:

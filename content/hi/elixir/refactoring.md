@@ -4,7 +4,6 @@ date:                  2024-01-26T01:30:01.832863-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "रिफैक्टरिंग"
 
-category:             "Elixir"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/refactoring.md"
 ---

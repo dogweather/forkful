@@ -4,7 +4,6 @@ date:                  2024-01-28T22:16:52.234819-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gửi yêu cầu HTTP với xác thực cơ bản"
 
-category:             "Javascript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/sending-an-http-request-with-basic-authentication.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-26T03:47:21.718073-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "숫자 반올림하기"
 
-category:             "Rust"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/rounding-numbers.md"
 ---

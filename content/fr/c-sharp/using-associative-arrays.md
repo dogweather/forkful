@@ -4,7 +4,6 @@ date:                  2024-01-30T19:10:13.451681-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des tableaux associatifs"
 
-category:             "C#"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/using-associative-arrays.md"
 changelog:

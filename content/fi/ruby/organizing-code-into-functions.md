@@ -4,7 +4,6 @@ date:                  2024-01-26T01:16:22.243342-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Koodin järjestäminen funktioihin"
 
-category:             "Ruby"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/organizing-code-into-functions.md"
 ---

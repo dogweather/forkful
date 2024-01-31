@@ -4,7 +4,6 @@ date:                  2024-01-26T03:47:07.034314-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Numerojen pyöristäminen"
 
-category:             "Rust"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/rounding-numbers.md"
 ---

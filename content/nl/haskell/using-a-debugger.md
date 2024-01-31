@@ -4,7 +4,6 @@ date:                  2024-01-28T22:09:35.008459-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een debugger gebruiken"
 
-category:             "Haskell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/using-a-debugger.md"
 changelog:

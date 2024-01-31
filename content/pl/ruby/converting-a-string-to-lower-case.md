@@ -4,7 +4,6 @@ date:                  2024-01-20T17:39:11.663863-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
 
-category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/converting-a-string-to-lower-case.md"
 ---

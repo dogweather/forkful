@@ -4,7 +4,6 @@ date:                  2024-01-25T02:12:43.594010-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Refactoring"
 
-category:             "C#"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/refactoring.md"
 ---

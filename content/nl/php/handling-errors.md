@@ -4,7 +4,6 @@ date:                  2024-01-28T22:02:05.745460-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fouten afhandelen"
 
-category:             "PHP"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/handling-errors.md"
 changelog:

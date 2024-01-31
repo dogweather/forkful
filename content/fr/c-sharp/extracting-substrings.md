@@ -4,7 +4,6 @@ date:                  2024-01-20T17:45:13.701015-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extraction de sous-chaînes"
 
-category:             "C#"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/extracting-substrings.md"
 ---

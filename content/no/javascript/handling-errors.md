@@ -4,7 +4,6 @@ date:                  2024-01-26T00:55:05.937706-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Feilhåndtering"
 
-category:             "Javascript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/handling-errors.md"
 ---

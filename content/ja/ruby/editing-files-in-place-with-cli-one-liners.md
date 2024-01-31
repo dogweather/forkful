@@ -4,7 +4,6 @@ date:                  2024-01-27T16:21:00.793885-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CLIワンライナーでのファイルのインプレース編集"
 
-category:             "Ruby"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/editing-files-in-place-with-cli-one-liners.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T00:53:15.582051-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Hantering av fel"
 
-category:             "Haskell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/handling-errors.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T14:56:18.184629-07:00
 html_title:           "C#: Перевірка наявності директорії"
 simple_title:         "Перевірка наявності директорії"
 
-category:             "Fish Shell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/fish-shell/checking-if-a-directory-exists.md"
 ---

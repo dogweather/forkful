@@ -4,7 +4,6 @@ date:                  2024-01-28T22:12:32.658597-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand schrijven"
 
-category:             "C"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/writing-a-text-file.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-30T19:12:51.268941-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用关联数组"
 
-category:             "Ruby"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/using-associative-arrays.md"
 changelog:

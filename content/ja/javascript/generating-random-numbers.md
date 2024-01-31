@@ -4,7 +4,6 @@ date:                  2024-01-27T20:34:34.021255-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "乱数の生成"
 
-category:             "Javascript"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/generating-random-numbers.md"
 ---

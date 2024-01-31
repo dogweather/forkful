@@ -4,7 +4,6 @@ date:                  2024-01-20T17:41:20.775409-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Створення тимчасового файлу"
 
-category:             "Rust"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/rust/creating-a-temporary-file.md"
 ---

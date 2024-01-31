@@ -4,7 +4,6 @@ date:                  2024-01-20T17:47:23.918923-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Znalezienie długości ciągu znaków"
 
-category:             "Go"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/finding-the-length-of-a-string.md"
 ---

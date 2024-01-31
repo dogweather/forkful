@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino recipe: Writing a text file"
 simple_title:         "Writing a text file"
 
-category:             "Python"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/writing-a-text-file.md"
 ---

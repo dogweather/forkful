@@ -4,7 +4,6 @@ date:                  2024-01-20T17:39:59.150455-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Opprette en midlertidig fil"
 
-category:             "Clojure"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/creating-a-temporary-file.md"
 ---

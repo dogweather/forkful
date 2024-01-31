@@ -4,7 +4,6 @@ date:                  2024-01-20T18:01:46.944705-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 
-category:             "Java"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/sending-an-http-request-with-basic-authentication.md"
 ---

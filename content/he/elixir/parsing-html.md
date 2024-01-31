@@ -4,7 +4,6 @@ date:                  2024-01-20T15:31:00.510449-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 
-category:             "Elixir"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/parsing-html.md"
 ---

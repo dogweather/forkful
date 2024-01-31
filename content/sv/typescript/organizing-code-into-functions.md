@@ -4,7 +4,6 @@ date:                  2024-01-26T01:16:11.561059-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Organisera kod i funktioner"
 
-category:             "TypeScript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/organizing-code-into-functions.md"
 ---

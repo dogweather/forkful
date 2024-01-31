@@ -4,7 +4,6 @@ date:                  2024-01-20T17:41:05.542340-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "יצירת קובץ זמני"
 
-category:             "Elixir"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/creating-a-temporary-file.md"
 ---

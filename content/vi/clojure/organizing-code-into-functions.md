@@ -4,7 +4,6 @@ date:                  2024-01-28T22:03:10.656975-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sắp xếp mã thành các hàm"
 
-category:             "Clojure"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/clojure/organizing-code-into-functions.md"
 changelog:

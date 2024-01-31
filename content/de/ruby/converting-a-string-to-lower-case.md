@@ -4,7 +4,6 @@ date:                  2024-01-20T17:39:12.090187-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Umformung eines Strings in Kleinbuchstaben"
 
-category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/converting-a-string-to-lower-case.md"
 ---

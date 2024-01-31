@@ -4,7 +4,6 @@ date:                  2024-01-29T00:05:17.604646-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Создание текстового файла"
 
-category:             "Elixir"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elixir/writing-a-text-file.md"
 changelog:

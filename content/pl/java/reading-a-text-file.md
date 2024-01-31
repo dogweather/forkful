@@ -4,7 +4,6 @@ date:                  2024-01-20T17:54:29.807549-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Odczytywanie pliku tekstowego"
 
-category:             "Java"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/reading-a-text-file.md"
 ---

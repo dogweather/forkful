@@ -4,7 +4,6 @@ date:                  2024-01-28T22:01:08.614804-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Het huidige datum ophalen"
 
-category:             "Bash"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/getting-the-current-date.md"
 changelog:

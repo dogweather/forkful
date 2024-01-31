@@ -4,7 +4,6 @@ date:                  2024-01-20T17:35:51.086129-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Converting a date into a string"
 
-category:             "Bash"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/converting-a-date-into-a-string.md"
 ---

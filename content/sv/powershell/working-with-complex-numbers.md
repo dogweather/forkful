@@ -4,7 +4,6 @@ date:                  2024-01-26T04:44:09.636982-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att arbeta med komplexa tal"
 
-category:             "PowerShell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/working-with-complex-numbers.md"
 ---

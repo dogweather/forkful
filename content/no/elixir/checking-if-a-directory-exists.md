@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Sjekke om en mappe finnes"
 simple_title:         "Sjekke om en mappe finnes"
 
-category:             "Elixir"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/checking-if-a-directory-exists.md"
 ---

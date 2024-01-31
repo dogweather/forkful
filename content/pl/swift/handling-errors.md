@@ -4,7 +4,6 @@ date:                  2024-01-26T00:58:14.105685-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Obsługa błędów"
 
-category:             "Swift"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/handling-errors.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-28T23:58:41.515511-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Обработка ошибок"
 
-category:             "Lua"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/lua/handling-errors.md"
 changelog:

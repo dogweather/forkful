@@ -4,7 +4,6 @@ date:                  2024-01-26T04:13:10.485438-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation d'une console interactive (REPL)"
 
-category:             "Clojure"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/using-an-interactive-shell-repl.md"
 ---

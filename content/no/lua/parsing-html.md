@@ -4,7 +4,6 @@ date:                  2024-01-20T15:33:12.687950-07:00
 html_title:           "Arduino: Analyse av HTML"
 simple_title:         "Analyse av HTML"
 
-category:             "Lua"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/parsing-html.md"
 ---

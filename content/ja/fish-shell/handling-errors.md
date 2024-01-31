@@ -4,7 +4,6 @@ date:                  2024-01-26T00:52:52.304542-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "エラー処理"
 
-category:             "Fish Shell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/handling-errors.md"
 ---

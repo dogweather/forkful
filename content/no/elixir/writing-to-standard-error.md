@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Skrive til standardfeil"
 simple_title:         "Skrive til standardfeil"
 
-category:             "Elixir"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/writing-to-standard-error.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T18:02:47.704907-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 
-category:             "Rust"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/rust/sending-an-http-request-with-basic-authentication.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:45:34.468743-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Виділення підрядків"
 
-category:             "C#"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/extracting-substrings.md"
 ---

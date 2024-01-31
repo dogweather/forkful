@@ -4,7 +4,6 @@ date:                  2024-01-28T22:01:34.674924-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fouten afhandelen"
 
-category:             "Elm"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/handling-errors.md"
 changelog:

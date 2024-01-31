@@ -4,7 +4,6 @@ date:                  2024-01-28T21:57:07.430398-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nối chuỗi ký tự"
 
-category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/concatenating-strings.md"
 changelog:

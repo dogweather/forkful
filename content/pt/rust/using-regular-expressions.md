@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Utilizando expressões regulares"
 simple_title:         "Utilizando expressões regulares"
 
-category:             "Rust"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/using-regular-expressions.md"
 ---

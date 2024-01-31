@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: 표준 오류로 쓰기"
 simple_title:         "표준 오류로 쓰기"
 
-category:             "Arduino"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/writing-to-standard-error.md"

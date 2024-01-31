@@ -4,7 +4,6 @@ date:                  2024-01-28T22:03:49.222654-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Phân Tích Cú Pháp HTML"
 
-category:             "Lua"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/lua/parsing-html.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:08:39.681061-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een debugger gebruiken"
 
-category:             "Bash"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/using-a-debugger.md"
 changelog:

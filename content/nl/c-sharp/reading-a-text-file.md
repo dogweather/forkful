@@ -4,7 +4,6 @@ date:                  2024-01-28T22:04:58.410052-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand lezen"
 
-category:             "C#"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c-sharp/reading-a-text-file.md"
 changelog:

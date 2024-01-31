@@ -4,7 +4,6 @@ date:                  2024-01-27T20:35:02.857658-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Génération de nombres aléatoires"
 
-category:             "Rust"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/generating-random-numbers.md"
 ---

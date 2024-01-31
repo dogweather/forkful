@@ -5,7 +5,6 @@ lastmod:               2024-01-29
 model:                 gpt-4-0125-preview
 simple_title:         "Interpolation eines Strings"
 
-category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/interpolating-a-string.md"
 changelog:

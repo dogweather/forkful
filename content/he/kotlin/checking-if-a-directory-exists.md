@@ -4,7 +4,6 @@ date:                  2024-01-20T14:57:17.758194-07:00
 html_title:           "Gleam: בדיקה האם תיקייה קיימת"
 simple_title:         "בדיקה האם תיקייה קיימת"
 
-category:             "Kotlin"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/checking-if-a-directory-exists.md"
 ---

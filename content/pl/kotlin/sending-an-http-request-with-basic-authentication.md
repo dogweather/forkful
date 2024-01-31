@@ -4,7 +4,6 @@ date:                  2024-01-20T18:02:10.296949-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
 
-category:             "Kotlin"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/sending-an-http-request-with-basic-authentication.md"
 ---

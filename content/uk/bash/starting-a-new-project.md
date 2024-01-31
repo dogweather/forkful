@@ -4,7 +4,6 @@ date:                  2024-01-20T18:03:05.661238-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Починаємо новий проект"
 
-category:             "Bash"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/bash/starting-a-new-project.md"
 ---

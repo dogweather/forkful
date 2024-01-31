@@ -4,7 +4,6 @@ date:                  2024-01-20T17:32:27.534742-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Kahden päivämäärän vertailu"
 
-category:             "Arduino"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/comparing-two-dates.md"
 ---

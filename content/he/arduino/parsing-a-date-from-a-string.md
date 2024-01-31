@@ -4,7 +4,6 @@ date:                  2024-01-20T15:34:35.493227-07:00
 html_title:           "Arduino: ניתוח תאריך ממחרוזת"
 simple_title:         "ניתוח תאריך ממחרוזת"
 
-category:             "Arduino"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/arduino/parsing-a-date-from-a-string.md"
 ---

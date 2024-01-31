@@ -4,7 +4,6 @@ date:                  2024-01-26T04:19:07.247384-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання інтерактивної оболонки (REPL)"
 
-category:             "TypeScript"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/using-an-interactive-shell-repl.md"
 ---

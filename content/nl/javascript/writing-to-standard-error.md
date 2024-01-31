@@ -4,7 +4,6 @@ date:                  2024-01-28T22:13:21.842935-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Schrijven naar standaardfout"
 
-category:             "Javascript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/writing-to-standard-error.md"
 changelog:

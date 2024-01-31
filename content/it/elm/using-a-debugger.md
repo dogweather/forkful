@@ -4,7 +4,6 @@ date:                  2024-01-26T03:48:49.485277-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di un debugger"
 
-category:             "Elm"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/using-a-debugger.md"
 ---

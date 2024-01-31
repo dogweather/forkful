@@ -4,7 +4,6 @@ date:                  2024-01-20T18:01:27.758107-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 
-category:             "Fish Shell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/sending-an-http-request-with-basic-authentication.md"
 ---

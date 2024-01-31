@@ -4,7 +4,6 @@ date:                  2024-01-28T22:13:28.844264-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi vào lỗi chuẩn"
 
-category:             "C#"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/writing-to-standard-error.md"
 changelog:

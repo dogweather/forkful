@@ -4,7 +4,6 @@ date:                  2024-01-27T16:21:16.583429-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CLIワンライナーでのファイルのインプレース編集"
 
-category:             "PowerShell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/editing-files-in-place-with-cli-one-liners.md"
 ---

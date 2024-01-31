@@ -4,7 +4,6 @@ date:                  2024-01-20T15:36:17.553501-07:00
 html_title:           "Arduino: Analyse d'une date à partir d'une chaîne de caractères"
 simple_title:         "Analyse d'une date à partir d'une chaîne de caractères"
 
-category:             "Go"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/parsing-a-date-from-a-string.md"
 ---

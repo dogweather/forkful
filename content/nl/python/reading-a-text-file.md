@@ -4,7 +4,6 @@ date:                  2024-01-28T22:05:02.390705-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand lezen"
 
-category:             "Python"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/python/reading-a-text-file.md"
 changelog:

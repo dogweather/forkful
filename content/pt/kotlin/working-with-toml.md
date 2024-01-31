@@ -4,7 +4,6 @@ date:                  2024-01-26T04:23:48.474286-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com TOML"
 
-category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/working-with-toml.md"
 ---

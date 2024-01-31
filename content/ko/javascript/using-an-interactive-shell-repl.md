@@ -4,7 +4,6 @@ date:                  2024-01-26T04:15:47.711388-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "인터랙티브 셸 (REPL) 사용하기"
 
-category:             "Javascript"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/using-an-interactive-shell-repl.md"
 ---

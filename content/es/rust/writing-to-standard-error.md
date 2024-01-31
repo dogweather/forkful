@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Escribiendo en el error estándar"
 simple_title:         "Escribiendo en el error estándar"
 
-category:             "Rust"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/writing-to-standard-error.md"
 ---

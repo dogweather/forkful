@@ -4,7 +4,6 @@ date:                  2024-01-29T00:03:23.172435-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Отправка HTTP-запроса"
 
-category:             "Fish Shell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/fish-shell/sending-an-http-request.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:12:45.097598-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tests Schrijven"
 
-category:             "Bash"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/writing-tests.md"
 changelog:

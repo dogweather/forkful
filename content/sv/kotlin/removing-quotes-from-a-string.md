@@ -4,7 +4,6 @@ date:                  2024-01-26T03:41:15.630454-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ta bort citattecken från en sträng"
 
-category:             "Kotlin"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/removing-quotes-from-a-string.md"
 ---

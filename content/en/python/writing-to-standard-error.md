@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino recipe: Writing to standard error"
 simple_title:         "Writing to standard error"
 
-category:             "Python"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/writing-to-standard-error.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:04:10.168390-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debug-output afdrukken"
 
-category:             "Arduino"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/printing-debug-output.md"
 changelog:

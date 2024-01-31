@@ -4,7 +4,6 @@ date:                  2024-01-20T17:46:58.648770-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Визначення довжини рядка"
 
-category:             "Bash"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/bash/finding-the-length-of-a-string.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T03:36:35.637450-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Remaniement de code"
 
-category:             "Ruby"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/refactoring.md"
 ---

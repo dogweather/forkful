@@ -4,7 +4,6 @@ date:                  2024-01-27T16:09:55.739923-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulating files with CLI one-liners"
 
-category:             "Ruby"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/manipulating-files-with-cli-one-liners.md"
 ---

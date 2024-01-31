@@ -4,7 +4,6 @@ date:                  2024-01-29T00:01:13.261639-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Чтение аргументов командной строки"
 
-category:             "Elm"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elm/reading-command-line-arguments.md"
 changelog:

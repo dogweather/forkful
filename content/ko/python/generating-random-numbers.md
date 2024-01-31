@@ -4,7 +4,6 @@ date:                  2024-01-27T20:35:19.885623-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "난수 생성"
 
-category:             "Python"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/generating-random-numbers.md"
 ---

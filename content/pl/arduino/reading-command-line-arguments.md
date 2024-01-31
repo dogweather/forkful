@@ -4,7 +4,6 @@ date:                  2024-01-20T17:55:39.237148-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Odczytywanie argumentów linii poleceń"
 
-category:             "Arduino"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/reading-command-line-arguments.md"
 ---

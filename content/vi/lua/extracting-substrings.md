@@ -4,7 +4,6 @@ date:                  2024-01-28T21:59:50.926513-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trích xuất chuỗi con"
 
-category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/lua/extracting-substrings.md"
 changelog:

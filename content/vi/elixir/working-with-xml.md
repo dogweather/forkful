@@ -4,7 +4,6 @@ date:                  2024-01-28T22:11:17.652349-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với XML"
 
-category:             "Elixir"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/working-with-xml.md"
 changelog:

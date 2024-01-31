@@ -5,7 +5,6 @@ model:                 gpt-4-1106-preview
 html_title:           "Elixir: Berechnung eines zukünftigen oder vergangenen Datums"
 simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
 
-category:             "Elixir"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/calculating-a-date-in-the-future-or-past.md"
 ---

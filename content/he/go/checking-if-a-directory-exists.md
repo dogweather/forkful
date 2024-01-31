@@ -4,7 +4,6 @@ date:                  2024-01-20T14:57:05.773225-07:00
 html_title:           "Gleam: בדיקה האם תיקייה קיימת"
 simple_title:         "בדיקה האם תיקייה קיימת"
 
-category:             "Go"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/go/checking-if-a-directory-exists.md"
 ---

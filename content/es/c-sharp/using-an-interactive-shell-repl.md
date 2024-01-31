@@ -4,7 +4,6 @@ date:                  2024-01-26T04:12:10.764374-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando una shell interactiva (REPL)"
 
-category:             "C#"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/using-an-interactive-shell-repl.md"
 ---

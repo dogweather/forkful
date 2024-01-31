@@ -4,7 +4,6 @@ date:                  2024-01-29T00:01:15.834670-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Чтение текстового файла"
 
-category:             "Elm"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elm/reading-a-text-file.md"
 changelog:

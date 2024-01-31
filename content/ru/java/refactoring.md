@@ -4,7 +4,6 @@ date:                  2024-01-29T00:02:19.941101-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Рефакторинг"
 
-category:             "Java"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/java/refactoring.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-20T15:37:24.729108-07:00
 html_title:           "Arduino: स्ट्रिंग से दिनांक पार्स करना"
 simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
 
-category:             "Javascript"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/parsing-a-date-from-a-string.md"
 ---

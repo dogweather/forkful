@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Wykorzystanie wyrażeń regularnych"
 simple_title:         "Wykorzystanie wyrażeń regularnych"
 
-category:             "Haskell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/using-regular-expressions.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T15:31:03.750548-07:00
 html_title:           "Bash: 解析HTML"
 simple_title:         "解析HTML"
 
-category:             "Elixir"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/parsing-html.md"

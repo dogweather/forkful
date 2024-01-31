@@ -4,7 +4,6 @@ date:                  2024-01-20T17:32:41.285063-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Порівняння двох дат"
 
-category:             "Bash"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/bash/comparing-two-dates.md"
 ---

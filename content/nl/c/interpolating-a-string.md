@@ -4,7 +4,6 @@ date:                  2024-01-28T22:02:07.599209-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string interpoleren"
 
-category:             "C"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/interpolating-a-string.md"
 changelog:

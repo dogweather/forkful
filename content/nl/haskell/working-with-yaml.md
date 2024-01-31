@@ -4,7 +4,6 @@ date:                  2024-01-28T22:11:44.366180-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met YAML"
 
-category:             "Haskell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/working-with-yaml.md"
 changelog:

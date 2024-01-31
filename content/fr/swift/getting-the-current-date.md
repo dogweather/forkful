@@ -4,7 +4,6 @@ date:                  2024-01-20T15:16:41.974622-07:00
 html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 
-category:             "Swift"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/getting-the-current-date.md"
 ---

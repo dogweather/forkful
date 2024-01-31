@@ -4,7 +4,6 @@ date:                  2024-01-26T04:27:22.475611-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con XML"
 
-category:             "Bash"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/working-with-xml.md"
 ---

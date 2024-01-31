@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Vérification de l'existence d'un répertoire"
 simple_title:         "Vérification de l'existence d'un répertoire"
 
-category:             "Arduino"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/checking-if-a-directory-exists.md"
 ---

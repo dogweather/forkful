@@ -4,7 +4,6 @@ date:                  2024-01-27T20:34:24.137940-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "乱数の生成"
 
-category:             "Haskell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/generating-random-numbers.md"
 ---

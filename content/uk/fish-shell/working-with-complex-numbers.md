@@ -4,7 +4,6 @@ date:                  2024-01-26T04:41:03.053920-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з комплексними числами"
 
-category:             "Fish Shell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/fish-shell/working-with-complex-numbers.md"
 ---

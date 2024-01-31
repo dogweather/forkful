@@ -4,7 +4,6 @@ date:                  2024-01-20T17:33:46.644216-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Confronto tra due date"
 
-category:             "Swift"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/comparing-two-dates.md"
 ---

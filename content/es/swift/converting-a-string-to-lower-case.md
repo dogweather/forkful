@@ -4,7 +4,6 @@ date:                  2024-01-20T17:39:09.154569-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Conversión de una cadena de texto a minúsculas"
 
-category:             "Swift"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/converting-a-string-to-lower-case.md"
 ---

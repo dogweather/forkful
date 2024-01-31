@@ -4,7 +4,6 @@ date:                  2024-01-20T14:56:17.106710-07:00
 html_title:           "Gleam: Comprobando si existe un directorio"
 simple_title:         "Comprobando si existe un directorio"
 
-category:             "Elixir"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/checking-if-a-directory-exists.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-29T00:01:57.622581-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округление чисел"
 
-category:             "C"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/c/rounding-numbers.md"
 changelog:

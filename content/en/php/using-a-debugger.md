@@ -4,7 +4,6 @@ date:                  2024-01-25T20:50:12.403589-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Using a debugger"
 
-category:             "PHP"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/using-a-debugger.md"
 ---

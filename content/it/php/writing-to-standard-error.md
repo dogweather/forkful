@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Scrivere sull'errore standard"
 simple_title:         "Scrivere sull'errore standard"
 
-category:             "PHP"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/writing-to-standard-error.md"
 ---

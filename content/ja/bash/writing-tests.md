@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: テストの作成"
 simple_title:         "テストの作成"
 
-category:             "Bash"
 tag:                  "Testing and Debugging"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/writing-tests.md"

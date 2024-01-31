@@ -4,7 +4,6 @@ date:                  2024-01-27T20:37:06.595806-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"
 
-category:             "Swift"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/generating-random-numbers.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Skriving av tester"
 simple_title:         "Skriving av tester"
 
-category:             "Kotlin"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/writing-tests.md"
 ---

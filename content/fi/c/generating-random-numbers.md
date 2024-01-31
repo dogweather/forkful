@@ -4,7 +4,6 @@ date:                  2024-01-27T20:32:51.509083-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Satunnaislukujen generointi"
 
-category:             "C"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/generating-random-numbers.md"
 ---

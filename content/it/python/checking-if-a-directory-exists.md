@@ -4,7 +4,6 @@ date:                  2024-01-20T14:58:02.481229-07:00
 html_title:           "Gleam: Verifica dell'esistenza di una directory"
 simple_title:         "Verifica dell'esistenza di una directory"
 
-category:             "Python"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/python/checking-if-a-directory-exists.md"
 ---

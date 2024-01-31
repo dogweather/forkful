@@ -4,7 +4,6 @@ date:                  2024-01-20T17:58:27.464020-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Пошук та заміна тексту"
 
-category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/lua/searching-and-replacing-text.md"
 ---

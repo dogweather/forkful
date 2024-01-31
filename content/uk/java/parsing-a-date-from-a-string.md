@@ -4,7 +4,6 @@ date:                  2024-01-20T15:36:44.133291-07:00
 html_title:           "Arduino: Аналіз дати з рядка"
 simple_title:         "Аналіз дати з рядка"
 
-category:             "Java"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/parsing-a-date-from-a-string.md"
 ---

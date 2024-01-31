@@ -4,7 +4,6 @@ date:                  2024-01-28T23:57:13.456978-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление символов, соответствующих шаблону"
 
-category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/clojure/deleting-characters-matching-a-pattern.md"
 changelog:

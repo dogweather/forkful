@@ -4,7 +4,6 @@ date:                  2024-01-20T17:59:04.638473-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Skicka en http-förfrågan"
 
-category:             "Arduino"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/sending-an-http-request.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-28T21:58:09.899253-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tijdelijk bestand aanmaken"
 
-category:             "Fish Shell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/creating-a-temporary-file.md"
 changelog:

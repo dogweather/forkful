@@ -4,7 +4,6 @@ date:                  2024-01-28T23:58:58.009480-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Интерполяция строки"
 
-category:             "TypeScript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/typescript/interpolating-a-string.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-27T10:38:42.803142-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Concatenating strings"
 
-category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/concatenating-strings.md"
 ---

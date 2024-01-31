@@ -4,7 +4,6 @@ date:                  2024-01-26T03:44:55.168734-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zahlen runden"
 
-category:             "Java"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/rounding-numbers.md"
 ---

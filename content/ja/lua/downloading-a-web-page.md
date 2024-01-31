@@ -4,7 +4,6 @@ date:                  2024-01-20T17:44:50.639250-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "ウェブページのダウンロード"
 
-category:             "Lua"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/downloading-a-web-page.md"

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:12:21.384248-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với số phức"
 
-category:             "Fish Shell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/working-with-complex-numbers.md"
 changelog:

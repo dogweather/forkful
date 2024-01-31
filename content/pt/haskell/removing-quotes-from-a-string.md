@@ -4,7 +4,6 @@ date:                  2024-01-26T03:39:39.835016-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Removendo aspas de uma string"
 
-category:             "Haskell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/removing-quotes-from-a-string.md"
 ---

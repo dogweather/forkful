@@ -4,7 +4,6 @@ date:                  2024-01-20T14:57:34.520099-07:00
 html_title:           "Elixir: 检查目录是否存在"
 simple_title:         "检查目录是否存在"
 
-category:             "Kotlin"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/checking-if-a-directory-exists.md"

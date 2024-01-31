@@ -4,7 +4,6 @@ date:                  2024-01-20T15:30:43.587967-07:00
 html_title:           "Bash: Analisi dell'HTML"
 simple_title:         "Analisi dell'HTML"
 
-category:             "Clojure"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/parsing-html.md"
 ---

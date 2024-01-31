@@ -4,7 +4,6 @@ date:                  2024-01-28T22:02:29.838643-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xử lý lỗi"
 
-category:             "Lua"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/lua/handling-errors.md"
 changelog:

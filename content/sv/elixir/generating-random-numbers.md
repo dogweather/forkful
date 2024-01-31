@@ -4,7 +4,6 @@ date:                  2024-01-27T20:33:24.920992-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generera slumptal"
 
-category:             "Elixir"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/generating-random-numbers.md"
 ---

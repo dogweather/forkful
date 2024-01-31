@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Använda reguljära uttryck"
 simple_title:         "Använda reguljära uttryck"
 
-category:             "Arduino"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/using-regular-expressions.md"
 ---

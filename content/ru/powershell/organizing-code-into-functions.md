@@ -4,7 +4,6 @@ date:                  2024-01-28T23:59:41.381930-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Организация кода в функции"
 
-category:             "PowerShell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/powershell/organizing-code-into-functions.md"
 changelog:

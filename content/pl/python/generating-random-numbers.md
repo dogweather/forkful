@@ -4,7 +4,6 @@ date:                  2024-01-27T20:35:29.409198-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generowanie liczb losowych"
 
-category:             "Python"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/generating-random-numbers.md"
 ---

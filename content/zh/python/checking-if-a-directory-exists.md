@@ -4,7 +4,6 @@ date:                  2024-01-20T14:58:13.382528-07:00
 html_title:           "Elixir: 检查目录是否存在"
 simple_title:         "检查目录是否存在"
 
-category:             "Python"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/checking-if-a-directory-exists.md"

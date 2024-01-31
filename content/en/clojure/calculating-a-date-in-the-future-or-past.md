@@ -5,7 +5,6 @@ model:                 gpt-4-1106-preview
 html_title:           "C# recipe: Calculating a date in the future or past"
 simple_title:         "Calculating a date in the future or past"
 
-category:             "Clojure"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/calculating-a-date-in-the-future-or-past.md"
 ---

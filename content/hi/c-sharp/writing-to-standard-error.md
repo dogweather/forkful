@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: मानक त्रुटि में लिखना"
 simple_title:         "मानक त्रुटि में लिखना"
 
-category:             "C#"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/writing-to-standard-error.md"
 ---

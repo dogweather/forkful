@@ -4,7 +4,6 @@ date:                  2024-01-28T22:10:15.354435-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng biểu thức chính quy"
 
-category:             "Rust"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/rust/using-regular-expressions.md"
 changelog:

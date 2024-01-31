@@ -4,7 +4,6 @@ date:                  2024-01-26T04:15:10.239579-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במעטפת אינטראקטיבית (REPL)"
 
-category:             "Haskell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/using-an-interactive-shell-repl.md"
 ---

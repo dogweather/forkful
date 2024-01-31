@@ -4,7 +4,6 @@ date:                  2024-01-26T03:50:28.100090-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda en debugger"
 
-category:             "Haskell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/using-a-debugger.md"
 ---

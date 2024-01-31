@@ -4,7 +4,6 @@ date:                  2024-01-28T23:56:29.641720-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Расчет даты в будущем или прошлом"
 
-category:             "Elm"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elm/calculating-a-date-in-the-future-or-past.md"
 changelog:

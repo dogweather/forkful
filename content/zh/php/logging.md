@@ -4,7 +4,6 @@ date:                  2024-01-26T01:07:10.244750-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日志记录"
 
-category:             "PHP"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/logging.md"
 ---

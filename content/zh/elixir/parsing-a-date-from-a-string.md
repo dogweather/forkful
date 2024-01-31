@@ -4,7 +4,6 @@ date:                  2024-01-28T02:05:00.426314-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "从字符串解析日期"
 
-category:             "Elixir"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/parsing-a-date-from-a-string.md"
 changelog:

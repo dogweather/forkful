@@ -4,7 +4,6 @@ date:                  2024-01-28T21:59:21.946145-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tải trang web"
 
-category:             "Bash"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/downloading-a-web-page.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-26T03:43:25.596007-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Видалення лапок зі строки"
 
-category:             "TypeScript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/removing-quotes-from-a-string.md"
 ---

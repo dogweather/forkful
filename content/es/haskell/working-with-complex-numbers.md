@@ -4,7 +4,6 @@ date:                  2024-01-26T04:41:14.464216-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con números complejos"
 
-category:             "Haskell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/working-with-complex-numbers.md"
 ---

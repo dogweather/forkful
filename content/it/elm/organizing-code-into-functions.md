@@ -4,7 +4,6 @@ date:                  2024-01-26T01:10:38.543193-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organizzazione del codice in funzioni"
 
-category:             "Elm"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/organizing-code-into-functions.md"
 ---

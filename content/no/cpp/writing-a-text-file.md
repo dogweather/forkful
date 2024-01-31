@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Skriving av en tekstfil"
 simple_title:         "Skriving av en tekstfil"
 
-category:             "C++"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/writing-a-text-file.md"
 ---

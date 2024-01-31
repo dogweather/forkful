@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Trabajando con archivos CSV"
 simple_title:         "Trabajando con archivos CSV"
 
-category:             "Go"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/working-with-csv.md"
 ---

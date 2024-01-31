@@ -4,7 +4,6 @@ date:                  2024-01-20T15:37:09.374885-07:00
 html_title:           "Arduino: Analisando uma data a partir de uma string"
 simple_title:         "Analisando uma data a partir de uma string"
 
-category:             "Kotlin"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/parsing-a-date-from-a-string.md"
 ---

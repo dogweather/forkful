@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: שימוש בביטויים רגולריים"
 simple_title:         "שימוש בביטויים רגולריים"
 
-category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/lua/using-regular-expressions.md"
 ---

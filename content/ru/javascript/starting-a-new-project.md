@@ -4,7 +4,6 @@ date:                  2024-01-29T00:03:17.441421-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Начало нового проекта"
 
-category:             "Javascript"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/javascript/starting-a-new-project.md"
 changelog:

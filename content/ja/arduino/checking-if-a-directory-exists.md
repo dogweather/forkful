@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: ディレクトリが存在するかどうかを確認する"
 simple_title:         "ディレクトリが存在するかどうかを確認する"
 
-category:             "Arduino"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/checking-if-a-directory-exists.md"

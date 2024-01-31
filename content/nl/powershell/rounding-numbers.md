@@ -4,7 +4,6 @@ date:                  2024-01-28T22:06:49.503462-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Afronden van getallen"
 
-category:             "PowerShell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/rounding-numbers.md"
 changelog:

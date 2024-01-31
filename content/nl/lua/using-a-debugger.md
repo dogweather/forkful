@@ -4,7 +4,6 @@ date:                  2024-01-28T22:09:10.456921-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een debugger gebruiken"
 
-category:             "Lua"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/using-a-debugger.md"
 changelog:

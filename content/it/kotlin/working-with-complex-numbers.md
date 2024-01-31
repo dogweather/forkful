@@ -4,7 +4,6 @@ date:                  2024-01-26T04:42:44.039296-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con i numeri complessi"
 
-category:             "Kotlin"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/working-with-complex-numbers.md"
 ---

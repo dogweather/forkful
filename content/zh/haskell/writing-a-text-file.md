@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: 编写文本文件"
 simple_title:         "编写文本文件"
 
-category:             "Haskell"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/writing-a-text-file.md"

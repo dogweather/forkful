@@ -4,7 +4,6 @@ date:                  2024-01-28T22:06:55.242693-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Afronden van getallen"
 
-category:             "Lua"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/rounding-numbers.md"
 changelog:

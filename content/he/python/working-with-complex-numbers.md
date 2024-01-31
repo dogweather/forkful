@@ -4,7 +4,6 @@ date:                  2024-01-26T04:45:20.057506-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם מספרים מרוכבים"
 
-category:             "Python"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/working-with-complex-numbers.md"
 ---

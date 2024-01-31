@@ -4,7 +4,6 @@ date:                  2024-01-26T04:41:52.714525-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kompleksilukujen käsittely"
 
-category:             "Java"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/working-with-complex-numbers.md"
 ---

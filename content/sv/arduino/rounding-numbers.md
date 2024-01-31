@@ -4,7 +4,6 @@ date:                  2024-01-26T03:42:49.455390-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrundning av tal"
 
-category:             "Arduino"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/rounding-numbers.md"
 ---

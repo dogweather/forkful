@@ -4,7 +4,6 @@ date:                  2024-01-28T21:57:32.117058-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een datum converteren naar een string"
 
-category:             "Arduino"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/converting-a-date-into-a-string.md"
 changelog:

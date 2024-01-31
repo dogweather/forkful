@@ -4,7 +4,6 @@ date:                  2024-01-30T18:57:29.755923-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Using associative arrays"
 
-category:             "PowerShell"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/using-associative-arrays.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:53:12.707501-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "デバッグ出力を表示する"
 
-category:             "Javascript"
 tag:                  "Testing and Debugging"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/printing-debug-output.md"

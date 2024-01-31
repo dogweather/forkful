@@ -4,7 +4,6 @@ date:                  2024-01-26T03:43:39.458849-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עיגול מספרים"
 
-category:             "C++"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/rounding-numbers.md"
 ---

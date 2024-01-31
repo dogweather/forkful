@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Utilisation des expressions régulières"
 simple_title:         "Utilisation des expressions régulières"
 
-category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/using-regular-expressions.md"
 ---

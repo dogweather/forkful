@@ -4,7 +4,6 @@ date:                  2024-01-27T16:20:41.969806-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bearbeiten von Dateien im Place mit CLI-Einzeilern"
 
-category:             "PowerShell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/editing-files-in-place-with-cli-one-liners.md"
 ---

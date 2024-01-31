@@ -4,7 +4,6 @@ date:                  2024-01-20T17:46:46.825955-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "文字列の長さを求める"
 
-category:             "Arduino"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/finding-the-length-of-a-string.md"

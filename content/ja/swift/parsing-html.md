@@ -4,7 +4,6 @@ date:                  2024-01-20T15:34:33.144115-07:00
 html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 
-category:             "Swift"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/parsing-html.md"

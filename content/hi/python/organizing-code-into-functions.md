@@ -4,7 +4,6 @@ date:                  2024-01-26T01:17:21.472613-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड को फ़ंक्शन्स में व्यवस्थित करना"
 
-category:             "Python"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/python/organizing-code-into-functions.md"
 ---

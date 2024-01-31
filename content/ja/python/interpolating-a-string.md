@@ -4,7 +4,6 @@ date:                  2024-01-28T21:24:03.388408-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "文字列の補間"
 
-category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/interpolating-a-string.md"
 changelog:

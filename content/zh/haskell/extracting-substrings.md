@@ -4,7 +4,6 @@ date:                  2024-01-20T17:45:44.606051-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "提取子字符串"
 
-category:             "Haskell"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/extracting-substrings.md"

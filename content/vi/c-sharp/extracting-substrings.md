@@ -4,7 +4,6 @@ date:                  2024-01-28T22:00:20.966984-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trích xuất chuỗi con"
 
-category:             "C#"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c-sharp/extracting-substrings.md"
 changelog:

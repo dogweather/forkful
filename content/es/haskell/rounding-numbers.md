@@ -4,7 +4,6 @@ date:                  2024-01-26T03:44:36.786823-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redondeo de números"
 
-category:             "Haskell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/rounding-numbers.md"
 ---

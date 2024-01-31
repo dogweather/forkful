@@ -4,7 +4,6 @@ date:                  2024-01-20T18:00:02.910583-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "发出 HTTP 请求"
 
-category:             "Java"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/sending-an-http-request.md"

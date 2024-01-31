@@ -4,7 +4,6 @@ date:                  2024-01-28T22:00:44.952495-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trích xuất chuỗi con"
 
-category:             "Java"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/extracting-substrings.md"
 changelog:

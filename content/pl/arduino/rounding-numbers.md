@@ -4,7 +4,6 @@ date:                  2024-01-26T03:43:21.079956-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zaokrąglanie liczb"
 
-category:             "Arduino"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/rounding-numbers.md"
 ---

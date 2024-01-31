@@ -4,7 +4,6 @@ date:                  2024-01-20T17:40:30.297396-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Väliaikaistiedoston luominen"
 
-category:             "Haskell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/creating-a-temporary-file.md"
 ---

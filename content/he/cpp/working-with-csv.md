@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: עבודה עם קבצי CSV"
 simple_title:         "עבודה עם קבצי CSV"
 
-category:             "C++"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/working-with-csv.md"
 ---

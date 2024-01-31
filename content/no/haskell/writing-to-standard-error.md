@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Skrive til standardfeil"
 simple_title:         "Skrive til standardfeil"
 
-category:             "Haskell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/writing-to-standard-error.md"
 ---

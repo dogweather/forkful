@@ -4,7 +4,6 @@ date:                  2024-01-28T22:09:28.104204-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng bộ gỡ lỗi"
 
-category:             "Ruby"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/using-a-debugger.md"
 changelog:

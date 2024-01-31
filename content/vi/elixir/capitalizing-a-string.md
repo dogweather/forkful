@@ -4,7 +4,6 @@ date:                  2024-01-28T21:56:45.722289-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết hoa một chuỗi"
 
-category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/capitalizing-a-string.md"
 changelog:

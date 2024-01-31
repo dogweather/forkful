@@ -4,7 +4,6 @@ date:                  2024-01-27T10:42:51.247593-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zeichenketten verketten"
 
-category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/concatenating-strings.md"
 ---

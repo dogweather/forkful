@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: JSONを扱う方法"
 simple_title:         "JSONを扱う方法"
 
-category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/working-with-json.md"

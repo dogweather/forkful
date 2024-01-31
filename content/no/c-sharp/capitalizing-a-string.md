@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Sette streng til store bokstaver"
 simple_title:         "Sette streng til store bokstaver"
 
-category:             "C#"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/capitalizing-a-string.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:09:57.103691-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reguliere expressies gebruiken"
 
-category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/using-regular-expressions.md"
 changelog:

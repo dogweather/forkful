@@ -4,7 +4,6 @@ date:                  2024-01-20T17:59:11.514084-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http"
 
-category:             "C"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/sending-an-http-request.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Zapisywanie pliku tekstowego"
 simple_title:         "Zapisywanie pliku tekstowego"
 
-category:             "Javascript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/writing-a-text-file.md"
 ---

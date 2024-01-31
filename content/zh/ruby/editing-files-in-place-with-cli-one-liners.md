@@ -4,7 +4,6 @@ date:                  2024-01-27T16:20:41.568195-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用命令行一行命令就地编辑文件"
 
-category:             "Ruby"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/editing-files-in-place-with-cli-one-liners.md"
 ---

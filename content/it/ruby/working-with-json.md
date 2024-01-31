@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Lavorare con JSON"
 simple_title:         "Lavorare con JSON"
 
-category:             "Ruby"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/working-with-json.md"
 ---

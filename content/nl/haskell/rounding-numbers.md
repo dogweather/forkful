@@ -4,7 +4,6 @@ date:                  2024-01-28T22:06:44.107035-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Afronden van getallen"
 
-category:             "Haskell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/rounding-numbers.md"
 changelog:

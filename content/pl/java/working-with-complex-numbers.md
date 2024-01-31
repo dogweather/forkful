@@ -4,7 +4,6 @@ date:                  2024-01-26T04:42:32.151190-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z liczbami zespolonymi"
 
-category:             "Java"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/working-with-complex-numbers.md"
 ---

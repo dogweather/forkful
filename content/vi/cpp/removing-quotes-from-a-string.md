@@ -4,7 +4,6 @@ date:                  2024-01-28T22:06:23.979203-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Loại bỏ dấu ngoặc kép khỏi chuỗi"
 
-category:             "C++"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/cpp/removing-quotes-from-a-string.md"
 changelog:

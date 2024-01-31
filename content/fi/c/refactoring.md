@@ -4,7 +4,6 @@ date:                  2024-01-26T01:16:56.499136-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Koodin refaktorointi"
 
-category:             "C"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/refactoring.md"
 ---

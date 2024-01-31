@@ -4,7 +4,6 @@ date:                  2024-01-20T18:00:49.229065-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP अनुरोध भेजना"
 
-category:             "Lua"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/lua/sending-an-http-request.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-29T00:04:03.056781-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование регулярных выражений"
 
-category:             "PowerShell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/powershell/using-regular-expressions.md"
 changelog:

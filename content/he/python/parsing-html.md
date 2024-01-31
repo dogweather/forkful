@@ -4,7 +4,6 @@ date:                  2024-01-20T15:33:37.391683-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 
-category:             "Python"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/parsing-html.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:55:35.535415-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Komennoriviparametrien lukeminen"
 
-category:             "Clojure"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/reading-command-line-arguments.md"
 ---

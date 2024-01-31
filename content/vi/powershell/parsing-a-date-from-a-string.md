@@ -4,7 +4,6 @@ date:                  2024-01-28T22:05:03.726485-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Phân tích ngày từ chuỗi kí tự"
 
-category:             "PowerShell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/powershell/parsing-a-date-from-a-string.md"
 changelog:

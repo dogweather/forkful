@@ -4,7 +4,6 @@ date:                  2024-01-26T00:53:09.294389-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Manejo de errores"
 
-category:             "Java"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/handling-errors.md"
 ---

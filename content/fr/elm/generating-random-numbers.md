@@ -4,7 +4,6 @@ date:                  2024-01-27T20:33:18.551265-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Génération de nombres aléatoires"
 
-category:             "Elm"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/generating-random-numbers.md"
 ---

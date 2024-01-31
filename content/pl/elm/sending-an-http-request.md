@@ -4,7 +4,6 @@ date:                  2024-01-20T17:59:51.558220-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wysyłanie żądania HTTP"
 
-category:             "Elm"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/sending-an-http-request.md"
 ---

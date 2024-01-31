@@ -4,7 +4,6 @@ date:                  2024-01-20T17:45:02.721397-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "部分文字列の抽出"
 
-category:             "Bash"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/extracting-substrings.md"

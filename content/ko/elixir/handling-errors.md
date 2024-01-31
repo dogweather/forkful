@@ -4,7 +4,6 @@ date:                  2024-01-26T00:51:39.450052-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "에러 처리하기"
 
-category:             "Elixir"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/handling-errors.md"
 ---

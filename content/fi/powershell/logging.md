@@ -4,7 +4,6 @@ date:                  2024-01-26T01:07:52.374532-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lokitus"
 
-category:             "PowerShell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/logging.md"
 ---

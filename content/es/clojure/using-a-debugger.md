@@ -4,7 +4,6 @@ date:                  2024-01-26T03:48:33.010311-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando un depurador"
 
-category:             "Clojure"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/using-a-debugger.md"
 ---

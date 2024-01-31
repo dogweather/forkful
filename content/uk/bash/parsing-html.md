@@ -4,7 +4,6 @@ date:                  2024-01-20T15:30:22.599978-07:00
 html_title:           "Arduino: Парсинг HTML"
 simple_title:         "Парсинг HTML"
 
-category:             "Bash"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/bash/parsing-html.md"
 ---

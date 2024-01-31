@@ -4,7 +4,6 @@ date:                  2024-01-20T15:15:35.201176-07:00
 html_title:           "Bash: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 
-category:             "Kotlin"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/getting-the-current-date.md"
 ---

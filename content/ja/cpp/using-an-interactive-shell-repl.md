@@ -4,7 +4,6 @@ date:                  2024-01-26T04:12:15.014127-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "インタラクティブシェル（REPL）の使用"
 
-category:             "C++"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/using-an-interactive-shell-repl.md"
 ---

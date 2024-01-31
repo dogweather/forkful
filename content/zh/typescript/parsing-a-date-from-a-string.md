@@ -4,7 +4,6 @@ date:                  2024-01-20T15:38:57.853543-07:00
 html_title:           "Arduino: 从字符串解析日期"
 simple_title:         "从字符串解析日期"
 
-category:             "TypeScript"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/parsing-a-date-from-a-string.md"

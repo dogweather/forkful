@@ -4,7 +4,6 @@ date:                  2024-01-20T15:31:44.542017-07:00
 html_title:           "Bash recipe: Parsing HTML"
 simple_title:         "Parsing HTML"
 
-category:             "Go"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/parsing-html.md"
 ---

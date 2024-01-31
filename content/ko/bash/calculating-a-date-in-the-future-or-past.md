@@ -5,7 +5,6 @@ model:                 gpt-4-1106-preview
 html_title:           "Bash: 미래 혹은 과거의 날짜 계산하기"
 simple_title:         "미래 혹은 과거의 날짜 계산하기"
 
-category:             "Bash"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/calculating-a-date-in-the-future-or-past.md"

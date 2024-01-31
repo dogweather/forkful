@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Робота з JSON"
 simple_title:         "Робота з JSON"
 
-category:             "PHP"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/php/working-with-json.md"
 ---

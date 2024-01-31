@@ -4,7 +4,6 @@ date:                  2024-01-28T22:13:58.312429-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi vào lỗi chuẩn"
 
-category:             "Arduino"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/writing-to-standard-error.md"
 changelog:

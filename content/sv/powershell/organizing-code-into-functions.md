@@ -4,7 +4,6 @@ date:                  2024-01-26T01:11:44.591230-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Att organisera kod i funktioner"
 
-category:             "PowerShell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/organizing-code-into-functions.md"
 ---

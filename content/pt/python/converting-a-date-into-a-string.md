@@ -4,7 +4,6 @@ date:                  2024-01-20T17:37:22.990171-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Convertendo uma data em uma string"
 
-category:             "Python"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/converting-a-date-into-a-string.md"
 ---

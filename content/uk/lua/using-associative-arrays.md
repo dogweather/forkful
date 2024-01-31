@@ -4,7 +4,6 @@ date:                  2024-01-30T19:12:32.593775-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання асоціативних масивів"
 
-category:             "Lua"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/lua/using-associative-arrays.md"
 changelog:

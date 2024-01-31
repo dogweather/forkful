@@ -4,7 +4,6 @@ date:                  2024-01-26T03:45:50.887190-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עיגול מספרים"
 
-category:             "Kotlin"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/rounding-numbers.md"
 ---

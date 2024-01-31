@@ -4,7 +4,6 @@ date:                  2024-01-20T17:51:22.103093-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "文字列の補間"
 
-category:             "PowerShell"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/interpolating-a-string.md"

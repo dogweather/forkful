@@ -4,7 +4,6 @@ date:                  2024-01-26T04:21:02.619679-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att arbeta med TOML"
 
-category:             "Elixir"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/working-with-toml.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T15:16:28.225959-07:00
 html_title:           "Arduino recipe: Getting the current date"
 simple_title:         "Getting the current date"
 
-category:             "Swift"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/getting-the-current-date.md"
 ---

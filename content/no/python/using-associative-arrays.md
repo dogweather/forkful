@@ -4,7 +4,6 @@ date:                  2024-01-30T19:12:47.661948-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bruke associative tabeller"
 
-category:             "Python"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/using-associative-arrays.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:55:21.797471-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "टेक्स्ट फ़ाइल पढ़ना"
 
-category:             "PowerShell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/powershell/reading-a-text-file.md"
 ---

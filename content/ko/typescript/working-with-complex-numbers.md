@@ -4,7 +4,6 @@ date:                  2024-01-26T04:46:31.327741-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "복소수 다루기"
 
-category:             "TypeScript"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/working-with-complex-numbers.md"
 ---

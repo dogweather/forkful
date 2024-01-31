@@ -4,7 +4,6 @@ date:                  2024-01-26T03:46:39.596407-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arrondir les nombres"
 
-category:             "Rust"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/rounding-numbers.md"
 ---

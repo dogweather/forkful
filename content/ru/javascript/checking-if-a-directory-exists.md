@@ -4,7 +4,6 @@ date:                  2024-01-28T23:55:22.353136-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Проверка существования директории"
 
-category:             "Javascript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/javascript/checking-if-a-directory-exists.md"
 changelog:

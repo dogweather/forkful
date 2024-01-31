@@ -4,7 +4,6 @@ date:                  2024-01-29T00:05:47.083710-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с YAML"
 
-category:             "Rust"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/rust/working-with-yaml.md"
 changelog:

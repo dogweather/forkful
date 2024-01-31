@@ -4,7 +4,6 @@ date:                  2024-01-20T15:36:51.322713-07:00
 html_title:           "Bash: Tolka ett datum från en sträng"
 simple_title:         "Tolka ett datum från en sträng"
 
-category:             "Haskell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/parsing-a-date-from-a-string.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T04:45:39.345835-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulation des nombres complexes"
 
-category:             "Swift"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/working-with-complex-numbers.md"
 ---

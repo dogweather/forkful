@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: 字符串首字母大写"
 simple_title:         "字符串首字母大写"
 
-category:             "Arduino"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/capitalizing-a-string.md"

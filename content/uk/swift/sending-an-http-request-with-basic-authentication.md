@@ -4,7 +4,6 @@ date:                  2024-01-20T18:02:46.083949-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"
 
-category:             "Swift"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/sending-an-http-request-with-basic-authentication.md"
 ---

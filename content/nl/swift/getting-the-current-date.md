@@ -4,7 +4,6 @@ date:                  2024-01-28T22:01:12.317199-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Het huidige datum ophalen"
 
-category:             "Swift"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/getting-the-current-date.md"
 changelog:

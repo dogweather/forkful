@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Mise en majuscule d'une chaîne de caractères"
 simple_title:         "Mise en majuscule d'une chaîne de caractères"
 
-category:             "Arduino"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/capitalizing-a-string.md"
 ---

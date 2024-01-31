@@ -4,7 +4,6 @@ date:                  2024-01-20T17:45:30.492167-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "部分文字列の抽出"
 
-category:             "Clojure"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/extracting-substrings.md"

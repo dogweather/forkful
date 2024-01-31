@@ -4,7 +4,6 @@ date:                  2024-01-28T22:09:04.565659-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een debugger gebruiken"
 
-category:             "Rust"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/using-a-debugger.md"
 changelog:

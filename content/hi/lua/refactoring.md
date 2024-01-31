@@ -4,7 +4,6 @@ date:                  2024-01-26T01:47:24.893342-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड सुधार"
 
-category:             "Lua"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/lua/refactoring.md"
 ---

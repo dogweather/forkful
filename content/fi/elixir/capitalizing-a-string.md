@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
 simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 
-category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/capitalizing-a-string.md"
 ---

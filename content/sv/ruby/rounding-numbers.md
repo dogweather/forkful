@@ -4,7 +4,6 @@ date:                  2024-01-26T03:46:37.786309-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrundning av tal"
 
-category:             "Ruby"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/rounding-numbers.md"
 ---

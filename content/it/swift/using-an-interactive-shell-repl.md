@@ -4,7 +4,6 @@ date:                  2024-01-26T04:18:02.495180-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di un interprete interattivo (REPL)"
 
-category:             "Swift"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/using-an-interactive-shell-repl.md"
 ---

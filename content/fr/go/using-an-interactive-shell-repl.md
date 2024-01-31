@@ -4,7 +4,6 @@ date:                  2024-01-26T04:14:44.052684-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation d'une console interactive (REPL)"
 
-category:             "Go"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/using-an-interactive-shell-repl.md"
 ---

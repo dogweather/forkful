@@ -4,7 +4,6 @@ date:                  2024-01-27T20:35:51.649091-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "乱数の生成"
 
-category:             "TypeScript"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/generating-random-numbers.md"
 ---

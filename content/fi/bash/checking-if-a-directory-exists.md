@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Onko hakemisto olemassa? Tarkistaminen"
 simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
 
-category:             "Bash"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/checking-if-a-directory-exists.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: परीक्षण लिखना"
 simple_title:         "परीक्षण लिखना"
 
-category:             "Python"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/python/writing-tests.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:41:34.742692-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Deleting characters matching a pattern"
 
-category:             "C++"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/deleting-characters-matching-a-pattern.md"
 ---

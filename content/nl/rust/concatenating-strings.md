@@ -4,7 +4,6 @@ date:                  2024-01-28T21:57:31.504079-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Samenvoegen van strings"
 
-category:             "Rust"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/concatenating-strings.md"
 changelog:

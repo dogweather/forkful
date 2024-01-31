@@ -4,7 +4,6 @@ date:                  2024-01-27T20:26:06.703048-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generating random numbers"
 
-category:             "Ruby"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/generating-random-numbers.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-29T00:00:06.714647-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Разбор HTML"
 
-category:             "Haskell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/haskell/parsing-html.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-20T18:04:19.165200-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Å starte et nytt prosjekt"
 
-category:             "Python"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/starting-a-new-project.md"
 ---

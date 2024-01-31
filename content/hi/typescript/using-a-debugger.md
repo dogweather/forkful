@@ -4,7 +4,6 @@ date:                  2024-01-26T04:12:59.536583-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डीबगर का उपयोग करना"
 
-category:             "TypeScript"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/using-a-debugger.md"
 ---

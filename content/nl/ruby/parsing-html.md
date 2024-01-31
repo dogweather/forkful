@@ -4,7 +4,6 @@ date:                  2024-01-28T22:03:52.125030-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML Parsen"
 
-category:             "Ruby"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/parsing-html.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-26T01:50:00.497653-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "リファクタリング"
 
-category:             "PHP"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/refactoring.md"
 ---

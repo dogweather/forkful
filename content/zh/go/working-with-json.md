@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: 处理JSON数据"
 simple_title:         "处理JSON数据"
 
-category:             "Go"
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/working-with-json.md"

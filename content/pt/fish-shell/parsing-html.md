@@ -4,7 +4,6 @@ date:                  2024-01-20T15:31:35.580204-07:00
 html_title:           "Bash: Análise de HTML"
 simple_title:         "Análise de HTML"
 
-category:             "Fish Shell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/parsing-html.md"
 ---

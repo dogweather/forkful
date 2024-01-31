@@ -4,7 +4,6 @@ date:                  2024-01-20T17:56:05.146473-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lectura de argumentos de línea de comandos"
 
-category:             "Java"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/reading-command-line-arguments.md"
 ---

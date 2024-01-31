@@ -4,7 +4,6 @@ date:                  2024-01-26T01:16:19.047883-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "コードを関数に整理する"
 
-category:             "Ruby"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/organizing-code-into-functions.md"
 ---

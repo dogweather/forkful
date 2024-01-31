@@ -4,7 +4,6 @@ date:                  2024-01-28T23:55:44.385698-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Сравнение двух дат"
 
-category:             "Javascript"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/javascript/comparing-two-dates.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino recipe: Working with YAML"
 simple_title:         "Working with YAML"
 
-category:             "C#"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/working-with-yaml.md"
 ---

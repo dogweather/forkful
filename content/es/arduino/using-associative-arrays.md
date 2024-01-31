@@ -4,7 +4,6 @@ date:                  2024-01-30T19:09:46.506280-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Uso de matrices asociativas"
 
-category:             "Arduino"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/using-associative-arrays.md"
 changelog:

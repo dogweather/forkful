@@ -4,7 +4,6 @@ date:                  2024-01-28T21:58:27.097759-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tijdelijk bestand aanmaken"
 
-category:             "Elm"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elm/creating-a-temporary-file.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-26T04:45:28.128978-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å jobbe med komplekse tall"
 
-category:             "Rust"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/working-with-complex-numbers.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T01:07:26.904384-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Registro de Actividades"
 
-category:             "PHP"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/logging.md"
 ---

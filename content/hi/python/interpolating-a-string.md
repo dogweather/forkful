@@ -4,7 +4,6 @@ date:                  2024-01-28T21:24:20.922723-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग का अंतर्कलन"
 
-category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/python/interpolating-a-string.md"
 changelog:

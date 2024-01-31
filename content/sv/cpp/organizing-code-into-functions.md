@@ -4,7 +4,6 @@ date:                  2024-01-26T01:09:50.086938-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Att organisera kod i funktioner"
 
-category:             "C++"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/organizing-code-into-functions.md"
 ---

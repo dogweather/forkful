@@ -4,7 +4,6 @@ date:                  2024-01-28T22:07:32.638040-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een HTTP-verzoek verzenden"
 
-category:             "Python"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/python/sending-an-http-request.md"
 changelog:

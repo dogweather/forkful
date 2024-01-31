@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: כתיבה לפלט השגיאה הסטנדרטי"
 simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
 
-category:             "Ruby"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/ruby/writing-to-standard-error.md"
 ---

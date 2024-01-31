@@ -4,7 +4,6 @@ date:                  2024-01-20T17:56:47.320839-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lecture des arguments de ligne de commande"
 
-category:             "Ruby"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/reading-command-line-arguments.md"
 ---

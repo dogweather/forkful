@@ -4,7 +4,6 @@ date:                  2024-01-28T22:11:33.053460-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với TOML"
 
-category:             "Python"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/working-with-toml.md"
 changelog:

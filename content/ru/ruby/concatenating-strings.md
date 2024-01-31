@@ -4,7 +4,6 @@ date:                  2024-01-28T23:57:03.528927-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Склеивание строк"
 
-category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/ruby/concatenating-strings.md"
 changelog:

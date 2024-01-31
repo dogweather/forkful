@@ -4,7 +4,6 @@ date:                  2024-01-25T03:39:58.779376-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Working with XML"
 
-category:             "Ruby"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/working-with-xml.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T03:38:42.166447-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eliminando comillas de una cadena"
 
-category:             "Elm"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/removing-quotes-from-a-string.md"
 ---

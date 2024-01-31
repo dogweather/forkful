@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: JSON के साथ काम करना"
 simple_title:         "JSON के साथ काम करना"
 
-category:             "Swift"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/working-with-json.md"
 ---

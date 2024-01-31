@@ -4,7 +4,6 @@ date:                  2024-01-20T17:55:34.101376-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "读取命令行参数"
 
-category:             "Clojure"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/reading-command-line-arguments.md"

@@ -4,7 +4,6 @@ date:                  2024-01-29T00:01:56.740648-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск и замена текста"
 
-category:             "C"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/c/searching-and-replacing-text.md"
 changelog:

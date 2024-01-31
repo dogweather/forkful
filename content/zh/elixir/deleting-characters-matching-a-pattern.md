@@ -4,7 +4,6 @@ date:                  2024-01-20T17:41:49.786516-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "匹配模式删除字符"
 
-category:             "Elixir"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/deleting-characters-matching-a-pattern.md"

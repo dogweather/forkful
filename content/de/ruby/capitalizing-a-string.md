@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "C: String in Großbuchstaben umwandeln"
 simple_title:         "String in Großbuchstaben umwandeln"
 
-category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/capitalizing-a-string.md"
 ---

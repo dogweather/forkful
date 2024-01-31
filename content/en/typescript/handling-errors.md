@@ -4,7 +4,6 @@ date:                  2024-01-21T21:19:19.875424-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Handling errors"
 
-category:             "TypeScript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/handling-errors.md"
 ---

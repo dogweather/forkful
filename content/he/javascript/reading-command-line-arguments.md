@@ -4,7 +4,6 @@ date:                  2024-01-20T17:56:56.401057-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "קריאת פרמטרים משורת הפקודה"
 
-category:             "Javascript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/javascript/reading-command-line-arguments.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-29T00:01:06.931134-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Вывод отладочной информации"
 
-category:             "Swift"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/swift/printing-debug-output.md"
 changelog:

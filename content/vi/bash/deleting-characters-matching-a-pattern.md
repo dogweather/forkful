@@ -4,7 +4,6 @@ date:                  2024-01-28T21:59:11.242057-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xóa các ký tự phù hợp với một mẫu"
 
-category:             "Bash"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/deleting-characters-matching-a-pattern.md"
 changelog:

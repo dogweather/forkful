@@ -4,7 +4,6 @@ date:                  2024-01-26T03:45:19.863800-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Numerojen pyöristäminen"
 
-category:             "Go"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/rounding-numbers.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T15:14:28.505810-07:00
 html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 
-category:             "Go"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/getting-the-current-date.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:57:26.684591-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Recherche et remplacement de texte"
 
-category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/searching-and-replacing-text.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T01:06:59.579793-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Логування"
 
-category:             "Javascript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/logging.md"
 ---

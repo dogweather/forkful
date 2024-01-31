@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Skriving av en tekstfil"
 simple_title:         "Skriving av en tekstfil"
 
-category:             "TypeScript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/writing-a-text-file.md"
 ---

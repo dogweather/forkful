@@ -4,7 +4,6 @@ date:                  2024-01-30T19:10:11.491733-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Verwendung von assoziativen Arrays"
 
-category:             "Clojure"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/using-associative-arrays.md"
 changelog:

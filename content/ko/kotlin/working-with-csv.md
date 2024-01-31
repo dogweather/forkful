@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: CSV 파일 다루기"
 simple_title:         "CSV 파일 다루기"
 
-category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/working-with-csv.md"

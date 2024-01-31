@@ -4,7 +4,6 @@ date:                  2024-01-26T04:31:53.265159-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z XML"
 
-category:             "Go"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/working-with-xml.md"
 ---

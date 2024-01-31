@@ -4,7 +4,6 @@ date:                  2024-01-20T17:51:19.034930-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolering av en streng"
 
-category:             "PHP"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/interpolating-a-string.md"
 ---

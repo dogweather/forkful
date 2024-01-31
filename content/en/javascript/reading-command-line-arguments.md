@@ -4,7 +4,6 @@ date:                  2024-01-20T17:56:05.403364-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Reading command line arguments"
 
-category:             "Javascript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/reading-command-line-arguments.md"
 ---

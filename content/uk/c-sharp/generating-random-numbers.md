@@ -4,7 +4,6 @@ date:                  2024-01-27T20:33:18.003623-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Генерація випадкових чисел"
 
-category:             "C#"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/generating-random-numbers.md"
 ---

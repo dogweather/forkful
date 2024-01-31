@@ -4,7 +4,6 @@ date:                  2024-01-26T00:51:37.321253-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "エラー処理"
 
-category:             "Elm"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/handling-errors.md"
 ---

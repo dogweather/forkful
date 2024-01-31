@@ -4,7 +4,6 @@ date:                  2024-01-28T22:00:59.900066-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Willekeurige getallen genereren"
 
-category:             "C++"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/cpp/generating-random-numbers.md"
 changelog:

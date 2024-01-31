@@ -4,7 +4,6 @@ date:                  2024-01-20T15:34:47.945021-07:00
 html_title:           "Arduino: Análisis de una fecha a partir de una cadena"
 simple_title:         "Análisis de una fecha a partir de una cadena"
 
-category:             "Bash"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/parsing-a-date-from-a-string.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:04:23.643823-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "In ấn thông tin gỡ lỗi"
 
-category:             "Bash"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/printing-debug-output.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-20T15:15:24.183018-07:00
 html_title:           "Arduino recipe: Getting the current date"
 simple_title:         "Getting the current date"
 
-category:             "Kotlin"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/getting-the-current-date.md"
 ---

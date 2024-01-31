@@ -4,7 +4,6 @@ date:                  2024-01-30T19:14:14.086391-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "सहयोगी अरेज़ का उपयोग करना"
 
-category:             "TypeScript"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/using-associative-arrays.md"
 changelog:

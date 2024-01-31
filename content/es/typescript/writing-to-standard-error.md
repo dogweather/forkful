@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Escribiendo en el error estándar"
 simple_title:         "Escribiendo en el error estándar"
 
-category:             "TypeScript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/writing-to-standard-error.md"
 ---

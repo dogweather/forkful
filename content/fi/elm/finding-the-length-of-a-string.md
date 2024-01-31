@@ -4,7 +4,6 @@ date:                  2024-01-20T17:47:31.205422-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon pituuden selvittäminen"
 
-category:             "Elm"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/finding-the-length-of-a-string.md"
 ---

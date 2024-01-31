@@ -4,7 +4,6 @@ date:                  2024-01-28T21:56:55.617265-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kiểm tra xem thư mục có tồn tại không"
 
-category:             "Python"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/checking-if-a-directory-exists.md"
 changelog:

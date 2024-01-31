@@ -4,7 +4,6 @@ date:                  2024-01-28T22:06:54.251152-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Afronden van getallen"
 
-category:             "PHP"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/rounding-numbers.md"
 changelog:

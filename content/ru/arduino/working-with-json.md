@@ -4,7 +4,6 @@ date:                  2024-01-29T00:04:52.824013-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с JSON"
 
-category:             "Arduino"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/arduino/working-with-json.md"
 changelog:

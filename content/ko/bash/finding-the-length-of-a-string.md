@@ -4,7 +4,6 @@ date:                  2024-01-20T17:47:10.729335-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "문자열의 길이 찾기"
 
-category:             "Bash"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/finding-the-length-of-a-string.md"

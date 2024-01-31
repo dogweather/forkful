@@ -4,7 +4,6 @@ date:                  2024-01-26T04:21:20.097088-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com TOML"
 
-category:             "Elm"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/working-with-toml.md"
 ---

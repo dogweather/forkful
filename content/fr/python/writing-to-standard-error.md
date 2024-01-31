@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Écrire dans l'erreur standard"
 simple_title:         "Écrire dans l'erreur standard"
 
-category:             "Python"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/writing-to-standard-error.md"
 ---

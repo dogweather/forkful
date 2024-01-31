@@ -4,7 +4,6 @@ date:                  2024-01-28T22:04:53.696607-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc một tệp văn bản"
 
-category:             "Clojure"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/clojure/reading-a-text-file.md"
 changelog:

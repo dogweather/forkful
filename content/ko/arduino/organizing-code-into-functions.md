@@ -4,7 +4,6 @@ date:                  2024-01-26T01:09:05.292494-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "코드를 함수로 구성하기"
 
-category:             "Arduino"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/organizing-code-into-functions.md"
 ---

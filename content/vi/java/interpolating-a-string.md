@@ -4,7 +4,6 @@ date:                  2024-01-28T22:02:29.822816-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nội suy chuỗi ký tự"
 
-category:             "Java"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/interpolating-a-string.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-20T18:03:53.930514-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lancement d'un nouveau projet"
 
-category:             "Lua"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/starting-a-new-project.md"
 ---

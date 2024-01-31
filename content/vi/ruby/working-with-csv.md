@@ -4,7 +4,6 @@ date:                  2024-01-28T22:10:37.058369-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với CSV"
 
-category:             "Ruby"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/ruby/working-with-csv.md"
 changelog:

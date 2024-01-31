@@ -4,7 +4,6 @@ date:                  2024-01-20T14:57:40.894771-07:00
 html_title:           "Gleam recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 
-category:             "Lua"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/checking-if-a-directory-exists.md"
 ---

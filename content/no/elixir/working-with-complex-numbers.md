@@ -4,7 +4,6 @@ date:                  2024-01-26T04:39:21.252207-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å jobbe med komplekse tall"
 
-category:             "Elixir"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/working-with-complex-numbers.md"
 ---

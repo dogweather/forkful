@@ -4,7 +4,6 @@ date:                  2024-01-20T15:31:08.369871-07:00
 html_title:           "Arduino: Tolka HTML"
 simple_title:         "Tolka HTML"
 
-category:             "Elm"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/parsing-html.md"
 ---

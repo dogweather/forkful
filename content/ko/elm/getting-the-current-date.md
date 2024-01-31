@@ -4,7 +4,6 @@ date:                  2024-01-20T15:14:03.170530-07:00
 html_title:           "Bash: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 
-category:             "Elm"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/getting-the-current-date.md"

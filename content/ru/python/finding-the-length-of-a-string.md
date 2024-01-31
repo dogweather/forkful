@@ -4,7 +4,6 @@ date:                  2024-01-28T23:58:09.371286-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск длины строки"
 
-category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/python/finding-the-length-of-a-string.md"
 changelog:

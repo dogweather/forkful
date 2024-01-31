@@ -4,7 +4,6 @@ date:                  2024-01-20T17:47:10.692622-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Finn lengden på en streng"
 
-category:             "Elm"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/finding-the-length-of-a-string.md"
 ---

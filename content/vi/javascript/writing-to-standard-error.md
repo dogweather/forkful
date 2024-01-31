@@ -4,7 +4,6 @@ date:                  2024-01-28T22:14:06.246726-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi vào lỗi chuẩn"
 
-category:             "Javascript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/writing-to-standard-error.md"
 changelog:

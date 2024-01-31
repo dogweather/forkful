@@ -4,7 +4,6 @@ date:                  2024-01-20T18:03:52.149756-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "새 프로젝트 시작하기"
 
-category:             "Kotlin"
 tag:                  "Getting Started"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/starting-a-new-project.md"

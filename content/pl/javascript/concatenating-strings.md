@@ -4,7 +4,6 @@ date:                  2024-01-20T17:35:01.305431-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Łączenie łańcuchów znaków"
 
-category:             "Javascript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/concatenating-strings.md"
 ---

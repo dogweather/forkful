@@ -4,7 +4,6 @@ date:                  2024-01-20T17:50:36.214974-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "文字列の補間"
 
-category:             "Fish Shell"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/interpolating-a-string.md"

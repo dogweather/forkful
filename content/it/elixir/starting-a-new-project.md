@@ -4,7 +4,6 @@ date:                  2024-01-20T18:03:11.058697-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Avvio di un nuovo progetto"
 
-category:             "Elixir"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/starting-a-new-project.md"
 ---

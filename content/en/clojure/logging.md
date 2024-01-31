@@ -4,7 +4,6 @@ date:                  2024-01-25T02:04:08.781778-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Logging"
 
-category:             "Clojure"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/logging.md"
 ---

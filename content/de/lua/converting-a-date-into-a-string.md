@@ -4,7 +4,6 @@ date:                  2024-01-20T17:37:04.916331-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Datum in einen String umwandeln"
 
-category:             "Lua"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/converting-a-date-into-a-string.md"
 ---

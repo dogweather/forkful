@@ -4,7 +4,6 @@ date:                  2024-01-28T22:06:43.970297-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm tròn số"
 
-category:             "Fish Shell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/rounding-numbers.md"
 changelog:

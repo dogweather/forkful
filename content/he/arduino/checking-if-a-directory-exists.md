@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: בדיקה האם ספרייה קיימת"
 simple_title:         "בדיקה האם ספרייה קיימת"
 
-category:             "Arduino"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/arduino/checking-if-a-directory-exists.md"
 ---

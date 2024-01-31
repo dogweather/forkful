@@ -4,7 +4,6 @@ date:                  2024-01-26T01:16:04.627935-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Organiser le code en fonctions"
 
-category:             "Rust"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/organizing-code-into-functions.md"
 ---

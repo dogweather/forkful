@@ -4,7 +4,6 @@ date:                  2024-01-26T03:38:45.356800-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Retirer les guillemets d'une chaîne"
 
-category:             "Elm"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/removing-quotes-from-a-string.md"
 ---

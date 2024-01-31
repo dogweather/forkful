@@ -4,7 +4,6 @@ date:                  2024-01-20T18:02:35.517985-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"
 
-category:             "Ruby"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/sending-an-http-request-with-basic-authentication.md"
 ---

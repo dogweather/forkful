@@ -4,7 +4,6 @@ date:                  2024-01-20T14:59:17.302907-07:00
 html_title:           "C#: Перевірка наявності директорії"
 simple_title:         "Перевірка наявності директорії"
 
-category:             "TypeScript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/checking-if-a-directory-exists.md"
 ---

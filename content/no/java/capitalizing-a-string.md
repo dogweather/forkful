@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Sette streng til store bokstaver"
 simple_title:         "Sette streng til store bokstaver"
 
-category:             "Java"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/capitalizing-a-string.md"
 ---

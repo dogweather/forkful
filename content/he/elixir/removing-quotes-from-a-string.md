@@ -4,7 +4,6 @@ date:                  2024-01-26T03:40:06.651952-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "הסרת מרכאות ממחרוזת"
 
-category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/removing-quotes-from-a-string.md"
 ---

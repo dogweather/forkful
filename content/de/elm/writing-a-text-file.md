@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Eine Textdatei schreiben"
 simple_title:         "Eine Textdatei schreiben"
 
-category:             "Elm"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/writing-a-text-file.md"
 ---

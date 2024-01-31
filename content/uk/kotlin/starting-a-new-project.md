@@ -4,7 +4,6 @@ date:                  2024-01-20T18:04:05.830649-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Починаємо новий проект"
 
-category:             "Kotlin"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/kotlin/starting-a-new-project.md"
 ---

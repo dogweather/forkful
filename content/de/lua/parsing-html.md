@@ -4,7 +4,6 @@ date:                  2024-01-20T15:32:33.737464-07:00
 html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
 
-category:             "Lua"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/parsing-html.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:50:55.510898-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "문자열 보간하기"
 
-category:             "Haskell"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/interpolating-a-string.md"

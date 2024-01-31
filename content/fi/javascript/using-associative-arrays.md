@@ -4,7 +4,6 @@ date:                  2024-01-30T19:12:04.755768-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Assosiatiivisten taulukoiden käyttö"
 
-category:             "Javascript"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/using-associative-arrays.md"
 changelog:

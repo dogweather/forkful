@@ -4,7 +4,6 @@ date:                  2024-01-20T15:14:37.691751-07:00
 html_title:           "Arduino recipe: Getting the current date"
 simple_title:         "Getting the current date"
 
-category:             "Haskell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/getting-the-current-date.md"
 ---

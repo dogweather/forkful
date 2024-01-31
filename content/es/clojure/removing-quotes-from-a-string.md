@@ -4,7 +4,6 @@ date:                  2024-01-26T03:38:35.026792-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eliminando comillas de una cadena"
 
-category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/removing-quotes-from-a-string.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:50:51.573034-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolación de cadenas de texto"
 
-category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/interpolating-a-string.md"
 ---

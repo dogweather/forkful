@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Lavorare con YAML"
 simple_title:         "Lavorare con YAML"
 
-category:             "Elixir"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/working-with-yaml.md"
 ---

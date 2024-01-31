@@ -4,7 +4,6 @@ date:                  2024-01-27T16:21:19.466656-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Редагування файлів безпосередньо за допомогою командного рядка одним рядком"
 
-category:             "PowerShell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/powershell/editing-files-in-place-with-cli-one-liners.md"
 ---

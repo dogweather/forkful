@@ -4,7 +4,6 @@ date:                  2024-01-26T03:47:27.474290-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用调试器"
 
-category:             "Arduino"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/using-a-debugger.md"
 ---

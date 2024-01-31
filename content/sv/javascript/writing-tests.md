@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Skriva tester"
 simple_title:         "Skriva tester"
 
-category:             "Javascript"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/writing-tests.md"
 ---

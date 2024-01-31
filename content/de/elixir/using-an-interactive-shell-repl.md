@@ -4,7 +4,6 @@ date:                  2024-01-26T04:12:55.634469-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nutzung einer interaktiven Shell (REPL)"
 
-category:             "Elixir"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/using-an-interactive-shell-repl.md"
 ---

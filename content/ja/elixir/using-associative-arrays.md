@@ -4,7 +4,6 @@ date:                  2024-01-30T19:10:51.416443-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "連想配列の使用"
 
-category:             "Elixir"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/using-associative-arrays.md"
 changelog:

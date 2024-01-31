@@ -4,7 +4,6 @@ date:                  2024-01-29T00:00:03.849912-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Разбор HTML"
 
-category:             "Clojure"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/clojure/parsing-html.md"
 changelog:

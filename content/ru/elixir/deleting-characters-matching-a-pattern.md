@@ -4,7 +4,6 @@ date:                  2024-01-28T23:56:53.487401-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление символов, соответствующих шаблону"
 
-category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elixir/deleting-characters-matching-a-pattern.md"
 changelog:

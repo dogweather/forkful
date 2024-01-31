@@ -4,7 +4,6 @@ date:                  2024-01-20T15:38:21.384518-07:00
 html_title:           "Arduino recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 
-category:             "Swift"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/parsing-a-date-from-a-string.md"
 ---

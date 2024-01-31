@@ -4,7 +4,6 @@ date:                  2024-01-25T03:00:01.692945-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Rounding numbers"
 
-category:             "Ruby"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/rounding-numbers.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T03:45:23.224908-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "संख्याओं को पूर्णांक बनाना"
 
-category:             "Clojure"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/rounding-numbers.md"
 ---

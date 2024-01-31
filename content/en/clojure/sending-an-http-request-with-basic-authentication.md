@@ -4,7 +4,6 @@ date:                  2024-01-20T18:01:16.140317-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Sending an HTTP request with basic authentication"
 
-category:             "Clojure"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/sending-an-http-request-with-basic-authentication.md"
 ---

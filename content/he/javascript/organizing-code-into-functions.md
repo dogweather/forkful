@@ -4,7 +4,6 @@ date:                  2024-01-26T01:12:03.163642-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "סידור קוד לתוך פונקציות"
 
-category:             "Javascript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/javascript/organizing-code-into-functions.md"
 ---

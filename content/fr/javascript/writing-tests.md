@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Rédaction de tests"
 simple_title:         "Rédaction de tests"
 
-category:             "Javascript"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/writing-tests.md"
 ---

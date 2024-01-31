@@ -4,7 +4,6 @@ date:                  2024-01-26T03:46:56.343049-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrunding av tall"
 
-category:             "Rust"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/rounding-numbers.md"
 ---

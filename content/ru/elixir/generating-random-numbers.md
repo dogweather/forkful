@@ -4,7 +4,6 @@ date:                  2024-01-28T23:59:01.068786-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Генерация случайных чисел"
 
-category:             "Elixir"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elixir/generating-random-numbers.md"
 changelog:

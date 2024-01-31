@@ -4,7 +4,6 @@ date:                  2024-01-26T04:08:56.813966-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å bruke en debugger"
 
-category:             "Python"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/using-a-debugger.md"
 ---

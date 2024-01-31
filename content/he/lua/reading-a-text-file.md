@@ -4,7 +4,6 @@ date:                  2024-01-20T17:55:12.905706-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "קריאת קובץ טקסט"
 
-category:             "Lua"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/lua/reading-a-text-file.md"
 ---

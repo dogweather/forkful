@@ -4,7 +4,6 @@ date:                  2024-01-26T04:23:27.663270-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con TOML"
 
-category:             "Javascript"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/working-with-toml.md"
 ---

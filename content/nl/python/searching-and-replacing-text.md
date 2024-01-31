@@ -4,7 +4,6 @@ date:                  2024-01-28T22:07:08.816746-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tekst zoeken en vervangen"
 
-category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/python/searching-and-replacing-text.md"
 changelog:

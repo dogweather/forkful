@@ -4,7 +4,6 @@ date:                  2024-01-20T17:57:30.337747-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Suchen und Ersetzen von Text"
 
-category:             "Elm"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/searching-and-replacing-text.md"
 ---

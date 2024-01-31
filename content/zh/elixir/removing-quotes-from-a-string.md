@@ -4,7 +4,6 @@ date:                  2024-01-26T03:38:40.842944-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "从字符串中移除引号"
 
-category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/removing-quotes-from-a-string.md"
 ---

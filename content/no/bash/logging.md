@@ -4,7 +4,6 @@ date:                  2024-01-26T00:59:28.183435-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Loggføring"
 
-category:             "Bash"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/logging.md"
 ---

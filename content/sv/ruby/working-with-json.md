@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Arbeta med JSON"
 simple_title:         "Arbeta med JSON"
 
-category:             "Ruby"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/working-with-json.md"
 ---

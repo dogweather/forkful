@@ -4,7 +4,6 @@ date:                  2024-01-26T04:36:27.615186-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XMLの扱い方"
 
-category:             "Swift"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/working-with-xml.md"
 ---

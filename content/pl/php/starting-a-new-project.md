@@ -4,7 +4,6 @@ date:                  2024-01-20T18:04:10.110164-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
 
-category:             "PHP"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/starting-a-new-project.md"
 ---

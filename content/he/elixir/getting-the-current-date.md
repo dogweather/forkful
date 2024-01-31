@@ -4,7 +4,6 @@ date:                  2024-01-20T15:14:03.998868-07:00
 html_title:           "C: קבלת התאריך הנוכחי"
 simple_title:         "קבלת התאריך הנוכחי"
 
-category:             "Elixir"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/getting-the-current-date.md"
 ---

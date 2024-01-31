@@ -4,7 +4,6 @@ date:                  2024-01-20T15:32:42.901630-07:00
 html_title:           "Bash: Analisi dell'HTML"
 simple_title:         "Analisi dell'HTML"
 
-category:             "Lua"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/lua/parsing-html.md"
 ---

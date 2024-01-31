@@ -4,7 +4,6 @@ date:                  2024-01-20T17:37:52.230301-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "将日期转换为字符串"
 
-category:             "TypeScript"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/converting-a-date-into-a-string.md"

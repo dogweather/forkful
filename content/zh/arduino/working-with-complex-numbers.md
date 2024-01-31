@@ -4,7 +4,6 @@ date:                  2024-01-26T04:36:52.916098-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理复数"
 
-category:             "Arduino"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/working-with-complex-numbers.md"
 ---

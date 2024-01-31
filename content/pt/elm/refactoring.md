@@ -4,7 +4,6 @@ date:                  2024-01-26T01:18:18.802559-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refatoração"
 
-category:             "Elm"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/refactoring.md"
 ---

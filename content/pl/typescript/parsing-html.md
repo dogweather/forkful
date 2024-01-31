@@ -4,7 +4,6 @@ date:                  2024-01-20T15:34:39.122013-07:00
 html_title:           "Bash: Przetwarzanie HTML"
 simple_title:         "Przetwarzanie HTML"
 
-category:             "TypeScript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/parsing-html.md"
 ---

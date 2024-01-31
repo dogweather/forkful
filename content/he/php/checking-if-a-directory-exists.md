@@ -4,7 +4,6 @@ date:                  2024-01-20T14:58:09.111306-07:00
 html_title:           "Gleam: בדיקה האם תיקייה קיימת"
 simple_title:         "בדיקה האם תיקייה קיימת"
 
-category:             "PHP"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/php/checking-if-a-directory-exists.md"
 ---

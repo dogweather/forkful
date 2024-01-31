@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "C recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 
-category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/capitalizing-a-string.md"
 ---

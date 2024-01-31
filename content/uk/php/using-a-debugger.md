@@ -4,7 +4,6 @@ date:                  2024-01-26T04:09:15.934021-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання дебагера"
 
-category:             "PHP"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/php/using-a-debugger.md"
 ---

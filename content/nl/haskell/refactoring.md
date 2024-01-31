@@ -4,7 +4,6 @@ date:                  2024-01-28T22:06:02.188777-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactoring"
 
-category:             "Haskell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/refactoring.md"
 changelog:

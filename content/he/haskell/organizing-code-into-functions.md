@@ -4,7 +4,6 @@ date:                  2024-01-26T01:10:48.352630-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "סידור קוד לתוך פונקציות"
 
-category:             "Haskell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/organizing-code-into-functions.md"
 ---

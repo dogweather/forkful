@@ -4,7 +4,6 @@ date:                  2024-01-28T22:06:10.928067-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Quotes verwijderen uit een string"
 
-category:             "Fish Shell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/removing-quotes-from-a-string.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-26T03:47:44.253343-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "संख्याओं को पूर्णांक बनाना"
 
-category:             "Rust"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/rust/rounding-numbers.md"
 ---

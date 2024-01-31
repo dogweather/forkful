@@ -4,7 +4,6 @@ date:                  2024-01-26T03:42:19.545967-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eliminando comillas de una cadena"
 
-category:             "Rust"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/removing-quotes-from-a-string.md"
 ---

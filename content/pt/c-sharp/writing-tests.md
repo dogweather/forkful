@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Escrevendo testes"
 simple_title:         "Escrevendo testes"
 
-category:             "C#"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/writing-tests.md"
 ---

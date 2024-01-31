@@ -4,7 +4,6 @@ date:                  2024-01-20T17:32:43.568367-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Confronto tra due date"
 
-category:             "Fish Shell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/comparing-two-dates.md"
 ---

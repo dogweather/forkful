@@ -4,7 +4,6 @@ date:                  2024-01-30T19:14:07.016841-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "सहयोगी अरेज़ का उपयोग करना"
 
-category:             "Ruby"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/using-associative-arrays.md"
 changelog:

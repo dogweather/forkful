@@ -4,7 +4,6 @@ date:                  2024-01-29T00:01:42.291805-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округление чисел"
 
-category:             "Bash"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/bash/rounding-numbers.md"
 changelog:

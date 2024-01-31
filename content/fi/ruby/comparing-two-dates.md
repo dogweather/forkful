@@ -4,7 +4,6 @@ date:                  2024-01-20T17:34:03.021498-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Kahden päivämäärän vertailu"
 
-category:             "Ruby"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/comparing-two-dates.md"
 ---

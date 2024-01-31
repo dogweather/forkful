@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Att göra en sträng versal"
 simple_title:         "Att göra en sträng versal"
 
-category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/capitalizing-a-string.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:03:33.722457-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML Parsen"
 
-category:             "Bash"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/parsing-html.md"
 changelog:

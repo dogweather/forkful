@@ -4,7 +4,6 @@ date:                  2024-01-26T04:13:06.753925-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במעטפת אינטראקטיבית (REPL)"
 
-category:             "C#"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/using-an-interactive-shell-repl.md"
 ---

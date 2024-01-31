@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: 텍스트 파일 작성하기"
 simple_title:         "텍스트 파일 작성하기"
 
-category:             "Go"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/writing-a-text-file.md"

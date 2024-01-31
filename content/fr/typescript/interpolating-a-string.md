@@ -4,7 +4,6 @@ date:                  2024-01-20T17:51:38.160284-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolation de chaînes de caractères"
 
-category:             "TypeScript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/interpolating-a-string.md"
 ---

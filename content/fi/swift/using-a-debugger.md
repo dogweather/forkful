@@ -4,7 +4,6 @@ date:                  2024-01-26T04:10:45.257896-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debuggerin käyttö"
 
-category:             "Swift"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/using-a-debugger.md"
 ---

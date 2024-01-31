@@ -4,7 +4,6 @@ date:                  2024-01-26T00:59:08.148289-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "טיפול בשגיאות"
 
-category:             "Rust"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/handling-errors.md"
 ---

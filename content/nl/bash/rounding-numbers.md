@@ -4,7 +4,6 @@ date:                  2024-01-28T22:06:41.332875-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Afronden van getallen"
 
-category:             "Bash"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/rounding-numbers.md"
 changelog:

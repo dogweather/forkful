@@ -4,7 +4,6 @@ date:                  2024-01-26T01:16:45.741107-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktorering"
 
-category:             "Arduino"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/refactoring.md"
 ---

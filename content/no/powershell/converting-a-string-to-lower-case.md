@@ -4,7 +4,6 @@ date:                  2024-01-20T17:39:23.866101-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konvertere en streng til små bokstaver"
 
-category:             "PowerShell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/converting-a-string-to-lower-case.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Uso de expresiones regulares"
 simple_title:         "Uso de expresiones regulares"
 
-category:             "PHP"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/using-regular-expressions.md"
 ---

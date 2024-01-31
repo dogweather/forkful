@@ -4,7 +4,6 @@ date:                  2024-01-26T01:10:07.693436-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organizacja kodu w funkcje"
 
-category:             "Elixir"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/organizing-code-into-functions.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T15:14:09.738123-07:00
 html_title:           "C: वर्तमान तारीख प्राप्त करना"
 simple_title:         "वर्तमान तारीख प्राप्त करना"
 
-category:             "C#"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/getting-the-current-date.md"
 ---

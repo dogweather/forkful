@@ -4,7 +4,6 @@ date:                  2024-01-20T15:13:30.320564-07:00
 html_title:           "Bash: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 
-category:             "C"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/getting-the-current-date.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-27T16:21:28.871509-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "מניפולציה של קבצים באמצעות שורת פקודה חד-שורתית"
 
-category:             "Fish Shell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/manipulating-files-with-cli-one-liners.md"
 ---

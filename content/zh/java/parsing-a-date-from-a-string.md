@@ -4,7 +4,6 @@ date:                  2024-01-20T15:36:39.897082-07:00
 html_title:           "Arduino: 从字符串解析日期"
 simple_title:         "从字符串解析日期"
 
-category:             "Java"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/parsing-a-date-from-a-string.md"

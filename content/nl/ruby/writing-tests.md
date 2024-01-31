@@ -4,7 +4,6 @@ date:                  2024-01-28T22:13:36.206298-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tests Schrijven"
 
-category:             "Ruby"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/writing-tests.md"
 changelog:

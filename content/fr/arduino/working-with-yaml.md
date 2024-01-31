@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Manipulation des fichiers YAML"
 simple_title:         "Manipulation des fichiers YAML"
 
-category:             "Arduino"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/working-with-yaml.md"
 ---

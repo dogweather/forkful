@@ -4,7 +4,6 @@ date:                  2024-01-20T17:56:52.640255-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Komennoriviparametrien lukeminen"
 
-category:             "PowerShell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/reading-command-line-arguments.md"
 ---

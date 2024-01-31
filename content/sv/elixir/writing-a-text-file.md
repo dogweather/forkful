@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Skriva en textfil"
 simple_title:         "Skriva en textfil"
 
-category:             "Elixir"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/writing-a-text-file.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T15:13:15.358492-07:00
 html_title:           "Bash: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 
-category:             "C++"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/getting-the-current-date.md"
 ---

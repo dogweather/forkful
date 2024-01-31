@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Bruk av regulære uttrykk"
 simple_title:         "Bruk av regulære uttrykk"
 
-category:             "Bash"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/using-regular-expressions.md"
 ---

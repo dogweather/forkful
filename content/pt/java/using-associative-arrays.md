@@ -4,7 +4,6 @@ date:                  2024-01-30T19:11:42.308637-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando arrays associativos"
 
-category:             "Java"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/using-associative-arrays.md"
 changelog:

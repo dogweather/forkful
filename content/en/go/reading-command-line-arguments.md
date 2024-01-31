@@ -4,7 +4,6 @@ date:                  2024-01-20T17:55:54.432052-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Reading command line arguments"
 
-category:             "Go"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/reading-command-line-arguments.md"
 ---

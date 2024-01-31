@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
 
-category:             "Elixir"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/checking-if-a-directory-exists.md"
 ---

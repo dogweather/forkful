@@ -4,7 +4,6 @@ date:                  2024-01-20T15:16:34.340916-07:00
 html_title:           "Bash: 获取当前日期"
 simple_title:         "获取当前日期"
 
-category:             "Ruby"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/getting-the-current-date.md"

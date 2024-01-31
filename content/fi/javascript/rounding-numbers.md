@@ -4,7 +4,6 @@ date:                  2024-01-26T03:46:05.694752-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Numerojen pyöristäminen"
 
-category:             "Javascript"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/rounding-numbers.md"
 ---

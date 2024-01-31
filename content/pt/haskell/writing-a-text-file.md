@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Escrevendo um arquivo de texto"
 simple_title:         "Escrevendo um arquivo de texto"
 
-category:             "Haskell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/writing-a-text-file.md"
 ---

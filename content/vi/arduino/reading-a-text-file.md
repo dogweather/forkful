@@ -4,7 +4,6 @@ date:                  2024-01-28T22:05:08.948673-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc một tệp văn bản"
 
-category:             "Arduino"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/reading-a-text-file.md"
 changelog:

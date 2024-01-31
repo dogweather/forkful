@@ -4,7 +4,6 @@ date:                  2024-01-28T22:07:38.925182-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tìm kiếm và thay thế văn bản"
 
-category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/lua/searching-and-replacing-text.md"
 changelog:

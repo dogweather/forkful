@@ -4,7 +4,6 @@ date:                  2024-01-20T17:54:34.988032-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lendo um arquivo de texto"
 
-category:             "Kotlin"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/reading-a-text-file.md"
 ---

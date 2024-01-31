@@ -4,7 +4,6 @@ date:                  2024-01-20T17:55:42.729081-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Komennoriviparametrien lukeminen"
 
-category:             "C++"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/reading-command-line-arguments.md"
 ---

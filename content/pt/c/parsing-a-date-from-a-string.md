@@ -4,7 +4,6 @@ date:                  2024-01-20T15:35:01.365611-07:00
 html_title:           "Arduino: Analisando uma data a partir de uma string"
 simple_title:         "Analisando uma data a partir de uma string"
 
-category:             "C"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/parsing-a-date-from-a-string.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:07:54.660899-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tekst zoeken en vervangen"
 
-category:             "Swift"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/swift/searching-and-replacing-text.md"
 changelog:

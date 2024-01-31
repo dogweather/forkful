@@ -4,7 +4,6 @@ date:                  2024-01-28T23:01:43.161824-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sắp xếp mã lập trình vào trong hàm"
 
-category:             "Fish Shell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/organizing-code-into-functions.md"
 changelog:

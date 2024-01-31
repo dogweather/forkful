@@ -4,7 +4,6 @@ date:                  2024-01-26T03:43:10.488564-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "数値の丸め処理"
 
-category:             "Bash"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/rounding-numbers.md"
 ---

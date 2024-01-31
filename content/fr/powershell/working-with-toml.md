@@ -4,7 +4,6 @@ date:                  2024-01-26T04:24:44.909709-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec TOML"
 
-category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/working-with-toml.md"
 ---

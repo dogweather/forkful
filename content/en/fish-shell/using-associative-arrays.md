@@ -4,7 +4,6 @@ date:                  2024-01-30T18:57:10.590524-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Using associative arrays"
 
-category:             "Fish Shell"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/using-associative-arrays.md"
 ---

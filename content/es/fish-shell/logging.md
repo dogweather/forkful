@@ -4,7 +4,6 @@ date:                  2024-01-26T01:03:27.732027-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Registro de Actividades en Programación"
 
-category:             "Fish Shell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/logging.md"
 ---

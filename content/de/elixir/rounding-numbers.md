@@ -4,7 +4,6 @@ date:                  2024-01-26T03:43:49.116126-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zahlen runden"
 
-category:             "Elixir"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/rounding-numbers.md"
 ---

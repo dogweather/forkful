@@ -4,7 +4,6 @@ date:                  2024-01-20T15:37:42.952022-07:00
 html_title:           "Arduino: Analyse d'une date à partir d'une chaîne de caractères"
 simple_title:         "Analyse d'une date à partir d'une chaîne de caractères"
 
-category:             "PHP"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/parsing-a-date-from-a-string.md"
 ---

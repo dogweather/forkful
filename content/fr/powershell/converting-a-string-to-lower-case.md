@@ -4,7 +4,6 @@ date:                  2024-01-20T17:39:04.181923-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Conversion d'une chaîne de caractères en minuscules"
 
-category:             "PowerShell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/converting-a-string-to-lower-case.md"
 ---

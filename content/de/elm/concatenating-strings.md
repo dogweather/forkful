@@ -4,7 +4,6 @@ date:                  2024-01-20T17:34:34.275788-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Zeichenketten verknüpfen"
 
-category:             "Elm"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/concatenating-strings.md"
 ---

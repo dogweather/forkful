@@ -4,7 +4,6 @@ date:                  2024-01-20T14:58:28.114853-07:00
 html_title:           "Gleam: Comprobando si existe un directorio"
 simple_title:         "Comprobando si existe un directorio"
 
-category:             "Rust"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/checking-if-a-directory-exists.md"
 ---

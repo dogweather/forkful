@@ -4,7 +4,6 @@ date:                  2024-01-20T17:33:14.787238-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Comparing two dates"
 
-category:             "Lua"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/comparing-two-dates.md"
 ---

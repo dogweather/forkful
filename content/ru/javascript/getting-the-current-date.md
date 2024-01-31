@@ -4,7 +4,6 @@ date:                  2024-01-28T23:58:38.511565-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Получение текущей даты"
 
-category:             "Javascript"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/javascript/getting-the-current-date.md"
 changelog:

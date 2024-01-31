@@ -4,7 +4,6 @@ date:                  2024-01-28T22:00:42.696159-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chỉnh sửa file tại chỗ với câu lệnh CLI ngắn gọn"
 
-category:             "PowerShell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/powershell/editing-files-in-place-with-cli-one-liners.md"
 changelog:

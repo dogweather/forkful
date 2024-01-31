@@ -4,7 +4,6 @@ date:                  2024-01-26T03:42:35.711953-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열에서 따옴표 제거하기"
 
-category:             "Swift"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/removing-quotes-from-a-string.md"
 ---

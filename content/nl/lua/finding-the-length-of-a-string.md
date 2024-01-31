@@ -4,7 +4,6 @@ date:                  2024-01-28T22:00:18.919233-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "De lengte van een string vinden"
 
-category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/finding-the-length-of-a-string.md"
 changelog:

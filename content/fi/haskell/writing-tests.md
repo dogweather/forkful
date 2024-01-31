@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Testien kirjoittaminen"
 simple_title:         "Testien kirjoittaminen"
 
-category:             "Haskell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/writing-tests.md"
 ---

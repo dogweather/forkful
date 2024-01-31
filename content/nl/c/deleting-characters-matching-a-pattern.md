@@ -4,7 +4,6 @@ date:                  2024-01-28T21:58:22.738462-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Karakters verwijderen die overeenkomen met een patroon"
 
-category:             "C"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/deleting-characters-matching-a-pattern.md"
 changelog:

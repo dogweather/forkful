@@ -4,7 +4,6 @@ date:                  2024-01-28T23:57:20.507344-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление символов, соответствующих шаблону"
 
-category:             "Javascript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/javascript/deleting-characters-matching-a-pattern.md"
 changelog:

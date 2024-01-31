@@ -4,7 +4,6 @@ date:                  2024-01-20T15:33:59.591304-07:00
 html_title:           "Arduino: Tolka HTML"
 simple_title:         "Tolka HTML"
 
-category:             "Rust"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/parsing-html.md"
 ---

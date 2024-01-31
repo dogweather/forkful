@@ -4,7 +4,6 @@ date:                  2024-01-20T17:59:21.959952-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP 요청 보내기"
 
-category:             "Elixir"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/sending-an-http-request.md"

@@ -4,7 +4,6 @@ date:                  2024-01-29T00:02:33.285478-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Отправка HTTP-запроса"
 
-category:             "PHP"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/php/sending-an-http-request.md"
 changelog:

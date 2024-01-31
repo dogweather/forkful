@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "C: 使用正则表达式"
 simple_title:         "使用正则表达式"
 
-category:             "Ruby"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/using-regular-expressions.md"

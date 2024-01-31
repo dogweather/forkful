@@ -4,7 +4,6 @@ date:                  2024-01-28T23:57:43.543509-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Загрузка веб-страницы"
 
-category:             "Fish Shell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/fish-shell/downloading-a-web-page.md"
 changelog:

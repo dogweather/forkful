@@ -4,7 +4,6 @@ date:                  2024-01-26T04:13:28.258862-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "इंटरैक्टिव शेल (REPL) का उपयोग"
 
-category:             "C#"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/using-an-interactive-shell-repl.md"
 ---

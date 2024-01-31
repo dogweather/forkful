@@ -4,7 +4,6 @@ date:                  2024-01-20T15:35:55.779124-07:00
 html_title:           "Arduino: Estrarre una data da una stringa"
 simple_title:         "Estrarre una data da una stringa"
 
-category:             "Elm"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/parsing-a-date-from-a-string.md"
 ---

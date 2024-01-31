@@ -4,7 +4,6 @@ date:                  2024-01-26T04:37:45.048903-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理复数"
 
-category:             "C"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/working-with-complex-numbers.md"
 ---

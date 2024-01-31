@@ -4,7 +4,6 @@ date:                  2024-01-26T03:49:55.933864-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å bruke en feilsøker"
 
-category:             "Kotlin"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/using-a-debugger.md"
 ---

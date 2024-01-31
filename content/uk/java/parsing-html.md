@@ -4,7 +4,6 @@ date:                  2024-01-20T15:32:11.518269-07:00
 html_title:           "Arduino: Парсинг HTML"
 simple_title:         "Парсинг HTML"
 
-category:             "Java"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/parsing-html.md"
 ---

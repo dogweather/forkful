@@ -4,7 +4,6 @@ date:                  2024-01-20T17:35:54.182376-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konwersja daty na łańcuch znaków"
 
-category:             "Bash"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/converting-a-date-into-a-string.md"
 ---

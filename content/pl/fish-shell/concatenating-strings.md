@@ -4,7 +4,6 @@ date:                  2024-01-20T17:34:35.722202-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Łączenie łańcuchów znaków"
 
-category:             "Fish Shell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/concatenating-strings.md"
 ---

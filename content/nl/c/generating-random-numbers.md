@@ -4,7 +4,6 @@ date:                  2024-01-28T22:01:04.124285-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Willekeurige getallen genereren"
 
-category:             "C"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/generating-random-numbers.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-20T15:35:08.019179-07:00
 html_title:           "Arduino: Datum aus einem String parsen"
 simple_title:         "Datum aus einem String parsen"
 
-category:             "C++"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/parsing-a-date-from-a-string.md"
 ---

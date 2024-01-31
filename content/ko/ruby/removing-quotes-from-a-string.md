@@ -4,7 +4,6 @@ date:                  2024-01-26T03:41:40.412628-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열에서 따옴표 제거하기"
 
-category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/removing-quotes-from-a-string.md"
 ---

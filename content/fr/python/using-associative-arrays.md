@@ -4,7 +4,6 @@ date:                  2024-01-30T19:12:39.462667-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des tableaux associatifs"
 
-category:             "Python"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/using-associative-arrays.md"
 changelog:

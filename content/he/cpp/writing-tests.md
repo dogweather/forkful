@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: כתיבת בדיקות"
 simple_title:         "כתיבת בדיקות"
 
-category:             "C++"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/writing-tests.md"
 ---

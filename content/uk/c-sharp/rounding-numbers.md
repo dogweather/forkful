@@ -4,7 +4,6 @@ date:                  2024-01-26T03:44:01.485084-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округлення чисел"
 
-category:             "C#"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/rounding-numbers.md"
 ---

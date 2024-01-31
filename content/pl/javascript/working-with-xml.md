@@ -4,7 +4,6 @@ date:                  2024-01-26T04:32:40.759514-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z XML"
 
-category:             "Javascript"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/working-with-xml.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T04:16:17.073010-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "इंटरैक्टिव शेल (REPL) का उपयोग"
 
-category:             "Javascript"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/using-an-interactive-shell-repl.md"
 ---

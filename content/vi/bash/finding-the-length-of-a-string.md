@@ -4,7 +4,6 @@ date:                  2024-01-28T22:00:28.799151-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tìm chiều dài của một chuỗi ký tự"
 
-category:             "Bash"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/finding-the-length-of-a-string.md"
 changelog:

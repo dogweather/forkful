@@ -4,7 +4,6 @@ date:                  2024-01-28T21:59:01.005481-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xóa các ký tự phù hợp với một mẫu"
 
-category:             "Javascript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/deleting-characters-matching-a-pattern.md"
 changelog:

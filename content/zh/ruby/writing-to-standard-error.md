@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: 写入标准错误"
 simple_title:         "写入标准错误"
 
-category:             "Ruby"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/writing-to-standard-error.md"

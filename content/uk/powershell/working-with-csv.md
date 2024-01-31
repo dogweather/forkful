@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Робота з CSV файлами"
 simple_title:         "Робота з CSV файлами"
 
-category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/powershell/working-with-csv.md"
 ---

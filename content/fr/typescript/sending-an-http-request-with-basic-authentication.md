@@ -4,7 +4,6 @@ date:                  2024-01-20T18:02:47.319162-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Envoi d'une requête HTTP avec authentification de base"
 
-category:             "TypeScript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/sending-an-http-request-with-basic-authentication.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-27T20:33:58.051813-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generazione di numeri casuali"
 
-category:             "Haskell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/generating-random-numbers.md"
 ---

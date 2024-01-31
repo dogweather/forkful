@@ -4,7 +4,6 @@ date:                  2024-01-20T17:31:44.821523-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Beräkna ett datum i framtiden eller förflutenheten"
 
-category:             "Ruby"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/calculating-a-date-in-the-future-or-past.md"
 ---

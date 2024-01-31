@@ -4,7 +4,6 @@ date:                  2024-01-26T01:08:37.202001-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Логування"
 
-category:             "Swift"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/logging.md"
 ---

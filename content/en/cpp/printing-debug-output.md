@@ -4,7 +4,6 @@ date:                  2024-01-20T17:52:07.355145-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Printing debug output"
 
-category:             "C++"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/printing-debug-output.md"
 ---

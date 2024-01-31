@@ -4,7 +4,6 @@ date:                  2024-01-20T14:56:57.622248-07:00
 html_title:           "Gleam: Onko hakemisto olemassa? Tarkistaminen"
 simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
 
-category:             "Javascript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/checking-if-a-directory-exists.md"
 ---

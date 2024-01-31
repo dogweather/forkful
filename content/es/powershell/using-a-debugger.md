@@ -4,7 +4,6 @@ date:                  2024-01-26T04:08:41.031083-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando un depurador"
 
-category:             "PowerShell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/powershell/using-a-debugger.md"
 ---

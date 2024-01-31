@@ -4,7 +4,6 @@ date:                  2024-01-20T14:57:09.003089-07:00
 html_title:           "Gleam: Comprobando si existe un directorio"
 simple_title:         "Comprobando si existe un directorio"
 
-category:             "Java"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/checking-if-a-directory-exists.md"
 ---

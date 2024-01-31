@@ -4,7 +4,6 @@ date:                  2024-01-20T17:34:04.114388-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "두 날짜 비교하기"
 
-category:             "Ruby"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/comparing-two-dates.md"

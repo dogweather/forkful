@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Trabalhando com CSV"
 simple_title:         "Trabalhando com CSV"
 
-category:             "Lua"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/working-with-csv.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:56:55.117872-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "קריאת פרמטרים משורת הפקודה"
 
-category:             "Java"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/reading-command-line-arguments.md"
 ---

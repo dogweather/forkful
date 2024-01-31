@@ -4,7 +4,6 @@ date:                  2024-01-26T04:10:58.945322-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando un depurador"
 
-category:             "TypeScript"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/using-a-debugger.md"
 ---

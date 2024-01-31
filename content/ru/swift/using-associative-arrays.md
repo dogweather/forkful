@@ -4,7 +4,6 @@ date:                  2024-01-30T19:13:18.714205-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование ассоциативных массивов"
 
-category:             "Swift"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/swift/using-associative-arrays.md"
 changelog:

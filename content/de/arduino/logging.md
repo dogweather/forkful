@@ -4,7 +4,6 @@ date:                  2024-01-26T00:58:30.878939-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Protokollierung"
 
-category:             "Arduino"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/logging.md"
 ---

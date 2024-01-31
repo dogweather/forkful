@@ -4,7 +4,6 @@ date:                  2024-01-26T03:44:22.228952-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zaokrąglanie liczb"
 
-category:             "Fish Shell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/rounding-numbers.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T00:49:32.643247-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Hantering av fel"
 
-category:             "C++"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/handling-errors.md"
 ---

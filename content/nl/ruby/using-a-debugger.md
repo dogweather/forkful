@@ -4,7 +4,6 @@ date:                  2024-01-28T22:08:45.932461-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een debugger gebruiken"
 
-category:             "Ruby"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/using-a-debugger.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:54:16.978763-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Odczytywanie pliku tekstowego"
 
-category:             "Fish Shell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/reading-a-text-file.md"
 ---

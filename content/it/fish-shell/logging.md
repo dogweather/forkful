@@ -4,7 +4,6 @@ date:                  2024-01-26T01:04:06.386758-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Registrazione Eventi (Logging)"
 
-category:             "Fish Shell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/logging.md"
 ---

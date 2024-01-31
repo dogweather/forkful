@@ -4,7 +4,6 @@ date:                  2024-01-20T17:33:08.659409-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日付を比較する"
 
-category:             "Haskell"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/comparing-two-dates.md"

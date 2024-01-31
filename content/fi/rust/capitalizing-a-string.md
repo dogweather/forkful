@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
 simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 
-category:             "Rust"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/capitalizing-a-string.md"
 ---

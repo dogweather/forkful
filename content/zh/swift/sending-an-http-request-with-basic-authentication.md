@@ -4,7 +4,6 @@ date:                  2024-01-20T18:02:53.456488-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "使用基本认证发送 HTTP 请求"
 
-category:             "Swift"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/sending-an-http-request-with-basic-authentication.md"

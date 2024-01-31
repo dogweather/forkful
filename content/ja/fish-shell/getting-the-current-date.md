@@ -4,7 +4,6 @@ date:                  2024-01-20T15:14:11.533361-07:00
 html_title:           "Bash: 現在の日付を取得する"
 simple_title:         "現在の日付を取得する"
 
-category:             "Fish Shell"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/getting-the-current-date.md"

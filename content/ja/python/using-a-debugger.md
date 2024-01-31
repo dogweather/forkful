@@ -4,7 +4,6 @@ date:                  2024-01-26T04:09:15.587095-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "デバッガーの使い方"
 
-category:             "Python"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/using-a-debugger.md"
 ---

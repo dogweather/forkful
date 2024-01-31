@@ -4,7 +4,6 @@ date:                  2024-01-28T22:06:18.483098-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactoring"
 
-category:             "Bash"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/refactoring.md"
 changelog:

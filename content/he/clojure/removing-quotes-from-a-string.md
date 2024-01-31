@@ -4,7 +4,6 @@ date:                  2024-01-26T03:42:05.328840-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "הסרת מרכאות ממחרוזת"
 
-category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/removing-quotes-from-a-string.md"
 ---

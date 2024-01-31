@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Einsatz von regulären Ausdrücken"
 simple_title:         "Einsatz von regulären Ausdrücken"
 
-category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/using-regular-expressions.md"
 ---

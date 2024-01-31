@@ -4,7 +4,6 @@ date:                  2024-01-20T17:33:52.840619-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "두 날짜 비교하기"
 
-category:             "Lua"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/comparing-two-dates.md"

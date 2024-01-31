@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Skriva tester"
 simple_title:         "Skriva tester"
 
-category:             "Clojure"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/writing-tests.md"
 ---

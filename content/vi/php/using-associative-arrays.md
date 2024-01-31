@@ -4,7 +4,6 @@ date:                  2024-01-30T19:12:34.144332-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng mảng liên kết"
 
-category:             "PHP"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/php/using-associative-arrays.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:45:21.873201-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "सबस्ट्रिंग्स निकालना"
 
-category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/extracting-substrings.md"
 ---

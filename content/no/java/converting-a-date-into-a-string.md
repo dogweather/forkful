@@ -4,7 +4,6 @@ date:                  2024-01-20T17:36:52.201626-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konvertere en dato til en streng"
 
-category:             "Java"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/converting-a-date-into-a-string.md"
 ---

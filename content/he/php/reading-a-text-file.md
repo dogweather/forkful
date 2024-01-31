@@ -4,7 +4,6 @@ date:                  2024-01-20T17:55:13.744765-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "קריאת קובץ טקסט"
 
-category:             "PHP"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/php/reading-a-text-file.md"
 ---

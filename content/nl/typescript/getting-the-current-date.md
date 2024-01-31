@@ -4,7 +4,6 @@ date:                  2024-01-28T22:01:19.255255-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Het huidige datum ophalen"
 
-category:             "TypeScript"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/typescript/getting-the-current-date.md"
 changelog:

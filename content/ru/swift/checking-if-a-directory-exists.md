@@ -4,7 +4,6 @@ date:                  2024-01-28T23:55:30.177136-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Проверка существования директории"
 
-category:             "Swift"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/swift/checking-if-a-directory-exists.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-26T04:44:14.642879-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z liczbami zespolonymi"
 
-category:             "PowerShell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/working-with-complex-numbers.md"
 ---

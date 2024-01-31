@@ -4,7 +4,6 @@ date:                  2024-01-20T17:41:49.390394-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Suppression de caractères correspondant à un motif"
 
-category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/deleting-characters-matching-a-pattern.md"
 ---

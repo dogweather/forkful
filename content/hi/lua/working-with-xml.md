@@ -4,7 +4,6 @@ date:                  2024-01-26T04:34:49.786757-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML के साथ काम करना"
 
-category:             "Lua"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/lua/working-with-xml.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T15:38:38.014848-07:00
 html_title:           "Bash: Tolka ett datum från en sträng"
 simple_title:         "Tolka ett datum från en sträng"
 
-category:             "Ruby"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/parsing-a-date-from-a-string.md"
 ---

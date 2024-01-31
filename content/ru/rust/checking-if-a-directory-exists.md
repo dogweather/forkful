@@ -4,7 +4,6 @@ date:                  2024-01-28T23:55:24.287571-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Проверка существования директории"
 
-category:             "Rust"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/rust/checking-if-a-directory-exists.md"
 changelog:

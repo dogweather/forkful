@@ -4,7 +4,6 @@ date:                  2024-01-29T00:02:16.261080-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Рефакторинг"
 
-category:             "Rust"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/rust/refactoring.md"
 changelog:

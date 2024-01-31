@@ -4,7 +4,6 @@ date:                  2024-01-28T22:08:36.712082-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een nieuw project starten"
 
-category:             "Lua"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/starting-a-new-project.md"
 changelog:

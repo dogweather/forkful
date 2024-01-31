@@ -4,7 +4,6 @@ date:                  2024-01-26T03:42:24.006157-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड सुधार"
 
-category:             "PowerShell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/powershell/refactoring.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-30T19:13:14.746932-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Verwendung von assoziativen Arrays"
 
-category:             "TypeScript"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/using-associative-arrays.md"
 changelog:

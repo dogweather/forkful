@@ -4,7 +4,6 @@ date:                  2024-01-28T21:55:45.264475-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết hoa một chuỗi"
 
-category:             "C++"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/cpp/capitalizing-a-string.md"
 changelog:

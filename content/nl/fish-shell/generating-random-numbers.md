@@ -4,7 +4,6 @@ date:                  2024-01-28T22:00:56.730143-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Willekeurige getallen genereren"
 
-category:             "Fish Shell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/generating-random-numbers.md"
 changelog:

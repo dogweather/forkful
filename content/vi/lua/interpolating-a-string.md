@@ -4,7 +4,6 @@ date:                  2024-01-28T22:02:18.554420-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nội suy chuỗi ký tự"
 
-category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/lua/interpolating-a-string.md"
 changelog:

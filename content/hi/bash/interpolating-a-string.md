@@ -4,7 +4,6 @@ date:                  2024-01-20T17:50:55.903408-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "स्ट्रिंग इंटरपोलेशन"
 
-category:             "Bash"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/bash/interpolating-a-string.md"
 ---

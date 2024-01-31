@@ -4,7 +4,6 @@ date:                  2024-01-30T19:11:58.787581-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gebruik van associatieve arrays"
 
-category:             "Kotlin"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/using-associative-arrays.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "C: 文字列の先頭を大文字にする"
 simple_title:         "文字列の先頭を大文字にする"
 
-category:             "Kotlin"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/capitalizing-a-string.md"

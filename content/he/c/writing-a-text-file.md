@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: כתיבה לקובץ טקסט"
 simple_title:         "כתיבה לקובץ טקסט"
 
-category:             "C"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c/writing-a-text-file.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:48:08.923746-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Ermittlung der Zeichenkettenlänge"
 
-category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/finding-the-length-of-a-string.md"
 ---

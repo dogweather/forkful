@@ -4,7 +4,6 @@ date:                  2024-01-20T15:32:48.630276-07:00
 html_title:           "Arduino: Analyse av HTML"
 simple_title:         "Analyse av HTML"
 
-category:             "Kotlin"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/parsing-html.md"
 ---

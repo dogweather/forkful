@@ -4,7 +4,6 @@ date:                  2024-01-26T03:44:51.874340-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrundning av tal"
 
-category:             "Go"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/rounding-numbers.md"
 ---

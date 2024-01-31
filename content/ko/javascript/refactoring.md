@@ -4,7 +4,6 @@ date:                  2024-01-26T01:41:59.066380-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "리팩터링"
 
-category:             "Javascript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/refactoring.md"
 ---

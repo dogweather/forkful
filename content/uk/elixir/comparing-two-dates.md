@@ -4,7 +4,6 @@ date:                  2024-01-20T17:32:37.842708-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Порівняння двох дат"
 
-category:             "Elixir"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elixir/comparing-two-dates.md"
 ---

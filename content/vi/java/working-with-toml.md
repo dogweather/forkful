@@ -4,7 +4,6 @@ date:                  2024-01-28T22:11:10.390249-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với TOML"
 
-category:             "Java"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/java/working-with-toml.md"
 changelog:

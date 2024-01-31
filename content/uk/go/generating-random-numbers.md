@@ -4,7 +4,6 @@ date:                  2024-01-27T20:34:28.254479-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Генерація випадкових чисел"
 
-category:             "Go"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/go/generating-random-numbers.md"
 ---

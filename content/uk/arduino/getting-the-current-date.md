@@ -4,7 +4,6 @@ date:                  2024-01-20T15:13:30.132449-07:00
 html_title:           "Bash: Отримання поточної дати"
 simple_title:         "Отримання поточної дати"
 
-category:             "Arduino"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/arduino/getting-the-current-date.md"
 ---

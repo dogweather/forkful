@@ -4,7 +4,6 @@ date:                  2024-01-26T01:09:29.718840-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "将代码组织成函数"
 
-category:             "Clojure"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/organizing-code-into-functions.md"
 ---

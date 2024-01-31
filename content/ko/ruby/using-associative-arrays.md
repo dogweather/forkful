@@ -4,7 +4,6 @@ date:                  2024-01-30T19:13:13.865041-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "연관 배열 사용하기"
 
-category:             "Ruby"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/using-associative-arrays.md"
 changelog:

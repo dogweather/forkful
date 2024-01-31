@@ -4,7 +4,6 @@ date:                  2024-01-26T03:46:07.410917-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arredondamento de números"
 
-category:             "PHP"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/rounding-numbers.md"
 ---

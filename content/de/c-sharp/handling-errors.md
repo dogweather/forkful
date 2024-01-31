@@ -4,7 +4,6 @@ date:                  2024-01-26T00:50:05.347551-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Fehlerbehandlung"
 
-category:             "C#"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/handling-errors.md"
 ---

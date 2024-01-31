@@ -4,7 +4,6 @@ date:                  2024-01-20T18:02:22.843470-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 
-category:             "Go"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/go/sending-an-http-request-with-basic-authentication.md"
 ---

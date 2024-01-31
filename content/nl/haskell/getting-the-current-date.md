@@ -4,7 +4,6 @@ date:                  2024-01-28T22:00:48.769084-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Het huidige datum ophalen"
 
-category:             "Haskell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/getting-the-current-date.md"
 changelog:

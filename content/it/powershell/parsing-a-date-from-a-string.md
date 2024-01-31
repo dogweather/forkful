@@ -4,7 +4,6 @@ date:                  2024-01-20T15:37:57.924896-07:00
 html_title:           "Arduino: Estrarre una data da una stringa"
 simple_title:         "Estrarre una data da una stringa"
 
-category:             "PowerShell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/parsing-a-date-from-a-string.md"
 ---

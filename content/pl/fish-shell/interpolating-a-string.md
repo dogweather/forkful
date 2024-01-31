@@ -4,7 +4,6 @@ date:                  2024-01-20T17:50:42.385195-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolacja łańcuchów znaków"
 
-category:             "Fish Shell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/interpolating-a-string.md"
 ---

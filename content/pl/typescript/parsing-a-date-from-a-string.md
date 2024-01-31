@@ -4,7 +4,6 @@ date:                  2024-01-20T15:38:50.753970-07:00
 html_title:           "Arduino: Przetwarzanie daty ze łańcucha znaków"
 simple_title:         "Przetwarzanie daty ze łańcucha znaków"
 
-category:             "TypeScript"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/parsing-a-date-from-a-string.md"
 ---

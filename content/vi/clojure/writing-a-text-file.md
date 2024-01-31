@@ -4,7 +4,6 @@ date:                  2024-01-28T22:12:36.405998-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết một tệp văn bản"
 
-category:             "Clojure"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/clojure/writing-a-text-file.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:33:58.170392-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Concatenando strings"
 
-category:             "Arduino"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/concatenating-strings.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:39:39.209203-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "创建临时文件"
 
-category:             "C++"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/creating-a-temporary-file.md"

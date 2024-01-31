@@ -4,7 +4,6 @@ date:                  2024-01-26T04:29:29.941811-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם XML"
 
-category:             "Clojure"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/working-with-xml.md"
 ---

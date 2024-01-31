@@ -4,7 +4,6 @@ date:                  2024-01-27T16:20:58.789056-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Dateimanipulation mit CLI-One-Linern"
 
-category:             "PowerShell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/manipulating-files-with-cli-one-liners.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T01:02:26.774028-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Rejestrowanie zdarzeń"
 
-category:             "Elm"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/logging.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Pisanie testów"
 simple_title:         "Pisanie testów"
 
-category:             "Clojure"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/writing-tests.md"
 ---

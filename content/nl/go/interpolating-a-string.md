@@ -4,7 +4,6 @@ date:                  2024-01-28T22:01:55.924093-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string interpoleren"
 
-category:             "Go"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/interpolating-a-string.md"
 changelog:

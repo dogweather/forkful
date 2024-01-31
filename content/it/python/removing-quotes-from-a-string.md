@@ -4,7 +4,6 @@ date:                  2024-01-26T03:41:20.490541-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rimuovere le virgolette da una stringa"
 
-category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/python/removing-quotes-from-a-string.md"
 ---

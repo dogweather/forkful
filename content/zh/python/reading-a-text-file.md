@@ -4,7 +4,6 @@ date:                  2024-01-20T17:55:00.472023-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "阅读文本文件"
 
-category:             "Python"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/reading-a-text-file.md"

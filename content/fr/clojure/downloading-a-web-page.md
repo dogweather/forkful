@@ -4,7 +4,6 @@ date:                  2024-01-20T17:43:30.126068-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Téléchargement d'une page web"
 
-category:             "Clojure"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/downloading-a-web-page.md"
 ---

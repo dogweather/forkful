@@ -4,7 +4,6 @@ date:                  2024-01-25T03:00:04.580827-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Working with complex numbers"
 
-category:             "Java"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/working-with-complex-numbers.md"
 ---

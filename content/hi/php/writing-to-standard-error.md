@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: मानक त्रुटि में लिखना"
 simple_title:         "मानक त्रुटि में लिखना"
 
-category:             "PHP"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/writing-to-standard-error.md"
 ---

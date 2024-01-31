@@ -4,7 +4,6 @@ date:                  2024-01-28T22:13:42.288523-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tests Schrijven"
 
-category:             "Rust"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/writing-tests.md"
 changelog:

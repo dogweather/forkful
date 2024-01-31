@@ -4,7 +4,6 @@ date:                  2024-01-30T19:10:49.538142-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando arrays associativos"
 
-category:             "Elixir"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/using-associative-arrays.md"
 changelog:

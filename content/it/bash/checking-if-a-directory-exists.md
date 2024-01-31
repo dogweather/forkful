@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Verifica dell'esistenza di una directory"
 simple_title:         "Verifica dell'esistenza di una directory"
 
-category:             "Bash"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/checking-if-a-directory-exists.md"
 ---

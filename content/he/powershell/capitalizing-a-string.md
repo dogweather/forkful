@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
 simple_title:         "הפיכת מחרוזת לאותיות רישיות"
 
-category:             "PowerShell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/powershell/capitalizing-a-string.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:48:06.421607-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Trouver la longueur d'une chaîne de caractères"
 
-category:             "Rust"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/finding-the-length-of-a-string.md"
 ---

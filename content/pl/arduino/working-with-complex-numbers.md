@@ -4,7 +4,6 @@ date:                  2024-01-26T04:36:53.136927-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z liczbami zespolonymi"
 
-category:             "Arduino"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/working-with-complex-numbers.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: 標準エラーへの書き込み"
 simple_title:         "標準エラーへの書き込み"
 
-category:             "Lua"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/writing-to-standard-error.md"

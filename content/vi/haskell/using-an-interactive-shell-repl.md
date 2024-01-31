@@ -4,7 +4,6 @@ date:                  2024-01-28T22:09:10.662195-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng vỏ tương tác (REPL)"
 
-category:             "Haskell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/haskell/using-an-interactive-shell-repl.md"
 changelog:

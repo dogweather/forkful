@@ -4,7 +4,6 @@ date:                  2024-01-28T23:55:58.596799-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Сравнение двух дат"
 
-category:             "C"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/c/comparing-two-dates.md"
 changelog:

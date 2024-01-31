@@ -4,7 +4,6 @@ date:                  2024-01-26T00:57:20.421835-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "处理错误"
 
-category:             "Ruby"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/handling-errors.md"
 ---

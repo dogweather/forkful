@@ -4,7 +4,6 @@ date:                  2024-01-29T00:00:58.631532-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Журналирование"
 
-category:             "Rust"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/rust/logging.md"
 changelog:

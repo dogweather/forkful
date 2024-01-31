@@ -4,7 +4,6 @@ date:                  2024-01-26T04:37:49.477082-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com números complexos"
 
-category:             "C++"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/working-with-complex-numbers.md"
 ---

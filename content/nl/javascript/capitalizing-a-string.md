@@ -4,7 +4,6 @@ date:                  2024-01-28T21:55:12.232368-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string met hoofdletters maken"
 
-category:             "Javascript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/javascript/capitalizing-a-string.md"
 changelog:

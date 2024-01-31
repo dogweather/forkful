@@ -4,7 +4,6 @@ date:                  2024-01-26T03:50:12.458852-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डीबगर का उपयोग"
 
-category:             "Bash"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/bash/using-a-debugger.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:12:54.219884-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết một tệp văn bản"
 
-category:             "Go"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/writing-a-text-file.md"
 changelog:

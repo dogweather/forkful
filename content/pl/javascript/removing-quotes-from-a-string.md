@@ -4,7 +4,6 @@ date:                  2024-01-26T03:40:32.873795-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
 
-category:             "Javascript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/removing-quotes-from-a-string.md"
 ---

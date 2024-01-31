@@ -4,7 +4,6 @@ date:                  2024-01-26T03:47:12.006620-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "数値の丸め処理"
 
-category:             "TypeScript"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/rounding-numbers.md"
 ---

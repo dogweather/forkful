@@ -4,7 +4,6 @@ date:                  2024-01-20T17:53:39.695960-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Reading a text file"
 
-category:             "C"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/reading-a-text-file.md"
 ---

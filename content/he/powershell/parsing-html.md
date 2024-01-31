@@ -4,7 +4,6 @@ date:                  2024-01-20T15:34:04.710203-07:00
 html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 
-category:             "PowerShell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/powershell/parsing-html.md"
 ---

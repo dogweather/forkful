@@ -4,7 +4,6 @@ date:                  2024-01-28T21:55:59.642219-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string met hoofdletters maken"
 
-category:             "PHP"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/capitalizing-a-string.md"
 changelog:

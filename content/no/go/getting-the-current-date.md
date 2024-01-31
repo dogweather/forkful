@@ -4,7 +4,6 @@ date:                  2024-01-20T15:14:31.123826-07:00
 html_title:           "C: Slik får du tak i dagens dato"
 simple_title:         "Slik får du tak i dagens dato"
 
-category:             "Go"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/getting-the-current-date.md"
 ---

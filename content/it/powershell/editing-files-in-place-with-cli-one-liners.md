@@ -4,7 +4,6 @@ date:                  2024-01-27T16:20:40.454677-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Modifica dei file sul posto con righe di comando CLI"
 
-category:             "PowerShell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/editing-files-in-place-with-cli-one-liners.md"
 ---

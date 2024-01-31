@@ -4,7 +4,6 @@ date:                  2024-01-28T23:55:43.339035-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Склеивание строк"
 
-category:             "Arduino"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/arduino/concatenating-strings.md"
 changelog:

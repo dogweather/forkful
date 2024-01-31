@@ -4,7 +4,6 @@ date:                  2024-01-26T03:43:58.430284-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "संख्याओं को पूर्णांक बनाना"
 
-category:             "Bash"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/bash/rounding-numbers.md"
 ---

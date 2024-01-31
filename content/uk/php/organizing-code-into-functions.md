@@ -4,7 +4,6 @@ date:                  2024-01-26T01:16:38.201280-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Організація коду в функції"
 
-category:             "PHP"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/php/organizing-code-into-functions.md"
 ---

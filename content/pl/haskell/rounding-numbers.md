@@ -4,7 +4,6 @@ date:                  2024-01-26T03:45:03.924780-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zaokrąglanie liczb"
 
-category:             "Haskell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/rounding-numbers.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T03:40:11.030429-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ta bort citattecken från en sträng"
 
-category:             "Java"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/removing-quotes-from-a-string.md"
 ---

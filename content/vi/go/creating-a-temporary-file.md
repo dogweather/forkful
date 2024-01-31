@@ -4,7 +4,6 @@ date:                  2024-01-28T21:58:56.900587-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tạo một tập tin tạm thời"
 
-category:             "Go"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/creating-a-temporary-file.md"
 changelog:

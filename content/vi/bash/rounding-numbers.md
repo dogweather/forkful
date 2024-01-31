@@ -4,7 +4,6 @@ date:                  2024-01-28T22:06:34.312788-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm tròn số"
 
-category:             "Bash"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/bash/rounding-numbers.md"
 changelog:

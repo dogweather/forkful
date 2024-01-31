@@ -4,7 +4,6 @@ date:                  2024-01-28T21:57:11.374191-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Samenvoegen van strings"
 
-category:             "PHP"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/php/concatenating-strings.md"
 changelog:

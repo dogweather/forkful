@@ -4,7 +4,6 @@ date:                  2024-01-26T03:37:37.277994-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "从字符串中移除引号"
 
-category:             "Arduino"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/removing-quotes-from-a-string.md"
 ---

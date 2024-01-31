@@ -4,7 +4,6 @@ date:                  2024-01-20T17:36:31.952036-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "将日期转换为字符串"
 
-category:             "Fish Shell"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/converting-a-date-into-a-string.md"

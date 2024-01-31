@@ -4,7 +4,6 @@ date:                  2024-01-28T23:55:44.740913-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в верхний регистр"
 
-category:             "Swift"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/swift/capitalizing-a-string.md"
 changelog:

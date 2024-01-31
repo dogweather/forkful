@@ -4,7 +4,6 @@ date:                  2024-01-20T18:00:26.962788-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Надсилання HTTP-запиту"
 
-category:             "Lua"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/lua/sending-an-http-request.md"
 ---

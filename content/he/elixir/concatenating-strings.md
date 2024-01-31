@@ -4,7 +4,6 @@ date:                  2024-01-27T10:45:04.301190-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שרשור מחרוזות"
 
-category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/concatenating-strings.md"
 ---

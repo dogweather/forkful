@@ -4,7 +4,6 @@ date:                  2024-01-20T18:03:22.413063-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lancement d'un nouveau projet"
 
-category:             "Clojure"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/starting-a-new-project.md"
 ---

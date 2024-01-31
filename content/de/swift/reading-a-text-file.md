@@ -4,7 +4,6 @@ date:                  2024-01-20T17:55:14.749037-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Textdatei einlesen"
 
-category:             "Swift"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/reading-a-text-file.md"
 ---

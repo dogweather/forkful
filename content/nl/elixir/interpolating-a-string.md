@@ -4,7 +4,6 @@ date:                  2024-01-28T22:01:49.007946-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string interpoleren"
 
-category:             "Elixir"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/elixir/interpolating-a-string.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-26T04:44:47.495148-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з комплексними числами"
 
-category:             "PHP"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/php/working-with-complex-numbers.md"
 ---

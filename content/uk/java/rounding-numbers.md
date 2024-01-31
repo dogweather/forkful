@@ -4,7 +4,6 @@ date:                  2024-01-26T03:46:14.679589-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округлення чисел"
 
-category:             "Java"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/rounding-numbers.md"
 ---

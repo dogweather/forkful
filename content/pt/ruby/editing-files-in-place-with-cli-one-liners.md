@@ -4,7 +4,6 @@ date:                  2024-01-27T16:20:40.698457-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Editando arquivos in loco com linhas de comando"
 
-category:             "Ruby"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/editing-files-in-place-with-cli-one-liners.md"
 ---

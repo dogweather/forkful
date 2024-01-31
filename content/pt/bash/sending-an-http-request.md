@@ -4,7 +4,6 @@ date:                  2024-01-20T17:59:17.887275-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Enviando uma requisição HTTP"
 
-category:             "Bash"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/sending-an-http-request.md"
 ---

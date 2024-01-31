@@ -4,7 +4,6 @@ date:                  2024-01-26T03:41:14.724144-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "从字符串中移除引号"
 
-category:             "PHP"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/removing-quotes-from-a-string.md"
 ---

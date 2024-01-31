@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Skriving av tester"
 simple_title:         "Skriving av tester"
 
-category:             "PowerShell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/writing-tests.md"
 ---

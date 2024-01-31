@@ -4,7 +4,6 @@ date:                  2024-01-26T03:46:00.448057-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redondeo de números"
 
-category:             "Javascript"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/rounding-numbers.md"
 ---

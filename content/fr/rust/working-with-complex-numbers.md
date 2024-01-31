@@ -4,7 +4,6 @@ date:                  2024-01-26T04:45:14.502187-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulation des nombres complexes"
 
-category:             "Rust"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/working-with-complex-numbers.md"
 ---

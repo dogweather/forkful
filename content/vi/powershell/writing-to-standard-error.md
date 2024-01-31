@@ -4,7 +4,6 @@ date:                  2024-01-28T22:13:48.660130-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi vào lỗi chuẩn"
 
-category:             "PowerShell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/powershell/writing-to-standard-error.md"
 changelog:

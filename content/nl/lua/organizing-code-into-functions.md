@@ -4,7 +4,6 @@ date:                  2024-01-28T22:03:06.815827-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Code organiseren in functies"
 
-category:             "Lua"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/organizing-code-into-functions.md"
 changelog:

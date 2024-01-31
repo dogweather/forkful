@@ -4,7 +4,6 @@ date:                  2024-01-29T00:01:14.117482-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Чтение аргументов командной строки"
 
-category:             "Swift"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/swift/reading-command-line-arguments.md"
 changelog:

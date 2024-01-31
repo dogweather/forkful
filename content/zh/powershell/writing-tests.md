@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: 编写测试代码"
 simple_title:         "编写测试代码"
 
-category:             "PowerShell"
 tag:                  "Testing and Debugging"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/writing-tests.md"

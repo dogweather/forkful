@@ -4,7 +4,6 @@ date:                  2024-01-20T17:33:06.400046-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "比较两个日期"
 
-category:             "Go"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/comparing-two-dates.md"

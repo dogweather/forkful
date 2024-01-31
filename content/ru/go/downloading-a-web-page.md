@@ -4,7 +4,6 @@ date:                  2024-01-28T23:57:25.292756-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Загрузка веб-страницы"
 
-category:             "Go"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/go/downloading-a-web-page.md"
 changelog:

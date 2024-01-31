@@ -4,7 +4,6 @@ date:                  2024-01-26T00:51:59.305858-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "טיפול בשגיאות"
 
-category:             "Clojure"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/handling-errors.md"
 ---

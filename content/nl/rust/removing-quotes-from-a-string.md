@@ -4,7 +4,6 @@ date:                  2024-01-28T22:06:31.701608-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Quotes verwijderen uit een string"
 
-category:             "Rust"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/rust/removing-quotes-from-a-string.md"
 changelog:

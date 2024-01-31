@@ -4,7 +4,6 @@ date:                  2024-01-30T19:13:08.171943-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des tableaux associatifs"
 
-category:             "Swift"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/using-associative-arrays.md"
 changelog:

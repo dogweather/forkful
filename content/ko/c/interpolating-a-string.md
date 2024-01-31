@@ -4,7 +4,6 @@ date:                  2024-01-20T17:50:44.475323-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "문자열 보간하기"
 
-category:             "C"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/interpolating-a-string.md"

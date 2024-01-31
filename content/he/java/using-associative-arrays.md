@@ -4,7 +4,6 @@ date:                  2024-01-30T19:12:27.913313-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במערכים אסוציאטיביים"
 
-category:             "Java"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/using-associative-arrays.md"
 changelog:

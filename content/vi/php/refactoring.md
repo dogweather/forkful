@@ -4,7 +4,6 @@ date:                  2024-01-28T22:06:21.326151-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tái cấu trúc mã"
 
-category:             "PHP"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/php/refactoring.md"
 changelog:

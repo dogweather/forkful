@@ -4,7 +4,6 @@ date:                  2024-01-28T21:23:54.472553-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "字符串插值"
 
-category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/interpolating-a-string.md"
 changelog:

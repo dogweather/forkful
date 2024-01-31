@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Arbeiten mit JSON"
 simple_title:         "Arbeiten mit JSON"
 
-category:             "Elixir"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/working-with-json.md"
 ---

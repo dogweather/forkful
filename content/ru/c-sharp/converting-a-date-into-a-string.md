@@ -4,7 +4,6 @@ date:                  2024-01-28T23:56:53.841327-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование даты в строку"
 
-category:             "C#"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/c-sharp/converting-a-date-into-a-string.md"
 changelog:

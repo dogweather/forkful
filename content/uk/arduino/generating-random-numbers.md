@@ -4,7 +4,6 @@ date:                  2024-01-27T20:33:14.855802-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Генерація випадкових чисел"
 
-category:             "Arduino"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/arduino/generating-random-numbers.md"
 ---

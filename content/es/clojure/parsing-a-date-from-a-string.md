@@ -4,7 +4,6 @@ date:                  2024-01-20T15:35:33.331669-07:00
 html_title:           "Arduino: Análisis de una fecha a partir de una cadena"
 simple_title:         "Análisis de una fecha a partir de una cadena"
 
-category:             "Clojure"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/parsing-a-date-from-a-string.md"
 ---

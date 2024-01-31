@@ -4,7 +4,6 @@ date:                  2024-01-28T22:05:44.175022-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc các đối số dòng lệnh"
 
-category:             "Lua"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/lua/reading-command-line-arguments.md"
 changelog:

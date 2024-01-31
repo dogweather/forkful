@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Escritura de un archivo de texto"
 simple_title:         "Escritura de un archivo de texto"
 
-category:             "TypeScript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/writing-a-text-file.md"
 ---

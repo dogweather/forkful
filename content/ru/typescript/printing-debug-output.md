@@ -4,7 +4,6 @@ date:                  2024-01-29T00:01:02.798941-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Вывод отладочной информации"
 
-category:             "TypeScript"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/typescript/printing-debug-output.md"
 changelog:

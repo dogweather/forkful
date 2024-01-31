@@ -4,7 +4,6 @@ date:                  2024-01-27T16:21:22.811186-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Hantera filer med CLI-engreppskommandon"
 
-category:             "PowerShell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/manipulating-files-with-cli-one-liners.md"
 ---

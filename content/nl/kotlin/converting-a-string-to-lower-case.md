@@ -4,7 +4,6 @@ date:                  2024-01-28T21:57:36.255126-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string omzetten naar kleine letters"
 
-category:             "Kotlin"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/converting-a-string-to-lower-case.md"
 changelog:

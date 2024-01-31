@@ -4,7 +4,6 @@ date:                  2024-01-20T18:00:26.799250-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wysyłanie żądania HTTP"
 
-category:             "Rust"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/sending-an-http-request.md"
 ---

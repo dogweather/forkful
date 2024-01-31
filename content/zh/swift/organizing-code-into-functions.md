@@ -4,7 +4,6 @@ date:                  2024-01-26T01:16:11.540529-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "将代码组织成函数"
 
-category:             "Swift"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/organizing-code-into-functions.md"
 ---

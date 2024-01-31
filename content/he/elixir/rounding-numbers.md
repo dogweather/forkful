@@ -4,7 +4,6 @@ date:                  2024-01-26T03:44:32.754975-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עיגול מספרים"
 
-category:             "Elixir"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/rounding-numbers.md"
 ---

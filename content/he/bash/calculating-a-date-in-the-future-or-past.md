@@ -5,7 +5,6 @@ model:                 gpt-4-1106-preview
 html_title:           "Bash: חישוב תאריך בעתיד או בעבר"
 simple_title:         "חישוב תאריך בעתיד או בעבר"
 
-category:             "Bash"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/bash/calculating-a-date-in-the-future-or-past.md"
 ---

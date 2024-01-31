@@ -4,7 +4,6 @@ date:                  2024-01-26T04:39:15.643986-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з комплексними числами"
 
-category:             "Clojure"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/working-with-complex-numbers.md"
 ---

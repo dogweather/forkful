@@ -4,7 +4,6 @@ date:                  2024-01-28T23:57:34.444691-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск длины строки"
 
-category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/clojure/finding-the-length-of-a-string.md"
 changelog:

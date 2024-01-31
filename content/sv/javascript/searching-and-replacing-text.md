@@ -4,7 +4,6 @@ date:                  2024-01-20T17:58:31.357313-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Sökning och ersättning av text"
 
-category:             "Javascript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/searching-and-replacing-text.md"
 ---

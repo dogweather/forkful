@@ -4,7 +4,6 @@ date:                  2024-01-20T17:55:15.618154-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "テキストファイルの読み込み"
 
-category:             "Rust"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/reading-a-text-file.md"

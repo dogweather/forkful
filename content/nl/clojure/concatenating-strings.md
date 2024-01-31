@@ -4,7 +4,6 @@ date:                  2024-01-28T21:56:47.250482-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Samenvoegen van strings"
 
-category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/concatenating-strings.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-28T23:59:53.197388-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Разбор HTML"
 
-category:             "Kotlin"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/kotlin/parsing-html.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:01:04.111514-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lấy ngày hiện tại"
 
-category:             "Elixir"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/elixir/getting-the-current-date.md"
 changelog:

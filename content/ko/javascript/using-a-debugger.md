@@ -4,7 +4,6 @@ date:                  2024-01-26T03:50:30.098078-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "디버거 사용하기"
 
-category:             "Javascript"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/using-a-debugger.md"
 ---

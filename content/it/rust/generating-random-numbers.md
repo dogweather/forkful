@@ -4,7 +4,6 @@ date:                  2024-01-27T20:35:34.052385-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generazione di numeri casuali"
 
-category:             "Rust"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/generating-random-numbers.md"
 ---

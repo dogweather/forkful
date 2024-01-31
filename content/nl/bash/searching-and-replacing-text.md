@@ -4,7 +4,6 @@ date:                  2024-01-28T22:07:05.417146-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tekst zoeken en vervangen"
 
-category:             "Bash"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/bash/searching-and-replacing-text.md"
 changelog:

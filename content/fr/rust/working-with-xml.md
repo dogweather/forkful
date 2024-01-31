@@ -4,7 +4,6 @@ date:                  2024-01-26T04:35:36.755185-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec XML"
 
-category:             "Rust"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/working-with-xml.md"
 ---

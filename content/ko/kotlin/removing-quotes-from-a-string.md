@@ -4,7 +4,6 @@ date:                  2024-01-26T03:41:27.830545-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열에서 따옴표 제거하기"
 
-category:             "Kotlin"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/removing-quotes-from-a-string.md"
 ---

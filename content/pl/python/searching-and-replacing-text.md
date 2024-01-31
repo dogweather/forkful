@@ -4,7 +4,6 @@ date:                  2024-01-20T17:58:32.212117-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wyszukiwanie i zamiana tekstu"
 
-category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/searching-and-replacing-text.md"
 ---

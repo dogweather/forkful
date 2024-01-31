@@ -4,7 +4,6 @@ date:                  2024-01-28T22:03:16.225747-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Logboekregistratie"
 
-category:             "Kotlin"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/kotlin/logging.md"
 changelog:

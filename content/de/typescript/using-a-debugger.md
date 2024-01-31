@@ -4,7 +4,6 @@ date:                  2024-01-26T04:10:51.168303-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Einsatz eines Debuggers"
 
-category:             "TypeScript"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/using-a-debugger.md"
 ---

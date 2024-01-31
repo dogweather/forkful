@@ -4,7 +4,6 @@ date:                  2024-01-28T22:06:40.396795-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Afronden van getallen"
 
-category:             "Arduino"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/arduino/rounding-numbers.md"
 changelog:

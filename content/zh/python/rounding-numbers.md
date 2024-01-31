@@ -4,7 +4,6 @@ date:                  2024-01-26T03:46:19.471556-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "数字取整"
 
-category:             "Python"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/rounding-numbers.md"
 ---

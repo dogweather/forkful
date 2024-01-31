@@ -4,7 +4,6 @@ date:                  2024-01-26T03:43:26.326395-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zaokrąglanie liczb"
 
-category:             "C#"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/rounding-numbers.md"
 ---

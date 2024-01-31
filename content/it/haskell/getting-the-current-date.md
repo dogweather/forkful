@@ -4,7 +4,6 @@ date:                  2024-01-20T15:15:06.127514-07:00
 html_title:           "Arduino: Ottenere la data corrente"
 simple_title:         "Ottenere la data corrente"
 
-category:             "Haskell"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/getting-the-current-date.md"
 ---

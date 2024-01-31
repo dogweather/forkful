@@ -4,7 +4,6 @@ date:                  2024-01-20T17:37:54.074998-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"
 
-category:             "C++"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/converting-a-string-to-lower-case.md"
 ---

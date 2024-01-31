@@ -4,7 +4,6 @@ date:                  2024-01-28T22:07:22.197976-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tekst zoeken en vervangen"
 
-category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/searching-and-replacing-text.md"
 changelog:

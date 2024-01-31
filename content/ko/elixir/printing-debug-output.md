@@ -4,7 +4,6 @@ date:                  2024-01-20T17:52:33.657567-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "디버그 출력을 찍어보기"
 
-category:             "Elixir"
 tag:                  "Testing and Debugging"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/printing-debug-output.md"

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:11:59.982289-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với YAML"
 
-category:             "Python"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/working-with-yaml.md"
 changelog:

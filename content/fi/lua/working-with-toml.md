@@ -4,7 +4,6 @@ date:                  2024-01-26T04:24:12.699271-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Työskentely TOML:n kanssa"
 
-category:             "Lua"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/working-with-toml.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T01:44:02.586424-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktorering"
 
-category:             "Kotlin"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/refactoring.md"
 ---

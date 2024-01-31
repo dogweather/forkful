@@ -4,7 +4,6 @@ date:                  2024-01-20T17:56:50.578773-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Läsa in kommandoradsargument"
 
-category:             "Swift"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/reading-command-line-arguments.md"
 ---

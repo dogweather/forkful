@@ -4,7 +4,6 @@ date:                  2024-01-28T21:55:50.841366-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết hoa một chuỗi"
 
-category:             "Go"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/capitalizing-a-string.md"
 changelog:

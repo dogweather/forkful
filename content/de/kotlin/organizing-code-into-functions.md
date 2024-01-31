@@ -4,7 +4,6 @@ date:                  2024-01-26T01:11:14.363160-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Code in Funktionen organisieren"
 
-category:             "Kotlin"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/organizing-code-into-functions.md"
 ---

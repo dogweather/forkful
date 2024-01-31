@@ -4,7 +4,6 @@ date:                  2024-01-26T03:38:09.135775-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "文字列から引用符を削除する"
 
-category:             "C++"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/removing-quotes-from-a-string.md"
 ---

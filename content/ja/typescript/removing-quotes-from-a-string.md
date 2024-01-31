@@ -4,7 +4,6 @@ date:                  2024-01-26T03:42:54.336097-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "文字列から引用符を削除する"
 
-category:             "TypeScript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/removing-quotes-from-a-string.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:37:54.271048-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Converting a string to lower case"
 
-category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/converting-a-string-to-lower-case.md"
 ---

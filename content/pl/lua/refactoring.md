@@ -4,7 +4,6 @@ date:                  2024-01-26T01:47:03.192289-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktoryzacja"
 
-category:             "Lua"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/refactoring.md"
 ---

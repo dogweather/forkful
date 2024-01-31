@@ -4,7 +4,6 @@ date:                  2024-01-28T22:01:57.099731-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string interpoleren"
 
-category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/clojure/interpolating-a-string.md"
 changelog:

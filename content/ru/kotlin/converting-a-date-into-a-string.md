@@ -4,7 +4,6 @@ date:                  2024-01-28T23:56:42.374732-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование даты в строку"
 
-category:             "Kotlin"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/kotlin/converting-a-date-into-a-string.md"
 changelog:

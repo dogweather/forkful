@@ -4,7 +4,6 @@ date:                  2024-01-28T22:11:29.507750-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với XML"
 
-category:             "Arduino"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/arduino/working-with-xml.md"
 changelog:

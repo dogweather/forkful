@@ -4,7 +4,6 @@ date:                  2024-01-26T04:42:01.243846-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con números complejos"
 
-category:             "Javascript"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/working-with-complex-numbers.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:10:59.178138-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng biểu thức chính quy"
 
-category:             "Javascript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/using-regular-expressions.md"
 changelog:

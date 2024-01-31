@@ -4,7 +4,6 @@ date:                  2024-01-28T03:00:44.405534-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML parsen"
 
-category:             "Javascript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/parsing-html.md"
 changelog:

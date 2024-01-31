@@ -4,7 +4,6 @@ date:                  2024-01-30T19:13:47.043365-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання асоціативних масивів"
 
-category:             "Ruby"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/ruby/using-associative-arrays.md"
 changelog:

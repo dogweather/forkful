@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: 정규 표현식 활용하기"
 simple_title:         "정규 표현식 활용하기"
 
-category:             "Java"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/using-regular-expressions.md"

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:41:07.485039-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "一時ファイルの作成"
 
-category:             "PHP"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/creating-a-temporary-file.md"

@@ -4,7 +4,6 @@ date:                  2024-01-29T00:01:00.051213-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Чтение текстового файла"
 
-category:             "PowerShell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/powershell/reading-a-text-file.md"
 changelog:

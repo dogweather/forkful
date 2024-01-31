@@ -4,7 +4,6 @@ date:                  2024-01-26T04:30:53.939153-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XMLの扱い方"
 
-category:             "Elm"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/working-with-xml.md"
 ---

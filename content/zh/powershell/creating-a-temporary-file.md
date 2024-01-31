@@ -4,7 +4,6 @@ date:                  2024-01-20T17:40:58.483339-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "创建临时文件"
 
-category:             "PowerShell"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/creating-a-temporary-file.md"

@@ -4,7 +4,6 @@ date:                  2024-01-30T19:11:21.298329-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用关联数组"
 
-category:             "Go"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/using-associative-arrays.md"
 changelog:

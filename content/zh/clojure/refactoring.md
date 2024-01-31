@@ -4,7 +4,6 @@ date:                  2024-01-26T01:17:28.707144-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "代码重构"
 
-category:             "Clojure"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/refactoring.md"
 ---

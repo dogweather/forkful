@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 
-category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/using-regular-expressions.md"
 ---

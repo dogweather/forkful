@@ -4,7 +4,6 @@ date:                  2024-01-20T15:30:39.019288-07:00
 html_title:           "Arduino: Analyse syntaxique de HTML"
 simple_title:         "Analyse syntaxique de HTML"
 
-category:             "Clojure"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/parsing-html.md"
 ---

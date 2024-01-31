@@ -4,7 +4,6 @@ date:                  2024-01-20T17:46:21.782112-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Estrazione di sottostringhe"
 
-category:             "PowerShell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/extracting-substrings.md"
 ---

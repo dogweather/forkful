@@ -4,7 +4,6 @@ date:                  2024-01-28T22:03:02.684434-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Logboekregistratie"
 
-category:             "Ruby"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/ruby/logging.md"
 changelog:

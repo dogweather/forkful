@@ -4,7 +4,6 @@ date:                  2024-01-28T22:05:37.723176-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc các đối số dòng lệnh"
 
-category:             "Python"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/python/reading-command-line-arguments.md"
 changelog:

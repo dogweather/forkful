@@ -4,7 +4,6 @@ date:                  2024-01-20T17:51:04.219727-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolation de chaînes de caractères"
 
-category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/interpolating-a-string.md"
 ---

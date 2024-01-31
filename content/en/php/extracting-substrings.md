@@ -4,7 +4,6 @@ date:                  2024-01-20T17:46:05.047707-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extracting substrings"
 
-category:             "PHP"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/extracting-substrings.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T00:55:42.566315-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "处理错误"
 
-category:             "PHP"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/handling-errors.md"
 ---

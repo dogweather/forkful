@@ -4,7 +4,6 @@ date:                  2024-01-20T17:41:38.185818-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Creando un archivo temporal"
 
-category:             "TypeScript"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/creating-a-temporary-file.md"
 ---

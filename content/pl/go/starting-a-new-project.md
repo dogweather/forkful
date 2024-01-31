@@ -4,7 +4,6 @@ date:                  2024-01-20T18:03:35.553060-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"
 
-category:             "Go"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/starting-a-new-project.md"
 ---

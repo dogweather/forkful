@@ -4,7 +4,6 @@ date:                  2024-01-28T21:57:50.179795-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi chuỗi thành chữ thường"
 
-category:             "Go"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/converting-a-string-to-lower-case.md"
 changelog:

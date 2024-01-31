@@ -4,7 +4,6 @@ date:                  2024-01-28T23:56:58.703151-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в нижний регистр"
 
-category:             "Java"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/java/converting-a-string-to-lower-case.md"
 changelog:

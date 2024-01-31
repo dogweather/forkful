@@ -4,7 +4,6 @@ date:                  2024-01-20T17:34:30.479902-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Concaténation de chaînes de caractères"
 
-category:             "Clojure"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/concatenating-strings.md"
 ---

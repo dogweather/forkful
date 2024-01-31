@@ -4,7 +4,6 @@ date:                  2024-01-20T15:38:32.951831-07:00
 html_title:           "Arduino: 文字列から日付を解析する"
 simple_title:         "文字列から日付を解析する"
 
-category:             "Rust"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/parsing-a-date-from-a-string.md"

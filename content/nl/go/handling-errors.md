@@ -4,7 +4,6 @@ date:                  2024-01-28T22:01:56.433929-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fouten afhandelen"
 
-category:             "Go"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/handling-errors.md"
 changelog:

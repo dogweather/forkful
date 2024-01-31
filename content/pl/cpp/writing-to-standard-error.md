@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Pisanie do standardowego błędu"
 simple_title:         "Pisanie do standardowego błędu"
 
-category:             "C++"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/writing-to-standard-error.md"
 ---

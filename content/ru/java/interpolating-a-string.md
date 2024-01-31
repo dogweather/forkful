@@ -4,7 +4,6 @@ date:                  2024-01-28T23:59:20.529252-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Интерполяция строки"
 
-category:             "Java"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/java/interpolating-a-string.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:36:07.069474-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "文字列の連結"
 
-category:             "Rust"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/concatenating-strings.md"

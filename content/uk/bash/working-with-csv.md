@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Робота з CSV файлами"
 simple_title:         "Робота з CSV файлами"
 
-category:             "Bash"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/bash/working-with-csv.md"
 ---

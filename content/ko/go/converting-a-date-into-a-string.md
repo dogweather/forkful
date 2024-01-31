@@ -4,7 +4,6 @@ date:                  2024-01-20T17:36:33.828414-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "날짜를 문자열로 변환하기"
 
-category:             "Go"
 tag:                  "Dates and Times"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/converting-a-date-into-a-string.md"

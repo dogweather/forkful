@@ -4,7 +4,6 @@ date:                  2024-01-20T17:46:12.686581-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "部分文字列の抽出"
 
-category:             "Python"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/extracting-substrings.md"

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:55:46.510218-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "명령줄 인수 읽기"
 
-category:             "Clojure"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/reading-command-line-arguments.md"

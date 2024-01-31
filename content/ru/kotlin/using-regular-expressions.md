@@ -4,7 +4,6 @@ date:                  2024-01-29T00:04:03.771241-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование регулярных выражений"
 
-category:             "Kotlin"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/kotlin/using-regular-expressions.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-20T17:51:34.331300-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolera en sträng"
 
-category:             "Lua"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/interpolating-a-string.md"
 ---

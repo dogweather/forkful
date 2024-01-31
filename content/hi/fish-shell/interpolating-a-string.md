@@ -4,7 +4,6 @@ date:                  2024-01-20T17:51:02.354349-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "स्ट्रिंग इंटरपोलेशन"
 
-category:             "Fish Shell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/interpolating-a-string.md"
 ---

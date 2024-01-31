@@ -4,7 +4,6 @@ date:                  2024-01-20T15:32:16.739950-07:00
 html_title:           "Bash recipe: Parsing HTML"
 simple_title:         "Parsing HTML"
 
-category:             "Java"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/parsing-html.md"
 ---

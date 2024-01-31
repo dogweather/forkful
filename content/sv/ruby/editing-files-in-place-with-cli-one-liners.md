@@ -4,7 +4,6 @@ date:                  2024-01-27T16:20:32.875013-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redigera filer på plats med kommandoradsenradare"
 
-category:             "Ruby"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/editing-files-in-place-with-cli-one-liners.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-28T23:55:38.304696-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Склеивание строк"
 
-category:             "Elm"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elm/concatenating-strings.md"
 changelog:

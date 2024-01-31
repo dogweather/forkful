@@ -4,7 +4,6 @@ date:                  2024-01-26T04:38:50.740778-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kompleksilukujen käsittely"
 
-category:             "C#"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/working-with-complex-numbers.md"
 ---

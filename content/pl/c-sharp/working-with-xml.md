@@ -4,7 +4,6 @@ date:                  2024-01-26T04:28:58.945406-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z XML"
 
-category:             "C#"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/working-with-xml.md"
 ---

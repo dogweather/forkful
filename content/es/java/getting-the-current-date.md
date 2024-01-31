@@ -4,7 +4,6 @@ date:                  2024-01-20T15:15:33.450057-07:00
 html_title:           "Bash: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 
-category:             "Java"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/getting-the-current-date.md"
 ---

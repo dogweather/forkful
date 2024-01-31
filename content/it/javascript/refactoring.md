@@ -4,7 +4,6 @@ date:                  2024-01-26T01:41:34.491469-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rifattorizzazione"
 
-category:             "Javascript"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/refactoring.md"
 ---

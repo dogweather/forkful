@@ -4,7 +4,6 @@ date:                  2024-01-28T23:57:52.874706-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск длины строки"
 
-category:             "PowerShell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/powershell/finding-the-length-of-a-string.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-20T15:32:04.181978-07:00
 html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 
-category:             "Haskell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/parsing-html.md"
 ---

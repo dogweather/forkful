@@ -4,7 +4,6 @@ date:                  2024-01-30T19:11:38.852432-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gebruik van associatieve arrays"
 
-category:             "Haskell"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/haskell/using-associative-arrays.md"
 changelog:

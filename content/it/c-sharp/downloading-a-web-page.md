@@ -4,7 +4,6 @@ date:                  2024-01-20T17:43:42.256294-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Scaricare una pagina web"
 
-category:             "C#"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/downloading-a-web-page.md"
 ---

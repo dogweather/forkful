@@ -4,7 +4,6 @@ date:                  2024-01-20T17:41:06.466232-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Skapa en temporär fil"
 
-category:             "PowerShell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/creating-a-temporary-file.md"
 ---

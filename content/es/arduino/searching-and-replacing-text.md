@@ -4,7 +4,6 @@ date:                  2024-01-20T17:57:10.748664-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Buscando y reemplazando texto"
 
-category:             "Arduino"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/searching-and-replacing-text.md"
 ---

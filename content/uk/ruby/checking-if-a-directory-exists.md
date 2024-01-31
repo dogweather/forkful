@@ -4,7 +4,6 @@ date:                  2024-01-20T14:58:23.439553-07:00
 html_title:           "C#: Перевірка наявності директорії"
 simple_title:         "Перевірка наявності директорії"
 
-category:             "Ruby"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/ruby/checking-if-a-directory-exists.md"
 ---

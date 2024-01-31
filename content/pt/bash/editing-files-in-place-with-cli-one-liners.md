@@ -4,7 +4,6 @@ date:                  2024-01-27T16:20:50.596326-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Editando arquivos in loco com linhas de comando"
 
-category:             "Bash"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/editing-files-in-place-with-cli-one-liners.md"
 ---

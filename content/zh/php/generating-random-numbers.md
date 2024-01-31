@@ -4,7 +4,6 @@ date:                  2024-01-27T20:34:46.869041-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "生成随机数"
 
-category:             "PHP"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/generating-random-numbers.md"
 ---

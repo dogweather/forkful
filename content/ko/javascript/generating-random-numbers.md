@@ -4,7 +4,6 @@ date:                  2024-01-27T20:34:39.500544-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "난수 생성"
 
-category:             "Javascript"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/generating-random-numbers.md"
 ---

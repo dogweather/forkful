@@ -4,7 +4,6 @@ date:                  2024-01-29T00:04:27.636801-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с CSV"
 
-category:             "Clojure"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/clojure/working-with-csv.md"
 changelog:

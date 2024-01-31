@@ -4,7 +4,6 @@ date:                  2024-01-26T04:14:35.361525-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання інтерактивної оболонки (REPL)"
 
-category:             "Elm"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elm/using-an-interactive-shell-repl.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T04:36:38.624690-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Umgang mit komplexen Zahlen"
 
-category:             "Bash"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/working-with-complex-numbers.md"
 ---

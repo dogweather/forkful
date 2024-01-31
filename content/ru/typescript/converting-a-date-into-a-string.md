@@ -4,7 +4,6 @@ date:                  2024-01-28T23:56:36.892851-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование даты в строку"
 
-category:             "TypeScript"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/typescript/converting-a-date-into-a-string.md"
 changelog:

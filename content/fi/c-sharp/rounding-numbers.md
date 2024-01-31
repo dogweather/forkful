@@ -4,7 +4,6 @@ date:                  2024-01-26T03:43:47.838751-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Numerojen pyöristäminen"
 
-category:             "C#"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/rounding-numbers.md"
 ---

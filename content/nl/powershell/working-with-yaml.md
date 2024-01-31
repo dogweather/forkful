@@ -4,7 +4,6 @@ date:                  2024-01-28T22:11:50.051203-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met YAML"
 
-category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/powershell/working-with-yaml.md"
 changelog:

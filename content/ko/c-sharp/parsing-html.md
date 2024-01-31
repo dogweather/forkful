@@ -4,7 +4,6 @@ date:                  2024-01-20T15:30:30.637254-07:00
 html_title:           "Arduino: HTML 파싱"
 simple_title:         "HTML 파싱"
 
-category:             "C#"
 tag:                  "HTML and the Web"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/parsing-html.md"

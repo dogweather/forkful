@@ -4,7 +4,6 @@ date:                  2024-01-20T15:38:08.957602-07:00
 html_title:           "Arduino recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 
-category:             "Rust"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/parsing-a-date-from-a-string.md"
 ---

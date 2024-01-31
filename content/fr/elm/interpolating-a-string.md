@@ -4,7 +4,6 @@ date:                  2024-01-20T17:50:33.031347-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolation de chaînes de caractères"
 
-category:             "Elm"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/interpolating-a-string.md"
 ---

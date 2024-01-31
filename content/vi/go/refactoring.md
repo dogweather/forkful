@@ -4,7 +4,6 @@ date:                  2024-01-28T22:06:29.877387-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tái cấu trúc mã"
 
-category:             "Go"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/refactoring.md"
 changelog:

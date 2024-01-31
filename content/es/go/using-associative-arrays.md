@@ -4,7 +4,6 @@ date:                  2024-01-30T19:11:22.432002-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Uso de matrices asociativas"
 
-category:             "Go"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/using-associative-arrays.md"
 changelog:

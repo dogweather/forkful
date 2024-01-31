@@ -4,7 +4,6 @@ date:                  2024-01-20T17:36:13.881470-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Convirtiendo una fecha en una cadena de texto"
 
-category:             "Arduino"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/converting-a-date-into-a-string.md"
 ---

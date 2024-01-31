@@ -4,7 +4,6 @@ date:                  2024-01-28T21:59:56.998837-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trích xuất chuỗi con"
 
-category:             "C++"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/cpp/extracting-substrings.md"
 changelog:

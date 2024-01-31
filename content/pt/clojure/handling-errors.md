@@ -4,7 +4,6 @@ date:                  2024-01-26T00:51:46.156712-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tratamento de erros"
 
-category:             "Clojure"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/handling-errors.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-26T01:07:06.225155-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Protokollierung"
 
-category:             "PowerShell"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/logging.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-29T00:05:52.419024-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Написание тестов"
 
-category:             "Go"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/go/writing-tests.md"
 changelog:

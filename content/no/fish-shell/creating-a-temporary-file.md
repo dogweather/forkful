@@ -4,7 +4,6 @@ date:                  2024-01-20T17:40:52.183395-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Opprette en midlertidig fil"
 
-category:             "Fish Shell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/creating-a-temporary-file.md"
 ---

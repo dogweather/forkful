@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
 simple_title:         "הפיכת מחרוזת לאותיות רישיות"
 
-category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/capitalizing-a-string.md"
 ---

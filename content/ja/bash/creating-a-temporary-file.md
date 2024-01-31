@@ -4,7 +4,6 @@ date:                  2024-01-20T17:39:45.235534-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "一時ファイルの作成"
 
-category:             "Bash"
 tag:                  "Files and I/O"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/creating-a-temporary-file.md"

@@ -4,7 +4,6 @@ date:                  2024-01-26T04:19:35.768082-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "프로그래머를 위한 TOML 다루기"
 
-category:             "C"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/working-with-toml.md"
 ---

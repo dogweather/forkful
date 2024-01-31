@@ -4,7 +4,6 @@ date:                  2024-01-26T04:14:04.961096-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z interaktywnego shella (REPL)"
 
-category:             "Fish Shell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/using-an-interactive-shell-repl.md"
 ---

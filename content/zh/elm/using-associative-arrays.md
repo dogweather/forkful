@@ -4,7 +4,6 @@ date:                  2024-01-30T19:10:54.463958-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用关联数组"
 
-category:             "Elm"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/using-associative-arrays.md"
 changelog:

@@ -4,7 +4,6 @@ date:                  2024-01-26T04:16:52.796677-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "인터랙티브 셸 (REPL) 사용하기"
 
-category:             "PowerShell"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/using-an-interactive-shell-repl.md"
 ---

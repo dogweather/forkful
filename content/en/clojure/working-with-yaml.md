@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino recipe: Working with YAML"
 simple_title:         "Working with YAML"
 
-category:             "Clojure"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/working-with-yaml.md"
 ---

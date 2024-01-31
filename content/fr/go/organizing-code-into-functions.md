@@ -4,7 +4,6 @@ date:                  2024-01-26T01:10:54.302456-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organisation du code en fonctions"
 
-category:             "Go"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/organizing-code-into-functions.md"
 ---

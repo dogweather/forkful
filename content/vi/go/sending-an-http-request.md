@@ -4,7 +4,6 @@ date:                  2024-01-28T22:07:57.879547-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gửi một yêu cầu HTTP"
 
-category:             "Go"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/sending-an-http-request.md"
 changelog:

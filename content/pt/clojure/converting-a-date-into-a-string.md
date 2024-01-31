@@ -4,7 +4,6 @@ date:                  2024-01-20T17:36:33.977152-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Convertendo uma data em uma string"
 
-category:             "Clojure"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/converting-a-date-into-a-string.md"
 ---

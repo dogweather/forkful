@@ -4,7 +4,6 @@ date:                  2024-01-27T16:22:05.636095-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用命令行一行命令操作文件"
 
-category:             "PowerShell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/manipulating-files-with-cli-one-liners.md"
 ---

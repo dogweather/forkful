@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Arduino: Arbeiten mit CSV-Dateien"
 simple_title:         "Arbeiten mit CSV-Dateien"
 
-category:             "Rust"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/working-with-csv.md"
 ---

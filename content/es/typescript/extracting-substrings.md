@@ -4,7 +4,6 @@ date:                  2024-01-20T17:46:37.750659-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extracción de subcadenas"
 
-category:             "TypeScript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/extracting-substrings.md"
 ---

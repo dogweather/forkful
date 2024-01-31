@@ -4,7 +4,6 @@ date:                  2024-01-27T20:34:25.854872-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"
 
-category:             "Fish Shell"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/generating-random-numbers.md"
 ---

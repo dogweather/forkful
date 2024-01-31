@@ -4,7 +4,6 @@ date:                  2024-01-30T19:13:10.596042-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Uso de matrices asociativas"
 
-category:             "TypeScript"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/using-associative-arrays.md"
 changelog:

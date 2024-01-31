@@ -4,7 +4,6 @@ date:                  2024-01-30T19:11:55.637043-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "सहयोगी अरेज़ का उपयोग करना"
 
-category:             "Elixir"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/using-associative-arrays.md"
 changelog:

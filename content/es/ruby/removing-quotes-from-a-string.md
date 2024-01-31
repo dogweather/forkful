@@ -4,7 +4,6 @@ date:                  2024-01-26T03:41:42.363799-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eliminando comillas de una cadena"
 
-category:             "Ruby"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/removing-quotes-from-a-string.md"
 ---

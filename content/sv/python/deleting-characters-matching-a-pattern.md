@@ -4,7 +4,6 @@ date:                  2024-01-20T17:42:48.189724-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Ta bort tecken som matchar ett mönster"
 
-category:             "Python"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/deleting-characters-matching-a-pattern.md"
 ---

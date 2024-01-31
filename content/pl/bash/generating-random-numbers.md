@@ -4,7 +4,6 @@ date:                  2024-01-27T20:32:52.201505-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generowanie liczb losowych"
 
-category:             "Bash"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/generating-random-numbers.md"
 ---

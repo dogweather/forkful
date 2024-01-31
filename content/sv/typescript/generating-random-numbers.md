@@ -4,7 +4,6 @@ date:                  2024-01-27T20:35:38.644136-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generera slumptal"
 
-category:             "TypeScript"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/generating-random-numbers.md"
 ---

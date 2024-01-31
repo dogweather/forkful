@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: टेक्स्ट फाइल लिखना"
 simple_title:         "टेक्स्ट फाइल लिखना"
 
-category:             "Ruby"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/writing-a-text-file.md"
 ---

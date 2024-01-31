@@ -4,7 +4,6 @@ date:                  2024-01-30T19:12:51.672709-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання асоціативних масивів"
 
-category:             "Javascript"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/using-associative-arrays.md"
 changelog:

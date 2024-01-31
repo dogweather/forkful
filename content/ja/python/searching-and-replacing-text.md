@@ -4,7 +4,6 @@ date:                  2024-01-20T17:58:29.177150-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "テキストの検索と置換"
 
-category:             "Python"
 tag:                  "Strings"
 isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/searching-and-replacing-text.md"

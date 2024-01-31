@@ -4,7 +4,6 @@ date:                  2024-01-20T17:56:39.992768-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"
 
-category:             "Rust"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/reading-command-line-arguments.md"
 ---

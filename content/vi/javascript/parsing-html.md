@@ -4,7 +4,6 @@ date:                  2024-01-28T22:04:02.179399-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Phân Tích Cú Pháp HTML"
 
-category:             "Javascript"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/javascript/parsing-html.md"
 changelog:

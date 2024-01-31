@@ -4,7 +4,6 @@ date:                  2024-01-25T02:03:45.600637-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Logging"
 
-category:             "Elixir"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/logging.md"
 ---

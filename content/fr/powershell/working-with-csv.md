@@ -4,7 +4,6 @@ date:                  2024-01-19
 html_title:           "Bash: Manipulation des fichiers CSV"
 simple_title:         "Manipulation des fichiers CSV"
 
-category:             "PowerShell"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/working-with-csv.md"
 ---

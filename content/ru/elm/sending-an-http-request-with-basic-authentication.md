@@ -4,7 +4,6 @@ date:                  2024-01-29T00:02:41.850293-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Отправка HTTP-запроса с базовой аутентификацией"
 
-category:             "Elm"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/elm/sending-an-http-request-with-basic-authentication.md"
 changelog:

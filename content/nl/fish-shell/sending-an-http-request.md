@@ -4,7 +4,6 @@ date:                  2024-01-28T22:07:37.831684-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een HTTP-verzoek verzenden"
 
-category:             "Fish Shell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/sending-an-http-request.md"
 changelog:

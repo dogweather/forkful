@@ -4,7 +4,6 @@ date:                  2024-01-20T17:32:54.544929-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Vergleich von zwei Daten"
 
-category:             "Elm"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/comparing-two-dates.md"
 ---

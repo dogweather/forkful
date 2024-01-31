@@ -4,7 +4,6 @@ date:                  2024-01-20T17:51:43.090036-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Zeichenketten interpolieren"
 
-category:             "TypeScript"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/interpolating-a-string.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-20T14:58:06.186944-07:00
 html_title:           "Gleam: Verifica dell'esistenza di una directory"
 simple_title:         "Verifica dell'esistenza di una directory"
 
-category:             "PowerShell"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/checking-if-a-directory-exists.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:10:08.177258-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met CSV"
 
-category:             "Lua"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/lua/working-with-csv.md"
 changelog:

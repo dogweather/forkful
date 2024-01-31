@@ -4,7 +4,6 @@ date:                  2024-01-20T15:30:59.980594-07:00
 html_title:           "Arduino: Tolka HTML"
 simple_title:         "Tolka HTML"
 
-category:             "Elixir"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/parsing-html.md"
 ---

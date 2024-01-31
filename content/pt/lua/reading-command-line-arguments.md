@@ -4,7 +4,6 @@ date:                  2024-01-20T17:56:20.435559-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lendo argumentos da linha de comando"
 
-category:             "Lua"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/reading-command-line-arguments.md"
 ---

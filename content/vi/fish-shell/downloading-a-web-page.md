@@ -4,7 +4,6 @@ date:                  2024-01-28T21:59:40.200969-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tải trang web"
 
-category:             "Fish Shell"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/downloading-a-web-page.md"
 changelog:

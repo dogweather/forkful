@@ -4,7 +4,6 @@ date:                  2024-01-28T21:58:29.383301-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Karakters verwijderen die overeenkomen met een patroon"
 
-category:             "Fish Shell"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/fish-shell/deleting-characters-matching-a-pattern.md"
 changelog:

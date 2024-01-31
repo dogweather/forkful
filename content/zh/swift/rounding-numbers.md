@@ -4,7 +4,6 @@ date:                  2024-01-26T03:46:44.273121-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "数字取整"
 
-category:             "Swift"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/rounding-numbers.md"
 ---

@@ -4,7 +4,6 @@ date:                  2024-01-28T22:04:07.022044-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Thao tác với các tệp tin bằng các lệnh CLI chỉ một dòng"
 
-category:             "Fish Shell"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/fish-shell/manipulating-files-with-cli-one-liners.md"
 changelog:

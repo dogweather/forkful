@@ -4,7 +4,6 @@ date:                  2024-01-30T19:12:26.856767-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "सहयोगी अरेज़ का उपयोग करना"
 
-category:             "Go"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/go/using-associative-arrays.md"
 changelog:

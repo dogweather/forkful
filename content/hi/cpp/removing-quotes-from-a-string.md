@@ -4,7 +4,6 @@ date:                  2024-01-26T03:39:32.770157-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग से उद्धरण चिह्न हटाना"
 
-category:             "C++"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/removing-quotes-from-a-string.md"
 ---

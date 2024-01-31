@@ -4,7 +4,6 @@ date:                  2024-01-28T22:06:53.655956-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Afronden van getallen"
 
-category:             "Java"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/java/rounding-numbers.md"
 changelog:

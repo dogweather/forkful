@@ -4,7 +4,6 @@ date:                  2024-01-27T16:20:54.677391-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Edytowanie plików w miejscu za pomocą jednolinijkowców CLI"
 
-category:             "Ruby"
 tag:                  "Data and Text Processing"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/editing-files-in-place-with-cli-one-liners.md"
 ---

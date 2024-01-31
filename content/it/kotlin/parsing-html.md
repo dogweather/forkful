@@ -4,7 +4,6 @@ date:                  2024-01-20T15:32:27.900357-07:00
 html_title:           "Bash: Analisi dell'HTML"
 simple_title:         "Analisi dell'HTML"
 
-category:             "Kotlin"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/parsing-html.md"
 ---
