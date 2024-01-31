@@ -1,11 +1,9 @@
 ---
-title: About Forkful
+title: フォークフルについて 
 date:  2024-01-31
 type:  page
 ---
 
-
-フォークフルについて
 
 ## 責任あるAIプロジェクト
 
@@ -16,7 +14,7 @@ AIがドラフトテキストを書き、その後人々がレビューします
 要するに、技術文書のための一種のペアプログラマーです。これは、2024年1月現在、コンテンツ生成にAIを使用する最良の方法のようです。
 
 
-{{< figure src="/robert-at-work.jpeg" rel="me" link="https://dogweather.dev" alt="The author at work" caption="_The author at work_" >}}
+{{< figure src="/robert-at-work.jpeg" rel="me" link="https://dogweather.dev" alt="仕事中の著者" caption="_仕事中の著者_" >}}
 
 
 私はいつも「クックブック」スタイルの文書が最も好きでした。
@@ -30,7 +28,7 @@ AIがドラフトテキストを書き、その後人々がレビューします
 これは私の小さな脳でも理解できることです。
 
 
-{{< figure src="/our-team.jpeg" alt="Our Team" caption="_Our Team_" >}}
+{{< figure src="/our-team.jpeg" alt="チーム" caption="_チーム" >}}
 
 
 では、フォークフルのハスケルページのデバッグ印刷は理解しやすいでしょうか？私が想像したほど簡単ではありませんが、1ヶ月前の私なら理解できたと思います。私は積極的にAIコードを微調整しています。
