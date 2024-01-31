@@ -7,6 +7,8 @@ programming_language: "Lua"
 category:             "Lua"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/using-an-interactive-shell-repl.md"
+changelog:
+  - 2024-01-30, dogweather, reviewed and added links
 ---
 
 {{< edit_this_page >}}
@@ -36,6 +38,6 @@ In the session, we declare a variable, perform basic arithmetic, manipulate a ta
 Lua’s lightweight nature makes its REPL ideal for prototyping. It's been around since Lua’s inception in the early 1990s, inspired by earlier interactive shells for languages like Lisp. Alternatives in other languages include `irb` for Ruby and `python` for Python, each with their own set of features. Lua's REPL is minimalistic; thus, it may lack advanced features found in others, like complex debugging tools. For a beefier experience, tools like ZeroBrane Studio or LuaDist's LuaRocks offer more than the basic REPL.
 
 ## See Also
-- [Lua 5.4 Reference Manual - The Standalone Lua Interpreter](https://www.lua.org/manual/5.4/manual.html#6)
+- [Lua 5.4 Reference Manual - The Standalone Lua Interpreter](https://www.lua.org/manual/5.4/manual.html#7)
 - [ZeroBrane Studio](https://studio.zerobrane.com/)
 - [LuaRocks](https://luarocks.org/)
