@@ -13,7 +13,7 @@ In pianificazione: aggiungere il flusso di lavoro inverso. Le persone scrivono i
 
 In poche parole, una sorta di co-programmatore per la documentazione tecnica. Questo sembra essere il modo migliore per utilizzare l'AI nella generazione di contenuti, circa gennaio 2024.
 
-{{< figure src="/robert-at-work.jpeg" rel="me" link="https://dogweather.dev" alt="The author at work" caption="_The author at work_" >}}
+{{< figure src="/robert-at-work.jpeg" rel="me" link="https://dogweather.dev" alt="L'autore al lavoro" caption="_L'autore al lavoro_" >}}
 
 Ho sempre preferito la documentazione in stile "Cookbook".
 
@@ -27,7 +27,7 @@ Questo è qualcosa che il mio piccolo cervello può capire.
 
 Ora, la pagina Haskell di Forkful per il debug print è comprensibile? Non è semplice come immaginavo, ma penso che il me di un mese fa l'avrebbe capita. Sto attivamente perfezionando il mio codice AI.
 
-{{< figure src="/our-team.jpeg" alt="Our Team" caption="_Our Team_" >}}
+{{< figure src="/our-team.jpeg" alt="Il nostro team" caption="_Il nostro team_" >}}
 
 Un'altra cosa che ho sempre voluto iniziare a costruire: siti web dove ogni pagina può essere modificata su GitHub.
 

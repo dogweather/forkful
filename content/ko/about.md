@@ -10,7 +10,7 @@ AI가 초안 텍스트를 작성하고, 그 후 사람들이 검토합니다. �
 
 계획 중인 것: 반대 작업 흐름을 추가합니다. 사람들이 초기 콘텐츠를 작성하고, 그 다음 AI가 가능한 오류와 스타일 문제를 지적합니다.
 
-{{< figure src="/robert-at-work.jpeg" rel="me" link="https://dogweather.dev" alt="仕事中の著者" caption="_仕事中の著者_" >}}
+{{< figure src="/robert-at-work.jpeg" rel="me" link="https://dogweather.dev" alt="작업 중인 저자" caption="_작업 중인 저자_" >}}
 
 간단히 말해서, 기술 문서를 위한 일종의 페어 프로그래머입니다. 2024년 1월 현재, 콘텐츠 생성을 위한 AI 사용의 가장 좋은 방법처럼 보입니다.
 
@@ -26,7 +26,7 @@ x를 디버그-프린트하려면, 이를 (trace "message" x)로 변경하세요
 
 이제, 포크풀의 Haskell 페이지에 있는 디버그 프린트는 이해하기 쉬운가요? 내가 상상했던 것처럼 죽을 만큼 간단하지는 않지만, 한 달 전의 나라면 이해했을 것입니다. 나는 내 AI 코드를 적극적으로 미세 조정하고 있습니다.
 
-{{< figure src="/our-team.jpeg" alt="チーム" caption="_チーム" >}}
+{{< figure src="/our-team.jpeg" alt="우리 팀" caption="_우리 팀_" >}}
 
 또 다른 것은, 나는 항상 시작하고 싶었던 것: GitHub에서 편집할 수 있는 웹사이트를 만드는 것입니다.
 
