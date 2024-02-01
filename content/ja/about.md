@@ -39,3 +39,7 @@ AIがドラフトテキストを書き、その後人々がレビューします
 
 ロバート
 
+* https://dogweather.dev
+* https://github.com/dogweather
+* https://fosstodon.org/@dogweather
+* https://www.linkedin.com/in/robbshecter
