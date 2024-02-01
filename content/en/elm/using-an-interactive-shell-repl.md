@@ -1,10 +1,13 @@
 ---
 title:                "Using an interactive shell (REPL)"
 date:                  2024-01-25T03:39:27.205304-07:00
+lastmod:               2024-01-31
 model:                 gpt-4-1106-preview
 simple_title:         "Using an interactive shell (REPL)"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/using-an-interactive-shell-repl.md"
+changelog:
+  - 2024-01-31, dogweather, reviewed
 ---
 
 {{< edit_this_page >}}
