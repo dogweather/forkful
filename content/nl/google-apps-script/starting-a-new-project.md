@@ -1,0 +1,52 @@
+---
+title:                "Een nieuw project starten"
+date:                  2024-02-01T22:03:04.285810-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Een nieuw project starten"
+tag:                  "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/google-apps-script/starting-a-new-project.md"
+changelog:
+  - 2024-02-01, gpt-4-0125-preview, translated from English
+---
+
+{{< edit_this_page >}}
+
+## Wat & Waarom?
+
+Een nieuw project starten in Google Apps Script (GAS) houdt in dat je een scriptbestand initialiseert binnen het Google-ecosysteem (Google Drive, Documenten, Spreadsheets, enz.) om taken te automatiseren of de functionaliteiten van Google Apps uit te breiden. Programmeurs beginnen vaak aan deze reis om werkstromen te stroomlijnen, Google-services programmatisch te manipuleren of aangepaste add-ons te creëren, waardoor tijd wordt bespaard en de kracht van Google's infrastructuur wordt benut.
+
+## Hoe te:
+
+Om een nieuw project in Google Apps Script te starten, heb je een paar instappunten, maar laten we ons richten op de meest directe methode: het maken van een script vanuit Google Drive.
+
+1. **Een Project Creëren in Google Drive**
+   - Navigeer naar Google Drive (drive.google.com).
+   - Klik op "+ Nieuw" > "Meer" > "Google Apps Script".
+   - Een nieuw scriptproject wordt geopend in de editor. Standaard bevat dit een `Code.gs`-bestand met een voorbeeldfunctie `myFunction`.
+
+2. **Je Project Instellen**
+   - Hernoem je project voor duidelijkheid. Klik linksboven op "Naamloos project" en geef het een betekenisvolle naam.
+   - Schrijf een eenvoudige functie in het `Code.gs`-bestand om er gevoel bij te krijgen:
+
+```javascript
+function helloWorld() {
+  Logger.log('Hallo, wereld!');
+}
+```
+
+   - Voer `helloWorld` uit door de functie te selecteren in het dropdown-menu naast de afspeelknop (▶) en erop te klikken. Hierdoor wordt de functie uitgevoerd.
+
+3. **Logs Bekijken**
+   - Om de uitvoer van `Logger.log` te bekijken, ga je naar "Beeld" > "Logs", of druk je op `Ctrl + Enter`. Je zou "Hallo, wereld!" in de logs moeten zien.
+
+Gefeliciteerd, je hebt zojuist succesvol een nieuw project in Google Apps Script gestart en een eenvoudige functie uitgevoerd!
+
+## Diepgaand
+
+De introductie van Google Apps Script rond 2009 bood een krachtig maar toegankelijk platform voor zowel ontwikkelaars als niet-ontwikkelaars om te automatiseren, uit te breiden en voort te bouwen op de uitgebreide reeks van Google-services. In tegenstelling tot traditionele programmeeromgevingen, biedt GAS een unieke combinatie van eenvoud en integratie, direct binnen het Google-ecosysteem, zonder de noodzaak voor externe servers of configuratie. Dit serverloze uitvoeringsmodel vereenvoudigt de projectimplementatie en -beheer aanzienlijk.
+
+Historisch gezien was GAS enigszins beperkt door zijn uitvoeringsomgeving en taalversie, vaak achterlopend op de huidige JavaScript-standaarden. Echter, recente updates hebben moderne JavaScript-syntaxis (ECMAScript 2015+) naar GAS gebracht, waardoor het aantrekkelijker is voor ontwikkelaars die gewend zijn aan hedendaagse ontwikkelpraktijken.
+
+Hoewel GAS uniek gepositioneerd is om te interageren met Google Services, zijn er alternatieve benaderingen voor meer intensieve of specifieke behoeften. Bijvoorbeeld, Google Cloud Functions en Google Cloud Platform (GCP) bieden robuustere en schaalbaardere oplossingen voor het afhandelen van complexe workflows, het verwerken van grote datasets en het integreren met externe API's. Deze platforms staan programmeren in verschillende talen toe (bijv. Python, Go, Node.js) en bieden grotere computationele bronnen.
+
+Niettemin, voor taken die nauw verbonden zijn met Google Apps, automatisering en snelle ontwikkeling binnen dit ecosysteem, blijft Google Apps Script een ongeëvenaard hulpmiddel in termen van gebruiksgemak en integratiediepte. De toegankelijkheid ervan direct vanuit Google Drive en de naadloze verbinding met Google-services maken het een praktische keuze voor een breed scala aan projecten, met name voor diegenen die de functionaliteit van Spreadsheets, Documenten, Formulieren en andere Google-applicaties willen uitbreiden.
