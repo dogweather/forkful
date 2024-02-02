@@ -1,6 +1,6 @@
 ---
 title:                "Generating random numbers"
-date:                  2024-02-01T13:31:39.852046-07:00
+date:                  2024-02-01T21:30:24.808919-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generating random numbers"
 tag:                  "Numbers"
@@ -11,32 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Random numbers in programming are like the seasoning in cooking – they add flavor and unpredictability. In Visual Basic for Applications (VBA), programmers use random numbers for tasks like simulating scenarios, generating test data, or deciding which part of the code to execute next.
+Generating random numbers in Visual Basic for Applications (VBA) allows programs to simulate processes with elements of chance or variability, such as dice rolls or sampling data. Programmers use these techniques to develop models, games, or simulations where predictable outcomes would be unrealistic or less useful.
 
 ## How to:
 
-Generating a random number in VBA might seem like waving a magic wand, but it's actually pretty straightforward. Before you cast any spells, you'll need to summon the `Randomize` statement; it initializes the random number generator. Without it, your "random" numbers might not feel so random because they could start from the same seed value each time you run your code.
+In VBA, the `Rnd` function is used to generate random numbers. By default, `Rnd` generates a single-precision floating-point number greater than or equal to 0 and less than 1. Here are a few steps and examples to harness random numbers effectively:
 
-Here's a simple incantation to generate a random number between 1 and 100:
+1. **Simple Random Number:**
+   To generate a basic random number, you just need to call `Rnd()`:
 
-```basic
-Sub GenerateRandomNumber()
-    ' Initialize the random number generator to make results unpredictable
-    Randomize
-    
-    ' Generate a random number between 1 and 100
-    Dim myRandomNumber As Integer
-    myRandomNumber = Int((100 * Rnd()) + 1)
-    
-    ' Display the random number
-    MsgBox "Your random number is: " & myRandomNumber
-End Sub
-```
+   ```vb
+   Sub GenerateRandomNumber()
+       Dim randomNumber As Single
+       randomNumber = Rnd() ' Random number between 0 and 1
+       MsgBox randomNumber
+   End Sub
+   ```
 
-When you run this spell, a message box will pop up, revealing a number that fate has chosen for you.
+2. **Setting the Seed:**
+   The `Randomize` statement initializes the random-number generator, which can be crucial for ensuring different outcomes each time your VBA code runs:
 
-## Deep Dive
+   ```vb
+   Sub SeedRandomNumber()
+       Randomize
+       Dim randomNumber As Single
+       randomNumber = Rnd()
+       MsgBox randomNumber
+   End Sub
+   ```
 
-The mechanics of generating random numbers in VBA hinge on the `Rnd` function, coupled with the `Randomize` statement. Without `Randomize`, `Rnd` generates the same sequence of numbers every time your program is run, because it's based on a deterministic algorithm. Invoking `Randomize` sets a new starting point for `Rnd`, based on the system clock, making the sequence appear random.
+3. **Generating Numbers in a Range:**
+   Often, you'll want a random number within a specific range. Here’s how to generate a number between 1 and 100:
 
-Historically, the pseudo-random number generators (PRNG), like the one used in VBA, have been sufficient for most applications not requiring high levels of randomness. However, for more security-sensitive applications, such as cryptography, these generators fall short. In those cases, cryptographically secure PRNGs (CSPRNGs) are preferred due to their improved unpredictability. VBA's generator is fine for general use, simulations, and games, but developers working on more critical applications should look towards more robust alternatives, possibly integrating external libraries capable of delivering the necessary level of randomness.
+   ```vb
+   Sub RandomNumberInRange()
+       Randomize
+       Dim randomNumber As Integer
+       randomNumber = Int((100 * Rnd()) + 1) ' Random number between 1 and 100
+       MsgBox randomNumber
+   End Sub
+   ```
+
+### Sample Output:
+After running `RandomNumberInRange`, you might see a message box displaying a number like `45`.
+
+## Deep Dive:
+
+The `Rnd` function in VBA, while easy to use, actually generates pseudo-random numbers based on a deterministic algorithm. This means the sequences of numbers it produces are not truly random but can often suffice for common tasks needing stochastic processes.
+
+Historically, the random number generation capability in VBA dates back to early versions of Basic, adapting over time to include features like `Randomize` to improve the randomness by seeding the algorithm with a starting point. However, for applications requiring high levels of randomness such as secure cryptographic operations, VBA’s `Rnd` might not be the best tool. Alternatives in more robust programming environments or languages designed with cryptography in mind, like Python's `secrets` module or Java's `SecureRandom`, should be considered. 
+
+Despite its limitations, the simplicity and accessibility of generating random numbers in VBA continue to make it a valuable tool for a wide range of lighter applications, simulation work, and educational purposes.

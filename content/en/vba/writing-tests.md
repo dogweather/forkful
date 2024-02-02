@@ -1,6 +1,6 @@
 ---
 title:                "Writing tests"
-date:                  2024-02-01T13:31:52.123123-07:00
+date:                  2024-02-01T21:30:11.390251-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Writing tests"
 tag:                  "Testing and Debugging"
@@ -11,42 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Writing tests in Visual Basic for Applications (VBA) is about creating snippets of code that automatically check if your other pieces of code are doing exactly what you expect them to do. Programmers do it to catch bugs early, ensure code quality, and safeguard against future changes breaking functionality.
+Writing tests in programming involves creating specific procedures to validate the functionality and performance of your code segments, ensuring they work as expected under various conditions. Programmers do it to catch bugs early, improve code quality, and facilitate future code maintenance and enhancements.
 
 ## How to:
 
-Unfortunately, VBA doesn't have a built-in testing framework like some other programming environments. But don't worry; we can improvise with a bit of creativity. To illustrate, let's say we have a simple function that adds two numbers:
+While Visual Basic for Applications (VBA) doesn't come with a built-in testing framework akin to those available in languages like Python or JavaScript, you can still implement simple test procedures to check the integrity of your code. Here's an example to illustrate:
+
+Suppose you have a function in VBA that adds two numbers:
 
 ```basic
-Function AddNumbers(a As Integer, b As Integer) As Integer
-    AddNumbers = a + b
+Function AddNumbers(x As Integer, y As Integer) As Integer
+    AddNumbers = x + y
 End Function
 ```
 
-To test this, we can create a subroutine that checks if the output of `AddNumbers` is what we expect it to be. Here's a rudimentary test:
+To test this function, you can write another procedure that validates its output against expected results:
 
 ```basic
 Sub TestAddNumbers()
-    Dim expectedResult As Integer
     Dim result As Integer
-    
-    expectedResult = 5
-    result = AddNumbers(2, 3)
-    
-    If result = expectedResult Then
-        Debug.Print "Test Passed"
+    result = AddNumbers(5, 10)
+    If result = 15 Then
+        MsgBox "Test Passed!", vbInformation
     Else
-        Debug.Print "Test Failed: Expected " & expectedResult & ", but got " & result
+        MsgBox "Test Failed. Expected 15 but got " & result, vbCritical
     End If
 End Sub
 ```
 
-When you run `TestAddNumbers`, you should see "Test Passed" in the Immediate Window (press Ctrl+G in the VBA editor to view it). This simple test checks if our `AddNumbers` function correctly adds 2 and 3 to make 5. If we change the inputs or the `AddNumbers` function, and something goes wrong, this test will let us know by failing.
+Running `TestAddNumbers` will display a message box indicating whether the test passed or failed based on the function's output. While this is a simplified scenario, you can build more complex tests by incorporating loops, different input values, and testing for multiple functions.
 
 ## Deep Dive
 
-Testing in VBA isn't as straightforward or integrated as in more modern programming languages. Languages like Python, for instance, have robust frameworks like pytest that make writing tests a breeze. However, even without a fancy framework, writing manual tests in VBA is still a worthwhile practice. It enables you to verify your code's functionality and can save you from introducing or overlooking bugs.
+The approach to writing tests in VBA shown here is manual and lacks the features of more sophisticated testing frameworks available in other programming environments, such as automated test runs, setup/teardown procedures, and integrated reporting of test results. Before the broader adoption of unit testing frameworks and test-driven development (TDD), manual testing procedures similar to the one described were common. While this method is simple and can be effective for small projects or learning purposes, it's not scalable or efficient for larger projects or teams.
 
-Historically, VBA hasn't seen the development of widespread external testing frameworks, partially because VBA is often used for quick, in-the-moment solutions in Office applications, rather than for building software where testing is a critical part of the development process. Despite this, the principle of testing your code is universal and applying even a simple testing method in VBA can improve the reliability and maintainability of your macros and functions.
+In environments that support richer development toolsets, programmers often turn to frameworks like NUnit for .NET applications or JUnit for Java applications, which provide comprehensive tools for writing and running tests systematically. These frameworks offer advanced features such as asserting test outcomes, setting up mock objects, and measuring code coverage.
 
-When more complex testing is required, some developers turn to writing their tests in another language or using external tools to simulate user interactions for UI-based testing. However, for most practical VBA uses, a simple custom testing routine like the one demonstrated above should suffice to ensure your code is doing what you intended.
+For VBA developers looking for more advanced testing capabilities, the closest alternative might be leveraging external tools or integrating with other programming environments. Some developers use VBA in conjunction with Excel to record test scenarios and outcomes manually. While not as convenient or automated as using a dedicated testing framework, these methods can partially bridge the gap, helping maintain the reliability of VBA solutions in complex or critical applications.

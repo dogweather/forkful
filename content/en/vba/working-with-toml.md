@@ -1,6 +1,6 @@
 ---
 title:                "Working with TOML"
-date:                  2024-02-01T13:32:05.772403-07:00
+date:                  2024-02-01T21:30:11.576511-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Working with TOML"
 tag:                  "Data Formats and Serialization"
@@ -11,64 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-TOML, short for Tom's Obvious, Minimal Language, is a handy format for configuration files. Programmers use it because it's easy to read, write, and works well for defining key-value pairs, eventually making configuration management a breeze in various applications, including those developed with Visual Basic for Applications (VBA).
+TOML, which stands for Tom's Obvious, Minimal Language, is a data serialization format predominantly used for configuration files. Programmers leverage TOML for its readability and easy mapping to data structures, enabling straightforward configuration of applications across various programming environments, including Visual Basic for Applications (VBA).
 
 ## How to:
 
-Unfortunately, VBA doesn't come with built-in support for parsing TOML files directly. Fear not, though—you can still manage TOML files by either calling external parsers or doing a bit of manual string manipulation. Here's a simple example to get you started with the latter:
+Working with TOML in VBA involves parsing the TOML file to read configurations or settings into your VBA project. VBA does not have built-in support for TOML, so you'll typically use a parser or convert TOML data into a format VBA can easily work with, like JSON or XML. Here’s how to manually parse a simple TOML config file:
 
-Imagine you have the following TOML content in a file named `config.toml`:
-```toml
+1. **Sample TOML File** (`config.toml`):
+```
+title = "TOML Example"
+
 [database]
 server = "192.168.1.1"
-ports = [ 8001, 8002 ]
+ports = [ 8000, 8001, 8002 ]
 connection_max = 5000
 enabled = true
 ```
 
-First, you'd want to read this file into VBA. Here's a basic function to read file contents into a string:
+2. **VBA Code to Parse TOML**:
 
-```basic
-Function ReadFile(filePath As String) As String
-    Dim text As String
-    Dim fileNo As Integer
-    fileNo = FreeFile
+Assuming the TOML content is read into a string variable `tomlStr`, the following VBA code demonstrates a simplistic approach to parse the `[database]` section:
+
+```vb
+Function ParseTOML(tomlStr As String)
+    Dim lines() As String
+    lines = Split(tomlStr, vbCrLf)
     
-    Open filePath For Input As #fileNo
-    text = Input(LOF(fileNo), fileNo)
-    Close #fileNo
+    Dim config As Object
+    Set config = CreateObject("Scripting.Dictionary")
+    Dim currentSection As String
+    currentSection = ""
     
-    ReadFile = text
+    Dim i As Integer
+    For i = 0 To UBound(lines)
+        Dim line As String
+        line = Trim(lines(i))
+        If InStr(line, "[") > 0 And InStr(line, "]") > 0 Then
+            currentSection = Mid(line, 2, Len(line) - 2)
+            Set config(currentSection) = CreateObject("Scripting.Dictionary")
+        ElseIf InStr(line, "=") > 0 Then
+            Dim parts() As String
+            parts = Split(line, "=")
+            Dim key As String
+            key = Trim(parts(0))
+            Dim value As String
+            value = Trim(parts(1))
+            config(currentSection)(key) = value
+        End If
+    Next i
+    
+    'Example to access parsed data
+    Debug.Print "Database Server: "; config("database")("server")
 End Function
 ```
 
-Next, you'll parse the TOML content. A fully fledged parser is complex, but here's a snippet to find the `server` value within the `database` section:
-
-```basic
-Function GetServerValue(tomlContent As String) As String
-    Dim startPos As Long, endPos As Long, lineContent As String
-    startPos = InStr(tomlContent, "[database]") ' Find database section
-    endPos = InStr(startPos, tomlContent, "server") ' Find server key within section
-    
-    lineContent = Mid(tomlContent, endPos, InStr(endPos, tomlContent, vbNewLine) - endPos)
-    
-    GetServerValue = Trim(Split(lineContent, "=")(1)) ' Extract and return the value
-End Function
+3. **Sample Output** (Immediate Window):
 ```
-
-To use these functions:
-
-```basic
-Sub DemoReadTOML()
-    Dim fileContents As String
-    fileContents = ReadFile("C:\path\to\config.toml")
-    
-    MsgBox "Server value: " & GetServerValue(fileContents)
-End Sub
+Database Server: 192.168.1.1
 ```
-
-The message box will display something like `Server value: "192.168.1.1"`, showing you've successfully extracted information from a TOML file.
 
 ## Deep Dive
 
-The TOML format emerged as an alternative to XML and JSON for configuration files, designed for unambiguous parsing with a clear, minimal syntax. While VBA doesn't natively support TOML, as demonstrated, it's not beyond reach to work with it through custom parsing—albeit with a bit of effort. Bear in mind, for large or complex TOML files, this manual parsing can become impractical. In such cases, leveraging external tools with command line interfaces (CLIs) might be a more efficient route, or even considering an alternative configuration format like JSON, which VBA can parse more readily with ScriptControl's JSON parser or using a library like JsonConverter for more sophisticated projects.
+The practical acceptance of TOML in the developer community showcases a trend towards simpler, more human-readable configuration files, standing in contrast to the formerly prevalent XML. TOML's design philosophy emphasizes clear semantics and aims for straightforward parsing with minimal overhead. In VBA, handling TOML directly involves manual parsing or leveraging external tools to convert TOML into a more VBA-friendly format due to the lack of native support. While this manual parsing method showcases a fundamental approach, utilizing external libraries or intermediate formats like JSON may offer more robust and error-resistant parsing strategies. Given VBA’s extensive integration with Microsoft Office, converting TOML to JSON and using VBA's native JSON parsing capabilities (where applicable) or third-party JSON parsers could provide a more streamlined workflow. Furthermore, with the continuous evolution of data serialization formats, programmers should also consider YAML, which, like TOML, emphasizes human readability but offers different trade-offs in terms of complexity and flexibility.

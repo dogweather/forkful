@@ -1,6 +1,6 @@
 ---
 title:                "Handling errors"
-date:                  2024-02-01T13:31:47.939298-07:00
+date:                  2024-02-01T21:30:53.785212-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Handling errors"
 tag:                  "Good Coding Practices"
@@ -11,58 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Handling errors in Visual Basic for Applications (VBA) is about managing the unexpected. Programmers use error-handling techniques to gracefully respond to conditions that would otherwise crash an application or result in incorrect output.
+Error handling in Visual Basic for Applications (VBA) refers to the process of anticipating, detecting, and resolving programming, application, or communication errors. Implementing robust error handling is crucial for maintaining the integrity of applications and improving user experience by gracefully managing unexpected issues without causing abrupt crashes or data loss.
 
 ## How to:
 
-In VBA, the primary method for handling errors involves the `On Error` statement. It can be used in several ways, but two common approaches are `On Error Goto` and `On Error Resume Next`.
+In VBA, error handling is typically implemented using the `On Error` statement which instructs VBA how to proceed when an error occurs. The most common error handling strategies involve the `On Error GoTo` label, `On Error Resume Next`, and `On Error GoTo 0`. 
 
-### Example 1: On Error Goto
+**Example 1: Using `On Error GoTo`**
 
-This technique redirects the program flow to a specific line or label when an error occurs.
+This approach allows you to direct the program to a specific section of code, labeled immediately after encountering an error.
 
-```basic
+```vb
 Sub ErrorHandlerExample()
     On Error GoTo ErrHandler
-    Dim x As Integer
-    x = 5 / 0 ' This will cause a divide by zero error
+    Dim intDivision As Integer
+
+    intDivision = 5 / 0 ' This will cause a divide by zero error
 
     Exit Sub
-    
 ErrHandler:
-    MsgBox "An error occurred: " & Err.Description, vbExclamation
+    MsgBox "An Error Occurred: " & Err.Description, vbCritical, "Error!"
     Resume Next
 End Sub
 ```
 
-Running this subroutine will trigger a divide-by-zero error, but instead of crashing, it displays a message box with the error description and then resumes execution with the statement following the one that caused the error.
+In this example, any runtime error will trigger the jump to `ErrHandler`, displaying an error message and then proceeding with the next line after the error.
 
-### Example 2: On Error Resume Next
+**Example 2: Using `On Error Resume Next`**
 
-This approach allows the program to continue with the next line of code after an error has occurred, useful for skipping over errors in a loop.
+This strategy instructs VBA to continue executing the next line of code even if an error occurs, which can be useful for errors expected to be harmless or when you plan to handle the error later in the execution.
 
-```basic
+```vb
 Sub ResumeNextExample()
     On Error Resume Next
-    Dim array(5) As Integer
-    Dim i As Integer
-
-    For i = 0 To 10 ' This will exceed the array bounds
-        array(i) = i
-    Next i
+    Dim intDivision As Integer
+    intDivision = 5 / 0 ' This will not cause the program to stop; error is ignored
     
+    ' Check if error occurred
     If Err.Number <> 0 Then
-        MsgBox "An error occurred: " & Err.Description, vbExclamation
+        MsgBox "An Error Occurred: " & Err.Description, vbExclamation, "Handled Error"
+        ' Reset error
+        Err.Clear
     End If
 End Sub
 ```
 
-This code attempts to assign values beyond the array's bounds but continues running quietly due to `On Error Resume Next`. It checks for an error and displays a message box if one was encountered.
+In this case, the program doesn't break on error; it checks if an error occurred, handles it if it did, and then clears the error.
 
 ## Deep Dive
 
-Error handling in VBA has its roots in the early days of BASIC, where simple and robust handling mechanisms were necessary for stability. Over time, as the language evolved, so did its capabilities for managing errors, integrating more sophisticated methods like exception handling in other programming languages. However, VBA's error-handling mechanisms, though functional, are considered less powerful or flexible compared to structured error handling in languages like VB.NET with `Try...Catch...Finally`.
+Historically, error handling in programming languages has evolved from simple goto statements to more sophisticated mechanisms like exceptions in languages such as Java and C#. VBA's error handling, while not as powerful or flexible as modern exception handling, serves its purpose within the context of the language's application in automating tasks in Microsoft Office environments.
 
-One key factor to consider with `On Error Resume Next` is that it can potentially lead to silent failures if errors are not explicitly checked for and handled. Consequently, while it's suitable for specific scenarios, overreliance on it can mask issues that would be better addressed directly. Conversely, `On Error Goto` allows for more controlled error management by routing program flow to an error handling block.
+The primary limitation of VBA's error handling lies in its somewhat cumbersome and manual approach, requiring careful placement of error handling code and clear understanding of the flow of execution. Modern programming languages typically offer more elegant solutions, such as try-catch blocks, that automatically handle the flow to error handling code without the need for manual checks or jumps in code execution.
 
-Despite these approaches, many modern programming practices favor more explicit exception handling mechanisms available in languages like Python or Java. However, within the constraints and context of VBA, understanding and using `On Error` effectively can greatly enhance the resilience and reliability of scripts and macro-driven applications.
+Despite these limitations, VBA's error handling mechanisms are suitable for most automation tasks and when used properly, can significantly reduce the likelihood of unhandled errors causing problems for users. Additionally, understanding VBA's error handling can provide insights into older programming paradigms and the evolution of error handling strategies in software development.

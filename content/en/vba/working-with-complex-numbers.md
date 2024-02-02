@@ -1,6 +1,6 @@
 ---
 title:                "Working with complex numbers"
-date:                  2024-02-01T13:31:58.938728-07:00
+date:                  2024-02-01T21:30:18.778843-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Working with complex numbers"
 tag:                  "Numbers"
@@ -11,76 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Complex numbers, those quirky yet fundamental figures with a real part and an imaginary part (think `3 + 4i`), are essential in various computations, especially in engineering. Programmers learn to manipulate them to solve problems in fields like signal processing or electrical engineering simulations.
+Working with complex numbers involves performing mathematical operations on numbers that have both a real part and an imaginary part. Programmers often engage with complex numbers in domains such as engineering, physics, and anywhere that involves solving equations that are not possible with just real numbers.
 
 ## How to:
 
-Visual Basic for Applications (VBA) doesn't have a built-in type for complex numbers, but that won't stop us. We'll roll up our sleeves and define our own. Here's a quick guide on how to handle complex numbers in VBA with some coding muscle.
+In Visual Basic for Applications (VBA), handling complex numbers can be somewhat less straightforward compared to languages with native support for them. However, you can manage complex operations by creating functions or using existing library functions. Let's explore a basic example of addition, subtraction, multiplication, and division of complex numbers:
 
-First, define a Type for complex numbers:
-
-```basic
-Type Complex
-    realPart As Double
-    imaginaryPart As Double
-End Type
-```
-
-Now, let's add functions to perform operations, starting with addition:
-
-```basic
-Function AddComplex(c1 As Complex, c2 As Complex) As Complex
-    Dim result As Complex
-    result.realPart = c1.realPart + c2.realPart
-    result.imaginaryPart = c1.imaginaryPart + c2.imaginaryPart
-    AddComplex = result
+```vb
+' Function to add complex numbers
+Function AddComplex(x As String, y As String) As String
+    Dim real1 As Double, imag1 As Double
+    Dim real2 As Double, imag2 As Double
+    
+    ' Extracting real and imaginary parts from the complex numbers
+    real1 = Val(Split(x, "+")(0))
+    imag1 = Val(Split(x, "+")(1))
+    real2 = Val(Split(y, "+")(0))
+    imag2 = Val(Split(y, "+")(1))
+    
+    ' Performing addition
+    AddComplex = (real1 + real2) & "+" & (imag1 + imag2) & "i"
 End Function
-```
 
-How about multiplication? It's a bit trickier but totally manageable:
-
-```basic
-Function MultiplyComplex(c1 As Complex, c2 As Complex) As Complex
-    Dim result As Complex
-    result.realPart = (c1.realPart * c2.realPart) - (c1.imaginaryPart * c2.imaginaryPart)
-    result.imaginaryPart = (c1.imaginaryPart * c2.realPart) + (c1.realPart * c2.imaginaryPart)
-    MultiplyComplex = result
-End Function
-```
-
-Let's see these functions in action:
-
-```basic
-Sub DemoComplexOperations()
-    Dim num1 As Complex
-    Dim num2 As Complex
-    Dim result As Complex
-
-    ' Initialize complex numbers
-    num1.realPart = 3
-    num1.imaginaryPart = 4
-    num2.realPart = 1
-    num2.imaginaryPart = -2
-
-    'Addition
-    result = AddComplex(num1, num2)
-    Debug.Print "Addition: ", result.realPart; " + "; result.imaginaryPart; "i"
-
-    'Multiplication
-    result = MultiplyComplex(num1, num2)
-    Debug.Print "Multiplication: ", result.realPart; " + "; result.imaginaryPart; "i"
+' Example usage
+Sub ExampleUsage()
+    Dim result As String
+    result = AddComplex("3+2i", "1+7i")
+    Debug.Print "Result of Addition: " & result  ' Output: Result of Addition: 4+9i
 End Sub
 ```
 
-Sample output for our little demo:
+While this demonstrates addition, similar approaches can be adapted for subtraction, multiplication, and division. For complex operations beyond basic arithmetic, it may be worth exploring external libraries or integrating other solutions that support complex number operations more natively.
 
-```
-Addition: 4 + 2i
-Multiplication: 11 + -5i
-```
+## Deep Dive:
 
-## Deep Dive
+VBA does not include built-in support for complex numbers, an aspect where it lags behind languages like Python, which has a complex number class (`complex`) or C++ with its Standard Template Library (`std::complex`). Historically, the need to manipulate complex numbers directly in VBA is relatively rare, as it is often used for automation, manipulating Office applications, and tasks that traditionally don't require complex mathematical calculations. When VBA was conceived and developed, its use cases were mainly focused on business applications rather than scientific computing, which could explain the omission.
 
-Historically, VBA wasn't designed with advanced mathematical operations like complex number arithmetic in mind. It evolved from earlier versions of BASIC with a focus on automating tasks within the Microsoft Office suite rather than crunching complex numbers. This is why, unlike languages such as Python, which boast dedicated libraries and types for complex arithmetic (thanks to its `cmath` module), in VBA, we improvise by defining our own types and functions.
-
-That being said, this manual approach in VBA, though a bit cumbersome, shows the language's versatility. For calculations that demand extensive complex number arithmetic, one might consider integrating VBA with more mathematically inclined languages or software. MATLAB, for instance, provides a rich set of functionalities for dealing with complex numbers and may be more efficient for heavy computational tasks. However, when working within the confines of the Microsoft Office ecosystem, crafting your own VBA solutions, as we've demonstrated, is perfectly viable and often quite rewarding.
+For tasks that require extensive complex number manipulations, programmers might find using a more mathematically oriented language beneficial. However, for those committed to or restricted by the use of VBA, writing custom functions (as illustrated) or integrating with software that has these capabilities (such as MATLAB or Excel itself to some extent) are viable paths forward. Despite its limitations, creative solutions and external integrations can extend VBA's utility into domains it wasn't originally designed for, including working with complex numbers.

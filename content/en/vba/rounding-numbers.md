@@ -1,6 +1,6 @@
 ---
 title:                "Rounding numbers"
-date:                  2024-02-01T13:31:42.556609-07:00
+date:                  2024-02-01T21:30:24.812939-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rounding numbers"
 tag:                  "Numbers"
@@ -10,33 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Rounding numbers in VBA is about chopping off the digits you don't need from a number, making it simpler and more manageable. Programmers do this to simplify calculations, improve readability, and ensure values meet expected formats or limits.
+
+Rounding numbers in programming is about approximating a number to its nearest whole number or to a certain number of decimal places. Programmers round numbers to simplify figures, improve readability, or meet specific numeric criteria in calculations, especially in financial computations where precision matters.
 
 ## How to:
-When it comes to rounding numbers in VBA, there are a few key functions you'll be using: `Round`, `Int`, and `Fix`. Let's see how each of these works with some quick examples.
 
-```basic
-' Using Round function
-Dim roundedNumber As Double
-roundedNumber = Round(3.14159, 2) ' Rounds to 2 decimal places
-Debug.Print roundedNumber ' Output: 3.14
+In Visual Basic for Applications (VBA), rounding can be achieved using several functions, each suited for specific scenarios. Here are the most commonly used functions with examples:
 
-' Using Int function - Rounds down
-Dim intNumber As Double
-intNumber = Int(3.99)
-Debug.Print intNumber ' Output: 3
+1. **Round Function**:
+   The `Round` function rounds a number to a specified number of digits.
+   ```basic
+   Dim roundedNumber As Double
+   roundedNumber = Round(3.14159, 2)  ' Output: 3.14
+   MsgBox roundedNumber
+   ```
+   
+2. **Int and Fix Functions**:
+   Both `Int` and `Fix` functions are used to round down numbers to the nearest integer, but they behave differently with negative numbers.
+   ```basic
+   Dim intRounded As Integer
+   Dim fixRounded As Integer
+   
+   intRounded = Int(-3.14159)  ' Output: -4
+   fixRounded = Fix(-3.14159)  ' Output: -3
+   
+   MsgBox "Int: " & intRounded & ", Fix: " & fixRounded
+   ```
 
-' Using Fix function - Similar to Int but behaves differently with negative numbers
-Dim fixedNumber As Double
-fixedNumber = Fix(-3.99)
-Debug.Print fixedNumber ' Output: -3
-```
-
-The `Round` function is the go-to for general rounding, `Int` always rounds down towards the nearest integer, and `Fix` is a tad more nuanced, especially with negative numbers. 
+3. **Ceiling and Floor Functions**:
+   VBA lacks built-in `Ceiling` and `Floor` functions found in other languages. To simulate this, use `Application.WorksheetFunction.Ceiling_Math` and `Application.WorksheetFunction.Floor_Math` for Excel VBA.
+   ```basic
+   Dim ceilingNumber As Double
+   Dim floorNumber As Double
+   
+   ceilingNumber = Application.WorksheetFunction.Ceiling_Math(3.14159)  ' Output: 4
+   floorNumber = Application.WorksheetFunction.Floor_Math(3.14159)  ' Output: 3
+   
+   MsgBox "Ceiling: " & ceilingNumber & ", Floor: " & floorNumber
+   ```
 
 ## Deep Dive
-Rounding numbers seems straightforward, but it's a surprisingly complex process under the hood. The `Round` function in VBA uses bankers' rounding (round to even) as its default method. This means if the number is exactly halfway between two numbers, it rounds to the nearest even number. For example, `Round(2.5,0)` gives `2`, not `3` as you might expect if you're used to conventional rounding rules. This method reduces bias and is preferred in financial calculations.
 
-Interestingly, while the `Round` function is versatile, you may sometimes need more control over the rounding process, especially in niche scientific or financial applications. In such cases, programmers might implement custom rounding functions using mathematical operations or explore add-ins or libraries that offer more granularity and options for roundings, such as ceiling or floor rounding methods.
+The `Round` function in VBA is inherently different from rounding methods in other languages due to its use of **Banker's Rounding**. Banker's Rounding rounds to the nearest even number when exactly halfway between two numbers, reducing bias in calculations over a large dataset and providing a more statistically significant result. However, this can lead to unexpected behavior for those unfamiliar with it, especially when integral precision is expected in every case.
 
-While VBA's native functions cover most rounding needs, it's always good to be aware there might be cases where you'll need to venture beyond them, either through custom code or external resources.
+In contrast, many programming languages and systems use "arithmetic rounding" or "half-up rounding," where a number exactly halfway between two possible rounded values is always rounded up. When translating or porting code from other languages to VBA, programmers must keep these differences in mind to avoid subtle bugs or inaccuracies in financial and statistical applications.
+
+While VBA offers a variety of functions for rounding, the absence of `Ceiling` and `Floor` functions (without resorting to Excel's WorksheetFunction) highlights a limitation in its native capabilities. Programmers coming from more feature-rich languages might find these omissions inconvenient and might need to implement custom solutions or adapt their calculations to use available functions. Despite these limitations, understanding and using VBA's rounding functions correctly can help ensure that numerical computations are both accurate and meet the requirements of most applications.

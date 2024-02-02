@@ -1,6 +1,6 @@
 ---
 title:                "Refactoring"
-date:                  2024-02-01T13:31:47.562822-07:00
+date:                  2024-02-01T21:30:34.124491-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactoring"
 tag:                  "Good Coding Practices"
@@ -11,64 +11,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Refactoring is the process of restructuring existing computer code without changing its external behavior. Programmers do it to make the code more efficient, readable, and easier to maintain.
+Refactoring in programming involves modifying the structure of code without changing its behavior, to improve aspects like readability, maintainability, or performance. Programmers refactor to make code more efficient, easier to understand, easier to modify in the future, and to reduce the likelihood of bugs.
 
 ## How to:
 
-In Visual Basic for Applications (VBA), refactoring can range from renaming variables for clarity to restructuring whole sections of code for performance. Let's dive into an example.
+Consider a basic example in Visual Basic for Applications (VBA) where we have a subroutine that prints details of an employee. Initially, the code is cluttered, challenging to maintain, or extend.
 
-Imagine you have the following code snippet that calculates and prints the sum of an array:
-
-```basic
-Sub CalculateSum()
-    Dim numbers(5) As Integer
-    numbers(0) = 1
-    numbers(1) = 2
-    numbers(2) = 3
-    numbers(3) = 4
-    numbers(4) = 5
+```vb
+Sub PrintEmployeeDetails()
+    Dim name As String
+    Dim age As Integer
+    Dim department As String
+    name = "John Doe"
+    age = 30
+    department = "IT"
     
-    ' Calculate sum
-    Dim sum As Integer
-    Dim i As Integer
-    For i = LBound(numbers) To UBound(numbers)
-        sum = sum + numbers(i)
-    Next i
-    
-    Debug.Print "The sum is: "; sum
+    MsgBox "Name: " & name & vbCrLf & "Age: " & age & vbCrLf & "Department: " & department
 End Sub
 ```
 
-While functional, this code can be refactored for better readability and reuse. Here's a refactored version:
+Refactoring step 1: Extract method. One of the most common refactoring techniques is to take a specific piece of code and move it into its own method. This makes the code more modular and easier to understand.
 
-```basic
-Sub CalculateSumRefactored()
-    Dim numbers() As Integer
-    numbers = Array(1, 2, 3, 4, 5)
+```vb
+Sub PrintEmployeeDetails()
+    Dim name As String
+    Dim age As Integer
+    Dim department As String
+    name = "John Doe"
+    age = 30
+    department = "IT"
     
-    Dim sum As Integer
-    sum = SumArray(numbers)
-    
-    Debug.Print "The sum is: "; sum
+    DisplayMessage name, age, department
 End Sub
 
-Function SumArray(arr() As Integer) As Integer
-    Dim sum As Integer
-    Dim i As Integer
-    For i = LBound(arr) To UBound(arr)
-        sum = sum + arr(i)
-    Next i
-    
-    SumArray = sum
-End Function
+Private Sub DisplayMessage(name As String, age As Integer, department As String)
+    MsgBox "Name: " & name & vbCrLf & "Age: " & age & vbCrLf & "Department: " & department
+End Sub
 ```
 
-In the refactored code, we've moved the sum calculation into its own function `SumArray`, making the main subroutine `CalculateSumRefactored` shorter and more readable. Also, initializing the array is cleaner with the `Array` function.
+Refactoring step 2: Use a structure. This step involves using a data structure to hold related data, improving code clarity and making it easier to pass around grouped data.
+
+```vb
+Type Employee
+    name As String
+    age As Integer
+    department As String
+End Type
+
+Sub PrintEmployeeDetails()
+    Dim emp As Employee
+    emp.name = "John Doe"
+    emp.age = 30
+    emp.department = "IT"
+    
+    DisplayMessage emp
+End Sub
+
+Private Sub DisplayMessage(emp As Employee)
+    MsgBox "Name: " & emp.name & vbCrLf & "Age: " & emp.age & vbCrLf & "Department: " & emp.department
+End Sub
+```
+
+These steps transform cluttered code into modular, structured code, significantly improving readability and maintainability.
 
 ## Deep Dive
 
-Refactoring in VBA has its nuances. Historically, VBA hasn’t provided built-in refactoring tools like those seen in modern IDEs (Integrated Development Environment) for languages such as Java or C#. This means most refactoring in VBA is manual and requires a disciplined approach from the programmer to not introduce errors.
+The concept of refactoring is as old as programming itself, but it was Martin Fowler's book "Refactoring: Improving the Design of Existing Code" that brought it into the mainstream, emphasizing its importance in the software development process. In Visual Basic for Applications, refactoring can be somewhat more challenging due to the lack of built-in tools found in more modern integrated development environments (IDEs) that support automated refactoring.
 
-It's worthwhile to mention that while VBA itself hasn't received significant updates in recent years, the principles of refactoring remain as critical as ever. Clean, efficient code leads to better performance and easier maintenance, regardless of programming language.
+However, this doesn't diminish its importance. Even in VBA, applying basic refactoring techniques manually can greatly enhance the code base, making it cleaner and more efficient. While VBA may not have the same modern conveniences, the principles of good code design remain universal. Developers coming from other languages might find the manual process tedious but will undoubtedly appreciate the benefits of investing time in improving code quality from the onset.
 
-For projects where you have the luxury of choosing your development environment, newer alternatives like Python or JavaScript might offer more sophisticated code management and refactoring tools. However, when working within the Microsoft Office ecosystem, nothing beats the integration and accessibility of VBA. So, knowing how to manually refactor your VBA code effectively remains a valuable skill.
+For more robust development environments or when working on particularly sophisticated projects, it might be worth exploring alternatives that offer more powerful refactoring tools or converting VBA projects to a .NET language where Visual Studio provides extensive refactoring support. Nonetheless, understanding and applying refactoring principles in VBA is a valuable skill that underscores the importance of writing clean, maintainable code, no matter the environment.

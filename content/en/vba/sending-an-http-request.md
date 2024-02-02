@@ -1,6 +1,6 @@
 ---
 title:                "Sending an HTTP request"
-date:                  2024-02-01T13:31:52.506981-07:00
+date:                  2024-02-01T21:30:32.625793-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sending an HTTP request"
 tag:                  "HTML and the Web"
@@ -11,55 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Sending an HTTP request with Visual Basic for Applications (VBA) is how we ask the internet to fetch us data or perform an action elsewhere. It's the backbone of pulling live information into your Excel sheets or automating interactions with web services without leaving your comfy Office suite.
+Sending an HTTP request in Visual Basic for Applications (VBA) involves programmatically accessing web resources or web services by making requests over HTTP. Programmers do this to fetch data, interact with online APIs, or submit forms programmatically from within their VBA-enabled applications such as Excel, Access, or custom-built VBA solutions.
 
 ## How to:
 
-VBA doesn't naturally embrace internet protocols, but with a little help from Microsoft's XMLHTTP object, it's like teaching an old dog a neat new trick. Here's a simple GET request to grab some data:
+The key to sending an HTTP request in VBA is utilizing the `Microsoft XML, v6.0` library (or older versions, depending on your system). First, ensure this reference is enabled in your project by going to Tools > References in the VBA editor and checking `Microsoft XML, v6.0`.
 
-```Visual Basic for Application
-Sub SendGetRequest()
-    Dim httpRequest As Object
-    Set httpRequest = CreateObject("MSXML2.XMLHTTP")
-    
-    ' Target URL
-    httpRequest.Open "GET", "http://example.com/api/data", False
-    httpRequest.Send
-    
-    ' Output the response
-    Debug.Print httpRequest.responseText
-End Sub
+Here's how to send a simple HTTP GET request:
+
+```vb
+Dim httpRequest As Object
+Set httpRequest = CreateObject("MSXML2.XMLHTTP.6.0")
+
+With httpRequest
+    .Open "GET", "https://api.example.com/data", False
+    .send
+    If .Status = 200 Then
+        Debug.Print .responseText
+    Else
+        Debug.Print "Error: " & .Status & " - " & .statusText
+    End If
+End With
 ```
 
-To run this, pop open your VBA editor in Excel, paste this subroutine, and press F5. If all goes well, the Immediate window will light up with the requested data.
+For a POST request, where we need to send data (e.g., JSON) to a server:
 
-For a POST request, things get slightly more intricate due to the need for sending data:
+```vb
+Dim httpRequest As Object, postData As String
+Set httpRequest = CreateObject("MSXML2.XMLHTTP.6.0")
+postData = "{""key"":""value""}"
 
-```basic
-Sub SendPostRequest()
-    Dim httpRequest As Object
-    Set httpRequest = CreateObject("MSXML2.XMLHTTP")
-    Dim postData As String
-    
-    ' Your data to send
-    postData = "key1=value1&key2=value2"
-    
-    ' Setup and send
-    httpRequest.Open "POST", "http://example.com/api/submit", False
-    httpRequest.setRequestHeader "Content-Type", "application/x-www-form-urlencoded"
-    httpRequest.Send (postData)
-    
-    ' Check out the response
-    Debug.Print httpRequest.Status & ": " & httpRequest.responseText
-End Sub
+With httpRequest
+    .Open "POST", "https://api.example.com/submit", False
+    .setRequestHeader "Content-Type", "application/json"
+    .send postData
+    If .Status = 200 Then
+        Debug.Print .responseText
+    Else
+        Debug.Print "Error: " & .Status & " - " & .statusText
+    End If
+End With
 ```
 
-This time, replace the URL with a legit endpoint that accepts POST requests, adjust the `postData` string with your actual data, and let it rip.
+Sample output for a successful request might be a JSON string or an HTML page, depending on the API or webpage you're interacting with:
+
+```
+{"data": "This is the response from the server"}
+```
 
 ## Deep Dive
 
-Before the days of integrated development environments that could speak HTTP as if it were their mother tongue, VBA was mostly confined to desktop applications without a straightforward path to the internet. The introduction of the XMLHTTP object as part of the MSXML library was a game-changer, allowing VBA to perform actions over the web.
+The method showcased utilizes the `MSXML2.XMLHTTP` object, part of the Microsoft XML Core Services (MSXML). It was introduced to offer VBA developers a way to perform XML-based operations and, over time, became a common tool for HTTP requests, even when not working directly with XML data. Despite its age, it remains a reliable option for simple web interactions in VBA.
 
-However, it's worth mentioning that while VBA can send HTTP requests, it's not the most modern or powerful way to interact with web services. Languages designed with the internet in mind, such as Python with its Requests library or JavaScript running on Node.js, offer a far more flexible and intuitive approach to dealing with HTTP requests and handling their responses.
+However, VBA and its http request mechanisms lack the robustness and flexibility found in modern programming environments. For instance, handling asynchronous requests or working within applications that require advanced HTTP features (like websockets or server-sent events) is outside VBA's scope. When working on more complex web integration projects, developers often leverage external libraries or tools, or even automate browser behavior via web scraping techniques, though these are workarounds rather than solutions.
 
-VBA's approach, using the XMLHTTP object, is a bit like retrofitting a vintage car with a modern engine; it works, and it can be pretty cool for specific tasks, especially if you're working within an Office-centric environment. But for heavy lifting on the web, exploring newer, more web-native options might be the way to go.
+Languages and environments like Python with its `requests` library or JavaScript running on Node.js offer more powerful and versatile HTTP request capabilities straight out of the box, including asynchronous operations, easier JSON handling, and extensive support for different web technologies. Developers entrenched in the Microsoft ecosystem might consider transitioning to PowerShell or C# for tasks that demand more sophisticated web interaction, leveraging .NET's extensive network programming features.
+
+Thus, while VBA's HTTP request capabilities are adequate for simple queries and data fetching tasks, exploring alternatives becomes crucial as your project's demands evolve toward the complex and modern web landscape.

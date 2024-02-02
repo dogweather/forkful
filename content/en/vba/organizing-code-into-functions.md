@@ -1,6 +1,6 @@
 ---
 title:                "Organizing code into functions"
-date:                  2024-02-01T13:31:41.130386-07:00
+date:                  2024-02-01T21:30:28.185169-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Organizing code into functions"
 tag:                  "Good Coding Practices"
@@ -11,42 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Organizing code into functions is about slicing your code into reusable pieces - think of it as divvying up a pizza. It's nifty for keeping your code cleaner and avoiding repetition, because who likes typing the same stuff over and over?
+Organizing code into functions in Visual Basic for Applications (VBA) involves breaking down a program into smaller, manageable pieces known as functions. Programmers do this to enhance code readability, reuse code efficiently, and simplify debugging and maintenance processes.
 
 ## How to:
 
-In VBA, functions are your best pals for making code manageable and re-usable. Let's see how to whip up a simple function that adds two numbers:
+In VBA, functions are defined using the `Function` and `End Function` statements. Here’s a simple example of how to create a function that calculates the area of a rectangle:
 
 ```basic
-Function AddTwoNumbers(number1 As Integer, number2 As Integer) As Integer
-    AddTwoNumbers = number1 + number2
+Function CalculateArea(length As Double, width As Double) As Double
+    CalculateArea = length * width
 End Function
+```
 
-Sub TestAddFunction()
-    Dim result As Integer
-    result = AddTwoNumbers(5, 10)
-    MsgBox "The result is: " & result
+To call this function in your VBA code and display the result in a message box, you would use:
+
+```basic
+Sub ShowArea()
+    Dim area As Double
+    area = CalculateArea(10, 5)
+    MsgBox "The area is " & area
 End Sub
 ```
 
-Running `TestAddFunction` displays a message box with "The result is: 15". Neat, right? Functions are not just about adding numbers; they can handle text, crunch data, and more. Let's do something slightly fancier:
+When executed, this code displays a message box stating: `The area is 50`.
+
+### Passing Variables ByRef and ByVal
+
+VBA allows you to pass variables to functions either by reference (`ByRef`) or by value (`ByVal`). The former means the original variable can be modified by the function, whereas the latter passes a copy, protecting the original variable from changes.
 
 ```basic
-Function GreetUser(name As String) As String
-    GreetUser = "Hello, " & name & "!"
+Function ModifyValue(ByRef num As Integer)
+    num = num + 5
 End Function
 
-Sub TestGreetUser()
-    MsgBox GreetUser("Alex")
-End Sub
+Function PreserveValue(ByVal num As Integer) As Integer
+    num = num + 5
+    PreserveValue = num
+End Function
 ```
-
-Pop `TestGreetUser` into action, and you get a friendly "Hello, Alex!" greeting in a message box.
 
 ## Deep Dive
 
-Functions in VBA are as old as hills but still as gold as ever. They stem from the early days of procedural programming, where breaking down code into manageable chunks was revolutionary. Nowadays, in the era of object-oriented and functional programming, functions in VBA might look a bit archaic but they're still darn useful in the VBA landscape.
+VBA, as an event-driven programming language, places significant emphasis on functions and subroutines to handle various tasks. Unlike many modern languages, VBA has a unique trait where the `Function` keyword not only declares a block of reusable code but also allows for an implicit return value directly assigned to the function’s name.
 
-Despite its age, VBA doesn't fully support newer paradigms like lambdas or closures found in modern languages. This limitation means VBA functions are a bit more straightforward - you input something, process it, and output something else, no side effects or hidden states. 
+Historically, the design of VBA functions has been influenced by earlier programming paradigms where encapsulation and modularity were gradually being recognized for their importance in software development. This historical backdrop has led VBA to adopt a somewhat conservative yet functional approach to organizing code.
 
-In the broader programming world, there are fresher and more powerful ways to organize and reuse code, such as classes, modules, and libraries in languages like Python or Java. However, when slinging code in Excel, Word, or other Office applications, VBA's approach to functions is usually more than enough to get the job done efficiently and effectively.
+While VBA is powerful within its native environments (e.g., Microsoft Office applications), it's essential to note that the programming world has evolved. Languages like Python offer more straightforward syntax and a vast standard library, making them a favorable alternative for various applications outside the Office suite. However, when working within Microsoft Office products, the integration and automation capabilities VBA provides are unmatched.
+
+It's worth noting that despite its age, the community around VBA remains active, continually finding innovative ways to leverage its functionality. Yet, as the software industry moves towards more modern, versatile, and robust languages, programmers familiar with VBA are encouraged to explore these alternatives for non-Office related tasks to broaden their coding toolkit.

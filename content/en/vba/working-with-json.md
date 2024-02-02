@@ -1,6 +1,6 @@
 ---
 title:                "Working with JSON"
-date:                  2024-02-01T13:31:49.809971-07:00
+date:                  2024-02-01T21:31:06.991879-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Working with JSON"
 tag:                  "Data Formats and Serialization"
@@ -11,45 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Working with JSON (JavaScript Object Notation) in VBA is about parsing data formatted as JSON, which is ubiquitous in web APIs and configurations. Programmers do it to exchange data between a web service and a VBA-powered application, like those in Excel.
+JSON (JavaScript Object Notation) is a lightweight data-interchange format that's easy for humans to read and write, and for machines to parse and generate. Programmers use JSON to transmit data between a server and a web application or to store information in a structured, accessible manner within a variety of programming environments, including Visual Basic for Applications (VBA).
 
 ## How to:
 
-To start, you'll need to add a reference to "Microsoft Scripting Runtime" for dictionary objects and "Microsoft XML, v6.0" for parsing JSON. You can do this in the VBA editor under Tools > References.
-
-Once you've got that set, here's how you can parse a simple JSON string into a dictionary object, which allows for easy access to its values.
+VBA doesn't natively support JSON parsing or generation, so we'll use a scripting language like JScript (via the ScriptControl object) for parsing JSON strings and building JSON objects. Here's how you can parse a JSON string in VBA:
 
 ```basic
-Dim jsonText As String
-jsonText = "{""name"":""John Doe"",""age"":30}"
+Function ParseJSON(ByVal jsonString As String) As Object
+    Dim scriptControl As Object
+    Set scriptControl = CreateObject("MSScriptControl.ScriptControl")
+    scriptControl.Language = "JScript"
+    
+    scriptControl.Eval "var obj = (" & jsonString & ")"
+    Set ParseJSON = scriptControl.CodeObject.obj
+End Function
 
-' Parse the JSON string
-Dim jsonObject As Object
-Set jsonObject = JsonConverter.ParseJson(jsonText)
-
-' Accessing data
-Debug.Print "Name: " & jsonObject("name") ' Output: Name: John Doe
-Debug.Print "Age: " & jsonObject("age")  ' Output: Age: 30
+Sub DemoParseJSON()
+    Dim jsonString As String
+    jsonString = "{""name"":""John"", ""age"":30, ""city"":""New York""}"
+    
+    Dim parsed As Object
+    Set parsed = ParseJSON(jsonString)
+    
+    MsgBox "Name: " & parsed.name & ", Age: " & parsed.age & ", City: " & parsed.city
+End Sub
 ```
 
-For this example, you'll need a JSON parser like the one from VBA-JSON on GitHub because VBA doesn't natively support JSON. Download the library and include it in your project.
-
-Next, to serialize a VBA object into a JSON string:
+To generate JSON, you could use a similar approach, building the JSON string through concatenation:
 
 ```basic
-Dim person As New Dictionary
-person.Add "name", "Jane Doe"
-person.Add "age", 29
+Function GenerateJSON(name As String, age As Integer, city As String) As String
+    GenerateJSON = "{""name"":""" & name & """, ""age"":" & age & ", ""city"":""" & city & """}"
+End Function
 
-Dim jsonString As String
-jsonString = JsonConverter.ConvertToJson(person)
-Debug.Print jsonString  ' Output: {"name":"Jane Doe","age":29}
+Sub DemoGenerateJSON()
+    Dim jsonString As String
+    jsonString = GenerateJSON("Jane", 28, "Los Angeles")
+    
+    MsgBox jsonString
+End Sub
 ```
-
-This code converts a dictionary object representing a person into a JSON string.
 
 ## Deep Dive
 
-JSON in VBA sounds a bit like an anachronism as VBA hasn't been significantly updated to embrace modern web standards natively. Historically, VBA interacted with web services using XML, which is more verbose than JSON. JSON's popularity exploded due to its simplicity and lightweight nature, particularly in web applications. However, to use JSON in VBA efficiently, third-party parsers like VBA-JSON became necessary.
+The approaches shown leverage the ScriptControl to handle JSON, essentially outsourcing the work to a JavaScript engine. This is a creative workaround but not necessarily the most efficient or modern way to work with JSON in a VBA context. In more complex applications, this method might become cumbersome and introduce performance overhead or security concerns, since ScriptControl executes in an environment that has full access to the host computer.
 
-While VBA has its utility, especially within Microsoft Office applications, it's often not the first choice for modern web interactions. Languages like Python have extensive support for JSON and web services right out of the box, making them a more seamless option for new projects. Nonetheless, VBA's ability to extend and automate Excel, Access, and other Office products means it remains relevant for a wide range of business applications, especially when integrating with legacy systems or where the Office ecosystem is deeply ingrained.
+Other programming environments, such as Python or JavaScript, offer built-in support for JSON, making them more suited for applications that require extensive JSON manipulation. These languages provide comprehensive libraries that facilitate not only parsing and generation but also querying and formatting of JSON data.
+
+Despite these limitations in VBA, understanding how to work with JSON is vital in a world where web-based data exchange and configuration files are predominantly JSON-formatted. For VBA programmers, mastering these techniques opens up opportunities for integrating with web APIs, interpreting configuration files, or even building simple web applications. However, when projects grow in complexity or demand high performance, developers might consider leveraging more JSON-friendly programming environments.
