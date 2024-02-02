@@ -19,7 +19,7 @@ Google Apps Script doesn't have built-in support for complex numbers, but that d
 
 First, we need a way to represent a complex number. We'll use an object for this:
 
-```Google Apps Script
+```Javascript
 function Complex(real, imaginary) {
   this.real = real;
   this.imaginary = imaginary;

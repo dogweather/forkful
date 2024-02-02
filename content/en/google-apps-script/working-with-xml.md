@@ -18,7 +18,7 @@ When we talk about working with XML in Google Apps Script, we’re dealing with 
 Let’s dive straight into how to handle XML with Google Apps Script. Suppose you have an XML string and you want to parse it, extract some information, and perhaps modify it.
 
 ### Parsing XML
-```Google Apps Script
+```Javascript
 const xmlString = '<root><child name="foo">bar</child></root>';
 const document = XmlService.parse(xmlString);
 const root = document.getRootElement();
@@ -29,14 +29,14 @@ console.log(nameAttribute);  // Output: foo
 
 ### Extracting Information
 Let's extract data from an XML element.
-```Google Apps Script
+```Javascript
 const childText = child.getText();
 console.log(childText);  // Output: bar
 ```
 
 ### Modifying XML
 Now, if you want to change some data:
-```Google Apps Script
+```Javascript
 child.setText("newBar");
 child.setAttribute(XmlService.createAttribute("name", "newFoo"));
 const modifiedXmlString = XmlService.getPrettyFormat().format(document);
@@ -49,7 +49,7 @@ console.log(modifiedXmlString);
 
 ### Generating XML
 And here's how you might generate a simple XML document from scratch:
-```Google Apps Script
+```Javascript
 const newDoc = XmlService.createDocument(XmlService.createElement("greetings")
   .addContent(XmlService.createElement("hello").setText("world")));
 const xml = XmlService.getPrettyFormat().format(newDoc);

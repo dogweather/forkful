@@ -19,7 +19,7 @@ In Google Apps Script, you'll often use the JavaScript `RegExp` object and its m
 
 ### Finding a Match
 
-```Google Apps Script
+```Javascript
 function findMatches() {
   var myString = "The quick brown fox jumps over the lazy dog";
   var pattern = /quick/;
@@ -31,7 +31,7 @@ function findMatches() {
 
 ### Extracting Matches
 
-```Google Apps Script
+```Javascript
 function extractMatches() {
   var myString = "I drive a BMW and a Tesla.";
   var pattern = /\b[a-zA-Z]+a\b/g; // Words ending with 'a'
@@ -43,7 +43,7 @@ function extractMatches() {
 
 ### Replacing Text
 
-```Google Apps Script
+```Javascript
 function replaceText() {
   var myText = "Hello, world!";
   var newText = myText.replace(/world/, "Google Apps Script");
@@ -54,7 +54,7 @@ function replaceText() {
 
 ### Splitting Strings
 
-```Google Apps Script
+```Javascript
 function splitString() {
   var myString = "One,Two,Three,Four";
   var splitArray = myString.split(/,/); // Split by comma

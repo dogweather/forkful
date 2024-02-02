@@ -53,7 +53,7 @@ to see your outputs in the terminal, somewhat mimicking the REPL output.
 
 **Example:**
 
-```Google Apps Script
+```Javascript
 function testAddition() {
   var sum = 1 + 1;
   Logger.log(sum); // Expected output: 2

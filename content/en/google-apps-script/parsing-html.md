@@ -17,7 +17,7 @@ Parsing HTML in Google Apps Script is about extracting specific data from a chun
 
 Google Apps Script does not natively support DOM manipulation like in-browser JavaScript does, due to its server-side nature. However, we can use the `XmlService` to parse and traverse HTML, though it’s a bit like taking a detour. Here's a simple example to extract data from an HTML string:
 
-```Google Apps Script
+```Javascript
 function parseHtmlExample() {
   var html = '<html><head><title>Test Page</title></head><body><p>Hello, world!</p></body></html>';
   var document = XmlService.parse(html);

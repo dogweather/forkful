@@ -17,7 +17,7 @@ We're talking about bending time—kinda. More accurately, calculating a date in
 
 Calculating dates in Google Apps Script is similar to vanilla JavaScript but integrated with Google's ecosystem. Here's a simple snippet to get you started:
 
-```Google Apps Script
+```Javascript
 function addDaysToDate(days) {
   var currentDate = new Date();
   var futureDate = new Date(currentDate.getTime() + days * 24 * 60 * 60 * 1000);

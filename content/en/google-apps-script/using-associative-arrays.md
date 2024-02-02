@@ -17,7 +17,7 @@ Associative arrays in Google Apps Script, essentially objects in JavaScript, let
 
 Google Apps Script doesn't have "associative arrays" like some other languages. Instead, we use objects. Here’s how to get your feet wet:
 
-```Google Apps Script
+```Javascript
 // Creating an associative array (object) with initial key-value pairs
 var userScores = {
   "Alice": 23,

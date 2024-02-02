@@ -17,7 +17,7 @@ Logging in Google Apps Script is all about keeping tabs on what your script is d
 
 Google Apps Script offers a straightforward way to log messages using the `Logger` class. Here's a quick spin through how you can add logging to your script:
 
-```Google Apps Script
+```Javascript
 function myFunction() {
   Logger.log('This is a log message'); // Logs a simple text message.
 
@@ -39,7 +39,7 @@ Pretty neat, right? But what if your script is a web app or bound to a Google Sh
 
 For more persistent logging, consider using `Console.log()` in combination with Stackdriver Logging:
 
-```Google Apps Script
+```Javascript
 function myWebAppFunction() {
   console.log('This logs to Stackdriver Logging for more persistent storage.');
   // Access Stackdriver logs via Apps Script Dashboard > My Executions.

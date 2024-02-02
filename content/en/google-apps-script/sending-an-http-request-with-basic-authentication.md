@@ -17,7 +17,7 @@ Sending an HTTP request with basic authentication involves attaching a username 
 
 In Google Apps Script, you can send an HTTP GET request with basic authentication using the `UrlFetchApp` service. Here's a straightforward way to do it:
 
-```Google Apps Script
+```Javascript
 function sendAuthenticatedRequest() {
   var url = 'https://example.com/api/data'; // Change this to the API endpoint you're interested in
   var username = 'yourUsername'; // Replace with your actual username

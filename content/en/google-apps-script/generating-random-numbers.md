@@ -17,7 +17,7 @@ Google Apps Script, based on JavaScript, makes it pretty straightforward to gene
 
 To get a random number between 0 (inclusive) and 1 (exclusive), you simply use the `Math.random()` function. Check this out:
 
-```Google Apps Script
+```Javascript
 function getRandomNumber() {
   var randomNumber = Math.random();
   Logger.log(randomNumber);
@@ -26,7 +26,7 @@ function getRandomNumber() {
 
 But what if you want a random integer within a specific range? Say, between 10 and 20? Here's a neat way to achieve that:
 
-```Google Apps Script
+```Javascript
 function getRandomInteger(min, max) {
   var range = max - min + 1; // +1 to make max inclusive
   var randomNumber = Math.floor(Math.random() * range) + min;
@@ -39,7 +39,7 @@ Sample output for `getRandomInteger(10, 20)`: could be any integer between 10 an
 
 And, if you're into generating random unique IDs or strings, here's a quick method for that:
 
-```Google Apps Script
+```Javascript
 function generateRandomString(length) {
   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   var randomString = '';

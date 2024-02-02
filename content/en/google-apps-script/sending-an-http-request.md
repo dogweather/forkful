@@ -17,7 +17,7 @@ Sending an HTTP request means asking the web to spit back some data or do someth
 
 Google Apps Script makes sending HTTP requests pretty straightforward with the `UrlFetchApp` class. Here's a quick example on how to get data from a mock API:
 
-```Google Apps Script
+```Javascript
 function fetchSomeData() {
   var response = UrlFetchApp.fetch("https://jsonplaceholder.typicode.com/posts/1");
   var data = JSON.parse(response.getContentText());
@@ -33,7 +33,7 @@ Running this, you'll see in your logs something like:
 
 To send a POST request, say to send data to an external API, you can modify the request like this:
 
-```Google Apps Script
+```Javascript
 function postData() {
   var data = {
     'title': 'foo',

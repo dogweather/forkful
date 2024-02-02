@@ -17,7 +17,7 @@ String interpolation is about embedding expressions within string literals to cr
 
 In Google Apps Script, the good old way of concatenating strings and variables is using the `+` operator. But, Google Apps Script, being a dialect of modern JavaScript (ECMAScript), offers template literals for string interpolation, which is much cleaner. Let’s dive into some examples:
 
-```Google Apps Script
+```Javascript
 // Old school concatenation
 var user = "Kim";
 var message = "Hello, " + user + "! Welcome back.";
@@ -33,7 +33,7 @@ Template literals are delimited by backticks (`` ` ``) instead of single (' ') o
 
 Let's try a more complex example:
 
-```Google Apps Script
+```Javascript
 var ordQty = 3;
 var ordItem = "notebooks";
 var ordPrice = 5.50;

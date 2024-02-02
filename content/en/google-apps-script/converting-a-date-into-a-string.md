@@ -17,7 +17,7 @@ So you've got a date in your script and wanna turn it into a text string? Cool, 
 
 In Google Apps Script, pulling this magic trick involves the `Utilities.formatDate()` function, amongst other methods. Here's the basic idea:
 
-```Google Apps Script
+```Javascript
 // Assuming you have a date object already
 var myDate = new Date(); 
 var timeZone = Session.getScriptTimeZone();

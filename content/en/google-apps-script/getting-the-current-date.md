@@ -17,7 +17,7 @@ So you wanna grab the current date in Google Apps Script, huh? It’s all about 
 
 Getting the current date in Google Apps Script is like taking candy from a baby, thanks to the built-in `Date` object. Check it:
 
-```Google Apps Script
+```Javascript
 function getCurrentDate() {
   var today = new Date();
   Logger.log(today);
@@ -32,7 +32,7 @@ Fri Apr 14 2023 00:00:00 GMT+0000 (Coordinated Universal Time)
 
 Want it in a more human-friendly format? No problemo. Let's format it:
 
-```Google Apps Script
+```Javascript
 function getFormattedCurrentDate() {
   var today = new Date();
   var formattedDate = Utilities.formatDate(today, Session.getScriptTimeZone(), "yyyy-MM-dd");

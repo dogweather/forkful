@@ -17,7 +17,7 @@ So, you wanna read a text file in Google Apps Script, huh? Well, it's all about 
 
 Reading a text file in Google Apps Script is a walk in the park. First off, you need to get your hands on the file you’re eyeing. Let’s dive into some code to see how this plays out. 
 
-```Google Apps Script
+```Javascript
 function readTextFile() {
   var fileId = 'your-file-id-here'; // Replace with your actual file ID
   var file = DriveApp.getFileById(fileId);

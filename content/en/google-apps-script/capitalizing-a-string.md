@@ -17,7 +17,7 @@ Capitalizing a string means turning the first character of a sentence, or any si
 
 Google Apps Script, being a cloud-based scripting language for automating tasks across Google products, gives us a straightforward way to play with strings, including capitalizing them. Here’s a cheeky little example on how you can capitalize a string:
 
-```Google Apps Script
+```Javascript
 function capitalizeString(inputString) {
   if (!inputString || typeof inputString !== 'string') {
     return 'Not a valid string'; // Let's be safe here!

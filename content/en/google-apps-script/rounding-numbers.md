@@ -17,7 +17,7 @@ Rounding numbers is all about changing a number with a long decimal tail to a si
 
 Google Apps Script, being based on JavaScript, offers a handful of ways to round numbers. Let's dive into some common methods: `Math.round()`, `Math.floor()`, and `Math.ceil()`, along with a trick for rounding to a specific number of decimal places.
 
-```Google Apps Script
+```Javascript
 // Rounding to the nearest whole number
 var number = 2.56;
 var rounded = Math.round(number); // Outputs: 3

@@ -17,7 +17,7 @@ Google Apps Script, with its roots in JavaScript, has robust methods for string 
 
 Assume you've got a string littered with unnecessary hashtags and we want them gone. Here's how you'd do it:
 
-```Google Apps Script
+```Javascript
 function deleteMatchingCharacters() {
   let str = "Learning #Google #Apps Script is fun! #coding";
   let pattern = /#[a-zA-Z0-9]+/g; // This pattern matches anything that starts with a # followed by alphanumerics

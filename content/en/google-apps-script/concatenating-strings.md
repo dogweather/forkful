@@ -21,7 +21,7 @@ In Google Apps Script, which is based on JavaScript, you've got a couple of stra
 
 It's the most common method. You just use the plus symbol between your strings. Check it:
 
-```Google Apps Script
+```Javascript
 function concatenatePlus() {
   var firstName = "Jane";
   var lastName = "Doe";
@@ -34,7 +34,7 @@ function concatenatePlus() {
 
 This is a cleaner way introduced in ES6, making your code easier to read and write, especially with variables.
 
-```Google Apps Script
+```Javascript
 function concatenateTemplateLiteral() {
   var firstName = "Jane";
   var lastName = "Doe";
@@ -47,7 +47,7 @@ function concatenateTemplateLiteral() {
 
 Not the first method you might think of, but it's useful when you have a bunch of strings.
 
-```Google Apps Script
+```Javascript
 function concatenateJoin() {
   var names = ["Jane", "Doe"];
   var fullName = names.join(" ");

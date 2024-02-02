@@ -19,7 +19,7 @@ Google Apps Script, being based on JavaScript, offers a straightforward way to h
 
 First up, `substring(startIndex, endIndex)`: 
 
-```Google Apps Script
+```Javascript
 var fullString = "Hello, Google Apps Script!";
 var partOfString = fullString.substring(7, 11);
 Logger.log(partOfString); // Outputs: Google
@@ -27,7 +27,7 @@ Logger.log(partOfString); // Outputs: Google
 
 Next, `slice(startIndex, endIndex)` – similar to `substring` but can accept negative indices:
 
-```Google Apps Script
+```Javascript
 var fullString = "Hello, Google Apps Script!";
 var partOfString = fullString.slice(-7, -1);
 Logger.log(partOfString); // Outputs: Script
@@ -35,7 +35,7 @@ Logger.log(partOfString); // Outputs: Script
 
 Finally, `substr(startIndex, length)` – note this uses length from the start index, not an end index:
 
-```Google Apps Script
+```Javascript
 var fullString = "Hello, Google Apps Script!";
 var partOfString = fullString.substr(7, 6);
 Logger.log(partOfString); // Outputs: Google

@@ -15,7 +15,7 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 ## How to:
 Google Apps Script makes converting strings to lowercase straightforward with the `.toLowerCase()` method. This method works directly on the string object. Here’s how you do it:
 
-```Google Apps Script
+```Javascript
 function convertToLowercase() {
   var originalString = "Hello, World!";
   var lowercaseString = originalString.toLowerCase();

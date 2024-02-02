@@ -17,7 +17,7 @@ YAML, standing for “YAML Ain't Markup Language”, is a human-readable data se
 
 YAML isn't natively supported in Google Apps Script, so you'll first need a workaround to parse YAML content. Unfortunately, GAS doesn't have an in-built YAML parser. But fear not! You can use a JavaScript library, like js-yaml, or convert your YAML to JSON using online tools, then parse it with GAS. Here's a basic flow using a JSON conversion step as an example:
 
-```Google Apps Script
+```Javascript
 // Assuming you have a YAML string converted to JSON
 
 function parseYAML() {

@@ -17,7 +17,7 @@ Writing tests in Google Apps Script is about constructing checks to validate tha
 
 First off, Google Apps Script doesn't have built-in testing frameworks like some other programming environments. But fear not, you can still write simple test functions or leverage external tools like clasp and mocha for more complex testing. Here’s a very basic example:
 
-```Google Apps Script
+```Javascript
 function add(a, b) {
   return a + b;
 }

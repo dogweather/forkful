@@ -19,7 +19,7 @@ Getting started on a new project in GAS is straightforward. Here’s a step-by-s
 
 1. **Create a New Project**: On the Google Apps Script dashboard, click on `New Project`. A new script will be created with a default name like `Untitled project`. Rename it by clicking on the project name at the top left corner.
 
-```Google Apps Script
+```Javascript
 // Rename this to something meaningful
 function myFunction() {
   Logger.log('Hello, world!');
@@ -31,7 +31,7 @@ function myFunction() {
 
 4. **Check the Log**: To see your script's output, go to `View > Logs` or press `Ctrl + Enter`.
    
-```Google Apps Script
+```Javascript
 // Output
 [DATE-TIME] Hello, world!
 ```

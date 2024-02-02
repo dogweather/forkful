@@ -19,7 +19,7 @@ JSON, or JavaScript Object Notation, is a lightweight format for storing and tra
 
 Let's say you've got a simple JSON string you want to work with in Google Apps Script. Here's how to parse it:
 
-```Google Apps Script
+```Javascript
 var jsonString = '{"name": "Alex", "age": 30, "city": "New York"}';
 var jsonObj = JSON.parse(jsonString);
 Logger.log(jsonObj.name); // Logs: Alex
@@ -29,7 +29,7 @@ Logger.log(jsonObj.name); // Logs: Alex
 
 Conversely, if you have a JavaScript object and you want to convert it into a JSON string, you do the opposite:
 
-```Google Apps Script
+```Javascript
 var user = {name: "Alex", age: 30, city: "New York"};
 var jsonString = JSON.stringify(user);
 Logger.log(jsonString); // Logs: {"name":"Alex","age":30,"city":"New York"}
@@ -39,7 +39,7 @@ Logger.log(jsonString); // Logs: {"name":"Alex","age":30,"city":"New York"}
 
 Google Apps Script shines when it comes to interacting with APIs to get JSON data. Here’s a simple example using the `UrlFetchApp` service to get data from a mock API:
 
-```Google Apps Script
+```Javascript
 var response = UrlFetchApp.fetch('https://jsonplaceholder.typicode.com/users/1');
 var json = JSON.parse(response.getContentText());
 Logger.log(json.name); // Depending on the API's response, e.g., "Leanne Graham"

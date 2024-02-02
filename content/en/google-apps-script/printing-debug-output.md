@@ -19,7 +19,7 @@ In Google Apps Script, the most straightforward way to print debug output is usi
 
 **Using `Logger` class:**
 
-```Google Apps Script
+```Javascript
 function myFunction() {
   var name = 'World';
   Logger.log('Hello, ' + name + '!');
@@ -34,7 +34,7 @@ After running this function, view the log output by selecting "View" > "Logs" in
 
 **Using `console.log()`:**
 
-```Google Apps Script
+```Javascript
 function anotherFunction() {
   var status = 'Running';
   console.log('The script is %s.', status);

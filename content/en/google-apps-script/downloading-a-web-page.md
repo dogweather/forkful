@@ -17,7 +17,7 @@ Downloading a web page in Google Apps Script is about fetching the HTML content 
 
 Google Apps Script provides a simple way to download a web page using the `UrlFetchApp` service. This service sends an HTTP GET request to the web page's URL and retrieves its contents. Here's a quick example:
 
-```Google Apps Script
+```Javascript
 function downloadWebPage() {
   var url = 'https://www.example.com'; // Replace with the web page you want to download
   var response = UrlFetchApp.fetch(url);
@@ -28,7 +28,7 @@ function downloadWebPage() {
 
 If you run this script, it fetches the HTML content of `https://www.example.com` and logs it. You'll see the output in the Logger within the Google Apps Script environment, which will look somewhat like this (output will vary based on the web page content):
 
-```Google Apps Script
+```Javascript
 <!DOCTYPE html>
 <html>
 <head>

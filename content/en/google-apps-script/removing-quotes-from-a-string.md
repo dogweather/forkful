@@ -17,7 +17,7 @@ At its core, removing quotes from a string in Google Apps Script is about cleani
 
 Let's dive into the coding magic. Suppose you've got a string, and it's wrapped up in double quotes, single quotes, or maybe even both, and you want to get rid of them. Here's how you can tackle this issue:
 
-```Google Apps Script
+```Javascript
 function removeQuotesExample() {
   var stringWithQuotes = '"This is a \'sample\' string."';
   Logger.log("Original String: " + stringWithQuotes);

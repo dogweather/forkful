@@ -15,7 +15,7 @@ Refactoring is the programming practice of cleaning up your code without changin
 ## How to:
 Let's dive into an example. Imagine you've written a function to log when a document in Google Drive was last edited. Initially, your code might look something like this:
 
-```Google Apps Script
+```Javascript
 function logLastEdited() {
   var file = DriveApp.getFileById('your-file-id-here');
   var lastUpdated = file.getLastUpdated();
@@ -25,7 +25,7 @@ function logLastEdited() {
 
 This does the job but mixes finding the file and logging the date. Let’s refactor it by splitting into two functions for clarity:
 
-```Google Apps Script
+```Javascript
 function logLastEdited() {
   var lastUpdated = getLastUpdated('your-file-id-here');
   Logger.log('File was last updated on: ' + lastUpdated);

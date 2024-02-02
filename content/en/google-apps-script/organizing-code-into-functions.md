@@ -19,7 +19,7 @@ Let's say you're automating a weekly report in Google Sheets. Instead of having 
 
 Here's a basic example to highlight this principle:
 
-```Google Apps Script
+```Javascript
 function main() {
   var data = fetchData();
   var processedData = processData(data);

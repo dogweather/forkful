@@ -17,7 +17,7 @@ Searching and replacing text in Google Apps Script is about finding specific str
 
 Let's dive straight into making these changes with some straightforward code. Suppose you've got a Google Doc and you want to replace every instance of "oldText" with "newText". Here's how you'd do it:
 
-```Google Apps Script
+```Javascript
 function replaceTextInDocs() {
   var doc = DocumentApp.getActiveDocument(); // Gets the active Google Doc
   var body = doc.getBody(); // Accesses the body of the doc
@@ -28,7 +28,7 @@ function replaceTextInDocs() {
 
 This simple script grabs the active document you're working on, accesses its body, and performs a search/replace operation. But what if you're dealing with a Google Sheet and want to perform a similar operation? Here’s an example:
 
-```Google Apps Script
+```Javascript
 function replaceTextInSheets() {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet(); // Gets the active sheet
   var range = sheet.getDataRange(); // Gets the range containing data

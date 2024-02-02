@@ -23,7 +23,7 @@ Google Apps Script has an integrated debugger in its IDE (Integrated Development
 
 3. **Run the debugger**: Click on the debug icon (resembling a bug) in the toolbar. Select the function you want to debug from the dropdown list that appears and hit the play button.
 
-```Google Apps Script
+```Javascript
 function myFunction() {
   var a = 3;
   var b = 4;

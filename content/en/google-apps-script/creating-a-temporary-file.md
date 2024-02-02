@@ -17,7 +17,7 @@ We're diving into how to create a temporary file in Google Apps Script - a nifty
 
 Creating a temporary file in Google Apps Script is simple yet effective. You'll typically use the DriveApp service for this. Here's a quick walkthrough:
 
-```Google Apps Script
+```Javascript
 function createTempFile() {
   // Name your temporary file
   const fileName = 'TempFile_' + new Date().toISOString();
@@ -54,7 +54,7 @@ Creating temporary files has been a staple in programming for managing data that
 
 However, it's worth noting that constantly creating and deleting files in Drive can be somewhat heavy operationally, especially if you're doing it very frequently. An alternative approach, for data that's not overly large, could be to use the Cache or Properties services provided by Google Apps Script. These services offer a more ephemeral data storage solution, without the overhead of creating files in Drive.
 
-```Google Apps Script
+```Javascript
 // Using CacheService for temporary data storage
 const cache = CacheService.getScriptCache();
 // Add data to cache, expires in 3600 seconds (1 hour)

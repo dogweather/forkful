@@ -19,7 +19,7 @@ Heads up, Google Apps Script (GAS) doesn't roll with the traditional command-lin
 
 First, picture you've got a function that needs some user-provided numbers to do its magic:
 
-```Google Apps Script
+```Javascript
 function addNumbers(number1, number2) {
   return number1 + number2;
 }
@@ -29,7 +29,7 @@ Nothing fancy, just adding numbers. Now, when you wanna use this in your Sheets,
 
 But what about simulating command line args? You can use Google Sheets custom menus. Check this out:
 
-```Google Apps Script
+```Javascript
 function onOpen() {
   var ui = SpreadsheetApp.getUi();
   // Adds a custom menu to your sheet

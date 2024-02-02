@@ -17,7 +17,7 @@ Parsing a date from a string is all about turning text that represents a date in
 
 Let's dive straight into how you can parse dates from strings in Google Apps Script. It's fairly straightforward once you get the hang of it. We’ll use the `Utilities.parseDate()` function, which is built into Google Apps Script and is handy for this precise task. Here's a basic example:
 
-```Google Apps Script
+```Javascript
 function parseDateFromString() {
   var dateString = "2023-04-20"; // ISO 8601 format
   var timeZone = Session.getScriptTimeZone(); // Gets the script's timezone
@@ -28,7 +28,7 @@ function parseDateFromString() {
 
 This will output something like `Thu Apr 20 00:00:00 GMT-07:00 2023` to the log, depending on your timezone. Now, if you encounter a date string in a different format, say `MM/dd/yyyy`, you just need to adjust the pattern you pass to `parseDate`.
 
-```Google Apps Script
+```Javascript
 function parseDifferentFormat() {
   var dateString = "04/20/2023"; // U.S. format
   var timeZone = Session.getScriptTimeZone();

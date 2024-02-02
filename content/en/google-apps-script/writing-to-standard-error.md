@@ -19,7 +19,7 @@ Contrary to many programming environments, Google Apps Script doesn't provide a 
 
 Here’s how you’d log normally:
 
-```Google Apps Script
+```Javascript
 function logMessage() {
   Logger.log("This is a regular log message.");
 }
@@ -27,7 +27,7 @@ function logMessage() {
 
 For something closer to a standard error in Google Apps Script, you'd need to leverage the `console.error()` function, like so:
 
-```Google Apps Script
+```Javascript
 function logError() {
   try {
     // Simulate an error

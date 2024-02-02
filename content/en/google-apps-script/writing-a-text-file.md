@@ -17,7 +17,7 @@ Writing a text file in Google Apps Script involves programmatically generating a
 
 Let's get our hands dirty with some code on how to write a simple text file to Google Drive. The process is straightforward and utilizes the Google Drive Service in Apps Script.
 
-```Google Apps Script
+```Javascript
 function createTextFile() {
   const folder = DriveApp.getFolderById('YOUR_FOLDER_ID'); // Replace YOUR_FOLDER_ID with the actual ID
   const fileName = "SampleTextFile.txt";

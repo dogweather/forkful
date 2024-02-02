@@ -18,7 +18,7 @@ When playing with CSVs in Google Apps Script, you're usually going to work with 
 ### Reading a CSV File
 Assuming you have a CSV file in your Google Drive:
 
-```Google Apps Script
+```Javascript
 // Define the ID of your file
 var fileId = 'YOUR_FILE_ID_HERE';
 
@@ -40,7 +40,7 @@ for (var i = 0; i < lines.length; i++) {
 ### Creating a CSV File
 Want to go the other way? Here’s how you can create a CSV file from an array of data:
 
-```Google Apps Script
+```Javascript
 // Your data array
 var data = [
   ['Year', 'Make', 'Model'],
@@ -60,7 +60,7 @@ DriveApp.createFile('MyNewCSVFile.csv', csvContent, MimeType.PLAIN_TEXT);
 ### Appending Data to an Existing CSV File
 Got an existing file you need to add data to? No sweat:
 
-```Google Apps Script
+```Javascript
 // Data to add
 var additionalData = ['2004', 'Nissan', 'Altima'];
 
