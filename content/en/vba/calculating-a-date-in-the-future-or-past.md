@@ -21,7 +21,7 @@ Determining future or past dates in VBA is straightforward thanks to built-in fu
 
 Say you want to figure out what date it'll be 10 days from now. You'd use the `DateAdd` function like so:
 
-```Visual Basic for Applications
+```basic
 Dim futureDate As Date
 futureDate = DateAdd("d", 10, Date)
 MsgBox "10 days from now: " & futureDate
@@ -31,7 +31,7 @@ MsgBox "10 days from now: " & futureDate
 
 What if you're curious about the date 15 days in the past? Flip the script—well, the number:
 
-```Visual Basic for Applications
+```basic
 Dim pastDate As Date
 pastDate = DateAdd("d", -15, Date)
 MsgBox "15 days ago it was: " & pastDate

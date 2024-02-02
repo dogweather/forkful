@@ -28,7 +28,7 @@ enabled = true
 
 First, you'd want to read this file into VBA. Here's a basic function to read file contents into a string:
 
-```Visual Basic for Applications
+```basic
 Function ReadFile(filePath As String) As String
     Dim text As String
     Dim fileNo As Integer
@@ -44,7 +44,7 @@ End Function
 
 Next, you'll parse the TOML content. A fully fledged parser is complex, but here's a snippet to find the `server` value within the `database` section:
 
-```Visual Basic for Applications
+```basic
 Function GetServerValue(tomlContent As String) As String
     Dim startPos As Long, endPos As Long, lineContent As String
     startPos = InStr(tomlContent, "[database]") ' Find database section
@@ -58,7 +58,7 @@ End Function
 
 To use these functions:
 
-```Visual Basic for Applications
+```basic
 Sub DemoReadTOML()
     Dim fileContents As String
     fileContents = ReadFile("C:\path\to\config.toml")

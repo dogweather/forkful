@@ -17,7 +17,7 @@ Extracting substrings in Visual Basic for Applications (VBA) basically means sli
 
 In VBA, you've got a couple of trusty functions to help you out with extracting substrings: `Left`, `Right`, and `Mid`. Let's see them in action.
 
-```Visual Basic for Applications
+```basic
 ' Extracting the first 5 characters
 Dim exampleString As String
 exampleString = "Hello World"

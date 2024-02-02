@@ -21,7 +21,7 @@ Visual Basic for Applications (VBA) doesn't natively support the modern string i
 
    This is as straightforward as it gets. You just glue your variable parts to your string bits using the `&` operator.
 
-   ```Visual Basic for Applications
+   ```basic
    Dim userName As String
    userName = "Alex"
    MsgBox "Hello, " & userName & "!"
@@ -36,7 +36,7 @@ Visual Basic for Applications (VBA) doesn't natively support the modern string i
 
    A bit more sophisticated, the `Format` function can be used to insert variables into a string with positional placeholders.
 
-   ```Visual Basic for Applications
+   ```basic
    Dim userName As String
    userName = "Alex"
    MsgBox Format("Hello, {0}!", userName)
@@ -48,7 +48,7 @@ Visual Basic for Applications (VBA) doesn't natively support the modern string i
 
    For a more interpolation-like experience, you can create a function that replaces placeholders in a template string with provided values.
 
-   ```Visual Basic for Applications
+   ```basic
    Function InterpolateString(template As String, ParamArray values()) As String
        Dim i As Integer
        For i = 0 To UBound(values)

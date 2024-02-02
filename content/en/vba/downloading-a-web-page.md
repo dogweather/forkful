@@ -17,7 +17,7 @@ Downloading a web page in Visual Basic for Applications (VBA) is about fetching 
 
 To download a web page using VBA, you typically use the `MSXML2.XMLHTTP` or `WinHttp.WinHttpRequest.5.1` object to send a request to the URL and retrieve its HTML content. Here's a straightforward way to do it with `MSXML2.XMLHTTP`:
 
-```Visual Basic for Applications
+```basic
 Sub DownloadWebPage()
     Dim httpRequest As Object
     Set httpRequest = CreateObject("MSXML2.XMLHTTP")

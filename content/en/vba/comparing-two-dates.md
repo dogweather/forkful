@@ -17,7 +17,7 @@ When working with Visual Basic for Applications (VBA), comparing two dates helps
 
 To get started, you’ll want to know the basic operator `>` (greater than), `<` (less than), and `=` (equal to) for comparing dates directly. Here’s how to do it, assuming you have two dates:
 
-```Visual Basic for Applications
+```basic
 Dim firstDate As Date
 Dim secondDate As Date
 
@@ -36,7 +36,7 @@ End If
 
 For a more practical example, calculating the difference between dates is often useful, and VBA’s `DateDiff` function is perfect for this, giving us the difference in days, months, years, etc.:
 
-```Visual Basic for Applications
+```basic
 Dim startDate As Date
 Dim endDate As Date
 Dim daysDifference As Long

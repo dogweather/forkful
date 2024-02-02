@@ -17,7 +17,7 @@ Removing quotes from a string is about stripping away those annoying quotation m
 
 In VBA, there are a couple of ways to remove quotes from a string, but let’s focus on a straightforward approach using the `Replace` function. This function simply searches for a substring within a string and replaces it with another substring. In this case, we're targeting both single (`'`) and double (`"`) quotes.
 
-```Visual Basic for Applications
+```basic
 Sub RemoveQuotes()
     Dim exampleString As String
     

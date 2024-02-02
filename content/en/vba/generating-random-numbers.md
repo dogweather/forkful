@@ -19,7 +19,7 @@ Generating a random number in VBA might seem like waving a magic wand, but it's 
 
 Here's a simple incantation to generate a random number between 1 and 100:
 
-```Visual Basic for Applications
+```basic
 Sub GenerateRandomNumber()
     ' Initialize the random number generator to make results unpredictable
     Randomize

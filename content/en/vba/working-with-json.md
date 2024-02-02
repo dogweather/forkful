@@ -19,7 +19,7 @@ To start, you'll need to add a reference to "Microsoft Scripting Runtime" for di
 
 Once you've got that set, here's how you can parse a simple JSON string into a dictionary object, which allows for easy access to its values.
 
-```Visual Basic for Applications
+```basic
 Dim jsonText As String
 jsonText = "{""name"":""John Doe"",""age"":30}"
 
@@ -36,7 +36,7 @@ For this example, you'll need a JSON parser like the one from VBA-JSON on GitHub
 
 Next, to serialize a VBA object into a JSON string:
 
-```Visual Basic for Applications
+```basic
 Dim person As New Dictionary
 person.Add "name", "Jane Doe"
 person.Add "age", 29

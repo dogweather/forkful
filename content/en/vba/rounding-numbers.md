@@ -15,7 +15,7 @@ Rounding numbers in VBA is about chopping off the digits you don't need from a n
 ## How to:
 When it comes to rounding numbers in VBA, there are a few key functions you'll be using: `Round`, `Int`, and `Fix`. Let's see how each of these works with some quick examples.
 
-```Visual Basic for Applications
+```basic
 ' Using Round function
 Dim roundedNumber As Double
 roundedNumber = Round(3.14159, 2) ' Rounds to 2 decimal places

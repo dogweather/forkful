@@ -17,7 +17,7 @@ Writing tests in Visual Basic for Applications (VBA) is about creating snippets 
 
 Unfortunately, VBA doesn't have a built-in testing framework like some other programming environments. But don't worry; we can improvise with a bit of creativity. To illustrate, let's say we have a simple function that adds two numbers:
 
-```Visual Basic for Applications
+```basic
 Function AddNumbers(a As Integer, b As Integer) As Integer
     AddNumbers = a + b
 End Function
@@ -25,7 +25,7 @@ End Function
 
 To test this, we can create a subroutine that checks if the output of `AddNumbers` is what we expect it to be. Here's a rudimentary test:
 
-```Visual Basic for Applications
+```basic
 Sub TestAddNumbers()
     Dim expectedResult As Integer
     Dim result As Integer

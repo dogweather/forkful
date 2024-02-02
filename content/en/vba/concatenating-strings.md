@@ -17,7 +17,7 @@ Concatenating strings in VBA is all about sticking pieces of text together to fo
 
 In VBA, you've got a few ways to concatenate strings. The most common method is using the `&` operator. It's straightforward: just place it between the strings you want to join. Let's dive into examples:
 
-```Visual Basic for Applications
+```basic
 Dim greeting As String
 Dim name As String
 
@@ -32,7 +32,7 @@ Debug.Print message ' Output: Hello, Alex!
 
 But wait, there's more! If you're dealing with multiple pieces or want to include numbers and other data types, you can also use the `Concatenate` function or the `&` operator, like so:
 
-```Visual Basic for Applications
+```basic
 Dim fullName As String
 Dim firstName As String
 Dim lastName As String

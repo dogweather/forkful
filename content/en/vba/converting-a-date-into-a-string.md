@@ -17,7 +17,7 @@ Converting a date into a string in VBA is about translating DateTime values into
 
 In VBA, you can use the `Format` function to convert a date into a string. This function allows you to specify the format in which the date should be converted, offering flexibility for different requirements. Here's how to do it:
 
-```Visual Basic for Applications
+```basic
 Sub ConvertDateToString()
     Dim exampleDate As Date
     exampleDate = #10/21/2023#

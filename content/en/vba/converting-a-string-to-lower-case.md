@@ -15,7 +15,7 @@ So, you want to turn a string into all lowercase letters, huh? This trick is sup
 ## How to:
 In VBA (Visual Basic for Applications), making a string all lowercase is a piece of cake. You use the `LCase` function. Here's how it works:
 
-```Visual Basic for Applications
+```basic
 Sub ConvertStringToLowercase()
     Dim originalString As String
     Dim lowercaseString As String

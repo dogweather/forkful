@@ -17,7 +17,7 @@ Finding the length of a string in Visual Basic for Applications (VBA) involves d
 
 In VBA, the `Len` function is your go-to for getting the number of characters in a string. Here's a quick look at using it:
 
-```Visual Basic for Applications
+```basic
 Sub FindStringLength()
     Dim exampleString As String
     exampleString = "Hello, world!"
@@ -31,7 +31,7 @@ When you run this, a message box will pop up saying "The length of the string is
 
 Sometimes you might want to get the length without counting spaces. Here's a tweak to do just that:
 
-```Visual Basic for Applications
+```basic
 Sub FindStringLengthNoSpaces()
     Dim exampleString As String
     exampleString = "Hello, world!"

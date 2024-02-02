@@ -21,7 +21,7 @@ First, you need to make sure you have access to the Dictionary class. Usually, y
 
 Now, let’s create a simple Dictionary and play around with it:
 
-```Visual Basic for Applications
+```basic
 Dim userPasswords As Scripting.Dictionary
 Set userPasswords = New Scripting.Dictionary
 

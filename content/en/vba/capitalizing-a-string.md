@@ -15,7 +15,7 @@ Capitalizing a string means changing the first character of each word to upperca
 ## How to:
 Capitalizing a string in VBA is straightforward thanks to the built-in `StrConv` function, which can be used to convert text to Proper Case, achieving the capitalization effect. Here’s how you do it:
 
-```Visual Basic for Applications
+```basic
 Sub CapitalizeString()
     Dim exampleString As String
     exampleString = "hello world"

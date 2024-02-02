@@ -17,7 +17,7 @@ Logging in coding is like keeping a diary for your program. It records what happ
 
 In Visual Basic for Applications (VBA), logging can be as simple as writing information to a text file. This approach is straightforward and immensely useful for debugging or keeping a usage log. Here's a quick example of how to log messages to a file:
 
-```Visual Basic for Applications
+```basic
 Sub SimpleLogging()
     Dim logFilePath As String
     logFilePath = "C:\yourPath\log.txt" ' Modify this path as needed

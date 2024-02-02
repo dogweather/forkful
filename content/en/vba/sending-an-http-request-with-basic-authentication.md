@@ -17,7 +17,7 @@ Sending an HTTP request with basic authentication in Visual Basic for Applicatio
 
 In VBA, to send an HTTP request with basic authentication, you'll typically use the `MSXML2.ServerXMLHTTP` object. You need to encode your username and password into base64 and then attach this as an authorization header. Here's a basic example to get you started:
 
-```Visual Basic for Applications
+```basic
 Sub SendHTTPRequestWithBasicAuth()
     Dim url As String
     Dim username As String

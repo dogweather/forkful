@@ -19,7 +19,7 @@ In Visual Basic for Applications (VBA), refactoring can range from renaming vari
 
 Imagine you have the following code snippet that calculates and prints the sum of an array:
 
-```Visual Basic for Applications
+```basic
 Sub CalculateSum()
     Dim numbers(5) As Integer
     numbers(0) = 1
@@ -41,7 +41,7 @@ End Sub
 
 While functional, this code can be refactored for better readability and reuse. Here's a refactored version:
 
-```Visual Basic for Applications
+```basic
 Sub CalculateSumRefactored()
     Dim numbers() As Integer
     numbers = Array(1, 2, 3, 4, 5)

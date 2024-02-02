@@ -21,7 +21,7 @@ In VBA, the primary method for handling errors involves the `On Error` statement
 
 This technique redirects the program flow to a specific line or label when an error occurs.
 
-```Visual Basic for Applications
+```basic
 Sub ErrorHandlerExample()
     On Error GoTo ErrHandler
     Dim x As Integer
@@ -41,7 +41,7 @@ Running this subroutine will trigger a divide-by-zero error, but instead of cras
 
 This approach allows the program to continue with the next line of code after an error has occurred, useful for skipping over errors in a loop.
 
-```Visual Basic for Applications
+```basic
 Sub ResumeNextExample()
     On Error Resume Next
     Dim array(5) As Integer

@@ -21,7 +21,7 @@ In VBA, you can use the `Replace` function or regular expressions (RegEx) for de
 
 To remove a specific character, like a hyphen (-), from a string, you could use:
 
-```Visual Basic for Applications
+```basic
 Sub RemoveHyphens()
     Dim exampleString As String
     exampleString = "123-45-6789"
@@ -35,7 +35,7 @@ End Sub
 
 For more complex patterns, like removing all non-digit characters, Regular Expressions are your go-to:
 
-```Visual Basic for Applications
+```basic
 Sub RemoveNonDigits()
     Dim regEx As Object
     Set regEx = CreateObject("VBScript.RegExp")

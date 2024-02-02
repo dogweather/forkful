@@ -19,7 +19,7 @@ In VBA, there's no built-in method to directly write to the standard error strea
 
 Here's how you might do it:
 
-```Visual Basic for Applications
+```basic
 Sub WriteToStandardError()
     On Error GoTo ErrorHandler
     Dim strCommand As String

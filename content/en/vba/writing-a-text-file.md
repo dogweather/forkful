@@ -17,7 +17,7 @@ Writing a text file in Visual Basic for Applications (VBA) is about creating and
 
 To write a text file in VBA, you generally follow these steps: open a file for writing, write your data, and then close the file. It's straightforward. Here’s a quick dive into doing just that. 
 
-```Visual Basic for Applications
+```basic
 Sub WriteToFile()
     Dim filePath As String
     filePath = "C:\YourPath\example.txt" ' Define your file path here

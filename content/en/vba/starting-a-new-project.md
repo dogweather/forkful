@@ -20,7 +20,7 @@ When starting a new VBA project, the first step is to open the Developer tab in 
 3. You'll also want to insert a new module where you'll write your code. Right-click on any of the objects in the Project Explorer, choose `Insert > Module`.
 4. Now, it's coding time. Here’s a simple example that adds a new workbook and writes "Hello World" in cell A1:
 
-   ```Visual Basic for Applications
+   ```basic
    Sub HelloWorld()
        Dim wb As Workbook
        Set wb = Workbooks.Add

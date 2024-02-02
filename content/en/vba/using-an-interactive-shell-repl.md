@@ -21,7 +21,7 @@ Unfortunately, VBA doesn't come with a built-in REPL environment similar to thos
 
 2. **Execute Simple Commands**: Type any VBA statement and press Enter to execute it. For example, let's set a variable and then print its value:
 
-```Visual Basic for Applications
+```basic
 Dim myVar As Integer
 myVar = 10
 ?myVar
@@ -30,7 +30,7 @@ This will output `10` in the Immediate Window.
 
 3. **Calling Functions/Subroutines**: If you have a function or subroutine defined in your module, you can call it directly from the Immediate Window. For instance, consider the following subroutine in a module:
 
-```Visual Basic for Applications
+```basic
 Sub Greet(name As String)
     MsgBox "Hello, " & name
 End Sub

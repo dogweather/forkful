@@ -15,7 +15,7 @@ We're diving into how to check if a directory exists in Visual Basic for Applica
 ## How to:
 In VBA, checking if a directory exists is pretty straightforward. We mainly use the `Dir` function with the `vbDirectory` attribute. Below is how you do it:
 
-```Visual Basic for Applications
+```basic
 Sub CheckDirectoryExists()
     Dim directoryPath As String
     directoryPath = "C:\ExamplePath"

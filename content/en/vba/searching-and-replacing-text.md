@@ -17,7 +17,7 @@ Searching and replacing text in Visual Basic for Applications (VBA) revolves aro
 
 To pull this off in VBA, you'll primarily use the `Replace` function. It's straightforward: pick your target string, decide what you want to swap it with, and let `Replace` do the heavy lifting. Here’s a basic example:
 
-```Visual Basic for Applications
+```basic
 Sub SearchAndReplaceExample()
     Dim originalText As String
     Dim searchText As String
@@ -41,7 +41,7 @@ End Sub
 
 For a more practical scenario, consider you're working with Excel and want to replace text across multiple cells. Here's a quick snippet:
 
-```Visual Basic for Applications
+```basic
 Sub ReplaceInCells()
     Dim rng As Range
     For Each rng In Sheet1.Range("A1:A10")  ' Assuming your target range is from A1 to A10

@@ -15,7 +15,7 @@ Parsing a date from a string in VBA is about extracting and converting textual d
 ## How to:
 In VBA, parsing a date from a string might seem daunting, but it's pretty straightforward with the `DateValue` and `CDate` functions. Here's how you can do it:
 
-```Visual Basic for Applications
+```basic
 Sub ParseDateFromString()
     Dim dateString As String
     Dim parsedDate As Date

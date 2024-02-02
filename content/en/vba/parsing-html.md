@@ -19,7 +19,7 @@ Let's dive into parsing HTML using VBA. We will use the Microsoft HTML Object Li
 
 Here's a snippet to get started:
 
-```Visual Basic for Applications
+```basic
 Dim htmlDoc As MSHTML.HTMLDocument
 Set htmlDoc = New MSHTML.HTMLDocument
 

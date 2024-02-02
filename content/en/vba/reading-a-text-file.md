@@ -15,7 +15,7 @@ Reading a text file in VBA is about grabbing all that sweet text data from, well
 ## How to:
 Alright, diving straight into the good stuff, here's how you pull off this magic trick in VBA. Say you got a file, "example.txt", lounging somewhere on your computer. You want to read it. Here’s how you're gonna do it:
 
-```Visual Basic for Applications
+```basic
 Sub ReadTextFile()
     Dim filePath As String
     Dim fileContent As String

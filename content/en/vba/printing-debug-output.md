@@ -19,7 +19,7 @@ In VBA, the `Debug.Print` statement is your bread and butter for printing debug 
 
 Let's say you've got a loop, and inside this loop, you're curious about the value of a counter variable `i`. Here's how you'd get VBA to spill the beans:
 
-```Visual Basic for Applications
+```basic
 For i = 1 To 5
     Debug.Print "Value of i is: "; i
 Next i
@@ -39,7 +39,7 @@ Interested in where your function bailed? Throw in a `Debug.Print` to output var
 
 Here's the sneak peek into a function that's acting up:
 
-```Visual Basic for Applications
+```basic
 Function AddNumbers(a As Integer, b As Integer) As Integer
     Debug.Print "Adding"; a; "and"; b
     AddNumbers = a + b

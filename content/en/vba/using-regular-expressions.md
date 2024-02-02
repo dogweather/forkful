@@ -19,7 +19,7 @@ To start using regular expressions in Visual Basic for Applications (VBA), you n
 
 Let’s dive into a simple example:
 
-```Visual Basic for Applications
+```basic
 Sub UseRegex()
     Dim regex As Object
     Set regex = CreateObject("VBScript.RegExp")

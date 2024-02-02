@@ -17,7 +17,7 @@ YAML ain't Markup Language (YAML) is about writing data in a format that's reada
 
 Visual Basic for Applications (VBA) doesn't have built-in support for parsing or generating YAML. However, you can work around this by using a combination of dictionary objects and string manipulation, or by leveraging external libraries if permissible. Here is a simple example of reading a very basic YAML string, assuming it has a straightforward key-value structure:
 
-```Visual Basic for Applications
+```basic
 Sub WorkWithYAML()
     Dim yamlString As String
     yamlString = "name: John Doe" & vbCrLf & "age: 34" & vbCrLf & "city: New York"

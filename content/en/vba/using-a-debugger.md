@@ -19,7 +19,7 @@ VBA, like many other programming environments, offers debugging tools that are s
 
 1. **Breakpoints**: The most basic form of debugging. You can set a breakpoint by clicking in the margin next to the line of code where you want the execution to pause or by pressing F9 when the cursor is on the line. Run your macro, and it'll stop at the breakpoint, allowing you to inspect variables and step through the code.
 
-```Visual Basic for Applications
+```basic
 Sub DemoBreakpoint()
     Dim counter As Integer
     For counter = 1 To 5
@@ -30,7 +30,7 @@ End Sub
 
 2. **The Immediate Window**: Use this to print out variable values or to execute lines of code on the fly. Access it by pressing Ctrl+G in the VBA IDE. You can type `?variableName` to see a variable's value or `variableName = newValue` to change it.
 
-```Visual Basic for Applications
+```basic
 Sub UseImmediateWindow()
     Dim sampleValue As Integer
     sampleValue = 10
@@ -40,7 +40,7 @@ End Sub
 
 3. **The Watch Window**: This allows you to monitor the values of variables or expressions without peppering your code with `Debug.Print` statements. You can add a variable to the watch window by right-clicking on it and selecting "Add Watch…".
 
-```Visual Basic for Applications
+```basic
 Sub UseWatchWindow()
     Dim watchThis As Integer
     watchThis = 42

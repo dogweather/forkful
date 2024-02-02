@@ -15,7 +15,7 @@ Creating a temporary file is about making a file that exists for a short period,
 ## How to:
 Visual Basic for Applications (VBA) doesn't have a built-in function specifically for creating temporary files like some other languages. However, you can easily make one using the `GetTempPath` and `GetTempFileName` API functions. Here's a basic approach:
 
-```Visual Basic for Applications
+```basic
 Private Declare PtrSafe Function GetTempPath Lib "kernel32" _
     Alias "GetTempPathA" (ByVal nBufferLength As Long, ByVal lpBuffer As String) As Long
 

@@ -19,7 +19,7 @@ Visual Basic for Applications (VBA) doesn't have a built-in type for complex num
 
 First, define a Type for complex numbers:
 
-```Visual Basic for Applications
+```basic
 Type Complex
     realPart As Double
     imaginaryPart As Double
@@ -28,7 +28,7 @@ End Type
 
 Now, let's add functions to perform operations, starting with addition:
 
-```Visual Basic for Applications
+```basic
 Function AddComplex(c1 As Complex, c2 As Complex) As Complex
     Dim result As Complex
     result.realPart = c1.realPart + c2.realPart
@@ -39,7 +39,7 @@ End Function
 
 How about multiplication? It's a bit trickier but totally manageable:
 
-```Visual Basic for Applications
+```basic
 Function MultiplyComplex(c1 As Complex, c2 As Complex) As Complex
     Dim result As Complex
     result.realPart = (c1.realPart * c2.realPart) - (c1.imaginaryPart * c2.imaginaryPart)
@@ -50,7 +50,7 @@ End Function
 
 Let's see these functions in action:
 
-```Visual Basic for Applications
+```basic
 Sub DemoComplexOperations()
     Dim num1 As Complex
     Dim num2 As Complex

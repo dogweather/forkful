@@ -17,7 +17,7 @@ We're diving into how to snag the current date in Visual Basic for Applications 
 
 In VBA, getting the current date (or time) is a cinch. You've got a couple of functions at your disposal: `Date` and `Now`. While `Date` gives you just that, the current date, `Now` serves up both the current date and time. Here's how you roll with them:
 
-```Visual Basic for Applications
+```basic
 Sub GrabCurrentDate()
     Dim today As Date
     today = Date
@@ -29,7 +29,7 @@ This snippet sets you up with today's date, popping it up in a message box. Simp
 
 But what if you're itching for more—say, the current date AND time? VBA's got your back:
 
-```Visual Basic for Applications
+```basic
 Sub GrabCurrentDateTime()
     Dim nowDateTime As Date
     nowDateTime = Now

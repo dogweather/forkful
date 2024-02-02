@@ -17,7 +17,7 @@ Organizing code into functions is about slicing your code into reusable pieces -
 
 In VBA, functions are your best pals for making code manageable and re-usable. Let's see how to whip up a simple function that adds two numbers:
 
-```Visual Basic for Applications
+```basic
 Function AddTwoNumbers(number1 As Integer, number2 As Integer) As Integer
     AddTwoNumbers = number1 + number2
 End Function
@@ -31,7 +31,7 @@ End Sub
 
 Running `TestAddFunction` displays a message box with "The result is: 15". Neat, right? Functions are not just about adding numbers; they can handle text, crunch data, and more. Let's do something slightly fancier:
 
-```Visual Basic for Applications
+```basic
 Function GreetUser(name As String) As String
     GreetUser = "Hello, " & name & "!"
 End Function

@@ -19,7 +19,7 @@ Let's start with the basics - reading from and writing to CSV files. Assume you 
 
 **Reading a CSV file:**
 
-```Visual Basic for Applications
+```basic
 Sub ReadCSV()
     Dim myData As String, textline As String, values As Variant
     ' Change the path to where your CSV is located
@@ -40,7 +40,7 @@ This code opens a CSV file for reading and processes it line by line, splitting 
 
 **Writing to a CSV file:**
 
-```Visual Basic for Applications
+```basic
 Sub WriteCSV()
     Dim filePath As String
     filePath = "C:\output.csv"

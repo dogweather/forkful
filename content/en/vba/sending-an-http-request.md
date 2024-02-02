@@ -35,7 +35,7 @@ To run this, pop open your VBA editor in Excel, paste this subroutine, and press
 
 For a POST request, things get slightly more intricate due to the need for sending data:
 
-```Visual Basic for Applications
+```basic
 Sub SendPostRequest()
     Dim httpRequest As Object
     Set httpRequest = CreateObject("MSXML2.XMLHTTP")
