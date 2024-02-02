@@ -1,6 +1,6 @@
 ---
 title:                "Writing to standard error"
-date:                  2024-02-01T13:42:08.099859-07:00
+date:                  2024-02-01T21:12:05.531485-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Writing to standard error"
 tag:                  "Files and I/O"
@@ -11,41 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-"Writing to standard error" in the world of Google Apps Script means directing your error messages or diagnostics to a special stream, making it easier to separate them from the standard output. Programmers do this for clarity and to aid in debugging, ensuring that error messages don't get lost in the shuffle.
+Writing to standard error (stderr) in programming languages is about directing error messages and diagnostics to a separate stream, apart from the standard output (stdout). Programmers do this to dissect normal program output from error messages, making debugging and log analysis more straightforward.
 
 ## How to:
 
-Contrary to many programming environments, Google Apps Script doesn't provide a built-in way to explicitly write to standard error directly. However, you can mimic this functionality by using `Logger.log()` for general logging or `console.log()` for more structured logging, especially when using the modern runtime that supports Stackdriver Logging.
+Google Apps Script, being a scripting language for light-weight application development in the Google Apps platform, does not provide a direct built-in function like `console.error()` for writing to stderr, as you might find in Node.js or Python. However, you can simulate this behavior by using Google Apps Script's logging services or custom error handling to manage and segregate error outputs.
 
-Here’s how you’d log normally:
+### Example: Using `Logger` for Error Messages
 
-```Javascript
-function logMessage() {
-  Logger.log("This is a regular log message.");
-}
-```
-
-For something closer to a standard error in Google Apps Script, you'd need to leverage the `console.error()` function, like so:
-
-```Javascript
+```javascript
 function logError() {
   try {
     // Simulate an error
-    throw new Error("Oops, something went wrong!");
+    const result = 1 / 0;
+    if(!isFinite(result)) throw new Error("Attempted division by zero");
   } catch (e) {
-    console.error(e.toString()); // This logs the error more visibly
+    // Write error message to Logs
+    Logger.log('Error: ' + e.message);
   }
 }
 ```
 
-And here’s how you’d view these logs:
-- For `Logger.log()`, you’d go to `View` > `Logs` in the Script Editor.
-- For `console.error()`, you’d visit the GCP console under `Logging` in the `Reports` section of your Apps Script project.
+When you run `logError()`, this will write the error message to Google Apps Script's log, which you can view by `View > Logs`. This isn't exactly stderr, but it serves a similar purpose of separating error logs from standard outputs.
+
+### Advanced Diagnostic Logging
+
+For more advanced debugging and error logging, you can use Stackdriver Logging, now known as Google Cloud's Operations Suite.
+
+```javascript
+function advancedErrorLogging() {
+  try {
+    // Cause an error deliberately
+    const obj = null;
+    const result = obj.someProperty;
+  } catch (e) {
+    console.error('Error encountered: ', e.toString());
+  }
+}
+```
+
+This will direct the error message to Stackdriver Logging, where it's managed as an error-level log. Note that Stackdriver/Google Cloud’s Operations Suite integration offers a more granular and searchable logging solution compared to `Logger`.
 
 ## Deep Dive
 
-Historically, Google Apps Script has been more focused on simplification and ease of use, integrating tightly with Google Workspace applications, than on providing low-level control over the execution environment like writing to standard error directly. The addition of `console` methods with the V8 runtime brought Google Apps Script closer to JavaScript standards, offering better structured logging options.
+The lack of a dedicated `stderr` stream in Google Apps Script reflects its nature and origins as a cloud-based scripting language, where traditional console or terminal-based outputs (like stdout and stderr) are less relevant. Historically, Google Apps Script was designed for enhancing Google Apps functionality with simple scripts, focusing on ease of use over comprehensive features available in more complex programming environments.
 
-While `console.error()` doesn't write to "standard error" in the traditional sense, as there's no direct access to the process's STDERR in Google Apps Script, it does allow you to categorize messages as errors within the logging infrastructure of Google Cloud's logging, making it a valuable tool for debugging and monitoring applications.
+That said, the evolution of Google Apps Script towards more sophisticated application development has prompted developers to adopt creative approaches for error handling and logging, utilizing available services like Logger and integrating with Google Cloud’s Operations Suite. These methods, while not direct stderr implementations, offer robust alternatives for error management and diagnostic logging in a cloud-centric environment.
 
-If you find yourself often needing to distinguish between standard output and error messages in a more granular manner, it might indicate that your project could benefit from incorporation of more robust development practices or tools. This might include using third-party logging services, or for complex applications, considering development in a more traditional environment that offers finer control over input and output streams.
+Critically, while these methods serve the purpose within Google Apps Script's ecosystem, they underscore the platform's limitations compared to traditional programming environments. For developers requiring detailed and hierarchical error handling strategies, integrating with external logging services or adopting Google Cloud Functions, which offer a more conventional stderr and stdout handling, might be preferable.

@@ -1,6 +1,6 @@
 ---
 title:                "Working with complex numbers"
-date:                  2024-02-01T13:42:14.587962-07:00
+date:                  2024-02-01T21:12:06.181398-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Working with complex numbers"
 tag:                  "Numbers"
@@ -10,47 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Dealing with complex numbers isn't everyday stuff in Google Apps Script, but when you hit a scenario that needs them (think engineering calculations, advanced math stuff), they're indispensable. You're basically diving into a mathematical concept where numbers have a real part and an imaginary part, usually represented as a + bi, where "i" is the square root of -1. 
+Complex numbers, represented as a combination of real and imaginary units (e.g., 3 + 4i), are fundamental in various computational problems, especially in engineering, physics, and applied mathematics. Learning to manipulate these numbers in Google Apps Script allows programmers to extend their capabilities into scientific computing, signal processing, and beyond.
 
 ## How to:
+Google Apps Script does not have built-in support for complex numbers, necessitating the implementation of custom functionality. Below is a basic structure for handling complex numbers, including addition, subtraction, and multiplication.
 
-Google Apps Script doesn't have built-in support for complex numbers, but that doesn't mean we can't play around with them. Let's create our own little framework to handle complex numbers.
-
-First, we need a way to represent a complex number. We'll use an object for this:
-
-```Javascript
-function Complex(real, imaginary) {
+```javascript
+// Define a constructor for complex numbers
+function Complex(real, imag) {
   this.real = real;
-  this.imaginary = imaginary;
+  this.imag = imag;
 }
 
-// Adding two complex numbers
-function addComplex(c1, c2) {
-  return new Complex(c1.real + c2.real, c1.imaginary + c2.imaginary);
-}
+// Method for adding two complex numbers
+Complex.prototype.add = function(other) {
+  return new Complex(this.real + other.real, this.imag + other.imag);
+};
 
-// Multiplying two complex numbers
-function multiplyComplex(c1, c2) {
-  return new Complex(c1.real * c2.real - c1.imaginary * c2.imaginary,
-                     c1.real * c2.imaginary + c1.imaginary * c2.real);
-}
+// Method for subtracting two complex numbers
+Complex.prototype.subtract = function(other) {
+  return new Complex(this.real - other.real, this.imag - other.imag);
+};
+
+// Method for multiplying two complex numbers
+Complex.prototype.multiply = function(other) {
+  return new Complex(
+    this.real * other.real - this.imag * other.imag,
+    this.real * other.imag + this.imag * other.real
+  );
+};
 
 // Example usage
 var num1 = new Complex(3, 4);
 var num2 = new Complex(1, 2);
 
-var sum = addComplex(num1, num2);
-var product = multiplyComplex(num1, num2);
+// Add two complex numbers
+var sum = num1.add(num2);
+console.log(`Sum: ${sum.real} + ${sum.imag}i`); // Sum: 4 + 6i
 
-Logger.log("Sum: " + sum.real + " + " + sum.imaginary + "i"); // Sum: 4 + 6i
-Logger.log("Product: " + product.real + " + " + product.imaginary + "i"); // Product: -5 + 10i
+// Subtract two complex numbers
+var difference = num1.subtract(num2);
+console.log(`Difference: ${difference.real} + ${difference.imag}i`); // Difference: 2 + 2i
+
+// Multiply two complex numbers
+var product = num1.multiply(num2);
+console.log(`Product: ${product.real} + ${product.imag}i`); // Product: -5 + 10i
 ```
 
-This example lays out a basic structure for working with complex numbers, including adding and multiplying them. For more complex operations (pun intended), you'd expand these concepts further.
-
-## Deep Dive
-
-Historically, complex numbers were a bit controversial, mainly because they involve the square root of negative one, a concept that didn't sit well with the math folks for centuries. In the realm of computer programming, most languages, including those scripting engines for the web, didn't originally bake in support for complex numbers at the ground level, Google Apps Script included. This means that when we need to work with them, we're implementing these mathematical concepts on our own, or leveraging libraries that others have written.
-
-For serious mathematical and scientific computing in Google Apps Script that requires complex numbers, sometimes it's worth considering other platforms that natively support complex numbers, like Python with its extensive libraries (e.g., NumPy). However, for light lifting or when Apps Script is a requirement or fits well with your project (think Google Sheets custom functions), the approach we discussed works reasonably well and is pretty fun to boot. It's a fine example of how understanding underlying computer science concepts allows us to extend the capabilities of our chosen tools, even if they don't support our needs right out of the box.
+## Deep Dive:
+The concept of complex numbers dates back to the 16th century, but it was the work of mathematicians like Euler and Gauss that solidified their place in mathematics. Despite their usefulness, complex numbers are not directly supported in JavaScript or, by extension, Google Apps Script. The lack of native support means that operations on complex numbers have to be manually implemented, as demonstrated. While this provides a good learning opportunity and sufficient functionality for basic needs, for heavy computational work requiring complex numbers, one might consider leveraging other programming environments more suited to mathematical computing, such as Python with NumPy, which offer built-in, highly optimized operations for handling complex numbers. Nevertheless, understanding and implementing basic operations in Google Apps Script is a useful exercise for those looking to broaden their programming skills and apply them in a wide range of contexts.

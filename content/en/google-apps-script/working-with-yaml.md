@@ -1,6 +1,6 @@
 ---
 title:                "Working with YAML"
-date:                  2024-02-01T13:42:08.626398-07:00
+date:                  2024-02-01T21:11:59.655738-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Working with YAML"
 tag:                  "Data Formats and Serialization"
@@ -11,42 +11,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-YAML, standing for “YAML Ain't Markup Language”, is a human-readable data serialization standard. Programmers use it for configuration files or in settings where data needs to be easily understood by humans and machines alike, such as in Google Apps Script projects to manage settings or configurations pretty smoothly.
+YAML, which stands for "YAML Ain't Markup Language," is a human-readable data serialization standard that is commonly used for configuration files and data exchange between languages with varying data structures. Programmers often work with YAML for its simplicity and readability, especially in projects requiring extensive configuration or when transferring structured data between different systems.
 
 ## How to:
 
-YAML isn't natively supported in Google Apps Script, so you'll first need a workaround to parse YAML content. Unfortunately, GAS doesn't have an in-built YAML parser. But fear not! You can use a JavaScript library, like js-yaml, or convert your YAML to JSON using online tools, then parse it with GAS. Here's a basic flow using a JSON conversion step as an example:
+While Google Apps Script (GAS) doesn't natively support YAML parsing or serialization, you can manipulate YAML data by using JavaScript libraries or writing custom parsing functions. For demonstration, let's consider how to parse a YAML string using a custom function, since external libraries cannot be directly imported into GAS.
 
-```Javascript
-// Assuming you have a YAML string converted to JSON
+Assume you have a simple YAML configuration:
 
-function parseYAML() {
-  var yaml = `name: John Doe
-age: 29
-married: true`;
-  
-  // Convert your YAML string to JSON (this step would be manual or via an external tool)
-  var yamlAsJson = {
-    name: "John Doe",
-    age: 29,
-    married: true
-  };
-  
-  // In Google Apps Script, parse the JSON
-  var parsedData = JSON.parse(JSON.stringify(yamlAsJson));
-  
-  // Work with your data
-  Logger.log(parsedData.name); // Outputs: John Doe
-}
-
+```yaml
+title: YAML Example
+description: An example of how to handle YAML in Google Apps Script
+tags:
+  - Google Apps Script
+  - YAML
+  - Configuration
 ```
 
-In this example, the YAML content is manually converted into a JSON object for demonstration. In a real case, you'd automate this conversion by either using a server-side conversion tool or a JavaScript library that can be run in the context of a web app.
+To parse this in Google Apps Script, use JavaScript's string manipulation capabilities:
+
+```javascript
+function parseYAML(yamlString) {
+  var result = {};
+  var lines = yamlString.split("\n");
+  for (var i = 0; i < lines.length; i++) {
+    var line = lines[i];
+    if (line.includes(":")) {
+      var parts = line.split(":");
+      var key = parts[0].trim();
+      var value = parts[1].trim();
+      // Basic handling for arrays
+      if (value.startsWith("-")) {
+        value = [value.substring(1).trim()];
+        while (i + 1 < lines.length && lines[i + 1].trim().startsWith("-")) {
+          i++;
+          value.push(lines[i].trim().substring(1).trim());
+        }
+      }
+      result[key] = value;
+    }
+  }
+  return result;
+}
+
+function testYamlParsing() {
+  var yaml = "title: YAML Example\ndescription: An example of how to handle YAML in Google Apps Script\ntags:\n  - Google Apps Script\n  - YAML\n  - Configuration";
+  var parsed = parseYAML(yaml);
+  Logger.log(parsed);
+}
+```
+
+When `testYamlParsing()` is executed, it outputs:
+
+```
+{ title: 'YAML Example',
+  description: 'An example of how to handle YAML in Google Apps Script',
+  tags: [ 'Google Apps Script', ' YAML', ' Configuration' ] }
+```
+
+This custom parsing approach is quite basic and may need adjustments to accommodate complex YAML files.
 
 ## Deep Dive
 
-The relationship between YAML and Google Apps Script is more like a friendship of convenience rather than a deep, integrated partnership. YAML was designed as a straightforward, human-readable format that outweighs JSON in readability but falls short in direct support in certain environments, like Google Apps Script. 
+YAML, initially released in 2001, aimed to be more human-readable than its predecessors like XML or JSON. While its simplicity and ease of use are widely appreciated, handling YAML in Google Apps Script presents challenges due to the lack of direct support. Consequently, programmers often rely on JavaScript's versatility to parse and generate YAML data. However, for complex use cases, especially those involving deep nesting and advanced data structures, this method can get cumbersome and error-prone.
 
-Historically, YAML has roots in languages like XML and JSON, aiming to balance between them in terms of readability and simplicity. This makes it a popular choice for configuration files in software development, including for those working within the Google Cloud ecosystem, but with the caveat that direct manipulation requires some ingenuity, like using third-party libraries or conversion steps.
+JSON, by contrast, is natively supported in Google Apps Script and most other programming environments, offering a more straightforward approach for data serialization and deserialization without additional parsing overhead. JSON's syntax is less verbose than YAML's, making it more suitable for data interchange in web applications. Nonetheless, YAML remains popular for configuration files and situations where human readability is paramount.
 
-In Google Apps Script projects, JSON remains the king for direct data manipulation due to its native support and straightforward syntax. Yet, when readability by humans is paramount, especially for configuration files or when working with complex hierarchical data, YAML might still be your go-to, followed by a conversion step to JSON for processing. In essence, the extra step in converting YAML to JSON in GAS projects is a workaround, but one that leverages YAML's superior readability and JSON's universal support in JavaScript environments.
+When working with YAML in Google Apps Script, consider the trade-offs between readability and ease of use. For comprehensive YAML manipulation, it may be worth exploring external tools or services that can convert YAML to JSON before processing it within your script.

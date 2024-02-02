@@ -1,6 +1,6 @@
 ---
 title:                "Writing tests"
-date:                  2024-02-01T13:42:11.048048-07:00
+date:                  2024-02-01T21:12:04.157536-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Writing tests"
 tag:                  "Testing and Debugging"
@@ -11,13 +11,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Writing tests in Google Apps Script is about constructing checks to validate that your scripts do what you expect them to do. Programmers craft these tests to catch bugs and ensure that future changes don’t break existing functionality.
+Writing tests in Google Apps Script (GAS) is about creating automated scripts to verify the behavior of your codes, ensuring they perform as expected under various conditions. Programmers do it to catch bugs early, improve code quality, and facilitate easier updates and maintenance.
 
 ## How to:
 
-First off, Google Apps Script doesn't have built-in testing frameworks like some other programming environments. But fear not, you can still write simple test functions or leverage external tools like clasp and mocha for more complex testing. Here’s a very basic example:
+While Google Apps Script does not have a built-in testing framework like some other programming environments, you can still write and run tests by leveraging simple GAS functions or integrating external testing libraries such as `QUnit`. Here's a basic example using a simple GAS function to test another function in your script:
 
-```Javascript
+```javascript
 function add(a, b) {
   return a + b;
 }
@@ -25,39 +25,38 @@ function add(a, b) {
 function testAdd() {
   var result = add(2, 3);
   if (result !== 5) {
-    throw new Error("Expected 5, but got " + result);
+    throw new Error("Test failed: add(2, 3) should be 5, but was " + result);
+  } else {
+    Logger.log("Test passed!");
   }
 }
 ```
 
-To run `testAdd`, just select it in the Apps Script editor and press the play button. If nothing happens (no errors), your test passed! If the addition doesn’t work as expected, you'll see an error in the executions log with your message.
+Running `testAdd()` will log "Test passed!" if the `add` function works correctly, or throw an error if it doesn't. For a more sophisticated approach, integrating QUnit with Google Apps Script involves a few more steps but offers a powerful testing environment. A sample QUnit test setup looks like this:
 
-For more advanced scenarios, using clasp to download your script projects and run them with mocha might look like this:
+1. Include the QUnit library in your project.
+2. Create a test HTML file for running the QUnit tests.
+3. Write test cases using QUnit's syntax.
 
-1. Download and set up clasp, then log in to your Google account.
-2. Clone your project locally using clasp.
-3. Set up mocha and any assertion library locally in your project directory.
-4. Write your tests in a new local file, say `tests.js`.
+Here's an example using QUnit:
 
 ```javascript
-const assert = require('assert');
-const { add } = require('./yourAppsScriptFile');
+// Include QUnit by linking to it in an HTML file used to run your tests
 
-describe('add', function() {
-  it('correctly adds two numbers', function() {
-    assert.strictEqual(add(2, 3), 5);
-  });
+QUnit.test("Testing add function", function (assert) {
+  var result = add(2, 3);
+  assert.equal(result, 5, "add(2, 3) should return 5");
 });
 ```
 
-5. Run your tests with mocha in your terminal.
-
-You'll see output in your terminal indicating whether your tests passed or if there were any errors.
+To see the results, open the HTML file within the GAS Script Editor or deploy it as a web app.
 
 ## Deep Dive
 
-Traditionally, testing wasn’t a big part of the Apps Script world, which was more about quick, one-off scripts to automate Google Workspace tasks than about building complex, maintainable systems. However, as Apps Script has grown in power and popularity, the community has found ways to integrate testing into their workflows. 
+Historically, testing in Google Apps Script has been somewhat overlooked, likely due to the platform's origins and primary use cases focusing on quick, small-scale automation tasks rather than large applications. As such, GAS doesn't offer the same robust testing frameworks and tools found in more traditional programming environments. However, the community has adapted by incorporating open-source libraries and leveraging Google's existing tools creatively.
 
-The native Google Apps Script environment still lacks direct support for testing frameworks, forcing developers to find workarounds or use external tools. While tools like clasp and mocha add extra steps to the process, they also offer a more robust testing environment, potentially saving developers from headaches down the line by catching bugs early.
+Using libraries like QUnit represents a significant step forward but comes with its own set of challenges, such as setting up a suitable testing environment and learning an additional syntax. However, for those invested in building more complex and reliable applications with GAS, the effort is worthwhile.
 
-It’s worth mentioning that if Google Apps Script projects become complex or critical enough, it might be worth evaluating whether Apps Script is still the right tool for the job or if a transition to a more traditional development environment with built-in testing support would be more appropriate. However, for many scenarios, especially those deeply integrated with Google Workspace, the benefits of Apps Script—with its direct access to Google services—often outweigh these testing inconveniences.
+Alternatives like using simple GAS functions for testing offer ease of use and integration with the GAS environment without additional dependencies but lack comprehensive testing features and the ability to easily scale as your project grows. Tools such as clasp (the Google Apps Script Command Line Interface) can facilitate more advanced workflows, including testing, by allowing developers to code in their preferred IDE, introducing room for integrating with external testing frameworks more seamlessly.
+
+In conclusion, while GAS might not have native support for sophisticated testing out of the box, its flexibility and the community's innovative approaches provide viable pathways to ensure your scripts are robust, reliable, and ready for any task.
